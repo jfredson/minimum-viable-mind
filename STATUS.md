@@ -4,6 +4,12 @@
 
 ## Stage 1 in progress — localization underway (handoff 2026-06-23)
 
+**To resume in a new session:**
+1. Read `CLAUDE.md` and this file.
+2. `cd` to the repo, `source .venv/bin/activate`, and (if you'll run the judge) `set -a; source .env; set +a`.
+3. Sanity-check nothing rotted: `python src/scripts/01_interp_check.py` should print "OK — interp bench is working." (Stage 0: `python src/scripts/00_setup_check.py`.)
+4. Pick up at **Next action 1** below: SAE feature localization (method b).
+
 Stage 0 is done (baselines below). Stage 1 has begun: the interpretability stack is installed and validated, and the first of the two required localization methods (linear probes) has a pilot result.
 
 **Stage 1 progress so far:**
