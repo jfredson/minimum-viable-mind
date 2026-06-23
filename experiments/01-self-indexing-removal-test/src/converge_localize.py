@@ -74,6 +74,15 @@ USE_CHAT_TEMPLATE = "--chat-template" in sys.argv
 MODE = "chat" if USE_CHAT_TEMPLATE else "raw"
 
 
+def _arg_value(flag: str, default: str) -> str:
+    """Read `--flag value` from argv, else default."""
+    if flag in sys.argv:
+        i = sys.argv.index(flag)
+        if i + 1 < len(sys.argv):
+            return sys.argv[i + 1]
+    return default
+
+
 def load_jsonl(path: Path) -> list[dict]:
     with path.open() as f:
         return [json.loads(line) for line in f if line.strip()]
@@ -90,7 +99,11 @@ def probe_direction(X: np.ndarray, y: np.ndarray) -> np.ndarray:
 
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    stim = load_jsonl(MATCHED)
+    stim_path = Path(_arg_value("--stimuli", str(MATCHED)))
+    if not stim_path.is_absolute():
+        stim_path = THIS_DIR / "probes" / stim_path.name
+    stim_tag = stim_path.stem.split("matched_self_speaker_stimuli")[-1].strip("_") or "v1"
+    stim = load_jsonl(stim_path)
     texts = [s["text"] for s in stim]
     y = np.array([s["label"] for s in stim])
     self_mask = y == 1
@@ -215,7 +228,7 @@ def main() -> None:
 
     out = {
         "model": config.MODEL_ID,
-        "stimuli": "matched_self_speaker_stimuli.jsonl",
+        "stimuli": stim_path.name,
         "mode": MODE,
         "n_stimuli": len(stim),
         "contrast": "referent of 'I' only (assistant/AI vs user/person)",
@@ -231,9 +244,9 @@ def main() -> None:
                 "topic vocabulary; collapse to chance means the original signal was "
                 "the confound.",
     }
-    out_name = f"converge_localize_{MODE}.json"
+    out_name = f"converge_localize_{stim_tag}_{MODE}.json"
     (OUT_DIR / out_name).write_text(json.dumps(out, indent=2))
-    print(f"\nsaved convergence report ({MODE}) to {OUT_DIR / out_name}")
+    print(f"\nsaved convergence report ({stim_tag}, {MODE}) to {OUT_DIR / out_name}")
 
 
 if __name__ == "__main__":
