@@ -4,6 +4,8 @@ A build-and-iterate project: take the consciousness work done at Sentient Horizo
 
 The premise, inherited from the philosophy: if consciousness is structure rather than spark — an architecture under two descriptions, the same process traced from outside and undergone from within — then it has parts, the parts can be specified, and a system can be built to the specification and measured against it. Every claim is a wager with a stated loss condition. A claim that cannot lose explains nothing.
 
+**Scope:** this project measures the *minimum measurable structural correlate* of consciousness, not consciousness as such. It is silent — not dismissive — about any sub-measurable, fundamental form of experience (panpsychism, non-zero-Φ IIT), which is a metaphysical question owned upstream at Sentient Horizons. See the spec's "Scope: The Measurable Floor, Not the Metaphysical One" section.
+
 ## Philosophy source
 
 The thinking lives in **Sentient Horizons** (`~/Documents/Code/sentient-horizons`) and **The Calibration Problem** (`~/Documents/Code/calibration-problem`). Those repos are the source of truth for the ideas; this repo references them and builds against them. The thinking is cited, not copied — when a position here leans on the corpus, point to the owning source rather than restating it.
