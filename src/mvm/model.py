@@ -36,3 +36,28 @@ def load_model(device: str | None = None):
     model.to(device)
     model.eval()
     return model, device, dtype
+
+
+@torch.no_grad()
+def generate_text(
+    model,
+    tok,
+    prompt: str,
+    device: str,
+    max_new_tokens: int = 256,
+) -> str:
+    """Greedy single-turn generation for one user prompt.
+
+    Centralizes the chat-template detail (transformers 5.x returns a dict from
+    apply_chat_template) so every battery and, later, every ablation re-score
+    goes through the same decoding path. Deterministic by construction
+    (do_sample=False), which is what the removal test needs: the only thing
+    that may move a score between baseline and ablation is the intervention.
+    """
+    chat = [{"role": "user", "content": prompt}]
+    inputs = tok.apply_chat_template(
+        chat, add_generation_prompt=True, return_tensors="pt", return_dict=True
+    ).to(device)
+    prompt_len = inputs["input_ids"].shape[1]
+    out = model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
+    return tok.decode(out[0][prompt_len:], skip_special_tokens=True).strip()
