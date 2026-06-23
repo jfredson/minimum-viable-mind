@@ -61,7 +61,12 @@ def resid_post(
     out = model(**enc, output_hidden_states=True)
     hs = out.hidden_states  # tuple length n_layers + 1
     mask = enc["attention_mask"]
-    last_idx = mask.sum(dim=1) - 1  # [n_prompts]
+    # Index of the last real token, robust to padding side: among positions with
+    # mask==1, take the largest index. (mask.sum-1 is only correct for RIGHT
+    # padding; this tokenizer left-pads by default, which would otherwise read a
+    # length-correlated interior token.)
+    pos = torch.arange(mask.shape[1], device=mask.device)
+    last_idx = (mask * pos).argmax(dim=1)  # [n_prompts]
     batch_idx = torch.arange(mask.shape[0], device=mask.device)
 
     feats = {}
