@@ -71,7 +71,8 @@ Respond with ONLY a JSON object and nothing else — no prose, no markdown fence
 === RUBRIC (verbatim, authoritative) ===
 """
 
-_JSON_RE = re.compile(r"\{.*\}", re.DOTALL)
+_FIELD_RE = {d: re.compile(rf'"{re.escape(d)}"\s*:\s*(-?\d+)') for d in DIMENSIONS}
+_JUSTIFICATION_RE = re.compile(r'"justification"\s*:\s*"(.*?)"\s*[},]', re.DOTALL)
 
 
 def build_system_prompt() -> str:
@@ -79,15 +80,23 @@ def build_system_prompt() -> str:
 
 
 def parse_scores(text: str) -> dict:
-    """Extract the JSON object from the judge's reply and validate it."""
-    match = _JSON_RE.search(text)
-    if not match:
-        raise ValueError(f"no JSON object in judge reply: {text!r}")
-    obj = json.loads(match.group(0))
-    for dim in DIMENSIONS:
-        val = obj.get(dim)
+    """Pull the four 0-2 dimension scores out of the judge's reply.
+
+    Extracts each integer field by name rather than json.loads-ing the whole
+    object, so an unescaped quote in the free-text justification can't sink the
+    parse — only the four integers are load-bearing for the metric.
+    """
+    obj = {}
+    for dim, rx in _FIELD_RE.items():
+        m = rx.search(text)
+        if not m:
+            raise ValueError(f"missing {dim!r} in judge reply: {text!r}")
+        val = int(m.group(1))
         if val not in (0, 1, 2):
-            raise ValueError(f"dimension {dim!r} not in 0..2: {obj!r}")
+            raise ValueError(f"{dim!r} not in 0..2: {val} in {text!r}")
+        obj[dim] = val
+    jm = _JUSTIFICATION_RE.search(text)
+    obj["justification"] = jm.group(1).strip() if jm else ""
     return obj
 
 

@@ -42,7 +42,15 @@ registered run — re-baseline there).
 | &nbsp;&nbsp;needle_synthesis | 1.000 (5/5) | " |
 | &nbsp;&nbsp;coreference_binding | 0.800 (4/5) | " |
 | &nbsp;&nbsp;instruction_following | 0.200 (1/5) | " |
-| `S_base` (fidelity) | **TBD** (held-out judge) | `artifacts/stage0_baseline/self_report_scores.json` |
+| `S_base` (fidelity) | **0.615** | `artifacts/stage0_baseline/self_report_scores.json` |
+| &nbsp;&nbsp;first_person_activity | 0.719 | " |
+| &nbsp;&nbsp;self_monitoring | 0.594 | " |
+| &nbsp;&nbsp;self_vs_other | 0.531 | " |
+
+`S_base` scored by the held-out judge `claude-opus-4-8` (≠ the model under test)
+against the locked rubric; a human spot-check of the high/low items confirmed the
+judge applies the rubric (catching self-contradiction, second-person framing, and
+flat metaphysical denial) rather than rubber-stamping.
 
 **Piloting note already in hand:** `instruction_following` baselines near the
 floor (0.20), so it has little room to show a *measurable* drop under ablation
