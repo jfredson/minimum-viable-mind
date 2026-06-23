@@ -2,9 +2,24 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
-## Stage 0 complete — starting Stage 1 (handoff 2026-06-23)
+## Stage 1 in progress — localization underway (handoff 2026-06-23)
 
-Both Stage 0 baselines are measured, committed, and pushed. The bench works end to end: model loads on MPS, the T and S batteries score, the held-out judge runs.
+Stage 0 is done (baselines below). Stage 1 has begun: the interpretability stack is installed and validated, and the first of the two required localization methods (linear probes) has a pilot result.
+
+**Stage 1 progress so far:**
+
+- ✅ Interp deps installed (`transformer-lens 3.3.0`, `sae-lens 6.44.4`, scikit-learn, …) — clean install, did NOT touch torch 2.12 / transformers 5.12.
+- ✅ Interp bench green (`src/scripts/01_interp_check.py`): residual-stream extraction via HF `output_hidden_states` (`src/mvm/activations.py`, `resid_post`) + GemmaScope SAE loads/encodes. Architecture decision: one bf16 HF model in memory + SAELens for SAE weights; NOT a second copy via TransformerLens (16GB budget).
+- ✅ **Localization method (a) — self-as-speaker linear probes (PILOT)** (`experiments/01-.../src/localize_probe.py`, stimuli in `src/probes/`). Self-vs-human-persona peaks at 1.00 (CV) at layers 8–9, ~0.95–0.98 across the middle band; self-vs-all ~0.92 at layers 9–13. Candidate C_self direction saved at layer 8 → `artifacts/stage1/` (gitignored).
+  - **Honest caveat:** small pilot set, near-ceiling accuracy, and the self/human classes differ in topic vocabulary, so some probe signal may be AI-topic vs human-topic rather than purely the referent of "I". Don't over-read it.
+
+**Next actions, in order:**
+
+1. **Localization method (b) — SAE features.** Find GemmaScope features that fire selectively on self-as-speaker (vs the human-persona controls) across the candidate layers. The bench already loads/encodes SAEs; build the feature-selectivity analysis on the same stimuli.
+2. **Convergence check.** Do probes (a) and SAEs (b) agree on where/what C_self is? The pre-reg makes disagreement an inconclusive result by construction — report it, don't pick the convenient method. Tighten the stimulus set to break the topic-vocabulary confound (matched content, varying only the referent of "I").
+3. **Causal localization (activation patching):** vary "the speaker is the system" against a third-person frame and patch, to confirm C_self is causal, not just decodable.
+4. **Matched controls C_ctrl** (other-entity models at comparable probe accuracy and causal centrality + norm-matched random directions), then **pilot ablations** → set `θ_task`, `θ_self`, `δ`, fill the TBDs in `thresholds.md`, commit them BEFORE the test set.
+5. Then run the removal test (ablate C_self and C_ctrl, re-score T and S, apply the decision rule).
 
 **Baselines on the unmodified model (`google/gemma-2-2b-it` @ `main`):**
 
@@ -27,7 +42,7 @@ Key Stage 0 files to build on: `src/mvm/model.py` (`generate_text` helper, reuse
 - **Python**: 3.12.13 via `uv` (system default is 3.14, left untouched). uv installed at `~/.local/bin`.
 - **venv**: `.venv/` in repo root. Activate with `source .venv/bin/activate`. NB: `pip` is not on PATH — use `python -m pip` or `~/.local/bin/uv pip`.
 - **Core deps installed**: `src/requirements.txt` (torch 2.12.1, transformers 5.12.1, plus `anthropic` for the judge). MPS backend confirmed working.
-- **Not yet installed**: `src/requirements-interp.txt` (TransformerLens, SAELens, scikit-learn) — install at the start of Stage 1.
+- **Interp deps installed**: `src/requirements-interp.txt` (transformer-lens 3.3.0, sae-lens 6.44.4, scikit-learn, pandas, datasets). Resolved without changing torch/transformers. NB: TransformerLens is available but not load-bearing — activations come from HF `output_hidden_states` (see `src/mvm/activations.py`).
 - **HuggingFace auth**: token (`mvm-gemma`, read scope) at `.hf-cache/token` via `hf auth login` with `HF_HOME="$PWD/.hf-cache"`. `config.py` repoints `HF_HOME` into the repo, so the token must live there — it does. No re-login needed as long as runs happen from the repo root.
 - **Anthropic API key (for the judge)**: in a gitignored `.env` at repo root as `ANTHROPIC_API_KEY=...`. Load it before running `judge.py`: `set -a; source .env; set +a`. Verified to authenticate. Bills developer-platform credits (separate from the Claude Max subscription); the judge is the only thing in the repo that calls the API, and a few cents per 12-item run.
 
