@@ -5,6 +5,11 @@ __pycache__/
 venv/
 *.egg-info/
 
+# Model + data caches (large, regenerable)
+.hf-cache/
+artifacts/
+*.safetensors
+
 # Environment / secrets
 .env
 .env.*

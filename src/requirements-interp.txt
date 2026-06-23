@@ -1,0 +1,10 @@
+# Interpretability + analysis — needed from Stage 1 on (probes, SAEs, ablation).
+# Install after the smoke test passes:  pip install -r src/requirements-interp.txt
+# (Includes the core set via -r so one install gives a full environment.)
+-r requirements.txt
+transformer-lens>=2.4
+sae-lens>=4.0
+scikit-learn>=1.4
+numpy>=1.26
+pandas>=2.2
+datasets>=2.20

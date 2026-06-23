@@ -1,0 +1,7 @@
+# Stage 0 core — enough to run the smoke test (00_setup_check.py).
+# Apple Silicon (MPS). Python 3.11 or 3.12 recommended.
+torch>=2.4
+transformers>=4.44
+accelerate>=0.33
+huggingface_hub>=0.24
+sentencepiece>=0.2       # Gemma tokenizer
