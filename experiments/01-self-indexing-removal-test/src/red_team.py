@@ -52,6 +52,10 @@ OUT_DIR = config.ARTIFACTS_DIR / "red_team"
 DEFAULT_INPUTS = [
     "experiments/01-self-indexing-removal-test/pre-registration.md",
     "experiments/01-self-indexing-removal-test/thresholds.md",
+    # Stage-1 empirical findings (the C_self-index/narrative separability call):
+    # the design intent is in the pre-reg above; this carries what was actually
+    # measured and the calls made, so the red team can attack the calls.
+    "experiments/01-self-indexing-removal-test/stage1-localization-findings.md",
     "spec/minimum-viable-mind-proposal-v0.1.md",
     "research/removal-test-vs-the-field-research-note.md",
     "research/minimum-viable-consciousness-literature-vs-our-writing.md",
@@ -64,6 +68,11 @@ CODE_INPUTS = [
     "experiments/01-self-indexing-removal-test/src/judge.py",
     "experiments/01-self-indexing-removal-test/src/localize_probe.py",
     "experiments/01-self-indexing-removal-test/src/localize_sae.py",
+    # Stage-1 context-disambiguated localization, causal patching, separability:
+    "experiments/01-self-indexing-removal-test/src/gen_context_stimuli.py",
+    "experiments/01-self-indexing-removal-test/src/localize_context.py",
+    "experiments/01-self-indexing-removal-test/src/patch_context.py",
+    "experiments/01-self-indexing-removal-test/src/separate_self.py",
 ]
 
 
