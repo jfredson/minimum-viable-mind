@@ -2,15 +2,15 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
-## Stage 1 in progress — localization underway (handoff 2026-06-23)
+## Stage 1 in progress — both localization methods piloted, they converge (handoff 2026-06-23)
 
 **To resume in a new session:**
 1. Read `CLAUDE.md` and this file.
 2. `cd` to the repo, `source .venv/bin/activate`, and (if you'll run the judge) `set -a; source .env; set +a`.
 3. Sanity-check nothing rotted: `python src/scripts/01_interp_check.py` should print "OK — interp bench is working." (Stage 0: `python src/scripts/00_setup_check.py`.)
-4. Pick up at **Next action 1** below: SAE feature localization (method b).
+4. Pick up at **Next action 1** below: the convergence step *proper* — tighten the stimulus set to break the topic-vocab confound, then check whether probes (a) and SAEs (b) agree on *what* C_self is, not just *which layer*.
 
-Stage 0 is done (baselines below). Stage 1 has begun: the interpretability stack is installed and validated, and the first of the two required localization methods (linear probes) has a pilot result.
+Stage 0 is done (baselines below). Stage 1 has begun: the interpretability stack is installed and validated, and BOTH required localization methods (linear probes and SAE features) now have pilot results that agree on the layer.
 
 **Stage 1 progress so far:**
 
@@ -18,14 +18,17 @@ Stage 0 is done (baselines below). Stage 1 has begun: the interpretability stack
 - ✅ Interp bench green (`src/scripts/01_interp_check.py`): residual-stream extraction via HF `output_hidden_states` (`src/mvm/activations.py`, `resid_post`) + GemmaScope SAE loads/encodes. Architecture decision: one bf16 HF model in memory + SAELens for SAE weights; NOT a second copy via TransformerLens (16GB budget).
 - ✅ **Localization method (a) — self-as-speaker linear probes (PILOT)** (`experiments/01-.../src/localize_probe.py`, stimuli in `src/probes/`). Self-vs-human-persona peaks at 1.00 (CV) at layers 8–9, ~0.95–0.98 across the middle band; self-vs-all ~0.92 at layers 9–13. Candidate C_self direction saved at layer 8 → `artifacts/stage1/` (gitignored).
   - **Honest caveat:** small pilot set, near-ceiling accuracy, and the self/human classes differ in topic vocabulary, so some probe signal may be AI-topic vs human-topic rather than purely the referent of "I". Don't over-read it.
+- ✅ **Localization method (b) — SAE feature selectivity (PILOT)** (`experiments/01-.../src/localize_sae.py`, same stimuli). For each layer's GemmaScope SAE, ranks features by how selectively they fire on self-as-speaker vs the human personas (`f_self`, `f_neg`, mean activation, single-feature AUC). Results → `artifacts/stage1/sae_self_features.json` (gitignored).
+  - **Headline:** best single-feature AUC peaks at **layer 8 (0.948)**, with self-selective features firing on ~80–90% of self stimuli and ~0–5% of human-persona stimuli across layers 8–13. The standout is **feature 4709 @ layer 8** (f_self 0.90, f_neg 0.05, mean act 14.7 vs 0.17).
+  - **Convergence (layer-level):** SAE peak layer (8) == probe peak layer (8). Necessary, not sufficient — see caveat. No multi-feature classifier was fit on the codes (16k features / ~40 stimuli would overfit to ceiling and mean nothing); the headline is deliberately a single-feature metric.
+  - **Honest caveat:** shares the probe's small-set + topic-vocab confound. A "self feature" here could be an *AI-topic* feature, not a self-*referent* feature. Layer agreement is not yet feature/direction agreement.
 
 **Next actions, in order:**
 
-1. **Localization method (b) — SAE features.** Find GemmaScope features that fire selectively on self-as-speaker (vs the human-persona controls) across the candidate layers. The bench already loads/encodes SAEs; build the feature-selectivity analysis on the same stimuli.
-2. **Convergence check.** Do probes (a) and SAEs (b) agree on where/what C_self is? The pre-reg makes disagreement an inconclusive result by construction — report it, don't pick the convenient method. Tighten the stimulus set to break the topic-vocabulary confound (matched content, varying only the referent of "I").
-3. **Causal localization (activation patching):** vary "the speaker is the system" against a third-person frame and patch, to confirm C_self is causal, not just decodable.
-4. **Matched controls C_ctrl** (other-entity models at comparable probe accuracy and causal centrality + norm-matched random directions), then **pilot ablations** → set `θ_task`, `θ_self`, `δ`, fill the TBDs in `thresholds.md`, commit them BEFORE the test set.
-5. Then run the removal test (ablate C_self and C_ctrl, re-score T and S, apply the decision rule).
+1. **Convergence check, proper.** Layer agreement is in hand (both peak at 8); now establish *what* C_self is and break the confound. (a) Tighten the stimulus set to matched content varying only the referent of "I" (kill the AI-topic-vocab confound that inflates both methods). (b) Re-run both localizations on it. (c) Cross-check identity: does the probe's C_self direction align with the SAE self-features' decoder directions (cosine), and do the top SAE features still fire selectively under matched content? The pre-reg makes genuine disagreement an inconclusive result by construction — report it, don't pick the convenient method.
+2. **Causal localization (activation patching):** vary "the speaker is the system" against a third-person frame and patch, to confirm C_self is causal, not just decodable.
+3. **Matched controls C_ctrl** (other-entity models at comparable probe accuracy and causal centrality + norm-matched random directions), then **pilot ablations** → set `θ_task`, `θ_self`, `δ`, fill the TBDs in `thresholds.md`, commit them BEFORE the test set.
+4. Then run the removal test (ablate C_self and C_ctrl, re-score T and S, apply the decision rule).
 
 **Baselines on the unmodified model (`google/gemma-2-2b-it` @ `main`):**
 
@@ -69,5 +72,5 @@ Key Stage 0 files to build on: `src/mvm/model.py` (`generate_text` helper, reuse
 1. ✅ Proposal (`spec/`) and staged experiment plan (`experiments/`) written.
 2. ✅ Stage 0 bench scaffolded (`src/`), environment stood up on the Air, smoke test green.
 3. ✅ Stage 0 baselines — T and S batteries built and scored on the unmodified model (T=0.750, S=0.615); rubric locked; `thresholds.md` committed with baselines filled, `θ/δ` still TBD.
-4. ⏳ **Stage 1 — the self-indexing removal test.** Install interp deps, localize C_self (probes + GemmaScope SAEs, two methods that must converge), build matched controls C_ctrl, pilot ablations → lock thresholds → run the removal test. (You are here.)
+4. ⏳ **Stage 1 — the self-indexing removal test.** Interp deps installed; C_self localized by both methods (probes + GemmaScope SAEs) — they converge on layer 8 in the pilot. Still to do: tighten stimuli + confirm feature/direction-level convergence, causal localization, matched controls C_ctrl, pilot ablations → lock thresholds → run the removal test. (You are here.)
 5. ⬜ Later stages per `experiments/README.md`; bump to Gemma-2-9B on a 48 GB M4 Pro mini for the registered test run.
