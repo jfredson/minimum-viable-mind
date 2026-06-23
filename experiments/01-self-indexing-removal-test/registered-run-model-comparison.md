@@ -20,9 +20,44 @@ IDs and revisions to be confirmed and pinned in `config.py` before any download.
 3. **Open weights + full activation access** (ablation, not just prompting).
 4. **SAE availability for localization method (b)** — or accept training SAEs /
    leaning on causal patching (already validated) as the second method.
-5. **Fits the 48GB M4 Pro mini** for the registered run: 7–13B in bf16 is
-   comfortable (~16–26GB); 32B needs 4-bit quant (degrades activation fidelity for
-   interp) — avoid. 7–13B is the sweet spot.
+5. **Runs in bf16 on the available hardware** (see "Hardware / memory" below):
+   8B in bf16 needs ~22–23GB peak for the full interp pipeline; 32B needs 4-bit
+   quant (degrades activation fidelity for interp) — avoid. 7–13B is the sweet spot.
+
+## Hardware / memory (the registered run is interp, not plain inference)
+
+The registered run holds the **model + cached activations + an SAE + a KV cache
+for generation** at once, so it needs more than weight size alone. For bf16
+Llama-3.1-8B:
+
+| Component | bf16 |
+|---|---|
+| 8B weights | ~16.1 GB |
+| macOS + Python + libs | ~4–6 GB |
+| One Llama Scope SAE (32k, per-layer) | ~0.5–1 GB |
+| Activations (short battery prompts, small batches) | a few hundred MB |
+| KV cache (generation, ~2k ctx) | ~0.3–0.5 GB |
+| **Peak** | **~22–23 GB** |
+
+Mac-specific gotcha: macOS caps GPU-usable unified memory (Metal "wired" limit) at
+~65–75% of total by default, so a 24GB machine exposes only ~16GB to the GPU —
+about the weight size alone.
+
+Apple M4 Mac mini configs (verified June 2026): base M4 = 16/24/**32**GB;
+M4 Pro = 24/48/64GB. (The 32GB base option may only appear in Apple's full
+custom configurator and can be absent from discount/education storefronts.)
+
+| Config | bf16 8B interp+gen+SAE | Verdict |
+|---|---|---|
+| **24GB** (base M4, ~$799) | ❌ over the ~16GB Metal wired limit on weights alone; fits only via **4-bit quant**, which alters the activations being measured/ablated | not for the registered run (4-bit compromise only); OK only if the registered model drops to ~3–4B bf16 |
+| **32GB** (base M4, ~$999) | ✅ ~22–23GB peak fits with thin headroom, no quantization | **value pick** if reachable |
+| **48GB** (M4 Pro, ~$1,599) | ✅ comfortable; room for 13B, multiple SAEs, larger batches | **recommended** — and ~2× GPU cores + bandwidth (~273 vs ~120 GB/s) ≈ 2× throughput, which compounds across the 5-checkpoint RT-06 ladder |
+
+**Recommendation:** 32GB base mini if the full configurator surfaces it; otherwise
+the **48GB M4 Pro** (the price gap is ~1.8×, not 2×, and buys ~2× speed too).
+Avoid 24GB for a bf16 8B run — it forces 4-bit. A 24GB box is only sensible if the
+registered model is downsized to ~3–4B (bf16 ≈ 6–8GB), which weakens the RT-06
+capability-gating signal (gating is more pronounced in larger models).
 
 ## Candidates
 
