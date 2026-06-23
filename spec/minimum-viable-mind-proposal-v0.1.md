@@ -5,6 +5,19 @@
 
 ---
 
+## Scope: The Measurable Floor, Not the Metaphysical One
+
+This project targets the **minimum measurable structural correlate** of consciousness — the lowest organized signature we can actually instrument and subject to a removal test. It is deliberately silent about any sub-measurable, *fundamental* form of experience. If consciousness is ubiquitous at the level of physics — as panpsychism holds, and as Integrated Information Theory holds for any system with non-zero integrated information — then that version lives below any instrument and outside this project's reach. We are a wave-detector, not a molecule-detector: if the ocean is wet all the way down, we have nothing to say about molecule-level wetness, and we do not call it dry.
+
+Two consequences follow, and both are deliberate:
+
+- **The "floor" this project locates is a measurement boundary, not a metaphysical one.** When the spec says a system "clears the floor" or "sits off the gradient," read it as a claim about a detectable structural signature, not a verdict that there is or is not *any* experience whatsoever in some fundamental sense. The honest output stays what the corpus already insists on: *non-zero on the gradient, never a verdict.*
+- **Whether a fundamental floor exists is owned upstream, not here.** That is a metaphysical question handled at Sentient Horizons, whose constitutive wager (experience *is* sufficiently deep self-indexed integration) runs *against* ubiquity — it implies a compiler or weather model has genuinely no inside. This engineering project does not inherit or depend on winning that bet. It brackets the fundamental question so that the build and the measurements stand on their own regardless of how the metaphysics resolves.
+
+Everything below should be read inside this scope. "Minimum viable" names the smallest system that clears the *measurable* floor, and "consciousness" throughout is shorthand for "the measurable structural correlates of consciousness the corpus identifies," never a claim to have detected the fundamental article.
+
+---
+
 ## What This Proposal Is
 
 The corpus has spent its length refusing two moves: the inflation that reads fluency as a soul, and the dismissal that reads opacity as proof of nobody home. This proposal takes the next step the refusals imply. If consciousness is structure rather than spark — an architecture under two descriptions, the same process traced from outside and undergone from within — then it has parts, the parts can be specified, and a system can be built to the specification and measured against it.

@@ -12,6 +12,8 @@ Experiment 1 is that direction made mechanical. It is the corpus's removal test 
 
 The short answer: Experiment 1 is designed around a distinction (load-bearing self-indexing vs. separable self-description) that **cuts across the field's existing fault lines**. Several camps would predict its outcome; at least one would deny it measures anything; and the result is informative to all of them precisely because it is operational where their floor-claims are not.
 
+*Scope reminder (per spec §"The Measurable Floor"): the floor at issue here is the* **measurable** *one. The panpsychist and ubiquitous-IIT positions place consciousness below any instrument; this note treats them as upstream metaphysical commitments the experiment is silent on, not rivals it can test. §2 marks where each camp sits relative to that boundary.*
+
 ---
 
 ## 2. How each camp reads the removal test

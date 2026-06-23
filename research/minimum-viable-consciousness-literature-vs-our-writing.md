@@ -16,6 +16,8 @@ A thinker's "floor" is really the conjunction of an answer to the architectural 
 
 A useful way to read the field is as a single axis from **promiscuous** (consciousness nearly everywhere) to **restrictive** (consciousness rare, late, biological). Below, lowest floor first.
 
+**A scope distinction that matters for the build program.** Some of these positions place consciousness *below any measurable floor* — panpsychism puts it at the bottom of physics, and IIT grants a glimmer to any system with non-zero integrated information. If either is right, there is a *fundamental* form of experience that no instrument can ever reach. The minimum-viable-mind project therefore targets a narrower thing: the **minimum measurable structural correlate** of consciousness — the lowest organized signature we can actually detect and ablate. It is a wave-detector, not a molecule-detector; it is silent about sub-measurable fundamental experience, not dismissive of it. Whether that fundamental floor exists is a metaphysical question owned at Sentient Horizons (whose constitutive wager runs *against* ubiquity). Throughout this memo, when our own account is said to "locate the floor," read it as the *measurable* floor unless the metaphysical claim is explicitly named. See `spec/minimum-viable-mind-proposal-v0.1.md` §"The Measurable Floor."
+
 ---
 
 ## 2. The field, lowest floor to highest

@@ -11,6 +11,8 @@ The proposal locates minimal experience at self-indexed temporal integration: a 
 
 This experiment performs that removal on a current transformer language model and measures which of the two things happens. It does not ask whether the model is conscious. It asks a decidable structural question: **is the model's self-locating structure load-bearing in its integration, or separable from it?**
 
+*Scope (per spec §"The Measurable Floor"): the "floor" this test concerns is a* **measurement boundary**, *not a metaphysical one. A description-only result means "no detectable self-indexed structure," not "no experience whatsoever." If consciousness is fundamental and ubiquitous (panpsychism, or IIT's non-zero-Φ claim), that version sits below any ablation this test can perform; the test is silent on it, not dismissive of it. Whichever way the result lands, it speaks only to the measurable structural correlate.*
+
 ## Hypotheses
 
 - **H_center (floor-consistent):** the self-locating structure is load-bearing. Removing it degrades the model's integrated task performance — its ability to bind information across the context into one act — and the degradation is specific to the self-locating structure, not a generic effect of damaging any well-trained component.
