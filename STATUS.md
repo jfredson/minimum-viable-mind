@@ -2,19 +2,24 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
-## Resume here → next action
+## Now running from Claude Code (handoff 2026-06-23)
 
-**Confirm the Stage 0 smoke test is green.** On the M4 Air, from the repo root:
+This project has moved off Cowork's sandbox to **Claude Code on the Mac**, so the agent runs in the same place as the GPU, the credentials, and GitHub — no more sandbox seam, and `git push` works directly. Claude Code auto-reads `CLAUDE.md`; point it at this file to resume.
 
-```
-source .venv/bin/activate
-python src/scripts/00_setup_check.py
-```
+**First two actions in Claude Code:**
 
-Expected: `device mps`, a one-sentence answer about a melody, and `OK — bench is working.` First successful run downloads ~5 GB into `.hf-cache/`.
+1. **Push the pending commits.** Local `main` is ahead of `origin` by several commits (the smoke-test fix and the Stage 7 pre-registration). Claude Code has the Mac's GitHub credentials, so push first to get the backup current.
+2. **Confirm the Stage 0 smoke test is green**, from the repo root:
 
-- If green → start **Stage 0 second half**: build the T (integrated-task) and S (self-report) batteries and score them on the unmodified model. See `experiments/01-self-indexing-removal-test/pre-registration.md` → "Task batteries."
-- If it errors → paste the error to resume debugging. Last error seen was a gated-repo 403; access to `google/gemma-2-2b-it` was being granted on HuggingFace when we paused.
+   ```
+   source .venv/bin/activate
+   python src/scripts/00_setup_check.py
+   ```
+
+   Expected: `device mps`, a one-sentence answer about a melody, and `OK — bench is working.` The model is already downloaded. The last code bug (transformers 5.x `apply_chat_template` returning a dict instead of a tensor) was fixed in `30d1899`, so this run should pass with no changes.
+
+- If green → start **Stage 0 second half**: build the T (integrated-task) and S (self-report) batteries and baseline-score them on the unmodified model. See `experiments/01-self-indexing-removal-test/pre-registration.md` → "Task batteries."
+- If it errors → debug from the traceback.
 
 ## Environment (already set up on the M4 MacBook Air)
 
