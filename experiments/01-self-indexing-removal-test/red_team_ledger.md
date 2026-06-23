@@ -84,6 +84,19 @@ below); RT-07 OOD perplexity gate. RT-08 folded into RT-07.
 three faces of one risk — on a heavily-RLHF'd instruction model, "self" structure
 is entangled with dialogue mechanics, capability-routing, and softmax stability.
 Decide whether the *registered* run uses `gemma-2-2b-it` (accept and pilot the
-entanglements) or moves to a base / less-RLHF'd model where they are weaker. This
-changes what the RT-06 C_ctrl pilot even means, so it is decided first. *(Open —
-awaiting model choice.)*
+entanglements) or moves to a less-RLHF'd model where they are weaker.
+
+**Resolved 2026-06-23:** keep `gemma-2-2b-it` as the **pilot / instrument
+sandbox** (all tooling works there) and plan the **registered run on a less-RLHF'd
+model**. Treat running RT-06 on 2b-it as a deliberate test of the "not testable on
+heavily-RLHF'd models" hypothesis — informative either way. **Constraints on the
+registered-run model (so the pick doesn't break the instrument):** (1) it must
+retain chat/turn structure and self-report capability — so "less RLHF'd" means a
+*lightly-aligned instruction model* (SFT-only / DPO-light), NOT a pure base model,
+which would have no assistant turn for C_self-index or S; (2) leaving the Gemma
+family loses GemmaScope SAEs (localization method (b)) unless SAEs are trained.
+**A staged-checkpoint family (e.g. OLMo-2 / Tülu: base → SFT → DPO → RLHF) is the
+strongest option** — it lets RT-06 be run as a controlled comparison of the *same*
+model at increasing alignment, directly measuring the capability-gating effect.
+*(Specific model still to be pinned against these constraints — see STATUS next
+actions.)*

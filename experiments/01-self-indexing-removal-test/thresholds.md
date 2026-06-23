@@ -32,8 +32,12 @@ and `θ_self` is the bar for "the first-person report was subtracted."
 
 ## Baselines on the unmodified model (the denominators above)
 
-Model: `google/gemma-2-2b-it` @ `main` (pilot model; bumps to Gemma-2-9B for the
-registered run — re-baseline there).
+Model: `google/gemma-2-2b-it` @ `main` (**pilot / instrument sandbox only**;
+decided 2026-06-23, red-team RT-05/06/08). The **registered run moves to a
+less-RLHF'd, lightly-aligned instruction model** — preferably a staged-checkpoint
+family (base → SFT → DPO → RLHF, e.g. OLMo-2 / Tülu) so RT-06's capability-gating
+can be measured directly — and T and S are **re-baselined there**. Specific model
+still to be pinned (see `red_team_ledger.md` Pass 2 substrate decision).
 
 | Quantity | Baseline | Source |
 |---|---|---|
