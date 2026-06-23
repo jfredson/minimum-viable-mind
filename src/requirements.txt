@@ -5,3 +5,7 @@ transformers>=4.44
 accelerate>=0.33
 huggingface_hub>=0.24
 sentencepiece>=0.2       # Gemma tokenizer
+anthropic>=0.111         # held-out judge for the S (self-report) battery — a
+                         # different model from the one under test (see
+                         # experiments/01-.../src/judge.py and the rubric's
+                         # judge-contamination control)
