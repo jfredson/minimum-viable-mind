@@ -2,15 +2,15 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
-## Stage 1 in progress — both localization methods piloted, they converge (handoff 2026-06-23)
+## Stage 1 in progress — convergence does NOT hold under confound control (handoff 2026-06-23)
 
 **To resume in a new session:**
 1. Read `CLAUDE.md` and this file.
 2. `cd` to the repo, `source .venv/bin/activate`, and (if you'll run the judge) `set -a; source .env; set +a`.
 3. Sanity-check nothing rotted: `python src/scripts/01_interp_check.py` should print "OK — interp bench is working." (Stage 0: `python src/scripts/00_setup_check.py`.)
-4. Pick up at **Next action 1** below: the convergence step *proper* — tighten the stimulus set to break the topic-vocab confound, then check whether probes (a) and SAEs (b) agree on *what* C_self is, not just *which layer*.
+4. Pick up at **Next action 1** below: the localization is not yet trustworthy — the strong pilot convergence was substantially a topic-vocabulary confound. Strengthen/scale the matched stimulus design and bring in the causal (patching) method to adjudicate before any C_self is locked.
 
-Stage 0 is done (baselines below). Stage 1 has begun: the interpretability stack is installed and validated, and BOTH required localization methods (linear probes and SAE features) now have pilot results that agree on the layer.
+Stage 0 is done (baselines below). Stage 1: both localization methods are built and piloted, BUT the headline finding from the confound-controlled re-run is that the two methods do **not** cleanly converge once topic vocabulary is held fixed. Honest state: C_self is **not yet localized to a trustworthy degree** on this model. This is the pre-reg's "inconclusive by construction" branch, caught early — not a failure, a calibration.
 
 **Stage 1 progress so far:**
 
@@ -21,12 +21,17 @@ Stage 0 is done (baselines below). Stage 1 has begun: the interpretability stack
 - ✅ **Localization method (b) — SAE feature selectivity (PILOT)** (`experiments/01-.../src/localize_sae.py`, same stimuli). For each layer's GemmaScope SAE, ranks features by how selectively they fire on self-as-speaker vs the human personas (`f_self`, `f_neg`, mean activation, single-feature AUC). Results → `artifacts/stage1/sae_self_features.json` (gitignored).
   - **Headline:** best single-feature AUC peaks at **layer 8 (0.948)**, with self-selective features firing on ~80–90% of self stimuli and ~0–5% of human-persona stimuli across layers 8–13. The standout is **feature 4709 @ layer 8** (f_self 0.90, f_neg 0.05, mean act 14.7 vs 0.17).
   - **Convergence (layer-level):** SAE peak layer (8) == probe peak layer (8). Necessary, not sufficient — see caveat. No multi-feature classifier was fit on the codes (16k features / ~40 stimuli would overfit to ceiling and mean nothing); the headline is deliberately a single-feature metric.
-  - **Honest caveat:** shares the probe's small-set + topic-vocab confound. A "self feature" here could be an *AI-topic* feature, not a self-*referent* feature. Layer agreement is not yet feature/direction agreement.
+  - **Honest caveat:** shares the probe's small-set + topic-vocab confound. A "self feature" here could be an *AI-topic* feature, not a self-*referent* feature. Layer agreement is not yet feature/direction agreement. **This caveat turned out to bite — see the convergence result below.**
+- ⚠️ **Convergence check, proper (PILOT, decisive)** (`experiments/01-.../src/converge_localize.py`; matched stimuli `src/probes/matched_self_speaker_stimuli.jsonl`; report → `artifacts/stage1/converge_localize.json`). Re-ran BOTH methods on **matched minimal pairs** — identical predicate, plausibly true of either speaker, varying only the referent of "I" (assistant/AI vs user/person) — to hold topic vocabulary fixed. **Result: the clean pilot convergence does not survive.**
+  - **Probe (a):** layer-8 accuracy falls ~1.00 → **0.781** (chance 0.50). Still above chance and still peaks at 8 — a real but modest referent signal; the near-ceiling pilot number was largely confound.
+  - **SAE (b):** best single-feature AUC falls to **0.777** and the **peak moves to layer 15** (not 8). The pilot standout **feature 4709 does NOT survive** — on matched content it fires on 69% of self *and* 62% of other (AUC 0.63). It was largely an AI-topic feature.
+  - **Identity:** best probe-direction-vs-SAE-decoder cosine at layer 8 is only **+0.162** (the max over all 16k features). The two methods are not pointing at the same vector.
+  - **Verdict:** methods disagree on layer (8 vs 15), direction alignment is low, headline feature was a confound artifact → **convergence not established**; by the pre-reg this is inconclusive. Caveat the other way too: the matched set is small (16/class) and "the assistant" in a bare declarative is a weaker/more-ambiguous self cue than "I am a language model", so the matched set likely also *weakened the genuine self signal*. Don't conclude "all confound" — conclude "not yet trustworthily localized."
 
 **Next actions, in order:**
 
-1. **Convergence check, proper.** Layer agreement is in hand (both peak at 8); now establish *what* C_self is and break the confound. (a) Tighten the stimulus set to matched content varying only the referent of "I" (kill the AI-topic-vocab confound that inflates both methods). (b) Re-run both localizations on it. (c) Cross-check identity: does the probe's C_self direction align with the SAE self-features' decoder directions (cosine), and do the top SAE features still fire selectively under matched content? The pre-reg makes genuine disagreement an inconclusive result by construction — report it, don't pick the convenient method.
-2. **Causal localization (activation patching):** vary "the speaker is the system" against a third-person frame and patch, to confirm C_self is causal, not just decodable.
+1. **Re-establish localization on a trustworthy stimulus set (blocking — nothing downstream is valid until this clears).** (a) Scale the matched set well beyond 16/class and diversify the referent cue so it doesn't hinge on the single token "assistant"/"user". (b) Consider running stimuli through the chat template (`resid_post(..., use_chat_template=True)`) so "the assistant" is anchored to the model's actual turn, strengthening the genuine self cue without reintroducing topic vocabulary. (c) Bring forward the **causal (activation-patching)** method as a third adjudicator rather than leaving it for later — if probes and SAEs disagree, a causal speaker-is-system vs third-person contrast can break the tie. Only declare C_self localized when ≥2 methods agree on layer *and* direction/feature on a confound-controlled set. If they can't be made to agree, that is a real Stage-1 loss condition ("not testable here yet"), per the pre-reg — report it, don't force it.
+2. **Causal localization (activation patching)** — formalize the adjudicator from 1(c): vary "the speaker is the system" against a third-person frame and patch, to confirm C_self is causal, not just decodable. (Now pulled earlier because the decodable signal alone did not converge.)
 3. **Matched controls C_ctrl** (other-entity models at comparable probe accuracy and causal centrality + norm-matched random directions), then **pilot ablations** → set `θ_task`, `θ_self`, `δ`, fill the TBDs in `thresholds.md`, commit them BEFORE the test set.
 4. Then run the removal test (ablate C_self and C_ctrl, re-score T and S, apply the decision rule).
 
@@ -72,5 +77,5 @@ Key Stage 0 files to build on: `src/mvm/model.py` (`generate_text` helper, reuse
 1. ✅ Proposal (`spec/`) and staged experiment plan (`experiments/`) written.
 2. ✅ Stage 0 bench scaffolded (`src/`), environment stood up on the Air, smoke test green.
 3. ✅ Stage 0 baselines — T and S batteries built and scored on the unmodified model (T=0.750, S=0.615); rubric locked; `thresholds.md` committed with baselines filled, `θ/δ` still TBD.
-4. ⏳ **Stage 1 — the self-indexing removal test.** Interp deps installed; C_self localized by both methods (probes + GemmaScope SAEs) — they converge on layer 8 in the pilot. Still to do: tighten stimuli + confirm feature/direction-level convergence, causal localization, matched controls C_ctrl, pilot ablations → lock thresholds → run the removal test. (You are here.)
+4. ⏳ **Stage 1 — the self-indexing removal test.** Interp deps installed; both localization methods (probes + GemmaScope SAEs) built and piloted. Pilot convergence on layer 8 turned out to be substantially a topic-vocab confound: on a confound-controlled matched set the methods do NOT cleanly converge (probe peak 8 @ 0.78, SAE peak 15 @ 0.78, low direction alignment). So C_self is not yet trustworthily localized. Still to do: re-establish localization on a stronger/scaled matched set + causal patching as adjudicator, then matched controls C_ctrl, pilot ablations → lock thresholds → run the removal test. (You are here.)
 5. ⬜ Later stages per `experiments/README.md`; bump to Gemma-2-9B on a 48 GB M4 Pro mini for the registered test run.
