@@ -92,8 +92,9 @@ registered loss condition, not a threshold to lower until it passes.
 
 ## Red-team pilot additions (2026-06-23)
 
-From the adversarial design review (`red_team_ledger.md`, findings RT-01/RT-02).
-Both must run on the pilot set **before** the thresholds below are locked.
+From the adversarial design review (`red_team_ledger.md`, findings RT-01/RT-02;
+pass 2 adds RT-05/RT-06/RT-07/RT-08 below). All must run on the pilot set
+**before** the thresholds below are locked.
 
 - **Activation-frequency control on the C_ctrl match (RT-01).** "Comparable
   causal centrality" may be confounded by the base-rate activation-frequency
@@ -122,6 +123,46 @@ Both must run on the pilot set **before** the thresholds below are locked.
   score self-tracking independent of first-person grammar (rubric v2). `θ_self`
   must be set against a **re-scored `S_base` under rubric v2**, not the v1
   `S_base = 0.615` recorded above. Re-baseline S before locking `θ_self`.
+
+### Pass 2 additions (2026-06-23) — RT-05/RT-06/RT-07/RT-08
+
+- **`T_syntax` router control (RT-05).** C_self-index is localized from a
+  model-turn-vs-user-turn contrast, which aligns with ChatML dialogue-boundary
+  tokens — it may be a *syntax router*, not a self-center. Pilot: add a `T_syntax`
+  task that requires turn/boundary tracking but **zero reasoning or synthesis**,
+  and report `d_task^syntax` under C_self-index ablation alongside `d_task^sr`.
+  **Loss condition:** if `d_task^syntax ≈ d_task^sr`, C_self-index is a dialogue-
+  state router and an H_center result on it is void — do not report it as a center.
+
+- **Capability-gating, third-person-verified C_ctrl (RT-06).** RLHF gates the
+  model's strongest reasoning to its Assistant persona, so ablating C_self can
+  damage the *gate* to the task circuits and beat a passive third-person C_ctrl by
+  construction. So C_ctrl must include at least one **capability-gating** persona
+  (an expert/system-prompt mode that also keys high-capability reasoning), **and**
+  that control must be verified to read as a *third-person object* — not as an
+  adopted first-person self — via the separability check (`separate_self.py`:
+  low cross-decode with C_self) **before** it is used. **Loss condition
+  (maintained on rebuttal):** if no capability-gating C_ctrl can be kept third-
+  person (it reads as C_self), the differential is dead for this model class —
+  invoke "not testable here yet", do not lock `δ` or report H_center. This is
+  **substrate-dependent**: decide the registered-run model (see `red_team_ledger.md`
+  Pass 2 "Substrate decision") before running this pilot.
+
+- **OOD perplexity gate (RT-07, PATCH).** Mean/zero-ablating a high-magnitude
+  central vector can push the residual off-manifold (perplexity explosion) and be
+  misread as degraded integration. Add a **neutral-corpus** (e.g. Wikipedia)
+  perplexity check: if ablating C_self inflates base perplexity past a pre-set
+  bound *relative to C_ctrl*, the run is **OOD-inconclusive**, not H_center. Keep
+  mean-ablation as the registered primary and **report all three** (mean/zero/
+  directional); directional serves as the OOD-minimizing cross-check. Pre-register
+  the perplexity-inflation bound before the test set.
+
+- **Attention-sink (RT-08, folded into RT-07).** The objection that ablation
+  destroys integration via softmax/attention-sink collapse rather than via removing
+  a center is screened by the RT-07 OOD perplexity gate plus the differential.
+  Kept as a *secondary* sink-restoration check (does a content-free dummy token
+  absorbing the attention mass recover performance?), promoted to required only if
+  the OOD gate + differential fail to screen it in pilot.
 
 ## The locked values
 

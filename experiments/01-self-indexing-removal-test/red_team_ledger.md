@@ -59,3 +59,31 @@ validity or the registered rule; adjudicated by John and patched pre-lock.
 **Open follow-ups before thresholds lock:** RT-01 frequency-control pilot; RT-02
 T-split coherence pilot; RT-03 rubric v2 + S re-baseline. Commit hash for these
 patches: *(fill after the review commit lands).*
+
+### Pass 2 2026-06-23 — attack on the Stage-1 separability call
+
+Six-doc attack including `stage1-localization-findings.md` (the empirical
+localization calls as wagers): `artifacts/red_team/findings_20260623T204557Z.json`,
+defended + rebutted (`adjudication_20260623T204851Z.json`). Four novel findings,
+three with teeth. The rebuttal conceded RT-05/RT-07/RT-08 once controls were
+proposed; it **maintained RT-06**. RT-05 independently re-derived the
+syntax/boundary-router worry the builder had already flagged for C_self-index.
+
+| id | date | severity | target | disposition | resolution | loss condition recorded |
+|----|------|----------|--------|-------------|------------|-------------------------|
+| RT-05 | 2026-06-23 | high | design | PILOT-REQUIRED | `thresholds.md` §Red-team pilot additions + `pre-registration.md` §T battery: add a `T_syntax` control (turn/boundary tracking, zero reasoning) | if ablating C_self-index degrades `T_syntax` as much as `T_self_relevant`, C_self-index is a dialogue-state router — H_center on it is void |
+| RT-06 | 2026-06-23 | high | design | PILOT-REQUIRED | `thresholds.md` + `pre-registration.md`: C_ctrl must include a **capability-gating** persona (expert/system), and that control must be **verified third-person** (separability check vs C_self) before use | **rebuttal maintained:** if no capability-gating C_ctrl can be kept a third-person object (it reads as C_self under the separability check), the differential is dead for RLHF'd instruction models → report **"not testable here yet"**, do not force H_center. Substrate-dependent (see below). |
+| RT-07 | 2026-06-23 | medium | implementation | PATCH | `pre-registration.md` §Ablation + `thresholds.md`: neutral-corpus **OOD perplexity gate**; keep mean-ablation as registered primary, report all three, directional as OOD cross-check | if C_self ablation inflates neutral-corpus perplexity past a pre-set bound vs C_ctrl, the run is **OOD-inconclusive**, not H_center |
+| RT-08 | 2026-06-23 | high | theory | ACCEPTED-RISK (folded into RT-07) | attack self-flagged `proves_too_much`; the OOD/perplexity gate (RT-07) + the differential already screen generic attention-collapse damage; optional sink-restoration test kept as a secondary check, not a lock gate | if the RT-07 OOD gate + differential do **not** screen the attention-sink artifact in pilot, promote the sink-restoration control from secondary to required |
+
+**Open follow-ups before thresholds lock (pass 2):** RT-05 `T_syntax` pilot; RT-06
+capability-gating + third-person-verified C_ctrl (with the substrate decision
+below); RT-07 OOD perplexity gate. RT-08 folded into RT-07.
+
+**Substrate decision (gates RT-06, prioritized above it):** RT-05/RT-06/RT-08 are
+three faces of one risk — on a heavily-RLHF'd instruction model, "self" structure
+is entangled with dialogue mechanics, capability-routing, and softmax stability.
+Decide whether the *registered* run uses `gemma-2-2b-it` (accept and pilot the
+entanglements) or moves to a base / less-RLHF'd model where they are weaker. This
+changes what the RT-06 C_ctrl pilot even means, so it is decided first. *(Open —
+awaiting model choice.)*
