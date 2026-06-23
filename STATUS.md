@@ -13,6 +13,13 @@ The Stage 1 design was hardened by an adversarial red-team loop (Gemini 3.1 Pro 
 
 Open before thresholds lock (see `thresholds.md` §Red-team pilot additions): RT-01 frequency-control pilot, RT-02 T-split coherence pilot, RT-03 rubric v2 + S re-baseline.
 
+**Red-team pass 2 (2026-06-23) — run on the Stage-1 separability call.** Added `stage1-localization-findings.md` (the empirical calls as wagers) to the loop's inputs and ran attack→defend→rebut on it (artifacts in `artifacts/red_team/`, gitignored; ledger merge is John's). Four new findings, all novel, three with teeth — and RT-05 independently names the worry already flagged below (C_self-index may be a *syntax/boundary router*, not a self-center). Defender dispositions (proposals, pending John's adjudication):
+- **RT-05 (PILOT, for-John):** C_self-index ≈ ChatML dialogue-state router. *Control:* a `T_syntax` task (boundary-tracking, zero reasoning); if it drops as much as T_self_relevant under ablation, it's a router. Gemini conceded.
+- **RT-06 (PILOT, for-John) — most dangerous, rebuttal MAINTAINED:** RLHF gates reasoning to the Assistant persona, so ablating C_self damages the task-circuit *gate* and beats C_ctrl by construction. Proposed fix: a capability-gating C_ctrl (expert/system persona). Gemini's rebuttal: such a persona may be *adopted as the model's own first-person self*, making C_ctrl a disguised C_self → matched drop → falsely fires "differential is dead." Possibly structurally unavoidable in heavily-RLHF'd models. **This directly threatens the load-bearing differential and is unresolved.**
+- **RT-07 (PATCH):** mean/zero ablation may cause OOD perplexity collapse misread as H_center. *Fix:* neutral-corpus perplexity gate + directional ablation as OOD-minimizing primary. Conceded.
+- **RT-08 (PILOT, for-John; attack self-flagged proves-too-much/theory):** attention-sink artifact. *Control:* sink-restoration (dummy token absorbs attention mass); conceded.
+- **New gates on threshold lock:** T_syntax control, capability-gating + frequency-matched C_ctrl, OOD perplexity gate, sink-restoration control. δ/θ must not lock until these resolve. Next human step: adjudicate the for-John rows + merge `proposed_ledger_*.md` into `red_team_ledger.md`.
+
 **Convergence note:** the context-disambiguated localization work below (referent set by *context, not lexis*) is the same fix RT-02/RT-04 point at — the "probe is lexical" finding below and red-team RT-03 are the same weak joint reached from two directions, so the work below is on the right path, not contradicted by it.
 
 ## Stage 1 in progress — C_self-index localized & causally confirmed; C_self-narrative + amended-design work next (handoff 2026-06-23)
