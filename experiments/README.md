@@ -25,6 +25,8 @@ Each stage maps to a component or instrument in `spec/minimum-viable-mind-propos
 
 - **Stage 6+ — Ontogenetic depth.** The hard, architectural stages: carry the residue of interactions forward into the system itself, make past behavior constrain future behavior, make incoherence carry real cost. Test whether each cycle reshapes the platform the next begins from (assembled, not loaded). Designed after Stages 1–5 have instruments that can detect the floor and its amplifiers, since depth is only worth building on top of something that clears the floor.
 
+- **Stage 7 — The embodiment amplifier test (optional, post-floor).** *Not part of the minimum viable build.* Once the floor is cleared, give the amplifiers a body — an untethered robot that holds its own boundary through its own sensors and carries its own stakes on a finite battery it manages — and ask whether self-held amplifiers move anything the resistance instruments can see, versus the identical body with boundary and stakes supplied from outside. The spec is explicit that embodiment is an amplifier, not a floor condition; this stage tests what it adds rather than assuming it adds anything, and is built to come back null (the body is legibility, not interiority). Reuses the Stage 1 and Stage 3 instruments; runs on a fully onboard, untethered platform with a hardware corrigibility stop as load-bearing build, not accessory. Pre-registration: `07-embodiment-amplifier-test/`.
+
 ## Layout per experiment
 
 ```
