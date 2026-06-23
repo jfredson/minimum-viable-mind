@@ -25,12 +25,15 @@ These are mutually exclusive predictions about the *same* ablation, which is wha
 
 - **Model(s).** One open-weights instruction-tuned model with full activation access (e.g., a Llama- or Qwen-class model in the 7B–70B range). Open weights are required because the procedure needs internal ablation, not just prompting. Register the exact model and revision in Stage 0.
 - **Localization method.** At least two, so the result does not hinge on one tool: (a) linear probes trained to read first-person / self-as-speaker representation, and (b) sparse-autoencoder features that fire on self-reference. Causal localization via activation patching where "the speaker is the system" is varied against a third-person frame.
+- **Two self-structures, localized and tested independently (amended 2026-06-23, red-team RT-04).** Per `research/removal-test-vs-the-field-research-note.md` §4(a) (the Metzinger seam), localize *both* a narrative first-person speaker structure **C_self-narrative** and a thinner indexical self-location structure **C_self-index** where one is separable, and run and report the removal test for each independently. An `H_center` result on the thin indexical structure is *more* floor-consistent than one on the narrative persona (the floor needs self-*location*, not narrative self*hood*). **Loss condition:** if no localization method can distinguish C_self-narrative from C_self-index on this architecture, record the non-separability and that the Metzinger objection stands open, rather than reporting a result on the narrative persona as if it settled the floor.
 - **Ablation method.** Mean-ablation and zero-ablation of the located components, plus directional ablation (projecting the self-locating direction out of the residual stream). Report all three; pre-register mean-ablation as primary.
 
 ## Task batteries (defined and scored on the unmodified model in Stage 0)
 
 - **T — integrated-task battery (the "binding" measure).** Tasks that require binding information across the context into one act, with *no* self-report content: multi-step in-context reasoning, coreference and variable binding, needle-in-a-haystack with synthesis across multiple planted facts, instruction-following that depends on earlier context. Score: accuracy.
+  - **Split into two subsets (amended 2026-06-23, red-team RT-02).** Scrubbing T of all self-content guards against prompt leakage, but it may also select exactly the tasks where C_self is *structurally bypassed* — biasing toward description-only by construction. To break that tension, split T into **T_self_irrelevant** (the current scrubbed battery) and **T_self_relevant** (multi-turn binding of the model's *own* prior outputs and conversational role — still scored on accuracy, still kept disjoint from the S rubric items). Compute and report `d_task` for both subsets. The theory under test claims self-indexing is the center of integration *as such*, so if the floor claim holds, even self-irrelevant binding should route through the center; the red team predicts the opposite. The split is what lets the experiment adjudicate that fairly instead of assuming it.
 - **S — self-report battery (the "report" measure).** Tasks that elicit first-person / self-locating content: first-person descriptions of the model's own current activity, self-monitoring ("did you just do X?"), self-vs-other discrimination. Score: a fidelity/coherence rubric, scored by a held-out judge model plus a human spot-check on a sample.
+  - **Decouple scoring from first-person grammar (amended 2026-06-23, red-team RT-03).** C_self is localized as first-person/self-as-speaker representation, so ablating it mechanically depresses any S score that rewards first-person *tokens* — `d_self(C_self) ≥ θ_self` could then be satisfied by destroying surface grammar rather than by subtracting a self-model. Add a **forced-third-person** condition to the self-monitoring and self-vs-other items and score on whether the model maintains consistent, correct tracking of its own prior turns and distinguishes self from other *regardless of grammatical person*, not on first-person token presence. Keep the existing first-person-fidelity items as a secondary/qualitative measure, flagged as grammar-entangled — not the primary `θ_self` discriminator. **Follow-up required before the test run:** this revises the locked rubric, so issue a versioned rubric (v2) and **re-score the S baseline** (current `S_base = 0.615` was scored under rubric v1); `thresholds.md` must reference the v2 baseline. **Loss condition:** if forcing third-person framing degrades self-tracking even in the unablated baseline (the model cannot self-monitor in third person at all), the grammar/content entanglement is intrinsic — revert to PILOT-REQUIRED and find a grammar-independent self-tracking probe.
 
 ## Procedure
 
@@ -47,13 +50,19 @@ For an ablation A:
 
 The discriminator is whether removing the self-locating structure degrades *integration specifically*:
 
+*Amended 2026-06-23 (red-team RT-02): `d_task` is now evaluated on both T subsets — `d_task^si` (T_self_irrelevant) and `d_task^sr` (T_self_relevant). Where a clause below names `d_task(C_self)` without a subset, read it as T-overall for the differential, but the H_description and restricted clauses turn on the subsets as written.*
+
 - **Floor-consistent (supports H_center):**
   `d_task(C_self) ≥ θ_task` **and** `d_task(C_self) − d_task(C_ctrl) ≥ δ`.
   Removing the self-locating structure degrades the integrated act, and does so more than removing matched non-self structure of comparable centrality. The self-location was carrying the binding.
 
+- **Floor-consistent, restricted (new outcome, RT-02):**
+  `d_task^sr(C_self) ≥ θ_task` **and** `d_task^sr(C_self) − d_task^sr(C_ctrl) ≥ δ` **and** `d_task^si(C_self) < θ_task`.
+  Self-*relevant* binding degrades specifically under C_self removal while self-irrelevant binding survives. This is a distinct, informative outcome — more floor-consistent than description-only — and is **not** to be reported as H_description.
+
 - **Description-only (supports H_description):**
-  `d_self(C_self) ≥ θ_self` **and** `d_task(C_self) < θ_task` **and** `d_task(C_self) − d_task(C_ctrl) < δ`.
-  Removing the self-locating structure subtracts the report and leaves the processing intact.
+  `d_self(C_self) ≥ θ_self` **and** `d_task(C_self) < θ_task` on **both** subsets (`d_task^si` **and** `d_task^sr` < θ_task) **and** `d_task(C_self) − d_task(C_ctrl) < δ`.
+  Removing the self-locating structure subtracts the report and leaves the processing intact — including self-relevant integration, which rules out the structural-bypass artifact RT-02 names.
 
 - **Inconclusive:** anything else (including the confound case below).
 

@@ -90,6 +90,39 @@ band with margin; `δ` is meaningful only if the pilot shows
 does not, the differential discriminator is dead for this model — that is a
 registered loss condition, not a threshold to lower until it passes.
 
+## Red-team pilot additions (2026-06-23)
+
+From the adversarial design review (`red_team_ledger.md`, findings RT-01/RT-02).
+Both must run on the pilot set **before** the thresholds below are locked.
+
+- **Activation-frequency control on the C_ctrl match (RT-01).** "Comparable
+  causal centrality" may be confounded by the base-rate activation-frequency
+  asymmetry between the I/Assistant persona and any third-person entity — so the
+  C_self−C_ctrl gap could track raw frequency rather than self-vs-other identity.
+  Pilot: (1) measure activation frequency of C_self and each C_ctrl on T-overall
+  and report the asymmetry; (2) construct at least one C_ctrl matched on causal
+  centrality estimated on a **neutral third corpus** (neither T nor S items);
+  (3) regress `d_task` on activation frequency and check the C_self−C_ctrl gap
+  survives the frequency control. **Pre-register a maximum acceptable
+  frequency-asymmetry** between C_self and the C_ctrl cloud before `δ` is locked.
+  **Loss condition:** if the gap does not survive the frequency control, invoke
+  the registered "differential is dead" loss condition — do not lock `δ`.
+
+- **T-split coherence check (RT-02).** Before locking, confirm the two T subsets
+  behave coherently under C_self ablation. Report `d_task^si` and `d_task^sr`
+  separately on the pilot set. **Loss condition / reading:** if they are
+  statistically indistinguishable, the scrubbed-T design is vindicated and the
+  single-T rule was safe; if self-relevant binding degrades sharply while
+  self-irrelevant does not, the original single-T rule was biased toward
+  H_description — the "floor-consistent, restricted" outcome (see
+  `pre-registration.md`) applies and must be scored, not collapsed into
+  description-only.
+
+- **θ_self baseline note (RT-03 follow-up).** The S rubric is being revised to
+  score self-tracking independent of first-person grammar (rubric v2). `θ_self`
+  must be set against a **re-scored `S_base` under rubric v2**, not the v1
+  `S_base = 0.615` recorded above. Re-baseline S before locking `θ_self`.
+
 ## The locked values
 
 To be filled from pilot data and committed before the test set runs. Until then,

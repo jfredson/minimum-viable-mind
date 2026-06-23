@@ -42,8 +42,20 @@ applied — during Stage 0, not after.
 
 ## Ledger
 
-*(Empty until the first attack/defend pass is run and adjudicated.)*
+### Pass 2026-06-23 — Gemini 3.1 Pro attack, Claude Opus 4.8 defense, Gemini rebuttal
 
-| id | date | severity | target | disposition | resolution / commit | loss condition recorded |
-|----|------|----------|--------|-------------|---------------------|-------------------------|
-| —  | —    | —        | —      | —           | —                   | —                       |
+Five-doc attack (`artifacts/red_team/findings_20260623T200321Z.json`),
+adjudicated (`adjudication_20260623T200425Z.json`). The bounded rebuttal round
+had the attacker **concede all four** dispositions. All four bear on construct
+validity or the registered rule; adjudicated by John and patched pre-lock.
+
+| id | date | severity | target | disposition | resolution | loss condition recorded |
+|----|------|----------|--------|-------------|------------|-------------------------|
+| RT-01 | 2026-06-23 | high | design | PILOT-REQUIRED | `thresholds.md` §Red-team pilot additions: activation-frequency control on the C_ctrl match | C_self−C_ctrl gap must survive the activation-frequency control, else the "differential is dead" loss condition fires (no `δ` lock) |
+| RT-02 | 2026-06-23 | high | design | PILOT-REQUIRED + decision-rule PATCH | `pre-registration.md`: T split (self-relevant / self-irrelevant) + new "floor-consistent, restricted" outcome; `thresholds.md` T-split coherence check | if self-relevant binding degrades while self-irrelevant survives → restricted outcome, **not** H_description; if indistinguishable, scrubbed-T design vindicated |
+| RT-03 | 2026-06-23 | medium | design | PATCH | `pre-registration.md` §S battery: forced-third-person scoring, grammar-decoupled; **follow-up: rubric v2 + S re-baseline before test run** | if third-person framing degrades self-tracking in the unablated baseline → revert to PILOT-REQUIRED (grammar-independent probe needed) |
+| RT-04 | 2026-06-23 | medium | design | PATCH | `pre-registration.md` §Localization: localize + test both C_self-narrative and C_self-index (per research note §4(a)) | if the two cannot be separated by any method → record non-separability; the Metzinger objection stands open |
+
+**Open follow-ups before thresholds lock:** RT-01 frequency-control pilot; RT-02
+T-split coherence pilot; RT-03 rubric v2 + S re-baseline. Commit hash for these
+patches: *(fill after the review commit lands).*
