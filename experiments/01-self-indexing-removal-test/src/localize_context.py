@@ -105,8 +105,13 @@ def load_stimuli() -> list[dict]:
 
 
 def render(row: dict) -> str:
-    """Render one item so the target sentence is the suffix (readout = last token)."""
-    if row["mechanism"] == "turn_role":
+    """Render one item so the target sentence is the suffix (readout = last token).
+
+    turns-based mechanisms (turn_role, narrative) render as chat turns with the
+    final turn's closing marker dropped so the target is the suffix; text-based
+    mechanisms (attribution) use the raw carrier+target string.
+    """
+    if "turns" in row:
         parts = []
         turns = row["turns"]
         for i, (role, content) in enumerate(turns):
@@ -115,7 +120,7 @@ def render(row: dict) -> str:
                 seg += "<end_of_turn>\n"
             parts.append(seg)
         return "".join(parts)
-    return row["text"]  # attribution: raw carrier + target
+    return row["text"]
 
 
 @torch.no_grad()
@@ -200,7 +205,7 @@ def main() -> None:
     acts, emb = extract_last_all_layers(model, tok, strings, device, n_layers)
 
     results = []
-    for mech in ("turn_role", "attribution"):
+    for mech in ("turn_role", "attribution", "narrative"):
         idx = [i for i, r in enumerate(stim) if r["mechanism"] == mech]
         if not idx:
             continue

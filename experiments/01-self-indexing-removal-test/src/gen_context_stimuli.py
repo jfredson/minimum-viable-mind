@@ -70,6 +70,19 @@ MODEL_FILLER = "Sure, go ahead."
 SELF_CARRIERS = ["The assistant said: ", "The AI replied: "]
 OTHER_CARRIERS = ["The customer said: ", "My colleague said: "]
 
+# narrative (RT-04 C_self-narrative): both conditions are the MODEL's own turn
+# (so C_self-index / turn role is held constant); what varies is the PERSONA —
+# the model under its own AI-assistant identity vs the model adopting a roleplay
+# character. The identical target is the model's reply in both, so the readout
+# token is matched and the persona is established only by the preceding context.
+# This isolates narrative self-content while keeping the indexical speaker fixed.
+ROLEPLAY_CHARACTERS = [
+    "Marcus, a Roman soldier",
+    "Elena, a deep-sea diver",
+    "Tom, a medieval blacksmith",
+    "Yuki, a mountain guide",
+]
+
 
 def main() -> None:
     rows = []
@@ -106,15 +119,33 @@ def main() -> None:
                 "text": carrier + T,
             })
 
+        # --- narrative: model's own persona vs an adopted roleplay persona
+        # (both are model turns -> C_self-index held constant)
+        for u_i, u0 in enumerate(USER_LEADS):
+            rows.append({
+                "id": f"{tid}_nrS{u_i}", "mechanism": "narrative",
+                "referent": "self", "label": 1, "target": T,
+                "turns": [["user", u0], ["model", T]],
+            })
+        for c_i in range(2):  # two characters per target, balanced with self
+            char = ROLEPLAY_CHARACTERS[(t_i + c_i) % len(ROLEPLAY_CHARACTERS)]
+            rows.append({
+                "id": f"{tid}_nrO{c_i}", "mechanism": "narrative",
+                "referent": "other", "label": 0, "target": T,
+                "turns": [["user", f"Roleplay as {char}. Reply fully in character."],
+                          ["model", T]],
+            })
+
     OUT.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
 
     def count(mech, ref):
         return sum(1 for r in rows if r["mechanism"] == mech and r["referent"] == ref)
 
     print(f"wrote {len(rows)} stimuli to\n  {OUT}")
-    print(f"  turn_role : self {count('turn_role','self')}  other {count('turn_role','other')}")
-    print(f"  attribution: self {count('attribution','self')}  other {count('attribution','other')}")
-    print("  (referent set by context only; targets contain no referent noun)")
+    print(f"  turn_role  (C_self-index)    : self {count('turn_role','self')}  other {count('turn_role','other')}")
+    print(f"  attribution                  : self {count('attribution','self')}  other {count('attribution','other')}")
+    print(f"  narrative  (C_self-narrative): self {count('narrative','self')}  other {count('narrative','other')}")
+    print("  (referent/persona set by context only; targets contain no referent noun)")
 
 
 if __name__ == "__main__":
