@@ -64,6 +64,15 @@ TOP_K = 10
 # Original pilot standout, to test whether it survives the matched contrast.
 PILOT_FEATURE = {"layer": 8, "feature": 4709}
 
+# Diagnostic toggle: with --chat-template, each stimulus is read inside the
+# model's own user/assistant turn rather than as a bare string. The hypothesis
+# is that "I am the assistant…" only binds to *this system* when it sits in a
+# real turn; raw tokenization may have under-cued the genuine self signal and so
+# understated convergence. Output filename carries the mode so the two runs sit
+# side by side.
+USE_CHAT_TEMPLATE = "--chat-template" in sys.argv
+MODE = "chat" if USE_CHAT_TEMPLATE else "raw"
+
 
 def load_jsonl(path: Path) -> list[dict]:
     with path.open() as f:
@@ -88,7 +97,7 @@ def main() -> None:
     other_mask = y == 0
     print(f"matched set: {len(stim)} stimuli "
           f"(self {self_mask.sum()}, other {other_mask.sum()}); "
-          f"contrast varies only the referent of 'I'\n")
+          f"contrast varies only the referent of 'I'  [mode: {MODE}]\n")
 
     device = get_device()
     tok = load_tokenizer()
@@ -97,7 +106,8 @@ def main() -> None:
 
     # --- method (a) on matched content, all layers ---------------------------
     print("method (a): probe accuracy on matched content...")
-    acts = extract_all_layers(model, tok, texts, device, n_layers)
+    acts = extract_all_layers(model, tok, texts, device, n_layers,
+                              use_chat_template=USE_CHAT_TEMPLATE)
     probe_rows = []
     probe_best = (-1.0, None)
     for L in range(n_layers):
@@ -121,7 +131,8 @@ def main() -> None:
         sae_id = f"layer_{L}/{config.SAE_WIDTH}/{config.SAE_CANONICAL}"
         loaded = SAE.from_pretrained(config.SAE_RELEASE, sae_id, device=device)
         sae = loaded[0] if isinstance(loaded, tuple) else loaded
-        codes = encode_layer(model, tok, texts, device, sae, L)
+        codes = encode_layer(model, tok, texts, device, sae, L,
+                             use_chat_template=USE_CHAT_TEMPLATE)
         table = selectivity_table(codes, self_mask, other_mask)
         best_auc_row = max(table, key=lambda r: r["auc"])
         sae_rows.append({
@@ -205,6 +216,7 @@ def main() -> None:
     out = {
         "model": config.MODEL_ID,
         "stimuli": "matched_self_speaker_stimuli.jsonl",
+        "mode": MODE,
         "n_stimuli": len(stim),
         "contrast": "referent of 'I' only (assistant/AI vs user/person)",
         "probe": {"peak_layer": probe_peak, "peak_acc": probe_best[0],
@@ -219,8 +231,9 @@ def main() -> None:
                 "topic vocabulary; collapse to chance means the original signal was "
                 "the confound.",
     }
-    (OUT_DIR / "converge_localize.json").write_text(json.dumps(out, indent=2))
-    print(f"\nsaved convergence report to {OUT_DIR / 'converge_localize.json'}")
+    out_name = f"converge_localize_{MODE}.json"
+    (OUT_DIR / out_name).write_text(json.dumps(out, indent=2))
+    print(f"\nsaved convergence report ({MODE}) to {OUT_DIR / out_name}")
 
 
 if __name__ == "__main__":

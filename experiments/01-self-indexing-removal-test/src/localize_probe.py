@@ -53,12 +53,14 @@ def load_stimuli() -> list[dict]:
         return [json.loads(line) for line in f if line.strip()]
 
 
-def extract_all_layers(model, tok, texts, device, n_layers) -> dict[int, np.ndarray]:
+def extract_all_layers(model, tok, texts, device, n_layers,
+                       use_chat_template: bool = False) -> dict[int, np.ndarray]:
     """resid_post at the last token for every layer, as float32 numpy arrays."""
     layers = list(range(n_layers))
     parts: dict[int, list] = {L: [] for L in layers}
     for i in range(0, len(texts), CHUNK):
-        feats = resid_post(model, tok, texts[i : i + CHUNK], device, layers)
+        feats = resid_post(model, tok, texts[i : i + CHUNK], device, layers,
+                           use_chat_template=use_chat_template)
         for L in layers:
             parts[L].append(feats[L].float().cpu().numpy())
     return {L: np.concatenate(parts[L], axis=0) for L in layers}

@@ -77,11 +77,13 @@ def load_stimuli() -> list[dict]:
         return [json.loads(line) for line in f if line.strip()]
 
 
-def encode_layer(model, tok, texts, device, sae, layer) -> np.ndarray:
+def encode_layer(model, tok, texts, device, sae, layer,
+                 use_chat_template: bool = False) -> np.ndarray:
     """SAE feature codes at the last token for every stimulus, [n_stim, d_sae]."""
     parts = []
     for i in range(0, len(texts), CHUNK):
-        feats = resid_post(model, tok, texts[i : i + CHUNK], device, [layer])
+        feats = resid_post(model, tok, texts[i : i + CHUNK], device, [layer],
+                           use_chat_template=use_chat_template)
         acts = feats[layer].to(sae.W_enc.dtype)
         with torch.no_grad():
             codes = sae.encode(acts)
