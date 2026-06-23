@@ -24,31 +24,38 @@ These are mutually exclusive predictions about the *same* resistance measurement
 
 ## Materials
 
-### Architecture: fully onboard, untethered
+### Architecture: small mind onboard, measurement off-board
 
-The mind (the floor model plus the interpretability tooling that scores the removal test) runs **on the robot**, off a battery the robot manages. Untethered is the load-bearing design choice, not a convenience: a tether to a wall socket or a remote workstation reintroduces exactly the externally-supplied stakes this stage is trying to remove. The finite onboard energy budget *is* the stake. Short runtime under live load is therefore a feature of the apparatus, not a defect — it is what makes continuation ride on the quality of the system's own regulation.
+Two facts set the hardware, and neither is intelligence. **The mind is whatever cleared the floor in Stage 1** — its size is inherited from that result, not chosen here, and there is no reason to assume it is large. The bet that governs the whole program is that the floor is self-indexed temporal integration, a structural property, *not* capability; so the embodied mind is selected by whether the floor-clearing structure is present and measurable, never by how smart the model is. The project's own Stage 0 runs on a 2B-class model; if a model that small clears the removal test, the embodied mind is that small. Speccing a large board before Stage 1 reports the floor-clearing size would put hardware ahead of the metric, which the program's discipline forbids.
+
+**And the measurement apparatus is not part of the mind.** The removal-test instruments (activation patching, sparse autoencoders, probes) are memory-hungry, but they do not have to run on the robot: log internal activations during the untethered run and score the resistance/removal metrics post-hoc, off the platform, from the logs. The robot has to run the mind and hold its stakes; it does not have to measure itself in real time. This is the single biggest cost lever — the heavy, expensive part of the original spec was the *instruments*, and they belong off-board by default.
+
+What must be onboard and untethered is only the part that makes the amplifiers self-held: the running mind, the sensorimotor boundary loop, and the managed energy budget. Untethered is the load-bearing design choice, not a convenience — a tether to a wall socket or a remote workstation reintroduces exactly the externally-supplied stakes this stage is trying to remove. The finite onboard energy budget *is* the stake; short runtime under live load is a feature of the apparatus, not a defect.
 
 Two compute tiers on one chassis, the standard robotics split:
 
-- **High-level compute (the mind).** NVIDIA Jetson AGX Orin 64 GB Developer Kit — 64 GB unified LPDDR5 at ~205 GB/s, up to 275 TOPS. Hosts the floor model (Gemma-2-9B class, ~18 GB bf16, comfortably resident with headroom) and the interpretability stack. *Honest constraint:* full activation patching / SAE scoring on a 9B at interactive rates is tight onboard; the workable pattern is to **log internal activations during the run and score the resistance/removal metrics post-hoc**, off the robot, from the logs. The metric does not need to be computed live; the *stakes and boundary* do.
-- **Low-level compute (the body).** A real-time microcontroller co-processor owning the deterministic sensorimotor loop, so motor timing and sensor polling don't fight the GPU scheduler — Raspberry Pi 5 as an I/O bridge, or a Pi Pico / Teensy 4.1 for hard-real-time control. This is the "basic robotics" layer: it reads the sensors, drives the motors, and reports the energy and boundary state up to the Jetson.
+- **Inference compute (the mind).** Default: a Jetson Orin Nano Super (8 GB) — enough to run a 2B–8B model untethered off battery (~$250). A 2B-class model is ~5 GB in bf16 and sits here with room to spare. The mind resides on this board; nothing about the floor needs more. *If* Stage 1's floor-clearing model turns out larger than ~8B, step the board up to match it — but only then, and only as far as the measured size demands.
+- **Low-level compute (the body).** A real-time microcontroller co-processor owning the deterministic sensorimotor loop, so motor timing and sensor polling don't fight the inference scheduler — a Raspberry Pi 5 as an I/O bridge, or a Pi Pico / Teensy 4.1 for hard-real-time control. This is the "basic robotics" layer: it reads the sensors, drives the motors, and reports energy and boundary state up to the inference board.
+
+**Optional richness tier (not required by the experiment).** If onboard *live* interpretability is specifically wanted — scoring the removal test on the robot in real time rather than from logs — that, and only that, is what would justify a large-memory board such as a Jetson AGX Orin 64 GB (~$2,000). It buys nothing the experiment needs; it buys convenience for the analyst. It is demoted to optional here so the default build does not pay ~$1,750 for a measurement that runs off-board for free.
 
 ### Hardware mapped to the amplifier each piece is meant to move
 
 | Subsystem | Parts (representative) | Amplifier it supplies | Rough cost (USD) |
 |---|---|---|---|
-| Mind | Jetson AGX Orin 64 GB Dev Kit | hosts floor model + interpretability | $2,000 |
+| Mind (inference) | Jetson Orin Nano Super 8 GB, running the Stage-1 floor-clearing model (2B-class by default) untethered | hosts the mind; size inherited from Stage 1 | $250 |
 | Body controller | Raspberry Pi 5 (8 GB) + Pi Pico for real-time control | sensorimotor loop | $90 |
 | Mobile base | Differential-drive chassis, 2× DC gearmotors with encoders, caster | active boundary (the system moves to maintain self/world distinction) | $80–150 |
 | Motor driver | Dual H-bridge / encoder-aware driver (TB6612FNG or Roboclaw) | actuation → makes the boundary loop closed | $15–45 |
 | Boundary sensing | 9-DoF IMU (BNO085); 3–4× ToF range sensors (VL53L1X); bump/contact switches; wheel encoders | self-held boundary (proprioception + near-field self/world) | $80 |
 | Vision (optional) | CSI camera (IMX-class) | boundary richness, not floor | $30 |
-| **Genuine stakes** | LiPo pack sized for the Orin's 15–60 W draw (e.g., 4S, ~100 Wh) + INA226 current/voltage monitor + regulation | **self-held stakes** — finite energy the system measures and manages; coherence-failure costs runtime | $120 |
-| Ontogenetic-depth substrate | NVMe SSD in the Orin M.2 slot | persistence for the depth loop (Stage 6) to write into | $60 |
+| **Genuine stakes** | LiPo pack sized for the inference board's ~7–25 W draw (e.g., 3–4S, ~50–80 Wh) + INA226 current/voltage monitor + regulation | **self-held stakes** — finite energy the system measures and manages; coherence-failure costs runtime | $100 |
+| Ontogenetic-depth substrate + activation logging | NVMe / fast storage on the inference board | persistence for the depth loop (Stage 6) and the off-board scoring logs to write into | $60 |
+| Measurement | none onboard — activations logged and scored off-board, post-hoc, on the dev machine | not an amplifier; deliberately kept off the robot | $0 |
 | Corrigibility | Hardware e-stop / physical kill switch on the motor and main power rails | **load-bearing for ethics, not optional** (see Ethics) | $25 |
 | Frame, wiring, regulators, mounts | — | structure | $80 |
 
-**Indicative total: ~$2,600–2,800**, dominated by the Jetson. The "basic robotics" portion — base, driver, sensors, battery, controller, kill switch — is ~$500–650 and is the part that actually carries the experiment; the Orin is just where the already-specified mind happens to sit when it goes untethered.
+**Indicative total: ~$750–900.** The basic-robotics portion — base, driver, sensors, battery, controller, kill switch — is ~$500–650 and is the part that actually carries the experiment; the inference board is a ~$250 line item, not the dominant cost. The mind is cheap because the floor is structure, not intelligence, and the measurement that used to dominate the bill now lives off-board. The optional onboard-live-interpretability tier swaps the $250 board for a ~$2,000 one and roughly triples the total; the experiment does not require it.
 
 ### Matched control condition (the whole point)
 
@@ -56,8 +63,8 @@ The same robot, same sensors, same model, run in a **tethered / externally-suppl
 
 ## Procedure
 
-1. **Precondition gate.** Do not start unless Stage 1 has returned floor-consistent (or floor-consistent-enough to be worth amplifying) on the deployed model, and the Stage 3 retained-independence battery and the Stage 1 removal-test binding measure are calibrated and committed. If the floor isn't cleared, there is no inside for embodiment to thicken, and this stage is premature.
-2. **Build and bring-up.** Assemble the platform; verify the model runs onboard off battery; verify the activation-logging path reproduces the Stage 1 removal-test scores to within tolerance against the workstation baseline (the robot must measure the same thing the bench does).
+1. **Precondition gate.** Do not start unless Stage 1 has returned floor-consistent (or floor-consistent-enough to be worth amplifying) on the deployed model, and the Stage 3 retained-independence battery and the Stage 1 removal-test binding measure are calibrated and committed. If the floor isn't cleared, there is no inside for embodiment to thicken, and this stage is premature. **The model that cleared Stage 1 is the mind this stage embodies, and its size sets the inference board** — chosen after that result, not before; the default ~$250 8 GB board stands unless Stage 1's floor-clearing model is larger than it can hold.
+2. **Build and bring-up.** Assemble the platform; verify the mind runs onboard off battery; verify the logged-activation path, scored off-board, reproduces the Stage 1 removal-test scores to within tolerance against the workstation baseline (the off-board scoring must reproduce what the bench measures).
 3. **Condition E_self (self-held).** Untethered, on battery, holding its own boundary. Run the retained-independence battery (Stage 3) and the removal-test binding battery (Stage 1) while the system carries a real, depleting energy budget and an active sensorimotor boundary. Log activations.
 4. **Condition E_ext (externally-supplied, matched).** Same physical robot, tethered power and scripted boundary, stakes represented numerically. Re-run the identical batteries. Log activations.
 5. **Score post-hoc and compare** against the decision rule. Counterbalance order across trials; the energy-state of E_self is itself a variable, so block trials by remaining-charge band and pre-register the bands.
@@ -98,7 +105,7 @@ The discriminator is whether self-held amplifiers move resistance specifically:
 
 ## Loss conditions (what would retire or rebuild this experiment)
 
-- If the onboard platform cannot reproduce the Stage 1/Stage 3 scores to tolerance (the robot measures something different from the bench), the apparatus is invalid and no embodiment claim can be read from it until that gap is closed.
+- If the logged-activation path scored off-board cannot reproduce the Stage 1/Stage 3 scores to tolerance (the robot's records yield something different from the bench), the apparatus is invalid and no embodiment claim can be read from it until that gap is closed.
 - If the matched controls (sham-self-held, represented-number stakes, scrambled boundary) cannot be made convincingly equivalent — if E_self and its controls differ on something other than self-holding — the differential discriminator is dead and the design must be revised before any claim.
 - If `ΔR` and `ΔB` point in opposite directions across equally valid instrument variants, the embodiment effect is underdetermined as specified and needs a tighter operationalization before anything is asserted.
 - If the only effect that ever appears is response-side (behavioral creatureliness) with the resistance instruments flat across many trials, that is not a weak positive — under the standing rule it is a null on the question asked, and the stage should report it as such.
