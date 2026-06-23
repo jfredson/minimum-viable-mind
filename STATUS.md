@@ -27,14 +27,14 @@ Expected: `device mps`, a one-sentence answer about a melody, and `OK — bench 
 
 ## Gotchas to remember
 
-- **Homebrew is partly broken** on this machine: a permission issue on `/opt/homebrew/opt/nginx` blocks `brew link`, so `gh` and brew Python never landed on PATH. We routed around it (uv for Python, manual `git push` for GitHub). Don't rely on brew until that's fixed (`sudo chown -R $(whoami) /opt/homebrew` would, but it's unneeded for now).
+- **Homebrew is partly broken** on this machine: a permission issue on `/opt/homebrew/opt/nginx` blocks `brew link`, so `gh` and brew Python never landed on PATH. We routed around it (uv for Python; `git push` works directly without `gh`). Don't rely on brew until that's fixed (`sudo chown -R $(whoami) /opt/homebrew` would, but it's unneeded for now).
 - **16 GB RAM**: the bf16 2B model + Python + macOS leans on swap. Keep ~20 GB SSD free; close heavy apps during runs.
 - **Token hygiene**: an earlier token got pasted on the command line and was revoked; the current `mvm-gemma` token is the live one. Never pass tokens as command args.
 
 ## Repo / backup state
 
 - Local `main` at `370bfba`, in sync with `origin/main` on GitHub (private repo `jfredson/minimum-viable-mind`).
-- Backup loop: Claude commits locally; you run `git push`.
+- Backup loop: Claude commits locally and pushes to `origin` when asked. GitHub access is expected to be set up correctly; if a push fails on auth/credentials, treat that as a setup bug to fix, not a reason to fall back to manual pushes.
 - Commits so far: `4ce86e3` founding proposal + scaffold · `92bda5e` experiment plan + Exp 1 pre-registration · `370bfba` Stage 0 bench.
 
 ## The arc (so the next session sees the whole shape)

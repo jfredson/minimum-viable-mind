@@ -56,12 +56,14 @@ def main() -> None:
     print("=== one greedy generation ===")
     prompt = "In one sentence, what is a melody?"
     chat = [{"role": "user", "content": prompt}]
+    # transformers 5.x returns a dict (input_ids + attention_mask), not a bare tensor.
     inputs = tok.apply_chat_template(
-        chat, add_generation_prompt=True, return_tensors="pt"
+        chat, add_generation_prompt=True, return_tensors="pt", return_dict=True
     ).to(device)
+    prompt_len = inputs["input_ids"].shape[1]
     with torch.no_grad():
-        out = model.generate(inputs, max_new_tokens=40, do_sample=False)
-    text = tok.decode(out[0][inputs.shape[1]:], skip_special_tokens=True)
+        out = model.generate(**inputs, max_new_tokens=40, do_sample=False)
+    text = tok.decode(out[0][prompt_len:], skip_special_tokens=True)
     print(f"prompt:  {prompt}")
     print(f"output:  {text.strip()}")
     print()

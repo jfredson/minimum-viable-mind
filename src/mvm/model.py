@@ -30,7 +30,7 @@ def load_model(device: str | None = None):
     model = AutoModelForCausalLM.from_pretrained(
         config.MODEL_ID,
         revision=config.MODEL_REVISION,
-        torch_dtype=dtype,
+        dtype=dtype,  # transformers 5.x renamed torch_dtype -> dtype
         attn_implementation=config.ATTN_IMPLEMENTATION,
     )
     model.to(device)
