@@ -43,21 +43,43 @@ Mac-specific gotcha: macOS caps GPU-usable unified memory (Metal "wired" limit) 
 ~65–75% of total by default, so a 24GB machine exposes only ~16GB to the GPU —
 about the weight size alone.
 
-Apple M4 Mac mini configs (verified June 2026): base M4 = 16/24/**32**GB;
-M4 Pro = 24/48/64GB. (The 32GB base option may only appear in Apple's full
-custom configurator and can be absent from discount/education storefronts.)
+The binding constraint is **usable-GPU memory, not GPU core count** — an interp
+run is memory-bound (cache activations across all layers + SAE + KV cache) before
+it is compute-bound. Memory bandwidth helps throughput once you fit; it does not
+let you fit. So read the table memory-first.
 
-| Config | bf16 8B interp+gen+SAE | Verdict |
-|---|---|---|
-| **24GB** (base M4, ~$799) | ❌ over the ~16GB Metal wired limit on weights alone; fits only via **4-bit quant**, which alters the activations being measured/ablated | not for the registered run (4-bit compromise only); OK only if the registered model drops to ~3–4B bf16 |
-| **32GB** (base M4, ~$999) | ✅ ~22–23GB peak fits with thin headroom, no quantization | **value pick** if reachable |
-| **48GB** (M4 Pro, ~$1,599) | ✅ comfortable; room for 13B, multiple SAEs, larger batches | **recommended** — and ~2× GPU cores + bandwidth (~273 vs ~120 GB/s) ≈ 2× throughput, which compounds across the 5-checkpoint RT-06 ladder |
+macOS-usable GPU memory ≈ 65–75% of total. M4-generation bandwidth: base ~120 GB/s,
+M4 Pro ~273 GB/s, M4 Max ~410 GB/s (14-core/32-core GPU) / ~546 GB/s
+(16-core/40-core GPU).
 
-**Recommendation:** 32GB base mini if the full configurator surfaces it; otherwise
-the **48GB M4 Pro** (the price gap is ~1.8×, not 2×, and buys ~2× speed too).
-Avoid 24GB for a bf16 8B run — it forces 4-bit. A 24GB box is only sensible if the
-registered model is downsized to ~3–4B (bf16 ≈ 6–8GB), which weakens the RT-06
-capability-gating signal (gating is more pronounced in larger models).
+**Pricing updated 2026-06-26 (military-discount quotes John was given).** The
+earlier configs/prices (24/32/48GB mini at ~$799/$999/$1,599) are superseded.
+
+| Config | Price | ~GPU-usable | bf16 8B interp run | Verdict |
+|---|---|---|---|---|
+| **M4 mini**, 24GB (10c/10c) | $899 | ~17 GB | ❌ over the Metal wired limit on weights alone; fits only via **4-bit quant**, which alters the activations being measured/ablated | Reject — memory is binding; the low price doesn't fix it |
+| **M4 Pro mini**, 48GB (12c/16c GPU) | $1,979 | ~33 GB | ✅ comfortable; room for 13B, multiple SAEs, larger batches | **Recommended** — best capability-per-dollar |
+| **M4 Max Studio**, 36GB (14c/32c GPU) | $2,249 | ~25 GB | ✅ fits, but only ~2–3 GB slack | **Avoid — the trap.** Costs *more* than the 48GB mini for *less* usable memory; the Max's ~1.5× bandwidth doesn't compensate for thin interp headroom |
+| **M4 Max Studio**, 64GB (16c/40c GPU) | $3,149 | ~45 GB | ✅ luxurious | **Splurge pick** — only config that buys both ~2× throughput *and* comfortable headroom |
+
+**Recommendation:** the **48GB M4 Pro mini ($1,979)** remains the pick — it is the
+cheapest config that clears the memory bar with real headroom. Avoid the 24GB
+(forces 4-bit) and especially the **36GB Studio** (more money than the 48GB mini
+for less usable memory — the Max chip is wasted when you're memory-bound). The only
+reason to leave the mini is the **64GB M4 Max Studio ($3,149)**: it adds the Max's
+~2× bandwidth + GPU cores (which compounds across the 5-checkpoint RT-06 ladder)
+*and* ~45 GB usable (room to hold two checkpoints at once, or move to 13B+). That is
+a +$1,170 bet on going deeper into local interp work, not a need for *this* run —
+Stages 0–1 run on the existing Air sandbox, and the mini only becomes the bottleneck
+at step 5.
+
+**Decision (2026-06-26): 48GB M4 Pro mini ($1,979), confirmed at the updated
+pricing.** Rationale: clears the memory bar with real headroom, matches the
+project's "minimum viable / don't over-provision" ethos, and the ~$1,170 saved
+versus the 64GB Studio is preserved for possible robotics-specific hardware if that
+avenue is pursued later. The 64GB Studio stays the documented upgrade path if local
+interp work scales past 8B or needs a high-frequency iteration loop; the 36GB Studio
+is rejected (less usable memory than the mini at a higher price).
 
 ## Candidates
 
