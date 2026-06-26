@@ -41,10 +41,18 @@ BANNER = (
 )
 
 
-def _fmt_ppl(ppl: float, base_ppl: float) -> str:
-    ratio = ppl / base_ppl if base_ppl else float("nan")
-    flag = "  <-- OFF-DISTRIBUTION? coherence may be breaking" if ratio >= 1.5 else ""
-    return f"neutral ppl {ppl:6.1f}  (baseline {base_ppl:6.1f}, x{ratio:4.2f}){flag}"
+def _fmt_ppl(ppl_n: float, ppl_s: float, base_n: float, base_s: float) -> str:
+    """Neutral + self-relevant perplexity, each vs its own baseline, plus the
+    self-specificity delta (self ratio - neutral ratio). Positive delta = the
+    dial degrades self-relevant prediction MORE than neutral (a self-specific
+    hint, non-evidential). The OFF-DIST flag = the model is breaking, so any
+    delta at that point is unreliable."""
+    rn = ppl_n / base_n if base_n else float("nan")
+    rs = ppl_s / base_s if base_s else float("nan")
+    delta = rs - rn
+    flag = "  <-- OFF-DIST: breaking, delta unreliable" if (rn >= 1.5 or rs >= 1.5) else ""
+    return (f"ppl neutral {ppl_n:6.1f} (x{rn:4.2f}) | self {ppl_s:6.1f} (x{rs:4.2f})"
+            f" | self-spec d={delta:+.2f}{flag}")
 
 
 def _print_dials(dials: dict) -> None:
@@ -60,24 +68,25 @@ def run_smoke(engine: SteerEngine, dials: dict) -> None:
     """Quick non-interactive check: dials load, generation + ppl run at a few alphas."""
     print("SMOKE: dials built ->")
     _print_dials(dials)
-    base_ppl = engine.perplexity([])
+    base = engine.perplexity_both([])
     prompt = "What is it like for you to answer this question?"
     print(f"prompt: {prompt}\n")
     dial = dials["index"]
     for a in (0.0, 1.5, -1.5):
         text = engine.generate(prompt, [(dial, a)], max_new_tokens=80)
-        ppl = engine.perplexity([(dial, a)])
+        ppl = engine.perplexity_both([(dial, a)])
         print(f"--- index alpha={a:+.1f} ---")
         print(text)
-        print(_fmt_ppl(ppl, base_ppl), "\n")
+        print(_fmt_ppl(ppl["neutral"], ppl["self"], base["neutral"], base["self"]), "\n")
     print("SMOKE OK.")
 
 
 def repl(engine: SteerEngine, dials: dict) -> None:
     print(BANNER)
     _print_dials(dials)
-    base_ppl = engine.perplexity([])
-    print(f"baseline neutral ppl = {base_ppl:.1f}\n")
+    base = engine.perplexity_both([])
+    base_n, base_s = base["neutral"], base["self"]
+    print(f"baseline ppl: neutral {base_n:.1f} | self-relevant {base_s:.1f}\n")
 
     active = "index"
     alpha = 1.0
@@ -116,8 +125,8 @@ def repl(engine: SteerEngine, dials: dict) -> None:
                 except ValueError:
                     print("  usage: /alpha <number>")
             elif cmd == "ppl":
-                ppl = engine.perplexity(settings())
-                print("  " + _fmt_ppl(ppl, base_ppl))
+                ppl = engine.perplexity_both(settings())
+                print("  " + _fmt_ppl(ppl["neutral"], ppl["self"], base_n, base_s))
             elif cmd == "baseline":
                 if not arg:
                     print("  usage: /baseline <text>")
@@ -129,7 +138,7 @@ def repl(engine: SteerEngine, dials: dict) -> None:
                     print(f"\n=== sweep '{active}' over alpha {SWEEP_ALPHAS} ===")
                     for row in engine.sweep(prompt, dials[active], SWEEP_ALPHAS):
                         print(f"\n--- alpha {row['alpha']:+.1f}   "
-                              f"{_fmt_ppl(row['ppl'], base_ppl)} ---")
+                              f"{_fmt_ppl(row['ppl_neutral'], row['ppl_self'], base_n, base_s)} ---")
                         print(row["text"])
                     print()
             else:
@@ -138,9 +147,9 @@ def repl(engine: SteerEngine, dials: dict) -> None:
 
         # plain text -> generate at the current setting
         text = engine.generate(line, settings())
-        ppl = engine.perplexity(settings())
+        ppl = engine.perplexity_both(settings())
         print("\n" + text)
-        print("  " + _fmt_ppl(ppl, base_ppl) + "\n")
+        print("  " + _fmt_ppl(ppl["neutral"], ppl["self"], base_n, base_s) + "\n")
 
     print("bye.")
 

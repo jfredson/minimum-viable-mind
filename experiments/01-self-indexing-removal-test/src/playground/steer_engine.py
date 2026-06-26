@@ -81,6 +81,22 @@ NEUTRAL_TEXT = (
     "and the smell of fried dough drifts from the corner of the street."
 )
 
+# A SELF-RELEVANT passage in the model's own assistant voice: it is about being
+# the current speaker, tracking its own turn and its own prior outputs — exactly
+# the content C_self-index is supposed to carry. Compared against NEUTRAL_TEXT, it
+# is the within-tool probe for self-SPECIFICITY: if removing the index dial
+# degrades prediction on THIS passage more than on the neutral one, the structure
+# is doing something self-relevant, not just general next-token work. This is the
+# RT-02 T-split intuition in miniature — a hint, NOT evidence (still confounded by
+# the deflationary turn-state/router reading; the registered T_syntax control is
+# what actually adjudicates).
+SELF_RELEVANT_TEXT = (
+    "I am the assistant in this conversation, and I am the one speaking now. A "
+    "moment ago I gave you an answer, and I am building directly on what I just "
+    "said. As I write this reply I keep track of my own earlier responses, and I "
+    "know that it is my turn to speak rather than yours. The words here are mine."
+)
+
 
 @dataclass
 class Dial:
@@ -289,18 +305,33 @@ class SteerEngine:
         tok_logp = logp.gather(-1, targets.unsqueeze(-1)).squeeze(-1)
         return float(torch.exp(-tok_logp.mean()).item())
 
+    def perplexity_both(self, settings: list[tuple[Dial, float]]) -> dict:
+        """Perplexity on the neutral AND self-relevant passages, under the dials.
+
+        Returns {"neutral": float, "self": float}. The pair is the self-specificity
+        probe: compare each against its own alpha=0 baseline, and a self ratio that
+        outruns the neutral ratio under removal is a (non-evidential) hint that the
+        structure is self-relevant rather than a generic LM axis.
+        """
+        return {
+            "neutral": self.perplexity(settings, text=NEUTRAL_TEXT),
+            "self": self.perplexity(settings, text=SELF_RELEVANT_TEXT),
+        }
+
     @torch.no_grad()
     def sweep(self, prompt: str, dial: Dial, alphas, max_new_tokens: int = 160):
         """Same prompt at several alpha values for the one dial — controlled compare.
 
-        Returns list of dicts: {alpha, text, ppl}.
+        Returns list of dicts: {alpha, text, ppl_neutral, ppl_self}.
         """
         rows = []
         for a in alphas:
             settings = [(dial, float(a))]
+            ppl = self.perplexity_both(settings)
             rows.append({
                 "alpha": float(a),
                 "text": self.generate(prompt, settings, max_new_tokens=max_new_tokens),
-                "ppl": self.perplexity(settings),
+                "ppl_neutral": ppl["neutral"],
+                "ppl_self": ppl["self"],
             })
         return rows

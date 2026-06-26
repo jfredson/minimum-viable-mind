@@ -47,6 +47,22 @@ The **`/sweep`** command re-runs one prompt at `alpha = -2,-1,0,1,2` so you comp
 removed vs baseline vs amplified on identical input — the controlled way to feel a
 difference, rather than chasing a single drifting conversation.
 
+### Self-specificity probe (the `self-spec d=` number)
+
+Perplexity is now reported on **two** passages: the self-free `NEUTRAL_TEXT` and a
+`SELF_RELEVANT_TEXT` in the model's own assistant voice (about being the current
+speaker, tracking its own turn and prior outputs — the content C_self-index should
+carry). Each is shown against its own `alpha=0` baseline, plus a delta
+`d = (self ratio) - (neutral ratio)`.
+
+A **positive d under removal** (negative alpha) means the dial degrades
+self-relevant prediction *more* than neutral prediction — a hint the structure is
+self-relevant rather than a generic LM axis. This is the RT-02 T-split intuition in
+miniature. It is **a hint, not evidence**: it cannot separate "self" from the
+deflationary turn-state/router reading (RT-05), and when the `OFF-DIST` flag fires
+the model is breaking, so the delta there is unreliable. The adjudicating test is
+the registered `T_syntax` control, not this tool.
+
 ## Run it (on the Mac — needs MPS + the model; will not run in the Linux sandbox)
 
 ```bash
