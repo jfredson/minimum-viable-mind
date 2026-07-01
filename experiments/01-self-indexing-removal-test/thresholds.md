@@ -168,6 +168,24 @@ pass 2 adds RT-05/RT-06/RT-07/RT-08 below). All must run on the pilot set
   absorbing the attention mass recover performance?), promoted to required only if
   the OOD gate + differential fail to screen it in pilot.
 
+### Pass 3 addition (2026-07-01) — RT-09 (external review, not from the Gemini loop)
+
+- **Generic-speaker reflexivity control (RT-09).** RT-05 screens the syntax-router
+  reading of C_self-index; RT-09 screens the deflation that survives it — that
+  C_self-index is **generic speaker-slot tracking** (present for any observed
+  dialogue, with the assistant merely occupying one slot), not a *reflexive*
+  self-index. Pilot, before lock: localize C_speaker-generic from the
+  `observed_speaker` contrast (third-party transcript inside a single user turn;
+  model participates in neither condition; same embedding-floor and
+  permutation-null gates), then run the RT-04 three-way geometry
+  (`separate_self.py`) **and** the causal cross-patch (`patch_context.py`)
+  against C_self-index. **Pre-registered decision rule:** generic if cross-decode
+  ≥ 0.9 AUC **and** |cos| ≥ 0.5 **and** cross-patch restoration ratio ≥ 0.5.
+  **Loss condition:** generic verdict ⇒ "reflexivity not established" — no
+  H_center attaches to C_self-index as localized; do not lock `δ`/`θ` against it.
+  Partial separation ⇒ project C_speaker-generic out and the **residual** becomes
+  the removal-test target (primary), per the pre-registration amendment.
+
 ## The locked values
 
 To be filled from pilot data and committed before the test set runs. Until then,

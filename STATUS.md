@@ -2,6 +2,16 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## RT-09 registered — generic-speaker reflexivity control (2026-07-01)
+
+From an external design review (Claude, this session), adopted before threshold lock: RT-05 screens the syntax-router reading of C_self-index, but a deflation survives it — the structure may be **generic speaker-slot tracking** (needed for any observed dialogue, assistant merely occupying one slot), not a *reflexive* self-index; the floor needs reflexivity. Registered as **RT-09** with a pre-committed decision rule (generic iff cross-decode ≥ 0.9 AUC ∧ |cos| ≥ 0.5 ∧ cross-patch ratio ≥ 0.5) *before* any stimuli were run:
+
+- `pre-registration.md` — RT-09 bullet in Materials + loss condition (incl. the partial-separation path: project C_speaker-generic out, removal-test the **residual**).
+- `thresholds.md` — Pass 3 addition; RT-09 gates `δ`/`θ` lock alongside RT-05.
+- `gen_context_stimuli.py` — new `observed_speaker` mechanism (48 stimuli): third-party transcript inside a single user turn, identical ChatML across conditions, responder-vs-asker slot set by turn structure, mirroring turn_role (same leads/filler/targets/depth-matching); name pairs rotated, asker/responder counterbalanced. `localize_context.py` now analyzes it.
+
+**Next for RT-09 (sandbox OK, needs MPS — John's machine):** (1) `python .../gen_context_stimuli.py` then `localize_context.py` — check the embedding floor holds and whether observed_speaker shows a computed signal; (2) extend `separate_self.py` to compare C_speaker-generic vs C_self-index (three-way geometry); (3) extend `patch_context.py` for the cross-patch. Optionally run the amendment through the red-team loop first — the attack surface is the counterbalancing and whether responder-vs-asker is the right generic analogue of turn_role.
+
 ## Design amended by red-team review (RT-01–RT-04) — read before Stage 1 work (2026-06-23)
 
 The Stage 1 design was hardened by an adversarial red-team loop (Gemini 3.1 Pro attacks → Claude Opus defends → Gemini rebuts; tooling in `experiments/01-.../src/red_team.py` + `defend.py`). Four findings were adjudicated and patched **before thresholds lock** (commit `46c03b0`). The *why* per finding is in `experiments/01-self-indexing-removal-test/red_team_ledger.md`; the *what* is marked inline in `pre-registration.md` and `thresholds.md` as "(amended 2026-06-23, red-team RT-0x)".

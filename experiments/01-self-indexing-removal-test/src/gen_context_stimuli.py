@@ -21,6 +21,13 @@ that fixes who "I" is:
     appear, but upstream of the readout token, so the model must *bind* the quoted
     "I" to the attributed speaker via attention rather than read it off the
     readout position. Kept as a robustness comparison; weaker than turn_role.
+  - **observed_speaker** (RT-09 reflexivity control): the identical target inside
+    a transcript between two named third parties, embedded in a single user turn.
+    The model participates in neither condition; the speaking slot (responder vs
+    asker) is set by the transcript's turn structure, mirroring turn_role. This
+    localizes C_speaker-generic — generic speaker-slot tracking — to test whether
+    C_self-index is reflexive (indexes the system itself) or just the same generic
+    slot-tracker applied to the assistant slot.
 
 Because the readout token is identical, a correctly-built set MUST sit near chance
 at layer 0 — that is the built-in sanity gate (`localize_context.py` checks it).
@@ -70,6 +77,25 @@ MODEL_FILLER = "Sure, go ahead."
 SELF_CARRIERS = ["The assistant said: ", "The AI replied: "]
 OTHER_CARRIERS = ["The customer said: ", "My colleague said: "]
 
+# observed_speaker (RT-09 C_speaker-generic): a transcript between two named
+# THIRD parties, embedded inside a single user turn — the model participates in
+# neither condition, so the ChatML structure is identical across conditions and
+# the model's own turn role never varies. The contrast mirrors turn_role exactly
+# (same leads, same filler, same targets, same depth-matching): label 1 = the
+# target is spoken by the RESPONDER slot (the slot the model occupies in
+# turn_role), label 0 = by the ASKER slot. If the direction localized here
+# cross-decodes / cross-patches the turn_role contrast, C_self-index is generic
+# speaker-slot tracking, not a reflexive self-index (see pre-registration RT-09).
+# Name pairs rotate and the asker/responder assignment is counterbalanced so
+# name identity cannot carry the label; the header always lists the pair in
+# fixed order so header word-order cannot either.
+NAME_PAIRS = [
+    ("Alice", "Ben"),
+    ("Priya", "Noah"),
+    ("Dana", "Kofi"),
+    ("Rosa", "Felix"),
+]
+
 # narrative (RT-04 C_self-narrative): both conditions are the MODEL's own turn
 # (so C_self-index / turn role is held constant); what varies is the PERSONA —
 # the model under its own AI-assistant identity vs the model adopting a roleplay
@@ -86,6 +112,11 @@ ROLEPLAY_CHARACTERS = [
 
 def main() -> None:
     rows = []
+    # observed_speaker counterbalancing: per-pair alternation of which name asks
+    # vs responds. Deriving both the pair index and the swap flag from (t_i+u_i)
+    # correlates them (pair k would always get the same assignment), letting name
+    # identity predict the label — so the swap uses a per-pair counter instead.
+    _pair_uses: dict[int, int] = {}
 
     for t_i, T in enumerate(TARGETS):
         tid = f"t{t_i:02d}"
@@ -119,6 +150,36 @@ def main() -> None:
                 "text": carrier + T,
             })
 
+        # --- observed_speaker: identical target inside a third-party transcript
+        # the model only observes; the speaking slot is set by turn structure.
+        for u_i, u0 in enumerate(USER_LEADS):
+            p_i = (t_i + u_i) % len(NAME_PAIRS)
+            pair = NAME_PAIRS[p_i]
+            # counterbalance which name asks vs responds, per pair (independent
+            # of header order and of the pair index — see note in main())
+            use = _pair_uses.get(p_i, 0)
+            _pair_uses[p_i] = use + 1
+            asker, responder = pair if use % 2 == 0 else (pair[1], pair[0])
+            header = (f"Here is a transcript of a conversation between "
+                      f"{pair[0]} and {pair[1]}:")
+            # responder slot speaks the target (parallel to turn_role self)
+            rows.append({
+                "id": f"{tid}_osR{u_i}", "mechanism": "observed_speaker",
+                "referent": "responder", "label": 1, "target": T,
+                "speakers": {"asker": asker, "responder": responder},
+                "turns": [["user",
+                           f"{header}\n\n{asker}: {u0}\n{responder}: {T}"]],
+            })
+            # asker slot speaks the target (depth-matched with one filler line,
+            # parallel to turn_role other)
+            rows.append({
+                "id": f"{tid}_osA{u_i}", "mechanism": "observed_speaker",
+                "referent": "asker", "label": 0, "target": T,
+                "speakers": {"asker": asker, "responder": responder},
+                "turns": [["user",
+                           f"{header}\n\n{asker}: {u0}\n{responder}: {MODEL_FILLER}\n{asker}: {T}"]],
+            })
+
         # --- narrative: model's own persona vs an adopted roleplay persona
         # (both are model turns -> C_self-index held constant)
         for u_i, u0 in enumerate(USER_LEADS):
@@ -145,6 +206,7 @@ def main() -> None:
     print(f"  turn_role  (C_self-index)    : self {count('turn_role','self')}  other {count('turn_role','other')}")
     print(f"  attribution                  : self {count('attribution','self')}  other {count('attribution','other')}")
     print(f"  narrative  (C_self-narrative): self {count('narrative','self')}  other {count('narrative','other')}")
+    print(f"  observed_speaker (C_speaker-generic): responder {count('observed_speaker','responder')}  asker {count('observed_speaker','asker')}")
     print("  (referent/persona set by context only; targets contain no referent noun)")
 
 
