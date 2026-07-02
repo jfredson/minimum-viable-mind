@@ -15,6 +15,8 @@ The load-bearing inputs: the three axes of mind (availability, integration, dept
 ## Layout
 
 - `spec/` — the specification as it evolves. Founding document: `minimum-viable-mind-proposal-v0.1.md`.
+- `explainer.md` — the plain-language companion (the "grokkable by a layperson" requirement, kept current as results land; seed of an eventual Sentient Horizons essay, gated by the usual protocols before publication).
+- `ROADMAP.md` — goals, deliverables, and gates per stage.
 - `experiments/` — one component at a time, a behavioral metric registered before the scaffold runs, keep what moves the metric and kill what doesn't. The subtraction is the science.
 - `research/` — interpretability notes, source integration, comparisons against IIT / GWT / predictive-processing accounts.
 - `src/` — implementation.
