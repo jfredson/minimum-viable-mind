@@ -2,6 +2,37 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## RT-09 + RT-10 resolved on sandbox — v2 stimuli clean, both deflations defeated (2026-07-12, later same day)
+
+John adjudicated the two proposals below (adopted as-is). Amendment registered
+and committed (`b6eaf39`) *before* any v2 stimulus ran; full chain then re-run.
+Details + numbers: `rt09-reflexivity-findings.md` §7; gates updated in
+`thresholds.md` (Pass 4 outcomes) and `red_team_ledger.md`.
+
+- **Length gate passed:** label-from-token-count 1.000 → ~chance in all
+  turns-based mechanisms; pure length direction decodes at ~0.50. (Residue:
+  narrative keeps a mild 0.56–0.57 length signal — carry the caveat.)
+- **RT-10 defeated, both loss conditions avoided:** turn_role signal survives
+  length matching (clean floor, peak L15, +0.55); C_self beats the new
+  length-direction patch control 0.340 vs 0.012 (gap +0.328 ≥ 0.10). The causal
+  result was never length-borne (0.348 → 0.340 v1→v2).
+- **RT-09 closed on a now-valid control — rule does not fire:** cross-decode
+  1.000 ✓ (real shared component this time), |cos| 0.148 ✗, cross-patch ratio
+  −0.005 ✗. C_speaker-generic is causally inert on turn_role behaviour.
+  **Removal-test target per the pre-registered partial-separation path: the
+  residual** (C_self-index ⊥ C_speaker-generic; still decodes at 1.0).
+- **RT-04 side observation:** clean separability at L6 on v2 (|cos| 0.017) —
+  single layer, supporting only; causal cross-patch stays the decisive test.
+- Scope: sandbox pilots. RT-09/RT-10 re-verify on the registered substrate
+  before `δ`/`θ` lock.
+
+**Next actions (updated):** unchanged queue from before, minus RT-09 — i.e.
+(1) RT-04 causal cross-patching index↔narrative (sandbox OK; length-matching
+now built into the stimuli), (2) method-(b)/convergence decision per structure,
+(3) battery work RT-02/RT-03/RT-05 on the registered model, (4) RT-01/RT-06
+C_ctrl pilots, (5) pilot ablations → lock thresholds, (6) removal test —
+targeting the C_self-index **residual** as primary per RT-09.
+
 ## RT-09 first pass run — rule does not fire; length confound found (2026-07-12)
 
 The full registered RT-09 pass ran on the sandbox (Claude session; details +

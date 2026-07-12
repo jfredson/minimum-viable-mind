@@ -149,3 +149,54 @@ decodes count as referent structure.
   signal collapses when length is matched, C_self-index as localized was a
   length tracker; the localization must be redone and the causal claim
   retracted to that extent.
+
+## 7. v2 re-run (2026-07-12, same day, after adjudication) — both wagers won
+
+Both proposals were adopted as-is (ledger Pass 4); the amendment was committed
+(`b6eaf39`) before any v2 stimulus ran; the full chain then re-ran on the v2
+materials. Artifacts overwritten in place (`artifacts/stage1/`).
+
+**Length gate (the precondition):** passed. Label-from-token-count fell from
+1.000 to ~chance in every turns-based mechanism (turn_role 0.522, narrative
+0.520, observed_speaker 0.438); the pure length direction decodes turn_role and
+observed_speaker at 0.50 everywhere. One residue, recorded: narrative retains a
+mild length signal (length-direction AUC 0.56–0.57) — the short/long lead
+crossing narrowed but did not perfectly null it. It is far below decision-rule
+relevance, but narrative claims should carry the caveat.
+
+**RT-10 — deflation defeated on both counts.**
+
+- The turn_role signal survives length matching: embedding floor +0.000, peak
+  L15, margin +0.55. (The v1 peak at L24 was partly length; the referent signal
+  proper peaks mid-stack.)
+- C_self-index's causal restoration is essentially unchanged (0.348 → 0.340 at
+  L22) and beats the length-direction control 0.340 vs 0.012 (gap +0.328,
+  convention ≥ 0.10). The causal effect was never length-mediated.
+
+**RT-09 — the rule does not fire, now on a valid control.** C_speaker-generic
+localizes length-clean (peak L19, margin +0.36 — more modest than the
+length-inflated v1 number, as expected; own-AUC 0.75–0.86 in the band). The
+conjuncts: cross-decode gen→idx **1.000** ✓ — and this time it is real shared
+structure, not length; |cos| **0.148** ✗; cross-patch ratio **−0.005** ✗
+(restore(generic) ≤ 0.014 at every layer). So: the turn_role contrast is
+linearly separable along a generic-speaker direction (a shared decodable
+component exists), but the two structures are nearly orthogonal and the generic
+direction is **causally inert** on referent-dependent behaviour. C_self-index
+is not generic speaker-slot tracking.
+
+**Consequence (pre-registered partial-separation path):** because the shared
+component is real (cross-decode fires) while the structures separate
+geometrically and causally, the removal test targets the **residual** —
+C_self-index with C_speaker-generic projected out — as primary. The residual is
+well-defined and strong: turn_role still decodes at 1.0 after the projection
+(idx⊥gen column).
+
+**Side observation for RT-04:** on length-matched stimuli, index vs narrative
+reaches *clean* separability at L6 (|cos| 0.017, both survive removing the
+other, cross-decodes under threshold). Single layer, n≈24/side — supporting
+evidence, not an upgraded verdict; the causal cross-patch (next action) stays
+the decisive test.
+
+**Scope:** all of this is the pilot sandbox (`gemma-2-2b-it`). RT-09 and RT-10
+re-verify on the registered substrate (Llama-3.1-8B + Tülu ladder) before
+`δ`/`θ` lock, like every other pilot gate.

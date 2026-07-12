@@ -120,3 +120,18 @@ C_speaker-generic as localized may itself be a length direction, so the control
 has not yet demonstrably tested slot-generality. The RT-09 gate stays open; the
 **decision rule is unchanged** and gets re-applied on the RT-10 length-matched
 stimuli. Materials amendment only — same pattern as RT-01..08.
+
+**Pass-4 outcomes (2026-07-12, v2 stimuli, pilot sandbox):** length gate passed
+(label-from-token-count ≈ chance in all mechanisms; mild 0.56–0.57 residual in
+narrative, recorded). **RT-10 resolved — both loss conditions avoided:** the
+turn_role signal survives length matching (clean floor, peak L15, margin +0.55)
+and C_self beats the length-direction patch control 0.340 vs 0.012 (gap +0.328
+≥ 0.10). **RT-09 resolved on a now-valid control:** the rule did not fire —
+cross-decode 1.000 (real shared component, no longer length) but |cos| 0.148
+< 0.5 and cross-patch ratio −0.005 < 0.5; C_speaker-generic is causally inert on
+turn_role behaviour. Per the pre-registered partial-separation path, the removal
+test targets the **residual** (C_self-index with C_speaker-generic projected
+out), which still decodes at 1.0. Both gates re-verify on the registered
+substrate before `δ`/`θ` lock. Side observation for RT-04: on length-matched
+stimuli the index/narrative pair reaches *clean* separability at L6 (|cos|
+0.017) — single layer, n≈24/side, so recorded as supporting, not upgraded.

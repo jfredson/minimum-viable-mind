@@ -204,6 +204,19 @@ pass 2 adds RT-05/RT-06/RT-07/RT-08 below). All must run on the pilot set
   |cos| 0.224 (< 0.5), cross-patch ratio 0.006 (< 0.5); cross-decode 1.000 was
   length-inflated. Recorded as **provisional**; the unchanged rule is re-applied
   on the v2 stimuli. RT-09 continues to gate `δ`/`θ` lock alongside RT-05/RT-10.
+- **Outcomes on the v2 stimuli (2026-07-12, pilot sandbox `gemma-2-2b-it`):**
+  the length gate **passed** (label-from-token-count 0.40–0.52 ≈ chance;
+  length-direction AUC ~0.50; narrative carries a mild 0.56–0.57 residual —
+  noted, not cleared away). **RT-10: both controls passed** — turn_role keeps a
+  clean-floor computed signal (peak L15, margin +0.55) and C_self beats the
+  length-direction patch 0.340 vs 0.012 (gap +0.328 ≥ 0.10). **RT-09: the rule
+  did not fire** on a now-valid control (gen own-AUC 0.75–0.86 in band):
+  cross-decode 1.000 ✓ but |cos| 0.148 ✗ and cross-patch ratio −0.005 ✗.
+  Shared decodable component is real ⇒ per the pre-registered
+  partial-separation path, the removal test targets the **residual**
+  (C_self-index ⊥ C_speaker-generic; residual decodes at 1.0). Scope: these
+  resolutions are on the pilot sandbox — **re-verify on the registered
+  substrate before `δ`/`θ` lock**, like every other pilot gate.
 
 ## The locked values
 
