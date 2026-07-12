@@ -2,6 +2,48 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## RT-09 first pass run — rule does not fire; length confound found (2026-07-12)
+
+The full registered RT-09 pass ran on the sandbox (Claude session; details +
+wagers in `experiments/01-self-indexing-removal-test/rt09-reflexivity-findings.md`):
+
+- **C_speaker-generic localizes** — observed_speaker passes the embedding floor
+  (+0.000) with a computed signal (peak L10, margin +0.51). The model tracks
+  speaker slots in dialogues it merely observes.
+- **The pre-registered generic verdict does NOT fire:** cross-decode gen→idx
+  1.000 (≥0.9 ✓, but see confound), |cos| **0.224** (needs ≥0.5 ✗), cross-patch
+  ratio **0.006** (needs ≥0.5 ✗✗). The causal dissociation is stark: d_generic
+  restores 0.002–0.038 at every layer while C_self-index restores 0.348.
+- **But: a total length confound** was found in the turns-based stimuli (the
+  depth-matching filler makes other/asker longer): label-from-token-count alone
+  = **1.000** for turn_role, narrative, AND observed_speaker (non-overlapping
+  length ranges); a pure length direction decodes each at ~1.0 from L4. New
+  instrument: `check_length_confound.py`. **attribution is the only
+  length-clean mechanism (0.396 ≈ chance)** and keeps its computed signal — now
+  the strongest confound-free evidence for a computed context-set referent.
+  The confound biased the geometry *toward* the generic verdict (it still
+  didn't fire — conservative direction), but C_speaker-generic as localized may
+  be a length tracker, so **RT-09 stays open pending a length-matched re-run**.
+- **Instrument fix:** `separate_self.py` `cv_auc` sized PCA from the training
+  fold (k=9) vs localize's full-n convention (k=12); the observed_speaker
+  signal lives in components ~10–12, so the instruments contradicted each other
+  on the same activations. Fixed to the localize convention. RT-04 verdict
+  unchanged under k=12 (median |cos| 0.28 → 0.23, still partially separable).
+
+**For John to adjudicate (proposals in the findings memo, nothing patched into
+registered docs):** (1) proposed **RT-10** — the length/depth deflation on
+C_self-index itself; controls = length-matched stimuli v2 (filler in both
+conditions / overlapping length distributions) + a length-direction patching
+control alongside random; (2) RT-09 disposition "does not fire (provisional)",
+gate held open until re-applied on v2 stimuli — the decision rule needs no
+amendment, only the generator.
+
+**Next after adjudication:** amend `gen_context_stimuli.py` (length-match),
+re-run `localize_context.py` → `separate_self.py` → `patch_context.py`, then
+re-apply the RT-09 rule. Also fold the length-direction control into the
+cross-patching planned for RT-04 (Next action 1 below) — same nuisance, same
+fix.
+
 ## RT-09 registered — generic-speaker reflexivity control (2026-07-01)
 
 From an external design review (Claude, this session), adopted before threshold lock: RT-05 screens the syntax-router reading of C_self-index, but a deflation survives it — the structure may be **generic speaker-slot tracking** (needed for any observed dialogue, assistant merely occupying one slot), not a *reflexive* self-index; the floor needs reflexivity. Registered as **RT-09** with a pre-committed decision rule (generic iff cross-decode ≥ 0.9 AUC ∧ |cos| ≥ 0.5 ∧ cross-patch ratio ≥ 0.5) *before* any stimuli were run:

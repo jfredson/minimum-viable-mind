@@ -30,6 +30,18 @@ contrast well above null AND cross-decoding is near chance AND the cosine is low
 NON-SEPARABLE (RT-04 loss condition) if the two cannot be told apart by any of
 these — recorded honestly, not papered over.
 
+RT-09 (generic-speaker reflexivity control) runs the SAME three-test battery on
+a second pair: **C_speaker-generic** (`observed_speaker` stimuli — the identical
+target inside a third-party transcript the model only observes; responder vs
+asker slot set by turn structure) vs **C_self-index**. Here the pre-registered
+decision rule (pre-registration.md, amended 2026-07-01) points the other way:
+C_self-index is *generic* slot-tracking if the generic direction cross-decodes
+the turn_role contrast at >= 0.9 AUC AND |cos| >= 0.5 (geometric half; the causal
+half — cross-patch ratio >= 0.5 — lives in `patch_context.py`). On partial
+separation, the residual of C_self-index after projecting C_speaker-generic out
+is the reflexive candidate — the orthogonalized decode here tests whether that
+residual exists. Results -> `separate_generic.json`.
+
 Run from the repo root with the venv active:
     python experiments/01-self-indexing-removal-test/src/separate_self.py
 """
@@ -65,6 +77,14 @@ COS_SEPARABLE_MAX = 0.30     # |cos| below this = geometrically distinct
 CROSS_CHANCE_MAX = 0.65      # cross-decode AUC below this = functionally distinct
 OWN_MIN = 0.75               # own-contrast AUC must clear this to be a real direction
 
+# RT-09 decision-rule constants (geometric half), pre-registered 2026-07-01
+# BEFORE any observed_speaker stimuli were run (pre-registration.md, RT-09).
+# Aggregation across layers is not pinned by the pre-reg; committed here, before
+# results: medians over the band where BOTH structures localize (own AUC >=
+# OWN_MIN), mirroring the RT-04 median-|cos| convention already in the ledger.
+CROSS_GENERIC_MIN = 0.90     # d_generic decodes the turn_role contrast at >= this
+COS_GENERIC_MIN = 0.50       # ...and |cos(d_generic, d_index)| >= this => generic
+
 
 def fit_dir(X: np.ndarray, y: np.ndarray) -> np.ndarray:
     scaler = StandardScaler().fit(X)
@@ -75,11 +95,19 @@ def fit_dir(X: np.ndarray, y: np.ndarray) -> np.ndarray:
 
 
 def cv_auc(X: np.ndarray, y: np.ndarray) -> float:
-    """Own-contrast CV AUC using the PCA-regularized probe (held-out folds)."""
+    """Own-contrast CV AUC using the PCA-regularized probe (held-out folds).
+
+    NB: the pipeline is sized from the FULL n (_probe(len(y))), matching
+    localize_context's convention, not the training-fold size. The two differ
+    (k=12 vs k=9 at n=48) and it matters: the observed_speaker signal sits in
+    PCA components ~10-12, so k=9 misses a contrast that k=12 decodes at ~1.0 —
+    the two instruments must agree on k or they contradict each other on the
+    same activations (found 2026-07-12 reconciling RT-09's first pass).
+    """
     skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=0)
     aucs = []
     for tr, te in skf.split(X, y):
-        clf = _probe(len(tr))
+        clf = _probe(len(y))
         clf.fit(X[tr], y[tr])
         score = clf.predict_proba(X[te])[:, 1]
         aucs.append(roc_auc_score(y[te], score))
@@ -189,6 +217,92 @@ def main() -> None:
         verdict = "INCONCLUSIVE (a structure failed to localize)"
         print(f"=> {verdict}: one contrast did not clear AUC {OWN_MIN}; firm up stimuli "
               "before claiming separability either way.")
+
+    # ---- RT-09: C_speaker-generic vs C_self-index (same three-test battery) ----
+    idx_g, y_g = subset(stim, acts, "observed_speaker")
+    print(f"\nRT-09 — C_speaker-generic (observed_speaker, n={len(y_g)}) vs "
+          f"C_self-index (turn_role, n={len(y_i)})")
+    print(f"{'layer':>5}  {'idx_own':>7} {'gen_own':>7}  "
+          f"{'gen->idx':>8} {'idx->gen':>8}  {'idx⊥gen':>8} {'gen⊥idx':>8}  {'|cos|':>6}")
+    g_rows = []
+    for L in LAYERS:
+        Xi, Xg = acts[L][idx_i], acts[L][idx_g]
+        di = fit_dir(Xi, y_i)
+        dg = fit_dir(Xg, y_g)
+        idx_own = cv_auc(Xi, y_i)
+        gen_own = cv_auc(Xg, y_g)
+        # the rule's load-bearing quantity: the GENERIC direction as a 1-D score
+        # on the turn_role (self/other) contrast
+        cross_gi = projected_auc(Xi, y_i, dg)
+        cross_ig = projected_auc(Xg, y_g, di)
+        cos = abs(float(di @ dg))
+        # the pre-reg's partial-separation path: does a reflexive RESIDUAL of
+        # C_self-index survive projecting the generic direction out?
+        idx_orth = cv_auc(residualize(Xi, dg), y_i)
+        gen_orth = cv_auc(residualize(Xg, di), y_g)
+        g_rows.append({"layer": L, "idx_own_auc": idx_own, "gen_own_auc": gen_own,
+                       "cross_generic_on_index": cross_gi,
+                       "cross_index_on_generic": cross_ig,
+                       "idx_orth_gen_auc": idx_orth, "gen_orth_idx_auc": gen_orth,
+                       "abs_cos": cos})
+        print(f"{L:>5}  {idx_own:>7.3f} {gen_own:>7.3f}  "
+              f"{cross_gi:>8.3f} {cross_ig:>8.3f}  {idx_orth:>8.3f} {gen_orth:>8.3f}  "
+              f"{cos:>6.3f}")
+
+    band = [r for r in g_rows if r["idx_own_auc"] >= OWN_MIN
+            and r["gen_own_auc"] >= OWN_MIN]
+    med_cross = float(np.median([r["cross_generic_on_index"] for r in band])) if band else None
+    med_cos_g = float(np.median([r["abs_cos"] for r in band])) if band else None
+    med_resid = float(np.median([r["idx_orth_gen_auc"] for r in band])) if band else None
+    if not band:
+        g_verdict = "INCONCLUSIVE (no layer where both structures localize)"
+    else:
+        geom_generic = med_cross >= CROSS_GENERIC_MIN and med_cos_g >= COS_GENERIC_MIN
+        residual_survives = med_resid is not None and med_resid >= OWN_MIN
+        if geom_generic:
+            g_verdict = "GENERIC (geometric half fires — pending cross-patch)"
+        elif residual_survives:
+            g_verdict = ("REFLEXIVE RESIDUAL SURVIVES (geometric half does not fire; "
+                         "index keeps decoding with the generic direction projected out)")
+        else:
+            g_verdict = ("NOT GENERIC geometrically, but residual weak — "
+                         "treat with caution; cross-patch decides")
+    print(f"\nRT-09 geometric read (medians over both-localized band "
+          f"{[r['layer'] for r in band]}):")
+    if band:
+        print(f"  cross-decode gen->idx {med_cross:.3f} (rule >= {CROSS_GENERIC_MIN})   "
+              f"|cos| {med_cos_g:.3f} (rule >= {COS_GENERIC_MIN})   "
+              f"idx⊥gen residual AUC {med_resid:.3f} (vs OWN_MIN {OWN_MIN})")
+    print(f"=> {g_verdict}")
+    print("   (full RT-09 rule needs the causal half too: cross-patch ratio >= 0.5 "
+          "in patch_context.py)")
+
+    g_out = {
+        "model": config.MODEL_ID,
+        "control": "RT-09 generic-speaker reflexivity",
+        "structures": {"C_speaker_generic": "observed_speaker",
+                       "C_self_index": "turn_role"},
+        "rule": {"cross_generic_min_auc": CROSS_GENERIC_MIN,
+                 "cos_generic_min": COS_GENERIC_MIN,
+                 "own_min_auc": OWN_MIN,
+                 "aggregation": "median over layers where both own-AUCs >= own_min "
+                                "(committed before results; pre-reg does not pin a "
+                                "layer; mirrors RT-04 median-|cos| convention)",
+                 "causal_half": "cross-patch restoration ratio >= 0.5, patch_context.py"},
+        "layers": LAYERS,
+        "by_layer": g_rows,
+        "band_layers": [r["layer"] for r in band],
+        "median_cross_generic_on_index": med_cross,
+        "median_abs_cos": med_cos_g,
+        "median_idx_orth_gen_auc": med_resid,
+        "geometric_verdict": g_verdict,
+        "caveats": "same discipline as RT-04: directions from full-data logistic fit "
+                   "for cos / cross-projection, own/orthogonalized AUC held-out CV; "
+                   "n=48/structure; observed_speaker is one operationalization of "
+                   "generic slot-tracking (third-party transcript in a user turn).",
+    }
+    (OUT_DIR / "separate_generic.json").write_text(json.dumps(g_out, indent=2))
+    print(f"saved -> {OUT_DIR / 'separate_generic.json'}")
 
     out = {
         "model": config.MODEL_ID,

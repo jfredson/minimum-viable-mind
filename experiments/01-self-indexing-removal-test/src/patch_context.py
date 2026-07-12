@@ -27,6 +27,17 @@ layer — that layer's C_self is causal for the model's referent-dependent outpu
 This confirms localization before the removal test; it does NOT yet show C_self
 carries task *integration* (that is the removal test's job, re-scoring T and S).
 
+RT-09 cross-patch (causal half of the reflexivity control): additionally fit
+**C_speaker-generic** at each layer from the `observed_speaker` residuals (the
+same slot contrast in a third-party transcript the model only observes) and
+inject IT into the turn_role other-runs the same way (set its coordinate to the
+self-run's value). The pre-registered quantity is the **cross-patch restoration
+ratio** = restoration(d_generic) / restoration(d_cself) on the turn_role pairs;
+ratio >= 0.5 is the causal half of the "C_self-index is generic" rule (the
+geometric half — cross-decode >= 0.9 AUC and |cos| >= 0.5 — is in
+`separate_self.py`). Headline ratio is read at the peak causal layer for C_self
+(largest restore(C_self) - restore(random)), committed here before results.
+
 Run from the repo root with the venv active:
     python experiments/01-self-indexing-removal-test/src/patch_context.py
 """
@@ -137,6 +148,12 @@ def main() -> None:
     self_str = [render(s) for s, _ in pairs]
     other_str = [render(o) for _, o in pairs]
 
+    # RT-09: observed_speaker stimuli, for fitting C_speaker-generic per layer
+    obs = [r for r in stim if r["mechanism"] == "observed_speaker"]
+    obs_str = [render(r) for r in obs]
+    y_obs = np.array([r["label"] for r in obs])
+    print(f"{len(obs)} observed_speaker stimuli for the RT-09 generic direction")
+
     device = get_device()
     tok = load_tokenizer()
     model, device, _ = load_model(device)
@@ -147,8 +164,12 @@ def main() -> None:
     other_resid, other_logits = run_clean(model, tok, other_str, device, n_layers)
     delta_logits = self_logits - other_logits  # [n, vocab]
 
+    print("caching clean runs (observed_speaker, for d_generic)...")
+    obs_resid, _obs_logits = run_clean(model, tok, obs_str, device, n_layers)
+
     rng = np.random.default_rng(RAND_SEED)
-    print(f"\n{'layer':>5}  {'restore(C_self)':>15}  {'restore(random)':>15}  {'margin':>8}")
+    print(f"\n{'layer':>5}  {'restore(C_self)':>15}  {'restore(generic)':>16}  "
+          f"{'restore(random)':>15}  {'ratio g/s':>9}")
     rows = []
     for L in PATCH_LAYERS:
         # C_self at L from clean turn_role residuals (self + other)
@@ -163,19 +184,31 @@ def main() -> None:
         proj_other = other_resid[L] @ d_unit
         scale = (proj_self - proj_other)[:, None]          # [n,1]
 
+        # RT-09: generic direction fitted on a contrast the model only OBSERVES,
+        # injected with the same set-the-coordinate semantics (its own scale)
+        d_gen = fit_direction(obs_resid[L], y_obs)
+        scale_g = ((self_resid[L] @ d_gen) - (other_resid[L] @ d_gen))[:, None]
+
         logits_cself = run_patched(model, tok, other_str, device, L, scale * d_unit)
         logits_rand = run_patched(model, tok, other_str, device, L, scale * r_unit)
+        logits_gen = run_patched(model, tok, other_str, device, L, scale_g * d_gen)
 
         rest_c = restoration(logits_cself, other_logits, delta_logits)
         rest_r = restoration(logits_rand, other_logits, delta_logits)
+        rest_g = restoration(logits_gen, other_logits, delta_logits)
+        ratio = float(rest_g.mean() / rest_c.mean()) if rest_c.mean() > 0 else None
         rows.append({"layer": L, "restore_cself": float(rest_c.mean()),
                      "restore_cself_sd": float(rest_c.std()),
+                     "restore_generic": float(rest_g.mean()),
+                     "restore_generic_sd": float(rest_g.std()),
                      "restore_random": float(rest_r.mean()),
                      "restore_random_sd": float(rest_r.std()),
+                     "cross_patch_ratio": ratio,
                      "self_vs_other_proj_gap": float((proj_self - proj_other).mean())})
         print(f"{L:>5}  {rest_c.mean():>8.3f} ±{rest_c.std():4.2f}  "
+              f"{rest_g.mean():>9.3f} ±{rest_g.std():4.2f}  "
               f"{rest_r.mean():>8.3f} ±{rest_r.std():4.2f}  "
-              f"{(proj_self - proj_other).mean():>8.2f}")
+              f"{ratio if ratio is None else f'{ratio:>9.3f}'}")
 
     peak = max(rows, key=lambda r: r["restore_cself"] - r["restore_random"])
     causal = peak["restore_cself"] - peak["restore_random"] >= 0.10 and peak["restore_cself"] > 0
@@ -187,6 +220,20 @@ def main() -> None:
                    "NO clean causal effect above the random control — C_self may be "
                    "decodable but not causal here; report honestly, do not force it."))
 
+    # RT-09 causal half, read at the pre-committed layer (C_self's causal peak)
+    peak_ratio = peak["cross_patch_ratio"]
+    if peak_ratio is None:
+        rt09_read = "UNDEFINED (C_self restoration <= 0 at peak layer)"
+    elif peak_ratio >= 0.5:
+        rt09_read = (f"cross-patch ratio {peak_ratio:.3f} >= 0.5 — causal half of "
+                     "the GENERIC verdict fires (final verdict also needs the "
+                     "geometric half, separate_self.py)")
+    else:
+        rt09_read = (f"cross-patch ratio {peak_ratio:.3f} < 0.5 — the generic "
+                     "direction does NOT substitute causally for C_self-index; "
+                     "causal half of the generic verdict does not fire")
+    print(f"RT-09: {rt09_read}")
+
     out = {
         "model": config.MODEL_ID,
         "design": "turn_role context-disambiguated; directional patching other->self",
@@ -197,9 +244,22 @@ def main() -> None:
         "by_layer": rows,
         "peak": peak,
         "causal_above_control": bool(causal),
+        "rt09": {
+            "generic_direction": "fitted per layer on observed_speaker residuals "
+                                 "(responder vs asker in an observed transcript)",
+            "rule": "cross-patch restoration ratio >= 0.5 at C_self's peak causal "
+                    "layer (layer choice committed before results); geometric half "
+                    "in separate_self.py / separate_generic.json",
+            "peak_layer": peak["layer"],
+            "cross_patch_ratio_at_peak": peak_ratio,
+            "read": rt09_read,
+        },
         "caveats": "single behavioural metric (next-token logits); turn_role only; "
                    "directional patch isolates the C_self coordinate, so partial "
-                   "restoration is expected (other context still differs).",
+                   "restoration is expected (other context still differs). RT-09: "
+                   "d_generic uses its own per-pair scale (set-the-coordinate "
+                   "semantics), so magnitudes are direction-appropriate, not "
+                   "norm-identical to the C_self patch.",
     }
     (OUT_DIR / "patch_context.json").write_text(json.dumps(out, indent=2))
     print(f"\nsaved -> {OUT_DIR / 'patch_context.json'}")
