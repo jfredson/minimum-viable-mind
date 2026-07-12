@@ -100,3 +100,23 @@ strongest option** — it lets RT-06 be run as a controlled comparison of the *s
 model at increasing alignment, directly measuring the capability-gating effect.
 *(Specific model still to be pinned against these constraints — see STATUS next
 actions.)*
+
+### Pass 4 2026-07-12 — empirical self-audit during the RT-09 first pass (not from the Gemini loop)
+
+Source: reconciling an instrument discrepancy while running the registered RT-09
+pass exposed a stimulus confound no reviewer had named (evidence:
+`check_length_confound.py`; narrative in `rt09-reflexivity-findings.md`).
+Adjudicated by John 2026-07-12 (both proposals adopted as-is).
+
+| id | date | severity | target | disposition | resolution | loss condition recorded |
+|----|------|----------|--------|-------------|------------|-------------------------|
+| RT-10 | 2026-07-12 | high | design | PATCH + control | (a) `gen_context_stimuli.py` v2: break the label↔token-count correlation in every turns-based mechanism (polarity-balanced fillers so length distributions straddle/overlap across labels), verified empirically by `check_length_confound.py`; (b) `patch_context.py`: add a **length-direction control** (least-squares token-count direction, own set-the-coordinate scale) alongside the norm-matched random control — C_self-index must beat it by the same ≥ 0.10 gap convention as the random control | if the turn_role signal collapses on length-matched stimuli, or C_self-index fails to beat the length-direction patch control, C_self-index as localized is a context-length tracker — redo the localization and retract the causal claim to that extent; no H_center attaches |
+
+**RT-09 first-pass disposition (same date):** the registered rule did **not**
+fire (cross-decode 1.000 ✓ but length-inflated; |cos| 0.224 < 0.5 ✗; cross-patch
+ratio 0.006 < 0.5 ✗). Recorded as **"does not fire (provisional)"** — the
+confound biased the geometry *toward* firing and it still missed, but
+C_speaker-generic as localized may itself be a length direction, so the control
+has not yet demonstrably tested slot-generality. The RT-09 gate stays open; the
+**decision rule is unchanged** and gets re-applied on the RT-10 length-matched
+stimuli. Materials amendment only — same pattern as RT-01..08.

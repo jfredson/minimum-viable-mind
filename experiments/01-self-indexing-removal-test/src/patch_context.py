@@ -38,6 +38,13 @@ geometric half — cross-decode >= 0.9 AUC and |cos| >= 0.5 — is in
 `separate_self.py`). Headline ratio is read at the peak causal layer for C_self
 (largest restore(C_self) - restore(random)), committed here before results.
 
+RT-10 length-direction control (2026-07-12): the v1 stimuli confounded label
+with token count, so a third control patches the **length direction**
+(least-squares from the same turn_role residuals to token count, own scale).
+C_self must beat it by the same >= 0.10 restoration-gap convention as the
+random control; failing that, its causal effect may be length-mediated and no
+self-locating reading attaches.
+
 Run from the repo root with the venv active:
     python experiments/01-self-indexing-removal-test/src/patch_context.py
 """
@@ -167,9 +174,15 @@ def main() -> None:
     print("caching clean runs (observed_speaker, for d_generic)...")
     obs_resid, _obs_logits = run_clean(model, tok, obs_str, device, n_layers)
 
+    # RT-10: token counts for the length-direction control (fit on the same
+    # turn_role residuals the C_self direction uses, targets = token counts)
+    nt = np.array([len(tok(s, add_special_tokens=True)["input_ids"])
+                   for s in self_str + other_str], dtype=float)
+    nt_z = (nt - nt.mean()) / nt.std()
+
     rng = np.random.default_rng(RAND_SEED)
     print(f"\n{'layer':>5}  {'restore(C_self)':>15}  {'restore(generic)':>16}  "
-          f"{'restore(random)':>15}  {'ratio g/s':>9}")
+          f"{'restore(length)':>15}  {'restore(random)':>15}  {'ratio g/s':>9}")
     rows = []
     for L in PATCH_LAYERS:
         # C_self at L from clean turn_role residuals (self + other)
@@ -189,24 +202,36 @@ def main() -> None:
         d_gen = fit_direction(obs_resid[L], y_obs)
         scale_g = ((self_resid[L] @ d_gen) - (other_resid[L] @ d_gen))[:, None]
 
+        # RT-10: length direction — least-squares from the same residuals to
+        # token count, same set-the-coordinate semantics. If C_self's causal
+        # effect is mediated by a length coordinate, this patch reproduces it.
+        d_len = np.linalg.lstsq(X - X.mean(0), nt_z, rcond=None)[0]
+        d_len = d_len / np.linalg.norm(d_len)
+        scale_l = ((self_resid[L] @ d_len) - (other_resid[L] @ d_len))[:, None]
+
         logits_cself = run_patched(model, tok, other_str, device, L, scale * d_unit)
         logits_rand = run_patched(model, tok, other_str, device, L, scale * r_unit)
         logits_gen = run_patched(model, tok, other_str, device, L, scale_g * d_gen)
+        logits_len = run_patched(model, tok, other_str, device, L, scale_l * d_len)
 
         rest_c = restoration(logits_cself, other_logits, delta_logits)
         rest_r = restoration(logits_rand, other_logits, delta_logits)
         rest_g = restoration(logits_gen, other_logits, delta_logits)
+        rest_l = restoration(logits_len, other_logits, delta_logits)
         ratio = float(rest_g.mean() / rest_c.mean()) if rest_c.mean() > 0 else None
         rows.append({"layer": L, "restore_cself": float(rest_c.mean()),
                      "restore_cself_sd": float(rest_c.std()),
                      "restore_generic": float(rest_g.mean()),
                      "restore_generic_sd": float(rest_g.std()),
+                     "restore_length": float(rest_l.mean()),
+                     "restore_length_sd": float(rest_l.std()),
                      "restore_random": float(rest_r.mean()),
                      "restore_random_sd": float(rest_r.std()),
                      "cross_patch_ratio": ratio,
                      "self_vs_other_proj_gap": float((proj_self - proj_other).mean())})
         print(f"{L:>5}  {rest_c.mean():>8.3f} ±{rest_c.std():4.2f}  "
               f"{rest_g.mean():>9.3f} ±{rest_g.std():4.2f}  "
+              f"{rest_l.mean():>8.3f} ±{rest_l.std():4.2f}  "
               f"{rest_r.mean():>8.3f} ±{rest_r.std():4.2f}  "
               f"{ratio if ratio is None else f'{ratio:>9.3f}'}")
 
@@ -219,6 +244,18 @@ def main() -> None:
                    "random-direction control)." if causal else
                    "NO clean causal effect above the random control — C_self may be "
                    "decodable but not causal here; report honestly, do not force it."))
+
+    # RT-10 length-direction control, same ≥ 0.10 gap convention as random,
+    # read at the same pre-committed layer (C_self's causal peak)
+    len_gap = peak["restore_cself"] - peak["restore_length"]
+    beats_length = len_gap >= 0.10
+    print(f"RT-10: C_self {peak['restore_cself']:.3f} vs length-direction "
+          f"{peak['restore_length']:.3f} (gap {len_gap:+.3f}) — "
+          + ("C_self beats the length control; its causal effect is not "
+             "length-mediated at this layer" if beats_length else
+             "C_self does NOT clearly beat the length control — the causal "
+             "effect may be length-mediated; per RT-10, do not read this as a "
+             "self-locating structure"))
 
     # RT-09 causal half, read at the pre-committed layer (C_self's causal peak)
     peak_ratio = peak["cross_patch_ratio"]
@@ -244,6 +281,17 @@ def main() -> None:
         "by_layer": rows,
         "peak": peak,
         "causal_above_control": bool(causal),
+        "rt10": {
+            "length_direction": "least-squares from turn_role readout residuals "
+                                "to z-scored token count, own per-pair scale",
+            "rule": "C_self must beat the length-direction restoration by >= 0.10 "
+                    "at its peak causal layer (same convention as the random "
+                    "control)",
+            "peak_layer": peak["layer"],
+            "restore_length_at_peak": peak["restore_length"],
+            "gap_at_peak": len_gap,
+            "beats_length_control": bool(beats_length),
+        },
         "rt09": {
             "generic_direction": "fitted per layer on observed_speaker residuals "
                                  "(responder vs asker in an observed transcript)",

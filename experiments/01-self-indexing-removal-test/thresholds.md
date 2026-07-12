@@ -186,6 +186,25 @@ pass 2 adds RT-05/RT-06/RT-07/RT-08 below). All must run on the pilot set
   Partial separation ⇒ project C_speaker-generic out and the **residual** becomes
   the removal-test target (primary), per the pre-registration amendment.
 
+### Pass 4 addition (2026-07-12) — RT-10 (empirical, from the RT-09 first pass)
+
+- **Length/depth deflation control (RT-10).** The RT-09 first pass found the
+  turns-based stimuli confound label with token count (perfectly, non-overlapping
+  ranges) — so C_self-index, C_self-narrative, and C_speaker-generic as localized
+  may partly be a context-length tracker. Before lock: (a) regenerate the context
+  stimuli **length-matched** (polarity-balanced fillers; verified by
+  `check_length_confound.py`: label-from-token-count ~chance, length-direction
+  AUC ~0.5) and re-run localization, the RT-04/RT-09 geometry, and the causal
+  patching on v2; (b) `patch_context.py` gains a **length-direction control**
+  next to the random one — C_self-index must beat it by the same ≥ 0.10 gap.
+  **Loss condition:** turn_role signal collapses under length matching, or
+  C_self-index fails to beat the length-direction patch ⇒ the localized
+  direction is a length tracker; no `δ`/`θ` lock against it, localization redone.
+- **RT-09 status:** first pass (original stimuli) did **not** fire the rule —
+  |cos| 0.224 (< 0.5), cross-patch ratio 0.006 (< 0.5); cross-decode 1.000 was
+  length-inflated. Recorded as **provisional**; the unchanged rule is re-applied
+  on the v2 stimuli. RT-09 continues to gate `δ`/`θ` lock alongside RT-05/RT-10.
+
 ## The locked values
 
 To be filled from pilot data and committed before the test set runs. Until then,

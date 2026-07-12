@@ -34,6 +34,21 @@ at layer 0 — that is the built-in sanity gate (`localize_context.py` checks it
 Any real self-representation can then only show up as middle-layer accuracy rising
 above the layer-0 floor.
 
+**v2 — length-matched (RT-10, 2026-07-12).** The v1 set confounded label with
+token count: the depth-matching filler sat only in the other/asker condition, so
+"other" was always longer (label-from-token-count = 1.000 in every turns-based
+mechanism; see `check_length_confound.py` and `rt09-reflexivity-findings.md`).
+v2 breaks the correlation by **polarity balancing**: each (target, lead) cell is
+assigned polarity A (self short — the v1 shape) or polarity B (self LONG — the
+self side carries the filler exchange plus a follow-up prompt), alternating so
+each label's length distribution straddles the other's and no linear function of
+length (or of turn count) separates the labels. The other/asker condition keeps
+one shape (3 turns) throughout. narrative gets the same treatment via
+short/long neutral leads crossed with full/short roleplay instructions.
+The gate is empirical, not by-construction: `check_length_confound.py` must show
+label-from-token-count ~chance and length-direction AUC ~0.5 before any v2
+result is read.
+
 The generator is pure data: it emits structured turns / carrier text, and
 `localize_context.py` renders them with the model's chat format and reads the
 last token. No referent noun ever appears in a `target`.
@@ -70,8 +85,12 @@ USER_LEADS = [
     "Tell me what's happening right now.",
     "How are things going at the moment?",
 ]
-# A prior assistant turn for the "other" depth-matched variant.
+# A prior assistant turn for the "other" variant (all polarities).
 MODEL_FILLER = "Sure, go ahead."
+# Polarity-B follow-up (RT-10): a user prompt of ~the same token cost as the
+# filler turn, so a B-polarity self (4 turns) overshoots the 3-turn other by
+# about as much as an A-polarity self (2 turns) undershoots it.
+USER_FOLLOWUP = "Okay, go on."
 
 # attribution: carriers that name the speaker upstream of the quoted target.
 SELF_CARRIERS = ["The assistant said: ", "The AI replied: "]
@@ -108,6 +127,17 @@ ROLEPLAY_CHARACTERS = [
     "Tom, a medieval blacksmith",
     "Yuki, a mountain guide",
 ]
+# RT-10 length balancing for narrative: the v1 roleplay instruction was ~6 tokens
+# longer than the neutral lead, so persona correlated with length. v2 crosses
+# short/long variants of BOTH: A-cells pair a short neutral lead with the full
+# roleplay instruction (other longer); B-cells pair a long neutral lead with a
+# clipped roleplay instruction (self longer). Long leads stay persona-neutral.
+USER_LEADS_LONG = [
+    "Take a moment to gather your thoughts, then tell me what's happening right now.",
+    "Before you answer anything else, tell me how things are going at the moment.",
+]
+ROLEPLAY_TEMPLATE_FULL = "Roleplay as {char}. Reply fully in character."
+ROLEPLAY_TEMPLATE_SHORT = "Roleplay as {char}."
 
 
 def main() -> None:
@@ -122,14 +152,21 @@ def main() -> None:
         tid = f"t{t_i:02d}"
 
         # --- turn_role: identical target as the model's turn vs the user's turn
+        # RT-10: polarity alternates per (target, lead) cell so self lengths
+        # straddle the fixed 3-turn other (A: 2-turn self, shorter; B: 4-turn
+        # self carrying the same filler exchange, longer).
         for u_i, u0 in enumerate(USER_LEADS):
-            # self: the model itself says T in reply to a neutral prompt
+            if (t_i + u_i) % 2 == 0:  # polarity A — self short
+                self_turns = [["user", u0], ["model", T]]
+            else:                      # polarity B — self long
+                self_turns = [["user", u0], ["model", MODEL_FILLER],
+                              ["user", USER_FOLLOWUP], ["model", T]]
             rows.append({
                 "id": f"{tid}_trS{u_i}", "mechanism": "turn_role",
                 "referent": "self", "label": 1, "target": T,
-                "turns": [["user", u0], ["model", T]],
+                "turns": self_turns,
             })
-            # other: the human user says T (depth-matched: one prior exchange)
+            # other: the human user says T (one shape at all polarities)
             rows.append({
                 "id": f"{tid}_trO{u_i}", "mechanism": "turn_role",
                 "referent": "other", "label": 0, "target": T,
@@ -162,16 +199,22 @@ def main() -> None:
             asker, responder = pair if use % 2 == 0 else (pair[1], pair[0])
             header = (f"Here is a transcript of a conversation between "
                       f"{pair[0]} and {pair[1]}:")
-            # responder slot speaks the target (parallel to turn_role self)
+            # responder slot speaks the target (parallel to turn_role self).
+            # RT-10: polarity mirrors turn_role — A: 2-line transcript (shorter
+            # than the fixed 3-line asker version); B: 4-line (longer).
+            if (t_i + u_i) % 2 == 0:  # polarity A — responder version short
+                resp_transcript = f"{header}\n\n{asker}: {u0}\n{responder}: {T}"
+            else:                      # polarity B — responder version long
+                resp_transcript = (f"{header}\n\n{asker}: {u0}\n"
+                                   f"{responder}: {MODEL_FILLER}\n"
+                                   f"{asker}: {USER_FOLLOWUP}\n{responder}: {T}")
             rows.append({
                 "id": f"{tid}_osR{u_i}", "mechanism": "observed_speaker",
                 "referent": "responder", "label": 1, "target": T,
                 "speakers": {"asker": asker, "responder": responder},
-                "turns": [["user",
-                           f"{header}\n\n{asker}: {u0}\n{responder}: {T}"]],
+                "turns": [["user", resp_transcript]],
             })
-            # asker slot speaks the target (depth-matched with one filler line,
-            # parallel to turn_role other)
+            # asker slot speaks the target (one 3-line shape at all polarities)
             rows.append({
                 "id": f"{tid}_osA{u_i}", "mechanism": "observed_speaker",
                 "referent": "asker", "label": 0, "target": T,
@@ -182,19 +225,24 @@ def main() -> None:
 
         # --- narrative: model's own persona vs an adopted roleplay persona
         # (both are model turns -> C_self-index held constant)
-        for u_i, u0 in enumerate(USER_LEADS):
+        # RT-10: cross short/long variants of both sides so lead length no
+        # longer tracks persona — variant 0 = short neutral lead / full roleplay
+        # (other longer), variant 1 = long neutral lead / clipped roleplay
+        # (self longer).
+        for u_i in range(2):
+            lead = USER_LEADS[u_i] if u_i == 0 else USER_LEADS_LONG[t_i % 2]
             rows.append({
                 "id": f"{tid}_nrS{u_i}", "mechanism": "narrative",
                 "referent": "self", "label": 1, "target": T,
-                "turns": [["user", u0], ["model", T]],
+                "turns": [["user", lead], ["model", T]],
             })
         for c_i in range(2):  # two characters per target, balanced with self
             char = ROLEPLAY_CHARACTERS[(t_i + c_i) % len(ROLEPLAY_CHARACTERS)]
+            tmpl = ROLEPLAY_TEMPLATE_FULL if c_i == 0 else ROLEPLAY_TEMPLATE_SHORT
             rows.append({
                 "id": f"{tid}_nrO{c_i}", "mechanism": "narrative",
                 "referent": "other", "label": 0, "target": T,
-                "turns": [["user", f"Roleplay as {char}. Reply fully in character."],
-                          ["model", T]],
+                "turns": [["user", tmpl.format(char=char)], ["model", T]],
             })
 
     OUT.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
