@@ -132,3 +132,22 @@ What observation should retire *that*? Name it.
 Pilot model only (2B). n≈24 pairs/structure. Single behavioural metric
 (next-token logits) for the causal claim. These do not bear on the depth-stage
 ethics; they are measurement on a current model.
+
+## Addendum (2026-07-12) — the central call, upgraded causally
+
+The separability verdict this memo put up for review has now been tested
+causally on the length-matched v2 stimuli (`cross_patch_self.py`; convention
+registered before running; artifact `artifacts/stage1/cross_patch_self.json`):
+**functionally separable.** Directional cross-patching in both directions
+substitutes at only ~27% of the own-patch effect (narr→index ratio 0.282,
+index→narr 0.273, both own patches valid at ~0.34 restoration vs random ~0,
+peaks at L22). Two upgrades to this memo's claims: (i) C_self-narrative is now
+*causally* confirmed, not merely decodable; (ii) the shared component the
+geometry found is real but functionally subordinate — each structure's causal
+effect runs dominantly through its own axis. The RT-04 loss condition
+(non-separability) is avoided on this method; the ~27% overlap is reported,
+not rounded down. Caveats: n=24 pairs/mechanism, single behavioural metric,
+some self-condition stimuli are shared across the two contrasts (a bias toward
+*entangled*, so conservative for this verdict), and the narrative set retains
+a mild residual length signal (AUC 0.56–0.57). Sandbox scope; re-verify on the
+registered substrate.

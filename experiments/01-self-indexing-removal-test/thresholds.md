@@ -217,6 +217,15 @@ pass 2 adds RT-05/RT-06/RT-07/RT-08 below). All must run on the pilot set
   (C_self-index ⊥ C_speaker-generic; residual decodes at 1.0). Scope: these
   resolutions are on the pilot sandbox — **re-verify on the registered
   substrate before `δ`/`θ` lock**, like every other pilot gate.
+- **RT-04 cross-patch outcome (2026-07-12, v2 stimuli, pilot sandbox):**
+  **functionally separable** (`cross_patch_self.py`, convention registered at
+  `5bfda70` before running). Both own patches valid (index 0.340, narrative
+  0.338 at L22, random ~0) — the first *causal* confirmation of
+  C_self-narrative — and both cross-patch ratios are below the 0.5 line
+  (narr→index 0.282, index→narr 0.273). The shared geometric component
+  substitutes at only ~27%: real, subordinate, reported. The removal test runs
+  on each structure independently; same re-verify-on-registered-substrate
+  scope as above.
 
 ## The locked values
 

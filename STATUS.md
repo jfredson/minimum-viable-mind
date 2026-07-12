@@ -2,6 +2,31 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## RT-04 cross-patch: FUNCTIONALLY SEPARABLE — narrative causally confirmed (2026-07-12, cont.)
+
+The decisive test the RT-04 verdict was waiting on, run on the length-matched
+v2 stimuli (`cross_patch_self.py`, new; convention registered at `5bfda70`
+before running; addendum in `stage1-localization-findings.md`):
+
+- **Both own patches valid and near-identical:** index 0.340 / narrative 0.338
+  restoration at L22, random ~0. This is the first *causal* confirmation of
+  C_self-narrative.
+- **Cross-patch ratios 0.282 (narr→index) and 0.273 (index→narr)** — under the
+  pre-committed 0.5 line: the shared geometric component substitutes at ~27%,
+  real but subordinate. **Verdict: functionally separable**; removal test runs
+  on each structure independently; the RT-04 loss condition is avoided on this
+  method. Report the 27% overlap honestly.
+- Caveats: n=24 pairs/mechanism, single metric, some shared self-condition
+  stimuli across contrasts (biases toward *entangled* — conservative for this
+  verdict), narrative's mild residual length signal. Sandbox scope.
+
+**Stage-1 sandbox gate scoreboard after today:** RT-04 ✅ (functionally
+separable), RT-09 ✅ (not generic; removal targets the index residual), RT-10 ✅
+(not a length tracker). Still open before threshold lock: RT-01 (frequency
+control), RT-02 (T-split), RT-03 (rubric v2 + S re-baseline), RT-05 (T_syntax),
+RT-06 (capability-gating C_ctrl), RT-07 (OOD gate) — mostly on the registered
+substrate — plus the method-(b)/convergence decision (next action 2).
+
 ## RT-09 + RT-10 resolved on sandbox — v2 stimuli clean, both deflations defeated (2026-07-12, later same day)
 
 John adjudicated the two proposals below (adopted as-is). Amendment registered
