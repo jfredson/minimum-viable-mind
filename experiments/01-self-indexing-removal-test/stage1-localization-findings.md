@@ -151,3 +151,24 @@ some self-condition stimuli are shared across the two contrasts (a bias toward
 *entangled*, so conservative for this verdict), and the narrative set retains
 a mild residual length signal (AUC 0.56–0.57). Sandbox scope; re-verify on the
 registered substrate.
+
+## Addendum 2 (2026-07-12) — the convergence decision, resolved with evidence
+
+Next-action 2 (method (b) vs fallback) was resolved by running the registered
+subspace SAE test on the length-matched v2 stimuli
+(`converge_sae_subspace.py`, criteria committed at `945a4bb` before running;
+artifact `artifacts/stage1/converge_sae_subspace.json`). Outcome, identical for
+both structures at every tested layer (8–21): **decodes, but direction
+disagrees.** Held-out top-16-feature subspace decode margins are strong
+(+0.44 to +0.53 over the permutation null, selection inside training folds) —
+so method (b) does see the context-set referent, and the v1 "no signal" was
+partly single-feature granularity. But the probe direction projects only
+0.28–0.44 of its norm onto the selected decoder spans — 2–3× the
+random-subspace null (~0.12–0.17), yet below the pre-committed 0.5 bar. Per
+the registered rule: **not converged; the fallback applies** — causal patching
+stands as the independent second localization method, and C_self-index /
+C_self-narrative are declared localized by probe + causal patching, with the
+SAE result reported as partial alignment, not agreement. (The
+decode-without-direction pattern is a methods finding in its own right.)
+Sandbox scope; the registered substrate uses Llama Scope, so method (b) gets
+re-assessed there regardless.

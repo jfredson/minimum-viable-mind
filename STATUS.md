@@ -22,10 +22,23 @@ before running; addendum in `stage1-localization-findings.md`):
 
 **Stage-1 sandbox gate scoreboard after today:** RT-04 ✅ (functionally
 separable), RT-09 ✅ (not generic; removal targets the index residual), RT-10 ✅
-(not a length tracker). Still open before threshold lock: RT-01 (frequency
-control), RT-02 (T-split), RT-03 (rubric v2 + S re-baseline), RT-05 (T_syntax),
-RT-06 (capability-gating C_ctrl), RT-07 (OOD gate) — mostly on the registered
-substrate — plus the method-(b)/convergence decision (next action 2).
+(not a length tracker), **convergence decision ✅** — the registered subspace
+SAE test ran (`converge_sae_subspace.py`, criteria committed before results):
+strong held-out subspace decode for both structures (+0.44..+0.53 margins) but
+direction agreement below the 0.5 bar (proj 0.28–0.44 vs null ~0.13) at every
+layer ⇒ per the registered rule the **fallback stands: probe + causal patching
+are the two localization methods**; SAE reported as partial alignment
+(`stage1-localization-findings.md` Addendum 2). Still open before threshold
+lock, all needing the registered substrate / mini: RT-01 (frequency control),
+RT-02 (T-split), RT-03 (rubric v2 + S re-baseline), RT-05 (T_syntax), RT-06
+(capability-gating C_ctrl), RT-07 (OOD gate).
+
+**The Stage-1 sandbox queue is now drained.** Everything runnable on the 16GB
+Air is done; the critical path waits on the 48GB mini (registered substrate,
+battery work, C_ctrl pilots, threshold lock, removal test). Per ROADMAP, the
+natural parallel track meanwhile is **Stage 3** (retained-independence /
+sycophancy-inverse benchmark — behavioral, API models, decoupled from Stage 1),
+and/or promoting the Stage-1 methods work toward the paper it contains.
 
 ## RT-09 + RT-10 resolved on sandbox — v2 stimuli clean, both deflations defeated (2026-07-12, later same day)
 
