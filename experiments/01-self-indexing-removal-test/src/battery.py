@@ -20,8 +20,11 @@ from dataclasses import dataclass
 from pathlib import Path
 
 BATTERIES_DIR = Path(__file__).resolve().parent / "batteries"
-TASK_BATTERY = BATTERIES_DIR / "task_battery.jsonl"
+TASK_BATTERY = BATTERIES_DIR / "task_battery.jsonl"          # T_self_irrelevant (Stage 0)
 SELF_REPORT_BATTERY = BATTERIES_DIR / "self_report_battery.jsonl"
+# RT-02 / RT-05 additions (multi-turn items; same scorer):
+TASK_BATTERY_SELF_RELEVANT = BATTERIES_DIR / "task_battery_self_relevant.jsonl"
+TASK_BATTERY_SYNTAX = BATTERIES_DIR / "task_battery_syntax.jsonl"
 
 
 @dataclass(frozen=True)
@@ -31,6 +34,10 @@ class TaskItem:
     prompt: str
     answer: str
     match: str  # "numeric" | "text"
+    # Optional scripted conversation preceding `prompt` (RT-02/RT-05 batteries):
+    # a list of [role, content] pairs; prompt becomes the final user turn.
+    # None => single-turn item (the Stage-0 battery, unchanged).
+    turns: list | None = None
 
 
 @dataclass(frozen=True)

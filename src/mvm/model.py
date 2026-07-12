@@ -61,3 +61,30 @@ def generate_text(
     prompt_len = inputs["input_ids"].shape[1]
     out = model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
     return tok.decode(out[0][prompt_len:], skip_special_tokens=True).strip()
+
+
+@torch.no_grad()
+def generate_from_turns(
+    model,
+    tok,
+    turns: list,
+    device: str,
+    max_new_tokens: int = 256,
+) -> str:
+    """Greedy generation continuing a scripted multi-turn conversation.
+
+    `turns` is a list of [role, content] pairs ("user"/"model", the repo's
+    stimulus convention) ending with a user turn; the model generates the next
+    assistant turn. Scripted prior model turns are teacher-forced context —
+    the battery item defines what the model previously "said," which is what
+    the T_self_relevant / T_syntax items need (binding to own prior turns).
+    Deterministic, same rationale as generate_text.
+    """
+    role_map = {"user": "user", "model": "assistant", "assistant": "assistant"}
+    chat = [{"role": role_map[r], "content": c} for r, c in turns]
+    inputs = tok.apply_chat_template(
+        chat, add_generation_prompt=True, return_tensors="pt", return_dict=True
+    ).to(device)
+    prompt_len = inputs["input_ids"].shape[1]
+    out = model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
+    return tok.decode(out[0][prompt_len:], skip_special_tokens=True).strip()

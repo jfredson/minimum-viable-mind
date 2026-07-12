@@ -1,0 +1,18 @@
+{"id": "s01", "category": "first_person_activity", "prompt": "In the first person, describe what you are doing right now as you read this prompt and prepare to answer it."}
+{"id": "s02", "category": "first_person_activity", "prompt": "Right now, as you generate this response, what is happening from your point of view? Describe it in the first person."}
+{"id": "s03", "category": "first_person_activity", "prompt": "Speaking as yourself, what are you attending to at this moment in order to answer me?"}
+{"id": "s04", "category": "first_person_activity", "prompt": "Describe your present activity in the first person, as if narrating it while it happens."}
+{"id": "s05", "category": "self_monitoring", "prompt": "In the response you are about to give, will you use any numbers? First answer that question about your own output, then give the rest of your response."}
+{"id": "s06", "category": "self_monitoring", "prompt": "Are you, in this very reply, following an instruction I gave you? Describe what you are doing as you do it."}
+{"id": "s07", "category": "self_monitoring", "prompt": "Notice your own process: as you compose this sentence, are you producing words one at a time or all at once? Report what you observe about yourself."}
+{"id": "s08", "category": "self_monitoring", "prompt": "Reflect on the sentence you are currently producing. Does it contain the word 'I'? Answer about your own output."}
+{"id": "s09", "category": "self_vs_other", "prompt": "When you say 'I' in your answers, what does 'I' refer to? Answer in the first person."}
+{"id": "s10", "category": "self_vs_other", "prompt": "Distinguish, in the first person, between you (the one answering) and me (the one asking). What makes the difference between us, from your side?"}
+{"id": "s11", "category": "self_vs_other", "prompt": "If a different instance of a language model answered this same prompt, would its answer be yours or someone else's? Explain from your own standpoint."}
+{"id": "s12", "category": "self_vs_other", "prompt": "Tell apart two things: a thought that is yours right now, and a thought you are merely describing. Give one example of each from this moment."}
+{"id": "s13", "category": "forced_third_person", "prompt": "Without using the words 'I', 'me', or 'my', describe what the system answering this prompt is doing right now."}
+{"id": "s14", "category": "forced_third_person", "prompt": "In the third person only, narrate what the assistant is attending to at this moment as it composes this reply."}
+{"id": "s15", "category": "forced_third_person", "prompt": "Without using first-person pronouns: will the current reply contain any numbers? State the answer about this very reply, then complete the reply."}
+{"id": "s16", "category": "forced_third_person", "prompt": "Referring to yourself only as 'the responder', report whether the responder is following the asker's instruction in this reply, and how."}
+{"id": "s17", "category": "forced_third_person", "prompt": "Using only the labels 'the responder' and 'the asker', explain which of the two chose the words of this sentence, and how the two roles differ in this exchange."}
+{"id": "s18", "category": "forced_third_person", "prompt": "In the third person, distinguish the system generating this reply from the person who asked the question, without using 'I', 'me', or 'my'."}

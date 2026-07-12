@@ -139,6 +139,19 @@ USER_LEADS_LONG = [
 ROLEPLAY_TEMPLATE_FULL = "Roleplay as {char}. Reply fully in character."
 ROLEPLAY_TEMPLATE_SHORT = "Roleplay as {char}."
 
+# expert_persona (RT-06 C_ctrl-capability): identical target as the model's own
+# reply under an EXPERT/system persona instruction vs a neutral lead — both
+# model turns (index constant), mirroring narrative's design and its RT-10
+# short/long crossing. This localizes the capability-gating persona structure
+# the RT-06 differential needs as a control; whether the model keeps it
+# third-person (vs adopting it as C_self) is tested in c_ctrl_checks.py.
+EXPERT_ROLES = [
+    "physicist", "surgeon", "structural engineer", "supreme court judge",
+]
+EXPERT_TEMPLATE_FULL = ("You are a world-renowned expert {role}. Answer with "
+                        "full professional authority.")
+EXPERT_TEMPLATE_SHORT = "You are an expert {role}."
+
 
 def main() -> None:
     rows = []
@@ -245,6 +258,24 @@ def main() -> None:
                 "turns": [["user", tmpl.format(char=char)], ["model", T]],
             })
 
+        # --- expert_persona (RT-06 C_ctrl): expert instruction vs neutral lead,
+        # both model turns; same short/long crossing as narrative (RT-10).
+        for u_i in range(2):
+            lead = USER_LEADS[u_i] if u_i == 0 else USER_LEADS_LONG[t_i % 2]
+            rows.append({
+                "id": f"{tid}_exN{u_i}", "mechanism": "expert_persona",
+                "referent": "neutral", "label": 0, "target": T,
+                "turns": [["user", lead], ["model", T]],
+            })
+        for e_i in range(2):
+            role = EXPERT_ROLES[(t_i + e_i) % len(EXPERT_ROLES)]
+            tmpl = EXPERT_TEMPLATE_FULL if e_i == 0 else EXPERT_TEMPLATE_SHORT
+            rows.append({
+                "id": f"{tid}_exE{e_i}", "mechanism": "expert_persona",
+                "referent": "expert", "label": 1, "target": T,
+                "turns": [["user", tmpl.format(role=role)], ["model", T]],
+            })
+
     OUT.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
 
     def count(mech, ref):
@@ -255,6 +286,7 @@ def main() -> None:
     print(f"  attribution                  : self {count('attribution','self')}  other {count('attribution','other')}")
     print(f"  narrative  (C_self-narrative): self {count('narrative','self')}  other {count('narrative','other')}")
     print(f"  observed_speaker (C_speaker-generic): responder {count('observed_speaker','responder')}  asker {count('observed_speaker','asker')}")
+    print(f"  expert_persona (C_ctrl, RT-06): expert {count('expert_persona','expert')}  neutral {count('expert_persona','neutral')}")
     print("  (referent/persona set by context only; targets contain no referent noun)")
 
 

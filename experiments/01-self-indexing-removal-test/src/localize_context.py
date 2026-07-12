@@ -205,7 +205,8 @@ def main() -> None:
     acts, emb = extract_last_all_layers(model, tok, strings, device, n_layers)
 
     results = []
-    for mech in ("turn_role", "attribution", "narrative", "observed_speaker"):
+    for mech in ("turn_role", "attribution", "narrative", "observed_speaker",
+                 "expert_persona"):
         idx = [i for i, r in enumerate(stim) if r["mechanism"] == mech]
         if not idx:
             continue
