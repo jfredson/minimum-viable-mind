@@ -2,6 +2,35 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## Dress rehearsal run end-to-end — pipeline validated; rank-1 ablation too weak (2026-07-12, evening)
+
+The full removal-test pipeline ran on the sandbox (ablate → re-score T×3 + S-v2
+→ OOD gate → decision rule with REHEARSAL-ONLY thresholds). Instruments built
+and baselined the same day: `mvm/ablate.py` (+ RT-07 gate), T_self_relevant
+0.750 (RT-02), T_syntax 0.917 (RT-05), S rubric v2 re-baseline 0.618 (RT-03),
+C_ctrl checks (RT-01 freq ratios 0.92–0.99 ✅; **RT-06: expert persona stays
+functionally third-person on 2b-it — cross-patch ratios 0.182/0.308 — the
+differential is LIVE even here**, against the red-team's expectation).
+Rehearsal verdicts + lessons in `rehearsal-findings.md`:
+
+- **RT-07 fired exactly as designed:** mean-ablating the index residual is
+  off-manifold (Δnll +0.265 ≫ 0.05 bound) → OOD-inconclusive; the directional
+  cross-check stays on-manifold (+0.033).
+- **Null under the clean ablation:** d_task ≈ 0 (all three batteries), d_self
+  ≈ 0. Rank-1 ablation of a causally-confirmed direction does not move
+  behaviour — distributed/redundant structure + coarse battery resolution.
+  NOT H_description; recorded as such.
+- **Registered-run consequences:** pilot ablation-strength escalation
+  (rank-1 → subspace → SAE features) under the OOD gate before θ/δ lock; grow
+  batteries (≥30/subset); θ_self ≥ ~4× measured judge noise (σ≈0.05).
+- Human spot-check of judge scores still pending (John).
+
+**Stage-1 Air-tier backlog is now fully drained** — all sandbox gates resolved
+(RT-01, RT-04, RT-06, RT-09, RT-10, convergence) or piloted (RT-02, RT-03,
+RT-05, RT-07), and the pipeline is turnkey for the registered substrate.
+NB: memory notes a RunPod cloud-GPU venue is now live — the registered run may
+not need to wait for the mini.
+
 ## RT-04 cross-patch: FUNCTIONALLY SEPARABLE — narrative causally confirmed (2026-07-12, cont.)
 
 The decisive test the RT-04 verdict was waiting on, run on the length-matched
