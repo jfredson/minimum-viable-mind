@@ -136,3 +136,25 @@ treats the model id as a one-line, single-source-of-truth change).
 - [OLMo 2 — Ai2](https://allenai.org/blog/olmo2) · [OLMo 2 collection (HF)](https://huggingface.co/collections/allenai/olmo-2) · [Olmo-3-7B-Instruct-SFT (HF)](https://huggingface.co/allenai/Olmo-3-7B-Instruct-SFT)
 - [Tülu 3 — Ai2](https://allenai.org/blog/tulu-3-technical) · [Tülu 3 paper](https://arxiv.org/abs/2411.15124) · [open-instruct (GitHub)](https://github.com/allenai/open-instruct)
 - [Llama Scope paper](https://arxiv.org/abs/2410.20526) · [Llama-Scope SAEs (HF: fnlp)](https://huggingface.co/fnlp/Llama-Scope) · [Goodfire open-source SAEs](https://www.goodfire.ai/blog/sae-open-source-announcement)
+
+## Addendum 2026-07-13 — Llama Scope loader verified; substrate weights staged
+
+Verified on a cloud GPU (RunPod, RTX-class, CUDA bf16):
+
+- `sae_lens` 6.45.3 ships all 7 `llama_scope` release families in its pretrained
+  registry, including the primary pinned here: `llama_scope_lxr_8x` (residual
+  stream, 8x expansion, 32 layers).
+- `SAE.from_pretrained("llama_scope_lxr_8x", "l15r_8x")` loads cleanly:
+  d_in 4096 (= Llama d_model), d_sae 32768.
+- Encoding real `allenai/Llama-3.1-Tulu-3-8B-SFT` resid_post (layer 15, last
+  token, hidden_states[L+1] convention — same as the 2B sandbox) yields sparse
+  codes: L0 = [19, 24] of 32768 on the two standard probe prompts.
+- Method (b) therefore transfers to the registered substrate with **no custom
+  loader and no new assumptions** (sae_lens ≥ 6 moved the registry import to
+  `sae_lens.loading.pretrained_saes_directory`).
+
+Weights staged for the migration: Tulu-3-8B-SFT downloaded alongside
+Llama-3.1-8B base + Meta Instruct. DPO/RLVR ladder checkpoints (RT-06) not yet
+staged. Compute note: the registered-run hardware gate ("on the mini") can now
+also be satisfied by the cloud bench (same pipeline verified end-to-end on
+CUDA); decision on which substrate hosts the registered run itself remains open.
