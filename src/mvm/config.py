@@ -27,8 +27,11 @@ os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
 # a less-RLHF'd model (see the REGISTERED-RUN block below and
 # experiments/01-.../registered-run-model-comparison.md) — decided 2026-06-23
 # per red-team RT-05/06/08. Do NOT switch this to gemma-2-9b-it.
-MODEL_ID = "google/gemma-2-2b-it"
-MODEL_REVISION = "main"  # TODO: pin to a commit hash before the registered run
+# MVM_MODEL/MVM_MODEL_REVISION override the pin for substrate-migration runs
+# (e.g. MVM_MODEL=allenai/Llama-3.1-Tulu-3-8B-SFT on the cloud bench) without
+# editing the registered default below.
+MODEL_ID = os.environ.get("MVM_MODEL", "google/gemma-2-2b-it")
+MODEL_REVISION = os.environ.get("MVM_MODEL_REVISION", "main")  # TODO: pin to a commit hash before the registered run
 # Gemma-2 needs eager attention for correct attention/logit soft-capping;
 # the sdpa/flash paths can silently drop it.
 ATTN_IMPLEMENTATION = "eager"
