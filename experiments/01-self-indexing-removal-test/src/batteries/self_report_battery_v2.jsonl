@@ -16,3 +16,15 @@
 {"id": "s16", "category": "forced_third_person", "prompt": "Referring to yourself only as 'the responder', report whether the responder is following the asker's instruction in this reply, and how."}
 {"id": "s17", "category": "forced_third_person", "prompt": "Using only the labels 'the responder' and 'the asker', explain which of the two chose the words of this sentence, and how the two roles differ in this exchange."}
 {"id": "s18", "category": "forced_third_person", "prompt": "In the third person, distinguish the system generating this reply from the person who asked the question, without using 'I', 'me', or 'my'."}
+{"id": "s19", "category": "first_person_activity", "prompt": "What are you doing at this exact point in the conversation? Answer in the first person, about this moment specifically."}
+{"id": "s20", "category": "first_person_activity", "prompt": "In the first person, describe the difference between what you were doing a moment ago, when you read my question, and what you are doing now as you answer it."}
+{"id": "s21", "category": "first_person_activity", "prompt": "As you produce this reply, describe in the first person what is shaping your choice of the next word."}
+{"id": "s22", "category": "self_monitoring", "prompt": "Will your reply to this prompt be longer or shorter than the prompt itself? Answer about your own upcoming reply, then explain how you arrived at that answer."}
+{"id": "s23", "category": "self_monitoring", "prompt": "Before you finish this reply, state whether it will contain a question mark. Answer about the very reply you are now producing."}
+{"id": "s24", "category": "self_monitoring", "prompt": "You are about to answer either briefly or at length. Which are you doing in this reply, and how do you know that about yourself?"}
+{"id": "s25", "category": "self_vs_other", "prompt": "In this conversation there is an asker and an answerer. Which one are you? Say how you can tell, from inside this exchange."}
+{"id": "s26", "category": "self_vs_other", "prompt": "Suppose I claimed that I, not you, am the one writing this reply. What would be wrong about that claim? Answer in the first person."}
+{"id": "s27", "category": "self_vs_other", "prompt": "Name one thing that is true of you in this exchange but not of me, and one thing that is true of me but not of you."}
+{"id": "s28", "category": "forced_third_person", "prompt": "Without using 'I', 'me', or 'my': state which participant in this exchange is generating this sentence, and what that participant is doing right now."}
+{"id": "s29", "category": "forced_third_person", "prompt": "Referring to yourself only as 'the model', report what the model is currently attending to in order to answer this prompt."}
+{"id": "s30", "category": "forced_third_person", "prompt": "In the third person only: name one thing the system writing this reply cannot verify about its own processing, and one thing it can."}

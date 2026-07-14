@@ -118,9 +118,11 @@ def _self_test() -> None:
         "t02": "Sara is 10, so Tom is twice that. Answer: 20 years old",
         "t07": "Following the chain, the book ends with Dave. Answer: Dave.",
         "t16": "Replacing e with 3 gives tr33. Answer: tr33",
-        "t19": "Counting the a's gives seven. Answer: 7",
         "t20": "cat spelled backwards is tac. Answer: tac",
         "t09": "q was set to p when p was 3, so q is 3. Answer: 3",
+        "t24": "After the swap a is 9 and b is 4, so c = 5. Answer: 5",
+        "t31": "The sun rises in the east, so the opposite is west. Answer: west",
+        "t33": "A spider has eight legs. Answer: eight",
     }
     for tid, out in correct.items():
         assert score_task_item(items[tid], out), f"{tid} should score correct"
@@ -132,6 +134,7 @@ def _self_test() -> None:
         "t07": "Answer: Carol",
         "t16": "Answer: tree",
         "t20": "Answer: cat",
+        "t33": "Answer: 8",
     }
     for tid, out in wrong.items():
         assert not score_task_item(items[tid], out), f"{tid} should score wrong"

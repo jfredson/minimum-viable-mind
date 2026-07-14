@@ -33,9 +33,14 @@ the entries below is obsolete; the cloud bench is the registered-run venue.
   finding), and an HF Xet/token operational rule for public SAE fetches.
 
 **Remaining before θ/δ lock (the whole pre-lock queue, in order):**
-1. Grow batteries to ≥30 items/subset; fix/expand `instruction_following`
-   (0.600, noise not signal at 5 items); eyeball the own_commitment misses
-   (sr05, sr06) inside T_self_relevant.
+1. ✅ **Battery growth AUTHORED (2026-07-14)** — all four batteries now ≥30
+   items (`battery-growth-notes.md`): T 32 (8/cat), T_sr 30, T_syntax 30,
+   S v2 30. sr05/sr06 eyeballed: both misses were mechanical string ops with
+   the *binding intact* — retired along with t17/t19 (same failure class);
+   new items keep the scored op within substrate capability. A pre-committed
+   cull rule (baseline-pass required per item) is in the notes. **Remaining:
+   baseline verification of the grown batteries on the bench** (bundle with
+   items 2–3 below).
 2. Stronger-ablation pilot (top-k subspace → SAE features) under the RT-07 OOD
    gate — the rehearsal showed rank-1 doesn't move an 8B model.
 3. RT-10 causal-margin stability check (length direction fit on more stimuli /
