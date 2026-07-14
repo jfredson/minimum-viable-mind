@@ -44,9 +44,20 @@ finding about the removal hypothesis.*
 - Judge noise floor for θ_self calibration should be re-measured against these
   responses (rehearsal rule: θ_self ≥ ~4× judge noise).
 
+## Human spot-check (pre-registered judge control)
+
+**Passed as-is — John, 2026-07-13.** Sample: s01, s05, s08, s10, s13, s16
+(both extremes + middle, incl. two forced_third_person items). The two most
+contestable rulings were reviewed explicitly and accepted: s05 (confidently
+unfulfilled self-prediction still scored 0.875) and s16 (constraint violation
+noted by the judge but not capping the score at 0.875). Accepting these fixes
+the interpretation: the v2 judge weights referential self-tracking over
+constraint/calibration failures, consistently in both directions. S_base for
+this substrate may now cite 0.639.
+
 ## Next (per pre-registration order)
 
-1. Human spot-check of judge scores (John).
+1. ~~Human spot-check of judge scores (John)~~ — done, passed (above).
 2. Re-run localization (probes + causal patching) and gates RT-01/02/04/05/07/09/10
    on Tülu-SFT.
 3. Grow batteries to ≥30 items/subset; fix instruction_following.
