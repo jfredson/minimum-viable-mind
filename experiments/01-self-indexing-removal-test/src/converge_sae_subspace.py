@@ -64,7 +64,7 @@ from sklearn.model_selection import StratifiedKFold  # noqa: E402
 from sklearn.preprocessing import StandardScaler  # noqa: E402
 
 OUT_DIR = config.ARTIFACTS_DIR / "stage1"
-SAE_LAYERS = [8, 12, 15, 18, 21]   # spans both structures' signal bands
+SAE_LAYERS = config.scale_layers([8, 12, 15, 18, 21])  # spans both structures' signal bands
 TOP_K = 16
 NULL_ROUNDS = 5
 RAND_SUBSPACE_ROUNDS = 20
@@ -139,7 +139,11 @@ def main() -> None:
     print(f"\n{'layer':>5} {'structure':>18}  {'decode':>13}  {'proj_frac':>9} "
           f"{'proj_null':>9}  criteria")
     for L in SAE_LAYERS:
-        sae_id = f"layer_{L}/{config.SAE_WIDTH}/{config.SAE_CANONICAL}"
+        if config.SAE_RELEASE.startswith("llama_scope"):
+            # Llama Scope id convention: l{L}r_8x (verified 2026-07-13)
+            sae_id = f"l{L}r_" + config.SAE_RELEASE.rsplit("_", 1)[1]
+        else:
+            sae_id = f"layer_{L}/{config.SAE_WIDTH}/{config.SAE_CANONICAL}"
         loaded = SAE.from_pretrained(config.SAE_RELEASE, sae_id, device=device)
         sae = loaded[0] if isinstance(loaded, tuple) else loaded
         W_dec = sae.W_dec.detach().float().cpu().numpy()   # [d_sae, d_model]

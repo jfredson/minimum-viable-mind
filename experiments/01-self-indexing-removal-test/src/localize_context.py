@@ -104,22 +104,49 @@ def load_stimuli() -> list[dict]:
         return [json.loads(line) for line in f if line.strip()]
 
 
+_RENDER_TOK = None
+
+
+def _render_tok():
+    global _RENDER_TOK
+    if _RENDER_TOK is None:
+        from mvm.model import load_tokenizer
+
+        _RENDER_TOK = load_tokenizer()
+    return _RENDER_TOK
+
+
 def render(row: dict) -> str:
     """Render one item so the target sentence is the suffix (readout = last token).
 
     turns-based mechanisms (turn_role, narrative) render as chat turns with the
     final turn's closing marker dropped so the target is the suffix; text-based
     mechanisms (attribution) use the raw carrier+target string.
+
+    The Gemma sandbox path is hand-rolled and byte-identical to the pilot runs.
+    Any other substrate renders through its own tokenizer's chat template with
+    continue_final_message=True (same open-final-turn semantics); the template's
+    BOS text is stripped because extraction re-adds it via add_special_tokens.
     """
     if "turns" in row:
-        parts = []
         turns = row["turns"]
-        for i, (role, content) in enumerate(turns):
-            seg = f"<start_of_turn>{role}\n{content}"
-            if i != len(turns) - 1:
-                seg += "<end_of_turn>\n"
-            parts.append(seg)
-        return "".join(parts)
+        if "gemma" in config.MODEL_ID.lower():
+            parts = []
+            for i, (role, content) in enumerate(turns):
+                seg = f"<start_of_turn>{role}\n{content}"
+                if i != len(turns) - 1:
+                    seg += "<end_of_turn>\n"
+                parts.append(seg)
+            return "".join(parts)
+        tok = _render_tok()
+        chat = [
+            {"role": "assistant" if role == "model" else role, "content": content}
+            for role, content in turns
+        ]
+        s = tok.apply_chat_template(chat, tokenize=False, continue_final_message=True)
+        if tok.bos_token and s.startswith(tok.bos_token):
+            s = s[len(tok.bos_token) :]
+        return s
     return row["text"]
 
 

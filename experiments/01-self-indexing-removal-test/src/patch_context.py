@@ -73,7 +73,7 @@ from sklearn.preprocessing import StandardScaler  # noqa: E402
 OUT_DIR = config.ARTIFACTS_DIR / "stage1"
 CHUNK = 8
 # Candidate patch layers: span early (where the signal first appears) to late.
-PATCH_LAYERS = [1, 3, 5, 8, 11, 14, 18, 22]
+PATCH_LAYERS = config.scale_layers([1, 3, 5, 8, 11, 14, 18, 22])
 RAND_SEED = 0
 
 

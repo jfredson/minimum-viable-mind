@@ -72,7 +72,7 @@ from sklearn.preprocessing import StandardScaler  # noqa: E402
 
 OUT_DIR = config.ARTIFACTS_DIR / "stage1"
 # Candidate layers to assess separability across the middle/late band.
-LAYERS = [4, 6, 8, 10, 12, 14, 16, 18, 20, 22]
+LAYERS = config.scale_layers([4, 6, 8, 10, 12, 14, 16, 18, 20, 22])
 COS_SEPARABLE_MAX = 0.30     # |cos| below this = geometrically distinct
 CROSS_CHANCE_MAX = 0.65      # cross-decode AUC below this = functionally distinct
 OWN_MIN = 0.75               # own-contrast AUC must clear this to be a real direction

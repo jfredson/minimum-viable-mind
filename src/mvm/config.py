@@ -56,21 +56,15 @@ REGISTERED_MODELS = {
 # NB: SAELens support for Llama Scope is unverified — may need OpenMOSS or the
 # EleutherAI sae lib instead of `sae_lens.SAE.from_pretrained`.
 
-# --- SAEs (GemmaScope via SAELens; ACTIVE for the 2b-it sandbox) -------------
-# Verify exact ids before use, e.g.:
-#   from sae_lens import SAE
-#   SAE.from_pretrained(SAE_RELEASE, f"layer_{L}/{SAE_WIDTH}/{SAE_CANONICAL}")
-# Recorded here as the registered intent; the smoke test does not touch these.
-SAE_RELEASE = "gemma-scope-2b-pt-res-canonical"  # 2B residual-stream SAEs
-SAE_WIDTH = "width_16k"                           # smallest practical width
-SAE_CANONICAL = "canonical"
-
 # --- SAEs (GemmaScope via SAELens; used from Stage 1 on, NOT the smoke test) -
 # Verify exact ids before use, e.g.:
 #   from sae_lens import SAE
 #   SAE.from_pretrained(SAE_RELEASE, f"layer_{L}/{SAE_WIDTH}/{SAE_CANONICAL}")
 # Recorded here as the registered intent; the smoke test does not touch these.
-SAE_RELEASE = "gemma-scope-2b-pt-res-canonical"  # 2B residual-stream SAEs
+# MVM_SAE_RELEASE overrides for substrate-migration runs (verified 2026-07-13:
+# "llama_scope_lxr_8x" loads via sae_lens>=6 with per-layer ids "l{L}r_8x" —
+# see converge_sae_subspace.py, which derives the id format from the release).
+SAE_RELEASE = os.environ.get("MVM_SAE_RELEASE", "gemma-scope-2b-pt-res-canonical")
 SAE_WIDTH = "width_16k"                           # smallest practical width
 SAE_CANONICAL = "canonical"
 
@@ -78,6 +72,16 @@ SAE_CANONICAL = "canonical"
 # localizing the self-locating structure (Experiment 1).
 NUM_LAYERS = 26
 CANDIDATE_LAYERS = [6, 9, 12, 15, 18, 21]
+
+
+def scale_layers(layers: list[int], base_n: int = NUM_LAYERS) -> list[int]:
+    """Rescale absolute layer indices tuned on the base_n-layer pilot to the
+    substrate selected via MVM_N_LAYERS (identity when unset or equal), so the
+    Stage-1 sweep lists cover the same depth fractions on a deeper model."""
+    n = int(os.environ.get("MVM_N_LAYERS", base_n))
+    if n == base_n:
+        return list(layers)
+    return sorted({min(n - 2, max(1, round(l * n / base_n))) for l in layers})
 
 # Ensure the artifacts dir exists for downstream scripts.
 ARTIFACTS_DIR.mkdir(exist_ok=True)

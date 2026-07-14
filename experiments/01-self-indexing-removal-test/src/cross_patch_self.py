@@ -53,7 +53,7 @@ from patch_context import (  # noqa: E402
 import numpy as np  # noqa: E402
 
 OUT_DIR = config.ARTIFACTS_DIR / "stage1"
-PATCH_LAYERS = [1, 3, 5, 8, 11, 14, 18, 22]
+PATCH_LAYERS = config.scale_layers([1, 3, 5, 8, 11, 14, 18, 22])
 RAND_SEED = 0
 OWN_VALID_GAP = 0.10      # own restoration must beat random by this to count
 CROSS_RATIO_MAX = 0.50    # cross/own below this = functionally separable

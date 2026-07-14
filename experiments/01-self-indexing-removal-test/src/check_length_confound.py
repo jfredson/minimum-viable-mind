@@ -47,7 +47,7 @@ import numpy as np  # noqa: E402
 from sklearn.linear_model import LogisticRegression  # noqa: E402
 from sklearn.model_selection import StratifiedKFold, cross_val_score  # noqa: E402
 
-LAYERS = [4, 8, 10, 14, 18, 22]
+LAYERS = config.scale_layers([4, 8, 10, 14, 18, 22])
 MECHS = ("turn_role", "attribution", "narrative", "observed_speaker",
          "expert_persona")
 
