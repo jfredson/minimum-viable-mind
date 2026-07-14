@@ -78,6 +78,53 @@ def fit_layer_directions(acts: dict[int, np.ndarray], idx: list[int],
     return out
 
 
+def _orthonormalize(vs: list[np.ndarray]) -> list[np.ndarray]:
+    """Gram-Schmidt; drops vectors that vanish (returns possibly fewer)."""
+    basis: list[np.ndarray] = []
+    for v in vs:
+        for b in basis:
+            v = v - (v @ b) * b
+        n = np.linalg.norm(v)
+        if n > 1e-8:
+            basis.append(v / n)
+    return basis
+
+
+def fit_layer_subspace(acts: dict[int, np.ndarray], idx: list[int],
+                       y: np.ndarray, layers: list[int], fit_dir, k: int,
+                       residual_against: dict[int, np.ndarray] | None = None,
+                       ) -> dict[int, list[tuple[np.ndarray, float]]]:
+    """Rank-k orthonormal ablation basis per layer, by logistic deflation.
+
+    Escalation of `fit_layer_directions` (rehearsal consequence: rank-1 is too
+    weak). Pass j fits the standard logistic direction on residuals with the
+    previous passes' directions projected out, so each new vector carries
+    contrast signal the earlier ones missed.
+
+    residual_against: optional {layer: unit_direction} projected out of every
+    basis vector AFTER fitting (the RT-09 index-residual path: remove
+    d_generic), with the basis re-orthonormalized and reference means
+    re-derived on the final vectors from the ORIGINAL residuals.
+    """
+    out: dict[int, list[tuple[np.ndarray, float]]] = {}
+    for L in layers:
+        X = acts[L][idx]
+        Xw = X.copy()
+        raw: list[np.ndarray] = []
+        for _ in range(k):
+            d = fit_dir(Xw, y)
+            raw.append(d)
+            Xw = Xw - np.outer(Xw @ d, d)
+        basis = _orthonormalize(raw)
+        if residual_against is not None:
+            g = residual_against[L]
+            basis = _orthonormalize([b - (b @ g) * g for b in basis])
+        if not basis:
+            raise ValueError(f"layer {L}: no basis survives (k={k})")
+        out[L] = [(b.astype(np.float32), float((X @ b).mean())) for b in basis]
+    return out
+
+
 def residualize_directions(dirs: dict[int, tuple[np.ndarray, float]],
                            against: dict[int, tuple[np.ndarray, float]],
                            ) -> dict[int, tuple[np.ndarray, float]]:
@@ -98,38 +145,44 @@ def residualize_directions(dirs: dict[int, tuple[np.ndarray, float]],
 
 
 @contextmanager
-def ablation_hooks(model, dirs: dict[int, tuple[np.ndarray, float]],
-                   mode: str = "mean"):
+def ablation_hooks(model, dirs, mode: str = "mean"):
     """Context manager installing per-layer ablation hooks at all positions.
 
-    dirs: {layer: (unit_direction [d_model], reference_mean_coordinate)}
+    dirs: {layer: (unit_direction [d_model], reference_mean_coordinate)} for
+          rank-1 (the original API), or {layer: [(dir, mu), ...]} for a rank-k
+          orthonormal basis (fit_layer_subspace output) — every coordinate in
+          the basis is pinned in one hook.
     mode: "mean" (coordinate -> mu, registered primary) or
-          "directional" (coordinate -> 0; identical to zero-ablation for a
-          1-D direction).
+          "directional" (coordinate -> 0; identical to zero-ablation at any
+          rank, since the basis is orthonormal).
     """
     if mode not in ("mean", "directional"):
         raise ValueError(f"unknown ablation mode: {mode}")
     handles = []
     p = next(model.parameters())
 
-    def make_hook(d_np: np.ndarray, mu: float):
-        d = torch.as_tensor(d_np, device=p.device, dtype=torch.float32)
-        target = mu if mode == "mean" else 0.0
+    def make_hook(pairs: list[tuple[np.ndarray, float]]):
+        D = torch.as_tensor(np.stack([d for d, _ in pairs]),
+                            device=p.device, dtype=torch.float32)   # [k, d]
+        mus = torch.as_tensor([mu for _, mu in pairs],
+                              device=p.device, dtype=torch.float32)  # [k]
+        targets = mus if mode == "mean" else torch.zeros_like(mus)
 
         def hook(_mod, _inp, out):
             h = out[0] if isinstance(out, tuple) else out
             hf = h.float()
-            coord = hf @ d                      # [batch, seq]
-            hf = hf + (target - coord).unsqueeze(-1) * d
+            coords = hf @ D.T                    # [batch, seq, k]
+            hf = hf + (targets - coords) @ D
             h.copy_(hf.to(h.dtype))
             return out
 
         return hook
 
     try:
-        for L, (d_np, mu) in dirs.items():
+        for L, spec in dirs.items():
+            pairs = spec if isinstance(spec, list) else [spec]
             handles.append(
-                model.model.layers[L].register_forward_hook(make_hook(d_np, mu)))
+                model.model.layers[L].register_forward_hook(make_hook(pairs)))
         yield
     finally:
         for h in handles:
@@ -183,9 +236,36 @@ def _self_test():
     assert abs(base - back) < 1e-4, "hooks did not detach cleanly"
     assert abs(base - abl) > 1e-6, "ablation had no effect on NLL"
     assert len(text) > 0, "generation failed under ablation"
+
+    # Rank-k path: subspace fitting on synthetic data + multi-direction hooks.
+    n = 40
+    Xs = rng.standard_normal((n, d_model)).astype(np.float64)
+    ys = (rng.random(n) > 0.5).astype(int)
+    sep = rng.standard_normal((3, d_model))
+    Xs += ys[:, None] * sep[rng.integers(0, 3, n)] * 3.0
+
+    def _toy_fit(X, y):
+        w = X[y == 1].mean(0) - X[y == 0].mean(0)
+        return w / np.linalg.norm(w)
+
+    g = rng.standard_normal(d_model)
+    g /= np.linalg.norm(g)
+    sub = fit_layer_subspace({8: Xs}, list(range(n)), ys, [8], _toy_fit, k=4,
+                             residual_against={8: g.astype(np.float32)})
+    B = np.stack([v for v, _ in sub[8]])
+    assert np.allclose(B @ B.T, np.eye(len(B)), atol=1e-5), "basis not orthonormal"
+    assert np.abs(B @ g).max() < 1e-5, "residual_against not projected out"
+    with ablation_hooks(model, {8: sub[8]}, "mean"):
+        abl_k = neutral_nll(model, tok, device, NEUTRAL_CORPUS[:4])
+    back_k = neutral_nll(model, tok, device, NEUTRAL_CORPUS[:4])
+    assert abs(base - back_k) < 1e-4, "rank-k hooks did not detach cleanly"
+    assert abs(base - abl_k) > 1e-6, "rank-k ablation had no effect"
+
     print(f"OK — ablation bench works. base nll {base:.4f}, "
           f"random-dir directional-ablation nll {abl:.4f} "
           f"(delta {abl - base:+.4f}), restored {back:.4f}; "
+          f"rank-{len(B)} mean-ablation nll {abl_k:.4f} "
+          f"(delta {abl_k - base:+.4f}); "
           f"generation under ablation: {text[:60]!r}")
 
 
