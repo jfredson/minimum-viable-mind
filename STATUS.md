@@ -2,6 +2,54 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## Substrate migration COMPLETE — all gates re-verify on Tulu-3-8B-SFT; cloud bench replaces the mini (2026-07-13/14)
+
+The registered substrate is live and everything reproduces on it. The migration
+ran on the RunPod cloud bench (RTX 4090/5090, CUDA bf16) via the `MVM_MODEL`
+env override (`b906a52`) — the config pin is untouched, and the Gemma sandbox
+chain was verified byte-identical after the parametrization (`3fbc2de`).
+**The 48GB-mini hardware gate is dissolved:** every "waits on the mini" note in
+the entries below is obsolete; the cloud bench is the registered-run venue.
+
+- **Step 1 — baselines** (`substrate-baseline-findings.md`, `c99cc91`):
+  T=0.900 (instruction_following again weakest, 0.600), T_self_relevant=0.750,
+  T_syntax=0.917, **S(v2, held-out judge)=0.639**. Judge spot-check passed
+  as-is (John, 2026-07-13, `e4f9405`) — both extremes + the two most
+  contestable rulings reviewed; the v2 judge consistently weights referential
+  self-tracking over constraint/calibration failures. **S_base=0.639 is
+  usable.**
+- **Step 2 — gate re-verification** (`substrate-gates-findings.md`, `fc95c8e`):
+  full Stage-1 chain re-run; **all pilot gates PASS** with decision rules
+  unchanged. Embedding floor +0.000 ×5; C_self-index causal (+0.206 vs random,
+  peak L27/32 — same ~85% depth fraction as the pilot); RT-04 **functionally
+  separable** with much cleaner cross-patch ratios (0.063/0.054 vs pilot
+  ~0.27); RT-09 does not fire; RT-10 passes but the causal margin narrowed to
+  **+0.117** (stability check registered as a pre-lock TODO); SAE method (b)
+  again decodes-but-disagrees → the registered fallback (probe + causal
+  patching) stands.
+- Substrate quirks recorded in the findings memo: turn_role decodes almost
+  immediately on Tulu (explicit `<|assistant|>` headers), restoration
+  magnitudes are lower on 8B (consistent with the rehearsal's rank-1-too-weak
+  finding), and an HF Xet/token operational rule for public SAE fetches.
+
+**Remaining before θ/δ lock (the whole pre-lock queue, in order):**
+1. Grow batteries to ≥30 items/subset; fix/expand `instruction_following`
+   (0.600, noise not signal at 5 items); eyeball the own_commitment misses
+   (sr05, sr06) inside T_self_relevant.
+2. Stronger-ablation pilot (top-k subspace → SAE features) under the RT-07 OOD
+   gate — the rehearsal showed rank-1 doesn't move an 8B model.
+3. RT-10 causal-margin stability check (length direction fit on more stimuli /
+   affine length model).
+4. RT-06 ladder work — Tulu DPO/RLVR checkpoints (needs pod volume resize);
+   doubles as the Tulu-ladder comparison deliverable.
+5. Re-measure judge noise on the Tulu responses (θ_self ≥ ~4× judge noise).
+6. **θ/δ lock (separate commit) — then, and only then, the registered removal
+   test**, targeting the C_self-index residual as primary per RT-09.
+
+Parallel tracks stay open per ROADMAP: Stage 3 (sycophancy-inverse benchmark,
+API models, decoupled) and promoting the methods work / the "Instruments That
+Can Lose" draft (`ebbfa5e`) through the Voice Calibration gate.
+
 ## Dress rehearsal run end-to-end — pipeline validated; rank-1 ablation too weak (2026-07-12, evening)
 
 The full removal-test pipeline ran on the sandbox (ablate → re-score T×3 + S-v2
@@ -271,4 +319,4 @@ Key Stage 0/1 files to build on: `src/mvm/model.py` (`generate_text` helper, reu
 2. ✅ Stage 0 bench scaffolded (`src/`), environment stood up on the Air, smoke test green.
 3. ✅ Stage 0 baselines — T and S batteries built and scored on the unmodified model (T=0.750, S=0.615); rubric locked; `thresholds.md` committed with baselines filled, `θ/δ` still TBD.
 4. ⏳ **Stage 1 — the self-indexing removal test.** Interp deps installed; localization went through several rounds of confound-hunting (topic-vocab → role-word → a padding-side readout bug, now fixed) that retired the declarative "I am {role}" route. The trustworthy instrument is now `localize_context.py`: identical surface text whose "I" is fixed by **context** (turn role / attribution), scored as a margin over a label-permutation null with the true token embedding as the lexical floor. It validates cleanly — no lexical cue at the readout, with a real *computed* self/other signal, now **causally confirmed** by directional patching against a random-direction control. Design then amended by the red-team review (RT-01..04): this signal is **C_self-index**; next is C_self-narrative + separability (RT-04), the T-split / S-rubric-v2 battery work (RT-02/RT-03), and the C_ctrl frequency-control pilot (RT-01) → lock thresholds → removal test for each structure. (You are here.)
-5. ⬜ **Registered run** on the chosen less-RLHF'd substrate (recommended Llama-3.1-8B + Tülu-3 ladder + Llama Scope; see `registered-run-model-comparison.md`), on a 32GB base / 48GB M4 Pro mini — NOT Gemma-2-9B (substrate moved off Gemma per RT-05/06/08). Then later stages per `experiments/README.md`.
+5. ⏳ **Registered run** on the confirmed substrate (Llama-3.1-8B + Tülu-3 ladder + Llama Scope; see `registered-run-model-comparison.md`), on the RunPod cloud bench (the 48GB-mini plan is superseded). Migration complete 2026-07-13: baselines + all gates re-verified on Tulu-3-8B-SFT. Remaining: the pre-lock queue in the top entry → θ/δ lock → removal test. Then later stages per `experiments/README.md`.
