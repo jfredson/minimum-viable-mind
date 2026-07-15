@@ -2,6 +2,38 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## SAE-feature pilot COMPLETE — loss condition fires; both registered escalations now exhausted (2026-07-15, later)
+
+Run per the spec addendum (`164e132`…`1890210`, incl. two pre-run instrument
+amendments caught by the sandbox smoke: conditional-on-active mean clamping,
+BOS/sink exclusion — Δnll +7.3 → +0.13). Full tables in
+`prelock-findings.md` §d. Headlines:
+
+- **Selection collapsed to 2–3 features/layer** (13 total): base-trained
+  Llama Scope barely carves chat-turn structure — the convergence result's
+  geometric finding, now shown at feature granularity. Ladder degenerate;
+  shortfalls recorded.
+- **All conditions fully OOD-clean; none behaviour-moving beyond control**
+  (self 4 item-flips vs random control's 4; T_sr never moved). **Loss
+  condition fires** — honestly stated as dictionary coverage, not
+  demonstrated irremovability.
+- **First-ever S drop (zero mode, d_self +0.18) is coherence-borne
+  degeneration** (coherence −0.68, referential tracking −0.03; long-generation
+  repetition that short T answers and teacher-forced NLL both miss). Rubric
+  v2 earned its keep; a long-generation degeneracy probe is a candidate
+  RT-07 addition.
+- **Cross-granularity picture:** no intervention yet built (rank-1/k, SAE
+  mean/zero) has ever dropped T_self_relevant or judged referential
+  self-tracking. H_description-vs-not-testable is now the program's central
+  question; it routes through John's OOD-bound re-registration and/or
+  instruct-/task-trained dictionaries.
+
+**John's queue:** OOD-bound adjudication (highest leverage), long-generation
+gate addition, dictionary strategy, spot-check of SAE-condition judge scores.
+**Next bench workload:** RT-06 ladder (volume resize + Tulu DPO/RLVR), which
+carries the registered deflection-unmasking prediction. Pod deleted; session
+cost ~$0.90.
+
 ## Pre-lock bench bundle COMPLETE — batteries lock-ready, RT-10 closed, rank-k ablation exhausted (2026-07-15)
 
 The full bundle from `ablation-pilot-spec.md` (committed before running) ran on

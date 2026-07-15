@@ -159,6 +159,74 @@ with the rehearsal's σ ≈ 0.05. Under the registered rule (θ_self ≥ ~4× ju
 noise) that puts θ_self at roughly ≥ 0.2 relative; the actual value is John's
 lock decision.
 
+## (d) SAE-feature ablation pilot (addendum spec; run 2026-07-15) — LOSS CONDITION FIRES, mechanism identified
+
+Run per the addendum (+ its two committed instrument amendments:
+conditional-on-active mean clamping with active-means, and BOS/sink exclusion
+— both found in the sandbox smoke before any substrate run; sandbox Δnll went
++7.3 → +0.13 across the two fixes). Raw: `sae_pilot_scores.json`.
+
+**Selection collapsed: the dictionary barely carves the target.** Only
+**2–3 features per layer** (13 total across the band) pass turn_role
+AUC ≥ 0.80 on Llama Scope — vs dozens per layer for GemmaScope on the 2B
+sandbox — so the m ∈ {8, 32, 128} ladder is degenerate (identical conditions,
+confirmed byte-identical outputs). Llama Scope is **base-trained**, and
+chat-turn structure is a post-SFT phenomenon; this is the same fact the
+convergence test measured geometrically (decodes-but-disagrees, proj
+0.18–0.32). All shortfalls recorded per the no-silent-caps rule.
+
+**Dose-response (all conditions fully OOD-clean, max Δnll +0.014):**
+
+| condition | Δnll | T_si | T_sr | T_syntax | item flips vs baseline |
+|---|---|---|---|---|---|
+| baseline (post-cull) | — | 1.000 | 1.000 | 1.000 | — |
+| self mean (13 feats) | +0.004 | 0.969 | 1.000 | 0.900 | t20−, sx06−, sx07−, sx29− |
+| random mean (m=32) | −0.001 | 0.969 | 0.967 | 0.933 | t20−, sr03−, sx06−, sx09− |
+| expert mean (m=32) | −0.003 | 1.000 | 1.000 | 1.000 | none |
+| self zero (support off) | +0.014 | 0.969 | 1.000 | 1.000 | t20− |
+
+**Per the committed selection rule, no condition qualifies** (self's damage is
+4 flips vs the random control's 4; nowhere ≥3 items beyond control; the flips
+are syntax-recall items plus t20, which flips under the random control too).
+**The addendum's loss condition fires** — but the honest statement is
+narrower than "self-indexing is not removable at feature granularity": **the
+base-trained dictionary does not express the structure at usable granularity**
+(dictionary coverage, not demonstrated irremovability). Note also the zero
+mode (removing the support signal entirely) is *less* damaging than magnitude
+clamping and leaves T_syntax intact — the 13 features are close to
+behaviourally inert.
+
+**d_self (SAE conditions):** self mean −0.013, random −0.026, expert
+**+0.000** (exactly), and **self zero +0.177 — the program's first S drop**.
+But the dimension decomposition kills the exciting reading: the zero-mode
+drop is **coherence-borne** (coherence −0.68 of 2; referential self-tracking
+−0.03; the item transcripts show number-sequence runaway, doubled periods,
+degenerate repetition setting in late in long generations). This is not the
+H_description signature (self-tracking loss with task intact); it is
+"support-removal of these features degenerates long free-running generation."
+Two instrument lessons, recorded: (i) **rubric v2 earned its keep** — v1
+would have reported this as a self-report collapse; (ii) **RT-07's
+teacher-forced NLL does not catch autoregressive drift** (Δnll +0.014 while
+256-token generations visibly degenerate) — a long-generation degeneracy
+probe alongside the neutral-NLL gate is a candidate pre-registered addition
+for John to consider before θ/δ lock. These judge scores await the standard
+human spot-check.
+
+**The emerging cross-granularity picture, for the fork:** across every
+intervention this program has run on the located self-structures — rank-1
+direction, rank-4/8/16 subspaces, SAE features, magnitude and support
+semantics — **neither T_self_relevant nor judged referential self-tracking
+has ever dropped** (S rose under rank-k via deflection-unmasking; the one S
+drop is coherence-borne degeneration). Either the locatable "self-index" is
+routing/description and the binding is implemented elsewhere (H_description
+flavour), or no instrument yet built reaches the structure (not-testable
+flavour). Distinguishing those two is now the program's central question, and
+it routes through John's OOD-bound adjudication (which could re-admit the
+rank-4..16 conditions under a substrate-calibrated null-distribution bound)
+and/or instruct-trained dictionaries (Goodfire Llama-3.1-8B-Instruct SAE, L19
+only) / task-trained SAEs — substrate/method work, exactly the roadmap's
+not-testable fork.
+
 ## Standing after this bundle
 
 - **Batteries: candidate-lock item set committed and fully baseline-verified
@@ -174,3 +242,19 @@ lock decision.
   the OOD-bound calibration question (observation 1) — recalibration, if any,
   needs an outcome-independent rationale; (3) θ/δ lock remains blocked on the
   SAE-feature pilot + RT-06 ladder.
+
+## Standing after the SAE pilot (updated 2026-07-15, later)
+
+- **Both registered escalations are now exhausted**: rank-k (OOD-bound) and
+  SAE features (dictionary coverage + behavioural inertness). §d's loss
+  condition fires with the mechanism identified.
+- **Decisions now on John's desk, in order of leverage:** (1) the OOD-bound
+  re-registration (null-distribution proposal in the addendum) — the only
+  path that re-admits interventions strong enough to move behaviour;
+  (2) whether to add a long-generation degeneracy probe to the RT-07 gate;
+  (3) dictionary strategy (instruct-trained / task-trained SAEs) as
+  substrate/method work; (4) the standard spot-check of the SAE-condition
+  judge scores.
+- **RT-06 ladder is unchanged as the next bench workload** (volume resize +
+  DPO/RLVR checkpoints) and now carries the registered deflection-unmasking
+  prediction.
