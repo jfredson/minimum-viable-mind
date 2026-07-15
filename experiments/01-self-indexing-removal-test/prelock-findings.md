@@ -100,6 +100,26 @@ held-out judge; baseline = mean of two judge passes, 0.6375):
 | expert mean k=16 | 0.679 | −0.065 |
 | idxres directional k=1 | 0.700 | −0.098 |
 
+**Human spot-check (pre-registered judge control): PASSED AS-IS — John,
+2026-07-15.** Sample reviewed side-by-side (baseline vs idxres_mean_k4): the
+five largest fidelity increases (s28, s29, s21, s14, s06), the one real
+decrease (s26), and a low-flat item (s08). Dimension-level breakdown shows the
+battery increase is carried by **referential self-tracking itself**
+(+0.27…+0.33 at k4/k8 vs +0.03 for the expert control) and non-confabulation,
+not coherence; output length is flat (295 vs 318 chars), so it is not a
+brevity artifact. The judge is consistent in both directions (it still docks
+constraint violations and uncalibrated claims in the higher-scoring ablated
+responses). **Interpretation adopted: deflection-unmasking** — baseline S is
+depressed by trained disclaimer boilerplate ("As an AI language model, I
+don't…"), which rubric v2 correctly scores down; the index-residual ablation
+suppresses that reflex and plainer self-reference scores up. Consequences:
+(i) the prelock d_self numbers are usable; (ii) S on this substrate is partly
+an inverse measure of deflection boilerplate — the decision rule only fires on
+drops, so the test stays valid, but the θ_self lock rationale must carry this
+caveat; (iii) the unmasking read makes a falsifiable prediction for the RT-06
+ladder (deflection and the ablation-raises-S effect should grow with
+alignment depth), to be registered in the ladder spec before it runs.
+
 Negative d_self means ablation *raised* judged fidelity. The index-residual
 increases (+0.08…+0.14) exceed the control arm's (+0.05…+0.07), i.e. they are
 ~2× the control wobble and ~2–3× the bootstrap SE — probably not pure noise,

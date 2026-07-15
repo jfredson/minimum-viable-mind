@@ -91,3 +91,82 @@ Baselines → cull (analysis-side) → RT-10 stability → escalation ladder, al
 detached on one pod session; S judging + analysis local afterwards. Artifacts
 to `artifacts/substrate-migration/tulu-sft/prelock/` (gitignored), findings to
 a committed memo.
+
+---
+
+# Addendum (2026-07-15): SAE-feature ablation pilot
+
+*Committed before running, per §b's loss-condition branch: the rank-k ladder
+is exhausted (OOD-clean set {k=1}, which moves nothing — `prelock-findings.md`
+§b). SAE features are the registered next escalation: sparse and
+manifold-aligned by construction, they should be able to remove structure
+without the wholesale off-manifold displacement that killed rank ≥ 4. This
+addendum pins the selection rule, ablation semantics, conditions, and gates
+before any of it runs. Same substrate, same batteries (post-cull, 92/92
+verified), same RT-07 bound (0.05 nats — unchanged; the calibration question
+raised in `prelock-findings.md` obs. 1 stays open and is NOT resolved here).*
+
+## Machinery
+
+Llama Scope SAEs, release `llama_scope_lxr_8x` (resid_post, d_sae 32768,
+loader verified on this substrate 2026-07-13). One SAE per ablation-band layer
+— the band is unchanged from the rank-k pilot: layers **[10, 14, 17, 22, 27]**
+(`scale_layers([8, 11, 14, 18, 22])` at 32 layers).
+
+## Feature selection (committed rule)
+
+Per layer, encode the turn_role localization stimuli (48 items) with the
+layer's SAE and score every feature by single-feature AUC for the self/other
+contrast:
+
+1. **Candidates:** turn_role AUC ≥ 0.80.
+2. **Generic exclusion (feature-level RT-09):** drop candidates with
+   observed_speaker AUC ≥ 0.70 — features that also track speaker slots in
+   merely-observed dialogue are generic bookkeeping, not the reflexive index.
+3. **Dose ladder:** the top-m survivors by turn_role AUC, m ∈ {8, 32, 128}.
+   If fewer than m survivors exist at a layer, use all survivors and record
+   the shortfall (no silent cap).
+
+## Ablation semantics
+
+At every position and decode step (persistent hooks, as in the rank-k pilot):
+encode the residual with the layer's SAE, and for each selected feature
+replace its activation with its **reference mean** over the full stimulus set
+(mean mode; the primary) or **zero** (feature-off; the directional/zero
+cross-check). Apply as a decoder-space delta — h ← h + W_dec(a_ablated −
+a_original) — so the SAE's reconstruction error is untouched and only the
+selected features' contribution changes.
+
+## Conditions
+
+Baseline (fresh, same session); self-features mean at m ∈ {8, 32, 128};
+**random-feature control** at m ∈ {32, 128} (features sampled uniformly from
+those with activation frequency within ±25% of the selected set's mean — the
+count- and liveness-matched analogue of the norm-matched random direction);
+**expert-selective control** at m = 32 (same selection rule run on the
+expert_persona contrast, no generic exclusion — the capability-gating control
+arm). Zero-mode cross-check at the largest OOD-clean m. Each condition
+re-scores the three post-cull T batteries + S-v2 responses + RT-07 NLL,
+checkpointed per condition.
+
+## Readout (same rules as §b)
+
+- RT-07: Δnll > 0.05 nats ⇒ OOD-inconclusive, excluded from selection.
+- **Candidate strength = smallest OOD-clean m whose self-feature ablation
+  moves ≥ 1 T battery by ≥ 3 items beyond the matched-m random-feature
+  control's movement.**
+- d_self reported per condition (judge, rubric v2, locally); given the
+  spot-checked deflection-unmasking result, an S *increase* under
+  self-feature ablation is the registered expectation of that reading —
+  its absence would count against it.
+
+## Loss condition
+
+If no m ≤ 128 is both OOD-clean and behaviour-moving, the finding is:
+**self-indexing on this substrate is not removable at feature granularity
+either** — the "not testable at this granularity / model class" branch of the
+pre-registration, reported as such. That outcome makes the OOD-bound
+recalibration question (obs. 1) the live decision: any recalibration is a
+re-registration with an outcome-independent rationale (committed proposal:
+bound = 95th percentile of Δnll over ≥ 20 random count-matched feature-set
+mean-ablations), decided by John, never by this pilot's results.
