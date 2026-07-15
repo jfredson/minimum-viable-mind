@@ -137,6 +137,31 @@ cross-check). Apply as a decoder-space delta — h ← h + W_dec(a_ablated −
 a_original) — so the SAE's reconstruction error is untouched and only the
 selected features' contribution changes.
 
+**Amendment (2026-07-15, before any substrate run — instrument bug found in
+the sandbox smoke):** as first written, mean mode clamped features
+*unconditionally*, which for sparse features means forcing them ON at every
+position — catastrophically off-manifold (sandbox Δnll **+7.3 nats**,
+generation collapse) and obviously not the "uninformative value" the
+semantics intend. Mean mode is amended to **conditional-on-active clamping**:
+where a selected feature fires, its activation is replaced by its
+**active-mean** (mean over occurrences with a > 0 in the stimulus set); where
+it does not fire, nothing is injected. This destroys the magnitude
+information while preserving the sparsity support; **zero mode** (unchanged)
+removes the support signal as well. Both run, both reported — the pairing now
+cleanly separates "magnitude carries it" from "firing pattern carries it".
+The selection rule, controls, gates, and readout are untouched by this
+amendment.
+
+**Amendment 2 (same day, same smoke):** with conditional clamping in place,
+the sandbox Δnll was still +1.98; a position-attribution test showed **+1.68
+of it comes from the BOS position alone** (skip BOS → Δ +0.12). That is the
+attention-sink pathology RT-08 named (adjudicated ACCEPTED-RISK, folded into
+RT-07): sink-magnitude firings at position 0 are attention plumbing, not
+referent structure — nothing self-indexing can live before the first token of
+dialogue. The intervention therefore **never touches the BOS position** (all
+modes). Instrument-correctness fix, found and committed before any substrate
+run; selection, controls, gates, readout again untouched.
+
 ## Conditions
 
 Baseline (fresh, same session); self-features mean at m ∈ {8, 32, 128};

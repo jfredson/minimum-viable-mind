@@ -189,6 +189,73 @@ def ablation_hooks(model, dirs, mode: str = "mean"):
             h.remove()
 
 
+@contextmanager
+def sae_ablation_hooks(model, specs: dict[int, tuple], mode: str = "mean"):
+    """SAE-feature ablation hooks (spec addendum, 2026-07-15).
+
+    specs: {layer: (sae, feature_idx [m], ref_means [m])} — sae is a loaded
+    sae_lens SAE on the model's device; feature_idx the selected features;
+    ref_means their reference-mean activations over the localization stimulus
+    set.
+    mode: "mean" (where a feature is ACTIVE, clamp it to its active-mean —
+          magnitude information destroyed, sparsity support preserved) or
+          "zero" (feature off — removes the support signal too).
+
+    NB (amendment, 2026-07-15, found in sandbox smoke BEFORE any substrate
+    run): unconditional clamping of sparse features to a stimulus-set mean
+    forces them on at every position and is catastrophically off-manifold
+    (Δnll +7 nats on the sandbox). Mean mode is therefore conditional on
+    activity; ref means must be ACTIVE-means (mean over occurrences where the
+    feature fires). Recorded in the spec addendum.
+
+    Applied as a decoder-space delta, h <- h + (target - a_sel) @ W_dec[sel],
+    so the SAE's reconstruction error is untouched and only the selected
+    features' contribution changes. Fires at all positions and every decode
+    step, same persistence semantics as `ablation_hooks`.
+    """
+    if mode not in ("mean", "zero"):
+        raise ValueError(f"unknown SAE ablation mode: {mode}")
+    handles = []
+
+    def make_hook(sae, idx, mus):
+        dev = sae.W_dec.device
+        idx_t = torch.as_tensor(np.asarray(idx), device=dev, dtype=torch.long)
+        target = (torch.as_tensor(np.asarray(mus, dtype=np.float32), device=dev)
+                  if mode == "mean" else
+                  torch.zeros(len(idx), device=dev, dtype=torch.float32))
+        W_sel = sae.W_dec[idx_t].float()                 # [m, d_model]
+
+        def hook(_mod, _inp, out):
+            h = out[0] if isinstance(out, tuple) else out
+            hf = h.float()
+            flat = hf.reshape(-1, hf.shape[-1])
+            a = sae.encode(flat.to(sae.W_enc.dtype)).float()   # [N, d_sae]
+            a_sel = a[:, idx_t]                                # [N, m]
+            active = (a_sel > 0).float()
+            delta = (active * (target.unsqueeze(0) - a_sel)) @ W_sel  # [N, d_model]
+            delta = delta.reshape(hf.shape)
+            # Sink exclusion (amendment 2): never touch the BOS position —
+            # sink-magnitude firings there are attention plumbing, not
+            # referent structure, and clamping them dominates Δnll (RT-08).
+            # Cached decode steps (seq==1) are never BOS.
+            if delta.shape[1] > 1:
+                delta[:, 0, :] = 0
+            hf = hf + delta
+            h.copy_(hf.to(h.dtype))
+            return out
+
+        return hook
+
+    try:
+        for L, (sae, idx, mus) in specs.items():
+            handles.append(
+                model.model.layers[L].register_forward_hook(make_hook(sae, idx, mus)))
+        yield
+    finally:
+        for h in handles:
+            h.remove()
+
+
 @torch.no_grad()
 def neutral_nll(model, tok, device, texts: list[str] | None = None) -> float:
     """Mean per-token NLL (nats) on the neutral corpus — the RT-07 probe.
