@@ -84,3 +84,15 @@ The grown T batteries are verified on the **unmodified** registered substrate
 
 Baseline verification of the grown batteries is the next cloud-bench task,
 bundled with the stronger-ablation pilot and the RT-10 margin stability check.
+
+## Cull outcome (2026-07-15, applied as committed)
+
+Bench baselines: T_si 30/32, T_sr 28/30, T_syntax 25/30. Nine items dropped
+(t21, t24, sr04, sr32, sx23, sx24, sx25, sx26, sx30), all genuine model
+failures, none format artifacts; classifications + the sr32 binding-failure
+flag and the sx24–26 refusal-boilerplate quirk are in `prelock-findings.md`.
+Nine replacements authored from baseline-passing shapes only (t35, t36, sr33,
+sr34, sx31–sx35), restoring category floors (32/30/30). **Replacement
+verification: all three batteries score 1.000 at baseline (92/92)** —
+`postcull_baseline.json`. This item set is the candidate locked battery;
+per-item resolution at lock is 1 item ≈ 0.031–0.033.

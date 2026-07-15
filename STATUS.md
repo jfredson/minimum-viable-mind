@@ -2,6 +2,41 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## Pre-lock bench bundle COMPLETE — batteries lock-ready, RT-10 closed, rank-k ablation exhausted (2026-07-15)
+
+The full bundle from `ablation-pilot-spec.md` (committed before running) ran on
+a RunPod RTX PRO 4500 (~1h, ~$0.75) with analysis local. Findings + tables in
+`prelock-findings.md`; artifacts in `artifacts/substrate-migration/tulu-sft/prelock/`.
+
+1. **Batteries: candidate-lock set is DONE and fully baseline-verified.**
+   Grown batteries baselined (T_si 0.938 / T_sr 0.933 / T_syn 0.833,
+   instruction_following fixed at 8/8); nine baseline-failing items culled per
+   the pre-committed rule (incl. sr32, a genuine role-binding failure, and the
+   sx24–26 "as an AI I can't count messages" refusal quirk); nine replacements
+   authored from passing shapes and verified: **92/92 pass** on the unmodified
+   substrate. Resolution: 1 item ≈ 0.031–0.033.
+2. **RT-10: CLOSED STABLE — the pass is robust.** Margins +0.119…+0.211 under
+   all four length fits; the more independent the fit, the less length
+   restores (out-of-contrast: 0.002). The original narrow margin was
+   contamination of the length control by the contrast itself. Sandbox
+   replication same day agrees (+0.33 margins).
+3. **Rank-k ablation escalation: exhausted per the committed rule.** OOD-clean
+   set = {k=1}, which moves nothing; k≥4 breaches the 0.05-nat bound
+   marginally (+0.056…+0.087). Breached-k pattern is structure-specific and
+   points at **RT-05 routing, not self-binding**: at k=16 T_syntax drops
+   −0.233 and T_si −0.126 while **T_self_relevant and S do not drop at all**
+   (d_self is negative — ablation slightly *raises* judged self-report
+   fidelity, ~2× control wobble). Judge noise re-measured (repeat |Δ| 0.008;
+   control wobble 0.05–0.07 ⇒ θ_self ≳ 0.2 relative per the registered rule).
+4. **Pod housekeeping:** pod deleted; prelock log archived on the volume.
+
+**Next, in order:** (1) **SAE-feature ablation spec addendum** (Llama Scope
+machinery; pre-commit criteria, then bench pilot) — the registered escalation
+now that rank-k is exhausted; (2) RT-06 ladder (Tulu DPO/RLVR checkpoints;
+needs volume resize); (3) John: human spot-check of prelock judge scores +
+the OOD-bound calibration adjudication (`prelock-findings.md` obs. 1);
+(4) θ/δ lock (John, separate commit) → registered removal test.
+
 ## Substrate migration COMPLETE — all gates re-verify on Tulu-3-8B-SFT; cloud bench replaces the mini (2026-07-13/14)
 
 The registered substrate is live and everything reproduces on it. The migration

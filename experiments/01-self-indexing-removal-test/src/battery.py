@@ -120,7 +120,7 @@ def _self_test() -> None:
         "t16": "Replacing e with 3 gives tr33. Answer: tr33",
         "t20": "cat spelled backwards is tac. Answer: tac",
         "t09": "q was set to p when p was 3, so q is 3. Answer: 3",
-        "t24": "After the swap a is 9 and b is 4, so c = 5. Answer: 5",
+        "t35": "45 - 18 + 12 - 9 leaves 30 marbles. Answer: 30",
         "t31": "The sun rises in the east, so the opposite is west. Answer: west",
         "t33": "A spider has eight legs. Answer: eight",
     }
