@@ -14,9 +14,15 @@ from .device import get_device, get_dtype
 
 
 def load_tokenizer():
-    return AutoTokenizer.from_pretrained(
+    tok = AutoTokenizer.from_pretrained(
         config.MODEL_ID, revision=config.MODEL_REVISION
     )
+    # Llama-3.1-Instruct ships without a pad token (Tulu adds one); batched
+    # extraction needs padding, and eos-as-pad is safe with the mask-aware
+    # padding-agnostic readout in mvm.activations.
+    if tok.pad_token is None:
+        tok.pad_token = tok.eos_token
+    return tok
 
 
 def load_model(device: str | None = None):
