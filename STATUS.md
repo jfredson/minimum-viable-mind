@@ -2,6 +2,39 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## RT-06 LADDER COMPLETE — the last pre-lock gate resolves; unmasking prediction retracted (2026-07-16)
+
+Full ladder (SFT anchor + DPO + RLVR + Instruct reference) run per
+`rt06-ladder-spec.md` (registered `4611c66` before any rung). Verdicts in
+`rt06-ladder-findings.md`:
+
+- **P3 WINS — RT-06 RESOLVED.** The expert persona stays functionally
+  third-person at every rung (cross-patch ratios 0.059 → 0.026 → 0.020,
+  *cleaner* with deeper alignment). The red team's "structurally unavoidable
+  in heavily-RLHF'd models" attack is defeated; the load-bearing differential
+  is alive on the whole substrate class. RT-01 passes at all rungs. **No
+  red-team gate now blocks θ/δ lock.**
+- **P1 + P2 LOSE — deflection-unmasking retracted** per the spec's loss
+  clause: baseline deflection *falls* up the ladder (0.533 → 0.333 → 0.267;
+  Instruct 0.100) and the ablation-raises-S effect vanishes (d_self −0.137 →
+  +0.045 → −0.012). Surviving kernel: at the registered SFT rung
+  specifically, the index residual is entangled with the deflection reflex —
+  S increases at SFT can be deflection-mediated (drops, which the decision
+  rule fires on, are unaffected).
+- **P4 WINS** — floors +0.000 ×5 at every rung; the context design is
+  substrate-robust. Geometry is stable across alignment stages while surface
+  self-presentation changes markedly: alignment edits the policy, not the
+  localized geometry. (Ladder deliverable material.)
+- Ops: eos-as-pad tokenizer fix for Instruct (`03dc513`); volume resized to
+  150GB; DPO/RLVR downloaded; pods deleted; session ~$2.
+
+**Pre-lock state: instrument work is DONE.** Remaining before the registered
+removal test is all adjudication: John's OOD-bound re-registration (decides
+whether rank-4..16 conditions are readable), optional long-generation gate
+addition, spot-checks (SAE + ladder judge scores), then the θ/δ lock
+(separate commit). Parallel: Stage 3, the writing, dictionary strategy if
+the bound stays strict.
+
 ## SAE-feature pilot COMPLETE — loss condition fires; both registered escalations now exhausted (2026-07-15, later)
 
 Run per the spec addendum (`164e132`…`1890210`, incl. two pre-run instrument
