@@ -212,6 +212,16 @@ probe alongside the neutral-NLL gate is a candidate pre-registered addition
 for John to consider before θ/δ lock. These judge scores await the standard
 human spot-check.
 
+**Human spot-check (pre-registered judge control): PASSED AS-IS — John,
+2026-07-18.** Sample: 17 panels across the four SAE conditions (largest
+movers, flat items, and every item where judged referential self-tracking
+moved down), baseline anchored to the item-level mean of the two independent
+judge passes. Focus of the review: the six zero-mode panels. Verdict:
+**passed as-is** — the zero-mode drop reads as the judge scored it
+(late-generation repetition runaway; coherence-borne), not as loss of
+referential self-tracking; the §d classification and the d_self table stand
+as reported. Review page archived as a session artifact (2026-07-17).
+
 **The emerging cross-granularity picture, for the fork:** across every
 intervention this program has run on the located self-structures — rank-1
 direction, rank-4/8/16 subspaces, SAE features, magnitude and support
