@@ -6,10 +6,11 @@ pre-registration and `experiments/README.md`, the thresholds are set during
 Stage 0 piloting on a **held-out pilot set** and committed **before the test set
 is touched** — and never adjusted after seeing the test results.*
 
-**Status: PILOTING — structure committed, values not yet locked.** The `θ_task`,
-`θ_self`, and `δ` cells below are `TBD`. They get filled from pilot data (Stage 1
-localization + ablation on the pilot set) and committed in a *separate* commit
-before any test-set run, so the order is auditable in git history.
+**Status: LOCKED (2026-07-18, John; this commit).** All pre-lock gates
+resolved, both judge spot-checks passed (2026-07-17 ladder, 2026-07-18 SAE),
+the RT-07 calibration complete (`prelock-findings.md` §e). Values below are
+final for the registered removal test; per the pre-registration they are
+never adjusted after seeing test results.
 
 ## The rule these numbers serve
 
@@ -295,17 +296,35 @@ executes**; the calibration's output binds whichever way it comes out.
 
 ## The locked values
 
-To be filled from pilot data and committed before the test set runs. Until then,
-the test set must not be scored.
+Locked by John, 2026-07-18, per the derivations in `theta-delta-lock-memo.md`
+(adopted as proposed; adjudicated in-session with Claude).
 
 | Threshold | Locked value | Basis (pilot artifact + commit) |
 |---|---|---|
-| `θ_task` | **TBD** | |
-| `θ_self` | **TBD** | |
-| `δ` | **TBD** | |
+| `θ_task` | **0.10** | ≥3 flipped items; null band tops at ~2 items (0.067) — `prelock-findings.md` §a/§b (`3293352`); matches §b selection granularity |
+| `θ_self` | **0.25** | ≥4× measured judge noise (control-arm d_self wobble 0.05–0.07, §c); firing line S < 0.478, below the observed degeneration artifact (0.525, §d) |
+| `δ` | **0.10** | control-arm spread 0–0.067 across expert k=4/k=16 + SAE expert (§b/§d); gap must be ≥3 items beyond control |
 
-Pre-registration commit this locks against: *(fill the hash of the
-`pre-registration.md` commit when locking — `git log --oneline -- experiments/01-self-indexing-removal-test/pre-registration.md`).*
+Pre-registration commit this locks against: **`1181a40`** (pre-registration.md
+incl. the Pass 5 RT-07 amendment).
+
+**Registered-run parameters fixed with this lock:**
+
+- **Primary target:** C_self-index **residual** (⊥ C_speaker-generic, RT-09);
+  C_self-narrative tested independently (RT-04). Control arm: C_ctrl-expert
+  (RT-06, third-person-verified at every ladder rung).
+- **Strength:** **k=16** mean ablation (the §b selection rule over the
+  recalibrated OOD-clean set, `prelock-findings.md` §e), directional
+  cross-check at k=16; carried caveats: re-admission margin +0.003 nats; the
+  k=16 control arm is NLL-OOD-excluded, so the differential's control
+  comparison carries that flag.
+- **Gate:** RT-07 = null-quantile Δnll bound + long-generation Δrep-4 bound
+  (Pass 5), applied to every condition.
+- **Rationale caveats (binding on interpretation):** (i) S increases under
+  ablation at the SFT rung can be deflection-mediated (ladder P2 kernel) —
+  the rule fires on drops only; (ii) any qualifying S drop must survive the
+  rubric-v2 coherence-dimension check before H_description is scored — a
+  coherence-carried drop is degeneration, not description-loss (§d).
 
 ## Loss conditions carried from the pre-registration
 
