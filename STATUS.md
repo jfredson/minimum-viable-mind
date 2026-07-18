@@ -2,6 +2,30 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## CALIBRATION COMPLETE — k=8/16 re-admitted (k=4 stays out); candidate strength k=16; ops mystery solved (2026-07-18)
+
+The Pass 5 calibration ran (47 min, ~$0.60; full tables
+`prelock-findings.md` §e). Null bounds grow with rank (+0.030/+0.063/+0.089);
+**k=8 and k=16 re-admitted** (marginally — 0.007/0.003 nats), **k=4 stays
+excluded at 2.2× its null bound** — the procedure had teeth. §b selection
+over the enlarged clean set: k=8 moves nothing → **candidate strength =
+k=16** (T_syntax −7 / T_si −4 items beyond control; caveats: control arm
+itself OOD-excluded; no k=8 control existed). The long-gen probe caught its
+first real catch in the *control*: expert k=4 is NLL-clean but degenerates
+free-running (Δrep-4 +0.181, breach); index-residual ablations trend *less*
+repetitive. The readable k=16 pattern remains the RT-05 routing signature.
+
+**Ops post-mortem (memory updated):** the 17h "outage" was a dead
+`uptimeSeconds` field in runpodctl JSON (reads 0 on booted pods since ~07-16);
+boot-verify loops were deleting healthy pods. Boot check = SSH or console.
+Account/stock were fine throughout.
+
+**Remaining before the removal test:** (1) John: SAE-condition spot-check
+verdict (review page published 2026-07-17, still open); (2) John: θ/δ lock
+(`theta-delta-lock-memo.md` has candidates + derivations), which should now
+also name k=16 as the selected index-residual strength; (3) then the
+registered removal test.
+
 ## OOD-BOUND ADJUDICATED — RT-07 re-registered (null-quantile bound + long-gen probe); calibration run is next bench workload (2026-07-17)
 
 John adjudicated `prelock-findings.md` obs. 1 in-session (worked through with

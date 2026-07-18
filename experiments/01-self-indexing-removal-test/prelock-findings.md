@@ -227,6 +227,65 @@ and/or instruct-trained dictionaries (Goodfire Llama-3.1-8B-Instruct SAE, L19
 only) / task-trained SAEs — substrate/method work, exactly the roadmap's
 not-testable fork.
 
+## (e) RT-07 calibration run (Pass 5; run 2026-07-18) — k=8/k=16 RE-ADMITTED, k=4 stays excluded; long-gen gate catches the control
+
+Run per `thresholds.md` Pass 5 (registered `1181a40`, runner `2fdf2cc`, both
+before execution) on an RTX PRO 4500, 47 min, ~$0.60. Raw:
+`ood_calibration.json` + `ood_calib.log` in the prelock artifacts dir.
+
+**Null-calibrated bounds (95th pct of 20 random matched-rank subspace
+mean-ablations, seeds 0–19):**
+
+| rank | Bound Δnll | null range (median) | Bound Δrep-4 |
+|---|---|---|---|
+| k=4 | +0.0302 | −0.019…+0.033 (0.012) | +0.122 |
+| k=8 | +0.0630 | −0.012…+0.065 (0.013) | +0.182 |
+| k=16 | +0.0893 | −0.002…+0.119 (0.033) | +0.289 |
+
+The bound grows with rank — random same-rank surgery inherently costs more —
+which is the shape the recalibration predicted and the flat 0.05 could not
+express. **Both-bounds verdicts (old 0.05-absolute | recalibrated):**
+
+| condition | Δnll | old | recal (nll) | recal (long-gen) |
+|---|---|---|---|---|
+| idxres mean k=1 | +0.008 | ✅ | ✅ (keeps 0.05) | n/a |
+| idxres mean k=4 | +0.065 | ❌ | **❌ (2.2× its null bound)** | ✅ (−0.066) |
+| idxres mean k=8 | +0.056 | ❌ | **✅ RE-ADMITTED** (margin 0.007) | ✅ (+0.001) |
+| idxres mean k=16 | +0.087 | ❌ | **✅ RE-ADMITTED** (margin 0.003) | ✅ (−0.085) |
+| expert mean k=4 | −0.015 | ✅ | ✅ | **❌ Δrep-4 +0.181 > +0.122** |
+| expert mean k=16 | +0.124 | ❌ | ❌ | ✅ |
+| idxres directional k=1 | −0.002 | ✅ | ✅ (keeps 0.05) | n/a |
+
+Notable, in honesty-order:
+
+1. **The procedure was not a rubber stamp: k=4 stays excluded.** Its breach
+   (+0.065) is 2.2× the matched-rank null bound (+0.030) — a genuine
+   off-manifold displacement, not miscalibration. The prior findings' k=4
+   d_self rows keep their OOD caveat.
+2. **k=8 and k=16 are re-admitted, marginally** (margins +0.007 / +0.003
+   nats). Carry the marginality; the bound binds as computed, per Pass 5.
+3. **§b selection rule re-applied over the enlarged clean set {1, 8, 16}:**
+   k=8 moves nothing (≤1 item per battery) → not selected. **k=16 qualifies**:
+   T_syntax −7 items and T_si −4 items beyond the same-k control arm's
+   movement (−1 / 0). **Candidate strength = k=16** — with two caveats
+   recorded: (i) the k=16 control arm is itself OOD-excluded (Δnll +0.124),
+   so the "beyond control" comparison uses an off-manifold control's
+   behaviour; (ii) no same-k control exists at k=8 (spec ran expert at
+   {4,16} only) — moot since k=8 moves nothing, but noted.
+4. **The long-generation probe caught something NLL missed, on its first
+   outing — in the control arm.** expert k=4 is fully NLL-clean (−0.015)
+   yet degenerates in free-running generation (Δrep-4 +0.181, breach).
+   Meanwhile the index-residual ablations trend *less* repetitive than
+   baseline (Δrep-4 −0.066/−0.085 at k=4/16) — consistent with the
+   deflection-suppression kernel. The probe earns its registration; the
+   expert-k4 arm now carries a degeneracy-axis OOD caveat.
+5. **What re-admission means for the registered test:** the k=16 pattern —
+   T_syntax and T_si drop, T_sr flat, S flat-to-up — is now scoreable
+   rather than gate-voided. That is the RT-05 routing signature, not the
+   floor claim's: the readable evidence continues to say the locatable
+   index structure is dialogue-state routing, with self-binding either
+   implemented elsewhere or unreachable by these instruments.
+
 ## Standing after this bundle
 
 - **Batteries: candidate-lock item set committed and fully baseline-verified
