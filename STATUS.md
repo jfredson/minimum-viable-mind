@@ -2,6 +2,31 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## θ/δ LOCKED; SPOT-CHECKS DONE; HELD-OUT TEST SET AUTHORED — the registered run is next (2026-07-18, later)
+
+Everything between instruments and the registered result closed today:
+
+- **SAE spot-check PASSED AS-IS** (John; zero-mode drop confirmed
+  coherence-borne) — recorded in `prelock-findings.md` §d (`f5c2d89`).
+- **θ/δ LOCKED** (John, separate commit `8b1fcbe`): θ_task 0.10,
+  θ_self 0.25, δ 0.10, against pre-reg `1181a40`; registered-run parameters
+  fixed (index-residual k=16 mean primary, expert control, Pass 5 dual gate,
+  interpretation caveats binding).
+- **Pilot/test separation gap caught and closed:** the 92-item batteries are
+  PILOT (consumed by dose-response/SAE/ladder/k-selection); a **held-out
+  test set** was required. Authoring spec registered first (`3df532d`), then
+  **122 fresh items authored** by four parallel agents (shape-clones of
+  baseline-passing shapes only) and reviewed item-by-item — every T answer
+  hand-verified (`cf06b49`).
+
+**Next, in order:** (1) bench session: baseline-verify the test batteries
+(accuracy-only; pre-committed cull rule; NO ablation touches the test set);
+(2) author replacements for any baseline failures, re-verify; (3) **the
+registered removal test** (conditions per the lock; S judged rubric v2;
+decision rule verbatim; standard human spot-check of test-set judge scores
+before the verdict is final). Ops note: boot-check pods via SSH, never
+runpodctl's dead `uptimeSeconds` field (see memory + entry below).
+
 ## CALIBRATION COMPLETE — k=8/16 re-admitted (k=4 stays out); candidate strength k=16; ops mystery solved (2026-07-18)
 
 The Pass 5 calibration ran (47 min, ~$0.60; full tables
