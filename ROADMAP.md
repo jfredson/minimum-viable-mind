@@ -134,6 +134,9 @@ Narrower than the ladder implies:
   class, or better separation instruments); **H_center or restricted → Stage 2
   and 4 deepen the finding before anything is built**.
 - Stage 2's metric work is needed before Stage 4 regardless of the fork.
+- **Post-removal-test sequencing (adjudicated by John, 2026-07-17):** Stage 3
+  starts regardless of the removal-test outcome (it is outcome-independent);
+  the fork then decides between Stage 2 deepening and Stage 6 pre-work.
 
 ## Durable deliverables (accrue on every branch)
 
