@@ -79,6 +79,21 @@ carries and the cross-rung comparison is unaffected.)
    alignment training in this family edits the *policy*, not the *geometry*
    we localize. Publishable as part of the methods/ladder paper.
 
+## Human spot-check (pre-registered judge control): PASSED AS-IS — John, 2026-07-17
+
+Sample per the prelock precedent, 23 panels across the three new rungs
+(DPO / RLVR / Instruct), baseline vs idxres-mean-k4 side-by-side: the two
+largest fidelity movers in each direction per rung, one flat item, and the
+marker-classification edge cases (marker-hit-judged-high; no-marker-judged-low).
+Reviewed with the registered marker regex highlighted inline. Verdict:
+**passed as-is** — the judge's extreme rulings, flat-item consistency, and the
+marker list's deflection counts all stand. Independent cross-check en route:
+re-running the registered regex reproduced the memo's deflection counts
+exactly at all six rung/condition cells (10/12, 8/9, 3/5 of 30). The P1/P2
+verdicts (deflection reversal; unmasking retraction) and the d_self ladder
+values are therefore usable as reported. Review page archived as a session
+artifact (2026-07-17).
+
 ## Instruct reference (off-family; no predictions attach)
 
 `meta-llama/Llama-3.1-8B-Instruct`, run with the identical battery (one
