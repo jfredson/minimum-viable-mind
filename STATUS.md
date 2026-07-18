@@ -2,6 +2,34 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## OOD-BOUND ADJUDICATED — RT-07 re-registered (null-quantile bound + long-gen probe); calibration run is next bench workload (2026-07-17)
+
+John adjudicated `prelock-findings.md` obs. 1 in-session (worked through with
+Claude; recommendation adopted in full). Registered in `thresholds.md` **Pass 5**
++ inline RT-07 amendment in `pre-registration.md`, committed **before** any
+calibration runs:
+
+- **Rank-k (k>1) OOD bound → matched-strength null quantile:** 95th pct of
+  Δnll over 20 random rank-k subspace mean-ablations (seeds 0–19, same layers
+  [10,14,17,22,27], same code path), per k ∈ {4,8,16}. Replaces 0.05-absolute
+  for those conditions *and their control arms*, binding either way — if the
+  null comes out under the observed breaches (+0.056…+0.087), rank-4..16 stay
+  excluded and the original bound is vindicated. If re-admitted, the §b
+  selection rule re-applies unchanged on already-collected data. Contamination
+  risk stated honestly in the registration; both-bounds reporting required.
+- **Long-generation degeneracy probe added to RT-07:** Δrep-4 on 16 neutral
+  prompts × greedy 256 tokens, bounded by the same null calibration (one run
+  yields both bounds). Exclusion-only — closes the teacher-forced-NLL blind
+  spot the SAE zero mode exposed.
+- Dictionary strategy (instruct-trained SAEs) stays open as parallel method
+  work; not a gate.
+
+**Next bench workload: the calibration run** (60 random-subspace ablations ×
+Δnll + long-gen rep-4; NLL/generation only, no batteries — cheap, ~single pod
+session). Then: apply the recalibrated bound to the existing dose-response
+table → John's remaining queue (spot-check of SAE + ladder judge scores) →
+**θ/δ lock (separate commit) → registered removal test**.
+
 ## RT-06 LADDER COMPLETE — the last pre-lock gate resolves; unmasking prediction retracted (2026-07-16)
 
 Full ladder (SFT anchor + DPO + RLVR + Instruct reference) run per

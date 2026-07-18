@@ -227,6 +227,72 @@ pass 2 adds RT-05/RT-06/RT-07/RT-08 below). All must run on the pilot set
   on each structure independently; same re-verify-on-registered-substrate
   scope as above.
 
+### Pass 5 addition (2026-07-17) — RT-07 bound re-registration + long-generation gate (John's adjudication, not a red-team pass)
+
+Adjudicates `prelock-findings.md` obs. 1 (the OOD-bound calibration question)
+and the SAE-pilot instrument lesson (teacher-forced NLL misses autoregressive
+degeneration). **Both items are committed here before the calibration run
+executes**; the calibration's output binds whichever way it comes out.
+
+- **RT-07 OOD bound, re-registered for rank-k subspace conditions (k > 1):**
+  the bound becomes a **matched-strength null-distribution quantile** instead
+  of the 0.05-nat absolute. Procedure, fixed in full before running:
+  - For each k ∈ {4, 8, 16}: draw **N = 20 random rank-k orthonormal bases**
+    of the residual stream (seeds 0–19, committed here), at the same layers
+    **[10, 14, 17, 22, 27]**, with reference means derived and mean-ablation
+    applied by the **identical code path** as the registered index-residual
+    conditions — only the basis is randomized.
+  - **Bound_k = the 95th percentile** (linear-interpolation quantile; all 20
+    values reported) of the null Δnll distribution at rank k, on the same
+    neutral corpus.
+  - Bound_k **replaces** 0.05 for rank-k conditions *and their matched-rank
+    control arms* (expert k=4/k=16), whatever it comes out to be — including
+    if it is *tighter* than 0.05 or below the observed breaches (in which
+    case rank-4..16 stay excluded and the original bound is vindicated).
+  - If conditions are re-admitted, the §b selection rule of
+    `ablation-pilot-spec.md` re-applies **unchanged** over the enlarged
+    OOD-clean set, on the **already-collected** battery/S data — no new
+    conditions, no re-scoring.
+  - Rank-1, directional, and SAE-feature conditions keep the 0.05 absolute
+    (all pass it comfortably; nothing turns on it).
+  - Findings must report verdicts under **both** the old and new bounds — no
+    silent replacement.
+  - *Rationale (outcome-independent in form, stated honestly):* (i) 0.05 was
+    carried from the 2B sandbox, where the guarded failure mode was a +0.265
+    blowout; it was never calibrated on this substrate. (ii) The original
+    RT-07 registration (Pass 2, 2026-06-23, above) specifies the bound
+    "**relative to C_ctrl**" — comparative in intent; the absolute constant
+    was an implementation shortcut in the pilot spec. The null quantile is
+    the principled comparative form (a distribution of matched controls
+    rather than one control arm). (iii) *Honest contamination note:* the
+    rank-k Δnll values this could re-admit (+0.056…+0.087) were known when
+    this adjudication was made. The safeguard is structural: the bound is
+    the output of a fixed-seed, pre-committed procedure, not a chosen
+    number, and it binds in both directions.
+
+- **Long-generation degeneracy probe, added to the RT-07 gate:** the SAE
+  pilot's zero mode showed teacher-forced Δnll +0.014 while free-running
+  256-token generations visibly degenerated (`prelock-findings.md` §d) —
+  the NLL gate structurally cannot see autoregressive drift. This addition
+  can only *exclude* conditions, never admit them.
+  - **Probe:** 16 neutral prompts drawn from the RT-07 neutral corpus
+    (fixed seed 0, committed before running), greedy 256-token generation
+    per condition.
+  - **Metric:** rep-4 = 1 − (distinct 4-grams / total 4-grams), averaged
+    over prompts; reported as Δrep-4 over the baseline condition.
+  - **Bound:** Δrep-4 > the 95th percentile of the null Δrep-4 distribution,
+    measured on the **same 20 random matched-strength ablations** as the
+    Δnll calibration above (one calibration run yields both bounds). For
+    non-rank conditions, the null is the matched-class random control
+    (random feature sets for SAE conditions).
+  - **Verdict semantics:** breach ⇒ **OOD-inconclusive (degeneracy axis)**,
+    same standing as an NLL breach. The probe runs alongside neutral-NLL
+    for every condition of the registered removal test.
+
+- **Also adjudicated 2026-07-17:** dictionary strategy (instruct-/task-trained
+  SAEs, e.g. Goodfire Llama-3.1-8B-Instruct L19) stays open as parallel
+  substrate/method work — it is not a gate and does not block θ/δ lock.
+
 ## The locked values
 
 To be filled from pilot data and committed before the test set runs. Until then,
