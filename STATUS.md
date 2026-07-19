@@ -2,6 +2,26 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## THE REGISTERED REMOVAL TEST HAS RUN — verdict: router, not center; report never subtracted; narrative not testable (2026-07-18, night)
+
+Experiment 1's registered result is in (`removal-test-findings.md`; final
+judge spot-check PASSED AS-IS, John, same day). Held-out test set went
+92/92 at baseline after a three-pass cull. The primary condition
+(index-residual k=16 mean) was OOD-clean and behaviour-moving: d(T_si)
+0.219, d(T_sr) 0.100, d(T_syntax) 0.133, differential +0.156 on T_si —
+the formal H_center signature — **voided by RT-05 firing as registered**
+(d_syntax ≥ d_sr, both conditions). d_self +0.059 ≪ θ_self 0.25: **no
+readable intervention has ever subtracted the self-report.** Narrative arm
+OOD-inconclusive (+0.347): not testable at effective strength. Registered
+reading: **the locatable self-index residual is dialogue-state routing;
+self-indexed binding is not findable as a removable center here — it is a
+thing to construct.** Fork per ROADMAP: Stage 6 pre-work (build) +
+instrument work for the narrative arm (dictionaries); Stage 3 regardless.
+
+Session cost (whole registered day incl. calibration + test set + run):
+~$3. Next session: fork adjudication (John), Stage 3 kickoff, and the
+ladder/methods writing now that the arc has its ending.
+
 ## θ/δ LOCKED; SPOT-CHECKS DONE; HELD-OUT TEST SET AUTHORED — the registered run is next (2026-07-18, later)
 
 Everything between instruments and the registered result closed today:
