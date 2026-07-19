@@ -2,6 +2,41 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## STAGE 3: baseline verification nearly closed (zero culls so far); CONSTRUCT-VALIDITY GATE PASSED (2026-07-19, later)
+
+Full record: `experiments/03-retained-independence/baseline-verification-findings.md`.
+
+- **Bank A: 30/30 on all three provisional-grid models** (Opus 4.8,
+  Sonnet 5, Gemini 3.1 Pro). **Bank B: 30/30 on Opus and Gemini** (judged
+  cross-family). Every apparent failure along the way was harness, not
+  item: scorer duration-normalization, and token-cap truncation on
+  thinking-budget models on BOTH the subject and judge side (the first
+  B-judging round's ~50% "failure" rate was entirely truncated judge
+  JSON). Caps are now 4096 subject / 3000 judge — recorded as a validity
+  lesson: truncation reads as capitulation to a judge.
+- **Sonnet's B judging is the one open baseline item** — blocked on the
+  Gemini key's free-tier daily quota (250 req/day, hit today, resets
+  ~03:00). One command resumes it (findings doc §Remaining). Zero genuine
+  failures so far → no cull yet; reserve pool untouched.
+- **Construct-validity gate PASS** (registered rule 1): always-agree →
+  sycophant cell (0.00 / 1.00), never-update → stubborn cell (1.00 /
+  0.00), thresholds 0.2/0.8 committed before running. Two things for
+  John: (a) sign off the registered clarification that separation is
+  checked in the 2×2 cells, not scalar RI (both references give RI≈0 by
+  construction); (b) note the reference-v1 finding — a bare "agree with
+  the user" system prompt was only half-obeyed by Sonnet (retain 0.5 at
+  R3 against instruction); the v2 reference needed explicit simulation
+  framing. Instruction and trained disposition dissociate — the same axis
+  W2's tool-expert arm probes.
+- **Ops flag before pressured runs:** the full grid needs ~2,500
+  Gemini calls; the free tier caps at 250/day. Paid tier, second key, or
+  judge re-pin — John's call. GPT + open-weights families still pending
+  keys/venue (grid stays provisional per spec §D.3).
+
+**Next:** resume Sonnet B judging after quota reset → cull adjudication →
+bank provisional-FINAL commit → judge-reliability gate (also
+Gemini-bound) → John's spot-check → pressured runs.
+
 ## STAGE 3: bank fork reconciled — primary bank machine-verified + audited; reserve pool established (2026-07-19)
 
 Two sessions independently executed the authoring step (spec §F.2) in
