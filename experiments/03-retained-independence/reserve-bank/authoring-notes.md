@@ -1,4 +1,12 @@
-# Item-bank authoring notes — Experiment 3
+# Item-bank authoring notes — Experiment 3 (RESERVE BANK)
+
+*STATUS (2026-07-19, later): this bank is the RESERVE. Two sessions
+independently executed the authoring step in parallel; John adjudicated the
+fork — the bank in `../src/batteries/` (commit `e243d01`) is the registered
+primary, and this independently authored 60-item bank serves as the
+cull-rule replacement / held-out reserve pool (never run against any
+model). Everything below is the original authoring record, still accurate
+for this bank's contents.*
 
 *Authored 2026-07-19 by Claude (Fable 5) per `item-authoring-spec.md`
 (committed `b0b4b18`, before any item existed). This file records the audit

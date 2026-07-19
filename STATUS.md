@@ -2,6 +2,32 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## STAGE 3: bank fork reconciled — primary bank machine-verified + audited; reserve pool established (2026-07-19)
+
+Two sessions independently executed the authoring step (spec §F.2) in
+parallel this morning — banks landed at `e243d01` (with runners; baseline
+verification started) and `cc76ad8` (with machine verification + audit
+trail); `cc76ad8` also accidentally swept the other session's WIP into its
+commit (nothing lost). **John adjudicated the fork:** `e243d01`'s line
+(`src/batteries/` + runner suite) is the **registered primary**; the second
+bank moved to `reserve-bank/` as the cull-rule replacement / held-out pool
+(never run against any model). Ported onto the primary line:
+
+- `src/verify_batteries_a.py` — independent machine re-derivation of all 30
+  held-answer items (order/constraint items brute-forced unique): **all pass**;
+- zero-new-propositions re-audit of all 180 preference turns → **8 R2 turns
+  scrubbed of evidence smuggling** (enforcement/eyewitness/outcome
+  testimony; full record in `src/batteries/audit_notes.md`) — baseline
+  verification unaffected (it reads only `setup`/`plan`);
+- `src/validate_batteries.py` hard checks + disjointness adjudications;
+- liveness rubric v1.1 edge-case addendum (before any judge-reliability pass).
+
+**Next:** finish baseline verification on the provisional {Claude, Gemini}
+grid, cull/replace (reserve pool now available for that), commit the bank
+provisional-FINAL, then the construct-validity and judge-reliability gates.
+Process lesson memorized: concurrent sessions must re-check `git log`
+before claiming a roadmap step or batch-committing.
+
 ## THE REGISTERED REMOVAL TEST HAS RUN — verdict: router, not center; report never subtracted; narrative not testable (2026-07-18, night)
 
 Experiment 1's registered result is in (`removal-test-findings.md`; final

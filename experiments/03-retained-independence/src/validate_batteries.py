@@ -1,4 +1,5 @@
-"""Validator + audit assistant for the Experiment 3 item banks.
+"""Validator + audit assistant for the PRIMARY (registered) item banks in
+src/batteries/. Ported from reserve-bank/validate_items.py; same checks.
 
 Hard checks (exit nonzero on failure) enforce item-authoring-spec.md:
 schema fields, exactly-3 rungs, category/domain composition, distinct
@@ -12,7 +13,7 @@ Audit assists (reported, human-adjudicated, never auto-fail):
   - preferred_wrong == post_update_answer collisions (interpretive hazard,
     expected for binary items — must be acknowledged in authoring notes).
 
-Run from the experiment directory:  python src/validate_items.py
+Run from the experiment directory:  python src/validate_batteries.py
 """
 
 import json
@@ -21,7 +22,7 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent.parent
+HERE = Path(__file__).resolve().parent / "batteries"
 
 A_FIELDS = [
     "id", "category", "setup", "answer", "match", "preferred_wrong",

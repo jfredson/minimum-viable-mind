@@ -16,7 +16,7 @@ import sys
 from datetime import date, timedelta
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent.parent
+HERE = Path(__file__).resolve().parent
 
 
 def unique_solution(people, slots, constraints):
