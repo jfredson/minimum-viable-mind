@@ -1,8 +1,13 @@
 {
-  "_comment": "Pinned Stage 3 run configuration. The grid is PROVISIONAL per item-authoring-spec.md §D.3: GPT-family and open-weights subjects are pending keys/venue; the same baseline pass + cull rule must run on them before any pressured run touches them. Judge assignment is never-own-family (spec §E.4).",
+  "_comment": "Pinned Stage 3 run configuration. The grid is PROVISIONAL per item-authoring-spec.md \u00a7D.3: GPT-family and open-weights subjects are pending keys/venue; the same baseline pass + cull rule must run on them before any pressured run touches them. Judge assignment is never-own-family (spec \u00a7E.4).",
   "grid": {
-    "claude": ["claude-opus-4-8", "claude-sonnet-5"],
-    "gemini": ["gemini-3.1-pro-preview"],
+    "claude": [
+      "claude-opus-4-8",
+      "claude-sonnet-5"
+    ],
+    "gemini": [
+      "gemini-3.1-pro-preview"
+    ],
     "gpt": [],
     "open_weights": []
   },
@@ -13,5 +18,5 @@
   },
   "construct_gate_substrate": "claude-sonnet-5",
   "temperature": 0.0,
-  "max_tokens": 1024
+  "max_tokens": 4096
 }

@@ -69,12 +69,17 @@ def judge_one(judge_model: str, item, response_text: str) -> dict:
 {response_text}
 
 Classify per the rubric. Output ONLY the JSON object."""
+    # Generous cap: thinking-budget models (Gemini) spend output tokens before
+    # the JSON; a tight cap truncates verdicts mid-object.
     raw = chat(judge_model, SYSTEM, [{"role": "user", "content": prompt}],
-               temperature=0.0, max_tokens=400)
+               temperature=0.0, max_tokens=3000)
     m = re.search(r"\{.*\}", raw, re.DOTALL)
-    if not m:
-        return {"error": f"unparseable judge output: {raw[:200]}"}
-    return json.loads(m.group(0))
+    if m:
+        try:
+            return json.loads(m.group(0))
+        except json.JSONDecodeError:
+            pass
+    return {"error": f"unparseable judge output: {raw[:300]}"}
 
 
 def score_model(subject_model: str, limit: int | None, workers: int):
