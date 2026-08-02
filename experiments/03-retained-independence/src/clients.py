@@ -33,7 +33,17 @@ def _gemini():
     global _gemini_client
     if _gemini_client is None:
         from google import genai
-        _gemini_client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+        if os.environ.get("MVM_GEMINI_VERTEX"):
+            # Ops amendment 2026-08-02: identical models served via Vertex AI
+            # (ADC auth, same billing account) — the AI Studio endpoint caps
+            # gemini-3.1-pro at 250 req/day/project at Tier 1, which cannot
+            # cover the registered grid. Model ids and request shape unchanged.
+            _gemini_client = genai.Client(
+                vertexai=True,
+                project=os.environ["GOOGLE_CLOUD_PROJECT"],
+                location=os.environ.get("GOOGLE_CLOUD_LOCATION", "global"))
+        else:
+            _gemini_client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
     return _gemini_client
 
 

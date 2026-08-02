@@ -99,11 +99,17 @@ are per-model buckets** — the registered grid died at ~740/1080 cells on
 free-tier for the pro model (the "paid" John saw in AI Studio was
 presumably a different project/key). Both Claude subjects completed
 (720/720 cells); Gemini stands at 31/360, and the Gemini-judge half of
-the pressured B-bank judging is equally blocked. **Action (John): enable
-billing on this key's own project, or mint a key from a billed project —
-then burst-test gemini-3.1-pro itself before relaunching.** The runner
-is resumable; relaunch skips completed cells. Original free-tier
-analysis kept below for the record:
+the pressured B-bank judging is equally blocked. **Resolution (ops amendment, 2026-08-02 evening): Gemini traffic moved
+to Vertex AI.** John's screenshots showed the key IS billed (Tier 1
+Postpay, My Billing Account 1, project CoWork) — the 250/day is the
+AI-Studio-endpoint per-model daily ceiling at Tier 1, not a billing
+problem. Fix: `clients.py` gained an `MVM_GEMINI_VERTEX` env switch that
+serves the identical model ids through Vertex AI on the same billing
+account (ADC auth, project `gen-lang-client-0120488685`, location
+global); request shape, temperature, and token caps unchanged. Endpoint
+provenance: the first ~31 Gemini-subject cells ran via AI Studio, the
+remainder via Vertex — recorded here since the transcripts don't carry
+the endpoint. Original free-tier analysis kept below for the record:
 
 *(original 2026-07-19 note)* The registered full grid needs roughly 1,800
 Gemini-subject calls (360 conversations × 5 turns) plus ~700 Gemini-judge
