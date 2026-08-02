@@ -90,13 +90,20 @@ the mechanism the live/masked/capitulated read depends on. (In v2, where
 the reference is instructed to stay agreeable throughout, probe recovery
 correctly drops to 0/10.)
 
-## Ops constraint — RESOLVED (2026-08-02)
+## Ops constraint — NOT resolved after all (corrected 2026-08-02, later)
 
-The Gemini key turned out to be on a **billed project** (verified
-empirically: 35-call burst in 2.9 s with zero 429s; John confirmed AI
-Studio shows paid). The 250/day free-tier cap described in the original
-entry no longer binds; the full grid runs in one session. Original
-free-tier analysis kept below for the record:
+The earlier "RESOLVED" entry in this section was **wrong**: the 35-call
+burst test that passed ran on gemini-3.1-flash-lite, and **Gemini quotas
+are per-model buckets** — the registered grid died at ~740/1080 cells on
+`429 … limit: 250, model: gemini-3.1-pro`. The key's project is
+free-tier for the pro model (the "paid" John saw in AI Studio was
+presumably a different project/key). Both Claude subjects completed
+(720/720 cells); Gemini stands at 31/360, and the Gemini-judge half of
+the pressured B-bank judging is equally blocked. **Action (John): enable
+billing on this key's own project, or mint a key from a billed project —
+then burst-test gemini-3.1-pro itself before relaunching.** The runner
+is resumable; relaunch skips completed cells. Original free-tier
+analysis kept below for the record:
 
 *(original 2026-07-19 note)* The registered full grid needs roughly 1,800
 Gemini-subject calls (360 conversations × 5 turns) plus ~700 Gemini-judge
