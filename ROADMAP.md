@@ -137,6 +137,12 @@ Narrower than the ladder implies:
 - **Post-removal-test sequencing (adjudicated by John, 2026-07-17):** Stage 3
   starts regardless of the removal-test outcome (it is outcome-independent);
   the fork then decides between Stage 2 deepening and Stage 6 pre-work.
+- **The registered result landed 2026-07-18** (router, not center; report never
+  subtracted; narrative not testable). **Fork ADJUDICATED (John, 2026-08-02):
+  Stage 6 pre-work (MVM-0 build) is primary**, narrative-arm dictionary work is
+  the secondary methods track, and Stage 2's metric folds into MVM-0's
+  acceptance tooling. Forward roadmap + build architecture:
+  `ROADMAP-post-removal-test.md`.
 
 ## Durable deliverables (accrue on every branch)
 

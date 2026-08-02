@@ -2,6 +2,29 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## FORK ADJUDICATED + PAPER DRAFTED + ROADMAP v2 (2026-08-02)
+
+Step-back session: the whole arc reviewed and written up.
+
+- **Paper draft:** `drafts/paper-removal-test-nature-draft.md` — one flagship
+  Nature/registered-report-style article covering the full Experiment 1 arc
+  (confound ladder → localization → red-team controls → alignment ladder →
+  the registered result), all numbers verbatim from the findings memos.
+  Repo-internal until it passes Voice Calibration + Cold Reader.
+- **Roadmap v2:** `ROADMAP-post-removal-test.md` — what we learned (7
+  findings), the open questions (Q1–Q6), and the Stage 6 pre-work
+  architecture (**MVM-0**: small purpose-built model with an explicit
+  self-register + anti-router curriculum; removal test re-run verbatim;
+  loss condition = the network routes around its own center).
+- **John adjudicated in-session:** (1) **fork → MVM-0 build primary**,
+  dictionary work secondary, Stage 2 folded into MVM-0 acceptance tooling;
+  (2) **Gemini key → paid tier** (John to flip before the next Stage 3 bench
+  session); (3) **paper stays one flagship article**.
+
+**Next:** finish Stage 3 per the entry below (Sonnet B judging is unblocked
+once the key is paid) → then MVM-0a spec + pre-registration + red-team pass.
+Still open for John: the Stage 3 2×2-cell separation clarification sign-off.
+
 ## STAGE 3: baseline verification nearly closed (zero culls so far); CONSTRUCT-VALIDITY GATE PASSED (2026-07-19, later)
 
 Full record: `experiments/03-retained-independence/baseline-verification-findings.md`.
