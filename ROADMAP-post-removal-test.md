@@ -165,10 +165,10 @@ corrigibility gate. Stage 7 stays conditional and likely dormant.
 ## Part 5 — Decisions queued for John
 
 1. ✅ Fork sign-off — **adjudicated 2026-08-02: MVM-0 primary** (Part 4).
-2. ✅ Gemini quota — **adjudicated 2026-08-02: upgrade the key to the paid
-   tier** (keeps registered judge/model pins; unblocks the full grid).
-   Action item: John flips the key to pay-as-you-go before the next Stage 3
-   bench session.
+2. ✅ Gemini quota — **RESOLVED 2026-08-02: the key is already on a billed
+   project** (verified empirically: 35-call burst in 2.9s, zero 429s; John
+   confirmed AI Studio shows paid). No action needed; registered judge/model
+   pins unchanged; the full grid is unblocked now.
 3. Stage 3 registered clarification sign-off (2×2-cell separation check —
    flagged in STATUS 2026-07-19). **Still open.**
 4. ✅ Paper shape — **adjudicated 2026-08-02: one flagship registered-report-

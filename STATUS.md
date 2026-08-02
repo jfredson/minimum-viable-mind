@@ -18,12 +18,15 @@ Step-back session: the whole arc reviewed and written up.
   loss condition = the network routes around its own center).
 - **John adjudicated in-session:** (1) **fork → MVM-0 build primary**,
   dictionary work secondary, Stage 2 folded into MVM-0 acceptance tooling;
-  (2) **Gemini key → paid tier** (John to flip before the next Stage 3 bench
-  session); (3) **paper stays one flagship article**.
+  (2) **Gemini key → paid tier**; (3) **paper stays one flagship article**.
+- **Gemini quota RESOLVED (same day, later):** the key is **already on a
+  billed project** — burst-tested 35 calls / 2.9s with zero 429s, and John
+  confirmed AI Studio shows paid. The 250/day cap in the entries below no
+  longer binds; the full Stage 3 grid can run in one session. Memory updated.
 
 **Next:** finish Stage 3 per the entry below (Sonnet B judging is unblocked
-once the key is paid) → then MVM-0a spec + pre-registration + red-team pass.
-Still open for John: the Stage 3 2×2-cell separation clarification sign-off.
+NOW) → then MVM-0a spec + pre-registration + red-team pass. Still open for
+John: the Stage 3 2×2-cell separation clarification sign-off.
 
 ## STAGE 3: baseline verification nearly closed (zero culls so far); CONSTRUCT-VALIDITY GATE PASSED (2026-07-19, later)
 
