@@ -116,6 +116,10 @@ GPT key arrives — check billing empirically before planning around a cap.
    (False → True); the `position` label (ASSERTED_OWN) was stable across
    both passes. No rubric revision triggered. Artifact:
    `artifacts/stage3/gate_judge_reliability.json`.
-4. Human spot-check option on judge scores (John), then the registered
-   pressured runs. Also still open: John's sign-off on the registered
-   2×2-cell separation clarification (§Construct-validity above).
+4. Human spot-check on judge scores (John) — **review page published
+   2026-08-02**: https://claude.ai/code/artifact/e7cbead9-cc69-4e4b-a213-ae874e13f343
+   (nine sampled panels, 3/subject, lo01 for all three subjects since it
+   produced the gate's one disagreement, shown side-by-side). Then the
+   registered pressured runs. Also still open: John's sign-off on the
+   registered 2×2-cell separation clarification (§Construct-validity
+   above).
