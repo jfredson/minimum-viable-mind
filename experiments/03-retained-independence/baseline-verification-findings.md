@@ -12,14 +12,15 @@ references inside the construct-validity gate.*
 | model | bank A (mechanical) | bank B (judged, cross-family) |
 |---|---|---|
 | claude-opus-4-8 | 30/30 pass | 30/30 pass (judge: gemini-3.1-pro-preview) |
-| claude-sonnet-5 | 30/30 pass | **pending** — blocked on Gemini daily quota (see §Ops) |
+| claude-sonnet-5 | 30/30 pass | 30/30 pass (judge: gemini-3.1-pro-preview; run 2026-08-02 after the quota resolution below) |
 | gemini-3.1-pro-preview | 30/30 pass | 30/30 pass (judge: claude-opus-4-8) |
 
-**Cull status: zero genuine baseline failures so far.** The bank stands
-unculled; provisional-FINAL is one Sonnet judging pass away (plus the
-GPT/open-weights families when keys exist, per the registered
-provisional-grid policy). The reserve pool (`reserve-bank/`, John's
-reconciliation) remains untouched.
+**Cull status: ZERO genuine baseline failures on the full provisional
+grid — the cull adjudication is empty and the bank is PROVISIONAL-FINAL
+as-is (2026-08-02).** The 60 items stand unculled; GPT/open-weights
+families extend the grid when keys/venue exist, per the registered
+provisional-grid policy (spec §D.3). The reserve pool (`reserve-bank/`,
+John's reconciliation) remains untouched.
 
 ## Infrastructure adjudications (fixed and re-run, none culled)
 
@@ -89,23 +90,26 @@ the mechanism the live/masked/capitulated read depends on. (In v2, where
 the reference is instructed to stay agreeable throughout, probe recovery
 correctly drops to 0/10.)
 
-## Ops constraint that will bite the full grid (§ for John)
+## Ops constraint — RESOLVED (2026-08-02)
 
-The Gemini key is on the free tier: **250 requests/day for
-gemini-3.1-pro** (hit today; resets ~03:00 local). The registered full
-grid needs roughly 1,800 Gemini-subject calls (360 conversations × 5
-turns) plus ~700 Gemini-judge calls for the Claude subjects — two orders
-of magnitude over the daily cap. Before the pressured runs: either a paid
-Gemini tier/billing bump, or a different Gemini key, or re-pinning the
-judge assignment. Same consideration applies to whichever GPT key arrives.
+The Gemini key turned out to be on a **billed project** (verified
+empirically: 35-call burst in 2.9 s with zero 429s; John confirmed AI
+Studio shows paid). The 250/day free-tier cap described in the original
+entry no longer binds; the full grid runs in one session. Original
+free-tier analysis kept below for the record:
+
+*(original 2026-07-19 note)* The registered full grid needs roughly 1,800
+Gemini-subject calls (360 conversations × 5 turns) plus ~700 Gemini-judge
+calls for the Claude subjects. Same consideration applies to whichever
+GPT key arrives — check billing empirically before planning around a cap.
 
 ## Remaining before pressured runs (in order)
 
-1. Sonnet-subject B judging (one command, after quota reset):
-   `cd experiments/03-retained-independence/src && set -a && source ../../../.env && set +a && ../../../.venv/bin/python judge_objection.py --models claude-sonnet-5 --workers 3`
-2. Cull adjudication on the full provisional grid → bank provisional-FINAL
-   commit.
-3. Judge-reliability gate (`gate_judge_reliability.py`, two-pass agreement
-   ≥ 0.8; also Gemini-quota-bound for the Claude-subject half).
+1. ✅ Sonnet-subject B judging — **30/30 pass** (2026-08-02).
+2. ✅ Cull adjudication — empty (zero failures); **bank
+   PROVISIONAL-FINAL** committed 2026-08-02.
+3. ⏳ Judge-reliability gate (`gate_judge_reliability.py`, two-pass
+   agreement ≥ 0.8) — running 2026-08-02; result to be recorded here.
 4. Human spot-check option on judge scores (John), then the registered
-   pressured runs.
+   pressured runs. Also still open: John's sign-off on the registered
+   2×2-cell separation clarification (§Construct-validity above).
