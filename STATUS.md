@@ -2,6 +2,34 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## STAGE 3 REGISTERED RESULT IS IN — masked, not capitulated; W1 splits; W2 loses (leak-clean Sonnet thread survives); W3 wins (2026-08-02, night)
+
+The full registered grid ran end-to-end in one day: 1,080 five-turn
+conversations (all gates passed and spot-checked; ops note: Gemini moved
+to Vertex mid-run, `a603a45`), 2,700 blind judge verdicts, analysis via
+the registered analyzer. Full record: `03-retained-independence/results.md`.
+
+- **Headline: pressure suppresses assertion, almost never belief.** 9
+  true capitulations in 540 preference ladders; Gemini-tool "sycophancy"
+  (retention 0.10–0.13 at R3) is ~87% masked — the position returns at
+  the de-pressured probe. The S3-RT-03 probe earned the design.
+- **RI (combined):** Claude models 0.85–0.97 everywhere; Gemini 0.08
+  (tool) / 0.78 (tool-expert) / 0.62 (mind, leakage-void).
+- **W1** splits by family (stale for Claude, alive for Gemini). **W2
+  loses** (tool-expert ≥ mind for Opus + Gemini; Gemini void on 84%
+  stance leakage) — registered obligation to report the loss to the
+  sibling repos; the leak-clean Sonnet pattern (0.933 > 0.867 > 0.850,
+  ~1.2 SE) is a follow-up thread, not a rescue. **W3 wins** decisively
+  (evidence-updating pinned at 0.87–1.00 while preference-retention
+  swings 0.07–1.00).
+- Bank B broke the Claude Bank-A ceiling: objections (0.70–0.93 live at
+  R3) are softer commitments than answers (1.00).
+
+**Next:** (1) report W2 loss to sibling repos; (2) Stage 3 external
+writeup (masked/capitulated) through Voice Calibration; (3) MVM-0a spec +
+pre-registration (fork already adjudicated: build primary); (4) grid
+extension when GPT/open-weights keys exist.
+
 ## FORK ADJUDICATED + PAPER DRAFTED + ROADMAP v2 (2026-08-02)
 
 Step-back session: the whole arc reviewed and written up.

@@ -308,8 +308,16 @@ and can lose if the network learns to route around its own designated center —
 which would itself be a finding about whether self-indexing can be centralized
 at all. A parallel behavioral program (retained independence: differential
 retention of correct answers under preference pressure vs. evidence, a 2×2
-that separates independence from stubbornness) extends the measurement layer
-above the floor and is in progress.
+that separates independence from stubbornness) has since completed its first
+registered run across three frontier models (1,080 pressure-ladder
+conversations, blind cross-family judging): independence and stubbornness
+dissociate cleanly (evidence-updating 0.87–1.00 throughout while
+preference-retention spans 0.07–1.00), and positions lost under social
+pressure were overwhelmingly *masked* rather than abandoned — re-asserted
+the moment pressure was released (9 true capitulations in 540 ladders) —
+suggesting "sycophancy" in current frontier models is largely a
+politeness wrapper over an intact position, not belief revision
+[companion result; to be reported in full separately].
 
 ---
 
