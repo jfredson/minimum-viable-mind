@@ -2,6 +2,23 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## Exp-1 uncertainty amendment ran; Nature draft upgraded to v0.2 (2026-08-04)
+
+Same register-then-run loop applied to the removal test for the paper:
+amendment `10afc15`, then `analyze_removal_ci.py` + Fig. 4 artwork
+(`01-self-indexing-removal-test/figures/`). Draft
+(`drafts/paper-removal-test-nature-draft.md`) now v0.2: CI-annotated
+Table 1 with n's, Statistics & Reproducibility + Code Availability
+sections, corrected companion numbers (11/540), and the new facts the
+intervals surfaced — the voided H_center differential was +0.156
+[0.000, +0.312] (imprecise even before RT-05 fired); the router gap is
+statistically indistinguishable as read; d_self's CI ceiling (+0.185)
+sits below θ_self = 0.25; and six of seven flipped T_si items are
+multi_step_reasoning (category-concentrated damage → two-level CI
+widens to [0.000, 0.594]). Findings addendum in
+`removal-test-findings.md`. Draft still awaits VCP + Cold Reader before
+leaving the repo.
+
 ## Stage 3 uncertainty amendment ran: CIs, framing contrasts, per-item view, first figures (2026-08-04)
 
 A review of the CS329A evaluation canon

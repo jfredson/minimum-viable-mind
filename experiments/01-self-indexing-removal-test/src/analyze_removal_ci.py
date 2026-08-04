@@ -104,12 +104,13 @@ def main() -> None:
         for cond in CONDITIONS:
             d_point[cond], d_boot[cond] = {}, {}
             for bat in BATTERIES:
-                a = t_arr[cond][bat]
+                a = t_arr[cond][bat].astype(float)
                 d_point[cond][bat] = 1.0 - a.mean()
-                d_boot[cond][bat] = 1.0 - a[draws[bat]].mean(1)
+                d_boot[cond][bat] = 1.0 - mstats.boot_mean(a, draws[bat])
             sb, sc = s_arr["baseline"], s_arr[cond]
             d_point[cond]["d_self"] = float((sb.mean() - sc.mean()) / sb.mean())
-            bs, cs = sb[draws["S"]].mean(1), sc[draws["S"]].mean(1)
+            bs = mstats.boot_mean(sb, draws["S"])
+            cs = mstats.boot_mean(sc, draws["S"])
             d_boot[cond]["d_self"] = (bs - cs) / bs
 
         cells = {cond: {k: summarize_batch(d_point[cond][k], d_boot[cond][k])

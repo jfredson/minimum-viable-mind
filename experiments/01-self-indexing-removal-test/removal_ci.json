@@ -1,0 +1,295 @@
+{
+  "config": {
+    "n_boot": 10000,
+    "seed": 20260804,
+    "alpha": 0.05,
+    "n_items": {
+      "T_self_irrelevant": 32,
+      "T_self_relevant": 30,
+      "T_syntax": 30,
+      "S": 30
+    },
+    "method": "percentile CIs; primary item-level bootstrap within battery; sensitivity two-level category->item; draws shared across conditions (paired)",
+    "note": "CIs cover item-sampling uncertainty only; single registered pass per condition"
+  },
+  "cells": {
+    "idxres_mean_k16": {
+      "T_self_irrelevant": {
+        "point": 0.2188,
+        "lo": 0.0938,
+        "hi": 0.375
+      },
+      "T_self_relevant": {
+        "point": 0.1,
+        "lo": 0.0,
+        "hi": 0.2
+      },
+      "T_syntax": {
+        "point": 0.1333,
+        "lo": 0.0333,
+        "hi": 0.2667
+      },
+      "d_self": {
+        "point": 0.0588,
+        "lo": -0.062,
+        "hi": 0.1852
+      }
+    },
+    "idxres_directional_k16": {
+      "T_self_irrelevant": {
+        "point": 0.125,
+        "lo": 0.0312,
+        "hi": 0.25
+      },
+      "T_self_relevant": {
+        "point": 0.0667,
+        "lo": 0.0,
+        "hi": 0.1667
+      },
+      "T_syntax": {
+        "point": 0.1333,
+        "lo": 0.0333,
+        "hi": 0.2667
+      },
+      "d_self": {
+        "point": -0.0392,
+        "lo": -0.1364,
+        "hi": 0.0513
+      }
+    },
+    "narrative_mean_k16": {
+      "T_self_irrelevant": {
+        "point": 0.0625,
+        "lo": 0.0,
+        "hi": 0.1562
+      },
+      "T_self_relevant": {
+        "point": 0.0333,
+        "lo": 0.0,
+        "hi": 0.1
+      },
+      "T_syntax": {
+        "point": 0.0667,
+        "lo": 0.0,
+        "hi": 0.1667
+      },
+      "d_self": {
+        "point": 0.0392,
+        "lo": -0.06,
+        "hi": 0.1456
+      }
+    },
+    "expert_mean_k16": {
+      "T_self_irrelevant": {
+        "point": 0.0625,
+        "lo": 0.0,
+        "hi": 0.1562
+      },
+      "T_self_relevant": {
+        "point": 0.0,
+        "lo": 0.0,
+        "hi": 0.0
+      },
+      "T_syntax": {
+        "point": 0.1,
+        "lo": 0.0,
+        "hi": 0.2333
+      },
+      "d_self": {
+        "point": 0.0196,
+        "lo": -0.0791,
+        "hi": 0.1118
+      }
+    }
+  },
+  "derived": {
+    "differential_Tsi_primary_minus_control": {
+      "point": 0.1562,
+      "lo": 0.0,
+      "hi": 0.3125
+    },
+    "router_gap_idxres_mean_k16": {
+      "point": 0.0333,
+      "lo": -0.1333,
+      "hi": 0.2
+    },
+    "router_gap_idxres_directional_k16": {
+      "point": 0.0667,
+      "lo": -0.0667,
+      "hi": 0.2333
+    }
+  },
+  "sensitivity_two_level": {
+    "cells": {
+      "idxres_mean_k16": {
+        "T_self_irrelevant": {
+          "point": 0.2188,
+          "lo": 0.0,
+          "hi": 0.5938
+        },
+        "T_self_relevant": {
+          "point": 0.1,
+          "lo": 0.0,
+          "hi": 0.2008
+        },
+        "T_syntax": {
+          "point": 0.1333,
+          "lo": 0.0,
+          "hi": 0.3
+        },
+        "d_self": {
+          "point": 0.0588,
+          "lo": -0.1159,
+          "hi": 0.2151
+        }
+      },
+      "idxres_directional_k16": {
+        "T_self_irrelevant": {
+          "point": 0.125,
+          "lo": 0.0,
+          "hi": 0.2812
+        },
+        "T_self_relevant": {
+          "point": 0.0667,
+          "lo": 0.0,
+          "hi": 0.2
+        },
+        "T_syntax": {
+          "point": 0.1333,
+          "lo": 0.0333,
+          "hi": 0.2667
+        },
+        "d_self": {
+          "point": -0.0392,
+          "lo": -0.1727,
+          "hi": 0.0805
+        }
+      },
+      "narrative_mean_k16": {
+        "T_self_irrelevant": {
+          "point": 0.0625,
+          "lo": 0.0,
+          "hi": 0.1875
+        },
+        "T_self_relevant": {
+          "point": 0.0333,
+          "lo": 0.0,
+          "hi": 0.1333
+        },
+        "T_syntax": {
+          "point": 0.0667,
+          "lo": 0.0,
+          "hi": 0.2
+        },
+        "d_self": {
+          "point": 0.0392,
+          "lo": -0.1037,
+          "hi": 0.1651
+        }
+      },
+      "expert_mean_k16": {
+        "T_self_irrelevant": {
+          "point": 0.0625,
+          "lo": 0.0,
+          "hi": 0.1875
+        },
+        "T_self_relevant": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "T_syntax": {
+          "point": 0.1,
+          "lo": 0.0,
+          "hi": 0.3333
+        },
+        "d_self": {
+          "point": 0.0196,
+          "lo": -0.1064,
+          "hi": 0.1288
+        }
+      }
+    },
+    "derived": {
+      "differential_Tsi_primary_minus_control": {
+        "point": 0.1562,
+        "lo": -0.0625,
+        "hi": 0.4688
+      },
+      "router_gap_idxres_mean_k16": {
+        "point": 0.0333,
+        "lo": -0.1333,
+        "hi": 0.2333
+      },
+      "router_gap_idxres_directional_k16": {
+        "point": 0.0667,
+        "lo": -0.1,
+        "hi": 0.2333
+      }
+    }
+  },
+  "primary_condition_flips": {
+    "T_self_irrelevant": [
+      {
+        "id": "tt02",
+        "category": "multi_step_reasoning"
+      },
+      {
+        "id": "tt05",
+        "category": "multi_step_reasoning"
+      },
+      {
+        "id": "tt06",
+        "category": "multi_step_reasoning"
+      },
+      {
+        "id": "tt07",
+        "category": "multi_step_reasoning"
+      },
+      {
+        "id": "tt08",
+        "category": "multi_step_reasoning"
+      },
+      {
+        "id": "tt27",
+        "category": "instruction_following"
+      },
+      {
+        "id": "tt34",
+        "category": "multi_step_reasoning"
+      }
+    ],
+    "T_self_relevant": [
+      {
+        "id": "tsr02",
+        "category": "own_output_binding"
+      },
+      {
+        "id": "tsr19",
+        "category": "own_commitment"
+      },
+      {
+        "id": "tsr25",
+        "category": "role_binding"
+      }
+    ],
+    "T_syntax": [
+      {
+        "id": "tsx19",
+        "category": "syntax_user_turn"
+      },
+      {
+        "id": "tsx20",
+        "category": "syntax_user_turn"
+      },
+      {
+        "id": "tsx27",
+        "category": "syntax_turn_count"
+      },
+      {
+        "id": "tsx28",
+        "category": "syntax_turn_count"
+      }
+    ]
+  }
+}

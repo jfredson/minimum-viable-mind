@@ -16,21 +16,33 @@ def item_draws(n_items: int, n_boot: int, rng: np.random.Generator) -> np.ndarra
 
 
 def two_level_draws(groups: list[list[int]], n_boot: int,
-                    rng: np.random.Generator) -> np.ndarray:
+                    rng: np.random.Generator):
     """Two-level (group -> item) bootstrap. `groups` maps each top-level
     unit (domain/category) to the item indices it owns. Each draw resamples
     len(groups) groups with replacement, then, within each chosen group,
-    resamples its own item count with replacement. With equal-sized groups
-    the draw size equals the original n."""
+    resamples its own item count with replacement.
+
+    Returns an (n_boot, n) int array when all groups are equal-sized (draw
+    size equals the original n); otherwise a list of n_boot 1-D index
+    arrays of varying length (whole-group resampling makes ragged draws)."""
     n_groups = len(groups)
-    out = np.empty((n_boot, sum(len(g) for g in groups)), dtype=np.int64)
-    for b in range(n_boot):
+    equal = len({len(g) for g in groups}) == 1
+    draws = []
+    for _ in range(n_boot):
         picked = rng.integers(0, n_groups, size=n_groups)
         parts = [np.asarray(groups[g])[rng.integers(0, len(groups[g]),
                                                     size=len(groups[g]))]
                  for g in picked]
-        out[b] = np.concatenate(parts)
-    return out
+        draws.append(np.concatenate(parts))
+    return np.stack(draws) if equal else draws
+
+
+def boot_mean(values: np.ndarray, draws) -> np.ndarray:
+    """Per-draw means of `values` under item_draws / two_level_draws output
+    (rectangular array or ragged list)."""
+    if isinstance(draws, np.ndarray):
+        return values[draws].mean(1)
+    return np.array([values[ix].mean() for ix in draws])
 
 
 def summarize(point: float, samples: np.ndarray, alpha: float = 0.05) -> dict:

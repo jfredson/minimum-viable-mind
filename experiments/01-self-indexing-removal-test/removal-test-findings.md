@@ -104,3 +104,25 @@ as a removable center in this model class with these instruments.**
 4. Judge behaviour on the fresh set matched the pilot set (baseline S
    identical at 0.6375); rubric v2's dimension decomposition again did the
    interpretive work in the spot-check.
+
+## Addendum (2026-08-04): registered uncertainty re-analysis
+
+Per the pre-registration amendment of 2026-08-04 (registered `10afc15`
+before computation): 95% percentile bootstrap CIs (B=10,000, item-level
+within battery, draws shared across conditions) on every registered
+quantity. Point estimates reproduce this memo exactly; registered
+verdicts unchanged. Full tables: `removal_ci.json` (committed beside
+this memo); Fig. 4 artwork in `figures/`.
+
+What the intervals add: (1) the H_center differential that RT-05 voided
+was +0.156 [0.000, +0.312] — its lower bound touches zero at n=32, so
+the headline signature was imprecise even before it was voided; (2) the
+RT-05 router gap d(T_syntax) − d(T_sr) is +0.033 [−0.133, +0.200]
+(primary) — "dropped as much as self-relevant" is statistically
+indistinguishable, as read; (3) d_self = +0.059 [−0.062, +0.185]: the
+upper bound sits below θ_self = 0.25, so the never-subtracted-report
+claim now carries a quantified ceiling; (4) per-item view: six of the
+seven flipped T_si items are multi_step_reasoning (6/8 in-category vs
+1/24 elsewhere) — category-concentrated damage, the profile of generic
+disruption to reasoning-heavy computation, and the reason the two-level
+sensitivity bootstrap widens d(T_si) to [0.000, 0.594].

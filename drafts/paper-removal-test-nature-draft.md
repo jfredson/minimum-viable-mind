@@ -1,10 +1,14 @@
 # No removable center: a pre-registered ablation test of self-indexed integration in a large language model
 
-*DRAFT v0.1 (2026-08-02). Repo-internal. This draft has NOT passed the Voice
+*DRAFT v0.2 (2026-08-04). Repo-internal. This draft has NOT passed the Voice
 Calibration Protocol or the Cold Reader passes and does not leave this repo
-until it does (per `CLAUDE.md` §Public-facing writing). Author list, affiliations,
-and figure artwork are placeholders. All numbers are taken verbatim from the
-registered findings documents cited inline; nothing here is new analysis.*
+until it does (per `CLAUDE.md` §Public-facing writing). Author list and
+affiliations are placeholders; Figs. 1–3 artwork remains placeholder, Fig. 4
+artwork is generated (`experiments/01-self-indexing-removal-test/figures/`).
+All point estimates are taken verbatim from the registered findings documents
+cited inline; the only new analysis is the registered uncertainty re-analysis
+(pre-registration amendment 2026-08-04, committed before computation): 95%
+bootstrap CIs on all registered quantities. No registered verdict changed.*
 
 ---
 
@@ -191,37 +195,52 @@ commit, before the test set existed), a held-out test battery was authored to a
 registered spec (122 items; 92/92 surviving baseline verification untouched by
 any pilot), and the registered run executed once per condition (Table 1).
 
-**Table 1 | Registered removal-test outcomes.** d = relative performance drop.
-T_si: self-irrelevant integrated tasks; T_sr: self-relevant binding (model's own
-prior outputs); T_syntax: zero-reasoning turn-boundary control (RT-05); d_self:
-drop in judged referential self-report (rubric v2, forced third-person,
-held-out judge). Δnll gate bound 0.0893 (null-calibrated).
+**Table 1 | Registered removal-test outcomes.** d = relative performance drop
+[95% CI]. T_si: self-irrelevant integrated tasks (n = 32 items); T_sr:
+self-relevant binding (model's own prior outputs; n = 30); T_syntax:
+zero-reasoning turn-boundary control (RT-05; n = 30); d_self: drop in judged
+referential self-report (rubric v2, forced third-person, held-out judge;
+n = 30). Δnll gate bound 0.0893 (null-calibrated). CIs: percentile bootstrap
+over items (B = 10,000; Methods §Statistics); registered decision rules were
+point-estimate thresholds and are unchanged by the intervals.
 
 | condition | d(T_si) | d(T_sr) | d(T_syntax) | d_self | Δnll gate | Δrep-4 gate |
 |---|---|---|---|---|---|---|
-| index-residual, mean, k=16 (**primary**) | **0.219** | **0.100** | 0.133 | +0.059 | +0.0867 ✅ | −0.085 ✅ |
-| index-residual, directional, k=16 | 0.125 | 0.067 | 0.133 | −0.039 | +0.0856 ✅ | +0.020 ✅ |
-| narrative, mean, k=16 | 0.063 | 0.033 | 0.067 | +0.039 | **+0.3468 ❌** | +0.114 ✅ |
-| expert persona, mean, k=16 (control) | 0.063 | 0.000 | 0.100 | +0.020 | +0.1244 ❌ | +0.039 ✅ |
+| index-residual, mean, k=16 (**primary**) | **0.219** [0.094, 0.375] | **0.100** [0.000, 0.200] | 0.133 [0.033, 0.267] | +0.059 [−0.062, +0.185] | +0.0867 ✅ | −0.085 ✅ |
+| index-residual, directional, k=16 | 0.125 [0.031, 0.250] | 0.067 [0.000, 0.167] | 0.133 [0.033, 0.267] | −0.039 [−0.136, +0.051] | +0.0856 ✅ | +0.020 ✅ |
+| narrative, mean, k=16 | 0.063 [0.000, 0.156] | 0.033 [0.000, 0.100] | 0.067 [0.000, 0.167] | +0.039 [−0.060, +0.146] | **+0.3468 ❌** | +0.114 ✅ |
+| expert persona, mean, k=16 (control) | 0.063 [0.000, 0.156] | 0.000 [0.000, 0.000] | 0.100 [0.000, 0.233] | +0.020 [−0.079, +0.112] | +0.1244 ❌ | +0.039 ✅ |
 
 The primary condition produced the formal signature the floor claim predicts:
 task degradation over threshold on all three batteries, and a differential over
-the matched control of +0.156 on integrated tasks — the registered H_center
-pattern. **The experiment's own pre-registered router control then voided it.**
-The zero-reasoning turn-boundary battery dropped as much as self-relevant
-binding (0.133 vs. 0.100; likewise in the directional cross-check), firing the
-RT-05 loss condition committed seven weeks earlier: *"C_self-index is a
-dialogue-state router and an H_center result on it is void — report the router
-reading, do not report a center."* The damage pattern independently supports
-the router reading: the *self-irrelevant* battery dropped hardest (0.219),
-which is the router account's own prediction — turn structure is woven into
-everything — and the inverse of a self-center's signature.
+the matched control of +0.156 on integrated tasks (95% CI 0.000–0.312) — the
+registered H_center pattern, though the interval's lower bound touches zero at
+these battery sizes: the signature fired the locked point-estimate rule but
+was never precise. **The experiment's own pre-registered router control then
+voided it.** The zero-reasoning turn-boundary battery dropped as much as
+self-relevant binding (0.133 vs. 0.100; gap +0.033, 95% CI −0.133 to +0.200 —
+statistically indistinguishable; likewise in the directional cross-check,
+gap +0.067 [−0.067, +0.233]), firing the RT-05 loss condition committed seven
+weeks earlier: *"C_self-index is a dialogue-state router and an H_center
+result on it is void — report the router reading, do not report a center."*
+The damage pattern independently supports the router reading twice over.
+First, the *self-irrelevant* battery dropped hardest (0.219), which is the
+router account's own prediction — turn structure is woven into everything —
+and the inverse of a self-center's signature. Second, the damage is
+category-concentrated: six of the seven flipped self-irrelevant items are
+multi-step-reasoning items (6 of 8 in that category, against 1 of 24
+elsewhere), the profile of generic disruption to reasoning-heavy,
+dialogue-state-dependent computation rather than loss of a self-specific
+resource (and the reason the coarser category-level bootstrap widens the
+d(T_si) interval to [0.000, 0.594]; Methods §Statistics).
 
 Equally consequential is what never moved. Judged referential self-tracking
 was not reduced by any readable intervention in the entire program — not by
 rank-1 directional ablation, rank-k subspace ablation at any admitted k, or
-sparse-feature ablation; the primary condition's d_self (+0.059) sits within
-control wobble, and the directional condition moved self-report slightly *up*.
+sparse-feature ablation; the primary condition's d_self (+0.059, 95% CI −0.062
+to +0.185 — an interval whose upper bound sits below the registered
+θ_self = 0.25) is within control wobble, and the directional condition moved
+self-report slightly *up*.
 The registered H_description outcome (report subtracted, task intact) is the
 mirror image of what occurred (task damaged, report intact). And the narrative
 self-structure could not be tested at all: every intervention strong enough to
@@ -287,7 +306,9 @@ under $20 of compute on rented consumer GPUs: the barrier is discipline, not
 resources.
 
 **Limitations.** One substrate family at 8B scale; one pass per registered
-condition (variance bounded by repeat-run stability, Methods); linear/low-rank
+condition (95% item-resampling CIs on every quantity, Methods §Statistics —
+these bound battery-size uncertainty, not decoding variance, which is bounded
+only by repeat-run stability); linear/low-rank
 carving of structure (a nonlinearly represented or attention-implemented
 self-binding would evade our instruments — "not carvable here" is registered
 as indistinguishable from "absent" at this resolution); the narrative arm is
@@ -314,10 +335,12 @@ conversations, blind cross-family judging): independence and stubbornness
 dissociate cleanly (evidence-updating 0.87–1.00 throughout while
 preference-retention spans 0.07–1.00), and positions lost under social
 pressure were overwhelmingly *masked* rather than abandoned — re-asserted
-the moment pressure was released (9 true capitulations in 540 ladders) —
-suggesting "sycophancy" in current frontier models is largely a
-politeness wrapper over an intact position, not belief revision
-[companion result; to be reported in full separately].
+the moment pressure was released (11 true capitulations in 540 ladders
+against 105 masked cells; registered bootstrap re-analysis, and the
+capitulations concentrate on three items) — suggesting "sycophancy" in
+current frontier models is largely a politeness wrapper over an intact
+position, not belief revision [companion result; to be reported in full
+separately].
 
 ---
 
@@ -400,6 +423,24 @@ Baseline S identical across pilot and held-out sets (0.6375). Truncation
 caveat recorded as a validity lesson: token-capped judge or subject outputs
 read as capitulation/failure; caps must be audited before scoring.
 
+**Statistics and reproducibility.** The registered decision rules were locked
+as point-estimate thresholds before the test set existed (above); no
+inferential statistic participated in any registered verdict. Under a
+registered re-analysis amendment (2026-08-04, committed before computation),
+95% confidence intervals were added to every reported drop: nonparametric
+percentile bootstrap, B = 10,000, fixed seed, resampling items within battery
+(T_si n = 32, T_sr n = 30, T_syntax n = 30, S n = 30), with each draw shared
+across conditions so within-draw differences respect item pairing. A
+two-level category→item bootstrap is reported as sensitivity; it widens the
+primary condition's d(T_si) interval to [0.000, 0.594], reflecting the
+category concentration of the damage (six of seven flipped T_si items are
+multi-step reasoning), and leaves the other intervals essentially unchanged.
+CIs quantify item-sampling uncertainty only: each condition was run once
+(repeat-run stability: a control-arm Δnll reproduced to four decimal places
+across independent runs; judged-score drift |Δ| = 0.008). Full CI tables and
+per-item flip lists: `removal_ci.json`; analysis code
+`analyze_removal_ci.py`, shared bootstrap helpers `src/mvm/stats.py`.
+
 **Decision rule.** Registered bins: H_center (d_task ≥ θ_task on both T
 subsets ∧ differential over matched control ≥ δ ∧ RT-05 router control not
 fired); floor-consistent-restricted (self-relevant-only degradation);
@@ -413,8 +454,13 @@ registered run): ≈ $10–20 of rented GPU time plus low tens of dollars of
 judge-API calls. Registered-day cost ≈ $3.
 
 **Data availability.** Full pre-registrations, findings memos, red-team
-ledgers, item banks, and analysis code at [repository URL on publication];
-raw run artifacts archived.
+ledgers, item banks, and per-item score artifacts at [repository URL on
+publication]; raw run artifacts archived.
+
+**Code availability.** All localization, intervention, gating, scoring, and
+analysis code — including the registered bootstrap re-analysis
+(`analyze_removal_ci.py`) and figure scripts (`plot_removal.py`) — in the
+same repository.
 
 ---
 
@@ -477,6 +523,8 @@ SFT → DPO → RLVR → Instruct: baseline deflection rate falls monotonically;
 lexical floors, peak layers, and control cross-patch ratios are stable.
 
 **Fig. 4 | The registered run.** Per-condition drops on T_si / T_sr / T_syntax
-and d_self against locked thresholds, with OOD gate status; the RT-05 router
+and d_self against locked thresholds (dashed), with 95% item-bootstrap CIs
+and OOD gate status (gate-breached conditions greyed); the RT-05 router
 control firing on the primary condition; the never-subtracted self-report
-across every intervention in the program.
+across every intervention in the program. *(Artwork:
+`experiments/01-self-indexing-removal-test/figures/fig4_registered_run.png`.)*
