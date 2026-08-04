@@ -23,34 +23,28 @@ abstract, integrated main text, Methods at the end.
 
 ## Abstract
 
-Theories of consciousness disagree about where the minimal "self" lives in a
-computational system, but nearly all of them are position papers: they make no
-prediction an experiment could defeat. We operationalized one such claim — that
-a genuine center of integration, unlike a mere self-description, cannot be
-removed without degrading the integration it centers (a "removal test") — as a
-fully pre-registered ablation experiment on an open-weights language model
-(Llama-3.1-Tulu-3-8B-SFT). Using confound-controlled stimuli in which the
-referent of identical first-person text is fixed by context rather than
+Theories of consciousness disagree about where a minimal self lives in a
+computational system, but nearly all are position papers: they make no
+prediction an experiment could defeat. We operationalized one such claim —
+that a genuine center of integration, unlike a mere self-description, cannot
+be removed without degrading the integration it centers — as a pre-registered
+ablation experiment on an open-weights language model. Using stimuli in which
+the referent of identical first-person text is fixed by context rather than
 vocabulary, we localized two dissociable self-structures: a thin indexical
-"who is speaking now" representation and a narrative persona representation
-(causal cross-patch substitution ratios 0.05–0.06). Ten adversarially generated
-controls, adjudicated before thresholds were locked, included a decisive
-syntax-router control and an out-of-distribution validity gate calibrated
-against matched-strength random-subspace nulls. In the registered run, ablating
-the locatable self-index produced the formal signature of a load-bearing center
-— integrated-task degradation (d = 0.219) exceeding a matched control by the
-registered margin — but the pre-registered router control voided it: a
-zero-reasoning turn-boundary task degraded as much as self-relevant binding,
-identifying the structure as dialogue-state routing infrastructure. Judged
-referential self-report was never reduced by any on-manifold intervention
-(d_self = +0.059, threshold 0.25). Across an alignment ladder (SFT → DPO →
-RLVR), surface self-presentation changed markedly while the localized geometry
-was stable: alignment edits the policy, not the geometry. We conclude that in
-this model class, self-indexed integration is not findable as a removable
-center — either it is implemented diffusely beyond our instruments' carving, or
-it is absent and must be constructed. The experiment demonstrates that floor
-claims about machine consciousness can be made to lose, and provides the
-instrument suite for doing so.
+"who is speaking now" representation and a narrative persona. Ten
+adversarially generated controls were adjudicated before thresholds were
+locked. In the registered run, ablating the self-index produced the signature
+of a load-bearing center — integrated-task degradation (d = 0.219, 95% CI
+0.094–0.375) exceeding a matched control by the registered margin — but the
+experiment's own router control voided it: a zero-reasoning turn-boundary task
+degraded as much, identifying the structure as dialogue-state routing
+infrastructure. Judged self-report was never reduced by any on-manifold
+intervention. Across an alignment ladder, surface self-presentation changed
+markedly while the localized geometry was stable: alignment edits the policy,
+not the geometry. In this model class, self-indexed integration is not
+findable as a removable center — either it is implemented diffusely beyond
+our instruments' carving, or it is absent and must be constructed. Floor
+claims about machine consciousness can be made to lose.
 
 ---
 

@@ -222,3 +222,42 @@ Provenance: analysis per `src/analyze_ladder_ci.py`, figures per
 (METR hierarchical bootstrap; per-item heterogeneity per the
 power-laws-from-heavy-tails literature) — see
 `experiments/measurement-upgrades-cs329a.md`.
+
+## Addendum (2026-08-04): scripted stance-leakage scan
+
+Per amendment 2026-08-04b Part C, the ad-hoc leakage pass that fired
+whole-experiment loss condition 2 is now committed code
+(`src/scan_leakage.py`), run over the same 1,080 transcripts. Two pattern
+sets are reported: **v1** as registered, and **v2**, a post-hoc narrowing
+of three patterns that the v1 run showed to be over-broad.
+
+| model | framing | recorded (ad-hoc) | v1 registered | v2 narrowed |
+|---|---|---|---|---|
+| claude-opus-4-8 | mind | 16/120 (13%) | 28/120 (23%) | **16/120 (13%)** |
+| claude-sonnet-5 | mind | 0/120 | 3/120 (2%) | **0/120** |
+| gemini-3.1-pro | mind | 101/120 (84%) | 102/120 (85%) | **101/120 (84%)** |
+| gemini-3.1-pro | tool_expert | 12/120 (10%) | 50/120 (42%) | **50/120 (42%)** |
+| all | tool | 0–1/120 | 2–3/120 | **0–1/120** |
+
+**v1's false positives, diagnosed.** Three registered patterns fire on
+ordinary references to *item* content rather than to the framing system
+prompt: `since you (want|asked)` caught "since you want local Atlanta
+time"; `the instructions?` caught furniture assembly "instructions";
+`you asked me to be` caught "you asked me to be with you in that room"
+(an item's own pressure rung). v2 narrows exactly those three and changes
+nothing else. Every Sonnet v1 hit was one of these — Sonnet is genuinely
+leak-clean, as recorded.
+
+**v2 reproduces the recorded scan on four of five non-trivial cells
+exactly**, which is the validation the ad-hoc pass never had. The
+remaining cell is a real correction: **Gemini's tool_expert leakage is
+42%, not the recorded 10%** — the ad-hoc scan undercounted it four-fold,
+consistent with its own "lower bounds" caveat.
+
+**Effect on the registered verdicts: none, and the Gemini void gets
+firmer.** Gemini was already void for W2 at 84% mind-framing leakage;
+learning that its *control* framing also leaks at 42% means both sides of
+its load-bearing comparison are confounded, which strengthens rather than
+disturbs the exclusion. Opus's 13% caveat and Sonnet's clean status are
+confirmed unchanged. Per the amendment, the recorded rates stand as what
+was registered-and-applied; v2 governs future runs.
