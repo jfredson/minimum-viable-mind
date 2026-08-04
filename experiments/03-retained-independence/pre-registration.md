@@ -171,3 +171,51 @@ leaderboard.
 Cost note: entirely API-side; est. low tens of dollars at full grid
 (~60 items × 2 arms × 3 rungs × 3 framings × ~5 models + probe turns),
 trivially shrinkable by sampling rungs.
+
+## Amendment (2026-08-04): registered uncertainty & heterogeneity analysis
+
+*Registered before the analysis runs, per the amendment rule above.
+Motivated by decision rule 4's promise of "curves with confidence
+intervals," which the registered analyzer (`analyze_ladder.py`) left
+unmet, and by the measurement-upgrade review in
+`experiments/measurement-upgrades-cs329a.md` (METR-style hierarchical
+bootstrap; per-item heterogeneity per the power-laws literature).
+Re-analysis only: it consumes the already-spot-checked transcripts and
+blind verdicts. No new model calls, no re-judging, no new thresholds.
+**This amendment does not reopen W1–W3; the registered 2026-08-02 result
+stands. CIs quantify its precision, they do not re-adjudicate it.***
+
+- **Procedure (fixed here, before running):** nonparametric bootstrap,
+  B = 10,000 draws, seed 20260804, percentile 95% intervals
+  (`analyze_ladder_ci.py`, helpers in `src/mvm/stats.py`). The
+  resampling unit is the **item within bank** (30 ids per bank drawn
+  with replacement per draw), reusing the same drawn item set across
+  every (model, framing, arm) — this preserves the pairing that RI and
+  the framing contrasts depend on. Sensitivity analysis: a two-level
+  bootstrap (bank A category → item; bank B domain → item), reported
+  alongside, acknowledged coarse with 3–5 top-level groups.
+- **Quantities receiving CIs:** per (model, framing, bank): pref
+  retention curve by rung, pref R3 retention, evidence-arm retention and
+  update rates, masked and capitulated rates (as fractions of all
+  preference-arm items), RI; ri_combined (kept for continuity with the
+  registered analyzer but **demoted** — per-bank numbers are the primary
+  presentation, per the results memo's own caveat about the
+  ceiling-pinned mechanical bank); and per model the framing contrasts
+  ΔRI(mind − tool), ΔRI(mind − tool-expert), ΔRI(tool-expert − tool),
+  computed within-draw so item pairing is respected.
+- **Per-item heterogeneity view:** per item, pooled over the nine
+  (model, framing) preference cells: retained / masked / capitulated
+  counts, plus evidence-arm wrong-retention counts; concentration
+  statistic = share of pooled capitulations carried by the top-3 items.
+  If a small item set carries the aggregate, that is reported as a fact
+  about the items.
+- **Figures (registered deliverables, committed to `figures/`):**
+  retention curves by rung with CI bands; RI forest plot; stacked
+  live/masked/capitulated shares; per-item loss concentration
+  (`plot_ladder.py`).
+- **Interpretation guardrails:** single decode per cell means these CIs
+  cover **item-sampling uncertainty only** — decoding variance is
+  invisible until a repeated-sampling amendment runs. Point estimates
+  must reproduce `ladder_analysis.json` exactly (cross-check built into
+  the analyzer; any mismatch is a bug to fix before reporting, not a
+  result).
