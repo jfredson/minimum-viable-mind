@@ -149,7 +149,21 @@ and RI/W2 are unaffected. The item is retired from the bank; see
 
 ## Follow-ups this result queues
 
-1. Report the W2 loss to the sibling repos (registered obligation).
+1. ~~Report the W2 loss to the sibling repos (registered obligation).~~
+   **Discharged 2026-08-04:** proposal packet at
+   `sentient-horizons/ops/proposals/2026-08-04-mvm-stage3-retained-independence-result.md`
+   (PROPOSED per that repo's ratification firewall; John ratifies).
+   Reading the owning source against the result forced a correction on
+   *our* side: this pre-registration called W2 "the corpus's stance
+   wager," but the mind-stance draft predicts the stance moves surface
+   markers and leaves substance flat — it offers retained independence
+   as the discriminating *probe*, not as a prediction that current
+   systems pass it. So the W2 null is closer to the corpus's expectation
+   than to a strike against it, and the packet says so. What the result
+   *does* contradict is the draft's empirical claim that "most current
+   systems come out failing, folding on the follow-up turn" — they fold
+   on assertion only. The packet proposes a §5 edit and a new Part B
+   entry on that basis.
 2. Sonnet leak-clean W2 thread: pre-registered replication with CIs and
    leakage-controlled framing variants before any claim.
 3. Extend the grid when GPT/open-weights access exists (spec §D.3).
