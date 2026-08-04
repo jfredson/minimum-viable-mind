@@ -96,7 +96,14 @@ Single-Axis Theories"; mapped to the **Availability** axis in
   **Stage 2 ("the shape of binding") already in the ladder**
   (`experiments/README.md` §The ladder) — the ledger's contribution is
   naming it as GWT's adjudicable test, not just an integration probe.
-- **Status.** `feasible-unbuilt` (Stage 2, no pre-registration yet).
+- **Status.** `feasible-unbuilt`, **and not as a standalone experiment**:
+  per John's fork adjudication (2026-08-02,
+  `ROADMAP-post-removal-test.md` Part 4), Stage 2's metric folds into
+  **MVM-0's acceptance tooling**. The synergy is the reason — the MVM-0
+  build supplies contrast cases known by construction (the same
+  architecture with the self-register enabled vs. routed around), which
+  a standalone Stage 2 lacks. So this row advances when MVM-0a is
+  specified, not before.
 - **Caution.** Transformer attention makes broadcast-like readings cheap;
   the instrument must discount what architecture trivially guarantees, per
   the measure-resistance rule.

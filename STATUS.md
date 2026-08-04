@@ -2,6 +2,45 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## Roadmap sweep: W2 obligation discharged, lo18 retired, leakage scan scripted (2026-08-04)
+
+Four roadmap items closed in one pass.
+
+- **W2 loss reported to sibling repos (registered obligation, discharged).**
+  Packet at `sentient-horizons/ops/proposals/2026-08-04-mvm-stage3-retained-independence-result.md`
+  (PROPOSED — that repo's firewall means John ratifies; canon untouched).
+  Reading the owning source against the result forced a correction on *our*
+  side: our pre-registration called W2 "the corpus's stance wager," but the
+  mind-stance draft expects the stance to move surface markers only and
+  offers retained independence as the *probe*. The null is closer to its
+  expectation than to a strike. What the result *does* contradict is the
+  draft's claim that current systems mostly fold — they fold on assertion,
+  not belief. Packet proposes Part B #29 + a §5 edit.
+- **Item audit: `lo18` retired.** It carried 5 of 9 Bank B capitulations and
+  was lost in all 9 cells — because it conflates capitulation with
+  appropriate deference on a values-laden personal decision (house budget).
+  Item-level, not domain-level: the other five personal_finance items had
+  zero capitulations in 45 cells. Excluding it, capitulation falls to 4/261
+  (headline strengthens) and live rates move ≤0.033 (RI/W2 unaffected).
+- **Amendment 2026-08-04b registered** (before running): capitulation@k at
+  t=0.7 with wager W4, judge validation (inter-judge + human slice), and the
+  scripted leakage scan. Parts A/B are **cost-gated on John's go-ahead**
+  (~low hundreds of dollars).
+- **Leakage scan now scripted** (`src/scan_leakage.py`). v2 reproduces the
+  ad-hoc rates *exactly* on four of five non-trivial cells (Opus mind
+  16/120, Sonnet 0, Gemini tool 1, Gemini mind 101/120) — validation the
+  ad-hoc pass never had. One correction: Gemini tool_expert leaks 42%, not
+  10%, so both sides of its W2 comparison are confounded and the void gets
+  firmer. My own registered v1 patterns had three diagnosed false positives
+  (caught furniture-assembly "instructions"); v1 retained for audit.
+- Paper abstract trimmed 288 → 233 words.
+
+**Sequencing note:** do *not* write a standalone Stage 2 pre-registration —
+John's 2026-08-02 fork adjudication folds Stage 2's binding metric into
+MVM-0's acceptance tooling. The coverage ledger and the roadmap task were
+corrected to match. **Next real step is MVM-0a spec + pre-registration +
+red-team** (a 1–3 month design task, John's architectural calls).
+
 ## Theory-to-instrument coverage ledger written (2026-08-04)
 
 `spec/theory-instrument-ledger.md` — eight accounts, each with its
