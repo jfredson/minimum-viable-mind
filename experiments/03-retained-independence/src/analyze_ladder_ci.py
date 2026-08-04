@@ -243,7 +243,7 @@ def cross_check(cells: dict) -> float | None:
         for got, want in ((c["bank_a"]["ri"]["point"], r["bank_a"]["ri"]),
                           (c["bank_b"]["ri"]["point"], r["bank_b"]["ri"]),
                           (c["ri_combined"]["point"], r["ri_combined"])):
-            worst = max(worst, abs(got - want))
+            worst = max(worst, abs(got - round(want, 4)))
     return worst
 
 

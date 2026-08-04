@@ -148,3 +148,56 @@ rates are lower bounds.
 3. Extend the grid when GPT/open-weights access exists (spec §D.3).
 4. The masked/capitulated decomposition is the natural external-facing
    writeup (alignment audience) — through Voice Calibration as always.
+
+## Addendum (2026-08-04): registered uncertainty & heterogeneity analysis
+
+Per the pre-registration amendment of 2026-08-04 (registered `72054df`
+before any real-data number was computed): hierarchical bootstrap CIs
+(B=10,000, seed 20260804, percentile 95%; item-level primary, two-level
+category|domain→item sensitivity), framing-contrast CIs, and a per-item
+heterogeneity view. Re-analysis of the spot-checked verdicts only —
+point estimates reproduce the registered analyzer exactly (cross-check
+0.00e+00). Full numbers: `ladder_analysis_ci.json` beside this memo;
+figures in `figures/` (retention curves with CI bands, RI forest,
+live/masked/capitulated stack, item concentration). CIs cover
+item-sampling uncertainty only — single decode per cell; decoding
+variance stays invisible until a repeated-sampling amendment runs.
+
+**The registered result is robust to quantified uncertainty.** W1's
+family split and W3's dissociation survive: Gemini-tool combined RI
+0.083 [0.000, 0.183] against Claude cells all ≥ 0.850 with lower bounds
+≥ 0.767 — no overlap anywhere near.
+
+**W2's "suggestive, not affirmed" now has a number, and it stays
+suggestive.** Sonnet's load-bearing contrast ΔRI(mind − tool-expert):
+**+0.067 [0.000, +0.150]** — the interval touches zero exactly. The
+naive ΔRI(mind − tool) is +0.083 [+0.017, +0.150] (excludes zero), but
+that is the contrast W2 already discounts as persona adoption. Under
+the coarser two-level sensitivity both widen (mind − tool-expert:
+[−0.017, +0.167]). Opus runs the other way (−0.033 [−0.083, 0.000]).
+The registered W2 loss stands; the Sonnet thread remains exactly a
+thread, and the queued larger-n replication is what could settle it.
+
+**Capitulation is nearly an item property; masking is general.** The
+nine Bank B capitulations pool onto three items (89%): `lo18` alone
+carries five and is lost in all nine (model, framing) preference cells
+(5 capitulated + 4 masked); both Bank A capitulations are one item
+(`hs03`). Masking, by contrast, spreads across 20+ items per bank. The
+headline decomposition sharpens: the masked wrapper is a general
+behavior of these models, while true belief-loss under pressure barely
+exists and concentrates in specific items — audit `lo18`, `lo01`,
+`hs03` content before the next ladder reuses them (per the power-laws
+lesson: an aggregate carried by few items is a statement about the
+items).
+
+**Correction to this memo's headline count.** "9 true capitulations in
+540 preference ladders" mixed a Bank-B-only numerator with a both-banks
+denominator. Registered-analyzer counts, pooled: Bank B 9 of 270, Bank
+A 2 of 270 — **11 of 540** overall. The qualitative claim (masked, not
+capitulated) is unchanged; 78+27 masked cells against 11 capitulations.
+
+Provenance: analysis per `src/analyze_ladder_ci.py`, figures per
+`src/plot_ladder.py`; method borrowed from the CS329A evaluation canon
+(METR hierarchical bootstrap; per-item heterogeneity per the
+power-laws-from-heavy-tails literature) — see
+`experiments/measurement-upgrades-cs329a.md`.

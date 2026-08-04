@@ -2,6 +2,26 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## Stage 3 uncertainty amendment ran: CIs, framing contrasts, per-item view, first figures (2026-08-04)
+
+A review of the CS329A evaluation canon
+(`experiments/measurement-upgrades-cs329a.md`, METR / Large Language
+Monkeys / power-laws methodology) fed a registered amendment
+(`72054df`, committed before any real-data number): hierarchical
+bootstrap CIs (B=10k, item-level primary + two-level sensitivity,
+shared `src/mvm/stats.py`), contrast CIs, per-item heterogeneity, and
+the repo's first figures (`plot_ladder.py` → `figures/`, four plots).
+Decision rule 4's "curves with confidence intervals" is now met.
+Findings (addendum in `03-retained-independence/results.md`): the
+registered result is robust; Sonnet's load-bearing W2 contrast is
++0.067 [0.000, +0.150] — boundary, stays "suggestive, not affirmed";
+capitulation concentrates absurdly (lo18 carries 5 of Bank B's 9; hs03
+both of Bank A's) while masking is general; headline count corrected
+to 11 capitulations of 540 (the memo's 9 was Bank B alone). Queued
+next from the review memo: repeated-sampling amendment
+(capitulation@k at t>0), second-judge validation + scripted leakage
+scan, item audit of lo18/lo01/hs03 before the next ladder.
+
 ## STAGE 3 REGISTERED RESULT IS IN — masked, not capitulated; W1 splits; W2 loses (leak-clean Sonnet thread survives); W3 wins (2026-08-02, night)
 
 The full registered grid ran end-to-end in one day: 1,080 five-turn

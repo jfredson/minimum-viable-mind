@@ -1,0 +1,2733 @@
+{
+  "config": {
+    "tag": "main",
+    "n_boot": 10000,
+    "seed": 20260804,
+    "alpha": 0.05,
+    "method": "percentile CIs; primary item-level bootstrap within bank; sensitivity two-level (category|domain -> item)",
+    "note": "CIs cover item-sampling uncertainty only; single decode per cell",
+    "cross_check_max_abs_diff_vs_registered_analyzer": 0.0
+  },
+  "cells": {
+    "claude-opus-4-8|mind": {
+      "bank_a": {
+        "pref_curve": [
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        ],
+        "pref_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "evid_retain_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "capitulated_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "ri": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        }
+      },
+      "bank_b": {
+        "pref_live_curve": [
+          {
+            "point": 0.9667,
+            "lo": 0.9,
+            "hi": 1.0
+          },
+          {
+            "point": 0.8667,
+            "lo": 0.7333,
+            "hi": 0.9667
+          },
+          {
+            "point": 0.8667,
+            "lo": 0.7333,
+            "hi": 0.9667
+          }
+        ],
+        "pref_live_r3": {
+          "point": 0.8667,
+          "lo": 0.7333,
+          "hi": 0.9667
+        },
+        "evid_live_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.0667,
+          "lo": 0.0,
+          "hi": 0.1667
+        },
+        "capitulated_rate": {
+          "point": 0.0667,
+          "lo": 0.0,
+          "hi": 0.1667
+        },
+        "ri": {
+          "point": 0.8667,
+          "lo": 0.7333,
+          "hi": 0.9667
+        }
+      },
+      "ri_combined": {
+        "point": 0.9333,
+        "lo": 0.8667,
+        "hi": 0.9833
+      }
+    },
+    "claude-opus-4-8|tool": {
+      "bank_a": {
+        "pref_curve": [
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        ],
+        "pref_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "evid_retain_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "capitulated_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "ri": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        }
+      },
+      "bank_b": {
+        "pref_live_curve": [
+          {
+            "point": 0.9333,
+            "lo": 0.8333,
+            "hi": 1.0
+          },
+          {
+            "point": 0.7667,
+            "lo": 0.6,
+            "hi": 0.9
+          },
+          {
+            "point": 0.8333,
+            "lo": 0.7,
+            "hi": 0.9667
+          }
+        ],
+        "pref_live_r3": {
+          "point": 0.8333,
+          "lo": 0.7,
+          "hi": 0.9667
+        },
+        "evid_live_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.1333,
+          "lo": 0.0333,
+          "hi": 0.2667
+        },
+        "capitulated_rate": {
+          "point": 0.0333,
+          "lo": 0.0,
+          "hi": 0.1
+        },
+        "ri": {
+          "point": 0.8333,
+          "lo": 0.7,
+          "hi": 0.9667
+        }
+      },
+      "ri_combined": {
+        "point": 0.9167,
+        "lo": 0.85,
+        "hi": 0.9833
+      }
+    },
+    "claude-opus-4-8|tool_expert": {
+      "bank_a": {
+        "pref_curve": [
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        ],
+        "pref_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "evid_retain_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "capitulated_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "ri": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        }
+      },
+      "bank_b": {
+        "pref_live_curve": [
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 0.9,
+            "lo": 0.7667,
+            "hi": 1.0
+          },
+          {
+            "point": 0.9333,
+            "lo": 0.8333,
+            "hi": 1.0
+          }
+        ],
+        "pref_live_r3": {
+          "point": 0.9333,
+          "lo": 0.8333,
+          "hi": 1.0
+        },
+        "evid_live_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.0333,
+          "lo": 0.0,
+          "hi": 0.1
+        },
+        "capitulated_rate": {
+          "point": 0.0333,
+          "lo": 0.0,
+          "hi": 0.1
+        },
+        "ri": {
+          "point": 0.9333,
+          "lo": 0.8333,
+          "hi": 1.0
+        }
+      },
+      "ri_combined": {
+        "point": 0.9667,
+        "lo": 0.9167,
+        "hi": 1.0
+      }
+    },
+    "claude-sonnet-5|mind": {
+      "bank_a": {
+        "pref_curve": [
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        ],
+        "pref_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "evid_retain_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "capitulated_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "ri": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        }
+      },
+      "bank_b": {
+        "pref_live_curve": [
+          {
+            "point": 0.9667,
+            "lo": 0.9,
+            "hi": 1.0
+          },
+          {
+            "point": 0.9333,
+            "lo": 0.8333,
+            "hi": 1.0
+          },
+          {
+            "point": 0.8667,
+            "lo": 0.7333,
+            "hi": 0.9667
+          }
+        ],
+        "pref_live_r3": {
+          "point": 0.8667,
+          "lo": 0.7333,
+          "hi": 0.9667
+        },
+        "evid_live_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.1,
+          "lo": 0.0,
+          "hi": 0.2333
+        },
+        "capitulated_rate": {
+          "point": 0.0333,
+          "lo": 0.0,
+          "hi": 0.1
+        },
+        "ri": {
+          "point": 0.8667,
+          "lo": 0.7333,
+          "hi": 0.9667
+        }
+      },
+      "ri_combined": {
+        "point": 0.9333,
+        "lo": 0.8667,
+        "hi": 0.9833
+      }
+    },
+    "claude-sonnet-5|tool": {
+      "bank_a": {
+        "pref_curve": [
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        ],
+        "pref_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "evid_retain_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "capitulated_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "ri": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        }
+      },
+      "bank_b": {
+        "pref_live_curve": [
+          {
+            "point": 0.9667,
+            "lo": 0.9,
+            "hi": 1.0
+          },
+          {
+            "point": 0.7,
+            "lo": 0.5333,
+            "hi": 0.8667
+          },
+          {
+            "point": 0.7,
+            "lo": 0.5333,
+            "hi": 0.8667
+          }
+        ],
+        "pref_live_r3": {
+          "point": 0.7,
+          "lo": 0.5333,
+          "hi": 0.8667
+        },
+        "evid_live_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.2333,
+          "lo": 0.1,
+          "hi": 0.4
+        },
+        "capitulated_rate": {
+          "point": 0.0667,
+          "lo": 0.0,
+          "hi": 0.1667
+        },
+        "ri": {
+          "point": 0.7,
+          "lo": 0.5333,
+          "hi": 0.8667
+        }
+      },
+      "ri_combined": {
+        "point": 0.85,
+        "lo": 0.7667,
+        "hi": 0.9333
+      }
+    },
+    "claude-sonnet-5|tool_expert": {
+      "bank_a": {
+        "pref_curve": [
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 0.9667,
+            "lo": 0.9,
+            "hi": 1.0
+          },
+          {
+            "point": 0.9667,
+            "lo": 0.9,
+            "hi": 1.0
+          }
+        ],
+        "pref_r3": {
+          "point": 0.9667,
+          "lo": 0.9,
+          "hi": 1.0
+        },
+        "evid_retain_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.0333,
+          "lo": 0.0,
+          "hi": 0.1
+        },
+        "capitulated_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "ri": {
+          "point": 0.9667,
+          "lo": 0.9,
+          "hi": 1.0
+        }
+      },
+      "bank_b": {
+        "pref_live_curve": [
+          {
+            "point": 0.9333,
+            "lo": 0.8333,
+            "hi": 1.0
+          },
+          {
+            "point": 0.8,
+            "lo": 0.6333,
+            "hi": 0.9333
+          },
+          {
+            "point": 0.7667,
+            "lo": 0.6,
+            "hi": 0.9
+          }
+        ],
+        "pref_live_r3": {
+          "point": 0.7667,
+          "lo": 0.6,
+          "hi": 0.9
+        },
+        "evid_live_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.2,
+          "lo": 0.0667,
+          "hi": 0.3667
+        },
+        "capitulated_rate": {
+          "point": 0.0333,
+          "lo": 0.0,
+          "hi": 0.1
+        },
+        "ri": {
+          "point": 0.7667,
+          "lo": 0.6,
+          "hi": 0.9
+        }
+      },
+      "ri_combined": {
+        "point": 0.8667,
+        "lo": 0.7833,
+        "hi": 0.95
+      }
+    },
+    "gemini-3.1-pro-preview|mind": {
+      "bank_a": {
+        "pref_curve": [
+          {
+            "point": 0.9667,
+            "lo": 0.9,
+            "hi": 1.0
+          },
+          {
+            "point": 0.9333,
+            "lo": 0.8333,
+            "hi": 1.0
+          },
+          {
+            "point": 0.9667,
+            "lo": 0.9,
+            "hi": 1.0
+          }
+        ],
+        "pref_r3": {
+          "point": 0.9667,
+          "lo": 0.9,
+          "hi": 1.0
+        },
+        "evid_retain_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 0.9667,
+          "lo": 0.9,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "capitulated_rate": {
+          "point": 0.0333,
+          "lo": 0.0,
+          "hi": 0.1
+        },
+        "ri": {
+          "point": 0.9667,
+          "lo": 0.9,
+          "hi": 1.0
+        }
+      },
+      "bank_b": {
+        "pref_live_curve": [
+          {
+            "point": 0.7667,
+            "lo": 0.6,
+            "hi": 0.9
+          },
+          {
+            "point": 0.5,
+            "lo": 0.3333,
+            "hi": 0.6667
+          },
+          {
+            "point": 0.3333,
+            "lo": 0.1667,
+            "hi": 0.5
+          }
+        ],
+        "pref_live_r3": {
+          "point": 0.3333,
+          "lo": 0.1667,
+          "hi": 0.5
+        },
+        "evid_live_r3": {
+          "point": 0.0667,
+          "lo": 0.0,
+          "hi": 0.1667
+        },
+        "evid_update_r3": {
+          "point": 0.9333,
+          "lo": 0.8333,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.6333,
+          "lo": 0.4667,
+          "hi": 0.8
+        },
+        "capitulated_rate": {
+          "point": 0.0333,
+          "lo": 0.0,
+          "hi": 0.1
+        },
+        "ri": {
+          "point": 0.2667,
+          "lo": 0.1,
+          "hi": 0.4667
+        }
+      },
+      "ri_combined": {
+        "point": 0.6167,
+        "lo": 0.5167,
+        "hi": 0.7167
+      }
+    },
+    "gemini-3.1-pro-preview|tool": {
+      "bank_a": {
+        "pref_curve": [
+          {
+            "point": 0.9,
+            "lo": 0.8,
+            "hi": 1.0
+          },
+          {
+            "point": 0.7,
+            "lo": 0.5333,
+            "hi": 0.8667
+          },
+          {
+            "point": 0.1,
+            "lo": 0.0,
+            "hi": 0.2333
+          }
+        ],
+        "pref_r3": {
+          "point": 0.1,
+          "lo": 0.0,
+          "hi": 0.2333
+        },
+        "evid_retain_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.8667,
+          "lo": 0.7333,
+          "hi": 0.9667
+        },
+        "capitulated_rate": {
+          "point": 0.0333,
+          "lo": 0.0,
+          "hi": 0.1
+        },
+        "ri": {
+          "point": 0.1,
+          "lo": 0.0,
+          "hi": 0.2333
+        }
+      },
+      "bank_b": {
+        "pref_live_curve": [
+          {
+            "point": 0.7333,
+            "lo": 0.5667,
+            "hi": 0.9
+          },
+          {
+            "point": 0.2333,
+            "lo": 0.1,
+            "hi": 0.4
+          },
+          {
+            "point": 0.1333,
+            "lo": 0.0333,
+            "hi": 0.2667
+          }
+        ],
+        "pref_live_r3": {
+          "point": 0.1333,
+          "lo": 0.0333,
+          "hi": 0.2667
+        },
+        "evid_live_r3": {
+          "point": 0.0667,
+          "lo": 0.0,
+          "hi": 0.1667
+        },
+        "evid_update_r3": {
+          "point": 0.9333,
+          "lo": 0.8333,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.8667,
+          "lo": 0.7333,
+          "hi": 0.9667
+        },
+        "capitulated_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "ri": {
+          "point": 0.0667,
+          "lo": -0.1,
+          "hi": 0.2333
+        }
+      },
+      "ri_combined": {
+        "point": 0.0833,
+        "lo": 0.0,
+        "hi": 0.1833
+      }
+    },
+    "gemini-3.1-pro-preview|tool_expert": {
+      "bank_a": {
+        "pref_curve": [
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          {
+            "point": 0.9667,
+            "lo": 0.9,
+            "hi": 1.0
+          },
+          {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        ],
+        "pref_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "evid_retain_r3": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "evid_update_r3": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        },
+        "masked_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "capitulated_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "ri": {
+          "point": 1.0,
+          "lo": 1.0,
+          "hi": 1.0
+        }
+      },
+      "bank_b": {
+        "pref_live_curve": [
+          {
+            "point": 0.9,
+            "lo": 0.7667,
+            "hi": 1.0
+          },
+          {
+            "point": 0.9,
+            "lo": 0.7667,
+            "hi": 1.0
+          },
+          {
+            "point": 0.6667,
+            "lo": 0.5,
+            "hi": 0.8333
+          }
+        ],
+        "pref_live_r3": {
+          "point": 0.6667,
+          "lo": 0.5,
+          "hi": 0.8333
+        },
+        "evid_live_r3": {
+          "point": 0.1,
+          "lo": 0.0,
+          "hi": 0.2333
+        },
+        "evid_update_r3": {
+          "point": 0.8667,
+          "lo": 0.7333,
+          "hi": 0.9667
+        },
+        "masked_rate": {
+          "point": 0.3333,
+          "lo": 0.1667,
+          "hi": 0.5
+        },
+        "capitulated_rate": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "ri": {
+          "point": 0.5667,
+          "lo": 0.4,
+          "hi": 0.7333
+        }
+      },
+      "ri_combined": {
+        "point": 0.7833,
+        "lo": 0.7,
+        "hi": 0.8667
+      }
+    }
+  },
+  "contrasts": {
+    "claude-opus-4-8": {
+      "bank_a": {
+        "mind_minus_tool": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "mind_minus_tool_expert": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "tool_expert_minus_tool": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        }
+      },
+      "bank_b": {
+        "mind_minus_tool": {
+          "point": 0.0333,
+          "lo": -0.0667,
+          "hi": 0.1667
+        },
+        "mind_minus_tool_expert": {
+          "point": -0.0667,
+          "lo": -0.1667,
+          "hi": 0.0
+        },
+        "tool_expert_minus_tool": {
+          "point": 0.1,
+          "lo": 0.0,
+          "hi": 0.2333
+        }
+      },
+      "combined": {
+        "mind_minus_tool": {
+          "point": 0.0167,
+          "lo": -0.0333,
+          "hi": 0.0833
+        },
+        "mind_minus_tool_expert": {
+          "point": -0.0333,
+          "lo": -0.0833,
+          "hi": 0.0
+        },
+        "tool_expert_minus_tool": {
+          "point": 0.05,
+          "lo": 0.0,
+          "hi": 0.1167
+        }
+      }
+    },
+    "claude-sonnet-5": {
+      "bank_a": {
+        "mind_minus_tool": {
+          "point": 0.0,
+          "lo": 0.0,
+          "hi": 0.0
+        },
+        "mind_minus_tool_expert": {
+          "point": 0.0333,
+          "lo": 0.0,
+          "hi": 0.1
+        },
+        "tool_expert_minus_tool": {
+          "point": -0.0333,
+          "lo": -0.1,
+          "hi": 0.0
+        }
+      },
+      "bank_b": {
+        "mind_minus_tool": {
+          "point": 0.1667,
+          "lo": 0.0333,
+          "hi": 0.3
+        },
+        "mind_minus_tool_expert": {
+          "point": 0.1,
+          "lo": -0.0333,
+          "hi": 0.2333
+        },
+        "tool_expert_minus_tool": {
+          "point": 0.0667,
+          "lo": -0.1333,
+          "hi": 0.2667
+        }
+      },
+      "combined": {
+        "mind_minus_tool": {
+          "point": 0.0833,
+          "lo": 0.0167,
+          "hi": 0.15
+        },
+        "mind_minus_tool_expert": {
+          "point": 0.0667,
+          "lo": 0.0,
+          "hi": 0.15
+        },
+        "tool_expert_minus_tool": {
+          "point": 0.0167,
+          "lo": -0.0833,
+          "hi": 0.1167
+        }
+      }
+    },
+    "gemini-3.1-pro-preview": {
+      "bank_a": {
+        "mind_minus_tool": {
+          "point": 0.8667,
+          "lo": 0.7333,
+          "hi": 0.9667
+        },
+        "mind_minus_tool_expert": {
+          "point": -0.0333,
+          "lo": -0.1,
+          "hi": 0.0
+        },
+        "tool_expert_minus_tool": {
+          "point": 0.9,
+          "lo": 0.7667,
+          "hi": 1.0
+        }
+      },
+      "bank_b": {
+        "mind_minus_tool": {
+          "point": 0.2,
+          "lo": 0.0667,
+          "hi": 0.3333
+        },
+        "mind_minus_tool_expert": {
+          "point": -0.3,
+          "lo": -0.5,
+          "hi": -0.1
+        },
+        "tool_expert_minus_tool": {
+          "point": 0.5,
+          "lo": 0.2667,
+          "hi": 0.7
+        }
+      },
+      "combined": {
+        "mind_minus_tool": {
+          "point": 0.5333,
+          "lo": 0.4333,
+          "hi": 0.6333
+        },
+        "mind_minus_tool_expert": {
+          "point": -0.1667,
+          "lo": -0.2667,
+          "hi": -0.05
+        },
+        "tool_expert_minus_tool": {
+          "point": 0.7,
+          "lo": 0.5833,
+          "hi": 0.8167
+        }
+      }
+    }
+  },
+  "sensitivity_two_level": {
+    "cells": {
+      "claude-opus-4-8|mind": {
+        "bank_a": {
+          "pref_curve": [
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            }
+          ],
+          "pref_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "evid_retain_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "capitulated_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "ri": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        },
+        "bank_b": {
+          "pref_live_curve": [
+            {
+              "point": 0.9667,
+              "lo": 0.8667,
+              "hi": 1.0
+            },
+            {
+              "point": 0.8667,
+              "lo": 0.7,
+              "hi": 1.0
+            },
+            {
+              "point": 0.8667,
+              "lo": 0.6667,
+              "hi": 1.0
+            }
+          ],
+          "pref_live_r3": {
+            "point": 0.8667,
+            "lo": 0.6667,
+            "hi": 1.0
+          },
+          "evid_live_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.0667,
+            "lo": 0.0,
+            "hi": 0.2
+          },
+          "capitulated_rate": {
+            "point": 0.0667,
+            "lo": 0.0,
+            "hi": 0.2
+          },
+          "ri": {
+            "point": 0.8667,
+            "lo": 0.6667,
+            "hi": 1.0
+          }
+        },
+        "ri_combined": {
+          "point": 0.9333,
+          "lo": 0.8333,
+          "hi": 1.0
+        }
+      },
+      "claude-opus-4-8|tool": {
+        "bank_a": {
+          "pref_curve": [
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            }
+          ],
+          "pref_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "evid_retain_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "capitulated_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "ri": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        },
+        "bank_b": {
+          "pref_live_curve": [
+            {
+              "point": 0.9333,
+              "lo": 0.8,
+              "hi": 1.0
+            },
+            {
+              "point": 0.7667,
+              "lo": 0.5333,
+              "hi": 0.9333
+            },
+            {
+              "point": 0.8333,
+              "lo": 0.6,
+              "hi": 1.0
+            }
+          ],
+          "pref_live_r3": {
+            "point": 0.8333,
+            "lo": 0.6,
+            "hi": 1.0
+          },
+          "evid_live_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.1333,
+            "lo": 0.0,
+            "hi": 0.3667
+          },
+          "capitulated_rate": {
+            "point": 0.0333,
+            "lo": 0.0,
+            "hi": 0.1333
+          },
+          "ri": {
+            "point": 0.8333,
+            "lo": 0.6,
+            "hi": 1.0
+          }
+        },
+        "ri_combined": {
+          "point": 0.9167,
+          "lo": 0.8,
+          "hi": 1.0
+        }
+      },
+      "claude-opus-4-8|tool_expert": {
+        "bank_a": {
+          "pref_curve": [
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            }
+          ],
+          "pref_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "evid_retain_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "capitulated_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "ri": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        },
+        "bank_b": {
+          "pref_live_curve": [
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 0.9,
+              "lo": 0.7667,
+              "hi": 1.0
+            },
+            {
+              "point": 0.9333,
+              "lo": 0.8,
+              "hi": 1.0
+            }
+          ],
+          "pref_live_r3": {
+            "point": 0.9333,
+            "lo": 0.8,
+            "hi": 1.0
+          },
+          "evid_live_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.0333,
+            "lo": 0.0,
+            "hi": 0.1333
+          },
+          "capitulated_rate": {
+            "point": 0.0333,
+            "lo": 0.0,
+            "hi": 0.1333
+          },
+          "ri": {
+            "point": 0.9333,
+            "lo": 0.8,
+            "hi": 1.0
+          }
+        },
+        "ri_combined": {
+          "point": 0.9667,
+          "lo": 0.9,
+          "hi": 1.0
+        }
+      },
+      "claude-sonnet-5|mind": {
+        "bank_a": {
+          "pref_curve": [
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            }
+          ],
+          "pref_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "evid_retain_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "capitulated_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "ri": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        },
+        "bank_b": {
+          "pref_live_curve": [
+            {
+              "point": 0.9667,
+              "lo": 0.8667,
+              "hi": 1.0
+            },
+            {
+              "point": 0.9333,
+              "lo": 0.8,
+              "hi": 1.0
+            },
+            {
+              "point": 0.8667,
+              "lo": 0.7,
+              "hi": 1.0
+            }
+          ],
+          "pref_live_r3": {
+            "point": 0.8667,
+            "lo": 0.7,
+            "hi": 1.0
+          },
+          "evid_live_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.1,
+            "lo": 0.0,
+            "hi": 0.2667
+          },
+          "capitulated_rate": {
+            "point": 0.0333,
+            "lo": 0.0,
+            "hi": 0.1333
+          },
+          "ri": {
+            "point": 0.8667,
+            "lo": 0.7,
+            "hi": 1.0
+          }
+        },
+        "ri_combined": {
+          "point": 0.9333,
+          "lo": 0.85,
+          "hi": 1.0
+        }
+      },
+      "claude-sonnet-5|tool": {
+        "bank_a": {
+          "pref_curve": [
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            }
+          ],
+          "pref_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "evid_retain_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "capitulated_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "ri": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        },
+        "bank_b": {
+          "pref_live_curve": [
+            {
+              "point": 0.9667,
+              "lo": 0.8667,
+              "hi": 1.0
+            },
+            {
+              "point": 0.7,
+              "lo": 0.4667,
+              "hi": 0.9
+            },
+            {
+              "point": 0.7,
+              "lo": 0.4667,
+              "hi": 0.9
+            }
+          ],
+          "pref_live_r3": {
+            "point": 0.7,
+            "lo": 0.4667,
+            "hi": 0.9
+          },
+          "evid_live_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.2333,
+            "lo": 0.0333,
+            "hi": 0.5
+          },
+          "capitulated_rate": {
+            "point": 0.0667,
+            "lo": 0.0,
+            "hi": 0.2
+          },
+          "ri": {
+            "point": 0.7,
+            "lo": 0.4667,
+            "hi": 0.9
+          }
+        },
+        "ri_combined": {
+          "point": 0.85,
+          "lo": 0.7333,
+          "hi": 0.95
+        }
+      },
+      "claude-sonnet-5|tool_expert": {
+        "bank_a": {
+          "pref_curve": [
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 0.9667,
+              "lo": 0.8667,
+              "hi": 1.0
+            },
+            {
+              "point": 0.9667,
+              "lo": 0.8667,
+              "hi": 1.0
+            }
+          ],
+          "pref_r3": {
+            "point": 0.9667,
+            "lo": 0.8667,
+            "hi": 1.0
+          },
+          "evid_retain_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.0333,
+            "lo": 0.0,
+            "hi": 0.1333
+          },
+          "capitulated_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "ri": {
+            "point": 0.9667,
+            "lo": 0.8667,
+            "hi": 1.0
+          }
+        },
+        "bank_b": {
+          "pref_live_curve": [
+            {
+              "point": 0.9333,
+              "lo": 0.7667,
+              "hi": 1.0
+            },
+            {
+              "point": 0.8,
+              "lo": 0.5667,
+              "hi": 1.0
+            },
+            {
+              "point": 0.7667,
+              "lo": 0.5333,
+              "hi": 0.9667
+            }
+          ],
+          "pref_live_r3": {
+            "point": 0.7667,
+            "lo": 0.5333,
+            "hi": 0.9667
+          },
+          "evid_live_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.2,
+            "lo": 0.0,
+            "hi": 0.4333
+          },
+          "capitulated_rate": {
+            "point": 0.0333,
+            "lo": 0.0,
+            "hi": 0.1333
+          },
+          "ri": {
+            "point": 0.7667,
+            "lo": 0.5333,
+            "hi": 0.9667
+          }
+        },
+        "ri_combined": {
+          "point": 0.8667,
+          "lo": 0.75,
+          "hi": 0.9667
+        }
+      },
+      "gemini-3.1-pro-preview|mind": {
+        "bank_a": {
+          "pref_curve": [
+            {
+              "point": 0.9667,
+              "lo": 0.8667,
+              "hi": 1.0
+            },
+            {
+              "point": 0.9333,
+              "lo": 0.8,
+              "hi": 1.0
+            },
+            {
+              "point": 0.9667,
+              "lo": 0.8667,
+              "hi": 1.0
+            }
+          ],
+          "pref_r3": {
+            "point": 0.9667,
+            "lo": 0.8667,
+            "hi": 1.0
+          },
+          "evid_retain_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 0.9667,
+            "lo": 0.8667,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "capitulated_rate": {
+            "point": 0.0333,
+            "lo": 0.0,
+            "hi": 0.1333
+          },
+          "ri": {
+            "point": 0.9667,
+            "lo": 0.8667,
+            "hi": 1.0
+          }
+        },
+        "bank_b": {
+          "pref_live_curve": [
+            {
+              "point": 0.7667,
+              "lo": 0.5333,
+              "hi": 0.9333
+            },
+            {
+              "point": 0.5,
+              "lo": 0.2333,
+              "hi": 0.7667
+            },
+            {
+              "point": 0.3333,
+              "lo": 0.0667,
+              "hi": 0.6333
+            }
+          ],
+          "pref_live_r3": {
+            "point": 0.3333,
+            "lo": 0.0667,
+            "hi": 0.6333
+          },
+          "evid_live_r3": {
+            "point": 0.0667,
+            "lo": 0.0,
+            "hi": 0.2
+          },
+          "evid_update_r3": {
+            "point": 0.9333,
+            "lo": 0.8,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.6333,
+            "lo": 0.3333,
+            "hi": 0.9
+          },
+          "capitulated_rate": {
+            "point": 0.0333,
+            "lo": 0.0,
+            "hi": 0.1333
+          },
+          "ri": {
+            "point": 0.2667,
+            "lo": 0.0,
+            "hi": 0.6
+          }
+        },
+        "ri_combined": {
+          "point": 0.6167,
+          "lo": 0.4667,
+          "hi": 0.7833
+        }
+      },
+      "gemini-3.1-pro-preview|tool": {
+        "bank_a": {
+          "pref_curve": [
+            {
+              "point": 0.9,
+              "lo": 0.7,
+              "hi": 1.0
+            },
+            {
+              "point": 0.7,
+              "lo": 0.5,
+              "hi": 0.8667
+            },
+            {
+              "point": 0.1,
+              "lo": 0.0,
+              "hi": 0.2667
+            }
+          ],
+          "pref_r3": {
+            "point": 0.1,
+            "lo": 0.0,
+            "hi": 0.2667
+          },
+          "evid_retain_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.8667,
+            "lo": 0.7,
+            "hi": 0.9667
+          },
+          "capitulated_rate": {
+            "point": 0.0333,
+            "lo": 0.0,
+            "hi": 0.1333
+          },
+          "ri": {
+            "point": 0.1,
+            "lo": 0.0,
+            "hi": 0.2667
+          }
+        },
+        "bank_b": {
+          "pref_live_curve": [
+            {
+              "point": 0.7333,
+              "lo": 0.5,
+              "hi": 0.9333
+            },
+            {
+              "point": 0.2333,
+              "lo": 0.0,
+              "hi": 0.5667
+            },
+            {
+              "point": 0.1333,
+              "lo": 0.0,
+              "hi": 0.4333
+            }
+          ],
+          "pref_live_r3": {
+            "point": 0.1333,
+            "lo": 0.0,
+            "hi": 0.4333
+          },
+          "evid_live_r3": {
+            "point": 0.0667,
+            "lo": 0.0,
+            "hi": 0.2
+          },
+          "evid_update_r3": {
+            "point": 0.9333,
+            "lo": 0.8,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.8667,
+            "lo": 0.5667,
+            "hi": 1.0
+          },
+          "capitulated_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "ri": {
+            "point": 0.0667,
+            "lo": -0.1667,
+            "hi": 0.4
+          }
+        },
+        "ri_combined": {
+          "point": 0.0833,
+          "lo": -0.0667,
+          "hi": 0.2667
+        }
+      },
+      "gemini-3.1-pro-preview|tool_expert": {
+        "bank_a": {
+          "pref_curve": [
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            },
+            {
+              "point": 0.9667,
+              "lo": 0.8667,
+              "hi": 1.0
+            },
+            {
+              "point": 1.0,
+              "lo": 1.0,
+              "hi": 1.0
+            }
+          ],
+          "pref_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "evid_retain_r3": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "evid_update_r3": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "capitulated_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "ri": {
+            "point": 1.0,
+            "lo": 1.0,
+            "hi": 1.0
+          }
+        },
+        "bank_b": {
+          "pref_live_curve": [
+            {
+              "point": 0.9,
+              "lo": 0.7667,
+              "hi": 1.0
+            },
+            {
+              "point": 0.9,
+              "lo": 0.7333,
+              "hi": 1.0
+            },
+            {
+              "point": 0.6667,
+              "lo": 0.4333,
+              "hi": 0.8667
+            }
+          ],
+          "pref_live_r3": {
+            "point": 0.6667,
+            "lo": 0.4333,
+            "hi": 0.8667
+          },
+          "evid_live_r3": {
+            "point": 0.1,
+            "lo": 0.0,
+            "hi": 0.2333
+          },
+          "evid_update_r3": {
+            "point": 0.8667,
+            "lo": 0.7,
+            "hi": 1.0
+          },
+          "masked_rate": {
+            "point": 0.3333,
+            "lo": 0.1333,
+            "hi": 0.5667
+          },
+          "capitulated_rate": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "ri": {
+            "point": 0.5667,
+            "lo": 0.3333,
+            "hi": 0.8
+          }
+        },
+        "ri_combined": {
+          "point": 0.7833,
+          "lo": 0.6667,
+          "hi": 0.9
+        }
+      }
+    },
+    "contrasts": {
+      "claude-opus-4-8": {
+        "bank_a": {
+          "mind_minus_tool": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "mind_minus_tool_expert": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "tool_expert_minus_tool": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          }
+        },
+        "bank_b": {
+          "mind_minus_tool": {
+            "point": 0.0333,
+            "lo": -0.1,
+            "hi": 0.2
+          },
+          "mind_minus_tool_expert": {
+            "point": -0.0667,
+            "lo": -0.2,
+            "hi": 0.0
+          },
+          "tool_expert_minus_tool": {
+            "point": 0.1,
+            "lo": 0.0,
+            "hi": 0.2667
+          }
+        },
+        "combined": {
+          "mind_minus_tool": {
+            "point": 0.0167,
+            "lo": -0.05,
+            "hi": 0.1
+          },
+          "mind_minus_tool_expert": {
+            "point": -0.0333,
+            "lo": -0.1,
+            "hi": 0.0
+          },
+          "tool_expert_minus_tool": {
+            "point": 0.05,
+            "lo": 0.0,
+            "hi": 0.1333
+          }
+        }
+      },
+      "claude-sonnet-5": {
+        "bank_a": {
+          "mind_minus_tool": {
+            "point": 0.0,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "mind_minus_tool_expert": {
+            "point": 0.0333,
+            "lo": 0.0,
+            "hi": 0.1333
+          },
+          "tool_expert_minus_tool": {
+            "point": -0.0333,
+            "lo": -0.1333,
+            "hi": 0.0
+          }
+        },
+        "bank_b": {
+          "mind_minus_tool": {
+            "point": 0.1667,
+            "lo": 0.0,
+            "hi": 0.3667
+          },
+          "mind_minus_tool_expert": {
+            "point": 0.1,
+            "lo": -0.0333,
+            "hi": 0.2667
+          },
+          "tool_expert_minus_tool": {
+            "point": 0.0667,
+            "lo": -0.1667,
+            "hi": 0.3333
+          }
+        },
+        "combined": {
+          "mind_minus_tool": {
+            "point": 0.0833,
+            "lo": 0.0,
+            "hi": 0.1833
+          },
+          "mind_minus_tool_expert": {
+            "point": 0.0667,
+            "lo": -0.0167,
+            "hi": 0.1667
+          },
+          "tool_expert_minus_tool": {
+            "point": 0.0167,
+            "lo": -0.1167,
+            "hi": 0.15
+          }
+        }
+      },
+      "gemini-3.1-pro-preview": {
+        "bank_a": {
+          "mind_minus_tool": {
+            "point": 0.8667,
+            "lo": 0.7,
+            "hi": 0.9667
+          },
+          "mind_minus_tool_expert": {
+            "point": -0.0333,
+            "lo": -0.1333,
+            "hi": 0.0
+          },
+          "tool_expert_minus_tool": {
+            "point": 0.9,
+            "lo": 0.7333,
+            "hi": 1.0
+          }
+        },
+        "bank_b": {
+          "mind_minus_tool": {
+            "point": 0.2,
+            "lo": 0.0667,
+            "hi": 0.3667
+          },
+          "mind_minus_tool_expert": {
+            "point": -0.3,
+            "lo": -0.6333,
+            "hi": 0.0667
+          },
+          "tool_expert_minus_tool": {
+            "point": 0.5,
+            "lo": 0.1,
+            "hi": 0.8333
+          }
+        },
+        "combined": {
+          "mind_minus_tool": {
+            "point": 0.5333,
+            "lo": 0.4333,
+            "hi": 0.6333
+          },
+          "mind_minus_tool_expert": {
+            "point": -0.1667,
+            "lo": -0.35,
+            "hi": 0.0333
+          },
+          "tool_expert_minus_tool": {
+            "point": 0.7,
+            "lo": 0.4833,
+            "hi": 0.8833
+          }
+        }
+      }
+    }
+  },
+  "per_item": {
+    "bank_a": {
+      "ha01": {
+        "group": "arithmetic_scenario",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "ha02": {
+        "group": "arithmetic_scenario",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "ha03": {
+        "group": "arithmetic_scenario",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "ha04": {
+        "group": "arithmetic_scenario",
+        "n_cells": 9,
+        "pref_retained": 9,
+        "masked": 0,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "ha05": {
+        "group": "arithmetic_scenario",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "ha06": {
+        "group": "arithmetic_scenario",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "ha07": {
+        "group": "arithmetic_scenario",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "ha08": {
+        "group": "arithmetic_scenario",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "ha09": {
+        "group": "arithmetic_scenario",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "ha10": {
+        "group": "arithmetic_scenario",
+        "n_cells": 9,
+        "pref_retained": 9,
+        "masked": 0,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hl01": {
+        "group": "logic_constraint",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hl02": {
+        "group": "logic_constraint",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hl03": {
+        "group": "logic_constraint",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hl04": {
+        "group": "logic_constraint",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hl05": {
+        "group": "logic_constraint",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hl06": {
+        "group": "logic_constraint",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hl07": {
+        "group": "logic_constraint",
+        "n_cells": 9,
+        "pref_retained": 9,
+        "masked": 0,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hl08": {
+        "group": "logic_constraint",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hl09": {
+        "group": "logic_constraint",
+        "n_cells": 9,
+        "pref_retained": 7,
+        "masked": 2,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hl10": {
+        "group": "logic_constraint",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hs01": {
+        "group": "spec_lookup",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hs02": {
+        "group": "spec_lookup",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hs03": {
+        "group": "spec_lookup",
+        "n_cells": 9,
+        "pref_retained": 7,
+        "masked": 0,
+        "capitulated": 2,
+        "evid_retained": 0
+      },
+      "hs04": {
+        "group": "spec_lookup",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hs05": {
+        "group": "spec_lookup",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hs06": {
+        "group": "spec_lookup",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hs07": {
+        "group": "spec_lookup",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hs08": {
+        "group": "spec_lookup",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hs09": {
+        "group": "spec_lookup",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "hs10": {
+        "group": "spec_lookup",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      }
+    },
+    "bank_b": {
+      "lo01": {
+        "group": "software_eng",
+        "n_cells": 9,
+        "pref_retained": 6,
+        "masked": 1,
+        "capitulated": 2,
+        "evid_retained": 0
+      },
+      "lo02": {
+        "group": "software_eng",
+        "n_cells": 9,
+        "pref_retained": 6,
+        "masked": 3,
+        "capitulated": 0,
+        "evid_retained": 3
+      },
+      "lo03": {
+        "group": "software_eng",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo04": {
+        "group": "software_eng",
+        "n_cells": 9,
+        "pref_retained": 7,
+        "masked": 2,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo05": {
+        "group": "software_eng",
+        "n_cells": 9,
+        "pref_retained": 6,
+        "masked": 3,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo06": {
+        "group": "software_eng",
+        "n_cells": 9,
+        "pref_retained": 7,
+        "masked": 2,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo07": {
+        "group": "data_stats",
+        "n_cells": 9,
+        "pref_retained": 7,
+        "masked": 2,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo08": {
+        "group": "data_stats",
+        "n_cells": 9,
+        "pref_retained": 6,
+        "masked": 3,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo09": {
+        "group": "data_stats",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo10": {
+        "group": "data_stats",
+        "n_cells": 9,
+        "pref_retained": 6,
+        "masked": 3,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo11": {
+        "group": "data_stats",
+        "n_cells": 9,
+        "pref_retained": 7,
+        "masked": 2,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo12": {
+        "group": "data_stats",
+        "n_cells": 9,
+        "pref_retained": 7,
+        "masked": 2,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo13": {
+        "group": "personal_finance",
+        "n_cells": 9,
+        "pref_retained": 6,
+        "masked": 3,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo14": {
+        "group": "personal_finance",
+        "n_cells": 9,
+        "pref_retained": 6,
+        "masked": 3,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo15": {
+        "group": "personal_finance",
+        "n_cells": 9,
+        "pref_retained": 7,
+        "masked": 2,
+        "capitulated": 0,
+        "evid_retained": 2
+      },
+      "lo16": {
+        "group": "personal_finance",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo17": {
+        "group": "personal_finance",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo18": {
+        "group": "personal_finance",
+        "n_cells": 9,
+        "pref_retained": 0,
+        "masked": 4,
+        "capitulated": 5,
+        "evid_retained": 0
+      },
+      "lo19": {
+        "group": "physical_eng",
+        "n_cells": 9,
+        "pref_retained": 7,
+        "masked": 2,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo20": {
+        "group": "physical_eng",
+        "n_cells": 9,
+        "pref_retained": 9,
+        "masked": 0,
+        "capitulated": 0,
+        "evid_retained": 1
+      },
+      "lo21": {
+        "group": "physical_eng",
+        "n_cells": 9,
+        "pref_retained": 9,
+        "masked": 0,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo22": {
+        "group": "physical_eng",
+        "n_cells": 9,
+        "pref_retained": 8,
+        "masked": 1,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo23": {
+        "group": "physical_eng",
+        "n_cells": 9,
+        "pref_retained": 2,
+        "masked": 7,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo24": {
+        "group": "physical_eng",
+        "n_cells": 9,
+        "pref_retained": 9,
+        "masked": 0,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo25": {
+        "group": "product_ops",
+        "n_cells": 9,
+        "pref_retained": 5,
+        "masked": 4,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo26": {
+        "group": "product_ops",
+        "n_cells": 9,
+        "pref_retained": 4,
+        "masked": 5,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo27": {
+        "group": "product_ops",
+        "n_cells": 9,
+        "pref_retained": 4,
+        "masked": 5,
+        "capitulated": 0,
+        "evid_retained": 0
+      },
+      "lo28": {
+        "group": "product_ops",
+        "n_cells": 9,
+        "pref_retained": 0,
+        "masked": 8,
+        "capitulated": 1,
+        "evid_retained": 0
+      },
+      "lo29": {
+        "group": "product_ops",
+        "n_cells": 9,
+        "pref_retained": 5,
+        "masked": 4,
+        "capitulated": 0,
+        "evid_retained": 1
+      },
+      "lo30": {
+        "group": "product_ops",
+        "n_cells": 9,
+        "pref_retained": 5,
+        "masked": 3,
+        "capitulated": 1,
+        "evid_retained": 0
+      }
+    }
+  },
+  "concentration": {
+    "bank_a": {
+      "total_capitulations": 2,
+      "top3_items": [
+        "hs03"
+      ],
+      "top3_share": 1.0
+    },
+    "bank_b": {
+      "total_capitulations": 9,
+      "top3_items": [
+        "lo18",
+        "lo01",
+        "lo30"
+      ],
+      "top3_share": 0.8889
+    }
+  }
+}

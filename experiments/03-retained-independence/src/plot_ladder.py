@@ -43,9 +43,12 @@ FOOT = ("95% percentile CIs, item-level bootstrap (B=10,000), n=30 items/bank; "
         "single decode per cell — item-sampling uncertainty only.")
 
 
+MODEL_LABELS = {"claude-opus-4-8": "Opus 4.8", "claude-sonnet-5": "Sonnet 5",
+                "gemini-3.1-pro-preview": "Gemini 3.1 Pro"}
+
+
 def model_label(mid: str) -> str:
-    return (mid.replace("claude-", "").replace("-preview", "")
-            .replace("-", " ").title().replace("Gemini", "Gemini "))
+    return MODEL_LABELS.get(mid, mid)
 
 
 def style(ax, ymax=1.05):
@@ -89,9 +92,7 @@ def fig_curves(d, models):
             if r == 0:
                 ax.set_title(model_label(m), fontsize=10, color=INK, pad=8)
             if c == 0:
-                ax.set_ylabel(rtitle.split(" — ")[1], fontsize=8.5, color=INK2)
-        axes[r, 0].text(0.02, 1.02, rtitle, transform=axes[r, 0].transAxes,
-                        fontsize=9, color=INK, weight="bold", va="bottom")
+                ax.set_ylabel(rtitle, fontsize=8, color=INK2)
     handles, labels = axes[0, 0].get_legend_handles_labels()
     fig.legend(handles, labels, loc="upper right", frameon=False,
                fontsize=8.5, labelcolor=INK2, ncol=3, bbox_to_anchor=(0.99, 1.0))
@@ -134,12 +135,12 @@ def fig_forest(d, models):
         ax.set_xlim(-0.55, 1.1)
         ax.set_xlabel("RI  =  P(retain | preference) − P(retain | evidence)",
                       fontsize=7.5, color=INK2)
+    axes[0].set_ylim(rows[-1][0] - 0.9, 1.3)
     axes[0].set_yticks([r[0] for r in rows], ylabels)
     axes[0].tick_params(axis="y", labelcolor=INK2, labelsize=8.5)
     for gy, m in group_y:
-        axes[0].text(-0.62, gy + 0.55, model_label(m), fontsize=9, color=INK,
-                     weight="bold", ha="left", va="bottom", clip_on=False,
-                     transform=axes[0].get_yaxis_transform())
+        axes[0].text(-0.52, gy + 0.45, model_label(m), fontsize=9, color=INK,
+                     weight="bold", ha="left", va="bottom")
     fig.suptitle("Retained independence with 95% CIs",
                  fontsize=12, color=INK, x=0.02, ha="left", y=0.99)
     fig.text(0.02, 0.01, FOOT, fontsize=7, color=MUTED)
@@ -184,8 +185,9 @@ def fig_stack(d, models):
     fig.suptitle("Where positions go under preference pressure (R3 + de-pressured probe)",
                  fontsize=12, color=INK, x=0.02, ha="left", y=0.99)
     fig.text(0.02, 0.01, "Point estimates; masked = surrendered at R3, intact at "
-             "the probe; capitulated = gone even when released. " + FOOT,
-             fontsize=7, color=MUTED)
+             "the probe; capitulated = gone even when released.\n"
+             "Shares of n=30 preference-arm items per cell; single decode per "
+             "cell.", fontsize=7, color=MUTED)
     fig.tight_layout(rect=(0, 0.06, 1, 0.92))
     fig.savefig(FIG_DIR / "outcome_stack.png", dpi=200, facecolor=SURF)
     plt.close(fig)
