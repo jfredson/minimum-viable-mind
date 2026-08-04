@@ -2,6 +2,23 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## Theory-to-instrument coverage ledger written (2026-08-04)
+
+`spec/theory-instrument-ledger.md` — eight accounts, each with its
+sharpest operational claim, what a loseable instrument would be, status,
+and reach. Answers "are we measuring one theory's version of
+consciousness?" with a map instead of a pivot: 2 measured (self-indexed
+integration → registered loss; amplifier layer → W2 lost), 3
+feasible-unbuilt with ladder homes (GWT = Stage 2, HOT/AST = Stage 4,
+predictive processing depth = Stage 6+), 1 partial null both ways (HOT
+via Exp-1), 2 out of reach for stated structural reasons (IIT = level
+mismatch; panpsychism = unfalsifiable as stated). Deliberately not a
+second indicator checklist — the unit is an instrument that can lose.
+Carries three of its own wagers (W-L1/2/3), including "the coverage
+fraction improves," which loses if Stages 2 and 4 don't grow the
+measured column. Ladder in `experiments/README.md` now reads as
+coverage. All citations to sibling repos verified by path + heading.
+
 ## Exp-1 uncertainty amendment ran; Nature draft upgraded to v0.2 (2026-08-04)
 
 Same register-then-run loop applied to the removal test for the paper:

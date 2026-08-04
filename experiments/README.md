@@ -11,6 +11,8 @@ Two rules govern everything here:
 
 Each stage maps to a component or instrument in `spec/minimum-viable-mind-proposal-v0.1.md`. Stages are ordered so each one's instrumentation is reusable by the next. The early stages test *current* systems against the floor and the measurement instruments; the later stages build the missing components and re-test.
 
+Which account of consciousness each stage adjudicates — and which accounts no stage can reach — is tracked in `spec/theory-instrument-ledger.md`. Stage 2 is the Global Workspace test, Stage 4 the higher-order/attention-schema test, Stage 6+ the predictive-processing depth test; IIT and panpsychism are recorded there as out of reach, with reasons.
+
 - **Stage 0 — Instrumentation and baselines.** Pick the model(s). Stand up activation patching / ablation and a feature-localization method (linear probes and/or sparse autoencoders). Define the task batteries and score them on the unmodified model. Nothing is claimed here; this is the bench.
 
 - **Stage 1 — The self-indexing removal test (the floor).** *First real experiment.* Locate the self-locating structure in a model, remove it, and ask whether the integrated act degrades or only a self-report is subtracted. This is the floor criterion made mechanical: a center cannot be deleted without dissolving the integration it centers; a description can be lopped off while the computation proceeds. Pre-registration: `01-self-indexing-removal-test/`.
