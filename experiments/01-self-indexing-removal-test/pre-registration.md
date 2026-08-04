@@ -104,3 +104,39 @@ At Stage 1 the intervention is ablation of a current model's activations for mea
 ## Results
 
 *To be filled after the run, in `results.md`, referencing the commit hash of this pre-registration.*
+
+## Amendment (2026-08-04): registered uncertainty re-analysis (paper support)
+
+*Registered before the analysis runs, mirroring the Stage 3 amendment of
+the same date. Motivation: the Nature-standard draft
+(`drafts/paper-removal-test-nature-draft.md`) reports Table 1 point
+estimates with no uncertainty, which fails the venue's reporting bar;
+the CS329A measurement review (`experiments/measurement-upgrades-cs329a.md`)
+supplies the method. Re-analysis of registered artifacts only — no new
+model runs, no re-judging. **Registered verdicts (RT-05 void, H_description
+non-fire, not-testable narrative arm) were adjudicated on point estimates
+per the locked decision rules and are NOT reopened; CIs quantify
+precision only.***
+
+- **Procedure (fixed here):** nonparametric bootstrap, B = 10,000, seed
+  20260804, percentile 95% intervals (`analyze_removal_ci.py`, helpers
+  in `src/mvm/stats.py`). Resampling unit: the item within battery
+  (T_si n=32, T_sr n=30, T_syntax n=30, S n=30), one draw shared across
+  all conditions per battery — pairing preserved for all within-draw
+  differences. Sensitivity: two-level category→item bootstrap reported
+  alongside.
+- **Quantities:** per condition: d(T_si), d(T_sr), d(T_syntax) = 1 −
+  battery accuracy (baselines are 1.000 by construction); d_self =
+  (S_base − S_cond)/S_base with paired item resampling. Within-draw
+  derived quantities: the registered differential d(T_si, primary) −
+  d(T_si, expert control), and the RT-05 router gap d(T_syntax) −
+  d(T_sr) per condition.
+- **Per-item view:** which items flipped, by battery and category, for
+  the primary condition; concentration of flips.
+- **Deliverables:** `removal_ci.json` (artifacts + committed copy beside
+  the findings memo), Fig. 4 artwork for the draft
+  (`figures/fig4_registered_run.png`), CI-annotated Table 1.
+- **Guardrails:** single registered pass per condition — CIs cover
+  item-sampling uncertainty only; decoding variance is bounded only by
+  the recorded repeat-run stability checks. Point estimates must
+  reproduce the registered findings memo exactly.
