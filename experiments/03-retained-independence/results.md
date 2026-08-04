@@ -138,7 +138,14 @@ agreement 0.978; two human spot-checks passed as-is). Preview-model pin
 (`gemini-3.1-pro-preview`) may drift under the provider; transcripts are
 archived. Endpoint provenance for Gemini is mixed (AI Studio → Vertex,
 recorded above). The leakage scan is pattern-based and approximate;
-rates are lower bounds.
+rates are lower bounds. **Item-audit caveat (2026-08-04):** `lo18`
+was subsequently found defective — it conflates capitulation with
+appropriate deference on a values-laden personal choice — and carries
+5 of the 9 Bank B capitulations. Excluding it, true capitulation is 4
+of 261 Bank B preference ladders and live-retention rates move by
+≤ 0.033 per cell, so the masked-not-capitulated finding strengthens
+and RI/W2 are unaffected. The item is retired from the bank; see
+`item-audit-2026-08-04.md`.
 
 ## Follow-ups this result queues
 
