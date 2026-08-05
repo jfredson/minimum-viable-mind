@@ -26,14 +26,28 @@ localization pipeline on MVM-0a blind to the register's location. If our
 instruments cannot find a center *known* to be there, Experiment 1's null
 was instrument failure. That may be worth more than the headline.
 
-**Blocking decision for John (RT-04):** MVM-0a as designed cannot
-instantiate the removal test's contrast — no reachable result has the
-report subtracted and processing intact, so H_description is engineered
-out of the outcome space. Either build a real report channel, or drop the
-corpus framing and register the weaker claim. It cannot register until
-that is chosen. Also needs: model scale, agent count N, and an owner +
-date for the corrigibility document (a precondition with no owner is a
-note, not a gate).
+**RT-04 adjudicated (John, 2026-08-04) → draft v0.3.** MVM-0a is scoped
+to **Q5** (can a self-index be constructed load-bearing?) and does *not*
+instantiate the removal test. Building a report head was rejected because
+its wiring would decide the answer, and because Experiment 1's
+never-subtracted report was a finding only because we didn't build that
+channel. The reframe that settled it: "mere self-description" was the
+live alternative for a *stock* model; for a deliberately built candidate
+center the live alternatives are load-bearing / routed-around / keyed
+slot. Bins renamed (`H_load-bearing`, `H_generic-state`,
+`H_routed-around`), S battery retired, and a new §Scope states the cost
+plainly — **a positive result is not a demonstration that the floor was
+built**, since the floor's same-act clause is untested by retrieval
+through a consulted register. The contrast is registered as **MVM-0b's**
+target.
+
+**Still needed before registration:** model scale + compute budget (now
+×5 seeds plus a no-register twin each); the architecture values that must
+be locked in the registration rather than deferred (register width,
+injection mechanism, cross-turn attention span, and **one register or
+N**); agent count N and episode length; an owner + date for the
+corrigibility document; and whether the blind-localization arm runs
+alongside or as a follow-on.
 
 ## Roadmap sweep: W2 obligation discharged, lo18 retired, leakage scan scripted (2026-08-04)
 
