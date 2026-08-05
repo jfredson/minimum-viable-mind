@@ -2,6 +2,34 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## MVM-0a curriculum built; RT-08 gate PASSES run (i) (2026-08-04)
+
+`src/curriculum.py` + `src/cue_detector.py` + frozen `batteries/`.
+Findings: `curriculum-findings.md`. Built before the registration is
+final on purpose — the cue-detector gate can fail the whole design before
+a scale is picked or a run is funded.
+
+**GATE PASS on run (i)**: clean AUC 0.5008 [0.477, 0.524], inside the
+pre-committed [0.45, 0.55] equivalence bound; planted-leak positive
+control 0.8627. So the anti-router curriculum is generatable without a
+surface ownership cue — the structural claim MVM-0a makes over
+Experiment 1 is now measured, not asserted. Runs (ii) input tensors and
+(iii) post-training fingerprint are stubbed `NotImplementedError`, not
+skipped; (iii) is the one RT-02 flags as most likely to survive.
+
+**The gate caught a real leak on its first run** (failed at 0.722), from
+two separable causes. One was my sampler (first-own vs first-other turn
+manufactures a position asymmetry). The other was genuine: RT-11's
+forced-revision patch appended the revision as the final turn, always by
+the model's own slot — planting exactly the positional cue RT-02 forbids.
+Two individually-correct red-team patches combining into a confound.
+Neither would have been visible in a trained model's results; both would
+have produced a clean-looking positive. Revision is now agent- and
+position-neutral.
+
+Not established: whether a model of affordable scale can *learn* the
+task. That is a separate registered loss condition.
+
 ## MVM-0a drafted + red-teamed — one decision blocks registration (2026-08-04)
 
 `experiments/06-mvm-0a-constructed-self-index/` — draft v0.2 plus
