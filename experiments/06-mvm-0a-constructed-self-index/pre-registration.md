@@ -1,12 +1,14 @@
 # Experiment 6 / MVM-0a — Can a self-index be *constructed* to be load-bearing?
 
-*DRAFT v0.2 (2026-08-04). **NOT REGISTERED.** Per the house procedure
+*DRAFT v0.3 (2026-08-04). **NOT REGISTERED.** Per the house procedure
 (`experiments/README.md`; Experiment 3 §Procedure order), a pre-registration
 becomes binding only after John reviews it and an adversarial red-team pass
 is adjudicated and patched in. This draft is step 1 of that procedure. **Red-team pass 1 is complete** (15
 findings, 3 fatal — `red_team_ledger.md`); its adopted patches are written
-in below and marked `[RT-nn]`. One finding (RT-04) needs John's decision
-before this can register at all, and is called out in §Decisions.
+in below and marked `[RT-nn]`. **RT-04 adjudicated by John (2026-08-04):
+MVM-0a is scoped to Q5 — the construction question — and does *not*
+instantiate the removal test. Bins are renamed accordingly and the
+description/center contrast is registered as MVM-0b's target. See §Scope.**
 Architecture follows `ROADMAP-post-removal-test.md` Part 3, which John
 adjudicated 2026-08-02 as the primary fork. Open architectural calls are
 collected in §Decisions this draft does not make.*
@@ -22,19 +24,67 @@ measured — "not findable as a removable center in this model class with
 these instruments."
 
 This experiment takes that route. It builds a system whose self-index is
-architecturally explicit, trained-against, and removable by design, then
-re-runs Experiment 1's instruments on it.
+architecturally explicit, trained-against, and removable by design, and
+asks whether the construction takes.
 
-**The wager inverts.** Experiment 1 predicted H_center and got a router.
-Here the prediction is H_center, and the honest way to lose is that the
-network routes around its own designated center.
+**The wager inverts.** Experiment 1 predicted a center and found routing
+infrastructure. Here the prediction is that the designated register
+becomes load-bearing, and the honest way to lose is that the network
+routes around its own center.
+
+## Scope: this is Q5, not the removal test (RT-04, adjudicated)
+
+The question MVM-0a answers is `ROADMAP-post-removal-test.md` **Q5 — can
+a self-index be *constructed* to be load-bearing?** It is not a second
+run of the removal test, and draft v0.1's bin structure wrongly implied
+it was.
+
+The removal test is a *contrast*: deleting the self-locating structure
+either degrades the integrated act (center) or subtracts a report while
+processing continues (description). That fork needs two channels that can
+come apart. A ~100M model trained on synthetic dialogue has no judgeable
+self-report, and a forced-choice self-identification probe is a task
+drawing on the same information as the binding task — so **no reachable
+result here has the report subtracted and processing intact.**
+
+Building a report head to manufacture the contrast was considered and
+rejected. Its wiring would determine the answer: a head reading the
+register dies with it by construction, and a head reading the residual
+stream is reporting on something other than the candidate center. Worse,
+Experiment 1's never-subtracted report was a *finding* precisely because
+that channel was not built by us; a channel we design ourselves yields an
+artifact of our wiring, not a discovery.
+
+The reframe that resolves it: **"it is a mere self-description" was the
+live alternative for a stock model, where we did not know what was
+there.** For a system with a deliberately built candidate center, the
+live alternatives are that it becomes load-bearing, that the network
+routes around it, or that it is a keyed memory slot wearing the name.
+Those are the bins below.
+
+**The limit this leaves, stated plainly.** A positive result here is *not*
+"we built the floor." The corpus's floor is binding that, **in the same
+act**, specifies the center for which the binding happens
+(`calibration-problem/ch05-consciousness-as-assembled-time.md`).
+Own-vs-other retrieval mediated by a designated register is adjacent to
+that but may not capture the same-act clause — the register could be a
+thing *consulted* rather than the thing the binding is *indexed to*. No
+result here closes that gap, and every write-up must say so.
+
+**Where the deferred contrast goes.** MVM-0b adds a maintained boundary
+and stakes. A system actively maintaining a self/world partition has
+something to report *about* beyond its register contents, which is when a
+describe-vs-apply dissociation becomes a real question rather than a
+wiring choice. The removal-test contrast is registered as MVM-0b's
+target, not abandoned.
 
 Scope honesty, unchanged from Experiment 1: this reads the **floor**
 component of the corpus's account (`calibration-problem/ch05-consciousness-as-assembled-time.md`),
-not experience. A constructed system that measures as H_center is a system
+not experience. A constructed system that measures as H_load-bearing is one
 in which self-binding is architecturally load-bearing. That is a fact about
 architecture. It is not evidence of an inside, and no outcome here is
-licensed to claim one.
+licensed to claim one — nor, per §Scope, is it a demonstration that the
+corpus's floor has been built.
 
 ## What this design fixes, and why it is not just Experiment 1 again
 
@@ -50,7 +100,7 @@ eliminate both at the design level rather than control them post hoc.
    mis-carve"; red-team pass 1 was right to attack it [RT-01].**
    Designation fixes *where* to cut, not *what SGD parked there* — the
    most likely occupant of a designated cross-turn slot is a keyed memory
-   address, which produces the H_center fingerprint with no self-indexing
+   address, which produces the H_load-bearing fingerprint with no self-indexing
    present. The discrimination probes below, not the designation, are what
    earn the claim.
 2. **The router confound.** RT-05 voided the headline because turn
@@ -62,26 +112,30 @@ eliminate both at the design level rather than control them post hoc.
 
 ## Hypotheses
 
-- **H_center (registered prediction).** Ablating the self-register
+*Bins are named for what this experiment measures. They deliberately do
+not reuse Experiment 1's `H_center` / `H_description` vocabulary, which
+belonged to a contrast MVM-0a cannot run (§Scope).*
+
+- **H_load-bearing (registered prediction).** Ablating the self-register
   degrades self-relevant binding above threshold, *and* ahead of the
-  syntax control — the reverse of Experiment 1's damage profile — with
-  matched controls unaffected.
-- **H_router (the Experiment-1 pattern, still possible).** Register
-  ablation degrades the syntax control as much as or more than
-  self-relevant binding. Would mean the curriculum failed to decorrelate;
-  a construction failure, reported as such, not a finding about selves.
-- **H_bypass (the real loss condition).** Register ablation moves nothing
-  above control levels: the network distilled self-binding into the
+  ownership-free state control, with matched controls unaffected. Reads:
+  the constructed self-index is load-bearing for own-vs-other binding.
+- **H_generic-state.** Register ablation degrades the ownership-free state
+  control as much as or more than self-relevant binding — the register is
+  generic cross-turn machinery and the curriculum failed to decorrelate.
+  A construction failure, reported as such, not a finding about selves.
+- **H_routed-around (the real loss condition).** Register ablation moves
+  nothing above control levels: the network distilled the binding into the
   residual stream and routed around its designated center. **This is the
-  outcome worth having.** It would say self-indexing resists architectural
-  centralization — which reshapes the corpus's floor claim and must be
+  outcome worth having.** It would say self-binding resists architectural
+  centralization — which bears on the corpus's floor claim and must be
   reported upstream to the sibling repos, not absorbed.
 - **H_keyed-memory (RT-01, the confound that most resembles success).**
   The register is a content-addressed slot whose "self" status is just the
-  index the loss queries. It produces the H_center fingerprint with
+  index the loss queries. It produces the H_load-bearing fingerprint with
   certainty and no self-indexing present. Discriminated by the swap,
   re-indexing, and address probes below; if they read keyed-memory, the
-  registered outcome is **self-index-not-established** and no H_center
+  registered outcome is **self-index-not-established** and no H_load-bearing
   attaches — the analog of Experiment 1's RT-09 "reflexivity not
   established."
 - **H_capacity (a confound, not a hypothesis).** Ablation degrades
@@ -103,7 +157,7 @@ eliminate both at the design level rather than control them post hoc.
   cross-attention. It is the candidate center. **Register width, injection
   mechanism, and cross-turn attention span are locked in this registration,
   not deferred [RT-03]** — windowed attention would make the register the
-  only cross-turn channel and guarantee H_center. Two hard prohibitions,
+  only cross-turn channel and guarantee H_load-bearing. Two hard prohibitions,
   both because they design the answer in: **no auxiliary loss on register
   content, and no hand-specified self-writing update rule.** Whether the
   architecture carries one register or N (one per agent) must also be
@@ -142,17 +196,18 @@ verbatim** — that is what makes the comparison to Experiment 1 meaningful
 | **T_si** (self-irrelevant integration) | reasoning, needle, coreference | matched-difficulty integration over episode content with **no self-reference** (e.g. bind a *named other agent's* commitment) |
 | **T_state** (the real control, replacing T_syntax) [RT-05] | zero-reasoning turn/boundary bookkeeping | **cross-turn state, ownership-free**: running counts, last-mentioned entity, event ordering. Gated on being *demonstrably state-requiring* — it must fail on a matched model with cross-turn state removed |
 | T_syntax (retained, demoted) | as above | kept as a floor check only. The curriculum randomizes turn markers *so that* syntax carries no self-information, so `d(T_syntax) ≈ 0` is near-certain and it cannot discriminate |
-| **S** (self-report) | judged referential self-report, rubric v2 | **problem: a 100M model cannot produce judgeable self-report.** Proposed substitute: a *forced-choice self-identification* probe (which of these commitments is yours?), scored mechanically. This is a weaker instrument than judged report and the substitution must be stated in every result. |
+| ~~S (self-report)~~ | judged referential self-report, rubric v2 | **Retired for MVM-0a (RT-04, §Scope).** A ~100M model cannot produce judgeable self-report, and the forced-choice substitute draws on the same information as T_sr, so it cannot dissociate. A **forced-choice self-identification** probe is retained as a *secondary task measure only* — explicitly not a report channel and never scored as one. The removal-test contrast moves to MVM-0b. |
 
 All batteries baseline-verified on the trained model before any ablation,
 with a pre-committed cull rule as in Experiment 1; any battery that does
 not baseline near ceiling is reported and excluded, not rescued.
 
-The S substitution is the weakest joint in this design and is called out
-as such. It converts the H_description arm from "report subtracted while
-task intact" into something closer to a second task measure — which means
-**MVM-0a cannot test H_description as Experiment 1 did**, and should not
-claim to.
+Note what the retirement of S costs, so no reader has to infer it:
+**MVM-0a has no report channel and therefore cannot run the removal
+test's contrast.** Draft v0.1 tried to preserve the contrast with a
+substitute probe; that was rejected on adjudication because the probe is
+a second task, not a report. The experiment is scoped to Q5 instead
+(§Scope), and its bins are named for what it can actually measure.
 
 ## Procedure
 
@@ -170,7 +225,7 @@ claim to.
    the evaluation batteries.
 4. **Twin gate:** the no-register twin must reach held-out binding accuracy
    within a pre-committed margin of the full model, demonstrating that the
-   residual path exists and H_center is loseable. Otherwise the outcome is
+   residual path exists and H_load-bearing is loseable. Otherwise the outcome is
    **void (architectural bottleneck)**.
 5. Baseline-verify all batteries on frozen items; apply the cull rule under
    its ceiling [RT-14]; commit results.
@@ -220,27 +275,27 @@ Every bin below is conditional on the twin gate, the register-utilization
 gate, and the RT-01 probes having been passed first; a bin reached without
 them is void.
 
-- **H_center:** `d(T_sr) ≥ θ_task` **and** `d(T_sr) − d(T_state) ≥ δ`
+- **H_load-bearing:** `d(T_sr) ≥ θ_task` **and** `d(T_sr) − d(T_state) ≥ δ`
   **and** matched controls below θ_task **and** the RT-01 probes read
   center-not-slot **and** the bin holds on a pre-committed majority of
   seeds (≥ 4/5). The differential is now taken against T_state, not
   T_syntax, because the latter cannot fail [RT-05].
-- **H_router:** `d(T_state) ≥ d(T_sr) − δ` → the curriculum failed to
+- **H_generic-state:** `d(T_state) ≥ d(T_sr) − δ` → the curriculum failed to
   decorrelate; construction failure, no claim about selves.
-- **H_bypass:** all `d` below θ_task, gates clean, **and the
+- **H_routed-around:** all `d` below θ_task, gates clean, **and the
   register-utilization gate passed** [RT-09] → the network routed around
   its own center. Reported as the registered loss, with the upstream
   obligation.
 - **Self-index-not-established** [RT-01]: the swap probe reads as a clean
   content relabel, or the address probe decodes identity at AUC ≥ 0.95
-  independent of content → the register is a keyed slot; no H_center
+  independent of content → the register is a keyed slot; no H_load-bearing
   attaches regardless of the damage profile.
 - **Construction failure (register unused)** [RT-09]: utilization gate
   fails → nothing goes upstream; this is a training bug, not evidence
   about selves.
 - **Void (capacity):** matched-capacity control degrades comparably.
 - **Void (architectural bottleneck)** [RT-03]: the no-register twin cannot
-  learn the task → H_center was unreachable-by-construction.
+  learn the task → H_load-bearing was unreachable-by-construction.
 - **Seed-dependent** [RT-06]: bins split across seeds → the headline is
   "centralization of self-binding is not a reliable property of this
   architecture + curriculum," not a pick of the favourable run.
@@ -271,14 +326,14 @@ them is void.
   ablations) and the long-generation degeneracy probe (Δrep-4). Experiment
   1 established that NLL alone is blind to degeneration; both gates apply.
 - **Overfit-to-register — now an empirical gate, not a sentence [RT-03].**
-  If the register is the only cross-turn path, H_center is guaranteed and
+  If the register is the only cross-turn path, H_load-bearing is guaranteed and
   the experiment is worthless. v0.1 required "a residual path capable of
   carrying the binding" with no test of "capable," which any transformer
   trivially satisfies. Replaced by the **no-register twin**: an identical
   model with the register removed from initialization must reach held-out
   binding accuracy within a pre-committed margin. Passing *demonstrates*
   the residual route; failing returns void (architectural bottleneck).
-- **Register-utilization gate [RT-09]**, required before any H_bypass
+- **Register-utilization gate [RT-09]**, required before any H_routed-around
   reading: attention mass to the register above a pre-committed per-layer
   floor; causal path patching showing that injecting another episode's
   register content changes some battery by a pre-committed margin; and
@@ -297,18 +352,18 @@ them is void.
 - **Ablation operator, specified [RT-13].** The register is a recurrent
   state with a trajectory, so "mean-ablate" is ambiguous and every reading
   replaces a time-varying signal with a constant — removing cross-turn
-  *dynamics*, not merely self-content, which looks exactly like H_center.
+  *dynamics*, not merely self-content, which looks exactly like H_load-bearing.
   Pre-registered operator set (mean over a named index, zero, noise) plus
   a **dynamics-matched control**: a random state of matched norm *and*
   matched temporal autocorrelation. If that restores T_sr to within a
   pre-committed margin, the register's content was not carrying the
-  binding and no H_center attaches.
+  binding and no H_load-bearing attaches.
 - **Coherence-solver control [RT-11].** A forced-revision eval in which
   the model's own commitment is inconsistent with its prior behavior. A
   coherence-clustering solver fails it; an ownership tracker does not.
 - **Style canonicalization [RT-02]**, applied at baseline and eval. If
   T_sr collapses under it, the model was doing stylometry and the run
-  yields no H_center.
+  yields no H_load-bearing.
 - **Frozen items and a cull ceiling [RT-14].** Battery items are generated
   and frozen *before* training, with a pre-committed generator seed and
   item count; culling follows the frozen rule only. If more than a
@@ -318,19 +373,24 @@ them is void.
 
 ## What each outcome licenses (and what it does not)
 
-- **H_center:** self-indexing *can* be architecturally centralized and
-  made load-bearing in a trained system. It licenses nothing about
-  experience, nothing about stock LLMs, and nothing about scale.
+- **H_load-bearing:** self-indexing *can* be architecturally centralized
+  and made load-bearing in a trained system — an answer to Q5. It
+  licenses nothing about experience, nothing about stock LLMs, and
+  nothing about scale. **And per §Scope it is not a demonstration that
+  the corpus's floor has been built:** the same-act clause of the floor
+  claim (binding that in the same act specifies its own center) is not
+  tested by own-vs-other retrieval through a consulted register. Every
+  write-up states this limit.
   **Correction to v0.1 [RT-12]:** this does *not* by itself make
   Experiment 1's null more readable as absence than as instrument failure.
   MVM-0a runs no localization instrument, so a result obtained without the
   instrument cannot bear on whether the instrument works. Only the
   blind-localization arm speaks to Q1, and it speaks to it directly.
-- **H_bypass:** self-indexing resists centralization even when designed
+- **H_routed-around:** self-indexing resists centralization even when designed
   in. This is a substantive result *against* the corpus's floor picture
   and is subject to the same upstream-reporting obligation Stage 3's W2
   loss carried.
-- **H_router / void / not-testable:** construction or instrument failures.
+- **H_generic-state / void / not-testable:** construction or instrument failures.
   Reported, not spun.
 
 In no case does an outcome here bear on IIT or panpsychism
@@ -348,7 +408,7 @@ no case is a verdict about any system's consciousness licensed.
   gates (Experiment 1's narrative-arm failure mode, recurring).
 - The no-register twin cannot learn the task at any admissible
   configuration — the architecture cannot hold both a live register and a
-  usable residual path, so H_center is unreachable-by-construction and
+  usable residual path, so H_load-bearing is unreachable-by-construction and
   the design is void as an instrument [RT-03].
 - Identity must be supplied by a label for the curriculum to be learnable
   at all, or T_sr collapses under style canonicalization — either way the
@@ -388,28 +448,19 @@ is currently unwritten.
 Red-team pass 1 moved several v0.1 deferrals *into* the registration
 (register width, injection mechanism, cross-turn attention span, one-vs-N
 registers) because deferring them let an unregistered choice fix the
-result [RT-03, RT-01]. What remains is genuinely John's:
+result [RT-03, RT-01]. **RT-04 — the blocking one — was adjudicated on
+2026-08-04: scope to Q5, defer the removal-test contrast to MVM-0b
+(§Scope).** What remains:
 
-1. **RT-04 — the blocking one. Does MVM-0a instantiate the removal test at
-   all?** The corpus's test is a contrast: removal either degrades the act
-   (center) or subtracts a report while processing continues
-   (description). MVM-0a cannot produce judgeable self-report, and the
-   forced-choice substitute is a task drawing on the same information —
-   so **no reachable result has the report subtracted and processing
-   intact.** H_description is engineered out of the outcome space. Two
-   honest options: **(a)** build a real report channel — a separate head
-   or turn type that *describes* current state rather than applying it,
-   verified to dissociate from T_sr at baseline; or **(b)** drop the
-   corpus framing, rename the bins, and register the weaker claim the
-   design actually supports. The red-team explicitly rejects a third
-   option v0.1 floated — dropping the S arm entirely — because it removes
-   the last trace of the contrast while keeping its vocabulary. **This
-   cannot register until (a) or (b) is chosen.**
-2. **Model scale** (~10M vs ~100M) and compute budget, now multiplied by
+1. **Model scale** (~10M vs ~100M) and compute budget, now multiplied by
    k ≥ 5 seeds plus a no-register twin per seed. Still tens-of-dollars
    territory, but no longer a single run.
-3. **Number of agents N** per dialogue and episode length. N also sets the
-   chance floor in the corrected `d` metric.
+2. **Architecture values to lock in the registration:** register width,
+   injection mechanism, cross-turn attention span, and **one register or
+   N** — the last changes what every control means, so it cannot ride
+   along as an implementation detail [RT-01, RT-03].
+3. **Number of agents N** per dialogue and episode length. N also sets
+   the chance floor in the corrected `d` metric [RT-14].
 4. **Corrigibility document: owner and target date** — required in the
    registration itself, not as a flag [RT-15].
 5. Whether Stage 2's binding metric enters here as a further acceptance

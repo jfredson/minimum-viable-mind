@@ -1,11 +1,16 @@
 # MVM-0a red-team ledger (pass 1, 2026-08-04)
 
 *Adversarial pass on `pre-registration.md` draft v0.1. Fifteen findings:
-three fatal, eleven serious, one procedural. **Dispositions below are
-recommended, not adjudicated** — John adjudicates before anything here
-becomes binding, per the house procedure. Patches marked ADOPTED are
-already written into draft v0.2; those marked DEFERRED need a decision
-first.*
+three fatal, eleven serious, one procedural. All patches are written into
+**draft v0.3**. RT-04 was adjudicated by John on 2026-08-04 (option (b) —
+scope to Q5); the other fourteen dispositions are the drafter's
+recommendation and remain open to John's review, per the house procedure.
+
+Findings below quote v0.1's bin names (`H_center`, `H_bypass`,
+`H_router`) because that is the vocabulary they were written against.
+v0.3 renames those bins to `H_load-bearing`, `H_routed-around`, and
+`H_generic-state` — a consequence of the RT-04 adjudication, not a
+separate change.*
 
 The pass's summary judgement, which the draft should absorb rather than
 resist: the design's one structural virtue — a physically designated
@@ -17,7 +22,7 @@ Designation fixes *where* to cut, not *what was cut*.
 | RT-01 | Register may be a keyed memory array; bins can't tell | fatal | ADOPTED — swap/re-index/address probes + new bin |
 | RT-02 | Self-identification bootstrap trilemma | fatal | ADOPTED — on-policy mandatory, no identity token, style canonicalization |
 | RT-03 | "Residual path" unfalsifiable; decision deferred past registration | fatal | ADOPTED — no-register twin gate; architecture locked in registration |
-| RT-04 | No report channel; H_description engineered out | serious→fatal for framing | DEFERRED — John picks (a) build a report head or (b) drop the corpus framing |
+| RT-04 | No report channel; H_description engineered out | serious→fatal for framing | **ADJUDICATED 2026-08-04 — option (b): scope to Q5, defer the contrast to MVM-0b** |
 | RT-05 | T_syntax vacuous by construction; H_center collapses to one clause | serious | ADOPTED — cross-turn state control replaces it |
 | RT-06 | Single training run; model is a draw, not a fixture | serious | ADOPTED — k ≥ 5 seeds, majority rule, seed-dependent bin |
 | RT-07 | Register reliance is a trajectory; stopping point selects the verdict | serious | ADOPTED — checkpoint schedule, verdict read at budget exhaustion |
@@ -128,9 +133,10 @@ toolkit. **If the instruments fail to recover a center known to exist,
 Experiment 1's null was instrument failure** — a bigger finding than
 MVM-0a's own headline, and one v0.1 was structurally unable to notice.
 
-## The finding that needs John, not a patch
+## The finding John adjudicated
 
 ### RT-04 — the removal test's discriminating half is missing
+**Resolved 2026-08-04: option (b).**
 
 The corpus's operational test is a *contrast*: removal either degrades
 the integrated act (center) or subtracts a report while processing
@@ -142,7 +148,7 @@ intact.** H_description has been engineered out of the outcome space, so
 an H_center label would carry a meaning derived from a contrast the
 experiment never ran.
 
-Two honest options, and this is John's call:
+Two honest options were put to John, who chose **(b)**:
 
 - **(a) Build a real report channel** — a separate head or turn type
   whose job is to *describe* current state rather than apply it, trained
@@ -152,9 +158,25 @@ Two honest options, and this is John's call:
   claim the design actually supports, and state that MVM-0a does not
   instantiate the removal test.
 
-The pass explicitly rejects v0.1's §Decisions option of dropping the S
-arm entirely: it removes the last trace of the contrast while keeping its
-vocabulary.
+The pass explicitly rejected v0.1's option of dropping the S arm while
+keeping Experiment 1's vocabulary. Option (b) as adopted avoids that: the
+S arm is retired **and** the bins are renamed (H_load-bearing /
+H_generic-state / H_routed-around), so nothing borrows a meaning the
+experiment cannot earn.
+
+**Reasoning recorded at adjudication.** Building a report head was
+rejected because its wiring would decide the answer — a head reading the
+register dies with it by construction; a head reading the residual stream
+reports on something other than the candidate center. And Experiment 1's
+never-subtracted report was a finding *because* that channel was not
+built by us; one we design ourselves is an artifact of our own wiring.
+The reframe: "it is a mere self-description" was the live alternative for
+a **stock** model where we did not know what was there. For a
+deliberately constructed candidate center the live alternatives are
+load-bearing, routed-around, or keyed slot — which is what the renamed
+bins say. The cost, recorded in §Scope: a positive result is not a
+demonstration that the corpus's floor was built, because the floor's
+same-act clause is untested by retrieval through a consulted register.
 
 ## Remaining findings
 
