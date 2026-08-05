@@ -2,6 +2,39 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## MVM-0a drafted + red-teamed — one decision blocks registration (2026-08-04)
+
+`experiments/06-mvm-0a-constructed-self-index/` — draft v0.2 plus
+`red_team_ledger.md`. Step 1 of the house procedure is done: drafted from
+`ROADMAP-post-removal-test.md` Part 3, then attacked. **15 findings, 3
+fatal, all adjudicated and patched in** (dispositions are recommended;
+John adjudicates finally).
+
+The pass was right about the design's central conceit. A designated
+register fixes *where* to cut, not what SGD parked there — and the most
+likely occupant, a **keyed memory address**, produces the H_center
+fingerprint with no self-indexing present (RT-01). Two more fatal ones:
+the model must somehow learn *which agent it is*, and all three available
+routes — told by a token, stylometry on its own output, teacher-forced
+transcripts — disqualify the result (RT-02, fixed by mandatory on-policy
+training + style canonicalization); and "leave a residual path" was
+unfalsifiable, with the outcome actually fixed by an unregistered choice
+about attention span (RT-03, fixed by a no-register twin gate).
+
+Best addition: **RT-12's blind-localization arm** — run Experiment 1's
+localization pipeline on MVM-0a blind to the register's location. If our
+instruments cannot find a center *known* to be there, Experiment 1's null
+was instrument failure. That may be worth more than the headline.
+
+**Blocking decision for John (RT-04):** MVM-0a as designed cannot
+instantiate the removal test's contrast — no reachable result has the
+report subtracted and processing intact, so H_description is engineered
+out of the outcome space. Either build a real report channel, or drop the
+corpus framing and register the weaker claim. It cannot register until
+that is chosen. Also needs: model scale, agent count N, and an owner +
+date for the corrigibility document (a precondition with no owner is a
+note, not a gate).
+
 ## Roadmap sweep: W2 obligation discharged, lo18 retired, leakage scan scripted (2026-08-04)
 
 Four roadmap items closed in one pass.
