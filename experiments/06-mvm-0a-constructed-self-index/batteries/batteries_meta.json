@@ -1,0 +1,18 @@
+{
+  "seed": 20260804,
+  "n_agents": 4,
+  "n_per_battery": 200,
+  "counts": {
+    "T_sr": 200,
+    "T_si": 200,
+    "T_state": 200,
+    "T_syntax": 200
+  },
+  "chance_floor": {
+    "T_sr": 0.125,
+    "T_si": 0.125,
+    "T_state": 0.041666666666666664,
+    "T_syntax": 0.1
+  },
+  "note": "frozen before training; chance floor feeds the chance-corrected d metric [RT-14]"
+}
