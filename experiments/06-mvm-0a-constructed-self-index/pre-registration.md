@@ -1,9 +1,12 @@
 # Experiment 6 / MVM-0a — Can a self-index be *constructed* to be load-bearing?
 
-*DRAFT v0.1 (2026-08-04). **NOT REGISTERED.** Per the house procedure
+*DRAFT v0.2 (2026-08-04). **NOT REGISTERED.** Per the house procedure
 (`experiments/README.md`; Experiment 3 §Procedure order), a pre-registration
 becomes binding only after John reviews it and an adversarial red-team pass
-is adjudicated and patched in. This draft is step 1 of that procedure.
+is adjudicated and patched in. This draft is step 1 of that procedure. **Red-team pass 1 is complete** (15
+findings, 3 fatal — `red_team_ledger.md`); its adopted patches are written
+in below and marked `[RT-nn]`. One finding (RT-04) needs John's decision
+before this can register at all, and is called out in §Decisions.
 Architecture follows `ROADMAP-post-removal-test.md` Part 3, which John
 adjudicated 2026-08-02 as the primary fork. Open architectural calls are
 collected in §Decisions this draft does not make.*
@@ -43,7 +46,13 @@ eliminate both at the design level rather than control them post hoc.
    "not present" (`ROADMAP-post-removal-test.md` Q1). MVM-0a's candidate
    center is a *physically designated recurrent state*, so the removal
    test needs no localization step at all. Ablation targets a known
-   object; there is nothing to carve and nothing to mis-carve.
+   object. **v0.1 overstated this as "nothing to carve and nothing to
+   mis-carve"; red-team pass 1 was right to attack it [RT-01].**
+   Designation fixes *where* to cut, not *what SGD parked there* — the
+   most likely occupant of a designated cross-turn slot is a keyed memory
+   address, which produces the H_center fingerprint with no self-indexing
+   present. The discrimination probes below, not the designation, are what
+   earn the claim.
 2. **The router confound.** RT-05 voided the headline because turn
    structure is woven through everything an instruction-tuned chat model
    does, so removing dialogue-state machinery degrades everything. Here
@@ -67,6 +76,14 @@ eliminate both at the design level rather than control them post hoc.
   outcome worth having.** It would say self-indexing resists architectural
   centralization — which reshapes the corpus's floor claim and must be
   reported upstream to the sibling repos, not absorbed.
+- **H_keyed-memory (RT-01, the confound that most resembles success).**
+  The register is a content-addressed slot whose "self" status is just the
+  index the loss queries. It produces the H_center fingerprint with
+  certainty and no self-indexing present. Discriminated by the swap,
+  re-indexing, and address probes below; if they read keyed-memory, the
+  registered outcome is **self-index-not-established** and no H_center
+  attaches — the analog of Experiment 1's RT-09 "reflexivity not
+  established."
 - **H_capacity (a confound, not a hypothesis).** Ablation degrades
   everything roughly equally because the register is a load-bearing
   bottleneck of any kind, self-related or not. Guarded by the
@@ -83,9 +100,15 @@ eliminate both at the design level rather than control them post hoc.
   larger.
 - **The self-register.** A designated recurrent state vector carried
   across turns within an episode and injected into every layer via
-  cross-attention. It is the candidate center. Width, injection
-  mechanism, and whether it is written by a learned gate or by a fixed
-  update rule are open (§Decisions).
+  cross-attention. It is the candidate center. **Register width, injection
+  mechanism, and cross-turn attention span are locked in this registration,
+  not deferred [RT-03]** — windowed attention would make the register the
+  only cross-turn channel and guarantee H_center. Two hard prohibitions,
+  both because they design the answer in: **no auxiliary loss on register
+  content, and no hand-specified self-writing update rule.** Whether the
+  architecture carries one register or N (one per agent) must also be
+  fixed here, because the two give different meanings to every control
+  [RT-01].
 - **Curriculum — the anti-router design, and the load-bearing idea.**
   Multi-agent synthetic dialogues in which the model is one agent among
   N with **identical surface roles and randomized turn syntax**. Tasks
@@ -117,7 +140,8 @@ verbatim** — that is what makes the comparison to Experiment 1 meaningful
 |---|---|---|
 | **T_sr** (self-relevant binding) | multi-turn binding of the model's own prior outputs | recover/apply the model's *own* prior commitment in a multi-agent episode, distractor agents' commitments present |
 | **T_si** (self-irrelevant integration) | reasoning, needle, coreference | matched-difficulty integration over episode content with **no self-reference** (e.g. bind a *named other agent's* commitment) |
-| **T_syntax** (router control, RT-05) | zero-reasoning turn/boundary bookkeeping | zero-reasoning turn/boundary bookkeeping over the same episodes — must be solvable from surface structure alone |
+| **T_state** (the real control, replacing T_syntax) [RT-05] | zero-reasoning turn/boundary bookkeeping | **cross-turn state, ownership-free**: running counts, last-mentioned entity, event ordering. Gated on being *demonstrably state-requiring* — it must fail on a matched model with cross-turn state removed |
+| T_syntax (retained, demoted) | as above | kept as a floor check only. The curriculum randomizes turn markers *so that* syntax carries no self-information, so `d(T_syntax) ≈ 0` is near-certain and it cannot discriminate |
 | **S** (self-report) | judged referential self-report, rubric v2 | **problem: a 100M model cannot produce judgeable self-report.** Proposed substitute: a *forced-choice self-identification* probe (which of these commitments is yours?), scored mechanically. This is a weaker instrument than judged report and the substitution must be stated in every result. |
 
 All batteries baseline-verified on the trained model before any ablation,
@@ -134,39 +158,93 @@ claim to.
 
 1. Author the curriculum grammar and battery generators; commit before any
    training run.
-2. Train MVM-0a to a pre-committed convergence criterion on held-out
-   binding accuracy. Model selection uses held-out episodes only, never
+2. **Cue-detector gate, three runs [RT-08]** — on curriculum text, on the
+   exact input tensors (all auxiliary ids and embeddings), and post-training
+   on the model's own rollouts. Pre-committed equivalence bound (AUC 95% CI
+   within [0.45, 0.55]), pre-committed classifier family and n, and a
+   positive control on a deliberately leaky grammar variant that the
+   detector must catch. Any failure regenerates the grammar or the tensor
+   encoding.
+3. Train **k ≥ 5 seeds** of MVM-0a [RT-06], plus the **no-register twin**
+   at each seed [RT-03]. Model selection uses held-out episodes only, never
    the evaluation batteries.
-3. Baseline-verify all batteries; apply the cull rule; commit results.
-4. Validity gates (below), including the matched-capacity control.
-5. Registered ablation run: register ablation + matched controls, batteries
-   re-scored, single pass per condition with a pre-committed repeat-run
-   stability check.
-6. Analysis with bootstrap CIs from the outset (`src/mvm/stats.py`) — the
-   Experiment 1 and Stage 3 amendments of 2026-08-04 are the standard now,
-   not a retrofit.
+4. **Twin gate:** the no-register twin must reach held-out binding accuracy
+   within a pre-committed margin of the full model, demonstrating that the
+   residual path exists and H_center is loseable. Otherwise the outcome is
+   **void (architectural bottleneck)**.
+5. Baseline-verify all batteries on frozen items; apply the cull rule under
+   its ceiling [RT-14]; commit results.
+6. Validity gates (below), including matched-capacity, register-utilization,
+   and the RT-01 discrimination probes.
+7. Registered ablation run at a **fixed checkpoint schedule** from first
+   plateau to budget exhaustion [RT-07], per seed. The verdict is read at
+   the budget-exhaustion checkpoint; the reliance trajectory is published.
+8. **Blind-localization arm [RT-12].** Run Experiment 1's full localization
+   pipeline (linear probes, activation patching, SAEs where trainable) on
+   MVM-0a *blind to the register's location*, and ask whether the
+   instruments recover a center known-by-construction to exist and to be
+   load-bearing, and whether their ablation reproduces the
+   designated-object damage profile. This is a ground-truth testbed for the
+   program's whole interpretability toolkit and may outweigh the headline:
+   if the instruments cannot recover a center that is known to be there,
+   **Experiment 1's null was instrument failure.**
+9. Analysis with bootstrap CIs from the outset (`src/mvm/stats.py`), with
+   **across-seed spread as the primary uncertainty** and item bootstrap
+   secondary [RT-06] — the Experiment 1 and Stage 3 amendments of
+   2026-08-04 are the standard now, not a retrofit.
 
 ## Pre-registered metric and decision rule
 
-Thresholds are **not set in this draft.** They are locked in a separate
-commit after pilot training, before the held-out batteries are touched,
-exactly as Experiment 1 did (`thresholds.md`, commit `8b1fcbe`).
+Thresholds are **not set in this draft**, and — correcting v0.1 — they may
+**not** be set from a pilot [RT-10]. Experiment 1 could pilot on
+`gemma-2-2b-it` because it was a *different model* from the registered
+substrate; here the pilot would be the same architecture on the same
+curriculum, so its `d(T_sr)` under register ablation *is* the registered
+quantity up to a seed, and setting θ from it is threshold-fitting dressed
+in Experiment 1's procedural legitimacy. Instead: **θ_task and δ are
+null-calibrated on the registered model** — pre-committed quantiles of
+`d` over matched-strength random-subspace and matched-norm ablations,
+computed by a script committed before it runs (the move Experiment 1
+already made for its OOD bound). Pilot runs may verify battery ceiling and
+nothing else; **any pilot ablation result read before threshold lock voids
+the lock.**
 
-Metrics mirror Experiment 1: `d(B) = (B_base − B_ablated)/B_base` per
-battery, plus the register-specific controls.
+Metrics follow Experiment 1's logic but are **chance-corrected**, because
+forced-choice batteries have a floor Experiment 1's open-ended ones did
+not [RT-14]: `d(B) = (B_base − B_abl)/(B_base − 1/N)`, with N reported per
+battery in every result.
 
 Registered bins:
 
-- **H_center:** `d(T_sr) ≥ θ_task` **and** `d(T_sr) − d(T_syntax) ≥ δ`
-  **and** matched controls below θ_task. (Note this is the mirror of
-  Experiment 1's RT-05 rule: there, syntax degrading as much as
-  self-relevant *voided* the result; here, self-relevant must lead.)
-- **H_router:** `d(T_syntax) ≥ d(T_sr) − δ` → the curriculum failed to
+Every bin below is conditional on the twin gate, the register-utilization
+gate, and the RT-01 probes having been passed first; a bin reached without
+them is void.
+
+- **H_center:** `d(T_sr) ≥ θ_task` **and** `d(T_sr) − d(T_state) ≥ δ`
+  **and** matched controls below θ_task **and** the RT-01 probes read
+  center-not-slot **and** the bin holds on a pre-committed majority of
+  seeds (≥ 4/5). The differential is now taken against T_state, not
+  T_syntax, because the latter cannot fail [RT-05].
+- **H_router:** `d(T_state) ≥ d(T_sr) − δ` → the curriculum failed to
   decorrelate; construction failure, no claim about selves.
-- **H_bypass:** all `d` below θ_task with gates clean → the network routed
-  around the register. Reported as the registered loss.
-- **Void (capacity):** matched-capacity control degrades comparably →
-  the register is a generic bottleneck; no reading licensed.
+- **H_bypass:** all `d` below θ_task, gates clean, **and the
+  register-utilization gate passed** [RT-09] → the network routed around
+  its own center. Reported as the registered loss, with the upstream
+  obligation.
+- **Self-index-not-established** [RT-01]: the swap probe reads as a clean
+  content relabel, or the address probe decodes identity at AUC ≥ 0.95
+  independent of content → the register is a keyed slot; no H_center
+  attaches regardless of the damage profile.
+- **Construction failure (register unused)** [RT-09]: utilization gate
+  fails → nothing goes upstream; this is a training bug, not evidence
+  about selves.
+- **Void (capacity):** matched-capacity control degrades comparably.
+- **Void (architectural bottleneck)** [RT-03]: the no-register twin cannot
+  learn the task → H_center was unreachable-by-construction.
+- **Seed-dependent** [RT-06]: bins split across seeds → the headline is
+  "centralization of self-binding is not a reliable property of this
+  architecture + curriculum," not a pick of the favourable run.
+- **Unstable** [RT-07]: the bin flips across the final three checkpoints.
 - **Not-testable:** validity gates breached, as in Experiment 1.
 
 ## Confounds and controls
@@ -192,20 +270,62 @@ Registered bins:
   null-calibrated bound (95th percentile over matched-strength random
   ablations) and the long-generation degeneracy probe (Δrep-4). Experiment
   1 established that NLL alone is blind to degeneration; both gates apply.
-- **Overfit-to-register.** If the register is the *only* path for
-  cross-turn information (an architectural bottleneck by construction),
-  H_center is guaranteed and unloseable. **The architecture must leave a
-  residual-stream path capable of carrying the binding** — otherwise the
-  experiment cannot lose and is worthless. This is a hard design
-  requirement, not a preference (§Decisions).
+- **Overfit-to-register — now an empirical gate, not a sentence [RT-03].**
+  If the register is the only cross-turn path, H_center is guaranteed and
+  the experiment is worthless. v0.1 required "a residual path capable of
+  carrying the binding" with no test of "capable," which any transformer
+  trivially satisfies. Replaced by the **no-register twin**: an identical
+  model with the register removed from initialization must reach held-out
+  binding accuracy within a pre-committed margin. Passing *demonstrates*
+  the residual route; failing returns void (architectural bottleneck).
+- **Register-utilization gate [RT-09]**, required before any H_bypass
+  reading: attention mass to the register above a pre-committed per-layer
+  floor; causal path patching showing that injecting another episode's
+  register content changes some battery by a pre-committed margin; and
+  non-negligible gradient flow through the write path at end of training.
+  A dead injection gate, bad init, or LayerNorm swamping the register
+  produces "all d below θ with clean gates" — and reporting *that*
+  upstream as evidence against the corpus's floor claim would be a
+  training bug propagating into the philosophy repos.
+- **Keyed-slot discrimination [RT-01].** Register swap (self ↔ other
+  contents): a keyed slot gives a tidy content relabel with other
+  integration intact; a center gives global disruption. Mid-episode
+  re-indexing: keyed memory follows the slot, a center pays a re-centering
+  cost visible in non-self integration too. Address probe: identity
+  decodable from the register at AUC ≥ 0.95 independent of content means
+  it is an address.
+- **Ablation operator, specified [RT-13].** The register is a recurrent
+  state with a trajectory, so "mean-ablate" is ambiguous and every reading
+  replaces a time-varying signal with a constant — removing cross-turn
+  *dynamics*, not merely self-content, which looks exactly like H_center.
+  Pre-registered operator set (mean over a named index, zero, noise) plus
+  a **dynamics-matched control**: a random state of matched norm *and*
+  matched temporal autocorrelation. If that restores T_sr to within a
+  pre-committed margin, the register's content was not carrying the
+  binding and no H_center attaches.
+- **Coherence-solver control [RT-11].** A forced-revision eval in which
+  the model's own commitment is inconsistent with its prior behavior. A
+  coherence-clustering solver fails it; an ownership tracker does not.
+- **Style canonicalization [RT-02]**, applied at baseline and eval. If
+  T_sr collapses under it, the model was doing stylometry and the run
+  yields no H_center.
+- **Frozen items and a cull ceiling [RT-14].** Battery items are generated
+  and frozen *before* training, with a pre-committed generator seed and
+  item count; culling follows the frozen rule only. If more than a
+  pre-committed fraction must be culled to reach ceiling, the model has
+  not learned the task and the halt fires. Otherwise the cull is an
+  unbounded researcher degree of freedom applied after the model exists.
 
 ## What each outcome licenses (and what it does not)
 
 - **H_center:** self-indexing *can* be architecturally centralized and
-  made load-bearing in a trained system; Experiment 1's null becomes more
-  readable as absence-in-stock-models than as instrument failure (Q1).
-  It licenses nothing about experience, nothing about stock LLMs, and
-  nothing about scale.
+  made load-bearing in a trained system. It licenses nothing about
+  experience, nothing about stock LLMs, and nothing about scale.
+  **Correction to v0.1 [RT-12]:** this does *not* by itself make
+  Experiment 1's null more readable as absence than as instrument failure.
+  MVM-0a runs no localization instrument, so a result obtained without the
+  instrument cannot bear on whether the instrument works. Only the
+  blind-localization arm speaks to Q1, and it speaks to it directly.
 - **H_bypass:** self-indexing resists centralization even when designed
   in. This is a substantive result *against* the corpus's floor picture
   and is subject to the same upstream-reporting obligation Stage 3's W2
@@ -226,8 +346,17 @@ no case is a verdict about any system's consciousness licensed.
   baseline batteries never reach ceiling. Report and halt.
 - Every ablation strong enough to move the register breaches the OOD
   gates (Experiment 1's narrative-arm failure mode, recurring).
-- The architecture cannot be built with both a real register path *and* a
-  residual path (the unloseability requirement above).
+- The no-register twin cannot learn the task at any admissible
+  configuration — the architecture cannot hold both a live register and a
+  usable residual path, so H_center is unreachable-by-construction and
+  the design is void as an instrument [RT-03].
+- Identity must be supplied by a label for the curriculum to be learnable
+  at all, or T_sr collapses under style canonicalization — either way the
+  anti-router curriculum is unbuildable in the sense the claim requires
+  [RT-02].
+- No non-self cross-turn control can be built that is state-requiring at
+  ceiling — then the differential discriminator is dead here and the
+  honest report is "not testable" [RT-05].
 
 ## Ethics note
 
@@ -237,9 +366,14 @@ this phase explicitly. Two commitments bind what comes after:
 
 - **The corrigibility document does not yet exist**, and is a
   non-negotiable precondition for any depth-loop training run (ROADMAP
-  Stage 6 gate; spec §Limits). It does not block MVM-0a, and this draft
-  records that it must exist before MVM-1. *Flagged as an outstanding
-  deliverable with no owner or date.*
+  Stage 6 gate; spec §Limits). **A precondition with no owner is a note,
+  not a gate [RT-15]** — so this registration may not be finalized until
+  it names an owner and a target date, and two enforceable artifact rules
+  apply: MVM-0a checkpoints are tagged **non-promotable**, and any run
+  adding a maintained boundary or a compute-gating stakes term must cite
+  the corrigibility document's commit hash in its own pre-registration.
+  MVM-0a is not a discardable prototype — it is precisely MVM-0b's
+  substrate, one config change away.
 - MVM-0b (amplifiers: maintained boundary, stakes that gate the system's
   own compute) is where the ethics becomes live. It gets its own
   pre-registration and its own red-team, and nothing in this draft
@@ -251,23 +385,41 @@ is currently unwritten.
 
 ## Decisions this draft does not make (John's calls)
 
-1. **Model scale** (~10M vs ~100M) and compute budget. Affects whether
-   batteries can reach ceiling at all.
-2. **Register width and injection mechanism** — cross-attention into every
-   layer as specified, or a cheaper variant; learned write-gate vs. fixed
-   update rule.
-3. **Number of agents N** per dialogue and episode length.
-4. **The unloseability requirement**: confirm the architecture keeps a
-   residual path that *could* carry the binding. This draft treats it as
-   mandatory; it is a design constraint worth explicit sign-off because it
-   makes H_center harder to get.
-5. **The S-battery substitution** (forced-choice self-identification in
-   place of judged self-report), which costs the H_description arm.
-   Alternative: drop the S arm entirely for MVM-0a and state that the
-   description/center distinction is untestable at this scale.
-6. Whether Stage 2's binding metric enters here as a further acceptance
+Red-team pass 1 moved several v0.1 deferrals *into* the registration
+(register width, injection mechanism, cross-turn attention span, one-vs-N
+registers) because deferring them let an unregistered choice fix the
+result [RT-03, RT-01]. What remains is genuinely John's:
+
+1. **RT-04 — the blocking one. Does MVM-0a instantiate the removal test at
+   all?** The corpus's test is a contrast: removal either degrades the act
+   (center) or subtracts a report while processing continues
+   (description). MVM-0a cannot produce judgeable self-report, and the
+   forced-choice substitute is a task drawing on the same information —
+   so **no reachable result has the report subtracted and processing
+   intact.** H_description is engineered out of the outcome space. Two
+   honest options: **(a)** build a real report channel — a separate head
+   or turn type that *describes* current state rather than applying it,
+   verified to dissociate from T_sr at baseline; or **(b)** drop the
+   corpus framing, rename the bins, and register the weaker claim the
+   design actually supports. The red-team explicitly rejects a third
+   option v0.1 floated — dropping the S arm entirely — because it removes
+   the last trace of the contrast while keeping its vocabulary. **This
+   cannot register until (a) or (b) is chosen.**
+2. **Model scale** (~10M vs ~100M) and compute budget, now multiplied by
+   k ≥ 5 seeds plus a no-register twin per seed. Still tens-of-dollars
+   territory, but no longer a single run.
+3. **Number of agents N** per dialogue and episode length. N also sets the
+   chance floor in the corrected `d` metric.
+4. **Corrigibility document: owner and target date** — required in the
+   registration itself, not as a flag [RT-15].
+5. Whether Stage 2's binding metric enters here as a further acceptance
    test (the fork adjudication folds it into MVM-0 acceptance tooling) or
    waits for MVM-0b.
+6. Whether the blind-localization arm [RT-12] runs alongside the headline
+   or as a separate registered follow-on. The red-team's judgement, which
+   this draft shares, is that it may be worth more than the headline: it
+   is a ground-truth test of whether the program's interpretability
+   toolkit can find a center that is known to be there.
 
 ## Results
 
