@@ -2,6 +2,25 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## MVM-0a IS REGISTERED — v1.0 binding; corrigibility doc committed (2026-08-07, night)
+
+John registered in-session ("register it"). `pre-registration.md` is now
+**v1.0 REGISTERED**: the design, the scale-ladder rule, the $200 cap, the
+architecture values, the bins, and the gates are binding; changes from
+here are registered amendments committed before the runs they affect.
+Registration cites `spec/corrigibility-commitments.md` v1.0 (owner John,
+commit `cb6715d8`, ahead of the 2026-08-21 target) — seven commitments:
+non-promotable checkpoints, human-launched runs only, kill switch never
+load-bearing, no stakes term may reward continuation, optimization
+against the instruments halts the run, retention for audit, calibration
+rule binds reporting. **John should still give the doc itself a
+five-minute read — his read-through is what makes C1–C7 a gate rather
+than a note; amend before first training run if anything reads wrong.**
+
+Gate state at registration: runs (i) and (ii) PASS; (iii) needs a model.
+**Next: build `model.py` + training loop to the registered values, then
+learnability pilots (10M first, ~$1–2), C2 applies — John launches.**
+
 ## Gate run (ii) BUILT AND PASSES — tensor layout certified; auto-reload off (2026-08-07, night)
 
 With the architecture adjudicated, run (ii) became buildable and ran the

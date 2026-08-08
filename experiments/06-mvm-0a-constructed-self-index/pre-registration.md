@@ -1,21 +1,20 @@
 # Experiment 6 / MVM-0a — Can a self-index be *constructed* to be load-bearing?
 
-*DRAFT v0.4 (2026-08-07). **NOT REGISTERED.** Per the house procedure
-(`experiments/README.md`; Experiment 3 §Procedure order), a pre-registration
-becomes binding only after John reviews it and an adversarial red-team pass
-is adjudicated and patched in. **Red-team pass 1 is complete** (15
-findings, 3 fatal — `red_team_ledger.md`); its adopted patches are written
-in below and marked `[RT-nn]`. **RT-04 adjudicated by John (2026-08-04):
-MVM-0a is scoped to Q5 — the construction question — and does *not*
-instantiate the removal test. Bins are renamed accordingly and the
-description/center contrast is registered as MVM-0b's target. See §Scope.**
-Architecture follows `ROADMAP-post-removal-test.md` Part 3, which John
-adjudicated 2026-08-02 as the primary fork. **v0.4: the six open calls were
-adjudicated by John on 2026-08-07, all per
-`registration-decision-memo.md`'s recommendations; the values are written
-into §Materials, §Procedure, and §Ethics below and summarized in
-§Decisions — adjudicated. Remaining before registration: John's review of
-this draft, then the registration commit.***
+*v1.0 — **REGISTERED 2026-08-07** (John, in-session: "register it"). This
+commit is the registration; the design below is binding, and changes from
+here are registered amendments, committed before the runs they affect.
+House procedure (`experiments/README.md`) satisfied: red-team pass 1
+complete and adjudicated (15 findings, 3 fatal — `red_team_ledger.md`,
+patches marked `[RT-nn]`); RT-04 adjudicated by John 2026-08-04 (scoped to
+Q5, does not instantiate the removal test — §Scope); the six open calls
+adjudicated by John 2026-08-07 per `registration-decision-memo.md`
+(§Decisions — adjudicated); John reviewed and registered same day.
+Architecture follows `ROADMAP-post-removal-test.md` Part 3 (primary fork,
+adjudicated 2026-08-02). **The corrigibility document exists and is
+cited: `spec/corrigibility-commitments.md`, commit
+`cb6715d8db0c2e336d589d20af67bab303b2a0d1` [RT-15].** Gate state at
+registration: cue-detector runs (i) and (ii) PASS
+(`cue_detector_gate.json`); run (iii) awaits a trained model.*
 
 ## The claim under test
 
@@ -468,13 +467,14 @@ MVM-0a is **floor-only and episodic**: no maintained boundary, no stakes,
 no depth loop; register state dissolves at episode end. The spec licenses
 this phase explicitly. Two commitments bind what comes after:
 
-- **The corrigibility document does not yet exist**, and is a
+- **The corrigibility document exists:
+  `spec/corrigibility-commitments.md` v1.0, commit
+  `cb6715d8db0c2e336d589d20af67bab303b2a0d1`** (owner John; committed
+  2026-08-07, ahead of the adjudicated 2026-08-21 target). It is a
   non-negotiable precondition for any depth-loop training run (ROADMAP
-  Stage 6 gate; spec §Limits). **A precondition with no owner is a note,
-  not a gate [RT-15]. Adjudicated 2026-08-07: owner = John, target date =
-  2026-08-21, and the document must be committed before the first
-  registered training run spends compute — if the date slips, the
-  training runs wait.** Two further enforceable artifact rules
+  Stage 6 gate; spec §Limits) — **a precondition with no owner is a note,
+  not a gate [RT-15]** — and its commitments C1–C7 bind every MVM-0a run
+  under this registration. Two further enforceable artifact rules
   apply: MVM-0a checkpoints are tagged **non-promotable**, and any run
   adding a maintained boundary or a compute-gating stakes term must cite
   the corrigibility document's commit hash in its own pre-registration.
@@ -525,8 +525,8 @@ sections named below):
    can find a center that is known to be there, and may be worth more
    than the headline.
 
-Nothing here is binding until John reviews this draft and the
-registration commit lands (house procedure, step 2).
+John reviewed and registered this document on 2026-08-07; the commit
+carrying this text is the registration, and everything above is binding.
 
 ## Results
 
