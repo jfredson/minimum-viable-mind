@@ -40,7 +40,17 @@ this date. Auto-reload: **OFF** (John's setting; the Layer-3 backstop).
 
 | date | phase | what ran | GPU | hrs (est → act) | $ est | $ actual | running total |
 |---|---|---|---|---|---|---|---|
-| — | — | *(nothing has run; registration pending)* | — | — | — | — | **$0.00 / $200** |
+| 2026-08-07/08 | pilot | 10M learnability pilot, seed 0, code `e0bd13e`, 171.79M tok (20/param), held-out eval. Pod 1 `977cezdx6klgbt` (secure 4090, deleted before use — dead `sshCommand` field, pod was healthy); pod 2 `zv0nxkyazqfw0w` (community 5090, ran the pilot). **RESULT: LEARNS, all batteries ≥0.97** (`pilot-findings.md`) | 4090 $0.74 (12.6 min) + 5090 $0.69 community | 1–2.5 → 2.4 (+0.2 dead pod) | $1.50 (cap $2.96) | **$6.02** ⚠ | **$6.02 / $200** |
+
+**⚠ 2026-08-08 reconciliation: PARTIAL FAIL — investigated, unresolved.**
+Balance $106.73 → $99.93 agrees with RunPod's billing rows ($6.02 pods +
+~$0.78 volume drip since Aug 6), so nothing is unaccounted. But the 5090
+row itself bills **8.47 h against ~2.42 h of pod existence (~3.5×,
+$5.86 vs ~$1.67 expected)**; nvidia-smi showed one GPU. Actual recorded
+from the billing rows per rule 4 (their number, not ours). **Action
+(John): RunPod support ticket before the 5-seed runs** — at 3.5× the
+registered-run estimate inflates from ~$6–12 to ~$20–40. Still inside
+the cap either way.
 
 ## Phase budget guide (from the decision memo, for estimates)
 

@@ -2,6 +2,39 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## PILOT RESULT: 10M LEARNS — the ladder stops at rung one (2026-08-08)
+
+First compute of the registered design ran overnight and the registered
+scale question is answered: **8.59M params reaches held-out ceiling on
+every battery at the 171.79M-token budget** — T_sr 0.99 / T_si 0.97 /
+T_state 0.995 / T_syntax 1.00 against floors 0.125/0.125/0.042/0.100.
+Per the pre-committed smallest-that-learns rule, **the registered scale
+is 10M**; no 30M/100M pilots run. Full findings + caveats:
+`experiments/06-mvm-0a-constructed-self-index/pilot-findings.md`;
+checkpoint + eval trace in `artifacts/pilot-10m-seed0/`.
+
+Shape: T_syntax/T_state at ceiling early (the competitor hypothesis is
+live); T_sr jumped 0.325→0.615 when on-policy fill engaged (RT-02
+grounding doing work — or the policy-reconstruction shortcut, see
+findings §caveat 2, which files a **pre-registration amendment
+candidate**: make the forced-revision contrast survive on-policy fill
+before the 5-seed runs); sharp everything-to-ceiling transition at steps
+~8.5k–13.5k; stable ceiling for the final ~9k steps. Says nothing about
+H_load-bearing — that is the registered run.
+
+**Ledger: actual $6.02 vs est $1.50, reconciliation PARTIAL FAIL** —
+RunPod's 5090 row bills 8.47h against ~2.42h of pod existence (~3.5×).
+Investigated: balance agrees with the rows, the anomaly is inside the
+row. John: support ticket before the 5-seed spend. Ops lessons (dead
+`sshCommand` field, Monitor-can't-SSH, community-vs-secure) in
+`pilot-findings.md` §Ops + memory.
+
+**Next:** (1) gate run (iii) — fingerprint detector against the pilot
+checkpoint, the RT-02 cue most likely to survive, BEFORE the 5-seed
+spend; (2) the RT-11 fill amendment (registered, before the runs);
+(3) billing resolution; (4) then the registered 5-seed × full+twin run
+at 10M.
+
 ## MODEL + TRAINING LOOP BUILT — smoke test green; pilot is launch-ready (2026-08-07, night, cont.)
 
 `src/model.py` + `src/train.py` implement the registered architecture
