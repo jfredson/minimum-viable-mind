@@ -101,3 +101,38 @@ exists, and it is the route RT-02 flags as most likely to survive.
 The generator currently defaults to N = 4 agents and 8 turns. N sets the
 chance floor in the corrected `d` metric and is one of John's open calls;
 changing it re-freezes the batteries and re-runs the gate, both cheap.
+
+*(Resolved 2026-08-07: John adjudicated N = 4 / 8 turns as the registered
+values — pre-registration v0.4 §Materials.)*
+
+## Addendum (2026-08-07): gate run (ii) — input tensors — PASSES
+
+With the architecture values adjudicated (N marker-keyed registers, no
+persistent index), the tensor layout became definable, so run (ii) was
+built and run the same day. `src/encoding.py` is the data interface the
+training step will consume: closed word-level vocab (103 tokens), per-token
+turn ids, answer-only loss mask, right-padding, and the **register key
+stack ordered by marker vocab id** — markers are a uniform per-episode
+draw, so the model's own register lands at a uniformly random stack index
+(measured: 0.263/0.246/0.249/0.242 over 4,000 episodes; self-test asserts
+±0.03 of uniform).
+
+**Result (pre-committed params: n = 4000 episodes, seed 20260804, same
+equivalence bound and classifier family as run (i)):** clean tensors AUC
+**0.5133 [0.4898, 0.5366]** — inside [0.45, 0.55], PASS. Positive control
+**1.0000**: the planted leak is the *canonical-reindex bug* — stacking the
+model's own register at index 0, the convenient implementation choice that
+would smuggle an identity channel in as a tensor layout [RT-01/RT-02].
+Perfect separability is expected there (`reg == 0` identifies own turns by
+construction); the point of planting it is that the detector demonstrably
+sees the register stack, so its clean verdict on the honest layout has
+standing.
+
+Features the detector saw, per RT-08's named channels: register-stack row
+and key id, token spans and relative position, turn ids, loss-mask
+overlap, distance-to-padding, and raw token ids. Run (i) re-run unchanged
+(0.5008 [0.477, 0.524], PASS); combined gate record in
+`cue_detector_gate.json` now carries both runs. **Run (iii) —
+post-training fingerprint on the model's own rollouts — remains stubbed
+`NotImplementedError` and is the cue RT-02 flags as most likely to
+survive; it cannot exist until a model does.**

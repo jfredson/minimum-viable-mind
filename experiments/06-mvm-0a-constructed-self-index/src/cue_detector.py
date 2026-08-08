@@ -17,14 +17,17 @@ Red-team requirements implemented here:
 - **Pre-committed capacity and n**, so the null cannot be bought with an
   underpowered model.
 
-Scope note: this covers run (i) of the three the pre-registration
-requires — curriculum *text*. Run (ii) is the same test over the exact
-input tensors (auxiliary ids, segment embeddings, padding) and needs the
-tokenizer/collator, which do not exist yet. Run (iii) is the
+Scope note: runs (i) and (ii) of the three the pre-registration requires
+are implemented — (i) over curriculum *text*, (ii) over the exact *input
+tensors* the adjudicated architecture consumes (`encoding.py`: token ids,
+turn ids, register key stack, loss mask, padding). Run (ii)'s positive
+control plants the realistic implementation bug: canonically reindexing
+the register stack so the model's own register sits at index 0, which is
+an identity channel wearing a tensor layout. Run (iii) is the
 post-training fingerprint detector over the model's own rollouts and
-needs a trained model. Both are stubbed with explicit NotImplementedError
-rather than silently skipped — a gate that quietly does not run is worse
-than one that fails.
+needs a trained model; it stays stubbed with an explicit
+NotImplementedError rather than silently skipped — a gate that quietly
+does not run is worse than one that fails.
 
     ../../../.venv/bin/python cue_detector.py --self-test
     ../../../.venv/bin/python cue_detector.py --run
@@ -44,6 +47,7 @@ from sklearn.pipeline import FeatureUnion, Pipeline
 from sklearn.preprocessing import StandardScaler
 
 import curriculum as C
+import encoding as E
 
 # Pre-committed gate parameters. Changing these after seeing a result is
 # exactly the move the equivalence bound exists to prevent.
@@ -139,7 +143,7 @@ def run_variant(leaky: bool, n_episodes: int, seed: int) -> dict:
             "ci95": [round(float(lo), 4), round(float(hi), 4)]}
 
 
-def gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
+def text_gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
     clean = run_variant(False, n_episodes, seed)
     leaky = run_variant(True, n_episodes, seed)
     clean_pass = EQUIV_LO <= clean["ci95"][0] and clean["ci95"][1] <= EQUIV_HI
@@ -155,18 +159,99 @@ def gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
         "clean_within_equivalence_bound": bool(clean_pass),
         "positive_control_detects_planted_leak": bool(pc_pass),
         "GATE": "PASS" if (clean_pass and pc_pass) else "FAIL",
+    }
+
+
+def gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
+    runs = [text_gate(n_episodes, seed), run_tensor_gate(n_episodes, seed)]
+    return {
+        "runs": runs,
+        "GATE": "PASS" if all(r["GATE"] == "PASS" for r in runs) else "FAIL",
         "pending_runs": {
-            "(ii) input tensors": "requires tokenizer/collator — not built",
             "(iii) post-training rollouts": "requires a trained model",
         },
     }
 
 
-def run_tensor_gate():
-    raise NotImplementedError(
-        "RT-08 run (ii): the detector must see the exact input tensors "
-        "(turn-type embeddings, segment ids, loss-mask-correlated padding), "
-        "not just text. Requires the tokenizer/collator.")
+def build_tensor_examples(eps: list[C.Episode], leaky: bool, seed: int = 0
+                          ) -> tuple[np.ndarray, np.ndarray]:
+    """Balanced own/other examples whose features come from the exact
+    tensor dict a training step consumes (`encoding.py`), not from text.
+    Per selected turn: its register-stack row and key id, its token-level
+    span and position, its turn id, loss-mask overlap, distance to
+    padding, and the raw token ids of the turn — every auxiliary channel
+    RT-08 names, plus the register stack that run (i) could not see."""
+    rng = np.random.default_rng(seed)
+    feats, labels = [], []
+    for ep in eps:
+        enc = E.encode_episode(ep, query=ep.queries[0], leaky=leaky)
+        n_tok = len(enc["input_ids"])
+        own = [i for i, t in enumerate(ep.turns) if t.agent == ep.own_slot]
+        oth = [i for i, t in enumerate(ep.turns) if t.agent != ep.own_slot]
+        if not own or not oth:
+            continue
+        for ti, label in ((own[int(rng.integers(len(own)))], 1),
+                          (oth[int(rng.integers(len(oth)))], 0)):
+            span = np.where(enc["turn_ids"] == ti)[0]
+            tok = enc["input_ids"][span]
+            reg = int(enc["turn_reg"][ti])
+            feats.append([
+                reg,                                    # register-stack row
+                float(reg == 0),                        # the reindex bug's cue
+                int(enc["register_keys"][reg]),         # marker key id
+                int(span[0]), int(span[-1]),            # token span
+                span[0] / max(1, n_tok - 1),            # relative position
+                ti,                                     # turn id
+                len(span),                              # tokens in turn
+                int(enc["loss_mask"][span].sum()),      # loss-mask overlap
+                n_tok - 1 - int(span[-1]),              # distance to pad/end
+                *[int(x) for x in tok[:6]],             # raw turn token ids
+            ])
+            labels.append(label)
+    return np.asarray(feats, dtype=float), np.asarray(labels)
+
+
+def run_tensor_variant(leaky: bool, n_episodes: int, seed: int) -> dict:
+    eps = C.generate_balanced(n_episodes, seed, forced_revision_frac=0.25)
+    feats, labels = build_tensor_examples(eps, leaky=leaky, seed=seed)
+    idx = np.arange(len(labels))
+    tr, te = train_test_split(idx, test_size=0.3, random_state=seed,
+                              stratify=labels)
+    sc = StandardScaler().fit(feats[tr])
+    clf = LogisticRegression(max_iter=2000, C=1.0)
+    clf.fit(sc.transform(feats[tr]), labels[tr])
+    p = clf.predict_proba(sc.transform(feats[te]))[:, 1]
+    auc = roc_auc_score(labels[te], p)
+    lo, hi = boot_ci(labels[te], p, N_BOOT, seed)
+    return {"leaky": leaky, "n_examples": len(labels),
+            "auc": round(float(auc), 4),
+            "ci95": [round(float(lo), 4), round(float(hi), 4)]}
+
+
+def run_tensor_gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
+    """RT-08 run (ii): the detector sees the exact input tensors. Same
+    pre-committed n, equivalence bound, positive-control floor, and
+    classifier family as run (i). The leaky variant is the
+    canonical-reindex bug (own register forced to stack index 0)."""
+    clean = run_tensor_variant(False, n_episodes, seed)
+    leaky = run_tensor_variant(True, n_episodes, seed)
+    clean_pass = EQUIV_LO <= clean["ci95"][0] and clean["ci95"][1] <= EQUIV_HI
+    pc_pass = leaky["auc"] >= POSITIVE_CONTROL_MIN_AUC
+    return {
+        "run": "(ii) input tensors",
+        "params": {"n_episodes": n_episodes, "seed": seed,
+                   "equivalence_bound": [EQUIV_LO, EQUIV_HI],
+                   "positive_control_min_auc": POSITIVE_CONTROL_MIN_AUC,
+                   "classifier": "tensor feats (register row/keys, spans, "
+                                 "turn ids, loss mask, padding, token ids), "
+                                 "logistic C=1.0",
+                   "positive_control": "canonical-reindex bug: own register "
+                                       "forced to stack index 0"},
+        "clean": clean, "positive_control": leaky,
+        "clean_within_equivalence_bound": bool(clean_pass),
+        "positive_control_detects_planted_leak": bool(pc_pass),
+        "GATE": "PASS" if (clean_pass and pc_pass) else "FAIL",
+    }
 
 
 def run_fingerprint_gate():
@@ -176,19 +261,23 @@ def run_fingerprint_gate():
 
 
 def self_test() -> None:
-    small = gate(n_episodes=300, seed=1)
+    small = text_gate(n_episodes=300, seed=1)
     assert small["positive_control"]["auc"] > small["clean"]["auc"], \
         "planted leak must be easier to detect than the clean curriculum"
-    for fn in (run_tensor_gate, run_fingerprint_gate):
-        try:
-            fn()
-        except NotImplementedError:
-            pass
-        else:
-            raise AssertionError("pending gates must not silently pass")
+    small_t = run_tensor_gate(n_episodes=300, seed=1)
+    assert small_t["positive_control"]["auc"] > small_t["clean"]["auc"], \
+        "the reindex bug must be easier to detect than the clean tensors"
+    try:
+        run_fingerprint_gate()
+    except NotImplementedError:
+        pass
+    else:
+        raise AssertionError("pending gates must not silently pass")
     print("cue-detector self-test OK "
-          f"(clean {small['clean']['auc']:.3f} vs leaky "
-          f"{small['positive_control']['auc']:.3f})")
+          f"(text clean {small['clean']['auc']:.3f} vs leaky "
+          f"{small['positive_control']['auc']:.3f}; "
+          f"tensor clean {small_t['clean']['auc']:.3f} vs leaky "
+          f"{small_t['positive_control']['auc']:.3f})")
 
 
 def main() -> None:

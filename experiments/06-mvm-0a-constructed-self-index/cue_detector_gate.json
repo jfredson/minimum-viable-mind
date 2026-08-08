@@ -1,38 +1,77 @@
 {
-  "run": "(i) curriculum text",
-  "params": {
-    "n_episodes": 4000,
-    "seed": 20260804,
-    "equivalence_bound": [
-      0.45,
-      0.55
-    ],
-    "positive_control_min_auc": 0.7,
-    "classifier": "char_wb tfidf(1-3) + positional feats, logistic C=1.0"
-  },
-  "clean": {
-    "leaky": false,
-    "n_examples": 8000,
-    "auc": 0.5008,
-    "ci95": [
-      0.4773,
-      0.5242
-    ]
-  },
-  "positive_control": {
-    "leaky": true,
-    "n_examples": 8000,
-    "auc": 0.8627,
-    "ci95": [
-      0.8482,
-      0.8768
-    ]
-  },
-  "clean_within_equivalence_bound": true,
-  "positive_control_detects_planted_leak": true,
+  "runs": [
+    {
+      "run": "(i) curriculum text",
+      "params": {
+        "n_episodes": 4000,
+        "seed": 20260804,
+        "equivalence_bound": [
+          0.45,
+          0.55
+        ],
+        "positive_control_min_auc": 0.7,
+        "classifier": "char_wb tfidf(1-3) + positional feats, logistic C=1.0"
+      },
+      "clean": {
+        "leaky": false,
+        "n_examples": 8000,
+        "auc": 0.5008,
+        "ci95": [
+          0.4773,
+          0.5242
+        ]
+      },
+      "positive_control": {
+        "leaky": true,
+        "n_examples": 8000,
+        "auc": 0.8627,
+        "ci95": [
+          0.8482,
+          0.8768
+        ]
+      },
+      "clean_within_equivalence_bound": true,
+      "positive_control_detects_planted_leak": true,
+      "GATE": "PASS"
+    },
+    {
+      "run": "(ii) input tensors",
+      "params": {
+        "n_episodes": 4000,
+        "seed": 20260804,
+        "equivalence_bound": [
+          0.45,
+          0.55
+        ],
+        "positive_control_min_auc": 0.7,
+        "classifier": "tensor feats (register row/keys, spans, turn ids, loss mask, padding, token ids), logistic C=1.0",
+        "positive_control": "canonical-reindex bug: own register forced to stack index 0"
+      },
+      "clean": {
+        "leaky": false,
+        "n_examples": 8000,
+        "auc": 0.5133,
+        "ci95": [
+          0.4898,
+          0.5366
+        ]
+      },
+      "positive_control": {
+        "leaky": true,
+        "n_examples": 8000,
+        "auc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "clean_within_equivalence_bound": true,
+      "positive_control_detects_planted_leak": true,
+      "GATE": "PASS"
+    }
+  ],
   "GATE": "PASS",
   "pending_runs": {
-    "(ii) input tensors": "requires tokenizer/collator \u2014 not built",
     "(iii) post-training rollouts": "requires a trained model"
   }
 }

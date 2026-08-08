@@ -2,6 +2,27 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## Gate run (ii) BUILT AND PASSES — tensor layout certified; auto-reload off (2026-08-07, night)
+
+With the architecture adjudicated, run (ii) became buildable and ran the
+same night. `src/encoding.py` (tokenizer/collator — the training step's
+actual data interface: 103-token closed vocab, turn ids, answer-only loss
+mask, register key stack ordered by marker vocab id) +
+`cue_detector.py` run (ii) implemented against it. **PASS at the
+pre-committed params:** clean tensors AUC 0.5133 [0.4898, 0.5366] inside
+[0.45, 0.55]; positive control 1.0000 on the planted *canonical-reindex
+bug* (own register forced to stack index 0 — the convenient implementation
+choice that is an identity channel wearing a tensor layout). Run (i)
+re-run unchanged (0.5008, PASS). Gate JSON now carries both runs; run
+(iii) stays stubbed until a model exists. Addendum in
+`curriculum-findings.md`. Zero GPU dollars spent; ledger untouched.
+
+Ops: John turned RunPod auto-pay/auto-reload OFF (Layer-3 backstop live);
+balance $106.73. **Still gating: John's review of v0.4 → registration
+commit; corrigibility doc (John, 2026-08-21) before training compute.**
+Next build: the model + training loop (`model.py`), then learnability
+pilots once registered.
+
 ## ALL SIX CALLS ADJUDICATED — v0.4 written; registration is one review away (2026-08-07, later)
 
 John adjudicated the decision memo in-session: **all six as recommended.**
