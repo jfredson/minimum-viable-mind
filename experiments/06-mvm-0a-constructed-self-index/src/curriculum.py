@@ -239,11 +239,16 @@ def fill_own_turns(ep: Episode, sample_fn) -> Episode:
         if value not in SLOTS:
             raise ValueError(f"off-grammar sample {value!r}")
         t.value = value
-    # Queries whose answers depend on turn VALUES must be re-derived after
-    # filling: T_sr (keyed to own commitments) and T_state count queries
-    # ("how many parcels went to X" counts values, which the fill just
-    # changed). T_si reads other agents' turns and T_state last-mentioned /
-    # T_syntax read items and structure — all untouched by the fill.
+    rederive_queries_after_fill(ep)
+    return ep
+
+
+def rederive_queries_after_fill(ep: Episode) -> None:
+    """Re-derive queries whose answers depend on turn VALUES after a fill:
+    T_sr (keyed to own commitments) and T_state count queries ("how many
+    parcels went to X" counts values, which the fill just changed). T_si
+    reads other agents' turns and T_state last-mentioned / T_syntax read
+    items and structure — all untouched by the fill."""
     ep.queries = [q for q in ep.queries if q.battery != "T_sr"]
     own = ep.own_turns()
     if own:
@@ -255,7 +260,6 @@ def fill_own_turns(ep: Episode, sample_fn) -> Episode:
         if q.battery == "T_state" and q.text.startswith("how many parcels"):
             target = q.text.split("went to ")[1].rstrip("?")
             q.answer = str(sum(1 for t in ep.turns if t.value == target))
-    return ep
 
 
 def freeze_batteries(out_dir: Path, seed: int = 20260804,

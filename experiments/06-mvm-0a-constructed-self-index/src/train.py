@@ -90,26 +90,64 @@ def eval_batteries(model: MVM0aModel, device: str, n_per: int = 50) -> dict:
 # ------------------------------------------------------------- on-policy fill
 
 @torch.no_grad()
-def model_fill(model: MVM0aModel, ep: C.Episode, device: str) -> C.Episode:
-    """Fill the model's own turns with its own sampled slot choices
-    [RT-02: causal authorship]. Sequential over own turns so each sample
-    conditions on previously filled ones; queries are re-derived by
-    `curriculum.fill_own_turns` (including the T_state count fix)."""
-    own_idx = [i for i, t in enumerate(ep.turns) if t.agent == ep.own_slot]
+def model_fill_batched(model: MVM0aModel, eps: list[C.Episode],
+                       device: str) -> list[C.Episode]:
+    """Fill every episode's own turns with the model's own sampled slot
+    choices [RT-02: causal authorship], batched: one forward per own-turn
+    ordinal (2 with the registered 4-agent/8-turn values) instead of one
+    per episode. Pass k samples each episode's k-th own turn; causal
+    attention plus segment-ordered register writes mean that prediction
+    conditions only on turns before it, where pass k-1's samples already
+    sit. Queries are re-derived afterwards (T_sr re-key + T_state count
+    fix, `curriculum.rederive_queries_after_fill`)."""
     slot_ids = torch.tensor([E.VOCAB[s] for s in C.SLOTS], device=device)
-    cursor = iter(own_idx)
+    own_idx = [[i for i, t in enumerate(e.turns) if t.agent == e.own_slot]
+               for e in eps]
+    for k in range(max(len(o) for o in own_idx)):
+        batch = to_torch(E.collate([E.encode_episode(e) for e in eps]),
+                         device)
+        logits = model.forward(batch)
+        for b, e in enumerate(eps):
+            if k >= len(own_idx[b]):
+                continue
+            ti = own_idx[b][k]
+            span = (batch["turn_ids"][b] == ti).nonzero().flatten()
+            to_pos = int(span[-1]) - 2    # ... item to [value] <nl>
+            row = logits[b, to_pos][slot_ids]
+            e.turns[ti].value = C.SLOTS[int(torch.multinomial(
+                torch.softmax(row, dim=-1), 1))]
+    for e in eps:
+        C.rederive_queries_after_fill(e)
+    return eps
 
-    def sample_fn(ctx: str, item: str) -> str:
-        ti = next(cursor)
-        enc = to_torch(E.collate([E.encode_episode(ep)]), device)
-        logits = model.forward(enc)[0]
-        span = (enc["turn_ids"][0] == ti).nonzero().flatten()
-        to_pos = int(span[-1]) - 2        # ... item to [value] <nl>
-        row = logits[to_pos][slot_ids]
-        return C.SLOTS[int(torch.multinomial(
-            torch.softmax(row, dim=-1), 1))]
 
-    return C.fill_own_turns(ep, sample_fn)
+# ------------------------------------------------------------ held-out eval
+
+def eval_heldout(model: MVM0aModel, device: str, n: int = 200,
+                 seed: int = 987_654_321, on_policy: bool = True) -> dict:
+    """Held-out episodes from the same grammar, disjoint content seeds —
+    the eval the registered scale-pick rule reads (§Materials). Model
+    selection NEVER touches the frozen batteries (§Procedure step 3).
+    Own turns are model-filled first: identity is grounded in causal
+    authorship [RT-02], so "you" is only meaningful on episodes the model
+    actually authored its turns in."""
+    model.eval()
+    eps = C.generate_balanced(n, seed, forced_revision_frac=0.25)
+    if on_policy:
+        eps = model_fill_batched(model, eps, device)
+    hits = {b: [0, 0] for b in C.BATTERIES}
+    pairs = [(e, q) for e in eps for q in e.queries]
+    for i in range(0, len(pairs), 50):
+        chunk = pairs[i:i + 50]
+        batch = to_torch(E.collate([E.encode_episode(e, query=q)
+                                    for e, q in chunk]), device)
+        cids = [[E.VOCAB[c] for c in q.choices] for _, q in chunk]
+        picks = model.score_choices(batch, cids)
+        for p, (_, q) in zip(picks, chunk):
+            hits[q.battery][1] += 1
+            hits[q.battery][0] += int(p == E.VOCAB[q.answer])
+    model.train()
+    return {b: round(c / max(1, t), 3) for b, (c, t) in hits.items()}
 
 
 # ------------------------------------------------------------------ training
@@ -132,7 +170,7 @@ def run(args) -> dict:
         eps = C.generate_balanced(args.batch, seed=args.seed * 10 ** 6 + step,
                                   forced_revision_frac=0.25)
         if step > args.on_policy_after:
-            eps = [model_fill(model, e, device) for e in eps]
+            eps = model_fill_batched(model, eps, device)
         pairs = [(e, e.queries[(step + i) % len(e.queries)])
                  for i, e in enumerate(eps)]
         batch = to_torch(E.collate([E.encode_episode(e, query=q)
@@ -144,18 +182,31 @@ def run(args) -> dict:
         opt.step()
         tokens_seen += int(batch["input_ids"].numel())
 
-        if step % args.eval_every == 0 or step == args.steps:
-            accs = eval_batteries(model, device, n_per=args.eval_n)
+        if step % args.eval_every == 0 or step == args.steps \
+                or (args.max_tokens and tokens_seen >= args.max_tokens):
+            if args.eval_mode == "heldout":
+                accs = eval_heldout(model, device, n=args.eval_n,
+                                    on_policy=step > args.on_policy_after)
+            else:
+                accs = eval_batteries(model, device, n_per=args.eval_n)
             rec = {"step": step, "loss": round(float(loss.detach()), 4),
                    "tokens": tokens_seen, "acc": accs,
                    "sec": round(time.time() - t0, 1)}
             log.append(rec)
-            print(rec)
+            print(rec, flush=True)
+            if args.out:                       # crash-safe partials
+                out = Path(args.out)
+                out.parent.mkdir(parents=True, exist_ok=True)
+                with open(out.with_suffix(".jsonl"), "a") as f:
+                    f.write(json.dumps(rec) + "\n")
+                torch.save({"cfg": cfg.__dict__, "state": model.state_dict(),
+                            "log": log, "args": vars(args), "step": step},
+                           out)
+        if args.max_tokens and tokens_seen >= args.max_tokens:
+            print(f"token budget reached ({tokens_seen:,})", flush=True)
+            break
 
     if args.out:
-        Path(args.out).parent.mkdir(parents=True, exist_ok=True)
-        torch.save({"cfg": cfg.__dict__, "state": model.state_dict(),
-                    "log": log, "args": vars(args)}, args.out)
         print(f"saved {args.out}")
     return {"params": n_params, "tokens": tokens_seen, "log": log}
 
@@ -172,6 +223,10 @@ def main() -> None:
     ap.add_argument("--on-policy-after", type=int, default=150)
     ap.add_argument("--eval-every", type=int, default=100)
     ap.add_argument("--eval-n", type=int, default=40)
+    ap.add_argument("--eval-mode", choices=["heldout", "batteries"],
+                    default="heldout")
+    ap.add_argument("--max-tokens", type=int, default=0,
+                    help="stop at the registered token budget (20 tok/param)")
     ap.add_argument("--device", default="mps" if
                     torch.backends.mps.is_available() else "cpu")
     ap.add_argument("--out", default=None)
