@@ -2,6 +2,35 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## GATE RUN (iii) FAILS — the rollouts carry an ownership fingerprint; 5-seed spend BLOCKED (2026-08-08)
+
+Built the same day the checkpoint existed, and it fired: **both arms
+FAIL with positive controls proving standing**
+(`fingerprint-gate-findings.md`; record in `cue_detector_gate.json`).
+Arm A — the runs (i)/(ii) committed detector on model-filled text —
+reads AUC ~0.67; arm B — a likelihood attack scoring turn values under
+the model's own policy — reads ~0.89. Cause, diagnosed: **the model has
+a favorite bay** (fill-position policy hits bay_D 41.6% vs 12.5%
+uniform; entropy 1.73 vs 2.08) because the answer-only loss never
+trained the fill positions toward anything. A solver can tag
+high-likelihood turns "mine" and shortcut ownership with no self-index
+— RT-02's predicted surviving route, caught before the 5-seed dollars.
+
+**Deeper finding:** in a fill-then-train pipeline, RT-02 (authorship
+grounding) and RT-08 (no distributional cue) are jointly satisfiable
+only if identity is carried by something other than token statistics —
+the gate is forcing the design from identity-as-statistical-signature
+toward **identity as continuity of state** (in-context generation with
+persistent register state), which is closer to the corpus's self-index
+than the fill pipeline was. Disposition candidates in the findings
+(calibrated fill; in-context generation; both), John adjudicates; the
+RT-11 revision-contrast fix folds into the same amendment cycle; gates
+(i)–(iii) re-run on the fixed pipeline before any 5-seed spend. The
+pilot's learnability result stands — but the task-as-posed leaks.
+
+Gate scoreboard: four real catches, zero GPU dollars on a confounded
+design.
+
 ## PILOT RESULT: 10M LEARNS — the ladder stops at rung one (2026-08-08)
 
 First compute of the registered design ran overnight and the registered

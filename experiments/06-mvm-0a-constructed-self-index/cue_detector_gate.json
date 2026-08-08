@@ -68,10 +68,70 @@
       "clean_within_equivalence_bound": true,
       "positive_control_detects_planted_leak": true,
       "GATE": "PASS"
+    },
+    {
+      "run": "(iii) post-training rollout fingerprint",
+      "params": {
+        "n_episodes": 4000,
+        "seed": 20260808,
+        "checkpoint": "pilot_10m_seed0.pt",
+        "checkpoint_md5": "d63a85a91ffd9efd3d54dc9911da2a9c",
+        "equivalence_bound": [
+          0.45,
+          0.55
+        ],
+        "positive_control_min_auc": 0.7
+      },
+      "arms": [
+        {
+          "arm": "A committed family on filled text",
+          "clean": {
+            "mode": "policy",
+            "n_examples": 8000,
+            "auc": 0.7076,
+            "ci95": [
+              0.6872,
+              0.7279
+            ]
+          },
+          "positive_control": {
+            "mode": "constant",
+            "n_examples": 8000,
+            "auc": 0.9361,
+            "ci95": [
+              0.9239,
+              0.9474
+            ]
+          },
+          "clean_pass": false,
+          "pc_pass": true
+        },
+        {
+          "arm": "B likelihood attack (model-scored values)",
+          "clean": {
+            "mode": "policy",
+            "n_examples": 8000,
+            "auc": 0.8731,
+            "ci95": [
+              0.865,
+              0.8807
+            ]
+          },
+          "positive_control": {
+            "mode": "greedy",
+            "n_examples": 8000,
+            "auc": 0.9054,
+            "ci95": [
+              0.8981,
+              0.9123
+            ]
+          },
+          "clean_pass": false,
+          "pc_pass": true
+        }
+      ],
+      "GATE": "FAIL"
     }
   ],
-  "GATE": "PASS",
-  "pending_runs": {
-    "(iii) post-training rollouts": "requires a trained model"
-  }
+  "GATE": "FAIL"
 }
