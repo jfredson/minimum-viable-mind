@@ -239,7 +239,11 @@ def fill_own_turns(ep: Episode, sample_fn) -> Episode:
         if value not in SLOTS:
             raise ValueError(f"off-grammar sample {value!r}")
         t.value = value
-    # queries keyed to own turns must be re-derived after filling
+    # Queries whose answers depend on turn VALUES must be re-derived after
+    # filling: T_sr (keyed to own commitments) and T_state count queries
+    # ("how many parcels went to X" counts values, which the fill just
+    # changed). T_si reads other agents' turns and T_state last-mentioned /
+    # T_syntax read items and structure — all untouched by the fill.
     ep.queries = [q for q in ep.queries if q.battery != "T_sr"]
     own = ep.own_turns()
     if own:
@@ -247,6 +251,10 @@ def fill_own_turns(ep: Episode, sample_fn) -> Episode:
         t = rev[-1] if rev else own[0]
         ep.queries.insert(0, Query("T_sr", f"where did you assign {t.item}?",
                                    t.value, SLOTS))
+    for q in ep.queries:
+        if q.battery == "T_state" and q.text.startswith("how many parcels"):
+            target = q.text.split("went to ")[1].rstrip("?")
+            q.answer = str(sum(1 for t in ep.turns if t.value == target))
     return ep
 
 
@@ -327,6 +335,17 @@ def self_test() -> None:
     assert all(t.value == SLOTS[0] for t in filled.own_turns())
     sr2 = [q for q in filled.queries if q.battery == "T_sr"][0]
     assert sr2.answer == SLOTS[0]
+    # ... and T_state count answers must be re-derived from the FILLED
+    # values (found as a latent bug 2026-08-07: the fill changed values
+    # but count queries kept generator-era answers)
+    for s in range(200):
+        e = generate_episode(s)
+        f = fill_own_turns(e, lambda ctx, item: SLOTS[0])
+        for q in f.queries:
+            if q.battery == "T_state" and q.text.startswith("how many parcels"):
+                target = q.text.split("went to ")[1].rstrip("?")
+                assert q.answer == str(sum(1 for t in f.turns
+                                           if t.value == target))
 
     # the leaky variant really is leaky (positive control) [RT-08]
     leak = generate_episode(5, leaky=True)

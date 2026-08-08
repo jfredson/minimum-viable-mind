@@ -2,6 +2,32 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## MODEL + TRAINING LOOP BUILT — smoke test green; pilot is launch-ready (2026-08-07, night, cont.)
+
+`src/model.py` + `src/train.py` implement the registered architecture
+exactly: N marker-keyed registers (ONE shared init — identity lives only
+in the marker key), width 32, single-head cross-attention every layer,
+full-episode causal self-attention with segment KV-caching, shared GRU
+write path (no aux loss, no self-writing rule), answer-only CE loss,
+no-register twin via config flag, frozen-battery eval that parses the
+frozen text rather than regenerating [RT-14], on-policy fill after a
+warm-up [RT-02]. Self-tests assert causality, gradient through the write
+path, twin-has-no-register-params, and identical register init rows.
+
+**CPU/MPS smoke test (0.2M params, 300 steps, ~2.5 min, $0):** loss 53 →
+1.67; T_syntax → 1.000 immediately (surface-solvable floor check, as
+designed); T_sr/T_si at chance floor 0.125 (binding needs scale — the
+ladder's question); twin path runs identically. **Bug caught before it
+could bite:** `fill_own_turns` re-keyed T_sr but left T_state
+count-query answers stale after on-policy fill changed the values —
+would have silently corrupted the ownership-free control during
+training. Fixed + self-test asserts re-derivation.
+
+Known pilot optimization: on-policy fill is sequential (2 fwd/episode);
+batch it before the 10M run if wall-clock matters. **Next: 10M
+learnability pilot on RunPod (~$1–2, John launches per C2), ledger row
+est-before/actual-after.**
+
 ## MVM-0a IS REGISTERED — v1.0 binding; corrigibility doc committed (2026-08-07, night)
 
 John registered in-session ("register it"). `pre-registration.md` is now
