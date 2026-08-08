@@ -28,6 +28,14 @@ work stops and any continuation is a registered amendment.*
    increments John chooses, never past the cap's remainder. The account
    physically cannot overspend what the ledger permits.
 
+## Reconciliation baseline
+
+RunPod balance at adjudication (John, checked 2026-08-07): **$106.73**
+(prior spend from $150 predates this cap — Experiment 1 / Stage 3 work;
+this ledger starts at $0). Rule 4 reconciles against this number:
+expected balance = $106.73 − ledger running total − storage drip since
+this date. Auto-reload: **OFF** (John's setting; the Layer-3 backstop).
+
 ## Ledger
 
 | date | phase | what ran | GPU | hrs (est → act) | $ est | $ actual | running total |
