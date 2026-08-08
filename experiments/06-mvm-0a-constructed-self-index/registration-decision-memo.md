@@ -1,4 +1,9 @@
-# MVM-0a registration — decision memo (DRAFT, prepared 2026-08-07)
+# MVM-0a registration — decision memo (ADJUDICATED 2026-08-07)
+
+**Adjudication: John, 2026-08-07 — all six decisions adopted as
+recommended.** Values written into `pre-registration.md` v0.4; budget
+tracking instrument at `compute-ledger.md`. Registration still requires
+John's review of v0.4 and the registration commit (house procedure).
 
 *Decision support for John's registration of pre-registration.md v1.0 — NOT
 the registration itself. Same pattern as Experiment 1's

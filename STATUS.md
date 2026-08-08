@@ -2,6 +2,25 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## ALL SIX CALLS ADJUDICATED — v0.4 written; registration is one review away (2026-08-07, later)
+
+John adjudicated the decision memo in-session: **all six as recommended.**
+Values are now in `pre-registration.md` **v0.4** (§Materials: scale ladder
++ $200 cap + N marker-keyed registers/width 32/every-layer cross-attn/
+full-episode attention + N=4/8-turn curriculum; §Procedure step 8:
+blind-localization unconditional with verdict-first firewall; §Ethics:
+corrigibility doc = John, 2026-08-21, blocks first training run; §Decisions
+rewritten as the adjudication record). **Remaining: John reviews v0.4 →
+registration commit makes it binding.** Then: corrigibility doc (blocks
+compute), gate run (ii) (architecture values now fixed), learnability
+pilots.
+
+**Budget tracking now has an instrument:** `compute-ledger.md` — $200 hard
+cap, row per pod session with est-before/actual-after, no launch whose
+estimate busts the cap, reconcile against RunPod billing at phase
+boundaries. Hard backstop is John's to set: prepaid credits with
+auto-reload OFF, so the account physically can't outspend the cap.
+
 ## Registration decision memo drafted — all six blocking calls teed up (2026-08-07)
 
 `experiments/06-mvm-0a-constructed-self-index/registration-decision-memo.md`

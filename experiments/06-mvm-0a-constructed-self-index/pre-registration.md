@@ -1,17 +1,21 @@
 # Experiment 6 / MVM-0a — Can a self-index be *constructed* to be load-bearing?
 
-*DRAFT v0.3 (2026-08-04). **NOT REGISTERED.** Per the house procedure
+*DRAFT v0.4 (2026-08-07). **NOT REGISTERED.** Per the house procedure
 (`experiments/README.md`; Experiment 3 §Procedure order), a pre-registration
 becomes binding only after John reviews it and an adversarial red-team pass
-is adjudicated and patched in. This draft is step 1 of that procedure. **Red-team pass 1 is complete** (15
+is adjudicated and patched in. **Red-team pass 1 is complete** (15
 findings, 3 fatal — `red_team_ledger.md`); its adopted patches are written
 in below and marked `[RT-nn]`. **RT-04 adjudicated by John (2026-08-04):
 MVM-0a is scoped to Q5 — the construction question — and does *not*
 instantiate the removal test. Bins are renamed accordingly and the
 description/center contrast is registered as MVM-0b's target. See §Scope.**
 Architecture follows `ROADMAP-post-removal-test.md` Part 3, which John
-adjudicated 2026-08-02 as the primary fork. Open architectural calls are
-collected in §Decisions this draft does not make.*
+adjudicated 2026-08-02 as the primary fork. **v0.4: the six open calls were
+adjudicated by John on 2026-08-07, all per
+`registration-decision-memo.md`'s recommendations; the values are written
+into §Materials, §Procedure, and §Ethics below and summarized in
+§Decisions — adjudicated. Remaining before registration: John's review of
+this draft, then the registration commit.***
 
 ## The claim under test
 
@@ -147,25 +151,55 @@ belonged to a contrast MVM-0a cannot run (§Scope).*
 ## Materials
 
 - **Core model.** A small transformer trained from scratch on synthetic
-  curricula. Scale target ~10–100M parameters (§Decisions — John picks the
-  point). The floor is structure, not intelligence
+  curricula. **Scale (adjudicated 2026-08-07): a registered ladder with a
+  pre-committed pick rule.** Learnability pilots run at ~10M → ~30M →
+  ~100M in that order — held-out task accuracy only, no ablations, which
+  keeps them RT-10-safe — and the registered scale is the *smallest* whose
+  held-out T_sr and T_state reach the battery-ceiling requirement of §Task
+  batteries. The floor is structure, not intelligence
   (`spec/minimum-viable-mind-proposal-v0.1.md` §The Build), so the model
   needs to be exactly large enough to learn the binding task and no
-  larger.
-- **The self-register.** A designated recurrent state vector carried
-  across turns within an episode and injected into every layer via
-  cross-attention. It is the candidate center. **Register width, injection
-  mechanism, and cross-turn attention span are locked in this registration,
-  not deferred [RT-03]** — windowed attention would make the register the
-  only cross-turn channel and guarantee H_load-bearing. Two hard prohibitions,
-  both because they design the answer in: **no auxiliary loss on register
-  content, and no hand-specified self-writing update rule.** Whether the
-  architecture carries one register or N (one per agent) must also be
-  fixed here, because the two give different meanings to every control
-  [RT-01].
+  larger — the ladder makes that a measured choice rather than a guess.
+  Token budget per run: 20 tokens/parameter (budget exhaustion for the
+  RT-07 checkpoint schedule). **Compute budget: $200 hard cap for the
+  entire registered design** (pilots, 5 seeds × full+twin, ablation
+  passes, calibration, blind-localization arm), tracked run-by-run in
+  `compute-ledger.md`; derivations in `registration-decision-memo.md` §1.
+  **Loss condition, verbatim: if ~100M cannot learn the task, the report
+  is "unlearnable at ≤100M under this curriculum" — never a silent bump
+  to a larger scale.** A larger scale is a new registration.
+- **The self-register (adjudicated 2026-08-07).** **N registers, one per
+  agent** — designated recurrent state vectors carried across turns within
+  an episode and injected into every layer via cross-attention; the
+  model's own register is the candidate center. Registers are **keyed to
+  the per-episode speaker markers, never to a persistent index** — there
+  is no register₀ that is "the model's" across episodes — and the read and
+  write machinery is **identical for all N**: no architectural marking of
+  the own register and no privileged query path, so ownership of a
+  register, like ownership of a commitment, is learnable only from causal
+  authorship [RT-02]. One register was rejected because it makes the
+  self/other asymmetry architectural rather than learned and leaves the
+  matched-capacity control with no matched object; N is also what gives
+  the swap probe and the matched-capacity control their objects [RT-01].
+  The known cost — N is the configuration where the keyed-memory outcome
+  is most available — is exactly what the RT-01 probes and the
+  `self-index-not-established` bin adjudicate. Locked values [RT-03]:
+  **register width 32; injection = cross-attention, every layer, same
+  mechanism for all N; cross-turn attention span = full-episode causal**
+  (the residual path must exist architecturally; whether it carries the
+  binding is the twin gate's empirical question — windowed attention would
+  make the register the only cross-turn channel and guarantee
+  H_load-bearing). Two hard prohibitions, both because they design the
+  answer in: **no auxiliary loss on register content, and no
+  hand-specified self-writing update rule.**
 - **Curriculum — the anti-router design, and the load-bearing idea.**
   Multi-agent synthetic dialogues in which the model is one agent among
-  N with **identical surface roles and randomized turn syntax**. Tasks
+  N with **identical surface roles and randomized turn syntax**.
+  **Registered values (adjudicated 2026-08-07): N = 4 agents, 8 turns per
+  episode** — the configuration cue-detector gate run (i) actually
+  certified (AUC 0.5008 [0.477, 0.524]), with the frozen batteries' chance
+  floors (`batteries/batteries_meta.json`: T_sr/T_si 0.125, T_state 0.042,
+  T_syntax 0.100) feeding the chance-corrected `d` [RT-14]. Tasks
   score binding *the model's own* prior commitments, outputs, and
   constraints against other agents'. Because agents are surface-identical
   and turn markers are randomized per episode, no turn-position or
@@ -234,7 +268,17 @@ a second task, not a report. The experiment is scoped to Q5 instead
 7. Registered ablation run at a **fixed checkpoint schedule** from first
    plateau to budget exhaustion [RT-07], per seed. The verdict is read at
    the budget-exhaustion checkpoint; the reliance trajectory is published.
-8. **Blind-localization arm [RT-12].** Run Experiment 1's full localization
+8. **Blind-localization arm [RT-12] — unconditional (adjudicated
+   2026-08-07).** The arm runs on the same trained seeds **regardless of
+   which bin the headline reaches** — registering it unconditionally now
+   removes the "instrument audit run only because the headline
+   disappointed" degree of freedom. Sequencing firewall: the headline
+   verdict is computed and committed *before* the localization pipeline
+   runs, and the pipeline receives a config with the register location
+   withheld. Honest limit: with one researcher, blindness is procedural,
+   not epistemic — what is blind is the pipeline's inputs, and every
+   threshold it uses is inherited from Experiment 1, not tuned here.
+   Run Experiment 1's full localization
    pipeline (linear probes, activation patching, SAEs where trainable) on
    MVM-0a *blind to the register's location*, and ask whether the
    instruments recover a center known-by-construction to exist and to be
@@ -427,8 +471,10 @@ this phase explicitly. Two commitments bind what comes after:
 - **The corrigibility document does not yet exist**, and is a
   non-negotiable precondition for any depth-loop training run (ROADMAP
   Stage 6 gate; spec §Limits). **A precondition with no owner is a note,
-  not a gate [RT-15]** — so this registration may not be finalized until
-  it names an owner and a target date, and two enforceable artifact rules
+  not a gate [RT-15]. Adjudicated 2026-08-07: owner = John, target date =
+  2026-08-21, and the document must be committed before the first
+  registered training run spends compute — if the date slips, the
+  training runs wait.** Two further enforceable artifact rules
   apply: MVM-0a checkpoints are tagged **non-promotable**, and any run
   adding a maintained boundary or a compute-gating stakes term must cite
   the corrigibility document's commit hash in its own pre-registration.
@@ -443,34 +489,44 @@ this phase explicitly. Two commitments bind what comes after:
 (`CLAUDE.md`) — the eyes-open part is the corrigibility document, and it
 is currently unwritten.
 
-## Decisions this draft does not make (John's calls)
+## Decisions — adjudicated (John, 2026-08-07)
 
 Red-team pass 1 moved several v0.1 deferrals *into* the registration
 (register width, injection mechanism, cross-turn attention span, one-vs-N
 registers) because deferring them let an unregistered choice fix the
-result [RT-03, RT-01]. **RT-04 — the blocking one — was adjudicated on
-2026-08-04: scope to Q5, defer the removal-test contrast to MVM-0b
-(§Scope).** What remains:
+result [RT-03, RT-01]. **RT-04 was adjudicated on 2026-08-04** (scope to
+Q5, defer the removal-test contrast to MVM-0b — §Scope). **The remaining
+six were adjudicated by John on 2026-08-07, all per
+`registration-decision-memo.md`'s recommendations** (candidates,
+derivations, and costings live there; the registered values live in the
+sections named below):
 
-1. **Model scale** (~10M vs ~100M) and compute budget, now multiplied by
-   k ≥ 5 seeds plus a no-register twin per seed. Still tens-of-dollars
-   territory, but no longer a single run.
-2. **Architecture values to lock in the registration:** register width,
-   injection mechanism, cross-turn attention span, and **one register or
-   N** — the last changes what every control means, so it cannot ride
-   along as an implementation detail [RT-01, RT-03].
-3. **Number of agents N** per dialogue and episode length. N also sets
-   the chance floor in the corrected `d` metric [RT-14].
-4. **Corrigibility document: owner and target date** — required in the
-   registration itself, not as a flag [RT-15].
-5. Whether Stage 2's binding metric enters here as a further acceptance
-   test (the fork adjudication folds it into MVM-0 acceptance tooling) or
-   waits for MVM-0b.
-6. Whether the blind-localization arm [RT-12] runs alongside the headline
-   or as a separate registered follow-on. The red-team's judgement, which
-   this draft shares, is that it may be worth more than the headline: it
-   is a ground-truth test of whether the program's interpretability
-   toolkit can find a center that is known to be there.
+1. **Scale + budget:** ladder 10M → 30M → 100M with the pre-committed
+   smallest-that-learns rule; 20 tokens/param; **$200 hard cap** tracked
+   in `compute-ledger.md`; unlearnable-at-≤100M loss condition verbatim.
+   → §Materials.
+2. **Architecture:** **N registers** (one per agent), marker-keyed,
+   symmetric read/write machinery, no privileged own-register path;
+   width 32; cross-attention at every layer; full-episode causal
+   attention. → §Materials.
+3. **Curriculum values:** N = 4 agents, 8 turns — the gate-certified
+   configuration; chance floors as frozen. → §Materials.
+4. **Corrigibility document:** owner John, target 2026-08-21, commits
+   before the first registered training run spends compute. → §Ethics.
+5. **Stage 2 / GWT binding metric: deferred to MVM-0b.** MVM-0a's
+   acceptance stack is already the heaviest in the program and a
+   broadcast-style metric presupposes the maintained-boundary machinery
+   MVM-0b adds; the 2026-08-02 fork adjudication ("into MVM-0 acceptance
+   tooling") is satisfied by MVM-0b, which is still MVM-0. Recorded here
+   so the fork's paper trail stays unbroken.
+6. **Blind-localization arm: alongside and unconditional**, verdict-first
+   firewall. → §Procedure step 8. The red-team's judgement stands: it is
+   a ground-truth test of whether the program's interpretability toolkit
+   can find a center that is known to be there, and may be worth more
+   than the headline.
+
+Nothing here is binding until John reviews this draft and the
+registration commit lands (house procedure, step 2).
 
 ## Results
 
