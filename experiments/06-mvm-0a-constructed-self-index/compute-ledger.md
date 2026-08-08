@@ -47,10 +47,12 @@ Balance $106.73 → $99.93 agrees with RunPod's billing rows ($6.02 pods +
 ~$0.78 volume drip since Aug 6), so nothing is unaccounted. But the 5090
 row itself bills **8.47 h against ~2.42 h of pod existence (~3.5×,
 $5.86 vs ~$1.67 expected)**; nvidia-smi showed one GPU. Actual recorded
-from the billing rows per rule 4 (their number, not ours). **Action
-(John): RunPod support ticket before the 5-seed runs** — at 3.5× the
-registered-run estimate inflates from ~$6–12 to ~$20–40. Still inside
-the cap either way.
+from the billing rows per rule 4 (their number, not ours). **Ticket
+waived by John (2026-08-08)** — the anomaly stands unexplained on
+RunPod's side and is priced in: 5-seed-run estimates below assume the
+~3.5× rate may recur (~$20–40 instead of ~$6–12). Still inside the cap.
+For the record: the pod was NOT left running — deleted 2.4h after
+creation, zero pods confirmed; the discrepancy is inside the billed row.
 
 ## Phase budget guide (from the decision memo, for estimates)
 
