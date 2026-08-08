@@ -2,6 +2,41 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## Registration decision memo drafted — all six blocking calls teed up (2026-08-07)
+
+`experiments/06-mvm-0a-constructed-self-index/registration-decision-memo.md`
+— the theta-delta-lock-memo pattern applied to MVM-0a's §Decisions list:
+constraint set, candidates, derivations, one recommendation per call.
+Advisory only; nothing registered. Proposed values (John adjudicates):
+
+- **Scale/budget:** a registered ladder (10M→30M→100M) with a pre-committed
+  smallest-that-learns rule — RT-10-safe because the pilot reads held-out
+  accuracy only, never ablations. 20 tok/param budget rule; full design
+  (5 seeds × full+twin = 10 runs) costs ~$2 / ~$12 / ~$120 by scale on
+  live-checked RunPod 4090 pricing; cap $200. Loss condition verbatim:
+  unlearnable-at-≤100M is the report, never a silent scale bump.
+- **Architecture [RT-01/RT-03]:** N registers (one per agent) — the
+  registered matched-capacity control and swap probe are undefined without
+  other-agent registers — marker-keyed per episode, symmetric machinery, no
+  privileged own-register path; d_reg=32; cross-attention every layer;
+  full-episode causal attention (the twin gate needs the residual path to
+  exist architecturally).
+- **Curriculum values:** keep N=4 agents / 8 turns — the values gate run (i)
+  actually certified; chance floors as frozen.
+- **Corrigibility doc [RT-15]:** John, 2026-08-21, commits before the first
+  registered training run spends compute.
+- **GWT binding metric:** defer to MVM-0b (scope discipline; broadcast
+  presupposes MVM-0b's maintained boundary; W-L1 stays winnable).
+- **Blind-localization arm [RT-12]:** alongside and unconditional —
+  registering it now selection-proofs the instrument audit; verdict-first
+  firewall; blindness stated honestly as procedural, not epistemic.
+
+Adjudication → v0.4 → John's review → registration commit. Gate run (ii)
+becomes buildable the moment the architecture values (2a–2d) are fixed,
+since the tensor layout is what it inspects. TimeAssembler roadmap trued up
+same session (step 30 marked done — draft + red-team are complete; new
+steps for adjudicate/register and gate runs (ii)/(iii)).
+
 ## MVM-0a curriculum built; RT-08 gate PASSES run (i) (2026-08-04)
 
 `src/curriculum.py` + `src/cue_detector.py` + frozen `batteries/`.
