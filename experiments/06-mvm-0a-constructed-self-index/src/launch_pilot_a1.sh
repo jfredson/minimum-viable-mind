@@ -16,11 +16,18 @@ GPU="${GPU:-NVIDIA GeForce RTX 5090}"          # fallback: GPU="NVIDIA GeForce R
 TERM_AT=$(date -u -v+6H +%Y-%m-%dT%H:%M:%SZ)   # est ~2.5-3.5h; 6h backstop
 
 echo "creating community pod ($GPU), terminate-after $TERM_AT"
-CREATE_OUT=$(runpodctl pod create mvm-a1-pilot \
+CREATE_OUT=$(runpodctl pod create --name mvm-a1-pilot \
   --template-id runpod-torch-v280 --gpu-id "$GPU" \
   --cloud-type COMMUNITY --public-ip --terminate-after "$TERM_AT")
 echo "$CREATE_OUT"
-POD=$(echo "$CREATE_OUT" | grep -oE '[a-z0-9]{13,16}' | head -1)
+POD=$(echo "$CREATE_OUT" | python3 -c '
+import sys, json
+try:
+    d = json.JSONDecoder(strict=False).decode(sys.stdin.read())
+    print(d.get("id") or "")
+except Exception:
+    print("")')
+[ -n "$POD" ] || POD=$(echo "$CREATE_OUT" | grep -oE '"id"[": ]+[a-z0-9]{12,16}' | grep -oE '[a-z0-9]{12,16}$' | head -1)
 [ -n "$POD" ] || { echo "could not parse pod id — inspect output above"; exit 1; }
 echo "pod: $POD"
 
