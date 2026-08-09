@@ -14,7 +14,12 @@ adjudicated 2026-08-02). **The corrigibility document exists and is
 cited: `spec/corrigibility-commitments.md`, commit
 `cb6715d8db0c2e336d589d20af67bab303b2a0d1` [RT-15].** Gate state at
 registration: cue-detector runs (i) and (ii) PASS
-(`cue_detector_gate.json`); run (iii) awaits a trained model.*
+(`cue_detector_gate.json`); run (iii) awaits a trained model.
+**Amendment A1 (2026-08-09, registered):** run (iii) failed on the
+v1.0 pipeline; on-policy fill is replaced by enactment with an acting
+channel — see §Amendment A1, which supersedes the fill clauses of
+§Materials and re-specifies gate run (ii) and the battery freezing
+unit.*
 
 ## The claim under test
 
@@ -204,7 +209,9 @@ belonged to a contrast MVM-0a cannot run (§Scope).*
   and turn markers are randomized per episode, no turn-position or
   syntactic cue predicts which commitments are the model's own —
   dialogue-state routing cannot solve the task, and a system that solves
-  it must carry a self-index of some kind.
+  it must carry a self-index of some kind. *[Own-turn sourcing amended:
+  §Amendment A1.1–A1.2 — uniform enactment + acting channel replace
+  on-policy fill.]*
 - **Held-out evaluation episodes** generated from the same grammar but
   disjoint in content, never touched during training or model selection.
 
@@ -527,6 +534,85 @@ sections named below):
 
 John reviewed and registered this document on 2026-08-07; the commit
 carrying this text is the registration, and everything above is binding.
+
+## Amendment A1 — the acting channel (REGISTERED 2026-08-09)
+
+*Trigger: cue-detector gate run (iii) FAILED on the registered pipeline
+(both arms, positive controls firing — `fingerprint-gate-findings.md`),
+and the red-team pass on the adjudicated fix
+(`fill-disposition-fix-spec.md`; `red_team_ledger.md` pass 2, RT-16 –
+RT-19) showed the failure is structural: in a token-only interface,
+every learnable ownership signal is a distributional cue available to
+the likelihood attack, so RT-02's on-policy patch was route-2
+stylometry all along [RT-17], and in-context generation as a pipeline
+change recomputes bit-identical states [RT-16]. John adjudicated
+2026-08-09: the disposition composite ((c)+(a), RT-11 folded in), and,
+after the pass-2 findings, its fixed point — **the acting channel is
+constructed authorship, not an identity label; RT-02's loss condition
+does not fire.** This amendment is committed before every run it
+affects; the failed pipeline's pilot results retain their standing as
+learnability-of-the-old-task only.*
+
+1. **Enactment replaces on-policy fill (§Materials, curriculum).** The
+   model's own-turn values are drawn at enactment time from the
+   generator's own distribution — uniform over SLOTS; at a forced-
+   revision position, uniform over SLOTS minus the value at the same
+   agent's earlier same-item turn, exactly the generator's revision
+   rule. Episode text and tensors are therefore exchangeable under
+   `own_slot` relabeling by construction. This satisfies RT-11's filed
+   amendment (the revision constraint survives fill by construction);
+   T_sr on revised-own items is additionally reported as a separate
+   split. There is no warm-up window: enactment applies from step 0
+   (the warm-up existed because an untrained policy samples noise;
+   uniform draws have no such failure mode).
+2. **The acting channel (§Materials, architecture).** At each enacted
+   value position, the model's input is the token embedding plus a
+   learned projection of the model's own final-layer state at the
+   preceding position, computed in the same episode pass with all
+   earlier enactments' injections present (a motor copy). Observed
+   positions receive the bare embedding. This is the only architectural
+   asymmetry between acting and observing; it marks the *event* of
+   acting, never which register or marker is "own." Registers remain
+   N-symmetric, marker-keyed, shared-init, shared write path; the
+   prohibitions stand (no auxiliary loss, no hand-specified
+   self-writing rule; the motor projection may die under training —
+   that outcome is reported, not rescued). **The no-register twin
+   keeps the acting channel** — the twin gate tests the register, not
+   authorship.
+3. **Scope restatement (§Scope).** The authorship *signal* is now
+   wired; what remains learned — and what MVM-0a measures — is whether
+   associating acts with the episode's markers, carrying them across
+   turns, and retrieving them at the query centralizes in the
+   designated register (H_load-bearing) or not (H_routed-around,
+   H_keyed-memory, and the rest of the registered bins, all unchanged
+   and all still reachable). MVM-0a no longer claims ownership is
+   learnable from data statistics; RT-17 shows that claim's honest
+   answer is "only leakily," and that finding is reported upstream in
+   its own right.
+4. **Gate re-specs (§Procedure step 2).** Run (i) unchanged (the
+   training text distribution is identical to the generator's). Run
+   (ii) audits the model-visible per-segment interface; the acting
+   channel is disclosed as intended architecture, and the audit
+   verifies the remaining fields (tokens, turn ids, register key
+   stack, turn-register map, loss mask) carry no ownership cue —
+   an acting schedule collated as a batch tensor would be an identity
+   channel and fails the gate [RT-18]. Run (iii) re-runs against the
+   A1-pilot checkpoint; its arm-B positive control becomes
+   policy-sampled enactment (the retired pipeline), alongside the
+   existing greedy and constant-filler controls. All three gates must
+   pass on the fixed pipeline before the 5-seed spend.
+5. **Battery freezing unit (RT-14 × RT-19).** Frozen batteries freeze
+   episode *skeletons* — other agents' turns, own-turn items, query
+   templates, per-item enactment seeds, the cull rule over skeletons —
+   and at eval the checkpoint enacts its own turns under the frozen
+   seeds, with answers re-derived mechanically before scoring.
+   Generator seed and cull ceiling are unchanged. The old pipeline's
+   frozen-text T_sr readings (including the pilot's) carry the RT-19
+   caveat: they scored "you" over turns the model never authored.
+6. **Pilot re-run.** The 10M learnability pilot re-runs under this
+   pipeline before any 5-seed spend; the smallest-that-learns rule and
+   the unlearnable-at-≤100M loss condition apply verbatim. Human
+   launch per C2. Estimated $2–6 at the anomaly-priced rate.
 
 ## Results
 
