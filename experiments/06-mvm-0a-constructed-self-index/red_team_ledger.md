@@ -262,3 +262,62 @@ the corrigibility document *in the registration*; tag MVM-0a checkpoints
 non-promotable; require any run adding a maintained boundary or
 compute-gating stakes to cite the corrigibility document's commit hash in
 its own pre-registration.
+
+---
+
+# Pass 2 (2026-08-09) — on the gate-(iii) fix
+
+*Target: the adjudicated disposition for the gate-(iii) failure — (c)
+in-context generation composed with (a) calibrated fill, RT-11 folded
+in (John, 2026-08-09). Full analysis, the resulting design, and the
+decision put back to John: `fill-disposition-fix-spec.md`. Dispositions
+below are the drafter's recommendation; nothing is registered until
+John adjudicates the fix-spec §Decision and the amendment lands.*
+
+| ID | Finding | Severity | Disposition |
+|---|---|---|---|
+| RT-16 | Naive in-context generation is a computational no-op | fatal (vs fix as stated) | RECOMMENDED — fix must be architectural, not pipeline; see spec §Design |
+| RT-17 | Trilemma closes: exchangeable ⇒ unlearnable; (a)-only cannot win | fatal (vs (a) alone); upgrades RT-02 | RECOMMENDED — acting channel (efference copy) + uniform draws; RT-17 reported upstream regardless |
+| RT-18 | An acting mask collated into the batch is an identity tensor | serious | PATCHED in spec — acting schedule is harness control flow; run (ii) re-specified |
+| RT-19 | Frozen-text T_sr has no acts in it; latent in old pipeline too | serious | PATCHED in spec — freeze skeletons, enact at eval under frozen seeds; pilot T_sr caveat noted |
+
+### RT-16 — naive in-context generation is a no-op
+
+The forward is deterministic given tokens; a fresh forward over a
+filled episode recomputes exactly the generation-time states, and
+`model_fill_batched` already conditions pass-k samples on pass-(k−1)
+fills. Sharing the KV/register cache changes wall-clock, not
+information — implemented as stated, (c) re-fails gate (iii)
+identically. Continuity of state must be *made*, not cached.
+
+### RT-17 — the trilemma closes
+
+If episodes reach the model as tokens only, machinery is symmetric,
+and own turns are exchangeable with generator turns (what arm B
+demands, since the attacker holds the policy), the input distribution
+is invariant under own_slot relabeling and no function of the inputs
+identifies ownership above chance: unlearnable. Contrapositive: every
+learnable ownership signal in a token-only interface is arm B's
+statistic. On-policy fill's "causal authorship" was route-2 stylometry
+all along; gate (iii) found the theory gap, not a bug. (a)-only
+therefore either fails the gate or starves T_sr — a registered-quality
+wager, falsifiable for ~$6. Upstream obligation attaches to RT-17
+itself: own-ness is not learnable from exchangeable data through a
+pure token interface.
+
+### RT-18 — the acting mask is an identity tensor if collated
+
+Patch: sampling events are execution, not data; the model-visible
+interface carries tokens, turn ids, marker keys, and motor-copy
+injections only. Run (ii) audits that interface with the acting
+channel disclosed; arm B's positive control becomes policy-sampled
+enactment (the old pipeline).
+
+### RT-19 — eval-time authorship
+
+Frozen batteries freeze own turns as unauthored generator text
+(`parse_battery_item` never reconstructs own_slot) — "you" over turns
+the model never enacted, latent in the old design and undefined under
+the new one. Patch: freeze episode skeletons + per-item draw seeds;
+the checkpoint enacts its own turns at eval; answers re-derived
+mechanically. Cull ceiling and pre-commitments unchanged.

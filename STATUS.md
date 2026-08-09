@@ -2,6 +2,39 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## FIX RED-TEAMED — the trilemma closes; sharpened design back to John (2026-08-09)
+
+John adjudicated the gate-(iii) disposition in-session: **(c)
+in-context generation + (a) calibrated fill, RT-11 folded in.** The
+required red-team pass on the chosen fix ran the same day
+(`fill-disposition-fix-spec.md`; ledger pass 2, RT-16–RT-19) and the
+composite survives only in a sharpened form:
+
+- **RT-16 (fatal vs (c) as stated):** naive in-context generation is a
+  computational no-op — the forward is deterministic given tokens, so
+  fill-then-train already computes bit-identical states; a pipeline
+  change alone re-fails gate (iii).
+- **RT-17 (fatal vs (a) alone; upgrades RT-02):** in a token-only
+  interface, exchangeable ⇒ unlearnable — every learnable ownership
+  signal is arm B's statistic, so calibrated fill either fails the gate
+  or starves T_sr. On-policy fill's "causal authorship" was route-2
+  stylometry all along. RT-17 goes upstream regardless of disposition.
+- **The design (the composite's fixed point):** *symmetrize the data,
+  de-symmetrize the act* — own turns drawn from the generator's own
+  distribution (exchangeable by construction; revision rule respected,
+  RT-11 satisfied by construction), authorship carried by an **acting
+  channel** (motor-copy/efference input at emission positions).
+  Registers stay symmetric; twin keeps the channel; policy-
+  reconstruction shortcut dies; the old pipeline becomes arm B's
+  positive control. RT-18/RT-19 (acting-mask tensor; frozen-battery
+  enactment) patched in the spec.
+
+**Blocking decision (John):** is the acting channel constructed
+authorship (amend → re-pilot ~$2–6 → re-gate → 5-seed) or an identity
+label (RT-02's registered loss condition fires; report upstream)?
+Option (3): falsify (a)-only first for ~$6. Recommendation in the spec:
+(1). No amendment lands until this is adjudicated.
+
 ## GATE RUN (iii) FAILS — the rollouts carry an ownership fingerprint; 5-seed spend BLOCKED (2026-08-08)
 
 Built the same day the checkpoint existed, and it fired: **both arms
