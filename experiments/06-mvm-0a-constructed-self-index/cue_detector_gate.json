@@ -68,10 +68,79 @@
       "clean_within_equivalence_bound": true,
       "positive_control_detects_planted_leak": true,
       "GATE": "PASS"
+    },
+    {
+      "run": "(iii) post-training rollout fingerprint [A1 pipeline]",
+      "params": {
+        "n_episodes": 4000,
+        "seed": 20260808,
+        "checkpoint": "pilot_a1_10m_seed0.pt",
+        "checkpoint_md5": "bab56cd890d31980411e73ce333a6317",
+        "equivalence_bound": [
+          0.45,
+          0.55
+        ],
+        "positive_control_min_auc": 0.7
+      },
+      "arms": [
+        {
+          "arm": "A committed family on enacted text [A1]",
+          "clean": {
+            "mode": "enact",
+            "n_examples": 8000,
+            "auc": 0.4874,
+            "ci95": [
+              0.4664,
+              0.511
+            ]
+          },
+          "positive_control": {
+            "mode": "constant",
+            "n_examples": 8000,
+            "auc": 0.9361,
+            "ci95": [
+              0.9239,
+              0.9474
+            ]
+          },
+          "clean_pass": true,
+          "pc_pass": true
+        },
+        {
+          "arm": "B likelihood attack (model-scored values) [A1]",
+          "clean": {
+            "mode": "enact",
+            "n_examples": 8000,
+            "auc": 0.4933,
+            "ci95": [
+              0.4808,
+              0.5062
+            ]
+          },
+          "positive_control": {
+            "mode": "greedy",
+            "n_examples": 8000,
+            "auc": 0.8796,
+            "ci95": [
+              0.8717,
+              0.8872
+            ]
+          },
+          "positive_control_policy": {
+            "mode": "policy",
+            "n_examples": 8000,
+            "auc": 0.8514,
+            "ci95": [
+              0.8427,
+              0.8601
+            ]
+          },
+          "clean_pass": true,
+          "pc_pass": true
+        }
+      ],
+      "GATE": "PASS"
     }
   ],
-  "GATE": "PASS",
-  "pending_runs": {
-    "(iii) post-training rollouts": "requires a trained model"
-  }
+  "GATE": "PASS"
 }

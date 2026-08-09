@@ -2,6 +2,37 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## A1 PILOT RAN: 10M FAILS ceiling — ladder climbs to 30M; GATE (iii) PASSES on the A1 pipeline (2026-08-09, night)
+
+John fired the pilot in-session (pod `3ethp3bc7le6e4`, 2.78h, ~$2;
+checkpoint md5 `bab56cd8…` in `artifacts/pilot-a1-10m-seed0/`; pod
+deleted, zero pods). Full record: `pilot-a1-findings.md`.
+
+**The pipeline is clean: gate (iii) PASSES at the registered n=4000**
+— the run that killed v1.0. Arm A 0.4874 [0.4664, 0.5110], arm B
+0.4933 [0.4808, 0.5062], all positive controls fire **including the
+retired v1.0 policy pipeline at 0.85** — RT-17's by-construction
+prediction is now an empirical record. All three gates PASS on A1.
+
+**The scale is not settled: 10M fails the ceiling requirement.**
+T_state/T_syntax 1.00 and T_sr 0.96 — but the acting channel solves
+own-binding by step 1,000, **T_si never transitions (final 0.37; v1.0
+hit 0.97 on the same battery/budget)**, and **T_sr_rev is 0.00 for the
+whole run** (the model retrieves its FIRST act per item, never the
+revision). Reading 0.96/1.00 as a pass would be threshold-gaming;
+verdict: 10M does not learn → **30M pilot next per the ladder** (John
+launches; est $4–7 nominal / ~$25 anomaly-priced). Two hypotheses go
+with it: H_scale (30M builds the shared binding T_si needs) vs
+**H_shortcut-starvation** (the wired self-channel removed the pressure
+that built other-binding in v1.0 — if 30M reproduces the signature,
+stop the ladder and open the amendment cycle; that finding would go
+upstream in its own right: a wired self-channel can PREVENT learning
+general other-modeling).
+
+Run (iii) re-runs at whatever scale the ladder registers, before the
+5-seed spend. Ledger ~$8/$200; the 08-08 anomaly row grew overnight
+(noted in ledger).
+
 ## A1 ADJUDICATED + REGISTERED + BUILT — enactment pipeline green; gates (i)/(ii) re-PASS; A1 pilot is the gate (2026-08-09, cont.)
 
 **John adjudicated option (1): the acting channel is constructed
