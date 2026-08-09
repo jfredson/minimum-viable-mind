@@ -59,12 +59,20 @@ COPYFILE_DISABLE=1 tar czf - --exclude='__pycache__' --exclude='._*' \
   $SSH "mkdir -p /root/mvm/out && tar xzf - -C /root/mvm --no-same-owner"
 
 echo "starting detached training run"
+# Community-pod ssh sessions can reset on teardown even with </dev/null on
+# the nohup child (observed 2026-08-09, exit 255 AFTER the run started) —
+# tolerate it and verify aliveness explicitly below instead.
 $SSH "cd /root/mvm/src && nohup python train.py \
   --scale 10M --seed 0 --batch 128 --steps 100000 \
   --max-tokens 171790000 --eval-every 500 --eval-n 100 \
   --eval-mode heldout --device cuda \
   --out /root/mvm/out/pilot_a1_10m_seed0.pt \
-  > /root/mvm/train.log 2>&1 < /dev/null &"
+  > /root/mvm/train.log 2>&1 < /dev/null &" \
+  || echo "ssh teardown reset (benign if the aliveness check passes)"
+
+sleep 20
+$SSH 'pgrep -f "train.py --scale" >/dev/null && echo "ALIVE: training process confirmed" || echo "NOT RUNNING — check /root/mvm/train.log"' \
+  || echo "aliveness check ssh failed — poll manually"
 
 cat <<EOF
 
