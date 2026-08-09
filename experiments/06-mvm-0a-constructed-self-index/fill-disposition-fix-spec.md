@@ -200,7 +200,13 @@ changes.
 6. Then gates (i)–(iii) re-run on the fixed pipeline; then the 5-seed ×
    full+twin run.
 
-## Decision (John adjudicates; nothing below is registered)
+## Decision — ADJUDICATED (John, 2026-08-09): option (1)
+
+**John adjudicated in-session: the acting channel is constructed
+authorship, not an identity label; RT-02's loss condition does not
+fire.** Amendment A1 registered same day (commit `a11b434`); the
+implementation, smoke test, and gate re-runs followed in the same
+session. The record of the call as it was put:
 
 The composite John adjudicated on 2026-08-09 survives only in the form
 above, and the form above reinterprets a registered clause, so it goes

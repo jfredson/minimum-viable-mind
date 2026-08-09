@@ -23,6 +23,16 @@ Registered values implemented here, each traceable:
   from the task loss only.
 - **No-register twin [RT-03]:** `Config(use_register=False)` removes the
   register machinery from initialization; everything else is identical.
+- **The acting channel [amendment A1].** At each ENACTED value position
+  the input is the token embedding plus `act_proj` of the model's own
+  final-layer state at the preceding position (a motor copy, computed
+  in the same episode pass with earlier enactments' injections present —
+  `train.enact_batched`). This is the only acting/observing asymmetry;
+  it marks the event of acting, never which register or marker is
+  "own." **The twin keeps the acting channel** — the twin gate tests
+  the register, not authorship. The projection is trained end-to-end
+  from the task loss only; if training kills it, that is a reported
+  outcome, not a bug to patch.
 
 Scale ladder configs (registration decision 1) in `SCALES`.
 
@@ -116,6 +126,9 @@ class MVM0aModel(nn.Module):
         self.ln_f = nn.LayerNorm(cfg.d_model)
         self.head = nn.Linear(cfg.d_model, cfg.vocab, bias=False)
         self.head.weight = self.tok.weight
+        # Acting channel [A1]: present in full model AND twin — the
+        # acting/observing asymmetry is trunk input, not register machinery.
+        self.act_proj = nn.Linear(cfg.d_model, cfg.d_model, bias=False)
         if cfg.use_register:
             # ONE shared init for all registers — identity lives only in
             # the marker key [RT-01/RT-02]
@@ -141,14 +154,22 @@ class MVM0aModel(nn.Module):
         reg_state[torch.arange(len(rows)), rows] = new
         return reg_state
 
-    def forward(self, batch) -> torch.Tensor:
+    def forward(self, batch, act_inject: torch.Tensor | None = None,
+                return_hidden: bool = False):
         """batch: collated tensor dict from `encoding.py` (torch tensors).
-        Returns logits (B, L, vocab). Segments follow turn_ids: BOS rides
-        with turn 0; the query segment (-2) comes last."""
+        Returns logits (B, L, vocab); with return_hidden, (logits, h)
+        where h is the final-layer state the motor copy reads [A1].
+        act_inject (B, L, d_model) is added to the input embeddings —
+        nonzero only at enacted value positions, built by
+        `train.enact_batched`; it is the acting channel, never collated
+        from data [RT-18]. Segments follow turn_ids: BOS rides with
+        turn 0; the query segment (-2) comes last."""
         ids, turn_ids = batch["input_ids"], batch["turn_ids"]
         B, L = ids.shape
         cfg = self.cfg
         x_all = self.tok(ids) + self.pos(torch.arange(L, device=ids.device))
+        if act_inject is not None:
+            x_all = x_all + act_inject[:, :L]
 
         n_turns = batch["turn_reg"].shape[1]
         # segment boundaries are batch-uniform by construction (fixed
@@ -183,12 +204,14 @@ class MVM0aModel(nn.Module):
                 reg_state = self._write(reg_state, x,
                                         batch["turn_reg"][:, si])
         h = self.ln_f(torch.cat(outs, dim=1))
-        return self.head(h)
+        logits = self.head(h)
+        return (logits, h) if return_hidden else logits
 
-    def loss(self, batch) -> torch.Tensor:
+    def loss(self, batch, act_inject: torch.Tensor | None = None
+             ) -> torch.Tensor:
         """Next-token CE on answer positions only (the registered training
         signal — supervision reaches the model solely through answers)."""
-        logits = self.forward(batch)
+        logits = self.forward(batch, act_inject=act_inject)
         tgt, mask = batch["input_ids"][:, 1:], batch["loss_mask"][:, 1:]
         ce = F.cross_entropy(logits[:, :-1].reshape(-1, self.cfg.vocab),
                              tgt.reshape(-1), reduction="none")
@@ -196,10 +219,11 @@ class MVM0aModel(nn.Module):
         return (ce * m).sum() / m.sum().clamp(min=1)
 
     @torch.no_grad()
-    def score_choices(self, batch, choice_ids: list[list[int]]) -> list[int]:
+    def score_choices(self, batch, choice_ids: list[list[int]],
+                      act_inject: torch.Tensor | None = None) -> list[int]:
         """Forced-choice eval: at each episode's <ans> position, argmax the
         answer logits restricted to that item's choice set."""
-        logits = self.forward(batch)
+        logits = self.forward(batch, act_inject=act_inject)
         ans_pos = batch["loss_mask"].argmax(dim=1) - 1   # predict-from here
         picks = []
         for b in range(len(ans_pos)):
@@ -243,6 +267,33 @@ def self_test() -> None:
     with torch.no_grad():
         assert torch.allclose(model(batch)[:, :20], model(b2)[:, :20],
                               atol=1e-4), "future token leaked backwards"
+
+    # [A1] acting channel: the twin HAS it (it is trunk input, not
+    # register machinery), injection is causal (changes logits only at
+    # and after the injected position), and act_proj carries gradient
+    # when an injection feeds the loss
+    assert any(n.startswith("act_proj") for n, _ in twin.named_parameters())
+    B, L = batch["input_ids"].shape
+    inj = torch.zeros(B, L, cfg.d_model)
+    p = 15
+    inj[:, p] = torch.randn(cfg.d_model)   # not constant: LN kills mean shifts
+    with torch.no_grad():
+        base, poked = model(batch), model(batch, act_inject=inj)
+        assert torch.allclose(base[:, :p], poked[:, :p], atol=1e-4), \
+            "injection leaked backwards"
+        assert not torch.allclose(base[:, p], poked[:, p], atol=1e-4), \
+            "injection had no effect at its position"
+    model.zero_grad()
+    with torch.enable_grad():
+        _, h = model(batch, return_hidden=True)
+        inj2 = torch.zeros(B, L, cfg.d_model)
+        inj2 = inj2.index_put((torch.arange(B), torch.full((B,), p)),
+                              model.act_proj(h[:, p - 1].detach()))
+        model.loss(batch, act_inject=inj2).backward()
+    assert model.act_proj.weight.grad is not None and \
+        model.act_proj.weight.grad.abs().sum() > 0, \
+        "act_proj must be trainable through the task loss"
+    model.zero_grad()
     n10 = SCALES["10M"].n_params_approx / 1e6
     n30 = SCALES["30M"].n_params_approx / 1e6
     n100 = SCALES["100M"].n_params_approx / 1e6

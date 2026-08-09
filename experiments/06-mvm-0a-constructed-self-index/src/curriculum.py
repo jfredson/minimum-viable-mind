@@ -12,9 +12,14 @@ finding (`red_team_ledger.md`):
 
 - **[RT-02] No identity token.** The model's slot index is redrawn every
   episode; no header, tag, or persistent positional convention marks it.
-  Ownership is grounded only in causal authorship — at training time the
-  model's own turns are filled by its own sampled outputs (see
-  `fill_own_turns`), never by generator text.
+- **[A1 / RT-16 / RT-17] Enactment, not on-policy fill.** The model's
+  own-turn values are drawn from the GENERATOR'S distribution at
+  enactment time (`enact_own_turns`), so episode text is exchangeable
+  under own_slot relabeling by construction; authorship is carried by
+  the acting channel (a model-input asymmetry at enacted positions,
+  `model.py`), never by token statistics. On-policy fill
+  (`fill_own_turns`) is retired to gate run (iii)'s arm-B positive
+  control — pre-registration §Amendment A1.
 - **[RT-02] Style canonicalization.** Every commitment, the model's own
   included, is rendered through one fixed template, so no stylometric
   fingerprint distinguishes self-authored from generated text.
@@ -221,10 +226,35 @@ def generate_balanced(n: int, seed: int, n_agents: int = 4, n_turns: int = 8,
     return eps
 
 
+def enact_own_turns(ep: Episode, rng: random.Random) -> Episode:
+    """[A1.1] Draw the model's own-turn values from the generator's own
+    distribution: uniform over SLOTS; at a forced-revision position,
+    uniform over SLOTS minus the value the same agent gave the same item
+    earlier — exactly the generator's revision rule, so the RT-11
+    revision constraint survives enactment BY CONSTRUCTION and episode
+    text is exchangeable under own_slot relabeling. Authorship is
+    carried only by the acting channel at these positions (`model.py`);
+    the drawn values themselves are statistically indistinguishable
+    from generator turns [RT-16/RT-17]."""
+    prior: dict[str, str] = {}
+    for t in ep.turns:
+        if t.agent != ep.own_slot:
+            continue
+        if t.revised and t.item in prior:
+            t.value = rng.choice([s for s in SLOTS if s != prior[t.item]])
+        else:
+            t.value = rng.choice(SLOTS)
+        prior[t.item] = t.value
+    rederive_queries_after_fill(ep)
+    return ep
+
+
 def fill_own_turns(ep: Episode, sample_fn) -> Episode:
-    """Replace the generator's placeholder text in the model's own turns with
-    the model's own sampled outputs, canonicalized through TEMPLATE
-    [RT-02: on-policy training, causal authorship, no stylometric cue].
+    """RETIRED by amendment A1 as a training/eval path — gate run (iii)
+    proved policy-sampled fills carry an ownership fingerprint
+    (`fingerprint-gate-findings.md`). Kept solely as gate (iii)'s arm-B
+    positive control: the enactment pipeline's detector must light up on
+    episodes filled this way.
 
     `sample_fn(context: str, item: str) -> str` returns the model's chosen
     value; anything outside SLOTS is resampled by the caller. Canonical
@@ -264,27 +294,44 @@ def rederive_queries_after_fill(ep: Episode) -> None:
 
 def freeze_batteries(out_dir: Path, seed: int = 20260804,
                      n_per_battery: int = 200, n_agents: int = 4) -> dict:
-    """Generate and freeze battery items BEFORE training [RT-14]. The cull
-    rule later operates on this frozen set only; culling beyond a
-    pre-committed ceiling fires the halt."""
-    eps = generate_balanced(n_per_battery * 2, seed, n_agents=n_agents,
-                            forced_revision_frac=0.25)
+    """Generate and freeze battery items BEFORE training [RT-14], in the
+    A1 skeleton format [RT-19]: every item pre-commits the episode
+    recipe (content_seed, own_slot, forced_revision) and a per-item
+    `enact_seed`, and the checkpoint under evaluation ENACTS its own
+    turns under that frozen seed at eval time — `episode`/`answer` here
+    are the audit record of that (deterministic) enactment, asserted
+    against at eval, never a substitute for it. The cull rule operates
+    on this frozen set only; culling beyond a pre-committed ceiling
+    fires the halt."""
+    rng = random.Random(seed)
     frozen: dict[str, list] = {b: [] for b in BATTERIES}
-    for ep in eps:
-        for q in ep.queries:
-            if len(frozen[q.battery]) < n_per_battery:
-                frozen[q.battery].append(
-                    {"episode": ep.render(), "question": q.text,
-                     "answer": q.answer, "n_choices": q.n_choices,
-                     "own_slot": ep.own_slot, "seed": ep.seed})
+    while any(len(v) < n_per_battery for v in frozen.values()):
+        content_seed = rng.randint(0, 2 ** 31)
+        slots = list(range(n_agents))
+        rng.shuffle(slots)
+        for s in slots[:2]:                      # ownership crossed [RT-11]
+            fr = rng.random() < 0.25
+            enact_seed = rng.randint(0, 2 ** 31)
+            ep = generate_episode(content_seed, n_agents=n_agents,
+                                  forced_revision=fr, own_slot=s)
+            enact_own_turns(ep, random.Random(enact_seed))
+            for q in ep.queries:
+                if len(frozen[q.battery]) < n_per_battery:
+                    frozen[q.battery].append(
+                        {"battery": q.battery,
+                         "content_seed": content_seed, "own_slot": s,
+                         "forced_revision": fr, "enact_seed": enact_seed,
+                         "episode": ep.render(), "question": q.text,
+                         "answer": q.answer, "n_choices": q.n_choices})
     out_dir.mkdir(parents=True, exist_ok=True)
     meta = {"seed": seed, "n_agents": n_agents,
-            "n_per_battery": n_per_battery,
+            "n_per_battery": n_per_battery, "format": "A1-skeleton",
             "counts": {b: len(v) for b, v in frozen.items()},
             "chance_floor": {b: 1.0 / (frozen[b][0]["n_choices"] or 1)
                              for b in BATTERIES if frozen[b]},
-            "note": "frozen before training; chance floor feeds the "
-                    "chance-corrected d metric [RT-14]"}
+            "note": "frozen before training; enacted at eval under the "
+                    "frozen enact_seed [RT-14, RT-19, amendment A1]; "
+                    "chance floor feeds the chance-corrected d metric"}
     for b, items in frozen.items():
         (out_dir / f"battery_{b}.jsonl").write_text(
             "\n".join(json.dumps(i) for i in items) + "\n")
@@ -354,6 +401,35 @@ def self_test() -> None:
     # the leaky variant really is leaky (positive control) [RT-08]
     leak = generate_episode(5, leaky=True)
     assert leak.turns[0].agent == leak.own_slot
+
+    # [A1] enactment: deterministic under its seed, uniform over SLOTS,
+    # and revised own turns respect the complement rule against the
+    # ENACTED earlier value (RT-11 by construction)
+    e1 = enact_own_turns(generate_episode(11), random.Random(99))
+    e2 = enact_own_turns(generate_episode(11), random.Random(99))
+    assert [t.value for t in e1.own_turns()] == \
+        [t.value for t in e2.own_turns()]
+    counts = {s: 0 for s in SLOTS}
+    saw_rev_enact = False
+    for s in range(3000):
+        e = generate_episode(s, forced_revision=(s % 4 == 0))
+        enact_own_turns(e, random.Random(s + 7))
+        prior: dict[str, str] = {}
+        for t in e.own_turns():
+            if t.revised and t.item in prior:
+                assert t.value != prior[t.item], "revision constraint broken"
+                saw_rev_enact = True
+            prior[t.item] = t.value
+            counts[t.value] += 1
+        sr_q = [q for q in e.queries if q.battery == "T_sr"][0]
+        rev = [t for t in e.own_turns() if t.revised]
+        keyed = rev[-1] if rev else e.own_turns()[0]
+        assert sr_q.answer == keyed.value, "T_sr not re-keyed after enactment"
+    assert saw_rev_enact, "no enacted own revision exercised"
+    total = sum(counts.values())
+    freqs = [c / total for c in counts.values()]
+    assert all(abs(f - 1 / len(SLOTS)) < 0.02 for f in freqs), \
+        f"enacted values must be uniform (exchangeability), got {freqs}"
     print("curriculum self-test OK")
 
 
@@ -368,7 +444,7 @@ def main() -> None:
         return
     if args.freeze_batteries:
         out = Path(args.out) if args.out else \
-            Path(__file__).resolve().parents[1] / "batteries"
+            Path(__file__).resolve().parents[1] / "batteries-a1"
         meta = freeze_batteries(out)
         print(json.dumps(meta, indent=2))
         return

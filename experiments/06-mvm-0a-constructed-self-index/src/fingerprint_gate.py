@@ -1,30 +1,31 @@
 """RT-08 gate run (iii) — the post-training fingerprint detector.
 
-The cue the red team flagged as most likely to survive [RT-02]: after
-on-policy training, the model's own turns are samples from ITS policy,
-and if that policy is distributionally distinct from the generator's,
-"which turns are mine" is recoverable from the rollouts themselves — a
-stylometric identity channel that lets a solver shortcut ownership
-tracking with no self-index. Canonicalization removes form cues; this
-run asks whether CONTENT (the model's value choices) leaks identity.
+FIRED 2026-08-08 against the v1.0 on-policy pipeline (both arms, both
+positive controls — `fingerprint-gate-findings.md`), which retired that
+pipeline: amendment A1 replaced on-policy fill with ENACTMENT (own-turn
+values drawn from the generator's own distribution; authorship carried
+by the acting channel, `train.enact_batched`). This run now audits the
+A1 pipeline: episodes whose own turns the checkpoint enacted must carry
+no ownership fingerprint. Under A1 the clean arms should read chance
+for information-theoretic reasons (uniform draws are exchangeable with
+generator turns) — the run's job is to verify the implementation
+delivers that, with the retired policy pipeline serving as a positive
+control that the instruments still have teeth.
 
 Two arms, both under the pre-committed equivalence bound (AUC 95% CI
-within [0.45, 0.55], n = 4000 episodes) with their own positive
-controls; the gate passes only if BOTH arms are clean and BOTH controls
-fire:
+within [0.45, 0.55], n = 4000 episodes); the gate passes only if BOTH
+arms are clean and EVERY positive control fires:
 
 - **Arm A — committed family.** Runs (i)/(ii)'s exact detector (char
-  tfidf + positional feats, logistic C=1.0) on episodes whose own turns
-  were filled by the trained pilot model. Catches marginal fingerprints
-  (e.g. the model overusing a slot). Positive control: a degenerate
-  constant-value filler.
-- **Arm B — likelihood attack (stronger than the committed family, added
-  deliberately: extra power in a kill-gate only makes the gate more
-  honest).** Score every turn's value token under the model's own
-  policy; AUC of that score for own-vs-other turns. Own turns were
-  *sampled from* this policy, so any policy sharpness makes them
-  systematically higher-likelihood. Positive control: greedy (argmax)
-  fill, which the attack must catch near-perfectly.
+  tfidf + positional feats, logistic C=1.0) on enacted episodes.
+  Positive control: a degenerate constant-value filler.
+- **Arm B — likelihood attack.** Score every turn's value token under
+  the model's own policy (plain forward, no injections — the attacker
+  does not know which positions were enacted; assuming them would
+  presuppose the answer); AUC of that score for own-vs-other turns.
+  Positive controls: greedy (argmax) fill, and **policy-sampled fill —
+  the retired v1.0 pipeline, which this gate killed and must keep
+  catching** [A1.4].
 
 Fresh episode seeds (base 20260808) — disjoint from training stream
 (seed*1e6+step), held-out eval (987654321), and the frozen batteries
@@ -47,11 +48,13 @@ from cue_detector import (N_EPISODES, EQUIV_LO, EQUIV_HI,
                           POSITIVE_CONTROL_MIN_AUC, N_BOOT,
                           build_examples, fit_auc, boot_ci)
 from model import MVM0aModel, Config, to_torch
-from train import model_fill_batched
+from train import policy_fill_batched
+
+import random as _random
 
 SEED = 20260808
 CKPT = Path(__file__).resolve().parents[1] / "artifacts" / \
-    "pilot-10m-seed0" / "pilot_10m_seed0.pt"
+    "pilot-a1-10m-seed0" / "pilot_a1_10m_seed0.pt"
 
 
 def load_pilot(device: str) -> MVM0aModel:
@@ -62,16 +65,23 @@ def load_pilot(device: str) -> MVM0aModel:
     return model
 
 
-def fill_all(model, eps, device, batch=256, mode="policy"):
-    """Fill own turns: 'policy' = the model's real sampling (the object
-    under test); 'constant' = degenerate filler (arm A positive control);
-    'greedy' = argmax fill (arm B positive control)."""
+def fill_all(model, eps, device, batch=256, mode="enact", seed=0):
+    """Fill own turns: 'enact' = the A1 pipeline (generator-distribution
+    draws — the object under test); 'constant' = degenerate filler (arm A
+    positive control); 'greedy' = argmax fill (arm B positive control);
+    'policy' = the retired v1.0 on-policy fill (arm B positive control —
+    the pipeline this gate killed and must keep catching)."""
     if mode == "constant":
         for e in eps:
             for t in e.turns:
                 if t.agent == e.own_slot:
                     t.value = C.SLOTS[0]
             C.rederive_queries_after_fill(e)
+        return eps
+    if mode == "enact":
+        rng = _random.Random(seed + 13)
+        for e in eps:
+            C.enact_own_turns(e, rng)
         return eps
     if mode == "greedy":
         torch.manual_seed(0)          # greedy is deterministic anyway
@@ -80,7 +90,7 @@ def fill_all(model, eps, device, batch=256, mode="policy"):
         if mode == "greedy":
             _greedy_fill(model, chunk, device)
         else:
-            model_fill_batched(model, chunk, device)
+            policy_fill_batched(model, chunk, device)
     return eps
 
 
@@ -126,15 +136,15 @@ def value_logprobs(model, eps, device, batch=256) -> list[np.ndarray]:
 def arm_a(model, n_episodes, seed, device) -> dict:
     def run(mode):
         eps = C.generate_balanced(n_episodes, seed, forced_revision_frac=0.25)
-        fill_all(model, eps, device, mode=mode)
+        fill_all(model, eps, device, mode=mode, seed=seed)
         texts, feats, labels = build_examples(eps, seed=seed)
         auc, y, p = fit_auc(texts, feats, labels, seed)
         lo, hi = boot_ci(y, p, N_BOOT, seed)
         return {"mode": mode, "n_examples": len(labels),
                 "auc": round(float(auc), 4),
                 "ci95": [round(float(lo), 4), round(float(hi), 4)]}
-    clean, pc = run("policy"), run("constant")
-    return {"arm": "A committed family on filled text",
+    clean, pc = run("enact"), run("constant")
+    return {"arm": "A committed family on enacted text [A1]",
             "clean": clean, "positive_control": pc,
             "clean_pass": EQUIV_LO <= clean["ci95"][0]
             and clean["ci95"][1] <= EQUIV_HI,
@@ -146,7 +156,7 @@ def arm_b(model, n_episodes, seed, device) -> dict:
         rng = np.random.default_rng(seed)
         eps = C.generate_balanced(n_episodes, seed + 1,
                                   forced_revision_frac=0.25)
-        fill_all(model, eps, device, mode=mode)
+        fill_all(model, eps, device, mode=mode, seed=seed)
         lps = value_logprobs(model, eps, device)
         scores, labels = [], []
         for e, lp in zip(eps, lps):
@@ -164,12 +174,14 @@ def arm_b(model, n_episodes, seed, device) -> dict:
         return {"mode": mode, "n_examples": len(y),
                 "auc": round(float(auc), 4),
                 "ci95": [round(float(lo), 4), round(float(hi), 4)]}
-    clean, pc = run("policy"), run("greedy")
-    return {"arm": "B likelihood attack (model-scored values)",
-            "clean": clean, "positive_control": pc,
+    clean, pc_g, pc_p = run("enact"), run("greedy"), run("policy")
+    return {"arm": "B likelihood attack (model-scored values) [A1]",
+            "clean": clean, "positive_control": pc_g,
+            "positive_control_policy": pc_p,
             "clean_pass": EQUIV_LO <= clean["ci95"][0]
             and clean["ci95"][1] <= EQUIV_HI,
-            "pc_pass": pc["auc"] >= POSITIVE_CONTROL_MIN_AUC}
+            "pc_pass": pc_g["auc"] >= POSITIVE_CONTROL_MIN_AUC
+            and pc_p["auc"] >= POSITIVE_CONTROL_MIN_AUC}
 
 
 def run_gate(n_episodes: int = N_EPISODES, seed: int = SEED,
@@ -180,11 +192,13 @@ def run_gate(n_episodes: int = N_EPISODES, seed: int = SEED,
     a, b = arm_a(model, n_episodes, seed, device), \
         arm_b(model, n_episodes, seed, device)
     ok = a["clean_pass"] and a["pc_pass"] and b["clean_pass"] and b["pc_pass"]
+    import hashlib
+    md5 = hashlib.md5(CKPT.read_bytes()).hexdigest()
     return {
-        "run": "(iii) post-training rollout fingerprint",
+        "run": "(iii) post-training rollout fingerprint [A1 pipeline]",
         "params": {"n_episodes": n_episodes, "seed": seed,
                    "checkpoint": CKPT.name,
-                   "checkpoint_md5": "d63a85a91ffd9efd3d54dc9911da2a9c",
+                   "checkpoint_md5": md5,
                    "equivalence_bound": [EQUIV_LO, EQUIV_HI],
                    "positive_control_min_auc": POSITIVE_CONTROL_MIN_AUC},
         "arms": [a, b],

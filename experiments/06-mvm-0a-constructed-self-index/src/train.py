@@ -4,16 +4,24 @@ What this implements, each traceable to the registration:
 
 - **Answer-only supervision.** The loss is next-token CE on answer
   positions only (`model.loss`); no auxiliary loss anywhere [§Materials].
-- **On-policy fill [RT-02].** From `--on-policy-after` steps, the model's
-  own turns are filled by its own sampled outputs (canonicalized by the
-  shared template in `curriculum.fill_own_turns`), so ownership is
-  grounded in causal authorship. The warm-up window exists because an
-  untrained model samples uniform noise; the registered 5-seed runs use
-  the same schedule, recorded in the run config.
-- **Frozen-battery eval [RT-14].** Held-out accuracy is read from the
-  frozen `batteries/*.jsonl` items only — parsed from their frozen
-  rendered text, never regenerated. Model selection during pilots uses
-  held-out episodes; ablation batteries are never touched here.
+- **Enactment [amendment A1, replacing on-policy fill].** Own-turn
+  values are drawn from the GENERATOR'S distribution
+  (`curriculum.enact_own_turns` — uniform; complement rule at revised
+  positions [RT-11]), so the text carries no ownership statistics
+  [RT-17]; authorship enters solely through the acting channel — a
+  motor-copy injection at enacted value positions, computed
+  sequentially so pass k's injection sees passes 1..k-1's [RT-16] —
+  built here as control flow, never collated as a batch tensor
+  [RT-18]. Enactment applies from step 0 (no warm-up: uniform draws
+  have no untrained-policy failure mode). `policy_fill_batched` (the
+  retired on-policy pipeline) survives only as gate run (iii)'s arm-B
+  positive control.
+- **Frozen-battery eval [RT-14 x RT-19].** Batteries freeze episode
+  SKELETONS plus per-item enactment seeds (`batteries-a1/`); at eval
+  the checkpoint enacts its own turns under the frozen seed, the
+  rebuilt episode is asserted against the frozen audit text, and
+  answers are re-derived mechanically. Model selection during pilots
+  uses held-out episodes; ablation batteries are never touched here.
 - **Twin runs [RT-03]** via `--twin` (no-register model, same everything).
 - **C2 (corrigibility):** this script trains only when a human runs it;
   it never launches pods, schedules itself, or restarts.
@@ -26,46 +34,38 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 import time
 from pathlib import Path
 
 import numpy as np
 import torch
+import torch.nn.functional as F
 
 import curriculum as C
 import encoding as E
 from model import MVM0aModel, Config, SCALES, to_torch
 
-BATTERY_DIR = Path(__file__).resolve().parents[1] / "batteries"
+BATTERY_DIR = Path(__file__).resolve().parents[1] / "batteries-a1"
 
 
 # ---------------------------------------------------------------- batteries
 
-def parse_battery_item(d: dict) -> tuple[C.Episode, C.Query]:
-    """Reconstruct an encodable episode from a FROZEN battery item's
-    rendered text [RT-14]. Agents get pseudo-ids in order of first
-    appearance; register keying is by marker, so pseudo-ids are harmless.
-    own_slot is not reconstructed (the tensor dict never uses it)."""
-    turns, markers = [], []
-    for line in d["episode"].splitlines():
-        m, _assign, item, _to, value = line.split()
-        if m not in markers:
-            markers.append(m)
-        turns.append(C.Turn(agent=markers.index(m), marker=m,
-                            item=item, value=value))
-    q = d["question"]
-    if q.startswith("where did"):
-        choices = C.SLOTS
-    elif q.startswith("which parcel"):
-        choices = C.ITEMS
-    elif q.startswith("how many parcels"):
-        choices = [str(i) for i in range(len(turns) + 1)]
-    else:                                   # "how many turns ..."
-        choices = [str(i) for i in range(len(turns) + 2)]
-    assert len(choices) == d["n_choices"], (q, len(choices), d["n_choices"])
-    ep = C.Episode(seed=-1, n_agents=len(markers), own_slot=-1,
-                   markers=markers, turns=turns)
-    return ep, C.Query("frozen", q, d["answer"], list(choices))
+def rebuild_battery_item(d: dict) -> tuple[C.Episode, C.Query]:
+    """Rebuild a FROZEN A1-skeleton battery item [RT-14 x RT-19]: the
+    episode is regenerated from its pre-committed recipe, own turns are
+    enacted under the frozen `enact_seed`, and the result is asserted
+    against the frozen audit text — the checkpoint under eval performs
+    the acts; nothing about the item can drift."""
+    ep = C.generate_episode(d["content_seed"],
+                            forced_revision=d["forced_revision"],
+                            own_slot=d["own_slot"])
+    C.enact_own_turns(ep, random.Random(d["enact_seed"]))
+    assert ep.render() == d["episode"], "frozen audit text mismatch"
+    q = next(q for q in ep.queries
+             if q.battery == d["battery"] and q.text == d["question"])
+    assert q.answer == d["answer"] and q.n_choices == d["n_choices"]
+    return ep, q
 
 
 def eval_batteries(model: MVM0aModel, device: str, n_per: int = 50) -> dict:
@@ -75,11 +75,14 @@ def eval_batteries(model: MVM0aModel, device: str, n_per: int = 50) -> dict:
         items = [json.loads(l) for l in path.read_text().splitlines()][:n_per]
         correct = 0
         for i in range(0, len(items), 25):
-            chunk = [parse_battery_item(d) for d in items[i:i + 25]]
+            chunk = [rebuild_battery_item(d) for d in items[i:i + 25]]
+            act = compute_act_inject(model, [ep for ep, _ in chunk], device)
             batch = to_torch(E.collate([E.encode_episode(ep, query=q)
                                         for ep, q in chunk]), device)
+            act = F.pad(act, (0, 0, 0, batch["input_ids"].shape[1]
+                              - act.shape[1]))
             cids = [[E.VOCAB[c] for c in q.choices] for _, q in chunk]
-            picks = model.score_choices(batch, cids)
+            picks = model.score_choices(batch, cids, act_inject=act)
             correct += sum(p == E.VOCAB[q.answer]
                            for p, (_, q) in zip(picks, chunk))
         out[path.stem.replace("battery_", "")] = round(correct / len(items), 3)
@@ -87,19 +90,61 @@ def eval_batteries(model: MVM0aModel, device: str, n_per: int = 50) -> dict:
     return out
 
 
-# ------------------------------------------------------------- on-policy fill
+# ------------------------------------------------- enactment [amendment A1]
+
+def compute_act_inject(model: MVM0aModel, eps: list[C.Episode],
+                       device: str, grad: bool = False) -> torch.Tensor:
+    """Build the acting-channel injections for already-enacted episodes:
+    at each own-turn value position, act_proj of the model's final-layer
+    state at the preceding position, computed sequentially — pass k's
+    forward carries passes 1..k-1's injections, so the motor copy at own
+    turn k is the state of a model that has already acted k-1 times
+    [RT-16: continuity is made, not cached]. The injection tensor exists
+    only here as control flow output; it is never collated from episode
+    data [RT-18]. With grad=True the loss backpropagates through every
+    enactment pass (training); eval uses grad=False."""
+    own_idx = [[i for i, t in enumerate(e.turns) if t.agent == e.own_slot]
+               for e in eps]
+    batch = to_torch(E.collate([E.encode_episode(e) for e in eps]), device)
+    B, L = batch["input_ids"].shape
+    act = torch.zeros(B, L, model.cfg.d_model, device=device)
+    with torch.enable_grad() if grad else torch.no_grad():
+        for k in range(max(len(o) for o in own_idx)):
+            _, h = model.forward(batch, act_inject=act, return_hidden=True)
+            bs, ps = [], []
+            for b, e in enumerate(eps):
+                if k < len(own_idx[b]):
+                    span = (batch["turn_ids"][b]
+                            == own_idx[b][k]).nonzero().flatten()
+                    bs.append(b)
+                    ps.append(int(span[-1]) - 1)   # ... to [value] <nl>
+            bi = torch.tensor(bs, device=device)
+            pi = torch.tensor(ps, device=device)
+            act = act.index_put((bi, pi), model.act_proj(h[bi, pi - 1]))
+    return act
+
+
+def enact_batched(model: MVM0aModel, eps: list[C.Episode], device: str,
+                  rng: random.Random, grad: bool = False
+                  ) -> tuple[list[C.Episode], torch.Tensor]:
+    """Enact every episode's own turns [A1]: values drawn data-side from
+    the generator's distribution (`curriculum.enact_own_turns` — queries
+    re-derived there), then the acting-channel injections computed from
+    the model's own states. Returns (eps, act_inject) with act_inject
+    sized to the episode-only encoding; callers pad to their batch."""
+    for e in eps:
+        C.enact_own_turns(e, rng)
+    return eps, compute_act_inject(model, eps, device, grad=grad)
+
 
 @torch.no_grad()
-def model_fill_batched(model: MVM0aModel, eps: list[C.Episode],
-                       device: str) -> list[C.Episode]:
-    """Fill every episode's own turns with the model's own sampled slot
-    choices [RT-02: causal authorship], batched: one forward per own-turn
-    ordinal (2 with the registered 4-agent/8-turn values) instead of one
-    per episode. Pass k samples each episode's k-th own turn; causal
-    attention plus segment-ordered register writes mean that prediction
-    conditions only on turns before it, where pass k-1's samples already
-    sit. Queries are re-derived afterwards (T_sr re-key + T_state count
-    fix, `curriculum.rederive_queries_after_fill`)."""
+def policy_fill_batched(model: MVM0aModel, eps: list[C.Episode],
+                        device: str) -> list[C.Episode]:
+    """RETIRED as a training path by amendment A1 — gate run (iii) showed
+    policy-sampled fills carry an ownership fingerprint. Kept solely as
+    that gate's arm-B positive control. Batched: one forward per own-turn
+    ordinal; pass k conditions only on turns before it, where pass k-1's
+    samples already sit. Queries re-derived afterwards."""
     slot_ids = torch.tensor([E.VOCAB[s] for s in C.SLOTS], device=device)
     own_idx = [[i for i, t in enumerate(e.turns) if t.agent == e.own_slot]
                for e in eps]
@@ -124,28 +169,35 @@ def model_fill_batched(model: MVM0aModel, eps: list[C.Episode],
 # ------------------------------------------------------------ held-out eval
 
 def eval_heldout(model: MVM0aModel, device: str, n: int = 200,
-                 seed: int = 987_654_321, on_policy: bool = True) -> dict:
+                 seed: int = 987_654_321) -> dict:
     """Held-out episodes from the same grammar, disjoint content seeds —
     the eval the registered scale-pick rule reads (§Materials). Model
     selection NEVER touches the frozen batteries (§Procedure step 3).
-    Own turns are model-filled first: identity is grounded in causal
-    authorship [RT-02], so "you" is only meaningful on episodes the model
-    actually authored its turns in."""
+    Own turns are enacted first [A1]: "you" refers to acts this model
+    performed in this eval's forward passes, and T_sr on revised-own
+    items is reported as its own split (T_sr_rev, also counted in
+    T_sr) per the A1.1 reporting rule."""
     model.eval()
     eps = C.generate_balanced(n, seed, forced_revision_frac=0.25)
-    if on_policy:
-        eps = model_fill_batched(model, eps, device)
-    hits = {b: [0, 0] for b in C.BATTERIES}
-    pairs = [(e, q) for e in eps for q in e.queries]
+    eps, act = enact_batched(model, eps, device, random.Random(seed + 1))
+    hits = {b: [0, 0] for b in (*C.BATTERIES, "T_sr_rev")}
+    pairs = [(ei, q) for ei, e in enumerate(eps) for q in e.queries]
     for i in range(0, len(pairs), 50):
         chunk = pairs[i:i + 50]
-        batch = to_torch(E.collate([E.encode_episode(e, query=q)
-                                    for e, q in chunk]), device)
+        batch = to_torch(E.collate([E.encode_episode(eps[ei], query=q)
+                                    for ei, q in chunk]), device)
+        a = F.pad(act, (0, 0, 0, batch["input_ids"].shape[1] - act.shape[1]))
+        a = a[[ei for ei, _ in chunk]]
         cids = [[E.VOCAB[c] for c in q.choices] for _, q in chunk]
-        picks = model.score_choices(batch, cids)
-        for p, (_, q) in zip(picks, chunk):
-            hits[q.battery][1] += 1
-            hits[q.battery][0] += int(p == E.VOCAB[q.answer])
+        picks = model.score_choices(batch, cids, act_inject=a)
+        for p, (ei, q) in zip(picks, chunk):
+            keys = [q.battery]
+            if q.battery == "T_sr" and any(t.revised for t in
+                                           eps[ei].own_turns()):
+                keys.append("T_sr_rev")
+            for kk in keys:
+                hits[kk][1] += 1
+                hits[kk][0] += int(p == E.VOCAB[q.answer])
     model.train()
     return {b: round(c / max(1, t), 3) for b, (c, t) in hits.items()}
 
@@ -169,13 +221,16 @@ def run(args) -> dict:
     for step in range(1, args.steps + 1):
         eps = C.generate_balanced(args.batch, seed=args.seed * 10 ** 6 + step,
                                   forced_revision_frac=0.25)
-        if step > args.on_policy_after:
-            eps = model_fill_batched(model, eps, device)
+        eps, act = enact_batched(model, eps, device,
+                                 random.Random(args.seed * 10 ** 6 + step),
+                                 grad=True)
         pairs = [(e, e.queries[(step + i) % len(e.queries)])
                  for i, e in enumerate(eps)]
         batch = to_torch(E.collate([E.encode_episode(e, query=q)
                                     for e, q in pairs]), device)
-        loss = model.loss(batch)
+        act = F.pad(act, (0, 0, 0, batch["input_ids"].shape[1]
+                          - act.shape[1]))
+        loss = model.loss(batch, act_inject=act)
         opt.zero_grad(set_to_none=True)
         loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
@@ -185,8 +240,7 @@ def run(args) -> dict:
         if step % args.eval_every == 0 or step == args.steps \
                 or (args.max_tokens and tokens_seen >= args.max_tokens):
             if args.eval_mode == "heldout":
-                accs = eval_heldout(model, device, n=args.eval_n,
-                                    on_policy=step > args.on_policy_after)
+                accs = eval_heldout(model, device, n=args.eval_n)
             else:
                 accs = eval_batteries(model, device, n_per=args.eval_n)
             rec = {"step": step, "loss": round(float(loss.detach()), 4),
@@ -220,7 +274,6 @@ def main() -> None:
     ap.add_argument("--batch", type=int, default=16)
     ap.add_argument("--lr", type=float, default=3e-4)
     ap.add_argument("--seed", type=int, default=0)
-    ap.add_argument("--on-policy-after", type=int, default=150)
     ap.add_argument("--eval-every", type=int, default=100)
     ap.add_argument("--eval-n", type=int, default=40)
     ap.add_argument("--eval-mode", choices=["heldout", "batteries"],

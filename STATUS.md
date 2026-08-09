@@ -2,6 +2,55 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## A1 ADJUDICATED + REGISTERED + BUILT — enactment pipeline green; gates (i)/(ii) re-PASS; A1 pilot is the gate (2026-08-09, cont.)
+
+**John adjudicated option (1): the acting channel is constructed
+authorship; RT-02's loss condition does not fire.** Amendment A1
+registered (`a11b434`, before every run it affects) and implemented the
+same session:
+
+- `curriculum.py`: `enact_own_turns` (generator-distribution draws,
+  complement rule at revised positions — RT-11 by construction);
+  `fill_own_turns` retired to gate (iii)'s arm-B positive control;
+  batteries re-frozen as A1 skeletons (`batteries-a1/`, seed 20260804,
+  per-item enact seeds; chance floors unchanged).
+- `model.py`: `act_proj` motor-copy channel (present in the twin too);
+  `forward(..., act_inject, return_hidden)`; self-tests assert
+  injection causality and act_proj task-loss gradient (in the twin as
+  well). LN lesson: constant injections are invisible — test vectors
+  must be non-uniform.
+- `train.py`: `enact_batched`/`compute_act_inject` — injections built
+  sequentially (pass k sees passes 1..k−1), as control flow, never
+  collated [RT-18]; training backprops through every enactment pass;
+  no warm-up (enactment from step 0); `eval_heldout` reports the
+  T_sr_rev split; `eval_batteries` rebuilds skeleton items, enacts
+  under frozen seeds, asserts the audit text [RT-19].
+- `fingerprint_gate.py`: clean arms run on ENACTED episodes; arm B
+  gains the retired policy pipeline as a second positive control;
+  checkpoint md5 computed, path → `pilot-a1-10m-seed0`.
+
+**Verified this session ($0):** all self-tests green; smoke train
+green (loss 4.0→1.8, T_syntax 1.0, T_sr/T_si at chance floor —
+pre-scale shape as expected); twin enactment + act_proj grad OK;
+battery rebuild asserts hold; **gates (i) and (ii) re-run and PASS**
+on the A1 code (run (ii) 0.5133 [0.4898, 0.5366], PCs fire); arm-A
+detector on enacted text reads 0.5029 [0.4766, 0.5289] with an
+untrained-model-free check — chance by construction, as RT-17 predicts.
+
+**Next (in order):**
+1. **John launches the A1 10M pilot** (C2 — human launch; ledger row
+   est-before): same recipe as the v1.0 pilot, new out path —
+   `train.py --scale 10M --seed 0 --max-tokens 171790000 --eval-mode
+   heldout --out ../artifacts/pilot-a1-10m-seed0/pilot_a1_10m_seed0.pt`.
+   Est $2–8 at the anomaly-priced 3.5× rate (3 graphed passes/step vs
+   2+1 before). Smallest-that-learns rule re-applies; if 10M cannot
+   learn memory-of-own-acts, the ladder climbs (registered).
+2. Gate (iii) re-run against the A1 checkpoint (`fingerprint_gate.py
+   --run`) — must PASS before any 5-seed spend.
+3. RT-17 upstream report packet to `sentient-horizons` (PROPOSED, John
+   ratifies) — owed regardless of pilot outcome.
+4. Then the registered 5-seed × full+twin run at 10M.
+
 ## FIX RED-TEAMED — the trilemma closes; sharpened design back to John (2026-08-09)
 
 John adjudicated the gate-(iii) disposition in-session: **(c)

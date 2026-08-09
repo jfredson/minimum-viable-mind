@@ -270,9 +270,10 @@ its own pre-registration.
 *Target: the adjudicated disposition for the gate-(iii) failure — (c)
 in-context generation composed with (a) calibrated fill, RT-11 folded
 in (John, 2026-08-09). Full analysis, the resulting design, and the
-decision put back to John: `fill-disposition-fix-spec.md`. Dispositions
-below are the drafter's recommendation; nothing is registered until
-John adjudicates the fix-spec §Decision and the amendment lands.*
+decision put back to John: `fill-disposition-fix-spec.md`.
+**Adjudicated by John 2026-08-09 (option 1: the acting channel is
+constructed authorship; RT-02's loss condition does not fire);
+registered as pre-registration §Amendment A1, commit `a11b434`.***
 
 | ID | Finding | Severity | Disposition |
 |---|---|---|---|
