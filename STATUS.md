@@ -47,8 +47,14 @@ untrained-model-free check — chance by construction, as RT-17 predicts.
    learn memory-of-own-acts, the ladder climbs (registered).
 2. Gate (iii) re-run against the A1 checkpoint (`fingerprint_gate.py
    --run`) — must PASS before any 5-seed spend.
-3. RT-17 upstream report packet to `sentient-horizons` (PROPOSED, John
-   ratifies) — owed regardless of pilot outcome.
+3. ~~RT-17 upstream report packet~~ **DONE (2026-08-09, same session):**
+   `sentient-horizons/ops/proposals/2026-08-09-mvm-rt17-ownness-not-statistical.md`
+   (`af36de8`, PROPOSED — John ratifies). Frames RT-17 as mechanizing
+   ch. 5's self-location/self-reference distinction; carries its own
+   retraction wager (a statistics-only pipeline passing gate (iii) AND
+   lifting T_sr refutes it; ~$6 falsification run available).
+   Launch tooling also done: `src/launch_pilot_a1.sh` (human-run per
+   C2, all ops gotchas baked in), ledger row est-before ($2.40, cap $9).
 4. Then the registered 5-seed × full+twin run at 10M.
 
 ## FIX RED-TEAMED — the trilemma closes; sharpened design back to John (2026-08-09)
