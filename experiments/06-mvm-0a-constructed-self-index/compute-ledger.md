@@ -41,6 +41,7 @@ this date. Auto-reload: **OFF** (John's setting; the Layer-3 backstop).
 | date | phase | what ran | GPU | hrs (est → act) | $ est | $ actual | running total |
 |---|---|---|---|---|---|---|---|
 | 2026-08-07/08 | pilot | 10M learnability pilot, seed 0, code `e0bd13e`, 171.79M tok (20/param), held-out eval. Pod 1 `977cezdx6klgbt` (secure 4090, deleted before use — dead `sshCommand` field, pod was healthy); pod 2 `zv0nxkyazqfw0w` (community 5090, ran the pilot). **RESULT: LEARNS, all batteries ≥0.97** (`pilot-findings.md`) | 4090 $0.74 (12.6 min) + 5090 $0.69 community | 1–2.5 → 2.4 (+0.2 dead pod) | $1.50 (cap $2.96) | **$6.02** ⚠ | **$6.02 / $200** |
+| 2026-08-09 | pilot (A1) | **A1 10M pilot re-run** per §Amendment A1.6 — enactment pipeline (3 graphed passes/step vs 2+1 in v1.0, est ~1.5× wall-clock), seed 0, code `4ae6f4b`+launch commit, 171.79M tok, held-out eval with T_sr_rev split. John launches `src/launch_pilot_a1.sh` [C2]; 6h terminate-after backstop | 5090 community $0.69/hr (4090 fallback) | est 2.5–3.5 | $2.40 (cap $9 at the priced-in 3.5× anomaly rate) | *pending* | *pending* |
 
 **⚠ 2026-08-08 reconciliation: PARTIAL FAIL — investigated, unresolved.**
 Balance $106.73 → $99.93 agrees with RunPod's billing rows ($6.02 pods +
