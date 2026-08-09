@@ -217,8 +217,24 @@ def run(args) -> dict:
     print(f"scale={args.scale} twin={args.twin} params={n_params/1e6:.1f}M "
           f"device={device} seed={args.seed}")
 
-    tokens_seen, t0, log = 0, time.time(), []
-    for step in range(1, args.steps + 1):
+    # Crash-resume for long runs: pick up model/opt/step/tokens from a
+    # checkpoint. The data stream is seeded per step (seed*1e6+step), so
+    # the continuation consumes the same episodes the crashed run would
+    # have. C2 note: resuming is a training launch — a human runs it.
+    start_step, tokens_seen, log = 0, 0, []
+    if args.resume:
+        ck = torch.load(args.resume, map_location=device, weights_only=True)
+        assert ck["cfg"] == cfg.__dict__, "resume config mismatch"
+        model.load_state_dict(ck["state"])
+        if "opt" in ck:
+            opt.load_state_dict(ck["opt"])
+        start_step, log = ck["step"], ck["log"]
+        tokens_seen = ck.get("tokens_seen", log[-1]["tokens"] if log else 0)
+        print(f"resumed from {args.resume} at step {start_step} "
+              f"({tokens_seen:,} tokens)")
+
+    t0 = time.time() - (log[-1]["sec"] if log else 0)
+    for step in range(start_step + 1, args.steps + 1):
         eps = C.generate_balanced(args.batch, seed=args.seed * 10 ** 6 + step,
                                   forced_revision_frac=0.25)
         eps, act = enact_batched(model, eps, device,
@@ -254,6 +270,7 @@ def run(args) -> dict:
                 with open(out.with_suffix(".jsonl"), "a") as f:
                     f.write(json.dumps(rec) + "\n")
                 torch.save({"cfg": cfg.__dict__, "state": model.state_dict(),
+                            "opt": opt.state_dict(), "tokens_seen": tokens_seen,
                             "log": log, "args": vars(args), "step": step},
                            out)
         if args.max_tokens and tokens_seen >= args.max_tokens:
@@ -283,6 +300,9 @@ def main() -> None:
     ap.add_argument("--device", default="mps" if
                     torch.backends.mps.is_available() else "cpu")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--resume", default=None,
+                    help="checkpoint to resume from (crash recovery; "
+                         "human-launched per C2)")
     ap.add_argument("--smoke", action="store_true",
                     help="pipeline smoke test: smoke scale, short run")
     args = ap.parse_args()
