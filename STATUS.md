@@ -14,28 +14,37 @@ container disk (`/root/mvm/out`), not the network volume, and no
 session ran inside the completion→backstop window. The run answers
 neither H_scale nor H_shortcut-starvation; **the 30M rung must re-run.**
 
-**Billing (balance-derived; console rows still to reconcile —
-extension wasn't connected this session):** $106.80 spent since the
-08-07 baseline ⇒ ~$96.4 for the 30M pod ≈ **29.3h billed vs the 24h
-backstop**. Either terminate-after never fired (pod ran to balance
-exhaustion ~08-11 05:10Z) or the 08-08 billing-inflation anomaly
-recurred at ~1.22×. Ledger updated (row + 08-12 reconciliation block):
-running total **~$104/$200**, and the phase-budget guide is flagged
-stale (it prices 5-seed 30M at ~$12; measured pilot pace says ~$65–96
-per run — the remaining design may not fit the remaining ~$95 without
-amendment). The Layer-3 prepaid backstop held: stopped at $0, no card
-charge. The `mvm-models` volume (150 GB) still drips $0.015/hr against
-the negative balance; RunPod deletes volumes on unfunded accounts.
+**Billing — console-reconciled same session (John opened the console
+in Chrome): root cause CONFIRMED — `--terminate-after` NEVER FIRED.**
+H100 rows 08-09/10/11 UTC = $0.254 + $78.96 + $17.821 = **$97.04 =
+29.5h @ $3.29/hr**, one continuous run (08-10 is *exactly* 24.00h, so
+no billing inflation); the audit log's last event for the pod is its
+creation — no delete from any actor. RunPod killed it on balance
+exhaustion ~05:25Z 08-11, **~5.4h / ~$17.82 past the backstop**
+(support-ticket candidate — the overrun is RunPod's bug). The A1 10M
+row trued up nominal ($1.943 — the 08-08 anomaly did not recur), and
+rule-4 reconciliation PASSES ($106.88 console vs $106.80
+balance-implied). Ledger updated: running total **$105.62/$200,
+remaining ~$94.4**, phase-budget guide flagged stale (it prices 5-seed
+30M at ~$12; the measured pilot alone cost ~$97 — the remaining design
+may not fit without amendment). The Layer-3 prepaid backstop held:
+stopped at $0, no card charge; RunPod also stops storage billing at
+zero (balance parked at −$0.07). The `mvm-models` volume (150 GB)
+survives for now but sits on an unfunded account — RunPod deletes
+volumes in that state (its own warning says "add funds or back up
+your data").
 
 **Decisions John owns before anything relaunches:**
-1. Console → Billing: pin the actual 30M row (hours billed vs pod
-   existence window) and reconcile the ledger's ~$96/~$2 split.
-2. `mvm-models` volume: top up to keep it, or delete it (if it only
-   holds re-downloadable HF models, deleting saves ~$10.80/mo — check
-   contents first).
-3. Cap arithmetic: at measured 30M pace, adjudicate whether the ladder
+1. ~~Console reconciliation~~ DONE (above).
+2. `mvm-models` volume: top up to keep it, or delete it (holds the
+   Llama/Tülu/Gemma weights + persistent venv — all re-downloadable,
+   but re-provisioning cost real wall-clock; recommendation: small
+   top-up while the re-run question is open).
+3. Support ticket for the ~$17.82 post-backstop overrun (terminate-after
+   is RunPod's feature; the audit log + billing rows are the evidence).
+4. Cap arithmetic: at measured 30M pace, adjudicate whether the ladder
    continues under $200 or the registration needs an amendment.
-4. Re-run go (C2) — only after the process fixes below.
+5. Re-run go (C2) — only after the process fixes below.
 
 **Process fixes required before the re-run (the failure had no single
 cause; all three were absent):**
@@ -43,8 +52,9 @@ cause; all three were absent):**
   upload as the training script's last act) so pod death loses nothing.
 - Give the fetch an owner: the launch ends by scheduling the fetch
   (session, cron, or a checkpoint-upload-on-exit), not by assuming one.
-- Investigate why terminate-after didn't cap the bill (console pod
-  event log) before trusting it as a backstop again.
+- **Terminate-after is now advisory, not a backstop** (confirmed
+  no-fire on this pod): every launch schedules its own kill as well as
+  its fetch.
 
 ## A1 PILOT RAN: 10M FAILS ceiling — ladder climbs to 30M; GATE (iii) PASSES on the A1 pipeline (2026-08-09, night)
 

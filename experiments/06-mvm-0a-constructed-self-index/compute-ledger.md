@@ -41,36 +41,54 @@ this date. Auto-reload: **OFF** (John's setting; the Layer-3 backstop).
 | date | phase | what ran | GPU | hrs (est → act) | $ est | $ actual | running total |
 |---|---|---|---|---|---|---|---|
 | 2026-08-07/08 | pilot | 10M learnability pilot, seed 0, code `e0bd13e`, 171.79M tok (20/param), held-out eval. Pod 1 `977cezdx6klgbt` (secure 4090, deleted before use — dead `sshCommand` field, pod was healthy); pod 2 `zv0nxkyazqfw0w` (community 5090, ran the pilot). **RESULT: LEARNS, all batteries ≥0.97** (`pilot-findings.md`) | 4090 $0.74 (12.6 min) + 5090 $0.69 community | 1–2.5 → 2.4 (+0.2 dead pod) | $1.50 (cap $2.96) | **$6.02** ⚠ | **$6.02 / $200** |
-| 2026-08-09/10 | pilot (A1, 30M) | **30M A1 pilot** — ladder rung 2 per the smallest-that-learns rule (10M FAILED, `pilot-a1-findings.md`). 39,204,192 actual params × 20 tok/param = 784.08M tokens ≈ 102k steps, batch 128, seed 0, held-out eval + T_sr_rev split. H_scale vs H_shortcut-starvation, signatures pre-stated. **Venue: H100 SXM secure** ($2.99/hr — compresses ~32–44h community wall-clock to ~11–16h and avoids the community-row billing anomaly); crash-resume support added to train.py (opt state in checkpoints, --resume; resume-after-crash needs a fresh C2 go). John's go: "Fire it" (2026-08-09). 24h terminate-after backstop. Pod `6bplni87uzp3ss` launched 23:54Z at **$3.29/hr** (above the remembered $2.99); **measured pace at step 500: 0.70 s/step, 83% util → revised in-flight est ~20h / ~$65**, completion ≈ 19:50Z 08-10, ~4h inside the backstop; crash-resume (fresh C2 go) covers a terminate-kill. **OUTCOME (discovered 2026-08-12): the pod died between sessions with no fetch — checkpoint, eval results, and train.log all LOST (written to container disk, not the network volume). Balance-derived bill ~$96 ≈ 29.3h @ $3.29/hr — ~5.3h PAST the 24h backstop; see 08-12 reconciliation below. The run produced nothing recoverable; the 30M rung must re-run (fresh C2 go, after process fixes).** | H100 SXM secure $3.29/hr (5090 community fallback) | est 11–16 → ~29.3 (balance-derived) | $33–48 (revised ~$65 at measured pace) | **~$96 balance-derived** ⚠ (console rows pending) | **~$104 / $200** ⚠ |
+| 2026-08-09/10 | pilot (A1, 30M) | **30M A1 pilot** — ladder rung 2 per the smallest-that-learns rule (10M FAILED, `pilot-a1-findings.md`). 39,204,192 actual params × 20 tok/param = 784.08M tokens ≈ 102k steps, batch 128, seed 0, held-out eval + T_sr_rev split. H_scale vs H_shortcut-starvation, signatures pre-stated. **Venue: H100 SXM secure** ($2.99/hr — compresses ~32–44h community wall-clock to ~11–16h and avoids the community-row billing anomaly); crash-resume support added to train.py (opt state in checkpoints, --resume; resume-after-crash needs a fresh C2 go). John's go: "Fire it" (2026-08-09). 24h terminate-after backstop. Pod `6bplni87uzp3ss` launched 23:54Z at **$3.29/hr** (above the remembered $2.99); **measured pace at step 500: 0.70 s/step, 83% util → revised in-flight est ~20h / ~$65**, completion ≈ 19:50Z 08-10, ~4h inside the backstop; crash-resume (fresh C2 go) covers a terminate-kill. **OUTCOME (discovered 2026-08-12, console-reconciled same day): `--terminate-after` NEVER FIRED — audit log shows creation 23:54Z as the pod's last event, no delete ever; billing shows a continuous 29.5h run (Aug 10 UTC = exactly 24.00h) ending on balance exhaustion ~05:25Z 08-11, ~5.4h past the backstop. No fetch happened — checkpoint, eval results, and train.log all LOST (container disk, not the network volume). The run produced nothing recoverable; the 30M rung must re-run (fresh C2 go, after process fixes). ~$17.82 of the bill is post-backstop — support-ticket candidate (RunPod's failure, not ours).** | H100 SXM secure $3.29/hr (5090 community fallback) | est 11–16 → **29.5** | $33–48 (revised ~$65 at measured pace) | **$97.04** (console: $0.254 + $78.96 + $17.821, Aug 9–11 UTC) | **$105.62 / $200** |
 | 2026-08-09 | pilot (A1) | **A1 10M pilot** per §Amendment A1.6 — pod `3ethp3bc7le6e4` (5090 community), launched by John ("Fire", C2), 22,369 steps / 171.79M tok in 2.78h train (2.86h pod), checkpoint fetched (md5 `bab56cd8…`), pod deleted, zero pods confirmed. **RESULT: 10M FAILS ceiling (T_si 0.37, T_sr_rev 0.00) → ladder climbs to 30M; gate (iii) PASSES on this checkpoint** (`pilot-a1-findings.md`) | 5090 community $0.69/hr | est 2.5–3.5 → 2.86 | $2.40 (cap $9) | **$1.26 accruing** (billing row incomplete at fetch; nominal-from-lifetime $1.97; reconcile at phase boundary — NB the 08-08 anomaly row *grew* overnight, 8.47h→9.41h / $5.86→$6.52) | **~$8.0 / $200** (6.02 + ~2 est) |
 
-**⚠ 2026-08-12 reconciliation: FAIL — 30M pod outlived its backstop; account drained to −$0.07.**
+**⚠ 2026-08-12 reconciliation: FAIL (root cause CONFIRMED same day) —
+30M pod outlived its backstop; account drained to −$0.07.**
 Discovered when John's RunPod low-balance notification prompted a check
 (no session ran between the 30M launch 08-09 23:54Z and 08-12). API
 state at 2026-08-13 01:54Z: **clientBalance −$0.07, zero pods**, network
 volume `mvm-models` (150 GB, EUR-IS-1) still present and dripping
-$0.015/hr (~$10.80/mo) against the negative balance. Balance-derived
-totals (rule-4 anchor is the balance; per-row split is estimated):
-$106.73 − (−$0.07) = **$106.80 spent since 08-07** = $6.02 (row 1)
-+ ~$2.00 (A1 10M row) + ~$2.40 (volume drip, ~6 days) + **~$96.4 (30M
-pod)**. At $3.29/hr that is **~29.3h billed against a 24h
-terminate-after** (max-at-backstop $78.96). Two candidate explanations,
-console billing rows needed to distinguish: (a) `--terminate-after`
-never fired and RunPod killed the pod on balance exhaustion
-(~08-11 05:10Z); (b) the pod died at the backstop but the row billed
-~1.22× its existence (milder cousin of the 08-08 3.5× anomaly).
+~$0.014/hr (~$10.50/mo) against the negative balance.
+
+**Console reconciliation (Billing explorer, UTC days; John opened the
+console in Chrome same session):**
+
+- H100 SXM rows: 08-09 **$0.254** + 08-10 **$78.96** + 08-11
+  **$17.821** = **$97.04 = 29.5h @ $3.29/hr**, a single continuous run
+  (08-10 is *exactly* 24.00h — no billing inflation this time).
+- **Root cause: `--terminate-after` never fired.** Audit log's last
+  event for `6bplni87uzp3ss` is its creation (08-09 4:54:21 PM PDT =
+  23:54Z); no delete event from any actor. RunPod killed the pod on
+  balance exhaustion ~05:25Z 08-11 — **~5.4h and ~$17.82 past the
+  backstop** (support-ticket candidate: the overrun is RunPod's bug).
+- A1 10M row trues up to **$1.943** (5090, 08-09) — nominal; the 08-08
+  anomaly did NOT recur on it.
+- Row 1 trues up to **$6.645** (08-08 UTC: 4090 $0.155 + 5090 $6.49 —
+  the anomaly row drifted again; final console read).
+- Storage 08-08→08-11: $0.377 + $0.358 + $0.417 + $0.103 = **$1.255**;
+  RunPod stopped charging storage when the balance hit zero (hence the
+  balance parking at −$0.07 rather than drifting down).
+- **Rule-4 check: PASSES.** Console total since 08-07 = $6.645 + $1.943
+  + $97.035 + $1.255 ≈ **$106.88** vs balance-implied $106.80 —
+  agreement within the dollar.
+
 **Consequences:** checkpoint/evals/train.log lost (container disk,
 never fetched — no session was scheduled inside the
 completion→backstop window); the Layer-3 prepaid backstop held (no
-card charge, stopped at $0); running total ~**$104/$200** with nothing
-recoverable from the largest row. **NB the phase-budget guide below is
-now known-stale:** it prices the 5-seed 30M at ~$12, but the measured
-30M pilot alone cost ~$65–96 — at measured pace the remaining
-registered design does not obviously fit the remaining ~$95. Open
-items (John): reconcile console billing rows against the ~$96/~$2
-split; top up or delete `mvm-models` (deletion risk: RunPod removes
-volumes on unfunded accounts); adjudicate cap arithmetic before any
-re-run.
+card charge, stopped at $0); running total **$105.62/$200** with
+nothing recoverable from the largest row; **remaining ≈ $94.4**. **NB
+the phase-budget guide below is now known-stale:** it prices the
+5-seed 30M at ~$12, but the measured 30M pilot alone cost ~$97 — at
+measured pace the remaining registered design does not obviously fit
+the remaining budget. Open items (John): support ticket for the
+~$17.82 post-backstop overrun; top up or delete `mvm-models`
+(deletion risk: RunPod removes volumes on unfunded accounts);
+adjudicate cap arithmetic before any re-run. Standing rule change:
+**terminate-after is advisory, not a backstop — every launch must
+schedule its own fetch/kill, and checkpoints go to the network volume
+or get uploaded on exit.**
 
 **⚠ 2026-08-08 reconciliation: PARTIAL FAIL — investigated, unresolved.**
 Balance $106.73 → $99.93 agrees with RunPod's billing rows ($6.02 pods +
