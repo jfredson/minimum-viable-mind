@@ -36,6 +36,16 @@ this ledger starts at $0). Rule 4 reconciles against this number:
 expected balance = $106.73 − ledger running total − storage drip since
 this date. Auto-reload: **OFF** (John's setting; the Layer-3 backstop).
 
+**Top-up 2026-08-12: +$25.00** (John, after the 30M drain cleared the
+account — covers the −$0.07 deficit, keeps `mvm-models` on a funded
+account, and gives the weekend session prep headroom; deliberately NOT
+pre-funding the re-run, which awaits the cap adjudication). Balance
+after top-up (API-verified): **$24.93**. Rule-4 arithmetic from here:
+expected balance = $24.93 − new spend − ~$0.35/day volume drip.
+Cumulative top-ups against the $200 cap: $106.73 baseline + $25 =
+$131.73 total funds this ledger has seen; cap remainder ≈ **$94.4**
+(unchanged by the top-up — the cap counts spend, not deposits).
+
 ## Ledger
 
 | date | phase | what ran | GPU | hrs (est → act) | $ est | $ actual | running total |
