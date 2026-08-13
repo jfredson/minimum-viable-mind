@@ -2,6 +2,50 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## 30M PILOT LOST — pod outran its backstop between sessions; balance drained to −$0.07; checkpoint never fetched (2026-08-12)
+
+John's RunPod low-balance notification prompted the check. State:
+**zero pods running, clientBalance −$0.07** (API, 08-13 01:54Z). The
+30M pilot pod `6bplni87uzp3ss` (launched 08-09 23:54Z, H100 secure
+$3.29/hr, 24h terminate-after, est completion ~19:50Z 08-10) died
+between sessions and **nothing was fetched: checkpoint, held-out
+evals, and train.log are lost** — the launcher writes to the pod's
+container disk (`/root/mvm/out`), not the network volume, and no
+session ran inside the completion→backstop window. The run answers
+neither H_scale nor H_shortcut-starvation; **the 30M rung must re-run.**
+
+**Billing (balance-derived; console rows still to reconcile —
+extension wasn't connected this session):** $106.80 spent since the
+08-07 baseline ⇒ ~$96.4 for the 30M pod ≈ **29.3h billed vs the 24h
+backstop**. Either terminate-after never fired (pod ran to balance
+exhaustion ~08-11 05:10Z) or the 08-08 billing-inflation anomaly
+recurred at ~1.22×. Ledger updated (row + 08-12 reconciliation block):
+running total **~$104/$200**, and the phase-budget guide is flagged
+stale (it prices 5-seed 30M at ~$12; measured pilot pace says ~$65–96
+per run — the remaining design may not fit the remaining ~$95 without
+amendment). The Layer-3 prepaid backstop held: stopped at $0, no card
+charge. The `mvm-models` volume (150 GB) still drips $0.015/hr against
+the negative balance; RunPod deletes volumes on unfunded accounts.
+
+**Decisions John owns before anything relaunches:**
+1. Console → Billing: pin the actual 30M row (hours billed vs pod
+   existence window) and reconcile the ledger's ~$96/~$2 split.
+2. `mvm-models` volume: top up to keep it, or delete it (if it only
+   holds re-downloadable HF models, deleting saves ~$10.80/mo — check
+   contents first).
+3. Cap arithmetic: at measured 30M pace, adjudicate whether the ladder
+   continues under $200 or the registration needs an amendment.
+4. Re-run go (C2) — only after the process fixes below.
+
+**Process fixes required before the re-run (the failure had no single
+cause; all three were absent):**
+- Write checkpoints + train.log to the mounted network volume (or
+  upload as the training script's last act) so pod death loses nothing.
+- Give the fetch an owner: the launch ends by scheduling the fetch
+  (session, cron, or a checkpoint-upload-on-exit), not by assuming one.
+- Investigate why terminate-after didn't cap the bill (console pod
+  event log) before trusting it as a backstop again.
+
 ## A1 PILOT RAN: 10M FAILS ceiling — ladder climbs to 30M; GATE (iii) PASSES on the A1 pipeline (2026-08-09, night)
 
 John fired the pilot in-session (pod `3ethp3bc7le6e4`, 2.78h, ~$2;
