@@ -210,10 +210,17 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--run", action="store_true")
     ap.add_argument("--n-episodes", type=int, default=N_EPISODES)
+    ap.add_argument("--ckpt", default=None,
+                    help="checkpoint to gate (default: the 10M A1 pilot; "
+                         "run (iii) re-runs at whatever scale the ladder "
+                         "registers, per pilot-a1-findings.md)")
     args = ap.parse_args()
     if not args.run:
         ap.print_help()
         return
+    if args.ckpt:
+        global CKPT
+        CKPT = Path(args.ckpt).resolve()
     res = run_gate(n_episodes=args.n_episodes)
     out = Path(__file__).resolve().parents[1] / "cue_detector_gate.json"
     full = json.loads(out.read_text())

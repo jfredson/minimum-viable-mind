@@ -34,6 +34,18 @@ verdict lands. Early metrics at step 500: T_syntax 1.0, T_sr 0.62
 climbing, T_si 0.10 / T_sr_rev 0.00 at floor — nothing diagnostic yet;
 the 10M failure signature is about where these END, not where they start.
 
+**Post-run pipeline STAGED (2026-08-15, later):** on artifact arrival run
+`src/run_post_pilot.sh` — completion check + md5, trajectory readout
+against the two pre-stated signatures, then gate (iii) at the registered
+n=4000 via the new `fingerprint_gate.py --ckpt` (override tested against
+the 10M checkpoint; the recorded 10M gate JSON untouched). Both verdict
+branches are pre-drafted so the winner moves immediately:
+`amendment-a2-draft-IF-30m-learns.md` (registered scale 30M + cap
+$200→$400 at measured 5090-secure pricing, ~$355–375 projected total)
+and `upstream-draft-IF-shortcut-starvation.md` (ladder stops; packet to
+sentient-horizons with its own retraction wager). The loser gets deleted
+unused. Neither is registered — John adjudicates the verdict first.
+
 **Next:** completion monitor armed (DONE fetch or watchdog terminal event);
 watchdog handles fetch+kill; on completion run gate (iii) against the
 fetched checkpoint, then adjudicate H_scale vs H_shortcut-starvation per
