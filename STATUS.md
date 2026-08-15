@@ -22,7 +22,19 @@ now `[t]rain.py`). Pod repaired by manual push + start; ~6 min idle
 (~$0.10). Lesson recorded: the aliveness check was capable of masking
 exactly the failure it exists to catch.
 
-**Next:** pace check at step 500 (monitor armed) → revise ledger est;
+**Pace measured (step 500, 325.8s = 0.65 s/step): the 5090 is FASTER
+than the H100's 0.70 s/step** — the workload is enactment/Python-bound,
+not GPU-bound. Revised: ~18.5h train, **~$19** (vs $40–55 est, vs $66
+H100), completion ≈ **2026-08-16 16:12Z (~9am PDT Saturday)**. This
+reprices the whole ladder: a 30M run costs ~$19 on a secure 5090, so the
+5-seed × full+twin (10 runs) is ~$190 — the cap amendment the memo
+priced at ~$650–770 (H100) may be a much smaller ask, or even nearly fit
+a modest cap raise. Fold this into the cap adjudication when the pilot
+verdict lands. Early metrics at step 500: T_syntax 1.0, T_sr 0.62
+climbing, T_si 0.10 / T_sr_rev 0.00 at floor — nothing diagnostic yet;
+the 10M failure signature is about where these END, not where they start.
+
+**Next:** completion monitor armed (DONE fetch or watchdog terminal event);
 watchdog handles fetch+kill; on completion run gate (iii) against the
 fetched checkpoint, then adjudicate H_scale vs H_shortcut-starvation per
 the pre-stated signatures. John still owes: support ticket submission
