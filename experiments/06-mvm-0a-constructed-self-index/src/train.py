@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import random
 import time
 from pathlib import Path
@@ -269,16 +270,27 @@ def run(args) -> dict:
                 out.parent.mkdir(parents=True, exist_ok=True)
                 with open(out.with_suffix(".jsonl"), "a") as f:
                     f.write(json.dumps(rec) + "\n")
+                # atomic: a mid-write pod death or fetch never sees a torn file
+                tmp = out.with_suffix(".pt.tmp")
                 torch.save({"cfg": cfg.__dict__, "state": model.state_dict(),
                             "opt": opt.state_dict(), "tokens_seen": tokens_seen,
                             "log": log, "args": vars(args), "step": step},
-                           out)
+                           tmp)
+                os.replace(tmp, out)
         if args.max_tokens and tokens_seen >= args.max_tokens:
             print(f"token budget reached ({tokens_seen:,})", flush=True)
             break
 
     if args.out:
+        # completion sentinel, written only on a finished budget/step count —
+        # a crash never reaches this line, so its presence means "final
+        # checkpoint is the real result"; the launch watchdog keys its
+        # fetch-and-kill off this file
+        done = Path(args.out).with_suffix(".DONE")
+        done.write_text(json.dumps({"step": log[-1]["step"] if log else 0,
+                                    "tokens": tokens_seen}) + "\n")
         print(f"saved {args.out}")
+        print("TRAINING COMPLETE", flush=True)
     return {"params": n_params, "tokens": tokens_seen, "log": log}
 
 

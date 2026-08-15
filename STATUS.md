@@ -2,6 +2,56 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## 30M RE-RUN PREPPED — all three process fixes built and tested; launch waits on a $75 top-up + John's C2 go (2026-08-15)
+
+John's direction: overview session → straight into the re-run prep, launch
+ASAP. Everything below ran at $0; the only remaining human steps are the
+top-up and the launch itself.
+
+**Process fixes (all three from the 08-12 entry) implemented and tested:**
+
+- **Checkpoints + log now survive pod death.** `launch_pilot_a1.sh` attaches
+  the `mvm-models` network volume (`8xeftvclmv`, EUR-IS-1, confirmed alive
+  via API) with `--network-volume-id`; checkpoints and `train_<out>.log`
+  write to `/workspace/mvm-out`. `NETVOL=none` falls back to container disk
+  if EUR-IS-1 has no H100 stock. `train.py` saves atomically
+  (tmp + `os.replace`) and writes a `.DONE` sentinel + `TRAINING COMPLETE`
+  as its final act — a crash can never fake completion.
+- **The launch owns its fetch AND its kill.** New `src/watch_run.sh`,
+  spawned automatically by the launcher (nohup + caffeinate — keep the Mac
+  powered): polls every 10 min, pulls evals/log continuously and the
+  checkpoint hourly, and on the DONE sentinel — or a hard +24h deadline —
+  does a full fetch then **deletes the pod**. Terminate-after still passed
+  but is advisory only, per the 08-12 rule change.
+- **Tested without spending:** train.py smoke run green (atomic save,
+  sentinel, jsonl all verified; smoke metrics match the known pre-scale
+  shape); watchdog exercised against mocked ssh/runpodctl on all three
+  paths — DONE→fetch+kill (exit 0), deadline→fetch+kill (exit 2), pod
+  vanished (exit 3). The one untested piece is `--network-volume-id` on a
+  real create; it fails loudly with a stated fallback if EUR-IS-1 lacks
+  stock.
+
+**Cap adjudication teed up (`cap-adjudication-memo.md`, open item #4):**
+at measured pace nothing beyond the pilot fits the remaining $94.38 —
+"everything at 30M" is ~$690–770 more on H100. Recommendation **(A)
+sequence-first**: run only the pilot now (~$66, fits the cap, no amendment
+needed), and let its verdict decide — H_shortcut-starvation kills the
+5-seed question entirely; H_scale reopens the cap amendment against a
+measured number. **Funding answer for John: top up $75 now** (balance
+$23.94 can't cover the ~$66 run); do NOT pre-fund the 5-seed.
+
+**Support ticket drafted** (`runpod-ticket-overrun.md`, open item #3):
+$17.82 credit request for the post-backstop overrun, evidence from the
+console reconciliation; John submits via the console. The waived 08-08
+anomaly is deliberately excluded — one clean claim.
+
+**Ledger:** est-before row added for the re-run ($66, cap $80, ~$172/$200
+projected). **Launch sequence (the C2 steps, in order):** (1) John tops up
+$75; (2) John runs `src/launch_pilot_a1.sh` (defaults are the 30M rung);
+(3) verify the launcher prints the volume-backed run dir + watchdog pid;
+(4) walk away — the watchdog fetches and kills. Gate (iii) re-runs on the
+fetched checkpoint before any further spend.
+
 ## 30M PILOT LOST — pod outran its backstop between sessions; balance drained to −$0.07; checkpoint never fetched (2026-08-12)
 
 John's RunPod low-balance notification prompted the check. State:
