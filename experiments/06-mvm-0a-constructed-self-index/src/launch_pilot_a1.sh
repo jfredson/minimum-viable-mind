@@ -104,7 +104,7 @@ echo "ssh up: $SSH_CMD"
 echo "pushing code + frozen batteries"
 COPYFILE_DISABLE=1 tar czf - --exclude='__pycache__' --exclude='._*' \
     -C "$EXP_DIR" src batteries-a1 | \
-  $SSH "mkdir -p $RUN_DIR && tar xzf - -C /root/mvm --no-same-owner"
+  $SSH "mkdir -p $RUN_DIR /root/mvm && tar xzf - -C /root/mvm --no-same-owner"
 
 RESUME_FLAG=""
 [ -n "$RESUME" ] && RESUME_FLAG="--resume $RESUME"
@@ -119,7 +119,9 @@ $SSH "cd /root/mvm/src && rm -f $RUN_DIR/$OUT.DONE && nohup python train.py \
   || echo "ssh teardown reset (benign if the aliveness check passes)"
 
 sleep 20
-$SSH "pgrep -f 'train.py --scale' >/dev/null && echo 'ALIVE: training process confirmed' || echo \"NOT RUNNING — check $RUN_DIR/train_$OUT.log\"" \
+# [t]rain guard: without it pgrep matches the checking shell itself — this
+# false-positived "ALIVE" on the 2026-08-15 launch while nothing was running
+$SSH "pgrep -f '[t]rain.py --scale' >/dev/null && echo 'ALIVE: training process confirmed' || echo \"NOT RUNNING — check $RUN_DIR/train_$OUT.log\"" \
   || echo "aliveness check ssh failed — poll manually"
 
 # ---- process fix 2: the launch owns its fetch and its kill ----------------

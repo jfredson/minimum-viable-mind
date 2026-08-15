@@ -2,6 +2,33 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## 30M RE-RUN IN FLIGHT — 5090 secure + network volume; watchdog armed (2026-08-15, later)
+
+John topped up $75 (balance $98.94) and directed the launch. EUR-IS-1 had
+**no H100/A100/H200 secure stock**, so the run went to **RTX 5090 SECURE in
+EUR-IS-1 at $0.99/hr with the volume attached** — durability kept, cost
+drops to ~$40–55, wall-clock est 40–55h (5090 pace unknown until the
+step-500 eval; est trues up then). Pod `rhddnh0u4le0l9`, created 21:37Z,
+training started 21:43Z, checkpoints + log on `/workspace/mvm-out`
+(volume mount verified). Watchdog live on John's Mac (caffeinate; **keep
+it powered**), deadline fetch-and-kill 2026-08-18T05:37Z; DONE sentinel
+ends it earlier.
+
+**Two launcher bugs caught at launch, both fixed in-repo:** (1) my rewrite
+dropped `mkdir /root/mvm` from the push, so the code never landed; (2) the
+old aliveness check `pgrep -f 'train.py --scale'` matches its own remote
+shell — it printed **ALIVE with nothing running** (this bug predates today;
+now `[t]rain.py`). Pod repaired by manual push + start; ~6 min idle
+(~$0.10). Lesson recorded: the aliveness check was capable of masking
+exactly the failure it exists to catch.
+
+**Next:** pace check at step 500 (monitor armed) → revise ledger est;
+watchdog handles fetch+kill; on completion run gate (iii) against the
+fetched checkpoint, then adjudicate H_scale vs H_shortcut-starvation per
+the pre-stated signatures. John still owes: support ticket submission
+(`runpod-ticket-overrun.md`) + cap-memo sign-off (sequence-first is in
+effect de facto).
+
 ## 30M RE-RUN PREPPED — all three process fixes built and tested; launch waits on a $75 top-up + John's C2 go (2026-08-15)
 
 John's direction: overview session → straight into the re-run prep, launch
