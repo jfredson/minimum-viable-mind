@@ -25,7 +25,7 @@ exactly the failure it exists to catch.
 **Pace measured (step 500, 325.8s = 0.65 s/step): the 5090 is FASTER
 than the H100's 0.70 s/step** — the workload is enactment/Python-bound,
 not GPU-bound. Revised: ~18.5h train, **~$19** (vs $40–55 est, vs $66
-H100), completion ≈ **2026-08-16 16:12Z (~9am PDT Saturday)**. This
+H100), completion ≈ **2026-08-16 16:12Z (~9am PDT Sunday)**. This
 reprices the whole ladder: a 30M run costs ~$19 on a secure 5090, so the
 5-seed × full+twin (10 runs) is ~$190 — the cap amendment the memo
 priced at ~$650–770 (H100) may be a much smaller ask, or even nearly fit
