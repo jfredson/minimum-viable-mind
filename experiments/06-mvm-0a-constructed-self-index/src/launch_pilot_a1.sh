@@ -98,7 +98,9 @@ if [ -z "$SSH_CMD" ]; then
   echo "re-run me (stock rotates), or try NETVOL=none / another GPU"
   exit 1
 fi
-SSH="$SSH_CMD -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+# keepalive/timeout opts: without them one network hang freezes the watchdog's
+# fetch loop AND its deadline kill for the rest of the run
+SSH="$SSH_CMD -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=20 -o ServerAliveInterval=30 -o ServerAliveCountMax=4 -o BatchMode=yes"
 echo "ssh up: $SSH_CMD"
 
 echo "pushing code + frozen batteries"
