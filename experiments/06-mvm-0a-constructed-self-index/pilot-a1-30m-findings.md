@@ -31,7 +31,13 @@ is John's adjudication against the pre-stated signatures in
 | 46,000 | 0.97 | 0.53 | 0.98 | 1.00 | 0.50 | both diagnostics climbing |
 | 60,500 | 0.98 | 0.80 | 1.00 | 1.00 | 0.50 | mid-transition |
 | 89,000 | 1.00 | 0.98 | 1.00 | 1.00 | 1.00 | everything at ceiling |
-| ⟨PENDING endpoint⟩ | | | | | | verdict reads HERE |
+| **102,095 (END)** | **1.00** | **0.93** | **1.00** | **1.00** | **1.00** | verdict reads HERE |
+
+Endpoint recorded 2026-08-16 16:41Z: loss 0.0259, tokens 784,089,600
+(budget stop), wall 68,228.8s = 18.95h train. DONE sentinel
+`{"step": 102095, "tokens": 784089600}`; watchdog final fetch OK
+16:41:27Z, pod deleted by watchdog (pod list empty). T_si endpoint 0.93
+sits in its late-run noise band (0.93–0.98 over the final evals; n=100).
 
 Sharp everything-to-ceiling transition in roughly the 46k–89k window
 (⟨PENDING: exact first-above-threshold steps from run_post_pilot.sh
@@ -49,13 +55,15 @@ Pre-stated in `pilot-a1-findings.md` (verdict at ENDPOINTS):
 
 | metric | 10M endpoint | 30M endpoint | floor |
 |---|---|---|---|
-| T_si | 0.37 (never transitions) | ⟨PENDING⟩ (0.98 @ 89k) | 0.125 |
-| T_sr_rev | 0.00 (entire run) | ⟨PENDING⟩ (1.00 @ 89k) | — |
-| T_sr | 0.96 | ⟨PENDING⟩ | 0.125 |
-| T_state | 1.00 | ⟨PENDING⟩ | 0.042 |
-| T_syntax | 1.00 | ⟨PENDING⟩ | 0.100 |
+| T_si | 0.37 (never transitions) | **0.93** (0.93–0.98 band late-run) | 0.125 |
+| T_sr_rev | 0.00 (entire run) | **1.00** | — |
+| T_sr | 0.96 | **1.00** | 0.125 |
+| T_state | 1.00 | **1.00** | 0.042 |
+| T_syntax | 1.00 | **1.00** | 0.100 |
 
-In-flight lean was H_scale from ~step 27.5k onward; endpoint row decides.
+In-flight lean was H_scale from ~step 27.5k onward; the endpoint row reads
+as the H_scale signature (both diagnostics at/near ceiling; neither
+pre-stated failure mark present). Adjudication is John's.
 
 ## Gate (iii) at the registered n=4000 — ⟨PENDING⟩
 
