@@ -680,6 +680,34 @@ having been wrong.
 - [x] A2 registered (John, commit before first affected run): 2026-08-16,
   this commit
 
+### Ceiling adjudication addendum (R1, John, 2026-08-16 — recorded so the binding rule lives HERE, not only in the worklog)
+
+A blind pre-commitment (TimeAssembler worklog decision, 2026-08-15, made
+while the 30M result was in flight) governs this amendment: **exactly one
+cap amendment is permitted for MVM-0a**, scope frozen that day to the
+5-seed × full+twin run AND the Stage 3 repeated-sampling run (registered
+2026-08-04b, + judge validation), number to be set at the W37 review
+(2026-09-13) once actuals existed. A2 was registered earlier today with a
+GPU-derived number, ahead of that date and without budgeting
+repeated-sampling — the conflict was surfaced and adjudicated
+same-session:
+
+- **A2 is THE single permitted amendment.** The W37 date is read as a
+  proxy for "when actuals exist"; they arrived with the 30M actual-after
+  row. **$400 is final, for the full frozen scope, and never moves
+  upward.**
+- **Repeated-sampling is funded only by GPU-side underspend** (~$25–45 at
+  projections vs its ~low-hundreds estimate). If it does not fit, it goes
+  unrun under this cap and the publication states what was not run and
+  why — the pre-committed consequence clause, accepted. Its alternative
+  route is a new pre-registration with its own gates and cap.
+- The W37 review is downgraded to **verification only**: reconcile
+  spend, check this amendment's wager, record the repeated-sampling
+  outcome. No revision is permitted at it.
+- Rejected alternative, on the record: re-opening the number at W37 with
+  full-scope estimates — declined as the ratchet the blind rule exists
+  to kill.
+
 ## Results
 
 *(empty until the registered run executes)*
