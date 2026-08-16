@@ -39,10 +39,13 @@ Endpoint recorded 2026-08-16 16:41Z: loss 0.0259, tokens 784,089,600
 16:41:27Z, pod deleted by watchdog (pod list empty). T_si endpoint 0.93
 sits in its late-run noise band (0.93–0.98 over the final evals; n=100).
 
-Sharp everything-to-ceiling transition in roughly the 46k–89k window
-(⟨PENDING: exact first-above-threshold steps from run_post_pilot.sh
-readout⟩) — same qualitative shape as the v1.0 10M pilot's 8.5k–13.5k
-transition, arriving later at the harder A1 task.
+Measured transition points (first eval ≥0.9, from run_post_pilot.sh):
+T_syntax @500, T_sr @1,000, T_state @1,500 — the surface-solvable floor,
+immediate as designed — then **T_si @64,500 and T_sr_rev @73,000**: the
+two diagnostics transition late and separately, the same
+qualitative everything-to-ceiling shape as the v1.0 10M pilot's
+8.5k–13.5k window, arriving much later at the harder A1 task. T_si max
+0.990; endpoint 0.93 is late-run eval noise (n=100), not a shelf.
 
 ## Signature comparison vs the pre-stated fork
 
@@ -65,15 +68,22 @@ In-flight lean was H_scale from ~step 27.5k onward; the endpoint row reads
 as the H_scale signature (both diagnostics at/near ceiling; neither
 pre-stated failure mark present). Adjudication is John's.
 
-## Gate (iii) at the registered n=4000 — ⟨PENDING⟩
+## Gate (iii) at the registered n=4000 — **PASS** (2026-08-16 ~17:0xZ)
 
-`fingerprint_gate.py --run --ckpt <30M checkpoint>` (replaces the run-(iii)
-entry in `cue_detector_gate.json` by design; 10M record in git history).
+`fingerprint_gate.py --run --ckpt pilot_a1_30m_seed0.pt` (replaced the
+run-(iii) entry in `cue_detector_gate.json` by design; 10M record in git
+history). Ran locally on MPS, $0.
 
-- Arm A (committed detector on enacted text): ⟨PENDING⟩ vs [0.45, 0.55]
-- Arm B (likelihood attack): ⟨PENDING⟩ vs [0.45, 0.55]
-- Positive controls (incl. retired v1.0 policy pipeline): ⟨PENDING⟩
-- Checkpoint md5: ⟨PENDING⟩
+- Arm A (committed detector on enacted text): **0.4874 [0.4664, 0.5110]**
+  — inside [0.45, 0.55], PASS; positive control (constant) 0.9361 fires.
+- Arm B (likelihood attack, model-scored values): **0.4964
+  [0.4837, 0.5095]** — inside [0.45, 0.55], PASS; positive controls fire:
+  greedy 0.9312, retired v1.0 policy pipeline 0.8248 (RT-17's
+  by-construction prediction holding at 30M).
+- Checkpoint md5: `fd1eb80c990435ca2629cee58df08779`.
+- **GATE: PASS** — with standing proven by all positive controls. The
+  30M rollouts carry no detectable ownership fingerprint; the 5-seed
+  spend precondition is met.
 
 ## Verdict — ⟨PENDING: John adjudicates⟩
 
