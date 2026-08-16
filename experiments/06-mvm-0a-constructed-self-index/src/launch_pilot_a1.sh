@@ -10,6 +10,14 @@
 #   resume:    RESUME=$RUN_DIR/<ckpt>.pt ./launch_pilot_a1.sh (fresh pod; with
 #              the network volume attached the checkpoint is already there)
 #
+# Registered 5-seed x full+twin (Amendment A2; 5090 SECURE only per A2):
+#   full run:  SEED=<n> ./launch_pilot_a1.sh
+#   twin run:  SEED=<n> TWIN=1 ./launch_pilot_a1.sh   (passes --twin; OUT
+#              gains a _twin suffix; twin has no register params by config)
+#   dry run:   DRYRUN=1 [...] ./launch_pilot_a1.sh — prints the pod-create
+#              and train commands it WOULD run, creates nothing, spawns
+#              nothing. Use before every real launch.
+#
 # PROCESS FIXES (2026-08-15, after the 30M pilot loss — see STATUS 2026-08-12):
 #   1. Checkpoints + train.log go to the mvm-models NETWORK VOLUME
 #      (/workspace), not container disk — pod death loses nothing.
@@ -36,9 +44,17 @@ SRC_DIR="$(cd "$(dirname "$0")" && pwd)"
 SCALE="${SCALE:-30M}"
 MAXTOK="${MAXTOK:-784083840}"                  # 20 tok/param x actual params
 SEED="${SEED:-0}"
-OUT="${OUT:-pilot_a1_$(echo "$SCALE" | tr 'A-Z' 'a-z')_seed$SEED}"
-GPU="${GPU:-NVIDIA H100 80GB HBM3}"
-CLOUD="${CLOUD:-SECURE}"                       # CLOUD=COMMUNITY adds --public-ip
+TWIN="${TWIN:-}"                               # TWIN=1 → --twin + _twin suffix
+DRYRUN="${DRYRUN:-}"                           # DRYRUN=1 → print, create nothing
+TWIN_SUFFIX=""; TWIN_FLAG=""
+[ -n "$TWIN" ] && { TWIN_SUFFIX="_twin"; TWIN_FLAG="--twin"; }
+OUT="${OUT:-pilot_a1_$(echo "$SCALE" | tr 'A-Z' 'a-z')_seed${SEED}${TWIN_SUFFIX}}"
+GPU="${GPU:-NVIDIA GeForce RTX 5090}"          # A2 measured venue (0.65 s/step,
+                                               # $0.99/hr; workload is enactment-
+                                               # bound — H100 buys nothing)
+CLOUD="${CLOUD:-SECURE}"                       # A2 registers SECURE-ONLY for the
+                                               # 5-seed spend; COMMUNITY remains
+                                               # only for non-registered smoke use
 TERM_H="${TERM_H:-24}"                         # advisory runaway note, hours
 WATCH_H="${WATCH_H:-24}"                       # watchdog hard deadline, hours
 NETVOL="${NETVOL:-8xeftvclmv}"                 # mvm-models 150GB @ EUR-IS-1
@@ -57,10 +73,23 @@ if [ "$NETVOL" != "none" ]; then
   [ "$CLOUD" = "COMMUNITY" ] && { echo "network volumes are secure-cloud only; set NETVOL=none for COMMUNITY"; exit 1; }
 fi
 
-echo "creating $CLOUD pod ($GPU) for $SCALE/$MAXTOK tok"
+echo "creating $CLOUD pod ($GPU) for $SCALE/$MAXTOK tok (out: $OUT)"
 echo "  run dir: $RUN_DIR $([ "$NETVOL" != "none" ] && echo '(network volume — survives pod death)')"
 echo "  advisory terminate-after: $TERM_AT; watchdog kill deadline: +${WATCH_H}h"
-CREATE_OUT=$(runpodctl pod create --name "mvm-a1-pilot-$SCALE" \
+if [ -n "$DRYRUN" ]; then
+  cat <<DRYEOF
+DRYRUN — nothing created. Would run:
+  runpodctl pod create --name "mvm-$OUT" \\
+    --template-id runpod-torch-v280 --gpu-id "$GPU" \\
+    --cloud-type "$CLOUD" $PUBIP $VOLARGS --terminate-after "$TERM_AT"
+  train: python train.py --scale $SCALE --seed $SEED $TWIN_FLAG --batch 128 \\
+    --steps 200000 --max-tokens $MAXTOK --eval-every 500 --eval-n 100 \\
+    --eval-mode heldout --device cuda --out $RUN_DIR/$OUT.pt
+  watchdog env dest: $EXP_DIR/artifacts/$OUT
+DRYEOF
+  exit 0
+fi
+CREATE_OUT=$(runpodctl pod create --name "mvm-$OUT" \
   --template-id runpod-torch-v280 --gpu-id "$GPU" \
   --cloud-type "$CLOUD" $PUBIP $VOLARGS --terminate-after "$TERM_AT")
 echo "$CREATE_OUT"
@@ -74,7 +103,7 @@ except Exception:
 [ -n "$POD" ] || POD=$(echo "$CREATE_OUT" | grep -oE '"id"[": ]+[a-z0-9]{12,16}' | grep -oE '[a-z0-9]{12,16}$' | head -1)
 if [ -z "$POD" ]; then
   echo "could not parse pod id — inspect output above"
-  [ "$NETVOL" != "none" ] && echo "(if EUR-IS-1 has no $GPU stock, retry with NETVOL=none, or GPU=\"NVIDIA GeForce RTX 5090\" CLOUD=COMMUNITY NETVOL=none)"
+  [ "$NETVOL" != "none" ] && echo "(if EUR-IS-1 has no $GPU stock: try GPU=\"NVIDIA H100 80GB HBM3\" [SECURE, ~3.3x cost], or wait for stock — COMMUNITY is NOT permitted for registered runs per Amendment A2)"
   exit 1
 fi
 echo "pod: $POD"
@@ -113,7 +142,7 @@ RESUME_FLAG=""
 
 echo "starting detached training run (log + checkpoints in $RUN_DIR)"
 $SSH "cd /root/mvm/src && rm -f $RUN_DIR/$OUT.DONE && nohup python train.py \
-  --scale $SCALE --seed $SEED --batch 128 --steps 200000 \
+  --scale $SCALE --seed $SEED $TWIN_FLAG --batch 128 --steps 200000 \
   --max-tokens $MAXTOK --eval-every 500 --eval-n 100 \
   --eval-mode heldout --device cuda $RESUME_FLAG \
   --out $RUN_DIR/$OUT.pt \
