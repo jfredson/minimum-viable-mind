@@ -74,8 +74,8 @@
       "params": {
         "n_episodes": 4000,
         "seed": 20260808,
-        "checkpoint": "pilot_a1_10m_seed0.pt",
-        "checkpoint_md5": "bab56cd890d31980411e73ce333a6317",
+        "checkpoint": "pilot_a1_30m_seed0.pt",
+        "checkpoint_md5": "fd1eb80c990435ca2629cee58df08779",
         "equivalence_bound": [
           0.45,
           0.55
@@ -111,28 +111,28 @@
           "clean": {
             "mode": "enact",
             "n_examples": 8000,
-            "auc": 0.4933,
+            "auc": 0.4964,
             "ci95": [
-              0.4808,
-              0.5062
+              0.4837,
+              0.5095
             ]
           },
           "positive_control": {
             "mode": "greedy",
             "n_examples": 8000,
-            "auc": 0.8796,
+            "auc": 0.9312,
             "ci95": [
-              0.8717,
-              0.8872
+              0.9248,
+              0.9375
             ]
           },
           "positive_control_policy": {
             "mode": "policy",
             "n_examples": 8000,
-            "auc": 0.8514,
+            "auc": 0.8248,
             "ci95": [
-              0.8427,
-              0.8601
+              0.8152,
+              0.8336
             ]
           },
           "clean_pass": true,
