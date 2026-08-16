@@ -708,6 +708,24 @@ same-session:
   full-scope estimates — declined as the ratchet the blind rule exists
   to kill.
 
+### Run-identity note: pilot seed-0 checkpoint serves as the registered seed-0 full run (John, 2026-08-16)
+
+Adjudicated before any 5-seed analysis: the 30M pilot checkpoint
+(`pilot_a1_30m_seed0.pt`, md5 `fd1eb80c990435ca2629cee58df08779`) counts
+as the registered seed-0 full-model run. Basis: identical recipe at the
+registered values (scale 30M, seed 0, 784.08M-token budget, batch 128,
+held-out eval), produced on the A2-registered venue, gate (iii) PASSED
+on it at the registered n=4000. Re-running the same seed with the same
+recipe would produce a near-identical checkpoint at ~$19/19h for no
+information — the registered run's identity is the recipe and the
+checkpoint, not the launch's label. Stated asymmetry, on the record: the
+pilot was launched to answer the learnability question and its
+trajectory was watched in-flight; endpoints and signatures were
+pre-stated, and the registered analysis (ablations, twin contrast,
+localization) has not touched this checkpoint yet, so no analysis
+degrees of freedom were spent. Remaining registered launches: seed-0
+twin + seeds 1–4 × full+twin (9 runs).
+
 ## Results
 
 *(empty until the registered run executes)*
