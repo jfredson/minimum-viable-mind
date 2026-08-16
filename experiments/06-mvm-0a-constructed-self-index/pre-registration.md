@@ -726,6 +726,20 @@ localization) has not touched this checkpoint yet, so no analysis
 degrees of freedom were spent. Remaining registered launches: seed-0
 twin + seeds 1–4 × full+twin (9 runs).
 
+### Registered amendment note: corrigibility commitments v1.1 (2026-08-16)
+
+`spec/corrigibility-commitments.md` amended to v1.1 by John (ratified
+in-session 2026-08-16, commit
+`6c14244990c540b2597c77bb457938acb3abf8b7`), at the document's own
+pre-5-seed review point: C2 now permits delegated launch *execution*
+under John's per-run written authorization (quoted verbatim in the
+ledger row), with launch *authority*, resume/re-launch gos, and kill
+authority remaining human and non-delegable. Runs launched from this
+note onward cite the v1.1 hash; runs already complete (the pilots) were
+launched under v1.0 (`cb6715d8`) and their records are unchanged. This
+note satisfies the v1.0 rule that amendments to the corrigibility
+document are recorded as registered amendments.
+
 ## Results
 
 *(empty until the registered run executes)*
