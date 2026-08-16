@@ -19,7 +19,11 @@ registration: cue-detector runs (i) and (ii) PASS
 v1.0 pipeline; on-policy fill is replaced by enactment with an acting
 channel — see §Amendment A1, which supersedes the fill clauses of
 §Materials and re-specifies gate run (ii) and the battery freezing
-unit.*
+unit. **Amendment A2 (2026-08-16, registered):** the 10M A1 pilot failed
+ceiling and the 30M A1 pilot learned (verdict H_scale, adjudicated by
+John 2026-08-16); registered scale is 30M and the compute cap is $400 —
+see §Amendment A2, which supersedes the scale-ladder resolution and the
+$200 cap of §Materials.*
 
 ## The claim under test
 
@@ -613,6 +617,68 @@ learnability-of-the-old-task only.*
    pipeline before any 5-seed spend; the smallest-that-learns rule and
    the unlearnable-at-≤100M loss condition apply verbatim. Human
    launch per C2. Estimated $2–6 at the anomaly-priced rate.
+
+## Amendment A2 — registered scale 30M + cap $400 (REGISTERED 2026-08-16)
+
+*Registered on John's adjudication of the 30M A1 pilot verdict (H_scale),
+2026-08-16, committed before any run it affects. Pre-drafted 2026-08-15 as
+`amendment-a2-draft-IF-30m-learns.md`; the H_shortcut-starvation branch
+doc was deleted unused per the pre-stated procedure.*
+
+### What it amends
+
+1. **Registered scale = 30M** per the smallest-that-learns rule. 10M
+   FAILED ceiling (T_si 0.37 final, T_sr_rev 0.00 for the whole run —
+   `pilot-a1-findings.md`). 30M pilot result (`pilot-a1-30m-findings.md`,
+   pod `rhddnh0u4le0l9`, seed 0, 784.09M tokens, 102,095 steps):
+   endpoint T_sr 1.00 / T_si 0.93 (max 0.990; late-run band 0.93–0.98 at
+   eval n=100) / T_state 1.00 / T_syntax 1.00 / T_sr_rev 1.00;
+   transitions T_si first ≥0.9 @ step 64,500, T_sr_rev @ 73,000 — the
+   pre-stated H_scale signature, with no mark of H_shortcut-starvation.
+   Gate (iii) re-ran on this checkpoint at the registered n=4000 and
+   PASSES (arm A 0.4874 [0.4664, 0.5110], arm B 0.4964 [0.4837, 0.5095],
+   all positive controls fire; md5 `fd1eb80c990435ca2629cee58df08779`).
+2. **Compute cap $200 → $400.** The original cap was derived from
+   guide-row estimates that measured pace invalidated twice (5-seed 30M
+   guessed at ~$12; single-run 30M measured at ~$66 on H100, then ~$19
+   on secure 5090). Re-derivation at measured venue pricing (RTX 5090
+   SECURE EUR-IS-1 $0.99/hr, 0.65 s/step measured on this exact
+   workload — enactment-bound, so the cheap GPU loses nothing):
+   - spent to date: ~$125 (incl. this pilot ~$19)
+   - 5 seeds × full+twin = 10 runs × ~$19 ≈ **$190**
+     (twin ≈ full-cost; treat as upper bound)
+   - gate re-runs, ablation passes + RT-01 probes, θ/δ calibration,
+     blind-localization arm: ~$30–45 at 30M
+   - volume drip + margin for one crash-resume: ~$15
+   - **projected total ≈ $355–375; cap $400 leaves honest margin without
+     becoming unbounded.**
+3. **Venue registered as secure-cloud only** for the 5-seed spend (the
+   community billing anomaly stays priced out), volume-attached, launched
+   through the process-fixed launcher (watchdog fetch+kill, volume
+   checkpoints) — ops constraints promoted to registered procedure after
+   the 08-09/12 loss.
+
+### What it does NOT amend
+
+The design itself: batteries, gates, bins, ablation operators, twin,
+blind-localization arm, corrigibility commitments — all unchanged from
+v1.0 + A1. Gate (iii) has PASSED on the 30M checkpoint (recorded above
+and in `cue_detector_gate.json`); the 5-seed launch precondition is met.
+
+### Wager
+
+This amendment predicts the registered 5-seed design completes under
+$400 with ≥5 clean seeds. If measured spend approaches $400 with seeds
+missing, the report is the shortfall — never a silent second raise; a
+further raise is a new adjudication with this one on the record as
+having been wrong.
+
+### Adjudication record
+
+- [x] Pilot verdict adjudicated H_scale (John): 2026-08-16, in-session
+  ("confirm", after full endpoint + gate readout)
+- [x] A2 registered (John, commit before first affected run): 2026-08-16,
+  this commit
 
 ## Results
 

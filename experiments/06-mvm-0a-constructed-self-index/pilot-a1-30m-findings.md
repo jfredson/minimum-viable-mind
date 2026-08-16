@@ -85,12 +85,29 @@ history). Ran locally on MPS, $0.
   30M rollouts carry no detectable ownership fingerprint; the 5-seed
   spend precondition is met.
 
-## Verdict — ⟨PENDING: John adjudicates⟩
+## Verdict — **H_scale** (adjudicated by John, 2026-08-16)
 
-Branch docs pre-drafted; fire the winner, delete the loser:
-- H_scale → `amendment-a2-draft-IF-30m-learns.md` (registered scale 30M;
-  cap $200→$400; 5-seed × full+twin ≈ $190 at measured 5090-secure pricing)
-- H_shortcut-starvation → `upstream-draft-IF-shortcut-starvation.md`
+Adjudicated in-session after the full endpoint + gate readout; Amendment
+A2 registered the same day (`pre-registration.md` §Amendment A2: scale
+30M, cap $200→$400). The starvation branch doc deleted unused, per the
+pre-stated procedure.
+
+Caveats on the record (none weaken the call):
+
+1. **Single seed.** H_scale is established for seed 0; the registered
+   5-seed run is what turns "a 30M can learn this" into "30M learns
+   this."
+2. **Learnability ≠ load-bearing.** This pilot says the A1 task is
+   learnable at 30M; it says nothing about whether the *register* is
+   what carries it. That is H_load-bearing — the registered main
+   experiment, still entirely open. Do not over-read upstream.
+3. **Endpoint literalism.** The endpoint row reads T_si 0.93; "ceiling"
+   here means the late-run band 0.93–0.98 (max 0.990) at eval n=100 —
+   stated explicitly rather than quietly citing the max.
+4. **RT-17 strengthened, not touched.** The acting channel is present in
+   this pipeline, and the retired v1.0 policy pipeline still lights the
+   detector at 0.82 while the clean arms sit at chance — own-ness is
+   carried by the act, not the statistics, at 30M as at 10M.
 
 ## Cost/pricing note (already actionable)
 

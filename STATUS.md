@@ -2,6 +2,39 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## 30M LEARNS — verdict H_scale; gate (iii) PASSES; A2 REGISTERED (scale 30M, cap $400) (2026-08-16)
+
+The re-run completed clean end-to-end: token-budget stop at step 102,095
+(784.09M tok, 19.0h train), DONE sentinel written, **watchdog did the
+full fetch and deleted the pod itself** (16:41Z; zero pods; the 08-12
+failure mode is closed). Endpoint: T_sr 1.00 / **T_si 0.93** (max 0.990;
+late band 0.93–0.98) / T_state 1.00 / T_syntax 1.00 / **T_sr_rev 1.00**;
+transitions T_si @64.5k, T_sr_rev @73k — the pre-stated H_scale
+signature, no mark of shortcut-starvation. **John adjudicated H_scale
+in-session.** Gate (iii) re-ran on the checkpoint at the registered
+n=4000: **PASS** (arm A 0.4874 [0.4664, 0.5110], arm B 0.4964
+[0.4837, 0.5095], all positive controls fire incl. the retired v1.0
+pipeline at 0.82; md5 `fd1eb80c…`). Full record + caveats (single seed;
+learnability ≠ load-bearing): `pilot-a1-30m-findings.md`.
+
+**Amendment A2 registered same day** (`pre-registration.md` §Amendment
+A2): registered scale 30M; cap $200→$400 at measured 5090-secure pricing
+(projected total ~$355–375 incl. 5-seed × full+twin ≈ $190); venue
+secure-only + process-fixed launcher promoted to registered procedure.
+Starvation branch doc deleted unused. Cost: ~$18.9 actual (est $19);
+spend ~$124.5, balance $79.77. RunPod overrun ticket SUBMITTED
+(2026-08-16 ~14:45Z, Pod Issue → Incorrect Charges; CLI-help proof of
+`--terminate-after` folded in after their bot doubted the flag exists).
+
+**Next:** (1) the registered 5-seed × full+twin at 30M — precondition
+met, launch is John's C2 go through `launch_pilot_a1.sh` (needs the
+seed/twin parameterization pass first); (2) blind-localization arm
+alongside per registration; (3) W37 single-amendment ceiling number
+(John, quick); (4) ledger console reconciliation at the phase boundary;
+(5) 30M findings note is written (raw, not Voice-Calibrated) — merge
+branch `worktree-30m-findings-scaffold`, where this session's doc edits
+live.
+
 ## 30M RE-RUN IN FLIGHT — 5090 secure + network volume; watchdog armed (2026-08-15, later)
 
 John topped up $75 (balance $98.94) and directed the launch. EUR-IS-1 had
