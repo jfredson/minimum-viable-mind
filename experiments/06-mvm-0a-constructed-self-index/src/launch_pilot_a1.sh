@@ -141,13 +141,20 @@ RESUME_FLAG=""
 [ -n "$RESUME" ] && RESUME_FLAG="--resume $RESUME"
 
 echo "starting detached training run (log + checkpoints in $RUN_DIR)"
+# 2026-08-17: this ssh can HANG after the remote nohup succeeds — the
+# keepalive opts keep the drained connection open forever (both wave-1
+# launches needed their local ssh killed by hand). Hard-cap it at 60s;
+# the explicit aliveness check below is the truth, not this exit status.
 $SSH "cd /root/mvm/src && rm -f $RUN_DIR/$OUT.DONE && nohup python train.py \
   --scale $SCALE --seed $SEED $TWIN_FLAG --batch 128 --steps 200000 \
   --max-tokens $MAXTOK --eval-every 500 --eval-n 100 \
   --eval-mode heldout --device cuda $RESUME_FLAG \
   --out $RUN_DIR/$OUT.pt \
-  > $RUN_DIR/train_$OUT.log 2>&1 < /dev/null &" \
-  || echo "ssh teardown reset (benign if the aliveness check passes)"
+  > $RUN_DIR/train_$OUT.log 2>&1 < /dev/null &" &
+START_PID=$!
+( sleep 60; kill "$START_PID" 2>/dev/null ) >/dev/null 2>&1 &
+wait "$START_PID" \
+  || echo "ssh teardown reset/timeout (benign if the aliveness check passes)"
 
 sleep 20
 # [t]rain guard: without it pgrep matches the checking shell itself — this
