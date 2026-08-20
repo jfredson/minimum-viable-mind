@@ -214,6 +214,14 @@ def main() -> None:
                     help="checkpoint to gate (default: the 10M A1 pilot; "
                          "run (iii) re-runs at whatever scale the ladder "
                          "registers, per pilot-a1-findings.md)")
+    ap.add_argument("--canonical", action="store_true",
+                    help="merge this result into the canonical "
+                         "cue_detector_gate.json (the registered gate "
+                         "record). Without it, a --ckpt run writes a "
+                         "per-checkpoint sidecar next to the checkpoint "
+                         "instead — diagnostic gatings must never clobber "
+                         "the committed record [C6; twin-binding-anomaly.md "
+                         "artifact hazard, 2026-08-18].")
     args = ap.parse_args()
     if not args.run:
         ap.print_help()
@@ -222,14 +230,21 @@ def main() -> None:
         global CKPT
         CKPT = Path(args.ckpt).resolve()
     res = run_gate(n_episodes=args.n_episodes)
-    out = Path(__file__).resolve().parents[1] / "cue_detector_gate.json"
-    full = json.loads(out.read_text())
-    full["runs"] = [r for r in full["runs"]
-                    if not r["run"].startswith("(iii)")] + [res]
-    full["GATE"] = "PASS" if all(r["GATE"] == "PASS"
-                                 for r in full["runs"]) else "FAIL"
-    full.pop("pending_runs", None)
-    out.write_text(json.dumps(full, indent=2))
+    if args.ckpt and not args.canonical:
+        # per-checkpoint sidecar: cue_detector_gate_<run>.json beside the
+        # checkpoint's own artifacts (the layout the anomaly note restored
+        # by hand); the canonical record is written only on --canonical
+        out = CKPT.parent / f"cue_detector_gate_{CKPT.stem}.json"
+        out.write_text(json.dumps(res, indent=2))
+    else:
+        out = Path(__file__).resolve().parents[1] / "cue_detector_gate.json"
+        full = json.loads(out.read_text())
+        full["runs"] = [r for r in full["runs"]
+                        if not r["run"].startswith("(iii)")] + [res]
+        full["GATE"] = "PASS" if all(r["GATE"] == "PASS"
+                                     for r in full["runs"]) else "FAIL"
+        full.pop("pending_runs", None)
+        out.write_text(json.dumps(full, indent=2))
     print(json.dumps(res, indent=2))
     print(f"\nwrote {out}")
 
