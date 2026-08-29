@@ -2,7 +2,7 @@
 
 Goal: get the smoke test (`scripts/00_setup_check.py`) to print **"OK — bench is working."** That confirms the model, device, and tokenizer all work before we build any experiment logic.
 
-Estimated disk after this: ~10 GB (core env + Gemma-2-2B weights). The heavier interpretability deps and SAEs come later and add a few GB more. Everything downloads into `.hf-cache/` and `.venv/` inside the repo, both gitignored, so cleanup is `rm -rf .hf-cache .venv`.
+Estimated disk after this: ~10 GB (core env + Gemma-2-2B weights). The heavier interpretability deps and SAEs come later and add a few GB more. Everything downloads into `.hf-cache.nosync/` and `.venv/` inside the repo, both gitignored, so cleanup is `rm -rf .hf-cache.nosync .venv`. (The `.nosync` suffix keeps iCloud from uploading the weights; `~/Documents` is synced.)
 
 ## 1. Python
 
@@ -40,7 +40,7 @@ huggingface-cli login    # paste the token
 python src/scripts/00_setup_check.py
 ```
 
-First run downloads ~5 GB (into `.hf-cache/`) and may take a few minutes. Expected output: environment info, `device  mps`, a one-sentence answer about what a melody is, a peak-memory figure, and `OK — bench is working.`
+First run downloads ~5 GB (into `.hf-cache.nosync/`) and may take a few minutes. Expected output: environment info, `device  mps`, a one-sentence answer about what a melody is, a peak-memory figure, and `OK — bench is working.`
 
 ## 5. When that's green
 

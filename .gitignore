@@ -7,6 +7,11 @@ venv/
 
 # Model + data caches (large, regenerable)
 .hf-cache/
+# The cache is named .nosync so iCloud Drive skips it: ~/Documents is synced,
+# and uploading 2 GB of re-downloadable model weights blob by blob starves
+# every other file operation in the folder (git included). Do not rename it
+# back without moving the repo out of iCloud first.
+.hf-cache.nosync/
 artifacts/
 *.safetensors
 

@@ -14,10 +14,12 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[2]  # .../minimum-viable-mind
 SRC_ROOT = PROJECT_ROOT / "src"
 ARTIFACTS_DIR = PROJECT_ROOT / "artifacts"          # gitignored: probes, caches, results
-HF_HOME = PROJECT_ROOT / ".hf-cache"                # gitignored: model + SAE downloads
+HF_HOME = PROJECT_ROOT / ".hf-cache.nosync"         # gitignored: model + SAE downloads
 
 # Keep every HuggingFace download inside the repo, so disk use is easy to see
-# and to clean (rm -rf .hf-cache). Set before transformers/hf imports.
+# and to clean (rm -rf .hf-cache.nosync). The .nosync suffix is load-bearing:
+# ~/Documents is iCloud-synced and this directory must not be uploaded.
+# Set before transformers/hf imports.
 os.environ.setdefault("HF_HOME", str(HF_HOME))
 # Let unsupported MPS ops fall back to CPU instead of raising.
 os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")

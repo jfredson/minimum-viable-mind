@@ -2,7 +2,7 @@
 
 What it does:
   - prints versions, the selected device, and the HF cache location
-  - loads Gemma-2-2B-it (first run downloads ~5GB into .hf-cache/)
+  - loads Gemma-2-2B-it (first run downloads ~5GB into .hf-cache.nosync/)
   - runs one short greedy generation
   - reports peak MPS memory
 
