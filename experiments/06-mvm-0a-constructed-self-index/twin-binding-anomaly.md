@@ -153,24 +153,31 @@ remainder would cost:
    compute** — the batteries were *already* scored on held-out episodes
    with disjoint content seeds (`train.py:172`), so the twin's 0.96
    generalizes and the memorization reading is off the table.
-3. **Cross-seed battery item analysis.** Are the twin's T_si successes
-   concentrated on items with particular structure (revision depth,
-   referent distance, lexical overlap with the training grammar)? An
-   item-level split is the cheapest remaining route to "what is the
-   alternative algorithm actually keying on."
-4. **Ablate the register at inference — the decisive test, still to
-   run.** Zero/lesion the register in the *bound pilot* checkpoint and
-   re-score T_si/T_sr_rev. If the pilot's binding survives the lesion,
-   then even the one clean success was never register-dependent and the
-   construct problem is total rather than partial. This is the single
-   highest-information diagnostic left and it needs no new training —
-   only an inference-time harness.
+3. ~~**Cross-seed battery item analysis.**~~ **DONE 2026-08-19** — see
+   `register-lesion-findings.md`. Two phenotypes: the "binders" are
+   general associative retrievers (T_si unique-item 1.00, losses only
+   on ambiguous repeated-item cells — an item-construction defect);
+   the non-binders hold first-binding-wins memory of their OWN
+   commitments only (T_sr 1.00 on first assignments, exactly 0.00 on
+   revised) and cannot do marker-keyed retrieval at all.
+4. ~~**Ablate the register at inference — the decisive test.**~~
+   **DONE 2026-08-19, and the pre-stated "survives" branch fired** —
+   `register-lesion-findings.md`. The pilot's binding survives every
+   lesion including full removal of the register injection (T_si
+   0.93→0.94, T_sr_rev 1.00→1.00); the registers carry large
+   activations but near-zero agent-specific information (a deranged
+   content read moves logits by mean |Δ| 0.014). **The construct
+   problem is total.** A follow-up acting-channel lesion localizes
+   the one real authorship mechanism: the non-binder's T_sr collapses
+   0.96→0.16 without the motor copy.
 5. **θ/δ null calibration** (already registered, `~$2–5`) — the noise
    floor these late-checkpoint swings should be judged against. With
    eval n=100 per battery, seed-2's late wander (0.26 → 0.43 → 0.31 →
    0.35) is very likely inside it.
-6. **Fix `fingerprint_gate.py`'s fixed output path** before any further
-   gating (see hazard note above).
+6. ~~**Fix `fingerprint_gate.py`'s fixed output path**~~ **DONE
+   2026-08-19** — a `--ckpt` run now writes
+   `cue_detector_gate_<run>.json` beside the checkpoint; the canonical
+   record is only touched with an explicit `--canonical`.
 
 ## The open decision (John's)
 

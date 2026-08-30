@@ -2,6 +2,49 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## ANOMALY DIAGNOSTICS RUN — register lesion: binding SURVIVES total register removal; construct problem is TOTAL; wave 3 awaits John (2026-08-19)
+
+The cheap threads queued by `twin-binding-anomaly.md` ran to completion
+in one session, all local, $0 [C1/C2]. Full record:
+`experiments/06-mvm-0a-constructed-self-index/register-lesion-findings.md`;
+raw outputs in `.../lesion-results/`; tools `src/lesion_register.py`,
+`src/item_analysis.py`, `src/pick_analysis.py`.
+
+**Thread 4 (the decisive test) — the pre-stated "survives" branch
+fired.** The bound pilot's T_si/T_sr_rev are UNCHANGED under every
+register lesion, including full removal of the cross-attention
+injection (T_si 0.93→0.94, T_sr_rev 1.00→1.00; harness validated by
+bit-identical reproduction of the committed endpoint row). The
+registers route large activation mass (per-block xattn residual norms
+18–275) but carry almost no agent-specific information (deranged
+content read: mean |Δlogit| 0.014). Numerically active, informationally
+inert. **No observed binding anywhere in the 30M data is
+register-dependent.**
+
+**Thread 3 (item analysis, all five checkpoints, n=400) — the
+batteries decompose.** "Binders" = general associative retrieval
+(unique-item T_si 1.00 for both, register or no register); their only
+losses are T_si's repeated-item cells, which are ill-posed (the
+recorded answer is a random draw between stale and revised value — an
+item-construction defect). Non-binders = first-binding-wins memory of
+OWN commitments only (T_sr 1.00 on first assignments, 0.00 on revised)
+with no marker-keyed retrieval (T_si 0.34, flat). A no-act lesion
+localizes the one demonstrably load-bearing authorship mechanism: the
+non-binder's T_sr collapses 0.96→0.16 without the motor copy — the
+acting channel, which the twin also has.
+
+**Also done:** `fingerprint_gate.py` output-path hazard fixed (`--ckpt`
+runs write per-checkpoint sidecars; canonical record needs explicit
+`--canonical`).
+
+**Next (John owns all of it):** (1) adjudicate wave-3 disposition —
+the findings note lays out halt-and-redesign / null-calibration-first /
+continue-as-registered, with the diagnostic result that no wave-3
+outcome can bear on H_load-bearing; (2) any change to the registered
+plan is itself a registered amendment; (3) RunPod ticket #45404 reply
+still drafted-not-sent on branch `worktree-runpod-ticket-reply`; (4)
+θ/δ null calibration (~$2–5) remains registered and unspent.
+
 ## 30M LEARNS — verdict H_scale; gate (iii) PASSES; A2 REGISTERED (scale 30M, cap $400) (2026-08-16)
 
 The re-run completed clean end-to-end: token-budget stop at step 102,095

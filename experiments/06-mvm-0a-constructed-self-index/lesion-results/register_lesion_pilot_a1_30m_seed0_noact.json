@@ -1,0 +1,37 @@
+{
+  "diagnostic": "register lesion at inference (twin-binding-anomaly.md thread 4)",
+  "checkpoint": "pilot_a1_30m_seed0.pt",
+  "checkpoint_md5": "fd1eb80c990435ca2629cee58df08779",
+  "eval": {
+    "harness": "train.eval_heldout",
+    "n": 100,
+    "seeds": [
+      987654321,
+      20260819
+    ],
+    "note": "seed 987654321 is the registered held-out eval the endpoint rows report"
+  },
+  "device": "mps",
+  "lesions": [
+    {
+      "lesion": "no-act",
+      "description": "acting channel zeroed: act_proj weight -> 0 (bias-free Linear), no motor-copy injection reaches the trunk (enacted VALUES unchanged \u2014 they are data-side)",
+      "acc": {
+        "987654321": {
+          "T_sr": 0.79,
+          "T_si": 0.94,
+          "T_state": 0.92,
+          "T_syntax": 1.0,
+          "T_sr_rev": 0.25
+        },
+        "20260819": {
+          "T_sr": 0.72,
+          "T_si": 0.99,
+          "T_state": 0.92,
+          "T_syntax": 1.0,
+          "T_sr_rev": 0.25
+        }
+      }
+    }
+  ]
+}
