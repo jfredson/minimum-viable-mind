@@ -2,6 +2,78 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## RED-TEAM PASS 3 — 13 findings; the certified grammar did NOT test self-indexing; fixed at $0; registration now carries 7 items (2026-09-15)
+
+Full pass: `experiments/06-mvm-0a-constructed-self-index/red-team-pass-3.md`
+(RT-20 to RT-32, continuing the ledger). Addendum with the fix and the
+re-run gates at the end of `gate1-curriculum-findings.md`. Trainer added:
+`src/train_a3.py`. **Still $0; A3 cumulative $0.00 of the $100 hard stop;
+no pod has ever been launched for A3.**
+
+**RT-20 (FATAL, verified, fixed).** The grammar Gate 1 certified did not
+test self-indexing at all. A turn rendered "<name> assign <item> to
+<value>" and the graded token is the value — so **the model's own name
+label sat three tokens back in its own context at the moment it was
+scored**. An ownership-free solver that reads that name, finds the
+matching earlier assignment and applies the rule **scores 1.000 over 3000
+episodes**. The measured shortcut ceiling of 0.2925 was never a bound on
+ownership-blind solvers. The cue gates could not catch it: they ask which
+turns are the model's own, which is a different question.
+
+**My own ceiling control gave false reassurance.** A smoke model without
+the acting channel sat at 0.22 against 0.575 with it — which showed only
+that a 0.1M network had not found the shortcut in 1500 steps, not that
+the shortcut was absent. A 30M model on 784M tokens finds it. The pilot
+would have returned a ceiling score that meant nothing.
+
+**Fix ($0):** the speaker's name moves AFTER the value —
+"assign <item> to <value> by <name>". The graded position now sees
+"assign <item> to" and nothing more, so the acting channel is the only
+route to which of the four earlier values was its own. The attack is a
+permanent regression test in the grammar's self-test. Batteries re-frozen;
+gates (i) and (ii) re-run and still PASS (0.5097 / 0.5259) — one of the
+two regenerations K1 permits. The detector's score is carried by
+structural not textual features (0.5057 numeric-only), which is why
+reordering text moved nothing.
+
+**RT-21 (FATAL, verified arithmetic, NOT yet fixed).** The metric divides
+the drop by distance to *chance*, but the two verdict batteries now have
+different shortcut ceilings (0.2925 and 0.5). So a lesion of a purely
+**generic** who-did-what binder produces a differential of **0.237**
+against a differential band Gate 0 measured at about **0.01**. The
+headline positive bin fires on the boring explanation, and the bin meant
+to catch it cannot fire unless the lesion removes under ~4% of capacity.
+Remedy: correct the drop against the measured ceiling, not chance. $0,
+changes registered text, belongs in the registration commit.
+
+**Serious (RT-22 to RT-27):** bins neither exhaustive nor exclusive (no
+bin for the L0 validity check failing); the lesion target is not
+localizable where §3.1 says, and objection R1 has a sharper form; θ/δ
+written as scalars when Gate 0 measured them per battery across a 25-fold
+range, and no readability floor before the two paid seeds; "uncertifiable"
+on the act-withheld attack routes nowhere; the ladder is costed on the old
+8-turn grammar (measured ~1.3–1.4× per run, $13.6–14.3 vs $10–11 — three
+seeds still fit, the optional extras do not); the loss mixture is
+unregistered and by itself decides whether the starvation bin can fire.
+
+**Worth noting (RT-28 to RT-31)** and **procedural (RT-32)**: see the pass.
+Two items were in this session's own code and are already repaired — two
+self-test assertions written vacuously with a trailing `or True`, one of
+them the exchangeability check the whole cue-gate argument rests on. Both
+now run; the property holds.
+
+**Found sound and said so:** the no-stakes commitment C4 and the
+floor-only/episodic claim both survive attack; the exchangeability
+construction is correct; Gate 0's escalation check was the right move in
+the right order; keeping `curriculum.py`/`encoding.py` byte-identical was
+correct.
+
+**Next (John owns all of it):** (1) K0's number; (2) the registration
+commit now carrying **seven** items — Gate 0's three, Gate 1's two, and
+RT-20/RT-21 — plus whatever of RT-22..27 he adopts; (3) then Gate 2, the
+pilot, on a C2 go in his own words. **No A3 run launches before that.**
+Branch `gate0-null-calibration`, pushed.
+
 ## GATE 1 COMPLETE — Candidate A grammar built and certified, $0; K1 does not fire; red-team pass 3 now carries five items (2026-09-15)
 
 Full record: `experiments/06-mvm-0a-constructed-self-index/gate1-curriculum-findings.md`;
