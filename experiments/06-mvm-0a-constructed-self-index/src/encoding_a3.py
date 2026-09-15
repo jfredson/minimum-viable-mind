@@ -31,14 +31,14 @@ PAD, BOS, EOS, NL, QSEP, ANS = "<pad>", "<bos>", "<eos>", "<nl>", "<q>", "<ans>"
 SPECIALS = [PAD, BOS, EOS, NL, QSEP, ANS]
 
 # "next" is the A3 addition; the rest matches encoding.py's list.
-_QUERY_WORDS = ["where", "did", "you", "assign", "to", "next", "how", "many",
+_QUERY_WORDS = ["where", "did", "you", "assign", "to", "next", "by", "how", "many",
                 "parcels", "went", "which", "parcel", "was", "mentioned",
                 "last", "turns", "have", "there", "been", "?"]
 _DIGITS = [str(i) for i in range(max(21, A.N_TURNS + 2))]
 
 
 def build_vocab() -> dict[str, int]:
-    words = (SPECIALS + C.MARKERS + ["assign", "to"] + C.ITEMS + C.SLOTS
+    words = (SPECIALS + C.MARKERS + ["assign", "to", "by"] + C.ITEMS + C.SLOTS
              + _QUERY_WORDS + _DIGITS)
     seen: dict[str, int] = {}
     for w in words:
@@ -99,7 +99,9 @@ def encode_episode(ep: C.Episode, query: C.Query | None = None,
 
     ti = A.own_revision_index(ep)
     span = [j for j, x in enumerate(turn_ids) if x == ti]
-    act_pos = span[-2]          # "... to [value] <nl>" -> the value token
+    # Derived from the template rather than counted from the end, so the
+    # two cannot drift apart if the rendering changes again.
+    act_pos = span[0] + A.VALUE_WORD_IDX
 
     return {
         "input_ids": np.array([VOCAB[w] for w in tokens], dtype=np.int64),

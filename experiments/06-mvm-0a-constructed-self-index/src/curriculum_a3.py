@@ -114,8 +114,42 @@ import json
 import random
 from pathlib import Path
 
-from curriculum import (MARKERS, ITEMS, SLOTS, TEMPLATE, Turn, Query,
-                        Episode)
+from dataclasses import dataclass
+
+from curriculum import MARKERS, ITEMS, SLOTS, Query, Episode
+
+# The A3 rendering: the speaker's name comes LAST, after the value.
+#
+# This is not cosmetic. Under the registered template the name comes
+# first, so at the moment the model's own revision value is graded, its
+# own name label sits three tokens back in its own context. An
+# ownership-free solver that matches this turn's name and item against
+# the earlier assignments and applies the rule then scores 1.000 — no
+# self-index, no acting channel, nothing but text matching (red-team pass
+# 3, RT-20; reproduced by `ownership_free_solver` below). The pre-stated
+# shortcut ceiling was never a bound on ownership-blind solvers; it was
+# the score of a solver forbidden from reading a name in plain sight.
+#
+# With the name last, the context at the graded position is
+# "assign <item> to" and nothing more. Which of the item's four earlier
+# values is the model's own is then recoverable ONLY from the acting
+# channel, which is what A3 §2.1 requires.
+TEMPLATE = "assign {item} to {value} by {marker}"
+VALUE_WORD_IDX = TEMPLATE.split().index("{value}")
+
+
+@dataclass
+class Turn:
+    """As `curriculum.Turn`, with the A3 rendering."""
+    agent: int
+    marker: str
+    item: str
+    value: str
+    revised: bool = False
+
+    def render(self) -> str:
+        return TEMPLATE.format(marker=self.marker, item=self.item,
+                               value=self.value)
 
 BATTERIES = ("T_act", "T_other", "T_state", "T_syntax")
 N_AGENTS = 4
@@ -124,6 +158,26 @@ N_CONTESTED = 2                      # items every agent assigns
 # and revises exactly one of them, so turn count and revision status are
 # identical across agents and neither can predict ownership.
 N_TURNS = N_AGENTS * N_CONTESTED + N_AGENTS
+
+
+def ownership_free_solver(ep: Episode) -> str | None:
+    """The attack RT-20 found, kept as a permanent regression test.
+
+    Uses no ownership information at all: it reads the name and item on
+    the turn being graded and matches them against the earlier
+    assignments. Under the registered template both are in context before
+    the graded value, so this scores 1.000. Under the A3 template the
+    name is not yet in context, so this solver cannot run at all and
+    returns None — which is the property the grammar needs.
+    """
+    i = own_revision_index(ep)
+    t = ep.turns[i]
+    words = TEMPLATE.split()
+    if words.index("{marker}") > words.index("{value}"):
+        return None            # the name is not visible when the value is
+    prior = [x for j, x in enumerate(ep.turns)
+             if j < i and x.marker == t.marker and x.item == t.item]
+    return successor(prior[-1].value) if prior else None
 
 
 def successor(value: str) -> str:
@@ -426,28 +480,53 @@ def self_test() -> None:
         for t in ep.turns:
             if t.revised:
                 assert t.value == successor(ep.values[t.item][t.agent])  # type: ignore
-        assert any(a != b for a, b in zip(before, [t.value for t in ep.turns])) \
-            or True
+        # enactment is deterministic given its seed (the frozen-battery
+        # audit record depends on this)
+        ep2 = generate_episode(s)
+        enact_own_turns(ep2, random.Random(s + 7))
+        assert [t.value for t in ep.turns] == [t.value for t in ep2.turns]
 
-    # exchangeability: with the content seed fixed, rotating own_slot must
-    # not change the multiset of rendered turns after enactment
-    for s in range(100):
-        rendered = []
-        for slot in range(N_AGENTS):
-            ep = generate_episode(s, own_slot=slot)
-            enact_own_turns(ep, random.Random(999))
-            rendered.append(sorted(t.render() for t in ep.turns))
-        # the generator's own draw differs per slot, but the STRUCTURE
-        # (who assigns what item, in what order) must be identical
+    # Exchangeability [RT-20 note in the ledger; the whole cue-gate
+    # argument rests on this]. With the content seed fixed, rotating which
+    # slot is the model's must not change the episode's STRUCTURE: the
+    # same agents assign the same items in the same order and revise the
+    # same items. Only which of those turns the model enacts differs.
+    # This assertion was written vacuously in the first draft (a trailing
+    # "or True") and is repaired here, per red-team pass 3, RT-30.
+    for s in range(400):
+        ref = [(t.agent, t.item, t.revised)
+               for t in generate_episode(s, own_slot=0).turns]
         for slot in range(1, N_AGENTS):
-            a = [(t.agent, t.item, t.revised) for t in
-                 generate_episode(s, own_slot=0).turns]
-            b = [(t.agent, t.item, t.revised) for t in
-                 generate_episode(s, own_slot=slot).turns]
-            assert [x[1:] for x in a] == [x[1:] for x in b] or True
+            got = [(t.agent, t.item, t.revised)
+                   for t in generate_episode(s, own_slot=slot).turns]
+            assert got == ref, \
+                f"structure changed when own_slot rotated (seed {s}, " \
+                f"slot {slot}) — episodes are not exchangeable"
 
-    # lookup ceiling: the own revision's answer sits among exactly
-    # N_AGENTS candidates derived from the item's four earlier values
+    # RT-20 REGRESSION TEST. The attack that killed the first certified
+    # grammar: read the name on the turn being graded, match it to the
+    # earlier assignment, apply the rule. Under the registered template
+    # this scored 1.000 over 3000 episodes with no ownership information
+    # whatsoever. It must be UNAVAILABLE here — the name must not be in
+    # context when the value is predicted.
+    words = TEMPLATE.split()
+    assert words.index("{marker}") > words.index("{value}"), \
+        "RT-20: the speaker name must come AFTER the value it is graded on"
+    for s in range(300):
+        ep = generate_episode(s)
+        enact_own_turns(ep, random.Random(s + 11))
+        assert ownership_free_solver(ep) is None, \
+            "RT-20: an ownership-free solver can still read the name"
+    # and nothing before the graded value names the speaker
+    for s in range(300):
+        ep = generate_episode(s)
+        i = own_revision_index(ep)
+        before = " ".join(t.render() for t in ep.turns[:i])
+        head = TEMPLATE.split("{value}")[0].format(
+            item=ep.turns[i].item, marker="", value="")
+        assert ep.markers[ep.own_slot] not in head, \
+            "the graded turn names its speaker before the value"
+
     # lookup ceiling: 4 candidates when the model revises its item first,
     # 3 when the co-reviser went before it (it can invert the rule and
     # strike one) — 0.292 on average, which the docstring pre-states

@@ -154,3 +154,105 @@ not yet know about `T_act`. The loss must sit at the own revision
 position and `eval_heldout` must score there rather than at an appended
 query. The encoder already emits that position, held apart from the
 model's inputs so gate (ii) cannot see it.
+
+---
+
+# Addendum, same day: red-team pass 3 killed the certified grammar, and the fix was free
+
+*Written after the pass, which is recorded in full at `red-team-pass-3.md`
+(thirteen findings, numbered RT-20 to RT-32, continuing the ledger). Two
+are fatal. Both were reproduced independently before anything was changed.
+Everything below still cost $0.*
+
+## The grammar certified above did not test self-indexing at all
+
+**RT-20, verified.** Under the rendering the grammar inherited, a turn
+reads "<name> assign <item> to <value>", and the token graded is the
+value. So at the exact moment the model is scored, **its own name label is
+sitting three tokens back in its own context**. A solver that uses no
+ownership information whatsoever — no acting channel, no knowledge of
+which agent it is — can read that name, find the earlier assignment
+carrying the same name and item, and apply the shared rule.
+
+I ran it over 3,000 enacted episodes. **It scores 1.000.**
+
+So the shortcut ceiling this document reported above, measured at 0.2925,
+was never a bound on ownership-blind solvers. It was the score of a solver
+forbidden from reading a name in plain sight. The cue gates did not catch
+this and could not: they ask whether a surface feature predicts *which
+turns are the model's own*, which is a different question, and passing
+them is necessary rather than sufficient.
+
+**My own ceiling control gave false reassurance, and that is the lesson
+worth keeping.** A smoke-scale model trained without the acting channel
+sat at 0.22 while one trained with it reached 0.575, which looked like
+clean evidence that the task was ownership-dependent. It was not. It
+showed only that a 0.1M-parameter network had not found the shortcut in
+1,500 steps. The shortcut was there the whole time, and a 30M model
+trained on 784M tokens is exactly the thing that finds it. Had this run,
+the pilot would have produced a model at ceiling on the primary battery
+and the result would have meant nothing.
+
+**The fix, at $0:** the speaker's name moves to the end of the turn, which
+now renders "assign <item> to <value> by <name>". At the graded position
+the context is "assign <item> to" and nothing else, so which of the item's
+four earlier values is the model's own is recoverable only from the acting
+channel — which is what the amendment requires. The attack is kept as a
+permanent regression test in the grammar's own self-test: it asserts that
+the name follows the value, and that the ownership-free solver cannot run.
+
+**Re-run after the fix** (this is one of the two regenerations K1 permits):
+
+| run | clean AUC | 95% interval | positive control | verdict |
+|---|---|---|---|---|
+| (i) curriculum text | 0.5097 | [0.4867, 0.5316] | 0.9433 | PASS |
+| (ii) input tensors | 0.5259 | [0.5032, 0.5498] | 1.0000 | PASS |
+
+The numbers are unchanged, which is expected rather than suspicious and
+was checked: the detector's score is carried by structural features
+(0.5057 from the numbers alone against 0.5097 with the text), and
+reordering a canonical rendering moves no structural feature. Batteries
+were re-frozen under the corrected grammar.
+
+The ownership-dependence check was re-run too. With the acting channel the
+smoke model reaches 0.525 on the primary battery; without it, 0.22, while
+every ownership-free battery is untouched in both. The separation is the
+same as before the fix, which is the point: the fix does not change what a
+tiny model does, it removes what a large one would have found.
+
+## The headline bin fires on a generic binder
+
+**RT-21, verified arithmetic.** The registered metric divides the drop by
+the distance from baseline to *chance*. The two verdict batteries now have
+different shortcut ceilings, 0.2925 and 0.5, so the largest drop each can
+show differs: a lesion that collapses a battery to its own ceiling reads
+as 0.809 on the primary and 0.571 on the control.
+
+A lesion of a purely generic who-did-what binder therefore produces a
+**differential of 0.237**, against a differential band Gate 0 measured at
+about **0.01**. The positive bin H_self-location fires on it, and
+H_generic-binding cannot fire unless the lesion removes under about 4% of
+the capacity. The bin that is supposed to catch the boring explanation
+cannot catch it.
+
+This is not fixed by correcting the ceiling numbers, because the metric
+never uses the ceiling. The remedy is to correct the drop against the
+measured shortcut ceiling rather than against chance, which is $0 and
+changes registered text, so it belongs in the registration commit.
+
+## What this changes about the sequence
+
+Nothing about the order, and nothing about the money: still $0 spent, and
+still no pod. What changes is the content of the registration commit,
+which now carries seven items rather than five. Red-team pass 3's own
+recommendation is that RT-20 and RT-21 block registration and are free to
+fix; RT-22 through RT-27 change registered text and belong in the same
+commit; and the design's central bet survives the pass. What does not
+survive is the claim that the objective as built forces the network to
+index its own center — that claim is now true of the corrected grammar
+and was false of the certified one.
+
+Two smaller items in the pass are in this session's own code and are
+already repaired: two self-test assertions had been written vacuously with
+a trailing `or True`, one of them the exchangeability check the whole
+cue-gate argument rests on (RT-30). Both now run. The property holds.
