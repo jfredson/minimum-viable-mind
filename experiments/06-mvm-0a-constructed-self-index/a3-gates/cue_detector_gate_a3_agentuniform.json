@@ -1,0 +1,80 @@
+{
+  "gate": "A3 Gate 1 \u2014 cue-detector runs (i) and (ii)",
+  "sampling": "other AGENT drawn uniformly, then one of its turns",
+  "grammar": "curriculum_a3 (Candidate A)",
+  "n_turns": 10,
+  "n_agents": 4,
+  "runs": [
+    {
+      "run": "(i) curriculum text + episode-relative features",
+      "params": {
+        "n_episodes": 4000,
+        "seed": 20260915,
+        "equivalence_bound": [
+          0.45,
+          0.55
+        ],
+        "positive_control_min_auc": 0.7,
+        "n_features": 15
+      },
+      "clean": {
+        "leaky": false,
+        "n_examples": 8000,
+        "auc": 0.5058,
+        "ci95": [
+          0.4813,
+          0.5283
+        ]
+      },
+      "positive_control": {
+        "leaky": true,
+        "n_examples": 8000,
+        "auc": 0.9873,
+        "ci95": [
+          0.9845,
+          0.9899
+        ]
+      },
+      "clean_within_equivalence_bound": true,
+      "positive_control_detects_planted_leak": true,
+      "GATE": "PASS"
+    },
+    {
+      "run": "(ii) input tensors",
+      "params": {
+        "n_episodes": 4000,
+        "seed": 20260915,
+        "equivalence_bound": [
+          0.45,
+          0.55
+        ],
+        "positive_control": "canonical register reindex (own register forced to row 0)"
+      },
+      "clean": {
+        "leaky_layout": false,
+        "n_examples": 8000,
+        "auc": 0.5217,
+        "ci95": [
+          0.4981,
+          0.5448
+        ]
+      },
+      "positive_control": {
+        "leaky_layout": true,
+        "n_examples": 8000,
+        "auc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "clean_within_equivalence_bound": true,
+      "positive_control_detects_planted_leak": true,
+      "GATE": "PASS"
+    }
+  ],
+  "GATE": "PASS",
+  "pending": {
+    "(iii) post-training rollouts": "requires a trained checkpoint; A3 Gate 3"
+  }
+}

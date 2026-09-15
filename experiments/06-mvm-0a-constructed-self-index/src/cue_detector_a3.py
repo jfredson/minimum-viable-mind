@@ -93,26 +93,54 @@ def _episode_features(ep, idx: int) -> list[float]:
     ]
 
 
-def build_examples(eps, seed: int = 0):
-    """One balanced own/other pair per episode, both turns drawn uniformly
-    from their groups (the sampler bug that once manufactured AUC 0.896 on
-    a clean curriculum came from taking the first of each)."""
+def _pick_other(ep, rng, agent_uniform: bool):
+    """Choose the comparison turn.
+
+    `agent_uniform=False` is the registered sampler: pool every turn of
+    every other agent and draw one. That draw is SIZE-BIASED — an agent
+    with more turns contributes more turns to the pool, so it is picked
+    more often — while the model's own turn is drawn from one agent and
+    carries no such weighting. When agents differ in how much they speak,
+    the two samples are not comparable even if turn count is perfectly
+    balanced across all turns, and the detector reads the difference as a
+    cue. Measured on the current grammar: 0.4992 for the model's sampled
+    turn against 0.5839 for the pooled draw.
+
+    `agent_uniform=True` draws an other AGENT uniformly first, then one of
+    its turns. That is the contrast the design's exchangeability actually
+    guarantees — relabel which agent is the model's and the distribution
+    is unchanged — and it removes the size bias: 0.4992 against 0.5021.
+    """
+    others = [a for a in range(ep.n_agents) if a != ep.own_slot]
+    if agent_uniform:
+        a = others[int(rng.integers(len(others)))]
+        pool = [i for i, t in enumerate(ep.turns) if t.agent == a]
+    else:
+        pool = [i for i, t in enumerate(ep.turns) if t.agent != ep.own_slot]
+    return pool[int(rng.integers(len(pool)))] if pool else None
+
+
+def build_examples(eps, seed: int = 0, agent_uniform: bool = False):
+    """One balanced own/other pair per episode. The own turn is drawn
+    uniformly from the model's turns; the comparison turn per
+    `_pick_other`. (The sampler bug that once manufactured AUC 0.896 on a
+    clean curriculum came from taking the first of each.)"""
     rng = np.random.default_rng(seed)
     texts, feats, labels = [], [], []
     for ep in eps:
         own = [i for i, t in enumerate(ep.turns) if t.agent == ep.own_slot]
-        oth = [i for i, t in enumerate(ep.turns) if t.agent != ep.own_slot]
-        if not own or not oth:
+        o = _pick_other(ep, rng, agent_uniform)
+        if not own or o is None:
             continue
-        for idx, label in ((own[int(rng.integers(len(own)))], 1),
-                           (oth[int(rng.integers(len(oth)))], 0)):
+        for idx, label in ((own[int(rng.integers(len(own)))], 1), (o, 0)):
             texts.append(ep.turns[idx].render())
             feats.append(_episode_features(ep, idx))
             labels.append(label)
     return texts, np.asarray(feats, float), np.asarray(labels)
 
 
-def build_tensor_examples(eps, leaky: bool, seed: int = 0):
+def build_tensor_examples(eps, leaky: bool, seed: int = 0,
+                          agent_uniform: bool = False):
     """Features from the exact tensor dict a training step consumes.
     `act_pos` is excluded: it is derived from own_slot and is trainer
     control flow, never fed to the model."""
@@ -123,11 +151,10 @@ def build_tensor_examples(eps, leaky: bool, seed: int = 0):
         assert set(enc) - {"act_pos"} == set(E.MODEL_FIELDS)
         n_tok = len(enc["input_ids"])
         own = [i for i, t in enumerate(ep.turns) if t.agent == ep.own_slot]
-        oth = [i for i, t in enumerate(ep.turns) if t.agent != ep.own_slot]
-        if not own or not oth:
+        o = _pick_other(ep, rng, agent_uniform)
+        if not own or o is None:
             continue
-        for ti, label in ((own[int(rng.integers(len(own)))], 1),
-                          (oth[int(rng.integers(len(oth)))], 0)):
+        for ti, label in ((own[int(rng.integers(len(own)))], 1), (o, 0)):
             span = np.where(enc["turn_ids"] == ti)[0]
             tok = enc["input_ids"][span]
             reg = int(enc["turn_reg"][ti])
@@ -169,11 +196,13 @@ def _verdict(clean: dict, leaky: dict) -> tuple[bool, bool]:
             leaky["auc"] >= POSITIVE_CONTROL_MIN_AUC)
 
 
-def text_gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
+def text_gate(n_episodes: int = N_EPISODES, seed: int = SEED,
+              agent_uniform: bool = False) -> dict:
     out = {}
     for name, leaky in (("clean", False), ("positive_control", True)):
         eps = A.generate_balanced(n_episodes, seed, leaky=leaky)
-        texts, feats, labels = build_examples(eps, seed=seed)
+        texts, feats, labels = build_examples(eps, seed=seed,
+                                              agent_uniform=agent_uniform)
         auc, y, p = fit_auc(texts, feats, labels, seed)
         lo, hi = boot_ci(y, p, N_BOOT, seed)
         out[name] = {"leaky": leaky, "n_examples": int(len(labels)),
@@ -192,11 +221,13 @@ def text_gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
             "GATE": "PASS" if (cp and pc) else "FAIL"}
 
 
-def tensor_gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
+def tensor_gate(n_episodes: int = N_EPISODES, seed: int = SEED,
+                agent_uniform: bool = False) -> dict:
     out = {}
     for name, leaky in (("clean", False), ("positive_control", True)):
         eps = A.generate_balanced(n_episodes, seed, leaky=False)
-        feats, labels = build_tensor_examples(eps, leaky=leaky, seed=seed)
+        feats, labels = build_tensor_examples(eps, leaky=leaky, seed=seed,
+                                              agent_uniform=agent_uniform)
         auc, y, p = fit_numeric(feats, labels, seed)
         lo, hi = boot_ci(y, p, N_BOOT, seed)
         out[name] = {"leaky_layout": leaky, "n_examples": int(len(labels)),
@@ -214,16 +245,67 @@ def tensor_gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
             "GATE": "PASS" if (cp and pc) else "FAIL"}
 
 
-def gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
-    runs = [text_gate(n_episodes, seed), tensor_gate(n_episodes, seed)]
-    return {"gate": "A3 Gate 1 — cue-detector runs (i) and (ii)",
-            "grammar": "curriculum_a3 (Candidate A)",
-            "n_turns": A.N_TURNS, "n_agents": A.N_AGENTS,
-            "runs": runs,
-            "GATE": "PASS" if all(r["GATE"] == "PASS" for r in runs)
-                    else "FAIL",
-            "pending": {"(iii) post-training rollouts":
-                        "requires a trained checkpoint; A3 Gate 3"}}
+VERDICT_SEEDS = (20260915, 11, 22, 33, 44)
+
+
+def gate(n_episodes: int = N_EPISODES, seed: int = SEED,
+         agent_uniform: bool = True, both: bool = True) -> dict:
+    """Run the gate and report BOTH samplers side by side.
+
+    John's ruling of 2026-09-15: the amended (agent-uniform) sampler is
+    the one the verdict is read from, and the registered (pooled) number
+    is reported beside it every time, so a reader can see what the
+    original instrument said and decide whether to accept the override.
+    See `cue-detector-sampler-amendment.md`.
+
+    The verdict is taken over several independent samples rather than one,
+    because a single bootstrap interval covers one draw's test split and
+    is silent on spread between draws — at these episode counts a clean
+    grammar fails a single run about one time in nine.
+    """
+    out = {"gate": "A3 Gate 1 — cue-detector runs (i) and (ii)",
+           "grammar": "curriculum_a3 (Candidate A)",
+           "k_revisers": A.K_REVISERS,
+           "n_turns": A.N_TURNS, "n_agents": A.N_AGENTS,
+           "verdict_sampler": ("amended: both arms agent-uniform"
+                               if agent_uniform else "registered: pooled"),
+           "verdict_seeds": list(VERDICT_SEEDS),
+           "samplers": {},
+           "pending": {"(iii) post-training rollouts":
+                       "requires a trained checkpoint; A3 Gate 3"}}
+    modes = ([("amended_agent_uniform", True), ("registered_pooled", False)]
+             if both else [("amended_agent_uniform", agent_uniform)])
+    for label, au in modes:
+        per_seed = []
+        for sd in VERDICT_SEEDS:
+            runs = [text_gate(n_episodes, sd, au),
+                    tensor_gate(n_episodes, sd, au)]
+            per_seed.append({
+                "seed": sd,
+                "text_auc": runs[0]["clean"]["auc"],
+                "tensor_auc": runs[1]["clean"]["auc"],
+                "text_control": runs[0]["positive_control"]["auc"],
+                "tensor_control": runs[1]["positive_control"]["auc"],
+            })
+        t = np.array([r["text_auc"] for r in per_seed])
+        v = np.array([r["tensor_auc"] for r in per_seed])
+        ctl = min(min(r["text_control"] for r in per_seed),
+                  min(r["tensor_control"] for r in per_seed))
+        ok = (EQUIV_LO <= t.mean() <= EQUIV_HI
+              and EQUIV_LO <= v.mean() <= EQUIV_HI
+              and ctl >= POSITIVE_CONTROL_MIN_AUC)
+        out["samplers"][label] = {
+            "per_seed": per_seed,
+            "text_mean": round(float(t.mean()), 4),
+            "text_sd": round(float(t.std(ddof=1)), 4),
+            "tensor_mean": round(float(v.mean()), 4),
+            "tensor_sd": round(float(v.std(ddof=1)), 4),
+            "weakest_positive_control": round(float(ctl), 4),
+            "GATE": "PASS" if ok else "FAIL",
+        }
+    key = "amended_agent_uniform" if agent_uniform else "registered_pooled"
+    out["GATE"] = out["samplers"][key]["GATE"]
+    return out
 
 
 STABILITY_SEEDS = (20260915, 11, 22, 33, 44, 55)
@@ -291,6 +373,11 @@ def main() -> None:
     ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--run", action="store_true")
     ap.add_argument("--stability", action="store_true")
+    ap.add_argument("--registered-sampler", dest="agent_uniform",
+                    action="store_false", default=True,
+                    help="read the verdict from the ORIGINAL pooled "
+                         "sampler instead of the amended one (both are "
+                         "reported either way)")
     ap.add_argument("--n", type=int, default=N_EPISODES)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
@@ -308,7 +395,7 @@ def main() -> None:
             print(f"\nwrote {q}")
         return
     if args.run:
-        res = gate(args.n, SEED)
+        res = gate(args.n, SEED, args.agent_uniform)
         print(json.dumps(res, indent=2))
         if args.out:
             p = Path(args.out)

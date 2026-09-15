@@ -138,6 +138,45 @@ def loss_a3(model: MVM0aModel, batch, act_inject, act_weight: float = 1.0):
 # ------------------------------------------------------------------ eval
 
 @torch.no_grad()
+def eval_secondary_one_reviser(model: MVM0aModel, device: str,
+                               n: int = 800,
+                               seed: int = HELDOUT_SEED) -> dict:
+    """The supplementary reading John added on 2026-09-15: train at two
+    revisers for signal density, evaluate at ONE for the cleanest ceiling.
+
+    With a single reviser drawn uniformly, no other agent has revised
+    before the model's turn, so no candidate can be crossed off and the
+    ownership-blind ceiling is exactly 1/N_AGENTS = 0.25 — the cleanest
+    number available, and lower than the 0.29 the training distribution
+    carries.
+
+    It costs a distribution shift: the model is evaluated on episodes
+    shorter than the ones it trained on, with one revision instead of
+    two. So this is a **supplementary number, never the headline**, and it
+    is reported beside the primary rather than in place of it. A score
+    here below the primary may mean the model is sensitive to the shift
+    rather than that it cannot act; that reading is available and must be
+    stated whenever the number is quoted.
+
+    Only T_act is read. The other batteries do not turn on the reviser
+    count and are reported from the primary evaluation.
+    """
+    k = A.K_REVISERS
+    try:
+        A.K_REVISERS = 1
+        A.N_TURNS = A.N_AGENTS * A.N_CONTESTED + 1
+        acc = eval_heldout(model, device, n=n, seed=seed)
+    finally:
+        A.K_REVISERS = k
+        A.N_TURNS = A.N_AGENTS * A.N_CONTESTED + k
+    return {"T_act": acc["T_act"],
+            "ownership_blind_ceiling": round(1.0 / A.N_AGENTS, 4),
+            "n_episodes": n,
+            "caveat": "distribution shift from the training grammar; "
+                      "supplementary, not the headline"}
+
+
+@torch.no_grad()
 def eval_heldout(model: MVM0aModel, device: str, n: int = 200,
                  seed: int = HELDOUT_SEED) -> dict:
     """Held-out episodes from the A3 grammar. `T_act` is scored at the
