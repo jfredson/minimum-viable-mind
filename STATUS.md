@@ -2,6 +2,64 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## SHORTCUT SWEEP — a SECOND fatal leak; three grammar drafts map a real trade-off; proposal drafted; A3 NOT ready to register (2026-09-15)
+
+Proposal: `experiments/06-mvm-0a-constructed-self-index/a3-revision-proposal.md`
+(13 numbered decisions). Sweep: `src/shortcut_sweep.py`, record in
+`a3-gates/shortcut_sweep.json`. **Still $0; A3 cumulative $0.00 of the
+$100 hard stop; no pod ever launched for A3.**
+
+**The grammar Gate 1 certified this morning has an ownership-blind
+ceiling of 0.52, not 0.29.** Every agent revised exactly once, so any
+agent that has ALREADY revised is not the one revising now. When the
+model revises last — a quarter of episodes — its own assignment is the
+only one left and identifying it needs no self-knowledge at all.
+Measured 0.5248 by that elimination alone; 0.5425 by a learned attack.
+(The sweep's first run also caught a bug in itself — features ranged over
+the whole episode and read the graded turn, giving a fake 1.000. Fixed,
+then it found the real thing.)
+
+**THE REAL FINDING: a structural tension, not three mistakes.** Three
+drafts now, each trading one flaw for another:
+
+| draft | who revises | cells | ceiling | cue gates |
+|---|---|---|---|---|
+| 1 | model always + 1 other | every ep | 0.29 | FAIL (turn count a perfect cue) |
+| 2 | every agent once | every ep | **0.52** | PASS |
+| 3 (current code) | 2 drawn uniformly | half | 0.29 (sweep PASSES) | **FAIL at 0.53** |
+
+Draft 3 fails because revisers take 3 turns and non-revisers 2, and the
+detector samples one own turn against one other turn — "own" is one
+agent, "other" pools three. Turn count is balanced across all turns
+(0.596 vs 0.601) and NOT under that sampling (**0.499 vs 0.591**).
+
+You cannot have all three of: a scoring cell every episode; revising not
+marking the model out; and agents that have acted not being eliminable.
+Any two, not three.
+
+**A fourth grammar was deliberately NOT drafted.** Each fix so far was
+sensible and cost something elsewhere; one of K1's two regenerations is
+spent; the choice belongs to John with the trade-off in front of him.
+Proposal decision 1 lays out four options with measured costs and
+recommends varying turns-per-agent independently of revising (untested),
+with one-uniform-reviser (ceiling 0.25, quarter density) as fallback.
+
+**Good side effect:** with only 2 revisions per episode the control
+battery's ceiling falls 0.5 → 0.3227, cutting RT-21's spurious
+differential from 0.237 to 0.035 (still above the ~0.01 band, so the
+metric fix stands).
+
+**New proposed gate (decision 8):** register the shortcut sweep itself.
+RT-20's attack scored 1.000 on a grammar that had just passed both cue
+gates — the cue gates ask which turns are the model's own, a different
+question. The sweep is free and has already paid for itself twice.
+
+**Next (John owns all of it):** work the 13 decisions, chief among them
+decision 1 (the grammar trade-off) and decision 3 (divide the drop by the
+measured ceiling, not chance); then the registration commit; then Gate 2,
+the pilot, on a C2 go in his own words. **A3 is not ready to register.**
+Branch `gate0-null-calibration`, pushed.
+
 ## RED-TEAM PASS 3 — 13 findings; the certified grammar did NOT test self-indexing; fixed at $0; registration now carries 7 items (2026-09-15)
 
 Full pass: `experiments/06-mvm-0a-constructed-self-index/red-team-pass-3.md`
