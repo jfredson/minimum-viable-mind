@@ -1,6 +1,6 @@
 # Amendment A3 to MVM-0a: from an installed register to an acquired center
 
-**Status: RATIFIED 2026-09-15 by John (all fifteen decisions in §7 answered yes; TimeAssembler decision entry aa11f5e5, "RULED 2026-09-15 — Amendment A3 ratified"). REGISTRATION PENDING red-team pass 3 (decision 13). This file becomes the registered amendment at the registration commit that follows that pass; no A3 run launches before then. Gate 0 (the registered null calibration, kill K0) is the first action after registration.**
+**Status: REGISTERED 2026-09-15 (see REGISTRATION REVISIONS at the end of this file, which supersede the text above where they conflict). Originally RATIFIED 2026-09-15 by John (all fifteen decisions in §7 answered yes; TimeAssembler decision entry aa11f5e5, "RULED 2026-09-15 — Amendment A3 ratified"). Red-team pass 3 ran (thirteen findings, `red-team-pass-3.md`); Gate 0 ran and K0 did not fire (`gate0-null-calibration-findings.md`); Gate 1 ran and K1 did not fire (`gate1-curriculum-findings.md`); an ownership-blind attack sweep ran and passes. All at $0. The next action is Gate 2, the pilot, which needs John authorization in his own words.**
 
 *Ratified rulings, in short: §1 reading adopted; Candidate A primary; no register in any A3 run; Gate 0 first with K0 hard; three seeds, 3/3 for positive; A3's $100 hard stop outranks repeated-sampling's claim on underspend; gate (iii) arm B scores act-withheld forwards; numbered A3 under the existing $400 all-vendor ceiling; 5-seed run closed as halted at 4/9; no decision on the blind-localization arm; re-indexing probe registered for H_tag; n=400 verdict cells; red-team pass 3 before registration; T_si fix registered with the redesign; lesion script refuses L1 without a lock-hash argument.*
 
@@ -246,3 +246,202 @@ Gate 0 → Gate 1 → red-team pass 3 on this document → registration commit �
 15. **Lock enforcement.** Require the lesion script to refuse L1 runs without a lock-hash argument (R6).
 
 *Nothing above is registered. The registration commit, if it comes, follows the red-team pass and John's decisions, and every run it affects is launched after it.*
+
+---
+
+# REGISTRATION REVISIONS — 2026-09-15
+
+**Status of this amendment changes here from RATIFIED to REGISTERED.**
+
+Everything above is the text John ratified on 2026-09-15 and is left
+standing, unedited, as the historical record. Everything below supersedes
+it where the two conflict. Each item names what the ratified text said,
+what replaces it, and why. All fourteen were ruled by John on 2026-09-15
+after Gate 0, Gate 1, red-team pass 3 and an ownership-blind attack sweep,
+all of which ran at **$0** before any pod existed.
+
+The design's central bet is unchanged. What changed is that three claims
+it rested on turned out to be false of the grammar as built, and the
+instrument that was supposed to catch one of them could not.
+
+## 1. The grammar (decision 1)
+
+**Ratified text:** §2.2, a revision rule applied at the model's own
+revision turn, with no statement of how often that turn occurs or how many
+other agents revise.
+
+**Registered:** twelve turns became ten. Four agents each assign two
+contested items, the four values on an item are distinct, and **two agents
+drawn uniformly over all four** then revise, one item each. The model is
+therefore a reviser in half of episodes, and a scoring cell comes from
+half of episodes.
+
+**Why it took three drafts, recorded because a design that took three
+tries should say so where it is registered.** Making the model revise in
+every episode gives a cell every time but makes how much an agent speaks a
+perfect giveaway. Making every agent revise removes that cue and creates a
+worse leak: anyone who has already revised is not the one revising now, so
+when the model revises last its own assignment is the only one left and
+identifying it needs no self-knowledge at all, which lifted the true
+ownership-blind ceiling to 0.52 while the record still said 0.29. Drawing
+two revisers uniformly restores the ceiling and keeps both cues
+uninformative. You cannot have all three of a cell in every episode,
+revising not marking the model out, and agents that have acted not being
+eliminable. Any two.
+
+## 2. The speaker's name moves after the value (RT-20)
+
+**Ratified text:** §2.2 assumed the registered rendering, in which a turn
+opens with the speaker's name.
+
+**Registered:** a turn renders `assign <item> to <value> by <marker>`.
+
+**Why.** Under the old rendering the graded token is the value and the
+model's own name sat three tokens back in its own context, so a solver
+using no ownership information at all could read that name, find the
+matching earlier assignment and apply the rule. Measured: **1.000 over
+3,000 episodes**, on a grammar that had just passed both cue gates. The
+cue gates could not have caught it, because they ask which turns are the
+model's own, which is a different question. The attack is kept as a
+permanent regression test in the grammar's own self-test.
+
+## 3. The metric divides by the ceiling, not by chance (decision 3)
+
+**Ratified text:** `d(B) = (B_base − B_abl) / (B_base − chance_B)`,
+inherited from the registration.
+
+**Registered:** `d(B) = (B_base − B_abl) / (B_base − ceiling_B)`, where
+`ceiling_B` is the measured shortcut ceiling. **A value above 1.0 is
+reported, never clipped**: it means the ablation took the battery below
+what an ownership-blind solver reaches, so the lesion removed more than
+ownership, and hiding that in a clamp would turn the most interesting
+failure into a quiet 1.0.
+
+**Why.** A lesion that removes ownership cannot push a battery below its
+ceiling, so dividing by the distance to chance divides by a range the
+battery cannot traverse — and the error differs per battery. With ceilings
+of 0.2921 and 0.3227 the two verdict batteries could show at most 0.809
+and 0.774, so a lesion of a purely **generic** binder, which hits both
+equally in real terms, still reported a differential of 0.035 against a
+band near 0.01. The bin meant to catch the boring explanation could not
+fire and the bin meant to find a self-index fired on it. Under the
+registered metric that differential is exactly 0.
+
+## 4. The ceilings are measured, not asserted (decision 2)
+
+**Ratified text:** §2.2 pre-states a lookup ceiling of 0.25.
+
+**Registered:** **0.2921** for the primary battery and **0.3227** for the
+control, measured on the registered grammar and verified by the attack
+sweep, whose best ownership-blind attack reached 0.3036 on 12,000
+episodes — one standard error from the analytic value. Both numbers are
+stored in `batteries-a3/batteries_meta.json` with their method. Any future
+grammar carries its own measured ceilings; none is ever asserted.
+
+## 5. The attack sweep becomes a gate (decision 8)
+
+**Registered:** `src/shortcut_sweep.py` is a gate in its own right, run
+before any dollar is spent. **It passes when no ownership-blind attack
+beats the stated ceiling by more than sampling error** — that is, when the
+stated ceiling is the true one. If it cannot be made to pass within two
+regenerations, the design halts.
+
+**Why this shape rather than a threshold on the ceiling.** The sweep's job
+is to make the stated ceiling honest, not to veto a design. A ceiling that
+is high but honest weakens the learnability reading and shrinks the range
+a lesion can show, but both degrade smoothly and neither has a cliff; an
+earlier draft of this clause proposed halting above 0.40 and that number
+could not be derived. Whether an honest ceiling is too high to be worth
+training is the judgment in item 1, not an automatic kill.
+
+## 6. Thresholds, kills and bins (decisions 4, 5, 6, 12; K0's number)
+
+- **Revision frequency** is now stated (item 1): two of four agents, drawn
+  uniformly, so half of episodes carry a supervised action and a 400-cell
+  verdict needs 800 episodes.
+- **K2** compared "lookup ceiling plus the null band", adding a raw
+  accuracy to a chance-corrected quantity. It is restated in raw accuracy,
+  with the band converted explicitly. It decides the unlearnable verdict,
+  so it is fixed before the pilot rather than after.
+- **K0's band stays at 0.25**, the pre-stated figure, deliberately
+  unchanged now that Gate 0 has measured the band at about 0.01. Moving it
+  either way after seeing the data would be fitting the rule to the data,
+  and the value of a pre-stated number is that you do not touch it once
+  you have looked. It is read **only on batteries above the floor margin**,
+  so a run that never learned a battery cannot trip it.
+- **θ and δ are per battery**, not single numbers. Gate 0 measured them
+  varying across a twenty-five-fold range within one checkpoint.
+- **A bin is added for the validity check failing.** If zeroing the acting
+  channel does not collapse the primary battery to its ceiling, ownership
+  is not load-bearing and the objective has failed. The registered design
+  had such a guard and it was dropped along with the register. Without a
+  bin that outcome has nowhere to land, and an outcome with nowhere to
+  land gets explained away.
+- **An uncertifiable likelihood attack is routed.** If the act-withheld
+  arm's positive controls do not fire, the arm is declared uncertifiable
+  rather than passed or failed, and the procedure continues with that
+  stated, instead of deadlocking.
+
+## 7. The cue detector's sampler (decision 7 and the sampler amendment)
+
+Both arms of the detector are now drawn the same way, and the verdict is
+taken over five independent samples rather than one. Full reasoning,
+including that the change was prompted by a grammar failing the old
+detector, is in `cue-detector-sampler-amendment.md`. Every verdict reports
+both samplers side by side. The amended detector was re-run against every
+grammar the old one passed, including the registered MVM-0a grammar, which
+reads 0.4969 under the old sampler and 0.4984 under the new one — so the
+clean verdict the five existing checkpoints rest on is undisturbed.
+
+## 8. The central claim is narrowed (decision 9)
+
+**Ratified text:** §2.2, that the only route from the ceiling to full
+accuracy is to bind the act to the item when acting and carry that binding
+forward.
+
+**Registered:** that claim is too strong and was false of two of the three
+drafts. The acting channel marks positions, and attending back to marked
+positions is a re-readable pointer rather than a carried binding. Both
+routes need the channel, so the wire lesion cannot separate them. The
+mid-episode re-indexing probe, already registered for the tag bin, is the
+discriminator.
+
+## 9. The loss (decision 10)
+
+**Registered:** the loss is the action cross-entropy at the model's own
+revision position plus the query-answer cross-entropy, **summed with equal
+weight**, the weight passed explicitly at every launch rather than left to
+a default. The reading confirmed: §2.1's "not a query asking it to
+describe who did what" is satisfied because **no query anywhere asks about
+the model's own commitments** — the self-report battery is gone — while
+the ownership-free and other-agent queries stay supervised. Read at its
+strictest the clause would remove query supervision entirely, and then the
+control batteries would never be trained and the differential the
+generic-binding bin turns on would be meaningless.
+
+## 10. Money (decision 11)
+
+**Registered, from measurement rather than estimate:** the token budget is
+fixed at twenty tokens per parameter, so the longer episodes mean **fewer
+steps** (0.71×), which offsets most of the higher per-step cost (1.26×
+enactment passes, 1.41× sequence length). A run is **9.1 to 12.8 hours,
+$9 to $13**; three seeds **$27 to $39**. The optional extra seeds remain
+available inside the $100 hard stop but need a separate go. The $400
+ceiling, the $100 stop and the corrigibility commitments are unchanged and
+were not reopened.
+
+**Note for the launch:** the RunPod account carries a spend limit of $80,
+below the $100 stop. It should not bind at these costs, but it exists.
+
+## What is registered, and what runs next
+
+Registered: the grammar at `src/curriculum_a3.py`, its tokenizer at
+`src/encoding_a3.py`, the trainer at `src/train_a3.py`, the batteries
+frozen at `batteries-a3/`, the gates at `src/cue_detector_a3.py` and
+`src/shortcut_sweep.py`, the calibration at
+`src/null_calibration_a3.py`, the lock guard at `src/lock_guard.py`, and
+the launcher at `src/launch_a3.sh`.
+
+Next is Gate 2, the pilot: one register-less 30M run at seed 0, on John's
+authorization in his own words, quoted verbatim in the ledger row. Nothing
+has been spent on A3 to this point.
