@@ -116,6 +116,47 @@ def main() -> None:
               f"{t['repeated']['acc_recorded']:.3f} | "
               f"{t['repeated']['acc_latest_value']:.3f} |")
 
+    print("\n### Which convention does each run apply to a repeated item?\n")
+    print("Read off the thread-3 item rows (`lesion-results/items_*.jsonl`) "
+          "with the episodes regenerated deterministically — T_si asks about "
+          "other agents, whose values the enactment never touches, so no "
+          "model pass is needed.\n")
+    print("| checkpoint | repeated-item cells | picks the earlier value | "
+          "picks the later value | picks neither |")
+    print("|---|---|---|---|---|")
+    import curriculum as C
+    lr = Path("/Users/john/Code/minimum-viable-mind/experiments/"
+              "06-mvm-0a-constructed-self-index/lesion-results")
+    eps = C.generate_balanced(400, 987_654_321, forced_revision_frac=0.25)
+    for n in ORDER:
+        f = lr / f"items_{n}.jsonl"
+        if not f.exists():
+            continue
+        first = later = other = tot = 0
+        for line in list(open(f))[1:]:
+            r = json.loads(line)
+            if r["battery"] != "T_si" or not r.get("item_repeated"):
+                continue
+            ti = r.get("turn_idx")
+            if ti is None:
+                continue
+            e = eps[r["ep"]]
+            t = e.turns[ti]
+            same = [x for x in e.turns
+                    if x.marker == t.marker and x.item == t.item]
+            if len(same) < 2:
+                continue
+            tot += 1
+            if r["pick"] == same[0].value:
+                first += 1
+            elif r["pick"] == same[-1].value:
+                later += 1
+            else:
+                other += 1
+        if tot:
+            print(f"| {LABEL[n]} | {tot} | {first / tot:.2f} | "
+                  f"{later / tot:.2f} | {other / tot:.2f} |")
+
     esc = sorted(DIR.glob("escalation_*.json"))
     if esc:
         print("\n### Instrument validity — where the operator does bite "

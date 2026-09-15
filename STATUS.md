@@ -2,6 +2,75 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## GATE 0 COMPLETE — the registered null calibration ran, $0; K0 does not fire where a verdict is read; three fixes for red-team pass 3 (2026-09-14)
+
+The first action Amendment A3 orders is done. Full record:
+`experiments/06-mvm-0a-constructed-self-index/gate0-null-calibration-findings.md`;
+per-checkpoint records in `.../null-calibration/`; scripts
+`src/null_calibration.py` (committed **before it read any checkpoint**),
+`src/null_escalation.py`, `src/summarize_null.py`. **Everything local,
+$0; A3 cumulative spend $0 of the $100 hard stop.** Nothing trained,
+no pod, no checkpoint promoted [C1/C2].
+
+**The band.** 620 ablated evaluations: five 30M checkpoints × the
+registered held-out eval at n=400, under 120 content-blind residual
+ablations each (random rank-4/8/16 subspaces mean-ablated, matched-norm
+noise, 20 seeds, blocks 3/4/5/7/8), plus 20 register-noise draws per
+full checkpoint. On the two **binders** — the only runs where a lesion
+verdict could be read — the 95th-percentile chance-corrected drop on
+T_si is **0.006 and 0.0095**, against a binder/non-binder split of
+**~0.73**. The registered instrument's noise floor is narrow where it
+matters.
+
+**K0 — John's call, and it is not clean.** K0 is written two ways. Its
+stated condition (the band swallows the binder/non-binder split) is met
+**nowhere**. Its proposed number (band ≥ 0.25) is **exceeded on one
+checkpoint of five**: the seed-0 twin at 0.379 — a non-binder whose
+T_si sits at 0.355 against chance 0.125, where the metric's divisor is
+tiny and random damage genuinely knocks out a fragile heuristic (raw
+T_si falls to 0.250 across draws). The amendment never says which
+checkpoints the band is read on. Reading offered, not ruled: a wide
+band near chance cannot manufacture a false positive, only make a
+marginal learner unreadable, which is already its own bin.
+
+**Three fixes for red-team pass 3, before the registration commit:**
+1. **T_act cell size.** At n=400 *episodes* the revision-conditioned
+   battery yields **19 items**, not 400 — its band is two items
+   flipping. A3's primary metric T_act is scored at own revision
+   positions and the amendment never states a revision frequency, so it
+   would inherit a 20-item verdict cell. State in §2.2 that every
+   episode carries exactly one own revision.
+2. **K2 units.** K2 compares "lookup ceiling (0.25) plus the null band"
+   — a raw accuracy added to a chance-corrected band. Restate in raw
+   accuracy: unlearnable if T_act ≤ 0.25 + θ × (baseline − chance).
+3. **K0 scope.** State that the band is read on checkpoints whose
+   verdict battery clears the floor margin.
+
+**Two further findings.** The **register-noise** band matches the
+random-residual band on all three full checkpoints — thread 4's "inert"
+conclusion now in registered-instrument form. And a **correction to
+thread 3**: the two binders apply *opposite* conventions to ambiguous
+repeated items (seed-1 twin picks the earlier value 76% of the time,
+the pilot picks the later 72%), so the retroactive half of A3's
+decision 14 cannot be done by re-keying to the latest value; the
+structural fix in Candidate A is unaffected.
+
+**Instrument validity.** At the registered rank cap the operator removes
+19% of the mean-centred residual and moves nothing; batteries collapse
+at 52% and sit at chance by 75%. The narrow band is robustness, not a
+dead operator.
+
+**Seed-0 asterisk, restated:** thread 4 read register-ablation scores on
+the pilot seed-0 checkpoint before any lock (RT-10), so seed 0's band
+is *for the record*, not a clean lock. A3 inherits none of it — its θ/δ
+are calibrated on A3's own pilot with the lock ordered ahead of any L1
+read.
+
+**Next (John owns all of it):** (1) apply K0 and set its number; (2)
+red-team pass 3 with the three fixes above; (3) registration commit;
+(4) then Gate 1, and the pilot at ~$12 on a C2 go. **No A3 run launches
+before that.** Branch `gate0-null-calibration` holds this work.
+
 ## ANOMALY DIAGNOSTICS RUN — register lesion: binding SURVIVES total register removal; construct problem is TOTAL; wave 3 awaits John (2026-08-19)
 
 The cheap threads queued by `twin-binding-anomaly.md` ran to completion
