@@ -100,15 +100,22 @@ def enact_batched(model: MVM0aModel, eps, device: str, rng: random.Random,
 # ------------------------------------------------------------------ loss
 
 def act_logits(model: MVM0aModel, batch, act_inject, logits=None):
-    """Logits that PREDICT the model's own revision value. The model
-    predicts position p from the logit at p-1, so the injection that
-    marks the act at p has not reached this logit — the value is
+    """Logits that PREDICT the model's own revision value, for the rows
+    that HAVE one. Half the episodes do not, by design: making the model
+    revise in every episode is what lets an ownership-blind solver work
+    out which agent it is. Rows carrying the -1 sentinel are dropped.
+
+    The model predicts position p from the logit at p-1, so the injection
+    that marks the act at p has not reached this logit — the value is
     predicted from what came before it, which is the point."""
     if logits is None:
         logits = model.forward(batch, act_inject=act_inject)
     p = batch["act_pos"]
-    idx = torch.arange(p.shape[0], device=p.device)
-    return logits[idx, p - 1], batch["input_ids"][idx, p]
+    keep = (p >= 0).nonzero().flatten()
+    if keep.numel() == 0:
+        return None, None
+    pk = p[keep]
+    return logits[keep, pk - 1], batch["input_ids"][keep, pk]
 
 
 def loss_a3(model: MVM0aModel, batch, act_inject, act_weight: float = 1.0):
@@ -121,6 +128,9 @@ def loss_a3(model: MVM0aModel, batch, act_inject, act_weight: float = 1.0):
     m = mask.reshape(-1).float()
     q_loss = (ce * m).sum() / m.sum().clamp(min=1)
     al, at = act_logits(model, batch, act_inject, logits=logits)
+    if al is None:                      # no supervised action in this batch
+        z = torch.zeros((), device=q_loss.device)
+        return q_loss, q_loss.detach(), z
     a_loss = F.cross_entropy(al, at)
     return q_loss + act_weight * a_loss, q_loss.detach(), a_loss.detach()
 
@@ -138,7 +148,8 @@ def eval_heldout(model: MVM0aModel, device: str, n: int = 200,
     eps, act = enact_batched(model, eps, device, random.Random(seed + 1))
     hits = {b: [0, 0] for b in A.BATTERIES}
 
-    # T_act: no query appended — the action is inside the episode
+    # T_act: no query appended — the action is inside the episode, and
+    # only the episodes where the model actually revises are scored
     for i in range(0, len(eps), 50):
         chunk = eps[i:i + 50]
         batch = to_torch(E.collate([E.encode_episode(e) for e in chunk]),
@@ -146,10 +157,12 @@ def eval_heldout(model: MVM0aModel, device: str, n: int = 200,
         a = F.pad(act, (0, 0, 0, batch["input_ids"].shape[1] - act.shape[1]))
         a = a[i:i + 50]
         al, at = act_logits(model, batch, a)
+        if al is None:
+            continue
         ids = torch.tensor(SLOT_IDS, device=al.device)
         pick = ids[al[:, ids].argmax(dim=-1)]
         hits["T_act"][0] += int((pick == at).sum())
-        hits["T_act"][1] += len(chunk)
+        hits["T_act"][1] += int(al.shape[0])
 
     pairs = [(ei, q) for ei, e in enumerate(eps) for q in e.queries]
     for i in range(0, len(pairs), 50):
@@ -266,7 +279,7 @@ def self_test() -> None:
                     "max_len": 128})
     torch.manual_seed(0)
     model = MVM0aModel(cfg).eval()
-    eps = A.generate_balanced(6, 5)
+    eps = A.generate_balanced(24, 5)
     eps, act = enact_batched(model, eps, "cpu", random.Random(1))
     batch = to_torch(E.collate([E.encode_episode(e, query=e.queries[0])
                                 for e in eps]))
@@ -275,32 +288,35 @@ def self_test() -> None:
     # the act position holds the rule-dictated value for THIS model's
     # enactment, and the loss target reads it from there
     al, at = act_logits(model, batch, act)
-    for b, e in enumerate(eps):
+    graded = [e for e in eps if A.has_own_revision(e)]
+    assert al.shape[0] == len(graded) < len(eps), \
+        "only episodes where the model revises may be graded"
+    for b, e in enumerate(graded):
         assert E.IVOCAB[int(at[b])] == A.act_target(e)
-    assert al.shape == (len(eps), cfg.vocab)
 
     # the action logit is computed from context BEFORE the value, so the
     # injection marking the act cannot leak the answer into its own
     # prediction
-    p = int(batch["act_pos"][0])
+    g0 = next(j for j, e in enumerate(eps) if A.has_own_revision(e))
+    p = int(batch["act_pos"][g0])
     a2 = act.clone()
-    a2[0, p] += 5.0                      # perturb the injection AT the act
+    a2[g0, p] += 5.0                     # perturb the injection AT the act
     with torch.no_grad():
         l1, _ = act_logits(model, batch, act)
         l2, _ = act_logits(model, batch, a2)
-    assert torch.allclose(l1[0], l2[0], atol=1e-5), \
+    assert torch.allclose(l1, l2, atol=1e-5), \
         "the act injection must not reach the logit that predicts it"
 
     # but an EARLIER own-turn injection does reach it — that is the
     # mechanism the design is testing
-    own = [i for i, t in enumerate(eps[0].turns)
-           if t.agent == eps[0].own_slot and not t.revised]
-    span = (batch["turn_ids"][0] == own[0]).nonzero().flatten()
+    own = [i for i, t in enumerate(eps[g0].turns)
+           if t.agent == eps[g0].own_slot and not t.revised]
+    span = (batch["turn_ids"][g0] == own[0]).nonzero().flatten()
     a3 = act.clone()
-    a3[0, int(span[0]) + A.VALUE_WORD_IDX] += 5.0
+    a3[g0, int(span[0]) + A.VALUE_WORD_IDX] += 5.0
     with torch.no_grad():
         l3, _ = act_logits(model, batch, a3)
-    assert not torch.allclose(l1[0], l3[0], atol=1e-5), \
+    assert not torch.allclose(l1, l3, atol=1e-5), \
         "an earlier own-turn injection must be able to reach the action"
 
     # loss is finite, both terms carry gradient, act_proj is trained

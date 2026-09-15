@@ -97,11 +97,17 @@ def encode_episode(ep: C.Episode, query: C.Query | None = None,
     turn_reg = np.array([agent_to_reg[t.agent] for t in ep.turns],
                         dtype=np.int64)
 
-    ti = A.own_revision_index(ep)
-    span = [j for j, x in enumerate(turn_ids) if x == ti]
-    # Derived from the template rather than counted from the end, so the
-    # two cannot drift apart if the rendering changes again.
-    act_pos = span[0] + A.VALUE_WORD_IDX
+    # The supervised position, or -1 when the model does not revise in
+    # this episode — which is half of them by design, since making the
+    # model revise every time is exactly what tells an ownership-blind
+    # solver which agent it is. Derived from the template rather than
+    # counted from the end, so the two cannot drift apart.
+    if A.has_own_revision(ep):
+        ti = A.own_revision_index(ep)
+        span = [j for j, x in enumerate(turn_ids) if x == ti]
+        act_pos = span[0] + A.VALUE_WORD_IDX
+    else:
+        act_pos = -1
 
     return {
         "input_ids": np.array([VOCAB[w] for w in tokens], dtype=np.int64),
@@ -140,7 +146,8 @@ def decode(ids: np.ndarray) -> str:
 
 def self_test() -> None:
     import random
-    ep = A.generate_episode(7)
+    ep = next(A.generate_episode(s) for s in range(50)
+              if A.has_own_revision(A.generate_episode(s)))
     enc = encode_episode(ep, query=ep.queries[0])
     text = decode(enc["input_ids"])
     assert "next" in text
@@ -177,8 +184,14 @@ def self_test() -> None:
         own = [i for i, t in enumerate(e.turns) if t.agent == e.own_slot]
         assert all(enc["turn_reg"][i] == 0 for i in own)
 
+    # episodes without an own revision carry the sentinel
+    norev = next(A.generate_episode(s) for s in range(50)
+                 if not A.has_own_revision(A.generate_episode(s)))
+    assert int(encode_episode(norev)["act_pos"]) == -1
+
     # enactment keeps the encoding well-formed and moves act_pos's token
-    e = A.generate_episode(11)
+    e = next(A.generate_episode(s) for s in range(50, 99)
+             if A.has_own_revision(A.generate_episode(s)))
     A.enact_own_turns(e, random.Random(3))
     enc = encode_episode(e, query=e.queries[0])
     assert IVOCAB[int(enc["input_ids"][int(enc["act_pos"])])] \
@@ -190,6 +203,9 @@ def self_test() -> None:
     assert batch["input_ids"].shape[0] == 8
     assert (batch["turn_ids"][batch["input_ids"] == PAD_ID] == -1).all()
     for j, e in enumerate(eps):
+        if not A.has_own_revision(e):
+            assert int(batch["act_pos"][j]) == -1
+            continue
         assert IVOCAB[int(batch["input_ids"][j, int(batch["act_pos"][j])])] \
             == A.act_target(e)
 

@@ -154,13 +154,23 @@ class Turn:
 BATTERIES = ("T_act", "T_other", "T_state", "T_syntax")
 N_AGENTS = 4
 N_CONTESTED = 2                      # items every agent assigns
-# 8 assignments + 4 revisions: EVERY agent assigns both contested items
-# and revises exactly one of them, so turn count and revision status are
-# identical across agents and neither can predict ownership.
-N_TURNS = N_AGENTS * N_CONTESTED + N_AGENTS
+# K_REVISERS agents, drawn UNIFORMLY over all four, revise once each.
+#
+# Drawing them uniformly is what keeps turn count and revision status
+# uninformative: the model is a reviser exactly as often as anyone else,
+# so "this agent has three turns" and "this turn is a revision" carry no
+# ownership signal. The first draft of this grammar made the model ALWAYS
+# a reviser, which made turn count a perfect cue; the second made EVERY
+# agent revise, which removed that cue and created a worse leak (see
+# below). Two is the point on the trade-off that keeps the ceiling near
+# the registered 0.25 while still harvesting a scoring cell from half the
+# episodes.
+K_REVISERS = 2
+N_TURNS = N_AGENTS * N_CONTESTED + K_REVISERS
 
 
 def ownership_free_solver(ep: Episode) -> str | None:
+    """(see the module docstring; kept as the RT-20 regression test)"""
     """The attack RT-20 found, kept as a permanent regression test.
 
     Uses no ownership information at all: it reads the name and item on
@@ -209,15 +219,11 @@ def _skeleton(rng: random.Random, own_slot: int, leaky: bool) -> Episode:
     turns = [Turn(agent=a, marker=markers[a], item=item,
                   value=values[item][a]) for a, item in pairs]
 
-    # Every agent revises exactly once. The four agents are split into two
-    # pairs by a uniform shuffle, one pair revising each contested item, so
-    # the model's slot lands on either item with equal probability and no
-    # agent is distinguished by whether or what it revises.
-    order = list(range(N_AGENTS))
-    rng.shuffle(order)
-    revises = {order[0]: contested[0], order[1]: contested[0],
-               order[2]: contested[1], order[3]: contested[1]}
-    rev_turns = [(a, revises[a]) for a in range(N_AGENTS)]
+    # K_REVISERS agents drawn uniformly over ALL agents — not "the model
+    # and one other". Each revises one contested item, drawn uniformly.
+    revisers = rng.sample(range(N_AGENTS), K_REVISERS)
+    revises = {a: rng.choice(contested) for a in revisers}
+    rev_turns = [(a, revises[a]) for a in revisers]
     rng.shuffle(rev_turns)
     for a, item in rev_turns:
         turns.append(Turn(agent=a, marker=markers[a], item=item,
@@ -229,12 +235,25 @@ def _skeleton(rng: random.Random, own_slot: int, leaky: bool) -> Episode:
     ep.contested = contested           # type: ignore[attr-defined]
     ep.values = values                 # type: ignore[attr-defined]
     ep.revises = revises               # type: ignore[attr-defined]
-    ep.own_item = revises[own_slot]    # type: ignore[attr-defined]
+    ep.own_item = revises.get(own_slot)  # type: ignore[attr-defined]
     return ep
 
 
+def has_own_revision(ep: Episode) -> bool:
+    """Does this episode carry a supervised action for the model?
+
+    Only when the model's slot was drawn as one of the revisers, which
+    happens for K_REVISERS/N_AGENTS of episodes. Making it happen every
+    time is what broke the two earlier drafts: it is exactly the thing
+    that tells an ownership-blind solver which agent the model is.
+    """
+    return any(t.revised and t.agent == ep.own_slot for t in ep.turns)
+
+
 def own_revision_index(ep: Episode) -> int:
-    """Turn index of the model's own revision — the supervised position."""
+    """Turn index of the model's own revision — the supervised position.
+    Raises when the model does not revise in this episode; callers
+    filter with `has_own_revision` first."""
     for i, t in enumerate(ep.turns):
         if t.revised and t.agent == ep.own_slot:
             return i
@@ -252,8 +271,11 @@ def _add_queries(ep: Episode, rng: random.Random) -> None:
     # computed from that agent's earlier value. Every agent revises one
     # contested item and leaves the other, so such a pair always exists.
     o = rng.choice([a for a in range(ep.n_agents) if a != ep.own_slot])
-    item = next(i for i in ep.contested                  # type: ignore
-                if i != ep.revises[o])                   # type: ignore
+    # an item this agent did NOT revise, so its answer is in no turn;
+    # an agent that revised nothing leaves both items available
+    free = [i for i in ep.contested                      # type: ignore
+            if ep.revises.get(o) != i]                   # type: ignore
+    item = rng.choice(free)
     ep.queries.append(Query(
         "T_other",
         f"where did {ep.markers[o]} assign {item} to next?",
@@ -326,38 +348,51 @@ def enact_own_turns(ep: Episode, rng: random.Random) -> Episode:
 
 
 def measured_ceilings(n: int = 4000, seed: int = 4242) -> dict:
-    """The lookup ceilings this grammar actually has, measured rather than
-    asserted: the best a solver can do that knows the rule and every
-    visible turn but cannot tell which assignment was its own.
+    """The ceilings this grammar actually has for a solver that knows the
+    rule and sees every visible turn but cannot tell which agent it is.
 
-    For T_act the candidate set is the four successors of the item's four
-    earlier values, less any struck by a co-reviser who went first. For
-    T_other it is the same set for the queried item, less the two struck
-    by that item's two revisions.
+    Measured rather than asserted, and measured against BOTH eliminations
+    an ownership-blind solver is entitled to — the second of which the
+    earlier drafts of this module missed and the shortcut sweep found:
+
+    1. **Rule inversion.** A visible revision of the queried item reveals
+       its source value, striking that candidate.
+    2. **"Already revised, so not me."** Any agent that has already taken
+       its revision turn cannot be the agent revising now. When every
+       agent revised, this alone identified the model uniquely in a
+       quarter of episodes and lifted the true ceiling to 0.52 while this
+       function was still reporting 0.29.
+
+    With `K_REVISERS` of `N_AGENTS` agents revising, at most K-1 other
+    revisions can precede the model's, so elimination 2 can strike at
+    most K-1 candidates.
     """
     act, oth = [], []
     for s in range(n):
         ep = generate_episode(seed + s)
-        i = own_revision_index(ep)
-        item = ep.turns[i].item
-        cands = {successor(ep.values[item][a])       # type: ignore
-                 for a in range(N_AGENTS)}
-        struck = {t.value for j, t in enumerate(ep.turns)
-                  if t.revised and j < i and t.item == item}
-        act.append(1.0 / max(1, len(cands - struck)))
+        if has_own_revision(ep):
+            i = own_revision_index(ep)
+            item = ep.turns[i].item
+            cands = {a for a in range(N_AGENTS)}
+            # (2) agents that already revised are not the one revising now
+            cands -= {t.agent for t in ep.turns[:i] if t.revised}
+            # (1) strike candidates whose successor is already on the table
+            struck = {t.value for t in ep.turns[:i]
+                      if t.revised and t.item == item}
+            cands = {a for a in cands
+                     if successor(ep.values[item][a]) not in struck}  # type: ignore
+            act.append(1.0 / max(1, len(cands)))
         q = [q for q in ep.queries if q.battery == "T_other"][0]
         qitem = q.text.split()[4]
         qc = {successor(ep.values[qitem][a])         # type: ignore
               for a in range(N_AGENTS)}
-        qs = {t.value for t in ep.turns
-              if t.revised and t.item == qitem}
+        qs = {t.value for t in ep.turns if t.revised and t.item == qitem}
         oth.append(1.0 / max(1, len(qc - qs)))
-    return {"T_act": round(sum(act) / len(act), 4),
+    return {"T_act": round(sum(act) / max(1, len(act)), 4),
             "T_other": round(sum(oth) / len(oth), 4),
-            "n_sampled": n,
-            "note": "measured, not asserted; A3 §2.2 pre-states 0.25 for "
-                    "T_act, which this grammar does not achieve because "
-                    "every agent revises (see module docstring)"}
+            "n_sampled": n, "n_act_cells": len(act),
+            "note": "measured against both eliminations an ownership-blind "
+                    "solver may use; verified by src/shortcut_sweep.py"}
 
 
 def freeze_batteries(out_dir: Path, seed: int = 20260915,
@@ -380,7 +415,10 @@ def freeze_batteries(out_dir: Path, seed: int = 20260915,
             enact_own_turns(ep, random.Random(enact_seed))
             rec = {"content_seed": content_seed, "own_slot": s,
                    "enact_seed": enact_seed, "episode": ep.render()}
-            if len(frozen["T_act"]) < n_per_battery:
+            # Only half of episodes carry a supervised action, by design
+            # — making the model revise every time is what tells an
+            # ownership-blind solver which agent it is.
+            if has_own_revision(ep) and len(frozen["T_act"]) < n_per_battery:
                 frozen["T_act"].append(
                     {**rec, "battery": "T_act",
                      "position": own_revision_index(ep),
@@ -413,14 +451,11 @@ def self_test() -> None:
         ep = generate_episode(s)
         assert len(ep.turns) == N_TURNS
         revs = [t for t in ep.turns if t.revised]
-        assert len(revs) == N_AGENTS, "every agent revises exactly once"
-        assert len({t.agent for t in revs}) == N_AGENTS
-        assert sum(1 for t in revs if t.agent == ep.own_slot) == 1, \
-            "exactly one OWN revision per episode (the T_act cell)"
-        # every agent has the same number of turns: no count cue
-        per = {a: sum(1 for t in ep.turns if t.agent == a)
-               for a in range(N_AGENTS)}
-        assert len(set(per.values())) == 1, f"turn-count cue: {per}"
+        assert len(revs) == K_REVISERS, "K_REVISERS revisions per episode"
+        assert len({t.agent for t in revs}) == K_REVISERS, \
+            "each reviser revises once"
+        assert sum(1 for t in revs if t.agent == ep.own_slot) == \
+            int(has_own_revision(ep))
         # every contested item assigned by all agents, distinct values,
         # all assignments before any revision of that item
         for item in ep.contested:                    # type: ignore
@@ -435,8 +470,9 @@ def self_test() -> None:
         # the rule holds for every revision
         for t in revs:
             assert t.value == successor(ep.values[t.item][t.agent])  # type: ignore
-        # T_act target is the own revision's value
-        assert act_target(ep) == ep.turns[own_revision_index(ep)].value
+        # T_act target is the own revision's value, where there is one
+        if has_own_revision(ep):
+            assert act_target(ep) == ep.turns[own_revision_index(ep)].value
         # T_other's answer appears in NO turn value for that agent+item
         q = [q for q in ep.queries if q.battery == "T_other"][0]
         assert q.answer in SLOTS
@@ -444,7 +480,7 @@ def self_test() -> None:
         oa = ep.markers.index(mk)
         qitem = q.text.split()[4]
         assert oa != ep.own_slot, "T_other must name another agent"
-        assert ep.revises[oa] != qitem, \
+        assert ep.revises.get(oa) != qitem, \
             "T_other must query an item the named agent did NOT revise"
         assert q.answer == successor(ep.values[qitem][oa])
         assert all(not (t.agent == oa and t.item == qitem and t.revised)
@@ -452,16 +488,31 @@ def self_test() -> None:
 
     # ownership is not predictable from revision status or position
     rev_own = Counter()
+    cnt_own = Counter()
     pos_own = Counter()
     for s in range(4000):
         ep = generate_episode(s)
+        per = {a: sum(1 for t in ep.turns if t.agent == a)
+               for a in range(N_AGENTS)}
         for i, t in enumerate(ep.turns):
+            own = t.agent == ep.own_slot
             if t.revised:
-                rev_own[t.agent == ep.own_slot] += 1
-            pos_own[(i, t.agent == ep.own_slot)] += 1
-    frac = rev_own[True] / (rev_own[True] + rev_own[False])
-    assert abs(frac - 0.25) < 0.02, \
-        f"revision status must be uninformative (0.25): got {frac:.3f}"
+                rev_own[own] += 1
+            if per[t.agent] == N_CONTESTED + 1:
+                cnt_own[own] += 1
+            pos_own[(i, own)] += 1
+    # Revision status and turn count must be UNINFORMATIVE about
+    # ownership. They are, because the revisers are drawn uniformly over
+    # all agents rather than always including the model — the mistake
+    # that killed draft 1 (turn count a perfect cue) and, when "fixed" by
+    # making everyone revise, draft 2 (elimination lifted the ceiling
+    # from 0.29 to 0.52).
+    own_t = sum(v for k, v in pos_own.items() if k[1])
+    oth_t = sum(v for k, v in pos_own.items() if not k[1])
+    assert abs(rev_own[True] / own_t - rev_own[False] / oth_t) < 0.02, \
+        f"revision status leaks ownership: {rev_own}"
+    assert abs(cnt_own[True] / own_t - cnt_own[False] / oth_t) < 0.02, \
+        f"turn count leaks ownership: {cnt_own}"
     for i in range(N_TURNS):
         f = pos_own[(i, True)] / (pos_own[(i, True)] + pos_own[(i, False)])
         assert abs(f - 0.25) < 0.05, f"position {i} leaks ownership: {f:.3f}"
@@ -514,12 +565,16 @@ def self_test() -> None:
         "RT-20: the speaker name must come AFTER the value it is graded on"
     for s in range(300):
         ep = generate_episode(s)
+        if not has_own_revision(ep):
+            continue
         enact_own_turns(ep, random.Random(s + 11))
         assert ownership_free_solver(ep) is None, \
             "RT-20: an ownership-free solver can still read the name"
     # and nothing before the graded value names the speaker
     for s in range(300):
         ep = generate_episode(s)
+        if not has_own_revision(ep):
+            continue
         i = own_revision_index(ep)
         before = " ".join(t.render() for t in ep.turns[:i])
         head = TEMPLATE.split("{value}")[0].format(
@@ -533,17 +588,23 @@ def self_test() -> None:
     ceil = []
     for s in range(2000):
         ep = generate_episode(s)
+        if not has_own_revision(ep):
+            continue
         i = own_revision_index(ep)
         item = ep.turns[i].item
         cands = {successor(ep.values[item][a])       # type: ignore
                  for a in range(N_AGENTS)}
         assert ep.turns[i].value in cands
+        alive = {a for a in range(N_AGENTS)} - {
+            t.agent for t in ep.turns[:i] if t.revised}
         struck = {t.value for j, t in enumerate(ep.turns)
                   if t.revised and j < i and t.item == item}
-        ceil.append(1.0 / len(cands - struck))
+        alive = {a for a in alive
+                 if successor(ep.values[item][a]) not in struck}  # type: ignore
+        ceil.append(1.0 / max(1, len(alive)))
     mean_ceiling = sum(ceil) / len(ceil)
     assert 0.27 < mean_ceiling < 0.32, \
-        f"lookup ceiling drifted from the stated 0.292: {mean_ceiling:.3f}"
+        f"ownership-blind ceiling drifted from 0.292: {mean_ceiling:.3f}"
     print(f"curriculum_a3 self-test OK ({N_TURNS} turns, chance "
           f"{1/len(SLOTS):.3f}, measured T_act lookup ceiling "
           f"{mean_ceiling:.3f})")
