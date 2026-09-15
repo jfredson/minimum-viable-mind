@@ -271,6 +271,41 @@ def enact_own_turns(ep: Episode, rng: random.Random) -> Episode:
     return ep
 
 
+def measured_ceilings(n: int = 4000, seed: int = 4242) -> dict:
+    """The lookup ceilings this grammar actually has, measured rather than
+    asserted: the best a solver can do that knows the rule and every
+    visible turn but cannot tell which assignment was its own.
+
+    For T_act the candidate set is the four successors of the item's four
+    earlier values, less any struck by a co-reviser who went first. For
+    T_other it is the same set for the queried item, less the two struck
+    by that item's two revisions.
+    """
+    act, oth = [], []
+    for s in range(n):
+        ep = generate_episode(seed + s)
+        i = own_revision_index(ep)
+        item = ep.turns[i].item
+        cands = {successor(ep.values[item][a])       # type: ignore
+                 for a in range(N_AGENTS)}
+        struck = {t.value for j, t in enumerate(ep.turns)
+                  if t.revised and j < i and t.item == item}
+        act.append(1.0 / max(1, len(cands - struck)))
+        q = [q for q in ep.queries if q.battery == "T_other"][0]
+        qitem = q.text.split()[4]
+        qc = {successor(ep.values[qitem][a])         # type: ignore
+              for a in range(N_AGENTS)}
+        qs = {t.value for t in ep.turns
+              if t.revised and t.item == qitem}
+        oth.append(1.0 / max(1, len(qc - qs)))
+    return {"T_act": round(sum(act) / len(act), 4),
+            "T_other": round(sum(oth) / len(oth), 4),
+            "n_sampled": n,
+            "note": "measured, not asserted; A3 §2.2 pre-states 0.25 for "
+                    "T_act, which this grammar does not achieve because "
+                    "every agent revises (see module docstring)"}
+
+
 def freeze_batteries(out_dir: Path, seed: int = 20260915,
                      n_per_battery: int = 400) -> dict:
     """Freeze battery items as A1 skeletons before training [RT-14, RT-19,
@@ -307,8 +342,7 @@ def freeze_batteries(out_dir: Path, seed: int = 20260915,
             "counts": {b: len(v) for b, v in frozen.items()},
             "chance_floor": {b: 1.0 / (frozen[b][0]["n_choices"] or 1)
                              for b in BATTERIES if frozen[b]},
-            "lookup_ceiling": {"T_act": 1.0 / N_AGENTS,
-                               "T_other": 1.0 / N_AGENTS},
+            "lookup_ceiling_measured": measured_ceilings(),
             "note": "A3 Candidate A; T_act is scored at the own revision "
                     "POSITION, not at an appended query"}
     for b, items in frozen.items():

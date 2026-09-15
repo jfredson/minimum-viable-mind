@@ -2,6 +2,63 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## GATE 1 COMPLETE — Candidate A grammar built and certified, $0; K1 does not fire; red-team pass 3 now carries five items (2026-09-15)
+
+Full record: `experiments/06-mvm-0a-constructed-self-index/gate1-curriculum-findings.md`;
+gate records in `.../a3-gates/`, frozen batteries in `.../batteries-a3/`;
+code `src/curriculum_a3.py`, `src/encoding_a3.py`, `src/cue_detector_a3.py`
+(committed at `7ab8018` **before the gate ran on them**). Local, **$0**;
+A3 cumulative spend still **$0.00 of the $100 hard stop**. Nothing
+trained, no pod [C1/C2].
+
+**The grammar.** Twelve turns, four agents, two contested items. Every
+agent assigns each contested item once with the four values on an item
+distinct, then **every agent revises exactly once**, two per item, under
+a shared deterministic rule (the successor of that agent's own earlier
+value). Applying a rule everyone shares requires knowing which of four
+assignments was yours. `curriculum.py` and `encoding.py` are untouched —
+their token ids are what make every prior record reproduce — so A3 gets
+new modules; the A3 vocabulary adds one word, "next".
+
+**Gate result: PASS, K1 does not fire.** Run (i) curriculum text plus
+episode-relative features: clean 0.5097 [0.4867, 0.5316], control 0.943.
+Run (ii) input tensors: clean 0.5259 [0.5032, 0.5498], control 1.000.
+Both clean intervals inside the registered [0.45, 0.55].
+
+**Gate 0's cell-size fix is delivered:** 400 episodes now yield **400
+T_act cells**, against 19 for the registered grammar's
+revision-conditioned battery at the same episode count.
+
+**Two NEW items for red-team pass 3, on top of Gate 0's three:**
+4. **The pre-stated lookup ceiling is wrong for this grammar.** Measured
+   0.2925 for T_act (not 0.25) and **0.5 for T_other**, because each
+   item's two revisions let a solver strike candidates. The asymmetry
+   matters: the H_generic-binding bin turns on the gap between the two
+   batteries' drops. Either adopt the measured numbers or add a third
+   unrevised contested item to buy 0.25 back, at ~⅓ more compute per run.
+5. **Gate (ii) fails a clean grammar about one run in nine.** Its
+   bootstrap interval resamples one draw's test split and is silent on
+   across-sample spread. Six independent samples: text mean 0.4939
+   (sd 0.012), tensor mean 0.5054 (sd 0.0224). The registered seed's
+   0.5259 is within one sd of chance, and the own register's stack index
+   is uniform to one standard error over 40,000 episodes — there is no
+   cue. Take the verdict over several samples, or raise n to ~14,000.
+
+**For the record: the first draft of the grammar was killed by its own
+self-test.** Giving only the model and one other agent a revision left
+the model's agent as the only one with three turns, so turn count
+predicted ownership perfectly and revision status at 0.33 vs 0.14. Every
+agent revising once removes both by construction. The detector also had
+to gain episode-relative features the registered one lacks, since an A3
+turn renders identically whether it assigns or revises.
+
+**Next (John owns all of it):** (1) K0's number and the Gate 0 items;
+(2) red-team pass 3 with all five items; (3) registration commit; (4)
+then Gate 2, the pilot, on a C2 go in John's own words. **No A3 run
+launches before that.** One free build step remains: the trainer does not
+yet know about T_act — the loss must sit at the own revision position and
+`eval_heldout` must score there. Branch `gate0-null-calibration`.
+
 ## GATE 0 COMPLETE — the registered null calibration ran, $0; K0 does not fire where a verdict is read; three fixes for red-team pass 3 (2026-09-14)
 
 The first action Amendment A3 orders is done. Full record:

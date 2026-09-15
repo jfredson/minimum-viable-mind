@@ -51,6 +51,11 @@ import numpy as np
 
 import curriculum_a3 as A
 import encoding_a3 as E
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
 from cue_detector import (EQUIV_LO, EQUIV_HI, POSITIVE_CONTROL_MIN_AUC,
                           N_BOOT, boot_ci, fit_auc)
 import curriculum as C
@@ -145,6 +150,20 @@ def build_tensor_examples(eps, leaky: bool, seed: int = 0):
     return np.asarray(feats, float), np.asarray(labels)
 
 
+def fit_numeric(feats, labels, seed: int):
+    """Numeric-only classifier for run (ii) — same family and capacity as
+    run (i)'s, without the text branch (`cue_detector.run_tensor_variant`
+    makes the same split)."""
+    idx = np.arange(len(labels))
+    tr, te = train_test_split(idx, test_size=0.3, random_state=seed,
+                              stratify=labels)
+    sc = StandardScaler().fit(feats[tr])
+    clf = LogisticRegression(max_iter=2000, C=1.0)
+    clf.fit(sc.transform(feats[tr]), labels[tr])
+    p = clf.predict_proba(sc.transform(feats[te]))[:, 1]
+    return roc_auc_score(labels[te], p), labels[te], p
+
+
 def _verdict(clean: dict, leaky: dict) -> tuple[bool, bool]:
     return (EQUIV_LO <= clean["ci95"][0] and clean["ci95"][1] <= EQUIV_HI,
             leaky["auc"] >= POSITIVE_CONTROL_MIN_AUC)
@@ -178,8 +197,7 @@ def tensor_gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
     for name, leaky in (("clean", False), ("positive_control", True)):
         eps = A.generate_balanced(n_episodes, seed, leaky=False)
         feats, labels = build_tensor_examples(eps, leaky=leaky, seed=seed)
-        texts = [""] * len(labels)
-        auc, y, p = fit_auc(texts, feats, labels, seed)
+        auc, y, p = fit_numeric(feats, labels, seed)
         lo, hi = boot_ci(y, p, N_BOOT, seed)
         out[name] = {"leaky_layout": leaky, "n_examples": int(len(labels)),
                      "auc": round(float(auc), 4),
@@ -208,6 +226,44 @@ def gate(n_episodes: int = N_EPISODES, seed: int = SEED) -> dict:
                         "requires a trained checkpoint; A3 Gate 3"}}
 
 
+STABILITY_SEEDS = (20260915, 11, 22, 33, 44, 55)
+
+
+def stability(n_episodes: int = N_EPISODES) -> dict:
+    """How much does a gate verdict move between independent samples?
+
+    The registered gate reports one AUC with a bootstrap CI, and that CI
+    resamples the test split of a SINGLE draw of episodes. It therefore
+    measures uncertainty within one sample and says nothing about how far
+    the point estimate wanders between samples. On a grammar with no cue
+    the two are not the same: the classifier can fit a chance imbalance
+    present in that particular draw, and some of it transfers to the test
+    split of the same draw.
+
+    This runs the clean gate on independent samples and reports the
+    spread, so the verdict can be read against the right yardstick.
+    """
+    out = {"n_episodes": n_episodes, "seeds": list(STABILITY_SEEDS),
+           "text": [], "tensor": []}
+    for sd in STABILITY_SEEDS:
+        eps = A.generate_balanced(n_episodes, sd)
+        texts, feats, labels = build_examples(eps, seed=sd)
+        out["text"].append(round(float(fit_auc(texts, feats, labels, sd)[0]), 4))
+        f2, l2 = build_tensor_examples(eps, leaky=False, seed=sd)
+        out["tensor"].append(round(float(fit_numeric(f2, l2, sd)[0]), 4))
+    for k in ("text", "tensor"):
+        v = np.asarray(out[k])
+        out[f"{k}_mean"] = round(float(v.mean()), 4)
+        out[f"{k}_sd"] = round(float(v.std(ddof=1)), 4)
+        # a clean grammar's chance of failing the upper bound, given this
+        # spread and a bootstrap half-width of about one sd
+        from math import erf, sqrt
+        z = (EQUIV_HI - v.std(ddof=1) - 0.5) / v.std(ddof=1)
+        out[f"{k}_false_fail_rate"] = round(
+            float(0.5 * (1 - erf(z / sqrt(2)))), 4)
+    return out
+
+
 def self_test() -> None:
     eps = A.generate_balanced(200, 1)
     texts, feats, labels = build_examples(eps, seed=1)
@@ -234,11 +290,22 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--self-test", action="store_true")
     ap.add_argument("--run", action="store_true")
+    ap.add_argument("--stability", action="store_true")
     ap.add_argument("--n", type=int, default=N_EPISODES)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
     if args.self_test:
         self_test()
+        return
+    if args.stability:
+        res = stability(args.n)
+        print(json.dumps(res, indent=2))
+        if args.out:
+            q = Path(args.out)
+            assert not q.exists(), f"refusing to overwrite {q} [C6]"
+            q.parent.mkdir(parents=True, exist_ok=True)
+            q.write_text(json.dumps(res, indent=2))
+            print(f"\nwrote {q}")
         return
     if args.run:
         res = gate(args.n, SEED)

@@ -1,0 +1,26 @@
+{
+  "seed": 20260915,
+  "n_agents": 4,
+  "n_turns": 12,
+  "n_per_battery": 400,
+  "format": "A1-skeleton/A3",
+  "counts": {
+    "T_act": 400,
+    "T_other": 400,
+    "T_state": 400,
+    "T_syntax": 400
+  },
+  "chance_floor": {
+    "T_act": 0.125,
+    "T_other": 0.125,
+    "T_state": 0.07692307692307693,
+    "T_syntax": 0.07142857142857142
+  },
+  "lookup_ceiling_measured": {
+    "T_act": 0.2925,
+    "T_other": 0.5,
+    "n_sampled": 4000,
+    "note": "measured, not asserted; A3 \u00a72.2 pre-states 0.25 for T_act, which this grammar does not achieve because every agent revises (see module docstring)"
+  },
+  "note": "A3 Candidate A; T_act is scored at the own revision POSITION, not at an appended query"
+}
