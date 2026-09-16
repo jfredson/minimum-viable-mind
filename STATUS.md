@@ -2,6 +2,69 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## A3 PILOT COMPLETE — the objective is LEARNABLE and genuinely about ownership; control battery never learned; $13.92 (2026-09-16)
+
+Record: `experiments/06-mvm-0a-constructed-self-index/gate2-pilot-findings.md`;
+endpoint `a3-gates/pilot_endpoint.json`, trajectory `a3-gates/pilot_trajectory.jsonl`.
+Full registered budget: 55,116 steps / 585,552,384 tokens, one register-less
+30M at seed 0. John's go, verbatim: **"Go"**. Checkpoint md5
+`f751228ce0e40bae5aba22c6d5aa6c60`, verified against the pod before reaping.
+**A3 cumulative $13.92 / $100 hard stop.**
+
+**THE RESULT (n=800, 400 verdict cells):**
+
+| battery | intact | acting channel zeroed | its shortcut ceiling |
+|---|---|---|---|
+| **T_act** | **0.506** | **0.182** | 0.2921 |
+| T_other | 0.299 | 0.234 | 0.3227 |
+| T_state | 1.000 | 0.999 | — |
+| T_syntax | 1.000 | 1.000 | — |
+
+**Learnable: T_act is +0.214 above the best any ownership-blind solver can
+reach.** K2 does not fire. **The L0 validity check passes decisively AND
+selectively:** zeroing the only authorship signal takes T_act 0.506 -> 0.182
+while the ownership-free batteries do not move. Under the registered
+(ceiling-corrected) metric that drop reads **1.515** — above 1.0, meaning the
+lesion took it BELOW what an ownership-blind solver reaches. That is exactly
+the case John's decision 3 said must be reported, not clipped; a clamp would
+have hidden the most informative number in the table. Supplementary read at
+one reviser (ceiling exactly 0.25): T_act 0.531, margin +0.281.
+
+**THE CONTROL NEVER LEARNED. T_other 0.299 is BELOW its own 0.3227 ceiling** —
+no marker-keyed retrieval at all, repeating the seed lottery only 2 of 5
+earlier runs won. **Structural consequence for the lesion phase: its baseline
+is below its ceiling, so the registered floor rule makes its drop UNDEFINED,
+and any bin comparing the two batteries' drops cannot fire in either
+direction.** One reading says that is benign (no generic binder exists to be
+confused with a self-index); the other says a discriminator that cannot fire
+is not doing its job. That is an adjudication, not a measurement.
+
+**THE BIN IS NOT OBVIOUS.** K3's starvation signature is "T_act reaches
+ceiling early while T_other stays flat". The control IS flat; T_act is at
+0.506, well above its shortcut floor and nowhere near 1.0, flat around 0.537
+over the last fifth. **Half fired, half did not.** Honest description: partial
+learning on the primary, none on the control — neither the clean positive nor
+the clean starvation. The bins were written before the grammar existed, which
+is what red-team pass 3 flagged.
+
+**TWO PROCESS FAILURES, one costly:**
+1. **A TRUNCATED CHECKPOINT LOADED WITHOUT COMPLAINT** — 324MB fetched vs the
+   pod's 351MB, opening cleanly and reporting the right step count and a
+   plausible trajectory. Trusting it would have made every number above come
+   from a corrupt file. A streamed `cat` over ssh truncates binary silently;
+   tar does not. **The watchdog needs a checksum check after every pull,
+   before seeds 1 and 2.**
+2. **Idle billing recurred, THIRD time.** Finished 09:54Z, reaped 13:47Z —
+   3.9 idle hours, ~$3.8 of the $13.92. caffeinate blocks idle sleep, not
+   lid-close. Three occurrences is a design problem: the reap must not depend
+   on a laptop being awake.
+
+**Next (John owns all of it):** (1) adjudicate the bin; (2) rule on the
+undefined control drop before any lesion phase; (3) whether seeds 1 and 2
+launch (~$11 each, fresh go each) and whether the two process fixes land
+first. The lesion phase additionally needs the threshold lock, which is
+John's commit. Branch `gate0-null-calibration`, pushed.
+
 ## SHORTCUT SWEEP — a SECOND fatal leak; three grammar drafts map a real trade-off; proposal drafted; A3 NOT ready to register (2026-09-15)
 
 Proposal: `experiments/06-mvm-0a-constructed-self-index/a3-revision-proposal.md`

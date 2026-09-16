@@ -1,0 +1,30 @@
+{
+  "checkpoint_step": 55116,
+  "tokens": 585552384,
+  "ceilings": {
+    "T_act": 0.2921,
+    "T_other": 0.3227,
+    "n_sampled": 4000,
+    "n_act_cells": 2009,
+    "note": "measured against both eliminations an ownership-blind solver may use; verified by src/shortcut_sweep.py"
+  },
+  "verdict_n": 800,
+  "intact": {
+    "T_act": 0.506,
+    "T_other": 0.299,
+    "T_state": 1.0,
+    "T_syntax": 1.0
+  },
+  "L0_no_acting_channel": {
+    "T_act": 0.182,
+    "T_other": 0.234,
+    "T_state": 0.999,
+    "T_syntax": 1.0
+  },
+  "supplementary_one_reviser": {
+    "T_act": 0.531,
+    "ownership_blind_ceiling": 0.25,
+    "n_episodes": 1600,
+    "caveat": "distribution shift from the training grammar; supplementary, not the headline"
+  }
+}
