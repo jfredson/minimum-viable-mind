@@ -47,17 +47,21 @@ learning on the primary, none on the control — neither the clean positive nor
 the clean starvation. The bins were written before the grammar existed, which
 is what red-team pass 3 flagged.
 
-**TWO PROCESS FAILURES, one costly:**
-1. **A TRUNCATED CHECKPOINT LOADED WITHOUT COMPLAINT** — 324MB fetched vs the
-   pod's 351MB, opening cleanly and reporting the right step count and a
-   plausible trajectory. Trusting it would have made every number above come
-   from a corrupt file. A streamed `cat` over ssh truncates binary silently;
-   tar does not. **The watchdog needs a checksum check after every pull,
-   before seeds 1 and 2.**
-2. **Idle billing recurred, THIRD time.** Finished 09:54Z, reaped 13:47Z —
-   3.9 idle hours, ~$3.8 of the $13.92. caffeinate blocks idle sleep, not
-   lid-close. Three occurrences is a design problem: the reap must not depend
-   on a laptop being awake.
+**ONE PROCESS FAILURE, AND ONE CORRECTION:**
+1. **CORRECTION — the "truncated checkpoint" was my misreading.** I first
+   reported the fetched checkpoint as silently corrupt (324MB vs the pod's
+   351MB, loading without complaint). It was not: the watchdog's final
+   fetch ran 13:36:11Z->13:46:59Z and my 324MB listing was timestamped
+   13:38Z, INSIDE that window. I read a file mid-extraction as a corrupt
+   one. The archive-based final fetch worked correctly. What IS real: my
+   own streamed re-fetch over ssh truncated at 199MB (a `cat` of a large
+   binary truncates silently), and the watchdog's INCREMENTAL pull uses
+   that same unsafe pattern, promoting on a non-empty test alone — latent,
+   did not bite, worth fixing before seeds 1 and 2.
+2. **Idle billing recurred, THIRD time (this one is real).** Finished
+   09:54Z, reaped 13:47Z — 3.9 idle hours, ~$3.8 of the $13.92. caffeinate
+   blocks idle sleep, not lid-close. Three occurrences is a design
+   problem: the reap must not depend on a laptop being awake.
 
 **Next (John owns all of it):** (1) adjudicate the bin; (2) rule on the
 undefined control drop before any lesion phase; (3) whether seeds 1 and 2

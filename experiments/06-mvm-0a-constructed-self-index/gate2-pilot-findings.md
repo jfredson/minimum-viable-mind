@@ -97,17 +97,40 @@ hoped for nor the clean starvation the criterion describes. The bins were
 written before the grammar existed, which is the same gap red-team pass 3
 flagged when it found them neither exhaustive nor mutually exclusive.
 
-## Two process failures, one of which cost money
+## One process failure that cost money, and one correction
 
-**A truncated checkpoint loaded without complaint.** The watchdog's
-fetched copy was 324MB against the pod's 351MB, and it opened cleanly,
-reported the right step count and a plausible trajectory. Had it been
-trusted, every number above would have come from a corrupt file. It was
-caught by comparing sizes against the pod before reaping it, and the
-checkpoint was re-fetched by tar and verified by checksum. **A streamed
-`cat` over ssh truncates binary silently; the tar path does not.** The
-watchdog should verify a checksum after every checkpoint pull, and that
-should be fixed before seeds 1 and 2.
+**CORRECTION, same day: the "truncated checkpoint" was my own
+misreading, not a watchdog failure.** I first reported that the fetched
+checkpoint was 324MB against the pod's 351MB and had loaded without
+complaint, and called it a silent-corruption failure. It was not. The
+watchdog's final fetch ran from 13:36:11Z to 13:46:59Z and reported
+success; my listing that showed 324MB carried a modification time of
+13:38Z, **inside that window**. I was looking at a file mid-extraction and
+read it as a corrupt one. The load that followed came after the fetch
+completed, which is why it returned the full 111-row trajectory matching
+the pod exactly. The watchdog's final fetch, which uses an archive, worked
+correctly and produced the right file.
+
+What survives that correction is smaller but real, and in two parts.
+
+*A concrete hazard, demonstrated by me.* When I re-fetched the checkpoint
+by streaming it over ssh, the copy came back at 199MB with a different
+checksum. A streamed `cat` of a large binary truncates silently. The
+archive path does not, and the checksum-verified artifact now in place
+came from the archive path.
+
+*A latent bug in the watchdog, which did not bite this time.* Its
+incremental checkpoint pull (`fetch_ckpt` in `watch_run.sh`) uses exactly
+that streamed `cat`, and promotes the result on a non-empty test alone — a
+truncated file passes it. The final fetch is safe; the periodic one is
+not. It should use an archive and verify a checksum, and that is worth
+fixing before seeds 1 and 2 even though no harm came of it here.
+
+The episode is left in the record rather than quietly edited out, because
+a wrong diagnosis that reads as a serious failure is worth as much
+correcting as a real one. The checkpoint in place is verified by checksum
+against the pod, md5 `f751228c…`, and every number in this note comes
+from it.
 
 **The idle-billing failure recurred.** Training finished at 09:54Z and the
 watchdog only woke to reap the pod at 13:47Z, so the pod billed 3.9 idle
