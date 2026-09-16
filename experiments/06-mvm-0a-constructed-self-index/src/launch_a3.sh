@@ -76,6 +76,12 @@ NETVOL="${NETVOL:-x9f8pkn58t}"                 # mvm-models-ro 100GB @ EU-RO-1
                                                # may no longer exist — CHECK
                                                # before the first real launch)
 RESUME="${RESUME:-}"
+# Where fetched artifacts land. Defaults to the MAIN checkout, never the
+# worktree this script happens to be running from: a git worktree is scratch
+# space and can be removed when a session ends, which would take a ten-hour
+# paid run's checkpoint with it. The canonical artifacts directory is where
+# the existing checkpoints already live.
+DEST_ROOT="${DEST_ROOT:-$HOME/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index}"
 TERM_AT=$(date -u -v+"${TERM_H}"H +%Y-%m-%dT%H:%M:%SZ)
 DEADLINE_EPOCH=$(( $(date +%s) + WATCH_H * 3600 ))
 
@@ -122,6 +128,7 @@ echo "creating $CLOUD pod ($GPU) for $SCALE/$MAXTOK tok (out: $OUT)"
 echo "  register-less by construction [A3 §2.4]; act-weight $ACT_WEIGHT"
 echo "  run dir: $RUN_DIR $([ "$NETVOL" != "none" ] && echo '(network volume — survives pod death)')"
 echo "  advisory terminate-after: $TERM_AT; watchdog kill deadline: +${WATCH_H}h"
+echo "  artifacts -> $DEST_ROOT/artifacts/$OUT"
 
 # --twin is passed EXPLICITLY even though train_a3.py already defaults to
 # it. A3 section 2.4 forbids training the register, and a registered design
@@ -144,7 +151,7 @@ DRYRUN — nothing created, nothing spawned. Would run:
   train: $TRAIN_CMD \\
     --out $RUN_DIR/$OUT.pt
   aliveness: pgrep -f '[t]rain_a3.py'
-  watchdog env dest: $EXP_DIR/artifacts/$OUT
+  watchdog env dest: $DEST_ROOT/artifacts/$OUT
   NOTE: the register is never trained in an A3 run; this script has no
         flag that could enable it.
 DRYEOF
@@ -234,7 +241,7 @@ $SSH "pgrep -f '[t]rain_a3.py' >/dev/null && echo 'ALIVE: training process confi
   || echo "aliveness check ssh failed — poll manually"
 
 # ---- process fix 2: the launch owns its fetch and its kill ----------------
-DEST="$EXP_DIR/artifacts/$OUT"
+DEST="$DEST_ROOT/artifacts/$OUT"
 mkdir -p "$DEST"
 ENVF="$DEST/run_$POD.env"
 cat > "$ENVF" <<ENVEOF
