@@ -207,3 +207,51 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+# --------------------------------------------------------- known-answer gate
+
+KNOWN_ANSWER_RESULT = Path(__file__).resolve().parent.parent / \
+    "a3-gates" / "known_answer_test_a3.json"
+
+
+class PipelineUnvalidated(LockError):
+    """Raised when an L1 localization read is attempted before the
+    known-answer test has passed."""
+
+
+def require_known_answer_pass(path: Path | None = None) -> dict:
+    """RULED BY JOHN, 2026-09-16 Pacific (decidedBy john):
+
+      "Gate: no A3 L1 localization read on any seed until the known-answer
+      test passes. The L0 direct lesion is unaffected and proceeds as
+      registered."
+
+    The gate is mechanical rather than a promise, for the same reason
+    `require_lock` is: on the night this was written the blind pipeline
+    returned five probes below their own nulls, and nothing run so far
+    separates an insensitive stack from a bug in the plumbing. Until the
+    known-answer test says the plumbing works, an L1 number cannot be
+    interpreted, so it is not produced.
+
+    This deliberately does NOT gate the L0 direct lesion. L0 zeroes the
+    acting channel and reads the batteries; it uses none of the
+    localization machinery under suspicion.
+    """
+    path = Path(path) if path else KNOWN_ANSWER_RESULT
+    if not path.exists():
+        raise PipelineUnvalidated(
+            "REFUSING an L1 localization read: the known-answer test has "
+            f"not been run ({path} is absent). John's ruling of 2026-09-16 "
+            "gates every L1 read on it passing. The L0 direct lesion is "
+            "unaffected and may proceed.")
+    rec = json.loads(path.read_text())
+    v = rec.get("verdict", {}).get("verdict", "")
+    if not v.startswith("PASS"):
+        raise PipelineUnvalidated(
+            f"REFUSING an L1 localization read: the known-answer test did "
+            f"not pass (verdict {v!r}). Until the pipeline is shown to "
+            f"recover a value present at the probed position, an L1 number "
+            f"cannot be interpreted. Per John's ruling nothing is fixed "
+            f"silently: report the bug and propose the fix. The L0 direct "
+            f"lesion is unaffected and may proceed.")
+    return rec

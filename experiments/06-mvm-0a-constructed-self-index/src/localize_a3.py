@@ -176,6 +176,10 @@ def own_direction(X, y, rank=RANK_CAP):
 def run_l1(ckpt: str, lock: str | None, device: str = "cpu",
            n_pairs: int = 200, calibration: str | None = None) -> dict:
     """The gated L1 read. Refuses without a valid lock."""
+    # John's ruling 2026-09-16: no L1 read until the known-answer test
+    # passes. Checked BEFORE the lock so an unvalidated pipeline cannot be
+    # read even with a valid lock in hand.
+    lock_guard.require_known_answer_pass()
     rec = lock_guard.require_lock(
         lock, batteries=("T_act",),
         calibration_record=Path(calibration) if calibration else None)
