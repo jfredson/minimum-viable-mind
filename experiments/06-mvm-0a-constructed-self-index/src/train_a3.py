@@ -309,11 +309,11 @@ def run(args) -> dict:
         print(f"saved {args.out}")
         print("TRAINING COMPLETE", flush=True)
         if not args.no_self_terminate:
-            self_terminate()
+            self_terminate(args.out)
     return {"params": n_params, "tokens": tokens_seen, "log": log}
 
 
-def self_terminate() -> None:
+def self_terminate(out_path: str | None = None) -> None:
     """Ask the pod to delete itself now that the work is finished.
 
     Idle billing has cost money three times, each because the reap waited
@@ -335,6 +335,24 @@ def self_terminate() -> None:
     """
     import os
     import subprocess
+
+    # HARD SAFETY GATE. Deleting the pod destroys its container disk. If
+    # the checkpoint is sitting there rather than on the network volume,
+    # self-terminating would throw away the very thing the run produced —
+    # which is exactly how the 2026-08-12 run was lost, by a different
+    # route. Refuse unless the output path is on the mounted volume.
+    if out_path:
+        real = os.path.realpath(out_path)
+        if not real.startswith("/workspace/"):
+            print(f"self-terminate: REFUSING — output {real} is not on the "
+                  f"network volume, so deleting this pod would destroy the "
+                  f"checkpoint. Leaving the reap to the watchdog.",
+                  flush=True)
+            return
+        if not os.path.exists(out_path):
+            print(f"self-terminate: REFUSING — no checkpoint at {out_path}",
+                  flush=True)
+            return
     pod = os.environ.get("RUNPOD_POD_ID", "")
     if not pod:
         print("self-terminate: no RUNPOD_POD_ID in the environment; "

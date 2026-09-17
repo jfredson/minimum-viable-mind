@@ -221,6 +221,24 @@ fi
 RESUME_FLAG=""
 [ -n "$RESUME" ] && RESUME_FLAG="--resume $RESUME"
 
+# ---- (iii) pod-side deadline reaper ---------------------------------------
+# A hung run writes no DONE sentinel and never crashes, so nothing on the
+# pod ends it. Until now the only backstop was the local watchdog, which
+# sleeps when the laptop does — the failure that has cost money three
+# times. This starts a detached timer ON THE POD that deletes it after
+# TERM_H hours regardless of what this Mac is doing. It is safe precisely
+# because artifacts live on the network volume and survive the delete.
+if [ "$NETVOL" != "none" ]; then
+  echo "arming pod-side deadline reaper (+${TERM_H}h, laptop-independent)"
+  $SSH "nohup sh -c 'sleep $((TERM_H * 3600)); \
+    runpodctl remove pod \$RUNPOD_POD_ID || runpodctl pod delete \$RUNPOD_POD_ID' \
+    > $RUN_DIR/reaper.log 2>&1 < /dev/null &" \
+    && echo "  armed" || echo "  could not arm (watchdog remains the backstop)"
+else
+  echo "NETVOL=none: pod-side reaper NOT armed (deleting the pod would"
+  echo "  destroy container-disk artifacts); the watchdog is the only reap"
+fi
+
 echo "starting detached training run (log + checkpoints in $RUN_DIR)"
 # 2026-08-17: this ssh can HANG after the remote nohup succeeds — the
 # keepalive opts keep the drained connection open forever (both wave-1
