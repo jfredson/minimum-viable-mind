@@ -77,20 +77,48 @@ of seeds 1 and 2.** The seeds are reframed as a ~$22 test of whether the
 primary battery's learnability replicates and whether the control is a
 seed lottery.
 
-**NEXT, in the registered order (§4.3):**
-1. Both process fixes committed — DONE (pod-side self-terminate in
-   `train_a3.py`, archive-plus-checksum pulls in `watch_run_a3.sh`).
+**NEXT, in the registered order (§4.3) — items 1 to 4 have all LANDED:**
+1. Both process fixes committed — DONE (`3df7d19`, `2710982`), plus
+   pod-side reaping ruled and implemented (`5dedc18`) after a paid test
+   ($0.29) proved a pod carries no credential and no id of its own.
 2. Gate 3 — DONE and PASSES both arms (clean 0.483 and 0.4975; controls
    0.9895 and 0.8724). The first run's "uncertifiable" was a bad control
    on Claude's side, not the checkpoint.
-3. **John's threshold lock commit** — thresholds measured and waiting
-   (0.1777 primary, 0.2368 on the one computable differential).
-   `lock_guard.py` refuses any L1 run without it.
-4. **Seeds 1 and 2 as ONE WAVE on a single fresh verbatim go** (the
-   2026-09-16 revision withdrew the sequential condition). ~$22 total,
-   quoted in the ledger before spend.
-5. After they report: whether optional extra seeds run (~$77–105 for seven
-   total, borderline against the $100 stop).
+3. Threshold lock — **DONE, John's commit `6ad4362`** (2026-09-16 20:08
+   PDT). It carries θ 0.1777 on T_act and no threshold at all for
+   T_other, which encodes the strict ruling mechanically: `lock_guard`
+   accepts a run reading the primary battery and refuses one reading the
+   control.
+4. Seeds 1 and 2 as ONE WAVE — **DONE, John's verbatim go "Go" quoted in
+   the ledger at `45fd652`** (20:11 PDT). Pods `xi062halhyuucg` (seed 1)
+   and `4z55xtf1vowymp` (seed 2), launched 2026-09-17 03:13Z, est.
+   $18–26 the pair, due to report around 06:07 local 2026-09-17.
+
+**IN FLIGHT AND ON JOHN'S MACHINE:** lid sleep is disabled
+(`SleepDisabled 1`) so the wave reaps on time; **revert after both report
+with `sudo pmset -a disablesleep 0`**. The two in-flight pods launched
+before the reaping ruling, so the laptop watchdog is still their only
+reap.
+
+**DATED PATH (John approved the public path roadmap verbatim, "Approved
+on all", 2026-09-16; `docs/public-path-roadmap-2026-09-16.md`, committed
+`609c5c5`):**
+- **2026-09-18** seeds report: checkpoints fetched and checksummed, pods
+  reaped, ledger actual-after rows (task "Public path 1", `f5f5f9e9`).
+- **2026-09-20** John decides optional extra seeds (`9698b81b`).
+- **2026-09-27** blind-localization arm — blind, on one of the five A2
+  register-bearing checkpoints, local, $0. The A3 L1 pipeline does NOT
+  discharge it (`3c1cce48`).
+- **2026-10-04** John decides the control-battery question on a written
+  proposal: a registered Amendment A4 that makes the control learn
+  reliably, or close A3 with partial discriminators and say so. Proposal
+  drafted after the seeds report; no spend. Note for that proposal: the
+  ceiling adjudication permits exactly one amendment to the compute cap
+  and A3 proceeded on the reading that it binds money rather than design,
+  so an A4 needing new runs must make that argument explicitly.
+- Steps 5 to 8 (explainer refresh, paper draft, outside reader, public
+  release 2026-11-22) are John's and the Cowork side's, not this
+  session's.
 
 Free work in parallel: the lesion and localization pipeline, build and
 smoke-test only, no L1 run or read before the lock.
