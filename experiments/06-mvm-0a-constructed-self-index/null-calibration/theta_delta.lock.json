@@ -1,0 +1,23 @@
+{
+  "lock_version": 1,
+  "locked_utc": "2026-09-17T03:02:27+00:00",
+  "calibration_record": "a3_pilot_seed0.json",
+  "calibration_sha256": "3bec40a805e64fc8abe979371118b8ecd14c9e78b281f1a674e46a840a719ba7",
+  "checkpoint": "a3_30m_seed0.pt",
+  "checkpoint_md5": "f751228ce0e40bae5aba22c6d5aa6c60",
+  "theta": {
+    "T_act": 0.1777,
+    "T_state": 0.1172,
+    "T_syntax": 0.0
+  },
+  "delta": {
+    "T_act-T_state": 0.2368
+  },
+  "ceilings": {
+    "T_act": 0.2921,
+    "T_other": 0.3227,
+    "T_state": 0.06761742424242424,
+    "T_syntax": 0.08333333333333331
+  },
+  "note": "A3 threshold lock on the seed-0 pilot checkpoint. Thresholds are the 95th-percentile band over 120 content-blind ablations under the ceiling-corrected metric. T_other carries no threshold: its baseline (0.299) is below its own shortcut ceiling (0.3227), so its drop is undefined and, per John's ruling of 2026-09-16, seed 0 is NOT-TESTABLE on the differential clause d(T_act) - d(T_other) >= delta and cannot land in H_self-location. Any L1 run reading T_other on this checkpoint must therefore be refused by lock_guard, which it will be, because no threshold for it exists here."
+}
