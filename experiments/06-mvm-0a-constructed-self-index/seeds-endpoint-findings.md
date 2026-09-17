@@ -71,6 +71,18 @@ the control's drop is undefined on every checkpoint, and the registered
 differential clause — the primary's drop minus the control's — **cannot
 be evaluated on any of the three.**
 
+> **CORRECTION, 2026-09-17.** The sentence above understates the bar and
+> is corrected here rather than rewritten. The floor rule is not
+> "baseline below ceiling"; it is **baseline minus ceiling below 0.10**.
+> So the control needs **0.4227**, not 0.3227, for its drop to be
+> defined, and the three checkpoints miss by 0.135, 0.117 and 0.103
+> rather than by the 0.035, 0.017 and 0.003 the table implies.
+>
+> No conclusion changes — the clause is uncomputable either way — but the
+> gap is four to forty times wider than the table suggests, and an
+> Amendment A4 that merely cleared the ceiling would still leave the drop
+> undefined. See `control-battery-proposal.md`.
+
 John ruled seed 0 not testable on the differential clause on 2026-09-16.
 That ruling now extends to the whole wave, not by a further ruling but by
 the same arithmetic applied to two more checkpoints.
@@ -103,6 +115,14 @@ proposal should carry three facts from this wave: the primary replicates
 tightly across seeds, the control fails on all three rather than some, and
 the ceiling adjudication permits exactly one amendment to the compute cap,
 so an A4 needing new runs must make that argument explicitly.
+
+> **CORRECTION, 2026-09-17. The last clause is withdrawn as misleading.**
+> The single-amendment rule bars a **raise** above the $400 ceiling. An
+> Amendment A4 that fits inside the existing ceiling is not a raise and
+> needs no cap amendment at all. Three retrained seeds cost $27 to $39
+> against $184.3 of remaining headroom and $65.69 left on the A3 stop, so
+> money is not the binding constraint on this decision and I should not
+> have implied it was.
 
 ## Method notes, recorded honestly
 
