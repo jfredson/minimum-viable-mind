@@ -126,7 +126,14 @@ on all", 2026-09-16; `docs/public-path-roadmap-2026-09-16.md`, committed
   register exists by construction but was measured inert, so the
   registered question had no object. **The result supports specificity
   only, never sensitivity** — that limit was committed before the number
-  was seen. Sensitivity is untested and the companion positive control
+  was seen. **ANNOTATION 2026-09-16 (John's ruling): superseded in
+  interpretation by the unblinded register probe — no valid target.** The
+  verdict and its pre-stated sub-bin name stand as committed and are not
+  retired; the unblinded probe showed the A2 register never encoded
+  own-agent identity at any turn, so the blind arm had nothing at that
+  location to find and the result says nothing about the stack's
+  sensitivity in either direction
+  (`register-direct-probe-findings.md`, `a7f5cd8`). Sensitivity is untested and the companion positive control
   is unregistered, not run, and awaiting John's separate ruling
   (`blind-arm-positive-control-proposal.md`).
 - **2026-10-04** John decides the control-battery question on a written

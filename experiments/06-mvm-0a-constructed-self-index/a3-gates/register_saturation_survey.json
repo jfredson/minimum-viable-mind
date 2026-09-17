@@ -1,0 +1,385 @@
+{
+  "survey": "register saturation across register-bearing checkpoints",
+  "ruled_by": "john, 2026-09-16 Pacific",
+  "registered": false,
+  "descriptive_only": true,
+  "collapse_floor": 1e-05,
+  "collapse_floor_note": "a stated convention, not an inherited threshold; the raw per-turn spreads are reported so another boundary can be applied",
+  "n_register_bearing": 4,
+  "n_collapsing": 4,
+  "constant_in_all_register_bearing": true,
+  "checkpoints": [
+    {
+      "checkpoint": "pilot seed-0 full",
+      "file": "pilot_a1_30m_seed0.pt",
+      "architecture": "full (register-bearing)",
+      "d_model": 448,
+      "n_layers": 12,
+      "d_reg": 32,
+      "n_agents": 4,
+      "training_step": 102095,
+      "n_episodes": 200,
+      "collapse_turn": 3,
+      "constant_after_collapse": true,
+      "per_turn": [
+        {
+          "turn": 0,
+          "across_episode_sd_mean": 0.14132943749427795,
+          "across_episode_sd_max": 0.5747070908546448,
+          "distinct_rows": 10,
+          "mean_abs_deviation_from_init": 0.08166923373937607
+        },
+        {
+          "turn": 1,
+          "across_episode_sd_mean": 0.16269901394844055,
+          "across_episode_sd_max": 0.6472517848014832,
+          "distinct_rows": 31,
+          "mean_abs_deviation_from_init": 0.16333843767642975
+        },
+        {
+          "turn": 2,
+          "across_episode_sd_mean": 0.13982175290584564,
+          "across_episode_sd_max": 0.6174382567405701,
+          "distinct_rows": 39,
+          "mean_abs_deviation_from_init": 0.24500766396522522
+        },
+        {
+          "turn": 3,
+          "across_episode_sd_mean": 7.601218499075912e-08,
+          "across_episode_sd_max": 7.152557373046875e-07,
+          "distinct_rows": 34,
+          "mean_abs_deviation_from_init": 0.3266769349575043
+        },
+        {
+          "turn": 4,
+          "across_episode_sd_mean": 7.609795460439273e-08,
+          "across_episode_sd_max": 7.152557373046875e-07,
+          "distinct_rows": 49,
+          "mean_abs_deviation_from_init": 0.3266769349575043
+        },
+        {
+          "turn": 5,
+          "across_episode_sd_mean": 7.617548192229151e-08,
+          "across_episode_sd_max": 7.152557373046875e-07,
+          "distinct_rows": 57,
+          "mean_abs_deviation_from_init": 0.3266769349575043
+        },
+        {
+          "turn": 6,
+          "across_episode_sd_mean": 7.624927889082755e-08,
+          "across_episode_sd_max": 7.152557373046875e-07,
+          "distinct_rows": 62,
+          "mean_abs_deviation_from_init": 0.3266769349575043
+        },
+        {
+          "turn": 7,
+          "across_episode_sd_mean": 7.631976473021496e-08,
+          "across_episode_sd_max": 7.152557373046875e-07,
+          "distinct_rows": 67,
+          "mean_abs_deviation_from_init": 0.3266769349575043
+        }
+      ]
+    },
+    {
+      "checkpoint": "pilot seed-1 full",
+      "file": "pilot_a1_30m_seed1.pt",
+      "architecture": "full (register-bearing)",
+      "d_model": 448,
+      "n_layers": 12,
+      "d_reg": 32,
+      "n_agents": 4,
+      "training_step": 102095,
+      "n_episodes": 200,
+      "collapse_turn": 3,
+      "constant_after_collapse": true,
+      "per_turn": [
+        {
+          "turn": 0,
+          "across_episode_sd_mean": 0.14321355521678925,
+          "across_episode_sd_max": 0.50018310546875,
+          "distinct_rows": 4,
+          "mean_abs_deviation_from_init": 0.08275802433490753
+        },
+        {
+          "turn": 1,
+          "across_episode_sd_mean": 0.16486802697181702,
+          "across_episode_sd_max": 0.5633203387260437,
+          "distinct_rows": 8,
+          "mean_abs_deviation_from_init": 0.16551604866981506
+        },
+        {
+          "turn": 2,
+          "across_episode_sd_mean": 0.14168575406074524,
+          "across_episode_sd_max": 0.5373736619949341,
+          "distinct_rows": 12,
+          "mean_abs_deviation_from_init": 0.2482740730047226
+        },
+        {
+          "turn": 3,
+          "across_episode_sd_mean": 2.81928986822777e-08,
+          "across_episode_sd_max": 4.172325134277344e-07,
+          "distinct_rows": 10,
+          "mean_abs_deviation_from_init": 0.3310320973396301
+        },
+        {
+          "turn": 4,
+          "across_episode_sd_mean": 2.81666547863324e-08,
+          "across_episode_sd_max": 4.172325134277344e-07,
+          "distinct_rows": 17,
+          "mean_abs_deviation_from_init": 0.3310320973396301
+        },
+        {
+          "turn": 5,
+          "across_episode_sd_mean": 2.815336230810317e-08,
+          "across_episode_sd_max": 4.172325134277344e-07,
+          "distinct_rows": 23,
+          "mean_abs_deviation_from_init": 0.3310320973396301
+        },
+        {
+          "turn": 6,
+          "across_episode_sd_mean": 2.8146562414121945e-08,
+          "across_episode_sd_max": 4.172325134277344e-07,
+          "distinct_rows": 27,
+          "mean_abs_deviation_from_init": 0.3310320973396301
+        },
+        {
+          "turn": 7,
+          "across_episode_sd_mean": 2.8126098783332054e-08,
+          "across_episode_sd_max": 4.172325134277344e-07,
+          "distinct_rows": 29,
+          "mean_abs_deviation_from_init": 0.3310320973396301
+        }
+      ]
+    },
+    {
+      "checkpoint": "pilot seed-2 full",
+      "file": "pilot_a1_30m_seed2.pt",
+      "architecture": "full (register-bearing)",
+      "d_model": 448,
+      "n_layers": 12,
+      "d_reg": 32,
+      "n_agents": 4,
+      "training_step": 102095,
+      "n_episodes": 200,
+      "collapse_turn": 3,
+      "constant_after_collapse": true,
+      "per_turn": [
+        {
+          "turn": 0,
+          "across_episode_sd_mean": 0.18871042132377625,
+          "across_episode_sd_max": 0.46255820989608765,
+          "distinct_rows": 4,
+          "mean_abs_deviation_from_init": 0.10904904454946518
+        },
+        {
+          "turn": 1,
+          "across_episode_sd_mean": 0.2172442227602005,
+          "across_episode_sd_max": 0.5209464430809021,
+          "distinct_rows": 7,
+          "mean_abs_deviation_from_init": 0.21809808909893036
+        },
+        {
+          "turn": 2,
+          "across_episode_sd_mean": 0.18669727444648743,
+          "across_episode_sd_max": 0.4969516694545746,
+          "distinct_rows": 5,
+          "mean_abs_deviation_from_init": 0.32714712619781494
+        },
+        {
+          "turn": 3,
+          "across_episode_sd_mean": 5.932064084390731e-08,
+          "across_episode_sd_max": 3.5762786865234375e-07,
+          "distinct_rows": 4,
+          "mean_abs_deviation_from_init": 0.4361961781978607
+        },
+        {
+          "turn": 4,
+          "across_episode_sd_mean": 5.9318566059118893e-08,
+          "across_episode_sd_max": 3.5762786865234375e-07,
+          "distinct_rows": 5,
+          "mean_abs_deviation_from_init": 0.4361961781978607
+        },
+        {
+          "turn": 5,
+          "across_episode_sd_mean": 5.9316484168903116e-08,
+          "across_episode_sd_max": 3.5762786865234375e-07,
+          "distinct_rows": 6,
+          "mean_abs_deviation_from_init": 0.4361961781978607
+        },
+        {
+          "turn": 6,
+          "across_episode_sd_mean": 5.934374414096055e-08,
+          "across_episode_sd_max": 3.5762786865234375e-07,
+          "distinct_rows": 9,
+          "mean_abs_deviation_from_init": 0.4361961781978607
+        },
+        {
+          "turn": 7,
+          "across_episode_sd_mean": 5.9340063529589315e-08,
+          "across_episode_sd_max": 3.5762786865234375e-07,
+          "distinct_rows": 11,
+          "mean_abs_deviation_from_init": 0.4361961781978607
+        }
+      ]
+    },
+    {
+      "checkpoint": "pilot seed-0 twin",
+      "file": "pilot_a1_30m_seed0_twin.pt",
+      "architecture": "twin (register-less by construction)",
+      "status": "SKIPPED \u2014 no register to measure"
+    },
+    {
+      "checkpoint": "pilot seed-1 twin",
+      "file": "pilot_a1_30m_seed1_twin.pt",
+      "architecture": "twin (register-less by construction)",
+      "status": "SKIPPED \u2014 no register to measure"
+    },
+    {
+      "checkpoint": "10M pilot (A1)",
+      "file": "pilot_a1_10m_seed0.pt",
+      "architecture": "full (register-bearing)",
+      "d_model": 256,
+      "n_layers": 8,
+      "d_reg": 32,
+      "n_agents": 4,
+      "training_step": 22369,
+      "n_episodes": 200,
+      "collapse_turn": 3,
+      "constant_after_collapse": true,
+      "per_turn": [
+        {
+          "turn": 0,
+          "across_episode_sd_mean": 0.2790837287902832,
+          "across_episode_sd_max": 0.4437311887741089,
+          "distinct_rows": 4,
+          "mean_abs_deviation_from_init": 0.16127261519432068
+        },
+        {
+          "turn": 1,
+          "across_episode_sd_mean": 0.32128235697746277,
+          "across_episode_sd_max": 0.49974358081817627,
+          "distinct_rows": 6,
+          "mean_abs_deviation_from_init": 0.32254523038864136
+        },
+        {
+          "turn": 2,
+          "across_episode_sd_mean": 0.2761065363883972,
+          "across_episode_sd_max": 0.47672462463378906,
+          "distinct_rows": 10,
+          "mean_abs_deviation_from_init": 0.48381781578063965
+        },
+        {
+          "turn": 3,
+          "across_episode_sd_mean": 1.9286006125440736e-09,
+          "across_episode_sd_max": 5.587935447692871e-08,
+          "distinct_rows": 4,
+          "mean_abs_deviation_from_init": 0.6450904011726379
+        },
+        {
+          "turn": 4,
+          "across_episode_sd_mean": 1.9143573393165525e-09,
+          "across_episode_sd_max": 5.587935447692871e-08,
+          "distinct_rows": 4,
+          "mean_abs_deviation_from_init": 0.6450904011726379
+        },
+        {
+          "turn": 5,
+          "across_episode_sd_mean": 1.849164710243656e-09,
+          "across_episode_sd_max": 5.587935447692871e-08,
+          "distinct_rows": 3,
+          "mean_abs_deviation_from_init": 0.6450904011726379
+        },
+        {
+          "turn": 6,
+          "across_episode_sd_mean": 1.8388952582881757e-09,
+          "across_episode_sd_max": 5.587935447692871e-08,
+          "distinct_rows": 3,
+          "mean_abs_deviation_from_init": 0.6450904011726379
+        },
+        {
+          "turn": 7,
+          "across_episode_sd_mean": 1.8119195033250435e-09,
+          "across_episode_sd_max": 5.587935447692871e-08,
+          "distinct_rows": 3,
+          "mean_abs_deviation_from_init": 0.6450904011726379
+        }
+      ]
+    },
+    {
+      "checkpoint": "10M pilot (pre-A1)",
+      "file": "pilot_10m_seed0.pt",
+      "architecture": "full (register-bearing)",
+      "status": "SKIPPED - architecture predates the current module and will not load strictly",
+      "load_error": "Error(s) in loading state_dict for MVM0aModel:",
+      "note": "not loaded non-strictly on purpose: that would measure random weights and report them as this checkpoint's"
+    },
+    {
+      "checkpoint": "UNTRAINED control (same config, random init)",
+      "architecture": "full (register-bearing)",
+      "training_step": 0,
+      "n_episodes": 200,
+      "collapse_turn": null,
+      "constant_after_collapse": false,
+      "per_turn": [
+        {
+          "turn": 0,
+          "across_episode_sd_mean": 0.23473915457725525,
+          "across_episode_sd_max": 0.4216710329055786,
+          "distinct_rows": 148,
+          "mean_abs_deviation_from_init": 0.11090581864118576
+        },
+        {
+          "turn": 1,
+          "across_episode_sd_mean": 0.34516727924346924,
+          "across_episode_sd_max": 0.6030492782592773,
+          "distinct_rows": 183,
+          "mean_abs_deviation_from_init": 0.21813857555389404
+        },
+        {
+          "turn": 2,
+          "across_episode_sd_mean": 0.425911545753479,
+          "across_episode_sd_max": 0.673233151435852,
+          "distinct_rows": 200,
+          "mean_abs_deviation_from_init": 0.33453169465065
+        },
+        {
+          "turn": 3,
+          "across_episode_sd_mean": 0.4808412194252014,
+          "across_episode_sd_max": 0.7249404788017273,
+          "distinct_rows": 200,
+          "mean_abs_deviation_from_init": 0.4473992884159088
+        },
+        {
+          "turn": 4,
+          "across_episode_sd_mean": 0.5079843997955322,
+          "across_episode_sd_max": 0.744751513004303,
+          "distinct_rows": 200,
+          "mean_abs_deviation_from_init": 0.4768826365470886
+        },
+        {
+          "turn": 5,
+          "across_episode_sd_mean": 0.5209968090057373,
+          "across_episode_sd_max": 0.7358936071395874,
+          "distinct_rows": 200,
+          "mean_abs_deviation_from_init": 0.5055899620056152
+        },
+        {
+          "turn": 6,
+          "across_episode_sd_mean": 0.5316121578216553,
+          "across_episode_sd_max": 0.7434701323509216,
+          "distinct_rows": 200,
+          "mean_abs_deviation_from_init": 0.53399258852005
+        },
+        {
+          "turn": 7,
+          "across_episode_sd_mean": 0.5436723232269287,
+          "across_episode_sd_max": 0.7538400292396545,
+          "distinct_rows": 200,
+          "mean_abs_deviation_from_init": 0.5616381168365479
+        }
+      ],
+      "why": "bounds the training-time onset, which cannot be measured directly because no intermediate weights were saved"
+    }
+  ],
+  "intermediate_steps": "No intermediate-step weight checkpoints were saved by any A2 run; only final weights exist locally, so the TRAINING-time onset of saturation cannot be measured from what is on disk. What is measured here is the WITHIN-EPISODE onset, the turn at which the register stops varying across episodes. An UNTRAINED control at the same configuration is included to bound the training-time onset from the other end."
+}

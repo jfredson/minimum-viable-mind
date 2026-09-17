@@ -15,6 +15,13 @@ carries nothing about which agent the model is.
 So the blind arm's sub-bin name is wrong. **"Instrument failure to locate"
 presumed there was something to locate. There was not.**
 
+> **ANNOTATION, 2026-09-16 (John's ruling).** The name is **not retired**;
+> the sentence above is left as written. What is wrong is the
+> interpretation the name invites, not the bin the result fell into under
+> the criteria in force. The committed verdict carries a dated annotation
+> beside it reading *superseded in interpretation by the unblinded
+> register probe: no valid target.* Reasoning at the end of this note.
+
 ## First, a defect in my own pre-stated rule
 
 The pre-stated rule was `accuracy >= null_mean + 3 * null_sd`. Applied to
@@ -101,6 +108,27 @@ margins are 1.82, 0.17 and −0.11 standard deviations. All are under the
 bar. **The register never encoded own-agent identity.** It carried
 episode-specific content early and that content was about something else.
 
+> **ANNOTATION, 2026-09-16, later the same day. The last sentence above
+> is WRONG and is withdrawn.** It stays in place rather than being
+> deleted, so the correction is visible.
+>
+> The register carried no episode-specific content early either. I had
+> read the *flattened* register, which mixes what was written with which
+> of the four agent rows it went into, and which row is written varies by
+> episode because agents speak in different orders. The apparent variation
+> at turns 0 to 2 was variation in **which rows had been filled yet**, not
+> in their contents.
+>
+> Isolating the row just written shows across-episode spread at the
+> floating-point floor from **turn 0** in all three 30M full checkpoints.
+> The writer emits one constant vector whatever it is given, from its
+> first write. So the conclusion in bold above is not merely right, it is
+> stronger than the evidence I gave for it: the register was never
+> carrying episode-specific information of any kind, rather than carrying
+> something that turned out not to be identity.
+>
+> Measured in `register-saturation-findings.md`.
+
 This diagnostic was added after seeing the primary result and carries no
 pre-stated bin. It is reported as description.
 
@@ -146,6 +174,23 @@ The sub-bin name **"instrument failure to locate" should be retired** for
 this arm, and the honest description is **no valid target**. That is a
 change to how the blind result is described and John should rule on it,
 since the sub-bin was part of the pre-stated criteria.
+
+> **RULED 2026-09-16: NOT RETIRED.** The recommendation above is left
+> standing rather than deleted, so the record shows both what was proposed
+> and what was decided. John: "The committed verdict and its pre-stated
+> name stand as written. Add a dated annotation beside it ... Annotate,
+> never rewrite."
+>
+> His ruling is the better discipline and the reason is worth stating. A
+> pre-stated name records which bin a result fell into under the criteria
+> in force when it ran. Renaming it afterwards, even for a good reason,
+> makes those criteria unfalsifiable in retrospect, because a later reader
+> cannot tell which names were committed and which were fitted to the
+> result. Annotation keeps both the commitment and the correction visible.
+>
+> The superseding interpretation is recorded as a dated annotation beside
+> the verdict in `blind-arm-findings.md` and in `STATUS.md`: *superseded
+> in interpretation by the unblinded register probe: no valid target.*
 
 ## What it says about the A2 architecture
 

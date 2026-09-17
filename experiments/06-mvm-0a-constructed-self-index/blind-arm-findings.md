@@ -19,6 +19,22 @@ is one the probe never validly located, so the small drops below are
 ablations of a direction that decodes at chance. They are reported for
 completeness, not as evidence.
 
+> **ANNOTATION, 2026-09-16 (John's ruling).** *Superseded in
+> interpretation by the unblinded register probe: no valid target.*
+>
+> The verdict above and its pre-stated sub-bin name stand exactly as
+> committed. John ruled the name is **not retired**: "The committed
+> verdict and its pre-stated name stand as written. Add a dated
+> annotation beside it ... Annotate, never rewrite."
+>
+> What the annotation records is that the *interpretation* has been
+> superseded, not the verdict. The unblinded probe of the register at its
+> known location found no own-agent identity at any turn, so there was
+> nothing at this location for the blind stack to locate. "Failure to
+> locate" remains the correct name of the bin the result fell into under
+> the criteria as committed. It is no longer the correct description of
+> what happened. See `register-direct-probe-findings.md`.
+
 ## The numbers
 
 Four agents, so chance is 0.25. Every probe sits on it.

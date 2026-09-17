@@ -34,6 +34,87 @@
 
 ## 1. What the register-lesion result means under the removal test
 
+> **ANNOTATION, 2026-09-16 (John's ruling; decidedBy john). Nothing in
+> this section is edited and no registered text is changed — no grammar,
+> battery, bin, kill criterion or spending cap is touched. What follows is
+> a dated note beside §1, recording that its central reading is
+> withdrawn.**
+>
+> John's ruling: *"the reading that the register-lesion null showed
+> 'self-reference, not self-location' is withdrawn. A constant vector was
+> neither, and the lesion null is uninformative about the removal test."*
+>
+> **The original wording, quoted so the withdrawal is checkable.** The
+> direction this proposal was built on, at the head of this document:
+> *"The register was self-reference, a removable report, a noun installed
+> in a slot; it was not self-location, a doing the binding cannot drop
+> without degrading."* And in §1 below: *"By the book's own criterion the
+> register 'was a description all along,' and in fact something weaker
+> than a description, since nothing downstream even read it. It was a noun
+> installed in a slot."*
+>
+> **What was measured on 2026-09-16.** The register in every trained
+> register-bearing checkpoint is a **constant**. Its writer emits the same
+> vector whatever it is given, from the first write, at the floating-point
+> floor: across-episode spread 7.6 × 10⁻⁸ on seed-0 full, 2.8 × 10⁻⁸ on
+> seed-1 full, 5.9 × 10⁻⁸ on seed-2 full. A probe at the register's known
+> location recovers no own-agent identity at any turn. An untrained model
+> at the same configuration does not behave this way, so the constancy is
+> trained in rather than architectural.
+> (`register-saturation-findings.md`, `register-direct-probe-findings.md`)
+>
+> **Why that withdraws the reading.** ch05's removal test separates a
+> description that can be lopped off from a center that cannot be deleted.
+> Both branches presuppose that the thing removed **carries something**. A
+> constant carries nothing. It is not a report the system holds about
+> itself, because it is identical whoever the system is and whatever
+> happened; and it is plainly not a structural feature the act indexes
+> itself to. It is a bias term. So it was neither branch, and the lesion
+> that removed it was not an instance of the removal test at all. **The
+> null is uninformative about that test**, rather than being the test's
+> predicted negative result.
+>
+> **What in §1 survives, and is in fact strengthened.** The paragraph
+> "Why the null was predicted rather than merely possible" stands, and its
+> own words now read as a literal description of the measurement: the
+> register's contents "were never required by any objective", so "a
+> designated slot with no pressure on it fills with whatever is cheapest,
+> **here a bias**." That was written as an inference. It is now measured.
+> What does not survive is the step from there to calling the result
+> self-reference under ch05, because a bias is not a description of
+> anything.
+>
+> **A3's design and the pilot result do not depend on the withdrawn
+> reading.** Stating that plainly, since it is the question an annotation
+> like this one raises:
+>
+> - A3 is **register-less by construction** (§2.4). It removes nothing
+>   that this annotation concerns, and its launcher has no flag that could
+>   enable a register.
+> - A3's objective was chosen because it **requires ownership to
+>   succeed** — the perspectival revision rule — not because the register
+>   was judged to be self-reference. The argument for that objective is
+>   pressure on the network, and it is unaffected by what the old register
+>   turned out to hold.
+> - The pilot result is a direct measurement that stands alone: zeroing
+>   the acting channel takes the primary battery from **0.506 to 0.182**
+>   while the ownership-free batteries hold at 0.999 and 1.000, and across
+>   120 content-blind ablations the worst reached 0.2758 against 1.515 for
+>   the authorship lesion.
+> - §1's closing paragraph, "The one place a doing was load-bearing", also
+>   stands. The acting-channel collapse from 0.96 to about 0.16 is a
+>   separate measurement on separate runs and owes nothing to the register
+>   reading.
+>
+> **What the withdrawal does cost.** §1 was ratified as "the amendment's
+> stated basis" (§Ratification item 1). Its motivating story — an
+> installed noun failing the removal test, so build a doing instead — is
+> weaker than it read: the installed noun was never even a noun. The
+> redesign's justification now rests on the pressure argument and the
+> pilot measurement rather than on a clean ch05 verdict about the
+> register. That is a smaller claim honestly held, and it is the one the
+> evidence supports.
+
 **What was measured.** The pilot seed-0 full model, the only register-bearing run that passed the self batteries, kept every battery score under every lesion of its register: with the cross-attention injection removed entirely, T_si went 0.93 to 0.94 on the registered eval seed and 1.00 to 0.99 on a disjoint replicate, T_sr_rev stayed 1.00, and T_sr, T_state, T_syntax stayed at or above 0.99 (`register-lesion-findings.md`, thread 4 table). The pathway was not dead: removing the injection shifts logits by mean absolute 0.22 and the cross-attention residual norms are large (18 to 275 per block against 3 to 14 for the trunk read). But deranging which register's content is read moves the logits by mean absolute 0.014, so the four registers carry nearly identical content. The findings file's own phrase: "numerically active and informationally inert, a learned bias channel, not an agent-indexed store." Wave 2 had already produced a register-less twin that passed the same batteries at ceiling (T_si 0.96, T_sr_rev 1.00, `twin-binding-anomaly.md`), so no observed binding anywhere in the 30M record is register-dependent.
 
 **What the book's test says about that.** ch05, "The Center That Cannot Be Deleted," draws the line the whole framework rests on: self-reference is "a report the system carries about itself"; self-location is "a structural feature of the binding itself, the act specifying its own center." The test that separates them is removal: "Where binding genuinely indexes its own center, taking the self-location away does not merely silence a report, it degrades the integrated act itself. ... Where a system only represents itself from outside, the same removal subtracts a description and the processing carries on intact. A center is what cannot be deleted without dissolving the integration it centers. A self-model that can be lopped off while the computation proceeds was a description all along."

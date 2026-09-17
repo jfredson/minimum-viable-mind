@@ -4,6 +4,35 @@
 what this means for the registered remainder is John's, at the analysis
 point. Nothing here emits a verdict on H_load-bearing.*
 
+> **ANNOTATION, 2026-09-16 (John's ruling). Nothing below is edited; the
+> note stands as written on 2026-08-18. What is superseded is the
+> architectural reading, not the measurements.**
+>
+> The register in every trained register-bearing checkpoint is
+> **constant**. The writer emits the same vector whatever it is given,
+> from its first write, at the floating-point floor: across-episode spread
+> of the written row is 7.6 × 10⁻⁸ on seed-0 full, 2.8 × 10⁻⁸ on seed-1
+> full and 5.9 × 10⁻⁸ on seed-2 full. By turn 3 all four rows hold that
+> vector and the whole register is identical in every episode. An
+> untrained model at the same configuration does not do this, with spreads
+> of 0.33 to 0.54, so the constancy is **trained in, not architectural**.
+>
+> A constant read through cross-attention is a bias term. So **the full
+> model is the twin plus a learned bias**, and the manipulation this note
+> is about — register versus no register — was never effectively applied.
+> The table below compares two variants of one architecture.
+>
+> That is why the prediction looks inverted. It cannot invert, or hold, on
+> a comparison like this. **The honest description is a seed lottery in
+> one architecture: two of five bind, one full and one twin, and binding
+> tracks seed rather than architecture.**
+>
+> The endpoint numbers in this note are correct and are not in question.
+> What is withdrawn is the reading that they say something about the
+> register. See `register-saturation-findings.md` (survey and mechanism)
+> and `register-direct-probe-findings.md` (the register carries no
+> own-agent identity at any turn).
+
 ## What we predicted, and what happened
 
 The registered design pairs every full run with a **twin**: the same

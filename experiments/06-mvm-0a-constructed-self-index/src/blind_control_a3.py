@@ -191,7 +191,9 @@ def run(ckpt: Path, lock: str | None, device: str, n_pairs: int,
         n_eval: int) -> dict:
     assert_search_blind()
     rec = lock_guard.require_lock(lock, batteries=(PRIMARY,))
-    theta = float(rec["theta"])
+    # the lock keys theta by battery and carries NO entry for the
+    # control battery, which is the strict ruling encoded in data
+    theta = float(rec["theta"][PRIMARY])
 
     ck = torch.load(ckpt, map_location=device, weights_only=True)
     model = MVM0aModel(Config(**ck["cfg"])).to(device).eval()
