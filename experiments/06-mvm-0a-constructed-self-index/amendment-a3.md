@@ -419,6 +419,37 @@ episodes — one standard error from the analytic value. Both numbers are
 stored in `batteries-a3/batteries_meta.json` with their method. Any future
 grammar carries its own measured ceilings; none is ever asserted.
 
+> **REGISTERED DEFECT, 2026-09-17 (John's instruction; decidedBy john).
+> Nothing above is altered. The claim "verified by the attack sweep" is
+> FALSE as applied to the control battery.**
+>
+> The 0.3036 attack figure quoted above is an attack on the **primary**
+> battery, compared against the primary's 0.2921. `src/shortcut_sweep.py`
+> contains **zero** occurrences of the control battery and attacks the
+> primary only. One verification is attached to two numbers.
+>
+> The control's 0.3227 rests entirely on the reference solver in
+> `curriculum_a3.measured_ceilings`, **which never reads the marker the
+> control question supplies**. The control asks about a *named* agent;
+> the solver enumerates all four agents' successors and guesses among
+> those not already visible. So 0.3227 is the score of a solver that
+> cannot read names, and the battery's real ownership-blind ceiling is
+> **near 1.0 and unmeasured**.
+>
+> The module's own documentation states the control's lookup ceiling as
+> **0.5**, not 0.3227, and says red-team pass 3 "should weigh" it because
+> the generic-binding bin turns on the two batteries' difference. That
+> pass ran and did not weigh it.
+>
+> **No result changes.** The control fails its floor at 0.3227, fails by
+> more at 0.5, and fails by far more at a true ceiling near 1.0. Every
+> reading makes it less learned. What changes is that the metric's
+> denominator for this battery was never a checked quantity.
+>
+> **If an Amendment A4 opens, measuring this ceiling properly is a
+> precondition of it** (John, 2026-09-17). Full record:
+> `ceiling-defect-2026-09-17.md`.
+
 ## 5. The attack sweep becomes a gate (decision 8)
 
 **Registered:** `src/shortcut_sweep.py` is a gate in its own right, run

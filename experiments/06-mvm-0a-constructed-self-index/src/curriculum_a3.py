@@ -99,6 +99,15 @@ Batteries
   0.5 — higher than T_act's, which red-team pass 3 should weigh, since
   the H_generic-binding bin turns on the difference between the two
   batteries' drops.
+
+  [2026-09-17, REGISTERED DEFECT. The comment above is left as written.
+  Red-team pass 3 ran and did NOT weigh it. The registered ceiling is
+  0.3227, not the 0.5 stated here, and NEITHER figure was ever checked
+  against an adversary: shortcut_sweep.py attacks only T_act. Worse, the
+  solver in measured_ceilings below never reads the marker the T_other
+  question names, so 0.3227 is a name-BLIND score and this battery's real
+  ceiling is near 1.0, unmeasured. No result changes; the control fails
+  its floor under every reading. See ceiling-defect-2026-09-17.md.]
 - **T_state**, **T_syntax**: unchanged in kind from the registered
   grammar (RT-05 competitor, and the floor check).
 
