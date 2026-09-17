@@ -116,9 +116,19 @@ on all", 2026-09-16; `docs/public-path-roadmap-2026-09-16.md`, committed
 - **2026-09-18** seeds report: checkpoints fetched and checksummed, pods
   reaped, ledger actual-after rows (task "Public path 1", `f5f5f9e9`).
 - **2026-09-20** John decides optional extra seeds (`9698b81b`).
-- **2026-09-27** blind-localization arm — blind, on one of the five A2
-  register-bearing checkpoints, local, $0. The A3 L1 pipeline does NOT
-  discharge it (`3c1cce48`).
+- ~~2026-09-27~~ **blind-localization arm — DONE EARLY 2026-09-16,
+  `0a1f2c2`, local and $0.** Verdict **NOT FLAGGED**, sub-bin
+  **instrument failure to locate**: no probe cleared its null by the
+  stated 3 sd bar (best 1.3 sd, accuracy 0.275 against a chance of
+  0.25), so the stack could not decode own-agent identity at all on a
+  register-bearing checkpoint that binds. Per John's ruling of
+  2026-09-16 this arm ran as a **false-positive test**, because the
+  register exists by construction but was measured inert, so the
+  registered question had no object. **The result supports specificity
+  only, never sensitivity** — that limit was committed before the number
+  was seen. Sensitivity is untested and the companion positive control
+  is unregistered, not run, and awaiting John's separate ruling
+  (`blind-arm-positive-control-proposal.md`).
 - **2026-10-04** John decides the control-battery question on a written
   proposal: a registered Amendment A4 that makes the control learn
   reliably, or close A3 with partial discriminators and say so. Proposal
