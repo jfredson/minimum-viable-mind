@@ -109,6 +109,78 @@ which was uninformative, and once where something is known to be there.
 Only the second is evidence, and it is evidence of insensitivity at this
 scale.
 
+> **WITHDRAWN 2026-09-16 on John's ruling. The paragraph above stays as
+> written; its last clause is the one withdrawn.** John: *"Withdraw
+> 'evidence of insensitivity at small scale' for now... The result cannot
+> yet distinguish an insensitive stack from a broken pipeline."*
+>
+> He is right that I claimed more than the run could carry, and he was
+> right before the known-answer test existed to settle it. Two facts were
+> ruled to sit beside the withdrawal, and both were measured.
+>
+> **FACT ONE: the five probes falling below their nulls is systematic,
+> not chance scatter.** All five margins are negative: −0.75, −0.54,
+> −0.96, −0.24 and −1.01 standard deviations. If the five were
+> independent, all falling below their own null means would happen about
+> **1 time in 32**. They are not independent: they read the same episodes
+> at different depths, so they are positively correlated and the true
+> probability is **higher** than 1 in 32. That figure is a floor on how
+> surprising this is, not a p-value, and it is reported as one.
+>
+> **FACT TWO: the +0.052 movement is inside evaluation noise.** Measured
+> rather than argued, twelve independent draws of the same evaluation on
+> the same checkpoint at each sample size:
+>
+> | episodes | scored denominator | mean | sd | min | max | range |
+> |---|---|---|---|---|---|---|
+> | 400 | ~200 | 0.5621 | 0.0284 | 0.520 | 0.599 | **0.079** |
+> | 800 | ~397 | 0.5663 | 0.0169 | 0.542 | 0.593 | **0.051** |
+>
+> The control ran at 400 episodes, where one standard deviation of pure
+> evaluation noise is 0.0284. The movement under test is 0.052, which is
+> **1.8 standard deviations** and sits well inside the observed range of
+> 0.079. So the ablation's apparent effect on the ownership battery
+> carries no information. The scored denominator is about half the episode
+> count because the action is scored only where the model revises, which
+> is why the noise is larger than the nominal sample size suggests.
+>
+> **A CORRECTION TO THE RULING'S PREMISE, at John's instruction, with his
+> original wording kept.** The ruling as issued read: *"the ownership
+> battery's baseline has read 0.506, 0.483, 0.4975 and 0.440 across
+> evaluations, so +0.052 is inside evaluation noise."* John then wrote:
+> *"Ruling 2's premise contained an error from the Cowork session: 0.483
+> and 0.4975 are Gate 3 detector scores, not ownership-battery baselines.
+> Note the correction beside the ruling, original wording kept. Your
+> twelve-draw measurement supersedes the argument."* Those two numbers are
+> areas under the curve from the Gate 3 fingerprint detector's two arms,
+> where chance is 0.5 and the equivalence bound was [0.45, 0.55]. The
+> conclusion is unaffected, because it now rests on the measurement rather
+> than on the comparison.
+>
+> **AND A THING WORTH KNOWING, found while checking that premise.** The
+> two genuine on-record readings, 0.506 and 0.440, are **not two
+> independent draws**. Both come from the single default evaluation seed,
+> 987654321, which reproduces them exactly at 800 and 400 episodes. Both
+> also sit below all twelve fresh draws at their own sample size. So the
+> programme's headline ownership number rests on one unlucky evaluation
+> seed, and the checkpoint's typical score is nearer **0.566** than 0.506.
+> That does not change any verdict — every drop is measured against its
+> own baseline in the same run — but any write-up quoting 0.506 as the
+> pilot's ownership score should quote the spread with it.
+>
+> **WHAT THE WITHDRAWAL LEAVES STANDING.** The probe result is the only
+> signal this run carries, and it is "found nothing". The ablation result
+> is noise. Whether "found nothing" means an insensitive stack or a broken
+> pipeline was exactly John's open question, and the known-answer test he
+> ordered in the same breath now answers the pipeline half: it passes at
+> ceiling, accuracy 1.0 against a null of 0.1306, a margin of 32.9
+> standard deviations (`known-answer-test-findings.md`). That test
+> validates residual capture, position indexing, probe fitting and null
+> construction. It does not exercise the ablation path, and it probes a
+> different layer and position than the blind runs did. So the pipeline's
+> shared machinery is sound and the claim stays withdrawn until something
+> tests the rest.
+
 ## What a pass would and would not have shown, per John's ruling
 
 John ruled that when this reported, the record must say what a pass does
