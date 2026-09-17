@@ -169,22 +169,66 @@ def occupancy(raw_state, init):
     return {
         "mean_abs_deviation_from_init": round(float(dev.mean()), 6),
         "max_abs_deviation_from_init": round(float(dev.max()), 6),
-        "mean_across_episode_sd": round(float(across.mean()), 6),
-        "max_across_episode_sd": round(float(across.max()), 6),
+        "mean_across_episode_sd": round(float(across.mean()), 9),
+        "max_across_episode_sd": round(float(across.max()), 9),
+        "distinct_episode_rows": int(len(np.unique(
+            raw_state.reshape(raw_state.shape[0], -1), axis=0))),
+        "n_episodes": int(raw_state.shape[0]),
         "note": ("a register that never leaves its initialization, or that "
                  "is identical across episodes, is empty in the most "
                  "literal sense"),
     }
 
 
-def read_verdict(p) -> dict:
+def read_verdict(p, majority_rate=None) -> dict:
     """Apply the pre-stated readings. Nothing here inspects the number
-    before deciding what the bins are — the bins are fixed above."""
+    before deciding what the bins are - the bins are fixed above.
+
+    DEGENERACY GUARD, added 2026-09-16 AFTER the first run, as a validity
+    check on the rule's INPUT and NOT as a new bin. The first run returned
+    accuracy 0.27, null_mean 0.27, null_sd 0.0. The pre-stated inequality
+    `accuracy >= null_mean + 3*null_sd` is then `0.27 >= 0.27`, which is
+    true, so the rule mechanically returned reading 1. That is an artifact:
+    a zero-spread null means the rule compared a number to itself, and the
+    separation was zero standard deviations, not three.
+
+    The guard does not choose a bin. It reports the literal application of
+    the pre-stated rule unchanged, and alongside it flags that the input
+    was degenerate and why. Which reading the evidence actually supports is
+    argued in the findings note and is John's to rule on, not this
+    function's to decide.
+    """
     bar = p["null_mean"] + SD_BAR * p["null_sd"]
     clears = p["accuracy"] >= bar
+    degenerate = []
+    if p["null_sd"] == 0:
+        degenerate.append(
+            "the label-permutation null has ZERO spread, so every "
+            "permutation scored identically and the 3-sd comparison is "
+            "vacuous - the rule compared a number to itself")
+    if p["margin_sd"] is None:
+        degenerate.append(
+            "margin in standard deviations is undefined (division by a "
+            "zero null spread)")
+    if majority_rate is not None and abs(p["accuracy"] - majority_rate) < 1e-9:
+        degenerate.append(
+            "accuracy (%s) equals the majority-class rate (%s) exactly, "
+            "the score of a classifier predicting one constant class"
+            % (p["accuracy"], round(majority_rate, 4)))
     return {
         "bar": round(float(bar), 4),
         "clears_bar": bool(clears),
+        "literal_rule_result": ("reading 1 by the letter of the pre-stated "
+                                "inequality" if clears else
+                                "reading 2 by the letter of the pre-stated "
+                                "inequality"),
+        "input_degenerate": bool(degenerate),
+        "degeneracy": degenerate or None,
+        "degeneracy_note": (
+            "The pre-stated rule is reported unchanged above. Where the "
+            "input is degenerate the rule's output is not evidence, and no "
+            "bin is assigned here. See register-direct-probe-findings.md."
+            if degenerate else None),
         "reading": "1 — SENSITIVITY FAILURE" if clears
                    else "2 — EMPTY REGISTER, NO VALID TARGET",
         "means": (
@@ -213,6 +257,8 @@ def run(ckpt: Path, device: str, n: int = 400) -> dict:
 
     p_state = probe(acts["state"], y, seed=0)
     p_repr = probe(acts["repr"], y, seed=1)
+    counts = {int(c): y.count(c) for c in sorted(set(y))}
+    majority = max(counts.values()) / len(y)
 
     return {
         "arm": "UNBLINDED direct register probe (follow-up to the blind arm)",
@@ -226,7 +272,9 @@ def run(ckpt: Path, device: str, n: int = 400) -> dict:
         "n_permutations": N_PERM,
         "sd_bar": SD_BAR,
         "primary_probe_on_register_state": p_state,
-        "verdict": read_verdict(p_state),
+        "verdict": read_verdict(p_state, majority),
+        "label_counts": counts,
+        "majority_class_rate": round(majority, 4),
         "secondary_probe_on_trunk_visible_repr": p_repr,
         "secondary_note": ("descriptive only; no pre-stated reading turns "
                            "on this number"),
@@ -246,10 +294,21 @@ def self_test() -> None:
     assert len({e.own_slot for e in eps}) > 1, "target must vary"
     occ = occupancy(acts["raw_state"], acts["init"])
     assert set(occ) >= {"mean_abs_deviation_from_init"}, "occupancy keys"
-    v = read_verdict({"accuracy": 0.9, "null_mean": 0.25, "null_sd": 0.02})
+    v = read_verdict({"accuracy": 0.9, "null_mean": 0.25, "null_sd": 0.02,
+                      "margin_sd": 32.5})
     assert v["clears_bar"] and v["reading"].startswith("1"), "bin 1 wiring"
-    v = read_verdict({"accuracy": 0.26, "null_mean": 0.25, "null_sd": 0.02})
+    assert not v["input_degenerate"], "a healthy null is not degenerate"
+    v = read_verdict({"accuracy": 0.26, "null_mean": 0.25, "null_sd": 0.02,
+                      "margin_sd": 0.5})
     assert not v["clears_bar"] and v["reading"].startswith("2"), "bin 2"
+    assert not v["input_degenerate"], "a healthy null is not degenerate"
+    # the degenerate case the first run actually hit: a zero-spread null
+    # makes the pre-stated inequality compare a number to itself
+    v = read_verdict({"accuracy": 0.27, "null_mean": 0.27, "null_sd": 0.0,
+                      "margin_sd": None}, majority_rate=0.27)
+    assert v["clears_bar"], "the letter of the rule still reports reading 1"
+    assert v["input_degenerate"], "zero-spread null must be flagged"
+    assert len(v["degeneracy"]) == 3, "all three degeneracy signs caught"
     print("self-test OK — wiring only, no result inspected")
 
 

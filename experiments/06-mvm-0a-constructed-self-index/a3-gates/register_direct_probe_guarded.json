@@ -1,0 +1,55 @@
+{
+  "arm": "UNBLINDED direct register probe (follow-up to the blind arm)",
+  "registered": false,
+  "ruled_by": "john, 2026-09-16 Pacific",
+  "checkpoint": "pilot_a1_30m_seed0.pt",
+  "blinded": false,
+  "blind_verdict_committed_first": "0a1f2c2 (findings), 401a54d/da0427f (criteria)",
+  "target": "own_slot (which of four agents the model is)",
+  "n_episodes": 400,
+  "n_permutations": 100,
+  "sd_bar": 3.0,
+  "primary_probe_on_register_state": {
+    "accuracy": 0.27,
+    "null_mean": 0.27,
+    "null_sd": 0.0,
+    "margin_sd": null
+  },
+  "verdict": {
+    "bar": 0.27,
+    "clears_bar": true,
+    "literal_rule_result": "reading 1 by the letter of the pre-stated inequality",
+    "input_degenerate": true,
+    "degeneracy": [
+      "the label-permutation null has ZERO spread, so every permutation scored identically and the 3-sd comparison is vacuous - the rule compared a number to itself",
+      "margin in standard deviations is undefined (division by a zero null spread)",
+      "accuracy (0.27) equals the majority-class rate (0.27) exactly, the score of a classifier predicting one constant class"
+    ],
+    "degeneracy_note": "The pre-stated rule is reported unchanged above. Where the input is degenerate the rule's output is not evidence, and no bin is assigned here. See register-direct-probe-findings.md.",
+    "reading": "1 \u2014 SENSITIVITY FAILURE",
+    "means": "Own-agent identity IS decodable from the register. The blind stack walked past a structure that was there; its 'instrument failure to locate' sub-bin stands and sharpens into a sensitivity failure at 30M. Upstream-reportable."
+  },
+  "label_counts": {
+    "0": 108,
+    "1": 101,
+    "2": 93,
+    "3": 98
+  },
+  "majority_class_rate": 0.27,
+  "secondary_probe_on_trunk_visible_repr": {
+    "accuracy": 0.2375,
+    "null_mean": 0.2369,
+    "null_sd": 0.0234,
+    "margin_sd": 0.03
+  },
+  "secondary_note": "descriptive only; no pre-stated reading turns on this number",
+  "occupancy": {
+    "mean_abs_deviation_from_init": 0.326677,
+    "max_abs_deviation_from_init": 1.294503,
+    "mean_across_episode_sd": 1.68e-07,
+    "max_across_episode_sd": 8.34e-07,
+    "distinct_episode_rows": 107,
+    "n_episodes": 400,
+    "note": "a register that never leaves its initialization, or that is identical across episodes, is empty in the most literal sense"
+  }
+}
