@@ -182,8 +182,42 @@ def verdict(p, d_primary, theta, majority_rate):
         v, m = "NOT TESTABLE", (
             "the ablation bites without a valid probe behind it, so the "
             "drop cannot be attributed to a located structure")
+    # SIGN DIAGNOSTIC, added 2026-09-16 AFTER the first run, reported
+    # BESIDE the pre-stated verdict and never replacing it.
+    #
+    # The pre-stated rule says the ablation bites when |d| >= theta. The
+    # first run returned d = -0.3516 on the primary battery: the magnitude
+    # clears theta, but the sign is negative, meaning the ablation made
+    # the battery BETTER. A sensitivity test asks whether removing the
+    # located structure DEGRADES the action, so an absolute value lets an
+    # improvement count as a bite. That is a hole in the rule as I wrote
+    # it, and this records it rather than repairing the output.
+    #
+    # The signed reading is what the cells would say if "bites" meant
+    # "degrades". It assigns no bin. John rules on which is authoritative.
+    degrades = d_primary is not None and d_primary >= theta
+    if clears and degrades:
+        signed = "SENSITIVE"
+    elif not clears and not degrades:
+        signed = "INSENSITIVE"
+    elif clears and not degrades:
+        signed = "INSENSITIVE"
+    else:
+        signed = "NOT TESTABLE"
     return {"verdict": v, "means": m, "probe_clears_3sd": bool(clears),
-            "ablation_reaches_theta": bool(bites)}
+            "ablation_reaches_theta": bool(bites),
+            "d_primary_sign": (None if d_primary is None else
+                               ("degrades" if d_primary > 0 else
+                                "IMPROVES the battery" if d_primary < 0
+                                else "no change")),
+            "signed_reading": signed,
+            "signed_reading_note": (
+                "diagnostic only, assigns no bin. The pre-stated rule uses "
+                "|d| >= theta; this is what the same cells give if 'bites' "
+                "means 'degrades'. Where the two disagree, the pre-stated "
+                "verdict above is what was committed and the disagreement "
+                "is the finding. See blind-control-findings.md."),
+            "readings_agree": bool(signed == v)}
 
 
 @torch.no_grad()
@@ -276,6 +310,16 @@ def self_test() -> None:
     assert verdict(ok, 0.01, 0.1777, 0.27)["verdict"] == "INSENSITIVE"
     assert verdict(no, 0.01, 0.1777, 0.27)["verdict"] == "INSENSITIVE"
     assert verdict(no, 0.9, 0.1777, 0.27)["verdict"] == "NOT TESTABLE"
+    # the sign diagnostic: a NEGATIVE d clears |theta| but is an
+    # improvement, so the letter says not-testable and the signed reading
+    # says insensitive. The two must disagree and say so.
+    v = verdict(no, -0.9, 0.1777, 0.27)
+    assert v["verdict"] == "NOT TESTABLE", "the letter of the rule stands"
+    assert v["signed_reading"] == "INSENSITIVE", "signed reading differs"
+    assert v["readings_agree"] is False, "disagreement must be flagged"
+    assert "IMPROVES" in v["d_primary_sign"], "sign reported plainly"
+    v = verdict(ok, 0.9, 0.1777, 0.27)
+    assert v["readings_agree"] is True, "agreement when d is positive"
     # the degeneracy precondition, stated in advance this time
     deg = {"accuracy": 0.27, "null_mean": 0.27, "null_sd": 0.0,
            "margin_sd": None}

@@ -1,0 +1,141 @@
+# Positive control for the blind arm — result
+
+*2026-09-16. **UNREGISTERED**, ruled by John, criteria committed before
+any output at `a3c5fbf`. Local, $0, inference only, gated on John's
+threshold lock. Checkpoint verified by checksum against the ledger's
+recorded A3 pilot (`f751228c…`).*
+
+## Verdict by the letter of the pre-stated cells
+
+**NOT TESTABLE.** The probe failed and the ablation reached θ, which is
+the cell I created on the morning of the run when I resolved the overlap
+in my own proposal. Had I not resolved it beforehand, this result would
+have fallen in the gap between two bins.
+
+But the number driving that verdict needs flagging, and it points the
+other way.
+
+## The probe found nothing, at any layer
+
+| layer | accuracy | null mean | null sd | margin |
+|---|---|---|---|---|
+| 3 | 0.2350 | 0.2532 | 0.0243 | −0.75 sd |
+| 4 | 0.2400 | 0.2529 | 0.0238 | −0.54 sd |
+| 5 | 0.2275 | 0.2530 | 0.0266 | −0.96 sd |
+| **7** | **0.2475** | 0.2543 | 0.0283 | **−0.24 sd** |
+| 8 | 0.2250 | 0.2502 | 0.0249 | −1.01 sd |
+
+Every probe sits **below** its own permutation null. Not near the bar and
+short of it: below the null, at all five depths. Own-agent identity is not
+linearly decodable from the residual stream at the probed positions on
+this checkpoint.
+
+The nulls here are healthy, spread 0.024 to 0.028, so the precondition I
+added in advance is satisfied and the comparison means something.
+
+## A second defect in my own pre-stated rule
+
+The rule said the ablation "bites" when `|d_found| >= θ`. It does:
+−0.3516 against θ = 0.1777. **But the sign is negative, and negative means
+the ablation made the primary battery better.**
+
+| battery | baseline | after ablation | direction | corrected drop | threshold |
+|---|---|---|---|---|---|
+| T_act (primary) | 0.440 | 0.492 | **improved** | −0.3516 | 0.1777 |
+| T_state | 1.000 | 0.858 | damaged | 0.1523 | 0.1172 |
+| T_syntax | 1.000 | 1.000 | unchanged | 0.0000 | 0.0 |
+| T_other (control) | 0.292 | 0.292 | unchanged | not read for a verdict | none in the lock |
+
+A sensitivity test asks whether removing the located structure
+**degrades** the action. Taking the absolute value lets an improvement
+count as a bite. That is wrong for this question, and it is the second
+hole I have found in my own pre-stated criteria in one day. The first was
+the zero-spread null in the register probe.
+
+As before, I am not repairing the rule to change its output. The literal
+verdict stands above. What follows is the reading under a signed rule,
+reported beside it, for John to rule on.
+
+**Under a signed rule the result is INSENSITIVE**: the probe failed and
+the ablation did not degrade the primary battery. That is the cell I
+pre-stated, in those words, as *"the outcome that would shift the honest
+reading of Experiment 1's null toward instrument failure."* It cuts toward
+the more consequential finding, not the more comfortable one, which is
+why it needs saying plainly rather than leaving buried under a
+not-testable label.
+
+## The lesion behaves like a non-specific one
+
+Whatever the blind search carved, its removal **improved** the battery
+that depends on ownership and **damaged** a battery that does not, past
+that battery's own locked threshold of 0.1172. The syntax control did not
+move.
+
+That is close to the inverse of a self-location signature. A structure
+that indexes the act to its own center should degrade the primary battery
+and leave the state battery alone. This did the opposite on both counts.
+
+## What this says, given that ownership *is* load-bearing here
+
+This is the point of the control. On this exact checkpoint, ownership is
+measured to matter: zeroing the acting channel takes the primary battery
+from 0.506 to 0.182, while the ownership-free batteries hold at 0.999 and
+1.000, and across 120 content-blind ablations the worst reached 0.2758
+against 1.515 for the authorship lesion.
+
+So there is something here to find, and the localization stack did not
+find it. It returned five probes below their nulls and a subspace whose
+removal helps the action it was supposed to be carrying.
+
+**Taken with the registered arm, the stack has now come up empty on both
+checkpoints it has been pointed at**: once where there was nothing to find,
+which was uninformative, and once where something is known to be there.
+Only the second is evidence, and it is evidence of insensitivity at this
+scale.
+
+## What a pass would and would not have shown, per John's ruling
+
+John ruled that when this reported, the record must say what a pass does
+and does not show. It did not pass, so this is written as the scoping that
+*would* have applied, and it matters more now rather than less, because it
+shows how generous the test was that the stack still failed.
+
+**A pass would have shown:** sensitivity to an **input-side** signal whose
+removal produces a measured drop of about **0.32** in raw battery points,
+from 0.506 to 0.182. That is a large, deliberately constructed, single
+channel.
+
+**A pass would NOT have shown:**
+
+- Sensitivity to **weaker** structure. Nothing here speaks to whether the
+  stack could find something whose removal costs a tenth of that. The
+  ground truth was chosen because it is the strongest signal the programme
+  has, which is exactly what makes it a weak basis for generalising
+  downward.
+- Sensitivity to **purely internal** structure. The ground truth is the
+  removal of an input channel, not of a structure the network built. A
+  pass would show the stack can find something whose removal hurts the
+  act; it would not establish that the thing found is a carried
+  self-index rather than the input trace passed forward. That is red-team
+  objection R1 and this control never addressed it.
+- Anything registered. The control is **unregistered** and was proposed
+  after the pilot result was known. A pass would have carried less weight
+  than a registered result, and any write-up would have had to say so.
+
+Since it failed rather than passed, the honest summary is narrower still:
+the stack did not find the strongest, most deliberately constructed,
+input-side ownership signal available to it, at 30M.
+
+## Honest notes
+
+- The baseline primary score here is **0.440**, against **0.506** at the
+  pilot endpoint. The endpoint used 800 episodes and this used 400, so
+  this is sampling variation on a different draw, not a discrepancy in the
+  checkpoint. The checksum matches the ledger exactly.
+- The probes read residual states at revision positions, which is the A3
+  pipeline's registered choice. A different position choice might read
+  differently, and nothing here tests that.
+- The lock was honoured throughout. It supplied θ = 0.1777 on the primary
+  battery and carries no threshold at all for the control battery, so the
+  control battery is reported and never read for a verdict.
+- This is one checkpoint and one seed. Seeds 1 and 2 are still training.

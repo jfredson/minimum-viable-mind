@@ -133,7 +133,24 @@ on all", 2026-09-16; `docs/public-path-roadmap-2026-09-16.md`, committed
   own-agent identity at any turn, so the blind arm had nothing at that
   location to find and the result says nothing about the stack's
   sensitivity in either direction
-  (`register-direct-probe-findings.md`, `a7f5cd8`). Sensitivity is untested and the companion positive control
+  (`register-direct-probe-findings.md`, `a7f5cd8`).
+- **2026-09-16, THE A2 REGISTER WAS A CONSTANT IN EVERY TRAINED
+  CHECKPOINT** (`register-saturation-findings.md`, `cc9c70e`). The writer
+  emits the same vector whatever it is given, from its first write, at the
+  floating-point floor on seed-0, seed-1 and seed-2 full and on the 10M
+  pilot. An untrained model at the same config does not, so it is trained
+  in rather than architectural. No intermediate weights were saved, so the
+  training-time onset cannot be recovered; the untrained control bounds it
+  from the other end. **Consequence, ruled by John: a constant read
+  through cross-attention is a bias term, so the full model is the twin
+  plus a learned bias and the register-versus-no-register manipulation was
+  never effectively applied.** Binding tracks seed, not architecture: two
+  of five bind, one full and one twin. The wave-2 "prediction inverted"
+  result is better described as a **seed lottery in one architecture**.
+  The measurements stand; only the architectural interpretation is
+  withdrawn. Wave-2 ledger row, the twin-binding note and Amendment A3 §1
+  are **annotated, never edited** (the ledger change verified
+  append-only). No registered text changed. Sensitivity is untested and the companion positive control
   is unregistered, not run, and awaiting John's separate ruling
   (`blind-arm-positive-control-proposal.md`).
 - **2026-10-04** John decides the control-battery question on a written
