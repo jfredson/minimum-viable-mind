@@ -21,9 +21,10 @@
 #   ~$3.80 on the A3 pilot, each because the Mac slept and the watchdog
 #   woke hours after training finished. `caffeinate -i` blocks idle sleep
 #   but not lid-close. Two changes: stronger sleep assertions here, and
-#   the pod is asked to terminate ITSELF the moment training finishes
-#   (see train_a3.py), so the laptop is the backstop rather than the only
-#   mechanism.
+#   the pod was to be asked to terminate ITSELF the moment training
+#   finishes (see train_a3.py). MEASURED 2026-09-16: that cannot work —
+#   a pod carries no RUNPOD_POD_ID and runpodctl has no credential, so
+#   this watchdog remains the ONLY reap and the lid must stay open.
 #
 #   NOTE FOR JOHN: the pod-side self-terminate uses whatever credential
 #   the pod already carries. If it turns out RunPod images do not ship a
@@ -107,7 +108,7 @@ kill_pod() {
 
 say "watchdog up: pod=$POD out=$OUT dest=$DEST deadline=$(date -u -r "$DEADLINE_EPOCH" +%Y-%m-%dT%H:%M:%SZ)"
 say "fix 1 active: checkpoint pulls are archive-based and checksum-verified"
-say "fix 2 active: the pod attempts to terminate itself on completion; this watchdog is the backstop"
+say "REAP: pod-side reaping measured unavailable 2026-09-16 (no RUNPOD_POD_ID, no runpodctl config) — THIS WATCHDOG IS THE ONLY REAP; keep the lid open"
 i=0
 while :; do
   now=$(date +%s)

@@ -221,23 +221,36 @@ fi
 RESUME_FLAG=""
 [ -n "$RESUME" ] && RESUME_FLAG="--resume $RESUME"
 
-# ---- (iii) pod-side deadline reaper ---------------------------------------
-# A hung run writes no DONE sentinel and never crashes, so nothing on the
-# pod ends it. Until now the only backstop was the local watchdog, which
-# sleeps when the laptop does — the failure that has cost money three
-# times. This starts a detached timer ON THE POD that deletes it after
-# TERM_H hours regardless of what this Mac is doing. It is safe precisely
-# because artifacts live on the network volume and survive the delete.
-if [ "$NETVOL" != "none" ]; then
-  echo "arming pod-side deadline reaper (+${TERM_H}h, laptop-independent)"
-  $SSH "nohup sh -c 'sleep $((TERM_H * 3600)); \
-    runpodctl remove pod \$RUNPOD_POD_ID || runpodctl pod delete \$RUNPOD_POD_ID' \
-    > $RUN_DIR/reaper.log 2>&1 < /dev/null &" \
-    && echo "  armed" || echo "  could not arm (watchdog remains the backstop)"
-else
-  echo "NETVOL=none: pod-side reaper NOT armed (deleting the pod would"
-  echo "  destroy container-disk artifacts); the watchdog is the only reap"
-fi
+# ---- pod-side reaping: MEASURED NOT AVAILABLE (2026-09-16) ----------------
+# A paid test on 2026-09-16 (authorized by John, $0.29, ledger row in
+# compute-ledger.md) answered this definitively on a real RunPod pod:
+#
+#   RUNPOD_POD_ID   : MISSING from the environment
+#   runpodctl       : present at /usr/bin/runpodctl
+#   its config      : absent — "Runpod config file not found"
+#   RUNPOD_* vars   : none at all
+#
+# So a pod knows neither its own id nor any credential, and BOTH pod-side
+# mechanisms fail on the same missing thing: the self-terminate in
+# train_a3.py, and the deadline reaper this block used to arm. Leaving an
+# armed-looking reaper here would have been worse than none, because it
+# reads as a backstop that does not exist.
+#
+# Consequence, stated plainly at every launch: THE LAPTOP WATCHDOG IS THE
+# ONLY REAP. A hung run with no DONE sentinel is covered by nothing that
+# does not sleep.
+#
+# Making pod-side reaping work means placing an API key on a rented
+# machine. That is John's call and is deliberately not taken here.
+echo ""
+echo "REAP: pod-side reaping is NOT available (measured 2026-09-16, \$0.29"
+echo "  test): a pod carries no RUNPOD_POD_ID and runpodctl has no config,"
+echo "  so it cannot delete itself. THE LAPTOP WATCHDOG IS THE ONLY REAP."
+echo "  Keep this Mac powered and the LID OPEN; a closed lid has cost about"
+echo "  \$9.50 across three runs. A hung run that never writes DONE is"
+echo "  covered only by the watchdog's +${WATCH_H}h deadline, which also"
+echo "  needs this Mac awake."
+echo ""
 
 echo "starting detached training run (log + checkpoints in $RUN_DIR)"
 # 2026-08-17: this ssh can HANG after the remote nohup succeeds — the

@@ -328,8 +328,15 @@ def self_terminate(out_path: str | None = None) -> None:
     never be put at risk by a cleanup step. The local watchdog remains the
     backstop either way.
 
-    If it turns out RunPod images carry no usable credential, the robust
-    alternative means placing an API key on a rented machine. That is a
+    MEASURED 2026-09-16 on a real pod (authorized test, $0.29): RunPod
+    images carry NO usable credential. `RUNPOD_POD_ID` is absent from the
+    environment and `runpodctl` is installed but unconfigured, so every
+    route below fails and this function falls through to the watchdog
+    every time. It is kept, and kept loud, because the situation changes
+    the moment a credential exists — but it must not be mistaken for a
+    working backstop today.
+
+    Making it work means placing an API key on a rented machine. That is a
     decision about John's credentials and is his to make, so this does not
     do it.
     """
