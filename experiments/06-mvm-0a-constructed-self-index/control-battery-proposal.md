@@ -138,6 +138,31 @@ a silent scale bump.
 
 ## Recommendation
 
+> **ANNOTATION, 2026-09-17, later the same day. The candidates below are
+> MOOTED and the recommendation is superseded, though its one operative
+> instruction was right.**
+>
+> The ceiling measurement John made a precondition has now run. The
+> control battery's ownership-blind ceiling is **1.0**, reached by two
+> independent solvers, with both known-answer checks reproducing their
+> registered values exactly first.
+>
+> A defined drop needs a baseline of 1.10, so **the control's drop is
+> undefined for every possible model** and the registered differential
+> clause was never computable, at any budget, on any architecture. It has
+> been unsatisfiable since registration.
+>
+> **So options C and D below are moot.** Both aimed at making the control
+> learn, and a perfectly learning control would change nothing. I was
+> proposing to spend $27 to $39 repairing the wrong component. What caught
+> it was John's instruction to measure the ceiling before opening an
+> amendment, and the recommendation below to run the free thing first.
+>
+> The October question is no longer whether to make the control learn. It
+> is whether the clause can be repaired at all, and whether that repair is
+> a metric change rather than a training change. See
+> `ceiling-measurement-findings.md`.
+
 **Do the free diagnostic first, then decide between A and C. Do not spend
 yet.**
 

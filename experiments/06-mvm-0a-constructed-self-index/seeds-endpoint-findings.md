@@ -100,6 +100,14 @@ it has.** Not because the primary failed — it succeeded on all three, by a
 wide margin — but because the clause that compares it to a control cannot
 be computed when the control never learned.
 
+> **ANNOTATION, 2026-09-17. The conclusion stands; the reason given here
+> is wrong and is corrected.** The clause cannot be computed **whether or
+> not the control learned**. Its ownership-blind ceiling is 1.0, so a
+> defined drop would need a baseline of 1.10 and no model can reach it.
+> The clause was unsatisfiable from registration, months before any
+> checkpoint existed, and the control's failure to learn is beside the
+> point. Measured at `ceiling-measurement-findings.md`.
+
 **Not settled, and not touched here: where ownership lives.** L0 removes
 an input channel. It shows the action depends on ownership; it does not
 show the network built an internal structure carrying it. That is the
