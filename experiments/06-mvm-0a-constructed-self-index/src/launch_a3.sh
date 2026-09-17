@@ -227,19 +227,51 @@ RESUME_FLAG=""
 # /usr/bin/runpodctl but unconfigured. So pod-side reaping is impossible
 # unless both are supplied.
 #
-# John ruled on 2026-09-17 to supply them using the existing account key,
-# after being told plainly that it is a full-write credential and that a
-# dedicated rotatable key would be safer. Recorded because the tradeoff was
-# named before it was taken: this key can create pods and spend up to the
-# account limit ($80), and it now sits on a rented machine in an image we
-# did not build, readable by any process on that pod.
+# John ruled on 2026-09-17 to supply them, and ruled again on 2026-09-16
+# Pacific that the credential pushed to a pod must NOT be his account key.
+#
+#   "Change it to read ONLY from ~/.runpod/reaper-key (a dedicated key,
+#   mode 600, already saved ...). No fallback to config.toml."
+#
+# THE TRADEOFF AS IT NOW STANDS. The full-write account key in
+# ~/.runpod/config.toml is no longer pushed to pods, and this script no
+# longer reads that file at all. What goes onto the rented machine is a
+# dedicated key scoped in the RunPod console to api.runpod.io/graphql
+# read and write, with api.runpod.ai set to none. It can still manage pods,
+# which is the whole point of a reaper and cannot be given up without
+# giving up pod-side reaping, so a leak still costs pods and spend up to
+# the account limit. What it no longer carries is the serverless surface,
+# and being dedicated it can be rotated on its own without disturbing the
+# local tooling that uses the account key.
+#
+# NO FALLBACK, BY RULING. If the file is missing, empty, or not mode 600,
+# pod-side reaping is not armed and the run continues with the laptop
+# watchdog as the only reap. Falling back to the account key would silently
+# undo the ruling, which is worse than an unarmed reaper the operator is
+# told about.
 #
 # What this buys: idle billing has cost about $9.50 across three runs
 # because the reap waited on a laptop that was asleep, and a hung run that
 # writes no DONE sentinel was covered by nothing at all. Both are now
 # covered by the pod itself.
-POD_KEY=$(sed -n 's/^apikey *= *"\{0,1\}\([^"]*\)"\{0,1\}/\1/p' \
-  "$HOME/.runpod/config.toml" 2>/dev/null | head -1)
+REAPER_KEY_FILE="$HOME/.runpod/reaper-key"
+POD_KEY=""
+REAP_REFUSAL=""
+if [ ! -s "$REAPER_KEY_FILE" ]; then
+  REAP_REFUSAL="no dedicated reaper key at ~/.runpod/reaper-key (missing or empty)"
+else
+  # BSD stat first (this launches from macOS), GNU stat as the fallback
+  KEY_MODE=$(stat -f '%Lp' "$REAPER_KEY_FILE" 2>/dev/null \
+             || stat -c '%a' "$REAPER_KEY_FILE" 2>/dev/null)
+  if [ "$KEY_MODE" != "600" ]; then
+    REAP_REFUSAL="reaper key mode is ${KEY_MODE:-unreadable}, not 600 — refusing to arm"
+  else
+    POD_KEY=$(tr -d ' \t\r\n' < "$REAPER_KEY_FILE")
+    [ -n "$POD_KEY" ] || REAP_REFUSAL="reaper key file holds nothing once trimmed"
+  fi
+fi
+# the key itself is never echoed, logged, or written to the ledger; only
+# the refusal reason and the file's mode are ever printed.
 if [ -n "$POD_KEY" ] && [ "$NETVOL" != "none" ]; then
   echo "arming pod-side reaping (credential + pod id supplied)"
   # configure the tool and record the pod's own id, which it does not know.
@@ -253,14 +285,20 @@ if [ -n "$POD_KEY" ] && [ "$NETVOL" != "none" ]; then
         | grep -q '\"id\"' && echo VERIFIED || echo NOT_VERIFIED" \
     2>/dev/null | grep -qi VERIFIED \
     && echo "  VERIFIED: the pod can reach the API as itself" \
-    || echo "  NOT VERIFIED — the watchdog remains the only reap"
+    || { echo "  NOT VERIFIED — the restricted reaper key could not reach"
+         echo "  pod management. By John's ruling of 2026-09-16 there is NO"
+         echo "  fallback to the account key: STOP and tell John. Until he"
+         echo "  rules, the laptop watchdog is the only reap — lid OPEN."; }
   # deadline reaper on the pod: covers a HUNG run, which nothing else did
   $SSH "nohup sh -c 'sleep $((TERM_H * 3600)); \
         runpodctl remove pod \$(cat /root/mvm/pod_id)' \
         > $RUN_DIR/reaper.log 2>&1 < /dev/null &" >/dev/null 2>&1 \
     && echo "  deadline reaper armed (+${TERM_H}h, laptop-independent)"
 else
-  echo "REAP: pod-side reaping NOT armed (no key found, or NETVOL=none)."
+  if [ "$NETVOL" = "none" ]; then
+    REAP_REFUSAL="${REAP_REFUSAL:-NETVOL=none}"
+  fi
+  echo "REAP: pod-side reaping NOT armed — $REAP_REFUSAL"
   echo "  The laptop watchdog is then the ONLY reap — keep the lid OPEN."
 fi
 

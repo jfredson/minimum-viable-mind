@@ -81,6 +81,16 @@ seed lottery.
 1. Both process fixes committed — DONE (`3df7d19`, `2710982`), plus
    pod-side reaping ruled and implemented (`5dedc18`) after a paid test
    ($0.29) proved a pod carries no credential and no id of its own.
+   **Amended 2026-09-16 on John's ruling: the full-write account key is no
+   longer pushed to pods.** The launcher now reads the reaping credential
+   only from `~/.runpod/reaper-key`, a dedicated key scoped in the RunPod
+   console to graphql read and write with the serverless surface set to
+   none, and refuses to arm unless that file exists, is non-empty and is
+   mode 600. There is deliberately no fallback to `~/.runpod/config.toml`,
+   which the script no longer reads at all: an unarmed reaper the operator
+   is told about beats a silent return to the account key. If the pod-side
+   read check fails at the next launch, the launcher says to stop and ask
+   John rather than degrade.
 2. Gate 3 — DONE and PASSES both arms (clean 0.483 and 0.4975; controls
    0.9895 and 0.8724). The first run's "uncertifiable" was a bad control
    on Claude's side, not the checkpoint.
