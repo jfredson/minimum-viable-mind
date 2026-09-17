@@ -104,6 +104,31 @@ seed lottery.
    and `4z55xtf1vowymp` (seed 2), launched 2026-09-17 03:13Z, est.
    $18–26 the pair, due to report around 06:07 local 2026-09-17.
 
+**IF THE MAC REBOOTS BEFORE THE SEEDS REPORT, RESTART BOTH WATCHDOGS.**
+They are the ONLY reap: the in-flight pods carry no credential, no pod id
+and no reaper process, verified 2026-09-16
+(`reaping-audit-2026-09-16.md`). The script is a plain polling loop with
+no accumulated state, so restarting is safe and idempotent. One command
+each, from anywhere:
+
+```
+cd /Users/john/Code/minimum-viable-mind/.claude/worktrees/gate0-null-calibration/experiments/06-mvm-0a-constructed-self-index/src
+
+nohup caffeinate -dimsu bash watch_run_a3.sh \
+  /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/a3_30m_seed1/run_xi062halhyuucg.env \
+  >> /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/a3_30m_seed1/watchdog.log 2>&1 &
+
+nohup caffeinate -dimsu bash watch_run_a3.sh \
+  /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/a3_30m_seed2/run_4z55xtf1vowymp.env \
+  >> /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/a3_30m_seed2/watchdog.log 2>&1 &
+```
+
+Check they took: `pgrep -fl watch_run_a3.sh` should list two. Exposure if
+they are not restarted: both pods finish around 06:10 local, nothing
+fetches or deletes, and they bill about $2/hr together. `terminate-after`
+does NOT cover this — the ledger records it failing to fire and costing
+$97 on the 30M A1 pilot.
+
 **IN FLIGHT AND ON JOHN'S MACHINE:** lid sleep is disabled
 (`SleepDisabled 1`) so the wave reaps on time; **revert after both report
 with `sudo pmset -a disablesleep 0`**. The two in-flight pods launched
