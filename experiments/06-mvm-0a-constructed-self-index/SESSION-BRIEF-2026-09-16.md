@@ -131,32 +131,51 @@ ability was a lottery only two of five earlier runs won.
 clean, controls at 0.9895 and 0.8724), so the training data carries no
 ownership fingerprint.
 
-## The three open questions
+## The three open questions — all RULED on 2026-09-16
 
-**1. The headline hypothesis has a term that does not exist.** It requires
-the drop on the primary battery to exceed the drop on the control by a
-margin. The control never learned, so its baseline sits below its ceiling
-and its drop is undefined. The positive bin cannot be satisfied on this
-checkpoint — not because the result is negative, but because one of its
-terms is missing. Either amend the bin, or get a checkpoint where the
-control learned.
+*John ruled in a Cowork session on 2026-09-16. The binding text is the
+TimeAssembler decision entries tagged `a3`; `gate2-pilot-findings.md`
+carries them in full.*
 
-**2. The outcome bins do not cover what happened.** The starvation
-criterion wants the primary at ceiling with the control flat. The control
-is flat; the primary is at 0.506, well above its shortcut floor and
-nowhere near 1.0. Half fired. The bins were written before the grammar
-existed.
+**1. The headline hypothesis has a term that does not exist. RULED: the
+strict reading governs, and the bin is NOT amended.** The positive bin
+requires the primary battery's drop to exceed the control's by a margin.
+The control never learned, so its drop is undefined and the clause cannot
+be evaluated — and a clause that cannot be evaluated has not passed. Seed
+0 is **not-testable** on that clause and cannot land in H_self-location.
+The other-agent subspace lesion, the random matched subspaces and the swap
+probe are reported as **partial** discriminators. The "no generic binder
+exists, so it cannot be generic binding" argument is recorded as
+supplementary and unregistered.
 
-**3. The real prize is now reachable and has not been taken.** A
-localization arm was registered unconditionally and never run, and the
-argument against it was that its premise had evaporated: with no known
-center, failing to find one would prove nothing. **The pilot restored that
-premise.** Ownership is now measured to be load-bearing in a specific
-checkpoint. So the interpretability toolkit can finally be scored against
-a ground truth, and if it cannot carve a center known to be there, the
-honest reading of the earlier experiment's null shifts toward instrument
-failure. The amendment's own red team called this the finding that might
-outweigh the headline. It costs nothing and is the next build.
+**The consequence was stated before the ruling and accepted: under the
+three-of-three rule, A3 as registered can no longer return a full
+registered positive, regardless of seeds 1 and 2.**
+
+**2. The outcome bins do not cover what happened. RULED: recorded as
+described, and deliberately left unbinned.** K3 did not fire (it is a
+conjunction and the primary at 0.506 is not at ceiling); K2 did not fire.
+The endpoint stands as "partial learning on the primary, control
+unlearned". **No new bin is written, because a bin written after the data
+is fitted to the data.** Noted but not ruled: the plainer account is that
+both batteries are hard at this scale and the control lost the same
+lottery three of five earlier runs lost, which seeds 1 and 2 discriminate.
+
+**3. The localization work is still the highest-value next step, and it is
+now reframed rather than diminished.** The pilot established that
+ownership is measurably load-bearing in a specific checkpoint, which is
+the ground truth the interpretability toolkit has never been scored
+against. That stands. What changed is what a positive there can buy:
+seed 0 cannot reach the registered positive bin, so the localization work
+yields partial discriminators and the instrument-audit finding rather than
+a headline verdict.
+
+**Why the seeds are still worth about $22**, in the rulings' own terms:
+they are no longer steps toward a three-of-three positive; they test
+whether the primary battery's learnability replicates and whether the
+control is a seed lottery. A seed whose control learns is fully testable.
+The recorded case against is that the modal outcome is the control flat on
+both.
 
 ## Things this session got wrong, and corrected
 
@@ -192,9 +211,14 @@ Spend $13.92 of a $100 hard stop, inside a $400 all-vendor ceiling.
 Nothing running. Gates 0, 1 and 3 complete, registration committed,
 calibration done and thresholds measured.
 
-Waiting on John: the threshold lock commit, which is reserved to him; the
-go for seeds 1 and 2, about $22 as one wave; and rulings on the two bin
-questions above.
+Waiting on John, in procedure order: **the threshold lock commit**, which
+§3.3 reserves to him and which `lock_guard.py` enforces; then **a fresh
+verbatim go for the seeds 1 and 2 wave**, which launch together on a
+single go per the 2026-09-16 revision (the earlier sequential condition is
+withdrawn). Neither ruling is a go. After the seeds report, whether
+optional extra seeds run: the revision reopened that, since seven seeds
+total roughly $77–105 including the $13.92 spent, borderline rather than
+clearly past the $100 hard stop.
 
 Next build, free and highest value: the lesion and localization pipeline
 on the checkpoint already in hand.

@@ -159,11 +159,122 @@ It is one seed. The registered bin rule requires the positive on all
 three, and binding at 30M was seed-dependent throughout the earlier
 programme.
 
-## What needs John
+## Rulings, 2026-09-16
 
-1. **Adjudicate the bin.** Partial learning on the primary, none on the
-   control, K3 half-fired. The bins do not cleanly cover this.
-2. **Rule on the undefined control drop** before the lesion phase, since
-   one registered bin cannot fire on this checkpoint.
-3. **Whether seeds 1 and 2 launch**, at about $11 each on a fresh go, and
-   whether the two process fixes above land first.
+*John ruled on all three items below in a Cowork session on 2026-09-16.
+The binding text is the TimeAssembler decision entries tagged `a3`; this
+section records them, and where the two differ the entries govern.*
+
+### The endpoint is recorded as described, and deliberately not binned
+
+*Entry: "RULED 2026-09-16 — A3 pilot endpoint: K3 did not fire, K2 did not
+fire; recorded as described and unbinned, no new bin written"
+(`cc2faca1`, decided-by mixed — Claude proposed, John answered "Agreed").*
+
+1. **K3, shortcut-starvation, did NOT fire.** It is a conjunction and one
+   conjunct is false: the primary battery ended at 0.506, flat around
+   0.537 over the last fifth, well short of ceiling. The control being
+   flat is only half the signature.
+2. **K2, unlearnable, did not fire**: the primary is +0.214 above the
+   0.2921 ownership-blind ceiling, and zeroing the acting channel takes it
+   to 0.182 while the ownership-free batteries do not move.
+3. **The endpoint is recorded as DESCRIBED, not binned**: "partial
+   learning on the primary, control unlearned". **No new bin is written to
+   land it, because a bin written after the data is fitted to the data.**
+   The record states that the pilot-stage bins were not exhaustive, as
+   red-team pass 3 already flagged.
+4. **Noted, not ruled:** the plainer account is that both batteries are
+   hard at 30M and the control lost the same seed lottery three of five
+   earlier runs lost. Seeds 1 and 2 discriminate — the control learning on
+   another seed supports the lottery reading; the control never learning
+   while the primary climbs revives starvation.
+
+### Seed 0 is not-testable on the differential clause
+
+*Entry: "RULED 2026-09-16 — undefined control drop: strict reading
+governs; seed 0 is not-testable on the differential clause" (`1b594dfa`,
+decided-by mixed — Claude proposed, John answered "Yes").*
+
+1. **The strict reading governs.** The positive bin requires
+   d(T_act) − d(T_other) ≥ δ. The control finished at 0.299, below its own
+   0.3227 ceiling, so under the registered floor rule its drop is
+   undefined and the clause cannot be evaluated. **A clause that cannot be
+   evaluated has not passed.** Seed 0 is NOT-TESTABLE on the differential
+   clause and cannot land in H_self-location.
+2. The discriminators that do not depend on the control still run and are
+   reported as **partial** discriminators on seed 0: the matched
+   other-agent subspace lesion, the random matched subspaces, and the swap
+   probe.
+3. The benign argument — that no generic binder was learned, so a
+   primary-battery positive cannot be generic binding — is recorded as a
+   **supplementary, unregistered reading only**. It does not substitute
+   for the registered discriminator.
+
+**The consequence, stated before the ruling and accepted:** under the
+ratified three-seeds, three-of-three rule, with the bin required to hold
+on every trained seed, **A3 as registered can no longer return a full
+registered positive on H_self-location, regardless of seeds 1 and 2.** A
+pre-stated eligibility rule counting only seeds whose control clears its
+ceiling was considered and set aside on cost.
+
+### The seeds, as revised the same day
+
+*Entries: "RULED 2026-09-16 — A3 seeds 1 and 2: yes in principle…"
+(`fcceae59`) and its same-day revision, "RULED 2026-09-16 (revision) — A3
+seeds 1 and 2 launch as ONE WAVE on a single fresh go" (`1c2cc109`). Both
+decided-by mixed.*
+
+**Withdrawn:** the sequential condition (seed 1 first, seed 2 decided
+after its pre-lesion baseline). It existed only to keep about $11
+optional, and cost is not the constraint.
+
+**Standing:** seeds 1 and 2 launch together as **one wave on a single
+fresh verbatim go**, matching §4.3's "seeds 1 and 2 (C2 go per wave)".
+Both process fixes are committed before any launch. John's threshold lock
+commit comes before the seeds. **Neither ruling is a launch go.** No L1
+lesion is run or read before the lock. Registered text, including the
+$100 hard stop, is unchanged.
+
+**Why the seeds are still worth about $22 after the strict-reading
+ruling**, in the entries' own terms: they are **no longer steps toward a
+three-of-three positive**; they are a test of whether the primary
+battery's learnability replicates and whether the control is a seed
+lottery. A seed whose control learns is fully testable and yields a
+per-seed verdict, though the across-seed bin still caps at seed-dependent
+or not-testable.
+
+**Recorded case against:** the modal outcome is the control flat on both,
+leaving three seeds not-testable on the differential clause plus partial
+discriminators — a reportable null with a named cause.
+
+**Cost correction** (from the revision entry): an earlier note said seven
+seeds would run past the $100 hard stop. At the registered $9–13 per run,
+seven seeds total roughly **$77–105 including the $13.92 already spent,
+borderline rather than clearly over**. Optional extra seeds on a separate
+go remain a live route to a checkpoint whose control learned, bounded by
+the hard stop and the $80 account limit, **to be decided after seeds 1 and
+2 report**.
+
+---
+
+## What needed John, and what still does
+
+All three items that stood open on 2026-09-16 morning are **ruled**, above:
+the bin (recorded as described, not binned), the undefined control drop
+(strict reading, seed 0 not-testable on the differential clause), and the
+seeds (one wave, on a fresh verbatim go).
+
+**What still needs John**, in the order the registered procedure takes it:
+
+1. **The threshold lock commit.** Reserved to him by §3.3. The thresholds
+   are measured and waiting (`null-calibration/a3_pilot_seed0.json`):
+   0.1777 on the primary battery, 0.2368 on the one computable
+   differential. `lock_guard.py` refuses any localized-subspace run until
+   that commit exists.
+2. **A fresh verbatim go for the seeds 1 and 2 wave.** Neither ruling is
+   one, and the go is quoted in the ledger row before spend.
+3. **After seeds 1 and 2 report**, whether optional extra seeds run. The
+   revision entry reopened this: seven seeds total roughly $77–105
+   including the $13.92 spent, borderline rather than clearly past the
+   $100 hard stop, so a checkpoint whose control learned stays a live
+   route.

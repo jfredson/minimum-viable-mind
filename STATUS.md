@@ -63,11 +63,37 @@ is what red-team pass 3 flagged.
    blocks idle sleep, not lid-close. Three occurrences is a design
    problem: the reap must not depend on a laptop being awake.
 
-**Next (John owns all of it):** (1) adjudicate the bin; (2) rule on the
-undefined control drop before any lesion phase; (3) whether seeds 1 and 2
-launch (~$11 each, fresh go each) and whether the two process fixes land
-first. The lesion phase additionally needs the threshold lock, which is
-John's commit. Branch `gate0-null-calibration`, pushed.
+**RULED 2026-09-16 (Cowork session; five binding decision entries tagged
+`a3`, quoted in `gate2-pilot-findings.md`):** K0 applied at 0.25 scoped to
+checkpoints where a verdict is read; the pilot endpoint recorded as
+described and **deliberately unbinned** (K2 and K3 both did not fire, and
+no new bin is written because a bin written after the data is fitted to
+it); the undefined control drop takes the **strict reading** — seed 0 is
+**not-testable** on the differential clause and cannot land in
+H_self-location, with the other-agent and random-subspace lesions and the
+swap probe reported as partial discriminators. **Consequence accepted: A3
+as registered can no longer return a full registered positive regardless
+of seeds 1 and 2.** The seeds are reframed as a ~$22 test of whether the
+primary battery's learnability replicates and whether the control is a
+seed lottery.
+
+**NEXT, in the registered order (§4.3):**
+1. Both process fixes committed — DONE (pod-side self-terminate in
+   `train_a3.py`, archive-plus-checksum pulls in `watch_run_a3.sh`).
+2. Gate 3 — DONE and PASSES both arms (clean 0.483 and 0.4975; controls
+   0.9895 and 0.8724). The first run's "uncertifiable" was a bad control
+   on Claude's side, not the checkpoint.
+3. **John's threshold lock commit** — thresholds measured and waiting
+   (0.1777 primary, 0.2368 on the one computable differential).
+   `lock_guard.py` refuses any L1 run without it.
+4. **Seeds 1 and 2 as ONE WAVE on a single fresh verbatim go** (the
+   2026-09-16 revision withdrew the sequential condition). ~$22 total,
+   quoted in the ledger before spend.
+5. After they report: whether optional extra seeds run (~$77–105 for seven
+   total, borderline against the $100 stop).
+
+Free work in parallel: the lesion and localization pipeline, build and
+smoke-test only, no L1 run or read before the lock.
 
 ## SHORTCUT SWEEP — a SECOND fatal leak; three grammar drafts map a real trade-off; proposal drafted; A3 NOT ready to register (2026-09-15)
 

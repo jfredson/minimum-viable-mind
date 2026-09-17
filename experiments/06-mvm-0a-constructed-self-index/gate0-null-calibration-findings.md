@@ -344,10 +344,28 @@ about $12 on his C2 authorization.
 
 Three items are John's alone:
 
-1. **K0's number.** The proposed criterion is a 95th-percentile band of
-   0.25 on the verdict batteries. Measured: about 0.01 on `T_si` for both
-   binders, and 0.147 on the 19-item `T_sr_rev` cell of the pilot. On the
-   proposed number K0 does not fire.
+1. **K0's number — RULED 2026-09-16.** *Entry: "RULED 2026-09-16 — K0
+   applied at 0.25 as proposed, scoped to checkpoints where a verdict is
+   read" (`d22f32ef`, decided-by mixed — Claude proposed, John answered
+   "Yes").* **K0 is applied at 0.25 exactly as proposed, scoped to
+   checkpoints where a verdict is read.** On that scoping it does not fire:
+   the band is 0.0060 on the pilot seed-0 full and 0.0095 on the seed-1
+   twin against a split of about 0.73. The single firing, the seed-0 twin
+   at 0.379, is a near-chance non-binder where no verdict is read and
+   there is no split to swallow.
+
+   **Recorded caveat, in the ruling's own words:** the number was set
+   *after* the Gate 0 measurement was seen. The roughly 75-fold margin
+   makes this harmless, and the number was deliberately not tuned away
+   from the pre-measurement proposal. A3's own thresholds are recalibrated
+   on the new pilot checkpoint with the lock ordered ahead of any
+   localized-subspace read, so A3 inherits none of it.
+
+   **Carried forward, not part of the ruling:** the 19-item
+   revision-conditioned cell has a band of 0.146, more than half of 0.25,
+   which supports the cell-size fix red-team pass 3 already carries.
+
+
 2. **The `T_act` cell-size recommendation** above, which belongs in red-team
    pass 3 and changes A3's text before registration.
 3. **The K2 units fix** above, likewise for red-team pass 3: the criterion
