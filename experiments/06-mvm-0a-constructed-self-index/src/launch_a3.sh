@@ -252,10 +252,10 @@ OUT="$OUT"
 DEST="$DEST"
 DEADLINE_EPOCH=$DEADLINE_EPOCH
 ENVEOF
-nohup caffeinate -i bash "$SRC_DIR/watch_run.sh" "$ENVF" \
+nohup caffeinate -dimsu bash "$SRC_DIR/watch_run_a3.sh" "$ENVF" \
   >> "$DEST/watchdog.log" 2>&1 < /dev/null &
 WPID=$!
-echo "watchdog spawned (pid $WPID, caffeinate holds off idle sleep) — KEEP THIS MAC POWERED ON"
+echo "watchdog spawned (pid $WPID) — the pod now also self-terminates on completion, so this is the BACKSTOP not the only reap; still keep this Mac powered and the lid OPEN"
 
 cat <<EOF
 

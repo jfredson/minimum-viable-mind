@@ -308,7 +308,52 @@ def run(args) -> dict:
                         "tokens": tokens_seen}) + "\n")
         print(f"saved {args.out}")
         print("TRAINING COMPLETE", flush=True)
+        if not args.no_self_terminate:
+            self_terminate()
     return {"params": n_params, "tokens": tokens_seen, "log": log}
+
+
+def self_terminate() -> None:
+    """Ask the pod to delete itself now that the work is finished.
+
+    Idle billing has cost money three times, each because the reap waited
+    on a laptop that was asleep: about $5.70 in wave 2 and about $3.80 on
+    the A3 pilot, which billed 3.9 hours after training ended. The local
+    watchdog blocks idle sleep but not a closed lid, so it cannot be the
+    only mechanism. The pod knows the moment it is done; it should say so.
+
+    This uses whatever credential the pod already carries and is a
+    best-effort attempt: every failure is logged and ignored, because a
+    finished run whose artifacts are already on the network volume must
+    never be put at risk by a cleanup step. The local watchdog remains the
+    backstop either way.
+
+    If it turns out RunPod images carry no usable credential, the robust
+    alternative means placing an API key on a rented machine. That is a
+    decision about John's credentials and is his to make, so this does not
+    do it.
+    """
+    import os
+    import subprocess
+    pod = os.environ.get("RUNPOD_POD_ID", "")
+    if not pod:
+        print("self-terminate: no RUNPOD_POD_ID in the environment; "
+              "leaving the reap to the watchdog", flush=True)
+        return
+    for cmd in (["runpodctl", "remove", "pod", pod],
+                ["runpodctl", "pod", "delete", pod]):
+        try:
+            r = subprocess.run(cmd, capture_output=True, text=True,
+                               timeout=120)
+        except Exception as e:                       # noqa: BLE001
+            print(f"self-terminate: {' '.join(cmd)} raised {e}", flush=True)
+            continue
+        print(f"self-terminate: {' '.join(cmd)} -> rc={r.returncode} "
+              f"{(r.stdout + r.stderr).strip()[:200]}", flush=True)
+        if r.returncode == 0:
+            return
+    print("self-terminate: no route worked; the watchdog will reap this pod",
+          flush=True)
 
 
 # --------------------------------------------------------------- checks
@@ -405,6 +450,9 @@ def main() -> None:
                     torch.backends.mps.is_available() else "cpu")
     ap.add_argument("--out", default=None)
     ap.add_argument("--resume", default=None)
+    ap.add_argument("--no-self-terminate", action="store_true",
+                    help="do not ask the pod to delete itself "
+                         "when training finishes")
     ap.add_argument("--smoke", action="store_true")
     args = ap.parse_args()
     if args.self_test:

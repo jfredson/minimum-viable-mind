@@ -1,0 +1,70 @@
+{
+  "gate": "A3 Gate 3 \u2014 fingerprint detector, act-withheld arm B",
+  "checkpoint": "a3_30m_seed0.pt",
+  "params": {
+    "n_episodes": 4000,
+    "seed": 20260916,
+    "equivalence_bound": [
+      0.45,
+      0.55
+    ],
+    "positive_control_min_auc": 0.7
+  },
+  "arm_a": {
+    "arm": "A committed classifier family, agent-uniform sampling",
+    "clean": {
+      "n_examples": 8000,
+      "auc": 0.483,
+      "ci95": [
+        0.4597,
+        0.5065
+      ]
+    },
+    "positive_control": {
+      "n_examples": 8000,
+      "auc": 0.9895,
+      "ci95": [
+        0.9869,
+        0.9918
+      ]
+    },
+    "clean_pass": true,
+    "pc_pass": true,
+    "VERDICT": "PASS"
+  },
+  "arm_b": {
+    "arm": "B likelihood attack, ACT-WITHHELD [A3 \u00a73.4]",
+    "clean": {
+      "mode": "enact",
+      "n_examples": 8000,
+      "auc": 0.4975,
+      "ci95": [
+        0.4851,
+        0.5102
+      ]
+    },
+    "positive_control_greedy": {
+      "mode": "greedy",
+      "n_examples": 8000,
+      "auc": 0.8724,
+      "ci95": [
+        0.8627,
+        0.8814
+      ]
+    },
+    "positive_control_policy": {
+      "mode": "policy",
+      "n_examples": 8000,
+      "auc": 0.5775,
+      "ci95": [
+        0.5648,
+        0.5901
+      ]
+    },
+    "clean_pass": true,
+    "pc_pass": true,
+    "VERDICT": "PASS"
+  },
+  "GATE": "PASS",
+  "note": "UNCERTIFIABLE is a registered outcome (2026-09-15 decision 12): if the positive controls do not fire, the arm cannot certify a clean result and says so rather than blessing one."
+}
