@@ -169,8 +169,9 @@ corrigibility gate. Stage 7 stays conditional and likely dormant.
    project** (verified empirically: 35-call burst in 2.9s, zero 429s; John
    confirmed AI Studio shows paid). No action needed; registered judge/model
    pins unchanged; the full grid is unblocked now.
-3. Stage 3 registered clarification sign-off (2×2-cell separation check —
-   flagged in STATUS 2026-07-19). **Still open.**
+3. ✅ Stage 3 registered clarification sign-off (2×2-cell separation check —
+   flagged in STATUS 2026-07-19). **Signed off by John 2026-08-02 (commit
+   `4d3091e`); this line was corrected 2026-09-16.**
 4. ✅ Paper shape — **adjudicated 2026-08-02: one flagship registered-report-
    style article** as drafted; methods spin-offs may follow. It passes Voice
    Calibration + Cold Reader before leaving the repo.
