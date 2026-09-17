@@ -64,6 +64,22 @@ the more consequential finding, not the more comfortable one, which is
 why it needs saying plainly rather than leaving buried under a
 not-testable label.
 
+> **RULED 2026-09-16 (John). The literal pre-stated result, NOT TESTABLE,
+> is authoritative. The signed-rule reading stays beside it as a
+> DIAGNOSTIC ONLY. No rule is rewritten after the data.**
+>
+> That settles it, and it is the right call for a reason worth recording.
+> I found the absolute-value hole *because* of what the data did, and a
+> rule changed at that moment is not a pre-stated rule any more, however
+> sound the correction looks. The discipline only works if the criteria
+> that were committed are the criteria that are read. Anything else lets
+> the result choose its own test.
+>
+> So: **the verdict of this run is NOT TESTABLE.** The signed reading is
+> recorded, is not a verdict, and does not become one later. What the
+> absolute-value form should be for any FUTURE run of this pipeline is a
+> separate question, to be settled before that run rather than after it.
+
 ## The lesion behaves like a non-specific one
 
 Whatever the blind search carved, its removal **improved** the battery
