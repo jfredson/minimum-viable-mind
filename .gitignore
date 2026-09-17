@@ -32,3 +32,4 @@ experiments/**/checkpoints/
 *.pt
 *.log
 .claude/
+.venv-lock-*.txt
