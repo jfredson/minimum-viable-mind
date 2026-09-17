@@ -147,6 +147,30 @@ on all", 2026-09-16; `docs/public-path-roadmap-2026-09-16.md`, committed
   never effectively applied.** Binding tracks seed, not architecture: two
   of five bind, one full and one twin. The wave-2 "prediction inverted"
   result is better described as a **seed lottery in one architecture**.
+- **2026-09-16, THE LOCALIZATION PIPELINE IS VALIDATED AT THE PLUMBING
+  LEVEL AND GATED ABOVE IT** (`known-answer-test-findings.md`, `1cb1fbb`).
+  The known-answer test passes at ceiling, accuracy 1.0 against a null of
+  0.1306, a margin of 32.9 standard deviations. So residual capture,
+  position indexing, probe fitting and null construction work. It does
+  NOT exercise the ablation path, and with the acting channel zeroed the
+  target still decodes at 1.0, so it is a plumbing check and nothing more.
+  **John's gate — no A3 L1 localization read on any seed until this passes
+  — is mechanical (`lock_guard.require_known_answer_pass`) and now lifts;
+  lifting is permission, not instruction, and no read has been run.** The
+  L0 direct lesion was never gated.
+- **2026-09-16, WITHDRAWN: "evidence of insensitivity at small scale."**
+  The positive control's verdict is the literal pre-stated **NOT
+  TESTABLE**; the signed-rule reading stays beside it as a diagnostic and
+  never becomes a verdict. The ablation's apparent +0.052 on the ownership
+  battery is **inside evaluation noise**, measured over twelve draws per
+  size: sd 0.0284 and range 0.079 at n=400, the size the control used.
+  What stands is only that the probe found nothing.
+- **2026-09-16, THE PILOT'S 0.506 IS ONE UNLUCKY EVALUATION SEED.** It and
+  the 0.440 both come from the single default seed and reproduce exactly;
+  both sit below all twelve fresh draws. **The checkpoint's typical
+  ownership score is nearer 0.566.** No verdict changes, since every drop
+  is measured against its own baseline in the same run, but **any write-up
+  quoting 0.506 must quote the spread with it.**
   The measurements stand; only the architectural interpretation is
   withdrawn. Wave-2 ledger row, the twin-binding note and Amendment A3 §1
   are **annotated, never edited** (the ledger change verified
