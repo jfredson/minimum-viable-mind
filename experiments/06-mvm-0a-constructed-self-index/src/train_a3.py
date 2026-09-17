@@ -329,16 +329,17 @@ def self_terminate(out_path: str | None = None) -> None:
     backstop either way.
 
     MEASURED 2026-09-16 on a real pod (authorized test, $0.29): RunPod
-    images carry NO usable credential. `RUNPOD_POD_ID` is absent from the
-    environment and `runpodctl` is installed but unconfigured, so every
-    route below fails and this function falls through to the watchdog
-    every time. It is kept, and kept loud, because the situation changes
-    the moment a credential exists — but it must not be mistaken for a
-    working backstop today.
+    images carry NO usable credential — `RUNPOD_POD_ID` absent, `runpodctl`
+    installed but unconfigured — so unaided this always fell through to the
+    watchdog.
 
-    Making it work means placing an API key on a rented machine. That is a
-    decision about John's credentials and is his to make, so this does not
-    do it.
+    John ruled on 2026-09-17 to supply both, using the existing account
+    key, after being told it is a full-write credential and that a
+    dedicated rotatable one would be safer. `launch_a3.sh` now configures
+    the tool on the pod and writes the pod's own id to /root/mvm/pod_id,
+    so this function can work. It stays best-effort: every failure is
+    logged and ignored, because a finished run whose artifacts are already
+    on the network volume must never be put at risk by a cleanup step.
     """
     import os
     import subprocess
@@ -360,10 +361,18 @@ def self_terminate(out_path: str | None = None) -> None:
             print(f"self-terminate: REFUSING — no checkpoint at {out_path}",
                   flush=True)
             return
+    # A pod does not know its own id (measured 2026-09-16), so the launcher
+    # writes it alongside the credential it installs.
     pod = os.environ.get("RUNPOD_POD_ID", "")
     if not pod:
-        print("self-terminate: no RUNPOD_POD_ID in the environment; "
-              "leaving the reap to the watchdog", flush=True)
+        try:
+            pod = Path("/root/mvm/pod_id").read_text().strip()
+        except Exception:
+            pod = ""
+    if not pod:
+        print("self-terminate: no pod id in the environment or at "
+              "/root/mvm/pod_id; leaving the reap to the watchdog",
+              flush=True)
         return
     for cmd in (["runpodctl", "remove", "pod", pod],
                 ["runpodctl", "pod", "delete", pod]):

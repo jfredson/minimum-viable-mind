@@ -221,36 +221,48 @@ fi
 RESUME_FLAG=""
 [ -n "$RESUME" ] && RESUME_FLAG="--resume $RESUME"
 
-# ---- pod-side reaping: MEASURED NOT AVAILABLE (2026-09-16) ----------------
-# A paid test on 2026-09-16 (authorized by John, $0.29, ledger row in
-# compute-ledger.md) answered this definitively on a real RunPod pod:
+# ---- pod-side reaping: ENABLED by John's ruling of 2026-09-17 ------------
+# A paid test on 2026-09-16 established that a pod carries NO credential and
+# NO identifier of its own: RUNPOD_POD_ID absent, runpodctl present at
+# /usr/bin/runpodctl but unconfigured. So pod-side reaping is impossible
+# unless both are supplied.
 #
-#   RUNPOD_POD_ID   : MISSING from the environment
-#   runpodctl       : present at /usr/bin/runpodctl
-#   its config      : absent — "Runpod config file not found"
-#   RUNPOD_* vars   : none at all
+# John ruled on 2026-09-17 to supply them using the existing account key,
+# after being told plainly that it is a full-write credential and that a
+# dedicated rotatable key would be safer. Recorded because the tradeoff was
+# named before it was taken: this key can create pods and spend up to the
+# account limit ($80), and it now sits on a rented machine in an image we
+# did not build, readable by any process on that pod.
 #
-# So a pod knows neither its own id nor any credential, and BOTH pod-side
-# mechanisms fail on the same missing thing: the self-terminate in
-# train_a3.py, and the deadline reaper this block used to arm. Leaving an
-# armed-looking reaper here would have been worse than none, because it
-# reads as a backstop that does not exist.
-#
-# Consequence, stated plainly at every launch: THE LAPTOP WATCHDOG IS THE
-# ONLY REAP. A hung run with no DONE sentinel is covered by nothing that
-# does not sleep.
-#
-# Making pod-side reaping work means placing an API key on a rented
-# machine. That is John's call and is deliberately not taken here.
-echo ""
-echo "REAP: pod-side reaping is NOT available (measured 2026-09-16, \$0.29"
-echo "  test): a pod carries no RUNPOD_POD_ID and runpodctl has no config,"
-echo "  so it cannot delete itself. THE LAPTOP WATCHDOG IS THE ONLY REAP."
-echo "  Keep this Mac powered and the LID OPEN; a closed lid has cost about"
-echo "  \$9.50 across three runs. A hung run that never writes DONE is"
-echo "  covered only by the watchdog's +${WATCH_H}h deadline, which also"
-echo "  needs this Mac awake."
-echo ""
+# What this buys: idle billing has cost about $9.50 across three runs
+# because the reap waited on a laptop that was asleep, and a hung run that
+# writes no DONE sentinel was covered by nothing at all. Both are now
+# covered by the pod itself.
+POD_KEY=$(sed -n 's/^apikey *= *"\{0,1\}\([^"]*\)"\{0,1\}/\1/p' \
+  "$HOME/.runpod/config.toml" 2>/dev/null | head -1)
+if [ -n "$POD_KEY" ] && [ "$NETVOL" != "none" ]; then
+  echo "arming pod-side reaping (credential + pod id supplied)"
+  # configure the tool and record the pod's own id, which it does not know.
+  # umask 077 so neither lands world-readable; nothing is echoed.
+  $SSH "umask 077; runpodctl config --apiKey '$POD_KEY' >/dev/null 2>&1; \
+        printf '%s' '$POD' > /root/mvm/pod_id; chmod 600 /root/mvm/pod_id" \
+    >/dev/null 2>&1 && echo "  credential installed" \
+                    || echo "  FAILED to install credential"
+  # verify by a harmless read, never by a delete
+  $SSH "runpodctl pod get \$(cat /root/mvm/pod_id) -o json 2>/dev/null \
+        | grep -q '\"id\"' && echo VERIFIED || echo NOT_VERIFIED" \
+    2>/dev/null | grep -qi VERIFIED \
+    && echo "  VERIFIED: the pod can reach the API as itself" \
+    || echo "  NOT VERIFIED — the watchdog remains the only reap"
+  # deadline reaper on the pod: covers a HUNG run, which nothing else did
+  $SSH "nohup sh -c 'sleep $((TERM_H * 3600)); \
+        runpodctl remove pod \$(cat /root/mvm/pod_id)' \
+        > $RUN_DIR/reaper.log 2>&1 < /dev/null &" >/dev/null 2>&1 \
+    && echo "  deadline reaper armed (+${TERM_H}h, laptop-independent)"
+else
+  echo "REAP: pod-side reaping NOT armed (no key found, or NETVOL=none)."
+  echo "  The laptop watchdog is then the ONLY reap — keep the lid OPEN."
+fi
 
 echo "starting detached training run (log + checkpoints in $RUN_DIR)"
 # 2026-08-17: this ssh can HANG after the remote nohup succeeds — the
@@ -286,7 +298,7 @@ ENVEOF
 nohup caffeinate -dimsu bash "$SRC_DIR/watch_run_a3.sh" "$ENVF" \
   >> "$DEST/watchdog.log" 2>&1 < /dev/null &
 WPID=$!
-echo "watchdog spawned (pid $WPID) — THIS IS THE ONLY REAP. A pod cannot delete itself (measured 2026-09-16: no pod id, no credential), so keep this Mac POWERED and the LID OPEN until the run reports."
+echo "watchdog spawned (pid $WPID) — BACKSTOP. The pod reaps itself on completion and at its deadline (credential installed above); this watchdog covers the case where that fails."
 
 cat <<EOF
 
