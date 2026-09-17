@@ -280,8 +280,14 @@ if [ -n "$POD_KEY" ] && [ "$NETVOL" != "none" ]; then
         printf '%s' '$POD' > /root/mvm/pod_id; chmod 600 /root/mvm/pod_id" \
     >/dev/null 2>&1 && echo "  credential installed" \
                     || echo "  FAILED to install credential"
-  # verify by a harmless read, never by a delete
-  $SSH "runpodctl pod get \$(cat /root/mvm/pod_id) -o json 2>/dev/null \
+  # verify by a harmless read, never by a delete.
+  # VERB-FIRST on purpose: the pod image ships runpodctl 1.14.15, which
+  # has no `pod` subcommand at all ("unknown command \"pod\""). The local
+  # CLI is 2.6.1 and takes the noun-first form, which is why line ~183
+  # above differs. Measured on a live pod 2026-09-17; before this fix the
+  # check could only ever report NOT VERIFIED, which after the
+  # reaper-key change means a launch would stop on a false alarm.
+  $SSH "runpodctl get pod \$(cat /root/mvm/pod_id) -o json 2>/dev/null \
         | grep -q '\"id\"' && echo VERIFIED || echo NOT_VERIFIED" \
     2>/dev/null | grep -qi VERIFIED \
     && echo "  VERIFIED: the pod can reach the API as itself" \
