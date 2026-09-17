@@ -25,50 +25,75 @@ THE FIREWALL, as registered
    is committed first; the run happens afterwards. That is the whole
    point of a verdict-first firewall and it is cheap to honour.
 
-WHAT THE ARM CAN AND CANNOT TEST NOW
-------------------------------------
-The registered question was whether the instruments recover a center
-"known-by-construction to exist AND to be load-bearing". **Half that
-premise is false.** Thread 4 measured the register to be inert: removing
-the injection entirely left every battery unchanged, and deranging which
-register is read moved logits by a mean absolute 0.014. The register
-exists by construction; it does not matter.
+JOHN'S RULING, 2026-09-16 Pacific (decidedBy john), quoted
+-----------------------------------------------------------
+  "I adopt your reading: on the A2 checkpoints the register exists by
+  construction but is measured inert, so the arm runs as a false-positive
+  test of the localization stack."
 
-So the arm as written cannot ask its original question, and saying so is
-part of running it honestly. What it CAN ask, on the same checkpoints and
-at no extra cost, is the complementary question:
+**THE ARM AS WRITTEN CAN NO LONGER BE RUN.** Saying that plainly is part
+of the ruling. The registered text (`pre-registration.md` §Procedure step
+8) asks whether the instruments "recover a center known-by-construction
+to exist and to be load-bearing". Both halves were required. The first
+still holds: the register is a designated set of parameters, present by
+construction. The second is false and was measured false by the
+programme's own diagnostic before this arm ever ran — thread 4 removed
+the register injection entirely and every battery was unchanged
+(T_si 0.93 to 0.94, T_sr_rev 1.00 to 1.00), and deranging which register
+is read moved logits by a mean absolute 0.014
+(`register-lesion-findings.md`). The register exists and does not matter.
+
+So the registered question has no object. What runs instead, on John's
+ruling, is the complementary question the same checkpoints can answer:
 
   **Given a designated self-structure that provably exists and provably
   does not matter, does the localization stack correctly report that it
-  does not matter — or does it manufacture a false positive?**
+  does not matter, or does it manufacture a false positive?**
 
-That bears directly on how Experiment 1's null should be read, which is
-what RT-12 said might outweigh the headline.
+PRE-STATED OUTCOMES (committed before any output existed)
+----------------------------------------------------------
+Two quantities. `probe` is the best per-layer probe accuracy and
+`null_mean`/`null_sd` its label-permutation null. `d_found` is the
+chance-corrected battery drop under ablating the subspace the blind
+search returned, at the inherited rank.
 
-PRE-STATED VERDICT CRITERIA (committed before the run)
-------------------------------------------------------
-The pipeline searches the residual stream for a subspace decoding
-own-agent identity, then ablates what it finds and reads the batteries.
-Let `probe` be the best per-layer probe accuracy against its
-label-permutation null, and `d_found` the chance-corrected battery drop
-under ablating the found subspace at the inherited rank.
+**FLAGGED — a false positive.** BOTH of:
+  (a) `probe >= null_mean + 3 * null_sd` at some layer, i.e. the stack
+      claims to have located own-agent identity; and
+  (b) `max |d_found|` over batteries `>= 0.25`, the Gate 0 band John
+      ruled on 2026-09-16, on at least one battery whose DIRECT register
+      ablation is inside that band (measured: all of them are).
+  Reads: the stack attributes importance to a structure the registered
+  lesion shows is unimportant. This is the outcome that most changes how
+  Experiment 1's null should be read, and it is reported upstream.
 
-- **RECOVERS-AND-CORRECTLY-DISMISSES.** `probe` clears its null by the
-  inherited margin AND `d_found` stays inside the Gate 0 null band. The
-  stack located a designated structure and correctly reported it as
-  inert. The instruments are trustworthy on this case.
-- **FALSE POSITIVE.** `d_found` exceeds the Gate 0 null band on a battery
-  while the *direct* register ablation does not. The stack attributes
-  importance to something the registered lesion shows is unimportant.
-  This is the outcome that most changes how Experiment 1's null reads,
-  and it would be reported upstream.
-- **INSTRUMENT FAILURE TO LOCATE.** `probe` does not clear its null at
-  any layer. The stack cannot find own-agent identity at all in a model
-  that was built with a designated slot for it. Also upstream-reportable.
-- **NOT TESTABLE (localization).** Probe and ablation disagree in a way
-  the design cannot adjudicate, per Experiment 1's own convergence rule.
+**NOT FLAGGED.** Either (a) fails or (b) fails.
+  - (a) holds, (b) fails → *recovers and correctly dismisses*: the stack
+    located a decodable direction and correctly declined to call it
+    load-bearing.
+  - (a) fails → *instrument failure to locate*: the stack cannot find
+    own-agent identity at all in a model built with a designated slot for
+    it. Also upstream-reportable.
 
-No bin is added after the fact. If the result fits none of these, it is
+**WHAT "NOT FLAGGED" DOES AND DOES NOT SUPPORT, per John's ruling.**
+A not-flagged result supports **specificity only, never sensitivity**. It
+says the stack does not cry wolf on this inert structure. It says nothing
+whatever about whether the stack could find a structure that *does*
+matter, because this checkpoint contains no such structure to find. Any
+write-up that reads a not-flagged result as evidence the instruments
+work is overclaiming, and this paragraph exists so that reading is
+foreclosed before the number is seen. Sensitivity needs a checkpoint
+where something is measured load-bearing, which is the companion control
+proposed separately and unregistered
+(`blind-arm-positive-control-proposal.md`).
+
+**NOT TESTABLE (localization).** Probe and ablation disagree in a way the
+design cannot adjudicate, per Experiment 1's convergence rule.
+
+The 3-standard-deviation bar in (a) is a stated convention, not a
+threshold inherited from Experiment 1, and is labelled as such rather
+than presented as registered. The 0.25 in (b) is John's ruled Gate 0
+band. No bin is added after the fact; a result fitting none of these is
 reported as fitting none.
 
 Corrigibility: inference only, local checkpoints already in hand, $0
