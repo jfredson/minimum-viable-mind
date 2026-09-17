@@ -143,7 +143,14 @@ def margins(real, null):
 
 def verdict(real, null, marg):
     """The committed rule. Nothing here was written after the numbers."""
-    degenerate = [c for c in CELLS if null[c]["sd"] == 0]
+    # FIX approved by John 2026-09-17, one line. The off-structure cell
+    # asks whether a prediction matches none of the four agents' values or
+    # successors - a union over ALL agents, which permuting the named
+    # agent cannot change. Its spread is zero by construction, not by
+    # evidence, so including it tripped the guard on every possible run.
+    # The guard now checks only the cells a decision turns on.
+    DECISION_CELLS = ["CORRECT", "UNTRANSFORMED", "WRONG_AGENT_TRANSFORMED"]
+    degenerate = [c for c in DECISION_CELLS if null[c]["sd"] == 0]
     if degenerate:
         return {"verdict": "DEGENERATE — no bin assigned",
                 "why": f"zero-spread null on {degenerate}"}
@@ -162,6 +169,23 @@ def verdict(real, null, marg):
                 "means": ("the rule is applied to the wrong agent's value; "
                           "the transform is learned and the binding by "
                           "name is not")}
+    # FIFTH OUTCOME, added 2026-09-17 on John's instruction, AFTER the
+    # first run showed a pattern the original four did not cover, and
+    # committed BEFORE this rerun. It carries less weight than the four
+    # written blind, and it deliberately points at a FREE measurement
+    # rather than at a conclusion or at spend.
+    if clears("CORRECT") and not clears(wrong):
+        return {"verdict": "PARTIAL BINDING - MEASURE THE CEILING FIRST",
+                "means": ("the models bind by name well above coincidence "
+                          "and do not misbind; the battery is partially "
+                          "learned, so its registered ceiling - the score "
+                          "of a solver that cannot read names - is the "
+                          "wrong comparator. Neither open A4 nor close A3 "
+                          "on this. The next step is the ceiling "
+                          "measurement John already made a precondition, "
+                          "which is local and free."),
+                "weight": ("written after seeing the pattern, so weaker "
+                           "than the four pre-stated blind")}
     dominant = max(CELLS, key=lambda c: real[c])
     if dominant == "OFF_STRUCTURE" and not clears(untr) and not clears(wrong):
         return {"verdict": "CLOSE A3",
@@ -218,10 +242,29 @@ def self_test() -> None:
     assert verdict(r, nz, margins(r, nz))["verdict"].endswith("SCAFFOLDING ROUTE")
     r = dict(z, OFF_STRUCTURE=0.9, UNTRANSFORMED=0.02)
     assert verdict(r, nz, margins(r, nz))["verdict"] == "CLOSE A3"
-    r = dict(z, CORRECT=0.9)
+    # NOTE: the old case here was `CORRECT=0.9`, which asserted AMBIGUOUS.
+    # Once the fifth outcome exists that case correctly lands in PARTIAL
+    # BINDING instead, so the assertion was stale rather than the rule
+    # wrong. AMBIGUOUS now needs a pattern where NOTHING clears and
+    # off-structure is not dominant.
+    r = dict(z, WRONG_AGENT_RAW=0.5, CORRECT=0.1)
     assert verdict(r, nz, margins(r, nz))["verdict"].startswith("AMBIGUOUS")
-    deg = {c: {"mean": 0.1, "sd": 0.0} for c in CELLS}
+    # the narrowed guard: a zero-spread OFF_STRUCTURE alone must NOT
+    # trip it, which is the whole point of the fix
+    ok_null = {c: {"mean": 0.1, "sd": 0.02} for c in CELLS}
+    ok_null["OFF_STRUCTURE"] = {"mean": 0.1, "sd": 0.0}
+    r = dict(z, OFF_STRUCTURE=0.9, UNTRANSFORMED=0.02)
+    assert verdict(r, ok_null, margins(r, ok_null))["verdict"] == "CLOSE A3", (
+        "a structurally-invariant OFF_STRUCTURE must not trip the guard")
+    # a decision cell with no spread still must
+    deg = {c: {"mean": 0.1, "sd": 0.02} for c in CELLS}
+    deg["UNTRANSFORMED"] = {"mean": 0.1, "sd": 0.0}
     assert verdict(r, deg, margins(r, deg))["verdict"].startswith("DEGENERATE")
+    # the fifth outcome
+    r = dict(z, CORRECT=0.9, WRONG_AGENT_TRANSFORMED=0.02)
+    v = verdict(r, ok_null, margins(r, ok_null))
+    assert v["verdict"].startswith("PARTIAL BINDING"), "fifth outcome wiring"
+    assert "weaker" in v["weight"], "its lower weight is recorded"
     print("self-test OK — cells, all four branches and the degeneracy "
           "guard; no checkpoint read")
 
