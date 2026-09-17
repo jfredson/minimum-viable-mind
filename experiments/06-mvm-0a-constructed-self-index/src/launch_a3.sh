@@ -286,7 +286,7 @@ ENVEOF
 nohup caffeinate -dimsu bash "$SRC_DIR/watch_run_a3.sh" "$ENVF" \
   >> "$DEST/watchdog.log" 2>&1 < /dev/null &
 WPID=$!
-echo "watchdog spawned (pid $WPID) — the pod now also self-terminates on completion, so this is the BACKSTOP not the only reap; still keep this Mac powered and the lid OPEN"
+echo "watchdog spawned (pid $WPID) — THIS IS THE ONLY REAP. A pod cannot delete itself (measured 2026-09-16: no pod id, no credential), so keep this Mac POWERED and the LID OPEN until the run reports."
 
 cat <<EOF
 
