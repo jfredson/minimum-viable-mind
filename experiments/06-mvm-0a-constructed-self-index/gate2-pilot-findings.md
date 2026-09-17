@@ -22,6 +22,35 @@ trajectory only.
 | T_state (ownership-free) | 1.000 | 0.999 | — |
 | T_syntax (floor check) | 1.000 | 1.000 | — |
 
+> **ANNOTATION, 2026-09-17. The table above is unchanged and correct for
+> the evaluation draw it reports. What it does not say is that the draw
+> was a lucky one, and every figure below inherits from it.**
+>
+> This evaluation is seeded, and the score moves between draws. These
+> numbers come from the single **default** evaluation seed. Measured
+> across six independent seeds at the same 800 episodes, the pilot's
+> typical values are:
+>
+> | quantity | this table | across six seeds |
+> |---|---|---|
+> | primary, intact | 0.506 | **0.5683** (sd 0.0076) |
+> | primary, acting channel zeroed | 0.182 | **0.1988** (sd 0.0173) |
+> | corrected drop | 1.5147 | **1.337** (sd 0.057) |
+>
+> So the default seed flatters **twice**: it understates the intact score
+> and overstates the lesion's effect. The published drop of 1.515 sits
+> about three standard deviations above the typical 1.337.
+>
+> **No conclusion changes.** Even the low end of the drop is more than
+> seven times the locked threshold of 0.1777, and the ownership-free
+> batteries do not move on any draw. The finding was never marginal; only
+> the number quoted was unusually favourable.
+>
+> **Anywhere 0.506 or 1.515 is quoted, the spread belongs beside it.**
+> Measured in `a3-gates/eval_noise_a3.json` and
+> `a3-gates/endpoint_validation_pilot.json`; the same treatment across all
+> three checkpoints is in `seeds-endpoint-findings.md`.
+
 **The primary battery is 0.214 above the best score any ownership-blind
 solver can reach.** The shortcut sweep put that ceiling at 0.2921 and
 confirmed it empirically at 0.3036 over 12,000 episodes. So the model is
