@@ -105,3 +105,72 @@ The control battery fails its floor on all three checkpoints, the
 registered differential clause is uncomputable everywhere, and the
 control's ceiling was registered as verified and never was. None of that
 depends on this diagnostic, and none of it moved.
+
+---
+
+# Rerun, 2026-09-17, after John approved the fix and a fifth outcome
+
+*Fix and new cell committed at `aa71845`, **before** this rerun. Same
+checkpoints, same data, same classification.*
+
+## Result: PARTIAL BINDING — MEASURE THE CEILING FIRST, on all three
+
+**The fix changed only the guard, and nothing else.** Every cell rate and
+every margin is **bit-identical** to the first run on all three
+checkpoints. That is the verification that matters: the one-line change
+touched the degeneracy check and did not disturb the measurement.
+
+| checkpoint | verdict |
+|---|---|
+| pilot (seed 0) | partial binding — measure the ceiling first |
+| seed 1 | partial binding — measure the ceiling first |
+| seed 2 | partial binding — measure the ceiling first |
+
+## This is not independent confirmation, and should not be read as any
+
+I predicted this outcome before the rerun, and that is not to my credit.
+**The fifth cell was written to describe a pattern I had already seen in
+the first run.** Of course it fires. A cell fitted to observed data and
+then found to match that data has confirmed nothing.
+
+What the rerun establishes is narrower and worth having: the pattern is
+consistent across all three checkpoints, and the fixed guard now lets a
+verdict through instead of tripping unconditionally. The module carries
+the lower weight in its own output on every checkpoint, so the caveat
+travels with the number rather than living only here.
+
+## What it says, at the weight it deserves
+
+The models bind by name substantially — 18 to 24 standard deviations above
+what the same answers would score had a different agent been named — and
+they avoid wrong-agent bindings far below coincidence. So the control
+battery is **partially learned**, not dead.
+
+Its registered ceiling is the score of a solver that **cannot read
+names**. The models land at roughly that level while doing something the
+comparator does not do at all. Two numbers coinciding without measuring
+the same thing is how a partially-working battery came to look like a
+failed one.
+
+## The indicated next step, which is free and not yet run
+
+**Measure the control battery's ceiling properly.** John has already made
+this a precondition of any Amendment A4. The diagnostic now points at it
+independently.
+
+It is local and costs nothing, but it needs its own method fixed in
+advance, because "the ceiling" is exactly what turned out to be
+ill-defined. At minimum that means deciding, before running anything, what
+solver defines it: a name-keyed lookup solver, an adversarial sweep of the
+kind the primary battery got and this one never did, or both reported
+separately. **That method should be written and reviewed before it runs**,
+on the same discipline as everything else this week.
+
+**Not run. Awaiting John.**
+
+## What still has not moved
+
+The control fails its floor on all three checkpoints. The registered
+differential clause is uncomputable everywhere. The ceiling was registered
+as verified and never was. None of that depends on this diagnostic, and
+none of it changed.
