@@ -13,6 +13,86 @@ mooted by the ceiling measurement the same evening.*
 
 ---
 
+> # NOT REGISTERED. Amendment A4 was refused.
+>
+> **RULED 2026-09-19 (John), second ruling of the day, superseding the
+> first. Nothing in this memo is rewritten.**
+>
+> An independent red-team pass — `experiments/06-mvm-0a-constructed-self-index/red-team-a4.md`,
+> 22 findings, on main at `770c142` — is **fatal on F1, F2, F6, F14 and
+> F15**. **Amendment A4 is not registered. The seeds 3, 4 and 5 wave does
+> not launch. A3 stays open, not closed.** No version two was written;
+> John ruled against one.
+>
+> The draft amendment and its scoring script are parked, unregistered, on
+> the branch `withdrawn/amendment-a4-2026-09-19` and are absent from main.
+>
+> **The red team's kill case, quoted in full:**
+>
+> > Under the only damage operation the programme can currently read, the
+> > clause cannot fail on any checkpoint resembling the three in hand: the
+> > comparator has a fifth of the self-directed battery's room to fall, so
+> > the cell the repair exists to make reachable is arithmetically
+> > unreachable, and the positive cell will fire with a many-sigma number
+> > under the registered positive bin's name. The calibration that is meant
+> > to set the bar sets a number near 2 on any substrate, and two of its
+> > three substrates cannot be run because their tokenizer is not the A3
+> > tokenizer. The application that would make the clause informative, a
+> > localized lesion, is gated behind a stack that has found nothing on any
+> > seed. So the $30 buys three more instances of C1's already replicated
+> > result, relabelled. Close A3 on the record as it stands, state the
+> > matched self/other contrast as the design's unmet requirement, and
+> > register a separation clause only when there is a localized lesion to
+> > read it on and a comparator that can fall as far as the battery it is
+> > compared against.
+>
+> **What this memo got wrong, stated against the memo rather than around
+> it.** The two findings that kill it are ones my own red-team pass did
+> not reach, and one is a factual claim in §5.5 that I could have checked
+> and did not.
+>
+> - **F1.** §6.1 raised the comparator's inertness as the strongest
+>   objection and judged the second comparator an adequate mitigation.
+>   The arithmetic says otherwise. The comparator can fall at most about
+>   0.19 even if annihilated, against a self-directed fall of 0.37 to
+>   0.43 on the seen seeds, so the separation score is of order 3 to 5 in
+>   the worst case for the hypothesis and about 10 in the case the record
+>   shows, against a threshold near 2. **The generic-binding cell could
+>   not fire.** §5.2 and §6.5 claimed that making it fireable was most of
+>   what the amendment was for; that claim is false. In the red team's
+>   words, *"a clause that can only lose by an already replicated result
+>   failing to replicate a fourth time is not a wager on the question it
+>   is named for."*
+> - **F2.** §3 argued that both queries live in the same episode, so the
+>   contrast is matched. True of the episode text, false of the two
+>   measurements: the self-directed score is read at the own revision
+>   position, **which is exactly where the acting channel injects and
+>   where the lesion strikes**, and the other-directed score at a question
+>   appended after the whole episode. A position-local disruption carrying
+>   nothing about ownership satisfies the clause, and the random baseline
+>   cannot catch it because those operators damage every position alike.
+>   Amendment A3's own registered text already conceded this for this
+>   lesion — *"the wire lesion cannot separate them"* — and this memo
+>   proposed to read a verdict on the wire lesion.
+> - **F6.** My own pass (RT-A4-04) found the threshold self-normalizes
+>   and withdrew §5.5's claim, but treated it as a shrunken claim rather
+>   than a hole. The hole is that the quantity which actually decides the
+>   verdict was left unspecified, and therefore choosable after the lock.
+> - **F14.** Condition (f) fails by construction: the random
+>   matched-subspace draws *define* the threshold as their own 95th
+>   percentile, so one draw in twenty exceeds it.
+> - **F15.** §5.5's two twin substrates **cannot run at all**. Verified
+>   independently rather than taken on trust: 70 of the 103 shared tokens
+>   carry different ids between the two tokenizers, the A3 tokens `by` and
+>   `next` have no id in the twins' vocabulary, and the twins' embedding
+>   table is 103 wide against A3's 105. I asserted the substrates were
+>   legitimate on a Gate 0 precedent and never checked the tokenizer.
+>
+> **The annotation below records the first ruling of 2026-09-19 and is
+> superseded by this one.** It is left unedited.
+
+---
+
 > **RULED 2026-09-19 (John). Candidate B. Nothing below is rewritten;
 > this annotation records the ruling and what it changed.**
 >

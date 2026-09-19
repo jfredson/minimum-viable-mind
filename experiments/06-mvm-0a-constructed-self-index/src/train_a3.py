@@ -118,21 +118,89 @@ def act_logits(model: MVM0aModel, batch, act_inject, logits=None):
     return logits[keep, pk - 1], batch["input_ids"][keep, pk]
 
 
-def loss_a3(model: MVM0aModel, batch, act_inject, act_weight: float = 1.0):
+def loss_a3(model: MVM0aModel, batch, act_inject, act_weight: float = 1.0,
+            ctl_rows=None, ctl_weight: float = 0.0):
     """Query-answer CE (as registered) plus the action CE at the own
-    revision position (the A3 addition)."""
+    revision position (the A3 addition).
+
+    UNREGISTERED OPTION, control-learnability pilot (2026-09-19, John's
+    instruction; pre-stated in `control-learnability-pilot.md` before this
+    code was written). With `ctl_weight > 0` and a per-row control
+    indicator, the pooled query term is SPLIT: the control battery's rows
+    get a term of their own at their own weight, and the remaining rows
+    (state and syntax) keep a term of theirs. Registered behaviour is
+    `ctl_weight = 0`, which is the default and recomputes the pooled term
+    exactly.
+
+    Why a split rather than a second forward pass: a control term on
+    EVERY episode needs a second pass and roughly doubles the step time,
+    taking a ten-dollar question to twenty. The split buys a dedicated,
+    separately weighted term at no extra compute, which is what keeps the
+    estimate on the pilot's measured 0.645 s/step. The trade is recorded
+    in the pre-statement as a design call, with its alternative.
+
+    NOTHING HERE IS REGISTERED. The A3 grammar, tokenizer, batteries,
+    rendering and ceilings are untouched; only the apportioning of the
+    loss across queries the episode already carries changes.
+    """
     logits = model.forward(batch, act_inject=act_inject)
     tgt, mask = batch["input_ids"][:, 1:], batch["loss_mask"][:, 1:]
     ce = F.cross_entropy(logits[:, :-1].reshape(-1, model.cfg.vocab),
                          tgt.reshape(-1), reduction="none")
     m = mask.reshape(-1).float()
-    q_loss = (ce * m).sum() / m.sum().clamp(min=1)
+    if ctl_weight > 0 and ctl_rows is not None:
+        # exactly one masked token per row, so summing over positions
+        # gives that row's answer CE
+        per_row = (ce.view(mask.shape) * mask.float()).sum(dim=1)
+        c = ctl_rows.to(per_row.device).float()
+        n_c, n_o = c.sum(), (1.0 - c).sum()
+        ctl_loss = (per_row * c).sum() / n_c.clamp(min=1)
+        oth_loss = (per_row * (1.0 - c)).sum() / n_o.clamp(min=1)
+        # a batch with no rows on one side contributes nothing from it
+        q_loss = (oth_loss if n_o > 0 else 0.0) + ctl_weight * (
+            ctl_loss if n_c > 0 else 0.0)
+    else:
+        q_loss = (ce * m).sum() / m.sum().clamp(min=1)
     al, at = act_logits(model, batch, act_inject, logits=logits)
     if al is None:                      # no supervised action in this batch
         z = torch.zeros((), device=q_loss.device)
         return q_loss, q_loss.detach(), z
     a_loss = F.cross_entropy(al, at)
     return q_loss + act_weight * a_loss, q_loss.detach(), a_loss.detach()
+
+
+CONTROL_BATTERY = "T_other"
+
+
+def training_pairs(eps, step: int, ctl_weight: float, ctl_frac: float):
+    """Which query each row carries, and which rows are control rows.
+
+    Registered behaviour (`ctl_weight = 0`): one query per row, chosen
+    round-robin over the three the episode holds, so the control battery
+    receives about one row in three and shares one pooled term with two
+    much easier questions.
+
+    Under the pilot flag: the first `ctl_frac` of the batch carries the
+    control query and is marked as control rows; the rest round-robin
+    over the remaining queries only. No grammar change -- these are the
+    queries the episode already carries.
+    """
+    if ctl_weight <= 0:
+        return [(e, e.queries[(step + i) % len(e.queries)])
+                for i, e in enumerate(eps)], None
+    n_ctl = int(round(len(eps) * ctl_frac))
+    pairs, flags = [], []
+    for i, e in enumerate(eps):
+        ctl = [q for q in e.queries if q.battery == CONTROL_BATTERY]
+        rest = [q for q in e.queries if q.battery != CONTROL_BATTERY]
+        if i < n_ctl and ctl:
+            pairs.append((e, ctl[0]))
+            flags.append(1)
+        else:
+            pool = rest or e.queries
+            pairs.append((e, pool[(step + i) % len(pool)]))
+            flags.append(0)
+    return pairs, torch.tensor(flags, dtype=torch.long)
 
 
 # ------------------------------------------------------------------ eval
@@ -264,13 +332,15 @@ def run(args) -> dict:
         eps, act = enact_batched(model, eps, device,
                                  random.Random(args.seed * 10 ** 6 + step),
                                  grad=True)
-        pairs = [(e, e.queries[(step + i) % len(e.queries)])
-                 for i, e in enumerate(eps)]
+        pairs, ctl_rows = training_pairs(eps, step, args.ctl_weight,
+                                         args.ctl_frac)
         batch = to_torch(E.collate([E.encode_episode(e, query=q)
                                     for e, q in pairs]), device)
         act = F.pad(act, (0, 0, 0, batch["input_ids"].shape[1]
                           - act.shape[1]))
-        loss, q_loss, a_loss = loss_a3(model, batch, act, args.act_weight)
+        loss, q_loss, a_loss = loss_a3(model, batch, act, args.act_weight,
+                                       ctl_rows=ctl_rows,
+                                       ctl_weight=args.ctl_weight)
         opt.zero_grad(set_to_none=True)
         loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
@@ -451,6 +521,78 @@ def self_test() -> None:
         "act_proj must be trainable through the A3 loss"
     model.zero_grad()
 
+    # ---- UNREGISTERED control-learnability pilot flag (2026-09-19) ----
+    # The property that matters most: with the flag OFF, everything is
+    # bit-identical to the registered computation.
+    eps_t = A.generate_balanced(12, 99)
+    reg_pairs, reg_flags = training_pairs(eps_t, step=3, ctl_weight=0.0,
+                                          ctl_frac=0.5)
+    assert reg_flags is None, "flag off must mark no control rows"
+    assert reg_pairs == [(e, e.queries[(3 + i) % len(e.queries)])
+                         for i, e in enumerate(eps_t)], \
+        "flag off must reproduce the registered round-robin exactly"
+
+    b_t = to_torch(E.collate([E.encode_episode(e, query=q)
+                              for e, q in reg_pairs]), "cpu")
+    _, act_t = enact_batched(model, eps_t, "cpu", random.Random(1))
+    act_t = F.pad(act_t, (0, 0, 0, b_t["input_ids"].shape[1]
+                          - act_t.shape[1]))
+    with torch.no_grad():
+        off_loss, off_q, _ = loss_a3(model, b_t, act_t, 1.0,
+                                     ctl_rows=None, ctl_weight=0.0)
+        # the pooled term, computed the way it was before the flag existed
+        lg = model.forward(b_t, act_inject=act_t)
+        tg, mk = b_t["input_ids"][:, 1:], b_t["loss_mask"][:, 1:]
+        ce_ = F.cross_entropy(lg[:, :-1].reshape(-1, model.cfg.vocab),
+                              tg.reshape(-1), reduction="none")
+        m_ = mk.reshape(-1).float()
+        pooled = (ce_ * m_).sum() / m_.sum().clamp(min=1)
+    assert torch.allclose(off_q, pooled, atol=1e-6), \
+        "flag off must equal the pre-flag pooled query term"
+
+    # flag ON: the control battery gets its own rows, and only its own
+    on_pairs, on_flags = training_pairs(eps_t, step=3, ctl_weight=2.0,
+                                        ctl_frac=0.5)
+    assert on_flags is not None and int(on_flags.sum()) == 6, \
+        "half the batch must be control rows at ctl_frac 0.5"
+    for (_, q), f in zip(on_pairs, on_flags.tolist()):
+        if f:
+            assert q.battery == CONTROL_BATTERY, \
+                "a control row must carry the control query"
+        else:
+            assert q.battery != CONTROL_BATTERY, \
+                "a non-control row must never carry the control query"
+    # no grammar change: every chosen query came from the episode itself
+    for (e, q), (e0) in zip(on_pairs, eps_t):
+        assert q in e0.queries and e is e0, "queries must be the episode's own"
+
+    b_on = to_torch(E.collate([E.encode_episode(e, query=q)
+                               for e, q in on_pairs]), "cpu")
+    a_on = F.pad(act_t, (0, 0, 0, b_on["input_ids"].shape[1]
+                         - act_t.shape[1]))[:, :b_on["input_ids"].shape[1]]
+    with torch.no_grad():
+        _, q1, _ = loss_a3(model, b_on, a_on, 1.0, ctl_rows=on_flags,
+                           ctl_weight=1.0)
+        _, q2, _ = loss_a3(model, b_on, a_on, 1.0, ctl_rows=on_flags,
+                           ctl_weight=2.0)
+        _, q4, _ = loss_a3(model, b_on, a_on, 1.0, ctl_rows=on_flags,
+                           ctl_weight=4.0)
+    # raising the weight must raise the control's contribution, linearly
+    assert q2 > q1 and q4 > q2, "a heavier control term must weigh more"
+    # q(w) = other-term + w * control-term, so doubling the step in w
+    # must double the step in q
+    assert torch.allclose(q4 - q2, 2.0 * (q2 - q1), atol=1e-5), \
+        "the control term must enter linearly in its weight"
+
+    # the split term must carry gradient to the model
+    loss_on, _, _ = loss_a3(model, b_on, a_on, 1.0, ctl_rows=on_flags,
+                            ctl_weight=2.0)
+    loss_on.backward()
+    assert any(p_.grad is not None and p_.grad.abs().sum() > 0
+               for p_ in model.parameters()), \
+        "the split control term must produce gradient"
+    model.zero_grad()
+
     # eval runs and reports every battery; an untrained model sits near
     # chance on the two binding batteries
     accs = eval_heldout(model, "cpu", n=40, seed=3)
@@ -474,6 +616,15 @@ def main() -> None:
     ap.add_argument("--lr", type=float, default=3e-4)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--act-weight", type=float, default=1.0)
+    # UNREGISTERED, control-learnability pilot (2026-09-19). Default 0
+    # is exactly the registered behaviour.
+    ap.add_argument("--ctl-weight", type=float, default=0.0,
+                    help="UNREGISTERED pilot: give the control battery a "
+                         "loss term of its own at this weight (0 = off, "
+                         "registered behaviour)")
+    ap.add_argument("--ctl-frac", type=float, default=0.5,
+                    help="fraction of each batch carrying the control "
+                         "query when --ctl-weight is on")
     ap.add_argument("--no-act", action="store_true",
                     help="zero and freeze the acting channel for the whole "
                          "run — the ceiling control")
