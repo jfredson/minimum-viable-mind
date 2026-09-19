@@ -1,0 +1,13 @@
+{
+  "cell": "DOES NOT SEPARATE",
+  "per_checkpoint": {
+    "a3_30m_seed0.pt": "DOES NOT SEPARATE",
+    "a3_30m_seed1.pt": "DOES NOT SEPARATE",
+    "a3_30m_seed2.pt": "DOES NOT SEPARATE"
+  },
+  "denoised_tests_run": 15,
+  "denoised_tests_cleared": 0,
+  "cleared": [],
+  "triggers_blind_control_rerun": false,
+  "trigger_note": "John's instruction of 2026-09-19: a separation above the null on ANY checkpoint reruns the blind-arm positive control under the signed rule on the pilot and seeds 1 and 2 at 800 paired episodes. No separation anywhere means say so and stop."
+}
