@@ -1,0 +1,288 @@
+{
+  "diagnostic": "denoised own-agent direction (Pain Axis note, item 2)",
+  "registered": false,
+  "method_file": "denoised-direction-method.md",
+  "method_committed_before_output": true,
+  "checkpoint": "a3_30m_seed2.pt",
+  "checkpoint_md5": "f1f131cb78f27c57194bedd127fd4031",
+  "episodes": {
+    "pairs_requested": 200,
+    "episodes_probed": 400,
+    "content_seed": 20260917,
+    "positions": "revision (localize_a3.residuals_at)",
+    "label_counts": {
+      "0": 109,
+      "1": 103,
+      "2": 99,
+      "3": 89
+    },
+    "no_information_accuracy": 0.25
+  },
+  "settings": {
+    "probe_layers": [
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "folds": 4,
+    "permutations": 200,
+    "sd_bar": 3.0,
+    "control_variance_kept": 0.5
+  },
+  "layers": {
+    "3": {
+      "layer": 3,
+      "dimensions": 448,
+      "denoised_arm": {
+        "denoised": true,
+        "separation": 0.5053,
+        "separation_per_agent": [
+          0.5092,
+          0.488,
+          0.5351,
+          0.4888
+        ],
+        "null_mean": 0.5029,
+        "null_sd": 0.0215,
+        "margin_sd": 0.11,
+        "clears_3sd": false,
+        "nearest_average_accuracy": 0.2675,
+        "nearest_average_null_mean": 0.2485,
+        "nearest_average_note": "on the same scale as the five probe accuracies in blind-control-findings.md (no information 0.25); reported so the two tables read against each other, and carrying no outcome cell",
+        "components_removed_per_fold": [
+          4,
+          3,
+          4,
+          4
+        ],
+        "n": 400,
+        "no_information_value": 0.5
+      },
+      "undenoised_arm": {
+        "denoised": false,
+        "separation": 0.5062,
+        "separation_per_agent": [
+          0.4897,
+          0.479,
+          0.5792,
+          0.4768
+        ],
+        "null_mean": 0.5019,
+        "null_sd": 0.0201,
+        "margin_sd": 0.21,
+        "clears_3sd": false,
+        "nearest_average_accuracy": 0.27,
+        "nearest_average_null_mean": 0.2452,
+        "nearest_average_note": "on the same scale as the five probe accuracies in blind-control-findings.md (no information 0.25); reported so the two tables read against each other, and carrying no outcome cell",
+        "components_removed_per_fold": [],
+        "n": 400,
+        "no_information_value": 0.5
+      }
+    },
+    "4": {
+      "layer": 4,
+      "dimensions": 448,
+      "denoised_arm": {
+        "denoised": true,
+        "separation": 0.5025,
+        "separation_per_agent": [
+          0.4506,
+          0.4996,
+          0.5474,
+          0.5126
+        ],
+        "null_mean": 0.5039,
+        "null_sd": 0.0207,
+        "margin_sd": -0.07,
+        "clears_3sd": false,
+        "nearest_average_accuracy": 0.245,
+        "nearest_average_null_mean": 0.254,
+        "nearest_average_note": "on the same scale as the five probe accuracies in blind-control-findings.md (no information 0.25); reported so the two tables read against each other, and carrying no outcome cell",
+        "components_removed_per_fold": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "n": 400,
+        "no_information_value": 0.5
+      },
+      "undenoised_arm": {
+        "denoised": false,
+        "separation": 0.486,
+        "separation_per_agent": [
+          0.4785,
+          0.4953,
+          0.4463,
+          0.5239
+        ],
+        "null_mean": 0.5031,
+        "null_sd": 0.0199,
+        "margin_sd": -0.85,
+        "clears_3sd": false,
+        "nearest_average_accuracy": 0.2375,
+        "nearest_average_null_mean": 0.2512,
+        "nearest_average_note": "on the same scale as the five probe accuracies in blind-control-findings.md (no information 0.25); reported so the two tables read against each other, and carrying no outcome cell",
+        "components_removed_per_fold": [],
+        "n": 400,
+        "no_information_value": 0.5
+      }
+    },
+    "5": {
+      "layer": 5,
+      "dimensions": 448,
+      "denoised_arm": {
+        "denoised": true,
+        "separation": 0.476,
+        "separation_per_agent": [
+          0.442,
+          0.4826,
+          0.4899,
+          0.4896
+        ],
+        "null_mean": 0.5024,
+        "null_sd": 0.0209,
+        "margin_sd": -1.26,
+        "clears_3sd": false,
+        "nearest_average_accuracy": 0.255,
+        "nearest_average_null_mean": 0.2497,
+        "nearest_average_note": "on the same scale as the five probe accuracies in blind-control-findings.md (no information 0.25); reported so the two tables read against each other, and carrying no outcome cell",
+        "components_removed_per_fold": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "n": 400,
+        "no_information_value": 0.5
+      },
+      "undenoised_arm": {
+        "denoised": false,
+        "separation": 0.4813,
+        "separation_per_agent": [
+          0.4093,
+          0.4896,
+          0.485,
+          0.5413
+        ],
+        "null_mean": 0.5028,
+        "null_sd": 0.0199,
+        "margin_sd": -1.08,
+        "clears_3sd": false,
+        "nearest_average_accuracy": 0.26,
+        "nearest_average_null_mean": 0.25,
+        "nearest_average_note": "on the same scale as the five probe accuracies in blind-control-findings.md (no information 0.25); reported so the two tables read against each other, and carrying no outcome cell",
+        "components_removed_per_fold": [],
+        "n": 400,
+        "no_information_value": 0.5
+      }
+    },
+    "7": {
+      "layer": 7,
+      "dimensions": 448,
+      "denoised_arm": {
+        "denoised": true,
+        "separation": 0.5168,
+        "separation_per_agent": [
+          0.5087,
+          0.5379,
+          0.5083,
+          0.5122
+        ],
+        "null_mean": 0.4987,
+        "null_sd": 0.0193,
+        "margin_sd": 0.94,
+        "clears_3sd": false,
+        "nearest_average_accuracy": 0.2575,
+        "nearest_average_null_mean": 0.2482,
+        "nearest_average_note": "on the same scale as the five probe accuracies in blind-control-findings.md (no information 0.25); reported so the two tables read against each other, and carrying no outcome cell",
+        "components_removed_per_fold": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "n": 400,
+        "no_information_value": 0.5
+      },
+      "undenoised_arm": {
+        "denoised": false,
+        "separation": 0.5212,
+        "separation_per_agent": [
+          0.509,
+          0.5182,
+          0.5226,
+          0.535
+        ],
+        "null_mean": 0.5034,
+        "null_sd": 0.0209,
+        "margin_sd": 0.85,
+        "clears_3sd": false,
+        "nearest_average_accuracy": 0.245,
+        "nearest_average_null_mean": 0.2503,
+        "nearest_average_note": "on the same scale as the five probe accuracies in blind-control-findings.md (no information 0.25); reported so the two tables read against each other, and carrying no outcome cell",
+        "components_removed_per_fold": [],
+        "n": 400,
+        "no_information_value": 0.5
+      }
+    },
+    "8": {
+      "layer": 8,
+      "dimensions": 448,
+      "denoised_arm": {
+        "denoised": true,
+        "separation": 0.5214,
+        "separation_per_agent": [
+          0.5535,
+          0.4822,
+          0.5273,
+          0.5224
+        ],
+        "null_mean": 0.5037,
+        "null_sd": 0.0205,
+        "margin_sd": 0.87,
+        "clears_3sd": false,
+        "nearest_average_accuracy": 0.255,
+        "nearest_average_null_mean": 0.2514,
+        "nearest_average_note": "on the same scale as the five probe accuracies in blind-control-findings.md (no information 0.25); reported so the two tables read against each other, and carrying no outcome cell",
+        "components_removed_per_fold": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "n": 400,
+        "no_information_value": 0.5
+      },
+      "undenoised_arm": {
+        "denoised": false,
+        "separation": 0.5161,
+        "separation_per_agent": [
+          0.5058,
+          0.5457,
+          0.5005,
+          0.5124
+        ],
+        "null_mean": 0.5022,
+        "null_sd": 0.0205,
+        "margin_sd": 0.68,
+        "clears_3sd": false,
+        "nearest_average_accuracy": 0.2575,
+        "nearest_average_null_mean": 0.2485,
+        "nearest_average_note": "on the same scale as the five probe accuracies in blind-control-findings.md (no information 0.25); reported so the two tables read against each other, and carrying no outcome cell",
+        "components_removed_per_fold": [],
+        "n": 400,
+        "no_information_value": 0.5
+      }
+    }
+  },
+  "checkpoint_cell": {
+    "cell": "DOES NOT SEPARATE",
+    "layers_cleared": [],
+    "means": "own-agent identity is not linearly decodable at the probed positions on this checkpoint, even after the loudest ownership-irrelevant directions are removed"
+  },
+  "limits": "UNREGISTERED. A separation above the null would show the localization stack was insensitive rather than the signal absent; it would NOT show that what separates is a carried self-index rather than the acting channel's input trace passed forward (red-team objection R1). Fifteen tests across three checkpoints at a three-standard-deviation bar clear by chance about two per cent of the time, so the count of clearances matters and is reported.",
+  "elapsed_sec": 46.7
+}
