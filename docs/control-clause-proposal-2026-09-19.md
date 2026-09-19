@@ -13,6 +13,54 @@ mooted by the ceiling measurement the same evening.*
 
 ---
 
+> **RULED 2026-09-19 (John). Candidate B. Nothing below is rewritten;
+> this annotation records the ruling and what it changed.**
+>
+> - **B: register Amendment A4.** Drafted at
+>   `experiments/06-mvm-0a-constructed-self-index/amendment-a4.md` —
+>   **held uncommitted**, see the last item.
+> - **Three fresh seeds — 3, 4 and 5 — as one wave**, not the two this
+>   memo costed. The §6.3 sub-decision is answered: the registered
+>   across-seed strength is restored. Revised cost **$30.5, band
+>   $27–39**, taking the A3 hard stop to about $64.8 of $100.
+> - **The partial-damage ladder is reported, not binding** (§5.6's
+>   recommendation, adopted).
+> - **Order: registration commit before launch; the threshold lock
+>   before any endpoint is read, and the registration states that order
+>   explicitly.** §6.4's recommendation, adopted and made a registered
+>   statement rather than a convention.
+> - **Two additions to the registered text.** (1) The prior is stated
+>   now, before the seeds exist: under input-channel removal,
+>   H_self-location is the predicted cell, and the informative
+>   application of the clause is a localized-subspace lesion. (2) The
+>   measured spread of the ownership-free comparator's change is reported
+>   alongside the verdict, **so a comparator that did not fall is a
+>   number, not a sentence** — which is the direct answer to this memo's
+>   §6.1, the objection I could not fully answer.
+> - **The registration commit is HELD** until John hands over the
+>   findings of an independent red-team pass running in another session.
+>   Those are folded in first, then steps 2 through 6 of §8 proceed.
+>   **Nothing launches without John's go in his own words.**
+>
+> **Red-team pass 1 has since run** (`a4-red-team-pass-1.md`, fifteen
+> items, all folded into the amendment draft). Three of its findings
+> change the clause and one corrects an error in this memo: **§5.4(b)'s
+> within-run baseline is wrong.** It shuffled the self/other labels, but
+> the two conditions are not exchangeable — about 0.57 against about 0.30
+> intact — so that baseline would have tested whether those two levels
+> are exchangeable, which they are not and which nobody asked. The
+> correct paired test flips the sign of each cell's difference; the
+> amendment uses that and says so on the record. The pass also found that
+> the new denominator could degenerate toward zero — the same failure
+> that killed the A3 clause — and that the clause had no magnitude
+> condition at all; both are fixed in the amendment, the second by tying
+> magnitude to John's already-locked 0.1777 rather than to a new number.
+> It also withdraws this memo's claim for how much §5.5's threshold
+> calibration buys: the score is standardized against its own null, so
+> the threshold lands near 2 on any substrate, and §5.5 oversold it.
+
+---
+
 ## The question, in one sentence
 
 The registered comparison at the heart of Amendment A3 — the primary
