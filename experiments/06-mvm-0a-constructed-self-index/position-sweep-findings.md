@@ -121,31 +121,64 @@ is 0.273 for the four-class targets and 0.060 for the marker word:
 | `register_index` — consistently defined | 0.330 (+2.93) | 0.320 (+2.79) | 0.295 (+1.87) | 0.303 (+2.02) | 0.303 (+1.93) |
 | `marker_token` — the input token itself | **0.550 (+51.6)** | 0.513 (+43.1) | 0.510 (+41.3) | 0.498 (+41.9) | 0.490 (+40.8) |
 
-**The read works, and not marginally.** The marker word sitting at that
-position decodes at 0.550 against a permutation null of 0.041 — a margin
-of **51.6 standard deviations**, against a no-information value of 0.04
-and a majority-class rate of 0.060. Capture, position indexing and the
-difference-of-averages read are all sound. The sweep's machinery was
-never the problem, and this is the positive control the method file
-should have used.
+**The read works, and on the pilot not marginally.** The marker word
+sitting at that position decodes at 0.550 against a permutation null of
+0.041 — a margin of **51.6 standard deviations**, against a
+no-information value of 0.04 and a majority-class rate of 0.060. Capture,
+position indexing and the difference-of-averages read are all sound. The
+sweep's machinery was never the problem, and this is the positive control
+the method file should have used.
 
-**The target is unreadable.** `own_slot` clears nothing at any layer, and
-at the very position where the model's own marker word is in the input
-and decoding at fifty standard deviations. The states carry the marker;
-the marker carries no information about the index we have been asking
-for.
+**The target is unreadable.** `own_slot` clears nothing at any layer, at
+the very position where the model's own marker word is in the input and
+decoding at fifty standard deviations. The states carry the marker; the
+marker carries no information about the index we have been asking for.
 
-**`register_index` is the interesting middle case.** The rank of the
-model's own marker among the four in the episode — consistently defined,
-already computed by the encoder as `turn_reg`, and genuinely recoverable
-from the input once all four markers have appeared — sits above its null
-at **all five layers**, at +2.93, +2.79, +1.87, +2.02 and +1.93 standard
-deviations. Not one of them clears the three-standard-deviation bar. So
-it is not a result. But a consistently defined target lifting at every
-layer, where the generator index scatters around zero, is exactly the
-asymmetry the diagnosis predicts, and it makes the register index the
-obvious candidate for a correctly posed target. It needs its own
-committed method and its own null, not this one.
+### Across all three checkpoints, which changes two of the claims above
+
+How many of the five layers clear their null by three standard
+deviations, at each position and target:
+
+| position | target | pilot | seed 1 | seed 2 |
+|---|---|---|---|---|
+| own marker token | `marker_token` | **5/5** (acc 0.49–0.55) | 3/5 (acc 0.06–0.10) | **5/5** (acc 0.10–0.12) |
+| own marker token | `register_index` | 0/5 (all above majority) | 0/5 (**none** above majority) | 0/5 (all above majority) |
+| own marker token | `own_slot` | 0/5 | 0/5 | 0/5 |
+| the anchor | `marker_token` | 0/5 | 0/5 | 0/5 |
+| the anchor | `register_index` | 0/5 | 0/5 | 0/5 |
+| the anchor | `own_slot` | 0/5 | 0/5 | 0/5 |
+
+**The claim that survives, and it is the one that matters: `own_slot`
+clears nothing in any of the thirty tests** — three checkpoints, two
+positions, five layers — while the input token at the marker position
+clears on all three checkpoints. The target is unreadable everywhere the
+read is working.
+
+**Two things I said on the pilot alone do not generalise, and are
+corrected here rather than left standing.**
+
+*The read is far weaker on seeds 1 and 2 than on the pilot.* The marker
+word is the input token at that position on every checkpoint, yet the
+pilot decodes it at 0.49–0.55 while seeds 1 and 2 manage only 0.06–0.12
+against a majority-class rate of 0.060. It still clears its null on both
+— comfortably on seed 2, at three of five layers on seed 1 — so the read
+is working there, but the margin between "the token is legible" and
+"nothing" is thin on seed 1 in a way it is not on the pilot. The three
+checkpoints were trained identically apart from their seed, on the same
+episodes, and this difference is unexplained. It is reported rather than
+tidied away, and it means the positive control is strong evidence on the
+pilot and weaker evidence on seed 1.
+
+*The register index is a weaker candidate than the pilot suggested.* On
+the pilot it sits above its null at all five layers (+2.93, +2.79, +1.87,
++2.02, +1.93) and above the majority-class rate at all five, and seed 2
+repeats that pattern (+1.88 to +2.24, all above majority). **Seed 1 does
+neither** — no layer above the majority-class rate. So the lift is not
+consistent across checkpoints. Nothing clears the bar anywhere. It
+remains the most plausible correctly posed target, because it is the only
+own-agent quantity here that is both consistently defined and recoverable
+from the input, but "obvious candidate" overstates what two of three
+checkpoints support. It needs its own committed method and its own null.
 
 ### The well-posed version of the question, and its answer
 
@@ -268,14 +301,21 @@ whose marker is *this*", not as the generator's array index.
    The candidates are the register index, which is consistently defined
    and already computed by the encoder, and the model's own marker word,
    which is the most direct statement of "which agent am I" the grammar
-   affords. Each needs a committed method file and a real null.
+   affords. Each needs a committed method file and a real null. Neither
+   is a safe bet: the register index lifts on two checkpoints of three
+   and clears on none.
 2. **Power.** Twenty-five marker words over 400 episodes is too thin. A
    well-posed marker-word test needs either far more episodes or a
    restricted marker pool.
-3. **Re-read what the earlier nulls are worth** once a well-posed target
+3. **Explain the gap between checkpoints first.** The same input token at
+   the same position and layers decodes at 0.55 on the pilot and 0.06 to
+   0.12 on seeds 1 and 2. Until that is understood, any read of those two
+   checkpoints rests on a positive control that barely holds, and a null
+   on them means correspondingly less.
+4. **Re-read what the earlier nulls are worth** once a well-posed target
    has been run. Until then they should be quoted as uninformative, not
    as null results.
-4. Arm 2's question is still open and worth asking again against a target
+5. Arm 2's question is still open and worth asking again against a target
    that carries signal.
 
 None of this is a proposal to change a registered clause, and none of it
