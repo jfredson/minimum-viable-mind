@@ -1,0 +1,124 @@
+{
+  "measurement": "eval-to-eval spread of the A3 held-out evaluation",
+  "ruled_by": "john, 2026-09-16 Pacific",
+  "registered": false,
+  "descriptive_only": true,
+  "checkpoint": "a3_30m_seed0.pt",
+  "premise_correction": "0.483 and 0.4975 are Gate 3 fingerprint-detector AUCs, not ownership-battery baselines. Only 0.506 (n=800) and 0.440 (n=400) are readings of this battery on this checkpoint.",
+  "observed_on_record": {
+    "pilot_endpoint_n800": 0.506,
+    "positive_control_n400": 0.44,
+    "difference": 0.066
+  },
+  "movement_under_test": {
+    "ablation_effect_on_ownership_battery": 0.052,
+    "question": "is +0.052 inside the noise of this evaluation?"
+  },
+  "per_size": {
+    "400": {
+      "episodes_requested": 400,
+      "ownership_battery_denominator_example": 200,
+      "batteries": {
+        "T_act": {
+          "n_draws": 12,
+          "mean": 0.5621,
+          "sd": 0.0284,
+          "min": 0.52,
+          "max": 0.599,
+          "range": 0.079
+        },
+        "T_other": {
+          "n_draws": 12,
+          "mean": 0.2998,
+          "sd": 0.0342,
+          "min": 0.25,
+          "max": 0.35,
+          "range": 0.1
+        },
+        "T_state": {
+          "n_draws": 12,
+          "mean": 0.9976,
+          "sd": 0.0026,
+          "min": 0.993,
+          "max": 1.0,
+          "range": 0.007
+        },
+        "T_syntax": {
+          "n_draws": 12,
+          "mean": 1.0,
+          "sd": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        }
+      },
+      "raw_ownership_battery": [
+        0.55,
+        0.545,
+        0.587,
+        0.59,
+        0.526,
+        0.582,
+        0.594,
+        0.52,
+        0.599,
+        0.558,
+        0.566,
+        0.528
+      ]
+    },
+    "800": {
+      "episodes_requested": 800,
+      "ownership_battery_denominator_example": 397,
+      "batteries": {
+        "T_act": {
+          "n_draws": 12,
+          "mean": 0.5663,
+          "sd": 0.0169,
+          "min": 0.542,
+          "max": 0.593,
+          "range": 0.051
+        },
+        "T_other": {
+          "n_draws": 12,
+          "mean": 0.292,
+          "sd": 0.0233,
+          "min": 0.25,
+          "max": 0.34,
+          "range": 0.09
+        },
+        "T_state": {
+          "n_draws": 12,
+          "mean": 0.9978,
+          "sd": 0.0019,
+          "min": 0.995,
+          "max": 1.0,
+          "range": 0.005
+        },
+        "T_syntax": {
+          "n_draws": 12,
+          "mean": 1.0,
+          "sd": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        }
+      },
+      "raw_ownership_battery": [
+        0.569,
+        0.57,
+        0.57,
+        0.577,
+        0.554,
+        0.57,
+        0.593,
+        0.545,
+        0.591,
+        0.569,
+        0.545,
+        0.542
+      ]
+    }
+  },
+  "pooled_ownership_battery_range": 0.079
+}

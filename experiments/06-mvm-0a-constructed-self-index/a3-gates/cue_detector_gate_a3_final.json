@@ -1,0 +1,111 @@
+{
+  "gate": "A3 Gate 1 \u2014 cue-detector runs (i) and (ii)",
+  "grammar": "curriculum_a3 (Candidate A)",
+  "k_revisers": 2,
+  "n_turns": 10,
+  "n_agents": 4,
+  "verdict_sampler": "amended: both arms agent-uniform",
+  "verdict_seeds": [
+    20260915,
+    11,
+    22,
+    33,
+    44
+  ],
+  "samplers": {
+    "amended_agent_uniform": {
+      "per_seed": [
+        {
+          "seed": 20260915,
+          "text_auc": 0.5058,
+          "tensor_auc": 0.5217,
+          "text_control": 0.9873,
+          "tensor_control": 1.0
+        },
+        {
+          "seed": 11,
+          "text_auc": 0.4878,
+          "tensor_auc": 0.5117,
+          "text_control": 0.9853,
+          "tensor_control": 1.0
+        },
+        {
+          "seed": 22,
+          "text_auc": 0.4942,
+          "tensor_auc": 0.4972,
+          "text_control": 0.9853,
+          "tensor_control": 1.0
+        },
+        {
+          "seed": 33,
+          "text_auc": 0.5041,
+          "tensor_auc": 0.5089,
+          "text_control": 0.9866,
+          "tensor_control": 1.0
+        },
+        {
+          "seed": 44,
+          "text_auc": 0.4779,
+          "tensor_auc": 0.527,
+          "text_control": 0.9888,
+          "tensor_control": 1.0
+        }
+      ],
+      "text_mean": 0.494,
+      "text_sd": 0.0116,
+      "tensor_mean": 0.5133,
+      "tensor_sd": 0.0116,
+      "weakest_positive_control": 0.9853,
+      "GATE": "PASS"
+    },
+    "registered_pooled": {
+      "per_seed": [
+        {
+          "seed": 20260915,
+          "text_auc": 0.5403,
+          "tensor_auc": 0.5441,
+          "text_control": 0.9842,
+          "tensor_control": 1.0
+        },
+        {
+          "seed": 11,
+          "text_auc": 0.5241,
+          "tensor_auc": 0.5361,
+          "text_control": 0.9824,
+          "tensor_control": 1.0
+        },
+        {
+          "seed": 22,
+          "text_auc": 0.5319,
+          "tensor_auc": 0.5428,
+          "text_control": 0.9826,
+          "tensor_control": 1.0
+        },
+        {
+          "seed": 33,
+          "text_auc": 0.5405,
+          "tensor_auc": 0.5478,
+          "text_control": 0.9836,
+          "tensor_control": 1.0
+        },
+        {
+          "seed": 44,
+          "text_auc": 0.5609,
+          "tensor_auc": 0.5814,
+          "text_control": 0.9817,
+          "tensor_control": 1.0
+        }
+      ],
+      "text_mean": 0.5395,
+      "text_sd": 0.0137,
+      "tensor_mean": 0.5504,
+      "tensor_sd": 0.0178,
+      "weakest_positive_control": 0.9817,
+      "GATE": "FAIL"
+    }
+  },
+  "pending": {
+    "(iii) post-training rollouts": "requires a trained checkpoint; A3 Gate 3"
+  },
+  "GATE": "PASS"
+}

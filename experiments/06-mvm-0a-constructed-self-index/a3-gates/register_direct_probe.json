@@ -1,0 +1,38 @@
+{
+  "arm": "UNBLINDED direct register probe (follow-up to the blind arm)",
+  "registered": false,
+  "ruled_by": "john, 2026-09-16 Pacific",
+  "checkpoint": "pilot_a1_30m_seed0.pt",
+  "blinded": false,
+  "blind_verdict_committed_first": "0a1f2c2 (findings), 401a54d/da0427f (criteria)",
+  "target": "own_slot (which of four agents the model is)",
+  "n_episodes": 400,
+  "n_permutations": 100,
+  "sd_bar": 3.0,
+  "primary_probe_on_register_state": {
+    "accuracy": 0.27,
+    "null_mean": 0.27,
+    "null_sd": 0.0,
+    "margin_sd": null
+  },
+  "verdict": {
+    "bar": 0.27,
+    "clears_bar": true,
+    "reading": "1 \u2014 SENSITIVITY FAILURE",
+    "means": "Own-agent identity IS decodable from the register. The blind stack walked past a structure that was there; its 'instrument failure to locate' sub-bin stands and sharpens into a sensitivity failure at 30M. Upstream-reportable."
+  },
+  "secondary_probe_on_trunk_visible_repr": {
+    "accuracy": 0.2375,
+    "null_mean": 0.2369,
+    "null_sd": 0.0234,
+    "margin_sd": 0.03
+  },
+  "secondary_note": "descriptive only; no pre-stated reading turns on this number",
+  "occupancy": {
+    "mean_abs_deviation_from_init": 0.326677,
+    "max_abs_deviation_from_init": 1.294503,
+    "mean_across_episode_sd": 0.0,
+    "max_across_episode_sd": 1e-06,
+    "note": "a register that never leaves its initialization, or that is identical across episodes, is empty in the most literal sense"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "check": "amended sampler re-run against every grammar the registered sampler already passed (John, 2026-09-15)",
+  "n_episodes": 4000,
+  "seeds": [
+    20260804,
+    11,
+    22,
+    33,
+    44
+  ],
+  "rows": {
+    "registered_grammar": {
+      "registered_pooled": {
+        "text_mean": 0.4969,
+        "text_sd": 0.0097,
+        "weakest_positive_control": 0.8627,
+        "GATE": "PASS"
+      },
+      "amended_agent_uniform": {
+        "text_mean": 0.4984,
+        "text_sd": 0.0185,
+        "weakest_positive_control": 0.8719,
+        "GATE": "PASS"
+      }
+    },
+    "a3_draft2_every_agent_revises": {
+      "registered_pooled": {
+        "text_mean": 0.4915,
+        "text_sd": 0.0079,
+        "weakest_positive_control": 0.9387,
+        "GATE": "PASS"
+      },
+      "amended_agent_uniform": {
+        "text_mean": 0.4897,
+        "text_sd": 0.0135,
+        "weakest_positive_control": 0.9385,
+        "GATE": "PASS"
+      }
+    },
+    "a3_draft3_two_revisers": {
+      "registered_pooled": {
+        "text_mean": 0.5389,
+        "text_sd": 0.0138,
+        "weakest_positive_control": 0.9817,
+        "GATE": "PASS"
+      },
+      "amended_agent_uniform": {
+        "text_mean": 0.489,
+        "text_sd": 0.0105,
+        "weakest_positive_control": 0.9853,
+        "GATE": "PASS"
+      }
+    }
+  }
+}

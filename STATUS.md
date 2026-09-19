@@ -2,6 +2,476 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## A3 PILOT COMPLETE — the objective is LEARNABLE and genuinely about ownership; control battery never learned; $13.92 (2026-09-16)
+
+Record: `experiments/06-mvm-0a-constructed-self-index/gate2-pilot-findings.md`;
+endpoint `a3-gates/pilot_endpoint.json`, trajectory `a3-gates/pilot_trajectory.jsonl`.
+Full registered budget: 55,116 steps / 585,552,384 tokens, one register-less
+30M at seed 0. John's go, verbatim: **"Go"**. Checkpoint md5
+`f751228ce0e40bae5aba22c6d5aa6c60`, verified against the pod before reaping.
+**A3 cumulative $13.92 / $100 hard stop.**
+
+**THE RESULT (n=800, 400 verdict cells):**
+
+| battery | intact | acting channel zeroed | its shortcut ceiling |
+|---|---|---|---|
+| **T_act** | **0.506** | **0.182** | 0.2921 |
+| T_other | 0.299 | 0.234 | 0.3227 |
+| T_state | 1.000 | 0.999 | — |
+| T_syntax | 1.000 | 1.000 | — |
+
+**Learnable: T_act is +0.214 above the best any ownership-blind solver can
+reach.** K2 does not fire. **The L0 validity check passes decisively AND
+selectively:** zeroing the only authorship signal takes T_act 0.506 -> 0.182
+while the ownership-free batteries do not move. Under the registered
+(ceiling-corrected) metric that drop reads **1.515** — above 1.0, meaning the
+lesion took it BELOW what an ownership-blind solver reaches. That is exactly
+the case John's decision 3 said must be reported, not clipped; a clamp would
+have hidden the most informative number in the table. Supplementary read at
+one reviser (ceiling exactly 0.25): T_act 0.531, margin +0.281.
+
+**THE CONTROL NEVER LEARNED. T_other 0.299 is BELOW its own 0.3227 ceiling** —
+no marker-keyed retrieval at all, repeating the seed lottery only 2 of 5
+earlier runs won. **Structural consequence for the lesion phase: its baseline
+is below its ceiling, so the registered floor rule makes its drop UNDEFINED,
+and any bin comparing the two batteries' drops cannot fire in either
+direction.** One reading says that is benign (no generic binder exists to be
+confused with a self-index); the other says a discriminator that cannot fire
+is not doing its job. That is an adjudication, not a measurement.
+
+**THE BIN IS NOT OBVIOUS.** K3's starvation signature is "T_act reaches
+ceiling early while T_other stays flat". The control IS flat; T_act is at
+0.506, well above its shortcut floor and nowhere near 1.0, flat around 0.537
+over the last fifth. **Half fired, half did not.** Honest description: partial
+learning on the primary, none on the control — neither the clean positive nor
+the clean starvation. The bins were written before the grammar existed, which
+is what red-team pass 3 flagged.
+
+**ONE PROCESS FAILURE, AND ONE CORRECTION:**
+1. **CORRECTION — the "truncated checkpoint" was my misreading.** I first
+   reported the fetched checkpoint as silently corrupt (324MB vs the pod's
+   351MB, loading without complaint). It was not: the watchdog's final
+   fetch ran 13:36:11Z->13:46:59Z and my 324MB listing was timestamped
+   13:38Z, INSIDE that window. I read a file mid-extraction as a corrupt
+   one. The archive-based final fetch worked correctly. What IS real: my
+   own streamed re-fetch over ssh truncated at 199MB (a `cat` of a large
+   binary truncates silently), and the watchdog's INCREMENTAL pull uses
+   that same unsafe pattern, promoting on a non-empty test alone — latent,
+   did not bite, worth fixing before seeds 1 and 2.
+2. **Idle billing recurred, THIRD time (this one is real).** Finished
+   09:54Z, reaped 13:47Z — 3.9 idle hours, ~$3.8 of the $13.92. caffeinate
+   blocks idle sleep, not lid-close. Three occurrences is a design
+   problem: the reap must not depend on a laptop being awake.
+
+**RULED 2026-09-16 (Cowork session; five binding decision entries tagged
+`a3`, quoted in `gate2-pilot-findings.md`):** K0 applied at 0.25 scoped to
+checkpoints where a verdict is read; the pilot endpoint recorded as
+described and **deliberately unbinned** (K2 and K3 both did not fire, and
+no new bin is written because a bin written after the data is fitted to
+it); the undefined control drop takes the **strict reading** — seed 0 is
+**not-testable** on the differential clause and cannot land in
+H_self-location, with the other-agent and random-subspace lesions and the
+swap probe reported as partial discriminators. **Consequence accepted: A3
+as registered can no longer return a full registered positive regardless
+of seeds 1 and 2.** The seeds are reframed as a ~$22 test of whether the
+primary battery's learnability replicates and whether the control is a
+seed lottery.
+
+**NEXT, in the registered order (§4.3) — items 1 to 4 have all LANDED:**
+1. Both process fixes committed — DONE (`3df7d19`, `2710982`), plus
+   pod-side reaping ruled and implemented (`5dedc18`) after a paid test
+   ($0.29) proved a pod carries no credential and no id of its own.
+   **Amended 2026-09-16 on John's ruling: the full-write account key is no
+   longer pushed to pods.** The launcher now reads the reaping credential
+   only from `~/.runpod/reaper-key`, a dedicated key scoped in the RunPod
+   console to graphql read and write with the serverless surface set to
+   none, and refuses to arm unless that file exists, is non-empty and is
+   mode 600. There is deliberately no fallback to `~/.runpod/config.toml`,
+   which the script no longer reads at all: an unarmed reaper the operator
+   is told about beats a silent return to the account key. If the pod-side
+   read check fails at the next launch, the launcher says to stop and ask
+   John rather than degrade.
+2. Gate 3 — DONE and PASSES both arms (clean 0.483 and 0.4975; controls
+   0.9895 and 0.8724). The first run's "uncertifiable" was a bad control
+   on Claude's side, not the checkpoint.
+3. Threshold lock — **DONE, John's commit `6ad4362`** (2026-09-16 20:08
+   PDT). It carries θ 0.1777 on T_act and no threshold at all for
+   T_other, which encodes the strict ruling mechanically: `lock_guard`
+   accepts a run reading the primary battery and refuses one reading the
+   control.
+4. Seeds 1 and 2 as ONE WAVE — **DONE, John's verbatim go "Go" quoted in
+   the ledger at `45fd652`** (20:11 PDT). Pods `xi062halhyuucg` (seed 1)
+   and `4z55xtf1vowymp` (seed 2), launched 2026-09-17 03:13Z, est.
+   $18–26 the pair, due to report around 06:07 local 2026-09-17.
+
+**IF THE MAC REBOOTS BEFORE THE SEEDS REPORT, RESTART BOTH WATCHDOGS.**
+They are the ONLY reap: the in-flight pods carry no credential, no pod id
+and no reaper process, verified 2026-09-16
+(`reaping-audit-2026-09-16.md`). The script is a plain polling loop with
+no accumulated state, so restarting is safe and idempotent. One command
+each, from anywhere:
+
+```
+cd /Users/john/Code/minimum-viable-mind/.claude/worktrees/gate0-null-calibration/experiments/06-mvm-0a-constructed-self-index/src
+
+nohup caffeinate -dimsu bash watch_run_a3.sh \
+  /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/a3_30m_seed1/run_xi062halhyuucg.env \
+  >> /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/a3_30m_seed1/watchdog.log 2>&1 &
+
+nohup caffeinate -dimsu bash watch_run_a3.sh \
+  /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/a3_30m_seed2/run_4z55xtf1vowymp.env \
+  >> /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/a3_30m_seed2/watchdog.log 2>&1 &
+```
+
+Check they took: `pgrep -fl watch_run_a3.sh` should list two. Exposure if
+they are not restarted: both pods finish around 06:10 local, nothing
+fetches or deletes, and they bill about $2/hr together. `terminate-after`
+does NOT cover this — the ledger records it failing to fire and costing
+$97 on the 30M A1 pilot.
+
+**IN FLIGHT AND ON JOHN'S MACHINE:** lid sleep is disabled
+(`SleepDisabled 1`) so the wave reaps on time; **revert after both report
+with `sudo pmset -a disablesleep 0`**. The two in-flight pods launched
+before the reaping ruling, so the laptop watchdog is still their only
+reap.
+
+**DATED PATH (John approved the public path roadmap verbatim, "Approved
+on all", 2026-09-16; `docs/public-path-roadmap-2026-09-16.md`, committed
+`609c5c5`):**
+- **2026-09-18** seeds report: checkpoints fetched and checksummed, pods
+  reaped, ledger actual-after rows (task "Public path 1", `f5f5f9e9`).
+- **2026-09-20** John decides optional extra seeds (`9698b81b`).
+- ~~2026-09-27~~ **blind-localization arm — DONE EARLY 2026-09-16,
+  `0a1f2c2`, local and $0.** Verdict **NOT FLAGGED**, sub-bin
+  **instrument failure to locate**: no probe cleared its null by the
+  stated 3 sd bar (best 1.3 sd, accuracy 0.275 against a chance of
+  0.25), so the stack could not decode own-agent identity at all on a
+  register-bearing checkpoint that binds. Per John's ruling of
+  2026-09-16 this arm ran as a **false-positive test**, because the
+  register exists by construction but was measured inert, so the
+  registered question had no object. **The result supports specificity
+  only, never sensitivity** — that limit was committed before the number
+  was seen. **ANNOTATION 2026-09-16 (John's ruling): superseded in
+  interpretation by the unblinded register probe — no valid target.** The
+  verdict and its pre-stated sub-bin name stand as committed and are not
+  retired; the unblinded probe showed the A2 register never encoded
+  own-agent identity at any turn, so the blind arm had nothing at that
+  location to find and the result says nothing about the stack's
+  sensitivity in either direction
+  (`register-direct-probe-findings.md`, `a7f5cd8`).
+- **2026-09-16, THE A2 REGISTER WAS A CONSTANT IN EVERY TRAINED
+  CHECKPOINT** (`register-saturation-findings.md`, `cc9c70e`). The writer
+  emits the same vector whatever it is given, from its first write, at the
+  floating-point floor on seed-0, seed-1 and seed-2 full and on the 10M
+  pilot. An untrained model at the same config does not, so it is trained
+  in rather than architectural. No intermediate weights were saved, so the
+  training-time onset cannot be recovered; the untrained control bounds it
+  from the other end. **Consequence, ruled by John: a constant read
+  through cross-attention is a bias term, so the full model is the twin
+  plus a learned bias and the register-versus-no-register manipulation was
+  never effectively applied.** Binding tracks seed, not architecture: two
+  of five bind, one full and one twin. The wave-2 "prediction inverted"
+  result is better described as a **seed lottery in one architecture**.
+- **2026-09-16, THE LOCALIZATION PIPELINE IS VALIDATED AT THE PLUMBING
+  LEVEL AND GATED ABOVE IT** (`known-answer-test-findings.md`, `1cb1fbb`).
+  The known-answer test passes at ceiling, accuracy 1.0 against a null of
+  0.1306, a margin of 32.9 standard deviations. So residual capture,
+  position indexing, probe fitting and null construction work. It does
+  NOT exercise the ablation path, and with the acting channel zeroed the
+  target still decodes at 1.0, so it is a plumbing check and nothing more.
+  **John's gate — no A3 L1 localization read on any seed until this passes
+  — is mechanical (`lock_guard.require_known_answer_pass`) and now lifts;
+  lifting is permission, not instruction, and no read has been run.** The
+  L0 direct lesion was never gated.
+- **2026-09-16, WITHDRAWN: "evidence of insensitivity at small scale."**
+  The positive control's verdict is the literal pre-stated **NOT
+  TESTABLE**; the signed-rule reading stays beside it as a diagnostic and
+  never becomes a verdict. The ablation's apparent +0.052 on the ownership
+  battery is **inside evaluation noise**, measured over twelve draws per
+  size: sd 0.0284 and range 0.079 at n=400, the size the control used.
+  What stands is only that the probe found nothing.
+- **2026-09-16, THE PILOT'S 0.506 IS ONE UNLUCKY EVALUATION SEED.** It and
+  the 0.440 both come from the single default seed and reproduce exactly;
+  both sit below all twelve fresh draws. **The checkpoint's typical
+  ownership score is nearer 0.566.** No verdict changes, since every drop
+  is measured against its own baseline in the same run, but **any write-up
+  quoting 0.506 must quote the spread with it.**
+  The measurements stand; only the architectural interpretation is
+  withdrawn. Wave-2 ledger row, the twin-binding note and Amendment A3 §1
+  are **annotated, never edited** (the ledger change verified
+  append-only). No registered text changed. Sensitivity is untested and the companion positive control
+  is unregistered, not run, and awaiting John's separate ruling
+  (`blind-arm-positive-control-proposal.md`).
+- **2026-10-04** John decides the control-battery question on a written
+  proposal: a registered Amendment A4 that makes the control learn
+  reliably, or close A3 with partial discriminators and say so. Proposal
+  drafted after the seeds report; no spend. Note for that proposal: the
+  ceiling adjudication permits exactly one amendment to the compute cap
+  and A3 proceeded on the reading that it binds money rather than design,
+  so an A4 needing new runs must make that argument explicitly.
+- Steps 5 to 8 (explainer refresh, paper draft, outside reader, public
+  release 2026-11-22) are John's and the Cowork side's, not this
+  session's.
+
+Free work in parallel: the lesion and localization pipeline, build and
+smoke-test only, no L1 run or read before the lock.
+
+## SHORTCUT SWEEP — a SECOND fatal leak; three grammar drafts map a real trade-off; proposal drafted; A3 NOT ready to register (2026-09-15)
+
+Proposal: `experiments/06-mvm-0a-constructed-self-index/a3-revision-proposal.md`
+(13 numbered decisions). Sweep: `src/shortcut_sweep.py`, record in
+`a3-gates/shortcut_sweep.json`. **Still $0; A3 cumulative $0.00 of the
+$100 hard stop; no pod ever launched for A3.**
+
+**The grammar Gate 1 certified this morning has an ownership-blind
+ceiling of 0.52, not 0.29.** Every agent revised exactly once, so any
+agent that has ALREADY revised is not the one revising now. When the
+model revises last — a quarter of episodes — its own assignment is the
+only one left and identifying it needs no self-knowledge at all.
+Measured 0.5248 by that elimination alone; 0.5425 by a learned attack.
+(The sweep's first run also caught a bug in itself — features ranged over
+the whole episode and read the graded turn, giving a fake 1.000. Fixed,
+then it found the real thing.)
+
+**THE REAL FINDING: a structural tension, not three mistakes.** Three
+drafts now, each trading one flaw for another:
+
+| draft | who revises | cells | ceiling | cue gates |
+|---|---|---|---|---|
+| 1 | model always + 1 other | every ep | 0.29 | FAIL (turn count a perfect cue) |
+| 2 | every agent once | every ep | **0.52** | PASS |
+| 3 (current code) | 2 drawn uniformly | half | 0.29 (sweep PASSES) | **FAIL at 0.53** |
+
+Draft 3 fails because revisers take 3 turns and non-revisers 2, and the
+detector samples one own turn against one other turn — "own" is one
+agent, "other" pools three. Turn count is balanced across all turns
+(0.596 vs 0.601) and NOT under that sampling (**0.499 vs 0.591**).
+
+You cannot have all three of: a scoring cell every episode; revising not
+marking the model out; and agents that have acted not being eliminable.
+Any two, not three.
+
+**A fourth grammar was deliberately NOT drafted.** Each fix so far was
+sensible and cost something elsewhere; one of K1's two regenerations is
+spent; the choice belongs to John with the trade-off in front of him.
+Proposal decision 1 lays out four options with measured costs and
+recommends varying turns-per-agent independently of revising (untested),
+with one-uniform-reviser (ceiling 0.25, quarter density) as fallback.
+
+**Good side effect:** with only 2 revisions per episode the control
+battery's ceiling falls 0.5 → 0.3227, cutting RT-21's spurious
+differential from 0.237 to 0.035 (still above the ~0.01 band, so the
+metric fix stands).
+
+**New proposed gate (decision 8):** register the shortcut sweep itself.
+RT-20's attack scored 1.000 on a grammar that had just passed both cue
+gates — the cue gates ask which turns are the model's own, a different
+question. The sweep is free and has already paid for itself twice.
+
+**Next (John owns all of it):** work the 13 decisions, chief among them
+decision 1 (the grammar trade-off) and decision 3 (divide the drop by the
+measured ceiling, not chance); then the registration commit; then Gate 2,
+the pilot, on a C2 go in his own words. **A3 is not ready to register.**
+Branch `gate0-null-calibration`, pushed.
+
+## RED-TEAM PASS 3 — 13 findings; the certified grammar did NOT test self-indexing; fixed at $0; registration now carries 7 items (2026-09-15)
+
+Full pass: `experiments/06-mvm-0a-constructed-self-index/red-team-pass-3.md`
+(RT-20 to RT-32, continuing the ledger). Addendum with the fix and the
+re-run gates at the end of `gate1-curriculum-findings.md`. Trainer added:
+`src/train_a3.py`. **Still $0; A3 cumulative $0.00 of the $100 hard stop;
+no pod has ever been launched for A3.**
+
+**RT-20 (FATAL, verified, fixed).** The grammar Gate 1 certified did not
+test self-indexing at all. A turn rendered "<name> assign <item> to
+<value>" and the graded token is the value — so **the model's own name
+label sat three tokens back in its own context at the moment it was
+scored**. An ownership-free solver that reads that name, finds the
+matching earlier assignment and applies the rule **scores 1.000 over 3000
+episodes**. The measured shortcut ceiling of 0.2925 was never a bound on
+ownership-blind solvers. The cue gates could not catch it: they ask which
+turns are the model's own, which is a different question.
+
+**My own ceiling control gave false reassurance.** A smoke model without
+the acting channel sat at 0.22 against 0.575 with it — which showed only
+that a 0.1M network had not found the shortcut in 1500 steps, not that
+the shortcut was absent. A 30M model on 784M tokens finds it. The pilot
+would have returned a ceiling score that meant nothing.
+
+**Fix ($0):** the speaker's name moves AFTER the value —
+"assign <item> to <value> by <name>". The graded position now sees
+"assign <item> to" and nothing more, so the acting channel is the only
+route to which of the four earlier values was its own. The attack is a
+permanent regression test in the grammar's self-test. Batteries re-frozen;
+gates (i) and (ii) re-run and still PASS (0.5097 / 0.5259) — one of the
+two regenerations K1 permits. The detector's score is carried by
+structural not textual features (0.5057 numeric-only), which is why
+reordering text moved nothing.
+
+**RT-21 (FATAL, verified arithmetic, NOT yet fixed).** The metric divides
+the drop by distance to *chance*, but the two verdict batteries now have
+different shortcut ceilings (0.2925 and 0.5). So a lesion of a purely
+**generic** who-did-what binder produces a differential of **0.237**
+against a differential band Gate 0 measured at about **0.01**. The
+headline positive bin fires on the boring explanation, and the bin meant
+to catch it cannot fire unless the lesion removes under ~4% of capacity.
+Remedy: correct the drop against the measured ceiling, not chance. $0,
+changes registered text, belongs in the registration commit.
+
+**Serious (RT-22 to RT-27):** bins neither exhaustive nor exclusive (no
+bin for the L0 validity check failing); the lesion target is not
+localizable where §3.1 says, and objection R1 has a sharper form; θ/δ
+written as scalars when Gate 0 measured them per battery across a 25-fold
+range, and no readability floor before the two paid seeds; "uncertifiable"
+on the act-withheld attack routes nowhere; the ladder is costed on the old
+8-turn grammar (measured ~1.3–1.4× per run, $13.6–14.3 vs $10–11 — three
+seeds still fit, the optional extras do not); the loss mixture is
+unregistered and by itself decides whether the starvation bin can fire.
+
+**Worth noting (RT-28 to RT-31)** and **procedural (RT-32)**: see the pass.
+Two items were in this session's own code and are already repaired — two
+self-test assertions written vacuously with a trailing `or True`, one of
+them the exchangeability check the whole cue-gate argument rests on. Both
+now run; the property holds.
+
+**Found sound and said so:** the no-stakes commitment C4 and the
+floor-only/episodic claim both survive attack; the exchangeability
+construction is correct; Gate 0's escalation check was the right move in
+the right order; keeping `curriculum.py`/`encoding.py` byte-identical was
+correct.
+
+**Next (John owns all of it):** (1) K0's number; (2) the registration
+commit now carrying **seven** items — Gate 0's three, Gate 1's two, and
+RT-20/RT-21 — plus whatever of RT-22..27 he adopts; (3) then Gate 2, the
+pilot, on a C2 go in his own words. **No A3 run launches before that.**
+Branch `gate0-null-calibration`, pushed.
+
+## GATE 1 COMPLETE — Candidate A grammar built and certified, $0; K1 does not fire; red-team pass 3 now carries five items (2026-09-15)
+
+Full record: `experiments/06-mvm-0a-constructed-self-index/gate1-curriculum-findings.md`;
+gate records in `.../a3-gates/`, frozen batteries in `.../batteries-a3/`;
+code `src/curriculum_a3.py`, `src/encoding_a3.py`, `src/cue_detector_a3.py`
+(committed at `7ab8018` **before the gate ran on them**). Local, **$0**;
+A3 cumulative spend still **$0.00 of the $100 hard stop**. Nothing
+trained, no pod [C1/C2].
+
+**The grammar.** Twelve turns, four agents, two contested items. Every
+agent assigns each contested item once with the four values on an item
+distinct, then **every agent revises exactly once**, two per item, under
+a shared deterministic rule (the successor of that agent's own earlier
+value). Applying a rule everyone shares requires knowing which of four
+assignments was yours. `curriculum.py` and `encoding.py` are untouched —
+their token ids are what make every prior record reproduce — so A3 gets
+new modules; the A3 vocabulary adds one word, "next".
+
+**Gate result: PASS, K1 does not fire.** Run (i) curriculum text plus
+episode-relative features: clean 0.5097 [0.4867, 0.5316], control 0.943.
+Run (ii) input tensors: clean 0.5259 [0.5032, 0.5498], control 1.000.
+Both clean intervals inside the registered [0.45, 0.55].
+
+**Gate 0's cell-size fix is delivered:** 400 episodes now yield **400
+T_act cells**, against 19 for the registered grammar's
+revision-conditioned battery at the same episode count.
+
+**Two NEW items for red-team pass 3, on top of Gate 0's three:**
+4. **The pre-stated lookup ceiling is wrong for this grammar.** Measured
+   0.2925 for T_act (not 0.25) and **0.5 for T_other**, because each
+   item's two revisions let a solver strike candidates. The asymmetry
+   matters: the H_generic-binding bin turns on the gap between the two
+   batteries' drops. Either adopt the measured numbers or add a third
+   unrevised contested item to buy 0.25 back, at ~⅓ more compute per run.
+5. **Gate (ii) fails a clean grammar about one run in nine.** Its
+   bootstrap interval resamples one draw's test split and is silent on
+   across-sample spread. Six independent samples: text mean 0.4939
+   (sd 0.012), tensor mean 0.5054 (sd 0.0224). The registered seed's
+   0.5259 is within one sd of chance, and the own register's stack index
+   is uniform to one standard error over 40,000 episodes — there is no
+   cue. Take the verdict over several samples, or raise n to ~14,000.
+
+**For the record: the first draft of the grammar was killed by its own
+self-test.** Giving only the model and one other agent a revision left
+the model's agent as the only one with three turns, so turn count
+predicted ownership perfectly and revision status at 0.33 vs 0.14. Every
+agent revising once removes both by construction. The detector also had
+to gain episode-relative features the registered one lacks, since an A3
+turn renders identically whether it assigns or revises.
+
+**Next (John owns all of it):** (1) K0's number and the Gate 0 items;
+(2) red-team pass 3 with all five items; (3) registration commit; (4)
+then Gate 2, the pilot, on a C2 go in John's own words. **No A3 run
+launches before that.** One free build step remains: the trainer does not
+yet know about T_act — the loss must sit at the own revision position and
+`eval_heldout` must score there. Branch `gate0-null-calibration`.
+
+## GATE 0 COMPLETE — the registered null calibration ran, $0; K0 does not fire where a verdict is read; three fixes for red-team pass 3 (2026-09-14)
+
+The first action Amendment A3 orders is done. Full record:
+`experiments/06-mvm-0a-constructed-self-index/gate0-null-calibration-findings.md`;
+per-checkpoint records in `.../null-calibration/`; scripts
+`src/null_calibration.py` (committed **before it read any checkpoint**),
+`src/null_escalation.py`, `src/summarize_null.py`. **Everything local,
+$0; A3 cumulative spend $0 of the $100 hard stop.** Nothing trained,
+no pod, no checkpoint promoted [C1/C2].
+
+**The band.** 620 ablated evaluations: five 30M checkpoints × the
+registered held-out eval at n=400, under 120 content-blind residual
+ablations each (random rank-4/8/16 subspaces mean-ablated, matched-norm
+noise, 20 seeds, blocks 3/4/5/7/8), plus 20 register-noise draws per
+full checkpoint. On the two **binders** — the only runs where a lesion
+verdict could be read — the 95th-percentile chance-corrected drop on
+T_si is **0.006 and 0.0095**, against a binder/non-binder split of
+**~0.73**. The registered instrument's noise floor is narrow where it
+matters.
+
+**K0 — John's call, and it is not clean.** K0 is written two ways. Its
+stated condition (the band swallows the binder/non-binder split) is met
+**nowhere**. Its proposed number (band ≥ 0.25) is **exceeded on one
+checkpoint of five**: the seed-0 twin at 0.379 — a non-binder whose
+T_si sits at 0.355 against chance 0.125, where the metric's divisor is
+tiny and random damage genuinely knocks out a fragile heuristic (raw
+T_si falls to 0.250 across draws). The amendment never says which
+checkpoints the band is read on. Reading offered, not ruled: a wide
+band near chance cannot manufacture a false positive, only make a
+marginal learner unreadable, which is already its own bin.
+
+**Three fixes for red-team pass 3, before the registration commit:**
+1. **T_act cell size.** At n=400 *episodes* the revision-conditioned
+   battery yields **19 items**, not 400 — its band is two items
+   flipping. A3's primary metric T_act is scored at own revision
+   positions and the amendment never states a revision frequency, so it
+   would inherit a 20-item verdict cell. State in §2.2 that every
+   episode carries exactly one own revision.
+2. **K2 units.** K2 compares "lookup ceiling (0.25) plus the null band"
+   — a raw accuracy added to a chance-corrected band. Restate in raw
+   accuracy: unlearnable if T_act ≤ 0.25 + θ × (baseline − chance).
+3. **K0 scope.** State that the band is read on checkpoints whose
+   verdict battery clears the floor margin.
+
+**Two further findings.** The **register-noise** band matches the
+random-residual band on all three full checkpoints — thread 4's "inert"
+conclusion now in registered-instrument form. And a **correction to
+thread 3**: the two binders apply *opposite* conventions to ambiguous
+repeated items (seed-1 twin picks the earlier value 76% of the time,
+the pilot picks the later 72%), so the retroactive half of A3's
+decision 14 cannot be done by re-keying to the latest value; the
+structural fix in Candidate A is unaffected.
+
+**Instrument validity.** At the registered rank cap the operator removes
+19% of the mean-centred residual and moves nothing; batteries collapse
+at 52% and sit at chance by 75%. The narrow band is robustness, not a
+dead operator.
+
+**Seed-0 asterisk, restated:** thread 4 read register-ablation scores on
+the pilot seed-0 checkpoint before any lock (RT-10), so seed 0's band
+is *for the record*, not a clean lock. A3 inherits none of it — its θ/δ
+are calibrated on A3's own pilot with the lock ordered ahead of any L1
+read.
+
+**Next (John owns all of it):** (1) apply K0 and set its number; (2)
+red-team pass 3 with the three fixes above; (3) registration commit;
+(4) then Gate 1, and the pilot at ~$12 on a C2 go. **No A3 run launches
+before that.** Branch `gate0-null-calibration` holds this work.
+
 ## ANOMALY DIAGNOSTICS RUN — register lesion: binding SURVIVES total register removal; construct problem is TOTAL; wave 3 awaits John (2026-08-19)
 
 The cheap threads queued by `twin-binding-anomaly.md` ran to completion

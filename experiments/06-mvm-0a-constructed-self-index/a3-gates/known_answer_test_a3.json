@@ -1,0 +1,47 @@
+{
+  "test": "known-answer test of the localization pipeline",
+  "ruled_by": "john, 2026-09-16 Pacific",
+  "registered": false,
+  "checkpoint": "a3_30m_seed0.pt",
+  "probe_layer": 0,
+  "position": "acting-channel injection position (own enacted value)",
+  "target": "the enacted value token there",
+  "n_classes": 8,
+  "chance": 0.125,
+  "pass_bar": 0.95,
+  "pass_bar_note": "a stated convention, mine, not inherited from any registration; raw accuracy reported so any bar can be applied",
+  "n_probed": 193,
+  "label_counts": {
+    "58": 22,
+    "59": 34,
+    "60": 24,
+    "61": 25,
+    "62": 19,
+    "63": 27,
+    "64": 24,
+    "65": 18
+  },
+  "majority_class_rate": 0.1762,
+  "probe": {
+    "accuracy": 1.0,
+    "null_mean": 0.1306,
+    "null_sd": 0.0264,
+    "margin_sd": 32.91,
+    "n": 193,
+    "chance": 0.125
+  },
+  "verdict": {
+    "verdict": "PASS",
+    "clears_null_3sd": true,
+    "means": "the pipeline recovers a value present at the probed position, so residual capture, position indexing, probe fitting and null construction all work. Tonight's failure to find ownership structure is about the localization stack at this scale, not about the code."
+  },
+  "diagnostic_acting_channel_zeroed": {
+    "accuracy": 1.0,
+    "null_mean": 0.1306,
+    "null_sd": 0.0278,
+    "margin_sd": 31.3,
+    "n": 193,
+    "chance": 0.125
+  },
+  "diagnostic_note": "no bin turns on this. If the target decodes either way, a pass shows the plumbing works and says nothing about the acting channel specifically."
+}

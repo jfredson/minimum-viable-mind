@@ -1,0 +1,265 @@
+{
+  "diagnostic": "control-battery failure mode",
+  "rule_committed_before_running": "control-diagnostic-rule.md, c3e9bc1",
+  "registered": false,
+  "post_hoc": true,
+  "n_permutations": 200,
+  "sd_bar": 3.0,
+  "checkpoints": [
+    {
+      "checkpoint": "pilot (seed 0)",
+      "file": "a3_30m_seed0.pt",
+      "n_queries": 2400,
+      "eval_seeds": [
+        771000,
+        771037,
+        771074
+      ],
+      "cell_rates": {
+        "CORRECT": 0.2921,
+        "UNTRANSFORMED": 0.0967,
+        "WRONG_AGENT_TRANSFORMED": 0.4454,
+        "WRONG_AGENT_RAW": 0.0775,
+        "OFF_STRUCTURE": 0.0883
+      },
+      "null": {
+        "CORRECT": {
+          "mean": 0.1721,
+          "sd": 0.0068
+        },
+        "UNTRANSFORMED": {
+          "mean": 0.1131,
+          "sd": 0.0058
+        },
+        "WRONG_AGENT_TRANSFORMED": {
+          "mean": 0.5506,
+          "sd": 0.0076
+        },
+        "WRONG_AGENT_RAW": {
+          "mean": 0.0759,
+          "sd": 0.0026
+        },
+        "OFF_STRUCTURE": {
+          "mean": 0.0883,
+          "sd": 0.0
+        }
+      },
+      "margins_sd": {
+        "CORRECT": 17.66,
+        "UNTRANSFORMED": -2.83,
+        "WRONG_AGENT_TRANSFORMED": -13.92,
+        "WRONG_AGENT_RAW": 0.62,
+        "OFF_STRUCTURE": null
+      },
+      "verdict": {
+        "verdict": "DEGENERATE \u2014 no bin assigned",
+        "why": "zero-spread null on ['OFF_STRUCTURE']"
+      },
+      "per_seed": [
+        {
+          "seed": 771000,
+          "n": 800,
+          "rates": {
+            "CORRECT": 0.28625,
+            "UNTRANSFORMED": 0.1,
+            "WRONG_AGENT_TRANSFORMED": 0.4375,
+            "WRONG_AGENT_RAW": 0.08875,
+            "OFF_STRUCTURE": 0.0875
+          }
+        },
+        {
+          "seed": 771037,
+          "n": 800,
+          "rates": {
+            "CORRECT": 0.25,
+            "UNTRANSFORMED": 0.11,
+            "WRONG_AGENT_TRANSFORMED": 0.48125,
+            "WRONG_AGENT_RAW": 0.075,
+            "OFF_STRUCTURE": 0.08375
+          }
+        },
+        {
+          "seed": 771074,
+          "n": 800,
+          "rates": {
+            "CORRECT": 0.34,
+            "UNTRANSFORMED": 0.08,
+            "WRONG_AGENT_TRANSFORMED": 0.4175,
+            "WRONG_AGENT_RAW": 0.06875,
+            "OFF_STRUCTURE": 0.09375
+          }
+        }
+      ]
+    },
+    {
+      "checkpoint": "seed 1",
+      "file": "a3_30m_seed1.pt",
+      "n_queries": 2400,
+      "eval_seeds": [
+        771000,
+        771037,
+        771074
+      ],
+      "cell_rates": {
+        "CORRECT": 0.3104,
+        "UNTRANSFORMED": 0.0992,
+        "WRONG_AGENT_TRANSFORMED": 0.4329,
+        "WRONG_AGENT_RAW": 0.0767,
+        "OFF_STRUCTURE": 0.0808
+      },
+      "null": {
+        "CORRECT": {
+          "mean": 0.1694,
+          "sd": 0.0059
+        },
+        "UNTRANSFORMED": {
+          "mean": 0.1183,
+          "sd": 0.0057
+        },
+        "WRONG_AGENT_TRANSFORMED": {
+          "mean": 0.5567,
+          "sd": 0.0075
+        },
+        "WRONG_AGENT_RAW": {
+          "mean": 0.0748,
+          "sd": 0.0028
+        },
+        "OFF_STRUCTURE": {
+          "mean": 0.0808,
+          "sd": 0.0
+        }
+      },
+      "margins_sd": {
+        "CORRECT": 24.0,
+        "UNTRANSFORMED": -3.33,
+        "WRONG_AGENT_TRANSFORMED": -16.41,
+        "WRONG_AGENT_RAW": 0.69,
+        "OFF_STRUCTURE": null
+      },
+      "verdict": {
+        "verdict": "DEGENERATE \u2014 no bin assigned",
+        "why": "zero-spread null on ['OFF_STRUCTURE']"
+      },
+      "per_seed": [
+        {
+          "seed": 771000,
+          "n": 800,
+          "rates": {
+            "CORRECT": 0.325,
+            "UNTRANSFORMED": 0.095,
+            "WRONG_AGENT_TRANSFORMED": 0.41,
+            "WRONG_AGENT_RAW": 0.08375,
+            "OFF_STRUCTURE": 0.08625
+          }
+        },
+        {
+          "seed": 771037,
+          "n": 800,
+          "rates": {
+            "CORRECT": 0.26375,
+            "UNTRANSFORMED": 0.10625,
+            "WRONG_AGENT_TRANSFORMED": 0.4675,
+            "WRONG_AGENT_RAW": 0.0775,
+            "OFF_STRUCTURE": 0.085
+          }
+        },
+        {
+          "seed": 771074,
+          "n": 800,
+          "rates": {
+            "CORRECT": 0.3425,
+            "UNTRANSFORMED": 0.09625,
+            "WRONG_AGENT_TRANSFORMED": 0.42125,
+            "WRONG_AGENT_RAW": 0.06875,
+            "OFF_STRUCTURE": 0.07125
+          }
+        }
+      ]
+    },
+    {
+      "checkpoint": "seed 2",
+      "file": "a3_30m_seed2.pt",
+      "n_queries": 2400,
+      "eval_seeds": [
+        771000,
+        771037,
+        771074
+      ],
+      "cell_rates": {
+        "CORRECT": 0.3192,
+        "UNTRANSFORMED": 0.1087,
+        "WRONG_AGENT_TRANSFORMED": 0.4546,
+        "WRONG_AGENT_RAW": 0.0612,
+        "OFF_STRUCTURE": 0.0563
+      },
+      "null": {
+        "CORRECT": {
+          "mean": 0.1801,
+          "sd": 0.0068
+        },
+        "UNTRANSFORMED": {
+          "mean": 0.1219,
+          "sd": 0.0056
+        },
+        "WRONG_AGENT_TRANSFORMED": {
+          "mean": 0.5786,
+          "sd": 0.0077
+        },
+        "WRONG_AGENT_RAW": {
+          "mean": 0.0632,
+          "sd": 0.0022
+        },
+        "OFF_STRUCTURE": {
+          "mean": 0.0563,
+          "sd": 0.0
+        }
+      },
+      "margins_sd": {
+        "CORRECT": 20.31,
+        "UNTRANSFORMED": -2.36,
+        "WRONG_AGENT_TRANSFORMED": -16.09,
+        "WRONG_AGENT_RAW": -0.89,
+        "OFF_STRUCTURE": null
+      },
+      "verdict": {
+        "verdict": "DEGENERATE \u2014 no bin assigned",
+        "why": "zero-spread null on ['OFF_STRUCTURE']"
+      },
+      "per_seed": [
+        {
+          "seed": 771000,
+          "n": 800,
+          "rates": {
+            "CORRECT": 0.32875,
+            "UNTRANSFORMED": 0.1175,
+            "WRONG_AGENT_TRANSFORMED": 0.43125,
+            "WRONG_AGENT_RAW": 0.05375,
+            "OFF_STRUCTURE": 0.06875
+          }
+        },
+        {
+          "seed": 771037,
+          "n": 800,
+          "rates": {
+            "CORRECT": 0.29375,
+            "UNTRANSFORMED": 0.11,
+            "WRONG_AGENT_TRANSFORMED": 0.4675,
+            "WRONG_AGENT_RAW": 0.075,
+            "OFF_STRUCTURE": 0.05375
+          }
+        },
+        {
+          "seed": 771074,
+          "n": 800,
+          "rates": {
+            "CORRECT": 0.335,
+            "UNTRANSFORMED": 0.09875,
+            "WRONG_AGENT_TRANSFORMED": 0.465,
+            "WRONG_AGENT_RAW": 0.055,
+            "OFF_STRUCTURE": 0.04625
+          }
+        }
+      ]
+    }
+  ]
+}

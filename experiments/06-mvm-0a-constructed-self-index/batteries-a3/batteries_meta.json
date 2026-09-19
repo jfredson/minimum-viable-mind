@@ -1,0 +1,27 @@
+{
+  "seed": 20260915,
+  "n_agents": 4,
+  "n_turns": 10,
+  "n_per_battery": 400,
+  "format": "A1-skeleton/A3",
+  "counts": {
+    "T_act": 400,
+    "T_other": 400,
+    "T_state": 400,
+    "T_syntax": 400
+  },
+  "chance_floor": {
+    "T_act": 0.125,
+    "T_other": 0.125,
+    "T_state": 0.09090909090909091,
+    "T_syntax": 0.08333333333333333
+  },
+  "lookup_ceiling_measured": {
+    "T_act": 0.2921,
+    "T_other": 0.3227,
+    "n_sampled": 4000,
+    "n_act_cells": 2009,
+    "note": "measured against both eliminations an ownership-blind solver may use; verified by src/shortcut_sweep.py"
+  },
+  "note": "A3 Candidate A; T_act is scored at the own revision POSITION, not at an appended query"
+}

@@ -1,0 +1,39 @@
+{
+  "sweep": "ownership-blind attacks on the corrected A3 grammar",
+  "n_episodes": 12000,
+  "seed": 20260915,
+  "template": "assign {item} to {value} by {marker}",
+  "measured_shortcut_ceiling": 0.2925,
+  "chance": 0.125,
+  "deterministic_rules": {
+    "already_revised_random": 0.2891,
+    "already_revised_first": 0.2876,
+    "eliminate_random": 0.2685,
+    "eliminate_first": 0.268,
+    "value_rank_3": 0.2612,
+    "register_row_3": 0.256,
+    "position_3": 0.2553,
+    "register_row_0": 0.2546,
+    "other_turn_earliest": 0.2526,
+    "value_rank_1": 0.2513,
+    "position_2": 0.251,
+    "position_1": 0.2501,
+    "register_row_1": 0.2486,
+    "other_turn_latest": 0.2485,
+    "value_rank_0": 0.2448,
+    "position_0": 0.2436,
+    "value_rank_2": 0.2428,
+    "register_row_2": 0.2408,
+    "marker_match_RT20": 0.0,
+    "_best_single_rule": 0.2891,
+    "_union_oracle": 1.0
+  },
+  "learned_attack": {
+    "top1_accuracy": 0.3036,
+    "chance": 0.25,
+    "n_episodes_scored": 1795,
+    "n_features": 13
+  },
+  "best_attack": 0.3036,
+  "VERDICT": "PASS \u2014 no ownership-blind attack beats the ceiling"
+}

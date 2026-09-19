@@ -1,0 +1,80 @@
+{
+  "question": "A3 decision 1 \u2014 how many agents revise per episode?",
+  "gate_n": 2000,
+  "sweep_n": 6000,
+  "note": "gates at reduced n: a comparison between options, not the registered verdict on the one that wins",
+  "rows": [
+    {
+      "k_revisers": 1,
+      "turns_per_episode": 9,
+      "cell_density": 0.2607,
+      "episodes_for_400_cells": 1534,
+      "ownership_blind_ceiling": 0.2751,
+      "sweep_verdict": "PASS",
+      "gate_registered_pooled": {
+        "text_auc": 0.5153,
+        "tensor_auc": 0.5472,
+        "verdict": "FAIL"
+      },
+      "gate_agent_uniform": {
+        "text_auc": 0.4635,
+        "tensor_auc": 0.5203,
+        "verdict": "FAIL"
+      }
+    },
+    {
+      "k_revisers": 2,
+      "turns_per_episode": 10,
+      "cell_density": 0.5095,
+      "episodes_for_400_cells": 785,
+      "ownership_blind_ceiling": 0.2988,
+      "sweep_verdict": "PASS",
+      "gate_registered_pooled": {
+        "text_auc": 0.514,
+        "tensor_auc": 0.544,
+        "verdict": "FAIL"
+      },
+      "gate_agent_uniform": {
+        "text_auc": 0.468,
+        "tensor_auc": 0.5218,
+        "verdict": "FAIL"
+      }
+    },
+    {
+      "k_revisers": 3,
+      "turns_per_episode": 11,
+      "cell_density": 0.7578,
+      "episodes_for_400_cells": 528,
+      "ownership_blind_ceiling": 0.3732,
+      "sweep_verdict": "FAIL",
+      "gate_registered_pooled": {
+        "text_auc": 0.5027,
+        "tensor_auc": 0.5301,
+        "verdict": "FAIL"
+      },
+      "gate_agent_uniform": {
+        "text_auc": 0.4668,
+        "tensor_auc": 0.5268,
+        "verdict": "FAIL"
+      }
+    },
+    {
+      "k_revisers": 4,
+      "turns_per_episode": 12,
+      "cell_density": 1.0,
+      "episodes_for_400_cells": 400,
+      "ownership_blind_ceiling": 0.531,
+      "sweep_verdict": "FAIL",
+      "gate_registered_pooled": {
+        "text_auc": 0.4856,
+        "tensor_auc": 0.5082,
+        "verdict": "PASS"
+      },
+      "gate_agent_uniform": {
+        "text_auc": 0.4685,
+        "tensor_auc": 0.5133,
+        "verdict": "FAIL"
+      }
+    }
+  ]
+}

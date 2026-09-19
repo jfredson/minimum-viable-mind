@@ -1,0 +1,100 @@
+{
+  "arm": "UNREGISTERED positive control for the blind arm",
+  "registered": false,
+  "ruled_by": "john, 2026-09-16 Pacific",
+  "checkpoint": "a3_30m_seed0.pt",
+  "checkpoint_md5": "f751228ce0e40bae5aba22c6d5aa6c60",
+  "lock": "2026-09-17T03:02:27+00:00",
+  "theta_used": 0.1777,
+  "primary_battery": "T_act",
+  "sd_bar": 3.0,
+  "rank": 4,
+  "probe_layers": [
+    3,
+    4,
+    5,
+    7,
+    8
+  ],
+  "probes": {
+    "3": {
+      "accuracy": 0.235,
+      "null_mean": 0.2532,
+      "null_sd": 0.0243,
+      "margin_sd": -0.75,
+      "n": 400,
+      "chance": 0.25
+    },
+    "4": {
+      "accuracy": 0.24,
+      "null_mean": 0.2529,
+      "null_sd": 0.0238,
+      "margin_sd": -0.54,
+      "n": 400,
+      "chance": 0.25
+    },
+    "5": {
+      "accuracy": 0.2275,
+      "null_mean": 0.253,
+      "null_sd": 0.0266,
+      "margin_sd": -0.96,
+      "n": 400,
+      "chance": 0.25
+    },
+    "7": {
+      "accuracy": 0.2475,
+      "null_mean": 0.2543,
+      "null_sd": 0.0283,
+      "margin_sd": -0.24,
+      "n": 400,
+      "chance": 0.25
+    },
+    "8": {
+      "accuracy": 0.225,
+      "null_mean": 0.2502,
+      "null_sd": 0.0249,
+      "margin_sd": -1.01,
+      "n": 400,
+      "chance": 0.25
+    }
+  },
+  "best_layer": 7,
+  "label_counts": {
+    "0": 109,
+    "1": 103,
+    "2": 99,
+    "3": 89
+  },
+  "majority_class_rate": 0.2725,
+  "baseline": {
+    "T_act": 0.44,
+    "T_other": 0.292,
+    "T_state": 1.0,
+    "T_syntax": 1.0
+  },
+  "lesioned_found_subspace": {
+    "T_act": 0.492,
+    "T_other": 0.292,
+    "T_state": 0.858,
+    "T_syntax": 1.0
+  },
+  "ceilings_used": {
+    "T_act": 0.2921,
+    "T_other": 0.3227,
+    "T_state": 0.06761742424242424,
+    "T_syntax": 0.08333333333333331
+  },
+  "d_found": {
+    "T_act": -0.3516,
+    "T_other": null,
+    "T_state": 0.1523,
+    "T_syntax": 0.0
+  },
+  "verdict": {
+    "verdict": "NOT TESTABLE",
+    "means": "the ablation bites without a valid probe behind it, so the drop cannot be attributed to a located structure",
+    "probe_clears_3sd": false,
+    "ablation_reaches_theta": true
+  },
+  "limits": "UNREGISTERED and proposed after the pilot result was known. The ground truth is an INPUT CHANNEL removal, not an internal structure, so a sensitive result does not establish that what was found is a carried self-index rather than the input trace passed forward (red-team objection R1)."
+}
