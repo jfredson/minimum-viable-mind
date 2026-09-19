@@ -84,6 +84,75 @@ assigned. The run reports DEGENERATE and stops short of a verdict. In the
 register probe this condition was discovered after the fact; here it is
 stated in advance.
 
+AMENDMENT RULED 2026-09-19 — APPLIES TO FUTURE RUNS ONLY
+--------------------------------------------------------
+John ratified Claude's proposal in conversation on 2026-09-19, verbatim:
+"Yes to your view" (decidedBy mixed — Claude proposed, John approved).
+The worklog entry is
+"RULED 2026-09-19 — sensitivity test counts a bite by DEGRADATION
+(signed), not magnitude; applies to future runs only; n >= 800 paired; a
+fourth cell for 'located, wrong structure'", and it reads:
+
+  "John ratified Claude's proposal in conversation 2026-09-19 ('Yes to
+  your view'). Applies to every future run of the blind-arm
+  positive-control / sensitivity pipeline. The 2026-09-16 NOT TESTABLE
+  verdict is not reopened and is not reread under this rule.
+
+  The ruling, four parts:
+
+  1. SIGN. The ablation 'bites' only when the signed corrected drop on
+  the primary battery is >= theta (theta, the locked bite threshold,
+  0.1777 from the committed lock). An improvement never counts as a
+  bite. Reasons recorded: the ground truth the control is checked
+  against is a degradation (channel zeroing, 0.506 -> 0.182); the
+  registered A3 endpoint's corrected drop is already signed, so this
+  aligns the unregistered control with the registered instrument; the
+  pre-stated outcome cells were written in degradation language.
+
+  2. NOISE. Evaluate at n >= 800 episodes, with intact and ablated
+  readings paired on the same evaluation seed (as endpoint_a3.py already
+  does for the seeds endpoint). Rationale: theta is about 0.038 raw
+  battery points on this checkpoint; evaluation noise is sd 0.0284 at
+  n=400 (1.3 sd) and 0.0169 at n=800 (2.2 sd).
+
+  3. FOURTH CELL. Add, before the next run, the cell 'probe passes AND
+  the ablation improves the primary battery beyond noise' = LOCATED,
+  WRONG STRUCTURE. It is neither PASS, INSENSITIVE, nor NOT TESTABLE.
+
+  4. PROCESS. The rule is committed to the criteria file (successor to
+  a3c5fbf) before anything executes, with this ruling quoted. No
+  registered text changes; the control remains unregistered.
+
+  Open, not ruled: whether to replace the single-threshold bite with a
+  partial-ablation dose ladder requiring monotone degradation
+  (research-note-pain-axis-2026-09-19.md item 4). That belongs to the
+  reframed 2026-10-04 proposal."
+
+WHAT THIS CHANGES, AND WHAT IT DELIBERATELY DOES NOT.
+
+FUTURE RUNS ONLY. The cells stated above this block are the criteria the
+2026-09-16 run was read against, and they stand exactly as committed.
+That run's verdict — NOT TESTABLE — is not reopened, not reread and not
+rewritten under this amendment. The record of what was committed before
+output is the whole value of the file; annotate, never rewrite.
+
+STILL UNREGISTERED. This control is not part of the registered
+blind-localization arm and this amendment does not make it one. No
+registered text is touched.
+
+THE CODE BELOW STILL IMPLEMENTS THE 2026-09-16 LETTER, AND MUST BE
+CHANGED BEFORE THE NEXT RUN. As committed here, `verdict()` tests
+`abs(d_primary) >= theta` and reports the signed reading only as a
+diagnostic beside the pre-stated bin, and `--n-eval` defaults to 400.
+Under this ruling the next run must instead (a) make the signed drop the
+bite test, (b) evaluate at 800 episodes or more with intact and ablated
+readings paired on the same evaluation seed, and (c) carry the fourth
+cell, LOCATED, WRONG STRUCTURE, for a probe that passes while the
+ablation improves the primary battery beyond noise. Until those three
+land in the code, this module must not be run for a verdict. The rule is
+recorded before the implementation on purpose: it is the ruling that
+binds, and a rule written after its own run is worth nothing.
+
 WHAT A SENSITIVE RESULT STILL CANNOT SHOW. That ownership is load-bearing
 on this checkpoint was established by removing an INPUT CHANNEL, not an
 internal structure. So a sensitive result shows the stack can find

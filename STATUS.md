@@ -2,6 +2,168 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
+## WHERE THINGS STAND 2026-09-19 — branch merged to main; the seeds replicate; the registered comparison turns out never to have been computable; the sensitivity rule is ruled, for future runs only
+
+*This section is the current state. Everything below it is the older
+record, newest first, and is left exactly as written.*
+
+**The code is now on `main`.** The working branch
+`gate0-null-calibration` — 63 commits, everything from Gate 0 through the
+2026-09-17 ceiling measurement — was merged into `main` on 2026-09-19.
+It is a **real merge, not a fast-forward**: `main` carried four commits
+of its own (the RunPod support-ticket correspondence log, the wave-3
+options memos and the week-37 review, and the ROADMAP v2 note that the
+Stage 3 two-by-two clarification was signed off on 2026-08-02). **There
+were no conflicts.** The branch is kept, not deleted.
+
+### 1. The primary battery replicates on all three seeds
+
+Registered endpoint reads, run locally at $0 against John's committed
+threshold lock, which sets the bite threshold at 0.1777 on the primary
+battery (`seeds-endpoint-findings.md`). Six independent evaluation
+seeds, 800 episodes each, reported as a spread rather than one draw:
+
+| checkpoint | intact | acting channel zeroed | corrected drop | vs the threshold |
+|---|---|---|---|---|
+| pilot (seed 0) | 0.5683 (sd 0.0076) | 0.1988 | 1.337 | 7.5× |
+| seed 1 | 0.5633 (sd 0.0316) | 0.2015 | 1.342 | 7.6× |
+| seed 2 | 0.5738 (sd 0.0284) | 0.1447 | 1.528 | 8.6× |
+
+Three checkpoints trained from different seeds land within 0.011 of each
+other intact, and removing the one authorship signal collapses all three
+by seven to nine times the threshold. A drop above 1.0 means the lesion
+pushed the battery **below** what a solver that knows nothing about
+ownership can reach. The ownership-free batteries do not move: the
+syntax battery is unchanged on every checkpoint, and the state battery
+moves 0.0769 on seed 2 against its own 0.1172 threshold — reported
+because it is the only asymmetry in the table, not because it fires.
+
+**The objective is learnable and the learning genuinely depends on
+ownership. That much is solid and replicated.**
+
+### 2. The control battery never learned — on any seed
+
+| checkpoint | intact | its ownership-blind ceiling | learned? |
+|---|---|---|---|
+| pilot (seed 0) | 0.2877 (sd 0.0302) | 0.3227 | no |
+| seed 1 | 0.3057 (sd 0.0281) | 0.3227 | no |
+| seed 2 | 0.3195 (sd 0.0150) | 0.3227 | no |
+
+Three seeds, one outcome: **the control is not a seed lottery, it simply
+does not learn under this design.** That was the modal case the ledger
+wrote down against the wave *before* the go was given, and it came true.
+
+Note the corrected bar recorded on 2026-09-17: the floor rule is not
+"baseline below ceiling" but "baseline minus ceiling below 0.10", so the
+control needs **0.4227**, not 0.3227, for its drop to be defined. The
+three checkpoints miss by 0.135, 0.117 and 0.103 — four to forty times
+wider than the raw ceiling gap suggests.
+
+### 3. THE REGISTERED COMPARISON WAS NEVER COMPUTABLE BY ANY MODEL
+
+The 2026-09-17 ceiling measurement (`ceiling-measurement-findings.md`,
+method committed before running, no checkpoint loaded, $0) found that
+**the control battery's ownership-blind ceiling is 1.0000, not the
+registered 0.3227.** Two independent solvers reach a perfect score
+without touching the model's own slot or the acting channel: a
+hand-written one that reads the marker in the question and applies the
+shared revision rule, and a learned one given only ownership-blind
+features that found the same structure by itself. The harness proved
+itself first, reproducing both registered reference values exactly to
+four decimal places.
+
+**Verdict A — structurally unsatisfiable.** With a ceiling of 1.0, a
+defined drop needs a baseline of 1.10, and accuracy cannot exceed 1.0.
+So the control's drop is undefined for *every possible model*, including
+a hypothetical perfect one. The registered signature needs the primary
+battery's drop minus the control's; one of its two terms can never
+exist. **The clause has been dead since registration** — not since this
+result, not since these seeds. This also moots candidates C and D of
+`control-battery-proposal.md`, which tried to make the control learn:
+making it learn was never the binding problem.
+
+### 4. The localization instruments have no validated positive control
+
+- **Registered blind-localization arm: NOT FLAGGED**, sub-bin
+  *instrument failure to locate* (`blind-arm-findings.md`). No probe
+  cleared its permutation null by the required three standard
+  deviations; the best reached 1.3. Per John's 2026-09-16 ruling the
+  committed verdict and its name **stand as written**, with a dated
+  annotation beside them recording that the *interpretation* is
+  superseded: the unblinded probe showed the register never encoded
+  own-agent identity at any turn, so there was nothing at that location
+  to find. Annotate, never rewrite.
+- **Unregistered positive control: NOT TESTABLE** by the letter of the
+  cells committed before the run (`blind-control-findings.md`). Every
+  probe sat *below* its own null at all five depths. The ablation
+  cleared the threshold in magnitude (−0.3516 against 0.1777) but with
+  the **wrong sign** — it made the primary battery *better*, which a
+  sensitivity test should never count as a bite.
+
+**Consequence: no localization work runs until the stack has a validated
+positive control.** The 2026-09-16 not-testable verdict is not reopened.
+
+### 5. RULED 2026-09-19 — a bite is a degradation, and the rule binds future runs only
+
+John ratified the proposal in conversation ("Yes to your view"). Four
+parts, committed into the criteria file
+(`src/blind_control_a3.py`, successor to the criteria first committed at
+`a3c5fbf`) with the ruling quoted, before anything executes:
+
+1. **Sign.** The ablation bites only when the **signed** corrected drop
+   on the primary battery reaches the threshold. An improvement never
+   counts.
+2. **Noise.** Evaluate at **800 episodes or more**, with intact and
+   ablated readings paired on the same evaluation seed. The threshold is
+   about 0.038 raw battery points here; evaluation noise is sd 0.0284 at
+   400 episodes (1.3 sd) and 0.0169 at 800 (2.2 sd).
+3. **A fourth cell**, to be added before the next run: probe passes and
+   the ablation *improves* the primary battery beyond noise =
+   **located, wrong structure**. Neither pass, nor insensitive, nor not
+   testable.
+4. **Process.** Committed to the criteria file first, ruling quoted. **No
+   registered text changes; the control stays unregistered.**
+
+**The executable cells in that module still implement the 2026-09-16
+letter** (they take an absolute value, and the episode count defaults to
+400). The amendment is documentation until the code is changed, which
+must happen before the next run.
+
+Open and not ruled: whether to replace the single-threshold bite with a
+partial-ablation dose ladder requiring steady worsening. That belongs to
+the reframed 2026-10-04 proposal.
+
+### 6. Where the money is
+
+**A3 $34.31 of its $100 hard stop; the whole program about $216 of
+$400.** Everything since 2026-09-17 has been local and $0. Ops cleanup
+done 2026-09-19: John deleted the idle EUR-IS-1 storage volume after
+both seed checkpoints matched their recorded checksums, and reverted the
+sleep setting on the Mac. Details in `compute-ledger.md`.
+
+### 7. The dated path, and what is next
+
+Steps 1 to 3 of the public path roadmap
+(`docs/public-path-roadmap-2026-09-16.md`, approved verbatim "Approved
+on all") are **discharged**. Step 4 has been reframed: it is no longer
+"make the control learn" but **repair the clause, change the metric, or
+close A3 with partial discriminators and say so** — John decides
+2026-10-04, on a proposal.
+
+- **2026-09-20** — draft the reframed 2026-10-04 proposal (the
+  reframed-proposal task, `208e4829`). $0.
+- **2026-09-30** — book text lock. No MVM result lands before it.
+- **2026-10-04** — John's decision on the control-battery question.
+- **2026-10-11** — refresh `explainer.md`, after the book lock.
+
+Also on file, advisory and $0:
+`docs/research-note-pain-axis-2026-09-19.md`, six methodology lessons
+from the nearest published neighbour. Two of them (a matched self/other
+contrast scored by separation, and the dose ladder) fold into the
+2026-10-04 proposal; one (projecting out the top control-variance
+directions before probing) is a free known-answer test that could run
+before 2026-10-04 on John's go, since it reads no verdict.
+
 ## A3 PILOT COMPLETE — the objective is LEARNABLE and genuinely about ownership; control battery never learned; $13.92 (2026-09-16)
 
 Record: `experiments/06-mvm-0a-constructed-self-index/gate2-pilot-findings.md`;
