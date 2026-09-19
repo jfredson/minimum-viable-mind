@@ -318,10 +318,19 @@ whose marker is *this*", not as the generator's array index.
 5. Arm 2's question is still open and worth asking again against a target
    that carries signal.
 
-None of this is a proposal to change a registered clause, and none of it
-is urgent in the way the 2026-10-04 proposal is. It is the localization
-stack's own foundation and it should be fixed before that stack is used
-to argue anything.
+None of this is a proposal to change a registered clause. It is the
+localization stack's own foundation, and it should be fixed before that
+stack is used to argue anything.
+
+**How it sits beside the separation-clause work**, which landed on main
+while this was running. Amendment A4 was refused and
+`separation-clause-requirements.md` now sets out what a future separation
+clause must satisfy. Nothing here bears on that directly: those
+requirements are about the control battery and the clause built on it,
+while this is about the localization probes. The one place they touch is
+that a separation clause scored on a located structure would inherit
+whatever target the localization stack uses, so the target wants settling
+before any such clause is written, not after.
 
 ## Record
 
