@@ -1,0 +1,19 @@
+{
+  "arm1_cell": "SWEEP INVALID \u2014 no cell assigned",
+  "arm1_per_checkpoint": {
+    "a3_30m_seed0.pt": "SWEEP INVALID \u2014 no cell assigned",
+    "a3_30m_seed1.pt": "SWEEP INVALID \u2014 no cell assigned",
+    "a3_30m_seed2.pt": "SWEEP INVALID \u2014 no cell assigned"
+  },
+  "arm1_tests_run": 165,
+  "arm1_tests_cleared_excluding_positive_control": 0,
+  "arm1_cleared": [],
+  "arm2_cell_counts": {
+    "CLASSIFIER PENALISED": 3,
+    "BOTH BELOW": 6,
+    "BOTH ABOVE": 5,
+    "REVERSED": 1
+  },
+  "arm2_median_gap_sd_where_classifier_penalised": 1.38,
+  "note": "diagnostic only; no verdict is read and no registered text is touched"
+}

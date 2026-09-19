@@ -1,0 +1,767 @@
+{
+  "diagnostic": "is the probe target decodable in principle?",
+  "registered": false,
+  "pre_stated": false,
+  "written_after_seeing": "the position sweep's positive control failing on the pilot checkpoint",
+  "verdict_bearing": false,
+  "checkpoint": "a3_30m_seed1.pt",
+  "checkpoint_md5": "eeed93b80a7c8d81ba56d1ec6254af41",
+  "episodes_probed": 400,
+  "permutations": 50,
+  "permutation_note": "reduced from the 200 used for verdict-bearing nulls because this is a diagnosis; margins are coarser and the counts are reported",
+  "distinct_values_per_own_slot": {
+    "register_index": {
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4
+    },
+    "marker_token": {
+      "0": 25,
+      "1": 25,
+      "2": 25,
+      "3": 25
+    }
+  },
+  "scramble_note": "how many distinct values of each consistently defined quantity share one generator index. Anything much above 1 means the generator index has no stable surface realisation.",
+  "probes": {
+    "own_revision_marker|3|own_slot": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.2975,
+      "null_mean": 0.2448,
+      "null_sd": 0.0201,
+      "margin_sd": 2.61,
+      "clears_3sd": false,
+      "beats_majority_class": true,
+      "draws_beating_real": 0,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.2325,
+        "null_mean": 0.2489,
+        "null_sd": 0.0232,
+        "margin_sd": -0.71,
+        "clears_3sd": false,
+        "beats_majority_class": false
+      }
+    },
+    "own_revision_marker|3|register_index": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.25,
+      "null_mean": 0.2495,
+      "null_sd": 0.0216,
+      "margin_sd": 0.03,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 30,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.48,
+        "null_mean": 0.2443,
+        "null_sd": 0.0226,
+        "margin_sd": 10.41,
+        "clears_3sd": true,
+        "beats_majority_class": true
+      }
+    },
+    "own_revision_marker|3|marker_token": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.07,
+      "null_mean": 0.0384,
+      "null_sd": 0.0114,
+      "margin_sd": 2.77,
+      "clears_3sd": false,
+      "beats_majority_class": true,
+      "draws_beating_real": 0,
+      "draws": 50,
+      "classes": 25,
+      "no_information": 0.04,
+      "majority_class_rate": 0.06,
+      "episodes_per_class": 16.0,
+      "classifier": {
+        "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+      }
+    },
+    "own_revision_marker|4|own_slot": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.28,
+      "null_mean": 0.2546,
+      "null_sd": 0.0239,
+      "margin_sd": 1.06,
+      "clears_3sd": false,
+      "beats_majority_class": true,
+      "draws_beating_real": 9,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.28,
+        "null_mean": 0.2482,
+        "null_sd": 0.0264,
+        "margin_sd": 1.2,
+        "clears_3sd": false,
+        "beats_majority_class": true
+      }
+    },
+    "own_revision_marker|4|register_index": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.265,
+      "null_mean": 0.2481,
+      "null_sd": 0.029,
+      "margin_sd": 0.58,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 14,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.525,
+        "null_mean": 0.2505,
+        "null_sd": 0.023,
+        "margin_sd": 11.96,
+        "clears_3sd": true,
+        "beats_majority_class": true
+      }
+    },
+    "own_revision_marker|4|marker_token": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.06,
+      "null_mean": 0.041,
+      "null_sd": 0.0121,
+      "margin_sd": 1.57,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 5,
+      "draws": 50,
+      "classes": 25,
+      "no_information": 0.04,
+      "majority_class_rate": 0.06,
+      "episodes_per_class": 16.0,
+      "classifier": {
+        "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+      }
+    },
+    "own_revision_marker|5|own_slot": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.2675,
+      "null_mean": 0.248,
+      "null_sd": 0.0218,
+      "margin_sd": 0.89,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 11,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.25,
+        "null_mean": 0.2438,
+        "null_sd": 0.0239,
+        "margin_sd": 0.26,
+        "clears_3sd": false,
+        "beats_majority_class": false
+      }
+    },
+    "own_revision_marker|5|register_index": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.2675,
+      "null_mean": 0.2547,
+      "null_sd": 0.023,
+      "margin_sd": 0.56,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 16,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.535,
+        "null_mean": 0.2559,
+        "null_sd": 0.0297,
+        "margin_sd": 9.41,
+        "clears_3sd": true,
+        "beats_majority_class": true
+      }
+    },
+    "own_revision_marker|5|marker_token": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.095,
+      "null_mean": 0.0393,
+      "null_sd": 0.0098,
+      "margin_sd": 5.68,
+      "clears_3sd": true,
+      "beats_majority_class": true,
+      "draws_beating_real": 0,
+      "draws": 50,
+      "classes": 25,
+      "no_information": 0.04,
+      "majority_class_rate": 0.06,
+      "episodes_per_class": 16.0,
+      "classifier": {
+        "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+      }
+    },
+    "own_revision_marker|7|own_slot": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.2925,
+      "null_mean": 0.248,
+      "null_sd": 0.0212,
+      "margin_sd": 2.09,
+      "clears_3sd": false,
+      "beats_majority_class": true,
+      "draws_beating_real": 0,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.2725,
+        "null_mean": 0.2485,
+        "null_sd": 0.0226,
+        "margin_sd": 1.06,
+        "clears_3sd": false,
+        "beats_majority_class": false
+      }
+    },
+    "own_revision_marker|7|register_index": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.2625,
+      "null_mean": 0.2561,
+      "null_sd": 0.0224,
+      "margin_sd": 0.28,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 20,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.5275,
+        "null_mean": 0.2513,
+        "null_sd": 0.0285,
+        "margin_sd": 9.68,
+        "clears_3sd": true,
+        "beats_majority_class": true
+      }
+    },
+    "own_revision_marker|7|marker_token": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.0825,
+      "null_mean": 0.0402,
+      "null_sd": 0.0101,
+      "margin_sd": 4.19,
+      "clears_3sd": true,
+      "beats_majority_class": true,
+      "draws_beating_real": 0,
+      "draws": 50,
+      "classes": 25,
+      "no_information": 0.04,
+      "majority_class_rate": 0.06,
+      "episodes_per_class": 16.0,
+      "classifier": {
+        "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+      }
+    },
+    "own_revision_marker|8|own_slot": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.255,
+      "null_mean": 0.26,
+      "null_sd": 0.0226,
+      "margin_sd": -0.22,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 32,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.29,
+        "null_mean": 0.2454,
+        "null_sd": 0.0205,
+        "margin_sd": 2.18,
+        "clears_3sd": false,
+        "beats_majority_class": true
+      }
+    },
+    "own_revision_marker|8|register_index": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.2675,
+      "null_mean": 0.2527,
+      "null_sd": 0.0235,
+      "margin_sd": 0.63,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 12,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.515,
+        "null_mean": 0.2492,
+        "null_sd": 0.0263,
+        "margin_sd": 10.13,
+        "clears_3sd": true,
+        "beats_majority_class": true
+      }
+    },
+    "own_revision_marker|8|marker_token": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.0675,
+      "null_mean": 0.0394,
+      "null_sd": 0.0092,
+      "margin_sd": 3.05,
+      "clears_3sd": true,
+      "beats_majority_class": true,
+      "draws_beating_real": 0,
+      "draws": 50,
+      "classes": 25,
+      "no_information": 0.04,
+      "majority_class_rate": 0.06,
+      "episodes_per_class": 16.0,
+      "classifier": {
+        "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+      }
+    },
+    "own_revision_decision|3|own_slot": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.285,
+      "null_mean": 0.2491,
+      "null_sd": 0.0272,
+      "margin_sd": 1.32,
+      "clears_3sd": false,
+      "beats_majority_class": true,
+      "draws_beating_real": 2,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.2875,
+        "null_mean": 0.2486,
+        "null_sd": 0.0262,
+        "margin_sd": 1.48,
+        "clears_3sd": false,
+        "beats_majority_class": true
+      }
+    },
+    "own_revision_decision|3|register_index": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.29,
+      "null_mean": 0.2435,
+      "null_sd": 0.0246,
+      "margin_sd": 1.89,
+      "clears_3sd": false,
+      "beats_majority_class": true,
+      "draws_beating_real": 3,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.2675,
+        "null_mean": 0.2504,
+        "null_sd": 0.0245,
+        "margin_sd": 0.7,
+        "clears_3sd": false,
+        "beats_majority_class": false
+      }
+    },
+    "own_revision_decision|3|marker_token": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.0525,
+      "null_mean": 0.0411,
+      "null_sd": 0.0122,
+      "margin_sd": 0.93,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 8,
+      "draws": 50,
+      "classes": 25,
+      "no_information": 0.04,
+      "majority_class_rate": 0.06,
+      "episodes_per_class": 16.0,
+      "classifier": {
+        "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+      }
+    },
+    "own_revision_decision|4|own_slot": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.2375,
+      "null_mean": 0.2505,
+      "null_sd": 0.0221,
+      "margin_sd": -0.59,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 39,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.26,
+        "null_mean": 0.2494,
+        "null_sd": 0.0243,
+        "margin_sd": 0.44,
+        "clears_3sd": false,
+        "beats_majority_class": false
+      }
+    },
+    "own_revision_decision|4|register_index": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.25,
+      "null_mean": 0.2494,
+      "null_sd": 0.0232,
+      "margin_sd": 0.03,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 23,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.2225,
+        "null_mean": 0.2531,
+        "null_sd": 0.0233,
+        "margin_sd": -1.31,
+        "clears_3sd": false,
+        "beats_majority_class": false
+      }
+    },
+    "own_revision_decision|4|marker_token": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.0425,
+      "null_mean": 0.0389,
+      "null_sd": 0.009,
+      "margin_sd": 0.41,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 22,
+      "draws": 50,
+      "classes": 25,
+      "no_information": 0.04,
+      "majority_class_rate": 0.06,
+      "episodes_per_class": 16.0,
+      "classifier": {
+        "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+      }
+    },
+    "own_revision_decision|5|own_slot": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.265,
+      "null_mean": 0.2502,
+      "null_sd": 0.0252,
+      "margin_sd": 0.59,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 13,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.2725,
+        "null_mean": 0.2482,
+        "null_sd": 0.0234,
+        "margin_sd": 1.04,
+        "clears_3sd": false,
+        "beats_majority_class": false
+      }
+    },
+    "own_revision_decision|5|register_index": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.2275,
+      "null_mean": 0.2503,
+      "null_sd": 0.0299,
+      "margin_sd": -0.76,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 39,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.24,
+        "null_mean": 0.2526,
+        "null_sd": 0.0245,
+        "margin_sd": -0.51,
+        "clears_3sd": false,
+        "beats_majority_class": false
+      }
+    },
+    "own_revision_decision|5|marker_token": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.0425,
+      "null_mean": 0.0379,
+      "null_sd": 0.009,
+      "margin_sd": 0.51,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 17,
+      "draws": 50,
+      "classes": 25,
+      "no_information": 0.04,
+      "majority_class_rate": 0.06,
+      "episodes_per_class": 16.0,
+      "classifier": {
+        "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+      }
+    },
+    "own_revision_decision|7|own_slot": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.2775,
+      "null_mean": 0.2522,
+      "null_sd": 0.0258,
+      "margin_sd": 0.98,
+      "clears_3sd": false,
+      "beats_majority_class": true,
+      "draws_beating_real": 8,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.2825,
+        "null_mean": 0.2371,
+        "null_sd": 0.0232,
+        "margin_sd": 1.96,
+        "clears_3sd": false,
+        "beats_majority_class": true
+      }
+    },
+    "own_revision_decision|7|register_index": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.2225,
+      "null_mean": 0.2525,
+      "null_sd": 0.0246,
+      "margin_sd": -1.22,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 47,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.2325,
+        "null_mean": 0.2466,
+        "null_sd": 0.0223,
+        "margin_sd": -0.63,
+        "clears_3sd": false,
+        "beats_majority_class": false
+      }
+    },
+    "own_revision_decision|7|marker_token": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.0525,
+      "null_mean": 0.0396,
+      "null_sd": 0.0115,
+      "margin_sd": 1.11,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 7,
+      "draws": 50,
+      "classes": 25,
+      "no_information": 0.04,
+      "majority_class_rate": 0.06,
+      "episodes_per_class": 16.0,
+      "classifier": {
+        "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+      }
+    },
+    "own_revision_decision|8|own_slot": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.255,
+      "null_mean": 0.2488,
+      "null_sd": 0.0254,
+      "margin_sd": 0.24,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 20,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.2675,
+        "null_mean": 0.2523,
+        "null_sd": 0.0252,
+        "margin_sd": 0.6,
+        "clears_3sd": false,
+        "beats_majority_class": false
+      }
+    },
+    "own_revision_decision|8|register_index": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.23,
+      "null_mean": 0.2568,
+      "null_sd": 0.0296,
+      "margin_sd": -0.9,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 44,
+      "draws": 50,
+      "classes": 4,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2725,
+      "episodes_per_class": 100.0,
+      "classifier": {
+        "accuracy": 0.26,
+        "null_mean": 0.246,
+        "null_sd": 0.0282,
+        "margin_sd": 0.5,
+        "clears_3sd": false,
+        "beats_majority_class": false
+      }
+    },
+    "own_revision_decision|8|marker_token": {
+      "instrument": "difference of averages, nearest-average accuracy",
+      "accuracy": 0.05,
+      "null_mean": 0.04,
+      "null_sd": 0.0108,
+      "margin_sd": 0.93,
+      "clears_3sd": false,
+      "beats_majority_class": false,
+      "draws_beating_real": 8,
+      "draws": 50,
+      "classes": 25,
+      "no_information": 0.04,
+      "majority_class_rate": 0.06,
+      "episodes_per_class": 16.0,
+      "classifier": {
+        "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+      }
+    }
+  },
+  "reading": "THE READ WORKS AND THE TARGET IS WRONG, WITH NO OBVIOUS REPLACEMENT. The input token decodes; neither the generator's index nor the register index does.",
+  "well_posed_self_index_read": {
+    "what": "the model's OWN MARKER WORD, read at the registered anchor position. The marker has not been emitted yet at that position \u2014 it comes after the value \u2014 so the model would have to be carrying it. Unlike the generator index, this target is decodable in principle, which is what makes a null here mean something",
+    "per_layer": {
+      "3": {
+        "instrument": "difference of averages, nearest-average accuracy",
+        "accuracy": 0.0525,
+        "null_mean": 0.0411,
+        "null_sd": 0.0122,
+        "margin_sd": 0.93,
+        "clears_3sd": false,
+        "beats_majority_class": false,
+        "draws_beating_real": 8,
+        "draws": 50,
+        "classes": 25,
+        "no_information": 0.04,
+        "majority_class_rate": 0.06,
+        "episodes_per_class": 16.0,
+        "classifier": {
+          "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+        }
+      },
+      "4": {
+        "instrument": "difference of averages, nearest-average accuracy",
+        "accuracy": 0.0425,
+        "null_mean": 0.0389,
+        "null_sd": 0.009,
+        "margin_sd": 0.41,
+        "clears_3sd": false,
+        "beats_majority_class": false,
+        "draws_beating_real": 22,
+        "draws": 50,
+        "classes": 25,
+        "no_information": 0.04,
+        "majority_class_rate": 0.06,
+        "episodes_per_class": 16.0,
+        "classifier": {
+          "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+        }
+      },
+      "5": {
+        "instrument": "difference of averages, nearest-average accuracy",
+        "accuracy": 0.0425,
+        "null_mean": 0.0379,
+        "null_sd": 0.009,
+        "margin_sd": 0.51,
+        "clears_3sd": false,
+        "beats_majority_class": false,
+        "draws_beating_real": 17,
+        "draws": 50,
+        "classes": 25,
+        "no_information": 0.04,
+        "majority_class_rate": 0.06,
+        "episodes_per_class": 16.0,
+        "classifier": {
+          "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+        }
+      },
+      "7": {
+        "instrument": "difference of averages, nearest-average accuracy",
+        "accuracy": 0.0525,
+        "null_mean": 0.0396,
+        "null_sd": 0.0115,
+        "margin_sd": 1.11,
+        "clears_3sd": false,
+        "beats_majority_class": false,
+        "draws_beating_real": 7,
+        "draws": 50,
+        "classes": 25,
+        "no_information": 0.04,
+        "majority_class_rate": 0.06,
+        "episodes_per_class": 16.0,
+        "classifier": {
+          "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+        }
+      },
+      "8": {
+        "instrument": "difference of averages, nearest-average accuracy",
+        "accuracy": 0.05,
+        "null_mean": 0.04,
+        "null_sd": 0.0108,
+        "margin_sd": 0.93,
+        "clears_3sd": false,
+        "beats_majority_class": false,
+        "draws_beating_real": 8,
+        "draws": 50,
+        "classes": 25,
+        "no_information": 0.04,
+        "majority_class_rate": 0.06,
+        "episodes_per_class": 16.0,
+        "classifier": {
+          "skipped": "25 classes; a multinomial fit under a permutation null does not finish in a useful time, and it adds nothing the read above does not say"
+        }
+      }
+    },
+    "caveat": "underpowered: about sixteen episodes per marker word, so a difference of averages built from them is weak and a null is soft evidence"
+  },
+  "limits": "NOT pre-stated. Designed after seeing the sweep fail, so it is worth less than a measurement designed before. It carries no cell and settles nothing on its own; what it can do is say whether the instrument was pointed at a quantity that could ever have been recovered."
+}
