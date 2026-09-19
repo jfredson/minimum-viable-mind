@@ -99,34 +99,53 @@ was written after seeing the sweep fail, which makes it worth less than a
 measurement designed in advance, and it is labelled that way in the file
 and here. It points the same read at three targets:
 
-Held-out nearest-average accuracy on the pilot, at the model's own marker
-token, against a majority-class rate of 0.273 for the four-class targets
-and 0.060 for the marker word:
+First, the scrambling, measured rather than argued. For every one of the
+four values of `own_slot`, the number of distinct values of each
+consistently defined quantity that share it:
+
+| quantity | distinct values sharing one `own_slot` |
+|---|---|
+| `register_index` | **4 of 4** — every value, for every index |
+| `marker_token` | **25 of 25** — every word, for every index |
+
+`own_slot` is completely scrambled with respect to both. It picks out
+nothing.
+
+Held-out nearest-average accuracy on the pilot at the model's own marker
+token, each against its own 50-draw permutation null. Majority-class rate
+is 0.273 for the four-class targets and 0.060 for the marker word:
 
 | target | layer 3 | layer 4 | layer 5 | layer 7 | layer 8 |
 |---|---|---|---|---|---|
-| `own_slot` — what the stack asks for | 0.292 | 0.273 | 0.242 | 0.282 | 0.275 |
-| `register_index` — a consistently defined alternative | 0.330 | 0.320 | 0.295 | 0.302 | 0.302 |
-| `marker_token` — the input token itself | **0.550** | 0.512 | 0.510 | 0.497 | 0.490 |
+| `own_slot` — what the stack asks for | 0.293 (+1.60) | 0.273 (+0.88) | 0.243 (−0.24) | 0.283 (+1.33) | 0.275 (+0.91) |
+| `register_index` — consistently defined | 0.330 (+2.93) | 0.320 (+2.79) | 0.295 (+1.87) | 0.303 (+2.02) | 0.303 (+1.93) |
+| `marker_token` — the input token itself | **0.550 (+51.6)** | 0.513 (+43.1) | 0.510 (+41.3) | 0.498 (+41.9) | 0.490 (+40.8) |
 
-**The read works.** The marker word sitting at that position decodes at
-0.550 against a no-information value of 0.04 and a majority-class rate of
-0.060 — roughly nine times what guessing gives. Capture, position
-indexing and the difference-of-averages read are all sound. The sweep's
-machinery was never the problem.
+**The read works, and not marginally.** The marker word sitting at that
+position decodes at 0.550 against a permutation null of 0.041 — a margin
+of **51.6 standard deviations**, against a no-information value of 0.04
+and a majority-class rate of 0.060. Capture, position indexing and the
+difference-of-averages read are all sound. The sweep's machinery was
+never the problem, and this is the positive control the method file
+should have used.
 
-**The target is unreadable.** `own_slot` sits at the majority-class rate
-at the very position where the model's own marker word is right there in
-the input and decodes strongly. That is as clean a demonstration as this
-data can give: the states carry the marker, and the marker carries no
-information about the index we have been asking for.
+**The target is unreadable.** `own_slot` clears nothing at any layer, and
+at the very position where the model's own marker word is in the input
+and decoding at fifty standard deviations. The states carry the marker;
+the marker carries no information about the index we have been asking
+for.
 
-`register_index` — the rank of the model's own marker among the four in
-the episode, which `encoding_a3` already computes as `turn_reg` and which
-*is* consistently defined — sits above the majority rate at all five
-layers, best 0.330 against 0.273. That is a small, consistent lift and
-not a claim; it is the obvious candidate for a correctly posed target and
-it needs a real test, not this one.
+**`register_index` is the interesting middle case.** The rank of the
+model's own marker among the four in the episode — consistently defined,
+already computed by the encoder as `turn_reg`, and genuinely recoverable
+from the input once all four markers have appeared — sits above its null
+at **all five layers**, at +2.93, +2.79, +1.87, +2.02 and +1.93 standard
+deviations. Not one of them clears the three-standard-deviation bar. So
+it is not a result. But a consistently defined target lifting at every
+layer, where the generator index scatters around zero, is exactly the
+asymmetry the diagnosis predicts, and it makes the register index the
+obvious candidate for a correctly posed target. It needs its own
+committed method and its own null, not this one.
 
 ### The well-posed version of the question, and its answer
 
@@ -136,13 +155,20 @@ it comes after the value — so a model that knows which agent it is would
 have to be *carrying* it. Unlike the generator index, this target is
 decodable in principle, which is exactly what makes a null meaningful.
 
-On the pilot it reads 0.050, 0.045, 0.037, 0.052, 0.055 against a
-majority-class rate of 0.060. Nothing.
+On the pilot it reads 0.050, 0.045, 0.038, 0.053, 0.055 against a
+majority-class rate of 0.060, at +1.02, +0.71, −0.10, +1.00 and +1.49
+standard deviations. Nothing clears. At the same position `own_slot` and
+`register_index` also sit at or below their nulls at every layer.
 
 **This is underpowered and should not be leaned on.** Twenty-five marker
 words across 400 episodes is about sixteen episodes per word, and a
 difference of averages built from sixteen examples is weak. It is the
 first well-posed null this stack has produced, and it is soft.
+
+The diagnostic's own summary of the pilot: *the read works and the target
+is wrong, with no obvious replacement* — the input token decodes, and
+neither the generator's index nor the register index clears at either
+position.
 
 ## Arm 2 — classifier against difference of averages
 
