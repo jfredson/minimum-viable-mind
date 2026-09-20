@@ -32,8 +32,20 @@ battery learns at 0.5727 and collapses under its lesion to 0.1663. One seed,
 one dose; the matched comparison moved +0.0248 at a standard error of 0.0157,
 in the intervention's direction and not significant. The intervention also
 tripled the whole query loss against the action term (RT-57), which any
-future reweighting run holds fixed. Two $0 checks are open (RT-58, RT-59)
-and the training log and trajectory are to be committed (RT-56).
+future reweighting run holds fixed. The step 4 housekeeping is done
+(2026-09-20): the training log and trajectory are committed beside the
+endpoint record (the missing-log finding, RT-56, with its missed deadline
+recorded as missed), and both open $0 checks have run and are clean. The
+fixed batch-split bias check (RT-58) finds no bias in episode order across
+all 55,116 steps the pilot trained — structurally, the generator emits
+episodes in matched content pairs and the 64-row control half is even, so
+no pair is ever cut by the split boundary. The one-scored-token self-test
+(RT-59) holds on all 7,054,848 rows. Neither changes a result; each
+removes a way the verdict could have been an artefact.
+**Carried forward for any future run of this flag: `round(batch ×
+ctl_frac)` must stay even, or the split cuts content pairs.**
+Notes: `ctl-pilot-log-provenance-findings.md`,
+`ctl-split-bias-findings.md`, `ctl-scored-token-findings.md`.
 
 What this settles for public path step 4 (2026-10-04): the operative bar
 for this battery to be useful is 0.4227, not 0.3227 (the corrected floor
@@ -148,8 +160,13 @@ outside reader's timing. ch05 owes the degree reading before the
    hours). The marker-word fitted read (~70 hours) is deferred.
 2. The step 4 proposal goes to a tier 1 pass, then to John, before
    2026-10-04. Causal patching before A3 closes is its second item.
-3. Closures for RT-56, RT-58, RT-59 (log and trajectory committed; two
-   one-line checks).
+3. ~~Closures for RT-56, RT-58, RT-59 (log and trajectory committed; two
+   one-line checks).~~ **Done 2026-09-20.** All three closed and filed as
+   findings notes, each with its ledger closure line. Both checks are
+   clean and neither changes a result. The one-scored-token check turned
+   out to be worth more than one line: the assumption has to survive the
+   shift the loss function applies, which a one-line version would have
+   missed.
 
 ## WHERE THINGS STAND 2026-09-19 (evening) — the eleven-position sweep finds nothing under a difference-of-averages read; the outside review says that closes one read, not the linear read; the outside-review protocol is in force
 

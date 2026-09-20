@@ -1,0 +1,17 @@
+{
+  "ledger_row": "RT-59",
+  "claim": "exactly one scored token per row",
+  "steps_checked": 55116,
+  "rows_checked": 7054848,
+  "batch": 128,
+  "max_scored_tokens_seen_on_any_row": 1,
+  "B1_one_masked_token_per_row": true,
+  "B2_survives_the_shift_loss_a3_applies": true,
+  "B3_scored_token_is_the_query_answer": true,
+  "B4_pooled_equals_mean_of_per_row": true,
+  "pooled_q": 48.558334,
+  "row_mean_q": 48.558342,
+  "first_failure": null,
+  "verdict": "HOLDS",
+  "seconds": 1401.5
+}

@@ -1,0 +1,239 @@
+{
+  "ledger_row": "RT-58",
+  "claim": "the fixed positional split is not biased",
+  "pilot": {
+    "seed": 0,
+    "batch": 128,
+    "ctl_weight": 2.0,
+    "ctl_frac": 0.5
+  },
+  "steps_checked": 55116,
+  "rows_checked": 7054848,
+  "n_ctl_per_batch": 64,
+  "n_ctl_is_even": true,
+  "S1_content_pairs_are_adjacent": true,
+  "S2_boundary_never_cuts_a_pair": true,
+  "S3_control_half_is_full": true,
+  "S4_control_rows_carry_the_control_query": true,
+  "pair_straddles": 0,
+  "prestated_bars": {
+    "cramers_v": 0.01,
+    "cohens_d": 0.02,
+    "adjusted_alpha": 0.005,
+    "n_tests": 10
+  },
+  "max_cramers_v": 0.000901,
+  "max_abs_cohens_d": 4.082627,
+  "properties": {
+    "own_slot": {
+      "kind": "categorical",
+      "chi2": 3.528,
+      "df": 3,
+      "p": 0.31714460253715515,
+      "cramers_v": 0.000707,
+      "control_half": [
+        882203,
+        880988,
+        882757,
+        881476
+      ],
+      "other_half": [
+        881446,
+        883008,
+        881504,
+        881466
+      ],
+      "material": false,
+      "significant_at_adjusted_bar": false
+    },
+    "model_revises": {
+      "kind": "categorical",
+      "chi2": 0.269,
+      "df": 1,
+      "p": 0.6038956642150879,
+      "cramers_v": 0.000195,
+      "control_half": [
+        1763399,
+        1764025
+      ],
+      "other_half": [
+        1762710,
+        1764714
+      ],
+      "material": false,
+      "significant_at_adjusted_bar": false
+    },
+    "ctl_answer_slot": {
+      "kind": "categorical",
+      "chi2": 5.726,
+      "df": 7,
+      "p": 0.5720233917236328,
+      "cramers_v": 0.000901,
+      "control_half": [
+        441188,
+        441435,
+        439017,
+        440811,
+        441410,
+        441828,
+        440528,
+        441207
+      ],
+      "other_half": [
+        441960,
+        440407,
+        440113,
+        441509,
+        440422,
+        441188,
+        440971,
+        440854
+      ],
+      "material": false,
+      "significant_at_adjusted_bar": false
+    },
+    "ctl_item_rank": {
+      "kind": "categorical",
+      "chi2": 0.35,
+      "df": 1,
+      "p": 0.5539535880088806,
+      "cramers_v": 0.000223,
+      "control_half": [
+        1761987,
+        1765437,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "other_half": [
+        1762773,
+        1764651,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "material": false,
+      "significant_at_adjusted_bar": false
+    },
+    "ctl_named_agent_offset": {
+      "kind": "categorical",
+      "chi2": 0.142,
+      "df": 2,
+      "p": 0.9315083026885986,
+      "cramers_v": 0.000142,
+      "control_half": [
+        0,
+        1175131,
+        1175355,
+        1176938
+      ],
+      "other_half": [
+        0,
+        1175541,
+        1175352,
+        1176531
+      ],
+      "material": false,
+      "significant_at_adjusted_bar": false
+    },
+    "ctl_named_agent_revised": {
+      "kind": "categorical",
+      "chi2": 0.758,
+      "df": 1,
+      "p": 0.3840542435646057,
+      "cramers_v": 0.000328,
+      "control_half": [
+        1764168,
+        1763256
+      ],
+      "other_half": [
+        1763012,
+        1764412
+      ],
+      "material": false,
+      "significant_at_adjusted_bar": false
+    },
+    "state_query_variant": {
+      "kind": "categorical",
+      "chi2": 1.3,
+      "df": 1,
+      "p": 0.254278302192688,
+      "cramers_v": 0.000429,
+      "control_half": [
+        1761730,
+        1765694
+      ],
+      "other_half": [
+        1763244,
+        1764180
+      ],
+      "material": false,
+      "significant_at_adjusted_bar": false
+    },
+    "n_turns": {
+      "kind": "continuous",
+      "t": 0.0,
+      "p": 1.0,
+      "cohens_d": 0.0,
+      "control_half_mean": 10.0,
+      "other_half_mean": 10.0,
+      "n_control": 3527424,
+      "n_other": 3527424,
+      "material": false,
+      "significant_at_adjusted_bar": false
+    },
+    "n_tokens": {
+      "kind": "continuous",
+      "t": 5421.925,
+      "p": 0.0,
+      "cohens_d": 4.082627,
+      "control_half_mean": 83.0,
+      "other_half_mean": 81.7501,
+      "n_control": 3527424,
+      "n_other": 3527424,
+      "material": true,
+      "significant_at_adjusted_bar": true
+    },
+    "n_tokens_episode_only": {
+      "kind": "continuous",
+      "t": 0.0,
+      "p": 1.0,
+      "cohens_d": 0.0,
+      "control_half_mean": 71.0,
+      "other_half_mean": 71.0,
+      "n_control": 3527424,
+      "n_other": 3527424,
+      "material": false,
+      "significant_at_adjusted_bar": false
+    }
+  },
+  "material_differences": [
+    "n_tokens"
+  ],
+  "material_differences_on_episode_properties": [],
+  "row_level_properties_separated": [
+    "n_tokens"
+  ],
+  "query_token_decomposition": {
+    "T_other": {
+      "mean_query_tokens": 12.0,
+      "rows": 3527424
+    },
+    "T_state": {
+      "mean_query_tokens": 10.5001,
+      "rows": 1763712
+    },
+    "T_syntax": {
+      "mean_query_tokens": 11.0,
+      "rows": 1763712
+    }
+  },
+  "verdict": "NO BIAS IN EPISODE ORDER; the pre-stated row-level property differs by design (see query_token_decomposition)",
+  "seconds": 1784.9
+}

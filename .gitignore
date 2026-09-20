@@ -33,3 +33,9 @@ experiments/**/checkpoints/
 *.log
 .claude/
 .venv-lock-*.txt
+
+# A run's own training log is part of the record when it sits in a gates
+# directory beside that run's endpoint record. The blanket *.log rule above
+# is why the control pilot's log was missing from the repository for a day
+# (red-team ledger row RT-56, the missing training log). Records win.
+!experiments/**/a3-gates/*.log
