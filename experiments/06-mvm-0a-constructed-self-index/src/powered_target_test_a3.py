@@ -260,9 +260,16 @@ def targets(eps):
 
 # --------------------------------------------------------------- measure
 
-def measure(X, y, seed):
+def measure(X, y, seed, family_bar=FAMILY_SD_BAR):
     """The read and its 1,000-draw null, with the count beside the
-    margin because the count is what the draws can actually show."""
+    margin because the count is what the draws can actually show.
+
+    `family_bar` is the margin a clearance must also reach to be labelled
+    ROBUST rather than MARGINAL. It defaults to this module's own family
+    of 45 tests; a caller with a larger family passes its own, which is
+    what the eleven-position sweep does (270 discovery tests need 3.56
+    rather than 3.06).
+    """
     y = np.asarray(y)
     classes = sorted(np.unique(y).tolist())
     fs = D.folds(len(y), N_FOLDS, np.random.default_rng(seed))
@@ -295,8 +302,9 @@ def measure(X, y, seed):
             "beats_majority_class": bool(real > majority)
             if tag == "accuracy" else None,
             "label": ("ROBUST" if (clears and margin is not None
-                                   and margin >= FAMILY_SD_BAR and beat == 0)
-                      else "MARGINAL" if clears else None)}
+                                   and margin >= family_bar and beat == 0)
+                      else "MARGINAL" if clears else None),
+            "family_bar_used": family_bar}
     bad = []
     if out["accuracy"]["null_sd"] == 0:
         bad.append("the permutation null has zero spread")
