@@ -321,8 +321,22 @@ def split_check(n_steps: int, seed: int, batch: int, ctl_weight: float,
     # continuous accumulators: name -> [half] -> [sum, sumsq, n]
     con: dict[str, list[list[float]]] = {
         "n_turns": [[0.0, 0.0, 0.0] for _ in (0, 1)],
+        # PRE-STATED, and it fires. Kept exactly as it was written, with
+        # its result reported, because the rule was committed before the
+        # sweep ran and a property is not dropped for being inconvenient.
+        # It is a BADLY CHOSEN property: it measures the whole encoded
+        # ROW, which is the episode plus the query, and the query is the
+        # intervention itself -- control rows carry the control query by
+        # design. See the note below.
         "n_tokens": [[0.0, 0.0, 0.0] for _ in (0, 1)],
+        # ADDED AFTER THE FIRST FULL SWEEP, and labelled as such. This is
+        # the property `n_tokens` was meant to be: the episode's own
+        # length, with no query attached, which is what "does batch
+        # position correlate with the episode" actually asks. It is
+        # reported ALONGSIDE the pre-stated one, never in place of it.
+        "n_tokens_episode_only": [[0.0, 0.0, 0.0] for _ in (0, 1)],
     }
+    qtok: dict[str, list[float]] = {}
     s1 = s2 = s3 = s4 = True
     n_ctl_expected = int(round(batch * ctl_frac))
     pair_straddles = 0
@@ -349,6 +363,16 @@ def split_check(n_steps: int, seed: int, batch: int, ctl_weight: float,
 
         lens = [len(e["input_ids"])
                 for e in (E.encode_episode(e, query=q) for e, q in pairs)]
+        # the same rows with no query attached: episode body only
+        lens_ep = [len(E.encode_episode(e, query=None)["input_ids"])
+                   for e, _ in pairs]
+        # what the query itself contributes, kept by battery so the
+        # pre-stated property's result can be decomposed rather than
+        # merely explained away
+        for (_, q), lt, le in zip(pairs, lens, lens_ep):
+            qtok.setdefault(q.battery, [0.0, 0.0])
+            qtok[q.battery][0] += lt - le
+            qtok[q.battery][1] += 1
 
         for i, ((e, q), f) in enumerate(zip(pairs, fl)):
             h = 0 if f else 1
@@ -358,9 +382,15 @@ def split_check(n_steps: int, seed: int, batch: int, ctl_weight: float,
                          if x.battery == T.CONTROL_BATTERY)
             cat["ctl_answer_slot"][h][A.SLOTS.index(ctl_q.answer)] += 1
             # which contested item the control query asks about, by its
-            # rank in the episode's own contested list
-            item = next((it for it in e.contested if it in ctl_q.text),
-                        None)
+            # rank in the episode's own contested list.
+            # Padded with spaces on both sides on purpose: item names
+            # collide as substrings -- "parcel_1" sits inside
+            # "parcel_10" -- and a plain `in` test would score a query
+            # about parcel_10 as one about parcel_1 whenever both are
+            # contested. The query renders as "... assign <item> to
+            # next?", so the item always has a space either side.
+            item = next((it for it in e.contested
+                         if f" {it} " in f" {ctl_q.text} "), None)
             if item is not None:
                 cat["ctl_item_rank"][h][e.contested.index(item) % 8] += 1
             named = next((a for a in range(e.n_agents)
@@ -376,7 +406,8 @@ def split_check(n_steps: int, seed: int, batch: int, ctl_weight: float,
                 cat["state_query_variant"][h][
                     int(st.text.startswith("how many"))] += 1
             for name, val in (("n_turns", float(len(e.turns))),
-                              ("n_tokens", float(lens[i]))):
+                              ("n_tokens", float(lens[i])),
+                              ("n_tokens_episode_only", float(lens_ep[i]))):
                 con[name][h][0] += val
                 con[name][h][1] += val * val
                 con[name][h][2] += 1
@@ -416,6 +447,23 @@ def split_check(n_steps: int, seed: int, batch: int, ctl_weight: float,
 
     structural = bool(s1 and s2 and s3 and s4)
     material = [k for k, v in props.items() if v["material"]]
+    # `n_tokens` measures the whole encoded ROW -- episode plus query --
+    # and control rows carry the control query BY DESIGN. So a difference
+    # there is the intervention showing up in the instrument, not batch
+    # position carrying information about the episode, which is what
+    # RT-58 asks. It is separated here, not dropped: it is still in
+    # `material_differences` above and its numbers are still reported.
+    ROW_LEVEL = {"n_tokens"}
+    material_episode = [k for k in material if k not in ROW_LEVEL]
+    qdec = {b: {"mean_query_tokens": round(v[0] / v[1], 4),
+                "rows": int(v[1])} for b, v in sorted(qtok.items())}
+    if not structural or material_episode:
+        verdict = "BIAS FOUND"
+    elif material:
+        verdict = ("NO BIAS IN EPISODE ORDER; the pre-stated row-level "
+                   "property differs by design (see query_token_decomposition)")
+    else:
+        verdict = "NO MATERIAL BIAS"
     return {
         "ledger_row": "RT-58",
         "claim": "the fixed positional split is not biased",
@@ -436,8 +484,10 @@ def split_check(n_steps: int, seed: int, batch: int, ctl_weight: float,
         "max_abs_cohens_d": round(worst_d, 6),
         "properties": props,
         "material_differences": material,
-        "verdict": ("NO MATERIAL BIAS" if structural and not material
-                    else "BIAS FOUND"),
+        "material_differences_on_episode_properties": material_episode,
+        "row_level_properties_separated": sorted(ROW_LEVEL),
+        "query_token_decomposition": qdec,
+        "verdict": verdict,
         "seconds": round(time.time() - t0, 1),
     }
 
@@ -477,6 +527,15 @@ def self_test() -> None:
     # the replay is deterministic: the same step twice is the same batch
     _, pairs_c, _ = replay(step, seed, bs, 2.0, 0.5)
     assert [q.answer for _, q in pairs_b] == [q.answer for _, q in pairs_c]
+
+    # item names collide as substrings, and the space-padded match must
+    # not fall for it. This is a bug this file actually had.
+    txt = "where did <alpha> assign parcel_10 to next?"
+    assert f" parcel_1 " not in f" {txt} ", "the padded match must reject"
+    assert f" parcel_10 " in f" {txt} ", "the padded match must accept"
+    naive = [it for it in ("parcel_1", "parcel_10") if it in txt]
+    assert naive == ["parcel_1", "parcel_10"], \
+        "the naive match is ambiguous here, which is why it is not used"
 
     # a two-step scored-token check passes on a real batch
     r = scored_token_check(2, seed, 32, 2.0, 0.5)
