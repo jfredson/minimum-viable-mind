@@ -1,0 +1,59 @@
+{
+  "checkpoints": [
+    "a3_30m_seed0.pt",
+    "a3_30m_seed1.pt",
+    "a3_30m_seed2.pt"
+  ],
+  "arm": "register_index",
+  "family_sd_bar": 3.38,
+  "family_size": 135,
+  "cell": "FOUND NOWHERE",
+  "detail": {
+    "void_checkpoints": [],
+    "found_by_checkpoint": {},
+    "negative_control_clearances": {},
+    "cell": "FOUND NOWHERE",
+    "sub_pattern": "nothing was found on any checkpoint",
+    "means": "at these eleven positions, five layers and three checkpoints, a fitted linear read does not find the register index anywhere except where the answer is most explicitly available. This is NOT a finding of absence: see the limits"
+  },
+  "per_checkpoint": {
+    "a3_30m_seed0.pt": {
+      "control_holds": true,
+      "found_positions": [],
+      "marginal_positions": [],
+      "leak": [],
+      "degenerate_tests": []
+    },
+    "a3_30m_seed1.pt": {
+      "control_holds": true,
+      "found_positions": [],
+      "marginal_positions": [],
+      "leak": [],
+      "degenerate_tests": []
+    },
+    "a3_30m_seed2.pt": {
+      "control_holds": true,
+      "found_positions": [],
+      "marginal_positions": [
+        "other_revision_value"
+      ],
+      "leak": [],
+      "degenerate_tests": []
+    }
+  },
+  "anchor_reproduction": {
+    "a3_30m_seed0.pt": {
+      "largest_difference": 0.0,
+      "exact": false
+    },
+    "a3_30m_seed1.pt": {
+      "largest_difference": 0.0,
+      "exact": true
+    },
+    "a3_30m_seed2.pt": {
+      "largest_difference": 0.0,
+      "exact": true
+    }
+  },
+  "note": "diagnostic only; no verdict is read and no registered text is touched"
+}
