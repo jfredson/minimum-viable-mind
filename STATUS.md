@@ -2,10 +2,91 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
-## WHERE THINGS STAND 2026-09-19 (evening) — the eleven-position sweep finds nothing under a difference-of-averages read; the outside review says that closes one read, not the linear read; the outside-review protocol is in force
+## WHERE THINGS STAND 2026-09-20 — the control battery converges on the name-blind solver even with its own loss term; the fitted read finds nothing on the register index; the linear-read line is parked as *not testable (localization)*; step 4 narrows to option D or closing A3
 
 *This section is the current state. Everything below it is the older
 record, newest first, and is left exactly as written.*
+
+Both entries below went through Gate B of `docs/outside-review-protocol.md`
+before entering here. Reviews: `reviews/2026-09-20-control-learnability-claude-worktree.md`
+(PR 7, ledger RT-52 to RT-69) and `reviews/2026-09-20-fitted-read-claude-worktree.md`
+(PR 8, ledger RT-70 to RT-93). John ruled on all forty-two findings on
+2026-09-20; every ruling is in `red_team_ledger.md`.
+
+### The control-learnability pilot (unregistered, $9.97, ruled for the record)
+
+Giving the control battery its own loss term, four times the per-row weight
+and two thirds of the query gradient instead of one third (`ee7fc91`,
+`launch_ctl_pilot.sh`, one 30M register-less run, seed 0, full 55,116-step
+budget), left it at 0.3125 (sd 0.0240 across six evaluation seeds), against
+0.2877 on the matched checkpoint that received none of it: still on the
+shoulder of a solver that cannot read the name the question supplies, and
+nowhere near the 0.60 that would show it had learned to read it.
+Reweighting the rows it already had is not what this battery is missing.
+The battery has learned the whole name-blind procedure, 95% of the way from
+chance (0.125) to the name-blind solver (0.3227), and none of the name-keyed
+lookup, which is what the three remaining explanations are all about (the
+reversed rendering, the missing private route, an answer that appears in no
+turn). Pre-stated cell: DID NOT LEARN. Both secondary cells pass: the primary
+battery learns at 0.5727 and collapses under its lesion to 0.1663. One seed,
+one dose; the matched comparison moved +0.0248 at a standard error of 0.0157,
+in the intervention's direction and not significant. The intervention also
+tripled the whole query loss against the action term (RT-57), which any
+future reweighting run holds fixed. Two $0 checks are open (RT-58, RT-59)
+and the training log and trajectory are to be committed (RT-56).
+
+What this settles for public path step 4 (2026-10-04): the operative bar
+for this battery to be useful is 0.4227, not 0.3227 (the corrected floor
+rule, `control-battery-proposal.md`), so any control below 0.4227 leaves
+Amendment A3 exactly where it is today, and a rerun landing in PARTIAL would
+change nothing. Step 4 narrows to option D (a scaffolded query that teaches
+plain name-keyed retrieval first, which is a different and easier question,
+not more supervision of the same rows) or closing A3 with partial
+discriminators. Any option that keeps this battery inherits the 2026-09-17
+ceiling precondition. Proposal: `docs/step4-control-battery-proposal-2026-09-20.md`
+(draft, goes through a tier 1 pass before John rules, per Gate C).
+
+### The fitted linear read at eleven positions (unregistered, $0, ruled for the record)
+
+A fitted linear classifier, run at eleven positions and five layers on all
+three 30-million-parameter checkpoints (`fitted-position-sweep-findings.md`,
+PR 6), does not find the model's register index anywhere except at the
+token where its own marker is the input. The controls held everywhere: the
+register index reads at 34 to 54 standard deviations at that token on every
+checkpoint, and the negative control shows no leak at the position where the
+answer is not yet knowable. One test reached three standard deviations
+without reaching the family-adjusted bar of 3.38, at the other agent's
+revision value on seed 2; the same position is the highest testable position
+on all three checkpoints and in all fifteen of its tests, and it is recorded
+as an open item rather than a result. The run would have found a signal
+legible in about one episode in eleven, not one in twenty-seven as the
+findings state (RT-74; correction note beside the findings). This closes the
+fitted read on the register index. It does not close the linear read: the
+registered target is the model's own marker word, and no fitted read has
+ever been run on it at these nine positions, only the difference-of-averages
+read, which this run measures as recovering five to nineteen times less than
+a fitted classifier on the same target at the same position. Neither "not
+localized" nor "absent" may be said of any of this: Amendment A3 §3.2
+requires probe and causal patching to agree before anything counts as
+localized, patching has never been run, and the pre-registration reads a
+probe-only null against a centre known to be load-bearing as instrument
+failure. The registered term for where this stands is *not testable
+(localization)*.
+
+### Next, ruled 2026-09-20
+
+1. Two $0 local runs, method committed before output, brief at
+   `reviews/2026-09-20-followup-runs-brief.md`: the other-agent index at the
+   eleven positions (registered matched control L2(a), never run, ~11
+   processor-hours) and the standardised refit at the nine positions (~11
+   hours). The marker-word fitted read (~70 hours) is deferred.
+2. The step 4 proposal goes to a tier 1 pass, then to John, before
+   2026-10-04. Causal patching before A3 closes is its second item.
+3. Closures for RT-56, RT-58, RT-59 (log and trajectory committed; two
+   one-line checks).
+
+## WHERE THINGS STAND 2026-09-19 (evening) — the eleven-position sweep finds nothing under a difference-of-averages read; the outside review says that closes one read, not the linear read; the outside-review protocol is in force
+
 
 **The outside-review protocol is in force** (`docs/outside-review-protocol.md`,
 ruled 2026-09-19). Interpretations that change direction go through a
