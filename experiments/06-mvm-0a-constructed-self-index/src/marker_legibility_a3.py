@@ -85,6 +85,15 @@ def embedding_norms(model) -> dict:
     }
 
 
+def _row(segments, pos):
+    """The attention row for absolute position `pos`, from the segment
+    that contains it. That row covers every key up to `pos`."""
+    for off, w in segments:
+        if off <= pos < off + w.shape[1]:
+            return w[:, pos - off]
+    raise IndexError(f"no segment contains position {pos}")
+
+
 @torch.no_grad()
 def attention_to_markers(model, eps, device) -> dict:
     """Attention paid by the anchor row to earlier marker tokens."""
@@ -113,7 +122,14 @@ def attention_to_markers(model, eps, device) -> dict:
                                              torch.tensor(ps, device=device)
                                              - 1]))
 
-    weights: dict[int, torch.Tensor] = {}
+    # The model runs the episode in SEGMENTS, one per turn, each block
+    # seeing a cached prefix. So attention weights arrive one segment at a
+    # time and have to be kept with the segment's offset: a segment
+    # starting at absolute position `off` returns rows for `off ..
+    # off+s-1`, each covering absolute keys `0 .. off+s-1`. Keeping only
+    # the last segment, which is the obvious mistake here, gives a matrix
+    # seven tokens wide and an index error.
+    weights: dict[int, list] = {Lr: [] for Lr in P.PROBE_LAYERS}
     for Lr in P.PROBE_LAYERS:
         blk = model.blocks[Lr]
         orig = blk.forward
@@ -124,14 +140,14 @@ def attention_to_markers(model, eps, device) -> dict:
             # forward the same inputs so the output path is untouched
             h = _b.ln1(x)
             ctx = h if kv is None else torch.cat([kv, h], dim=1)
-            p, s = ctx.shape[1] - h.shape[1], h.shape[1]
-            mask = torch.ones(s, p + s, dtype=torch.bool, device=x.device)
-            mask[:, p:] = torch.triu(
-                torch.ones(s, s, dtype=torch.bool, device=x.device),
+            pfx, sl = ctx.shape[1] - h.shape[1], h.shape[1]
+            mask = torch.ones(sl, pfx + sl, dtype=torch.bool, device=x.device)
+            mask[:, pfx:] = torch.triu(
+                torch.ones(sl, sl, dtype=torch.bool, device=x.device),
                 diagonal=1) == 0
             _, w = _b.attn(h, ctx, ctx, attn_mask=~mask, need_weights=True,
                            average_attn_weights=True)
-            weights[_L] = w.detach()
+            weights[_L].append((pfx, w.detach()))
             return _o(x, kv, reg_repr)
         blk.forward = patched
     model.forward(batch, act_inject=act)
@@ -140,11 +156,11 @@ def attention_to_markers(model, eps, device) -> dict:
 
     out = {}
     for Lr in P.PROBE_LAYERS:
-        w = weights[Lr]
+        segs = weights[Lr]
         own_mass, other_mass, total_mass = [], [], []
         for b, e in enumerate(eps):
             anchor = P.position_indices(e)[P.ANCHOR]
-            row = w[b, anchor]
+            row = _row(segs, anchor)[b]
             own, oth = 0.0, 0.0
             for ti, t in enumerate(e.turns):
                 pos = 1 + P.TURN_SPAN * ti + MARKER_WORD_IDX
@@ -221,10 +237,23 @@ def self_test() -> None:
             "the model's own marker in the revision turn must sit AFTER "
             "the anchor — that is why the anchor is the interesting place")
     assert len(A.MARKERS) == 25, "the marker pool"
+
+    # the segment lookup, which is what the first version got wrong: the
+    # model runs one segment per turn, so a row must be fetched from the
+    # segment that contains it and must cover every earlier key
+    segs = [(0, torch.zeros(2, 8, 8)), (8, torch.zeros(2, 7, 15)),
+            (15, torch.zeros(2, 7, 22))]
+    assert _row(segs, 3).shape == (2, 8), "a row in the first segment"
+    assert _row(segs, 16).shape == (2, 22), "a later row covers all keys"
+    try:
+        _row(segs, 99)
+        raise AssertionError("a position in no segment must raise")
+    except IndexError:
+        pass
     print("self-test OK — the marker index finds every turn's own marker, "
           "and the model's own revision marker is confirmed to sit after "
-          "the anchor, where causal attention cannot reach it; no "
-          "checkpoint touched")
+          "the anchor, where causal attention cannot reach it, and the "
+          "segment lookup; no checkpoint touched")
 
 
 def main() -> None:
