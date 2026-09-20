@@ -2,10 +2,60 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
-## WHERE THINGS STAND 2026-09-19 — branch merged to main; the seeds replicate; the registered comparison turns out never to have been computable; the sensitivity rule is ruled, for future runs only
+## WHERE THINGS STAND 2026-09-19 (evening) — the eleven-position sweep finds nothing under a difference-of-averages read; the outside review says that closes one read, not the linear read; the outside-review protocol is in force
 
 *This section is the current state. Everything below it is the older
 record, newest first, and is left exactly as written.*
+
+**The outside-review protocol is in force** (`docs/outside-review-protocol.md`,
+ruled 2026-09-19). Interpretations that change direction go through a
+context-isolated review before they enter this section. This entry is the
+first to do so: the review is `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-19-linear-read-closure-claude-worktree.md`
+with its addendum (PR 5), rulings RT-33 to RT-51 in `red_team_ledger.md`.
+
+### The result, as ruled for the record
+
+Across eleven positions and five layers on all three 30-million-parameter
+checkpoints, a difference-of-averages read finds no own-agent identity,
+neither the model's own marker word nor its register index, anywhere except
+at the token where the marker is the current input (PR 4,
+`powered-position-sweep-findings.md`). Zero of 270 testable tests reach 3
+standard deviations, let alone the family-adjusted bar of 3.56; the largest
+margin is +2.73. These are the first runs to use the registered probe
+target, the marker word (RT-48). The sweep had real power: it would have
+detected an identity legible in as few as 1.3% of episodes for the marker
+word and 3.9% for the register index (RT-37). The controls held: the read
+recovers the input token at up to 159 standard deviations, and the negative
+control at the first own turn shows no leak there, and licenses no more than
+that (RT-42). The positive control is strong on the pilot and weak on seeds
+1 and 2, where it recovers the input token on about one episode in eight,
+so a null on those two checkpoints means correspondingly less (RT-36).
+
+**What this closes is the difference-of-averages read, not the linear
+read.** A fitted linear classifier was never run at any of these positions
+against a well-posed target, and in the one place both were tried, the
+register index at the marker position, it read at about twice the accuracy
+(0.48 to 0.535 against 0.25 to 0.33; `probe_target_diagnostic_a3_*.json`,
+RT-33). Neither was causal patching, which the registration requires
+alongside the probe before anything counts as localized (Amendment A3 §3.2,
+RT-49). The registered probe position is the stronger result, because both
+instruments find nothing there. Under the registered text, a null from one
+leg of a two-leg procedure against ownership that is known to be
+load-bearing reads as instrument failure, not absence, until patching has
+run (RT-50). No registered result changes.
+
+### Next, ruled 2026-09-19
+
+1. The fitted linear classifier on the four-answer register-index target at
+   all eleven positions, five layers, three checkpoints. Local, $0, existing
+   code. Method committed before output. The line is retired, if at all, on
+   what it returns. Brief: `reviews/2026-09-19-fitted-read-brief.md`.
+2. Whether causal patching runs before A3 closes is added to the 2026-10-04
+   control-battery decision (public path step 4) as its second item.
+3. The pilot-versus-seeds legibility gap (RT-36) stays open.
+
+## WHERE THINGS STAND 2026-09-19 — branch merged to main; the seeds replicate; the registered comparison turns out never to have been computable; the sensitivity rule is ruled, for future runs only
+
 
 **The code is now on `main`.** The working branch
 `gate0-null-calibration` — 63 commits, everything from Gate 0 through the
