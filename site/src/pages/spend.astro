@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import Meter from '../components/Meter.astro';
+import { data, fmtDate, usd } from '../lib/project';
+const sp = data.spend;
+---
+
+<Base title="Spend — Minimum Viable Mind" description="Registered compute caps and where the spend stands against each.">
+  <section class="hero">
+    <p class="eyebrow">Spend · as of {fmtDate(sp.as_of)}</p>
+    <h1>Caps are protocol, not budget</h1>
+    <p class="lede">Once a registration lands, exceeding its cap is a protocol violation, not an overspend: work stops and any continuation is a registered amendment. Every pod session gets a ledger row with its estimate before the run and its actual after.</p>
+  </section>
+
+  <section class="section">
+    <div class="spend-grid">
+      {sp.lines.map((l) => (
+        <article class="spend-card">
+          <p class="kicker" style="margin-top:0">{l.name}</p>
+          <div class="spend-num"><span class="stat">{usd(l.spent)}</span><span class="stat-of"> of {usd(l.cap)}</span></div>
+          <Meter value={l.fraction * 100} caption={`${Math.round(l.fraction * 100)}% used · ${usd(l.remaining)} of headroom`} />
+          <p class="spend-note">{l.note}</p>
+        </article>
+      ))}
+      <article class="spend-card">
+        <p class="kicker" style="margin-top:0">Account balance</p>
+        <div class="spend-num"><span class="stat">{usd(sp.account_balance)}</span></div>
+        <p class="spend-note">{sp.account_note}</p>
+        {sp.idle_billing_lost !== undefined && (
+          <p class="spend-note"><strong>{usd(sp.idle_billing_lost)}</strong> lost to idle billing so far. {sp.idle_billing_note}</p>
+        )}
+      </article>
+    </div>
+    <p class="dim" style="margin-top:20px">Source of truth: <code>experiments/06-mvm-0a-constructed-self-index/compute-ledger.md</code>, reconciled against RunPod's own billing at each phase boundary.</p>
+  </section>
+</Base>

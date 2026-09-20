@@ -29,3 +29,22 @@ Any prose promoted out of this repo toward publication (an essay, a thread, a po
 ## Commits
 
 Standalone git repo. Commit with clear messages describing what changed and why.
+
+## Keeping the site current
+
+`site/` is the project's internal visualizer (built 2026-09-20; how it works in
+`site/README.md`, decisions in `docs/site-plan-2026-09-20.md`). It renders
+`data/project.toml`, the structured twin of `STATUS.md`: goals, the stage
+ladder, the questions, the ideas on the table, findings, next steps, spend,
+and a timeline. **Any session that adds a "WHERE THINGS STAND" entry to
+STATUS.md also updates `data/project.toml` in the same commit**: bump
+`project.updated_on` and rewrite the two "where" paragraphs, add a
+`[[timeline]]` row at the top, add any `[[findings]]`, refresh `[[next_steps]]`
+and idea statuses, adjust stage progress and `[spend]`. Write it in plain
+language with every code name explained on first use, the same rule as the
+scheduled reviews. Then validate:
+
+    cd ~/Code/minimum-viable-mind && .venv/bin/python scripts/export_site.py --check
+
+STATUS.md stays the record of record; where the two disagree, fix the data
+file. Deploying the site is a launch and stays behind John's gate.

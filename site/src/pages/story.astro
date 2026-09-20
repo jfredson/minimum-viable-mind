@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import Status from '../components/Status.astro';
+import { data, fmtDate } from '../lib/project';
+
+// Group by month, newest first (the data file is validated newest-first).
+const months: { key: string; label: string; rows: typeof data.timeline }[] = [];
+for (const t of data.timeline) {
+  const key = t.date.slice(0, 7);
+  let m = months.find((x) => x.key === key);
+  if (!m) {
+    const [y, mo] = key.split('-').map(Number);
+    const lbl = new Date(Date.UTC(y, mo - 1, 1)).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+    m = { key, label: lbl, rows: [] };
+    months.push(m);
+  }
+  m.rows.push(t);
+}
+---
+
+<Base title="The story so far — Minimum Viable Mind" description="One row per working-session entry in STATUS.md, newest first.">
+  <section class="hero">
+    <p class="eyebrow">Story</p>
+    <h1>The story so far</h1>
+    <p class="lede">One row per entry in the handoff record (STATUS.md), newest first. The full prose of each entry, with its numbers and caveats, lives in the repo; this is the shape of the road.</p>
+  </section>
+
+  <section class="section">
+    {months.map((m) => (
+      <div class="day">
+        <h2 class="month">{m.label}</h2>
+        <ol class="tl">
+          {m.rows.map((t) => (
+            <li class={`tl-row tl-${t.kind}`}>
+              <div class="tl-date mono">{fmtDate(t.date)}</div>
+              <div>
+                <div class="tl-top"><Status value={t.kind} /></div>
+                <h3 class="tl-title">{t.title}</h3>
+                <p class="tl-sum">{t.summary}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    ))}
+  </section>
+</Base>

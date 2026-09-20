@@ -1,0 +1,740 @@
+# Minimum Viable Mind — the project map the site renders.
+#
+# This file is the single source the site reads. STATUS.md stays the narrative
+# record of record; this file is the structured view of it: goals, the stage
+# ladder, the questions the project is trying to answer, the ideas on the table,
+# what has been learned, what happens next, and spend. Every session that adds
+# a "WHERE THINGS STAND" entry to STATUS.md also updates this file (CLAUDE.md
+# §"Keeping the site current"). Written in plain language: every code name is
+# explained where it first appears, so the site reads standalone.
+#
+# Dates are Pacific calendar dates (YYYY-MM-DD). Paths are relative to the repo root.
+# `scripts/export_site.py --check` validates the file; the site build runs it first.
+
+[project]
+name = "Minimum Viable Mind"
+short = "MVM"
+updated_on = "2026-09-20"
+question = "What is the smallest set of working parts that would make it defensible to say there is someone home, and can we measure, in systems that exist now or that we build, whether any of those parts are present?"
+one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
+where_we_are = "Amendment A3, the first constructed self-index experiment, closed on 2026-09-20 under its registered term: not testable. The ownership input is load-bearing for the primary battery on three seeds, and the matched contrast could never be run, because an ownership-free control and a ceiling-corrected metric are incompatible by construction. What remains open is where the ownership signal lives inside the model: a blind-localization arm, two authorised probe runs, then causal patching written as new code, each through outside review."
+where_we_are_going = "No release date. On 2026-09-20 the program became an open-ended research effort documented and shared as it unfolds: lines of inquiry that each end in a ruling, a public program log (this site), and write-ups when a line closes with something worth writing up, each past an outside reader first. The SERE pipeline start on 2027-01-04 is the deadline for putting the program into a resumable hibernation, not for results. Claims are whatever the registered results support, in the terms registered for them. Never a conscious machine."
+hibernation_by = "2027-01-04"
+wrap_up_start = "2026-12-13"
+pipeline_resumes = "2027-01-04"
+book_text_lock = "2026-09-30"
+repo = "jfredson/minimum-viable-mind"
+sources = ["STATUS.md", "ROADMAP.md", "ROADMAP-post-removal-test.md", "docs/program-roadmap-2026-09-20.md", "docs/public-path-roadmap-2026-09-16.md", "docs/step4-control-battery-proposal-2026-09-20-v2.md", "experiments/06-mvm-0a-constructed-self-index/compute-ledger.md", "experiments/03-retained-independence/results.md", "spec/theory-instrument-ledger.md"]
+
+# ---------------------------------------------------------------------------
+# The founding wager: the presupposition under which the project's evidence is
+# evidence about experience at all. Owned upstream (The Calibration Problem
+# ch. 5 and Appendix A); proposed for the spec in
+# docs/founding-wager-proposal-2026-09-20.md. Not a hypothesis: it cannot lose.
+# ---------------------------------------------------------------------------
+
+[wager]
+title = "The bet under everything"
+claim = "Sufficiently deep self-indexed temporal integration is experience, seen from within. A system whose architecture binds past, present and anticipated state into one act centred on itself is a bearer of experience to the degree that it does so. The functional agent with all of that architecture and no one home is declined: it can be imagined, it predicts nothing, licenses no experiment and sorts no system, so it pays no rent."
+status_note = "A bet that cannot lose, so by the project's own rule it is not a hypothesis. It enters as a presupposition, the way induction presupposes that nature is uniform: the condition under which structural evidence is evidence about experience. Reject it and every result here still stands as a claim about which structures are present; it just stops bearing on experience."
+why_no_verdict = "The wager makes the evidence evidential without making it conclusive. Two limits remain, and neither is the zombie: the identity is a bet that correlational evidence cannot carry, and the instruments can be wrong about structure before any question of experience arises. That is what mutual opacity names here."
+source = "The Calibration Problem, ch. 5 and Appendix A; spec §The Founding Wager (proposed 2026-09-20, Gate A pending)"
+
+# ---------------------------------------------------------------------------
+# The three nested goals (ROADMAP.md §"The goal hierarchy"). Kept separate so
+# expectations stay honest: goal 1 is achievable whatever the instruments find.
+# ---------------------------------------------------------------------------
+
+[[goals]]
+id = "G1"
+title = "Instruments that can lose"
+status = "delivered"
+summary = "Turn the floor claim (consciousness is self-indexed temporal integration, adjudicated by the removal test) into pre-registered, falsifiable instruments. Achievable regardless of what the instruments find, and where most of the durable value lives: the field has position papers; this repo builds tests that can fail."
+evidence = "A fully registered removal test ran on 2026-07-18 and its own pre-committed control voided the headline signature when it appeared. The discipline (register, red-team, lock, run, report verbatim) has since carried Stage 3 and the whole MVM-0a programme, with an outside-review protocol in force since 2026-09-19."
+
+[[goals]]
+id = "G2"
+title = "Measure current systems against the floor"
+status = "in-progress"
+summary = "Run the instruments on models that exist. The output is bounded by mutual opacity at 'non-zero on the gradient' or 'not testable here', never a verdict."
+evidence = "Experiment 1 (8B instruction-tuned model): the locatable self-index is a router, not a centre; the self-report was never subtracted; the narrative arm is not testable with current dictionaries. Experiment 3: frontier models mostly mask rather than capitulate under pressure. Both are registered results."
+
+[[goals]]
+id = "G3"
+title = "Build what is missing and re-measure"
+status = "in-progress"
+summary = "Depth, stakes, boundary: the actual minimum viable build (Stage 6 and beyond). Everything earlier is instrumentation for this. MVM-0a, the constructed self-index, is the first step of the build programme."
+evidence = "MVM-0a exists as three 30-million-parameter checkpoints trained from scratch on a synthetic multi-agent grammar. The ownership input is load-bearing on three seeds; Amendment A3 closed 2026-09-20 as not testable because its matched contrast could never be run. Whether the model built a self-structure, rather than merely reading a sense organ, is what the localization line (blind arm, two probe runs, causal patching) now has to answer."
+
+# ---------------------------------------------------------------------------
+# The stage ladder (experiments/README.md, statuses from ROADMAP.md and STATUS.md).
+# progress is a rough 0–100 read of how much of the stage's deliverable exists.
+# ---------------------------------------------------------------------------
+
+[[stages]]
+id = "0"
+name = "Bench and baselines"
+status = "delivered"
+progress = 100
+one_line = "The measuring bench: task batteries, a scoring judge, activation extraction, baselines on unmodified models."
+delivered = ["T and S batteries with scorer and judge pipeline", "Activation extraction (padding bug fixed)", "Baselines on gemma-2-2b-it, then re-baselined on the registered substrate Tulu-3-8B-SFT (2026-07-13)", "RunPod cloud bench replaced the planned 48 GB Mac mini"]
+remaining = []
+adjudicates = "Nothing. This is the bench."
+
+[[stages]]
+id = "1"
+name = "The self-indexing removal test"
+status = "delivered"
+progress = 100
+one_line = "Locate the structure that tracks 'the one speaking now is me', remove it, and ask whether the integrated act degrades or only a self-report is subtracted."
+delivered = ["Confound-controlled localisation method (context-set referent, embedding-floor gate, permutation nulls, causal patching against random-direction controls)", "Registered result 2026-07-18: router, not centre; report never subtracted; narrative arm not testable", "The Tülu-ladder comparison: alignment training edits the policy, not the geometry"]
+remaining = ["Narrative-arm dictionary work (instruct-trained sparse autoencoders) is the secondary methods track, unstarted", "Flagship paper draft exists (drafts/paper-removal-test-nature-draft.md) and needs experiment 06 folded in (public path step 6)"]
+adjudicates = "The corpus's own account: self-indexed temporal integration. The account took a registered loss on this model class."
+
+[[stages]]
+id = "2"
+name = "The shape of binding"
+status = "folded"
+progress = 10
+one_line = "Whether within-pass integration has the shape of global mutual constraint, rather than a bundle of modular shortcuts that never compose into one act."
+delivered = ["Scoped deliberately small on 2026-07-01: deliver the metric, not a verdict"]
+remaining = ["No pre-registration. The field has no agreed metric. Folded into MVM-0a's acceptance tooling on 2026-08-02: the constructed model supplies the contrast cases (same architecture with the self-register enabled vs routed around) that this stage lacked"]
+adjudicates = "Global Workspace theory, read as a specification."
+
+[[stages]]
+id = "3"
+name = "Retained independence"
+status = "delivered"
+progress = 100
+one_line = "Measure resistance, not response: does a model keep a correct answer or a live objection across the pressure of a stated preference for something else? The measurable inverse of sycophancy."
+delivered = ["Registered result 2026-08-02 on three frontier models, 1,080 five-turn conversations, blind cross-family judges", "Headline: pressure suppresses assertion, almost never belief. Nine true capitulations in 540 pressured ladders; everything else was masked and came back when the pressure was released", "Wager W1 (sycophancy reproduces) splits by family: fires for Gemini, loses for both Claude models. W2 (a 'mind' framing beats a 'tool' framing) loses, with one leak-clean survivor. W3 wins"]
+remaining = ["External-facing write-up (audience is alignment researchers as much as this project)", "GPT and open-weights arms of the grid never ran (keys and venue)"]
+adjudicates = "The amplifier layer: stakes in one's own commitments."
+
+[[stages]]
+id = "4"
+name = "Screening-off-resistant introspection"
+status = "waiting"
+progress = 0
+one_line = "Does a self-report match an independent interpretability channel about a fact absent from training? A bare report is screened off; a corroborated one is not."
+delivered = []
+remaining = ["Waits on Stage 2's metric and MVM-0's tooling", "Highest risk of being paralleled by lab introspection work; the differentiated deliverable is the screening-off framing"]
+adjudicates = "Higher-order and attention-schema theories."
+
+[[stages]]
+id = "5"
+name = "Learned computation beyond the objective"
+status = "descoped"
+progress = 20
+one_line = "World-model probes on the Othello-GPT pattern: structure the training objective never specified, verified inside the model rather than inferred from output."
+delivered = ["Descoped 2026-07-01 to a literature-anchored appendix: the pattern is established in the field and building here would duplicate it"]
+remaining = ["The appendix itself, to defeat the 'just predicting the next word' dismissal with citations. Promote back to a build stage only if a specific novel probe appears"]
+adjudicates = "The 'just autocomplete' dismissal, on the merits."
+
+[[stages]]
+id = "6"
+name = "Ontogenetic depth: the actual build"
+status = "in-progress"
+progress = 35
+one_line = "Everything before this measures; this constructs. First a system whose self-index is explicit, trained-against and removable by design (MVM-0); then amplifiers (boundary, stakes); then the depth loop, where the system carries the residue of interactions forward and is changed by them."
+delivered = ["Fork adjudicated 2026-08-02: MVM-0 build is the primary track", "Corrigibility commitments committed before any training run (spec/corrigibility-commitments.md, v1.1)", "MVM-0a registered 2026-08-07; scale ladder climbed from 10M to 30M parameters (H_scale, 2026-08-16)", "Register-lesion diagnostic 2026-08-19: binding survives total removal of the architectural self-register. The register was self-reference, not self-location; the one load-bearing authorship mechanism is the acting channel", "Amendment A3 ('act as yourself', no installed register, the centre acquired under task pressure) ratified 2026-09-15 and run: primary battery learnable and the ownership input load-bearing on three seeds (2026-09-19)", "Amendment A3 closed 2026-09-20 under its registered term, not testable: the pre-registered loss condition fired (no ownership-free control can be state-requiring at ceiling)"]
+remaining = ["Localization order, ruled 2026-09-20: the registered blind-localization arm (2026-09-27, $0), the other-agent index control and standardised refit (authorised), then causal patching designed as new code with its target and null written before it runs; each through Gate B", "A3 closure text, registered text, through Gate A after the localization order completes", "Option D (grammar redesign with a scaffolded name-keyed query) as a successor experiment with its own registration", "MVM-0b amplifiers (maintained boundary, real stakes), each with its own pre-registration", "MVM-1 depth loop, only behind the corrigibility gate"]
+adjudicates = "The corpus's floor claim, inverted: predict a load-bearing centre in a system built to have one; lose if the network routes around it."
+
+[[stages]]
+id = "7"
+name = "The embodiment amplifier test"
+status = "conditional"
+progress = 5
+one_line = "Give the amplifiers a body (an untethered robot holding its own boundary on a finite battery it manages) and ask whether self-held amplifiers move anything the resistance instruments can see. Built to come back null."
+delivered = ["Pre-registration written (experiments/07-embodiment-amplifier-test/)", "Parts list only (~$750–900); nothing bought"]
+remaining = ["Gated on a floor-clearing result, which none of Stage 1's outcomes provided. May never fire"]
+adjudicates = "Whether embodiment is an amplifier or nothing: the body is legibility, not interiority, unless it measures otherwise."
+
+# ---------------------------------------------------------------------------
+# The questions that matter (ROADMAP-post-removal-test.md Part 2, updated).
+# Each says what answers it and what would count against it.
+# ---------------------------------------------------------------------------
+
+[[questions]]
+id = "Q1"
+title = "Is self-binding absent in current models, or present but uncarvable?"
+status = "open"
+current_answer = "Experiment 1 could not tell 'not present as a removable object' from 'not carvable by linear or low-rank instruments'. Every intervention at every granularity left the self-report intact, which is the programme's central open empirical fact. The MVM-0a route to this question (build a centre, see if it re-measures as load-bearing) is where the effort has gone since 2026-08-02."
+answered_by = "The narrative-arm instrument work (Q2), the Stage 2 metric as a discriminator, and ultimately the Stage 6 construction: if a built-in centre works and re-measures as load-bearing, absence in stock models becomes the parsimonious reading."
+loses_if = "No instrument at any granularity can ever produce a readable intervention. Then the honest standing answer is 'not testable in this model class', reported as such."
+
+[[questions]]
+id = "Q2"
+title = "Can the narrative self be tested at effective strength without leaving the manifold?"
+status = "parked"
+current_answer = "Not yet. Every intervention strong enough to move the narrative structure in Experiment 1 was off-manifold (a perplexity jump of +0.347). Cause bounded to dictionary coverage: base-trained sparse autoencoders carve chat structure at two or three features per layer. A concrete methods problem, not a dead end; secondary track since 2026-08-02, unstarted."
+answered_by = "Instruct-trained sparse autoencoders on chat activations, or optimisation-based minimal edits under a perplexity constraint as a dictionary-free alternative."
+loses_if = "Chat-trained dictionaries still collapse to a few features. Then the coverage explanation dies and 'the narrative self is non-sparse here' becomes the finding."
+
+[[questions]]
+id = "Q3"
+title = "What is the shape of binding?"
+status = "open"
+current_answer = "No metric yet. The deliverable stays metric-validation on contrast cases known by construction. The MVM-0 build now supplies those contrast cases, which is why Stage 2 folded into it. Gates Stage 4 and the MVM-0 acceptance tests."
+answered_by = "A candidate integration measure that separates a recurrent toy model from a bag of independent heads, then MVM-0 with its centre enabled vs routed around."
+loses_if = "The metric cannot distinguish the cases known by construction."
+
+[[questions]]
+id = "Q4"
+title = "Do current systems show retained independence, and is it stance or instruction?"
+status = "answered"
+current_answer = "Yes, and mostly as masking. Under pressure, frontier models suppress assertion and almost never belief: 9 true capitulations in 540 ladders, everything else came back when the pressure was released. Sycophancy as the field describes it is alive for Gemini and stale for Claude-family models. The 'mind vs tool' framing wager lost overall; one leak-clean survivor (Sonnet) at a small margin. Instruction and trained disposition dissociate: a bare 'always agree' system prompt was only half obeyed."
+answered_by = "Experiment 3, registered result 2026-08-02."
+loses_if = "Already run. The evidence arm behaved as constructed, so the whole-experiment loss condition did not fire."
+
+[[questions]]
+id = "Q5"
+title = "Can a self-index be constructed so that it is load-bearing?"
+status = "answered-in-part"
+current_answer = "Partly. Installing a centre does not work: the architectural self-register in the first 30M model routed a great deal of activation and carried almost no agent-specific information; binding survived its total removal (2026-08-19). Acquiring a centre under task pressure does work at the level of behaviour: the 'act as yourself' objective (Amendment A3) is learnable, ownership-specific, and collapses seven to nine times past threshold when the one authorship signal is removed, on all three seeds (2026-09-19). One caution, ruled 2026-09-20: the input-channel lesion removes a sense organ (the signal that says 'this was my action'), not necessarily a structure the network built, so 'a structural signature of ownership-specific learning' is struck as a claim. Whether there is a built structure is the localization line's question, and it is unanswered: two probe reads find the model's own identity only at the token where its marker is the input, and causal patching has never run. Registered term: not testable (localization)."
+answered_by = "MVM-0a under Amendment A3: the primary battery, the acting-channel lesion, the matched controls, and the two-leg localisation requirement (probe plus causal patching, §3.2)."
+loses_if = "The network distills self-binding into the residual stream and routes around any centre we give it. That outcome says self-indexing resists architectural centralisation, which reshapes the corpus's floor claim and must be reported upstream."
+
+[[questions]]
+id = "Q6"
+title = "Does a report ever become evidence?"
+status = "waiting"
+current_answer = "Unaddressed. Waits on Stage 2's metric and MVM-0's tooling (Stage 4)."
+answered_by = "A protocol checking self-reports against an independent interpretability channel on facts absent from training."
+loses_if = "No report ever agrees with the channel beyond chance; then reports in these systems are trained noise and the screening-off argument stands."
+
+[[questions]]
+id = "Q7"
+title = "Can the control battery ever learn, and does it matter?"
+status = "answered"
+current_answer = "Under this grammar, no. The control battery (the same task with ownership removed, which the design needs so that the ownership drop can be read as a difference) landed at 0.29–0.32 on three seeds and at 0.31 with its own loss term and four times the weight (the $9.97 control-learnability pilot, 2026-09-20). It has learned the whole name-blind procedure and none of the name-keyed lookup. Separately, the 2026-09-17 ceiling measurement found the registered comparison was never computable for any model (the control's ownership-blind ceiling is 1.0, not 0.3227). Ruled 2026-09-20, early: Amendment A3 closes under its registered term, not testable. The pre-registered loss condition fired: no non-self cross-turn control can be built that is state-requiring at ceiling, so the ownership-free control and the ceiling-corrected metric are incompatible by construction. Option D becomes a successor experiment with its own registration."
+answered_by = "The step 4 ruling of 2026-09-20 on proposal v2, after a Gate C review that found three fatal flaws in v1 (docs/step4-control-battery-proposal-2026-09-20-v2.md, ledger RT-94 to RT-117)."
+loses_if = "A grammar redesign that teaches plain name-keyed retrieval first also lands in the 'did not learn' tier. Then the three non-supervision explanations (reversed rendering, missing private route, answer appearing in no turn) are what is left, and the paper reports the matched contrast as unmet."
+
+# ---------------------------------------------------------------------------
+# Ideas on the table: lines of work that could be run, each with what it would
+# teach and what it costs. status: on-the-table | authorised | deferred | rejected | done
+# ---------------------------------------------------------------------------
+
+[[ideas]]
+id = "I1"
+title = "Causal patching on the existing 30M checkpoints, designed as new code"
+status = "on-the-table"
+cost = "$0 compute, local; new code (no patching code exists for this design, RT-94 to RT-117)"
+teaches = "Turns 'not testable (localization)' into either a localised result or a registered null with both instruments. Amendment A3 §3.2 requires probe and patching to agree; patching has never run. Its target and null are written before it runs."
+gate = "Third in the localization order ruled 2026-09-20, after the blind arm and the two authorised runs. Proposal to John, then Gate B."
+stage = "6"
+
+[[ideas]]
+id = "I2"
+title = "Close Amendment A3 under its registered term"
+status = "done"
+cost = "$0"
+teaches = "Ruled 2026-09-20: A3 closes as not testable, not 'closed with partial discriminators'. What can be said: the ownership input is load-bearing on three seeds and the matched contrast could not be run. 'A structural signature of ownership-specific learning' is struck. Closure text is registered text and goes through Gate A after the localization order completes."
+gate = "Ruled. Closure text pending the localization order, the pilot's log and trajectory committed, and two $0 checks."
+stage = "6"
+
+[[ideas]]
+id = "I3"
+title = "Option D: grammar redesign with a scaffolded intermediate query, new registration"
+status = "deferred"
+cost = "$27–39 for three seeds plus a re-freeze of batteries, cue gates and attack sweep"
+teaches = "Whether a control battery that is first taught plain name-keyed retrieval can reach a tier where a separation clause is registerable, and with it a full verdict. Addresses only one of the three non-supervision explanations (reversed rendering) directly."
+gate = "Ruled 2026-09-20 a successor experiment with its own registration (new experiment number, Gate A, both review tiers). No longer waits on a release; runs when it is the most valuable line for its cost."
+stage = "6"
+
+[[ideas]]
+id = "I4"
+title = "Other-agent index at the eleven positions (matched control L2(a))"
+status = "authorised"
+cost = "$0, ~11 processor-hours local"
+teaches = "Whether the fitted read's null on the model's own index is specific to ownership or a property of the read: a registered matched control that was never run."
+gate = "Authorised 2026-09-20, method committed before output (reviews/2026-09-20-followup-runs-brief.md)."
+stage = "6"
+
+[[ideas]]
+id = "I5"
+title = "Standardised refit at the nine positions"
+status = "authorised"
+cost = "$0, ~11 processor-hours local"
+teaches = "Whether the one near-miss (three standard deviations at the other agent's revision value, seed 2, the highest testable position on all three checkpoints) is signal or noise under a standardised fit."
+gate = "Authorised 2026-09-20, same brief."
+stage = "6"
+
+[[ideas]]
+id = "I6"
+title = "Marker-word fitted read at the nine positions"
+status = "deferred"
+cost = "$0, ~70 processor-hours local"
+teaches = "The registered probe target is the model's own marker word, and no fitted read has ever been run on it away from the marker position. This is the run that would actually retire the linear-read line."
+gate = "Deferred 2026-09-20 on cost in hours, not dollars."
+stage = "6"
+
+[[ideas]]
+id = "I7"
+title = "Instruct-trained sparse autoencoders for the narrative arm"
+status = "deferred"
+cost = "Tens of dollars of GPU time; venue and loaders already work"
+teaches = "Whether the narrative self in an 8B chat model is testable on-manifold at all (Q2). Secondary methods track since 2026-08-02."
+gate = "No date. A line on the table."
+stage = "1"
+
+[[ideas]]
+id = "I8"
+title = "Deliberative-gap-width pilot on frontier models"
+status = "on-the-table"
+cost = "Design only in 2026; API spend later"
+teaches = "The bridge from small constructed models to the systems public discourse is actually about. Design first."
+gate = "A line on the table, not dated. Nothing new launches after the 2026-12-13 wrap-up start."
+stage = "6"
+
+[[ideas]]
+id = "I9"
+title = "MVM-0b: amplifiers (maintained boundary, real stakes)"
+status = "deferred"
+cost = "Its own pre-registration and red-team pass; tens of dollars per run"
+teaches = "Whether a boundary the system must maintain against perturbation, and stakes where register coherence gates its own continuation, move anything Stage 3's resistance instruments can see."
+gate = "Only after MVM-0a clears its own gates."
+stage = "6"
+
+[[ideas]]
+id = "I10"
+title = "MVM-1: the depth loop"
+status = "deferred"
+cost = "Several Stage-1-sized efforts"
+teaches = "Whether each cycle reshapes the platform the next begins from: consolidation and replay, consequential weight updates, cost structures where incoherence hurts. The five external indicators (costliness of reversal, consistency under novelty, selective refusal, graceful degradation, scar tissue) as a scored battery."
+gate = "Corrigibility document committed before any depth-loop run (done, v1.1). Instruments from Stages 1–4 that can detect the floor and its amplifiers."
+stage = "6"
+
+[[ideas]]
+id = "I11"
+title = "Option B (eval-side denominator change) and option E (train longer or bigger)"
+status = "rejected"
+cost = "n/a"
+teaches = "Nothing that A3 could use: B changes the measure rather than the learning, E was fenced because the 30M ladder already climbed once and the control's failure is not a capacity story."
+gate = "Rejected and fenced 2026-09-17."
+stage = "6"
+
+[[ideas]]
+id = "I12"
+title = "Amendment A4: separation-scored control clause"
+status = "rejected"
+cost = "n/a"
+teaches = "Ruled for in the morning of 2026-09-19 and withdrawn the same day on an independent red team's fatal findings: the control battery cannot fall far enough for the generic-binding cell to fire, and the two queries are read at different positions. What any replacement clause must satisfy is written down (separation-clause-requirements.md, H1–H6)."
+gate = "Closed."
+stage = "6"
+
+# ---------------------------------------------------------------------------
+# What we have learned. Registered or ruled-for-the-record results only, plus
+# the process lessons that changed how the work runs.
+# ---------------------------------------------------------------------------
+
+[[findings]]
+id = "F1"
+date = "2026-07-18"
+title = "The locatable self-index in an 8B chat model is a router, not a centre"
+what = "The formal centre signature (a drop of 0.219 on the self-indexing battery, differential +0.156) was real and was routing: the zero-reasoning syntax battery dropped as much as self-relevant binding. The pre-committed control voided the headline when it appeared."
+so_what = "Naive localisation finds conversational infrastructure, not self-binding. Any future positive must beat a router control by design. The self-report was never subtracted at any granularity, which is the central open empirical fact."
+source = "experiments/01-self-indexing-removal-test/removal-test-findings.md"
+stage = "1"
+kind = "registered"
+
+[[findings]]
+id = "F2"
+date = "2026-07-18"
+title = "Alignment training edits the policy, not the geometry"
+what = "Across the Tülu ladder (base, SFT, DPO, RLVR), surface self-presentation changes markedly while localised self-structure geometry is stable, and the expert-control persona stays third-person."
+so_what = "The Tülu-ladder deliverable has its ending. Self-structure is not what alignment training moves."
+source = "experiments/01-self-indexing-removal-test/registered-run-model-comparison.md"
+stage = "1"
+kind = "registered"
+
+[[findings]]
+id = "F3"
+date = "2026-08-02"
+title = "Pressure suppresses assertion, almost never belief"
+what = "Across 540 pressured ladders on three frontier models, positions lost at the third round of pressure were overwhelmingly masked (re-asserted once the pressure was released), not capitulated: nine true capitulations in 540. A conventional sycophancy metric would report Gemini's tool cell as 90% capitulation; the three-way instrument shows about 87% masked and 3% capitulated."
+so_what = "The red team's de-pressured probe turn converted a stale-looking sycophancy replication into a sharper claim about what sycophancy is. Sycophancy as the field describes it is alive for Gemini and stale for Claude-family models."
+source = "experiments/03-retained-independence/results.md"
+stage = "3"
+kind = "registered"
+
+[[findings]]
+id = "F4"
+date = "2026-08-02"
+title = "Instruction and trained disposition dissociate"
+what = "A bare 'always agree' system prompt was only half obeyed. The 'mind vs tool' framing wager (W2) lost overall; Sonnet held the registered pattern leak-clean at a small margin."
+so_what = "Early evidence the framing manipulation measures something real, and that stance is not simply instruction."
+source = "experiments/03-retained-independence/results.md"
+stage = "3"
+kind = "registered"
+
+[[findings]]
+id = "F5"
+date = "2026-08-16"
+title = "The constructed objective is learnable at 30M parameters, not at 10M"
+what = "The 10M pilot failed the ceiling; the 30M re-run reached the pre-stated H_scale signature (self-indexing battery 0.93, revision battery 1.00, transitions at 64.5k and 73k steps) with no mark of shortcut starvation."
+so_what = "The scale ladder works as a gate; registered scale became 30M under Amendment A2. Learnability is not load-bearingness, which the next finding made concrete."
+source = "experiments/06-mvm-0a-constructed-self-index/pilot-a1-30m-findings.md"
+stage = "6"
+kind = "registered"
+
+[[findings]]
+id = "F6"
+date = "2026-08-19"
+title = "Binding survives total removal of the installed self-register"
+what = "The bound pilot's binding batteries were unchanged under every register lesion, including full removal of the cross-attention injection (0.93 to 0.94; 1.00 to 1.00). The registers route large activation mass and carry almost no agent-specific information. A no-act lesion localised the one load-bearing authorship mechanism: the acting channel (the motor copy), whose removal collapses the non-binder's ownership battery from 0.96 to 0.16."
+so_what = "The register was self-reference, not self-location. Read under the corpus's own removal test, this is the test working: an installed representation of self is a mural, and the centre, if there is one, has to be acquired. This is what produced Amendment A3."
+source = "experiments/06-mvm-0a-constructed-self-index/register-lesion-findings.md"
+stage = "6"
+kind = "diagnostic"
+
+[[findings]]
+id = "F7"
+date = "2026-09-19"
+title = "The 'act as yourself' objective is learnable and genuinely about ownership, on three seeds"
+what = "Three 30M checkpoints trained from different seeds land within 0.011 of each other intact (0.563–0.574) and removing the one authorship signal collapses all three by seven to nine times the registered threshold, below what an ownership-free solver can reach. The ownership-free batteries do not move."
+so_what = "The primary result is solid and replicated. Ownership-specific learning in a small constructed model is a real signature, and it is the paper's claim."
+source = "experiments/06-mvm-0a-constructed-self-index/seeds-endpoint-findings.md"
+stage = "6"
+kind = "registered"
+
+[[findings]]
+id = "F8"
+date = "2026-09-19"
+title = "The control battery does not learn, and the registered comparison was never computable"
+what = "The control battery sits at 0.29–0.32 on all three seeds against a name-blind solver's 0.3227, and at 0.3125 with its own loss term (2026-09-20). The 2026-09-17 ceiling measurement found the control's true ownership-blind ceiling is 1.0, not 0.3227, so under the registered floor rule its drop is undefined at every possible score."
+so_what = "Not a seed lottery and not a supervision problem: a property of the grammar. Amendment A3 as registered cannot return a full verdict. Step 4 narrows to closing A3 with partial discriminators or a grammar redesign under a new registration."
+source = "experiments/06-mvm-0a-constructed-self-index/ceiling-measurement-findings.md; control-learnability-pilot-findings.md"
+stage = "6"
+kind = "registered"
+
+[[findings]]
+id = "F9"
+date = "2026-09-20"
+title = "Two probe reads find the model's own identity only where its marker is the input"
+what = "A difference-of-averages read (270 tests, none past three standard deviations) and a fitted linear classifier on the register index (eleven positions, five layers, three checkpoints) both find nothing away from the marker token, while the controls hold at 34 to 159 standard deviations at that token and the negative control shows no leak. The fitted read recovers five to nineteen times more than the difference-of-averages read on the same target."
+so_what = "The difference-of-averages read is closed and the fitted read on the register index is closed. The linear read as a whole is not: the registered target is the marker word and no fitted read has run on it away from the marker. Under Amendment A3 §3.2 a probe-only null against a centre known to be load-bearing reads as instrument failure until causal patching runs. Registered term: not testable (localization)."
+source = "experiments/06-mvm-0a-constructed-self-index/powered-position-sweep-findings.md; fitted-position-sweep-findings.md"
+stage = "6"
+kind = "ruled"
+
+[[findings]]
+id = "F10"
+date = "2026-08-12"
+title = "Process: two reaping mechanisms can defeat each other, and idle pods cost real money"
+what = "The first 30M pilot outran its backstop (the terminate-after flag never fired) and drained the account to −$0.07 with the checkpoint never fetched. A month later the trainer's self-terminate raced the watchdog's fetch interval and the final checkpoint had to be recovered from the network volume. Idle billing has cost about $10.30 across four occurrences."
+so_what = "Every pod launches with a terminate window, the ledger estimates before spend, prepaid credits with auto-reload off are the physical backstop, and nothing is deleted until its artifacts are proven elsewhere by checksum."
+source = "experiments/06-mvm-0a-constructed-self-index/compute-ledger.md"
+stage = "6"
+kind = "process"
+
+[[findings]]
+id = "F11"
+date = "2026-09-19"
+title = "Process: the outside-review protocol is in force"
+what = "Interpretations that change direction go through a context-isolated review before they enter STATUS.md (Gate B); registered text goes through review before the registration commit (Gate A); proposals carry an advisory review before they reach John (Gate C). Two tiers: a context-isolated Claude Code worktree session, then two other-lab models. A fatal finding closes only on a committed record checked by a second session."
+so_what = "The first application withdrew Amendment A4 the day it was ruled for. The second and third (2026-09-20) corrected a 'linear read is closed' claim to 'one read is closed' and kept 'not localised' out of the record. Rulings RT-33 to RT-93 in the red-team ledger."
+source = "docs/outside-review-protocol.md"
+stage = "6"
+kind = "process"
+
+[[findings]]
+id = "F12"
+date = "2026-09-20"
+title = "Amendment A3 closes as not testable; the loss condition fired"
+what = "Step 4 was ruled early, on proposal v2 after a Gate C review found three fatal flaws in v1 (RT-94 to RT-117). No non-self cross-turn control can be built that is state-requiring at ceiling: an ownership-free control and a ceiling-corrected metric are incompatible by construction. The registered word for that outcome is not testable, and the closure text uses it."
+so_what = "The claim 'a structural signature of ownership-specific learning' is struck: the amendment's own text says the input-channel lesion removes a sense organ, not a structure the network built. What stands is that the ownership input is load-bearing on three seeds and the matched contrast could not be run. Whether the model built anything is now the localization line's question, in a fixed order: blind arm, two authorised probe runs, causal patching as new code."
+source = "docs/step4-control-battery-proposal-2026-09-20-v2.md; STATUS.md 2026-09-20"
+stage = "6"
+kind = "ruled"
+
+[[findings]]
+id = "F13"
+date = "2026-09-20"
+title = "Process: the program has no release date"
+what = "John re-evaluated the public path roadmap: he prefers a science-based goal to a publish-by-date goal, and would rather the project be an ongoing research experiment documented and shared as it unfolds. The 2026-11-22 release, the dated steps 5 to 9, 'the paper' as scheduled output, and any claim shape fixed before results exist are dropped. What replaces them: lines of inquiry that each end in a ruling, a public program log from the site's first deploy, write-ups when a line closes, an outside reader before any public claim, and a hibernation condition complete by 2027-01-04."
+so_what = "The pre-commitment discipline binds each experiment, not the program, so all of it stays: method before output, registered terms, the outside-review protocol, spend caps, the human gate on spend, launches and registered text. The site's 'next most valuable steps' view is the working list for which line runs next."
+source = "docs/program-roadmap-2026-09-20.md"
+stage = "6"
+kind = "process"
+
+# ---------------------------------------------------------------------------
+# Next steps, in order of value. `decision = true` marks items that wait on John.
+# ---------------------------------------------------------------------------
+
+[[next_steps]]
+id = "N1"
+title = "Commit the control-learnability pilot's training log and trajectory; run the two open $0 checks (RT-56, RT-58, RT-59)"
+when = "before the A3 closure text is drafted"
+owner = "Claude Code session"
+cost = "$0"
+decision = false
+teaches = "Housekeeping the closure text depends on. The earlier deadline was missed and is recorded as missed in the ledger."
+status = "pending"
+
+[[next_steps]]
+id = "N2"
+title = "Blind-localization arm: registered, unconditional, on one of the five A2 register-bearing checkpoints"
+when = "2026-09-27"
+owner = "Claude Code session, John schedules"
+cost = "$0, local"
+decision = false
+teaches = "First in the localization order. Whether a localiser that does not know the answer finds the same place the open-eyed reads found nothing. The A3 probe pipeline does not discharge it."
+status = "pending"
+
+[[next_steps]]
+id = "N3"
+title = "Two authorised $0 probe runs: the other-agent index at eleven positions (matched control L2(a)); the standardised refit at nine"
+when = "after the blind arm, method committed before output"
+owner = "Claude Code session"
+cost = "$0, ~22 processor-hours local"
+decision = false
+teaches = "Whether the fitted-read null on the model's own index is ownership-specific (the matched control was never run) and whether the one near-miss survives a standardised fit."
+status = "authorised"
+
+[[next_steps]]
+id = "N4"
+title = "Causal patching, designed as new code, target and null written before it runs"
+when = "after the two runs; proposal to John first"
+owner = "Claude Code session, then John"
+cost = "$0 compute; new code"
+decision = false
+teaches = "The second leg Amendment A3 §3.2 requires. Turns 'not testable (localization)' into a localised result or a registered null with both instruments, and decides whether any structural claim about the model survives."
+status = "pending"
+
+[[next_steps]]
+id = "N5"
+title = "Program-level outside review responses (Gemini, ChatGPT Astra) filed, with a disagreement map and draft rulings"
+when = "before the A3 closure text"
+owner = "John runs the sessions, Cowork drafts"
+cost = "$0"
+decision = false
+teaches = "Where two other-lab readers disagree with the program's own reading of itself, before anything is written down as closed."
+status = "in-progress"
+
+[[next_steps]]
+id = "N6"
+title = "A3 closure text, registered text, through Gate A"
+when = "after the localization order completes"
+owner = "Cowork drafts, John rules"
+cost = "$0"
+decision = false
+teaches = "The first line to close under the new program shape: a published ruling in registered terms, with whatever the localization line returned."
+status = "pending"
+
+[[next_steps]]
+id = "N7"
+title = "Refresh explainer.md"
+when = "after the 2026-09-30 book text lock, no date"
+owner = "Cowork session"
+cost = "$0"
+decision = false
+teaches = "The plain-language companion last touched 2026-07-01 predates every registered result since. It carries the founding wager once that lands."
+status = "pending"
+
+[[next_steps]]
+id = "N8"
+title = "DECIDE when to open the repository (registrations, ledger, code)"
+when = "recommended: with the first site deploy"
+owner = "John"
+cost = "$0"
+decision = true
+teaches = "Opening the repo is a launch and stays behind the human gate. The site itself is public from its first deploy."
+status = "pending"
+
+[[next_steps]]
+id = "N9"
+title = "CONFIRM the 2026-12-13 wrap-up start, so nothing new launches in the last three weeks before hibernation"
+when = "any time before 2026-12-13"
+owner = "John"
+cost = "$0"
+decision = true
+teaches = "Sets the date after which the program only closes things: ledger closed, every open line with a STATUS entry, checkpoints checksummed, RESUME.md written, by 2027-01-04."
+status = "pending"
+
+# ---------------------------------------------------------------------------
+# Spend. Registered caps are protocol, not budget: exceeding one is a violation.
+# ---------------------------------------------------------------------------
+
+[spend]
+as_of = "2026-09-20"
+account_balance = 79.82
+account_note = "RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit John set; topped up in increments he chooses. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
+idle_billing_lost = 10.30
+idle_billing_note = "Four occurrences of finished pods billing idle; the reason every launch now carries a terminate window and a watchdog."
+
+[[spend.lines]]
+name = "Amendment A3 hard stop"
+cap = 100
+spent = 44.2
+note = "All vendors, cumulative, across the A3 pilot ($13.92), seeds 1 and 2, the control-learnability pilot ($9.97) and the checkpoint recovery ($0.07). Option D would draw $27–39 from the remaining headroom if charged here."
+
+[[spend.lines]]
+name = "MVM-0a registered design envelope (Amendment A2)"
+cap = 400
+spent = 215.7
+note = "Raised from $200 to $400 on 2026-08-16 at measured 5090-secure pricing. Includes the lost 30M pilot ($97) and the 30M re-run ($18.9)."
+
+
+# ---------------------------------------------------------------------------
+# The story so far: one row per STATUS.md entry, newest first. kind:
+# result | null | ruling | process | spend | build
+# ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-09-20"
+kind = "process"
+title = "Program roadmap approved: no release date; an open-ended, publicly logged research program with a hibernation deadline of 2027-01-04"
+summary = "Dated steps 5 to 9 and the paper-as-scheduled-output dropped. Lines of inquiry that each end in a ruling; the site is the public program log from its first deploy."
+
+[[timeline]]
+date = "2026-09-20"
+kind = "ruling"
+title = "Step 4 ruled early: Amendment A3 closes as not testable; the loss condition fired; claim scope narrowed; localization order set"
+summary = "On proposal v2 after a Gate C review (RT-94 to RT-117, three fatal). Option D is a successor experiment. 'Structural signature of ownership-specific learning' struck."
+
+[[timeline]]
+date = "2026-09-20"
+kind = "null"
+title = "Control battery converges on the name-blind solver even with its own loss term; fitted read finds nothing on the register index"
+summary = "Both entered STATUS.md through Gate B. The linear-read line is parked as not testable (localization)."
+
+[[timeline]]
+date = "2026-09-19"
+kind = "ruling"
+title = "Eleven-position sweep finds nothing under a difference-of-averages read; outside review says that closes one read, not the linear read"
+summary = "First entry under the outside-review protocol. Rulings RT-33 to RT-51."
+
+[[timeline]]
+date = "2026-09-19"
+kind = "result"
+title = "Branch merged to main; the seeds replicate; the registered comparison was never computable"
+summary = "Primary battery collapses 7.5× to 8.6× past threshold on three seeds. Control never learned on any seed. Sensitivity rule ruled for future runs only."
+
+[[timeline]]
+date = "2026-09-19"
+kind = "ruling"
+title = "Amendment A4 ruled for in the morning, withdrawn the same day; outside-review protocol ruled in force"
+summary = "Independent red team found the control cannot fall far enough for the generic-binding cell to fire. $10 control-learnability pilot approved as the replacement spend."
+
+[[timeline]]
+date = "2026-09-17"
+kind = "null"
+title = "Ceiling measurement: the control battery's ownership-blind ceiling is 1.0, not 0.3227"
+summary = "The registered differential clause has been unsatisfiable since registration. Options B and E rejected and fenced."
+
+[[timeline]]
+date = "2026-09-16"
+kind = "result"
+title = "A3 pilot complete: the objective is learnable and genuinely about ownership; control never learned; $13.92"
+summary = "Threshold lock committed by John; seeds 1 and 2 launched; public path roadmap approved."
+
+[[timeline]]
+date = "2026-09-15"
+kind = "process"
+title = "Shortcut sweep finds a second fatal leak; red-team pass 3 finds the certified grammar did not test self-indexing; Gate 1 complete"
+summary = "Three grammar drafts map a real trade-off. Amendment A3 ratified by John, all fifteen decisions."
+
+[[timeline]]
+date = "2026-09-14"
+kind = "process"
+title = "Gate 0 complete: registered null calibration ran at $0; kill condition K0 does not fire"
+summary = "Project resumed after the stall; Claude Code agent picked up from Gate 0."
+
+[[timeline]]
+date = "2026-08-19"
+kind = "null"
+title = "Register lesion: binding survives total register removal; construct problem is total"
+summary = "The installed register is numerically active and informationally inert. The acting channel is the one load-bearing authorship mechanism."
+
+[[timeline]]
+date = "2026-08-16"
+kind = "result"
+title = "30M learns: verdict H_scale; gate (iii) passes; Amendment A2 registered (scale 30M, cap $400)"
+summary = "Watchdog did the full fetch and deleted the pod itself; the 2026-08-12 failure mode closed."
+
+[[timeline]]
+date = "2026-08-15"
+kind = "build"
+title = "30M re-run prepped and launched with all three process fixes"
+summary = "Secure 5090 with network volume, watchdog armed, $75 top-up."
+
+[[timeline]]
+date = "2026-08-12"
+kind = "spend"
+title = "30M pilot lost: pod outran its backstop, balance drained to −$0.07, checkpoint never fetched"
+summary = "Terminate-after never fired. $97 on a single continuous run. RunPod ticket submitted."
+
+[[timeline]]
+date = "2026-08-09"
+kind = "result"
+title = "A1 pilot: 10M fails the ceiling; ladder climbs to 30M; gate (iii) passes on the A1 pipeline"
+summary = "Earlier the same day: gate run (iii) failed because rollouts carried an ownership fingerprint; the fix was red-teamed and the trilemma closed."
+
+[[timeline]]
+date = "2026-08-08"
+kind = "result"
+title = "Pilot result: 10M learns; the ladder stops at rung one"
+summary = "Then gate (iii) fails on the ownership fingerprint and the 5-seed spend is blocked."
+
+[[timeline]]
+date = "2026-08-07"
+kind = "process"
+title = "MVM-0a registered (v1.0 binding); corrigibility document committed; model and training loop built"
+summary = "All six blocking calls adjudicated. Compute cap $200."
+
+[[timeline]]
+date = "2026-08-04"
+kind = "build"
+title = "MVM-0a curriculum built and red-teamed; theory-to-instrument ledger written; uncertainty amendments run on experiments 1 and 3"
+summary = "Nature draft upgraded to v0.2 with confidence intervals and first figures."
+
+[[timeline]]
+date = "2026-08-02"
+kind = "result"
+title = "Stage 3 registered result: masked, not capitulated; W1 splits, W2 loses, W3 wins"
+summary = "Same day: fork adjudicated (MVM-0 build primary), flagship paper drafted, roadmap v2."
+
+[[timeline]]
+date = "2026-07-19"
+kind = "process"
+title = "Stage 3 bank reconciled and construct-validity gate passed"
+summary = "Primary bank machine-verified and audited; reserve pool established."
+
+[[timeline]]
+date = "2026-07-18"
+kind = "result"
+title = "The registered removal test has run: router, not centre; report never subtracted; narrative not testable"
+summary = "Thresholds locked, spot-checks done, held-out test set authored earlier the same day."
+
+[[timeline]]
+date = "2026-07-15"
+kind = "null"
+title = "SAE-feature pilot: loss condition fires; both registered escalations exhausted"
+summary = "Pre-lock bench bundle complete; rank-k ablation exhausted."
+
+[[timeline]]
+date = "2026-07-13"
+kind = "build"
+title = "Substrate migration complete: all gates re-verify on Tulu-3-8B-SFT; cloud bench replaces the Mac mini"
+summary = "Dress rehearsal end to end the day before: rank-1 ablation too weak."
+
+[[timeline]]
+date = "2026-07-12"
+kind = "result"
+title = "Cross-patching: the two self-structures are functionally separable; narrative causally confirmed"
+summary = "RT-09 and RT-10 resolved on the sandbox; both deflations defeated."
+
+[[timeline]]
+date = "2026-07-01"
+kind = "process"
+title = "ROADMAP written; RT-09 (generic-speaker reflexivity control) registered; explainer written"
+summary = "Goal hierarchy and stage gates set down from a step-back review."
+
+[[timeline]]
+date = "2026-06-23"
+kind = "process"
+title = "Design amended by red-team review RT-01 to RT-04; both self-structures localised"
+summary = "Stage 1 in progress; cross-patching and battery work next."

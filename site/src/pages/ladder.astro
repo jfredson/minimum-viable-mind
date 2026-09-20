@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import Status from '../components/Status.astro';
+import Meter from '../components/Meter.astro';
+import { data } from '../lib/project';
+---
+
+<Base title="The ladder — Minimum Viable Mind" description="The eight stages of the build programme, what each has delivered, what remains, and which account of consciousness it adjudicates.">
+  <section class="hero">
+    <p class="eyebrow">The ladder</p>
+    <h1>One component at a time</h1>
+    <p class="lede">A metric registered before the scaffold runs. Keep what moves the metric, kill what doesn't. The subtraction is the science. Stages are ordered so each one's instruments are reusable by the next; the early stages test current systems, the later ones build what is missing.</p>
+  </section>
+
+  <section class="section">
+    {data.stages.map((s) => (
+      <article class="stage" id={`stage-${s.id}`}>
+        <header class="stage-head">
+          <div>
+            <p class="eyebrow">Stage {s.id}</p>
+            <h2 class="stage-name">{s.name}</h2>
+          </div>
+          <div class="stage-status"><Status value={s.status} /><Meter value={s.progress} caption={`${s.progress}% of the deliverable exists`} small /></div>
+        </header>
+        <p class="prose">{s.one_line}</p>
+        <div class="stage-cols">
+          <div>
+            <p class="kicker">Delivered</p>
+            {s.delivered.length ? <ul class="plain">{s.delivered.map((d) => <li>{d}</li>)}</ul> : <p class="dim">Nothing yet.</p>}
+          </div>
+          <div>
+            <p class="kicker">Remaining</p>
+            {s.remaining.length ? <ul class="plain">{s.remaining.map((d) => <li>{d}</li>)}</ul> : <p class="dim">Nothing. The stage is closed.</p>}
+          </div>
+        </div>
+        <p class="adjudicates"><span class="kicker-inline">Adjudicates</span> {s.adjudicates}</p>
+      </article>
+    ))}
+  </section>
+
+  <section class="section">
+    <div class="callout">
+      <p class="kicker" style="margin-top:0">Standing limits, carried into every stage</p>
+      <p class="prose" style="margin:0 0 8px">Mutual opacity bounds every positive result at "non-zero on the gradient". No behavioural or interpretability result closes the gap between structure and inner life; these experiments are informative about which structures are present, which is decidable, not about the metaphysics, which is not.</p>
+      <p class="prose" style="margin:0">Depth is not safe. The properties that make a system worth calling a mind are the ones that make it hard to correct. No depth stage runs without its corrigibility check committed first (spec/corrigibility-commitments.md, v1.1).</p>
+    </div>
+  </section>
+</Base>

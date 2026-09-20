@@ -1,0 +1,16 @@
+{
+  // Cloudflare Workers static-assets deployment, the same pattern as beltequation.com.
+  // Custom domain (John, 2026-09-20): a subdomain of sentient-horizons.com, whose DNS
+  // is on the same Cloudflare account. With `custom_domain: true` wrangler creates the
+  // DNS record and the certificate itself on deploy; nothing is set by hand in the
+  // dashboard. The workers.dev address keeps working alongside it.
+  "name": "mvm",
+  "compatibility_date": "2026-09-01",
+  "routes": [
+    { "pattern": "minimumviablemind.sentient-horizons.com", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

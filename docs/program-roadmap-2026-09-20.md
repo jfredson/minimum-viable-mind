@@ -50,8 +50,8 @@ open-ended program. All of it stays in force:
 2. **The program log is public as it unfolds.** The site at `site/` (plan:
    `docs/site-plan-2026-09-20.md`) goes public from its first deploy rather than waiting for a
    release; `data/project.toml` is updated whenever `STATUS.md` is. Opening the repository itself
-   (registrations, ledger, code) is a launch and stays John's gate; recommended alongside the first
-   site deploy, but not date-bound.
+   (registrations, ledger, code) is a launch and was John's gate; ruled 2026-09-20: the repository
+   goes public now, ahead of the first site deploy.
 3. **State-of-the-program write-ups when a line closes.** Any write-up that makes a public claim
    goes past an outside reader who was not in the room before it goes out (step 7 of the old
    roadmap, kept as a rule rather than a date; shortlist in
@@ -69,7 +69,7 @@ open-ended program. All of it stays in force:
    - a `RESUME.md` at the repo root says how to restart, in what order, and what will have
      expired (accounts, API keys, RunPod, subscriptions);
    - any partial draft is marked partial.
-   Recommended wrap-up start: 2026-12-13, so nothing new is launched in the last three weeks.
+   Wrap-up start: 2026-12-21 (ruled by John 2026-09-20); nothing new is launched after that date.
    Resumption after graduation, May 2027, or in pipeline breaks if any exist.
 
 ## Near-term schedule (unchanged)
@@ -99,5 +99,5 @@ the site's "next most valuable steps" view as the working list.
 
 ## Decisions for John
 
-1. When to open the repository (recommended: with the first site deploy).
-2. Confirm the 2026-12-13 wrap-up start, or set another.
+1. ~~When to open the repository~~ ruled 2026-09-20: public now (github.com/jfredson/minimum-viable-mind).
+2. ~~Wrap-up start~~ ruled 2026-09-20: 2026-12-21.

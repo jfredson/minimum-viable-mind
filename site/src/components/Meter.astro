@@ -1,0 +1,10 @@
+---
+// A single-hue progress bar with the value written beside it.
+interface Props { value: number; max?: number; caption?: string; small?: boolean }
+const { value, max = 100, caption, small = false } = Astro.props;
+const pct = Math.max(0, Math.min(100, (value / max) * 100));
+---
+<div class={`meter ${small ? 'meter-small' : ''}`}>
+  <span class="bar" role="img" aria-label={caption ?? `${Math.round(pct)}%`}><span class="bar-fill" style={`width:${pct.toFixed(1)}%`}></span></span>
+  {caption && <span class="meter-cap">{caption}</span>}
+</div>

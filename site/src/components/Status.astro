@@ -1,0 +1,8 @@
+---
+// A status chip: a word plus a tone dot. The word carries the meaning; the
+// dot only reinforces it, so state is never color alone.
+import { label, tone } from '../lib/project';
+interface Props { value: string; prefix?: string }
+const { value, prefix } = Astro.props;
+---
+<span class={`status status-${tone(value)}`}><i aria-hidden="true"></i>{prefix ? `${prefix} ` : ''}{label(value)}</span>

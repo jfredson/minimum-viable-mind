@@ -1,0 +1,22 @@
+{
+  "name": "minimum-viable-mind-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "export": "python3 ../scripts/export_site.py",
+    "check": "python3 ../scripts/export_site.py --check",
+    "predev": "python3 ../scripts/export_site.py",
+    "dev": "astro dev",
+    "prebuild": "python3 ../scripts/export_site.py",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "astro": "^5.6.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

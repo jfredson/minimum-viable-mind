@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import Status from '../components/Status.astro';
+import { data, fmtDate } from '../lib/project';
+
+const findings = [...data.findings].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+const stageName = (id: string) => data.stages.find((s) => s.id === id)?.name ?? '';
+---
+
+<Base title="What we have learned — Minimum Viable Mind" description="Registered results, diagnostics ruled for the record, and the process lessons that changed how the work runs.">
+  <section class="hero">
+    <p class="eyebrow">Learned</p>
+    <h1>What the instruments have said so far</h1>
+    <p class="lede">Registered results and diagnostics ruled for the record, newest first, each with what it found and what it changed. Nulls are findings here; the project is built so that every outcome is worth having.</p>
+  </section>
+
+  <section class="section">
+    <div class="summary-row">
+      <div><div class="stat">{data.derived.counts.findings}</div><div class="stat-label">findings on record</div></div>
+      <div><div class="stat">{data.derived.counts.findings_by_kind.registered ?? 0}</div><div class="stat-label">registered results</div></div>
+      <div><div class="stat">{data.derived.counts.findings_by_kind.process ?? 0}</div><div class="stat-label">process lessons</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    {findings.map((f) => (
+      <article class="finding" id={f.id}>
+        <header class="f-head">
+          <span class="mono">{fmtDate(f.date)} · Stage {f.stage}, {stageName(f.stage)}</span>
+          <Status value={f.kind} />
+        </header>
+        <h2 class="f-title">{f.title}</h2>
+        <p class="prose">{f.what}</p>
+        <p class="f-sowhat"><span class="kicker-inline">So what</span> {f.so_what}</p>
+        <p class="f-source mono">{f.source}</p>
+      </article>
+    ))}
+  </section>
+
+  <section class="section">
+    <div class="callout">
+      <p class="kicker" style="margin-top:0">The arc in one paragraph</p>
+      <p class="prose" style="margin:0">Instruments that can lose exist and they won: the first registered removal test found a router, not a centre, and the self-report was never subtracted. Alignment training moves the policy, not the geometry. Under pressure, frontier models mask rather than capitulate. An installed self-register in a purpose-built model turned out to be a mural, so the centre has to be acquired; an acquired one is learnable, ownership-specific and replicated, and not yet localised. What the paper can claim is a structural signature of self-indexing in small constructed models. Never a conscious machine.</p>
+    </div>
+  </section>
+</Base>

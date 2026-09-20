@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import Status from '../components/Status.astro';
+import { data, label } from '../lib/project';
+
+const order = ['on-the-table', 'authorised', 'deferred', 'rejected', 'done'];
+const groups = order
+  .map((k) => ({ key: k, items: data.ideas.filter((i) => i.status === k) }))
+  .filter((g) => g.items.length);
+const stageName = (id: string) => data.stages.find((s) => s.id === id)?.name ?? '';
+---
+
+<Base title="Questions and ideas — Minimum Viable Mind" description="The questions the project is trying to answer, what would answer each, what would count against it, and the ideas on the table to explore.">
+  <section class="hero">
+    <p class="eyebrow">Questions</p>
+    <h1>What we are trying to find out</h1>
+    <p class="lede">Ordered by leverage. Each question says what instrument or build answers it and what would count against it, because a claim that cannot lose explains nothing.</p>
+  </section>
+
+  <section class="section">
+    {data.questions.map((q) => (
+      <article class="question" id={q.id}>
+        <header class="q-head">
+          <span class="mono q-id">{q.id}</span>
+          <h2 class="q-title">{q.title}</h2>
+          <Status value={q.status} />
+        </header>
+        <p class="prose">{q.current_answer}</p>
+        <div class="q-cols">
+          <p><span class="kicker-inline">Answered by</span> {q.answered_by}</p>
+          <p><span class="kicker-inline">Loses if</span> {q.loses_if}</p>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="section" id="ideas">
+    <div class="shead"><h2>Ideas on the table</h2><span class="dim">what each would teach, what it costs, what gates it</span></div>
+    {groups.map((g) => (
+      <div class="idea-group">
+        <p class="kicker">{label(g.key)} · {g.items.length}</p>
+        <ul class="idea-list">
+          {g.items.map((i) => (
+            <li class="idea" id={i.id}>
+              <div class="step-top"><span class="mono">{i.id} · Stage {i.stage}, {stageName(i.stage)}</span><Status value={i.status} /></div>
+              <h3 class="idea-title">{i.title}</h3>
+              <p class="idea-teach">{i.teaches}</p>
+              <p class="step-meta"><strong>Cost</strong> {i.cost} · <strong>Gate</strong> {i.gate}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+</Base>

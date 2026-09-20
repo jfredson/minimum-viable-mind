@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import Status from '../components/Status.astro';
+import Meter from '../components/Meter.astro';
+import { data, project, derived, fmtDate, usd, label } from '../lib/project';
+
+const a3 = data.spend.lines[0];
+const steps = data.next_steps.filter((n) => n.status !== 'done');
+const decisions = steps.filter((n) => n.decision);
+const work = steps.filter((n) => !n.decision).slice(0, 4);
+const openIdeas = data.ideas.filter((i) => i.status === 'on-the-table' || i.status === 'authorised');
+const latest = data.timeline[0];
+---
+
+<Base>
+  <section class="home-hero mvm-hero">
+    <div>
+      <p class="eyebrow">Where we are · updated {fmtDate(project.updated_on)}</p>
+      <h1 class="big-claim">{project.where_we_are}</h1>
+      <p class="big-sub">{project.where_we_are_going}</p>
+      <div class="ctas">
+        <a class="btn" href="#next">The next most valuable steps</a>
+        <a class="btn btn-ghost" href="/learned/">What we have learned</a>
+        <a class="btn btn-ghost" href="/eli5/">Explain it simply</a>
+      </div>
+    </div>
+    <aside class="dial">
+      <div class="dial-head"><span class="dial-label">At a glance</span><span class="dial-hint">as of {project.updated_on}</span></div>
+      <div class="dial-stats dial-stats-2">
+        <div><div class="stat">{derived.days_to_hibernation}</div><div class="stat-label">days until the program must be in hibernation ({fmtDate(project.hibernation_by)}, the SERE pipeline start)</div></div>
+        <div><div class="stat">{derived.days_to_wrap_up}</div><div class="stat-label">days until wrap-up starts ({fmtDate(project.wrap_up_start)}): nothing new launches after it</div></div>
+        <div><div class="stat">{derived.counts.decisions_pending}</div><div class="stat-label">decisions waiting on John</div></div>
+        <div><div class="stat">{usd(a3.spent)}<span class="stat-of"> / {usd(a3.cap)}</span></div><div class="stat-label">{a3.name}</div></div>
+      </div>
+      <div>
+        <p class="dial-note">Latest entry, {fmtDate(latest.date)}: {latest.title}.</p>
+        <Meter value={derived.stage_progress_mean} caption={`Ladder progress, mean across the eight stages: ${derived.stage_progress_mean}%`} small />
+      </div>
+    </aside>
+  </section>
+
+  <section class="section" id="next">
+    <div class="shead"><h2>The next most valuable steps</h2><span class="dim">and what each can teach us</span></div>
+    <div class="steps">
+      {work.map((n) => (
+        <article class="step">
+          <div class="step-top"><span class="mono">{n.id}</span><Status value={n.status} /></div>
+          <h3 class="step-title">{n.title}</h3>
+          <p class="step-teach">{n.teaches}</p>
+          <p class="step-meta">{n.when} · {n.owner} · {n.cost}</p>
+        </article>
+      ))}
+    </div>
+    {decisions.length > 0 && (
+      <div class="callout decisions">
+        <p class="kicker" style="margin-top:0">Waiting on John</p>
+        <ol class="decision-list">
+          {decisions.map((n) => (
+            <li>
+              <strong>{n.title}</strong> <span class="dim">({n.when})</span>
+              <div class="decision-teach">{n.teaches}</div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    )}
+  </section>
+
+  <section class="section">
+    <div class="shead"><h2>The question</h2></div>
+    <p class="prose narrow">{project.question}</p>
+    <p class="prose narrow dim">{project.one_line}</p>
+  </section>
+
+  <section class="section">
+    <div class="shead"><h2>{data.wager.title}</h2><span class="dim">the presupposition, not a hypothesis</span></div>
+    <div class="wager">
+      <p class="prose wager-claim">{data.wager.claim}</p>
+      <div class="wager-cols">
+        <p><span class="kicker-inline">Its status</span> {data.wager.status_note}</p>
+        <p><span class="kicker-inline">Why still never a verdict</span> {data.wager.why_no_verdict}</p>
+      </div>
+      <p class="dim wager-src">{data.wager.source}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shead"><h2>Three nested goals</h2><span class="dim">kept separate so expectations stay honest</span></div>
+    <div class="moves">
+      {data.goals.map((g) => (
+        <article class="move">
+          <div class="step-top"><span class="mono">{g.id}</span><Status value={g.status} /></div>
+          <h3 class="move-title">{g.title}</h3>
+          <p class="move-body">{g.summary}</p>
+          <p class="move-evidence"><span class="kicker-inline">Where it stands</span> {g.evidence}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shead"><h2>The ladder</h2><a class="dim" href="/ladder/">every stage in detail →</a></div>
+    <ol class="ladder-strip">
+      {data.stages.map((s) => (
+        <li>
+          <a class="rung" href={`/ladder/#stage-${s.id}`}>
+            <span class="rung-top"><span class="mono">Stage {s.id}</span><Status value={s.status} /></span>
+            <span class="rung-name">{s.name}</span>
+            <Meter value={s.progress} caption={`${s.progress}%`} small />
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="shead"><h2>On the table right now</h2><a class="dim" href="/questions/">all questions and ideas →</a></div>
+    <ul class="idea-list">
+      {openIdeas.map((i) => (
+        <li class="idea">
+          <div class="step-top"><span class="mono">{i.id} · Stage {i.stage}</span><Status value={i.status} /></div>
+          <h3 class="idea-title">{i.title}</h3>
+          <p class="idea-teach">{i.teaches}</p>
+          <p class="step-meta">{i.cost} · {i.gate}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

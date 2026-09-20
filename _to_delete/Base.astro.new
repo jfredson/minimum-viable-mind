@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Starfield from '../components/Starfield.astro';
+import { project, derived, fmtDate } from '../lib/project';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Minimum Viable Mind',
+  description = project.question,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Set the theme before first paint so there is no flash on load. */}
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {}
+      })();
+    </script>
+    <meta id="theme-color-meta" name="theme-color" content="#08070f" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="John Fredrickson" />
+    {/* Internal until public path step 8 (2026-11-22): never indexed. */}
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Minimum Viable Mind" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <div class="space-bg" aria-hidden="true">
+      <div class="galaxy"></div>
+      <div class="core"></div>
+      <Starfield count={150} />
+    </div>
+    <Nav />
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <span class="footer-brand">Minimum Viable Mind</span>
+          <p class="footer-tag">A build-and-measure project downstream of Sentient Horizons and The Calibration Problem. Every claim on this site carries a stated loss condition; the strongest positive it can ever report is non-zero on the gradient, never a verdict.</p>
+          <p class="footer-links">
+            <a href="/">Where we are</a>
+            <a href="/eli5/">Explain it simply</a>
+            <a href="/ladder/">The ladder</a>
+            <a href="/questions/">Questions and ideas</a>
+            <a href="/learned/">What we have learned</a>
+            <a href="/story/">The story so far</a>
+            <a href="https://sentient-horizons.com" rel="noopener">Sentient Horizons</a>
+          </p>
+          <p class="footer-meta">
+            © {currentYear} John Fredrickson, with Claude. Project map last updated {fmtDate(project.updated_on)}; site exported {fmtDate(derived.exported_on)}{derived.commit ? ` from commit ${derived.commit}` : ''}. Internal working site, not indexed.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
