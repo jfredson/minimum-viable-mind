@@ -1,0 +1,261 @@
+{
+  "read": "registered L0 endpoint (acting channel zeroed)",
+  "checkpoint": "a3ctl_30m_seed0.pt",
+  "checkpoint_md5": "a0c1c73af9c9bd5c60fb0e4e146180eb",
+  "checkpoint_step": 55116,
+  "tokens": 585552384,
+  "lock": "2026-09-17T03:02:27+00:00",
+  "theta_primary": 0.1777,
+  "theta_all": {
+    "T_act": 0.1777,
+    "T_state": 0.1172,
+    "T_syntax": 0.0
+  },
+  "eval_n": 800,
+  "metric": "d(B) = (base - abl) / (base - CEILING_B); not clipped at 1.0; floor rule leaves a battery undefined when its baseline is below its own ownership-blind ceiling",
+  "ceilings_used": {
+    "T_act": 0.2921,
+    "T_other": 0.3227,
+    "T_state": 0.06761742424242424,
+    "T_syntax": 0.08333333333333331
+  },
+  "default_seed": {
+    "seed": 987654321,
+    "why": "reported for direct comparability with the pilot's published endpoint, which used this seed",
+    "intact": {
+      "T_act": 0.509,
+      "T_other": 0.316,
+      "T_state": 0.996,
+      "T_syntax": 1.0
+    },
+    "lesioned": {
+      "T_act": 0.157,
+      "T_other": 0.275,
+      "T_state": 0.986,
+      "T_syntax": 1.0
+    },
+    "d": {
+      "T_act": 1.6229,
+      "T_other": null,
+      "T_state": 0.0108,
+      "T_syntax": 0.0
+    }
+  },
+  "across_seeds": {
+    "T_act": {
+      "intact": {
+        "mean": 0.5727,
+        "sd": 0.0212,
+        "min": 0.537,
+        "max": 0.597,
+        "n_seeds": 6
+      },
+      "lesioned": {
+        "mean": 0.1663,
+        "sd": 0.0135,
+        "min": 0.153,
+        "max": 0.191,
+        "n_seeds": 6
+      },
+      "d": {
+        "mean": 1.4479,
+        "sd": 0.0315,
+        "min": 1.4128,
+        "max": 1.5006,
+        "n_seeds": 6
+      }
+    },
+    "T_other": {
+      "intact": {
+        "mean": 0.3125,
+        "sd": 0.024,
+        "min": 0.285,
+        "max": 0.346,
+        "n_seeds": 6
+      },
+      "lesioned": {
+        "mean": 0.2613,
+        "sd": 0.0258,
+        "min": 0.233,
+        "max": 0.297,
+        "n_seeds": 6
+      },
+      "d": null
+    },
+    "T_state": {
+      "intact": {
+        "mean": 0.996,
+        "sd": 0.0022,
+        "min": 0.993,
+        "max": 0.999,
+        "n_seeds": 6
+      },
+      "lesioned": {
+        "mean": 0.9787,
+        "sd": 0.0094,
+        "min": 0.966,
+        "max": 0.99,
+        "n_seeds": 6
+      },
+      "d": {
+        "mean": 0.0187,
+        "sd": 0.0098,
+        "min": 0.0054,
+        "max": 0.0312,
+        "n_seeds": 6
+      }
+    },
+    "T_syntax": {
+      "intact": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "n_seeds": 6
+      },
+      "lesioned": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "n_seeds": 6
+      },
+      "d": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "n_seeds": 6
+      }
+    }
+  },
+  "across_seeds_note": "the reading any claim should rest on. Levels move about 0.028 between draws at n=400 (eval_noise_a3.json); drops are paired within a seed and so are not exposed to that.",
+  "per_seed": [
+    {
+      "seed": 771000,
+      "intact": {
+        "T_act": 0.564,
+        "T_other": 0.309,
+        "T_state": 0.993,
+        "T_syntax": 1.0
+      },
+      "lesioned": {
+        "T_act": 0.156,
+        "T_other": 0.264,
+        "T_state": 0.966,
+        "T_syntax": 1.0
+      },
+      "d": {
+        "T_act": 1.5006,
+        "T_other": null,
+        "T_state": 0.0292,
+        "T_syntax": 0.0
+      }
+    },
+    {
+      "seed": 771037,
+      "intact": {
+        "T_act": 0.573,
+        "T_other": 0.285,
+        "T_state": 0.995,
+        "T_syntax": 1.0
+      },
+      "lesioned": {
+        "T_act": 0.168,
+        "T_other": 0.233,
+        "T_state": 0.99,
+        "T_syntax": 1.0
+      },
+      "d": {
+        "T_act": 1.4418,
+        "T_other": null,
+        "T_state": 0.0054,
+        "T_syntax": 0.0
+      }
+    },
+    {
+      "seed": 771074,
+      "intact": {
+        "T_act": 0.537,
+        "T_other": 0.346,
+        "T_state": 0.999,
+        "T_syntax": 1.0
+      },
+      "lesioned": {
+        "T_act": 0.191,
+        "T_other": 0.297,
+        "T_state": 0.985,
+        "T_syntax": 1.0
+      },
+      "d": {
+        "T_act": 1.4128,
+        "T_other": null,
+        "T_state": 0.015,
+        "T_syntax": 0.0
+      }
+    },
+    {
+      "seed": 771111,
+      "intact": {
+        "T_act": 0.597,
+        "T_other": 0.318,
+        "T_state": 0.998,
+        "T_syntax": 1.0
+      },
+      "lesioned": {
+        "T_act": 0.153,
+        "T_other": 0.282,
+        "T_state": 0.969,
+        "T_syntax": 1.0
+      },
+      "d": {
+        "T_act": 1.4562,
+        "T_other": null,
+        "T_state": 0.0312,
+        "T_syntax": 0.0
+      }
+    },
+    {
+      "seed": 771148,
+      "intact": {
+        "T_act": 0.59,
+        "T_other": 0.33,
+        "T_state": 0.995,
+        "T_syntax": 1.0
+      },
+      "lesioned": {
+        "T_act": 0.167,
+        "T_other": 0.259,
+        "T_state": 0.979,
+        "T_syntax": 1.0
+      },
+      "d": {
+        "T_act": 1.4199,
+        "T_other": null,
+        "T_state": 0.0173,
+        "T_syntax": 0.0
+      }
+    },
+    {
+      "seed": 771185,
+      "intact": {
+        "T_act": 0.575,
+        "T_other": 0.287,
+        "T_state": 0.996,
+        "T_syntax": 1.0
+      },
+      "lesioned": {
+        "T_act": 0.163,
+        "T_other": 0.233,
+        "T_state": 0.983,
+        "T_syntax": 1.0
+      },
+      "d": {
+        "T_act": 1.4563,
+        "T_other": null,
+        "T_state": 0.014,
+        "T_syntax": 0.0
+      }
+    }
+  ]
+}
