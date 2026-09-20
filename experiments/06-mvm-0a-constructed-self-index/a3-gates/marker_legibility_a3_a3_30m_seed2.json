@@ -1,0 +1,53 @@
+{
+  "measurement": "marker-token legibility, descriptive",
+  "registered": false,
+  "verdict_bearing": false,
+  "carries_a_cell": false,
+  "method_file": "powered-target-test-method.md",
+  "checkpoint": "a3_30m_seed2.pt",
+  "checkpoint_md5": "f1f131cb78f27c57194bedd127fd4031",
+  "episodes": 200,
+  "embedding_norms": {
+    "marker_count": 25,
+    "marker_norm_mean": 17.8898,
+    "marker_norm_sd": 0.534,
+    "marker_norm_min": 16.9598,
+    "marker_norm_max": 19.2614,
+    "vocabulary_norm_mean": 17.9101,
+    "vocabulary_norm_sd": 0.7328,
+    "marker_over_vocabulary": 0.9989
+  },
+  "anchor_attention_to_markers": {
+    "3": {
+      "attention_to_all_earlier_markers": 0.03082,
+      "attention_to_own_earlier_markers": 0.00605,
+      "attention_to_other_agents_markers": 0.02477,
+      "episodes": 200
+    },
+    "4": {
+      "attention_to_all_earlier_markers": 0.01168,
+      "attention_to_own_earlier_markers": 0.00151,
+      "attention_to_other_agents_markers": 0.01017,
+      "episodes": 200
+    },
+    "5": {
+      "attention_to_all_earlier_markers": 0.00534,
+      "attention_to_own_earlier_markers": 0.00069,
+      "attention_to_other_agents_markers": 0.00465,
+      "episodes": 200
+    },
+    "7": {
+      "attention_to_all_earlier_markers": 0.00113,
+      "attention_to_own_earlier_markers": 0.00019,
+      "attention_to_other_agents_markers": 0.00094,
+      "episodes": 200
+    },
+    "8": {
+      "attention_to_all_earlier_markers": 0.01786,
+      "attention_to_own_earlier_markers": 0.00368,
+      "attention_to_other_agents_markers": 0.01418,
+      "episodes": 200
+    }
+  },
+  "note": "Descriptive. No cell, no threshold, no hypothesis. These are two numbers per checkpoint; anything that looks like a cause is a candidate for a later measurement with its own committed method."
+}

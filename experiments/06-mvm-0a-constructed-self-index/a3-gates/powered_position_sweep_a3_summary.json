@@ -1,0 +1,74 @@
+{
+  "checkpoints": [
+    "a3_30m_seed0.pt",
+    "a3_30m_seed1.pt",
+    "a3_30m_seed2.pt"
+  ],
+  "family_sd_bar": 3.56,
+  "family_size": 270,
+  "arms": {
+    "marker_word": {
+      "cell": "CARRIED NOWHERE",
+      "detail": {
+        "void_checkpoints": [],
+        "clearing_by_checkpoint": {},
+        "negative_control_clearances": {},
+        "cell": "CARRIED NOWHERE",
+        "sub_pattern": "nothing cleared on any checkpoint",
+        "means": "across eleven positions, five layers and three checkpoints, identity is not linearly recoverable anywhere except where it is present as an input token. The cells are exhaustive by construction, so the sub-pattern is reported rather than hidden"
+      },
+      "per_checkpoint": {
+        "a3_30m_seed0.pt": {
+          "control_holds": true,
+          "clearing_positions": [],
+          "marginal_positions": [],
+          "leak": []
+        },
+        "a3_30m_seed1.pt": {
+          "control_holds": true,
+          "clearing_positions": [],
+          "marginal_positions": [],
+          "leak": []
+        },
+        "a3_30m_seed2.pt": {
+          "control_holds": true,
+          "clearing_positions": [],
+          "marginal_positions": [],
+          "leak": []
+        }
+      }
+    },
+    "register_index": {
+      "cell": "CARRIED NOWHERE",
+      "detail": {
+        "void_checkpoints": [],
+        "clearing_by_checkpoint": {},
+        "negative_control_clearances": {},
+        "cell": "CARRIED NOWHERE",
+        "sub_pattern": "nothing cleared on any checkpoint",
+        "means": "across eleven positions, five layers and three checkpoints, identity is not linearly recoverable anywhere except where it is present as an input token. The cells are exhaustive by construction, so the sub-pattern is reported rather than hidden"
+      },
+      "per_checkpoint": {
+        "a3_30m_seed0.pt": {
+          "control_holds": true,
+          "clearing_positions": [],
+          "marginal_positions": [],
+          "leak": []
+        },
+        "a3_30m_seed1.pt": {
+          "control_holds": true,
+          "clearing_positions": [],
+          "marginal_positions": [],
+          "leak": []
+        },
+        "a3_30m_seed2.pt": {
+          "control_holds": true,
+          "clearing_positions": [],
+          "marginal_positions": [],
+          "leak": []
+        }
+      }
+    }
+  },
+  "note": "diagnostic only; no verdict is read and no registered text is touched"
+}

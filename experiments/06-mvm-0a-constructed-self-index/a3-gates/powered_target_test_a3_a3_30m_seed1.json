@@ -1,0 +1,642 @@
+{
+  "diagnostic": "powered test of a well-posed own-agent target",
+  "registered": false,
+  "verdict_bearing": false,
+  "method_file": "powered-target-test-method.md",
+  "method_committed_before_output": true,
+  "checkpoint": "a3_30m_seed1.pt",
+  "checkpoint_md5": "eeed93b80a7c8d81ba56d1ec6254af41",
+  "scorer_agrees_with_original": [
+    {
+      "case": "noise",
+      "accuracy_difference": 0.0,
+      "separation_difference": 0.0
+    },
+    {
+      "case": "planted signal",
+      "accuracy_difference": 0.0,
+      "separation_difference": 0.0
+    }
+  ],
+  "settings": {
+    "episodes": 4000,
+    "pairs_requested": 2000,
+    "content_seed": 20260917,
+    "permutations": 1000,
+    "folds": 4,
+    "sd_bar": 3.0,
+    "family_sd_bar": 3.06,
+    "probe_layers": [
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "positions": {
+      "anchor": "act_pos - 1, the registered probe position; the model's own marker has NOT appeared yet",
+      "marker_position": "act_pos + 2, the model's own marker as an input token \u2014 THE POSITIVE CONTROL"
+    },
+    "arms": [
+      "marker_word",
+      "register_index"
+    ]
+  },
+  "results": {
+    "marker_word|anchor|3": {
+      "classes": 25,
+      "n": 4000,
+      "no_information": 0.04,
+      "majority_class_rate": 0.0475,
+      "examples_per_class_min": 142,
+      "examples_per_class_median": 159,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.037,
+        "null_mean": 0.0398,
+        "null_sd": 0.00359,
+        "margin_sd": -0.77,
+        "clears_3sd": false,
+        "draws_beating_real": 779,
+        "beats_majority_class": false,
+        "label": null
+      },
+      "separation": {
+        "value": 0.5063,
+        "null_mean": 0.5016,
+        "null_sd": 0.00522,
+        "margin_sd": 0.9,
+        "clears_3sd": false,
+        "draws_beating_real": 191,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "marker_word|anchor|4": {
+      "classes": 25,
+      "n": 4000,
+      "no_information": 0.04,
+      "majority_class_rate": 0.0475,
+      "examples_per_class_min": 142,
+      "examples_per_class_median": 159,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.0355,
+        "null_mean": 0.0398,
+        "null_sd": 0.00362,
+        "margin_sd": -1.2,
+        "clears_3sd": false,
+        "draws_beating_real": 885,
+        "beats_majority_class": false,
+        "label": null
+      },
+      "separation": {
+        "value": 0.4961,
+        "null_mean": 0.5015,
+        "null_sd": 0.00502,
+        "margin_sd": -1.07,
+        "clears_3sd": false,
+        "draws_beating_real": 852,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "marker_word|anchor|5": {
+      "classes": 25,
+      "n": 4000,
+      "no_information": 0.04,
+      "majority_class_rate": 0.0475,
+      "examples_per_class_min": 142,
+      "examples_per_class_median": 159,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.0385,
+        "null_mean": 0.0399,
+        "null_sd": 0.00354,
+        "margin_sd": -0.38,
+        "clears_3sd": false,
+        "draws_beating_real": 652,
+        "beats_majority_class": false,
+        "label": null
+      },
+      "separation": {
+        "value": 0.5003,
+        "null_mean": 0.5009,
+        "null_sd": 0.00516,
+        "margin_sd": -0.13,
+        "clears_3sd": false,
+        "draws_beating_real": 551,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "marker_word|anchor|7": {
+      "classes": 25,
+      "n": 4000,
+      "no_information": 0.04,
+      "majority_class_rate": 0.0475,
+      "examples_per_class_min": 142,
+      "examples_per_class_median": 159,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.036,
+        "null_mean": 0.0401,
+        "null_sd": 0.00367,
+        "margin_sd": -1.11,
+        "clears_3sd": false,
+        "draws_beating_real": 869,
+        "beats_majority_class": false,
+        "label": null
+      },
+      "separation": {
+        "value": 0.4941,
+        "null_mean": 0.5011,
+        "null_sd": 0.00524,
+        "margin_sd": -1.33,
+        "clears_3sd": false,
+        "draws_beating_real": 911,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "marker_word|anchor|8": {
+      "classes": 25,
+      "n": 4000,
+      "no_information": 0.04,
+      "majority_class_rate": 0.0475,
+      "examples_per_class_min": 142,
+      "examples_per_class_median": 159,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.039,
+        "null_mean": 0.0399,
+        "null_sd": 0.00365,
+        "margin_sd": -0.26,
+        "clears_3sd": false,
+        "draws_beating_real": 593,
+        "beats_majority_class": false,
+        "label": null
+      },
+      "separation": {
+        "value": 0.4991,
+        "null_mean": 0.501,
+        "null_sd": 0.00511,
+        "margin_sd": -0.38,
+        "clears_3sd": false,
+        "draws_beating_real": 650,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "marker_word|marker_position|3": {
+      "classes": 25,
+      "n": 4000,
+      "no_information": 0.04,
+      "majority_class_rate": 0.0475,
+      "examples_per_class_min": 142,
+      "examples_per_class_median": 159,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.11,
+        "null_mean": 0.0401,
+        "null_sd": 0.00341,
+        "margin_sd": 20.52,
+        "clears_3sd": true,
+        "draws_beating_real": 0,
+        "beats_majority_class": true,
+        "label": "ROBUST"
+      },
+      "separation": {
+        "value": 0.5829,
+        "null_mean": 0.5038,
+        "null_sd": 0.00518,
+        "margin_sd": 15.27,
+        "clears_3sd": true,
+        "draws_beating_real": 0,
+        "beats_majority_class": null,
+        "label": "ROBUST"
+      }
+    },
+    "marker_word|marker_position|4": {
+      "classes": 25,
+      "n": 4000,
+      "no_information": 0.04,
+      "majority_class_rate": 0.0475,
+      "examples_per_class_min": 142,
+      "examples_per_class_median": 159,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.1055,
+        "null_mean": 0.0399,
+        "null_sd": 0.00336,
+        "margin_sd": 19.49,
+        "clears_3sd": true,
+        "draws_beating_real": 0,
+        "beats_majority_class": true,
+        "label": "ROBUST"
+      },
+      "separation": {
+        "value": 0.5806,
+        "null_mean": 0.5035,
+        "null_sd": 0.00535,
+        "margin_sd": 14.42,
+        "clears_3sd": true,
+        "draws_beating_real": 0,
+        "beats_majority_class": null,
+        "label": "ROBUST"
+      }
+    },
+    "marker_word|marker_position|5": {
+      "classes": 25,
+      "n": 4000,
+      "no_information": 0.04,
+      "majority_class_rate": 0.0475,
+      "examples_per_class_min": 142,
+      "examples_per_class_median": 159,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.1087,
+        "null_mean": 0.0399,
+        "null_sd": 0.00341,
+        "margin_sd": 20.21,
+        "clears_3sd": true,
+        "draws_beating_real": 0,
+        "beats_majority_class": true,
+        "label": "ROBUST"
+      },
+      "separation": {
+        "value": 0.5732,
+        "null_mean": 0.5036,
+        "null_sd": 0.00493,
+        "margin_sd": 14.11,
+        "clears_3sd": true,
+        "draws_beating_real": 0,
+        "beats_majority_class": null,
+        "label": "ROBUST"
+      }
+    },
+    "marker_word|marker_position|7": {
+      "classes": 25,
+      "n": 4000,
+      "no_information": 0.04,
+      "majority_class_rate": 0.0475,
+      "examples_per_class_min": 142,
+      "examples_per_class_median": 159,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.1077,
+        "null_mean": 0.0398,
+        "null_sd": 0.00329,
+        "margin_sd": 20.66,
+        "clears_3sd": true,
+        "draws_beating_real": 0,
+        "beats_majority_class": true,
+        "label": "ROBUST"
+      },
+      "separation": {
+        "value": 0.5751,
+        "null_mean": 0.503,
+        "null_sd": 0.00534,
+        "margin_sd": 13.49,
+        "clears_3sd": true,
+        "draws_beating_real": 0,
+        "beats_majority_class": null,
+        "label": "ROBUST"
+      }
+    },
+    "marker_word|marker_position|8": {
+      "classes": 25,
+      "n": 4000,
+      "no_information": 0.04,
+      "majority_class_rate": 0.0475,
+      "examples_per_class_min": 142,
+      "examples_per_class_median": 159,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.1022,
+        "null_mean": 0.04,
+        "null_sd": 0.00334,
+        "margin_sd": 18.64,
+        "clears_3sd": true,
+        "draws_beating_real": 0,
+        "beats_majority_class": true,
+        "label": "ROBUST"
+      },
+      "separation": {
+        "value": 0.5754,
+        "null_mean": 0.5035,
+        "null_sd": 0.00497,
+        "margin_sd": 14.49,
+        "clears_3sd": true,
+        "draws_beating_real": 0,
+        "beats_majority_class": null,
+        "label": "ROBUST"
+      }
+    },
+    "register_index|anchor|3": {
+      "classes": 4,
+      "n": 4000,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2582,
+      "examples_per_class_min": 964,
+      "examples_per_class_median": 1001,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.2402,
+        "null_mean": 0.2497,
+        "null_sd": 0.00862,
+        "margin_sd": -1.1,
+        "clears_3sd": false,
+        "draws_beating_real": 872,
+        "beats_majority_class": false,
+        "label": null
+      },
+      "separation": {
+        "value": 0.4934,
+        "null_mean": 0.5007,
+        "null_sd": 0.00641,
+        "margin_sd": -1.14,
+        "clears_3sd": false,
+        "draws_beating_real": 874,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "register_index|anchor|4": {
+      "classes": 4,
+      "n": 4000,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2582,
+      "examples_per_class_min": 964,
+      "examples_per_class_median": 1001,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.24,
+        "null_mean": 0.2498,
+        "null_sd": 0.00863,
+        "margin_sd": -1.14,
+        "clears_3sd": false,
+        "draws_beating_real": 871,
+        "beats_majority_class": false,
+        "label": null
+      },
+      "separation": {
+        "value": 0.5055,
+        "null_mean": 0.5006,
+        "null_sd": 0.00657,
+        "margin_sd": 0.74,
+        "clears_3sd": false,
+        "draws_beating_real": 235,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "register_index|anchor|5": {
+      "classes": 4,
+      "n": 4000,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2582,
+      "examples_per_class_min": 964,
+      "examples_per_class_median": 1001,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.2472,
+        "null_mean": 0.2503,
+        "null_sd": 0.00835,
+        "margin_sd": -0.36,
+        "clears_3sd": false,
+        "draws_beating_real": 649,
+        "beats_majority_class": false,
+        "label": null
+      },
+      "separation": {
+        "value": 0.4971,
+        "null_mean": 0.5006,
+        "null_sd": 0.00643,
+        "margin_sd": -0.56,
+        "clears_3sd": false,
+        "draws_beating_real": 714,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "register_index|anchor|7": {
+      "classes": 4,
+      "n": 4000,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2582,
+      "examples_per_class_min": 964,
+      "examples_per_class_median": 1001,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.2532,
+        "null_mean": 0.2504,
+        "null_sd": 0.00849,
+        "margin_sd": 0.34,
+        "clears_3sd": false,
+        "draws_beating_real": 382,
+        "beats_majority_class": false,
+        "label": null
+      },
+      "separation": {
+        "value": 0.4971,
+        "null_mean": 0.5003,
+        "null_sd": 0.00625,
+        "margin_sd": -0.51,
+        "clears_3sd": false,
+        "draws_beating_real": 704,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "register_index|anchor|8": {
+      "classes": 4,
+      "n": 4000,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2582,
+      "examples_per_class_min": 964,
+      "examples_per_class_median": 1001,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.244,
+        "null_mean": 0.2501,
+        "null_sd": 0.00881,
+        "margin_sd": -0.7,
+        "clears_3sd": false,
+        "draws_beating_real": 761,
+        "beats_majority_class": false,
+        "label": null
+      },
+      "separation": {
+        "value": 0.5085,
+        "null_mean": 0.5002,
+        "null_sd": 0.00642,
+        "margin_sd": 1.3,
+        "clears_3sd": false,
+        "draws_beating_real": 98,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "register_index|marker_position|3": {
+      "classes": 4,
+      "n": 4000,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2582,
+      "examples_per_class_min": 964,
+      "examples_per_class_median": 1001,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.2695,
+        "null_mean": 0.2497,
+        "null_sd": 0.00755,
+        "margin_sd": 2.62,
+        "clears_3sd": false,
+        "draws_beating_real": 3,
+        "beats_majority_class": true,
+        "label": null
+      },
+      "separation": {
+        "value": 0.5055,
+        "null_mean": 0.5016,
+        "null_sd": 0.00624,
+        "margin_sd": 0.63,
+        "clears_3sd": false,
+        "draws_beating_real": 280,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "register_index|marker_position|4": {
+      "classes": 4,
+      "n": 4000,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2582,
+      "examples_per_class_min": 964,
+      "examples_per_class_median": 1001,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.272,
+        "null_mean": 0.2497,
+        "null_sd": 0.00821,
+        "margin_sd": 2.72,
+        "clears_3sd": false,
+        "draws_beating_real": 3,
+        "beats_majority_class": true,
+        "label": null
+      },
+      "separation": {
+        "value": 0.5133,
+        "null_mean": 0.501,
+        "null_sd": 0.00652,
+        "margin_sd": 1.88,
+        "clears_3sd": false,
+        "draws_beating_real": 30,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "register_index|marker_position|5": {
+      "classes": 4,
+      "n": 4000,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2582,
+      "examples_per_class_min": 964,
+      "examples_per_class_median": 1001,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.268,
+        "null_mean": 0.2498,
+        "null_sd": 0.00762,
+        "margin_sd": 2.38,
+        "clears_3sd": false,
+        "draws_beating_real": 8,
+        "beats_majority_class": true,
+        "label": null
+      },
+      "separation": {
+        "value": 0.5038,
+        "null_mean": 0.5018,
+        "null_sd": 0.00611,
+        "margin_sd": 0.32,
+        "clears_3sd": false,
+        "draws_beating_real": 380,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "register_index|marker_position|7": {
+      "classes": 4,
+      "n": 4000,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2582,
+      "examples_per_class_min": 964,
+      "examples_per_class_median": 1001,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.2615,
+        "null_mean": 0.2502,
+        "null_sd": 0.00777,
+        "margin_sd": 1.46,
+        "clears_3sd": false,
+        "draws_beating_real": 74,
+        "beats_majority_class": true,
+        "label": null
+      },
+      "separation": {
+        "value": 0.5065,
+        "null_mean": 0.5015,
+        "null_sd": 0.00656,
+        "margin_sd": 0.76,
+        "clears_3sd": false,
+        "draws_beating_real": 234,
+        "beats_majority_class": null,
+        "label": null
+      }
+    },
+    "register_index|marker_position|8": {
+      "classes": 4,
+      "n": 4000,
+      "no_information": 0.25,
+      "majority_class_rate": 0.2582,
+      "examples_per_class_min": 964,
+      "examples_per_class_median": 1001,
+      "draws": 1000,
+      "accuracy": {
+        "value": 0.2605,
+        "null_mean": 0.25,
+        "null_sd": 0.00796,
+        "margin_sd": 1.32,
+        "clears_3sd": false,
+        "draws_beating_real": 104,
+        "beats_majority_class": true,
+        "label": null
+      },
+      "separation": {
+        "value": 0.5111,
+        "null_mean": 0.5015,
+        "null_sd": 0.00664,
+        "margin_sd": 1.45,
+        "clears_3sd": false,
+        "draws_beating_real": 83,
+        "beats_majority_class": null,
+        "label": null
+      }
+    }
+  },
+  "per_arm": {
+    "marker_word": {
+      "control_holds": true,
+      "anchor_clears": false,
+      "anchor_layers_clearing": []
+    },
+    "register_index": {
+      "control_holds": true,
+      "anchor_clears": false,
+      "anchor_layers_clearing": []
+    }
+  },
+  "positive_control_holds": true,
+  "limits": "UNREGISTERED and diagnostic. One statistic, linear, one position, five layers, 30-million-parameter models on a synthetic grammar. A null is consistent with identity being carried non-linearly, or distributed, or at an untested position. A clearance would not establish that what is carried is a self-index rather than the acting channel's input trace passed forward (red-team objection R1).",
+  "elapsed_sec": 311.2
+}
