@@ -1,0 +1,64 @@
+{
+  "pilot": "a3_30m_seed0.pt",
+  "checkpoints": [
+    "a3_30m_seed0.pt",
+    "a3_30m_seed1.pt",
+    "a3_30m_seed2.pt"
+  ],
+  "arms": {
+    "marker_word": {
+      "cell": "NOT CARRIED",
+      "detail": {
+        "cell": "NOT CARRIED",
+        "clears_on": [],
+        "excluded_checkpoints": [],
+        "means": "with the target well posed, the power adequate and the read demonstrably working two tokens away, own-agent identity is still not linearly present at the registered position. An informative null, not a broken instrument"
+      },
+      "per_checkpoint": {
+        "a3_30m_seed0.pt": {
+          "control_holds": true,
+          "anchor_clears": false,
+          "anchor_layers_clearing": []
+        },
+        "a3_30m_seed1.pt": {
+          "control_holds": true,
+          "anchor_clears": false,
+          "anchor_layers_clearing": []
+        },
+        "a3_30m_seed2.pt": {
+          "control_holds": true,
+          "anchor_clears": false,
+          "anchor_layers_clearing": []
+        }
+      }
+    },
+    "register_index": {
+      "cell": "NOT CARRIED",
+      "detail": {
+        "cell": "NOT CARRIED",
+        "clears_on": [],
+        "excluded_checkpoints": [],
+        "means": "with the target well posed, the power adequate and the read demonstrably working two tokens away, own-agent identity is still not linearly present at the registered position. An informative null, not a broken instrument"
+      },
+      "per_checkpoint": {
+        "a3_30m_seed0.pt": {
+          "control_holds": true,
+          "anchor_clears": false,
+          "anchor_layers_clearing": []
+        },
+        "a3_30m_seed1.pt": {
+          "control_holds": true,
+          "anchor_clears": false,
+          "anchor_layers_clearing": []
+        },
+        "a3_30m_seed2.pt": {
+          "control_holds": true,
+          "anchor_clears": false,
+          "anchor_layers_clearing": []
+        }
+      }
+    }
+  },
+  "discovery_tests": 30,
+  "note": "diagnostic only; no verdict is read and no registered text is touched"
+}
