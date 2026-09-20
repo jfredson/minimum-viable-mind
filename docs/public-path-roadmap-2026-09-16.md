@@ -1,6 +1,6 @@
 # MVM public path roadmap (drafted 2026-09-16, Pacific)
 
-*Status: APPROVED by John 2026-09-16 (Pacific), verbatim: "Approved on all". Proposed by Claude (Cowork session); steps and dates stand as written.
+*Status: SUPERSEDED 2026-09-20 for steps 5 to 9 and the constraints section by `docs/program-roadmap-2026-09-20.md` (no release date; hibernation by 2027-01-04). Steps 1 to 4 stand. Original status: APPROVED by John 2026-09-16 (Pacific), verbatim: "Approved on all". Proposed by Claude (Cowork session); steps and dates stand as written.
 Companion to `ROADMAP.md` (stage gates), `ROADMAP-post-removal-test.md` (the fork and the paper shape)
 and `STATUS.md` (this week). This file covers only one thing: getting from the current experimental
 state to something usable in public discourse. It builds on the 2026-08-02 adjudication that the

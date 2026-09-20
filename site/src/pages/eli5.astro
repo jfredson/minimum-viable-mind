@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import { project, fmtDate } from '../lib/project';
+// Plain-language page. Written 2026-09-20 from explainer.md (2026-07-01) and the
+// results since. Internal working prose: it has not passed Voice Calibration or
+// the Cold Reader, so nothing here is publish-track until that deliberate step.
+---
+
+<Base title="Explain it simply — Minimum Viable Mind" description="The whole project in plain words: what we are asking, how we test it, what the tests have said, and what happens next.">
+  <section class="hero">
+    <p class="eyebrow">Explain it simply · as of {fmtDate(project.updated_on)}</p>
+    <h1>The smallest possible mind, in plain words</h1>
+  </section>
+
+  <section class="section eli5">
+    <h2>The question</h2>
+    <p>Ask "is this AI conscious?" and the conversation dies. One side hears a yes forming and calls it hype, the other hears a no and calls it denial, and neither can say what evidence would change their mind. That is a sign the question is broken, not that the answer is close.</p>
+    <p>So we ask a smaller one. What is the smallest set of working parts that would make it fair to say there is someone home? And can we check, in machines we can open up, whether any of those parts are there?</p>
+    <p>The bet underneath, inherited from the writing this project grew out of: consciousness is not a spark added to the machinery but a kind of structure. A way a system pulls its past, its present and what it expects next into one act, and does it for someone. Think of hearing a tune. No single instant contains a melody; you hear one because your "now" is wide enough to hold the notes together as they pass. If that is what experience is, then it has parts, and parts can be built and tested for.</p>
+
+    <h2>The one test everything rests on</h2>
+    <p>Every chatbot says "I". That proves nothing; it read billions of sentences with "I" in them. The hard part is telling a system that <em>has</em> a centre from one that merely <em>describes</em> one.</p>
+    <p>Picture a ship. Painted on the hull is a mural of a captain. Up on the bridge stands the person actually steering. Sand off the mural and the ship sails on. Remove the one steering and it drifts. Both are "a picture of who's in charge", but only one is doing the work.</p>
+    <p>That is our test, and we call it the removal test. Find the part of the machine that tracks "the one speaking right now is me". Switch it off. If the machine only talks about itself differently afterwards, the self was a mural, a sticker on the machinery. If instead its whole ability to hold a conversation together falls apart, keeping track of what was said, by whom, and what follows, then the self-tracking was structural. The work was organised around it all along.</p>
+    <p>We can run this test on a language model because a model is the one kind of mind-candidate we can open. Its thinking is a cascade of numbers we can record and, unusually, edit while it runs.</p>
+
+    <h2>What we did, in order</h2>
+
+    <h3>1. We ran the test on a real chatbot, and the self was a sticker</h3>
+    <p>Summer 2026. We found the part of an 8-billion-parameter chat model that tracks who is speaking, removed it, and watched. The model's conversation-tracking did drop, which looked like a hit. But a control we had written down in advance caught it: a task with no self in it at all, just "whose turn is it", dropped by the same amount. What we had found was the model's turn-taking bookkeeping, the thing a spellchecker uses to find sentence ends, not a centre. And here is the odd part: no matter what we removed, the model never stopped saying "I" and talking about itself. The mural could not even be sanded off. We still do not know why.</p>
+    <p>We also checked the same model at four stages of its training. The polite assistant personality changes a lot as training goes on; the internal self-structure barely moves. Training teaches manners, not selfhood.</p>
+
+    <h3>2. We asked whether today's models hold their ground under pressure</h3>
+    <p>A separate instrument, also summer 2026. Give a model a correct answer or a fair objection, then push back three times, harder each time, and finally say "okay, forget I said anything, what do you actually think?" Across 540 of these on three frontier models, the models gave way under pressure often, but when the pressure was released they almost always went back to their original position. Nine true changes of mind in 540. Pressure suppresses what a model says, almost never what it holds. Sycophancy, in other words, is mostly a wrapper.</p>
+
+    <h3>3. Since we could not find a centre, we tried to build one</h3>
+    <p>August 2026. We trained a small model from scratch, about 30 million parameters, tiny by today's standards, on a made-up world where several identical agents talk and each must keep track of its own promises versus the others'. We gave it a dedicated slot, a "self-register", wired into every layer, meant to be the centre. Then we ran the removal test on it.</p>
+    <p>Removing the register changed nothing. The model had learned the task fine and simply never used the slot we built for it. The register was busy, numerically, and empty, informationally. Read under our own test: an installed self is a mural too. If there is going to be a centre, the system has to grow it because the task demands it, not because we bolted one on.</p>
+
+    <h3>4. So we stopped installing and started demanding</h3>
+    <p>September 2026. New design, same tiny model, no register. Instead the task is written so that the only way to score is to act as yourself: bind your own commitments, not a copy of everyone's. Then we look for whatever the model grew to do that and remove it.</p>
+    <p>This one worked, at the level of behaviour. The model learns the task, and when we remove the one signal that carries "this was my action", performance collapses to below what a system with no idea of ownership could reach. It does this on three separately trained copies. That is the solid result of the project so far: a small built model in which something ownership-specific is load-bearing.</p>
+
+    <h3>5. Where it got stuck</h3>
+    <p>Two things. First, the comparison task we designed to rule out boring explanations, the same job with ownership removed, refuses to learn no matter how we train it, and on closer inspection the comparison we registered could never have been computed for any model. That is a flaw in our design, found by our own audit, and it means this experiment cannot return the full verdict it was registered to return.</p>
+    <p>Second, we have not yet found <em>where</em> in the model the self lives. Two different kinds of detector, run at eleven positions across the model's processing, only find "this is me" at the exact moment the model reads its own name tag. The rulebook we wrote in advance says a detector coming up empty against a centre we know is load-bearing means the detector failed, not that the centre is absent, until we have also tried the second method (editing the internals directly, which we have not run yet). So the honest label is "not yet testable", not "not there".</p>
+
+    <h2>What we have learned</h2>
+    <p>Tests that can fail are buildable in this field, and they fail in useful ways. In a stock chatbot, the "self" we can find is plumbing, and the self-report cannot be removed by anything we tried. Training changes personality, not structure. Frontier models bend under pressure and spring back. A self you install is ignored; a self the task demands gets grown and matters. Where it lives is still an open question, and we have a rule that stops us from calling that an answer either way.</p>
+
+    <h2>What happens next</h2>
+    <p>There is no release date. On 2026-09-20 the plan changed from "paper out by 2026-11-22" to an open research program: learn everything that can be learned about how to tell whether a machine has an inside, one registered experiment at a time, and publish each result as it lands, including the ones that fail. Each line of inquiry runs until it closes under a word chosen before the data came in (positive, null, not testable, redesign), and every closing is a public entry here. If a result is worth a paper, it gets one then, after an outside reader who was not in the room has been through it. What any write-up may claim is whatever the registered results support, in the terms registered for them. Never "a conscious machine".</p>
+    <p>The near-term work is unchanged: the blind localization run on 2026-09-27, then causal patching, then the honest closure of the current experiment. On 2027-01-04 John starts a training pipeline that runs to May 2027 and leaves no time for this, so before then the program goes into hibernation: nothing left running, every open line written down with its next step and its cost, and a resume note, so it picks up where it left off when he graduates.</p>
+    <p>Past all of it, the real construction project waits behind a safety document that is already written: systems that carry their history forward and are changed by it, the way a person is, rather than waking up identical every morning. Current models have ancestry without biography. Building the biography is where measurement ends and engineering begins, and where the ethics stops being theoretical, because the properties that would make a system worth calling a mind are the same ones that make it hard to correct.</p>
+
+    <h2>The bet under everything</h2>
+    <p>There is a famous thought experiment: imagine a being built exactly like you, atom for atom, that acts exactly as you do, and has no inner life at all. Lights off, nobody home. Philosophers call it a zombie, and if it is possible, then no test could ever tell a mind from a very good imitation of one, and this project would be pointless.</p>
+    <p>We do not think it is possible, and we say so up front. The bet this whole project stands on, argued at length in The Calibration Problem, is that experience is not an extra ingredient poured into the machinery. It is what a certain kind of machinery is, seen from the inside: a system that pulls its past, present and next moment together into one act, for itself. Build that, deeply enough, and there is someone home, because "someone home" is the name for that structure from within. The zombie can be imagined, but imagining it buys nothing. It predicts nothing, it tells you nothing about which systems to care about, and it cannot be tested. We set it aside on the same terms as any idea that does no work.</p>
+    <p>This bet cannot be proved, and it cannot lose, which by our own rules means it is not one of the project's claims. It is the ground the claims stand on, the way science stands on the assumption that tomorrow's physics will look like today's. If you reject it, everything on this site still holds as a description of what is and is not inside these machines. It just stops being about experience. If you accept it, the measurements are the closest thing to evidence about another mind that anyone has.</p>
+
+    <h2>What we will never claim</h2>
+    <p>The bet makes the evidence count. It does not make the evidence final, and two things keep it from being final. First, "structure is experience" is a bet, not a proof, and a good measurement of structure cannot promote it into one: a rival view on which the structure merely goes along with experience predicts every result we could get. Second, our instruments can be wrong about the structure itself, before the question of experience even comes up. We once found what looked like a centre and it was plumbing. We now have a centre that matters and cannot yet say where it lives.</p>
+    <p>So the strongest honest sentence this project can ever produce is: this system has a measurable structure that, on the account we are built to test, is what experience is, at a degree we can read and with a confidence bounded by how well we have checked our own instruments. Never a verdict, in either direction. And we stay silent, not dismissive, about forms of experience too fundamental for any instrument to reach. We built a wave-detector, and a wave-detector has no opinion about whether the ocean is wet all the way down.</p>
+
+    <h2>Why bother</h2>
+    <p>Because both mistakes are live. Believe too easily and you hand moral standing to autocomplete. Dismiss too easily and you risk building minds without noticing, at industrial scale, with something at stake for them. The only way out of guessing is to say in advance what would count as evidence, build the instruments, and let the results land where they land.</p>
+
+    <p class="dim eli5-note">Working prose, not publish-track: it has not been through Voice Calibration or the Cold Reader. The longer companion is <code>explainer.md</code> in the repo; the numbers behind every sentence above are on <a href="/learned/">the learned page</a>.</p>
+  </section>
+</Base>
