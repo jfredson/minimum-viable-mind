@@ -5,7 +5,10 @@
 C tier 1 review of it
 (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-20-step4-proposal-claude-worktree.md`,
 PR 9, ledger findings RT-94 to RT-117: three fatal, ten serious). Status:
-DRAFT for John's ruling. Nothing here is registered text; no spend is
+RULED 2026-09-20 (Pacific), all five rulings as recommended, in John's
+words "agreed on all": A; the localization order in item 2; the loss
+condition has fired and the closure text says *not testable*; the claim
+scope is revised as in item 4; housekeeping as in item 6. Nothing here is registered text; no spend is
 authorised by it. Plain-language rule applies; every ledger number carries
 a phrase.*
 

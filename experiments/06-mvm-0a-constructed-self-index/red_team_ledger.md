@@ -464,7 +464,7 @@ instrument at any of those nine positions.
 | RT-92 | Before "not localized" or "absent" the registration requires probe **and** causal patching to agree (Amendment A3 §3.2 step 4), and patching has still never run. The pre-registration reads a probe-only null against a centre known to be load-bearing as instrument failure. The registered term for where the line stands is *not testable (localization)* | serious (carried, not new) | ACCEPT, CARRIED OPEN | Restates `RT-49` and `RT-50`, which the findings honour in full and without softening — nothing needs correcting. Repeated because the packet asks for it and because it is the clause most likely to be dropped when the paragraph is shortened. Already on the 2026-10-04 control-battery decision. |
 | RT-93 | Every ruling from the 2026-09-19 review that bore on this run was honoured — `RT-33` through `RT-43`, and `RT-49` and `RT-50` — checked one by one against the method, the code and the findings. Nineteen rulings and no drift | worth-noting (credit) | ACCEPT AS CREDIT | The previous review's central complaint was a caveat drifting to nothing across four successive findings files. This is the thing most worth recording about the run. |
 
-# Gate C review of the step 4 proposal (2026-09-20) — RT-94 to RT-117, DRAFTED, NOT YET RULED
+# Gate C review of the step 4 proposal (2026-09-20) — RT-94 to RT-117, RULED 2026-09-20
 
 *The third review filed under `docs/outside-review-protocol.md`, and the first
 under Gate C: a proposal asking for a John-level ruling gets a tier 1 pass
@@ -479,10 +479,29 @@ Findings filed verbatim in
 `reviews/2026-09-20-step4-proposal-claude-worktree.md` and not edited
 afterwards.*
 
-***Status: the dispositions below are the reviewer's recommendation and are
-NOT rulings. Nothing here has been put to John. Per the house procedure they
-stay open until he rules, and the precedent is the first ledger pass, whose
-fourteen unadjudicated rows were recorded the same way.***
+***Status: RULED. John ruled on 2026-09-20 (Pacific), on Cowork's five
+recommendations, "agreed on all": every disposition below is accepted as the
+reviewer drafted it. Version 1 of the proposal stays on disk unedited; version
+2 (`docs/step4-control-battery-proposal-2026-09-20-v2.md`) carries the
+corrections and is the proposal ruled on. The five rulings: (1) close
+Amendment A3 (option A); the grammar redesign (option D) is a successor
+experiment after public release. (2) Localization order: the registered
+blind-localization arm (roadmap step 3, 2026-09-27) first, then the
+other-agent index control and the standardised refit, then causal patching
+designed as new code with its target and null written before it runs, each
+through Gate B. (3) The pre-registered loss condition ("no non-self cross-turn
+control can be built that is state-requiring at ceiling") HAS FIRED; the
+registered word for the outcome is *not testable*, and the closure text uses
+it. (4) Claim scope: "a structural signature of ownership-specific learning"
+is struck for A3; what A3 supports is that the ownership input is
+load-bearing for the primary battery on three seeds and the matched contrast
+could not be run; roadmap step 8's "structural signature of self-indexing"
+holds only if a localized result exists before the paper draft. (5)
+Housekeeping: the pilot's training log and trajectory are committed (the
+"before the proposal is filed" deadline on RT-56, the missing-log finding, was
+missed and is recorded here as missed); the two open $0 checks (RT-58, the
+fixed batch-split bias check; RT-59, the one-scored-token self-test) run;
+"partial discriminators" is not used; the closure text goes through Gate A.***
 
 **The three things a ruling has to settle.** (1) Option A or option D — the
 review supports A and does not dent the case for it. (2) Whether the operative
@@ -505,7 +524,7 @@ no target, and no reachable outcome.
 local and already built), `RT-102` (neither promised outcome is reachable), and
 `RT-113` (the paper claim the registration reserves).
 
-| ID | Finding | Severity | Disposition (reviewer's recommendation, unruled) | Reason / proposed closure |
+| ID | Finding | Severity | Ruling (accepted as drafted, 2026-09-20) | Reason / closure |
 |---|---|---|---|---|
 | RT-94 | The tier reading is correct: 0.3125 minus a spread of 0.0240 gives 0.2885 against the 0.375 bar, it applies the mean-minus-one-spread rule exactly as that rule was pre-stated before the pilot reported, and the tier holds under every other way of taking the spread because the mean alone is 0.0625 below the bar | worth-noting (credit) | ACCEPT AS CREDIT | The brief said a claim with no record behind it is fatal. This one has its record and its rule, and the rule was written first. |
 | RT-95 | The ceiling of 1.0 is carried correctly and so is its consequence: a defined drop needs a baseline of 1.10, which no model can reach. The 0.4227 argument the pilot review asked for is made, and the pilot's highest single evaluation draw (0.3460) is still 0.077 below it | worth-noting (credit) | ACCEPT AS CREDIT | Also keeps the dead clause's bar (0.4227) separate from the separation clause's bar (0.375), which are different instruments and easy to conflate. |

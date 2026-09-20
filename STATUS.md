@@ -73,6 +73,46 @@ probe-only null against a centre known to be load-bearing as instrument
 failure. The registered term for where this stands is *not testable
 (localization)*.
 
+### Public path step 4, ruled early on 2026-09-20: Amendment A3 closes as *not testable*
+
+The step 4 decision (dated 2026-10-04 on the roadmap) was ruled on
+2026-09-20 on proposal version 2
+(`docs/step4-control-battery-proposal-2026-09-20-v2.md`), after a Gate C
+review of version 1 (`reviews/2026-09-20-step4-proposal-claude-worktree.md`,
+PR 9, ledger RT-94 to RT-117, three fatal, all accepted). Rulings:
+
+1. **Amendment A3 closes.** The grammar redesign with a scaffolded
+   name-keyed query (option D) is a successor experiment with its own
+   registration, after public release.
+2. **The pre-registered loss condition has fired**: no non-self cross-turn
+   control can be built that is state-requiring at ceiling (the
+   2026-09-17 measurement: an ownership-free control and a
+   ceiling-corrected metric are incompatible by construction). The
+   registered word for the outcome is ***not testable***, and the closure
+   text uses it, not "closed" and not "partial discriminators".
+3. **Claim scope for A3**: the ownership input is load-bearing for the
+   primary battery on three seeds (intact 0.5683 / 0.5633 / 0.5738,
+   collapsing to 0.1988 / 0.2015 / 0.1447 under the input-channel lesion),
+   and the matched contrast could not be run. "A structural signature of
+   ownership-specific learning" is struck: the amendment's own text says
+   the input-channel lesion removes a sense organ, not a structure the
+   network built. Roadmap step 8's claim scope ("a structural signature of
+   self-indexing in small constructed models") holds only if the
+   localization line produces a localized result before the paper draft
+   (step 6, 2026-10-25); otherwise the paper claims the sentence above.
+4. **Localization order before any closure text**: the registered,
+   unconditional blind-localization arm (step 3, 2026-09-27, $0), then the
+   other-agent index control and the standardised refit (authorised
+   2026-09-20, in progress), then causal patching designed as new code
+   with its target and null written before it runs. Each through Gate B.
+   Version 1's claim that patching was free with existing machinery was
+   wrong: no patching code exists for this design.
+5. **Before the closure text is drafted**: commit the pilot's training
+   log and trajectory (the earlier deadline, before the proposal was
+   filed, was missed and is recorded as missed in the ledger); run the
+   two open $0 checks from the pilot review. The closure text is
+   registered text and goes through Gate A.
+
 ### Next, ruled 2026-09-20
 
 1. Two $0 local runs, method committed before output, brief at
