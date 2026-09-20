@@ -10,6 +10,14 @@ the identity claim and the zombie declined on the rent check) and Appendix A
 ("The Wager Under Stress", identity not entailment, the meta-problem). John is
 adding the corpus-positions ledger lines in the sentient-horizons repo himself.*
 
+
+> *Cross-reference added 2026-09-20 (later the same day): the ruling
+> `docs/rulings/2026-09-20-center-as-degree.md` fixes what "at a degree the
+> instruments can read" refers to. The degree is read on the integration
+> axis (Stage 2), whose metric does not yet exist, so every reading to date
+> is "above zero, degree unmeasured". One sentence saying so goes into
+> "What it does and does not buy" before this text reaches Gate A.*
+
 ## Why
 
 John, 2026-09-20: the concept of a functional agent with no one home is

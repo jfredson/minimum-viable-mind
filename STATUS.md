@@ -113,6 +113,32 @@ PR 9, ledger RT-94 to RT-117, three fatal, all accepted). Rulings:
    two open $0 checks from the pilot review. The closure text is
    registered text and goes through Gate A.
 
+### Program-level outside review, ruled in part 2026-09-20: a load-bearing self-index is a center at degree one; the corpus stops owing an "address versus marking" observable
+
+Two other-lab reviewers (Gemini 3.1 Pro, GPT-6 Astra) read the record
+(`docs/reviews/2026-09-20-program-review/`). Neither found an arithmetic or
+record error the ledger had not already caught; both credit the process
+with stopping over-claims and spend. Astra's A1 is the finding: the outcome
+Amendment A3 hoped for is what an ordinary agent tracker with a
+load-bearing pointer would also produce, and the record had conceded this
+in three places (A3 §5 R4, the MVM-0a Scope section, ROADMAP.md Stage 2).
+John ruled (`docs/rulings/2026-09-20-center-as-degree.md`): a load-bearing
+self-index is a center, at the bottom of the gradient; "address, not a
+marking" becomes a difference of degree on the integration axis, whose
+metric is Stage 2's deliverable and does not yet exist. Consequences: the
+A3 closure text (draft, Gate A: `docs/a3-closure-text-draft-2026-09-20.md`)
+says load-bearing on three seeds, center not testable, degree unmeasured;
+step 4 ruling 3's conditional restoring "a structural signature of
+self-indexing" is struck; the successor is the matched-role
+causal-interchange experiment, repurposed to develop the Stage 2 metric
+(`docs/competing-mechanisms-2026-09-20.md`). Ledger: RT-118, RT-119
+adopted; the rest of the tier-2 items carried with draft dispositions.
+Still for John: the blind-arm reconciliation (Astra A10; the arm ran
+2026-09-16 and the step 4 ruling schedules it again), whether the
+~70-hour marker-word read runs, three protocol amendments, and the
+outside reader's timing. ch05 owes the degree reading before the
+2026-09-30 book lock.
+
 ### Next, ruled 2026-09-20
 
 1. Two $0 local runs, method committed before output, brief at
