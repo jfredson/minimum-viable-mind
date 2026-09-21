@@ -1,0 +1,68 @@
+{
+  "checkpoints": [
+    "a3_30m_seed0.pt",
+    "a3_30m_seed1.pt",
+    "a3_30m_seed2.pt"
+  ],
+  "arm": "other_index",
+  "registered_instrument": "Amendment A3 section 3.1, matched control L2(a)",
+  "answers_ledger_item": "RT-82 (RT-64 in the review file)",
+  "prediction_stated_before_the_run": "Agent B's identity is a function of the tokens read at other_revision_value in 100% of episodes and at other_revision_decision in 0% of them: a revision turn's VALUE pins its agent, because the four agents hold four distinct values for a contested item and the revision rule is a bijection, while the 'to' one token earlier pins nothing. So if the exclusion reading of the own-index MARGINAL is right, this run finds the other agent's index at other_revision_value and not at other_revision_decision. Finding it at neither does not support the exclusion reading and leaves the own-index pattern unexplained.",
+  "family_sd_bar": 3.38,
+  "family_size": 135,
+  "cell": "FOUND NOWHERE",
+  "detail": {
+    "void_checkpoints": [],
+    "found_by_checkpoint": {},
+    "negative_control_clearances": {},
+    "cell": "FOUND NOWHERE",
+    "sub_pattern": "nothing was found on any checkpoint",
+    "means": "at these positions, five layers and three checkpoints, a fitted linear read does not find the other agent's index anywhere except where its marker is the input token. This is NOT a finding of absence: see the limits"
+  },
+  "per_checkpoint": {
+    "a3_30m_seed0.pt": {
+      "control_holds": true,
+      "found_positions": [],
+      "marginal_positions": [],
+      "leak": [],
+      "degenerate_tests": [],
+      "measured_ceiling": 0.5665
+    },
+    "a3_30m_seed1.pt": {
+      "control_holds": true,
+      "found_positions": [],
+      "marginal_positions": [],
+      "leak": [],
+      "degenerate_tests": [],
+      "measured_ceiling": 0.56
+    },
+    "a3_30m_seed2.pt": {
+      "control_holds": true,
+      "found_positions": [],
+      "marginal_positions": [],
+      "leak": [],
+      "degenerate_tests": [],
+      "measured_ceiling": 0.553
+    }
+  },
+  "measured_ceiling": {
+    "a3_30m_seed0.pt": 0.5665,
+    "a3_30m_seed1.pt": 0.56,
+    "a3_30m_seed2.pt": 0.553
+  },
+  "anchor_reproduction": {
+    "a3_30m_seed0.pt": {
+      "largest_difference": 0.0,
+      "exact": false
+    },
+    "a3_30m_seed1.pt": {
+      "largest_difference": 0.0,
+      "exact": true
+    },
+    "a3_30m_seed2.pt": {
+      "largest_difference": 0.0,
+      "exact": true
+    }
+  },
+  "note": "diagnostic only; no verdict is read and no registered text is touched"
+}
