@@ -1,0 +1,102 @@
+{
+  "checkpoints": [
+    "a3_30m_seed0.pt",
+    "a3_30m_seed1.pt",
+    "a3_30m_seed2.pt"
+  ],
+  "arm": "register_index_standardised",
+  "second_instrument": true,
+  "answers_ledger_item": "RT-58",
+  "family_sd_bar": 3.38,
+  "family_size": 135,
+  "cell": "FOUND NOWHERE",
+  "detail": {
+    "void_checkpoints": [],
+    "found_by_checkpoint": {
+      "a3_30m_seed2.pt": [
+        "other_revision_value"
+      ]
+    },
+    "negative_control_clearances": {},
+    "cell": "FOUND NOWHERE",
+    "sub_pattern": "found on seeds but not the pilot",
+    "means": "at these eleven positions, five layers and three checkpoints, a fitted linear read does not find the register index anywhere except where the answer is most explicitly available. This is NOT a finding of absence: see the limits"
+  },
+  "per_checkpoint": {
+    "a3_30m_seed0.pt": {
+      "control_holds": true,
+      "found_positions": [],
+      "marginal_positions": [],
+      "leak": [],
+      "degenerate_tests": [
+        "register_index_standardised|query_answer_decision|8"
+      ],
+      "measured_ceiling": 0.5567
+    },
+    "a3_30m_seed1.pt": {
+      "control_holds": true,
+      "found_positions": [],
+      "marginal_positions": [],
+      "leak": [],
+      "degenerate_tests": [
+        "register_index_standardised|own_revision_decision|7",
+        "register_index_standardised|own_revision_value|5"
+      ],
+      "measured_ceiling": 0.5523
+    },
+    "a3_30m_seed2.pt": {
+      "control_holds": true,
+      "found_positions": [
+        "other_revision_value"
+      ],
+      "marginal_positions": [],
+      "leak": [],
+      "degenerate_tests": [],
+      "measured_ceiling": 0.544
+    }
+  },
+  "measured_ceiling": {
+    "a3_30m_seed0.pt": 0.5567,
+    "a3_30m_seed1.pt": 0.5523,
+    "a3_30m_seed2.pt": 0.544
+  },
+  "anchor_reproduction": {
+    "a3_30m_seed0.pt": {
+      "part_a_largest_difference": 0.0,
+      "part_a_holds": true,
+      "part_b_holds": true,
+      "standardised_per_layer": {
+        "3": 0.4775,
+        "4": 0.5325,
+        "5": 0.5025,
+        "7": 0.475,
+        "8": 0.5075
+      }
+    },
+    "a3_30m_seed1.pt": {
+      "part_a_largest_difference": 0.0,
+      "part_a_holds": true,
+      "part_b_holds": true,
+      "standardised_per_layer": {
+        "3": 0.505,
+        "4": 0.5425,
+        "5": 0.5275,
+        "7": 0.5075,
+        "8": 0.5075
+      }
+    },
+    "a3_30m_seed2.pt": {
+      "part_a_largest_difference": 0.0,
+      "part_a_holds": true,
+      "part_b_holds": true,
+      "standardised_per_layer": {
+        "3": 0.4625,
+        "4": 0.5025,
+        "5": 0.5025,
+        "7": 0.465,
+        "8": 0.45
+      }
+    }
+  },
+  "note": "diagnostic only; no verdict is read and no registered text is touched"
+}
