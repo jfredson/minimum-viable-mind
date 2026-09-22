@@ -1,0 +1,100 @@
+{
+  "arms": {
+    "C/0": {
+      "accuracy_ownership_only": 0.1075,
+      "accuracy_untouched": 0.09,
+      "accuracy_whole": 0.53,
+      "floor_corrected_degree": 0.9602272727272727,
+      "floor_corrected_status": "valid",
+      "registered_degree": 0.7971698113207547,
+      "registered_status": "valid",
+      "the_arm_itself_own_directed": 0.5575
+    },
+    "C/1": {
+      "accuracy_ownership_only": 0.1025,
+      "accuracy_untouched": 0.075,
+      "accuracy_whole": 0.5125,
+      "floor_corrected_degree": 0.9371428571428572,
+      "floor_corrected_status": "valid",
+      "registered_degree": 0.8,
+      "registered_status": "valid",
+      "the_arm_itself_own_directed": 0.595
+    },
+    "C/2": {
+      "accuracy_ownership_only": 0.105,
+      "accuracy_untouched": 0.0875,
+      "accuracy_whole": 0.5525,
+      "floor_corrected_degree": 0.9623655913978495,
+      "floor_corrected_status": "valid",
+      "registered_degree": 0.8099547511312217,
+      "registered_status": "valid",
+      "the_arm_itself_own_directed": 0.555
+    },
+    "F/0": {
+      "accuracy_ownership_only": 0.0975,
+      "accuracy_untouched": 0.0875,
+      "accuracy_whole": 0.57,
+      "floor_corrected_degree": 0.9792746113989637,
+      "floor_corrected_status": "valid",
+      "registered_degree": 0.8289473684210525,
+      "registered_status": "valid",
+      "the_arm_itself_own_directed": 0.5575
+    },
+    "F/1": {
+      "accuracy_ownership_only": 0.1,
+      "accuracy_untouched": 0.06,
+      "accuracy_whole": 0.5375,
+      "floor_corrected_degree": 0.9162303664921466,
+      "floor_corrected_status": "valid",
+      "registered_degree": 0.813953488372093,
+      "registered_status": "valid",
+      "the_arm_itself_own_directed": 0.6025
+    },
+    "F/2": {
+      "accuracy_ownership_only": 0.075,
+      "accuracy_untouched": 0.07,
+      "accuracy_whole": 0.52,
+      "floor_corrected_degree": 0.9888888888888889,
+      "floor_corrected_status": "valid",
+      "registered_degree": 0.8557692307692307,
+      "registered_status": "valid",
+      "the_arm_itself_own_directed": 0.5275
+    },
+    "T/0": {
+      "accuracy_ownership_only": 0.875,
+      "accuracy_untouched": 0.0825,
+      "accuracy_whole": 0.7475,
+      "floor_corrected_degree": -0.19172932330827058,
+      "floor_corrected_status": "negative",
+      "registered_degree": -0.1705685618729096,
+      "registered_status": "negative",
+      "the_arm_itself_own_directed": 0.775
+    },
+    "T/1": {
+      "accuracy_ownership_only": 0.655,
+      "accuracy_untouched": 0.125,
+      "accuracy_whole": 0.6625,
+      "floor_corrected_degree": 0.013953488372092933,
+      "floor_corrected_status": "valid",
+      "registered_degree": 0.011320754716981058,
+      "registered_status": "valid",
+      "the_arm_itself_own_directed": 0.64
+    },
+    "T/2": {
+      "accuracy_ownership_only": 0.845,
+      "accuracy_untouched": 0.11,
+      "accuracy_whole": 0.6625,
+      "floor_corrected_degree": -0.33031674208144796,
+      "floor_corrected_status": "negative",
+      "registered_degree": -0.27547169811320754,
+      "registered_status": "negative",
+      "the_arm_itself_own_directed": 0.64
+    }
+  },
+  "negative_readings": [
+    "T/0",
+    "T/2"
+  ],
+  "pool": "unseen-vocabulary",
+  "why": "the nominated subspace was chosen on marker words the arm was trained on, and the reading is taken on marker words it has never seen"
+}

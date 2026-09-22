@@ -1,0 +1,152 @@
+{
+  "arms": {
+    "C": {
+      "across_seed_method": {
+        "mean": 0.48875,
+        "seeds": 3,
+        "standard_deviation": 0.01887458608817681,
+        "standard_error": 0.010897247358851647
+      },
+      "per_seed_floor_corrected_form": [
+        0.9817708333333334,
+        1.0,
+        0.9948849104859334
+      ],
+      "per_seed_raw_difference": [
+        0.47125000000000006,
+        0.5087499999999999,
+        0.48624999999999996
+      ],
+      "per_seed_registered_form": [
+        0.8726851851851852,
+        0.8847826086956521,
+        0.8800904977375565
+      ],
+      "seeds_for_a_given_half_width": {
+        "0.05": 1,
+        "0.10": 1,
+        "0.15": 1
+      },
+      "within_seed_bootstrap": {
+        "mean": 0.4889070833333333,
+        "per_seed": [
+          {
+            "mean": 0.47185249999999995,
+            "seed": 0,
+            "standard_error": 0.02058176058431348
+          },
+          {
+            "mean": 0.509064375,
+            "seed": 1,
+            "standard_error": 0.019315968448653433
+          },
+          {
+            "mean": 0.48580437500000007,
+            "seed": 2,
+            "standard_error": 0.019471229085740196
+          }
+        ],
+        "typical_standard_error": 0.019789652706235703
+      }
+    },
+    "F": {
+      "across_seed_method": {
+        "mean": 0.49041666666666667,
+        "seeds": 3,
+        "standard_deviation": 0.022684429314693656,
+        "standard_error": 0.013096861371251422
+      },
+      "per_seed_floor_corrected_form": [
+        0.9880382775119617,
+        0.9266503667481663,
+        0.9821428571428571
+      ],
+      "per_seed_raw_difference": [
+        0.51625,
+        0.47375,
+        0.48125
+      ],
+      "per_seed_registered_form": [
+        0.8862660944206008,
+        0.836644591611479,
+        0.8498896247240618
+      ],
+      "seeds_for_a_given_half_width": {
+        "0.05": 1,
+        "0.10": 1,
+        "0.15": 1
+      },
+      "within_seed_bootstrap": {
+        "mean": 0.49026270833333335,
+        "per_seed": [
+          {
+            "mean": 0.5162568750000001,
+            "seed": 0,
+            "standard_error": 0.019839097673139648
+          },
+          {
+            "mean": 0.473804375,
+            "seed": 1,
+            "standard_error": 0.02065950173913628
+          },
+          {
+            "mean": 0.48072687499999994,
+            "seed": 2,
+            "standard_error": 0.020291560659160126
+          }
+        ],
+        "typical_standard_error": 0.020263386690478686
+      }
+    },
+    "T": {
+      "across_seed_method": {
+        "mean": 0.0,
+        "seeds": 3,
+        "standard_deviation": 0.0,
+        "standard_error": 0.0
+      },
+      "per_seed_floor_corrected_form": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_seed_raw_difference": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_seed_registered_form": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seeds_for_a_given_half_width": {},
+      "within_seed_bootstrap": {
+        "mean": 0.0,
+        "per_seed": [
+          {
+            "mean": 0.0,
+            "seed": 0,
+            "standard_error": 0.0
+          },
+          {
+            "mean": 0.0,
+            "seed": 1,
+            "standard_error": 0.0
+          },
+          {
+            "mean": 0.0,
+            "seed": 2,
+            "standard_error": 0.0
+          }
+        ],
+        "typical_standard_error": 0.0
+      }
+    }
+  },
+  "half_widths": [
+    0.05,
+    0.1,
+    0.15
+  ]
+}
