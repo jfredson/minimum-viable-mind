@@ -26,6 +26,20 @@ and 16 carry the consequences. Nothing about the science is changed.** Version
 the sign of its own margin and is corrected in section 12.1 rather than
 silently removed.*
 
+***Revised again later on 2026-09-21, after two further things landed.** First,
+the ruling text this document recorded as owed and not yet on disk now exists:
+`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`. Sections
+12.2 and 16 are corrected to cite it. Second, John closed the last open question
+in that file — **the week-40 rehearsal now includes a short slice of rented
+machine time, purely to measure seconds per step on all three architectures.**
+That is new rehearsal item **R-11** in section 10, costed at $3 inside the
+rehearsal's existing $10 in section 12.3, which it fits; the second release in section 12.4 is
+bound to the number it produces instead of to an inferred premium; and the
+consequences reach section 9's table, weaknesses W8 and W9, and decisions 7 and
+13. The same rented slice also exercises a shutdown fix against the real vendor
+for the same money. **Still nothing about the science is changed, and still no
+money is spent and no machine rented by this document.***
+
 *Written under the workspace plain-language rule (`~/Documents/Code/CLAUDE.md`,
 ruled 2026-08-30): the plain word before the term of art, and no bare
 identifier anywhere.*
@@ -561,6 +575,7 @@ before any run."
 | Seed count per arm | the uncertainty on every reading, and the bill | Rehearsal item R-9 |
 | Paired-uncertainty method | how across-seed uncertainty is computed and reported | Rehearsal item R-9 |
 | Ownership-lesion collapse threshold | whether arm F is read | Rehearsal item R-1 |
+| Seconds per step, per arm, on the rented machine | the whole of the second release's arithmetic (section 12.4) | Rehearsal item R-11, measured on the registered venue — **not** inferred from a premium, and **not** measured on the Mac |
 
 ---
 
@@ -569,13 +584,25 @@ before any run."
 A complete measurement rehearsal before any Gate A is now protocol: John
 adopted it on 2026-09-20 as one of the three amendments to
 `docs/outside-review-protocol.md`, from the outside review's ranked process
-change 3. This is its first application, and the protocol text edit it depends
-on is owed before the successor's Gate A and is the first thing that Gate
-checks.
+change 3. This is its first application, and **the protocol text it depends on
+has since landed** — `docs/outside-review-protocol.md` now carries the section
+"The measurement rehearsal, required before any Gate A", which names this
+rehearsal as its first application and makes reading it the first thing the tier
+1 reviewer does. Version 1 of this document recorded that text as owed; it is
+not. It also makes a pre-stated quantity with no rehearsal line covering it a
+fatal finding on its own, which is why item R-11 below exists as a line rather
+than as an assumption.
 
 **Scale and cost.** Tiny models, roughly one to three million parameters, short
 episodes, small vocabulary, run locally where the Mac's throughput allows and
 on the cheapest rented machine where it does not. Budgeted at up to $10.
+
+**One part of it is rented on purpose, not as a fallback.** Item R-11 below buys
+a short slice of time on the rented machine this programme actually uses,
+because a pace measured on the Mac cannot stand in for a pace on the hardware
+every cost estimate in section 12 descends from. John ruled that slice in on
+2026-09-21. It is costed at **$3 inside the $10**, itemised in section 12.3, and
+it fits without the $10 moving.
 
 **Everything below is written down and committed before the rehearsal runs, and
 each item is a pass or a fail.**
@@ -612,7 +639,10 @@ each item is a pass or a fail.**
   needs a throughput check before the estimate becomes a budget. Arms T and C
   add computation per layer and will not cost what arm F costs. **The spend
   table in section 12 is superseded by this measurement**, and if it goes up,
-  the number goes back to John before the registration commits.
+  the number goes back to John before the registration commits. **The seconds
+  per step this item projects from are the rented ones measured in item R-11
+  below, never laptop timings** — R-7 is the projection, R-11 is the
+  measurement it is projected from.
 - **R-8. The transplanting code passes its known-answer tests.** The null
   transplant changes nothing; a transplant on the arm T toy moves the action to
   the donor's value; the ownership-only transplant is verified to be the
@@ -622,6 +652,99 @@ each item is a pass or a fail.**
   seed count follows from it rather than from habit.
 - **R-10. The separation bar is set** from the observed separation between arms
   T and C at tiny scale and its spread, with the reasoning written out.
+- **R-11. Seconds per step is measured on the rented machine, for all three
+  arms — and the shutdown path is exercised against the real vendor for the
+  same money.** Added on John's ruling of 2026-09-21. That ruling's own list of
+  open questions ended with "whether the rehearsal includes a short rented
+  slice" purely to measure seconds per step on all three architectures
+  (`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, the
+  "Open, and raised but not yet ruled" list); he then closed it in favour. This
+  is longer than the ten items above because it is the only rehearsal item that
+  spends money and the only one a release of money is bound to.
+
+  **What it measures.** Seconds per training step for each of the three
+  architectures of section 5 — arm T, arm C and arm F — built at the registered
+  size, on the registered venue and rate: a secure RTX 5090 in EU-RO-1 at
+  **$0.99 an hour** (compute ledger, the 2026-09-15 and 2026-09-17 rows, both
+  of which record that venue and that rate as the ones actually billed). Same
+  batch size, same sequence length and the same measurement window on all three,
+  with the window starting after the first fifty steps so start-up cost is not
+  counted as pace. **Five hundred steps per arm**, which is the window this
+  programme has read a pace from before (compute ledger, the 2026-08-09/10 row:
+  "measured pace at step 500: 0.70 s/step").
+
+  **Why the laptop cannot answer it.** Every dollar estimate in section 12
+  descends from a single measured number: **0.645 seconds per step** for a
+  30-million-parameter run on a rented RTX 5090 (compute ledger, the 2026-09-15
+  row, which records 55,116 steps in 9.83 hours of training on that machine). A
+  pace measured on the Mac is a fact about the Mac. It cannot be turned into
+  hours on a rented machine, and hours on a rented machine are what the bill is.
+
+  **How long it needs, and what it costs.** About three quarters of an hour of
+  machine time for the three arms together — about $0.78 expected, budgeted at
+  **$3** inside the rehearsal's existing $10 so that a re-launch and a sleeping
+  laptop are both covered. **It fits, and no increase is asked for.** The
+  itemised arithmetic and the condition that would change that answer are in
+  section 12.3.
+
+  **What it produces.** One measured number per arm, and from those three
+  numbers the projected wall-clock and dollars for one run of each arm at the
+  registered size (which is what item R-7 reports). **That measured number
+  replaces the inferred premium in the second release's arithmetic** — the
+  1.55x carried over from a different experiment's full-versus-twin step times,
+  which John's ruling declined to build a release on
+  (`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, item
+  11). Section 12.4 is rewritten around it.
+
+  **Its second purpose, for the same money: the shutdown path meets the real
+  vendor.** A parallel session has fixed the race between the trainer deleting
+  its own rented machine and the laptop making its final copy of the finished
+  model file (`experiments/06-mvm-0a-constructed-self-index/reap-shutdown-order-method.md`,
+  the method note, committed before its code on branch `worktree-reap-race-fix`
+  and not yet on the main line — a reviewer checking this citation needs that
+  branch). Its diagnosis is worse than the
+  compute ledger's: the laptop has to hit a window about **one second wide
+  inside a ten-minute cycle**, so on a run that finishes normally the laptop's
+  final copy essentially never happens (method note, section 1). The fix is a
+  receipt handshake — the rented machine holds itself open until the laptop
+  confirms it has the finished file and has checked it, then deletes at once,
+  with a bounded wait as the fallback (method note, section 5.1). **It has been
+  verified only against local fakes**: twenty-six checks including a negative
+  control that reproduces the old order and expects the rule to break, and its
+  author says plainly that the machine-side process check, the credential
+  handling on the machine and the command form are inferred rather than measured
+  (method note, sections 7 and 9). The method note's own recommendation is that
+  this rehearsal is where it meets the vendor, because a run that finishes in
+  minutes exercises the whole path — the credential on the machine, the agent
+  starting, the finished-marker, the receipt, the deletion — weeks before about
+  $110 of registered runs depend on it (method note, section 10,
+  recommendation 2, which prices it at "a few cents" for a toy run).
+
+  **Why one slice serves both purposes.** The throughput half sets the size: it
+  has to be the registered size, because that is the only size whose seconds per
+  step prices the nine runs. The shutdown half sets nothing — it needs only a run
+  that finishes normally, writes its finished-marker and hands off. A 500-step
+  run at the registered size finishes in minutes and satisfies both. The slice is
+  therefore larger than the toy run the method note had in mind, and costs about
+  $0.78 rather than a few cents; that is the throughput half's price, and the
+  shutdown half rides along for nothing.
+
+  **What counts as passing**, in the fix author's own signals (method note,
+  section 10): the laptop's log says `receipt written on the machine`, the
+  machine's own log says `receipt found`, and the machine is deleted **within
+  seconds** of that. All three, in that order, on at least one of the three arm
+  slices.
+
+  **What counts as failing.** The machine's log says `grace ran out`. That means
+  the receipt path did not work and the bounded wait ended the billing instead —
+  the money was safe, the mechanism was not. The throughput half of this item can
+  still pass while the shutdown half fails; they are recorded separately. A
+  failed shutdown half does not halt the rehearsal, but it is recorded as failed
+  and not as a footnote: until it is understood, a registered
+  run may not be left to finish on its own — someone watches it down, which is
+  the cost the fix existed to remove — and the launcher question in decision 13 goes to John
+  with the failure beside it. **Not exercising the path at all is also a
+  failure, not a skip** (stop condition S8; section 12.7).
 
 **What happens next.** The rehearsal findings are committed as a findings
 document; the bars go into registration text version 2; Gate A runs both tiers;
@@ -756,10 +879,13 @@ disagree, the ledger governs, and this section is written against the ledger.)*
 
 ### 12.2 What John ruled on 2026-09-21
 
-Six rulings, given in session on 2026-09-21 (Pacific) on the strength of the
-corrected ledger. **The committed ruling text is owed under `docs/rulings/`; it
-is not yet on disk, and this section is written to be superseded by it rather
-than to stand in for it.** Decision 7 in section 15 is rewritten to match.
+Seven rulings, given in session on 2026-09-21 (Pacific) on the strength of the
+corrected ledger. **The committed ruling text now exists** — version 1 of this
+section recorded it as owed and not yet on disk, and that is no longer true. It
+is `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, and the
+spending rulings are its items 10 to 16. Where this section and that file
+differ, the ruling file governs and this section is corrected to it. Decision 7
+in section 15 is rewritten to match.
 
 1. **The money is authorised in two releases, not as one flat cap.** The first
    release covers the rehearsal, the development runs and one free-arm run at
@@ -774,7 +900,23 @@ than to stand in for it.** Decision 7 in section 15 is rewritten to match.
    response to a billing anomaly (section 12.5 below).
 5. **The rented account is funded per wave rather than per cap**: topped up to
    that wave's estimate plus $20 and no further (section 12.6).
-6. **A check that cannot be run counts as a trip, not a skip** (section 12.7).
+6. **A check that cannot be run counts as a trip, not a skip** (ruling item 15;
+   section 12.7).
+7. **The week-40 rehearsal includes a short rented slice**, purely to measure
+   seconds per step on all three architectures. The ruling file raises this as
+   the last of its open questions and states the reason in its own words: "A
+   throughput figure measured on the laptop cannot predict the rented hardware
+   every current estimate rests on, so without it the second release would rest
+   on the same inference this ruling declined to rely on"
+   (`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, the
+   "Open, and raised but not yet ruled" list). **John closed it in favour on
+   2026-09-21**, after that file was committed. It is rehearsal item R-11
+   (section 10), it is costed inside the first release's rehearsal line
+   (section 12.3), and the second release is bound to its result (section 12.4).
+
+*Items 1 to 6 map to items 10 to 15 of the ruling file, in that order; its item
+16 is the ledger correction in section 12.1. Item 7 is the open question above,
+closed after the file was written, so the file itself still lists it as open.*
 
 **The $400 ceiling is untouched.** The ruling of 2026-08-16 that raised it from
 $200 and made it final stands, and nothing in this section asks for a raise.
@@ -783,10 +925,52 @@ $200 and made it final stands, and nothing in this section asks for a raise.
 
 | Item | What it buys | Basis | Amount |
 |---|---|---|---|
-| Rehearsal, week 40 | Tiny models, three architectures, transplanting code, the ten rehearsal items of section 10, and the throughput measurement the second release depends on | Section 6 of the December-result roadmap budgets it at up to $10; local where the Mac allows | up to **$10** |
+| Rehearsal, week 40 | Tiny models, three architectures, transplanting code, the **eleven** rehearsal items of section 10, including the rented slice (item R-11) that measures the seconds per step the second release is bound to | Section 6 of the December-result roadmap budgets it at up to $10; local where the Mac allows, rented only for item R-11, itemised immediately below | up to **$10** |
 | Development runs, week 42 | Three arms, one seed each, at the 10-million size: pipeline, self-tests, throughput | The earlier 10-million run measured $1.94 for 2.86 machine-hours (compute ledger, the 2026-08-07/08 pilot row); three at about $2, plus margin | up to **$10** |
 | One free-arm run at the registered size, week 43 | The staggered first run of section 11, item 5, whose learn-both result is read before anything else launches | The last measured pair of registered-size runs cost $20.08 for 20.28 machine-hours at $0.99/hr, so $10.04 each (compute ledger, the 2026-09-17 row); the ledger's own planning figure for a run at this size is $12 (compute ledger, "Phase budget guide", registered training at 30M) | about **$12** |
 | **First release, total** | | | **about $32** |
+
+**Inside the rehearsal's $10: what the rented slice costs, itemised.** Rehearsal
+item R-11 (section 10). Venue and rate: a secure RTX 5090 in EU-RO-1 at **$0.99
+an hour** (compute ledger, the 2026-09-15 and 2026-09-17 rows).
+
+| Line | Basis | Machine time | At $0.99/hr |
+|---|---|---|---|
+| Arm F, 500 steps at the registered size | **Measured**: 0.645 seconds per step, 55,116 steps in 9.83 hours of training (compute ledger, the 2026-09-15 row) | 5.4 min | $0.09 |
+| Arm T, 500 steps | **Allowance, not a measurement**: up to twice arm F's pace, because arms T and C add computation per layer (sections 5.1 and 5.2). This allowance is the very thing R-11 exists to replace; it is carried here only to cost the slice | 10.8 min | $0.18 |
+| Arm C, 500 steps | Same allowance, same reason | 10.8 min | $0.18 |
+| Start-up: push, remote pre-flight self-tests run on the machine, three model builds | **Allowance, not a measurement** — no compute-ledger row records launch-to-first-step separately, so this figure is not cited to one | 15 min | $0.25 |
+| Shutdown handshake on a normal finish | About five extra minutes of machine life after the work ends — the method note's own figure, from measured logs: a full copy of the run directory took 2 min 19 s for 336MB on 2026-09-19, plus a one-minute check for the finished-marker (`experiments/06-mvm-0a-constructed-self-index/reap-shutdown-order-method.md`, section 4). These slices are at the registered size, so the file to copy is the same size as that one, and the note's figure carries over unchanged rather than being scaled down | 5 min | $0.08 |
+| **Expected total, one slice** | | **about 47 min** | **about $0.78** |
+| One re-launch, if the shutdown half fails and a second attempt is worth making | The same slice again | 47 min | $0.78 |
+| **Two slices, expected** | | about 94 min | **about $1.55** |
+| **Two slices, worst case** | Laptop asleep on both, so each pays the bounded wait of 30 minutes instead of the 5-minute handshake (same method note, section 4) — 25 minutes more per slice | about 144 min | **about $2.37** |
+| **Budgeted for item R-11** | Covers the worst case above with margin | | **$3** |
+
+*(The column of five line costs sums to $0.78; the 46.88 minutes they total comes
+to $0.77 at $0.99 an hour. The one-cent gap is rounding in the per-line figures,
+recorded rather than tidied away.)*
+
+Two of the five lines above are allowances rather than measurements and are
+marked as such, because an uncited measured claim is a fatal finding under the
+closure rule and a measurement this document does not have is not one it may
+imply. **The budget is $3 and not $1.55** because $1.55 assumes the laptop is
+awake both times, which is exactly the assumption this programme has been wrong
+about four times (compute ledger, the 2026-09-17 row on idle billing).
+
+**Does it fit inside the $10? Yes, with room, and no increase is asked for.**
+$3 of the rehearsal's $10 leaves about $7 for rehearsal items R-1 to R-10, all of
+which are specced to run locally on the Mac at no cost, with a rented machine
+only where the Mac cannot (section 10). **The condition that would change that is
+named here so it cannot arrive quietly:** if items R-1 to R-10 need more than
+about $7 of rented fallback, the rehearsal goes past $10, and **the number goes
+to John rather than the rented slice being shrunk to fit**. That is his standing
+rule on spend of 2026-09-20 —
+`docs/rulings/2026-09-20-december-result-roadmap.md`, "Standing rule on spend": a
+cap "is a gate for John's ruling, never a reason to route around the step, shrink
+it silently, or call it impossible." Shrinking the slice is precisely the silent
+route that rule forbids, because the slice is the only thing the second release
+rests on.
 
 Against the corrected headroom:
 
@@ -820,18 +1004,31 @@ half happens; the strongest alternative is that John folds it into the first
 release now, making that release about $44 and still leaving about $130.30
 unauthorised.
 
-### 12.4 The second release: shaped now, costed after the rehearsal measures it
+### 12.4 The second release: shaped now, costed from the seconds per step rehearsal item R-11 measures on the rented machine
 
 This is **not a request and not a cap**. It is the itemisation the second
 release will be built from, so that John can see now what he will be asked for
 later, and so the rehearsal knows which numbers it is being run to settle.
 
+**What the second release is now bound to, exactly.** Version 1 of this section
+said it would be asked for "after the rehearsal", without saying which
+measurement, taken where, would replace the guess. That is now specified:
+**rehearsal item R-11's measured seconds per step for arms T, C and F, taken on
+a secure RTX 5090 in EU-RO-1 at $0.99 an hour** — the registered venue and the
+rate the compute ledger records as billed (the 2026-09-15 and 2026-09-17 rows).
+Every provisional amount in the table below is recomputed from those three
+numbers before the second release is asked for, and the request carries the
+measured figures beside the provisional ones so the movement is visible. **If
+item R-11 does not produce them, the second release is not asked for at all**:
+an unmeasured throughput figure is a check that could not be run, which counts
+as a trip and not a skip (section 12.7, stop condition S8).
+
 | Item | What it buys | Basis | Provisional amount |
 |---|---|---|---|
-| The remaining eight registered runs | Three arms × three seeds, less the one free-arm run already in the first release | Eight at the ledger's $12 planning figure (compute ledger, "Phase budget guide") | **$96** |
-| One permitted re-run | An arm that fails the learn-both gate gets one more try | One run at the same planning figure | **$12** |
+| The remaining eight registered runs | Three arms × three seeds, less the one free-arm run already in the first release | Eight at the ledger's $12 planning figure (compute ledger, "Phase budget guide") — **provisional; replaced by eight runs priced from item R-11's measured seconds per step, per arm** | **$96** |
+| One permitted re-run | An arm that fails the learn-both gate gets one more try | One run at the same planning figure — **provisional; repriced from item R-11 for whichever arm fails** | **$12** |
 | Transplanting and measurement on fresh episodes | The measurement itself, all arms, all controls | Planned local at $0, as every probe and lesion pass in this programme has run; carried as a contingency for one rented machine if the rehearsal's measured local runtime is too long | **$12** |
-| Billing-anomaly and idle-billing margin | The unexplained 3.5× billing row of 2026-08-08, waived and never explained (compute ledger, the 2026-08-07/08 row and the waiver note beneath the table), would turn one $10 run into about $35; idle billing has cost about $10.30 across four occurrences (compute ledger, the 2026-09-17 row and the notes on the pod-side reaper) | One anomalous run (+$23) | **$23** |
+| Billing-anomaly and idle-billing margin | The unexplained 3.5× billing row of 2026-08-08, waived and never explained (compute ledger, the 2026-08-07/08 row and the waiver note beneath the table), would turn one $10 run into about $35; idle billing has cost about $10.30 across four occurrences (compute ledger, the 2026-09-17 row and the notes on the machine's own shutdown watcher) | One anomalous run (+$23) | **$23** |
 | **Provisional total** | | | **$143** |
 
 **What the roadmap's list leaves out, and this one keeps.** Section 6 of the
@@ -850,24 +1047,38 @@ plan as currently itemised does not fit the remaining envelope, by $0.70,
 before any anomaly.** It is not a shortfall the first release has to solve —
 the first release fits with about $142.30 unspent behind it — but it is the
 thing the second release must answer, and it can be answered in exactly three
-ways: the rehearsal measures the per-run cost below the planning figure; the
+ways: rehearsal item R-11 measures the per-run cost below the planning figure; the
 seed count comes down on the rehearsal's own uncertainty method (section 9,
 rehearsal item R-9); or John rules on the $400 ceiling itself. **This document
 proposes none of the three now**, because choosing between them before the
 measurement exists is the error the two-release scheme was ruled to prevent.
 
-**Why the per-run figure is expected to move.** Version 1 carried the ledger's
-$12 planning figure instead of the $10.04 measured on 2026-09-17, "to cover
-arms T and C being slower per step". That premium is an inference from a
-different experiment's full-versus-twin step times, not a measurement of these
-three architectures, and it is exactly what John's second ruling refuses to
-build a release on. **Rehearsal item R-7 replaces it**: seconds per step and
-projected wall-clock and dollars for each of the three architectures at the
-registered size, which is also the outside reviewer's condition in his own
-words — the altered grammar needs a throughput check before the estimate
-becomes a budget. Arms T and C add computation per layer and will not cost what
-arm F costs. **The table above is superseded by that measurement**, in either
-direction, and the second release is asked for on the measured figure.
+**Why the per-run figure is expected to move, and what replaces the guess.**
+Version 1 carried the ledger's $12 planning figure instead of the $10.04
+measured on 2026-09-17 (compute ledger, the 2026-09-17 row: $20.08 for 20.28
+machine-hours at $0.99/hr across two runs), "to cover arms T and C being slower
+per step". That premium — **1.55x**, in the ruling's own figure
+(`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, item 11)
+— is an inference from a different experiment's full-versus-twin step times, not
+a measurement of these three architectures, and it is exactly what John's ruling
+refuses to build a release on.
+
+**Rehearsal item R-11 replaces the inference with a measurement**, and item R-7
+turns that measurement into wall-clock and dollars. This is the change John ruled
+on 2026-09-21, and it matters because the alternative was circular: version 1 of
+this section named rehearsal item R-7 as the replacement, but item R-7 as written
+would have been satisfied by a pace measured on the Mac, and a Mac pace cannot
+price a rented machine. **The whole cost model descends from one rented number**
+— 0.645 seconds per step on a rented RTX 5090 (compute ledger, the 2026-09-15
+row) — so only another rented number can move it. Without item R-11 the second
+release would have rested on the same 1.55x inference the ruling declined to rely
+on, one layer further down.
+
+The reviewer's condition is met by the pair: the altered grammar gets its
+throughput check before the estimate becomes a budget, in his own words. Arms T
+and C add computation per layer and will not cost what arm F costs. **The table
+above is superseded by item R-11's measurement**, in either direction, and the
+second release is asked for on the measured figure or not at all.
 
 ### 12.5 Halt, not trim: what happens if the billing anomaly recurs
 
@@ -997,12 +1208,35 @@ from the acting positions, by requiring the nominated subspace to beat the
 other-agent control (which is downstream of the same inputs), and by reporting
 the gap between the lesion result and the transplant result honestly.
 
-**W8. Nine runs is a planning number.** The seed count follows from the
-rehearsal's uncertainty method (section 9), and the bill follows from the
-throughput the rehearsal measures (rehearsal item R-7). Both can move the
-money, in one direction only. This is the whole reason the second release of
-money is asked for after the rehearsal rather than now (section 12.4): the
-number in the table there is the shape of the request, not the request.
+**W8. Nine runs is a planning number, and until the rehearsal runs its per-run
+cost is still an inference.** The seed count follows from the rehearsal's
+uncertainty method (section 9), and the bill follows from the throughput the
+rehearsal measures — projected by item R-7 from the seconds per step **measured
+on the rented machine** by item R-11. Version 1 of this weakness pointed at item
+R-7 alone, which was not enough: a pace measured on the Mac cannot price a
+rented machine, and the 1.55x premium the $12 planning figure carries is
+inherited from a different experiment's full-versus-twin step times rather than
+measured on these three architectures
+(`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, item 11).
+**Until item R-11 has run, every registered-size dollar in this document is an
+inference from one run of a different design**, and it should be read that way.
+Both the seed count and the throughput can move the money, in one direction
+only. This is the whole reason the second release is asked for after the
+rehearsal rather than now (section 12.4): the number in the table there is the
+shape of the request, not the request.
+
+**W9. The shutdown fix that rehearsal item R-11 exercises has never met the real
+vendor.** It is verified against local fakes only — twenty-six checks including a
+negative control — and its author records that the machine-side process check,
+the credential handling on the machine and the command form are inferred rather
+than measured (`experiments/06-mvm-0a-constructed-self-index/reap-shutdown-order-method.md`,
+sections 7 and 9). If it does not work against the vendor, the nine registered
+runs inherit the failure the compute ledger has already paid for four times: the
+laptop's final copy of a finished run essentially never happening on a run that
+ends normally (method note, section 1). Item R-11 is the test, at toy scale and
+for cents, weeks before about $110 of runs depend on it. This weakness is listed
+rather than absorbed because the fix is not yet evidence of anything on real
+hardware, and because decision 13 asks John to register a launcher built on it.
 
 ---
 
@@ -1087,12 +1321,16 @@ default.
    impossible: the programme has $174.30 left, not $184.30 (section 12.1).
    Asked for now: the rehearsal (up to $10), the development runs (up to $10)
    and one free-arm run at the registered size (about $12), against $174.30 of
-   headroom, with the $400 ceiling untouched. Asked for later, after rehearsal
-   item R-7 measures seconds per step for all three arms: the second release,
-   built from the itemisation in section 12.4 and provisionally $143.
+   headroom, with the $400 ceiling untouched. **Inside the rehearsal's $10, $3
+   is the rented slice of rehearsal item R-11** (itemised in section 12.3); it
+   fits, the rehearsal's $10 does not move, and no increase is asked for. Asked for later, after **rehearsal item
+   R-11 measures seconds per step for all three arms on the rented machine** and
+   item R-7 turns that into dollars: the second release, built from the
+   itemisation in section 12.4 and provisionally $143.
    *Confidence: high on the first release's arithmetic, which is measured
    against the ledger throughout; deliberately no confidence offered on $143,
-   because the measurement that would justify it has not been taken.*
+   because the measurement that would justify it has not been taken — that
+   measurement is item R-11, and it has not run.*
    **Alternatives:** (a) fold the one permitted re-run into the first release
    now, making it about $44, which removes the gap flagged in section 12.3 at
    the cost of authorising a run before the run it re-tries has failed — this is
@@ -1135,10 +1373,41 @@ default.
     roadmap's simultaneous launch of all nine, which is about a day faster and
     risks $96 on the most likely outcome in section 3.
 
-12. **This proposal goes to Gate C tier 1 before John rules on the twelve items
+12. **This proposal goes to Gate C tier 1 before John rules on the items
     above**, per the protocol. *Confidence: high. Standard practice here.*
     **Alternative:** rule first and review the registration text only, which is
     what the protocol's Gate C exists to prevent.
+
+13. **The successor's registration names a launcher that waits for the receipt,
+    and makes "the trainer does not delete its own machine" part of the
+    registered recipe.** The nine registered runs are a successor design with
+    its own grammar and its own trainer, so the shutdown fix does **not** come
+    along on its own: it lives in unregistered operations scripts derived from
+    the A3 instruments, and nothing carries it into a registration that has not
+    been written yet
+    (`experiments/06-mvm-0a-constructed-self-index/reap-shutdown-order-method.md`,
+    section 10, recommendation 1). Registering it puts the fix inside the text
+    the nine runs are produced by, rather than leaving it an operations
+    afterthought that a later edit could quietly remove. The ordering works:
+    rehearsal item R-11 runs in week 40 and the registration commits by
+    2026-10-11, so John rules this with the vendor result in hand rather than on
+    the fix's local self-tests. *Confidence: moderate. Judgment call, and raised
+    here as a design point rather than as settled — the fix has not met the real
+    vendor, which is weakness W9.* **Alternative:** leave the shutdown policy in
+    unregistered operations scripts, which is where this programme has always
+    kept it and which lets the policy change after registration without an
+    amendment — at the cost that the one failure which has already destroyed a
+    ten-hour run and cost $97.04 (method note, section 2) sits outside the
+    registered recipe, with nothing but habit holding it in place. A third
+    course, registering nothing about shutdown either way and deciding per wave,
+    is the status quo and is recommended against: it is how a launcher and a
+    trainer came to cancel each other out without anyone having ruled that they
+    should.
+
+*Decision 13 was added on 2026-09-21 after the ruling file
+`docs/rulings/2026-09-21-review-verification-and-staged-spending.md` was
+committed. That file says twelve design decisions in this proposal are not
+ruled; there are now thirteen, and the thirteenth is likewise not ruled.*
 
 *Nothing above is registered. The registration commit, if it comes, follows the
 rehearsal, the Gate C pass, John's decisions and Gate A, and every run it
@@ -1173,8 +1442,21 @@ affects is launched after it.*
 - The spend figure that is stale and is **not** used here: the spend record in
   `data/project.toml` (about $215.70), being corrected in a separate session;
   section 6 of the December-result roadmap repeats the same stale figure.
-- **Owed, and not yet on disk:** the committed text of John's spending ruling of
-  2026-09-21 (the two releases, "halt, not trim", per-wave funding, and a check
-  that cannot be run counting as a trip), which belongs under `docs/rulings/`.
-  Section 12 is written from that ruling as given in session and is superseded
-  by the committed text when it lands.
+- **The ruling that sets the two releases, and which version 1 of this section
+  recorded as owed and not yet on disk — it has since landed:**
+  `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`. Its items
+  10 to 16 are the spending rulings (the two releases, the staggered launch,
+  "halt, not trim", per-wave funding, a check that cannot be run counting as a
+  trip, and the correction of the stale spend figures), and section 12 is written
+  to them. Its "Open, and raised but not yet ruled" list ends with the question
+  of whether the rehearsal includes a short rented slice; **John closed that in
+  favour after the file was committed**, which is rehearsal item R-11 in section
+  10 and the seventh ruling in section 12.2. The file still lists it as open,
+  because a ruling file is annotated rather than rewritten.
+- The method note for the shutdown fix that rehearsal item R-11 exercises against
+  the real vendor, and the source of every figure about it in sections 10, 12.3
+  and 13:
+  `experiments/06-mvm-0a-constructed-self-index/reap-shutdown-order-method.md`,
+  currently on branch `worktree-reap-race-fix` and not yet on the main line.
+  Written before its code, with an appendix recording where building it differed
+  from planning it.
