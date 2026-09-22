@@ -12,8 +12,13 @@ WHAT IT IS
 
 THE COMMANDS, IN ORDER
 
-  Step 0 — prove the plan with no machine and no money:
-    /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh --help >/dev/null
+  Step 0 — prove the plan with no machine and no money. This step USED to
+  open with `launch_a3_fetch_first.sh --help`, which was withdrawn by John on
+  2026-09-22 [RT-198]: the launcher had no --help and no argument handling at
+  all, so the flag was silently ignored and the script went on to a REAL
+  launch at its defaults. It created a rented machine on 2026-09-21. The dry
+  run below is the genuinely inert path — its guard exits before anything is
+  created — and the launchers now refuse any argument outright.
     DRYRUN=1 SCALE=10M MAXTOK=2000000 OUT=slice_handshake \
       GRACE_S=600 \
       /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh
