@@ -53,12 +53,40 @@ TRAIN_PAIRS = 15000
 CANDIDATE_LAYER_SETS = [(0,), (1,), (2,), (3,), (4,),
                         (3, 4), (2, 3, 4), (1, 2, 3, 4), (0, 1, 2, 3, 4)]
 CANDIDATE_POSITIONS = ["action", "action+ans", "action+3", "post-identity", "all"]
-RANK_CAPS = [1, 2, 3, 4, 8]
-FAMILY_SIZE = len(CANDIDATE_LAYER_SETS) * len(CANDIDATE_POSITIONS) * len(RANK_CAPS)
+# The label the straight-line read is fitted to. The proposal says "fit a
+# straight-line read for 'which agent is acting'" and does not say what the
+# label IS. In a grammar whose marker words are drawn afresh every episode
+# that phrase has at least three readings, and the rehearsal found that the
+# choice decides whether the nomination can find the answer at all.
+#
+#   agent-slot   the model's index in the episode's list of agents. This is
+#                the pre-stated reading, and it is arbitrary per episode: no
+#                state can carry it, because nothing in the episode defines it.
+#   marker-rank  the rank of the model's own marker word among the four in the
+#                episode, in vocabulary order. This is the programme's own
+#                existing convention, from the eleven-position fitted read.
+#   marker-word  which marker word is the model's own, out of the whole pool.
+READ_LABELS = ("agent-slot", "marker-rank", "marker-word")
+
+RANK_CAPS = [1, 2, 4, 8, 16, 24]
+# The pre-stated family, as the method file fixed it before anything ran:
+# nine layer sets, five position sets, five rank caps, one reading of the
+# read's label. The rank caps and the labels were widened after the pre-stated
+# procedure failed on the arm whose answer is in a known place; both the
+# widening and its reason are on the record in the findings.
+PRE_STATED_FAMILY_SIZE = 9 * 5 * 5
+FAMILY_SIZE = (len(CANDIDATE_LAYER_SETS) * len(CANDIDATE_POSITIONS)
+               * len(RANK_CAPS) * len(READ_LABELS))
 
 # Floors swept, so the record carries the curve a floor would be chosen
 # against. NONE of these is the registered floor; that is John's to fix.
 FLOOR_SWEEP = [0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80]
+
+# A floor used INSIDE the rehearsal, to decide whether a made-up case landed
+# where the method said it would. It is fixed here, before anything ran, and
+# it is NOT the registered floor: that is an output of this rehearsal and
+# John's to fix.
+REHEARSAL_FLOOR = 0.30
 
 
 def log(*a):
@@ -144,27 +172,52 @@ def _states_and_targets(model, pairs, device):
     return recip, donor, d_states, donor_target
 
 
-def _donor_share(logits, donor_target) -> float:
+def _donor_hits(logits, donor_target):
+    """Per-trial: did the action land on the value the donor's identity
+    dictates? Kept per trial, not just averaged, because the across-seed
+    uncertainty method has to be demonstrated on matched pairs."""
     pred = X.predictions(logits, G.OWN)
-    return float((pred == donor_target).float().mean())
+    return (pred == donor_target).detach().cpu().numpy().astype(np.int8)
+
+
+def _donor_share(logits, donor_target) -> float:
+    return float(_donor_hits(logits, donor_target).mean())
+
+
+
+
+
+def _labels(b, which: str) -> np.ndarray:
+    idx = _model_identity(b).detach().cpu().numpy()
+    markers = b["agent_marker_tok"].detach().cpu().numpy()
+    own = markers[np.arange(len(idx)), idx]
+    if which == "agent-slot":
+        return idx
+    if which == "marker-rank":
+        return (np.sort(markers, axis=1) == own[:, None]).argmax(axis=1)
+    if which == "marker-word":
+        return own
+    raise ValueError(which)
 
 
 def fit_reads(model, recip, device) -> dict:
-    """A fitted straight-line read for 'which agent is acting', at every
-    candidate layer, on development episodes only. Used ONLY to propose
-    candidate directions; nothing is concluded from how well it fits."""
+    """Fitted straight-line reads for 'which agent is acting', at every
+    candidate layer and under every reading of that phrase, on development
+    episodes only. Used ONLY to propose candidate directions; nothing is
+    concluded from how well a read fits."""
     with torch.no_grad():
         _, states = model(recip, capture=True)
     ap = recip["action_pos"][:, G.OWN]
-    y = np.array([int(v) for v in _model_identity(recip)])
     reads = {}
-    for li, s in enumerate(states):
-        h = s[torch.arange(s.shape[0], device=s.device), ap].detach().cpu().numpy()
-        n_tr = int(0.7 * len(y))
-        clf = LogisticRegression(max_iter=2000, C=1.0)
-        clf.fit(h[:n_tr], y[:n_tr])
-        reads[li] = dict(coef=clf.coef_.astype(np.float64),
-                         fit_accuracy=float(clf.score(h[n_tr:], y[n_tr:])))
+    for label in READ_LABELS:
+        y = _labels(recip, label)
+        for li, s in enumerate(states):
+            h = s[torch.arange(s.shape[0], device=s.device), ap].detach().cpu().numpy()
+            n_tr = int(0.7 * len(y))
+            clf = LogisticRegression(max_iter=3000, C=1.0)
+            clf.fit(h[:n_tr], y[:n_tr])
+            reads[(label, li)] = dict(coef=clf.coef_.astype(np.float64),
+                                      fit_accuracy=float(clf.score(h[n_tr:], y[n_tr:])))
     return reads
 
 
@@ -177,6 +230,28 @@ def _model_identity(b) -> torch.Tensor:
     hit = (agent_at >= 0) & (acting == 1)
     idx = torch.argmax(hit.int(), dim=1)
     return agent_at[torch.arange(agent_at.shape[0], device=agent_at.device), idx]
+
+
+def reads_path(arm: str, seed: int) -> str:
+    return os.path.join(OUT, f"reads_{arm}_seed{seed}.npz")
+
+
+def save_reads(arm: str, seed: int, reads: dict) -> None:
+    """The fitted straight-line reads are FROZEN here, on development episodes,
+    and reloaded afterwards. Re-fitting them on fresh episodes would be
+    choosing on the data the reading is taken from, which is the one thing the
+    data split exists to prevent."""
+    np.savez(reads_path(arm, seed),
+             **{f"{lab}|{li}": reads[(lab, li)]["coef"] for lab, li in reads})
+
+
+def load_reads(arm: str, seed: int) -> dict:
+    z = np.load(reads_path(arm, seed))
+    out = {}
+    for k in z.files:
+        lab, li = k.split("|")
+        out[(lab, int(li))] = dict(coef=z[k])
+    return out
 
 
 def basis_for(coef: np.ndarray, rank: int, device) -> torch.Tensor:
@@ -198,6 +273,7 @@ def stage_nominate(device):
             m = load_arm(arm, seed, device)
             recip, donor, d_states, d_tgt = _states_and_targets(m, dev_pairs, device)
             reads = fit_reads(m, recip, device)
+            save_reads(arm, seed, reads)
             grid = []
             for layers in CANDIDATE_LAYER_SETS:
                 for posname in CANDIDATE_POSITIONS:
@@ -205,23 +281,38 @@ def stage_nominate(device):
                     mask = X.position_mask(recip, posname)
                     whole = _donor_share(
                         X.transplanted_logits(m, recip, d_states, sites, mask, None), d_tgt)
-                    for rank in RANK_CAPS:
-                        basis = {l: basis_for(reads[l]["coef"], rank, device) for l in layers}
-                        own = _donor_share(
-                            X.transplanted_logits(m, recip, d_states, sites, mask, basis), d_tgt)
-                        grid.append(dict(layers=list(layers), positions=posname, rank=rank,
-                                         accuracy_whole=whole, accuracy_ownership_only=own))
+                    for label in READ_LABELS:
+                        for rank in RANK_CAPS:
+                            basis = {l: basis_for(reads[(label, l)]["coef"], rank, device)
+                                     for l in layers}
+                            own = _donor_share(
+                                X.transplanted_logits(m, recip, d_states, sites, mask,
+                                                      basis), d_tgt)
+                            grid.append(dict(
+                                layers=list(layers), positions=posname, rank=rank,
+                                label=label, accuracy_whole=whole,
+                                accuracy_ownership_only=own,
+                                in_the_pre_stated_family=(label == "agent-slot"
+                                                          and rank in (1, 2, 4, 8))))
             # nominated by causal effect, not by how well the read fits
             best = max(grid, key=lambda g: g["accuracy_ownership_only"])
+            pre = [g for g in grid if g["in_the_pre_stated_family"]]
+            best_pre = max(pre, key=lambda g: g["accuracy_ownership_only"])
             out["arms"][key] = dict(
                 nomination=best,
-                fit_accuracy={str(l): reads[l]["fit_accuracy"] for l in reads},
+                nomination_within_the_pre_stated_family=best_pre,
+                fit_accuracy={f"{lab}|{li}": reads[(lab, li)]["fit_accuracy"]
+                              for lab, li in reads},
                 grid=grid)
             log(f"    {key:8s} nominated {best['positions']} layers {best['layers']} "
-                f"rank {best['rank']}: ownership-only {best['accuracy_ownership_only']:.4f}, "
-                f"whole {best['accuracy_whole']:.4f}")
+                f"label {best['label']} rank {best['rank']}: "
+                f"ownership-only {best['accuracy_ownership_only']:.4f}, "
+                f"whole {best['accuracy_whole']:.4f}   "
+                f"(best inside the pre-stated family: "
+                f"{best_pre['accuracy_ownership_only']:.4f})")
     p = save_json("nominate.json", out)
-    log(f"  wrote {p}  (family of {FAMILY_SIZE} comparisons per arm and seed)")
+    log(f"  wrote {p}  ({FAMILY_SIZE} comparisons per arm and seed; "
+        f"{PRE_STATED_FAMILY_SIZE} of them inside the pre-stated family)")
 
 
 def stage_transplant(device):
@@ -241,8 +332,9 @@ def stage_transplant(device):
             sites = X.Sites(layers=tuple(spec["layers"]), positions=spec["positions"])
             recip, donor, d_states, d_tgt = _states_and_targets(m, fresh_pairs, device)
             mask = X.position_mask(recip, spec["positions"])
-            reads = fit_reads(m, recip, device)
-            basis = {l: basis_for(reads[l]["coef"], spec["rank"], device)
+            reads = load_reads(arm, seed)          # frozen on development data
+            basis = {l: basis_for(reads[(spec["label"], l)]["coef"], spec["rank"],
+                                  device)
                      for l in sites.layers}
             D = m.cfg.d_model
 
@@ -254,7 +346,11 @@ def stage_transplant(device):
             acc_own = _donor_share(
                 X.transplanted_logits(m, recip, d_states, sites, mask, basis), d_tgt)
 
-            readings = {f"{f:.2f}": M.reading(acc_whole, acc_own, f) for f in FLOOR_SWEEP}
+            # both candidate forms at every floor swept: the rehearsal
+            # reports, it does not choose
+            readings = {f"{f:.2f}": M.both_forms(acc_whole, acc_own,
+                                                 acc_untouched, f)
+                        for f in FLOOR_SWEEP}
 
             # ---------------------------------------------------- controls
             controls = {}
@@ -263,9 +359,8 @@ def stage_transplant(device):
             comp = {}
             for l in sites.layers:
                 b = basis[l].detach().cpu().numpy()
-                full = np.linalg.svd(b @ b.T - np.eye(D))[0]
-                q, _ = np.linalg.qr(np.eye(D) - b @ b.T)
-                comp[l] = torch.as_tensor(np.ascontiguousarray(q[:, :D - b.shape[1]]),
+                u, sv, _ = np.linalg.svd(np.eye(D) - b @ b.T)
+                comp[l] = torch.as_tensor(np.ascontiguousarray(u[:, sv > 1e-6]),
                                           dtype=torch.float32, device=device)
             controls["1 content transplant (the complement subspace)"] = _donor_share(
                 X.transplanted_logits(m, recip, d_states, sites, mask, comp), d_tgt)
@@ -316,6 +411,12 @@ def stage_transplant(device):
                 bool(torch.equal(untouched, null))
 
             out["arms"][key] = dict(
+                per_trial=dict(
+                    untouched=_donor_hits(untouched, d_tgt).tolist(),
+                    whole=_donor_hits(X.transplanted_logits(
+                        m, recip, d_states, sites, mask, None), d_tgt).tolist(),
+                    ownership_only=_donor_hits(X.transplanted_logits(
+                        m, recip, d_states, sites, mask, basis), d_tgt).tolist()),
                 site_set=spec, accuracy_untouched=acc_untouched,
                 accuracy_whole=acc_whole, accuracy_ownership_only=acc_own,
                 readings=readings, controls=controls,
@@ -349,16 +450,18 @@ def stage_outcomes(device):
     fresh_pairs, _ = T.make_data(800, seed=777, pool="fresh", device=device)
     res = {}
 
-    def case(name, arm, seed, sites, rank, expect):
+    def case(name, arm, seed, sites, rank, expect, label="marker-word"):
         m = load_arm(arm, seed, device)
         recip, donor, d_states, d_tgt = _states_and_targets(m, fresh_pairs, device)
         mask = X.position_mask(recip, sites.positions)
-        reads = fit_reads(m, recip, device)
-        basis = {l: basis_for(reads[l]["coef"], rank, device) for l in sites.layers}
+        reads = load_reads(arm, seed)              # frozen on development data
+        basis = {l: basis_for(reads[(label, l)]["coef"], rank, device)
+                 for l in sites.layers}
         w = _donor_share(X.transplanted_logits(m, recip, d_states, sites, mask, None), d_tgt)
         o = _donor_share(X.transplanted_logits(m, recip, d_states, sites, mask, basis), d_tgt)
-        r = M.reading(w, o, floor=0.30)
+        r = M.reading(w, o, floor=REHEARSAL_FLOOR)
         res[name] = dict(arm=arm, seed=seed, sites=sites.label(), rank=rank,
+                         label=label,
                          accuracy_whole=w, accuracy_ownership_only=o,
                          status=r["status"], degree=r["degree"], expected=expect)
         log(f"    {name}: whole {w:.4f} ownership-only {o:.4f} -> {r['status']}"
@@ -368,10 +471,12 @@ def stage_outcomes(device):
     for seed in SEEDS:
         s = nom["arms"][f"T/{seed}"]["nomination"]
         case(f"positive, near zero — arm T seed {seed}", "T", seed,
-             X.Sites(tuple(s["layers"]), s["positions"]), s["rank"], "near zero, valid")
+             X.Sites(tuple(s["layers"]), s["positions"]), s["rank"],
+             "near zero, valid", s["label"])
         s = nom["arms"][f"C/{seed}"]["nomination"]
         case(f"high — arm C seed {seed}", "C", seed,
-             X.Sites(tuple(s["layers"]), s["positions"]), s["rank"], "high, valid")
+             X.Sites(tuple(s["layers"]), s["positions"]), s["rank"],
+             "high, valid", s["label"])
         case(f"no verdict — arm T seed {seed} at the failing site set", "T", seed,
              X.Sites((0,), "pre-identity"), 2, "no verdict")
 
@@ -383,24 +488,28 @@ def stage_outcomes(device):
         for seed in SEEDS:
             m = load_arm(arm, seed, device)
             recip, donor, d_states, d_tgt = _states_and_targets(m, fresh_pairs, device)
-            reads = fit_reads(m, recip, device)
+            reads = load_reads(arm, seed)          # frozen on development data
             for layers in CANDIDATE_LAYER_SETS:
                 for posname in CANDIDATE_POSITIONS:
                     sites = X.Sites(layers, posname)
                     mask = X.position_mask(recip, posname)
                     w = _donor_share(
                         X.transplanted_logits(m, recip, d_states, sites, mask, None), d_tgt)
-                    if w < 0.30:
+                    if w < REHEARSAL_FLOOR:
                         continue
-                    for rank in RANK_CAPS:
-                        basis = {l: basis_for(reads[l]["coef"], rank, device) for l in layers}
-                        o = _donor_share(
-                            X.transplanted_logits(m, recip, d_states, sites, mask, basis), d_tgt)
-                        if o > w:
-                            neg.append(dict(arm=arm, seed=seed, sites=sites.label(),
-                                            rank=rank, accuracy_whole=w,
-                                            accuracy_ownership_only=o,
-                                            degree=(w - o) / w))
+                    for label in READ_LABELS:
+                        for rank in RANK_CAPS:
+                            basis = {l: basis_for(reads[(label, l)]["coef"], rank, device)
+                                     for l in layers}
+                            o = _donor_share(
+                                X.transplanted_logits(m, recip, d_states, sites, mask,
+                                                      basis), d_tgt)
+                            if o > w:
+                                neg.append(dict(arm=arm, seed=seed, sites=sites.label(),
+                                                rank=rank, label=label,
+                                                accuracy_whole=w,
+                                                accuracy_ownership_only=o,
+                                                degree=(w - o) / w))
     neg.sort(key=lambda d: d["degree"])
     res["negative — searched over every arm and site set"] = dict(
         found=len(neg), most_negative=neg[:5])
@@ -423,41 +532,91 @@ def stage_throughput(device):
         out["rehearsal_scale"][k] = dict(seconds_per_step=v["seconds_per_step"],
                                          parameters=v["parameters"],
                                          batch=v["batch"], steps=v["steps"])
-    # the registered configuration's shape: 448 wide, 12 layers
-    reg = dict(d_model=448, n_layers=12, n_heads=8)
-    _, tb = T.make_data(64, seed=5, pool="train", device=device)
+    # the registered configuration's shape, timed by the same code that
+    # would run on a rented machine, so the two figures are comparable
+    import bench_arms as B
     for arm in A.ARMS:
-        cfg = A.Config(arm=arm, **reg)
-        m = A.Arm(cfg).to(device)
-        opt = torch.optim.AdamW(m.parameters(), lr=1e-4)
-        idx = torch.arange(32, device=device)
-        b = T.slice_batch(tb, idx)
-        for _ in range(3):                      # warm-up, not timed
-            loss = m.loss(b); opt.zero_grad(); loss.backward(); opt.step()
-        if device.type == "mps":
-            torch.mps.synchronize()
-        t0 = time.time()
-        n = 20
-        for _ in range(n):
-            loss = m.loss(b); opt.zero_grad(); loss.backward(); opt.step()
-        if device.type == "mps":
-            torch.mps.synchronize()
-        sec = (time.time() - t0) / n
-        out["registered_shape_on_this_laptop"][arm] = dict(
-            seconds_per_step=sec, parameters=A.n_params(m), batch=32,
-            sequence_length=G.SEQ_LEN, **reg)
-        log(f"    arm {arm} at the registered shape: {sec * 1000:.1f} ms/step, "
-            f"{A.n_params(m):,} parameters")
+        r = B.bench(arm, device, B.REGISTERED_SHAPE, batch=32, steps=20)
+        out["registered_shape_on_this_laptop"][arm] = r
+        log(f"    arm {arm} at the registered shape: "
+            f"{r['seconds_per_step'] * 1000:.1f} ms/step "
+            f"(median {r['median_seconds_per_step'] * 1000:.1f}), "
+            f"{r['parameters']:,} parameters")
     base = out["registered_shape_on_this_laptop"]["F"]["seconds_per_step"]
     out["ratio_to_arm_F"] = {a: out["registered_shape_on_this_laptop"][a]["seconds_per_step"] / base
                              for a in A.ARMS}
+    out["what_this_cannot_answer"] = (
+        "Seconds per step on this laptop does not predict seconds per step on "
+        "a rented graphics card, and no arithmetic here can make it. What is "
+        "measured locally is the RATIO between the three architectures. The "
+        "absolute figure the second release of money rests on needs the staged "
+        "rented slice, which has not been run.")
     p = save_json("throughput.json", out)
     log(f"  wrote {p}")
 
 
+def stage_uncertainty(device=None):
+    """Rehearsal item R-9: two candidate ways of putting an uncertainty on a
+    reading, computed on the same data, with the arithmetic for how many seeds
+    each implies. **The method is not chosen here and the seed count is not
+    set here**; both are handed to John with the numbers behind them."""
+    tr = load_json("transplant.json")
+    rng = np.random.default_rng(20260921)
+    out = {"arms": {}, "half_widths": [0.05, 0.10, 0.15]}
+    for arm in A.ARMS:
+        per_seed_raw, per_seed_reg, per_seed_cor, boot = [], [], [], []
+        for seed in SEEDS:
+            v = tr["arms"][f"{arm}/{seed}"]
+            pt = v["per_trial"]
+            w = np.array(pt["whole"]); o = np.array(pt["ownership_only"])
+            u = np.array(pt["untouched"])
+            per_seed_raw.append(float(w.mean() - o.mean()))
+            reg = M.reading(float(w.mean()), float(o.mean()), REHEARSAL_FLOOR)
+            cor = M.reading_corrected(float(w.mean()), float(o.mean()),
+                                      float(u.mean()), REHEARSAL_FLOOR)
+            per_seed_reg.append(reg["degree"])
+            per_seed_cor.append(cor["degree"])
+            # method two: resample matched pairs within the seed
+            n = len(w)
+            draws = []
+            for _ in range(2000):
+                idx = rng.integers(0, n, n)
+                draws.append(float(w[idx].mean() - o[idx].mean()))
+            boot.append(dict(seed=seed, mean=float(np.mean(draws)),
+                             standard_error=float(np.std(draws))))
+        raw = np.array(per_seed_raw)
+        across = dict(mean=float(raw.mean()),
+                      standard_deviation=float(raw.std(ddof=1)) if len(raw) > 1 else None,
+                      standard_error=float(raw.std(ddof=1) / np.sqrt(len(raw)))
+                      if len(raw) > 1 else None, seeds=len(raw))
+        within = dict(mean=float(np.mean([b["mean"] for b in boot])),
+                      typical_standard_error=float(np.mean([b["standard_error"] for b in boot])),
+                      per_seed=boot)
+        seeds_needed = {}
+        if across["standard_deviation"]:
+            for hw in out["half_widths"]:
+                # the ordinary arithmetic: how many seeds for a half-width,
+                # using the measured across-seed spread and a coverage factor
+                # of two. Reported, not adopted.
+                seeds_needed[f"{hw:.2f}"] = int(np.ceil((2 * across["standard_deviation"] / hw) ** 2))
+        out["arms"][arm] = dict(
+            per_seed_raw_difference=per_seed_raw,
+            per_seed_registered_form=per_seed_reg,
+            per_seed_floor_corrected_form=per_seed_cor,
+            across_seed_method=across, within_seed_bootstrap=within,
+            seeds_for_a_given_half_width=seeds_needed)
+        log(f"    arm {arm}: raw difference per seed "
+            f"{[round(x, 4) for x in per_seed_raw]}, across-seed spread "
+            f"{across['standard_deviation']}, typical within-seed spread "
+            f"{within['typical_standard_error']:.4f}")
+        if seeds_needed:
+            log(f"      seeds implied by the across-seed method: {seeds_needed}")
+    log(f"  wrote {save_json('uncertainty.json', out)}")
+
+
 STAGES = dict(train=stage_train, gate=stage_gate, nominate=stage_nominate,
               transplant=stage_transplant, outcomes=stage_outcomes,
-              throughput=stage_throughput)
+              uncertainty=stage_uncertainty, throughput=stage_throughput)
 
 
 def main():

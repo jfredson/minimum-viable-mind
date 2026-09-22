@@ -134,7 +134,7 @@ def stage_attenuated(device):
             sites = X.Sites(tuple(spec["layers"]), spec["positions"])
             recip, donor, d_states, d_tgt = R._states_and_targets(m, fresh_pairs, device)
             mask = X.position_mask(recip, spec["positions"])
-            reads = R.fit_reads(m, recip, device)
+            reads = R.load_reads(arm, seed)      # frozen on development data
             basis = {l: R.basis_for(reads[l]["coef"], spec["rank"], device)
                      for l in sites.layers}
             with torch.no_grad():
