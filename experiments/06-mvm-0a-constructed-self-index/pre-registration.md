@@ -216,21 +216,32 @@ belonged to a contrast MVM-0a cannot run (§Scope).*
   it must carry a self-index of some kind. *[Own-turn sourcing amended:
   §Amendment A1.1–A1.2 — uniform enactment + acting channel replace
   on-policy fill.]*
+- **Held-out evaluation episodes** generated from the same grammar but
+  disjoint in content, never touched during training or model selection.
 
 > **ANNOTATION, 2026-09-21 — NOT PART OF THE REGISTRATION. Added by a later
-> session. The registered bullet above is unchanged, word for word, and nothing
+> session. The registered curriculum bullet above — the one that registers N = 4
+> agents and 8 turns per episode — is unchanged, word for word, and nothing
 > below alters, qualifies or extends any registered claim. This note does one
-> thing: it names the committed record that holds the detection figure the
-> bullet quotes, which the bullet does not name.**
+> thing: it names the committed record that holds the detection figure that
+> bullet quotes, which the bullet does not name. It is placed after the list of
+> design elements rather than between two of its items, so that the registered
+> list is not broken in two.**
 >
 > The registered sentence makes two claims and gives one pointer, and the
 > pointer belongs to the second of them. The pointer,
 > `experiments/06-mvm-0a-constructed-self-index/batteries/batteries_meta.json`,
 > is correct for the clause it sits in: that file holds the four chance floors
-> the sentence lists, to the rounding the sentence uses — 0.125 for the
-> self-report and self-identification batteries, 0.041666… for the cross-turn
-> state battery, and 0.100 for the syntax floor check. It holds no detection
-> figure of any kind.
+> the sentence lists, to the rounding the sentence uses — 0.125 for the two task
+> batteries `T_sr` and `T_si`, 0.041666… for the cross-turn state control
+> `T_state`, and 0.100 for the floor check `T_syntax`. Those are the four keys
+> exactly as the registered sentence writes them, and this note does not rename
+> them. What each one is, the registration itself says, in its battery table
+> further down this file: `T_sr` is "self-relevant binding", `T_si` is
+> "self-irrelevant integration" — "matched-difficulty integration over episode
+> content with **no self-reference**" — `T_state` is the "cross-turn state,
+> ownership-free" control that replaced `T_syntax`, and `T_syntax` is "kept as a
+> floor check only". The record holds no detection figure of any kind.
 >
 > The detection figure — the area under the cue detector's curve, 0.5008, with
 > its 95% range — comes from a different committed record, one directory up:
@@ -247,16 +258,33 @@ belonged to a contrast MVM-0a cannot run (§Scope).*
 > that says verified, measured, calibrated or attacked cites the committed
 > record by file name, and "certified" is a word of that family.
 >
-> Recorded under John's ruling of 2026-09-21 that registered text carrying a
-> measured value whose record is committed but not named is given a dated note
-> supplying the pointer, and does not need a registered amendment, because the
-> claim does not change. That ruling was given in the session that ordered this
-> note and is not yet carried in a filed ruling under `docs/rulings/`. This note
-> is an addition to the file, not to the registration; the registration remains
-> exactly the text above it.
-
-- **Held-out evaluation episodes** generated from the same grammar but
-  disjoint in content, never touched during training or model selection.
+> **The authority for this note, and what that authority does not cover.** The
+> question was put to John on 2026-09-21, in the session that ordered this note:
+> may registered text be given a dated note supplying a citation the closure rule
+> asks for, or does adding one need a registered amendment? He chose the dated
+> note, on the condition he stated — that the claim does not change. He was told
+> the case against it before he chose, and it is recorded here rather than left
+> out: the line between naming a record and describing one is drawn by whoever is
+> writing the note, so a permission that turns on "the claim does not change" is
+> a judgement every writer would then make about their own text.
+>
+> **What he authorised is the act — a dated note naming a committed record, where
+> no registered claim changes. It does not authorise restating a registered label
+> in other words, describing registered content, or annotating registered text
+> for any other purpose, and it does not settle any particular wording.** Not one
+> word of this note is John's drafting; the wording is this session's, and his to
+> overturn. Two limits on the record of the ruling itself, stated plainly because
+> they weaken it. His exact words are not carried anywhere in this repository, so
+> this note reports his ruling instead of quoting it — a weaker form than the
+> house one, which is item 22 of the ruling on review verification and staged
+> spending (`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`,
+> on the main line), where the words he used are quoted. And the ruling is not
+> yet carried in any filed ruling under `docs/rulings/`: what is filed there is
+> about annotating rulings, not registered text. Until it is filed, this
+> paragraph is the whole record of it.
+>
+> This note is an addition to the file, not to the registration; the registration
+> remains exactly the text above it.
 
 ## Task batteries — and an honest problem with reusing Experiment 1's
 
