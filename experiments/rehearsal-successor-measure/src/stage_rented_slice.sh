@@ -123,6 +123,27 @@ else
     warn "Arming it is John's call, not this script's."
 fi
 
+# John's ruling of 2026-09-22 [RT-198]: until the Gate A amendment clears, no
+# session invokes a registered launcher with any argument, AND THE PRE-FLIGHT
+# ASSERTS IT. A prohibition nobody checks is the warning-in-a-document that
+# ruling rejected. The check creates nothing and never runs the registered
+# launcher.
+GUARDCHK="$EXP06/src/check_launcher_argument_guard.sh"
+if [ -x "$GUARDCHK" ]; then
+    if GUARDOUT=$("$GUARDCHK" 2>&1); then
+        ok "launchers refuse arguments (RT-198 check passes)"
+        if printf '%s' "$GUARDOUT" | grep -q 'does NOT carry the guard'; then
+            warn "launch_a3.sh is registered and still unguarded: pass it NO"
+            warn "arguments until the Gate A amendment clears."
+        fi
+    else
+        bad "the RT-198 argument-guard check FAILED — a launcher does not"
+        bad "refuse arguments. Run $GUARDCHK to see which."
+    fi
+else
+    bad "the RT-198 argument-guard check is missing at $GUARDCHK"
+fi
+
 if command -v runpodctl >/dev/null 2>&1; then
     ok "runpodctl is on the path: $(command -v runpodctl)"
 else
@@ -147,8 +168,13 @@ WHAT IT IS
 
 THE COMMANDS, IN ORDER
 
-  Step 0 — prove the plan with no machine and no money:
-    $EXP06/src/launch_a3_fetch_first.sh --help >/dev/null
+  Step 0 — prove the plan with no machine and no money. This step USED to
+  open with \`launch_a3_fetch_first.sh --help\`, which was withdrawn by John on
+  2026-09-22 [RT-198]: the launcher had no --help and no argument handling at
+  all, so the flag was silently ignored and the script went on to a REAL
+  launch at its defaults. It created a rented machine on 2026-09-21. The dry
+  run below is the genuinely inert path — its guard exits before anything is
+  created — and the launchers now refuse any argument outright.
     DRYRUN=1 SCALE=$SLICE_SCALE MAXTOK=$SLICE_TOKENS OUT=$SLICE_OUT \\
       GRACE_S=$SLICE_GRACE_S \\
       $EXP06/src/launch_a3_fetch_first.sh
