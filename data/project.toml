@@ -569,7 +569,7 @@ status = "pending"
 # ---------------------------------------------------------------------------
 
 [spend]
-as_of = "2026-09-20"
+as_of = "2026-09-21"
 account_balance = 79.82
 account_note = "RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit John set; topped up in increments he chooses. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
 idle_billing_lost = 10.30
@@ -578,14 +578,14 @@ idle_billing_note = "Four occurrences of finished pods billing idle; the reason 
 [[spend.lines]]
 name = "Amendment A3 hard stop"
 cap = 100
-spent = 44.2
-note = "All vendors, cumulative, across the A3 pilot ($13.92), seeds 1 and 2, the control-learnability pilot ($9.97) and the checkpoint recovery ($0.07). Option D would draw $27–39 from the remaining headroom if charged here."
+spent = 44.3
+note = "All vendors, cumulative, and matched to the compute ledger as corrected on 2026-09-21: the A3 learnability pilot ($13.92), the self-terminate ops test ($0.29), seeds 1 and 2 ($20.10), the control-learnability pilot (about $9.90) and the checkpoint recovery ($0.07). Option D would draw $27–39 from the remaining headroom if charged here."
 
 [[spend.lines]]
 name = "MVM-0a registered design envelope (Amendment A2)"
 cap = 400
-spent = 215.7
-note = "Raised from $200 to $400 on 2026-08-16 at measured 5090-secure pricing. Includes the lost 30M pilot ($97) and the 30M re-run ($18.9)."
+spent = 225.7
+note = "Raised from $200 to $400 on 2026-08-16 at measured 5090-secure pricing. Includes the lost 30M pilot ($97) and the 30M re-run ($18.9). The figure was $215.7 until the compute ledger was corrected on 2026-09-21: two rows had been written without a programme running total, so the control-learnability pilot (about $9.90) and the checkpoint recovery ($0.07) were missing from it."
 
 
 # ---------------------------------------------------------------------------
