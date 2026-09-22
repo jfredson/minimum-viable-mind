@@ -101,6 +101,23 @@
 #   COPYFILE_DISABLE + --no-same-owner on tar.
 set -uo pipefail
 
+# 2026-09-22 [RT-198]: this launcher takes NO command-line arguments and never
+# has. Before this guard an unrecognised flag was SILENTLY IGNORED and the
+# script proceeded to a real launch at its defaults -- which is how a rented
+# machine came to be created on 2026-09-21 by a command whose stated purpose
+# was to create nothing. The exit below is explicit on purpose: this file runs
+# under `set -uo pipefail` and deliberately NOT `set -e` (the remote launch
+# command returns a benign non-zero status on a teardown reset), so a guard
+# that only complained would complain and launch anyway.
+# Method: ../argument-guard-method.md. Ruled by John 2026-09-22.
+if [ "$#" -ne 0 ]; then
+  echo "refusing to run: $(basename "$0") takes no command-line arguments." >&2
+  echo "  got $# argument(s): $*" >&2
+  echo "  this launcher is configured by environment variables; see the usage header." >&2
+  echo "  to preview a launch without creating anything: DRYRUN=1 $0" >&2
+  exit 2
+fi
+
 EXP_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 SRC_DIR="$(cd "$(dirname "$0")" && pwd)"
 SCALE="${SCALE:-30M}"
