@@ -777,7 +777,8 @@ rather than the count of answer options — the same correction RT-21 asks for
 on the verdict batteries.
 
 > **ANNOTATION, 2026-09-21. The figure quoted above was right when this pass
-> was filed. The battery record was rebuilt hours later and now reads 0.0909.
+> was filed. The battery record was rebuilt nine and a half minutes later and
+> now reads 0.0909.
 > Nothing in the finding is edited, and its substance is untouched.**
 >
 > The record of frozen batteries this finding cites
