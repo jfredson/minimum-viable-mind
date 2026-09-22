@@ -77,9 +77,9 @@ Review fires, with a written record in the repo, at three points.
 pre-statement that will be read as binding, before the registration commit.
 Both tiers below run. The registration commit waits on the closure rule and on
 the filed failure-mode pass. Every Gate A also carries the tier 1 reviewer's own
-measured check, whether or not anything fatal was found. No Gate A pass opens until the measurement
-rehearsal for that target is committed, and reading the rehearsal is the first
-thing the tier 1 reviewer does.
+measured check, whether or not anything fatal was found. No Gate A pass opens
+until the measurement rehearsal for that target is committed, and reading the
+rehearsal is the first thing the tier 1 reviewer does.
 
 **Gate B — interpretation.** An interpretation of a result before it enters
 STATUS.md's current-state section or the paper draft, when it either changes
@@ -713,10 +713,29 @@ What changed here:
   such a check actually goes.
 - **The precedent that fallback named** — four commits said to carry commands and
   outputs — is gone, because none of the four carries a single command line.
-  Counting lines that look like a command in the messages of `e8dad42`, `9653275`,
-  `49c1002` and `184a42f` returns zero for each. Two records that do carry commands
-  and outputs are named in its place, with the fact that both are off the main line
-  said out loud.
+  Counting lines that look like a command in their messages returns zero for each
+  of the four: the first outside-reviewer packet rebuild (`e8dad42`, "Tier 2
+  packets sized for the apps that have to read them"), the roadmap conversion
+  (`9653275`, "Say when work happens by what it waits on, not by a week"), the
+  launch-step split (`49c1002`, "Split the launch step so the chain shows the
+  staggered launch") and the second packet rebuild (`184a42f`, "Tier 2 packet:
+  hand the reviewer every record the closure text cites"). Two records that do
+  carry commands and outputs are named in its place, with the fact that both are
+  off the main line said out loud.
+- **The count behind that removal, corrected.** The message of the commit that
+  made the removal — the repair of the four sections (`dceeafa`, "Repair three of
+  the four failure tests, and mark the list as not yet proven") — also said that
+  no commit in the last sixty on the main line carries a command line in its
+  message, which is why the replacement names none. A later session re-ran that
+  count against the main line as it stood when the repair was written — the merge
+  commit that was its tip at that moment (`73aa7e3`) — and got **one**, not zero.
+  It opened the single hit rather than reporting the number. It is the wrapped
+  second column of a two-column table of files and their checksums, inside a
+  commit message that files a missing training log, and it matched only because
+  the continuation line begins with the word `md5`. It is not a command. So the
+  claim holds in substance — none of those sixty messages shows a command and the
+  output it returned — and only the printed number was wrong. A commit message
+  cannot be edited after the fact, so the correction is recorded here.
 - **"Registration text" in the failure-mode pass** is now stated to mean all four
   kinds of text Gate A covers, not only the ones called registrations.
 - **MEASURED and ARGUED** are given their plain meanings where a reader first meets

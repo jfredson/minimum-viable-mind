@@ -37,22 +37,27 @@ in this repository, on 2026-09-21.
 **What this list has been shown to be, and what it has not.** As a description of
 what has gone wrong here, it is accurate.
 
-**Which blocks below have been run, and which have not.** Twelve blocks are
-printed below. Ten carry a command and the output that running it produced, and
-all ten have been re-run by a session other than the one that wrote them and
-compared against the printed text with `cmp`, which names the first byte at which
-two files differ; nothing differed. The eight the list carried before the repair
-described below had already been checked the same way once, with `diff`. The
-remaining two blocks carry placeholders in angle brackets and no output. One of
-them is failure 4's first part, written as a template because it is pointed at
-whatever document is under review; the word lists inside it are exercised on six
-worked claims in the block below it, and that block was run and its output
-printed. **The other is failure 2's second part, and it has never been run at
-all.** Running it means running a whole probe pipeline twice against model
-checkpoints, which costs compute that nobody has authorised. Its middle limb —
-the second run clears the bar and the first does not — is argued from numbers
-already sitting in the position sweep's findings file, which failure 2 names
-below, and not from running the test. It has not been seen to fail on anything.
+**Which blocks below have been run, and which have not.** Thirteen blocks are
+printed below. Eleven carry a command and the output that running it produced.
+Ten of those eleven have been re-run by a session other than the one that wrote
+them and compared against the printed text with `cmp`, which names the first byte
+at which two files differ; nothing differed. The eight the list carried before
+the repair described below had already been checked the same way once, with
+`diff`. The eleventh is newer than that check: it is the block under failure 2
+that prints the two rows illustrating that failure's middle limb, and the session
+that added it ran it, but no other session has yet re-run it. The remaining two
+blocks carry placeholders in angle brackets and no output. One of them is failure
+4's first part, written as a template because it is pointed at whatever document
+is under review; the word lists inside it are exercised on six worked claims in
+the block below it, and that block was run and its output printed. **The other is
+failure 2's second part, and it has never been run at all.** Running it means
+running a whole probe pipeline twice against model checkpoints, which costs
+compute that nobody has authorised. Its middle limb — the second run clears the
+bar and the first does not — is now illustrated, by a printed block under failure
+2 showing the two rows in the position sweep's findings file where exactly that
+pattern appears. Illustrated is not executed: those rows come from the history
+this entry was written from, so the limb still has not been seen to fire on
+anything it had not already been fitted to.
 
 As a set of tests a new design can be run against, this list is not yet
 established. The first check found that three of the four tests fell short of the
@@ -216,7 +221,13 @@ no-information value of 0.04, about 159 standard deviations of its own null. The
 instrument was never the problem. No review pass had been asked whether the named
 quantity was recoverable at all.
 
-**The test.** Two parts, and the first one is the one that catches this failure.
+**The test.** Two parts. **Part two is the one that catches this failure; part
+one is a prompt to look.** Part one asks for a written sentence and checks that
+it exists, which forces the question to be faced but settles nothing on its own.
+Part two runs the probe twice and compares the two results, and its middle limb —
+the second run clears the bar and the first does not — is what actually
+distinguishes an unrecoverable target from a working one. Part two has never been
+run; see the paragraph under it.
 
 *Part one, before anything is registered:* the method document states, in one
 sentence and in a fixed form of words, the route by which the quantity reaches
@@ -315,6 +326,36 @@ what this entry is about, and the pattern that reveals one — the first run emp
 while the second clears — was not named as a failure anywhere in the entry. It is
 now the second bullet above.
 
+**What that middle limb looks like in the record, with the test itself still
+unrun.** The two runs part two asks for were never made. But a diagnostic filed
+with the position sweep of 2026-09-19 read both quantities at the same position,
+through the same instrument, each against its own fifty-draw permutation null,
+and the sweep's bar throughout is three standard deviations of that null. Those
+two rows are in its findings file, and this is them:
+
+```
+$ grep -nE "own_slot.*what the stack asks for|marker_token.*the input token itself" experiments/06-mvm-0a-constructed-self-index/position-sweep-findings.md
+120:| `own_slot` — what the stack asks for | 0.293 (+1.60) | 0.273 (+0.88) | 0.243 (−0.24) | 0.283 (+1.33) | 0.275 (+0.91) |
+122:| `marker_token` — the input token itself | **0.550 (+51.6)** | 0.513 (+43.1) | 0.510 (+41.3) | 0.498 (+41.9) | 0.490 (+40.8) |
+```
+
+First number column is the third layer, and each cell is the accuracy with its
+margin in standard deviations of that cell's own null. The pre-stated quantity
+tops out at 0.293, about 1.60 standard deviations, and clears three nowhere. The
+quantity the input guarantees reaches 0.550, about 51.6. Second run clears, first
+does not: that is the middle limb, in numbers that already exist.
+
+**This illustrates the limb; it does not execute the test.** These are two rows
+lifted from a record, not the two runs part two asks for. They come from the very
+history this entry was written from, so the limb has still never been seen to
+fire on a design nobody had already diagnosed. And the findings file labels the
+diagnostic these rows sit in as **not pre-stated** — it was written after the
+sweep had already failed, which the file says makes it worth less than a
+measurement designed in advance. Part two stays unrun, because running it means
+running a whole probe pipeline twice against model checkpoints and nobody has
+authorised that compute. The paragraph near the top of this file that says so
+still stands.
+
 ---
 
 ## 3. A cell that is empty by construction
@@ -346,10 +387,11 @@ the list of things the design proposes to freeze.
 
 *Part one: count what the generator actually puts in each pre-stated cell, at
 rehearsal scale.* This is the part that generalises to a design other than the A3
-grammar, and it is the part that catches an empty cell. Three lines belong to the
-design being checked and are meant to be replaced: the module that is imported,
-the list of pre-stated cells, and the two small functions that say what a trial
-is and which cell it lands in. Everything else stands.
+grammar, and it is the part that catches an empty cell. Four things in the block
+below belong to the design being checked and are meant to be replaced: the module
+that is imported, the list of pre-stated cells, and the two small functions that
+say what a trial is and which cell it lands in. Between them they are most of the
+block; everything else stands.
 
 ```
 $ python3 -c "
