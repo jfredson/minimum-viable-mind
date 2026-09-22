@@ -369,3 +369,39 @@ group and kills the test script. It surfaced as one case simply hanging.
 launcher that created nothing, and the three module self-tests passing
 unchanged. No machine was rented; no vendor was contacted; nothing was
 spent.
+
+---
+
+## 10. Two recommendations about the nine runs
+
+*Added after checking what the nine runs actually are. The December-result
+roadmap (`docs/december-result-roadmap-2026-09-20.md`, week 43) schedules
+three arms times three seeds at 30M, about $110, and they belong to a
+**successor design that has not been registered yet** — proposal v1 goes to
+its review gate in week 40.*
+
+**1. The provenance question in §8 mostly dissolves.** Those nine runs are
+not A3 runs, so they will not be produced by `launch_a3.sh` whatever
+happens here. The clean move is to fold this fix into the successor's
+registration: name a launcher that already waits for the receipt, and make
+"the trainer does not delete its own machine" part of the registered
+recipe rather than an operations afterthought. Then the nine runs are
+produced by registered text that has the fix, and nothing is derived.
+What is left of §8's question is narrower and less urgent: whether any
+*further A3* run may use the derived launcher.
+
+**2. There is already a scheduled, already-budgeted place to test this
+against the real vendor.** Week 40's measurement rehearsal is tiny models
+at about $0 to $10. A toy run that finishes in minutes exercises the whole
+shutdown path for real — the credential on the machine, the agent starting,
+the finished-marker, the receipt, the deletion — for a few cents, weeks
+before $110 of real runs depend on it. Everything in §7 is a self-test
+against fakes; it proves the ordering logic and it cannot prove that
+`runpodctl` on the vendor's image behaves as the launcher's comments say it
+does. That is the one thing still worth buying, and it is already paid for.
+
+**What to look for when it does run for real.** Three lines, in this order:
+`receipt written on the machine` in the laptop's log, `receipt found` in the
+machine's own log, and a deletion within seconds of it. If instead the
+machine's log says `grace ran out`, the receipt path did not work and the
+run should be treated as unattended-unsafe until it is understood.
