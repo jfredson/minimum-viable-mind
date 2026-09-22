@@ -768,3 +768,220 @@ a three-word fix because the protocol text it would cite has reached main.
 not a reading of the fix session's reasoning. I accepted nothing on argument alone. The
 one item where a measurement was available and disagreed with the claim is reported as
 disagreeing, which is the case the rule was written for.
+
+---
+
+# Addendum, added 2026-09-21 after the original filing
+
+*The two changes this verification asked for were made by another session on the
+branch `worktree-agent-a53dc49a926581fe8` (work commit `628686f`). The closure rule
+leaves their check to a session that did not write them, which is again this one. I
+was also asked to look at a third sentence that session noticed and deliberately left
+alone. Everything above this line is as originally filed and is unedited.*
+
+*One thing about the base is worth recording, because it is the first time it is
+true. That branch's setup commit `25f11c7` merged the closure-text fixes onto the
+current main tip, so the amended protocol from pull request 13 and the closure fixes
+now sit on one branch together. I confirmed that the merge-base check reports both the
+protocol amendment commit (`c63d960`) and the closure fixes commit (`41d44ea`) as
+ancestors of the branch I am checking. The rule and the text it governs are finally in
+one place.*
+
+## A1. The trim removed exactly the clause and nothing adjacent
+
+**Check run.** The complete difference between the version I verified above and the
+version after the trim.
+
+    diff (the version verified above) (the trimmed version)
+
+**Output.**
+
+    67,70c67
+    < neither — `red-team-a4.md`, its seventeenth finding, labelled there F17), and
+    < the subspace ablation
+    < they were written to guard never ran, because no subspace was ever
+    < localized.
+    ---
+    > neither — `red-team-a4.md`, its seventeenth finding, labelled there F17).
+
+    214,215c211,213
+    < before it is registered — applies to it even though it does not apply to
+    < this closure.
+    ---
+    > before it is registered (`docs/outside-review-protocol.md`, its section on
+    > the measurement rehearsal required before any Gate A) — applies to it even
+    > though it does not apply to this closure.
+
+Two changed passages in the whole file and nothing else — four lines added, six
+removed, matching what was reported.
+
+**Does the output match the claim?** Yes. The removal is exactly the clause I named
+and stops at exactly the point I recommended. The sentence now reads:
+
+> That bin did not fire, and it was also never tested: those gates have no code
+> written for this design and were never applied to any lesion on any seed (the
+> independent review of 2026-09-19 searched the source and the three endpoint records
+> and found neither — `red-team-a4.md`, its seventeenth finding, labelled there F17).
+
+Nothing adjacent moved. The preceding clauses — the plain gloss of the bin, "that bin
+did not fire, and it was also never tested", the no-code clause, the never-applied
+clause and the citation — are all intact and unaltered. The paragraph that follows
+begins exactly where it did.
+
+This is now the most conservative true statement the record supports: it says what is
+known, cites where that is recorded, and claims nothing about why. A side benefit is
+that the awkward mid-clause line wrap I noted in passing is gone with the clause.
+
+**Verdict: CLOSED, checked.**
+
+## A2. The rehearsal requirement now cites a section that exists on main
+
+**Check run.** Search the protocol on the main line for the section heading the
+citation names.
+
+**Output.**
+
+    98:## The measurement rehearsal, required before any Gate A
+
+**Does the output match the claim?** Yes. The citation reads "`docs/outside-review-protocol.md`,
+its section on the measurement rehearsal required before any Gate A", and the section
+heading on main is "The measurement rehearsal, required before any Gate A" — the same
+words. A checker following the citation lands on the section that carries the
+requirement the sentence asserts, including its six named checks.
+
+The sentence it sits in is otherwise unchanged, and the citation is placed inside the
+dashes so the sentence still reads straight through.
+
+This closes the last item I left open above. It is worth saying plainly why it could
+be closed now and not before: the requirement was ruled on 2026-09-20 but its protocol
+text did not exist until pull request 13 merged. The sentence was asserting a real
+rule with nothing to point at. Now it points at it.
+
+**Verdict: CLOSED, checked.**
+
+## A3. The other sentence, on whether it makes the same move
+
+The sentence flagged, at line 154 before the trim and line 151 after it (the trim
+removed three lines above it; I confirmed the text at both line numbers is identical):
+
+> Because the two instruments never converged on any seed, no L1 subspace was ever
+> localized, and so the registered uncarvable signature H_diffuse was never reachable
+> either: it requires a subspace that beats the matched controls, and none was carved
+> to compare.
+
+**The question.** Does this supply an absence-of-occasion reason the record argues
+against, as the trimmed clause did?
+
+**Check run.** Every place the registered signature is defined, and every ruling on it
+— a search for the signature's name across the amendment, the pre-registration and the
+red team ledger, then the registered signature itself, the convergence requirement it
+depends on, and the ledger row that ruled on it.
+
+**Output.**
+
+    amendment-a3.md, line 227:
+    - **H_diffuse (present but uncarvable).** L0 collapses T_act (ownership is
+      load-bearing) but no L1 subspace at k ≤ 16 beats the L2 controls, and
+      probe-patching convergence fails. ...
+
+    amendment-a3.md, line 206:
+    4. **Convergence requirement**, inherited: L1 counts as localized only when probe
+       and patching agree on a confound-controlled design; otherwise the outcome is
+       *not testable (localization)*, as Experiment 1 registered.
+
+    red_team_ledger.md, line 758:
+    | RT-166 | No registered bin or signature is named. The closest fit, H_diffuse, is
+    not addressed: its first and third conjuncts happened and its second did not,
+    because no subspace was ever localized to compare against the matched controls.
+    ... | worth-noting | ACCEPT (drafted) | Why a registered signature did not fire is
+    the kind of thing a closure block should say, especially when the signature and
+    the outcome are one missing run apart. ... Done in version 3. |
+
+**Answer: no, it is not the same defect, and I would not cut it.** Three reasons,
+each from the output above.
+
+**Its premise is the registration's own rule, not the text's own inference.** The
+trimmed clause asserted, on its own authority, what the gates were "written to guard".
+This sentence's premise — that without convergence nothing counts as localized — is
+the registered convergence requirement at section 3.2 item 4, word for word: "L1
+counts as localized only when probe and patching agree ...; otherwise the outcome is
+*not testable (localization)*". Applying a registered definition is not the same act
+as inventing a reason.
+
+**Its reason is the ruled position, not one the record argues against.** This is the
+decisive difference. The trimmed clause gave a reason its cited source contradicted.
+This sentence gives the reason the ledger's finding RT-166 gives, accepted on
+2026-09-21, in the same terms: "its second did not, because no subspace was ever
+localized to compare against the matched controls". The closure text is carrying out
+a ruling, not working around one.
+
+**It points the other way.** The trimmed clause used an absence to say nothing was
+missed — it excused a gap. This sentence uses an absence to say a registered outcome
+was not even available to the experiment. It widens the admission of failure instead
+of narrowing it. A sentence that costs the closure something is not the failure mode
+the trimmed clause was an instance of.
+
+### One separate and smaller problem in that sentence, which is a wording fault
+
+Having said it is not the same defect, there is something else wrong with it, and
+since the text is about to be registered it should be said.
+
+The sentence describes the signature as one that "requires a subspace that beats the
+matched controls". The registered second conjunct reads "**no** L1 subspace at k ≤ 16
+beats the L2 controls". Read literally, the closure text states the inverse of the
+registered condition: the signature fires when nothing beats the controls, not when
+something does.
+
+The ruling's own wording avoids this. RT-166 says "no subspace was ever localized **to
+compare against** the matched controls" — the comparison sense, which is right: what
+the second conjunct needs is a carved subspace and a comparison, and neither existed.
+The closure text has compressed "a subspace to compare against the matched controls"
+into "a subspace that beats the matched controls", and in compressing it has inverted
+the test.
+
+The clause "and none was carved to compare" pulls the reader back toward the intended
+sense, so a charitable reader gets there. But a hostile reader doing exactly what the
+closure rule is designed to make possible — open the registered signature at section
+3.5 and check — finds a condition stated in the negative where the closure text states
+it in the positive, and cannot tell whether the closure has misread its own
+registration. That is a small fault of the same family as the item number: not a false
+conclusion, but a pointer that does not survive being followed.
+
+**The fix is a few words**, and it is the ruling's own: "it requires a carved subspace
+to compare against the matched controls, and none was carved". No substance changes.
+The conclusion — that the signature was not reachable — is unaffected and remains
+correct.
+
+**Verdict: not the same defect, and sound in substance. One wording fault recorded,
+at worth-noting severity.** I record it rather than closing it because I did not write
+the text and cannot fix it, and because a sentence that inverts a registered condition
+should be looked at by whoever holds the pen before the commit, not after.
+
+## Is the closure text fit for a registration commit now?
+
+**Yes.** The clause I asked to be cut is cut, exactly and with nothing adjacent
+disturbed. The last uncited assertion now cites a section that exists on main under
+the heading the citation names. Every one of the ten items checked above stands
+closed, and the two follow-up changes introduced nothing new: the complete difference
+from the version I verified is two passages, both of which I have just checked.
+
+**What remains is one wording fault and one thing that is not about this text.**
+
+The wording fault is the inverted conjunct in item A3. It does not make the closure
+say anything false and it does not block a registration commit in my judgement, but it
+is three words from being right and the right three words are already written in the
+ruling it implements. If the pen is still in someone's hand, this is the moment.
+
+The thing that is not about this text: the key count behind the validity-gate finding
+still does not reproduce, and the finding carrying it is labelled MEASURED. That error
+never entered the closure text and is now further away from it than ever, since the
+clause that leaned on the finding is gone. But the finding itself is a committed record
+that a future session may cite, and it says something measurable that measurement does
+not support. Correcting it belongs to whoever owns `red-team-a4.md`, not to this
+closure.
+
+One last note on the placeholder, which is not a defect but will become one. The
+heading still reads "[date of the Gate A pass]" and the text under it says so plainly.
+That is correct for a draft and cannot survive the commit that appends the block, which
+is the same point the ledger's finding RT-166 makes at its end. The commit that files
+this block is the one that fills it.
