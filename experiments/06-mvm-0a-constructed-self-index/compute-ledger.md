@@ -205,7 +205,7 @@ dollars it cost to learn.**
   — and it would put the one clean run at risk to buy nothing.
 - **Balance and caps.** $79.7159 → **$77.8119**, measured rather than
   inferred. A3 cumulative ~$44.2 → **~$46.1 of $100**, leaving ~$53.9;
-  wider envelope ~$217.6 of $400. Both runs remain $0 from here.
+  wider envelope ~$217.6 of $400. Both runs remain $0 from here. **[Corrected 2026-09-21, on the merge of this branch into main: the three figures in this bullet were computed off the pre-RT-147 lineage (~$215.7), which the 2026-09-21 money-citation finding had already superseded on main. Against the corrected ledger (~$225.7 after the checkpoint recovery), A3 cumulative is ~$44.3 -> ~$46.2 of $100, leaving ~$53.8, and the programme running total is ~$227.6 / $400, headroom ~$172.40. The measured balance figures are untouched, and nothing above is altered.]**
 
 **ANNOTATION 2026-09-19 — storage volume deleted, and the sleep setting
 reverted. Nothing in the table above is edited; this records two ops
