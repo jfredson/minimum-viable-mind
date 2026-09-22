@@ -174,9 +174,18 @@ point past which it is declared failed.
 
 ## 6. Caps and cuts
 
-**Spend.** The program envelope is $400 (raised 2026-08-16; $215.70 spent per data/project.toml), with about $184
-unspent as of 2026-09-20; A3's own $100 stop has about $56 left and A3 closes,
-so its remainder returns to the program pool. Proposed cap for the successor:
+**Spend.** The program envelope is $400 (raised 2026-08-16). About **$225.70 is
+spent and about $174.30 is left**, from the compute ledger
+(`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`), which is the
+system of record for money. This paragraph carried $215.70 and about $184 until
+item 16 of `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`
+ordered the stale figures corrected to the ledger; the older number predates the
+control-learnability pilot (about $9.90) and the checkpoint recovery ($0.067).
+Amendment A3's own $100 stop has about $55.70 left on it and A3 closes, which
+frees that remainder from being reserved for A3 — but it does **not** add to
+what the program can spend, because A3's spending is already inside the $225.70
+and so its unspent balance is already inside the $174.30. Counting it again
+would be counting the same money twice. Proposed cap for the successor:
 **$130**, covering rehearsal (up to $10), development runs (up to $10), nine
 registered 30M runs (about $110) and one re-run (about $12) with the balance as
 the anomaly margin. Anything above $130 is a new ruling. If the 3.5× billing
