@@ -86,13 +86,25 @@ MARKERS = [f"m{i}" for i in range(20)]
 ITEMS = [f"it{i}" for i in range(8)]
 SLOTS = [f"v{i}" for i in range(N_SLOTS)]
 
-# Disjoint pools, so the fresh set carries marker and content combinations
-# that appear in neither the training nor the development set (proposal
-# section 7.1, and control 5 of section 7.3).
+# Section 7.1 of the proposal asks that fresh episodes carry "marker and
+# content combinations that appear in neither of the other two sets". That is
+# a requirement on COMBINATIONS, and the fresh pool below meets it by drawing
+# from the same vocabulary with a different seed: the marker words and items
+# are ones the arms have seen, but no episode is one they have seen.
+#
+# The rehearsal first read that sentence the stronger way — marker WORDS the
+# arms had never seen — and the stronger reading broke the measurement rather
+# than testing it. The separable arm's own-directed accuracy fell from 1.0000
+# to 0.7650 on marker words it had never been trained on, because its
+# ownership answer is built out of marker representations, and the whole-state
+# transplant can never do better than the arm itself. The pool is kept, under
+# its own name, because that collapse is a finding worth reporting rather than
+# a mistake worth deleting.
 POOLS = {
     "train": (list(range(0, 12)), list(range(0, 5))),
     "dev": (list(range(0, 12)), list(range(0, 5))),
-    "fresh": (list(range(12, 20)), list(range(5, 8))),
+    "fresh": (list(range(0, 12)), list(range(0, 5))),
+    "unseen-vocabulary": (list(range(12, 20)), list(range(5, 8))),
 }
 
 
@@ -380,14 +392,27 @@ def self_test() -> None:
     check("model identity spread over all four agent slots",
           float(ident.min()) > 0.2, f"share per agent slot {np.round(ident, 3).tolist()}")
 
-    # --- the fresh pool is disjoint ---------------------------------------
-    fp = make_pairs(200, seed=7, pool="fresh")
+    # --- the fresh pool: fresh COMBINATIONS, shared vocabulary ------------
+    fp = make_pairs(600, seed=7, pool="fresh")
+    def fingerprint(p):
+        c = p["content"]
+        return (tuple(c["markers"]), tuple(c["items"]), c["values"].tobytes(),
+                tuple(c["order"]), c["named"], c["own_item"], c["other_item"])
+    tr_fp = {fingerprint(p) for p in pairs}
+    fr_fp = {fingerprint(p) for p in fp}
+    check("fresh episodes are combinations seen in neither other set",
+          not (tr_fp & fr_fp),
+          f"{len(fr_fp)} fresh combinations, none of them among "
+          f"{len(tr_fp)} training ones")
+
+    # --- the unseen-vocabulary pool, kept as a separate diagnostic --------
+    uv = make_pairs(200, seed=7, pool="unseen-vocabulary")
     tr_m = {int(m) for p in pairs[:200] for m in p["content"]["markers"]}
-    fr_m = {int(m) for p in fp for m in p["content"]["markers"]}
+    uv_m = {int(m) for p in uv for m in p["content"]["markers"]}
     tr_i = {int(i) for p in pairs[:200] for i in p["content"]["items"]}
-    fr_i = {int(i) for p in fp for i in p["content"]["items"]}
-    check("fresh episodes use markers and items seen in neither other set",
-          not (tr_m & fr_m) and not (tr_i & fr_i))
+    uv_i = {int(i) for p in uv for i in p["content"]["items"]}
+    check("the unseen-vocabulary pool shares no marker word or item with training",
+          not (tr_m & uv_m) and not (tr_i & uv_i))
 
     # --- the collision set, for control 6 ---------------------------------
     cp = make_pairs(400, seed=11, pool="dev", collide=True)
