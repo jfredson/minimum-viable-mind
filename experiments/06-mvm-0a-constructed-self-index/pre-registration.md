@@ -258,30 +258,58 @@ belonged to a contrast MVM-0a cannot run (§Scope).*
 > that says verified, measured, calibrated or attacked cites the committed
 > record by file name, and "certified" is a word of that family.
 >
-> **The authority for this note, and what that authority does not cover.** The
-> question was put to John on 2026-09-21, in the session that ordered this note:
-> may registered text be given a dated note supplying a citation the closure rule
-> asks for, or does adding one need a registered amendment? He chose the dated
-> note, on the condition he stated — that the claim does not change. He was told
-> the case against it before he chose, and it is recorded here rather than left
-> out: the line between naming a record and describing one is drawn by whoever is
-> writing the note, so a permission that turns on "the claim does not change" is
-> a judgement every writer would then make about their own text.
+> **The authority for this note, and what that authority does not cover.** On
+> 2026-09-21, in the session that ordered this note, John did not say or write a
+> sentence that could be quoted. He was shown a question with three options under
+> it, each option carrying the consequence of choosing it, and he selected one.
+> The wording of the question and of all three options was that session's, not
+> his; what is his is the selection. The house form for recording a ruling in
+> this programme quotes the words John used — as at item 22 of the ruling on
+> review verification and staged spending
+> (`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, on the
+> main line). This decision cannot take that form, because there were no words of
+> his to quote. What stands in their place is the question he was shown and the
+> option he picked out of it, and both are given here in full. The question, word
+> for word as it was put to him:
+>
+> > Registered text states a measured value without naming the record that holds
+> > it. The value is right and the record is committed — only the pointer is
+> > missing. How should it be fixed?
+>
+> The option he selected, word for word, its short label and the description
+> under it:
+>
+> > **Dated note on the registered text** — Add the missing pointer as a dated
+> > annotation. Claim unchanged, nothing rewritten. Risk: 'annotation that
+> > changes no claim' becomes a judgement each writer makes about their own text
+> > — the shape of every drift this program has recorded.
+>
+> The risk in that last sentence is kept here unedited, and not paraphrased,
+> because it was on the page in front of him: he took this option having been
+> shown the case against it, which makes the choice a better informed one than a
+> bare yes, and a reader should be able to see exactly what he was shown.
+>
+> What he turned down is part of what he decided, so the two options he did not
+> take are set down here as well, also word for word:
+>
+> > **Registered amendment** — Treat any change to registered text as an
+> > amendment, even one adding a pointer. Strictest, keeps registered text
+> > genuinely fixed. Cost: amendments become cheap and routine, which is the one
+> > thing they must not be.
+>
+> > **Leave it, record the defect** — Change nothing in the registered text. File
+> > the defect with the correct pointer so any reader can find the record.
+> > Registered text stays exactly as registered.
 >
 > **What he authorised is the act — a dated note naming a committed record, where
 > no registered claim changes. It does not authorise restating a registered label
 > in other words, describing registered content, or annotating registered text
 > for any other purpose, and it does not settle any particular wording.** Not one
 > word of this note is John's drafting; the wording is this session's, and his to
-> overturn. Two limits on the record of the ruling itself, stated plainly because
-> they weaken it. His exact words are not carried anywhere in this repository, so
-> this note reports his ruling instead of quoting it — a weaker form than the
-> house one, which is item 22 of the ruling on review verification and staged
-> spending (`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`,
-> on the main line), where the words he used are quoted. And the ruling is not
-> yet carried in any filed ruling under `docs/rulings/`: what is filed there is
-> about annotating rulings, not registered text. Until it is filed, this
-> paragraph is the whole record of it.
+> overturn. One limit on the record of the ruling itself, stated plainly because
+> it weakens it: the ruling is not yet carried in any filed ruling under
+> `docs/rulings/`, and what is filed there is about annotating rulings, not
+> registered text. Until it is filed, this paragraph is the whole record of it.
 >
 > This note is an addition to the file, not to the registration; the registration
 > remains exactly the text above it.
