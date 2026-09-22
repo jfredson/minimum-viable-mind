@@ -76,7 +76,8 @@ Review fires, with a written record in the repo, at three points.
 **Gate A — registration.** Every registration, amendment, threshold lock, or
 pre-statement that will be read as binding, before the registration commit.
 Both tiers below run. The registration commit waits on the closure rule and on
-the filed failure-mode pass. No Gate A pass opens until the measurement
+the filed failure-mode pass. Every Gate A also carries the tier 1 reviewer's own
+measured check, whether or not anything fatal was found. No Gate A pass opens until the measurement
 rehearsal for that target is committed, and reading the rehearsal is the first
 thing the tier 1 reviewer does.
 
@@ -294,9 +295,12 @@ what it did and did not open. Every finding is labelled MEASURED (a check was
 run and the output is reported) or ARGUED (reasoning a reader can dispute),
 the convention the existing passes already use. This tier can run code and
 compute bounds; it is the only one that can produce MEASURED findings. At
-Gate A it also owns the verification the closure rule requires below: the
-decisive check on a fatal finding's fix is the reviewer's to run, not the fix
-author's to assert.
+Gate A it also owns the verification the closure rule requires below, and it
+owns it at every Gate A, whether or not a fatal finding exists. Where fatal
+findings exist, that verification covers their closures: the decisive check on a
+fatal finding's fix is the reviewer's to run, not the fix author's to assert.
+Where none exists, the verification is still owed, as at least one decisive
+measured check on the text being registered.
 
 **Tier 2, the outside pass.** At least two models from labs other than
 Anthropic, run by John through their apps, exactly as the Belt Equation's
@@ -351,6 +355,17 @@ Before a registration commit at Gate A:
   run, the output it gave, and a plain sentence saying whether that output
   matches what the closure claims. If the reviewer cannot run the check, the
   reason goes on the record and the finding stays open.
+- **A Gate A with nothing fatal in it still owes that check.** The
+  reviewer-owned verification runs at every Gate A, whether or not a fatal
+  finding exists. Where there are fatal findings, it covers their closures, as
+  the two bullets above set out. Where there are none, it is still owed: the
+  tier 1 reviewer runs at least one decisive measured check on the text being
+  registered — the single measurement that would come out wrong if the text
+  were wrong — and files it the same way, with the command, the output it
+  gave, and a plain sentence saying whether that output matches what the text
+  claims. A pass that found nothing fatal is still a pass that has to have run
+  something. If the reviewer cannot run any such check, the reason goes on the
+  record and the gate does not open on the strength of reading alone.
 - **The ledger says which of the two happened.** A fatal item's ruling line
   states either that the argument was accepted or that the claim was checked,
   and, when it was checked, names the reviewer and the check. Agreement and
@@ -591,3 +606,29 @@ The approval authorises these four changes. The wording is the drafting session'
 and is John's to overturn. This text had not been checked by another session when
 it was committed; under the pairing rule it is owed one, and the session that
 writes that check is not this one.
+
+**2026-09-21 (later the same day again) — reviewer-owned verification widened to
+every Gate A, a ruling that had never reached this file.** Item 3 of the
+review-verification and staged-spending ruling
+(`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`) widened
+reviewer-owned verification to run at every Gate A, "whether or not a fatal
+finding exists", extending item 6 of the December-result roadmap ruling of
+2026-09-20 (`docs/rulings/2026-09-20-december-result-roadmap.md`), which named
+fatal closures only. That ruling file records the widening as landed through pull
+request 13. It did not land. The pull request's description announces the
+widening in those words; its change to this file carries only the narrow wording,
+and until now both reviewer-ownership sentences here were scoped to the closure of
+a fatal finding. So for as long as the ruling has existed, every session reading
+this file has applied the narrow rule while the ruling file said the wide one was
+in force.
+
+The widening is now in three places: the Gate A entry, the tier 1 paragraph, and a
+new bullet in the closure rule. A reviewer-owned verification runs at every Gate A.
+Where fatal findings exist it covers their closures. Where none exists it is still
+owed, as at least one decisive measured check with its command and its output.
+
+The ruling is John's, given as "Agreed on all" to a recommendation the session put
+to him, recorded in the ruling file as mixed authorship on that basis. The wording
+here is this session's. The ruling file itself is not edited: it is a record of
+what was ruled, and the error in it is a claim about where the text landed, which
+this entry answers. No compute was launched and no money was spent.
