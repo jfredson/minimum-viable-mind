@@ -139,6 +139,31 @@ mooted by the ceiling measurement the same evening.*
 > calibration buys: the score is standardized against its own null, so
 > the threshold lands near 2 on any substrate, and §5.5 oversold it.
 
+> **ANNOTATION, 2026-09-21. Nothing above is edited. This note only says where
+> the amendment draft named above now is: it was withdrawn, and it was never on
+> the main line.**
+>
+> The annotation above names a draft amendment at
+> `experiments/06-mvm-0a-constructed-self-index/amendment-a4.md` and calls it
+> "held uncommitted". It was never committed to the main line, and a reader
+> looking for it there will not find it. It exists in exactly one commit
+> anywhere in this repository: the commit titled "WITHDRAWN: Amendment A4 draft
+> and its scoring script, parked, never registered" (`a6576d3`, 2026-09-19,
+> 13:05 Pacific), which is the only commit on the parking branch
+> `withdrawn/amendment-a4-2026-09-19`, branched from the main line at the commit
+> the ruling above cites (`770c142`). That commit holds both the draft and its
+> scoring programme, `experiments/06-mvm-0a-constructed-self-index/src/separation_a4.py`.
+>
+> The parking is deliberate and is not a draft awaiting repair. John ruled
+> against Amendment A4 on 2026-09-19 after the independent red-team pass
+> (`experiments/06-mvm-0a-constructed-self-index/red-team-a4.md`) returned five
+> fatal findings, and the commit message says in as many words that no second
+> version was to be written. The ruling at the top of this memo records that.
+>
+> Added 2026-09-21 by a later session, not by anyone who wrote or ruled on this
+> memo. It supplies a pointer and changes no claim; both annotations above stand
+> exactly as written.
+
 ---
 
 ## The question, in one sentence
