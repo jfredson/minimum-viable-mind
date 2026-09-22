@@ -2,10 +2,122 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
-## WHERE THINGS STAND 2026-09-20 — the control battery converges on the name-blind solver even with its own loss term; the fitted read finds nothing on the register index; the linear-read line is parked as *not testable (localization)*; step 4 narrows to option D or closing A3
+## WHERE THINGS STAND 2026-09-21 — the two follow-up localization reads are in and ruled: the exclusion confound is excluded, one cell crossed the bar and is not carried as a clearance, nothing is localized; the A3 closure text is next
 
 *This section is the current state. Everything below it is the older
 record, newest first, and is left exactly as written.*
+
+Both reads went through Gate B of `docs/outside-review-protocol.md`
+(`reviews/2026-09-21-followup-runs-claude-worktree.md`, ledger RT-120 to
+RT-142). John ruled on all twenty-three findings on 2026-09-21, all as
+drafted. Runs: PR 11 (`other-index-position-sweep-findings.md`,
+`standardised-refit-findings.md`, method committed before output at
+`7745d4a`).
+
+**Two follow-up reads, 2026-09-21 (both local, no money spent).** The first
+pointed the existing read at a different question, which of the four marker
+words belongs to the other agent who revises, and found it nowhere except
+where that agent's own name is the word being read. This settles the
+objection raised on 2026-09-20 (RT-82), that the model's own index looked
+positive at the other agent's revision value only because knowing who is
+speaking rules out one of the four possible answers. For that to explain
+what was seen, the other agent's rank would have to be readable at that
+token at about 0.32 to 0.35; it reads 0.258 to 0.263, and the same read
+detects an effect of exactly the required size at a different token in the
+same run. The objection is excluded. That is the solid result of the pair,
+and it is the first time the registered matched control L2(a) has run.
+
+The second read put all 448 directions of the state on an equal footing
+before fitting, which the earlier read did not, to test whether the earlier
+read's penalty had been hiding a faint signal (RT-76). It had not: the
+spread of results is unchanged to two decimal places and the pre-stated
+outcome is again *found nowhere*. Every fit converged, where the earlier
+read's third checkpoint mostly ran out of steps, which is a real improvement
+in the instrument. One cell of 135 crossed the family-adjusted bar: third
+checkpoint, the other agent's revision value, layer 3, at 3.43 against a bar
+of 3.38. **It is not carried forward as a clearance.** It clears by two
+correct predictions out of 4,000; a one-standard-error change in the spread
+it is measured against, which is 5% of that spread and comes from the same
+200 draws, puts it below the bar; the same states have now been swept twice
+for this target, and against the 270 tests actually run the bar is 3.56; and
+the same run's negative control, at a token where the answer cannot be
+known, also returned zero of 200 draws beating it. The reading "three
+independent lines point at that position" is withdrawn (RT-135): two of the
+three are one sample read with two estimators, and the third is a null.
+What may be said is: not explained away, and sub-bar, measured twice.
+
+So: one proposed explanation excluded, and a sub-bar pattern at one position
+that is now measured twice and still sub-bar. Nothing is localized. Under
+the registration nothing counts as localized or absent until causal patching
+has also run, and it has not; the registered term for where this line stands
+is still **not testable (localization)**. Both reads measured the register
+index, the rank of the marker word, and not the model's own marker word,
+which is the registered target and has still never been read at these
+positions (deferred to resumption per the December-result roadmap).
+
+**No further work on that position is authorised.** The rerun the findings
+called "the cheapest decisive move" would need about 8,100 null draws per
+test to certify by counting, about 150 to 300 processor-hours, not 11
+(RT-140). The blind-arm reconciliation: today's ruling 3 said the registered
+blind-localization arm runs before any further work on this position; the
+2026-09-20 December-result ruling (Astra A10) found the 2026-09-16 blind run
+discharged the arm and scheduled no re-run. Both hold together, since no
+further work on the position is authorised, and the operative order is the
+later ruling's: the A3 closure text goes to Gate A now, without a blind-arm
+re-run and without waiting for patching.
+
+### Next, ruled 2026-09-21
+
+1. The A3 closure text (`docs/a3-closure-text-draft-2026-09-20.md`) to Gate A,
+   both tiers with the closure rule. Its preconditions are met: the pilot's
+   log and trajectory are committed (PR 10), the two $0 checks are closed
+   clean (PR 10), the two authorised reads are in and ruled (PR 11), and
+   the blind-arm status is reconciled as above.
+2. Successor proposal v1 and the protocol amendment text, per the
+   December-result roadmap (unchanged).
+
+## WHERE THINGS STAND 2026-09-20 (evening) — the December-result roadmap is adopted: the Stage 2 degree metric is the successor, registered in 2026, with a result by 2026-12-21 or a named schedule failure
+
+John ruled "Agreed on all" on the seven items of
+`docs/december-result-roadmap-2026-09-20.md` (ruling:
+`docs/rulings/2026-09-20-december-result-roadmap.md`). What it fixes:
+
+- **The question for 2026**: can a decomposability metric, validated on
+  systems whose degree is known by construction, read the degree of a freely
+  trained 30-million-parameter transformer with a load-bearing ownership
+  pointer, and what does it read. This is Stage 2's deliverable, brought
+  forward: the successor experiment (Astra's matched-role causal-interchange
+  design, extended to three arms: a tracker built to be separable, a system
+  built to be entangled, and the free model) is registered in 2026, not after
+  hibernation. Item 5 of the center-as-degree ruling is amended accordingly.
+- **Four registered outcomes**: R1 metric validated and degree read; R2 the
+  metric does not separate the constructed arms; R3 an arm fails the
+  learn-both eligibility gate; R4 a kill date missed, which is a schedule
+  failure and is recorded as one. R1 to R3 are all results.
+- **Dates**: successor proposal v1 this week; measurement rehearsal week of
+  2026-09-28 (before any Gate A, now protocol); registration commit target
+  2026-10-11, kill date 2026-10-18; registered runs launched week of
+  2026-10-19, kill date 2026-11-01; validation Gate B week of 2026-11-02;
+  closure Gate A week of 2026-11-30; wrap-up 2026-12-21.
+- **Spend**: successor cap $130 inside the $400 envelope, with a seed fallback
+  if the RunPod billing anomaly recurs. New standing rule: when a step needs
+  more than the cap, the recommendation proposes the increase with the number;
+  caps are gates for a ruling, never reasons to shrink a step silently.
+- **Folded and deferred**: causal patching is built once, for the successor's
+  grammar, so the A3 closure text goes to Gate A after the two authorised $0
+  runs without waiting for it (step 4 ruling item 4 amended). Astra A10 ruled:
+  the 2026-09-16 blind run discharged the arm; no re-run. Deferred to
+  resumption: the ~70-hour marker-word read, option D, the frontier
+  deliberative-gap pilot, Stage 3, the construction project.
+- **Protocol**: the three amendments from the program review are adopted
+  (rehearsal before Gate A, reviewer-owned verification, "unlikely" struck
+  from the brief); the protocol text edit is owed before the successor's Gate A.
+
+Owed next: successor proposal v1 (Claude Code); A3 closure tier 1 review
+packet (Cowork); protocol amendment text; `data/project.toml` corrected
+(wrap-up start was 2026-12-13 in the data file, ruled 2026-12-21).
+
+## 2026-09-20 — the control battery converges on the name-blind solver even with its own loss term; the fitted read finds nothing on the register index; the linear-read line is parked as *not testable (localization)*; step 4 narrows to option D or closing A3
 
 Both entries below went through Gate B of `docs/outside-review-protocol.md`
 before entering here. Reviews: `reviews/2026-09-20-control-learnability-claude-worktree.md`
