@@ -560,3 +560,79 @@ the protocol names for a rehearsal whose experiment directory does not exist
 yet. The code lives under `experiments/rehearsal-successor-measure/`, which
 is a rehearsal directory and not an experiment: nothing in it is registered
 and nothing in it may be cited as a result about the scientific question.
+
+---
+
+## 11. Appendix: what actually happened when it was built
+
+*Added after the rehearsal ran. **Everything above is unchanged**, including
+the cells that turned out to be wrong. This section records where building it
+differed from planning it, which is the only honest way to keep a method file
+that was committed first. The findings are at
+`docs/2026-09-21-successor-measure-rehearsal.md`; the numbers live there and
+are not repeated here.*
+
+**The deliberately broken arm could not be built, and finding out why was
+worth more than building it.** Section 2.2 planned an arm with a second,
+sign-flipped copy of the ownership answer, so that the whole-state transplant
+would swap both copies and cancel while the ownership-only transplant swapped
+one and worked. That cannot exist. Because a matched pair differs only in the
+acting channel, a whole-state transplant at a site set *is* the donor's state
+at those sites, so any architecture that behaves consistently under it cannot
+be made to cancel. The negative outcome was pursued by searching instead — over
+every architecture, every site set, every reading of the read's label and every
+rank cap — and it was found, with its cause identified, which is a stronger
+result than the planned demonstration would have been.
+
+**The nomination family was widened, and the pre-stated one was kept and
+reported.** Section 4's P-1 fixed a candidate list of nine layer sets, five
+position sets and five rank caps, and it did not fix what the straight-line
+read's *label* is — because the proposal it was drawn from does not fix that
+either. Running the pre-stated procedure on the arm whose answer is in a known
+place returned near zero where the truth is one. The family was widened to
+three readings of the label and rank caps to 24, the pre-stated subset is still
+computed and reported separately everywhere, and the failure of the procedure
+as written is the rehearsal's most important finding rather than something the
+widening papered over.
+
+**The pre-stated family was also narrowed, by one rank cap, and that was not
+recorded above.** The paragraph before this one says the family was widened.
+It was also cut. The first commit of the rehearsal code (`5fa85e2`), committed
+before any result ran, fixed five rank caps in `rehearse.py` — one, two,
+**three**, four and eight. The final code drops the cap of three and counts
+only caps of one, two, four and eight as belonging to the pre-stated family, so
+the pre-stated family is **180 comparisons per arm and seed as actually
+computed** rather than the 225 the plan fixed and the findings first reported.
+One pre-stated cell — a rank cap of three, under the pre-stated reading of the
+read's label — was therefore never computed and is in no output file. Nothing
+in the rehearsal turns on it: under that reading the caps that were computed
+all return between 0.0000 and 0.0117 and the read's fit sits at chance. It is
+recorded because a rehearsal whose headline finding is "the procedure as
+pre-stated fails" owes its reader the whole pre-stated procedure, and because a
+departure noticed later is still a departure.
+
+**The fitted reads are frozen.** The first implementation re-fitted the
+straight-line read on the fresh episodes the reading is taken from, which is
+exactly what a data split exists to prevent. It was caught and fixed before any
+number in the findings was read; the reads are fitted on development episodes,
+written to disk and reloaded.
+
+**The fresh pool was corrected.** Section 2.1's fresh set was first built from
+marker words the arms had never seen, which is a stronger reading of the
+proposal's "combinations that appear in neither of the other two sets" than the
+proposal asks for, and it broke the measurement rather than testing it. The
+pool is kept under its own name as a deliberate diagnostic, because its
+collapse is a finding, and the evaluation set is now fresh combinations of seen
+words.
+
+**Control 2 was implemented differently from the proposal**, and the findings
+say so rather than counting its number as a pass.
+
+**One cell was written too loosely and should be read as it was meant.** P-1's
+pass line names a reachability threshold of 0.50 on the ownership-only
+transplant. Measured, the separable arm returns either 1.0000 or 0.0000
+depending on the label, so nothing turned on where between them the threshold
+sat.
+
+**Nothing was rented, no vendor was contacted, and nothing was spent.** The
+rented slice in section 9 is staged and was not run.

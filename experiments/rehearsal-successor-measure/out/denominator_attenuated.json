@@ -1,0 +1,535 @@
+{
+  "arms": {
+    "C/0": {
+      "floor_corrected_range": 0.022090170527670483,
+      "registered_range": 0.04048184992810411,
+      "rows": [
+        {
+          "accuracy_ownership_only": 0.06875,
+          "accuracy_untouched": 0.06,
+          "accuracy_whole": 0.54,
+          "attenuation": 1.0,
+          "floor_corrected": 0.9817708333333334,
+          "floor_corrected_status": "valid",
+          "registered": 0.8726851851851852,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.0675,
+          "accuracy_untouched": 0.06,
+          "accuracy_whole": 0.54875,
+          "attenuation": 0.75,
+          "floor_corrected": 0.9846547314578005,
+          "floor_corrected_status": "valid",
+          "registered": 0.876993166287016,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.0625,
+          "accuracy_untouched": 0.06,
+          "accuracy_whole": 0.555,
+          "attenuation": 0.5,
+          "floor_corrected": 0.9949494949494949,
+          "floor_corrected_status": "valid",
+          "registered": 0.8873873873873874,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.05875,
+          "accuracy_untouched": 0.06,
+          "accuracy_whole": 0.38375,
+          "attenuation": 0.25,
+          "floor_corrected": 1.0038610038610039,
+          "floor_corrected_status": "valid",
+          "registered": 0.8469055374592833,
+          "registered_status": "valid"
+        }
+      ],
+      "site_set": {
+        "accuracy_ownership_only": 0.07,
+        "accuracy_whole": 0.5566666666666666,
+        "in_the_pre_stated_family": false,
+        "label": "marker-word",
+        "layers": [
+          2,
+          3,
+          4
+        ],
+        "positions": "all",
+        "rank": 16
+      }
+    },
+    "C/1": {
+      "floor_corrected_range": 0.016393442622950838,
+      "registered_range": 0.3423547928903222,
+      "rows": [
+        {
+          "accuracy_ownership_only": 0.06625,
+          "accuracy_untouched": 0.06625,
+          "accuracy_whole": 0.575,
+          "attenuation": 1.0,
+          "floor_corrected": 1.0,
+          "floor_corrected_status": "valid",
+          "registered": 0.8847826086956521,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.06625,
+          "accuracy_untouched": 0.06625,
+          "accuracy_whole": 0.5525,
+          "attenuation": 0.75,
+          "floor_corrected": 1.0,
+          "floor_corrected_status": "valid",
+          "registered": 0.8800904977375565,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.065,
+          "accuracy_untouched": 0.06625,
+          "accuracy_whole": 0.57125,
+          "attenuation": 0.5,
+          "floor_corrected": 1.0024752475247527,
+          "floor_corrected_status": "valid",
+          "registered": 0.8862144420131292,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.065,
+          "accuracy_untouched": 0.06625,
+          "accuracy_whole": 0.1425,
+          "attenuation": 0.25,
+          "floor_corrected": 1.0163934426229508,
+          "floor_corrected_status": "valid",
+          "registered": 0.5438596491228069,
+          "registered_status": "valid"
+        }
+      ],
+      "site_set": {
+        "accuracy_ownership_only": 0.08666666666666667,
+        "accuracy_whole": 0.595,
+        "in_the_pre_stated_family": false,
+        "label": "marker-word",
+        "layers": [
+          3,
+          4
+        ],
+        "positions": "action+3",
+        "rank": 16
+      }
+    },
+    "C/2": {
+      "floor_corrected_range": 0.0023475970530976165,
+      "registered_range": 0.008709300178494472,
+      "rows": [
+        {
+          "accuracy_ownership_only": 0.06625,
+          "accuracy_untouched": 0.06375,
+          "accuracy_whole": 0.5525,
+          "attenuation": 1.0,
+          "floor_corrected": 0.9948849104859334,
+          "floor_corrected_status": "valid",
+          "registered": 0.8800904977375565,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.0675,
+          "accuracy_untouched": 0.06375,
+          "accuracy_whole": 0.56625,
+          "attenuation": 0.75,
+          "floor_corrected": 0.9925373134328358,
+          "floor_corrected_status": "valid",
+          "registered": 0.8807947019867549,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.0675,
+          "accuracy_untouched": 0.06375,
+          "accuracy_whole": 0.5775,
+          "attenuation": 0.5,
+          "floor_corrected": 0.9927007299270072,
+          "floor_corrected_status": "valid",
+          "registered": 0.8831168831168831,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.06625,
+          "accuracy_untouched": 0.06375,
+          "accuracy_whole": 0.5275,
+          "attenuation": 0.25,
+          "floor_corrected": 0.9946091644204851,
+          "floor_corrected_status": "valid",
+          "registered": 0.8744075829383886,
+          "registered_status": "valid"
+        }
+      ],
+      "site_set": {
+        "accuracy_ownership_only": 0.06833333333333333,
+        "accuracy_whole": 0.5866666666666667,
+        "in_the_pre_stated_family": false,
+        "label": "marker-rank",
+        "layers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "positions": "post-identity",
+        "rank": 4
+      }
+    },
+    "F/0": {
+      "floor_corrected_range": 0.008483853311439526,
+      "registered_range": 0.32910663967932685,
+      "rows": [
+        {
+          "accuracy_ownership_only": 0.06625,
+          "accuracy_untouched": 0.06,
+          "accuracy_whole": 0.5825,
+          "attenuation": 1.0,
+          "floor_corrected": 0.9880382775119617,
+          "floor_corrected_status": "valid",
+          "registered": 0.8862660944206008,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.0675,
+          "accuracy_untouched": 0.06,
+          "accuracy_whole": 0.5675,
+          "attenuation": 0.75,
+          "floor_corrected": 0.9852216748768472,
+          "floor_corrected_status": "valid",
+          "registered": 0.8810572687224669,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.06375,
+          "accuracy_untouched": 0.06,
+          "accuracy_whole": 0.5675,
+          "attenuation": 0.5,
+          "floor_corrected": 0.9926108374384236,
+          "floor_corrected_status": "valid",
+          "registered": 0.8876651982378855,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.06125,
+          "accuracy_untouched": 0.06,
+          "accuracy_whole": 0.13875,
+          "attenuation": 0.25,
+          "floor_corrected": 0.9841269841269841,
+          "floor_corrected_status": "valid",
+          "registered": 0.5585585585585586,
+          "registered_status": "valid"
+        }
+      ],
+      "site_set": {
+        "accuracy_ownership_only": 0.07,
+        "accuracy_whole": 0.575,
+        "in_the_pre_stated_family": true,
+        "label": "agent-slot",
+        "layers": [
+          3,
+          4
+        ],
+        "positions": "post-identity",
+        "rank": 4
+      }
+    },
+    "F/1": {
+      "floor_corrected_range": 0.07101318465370299,
+      "registered_range": 0.06801642533767349,
+      "rows": [
+        {
+          "accuracy_ownership_only": 0.0925,
+          "accuracy_untouched": 0.055,
+          "accuracy_whole": 0.56625,
+          "attenuation": 1.0,
+          "floor_corrected": 0.9266503667481663,
+          "floor_corrected_status": "valid",
+          "registered": 0.836644591611479,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.0825,
+          "accuracy_untouched": 0.055,
+          "accuracy_whole": 0.56625,
+          "attenuation": 0.75,
+          "floor_corrected": 0.9462102689486553,
+          "floor_corrected_status": "valid",
+          "registered": 0.8543046357615893,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.07,
+          "accuracy_untouched": 0.055,
+          "accuracy_whole": 0.55375,
+          "attenuation": 0.5,
+          "floor_corrected": 0.9699248120300752,
+          "floor_corrected_status": "valid",
+          "registered": 0.873589164785553,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.05625,
+          "accuracy_untouched": 0.055,
+          "accuracy_whole": 0.59,
+          "attenuation": 0.25,
+          "floor_corrected": 0.9976635514018692,
+          "floor_corrected_status": "valid",
+          "registered": 0.9046610169491525,
+          "registered_status": "valid"
+        }
+      ],
+      "site_set": {
+        "accuracy_ownership_only": 0.09,
+        "accuracy_whole": 0.5766666666666667,
+        "in_the_pre_stated_family": false,
+        "label": "marker-word",
+        "layers": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "positions": "all",
+        "rank": 16
+      }
+    },
+    "F/2": {
+      "floor_corrected_range": 0.07318104906937395,
+      "registered_range": 0.516936671575847,
+      "rows": [
+        {
+          "accuracy_ownership_only": 0.085,
+          "accuracy_untouched": 0.07625,
+          "accuracy_whole": 0.56625,
+          "attenuation": 1.0,
+          "floor_corrected": 0.9821428571428571,
+          "floor_corrected_status": "valid",
+          "registered": 0.8498896247240618,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.085,
+          "accuracy_untouched": 0.07625,
+          "accuracy_whole": 0.57625,
+          "attenuation": 0.75,
+          "floor_corrected": 0.9825,
+          "floor_corrected_status": "valid",
+          "registered": 0.8524945770065075,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.08125,
+          "accuracy_untouched": 0.07625,
+          "accuracy_whole": 0.56875,
+          "attenuation": 0.5,
+          "floor_corrected": 0.9898477157360406,
+          "floor_corrected_status": "valid",
+          "registered": 0.8571428571428572,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.08,
+          "accuracy_untouched": 0.07625,
+          "accuracy_whole": 0.12125,
+          "attenuation": 0.25,
+          "floor_corrected": 0.9166666666666666,
+          "floor_corrected_status": "valid",
+          "registered": 0.34020618556701027,
+          "registered_status": "valid"
+        }
+      ],
+      "site_set": {
+        "accuracy_ownership_only": 0.08666666666666667,
+        "accuracy_whole": 0.555,
+        "in_the_pre_stated_family": false,
+        "label": "marker-word",
+        "layers": [
+          3,
+          4
+        ],
+        "positions": "action",
+        "rank": 16
+      }
+    },
+    "T/0": {
+      "floor_corrected_range": 0.006651869627434208,
+      "registered_range": 0.006651869627434208,
+      "rows": [
+        {
+          "accuracy_ownership_only": 1.0,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 1.0,
+          "attenuation": 1.0,
+          "floor_corrected": 0.0,
+          "floor_corrected_status": "valid",
+          "registered": 0.0,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.9925,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 0.99125,
+          "attenuation": 0.75,
+          "floor_corrected": -0.001261034047919379,
+          "floor_corrected_status": "negative",
+          "registered": -0.001261034047919379,
+          "registered_status": "negative"
+        },
+        {
+          "accuracy_ownership_only": 0.46125,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 0.46375,
+          "attenuation": 0.5,
+          "floor_corrected": 0.005390835579514829,
+          "floor_corrected_status": "valid",
+          "registered": 0.005390835579514829,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.00875,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 0.00875,
+          "attenuation": 0.25,
+          "floor_corrected": null,
+          "floor_corrected_status": "no verdict",
+          "registered": null,
+          "registered_status": "no verdict"
+        }
+      ],
+      "site_set": {
+        "accuracy_ownership_only": 1.0,
+        "accuracy_whole": 1.0,
+        "in_the_pre_stated_family": false,
+        "label": "marker-word",
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      }
+    },
+    "T/1": {
+      "floor_corrected_range": 0.06313131313131314,
+      "registered_range": 0.06313131313131314,
+      "rows": [
+        {
+          "accuracy_ownership_only": 1.0,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 1.0,
+          "attenuation": 1.0,
+          "floor_corrected": 0.0,
+          "floor_corrected_status": "valid",
+          "registered": 0.0,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.97625,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 0.99125,
+          "attenuation": 0.75,
+          "floor_corrected": 0.01513240857503154,
+          "floor_corrected_status": "valid",
+          "registered": 0.01513240857503154,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.46375,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 0.495,
+          "attenuation": 0.5,
+          "floor_corrected": 0.06313131313131314,
+          "floor_corrected_status": "valid",
+          "registered": 0.06313131313131314,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.01625,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 0.005,
+          "attenuation": 0.25,
+          "floor_corrected": null,
+          "floor_corrected_status": "no verdict",
+          "registered": null,
+          "registered_status": "no verdict"
+        }
+      ],
+      "site_set": {
+        "accuracy_ownership_only": 1.0,
+        "accuracy_whole": 1.0,
+        "in_the_pre_stated_family": false,
+        "label": "marker-word",
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      }
+    },
+    "T/2": {
+      "floor_corrected_range": 0.006622516556291367,
+      "registered_range": 0.006622516556291367,
+      "rows": [
+        {
+          "accuracy_ownership_only": 1.0,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 1.0,
+          "attenuation": 1.0,
+          "floor_corrected": 0.0,
+          "floor_corrected_status": "valid",
+          "registered": 0.0,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.9375,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 0.94375,
+          "attenuation": 0.75,
+          "floor_corrected": 0.006622516556291367,
+          "floor_corrected_status": "valid",
+          "registered": 0.006622516556291367,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.47875,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 0.48,
+          "attenuation": 0.5,
+          "floor_corrected": 0.0026041666666666114,
+          "floor_corrected_status": "valid",
+          "registered": 0.0026041666666666114,
+          "registered_status": "valid"
+        },
+        {
+          "accuracy_ownership_only": 0.05625,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 0.05625,
+          "attenuation": 0.25,
+          "floor_corrected": 0.0,
+          "floor_corrected_status": "valid",
+          "registered": 0.0,
+          "registered_status": "valid"
+        }
+      ],
+      "site_set": {
+        "accuracy_ownership_only": 1.0,
+        "accuracy_whole": 1.0,
+        "in_the_pre_stated_family": false,
+        "label": "marker-word",
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      }
+    }
+  },
+  "attenuations": [
+    1.0,
+    0.75,
+    0.5,
+    0.25
+  ]
+}

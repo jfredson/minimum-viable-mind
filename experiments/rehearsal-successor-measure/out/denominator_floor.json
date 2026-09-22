@@ -1,0 +1,59 @@
+{
+  "arms": {
+    "C/0": {
+      "measured_untouched": 0.06,
+      "own_directed_accuracy": 0.5816666666666667,
+      "prediction_from_the_review": 0.05976190476190476,
+      "proposal_rule_would_pass": false
+    },
+    "C/1": {
+      "measured_untouched": 0.06625,
+      "own_directed_accuracy": 0.566,
+      "prediction_from_the_review": 0.062000000000000006,
+      "proposal_rule_would_pass": false
+    },
+    "C/2": {
+      "measured_untouched": 0.06375,
+      "own_directed_accuracy": 0.5766666666666667,
+      "prediction_from_the_review": 0.060476190476190475,
+      "proposal_rule_would_pass": false
+    },
+    "F/0": {
+      "measured_untouched": 0.06,
+      "own_directed_accuracy": 0.5633333333333334,
+      "prediction_from_the_review": 0.06238095238095238,
+      "proposal_rule_would_pass": false
+    },
+    "F/1": {
+      "measured_untouched": 0.055,
+      "own_directed_accuracy": 0.5563333333333333,
+      "prediction_from_the_review": 0.06338095238095239,
+      "proposal_rule_would_pass": false
+    },
+    "F/2": {
+      "measured_untouched": 0.07625,
+      "own_directed_accuracy": 0.589,
+      "prediction_from_the_review": 0.05871428571428572,
+      "proposal_rule_would_pass": true
+    },
+    "T/0": {
+      "measured_untouched": 0.0,
+      "own_directed_accuracy": 1.0,
+      "prediction_from_the_review": 0.0,
+      "proposal_rule_would_pass": false
+    },
+    "T/1": {
+      "measured_untouched": 0.0,
+      "own_directed_accuracy": 1.0,
+      "prediction_from_the_review": 0.0,
+      "proposal_rule_would_pass": false
+    },
+    "T/2": {
+      "measured_untouched": 0.0,
+      "own_directed_accuracy": 1.0,
+      "prediction_from_the_review": 0.0,
+      "proposal_rule_would_pass": false
+    }
+  },
+  "prediction_in_the_proposal": 0.125
+}

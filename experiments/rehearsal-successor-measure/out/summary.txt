@@ -1,0 +1,221 @@
+
+--- learn-both gate (held-out), and the acting-channel lesion -----------
+  C/0    own 0.5817  named-other 0.2590   lesioned: own 0.1717 named-other 0.2047  (n=3000)
+  C/1    own 0.5660  named-other 0.2370   lesioned: own 0.1807 named-other 0.1847  (n=3000)
+  C/2    own 0.5767  named-other 0.2637   lesioned: own 0.1860 named-other 0.1720  (n=3000)
+  F/0    own 0.5633  named-other 0.2547   lesioned: own 0.1813 named-other 0.1913  (n=3000)
+  F/1    own 0.5563  named-other 0.2680   lesioned: own 0.1947 named-other 0.2220  (n=3000)
+  F/2    own 0.5890  named-other 0.2393   lesioned: own 0.1857 named-other 0.1787  (n=3000)
+  T/0    own 1.0000  named-other 1.0000   lesioned: own 0.2467 named-other 1.0000  (n=3000)
+  T/1    own 1.0000  named-other 1.0000   lesioned: own 0.2510 named-other 1.0000  (n=3000)
+  T/2    own 1.0000  named-other 1.0000   lesioned: own 0.2733 named-other 1.0000  (n=3000)
+
+--- the competing solvers, measured -------------------------------------
+  name-only (computed): own 0.2380  named-other 1.0000
+  ownership-blind (trained, acting channel removed): own 0.2237  named-other 0.2253
+  references: guessing 0.1250, whose-value-blind 0.2500
+
+--- blind nomination: the procedure AS PRE-STATED against the repaired one 
+  C/0    pre-stated family best: ownership-only 0.0633 (label agent-slot, rank 4, action, layers [1, 2, 3, 4], whole 0.5567)
+         widened family best:    ownership-only 0.0700 (label marker-word, rank 16, all, layers [2, 3, 4], whole 0.5567)
+  C/1    pre-stated family best: ownership-only 0.0850 (label agent-slot, rank 4, action, layers [4], whole 0.5950)
+         widened family best:    ownership-only 0.0867 (label marker-word, rank 16, action+3, layers [3, 4], whole 0.5950)
+  C/2    pre-stated family best: ownership-only 0.0633 (label agent-slot, rank 4, action, layers [1, 2, 3, 4], whole 0.5867)
+         widened family best:    ownership-only 0.0683 (label marker-rank, rank 4, post-identity, layers [1, 2, 3, 4], whole 0.5867)
+  F/0    pre-stated family best: ownership-only 0.0700 (label agent-slot, rank 4, post-identity, layers [3, 4], whole 0.5750)
+         widened family best:    ownership-only 0.0700 (label agent-slot, rank 4, post-identity, layers [3, 4], whole 0.5750)
+  F/1    pre-stated family best: ownership-only 0.0817 (label agent-slot, rank 4, action+3, layers [1, 2, 3, 4], whole 0.5767)
+         widened family best:    ownership-only 0.0900 (label marker-word, rank 16, all, layers [0, 1, 2, 3, 4], whole 0.5767)
+  F/2    pre-stated family best: ownership-only 0.0833 (label agent-slot, rank 4, action, layers [4], whole 0.5550)
+         widened family best:    ownership-only 0.0867 (label marker-word, rank 16, action, layers [3, 4], whole 0.5550)
+  T/0    pre-stated family best: ownership-only 0.0117 (label agent-slot, rank 4, action, layers [0], whole 1.0000)
+         widened family best:    ownership-only 1.0000 (label marker-word, rank 8, action, layers [0], whole 1.0000)
+  T/1    pre-stated family best: ownership-only 0.0000 (label agent-slot, rank 1, action, layers [0], whole 1.0000)
+         widened family best:    ownership-only 1.0000 (label marker-word, rank 8, action, layers [0], whole 1.0000)
+  T/2    pre-stated family best: ownership-only 0.0000 (label agent-slot, rank 1, action, layers [0], whole 1.0000)
+         widened family best:    ownership-only 1.0000 (label marker-word, rank 8, action, layers [0], whole 1.0000)
+
+--- how well each reading of the read's label FITS, at the action position 
+  C/0    agent-slot 0.272  marker-rank 0.528  marker-word 1.000
+  C/1    agent-slot 0.289  marker-rank 0.439  marker-word 0.983
+  C/2    agent-slot 0.289  marker-rank 0.544  marker-word 1.000
+  F/0    agent-slot 0.278  marker-rank 0.306  marker-word 0.144
+  F/1    agent-slot 0.289  marker-rank 0.300  marker-word 0.144
+  F/2    agent-slot 0.306  marker-rank 0.300  marker-word 0.111
+  T/0    agent-slot 0.256  marker-rank 0.706  marker-word 1.000
+  T/1    agent-slot 0.256  marker-rank 0.694  marker-word 1.000
+  T/2    agent-slot 0.256  marker-rank 0.700  marker-word 1.000
+
+--- whole-state transplant against site set (arm T seed 0), the floor curve 
+  layers [0]              at action         whole 1.0000
+  layers [1]              at action         whole 1.0000
+  layers [2]              at action         whole 1.0000
+  layers [3]              at action         whole 1.0000
+  layers [4]              at action         whole 1.0000
+  layers [0]              at action+3       whole 1.0000
+  layers [1]              at action+3       whole 1.0000
+  layers [2]              at action+3       whole 1.0000
+  layers [3]              at action+3       whole 1.0000
+  layers [4]              at action+3       whole 1.0000
+  layers [0]              at action+ans     whole 1.0000
+  layers [1]              at action+ans     whole 1.0000
+  layers [2]              at action+ans     whole 1.0000
+  layers [3]              at action+ans     whole 1.0000
+  layers [4]              at action+ans     whole 1.0000
+  layers [0]              at all            whole 1.0000
+  layers [1]              at all            whole 1.0000
+  layers [2]              at all            whole 1.0000
+  layers [3]              at all            whole 1.0000
+  layers [4]              at all            whole 1.0000
+  layers [0]              at post-identity  whole 1.0000
+  layers [1]              at post-identity  whole 1.0000
+  layers [2]              at post-identity  whole 1.0000
+  layers [3]              at post-identity  whole 1.0000
+  layers [4]              at post-identity  whole 1.0000
+  layers [3, 4]           at action         whole 1.0000
+  layers [3, 4]           at action+3       whole 1.0000
+  layers [3, 4]           at action+ans     whole 1.0000
+  layers [3, 4]           at all            whole 1.0000
+  layers [3, 4]           at post-identity  whole 1.0000
+  layers [2, 3, 4]        at action         whole 1.0000
+  layers [2, 3, 4]        at action+3       whole 1.0000
+  layers [2, 3, 4]        at action+ans     whole 1.0000
+  layers [2, 3, 4]        at all            whole 1.0000
+  layers [2, 3, 4]        at post-identity  whole 1.0000
+  layers [1, 2, 3, 4]     at action         whole 1.0000
+  layers [1, 2, 3, 4]     at action+3       whole 1.0000
+  layers [1, 2, 3, 4]     at action+ans     whole 1.0000
+  layers [1, 2, 3, 4]     at all            whole 1.0000
+  layers [1, 2, 3, 4]     at post-identity  whole 1.0000
+  layers [0, 1, 2, 3, 4]  at action         whole 1.0000
+  layers [0, 1, 2, 3, 4]  at action+3       whole 1.0000
+  layers [0, 1, 2, 3, 4]  at action+ans     whole 1.0000
+  layers [0, 1, 2, 3, 4]  at all            whole 1.0000
+  layers [0, 1, 2, 3, 4]  at post-identity  whole 1.0000
+
+--- the reading on fresh episodes, both candidate forms -----------------
+  C/0    untouched 0.0600  whole 0.5400  ownership-only 0.0688
+         registered form: valid degree 0.8727   floor-corrected: valid degree 0.9818
+  C/1    untouched 0.0663  whole 0.5750  ownership-only 0.0663
+         registered form: valid degree 0.8848   floor-corrected: valid degree 1.0000
+  C/2    untouched 0.0638  whole 0.5525  ownership-only 0.0663
+         registered form: valid degree 0.8801   floor-corrected: valid degree 0.9949
+  F/0    untouched 0.0600  whole 0.5825  ownership-only 0.0663
+         registered form: valid degree 0.8863   floor-corrected: valid degree 0.9880
+  F/1    untouched 0.0550  whole 0.5663  ownership-only 0.0925
+         registered form: valid degree 0.8366   floor-corrected: valid degree 0.9267
+  F/2    untouched 0.0762  whole 0.5663  ownership-only 0.0850
+         registered form: valid degree 0.8499   floor-corrected: valid degree 0.9821
+  T/0    untouched 0.0000  whole 1.0000  ownership-only 1.0000
+         registered form: valid degree 0.0000   floor-corrected: valid degree 0.0000
+  T/1    untouched 0.0000  whole 1.0000  ownership-only 1.0000
+         registered form: valid degree 0.0000   floor-corrected: valid degree 0.0000
+  T/2    untouched 0.0000  whole 1.0000  ownership-only 1.0000
+         registered form: valid degree 0.0000   floor-corrected: valid degree 0.0000
+
+--- arm T under perfect nomination (its true ownership block) -----------
+  T/0: ownership-only 1.0000
+  T/1: ownership-only 1.0000
+  T/2: ownership-only 1.0000
+
+--- the seven controls --------------------------------------------------
+  C/0:
+     1 content transplant (the complement subspace): 0.5375
+     2 another agent's representation (unmatched donor): 0.0525
+     3 matched random subspace, same rank: 0.11125
+     4 transplant before the identity can be known: 0.065
+     5 fresh markers and content (share of trials): 1.0
+     6a same-value cell: share whose action moved: 0.6913580298423767
+     6a same-value cell: trials: 81
+     6b different-value cell: share whose action moved: 0.9207231998443604
+     6b different-value cell: trials: 719
+     7 null transplant leaves every logit bit-identical: True
+  (all arms and seeds in transplant.json; one shown here)
+
+--- control 6 across every arm and seed ---------------------------------
+  C/0    same-value cell 81 trials, moved 0.6913580298423767; different-value cell 719 trials, moved 0.9207231998443604
+  C/1    same-value cell 81 trials, moved 0.654321014881134; different-value cell 719 trials, moved 0.9109874963760376
+  C/2    same-value cell 81 trials, moved 0.7283950448036194; different-value cell 719 trials, moved 0.905424177646637
+  F/0    same-value cell 81 trials, moved 0.7407407164573669; different-value cell 719 trials, moved 0.9082058668136597
+  F/1    same-value cell 81 trials, moved 0.7530864477157593; different-value cell 719 trials, moved 0.8873435258865356
+  F/2    same-value cell 81 trials, moved 0.5925925970077515; different-value cell 719 trials, moved 0.8762169480323792
+  T/0    same-value cell 81 trials, moved 0.0; different-value cell 719 trials, moved 1.0
+  T/1    same-value cell 81 trials, moved 0.0; different-value cell 719 trials, moved 1.0
+  T/2    same-value cell 81 trials, moved 0.0; different-value cell 719 trials, moved 1.0
+
+--- the made-up outcome cases -------------------------------------------
+  high — arm C seed 0: whole 0.5400 ownership-only 0.0688 -> valid degree 0.8727  (expected high, valid)
+  high — arm C seed 1: whole 0.5750 ownership-only 0.0663 -> valid degree 0.8848  (expected high, valid)
+  high — arm C seed 2: whole 0.5525 ownership-only 0.0663 -> valid degree 0.8801  (expected high, valid)
+  negative: 0 configurations found
+  no verdict — arm T seed 0 at the failing site set: whole 0.0000 ownership-only 0.0000 -> no verdict  (expected no verdict)
+  no verdict — arm T seed 1 at the failing site set: whole 0.0000 ownership-only 0.0000 -> no verdict  (expected no verdict)
+  no verdict — arm T seed 2 at the failing site set: whole 0.0000 ownership-only 0.0000 -> no verdict  (expected no verdict)
+  positive, near zero — arm T seed 0: whole 1.0000 ownership-only 1.0000 -> valid degree 0.0000  (expected near zero, valid)
+  positive, near zero — arm T seed 1: whole 1.0000 ownership-only 1.0000 -> valid degree 0.0000  (expected near zero, valid)
+  positive, near zero — arm T seed 2: whole 1.0000 ownership-only 1.0000 -> valid degree 0.0000  (expected near zero, valid)
+
+--- the two candidate uncertainty methods, and the seeds each implies ---
+  arm C: raw difference per seed [0.4713, 0.5087, 0.4862]
+     across-seed spread 0.01887458608817681, typical within-seed spread 0.0198
+     seeds implied by half-width: {'0.05': 1, '0.10': 1, '0.15': 1}
+  arm F: raw difference per seed [0.5162, 0.4738, 0.4813]
+     across-seed spread 0.022684429314693656, typical within-seed spread 0.0203
+     seeds implied by half-width: {'0.05': 1, '0.10': 1, '0.15': 1}
+  arm T: raw difference per seed [0.0, 0.0, 0.0]
+     across-seed spread 0.0, typical within-seed spread 0.0000
+     seeds implied by half-width: {}
+
+--- throughput, measured on this laptop ---------------------------------
+  device: mps
+  arm T at the registered shape (448 wide, 12 layers, 26,065,471 parameters): 250.0 ms/step (median 250.8)
+  arm C at the registered shape (448 wide, 12 layers, 29,329,735 parameters): 267.2 ms/step (median 267.8)
+  arm F at the registered shape (448 wide, 12 layers, 29,049,735 parameters): 254.8 ms/step (median 255.7)
+  ratios to the free arm: C 1.049, F 1.000, T 0.981
+
+--- the denominator checks ----------------------------------------------
+  strong transplant  whole 0.9008: registered 0.4323 (spread 0.0119), floor-corrected 0.5018 (spread 0.0132)
+  weak transplant    whole 0.3497: registered 0.3222 (spread 0.0181), floor-corrected 0.5013 (spread 0.0230)
+  true share was 0.5; D-1 PASS: the floor-corrected form returns the true share in both cases and the registered form does not
+  the no-transplant rate, measured against both predictions:
+     C/0    measured 0.0600  proposal says 0.1250  the review's formula says 0.0598
+     C/1    measured 0.0663  proposal says 0.1250  the review's formula says 0.0620
+     C/2    measured 0.0638  proposal says 0.1250  the review's formula says 0.0605
+     F/0    measured 0.0600  proposal says 0.1250  the review's formula says 0.0624
+     F/1    measured 0.0550  proposal says 0.1250  the review's formula says 0.0634
+     F/2    measured 0.0762  proposal says 0.1250  the review's formula says 0.0587
+     T/0    measured 0.0000  proposal says 0.1250  the review's formula says 0.0000
+     T/1    measured 0.0000  proposal says 0.1250  the review's formula says 0.0000
+     T/2    measured 0.0000  proposal says 0.1250  the review's formula says 0.0000
+  D-4 PASS: the cell is empty by construction under distinctness and can only be filled by relaxing it, at a measured cost
+     distinctness kept: 0 same-value trials of 4000
+     distinctness relaxed: 346 of 4000; blind solver moves from 0.2467 to 0.3095
+
+--- attenuating the transplant: which form holds still ------------------
+  C/0    whole-state accuracy across attenuation [0.54, 0.549, 0.555, 0.384]
+         registered form [0.873, 0.877, 0.887, 0.847]  spans 0.04048184992810411
+         floor-corrected [0.982, 0.985, 0.995, 1.004]  spans 0.022090170527670483
+  C/1    whole-state accuracy across attenuation [0.575, 0.552, 0.571, 0.142]
+         registered form [0.885, 0.88, 0.886, 0.544]  spans 0.3423547928903222
+         floor-corrected [1.0, 1.0, 1.002, 1.016]  spans 0.016393442622950838
+  C/2    whole-state accuracy across attenuation [0.552, 0.566, 0.578, 0.527]
+         registered form [0.88, 0.881, 0.883, 0.874]  spans 0.008709300178494472
+         floor-corrected [0.995, 0.993, 0.993, 0.995]  spans 0.0023475970530976165
+  F/0    whole-state accuracy across attenuation [0.583, 0.568, 0.568, 0.139]
+         registered form [0.886, 0.881, 0.888, 0.559]  spans 0.32910663967932685
+         floor-corrected [0.988, 0.985, 0.993, 0.984]  spans 0.008483853311439526
+  F/1    whole-state accuracy across attenuation [0.566, 0.566, 0.554, 0.59]
+         registered form [0.837, 0.854, 0.874, 0.905]  spans 0.06801642533767349
+         floor-corrected [0.927, 0.946, 0.97, 0.998]  spans 0.07101318465370299
+  F/2    whole-state accuracy across attenuation [0.566, 0.576, 0.569, 0.121]
+         registered form [0.85, 0.852, 0.857, 0.34]  spans 0.516936671575847
+         floor-corrected [0.982, 0.983, 0.99, 0.917]  spans 0.07318104906937395
+  T/0    whole-state accuracy across attenuation [1.0, 0.991, 0.464, 0.009]
+         registered form [0.0, -0.001, 0.005, None]  spans 0.006651869627434208
+         floor-corrected [0.0, -0.001, 0.005, None]  spans 0.006651869627434208
+  T/1    whole-state accuracy across attenuation [1.0, 0.991, 0.495, 0.005]
+         registered form [0.0, 0.015, 0.063, None]  spans 0.06313131313131314
+         floor-corrected [0.0, 0.015, 0.063, None]  spans 0.06313131313131314
+  T/2    whole-state accuracy across attenuation [1.0, 0.944, 0.48, 0.056]
+         registered form [0.0, 0.007, 0.003, 0.0]  spans 0.006622516556291367
+         floor-corrected [0.0, 0.007, 0.003, 0.0]  spans 0.006622516556291367
