@@ -9,6 +9,14 @@ all". No compute or spend is implied.*
 *Written under the workspace plain-language rule (`~/Documents/Code/CLAUDE.md`,
 ruled 2026-08-30).*
 
+*Amended 2026-09-21 with the three changes John adopted on 2026-09-20 (item 6
+of `docs/rulings/2026-09-20-december-result-roadmap.md`, in his words "Agreed
+on all"): a complete measurement rehearsal before any Gate A, reviewer-owned
+verification of a fatal finding's closure, and the word "unlikely" struck from
+the fixed brief. They are listed at the end under "Amendments". The ruling
+authorises the three changes; the wording is this session's and is John's to
+overturn.*
+
 ---
 
 ## What already exists, so this is continuity and not a new practice
@@ -67,7 +75,10 @@ Review fires, with a written record in the repo, at three points.
 
 **Gate A — registration.** Every registration, amendment, threshold lock, or
 pre-statement that will be read as binding, before the registration commit.
-Both tiers below run. The registration commit waits on the closure rule.
+Both tiers below run. The registration commit waits on the closure rule. No
+Gate A pass opens until the measurement rehearsal for that target is
+committed, and reading the rehearsal is the first thing the tier 1 reviewer
+does.
 
 **Gate B — interpretation.** An interpretation of a result before it enters
 STATUS.md's current-state section or the paper draft, when it either changes
@@ -84,6 +95,65 @@ asks. First application: public path step 4, the 2026-10-04 control-battery
 decision (repair the clause under a new amendment, or close A3 with partial
 discriminators).
 
+## The measurement rehearsal, required before any Gate A
+
+Twice a registration has gone in before anyone had run the measurement it
+registers: the corrected metric whose denominator turned out to be zero, and
+probes aimed at a quantity that cannot be recovered in principle. Both would
+have shown themselves in an afternoon of running the procedure on a throwaway
+system. So before any Gate A pass, the whole measurement runs once, end to
+end, on a small stand-in, and that run is committed.
+
+The rehearsal is meant to be small and cheap: tiny models, a handful of
+episodes, a day or two of work, somewhere between nothing and about ten
+dollars of compute. It is not a pilot and it is not evidence about the
+question. It is a demonstration that the instrument exists and gives back
+numbers.
+
+"Complete" means all six of these, each with the command that was run and the
+output it produced in the committed record:
+
+1. **The target can be found.** The quantity the pre-statement names is
+   recovered in the stand-in system by the stated instrument, with a number to
+   show for it. If it cannot be recovered even there, the rehearsal says so
+   and the pre-statement changes before it is registered.
+2. **The comparison has room to move.** Every control, baseline or comparison
+   condition is scored and its ceiling is measured rather than assumed, so the
+   record shows the stated threshold is reachable and the comparison is not
+   already saturated.
+3. **The arithmetic is finite.** The metric is computed on those scores and
+   returns a number: no zero denominator, and no formula that only survives on
+   the values its author had in mind.
+4. **The interventions run end to end.** Every lesion, patch, swap or other
+   intervention the design leans on runs to completion on a saved checkpoint
+   and moves the output it is supposed to move.
+5. **All three outcomes are reachable.** Made-up cases are built that drive
+   the procedure to a positive verdict, to a negative one, and to no verdict
+   at all, and each is shown to land where it was meant to.
+6. **An ordinary competing solver is built and scored.** A system with none of
+   the structure the target claims to detect is constructed and put through
+   the same measurement, so the brief's "satisfied by the wrong thing"
+   question has a number behind it instead of an argument.
+
+The rehearsal also reports throughput: how long one run takes at rehearsal
+scale, and what the registered scale is therefore estimated to cost, so the
+spend figure in the proposal has a measurement behind it.
+
+It is filed the way findings are filed, under
+`experiments/<experiment>/reviews/YYYY-MM-DD-<target>-rehearsal.md`, or under
+`docs/` when the experiment's directory does not exist yet. A pre-stated
+quantity with no rehearsal line covering it is a fatal finding on its own, on
+the same reasoning as a "verified" claim with no record behind it. The numbers
+the rehearsal produces are committed records, so the sentences the closure
+rule asks to be cited have something to point at.
+
+First application: the rehearsal in the week of 2026-09-28 for the successor
+experiment (`docs/december-result-roadmap-2026-09-20.md`, section 4, week 40),
+which must show that the three arms are constructible, that the pointer in the
+built-to-be-separable arm can be patched, that the joint patch in the
+built-to-be-entangled arm works, that the metric returns positive, negative
+and invalid values on toy cases, and what the new task grammar costs per run.
+
 ## Two tiers, because outside models cannot run the code
 
 **Tier 1, the inside pass.** A fresh Claude Code session in its own worktree.
@@ -95,7 +165,10 @@ files from the shared checkout, no ruling annotations, and it says at the top
 what it did and did not open. Every finding is labelled MEASURED (a check was
 run and the output is reported) or ARGUED (reasoning a reader can dispute),
 the convention the existing passes already use. This tier can run code and
-compute bounds; it is the only one that can produce MEASURED findings.
+compute bounds; it is the only one that can produce MEASURED findings. At
+Gate A it also owns the verification the closure rule requires below: the
+decisive check on a fatal finding's fix is the reviewer's to run, not the fix
+author's to assert.
 
 **Tier 2, the outside pass.** At least two models from labs other than
 Anthropic, run by John through their apps, exactly as the Belt Equation's
@@ -129,8 +202,9 @@ not the reviewer thinks the target should ship.
    measures, in the paper, in STATUS.md, and in public.
 
 Plain language throughout. Lookup allowed and flagged. Do not soften findings
-to be polite; a target with nothing fatal is a possible finding, but an
-unlikely one.
+to be polite, and do not manufacture severity to look thorough. A pass that
+finds nothing fatal is a valid result, reported as what was checked and what
+held.
 
 ## The closure rule, which is the new part
 
@@ -140,6 +214,20 @@ Before a registration commit at Gate A:
   the form: finding, the commit that lands the fix, and a MEASURED check by a
   session other than the one that wrote the fix, showing the fix does what
   the closure says. "Adopted" is a disposition, not a closure.
+- **That check belongs to the reviewer, not to the author.** The tier 1
+  reviewer of the Gate A pass owns it and runs it: reproduce the denominator,
+  build the competing solver, re-run the intervention, recompute the number —
+  whichever single measurement would come out wrong if the fix were wrong.
+  Reading the fix and finding it convincing is not the check. What the
+  reviewer produces is a MEASURED finding in the filed review: the command
+  run, the output it gave, and a plain sentence saying whether that output
+  matches what the closure claims. If the reviewer cannot run the check, the
+  reason goes on the record and the finding stays open.
+- **The ledger says which of the two happened.** A fatal item's ruling line
+  states either that the argument was accepted or that the claim was checked,
+  and, when it was checked, names the reviewer and the check. Agreement and
+  verification are not the same thing, and the record should not let them read
+  as if they were.
 - Every sentence in the registered text that says verified, measured,
   calibrated, or attacked cites the committed record by file name, and the
   closure check confirms the record contains what the sentence says it does.
@@ -231,3 +319,36 @@ code existed, which is the discipline the gate is meant to enforce.
    Alternative: start with the paper draft at step 7; later, and step 7's
    outside human reader is a different check (see
    `docs/outside-reader-shortlist-2026-09-19.md`), not a substitute.
+
+## Amendments
+
+**2026-09-21 — three changes, ruled by John on 2026-09-20** (item 6 of the
+December-result roadmap ruling, `docs/rulings/2026-09-20-december-result-roadmap.md`,
+"Agreed on all"). All three come from the two-lab program review of 2026-09-20
+(`docs/reviews/2026-09-20-program-review/`), and the ruling makes this edit the
+first thing the successor experiment's Gate A checks.
+
+1. **A complete measurement rehearsal before any Gate A** — the new section
+   above, plus one sentence added to Gate A. It closes the reviewer's finding
+   that registration here has repeatedly run ahead of any demonstration that
+   the full measurement procedure existed (item A8 of the ChatGPT/Astra
+   response, and the same point as Gemini's first process change). The six
+   checks are that reviewer's list; the throughput line and the filing rule
+   are this session's addition.
+2. **Reviewer-owned verification of a fatal finding's closure** — two bullets
+   added to the closure rule, and one sentence added to tier 1. It closes the
+   finding that same-family review followed by a ruling of "agreed on all" is
+   governance rather than an independent check (item A9 of the same response).
+   The existing rule already demanded a measured check by a session other than
+   the fix's author; what is new is that the Gate A tier 1 reviewer owns it,
+   runs it, and files the command and its output, and that the ledger line
+   says whether an argument was accepted or a claim was checked.
+3. **"Unlikely" struck from the fixed brief** — the sentence that a target
+   with nothing fatal was "a possible finding, but an unlikely one" is gone,
+   because it paid reviewers in severity (the seventh process change of the
+   same response). The program review's own brief had already dropped the
+   equivalent line before it went out. The replacement warns off both
+   directions: do not soften, and do not manufacture.
+
+The ruling authorises these three changes. The wording is the drafting
+session's and is John's to overturn.
