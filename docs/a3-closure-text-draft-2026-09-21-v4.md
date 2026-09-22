@@ -150,7 +150,8 @@ ruling of 2026-09-20 that patching is new code rather than existing
 machinery, ledger RT-96). Because the two instruments never converged on
 any seed, no L1 subspace was ever localized, and so the registered
 uncarvable signature H_diffuse was never reachable either: it requires a
-subspace that beats the matched controls, and none was carved to compare.
+carved subspace to compare against the matched controls, and none was
+carved.
 
 **The registered term for the line is therefore *not testable
 (localization)*, and the registered reading of this null is instrument
