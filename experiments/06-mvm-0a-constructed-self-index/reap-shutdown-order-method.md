@@ -375,10 +375,18 @@ spent.
 ## 10. Two recommendations about the nine runs
 
 *Added after checking what the nine runs actually are. The December-result
-roadmap (`docs/december-result-roadmap-2026-09-20.md`, week 43) schedules
-three arms times three seeds at 30M, about $110, and they belong to a
-**successor design that has not been registered yet** — proposal v1 goes to
-its review gate in week 40.*
+roadmap (`docs/december-result-roadmap-2026-09-20.md`) plans three arms times
+three seeds at 30M, about $110, at the registered-training steps of its chain
+(steps 5a and 5b: one free-arm run first, the remaining eight once its result
+is read). They belong to a **successor design that has not been registered
+yet** — the proposal goes to its advisory review as soon as it is drafted, at
+the head of that chain, and the registration is committed several steps later.*
+
+*This section named weeks of the calendar when it was written. John ruled on
+2026-09-21 that work is measured in task time rather than calendar time, and the
+roadmap's week grid became an ordered chain of what must finish before what, so
+the week names are replaced here by what each thing waits on. Nothing about the
+engineering changed.*
 
 **1. The provenance question in §8 mostly dissolves.** Those nine runs are
 not A3 runs, so they will not be produced by `launch_a3.sh` whatever
@@ -390,12 +398,26 @@ produced by registered text that has the fix, and nothing is derived.
 What is left of §8's question is narrower and less urgent: whether any
 *further A3* run may use the derived launcher.
 
-**2. There is already a scheduled, already-budgeted place to test this
-against the real vendor.** Week 40's measurement rehearsal is tiny models
-at about $0 to $10. A toy run that finishes in minutes exercises the whole
-shutdown path for real — the credential on the machine, the agent starting,
-the finished-marker, the receipt, the deletion — for a few cents, weeks
-before $110 of real runs depend on it. Everything in §7 is a self-test
+**2. There is already a planned, already-budgeted place to test this against
+the real vendor, and it is the only one before the money runs.** The
+measurement rehearsal — tiny models at about $0 to $10, which the roadmap puts
+after the successor proposal's first review pass and before any registration
+review opens — is the first time this fix meets the real vendor rather than a
+stand-in, and the only such time before the registered runs. One caveat on
+that: it only holds if the rehearsal actually rents a machine, and whether it
+does is itself still open (the last entry under "Open, and raised but not yet
+ruled" in `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`
+asks whether the rehearsal includes a short rented slice). If it is ruled
+laptop-only, this fix has no rehearsal on the real vendor at all, and that is
+worth saying when the question is put. That puts two dependencies on it, in
+this order: the fix has to be
+finished and built into the launcher the rehearsal uses *before* the rehearsal
+runs, and the rehearsal has to have run clean *before* the registered training
+of steps 5a and 5b is launched. A toy run that finishes in minutes exercises the
+whole shutdown path for real — the credential on the machine, the agent
+starting, the finished-marker, the receipt, the deletion — for a few cents, and
+it sits several steps ahead of the point where $110 of real runs depend on it.
+Everything in §7 is a self-test
 against fakes; it proves the ordering logic and it cannot prove that
 `runpodctl` on the vendor's image behaves as the launcher's comments say it
 does. That is the one thing still worth buying, and it is already paid for.
