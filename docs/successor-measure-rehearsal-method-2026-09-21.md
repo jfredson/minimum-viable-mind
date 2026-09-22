@@ -595,6 +595,22 @@ computed and reported separately everywhere, and the failure of the procedure
 as written is the rehearsal's most important finding rather than something the
 widening papered over.
 
+**The pre-stated family was also narrowed, by one rank cap, and that was not
+recorded above.** The paragraph before this one says the family was widened.
+It was also cut. The first commit of the rehearsal code (`5fa85e2`), committed
+before any result ran, fixed five rank caps in `rehearse.py` — one, two,
+**three**, four and eight. The final code drops the cap of three and counts
+only caps of one, two, four and eight as belonging to the pre-stated family, so
+the pre-stated family is **180 comparisons per arm and seed as actually
+computed** rather than the 225 the plan fixed and the findings first reported.
+One pre-stated cell — a rank cap of three, under the pre-stated reading of the
+read's label — was therefore never computed and is in no output file. Nothing
+in the rehearsal turns on it: under that reading the caps that were computed
+all return between 0.0000 and 0.0117 and the read's fit sits at chance. It is
+recorded because a rehearsal whose headline finding is "the procedure as
+pre-stated fails" owes its reader the whole pre-stated procedure, and because a
+departure noticed later is still a departure.
+
 **The fitted reads are frozen.** The first implementation re-fitted the
 straight-line read on the fresh episodes the reading is taken from, which is
 exactly what a data split exists to prevent. It was caught and fixed before any

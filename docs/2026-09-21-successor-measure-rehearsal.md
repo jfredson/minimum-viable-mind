@@ -47,6 +47,12 @@ The measure works, and the procedure for pointing it at a system does not.
   what the free one costs per step, not the 1.55 the money estimate inherited
   from a different experiment. Only the *ratio* is measured; the absolute
   figure the second release of money rests on still needs the rented slice.
+- **The proposal's first stop condition is adjudicated here and does not
+  fire.** It is keyed to the learn-both item failing, and that item does fail on
+  half of itself. But the condition's own words are "not learnable even in
+  principle" and "nothing trains", and the separable arm reaches 1.0000 on both
+  conditions on all three seeds. The reasoning is in section 8, and it is the
+  rehearsal's reading rather than a ruling.
 
 ---
 
@@ -191,11 +197,11 @@ returns no reading rather than a flattering one.
 
 ---
 
-## 2a. The proposal's ten rehearsal items, and where each one stands
+## 2a. The proposal's eleven rehearsal items, and where each one stands
 
 | item | what it had to show | state |
 |---|---|---|
-| **R-1** the grammar works and both conditions are learnable at tiny scale | both matched conditions above the one-in-four level; the four matched properties hold in the generated data | **FAIL on one half.** All four matched properties pass their checks. The own-directed condition clears its bar on every arm and seed. The named-other-directed condition clears it on one seed of three on the entangled arm and one of three on the free arm, and doubling the training budget moves it about a point. Section 8 |
+| **R-1** the grammar works and both conditions are learnable at tiny scale | both matched conditions above the one-in-four level; the four matched properties hold in the generated data | **FAIL on one half.** All four matched properties pass their checks. The own-directed condition clears its bar on every arm and seed. The named-other-directed condition clears it on one seed of three on the entangled arm and one of three on the free arm, and doubling the training budget moves it about a point. Section 8 — which also adjudicates the proposal's first stop condition, keyed to this item failing: **it does not fire**, because the separable arm reaches 1.0000 on both conditions on all three seeds |
 | **R-2** the separable arm is constructible and its pointer is transplantable on its own | blind nomination finds it without being told where it is; the ownership-only transplant reproduces the counterfactual | **PASS on the arm, FAIL on the procedure as written.** The arm is constructible and its pointer is patchable on its own: the reading is exactly 0.0000 on all three seeds. The blind nomination finds it only under one of three readings of the read's label, and returns near zero under the other two. Section 3 |
 | **R-3** the entangled arm is constructible and its degree is genuinely known by construction | no subspace reproduces the counterfactual while the whole-state transplant at the same sites does | **PASS.** Whole-state 0.540 to 0.575 against a best blind-nominated subspace of 0.066 to 0.069, on all three seeds. The two-arm fallback does not fire |
 | **R-4** all four outcomes of the measure are reachable | near zero, high, negative, no verdict | **PASS.** 0.0000; 0.873 to 0.885; −0.1706 and −0.2755; and no verdict at the deliberately failing site set. The negative outcome needed its cause found before it could be produced at all — section 2, P-5 |
@@ -205,6 +211,17 @@ returns no reading rather than a flattering one.
 | **R-8** the transplanting code passes its known-answer tests | the null transplant changes nothing; a transplant moves the action to the donor's value; the ownership-only transplant is the whole-state one restricted to a subspace | **PASS.** The null transplant leaves every logit bit-identical on every arm and seed. The restriction property is proved as a tensor identity at full rank, with a largest logit difference of exactly zero. The transplant moves the separable arm's action from 0.0000 to 1.0000 |
 | **R-9** the paired-uncertainty method is chosen and demonstrated | two candidates computed on the same data, and the seed count following from the method rather than from habit | **DEMONSTRATED; the choice is not made here.** Across-seed spread 0.0189 and 0.0227; the within-seed bootstrap over matched pairs 0.0198 and 0.0203. They agree closely, which is the useful finding. The arithmetic for a half-width of 0.05 implies one seed at toy scale, which should not be carried across without a discount |
 | **R-10** the separation bar is set | the observed separation between the two constructed arms and its spread, with the reasoning written out | **MEASURED, DELIBERATELY NOT SET.** 0.873 to 0.885 against exactly 0.0000, across-seed spread 0.019 and 0.000. Fixing the bar is John's; the measurement shows the choice is not a close one |
+| **R-11** seconds per step is measured on the rented machine, for all three arms, and the shutdown path is exercised against the real vendor | seconds per training step for each architecture at the registered size, on the registered venue and rate, plus both halves of the shutdown handshake | **NOT RUN — it needs John's spoken go naming the run, and that has not been given.** Everything it asks for is staged and costed: `docs/successor-rented-slice-staging-2026-09-21.md`, with the plan the staging script writes in `out/rented-slice-plan.txt`. One slice is estimated at about **$0.75 to $1.00** with a hard cap of **$2.00** (staging note), inside the **$3** the proposal budgets for this item. Section 10 |
+
+*The eleventh row was added after the fact, and the reason is worth stating so
+nobody reads it as a gap that was nearly missed. The proposal grew item R-11
+four seconds after this rehearsal's method file was committed, on the branch
+this work was not on, so the rehearsal was planned against a list of ten and
+this table was first written with ten rows. The rehearsal staged and costed
+exactly what the eleventh item asks for anyway, without having seen it. Nothing
+was missed but the numbering — and a table that claims to cover every item has
+to cover every item, because the protocol makes a pre-stated quantity with no
+rehearsal line against it a fatal finding on its own.*
 
 ---
 
@@ -228,13 +245,48 @@ that phrase has at least three meanings:
 How well each fits, at the action position, and what each finds when its
 directions are transplanted into the arm whose answer is in a known place:
 
-| reading of the label | how well it fits | ownership-only transplant, best over every rank |
+| reading of the label | how well it fits, seeds 0 / 1 / 2 | ownership-only transplant, best over every site set and rank cap, seeds 0 / 1 / 2 |
 |---|---|---|
-| the agent's slot | 0.256 (chance is 0.25) | **0.0000** |
-| the marker's rank — *the programme's own convention* | 0.706 | **0.0000** |
-| which marker word | 1.000 | **1.0000** at rank 8 and above |
+| the agent's slot | 0.256 / 0.256 / 0.256 (chance is 0.25) | **0.0117 / 0.0000 / 0.0000** |
+| the marker's rank — *the programme's own convention* | 0.706 / 0.694 / 0.700 | **0.0050 / 0.0183 / 0.0117** |
+| which marker word | 1.000 / 1.000 / 1.000 | **1.0000 / 1.0000 / 1.0000**, at rank 8 and above |
 
-Three things follow, and all three belong in the registration text.
+Every cell above is read out of `out/nominate.json`. An earlier draft of this
+table printed the two failing rows as a flat **0.0000**; neither is 0.0000 on
+every seed, and the marker-rank row is not 0.0000 on any seed. The correction
+does not move the finding — 0.005 to 0.018 is far below the 0.2500 a solver
+that cannot tell whose value it needs reaches by luck, so "no causal effect" is
+still the fair plain reading — but a cell in this table has to carry what was
+measured, and these two did not.
+
+**What the measure itself would print, which is the sentence this turns on.**
+The table above reports the transplant accuracies and leaves the arithmetic to
+the reader. Doing the arithmetic means putting each label's best configuration
+through `measure.py`, at the rehearsal's own working floor of 0.30, with the
+whole-state accuracy and the no-transplant rate the record gives for this arm
+(1.0000 and 0.0000 on all three seeds, so both candidate forms of the reading
+agree exactly):
+
+| seed | reading of the label | whole-state | ownership-only | the degree the measure prints |
+|---|---|---|---|---|
+| 0 | the agent's slot | 1.0000 | 0.0117 | **0.9883** |
+| 0 | the marker's rank | 1.0000 | 0.0050 | **0.9950** |
+| 0 | which marker word | 1.0000 | 1.0000 | 0.0000 |
+| 1 | the agent's slot | 1.0000 | 0.0000 | **1.0000** |
+| 1 | the marker's rank | 1.0000 | 0.0183 | **0.9817** |
+| 1 | which marker word | 1.0000 | 1.0000 | 0.0000 |
+| 2 | the agent's slot | 1.0000 | 0.0000 | **1.0000** |
+| 2 | the marker's rank | 1.0000 | 0.0117 | **0.9883** |
+| 2 | which marker word | 1.0000 | 1.0000 | 0.0000 |
+
+**Under the two failing readings of one unwritten word, the instrument reports
+a degree of 0.982 to 1.000 for an arm whose degree is 0.0000 by construction.**
+That is a wrong answer of the largest size the scale allows, on the one arm
+where the right answer is known in advance. It is not a near miss and it is not
+a matter of precision: the instrument would put the separable arm at the
+entangled end of its own scale and give no sign that anything had gone wrong.
+
+Four things follow, and all four belong in the registration text.
 
 1. **The registration must say what the label is.** Under two of the three
    readings the measure would have reported the separable arm — the arm whose
@@ -242,18 +294,41 @@ Three things follow, and all three belong in the registration text.
    answer of the largest possible size, produced by a sentence nobody thought
    was ambiguous.
 2. **The programme's existing convention is one of the two that fail.** The
-   marker-rank label fits at 0.706, well above chance, and has **zero** causal
-   effect. This is the programme's own lesson arriving in a new shape: a
-   representation a straight-line read recovers beautifully can do nothing when
-   you intervene on it. The proposal already says to nominate by causal effect
-   rather than by fit, and this rehearsal is the first thing in the programme
-   to show what that rule buys.
-3. **The rank cap is not free either.** With the right label, the
-   ownership-only transplant on the separable arm goes 0.170 at rank 1, 0.365
-   at rank 2, 0.805 at rank 4, and **1.000 at rank 8**. A cap below the
+   marker-rank label fits at 0.706, 0.694 and 0.700 across the three seeds,
+   well above chance, and its best transplant reaches 0.0050, 0.0183 and
+   0.0117 — no useful causal effect at all. This is the programme's own lesson
+   arriving in a new shape: a representation a straight-line read recovers
+   beautifully can do nothing when you intervene on it. The proposal already
+   says to nominate by causal effect rather than by fit, and this rehearsal is
+   the first thing in the programme to show what that rule buys.
+3. **The rank cap is not free either.** With the right label, at the site set
+   the nomination picks on all three seeds (the first layer, at the position
+   where the action is taken), the ownership-only transplant on the separable
+   arm averages **0.153 at rank 1, 0.355 at rank 2, 0.832 at rank 4 and 1.000
+   at rank 8**. Per seed, from `out/nominate.json`: 0.1517 / 0.1417 / 0.1667 at
+   rank 1, 0.3350 / 0.3950 / 0.3350 at rank 2, 0.7783 / 0.8467 / 0.8717 at rank
+   4, and exactly 1.0000 on every seed at rank 8. A cap below the
    dimensionality of the encoding cannot carry the answer however well the
    subspace is chosen, so a rank cap chosen for parsimony would have produced a
    partial reading and been indistinguishable from partial entanglement.
+   *(An earlier draft of this paragraph gave the curve as 0.170, 0.365 and
+   0.805. Those three figures are in no committed output file, and no arm,
+   label, site set or way of averaging reproduces them: across the nine search
+   grids of 810 rows each, the closest rank curve of any arm, label and site set
+   misses them by 0.055 in total. They are
+   withdrawn, and the measured curve above replaces them.)*
+4. **Even repaired, the procedure is not one instrument.** The label that wins
+   is not the same label twice running. Across the nine arm-and-seed pairs the
+   winning reading is which-marker-word seven times, the marker's rank once
+   (the entangled arm at seed 2) and the agent's slot once (the free arm at
+   seed 0). The margins in those two cases are tiny: on the entangled arm at
+   seed 2 the three labels reach 0.0683, 0.0650 and 0.0633, and on the free arm
+   at seed 0 they reach 0.0700, 0.0683 and 0.0667 — so no reading reported
+   anywhere in this file moves. But an instrument that silently picks one of three
+   meanings per run is three instruments, and which one it is depends on the
+   data it is pointed at. That is a second reason, independent of the first,
+   why the registration has to fix the label rather than leave the search to
+   choose it.
 
 ---
 
@@ -312,11 +387,41 @@ to report, by 0.110 — six times its own spread.
 
 On **real forward passes**, holding the architecture, the sites and the
 subspace fixed and only moving the state a fraction of the way toward the
-donor's, the same thing happens: on six of the nine arms and seeds the
-floor-corrected form is markedly the flatter of the two. On the free arm at
-seed 2 the registered reading spans **0.517** across the attenuation while the
-floor-corrected one spans 0.073, and on the entangled arm at seed 1 the
-registered reading spans 0.342 against 0.016.
+donor's, the same thing happens on most arms but not on all of them. Counted
+out of `out/denominator_attenuated.json`, arm by arm and seed by seed, with the
+span each form covers across the four attenuations:
+
+| arm and seed | the reading as registered | the floor-corrected reading | which is flatter |
+|---|---|---|---|
+| entangled, seed 0 | 0.0405 | 0.0221 | floor-corrected |
+| entangled, seed 1 | 0.3424 | 0.0164 | floor-corrected |
+| entangled, seed 2 | 0.0087 | 0.0023 | floor-corrected |
+| free, seed 0 | 0.3291 | 0.0085 | floor-corrected |
+| free, seed 1 | 0.0680 | 0.0710 | **the registered one** |
+| free, seed 2 | 0.5169 | 0.0732 | floor-corrected |
+| separable, seed 0 | 0.0067 | 0.0067 | dead heat |
+| separable, seed 1 | 0.0631 | 0.0631 | dead heat |
+| separable, seed 2 | 0.0066 | 0.0066 | dead heat |
+
+**Five of the nine, not six.** Three are dead heats, and they are dead heats
+for a reason worth stating rather than glossing: on the separable arm the
+no-transplant rate is exactly zero, so the two forms are the same arithmetic on
+that arm and cannot disagree. The biggest gaps are the free arm at seed 2,
+where the registered reading spans **0.5169** across the attenuation while the
+floor-corrected one spans 0.0732, and the entangled arm at seed 1, where the
+registered reading spans 0.3424 against 0.0164.
+
+**And this check fails its own pre-stated cell on one arm and seed, which was
+not reported.** The method addendum's cell for it is written per arm, and its
+fail line is exactly "the registered form is the flatter one"
+(`docs/successor-measure-rehearsal-method-addendum-denominator-2026-09-21.md`,
+check D-2). On the free arm at seed 1 the registered form is the flatter one,
+0.0680 against 0.0710. **That is a fail, and it is recorded here as a fail.**
+The gap is small and the overall picture is unchanged — five arms and seeds
+favour the correction, three cannot distinguish the two forms, and the two
+largest gaps in the table are both enormous and both in the correction's favour
+— but a pre-stated line that fires has to be reported when it fires, and an
+earlier draft of this file reported no fail anywhere for this check.
 
 **One measurement makes this less alarming than it looks, and it is worth
 putting beside the finding.** The correction's size is the no-transplant rate,
@@ -359,11 +464,20 @@ rate. Measured against both predictions on the record:
 | free, seed 1 | 0.0550 | 0.1250 | 0.0634 |
 | free, seed 2 | 0.0762 | 0.1250 | 0.0587 |
 
-The review's formula predicts every measured value to within a few
-thousandths; the proposal's "near one in eight" is wrong on every arm, and is
-wrong in the direction that matters: it **passes for a model at chance and
-fails for a model that works**. As registered it would call a working
-instrument broken.
+The proposal's "near one in eight" is wrong on every arm, and is wrong in the
+direction that matters: it **passes for a model at chance and fails for a model
+that works**. As registered it would call a working instrument broken. The
+review's formula is far better — but **not, as an earlier draft of this file
+said, right to within a few thousandths everywhere.** The misses, out of
+`out/denominator_floor.json`: the separable arm's three seeds are exact at
+0.0000; the entangled arm's three are out by 0.0002, 0.0042 and 0.0033; the
+free arm's are out by 0.0024, **0.0084** at seed 1 and **0.0175** at seed 2.
+So seven of the nine are within about four thousandths or better and two are
+not, and the worst miss — 0.0762 measured against 0.0587 predicted — is nearly
+two hundredths, which is about **a third of the value being predicted**. The
+finding stands and the formula is the right one to register in place of "near
+one in eight"; the claim about how closely it predicts does not, and a rule
+registered against it needs room for a miss of that size.
 
 ---
 
@@ -504,12 +618,72 @@ clearing it.
 
 **So the shortfall is not mainly a limit of the training budget.** At this
 size, on this grammar, the named-other-directed revision is close to
-unlearnable, and more steps do not fix it. That does not settle what happens at
-the registered size — the ten-million rung failed to learn the earlier design's
-task and the thirty-million rung did not — but it does mean the risk the
-proposal's honest prior names is real, is reproducible on a laptop for nothing,
-and would be worth attacking in the design before about $110 of registered runs
-are committed to it.
+unlearnable **by the two arms that are not built with the ownership answer in a
+slot of its own**, and more steps do not fix it. (The qualifier matters and the
+next paragraph turns on it: the separable arm learns the same condition to
+1.0000 at the same size on the same grammar.) That does not settle what happens
+at the registered size — the ten-million rung failed to learn the earlier
+design's task and the thirty-million rung did not — but it does mean the risk
+the proposal's honest prior names is real, is reproducible on a laptop for
+nothing, and would be worth attacking in the design before about $110 of
+registered runs are committed to it.
+
+### Does the proposal's first stop condition fire? Adjudicated here: **no**
+
+The proposal's stop conditions halt spend and go to John. The first of them,
+**S1**, is keyed to exactly the item this section marks failed:
+
+> **S1.** The rehearsal fails item R-1 (the grammar is not learnable at tiny
+> scale even in principle) or item R-8 (the transplanting code does not pass
+> its known-answer tests). Nothing trains. About $10 spent.
+
+A reader going from this file to the proposal will ask whether the line is
+supposed to stop here. The question is answered here rather than left to
+whoever reads the two documents next, because the proposal's own eighth stop
+condition (**S8**, the one that forbids stepping over anything) says a stop
+condition is never recorded as not applicable and stepped over.
+
+**The finding: S1 does not fire.** Two measurements settle it, both from
+`out/gate.json`.
+
+- **The separable arm reaches 1.0000 on both conditions, on all three seeds.**
+  Own-directed 1.0000 / 1.0000 / 1.0000 and named-other-directed 1.0000 /
+  1.0000 / 1.0000. A trained model of this size, on this grammar, learns both
+  conditions perfectly. S1's own words are "not learnable at tiny scale **even
+  in principle**" and "**nothing trains**". Something trains, and it trains to
+  the top of the scale.
+- **The named-other condition is solvable at this scale by a strategy the
+  rehearsal built and scored.** The name-only solver — which reads nothing but
+  the name token — reaches **1.0000** on the named-other condition (and 0.2380
+  on the own-directed one). So the condition is not unlearnable in principle;
+  it is unlearned by two of the three architectures.
+
+What actually failed is narrower than S1's words, and is still serious: on the
+two arms that are *not* built with the ownership answer in a slot of its own,
+the named-other condition does not clear its pre-stated bar on a majority of
+seeds, and doubling the budget does not fix it. That is a fact about those
+architectures at this size, not about the grammar in principle.
+
+**The strongest case for the other reading, stated rather than skipped.** Item
+R-1 as the proposal words it in section 10 says "both matched conditions are
+learnable at tiny scale" without naming an arm; this file marks R-1 a **FAIL**;
+and a reader who chains "item R-1 failed" straight to the first stop condition
+gets a stop. The eighth stop condition can be read as pushing the same way. The
+reason that reading does not carry: the eighth is about an item that **cannot
+be evaluated** — missing data, a measurement never taken — and this one was
+evaluated, with every number on the record. And the first stop condition is not
+keyed to the item's heading but to the state of the world its own parenthesis
+names, which the separable arm's 1.0000 contradicts directly. A stop condition
+that fired when a model scores perfectly on both conditions would be firing on
+the opposite of the thing it names.
+
+**What follows instead.** The consequence the measurement supports is item 5 of
+section 12 — a design change for the named-other condition, or a decision to
+accept the risk with the number in front of John — not a halt. **This is the
+rehearsal's adjudication and not a ruling, and it is John's to overturn.** If he
+reads S1 as firing, the line stops and the proposal's own accounting for that
+stop is "about $10 spent"; the actual figure so far is **nothing**, because
+every number in this file was produced on the laptop.
 
 **The acting-channel lesion behaves as pre-stated on the separable arm and
 not on the others.** Removing the channel drops the separable arm's
@@ -537,12 +711,28 @@ the only honest way to keep a method that was committed first.
    negative outcome was pursued by a systematic search instead, and found —
    section 2, P-5 — with its cause identified. This is a better result than the
    planned one, and it was forced by the building.
-2. **The nomination family was widened after the pre-stated one failed.** Three
-   readings of the read's label instead of one, and rank caps to 24 instead of
-   8. The pre-stated family is still computed and reported separately at every
-   point, so the failure of the procedure *as written* is on the record beside
-   the repaired one. 810 comparisons per arm and seed, of which 225 are the
-   pre-stated family.
+2. **The nomination family was widened at one end and narrowed at the other.**
+   Three readings of the read's label instead of one, and rank caps to 24
+   instead of 8. The pre-stated family is still computed and reported
+   separately at every point, so the failure of the procedure *as written* is
+   on the record beside the repaired one. 810 comparisons per arm and seed.
+   **The narrowing was not recorded when it happened, and is recorded here.**
+   The first commit of the rehearsal code (`5fa85e2`), committed before any
+   result ran, fixed five rank caps in `rehearse.py` — one, two, **three**,
+   four and eight, as the line `RANK_CAPS = [1, 2, 3, 4, 8]`. The final code
+   drops the cap of three and counts only caps of one, two, four and eight as
+   belonging to the pre-stated family. So the pre-stated family is **180
+   comparisons as actually computed** — nine layer sets by five position sets
+   by four rank caps by one reading of the label, which is the count of
+   pre-stated rows in `out/nominate.json` — and not the 225 an earlier draft of
+   this file reported. One pre-stated cell, a rank cap of three under the
+   pre-stated reading of the label, is not in the record at all. It does not
+   change the finding: under that reading, caps of one, two, four and eight all
+   return between 0.0000 and 0.0117 and the fit sits at chance, so there is no
+   mechanism by which a cap of three alone would have found the answer. But the
+   claim this rehearsal makes is precisely that the procedure *as pre-stated*
+   fails, and that claim is owed the whole pre-stated procedure rather than
+   four fifths of it.
 3. **The fitted reads were frozen.** The first implementation re-fitted the
    straight-line read on the fresh episodes the reading is taken from, which is
    the one thing a data split exists to prevent. Fixed before any result in
@@ -603,7 +793,7 @@ that staging note.
 
 ## 11. The numbers this rehearsal was told not to invent
 
-Section 9 of the proposal lists eight numbers as outputs of the rehearsal. None
+Section 9 of the proposal lists nine numbers as outputs of the rehearsal. None
 is named here. What each one now has behind it:
 
 | number | what the rehearsal measured | still needed |
@@ -611,11 +801,12 @@ is named here. What each one now has behind it:
 | the separation bar between the two constructed arms | separation of **0.873 to 0.885** against **0.0000**, across-seed spread 0.019 on the entangled arm and 0.000 on the separable one | John's ruling. A bar anywhere from 0.1 to 0.8 would separate these two at toy scale, so the measurement does not force a choice; what it does is show the choice is not close |
 | the learn-both threshold, per condition | measured competitors: ownership-blind at 0.2237 and 0.2253, name-only at 0.2380 and 1.0000 | a decision about the named-other condition, which at toy scale does not clear the one-in-four level on a majority of seeds |
 | the floor on the whole-state transplant accuracy | the full curve against site set, per arm, in `out/nominate.json`: the entangled arm runs 0.0517 at the first layer, 0.3467 at the second, and about 0.556 from the third on, which is its own accuracy | John's ruling — and, per section 7 item 3, a floor stated **relative to the arm's own accuracy**, not as an absolute |
-| the rank cap on the nominated subspace | 0.170 at rank 1, 0.365 at rank 2, 0.805 at rank 4, **1.000 at rank 8** on the separable arm | John's ruling; the measurement says a low cap silently under-reads |
-| the candidate site list and its family correction | 45 site sets × 3 labels × 6 rank caps = **810 comparisons** per arm and seed; the pre-stated family was 225 | John's ruling on which labels are in the family at all |
+| the rank cap on the nominated subspace | on the separable arm, at the site set the nomination picks, averaged across the three seeds: **0.153 at rank 1, 0.355 at rank 2, 0.832 at rank 4 and 1.000 at rank 8** — per seed in section 3, item 3 | John's ruling; the measurement says a low cap silently under-reads |
+| the candidate site list and its family correction | 45 site sets × 3 labels × 6 rank caps = **810 comparisons** per arm and seed; the pre-stated family was 225 as planned and **180 as computed**, because the final code dropped the rank cap of three — section 9, departure 2 | John's ruling on which labels are in the family at all |
 | the seed count per arm | three seeds gave an across-seed spread of 0.019 and 0.023 on the raw difference; the arithmetic for a half-width of 0.05 implies **one seed** | John's ruling. The toy arms are far more repeatable than registered-size runs will be, so this number should not be carried across without a discount |
 | the paired-uncertainty method | both computed on the same data: across-seed spread 0.0189 and 0.0227; the within-seed bootstrap over matched pairs 0.0198 and 0.0203. **They agree closely**, which is itself the useful finding — the choice does not matter much here | John's ruling |
 | the ownership-lesion collapse threshold | the separable arm drops to 0.2467 to 0.2733 on the own-directed condition while holding 1.0000 on the named-other one | a decision, plus the section 8 finding that the pre-stated shape is architecture-specific |
+| seconds per step, per arm, on the rented machine — the whole of the second release's arithmetic | **nothing.** This rehearsal measured the *ratios* between the three architectures on the laptop (0.981, 1.049 and 1.000) and nothing else; the proposal says in terms that this number is never inferred from a premium and never measured on the Mac | rehearsal item R-11, the one short slice of rented time. Staged, costed and **not run**: it needs John's spoken go naming it. Section 10 |
 
 ---
 
