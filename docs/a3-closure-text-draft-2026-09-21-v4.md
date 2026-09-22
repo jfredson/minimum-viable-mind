@@ -33,7 +33,11 @@ contain it. Two further claims that an instrument was never run — the
 mid-episode re-indexing probe and the deferred marker-word read — now carry
 their records, as the patching claim already did, and the marker-word read
 now carries the reason it was deferred. "Registration revision 8" now names
-the file it is a revision of. The date in the heading is still a placeholder,
+the file it is a revision of. One further thing, not in the check but of the
+same kind: the reach figure of about one legible episode in eleven now cites
+the correction note that produced it, which John ruled on 2026-09-20 must be
+cited wherever the figure is quoted, and which the block had been quoting
+without it. The date in the heading is still a placeholder,
 because the commit that fills it does not exist yet, and the placeholder now
 says so. The session that made these changes did not verify them; the closure
 rule gives that to another session (`docs/outside-review-protocol.md`, "The
@@ -158,10 +162,13 @@ load-bearing and the instruments cannot find it" as a failure of the
 instruments until causal patching has run, and that reading stands. What
 can be said descriptively, and separately from it: these probes did not
 localize this target at these positions, at a heuristic reach of roughly
-one legible episode in eleven. What may not be said is that the structure
-is absent, or that these nulls make it less likely, because every number in
-these runs is conditional on this stack being able to recover a center that
-is known to be there, and that has never been established on this design.
+one legible episode in eleven (`fitted-position-sweep-findings-CORRECTION-2026-09-20.md`,
+which John ruled on 2026-09-20 must be cited wherever that figure is used;
+it is a rough reach and not measured detection power). What may not be said
+is that the structure is absent, or that these nulls make it less likely,
+because every number in these runs is conditional on this stack being able
+to recover a center that is known to be there, and that has never been
+established on this design.
 The registered blind-localization arm is the measurement that would
 establish it. Its status is ruled: the 2026-09-16 blind run discharged the
 registered arm and no re-run is scheduled
