@@ -11,10 +11,20 @@ text. No money is spent and no machine is rented by this document.*
 roadmap (`docs/rulings/2026-09-20-december-result-roadmap.md`), item 5 — the
 result definition in section 2 of `docs/december-result-roadmap-2026-09-20.md`
 and the three-arm design in its section 3 are "the basis of the successor
-proposal … a go to draft, not a registration". Item 4 of the same ruling sets a
-spend cap of $130; section 12 below reports that the roadmap's own items do not
-fit inside it and proposes a number, which is what the standing rule ruled the
-same day requires.*
+proposal … a go to draft, not a registration". Item 4 of the same ruling set a
+spend cap of $130.*
+
+***Revised 2026-09-21, after John ruled on spending.** Two things overtook
+version 1 of this document on the day it was drafted: the compute ledger
+(`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`) was corrected
+to a running total of about $225.70 of $400, and John ruled that the money is
+authorised in two releases rather than as one flat cap, with the second release
+asked for only after the week-40 rehearsal has measured throughput. **Section 12
+is rewritten to that ruling and to the corrected arithmetic; sections 11, 13, 15
+and 16 carry the consequences. Nothing about the science is changed.** Version
+1's claim that a $175 cap fitted the envelope "with $9.30 to spare" was wrong by
+the sign of its own margin and is corrected in section 12.1 rather than
+silently removed.*
 
 *Written under the workspace plain-language rule (`~/Documents/Code/CLAUDE.md`,
 ruled 2026-08-30): the plain word before the term of art, and no bare
@@ -635,12 +645,18 @@ Binding if registered, in this order:
    here means nothing about the registered size, and the registration says so
    in advance to stop anybody reading it as a result later.
 5. **A staggered launch, which is this proposal's addition to the roadmap's
-   week 43.** One arm F run at the registered size launches first, about $12.
-   Its learn-both result is read before the remaining eight launch. If it fails
-   the gate, the one permitted re-run happens; if that fails too, the outcome is
-   R3 and the remaining eight never launch. On the honest prior in section 3
-   this is the most likely course, and it saves about $96 of the $108 wave.
-   Cost: about a day of schedule, which week 43 has. Judgment call; decision 11.
+   week 43, and which John adopted on 2026-09-21.** One arm F run at the
+   registered size launches first, about $12 (compute ledger, "Phase budget
+   guide") — the third and last line of the first release of money in section
+   12.3, and the last thing the money authorised so far pays for. Its learn-both
+   result is read before the remaining eight launch, and the remaining eight are
+   inside the second release, which does not exist until he rules on it. If the
+   first run fails the gate, the one permitted re-run happens — about $12 that
+   the first release does not cover and that is asked for separately (section
+   12.3); if that fails too, the outcome is R3 and the remaining eight never
+   launch. On the honest prior in section 3 this is the most likely course, and
+   it saves about $96 of the $108 wave. Cost: about a day of schedule, which
+   week 43 has. Judgment call; decision 11.
 6. Remaining runs launched (week 43). Nomination on development episodes as arm
    F checkpoints arrive.
 7. Nomination frozen and committed (week 44). Transplants on fresh episodes,
@@ -663,97 +679,264 @@ Binding if registered, in this order:
   registered. About $10 spent. This is the condition the closed design needed
   and did not have.
 - **S4.** The staggered first registered run fails the learn-both gate, and the
-  one permitted re-run fails it too. Outcome R3. About $32 spent.
-- **S5.** Cumulative actual spend reaches the cap John rules. Work stops
-  regardless of state; what is unrun is reported as unrun.
+  one permitted re-run fails it too. Outcome R3. **About $44 spent**: the first
+  release's $32 (section 12.3) plus about $12 for the re-run, which the first
+  release does not cover and which is asked for when the first half of this
+  condition fires.
+- **S5.** Cumulative actual spend reaches the release John has authorised —
+  about $32 for the first release (section 12.3), until and unless he rules on
+  the second. Work stops regardless of state; what is unrun is reported as
+  unrun, and nothing launches against a release that has not been ruled.
 - **S6.** Either kill date passes (registration by 2026-10-18, runs launched by
   2026-11-01). Outcome R4, named in `STATUS.md` as a schedule failure.
 - **S7.** Any corrigibility event under commitment C5 of
   `spec/corrigibility-commitments.md` (the model observed exploiting or
   degrading the evaluation machinery) halts the run before further compute.
+- **S8.** A rehearsal item, a gate or a stop condition **cannot be evaluated**
+  — missing data, code that will not run on the artifact, a measurement never
+  taken. It counts as failed and its consequence fires; it is never recorded as
+  not applicable and stepped over. John's ruling of 2026-09-21; section 12.7.
+- **S9.** The first rented machine of any wave bills at an anomalous rate (the
+  3.5× row of 2026-08-08, compute ledger). **The wave halts** and it goes to John
+  with the billed row beside the estimate. This replaces the roadmap's week-43
+  seed fallback, which at the anomalous rate spends more than the programme has
+  left; section 12.5.
 
 ---
 
-## 12. Spend: the real arithmetic, the shortfall, and the number proposed
+## 12. Spend: the corrected arithmetic, and the two releases of money John ruled
 
-### 12.1 The cap in force does not fit its own contents
+*Wording note. John's ruling of 2026-09-21 authorises the money in two
+**tranches**. That is a borrowed finance word, so this document says **first
+release** and **second release** and means exactly what the ruling means: an
+amount he has approved now, and a larger amount he will be asked for later.*
 
-Section 6 of the December-result roadmap sets the successor cap at **$130**,
-"covering rehearsal (up to $10), development runs (up to $10), nine registered
-30M runs (about $110) and one re-run (about $12) with the balance as the
-anomaly margin."
+### 12.1 The number version 1 of this section was built on was wrong
 
-Those four items sum to **$142**. There is no balance. The plan is **$12 over
-its own cap before any billing anomaly**, and the anomaly margin the sentence
-promises does not exist. This is reported here rather than absorbed, under the
-standing rule John made on 2026-09-20 in the same ruling that set the cap: when
-the right next step costs more than the cap in force, the recommendation says
-so and proposes the increase with the number; a cap is a gate for his ruling,
-never a reason to route around a step, shrink it silently, or call it
-impossible.
+Version 1 of this section said the programme had spent **$215.70** of its $400
+and had $184.30 left, and concluded that a flat cap of $175 fitted inside that
+with $9.30 to spare. **That conclusion was wrong, and the error is recorded
+here rather than quietly repaired.**
 
-### 12.2 The itemised estimate
+The $215.70 came from the spend record in `data/project.toml`. The money's
+system of record is not that file but the compute ledger
+(`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`), which calls
+itself "the registered budget instrument" in its own first line. That ledger
+was corrected on 2026-09-21 to fold in two rows the project file had not caught
+up with:
+
+- the control-learnability pilot of 2026-09-19, **about $9.90** (compute
+  ledger, the 2026-09-19 row, which records the correction in terms: the row
+  "had carried the pre-run figure");
+- the checkpoint recovery of 2026-09-20, **$0.067** (compute ledger, the
+  2026-09-20 row — measured from the account balance falling from $79.8897 to
+  $79.8228, not inferred).
+
+The ledger's last row now reads a programme running total of **about $225.70 of
+$400** (compute ledger, the 2026-09-20 row).
+
+So the arithmetic that matters is:
+
+| | |
+|---|---|
+| Programme envelope (raised from $200 on 2026-08-16) | **$400** — compute ledger, the 2026-08-16 top-up note and the 2026-08-15 row |
+| Spent to date | **about $225.70** — compute ledger, the 2026-09-20 row |
+| **Headroom** | **$174.30** |
+
+A flat cap of $175 does not fit inside $174.30 with $9.30 to spare. It is
+**$0.70 more than every dollar the programme has left**, before a single
+billing anomaly. Version 1 had the sign of its own margin inverted, and the
+number it reported as spare was the number it was over by.
+
+*(`data/project.toml` still carries the stale $215.70, and section 6 of the
+December-result roadmap `docs/december-result-roadmap-2026-09-20.md` repeats it
+as "about $184 unspent". A separate session is correcting the project file;
+this document does not touch it, the roadmap or any ruling. Where the two
+disagree, the ledger governs, and this section is written against the ledger.)*
+
+### 12.2 What John ruled on 2026-09-21
+
+Six rulings, given in session on 2026-09-21 (Pacific) on the strength of the
+corrected ledger. **The committed ruling text is owed under `docs/rulings/`; it
+is not yet on disk, and this section is written to be superseded by it rather
+than to stand in for it.** Decision 7 in section 15 is rewritten to match.
+
+1. **The money is authorised in two releases, not as one flat cap.** The first
+   release covers the rehearsal, the development runs and one free-arm run at
+   the registered size.
+2. **The second release is asked for only after the week-40 rehearsal has
+   measured seconds per step for all three arms**, so that the figure rests on
+   measurement rather than on a per-step premium carried over from a different
+   experiment's full-versus-twin runs.
+3. **The staggered launch is adopted** — this proposal's own recommendation in
+   section 11, item 5, and decision 11.
+4. **"Halt, not trim" replaces the roadmap's week-43 seed fallback** as the
+   response to a billing anomaly (section 12.5 below).
+5. **The rented account is funded per wave rather than per cap**: topped up to
+   that wave's estimate plus $20 and no further (section 12.6).
+6. **A check that cannot be run counts as a trip, not a skip** (section 12.7).
+
+**The $400 ceiling is untouched.** The ruling of 2026-08-16 that raised it from
+$200 and made it final stands, and nothing in this section asks for a raise.
+
+### 12.3 The first release: about $32, inside the $174.30 headroom
 
 | Item | What it buys | Basis | Amount |
 |---|---|---|---|
-| Rehearsal, week 40 | Tiny models, three architectures, transplanting code, the ten rehearsal items, throughput | Roadmap section 6; local where the Mac allows | $10 |
-| Development runs, week 42 | Three arms, one seed each, at the 10-million size: pipeline, self-tests, throughput | The earlier 10-million run measured $1.94 for 2.86 machine-hours; three at about $2, plus margin | $10 |
-| Nine registered runs at the registered size | Three arms × three seeds | The last measured pair of registered-size runs cost $20.08 for 20.28 machine-hours at $0.99/hr, so $10.04 each; the ledger's planning figure of $12 is carried instead, to cover arms T and C being slower per step | $108 |
-| One permitted re-run | An arm that fails the learn-both gate gets one more try | One run at the planning figure | $12 |
-| Transplanting and measurement on fresh episodes | The measurement itself, all arms, all controls | Planned local at $0, as every probe and lesion pass in this programme has run; carried as a contingency for one rented machine if the rehearsal's measured local runtime is too long | $12 |
-| Billing-anomaly and idle-billing margin | The unexplained 3.5× billing row of 2026-08-08, waived and never explained, would turn one $10 run into about $35; idle billing has cost $10.30 across four occurrences | One anomalous run (+$23) | $23 |
-| **Total** | | | **$175** |
+| Rehearsal, week 40 | Tiny models, three architectures, transplanting code, the ten rehearsal items of section 10, and the throughput measurement the second release depends on | Section 6 of the December-result roadmap budgets it at up to $10; local where the Mac allows | up to **$10** |
+| Development runs, week 42 | Three arms, one seed each, at the 10-million size: pipeline, self-tests, throughput | The earlier 10-million run measured $1.94 for 2.86 machine-hours (compute ledger, the 2026-08-07/08 pilot row); three at about $2, plus margin | up to **$10** |
+| One free-arm run at the registered size, week 43 | The staggered first run of section 11, item 5, whose learn-both result is read before anything else launches | The last measured pair of registered-size runs cost $20.08 for 20.28 machine-hours at $0.99/hr, so $10.04 each (compute ledger, the 2026-09-17 row); the ledger's own planning figure for a run at this size is $12 (compute ledger, "Phase budget guide", registered training at 30M) | about **$12** |
+| **First release, total** | | | **about $32** |
 
-**What the roadmap's list leaves out, and this one adds.** The roadmap has no
-line for the measurement itself. Transplanting is new code run on nine
-checkpoints with seven controls on fresh episodes, and while the programme's
-probe work has always run locally at no cost, a nine-checkpoint transplanting
-sweep is larger than anything it has run locally before. Carrying $12 against
-it is honest; carrying nothing was not.
+Against the corrected headroom:
 
-### 12.3 What $175 means against the programme ceiling
+| | |
+|---|---|
+| Headroom (section 12.1) | $174.30 |
+| First release | about $32 |
+| **Left unauthorised after the first release** | **about $142.30** |
 
-The programme envelope is $400, of which $215.70 is spent, leaving **$184.30**.
-The closed Amendment A3 had its own $100 stop with about $55.70 unspent; that
-remainder is already inside the $215.70 figure and must not be counted twice.
+**No change to the $400 envelope is requested, and none is needed.** The first
+release is about 18% of what the programme has left and about 8% of the
+envelope. It buys the whole of the critical path up to and including the first
+registered-size result, which is the point at which the most likely outcome in
+section 3 declares itself.
 
-Everything else on the roadmap between now and the hibernation condition of
-2027-01-04 is deferred and costs nothing: the seventy-hour marker-word read,
-the blind-arm re-run, transplanting on the closed design's checkpoints, option
-D, the frontier pilot, Stage 3 and the construction project. **So the successor
-is the only remaining planned spend under the existing ceiling**, and a $175
-cap fits inside it with $9.30 to spare. No raise of the $400 ceiling is
-requested.
+**What the first release deliberately does not cover**, so that nothing is read
+into it: the remaining eight registered runs; the one permitted re-run of a run
+that fails the learn-both gate; the transplanting and measurement work of
+section 12.4; and any margin for the billing anomaly. All four belong to the
+second release.
 
-### 12.4 The recommendation, and the two alternatives named
+**One gap this creates, flagged rather than absorbed.** Section 11's stop
+condition S4 is the staggered first run failing the learn-both gate and its one
+permitted re-run failing too. The first release as ruled names **one** run at
+the registered size, so the re-run — about $12 on the ledger's planning figure
+— has no authorisation inside it. On the honest prior in section 3 this is the
+most likely branch of the whole plan, which makes it a poor thing to discover
+at the moment it fires. See decision 7 in section 15: the recommendation is
+that the re-run is asked for as a small separate release when and if S4's first
+half happens; the strongest alternative is that John folds it into the first
+release now, making that release about $44 and still leaving about $130.30
+unauthorised.
 
-**Proposed: raise the successor cap from $130 to $175**, itemised as above,
-inside the unchanged $400 programme ceiling.
+### 12.4 The second release: shaped now, costed after the rehearsal measures it
 
-Two alternatives, so John rules on a choice rather than on a single number:
+This is **not a request and not a cap**. It is the itemisation the second
+release will be built from, so that John can see now what he will be asked for
+later, and so the rehearsal knows which numbers it is being run to settle.
 
-- **Hold $130.** The only plan that fits is two arms at three seeds — six
-  registered runs at $72, plus $10, $10, $12 and $12, leaving a $14 margin,
-  total $130. That is the two-arm fallback adopted **for budget reasons rather
-  than because the rehearsal found arm C unbuildable**, and it is a different
-  decision from the one John pre-approved. It buys the weaker design described
-  in section 5.2 and should be recorded as such if chosen.
-- **$211, at four seeds per arm.** If the rehearsal's paired-uncertainty method
-  needs a fourth seed, twelve registered runs cost $144 and the total becomes
-  $211, which exceeds the $184.30 remaining and would need a ruling on the
-  $400 ceiling itself. Nothing suggests four seeds yet; the number is given now
-  so that the possibility is not a surprise in week 41.
+| Item | What it buys | Basis | Provisional amount |
+|---|---|---|---|
+| The remaining eight registered runs | Three arms × three seeds, less the one free-arm run already in the first release | Eight at the ledger's $12 planning figure (compute ledger, "Phase budget guide") | **$96** |
+| One permitted re-run | An arm that fails the learn-both gate gets one more try | One run at the same planning figure | **$12** |
+| Transplanting and measurement on fresh episodes | The measurement itself, all arms, all controls | Planned local at $0, as every probe and lesion pass in this programme has run; carried as a contingency for one rented machine if the rehearsal's measured local runtime is too long | **$12** |
+| Billing-anomaly and idle-billing margin | The unexplained 3.5× billing row of 2026-08-08, waived and never explained (compute ledger, the 2026-08-07/08 row and the waiver note beneath the table), would turn one $10 run into about $35; idle billing has cost about $10.30 across four occurrences (compute ledger, the 2026-09-17 row and the notes on the pod-side reaper) | One anomalous run (+$23) | **$23** |
+| **Provisional total** | | | **$143** |
 
-**What is not proposed:** shrinking the design quietly to fit $130, dropping the
-anomaly margin, or leaving the measurement line at zero. Each would fit the
-number and misreport the plan.
+**What the roadmap's list leaves out, and this one keeps.** Section 6 of the
+December-result roadmap has no line for the measurement itself. Transplanting
+is new code run on nine checkpoints with seven controls on fresh episodes, and
+while the programme's probe work has always run locally at no cost, a
+nine-checkpoint transplanting sweep is larger than anything it has run locally
+before. Carrying $12 against it is honest; carrying nothing was not. That line
+survives this revision unchanged — it is real work, and it is the one item in
+this section that no earlier document had costed at all.
 
-### 12.5 The wager on this estimate
+**The two releases together come to about $175, which is $0.70 past the
+headroom.** $32 plus $143 is $175, against $174.30 left (section 12.1). This is
+stated plainly because it is the finding, not a rounding error to absorb: **the
+plan as currently itemised does not fit the remaining envelope, by $0.70,
+before any anomaly.** It is not a shortfall the first release has to solve —
+the first release fits with about $142.30 unspent behind it — but it is the
+thing the second release must answer, and it can be answered in exactly three
+ways: the rehearsal measures the per-run cost below the planning figure; the
+seed count comes down on the rehearsal's own uncertainty method (section 9,
+rehearsal item R-9); or John rules on the $400 ceiling itself. **This document
+proposes none of the three now**, because choosing between them before the
+measurement exists is the error the two-release scheme was ruled to prevent.
 
-Stated so it can lose, in the shape the earlier amendment used: this design
-completes under $175 with three seeds on every arm carried. If measured spend
-approaches $175 with runs missing, **the report is the shortfall, never a
-second raise.**
+**Why the per-run figure is expected to move.** Version 1 carried the ledger's
+$12 planning figure instead of the $10.04 measured on 2026-09-17, "to cover
+arms T and C being slower per step". That premium is an inference from a
+different experiment's full-versus-twin step times, not a measurement of these
+three architectures, and it is exactly what John's second ruling refuses to
+build a release on. **Rehearsal item R-7 replaces it**: seconds per step and
+projected wall-clock and dollars for each of the three architectures at the
+registered size, which is also the outside reviewer's condition in his own
+words — the altered grammar needs a throughput check before the estimate
+becomes a budget. Arms T and C add computation per layer and will not cost what
+arm F costs. **The table above is superseded by that measurement**, in either
+direction, and the second release is asked for on the measured figure.
+
+### 12.5 Halt, not trim: what happens if the billing anomaly recurs
+
+Section 6 of the December-result roadmap says that if the 3.5× billing anomaly
+recurs on the first rented machine, "the seed plan drops as stated in week 43
+before the second pod launches" — two seeds on the constructed arms, three on
+the free arm. (*Pod* is the rental service's word for one rented machine; it
+appears here only inside that quotation.) **John replaced that rule on
+2026-09-21 with a halt.**
+
+The reason is arithmetic. Dropping seeds does not address a tripled unit cost;
+it addresses the number of units. Seven runs at 3.5× the ledger's $12 planning
+figure is $42 each, or $294, and adding the rehearsal ($10), the development
+runs ($10) and the measurement line ($12) gives **about $326** — the figure
+John's ruling cited as about $328, the same arithmetic to a dollar of rounding.
+That is **82% of the entire $400 envelope**, and, more to the point, **$152
+more than the $174.30 the programme actually has left** (section 12.1). The
+trimmed plan does not fit either. A fallback that still spends more than
+everything remaining is not a fallback.
+
+**The rule that replaces it:** the first rented machine billed at an anomalous
+rate halts the wave. Nothing else launches; the anomaly goes to John with the
+billed row beside the estimate, and he rules on whether anything further runs.
+Exposure is bounded at roughly one machine's overrun — about $30 on the 3.5×
+row — instead of at a trimmed wave's $326. This is a harder stop than trimming and it is meant
+to be: the cheapest moment to find out that a run costs three times its
+estimate is after one run.
+
+### 12.6 The account is funded per wave, not per release
+
+The physical backstop is unchanged in kind and tightened in degree. Rule 5 of
+the compute ledger already makes the rented account prepaid with automatic
+reload **off**, "topped up in increments John chooses, never past the cap's
+remainder", so that "the account physically cannot overspend what the ledger
+permits".
+
+John's ruling of 2026-09-21 makes the increment the wave's, not the release's:
+**the account is topped up to the estimate for the wave about to launch plus
+$20, and no further.** The consequence is the point of it — **no anomaly of any
+size can cost more than that, because there is nothing else in the account to
+spend.** The first release's $32 is an authorisation, not a deposit: the
+deposit before the rehearsal is the rehearsal's estimate plus $20, and the
+deposit before the staggered run is that run's estimate plus $20.
+
+This is stricter than the practice the ledger records. The wave of 2026-09-17
+was funded on a balance of $111.67 against $26 in flight plus $10 (compute
+ledger, the 2026-09-17 row) — sufficient under that rule, but with about $75
+sitting in the account that an anomaly could have reached.
+
+### 12.7 A check that cannot be run counts as a trip, not a skip
+
+John's sixth ruling of 2026-09-21, and it is a spend rule as much as a method
+rule. If a rehearsal item, a gate or a stop condition cannot be evaluated — the
+data is missing, the code will not run on the artifact, the measurement was
+never taken — **the check counts as failed and its consequence fires.** It is
+never recorded as not applicable and stepped over, and it is never deferred
+past the launch it was supposed to gate.
+
+Written into section 11 as stop condition S8. The cost of getting this wrong is
+already on this programme's record: an unread check is how a null got read as a
+capability claim for three weeks (section 8.1).
+
+### 12.8 The wager on this estimate
+
+Stated so it can lose, in the shape the earlier amendment used: **the rehearsal
+measures a per-run cost at or below the ledger's $12 planning figure, and this
+design completes inside the $174.30 the programme has left, with three seeds on
+every arm carried.** If measured spend approaches the second release's ruled
+figure with runs missing, **the report is the shortfall, never a second raise.**
 
 ---
 
@@ -800,7 +983,8 @@ chance without letting the rule differ between arms.
 closed design and one reweighted pilot never learned a named-other task. The
 repair — same position, same supervision, same transformation — is the right
 one and may still not be enough at this size. Section 11's staggered launch
-makes that outcome cost about $32.
+makes that outcome cost about $44 — the first release's $32 plus about $12 for
+the one permitted re-run (section 12.3) — instead of the whole wave.
 
 **W6. The named-other condition reads its owner from a token and the
 own-directed condition does not.** Section 4.2; unremovable; recorded in the
@@ -816,7 +1000,9 @@ the gap between the lesion result and the transplant result honestly.
 **W8. Nine runs is a planning number.** The seed count follows from the
 rehearsal's uncertainty method (section 9), and the bill follows from the
 throughput the rehearsal measures (rehearsal item R-7). Both can move the
-money, in one direction only.
+money, in one direction only. This is the whole reason the second release of
+money is asked for after the rehearsal rather than now (section 12.4): the
+number in the table there is the shape of the request, not the request.
 
 ---
 
@@ -888,16 +1074,38 @@ default.
 
 6. **Three seeds per arm as the planning number**, with the real count set by
    the rehearsal's uncertainty method. *Confidence: moderate. Judgment call.*
-   **Alternative:** adopt the roadmap's anomaly fallback from the start (two
-   seeds on the constructed arms, three on the free arm), which saves $24 and
-   weakens the two arms that are supposed to be the ground truth.
+   **Alternative:** two seeds on the constructed arms and three on the free arm
+   from the start, which saves $24 at the ledger's $12 planning figure and
+   weakens the two arms that are supposed to be the ground truth. Note that this
+   is now only a design choice about uncertainty, **not** a response to a
+   billing anomaly: John's "halt, not trim" ruling of 2026-09-21 retired the
+   roadmap's week-43 seed fallback for that purpose, on the arithmetic in
+   section 12.5.
 
-7. **Raise the successor cap from $130 to $175**, itemised in section 12,
-   inside the unchanged $400 ceiling, which leaves $9.30. *Confidence: high
-   that $130 cannot hold the roadmap's own contents; moderate on $175 as the
-   right number.* **Alternatives:** hold $130 and take the two-arm design for
-   budget reasons (section 12.4), or rule that the four-seed case at $211 comes
-   back as a ceiling question if the rehearsal asks for it.
+7. **The money goes in two releases, and what is asked for now is about $32.**
+   Superseding version 1's request for a flat $175 cap, which was arithmetically
+   impossible: the programme has $174.30 left, not $184.30 (section 12.1).
+   Asked for now: the rehearsal (up to $10), the development runs (up to $10)
+   and one free-arm run at the registered size (about $12), against $174.30 of
+   headroom, with the $400 ceiling untouched. Asked for later, after rehearsal
+   item R-7 measures seconds per step for all three arms: the second release,
+   built from the itemisation in section 12.4 and provisionally $143.
+   *Confidence: high on the first release's arithmetic, which is measured
+   against the ledger throughout; deliberately no confidence offered on $143,
+   because the measurement that would justify it has not been taken.*
+   **Alternatives:** (a) fold the one permitted re-run into the first release
+   now, making it about $44, which removes the gap flagged in section 12.3 at
+   the cost of authorising a run before the run it re-tries has failed — this is
+   the alternative worth ruling on; (b) rule the whole $175 now as version 1
+   proposed, which the corrected headroom cannot hold and which would commit the
+   per-run figure to an unmeasured premium; (c) hold the roadmap's $130 and take
+   the two-arm design for budget reasons, which buys the weaker design of
+   section 5.2 by a budget decision rather than by the rehearsal's finding, and
+   should be recorded as such if chosen. **One number John should see before it
+   can surprise him:** if the rehearsal's uncertainty method asks for a fourth
+   seed, twelve registered runs at the planning figure cost $144 and the whole
+   plan reaches about $211, which exceeds the $174.30 remaining and would be a
+   question about the $400 ceiling itself. Nothing suggests four seeds yet.
 
 8. **A new experiment directory with its own registration**
    (`experiments/08-…`), not another amendment to MVM-0a. The grammar, the
@@ -920,10 +1128,12 @@ default.
     the programme has already corrected once.
 
 11. **The registered wave launches staggered**: one arm F run first, its
-    learn-both result read, then the remaining eight. *Confidence: high.
-    Judgment call.* **Alternative:** the roadmap's simultaneous launch of all
-    nine, which is about a day faster and risks $96 on the most likely outcome
-    in section 3.
+    learn-both result read, then the remaining eight. **Ruled by John on
+    2026-09-21 and adopted**; it is recorded here because the rest of the
+    document is built on it and because it is what makes the two releases line
+    up with the work. *Confidence: high. Judgment call.* **Alternative:** the
+    roadmap's simultaneous launch of all nine, which is about a day faster and
+    risks $96 on the most likely outcome in section 3.
 
 12. **This proposal goes to Gate C tier 1 before John rules on the twelve items
     above**, per the protocol. *Confidence: high. Standard practice here.*
@@ -956,5 +1166,15 @@ affects is launched after it.*
 - The registration idiom it is written in:
   `experiments/06-mvm-0a-constructed-self-index/amendment-a3.md` and the
   pre-registration beside it.
-- The spend record every number in section 12 is drawn from:
-  `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`.
+- The spend record every number in section 12 is drawn from, and the system of
+  record where it disagrees with anything else:
+  `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`, corrected on
+  2026-09-21 to a running total of about $225.70 of $400.
+- The spend figure that is stale and is **not** used here: the spend record in
+  `data/project.toml` (about $215.70), being corrected in a separate session;
+  section 6 of the December-result roadmap repeats the same stale figure.
+- **Owed, and not yet on disk:** the committed text of John's spending ruling of
+  2026-09-21 (the two releases, "halt, not trim", per-wave funding, and a check
+  that cannot be run counting as a trip), which belongs under `docs/rulings/`.
+  Section 12 is written from that ruling as given in session and is superseded
+  by the committed text when it lands.
