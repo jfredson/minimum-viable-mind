@@ -316,3 +316,43 @@ rulings either.*
   and the companion `docs/known-failure-modes.md`, and is owed a check by a
   second session before it is relied on. No ruling file recorded those four until
   this entry.
+
+---
+
+## Correction added 2026-09-21 by a later session — bookkeeping only
+
+*This note corrects the "Recorded elsewhere" list immediately above. It changes
+no ruling, and none of the twenty ruled items has been touched.*
+
+**The claim that was wrong.** The third entry above says items 3 to 8 landed in
+`docs/outside-review-protocol.md` through pull request 13. For item 3 —
+reviewer-owned verification at every Gate A, whether or not a fatal finding
+exists — that is false. The pull request's description announced the widening in
+those words, but the change it actually carried to the protocol file kept the
+narrow wording, scoped to the closure of a fatal finding. Nothing widened when
+this file said it had.
+
+**Where item 3 is now.** It has since been landed properly, at three points in
+`docs/outside-review-protocol.md` — the Gate A entry, the paragraph describing
+tier 1, and a new bullet in the closure rule — by the commit `b4e3e84`, titled
+"Land the widening of reviewer-owned verification, which never reached the file".
+That file's amendments section carries an entry saying why the landing was owed.
+
+**What was wrong was the recording session's bookkeeping, not John's ruling.**
+He ruled item 3, and item 3 stands above exactly as he ruled it. The false
+sentence sits in the closing list of pointers, which the session that wrote this
+file added to say where each item had gone — its own record-keeping, not part of
+what was decided.
+
+**Why this needed correcting rather than being left alone.** A session opening
+this file to learn what is in force was being told item 3 had landed in a file
+where it had not. Worse, a session that went to check pull request 13 would find
+the narrow wording in the change it carried and conclude the widening had been
+made and then reverted.
+
+*John authorised this kind of annotation on 2026-09-21, choosing between three
+options put to him: a later session may annotate a ruling file to correct
+bookkeeping — claims about where text landed, cross-references and the like —
+while the ruled items themselves stay untouchable. He was told the risk, that the
+line between bookkeeping and substance is drawn by whoever is writing, and he
+accepted it. No compute was launched and no money was spent for this note.*
