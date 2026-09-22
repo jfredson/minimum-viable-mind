@@ -459,11 +459,17 @@ def stage_outcomes(device):
                  for l in sites.layers}
         w = _donor_share(X.transplanted_logits(m, recip, d_states, sites, mask, None), d_tgt)
         o = _donor_share(X.transplanted_logits(m, recip, d_states, sites, mask, basis), d_tgt)
-        r = M.reading(w, o, floor=REHEARSAL_FLOOR)
+        with torch.no_grad():
+            u = _donor_share(m(recip), d_tgt)
+        both = M.both_forms(w, o, u, floor=REHEARSAL_FLOOR)
+        r = both["registered"]
         res[name] = dict(arm=arm, seed=seed, sites=sites.label(), rank=rank,
-                         label=label,
+                         label=label, accuracy_untouched=u,
                          accuracy_whole=w, accuracy_ownership_only=o,
-                         status=r["status"], degree=r["degree"], expected=expect)
+                         status=r["status"], degree=r["degree"],
+                         floor_corrected_status=both["floor_corrected"]["status"],
+                         floor_corrected_degree=both["floor_corrected"]["degree"],
+                         expected=expect)
         log(f"    {name}: whole {w:.4f} ownership-only {o:.4f} -> {r['status']}"
             + (f", degree {r['degree']:.4f}" if r["degree"] is not None else "")
             + f"   (expected {expect})")
@@ -484,10 +490,11 @@ def stage_outcomes(device):
     # reading is only a real outcome of this instrument if some configuration
     # of it produces one
     neg = []
+    search_pairs = fresh_pairs[:400]
     for arm in A.ARMS:
-        for seed in SEEDS:
-            m = load_arm(arm, seed, device)
-            recip, donor, d_states, d_tgt = _states_and_targets(m, fresh_pairs, device)
+        for seed in SEEDS[:1]:          # one seed: the search is over site sets,
+            m = load_arm(arm, seed, device)   # not over seeds
+            recip, donor, d_states, d_tgt = _states_and_targets(m, search_pairs, device)
             reads = load_reads(arm, seed)          # frozen on development data
             for layers in CANDIDATE_LAYER_SETS:
                 for posname in CANDIDATE_POSITIONS:
@@ -512,7 +519,11 @@ def stage_outcomes(device):
                                                 degree=(w - o) / w))
     neg.sort(key=lambda d: d["degree"])
     res["negative — searched over every arm and site set"] = dict(
-        found=len(neg), most_negative=neg[:5])
+        found=len(neg), most_negative=neg[:5],
+        searched=("every architecture at seed 0, over all nine layer sets, all "
+                  "five position sets, all three readings of the read's label "
+                  "and all six rank caps, keeping only configurations whose "
+                  "whole-state transplant cleared the rehearsal floor"))
     log(f"    negative reading: {len(neg)} configurations found"
         + (f", most negative degree {neg[0]['degree']:.4f} "
            f"({neg[0]['arm']} seed {neg[0]['seed']}, {neg[0]['sites']}, "
