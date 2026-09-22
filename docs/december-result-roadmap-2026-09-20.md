@@ -34,6 +34,24 @@ point between them, and the seed fallback is gone from this document wherever it
 appeared as a live plan. Nothing else changed: same nine runs, same arms, same
 owners, same kill dates, same registered outcomes.*
 
+*Amended once more 2026-09-21: what the kill dates trigger has changed. As first
+written, missing one dropped the roadmap to outcome R4 — the programme would
+hibernate with a registered design and a rehearsal, on the record as a schedule
+failure. A session put a replacement to John with a confidence level and the
+strongest argument against it, and he approved it in his words "Ok that's fine.
+Let's go with your recommendation": past a kill date, launching is still
+possible, but only on a fresh ruling that names what comes off the back end to
+make room. The dates themselves do not move, and neither does the reason for
+having them — deciding in advance, so that nobody drifts past one quietly or
+decides in the moment without saying so out loud. The same ruling settled the
+reading left open at the end of section 4: the second kill date binds the launch
+of the remaining eight runs (step 5b), not the single free-arm run before it
+(step 5a). Recorded in
+`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`. Outcome R4
+stays in section 2 as an outcome; it is no longer something a missed date
+triggers on its own. Mixed authorship: the session proposed, John approved, and
+none of this wording is his.*
+
 ## 1. The question, restated so it can be answered by 2026-12-21
 
 After the 2026-09-20 rulings the program's open question is one of degree: a
@@ -64,7 +82,7 @@ program's own rules; only the fourth row is a failure of this roadmap.
 | R1 | **metric validated, degree read** | The metric separates the by-construction contrast arms at the pre-stated bar, and the free-trained model gets a reading with paired uncertainty across seeds. The A3 closure sentence "degree unmeasured" is replaced by a number. | Yes |
 | R2 | **metric does not separate** | The contrast arms are learned (eligibility gate passed) but the candidate metric cannot tell them apart at the bar. The metric is not used; the result is that this candidate does not read degree on this substrate, and the registered successor design for resumption says what to try next. | Yes |
 | R3 | **substrate not a testbed** | One or more arms fail the learn-both eligibility gate after the one permitted re-run. Astra's reading: this recipe and size are not yet a mechanism testbed. Registered as such; resumption starts from a size or recipe change. | Yes, if the gate was reached |
-| R4 | (none) | Registration not committed, or runs not launched, by the kill dates in section 5. The program hibernates with a registered design and a rehearsal only. | No. Recorded as a schedule failure, not a scientific one |
+| R4 | (none) | The programme hibernates with a registered design and a rehearsal only: nothing trains, and no degree is read. This is where the roadmap lands if the work is put down rather than launched late. Since 2026-09-21 a missed kill date does **not** put it here by itself — past a date, launching is still open, on a fresh ruling that names what comes off the back end to make room (section 5). | No. Recorded as a schedule failure, not a scientific one |
 
 The separation bar for R1 versus R2, the eligibility threshold for R3, the
 seed count and the paired-uncertainty method are set by the rehearsal (section
@@ -119,7 +137,8 @@ are finished and it is ready to run, and nothing waits for a date.
 
 Five dates survive the change, because each is a commitment or a fact about the
 world rather than a pacing choice: the two kill dates of section 5
-(registration committed by 2026-10-18, registered runs launched by 2026-11-01),
+(registration committed by 2026-10-18, the remaining eight registered runs
+launched by 2026-11-01),
 the book text lock of 2026-09-30, the wrap-up start of 2026-12-21 (ruled;
 nothing new launches after it) and the hibernation condition complete by
 2027-01-04, when the SERE pipeline starts. Dates are Pacific. "CC" is a Claude
@@ -130,10 +149,10 @@ he runs by hand, or an edit in another repo.
 |---|---|---|---|---|
 | 1. Rulings and the successor draft | Nothing. This is the head of the chain. | Rule the section 7 changes (successor registers now; patching code folds into the successor). Draft successor proposal v1 (CC): task grammar, three arms, metric spec, rehearsal plan, spend estimate. | Two authorised $0 runs finish (other-agent index control, standardised refit). Blind-arm status reconciled (Astra A10). A3 closure text: tier 1 review. | Book lock edits (ch05 degree reading) in calibration-problem. Rule A10. Site secrets. |
 | 2. Proposal review and the measurement rehearsal | Successor proposal v1 drafted (step 1). | Gate C tier 1 on proposal v1. **Measurement rehearsal** (CC, ~$0 to $10): tiny models, show the three arms are constructible, the pointer in T is patchable, the joint patch in C works, the metric returns positive, negative and invalid values on toy cases, throughput of the new grammar measured. | A3 closure text: tier 2 sessions, John rules, lands (Gate A) — after its tier 1 review in step 1. | **Book text lock 2026-09-30** — a fixed date, not pacing. Run two tier 2 sessions for A3 closure. Rule on it. |
-| 3. Registration text and Gate A | Rehearsal findings in, and Gate C tier 1 answered (step 2). | Rehearsal findings fix the bars. Registration text final (v2). Gate A: tier 1, then tier 2. **The registration is committed as soon as both tiers are answered and John rules** — there is no target date; the only date is the kill date in this row's last column. | Generator, T and C architectures, patching code implemented against the rehearsal (CC). | Run two tier 2 sessions on the registration. Rule. **Kill date 1 bites here: registration committed by 2026-10-18** or the roadmap drops to its fourth outcome (R4, a schedule failure rather than a scientific one) and says so. |
+| 3. Registration text and Gate A | Rehearsal findings in, and Gate C tier 1 answered (step 2). | Rehearsal findings fix the bars. Registration text final (v2). Gate A: tier 1, then tier 2. **The registration is committed as soon as both tiers are answered and John rules** — there is no target date; the only date is the kill date in this row's last column. | Generator, T and C architectures, patching code implemented against the rehearsal (CC). | Run two tier 2 sessions on the registration. Rule. **Kill date 1 bites here: registration committed by 2026-10-18.** Past that date the registration can still be committed, but only on a fresh ruling that names what comes off the back end to make room (section 5). |
 | 4. Freeze and development runs | Registration committed, and the implementation written (step 3). | Implementation frozen; unit tests; the RT-58 even-split rule and the one-scored-token self-test carried over. Development runs at 10M (~$10). | Compute ledger rows opened with estimates. | None. |
-| 5a. The first registered run: one free arm, on its own | Implementation frozen and tested, development runs clean (step 4), and John's go naming this run. | **One run of arm F (the free model) at 30M, about $12**, launched by itself. It sits inside the first release of money, which now also covers the rehearsal (up to $10), the development runs (up to $10) and the one permitted re-run (about $12) — about $44 in all. Two things must come back before anything else is launched: whether this run passes the learn-both eligibility gate, and what the machine actually bills. | Nothing that costs money. | Give the go naming this run (spend gate). **Kill date 2 bites here: registered runs launched by 2026-11-01** or the roadmap drops to the fourth outcome (R4, a schedule failure rather than a scientific one). |
-| 5b. The remaining eight registered runs | Step 5a's learn-both result read and its billing found normal (the decision point below), the second release of money asked for and ruled, and John's go. | **The other eight of three arms × three seeds at 30M, about $96** at the ledger's $12 per run. The eligibility gate is evaluated on each arm as its runs land. | Actor-representation nomination on development episodes begins as F checkpoints arrive. | Approve the second release and give the go for the eight (spend gate). |
+| 5a. The first registered run: one free arm, on its own | Implementation frozen and tested, development runs clean (step 4), and John's go naming this run. | **One run of arm F (the free model) at 30M, about $12**, launched by itself. It sits inside the first release of money, which now also covers the rehearsal (up to $10), the development runs (up to $10) and the one permitted re-run (about $12) — about $44 in all. Two things must come back before anything else is launched: whether this run passes the learn-both eligibility gate, and what the machine actually bills. | Nothing that costs money. | Give the go naming this run (spend gate). **Kill date 2 does not bite on this run** (settled 2026-09-21): it binds the launch of the remaining eight at step 5b. This run is a precondition for those, not the milestone the December result rests on. |
+| 5b. The remaining eight registered runs | Step 5a's learn-both result read and its billing found normal (the decision point below), the second release of money asked for and ruled, and John's go. | **The other eight of three arms × three seeds at 30M, about $96** at the ledger's $12 per run. The eligibility gate is evaluated on each arm as its runs land. | Actor-representation nomination on development episodes begins as F checkpoints arrive. | Approve the second release and give the go for the eight (spend gate). **Kill date 2 bites here: the remaining eight launched by 2026-11-01.** Past that date they can still be launched, but only on a fresh ruling that names what comes off the back end to make room (section 5). |
 | 6. Nomination, patching, and the validation result | Registered runs landed and the eligibility gate evaluated (step 5b). | Nomination frozen and committed. Patching on fresh episodes, all arms. Metric computed on T and C: the validation result. | The one permitted re-run if an arm failed eligibility (~$12), if it was not already used at the decision point below. | None unless a re-run needs a go. |
 | 7. Validation findings and Gate B | The validation result computed (step 6). | Validation findings written. **Gate B** (tier 1, tier 2). John rules: R1 path (read F), or R2/R3 closure. | Site and `data/project.toml` updated with the validation state. | Run two tier 2 sessions. Rule. |
 | 8. The reading, or the closure draft | John's Gate B ruling (step 7). | R1: read arm F on the frozen procedure, confirmation seeds. R2/R3: draft closure text and the resumption design. | Patching-code defects found at Gate B are fixed here. | None. |
@@ -183,6 +202,17 @@ inside it is an open reading, and it needs an answer before step 5a runs, since
 a free-arm result that comes back slowly could leave the eight on the wrong side
 of it.
 
+**Answered 2026-09-21, later the same day.** It binds **step 5b, the launch of
+the remaining eight runs**. The December result rests on the constructed arms —
+the tracker built to be separable and the system built to be entangled — and
+those are in the second wave; the single free-arm run of step 5a is a
+precondition for launching them, not the milestone. This came with the ruling
+that changed what a missed kill date triggers (the third amendment note at the
+head of this document, and section 5 below); it was put to John with its
+strongest alternative and approved in his words "Ok that's fine. Let's go with
+your recommendation". The paragraph above stands as the record of what was open
+when the launch step was split.
+
 Gate count on the critical path: four (A3 closure Gate A, registration Gate A,
 validation Gate B, closure Gate A), plus one Gate B on the reading if R1. Each
 costs one tier 1 worktree session and two tier 2 sessions John runs by hand,
@@ -210,15 +240,49 @@ slip there costs the closure gate or the quality of the result, not a kill date.
 
 These are the dates the plan is held to. They are backstops, not pacing: each
 piece of work starts when its prerequisites are done, and the kill date is the
-point past which it is declared failed.
+point past which carrying on stops being anybody's call in the moment.
 
-- **2026-10-18: registration not committed.** The roadmap drops to R4. What
-  still happens: the rehearsal findings and the registration draft are
-  committed as the resumption design; nothing trains. Said plainly in
-  STATUS.md as a schedule failure.
-- **2026-11-01: registered runs not launched.** Same drop (anything later
-  leaves no room for the two remaining gates). The implementation is committed
-  and tested; the compute is not spent.
+**What passing one now does (changed 2026-09-21).** As first written, missing
+either date dropped the roadmap to outcome R4: the programme would hibernate
+with a registered design and a rehearsal, recorded as a schedule failure. That
+is replaced. Past a kill date, launching is still possible — but it takes a
+fresh ruling, and that ruling has to name what comes off the back end to make
+room. The cost has to be named for what it actually is: a thinner closure, one
+outside reviewer at the closure gate instead of two, no refresh of the
+explainer, or whatever the real trade turns out to be. Nothing is written off
+automatically, and nothing slips past unremarked. Put to John with its strongest
+alternative and approved in his words "Ok that's fine. Let's go with your
+recommendation"; ruling file
+`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`.
+
+**Why it changed, written here so a later reader can attack it.** The kill dates
+were never really about schedule. Their job is to stop money going on a result
+that can no longer be finished before wrap-up starts on 2026-12-21, because
+after the runs land there is still a long chain of gates, a reading and a
+closure to fit in. But as first written they would have thrown away a working
+design over a two-day slip, which is a rule nobody would actually follow — and a
+rule that would be broken is worse than no rule at all. What bounds the money
+now is the staggered launch, which does it better than a date can, because the
+large spend happens only after the first run reads out (steps 5a and 5b of
+section 4; item 12 of the same ruling file). What the date still does, and what
+no judgment about feasibility made at the moment of spending can do, is decide
+in advance: a judgment made when you want to spend is made by someone who wants
+to spend.
+
+- **2026-10-18: registration not committed.** Committing it after that date
+  takes a fresh ruling naming what comes off the back end. What happens in the
+  meantime is unchanged: the rehearsal findings and the registration draft are
+  committed as the resumption design, and nothing trains until the registration
+  is committed. If the answer to the fresh ruling is that it is not worth it,
+  that is the decision that lands the roadmap on R4, and STATUS.md says so
+  plainly as a schedule failure.
+- **2026-11-01: the remaining eight registered runs not launched.** Same rule.
+  This date binds the eight of step 5b, not the single free-arm run of step 5a
+  (settled 2026-09-21). Launching them later is still open on a fresh ruling
+  naming what comes off the back end, and what that ruling is weighing is real:
+  anything much later leaves no room for the two remaining gates before
+  wrap-up. Until it is given, the implementation stays committed and tested and
+  the compute stays unspent.
 - **A gate takes more than seven days.** Cowork raises it in the next session
   and the steps behind it shift. There is no slack week to absorb the shift any
   more, so what absorbs it is the room left before the next kill date, and a

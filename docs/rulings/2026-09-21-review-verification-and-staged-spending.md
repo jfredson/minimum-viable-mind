@@ -134,6 +134,10 @@ says **first release** and **second release** throughout.*
   laptop cannot predict the rented hardware every current estimate rests on, so
   without it the second release would rest on the same inference this ruling
   declined to rely on.
+  **Answered later the same day — see ruling 21 below: yes, the rehearsal buys the
+  slice.** The answer came after this file was committed, which is why the entry
+  was written as open; it stays as written, because it is the record of what was
+  open when this file was first recorded.
 
 ## Annotated 2026-09-21 (later the same day): task time, not calendar time
 
@@ -215,6 +219,85 @@ no money was spent under these rulings either.*
     future session may cite, and a "MEASURED" label is the programme's promise
     that a number came from running something.
 
+## Ruled 2026-09-21 (later the same day, after items 18 to 20): three more items
+
+*Three further rulings of the same day. Each was put to John by a session with a
+confidence level on it and the strongest argument against it, and he approved
+each in the words quoted on the item. Mixed authorship, on the same footing as
+everything above: the session proposed and he approved, and none of the wording
+below is his drafting. The numbering carries on from item 20 so that nothing
+above is renumbered. No compute was launched and no money was spent under these
+rulings either.*
+
+21. **The measurement rehearsal buys a short slice of rented machine time.**
+    Asked whether the rehearsal should pay for real hardware in order to measure
+    how long a single training step takes on each of the three architectures,
+    John answered "Yes". The reasoning accepted: item 11 above binds the second
+    release of money to measured throughput, and a figure measured on a laptop
+    cannot predict the rented hardware that every current estimate descends from,
+    so without the slice the second release would rest on exactly the inference
+    item 11 declined to rely on. A second gain, not the reason but worth
+    recording: it is the first occasion on which the fix that stops a finished
+    run deleting its own machine before the files are home
+    (`experiments/06-mvm-0a-constructed-self-index/reap-shutdown-order-method.md`)
+    meets the real vendor rather than a local stand-in. **This ruling was given
+    after this file was first committed**, which is why the fourth entry of
+    "Open, and raised but not yet ruled" above was written as open; that entry is
+    marked answered in place rather than removed. No amount changes here: the
+    slice comes out of the rehearsal's own allowance in item 10 above (up to
+    $10), and nothing was put to John as an enlargement of either release. How
+    long a slice, and on what hardware, is for the rehearsal plan to state.
+
+22. **Four amendments to the outside-review protocol are authorised.** Six
+    recommendations were put to John with the cost of each stated, and he
+    answered "Ok, can we implement all of these?". Four of them are the protocol
+    amendments recorded here; the other two are not recorded in this file, and
+    this entry makes no claim about what became of them. The four are:
+    a session that writes binding text is always paired with a *different*
+    session that checks it; the known failure modes are exercised against each
+    design — a command run and its output filed — rather than cited; the
+    separation between the session that writes a fix and the session that checks
+    it is never traded away for speed; and a document is rebuilt, rather than
+    skimmed, when new binding text starts to depend on it. What this ruling
+    authorises is the four rules. It does **not** accept any particular wording:
+    the text implementing them, together with a companion list of the programme's
+    four real failures and the test that catches each, sits on the protocol
+    amendments branch (`worktree-agent-a15f7586cfb5553b3`) and has not yet been
+    read by a second session. Under the first of the four rules it adds, that
+    text is owed a check before anything relies on it, and this entry does not
+    stand in for that check. The protocol file itself is not touched by this
+    ruling file.
+
+23. **Past a kill date, launching takes a fresh ruling rather than dropping the
+    roadmap.** Put to John with its strongest alternative, approved in his words
+    "Ok that's fine. Let's go with your recommendation". The two kill dates of
+    `docs/december-result-roadmap-2026-09-20.md` used to drop the roadmap to its
+    fourth outcome (R4: hibernate with a registered design and a rehearsal, on
+    the record as a schedule failure). Past a date, launching is now still
+    possible, but only on a fresh ruling that names what comes off the back end
+    to make room — a thinner closure, one outside reviewer at the closure gate
+    instead of two, no refresh of the explainer, or whatever the real trade turns
+    out to be. The dates themselves do not move, and neither does the reason for
+    having them: nobody drifts past one quietly, and nobody decides in the moment
+    without saying so out loud. The reasoning accepted, recorded so it can be
+    attacked later: the kill dates were never really about schedule, but about
+    stopping money going on a result that can no longer be finished before
+    wrap-up starts on 2026-12-21; as written they would have abandoned a working
+    design over a two-day slip, which is a rule nobody would follow, and a rule
+    that gets broken is worse than none; the staggered launch of item 12 above
+    now bounds the money better than a date can, because the large spend happens
+    only after the first run reads out; and what a date still does, which no
+    judgment about feasibility made at the moment of spending can do, is decide
+    in advance — a judgment made when you want to spend is made by someone who
+    wants to spend. **The same ruling settles which step the second kill date
+    binds**: the launch of the remaining eight runs (step 5b of the chain in
+    section 4 of the roadmap), not the single free-arm run before it (step 5a).
+    The December result rests on the arms built to be separable and to be
+    entangled, and those are in the second wave; the first run is a precondition
+    for launching them, not the milestone. Outcome R4 stays in the roadmap as an
+    outcome — it still describes hibernating with a design and no runs — but a
+    missed date no longer puts the roadmap there by itself.
+
 ## Recorded elsewhere
 
 - TimeAssembler worklog, Minimum Viable Mind: a decision entry of 2026-09-21
@@ -223,3 +306,13 @@ no money was spent under these rulings either.*
 - `docs/successor-experiment-proposal-2026-09-21.md`: section 12, rewritten to
   items 10 to 16.
 - `data/project.toml`: item 16.
+- `docs/december-result-roadmap-2026-09-20.md`: item 23, landed in section 5
+  (the kill dates), section 2 (the definition of outcome R4) and steps 3, 5a and
+  5b of the chain in section 4, with a third amendment note at the head of that
+  file. The open reading at the end of its section 4 — which step the second kill
+  date binds — stays as written there and is marked answered underneath.
+- The four amendments of item 22: their text is on the protocol amendments
+  branch (`worktree-agent-a15f7586cfb5553b3`), in `docs/outside-review-protocol.md`
+  and the companion `docs/known-failure-modes.md`, and is owed a check by a
+  second session before it is relied on. No ruling file recorded those four until
+  this entry.
