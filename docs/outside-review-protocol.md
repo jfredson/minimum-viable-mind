@@ -115,17 +115,48 @@ it: what it opened and what it did not; at least one check it ran, given as the
 command and the output the command returned, chosen so that the output would
 come out wrong if the writing were wrong; and, for each claim it checked, a
 plain sentence saying whether that output matches what the text claims. Every
-finding is labelled MEASURED or ARGUED, the convention the passes already use.
+finding is labelled MEASURED — a check was run and its output is reported — or
+ARGUED — reasoning a reader can dispute. These are the two labels the passes
+already use, and they are defined again where tier 1 is described below, which is
+where a reader who starts at the top will meet them a second time.
 Reading the text and finding it convincing is not a check, and a summary of what
 the text says is not a check either. Where there is genuinely nothing to run —
 text carrying no number — the checking session says so and instead names the
 records it opened and the sentences it read against them, one by one.
 
 **Where it is filed.** Under the experiment's reviews directory when the target
-belongs to an experiment, on the path in "Filing" below. Otherwise the check
-goes in the message of the commit that lands the checked text, commands and
-outputs included, which is where the packet rebuilds and the roadmap conversion
-of 2026-09-21 already put theirs.
+belongs to an experiment, on the path in "Filing" below.
+
+**Otherwise — and this covers this document and the known-failure list beside
+it — under the reviews directory of the experiment the document most affects,
+with an opening line saying why it is filed there.** Then the commit that acts on
+the check carries the commands and their outputs in its message, and names the
+commit it checked.
+
+The rule first written here was that such a check goes in the message of the
+commit that lands the checked text. That cannot be done, and the first check ever
+filed under this rule is what showed it: text is not binding, and so is not owed
+a check, until it is committed — and by the time it is committed, the message of
+the commit that landed it is already written and cannot hold a check of the text
+it landed. That check was filed under an experiment's reviews directory for
+exactly this reason. The paragraph above is what it did, written down.
+
+*What a filed check looks like, in records that exist.* Two commits carry the
+commands they ran and the outputs those commands returned: `9393b92` ("Pair every
+session that writes binding text with one that checks it"), which adds this
+section, and `b4e3e84` ("Land the widening of reviewer-owned verification, which
+never reached the file"). Both are on the repair branch and neither has reached
+the main line, which is said here rather than left for a reader to discover.
+
+An earlier version of this paragraph named four other commits as the model: the
+two outside-reviewer packet rebuilds, the roadmap conversion and the launch-step
+split of 2026-09-21. **They are not the model.** Counting the lines in their
+messages that look like a command returns zero for all four. What they carry is
+careful prose about checks that were run, with some of the numbers in it — good
+records, and not commands and outputs. Naming them was itself an instance of the
+fourth failure on the list beside this file, a claim about a committed record
+that the record does not support. A session pointed at them would have written
+prose, because prose is what they are.
 
 **The checking session is not the writing session.** It has not read that
 session's chat, and it gets the packet and nothing else, on the same terms tier
@@ -135,7 +166,7 @@ in the same sitting. No session ever checks its own work.
 **Why this is a rule and not a habit.** This protocol opens by saying that
 review before it existed was ad hoc — fired when someone thought of it. Firing
 review only where a gate falls is the same failure at a smaller scale: the gate
-catches the document and misses the eleven edits that got it there. The pass
+catches the document and misses every edit that got it there. The pass
 that stopped the three-seed wave, the independent Amendment A4 pass of
 2026-09-19, was not at a gate, because no gates existed. It was a second session
 reading what a first session had written.
@@ -165,18 +196,37 @@ written is now written and then waited on. A registration that used to need a
 rehearsal now needs a rehearsal and a filed pass running the old failures against
 the new design. A document that used to be tidied when it looked untidy is now
 rebuilt whenever new binding text starts to lean on it. That is real, and none of
-it is free. It is still the right trade, on one observation: the rate at which
-this programme produces defects has not fallen, while the rate at which it
-catches them has risen. The zero-denominator failure on the Amendment A3 control
-battery (the unequal-ceilings finding, `RT-21`, 2026-09-15) and the moving-ceiling
-failure in the successor proposal (the per-arm-ceiling finding, `RT-172`,
-2026-09-21; both are set out with their records in `docs/known-failure-modes.md`)
-are the same failure six days apart, and the design that produced the second was
-written by a session that had the first in front of it. What has improved is the
-finding, not
-the writing. Until that changes, checking is the part of this work that is
-producing the reliability, and it cannot be traded for speed without trading the
-reliability with it.
+it is free. It is still judged the right trade, and here is the evidence for that
+judgement, with its limits stated, because this document is about to require
+every claim of measurement to point at a record.
+
+**What is evidenced: this programme is still producing the same defect it has
+already named.** The zero-denominator failure on the Amendment A3 control battery
+(the unequal-ceilings finding, `RT-21`, 2026-09-15) and the moving-ceiling failure
+in the successor proposal (the per-arm-ceiling finding, `RT-172`, 2026-09-21; both
+are set out with their records in `docs/known-failure-modes.md`) are the same
+failure six days apart, and the design that produced the second was written by a
+session that had the first in front of it. Two instances six days apart is thin,
+but it is a record two people can open and check.
+
+**What is not evidenced: that checking has got better at catching them.** No
+count of defects produced and no count of defects caught has ever been kept here,
+so neither rate exists as a number, and nothing in this repository would settle
+either one. An earlier version of this paragraph rested its whole case on the
+claim that the first rate has not fallen while the second has risen. The first
+half has the two instances above behind it. The second half has nothing behind
+it, and saying so is cheaper than defending it.
+
+**So the argument for paying the cost is narrower than it was, and it still
+holds.** Defects of a kind already written down are still reaching designs
+written by sessions that had the write-up in hand. Whatever is catching them is
+the second session, every time it has happened. That is the reason not to trade
+the second session for speed — not a measured improvement, which nobody has
+measured.
+
+If someone wants the rates, they can be counted: the red-team ledger has a row
+per finding with a date, and the commits have dates. Nobody has done it, and
+until somebody does, this paragraph claims the two instances and not a trend.
 
 ## The measurement rehearsal, required before any Gate A
 
@@ -241,9 +291,17 @@ and invalid values on toy cases, and what the new task grammar costs per run.
 
 ## The failure-mode pass: the known failures are run against the design, not cited
 
-Every registration text goes through a pass in which each failure named in
-`docs/known-failure-modes.md` — the list, kept beside this protocol, of what has
-gone wrong here before — is tested against this design. Tested, not mentioned.
+Every text that goes through Gate A goes through a pass in which each failure
+named in `docs/known-failure-modes.md` — the list, kept beside this protocol, of
+what has gone wrong here before — is tested against this design. Tested, not
+mentioned.
+
+**"Registration text" below means every kind of text Gate A covers**, which is
+Gate A's own list: every registration, amendment, threshold lock, or
+pre-statement that will be read as binding. Not the narrower reading, on which an
+amendment or a standalone pre-statement would slip the pass because it is not
+called a registration. A session in a hurry will reach for the narrow reading, so
+the wide one is written down here.
 
 The reason is one afternoon's evidence. A proposal reviewed on 2026-09-21 named
 the zero-denominator failure of the Amendment A3 control battery, by its plain
@@ -279,9 +337,10 @@ How the pass runs:
 
 Filed with the Gate A findings, as a section headed by the list's entries in
 order, so that a reader can see at a glance which failures were run and what each
-one returned. A registration text with no filed failure-mode pass does not reach
-its registration commit, on the same standing as a pre-stated quantity with no
-rehearsal line covering it.
+one returned. A registration text — in the wide sense set out at the top of this
+section, so any of Gate A's four kinds — with no filed failure-mode pass does not
+reach its registration commit, on the same standing as a pre-stated quantity with
+no rehearsal line covering it.
 
 ## Two tiers, because outside models cannot run the code
 
@@ -632,3 +691,45 @@ to him, recorded in the ruling file as mixed authorship on that basis. The wordi
 here is this session's. The ruling file itself is not edited: it is a record of
 what was ruled, and the error in it is a claim about where the text landed, which
 this entry answers. No compute was launched and no money was spent.
+
+**2026-09-21 (later the same day again) — repairs to the four sections above and
+to the known-failure list, from the first check the pairing rule ever produced.**
+A session other than the one that wrote those four sections checked them and filed
+its findings as `RT-189` to `RT-197`, in
+`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-21-protocol-pairing-rule-claude-worktree.md`
+at commit `0768b84`, the commit titled "Check the pairing rule and the known-failure
+list: the numbers hold, three tests do not", which sits on the checking session's
+own branch and not on the main line — the commit is named rather than only the
+branch, so that the record survives the branch being deleted. That check fixed
+nothing, by design.
+This entry records the repairs a third session made from it. The review file itself
+is not edited: a filed review is not edited after filing.
+
+What changed here:
+
+- **The filing fallback** no longer says a check goes in the message of the commit
+  that lands the checked text, because that cannot be done — text is not binding
+  until it is committed, and by then that message is written. It now says where
+  such a check actually goes.
+- **The precedent that fallback named** — four commits said to carry commands and
+  outputs — is gone, because none of the four carries a single command line.
+  Counting lines that look like a command in the messages of `e8dad42`, `9653275`,
+  `49c1002` and `184a42f` returns zero for each. Two records that do carry commands
+  and outputs are named in its place, with the fact that both are off the main line
+  said out loud.
+- **"Registration text" in the failure-mode pass** is now stated to mean all four
+  kinds of text Gate A covers, not only the ones called registrations.
+- **MEASURED and ARGUED** are given their plain meanings where a reader first meets
+  them, three sections before the place that used to define them.
+- **"The eleven edits that got it there"** is now "every edit that got it there".
+  Nothing produced the eleven, and a made-up count in the argument for requiring
+  that counts come from somewhere is not an argument.
+- **The cost paragraph** no longer rests on two rates nobody has ever counted. It
+  now says which half of its claim has evidence — the same defect appearing twice
+  six days apart, in a design written by a session holding the first instance — and
+  states plainly that the other half, that catching has got faster, has nothing
+  behind it and would have to be counted to be claimed.
+
+The four rules themselves are unchanged, and the check recommended adopting them.
+Nothing registered, no ledger row, no findings file and no review file was touched.
+No compute was launched and no money was spent.

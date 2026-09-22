@@ -34,6 +34,32 @@ are dispositions.
 Every output printed below was produced by running the command printed above it,
 in this repository, on 2026-09-21.
 
+**What this list has been shown to be, and what it has not.** As a description of
+what has gone wrong here, it is accurate. A session other than the one that wrote
+it ran every command this list carried at the time and compared each printed
+output with the live output using `diff` rather than reading them side by side,
+and every one matched. The commands added or changed in the repair described
+below were run the same way, by the repairing session, and each of those outputs
+was compared to its live output with `diff` too — but by the session that wrote
+them, which is not the same assurance.
+
+As a set of tests a new design can be run against, it is not yet established.
+That same check found that three of the four tests fell short of the standard
+this document sets on its own last page — that a test never seen to fail has not
+been shown to detect anything. One passed on the very design that produced the
+failure it describes, one did not execute at all, and one looked only for words
+that the newest form of its own failure does not use. Those three were repaired
+on 2026-09-21 by a third session, which is the session that wrote this paragraph,
+and every repaired test is printed below with the command and the output showing
+it failing on the design it was written from.
+
+**Those repairs have not themselves been checked by anyone else.** Under the
+pairing rule in the protocol beside this file, they are owed a check by a session
+that did not make them. Until that check exists, treat this list as a reliable
+account of the past and an unproven instrument for the future: run it on a
+registration text and file what it returns, but do not read a clean pass from it
+as evidence that a design is clean.
+
 ---
 
 ## 1. A comparison whose denominator was zero
@@ -70,8 +96,17 @@ with the zero replaced by a moving number, which is harder to see and no more
 measurable. It is filed as the first finding of the Gate C pass on that proposal
 (`RT-172`, the per-arm-ceiling finding), in
 `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-21-successor-proposal-claude-worktree.md`
-— which at the time of writing sits on the reviewing session's own branch
-(`worktree-agent-a5e89aa434ea3f396`) and is not yet on the main line.
+at commit `3bbfece`, the commit titled "Gate C tier 1 review of the successor
+experiment proposal: RT-172 to RT-188". The commit is named and not only the
+branch it was written on, because a session branch is deleted once it is merged
+and a citation anchored to one loses its signpost without anyone editing the
+sentence. The design being criticised is the successor experiment proposal
+(`docs/successor-experiment-proposal-2026-09-21.md`) at commit `d8ceba9`, the
+commit titled "Successor proposal: the rehearsal buys a rented slice, and the
+second release is bound to what it measures", which was written on a different
+branch again. Both commits have since reached the main line in the working
+checkout, though neither had been pushed to the shared copy of the main line when
+this was written.
 
 **The test.** Two parts, both cheap.
 
@@ -88,6 +123,30 @@ for name, c in ceilings.items():
 primary battery: denominator 1 - ceiling = 0.7079
 control battery: denominator 1 - ceiling = 0.0000
 ```
+
+**Part one is a display and not a detector; part two below is what does the
+detecting.** The arithmetic only shows what it is handed. Hand it the ceilings as
+they were actually registered on 2026-09-15 — 0.2921 for the primary battery and
+0.3227 for the control (`amendment-a3.md` line 415) — and it prints two healthy
+denominators, with nothing to see:
+
+```
+$ python3 -c "
+ceilings = {'primary battery': 0.2921, 'control battery': 0.3227}
+for name, c in ceilings.items():
+    print(f'{name}: denominator 1 - ceiling = {1 - c:.4f}')
+"
+primary battery: denominator 1 - ceiling = 0.7079
+control battery: denominator 1 - ceiling = 0.6773
+```
+
+That is the failure passing its own test. The zero only appears once somebody has
+measured the ceiling, and measuring it is the rehearsal's job, not this test's. So
+part one's failure criterion is about where its numbers came from rather than
+about the arithmetic: **it fails if any ceiling typed into it cannot be traced to
+a committed measurement record**, named by file. Type in an assumed ceiling and
+this command reproduces the original failure while producing a filed output that
+looks like a disposition — which is what 0.3227 was.
 
 *Part two: print the largest value the reading can return, per condition, when
 the thing it is meant to detect is entirely absent.*
@@ -138,14 +197,37 @@ no-information value of 0.04, about 159 standard deviations of its own null. The
 instrument was never the problem. No review pass had been asked whether the named
 quantity was recoverable at all.
 
-**The test.** Two parts, one of them free.
+**The test.** Two parts, and the first one is the one that catches this failure.
 
-*Part one, paper and pencil, before anything is registered:* write one sentence
-naming the route by which the quantity reaches the model's states — which token
-carries it, or which part of the loss forces the model to compute it. "The
-episode generator knows it" is not a route. If no such sentence can be written,
-the pre-statement changes before it is registered, not after the probes come back
-empty.
+*Part one, before anything is registered:* the method document states, in one
+sentence and in a fixed form of words, the route by which the quantity reaches
+the model's states — which token carries it, or which part of the loss forces the
+model to compute it. "The episode generator knows it" is not a route. Writing the
+sentence is paper and pencil; **checking that it is there is a command**, so that
+this part produces a disposition with its work shown like every other:
+
+```
+$ python3 -c "
+import re
+pattern = r'route to the states|carried by the token|forced by the loss|is the input token'
+base = 'experiments/06-mvm-0a-constructed-self-index/'
+for f in ('position-sweep-method.md', 'powered-target-test-method.md'):
+    lines = [l.strip() for l in open(base + f) if re.search(pattern, l, re.I)]
+    print(f'{f}: {len(lines)} route sentence(s)')
+    for l in lines:
+        print('   ' + l)
+"
+position-sweep-method.md: 0 route sentence(s)
+powered-target-test-method.md: 1 route sentence(s)
+   the marker position**, where it is the input token. It must clear three
+```
+
+That is this failure caught, on the design that produced it, with a command and
+an output. The method committed before the sweep that spent weeks on `own_slot`
+contains no sentence naming a route, because none could be written. The method
+for the target that turned out to be recoverable contains one, and it names the
+token. Run this on a new design's method document with that design's own wording
+in the pattern; a count of zero is the finding.
 
 *Part two, run in the rehearsal:* run the whole probe pipeline twice — once on
 the pre-stated target, once on a quantity the design guarantees is present, read
@@ -156,11 +238,36 @@ $ python3 src/<probe_script>.py --target <the pre-stated quantity> --report marg
 $ python3 src/<probe_script>.py --target <a quantity the input guarantees> --report margins
 ```
 
-**It fails if** the second run does not clear the bar. A pipeline that cannot
-recover a quantity known to be there has not measured the target; it has measured
-its own noise, and a null from it says nothing. File both runs. A pre-stated probe
-target whose positive control was never run is a fatal finding on its own, on the
-same reasoning as a pre-stated quantity the rehearsal never exercised.
+**It fails if** any of three things is true, and they are read together:
+
+- **Part one returned no route sentence.** Fatal on its own, whatever the two
+  runs do. A target whose route nobody can name is the target that has cost this
+  programme weeks.
+- **The second run clears the bar and the first does not.** *This is the failure
+  this entry exists for.* A working instrument that returns nothing on the
+  pre-stated target is evidence that the target is not there to be recovered —
+  not evidence about the system being probed. The pre-stated target changes
+  before registration, and the null already collected is withdrawn rather than
+  reported.
+- **The second run does not clear the bar.** Then the pipeline is broken and
+  nothing has been measured at all; the first run says nothing either way,
+  whether it cleared or not.
+
+File both runs. A pre-stated probe target whose positive control was never run is
+a fatal finding on its own, on the same reasoning as a pre-stated quantity the
+rehearsal never exercised.
+
+**Why the criterion is written this way.** Until 2026-09-21 this entry said only
+"it fails if the second run does not clear the bar", and on the history the entry
+is written from that test passes. The second run is the one on the quantity the
+input guarantees, and in the position sweep of 2026-09-19 it cleared by an
+enormous margin — 0.5877 against a no-information value of 0.04, about 159
+standard deviations — which is the same evidence the entry itself cites for "the
+instrument was never the problem". A criterion that looks only at the pipeline
+detects a broken pipeline. It cannot detect an unrecoverable target, which is
+what this entry is about, and the pattern that reveals one — the first run empty
+while the second clears — was not named as a failure anywhere in the entry. It is
+now the second bullet above.
 
 ---
 
@@ -177,8 +284,9 @@ one per agent, without replacement, and asserts that the property survives
 rendering. Two agents therefore never dictate the same answer, the first cell can
 never hold a trial, and three other passages of the same proposal require the
 distinctness that empties it. Filed as the second finding of the Gate C pass on
-that proposal (`RT-173`, the empty-cell finding), in the same review file named
-under failure 1 above and with the same caution about which branch it is on.
+that proposal (`RT-173`, the empty-cell finding), in the same review file and at
+the same commit named under failure 1 above (`3bbfece`), against the same
+proposal commit (`d8ceba9`).
 
 **The same defect one step further.** That control carries a pre-stated check: an
 untouched condition "should be near the one-in-eight guessing rate; if it is not,
@@ -191,30 +299,104 @@ the list of things the design proposes to freeze.
 **The test.** Two parts, and a third for any threshold attached to a cell.
 
 *Part one: count what the generator actually puts in each pre-stated cell, at
-rehearsal scale.*
+rehearsal scale.* This is the part that generalises to a design other than the A3
+grammar, and it is the part that catches an empty cell. Three lines belong to the
+design being checked and are meant to be replaced: the module that is imported,
+the list of pre-stated cells, and the two small functions that say what a trial
+is and which cell it lands in. Everything else stands.
 
 ```
 $ python3 -c "
+import sys; sys.path.insert(0, 'experiments/06-mvm-0a-constructed-self-index/src')
 from collections import Counter
-from src.curriculum import generate          # the registered generator, not a stand-in
-counts = Counter(cell_of(trial) for trial in generate(n_episodes=200, seed=0))
+import curriculum_a3 as design          # the registered generator, not a stand-in
+
+PRE_STATED_CELLS = ['donor dictates the same answer',
+                    'donor dictates a different answer']
+
+def trials(episodes):                   # one trial per (episode, item, donor)
+    for ep in episodes:
+        for item in ep.contested:
+            v = ep.values[item]
+            for donor in range(design.N_AGENTS):
+                if donor != ep.own_slot:
+                    yield v[donor], v[ep.own_slot]
+
+def cell_of(trial):
+    donor, recipient = trial
+    return PRE_STATED_CELLS[0] if donor == recipient else PRE_STATED_CELLS[1]
+
+counts = Counter(cell_of(t) for t in trials(design.generate_balanced(200, seed=0)))
 for cell in PRE_STATED_CELLS:
     print(f'{cell}: {counts.get(cell, 0)} trials')
 "
+donor dictates the same answer: 0 trials
+donor dictates a different answer: 1200 trials
 ```
 
-*Part two: look for the property in the generator that would empty a cell —
-drawing without replacement, a distinctness assertion, a deterministic rule that
-makes two conditions the same condition.*
+**Zero is the finding.** Two hundred episodes of the registered grammar produce
+twelve hundred donor-and-recipient pairs and not one of them lands in the first
+pre-stated cell, because the grammar draws a distinct value per agent for each
+contested item. The comparison that cell is half of can never be made. That is
+failure 3, caught by a command, on the design that produced it.
+
+*Until 2026-09-21 this command did not execute.* It imported `src.curriculum`,
+and there is no `src` package — the generator modules sit in
+`experiments/06-mvm-0a-constructed-self-index/src/` and import each other by bare
+name, so the directory goes on the path rather than being treated as a package.
+It called a function named `generate`, and the module has `generate_episode` and
+`generate_balanced` and no `generate`. And it used `cell_of` and
+`PRE_STATED_CELLS` without ever defining them, so a session holding a different
+design could not have told what they were supposed to return. It raised
+`ModuleNotFoundError` on the first line that did any work, and so had never been
+seen to fail on anything.
+
+*Part two: read the generator for the property that would empty a cell —
+drawing without replacement, a shuffle that permutes rather than resamples, a
+distinctness assertion, a deterministic rule that makes two conditions the same
+condition.* Every file the generator is spread across, not one of them:
 
 ```
-$ grep -n "rng.sample\|assert len(set" experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py
-209:    markers = rng.sample(MARKERS, N_AGENTS)
-210:    contested = rng.sample(ITEMS, N_CONTESTED)
-215:        vs = rng.sample(SLOTS, N_AGENTS)
-233:    revisers = rng.sample(range(N_AGENTS), K_REVISERS)
-539:            assert len(set(vs)) == N_AGENTS, "distinctness broken by enactment"
+$ grep -rnE "\.sample\(|\.shuffle\(|\.permutation|permutations\(|set\(|distinct|unique|without replacement" experiments/06-mvm-0a-constructed-self-index/src/curriculum.py experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py
+experiments/06-mvm-0a-constructed-self-index/src/curriculum.py:51:# Marker pool: per-episode speaker labels drawn without replacement, so no
+experiments/06-mvm-0a-constructed-self-index/src/curriculum.py:109:    markers = rng.sample(MARKERS, n_agents)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum.py:113:    items = rng.sample(ITEMS, min(len(ITEMS), n_turns))
+experiments/06-mvm-0a-constructed-self-index/src/curriculum.py:118:        rng.shuffle(r)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum.py:218:        rng.shuffle(slots)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum.py:311:        rng.shuffle(slots)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:17:  pairs. Within an item the four values are **distinct**, so an item's
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:59:At its own revision turn the model sees four distinct earlier values for
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:209:    markers = rng.sample(MARKERS, N_AGENTS)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:210:    contested = rng.sample(ITEMS, N_CONTESTED)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:212:    # distinct values per contested item, one per agent
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:215:        vs = rng.sample(SLOTS, N_AGENTS)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:219:    rng.shuffle(pairs)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:233:    revisers = rng.sample(range(N_AGENTS), K_REVISERS)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:236:    rng.shuffle(rev_turns)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:329:        rng.shuffle(slots)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:371:       agent revised, this alone identified the model uniquely in a
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:420:        rng.shuffle(slots)
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:468:        # every contested item assigned by all agents, distinct values,
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:530:    # distinctness constraint still holds
+experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py:539:            assert len(set(vs)) == N_AGENTS, "distinctness broken by enactment"
 ```
+
+Line 215 of the A3 grammar is the one that empties the cell — four distinct
+values drawn for four agents, without replacement — and line 539 asserts the
+property survives rendering. Lines 17, 59, 212, 468 and 530 are the comments that
+say so in English, which is often where this is easiest to see.
+
+**What this part cannot see, plainly.** It is a text search, so it finds only
+idioms somebody thought to put in the pattern. Until 2026-09-21 the pattern held
+two of them, `rng.sample` and `assert len(set`, and looked in one file; it would
+have missed a shuffle, a `set()`, a `numpy` permutation, sampling without
+replacement written a third way, a constraint enforced by rejecting and redrawing
+inside a loop, a distinctness rule that lives in the encoder rather than the
+generator, or a generator in a file nobody listed. The pattern above is wider and
+covers two files instead of one, and it still misses all of those things if a
+design spells them differently. **Part one is the detector; part two only says
+where to look once part one has found a cell at zero.** A clean part two is not
+evidence that no cell is empty.
 
 *Part three: compute every pre-stated threshold at both ends of the range it will
 face — a system that has learned the task and one that has learned nothing — and
@@ -266,11 +448,70 @@ future session may cite has to be right.
 **The test.** Two parts.
 
 *Part one: list every sentence in the text that claims a measurement, so that
-none is checked by accident and none is missed.*
+none is checked by accident and none is missed.* Two sweeps, because one of them
+is a word list and a claim of measurement does not have to use a word:
 
 ```
-$ grep -n -E "verified|measured|calibrated|attacked|reproduc|confirmed|ran" <the text>.md
+$ grep -n -iE "verif|measur|calibrat|attack|reproduc|confirm|\brun|\bran\b|check|shows|showed|found|observed|recorded|returns|returned|yield|result" <the text>.md
+$ grep -n -E "[0-9]+\.[0-9]{2,}|[0-9]{1,3},[0-9]{3}" <the text>.md
 ```
+
+The second sweep catches a bare number offered as a result with no verb attached
+to it, which no word list will ever find. Both sweeps are deliberately noisy —
+`run` matches "running" and also "run" inside other words, `result` matches
+"resulting", and the number sweep matches every figure in the document including
+the ones that are not claims. Noise is the safe direction here: a session reads
+the list and crosses off what is not a claim, which costs minutes, where a miss
+costs whatever the unchecked claim costs.
+
+**Why the word list is this wide.** Until 2026-09-21 it held seven words —
+`verified`, `measured`, `calibrated`, `attacked`, `reproduc`, `confirmed`, `ran` —
+and missed this document's own headline claim of measurement, the sentence near
+the top reading "Every output printed below was produced by running the command
+printed above it", because "running" contains none of them. It missed several
+other ordinary ways of saying the same thing too. Six claims, the old list, the
+widened list, and the number sweep:
+
+```
+$ python3 -c "
+import re
+OLD = r'verified|measured|calibrated|attacked|reproduc|confirmed|ran'
+NEW = (r'verif|measur|calibrat|attack|reproduc|confirm|\brun|\bran\b|check|'
+       r'shows|showed|found|observed|recorded|returns|returned|yield|result')
+NUM = r'[0-9]+\.[0-9]{2,}|[0-9]{1,3},[0-9]{3}'
+claims = [
+    'Every output printed below was produced by running the command printed above it.',
+    'We verify both ceilings against the attack sweep.',
+    'Verification of the clause is filed with the run.',
+    'The endpoint records were checked before the gate opened.',
+    'The sweep shows no ownership signal at that position.',
+    'Control battery ceiling: 0.3227.',
+]
+print('old   new   number   sentence')
+for c in claims:
+    print(f'{bool(re.search(OLD,c,re.I)):<5} {bool(re.search(NEW,c,re.I)):<5} '
+          f'{bool(re.search(NUM,c)):<8} {c[:48]}')
+"
+old   new   number   sentence
+0     1     0        Every output printed below was produced by runni
+0     1     0        We verify both ceilings against the attack sweep
+0     1     0        Verification of the clause is filed with the run
+0     1     0        The endpoint records were checked before the gat
+0     1     0        The sweep shows no ownership signal at that posi
+0     0     1        Control battery ceiling: 0.3227.
+```
+
+The old list catches none of the six. The widened list catches five. The sixth is
+a bare number with no verb anywhere near it, and only the number sweep finds it —
+which is why part one is two commands and not one.
+
+**What part one still cannot catch, plainly.** A claim of measurement written in
+words nobody put in the pattern: "the two batteries came out the same", "this
+held on all three checkpoints", "the gate opened". A claim carried by a table
+with no sentence around it. A claim in a figure caption or a file name. And the
+sweeps cannot tell a claim from a quotation of one, or from a sentence that says
+a measurement was *not* made — every hit still has to be read. Part one narrows
+the reading; it does not replace it.
 
 *Part two: for each sentence the first part returns, name the file it cites and
 run the one command that regenerates the number. Two worked examples, both from
@@ -280,6 +521,14 @@ the failures above:*
 $ grep -c control experiments/06-mvm-0a-constructed-self-index/src/shortcut_sweep.py
 0
 ```
+
+*A practical warning about that one.* `grep -c` exits with status 1 when the
+count is zero, because "nothing matched" is grep's failure status whether or not
+you asked it to count. A session running this pass inside a script that stops on
+the first failing command will stop right here, on the example whose answer is
+the point. Run these by hand, or make the script tolerate it — appending
+`|| true` to the line is enough — and never read a stopped script as a passed
+test.
 
 ```
 $ python3 -c "
