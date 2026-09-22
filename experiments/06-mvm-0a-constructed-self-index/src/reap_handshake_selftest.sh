@@ -189,9 +189,15 @@ stop_all() {
 }
 
 finish_training() {   # what the trainer does at the end of a run
-  printf '{"step": 55116, "tokens": 585552384}\n' > "$RUN_DIR/testrun.DONE"
-  dd if=/dev/urandom of="$RUN_DIR/testrun.pt" bs=1024 count=400 2>/dev/null
+  # ORDER MATTERS, and it is the trainer's real order: the model file is
+  # written and put in place FIRST, and only then the finished-marker.
+  # Writing the marker first would let the laptop start copying a file that
+  # is still being written, which made this test flaky before it was fixed —
+  # and which is also why train_a3.py saves to a temporary name and renames.
+  dd if=/dev/urandom of="$RUN_DIR/testrun.pt.tmp" bs=1024 count=400 2>/dev/null
+  mv "$RUN_DIR/testrun.pt.tmp" "$RUN_DIR/testrun.pt"
   printf '{"step": 55116, "tokens": 585552384}\n' >> "$RUN_DIR/testrun.jsonl"
+  printf '{"step": 55116, "tokens": 585552384}\n' > "$RUN_DIR/testrun.DONE"
 }
 
 wait_for_exit() {   # $1 = seconds
