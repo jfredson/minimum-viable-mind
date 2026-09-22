@@ -329,3 +329,43 @@ creates nothing), and the existing module self-tests.
    provenance turns on it, but say the word and it becomes a seventh file.
 4. **The bounded wait is 30 minutes by default.** That is a spending
    choice — about $0.50 of worst-case idle per run — not a technical one.
+
+---
+
+## 9. Appendix: what actually happened when it was built
+
+*Added after the code landed. The note above is unchanged; this records
+where building it differed from planning it, which is the only honest way
+to keep a method file that was committed first.*
+
+**A negative control was added to the self-test, and it matters more than
+the rest.** §7 listed six things to assert, all of which assert the fix
+working. A test that can only pass proves nothing, so the suite gained a
+case 0: it reproduces the old order exactly — save the model file, write
+the finished-marker, ask the machine to delete itself, with nothing in
+between — and *expects the rule to be broken*. It is. The deletion is
+recorded with no receipt and a stale local copy, and the laptop is left
+without the final file. If case 0 ever reports the rule holding, the
+harness has stopped measuring what it claims to.
+
+**Four timing knobs were added to the laptop watcher** so the whole
+sequence runs in seconds instead of hours: the gap between "the machine
+did not answer" checks, the wait between final-copy attempts, the settle
+time after a delete, and the existing wake-up cycle. They change nothing
+at their defaults; they exist so the self-test needs no vendor.
+
+**The derived launcher is produced by a script, not by hand.**
+`src/derive_fetch_first_launcher.py` reads the registered launcher, applies
+nine named replacements, and asserts each one matched exactly once. That
+makes "derived verbatim" a checkable claim rather than a promise: re-run it
+and compare. It never writes to the registered file.
+
+**One bug found and fixed in the test harness itself**, worth recording
+because it is the kind that hides: stopping a background job with an unset
+process number falls through to `kill 0`, which signals the whole process
+group and kills the test script. It surfaced as one case simply hanging.
+
+**Result: 26 checks, no failures**, plus a clean dry run of the new
+launcher that created nothing, and the three module self-tests passing
+unchanged. No machine was rented; no vendor was contacted; nothing was
+spent.
