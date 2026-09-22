@@ -1,0 +1,15 @@
+{
+  "distinctness_preserving_grammar": {
+    "reason": "within an item the four values are distinct and the successor rule is one-to-one, so two agents can never dictate the same answer; the cell is empty by construction, not by bad luck",
+    "same_value_trials": 0,
+    "trials": 4000
+  },
+  "relaxed_grammar": {
+    "blind_solver_on_the_relaxed_set": 0.3095,
+    "blind_solver_on_the_strict_set": 0.24675,
+    "note": "relaxing distinctness is the only way found to populate the cell, and it moves the reference a solver that cannot tell which agent it is can reach, on exactly the trials it populates",
+    "same_value_trials": 346,
+    "trials": 4000
+  },
+  "verdict": "D-4 PASS: the cell is empty by construction under distinctness and can only be filled by relaxing it, at a measured cost"
+}
