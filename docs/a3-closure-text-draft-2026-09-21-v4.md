@@ -64,10 +64,7 @@ model so broadly that no reading of it can be trusted. That bin did not fire,
 and it was also never tested: those gates have no code written for this design
 and were never applied to any lesion on any seed (the independent review of
 2026-09-19 searched the source and the three endpoint records and found
-neither — `red-team-a4.md`, its seventeenth finding, labelled there F17), and
-the subspace ablation
-they were written to guard never ran, because no subspace was ever
-localized.
+neither — `red-team-a4.md`, its seventeenth finding, labelled there F17).
 
 The pre-registered loss condition fired: *no non-self cross-turn control
 can be built that is state-requiring at ceiling — then the differential
@@ -211,8 +208,9 @@ ceiling properly is a precondition of any successor amendment (John,
 as absent until both instruments, probe and causal patching, agree; and the
 successor's whole purpose is a measurement that does not yet exist, so the
 rehearsal requirement — that a full measurement procedure be demonstrated
-before it is registered — applies to it even though it does not apply to
-this closure.
+before it is registered (`docs/outside-review-protocol.md`, its section on
+the measurement rehearsal required before any Gate A) — applies to it even
+though it does not apply to this closure.
 
 **Open items carried on this closure.** The instrument-sensitivity
 requirement the blind arm served, carried into the successor's rehearsal
