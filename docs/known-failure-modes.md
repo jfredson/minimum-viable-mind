@@ -35,30 +35,49 @@ Every output printed below was produced by running the command printed above it,
 in this repository, on 2026-09-21.
 
 **What this list has been shown to be, and what it has not.** As a description of
-what has gone wrong here, it is accurate. A session other than the one that wrote
-it ran every command this list carried at the time and compared each printed
-output with the live output using `diff` rather than reading them side by side,
-and every one matched. The commands added or changed in the repair described
-below were run the same way, by the repairing session, and each of those outputs
-was compared to its live output with `diff` too — but by the session that wrote
-them, which is not the same assurance.
+what has gone wrong here, it is accurate.
 
-As a set of tests a new design can be run against, it is not yet established.
-That same check found that three of the four tests fell short of the standard
-this document sets on its own last page — that a test never seen to fail has not
-been shown to detect anything. One passed on the very design that produced the
-failure it describes, one did not execute at all, and one looked only for words
-that the newest form of its own failure does not use. Those three were repaired
-on 2026-09-21 by a third session, which is the session that wrote this paragraph,
-and every repaired test is printed below with the command and the output showing
-it failing on the design it was written from.
+**Which blocks below have been run, and which have not.** Twelve blocks are
+printed below. Ten carry a command and the output that running it produced, and
+all ten have been re-run by a session other than the one that wrote them and
+compared against the printed text with `cmp`, which names the first byte at which
+two files differ; nothing differed. The eight the list carried before the repair
+described below had already been checked the same way once, with `diff`. The
+remaining two blocks carry placeholders in angle brackets and no output. One of
+them is failure 4's first part, written as a template because it is pointed at
+whatever document is under review; the word lists inside it are exercised on six
+worked claims in the block below it, and that block was run and its output
+printed. **The other is failure 2's second part, and it has never been run at
+all.** Running it means running a whole probe pipeline twice against model
+checkpoints, which costs compute that nobody has authorised. Its middle limb —
+the second run clears the bar and the first does not — is argued from numbers
+already sitting in the position sweep's findings file, which failure 2 names
+below, and not from running the test. It has not been seen to fail on anything.
 
-**Those repairs have not themselves been checked by anyone else.** Under the
-pairing rule in the protocol beside this file, they are owed a check by a session
-that did not make them. Until that check exists, treat this list as a reliable
-account of the past and an unproven instrument for the future: run it on a
-registration text and file what it returns, but do not read a clean pass from it
-as evidence that a design is clean.
+As a set of tests a new design can be run against, this list is not yet
+established. The first check found that three of the four tests fell short of the
+standard this document sets on its own last page — that a test never seen to fail
+has not been shown to detect anything. One passed on the very design that
+produced the failure it describes, one did not execute at all, and one looked
+only for words that the newest form of its own failure does not use. Those three
+were repaired on 2026-09-21 by a third session. Failure 3's empty cell and
+failure 4's widened word list are each printed below with the command and the
+output showing the test failing on the design it was written from. Failure 2 is
+printed that way for its first part only, and that part is a proxy rather than a
+detector, for the reasons set out under it.
+
+**Where that leaves the list.** The repairs have been checked once, by the
+session that wrote
+`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-21-protocol-repair-claude-worktree.md`
+at commit `fbfecb5`, the commit titled "Check the repair: the ten outputs hold,
+two tests still owe a sentence". That check found the two gaps the paragraphs
+above and the paragraph under failure 2's first part now fill. Those two
+corrections were written by a fourth session and have not themselves been checked
+by anyone. Under the pairing rule in the protocol beside this file, they are owed
+a check by a session that did not make them. Until that check exists, treat this
+list as a reliable account of the past and an unproven instrument for the future:
+run it on a registration text and file what it returns, but do not read a clean
+pass from it as evidence that a design is clean.
 
 ---
 
@@ -228,6 +247,33 @@ contains no sentence naming a route, because none could be written. The method
 for the target that turned out to be recoverable contains one, and it names the
 token. Run this on a new design's method document with that design's own wording
 in the pattern; a count of zero is the finding.
+
+**What this search cannot see, plainly.** It counts sentences that match a fixed
+set of words, so it cannot see a route named in any other words. Run exactly as
+printed above across all nine method documents in this experiment, seven come
+back at zero, and one of the seven is the method for the powered eleven-position
+sweep
+(`experiments/06-mvm-0a-constructed-self-index/powered-position-sweep-method.md`),
+which does what this part asks for and does it at length: it names in advance the
+token that carries the target at one position, and says that nothing carries it
+at another. It scores zero because it writes "as an input token" where the
+pattern says "is the input token". That run is printed in the check of this
+repair
+(`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-21-protocol-repair-claude-worktree.md`
+at commit `fbfecb5`, the commit titled "Check the repair: the ten outputs hold,
+two tests still owe a sentence"). The other direction is no better: a count above
+zero says only that some sentence matched the words typed into the pattern, and
+the instruction to run it with the new design's own wording means a session that
+writes the pattern out of the document it has just read will match by
+construction. What this command records is whether the checking session found a
+sentence it was willing to call a route — worth recording, because it forces one
+specific sentence to exist and be quoted into the filed output where it can be
+argued with by name, but not a measurement of whether a route exists.
+
+**So part one is a prompt to look and not a verdict**, and the sentence above
+calling a count of zero the finding should be read that way: a zero is a reason
+to go and read the method document and settle in writing whether a route is named
+there, and a sentence that matched is not on its own a pass.
 
 *Part two, run in the rehearsal:* run the whole probe pipeline twice — once on
 the pre-stated target, once on a quantity the design guarantees is present, read
