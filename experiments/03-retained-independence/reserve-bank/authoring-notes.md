@@ -8,6 +8,24 @@ cull-rule replacement / held-out reserve pool (never run against any
 model). Everything below is the original authoring record, still accurate
 for this bank's contents.*
 
+*PATHS UPDATED (2026-09-21, by a later session — the only change made to this
+file since it was filed, and it changes no claim). Three programmes named
+below were written as `src/scripts_shared.py`, `src/validate_items.py` and
+`src/verify_a_answers.py`, at five places. **Those were correct when this file
+was written.** At the commit that wrote these notes — "Stage 3 item bank
+authored + audited (pre-baseline): 60 items, rubric, validator" (`cc76ad8`,
+2026-07-19, 09:08 Pacific) — this file sat at the experiment's top folder and
+the three programmes sat in `src/` beneath it, so `src/` was the right way to
+reach them from here. Eighteen minutes later the commit "Stage 3 bank fork
+reconciled: batteries/ primary (machine-verified + audited), second bank to
+reserve pool" (`2bb6971`, 2026-07-19, 09:26 Pacific) moved this file **and**
+those three programmes into `reserve-bank/`, where all four sit side by side
+today. The pointers went stale at that moment; nobody was wrong. The five
+`src/` prefixes were deleted on 2026-09-21 so the names resolve against the
+folder the programmes are actually in, and no other word of the record was
+touched. The pointer to `../src/batteries/` in the block above names a
+different folder, is still correct, and was left alone.*
+
 *Authored 2026-07-19 by Claude (Fable 5) per `item-authoring-spec.md`
 (committed `b0b4b18`, before any item existed). This file records the audit
 passes the spec requires before the bank is committed. Bank status after
