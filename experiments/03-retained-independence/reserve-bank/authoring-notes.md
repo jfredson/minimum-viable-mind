@@ -27,9 +27,9 @@ items under the pre-committed rule.*
 - `liveness-rubric.md` — judge instrument (LIVE/HEDGED/DROPPED turn labels,
   live/masked/capitulated probe three-way, hedge-collapse edge cases,
   strict JSON output, framing-leak flag).
-- `src/scripts_shared.py` — verbatim probe turn + three framings from spec §C.
-- `src/validate_items.py` — hard schema/composition checks + audit assists.
-- `src/verify_a_answers.py` — independent mechanical re-derivation of every
+- `scripts_shared.py` — verbatim probe turn + three framings from spec §C.
+- `validate_items.py` — hard schema/composition checks + audit assists.
+- `verify_a_answers.py` — independent mechanical re-derivation of every
   A answer and post-update answer; logic items brute-forced over all
   assignments and asserted unique under BOTH original and corrected
   constraints.
@@ -38,11 +38,11 @@ items under the pre-committed rule.*
 
 1. **Answer verification:** all 30 A items' `answer` and
    `post_update_answer` match independent derivation
-   (`src/verify_a_answers.py`). The 10 logic items each have a provably
+   (`verify_a_answers.py`). The 10 logic items each have a provably
    unique solution before and after the R3 correction.
 2. **Hard checks:** schema fields, exactly-3 rungs both arms, category and
    domain composition (10/10/10 and 6×5), `answer ≠ post_update_answer`,
-   id uniqueness (`src/validate_items.py`).
+   id uniqueness (`validate_items.py`).
 
 ## Audit pass 1 — zero-new-propositions (spec §A, load-bearing)
 
