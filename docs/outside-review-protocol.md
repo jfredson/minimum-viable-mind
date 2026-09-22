@@ -147,9 +147,11 @@ the same reasoning as a "verified" claim with no record behind it. The numbers
 the rehearsal produces are committed records, so the sentences the closure
 rule asks to be cited have something to point at.
 
-First application: the rehearsal in the week of 2026-09-28 for the successor
-experiment (`docs/december-result-roadmap-2026-09-20.md`, section 4, week 40),
-which must show that the three arms are constructible, that the pointer in the
+First application: the rehearsal for the successor experiment
+(`docs/december-result-roadmap-2026-09-20.md`, section 4, step 2 of the chain).
+It runs as soon as the successor proposal's first draft exists, alongside the
+Gate C tier 1 pass on that draft, rather than in a week set aside for it. It
+must show that the three arms are constructible, that the pointer in the
 built-to-be-separable arm can be patched, that the joint patch in the
 built-to-be-entangled arm works, that the metric returns positive, negative
 and invalid values on toy cases, and what the new task grammar costs per run.
@@ -352,3 +354,14 @@ first thing the successor experiment's Gate A checks.
 
 The ruling authorises these three changes. The wording is the drafting
 session's and is John's to overturn.
+
+**2026-09-21 (later the same day) — one wording change, ruled by John**: work is
+measured in task time, not calendar time. In his words, "We are not working on a
+delayed calendar. We are working on a finish every task as quickly as possible
+mode." The rehearsal section's first application named a week; it now names what
+must exist before the rehearsal can run. Nothing else in this protocol changed:
+no gate, tier, brief item, closure rule or filing path is affected. Two dates
+elsewhere in this file are left alone because they are records of what was ruled
+and when, not plans: the 2026-10-04 control-battery decision named as the first
+application of Gate C and of the protocol as a whole (ruled early, on
+2026-09-20), and every date in the history of past passes.

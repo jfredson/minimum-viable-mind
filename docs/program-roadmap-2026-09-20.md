@@ -3,7 +3,15 @@
 *Status: APPROVED by John 2026-09-20 (Pacific), verbatim "Agreed on all" on the Cowork discussion this
 file records. Supersedes steps 5 to 9 and the constraints section of `docs/public-path-roadmap-2026-09-16.md`.
 Steps 1 to 4 of that roadmap are done or ruled and stand as written there. Companion to `ROADMAP.md`
-(stage gates), `ROADMAP-post-removal-test.md`, `STATUS.md` (this week) and `docs/outside-review-protocol.md`.*
+(stage gates), `ROADMAP-post-removal-test.md`, `STATUS.md` (current state) and `docs/outside-review-protocol.md`.*
+
+*Amended 2026-09-21: John ruled that work is measured in task time, not calendar time — "We are not
+working on a delayed calendar. We are working on a finish every task as quickly as possible mode."
+The near-term table below now says what must finish before each step rather than what date it is
+due. Nothing about the steps, their owners or their costs changed. The dates that are commitments
+rather than pacing are unchanged: the book text lock (2026-09-30), the wrap-up start (2026-12-21),
+the hibernation condition complete by 2027-01-04, and the two kill dates in
+`docs/december-result-roadmap-2026-09-20.md`.*
 
 ## What changed and why
 
@@ -72,11 +80,11 @@ open-ended program. All of it stays in force:
    Wrap-up start: 2026-12-21 (ruled by John 2026-09-20); nothing new is launched after that date.
    Resumption after graduation, May 2027, or in pipeline breaks if any exist.
 
-## Near-term schedule (unchanged)
+## Near-term order of work (steps unchanged; timing now stated as dependencies)
 
-| Step | Owner | Date |
+| Step | Owner | What must finish first |
 |---|---|---|
-| Blind-localization arm, registered, local, $0 | Claude Code session, John schedules | 2026-09-27 |
+| Blind-localization arm, registered, local, $0 | Claude Code session, John schedules | Nothing blocks it; it runs as soon as John starts the session |
 | Two authorised $0 localization runs (other-agent index control L2(a), standardised refit) | Claude Code session | after step 3, method committed before output |
 | Causal patching, designed as new code | Claude Code session, proposal to John | after the two runs |
 | Program-level outside review responses (Gemini, ChatGPT Astra) filed, disagreement map and draft rulings | John runs sessions, Cowork drafts | before A3 closure text |
