@@ -21,6 +21,65 @@ of the idea; everything below is about where the line should sit.
 
 ---
 
+> # NOTE ADDED AFTERWARDS — one of the things this proposal asks John to rule on is already done.
+>
+> **Added 2026-09-21, later the same evening, by a later Claude Code session
+> working in its own worktree. This is not John's ruling and it is not part of
+> the proposal. Nothing in the proposal below is rewritten; it is left
+> unedited, exactly as it was committed.**
+>
+> **What the proposal still says.** In three places this document says that the
+> project's structured status file, `data/project.toml`, still carries the old
+> spend figures. Twice in section 1.3 — the paragraph headed "The envelope
+> figure is stale by $10", which says the file "should be corrected in the same
+> session that lands any ruling on this proposal" — and once as **item 7 of
+> section 7**, the list of things John is asked to rule on.
+>
+> **The file was corrected five minutes after this proposal was written.** The
+> proposal was committed at 19:51:27 Pacific on 2026-09-21, in the commit whose
+> message is "Proposal: pre-authorised spending for the successor experiment"
+> (`176efad`). The correction landed at 19:56:05 Pacific the same evening, in
+> the commit whose message is "data: match the site's spend figures to the
+> corrected compute ledger" (`4b4ec99`). `data/project.toml` now reads
+> **`spent = 225.7`** against the $400 programme envelope and **`spent = 44.3`**
+> against the $100 Amendment A3 hard stop, and both of the explanations beside
+> those figures were rewritten to match the compute ledger — the file that is
+> the record of money spent, at
+> `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`.
+>
+> **So item 7 of section 7 needs no ruling: it is already satisfied, and John
+> should not spend a decision on it.** Items 1 to 6 are untouched by this note,
+> and so is everything in the body. Section 1.3's arithmetic was right, and the
+> correction it asked for is exactly what happened.
+>
+> The correction was owed in any case. Item 16 of
+> `docs/rulings/2026-09-21-review-verification-and-staged-spending.md` — the item
+> that orders the stale spend figures brought into line with the compute ledger —
+> names this same file.
+>
+> One related fact, checked while writing this note and recorded here rather
+> than edited into the body: section 6 of the December-result roadmap
+> (`docs/december-result-roadmap-2026-09-20.md`), which section 1.3 quotes as
+> saying "$215.70 spent per data/project.toml" and "about $184 unspent", has
+> also since been corrected, at 20:16:39 Pacific on 2026-09-21, in the commit
+> whose message is "Land the ruled spend correction in the December roadmap"
+> (`5ad79a0`). It now reads about $225.70 spent and about $174.30 left. The
+> quotation in section 1.3 is accurate about what the roadmap said when this
+> proposal was written, and is no longer a description of what it says today.
+>
+> **Why a note and not an edit.** This repository already handles a superseded
+> claim this way: the two stacked dated blockquotes at the top of
+> `docs/control-clause-proposal-2026-09-19.md` say in terms "Nothing in this memo
+> is rewritten" and "It is left unedited", and `STATUS.md` carries a dated block
+> marked "ANNOTATION 2026-09-16" above a paragraph it leaves standing. No ruling
+> of John's puts that practice into words. The nearest is item 20 of the ruling
+> file named above — the one about a measured count of record keys that does not
+> reproduce, which chooses to correct the record later rather than chase it that
+> night — and it does not say "annotate, never edit". The practice here rests on
+> precedent, not on any wording of his.
+
+---
+
 ## 0. What this asks John to do, in one page
 
 The December-result roadmap (`docs/december-result-roadmap-2026-09-20.md`)

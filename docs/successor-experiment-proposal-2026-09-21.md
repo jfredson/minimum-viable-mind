@@ -46,6 +46,62 @@ identifier anywhere.*
 
 ---
 
+> # NOTE ADDED AFTERWARDS — the spend file this document calls stale has since been corrected.
+>
+> **Added 2026-09-21, later the same evening, by a later Claude Code session
+> working in its own worktree. This is not John's ruling and it is not part of
+> the proposal. Nothing in the proposal below is rewritten; it is left
+> unedited, exactly as it was committed.**
+>
+> **What the document still says.** Section 12.1 closes with a parenthesis
+> saying that the project's structured status file, `data/project.toml`, "still
+> carries the stale $215.70" and that "a separate session is correcting the
+> project file". The source list in section 16 repeats it, calling that file
+> "the spend figure that is stale and is **not** used here … being corrected in
+> a separate session".
+>
+> **That separate session has since run.** The correction landed at 19:56:05
+> Pacific on 2026-09-21, in the commit whose message is "data: match the site's
+> spend figures to the corrected compute ledger" (`4b4ec99`).
+> `data/project.toml` now reads **`spent = 225.7`** against the $400 programme
+> envelope and **`spent = 44.3`** against the $100 Amendment A3 hard stop, and
+> both of the explanations beside those figures were rewritten to match the
+> compute ledger — the file that is the record of money spent, at
+> `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`. The
+> correction was owed under item 16 of
+> `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, which
+> orders the stale spend figures brought into line with that ledger.
+>
+> **This changes no number in the document.** Section 12 was written against the
+> compute ledger rather than against the project file, and the figures the
+> correction copied across are the ledger's own. What has passed is only the
+> state of affairs those two sentences describe: the two files now agree, and
+> the correction they call pending has happened. Section 12.1's account of where
+> version 1's $215.70 came from is history, and remains accurate as history.
+>
+> The same two sentences also say that section 6 of the December-result roadmap
+> (`docs/december-result-roadmap-2026-09-20.md`) repeats the stale figure as
+> "about $184 unspent". Checked while writing this note: that paragraph was
+> corrected too, at 20:16:39 Pacific on 2026-09-21, in the commit whose message
+> is "Land the ruled spend correction in the December roadmap" (`5ad79a0`). It
+> now reads about $225.70 spent and about $174.30 left.
+>
+> Nothing here touches the Gate C review findings this proposal is under repair
+> for. It is about the spend file and nothing else.
+>
+> **Why a note and not an edit.** This repository already handles a superseded
+> claim this way: the two stacked dated blockquotes at the top of
+> `docs/control-clause-proposal-2026-09-19.md` say in terms "Nothing in this memo
+> is rewritten" and "It is left unedited", and `STATUS.md` carries a dated block
+> marked "ANNOTATION 2026-09-16" above a paragraph it leaves standing. No ruling
+> of John's puts that practice into words. The nearest is item 20 of the ruling
+> file named above — the one about a measured count of record keys that does not
+> reproduce, which chooses to correct the record later rather than chase it that
+> night — and it does not say "annotate, never edit". The practice here rests on
+> precedent, not on any wording of his.
+
+---
+
 ## 0. The whole thing in six sentences
 
 The project's open question is now one of degree: a small transformer that has
