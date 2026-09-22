@@ -22,6 +22,18 @@ are commitments rather than pacing — the two kill dates, the book text lock, t
 wrap-up start and the hibernation condition — are unchanged and are called out
 where they bite.*
 
+*Amended again 2026-09-21: the single launch step of section 4 is split in two,
+because the ruling of that day
+(`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`) replaced
+the one-shot launch this roadmap was written with. Item 12 of that ruling adopted
+the staggered launch — one free-arm run goes first and its learn-both result is
+read before the remaining eight are committed to — and item 13 replaced the seed
+fallback with "halt, not trim". Item 19 folded the one permitted re-run into the
+first release of money. So the launch is now steps 5a and 5b with a decision
+point between them, and the seed fallback is gone from this document wherever it
+appeared as a live plan. Nothing else changed: same nine runs, same arms, same
+owners, same kill dates, same registered outcomes.*
+
 ## 1. The question, restated so it can be answered by 2026-12-21
 
 After the 2026-09-20 rulings the program's open question is one of degree: a
@@ -120,8 +132,9 @@ he runs by hand, or an edit in another repo.
 | 2. Proposal review and the measurement rehearsal | Successor proposal v1 drafted (step 1). | Gate C tier 1 on proposal v1. **Measurement rehearsal** (CC, ~$0 to $10): tiny models, show the three arms are constructible, the pointer in T is patchable, the joint patch in C works, the metric returns positive, negative and invalid values on toy cases, throughput of the new grammar measured. | A3 closure text: tier 2 sessions, John rules, lands (Gate A) — after its tier 1 review in step 1. | **Book text lock 2026-09-30** — a fixed date, not pacing. Run two tier 2 sessions for A3 closure. Rule on it. |
 | 3. Registration text and Gate A | Rehearsal findings in, and Gate C tier 1 answered (step 2). | Rehearsal findings fix the bars. Registration text final (v2). Gate A: tier 1, then tier 2. **The registration is committed as soon as both tiers are answered and John rules** — there is no target date; the only date is the kill date in this row's last column. | Generator, T and C architectures, patching code implemented against the rehearsal (CC). | Run two tier 2 sessions on the registration. Rule. **Kill date 1 bites here: registration committed by 2026-10-18** or the roadmap drops to its fourth outcome (R4, a schedule failure rather than a scientific one) and says so. |
 | 4. Freeze and development runs | Registration committed, and the implementation written (step 3). | Implementation frozen; unit tests; the RT-58 even-split rule and the one-scored-token self-test carried over. Development runs at 10M (~$10). | Compute ledger rows opened with estimates. | None. |
-| 5. Registered training launched | Implementation frozen and tested, development runs clean (step 4), and John's launch approval. | **Registered training launched**: three arms × three seeds at 30M, ~$110 at the ledger's $12 per run (the 3.5× RunPod anomaly of 2026-08-08 is the risk; if it recurs, seeds drop to two on T and C, three on F). Eligibility gate evaluated as runs land. | Actor-representation nomination on development episodes begins as F checkpoints arrive. | Approve launch (spend gate). **Kill date 2 bites here: registered runs launched by 2026-11-01** or the same drop to the fourth outcome (R4). |
-| 6. Nomination, patching, and the validation result | Registered runs landed and the eligibility gate evaluated (step 5). | Nomination frozen and committed. Patching on fresh episodes, all arms. Metric computed on T and C: the validation result. | One permitted re-run if an arm failed eligibility (~$12). | None unless a re-run needs a go. |
+| 5a. The first registered run: one free arm, on its own | Implementation frozen and tested, development runs clean (step 4), and John's go naming this run. | **One run of arm F (the free model) at 30M, about $12**, launched by itself. It sits inside the first release of money, which now also covers the rehearsal (up to $10), the development runs (up to $10) and the one permitted re-run (about $12) — about $44 in all. Two things must come back before anything else is launched: whether this run passes the learn-both eligibility gate, and what the machine actually bills. | Nothing that costs money. | Give the go naming this run (spend gate). **Kill date 2 bites here: registered runs launched by 2026-11-01** or the roadmap drops to the fourth outcome (R4, a schedule failure rather than a scientific one). |
+| 5b. The remaining eight registered runs | Step 5a's learn-both result read and its billing found normal (the decision point below), the second release of money asked for and ruled, and John's go. | **The other eight of three arms × three seeds at 30M, about $96** at the ledger's $12 per run. The eligibility gate is evaluated on each arm as its runs land. | Actor-representation nomination on development episodes begins as F checkpoints arrive. | Approve the second release and give the go for the eight (spend gate). |
+| 6. Nomination, patching, and the validation result | Registered runs landed and the eligibility gate evaluated (step 5b). | Nomination frozen and committed. Patching on fresh episodes, all arms. Metric computed on T and C: the validation result. | The one permitted re-run if an arm failed eligibility (~$12), if it was not already used at the decision point below. | None unless a re-run needs a go. |
 | 7. Validation findings and Gate B | The validation result computed (step 6). | Validation findings written. **Gate B** (tier 1, tier 2). John rules: R1 path (read F), or R2/R3 closure. | Site and `data/project.toml` updated with the validation state. | Run two tier 2 sessions. Rule. |
 | 8. The reading, or the closure draft | John's Gate B ruling (step 7). | R1: read arm F on the frozen procedure, confirmation seeds. R2/R3: draft closure text and the resumption design. | Patching-code defects found at Gate B are fixed here. | None. |
 | 9. Findings document and Gate B tier 1 | The reading, or the null, complete (step 8). | Findings document for the reading (or the null). Gate B tier 1. | — | Start tier 2 sessions if tier 1 is clean. |
@@ -130,6 +143,45 @@ he runs by hand, or an edit in another repo.
 | 12. Records closed and the write-up sent | The closure text landed (step 11). | STATUS.md, `data/project.toml`, site, ledger closed with actual-after rows. Write-up to the outside human reader (shortlist doc). | `RESUME.md` drafted. | Choose and contact the outside reader. |
 | 13. Explainer refresh | The records are closed (step 12), and the book text lock of 2026-09-30 has passed. | `explainer.md` refresh, if the chain reaches it before wrap-up starts (this was the "if time" item of the old slack week, and it stays conditional). | — | None. |
 | 14. Wrap-up | Everything above, or a kill date having fired. **Starts 2026-12-21** (ruled); nothing new is launched after that date. | **Wrap-up** (ruled): hibernation condition per the program roadmap, **complete by 2027-01-04**. | — | Final ruling that the hibernation condition is met. |
+
+**The decision point between step 5a and step 5b.** This is what the staggered
+launch buys, and it is the only place in the chain where the next step is not
+simply "the thing before it finished". Items 12 and 13 of
+`docs/rulings/2026-09-21-review-verification-and-staged-spending.md` set it.
+Step 5a has to show two things, and what happens next depends on which of them
+holds.
+
+- **The free arm passes the learn-both eligibility gate, and the machine bills
+  at about the ledger's rate.** The remaining eight runs are committed to: the
+  second release of money is asked for, John gives the go, and step 5b starts.
+- **The free arm fails the learn-both gate.** The one permitted re-run fires
+  here rather than at step 6. Its money is already inside the first release, so
+  no new release is needed, but it still needs John's go naming the run — the
+  corrigibility commitments require that for every registered batch, and money
+  released in advance is not a go. If the re-run fails the gate too, the eight
+  are never launched and the roadmap lands on outcome R3 (substrate not a
+  testbed), which is a registered result, not a failure of the plan. This is the
+  branch the staggering exists for: on the proposal's own prior it is the most
+  likely one, and taking it costs about $44 instead of about $140. Note that
+  there is only one permitted re-run in the whole programme — used here, it is
+  not available at step 6.
+- **The machine bills anomalously** (the 3.5× RunPod overrun of 2026-08-08
+  recurring). **Halt, not trim.** Work stops on the first machine that bills
+  anomalously; seeds are not dropped. Dropping seeds does not answer a tripled
+  unit cost — at the anomalous rate even the trimmed plan spends about $326,
+  which is more than the programme has left — while halting bounds what can be
+  lost to roughly one machine's overrun. Starting again after a halt is a new
+  ruling, not a retry. This replaces the seed fallback (two seeds on the
+  constructed arms, three on the free arm) that this roadmap carried when it was
+  written.
+
+One thing the ruling did not settle, raised here rather than decided: the second
+kill date is written as "registered runs launched", and the staggered launch
+splits the launch in two. It is placed on step 5a above, because that is when
+registered training starts. Whether the eight runs of step 5b must also be
+inside it is an open reading, and it needs an answer before step 5a runs, since
+a free-arm result that comes back slowly could leave the eight on the wrong side
+of it.
 
 Gate count on the critical path: four (A3 closure Gate A, registration Gate A,
 validation Gate B, closure Gate A), plus one Gate B on the reading if R1. Each
@@ -189,8 +241,24 @@ would be counting the same money twice. Proposed cap for the successor:
 **$130**, covering rehearsal (up to $10), development runs (up to $10), nine
 registered 30M runs (about $110) and one re-run (about $12) with the balance as
 the anomaly margin. Anything above $130 is a new ruling. If the 3.5× billing
-anomaly recurs on the first pod, the seed plan drops as stated at the
-registered-training step of section 4 (step 5) before the second pod launches.
+anomaly recurs on the first machine, work halts rather than dropping seeds, as
+set out at the decision point between steps 5a and 5b of section 4; item 13 of
+`docs/rulings/2026-09-21-review-verification-and-staged-spending.md` replaced the
+seed fallback this paragraph used to point at.
+
+**How that money is released, and why folding the re-run in changed no total.**
+The same ruling releases the money in two stages rather than all at once, and
+item 19 of it folded the one permitted re-run into the first stage. That moves
+money between the two stages and does not add any. The roughly $175 the two
+stages come to is made up of the rehearsal ($10), the development runs ($10),
+nine registered runs ($108), one re-run ($12), the measurement and transplanting
+work ($12) and an anomaly margin ($23) — the re-run was always inside that
+figure. So folding it forward takes the first stage from about $32 to about $44
+and the second from about $143 to about $131, and leaves the total at about
+$175 against the $174.30 the programme has left. That overshoot of about seventy
+cents is unchanged by the fold, is still open, and is not settled here: the
+ruling left it for the rehearsal's measurement to answer, and this roadmap does
+not pre-empt it.
 
 **Time.** John's items above sum to roughly ten tier 2 reviewer sessions (about
 an hour each), six rulings, the book edits and the launch approvals: three to
