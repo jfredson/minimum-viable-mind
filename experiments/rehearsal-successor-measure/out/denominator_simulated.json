@@ -1,0 +1,27 @@
+{
+  "base_rate": 0.125,
+  "cases": {
+    "strong transplant": {
+      "accuracy_whole": 0.9007999999999999,
+      "floor_corrected_mean": 0.5017998460383064,
+      "floor_corrected_sd": 0.013170946317616856,
+      "registered_mean": 0.4323199808203894,
+      "registered_sd": 0.011886784991531833
+    },
+    "weak transplant": {
+      "accuracy_whole": 0.3496925,
+      "floor_corrected_mean": 0.5013454893473477,
+      "floor_corrected_sd": 0.022950432996913347,
+      "registered_mean": 0.3222244275556022,
+      "registered_sd": 0.01813190271057092
+    }
+  },
+  "draws": 200,
+  "floor_corrected_gap_between_the_two_cases": 0.0004543566909587238,
+  "floor_corrected_recovers_the_true_share": true,
+  "registered_gap_between_the_two_cases": 0.1100955532647872,
+  "registered_spread": 0.01813190271057092,
+  "trials_per_draw": 2000,
+  "true_outside_share": 0.5,
+  "verdict": "D-1 PASS: the floor-corrected form returns the true share in both cases and the registered form does not"
+}
