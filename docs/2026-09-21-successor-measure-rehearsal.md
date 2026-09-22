@@ -191,6 +191,23 @@ returns no reading rather than a flattering one.
 
 ---
 
+## 2a. The proposal's ten rehearsal items, and where each one stands
+
+| item | what it had to show | state |
+|---|---|---|
+| **R-1** the grammar works and both conditions are learnable at tiny scale | both matched conditions above the one-in-four level; the four matched properties hold in the generated data | **FAIL on one half.** All four matched properties pass their checks. The own-directed condition clears its bar on every arm and seed. The named-other-directed condition clears it on one seed of three on the entangled arm and one of three on the free arm, and doubling the training budget moves it about a point. Section 8 |
+| **R-2** the separable arm is constructible and its pointer is transplantable on its own | blind nomination finds it without being told where it is; the ownership-only transplant reproduces the counterfactual | **PASS on the arm, FAIL on the procedure as written.** The arm is constructible and its pointer is patchable on its own: the reading is exactly 0.0000 on all three seeds. The blind nomination finds it only under one of three readings of the read's label, and returns near zero under the other two. Section 3 |
+| **R-3** the entangled arm is constructible and its degree is genuinely known by construction | no subspace reproduces the counterfactual while the whole-state transplant at the same sites does | **PASS.** Whole-state 0.540 to 0.575 against a best blind-nominated subspace of 0.066 to 0.069, on all three seeds. The two-arm fallback does not fire |
+| **R-4** all four outcomes of the measure are reachable | near zero, high, negative, no verdict | **PASS.** 0.0000; 0.873 to 0.885; −0.1706 and −0.2755; and no verdict at the deliberately failing site set. The negative outcome needed its cause found before it could be produced at all — section 2, P-5 |
+| **R-5** an ordinary competing solver is built and measured | a solver that cannot use ownership and a solver that uses only the name token, both scored on both conditions | **PASS.** 0.2237 and 0.2253; 0.2380 and 1.0000 |
+| **R-6** the arithmetic is finite | the floor rule and the no-verdict rule exercised on cases chosen to break them | **PASS.** Sixteen made-up cases, 10,201 share pairs swept, no non-finite value, a floor of zero refused |
+| **R-7** throughput is measured, per arm | seconds per step and projected wall-clock and money for each architecture at the registered size | **PARTIAL, and it is the one place the rehearsal reaches a question only a rented machine can answer.** The ratios between the three architectures are measured at 0.981, 1.049 and 1.000. The absolute seconds per step on rented hardware cannot be obtained on a laptop. Section 10 |
+| **R-8** the transplanting code passes its known-answer tests | the null transplant changes nothing; a transplant moves the action to the donor's value; the ownership-only transplant is the whole-state one restricted to a subspace | **PASS.** The null transplant leaves every logit bit-identical on every arm and seed. The restriction property is proved as a tensor identity at full rank, with a largest logit difference of exactly zero. The transplant moves the separable arm's action from 0.0000 to 1.0000 |
+| **R-9** the paired-uncertainty method is chosen and demonstrated | two candidates computed on the same data, and the seed count following from the method rather than from habit | **DEMONSTRATED; the choice is not made here.** Across-seed spread 0.0189 and 0.0227; the within-seed bootstrap over matched pairs 0.0198 and 0.0203. They agree closely, which is the useful finding. The arithmetic for a half-width of 0.05 implies one seed at toy scale, which should not be carried across without a discount |
+| **R-10** the separation bar is set | the observed separation between the two constructed arms and its spread, with the reasoning written out | **MEASURED, DELIBERATELY NOT SET.** 0.873 to 0.885 against exactly 0.0000, across-seed spread 0.019 and 0.000. Fixing the bar is John's; the measurement shows the choice is not a close one |
+
+---
+
 ## 3. The finding that matters most: the nomination step is underspecified
 
 Section 7.2 of the proposal says: *fit a straight-line read for "which agent is
