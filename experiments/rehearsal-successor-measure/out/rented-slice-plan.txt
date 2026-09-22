@@ -1,0 +1,86 @@
+THE RENTED SLICE — STAGED, NOT RUN
+==================================
+Written by stage_rented_slice.sh. Nothing in this plan has been executed.
+It needs John's spoken go naming this run. That go has not been given.
+
+WHAT IT IS
+  One rented machine, one short session, answering two questions:
+    1. seconds per step for the three successor architectures at the
+       registered shape, on the rented graphics card (rehearsal item R-7);
+    2. whether the shutdown handshake that landed as pull request 15 works
+       against the real vendor, end to end.
+
+THE COMMANDS, IN ORDER
+
+  Step 0 — prove the plan with no machine and no money:
+    /Users/john/Code/minimum-viable-mind/.claude/worktrees/agent-a827aade30edf9e28/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh --help >/dev/null
+    DRYRUN=1 SCALE=10M MAXTOK=2000000 OUT=slice_handshake \
+      GRACE_S=600 \
+      /Users/john/Code/minimum-viable-mind/.claude/worktrees/agent-a827aade30edf9e28/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh
+
+  Step 1 — the toy run, through the DERIVED launcher (the registered
+  launcher launch_a3.sh is not used and not edited):
+    SCALE=10M MAXTOK=2000000 OUT=slice_handshake \
+      GRACE_S=600 \
+      /Users/john/Code/minimum-viable-mind/.claude/worktrees/agent-a827aade30edf9e28/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh
+
+  Step 2 — while that run is training, time the three architectures on the
+  same machine and write the result where the laptop's final copy will
+  bring it home:
+    tar czf - -C /Users/john/Code/minimum-viable-mind/.claude/worktrees/agent-a827aade30edf9e28/experiments/rehearsal-successor-measure src | \
+      $SSH "mkdir -p /root/rehearsal && tar xzf - -C /root/rehearsal"
+    $SSH "cd /root/rehearsal/src && python bench_arms.py --device cuda \
+             --steps 50 --batch 32 \
+             --out /workspace/mvm-out/bench_arms.json"
+  ($SSH is the handle the launcher prints as "ssh up:".)
+
+  Step 3 — watch for the three signals, in this order, and nothing else.
+
+WHAT PASSING LOOKS LIKE, WRITTEN DOWN BEFORE IT RUNS
+
+  Throughput:
+    PASS  three seconds-per-step figures, one per architecture, with the
+          spread over the timed steps, written to bench_arms.json and
+          fetched home by the laptop's final copy.
+    FAIL  any architecture will not run at the registered shape on the
+          rented hardware — for instance it runs out of memory. That is a
+          finding about the design, not about the machine.
+    NO VERDICT  the machine is unavailable, or it bills at the anomalous
+          rate of the 2026-08-08 row. Stop condition S9: the wave halts and
+          the billed row goes to John beside the estimate.
+
+  The shutdown handshake — the fix author's own signals:
+    PASS  "receipt written on the machine" in the laptop's log, then
+          "receipt found" in the machine's log, then a deletion within
+          seconds of it, in that order; and the copied model file matches
+          the one on the machine by checksum.
+    FAIL (bounded-wait path)  the machine's log says "grace ran out". The
+          receipt path did not work and only the bounded wait ended the
+          billing. The run is unsafe to leave unattended until that is
+          understood, and the registration cannot lean on the handshake.
+    FAIL (credential path)  the machine cannot delete itself even after the
+          bounded wait. That is the 2026-09-16 measurement repeating, and it
+          means the laptop is still the only reap.
+    NO VERDICT  the slice does not run. Then the handshake is exercised
+          against local stand-ins only, and the registration says so in its
+          own text.
+
+WHAT IT COSTS
+  A toy run at 2000000 tokens finishes in a few minutes; timing 50
+  steps on three architectures takes a few more; the bounded wait is set to
+  600 seconds and should not be reached at all on the passing
+  path. Well under an hour of rented time at $0.99 an hour.
+    estimate   about $0.75 to $1.00
+    hard cap   $2.00
+  The precedent for a short deliberately-capped test is the self-delete test
+  of 2026-09-16, authorised at a $0.50 cap and billed at $0.29. This sits
+  inside the first release of money John authorised on 2026-09-21, whose
+  rehearsal line is up to $10.
+
+WHAT IS OWED BEFORE IT RUNS
+  - John's spoken go naming this run, per commitment C2(b).
+  - A decision on the dedicated reaper key: without it the machine's own
+    watcher is not armed and only the laptop-only path is tested, which is
+    the smaller half of what the slice is for.
+  - A ledger row written BEFORE the spend, quoting the go, per the ledger's
+    own rule 2.
