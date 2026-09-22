@@ -116,3 +116,11 @@ John's, in those repos. The book text lock is 2026-09-30.
 - Ledger: RT-118 (A1) and RT-119 (A2) entered; the rest of the tier-2
   items carried with their draft dispositions
 - STATUS.md: current-state entry added
+
+## Amendment 2026-09-20 (later the same day)
+
+Item 5 is amended by `docs/rulings/2026-09-20-december-result-roadmap.md`:
+the successor experiment is registered in 2026, through Gate A with both
+tiers, not after the hibernation condition. Registration commit target
+2026-10-11. Its three-arm form and result definition are in
+`docs/december-result-roadmap-2026-09-20.md`.
