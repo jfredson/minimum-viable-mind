@@ -53,6 +53,35 @@ rule (`~/Documents/Code/CLAUDE.md`, ruled 2026-08-30). Short labels are
 kept where they make a claim checkable and every one carries a phrase
 saying what it is.*
 
+> **ANNOTATION, 2026-09-21. Nothing in this pass is edited. This note only says
+> where the two files named in the preamble now are: they were withdrawn, and
+> neither was ever on the main line.**
+>
+> The preamble names an amendment draft (`amendment-a4.md`, described above as
+> the text §5 "can be lifted into") and a scoring programme
+> (`src/separation_a4.py`), and correctly records both as uncommitted in the
+> shared checkout at the time this pass was written. They stayed uncommitted on
+> the main line. They exist in exactly one commit anywhere in this repository:
+> the commit titled "WITHDRAWN: Amendment A4 draft and its scoring script,
+> parked, never registered" (`a6576d3`, 2026-09-19, 13:05 Pacific), the only
+> commit on the parking branch `withdrawn/amendment-a4-2026-09-19`, which
+> branches off the main line two minutes earlier, at the merge commit the
+> ruling on the proposal cites (`770c142`). Their full paths in that commit are
+> `experiments/06-mvm-0a-constructed-self-index/amendment-a4.md` and
+> `experiments/06-mvm-0a-constructed-self-index/src/separation_a4.py`.
+>
+> They were parked rather than kept because this pass's findings killed the
+> amendment. John ruled against Amendment A4 on 2026-09-19, on the strength of
+> five of the findings below — F1, F2, F6, F14 and F15 — and ruled that no
+> second version was to be written. The third file the preamble names, the
+> earlier pass `a4-red-team-pass-1.md`, is not withdrawn: it was committed to
+> the main line the same day, by the commit titled "Ruling of 2026-09-19
+> recorded, and red-team pass 1 on Amendment A4" (`416b289`), and is present at
+> `experiments/06-mvm-0a-constructed-self-index/a4-red-team-pass-1.md`.
+>
+> Added 2026-09-21 by a later session, not by the reviewer. It supplies a
+> pointer and changes no finding; every word of the pass stands as filed.
+
 ---
 
 ## Glossary, once

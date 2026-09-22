@@ -776,6 +776,43 @@ score the two forms as separate cells, and use the measured guesser floor
 rather than the count of answer options — the same correction RT-21 asks for
 on the verdict batteries.
 
+> **ANNOTATION, 2026-09-21. The figure quoted above was right when this pass
+> was filed. The battery record was rebuilt nine and a half minutes later and
+> now reads 0.0909.
+> Nothing in the finding is edited, and its substance is untouched.**
+>
+> The record of frozen batteries this finding cites
+> (`experiments/06-mvm-0a-constructed-self-index/batteries-a3/batteries_meta.json`)
+> today gives the cross-turn state control a chance floor of 0.0909, not the
+> 0.0769 quoted above. The pass did not misread it. As first committed — by the
+> commit titled "Gate 1 complete: the grammar passes both cue gates at $0; K1
+> does not fire" (`7995382`, 2026-09-15, 09:58 Pacific) — the file recorded
+> 0.07692307692307693 for that battery, which is one thirteenth, exactly as the
+> finding says it is. The battery was rebuilt the same afternoon by the commit
+> titled "Shortcut sweep finds a second fatal leak; three drafts map the real
+> trade-off; revision proposal drafted" (`e76d0d4`, 2026-09-15, 16:00 Pacific),
+> which cut the turns per episode from twelve to ten and moved the floor to
+> 0.09090909090909091. The file was regenerated under the reviewer.
+>
+> The finding still stands against the record as it is today. What it objects to
+> is that a single floor is recorded for a battery that mixes two question
+> forms, and is taken from the first frozen item only. The record as it stands
+> still carries one floor per battery, so that objection survives the rebuild
+> untouched — only the digit moved. A reader who opens the cited file, fails to
+> find 0.0769 and stops there would drop a live finding over a stale digit.
+>
+> Added 2026-09-21 by a later session, not by the reviewer. It follows this
+> repository's practice of annotating a filed record rather than editing it, so
+> the reviewer's own wording survives — the form used by the two stacked ruling
+> annotations at the top of the control-clause proposal of 2026-09-19
+> (`docs/control-clause-proposal-2026-09-19.md`), the second of which says of
+> the first, "Nothing in this memo is rewritten" and "It is left unedited". The
+> nearest ruling on a wrong figure in a filed review, item 20 of the ruling of
+> 2026-09-21 on review verification and staged spending
+> (`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`),
+> likewise leaves the review's sentence standing and carries the correction as a
+> separate task.
+
 ---
 
 ## RT-29 — the amendment's control battery is not the control battery that was built
