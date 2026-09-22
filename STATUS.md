@@ -76,6 +76,37 @@ re-run and without waiting for patching.
 2. Successor proposal v1 and the protocol amendment text, per the
    December-result roadmap (unchanged).
 
+### Working mode, ruled 2026-09-21: task time, not calendar time
+
+John ruled that the program stops measuring work in calendar time and measures
+it in task time. In his words: "Let's stop measuring things in calendar time and
+measure them in task time... We are not working on a delayed calendar. We are
+working on a finish every task as quickly as possible mode." A step no longer
+has a week assigned to it; it has a list of things that must be finished first,
+and it starts as soon as they are.
+
+What that changed in the documents: section 4 of the December-result roadmap
+(`docs/december-result-roadmap-2026-09-20.md`) is now an ordered chain of
+fourteen steps, each naming what must finish before it, in place of the
+week-by-week table; the near-term table in `docs/program-roadmap-2026-09-20.md`
+names what each step waits on instead of a date; the measurement-rehearsal
+section of `docs/outside-review-protocol.md` no longer names a week for the
+successor's rehearsal; and this morning's ruling
+(`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`) carries an
+annotation saying which steps its two week references now point at, with the
+ruling itself left as written. No work item, owner, cost or registered outcome
+changed — only how timing is expressed.
+
+What did not change, because each is a commitment or a fact about the world
+rather than a pacing choice: the two kill dates (registration committed by
+2026-10-18, registered runs launched by 2026-11-01; missing either drops the
+roadmap to outcome R4 and is recorded as a schedule failure), the book text lock
+of 2026-09-30, the wrap-up start of 2026-12-21, and the hibernation condition
+complete by 2027-01-04, when the SERE pipeline starts. The one slack week that
+used to absorb a slipped gate goes with the calendar; what absorbs a slip now is
+the room the two kill dates leave, which is why they are the thing the plan is
+held to. Older entries below keep the weeks and dates they were written with.
+
 ## WHERE THINGS STAND 2026-09-20 (evening) — the December-result roadmap is adopted: the Stage 2 degree metric is the successor, registered in 2026, with a result by 2026-12-21 or a named schedule failure
 
 John ruled "Agreed on all" on the seven items of

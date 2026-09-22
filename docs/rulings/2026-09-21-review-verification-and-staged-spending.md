@@ -130,6 +130,33 @@ says **first release** and **second release** throughout.*
   without it the second release would rest on the same inference this ruling
   declined to rely on.
 
+## Annotated 2026-09-21 (later the same day): task time, not calendar time
+
+*The items above stand exactly as ruled. This annotation records a later ruling
+of the same day that changes how two of them state their timing, and nothing
+about what they require.*
+
+John ruled that work is measured in task time rather than calendar time — in his
+words, "Let's stop measuring things in calendar time and measure them in task
+time... We are not working on a delayed calendar. We are working on a finish
+every task as quickly as possible mode." Two items above name a week of the
+calendar that the December-result roadmap used to run on; that roadmap's
+section 4 is now an ordered chain of what must finish before what, so those
+names now read as follows. No dependency, amount, owner or condition changes.
+
+- **Item 11**, "the second release is requested only after the week-40 rehearsal
+  has measured seconds-per-step for all three arms": the rehearsal is step 2 of
+  the chain in section 4 of `docs/december-result-roadmap-2026-09-20.md`. The
+  condition is unchanged — the second release is requested only after that
+  rehearsal has measured seconds-per-step for all three arms, whenever it runs.
+- **Item 13**, "'halt, not trim' replaces the seed fallback of week 43": the
+  seed fallback belonged to the registered-training launch, which is step 5 of
+  that chain. The replacement is unchanged.
+
+The dates elsewhere in this file are untouched, because none of them is a pacing
+choice: the amounts and headroom of item 16, and the dated precedents cited in
+items 14, 15 and the open questions, are all records of what happened.
+
 ## Recorded elsewhere
 
 - TimeAssembler worklog, Minimum Viable Mind: a decision entry of 2026-09-21
