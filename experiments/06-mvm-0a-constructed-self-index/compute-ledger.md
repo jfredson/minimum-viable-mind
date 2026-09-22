@@ -131,8 +131,31 @@ never started, and is halted with John.**
   and launches the registered default.** Any typo, any stray flag, any
   half-remembered `--dry-run` reaches for the same ten-hour run. The same
   property sits in `launch_a3.sh`, which is registered text and cannot be
-  changed here, and in `launch_ctl_pilot.sh`. Nothing has been changed in
-  response — that is John's call.
+  changed here, and in `launch_ctl_pilot.sh`. Nothing was changed in response by
+  the session that found it — that was John's call.
+
+**RULED 2026-09-22, and this row is closed.** John ruled on the finding the same
+day: the `--help` line is withdrawn from step 0 in favour of the dry run; the
+three **unregistered** launchers get a guard that refuses any argument and names
+`DRYRUN=1` as the way to preview; **`launch_a3.sh` is registered text and goes to
+Gate A as an amendment rather than being edited**; and until that amendment
+clears, no session invokes a registered launcher with any argument and the
+pre-flight asserts it. The ruling is
+`docs/rulings/2026-09-22-launcher-argument-guard.md`, the method is
+`argument-guard-method.md` (committed before the code, as he asked), the test is
+`src/check_launcher_argument_guard.sh`, and the failure is filed as failure 5 of
+`docs/known-failure-modes.md` under red-team number **`RT-198`**. His principle,
+quoted: "The fix is a guard in the code, not a warning in a document. A
+mitigation that depends on the operator noticing is not a mitigation."
+
+**The go recorded at the top of this row has LAPSED and no fresh one has been
+issued.** John: "My go does not carry over, and I am not issuing a fresh one yet.
+It named the staging document by date, and that document is about to change, so
+the authorization would stop describing what runs. Nothing was spent, so there is
+nothing to preserve." What is owed before a fresh go is the amended plan, checked
+by a session other than the one that amended it, per the pairing rule. **So this
+row records about two cents of unintended spend and no authorised run**, and the
+rehearsal line of the first release still stands at about $9.98 of its $10.
 
 **ANNOTATION 2026-09-20, written at launch time and BEFORE either pod was
 created — the machine in both follow-up rows changed between staging and
