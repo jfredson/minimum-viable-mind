@@ -1,5 +1,15 @@
 # Review packet — the Amendment A3 closure text (Gate A, tier 2: outside models)
 
+> **Superseded for running the sessions, 2026-09-21 (Pacific). Nothing below is
+> edited.** This packet's twenty-one paste blocks include single blocks of 64,000
+> and 57,000 characters, which the ChatGPT app turns into attachments it may
+> search rather than read. The same material, with nothing added or dropped, is
+> now in `reviews/packets/`: one document for Gemini, and twenty files for
+> ChatGPT, none over 29,000 characters, split only at record boundaries. Start
+> from `reviews/packets/2026-09-21-a3-closure-tier2-INDEX-how-to-run-these-sessions.md`.
+> This file stays as the record of which records the packet selected and why,
+> and its appendices are the source of the three excerpts the new packets carry.
+
 *Prepared 2026-09-21 (Pacific) under `docs/outside-review-protocol.md`.
 Tier 2 is run by John through the ChatGPT and Gemini apps (the same pair
 as the Belt Equation's step 27 protocol; a third model only if the two
