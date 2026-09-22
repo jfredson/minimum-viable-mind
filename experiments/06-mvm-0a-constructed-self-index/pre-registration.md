@@ -216,6 +216,45 @@ belonged to a contrast MVM-0a cannot run (§Scope).*
   it must carry a self-index of some kind. *[Own-turn sourcing amended:
   §Amendment A1.1–A1.2 — uniform enactment + acting channel replace
   on-policy fill.]*
+
+> **ANNOTATION, 2026-09-21 — NOT PART OF THE REGISTRATION. Added by a later
+> session. The registered bullet above is unchanged, word for word, and nothing
+> below alters, qualifies or extends any registered claim. This note does one
+> thing: it names the committed record that holds the detection figure the
+> bullet quotes, which the bullet does not name.**
+>
+> The registered sentence makes two claims and gives one pointer, and the
+> pointer belongs to the second of them. The pointer,
+> `experiments/06-mvm-0a-constructed-self-index/batteries/batteries_meta.json`,
+> is correct for the clause it sits in: that file holds the four chance floors
+> the sentence lists, to the rounding the sentence uses — 0.125 for the
+> self-report and self-identification batteries, 0.041666… for the cross-turn
+> state battery, and 0.100 for the syntax floor check. It holds no detection
+> figure of any kind.
+>
+> The detection figure — the area under the cue detector's curve, 0.5008, with
+> its 95% range — comes from a different committed record, one directory up:
+> `experiments/06-mvm-0a-constructed-self-index/cue_detector_gate.json`. Its
+> first run, "(i) curriculum text", 4,000 episodes, seed 20260804, records a
+> clean area under the curve of **0.5008** with a 95% range of **[0.4773,
+> 0.5242]**, inside the pre-set equivalence band of 0.45 to 0.55, with its
+> planted-leak control firing at 0.8627 and the gate marked **PASS**. The
+> registered text's "[0.477, 0.524]" is that range rounded to three places.
+>
+> **The registered value is unchanged and is correct.** Nothing here corrects
+> anything. What was missing was only the file name, which the closure rule in
+> `docs/outside-review-protocol.md` asks for: every sentence in registered text
+> that says verified, measured, calibrated or attacked cites the committed
+> record by file name, and "certified" is a word of that family.
+>
+> Recorded under John's ruling of 2026-09-21 that registered text carrying a
+> measured value whose record is committed but not named is given a dated note
+> supplying the pointer, and does not need a registered amendment, because the
+> claim does not change. That ruling was given in the session that ordered this
+> note and is not yet carried in a filed ruling under `docs/rulings/`. This note
+> is an addition to the file, not to the registration; the registration remains
+> exactly the text above it.
+
 - **Held-out evaluation episodes** generated from the same grammar but
   disjoint in content, never touched during training or model selection.
 
