@@ -135,7 +135,8 @@ def stage_attenuated(device):
             recip, donor, d_states, d_tgt = R._states_and_targets(m, fresh_pairs, device)
             mask = X.position_mask(recip, spec["positions"])
             reads = R.load_reads(arm, seed)      # frozen on development data
-            basis = {l: R.basis_for(reads[l]["coef"], spec["rank"], device)
+            basis = {l: R.basis_for(reads[(spec["label"], l)]["coef"],
+                                    spec["rank"], device)
                      for l in sites.layers}
             with torch.no_grad():
                 untouched = R._donor_share(m(recip), d_tgt)

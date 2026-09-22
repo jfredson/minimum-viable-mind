@@ -322,7 +322,10 @@ def stage_transplant(device):
     fresh_pairs, _ = T.make_data(800, seed=777, pool="fresh", device=device)
     coll_pairs, _ = T.make_data(800, seed=778, pool="fresh", device=device, collide=True)
     other_pairs, _ = T.make_data(800, seed=779, pool="fresh", device=device)
-    out = {"arms": {}, "floors_swept": FLOOR_SWEEP}
+    unseen_pairs, unseen_b = T.make_data(400, seed=780, pool="unseen-vocabulary",
+                                         device=device)
+    _, fresh_b = T.make_data(800, seed=777, pool="fresh", device=device)
+    out = {"arms": {}, "floors_swept": FLOOR_SWEEP, "held_out_accuracy": {}}
 
     for arm in A.ARMS:
         for seed in SEEDS:
@@ -421,8 +424,18 @@ def stage_transplant(device):
                 accuracy_whole=acc_whole, accuracy_ownership_only=acc_own,
                 readings=readings, controls=controls,
                 n_trials=int(recip["tokens"].shape[0]))
+            # what the arm itself can do on these episodes, which is the
+            # ceiling the whole-state transplant can never beat, and what it
+            # can do on marker words it has never seen
+            out["held_out_accuracy"][key] = dict(
+                fresh=T.accuracy(m, fresh_b),
+                unseen_vocabulary=T.accuracy(m, unseen_b))
             log(f"    {key:8s} untouched {acc_untouched:.4f}  whole {acc_whole:.4f}  "
-                f"ownership-only {acc_own:.4f}")
+                f"ownership-only {acc_own:.4f}   "
+                f"(the arm itself: own-directed "
+                f"{out['held_out_accuracy'][key]['fresh']['own']:.4f} on fresh "
+                f"episodes, {out['held_out_accuracy'][key]['unseen_vocabulary']['own']:.4f} "
+                f"on marker words it has never seen)")
 
     # arm T's oracle nomination, reported separately as a reference for what
     # the measure reads under perfect nomination (proposal 7.2.5, decision 1)
