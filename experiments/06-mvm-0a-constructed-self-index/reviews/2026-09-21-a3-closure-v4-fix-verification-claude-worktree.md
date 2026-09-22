@@ -1,0 +1,770 @@
+# Verification of the fixes to the Amendment A3 closure text, version 4
+
+*Filed 2026-09-21 (Pacific) by a Claude Code session in its own worktree
+(`worktree-agent-ac91e682df92a2357`). This is the reviewer-owned verification
+required by the amended outside-review protocol (`docs/outside-review-protocol.md`,
+the closure rule, as amended by the commit `93c9cb2` that carries the three changes
+John ruled on 2026-09-20). This session did not write version 3, version 4, the
+findings, or the fixes it is checking.*
+
+*What I read.* The fixes on the branch `worktree-agent-a9915df1f2edb2233` — three
+commits (`4b4ec99`, matching the site's spend figures to the ledger; `bf79ed2`,
+fixing citations and unrecorded claims; `41d44ea`, citing the correction note for
+the reach figure) on top of `8ebf9f3`. The amended protocol I verify under. The
+independent closure check I verify against, on the branch
+`worktree-agent-aaccf55dd43fe5aab`
+(`reviews/2026-09-21-a3-closure-v4-closure-check-claude-worktree.md`).
+
+*What I did not do.* I edited no closure text, no ledger, no registered file and no
+project data. I ran no compute and spent no money. I pushed nothing, merged nothing
+and opened no pull request. Nothing below is committed outside my own worktree branch.
+
+*Lookup: none. No web search. Every check is run against files committed in this
+repository.*
+
+*The two words, kept apart.* **Checked** means I ran a command against the committed
+record and the output is printed below. **Accepted** means no decisive command exists
+and the judgement rests on reading committed texts against each other, which is said
+where it happens. I treated every claim in the fixes and in the findings as a claim
+to test, including the findings' own measurements.
+
+*One correction to the brief I was given.* It said the amended protocol was ruled but
+not yet merged. It is now on the main line: `git merge-base --is-ancestor 93c9cb2 main`
+returns yes, through the merge commit `c63d960` (pull request 13). The rule I verify
+under is therefore live on main, not only on a branch.
+
+---
+
+## Verdict in one table
+
+| what was fixed | verdict |
+|---|---|
+| 1. The successor's schedule cited the wrong item of the December-result ruling | **CLOSED** (checked) |
+| 2. "The validity gates were clean" — a claim the record contradicts | **CLOSED in substance** (checked) — but the fix's own stated measurement does not reproduce, and one added clause reaches past its source. See below. |
+| 3. The figure of 1.94 episodes in four thousand cited a file that lacks it | **CLOSED** (checked), one residual |
+| 4. Two "never run" claims carried no record | **CLOSED** (checked) |
+| 5. The deferred marker-word read was carried without a reason | **CLOSED** (checked) |
+| 6. "Registration revision 8" named no file | **CLOSED** (checked) |
+| 7. The compute ledger credited the wrong finding | **CLOSED** (checked); the edit was appropriate |
+| 8. The reach figure of one legible episode in eleven cited nothing | **CLOSED** (checked) |
+| 9. The project data's spend figures disagreed with the ledger | **CLOSED** (checked), one small residual |
+| 10. Sweep: did the fixes break anything or leave anything newly uncited | **Nothing broken** (checked). One pre-existing gap is still open. |
+
+**Nine of the ten items close on measurement.** The tenth, the validity-gate
+sentence, closes in substance — the sentence that now stands is true and is a large
+improvement on the one it replaces — but two things about it should go on the record
+before a registration commit, and they are in item 2.
+
+---
+
+## 1. The successor's schedule now cites the item that carries the facts
+
+**What the fix claims.** The sentence cited item 7 of
+`docs/rulings/2026-09-20-december-result-roadmap.md` for facts that live in item 1.
+It now cites item 1 for all four facts, and notes that item 7 restates the
+2026-10-18 date and adds the 2026-11-01 one.
+
+**Check run.**
+
+    sed -n '/^1\. \*\*The successor registers now/,/^2\. /p' \
+      docs/rulings/2026-09-20-december-result-roadmap.md
+    sed -n '/^7\. \*\*/,/^8\. /p' \
+      docs/rulings/2026-09-20-december-result-roadmap.md
+
+**Output.**
+
+    1. **The successor registers now.** Item 5 of
+       `docs/rulings/2026-09-20-center-as-degree.md` ("registered after the
+       hibernation condition") is amended: the matched-role causal-interchange
+       experiment is registered in 2026, through Gate A with both tiers.
+       Registration commit target 2026-10-11; kill date 2026-10-18.
+
+    7. **The two kill dates are accepted**: registration committed by 2026-10-18;
+       registered runs launched by 2026-11-01. Missing either drops the roadmap to
+       R4 (a schedule failure, named as such in STATUS.md).
+
+**Does the output match the claim?** Yes, on every part. Item 1 carries all four
+facts the sentence states — that the successor registers in 2026, that it goes
+through Gate A with both tiers, the 2026-10-11 registration commit target, and the
+2026-10-18 kill date — and item 1 is also the item that amends item 5 of the
+centers-as-degree ruling, which is the other thing the sentence attributes to it.
+Item 7 restates 2026-10-18 and adds 2026-11-01 for the launch of registered runs,
+with either date missed recorded as a schedule failure, exactly as the new
+parenthesis says.
+
+A checker who now opens the named file and finds the named item lands on a paragraph
+containing what the sentence promises. That is the whole point of the finding this
+closes.
+
+**Verdict: CLOSED, checked.**
+
+---
+
+## 2. The validity-gate sentence
+
+This is the one that needed the most care, and it is the one with something to report.
+
+**What the old sentence said.** "This is the loss condition's sense of the phrase,
+not the validity-gate bin of the same name: the validity gates were clean and no
+instrument breached them."
+
+**What stands now.**
+
+> This is the loss condition's sense of the phrase, not the validity-gate bin of the
+> same name — the bin for an ablation that damages the model so broadly that no
+> reading of it can be trusted. That bin did not fire, and it was also never tested:
+> those gates have no code written for this design and were never applied to any
+> lesion on any seed (the independent review of 2026-09-19 searched the source and
+> the three endpoint records and found neither — `red-team-a4.md`, its seventeenth
+> finding, labelled there F17), and the subspace ablation they were written to guard
+> never ran, because no subspace was ever localized.
+
+### 2a. The measurement the fix says it ran does not reproduce
+
+The fix session reports reproducing the record by checking that
+`a3-gates/endpoint_a3_30m_seed1.json` has 110 keys and that none of them matches
+nll, degen, rep, ood, gate or valid. I ran that check.
+
+**Check run.**
+
+    python3 -c "
+    import json,re
+    d=json.load(open('endpoint_a3_30m_seed1.json'))
+    ks=list(d.keys())
+    print('KEY COUNT:', len(ks))
+    pat=re.compile(r'nll|degen|rep|ood|gate|valid', re.I)
+    print('MATCHING KEYS:', [k for k in ks if pat.search(k)])
+    print('KEYS:', ks)
+    "
+
+**Output.**
+
+    KEY COUNT: 15
+    MATCHING KEYS: []
+    KEYS: ['read', 'checkpoint', 'checkpoint_md5', 'checkpoint_step', 'tokens',
+           'lock', 'theta_primary', 'theta_all', 'eval_n', 'metric',
+           'ceilings_used', 'default_seed', 'across_seeds', 'across_seeds_note',
+           'per_seed']
+
+The file has 15 keys, not 110. Because "110 keys" might have meant something other
+than top-level keys, I counted it every way I could construct.
+
+**Check run.** A recursive walk counting, for the same file, the top-level keys, every
+key path in the nested structure, the distinct key names, and the leaf values.
+
+**Output.**
+
+    endpoint_a3_30m_seed1.json -> top=15 flatpaths=206 names=29 leaves=165 matches=[]
+    endpoint_a3_30m_seed2.json -> top=15 flatpaths=206 names=29 leaves=165 matches=[]
+    endpoint_a3ctl_30m_seed0.json -> top=15 flatpaths=206 names=29 leaves=165 matches=[]
+    endpoint_validation_pilot.json -> top=15 flatpaths=206 names=29 leaves=165 matches=[]
+    pilot_endpoint.json -> top=7 distinct=17 matches=[]
+
+No reading gives 110. I then swept every record in the gate directory for any of
+those three counts equal to 110 and found none. I also checked the file's history, in
+case it had been larger when the finding was written.
+
+**Check run.**
+
+    git log --oneline --all -- \
+      experiments/06-mvm-0a-constructed-self-index/a3-gates/endpoint_a3_30m_seed1.json
+    git show 5f176a5:...endpoint_a3_30m_seed1.json | (the same recursive count)
+
+**Output.**
+
+    5f176a5 Seeds 1 and 2 endpoint: learnability replicates, the control fails on all three
+    AT ORIGINAL COMMIT: top=15 flatpaths=206 names=29
+
+The file has had exactly one committed version and has never had 110 keys under any
+counting.
+
+**Where the number comes from.** Not from the fix session's invention. It is in the
+finding itself: the red team pass of 2026-09-19 (`red-team-a4.md`, its seventeenth
+finding, labelled there F17) says "The endpoint records for seeds 0 to 2 carry no
+such field among their 110 keys", and that finding is labelled **MEASURED**. So a
+finding labelled measured carries a number that does not reproduce, and a later
+session reported reproducing it.
+
+**Does the output match the claim? Partly.** The load-bearing half — that no key in
+any endpoint record has anything to do with the validity gates — reproduces
+decisively, on all five records, under every counting. The count does not reproduce
+at all.
+
+**What saves this.** The wrong number is **not** in the registered text. I checked:
+
+    grep -n "110" (the fixed closure text)   ->  no output
+
+The closure text says only that the review "searched the source and the three
+endpoint records and found neither", which is true. So the error is confined to the
+fix session's account of its own check, and does not travel into the text that would
+be registered. Under the amended rule, though, the reviewer's job is to say when a
+stated measurement does not come out as stated, and this one does not.
+
+### 2b. The substance of the replacement, checked independently
+
+I did not rely on the finding, since the finding is itself a claim.
+
+**Check run.** Search this design's own source folder for the three gate instruments
+that section 3.3 of `amendment-a3.md` names — the neutral-episode likelihood bound,
+the long-generation degeneracy probe, and the out-of-distribution branch.
+
+    grep -rn -i -E "neutral.episode|degeneracy|out.of.distribution|\bood\b|validity gate" src/
+    grep -rn -i "neutral" src/
+    grep -rn -i "long.generation|long_gen" src/
+
+**Output.** No neutral-episode likelihood bound and no long-generation degeneracy
+probe anywhere in `src/`. The single "neutral" hit is unrelated
+(`curriculum.py` line 133, on forced revisions being agent- and position-neutral).
+No long-generation hit at all. Every "degeneracy" hit is a zero-spread guard or a
+probe precondition inside the control diagnostic, the blind control, the position
+sweeps and the known-answer test — none of them the Δrep-4 probe section 3.3
+carries over.
+
+So the first clause of the replacement — that the gates have no code written for
+this design — is true, and I established it without the finding.
+
+**Check run.** The requirement the gates were carried over from, and the standing
+note in the separation-clause requirements.
+
+    sed -n '/^### 3.3/,/^### 3.4/p' amendment-a3.md
+    sed -n '211,220p' separation-clause-requirements.md
+
+**Output.** Section 3.3 reads "Neutral-episode ΔNLL under a null-calibrated bound
+..., the long-generation degeneracy probe (Δrep-4), and the OOD-inconclusive branch
+for any ablation that breaches them." The separation-clause requirements, at their
+fifth item under H (labelled there H5, and drawn from the same seventeenth finding),
+read: "The neutral-episode likelihood bound and the long-generation degeneracy probe
+have no A3 implementation and have never been applied to the input-channel lesion on
+any seed."
+
+**Does the output match the claim?** For the first two clauses, yes, and the fix's
+phrasing is if anything stronger than its sources in the honest direction: where the
+sources say the gates were never applied to the input-channel lesion, the closure
+text says they were never applied to **any** lesion on **any** seed, which is true
+because the input-channel lesion is the only lesion that ever ran.
+
+### 2c. Where the replacement reaches past its source
+
+The trailing clause — "and the subspace ablation they were written to guard never
+ran, because no subspace was ever localized" — is the one I would not let through as
+written.
+
+The facts in it are true. No subspace ablation ran, and no subspace was localized.
+But the clause supplies a **reason** that the finding it cites does not support and
+that the finding's own argument runs against. The seventeenth finding's complaint is
+precisely that the input-channel lesion **did** run, on three seeds, and that the
+gates were owed on it and were missing: "So the input-channel lesion has never been
+tested against these gates on any seed ... Either the gates are implemented and run
+on the seen seeds before registration, with the result reported, or (f) should say
+what it actually binds." Section 3.3's own wording is "any ablation that breaches
+them", not "the subspace ablation".
+
+There is textual support on the other side: section 3.5 lists "OOD gates clean" among
+the conditions of the L1 subspace-ablation signature, so reading the gates as attached
+to that ablation is not invented. But that support is section 3.5, and the sentence
+cites the seventeenth finding, which says the opposite about the occasion. The effect
+of the clause is to tell the reader there was never an occasion for the gates to fire,
+when the record says there was one and it was missed.
+
+**Is the replacement the most conservative true statement available? No — it is one
+clause short of it.** The most conservative true statement stops after "were never
+applied to any lesion on any seed", with its citation. That version says everything
+that is known and claims nothing about why. The added clause is the only part of the
+rewrite that leans toward excusing the gap rather than recording it, and a closure
+block is the wrong place to lean.
+
+**On whether the rewrite overreaches or understates overall: it does neither in its
+main body, and overreaches slightly in that one trailing clause.** The replacement
+of "the validity gates were clean and no instrument breached them" — a positive
+validity result the record cannot support — with "that bin did not fire, and it was
+also never tested" is a real and large improvement, and the "never tested" half is
+the half that matters. My recommendation is to cut the trailing clause, or to
+re-attribute it to section 3.5 of the amendment and drop the word "because".
+
+**Verdict: CLOSED in substance, checked.** The defect the finding named — a measured
+claim with no record, contradicted by the record — is gone. Two things go on the
+record: the fix's stated key count does not reproduce (and the error originates in a
+finding labelled measured), and the trailing clause should be trimmed before a
+registration commit.
+
+---
+
+## 3. The figure of 1.94 episodes in four thousand now cites where it lives
+
+**What the fix claims.** The figure now points at the red team ledger's finding
+RT-128 (the one clearing cell clears the bar by a margin inside its own estimation
+noise), instead of at a findings file that does not contain it.
+
+**Check run.**
+
+    grep -n "1\.94" standardised-refit-findings.md
+    grep -n "^| RT-128 " red_team_ledger.md
+
+**Output.** The first returns nothing — the findings file does not contain the
+figure. The second returns the row, whose opening clause reads "The one clearing cell
+clears the bar by 0.000484 in accuracy, which is 1.94 episodes in 4,000", and whose
+closing clause reads "The number and its fragility must travel together or neither
+travels."
+
+**Does the output match the claim?** Yes. The number is in the ledger row the
+sentence now names, and the sentence is honest that the margin was "computed in the
+review of that run and not stated in its findings file", which is exactly what I
+measured. A checker following the citation now arrives somewhere the number is.
+
+**One residual, not blocking.** The finding's own ruling is that the number and its
+fragility travel together. The new sentence names that ruling but does not carry the
+fragility as a number — that moving the null spread by one standard error puts the
+cell on either side of the bar. It carries it in words instead, through John's ruled
+phrase "a sub-bar pattern measured twice, not a clearance", which does communicate
+that the cell is not a clearance. I record this as satisfied in substance and thin in
+form, not as open.
+
+**Verdict: CLOSED, checked.**
+
+---
+
+## 4. The two "never run" claims now carry their records
+
+**What the fix claims.** The mid-episode re-indexing probe's never-run status now
+cites the red team ledger's finding RT-114, and the seventy-processor-hour figure
+now cites its finding RT-89.
+
+**Check run.**
+
+    grep -n "^| RT-114 " red_team_ledger.md
+    grep -n "^| RT-89 " red_team_ledger.md
+
+**Output** (the load-bearing clauses).
+
+    RT-114 | "Partial discriminators" reads as "some discriminators fired". None has:
+    the matched other-agent lesion has never run, the swap probe is patching and has
+    never run, the mid-episode re-indexing probe has never run, the random matched
+    subspaces are a null rather than a discriminator ... The count of registered
+    discriminators bearing on the A3 claim is zero
+
+    RT-89 | ... the marker-word target was priced at about 70 processor-hours against
+    11 and dropped before the run, openly ...
+
+**Does the output match the claim?** Yes, on both, and precisely.
+
+The closure text describes the first as the finding "which lists it among the
+registered discriminators that have never fired". That is what the row does: the
+probe appears in a list of registered discriminators, none of which has fired.
+
+The closure text uses the second twice. In the body it says the price "and the fact
+that the job was dropped before that run rather than after it are recorded in" that
+finding — and the row carries both, in those terms. In the open-items list it says
+the read was "priced at about seventy processor-hours against about eleven for the
+register-index read done in its place, and dropped before that run rather than
+because of anything the run found" — the row's "about 70 processor-hours against 11"
+matches exactly, "dropped before the run, openly" matches, and the row confirms that
+what was run in its place was the register-index read.
+
+Worth crediting: the body sentence attributes only the price and the dropped-before
+fact to that finding, and does **not** attribute the "no money cost" claim to it. The
+finding says nothing about money, so that careful split is correct rather than
+convenient. The no-money claim is separately on the record, in the centers-as-degree
+ruling's list of what it does not decide ("$0 compute, Mac time"), which the same
+paragraph now cites.
+
+**Verdict: CLOSED, checked.**
+
+---
+
+## 5. The carried marker-word read now gives a reason and points where the question is parked
+
+**What the fix claims.** The open item now says why the read was deferred, and cites
+the centers-as-degree ruling's section on what it does not decide.
+
+**Check run.**
+
+    grep -n -i "does not decide" docs/rulings/2026-09-20-center-as-degree.md
+    sed -n '/does not decide/,/^## /p' docs/rulings/2026-09-20-center-as-degree.md
+
+**Output.**
+
+    86:## What this ruling does not decide (still open from the draft rulings)
+
+    - Astra A10: whether the blind-localization arm (ran 2026-09-16, NOT FLAGGED) is
+      discharged ...
+    - Gemini's Q5: whether the ~70-hour marker-word fitted read runs before the paper
+      draft. $0 compute, Mac time.
+    - The three protocol amendments ...
+
+**Does the output match the claim?** Yes. The section exists under that heading, and
+its second item is the question the closure text says it leaves undecided, in the
+same terms: whether the roughly seventy-hour marker-word read runs before the paper
+draft. The closure text's sentence — "whether it runs before the paper draft is one
+of the questions the ruling of 2026-09-20 on centers as a matter of degree expressly
+leaves undecided" — is accurate.
+
+The reason for the deferral is now given too, and it is a real reason drawn from a
+committed record rather than an assertion: the read was priced at about seventy
+processor-hours against about eleven for the read done in its place, and dropped
+before that run rather than because of anything the run found. Both halves check out
+against the ledger row in item 4 above.
+
+This is what the original check asked for, in one sentence, and it answers the
+question that check said a reader in six months would ask.
+
+**Verdict: CLOSED, checked.**
+
+---
+
+## 6. "Registration revision 8" now names its file
+
+**What the fix claims.** The reference now reads "`amendment-a3.md`, the file this
+block lands in, registration revision 8 of 2026-09-15, 'The central claim is
+narrowed'", and section 8 of that file says what the block paraphrases.
+
+**Check run.**
+
+    grep -n "^## " amendment-a3.md          (to locate section 8)
+    sed -n '508,520p' amendment-a3.md
+    sed -n '335,343p' amendment-a3.md       (for the date of the revisions block)
+
+**Output.**
+
+    ## 8. The central claim is narrowed (decision 9)
+
+    **Ratified text:** §2.2, that the only route from the ceiling to full accuracy is
+    to bind the act to the item when acting and carry that binding forward.
+
+    **Registered:** that claim is too strong and was false of two of the three
+    drafts. The acting channel marks positions, and attending back to marked
+    positions is a re-readable pointer rather than a carried binding. Both routes
+    need the channel, so the wire lesion cannot separate them. The mid-episode
+    re-indexing probe, already registered for the tag bin, is the discriminator.
+
+    ... All fourteen were ruled by John on 2026-09-15 after Gate 0, Gate 1, red-team
+    pass 3 and an ownership-blind attack sweep ...
+
+**Does the output match the claim?** Yes, and closely. Section 8 exists in
+`amendment-a3.md` under the title the citation quotes. The closure text's paraphrase
+— "attending back to marked positions is a re-readable pointer rather than a carried
+binding, both routes need the channel, and so the wire lesion cannot separate them" —
+reproduces the section's own two sentences almost word for word. The date is right:
+the revisions block states that all fourteen were ruled on 2026-09-15.
+
+The added phrase "the file this block lands in" also removes the specific confusion
+the original check flagged, which was that a later reader might take the reference
+for a section of the pre-registration.
+
+**Verdict: CLOSED, checked.**
+
+---
+
+## 7. The compute ledger now credits the finding that actually made the point
+
+**What the fix claims.** A ledger row credited its correction to "Gate A finding
+RT-143's companion, the money citation". The money finding is RT-147. The row now
+names RT-147 and says what it previously read.
+
+**Check run.**
+
+    grep -n "^| RT-147 " red_team_ledger.md
+    grep -n "^| RT-143 " red_team_ledger.md
+
+**Output** (the opening clauses).
+
+    RT-147 | "The programme at about $226 of its $400 ceiling (`compute-ledger.md`)"
+    — the figure is arithmetically right and is not in the ledger. The last programme
+    total the ledger states is ~$215.7/$400; the two most recent rows carry only the
+    Amendment A3 figure
+
+    RT-143 | The paragraph headed "What A3 measured" states nine measured numbers —
+    three intact scores, three lesioned scores, the state battery's movement on one
+    seed and its locked threshold — and names no file
+
+**Does the output match the claim?** Yes. RT-147 is the money finding: it is entirely
+about a programme total the ledger did not contain. RT-143 is the nine-measured-scores
+finding and has nothing to do with money. The old attribution was wrong and the new
+one is right.
+
+**Was the edit appropriate at all?** I was asked to judge this, because the ledger is
+the system of record. **Yes, and it was done the right way.** Three reasons, each
+measured.
+
+First, no money moved. I extracted every dollar figure from the ledger before and
+after the edit and compared them.
+
+    grep -o '\$[0-9][0-9.,]*' (old ledger) | sort | uniq -c   >  a
+    grep -o '\$[0-9][0-9.,]*' (new ledger) | sort | uniq -c   >  b
+    diff a b
+
+**Output.** No difference. The file is 169 lines before and after. The edit changed a
+finding number inside a row's explanation and nothing else.
+
+Second, the edit discloses itself in place. The row now ends "The row earlier read
+'RT-143's companion', which is the finding about the nine measured numbers, not the
+money one." A reader of the ledger alone can see what changed and why, which is the
+property that makes a system of record trustworthy after a correction.
+
+Third, this is the ledger's own established practice, not a new liberty taken with it.
+The ledger already carries in-place corrections in exactly this form, for example a
+row beginning "CORRECTION: an earlier version of this row called the fetched
+checkpoint truncated and silently corrupt. That was a misreading ...". Correcting in
+place and stating the prior wording is how this file has handled its own errors
+before.
+
+The alternative — leaving a knowingly wrong attribution in the budget instrument
+because the instrument is sacred — would make the record worse, not more faithful. A
+system of record should not be frozen around a known error; it should be corrected
+visibly. That is what happened.
+
+**Verdict: CLOSED, checked. The edit was appropriate.**
+
+---
+
+## 8. The reach figure now cites the note that produced it
+
+**What the fix claims.** The figure of roughly one legible episode in eleven now
+cites `fitted-position-sweep-findings-CORRECTION-2026-09-20.md`; that note exists,
+contains the recalibration from one in twenty-seven, and carries the ruling that the
+figure must cite it.
+
+**Check run.**
+
+    cat experiments/06-mvm-0a-constructed-self-index/fitted-position-sweep-findings-CORRECTION-2026-09-20.md
+
+**Output** (the whole note is short; these are its load-bearing parts).
+
+    # Correction note — the sensitivity figure in `fitted-position-sweep-findings.md`
+
+    *2026-09-20 (Pacific). ... Ruled by John 2026-09-20 on Gate B review finding
+    RT-74 (ledger numbering; RT-56 in the review file), "agreed on all".*
+
+    The findings state that the run would have detected the register index if it were
+    legible in about one episode in twenty-seven. That figure assumes a perfectly
+    legible episode scores 1.0. This read never does ... Recalibrated against that
+    ceiling, the run's reach is a signal legible in about **one episode in eleven**.
+
+    Anywhere the one-in-twenty-seven figure has been quoted (STATUS.md, the step 4
+    proposal, the paper draft), it reads one in eleven and cites this note.
+
+**Does the output match the claim?** Yes, on all three counts. The note exists. It
+carries the recalibration from one in twenty-seven to one in eleven, with the reason
+(the earlier figure assumed a perfectly legible episode scores 1.0, and this read's
+measured ceiling is 0.539 to 0.567). And it carries the ruling, twice over — in its
+header as John's ruling of 2026-09-20, and in its closing instruction that the figure
+"reads one in eleven and cites this note" wherever it is quoted.
+
+**The added annotation checks out too.** The new parenthesis also says the figure "is
+a rough reach and not measured detection power". That wording is owed to the ledger's
+finding RT-169 (the block's one inference rests on a number it does not give), whose
+row says the figure "is not measured detection power" and "is to be annotated as
+heuristic". The annotation matches its source.
+
+**Sweep.** I checked that the figure is not quoted anywhere else in the closure text
+without the citation:
+
+    grep -n -i "in eleven|twenty-seven" (the fixed closure text)
+
+returns two lines — the body sentence, which carries the citation, and the correction
+paragraph, which is describing the fix. No uncited use remains.
+
+**Verdict: CLOSED, checked.**
+
+---
+
+## 9. The project data now matches the ledger
+
+**What the fix claims.** `data/project.toml` reads about $225.7 of $400 and about
+$44.3 of $100, as of 2026-09-21; the previous note misstated the control pilot as
+$9.97 and omitted a $0.29 operations test.
+
+**What the note now says.** For the Amendment A3 hard stop: "the A3 learnability
+pilot ($13.92), the self-terminate ops test ($0.29), seeds 1 and 2 ($20.10), the
+control-learnability pilot (about $9.90) and the checkpoint recovery ($0.07)."
+
+**Check run.** Every component against the ledger's own running-total cells.
+
+    grep -o "A3 cumulative[^|]\{0,220\}" compute-ledger.md
+    grep -o "ACTUAL[^|]\{0,180\}" compute-ledger.md
+
+**Output.**
+
+    A3 cumulative $13.92 / $100 hard stop
+    A3 cumulative $13.92 + $0.29 ops = **$14.21 / $100 stop**
+    $14.21 + $20.1 → **$34.31 / $100 A3 stop**
+    ACTUAL ~$9.9 → A3 cumulative ~$44.2 / $100 ... **Programme running total:
+      ~$215.7 + $9.9 = ~$225.6 / $400**
+    A3 cumulative ~$44.2 / $100 before this → **~$44.3 / $100** with the $0.07
+      recovery; **programme running total ~$225.6 + $0.07 = ~$225.7 / $400**
+
+**Does the output match the claim?** Yes, on every figure, and the arithmetic closes.
+$13.92 + $0.29 = $14.21, as the ledger states. $14.21 + $20.10 = $34.31, as the
+ledger states. $34.31 + $9.90 = $44.21, which the ledger records as about $44.2.
+$44.21 + $0.07 = $44.28, which the ledger records as about $44.3 and which the
+project data now carries. On the wider envelope, $215.7 + $9.9 = $225.6 and
++ $0.07 = $225.7, again exactly as the ledger's two most recent rows state and as the
+project data now carries.
+
+**The $9.97 was a units error, and the fix is right to call it one.** I found where
+it came from.
+
+    grep -o ".\{200\}9\.97.\{250\}" compute-ledger.md
+
+**Output.**
+
+    ... **Estimate CONFIRMED, not revised: 9.97h training, ~10.3–10.5h pod,
+    $10.17–10.37**, inside the $9–13 band. ...
+
+The only 9.97 in the ledger is **9.97 hours of training time**. The control pilot's
+actual cost is recorded as "ACTUAL ~$9.9". So the previous project-data note had
+carried an hours figure into a dollars field. The correction to about $9.90 is right,
+and it is the difference between the old $44.2 and the corrected $44.3 reading
+cleanly rather than by luck: $34.31 + $9.97 would have given $44.28, the right total
+by the wrong route.
+
+**The omitted operations test is real.** The ledger carries a row where the A3
+cumulative goes from $13.92 to "$13.92 + $0.29 ops = $14.21", and the old note listed
+no such item. The new note lists it.
+
+**One small residual, recorded and not blocking.** The fix moved `as_of` from
+2026-09-20 to 2026-09-21, which asserts the whole spend block is current as of that
+date, but left `account_balance = 79.82` unchanged and unre-verified. The balance is
+not a figure the closure text cites, and the two spend lines that it does cite are
+both correct, so this does not bear on the registration. It is worth a line the next
+time someone touches that file.
+
+**Verdict: CLOSED, checked.**
+
+---
+
+## 10. Sweep — did the fixes break anything, or leave anything newly uncited
+
+### The preamble's claims are now true
+
+**What the fix claims.** The preamble's old sentence said flatly that the difference
+from version 3 was confined to three things. It now reads: "As first written, the
+diff against version 3 was confined to the successor's registration date, the
+blind-arm sentences, and the money paragraph; the correction recorded in the next
+paragraph added to it." The new correction paragraph then enumerates what was added.
+
+**Check run.** Count and read every change the fix made to the closure text.
+
+    git diff 8ebf9f3 worktree-agent-a9915df1f2edb2233 \
+      -- docs/a3-closure-text-draft-2026-09-21-v4.md
+    grep -c "^@@"
+
+**Output.** Eight changed passages, 169 diff lines. They are: the preamble sentence
+and the new correction paragraph; the heading's placeholder plus its new note; the
+validity-gate sentence; the registration-revision-8 citation together with the
+re-indexing probe's citation; the 1.94 citation; the seventy-processor-hour citation;
+the reach-figure citation; the successor's item number; and the open-items entry for
+the marker-word read.
+
+**Does the output match the claim?** Yes. Every one of the eight is named in the
+correction paragraph, and the correction paragraph names nothing that is not in the
+diff. The preamble is complete about what changed and no longer over-claims about
+what did not. The original check's verification of the "as first written" half —
+that the body changes against version 3 were confined as stated — is preserved by the
+new hedge rather than contradicted by it.
+
+### Nothing the earlier check verified has been broken
+
+**Check run.** I re-ran the decisive greps behind the five findings the original
+check closed, against the fixed text, to confirm the fixes did not disturb them.
+
+**Output.**
+
+    must be ABSENT
+    these checkpoints have one                absent (ok)
+    less plausible                            absent (ok)
+    readily recoverable                       absent (ok)
+    validity gates were clean                 present — see note
+
+    must be PRESENT
+    rank matched by design and accuracy matched as observed   present (ok)
+    does not discharge the registered requirement             present (ok)
+    not testable (localization)                               present (ok)
+    instrument failure, not absence                           present (ok)
+    seeds-endpoint-findings.md                                present (ok)
+    ceiling-measurement-findings.md                           present (ok)
+    ceiling-defect-2026-09-17.md                              present (ok)
+    powered-position-sweep-findings.md                        present (ok)
+    standardised-refit-findings.md                            present (ok)
+    other-index-position-sweep-findings.md                    present (ok)
+
+The one flag is not a regression. The phrase "validity gates were clean" survives only
+at line 27, inside the new correction paragraph, which quotes the old sentence in
+order to say it was replaced. That is correct disclosure, not a surviving claim. The
+two entries I first read as missing — the registered term and the registered reading —
+are present and simply wrap across lines; I confirmed both by reading the paragraph.
+
+The bolded sentence carrying the registered term and the registered instrument-failure
+reading is intact and still at the head of its own paragraph, which is the position
+the finding behind it asked for.
+
+### One pre-existing gap the fixes did not address, still open
+
+The original check's fifth "smaller thing" was that the rehearsal requirement in the
+closure text cites nothing. It still cites nothing.
+
+**Check run.**
+
+    grep -n -i "rehearsal" (the fixed closure text)
+
+**Output.** The sentence stands as before: "the successor's whole purpose is a
+measurement that does not yet exist, so the rehearsal requirement — that a full
+measurement procedure be demonstrated before it is registered — applies to it even
+though it does not apply to this closure." No file is named.
+
+**Status of the underlying record has improved, though.** When the original check was
+filed, that requirement's protocol text did not exist anywhere. It now exists and is
+on the main line:
+
+    git merge-base --is-ancestor 93c9cb2 main   ->  YES
+
+So the sentence could now cite the protocol's new section on the measurement
+rehearsal, and the December-result ruling's sixth item that ordered it. Three or four
+words. This is a sentence asserting a binding requirement with nothing to open, which
+is the defect class the closure rule exists for, though it is not a sentence saying
+verified, measured, calibrated or attacked, so it falls outside the strict letter of
+the rule's second clause. **I leave it open**, at worth-noting severity, because the
+fix session did not touch it and because a finding nobody has checked does not close
+by being small.
+
+### Nothing newly uncited
+
+Every citation the fixes added, I opened and read. All eight land on text that says
+what the sentence says. No fix introduced a new claim without a record. The one added
+sentence that goes beyond its record is the validity-gate trailing clause in item 2,
+which is a reason rather than a fact and is covered there.
+
+---
+
+## Is the closure text now fit for a registration commit?
+
+**Yes, once one clause is trimmed — and it is much closer than it was.**
+
+The fatal finding that stopped it is closed on measurement: the successor's schedule
+now cites the item that carries the facts, and I opened the file and confirmed it. The
+three uncited claims the original check raised — the validity gates, the
+1.94-in-four-thousand figure, and the re-indexing probe's never-run status — all now
+carry records, and all three records say what the sentences say. Two further citations
+nobody had asked for were added and both check out. The project data matches the ledger
+to the cent, and the one wrong number in it turned out to be an hours figure that had
+been read as dollars. The ledger's mis-attribution is corrected without moving a
+dollar and with the prior wording disclosed in place. Nothing that earlier passes
+verified has been disturbed.
+
+**What I would want changed before the commit.** One thing, and it is a deletion, not
+a rewrite: cut the trailing clause of the validity-gate sentence — "and the subspace
+ablation they were written to guard never ran, because no subspace was ever localized"
+— or re-attribute it away from the seventeenth finding, which does not support it. The
+sentence is stronger and more conservative without it, and a closure block that is
+about to be registered should not carry its one exculpatory inference in the same
+breath as the record that cuts against it.
+
+**Two things for the record rather than for the text.** The key count behind the
+validity-gate check does not reproduce, and the error originates in a finding labelled
+MEASURED — a reminder that a label is not a measurement, which is the reasoning the
+amended rule rests on. And the rehearsal requirement still cites nothing, which is now
+a three-word fix because the protocol text it would cite has reached main.
+
+**On the rule I verified under.** Every item above is a command I ran with its output,
+not a reading of the fix session's reasoning. I accepted nothing on argument alone. The
+one item where a measurement was available and disagreed with the claim is reported as
+disagreeing, which is the case the rule was written for.
