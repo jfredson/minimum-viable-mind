@@ -113,6 +113,9 @@ says **first release** and **second release** throughout.*
   the re-run (about $12). Either it is asked for as a small separate release when
   that branch fires, or it is folded into the first release now, making it about
   $44 and still leaving about $130.30 unauthorised.
+  **Answered later the same day — see ruling 19 below: folded into the first
+  release now.** The entry stays as written, because it is the record of what was
+  open when this file was first recorded.
 - **The two releases together come to about $175 against $174.30** — seventy cents
   past everything the programme has left. Three ways to answer it: the rehearsal
   measures the per-run cost lower; the seed count falls out of the rehearsal; or
@@ -124,6 +127,8 @@ says **first release** and **second release** throughout.*
   record — closed as not run with the reason, or kept open with a stated
   condition. Silence is the one disposition the programme's discipline does not
   allow.
+  **Answered later the same day — see ruling 18 below: closed as not run.** The
+  entry stays as written, for the same reason.
 - **Whether the rehearsal includes a short rented slice** purely to measure
   seconds-per-step on all three architectures. A throughput figure measured on the
   laptop cannot predict the rented hardware every current estimate rests on, so
@@ -156,6 +161,59 @@ names now read as follows. No dependency, amount, owner or condition changes.
 The dates elsewhere in this file are untouched, because none of them is a pacing
 choice: the amounts and headroom of item 16, and the dated precedents cited in
 items 14, 15 and the open questions, are all records of what happened.
+
+## Ruled 2026-09-21 (later the same day): three more items answered
+
+*A second set of recommendations was put to John by the session, each with a
+confidence level on it, and he answered "1. agreed. 2. agreed. 3. agreed". Mixed
+authorship, on the same footing as the items above: the session proposed them and
+he approved them, and none of the wording is his drafting. The numbering carries
+on from item 17 so that nothing above is renumbered. No compute was launched and
+no money was spent under these rulings either.*
+
+18. **The registered repeated-sampling run is closed as not run.** The run
+    registered in advance under amendment 2026-08-04b had been open about seven
+    weeks. Its claim on money was always on money left over, and items 10 to 14
+    above commit what is left to the successor experiment, so there is no money
+    left over for it to claim. It is therefore closed on the record with that
+    reason — the money is committed elsewhere and the scope is frozen — rather
+    than being left quietly open. Why it mattered enough to rule tonight: letting
+    a registered obligation lapse with no stated outcome is the one disposition
+    this programme's discipline does not allow, and the hibernation condition
+    (`docs/program-roadmap-2026-09-20.md`, item 5) requires every open line to
+    carry its current state, its next step and what that step costs. This answers
+    the third entry of "Open, and raised but not yet ruled" above.
+
+19. **The one permitted re-run is folded into the first release now.** That makes
+    the first release about $44 rather than about $32, which is still inside the
+    $174.30 the programme has left and still leaves roughly $130 unauthorised.
+    The reasoning accepted: asking for the re-run separately would interrupt John
+    exactly when the work is mid-flight, which is the thing releasing the money
+    in advance was meant to remove. The cost, recorded honestly rather than
+    argued away: it authorises money for a run that may turn out not to be
+    needed. This answers the first entry of "Open, and raised but not yet ruled"
+    above. It does **not** answer the second entry there — whether the two
+    releases together overshoot the headroom by about seventy cents — which
+    stands open exactly as written, on the same reasoning as before: the
+    measurement that would settle it does not exist yet.
+
+20. **The key count that does not reproduce gets an owner.** The seventeenth
+    finding of `experiments/06-mvm-0a-constructed-self-index/red-team-a4.md`
+    (F17, on whether condition (f)'s validity gates were ever applied) is
+    labelled MEASURED and says the endpoint records for seeds 0 to 2 carry no
+    such field "among their 110 keys". That count does not reproduce in any
+    committed version of the files it describes. Re-checked while recording this
+    ruling: the seed 1 and seed 2 endpoint records
+    (`experiments/06-mvm-0a-constructed-self-index/a3-gates/endpoint_a3_30m_seed1.json`
+    and the matching `..._seed2.json`) each hold **15** top-level keys, and the
+    earlier pilot record (`a3-gates/pilot_endpoint.json`) holds 7. The number 110
+    is not any of them. The finding's substance — that the gates were never applied —
+    is not disturbed by this; what is wrong is a measured claim that measurement
+    does not support. It never entered any registered text and cannot now reach
+    the registration, so it is carried as a small task to correct the record
+    rather than chased tonight. It matters because it is a committed record a
+    future session may cite, and a "MEASURED" label is the programme's promise
+    that a number came from running something.
 
 ## Recorded elsewhere
 
