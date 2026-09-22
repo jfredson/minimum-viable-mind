@@ -985,3 +985,237 @@ heading still reads "[date of the Gate A pass]" and the text under it says so pl
 That is correct for a draft and cannot survive the commit that appends the block, which
 is the same point the ledger's finding RT-166 makes at its end. The commit that files
 this block is the one that fills it.
+
+---
+
+# Second addendum, added 2026-09-21 after the first
+
+*The wording fault recorded at worth-noting severity in the first addendum has been
+corrected by another session on the branch `worktree-agent-a5b280b93c1ba5e41`
+(correction commit `a4c754e`). The closure rule leaves the check to a session that did
+not write it, which is again this one. Everything above this line is as originally
+filed and is unedited. That branch's setup commit `5fa8a4c` merges the trimmed text
+with current main; I confirmed that both the trim (`628686f`) and the protocol
+amendment (`c63d960`) are ancestors of it.*
+
+*Main has moved since the first addendum — two further merges (pull requests 14 and
+15) are now in the base. I checked what they touch before relying on anything above:
+`git diff --stat c63d960 dd1b974` returns seven files, six of them new (a ruling file,
+a method note and four launcher and reaper scripts) and one modified
+(`watch_run_a3.sh`). **No record any check above relied on was modified.** The
+rulings, the red team ledger, the amendment, the separation-clause requirements, the
+compute ledger, the project data, the correction note and the gate records are all
+untouched. Every verdict above still stands on the evidence it was given.*
+
+## B1. The correction is exactly one change, and it is the right one
+
+**Check run.** The complete difference between the version verified in the first
+addendum and the corrected version.
+
+**Output.**
+
+    153c153,154
+    < subspace that beats the matched controls, and none was carved to compare.
+    ---
+    > carved subspace to compare against the matched controls, and none was
+    > carved.
+
+One changed passage in the whole file and nothing else.
+
+**Does the output match the claim?** Yes, and the coordinator's note that it is more
+than a three-word swap is right — I said three words and I was wrong. What actually
+happens is that one clause is rewritten: "that beats" comes out, "carved" and "to
+compare against" go in, and the trailing "to compare" moves up into the requirement
+clause where it belongs. Judged as what it is rather than as what I predicted, it is
+the correct edit: the estimate was mine and it was low, and the size of the change is
+not a mark against it.
+
+The sentence now reads:
+
+> ...and so the registered uncarvable signature H_diffuse was never reachable either:
+> it requires a carved subspace to compare against the matched controls, and none was
+> carved.
+
+The inversion is gone. A reader who opens section 3.5 of the amendment now finds a
+condition about comparing a carved subspace against the controls, and a closure text
+that says the same thing. The claim I could not check before — whether the closure had
+misread its own registration — is now answerable by opening the file, which is the
+whole point.
+
+**Verdict: CLOSED, checked.**
+
+## B2. "Matched controls" loses no precision, and is better than I expected
+
+The session chose "matched controls" over the registration's "L2 controls" on three
+grounds: it is the ledger's finding RT-166's own phrase, it matches the surrounding
+paragraphs, and it is plainer under the workspace rule. I was asked to confirm it
+loses no precision against the registered wording.
+
+**Check run.** How the registration itself names L2, at section 3.1 of the amendment.
+
+**Output.**
+
+    - **L2, matched controls.** (a) The *other-index* subspace: the same localization
+      run for a named non-self agent ("which marker is agent B's"), matched in rank
+      and probe accuracy; (b) random subspaces of matched rank and norm (Experiment
+      1's null-calibration move); (c) on the five existing register-bearing
+      checkpoints only, the register lesions already run, as a $0 reference. ...
+
+**It loses nothing, and there is a fourth ground the session did not claim: "matched
+controls" is the registration's own name for L2.** Section 3.1 defines the level as
+"**L2, matched controls**" in those words. So the closure text is not paraphrasing a
+registered term into a looser one; it is using the registration's own plain name for
+exactly the same object. "L2" is the label and "matched controls" is what the
+registration says the label means. Under the workspace rule, which asks for the plain
+word rather than the term of art, using the name over the code is right, and here it
+does not even cost the precision that choice sometimes costs.
+
+**One thing the new wording does not carry, recorded and immaterial.** The registered
+conjunct is "no L1 subspace **at k ≤ 16** beats the L2 controls" — the rank cap of
+sixteen, set at section 3.2 to match Experiment 1's primary condition. The closure
+sentence does not mention it. This costs nothing here, because the sentence's point is
+that no subspace was carved **at all**, at any rank, so the cap never becomes
+relevant. Had the sentence claimed that subspaces were carved and none beat the
+controls, the cap would have to travel with it. It does not make that claim.
+
+**Verdict: no precision lost, checked.**
+
+## B3. On the vacuity question, and whether sidestepping is the right side of the line
+
+The session flagged that a pedantic reading of the registration would hold the second
+condition satisfied vacuously — if nothing was carved then trivially no subspace beats
+the controls — while the ledger's finding RT-166 holds that the condition did not hold
+because there was nothing to compare against. It says the new wording states what the
+signature *requires* rather than asserting whether the condition was met, and judges
+that this sidesteps the question rather than answering it wrongly. It calls this the
+one judgment in the edit and asks whether I agree.
+
+**I agree with the edit. I do not agree with the description of it, and the difference
+is in the text's favour.**
+
+**The sentence does not sidestep. It takes a position, in the word "unreachable".**
+Work the vacuous reading through. RT-166 records that the first and third conditions
+happened. I checked the first independently rather than taking the finding's word:
+
+    grep -n "0.5683\|0.1988" seeds-endpoint-findings.md
+    25:| pilot (seed 0) | 0.5683 (sd 0.0076) | 0.1988 (sd 0.0173) | 1.337 | 7.5× |
+
+L0 collapses the primary battery from 0.5683 to 0.1988, and the same holds on the
+other two seeds, so ownership is load-bearing — the first condition. The third,
+probe-patching convergence failing, holds because patching never ran. Now grant the
+vacuous reading of the second. All three conditions are then met, and **H_diffuse
+would have fired** — it would be the registered outcome of the experiment, not an
+unreachable one. The sentence says it was never reachable. That is flatly inconsistent
+with vacuity. The text has already chosen RT-166's side; what it declines to do is
+argue for the choice.
+
+**Stating the conclusion and leaving the argument in the ledger is the right division
+of labour, and that is a better defence than sidestepping would be.** A closure block
+summarises; the ledger carries reasoning. RT-166 is where the argument belongs and is
+where it is. Asking the closure text to adjudicate a point about vacuous truth would
+put a logic aside into a paragraph that is doing something else.
+
+**And the position it takes is the right one, so the text is not resting on a
+coin-flip.** This matters, because "we sidestepped it" would be a weak defence if the
+ruled side were wrong. It is not. The signature means "present but uncarvable".
+Uncarvability is a claim about what happened when someone tried to carve. Letting it
+be satisfied by never trying would let an experiment that never ran the comparison
+claim a registered finding — which is the same move as the sentence I had struck two
+addenda ago, where gates that were never built were reported as clean. The programme's
+whole discipline is against it. RT-166 is right on the merits, and a hostile reader who
+presses the point arrives where the text already is.
+
+**Where I would push back, and it is not a defect.** A text about to be registered
+should take a position when the position is already ruled and the alternative would let
+the experiment claim something it did not earn. The session framed its edit as
+declining to take one. Its sentence takes one anyway, correctly. So the judgment call
+was sounder than the session gave itself credit for, and nothing needs to change.
+
+**Should the text say more?** No. Adding "and this did not hold vacuously, because..."
+would be an argument in a summary. The conclusion plus the fact that does the work —
+"and none was carved" — is enough, and the reader who wants the reasoning can find it.
+
+**Verdict on the judgment: sidestepping would have been acceptable; taking the
+position, which is what the sentence actually does, is better. Sound as it stands.**
+
+## B4. One thing I considered raising and decided not to, recorded so the next pass need not rediscover it
+
+The sentence makes an interpretive claim — that a registered signature was never
+reachable — which rests on a contested reading, and it does not name RT-166. The
+citations this verification asked for elsewhere (the never-run claims, the
+1.94-in-four-thousand figure) were exactly of this shape, so the question is fair.
+
+**I am not raising it as a finding, and here is the honest reason.** The preamble
+already says John ruled all twenty-nine tier 1 findings, the ledger's RT-143 to
+RT-171, accepted as drafted, and RT-166 sits inside that range — so a document-level
+attribution does cover it. The sentence uses none of the four words the closure rule's
+second clause triggers on (verified, measured, calibrated, attacked). And the finding
+is one search away: I found it by searching the ledger for the signature's name, in a
+single command. Naming RT-166 in the sentence would be a small improvement and I would
+take it if the pen were open, but it does not meet the bar for a finding, and the
+amended protocol is explicit that severity is not to be manufactured to look thorough.
+Recorded as considered and declined.
+
+## B5. Nothing else moved
+
+**Check run.** The sweep behind every earlier verdict, re-run against the corrected
+text.
+
+**Output.** The four phrases that must be absent are absent, including the inverted
+one just removed. Every citation and ruled phrase that must be present is present: the
+other-agent control's two ruled phrasings, the never-applied-to-any-lesion clause, the
+rehearsal citation, the successor's item 1, the three ledger findings behind the
+never-run and margin claims, the endpoint findings file and the correction note. The
+one entry my sweep flagged, the registered instrument-failure reading, is present and
+wraps across lines 157 and 158, which I confirmed by reading it.
+
+## Is the closure text fit for a registration commit, with nothing outstanding in the text itself?
+
+**Yes. Nothing in the text is outstanding.**
+
+Every item raised across this verification is now closed on measurement: the wrong
+item number, the validity-gate sentence and its overreaching clause, the margin
+figure's citation, the two never-run claims, the deferred read's reason, the
+registration revision, the ledger's attribution, the reach figure's citation, the
+project data's arithmetic, the rehearsal requirement's citation, and now the inverted
+conjunct. The complete difference from the version I verified at each stage has been
+two passages, then one, then one — each checked, none introducing anything new.
+
+**Two things remain on the record, neither of them in the text.**
+
+The key count in `red-team-a4.md`'s seventeenth finding still does not reproduce — the
+endpoint record has 15 top-level keys and has never had 110 — and that finding is
+labelled MEASURED. It never entered the closure text, and the clause that leaned on it
+is gone, so it cannot reach the registration. It remains a committed record asserting
+something measurable that measurement does not support, and correcting it belongs to
+whoever owns that file.
+
+**One new item, found while checking what had moved on main, and reported because it
+is a ruled correction that appears not to have landed.** The ruling of 2026-09-21 on
+review verification and staged spending
+(`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, item 16) rules
+that the stale spend figures are corrected to the compute ledger, and names two places
+that carried $215.70: `data/project.toml` and section 6 of the December-result roadmap.
+The project data was corrected, and I verified it above. The roadmap was not:
+
+    grep -n "215\.7\|225\.7" docs/december-result-roadmap-2026-09-20.md
+    135:**Spend.** The program envelope is $400 (raised 2026-08-16; $215.70 spent per
+    data/project.toml), with about $184 ...
+
+It still carries $215.70, and it attributes that figure to the project data file, which
+no longer says it. Its headroom figure is stale too — about $184 against the $174.30
+the ruling states. This is outside the closure text and outside everything I was asked
+to verify, so it changes no verdict above. It is a ruled correction that looks
+unlanded, and the next session to touch that file should close it.
+
+**One note that is not a defect and will become one.** The heading still reads "[date
+of the Gate A pass]" and the paragraph under it says so plainly. That is right for a
+draft. The commit that appends this block to `amendment-a3.md` is the commit that fills
+it.
+
+*A closing note on the rule I have been working under. The ruling of 2026-09-21 item 3
+extends reviewer-owned verification to every Gate A pass, whether or not a fatal
+finding exists, on the reasoning that the programme's worst failure was not a missed
+finding but that nobody ever ran anything to confirm a fix. Every verdict in this file
+and its two addenda is a command with its output. Where a measurement was available and
+disagreed with a claim — once, on the key count — it is reported as disagreeing.*
