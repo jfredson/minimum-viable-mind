@@ -75,10 +75,10 @@ Review fires, with a written record in the repo, at three points.
 
 **Gate A — registration.** Every registration, amendment, threshold lock, or
 pre-statement that will be read as binding, before the registration commit.
-Both tiers below run. The registration commit waits on the closure rule. No
-Gate A pass opens until the measurement rehearsal for that target is
-committed, and reading the rehearsal is the first thing the tier 1 reviewer
-does.
+Both tiers below run. The registration commit waits on the closure rule and on
+the filed failure-mode pass. No Gate A pass opens until the measurement
+rehearsal for that target is committed, and reading the rehearsal is the first
+thing the tier 1 reviewer does.
 
 **Gate B — interpretation.** An interpretation of a result before it enters
 STATUS.md's current-state section or the paper draft, when it either changes
@@ -94,6 +94,88 @@ linked, so he rules on text that has already been attacked. Tier 2 only if he
 asks. First application: public path step 4, the 2026-10-04 control-battery
 decision (repair the clause under a new amendment, or close A3 with partial
 discriminators).
+
+## The pairing rule: whatever one session writes, a different session checks
+
+The three gates above fire at three points. The pairing that has actually caught
+things in this programme is finer-grained than a gate: one session writes or
+fixes, a different session checks, every time — not only when a gate happens to
+fall there. That is a standing rule and not an occasion.
+
+**Binding text** is anything a later session will read as settled and build on
+without deriving it again: registered text and its amendments, pre-statements
+and threshold locks, closure texts, the text of this protocol and of the
+known-failure list beside it (`docs/known-failure-modes.md`), and recorded
+rulings. A proposal on its way to John counts, because Gate C attaches a pass to
+it. A working draft does not, until it is committed as one of those.
+
+**What the checking session produces** is a filed record with three things in
+it: what it opened and what it did not; at least one check it ran, given as the
+command and the output the command returned, chosen so that the output would
+come out wrong if the writing were wrong; and, for each claim it checked, a
+plain sentence saying whether that output matches what the text claims. Every
+finding is labelled MEASURED or ARGUED, the convention the passes already use.
+Reading the text and finding it convincing is not a check, and a summary of what
+the text says is not a check either. Where there is genuinely nothing to run —
+text carrying no number — the checking session says so and instead names the
+records it opened and the sentences it read against them, one by one.
+
+**Where it is filed.** Under the experiment's reviews directory when the target
+belongs to an experiment, on the path in "Filing" below. Otherwise the check
+goes in the message of the commit that lands the checked text, commands and
+outputs included, which is where the packet rebuilds and the roadmap conversion
+of 2026-09-21 already put theirs.
+
+**The checking session is not the writing session.** It has not read that
+session's chat, and it gets the packet and nothing else, on the same terms tier
+1 works under below. One session may write one thing and check a different thing
+in the same sitting. No session ever checks its own work.
+
+**Why this is a rule and not a habit.** This protocol opens by saying that
+review before it existed was ad hoc — fired when someone thought of it. Firing
+review only where a gate falls is the same failure at a smaller scale: the gate
+catches the document and misses the eleven edits that got it there. The pass
+that stopped the three-seed wave, the independent Amendment A4 pass of
+2026-09-19, was not at a gate, because no gates existed. It was a second session
+reading what a first session had written.
+
+## Isolation is not traded for speed
+
+The separation between the session that writes something and the session that
+checks it is never collapsed. Not when the fix is one line. Not when the writing
+session is sure. Not when John is waiting, not when an outside reviewer's hour is
+already booked, and not when collapsing it would save the only day standing
+between the programme and a result.
+
+The reason is written here, and not only the rule, because a session reading
+this under pressure needs the reason: this is the cheapest step in the protocol
+to skip and the one that has caught the most. Skipping it costs nothing visible
+on the day. The text still reads well — to the person it reads well to, who is
+the person who wrote it. What it costs shows up later, in a registered sentence
+nobody can satisfy, and by then the cost is weeks. This document's own
+opening is the evidence: a fatal finding was closed by a sentence saying it was
+fixed, and a registered clause said two ceilings were "verified by the attack
+sweep" — both written, read back and believed inside one session.
+
+**What these rules cost.** The pairing rule, the failure-mode pass, this section
+and the rebuild rule below all buy the same thing with the same currency: they
+slow the programme down per unit of finished work. A document that used to be
+written is now written and then waited on. A registration that used to need a
+rehearsal now needs a rehearsal and a filed pass running the old failures against
+the new design. A document that used to be tidied when it looked untidy is now
+rebuilt whenever new binding text starts to lean on it. That is real, and none of
+it is free. It is still the right trade, on one observation: the rate at which
+this programme produces defects has not fallen, while the rate at which it
+catches them has risen. The zero-denominator failure on the Amendment A3 control
+battery (the unequal-ceilings finding, `RT-21`, 2026-09-15) and the moving-ceiling
+failure in the successor proposal (the per-arm-ceiling finding, `RT-172`,
+2026-09-21; both are set out with their records in `docs/known-failure-modes.md`)
+are the same failure six days apart, and the design that produced the second was
+written by a session that had the first in front of it. What has improved is the
+finding, not
+the writing. Until that changes, checking is the part of this work that is
+producing the reliability, and it cannot be traded for speed without trading the
+reliability with it.
 
 ## The measurement rehearsal, required before any Gate A
 
@@ -155,6 +237,50 @@ must show that the three arms are constructible, that the pointer in the
 built-to-be-separable arm can be patched, that the joint patch in the
 built-to-be-entangled arm works, that the metric returns positive, negative
 and invalid values on toy cases, and what the new task grammar costs per run.
+
+## The failure-mode pass: the known failures are run against the design, not cited
+
+Every registration text goes through a pass in which each failure named in
+`docs/known-failure-modes.md` — the list, kept beside this protocol, of what has
+gone wrong here before — is tested against this design. Tested, not mentioned.
+
+The reason is one afternoon's evidence. A proposal reviewed on 2026-09-21 named
+the zero-denominator failure of the Amendment A3 control battery, by its plain
+description, in the section where it discussed the weaknesses of its own
+measure — and the measure two sections earlier reproduced it, with the zero
+replaced by a ceiling that moves from arm to arm. The design had the failure mode
+in hand, referred to it by name, and reproduced it anyway. Citing a failure is
+something a text does; the text is not thereby free of it.
+
+How the pass runs:
+
+- **Every failure on the list gets a disposition, and every disposition shows
+  its work**: the command that was run and the output it returned, in the filed
+  record.
+- **"Considered and does not apply" is not a disposition.** If a failure does not
+  apply, the pass shows that: the denominator that is not zero, the pre-stated
+  cell that has trials in it, the positive control that cleared the bar, the
+  record that exists and contains the number the sentence cites.
+- **A failure that genuinely cannot be tested on this design gets the reason on
+  the record and stays open**, exactly as a closure check that cannot be run
+  does. It is not closed by the difficulty of checking it.
+- **The pass belongs to the Gate A tier 1 reviewer**, who owns and files it, for
+  the same reason the closure check is the reviewer's: the design's author is the
+  one whose blind spot produced it, and the design that reproduced the
+  zero-denominator failure was written by an author who had just named that
+  failure. The author may run the list first and fix what it
+  finds — that keeps a scarce outside hour off a defect already known, which is
+  what John ruled on 2026-09-21 about the closure text's citation defects — but
+  an author's run never stands in for the reviewer's.
+- **A fatal finding of a kind not on the list is added to the list** by the pass
+  that found it, with its own test written the same way. That addition is binding
+  text, so it is checked under the pairing rule like any other.
+
+Filed with the Gate A findings, as a section headed by the list's entries in
+order, so that a reader can see at a glance which failures were run and what each
+one returned. A registration text with no filed failure-mode pass does not reach
+its registration commit, on the same standing as a pre-stated quantity with no
+rehearsal line covering it.
 
 ## Two tiers, because outside models cannot run the code
 
@@ -240,6 +366,42 @@ Before a registration commit at Gate A:
 
 Had this rule been in force on 2026-09-15, RT-21's closure check would have
 gone looking for the control battery's attack record and found none.
+
+## Rebuild a document when new binding text starts to depend on it
+
+The closure rule above makes a sentence point at a record. This rule keeps the
+record from drifting out from under the sentence.
+
+A document is not tidied when it looks untidy. It is re-read at the moment new
+binding text starts to depend on it — cites it, quotes it, takes a number from
+it, or inherits an obligation from it — and the way it is re-read is by
+**rebuilding** it: regenerating it from its source, converting it into a
+different order, or deriving its list again from the thing it claims to
+summarise. Reading a document you already believe is a weak instrument. Rebuilding
+it makes the document answer, line by line, whether it still says what it is
+being cited for.
+
+The evidence is that three of the findings of 2026-09-21 came from exactly this,
+and none of them came from anybody reading the document again:
+
+- **Converting the December-result roadmap's plan into dependency order** — what
+  waits on what, in place of which week — showed that the plan described one
+  launch step where the ruling of the same day described two: one free-arm run
+  first, its result read, and only then the remaining eight.
+- **Rebuilding the outside-reviewer packet from the closure text's own
+  citations** showed that the reviewer was being handed five records against the
+  twenty that text cites, so most of a reviewer's hour would have gone on
+  reporting the packet's gaps rather than the text's.
+- **Committing the December-result ruling** showed that the closure text was
+  citing a ruling file that existed at no commit in this repository (the
+  uncommitted-citation finding, `RT-145`), which a registration commit is the one
+  commit that may not do.
+
+What the rebuild produces is the list of differences it found, filed with the
+work that prompted it. Where the rebuild changes the document, that change is
+binding text and is checked under the pairing rule like any other. Where a
+rebuild is genuinely too expensive to run, the document is named, what was not
+rebuilt is stated, and it stands as an open item rather than as a silence.
 
 ## Filing
 
@@ -365,3 +527,67 @@ elsewhere in this file are left alone because they are records of what was ruled
 and when, not plans: the 2026-10-04 control-battery decision named as the first
 application of Gate C and of the protocol as a whole (ruled early, on
 2026-09-20), and every date in the history of past passes.
+
+**2026-09-21 (later the same day again) — four changes, approved by John.** Six
+recommendations came out of a working session, each put to him with its cost, and
+he approved them in the words "Ok, can we implement all of these?". Four of the
+six are protocol text and are the four below; the other two are not. Mixed
+authorship, on the same footing as the items above: the session proposed them and
+he approved them, and none of the wording is his drafting. No compute was launched
+and no money was spent under them.
+
+*A ruling file recording these four had not been written when this text was
+committed.* The two ruling files of the same day —
+`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, the
+review-verification and staged-spending ruling, and
+`docs/rulings/2026-09-21-followup-runs-and-blind-arm.md`, the follow-up-runs and
+blind-arm ruling — do not contain them. One is owed, and this entry is the only
+record of the approval until it exists. That is the gap the rebuild rule above is
+about, so it is stated here rather than papered over with a citation to a file
+that does not yet say it.
+
+1. **The pairing rule** — the new section of that name, after the gates. It closes
+   the finding that the pairing which has caught things is finer-grained than a
+   gate: one session writes, a different session checks, every time. What the
+   approval authorises is the rule. What is the session's judgment is the
+   definition of binding text (which documents are in and which are not), the
+   three things the checking session has to produce, and the filing fallback into
+   the commit message for documents that belong to no experiment.
+2. **The failure-mode pass, and the list it runs against** — the new section of
+   that name, one clause added to Gate A, and the companion document
+   `docs/known-failure-modes.md`. It closes the sharpest finding of the day: a
+   proposal cited the zero-denominator failure by name, in the section discussing
+   its own measure's weaknesses, and reproduced that failure in the measure. The
+   approval authorises the pass and the list. The session's judgment is that the
+   Gate A tier 1 reviewer owns the pass rather than the author (with the author
+   free to run it first and fix what it finds), that a failure which cannot be
+   tested stays open rather than closing on the difficulty of testing it, and that
+   a new species of fatal finding is added to the list by the pass that found it.
+   The four entries on the list are the four real failures; the test written under
+   each is the session's, and every output printed in that document came from
+   running the command printed above it.
+3. **Isolation is not traded for speed** — the new section of that name. It states
+   plainly that the separation between the session that writes a fix and the
+   session that checks it is never collapsed, including under time pressure, and
+   gives the reason in the same place: it is the cheapest step to skip and the one
+   that has caught the most. The approval authorises the rule; the reason, its
+   wording, and the statement of what all four changes cost are the session's.
+   That cost statement is the session's own addition and nobody asked for it:
+   these four rules slow the programme per unit of finished work, and the argument
+   for paying is the observation that the rate of producing defects has not fallen
+   while the rate of catching them has risen.
+4. **Rebuild a document when new binding text starts to depend on it** — the new
+   section of that name, after the closure rule. It closes the finding that
+   documents here go stale underneath the citations that depend on them, and that
+   rebuilding is what finds it: three findings of 2026-09-21 came from a
+   conversion, a packet rebuild and a commit, and none from re-reading. The
+   approval authorises the rule. The session's judgment is what triggers it (new
+   binding text citing, quoting, taking a number from, or inheriting an obligation
+   from the document), that the differences a rebuild finds are filed with the work
+   that prompted it, and that a rebuild too expensive to run becomes a named open
+   item rather than a silence.
+
+The approval authorises these four changes. The wording is the drafting session's
+and is John's to overturn. This text had not been checked by another session when
+it was committed; under the pairing rule it is owed one, and the session that
+writes that check is not this one.
