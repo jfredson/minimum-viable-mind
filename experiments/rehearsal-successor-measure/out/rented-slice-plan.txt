@@ -13,21 +13,21 @@ WHAT IT IS
 THE COMMANDS, IN ORDER
 
   Step 0 — prove the plan with no machine and no money:
-    /Users/john/Code/minimum-viable-mind/.claude/worktrees/agent-a827aade30edf9e28/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh --help >/dev/null
+    /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh --help >/dev/null
     DRYRUN=1 SCALE=10M MAXTOK=2000000 OUT=slice_handshake \
       GRACE_S=600 \
-      /Users/john/Code/minimum-viable-mind/.claude/worktrees/agent-a827aade30edf9e28/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh
+      /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh
 
   Step 1 — the toy run, through the DERIVED launcher (the registered
   launcher launch_a3.sh is not used and not edited):
     SCALE=10M MAXTOK=2000000 OUT=slice_handshake \
       GRACE_S=600 \
-      /Users/john/Code/minimum-viable-mind/.claude/worktrees/agent-a827aade30edf9e28/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh
+      /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh
 
   Step 2 — while that run is training, time the three architectures on the
   same machine and write the result where the laptop's final copy will
   bring it home:
-    tar czf - -C /Users/john/Code/minimum-viable-mind/.claude/worktrees/agent-a827aade30edf9e28/experiments/rehearsal-successor-measure src | \
+    tar czf - -C /Users/john/Code/minimum-viable-mind/experiments/rehearsal-successor-measure src | \
       $SSH "mkdir -p /root/rehearsal && tar xzf - -C /root/rehearsal"
     $SSH "cd /root/rehearsal/src && python bench_arms.py --device cuda \
              --steps 50 --batch 32 \
