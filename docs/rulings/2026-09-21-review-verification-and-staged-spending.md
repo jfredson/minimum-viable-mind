@@ -356,3 +356,62 @@ bookkeeping — claims about where text landed, cross-references and the like �
 while the ruled items themselves stay untouchable. He was told the risk, that the
 line between bookkeeping and substance is drawn by whoever is writing, and he
 accepted it. No compute was launched and no money was spent for this note.*
+
+---
+
+## Correction added 2026-09-22 by a later session — bookkeeping only
+
+*This note records that the compute ledger has moved since this file was
+written. It changes no ruling, and none of the ruled items has been touched.
+Item 16 in particular stands exactly as John ruled it.*
+
+**What item 16 ruled, and why it is not disturbed.** Item 16 ruled that the
+stale spend figures are corrected to the compute ledger, which is the system of
+record. That ruling is about which file governs, and it still governs. The two
+amounts quoted inside it — about $225.70 spent, headroom $174.30 — were the
+ledger's own figures on the day, and they were right on the day.
+
+**What has changed in the ledger since.** The two follow-up reading runs of
+2026-09-20, the matched control and the standardised refit, were described in
+several places as costing nothing, because neither produced a result: both
+machines were created, both were refused by the instrument's own reproducibility
+check, and both were deleted inside half an hour. They still cost money. The
+account balance moved from $79.7159 to $77.8119 while they ran, a measured
+$1.9040, and the ledger's launch-outcome annotation of 2026-09-20 carries a
+dated correction of 2026-09-21 folding it in.
+
+**The figures the ledger now supports, derived from its rows rather than copied
+from any summary.** The programme has spent about **$227.60 of $400**, leaving
+about **$172.40**. Amendment A3 stands at about **$46.20 of its $100 stop**,
+leaving about **$53.80**. The chain is $215.70 after the wave of seeds 1 and 2
+on 2026-09-17, plus about $9.90 for the run that asked whether the control
+question can be learned when it is taught properly, plus $0.07 to recover that
+run's final checkpoint, plus the $1.90 above, plus about two cents for the
+measurement rehearsal of 2026-09-21.
+
+**What this does to the open question this file leaves standing, and it makes it
+worse rather than better.** The second entry under "Open, and raised but not yet
+ruled" says the two releases together come to about $175 against $174.30 —
+seventy cents past everything the programme has left. Against $172.40 they are
+about **$2.60** past it. The entry stays as written, because it is the record of
+what was open when this file was recorded, and the question it leaves open is
+still open. What has changed is the size of the gap the rehearsal's measurement
+has to close. Item 19, which folds the one permitted re-run into the first
+release, moves money between the releases and does not add any, so it is
+unaffected: about $44 and about $131 still sum to about $175.
+
+**Why this is bookkeeping and not substance.** Nothing John decided is reopened.
+He ruled that the ledger governs; this note reports what the ledger now says. The
+note does not change an amount he authorised, does not release money, and does
+not answer the question he left open. The line between bookkeeping and substance
+is drawn by whoever is writing, which the correction note above says plainly and
+which John accepted when he authorised this kind of annotation; a reader who
+thinks the line has been crossed here should treat the ruled items as governing
+and this note as the thing to strike.
+
+*John authorised this kind of annotation on 2026-09-21 — a later session may
+annotate a ruling file to correct bookkeeping while the ruled items stay
+untouchable — as recorded in the correction note above. No compute was launched
+and no money was spent for this note. Source for every figure in it:
+`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`, which is not
+edited by this note.*

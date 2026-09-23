@@ -1,10 +1,10 @@
-# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 4 of 20: The inside reviewer's findings, part 2 of 3
+# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 4 of 22: The inside reviewer's findings, part 2 of 3
 
-*This is file 4 of 20 of one review packet, pasted into a single conversation.
+*This is file 4 of 22 of one review packet, pasted into a single conversation.
 It contains the inside reviewer's findings on the previous version of that
 text (part 2 of 3). Reply with one short line saying you have it, and wait for
 the rest: the brief you are answering is in file 1, and your review comes only
-after file 20 arrives. If this file looks cut short, say so now.*
+after file 22 arrives. If this file looks cut short, say so now.*
 
 ---
 

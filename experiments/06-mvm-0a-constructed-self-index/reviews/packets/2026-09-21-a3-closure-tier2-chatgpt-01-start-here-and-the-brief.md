@@ -1,7 +1,7 @@
-# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 1 of 20: Start here: what this is, and the brief
+# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 1 of 22: Start here: what this is, and the brief
 
-*This packet arrives as 20 files pasted into this one conversation, in order.
-This is file 1. Do not begin your review until file 20 has arrived: reply to
+*This packet arrives as 22 files pasted into this one conversation, in order.
+This is file 1. Do not begin your review until file 22 has arrived: reply to
 each file with one short line saying you have it, and nothing else. Give your
 full answer only after the last file. Read each file as text, start to finish,
 rather than searching it. The brief you are answering is in this file, below.
@@ -142,7 +142,7 @@ full length given and the omission stated where the excerpt appears.
 | 19 | the successor experiment's design note | complete | `docs/competing-mechanisms-2026-09-20.md` |
 | 20 | the red team ledger - every row and range the text under review cites | excerpt | `experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md` |
 | 21 | the independent review of a later draft clause - the finding the text cites | excerpt | `experiments/06-mvm-0a-constructed-self-index/red-team-a4.md` |
-| 22 | the compute ledger - its rules, its baseline and the two rows the text cites | excerpt | `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md` |
+| 22 | the compute ledger - its rules, its baseline, the rows the text cites and the rows that correct them | excerpt | `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md` |
 | 23 | OPTIONAL BACKGROUND, not cited by the text under review - what the separation clause requires | complete | `experiments/06-mvm-0a-constructed-self-index/separation-clause-requirements.md` |
 
 
@@ -150,7 +150,7 @@ full length given and the omission stated where the excerpt appears.
 
 ===== RECORD 1 of 23 - the closure rule this text is being reviewed under - EXCERPT: docs/outside-review-protocol.md =====
 
-*Source note: excerpted from `docs/outside-review-protocol.md` (20,405
+*Source note: excerpted from `docs/outside-review-protocol.md` (46,763
 characters in full), which also sets out the three review gates, the two tiers
 and the measurement rehearsal. Only the closure rule is reproduced, because it
 is the only part of that file the text under review cites.*

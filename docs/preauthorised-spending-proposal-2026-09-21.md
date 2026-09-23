@@ -29,6 +29,19 @@ of the idea; everything below is about where the line should sit.
 > 1 to 6 are untouched. The dates, commit names and exact figures are in "Note
 > added afterwards: the detail" at the end of this document.
 
+> **Second note added afterwards, 2026-09-22, by a later Claude Code session —
+> not John's ruling, and not part of the proposal, which is still left unedited
+> below.** The envelope position measured in section 2 has moved by $1.90 and
+> this one does change numbers. The two follow-up reading runs of 2026-09-20
+> were recorded as costing nothing; they cost a measured $1.9040, and the
+> compute ledger carries the correction. **The programme has spent about
+> $227.60 of $400, leaving about $172.40, not $174.30**, and Amendment A3 stands
+> at about $46.20 of its $100 stop, leaving about $53.80. Every finding in this
+> proposal survives and each one gets slightly worse: the successor still does
+> not fit the envelope, and the gap is $1.90 wider at every configuration in the
+> table in section 3.5. The derivation and the knock-on figures are in "Second
+> note added afterwards: the detail" at the end of this document.
+
 ---
 
 ## 0. What this asks John to do, in one page
@@ -852,3 +865,92 @@ file named above — the one about a measured count of record keys that does not
 reproduce, which chooses to correct the record later rather than chase it that
 night — and it does not say "annotate, never edit". The practice here rests on
 precedent, not on any wording of his.
+
+---
+
+## Second note added afterwards: the detail
+
+*This is the backing for the second short note at the top of this document.*
+
+**Added 2026-09-22 by a later Claude Code session working in its own worktree.
+This is not John's ruling and it is not part of the proposal. Nothing in the
+proposal above is rewritten; it is left unedited, exactly as it was committed.**
+
+**What moved.** Section 1.3 and section 2 take the programme total as about
+$225.70, drawn from the compute ledger, which is the right file to draw it from.
+The ledger has since been corrected again. The two follow-up reading runs of
+2026-09-20 — the matched control of Amendment A3 and the standardised refit at
+the same positions — were described in several places as costing nothing,
+because neither produced a result: both machines were created, both were refused
+by the instrument's own reproducibility check when a recorded accuracy failed to
+reproduce on rented hardware, and both were deleted inside half an hour. They
+still cost money. The account balance moved from **$79.7159 to $77.8119** while
+they ran, a measured **$1.9040**, split between the two rows by how long each
+machine lived. The ledger's launch-outcome annotation of 2026-09-20 carries a
+dated correction of 2026-09-21 folding it in.
+
+**The corrected chain, derived from the ledger's rows rather than copied from
+any summary sentence.** $215.70 after the wave of seeds 1 and 2 on 2026-09-17,
+plus about $9.90 for the run that asked whether the control question can be
+learned when it is taught properly, plus $0.07 to recover that run's final
+checkpoint, plus the $1.90 above, plus about two cents for the measurement
+rehearsal of 2026-09-21, giving about **$227.60**.
+
+**Section 2's table, with only the rows that move.** Everything not listed here
+is unchanged.
+
+| Measure | As section 2 has it | Corrected |
+|---|---|---|
+| Programme spent to date | ~$225.70 | **~$227.60** |
+| Programme headroom | ~$174.30 | **~$172.40** |
+| Amendment A3 spent | ~$44.30 | **~$46.20** |
+| A3 remaining (inside the headroom, not additional to it) | ~$55.70 | **~$53.80** |
+| RunPod prepaid balance | $79.82 | **$77.3451**, the last reading the ledger records, on 2026-09-21 |
+
+**The knock-on figures, worked here so nobody has to re-derive them.**
+
+- **What the successor at $130 leaves** (section 2): $227.60 plus $130.00 is
+  $357.60, leaving **$42.40** of the $400 envelope rather than $44.30. It still
+  fits, and section 2's point — that the roadmap's cap is affordable but does
+  not buy what the roadmap says it buys — is unchanged.
+- **The envelope position after a $225 cap** (section 3.5): $227.60 plus $225 is
+  **$452.60**. The $400 envelope still does not hold it, so the ask stands. At
+  full draw against the proposed $460 envelope the remainder is **$7.40**, not
+  $9.30 — which strengthens section 3.5's own words, that this is the rounding
+  and not a margin, and makes its alternative of $475 the more honest number.
+- **The fit table** (section 3.5): each overshoot grows by $1.90. Nine runs are
+  over by **$51.87**, seven by **$20.24**, six with an anomaly margin by
+  **$10.05**; six runs with no margin at all still fit, leaving **$29.95**. No
+  row changes side, so section 3.5's conclusion — that this is not a cap problem
+  a smaller experiment solves — is unchanged.
+- **The largest loss as a share of programme spend** (section 6.1): $97.04
+  against $227.60 is **42.6%**, not 43.0%. Same loss, current denominator.
+- **The two spending releases of the ruling of 2026-09-21**: about $175 against
+  $172.40 is about **$2.60** over, not about seventy cents over. That question
+  was left open for the rehearsal's measurement to answer and is still open; it
+  simply has more to answer.
+
+**What this does not touch.** Not the pre-authorisation scheme, which is about
+who says go rather than how much is left. Not the corrigibility commitments.
+Not section 1.3's finding about the $130 cap not covering its own contents. Not
+section 1.3's other finding, that closing Amendment A3 releases no money into
+the pool — that argument is unaffected by the size of the totals, and the A3
+remainder is still inside the headroom rather than additional to it.
+
+**One earlier statement is now doubly overtaken.** The first note at the top of
+this document says `data/project.toml` has been corrected and that item 7 of
+section 7 therefore needs no ruling. That remains true — the file has been
+corrected again, on 2026-09-22, to the figures above, so item 7 is still
+satisfied. What has changed is which pair of numbers the file carries.
+
+**Why a note and not an edit.** The same reason the first note gives, and it is
+worth repeating that this rests on precedent rather than on any wording of
+John's: this repository handles a superseded claim with a dated note that leaves
+the text standing, as the stacked blockquotes at the top of
+`docs/control-clause-proposal-2026-09-19.md` and the dated annotation block in
+`STATUS.md` both do. No ruling of his puts that practice into words.
+
+Source for every figure above:
+`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`, which is the
+system of record for money and which is not edited by this note. No money was
+spent and no machine rented for it.

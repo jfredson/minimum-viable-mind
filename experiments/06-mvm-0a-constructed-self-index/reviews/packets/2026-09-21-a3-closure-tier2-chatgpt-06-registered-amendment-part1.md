@@ -1,9 +1,9 @@
-# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 6 of 20: The registered amendment, part 1 of 3
+# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 6 of 22: The registered amendment, part 1 of 3
 
-*This is file 6 of 20 of one review packet, pasted into a single conversation.
+*This is file 6 of 22 of one review packet, pasted into a single conversation.
 It contains the registered amendment this block will be appended to (part 1 of
 3). Reply with one short line saying you have it, and wait for the rest: the
-brief you are answering is in file 1, and your review comes only after file 20
+brief you are answering is in file 1, and your review comes only after file 22
 arrives. If this file looks cut short, say so now.*
 
 ---

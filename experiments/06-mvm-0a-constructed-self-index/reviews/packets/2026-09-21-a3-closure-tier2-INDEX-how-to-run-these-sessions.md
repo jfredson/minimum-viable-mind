@@ -13,20 +13,28 @@ reviewers get exactly the same material - the closure text, the inside
 reviewer's findings, the registered text, and every record the closure text
 cites. Only the delivery differs, because the two apps behave differently:
 
-- **Gemini** gets one document, 396 KB.
-- **ChatGPT** gets the same material as 20 files, none of them bigger than
+- **Gemini** gets one document, 435 KB.
+- **ChatGPT** gets the same material as 22 files, none of them bigger than
   28 KB, pasted into **one** conversation in order.
 
 That is the whole difference. The material in the two packets was compared
-character by character after they were built, and it is the same: 386,244
+character by character after they were built, and it is the same: 425,871
 characters of records in each, in the same order, with the same fingerprint
 (a sha256 checksum, the standard way of showing two files are identical to
 the byte):
 
-    0e20df924f531e1ea6fe7fd067dca9f16f340eca51406ac20310147b8385dc2d
+    33abfc1a582e687a040c8f16983c00ac4e8f195a0be95b94744d5d46f9005879
 
-Each of the 23 records was also checked one at a time against the file
-it came from, so neither packet has quietly lost or reworded anything.
+Each of the 23 records was also checked one at a time, in the way it was
+made. The 18 that reproduce a whole file were compared with that file,
+character for character. The 4 that are excerpts are put together by
+hand in the packet, so every line each one reproduces had to be found in the
+file it names, character for character and in that file's own order; the
+paragraphs the packet writes around an excerpt to introduce it are its own words
+and are compared with nothing. The one remaining record is the brief, which is
+protocol text carried over unchanged from the earlier packet, and whose amended
+sentence is the one checked word for word against the protocol above. So neither
+packet has quietly lost or reworded anything a reviewer will read as quoted.
 
 ## Session 1 - Gemini, one document
 
@@ -37,12 +45,12 @@ it came from, so neither packet has quietly lost or reworded anything.
    need to add anything.
 3. When it answers, check the answer refers to records by file name. If it says
    it only saw parts of the document, or its answer never touches the registered
-   text, stop and hand it the 20 ChatGPT files instead, in the same one
+   text, stop and hand it the 22 ChatGPT files instead, in the same one
    conversation, in order - they carry the identical material.
 
-## Session 2 - ChatGPT, one conversation, 20 pastes
+## Session 2 - ChatGPT, one conversation, 22 pastes
 
-**This is one session, not 20 sessions.** A reviewer who sees a third of the
+**This is one session, not 22 sessions.** A reviewer who sees a third of the
 record in each of three chats has reviewed nothing, and the two-reviewer
 comparison is ruined without anybody noticing.
 
@@ -51,7 +59,7 @@ comparison is ruined without anybody noticing.
    each. Do not attach the files. The whole point of the split is that an
    attachment may be searched rather than read, and a pasted block of this size
    is read.
-3. Each file tells it to reply with one short line and wait. After file 20 it
+3. Each file tells it to reply with one short line and wait. After file 22 it
    gives the review. If it starts reviewing early, tell it to wait for the rest.
 4. Files are numbered in their names, so pasting them in filename order is the
    right order.
@@ -68,7 +76,7 @@ comparison is ruined without anybody noticing.
   a record: those marker lines are where the seams are.
 - **A file comes back cut short.** It is asked to tell you. Paste that file
   again, and if it is cut short twice, split it as above.
-- **The conversation gets to its length limit before file 20.** Do not start a
+- **The conversation gets to its length limit before file 22.** Do not start a
   second chat and carry on there. Stop, write down which file you reached, and
   say so - a review of part of the record is worse than no review, because it
   reads as disagreement with the other reviewer when it is really a difference
@@ -90,7 +98,7 @@ is the thing being bought.
 
 ## What it costs you, and what happens next
 
-Two sessions. One paste for Gemini; 20 pastes plus the answer for ChatGPT.
+Two sessions. One paste for Gemini; 22 pastes plus the answer for ChatGPT.
 
 After both answers are filed: the findings get labels (G1... from Gemini,
 A1... from ChatGPT), you rule on every one of them, and the fatal ones get a
@@ -102,27 +110,29 @@ amendment only once that is done - as soon as it is done, not on any date.
 
 | order | file | size | what is in it |
 |---|---|---|---|
-| Gemini session | `2026-09-21-a3-closure-tier2-gemini.md` | 396 KB | the whole packet in one document |
-| ChatGPT 1 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-01-start-here-and-the-brief.md` | 16.2 KB | the closure rule this text is being reviewed under; the brief - fixed protocol text, sent unchanged to every reviewer |
-| ChatGPT 2 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-02-the-text-under-review.md` | 15.3 KB | THE TEXT UNDER REVIEW - the Amendment A3 closure text, version 4 |
-| ChatGPT 3 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-03-inside-findings-part1.md` | 22.3 KB | the inside reviewer's findings on the previous version of that text (part 1 of 3) |
-| ChatGPT 4 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-04-inside-findings-part2.md` | 15.9 KB | the inside reviewer's findings on the previous version of that text (part 2 of 3) |
-| ChatGPT 5 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-05-inside-findings-part3.md` | 18.9 KB | the inside reviewer's findings on the previous version of that text (part 3 of 3) |
-| ChatGPT 6 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-06-registered-amendment-part1.md` | 17.3 KB | the registered amendment this block will be appended to (part 1 of 3) |
-| ChatGPT 7 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-07-registered-amendment-part2.md` | 19.4 KB | the registered amendment this block will be appended to (part 2 of 3) |
-| ChatGPT 8 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-08-registered-amendment-part3.md` | 28.4 KB | the registered amendment this block will be appended to (part 3 of 3) |
-| ChatGPT 9 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-09-registration-part1.md` | 19.6 KB | the registration the amendment belongs to, including the loss conditions (part 1 of 2) |
-| ChatGPT 10 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-10-registration-part2.md` | 26.0 KB | the registration the amendment belongs to, including the loss conditions (part 2 of 2) |
-| ChatGPT 11 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-11-measurement-records.md` | 25.1 KB | the three-seed endpoint scores; the ownership-blind ceiling measured at 1.0; the registered defect in that ceiling; the control-learnability pilot reading of 0.3125 |
-| ChatGPT 12 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-12-localization-fitted-sweep.md` | 16.4 KB | the fitted eleven-position sweep; the correction note carrying the one-legible-episode-in-eleven figure |
-| ChatGPT 13 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-13-localization-refit.md` | 15.4 KB | the standardised refit of that read |
-| ChatGPT 14 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-14-localization-controls.md` | 28.2 KB | the other-agent control's probe half; the difference-of-averages read of the marker word |
-| ChatGPT 15 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-15-rulings-and-successor.md` | 19.0 KB | the ruling that a load-bearing self-index is a centre; the ruling carrying the successor experiment's plan; the ruling reconciling the blind arm; the successor experiment's design note |
-| ChatGPT 16 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-16-ledger-part1.md` | 12.4 KB | the red team ledger - every row and range the text under review cites (part 1 of 3) |
-| ChatGPT 17 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-17-ledger-part2.md` | 22.4 KB | the red team ledger - every row and range the text under review cites (part 2 of 3) |
-| ChatGPT 18 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-18-ledger-part3.md` | 24.6 KB | the red team ledger - every row and range the text under review cites (part 3 of 3) |
-| ChatGPT 19 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-19-a4-review-and-compute-ledger.md` | 24.7 KB | the independent review of a later draft clause - the finding the text cites; the compute ledger - its rules, its baseline and the two rows the text cites |
-| ChatGPT 20 of 20 | `2026-09-21-a3-closure-tier2-chatgpt-20-optional-background.md` | 22.6 KB | OPTIONAL BACKGROUND, not cited by the text under review - what the separation clause requires |
+| Gemini session | `2026-09-21-a3-closure-tier2-gemini.md` | 435 KB | the whole packet in one document |
+| ChatGPT 1 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-01-start-here-and-the-brief.md` | 16.3 KB | the closure rule this text is being reviewed under; the brief - fixed protocol text, sent unchanged to every reviewer |
+| ChatGPT 2 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-02-the-text-under-review.md` | 17.0 KB | THE TEXT UNDER REVIEW - the Amendment A3 closure text, version 4 |
+| ChatGPT 3 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-03-inside-findings-part1.md` | 22.3 KB | the inside reviewer's findings on the previous version of that text (part 1 of 3) |
+| ChatGPT 4 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-04-inside-findings-part2.md` | 15.9 KB | the inside reviewer's findings on the previous version of that text (part 2 of 3) |
+| ChatGPT 5 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-05-inside-findings-part3.md` | 18.9 KB | the inside reviewer's findings on the previous version of that text (part 3 of 3) |
+| ChatGPT 6 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-06-registered-amendment-part1.md` | 17.3 KB | the registered amendment this block will be appended to (part 1 of 3) |
+| ChatGPT 7 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-07-registered-amendment-part2.md` | 19.4 KB | the registered amendment this block will be appended to (part 2 of 3) |
+| ChatGPT 8 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-08-registered-amendment-part3.md` | 28.4 KB | the registered amendment this block will be appended to (part 3 of 3) |
+| ChatGPT 9 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-09-registration-part1.md` | 25.5 KB | the registration the amendment belongs to, including the loss conditions (part 1 of 2) |
+| ChatGPT 10 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-10-registration-part2.md` | 26.0 KB | the registration the amendment belongs to, including the loss conditions (part 2 of 2) |
+| ChatGPT 11 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-11-measurement-records.md` | 25.1 KB | the three-seed endpoint scores; the ownership-blind ceiling measured at 1.0; the registered defect in that ceiling; the control-learnability pilot reading of 0.3125 |
+| ChatGPT 12 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-12-localization-fitted-sweep.md` | 16.4 KB | the fitted eleven-position sweep; the correction note carrying the one-legible-episode-in-eleven figure |
+| ChatGPT 13 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-13-localization-refit.md` | 15.4 KB | the standardised refit of that read |
+| ChatGPT 14 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-14-localization-controls.md` | 28.2 KB | the other-agent control's probe half; the difference-of-averages read of the marker word |
+| ChatGPT 15 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-15-rulings-and-successor.md` | 20.8 KB | the ruling that a load-bearing self-index is a centre; the ruling carrying the successor experiment's plan; the ruling reconciling the blind arm; the successor experiment's design note |
+| ChatGPT 16 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-16-ledger-part1.md` | 12.4 KB | the red team ledger - every row and range the text under review cites (part 1 of 3) |
+| ChatGPT 17 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-17-ledger-part2.md` | 22.4 KB | the red team ledger - every row and range the text under review cites (part 2 of 3) |
+| ChatGPT 18 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-18-ledger-part3.md` | 24.6 KB | the red team ledger - every row and range the text under review cites (part 3 of 3) |
+| ChatGPT 19 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-19-a4-review-and-compute-ledger-part1.md` | 24.7 KB | the independent review of a later draft clause - the finding the text cites; the compute ledger - its rules, its baseline, the rows the text cites and the rows that correct them (part 1 of 3) |
+| ChatGPT 20 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-20-compute-ledger-part2.md` | 16.7 KB | the compute ledger - its rules, its baseline, the rows the text cites and the rows that correct them (part 2 of 3) |
+| ChatGPT 21 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-21-compute-ledger-part3.md` | 17.4 KB | the compute ledger - its rules, its baseline, the rows the text cites and the rows that correct them (part 3 of 3) |
+| ChatGPT 22 of 22 | `2026-09-21-a3-closure-tier2-chatgpt-22-optional-background.md` | 22.6 KB | OPTIONAL BACKGROUND, not cited by the text under review - what the separation clause requires |
 
 ## What was built from what
 
@@ -139,6 +149,15 @@ amendment only once that is done - as soon as it is done, not on any date.
 - The earlier closure-text trim, commit `628686f` on branch
   `worktree-agent-a53dc49a926581fe8`, is an ancestor of the commit above and is
   carried through it.
+- Rebuilt 2026-09-22 after the correction that moves the programme spend to
+  about $227.60 of $400. Two things changed in the material: the closure text
+  now carries a dated note beside its money paragraph saying the programme
+  figure it states is stale by $1.90, and the compute-ledger excerpt now
+  reproduces the rows that carry that $1.90 and the ledger's own note on them,
+  so a reviewer can check the corrected figures against the record rather than
+  taking them on trust. The rebuild also picked up source records that had
+  grown since the packets were last frozen, which is why more files than those
+  two changed.
 
 ## If the closure text changes before you run the sessions
 

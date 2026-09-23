@@ -11,8 +11,15 @@ rather than converting it into an attachment it only searches.
 
 Re-run it after any source record changes; the packets are generated, never
 hand-edited.
+
+--verify reads the packet files as they are committed and compares them with a
+build made from today's sources, so a source record that changed after the
+packets were last built is reported as stale, by file name. It used to compare a
+fresh build against itself, which could only ever agree, and so reported a clean
+run over packets that were out of date; that is what this mode exists to catch.
 """
 
+import bisect
 import hashlib
 import os
 import re
@@ -26,6 +33,18 @@ OUT = E + "reviews/packets/"
 PACKET = E + "reviews/2026-09-21-a3-closure-tier2-packet.md"
 
 STAMP = "2026-09-21-a3-closure-tier2"
+
+LEDGER_EXCERPT_1 = (
+    '*Excerpt 1 of 4 — the review of the fitted linear read (2026-09-20). '
+    'The section as the ledger has it, then the one row the closure text cites, '
+    'the deferred marker-word read. Rows RT-70 to RT-88 and RT-90 to RT-93 are '
+    'not reproduced.*')
+
+LEDGER_EXCERPT_2 = (
+    '*Excerpt 2 of 4 — the review of the step 4 proposal (2026-09-20). The '
+    'section as the ledger has it, then the two rows the closure text cites: '
+    'causal patching as new code, and the count of registered discriminators '
+    'that have fired. The other rows of that review are not reproduced.*')
 
 LEDGER_EXCERPT_3 = (
     '*Excerpt 3 of 4 \u2014 the review of the two follow-up localization runs '
@@ -81,6 +100,13 @@ def commas(n):
 #   excerpt - part of a file, with the source named and the omission stated
 # `parts` splits a record for the ChatGPT packet only; the parts concatenate
 # back into the record exactly.
+# An excerpt also declares how the check tells the lines it reproduces from the
+# packet's own words: `first_line` is the first line it reproduces, so everything
+# above that line is the paragraphs introducing the excerpt; `editorial` lists
+# the labels the packet writes in among the reproduced lines, such as the row of
+# ellipses saying which rows are left out; and `quoted_with` is the prefix the
+# packet adds where it reproduces its source as a block quote. Every other
+# non-blank line has to be in the source file, character for character.
 # ---------------------------------------------------------------------------
 
 RECORDS = [
@@ -90,6 +116,8 @@ RECORDS = [
          text_from=(PACKET,
                     "## Block 1, part 2 — the closure rule this text is being reviewed under",
                     "## Block 1, part 3 — the brief (fixed text, sent unchanged to each reviewer)"),
+         first_line="> Before a registration commit at Gate A:",
+         quoted_with="> ",
          note=("excerpted from `%s` (%s characters in full), which also sets out the "
                "three review gates, the two tiers and the measurement rehearsal. Only "
                "the closure rule is reproduced, because it is the only part of that "
@@ -175,6 +203,10 @@ RECORDS = [
          text_from=(PACKET,
                     "## Block 19 — Appendix A: the red team ledger, excerpted",
                     "## Block 20 — Appendix B: the independent review of the Amendment A4 clause, excerpted"),
+         first_line=("# Gate B review of the fitted linear read (2026-09-20) — rulings on "
+                     "RT-70 to RT-93 (filed as RT-52 to RT-75 in the review file)"),
+         editorial=[LEDGER_EXCERPT_1, LEDGER_EXCERPT_2,
+                    LEDGER_EXCERPT_3, LEDGER_EXCERPT_4],
          note=("excerpted from `%s` (%s characters in full), which records every "
                "adversarial pass the program has run since 2026-08-04 and the ruling on "
                "every finding. Reproduced here: two review sections whole and three "
@@ -192,22 +224,46 @@ RECORDS = [
          text_from=(PACKET,
                     "## Block 20 — Appendix B: the independent review of the Amendment A4 clause, excerpted",
                     "## Block 21 — Appendix C: the compute ledger, excerpted"),
+         first_line=("# Red-team pass on the Amendment A4 clause — §5 of the "
+                     "control-clause proposal, read as registerable text"),
+         editorial=["*The summary-table row for this finding, as that review's summary has it:*",
+                    "*The finding in full:*"],
          note=("excerpted from `%s` (%s characters in full), twenty-two findings from a "
                "separate isolated session on 2026-09-19 on a later draft clause. "
                "Reproduced here: that review's front matter, its summary row for the one "
                "finding the text under review cites (its seventeenth, labelled F17 there) "
                "and that finding in full. The other twenty-one findings are left out.")),
     dict(key="compute-ledger", kind="excerpt",
-         title="the compute ledger - its rules, its baseline and the two rows the text cites",
+         title=("the compute ledger - its rules, its baseline, the rows the text cites "
+                "and the rows that correct them"),
          source=E + "compute-ledger.md",
          text_from=(PACKET,
                     "## Block 21 — Appendix C: the compute ledger, excerpted"),
+         first_line="# MVM-0a compute ledger",
+         editorial=["| … | … | *(the rows dated 2026-08-07 to 2026-09-18 are not "
+                    "reproduced in this excerpt)* | … | … | … | … | … |"],
          note=("excerpted from `%s` (%s characters in full), which carries a row for every "
                "rented-machine session since 2026-08-07. Reproduced here: the ledger's "
-               "opening, its rules, its reconciliation baseline, its column headings and "
-               "the two rows dated 2026-09-19 and 2026-09-20 in full. The other rows are "
-               "left out, so the two cited rows can be checked but the running total "
-               "cannot be re-added from the beginning.")),
+               "opening, its rules, its reconciliation baseline, its column headings, five "
+               "rows in full and one dated note. The five rows are the two dated 2026-09-19 "
+               "and 2026-09-20 that the text under review cites for its money figures, the "
+               "two follow-up runs of 2026-09-20 that carry the $1.90 those figures are "
+               "stale by, and the measurement rehearsal of 2026-09-21, whose running-total "
+               "column is where the ledger states the corrected figures. The dated note is "
+               "the ledger's launch-outcome note of 2026-09-20 on those two follow-up runs. "
+               "The other rows are left out, so the cited rows and the correcting rows can "
+               "both be checked but the running total cannot be re-added from the "
+               "beginning."),
+         parts=[("its framing, the ledger's opening, its rules, its reconciliation "
+                 "baseline and the first of the two rows the text under review cites",
+                 None),
+                ("the second row the text cites, and the two follow-up runs of "
+                 "2026-09-20 that carry the $1.90 correcting it",
+                 "| 2026-09-20 | checkpoint recovery (UNREGISTERED) |"),
+                ("the measurement rehearsal of 2026-09-21, whose running total states "
+                 "the corrected figures, and the ledger's dated note on the two "
+                 "follow-up runs",
+                 "| 2026-09-21 | measurement rehearsal ")]),
     dict(key="separation-clause", kind="whole",
          title=("OPTIONAL BACKGROUND, not cited by the text under review - what the "
                 "separation clause requires"),
@@ -261,10 +317,14 @@ CHATGPT_FILES = [
     ("16-ledger-part1", "The red team ledger, part 1 of 3", [("ledger", 0)]),
     ("17-ledger-part2", "The red team ledger, part 2 of 3", [("ledger", 1)]),
     ("18-ledger-part3", "The red team ledger, part 3 of 3", [("ledger", 2)]),
-    ("19-a4-review-and-compute-ledger",
-     "The A4 review finding, and the compute ledger",
-     [("a4-review", None), ("compute-ledger", None)]),
-    ("20-optional-background", "Optional background, and the end of the packet",
+    ("19-a4-review-and-compute-ledger-part1",
+     "The A4 review finding, and the compute ledger, part 1 of 3",
+     [("a4-review", None), ("compute-ledger", 0)]),
+    ("20-compute-ledger-part2", "The compute ledger, part 2 of 3",
+     [("compute-ledger", 1)]),
+    ("21-compute-ledger-part3", "The compute ledger, part 3 of 3",
+     [("compute-ledger", 2)]),
+    ("22-optional-background", "Optional background, and the end of the packet",
      [("separation-clause", None)]),
 ]
 
@@ -427,7 +487,7 @@ CHATGPT_LASTFILE = (
     "the orientation, the closure rule and the brief in file 1, the text under "
     "review in file 2, the inside reviewer's findings in files 3 to 5, the "
     "registered text in files 6 to 10, and the records the text cites in files "
-    "11 to 19. Answer the brief from file 1 now, in its four parts, labelling "
+    "11 to {last_cited}. Answer the brief from file 1 now, in its four parts, labelling "
     "your findings A1, A2, A3 and so on. If any file was missing or cut short, "
     "name it at the top of your answer.*")
 
@@ -440,6 +500,29 @@ def record_text(rec):
     if "text_from" in rec:
         return section(*rec["text_from"])
     return read(rec["source"]).rstrip("\n")
+
+
+def split_point(text, marker, key):
+    """Where in the record the line the marker names begins.
+
+    The marker is a whole line, or the start of one. The second form is there
+    for the compute ledger, whose rows are single lines thousands of characters
+    long: writing one out here to split on would be unreadable and would break
+    the moment anybody added a word to the row. Either way the marker must
+    match exactly one line, so a split never lands somewhere unintended, and
+    the line it names is never the record's first line.
+    """
+    lines = text.split("\n")
+    hits = [i for i, line in enumerate(lines) if line == marker]
+    if not hits:
+        hits = [i for i, line in enumerate(lines) if line.startswith(marker)]
+    if len(hits) != 1:
+        raise ValueError("split marker {!r} matches {} lines in record {}".format(
+            marker, len(hits), key))
+    if hits[0] == 0:
+        raise ValueError("split marker {!r} is the first line of record {}".format(
+            marker, key))
+    return sum(len(line) + 1 for line in lines[:hits[0]])
 
 
 def record_parts(rec):
@@ -456,11 +539,7 @@ def record_parts(rec):
         if marker is None:
             cuts.append((label, 0))
             continue
-        needle = "\n" + marker + "\n"
-        if text.count(needle) != 1:
-            raise ValueError("split marker {!r} appears {} times in record {}".format(
-                marker, text.count(needle), rec["key"]))
-        cuts.append((label, text.index(needle) + 1))
+        cuts.append((label, split_point(text, marker, rec["key"])))
     out = []
     for i, (label, start) in enumerate(cuts):
         end = cuts[i + 1][1] - 1 if i + 1 < len(cuts) else len(text)
@@ -556,7 +635,8 @@ def build():
             body += [CHATGPT_DELIVERY.format(n=n_files), "", STANDING_START, "",
                      record_list, "", "---", ""]
         elif fi == n_files:
-            body += [wrap(CHATGPT_LASTFILE.format(i=fi, n=n_files, what=what)),
+            body += [wrap(CHATGPT_LASTFILE.format(i=fi, n=n_files, what=what,
+                                                 last_cited=n_files - 1)),
                      "", "---", ""]
         else:
             body += [wrap(CHATGPT_MIDFILE.format(i=fi, n=n_files, what=what)),
@@ -600,8 +680,16 @@ the byte):
 
     {digest}
 
-Each of the {records} records was also checked one at a time against the file
-it came from, so neither packet has quietly lost or reworded anything.
+Each of the {records} records was also checked one at a time, in the way it was
+made. The {whole_n} that reproduce a whole file were compared with that file,
+character for character. The {excerpt_n} that are excerpts are put together by
+hand in the packet, so every line each one reproduces had to be found in the
+file it names, character for character and in that file's own order; the
+paragraphs the packet writes around an excerpt to introduce it are its own words
+and are compared with nothing. The one remaining record is the brief, which is
+protocol text carried over unchanged from the earlier packet, and whose amended
+sentence is the one checked word for word against the protocol above. So neither
+packet has quietly lost or reworded anything a reviewer will read as quoted.
 
 ## Session 1 - Gemini, one document
 
@@ -702,7 +790,16 @@ BUILT_FROM = """\
   "unlikely".
 - The earlier closure-text trim, commit `628686f` on branch
   `worktree-agent-a53dc49a926581fe8`, is an ancestor of the commit above and is
-  carried through it."""
+  carried through it.
+- Rebuilt 2026-09-22 after the correction that moves the programme spend to
+  about $227.60 of $400. Two things changed in the material: the closure text
+  now carries a dated note beside its money paragraph saying the programme
+  figure it states is stale by $1.90, and the compute-ledger excerpt now
+  reproduces the rows that carry that $1.90 and the ledger's own note on them,
+  so a reviewer can check the corrected figures against the record rather than
+  taking them on trust. The rebuild also picked up source records that had
+  grown since the packets were last frozen, which is why more files than those
+  two changed."""
 
 
 def build_index(outputs):
@@ -716,6 +813,8 @@ def build_index(outputs):
         n=len(cgs), gem=os.path.basename(gem),
         gem_kb=int(round(kb(gem))), max_kb=int(round(max(kb(p) for p in cgs))),
         chars=commas(len(material)), records=len(RECORDS),
+        whole_n=sum(1 for r in RECORDS if r["kind"] == "whole"),
+        excerpt_n=sum(1 for r in RECORDS if r["kind"] == "excerpt"),
         digest=hashlib.sha256(material.encode()).hexdigest())
     rows = ["| order | file | size | what is in it |", "|---|---|---|---|",
             "| Gemini session | `{}` | {:.0f} KB | the whole packet in one document |".format(
@@ -786,6 +885,106 @@ def flat(text):
     return " ".join(text.split())
 
 
+def unquoted(line, prefix):
+    """The line as it has to read in the source file.
+
+    One excerpt reproduces its source as a block quote, so the "> " the packet
+    adds comes back off before comparing and nothing else is touched. A line
+    that does not carry the prefix cannot have come from the source, and comes
+    back as None so the check reports it rather than passing it.
+    """
+    if prefix is None:
+        return line
+    if line == prefix.rstrip():
+        return ""
+    if line.startswith(prefix):
+        return line[len(prefix):]
+    return None
+
+
+def excerpt_against_source(rec, text):
+    """One excerpt record against the file it names as its source.
+
+    An excerpt is assembled by hand in the packet document, so reading its text
+    back out of that document compares the hand copy with itself and a copied
+    row that has since drifted from the ledger goes through clean. This opens
+    the file the record names instead and requires every line the excerpt
+    reproduces to be in it character for character, and those lines to run
+    strictly forward through it, so nothing is reordered, repeated or reworded.
+
+    What is not a reproduced line is declared on the record, not inferred from
+    whether it happens to match: the paragraphs introducing the excerpt, which
+    are everything above `first_line`, and the labels in `editorial`, which the
+    packet writes in among the reproduced lines. A line that drifts therefore
+    cannot excuse itself by failing to match. Blank lines are counted as
+    neither, since a blank line reproduces nothing.
+
+    Returns (reproduced lines, the packet's own lines, problems).
+    """
+    lines = text.split("\n")
+    hits = [i for i, line in enumerate(lines) if line == rec["first_line"]]
+    if len(hits) != 1:
+        return 0, 0, ["the declared first reproduced line matches {} lines of the "
+                      "record, so the excerpt cannot be told from its framing: {!r}"
+                      .format(len(hits), rec["first_line"][:60])]
+    editorial = list(rec.get("editorial", ()))
+    body = lines[hits[0]:]
+    problems = ["the declared packet label is no longer in the record: {!r}".format(
+        label[:60]) for label in editorial if label not in lines]
+
+    where = {}
+    for i, line in enumerate(lines_of(rec["source"])):
+        where.setdefault(line, []).append(i)
+
+    at = -1
+    reproduced = 0
+    own = len([line for line in lines[:hits[0]] if line.strip() != ""])
+    for n, line in enumerate(body, hits[0] + 1):
+        if line.strip() == "":
+            continue
+        if line in editorial:
+            own += 1
+            continue
+        want = unquoted(line, rec.get("quoted_with"))
+        spots = where.get(want, []) if want is not None else []
+        nxt = spots[bisect.bisect_right(spots, at):]
+        if not nxt:
+            problems.append("line {} of the record is {} in the source file: {!r}"
+                            .format(n, "out of order" if spots else "nowhere",
+                                    line[:70]))
+        else:
+            at = nxt[0]
+            reproduced += 1
+    return reproduced, own, problems
+
+
+def excerpts(rec_texts):
+    """Every excerpt record against the file it names, line by line."""
+    print("")
+    print("The excerpt records, against the file each one names. Their text is")
+    print("assembled by hand in the packet document, so reading it back out of that")
+    print("document would only compare the hand copy with itself:")
+    ok = True
+    for i, r in enumerate(RECORDS, 1):
+        if r["kind"] != "excerpt":
+            continue
+        reproduced, own, problems = excerpt_against_source(r, rec_texts[i])
+        ok = ok and not problems
+        print("")
+        print("{:<3} {}".format(i, r["title"]))
+        if problems:
+            print("     DOES NOT MATCH `{}`:".format(r["source"]))
+            for p in problems:
+                print("       " + p)
+        else:
+            print("     {} lines reproduced, every one of them in `{}`".format(
+                reproduced, r["source"]))
+            print("     character for character and in that file's own order; {} lines "
+                  "the packet".format(own))
+            print("     writes itself, which reproduce nothing and are not compared.")
+    return ok
+
+
 def verify(outputs):
     ok = True
     gem = [p for p in outputs if p.endswith("-gemini.md")][0]
@@ -810,17 +1009,25 @@ def verify(outputs):
         ok = False
     print("")
     print("{:<3} {:<58} {:>9} {:>6}  {}".format("#", "record", "chars", "parts", "check"))
+    in_packets = {}
     for i, r in enumerate(RECORDS, 1):
         want = record_text(r)
         g = "\n".join(v for k, v in sorted(g_rec.items()) if k[0] == i)
         c = "\n".join(v for k, v in sorted(c_rec.items()) if k[0] == i)
+        in_packets[i] = g
         hw, hg, hc = (hashlib.sha256(x.encode()).hexdigest()[:10] for x in (want, g, c))
         good = hw == hg == hc
         ok = ok and good
+        # An excerpt's text is taken from the packet document, not from the file
+        # the record names, so this row cannot claim the source for one. The
+        # excerpt block below is what compares those against their sources.
         print("{:<3} {:<58} {:>9} {:>6}  {}".format(
             i, r["title"][:58], commas(len(want)), len(record_parts(r)),
-            "identical in both, matches source" if good
+            ("identical in both, matches the packet document"
+             if r["kind"] == "excerpt" else "identical in both, matches source") if good
             else "DIFFERS source {} gemini {} chatgpt {}".format(hw, hg, hc)))
+
+    ok = excerpts(in_packets) and ok
 
     all_g = "\n".join(v for _k, v in sorted(g_rec.items()))
     all_c = "\n".join(v for _k, v in sorted(c_rec.items()))
@@ -849,11 +1056,124 @@ def sizes(outputs):
         print("{:<66} {:>9}".format(os.path.basename(p), commas(len(outputs[p].encode()))))
 
 
+def on_disk(outputs):
+    """The packet files as they are committed, plus what is missing or spare.
+
+    Returns (files, missing, spare): the paths that were read and their text,
+    the paths this script would write that are not there, and the files sitting
+    in the output directory that this script does not write - which is what an
+    older build leaves behind when a file is renamed.
+    """
+    files, missing = {}, []
+    for path in sorted(outputs):
+        try:
+            files[path] = read(path)
+        except (IOError, OSError):
+            missing.append(path)
+    folder = os.path.join(ROOT, OUT)
+    present = set(os.listdir(folder)) if os.path.isdir(folder) else set()
+    spare = sorted(present - set(os.path.basename(p) for p in outputs))
+    return files, missing, spare
+
+
+def against_disk(outputs):
+    """Compare the committed packet files with a fresh build from the sources.
+
+    This is the check that catches a stale packet: a source record that changed
+    after the packets were last built makes the fresh build differ from what is
+    committed, and that difference is reported here by name.
+    """
+    files, missing, spare = on_disk(outputs)
+    ok = True
+    print("The committed packet files, against a build made from today's sources:")
+    print("")
+    for path in sorted(outputs):
+        name = os.path.basename(path)
+        if path in missing:
+            print("  {:<62} NOT ON DISK".format(name))
+            ok = False
+        elif files[path] == outputs[path]:
+            print("  {:<62} up to date".format(name))
+        else:
+            same_length = len(files[path]) == len(outputs[path])
+            print("  {:<62} STALE - committed {} characters, rebuild {}{}".format(
+                name, commas(len(files[path])), commas(len(outputs[path])),
+                ", same length but different text" if same_length else ""))
+            ok = False
+    for name in spare:
+        print("  {:<62} NOT BUILT BY THIS SCRIPT - left over from an older build?"
+              .format(name))
+        ok = False
+    print("")
+    print("  every committed packet file matches a fresh build: {}".format(
+        "YES" if ok else "NO - run this script without --verify to rebuild them"))
+    return ok, files, missing
+
+
+WHAT_IS_CHECKED = """\
+What this check covers, and what it does not.
+
+It does check: that every packet file on disk is what this script builds from
+today's source records, so a record that changed after the packets were last
+built is reported as stale, by file name; that no packet file is missing and
+none is left over from an older build; that the two packets carry the same
+records in the same order, shown by a matching sha256 checksum; and that the
+brief's amended sentence is word for word the protocol's.
+
+It checks the records themselves in two ways, because they are made in two ways.
+A record that reproduces a whole file is compared with that file, character for
+character. An excerpt is put together by hand in the packet document, so every
+line it reproduces has to be in the file the record names, character for
+character, and those lines have to run strictly forward through that file -
+nothing reordered, nothing repeated, nothing quietly reworded. The line counts
+beside each excerpt above are what that came to.
+
+It does not compare: the words the packet writes around an excerpt - the
+paragraphs introducing it and the labels saying which rows are left out - which
+reproduce nothing and so have no source to be compared with; and the brief,
+whose source is the packet document that already held it, so comparing the two
+shows only that it was carried over unchanged, its one amended sentence being
+checked against the protocol separately. Nor can it see what an excerpt leaves
+out: it tests every line that is on the page, not whether a line that should
+have been kept is missing.
+
+It does not check whether the records themselves are true or current, whether
+an excerpt was cut in a way that flatters the text under review, or whether
+anything outside the packets agrees with them. A clean result here means the
+packets match the source records as those records stand today. It does not mean
+the source records are right."""
+
+
 if __name__ == "__main__":
     built = build()
-    if "--verify" not in sys.argv:
+    checking_only = "--verify" in sys.argv
+
+    if not checking_only:
         for path in write(built):
             print("wrote " + path)
+        sizes(built)
+        print("")
+        print("Checking what was just written.")
+        print("")
+        good = verify(built)
+        print("")
+        print(WHAT_IS_CHECKED)
+        sys.exit(0 if good else 1)
+
     sizes(built)
     print("")
-    sys.exit(0 if verify(built) else 1)
+    fresh_ok, files, missing = against_disk(built)
+    print("")
+    if missing:
+        print("Stopping here. The record-by-record check needs every packet file on")
+        print("disk, and {} of them {} missing, so it cannot be run. Nothing above".format(
+            len(missing), "is" if len(missing) == 1 else "are"))
+        print("should be read as saying the committed packets are current.")
+        sys.exit(1)
+    print("Now the records inside the committed files - read from disk, not from the")
+    print("build above - each against the file it was taken from:")
+    print("")
+    good = verify(files) and fresh_ok
+    print("")
+    print(WHAT_IS_CHECKED)
+    sys.exit(0 if good else 1)

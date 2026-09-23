@@ -140,7 +140,7 @@ full length given and the omission stated where the excerpt appears.
 | 19 | the successor experiment's design note | complete | `docs/competing-mechanisms-2026-09-20.md` |
 | 20 | the red team ledger - every row and range the text under review cites | excerpt | `experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md` |
 | 21 | the independent review of a later draft clause - the finding the text cites | excerpt | `experiments/06-mvm-0a-constructed-self-index/red-team-a4.md` |
-| 22 | the compute ledger - its rules, its baseline and the two rows the text cites | excerpt | `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md` |
+| 22 | the compute ledger - its rules, its baseline, the rows the text cites and the rows that correct them | excerpt | `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md` |
 | 23 | OPTIONAL BACKGROUND, not cited by the text under review - what the separation clause requires | complete | `experiments/06-mvm-0a-constructed-self-index/separation-clause-requirements.md` |
 
 
@@ -148,7 +148,7 @@ full length given and the omission stated where the excerpt appears.
 
 ===== RECORD 1 of 23 - the closure rule this text is being reviewed under - EXCERPT: docs/outside-review-protocol.md =====
 
-*Source note: excerpted from `docs/outside-review-protocol.md` (20,405
+*Source note: excerpted from `docs/outside-review-protocol.md` (46,763
 characters in full), which also sets out the three review gates, the two tiers
 and the measurement rehearsal. Only the closure rule is reproduced, because it
 is the only part of that file the text under review cites.*
@@ -480,6 +480,33 @@ The relational-encoding route at the other agent's revision value, untested.
 **Money.** Amendment A3 closed at ~$44.3 of its $100 hard stop, and the
 programme at ~$225.7 of its $400 ceiling (`compute-ledger.md`, the running
 totals on the rows dated 2026-09-19 and 2026-09-20).
+
+> **Note added 2026-09-22 by a later Claude Code session — not John's ruling,
+> and not part of the closure text, which is left unedited above.** The money
+> paragraph is stale by $1.90 and should be read with this beside it before the
+> tier 2 pass. The two follow-up reading runs of 2026-09-20 — the matched
+> control and the standardised refit — were described in several places as
+> costing nothing, because neither produced a result: both machines were
+> created, both were refused by the instrument's own reproducibility check, and
+> both were deleted inside half an hour. They still cost money. The account
+> balance moved from $79.7159 to $77.8119, a measured $1.9040, and the compute
+> ledger carries the correction on those two rows and in its own dated note of
+> 2026-09-21.
+>
+> **Derived from the ledger's rows rather than from any summary sentence:**
+> Amendment A3's line now stands at about **$46.2 of its $100 stop** and the
+> programme at about **$227.6 of its $400 ceiling**, leaving about $53.8 and
+> about $172.40. The first figure above is still right about the moment of
+> closure — the follow-up runs were created after the amendment closed — but it
+> is no longer what the ledger's A3 line reads, because the ledger counts those
+> runs against the stop. The second is a present-tense claim about the programme
+> and is simply out of date.
+>
+> The figures are not corrected in place because this repository's practice with
+> a superseded claim is a dated note that leaves the text standing, a practice
+> that rests on precedent rather than on any ruling of John's. Source:
+> `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`, not edited
+> by this note.
 
 ===== END OF RECORD 3 =====
 
@@ -2268,6 +2295,101 @@ belonged to a contrast MVM-0a cannot run (§Scope).*
   on-policy fill.]*
 - **Held-out evaluation episodes** generated from the same grammar but
   disjoint in content, never touched during training or model selection.
+
+> **ANNOTATION, 2026-09-21 — NOT PART OF THE REGISTRATION. Added by a later
+> session. The registered curriculum bullet above — the one that registers N = 4
+> agents and 8 turns per episode — is unchanged, word for word, and nothing
+> below alters, qualifies or extends any registered claim. This note does one
+> thing: it names the committed record that holds the detection figure that
+> bullet quotes, which the bullet does not name. It is placed after the list of
+> design elements rather than between two of its items, so that the registered
+> list is not broken in two.**
+>
+> The registered sentence makes two claims and gives one pointer, and the
+> pointer belongs to the second of them. The pointer,
+> `experiments/06-mvm-0a-constructed-self-index/batteries/batteries_meta.json`,
+> is correct for the clause it sits in: that file holds the four chance floors
+> the sentence lists, to the rounding the sentence uses — 0.125 for the two task
+> batteries `T_sr` and `T_si`, 0.041666… for the cross-turn state control
+> `T_state`, and 0.100 for the floor check `T_syntax`. Those are the four keys
+> exactly as the registered sentence writes them, and this note does not rename
+> them. What each one is, the registration itself says, in its battery table
+> further down this file: `T_sr` is "self-relevant binding", `T_si` is
+> "self-irrelevant integration" — "matched-difficulty integration over episode
+> content with **no self-reference**" — `T_state` is the "cross-turn state,
+> ownership-free" control that replaced `T_syntax`, and `T_syntax` is "kept as a
+> floor check only". The record holds no detection figure of any kind.
+>
+> The detection figure — the area under the cue detector's curve, 0.5008, with
+> its 95% range — comes from a different committed record, one directory up:
+> `experiments/06-mvm-0a-constructed-self-index/cue_detector_gate.json`. Its
+> first run, "(i) curriculum text", 4,000 episodes, seed 20260804, records a
+> clean area under the curve of **0.5008** with a 95% range of **[0.4773,
+> 0.5242]**, inside the pre-set equivalence band of 0.45 to 0.55, with its
+> planted-leak control firing at 0.8627 and the gate marked **PASS**. The
+> registered text's "[0.477, 0.524]" is that range rounded to three places.
+>
+> **The registered value is unchanged and is correct.** Nothing here corrects
+> anything. What was missing was only the file name, which the closure rule in
+> `docs/outside-review-protocol.md` asks for: every sentence in registered text
+> that says verified, measured, calibrated or attacked cites the committed
+> record by file name, and "certified" is a word of that family.
+>
+> **The authority for this note, and what that authority does not cover.** On
+> 2026-09-21, in the session that ordered this note, John did not say or write a
+> sentence that could be quoted. He was shown a question with three options under
+> it, each option carrying the consequence of choosing it, and he selected one.
+> The wording of the question and of all three options was that session's, not
+> his; what is his is the selection. The house form for recording a ruling in
+> this programme quotes the words John used — as at item 22 of the ruling on
+> review verification and staged spending
+> (`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, on the
+> main line). This decision cannot take that form, because there were no words of
+> his to quote. What stands in their place is the question he was shown and the
+> option he picked out of it, and both are given here in full. The question, word
+> for word as it was put to him:
+>
+> > Registered text states a measured value without naming the record that holds
+> > it. The value is right and the record is committed — only the pointer is
+> > missing. How should it be fixed?
+>
+> The option he selected, word for word, its short label and the description
+> under it:
+>
+> > **Dated note on the registered text** — Add the missing pointer as a dated
+> > annotation. Claim unchanged, nothing rewritten. Risk: 'annotation that
+> > changes no claim' becomes a judgement each writer makes about their own text
+> > — the shape of every drift this program has recorded.
+>
+> The risk in that last sentence is kept here unedited, and not paraphrased,
+> because it was on the page in front of him: he took this option having been
+> shown the case against it, which makes the choice a better informed one than a
+> bare yes, and a reader should be able to see exactly what he was shown.
+>
+> What he turned down is part of what he decided, so the two options he did not
+> take are set down here as well, also word for word:
+>
+> > **Registered amendment** — Treat any change to registered text as an
+> > amendment, even one adding a pointer. Strictest, keeps registered text
+> > genuinely fixed. Cost: amendments become cheap and routine, which is the one
+> > thing they must not be.
+>
+> > **Leave it, record the defect** — Change nothing in the registered text. File
+> > the defect with the correct pointer so any reader can find the record.
+> > Registered text stays exactly as registered.
+>
+> **What he authorised is the act — a dated note naming a committed record, where
+> no registered claim changes. It does not authorise restating a registered label
+> in other words, describing registered content, or annotating registered text
+> for any other purpose, and it does not settle any particular wording.** Not one
+> word of this note is John's drafting; the wording is this session's, and his to
+> overturn. One limit on the record of the ruling itself, stated plainly because
+> it weakens it: the ruling is not yet carried in any filed ruling under
+> `docs/rulings/`, and what is filed there is about annotating rulings, not
+> registered text. Until it is filed, this paragraph is the whole record of it.
+>
+> This note is an addition to the file, not to the registration; the registration
+> remains exactly the text above it.
 
 ## Task batteries — and an honest problem with reusing Experiment 1's
 
@@ -4723,6 +4845,37 @@ rules. What changes is that the proposal reaches him.
 - Owed: the protocol amendment text (item 6); the successor proposal v1
   (Claude Code, week 39); the A3 closure tier 1 packet (Cowork, week 39).
 
+## Annotated 2026-09-21: where the weeks named above now point
+
+*This ruling stands exactly as recorded and none of its words is changed. The
+annotation says only where its calendar weeks now point, the way the ruling of
+2026-09-21 was annotated, so that a reader who finds a week here is not left
+hunting for a grid that no longer exists.*
+
+John ruled on 2026-09-21 that work is measured in task time rather than calendar
+time — "We are not working on a delayed calendar. We are working on a finish
+every task as quickly as possible mode." The week-by-week table in section 4 of
+`docs/december-result-roadmap-2026-09-20.md` became an ordered chain of what must
+finish before what, so the weeks above read as follows. No condition, amount,
+owner or outcome changes.
+
+- **Item 5**, "Arm C is conditional on the week 40 rehearsal showing its degree
+  is known by construction": the measurement rehearsal is step 2 of that chain.
+  The condition is unchanged — the entangled-by-construction arm is built only
+  if the rehearsal shows its degree is actually known, and the two-arm fallback
+  is still accepted in advance, whenever the rehearsal runs.
+- **The last line above**, which records the successor proposal and the A3
+  closure first-tier packet as owed in week 39: both sit at the head of that
+  chain (step 1), which is to say they wait on nothing and start as soon as
+  someone can start them.
+
+Two later notes, so the reader does not have to look for them. Item 4's seed
+fallback has since been replaced outright — not merely restated — by "halt, not
+trim", in item 13 of
+`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`. And the
+registration commit target of 2026-10-11 in item 1 was pacing, so it goes with
+the calendar; the kill dates in items 1 and 7 are commitments and are unchanged.
+
 ===== END OF RECORD 17 =====
 
 ===== RECORD 18 of 23 - the ruling reconciling the blind arm - COMPLETE FILE: docs/rulings/2026-09-21-followup-runs-and-blind-arm.md =====
@@ -5191,7 +5344,7 @@ rows; and move the blind-arm reconciliation somewhere a reviewer may read it.
 ===== RECORD 21 of 23 - the independent review of a later draft clause - the finding the text cites - EXCERPT: experiments/06-mvm-0a-constructed-self-index/red-team-a4.md =====
 
 *Source note: excerpted from `experiments/06-mvm-0a-constructed-self-
-index/red-team-a4.md` (47,208 characters in full), twenty-two findings from a
+index/red-team-a4.md` (49,063 characters in full), twenty-two findings from a
 separate isolated session on 2026-09-19 on a later draft clause. Reproduced
 here: that review's front matter, its summary row for the one finding the text
 under review cites (its seventeenth, labelled F17 there) and that finding in
@@ -5296,28 +5449,51 @@ reported, or (f) should say what it actually binds.
 
 ===== END OF RECORD 21 =====
 
-===== RECORD 22 of 23 - the compute ledger - its rules, its baseline and the two rows the text cites - EXCERPT: experiments/06-mvm-0a-constructed-self-index/compute-ledger.md =====
+===== RECORD 22 of 23 - the compute ledger - its rules, its baseline, the rows the text cites and the rows that correct them - EXCERPT: experiments/06-mvm-0a-constructed-self-index/compute-ledger.md =====
 
 *Source note: excerpted from `experiments/06-mvm-0a-constructed-self-
-index/compute-ledger.md` (48,352 characters in full), which carries a row for
+index/compute-ledger.md` (86,441 characters in full), which carries a row for
 every rented-machine session since 2026-08-07. Reproduced here: the ledger's
-opening, its rules, its reconciliation baseline, its column headings and the
-two rows dated 2026-09-19 and 2026-09-20 in full. The other rows are left out,
-so the two cited rows can be checked but the running total cannot be re-added
-from the beginning.*
+opening, its rules, its reconciliation baseline, its column headings, five
+rows in full and one dated note. The five rows are the two dated 2026-09-19
+and 2026-09-20 that the text under review cites for its money figures, the two
+follow-up runs of 2026-09-20 that carry the $1.90 those figures are stale by,
+and the measurement rehearsal of 2026-09-21, whose running-total column is
+where the ledger states the corrected figures. The dated note is the ledger's
+launch-outcome note of 2026-09-20 on those two follow-up runs. The other rows
+are left out, so the cited rows and the correcting rows can both be checked
+but the running total cannot be re-added from the beginning.*
 
 **This is an excerpt, not a whole file.** The source is
-`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`, about 49,000
-characters: a row for every rented-machine session the programme has run since
-2026-08-07. The text under review cites it once, for two money figures — that
-Amendment A3 closed at about $44.3 of its $100 hard stop and the programme at
-about $225.7 of its $400 ceiling — and names the rows those figures sit on. What
-follows is the ledger's opening, its rules, its reconciliation baseline (which
-is where the $200 figure in the opening paragraph becomes the $400 one the text
-cites), its column headings, and the two rows dated 2026-09-19 and 2026-09-20 in
-full. The other rows are not reproduced, so you can check that the two cited
-rows say what the sentence says but cannot re-add the running total from the
-beginning. Quoted unedited.
+`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md` — a row for
+every rented-machine session the programme has run since 2026-08-07, and its
+full length is given in the source note above this record. The text under review
+cites it once, for two money figures — that Amendment A3 closed at about $44.3
+of its $100 hard stop and the programme at about $225.7 of its $400 ceiling —
+and names the rows those figures sit on.
+
+**The second of those two figures has since been overtaken, and this excerpt is
+where you can check that.** A note added to the text under review on 2026-09-22,
+which you will find beside the money paragraph there, says the programme figure
+is stale by $1.90 and gives the corrected pair: Amendment A3 at about $46.2 of
+its $100 stop and the programme at about $227.6 of its $400 ceiling. The $1.90
+is two machines rented on 2026-09-20 for the two follow-up reading runs, both
+refused by the instrument's own check that a rented machine reproduces a reading
+already on the record, and both deleted inside half an hour. The rows that carry
+that correction are therefore reproduced here as well, so you can check the
+corrected pair for yourself and not only the pair the sentence states.
+
+What follows is the ledger's opening, its rules, its reconciliation baseline
+(which is where the $200 figure in the opening paragraph becomes the $400 one
+the text cites), its column headings, five rows in full, and one dated note.
+The five rows are: the two the sentence cites, dated 2026-09-19 and 2026-09-20;
+the two follow-up runs of 2026-09-20, which carry the $1.90; and the measurement
+rehearsal of 2026-09-21, whose running-total column is where the ledger itself
+states the corrected pair. The dated note is the ledger's launch-outcome note of
+2026-09-20, which records what the two follow-up runs did, why the instrument
+refused them, and what they cost. The rows dated 2026-08-07 to 2026-09-18 are
+not reproduced, so you can check what the cited rows and the correcting rows say
+but cannot re-add the running total from the beginning. Quoted unedited.
 
 # MVM-0a compute ledger
 
@@ -5380,6 +5556,91 @@ remainder ≈ **$275.5**.
 | … | … | *(the rows dated 2026-08-07 to 2026-09-18 are not reproduced in this excerpt)* | … | … | … | … | … |
 | 2026-09-19 | control-learnability pilot (UNREGISTERED) | **LAUNCHED 2026-09-19. John's go, quoted verbatim per C2(b): "Go. Launch the control-learnability pilot as staged: one 30M register-less run, seed 0, --ctl-weight 2.0 --ctl-frac 0.5, through launch_ctl_pilot.sh, ~$10.2. Weight and batch-split stay as you set them. Confirm zero pods and EU-RO-1 stock right before creation, and keep the flag out of launch_a3.sh."** Given in direct reply to Claude staging the run, naming it, stating the estimate, and stating that nothing was launched pending a fresh verbatim line. **Both final checks done immediately before creation and recorded here: zero pods (`runpodctl pod list` returned an empty list), and RTX 5090 SECURE stock present in the registered venue at $0.99/hr — the registered rate, not an elevated one.** The flag was kept out of `launch_a3.sh`, which is untouched registered text. **Pod `kdvdsomkf3u6va` created 2026-09-19 ~20:14Z at $0.99/hr (confirmed from the pod record, not assumed); LAUNCH CLEAN END TO END** — remote pre-flight passed all three self-tests **on the pod** before a training step (`curriculum_a3`, `encoding_a3`, `train_a3`, the last exercising the new flag's code path on the rented machine), training confirmed by the `[t]rain_a3.py` aliveness check rather than by the launcher's exit status, watchdog spawned under `caffeinate` (pid 54548) and already fetching. **FIRST PRODUCTION ARMING OF THE POD-SIDE REAPER, and it VERIFIED:** the dedicated reaper key reached pod management as the pod itself, and a laptop-independent +24h deadline reaper is running on the machine. That backstop was built after the third idle-billing occurrence and had never actually run in production; the laptop watchdog remains the primary reap and **the lid must still be open**, because `caffeinate` blocks idle sleep and not lid-close. One 30M **register-less** run, **seed 0**, with the unregistered control-learnability flag: the control battery gets a loss term of its own (`--ctl-weight 2.0 --ctl-frac 0.5`) instead of about a third of a shared one. **Seed 0 on purpose**, so the comparison against the existing A3 pilot is matched on initialization and data order and the loss is the only thing that differs. **The question:** does the control learn when properly supervised, or is supervision not the binding constraint? Three seeds have now failed it identically (0.2877, 0.3057, 0.3195, all under the 0.3227 reached by a solver that cannot read the name the question supplies), and the under-supervision reading has never been separated from the design-defeats-it reading. **Outcome cells pre-stated by John BEFORE the code existed** (`control-learnability-pilot.md`, committed `7eee3c5` ahead of the implementation): control intact **≥ 0.60 LEARNED**; **0.3227 to 0.60 PARTIAL**; **≤ 0.3227 DID NOT LEARN**, and option D or closing A3 is what is left. Secondary cells, reported with it and never instead of it: the primary battery must still learn (intact ≥ 0.50) and must still collapse under its own lesion, or the run is reported as a failed intervention and says nothing about the control. **Recipe identical to the 2026-09-15 A3 pilot** and unchanged by the flag: 585,544,960 tokens, 55,116 steps, batch 128, act-weight 1.0, eval every 500 at n=100 for trajectory only. **No grammar change** — the grammar, tokenizer, frozen batteries, rendering, ceilings and attack sweep are untouched; only the apportioning of the loss across queries the episode already carries moves. **Nothing registered.** No registered verdict is read from this run and John's threshold lock is not touched. The loss change (`ee7fc91`) defaults to OFF and the self-test proves the off path is bit-identical to the pre-flag pooled term rather than asserting it. **Launcher: `src/launch_ctl_pilot.sh`, a separate unregistered file.** `launch_a3.sh` is registered text and has no hook for an extra training argument, so it was NOT edited — the repo's own precedent (launch_a3.sh was split from launch_pilot_a1.sh for exactly this reason). Derived verbatim; the diff is the two flags, a distinct output name that cannot overwrite the existing pilot, and a refusal to launch at ctl-weight zero. **Dry run clean**; all three module self-tests pass locally and the remote pre-flight runs them on the pod and deletes it rather than billing a run on a truncated push. **PRE-LAUNCH CHECKS — two done, two outstanding.** DONE: **zero pods confirmed** at staging time; and the **Mac's sleep override is already back ON** (`SleepDisabled 1`, measured at staging), so the reversion recorded in the annotation below has since been undone by somebody — but the laptop watchdog is still the only reap that has ever worked in production, idle billing has cost about $10.30 across four occurrences, and **the lid must be open** regardless of the setting, because `caffeinate` blocks idle sleep and not lid-close. OUTSTANDING: (ii) confirm the balance covers the estimate plus $10 (about $23) by a route other than the stored key, which returned HTTP 403 during the last wave; (iii) confirm 5090 secure stock in EU-RO-1 at launch time. **Re-confirm zero pods immediately before creating one**, since the staging check ages. **Volume `x9f8pkn58t` (`mvm-models-ro`, EU-RO-1) is the right one and is untouched** — the volume deleted on 2026-09-19 was the old `mvm-models` (`8xeftvclmv`), see the annotation below. | RTX 5090 SECURE EU-RO-1 $0.99/hr, volume `x9f8pkn58t` | **est 9.87h training / ~10.2h pod**, computed from the pilot's **measured 0.645 s/step** × 55,116 steps; step count and token budget are unchanged because the grammar is unchanged. The one thing that could move the pace is that control questions render at a slightly different length from state and syntax ones, so padded batches may differ by a few percent — **MEASURED PACE, step 500: 325.4s (0.6508 s/step); step 1000: 651.5s (0.6515 s/step).** Against the A3 pilot on the same seed and the same recipe, 324.9s and 646.7s — **within about 0.7%**, so the padding effect I flagged is real and negligible. **Estimate CONFIRMED, not revised: 9.97h training, ~10.3–10.5h pod, $10.17–10.37**, inside the $9–13 band. | **$10.2, band $9–13** | — (nothing spent; not launched) | **⚠ READING NOTE, so the two trajectories are not misread side by side: THE LOSS NUMBERS ARE NOT COMPARABLE ACROSS THE TWO RUNS, BY CONSTRUCTION.** The pilot's query loss is one pooled mean; this run's is `other-term + 2 × control-term`, each normalised over its own subset of rows, so it sits on a different scale arithmetically and not because training is going worse. At step 500 the pilot reads q_loss 1.075 and this run 3.433, which is about what `1.1 + 2 × 1.15` gives. Anyone comparing the raw loss curves without this will conclude the run is diverging when it is not. **Trajectory accuracies at steps 500/1000 (n=100, TRAJECTORY ONLY — not the registered endpoint evaluation, and NOT the number the pre-stated cells are read on):** this run T_act 0.48/0.48, T_other 0.28/0.27, T_state 0.58/0.57, T_syntax 1.00/1.00; the pilot at the same steps T_act 0.54/0.52, T_other 0.24/0.18, T_state 0.66/0.64, T_syntax 1.00/1.00. **Nothing is read from this.** It is 1.8% of training at a sample size whose noise is large, the pilot's own trajectory wandered (T_act 0.54 → 0.52 → 0.50 → 0.64 over the first 2,000 steps), and **the pre-stated cells are read on the control's intact score at the n=800 endpoint evaluation, not here.** Recorded now only because it was measured now, and because a number that is written down before the end cannot be quietly reinterpreted after it. The one thing genuinely worth watching is the state battery, which is the coupling the pre-statement flagged: it drops from about a third of the rows to about a quarter, and it currently sits below the pilot at the same step. **OUTCOME 2026-09-20. THE RUN COMPLETED ITS FULL BUDGET, AND THE FINAL CHECKPOINT WAS NOT FETCHED. Both halves matter.** Pod `kdvdsomkf3u6va` ran 20:14Z → ~06:15Z, about **10.0h ≈ $9.9**, inside the $9–13 estimate, with **ZERO idle billing — the first run in the programme's history with none.** **What we hold locally is step 51,500 of 55,116 (93.4% of budget)**, the last incremental pull, archive-fetched and checksum-VERIFIED at 05:40Z. The trajectory record is complete to step 54,500 (109 evaluations). **The final full-budget checkpoint is on the network volume `x9f8pkn58t`, and it is there by proof rather than by hope:** `train_a3.self_terminate` REFUSES to delete the pod unless the output path is on `/workspace/` and the file exists — a hard gate added after the 2026-08-12 loss — and it runs only after the checkpoint and the DONE sentinel are written. The pod did delete itself, so both conditions were true at that moment. **ROOT CAUSE, and it is new: the trainer's self-terminate RACED the watchdog's fetch interval.** The watchdog polls about every ten minutes and is the thing that performs the final fetch-and-delete on the DONE sentinel; the trainer finished between poll 57 (06:11:12Z) and the next poll, wrote its checkpoint, and deleted its own pod before the watchdog could come back for it. The watchdog's log simply stops at poll 57, with no DONE, no final fetch and no delete — because there was no longer a pod to reach. **Two reaping mechanisms, built a month apart for the same problem, now defeat each other.** Self-termination was added after idle billing cost about $9.50 across three occurrences, and it worked perfectly here — that is exactly why there was no idle charge. The watchdog's final fetch was built for the same reason and now never gets to run on a completing run. **This will recur on every future run that finishes normally**, and it is a process defect, not bad luck. **NOT a balance problem:** the account holds **$79.89** and was never near exhaustion, so this is not a repeat of 2026-08-12. **RECOVERY, not yet done and not yet authorised:** mount `x9f8pkn58t` on the cheapest available pod, copy the file, delete the pod. Minutes, well under a dollar, and it needs John's go like any billable action. Until then the full-budget endpoint reading does not exist. **RECOVERED 2026-09-20 and the row is closed.** The DONE sentinel reads `{"step": 55116, "tokens": 585552384}` — the full registered budget, identical to the pilot and seeds 1 and 2 — and the checkpoint came back intact, md5 `a0c1c73af9c9bd5c60fb0e4e146180eb` verified against the volume before the recovery pod was deleted. **The root cause is confirmed in the trainer's own log rather than reconstructed**: `TRAINING COMPLETE` followed on the very next line by `self-terminate: runpodctl remove pod kdvdsomkf3u6va -> rc=0 pod removed`. **Endpoint on the full checkpoint: the control battery reads 0.3125 (sd 0.0240) — DID NOT LEARN**, with both secondary cells passing. Full reading in `control-learnability-pilot-findings.md`. The partial step-51,500 checkpoint and its reading are kept alongside so the earlier number stays reproducible. **ACTUAL ~$9.9 → A3 cumulative ~$44.2 / $100**, leaving ~$55.8 (was: would become ~$44.5), leaving ~$55.5. **Programme running total: ~$215.7 + $9.9 = ~$225.6 / $400** on the wider envelope (corrected 2026-09-21 on the Gate A money-citation finding, `RT-147`, which found that the programme total the closure text cites was not in this ledger: this row had carried the pre-run figure. The row earlier read "RT-143's companion", which is the finding about the nine measured numbers, not the money one.), and under the $80 account limit. *(Counting an unregistered diagnostic against the A3 hard stop is the conservative reading and is Claude's call; K6 speaks of cumulative actual spend, and a diagnostic run inside experiment 06 is most honestly counted there.)* |
 | 2026-09-20 | checkpoint recovery (UNREGISTERED) | **RECOVERY OF THE CONTROL-LEARNABILITY PILOT'S FINAL CHECKPOINT.** John's go, quoted verbatim per C2(b): **"Go, recover the checkpoint, and kill the watchdog."** The 2026-09-19 pilot completed its full 55,116-step budget but the trainer self-terminated its pod between watchdog polls, so the watchdog never performed its final fetch and the local copy stopped at step 51,500 (93.4%). The full-budget checkpoint is on network volume `x9f8pkn58t` — by proof, not hope: `self_terminate` refuses to delete a pod unless the output is on `/workspace/` and the file exists, and it runs only after the checkpoint and DONE sentinel are written. **What runs:** cheapest available secure pod in EU-RO-1 with that volume mounted (network volumes are secure-cloud only), copy the checkpoint and the DONE sentinel and the final training log, **verify by md5 against the volume before deleting**, delete the pod, confirm zero pods. No training, no GPU work — this is a file copy. **Why it matters beyond tidiness:** the partial checkpoint reads the control battery at 0.3158 (sd 0.0204), which straddles the 0.3227 cell boundary at 0.34 sd below it, so the partial checkpoint cannot score John's pre-stated cell. The full-budget checkpoint is the one the cells are read on. **The watchdog was also killed** on the same instruction — it had been spinning against a deleted pod for over ten hours and holding `caffeinate`, keeping the Mac awake for no reason. | cheapest secure EU-RO-1 (A40 $0.49/hr or RTX 3090 $0.50/hr), volume `x9f8pkn58t` | **~5 min**, A40 secure EU-RO-1 | **<$0.15** | **$0.067** (balance $79.8897 → $79.8228, measured not inferred) | A3 cumulative ~$44.2 / $100 before this → **~$44.3 / $100** with the $0.07 recovery; **programme running total ~$225.6 + $0.07 = ~$225.7 / $400** (added 2026-09-21 so the A3 closure text can cite a figure the ledger contains). |
+| 2026-09-20 | follow-up run 1 — the other agent's index at the same positions (the registered matched control of Amendment A3, section L2(a)) | **STAGED AND PRICED, NOT LAUNCHED. Nothing has been created, no pod exists, and no dollar has been spent.** This row exists because ledger rule 2 says the estimate is written before the spend, not after it. **John's go, quoted verbatim per the standing rule that every billable action needs his own words (C2(b)): "Go"** (2026-09-20, in direct reply to Claude staging both runs — the reply named the machine as two RTX 4090s at $1.48/hr with 32 virtual cores in EU-RO-1 secure, gave the estimate as $16.3–25.9 for the pair, stated that nothing had been created and the account was untouched at $79.7256 with zero pods, said plainly that the machine choice was Claude's call rather than a standard, and asked him to name a different machine if he wanted one. He named none, so the staged machine is the one he approved. The bare word is the form this programme's gos have taken before — the same single word launched the A3 pilot on 2026-09-15 and the two-seed wave on 2026-09-17 — and it is recorded as given rather than padded out into something that sounds more deliberate than it was.** **What changed, and it is the only thing that changed: venue.** The follow-up brief of 2026-09-20 ruled both runs local, inference only, $0. John has since authorised paid machines so that both runs finish today instead of queueing behind each other on one laptop. The science is untouched — same code, same committed methods, same checkpoints, same seeding. A venue change is a billable action, so it needs a fresh go even though the run itself was already ruled. **What runs.** `src/other_index_position_sweep_a3.py`, the matched control that reads the rank of the other agent's marker word instead of the model's own: thirteen positions by five layers by three checkpoints, sixty-five tests per checkpoint, **195 tests**, of which 135 are the discovery family and the rest are the declared positive and negative controls. **Method and code were committed before either run produced a number**, at commit `7745d4a` (the commit that put both follow-up methods and both scripts on disk, 2026-09-20 10:11 Pacific), which is what the execution-gates ruling of 2026-09-19 requires. **The read itself is unchanged and that is a fact about the code, not a promise:** the sweep file this matches, `src/fitted_position_sweep_a3.py`, is byte-identical to its committed state at `f84db43` (the commit that introduced the fitted read at all eleven positions) — verified with a difference check against that commit, which came back empty — and run 1 imports the read from it rather than copying it. **Venue.** One pod of its own in the registered European venue EU-RO-1, secure cloud, with the network volume `x9f8pkn58t` (`mvm-models-ro`, the store that holds every A3 checkpoint) mounted. Secure cloud is not a preference: network volumes are only offered there. **Why two graphics cards for a job that does not use one.** This sweep runs on the processor, not the graphics card — the cost is 200 shuffled-label null draws per test in plain array arithmetic, which a graphics card does not accelerate. What a rented pod sells that we actually need is processor cores, and cores come bundled with cards: two RTX 4090s in this venue carry **32 virtual cores and 122 GB of memory at $1.48/hr**, which is $0.046 per core-hour — near the cheapest on offer and the largest core count in stock at staging time. A processor-only pod would be cheaper still, but this programme has never run one, and RunPod does not publish whether they can reach a European network volume; an unproven venue is the wrong place to learn that at the start of a day that has to finish. **Worker count is chosen on the machine, not guessed here**, per John's instruction: read the pod's actual core count, start at one worker per physical core (16, not 32 — the sweep is limited by memory bandwidth, and hardware threads sharing a core contend for it rather than adding throughput), then **measure tests per hour after the first ten tests and revise the estimate in this row before the run is left alone**. The laptop already taught us this scales badly when it is guessed: nine workers measured **slower** than four on the Apple M4, whose six efficiency cores add nothing to a bandwidth-bound job. **Teardown order is the whole point of this row, and it is the opposite of last night's.** On 2026-09-19 a finished run deleted its own pod between watchdog polls and the final fetch never happened; the checkpoint survived only because a hard gate refused to delete a pod before the file existed, and recovering it cost a second pod the next day. **So: the self-terminate is not armed on either of these pods.** The order is fixed — the run writes its results, the results are archived to a named path, the archive is checksummed on the pod, fetched, and checksummed again locally, **and only after the two checksums agree is the pod deleted**, explicitly, by this session. A pod-side deadline reaper is armed as a backstop against a hung run, at a deadline well past the estimate, because a pod with no self-terminate bills forever if the laptop goes away — that is the failure that has cost about $10.30 across four occurrences. **Zero pods is confirmed by listing them after both runs, not assumed.** **Run 1 is deliberately run twice, and the duplicate is free information.** The Apple M4 laptop started the same run at four workers at 11:34 Pacific and is expected to take about 13 hours; that session is left alone as the fallback and is not touched. Because every test is seeded the same way, the two runs must agree cell for cell. **If the rented Intel or AMD machine and the laptop's Apple processor disagree anywhere, that disagreement is itself a finding about the instrument** and is reported rather than averaged away. **The one real risk, stated before the run rather than after it:** the instrument check reproduces recorded classifier accuracies to a tolerance of one episode in 400 (0.0025), and on the laptop it reproduced them **exactly**, to the fourth decimal on all five layers. A different processor architecture is not guaranteed to land that exactly; two episodes flipping by rounding would fail the check. This is cheap to discover — the check runs before a single sweep number is computed, so a failure costs minutes of pod time and the laptop run continues as the fallback. **No verdict is read from this run.** The registered term for the linear-read line stays *not testable (localization)* until causal patching runs; findings may say where the read finds the target and where it does not, and nothing more. **Both findings go through a Gate B review before anything enters STATUS.md.** | RTX 4090 x2 SECURE EU-RO-1 $1.48/hr, 32 virtual cores, 122 GB, volume `x9f8pkn58t`; fallbacks in stock at staging: RTX PRO 4000 Blackwell x2 $1.14/hr (24 cores), RTX PRO 4500 Blackwell x2 $1.44/hr (24 cores), single RTX 4090 $0.74/hr (8 cores) | **est 6–9.5h pod time**, point estimate **7.5h**. Derived from the only measurement we have rather than from a feel: the fitted read this matches did 165 tests in **10.8 hours at four workers** on the Apple M4, which is **15.3 tests/hour**, or 3.8 per worker-hour. Sixteen server cores at roughly 0.6 of an M4 performance core give about 37 tests/hour if scaling were perfect; the band above discounts that to between 0.6 and 1.0 of perfect, because the job is bandwidth-bound and scaling is exactly what is uncertain. About 0.7h is added for pulling the image, installing dependencies, reading three checkpoints off the volume, reproducing the anchor, and the archive-and-checksum fetch at the end. **Revised against measured tests/hour after the first ten tests.** | **$8.9–14.1, point $11.1** | **~$1.06 of a measured $1.904 combined** (see the launch-outcome annotation below; the pair is measured from the account balance, $79.7159 → $77.8119, and split between the two rows by pod runtime rather than billed separately). **The run did not happen: the pod was refused by the instrument check and deleted after about 28 minutes.** | Projection only, nothing committed: A3 cumulative would go from ~$44.2 to ~$55.3 of $100, leaving ~$44.7. Wider envelope ~$215.7 to ~$226.8 of $400. Account balance at staging, read from the account rather than inferred: **$79.7256**, with the volume dripping $0.01/hr and zero pods running. |
+| 2026-09-20 | follow-up run 2 — the standardised refit at the same positions (a declared second instrument) | **STAGED AND PRICED, NOT LAUNCHED. Nothing has been created, no pod exists, and no dollar has been spent.** **John's go, quoted verbatim per C2(b): "Go"** (2026-09-20). One word covering both runs, given in reply to a staging message that priced and described the two together; the full circumstances are recorded in the run 1 row directly above and are not repeated here. **It is one go for two pods on purpose** — the staging asked for both by name, and neither run is launched on the strength of a go given for the other. Same venue change and same reasoning as the run 1 row directly above; this row states only what differs. **What runs.** `src/standardised_position_sweep_a3.py`: the same sweep on the model's **own** register index, but with each of the 448 leftover directions scaled to equal variance using training-fold statistics only, before the fit. **The question it answers:** the fitted read leaves those directions unscaled under a squared penalty, which charges a quiet direction the square of how quiet it is, and the stack's own geometry says about ten directions carry roughly 99% of the variation. Does standardising first find anything the unscaled read could not? Eleven positions by five layers by three checkpoints, fifty-five tests per checkpoint, **165 tests**, the same 135-test discovery family as the run it refits, so the two compare cell for cell. **Method and code committed before output at the same commit `7745d4a`**, and both methods were committed together, before either run started, so neither can have been shaped by the other's numbers. **This run declares its own instrument check and must not be misread as failing the old one.** A standardised fit does not reproduce the unscaled read's recorded anchor numbers, by construction; the method states a new anchor and its tolerance ahead of the run, and a mismatch against the *unscaled* anchor is not evidence of a broken instrument. The regularisation strength and how it was chosen without looking at sweep results are pre-stated in `standardised-refit-method.md`, along with the standardisation being per fold on training statistics only. **Venue, pod, worker count, teardown order and the zero-pods confirmation are identical to run 1 and are not restated here** — including that **the self-terminate is not armed**, that the results are archived, checksummed on the pod, fetched, and checksummed again locally **before** the pod is deleted, and that a deadline reaper is the only automatic backstop. **Its own pod, launched alongside run 1's rather than after it**, which is the whole reason for renting: the two runs are independent and there is no reason for the second to wait about eleven processor-hours for the first. **No verdict is read from this run either**, and **both findings go through a Gate B review before STATUS.md.** **A wording note carried from the method file, because it is the easiest mistake to make when the two findings are read side by side:** where this read finds the target and the unscaled read did not, that is a fact about two instruments, not a discovery about the model; and where neither finds it, the registered term remains *not testable (localization)*, never *absent*. | RTX 4090 x2 SECURE EU-RO-1 $1.48/hr, 32 virtual cores, 122 GB, volume `x9f8pkn58t`; same fallbacks as the row above | **est 5–8h pod time**, point estimate **6.5h**. Same derivation as run 1 scaled to 165 tests rather than 195. **The method file's own warning is carried here rather than quietly dropped:** the run this refits was projected at six and a half hours and took 10.8, and the method says to expect twelve hours or more at four workers because standardising adds work per fit. The band above is shorter only because the machine has four times the usable cores, not because the work got smaller, and it is **held loosely until measured tests per hour after the first ten tests**, which is when this cell gets revised. | **$7.4–11.8, point $9.6** | **~$0.84 of a measured $1.904 combined** (same measurement and same apportioning as the row above). **The run did not happen: refused by the same instrument check and deleted after about 27 minutes.** | Projection only: with run 1, both together are **$16.3–25.9, point ~$20.7**. A3 cumulative would go from ~$44.2 to ~$64.9 of $100, leaving ~$35.1; wider envelope ~$215.7 to ~$236.4 of $400; account balance ~$79.73 to ~$59.0. **All three fit with room, and rule 2's test — would the pre-run estimate push the running total past the cap — is PASSED on the worst case of the band, not just on the point estimate.** |
+| 2026-09-21 | measurement rehearsal — the rented slice (UNREGISTERED) | **ROW WRITTEN BEFORE ANYTHING WAS CREATED**, per ledger rule 2 (estimate before spend) and commitment C2(b) (the go quoted verbatim in the run’s own ledger row). **THE MEASUREMENT REHEARSAL’S ONE RENTED SLICE.** One rented machine, one short session, bought to answer two questions that need the same thing: (1) **seconds per step for the three successor architectures at the registered shape**, measured on a rented graphics card instead of inferred from an Apple M4 laptop, which is what John’s ruling of 2026-09-21 required before the second release of money is asked for; and (2) **whether the shutdown handshake that landed as pull request 15 — the fix for the trainer deleting its own machine before the laptop takes the final copy — works against the real vendor end to end.** Staged in `docs/successor-rented-slice-staging-2026-09-21.md` (the plan of record for this run, written before the machine existed) and produced by `experiments/rehearsal-successor-measure/src/stage_rented_slice.sh` (the staging script, which contains no command that can create a machine). **Nothing about the successor design’s science is read off this run; it is sized to finish, not to learn.** **John’s go, quoted verbatim per C2(b):** “Go. Run the rented slice exactly as staged in docs/successor-rented-slice-staging-2026-09-21.md, and nothing beyond it. What is authorised: one rented machine, one short session, the toy run through the derived launch_a3_fetch_first.sh, and fifty timed steps on each of the three architectures at the registered shape, with the results written into the run directory on the network volume so the final copy brings them home. Estimate $0.75 to $1.00, hard cap $2.00, drawn from the rehearsal line of the first release (up to $10), which nothing has been spent from. This go covers this run and nothing else. The registered wave still needs its own. Before anything is created: write the ledger row quoting this message as the authorisation, per ledger rule 2. Confirm zero machines are running. Confirm the rate at creation time rather than assuming the $0.99 the estimate descends from. launch_a3.sh is registered text. Do not use it and do not edit it. No tolerance is widened and no registered file is touched. If the slice can only be made to pass by changing the instrument, it fails instead. Report back whatever happens: the three seconds-per-step figures with their spread; which shutdown path the launcher actually armed, said plainly, including the case where the machine’s own watcher never started and the run only looked normal; the handshake signals in order, receipt written, receipt found, deletion, and whether the copied model matched by checksum; and the actual billed amount against the estimate. Stop conditions: if the machine bills at the anomalous rate of the 2026-08-08 row, S9 fires, halt and bring me the billed row beside the estimate. If any architecture will not run at the registered shape, stop and treat it as a finding about the design, which goes back into the proposal before registration. Nothing about the successor’s science is read off this run. It is sized to finish, not to learn.” **Pre-creation checks — all three done immediately before creation and recorded here rather than assumed.** (i) **Zero machines running:** the vendor’s machine list came back empty, and the account’s own current-spend-per-hour read **$0.01**, which is the network volume’s storage drip alone — two independent confirmations rather than one. (ii) **The rate read from the vendor at creation time, not assumed:** RTX 5090 secure cloud at **$0.99 an hour** (stock “Low” but present), which is **the registered rate and not an elevated one**. The estimate descends from the 2026-09-17 row’s $0.99 and the live figure agrees with it. (iii) **Funding rule:** balance **$77.3451**, against about $1 in flight plus the $10 margin — passes with room. **Rule 2’s own test passes:** the worst case of this run is the $2.00 hard cap, which takes the A3 cumulative from about $46.2 to about $48.2 of $100 and the wider programme envelope from about $227.6 to about $229.6 of $400. **Launcher: the derived, unregistered `launch_a3_fetch_first.sh`.** `src/launch_a3.sh` is **registered text and was neither used nor edited**; no tolerance was widened and no registered file was touched. **One honest wrinkle recorded rather than smoothed over:** commitment C2(d) says a delegated launch uses “the registered launcher and venue”, and this slice deliberately uses the derived one. John named that derived launcher himself in the go, the venue is unchanged, and no registered result is read off the run — so the clause’s purpose (a delegated launch must not silently swap the instrument) is served. It is recorded here because a clause satisfied in spirit and not in letter should be visible in the audit trail, not argued away in a session that nobody can read later. A second wrinkle, smaller: the launcher’s header still carries the v1.0 wording “HUMAN-RUN ONLY [C2] … Claude prepares it, John executes it”, which C2 v1.1 (2026-08-16) superseded by delegating the keystroke and never the decision; the same stale line sits in `launch_a3.sh` and in `launch_ctl_pilot.sh`, both of which have been executed under the delegated reading. **What runs, in the order the plan file sets out:** a dry run that creates nothing; then the toy run through the derived launcher at the 10M shape with a 2,000,000-token budget, small enough to finish in minutes, whose only job is to reach the finished-marker so the shutdown handshake happens for real; then, while that trains, fifty timed steps on each of the three architectures at the registered shape, written to `bench_arms.json` inside the run directory on the network volume **so that the laptop’s final copy is what brings the numbers home** — which makes the throughput measurement ride on the same fetch whose correctness the other half of the slice is testing. If the fetch fails, the absence of the file says so. **What passing looks like, written down before it ran.** Throughput: three seconds-per-step figures with their spread, fetched home. The handshake, in this order and no other: `receipt written on the machine` in the laptop’s log, then `receipt found` in the machine’s own log, then a deletion within seconds of it, and the copied model file matching the one on the machine by checksum. A machine log reading `grace ran out` is the bounded-wait failure; a machine that cannot delete itself at all is the 2026-09-16 credential measurement repeating. **And the quiet fourth outcome, named in advance because it is the one that looks like success:** the machine’s own shutdown watcher never starts, the launcher falls back to the trainer deleting itself, and everything looks normal while the thing the slice exists to test was never tested. The staging script checked the precondition for that today and it passed — a dedicated reaper key is present at file permissions 600, per John’s ruling of 2026-09-16 — so the full path is expected to be armed; the launcher says loudly which path it took and that line is read before anything is believed. **Stop conditions carried from the go:** if the machine bills at the anomalous rate of the 2026-08-08 row — that row billed 8.47 hours against about 2.42 hours of actual machine existence, about 3.5× — stop condition S9 fires, the slice halts and the billed row goes to John beside the estimate. If any architecture will not run at the registered shape, that is a **finding about the design and not about the machine**, and it goes back into the successor proposal before registration. | RTX 5090 SECURE EU-RO-1, **$0.99/hr confirmed from the vendor at creation time**, network volume `x9f8pkn58t` (`mvm-models-ro`, the 100GB volume in EU-RO-1 that outlives the machine) | **est well under 1h** — a toy run of a few minutes, fifty timed steps on each of three architectures a few minutes more, and a bounded wait of 600 seconds that the passing path never reaches. **ACT: about ONE MINUTE of machine life, and none of it was the authorised run.** Machine `f1vtz2adz4dj8v`, named `mvm-a3_30m_seed0`, created about 2026-09-22T04:12:19Z and deleted about 2026-09-22T04:13:1xZ. See the annotation below: it was created by the plan's own step 0, which was supposed to create nothing. | **$0.75–1.00, hard cap $2.00** | **about $0.02** — one minute of an RTX 5090 at $0.99 an hour, for a machine nobody meant to create. The account balance read **$77.3451129146** immediately before creation and **$77.3451129146** immediately after deletion, identical to ten decimal places, so the charge had not yet landed when this was written and the figure is arithmetic on the machine's lifetime rather than a balance reading. **The authorised slice was NOT run and none of the $0.75–1.00 estimate was spent.** It is halted and back with John, per his own instruction to stop and report rather than fix anything found wrong in the plan. | Before this run: A3 cumulative about **$46.2 / $100**, programme about **$227.6 / $400**, account balance **$77.3451**. This slice is drawn from **the rehearsal line of the first release of money John authorised on 2026-09-21 (up to $10), from which nothing had been spent** — everything else in the rehearsal ran on the laptop for nothing. **Running total: essentially unmoved.** A3 cumulative about **$46.2 → about $46.2 / $100** and the wider programme envelope about **$227.6 → about $227.6 / $400**; the two cents do not move either figure at the precision this ledger carries them. Of the rehearsal line's $10, **about $0.02 is spent and about $9.98 remains**. The $0.75–1.00 estimate stands unspent and the go is not used up: John decides whether it still covers a re-run once the step 0 defect is ruled on. |
+
+**ANNOTATION 2026-09-20, launch outcome — BOTH PODS WERE CREATED, BOTH
+WERE REFUSED BY THE INSTRUMENT CHECK, AND BOTH WERE DELETED. Total
+measured spend $1.904. Neither follow-up run produced a single sweep
+number on rented hardware, and the reason is worth more than the two
+dollars it cost to learn.**
+
+- **What was created.** Two pods in EU-RO-1 secure, each four RTX PRO 4000
+  Blackwell cards, 48 virtual cores on an **AMD EPYC 7352 (24 physical
+  cores)**, 124 GB, $2.28/hr, the A3 network volume `x9f8pkn58t` mounted,
+  all three A3 checkpoints present on it at the byte sizes this ledger
+  already records. Pod `g0u3gwttjmhpyj` carried run 1, pod
+  `3pvwvjkicbbsov` run 2. Both were created at about 19:33Z and both were
+  gone by about 20:01Z.
+- **Both committed self-tests passed on the rented machines**, which is
+  worth stating because it means the refusal that followed was not a
+  broken push or a missing file. The code arrived intact and said so.
+- **Then the anchor reproduction failed, on every checkpoint, on both
+  runs.** The instrument check re-runs a recorded classifier accuracy and
+  demands it come back to within **one episode in 400 (0.0025)**. On the
+  rented processor it came back off by as much as **0.0275 — eleven
+  episodes in 400, about eleven times the tolerance.** Run 2 failed the
+  same way: its part A control reproduces the same unscaled numbers, so
+  the standardised read was stopped by the same wall.
+- **This is a real difference between machines, not a random one, and
+  that was established rather than assumed.** Running the identical
+  command twice on the same pod with processor threads pinned to one gave
+  **bit-identical output both times** — the rented machine is perfectly
+  repeatable. It simply lands on a *different* answer than the laptop,
+  which reproduces the same recorded numbers **exactly, to four decimals
+  on all five layers.**
+- **Why a tiny numerical difference moves the answer so much.** The
+  recorded accuracies sit between about 0.46 and 0.55 — chance, for a
+  four-way rank read at these positions — and the fit has **more
+  directions (448) than episodes (400)**. A boundary drawn through data
+  it can separate perfectly is not pinned down by the data; where it ends
+  up depends on where the solver stopped, and that depends on the order
+  the processor happened to add its numbers in. Apple's arithmetic
+  library and the rented machine's add them in different orders. At
+  chance level that is enough to move ten held-out episodes.
+- **The honest conclusion, and it costs the day's plan:** **these two runs
+  cannot be moved off this laptop without changing the instrument**, and
+  changing a registered instrument so that it passes on a machine we want
+  to use is precisely the move this programme's rules exist to prevent.
+  The committed method files were not touched, no tolerance was widened,
+  and no result was taken from a machine that failed the check. **The
+  instrument did its job.** The two dollars bought the discovery that the
+  fitted read is machine-dependent — which is a fact about the read worth
+  knowing whatever happens next, and which nothing in the record had
+  established before today.
+- **Teardown went the way the rows said it would**, which is the one
+  process win here. No self-terminate was armed. Each pod's output was
+  archived, checksummed on the pod, fetched, and checksummed again
+  locally; **both pairs of checksums agreed** (`15086d62e5e8607b445f7008
+  63bd8575` for run 1, `b8777a737f0ce5eac0a40b9c0d525c40` for run 2);
+  only then were the pods deleted. **Zero pods confirmed after deletion
+  by listing them, and the account's spend rate is back to the $0.01/hr
+  volume drip.** The 2026-09-19 race did not recur, because the thing that
+  caused it was not armed.
+- **The refusal records are kept** in `a3-gates/followup-x86-refusal/`,
+  because a failed instrument check is evidence about the instrument and
+  should not be thrown away just because it produced no sweep numbers.
+- **Where the work actually goes.** The laptop's run 1 was never touched
+  and is running well — **measured at about 20 tests an hour, faster than
+  the 15.3 the estimate assumed** — so it should finish in the evening
+  rather than after midnight. **Run 2 is queued to start on the same
+  machine the moment run 1 exits**, at four workers, with no thread
+  settings changed, because that is the exact configuration under which
+  the anchor reproduces here. **Run 2 needs no fresh go:** the follow-up
+  brief already ruled it, local and $0, and only the paid venue required
+  John's word. The paid venue is off.
+- **What this means for finishing both today, stated plainly rather than
+  buried:** **it will not happen.** There are 360 tests between the two
+  runs and one machine that can legitimately run them at about 20 an
+  hour, which is roughly eighteen hours of work. Run 1 should land this
+  evening; run 2 will land tomorrow morning. Running them side by side on
+  the same laptop would not fix it — the job is limited by memory
+  bandwidth, which is why nine workers already measured slower than four
+  — and it would put the one clean run at risk to buy nothing.
+- **Balance and caps.** $79.7159 → **$77.8119**, measured rather than
+  inferred. A3 cumulative ~$44.2 → **~$46.1 of $100**, leaving ~$53.9;
+  wider envelope ~$217.6 of $400. Both runs remain $0 from here. **[Corrected 2026-09-21, on the merge of this branch into main: the three figures in this bullet were computed off the pre-RT-147 lineage (~$215.7), which the 2026-09-21 money-citation finding had already superseded on main. Against the corrected ledger (~$225.7 after the checkpoint recovery), A3 cumulative is ~$44.3 -> ~$46.2 of $100, leaving ~$53.8, and the programme running total is ~$227.6 / $400, headroom ~$172.40. The measured balance figures are untouched, and nothing above is altered.]**
 
 ===== END OF RECORD 22 =====
 

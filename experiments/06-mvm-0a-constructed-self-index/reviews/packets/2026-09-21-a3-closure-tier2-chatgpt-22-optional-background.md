@@ -1,12 +1,12 @@
-# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 20 of 20: Optional background, and the end of the packet
+# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 22 of 22: Optional background, and the end of the packet
 
-*This is file 20 of 20, the last one, of a review packet pasted into a single
+*This is file 22 of 22, the last one, of a review packet pasted into a single
 conversation. It contains OPTIONAL BACKGROUND, not cited by the text under
 review - what the separation clause requires. You now have the whole packet:
 the orientation, the closure rule and the brief in file 1, the text under
 review in file 2, the inside reviewer's findings in files 3 to 5, the
 registered text in files 6 to 10, and the records the text cites in files 11
-to 19. Answer the brief from file 1 now, in its four parts, labelling your
+to 21. Answer the brief from file 1 now, in its four parts, labelling your
 findings A1, A2, A3 and so on. If any file was missing or cut short, name it
 at the top of your answer.*
 

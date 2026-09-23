@@ -324,6 +324,42 @@ cents is unchanged by the fold, is still open, and is not settled here: the
 ruling left it for the rehearsal's measurement to answer, and this roadmap does
 not pre-empt it.
 
+> **Note added 2026-09-22 by a later Claude Code session, working in its own
+> worktree. This is not John's ruling. The two paragraphs above are left
+> unedited, and every figure in them stands as what was true when they were
+> written.**
+>
+> **The spend figures above are stale by $1.90, and the overshoot is larger
+> than they say.** The two follow-up reading runs of 2026-09-20 — the matched
+> control and the standardised refit — were described in several places as
+> costing nothing, because neither produced a result: both machines were
+> created, both were refused by the instrument's own reproducibility check, and
+> both were deleted inside half an hour. They still cost money. The account
+> balance moved from $79.7159 to $77.8119 while they ran, a measured $1.9040,
+> and the compute ledger carries it on those two rows and in its own dated
+> correction of 2026-09-21.
+>
+> **Derived from the ledger's rows rather than copied from any summary:** the
+> programme has spent about **$227.60 of $400**, leaving headroom of about
+> **$172.40**; Amendment A3 stands at about **$46.20 of its $100 stop**, leaving
+> about **$53.80** rather than the $55.70 above. The chain is $215.70 after the
+> wave of seeds 1 and 2 on 2026-09-17, plus about $9.90 for the run that asked
+> whether the control question can be learned when it is taught properly, plus
+> $0.07 to recover that run's final checkpoint, plus the $1.90 above, plus about
+> two cents for the measurement rehearsal of 2026-09-21.
+>
+> **The consequence for the two releases, stated here so nobody has to re-derive
+> it.** The two spending releases come to about $175. Against $174.30 that was
+> about seventy cents over, which is what the paragraph above records. Against
+> $172.40 it is about **$2.60 over**. The overshoot the paragraph leaves open is
+> therefore nearly four times what it says, and the measurement the ruling left
+> it to has that much more to find. Nothing here settles it either.
+>
+> Source: `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`,
+> which is the system of record for money and which is not edited by this note.
+> The practice of annotating rather than rewriting rests on this repository's
+> precedent, not on any ruling of John's.
+
 **Time.** John's items above sum to roughly ten tier 2 reviewer sessions (about
 an hour each), six rulings, the book edits and the launch approvals: three to
 four hours a week for as long as the chain takes to reach the closure Gate A

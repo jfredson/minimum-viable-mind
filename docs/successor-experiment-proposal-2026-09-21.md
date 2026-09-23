@@ -55,6 +55,18 @@ identifier anywhere.*
 > not that file, and the two now agree. The dates, commit names and exact
 > figures are in "Note added afterwards: the detail" at the end of this document.
 
+> **Second note added afterwards, 2026-09-22, by a later Claude Code session —
+> not John's ruling, and not part of the proposal, which is still left unedited
+> below.** Section 12's arithmetic is now stale by $1.90, and this one does
+> change numbers. The two follow-up reading runs of 2026-09-20 were recorded as
+> costing nothing; they cost a measured $1.9040, and the compute ledger carries
+> the correction. **The programme has spent about $227.60 of $400, leaving about
+> $172.40, not $174.30.** So the two releases, at about $175, are about **$2.60**
+> past everything the programme has left rather than about seventy cents past it.
+> Section 12.1's finding — that the plan does not fit — is unchanged and is
+> stronger. The derivation, and what it does and does not touch, are in "Second
+> note added afterwards: the detail" at the end of this document.
+
 ---
 
 ## 0. The whole thing in six sentences
@@ -1529,3 +1541,75 @@ file named above — the one about a measured count of record keys that does not
 reproduce, which chooses to correct the record later rather than chase it that
 night — and it does not say "annotate, never edit". The practice here rests on
 precedent, not on any wording of his.
+
+---
+
+## Second note added afterwards: the detail
+
+*This is the backing for the second short note at the top of this document.*
+
+**Added 2026-09-22 by a later Claude Code session working in its own worktree.
+This is not John's ruling and it is not part of the proposal. Nothing in the
+proposal above is rewritten; it is left unedited, exactly as it was committed,
+including section 12.1's account of how version 1 got its arithmetic wrong.**
+
+**What moved.** Section 12.1 is written against the compute ledger, which is the
+right file to write it against, and it takes that ledger's total as about
+$225.70 of $400. The ledger has since been corrected again. The two follow-up
+reading runs of 2026-09-20 — the matched control of Amendment A3 and the
+standardised refit at the same positions — were described in several places as
+costing nothing, because neither produced a result: both machines were created,
+both were refused by the instrument's own reproducibility check when a recorded
+accuracy failed to reproduce on rented hardware, and both were deleted inside
+half an hour. They still cost money. The account balance moved from **$79.7159
+to $77.8119** while they ran, a measured **$1.9040**, split between the two rows
+by how long each machine lived. The ledger's launch-outcome annotation of
+2026-09-20 carries a dated correction of 2026-09-21 folding it in.
+
+**The corrected arithmetic, derived from the ledger's rows rather than copied
+from any summary sentence.**
+
+| | |
+|---|---|
+| Programme envelope (raised from $200 on 2026-08-16) | **$400** — unchanged |
+| Spent to date | **about $227.60** — compute ledger, the rows through 2026-09-21 |
+| **Headroom** | **about $172.40** |
+| Amendment A3 against its $100 stop | **about $46.20**, leaving about **$53.80** |
+
+The chain: $215.70 after the wave of seeds 1 and 2 on 2026-09-17, plus about
+$9.90 for the run that asked whether the control question can be learned when it
+is taught properly, plus $0.07 to recover that run's final checkpoint, plus the
+$1.90 above, plus about two cents for the measurement rehearsal of 2026-09-21.
+
+**What this does to section 12, stated plainly rather than left to be
+re-derived.** The two releases come to about $175. Section 12.1 reports that as
+$0.70 more than every dollar the programme has left. Against $172.40 it is about
+**$2.60** more. Section 12.1's finding is not weakened by this and is not
+reversed by it: the plan did not fit, and it fits less well. Everything section
+12 says about *why* the number matters — that the margin was reported with its
+sign inverted, that a flat cap has to be checked against the ledger and not
+against the project file — is untouched.
+
+**What this does not touch.** Nothing about the science, the task, the arms, the
+measure or the gates. Not the two-release scheme John ruled, which is about when
+money is asked for rather than how much is left. Not section 12.1's history of
+version 1's error, which remains accurate as history. Not the Gate C review
+findings this proposal is under repair for.
+
+**One earlier statement is now doubly overtaken.** The first note at the top of
+this document says `data/project.toml` has been corrected and "the two now
+agree". That was true of the $225.70 figure. The project file has since been
+corrected again, on 2026-09-22, to the $227.60 and $46.20 above, so the two
+agree again — but at a different pair of numbers than the first note describes.
+
+**Why a note and not an edit.** The same reason the first note gives, and it is
+worth repeating that this rests on precedent rather than on any wording of
+John's: this repository handles a superseded claim with a dated note that leaves
+the text standing, as the stacked blockquotes at the top of
+`docs/control-clause-proposal-2026-09-19.md` and the dated annotation block in
+`STATUS.md` both do. No ruling of his puts that practice into words.
+
+Source for every figure above:
+`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`, which is the
+system of record for money and which is not edited by this note. No money was
+spent and no machine rented for it.
