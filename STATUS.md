@@ -14,7 +14,10 @@ drafted. Runs: PR 11 (`other-index-position-sweep-findings.md`,
 `standardised-refit-findings.md`, method committed before output at
 `7745d4a`).
 
-**Two follow-up reads, 2026-09-21 (both local, no money spent).** The first
+**Two follow-up reads, 2026-09-21 (both run on the laptop — no result came off
+a rented machine, but two machines were rented, refused by the instrument's own
+check that a machine reproduces a known reading, and deleted inside half an
+hour, at a cost of about $1.90).** The first
 pointed the existing read at a different question, which of the four marker
 words belongs to the other agent who revises, and found it nowhere except
 where that agent's own name is the word being read. This settles the
