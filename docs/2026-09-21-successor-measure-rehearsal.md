@@ -349,6 +349,23 @@ Four things follow, and all four belong in the registration text.
 
 ## 4. The reading, on fresh episodes
 
+> **Added 2026-09-23 by a later session — what may be quoted from this table
+> has since been ruled, and this section is otherwise untouched.** Re-running
+> the whole rehearsal from the committed code, from clean, on 2026-09-22
+> reproduced the separable arm's rows exactly and reproduced **none** of the
+> entangled or free arm's figures: those two arms' readings moved by up to
+> 0.0506 and 0.0440. John has ruled that from those two arms the registration
+> may quote **a range and a direction only** — about 0.83 to 0.89, at the
+> entangled end, one seed of three clearing the learn-both bar — and **no
+> decimal as a property of the code**, so no "degree d" sentence for them. The
+> ruling is `docs/rulings/2026-09-23-range-and-direction-only.md`; authorship is
+> mixed — the session put the question and three options, he chose one. It
+> settles nothing else: neither form of the reading's arithmetic is adopted, and
+> the uncertainty method, the seed count and the separation bar in section 11 all
+> stay open — with the seed-count row now known to rest on a spread that does not
+> measure this variation at all. Nothing below is rewritten; this is a dated
+> record of what was measured on 2026-09-21 and it stands as written.
+
     ../../../.venv/bin/python rehearse.py --stage transplant
 
 Both candidate forms of the reading are reported everywhere. Neither is
