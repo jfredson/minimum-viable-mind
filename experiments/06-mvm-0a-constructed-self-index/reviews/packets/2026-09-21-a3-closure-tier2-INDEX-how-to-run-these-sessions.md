@@ -25,8 +25,16 @@ the byte):
 
     33abfc1a582e687a040c8f16983c00ac4e8f195a0be95b94744d5d46f9005879
 
-Each of the 23 records was also checked one at a time against the file
-it came from, so neither packet has quietly lost or reworded anything.
+Each of the 23 records was also checked one at a time, in the way it was
+made. The 18 that reproduce a whole file were compared with that file,
+character for character. The 4 that are excerpts are put together by
+hand in the packet, so every line each one reproduces had to be found in the
+file it names, character for character and in that file's own order; the
+paragraphs the packet writes around an excerpt to introduce it are its own words
+and are compared with nothing. The one remaining record is the brief, which is
+protocol text carried over unchanged from the earlier packet, and whose amended
+sentence is the one checked word for word against the protocol above. So neither
+packet has quietly lost or reworded anything a reviewer will read as quoted.
 
 ## Session 1 - Gemini, one document
 
