@@ -232,3 +232,30 @@ The relational-encoding route at the other agent's revision value, untested.
 **Money.** Amendment A3 closed at ~$44.3 of its $100 hard stop, and the
 programme at ~$225.7 of its $400 ceiling (`compute-ledger.md`, the running
 totals on the rows dated 2026-09-19 and 2026-09-20).
+
+> **Note added 2026-09-22 by a later Claude Code session — not John's ruling,
+> and not part of the closure text, which is left unedited above.** The money
+> paragraph is stale by $1.90 and should be read with this beside it before the
+> tier 2 pass. The two follow-up reading runs of 2026-09-20 — the matched
+> control and the standardised refit — were described in several places as
+> costing nothing, because neither produced a result: both machines were
+> created, both were refused by the instrument's own reproducibility check, and
+> both were deleted inside half an hour. They still cost money. The account
+> balance moved from $79.7159 to $77.8119, a measured $1.9040, and the compute
+> ledger carries the correction on those two rows and in its own dated note of
+> 2026-09-21.
+>
+> **Derived from the ledger's rows rather than from any summary sentence:**
+> Amendment A3's line now stands at about **$46.2 of its $100 stop** and the
+> programme at about **$227.6 of its $400 ceiling**, leaving about $53.8 and
+> about $172.40. The first figure above is still right about the moment of
+> closure — the follow-up runs were created after the amendment closed — but it
+> is no longer what the ledger's A3 line reads, because the ledger counts those
+> runs against the stop. The second is a present-tense claim about the programme
+> and is simply out of date.
+>
+> The figures are not corrected in place because this repository's practice with
+> a superseded claim is a dated note that leaves the text standing, a practice
+> that rests on precedent rather than on any ruling of John's. Source:
+> `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`, not edited
+> by this note.
