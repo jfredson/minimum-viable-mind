@@ -11,6 +11,12 @@ rather than converting it into an attachment it only searches.
 
 Re-run it after any source record changes; the packets are generated, never
 hand-edited.
+
+--verify reads the packet files as they are committed and compares them with a
+build made from today's sources, so a source record that changed after the
+packets were last built is reported as stale, by file name. It used to compare a
+fresh build against itself, which could only ever agree, and so reported a clean
+run over packets that were out of date; that is what this mode exists to catch.
 """
 
 import hashlib
@@ -899,11 +905,109 @@ def sizes(outputs):
         print("{:<66} {:>9}".format(os.path.basename(p), commas(len(outputs[p].encode()))))
 
 
+def on_disk(outputs):
+    """The packet files as they are committed, plus what is missing or spare.
+
+    Returns (files, missing, spare): the paths that were read and their text,
+    the paths this script would write that are not there, and the files sitting
+    in the output directory that this script does not write - which is what an
+    older build leaves behind when a file is renamed.
+    """
+    files, missing = {}, []
+    for path in sorted(outputs):
+        try:
+            files[path] = read(path)
+        except (IOError, OSError):
+            missing.append(path)
+    folder = os.path.join(ROOT, OUT)
+    present = set(os.listdir(folder)) if os.path.isdir(folder) else set()
+    spare = sorted(present - set(os.path.basename(p) for p in outputs))
+    return files, missing, spare
+
+
+def against_disk(outputs):
+    """Compare the committed packet files with a fresh build from the sources.
+
+    This is the check that catches a stale packet: a source record that changed
+    after the packets were last built makes the fresh build differ from what is
+    committed, and that difference is reported here by name.
+    """
+    files, missing, spare = on_disk(outputs)
+    ok = True
+    print("The committed packet files, against a build made from today's sources:")
+    print("")
+    for path in sorted(outputs):
+        name = os.path.basename(path)
+        if path in missing:
+            print("  {:<62} NOT ON DISK".format(name))
+            ok = False
+        elif files[path] == outputs[path]:
+            print("  {:<62} up to date".format(name))
+        else:
+            same_length = len(files[path]) == len(outputs[path])
+            print("  {:<62} STALE - committed {} characters, rebuild {}{}".format(
+                name, commas(len(files[path])), commas(len(outputs[path])),
+                ", same length but different text" if same_length else ""))
+            ok = False
+    for name in spare:
+        print("  {:<62} NOT BUILT BY THIS SCRIPT - left over from an older build?"
+              .format(name))
+        ok = False
+    print("")
+    print("  every committed packet file matches a fresh build: {}".format(
+        "YES" if ok else "NO - run this script without --verify to rebuild them"))
+    return ok, files, missing
+
+
+WHAT_IS_CHECKED = """\
+What this check covers, and what it does not.
+
+It does check: that every packet file on disk is what this script builds from
+today's source records, so a record that changed after the packets were last
+built is reported as stale, by file name; that no packet file is missing and
+none is left over from an older build; that every record inside the committed
+packets is character for character the text in the file it was taken from; that
+the two packets carry the same records in the same order, shown by a matching
+sha256 checksum; and that the brief's amended sentence is word for word the
+protocol's.
+
+It does not check whether the records themselves are true or current, whether
+an excerpt was cut in a way that flatters the text under review, or whether
+anything outside the packets agrees with them. A clean result here means the
+packets match the source records as those records stand today. It does not mean
+the source records are right."""
+
+
 if __name__ == "__main__":
     built = build()
-    if "--verify" not in sys.argv:
+    checking_only = "--verify" in sys.argv
+
+    if not checking_only:
         for path in write(built):
             print("wrote " + path)
+        sizes(built)
+        print("")
+        print("Checking what was just written.")
+        print("")
+        good = verify(built)
+        print("")
+        print(WHAT_IS_CHECKED)
+        sys.exit(0 if good else 1)
+
     sizes(built)
     print("")
-    sys.exit(0 if verify(built) else 1)
+    fresh_ok, files, missing = against_disk(built)
+    print("")
+    if missing:
+        print("Stopping here. The record-by-record check needs every packet file on")
+        print("disk, and {} of them {} missing, so it cannot be run. Nothing above".format(
+            len(missing), "is" if len(missing) == 1 else "are"))
+        print("should be read as saying the committed packets are current.")
+        sys.exit(1)
+    print("Now the records inside the committed files - read from disk, not from the")
+    print("build above - each against the file it was taken from:")
+    print("")
+    good = verify(files) and fresh_ok
+    print("")
+    print(WHAT_IS_CHECKED)
+    sys.exit(0 if good else 1)
