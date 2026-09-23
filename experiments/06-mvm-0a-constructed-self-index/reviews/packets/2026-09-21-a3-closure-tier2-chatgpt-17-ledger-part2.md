@@ -1,10 +1,10 @@
-# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 17 of 20: The red team ledger, part 2 of 3
+# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 17 of 22: The red team ledger, part 2 of 3
 
-*This is file 17 of 20 of one review packet, pasted into a single
+*This is file 17 of 22 of one review packet, pasted into a single
 conversation. It contains the red team ledger - every row and range the text
 under review cites (part 2 of 3). Reply with one short line saying you have
 it, and wait for the rest: the brief you are answering is in file 1, and your
-review comes only after file 20 arrives. If this file looks cut short, say so
+review comes only after file 22 arrives. If this file looks cut short, say so
 now.*
 
 ---

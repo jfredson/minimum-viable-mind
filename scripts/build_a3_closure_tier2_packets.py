@@ -198,16 +198,33 @@ RECORDS = [
                "finding the text under review cites (its seventeenth, labelled F17 there) "
                "and that finding in full. The other twenty-one findings are left out.")),
     dict(key="compute-ledger", kind="excerpt",
-         title="the compute ledger - its rules, its baseline and the two rows the text cites",
+         title=("the compute ledger - its rules, its baseline, the rows the text cites "
+                "and the rows that correct them"),
          source=E + "compute-ledger.md",
          text_from=(PACKET,
                     "## Block 21 — Appendix C: the compute ledger, excerpted"),
          note=("excerpted from `%s` (%s characters in full), which carries a row for every "
                "rented-machine session since 2026-08-07. Reproduced here: the ledger's "
-               "opening, its rules, its reconciliation baseline, its column headings and "
-               "the two rows dated 2026-09-19 and 2026-09-20 in full. The other rows are "
-               "left out, so the two cited rows can be checked but the running total "
-               "cannot be re-added from the beginning.")),
+               "opening, its rules, its reconciliation baseline, its column headings, five "
+               "rows in full and one dated note. The five rows are the two dated 2026-09-19 "
+               "and 2026-09-20 that the text under review cites for its money figures, the "
+               "two follow-up runs of 2026-09-20 that carry the $1.90 those figures are "
+               "stale by, and the measurement rehearsal of 2026-09-21, whose running-total "
+               "column is where the ledger states the corrected figures. The dated note is "
+               "the ledger's launch-outcome note of 2026-09-20 on those two follow-up runs. "
+               "The other rows are left out, so the cited rows and the correcting rows can "
+               "both be checked but the running total cannot be re-added from the "
+               "beginning."),
+         parts=[("its framing, the ledger's opening, its rules, its reconciliation "
+                 "baseline and the first of the two rows the text under review cites",
+                 None),
+                ("the second row the text cites, and the two follow-up runs of "
+                 "2026-09-20 that carry the $1.90 correcting it",
+                 "| 2026-09-20 | checkpoint recovery (UNREGISTERED) |"),
+                ("the measurement rehearsal of 2026-09-21, whose running total states "
+                 "the corrected figures, and the ledger's dated note on the two "
+                 "follow-up runs",
+                 "| 2026-09-21 | measurement rehearsal ")]),
     dict(key="separation-clause", kind="whole",
          title=("OPTIONAL BACKGROUND, not cited by the text under review - what the "
                 "separation clause requires"),
@@ -261,10 +278,14 @@ CHATGPT_FILES = [
     ("16-ledger-part1", "The red team ledger, part 1 of 3", [("ledger", 0)]),
     ("17-ledger-part2", "The red team ledger, part 2 of 3", [("ledger", 1)]),
     ("18-ledger-part3", "The red team ledger, part 3 of 3", [("ledger", 2)]),
-    ("19-a4-review-and-compute-ledger",
-     "The A4 review finding, and the compute ledger",
-     [("a4-review", None), ("compute-ledger", None)]),
-    ("20-optional-background", "Optional background, and the end of the packet",
+    ("19-a4-review-and-compute-ledger-part1",
+     "The A4 review finding, and the compute ledger, part 1 of 3",
+     [("a4-review", None), ("compute-ledger", 0)]),
+    ("20-compute-ledger-part2", "The compute ledger, part 2 of 3",
+     [("compute-ledger", 1)]),
+    ("21-compute-ledger-part3", "The compute ledger, part 3 of 3",
+     [("compute-ledger", 2)]),
+    ("22-optional-background", "Optional background, and the end of the packet",
      [("separation-clause", None)]),
 ]
 
@@ -427,7 +448,7 @@ CHATGPT_LASTFILE = (
     "the orientation, the closure rule and the brief in file 1, the text under "
     "review in file 2, the inside reviewer's findings in files 3 to 5, the "
     "registered text in files 6 to 10, and the records the text cites in files "
-    "11 to 19. Answer the brief from file 1 now, in its four parts, labelling "
+    "11 to {last_cited}. Answer the brief from file 1 now, in its four parts, labelling "
     "your findings A1, A2, A3 and so on. If any file was missing or cut short, "
     "name it at the top of your answer.*")
 
@@ -440,6 +461,29 @@ def record_text(rec):
     if "text_from" in rec:
         return section(*rec["text_from"])
     return read(rec["source"]).rstrip("\n")
+
+
+def split_point(text, marker, key):
+    """Where in the record the line the marker names begins.
+
+    The marker is a whole line, or the start of one. The second form is there
+    for the compute ledger, whose rows are single lines thousands of characters
+    long: writing one out here to split on would be unreadable and would break
+    the moment anybody added a word to the row. Either way the marker must
+    match exactly one line, so a split never lands somewhere unintended, and
+    the line it names is never the record's first line.
+    """
+    lines = text.split("\n")
+    hits = [i for i, line in enumerate(lines) if line == marker]
+    if not hits:
+        hits = [i for i, line in enumerate(lines) if line.startswith(marker)]
+    if len(hits) != 1:
+        raise ValueError("split marker {!r} matches {} lines in record {}".format(
+            marker, len(hits), key))
+    if hits[0] == 0:
+        raise ValueError("split marker {!r} is the first line of record {}".format(
+            marker, key))
+    return sum(len(line) + 1 for line in lines[:hits[0]])
 
 
 def record_parts(rec):
@@ -456,11 +500,7 @@ def record_parts(rec):
         if marker is None:
             cuts.append((label, 0))
             continue
-        needle = "\n" + marker + "\n"
-        if text.count(needle) != 1:
-            raise ValueError("split marker {!r} appears {} times in record {}".format(
-                marker, text.count(needle), rec["key"]))
-        cuts.append((label, text.index(needle) + 1))
+        cuts.append((label, split_point(text, marker, rec["key"])))
     out = []
     for i, (label, start) in enumerate(cuts):
         end = cuts[i + 1][1] - 1 if i + 1 < len(cuts) else len(text)
@@ -556,7 +596,8 @@ def build():
             body += [CHATGPT_DELIVERY.format(n=n_files), "", STANDING_START, "",
                      record_list, "", "---", ""]
         elif fi == n_files:
-            body += [wrap(CHATGPT_LASTFILE.format(i=fi, n=n_files, what=what)),
+            body += [wrap(CHATGPT_LASTFILE.format(i=fi, n=n_files, what=what,
+                                                 last_cited=n_files - 1)),
                      "", "---", ""]
         else:
             body += [wrap(CHATGPT_MIDFILE.format(i=fi, n=n_files, what=what)),
@@ -702,7 +743,16 @@ BUILT_FROM = """\
   "unlikely".
 - The earlier closure-text trim, commit `628686f` on branch
   `worktree-agent-a53dc49a926581fe8`, is an ancestor of the commit above and is
-  carried through it."""
+  carried through it.
+- Rebuilt 2026-09-22 after the correction that moves the programme spend to
+  about $227.60 of $400. Two things changed in the material: the closure text
+  now carries a dated note beside its money paragraph saying the programme
+  figure it states is stale by $1.90, and the compute-ledger excerpt now
+  reproduces the rows that carry that $1.90 and the ledger's own note on them,
+  so a reviewer can check the corrected figures against the record rather than
+  taking them on trust. The rebuild also picked up source records that had
+  grown since the packets were last frozen, which is why more files than those
+  two changed."""
 
 
 def build_index(outputs):

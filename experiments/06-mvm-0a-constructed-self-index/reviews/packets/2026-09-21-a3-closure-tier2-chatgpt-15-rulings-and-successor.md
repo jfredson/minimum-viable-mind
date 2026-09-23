@@ -1,11 +1,11 @@
-# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 15 of 20: The three rulings the text cites, and the successor experiment's design note
+# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 15 of 22: The three rulings the text cites, and the successor experiment's design note
 
-*This is file 15 of 20 of one review packet, pasted into a single
+*This is file 15 of 22 of one review packet, pasted into a single
 conversation. It contains the ruling that a load-bearing self-index is a
 centre; the ruling carrying the successor experiment's plan; the ruling
 reconciling the blind arm; the successor experiment's design note. Reply with
 one short line saying you have it, and wait for the rest: the brief you are
-answering is in file 1, and your review comes only after file 20 arrives. If
+answering is in file 1, and your review comes only after file 22 arrives. If
 this file looks cut short, say so now.*
 
 ---
@@ -208,6 +208,37 @@ rules. What changes is that the proposal reaches him.
 - TimeAssembler: the mirrored roadmap document carries the same status line.
 - Owed: the protocol amendment text (item 6); the successor proposal v1
   (Claude Code, week 39); the A3 closure tier 1 packet (Cowork, week 39).
+
+## Annotated 2026-09-21: where the weeks named above now point
+
+*This ruling stands exactly as recorded and none of its words is changed. The
+annotation says only where its calendar weeks now point, the way the ruling of
+2026-09-21 was annotated, so that a reader who finds a week here is not left
+hunting for a grid that no longer exists.*
+
+John ruled on 2026-09-21 that work is measured in task time rather than calendar
+time — "We are not working on a delayed calendar. We are working on a finish
+every task as quickly as possible mode." The week-by-week table in section 4 of
+`docs/december-result-roadmap-2026-09-20.md` became an ordered chain of what must
+finish before what, so the weeks above read as follows. No condition, amount,
+owner or outcome changes.
+
+- **Item 5**, "Arm C is conditional on the week 40 rehearsal showing its degree
+  is known by construction": the measurement rehearsal is step 2 of that chain.
+  The condition is unchanged — the entangled-by-construction arm is built only
+  if the rehearsal shows its degree is actually known, and the two-arm fallback
+  is still accepted in advance, whenever the rehearsal runs.
+- **The last line above**, which records the successor proposal and the A3
+  closure first-tier packet as owed in week 39: both sit at the head of that
+  chain (step 1), which is to say they wait on nothing and start as soon as
+  someone can start them.
+
+Two later notes, so the reader does not have to look for them. Item 4's seed
+fallback has since been replaced outright — not merely restated — by "halt, not
+trim", in item 13 of
+`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`. And the
+registration commit target of 2026-10-11 in item 1 was pacing, so it goes with
+the calendar; the kill dates in items 1 and 7 are commitments and are unchanged.
 
 ===== END OF RECORD 17 =====
 

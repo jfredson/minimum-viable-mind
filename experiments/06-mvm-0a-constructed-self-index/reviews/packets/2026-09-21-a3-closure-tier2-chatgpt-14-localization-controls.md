@@ -1,10 +1,10 @@
-# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 14 of 20: The localization records, 3 of 3: the other-agent control and the marker-word read
+# Review packet - the closure text of Amendment A3 (Minimum Viable Mind) - file 14 of 22: The localization records, 3 of 3: the other-agent control and the marker-word read
 
-*This is file 14 of 20 of one review packet, pasted into a single
+*This is file 14 of 22 of one review packet, pasted into a single
 conversation. It contains the other-agent control's probe half; the
 difference-of-averages read of the marker word. Reply with one short line
 saying you have it, and wait for the rest: the brief you are answering is in
-file 1, and your review comes only after file 20 arrives. If this file looks
+file 1, and your review comes only after file 22 arrives. If this file looks
 cut short, say so now.*
 
 ---
