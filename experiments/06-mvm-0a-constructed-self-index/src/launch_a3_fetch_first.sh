@@ -201,11 +201,29 @@ fi
 # `pmset -g custom` prints — `sleep` and `displaysleep`, separately for
 # battery and for wall power — look relevant and are not the thing:
 #   * `displaysleep` only darkens the screen. The watchdog keeps running.
-#   * `sleep` is the idle timer, and the watchdog is already spawned under
-#     `caffeinate -dimsu` at the bottom of this script, which holds idle
-#     sleep off for as long as that process lives. Setting the timer to zero
-#     would add nothing, and neither the timer nor caffeinate survives the
-#     lid coming down.
+#   * `sleep` is the idle timer, and it is held off by `caffeinate -dimsu` —
+#     but only for part of the time this script is spending money, and a
+#     later reader should not be told otherwise. The watchdog is spawned
+#     under `caffeinate -dimsu` as the last thing this script does, so the
+#     cover begins on line 639, and lasts for as long as that process is
+#     alive. The rented machine exists from line 402, which is where
+#     `runpodctl pod create` runs.
+#     THE LAUNCH WINDOW ITSELF IS NOT COVERED: creating the machine, pushing
+#     the code, running the remote checks and starting the training all
+#     happen with nothing holding the idle timer off, and on this Mac that
+#     timer is fifteen minutes, which is not obviously longer than a slow
+#     launch. If it fires in that window the result is the exact shape this
+#     check exists to prevent — a rented machine running, this Mac asleep,
+#     and nothing awake left to delete it.
+#     Refusing here is still the wrong answer to that, and that is why the
+#     timer reading below decides nothing: fifteen minutes on a Mac whose
+#     override is on and whose lid stays open is safe, so gating on the
+#     timer would refuse safe machines, and a guard that refuses safe
+#     machines is one somebody switches off. Closing the launch window wants
+#     a `caffeinate` started before the machine is created; that is a
+#     separate change and it has not been made. Neither the timer nor
+#     `caffeinate` survives the lid coming down, which is what the override
+#     above is for.
 # So the idle timers are read for the report below and never decide anything.
 #
 # THE POWER SOURCE IS READ TOO, and refused on the same footing. On wall
@@ -222,8 +240,24 @@ fi
 # not, ON_UNARMED=laptop-only still bills all the way to the watchdog's own
 # deadline, a full day away. The risk is smaller than it was and it is not
 # gone, so this refuses by default and takes an explicit environment variable
-# to proceed, the same shape as ON_UNARMED: a spending choice made out loud
-# rather than by accident.
+# to proceed: a spending choice made out loud rather than by accident.
+#
+# THE OVERRIDE TAKES ONE VALUE AND ONE ONLY, ALLOW_LAPTOP_SLEEP=1. Anything
+# else — 0, false, a typo, a value meant for some other setting — leaves the
+# refusal standing, and the refusal says the value was seen and not taken.
+# The first version of this check fired on the setting being NON-EMPTY, so
+# ALLOW_LAPTOP_SLEEP=0 switched the guard off and the banner then read
+# "OVERRIDDEN by ALLOW_LAPTOP_SLEEP=0", contradicting itself in the same
+# line. Someone who writes 0 means "do not allow" and was getting the
+# opposite, on a check whose whole job is to stop money being spent.
+# The commit that added this check called the non-empty test "the same shape
+# as ON_UNARMED". IT WAS NOT, and the difference runs in the direction that
+# costs money: ON_UNARMED names the one value it recognises and sends
+# everything else to the MONEY-SAFE branch (the case statement further down
+# names `laptop-only` and self-terminates on `*`), whereas a non-empty test
+# sends everything it does not recognise to the MONEY-LOSING branch. The
+# case statement below now has ON_UNARMED's shape in fact and not just in
+# the claim: one value recognised, everything else safe.
 #
 # A dry run REPORTS the verdict and carries on. It creates nothing, and
 # `check_launcher_argument_guard.sh` requires every launcher's dry run to
@@ -234,6 +268,10 @@ fi
 # reap_handshake_selftest.sh plays on runpodctl.
 PMSET="${PMSET:-pmset}"
 ALLOW_LAPTOP_SLEEP="${ALLOW_LAPTOP_SLEEP:-}"
+case "$ALLOW_LAPTOP_SLEEP" in
+  1) SLEEP_OVERRIDE_TAKEN=1 ;;
+  *) SLEEP_OVERRIDE_TAKEN=0 ;;
+esac
 echo "local pre-flight: can this Mac fall asleep?"
 SLEEP_OVERRIDE=$("$PMSET" -g 2>/dev/null \
   | awk '$1 == "SleepDisabled" { print $2; exit }')
@@ -265,7 +303,7 @@ if [ -z "$SLEEP_REFUSAL" ]; then
   echo "  ok: never-sleep override ON, running on wall power"
   echo "  (idle sleep timers ${IDLE_AC:-unread} min plugged in / ${IDLE_BATT:-unread} min on battery;"
   echo "   not relied on — caffeinate covers idle sleep, the override covers the lid)"
-elif [ -n "$ALLOW_LAPTOP_SLEEP" ]; then
+elif [ "$SLEEP_OVERRIDE_TAKEN" = 1 ]; then
   echo "  OVERRIDDEN by ALLOW_LAPTOP_SLEEP=$ALLOW_LAPTOP_SLEEP — carrying on anyway."
   echo "  what was found: $SLEEP_REFUSAL"
   echo "  what it can cost: if this Mac sleeps after training finishes, the"
@@ -281,6 +319,10 @@ else
   echo "  REFUSING TO LAUNCH: $SLEEP_REFUSAL" >&2
   echo "  fix: $SLEEP_FIX" >&2
   echo "  then re-run. Nothing was created and nothing was spent." >&2
+  if [ -n "$ALLOW_LAPTOP_SLEEP" ]; then
+    echo "  ALLOW_LAPTOP_SLEEP was set to '$ALLOW_LAPTOP_SLEEP', which is not 1," >&2
+    echo "  so it did not override anything. Only the value 1 overrides this." >&2
+  fi
   echo "  To launch anyway, knowing what the paragraph above costs:" >&2
   echo "    ALLOW_LAPTOP_SLEEP=1 $0" >&2
   exit 1

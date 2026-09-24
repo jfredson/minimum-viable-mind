@@ -29,6 +29,14 @@
 # require a refusal. If case 0 ever refuses, or any of 1 to 4 ever passes,
 # this harness has stopped measuring the property it claims to.
 #
+# Case 5 does the same pairing for the override's value: 0 and false must
+# leave the refusal standing, and 5c requires 1 to still work, so that the
+# first two cannot pass merely because the check has started refusing
+# everything. Case 6 is the odd one out — it checks WORDS, not behaviour: the
+# comment giving the reason the idle timer is not gated on has to say when
+# the cover it names actually begins, and the two line numbers it gives are
+# compared against where those lines really are.
+#
 # usage: bash sleep_guard_selftest.sh          (runs every case)
 #        bash sleep_guard_selftest.sh 3        (runs case 3 only)
 # exit:  0 every check passed; 1 a check failed.
@@ -332,6 +340,106 @@ if want_case 4; then
   cleanup
 fi
 
+# ---------------------------------------------------------------- case 5
+# THE OVERRIDE TAKES ONE VALUE AND ONE ONLY. The first version of this check
+# fired on the setting being non-empty, so ALLOW_LAPTOP_SLEEP=0 switched the
+# guard OFF and the banner then read "OVERRIDDEN by ALLOW_LAPTOP_SLEEP=0",
+# contradicting itself in the same line. Someone who writes 0 means "do not
+# allow" and was getting the opposite, on a check whose whole job is to stop
+# money being spent. These cases pin the corrected shape: 1 overrides,
+# everything else leaves the refusal standing.
+if want_case 5; then
+  echo "case 5 — ALLOW_LAPTOP_SLEEP=0 must NOT switch the guard off"
+  make_pmset 0 "AC Power" 15 15
+  run_launcher "" "0"
+  assert_refused_at_the_sleep_check
+  case "$OUT_TEXT" in
+    *"OVERRIDDEN by ALLOW_LAPTOP_SLEEP"*)
+      bad "0 switched the guard off, and the banner contradicted itself" ;;
+    *) ok "it did not announce an override it was not given" ;;
+  esac
+  # A value that was seen and not taken has to be said out loud, or the
+  # operator reads the refusal, believes the override is broken, and reaches
+  # for something blunter.
+  case "$OUT_TEXT" in
+    *"ALLOW_LAPTOP_SLEEP was set to '0', which is not 1"*)
+      ok "it said the value was seen and not taken" ;;
+    *) bad "it ignored the value silently" ;;
+  esac
+  assert_nothing_created
+  cleanup
+
+  echo "case 5b — ALLOW_LAPTOP_SLEEP=false must NOT switch the guard off"
+  make_pmset 0 "AC Power" 15 15
+  run_launcher "" "false"
+  assert_refused_at_the_sleep_check
+  case "$OUT_TEXT" in
+    *"OVERRIDDEN by ALLOW_LAPTOP_SLEEP"*)
+      bad "an unrecognised value switched the guard off" ;;
+    *) ok "an unrecognised value left the refusal standing" ;;
+  esac
+  assert_nothing_created
+  cleanup
+
+  # CONTROL for the two cases above, and it is the same argument case 0 makes
+  # for the check as a whole: a test that refuses every value is not
+  # measuring the values, it is just refusing. Case 4b proves this too; it is
+  # repeated here so that running case 5 on its own still carries its control.
+  echo "case 5c — control: the one value that IS the override still works"
+  make_pmset 0 "AC Power" 15 15
+  run_launcher "" "1"
+  case "$OUT_TEXT" in
+    *"OVERRIDDEN by ALLOW_LAPTOP_SLEEP=1"*)
+      ok "1 still overrides, so 0 and false are being read, not refused wholesale" ;;
+    *) bad "1 no longer overrides — the check now refuses everything" ;;
+  esac
+  case "$OUT_TEXT" in
+    *"REFUSING TO LAUNCH"*) bad "it refused despite being given 1" ;;
+    *) ok "it did not refuse" ;;
+  esac
+  assert_nothing_created
+  cleanup
+fi
+
+# ---------------------------------------------------------------- case 6
+# THE COMMENT THAT EXPLAINS WHY THE IDLE TIMER IS NOT GATED ON MUST TELL THE
+# TRUTH ABOUT WHEN THE COVER STARTS. This is a check on words rather than on
+# behaviour, and it is here because the words are load-bearing: they are the
+# stated reason case 0 requires a fifteen-minute timer to be let through. The
+# reason is sound, but the cover it names does not begin until the watchdog
+# is spawned, while the rented machine exists from much earlier in the
+# script, and a later session reading an unqualified "already covered" would
+# be told the launch window needs nothing.
+#
+# The two line numbers are checked against where those lines actually are, so
+# that editing the launcher without re-reading the comment is caught rather
+# than quietly leaving the comment wrong.
+if want_case 6; then
+  echo "case 6 — the comment says when the idle-sleep cover begins, and when it does not"
+  CAFF_LINE=$(grep -n '^nohup caffeinate -dimsu' "$LAUNCHER" | head -1 | cut -d: -f1)
+  CREATE_LINE=$(grep -n '^CREATE_OUT=\$(runpodctl pod create' "$LAUNCHER" | head -1 | cut -d: -f1)
+  if [ -n "$CAFF_LINE" ] && [ -n "$CREATE_LINE" ]; then
+    ok "found both lines in the launcher (cover at $CAFF_LINE, machine at $CREATE_LINE)"
+  else
+    bad "could not find the caffeinate line or the pod-creating line at all"
+  fi
+  if grep -q "cover begins on line $CAFF_LINE" "$LAUNCHER"; then
+    ok "the comment gives the right line for where the cover begins"
+  else
+    bad "the comment does not say the cover begins on line $CAFF_LINE"
+  fi
+  if grep -q "rented machine exists from line $CREATE_LINE" "$LAUNCHER"; then
+    ok "the comment gives the right line for where the rented machine begins"
+  else
+    bad "the comment does not say the machine exists from line $CREATE_LINE"
+  fi
+  if grep -q "THE LAUNCH WINDOW ITSELF IS NOT COVERED" "$LAUNCHER"; then
+    ok "the comment says plainly that the launch window is uncovered"
+  else
+    bad "the comment never says the launch window is uncovered"
+  fi
+fi
+
 echo
 echo "checks passed: $PASS   failed: $FAIL"
 [ "$FAIL" -eq 0 ] || exit 1
@@ -379,3 +487,42 @@ echo "and this Mac's real power settings were never read or changed."
 # cannot say which fired. The assertion was rewritten to require the
 # refusal's own words and its position in the script as well, which is the
 # form above and the form that catches the mutation.
+#
+# ---------------------------------------------------------------------------
+# THE SECOND FAILING RUN: cases 5 and 6, seen failing before they passed
+# ---------------------------------------------------------------------------
+# 2026-09-24, same standard, same reason. Cases 5, 5b, 5c and 6 were written
+# and run BEFORE either of the two fixes they describe was applied to the
+# launcher, so that what they detect was watched rather than argued for. That
+# run reported:
+#
+#   checks passed: 46   failed: 10
+#
+#   case 5 - ALLOW_LAPTOP_SLEEP=0 must NOT switch the guard off
+#       FAIL: it never said it was refusing
+#       FAIL: it ran on past the sleep check to the next precondition
+#       FAIL: 0 switched the guard off, and the banner contradicted itself
+#       FAIL: it ignored the value silently
+#   case 5b - ALLOW_LAPTOP_SLEEP=false must NOT switch the guard off
+#       FAIL: it never said it was refusing
+#       FAIL: it ran on past the sleep check to the next precondition
+#       FAIL: an unrecognised value switched the guard off
+#   case 6 - the comment says when the idle-sleep cover begins
+#       FAIL: the comment does not say the cover begins on line 597
+#       FAIL: the comment does not say the machine exists from line 360
+#       FAIL: the comment never says the launch window is uncovered
+#
+# Two things in that run are worth keeping. First, case 5c PASSED throughout,
+# which is the control doing its job: the old non-empty test did accept 1, so
+# the four failures above were about the other values and not about the
+# override having stopped working. Second, "it exited 1" PASSED in cases 5
+# and 5b against the unfixed launcher, for the same reason it did in the
+# first failing run - the launch ran on and was stopped a few lines later by
+# this harness's own second stop. The two assertions added after that run,
+# the refusal's words and its position, are again what saw the breakage.
+#
+# With both fixes applied the harness reports 56 passed, 0 failed. The line
+# numbers in case 6 are recomputed from the launcher on every run, so they
+# read 639 and 402 after the fixes rather than the 597 and 360 above; the
+# point of computing them is that editing the launcher without re-reading
+# the comment fails this case instead of quietly leaving the comment wrong.
