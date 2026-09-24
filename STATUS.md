@@ -2,10 +2,93 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
-## WHERE THINGS STAND 2026-09-21 — the two follow-up localization reads are in and ruled: the exclusion confound is excluded, one cell crossed the bar and is not carried as a clearance, nothing is localized; the A3 closure text is next
+## WHERE THINGS STAND 2026-09-24 — the successor's reading has a label and a limit on what may be quoted from it, both rulings are on the main line, and nothing has been spent since 2026-09-21
 
 *This section is the current state. Everything below it is the older
 record, newest first, and is left exactly as written.*
+
+**Money.** About **$227.6 of $400**, leaving about **$172.4**; Amendment A3, the
+first constructed self-index experiment, at about **$46.2 of its $100 stop**,
+leaving about **$53.8** — the running totals in
+`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`. Last spend:
+about two cents on 2026-09-21, on a machine nobody meant to create.
+
+**Amendment A3 waits on John's hands, not on any work.** Version 4 of the closure
+text was checked by a session that did not write it: *"Yes. Nothing in the text is
+outstanding"* (`reviews/2026-09-21-a3-closure-v4-fix-verification-claude-worktree.md`
+— not the earlier `…-v4-closure-check-…` of the same day, whose verdict those fixes
+answer). The reviewer packets verify clean, re-checked today. What is left: John
+runs the two outside sessions by hand — **Gemini takes one document, ChatGPT
+twenty-two files in one conversation** — and files both answers verbatim; he rules
+on the findings; fatal ones get a closure line checked by someone who did not write
+the fix; then the closure block is appended to `amendment-a3.md`.
+
+**The successor's reading has a label and a limit, both ruled 2026-09-23 with
+authorship mixed, both on the main line today as pull request 28.** The review
+attached to the proposal (`reviews/2026-09-21-successor-proposal-claude-worktree.md`)
+found two fatal flaws; the measurement rehearsal
+(`docs/2026-09-21-successor-measure-rehearsal.md`) confirmed both by measurement and
+found worse — the step that fits the reading had no label at all, and two of its
+three possible meanings score an arm built to read **0.0000** at **0.982 to 1.000**.
+Ruled: the label is **which marker word is the model's own**; and from the two arms
+whose training does not reproduce the registration may quote **a range and a
+direction only** — about 0.83 to 0.89, at the entangled end, one seed of three
+clearing the bar — never a decimal (both files in `docs/rulings/`). Neither ruling
+makes the procedure one instrument; section 7 of the rehearsal holds the open
+problems, led by the free arm reading at the entangled anchor rather than between
+the anchors.
+
+**Owed before the registration text goes to its gate**
+(`reviews/2026-09-22-rehearsal-rerun-from-code-claude-worktree.md`): of three
+things, one is discharged by today's merge. The attenuation check's forward-pass
+evidence reverses — the record has it failing its pre-stated line on **one** arm and
+seed, the re-run finds **five**, though the finding survives on model-free evidence
+identical between runs — and the committed self-test record reports **63** passes
+where the code now gives **64**.
+
+**The process the next session works under** (`docs/outside-review-protocol.md`;
+items 3 and 22 of the 2026-09-21 ruling): whatever one session writes, a different
+session checks, filing a command and its output rather than a reading; the five
+failure modes in `docs/known-failure-modes.md` are exercised against each design,
+not cited; a document is rebuilt, not skimmed, when new binding text depends on it;
+the reviewer's own measured check runs at every registration gate whether or not
+anything fatal was found, and that gate runs both review tiers, the outside one at
+least two models from other labs. Use `scripts/check_citations.py` and
+`scripts/check_single_source.py` rather than re-deriving them.
+
+**Working mode: task time, not calendar time.** A step starts when its
+prerequisites are done. The two kill dates are backstops — registration committed
+by **2026-10-18**, the remaining eight registered runs launched by **2026-11-01**
+— and since item 23 of the 2026-09-21 ruling, passing one takes a fresh ruling
+naming what comes off the back end, rather than dropping the roadmap to outcome
+R4 as the entry below this one still says. That entry stands as written; the
+current rule is here, and the same item settles that the second date binds those
+eight runs and not the free-arm run before them. The weekend-by-weekend schedule
+over the December-result roadmap is `docs/weekend-roadmap-2026-09-24.md`.
+
+**The next rented machine is staged and not run**
+(`docs/successor-rented-slice-staging-2026-09-21.md`): one short slice, about
+**$0.75 to $1.00**, hard cap **$2.00**, buying seconds per step on all three
+architectures — which the second release of money may not be asked for without —
+and the first exercise of the shutdown handshake against the real vendor. **It needs
+John's verbatim go naming the run**; the earlier one lapsed because it named a
+staging document about to change, and what is owed first is the amended plan,
+checked by a session other than the one that amended it. Keep the lid open:
+`caffeinate` blocks idle sleep and not lid-close, and idle billing has cost about
+$10.30 across four occurrences.
+
+**What waits on John** — seven live items tagged `awaiting-john` on the Minimum
+Viable Mind project in TimeAssembler: (1) the entangled and free arms' numbers are
+one sample, not a measurement; (2) the free arm reads at the entangled anchor — is
+the measure detecting rather than scaling? (3) the named-other condition does not
+learn — redesign it, or accept the risk; (4) the verbatim go for the rented slice;
+(5) how to correct a measured value in registered text that its cited record does
+not contain; (6) correct the unreproducible key count in the independent A4 review,
+or leave it annotated; (7) Amendment A3 closure, the outside tier of its
+registration gate. Three are closed: the nomination label, the scope of the second
+kill date, and the registered repeated-sampling run.
+
+## WHERE THINGS STAND 2026-09-21 — the two follow-up localization reads are in and ruled: the exclusion confound is excluded, one cell crossed the bar and is not carried as a clearance, nothing is localized; the A3 closure text is next
 
 Both reads went through Gate B of `docs/outside-review-protocol.md`
 (`reviews/2026-09-21-followup-runs-claude-worktree.md`, ledger RT-120 to
