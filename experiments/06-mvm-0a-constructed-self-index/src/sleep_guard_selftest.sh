@@ -32,10 +32,15 @@
 # Case 5 does the same pairing for the override's value: 0 and false must
 # leave the refusal standing, and 5c requires 1 to still work, so that the
 # first two cannot pass merely because the check has started refusing
-# everything. Case 6 is the odd one out — it checks WORDS, not behaviour: the
-# comment giving the reason the idle timer is not gated on has to say when
-# the cover it names actually begins, and the two line numbers it gives are
-# compared against where those lines really are.
+# everything.
+#
+# TWO OF THE CHECKS ARE ON WORDS RATHER THAN ON BEHAVIOUR, because the words
+# are what a person acts on. Case 6 reads the comment giving the reason the
+# idle timer is not gated on: it has to say when the cover it names actually
+# begins, and the two line numbers it gives are compared against where those
+# lines really are. Case 0 reads the banner the operator sees at launch, and
+# requires it to make the same two points the comment does — when the cover
+# starts, and that the launch itself is outside it.
 #
 # usage: bash sleep_guard_selftest.sh          (runs every case)
 #        bash sleep_guard_selftest.sh 3        (runs case 3 only)
@@ -185,12 +190,40 @@ if want_case 0; then
   esac
   # The idle timers are reported and must not decide anything. Here they
   # are 15 minutes on both power sources — a Mac that WOULD idle-sleep —
-  # and the launch is allowed regardless, because caffeinate covers idle
-  # sleep and the override covers the lid.
+  # and the launch is allowed regardless, because the override covers the
+  # lid and the keep-awake command covers idle sleep once the watchdog is
+  # running.
   case "$OUT_TEXT" in
     *"idle sleep timers 15 min plugged in / 15 min on battery"*)
       ok "it reported the idle timers it read from 'pmset -g custom'" ;;
     *) bad "it did not report the idle timers" ;;
+  esac
+  # AND IT MUST NOT OVERSTATE THE COVER IT IS LETTING THEM THROUGH ON. The
+  # keep-awake command is spawned with the watchdog as the last thing the
+  # launcher does, so it holds nothing off while the machine is being
+  # created, the code pushed and the training started. The comment in the
+  # launcher now says so; this requires the banner the operator actually
+  # reads to say so too, in the same two parts the comment gives — when the
+  # cover starts, and that the launch is outside it. The earlier wording,
+  # "caffeinate covers idle sleep, the override covers the lid", fails both
+  # of these — watched, not argued for: put back, it fails the first two of
+  # the three checks below. The third, on the lid, passes under either
+  # wording; it is here so that shortening the banner again cannot quietly
+  # drop the one thing the old line did get right.
+  case "$OUT_TEXT" in
+    *"holds idle sleep off only once the watchdog is running"*)
+      ok "the banner says when the idle-sleep cover starts" ;;
+    *) bad "the banner does not say when the idle-sleep cover starts" ;;
+  esac
+  case "$OUT_TEXT" in
+    *"the launch itself is not covered"*)
+      ok "and that the launch window is outside it" ;;
+    *) bad "the banner does not say the launch window is uncovered" ;;
+  esac
+  case "$OUT_TEXT" in
+    *"the override covers the lid"*)
+      ok "and that the lid is what the override covers" ;;
+    *) bad "the banner does not say the override covers the lid" ;;
   esac
   cleanup
 fi
@@ -521,8 +554,32 @@ echo "and this Mac's real power settings were never read or changed."
 # this harness's own second stop. The two assertions added after that run,
 # the refusal's words and its position, are again what saw the breakage.
 #
-# With both fixes applied the harness reports 56 passed, 0 failed. The line
+# With both fixes applied the harness reported 56 passed, 0 failed. The line
 # numbers in case 6 are recomputed from the launcher on every run, so they
-# read 639 and 402 after the fixes rather than the 597 and 360 above; the
-# point of computing them is that editing the launcher without re-reading
-# the comment fails this case instead of quietly leaving the comment wrong.
+# read 641 and 404 today rather than the 597 and 360 above; the point of
+# computing them is that editing the launcher without re-reading the comment
+# fails this case instead of quietly leaving the comment wrong. That is what
+# happened next, and it worked as intended: the banner fix below moved both
+# lines by two, case 6 failed on the stale numbers, and the comment was
+# corrected rather than left wrong.
+#
+# ---------------------------------------------------------------------------
+# THE THIRD FAILING RUN: the banner, seen failing before it passed
+# ---------------------------------------------------------------------------
+# 2026-09-24, same standard. The comment case 6 guards was corrected to say
+# the launch window is uncovered, but the banner the operator reads at launch
+# still carried the old overstatement, "caffeinate covers idle sleep, the
+# override covers the lid". Nothing in this harness measured that line, so
+# nothing complained. Three checks were added to case 0 and the old wording
+# put back under them. That run reported, for case 0:
+#
+#   checks passed: 5   failed: 2
+#
+#   case 0 - negative control: a safe Mac must NOT be refused
+#       FAIL: the banner does not say when the idle-sleep cover starts
+#       FAIL: the banner does not say the launch window is uncovered
+#
+# The third new check, that the override covers the lid, passed against the
+# old wording too, which is right: the old line said that much correctly and
+# only the cover it claimed was overstated. With the banner corrected the
+# harness reports 59 passed, 0 failed.

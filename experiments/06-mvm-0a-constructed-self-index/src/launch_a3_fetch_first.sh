@@ -205,8 +205,8 @@ fi
 #     but only for part of the time this script is spending money, and a
 #     later reader should not be told otherwise. The watchdog is spawned
 #     under `caffeinate -dimsu` as the last thing this script does, so the
-#     cover begins on line 639, and lasts for as long as that process is
-#     alive. The rented machine exists from line 402, which is where
+#     cover begins on line 641, and lasts for as long as that process is
+#     alive. The rented machine exists from line 404, which is where
 #     `runpodctl pod create` runs.
 #     THE LAUNCH WINDOW ITSELF IS NOT COVERED: creating the machine, pushing
 #     the code, running the remote checks and starting the training all
@@ -302,7 +302,9 @@ fi
 if [ -z "$SLEEP_REFUSAL" ]; then
   echo "  ok: never-sleep override ON, running on wall power"
   echo "  (idle sleep timers ${IDLE_AC:-unread} min plugged in / ${IDLE_BATT:-unread} min on battery;"
-  echo "   not relied on — caffeinate covers idle sleep, the override covers the lid)"
+  echo "   not relied on — the override covers the lid; the keep-awake command"
+  echo "   (caffeinate) holds idle sleep off only once the watchdog is running,"
+  echo "   so the launch itself is not covered.)"
 elif [ "$SLEEP_OVERRIDE_TAKEN" = 1 ]; then
   echo "  OVERRIDDEN by ALLOW_LAPTOP_SLEEP=$ALLOW_LAPTOP_SLEEP — carrying on anyway."
   echo "  what was found: $SLEEP_REFUSAL"
