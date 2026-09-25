@@ -22,9 +22,14 @@ only on page 7.*
 *This packet is on its way to John, so under the pairing rule in
 `docs/outside-review-protocol.md` it is owed a check by a session that did not
 write it before he relies on any number in it. The checker's brief is in
-`docs/weekend-1-session-prompts.md`, section (a) — a file that sat uncommitted
-in the main checkout when this packet was written, so a citation checker run
-from a worktree reports it as not in the repository.*
+`docs/weekend-1-session-prompts.md`, section (a). That file was uncommitted
+when this packet was first written and reached the main line afterwards, in
+commit `b5cfc23`. The check of this packet is filed at
+`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-claude-worktree.md`
+on pull request 35, not yet on the main line when this version was written,
+so a citation checker run on this branch reports that path as absent; its
+twelve findings are applied in this version and none of them changes a
+recommendation.*
 
 ---
 
@@ -95,16 +100,21 @@ from a worktree reports it as not in the repository.*
    12.4, "three arms × three seeds"); the ruling of 2026-09-23 says the
    arithmetic rests on a spread that leaves out the largest source of variation
    (`docs/rulings/2026-09-23-range-and-direction-only.md`, section 3). Page 1.
-4. **The learn-both reference points.** The proposal sets the learn-both bar
-   "against the measured accuracy of an ordinary competing solver"
-   (`docs/successor-experiment-proposal-2026-09-21.md`, section 8.1). The
-   rehearsal's name-only solver scores 1.0000 on the named-other condition
-   (`docs/2026-09-21-successor-measure-rehearsal.md`, section 8), so that
-   reference cannot be the threshold for that condition. Page 1.
+4. **The learn-both reference points, a disagreement inside the proposal.**
+   The proposal's section 9 table sets the learn-both threshold "against the
+   measured competing solver"
+   (`docs/successor-experiment-proposal-2026-09-21.md`, section 9). Its section
+   8.1 says the opposite of the same solver: the reference points are "reported
+   alongside, and they are references and not thresholds". The rehearsal's
+   name-only solver scores 1.0000 on the named-other condition
+   (`docs/2026-09-21-successor-measure-rehearsal.md`, section 8), so the section
+   9 wording cannot be the threshold for that condition. Section 8.1 already
+   says what page 1b recommends. Page 1.
 5. **Whether the first stop condition fired.** The rehearsal marks item R-1 a
    FAIL and adjudicates that stop condition S1 does not fire, calling that "the
-   rehearsal's reading rather than a ruling"
-   (`docs/2026-09-21-successor-measure-rehearsal.md`, section 8). Page 4.
+   rehearsal's adjudication and not a ruling"
+   (`docs/2026-09-21-successor-measure-rehearsal.md`, section 8; its section 0
+   says "the rehearsal's reading rather than a ruling"). Page 4.
 6. **The Wittgenstein note's premises.** The note asks whether its second test
    fits "the successor's $130 cap and the 2026-10-11 registration target"
    (TimeAssembler note, "Questions for the session"). Both have since moved: the
@@ -126,6 +136,19 @@ from a worktree reports it as not in the repository.*
    section 4). This session found no filed check of the regenerated plan file
    (MEASURED, Appendix A, check 5); `STATUS.md` of 2026-09-24 says the same
    check is "owed first". Page 9.
+10. **The "$12 a run" planning figure.** The successor proposal prices runs at
+    "the ledger's $12 planning figure" and cites the compute ledger's "Phase
+    budget guide" (`docs/successor-experiment-proposal-2026-09-21.md`, section
+    12.4); the weekend roadmap inherits the same figure. The guide line it
+    points at prices "Registered training, 5 seeds × full+twin" at "~$12 (30M)"
+    — ten runs, at an earlier design — and the ledger's own reconciliation of
+    2026-08-12 marks that guide "now known-stale"
+    (`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`, the
+    "Phase budget guide" table and the 2026-08-12 reconciliation note above the
+    ledger table). The ledger's measured actual-after rows for single
+    30-million-parameter runs are about $9.9 (the 2026-09-19 row) and $13.92
+    (the 2026-09-15 row). Pages 4, 5 and 6 use the measured rows and call $12
+    the proposal's figure.
 
 ---
 
@@ -194,16 +217,18 @@ of three on the entangled and free arms (section 8, table).
 
 *Options.* (i) The rehearsal's own pre-stated cell, per condition: above one in
 four at the 0.05 level on at least two seeds of three. (ii) Above the measured
-competing solver, per condition, as section 8.1 of the proposal words it. (iii)
-A fixed accuracy, for instance 0.35 on each condition.
+competing solver, per condition, as the section 9 table of the proposal words
+it ("against the measured competing solver"). (iii) A fixed accuracy, for
+instance 0.35 on each condition.
 
 *Recommendation, confidence moderate:* **option (i), stated per condition, with
 the ownership-blind and name-only solvers reported beside it as references and
-not thresholds** — which is what proposal section 8.1 already says of the one
-in eight and one in four. Option (ii) cannot be written for the named-other
-condition: the name-only solver reaches 1.0000 on it (section 8), so "above the
-competitor" would demand more than the top of the scale. That is disagreement 4
-in the index. ARGUED.
+not thresholds** — which is what proposal section 8.1 already says of all three
+reference points: "they are references and not thresholds". Option (ii) cannot
+be written for the named-other condition: the name-only solver reaches 1.0000
+on it (section 8), so "above the competitor" would demand more than the top of
+the scale. That is disagreement 4 in the index, a disagreement between the
+proposal's section 8.1 and its section 9 table. ARGUED.
 
 *Strongest argument against.* A bar of 0.2630 is just above chance, so "the arm
 learned the condition" is a thin claim, and it is exactly the bar the
@@ -283,9 +308,14 @@ departure 2" (section 11). "John's ruling on which labels are in the family at
 all" is what section 11 says is still needed; the label has since been ruled
 (`docs/rulings/2026-09-23-nomination-label.md`, section 1).
 
-*Options.* (i) The family as the label ruling leaves it: 45 site sets × 4 rank
-caps (1, 2, 4, 8) × 1 label = 180 comparisons per arm and seed, with the
-degenerate all-sites set excluded. (ii) Register the rule that generates the
+*Options.* (i) The family as the label ruling leaves it, with the degenerate
+all-sites set excluded: 44 site sets × 4 rank caps (1, 2, 4, 8) × 1 label =
+**176** comparisons per arm and seed. The 45 site sets are 9 layer sets × 5
+position sets (`experiments/rehearsal-successor-measure/src/rehearse.py`, the
+candidate layer sets and positions near line 53), and one of them — every
+layer at every position — is the set section 7, item 5 says "has to be
+excluded in writing"; the rehearsal's own "180 as computed" still had it
+inside. (ii) Register the rule that generates the
 list — the action position and the positions between the source assignment
 and the action, and all contiguous layer sets — and let the count follow from
 the registered architecture, since the 30-million-parameter model has 12
@@ -353,7 +383,8 @@ re-run — "one of them half what it was" (same section).
 *Options.* (i) Across-seed spread of the raw difference as the registered
 uncertainty, with the within-seed bootstrap reported beside it. (ii) The
 bootstrap as primary. (iii) Re-specify the method to span independent
-trainings — the ruling's declined option, "not ruled out for later".
+trainings — the ruling's declined option, of which it says "Neither is ruled
+out for later."
 
 *Recommendation, confidence moderate to high:* **option (i), and the
 registration says that neither method measures drift between runs of one
@@ -564,9 +595,10 @@ site set beside the reading at its own.
 rehearsal code's label tuple, if the rehearsal is re-run for the weekend's
 repairs; the successor's measurement code when it is written; and one
 sentence in the registration saying the site set and rank are per-arm outputs
-of one rule. The ruling file's section 3 says this work is "still owed" and,
-under the pairing rule, is checked by a session other than the one that
-writes it.
+of one rule. The ruling file says this work is "still owed" in its "What was
+NOT ruled here" section (its section 3 says the problem "is not closed by this
+ruling"), and under the pairing rule the text is checked by a session other
+than the one that writes it.
 
 ---
 
@@ -599,8 +631,12 @@ most likely outcome of the whole experiment is R3 and "the most likely reason
 is the named-other half" (`docs/successor-experiment-proposal-2026-09-21.md`,
 section 3).
 
-**On the first stop condition.** The rehearsal adjudicates that S1 ("not
-learnable at tiny scale even in principle … Nothing trains") does not fire,
+**On the first stop condition.** Stop condition S1 in full, from section 11
+of the proposal: "The rehearsal fails item R-1 (the grammar is not learnable
+at tiny scale even in principle) or item R-8 (the transplanting code does not
+pass its known-answer tests). Nothing trains. About $10 spent." Item R-8
+passed (rehearsal section 2a). The rehearsal adjudicates that S1 does not
+fire on the R-1 half either,
 because the separable arm trains to the top of the scale on both conditions,
 and says "This is the rehearsal's adjudication and not a ruling, and it is
 John's to overturn" (section 8, "Does the proposal's first stop condition
@@ -634,12 +670,14 @@ re-running the rehearsal items the change touches and the failure-mode pass in
   the budget did not fix it, and that the staggered first run (ruling item 12
   of `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`)
   reads the learn-both result of one free-arm run before the remaining eight
-  are committed. The bound on the money is that one run: the ledger's last
-  measured pair of registered-size runs cost $20.08 for 20.28 machine-hours
+  are committed. The bound on the money is that one run. The ledger's measured
+  actual-after rows for single 30-million-parameter runs are about $9.9
   (`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`, the
-  2026-09-17 row), which is about $10.04 each by arithmetic on that row, and
-  the ledger's planning figure at this size is $12 (same file, "Phase budget
-  guide").
+  2026-09-19 row: "about 10.0h ≈ $9.9") and $13.92 (the 2026-09-15 row, of
+  which $3.8 was idle billing). The proposal's own per-run planning figure is
+  $12 (`docs/successor-experiment-proposal-2026-09-21.md`, section 12.4);
+  the ledger line it cites prices ten runs at an earlier design and is marked
+  "known-stale" in the ledger (index, disagreement 10).
 
 **Recommendation, confidence moderate:** **attempt (b), and (a) alongside it
 if the laptop has the hours, this weekend, with the pass line written before
@@ -707,15 +745,22 @@ one (`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`):
 | 2026-09-19, control-learnability pilot | about 10.0 hours, about $9.9, "ZERO idle billing" | about $9.9 |
 | 2026-09-17, A3 seeds 1 and 2 | 20.28 machine-hours at $0.99 an hour, $20.08 the pair | about $10.04 |
 | 2026-09-15, A3 Gate 2 pilot | $13.92, "$3.8 of the total is AVOIDABLE IDLE" | about $10.1 clean, $13.92 as billed |
-| "Phase budget guide", registered training at 30M | the ledger's own planning figure | $12 |
 | 2026-08-12 reconciliation, the 10M pilot | "A1 10M row trues up to **$1.943**" | about $1.94 |
 
+The $12 a run that the proposal and the weekend roadmap price with is the
+proposal's planning figure (`docs/successor-experiment-proposal-2026-09-21.md`,
+section 12.4), not a ledger row: the ledger's "Phase budget guide" line it
+cites prices "Registered training, 5 seeds × full+twin" — ten runs — at "~$12
+(30M)", and the ledger's reconciliation of 2026-08-12 marks that guide "now
+known-stale" (index, disagreement 10).
+
 So three registered runs come to **about $29.70 to $30.12 if they bill as the
-last three clean runs did, $36 at the planning figure, and up to about $41.76
-if each bills as the Gate 2 pilot did with its idle time**, plus about $1.94
-for one development run at 10 million — call it **$32 to $44 in total**. The
-weekend roadmap's figure for the same three runs is "about $36" at the
-planning figure (`docs/weekend-roadmap-2026-09-24.md`, section 4, E0). None
+last three clean runs did, $36 at the proposal's planning figure, and up to
+about $41.76 if each bills as the Gate 2 pilot did with its idle time**, plus
+about $1.94 for one development run at 10 million — call it **$32 to $44 in
+total**. The weekend roadmap's figure for the same three runs is "about $36"
+at the proposal's figure (`docs/weekend-roadmap-2026-09-24.md`, section 4,
+E0). None
 of it fits the $400 envelope on the ledger's remaining $172.40 once the two
 releases of about $175 are counted (page 6), which is why the weekend roadmap
 ties this page to the envelope ruling.
@@ -726,9 +771,10 @@ arm C multiplies it into every block. A middle arm would put part of the
 answer in a slot and stir the rest through — for instance a slot that carries
 the answer for some layers and multiplicative conditioning for the others.
 Its degree would be a design intention, exactly as arm C's is: weakness W3 of
-the proposal says a network built to be entangled "can still learn to
-concentrate it in a low-rank direction" (`docs/successor-experiment-proposal-2026-09-21.md`,
-section 13), and the same holds in reverse for a middle arm. The rehearsal
+the proposal says "a network can be built with ownership multiplied into every
+layer and still learn to concentrate it in a low-rank direction"
+(`docs/successor-experiment-proposal-2026-09-21.md`, section 13), and the same
+holds in reverse for a middle arm. The rehearsal
 would show only that the toy middle arm reads between the anchors, which is
 the measure validating itself on one more case. ARGUED.
 
@@ -778,16 +824,17 @@ machine bills at the anomalous rate?
 
 | what | figure | which row |
 |---|---|---|
-| Programme spent, of the $400 ceiling ruled with Amendment A2 | about **$227.6** | the 2026-09-21 row (the rented slice's aborted machine): "programme about **$227.6 / $400**" |
+| Programme spent, of the $400 ceiling ruled with Amendment A2 | about **$227.63** | every spend row added independently by the check of this packet (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-claude-worktree.md`, page 6, with the first row trued up to $6.645); the ledger's own 2026-09-21 row carries it as "programme about **$227.6 / $400**" |
 | The chain behind that figure | $215.7 after the wave of seeds 1 and 2, plus about $9.9, plus $0.067, plus $1.904, plus about $0.02 | the 2026-09-17 row's W37 correction ("~$215.7 / $400"); the 2026-09-19 row ("about 10.0h ≈ $9.9"); the 2026-09-20 recovery row ("$0.067"); the two 2026-09-20 follow-up rows ("a measured $1.904 combined"); the 2026-09-21 row ("about $0.02") |
-| Programme left | about **$172.4** | arithmetic on the row above: $400 less about $227.6 |
-| Amendment A3, of its $100 stop | about **$46.2**, leaving about $53.8, inside the $172.4 and not additional to it | the 2026-09-21 row |
+| Programme left | about **$172.37** | arithmetic: $400 less about $227.63 (the same check) |
+| Amendment A3, of its $100 stop | about **$46.18**, leaving about $53.82, inside the $172.37 and not additional to it | the same check's sum of the Amendment A3 rows; the 2026-09-21 row carries it as about $46.2 |
 | The rehearsal line of the first release (up to $10) | about $0.02 spent, about $9.98 left | the 2026-09-21 row |
 | Account balance, last reading | **$77.3451** | the 2026-09-21 row |
 | The rate at the registered venue | **$0.99** an hour | the 2026-09-17 row |
-| A clean 30-million-parameter run | about $9.9 to $10.04; $12 planning figure | the 2026-09-19 and 2026-09-17 rows; "Phase budget guide" |
+| A single 30-million-parameter run, measured actual-after | about $9.9 with no idle billing; $13.92 with $3.8 of idle billing; a pair at $20.08, about $10.04 each by arithmetic | the 2026-09-19 row; the 2026-09-15 row; the 2026-09-17 row |
+| The "$12 a run" the proposal and the roadmap price with | the proposal's planning figure, not a ledger row | `docs/successor-experiment-proposal-2026-09-21.md`, section 12.4; the ledger guide line it cites prices ten runs and is marked "known-stale" (index, disagreement 10) |
 | The billing anomaly | 8.47 billed hours against about 2.42 hours of machine existence, about 3.5 times | the 2026-09-21 row's stop-condition note, describing the 2026-08-07/08 row (estimate $1.50, billed $6.02) |
-| Idle billing to date | about $10.30 across four occurrences | the 2026-09-21 row |
+| Idle billing to date | about $10.30 across four occurrences | the 2026-09-19 row and the first 2026-09-20 follow-up row |
 
 **The cap, and what the plan comes to.** The ruling of 2026-09-20 set
 "Successor spend cap: $130, within the MVM-0a $400 envelope"
@@ -838,17 +885,20 @@ envelope up now, with the number and what it buys, as that standing rule
 requires; the number this packet puts forward is the weekend roadmap's, an
 envelope of $450** (`docs/weekend-roadmap-2026-09-24.md`, section 3, Weekend
 1). What it buys, by arithmetic on the ledger rows in the table above: the
-base plan of about $175 added to about $227.6 spent comes to about $402.6,
-over the $400 by about $2.6 before any anomaly; $450 holds that plus one
+base plan of about $175 added to about $227.63 spent comes to about $402.63,
+over the $400 by about $2.63 before any anomaly; $450 holds that plus one
 extension of $32 to $44 (page 5's fourth arm at the ledger's per-run figures)
 or of "about $36" (the weekend roadmap's E1 or E3, its section 4), with
 something between $3 and $15 left. Two extensions do not fit $450; the weekend
 roadmap puts two at "about $490" (its section 4). The spending proposal's $225
 rests on a 1.55-times premium the rehearsal has since measured at 0.981 and
-1.049 (`docs/2026-09-21-successor-measure-rehearsal.md`, section 10), so its
-nine-run line of $125.46 (`docs/preauthorised-spending-proposal-2026-09-21.md`,
-section 3.2) falls to about $92 to $108 on the measured ratio; its storage,
-recovery and idle lines are real but small. ARGUED.
+1.049 (`docs/2026-09-21-successor-measure-rehearsal.md`, section 10). On the
+spending proposal's own base of $10.20 a run, its nine-run line of $125.46
+falls to about $91 to $95 at the measured ratios (that document itself gives
+$91.80 at a ratio of exactly one;
+`docs/preauthorised-spending-proposal-2026-09-21.md`, section 3.2). Nine runs
+at the proposal's $12 planning figure would be $108, a different basis. The
+storage, recovery and idle lines are real but small. ARGUED.
 
 **Strongest argument against.** Raising the envelope before the rented slice
 has measured seconds per step is the inference ruling item 11 refused to
@@ -1122,7 +1172,10 @@ then the fifty-step timing of the three architectures on the same machine.
 hour, out of the first release's rehearsal line of up to $10, of which about
 $0.02 has been spent and about $9.98 remains
 (`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`, the
-2026-09-21 row; the same figures in the staging document, section 7). Under
+2026-09-21 row). The staging document carries the estimate and the cap, and
+says of the rehearsal line only that it "is up to $10 and of which nothing has
+been spent" — it predates the two cents
+(`docs/successor-rented-slice-staging-2026-09-21.md`, section 7). Under
 commitment C2(c) the funding rule must pass: the balance, $77.3451 at the last
 reading (same ledger row), against the in-flight cost plus margin. A ledger
 row is written before anything is created, quoting the go (ledger rule 2;
@@ -1146,8 +1199,9 @@ session other than the one that amended it". Commitment C2(a) requires the go
 2026-09-24.**
 
 1. **The regenerated plan needs its check.** The plan file was regenerated
-   three times since the staging document was written (commits `c4165b3`,
-   `e95d127`, `60d1496`). This session searched the filed reviews and the
+   twice since the staging document was written (commits `c4165b3` and
+   `60d1496`; a third commit, `e95d127`, changed the staging script that
+   generates it and not the plan file). This session searched the filed reviews and the
    ruling files for a check of the regenerated plan and found none: the
    re-run review of 2026-09-22 says the plan was "deliberately not
    regenerated" by it, and the two sleep-guard checks of 2026-09-24 checked
@@ -1167,7 +1221,8 @@ session other than the one that amended it". Commitment C2(a) requires the go
    override as off. The same guard also refuses when the Mac is on battery
    ("plug in the power adapter, then re-run", same check), so the Mac is on
    wall power too. The lid stays open regardless: idle billing has cost about
-   $10.30 across four occurrences (ledger, the 2026-09-21 row).
+   $10.30 across four occurrences (ledger, the 2026-09-19 row and the first
+   2026-09-20 follow-up row).
 3. **The go names the plan by commit, not the staging document by date.** A
    commit hash does not change; the document did.
 
@@ -1325,6 +1380,10 @@ is, seen from this one).
 (page 9, disagreement 9).** MEASURED.
 
 ```
+$ git log --oneline -- experiments/rehearsal-successor-measure/out/rented-slice-plan.txt
+60d1496 Regenerate the plan file on main, with step 0 withdrawn
+c4165b3 Regenerate the staged plan file against the real checkout paths
+8bc5fbe Stage the one short slice of rented time, for two answers and one rent, and do not run it
 $ git log --oneline -4 -- experiments/rehearsal-successor-measure/src/stage_rented_slice.sh experiments/rehearsal-successor-measure/out/rented-slice-plan.txt
 60d1496 Regenerate the plan file on main, with step 0 withdrawn
 e95d127 The argument guard, and the check that asserts the standing prohibition
@@ -1372,6 +1431,151 @@ Paste each reviewer's answer, word for word, into
 `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-21-a3-closure-<model>.md`,
 ```
 
+**Check 8 — the two checking scripts, run on this version of the packet
+after the twelve fixes from the check on pull request 35 were applied, from
+this branch with the main line merged in.** MEASURED. Output verbatim.
+Reading: the three files reported absent are the check file (twice; it sits
+on pull request 35 and not yet on the main line) and the rulings file to be
+written on Saturday; zero cited figures are absent from the file their
+sentence cites; the six dollar figures the ledger does not contain are caps
+and proposed caps and envelopes, not spend, each with its non-ledger source
+named by design; the group 3 figures sit in table rows whose source column
+the script, reading one sentence at a time, cannot see.
+
+```
+$ .venv/bin/python scripts/check_citations.py --only docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 3 reference(s) name a file that is not in the repository
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:22
+      names: experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-claude-worktree.md
+      in:    The check of this packet is filed at `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-claude-worktree.md` on pull r
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:52
+      names: docs/rulings/2026-09-26-weekend-1-queue.md
+      in:    The plan for the weekend (`docs/weekend-roadmap-2026-09-24.md`, section 7) says the rulings are written up as a new file, `docs/rulings/2026-09-26-weekend-1-que
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:827
+      names: experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-claude-worktree.md
+      in:    every spend row added independently by the check of this packet (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-c
+
+[LOOK AT IT] 0 bare name(s) match more than one file
+
+[LOOK AT IT] 1 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:1271  bench_arms.json
+      in: **What the ruling changes, and where.** Nothing in any document until the go is spoken; then a ledger row written before the machine exists, quoting the go; the
+
+[LOOK AT IT] 2 reference(s) written with a gap or a wildcard that matched nothing
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:40  experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-21-a3-closure-<model>.md
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:1052  experiments/<experiment>/reviews/YYYY-MM-DD-<target>-<reviewer>.md
+
+[NOT CHECKED] 1 reference(s) to files outside this repository
+     1x  ~/Documents/Code/CLAUDE.md
+
+[NOT CHECKED] 0 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+
+[LOOK AT IT] 2 figure(s) worth a human eye
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:878
+      figure: $91    cited: docs/preauthorised-spending-proposal-2026-09-21.md    (only an approximate match found)
+      in:     On the spending proposal's own base of $10.20 a run, its nine-run line of $125.46 falls to about $91 to $95 at the measured ratios (that document itself gives $91.80 at a ratio of exactly one; `docs/p
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:878
+      figure: $95    cited: docs/preauthorised-spending-proposal-2026-09-21.md    (only an approximate match found)
+      in:     On the spending proposal's own base of $10.20 a run, its nine-run line of $125.46 falls to about $91 to $95 at the measured ratios (that document itself gives $91.80 at a ratio of exactly one; `docs/p
+
+==============================================================================
+Confident findings: 3. Things for a human to look at: 5.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================
+```
+
+```
+$ .venv/bin/python scripts/check_single_source.py --only docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md
+==============================================================================
+check_single_source.py - does every money figure trace back to the compute ledger?
+==============================================================================
+System of record: experiments/06-mvm-0a-constructed-self-index/compute-ledger.md
+Documents read: 1   scope: live   figures below $0 ignored
+Figures that are in the ledger and point at it: 11
+Set aside as forecasts (a proposal pricing something, not a record of spend): 107
+Set aside as neither, by the wording around them: 52
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 1: a dollar figure the ledger does not contain
+------------------------------------------------------------------------------
+6 found. Either the document is stale or the ledger is missing
+a number it should state. A total summed across ledger rows lands here too.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:77   $130
+      names instead: docs/rulings/2026-09-20-december-result-roadmap.md
+      in: **The successor's cap and the programme envelope.** The ruling of 2026-09-20 sets a flat cap of $130 (`docs/rulings/2026-09-20-december-result-roadmap.md`, item 4).
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:118   $130
+      in: **The Wittgenstein note's premises.** The note asks whether its second test fits "the successor's $130 cap and the 2026-10-11 registration target" (TimeAssembler note, "Questions for the session").
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:871   $450
+      in: (ii) The weekend roadmap's pair: a successor cap of $142 and an envelope of $450.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:871   $175
+      in: (iv) RT-176's: raise the cap to $175 and leave the envelope until the slice reports.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:878   $450
+      names instead: docs/weekend-roadmap-2026-09-24.md
+      in: Second, **rule the envelope up now, with the number and what it buys, as that standing rule requires; the number this packet puts forward is the weekend roadmap's, an envelope of $450** (`docs/weekend
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:983   $130
+      in: The note's questions ask whether test 2 fits "the successor's $130 cap and the 2026-10-11 registration target"; both premises have moved (disagreement 6 in the index).
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 2: in the ledger, but the sentence names another file as source
+------------------------------------------------------------------------------
+0 found. This is a second home being built for a number
+that already has one.
+
+------------------------------------------------------------------------------
+[LOOK AT IT] Group 3: in the ledger, and no source named
+------------------------------------------------------------------------------
+13 found. Right today, and with nothing pointing at the record that
+would correct it tomorrow. This is the state the stale $215.70 copies were in.
+By document:
+    13  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md
+
+The first 13 in full (use --only <path> for one document's own):
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:634   $10   in: About $10 spent." Item R-8 passed (rehearsal section 2a).
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $13.92   in: $13.92, "$3.8 of the total is AVOIDABLE IDLE"
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $3.8   in: $13.92, "$3.8 of the total is AVOIDABLE IDLE"
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $10.1   in: about $10.1 clean, $13.92 as billed
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $13.92   in: about $10.1 clean, $13.92 as billed
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:800   $32   in: And it costs $32 to $44 the envelope does not hold, so ruling (i) or (iii) is also ruling page 6.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:800   $44   in: And it costs $32 to $44 the envelope does not hold, so ruling (i) or (iii) is also ruling page 6.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:827   $400   in: Programme spent, of the $400 ceiling ruled with Amendment A2
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:831   $0.02   in: about $0.02 spent, about $9.98 left
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:831   $9.98   in: about $0.02 spent, about $9.98 left
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:866   $44   in: no cap named; about $44 + about $131
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:866   $131   in: no cap named; about $44 + about $131
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:871   $142   in: (ii) The weekend roadmap's pair: a successor cap of $142 and an envelope of $450.
+
+------------------------------------------------------------------------------
+[LOOK AT IT] The same figure in many documents
+------------------------------------------------------------------------------
+0 figure(s) appear in four or more documents. A figure with many homes
+is a figure a correction has to find many times.
+
+==============================================================================
+Confident findings: 6. Things for a human to look at: 13 unsourced figures and 0 widely repeated ones.
+The ledger is taken as true here. Read the 'what this cannot check' note at the
+top of this file before reading a clean run as reassurance.
+==============================================================================
+```
+
 ## Appendix B — what this session opened, and what it did not
 
 Opened in full or in the sections named: the nine sources the brief lists;
@@ -1390,8 +1594,9 @@ at its annotations and F17;
 dated note;
 `spec/corrigibility-commitments.md` at C2; the rehearsal code at its label
 tuple and nomination loop; the derived launcher at its sleep guard; the
-generated plan file's first forty lines; the TimeAssembler note and the six
-open `awaiting-john` tasks on the Minimum Viable Mind project.
+generated plan file's first forty lines; the TimeAssembler note and the seven
+`awaiting-john` tasks not yet done on the Minimum Viable Mind project (six to
+do and one in progress, the Amendment A3 closure sessions).
 
 Not opened: the rehearsal's output files under
 `experiments/rehearsal-successor-measure/out/` (every rehearsal figure here is
