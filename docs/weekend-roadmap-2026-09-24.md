@@ -93,16 +93,31 @@ What is open, and blocks registration (all listed in section 11 and 12 of
    registered text whose cited record does not contain it; make the launcher
    refuse to rent when the laptop can sleep.
 
-Bookkeeping owed: the 2026-09-22/23 handoff was drafted and verified but never
-committed (the session was isolated in the wrong repository), so the top of
-`STATUS.md` still reads 2026-09-21; about sixty agent worktrees are prunable;
-the site's two Cloudflare secrets and the repository visibility flip are
-John's; and the TimeAssembler mission line still carries "working toward a
-publishable result", which the 2026-09-20 ruling struck.
+Bookkeeping owed (updated 2026-09-24 evening: the 2026-09-22/23 handoff
+landed as PR 29 and a 2026-09-24 evening entry as PR 31, so `STATUS.md` is
+current): the 69 agent worktree folders are all merged but none is prunable
+by git's definition, so clearing them is a `git worktree remove` pass, not a
+prune; two redundant draft files sit outside the repo at
+`~/Code/MVM-handoff-2026-09-24-STATUS-entry.md` and its project.toml patch,
+John's to delete; the site's two Cloudflare secrets and the repository
+visibility flip are John's; and the TimeAssembler mission line still carries
+"working toward a publishable result", which the 2026-09-20 ruling struck.
 
 Money: about $227.60 of the $400 envelope is spent, about $172.40 left (from
 the ledger's rows, via the 2026-09-22 notes). No compute is in flight and none
 is authorised.
+
+> **Note added 2026-09-24 (evening), after the check of the ruling packet
+> (draft pull request 35).** Every "about $12 per run" and the figures built on
+> it in this document ($96 for eight runs, $36 for three) were carried from the
+> December-result roadmap, whose source is the compute ledger's planning guide.
+> That guide gives $12 for all registered training at an earlier size and the
+> ledger itself calls it out of date. The figure survives only as an estimate
+> resting on the measured actual-after rows for single 30-million-parameter
+> runs in `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`
+> (about $9.9 for the control-learnability pilot and about $13.92 for the A3
+> pilot), and the rented slice's seconds-per-step measurement is what replaces
+> it. Nothing else in this document is changed by the note.
 
 ## 2. The constraint this plan is built around
 
