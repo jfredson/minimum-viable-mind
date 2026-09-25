@@ -1188,3 +1188,6 @@ above), so nothing has been spent since the first pass.
    where the sum was done. ARGUED.
 
 Neither changes a number or a recommendation John rules on Saturday.
+
+**2026-09-24, against commit `221a908`.** R-A fixed (MEASURED): packet line 148 now says the note "sits below the ledger table, between it and the guide", which matches the ledger (table lines 55–74, note line 325, guide line 383).
+R-B fixed (MEASURED): page 6 now sources $227.63 / $172.37 and $46.18 / $53.82 to the ledger rows themselves. All thirteen cited figures are on the rows named (ledger lines 60–74, 344, 346), and they sum to $227.63 / $172.37 / $46.18 / $53.82. The check file is named only as "a secondary pointer and not the source". The appendix outputs still match a fresh run on that commit (57 and 69 lines, identical).
