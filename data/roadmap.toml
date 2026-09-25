@@ -1,0 +1,376 @@
+# Minimum Viable Mind — the weekend roadmap the site renders at /roadmap/.
+#
+# The structured twin of docs/weekend-roadmap-2026-09-24.md (sections 3 and
+# 7). This file is the source of record for each weekend's goals and their
+# status; the markdown file stays the narrative (why the plan is shaped this
+# way, and the weekend log in prose). The Thursday/Friday re-plan edits both,
+# and the Sunday-night handoff sets each goal's status here.
+#
+# Plain language, every code name explained on first use, same rule as
+# data/project.toml. Dates are Pacific (YYYY-MM-DD).
+#
+# Vocabularies (validated by scripts/export_site.py):
+#   weekend.status: "planned" | "active" | "done" | "partial" | "blackout" | "slack"
+#   goal.status:    "planned" | "done" | "carried" | "dropped" | "not_needed"
+#   goal.owner:     "john" | "agents" | "both"
+#
+# "carried" means the goal moved to a later weekend (say which in `note`).
+# "not_needed" means a branch that did not fire (for example a re-run that was
+# not required). Neither counts against progress; "dropped" does.
+
+[roadmap]
+title = "The weekend roadmap to 2026-12-21"
+written_on = "2026-09-24"
+updated_on = "2026-09-24"
+source = "docs/weekend-roadmap-2026-09-24.md"
+one_line = "Twelve working weekends between 2026-09-26 and 2026-12-20, front-loaded so that both kill dates pass with their work already done, the December result exists by 2026-11-08, and five weekends stay in hand for slipped gates and for the extensions that make the conclusion stronger."
+question = "Can a decomposability measure, validated on systems whose degree is known by construction, read the degree of a freely trained 30-million-parameter transformer that acquired a load-bearing ownership pointer under task pressure? If so, what does it read?"
+wrap_up_start = "2026-12-21"
+hibernation_by = "2027-01-04"
+weekday_rule = "Weekdays carry rulings and spoken go's only, from a queue a session pre-assembles; weekends carry the reviewer sessions John runs by hand and the launches; agents run unattended between weekends."
+replan_rule = "Every Thursday or Friday evening the coming weekend is re-planned from the top of STATUS.md. Kill dates and the wrap-up start never move; what moves is which weekend absorbs a slip, and the re-plan names it."
+
+# Fixed dates the plan is held to. These never move.
+[[milestones]]
+id = "K1"
+date = "2026-10-18"
+title = "Kill date 1: the registration committed"
+kind = "kill_date"
+note = "Past it, committing is still possible only on a fresh ruling naming what comes off the back end (ruled 2026-09-21)."
+
+[[milestones]]
+id = "K2"
+date = "2026-11-01"
+title = "Kill date 2: the remaining eight registered runs launched"
+kind = "kill_date"
+note = "Binds the launch of the eight runs of step 5b, not the single free-arm run before it (ruled 2026-09-21)."
+
+[[milestones]]
+id = "W"
+date = "2026-12-21"
+title = "Wrap-up starts; nothing new launches after this"
+kind = "wrap_up"
+
+[[milestones]]
+id = "H"
+date = "2027-01-04"
+title = "Hibernation condition complete; the SERE pipeline starts"
+kind = "hibernation"
+
+# ---------------------------------------------------------------------------
+# The weekends, in order. Each has one named outcome, the goals that make it
+# up, John's items, and what sits beside it on the calendar.
+# ---------------------------------------------------------------------------
+
+[[weekends]]
+id = "W1"
+number = 1
+start = "2026-09-26"
+end = "2026-09-27"
+days = 2
+status = "active"
+title = "Clear the queue, close A3, repair the proposal"
+outcome = "Amendment A3 (the earlier constructed self-index experiment) closed under Gate A; every registration-blocking decision ruled; successor proposal version 2 through its Gate C first-tier review."
+beside = "Book text lock 2026-09-30 is off the table (done or moved)."
+john_hours = "about 3"
+john_items = [
+  "Run the two A3 closure second-tier reviewer sessions from the committed packets and file both responses verbatim; rule the drafted dispositions the same day",
+  "Rule the pre-assembled queue in one sitting: the eight numbers, the form of the measure, the named-other condition, the middle of the scale, the Wittgenstein criteria, the two record corrections, the spend ruling (successor cap $142; programme envelope $400 to $450)",
+  "Give the spoken go for the rented slice (about $1, hard cap $2)",
+  "Optional, ten minutes: the two Cloudflare secrets and the repository visibility flip, so the site deploys",
+]
+goals = [
+  { id = "W1.1", text = "A3 closure through Gate A, both tiers, and the closure commit landed", owner = "both", status = "planned" },
+  { id = "W1.2", text = "Every registration-blocking decision ruled and recorded in docs/rulings/2026-09-26-weekend-1-queue.md", owner = "john", status = "planned" },
+  { id = "W1.3", text = "The 2026-09-22/23 handoff landed at the top of STATUS.md with a 2026-09-24 entry; data/project.toml current; merged worktrees pruned", owner = "agents", status = "planned" },
+  { id = "W1.4", text = "The launcher refuses to rent a machine when the laptop can sleep, and the launch checklist is a gate it checks", owner = "agents", status = "planned" },
+  { id = "W1.5", text = "The rented slice run: seconds per step per arm measured on the rented machine and written into the second release's arithmetic; the shutdown path exercised end to end", owner = "both", status = "planned" },
+  { id = "W1.6", text = "Rehearsal repairs at toy scale: the named-other condition redesigned (or the risk accepted on record), the nomination procedure shown to be one instrument across arms, control 2 built as stated, the fourth arm attempted if ruled", owner = "agents", status = "planned" },
+  { id = "W1.7", text = "Successor proposal version 2 written with the ruled numbers, label and form, the failure-modes checklist exercised against it with commands and output, both checking scripts clean", owner = "agents", status = "planned" },
+  { id = "W1.8", text = "Gate C first-tier review of version 2 filed; if clean, the registration text drafted and its Gate A first tier launched overnight", owner = "agents", status = "planned" },
+]
+
+[[weekends]]
+id = "W2"
+number = 2
+start = "2026-10-03"
+end = "2026-10-04"
+days = 2
+status = "planned"
+title = "Register"
+outcome = "The registration committed through Gate A, both tiers, two weeks ahead of kill date 1; the implementation frozen and tested; the development runs at 10 million parameters landed."
+beside = ""
+john_hours = "about 2.5"
+john_items = [
+  "Run the two second-tier reviewer sessions on the registration text and rule the drafted dispositions",
+  "Give the go naming the development runs (about $10, inside the first release)",
+]
+goals = [
+  { id = "W2.1", text = "Registration text through Gate A, both tiers; dispositions ruled; text fixes paired-checked; citation and single-source scripts clean on the final text", owner = "both", status = "planned" },
+  { id = "W2.2", text = "Registration committed (kill date 1 is 2026-10-18)", owner = "both", status = "planned" },
+  { id = "W2.3", text = "Implementation frozen: generator, arms T and C, the transplant code; unit tests; the even-split rule (RT-58) and the one-scored-token self-test carried over", owner = "agents", status = "planned" },
+  { id = "W2.4", text = "Development runs at 10 million parameters landed and checked by a session that did not write the code; ledger rows opened before any machine existed", owner = "both", status = "planned" },
+  { id = "W2.5", text = "The go packet for the first registered run assembled: launch checklist, ledger row with estimate, sleep gate, scheduled fetch and kill", owner = "agents", status = "planned" },
+]
+
+[[weekends]]
+id = "W3"
+number = 3
+start = "2026-10-10"
+end = "2026-10-12"
+days = 3
+status = "planned"
+title = "The first registered run, then all nine"
+outcome = "Every registered run landed, checkpoints local and checksummed, machines reaped, ledger actual-after rows written. Three weeks ahead of kill date 2."
+beside = "Columbus Day makes it three days. The field exercise of 2026-10-13 to 14 follows (blackout, tentative)."
+john_hours = "about 2, spread across the three days"
+john_items = [
+  "Friday night or Saturday morning: the go naming the single free-arm run (step 5a, about $12, about ten hours)",
+  "Sunday morning, the decision point: if the learn-both gate passes and billing is normal, rule the second release and give the go for the remaining eight (about $96)",
+  "If the free arm fails the gate: the go for the one permitted re-run (Saturday night)",
+]
+goals = [
+  { id = "W3.1", text = "The free-arm run (step 5a) launched and landed; the learn-both gate and the ownership-lesion check evaluated by a paired session; billing read against the ledger's rate", owner = "both", status = "planned" },
+  { id = "W3.2", text = "The remaining eight runs (step 5b) launched in parallel on John's go and landed by Monday", owner = "both", status = "planned" },
+  { id = "W3.3", text = "Fetch, checksum, reap, ledger actual-after rows for all nine", owner = "agents", status = "planned" },
+  { id = "W3.4", text = "Branch: the one permitted re-run if the free arm failed the gate", owner = "both", status = "planned" },
+  { id = "W3.5", text = "Branch: if the re-run also fails, outcome R3 is recorded and extension E3 (one registered recipe change) is proposed with its number", owner = "agents", status = "planned" },
+]
+
+[[weekends]]
+id = "W4"
+number = 4
+start = "2026-10-17"
+end = "2026-10-18"
+days = 2
+status = "planned"
+title = "The validation result"
+outcome = "Nomination frozen and committed before output; transplants on fresh episodes on all arms; the measure computed on arms T and C; validation findings drafted; Gate B first tier launched Sunday night. Kill date 1 passes with the registration long committed."
+beside = "Kill date 1 is Sunday 2026-10-18."
+john_hours = "under 1"
+john_items = [
+  "The queue only; one ruling if the nomination freeze needs one",
+]
+goals = [
+  { id = "W4.1", text = "Nomination procedure frozen and committed, method before output", owner = "agents", status = "planned" },
+  { id = "W4.2", text = "Transplants run on fresh episodes on every arm", owner = "agents", status = "planned" },
+  { id = "W4.3", text = "The measure computed on T and C: the validation result, with paired uncertainty", owner = "agents", status = "planned" },
+  { id = "W4.4", text = "Validation findings drafted and Gate B first-tier review launched", owner = "agents", status = "planned" },
+]
+
+[[weekends]]
+id = "W5"
+number = 5
+start = "2026-10-24"
+end = "2026-10-25"
+days = 2
+status = "planned"
+title = "Gate B, and the reading if R1"
+outcome = "John's Gate B ruling on the validation result: R1 (read arm F), or R2 or R3 (closure path). If R1, arm F read on the frozen procedure with confirmation seeds."
+beside = ""
+john_hours = "about 2.5"
+john_items = [
+  "Run the two second-tier reviewer sessions on the validation packet and rule",
+  "If R1: rule on extension E1 (three more free-arm seeds, about $36, an envelope ruling) for weekend 8",
+]
+goals = [
+  { id = "W5.1", text = "Gate B on the validation result, both tiers, ruled", owner = "both", status = "planned" },
+  { id = "W5.2", text = "If R1: arm F read on the frozen procedure with confirmation seeds, locally; findings drafted", owner = "agents", status = "planned" },
+  { id = "W5.3", text = "If R2 or R3: closure text drafting starts", owner = "agents", status = "planned" },
+]
+
+[[weekends]]
+id = "W6"
+number = 6
+start = "2026-10-31"
+end = "2026-11-01"
+days = 2
+status = "planned"
+title = "The reading's findings and its Gate B"
+outcome = "Findings document for the reading (or the null); Gate B first tier run midweek before; John's two second-tier sessions and ruling. Kill date 2 passes with the runs landed three weeks earlier."
+beside = "Kill date 2 is Sunday 2026-11-01."
+john_hours = "about 2.5"
+john_items = [
+  "Run the two second-tier reviewer sessions on the reading's findings and rule",
+]
+goals = [
+  { id = "W6.1", text = "Findings document for the reading or the null, through Gate B both tiers, ruled", owner = "both", status = "planned" },
+  { id = "W6.2", text = "Closure text (registered text) drafted the following week", owner = "agents", status = "planned" },
+]
+
+[[weekends]]
+id = "W7"
+number = 7
+start = "2026-11-07"
+end = "2026-11-08"
+days = 2
+status = "planned"
+title = "Closure text and Gate A: the December result exists"
+outcome = "Gate A on the closure text: first tier midweek, John's two second-tier sessions and ruling on Saturday, closure landed in the successor's registration file on Sunday. Six weeks before wrap-up."
+beside = "The field exercise of 2026-11-10 to 11 follows."
+john_hours = "about 2.5"
+john_items = [
+  "Run the two second-tier reviewer sessions on the closure text and rule",
+]
+goals = [
+  { id = "W7.1", text = "Closure text through Gate A, both tiers, ruled, and landed in the registration file", owner = "both", status = "planned" },
+  { id = "W7.2", text = "STATUS.md, data/project.toml and the site carry the result", owner = "agents", status = "planned" },
+]
+
+[[weekends]]
+id = "W8"
+number = 8
+start = "2026-11-14"
+end = "2026-11-15"
+days = 2
+status = "slack"
+title = "Slack, or extension E1"
+outcome = "A slipped gate takes this weekend before any extension does. Otherwise extension E1 (three more free-arm seeds for a tighter degree reading) runs."
+beside = "Mini CSS 2026-11-18 to 19 and the mile retest 2026-11-20 follow."
+john_hours = "0 to 1"
+john_items = [
+  "Only if E1 was ruled: the go naming the three runs",
+]
+goals = [
+  { id = "W8.1", text = "Absorb a slipped gate from weekends 2 to 7, if any", owner = "both", status = "planned" },
+  { id = "W8.2", text = "Else: extension E1 launched and landed", owner = "both", status = "planned" },
+]
+
+[[weekends]]
+id = "W9"
+number = 9
+start = "2026-11-21"
+end = "2026-11-22"
+days = 2
+status = "slack"
+title = "Slack, or extensions E2 and E1's findings"
+outcome = "Slack for a slipped gate; otherwise extension E2 (the existing 10-million-parameter checkpoints read on the frozen procedure, $0) and E1's findings with a short Gate B."
+beside = ""
+john_hours = "0 to 2"
+john_items = [
+  "Only if E1 ran: the second-tier sessions on its findings and the ruling",
+]
+goals = [
+  { id = "W9.1", text = "Absorb a slipped gate, if any", owner = "both", status = "planned" },
+  { id = "W9.2", text = "Else: E2 read and filed as a side reading; E1 findings through Gate B", owner = "both", status = "planned" },
+]
+
+[[weekends]]
+id = "W10"
+number = 10
+start = "2026-11-26"
+end = "2026-11-29"
+days = 4
+status = "planned"
+title = "The communication half"
+outcome = "The state-of-the-programme write-up; the write-up to the outside human reader; explainer.md refreshed; site and data/project.toml current."
+beside = "Thanksgiving makes it four days."
+john_hours = "about 3"
+john_items = [
+  "Choose and contact the outside human reader from docs/outside-reader-shortlist-2026-09-19.md",
+  "Read and rule on the state-of-the-programme write-up",
+]
+goals = [
+  { id = "W10.1", text = "State-of-the-programme write-up drafted and reviewed", owner = "both", status = "planned" },
+  { id = "W10.2", text = "Write-up sent to the outside human reader", owner = "john", status = "planned" },
+  { id = "W10.3", text = "explainer.md refreshed to cover the registered results, MVM-0, A3 and the successor", owner = "agents", status = "planned" },
+  { id = "W10.4", text = "Site and data/project.toml current with the December result", owner = "agents", status = "planned" },
+]
+
+[[weekends]]
+id = "W11"
+number = 11
+start = "2026-12-05"
+end = "2026-12-06"
+days = 0
+status = "blackout"
+title = "Blackout"
+outcome = "No work planned. Mini CSS 2026-12-04 to 08."
+beside = "Mini CSS 2026-12-04 to 08 (five days, Friday to Tuesday)."
+john_hours = "0"
+john_items = []
+goals = []
+
+[[weekends]]
+id = "W12"
+number = 12
+start = "2026-12-12"
+end = "2026-12-13"
+days = 2
+status = "planned"
+title = "Records closed"
+outcome = "Records closed with actual-after rows; RESUME.md drafted; any extension's Gate B ruling. Planned light: inside the post-field recovery window."
+beside = "Inside the roughly ten-day recovery window after the Mini CSS."
+john_hours = "0 to 1"
+john_items = [
+  "Any extension's Gate B ruling, if one is pending",
+]
+goals = [
+  { id = "W12.1", text = "Compute ledger, STATUS.md, data/project.toml and the site closed with actual-after rows", owner = "agents", status = "planned" },
+  { id = "W12.2", text = "RESUME.md drafted: how to wake the programme in May 2027", owner = "agents", status = "planned" },
+]
+
+[[weekends]]
+id = "W13"
+number = 13
+start = "2026-12-19"
+end = "2026-12-20"
+days = 2
+status = "planned"
+title = "Final state of the record"
+outcome = "Final state of the record before wrap-up starts Monday 2026-12-21; nothing launches. The hibernation condition is completed over the exodus break, by 2027-01-04, with John's final ruling that it is met."
+beside = "Wrap-up starts 2026-12-21. Exodus break roughly 2026-12-21 to 2027-01-03 (dates inferred, not published)."
+john_hours = "about 1"
+john_items = [
+  "Final ruling that the hibernation condition is met (may land during the exodus break)",
+]
+goals = [
+  { id = "W13.1", text = "Record in its final pre-hibernation state; nothing in flight", owner = "agents", status = "planned" },
+  { id = "W13.2", text = "Hibernation condition per docs/program-roadmap-2026-09-20.md met and ruled, by 2027-01-04", owner = "both", status = "planned" },
+]
+
+# ---------------------------------------------------------------------------
+# The extensions the back half of the block can take, ranked. None is
+# authorised by this file; each is its own registration with its own Gate A,
+# and each that trains anything is an envelope ruling (about $36 each).
+# ---------------------------------------------------------------------------
+
+[[extensions]]
+id = "E0"
+title = "A fourth arm, partially separable by construction"
+when = "Folded into the main registration if the rehearsal can build it in weekend 1"
+cost = "one more architecture; three more 30-million-parameter runs, about $36"
+teaches = "Without a middle case, a free-arm reading at the entangled end cannot be told from a ceiling. This is the single change that most improves what outcome R1 can say."
+status = "proposed"
+
+[[extensions]]
+id = "E1"
+title = "Tighter uncertainty on the free arm's degree"
+when = "If R1; proposed after Gate B in weekend 5, runs in weekend 8"
+cost = "three more free-arm seeds, about $36"
+teaches = "A paired uncertainty across six seeds rather than three."
+status = "proposed"
+
+[[extensions]]
+id = "E2"
+title = "A second point on size"
+when = "If R1 or R2; weekend 9 or a November midweek"
+cost = "$0; the 10-million-parameter development checkpoints already exist"
+teaches = "The measure's behaviour at a second size, filed as a side reading, not a claim."
+status = "proposed"
+
+[[extensions]]
+id = "E3"
+title = "One registered recipe change, not hibernation"
+when = "If R3 (an arm fails the learn-both gate twice); proposed weekend 3, registered by weekend 5, run weekend 6, closed by weekend 9"
+cost = "the redesigned named-other condition at 30 million parameters, three free-arm seeds, about $36"
+teaches = "Turns R3 from 'this recipe is not a testbed' into 'this recipe is not, and this one is (or is not)'."
+status = "proposed"
+
+[[extensions]]
+id = "E4"
+title = "The marker-word fitted read on the A3 checkpoints"
+when = "November midweeks, only if the main line has finished with the Mac"
+cost = "$0, about seventy processor-hours"
+teaches = "The registered A3 target that was never read at the nine positions. Does not bear on the December result."
+status = "deferred"
