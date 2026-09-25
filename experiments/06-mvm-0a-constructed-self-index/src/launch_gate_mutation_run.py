@@ -46,6 +46,11 @@ MUTATIONS = {
          'GATE_RE="(^|[^A-Za-z0-9_])${re}([^A-Za-z0-9_]|\\$)"'),
     "M6 the eight-cell rule removed":
         ('    if [ "$cells" != 8 ]; then\n', '    if false; then\n'),
+    # M7 added 2026-09-24 with harness case 3c: takes away the markers that
+    # keep an empty field from vanishing when the shell merges runs of tabs.
+    "M7 the empty-field markers removed":
+        ('print NR "\\t=" date "\\t=" cells "\\t=" est "\\t=" act',
+         'print NR "\\t" date "\\t" cells "\\t" est "\\t" act'),
 }
 
 

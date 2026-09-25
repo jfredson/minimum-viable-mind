@@ -385,3 +385,33 @@ M5 and M6 each put one of the two defects back, and each is caught. **These
 repairs, and the `mvm-` prefix most of all, are owed a check by a session that
 did not write them.** The `mvm-` rule is a judgment call this session made on
 its own authority. `launch_a3.sh` was not touched.
+
+---
+
+## 12. A harness case for the empty-field shift, 2026-09-24 — MEASURED
+
+Section 11, item 3 ends "No harness case isolates this." That is no longer so.
+`src/launch_gate_selftest.sh` case 3c, run through each of the three
+launchers, gives the gate a row whose date cell is empty and requires two
+things: a refusal saying `line 7 has no date`, and no mention of an
+"unreadable date", which is what a later field sliding into the date's place
+produces. `src/launch_gate_mutation_run.py` gains M7, which removes the
+markers that keep an empty field in place, and the new case catches it:
+
+```
+$ …/src/launch_gate_selftest.sh | tail -3
+checks passed: 369   failed: 0
+$ …/src/sleep_guard_selftest.sh | tail -3
+checks passed: 67   failed: 0
+$ python3 …/src/launch_gate_mutation_run.py      (M7, and the restore)
+# M7 the empty-field markers removed
+  launch_gate_selftest.sh: exit 1; checks passed: 363   failed: 6
+      3 x FAIL: did not name the problem 'line 7 has no date'
+      3 x FAIL: a later field slid into the date's place
+  sleep_guard_selftest.sh: exit 0; checks passed: 67   failed: 0
+restored; sha256 182b6555788bd7eebff9cacf85a46a49b4cc3f0950eb2463cfb374674006d64f matches original: True
+```
+
+M1 to M6 are still caught, and their gate-harness counts each rise by the six
+new checks (M1 285/84, M2 220/149, M3 359/10, M4 369/0 with the sleep harness
+catching it at 63/4, M5 339/30, M6 360/9). The gate itself did not change.

@@ -257,6 +257,19 @@ for L in $LAUNCHERS; do
   reset_standins; make_ledger "$(days_on 3)" "OUT=$RUN_OUT" "\$10" "—"; run "$L"
   assert_refused "in the future"
 
+  # 3c added 2026-09-24: the rows reach the shell with tab between fields, and
+  # the shell merges runs of tabs, so an empty field used to vanish and shift
+  # every field after it into the wrong place. Each field now carries a
+  # leading marker (launch_gate.sh, commit def4d99). Without it, an empty date
+  # cell reads the cell count as the date and says "unreadable date '8'".
+  echo "  3c — the row's date cell is empty: refused as undated, no field shifted"
+  reset_standins
+  make_ledger_row "|  | test | OUT=$RUN_OUT | 5090 | est 10h | \$10 | — | — |" "$(today)"
+  run "$L"
+  assert_refused "line 7 has no date"
+  case "$OUT_TEXT" in *"unreadable date"*) bad "a later field slid into the date's place" ;;
+    *) ok "no later field slid into the date's place" ;; esac
+
   echo "  4 — the row has no dollar estimate"
   reset_standins; make_ledger "$(today)" "OUT=$RUN_OUT" "to be priced" "—"; run "$L"
   assert_refused "no dollar figure in its estimate column"
