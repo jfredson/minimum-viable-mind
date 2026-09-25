@@ -75,7 +75,7 @@ const MARK: Record<string, string> = { planned: '○', done: '✓', carried: '�
         return (
           <div class={`rm-prog-day ${m.kind === 'kill_date' ? 'rm-kill' : ''}`}>
             <div class="stat">{Math.abs(n)}</div>
-            <div class="stat-label">{daysLabel(n, milestoneShort(m).toLowerCase())}, {fmtDate(m.date)}</div>
+            <div class="stat-label">{daysLabel(n, milestoneShort(m).toLowerCase())} (<span class="rm-id">{m.id}</span>), {fmtDate(m.date)}</div>
           </div>
         );
       })}
@@ -97,7 +97,7 @@ const MARK: Record<string, string> = { planned: '○', done: '✓', carried: '�
               <a class={`rm-seg rm-seg-${w.status}`} href={`#weekend-${w.number}`} style={`left:${s.left}%;width:${s.width}%`}
                  title={`Weekend ${w.number}, ${fmtRange(w.start, w.end)}: ${w.title} (${label(w.status)})`}
                  aria-label={`Weekend ${w.number}, ${fmtRange(w.start, w.end)}, ${label(w.status)}: ${w.title}`}>
-                <span class="rm-seg-num">{w.number}</span>
+                <span class="rm-seg-num">{w.id}</span>
                 <span class="rm-seg-bar"></span>
               </a>
             );
@@ -107,7 +107,7 @@ const MARK: Record<string, string> = { planned: '○', done: '✓', carried: '�
             return (
               <div class={`rm-tick rm-tick-${m.kind} ${i % 2 ? 'rm-tick-low' : ''} ${at > 80 ? 'rm-tick-end' : ''}`} style={`left:${at}%`}>
                 <span class="rm-tick-line" aria-hidden="true"></span>
-                <span class="rm-tick-label">{milestoneShort(m)}<span class="rm-tick-date">{fmtDate(m.date)}</span></span>
+                <span class="rm-tick-label"><span class="rm-id">{m.id}</span> {milestoneShort(m)}<span class="rm-tick-date">{fmtDate(m.date)}</span></span>
               </div>
             );
           })}
@@ -122,7 +122,7 @@ const MARK: Record<string, string> = { planned: '○', done: '✓', carried: '�
     </ul>
     <ul class="rm-milestones">
       {rm.milestones.map((m) => (
-        <li><span class="mono">{fmtDate(m.date)}</span> <strong>{m.title}.</strong> {m.note && <span class="dim">{m.note}</span>}</li>
+        <li><span class="mono">{fmtDate(m.date)}</span> <span class="rm-id">{m.id}</span> <strong>{m.title}.</strong> {m.note && <span class="dim">{m.note}</span>}</li>
       ))}
     </ul>
   </section>
@@ -133,7 +133,7 @@ const MARK: Record<string, string> = { planned: '○', done: '✓', carried: '�
       <article class={`rm-week ${w.status === 'active' ? 'rm-week-active' : ''} rm-week-${w.status}`} id={`weekend-${w.number}`}>
         <header class="rm-week-head">
           <div>
-            <p class="eyebrow">Weekend {w.number} · {fmtRange(w.start, w.end)} · {w.days} {w.days === 1 ? 'day' : 'days'}</p>
+            <p class="eyebrow"><span class="rm-id">{w.id}</span> Weekend {w.number} · {fmtRange(w.start, w.end)} · {w.days} {w.days === 1 ? 'day' : 'days'}</p>
             <h3 class="rm-week-title">{w.title}</h3>
           </div>
           <Status value={w.status} />
@@ -148,8 +148,8 @@ const MARK: Record<string, string> = { planned: '○', done: '✓', carried: '�
                   <li class={`rm-goal rm-goal-${g.status}`}>
                     <span class="rm-mark" aria-hidden="true">{MARK[g.status]}</span>
                     <div>
-                      <p class="rm-goal-text">{g.text}</p>
-                      <p class="rm-goal-meta"><span class="mono">{g.id}</span><Status value={g.status} /><span class="chip">{OWNER[g.owner]}</span></p>
+                      <p class="rm-goal-text"><span class="rm-id">{g.id}</span> {g.text}</p>
+                      <p class="rm-goal-meta"><Status value={g.status} /><span class="chip">{OWNER[g.owner]}</span></p>
                       {g.note && <p class="rm-goal-note"><span class="kicker-inline">Note</span> {g.note}</p>}
                     </div>
                   </li>

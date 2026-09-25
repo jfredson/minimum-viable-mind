@@ -19,7 +19,8 @@ import re
 import subprocess
 import sys
 import tomllib
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -27,6 +28,15 @@ SRC = ROOT / "data" / "project.toml"
 OUT = ROOT / "site" / "src" / "data" / "project.json"
 ROADMAP_SRC = ROOT / "data" / "roadmap.toml"
 ROADMAP_OUT = ROOT / "site" / "src" / "data" / "roadmap.json"
+
+# Every date in the data files is Pacific, so "today" for the day counts is
+# the Pacific date too, not the build machine's clock (the deploy runs on UTC,
+# which is a day ahead every evening from 17:00 Pacific).
+PACIFIC = ZoneInfo("America/Los_Angeles")
+
+
+def today_pacific() -> date:
+    return datetime.now(PACIFIC).date()
 
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -198,7 +208,7 @@ def git_commit() -> str | None:
 def derive(d: dict) -> dict:
     """Numbers the pages need that should be computed, not typed."""
     p = d["project"]
-    today = date.today()
+    today = today_pacific()
     hib = date.fromisoformat(p["hibernation_by"])
     wrap = date.fromisoformat(p["wrap_up_start"])
     stages = d["stages"]
@@ -319,7 +329,7 @@ def validate_roadmap(d: dict) -> None:
 def derive_roadmap(d: dict) -> dict:
     """Progress counts, days to each milestone, and positions on the timeline
     axis, all computed at export (build) time from today's date."""
-    today = date.today()
+    today = today_pacific()
     wks = d["weekends"]
     goals = [g for wk in wks for g in wk["goals"]]
 

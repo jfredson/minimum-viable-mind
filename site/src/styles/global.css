@@ -697,6 +697,9 @@ a.dim:hover { color: var(--accent); }
 
 /* ---- the weekend roadmap (/roadmap/, data/roadmap.toml, 2026-09-24) ---- */
 .rm-rules { margin-top: 18px; }
+/* the data file's ids (W3, K1, W3.2), printed beside their titles so a
+   handoff line such as "W3.2 carried to W5" can be checked against the page */
+.rm-id { font-family: var(--mono); font-size: 0.85em; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--accent); }
 .rm-rules p { font-size: 15px; line-height: 1.55; color: var(--text-soft); }
 .rm-rules p + p { margin-top: 10px; }
 
