@@ -5,7 +5,12 @@
 #
 # WHAT IS BEING PROVED
 # --------------------
-# One rule, added to src/launch_a3_fetch_first.sh on 2026-09-24:
+# One rule, added to src/launch_a3_fetch_first.sh on 2026-09-24 and moved
+# the same day, unchanged, into src/launch_gate.sh, which the fetch-first
+# launcher and the other two unregistered launchers now call (method:
+# ../launcher-sleep-gate-method.md). This harness still drives it through
+# the fetch-first launcher; launch_gate_selftest.sh drives all three and
+# covers the gate's other two checks.
 #
 #   A real launch is refused unless this Mac's never-sleep override is ON
 #   and this Mac is on wall power — because idle billing has cost about
@@ -36,11 +41,16 @@
 #
 # TWO OF THE CHECKS ARE ON WORDS RATHER THAN ON BEHAVIOUR, because the words
 # are what a person acts on. Case 6 reads the comment giving the reason the
-# idle timer is not gated on: it has to say when the cover it names actually
-# begins, and the two line numbers it gives are compared against where those
-# lines really are. Case 0 reads the banner the operator sees at launch, and
-# requires it to make the same two points the comment does — when the cover
-# starts, and that the launch itself is outside it.
+# idle timer is not gated on: it has to say the launch window is uncovered,
+# and the order it states — keep-awake cover spawned after the machine
+# exists — is checked in every launcher that calls the gate. Case 0 reads the
+# banner the operator sees at launch, and requires it to make the same two
+# points the comment does — when the cover starts, and that the launch
+# itself is outside it.
+#
+# Case 7 (2026-09-24, added when the check moved) is the charger that is not
+# keeping up, with its own control: a Mac holding its charge on purpose
+# ("AC attached; not charging") must still pass.
 #
 # usage: bash sleep_guard_selftest.sh          (runs every case)
 #        bash sleep_guard_selftest.sh 3        (runs case 3 only)
@@ -54,6 +64,7 @@ fi
 
 SRC_DIR="$(cd "$(dirname "$0")" && pwd)"
 LAUNCHER="$SRC_DIR/launch_a3_fetch_first.sh"
+GATE="$SRC_DIR/launch_gate.sh"
 ONLY="${1:-}"
 PASS=0
 FAIL=0
@@ -74,6 +85,7 @@ want_case() { [ -z "$ONLY" ] || [ "$ONLY" = "$1" ]; }
 # which the launcher reports and must not gate on.
 make_pmset() {
   local disabled="$1" source="$2" idle_batt="$3" idle_ac="$4"
+  local batt_state="${5:-charged}"   # the battery line's second field
   T=$(mktemp -d)
   T=$(cd "$T" && pwd -P)
   PMSET_BIN="$T/pmset"
@@ -83,7 +95,7 @@ make_pmset() {
 case "\$1 \$2" in
   "-g batt")
     if [ "$source" != "-" ]; then echo "Now drawing from '$source'"; fi
-    echo " -InternalBattery-0 (id=1)	100%; charged; 0:00 remaining present: true"
+    echo " -InternalBattery-0 (id=1)	100%; $batt_state; 0:00 remaining present: true"
     ;;
   "-g custom")
     echo "Battery Power:"
@@ -119,6 +131,20 @@ echo "self-test stand-in: failing on purpose so this test cannot launch" >&2
 exit 1
 STOPPER
   chmod +x "$FAILING_PY"
+
+  # A LEDGER THAT SATISFIES THE GATE'S LEDGER CHECK, so every case here
+  # isolates the sleep check. Since the check moved into launch_gate.sh the
+  # gate also refuses a real launch with no fresh ledger row for the run,
+  # and the real ledger has none for this launcher's default output name —
+  # so without this stand-in, case 4b would be refused by the ledger check
+  # and never reach the precondition it is testing. The gate's other checks
+  # have their own harness, launch_gate_selftest.sh.
+  LEDGER_FILE="$T/compute-ledger.md"
+  printf '%s\n' "## Ledger" "" \
+    "| date | phase | what ran | GPU | hrs (est → act) | \$ est | \$ actual | running total |" \
+    "|---|---|---|---|---|---|---|---|" \
+    "| $(TZ=America/Los_Angeles date +%Y-%m-%d) | test | a3_30m_seed0 | 5090 | est 10h | \$10 | — | — |" \
+    > "$LEDGER_FILE"
 }
 
 # Runs the REAL launcher with the stand-ins in place, capturing output and
@@ -128,7 +154,7 @@ run_launcher() {   # $1 = DRYRUN value, $2 = ALLOW_LAPTOP_SLEEP value
   local py=""
   [ -n "$1" ] || py="$FAILING_PY"
   OUT_TEXT=$(PMSET="$PMSET_BIN" DRYRUN="$1" ALLOW_LAPTOP_SLEEP="$2" \
-    PY_LOCAL="$py" "$LAUNCHER" 2>&1)
+    LEDGER="$LEDGER_FILE" PY_LOCAL="$py" "$LAUNCHER" 2>&1)
   OUT_ST=$?
 }
 
@@ -444,33 +470,70 @@ fi
 # script, and a later session reading an unqualified "already covered" would
 # be told the launch window needs nothing.
 #
-# The two line numbers are checked against where those lines actually are, so
-# that editing the launcher without re-reading the comment is caught rather
-# than quietly leaving the comment wrong.
+# Until 2026-09-24 the comment gave two line numbers and this case compared
+# them with the launcher. The comment now lives in launch_gate.sh, which
+# serves three launchers with three different line numbers, so it states the
+# ORDER instead, and this case checks that order in every launcher that
+# calls the gate: the keep-awake spawn comes after the machine is created.
+# That also retires the hand-kept pair of numbers the second check of this
+# guard named as the part that could rot.
 if want_case 6; then
   echo "case 6 — the comment says when the idle-sleep cover begins, and when it does not"
-  CAFF_LINE=$(grep -n '^nohup caffeinate -dimsu' "$LAUNCHER" | head -1 | cut -d: -f1)
-  CREATE_LINE=$(grep -n '^CREATE_OUT=\$(runpodctl pod create' "$LAUNCHER" | head -1 | cut -d: -f1)
-  if [ -n "$CAFF_LINE" ] && [ -n "$CREATE_LINE" ]; then
-    ok "found both lines in the launcher (cover at $CAFF_LINE, machine at $CREATE_LINE)"
-  else
-    bad "could not find the caffeinate line or the pod-creating line at all"
-  fi
-  if grep -q "cover begins on line $CAFF_LINE" "$LAUNCHER"; then
-    ok "the comment gives the right line for where the cover begins"
-  else
-    bad "the comment does not say the cover begins on line $CAFF_LINE"
-  fi
-  if grep -q "rented machine exists from line $CREATE_LINE" "$LAUNCHER"; then
-    ok "the comment gives the right line for where the rented machine begins"
-  else
-    bad "the comment does not say the machine exists from line $CREATE_LINE"
-  fi
-  if grep -q "THE LAUNCH WINDOW ITSELF IS NOT COVERED" "$LAUNCHER"; then
+  for L in launch_a3_fetch_first.sh launch_ctl_pilot.sh launch_pilot_a1.sh; do
+    CAFF_LINE=$(grep -n '^nohup "\$CAFFEINATE"' "$SRC_DIR/$L" | head -1 | cut -d: -f1)
+    CREATE_LINE=$(grep -n '^CREATE_OUT=\$(runpodctl pod create' "$SRC_DIR/$L" | head -1 | cut -d: -f1)
+    if [ -z "$CAFF_LINE" ] || [ -z "$CREATE_LINE" ]; then
+      bad "$L: could not find the keep-awake spawn or the pod-creating line"
+    elif [ "$CAFF_LINE" -gt "$CREATE_LINE" ]; then
+      ok "$L: the cover starts at line $CAFF_LINE, after the machine exists at line $CREATE_LINE, as the comment says"
+    else
+      bad "$L: the cover starts at line $CAFF_LINE, BEFORE the machine at $CREATE_LINE — the comment is now wrong"
+    fi
+  done
+  if grep -q "THE LAUNCH WINDOW ITSELF IS NOT COVERED" "$GATE"; then
     ok "the comment says plainly that the launch window is uncovered"
   else
     bad "the comment never says the launch window is uncovered"
   fi
+  if grep -q "spawns its watchdog" "$GATE" && grep -q "after the rented machine" "$GATE"; then
+    ok "and it states the order this case checks"
+  else
+    bad "the comment no longer states the order this case checks"
+  fi
+fi
+
+# ---------------------------------------------------------------- case 7
+# A CHARGER THAT IS NOT KEEPING UP. The first check of this guard (its
+# follow-up 5) found that wall power with a discharging battery passed. The
+# guard's own reason for requiring wall power — a flat battery ends the
+# watchdog — applies word for word. 7b is its control: "AC attached; not
+# charging" is the Mac holding its charge on purpose, which is safe, and a
+# check that refused it would refuse a healthy Mac.
+if want_case 7; then
+  echo "case 7 — wall power but the battery is discharging: a real launch must refuse"
+  make_pmset 1 "AC Power" 15 15 "discharging"
+  run_launcher "" ""
+  assert_refused_at_the_sleep_check
+  case "$OUT_TEXT" in
+    *"its battery is discharging"*) ok "it named what it refused on" ;;
+    *) bad "it did not say the battery is discharging" ;;
+  esac
+  case "$OUT_TEXT" in
+    *"stronger power adapter"*) ok "it printed the fix" ;;
+    *) bad "it did not print the fix" ;;
+  esac
+  assert_nothing_created
+  cleanup
+
+  echo "case 7b — control: a Mac holding its charge on purpose must NOT be refused"
+  make_pmset 1 "AC Power" 15 15 "AC attached; not charging"
+  run_launcher "1" ""
+  case "$OUT_TEXT" in
+    *"ok: never-sleep override ON, running on wall power"*)
+      ok "the check passed a Mac that is plugged in and holding its charge" ;;
+    *) bad "the check refused a Mac that is plugged in and holding its charge" ;;
+  esac
+  cleanup
 fi
 
 echo
@@ -583,3 +646,26 @@ echo "and this Mac's real power settings were never read or changed."
 # old wording too, which is right: the old line said that much correctly and
 # only the cover it claimed was overstated. With the banner corrected the
 # harness reports 59 passed, 0 failed.
+#
+# ---------------------------------------------------------------------------
+# THE FOURTH ROUND: the check moved into launch_gate.sh, 2026-09-24
+# ---------------------------------------------------------------------------
+# The check moved, unchanged, into src/launch_gate.sh so the other two
+# unregistered launchers carry it (../launcher-sleep-gate-method.md). Case 6
+# stopped comparing two hand-kept line numbers and now checks the order they
+# stood for in all three launchers; case 7 was added for a charger that is
+# not keeping up. Against the moved check this harness reported
+#
+#   checks passed: 67   failed: 0
+#
+# and against deliberately broken copies of the gate (recorded in full in
+# ../launcher-sleep-gate-findings.md):
+#
+#   the refusal downgraded to a warning   checks passed: 60   failed: 7
+#       7 x FAIL: it ran on past the sleep check to the next precondition
+#   the discharging check removed         checks passed: 63   failed: 4
+#       case 7 - wall power but the battery is discharging
+#       FAIL: it never said it was refusing
+#       FAIL: it ran on past the sleep check to the next precondition
+#       FAIL: it did not say the battery is discharging
+#       FAIL: it did not print the fix

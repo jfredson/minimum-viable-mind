@@ -64,6 +64,12 @@
 #   seeds:     SEED=1 ./launch_a3.sh      (after the lock)
 #   resume:    RESUME=$RUN_DIR/<ckpt>.pt ./launch_a3.sh  — a resume is a
 #              training launch and needs a FRESH go from John [C2]
+#   before any real launch: a row in ../compute-ledger.md, dated today
+#              (Pacific), naming $OUT, with its estimate — the launch gate
+#              refuses without one (src/launch_gate.sh).
+#   launch on a Mac that can still fall asleep: ALLOW_LAPTOP_SLEEP=1 — overrides
+#              the sleep check in the launch gate and nothing else; a SPENDING
+#              choice, and src/launch_gate.sh says what it costs.
 #
 # PROCESS FIXES carried over (2026-08-15, after the 30M pilot loss):
 #   1. Checkpoints + train.log go to the NETWORK VOLUME, not container disk;
@@ -150,6 +156,18 @@ if [ "$NETVOL" != "none" ]; then
   RUN_DIR="/workspace/mvm-out"
   [ "$CLOUD" = "COMMUNITY" ] && { echo "network volumes are secure-cloud only; set NETVOL=none for COMMUNITY"; exit 1; }
 fi
+
+# ---- local pre-flight: the launch gate -----------------------------------
+# 2026-09-24. Refuses a real launch unless this Mac cannot fall asleep, the
+# fetch and the delete are scheduled inside the run window, and a ledger row
+# with an estimate exists for $OUT. Until today this launcher only WARNED
+# that the Mac must stay awake ("Keep this Mac powered on"); the gate is
+# shared with the other unregistered launchers, in src/launch_gate.sh. A dry
+# run reports and carries on. Method: ../launcher-sleep-gate-method.md.
+WATCHDOG="$SRC_DIR/watch_run_a3.sh"            # spawned last, below
+CAFFEINATE="${CAFFEINATE:-caffeinate}"         # the gate checks what is spawned
+. "$SRC_DIR/launch_gate.sh"
+launch_gate
 
 # ---- local pre-flight: never push a tree whose own tests fail -------------
 echo "local pre-flight: module self-tests"
@@ -396,7 +414,7 @@ OUT="$OUT"
 DEST="$DEST"
 DEADLINE_EPOCH=$DEADLINE_EPOCH
 ENVEOF
-nohup caffeinate -dimsu bash "$SRC_DIR/watch_run_a3.sh" "$ENVF" \
+nohup "$CAFFEINATE" -dimsu bash "$WATCHDOG" "$ENVF" \
   >> "$DEST/watchdog.log" 2>&1 < /dev/null &
 WPID=$!
 echo "watchdog spawned (pid $WPID) — BACKSTOP. The pod reaps itself on completion and at its deadline (credential installed above); this watchdog covers the case where that fails."

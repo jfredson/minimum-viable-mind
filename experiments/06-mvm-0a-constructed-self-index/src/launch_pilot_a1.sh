@@ -17,6 +17,12 @@
 #   dry run:   DRYRUN=1 [...] ./launch_pilot_a1.sh — prints the pod-create
 #              and train commands it WOULD run, creates nothing, spawns
 #              nothing. Use before every real launch.
+#   before any real launch: a row in ../compute-ledger.md, dated today
+#              (Pacific), naming $OUT, with its estimate — the launch gate
+#              refuses without one (src/launch_gate.sh).
+#   launch on a Mac that can still fall asleep: ALLOW_LAPTOP_SLEEP=1 — overrides
+#              the sleep check in the launch gate and nothing else; a SPENDING
+#              choice, and src/launch_gate.sh says what it costs.
 #
 # PROCESS FIXES (2026-08-15, after the 30M pilot loss — see STATUS 2026-08-12):
 #   1. Checkpoints + train.log go to the mvm-models NETWORK VOLUME
@@ -89,6 +95,18 @@ if [ "$NETVOL" != "none" ]; then
   RUN_DIR="/workspace/mvm-out"                 # network volume mount
   [ "$CLOUD" = "COMMUNITY" ] && { echo "network volumes are secure-cloud only; set NETVOL=none for COMMUNITY"; exit 1; }
 fi
+
+# ---- local pre-flight: the launch gate -----------------------------------
+# 2026-09-24. Refuses a real launch unless this Mac cannot fall asleep, the
+# fetch and the delete are scheduled inside the run window, and a ledger row
+# with an estimate exists for $OUT. Until today this launcher only WARNED
+# that the Mac must stay awake ("Keep this Mac powered on"); the gate is
+# shared with the other unregistered launchers, in src/launch_gate.sh. A dry
+# run reports and carries on. Method: ../launcher-sleep-gate-method.md.
+WATCHDOG="$SRC_DIR/watch_run.sh"               # spawned last, below
+CAFFEINATE="${CAFFEINATE:-caffeinate}"         # the gate checks what is spawned
+. "$SRC_DIR/launch_gate.sh"
+launch_gate
 
 echo "creating $CLOUD pod ($GPU) for $SCALE/$MAXTOK tok (out: $OUT)"
 echo "  run dir: $RUN_DIR $([ "$NETVOL" != "none" ] && echo '(network volume — survives pod death)')"
@@ -191,7 +209,7 @@ OUT="$OUT"
 DEST="$DEST"
 DEADLINE_EPOCH=$DEADLINE_EPOCH
 ENVEOF
-nohup caffeinate -i bash "$SRC_DIR/watch_run.sh" "$ENVF" \
+nohup "$CAFFEINATE" -i bash "$WATCHDOG" "$ENVF" \
   >> "$DEST/watchdog.log" 2>&1 < /dev/null &
 WPID=$!
 echo "watchdog spawned (pid $WPID, caffeinate holds off idle sleep) — KEEP THIS MAC POWERED ON"
