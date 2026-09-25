@@ -88,13 +88,13 @@ john_items = [
 goals = [
   { id = "W1.1", text = "A3 closure through Gate A, both tiers, and the closure commit landed", owner = "both", status = "planned" },
   { id = "W1.2", text = "Every registration-blocking decision ruled and recorded in docs/rulings/2026-09-26-weekend-1-queue.md", owner = "john", status = "planned" },
-  { id = "W1.3", text = "The 2026-09-22/23 handoff landed at the top of STATUS.md with a 2026-09-24 entry; data/project.toml current; merged worktrees pruned", owner = "agents", status = "planned" },
-  { id = "W1.4", text = "The launcher refuses to rent a machine when the laptop can sleep, and the launch checklist is a gate it checks", owner = "agents", status = "planned" },
+  { id = "W1.3", text = "The 2026-09-22/23 handoff landed at the top of STATUS.md with a 2026-09-24 entry; data/project.toml current; merged worktrees pruned", owner = "agents", status = "done", note = "Landed 2026-09-24 evening: PR 29 and PR 31; no worktree folder was prunable by git's definition (all 69 branches merged), so clearing them is a later git worktree remove pass" },
+  { id = "W1.4", text = "The launcher refuses to rent a machine when the laptop can sleep, and the launch checklist is a gate it checks", owner = "agents", status = "done", note = "Landed 2026-09-24 evening: PR 33 (shared src/launch_gate.sh, 351 and 67 harness checks, charger case and empty-date field covered), checked on PR 36" },
   { id = "W1.5", text = "The rented slice run: seconds per step per arm measured on the rented machine and written into the second release's arithmetic; the shutdown path exercised end to end", owner = "both", status = "planned" },
   { id = "W1.6", text = "Rehearsal repairs at toy scale: the named-other condition redesigned (or the risk accepted on record), the nomination procedure shown to be one instrument across arms, control 2 built as stated, the fourth arm attempted if ruled", owner = "agents", status = "planned" },
   { id = "W1.7", text = "Successor proposal version 2 written with the ruled numbers, label and form, the failure-modes checklist exercised against it with commands and output, both checking scripts clean", owner = "agents", status = "planned" },
   { id = "W1.8", text = "Gate C first-tier review of version 2 filed; if clean, the registration text drafted and its Gate A first tier launched overnight", owner = "agents", status = "planned" },
-  { id = "W1.9", text = "The Saturday ruling packet built and checked (PR 34)", owner = "agents", status = "planned" },
+  { id = "W1.9", text = "The Saturday ruling packet built and checked (PR 34)", owner = "agents", status = "done", note = "Landed 2026-09-24 evening: PR 34, checked on PR 35, both merged; the packet is docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md" },
 ]
 
 [[weekends]]
