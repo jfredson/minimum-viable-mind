@@ -46,7 +46,10 @@ calls stated in John's name below. The item numbers are the proposal's.
    each) and "at the discovery positions".
 8. The money paragraph gives the ledger's figures with an "as of" date (about
    $46.2 of A3's $100 stop, about $227.6 of the $400 programme ceiling as the
-   ledger read on 2026-09-21), re-read on the day version 5 lands.
+   ledger read on 2026-09-21), re-read on the day version 5 lands. The
+   programme ceiling was raised from $400 to $450 on 2026-09-25
+   (`docs/rulings/2026-09-26-weekend-1-queue.md`, page 6), so version 5
+   states the ceiling as $450 with that ruling cited.
 9. The 2026-10-11 target is dropped; the two kill dates (2026-10-18, 2026-11-01)
    stay, citing the ruling's annotation.
 10. ChatGPT A5 accepted as a record of the packet's limits; no text change; the
@@ -77,9 +80,15 @@ calls stated in John's name below. The item numbers are the proposal's.
 18. The one-in-eleven sentence is replaced by ChatGPT's, scoped to the fitted
     register-index read, keeping the citation of the correction file.
 19. Of the six small changes: (a), (c), (d), (f) accepted; (b) becomes "had
-    not been attacked before registration"; **(e) held**, adopted only if the
-    dispositions check or the version 5 writer shows it from
-    `standardised-refit-findings.md`.
+    not been attacked before registration"; **(e) adopted**: the proposal held
+    it pending a check, and the check of the dispositions
+    (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-a3-dispositions-check-claude-worktree.md`,
+    pull request 40) showed from the refit code and the run's three output
+    files ("no test shares a split with the unscaled run's") that the refit
+    used different fold splits and shuffled draws. The findings file
+    `standardised-refit-findings.md` does not show it and its "by nothing
+    else" sentence overstates what its anchor check proves; version 5 cites
+    the check, not the findings file, for this point.
 20. A dated annotation beside the ChatGPT review file (not in it): run in the
     Codex app; model as the app reported it, "ChatGPT 6 Astra Medium"; the
     body's self-description "Codex" is the app's name; documents pasted in 22
