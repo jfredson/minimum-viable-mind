@@ -38,6 +38,14 @@ MUTATIONS = {
         ('&& [ "$WATCH_H" -gt "$TERM_H" ]; then', '&& false; then'),
     "M4 the discharging-charger check removed":
         ('elif [ "$batt_state" = "discharging" ]; then', 'elif false; then'),
+    # M5 and M6 added 2026-09-24 with the two fixes owed by the check of pull
+    # request 33 (reviews/2026-09-24-launch-gate-pr33-check-claude-worktree.md):
+    # each puts one of the two defects back.
+    "M5 the name pattern treats '-' and '.' as word boundaries again":
+        ('GATE_RE="(^|[^A-Za-z0-9_.-])(mvm-)?${re}([^A-Za-z0-9_.-]|\\\\.([^A-Za-z0-9_-]|\\$)|\\$)"',
+         'GATE_RE="(^|[^A-Za-z0-9_])${re}([^A-Za-z0-9_]|\\$)"'),
+    "M6 the eight-cell rule removed":
+        ('    if [ "$cells" != 8 ]; then\n', '    if false; then\n'),
 }
 
 

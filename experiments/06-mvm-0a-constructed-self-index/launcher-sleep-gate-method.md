@@ -179,9 +179,37 @@ unless one row:
    A row whose actual cost is filled in belongs to a launch that has already
    happened; a new launch needs a new row.
 
-The columns are counted from the right-hand end of the row, because a `|`
+~~The columns are counted from the right-hand end of the row, because a `|`
 inside the prose of the "what ran" column (the 2026-08-17 row has one) shifts
-every column counted from the left.
+every column counted from the left.~~
+
+**Corrected 2026-09-24, after the check of pull request 33**
+(`reviews/2026-09-24-launch-gate-pr33-check-claude-worktree.md`, section 8).
+The struck sentence claimed a record handles a case the record shows it does
+not handle. The real 2026-08-17 row has a `|` in its prose **and** an
+annotation added as an extra, tenth cell. Counted from the right, that shape
+put the actual-cost cell where the estimate should be, so a good row of that
+shape dated today was refused for a "missing" dollar figure that was there.
+The rule the gate now enforces, stated here as the review asked:
+
+5. **the row has exactly eight cells**, the table's eight columns, once any
+   `|` written as `\|` (the table's own escape for a `|` in prose) is set
+   aside. A row with more or fewer is refused with "line N has C cells,
+   expected 8", naming both likely causes: an unescaped `|` in the prose, or
+   an annotation added as a cell, which belongs below the table. The gate
+   does not guess which one it is, because nothing in the row tells them
+   apart.
+
+And to item 1, **"as a whole word" now means the name does not continue into
+more of a name**: `slice_handshake-v2`, `slice_handshake.v2`,
+`slice_handshake_v2` and `x-slice_handshake` do not satisfy a launch of
+`slice_handshake`, because a hyphen is not a word boundary. The first version
+treated one as a boundary, so a row for `slice_handshake-v2` satisfied a
+launch of `slice_handshake` (the review's case B11). The only hyphenated
+prefix accepted is `mvm-`, the name the launchers give the machine: a row
+naming the machine `mvm-slice_handshake` names the run, and the real
+2026-09-21 row does exactly that. A full stop ending a sentence still ends
+the name.
 
 Confidence: medium. Standard in spirit (the ledger's own rule 2). The strongest
 alternative is an explicit key the operator writes into the row and passes to

@@ -312,3 +312,76 @@ and confirm the move changed nothing but what §8.7 says it closed; try the
 ledger check with rows this session did not write (the real ledger's other
 rows, a row with a `|` inside its prose); and say whether the two-day limit
 and the `WATCH_H ≤ TERM_H` rule are right, since both are judgment calls.
+
+---
+
+## 11. The two repairs the check asked for, 2026-09-24 — MEASURED
+
+The check of pull request 33 is filed at
+`reviews/2026-09-24-launch-gate-pr33-check-claude-worktree.md` (draft pull
+request 36). It found the gate holds, and asked for two fixes to the ledger
+check before it is relied on. Sections 2 and 3 above are left as written: they
+record the state at commits `b98c4e2` and `182f407`. This section records the
+state after the repairs.
+
+1. **Rows of the wrong shape.** A good row with an annotation added as an extra
+   cell (the real 2026-08-17 row's shape) was refused with the wrong reason,
+   "no dollar figure", because counting from the right read the actual-cost
+   cell as the estimate. Now a row must have exactly eight cells, a `|` written
+   `\|` is prose, and any other count is refused with "line N has C cells,
+   expected 8". The method's §3c carries the corrected rule beside the struck
+   sentence.
+2. **Hyphenated cousins of the run name.** A row for `slice_handshake-v2`
+   satisfied a launch of `slice_handshake`. A hyphen, or a full stop followed
+   by more name, no longer ends a name. **One consequence the check did not
+   foresee, and that this session met while testing:** the real 2026-09-21 row
+   names the machine, `mvm-a3_30m_seed0`, and with a hyphen no longer a
+   boundary that row stopped matching, which would have made finding 5 above
+   false. `mvm-`, the name the launchers give the machine, is the one prefix
+   now accepted. A dry run at the default name again reports
+   `line 74 is dated 2026-09-21, 3 days ago (must be within 2)`.
+3. **Found while fixing, not asked for.** The rows were passed to the shell
+   with tab as the separator, and the shell merges runs of tabs, so an empty
+   date or cell would have shifted every field after it. Each field now carries
+   a leading marker, so an empty one keeps its place. No harness case isolates
+   this.
+
+New harness cases, for each of the three launchers: a hyphenated, a dotted and
+a hyphen-prefixed cousin must be refused; the name ending a sentence and the
+machine name `mvm-…` must pass; the 2026-08-17 shape (10 cells) and an appended
+cell with a closing `|` (9 cells) must be refused as wrong shape and not for
+the estimate; an escaped `\|` in prose must pass.
+
+```
+$ …/src/launch_gate_selftest.sh | tail -3
+checks passed: 351   failed: 0
+$ …/src/sleep_guard_selftest.sh | tail -3
+checks passed: 67   failed: 0
+$ …/src/check_launcher_argument_guard.sh | tail -1
+all checks pass. nothing was created and nothing was spent.
+$ python3 …/src/launch_gate_mutation_run.py      (summary lines)
+# M1 warning only: the refusal prints and carries on
+  launch_gate_selftest.sh: exit 1; checks passed: 271   failed: 80
+  sleep_guard_selftest.sh: exit 1; checks passed: 60   failed: 7
+# M2 the ledger check accepts anything
+  launch_gate_selftest.sh: exit 1; checks passed: 212   failed: 139
+  sleep_guard_selftest.sh: exit 0; checks passed: 67   failed: 0
+# M3 the deadline-order check removed
+  launch_gate_selftest.sh: exit 1; checks passed: 341   failed: 10
+  sleep_guard_selftest.sh: exit 0; checks passed: 67   failed: 0
+# M4 the discharging-charger check removed
+  launch_gate_selftest.sh: exit 0; checks passed: 351   failed: 0
+  sleep_guard_selftest.sh: exit 1; checks passed: 63   failed: 4
+# M5 the name pattern treats '-' and '.' as word boundaries again
+  launch_gate_selftest.sh: exit 1; checks passed: 321   failed: 30
+  sleep_guard_selftest.sh: exit 0; checks passed: 67   failed: 0
+# M6 the eight-cell rule removed
+  launch_gate_selftest.sh: exit 1; checks passed: 342   failed: 9
+  sleep_guard_selftest.sh: exit 0; checks passed: 67   failed: 0
+restored; sha256 182b6555788bd7eebff9cacf85a46a49b4cc3f0950eb2463cfb374674006d64f matches original: True
+```
+
+M5 and M6 each put one of the two defects back, and each is caught. **These
+repairs, and the `mvm-` prefix most of all, are owed a check by a session that
+did not write them.** The `mvm-` rule is a judgment call this session made on
+its own authority. `launch_a3.sh` was not touched.

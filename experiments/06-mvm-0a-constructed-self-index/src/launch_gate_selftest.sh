@@ -94,6 +94,11 @@ FAKE
 
 # ledger: one row, $1 date, $2 what-ran text, $3 estimate cell, $4 actual cell
 make_ledger() {
+  make_ledger_row "| $1 | test | $2 | 5090 | est 10h | $3 | $4 | — |" "$1"
+}
+# ledger with the row given whole, for rows of the wrong shape; $2 the date
+# used for the ignored row after the table
+make_ledger_row() {
   {
     echo "# stand-in compute ledger"
     echo
@@ -101,11 +106,11 @@ make_ledger() {
     echo
     echo "| date | phase | what ran | GPU | hrs (est → act) | \$ est | \$ actual | running total |"
     echo "|---|---|---|---|---|---|---|---|"
-    echo "| $1 | test | $2 | 5090 | est 10h | $3 | $4 | — |"
+    echo "$1"
     echo
     echo "## Expected spend"
     echo
-    echo "| $1 | a row after the table that must be ignored | $RUN_OUT | x | x | \$1 | — | — |"
+    echo "| $2 | a row after the table that must be ignored | $RUN_OUT | x | x | \$1 | — | — |"
   } > "$T/ledger.md"
 }
 
@@ -193,6 +198,56 @@ for L in $LAUNCHERS; do
   echo "  2b — a row names a LONGER name that merely starts with this one"
   reset_standins; make_ledger "$(today)" "OUT=${RUN_OUT}0" "\$10" "—"; run "$L"
   assert_refused "no row in the ledger table names"
+
+  # 2c-2e and 14-14c were added 2026-09-24 after the check of pull request 33
+  # (reviews/2026-09-24-launch-gate-pr33-check-claude-worktree.md, section 8),
+  # which found a hyphenated cousin of the run name accepted (its B11) and a
+  # good row with an appended annotation cell refused for the wrong reason
+  # (its B3 and B4).
+  echo "  2c — a row names a hyphenated cousin of this run (${RUN_OUT}-v2)"
+  reset_standins; make_ledger "$(today)" "OUT=${RUN_OUT}-v2" "\$10" "—"; run "$L"
+  assert_refused "no row in the ledger table names"
+
+  echo "  2d — a row names a dotted cousin of this run (${RUN_OUT}.v2)"
+  reset_standins; make_ledger "$(today)" "OUT=${RUN_OUT}.v2" "\$10" "—"; run "$L"
+  assert_refused "no row in the ledger table names"
+
+  echo "  2e — control: the run name ending a sentence still counts"
+  reset_standins; make_ledger "$(today)" "the gate test, which runs as ${RUN_OUT}." "\$10" "—"
+  run "$L" "$T/py-passes"
+  case "$OUT_TEXT" in *"launch gate: every check passed."*) ok "a name followed by a full stop matched" ;;
+    *) bad "a name followed by a full stop was not matched" ;; esac
+
+  echo "  2f — a row names a hyphen-PREFIXED cousin (x-${RUN_OUT})"
+  reset_standins; make_ledger "$(today)" "OUT=x-${RUN_OUT}" "\$10" "—"; run "$L"
+  assert_refused "no row in the ledger table names"
+
+  echo "  2g — control: a row naming the machine, mvm-${RUN_OUT}, names the run"
+  reset_standins; make_ledger "$(today)" "machine \`mvm-${RUN_OUT}\`" "\$10" "—"
+  run "$L" "$T/py-passes"
+  case "$OUT_TEXT" in *"launch gate: every check passed."*) ok "the launcher's own machine name matched" ;;
+    *) bad "the launcher's own machine name mvm-${RUN_OUT} was not matched" ;; esac
+
+  echo "  14 — the real 2026-08-17 row's shape: a '|' in the prose AND an annotation cell, no closing '|'"
+  reset_standins
+  make_ledger_row "| $(today) | test | OUT=$RUN_OUT, \`head -6\` | then more prose | 5090 | est 10h | \$10 | — | — | **ANNOTATION: a ruling appended as a cell" "$(today)"
+  run "$L"
+  assert_refused "has 10 cells, expected 8"
+  case "$OUT_TEXT" in *"no dollar figure"*) bad "it still blamed a dollar figure that is there" ;;
+    *) ok "it did not blame the estimate" ;; esac
+
+  echo "  14b — an annotation cell appended with a closing '|'"
+  reset_standins
+  make_ledger_row "| $(today) | test | OUT=$RUN_OUT | 5090 | est 10h | \$10 | — | — | an annotation |" "$(today)"
+  run "$L"
+  assert_refused "has 9 cells, expected 8"
+
+  echo "  14c — control: a '|' in the prose written as '\\|' is prose, and the row passes"
+  reset_standins
+  make_ledger_row "| $(today) | test | OUT=$RUN_OUT, piped through \`a \\| b\` | 5090 | est 10h | \$10 | — | — |" "$(today)"
+  run "$L" "$T/py-passes"
+  case "$OUT_TEXT" in *"launch gate: every check passed."*) ok "the escaped pipe was read as prose" ;;
+    *) bad "the escaped pipe was counted as a cell border" ;; esac
 
   echo "  3 — the only row is five days old"
   reset_standins; make_ledger "$(days_ago 5)" "OUT=$RUN_OUT" "\$10" "—"; run "$L"

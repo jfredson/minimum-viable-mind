@@ -236,10 +236,30 @@ _gate_schedule() {
 # days before, Pacific (output names are reused, and a row for an earlier run
 # must not satisfy a new launch); carry a dollar figure in its `$ est` column;
 # and not yet carry an actual cost (a filled actual-cost column means a launch
-# that already happened). Columns are counted from the RIGHT, because a `|`
-# inside the prose of the "what ran" column shifts everything counted from
-# the left. It does NOT check that John's go is quoted in the row: whether a
-# sentence is a go is not something a pattern can decide.
+# that already happened). It does NOT check that John's go is quoted in the
+# row: whether a sentence is a go is not something a pattern can decide.
+#
+# THE ROW MUST HAVE EXACTLY EIGHT CELLS, the table's eight columns. Corrected
+# 2026-09-24 after the check of pull request 33
+# (reviews/2026-09-24-launch-gate-pr33-check-claude-worktree.md, section 8).
+# The first version counted columns from the right, on the claim that this
+# survives a `|` inside the "what ran" prose. It does, but the ledger's real
+# 2026-08-17 row also has an annotation appended as an extra cell, and
+# counting from the right then read the actual-cost cell as the estimate: a
+# good row was refused for a "missing" dollar figure that was there. A `|`
+# in prose and an appended cell both give a row more than eight cells, and
+# nothing tells them apart. So the gate does not guess which it is. It says
+# "line N has C cells, expected 8" and names both causes. A `|` written as
+# `\|`, the table's own escape, is prose and not a cell border.
+#
+# WHAT COUNTS AS A WHOLE WORD. The run name must not continue into more of a
+# name: `slice_handshake` is not matched by `slice_handshake_v2`,
+# `slice_handshake-v2` or `slice_handshake.v2`. Also corrected after that
+# check: the first version treated `-` as a boundary, so a row for
+# `slice_handshake-v2` satisfied a launch of `slice_handshake`. A full stop
+# that ends a sentence (`… slice_handshake.`) still counts as the end. The
+# one hyphenated prefix accepted is `mvm-`, the name the launchers give the
+# machine (`mvm-slice_handshake`); `x-slice_handshake` does not match.
 GATE_LEDGER_MAX_AGE_D=2
 _gate_days_old() {   # $1 = YYYY-MM-DD; prints whole days before today, Pacific
   local today d0 d1
@@ -267,7 +287,13 @@ _gate_ledger() {
   local rows
   # the pattern goes in through the environment, not `awk -v`, which
   # rewrites backslashes and would turn the escaped '.' back into "any"
-  rows=$(GATE_RE="(^|[^A-Za-z0-9_])${re}([^A-Za-z0-9_]|\$)" awk -F'|' '
+  # Before the name: start of line or a character that cannot be part of a
+  # name, optionally followed by exactly "mvm-" — the launchers name the
+  # machine mvm-$OUT, and a row naming the machine names the run (the real
+  # 2026-09-21 row does). No other hyphenated prefix counts. After the name:
+  # end of line, a character that cannot be part of a name, or a full stop
+  # NOT followed by more name (a sentence ending, not ".v2").
+  rows=$(GATE_RE="(^|[^A-Za-z0-9_.-])(mvm-)?${re}([^A-Za-z0-9_.-]|\\.([^A-Za-z0-9_-]|\$)|\$)" awk -F'|' '
     BEGIN { re = ENVIRON["GATE_RE"] }
     /^## Ledger[ \t]*$/ { inl = 1; next }
     inl && /^## / { exit }
@@ -276,19 +302,27 @@ _gate_ledger() {
       d = $2; gsub(/^[ \t]+|[ \t]+$/, "", d)
       if (d == "date") next                         # the header row
       if ($0 !~ re) next
-      n = NF; if ($n ~ /^[ \t]*$/) n--              # trailing "|" leaves an empty field
-      est = $(n - 2); act = $(n - 1)
+      line = $0; gsub(/\\\|/, "", line)            # "\|" is prose, not a border
+      k = split(line, c, "|")
+      if (c[k] ~ /^[ \t]*$/) k--                    # a trailing "|" leaves an empty field
+      cells = k - 1                                 # the field before the first "|" is not a cell
+      est = ""; act = ""
+      if (cells == 8) { est = c[7]; act = c[8] }
       date = ""
-      if (match($2, /20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]/)) date = substr($2, RSTART, 10)
+      if (match(c[2], /20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]/)) date = substr(c[2], RSTART, 10)
       gsub(/\t/, " ", est); gsub(/\t/, " ", act)
-      print NR "\t" date "\t" est "\t" act
+      # every field after the line number carries a leading "=", so an empty
+      # one cannot vanish: `read` merges runs of tabs, which would shift the
+      # fields after it
+      print NR "\t=" date "\t=" cells "\t=" est "\t=" act
     }' "$ledger")
   if [ -z "$rows" ]; then
     _gate_add "no row in the ledger table names this run's output name '$OUT'" "$fix"
     return
   fi
-  local why="" ok_line="" line date est act age act_n
-  while IFS="$(printf '\t')" read -r line date est act; do
+  local why="" ok_line="" line date cells est act age act_n
+  while IFS="$(printf '\t')" read -r line date cells est act; do
+    date="${date#=}"; cells="${cells#=}"; est="${est#=}"; act="${act#=}"
     if [ -z "$date" ]; then
       why="$why; line $line has no date"; continue
     fi
@@ -298,6 +332,9 @@ _gate_ledger() {
     fi
     if [ "$age" -gt "$GATE_LEDGER_MAX_AGE_D" ]; then
       why="$why; line $line is dated $date, $age days ago (must be within $GATE_LEDGER_MAX_AGE_D)"; continue
+    fi
+    if [ "$cells" != 8 ]; then
+      why="$why; line $line has $cells cells, expected 8 (a '|' inside the prose, which must be written '\\|', or an annotation added as an extra cell, which belongs below the table)"; continue
     fi
     if ! printf '%s' "$est" | grep -q '\$[0-9]'; then
       why="$why; line $line has no dollar figure in its estimate column"; continue
