@@ -23,8 +23,9 @@ review a text gets before it becomes registered, and this is its tier 2: outside
 models from other labs, run by John through their apps.
 
 **The two responses**, filed verbatim by John on 2026-09-25 and committed
-unedited in the same pull request as this proposal (byte-identical to the
-files John saved: `cmp` returned nothing for either):
+to main in commit `c89a3ef` ("File the two A3 closure tier 2 reviewer
+responses…"), which this pull request's branch starts from; this pull request
+does not change them:
 
 - `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-21-a3-closure-gemini.md`
   — Gemini 3.1 Pro, six findings, G1 to G6.
