@@ -26,7 +26,9 @@ folder (`~/Code`, which is not a git repository), left there as
 then landed by John on 2026-09-24 as commit `6d98e1e`, merged as pull request 29
 (`7244b5b`). That commit corrected the draft before landing it and its message says
 what it changed. The draft files outside the repository are now redundant. This
-entry adds only what happened after it.
+entry adds what happened after it, and repeats two things that entry already says —
+that the 2026-09-23 rulings are on the main line, and item 23's answer on the second
+kill date — because it checks each one against the repository and says so.
 
 **The two rulings of 2026-09-23 are on the main line**, merged as pull request 28
 (`f9fe138`): the nomination label is which marker word is the model's own
