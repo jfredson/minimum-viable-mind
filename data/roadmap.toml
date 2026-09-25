@@ -13,6 +13,8 @@
 #   weekend.status: "planned" | "active" | "done" | "partial" | "blackout" | "slack"
 #   goal.status:    "planned" | "done" | "carried" | "dropped" | "not_needed"
 #   goal.owner:     "john" | "agents" | "both"
+#   milestone.kind: "kill_date" | "wrap_up" | "hibernation"
+#   extension.status: "proposed" | "authorised" | "running" | "done" | "deferred" | "declined"
 #
 # "carried" means the goal moved to a later weekend (say which in `note`). A
 # carried goal is NEVER copied into the later weekend: it stays here with its
@@ -74,7 +76,7 @@ end = "2026-09-27"
 days = 2
 status = "active"
 title = "Clear the queue, close A3, repair the proposal"
-outcome = "Amendment A3 (the earlier constructed self-index experiment) closed under Gate A; every registration-blocking decision ruled; successor proposal version 2 through its Gate C first-tier review."
+outcome = "Amendment A3 (the earlier constructed self-index experiment) closed under Gate A; every registration-blocking decision ruled; the rented slice's seconds per step in the release arithmetic; successor proposal version 2 through its Gate C first-tier review."
 beside = "Book text lock 2026-09-30 is off the table (done or moved)."
 john_hours = "about 3"
 john_items = [
@@ -92,6 +94,7 @@ goals = [
   { id = "W1.6", text = "Rehearsal repairs at toy scale: the named-other condition redesigned (or the risk accepted on record), the nomination procedure shown to be one instrument across arms, control 2 built as stated, the fourth arm attempted if ruled", owner = "agents", status = "planned" },
   { id = "W1.7", text = "Successor proposal version 2 written with the ruled numbers, label and form, the failure-modes checklist exercised against it with commands and output, both checking scripts clean", owner = "agents", status = "planned" },
   { id = "W1.8", text = "Gate C first-tier review of version 2 filed; if clean, the registration text drafted and its Gate A first tier launched overnight", owner = "agents", status = "planned" },
+  { id = "W1.9", text = "The Saturday ruling packet built and checked (PR 34)", owner = "agents", status = "planned" },
 ]
 
 [[weekends]]

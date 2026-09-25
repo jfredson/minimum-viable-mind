@@ -694,3 +694,95 @@ a.dim:hover { color: var(--accent); }
 /* light-mode link colour must not override button text */
 :root[data-theme='light'] a.btn { color: var(--on-accent); }
 :root[data-theme='light'] a.btn-ghost { color: var(--text); }
+
+/* ---- the weekend roadmap (/roadmap/, data/roadmap.toml, 2026-09-24) ---- */
+.rm-rules { margin-top: 18px; }
+/* the data file's ids (W3, K1, W3.2), printed beside their titles so a
+   handoff line such as "W3.2 carried to W5" can be checked against the page */
+.rm-id { font-family: var(--mono); font-size: 0.85em; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--accent); }
+.rm-rules p { font-size: 15px; line-height: 1.55; color: var(--text-soft); }
+.rm-rules p + p { margin-top: 10px; }
+
+/* progress strip: two meters, then days to each fixed date */
+.rm-progress { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 20px 22px; }
+.rm-prog-bar { grid-column: span 2; display: flex; flex-direction: column; gap: 6px; }
+.rm-prog-bar .meter { margin-top: 4px; }
+.rm-prog-day { border-top: 1px solid var(--line); padding-top: 14px; }
+.rm-prog-day.rm-kill .stat { color: var(--no); }
+
+/* timeline: weekend segments and milestone ticks on one date axis */
+.rm-axis-wrap { overflow-x: auto; padding-bottom: 4px; }
+.rm-axis { min-width: 720px; position: relative; padding: 0 2px; }
+.rm-months { position: relative; height: 18px; }
+.rm-month { position: absolute; top: 0; font-family: var(--sans); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-left: 4px; white-space: nowrap; }
+.rm-month-end { transform: translateX(-100%); padding: 0 4px 0 0; }
+.rm-track { position: relative; height: 118px; border-top: 1px solid var(--line); }
+.rm-grid { position: absolute; top: 0; height: 52px; border-left: 1px dashed var(--line-strong); }
+.rm-seg { position: absolute; top: 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 10px; text-decoration: none; color: var(--muted); }
+.rm-seg:hover { color: var(--accent); }
+.rm-seg-num { font-family: var(--mono); font-size: 11px; line-height: 1; white-space: nowrap; }
+.rm-seg-bar { display: block; width: 100%; height: 22px; border-radius: 3px; }
+.rm-seg-done .rm-seg-bar { background: var(--ok); }
+.rm-seg-active .rm-seg-bar { background: var(--accent); box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--accent); }
+.rm-seg-active .rm-seg-num { color: var(--accent); font-weight: 600; }
+.rm-seg-partial .rm-seg-bar { background: var(--no); }
+.rm-seg-planned .rm-seg-bar { background: var(--muted); opacity: 0.55; }
+.rm-seg-slack .rm-seg-bar { background: transparent; border: 1.5px dashed var(--muted); }
+.rm-seg-blackout .rm-seg-bar { background: repeating-linear-gradient(135deg, var(--line-strong) 0 3px, transparent 3px 6px); border: 1px solid var(--line-strong); }
+.rm-tick { position: absolute; top: 0; height: 100%; }
+.rm-tick-line { position: absolute; top: 2px; left: 0; height: 58px; border-left: 2px solid var(--text-soft); }
+.rm-tick-kill_date .rm-tick-line { border-color: var(--no); }
+.rm-tick-label { position: absolute; top: 62px; left: 0; transform: translateX(-50%); font-family: var(--sans); font-size: 12px; font-weight: 600; color: var(--text); white-space: nowrap; text-align: center; line-height: 1.25; }
+.rm-tick-kill_date .rm-tick-label { color: var(--no); }
+.rm-tick-date { display: block; font-weight: 400; color: var(--muted); font-size: 11.5px; }
+.rm-tick-low .rm-tick-line { height: 82px; }
+.rm-tick-low .rm-tick-label { top: 86px; }
+.rm-tick-end .rm-tick-label { transform: translateX(-100%); text-align: right; padding-right: 2px; }
+.rm-today { position: absolute; top: -18px; height: 60px; border-left: 2px dotted var(--accent); }
+.rm-today span { position: absolute; top: 0; left: 4px; font-family: var(--sans); font-size: 11px; color: var(--accent); }
+.rm-legend { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; font-family: var(--sans); font-size: 12.5px; color: var(--muted); }
+.rm-legend li { display: inline-flex; align-items: center; gap: 7px; }
+.rm-swatch { display: inline-block; width: 18px; }
+.rm-swatch .rm-seg-bar { height: 12px; }
+.rm-milestones { list-style: none; margin: 16px 0 0; padding: 0; font-size: 14.5px; line-height: 1.5; color: var(--text-soft); }
+.rm-milestones li { padding: 7px 0; border-top: 1px solid var(--line); }
+
+/* weekend cards */
+.rm-week { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 22px 24px 18px; margin-bottom: 16px; }
+.rm-week-active { border-color: var(--accent); border-left-width: 4px; background: linear-gradient(var(--callout-bg), var(--callout-bg)), var(--panel); }
+.rm-week-blackout { background: transparent; border-style: dashed; }
+.rm-week-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 10px; }
+.rm-week-head .eyebrow { margin-bottom: 6px; }
+.rm-week-title { font-family: var(--sans); font-size: clamp(19px, 2.2vw, 24px); font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin: 0; }
+.rm-outcome { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--text-soft); }
+.rm-week-cols { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 28px; }
+.rm-week-cols .kicker { margin-top: 20px; }
+.rm-goals { list-style: none; margin: 0; padding: 0; }
+.rm-goal { display: grid; grid-template-columns: 20px 1fr; gap: 8px; padding: 9px 0; border-top: 1px solid var(--line); }
+.rm-goal:first-child { border-top: none; padding-top: 0; }
+.rm-mark { font-family: var(--mono); font-size: 14px; line-height: 1.5; color: var(--muted); text-align: center; }
+.rm-goal-done .rm-mark { color: var(--ok); }
+.rm-goal-carried .rm-mark { color: var(--accent); }
+.rm-goal-dropped .rm-mark { color: var(--no); }
+.rm-goal-text { margin: 0; font-size: 15px; line-height: 1.5; color: var(--text-soft); }
+.rm-goal-dropped .rm-goal-text { text-decoration: line-through; color: var(--muted); }
+.rm-goal-not_needed .rm-goal-text { color: var(--muted); }
+.rm-goal-meta { margin: 5px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.rm-goal-meta .chip { font-size: 11px; padding: 1px 8px; }
+.rm-goal-note { margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: var(--text); }
+.rm-hours { margin: 12px 0 0; font-size: 14.5px; color: var(--text-soft); }
+.rm-beside { margin: 16px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: 14px; line-height: 1.5; }
+
+/* extensions table */
+.rm-table-wrap { overflow-x: auto; }
+.rm-ext { min-width: 760px; }
+.rm-ext td { font-size: 14px; line-height: 1.5; color: var(--text-soft); }
+.rm-ext td strong { color: var(--text); font-weight: 600; }
+.rm-foot { font-size: 13.5px; }
+
+@media (max-width: 640px) {
+  .rm-progress { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rm-week { padding: 18px 16px 14px; }
+  .rm-week-head { flex-direction: column; gap: 8px; }
+  .rm-week-cols { grid-template-columns: 1fr; gap: 0; }
+}
