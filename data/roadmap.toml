@@ -13,6 +13,8 @@
 #   weekend.status: "planned" | "active" | "done" | "partial" | "blackout" | "slack"
 #   goal.status:    "planned" | "done" | "carried" | "dropped" | "not_needed"
 #   goal.owner:     "john" | "agents" | "both"
+#   milestone.kind: "kill_date" | "wrap_up" | "hibernation"
+#   extension.status: "proposed" | "authorised" | "running" | "done" | "deferred" | "declined"
 #
 # "carried" means the goal moved to a later weekend (say which in `note`). A
 # carried goal is NEVER copied into the later weekend: it stays here with its

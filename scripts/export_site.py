@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""Export data/project.toml to site/src/data/project.json for the Astro site.
+"""Export the site's data files to JSON for the Astro site.
+
+    data/project.toml  ->  site/src/data/project.json   (every page)
+    data/roadmap.toml  ->  site/src/data/roadmap.json   (/roadmap/)
 
 Same pattern as belt-equation/scripts/export.py: Python owns the data, the
 site only renders what passes validation here. Run from anywhere:
 
-    python3 scripts/export_site.py          # write the JSON
-    python3 scripts/export_site.py --check  # validate only, exit 1 on error
+    python3 scripts/export_site.py          # write both JSON files
+    python3 scripts/export_site.py --check  # validate both, exit 1 on error
 
 Needs Python 3.11+ (tomllib). No third-party packages.
 """
@@ -22,6 +25,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data" / "project.toml"
 OUT = ROOT / "site" / "src" / "data" / "project.json"
+ROADMAP_SRC = ROOT / "data" / "roadmap.toml"
+ROADMAP_OUT = ROOT / "site" / "src" / "data" / "roadmap.json"
 
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -32,6 +37,16 @@ IDEA_STATUS = {"on-the-table", "authorised", "deferred", "rejected", "done"}
 FINDING_KIND = {"registered", "diagnostic", "ruled", "process"}
 STEP_STATUS = {"authorised", "in-progress", "pending", "done", "blocked"}
 TIMELINE_KIND = {"result", "null", "ruling", "process", "spend", "build"}
+
+# data/roadmap.toml vocabularies (listed in that file's header comment).
+WEEKEND_STATUS = {"planned", "active", "done", "partial", "blackout", "slack"}
+RM_GOAL_STATUS = {"planned", "done", "carried", "dropped", "not_needed"}
+RM_GOAL_OWNER = {"john", "agents", "both"}
+MILESTONE_KIND = {"kill_date", "wrap_up", "hibernation"}
+EXTENSION_STATUS = {"proposed", "authorised", "running", "done", "deferred", "declined"}
+# Goals that count toward progress. "not_needed" (a branch that did not fire)
+# is left out; "carried" counts as not yet done and "dropped" counts against.
+RM_GOAL_COUNTS = {"planned", "done", "carried", "dropped"}
 
 
 class Bad(Exception):
@@ -50,7 +65,10 @@ def need(obj: dict, key: str, where: str, typ=None):
 def check_date(s: str, where: str):
     if not DATE.match(s):
         raise Bad(f"{where}: bad date '{s}' (want YYYY-MM-DD)")
-    date.fromisoformat(s)
+    try:
+        date.fromisoformat(s)
+    except ValueError as e:
+        raise Bad(f"{where}: '{s}' is not a real date ({e})") from None
 
 
 def unique_ids(rows: list[dict], where: str):
@@ -218,25 +236,172 @@ def derive(d: dict) -> dict:
     }
 
 
+def one_of(obj: dict, key: str, allowed: set[str], where: str) -> str:
+    v = need(obj, key, where, str)
+    if v not in allowed:
+        raise Bad(f"{where}: {key} '{v}' not in {sorted(allowed)}")
+    return v
+
+
+def validate_roadmap(d: dict) -> None:
+    r = need(d, "roadmap", "top level", dict)
+    for k in ("title", "written_on", "updated_on", "source", "one_line", "question",
+              "wrap_up_start", "hibernation_by", "weekday_rule", "replan_rule"):
+        need(r, k, "[roadmap]", str)
+    for k in ("written_on", "updated_on", "wrap_up_start", "hibernation_by"):
+        check_date(r[k], f"[roadmap].{k}")
+
+    ms = need(d, "milestones", "top level", list)
+    unique_ids(ms, "[[milestones]]")
+    for m in ms:
+        w = f"milestone {m['id']}"
+        need(m, "title", w, str)
+        check_date(need(m, "date", w, str), w)
+        one_of(m, "kind", MILESTONE_KIND, w)
+
+    wks = need(d, "weekends", "top level", list)
+    if not wks:
+        raise Bad("[[weekends]]: at least one weekend is needed")
+    unique_ids(wks, "[[weekends]]")
+    goal_ids: set[str] = set()
+    prev = None
+    active = []
+    for wk in wks:
+        w = f"weekend {wk['id']}"
+        for k in ("title", "outcome", "beside", "john_hours"):
+            need(wk, k, w, str)
+        n = need(wk, "number", w, int)
+        days = need(wk, "days", w, int)
+        if days < 0:
+            raise Bad(f"{w}: days {days} is negative")
+        start = need(wk, "start", w, str)
+        end = need(wk, "end", w, str)
+        check_date(start, f"{w}.start")
+        check_date(end, f"{w}.end")
+        if start > end:
+            raise Bad(f"{w}: start {start} is after end {end}")
+        if prev is not None:
+            if n != prev["number"] + 1:
+                raise Bad(f"{w}: number {n} does not follow {prev['number']}")
+            if start <= prev["end"]:
+                raise Bad(f"{w}: starts {start}, not after weekend {prev['id']} ends {prev['end']}; weekends must be in order")
+        prev = wk
+        if one_of(wk, "status", WEEKEND_STATUS, w) == "active":
+            active.append(wk["id"])
+        items = need(wk, "john_items", w, list)
+        if not all(isinstance(i, str) for i in items):
+            raise Bad(f"{w}: every john_items entry must be a string")
+        for g in need(wk, "goals", w, list):
+            gid = need(g, "id", f"{w} goal", str)
+            gw = f"goal {gid}"
+            if gid in goal_ids:
+                raise Bad(f"{gw}: duplicate goal id")
+            goal_ids.add(gid)
+            need(g, "text", gw, str)
+            one_of(g, "owner", RM_GOAL_OWNER, gw)
+            st = one_of(g, "status", RM_GOAL_STATUS, gw)
+            if "note" in g:
+                need(g, "note", gw, str)
+            if st == "carried" and not g.get("note", "").strip():
+                raise Bad(f"{gw}: a carried goal needs a note saying which weekend it moved to")
+    if len(active) > 1:
+        raise Bad(f"[[weekends]]: more than one weekend is active ({', '.join(active)})")
+
+    exts = need(d, "extensions", "top level", list)
+    unique_ids(exts, "[[extensions]]")
+    for e in exts:
+        w = f"extension {e['id']}"
+        for k in ("title", "when", "cost", "teaches"):
+            need(e, k, w, str)
+        one_of(e, "status", EXTENSION_STATUS, w)
+
+
+def derive_roadmap(d: dict) -> dict:
+    """Progress counts, days to each milestone, and positions on the timeline
+    axis, all computed at export (build) time from today's date."""
+    today = date.today()
+    wks = d["weekends"]
+    goals = [g for wk in wks for g in wk["goals"]]
+
+    def by_status(rows):
+        out: dict[str, int] = {}
+        for r in rows:
+            out[r["status"]] = out.get(r["status"], 0) + 1
+        return out
+
+    goal_counts = by_status(goals)
+    wk_counts = by_status(wks)
+
+    # One date axis for the weekend segments and the milestone ticks: from the
+    # first weekend's start to the last date on the plan, inclusive.
+    day = date.fromisoformat
+    first = day(wks[0]["start"])
+    last = max([day(wks[-1]["end"])] + [day(m["date"]) for m in d["milestones"]])
+    span = (last - first).days + 1
+
+    def pct(dt: date, mid: bool = False) -> float:
+        # mid=True places a single-day mark (a milestone, today) at the middle
+        # of its day, so it lines up inside the weekend segment it falls in.
+        return round(((dt - first).days + (0.5 if mid else 0)) / span * 100, 3)
+
+    return {
+        "exported_on": today.isoformat(),
+        "commit": git_commit(),
+        "goals_done": goal_counts.get("done", 0),
+        "goals_counting": sum(1 for g in goals if g["status"] in RM_GOAL_COUNTS),
+        "goals_total": len(goals),
+        "goal_counts": goal_counts,
+        "weekends_done": wk_counts.get("done", 0),
+        "weekends_working": sum(1 for wk in wks if wk["status"] != "blackout"),
+        "weekend_counts": wk_counts,
+        "active_weekend": next((wk["id"] for wk in wks if wk["status"] == "active"), None),
+        "milestones": [{"id": m["id"], "days_to": (day(m["date"]) - today).days} for m in d["milestones"]],
+        "axis": {
+            "start": first.isoformat(),
+            "end": last.isoformat(),
+            "today": pct(today, mid=True) if first <= today <= last else None,
+            "weekends": [{"id": wk["id"], "left": pct(day(wk["start"])),
+                          "width": round(((day(wk["end"]) - day(wk["start"])).days + 1) / span * 100, 3)}
+                         for wk in wks],
+            "milestones": [{"id": m["id"], "at": pct(day(m["date"]), mid=True)} for m in d["milestones"]],
+        },
+    }
+
+
+def load(src: Path, check) -> dict:
+    with open(src, "rb") as fh:
+        d = tomllib.load(fh)
+    try:
+        check(d)
+    except Bad as e:
+        raise Bad(f"{src.relative_to(ROOT)}: {e}") from None
+    return d
+
+
 def main(argv: list[str]) -> int:
     check_only = "--check" in argv
     try:
-        with open(SRC, "rb") as fh:
-            d = tomllib.load(fh)
-        validate(d)
+        d = load(SRC, validate)
+        rm = load(ROADMAP_SRC, validate_roadmap)
     except (Bad, tomllib.TOMLDecodeError, OSError) as e:
         print(f"export_site: {e}", file=sys.stderr)
         return 1
     d["derived"] = derive(d)
+    rm["derived"] = derive_roadmap(rm)
     if check_only:
         print(f"export_site: {SRC.relative_to(ROOT)} is valid "
               f"({len(d['stages'])} stages, {len(d['questions'])} questions, "
               f"{len(d['ideas'])} ideas, {len(d['findings'])} findings, "
               f"{len(d['next_steps'])} next steps, {len(d['timeline'])} timeline rows)")
+        rd = rm["derived"]
+        print(f"export_site: {ROADMAP_SRC.relative_to(ROOT)} is valid "
+              f"({len(rm['weekends'])} weekends, {rd['goals_total']} goals, "
+              f"{len(rm['milestones'])} milestones, {len(rm['extensions'])} extensions)")
         return 0
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"export_site: wrote {OUT.relative_to(ROOT)}")
+    for out, obj in ((OUT, d), (ROADMAP_OUT, rm)):
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"export_site: wrote {out.relative_to(ROOT)}")
     return 0
 
 

@@ -1,0 +1,195 @@
+---
+import Base from '../layouts/Base.astro';
+import Status from '../components/Status.astro';
+import Meter from '../components/Meter.astro';
+import { fmtDate, label } from '../lib/project';
+import { rm, OWNER, milestoneShort, daysTo, fmtRange } from '../lib/roadmap';
+
+const r = rm.roadmap;
+const dv = rm.derived;
+const axis = dv.axis;
+const segAt = (id: string) => axis.weekends.find((w) => w.id === id)!;
+const tickAt = (id: string) => axis.milestones.find((m) => m.id === id)!.at;
+
+// Month gridlines on the timeline axis, computed from its start and end dates.
+const utc = (iso: string) => { const [y, m, d] = iso.split('-').map(Number); return Date.UTC(y, m - 1, d); };
+const DAY = 86400000;
+const a0 = utc(axis.start);
+const span = (utc(axis.end) - a0) / DAY + 1;
+const months: { name: string; at: number }[] = [];
+for (let dt = new Date(a0); dt.getTime() <= utc(axis.end); dt.setUTCMonth(dt.getUTCMonth() + 1, 1)) {
+  const first = Date.UTC(dt.getUTCFullYear(), dt.getUTCMonth(), 1);
+  if (first < a0) continue;
+  months.push({
+    name: new Date(first).toLocaleDateString('en-US', { month: 'short', year: dt.getUTCMonth() === 0 ? 'numeric' : undefined, timeZone: 'UTC' }),
+    at: ((first - a0) / DAY / span) * 100,
+  });
+}
+
+const goalsPct = dv.goals_counting ? (dv.goals_done / dv.goals_counting) * 100 : 0;
+const carried = dv.goal_counts.carried ?? 0;
+const dropped = dv.goal_counts.dropped ?? 0;
+const notNeeded = dv.goal_counts.not_needed ?? 0;
+const partial = dv.weekend_counts.partial ?? 0;
+
+// Days to a milestone, or since it once it has passed.
+const dayWord = (n: number) => (Math.abs(n) === 1 ? 'day' : 'days');
+const daysLabel = (n: number, what: string) =>
+  n > 0 ? `${dayWord(n)} to ${what}` : n === 0 ? `days: ${what} is today` : `${dayWord(n)} since ${what}`;
+
+const WEEKEND_LEGEND = ['done', 'active', 'partial', 'planned', 'slack', 'blackout'];
+const MARK: Record<string, string> = { planned: '○', done: '✓', carried: '→', dropped: '✕', not_needed: '–' };
+---
+
+<Base title="The weekend roadmap — Minimum Viable Mind" description={r.one_line}>
+  <section class="hero">
+    <p class="eyebrow">Roadmap · updated {fmtDate(r.updated_on)}</p>
+    <h1>{r.title}</h1>
+    <p class="lede">{r.one_line}</p>
+  </section>
+
+  <section class="section">
+    <div class="shead"><h2>The question the plan serves</h2></div>
+    <p class="prose narrow">{r.question}</p>
+    <div class="callout rm-rules">
+      <p><span class="kicker-inline">Weekdays and weekends</span> {r.weekday_rule}</p>
+      <p><span class="kicker-inline">The weekly re-plan</span> {r.replan_rule}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shead"><h2>Progress against the plan</h2><span>as of {fmtDate(dv.exported_on)}</span></div>
+    <div class="rm-progress">
+      <div class="rm-prog-bar">
+        <div class="stat">{dv.goals_done}<span class="stat-of"> / {dv.goals_counting}</span></div>
+        <div class="stat-label">goals done</div>
+        <Meter value={goalsPct} caption={`${Math.round(goalsPct)}% of the goals that count. ${carried} carried to a later weekend, ${dropped} dropped${notNeeded ? `; ${notNeeded} not needed and left out` : ''}.`} />
+      </div>
+      <div class="rm-prog-bar">
+        <div class="stat">{dv.weekends_done}<span class="stat-of"> / {dv.weekends_working}</span></div>
+        <div class="stat-label">working weekends done</div>
+        <Meter value={dv.weekends_done} max={dv.weekends_working} caption={`The blackout weekend is not counted.${partial ? ` ${partial} partly done.` : ''}`} />
+      </div>
+      {rm.milestones.map((m) => {
+        const n = daysTo(m.id);
+        return (
+          <div class={`rm-prog-day ${m.kind === 'kill_date' ? 'rm-kill' : ''}`}>
+            <div class="stat">{Math.abs(n)}</div>
+            <div class="stat-label">{daysLabel(n, milestoneShort(m).toLowerCase())}, {fmtDate(m.date)}</div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shead"><h2>Thirteen weekends on one line</h2><span>each segment is a weekend at its real dates; ticks are the fixed dates</span></div>
+    <div class="rm-axis-wrap">
+      <div class="rm-axis">
+        <div class="rm-months" aria-hidden="true">
+          {months.map((mo) => <span class={`rm-month ${mo.at > 92 ? 'rm-month-end' : ''}`} style={`left:${mo.at.toFixed(3)}%`}>{mo.name}</span>)}
+        </div>
+        <div class="rm-track">
+          {months.map((mo) => <span class="rm-grid" style={`left:${mo.at.toFixed(3)}%`} aria-hidden="true"></span>)}
+          {rm.weekends.map((w) => {
+            const s = segAt(w.id);
+            return (
+              <a class={`rm-seg rm-seg-${w.status}`} href={`#weekend-${w.number}`} style={`left:${s.left}%;width:${s.width}%`}
+                 title={`Weekend ${w.number}, ${fmtRange(w.start, w.end)}: ${w.title} (${label(w.status)})`}
+                 aria-label={`Weekend ${w.number}, ${fmtRange(w.start, w.end)}, ${label(w.status)}: ${w.title}`}>
+                <span class="rm-seg-num">{w.number}</span>
+                <span class="rm-seg-bar"></span>
+              </a>
+            );
+          })}
+          {rm.milestones.map((m, i) => {
+            const at = tickAt(m.id);
+            return (
+              <div class={`rm-tick rm-tick-${m.kind} ${i % 2 ? 'rm-tick-low' : ''} ${at > 80 ? 'rm-tick-end' : ''}`} style={`left:${at}%`}>
+                <span class="rm-tick-line" aria-hidden="true"></span>
+                <span class="rm-tick-label">{milestoneShort(m)}<span class="rm-tick-date">{fmtDate(m.date)}</span></span>
+              </div>
+            );
+          })}
+          {axis.today !== null && (
+            <div class="rm-today" style={`left:${axis.today}%`}><span>Today</span></div>
+          )}
+        </div>
+      </div>
+    </div>
+    <ul class="rm-legend">
+      {WEEKEND_LEGEND.map((s) => <li><span class={`rm-swatch rm-seg-${s}`} aria-hidden="true"><span class="rm-seg-bar"></span></span>{label(s)}</li>)}
+    </ul>
+    <ul class="rm-milestones">
+      {rm.milestones.map((m) => (
+        <li><span class="mono">{fmtDate(m.date)}</span> <strong>{m.title}.</strong> {m.note && <span class="dim">{m.note}</span>}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="shead"><h2>Weekend by weekend</h2><span>the outcome, the goals that make it up, and John's part</span></div>
+    {rm.weekends.map((w) => (
+      <article class={`rm-week ${w.status === 'active' ? 'rm-week-active' : ''} rm-week-${w.status}`} id={`weekend-${w.number}`}>
+        <header class="rm-week-head">
+          <div>
+            <p class="eyebrow">Weekend {w.number} · {fmtRange(w.start, w.end)} · {w.days} {w.days === 1 ? 'day' : 'days'}</p>
+            <h3 class="rm-week-title">{w.title}</h3>
+          </div>
+          <Status value={w.status} />
+        </header>
+        <p class="rm-outcome"><span class="kicker-inline">Outcome</span> {w.outcome}</p>
+        <div class="rm-week-cols">
+          <div>
+            <p class="kicker">Goals</p>
+            {w.goals.length ? (
+              <ul class="rm-goals">
+                {w.goals.map((g) => (
+                  <li class={`rm-goal rm-goal-${g.status}`}>
+                    <span class="rm-mark" aria-hidden="true">{MARK[g.status]}</span>
+                    <div>
+                      <p class="rm-goal-text">{g.text}</p>
+                      <p class="rm-goal-meta"><span class="mono">{g.id}</span><Status value={g.status} /><span class="chip">{OWNER[g.owner]}</span></p>
+                      {g.note && <p class="rm-goal-note"><span class="kicker-inline">Note</span> {g.note}</p>}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : <p class="dim">No goals. Nothing is planned this weekend.</p>}
+          </div>
+          <div>
+            <p class="kicker">John's items</p>
+            {w.john_items.length ? <ul class="plain">{w.john_items.map((i) => <li>{i}</li>)}</ul> : <p class="dim">Nothing for John.</p>}
+            <p class="rm-hours"><span class="kicker-inline">John's hours</span> {w.john_hours}</p>
+          </div>
+        </div>
+        {w.beside && <p class="rm-beside dim">Beside it: {w.beside}</p>}
+      </article>
+    ))}
+  </section>
+
+  <section class="section">
+    <div class="shead"><h2>Extensions the back half can take</h2><span>ranked; none is authorised by the plan, each needs its own registration</span></div>
+    <div class="rm-table-wrap">
+      <table class="ptable rm-ext">
+        <thead><tr><th>Id</th><th>Extension</th><th>When</th><th>Cost</th><th>What it teaches</th><th>Status</th></tr></thead>
+        <tbody>
+          {rm.extensions.map((e) => (
+            <tr>
+              <td class="mono">{e.id}</td>
+              <td><strong>{e.title}</strong></td>
+              <td>{e.when}</td>
+              <td>{e.cost}</td>
+              <td>{e.teaches}</td>
+              <td><Status value={e.status} /></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="dim rm-foot">Plan: <code>{r.source}</code>. Data: <code>data/roadmap.toml</code>. Updated {r.updated_on}.</p>
+  </section>
+</Base>
