@@ -430,3 +430,40 @@ text.
 Outcome to report Sunday night: A3 closed or not; every blocking decision
 ruled or which remain; version 2 through tier 1 or which findings block; the
 rented slice's seconds per step in the release arithmetic.
+
+### Weekend 1, progress as of 2026-09-24 evening
+
+Landed on main tonight, all paired writer/checker: the record update (PR 29,
+PR 31, check merged), the site's /roadmap/ page (PR 32, check merged), the
+shared launch gate on all three unregistered launchers (PR 33, check landed
+from PR 36, empty-date test 9c76a0f), and the Saturday ruling packet
+(PR 34, check PR 35). Goals W1.3, W1.4 and W1.9 are done in
+`data/roadmap.toml`. The Mac's never-sleep setting is on.
+
+Working rules learned tonight, for whichever session runs the weekend:
+
+- Every session prompt starts with a name in the form "MVM W1c rehearsal
+  repairs" (weekend, letter, task) and is launched from `~/Code` with
+  `claude -n "<that name>"`, so the agents overview rows are readable.
+- A re-check prompt goes to the checker only after the writer has reported a
+  commit hash that is on origin. Three re-checks tonight fired early and
+  found nothing because the fix was still uncommitted.
+- Merge order: the writer's PR, then the check's PR, except the ruling packet
+  (check first, so the packet's pointers resolve). A check PR that carried the
+  writer's commits merged in will conflict once main moves; land its review
+  file directly and close the PR.
+- The rented slice session (f) runs its checker first: a filed check of the
+  regenerated plan file is owed before the go, and the gate now also needs a
+  ledger row naming the run, dated within two days, with an estimate.
+- The per-run figure is an estimate resting on measured ledger rows (see the
+  note above section 2), never "$12 from the guide".
+
+Saturday's queue, in order: the two A3 tier 2 reviewer sessions from the
+INDEX file the packet names; the drafted dispositions and the A3 ruling; the
+nine pages of `docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md`, ruled
+into `docs/rulings/2026-09-26-weekend-1-queue.md`; items 10 to 12 from the
+TimeAssembler Weekend 1 step (reviewer-count discrepancy, the launch gate's
+unruled design choices, the registered-launcher amendment's timing); the
+spoken go for the rented slice. If Friday evening has three hours, all of
+this moves a day earlier and the agent sessions (c), (d), (f), (g) follow
+the same night.
