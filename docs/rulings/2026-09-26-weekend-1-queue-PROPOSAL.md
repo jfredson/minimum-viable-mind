@@ -144,8 +144,9 @@ recommendation.*
     — ten runs, at an earlier design — and the ledger's own reconciliation of
     2026-08-12 marks that guide "now known-stale"
     (`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`, the
-    "Phase budget guide" table and the 2026-08-12 reconciliation note above the
-    ledger table). The ledger's measured actual-after rows for single
+    "Phase budget guide" table and the 2026-08-12 reconciliation note, which
+    sits below the ledger table, between it and the guide). The ledger's
+    measured actual-after rows for single
     30-million-parameter runs are about $9.9 (the 2026-09-19 row) and $13.92
     (the 2026-09-15 row). Pages 4, 5 and 6 use the measured rows and call $12
     the proposal's figure.
@@ -824,10 +825,10 @@ machine bills at the anomalous rate?
 
 | what | figure | which row |
 |---|---|---|
-| Programme spent, of the $400 ceiling ruled with Amendment A2 | about **$227.63** | every spend row added independently by the check of this packet (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-claude-worktree.md`, page 6, with the first row trued up to $6.645); the ledger's own 2026-09-21 row carries it as "programme about **$227.6 / $400**" |
-| The chain behind that figure | $215.7 after the wave of seeds 1 and 2, plus about $9.9, plus $0.067, plus $1.904, plus about $0.02 | the 2026-09-17 row's W37 correction ("~$215.7 / $400"); the 2026-09-19 row ("about 10.0h ≈ $9.9"); the 2026-09-20 recovery row ("$0.067"); the two 2026-09-20 follow-up rows ("a measured $1.904 combined"); the 2026-09-21 row ("about $0.02") |
-| Programme left | about **$172.37** | arithmetic: $400 less about $227.63 (the same check) |
-| Amendment A3, of its $100 stop | about **$46.18**, leaving about $53.82, inside the $172.37 and not additional to it | the same check's sum of the Amendment A3 rows; the 2026-09-21 row carries it as about $46.2 |
+| Programme spent, of the $400 ceiling ruled with Amendment A2 | about **$227.63** | the sum of the ledger's spend rows, each read from its own row: $6.645 (the 2026-08-07/08 row as trued up in the 2026-08-12 reconciliation, "Row 1 trues up to **$6.645**"), $97.04 (the 2026-08-09/10 row), $1.943 (the 2026-08-09 row as trued up, "A1 10M row trues up to **$1.943**"), about $18.9 (the 2026-08-15 row), about $25.29 (the 2026-08-16 row), about $31.63 (the 2026-08-17 row), $13.92 (the 2026-09-15 Gate 2 row), $0.29 (the 2026-09-16 row), $20.08 (the 2026-09-17 row), about $9.9 (the 2026-09-19 row), $0.067 (the 2026-09-20 recovery row), $1.904 (the two 2026-09-20 follow-up rows together), about $0.02 (the 2026-09-21 row); the ledger's own 2026-09-21 row carries the total as "programme about **$227.6 / $400**". The same rows were added independently by the check of this packet (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-claude-worktree.md`, page 6), which is a secondary pointer and not the source |
+| The chain behind that figure, as the ledger's own running totals carry it | $215.7 after the wave of seeds 1 and 2, plus about $9.9, plus $0.067, plus $1.904, plus about $0.02 | the 2026-09-17 row's W37 correction ("~$215.7 / $400"); the 2026-09-19 row ("about 10.0h ≈ $9.9"); the 2026-09-20 recovery row ("$0.067"); the two 2026-09-20 follow-up rows ("a measured $1.904 combined"); the 2026-09-21 row ("about $0.02") |
+| Programme left | about **$172.37** | arithmetic: $400 less the about $227.63 summed from the rows above |
+| Amendment A3, of its $100 stop | about **$46.18**, leaving about $53.82, inside the $172.37 and not additional to it | the sum of the Amendment A3 rows: $13.92 (the 2026-09-15 Gate 2 row), $0.29 (the 2026-09-16 row), $20.08 (the 2026-09-17 row), about $9.9 (the 2026-09-19 row), $0.067 (the 2026-09-20 recovery row), $1.904 (the two 2026-09-20 follow-up rows), about $0.02 (the 2026-09-21 row); the 2026-09-21 row carries it as about $46.2 |
 | The rehearsal line of the first release (up to $10) | about $0.02 spent, about $9.98 left | the 2026-09-21 row |
 | Account balance, last reading | **$77.3451** | the 2026-09-21 row |
 | The rate at the registered venue | **$0.99** an hour | the 2026-09-17 row |
@@ -1460,21 +1461,21 @@ PART (a): does every file a document names exist?
   docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:52
       names: docs/rulings/2026-09-26-weekend-1-queue.md
       in:    The plan for the weekend (`docs/weekend-roadmap-2026-09-24.md`, section 7) says the rulings are written up as a new file, `docs/rulings/2026-09-26-weekend-1-que
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:827
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:828
       names: experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-claude-worktree.md
-      in:    every spend row added independently by the check of this packet (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-c
+      in:    The same rows were added independently by the check of this packet (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-chec
 
 [LOOK AT IT] 0 bare name(s) match more than one file
 
 [LOOK AT IT] 1 name(s) of run-output files that are not in the repository
              (this repo does not commit `artifacts/`, so most of these point at
               uncommitted output rather than at a broken citation)
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:1271  bench_arms.json
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:1272  bench_arms.json
       in: **What the ruling changes, and where.** Nothing in any document until the go is spoken; then a ledger row written before the machine exists, quoting the go; the
 
 [LOOK AT IT] 2 reference(s) written with a gap or a wildcard that matched nothing
   docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:40  experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-21-a3-closure-<model>.md
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:1052  experiments/<experiment>/reviews/YYYY-MM-DD-<target>-<reviewer>.md
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:1053  experiments/<experiment>/reviews/YYYY-MM-DD-<target>-<reviewer>.md
 
 [NOT CHECKED] 1 reference(s) to files outside this repository
      1x  ~/Documents/Code/CLAUDE.md
@@ -1488,10 +1489,10 @@ PART (b): is a figure given with a citation actually in the file cited?
 [CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
 
 [LOOK AT IT] 2 figure(s) worth a human eye
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:878
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:879
       figure: $91    cited: docs/preauthorised-spending-proposal-2026-09-21.md    (only an approximate match found)
       in:     On the spending proposal's own base of $10.20 a run, its nine-run line of $125.46 falls to about $91 to $95 at the measured ratios (that document itself gives $91.80 at a ratio of exactly one; `docs/p
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:878
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:879
       figure: $95    cited: docs/preauthorised-spending-proposal-2026-09-21.md    (only an approximate match found)
       in:     On the spending proposal's own base of $10.20 a run, its nine-run line of $125.46 falls to about $91 to $95 at the measured ratios (that document itself gives $91.80 at a ratio of exactly one; `docs/p
 
@@ -1510,9 +1511,9 @@ check_single_source.py - does every money figure trace back to the compute ledge
 ==============================================================================
 System of record: experiments/06-mvm-0a-constructed-self-index/compute-ledger.md
 Documents read: 1   scope: live   figures below $0 ignored
-Figures that are in the ledger and point at it: 11
-Set aside as forecasts (a proposal pricing something, not a record of spend): 107
-Set aside as neither, by the wording around them: 52
+Figures that are in the ledger and point at it: 15
+Set aside as forecasts (a proposal pricing something, not a record of spend): 114
+Set aside as neither, by the wording around them: 62
 
 ------------------------------------------------------------------------------
 [CONFIDENT] Group 1: a dollar figure the ledger does not contain
@@ -1524,14 +1525,14 @@ a number it should state. A total summed across ledger rows lands here too.
       in: **The successor's cap and the programme envelope.** The ruling of 2026-09-20 sets a flat cap of $130 (`docs/rulings/2026-09-20-december-result-roadmap.md`, item 4).
   docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:118   $130
       in: **The Wittgenstein note's premises.** The note asks whether its second test fits "the successor's $130 cap and the 2026-10-11 registration target" (TimeAssembler note, "Questions for the session").
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:871   $450
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:872   $450
       in: (ii) The weekend roadmap's pair: a successor cap of $142 and an envelope of $450.
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:871   $175
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:872   $175
       in: (iv) RT-176's: raise the cap to $175 and leave the envelope until the slice reports.
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:878   $450
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:879   $450
       names instead: docs/weekend-roadmap-2026-09-24.md
       in: Second, **rule the envelope up now, with the number and what it buys, as that standing rule requires; the number this packet puts forward is the weekend roadmap's, an envelope of $450** (`docs/weekend
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:983   $130
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:984   $130
       in: The note's questions ask whether test 2 fits "the successor's $130 cap and the 2026-10-11 registration target"; both premises have moved (disagreement 6 in the index).
 
 ------------------------------------------------------------------------------
@@ -1549,19 +1550,19 @@ By document:
     13  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md
 
 The first 13 in full (use --only <path> for one document's own):
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:634   $10   in: About $10 spent." Item R-8 passed (rehearsal section 2a).
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $13.92   in: $13.92, "$3.8 of the total is AVOIDABLE IDLE"
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $3.8   in: $13.92, "$3.8 of the total is AVOIDABLE IDLE"
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $10.1   in: about $10.1 clean, $13.92 as billed
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $13.92   in: about $10.1 clean, $13.92 as billed
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:800   $32   in: And it costs $32 to $44 the envelope does not hold, so ruling (i) or (iii) is also ruling page 6.
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:800   $44   in: And it costs $32 to $44 the envelope does not hold, so ruling (i) or (iii) is also ruling page 6.
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:827   $400   in: Programme spent, of the $400 ceiling ruled with Amendment A2
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:831   $0.02   in: about $0.02 spent, about $9.98 left
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:831   $9.98   in: about $0.02 spent, about $9.98 left
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:866   $44   in: no cap named; about $44 + about $131
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:866   $131   in: no cap named; about $44 + about $131
-  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:871   $142   in: (ii) The weekend roadmap's pair: a successor cap of $142 and an envelope of $450.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:635   $10   in: About $10 spent." Item R-8 passed (rehearsal section 2a).
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:748   $13.92   in: $13.92, "$3.8 of the total is AVOIDABLE IDLE"
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:748   $3.8   in: $13.92, "$3.8 of the total is AVOIDABLE IDLE"
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:748   $10.1   in: about $10.1 clean, $13.92 as billed
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:748   $13.92   in: about $10.1 clean, $13.92 as billed
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:801   $32   in: And it costs $32 to $44 the envelope does not hold, so ruling (i) or (iii) is also ruling page 6.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:801   $44   in: And it costs $32 to $44 the envelope does not hold, so ruling (i) or (iii) is also ruling page 6.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:828   $400   in: Programme spent, of the $400 ceiling ruled with Amendment A2
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:832   $0.02   in: about $0.02 spent, about $9.98 left
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:832   $9.98   in: about $0.02 spent, about $9.98 left
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:867   $44   in: no cap named; about $44 + about $131
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:867   $131   in: no cap named; about $44 + about $131
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:872   $142   in: (ii) The weekend roadmap's pair: a successor cap of $142 and an envelope of $450.
 
 ------------------------------------------------------------------------------
 [LOOK AT IT] The same figure in many documents
