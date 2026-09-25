@@ -445,3 +445,5 @@ the diff contradicts the proposals or the record. Three small points remain,
 none of which changes a ruling: R1, whose name 19(e)'s adoption goes under;
 R2, the wording of the item 8 ceiling; and R3, the merge order for the new
 pointer.
+
+**Follow-up, commit `31b5581` (2026-09-25):** the diff is only the two changes, both in `docs/rulings/2026-09-25-a3-closure-tier2-dispositions.md` (8 lines added, 8 removed). 19(e) now reads "(John, 2026-09-25, on the check's evidence…)", and item 8 is one instruction: about $227.6 spent as of the 2026-09-21 row, against the ceiling raised to $450. R1 and R2 are closed; the only blemish is a harmless repetition in 19(e) ("the proposal had held it" followed by "the proposal held it pending a check"); R3 (the pointer lands on main) is unchanged.
