@@ -63,6 +63,10 @@ export const LABEL: Record<string, string> = {
   'registered': 'Registered result', 'diagnostic': 'Diagnostic', 'ruled': 'Ruled for the record', 'process': 'Process',
   'pending': 'Pending', 'blocked': 'Blocked',
   'result': 'Result', 'null': 'Null', 'ruling': 'Ruling', 'spend': 'Spend', 'build': 'Build',
+  // data/roadmap.toml (src/lib/roadmap.ts): weekends, their goals, extensions.
+  'planned': 'Planned', 'active': 'This weekend', 'partial': 'Partly done', 'blackout': 'Blackout', 'slack': 'Slack',
+  'carried': 'Carried', 'dropped': 'Dropped', 'not_needed': 'Not needed',
+  'proposed': 'Proposed', 'running': 'Running', 'declined': 'Declined',
 };
 export const label = (s: string) => LABEL[s] ?? s;
 
@@ -74,6 +78,9 @@ export const TONE: Record<string, string> = {
   'waiting': 'dim', 'parked': 'dim', 'deferred': 'dim', 'pending': 'dim', 'folded': 'dim', 'descoped': 'dim', 'conditional': 'dim', 'not-started': 'dim', 'process': 'dim', 'build': 'dim', 'diagnostic': 'dim',
   'rejected': 'no', 'blocked': 'no', 'null': 'no', 'spend': 'no',
   'registered': 'ok',
+  'active': 'live', 'carried': 'live', 'running': 'live', 'proposed': 'live',
+  'planned': 'dim', 'slack': 'dim', 'blackout': 'dim', 'not_needed': 'dim',
+  'partial': 'no', 'dropped': 'no', 'declined': 'no',
 };
 export const tone = (s: string) => TONE[s] ?? 'dim';
 

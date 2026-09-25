@@ -48,3 +48,13 @@ scheduled reviews. Then validate:
 
 STATUS.md stays the record of record; where the two disagree, fix the data
 file. Deploying the site is a launch and stays behind John's gate.
+
+The `/roadmap/` page renders `data/roadmap.toml`, the structured twin of the
+weekend roadmap (`docs/weekend-roadmap-2026-09-24.md`). **The Thursday or
+Friday re-plan edits `data/roadmap.toml`** (the coming weekend's goals, which
+weekend absorbs a slip, `roadmap.updated_on`, which weekend is `active`), **and
+the Sunday-night handoff sets each goal's status there** (a carried goal gets a
+`note` naming where it moved) and the weekend's own status. Both then run the
+same check, which validates this file alongside `data/project.toml`:
+
+    cd ~/Code/minimum-viable-mind/site && npm run check

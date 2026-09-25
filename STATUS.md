@@ -2,10 +2,81 @@
 
 *Living handoff doc. Update it at the end of a working session so the next one (you, or Claude in a fresh session) can pick up without re-deriving context. Most recent state at top.*
 
-## WHERE THINGS STAND 2026-09-24 — the successor's reading has a label and a limit on what may be quoted from it, both rulings are on the main line, and nothing has been spent since 2026-09-21
+**How the two roadmaps of 2026-09-20 fit together** (written 2026-09-24 at John's
+instruction, as change 6 of the 2026-09-22 workflow audit asked — TimeAssembler
+worklog entry `d6c7060e`, "Workflow audit: the record is honest and the science is
+real…"): the programme roadmap (`docs/program-roadmap-2026-09-20.md`) is the
+open-ended plan, whose lines of work are neither ordered nor dated, and the
+December-result roadmap (`docs/december-result-roadmap-2026-09-20.md`), which says
+of itself that it refines that plan rather than replacing it, is the one dated line
+inside it — the successor experiment, with its two kill dates and its wrap-up start
+of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md`) is
+only a schedule laid over that dated line and gives way to it wherever the two
+disagree.
+
+## WHERE THINGS STAND 2026-09-24 (evening) — the record is current: the 2026-09-22/23 handoff is the entry below, the weekend roadmap is mirrored in TimeAssembler, the launcher refuses to rent while the laptop can sleep; nothing spent
 
 *This section is the current state. Everything below it is the older
 record, newest first, and is left exactly as written.*
+
+**Read the entry below first; it is still right.** It is the handoff for
+2026-09-22 and 2026-09-23. It was drafted by a session that ran from the wrong
+folder (`~/Code`, which is not a git repository), left there as
+`~/Code/MVM-handoff-2026-09-24-STATUS-entry.md` with a matching data-file patch, and
+then landed by John on 2026-09-24 as commit `6d98e1e`, merged as pull request 29
+(`7244b5b`). That commit corrected the draft before landing it and its message says
+what it changed. The draft files outside the repository are now redundant. This
+entry adds what happened after it, and repeats two things that entry already says —
+that the 2026-09-23 rulings are on the main line, and item 23's answer on the second
+kill date — because it checks each one against the repository and says so.
+
+**The two rulings of 2026-09-23 are on the main line**, merged as pull request 28
+(`f9fe138`): the nomination label is which marker word is the model's own
+(`docs/rulings/2026-09-23-nomination-label.md`), and the two arms whose training
+does not reproduce may be quoted as a range and a direction only
+(`docs/rulings/2026-09-23-range-and-direction-only.md`). Both were ruled with
+authorship mixed: proposed by a session, approved by John.
+
+**The weekend roadmap exists and is mirrored.** `docs/weekend-roadmap-2026-09-24.md`
+lays a weekend-by-weekend schedule to 2026-12-21 over the December-result roadmap,
+and says in its own preamble that it is not a ruling and gives way to that roadmap.
+It is mirrored as the TimeAssembler project document of the same name ("MVM weekend
+roadmap to 2026-12-21 (2026-09-24)"), and the TimeAssembler roadmap carries one
+step per weekend plus a standing step to re-plan every Thursday or Friday evening
+from the top of this file. One paragraph of it is already stale: the "Bookkeeping
+owed" paragraph in its section 1 says the top of this file still reads 2026-09-21,
+which stopped being true when pull request 29 merged. Fix that at the first weekly
+re-plan; this session did not edit it.
+
+**Two TimeAssembler steps were closed as already done** by the weekend-planning
+session on 2026-09-24, and both closures check out against the repository: "Land
+the two 2026-09-23 rulings … onto the main line" (task `b1ccd8dd`), done by pull
+request 28; and "does the second kill date bind the whole staggered launch, or only
+the first run?" (task `f2c3bcf8`), already ruled on 2026-09-21 by item 23 of
+`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`: it binds the
+launch of the remaining eight runs, not the single free-arm run before them.
+
+**The launcher now refuses to rent a machine while this Mac can fall asleep**,
+merged as pull request 30 (`a0723bc`), with its follow-up check merged after it
+(`97ee3c9`). The precondition is in
+`experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh`, and its
+test, `…/src/sleep_guard_selftest.sh`, is written to prove it both refuses and
+passes without renting anything. A warning a person could skim is now a refusal.
+That narrows the warning in the entry below about the rented slice: the launcher
+now enforces the never-sleep override, which is the one setting that keeps this Mac
+awake with the lid shut, and wall power. Its own comment names one gap it does not
+close: while the machine is being created and started, before the keep-awake
+command begins, nothing holds off the idle timer. This session did not run that test.
+
+**Old agent folders.** Git marks none of this repository's agent worktrees (the
+separate working folders agent sessions use) as prunable, because every one of their
+folders is still on disk, so none was removed. Clearing them out stays on the
+Weekend 1 step in TimeAssembler.
+
+**Money is unchanged** from the entry below; nothing has been spent since 2026-09-21
+(`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`).
+
+## WHERE THINGS STAND 2026-09-24 — the successor's reading has a label and a limit on what may be quoted from it, both rulings are on the main line, and nothing has been spent since 2026-09-21
 
 **Money.** About **$227.6 of $400**, leaving about **$172.4**; Amendment A3, the
 first constructed self-index experiment, at about **$46.2 of its $100 stop**,
