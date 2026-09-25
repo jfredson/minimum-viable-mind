@@ -542,3 +542,119 @@ workflow audit asked for. The one imprecision, "its" wrap-up start, is optional 
   creation time in Coordinated Universal Time (UTC), not something the sessions
   wrote. I didn't open the entries to confirm that, so it's worth knowing when you
   read the worklog by date, but it isn't a finding against this pull request.
+
+---
+
+## Re-check, 2026-09-24 (Pacific): the fix commit fefb0dd
+
+*Added at John's request by the same checking session, which did not write the fix.
+Everything above this heading is left exactly as first filed. The protocol's Filing
+section says a findings file is "never edited after filing"; this section only adds
+to the file and changes nothing above, and it is added because John asked for it
+here.*
+
+**Target:** commit `fefb0dd`, "Fix the three items the check of pull request 31
+raised", on top of `5d8529a`, dated `2026-09-24 17:53:43 -0700`. It changes
+`STATUS.md` (4 lines) and `data/project.toml` (4 lines). This re-check covers only
+the three findings it answers: 2a (line 101), 2b (line 564) and 1b (the "adds only"
+line). It does not re-open anything else.
+
+A note on timing: when the re-check was first asked for, the pull request's head was
+still `5d8529a`. The fixes were in the writing session's worktree but not committed.
+This session waited for the head to move rather than check files that weren't
+committed yet.
+
+### The two searches (MEASURED, run at fefb0dd)
+
+Line 21 is one long string. It is cut here, marked with "…", to the sentences where
+the searched phrases appear. `git diff 5d8529a fefb0dd -- data/project.toml` changes
+only lines 101 and 564 (`2	2	data/project.toml` from `--numstat`), so line 21 is
+exactly as it was at `5d8529a`, the text this file's first filing checked against
+item 23.
+
+```
+$ grep -n "schedule failure" data/project.toml
+21:where_we_are_going = "One result by 2026-12-21, or a named schedule failure. … Since a ruling of 2026-09-21, passing either one no longer records a schedule failure on its own: launching past it takes a fresh ruling that names what comes off the back end to make room. …"
+657:title = "December-result roadmap approved: the degree metric is the successor experiment, registered in 2026, one result or a named schedule failure by 2026-12-21"
+
+$ grep -n "fresh ruling" data/project.toml
+21:where_we_are_going = "… Since a ruling of 2026-09-21, passing either one no longer records a schedule failure on its own: launching past it takes a fresh ruling that names what comes off the back end to make room. …"
+101:remaining = ["No pre-registration yet; it is committed as soon as its outside-review gate is answered on both tiers and John rules, with 2026-10-18 as its kill date; past it, committing the registration takes a fresh ruling naming what comes off the back end to make room. The field has no agreed metric. The successor supplies the contrast cases: a model built so its self-pointer is separable, one built so it is entangled, and a free model to be read"]
+564:teaches = "The text the whole December roadmap hangs on. The registration is committed as soon as both review tiers are answered and John rules, with no target date; the one date that binds is the kill date of 2026-10-18, and passing it takes a fresh ruling naming what comes off the back end, not an end to the line. Version 1 is drafted and has been through Gate C tier 1, which returned two fatal findings; the repair is owed and must be demonstrated by the rehearsal rather than argued."
+```
+
+The phrase "past which the line is a schedule failure" no longer appears anywhere in
+the file. The two places "schedule failure" is still used are both correct:
+
+- **Line 21:** its opening, "or a named schedule failure", still describes outcome R4,
+  which item 23 keeps "as an outcome". Its later sentence states the new rule itself.
+- **Line 657:** a timeline row recording what was approved on 2026-09-20. That is
+  history, and it is right to leave it as written.
+
+### Finding 2a, line 101: answered
+
+**MEASURED:** line 101 now reads "with 2026-10-18 as its kill date; past it,
+committing the registration takes a fresh ruling naming what comes off the back end
+to make room". The old sentence is gone.
+
+**ARGUED:** this states the item 23 rule. Item 23 and section 5 of
+`docs/december-result-roadmap-2026-09-20.md` both word it as "Past a kill date,
+launching is still possible — but it takes a fresh ruling, and that ruling has to name
+what comes off the back end to make room". Line 101 applies it to what the first kill
+date actually gates, committing the registration, where line 21 says "launching". That
+is a fair reading of a rule written for both dates, and it doesn't contradict line 21
+or the ruling. It's not a finding. If anyone wants the two lines to match word for
+word, the ruling's own word is "launching".
+
+### Finding 2b, line 564: answered
+
+**MEASURED:** line 564 now adds "and passing it takes a fresh ruling naming what comes
+off the back end, not an end to the line". **ARGUED:** this matches item 23: "a fresh
+ruling that names what comes off the back end to make room … a missed date no longer
+puts the roadmap there by itself".
+
+### Finding 1b, the "adds only" line: answered
+
+The line now reads (MEASURED, new entry lines 12–15): "This entry adds what happened
+after it, and repeats two things that entry already says — that the 2026-09-23 rulings
+are on the main line, and item 23's answer on the second kill date — because it checks
+each one against the repository and says so."
+
+**MEASURED — both repeated facts are in the entry below it:**
+
+```
+$ grep -n "on the main line today as pull request 28\|the same item settles" <older entry at fefb0dd>
+20:authorship mixed, both on the main line today as pull request 28.** The review
+58:current rule is here, and the same item settles that the second date binds those
+$ diff <older entry as 6d98e1e landed it> <older entry at fefb0dd>
+3,5d2
+< *This section is the current state. Everything below it is the older
+< record, newest first, and is left exactly as written.*
+<
+exit 1
+```
+
+The older entry is still unchanged except for the banner, which moved up, as it did
+before. **ARGUED:** the claim is now true. "Says so" is carried by the paragraph that
+opens "Two TimeAssembler steps were closed as already done … both closures check out
+against the repository", which covers both repeated facts. The new entry mentions two
+other things the older one also mentions: the path of the weekend roadmap, and that
+money is unchanged. Both are pointers back ("from the entry below") or new facts about
+the same file (the TimeAssembler mirror and the stale paragraph). Neither is a
+restatement, so neither makes the line false.
+
+### Site check (MEASURED, at fefb0dd)
+
+```
+$ /Users/john/Code/minimum-viable-mind/.venv/bin/python scripts/export_site.py --check
+export_site: data/project.toml is valid (8 stages, 7 questions, 12 ideas, 15 findings, 12 next steps, 30 timeline rows)
+exit 0
+```
+
+### Result of the re-check
+
+All three findings are answered at `fefb0dd`, and nothing blocks the merge. The one
+recommendation this re-check was not asked to cover is still open. The weekend
+roadmap's stale "Bookkeeping owed" paragraph also says about sixty worktrees are
+prunable, and the count was 0. The new STATUS.md entry still tells the next re-plan
+about the date problem only. It is not blocking.
