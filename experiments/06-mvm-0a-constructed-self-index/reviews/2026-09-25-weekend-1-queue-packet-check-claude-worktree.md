@@ -834,3 +834,357 @@ each page. (MEASURED)
   unchecked.
 - A filed check of the plan file may exist under a name neither search matched.
   The claim is that none was found, not that none exists.
+
+---
+
+## Re-check, 2026-09-24 (Pacific, 19:00 onward): the twelve findings against commit `614443d`
+
+*Appended by the same checking session. It adds to this file; nothing above
+this heading is changed. The target is commit `614443d` on
+`worktree-weekend-1-queue-packet` (pull request 34), "Apply the twelve findings
+of the packet's check (pull request 35); no recommendation changes". Before it,
+`fa7aeca` merges the main line into that branch. Only the twelve findings were
+re-checked, plus any new source claim the fixes introduced. The packet was not
+edited.*
+
+**Answer first.** All twelve are fixed and match their sources (MEASURED). The
+fixes bring in two new small problems, neither of which changes a number John
+rules on (items R-A and R-B below). Both scripts' outputs are in the packet's
+Appendix A as check 8, and they are byte-identical to a fresh run on the tree
+of `614443d` (MEASURED). The money figures are the same values as before. Page
+6's table now gives them to the cent from this check's sum, with the ledger
+row's own rounding beside them (MEASURED).
+
+### How it was run
+
+```
+$ git fetch -q origin && git log --oneline main..origin/worktree-weekend-1-queue-packet
+614443d Apply the twelve findings of the packet's check (pull request 35); no recommendation changes
+fa7aeca Merge remote-tracking branch 'origin/main' into worktree-weekend-1-queue-packet
+555f215 Build John's ruling packet for 2026-09-26: nine decisions, one page each
+$ git diff --stat fa7aeca 614443d
+ .../rulings/2026-09-26-weekend-1-queue-PROPOSAL.md | 321 +++++++++++++++++----
+ 1 file changed, 263 insertions(+), 58 deletions(-)
+$ git show 614443d:docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md > packet2.md
+$ diff packet.md packet2.md          (read in full; every change is quoted below)
+```
+
+The fix commit changes only the packet. Line numbers below are in the new
+packet (1,608 lines).
+
+### The twelve, one by one
+
+1. **Disagreement 4 and page 1b: fixed.** MEASURED. New lines 103–112:
+   "The proposal's section 9 table sets the learn-both threshold 'against the
+   measured competing solver' (… section 9). Its section 8.1 says the opposite of
+   the same solver: the reference points are 'reported alongside, and they are
+   references and not thresholds'". Page 1b, lines 220–231: option (ii) now
+   reads "as the section 9 table of the proposal words it ('against the measured
+   competing solver')", and "which is what proposal section 8.1 already says of
+   all three reference points". Source: proposal line 594, "…against the
+   measured competing solver |"; lines 547–548, "Reference points reported
+   alongside, and they are references and not thresholds". Both quotes are word
+   for word.
+2. **Page 1e count: fixed.** MEASURED. Lines 311–318: "with the degenerate
+   all-sites set excluded: 44 site sets × 4 rank caps (1, 2, 4, 8) × 1 label =
+   **176** comparisons per arm and seed. The 45 site sets are 9 layer sets × 5
+   position sets (… `rehearse.py`, the candidate layer sets and positions near
+   line 53) … 'has to be excluded in writing'". Source: `rehearse.py` lines
+   53–55 (9 layer sets, 5 positions, including (0, 1, 2, 3, 4) and "all");
+   rehearsal line 603, "has to be excluded in writing". 44 × 4 × 1 = 176.
+3. **"$12 a run": fixed on every page.** MEASURED. New disagreement 10 (lines
+   139–151) quotes the proposal's "the ledger's $12 planning figure" (proposal
+   line 1051, section 12.4, word for word), the guide line "Registered
+   training, 5 seeds × full+twin" at "~$12 (30M)" (ledger line 388), and "now
+   known-stale" (ledger line 360). Page 4 (lines 673–680) now uses the
+   2026-09-19 row ("about 10.0h ≈ $9.9", ledger line 70) and the 2026-09-15
+   row ($13.92, "$3.8 of the total is AVOIDABLE IDLE", line 67), and calls $12
+   "The proposal's own per-run planning figure". Page 5 drops the ledger-guide
+   row from its table and says "$36 at the proposal's planning figure" (line
+   758). Page 6's table row (line 835): "the proposal's planning figure, not a
+   ledger row". A search for leftover wording:
+   `grep -c -i "ledger's planning\|ledger's own planning" packet2.md` → **0**.
+   One new placement error in disagreement 10 is item R-A below.
+4. **The $10.30 row: fixed.** MEASURED. Line 837 (page 6 table): "about $10.30
+   across four occurrences | the 2026-09-19 row and the first 2026-09-20
+   follow-up row"; line 1224 (page 9): "(ledger, the 2026-09-19 row and the
+   first 2026-09-20 follow-up row)". Source: `grep -n 'about \$10.30 across
+   four' compute-ledger.md` → lines 70 and 72, which are those two rows.
+5. **Page 9 staging-document claim: fixed.** MEASURED. Lines 1175–1178:
+   "The staging document carries the estimate and the cap, and says of the
+   rehearsal line only that it 'is up to $10 and of which nothing has been
+   spent' — it predates the two cents (… staging …, section 7)". Source: staging
+   document line 179, "rehearsal line is up to $10 and of which nothing has been
+   spent", under "## 7. What it costs".
+6. **Plan regenerations: fixed.** MEASURED. Lines 1202–1204: "twice since the
+   staging document was written (commits `c4165b3` and `60d1496`; a third commit,
+   `e95d127`, changed the staging script that generates it and not the plan
+   file)". Appendix A check 5 now also prints the plan file's own log (lines
+   1383–1386). Source: `git log --oneline -- …/out/rented-slice-plan.txt` →
+   `60d1496`, `c4165b3`, `8bc5fbe`; `git show --stat e95d127` lists
+   `stage_rented_slice.sh` and not the plan file.
+7. **"Still owed": fixed.** MEASURED. Lines 598–601: "The ruling file says this
+   work is 'still owed' in its 'What was NOT ruled here' section (its section 3
+   says the problem 'is not closed by this ruling')". Source: nomination-label
+   ruling line 147 under "## What was NOT ruled here"; line 92 under "## 3.",
+   "**The nomination problem is not closed by this ruling.**"
+8. **Disagreement 5: fixed.** MEASURED. Lines 115–117: "rehearsal's
+   adjudication and not a ruling" (… section 8; its section 0 says 'the
+   rehearsal's reading rather than a ruling')". Source: rehearsal line 714,
+   under the section 8 subheading "Does the proposal's first stop condition
+   fire?"; line 55, under "## 0.".
+9. **Three quotes: fixed.** MEASURED. (a) Line 774: "a network can be built
+   with ownership multiplied into every layer and still learn to concentrate it
+   in a low-rank direction", word for word from proposal lines 1203–1204. (b)
+   Lines 386–387: "Neither is ruled out for later.", word for word from the
+   range-and-direction ruling, line 119. (c) Lines 634–641 give S1 in full:
+   "The rehearsal fails item R-1 (the grammar is not learnable at tiny scale
+   even in principle) or item R-8 (the transplanting code does not pass its
+   known-answer tests). Nothing trains. About $10 spent.", word for word from
+   rehearsal lines 668–670. The fix adds two claims, both checked: S1 is "from
+   section 11 of the proposal" (proposal line 818, under "## 11. Order of work,
+   and where it stops"), and "Item R-8 passed (rehearsal section 2a)" (rehearsal
+   line 211, status column "**PASS.**").
+10. **The $91 to $95 range: fixed.** MEASURED. Lines 895–901: "On the spending
+    proposal's own base of $10.20 a run, its nine-run line of $125.46 falls to
+    about $91 to $95 at the measured ratios (that document itself gives $91.80 at
+    a ratio of exactly one …). Nine runs at the proposal's $12 planning figure
+    would be $108, a different basis." Source: spending proposal section 3.2,
+    "$10.20 base", "Total $125.46", "nine runs cost $91.80". Arithmetic, as in
+    the first pass: $90.6 to $94.8.
+11. **Script outputs in the appendix: fixed.** MEASURED. Check 8 (from line
+    1432) carries both outputs. Details and the comparison with a fresh run are
+    below.
+12. **Staleness: fixed.** MEASURED. Lines 25–27: "That file was uncommitted when
+    this packet was first written and reached the main line afterwards, in
+    commit `b5cfc23`." (`git log --oneline 97ee3c9..main` lists `b5cfc23` "Add
+    the weekend roadmap, its structured twin for the site, and the weekend 1
+    session prompts".) Lines 1597–1599: "the seven `awaiting-john` tasks not yet
+    done … (six to do and one in progress, the Amendment A3 closure sessions)",
+    which matches the TimeAssembler list read in the first pass.
+
+### Two new things the fixes introduced
+
+- **R-A. Disagreement 10 puts the ledger's reconciliation note "above the
+  ledger table"; it is below it.** MEASURED. Packet lines 146–148: "the
+  2026-08-12 reconciliation note above the ledger table". The ledger's table
+  runs from line 55 ("## Ledger") to line 74. The note starts at line 325
+  ("**⚠ 2026-08-12 reconciliation: FAIL …"), and the guide at line 383.
+  `grep -n '^## Ledger\|^## Phase budget\|2026-08-12 reconciliation'
+  compute-ledger.md` → `55`, `325`, `383`. One word to change: "above" becomes
+  "below". The quoted words are correct.
+- **R-B. Page 6's headline money figure is now cited to this check file, which
+  is on pull request 35 and not on the main line.** MEASURED that the citation
+  is there (line 827) and that `check_citations.py` reports the path missing on
+  the packet's tree (below). ARGUED that it matters. The packet's own rule
+  (line 14) is that "The only source for money is the compute ledger". The
+  cell still quotes the ledger row, so the ledger is still named. But the
+  to-the-cent figures ($227.63, $172.37, $46.18, $53.82) now rest on a review
+  that only lands if pull request 35 merges. Either merge pull request 35
+  first, or cite the ledger rows as the source and name this check only as
+  where the sum was done. A smaller point, also ARGUED: page 4's sentence "The
+  ledger's measured actual-after rows for single 30-million-parameter runs are
+  about $9.9 … and $13.92" leaves out one more single 30M row, the 2026-08-15
+  re-run at about $18.9 over about 19 hours, which was a different, earlier
+  design. The sentence reads as the full list, but the point it makes (about
+  $10 to $14 a run on the current design) is unaffected.
+
+### The scripts: pasted outputs against a fresh run on the same tree
+
+The fresh run used an exact copy of the `614443d` tree, not this worktree,
+because this worktree sits on an older main line and holds this check file,
+which would change one result. The main line has since moved to `a741eee`,
+which `614443d` does not contain (`git merge-base --is-ancestor origin/main
+614443d` → exit 1). The packet's run is of its own tree, and so is this one.
+
+```
+$ git archive 614443d | tar -x -C tree614
+$ cd tree614
+$ .venv/bin/python scripts/check_citations.py --only docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md > fresh_cit.txt      (exit 1)
+$ .venv/bin/python scripts/check_single_source.py --only docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md > fresh_ss.txt    (exit 1)
+$ (the two pasted blocks cut out of the packet's check 8 into pasted_cit.txt and pasted_ss.txt)
+$ diff pasted_cit.txt fresh_cit.txt && echo "check_citations: IDENTICAL"
+check_citations: IDENTICAL
+$ diff pasted_ss.txt fresh_ss.txt && echo "check_single_source: IDENTICAL"
+check_single_source: IDENTICAL
+$ wc -l pasted_cit.txt fresh_cit.txt pasted_ss.txt fresh_ss.txt
+      57 pasted_cit.txt
+      57 fresh_cit.txt
+      69 pasted_ss.txt
+      69 fresh_ss.txt
+```
+
+The fresh run, pasted (the same text as the packet's check 8):
+
+```
+$ .venv/bin/python scripts/check_citations.py --only docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 3 reference(s) name a file that is not in the repository
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:22
+      names: experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-claude-worktree.md
+      in:    The check of this packet is filed at `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-claude-worktree.md` on pull r
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:52
+      names: docs/rulings/2026-09-26-weekend-1-queue.md
+      in:    The plan for the weekend (`docs/weekend-roadmap-2026-09-24.md`, section 7) says the rulings are written up as a new file, `docs/rulings/2026-09-26-weekend-1-que
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:827
+      names: experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-claude-worktree.md
+      in:    every spend row added independently by the check of this packet (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-weekend-1-queue-packet-check-c
+
+[LOOK AT IT] 0 bare name(s) match more than one file
+
+[LOOK AT IT] 1 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:1271  bench_arms.json
+      in: **What the ruling changes, and where.** Nothing in any document until the go is spoken; then a ledger row written before the machine exists, quoting the go; the
+
+[LOOK AT IT] 2 reference(s) written with a gap or a wildcard that matched nothing
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:40  experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-21-a3-closure-<model>.md
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:1052  experiments/<experiment>/reviews/YYYY-MM-DD-<target>-<reviewer>.md
+
+[NOT CHECKED] 1 reference(s) to files outside this repository
+     1x  ~/Documents/Code/CLAUDE.md
+
+[NOT CHECKED] 0 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+
+[LOOK AT IT] 2 figure(s) worth a human eye
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:878
+      figure: $91    cited: docs/preauthorised-spending-proposal-2026-09-21.md    (only an approximate match found)
+      in:     On the spending proposal's own base of $10.20 a run, its nine-run line of $125.46 falls to about $91 to $95 at the measured ratios (that document itself gives $91.80 at a ratio of exactly one; `docs/p
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:878
+      figure: $95    cited: docs/preauthorised-spending-proposal-2026-09-21.md    (only an approximate match found)
+      in:     On the spending proposal's own base of $10.20 a run, its nine-run line of $125.46 falls to about $91 to $95 at the measured ratios (that document itself gives $91.80 at a ratio of exactly one; `docs/p
+
+==============================================================================
+Confident findings: 3. Things for a human to look at: 5.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================
+
+$ .venv/bin/python scripts/check_single_source.py --only docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md
+==============================================================================
+check_single_source.py - does every money figure trace back to the compute ledger?
+==============================================================================
+System of record: experiments/06-mvm-0a-constructed-self-index/compute-ledger.md
+Documents read: 1   scope: live   figures below $0 ignored
+Figures that are in the ledger and point at it: 11
+Set aside as forecasts (a proposal pricing something, not a record of spend): 107
+Set aside as neither, by the wording around them: 52
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 1: a dollar figure the ledger does not contain
+------------------------------------------------------------------------------
+6 found. Either the document is stale or the ledger is missing
+a number it should state. A total summed across ledger rows lands here too.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:77   $130
+      names instead: docs/rulings/2026-09-20-december-result-roadmap.md
+      in: **The successor's cap and the programme envelope.** The ruling of 2026-09-20 sets a flat cap of $130 (`docs/rulings/2026-09-20-december-result-roadmap.md`, item 4).
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:118   $130
+      in: **The Wittgenstein note's premises.** The note asks whether its second test fits "the successor's $130 cap and the 2026-10-11 registration target" (TimeAssembler note, "Questions for the session").
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:871   $450
+      in: (ii) The weekend roadmap's pair: a successor cap of $142 and an envelope of $450.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:871   $175
+      in: (iv) RT-176's: raise the cap to $175 and leave the envelope until the slice reports.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:878   $450
+      names instead: docs/weekend-roadmap-2026-09-24.md
+      in: Second, **rule the envelope up now, with the number and what it buys, as that standing rule requires; the number this packet puts forward is the weekend roadmap's, an envelope of $450** (`docs/weekend
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:983   $130
+      in: The note's questions ask whether test 2 fits "the successor's $130 cap and the 2026-10-11 registration target"; both premises have moved (disagreement 6 in the index).
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 2: in the ledger, but the sentence names another file as source
+------------------------------------------------------------------------------
+0 found. This is a second home being built for a number
+that already has one.
+
+------------------------------------------------------------------------------
+[LOOK AT IT] Group 3: in the ledger, and no source named
+------------------------------------------------------------------------------
+13 found. Right today, and with nothing pointing at the record that
+would correct it tomorrow. This is the state the stale $215.70 copies were in.
+By document:
+    13  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md
+
+The first 13 in full (use --only <path> for one document's own):
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:634   $10   in: About $10 spent." Item R-8 passed (rehearsal section 2a).
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $13.92   in: $13.92, "$3.8 of the total is AVOIDABLE IDLE"
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $3.8   in: $13.92, "$3.8 of the total is AVOIDABLE IDLE"
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $10.1   in: about $10.1 clean, $13.92 as billed
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:747   $13.92   in: about $10.1 clean, $13.92 as billed
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:800   $32   in: And it costs $32 to $44 the envelope does not hold, so ruling (i) or (iii) is also ruling page 6.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:800   $44   in: And it costs $32 to $44 the envelope does not hold, so ruling (i) or (iii) is also ruling page 6.
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:827   $400   in: Programme spent, of the $400 ceiling ruled with Amendment A2
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:831   $0.02   in: about $0.02 spent, about $9.98 left
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:831   $9.98   in: about $0.02 spent, about $9.98 left
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:866   $44   in: no cap named; about $44 + about $131
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:866   $131   in: no cap named; about $44 + about $131
+  docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:871   $142   in: (ii) The weekend roadmap's pair: a successor cap of $142 and an envelope of $450.
+
+------------------------------------------------------------------------------
+[LOOK AT IT] The same figure in many documents
+------------------------------------------------------------------------------
+0 figure(s) appear in four or more documents. A figure with many homes
+is a figure a correction has to find many times.
+
+==============================================================================
+Confident findings: 6. Things for a human to look at: 13 unsourced figures and 0 widely repeated ones.
+The ledger is taken as true here. Read the 'what this cannot check' note at the
+top of this file before reading a clean run as reassurance.
+==============================================================================
+```
+
+Reading (MEASURED): three files are reported missing. Two are this check file,
+on pull request 35 and not yet on the main line; the third is Saturday's
+rulings file, by design. No cited figure is missing from the file its sentence
+cites. The six dollar figures the ledger does not contain are the same six
+caps and proposals as in the first pass. The spending check now counts 11
+figures in the ledger that point at it (8 before) and 13 unsourced ones for a
+human to look at (12 before). The new one is "$10" at line 634, inside the S1
+quote, where the dollar figure is the proposal's own wording.
+
+### The money figures
+
+```
+$ grep -n -o -e '\$227\.6[0-9]*' -e '\$172\.[0-9]*' -e '\$46\.[0-9]*' -e '\$53\.[0-9]*' -e '\$402\.6[0-9]*' -e '\$2\.6[0-9]*' packet2.md
+764:$172.40 827:$227.63 827:$227.6 829:$172.37 829:$227.63 830:$46.18 830:$53.82 830:$172.37
+830:$46.2 851:$172.40 851:$2.60 866:$2.60 872:$2.60 888:$227.63 888:$402.63 889:$2.63
+1290:$227.6 1291:$227.6 1292:$46.2 1293:$46.2
+$ git diff 555f215 614443d -- experiments/06-mvm-0a-constructed-self-index/compute-ledger.md | wc -l
+       0
+```
+
+MEASURED: the values have not changed. Page 6's table (lines 827–830) and its
+"what it buys" sentence (lines 888–889) now carry this check's independent sums
+to the cent: $227.63 spent and $172.37 left of $400; $46.18 and $53.82 of
+Amendment A3's $100; $402.63 once the base plan is added, $2.63 over. The ledger
+row's own rounding ($227.6, $46.2) is quoted beside them. The other places
+(lines 764, 851, 866, 872 and Appendix A's check 1 at lines 1290–1293) keep the
+figures the documents they quote use ($172.40, $2.60, $227.6, $46.2). These are
+the same amounts at a different rounding, not a different number. The compute
+ledger is unchanged between the packet's two commits (zero changed lines,
+above), so nothing has been spent since the first pass.
+
+### What must still change
+
+1. R-A: in disagreement 10, "above the ledger table" becomes "below the ledger
+   table". MEASURED.
+2. R-B: merge pull request 35 before or with pull request 34, or source page
+   6's to-the-cent money figures to the ledger rows and name this check only as
+   where the sum was done. ARGUED.
+
+Neither changes a number or a recommendation John rules on Saturday.
