@@ -443,3 +443,75 @@ here.
 
 *Scratch copy, scripts and outputs: `/Users/john/.claude/jobs/a4ac3365/tmp/` (removed
 when the job is deleted). The preview server was stopped at the end.*
+
+---
+
+## Re-check, 2026-09-24 (Pacific, about 18:15)
+
+*Asked for: re-check the new commits on pull request 32 that answer the two
+must-change findings and the clock finding above.*
+
+**Result: there are no new commits to re-check. Nothing above is resolved yet.**
+The four requested checks were not run against new work, because none has been
+pushed or committed. What was found instead is below.
+
+**No new commits (MEASURED).** After `git fetch`, the branch is where it was:
+
+```
+$ git rev-parse roadmap-page origin/roadmap-page
+1e3e544799e04f6f6696925be1930fa5e8beee30
+1e3e544799e04f6f6696925be1930fa5e8beee30
+$ gh pr view 32 --json headRefOid,updatedAt,commits
+headRefOid 1e3e544799e04f6f6696925be1930fa5e8beee30, updatedAt 2026-09-25T00:43:33Z (17:43 Pacific)
+commits: b5cfc23 "Add the weekend roadmap, ...", 1e3e544 "Add the /roadmap/ page: ..."
+```
+
+Main on GitHub has moved since the first check, to `814b782` (the merge of pull
+request 31, 17:58 Pacific).
+
+**Re-check 1, merge against main: still conflicts (MEASURED)**, now against `814b782`:
+
+```
+$ git merge-tree --write-tree --name-only origin/main origin/roadmap-page
+89e06e8dd4291d98d8fccce0ffeb7518a5d317e7
+data/roadmap.toml
+
+Auto-merging data/roadmap.toml
+CONFLICT (content): Merge conflict in data/roadmap.toml
+[exit 1]
+```
+
+**Work in progress, not yet committed (MEASURED, read-only).** The writing session's
+worktree (`.claude/worktrees/roadmap-page`) has one changed file, `data/roadmap.toml`,
+saved 18:01 Pacific and not committed. Its `site/` folder and `scripts/export_site.py`
+are identical to commit `1e3e544` (`diff -rq`, no differences). The uncommitted edit:
+
+- restores main's carried-goal paragraph. Diffing the first 30 lines of main's file
+  against the uncommitted file shows only the two added lines of allowed values (the
+  other two lines in the output are the 30-line window shifting by two):
+
+  ```
+  15a16,17
+  > #   milestone.kind: "kill_date" | "wrap_up" | "hibernation"
+  > #   extension.status: "proposed" | "authorised" | "running" | "done" | "deferred" | "declined"
+  29,30d30
+  < source = "docs/weekend-roadmap-2026-09-24.md"
+  < one_line = "Twelve working weekends between ..."
+  ```
+
+  So the paragraph is word for word, **in the uncommitted file**;
+- adds "the rented slice's seconds per step in the release arithmetic" to the
+  Weekend 1 outcome (follow-up 5);
+- adds goal `W1.9`, "The Saturday ruling packet built and checked (PR 34)", owner
+  agents (follow-up 4).
+
+**Re-checks 2, 3 and 4 were not run (ARGUED).** The page code and the export script
+are unchanged, so the build would still print no weekend or milestone ids (must-change
+2), and the day counts would still follow the machine's clock (the UTC finding). Check
+and build already passed on `1e3e544` (evidence above). Building someone else's
+uncommitted state would not test the pull request.
+
+**Still to do before merging:** commit and push the data-file edit above, rebased onto
+`814b782` so the merge test is clean; print the W1–W13 and K1, K2, W, H ids on the page;
+take today's date in Pacific time in `scripts/export_site.py`. Then ask for this
+re-check again.
