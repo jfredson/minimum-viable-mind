@@ -700,3 +700,148 @@ Only this file. Scratch material lives under
 the three test scripts (`ledger_shapes.sh`, `gate_env_cases.sh`, `override0.sh`),
 their outputs, the fourteen shaped ledger copies, the scratch copy of the
 experiment folder with the broken gate, and the saved harness outputs.
+
+---
+
+## Re-check, 2026-09-24 (Pacific): the commit answering the two findings
+
+*Same checking session, later the same evening, at John's request: re-check
+only the two findings under "What must change". Nothing else above is
+re-examined here.*
+
+**What was checked.** Commit `def4d99` on `worktree-launcher-sleep-gate`,
+"Ledger check: require eight cells, and stop a hyphen ending a run name", which
+is GitHub's head for pull request 33 as of 18:47 Pacific. It was merged onto
+this review's branch (merge `62f34dc`, clean) and every command below ran there
+unless it says otherwise. The commit touches five files: the findings (+73
+lines), the method (+32, −1), `launch_gate.sh` (+50, −9), the mutation script
+(+8) and the harness (+58, −1). The gate's fingerprint at `def4d99`:
+
+```
+$ shasum -a 256 src/launch_gate.sh src/launch_gate_selftest.sh
+182b6555788bd7eebff9cacf85a46a49b4cc3f0950eb2463cfb374674006d64f  src/launch_gate.sh
+dede52303dd23714dc9530846cdfcc919d2b0a0713175ef9cd0d9c342aea92e3  src/launch_gate_selftest.sh
+```
+
+**How this re-check went, said plainly because it is the kind of thing the
+protocol asks to be written down.** When the request arrived, no such commit
+existed: GitHub, the remote branch and the local branch all ended at
+`182f407`. The fix was an uncommitted edit in the writing session's worktree,
+and that session was still working — its mutation script was running, and a
+first snapshot this session took (18:42:49) caught the gate with its `exit 1`
+replaced by `return 0`, the script's first break, and duly failed 76 checks.
+That snapshot was discarded. A second snapshot (18:44:14, fingerprint
+`e05c2e91…`) was the writer's actual fix, and every check below was first run
+against it; then `def4d99` landed at 18:47, differing from that snapshot in one
+respect (the `mvm-` prefix, below), and everything was re-run on the commit.
+Only the commit's results are reported. Nothing in the writing session's
+worktree was touched.
+
+### The two harnesses — MEASURED
+
+```
+$ experiments/06-mvm-0a-constructed-self-index/src/launch_gate_selftest.sh | tail -3; echo "exit $?"
+checks passed: 351   failed: 0
+launch gate self-test OK — nothing was rented, no vendor was contacted,
+and this Mac's real power settings were never read or changed.
+exit 0
+
+$ experiments/06-mvm-0a-constructed-self-index/src/sleep_guard_selftest.sh | tail -3; echo "exit $?"
+checks passed: 67   failed: 0
+sleep guard self-test OK — nothing was rented, no vendor was contacted,
+and this Mac's real power settings were never read or changed.
+exit 0
+```
+
+351 is up from 264: the harness gained cases 2c–2e (hyphenated cousin, dotted
+cousin, a name ending a sentence) and 14–14c (the 2026-08-17 shape, an
+appended annotation cell, an escaped pipe as prose), each run through all
+three launchers.
+
+### Finding 1: a row of the 2026-08-17 shape, dated today — MEASURED
+
+Same method as section 8: the gate sourced, its ledger function run against a
+copy of the real ledger with one row appended after line 74, dated today,
+naming `slice_handshake`, with a pipe in the prose and an annotation appended
+as a tenth cell with no closing pipe.
+
+```
+B3 the 2026-08-17 row's actual shape: pipe in prose AND an annotation cell appended, no trailing pipe
+     problem: rows in the ledger name 'slice_handshake' but none will do: line 75 has 10 cells, expected 8 (a '|' inside the prose, which must be written '\|', or an annotation added as an extra cell, which belongs below the table)
+B4 no pipe in prose, but an annotation cell appended WITH a trailing pipe
+     problem: … line 75 has 9 cells, expected 8 (a '|' inside the prose, which must be written '\|', or an annotation added as an extra cell, which belongs below the table)
+B1 well-formed row, 8 cells, trailing pipe
+     ok: ledger row at line 75 names 'slice_handshake', dated within 2 days, estimate written, no actual cost yet
+B14 row with only 7 cells (running total left off)
+     problem: … line 75 has 7 cells, expected 8 (…)
+```
+
+The refusal now names the cell count and both causes, and no longer blames a
+dollar figure that is present. This answers finding 1. Two consequences of the
+rule the commit chose, both by design and both worth knowing:
+
+- **A raw `|` in prose is now refused too** (B2 in section 8, re-run: `line 75
+  has 9 cells, expected 8`). The gate cannot tell a pipe in prose from an
+  appended cell, so it does not guess; the escaped form `\|` is prose:
+
+  ```
+  B15 a pipe in the prose written as the table's own escape '\|'
+       ok: ledger row at line 75 names 'slice_handshake', dated within 2 days, estimate written, no actual cost yet
+  ```
+
+  (This session's first run of B15 was refused, because the fixture was built
+  with an `awk -v` assignment, which turns `\|` into `|` on this Mac's awk —
+  `awk -v s='a \| b' 'BEGIN{print s}'` prints `a | b`. Rebuilt with
+  `head`/`printf`/`tail`, the row carries the backslash and passes. The
+  fixture was wrong, not the gate.)
+- **No existing row uses `\|`** (`grep -c '\\|' compute-ledger.md` → `0`), so
+  this is a new habit for rows written from now on, and the refusal text
+  states it.
+
+### Finding 2: a row naming `slice_handshake-v2` for a launch of `slice_handshake` — MEASURED
+
+```
+B11 row names slice_handshake-v2 only
+     problem: no row in the ledger table names this run's output name 'slice_handshake'
+```
+
+Refused. This answers finding 2. The edges of the new boundary rule, each run
+the same way:
+
+```
+B16 row names slice_handshake.v2 only            → problem: no row in the ledger table names this run's output name 'slice_handshake'
+B18 row names slice_handshake.5 only             → problem: no row in the ledger table names …
+B17 the run name ends a sentence ("… as slice_handshake. John's go: …")
+                                                 → ok: ledger row at line 75 names 'slice_handshake', …
+B20 row names only the machine, mvm-slice_handshake
+                                                 → ok: ledger row at line 75 names 'slice_handshake', …
+B21 row names x-slice_handshake only             → problem: no row in the ledger table names …
+```
+
+B20 is the one thing `def4d99` adds beyond the fix this session first checked:
+the launchers name the machine `mvm-$OUT`, so a row naming the machine names
+the run, and the commit accepts exactly that prefix and no other (B21). The
+2026-09-21 row names the machine that way, which is the commit's stated reason.
+ARGUED: reasonable, and narrow enough — one fixed prefix, not a class.
+
+### The registered launcher — MEASURED
+
+```
+$ git rev-parse origin/main:…/src/launch_a3.sh HEAD:…/src/launch_a3.sh def4d99:…/src/launch_a3.sh
+9b24d70ffc9c2d83abaf93aa5375b6fbe50d3fe9
+9b24d70ffc9c2d83abaf93aa5375b6fbe50d3fe9
+9b24d70ffc9c2d83abaf93aa5375b6fbe50d3fe9
+$ git diff --stat origin/main HEAD -- …/src/launch_a3.sh
+(nothing)
+```
+
+Same blob at main (`a769069`), at `def4d99` and at this review's merged head.
+The copy in the writing session's worktree was also compared byte for byte
+against main's and is identical (`diff` printed nothing; both hash to
+`f164451a…`).
+
+### Where that leaves the two findings
+
+Both closed by `def4d99`, on the evidence above. The "What must change" list
+in this review is therefore discharged as of that commit. Nothing else in the
+review is re-examined or changed by this re-check; the open items stand.
