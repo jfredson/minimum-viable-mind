@@ -26,7 +26,8 @@ John's words, in order, on 2026-09-25: page 1, "Agreed on all 8"; page 2,
 "Agreed"; page 3, "Agree, and yes to the rider"; page 4, "Agree" (to both
 questions put); page 5, "Agree"; page 6, "Sure that works" (to the three parts
 put); page 7, "yes"; page 8, "yes" (to option (i) on both items); page 9,
-"Agree" was not spoken as a go; the go itself is separate, see page 9.
+"Agree" (to the shape and the order only; it was not spoken as a go, and
+this file issues none).
 
 ### Page 1 — the eight numbers. Ruled as recommended, all eight.
 
@@ -141,8 +142,10 @@ passes, section 5, every arm table, rehearsal items R-2 and R-3, and section
    5.4 (billed hours over machine-existence hours; balance drawdown per hour
    over posted rate times machines running) are adopted at **1.25**. Either at
    or above 1.25 is a trip: halt, not trim; ledger row first; John told the
-   number; every later launch needs his words. A check that cannot run is a
-   trip. The pre-authorisation scheme of the spending proposal is not adopted
+   number; every later launch needs his words. A machine already in flight is
+   left to finish only if its projected total is inside estimate times the
+   measured ratio and the balance covers it (the spending proposal's own
+   clause, section 5.4). A check that cannot run is a trip. The pre-authorisation scheme of the spending proposal is not adopted
    by this ruling.
 
 *Changes:* the annotation on the 2026-09-20 ruling; proposal version 2,
@@ -167,11 +170,13 @@ weekend roadmap's extension list so it is not lost.
   the file already carries, giving the measured counts (15, 15 and 7 top-level
   keys) and saying the 110 is unsupported; the original sentence untouched.
   Item 20 of the 2026-09-21 ruling is discharged.
-- **8b.** Ratified in John's own words: a dated note naming a committed record,
+- **8b.** Ratified by John ("yes" to option (i), on the wording below put to
+  him): a dated note naming a committed record,
   where no registered claim changes, is how a missing pointer in registered
   text is supplied, and nothing wider. The note already beside the
   cue-detector figure in `pre-registration.md` (commits `285903e`, `eeedb2f`,
-  `57eb09d`) stands as filed. The TimeAssembler task is closed.
+  `57eb09d`) stands as filed. The TimeAssembler task (`6aea06f0`) is to be
+  closed by the Sunday handoff session.
 
 ### Page 9 — the rented slice. Ruled: the shape and the order, option (i).
 
@@ -193,7 +198,9 @@ the compute ledger row before anything is created.
 Per the packet's disagreement 8: "DECIDE (John): the entangled and free arms'
 numbers are one sample, not a measurement" was answered by the ruling of
 2026-09-23 (range and direction only); "DECIDE (John): how to correct a
-measured value in REGISTERED text …" is page 8b above. Both close.
+measured value in REGISTERED text …" is page 8b above. Both (tasks `588ac12c`
+and `6aea06f0`) are to be closed by the Sunday handoff session, along with
+every other TimeAssembler task these rulings answer.
 
 ## What this file does not do
 
