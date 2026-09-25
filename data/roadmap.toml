@@ -14,7 +14,11 @@
 #   goal.status:    "planned" | "done" | "carried" | "dropped" | "not_needed"
 #   goal.owner:     "john" | "agents" | "both"
 #
-# "carried" means the goal moved to a later weekend (say which in `note`).
+# "carried" means the goal moved to a later weekend (say which in `note`). A
+# carried goal is NEVER copied into the later weekend: it stays here with its
+# id, status "carried" and the note, and the page counts it as not yet done.
+# When it lands, set it to "done" here (ruled 2026-09-24, so no goal is ever
+# counted twice).
 # "not_needed" means a branch that did not fire (for example a re-run that was
 # not required). Neither counts against progress; "dropped" does.
 
