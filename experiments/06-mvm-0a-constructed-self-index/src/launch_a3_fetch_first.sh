@@ -171,6 +171,37 @@ AGENT_POLL_S="${AGENT_POLL_S:-15}"
 # the money-safe side.
 ON_UNARMED="${ON_UNARMED:-self-terminate}"
 REAP_ARMED=0
+# ---- 2026-09-25: a run of its own folder, and one step before training ----
+# Both are OFF unless set, so every run that does not set them launches
+# exactly as before. The rented slice sets them (stage_rented_slice.sh).
+#
+# RUN_SUBDIR: put this run's files in a folder of their own on the volume.
+# The laptop's final copy takes EVERYTHING in the run folder, and the shared
+# folder holds every earlier run's model files (2.5 GB on the last two A3
+# copies), so without this a toy run brings all of them home again, on the
+# clock, before its machine may be deleted.
+RUN_SUBDIR="${RUN_SUBDIR:-}"
+case "$RUN_SUBDIR" in
+  */*|.|..) echo "refusing to run: RUN_SUBDIR must be a plain folder name, got '$RUN_SUBDIR'" >&2
+            exit 2 ;;
+esac
+# PRE_TRAIN_DIR / PRE_TRAIN_CMD: push a local folder to /root/pre-train and
+# run one command there, on the machine, BEFORE training starts, waiting for
+# it to finish (at most PRE_TRAIN_TIMEOUT_S). Nothing can delete the machine
+# before training writes its finished-marker except the +TERM_H deadline, so a
+# step placed here always completes before the deletion. It also has the
+# graphics card to itself. Its exit status is reported and does not stop the
+# launch: training and the shutdown handshake go ahead either way.
+PRE_TRAIN_DIR="${PRE_TRAIN_DIR:-}"
+PRE_TRAIN_CMD="${PRE_TRAIN_CMD:-}"
+PRE_TRAIN_TIMEOUT_S="${PRE_TRAIN_TIMEOUT_S:-1800}"
+if [ -n "$PRE_TRAIN_DIR$PRE_TRAIN_CMD" ]; then
+  if [ -z "$PRE_TRAIN_DIR" ] || [ -z "$PRE_TRAIN_CMD" ]; then
+    echo "refusing to run: set both PRE_TRAIN_DIR and PRE_TRAIN_CMD, or neither" >&2
+    exit 2
+  fi
+  [ -d "$PRE_TRAIN_DIR" ] || { echo "refusing to run: PRE_TRAIN_DIR '$PRE_TRAIN_DIR' is not a folder" >&2; exit 2; }
+fi
 # Where fetched artifacts land. Defaults to the MAIN checkout, never the
 # worktree this script happens to be running from: a git worktree is scratch
 # space and can be removed when a session ends, which would take a ten-hour
@@ -190,6 +221,7 @@ if [ "$NETVOL" != "none" ]; then
   RUN_DIR="/workspace/mvm-out"
   [ "$CLOUD" = "COMMUNITY" ] && { echo "network volumes are secure-cloud only; set NETVOL=none for COMMUNITY"; exit 1; }
 fi
+[ -n "$RUN_SUBDIR" ] && RUN_DIR="$RUN_DIR/$RUN_SUBDIR"
 
 # ---- local pre-flight: the launch gate -----------------------------------
 # 2026-09-24. Refuses a real launch unless this Mac cannot fall asleep, the
@@ -259,6 +291,11 @@ DRYRUN — nothing created, nothing spawned. Would run:
   remote pre-flight: python curriculum_a3.py --self-test
                      python encoding_a3.py  --self-test
                      python train_a3.py     --self-test
+$(if [ -n "$PRE_TRAIN_CMD" ]; then
+  echo "  before training (waits for it, at most ${PRE_TRAIN_TIMEOUT_S}s):"
+  echo "    push: $PRE_TRAIN_DIR  ->  /root/pre-train"
+  echo "    run:  cd /root/pre-train && $PRE_TRAIN_CMD"
+fi)
   train: $TRAIN_CMD \\
     --out $RUN_DIR/$OUT.pt
   aliveness: pgrep -f '[t]rain_a3.py'
@@ -476,6 +513,30 @@ else
       echo "  the full-budget model file will need recovering from the volume."
       echo "  The laptop will write a NEEDS-RECOVERY.txt saying exactly how." ;;
   esac
+fi
+
+# ---- 2026-09-25: the step before training, if one was set ----------------
+# Here, after the shutdown order is settled and before the trainer exists, so
+# the finished-marker every deletion waits for cannot appear until it is done.
+# The same hang guard as the training start below: a hung ssh must not hold
+# the launch (and the watchdog it has yet to spawn) forever.
+if [ -n "$PRE_TRAIN_CMD" ]; then
+  echo "before training: pushing $PRE_TRAIN_DIR and running, at most ${PRE_TRAIN_TIMEOUT_S}s:"
+  echo "  $PRE_TRAIN_CMD"
+  COPYFILE_DISABLE=1 tar czf - --exclude='__pycache__' --exclude='._*' \
+      -C "$PRE_TRAIN_DIR" . | \
+    $SSH "mkdir -p /root/pre-train && tar xzf - -C /root/pre-train --no-same-owner"
+  $SSH "cd /root/pre-train && $PRE_TRAIN_CMD" &
+  PRE_PID=$!
+  ( sleep "$PRE_TRAIN_TIMEOUT_S"; kill "$PRE_PID" 2>/dev/null ) >/dev/null 2>&1 &
+  PRE_KILLER=$!
+  if wait "$PRE_PID"; then
+    echo "  before-training step finished (exit 0)"
+  else
+    echo "  BEFORE-TRAINING STEP DID NOT FINISH CLEANLY (failed, or cut off at"
+    echo "  ${PRE_TRAIN_TIMEOUT_S}s). Its output above says which. Training goes ahead."
+  fi
+  kill "$PRE_KILLER" 2>/dev/null
 fi
 
 echo "starting detached training run (log + checkpoints in $RUN_DIR)"

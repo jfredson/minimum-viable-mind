@@ -64,6 +64,13 @@ SLICE_GRACE_S="${SLICE_GRACE_S:-600}"       # ten minutes, not the 1800 default
 BENCH_STEPS="${BENCH_STEPS:-50}"
 RATE_PER_HOUR="${RATE_PER_HOUR:-0.99}"
 HARD_CAP="${HARD_CAP:-2.00}"
+# 2026-09-25, after the check of the plan at 60d1496 (findings B and C): the
+# slice keeps its files in a folder of its own on the network volume, so the
+# laptop's final copy brings home that folder and nothing else; and the timing
+# runs on the machine BEFORE training starts, so it is finished, and its file
+# written, before anything is allowed to delete the machine.
+SLICE_RUN_DIR="/workspace/mvm-out/$SLICE_OUT"
+BENCH_CMD="python bench_arms.py --device cuda --steps $BENCH_STEPS --batch 32 --out $SLICE_RUN_DIR/bench_arms.json"
 
 if [ "${1:-}" = "--help" ]; then sed -n '2,60p' "$0"; exit 0; fi
 
@@ -176,33 +183,60 @@ THE COMMANDS, IN ORDER
   run below is the genuinely inert path — its guard exits before anything is
   created — and the launchers now refuse any argument outright.
     DRYRUN=1 SCALE=$SLICE_SCALE MAXTOK=$SLICE_TOKENS OUT=$SLICE_OUT \\
-      GRACE_S=$SLICE_GRACE_S \\
+      GRACE_S=$SLICE_GRACE_S RUN_SUBDIR=$SLICE_OUT \\
+      PRE_TRAIN_DIR=$REHEARSAL_SRC \\
+      PRE_TRAIN_CMD="$BENCH_CMD" \\
       $EXP06/src/launch_a3_fetch_first.sh
+  Before going on, the dry run must print "run dir: $SLICE_RUN_DIR"
+  and a "before training" block naming bench_arms.py. If it prints the
+  shared folder /workspace/mvm-out instead, stop: the final copy would
+  bring home every earlier run's model files as well.
 
   Step 1 — the toy run, through the DERIVED launcher (the registered
   launcher launch_a3.sh is not used and not edited):
     SCALE=$SLICE_SCALE MAXTOK=$SLICE_TOKENS OUT=$SLICE_OUT \\
-      GRACE_S=$SLICE_GRACE_S \\
+      GRACE_S=$SLICE_GRACE_S RUN_SUBDIR=$SLICE_OUT \\
+      PRE_TRAIN_DIR=$REHEARSAL_SRC \\
+      PRE_TRAIN_CMD="$BENCH_CMD" \\
       $EXP06/src/launch_a3_fetch_first.sh
+  This one command also does the timing (step 2). There is nothing to type
+  on the machine.
 
-  Step 2 — while that run is training, time the three architectures on the
-  same machine and write the result where the laptop's final copy will
-  bring it home:
-    tar czf - -C $REHEARSAL_DIR src | \\
-      \$SSH "mkdir -p /root/rehearsal && tar xzf - -C /root/rehearsal"
-    \$SSH "cd /root/rehearsal/src && python bench_arms.py --device cuda \\
-             --steps $BENCH_STEPS --batch 32 \\
-             --out /workspace/mvm-out/bench_arms.json"
-  (\$SSH is the handle the launcher prints as "ssh up:".)
+  Step 2 — the timing, done by the launcher inside step 1. After the
+  machine is up and its shutdown path is settled, and BEFORE training
+  starts, the launcher pushes the timing script and runs it, waiting for
+  it to finish. Training writes the finished-marker that every deletion
+  waits for, so the timing is done before the machine can be deleted, and
+  it has the graphics card to itself. The timing file is rewritten after
+  each architecture, so a cut-short run still leaves what it measured.
+  It lands in the slice's own folder, $SLICE_RUN_DIR,
+  and the laptop's final copy brings that folder home and nothing else.
+  (Section 3 of the staging document had the timing run WHILE the toy run
+  trained. That is changed here: on a toy run that finishes in minutes,
+  the machine could be deleted before the timing file existed, and the
+  figures would be taken on a card busy with training.)
+  Look for, in the launcher's output:
+    "wrote $SLICE_RUN_DIR/bench_arms.json (3 of 3 architectures)"
+    "before-training step finished (exit 0)"
 
-  Step 3 — watch for the three signals, in this order, and nothing else.
+  Step 3 — FIRST, read which shutdown path the launcher armed. It says so
+  after "ssh up:" and before training starts:
+    "shutdown watcher RUNNING on the machine"  — the handshake is being
+        tested; go on to the three signals below.
+    "SHUTDOWN WATCHER DID NOT START" or "REAP: pod-side reaping NOT armed"
+        — the handshake is NOT being tested, whatever follows. The run can
+        look entirely normal. Record the NOT TESTED outcome below.
+  Then watch for the three handshake signals, in this order.
 
 WHAT PASSING LOOKS LIKE, WRITTEN DOWN BEFORE IT RUNS
 
   Throughput:
     PASS  three seconds-per-step figures, one per architecture, with the
-          spread over the timed steps, written to bench_arms.json and
-          fetched home by the laptop's final copy.
+          spread over the timed steps, written to bench_arms.json with
+          "complete": true, and fetched home by the laptop's final copy to
+          $EXP06/artifacts/$SLICE_OUT/bench_arms.json.
+          A file with "complete": false was cut short; its figures stand
+          only for the architectures it lists.
     FAIL  any architecture will not run at the registered shape on the
           rented hardware — for instance it runs out of memory. That is a
           finding about the design, not about the machine.
@@ -222,6 +256,12 @@ WHAT PASSING LOOKS LIKE, WRITTEN DOWN BEFORE IT RUNS
     FAIL (credential path)  the machine cannot delete itself even after the
           bounded wait. That is the 2026-09-16 measurement repeating, and it
           means the laptop is still the only reap.
+    NOT TESTED  the quiet one (staging document, section 6). The machine's
+          own watcher never started: the launcher printed "SHUTDOWN WATCHER
+          DID NOT START" or "REAP: pod-side reaping NOT armed", then fell
+          back to "SHUTDOWN ORDER: the trainer deletes the machine itself"
+          (or "LAPTOP ONLY"). Everything can look normal while the handshake
+          was never exercised. Record it as not tested, never as a pass.
     NO VERDICT  the slice does not run. Then the handshake is exercised
           against local stand-ins only, and the registration says so in its
           own text.
@@ -230,7 +270,9 @@ WHAT IT COSTS
   A toy run at $SLICE_TOKENS tokens finishes in a few minutes; timing 50
   steps on three architectures takes a few more; the bounded wait is set to
   $SLICE_GRACE_S seconds and should not be reached at all on the passing
-  path. Well under an hour of rented time at \$$RATE_PER_HOUR an hour.
+  path. The final copy takes only the slice's own folder, not the shared
+  one (2.5 GB on each of the last two A3 copies). Well under an hour of
+  rented time at \$$RATE_PER_HOUR an hour.
     estimate   about \$0.75 to \$1.00
     hard cap   \$$HARD_CAP
   The precedent for a short deliberately-capped test is the self-delete test
@@ -245,6 +287,13 @@ WHAT IS OWED BEFORE IT RUNS
     the smaller half of what the slice is for.
   - A ledger row written BEFORE the spend, quoting the go, per the ledger's
     own rule 2.
+
+WHAT IS LEFT BEHIND
+  The slice's folder, $SLICE_RUN_DIR, stays on the shared
+  volume. The registered launcher's final copy takes the whole shared
+  folder, subfolders included, so later registered runs will carry it home
+  (its model file should be roughly 120 MB, going by the 30M files' size
+  per parameter; not measured) unless it is removed from the volume first.
 PLANEOF
 sed 's/^/  /' "$PLAN"
 echo
