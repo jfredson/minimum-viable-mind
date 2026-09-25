@@ -354,3 +354,94 @@ tracing in Part 3 was done by reading.
 It did not rule, edit either ruling file or either proposal, close any
 TimeAssembler task, read pull request 38's plan check, launch anything, or
 spend anything.
+
+---
+
+## Re-check of commit `cdc5869` (2026-09-25)
+
+*Added by the same session that filed the check above, at John's request:
+"Re-check that commit's diff against your review." The commit ("apply the
+rulings check's findings…") changes only the two ruling files. It adds 26
+lines and removes 10. I read the whole diff. This session still does not rule
+and did not edit either ruling file.*
+
+### Each point, against the diff
+
+| Point in the check above | What `cdc5869` does | Verdict |
+|---|---|---|
+| W1: 8b "in John's own words" | Now reads "Ratified by John ("yes" to option (i), on the wording below put to him)" | **fixed.** The record and the claim now agree |
+| W2: trip wire leaves out the clause for machines already running | Adds: "A machine already in flight is left to finish only if its projected total is inside estimate times the measured ratio and the balance covers it (the spending proposal's own clause, section 5.4)" | **fixed.** The clause is in `docs/preauthorised-spending-proposal-2026-09-21.md` §5.4, item 2 ("A pod already in flight is left to finish if…"), with the same meaning. Cosmetic: the added line is not wrapped like the rest of the file |
+| W4: line 29 unclear | Now: page 9, "Agree" (to the shape and the order only; it was not spoken as a go, and this file issues none) | **fixed** |
+| W5: "The TimeAssembler task is closed" | 8b: "The TimeAssembler task (`6aea06f0`) is to be closed by the Sunday handoff session". The closing section names `588ac12c` and `6aea06f0` "along with every other TimeAssembler task these rulings answer" | **fixed.** Both ids are the right tasks (checked against `list_tasks` earlier today). The text no longer claims anything that is untrue |
+| T2: the ceiling moved to $450 the same evening | Item 8 adds that the ceiling was raised to $450 (Weekend 1 ruling, page 6) and that "version 5 states the ceiling as $450 with that ruling cited" | **applied**, with a small wording point, R2 below |
+| T4: the 19(e) condition cannot be met as written | (e) changes from "held" to "**adopted**". It cites the dispositions check (pull request 40) and the output files' wording ("no test shares a split with the unscaled run's"). It says the findings file does not show it and that its "by nothing else" overstates. Version 5 cites the check, not the findings file | **resolved on substance**, and the description of the check is accurate. See R1 on who made the call, and R3 on where the pointer lands |
+| W3, T1, T3, T5 | not touched | these were notes, not defects. T3 (the plan check on pull request 38) is still open and is still for whoever puts the go to John |
+
+### New points from the re-check
+
+**R1. The 19(e) change is a change of ruling, and the text does not say whose
+it is.** As ruled first, (e) was held on a condition. The condition, read
+literally, was not met, and the new text adopts (e) on different evidence.
+That is a reasonable reading of intent, and my check said it needed John. The
+commit's author is John, but the preamble's record of his words ("Agreed on
+all") comes from before this change, and item 19 does not say that John
+adopted (e), or when. A few words such as "(John, 2026-09-25)" would make the
+authorship something a reader can check, as the file does for everything else.
+It also means the brief's list of departures ("19(e) held") is out of date for
+this file.
+
+**R2. Item 8 now reads as two instructions on the ceiling.** Its first
+sentence still has version 5 give "about $227.6 of the $400 programme ceiling
+as the ledger read on 2026-09-21". The added sentence says version 5 "states
+the ceiling as $450". A careful writer will read this as: the spend is as of
+2026-09-21, and the ceiling is now $450. But the first sentence, taken alone,
+still tells them to print $400. Something like "about $227.6 spent as of
+2026-09-21, against a ceiling since raised to $450" would leave one
+instruction. This is wording only.
+
+**R3. The new pointer resolves on main, not on this branch.**
+`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-a3-dispositions-check-claude-worktree.md`
+came in with pull request 40, which was squash-merged to main after this
+branch started. The pointer lands once pull request 39 reaches main (checked:
+the file is on `origin/main`). The tier 2 proposal pointer still waits on pull
+request 37, as before.
+
+### `scripts/check_citations.py` on both files at `cdc5869`
+
+Same command as in Part 4. Exit status 1. Part (a):
+
+```
+[CONFIDENT] 2 reference(s) name a file that is not in the repository
+  docs/rulings/2026-09-25-a3-closure-tier2-dispositions.md:3
+      names: docs/rulings/2026-09-25-a3-closure-tier2-dispositions-PROPOSAL.md
+  docs/rulings/2026-09-25-a3-closure-tier2-dispositions.md:82
+      names: experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-a3-dispositions-check-claude-worktree.md
+
+[LOOK AT IT] 2 bare name(s) match more than one file
+  docs/rulings/2026-09-26-weekend-1-queue.md:173  pre-registration.md
+  docs/rulings/2026-09-26-weekend-1-queue.md:207  pre-registration.md
+
+[NOT CHECKED] 2 reference(s) to files outside this repository
+     2x  ~/Documents/Code/CLAUDE.md
+```
+
+Part (b):
+
+```
+[CONFIDENT] 2 exact figure(s) absent from the one file their sentence cites
+  docs/rulings/2026-09-26-weekend-1-queue.md:151   figure: 12.2   cited: data/project.toml
+  docs/rulings/2026-09-26-weekend-1-queue.md:151   figure: 12.4   cited: data/project.toml
+
+Confident findings: 4. Things for a human to look at: 2.
+```
+
+This is the same as the first run, plus one new finding: the pointer at line
+82, which is R3 and not a broken citation. Only line numbers have moved.
+
+### Result
+
+Every finding the commit set out to apply is applied correctly, and nothing in
+the diff contradicts the proposals or the record. Three small points remain,
+none of which changes a ruling: R1, whose name 19(e)'s adoption goes under;
+R2, the wording of the item 8 ceiling; and R3, the merge order for the new
+pointer.
