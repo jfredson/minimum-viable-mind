@@ -1,0 +1,196 @@
+{
+  "K3": {
+    "C/0": {
+      "committed_other": 760,
+      "committed_own": 1711,
+      "equal": true,
+      "other": 760,
+      "own": 1711
+    },
+    "C/1": {
+      "committed_other": 751,
+      "committed_own": 1703,
+      "equal": true,
+      "other": 751,
+      "own": 1703
+    },
+    "C/2": {
+      "committed_other": 708,
+      "committed_own": 1727,
+      "equal": true,
+      "other": 708,
+      "own": 1727
+    },
+    "F/0": {
+      "committed_other": 994,
+      "committed_own": 1679,
+      "equal": true,
+      "other": 994,
+      "own": 1679
+    },
+    "F/1": {
+      "committed_other": 781,
+      "committed_own": 1654,
+      "equal": true,
+      "other": 781,
+      "own": 1654
+    },
+    "F/2": {
+      "committed_other": 746,
+      "committed_own": 1664,
+      "equal": true,
+      "other": 746,
+      "own": 1664
+    },
+    "M/0": {
+      "committed_other": 1663,
+      "committed_own": 2592,
+      "equal": true,
+      "other": 1663,
+      "own": 2592
+    },
+    "M/1": {
+      "committed_other": 1699,
+      "committed_own": 2584,
+      "equal": true,
+      "other": 1699,
+      "own": 2584
+    },
+    "M/2": {
+      "committed_other": 1655,
+      "committed_own": 2600,
+      "equal": true,
+      "other": 1655,
+      "own": 2600
+    },
+    "T/0": {
+      "committed_other": 3000,
+      "committed_own": 3000,
+      "equal": true,
+      "other": 3000,
+      "own": 3000
+    },
+    "T/1": {
+      "committed_other": 3000,
+      "committed_own": 3000,
+      "equal": true,
+      "other": 3000,
+      "own": 3000
+    },
+    "T/2": {
+      "committed_other": 3000,
+      "committed_own": 3000,
+      "equal": true,
+      "other": 3000,
+      "own": 3000
+    }
+  },
+  "bar": {
+    "episodes": 3000,
+    "min_correct": 790
+  },
+  "runs": {
+    "C/0": {
+      "other_clears": false,
+      "other_correct": 760,
+      "own_clears": true,
+      "own_correct": 1711
+    },
+    "C/1": {
+      "other_clears": false,
+      "other_correct": 751,
+      "own_clears": true,
+      "own_correct": 1703
+    },
+    "C/2": {
+      "other_clears": false,
+      "other_correct": 708,
+      "own_clears": true,
+      "own_correct": 1727
+    },
+    "F/0": {
+      "other_clears": true,
+      "other_correct": 994,
+      "own_clears": true,
+      "own_correct": 1679
+    },
+    "F/1": {
+      "other_clears": false,
+      "other_correct": 781,
+      "own_clears": true,
+      "own_correct": 1654
+    },
+    "F/2": {
+      "other_clears": false,
+      "other_correct": 746,
+      "own_clears": true,
+      "own_correct": 1664
+    },
+    "M/0": {
+      "other_clears": true,
+      "other_correct": 1663,
+      "own_clears": true,
+      "own_correct": 2592
+    },
+    "M/1": {
+      "other_clears": true,
+      "other_correct": 1699,
+      "own_clears": true,
+      "own_correct": 2584
+    },
+    "M/2": {
+      "other_clears": true,
+      "other_correct": 1655,
+      "own_clears": true,
+      "own_correct": 2600
+    },
+    "T/0": {
+      "other_clears": true,
+      "other_correct": 3000,
+      "own_clears": true,
+      "own_correct": 3000
+    },
+    "T/1": {
+      "other_clears": true,
+      "other_correct": 3000,
+      "own_clears": true,
+      "own_correct": 3000
+    },
+    "T/2": {
+      "other_clears": true,
+      "other_correct": 3000,
+      "own_clears": true,
+      "own_correct": 3000
+    }
+  },
+  "verdicts": {
+    "C": {
+      "other_seeds_clearing": 0,
+      "own_seeds_clearing": 3,
+      "passes": true,
+      "rule": "own-directed only",
+      "version2_learn_both": false
+    },
+    "F": {
+      "other_seeds_clearing": 1,
+      "own_seeds_clearing": 3,
+      "passes": false,
+      "rule": "learn-both",
+      "version2_learn_both": false
+    },
+    "M": {
+      "other_seeds_clearing": 3,
+      "own_seeds_clearing": 3,
+      "passes": true,
+      "rule": "own-directed only",
+      "version2_learn_both": true
+    },
+    "T": {
+      "other_seeds_clearing": 3,
+      "own_seeds_clearing": 3,
+      "passes": true,
+      "rule": "own-directed only",
+      "version2_learn_both": true
+    }
+  }
+}
