@@ -47,13 +47,28 @@ def slice_batch(b: dict, idx) -> dict:
 
 def train_arm(arm: str, seed: int, device, steps: int = 2500, batch: int = 96,
               lr: float = 2e-3, n_pairs: int = 12000, blind: bool = False,
-              log_every: int = 500, log=print) -> tuple:
+              log_every: int = 500, log=print, cond_weights=None,
+              other_only_steps: int = 0, build=None) -> tuple:
     """One tiny run. `blind=True` removes the acting channel entirely, which is
     the ordinary competing solver: a system with none of the structure the
-    measure claims to detect."""
+    measure claims to detect.
+
+    Three options added for the rehearsal repairs of 2026-09-25
+    (`docs/rehearsal-repairs-method-2026-09-25.md`, section 2.2), each off by
+    default, and with all three off the loop runs the original code path:
+
+    - `cond_weights=(w_own, w_other)` weights the two conditions' losses —
+      redesign (a), loss re-weighting;
+    - `other_only_steps=k` scores only the named-other condition for the first
+      k steps, then both equally — redesign (b), the curriculum;
+    - `build()` returns the model to train, for the fourth arm, which is not
+      one of the three in `arms.py`."""
     torch.manual_seed(seed)
-    cfg = A.Config(arm=arm)
-    model = A.Arm(cfg).to(device)
+    if build is None:
+        cfg = A.Config(arm=arm)
+        model = A.Arm(cfg).to(device)
+    else:
+        model = build().to(device)
     _, tb = make_data(n_pairs, seed=1000 + seed, pool="train", device=device)
     if blind:
         tb = dict(tb)
@@ -67,7 +82,12 @@ def train_arm(arm: str, seed: int, device, steps: int = 2500, batch: int = 96,
     model.train()
     for step in range(steps):
         idx = torch.randint(0, n, (batch,), generator=g).to(device)
-        loss = model.loss(slice_batch(tb, idx))
+        sb = slice_batch(tb, idx)
+        if cond_weights is None and other_only_steps == 0:
+            loss = model.loss(sb)
+        else:
+            loss = _weighted_loss(model, sb, cond_weights,
+                                  other_only=step < other_only_steps)
         opt.zero_grad(set_to_none=True)
         loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
@@ -79,6 +99,19 @@ def train_arm(arm: str, seed: int, device, steps: int = 2500, batch: int = 96,
     model.eval()
     return model, dict(seconds=secs, seconds_per_step=secs / steps, steps=steps,
                        batch=batch, parameters=A.n_params(model))
+
+
+def _weighted_loss(model, b, cond_weights, other_only: bool):
+    """Per-condition cross-entropy, combined with the given weights. During the
+    curriculum's first phase only the named-other condition is scored."""
+    logits = model(b)
+    tgt = b["targets"]
+    per = [torch.nn.functional.cross_entropy(logits[:, c], tgt[:, c])
+           for c in (G.OWN, G.OTHER)]
+    if other_only:
+        return per[G.OTHER]
+    w_own, w_other = cond_weights if cond_weights is not None else (1.0, 1.0)
+    return (w_own * per[G.OWN] + w_other * per[G.OTHER]) / 2.0
 
 
 @torch.no_grad()
