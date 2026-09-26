@@ -1,0 +1,45 @@
+
+=== grammar attempt, stage: train (mps); NAMED_OTHER_ACTING = 0; out /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c ===
+  training arm T, recipe base, seed 0
+      step  1250  loss 0.0000
+      step  2500  loss 0.0000
+    2391.9s
+  training arm T, recipe base, seed 1
+      step  1250  loss 0.0000
+      step  2500  loss 0.0000
+    2313.7s
+  training arm T, recipe base, seed 2
+      step  1250  loss 0.0000
+      step  2500  loss 0.0000
+    2244.7s
+  (6969.9s)
+
+=== grammar attempt, stage: train (mps); NAMED_OTHER_ACTING = 0; out /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c ===
+  training arm F, recipe base, seed 0
+      step  1250  loss 1.1037
+      step  2500  loss 0.9447
+    2393.8s
+  training arm F, recipe base, seed 1
+      step  1250  loss 1.0747
+      step  2500  loss 0.9851
+    2324.7s
+  training arm F, recipe base, seed 2
+      step  1250  loss 1.0838
+      step  2500  loss 0.9879
+    2257.9s
+  (6995.7s)
+
+=== grammar attempt, stage: train (mps); NAMED_OTHER_ACTING = 0; out /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c ===
+  training arm C, recipe base, seed 0
+      step  1250  loss 1.0857
+      step  2500  loss 0.8256
+    2640.3s
+  training arm C, recipe base, seed 1
+      step  1250  loss 1.0616
+      step  2500  loss 0.9139
+    2558.2s
+  training arm C, recipe base, seed 2
+      step  1250  loss 1.0657
+      step  2500  loss 0.9465
+    2236.4s
+  (7455.1s)

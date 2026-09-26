@@ -1,0 +1,83 @@
+{
+  "R-5": {
+    "blind_solver_inputs": {
+      "dev seed 99 (1500 pairs)": {
+        "acting_positions_differing_before_zeroing": 21000,
+        "fields_compared": [
+          "acting",
+          "action_item",
+          "action_pos",
+          "action_who",
+          "agent_marker_tok",
+          "assign_agent_at",
+          "assign_marker_pos",
+          "assign_value_pos",
+          "targets",
+          "tokens"
+        ],
+        "zeroed_batches_identical": true
+      },
+      "train seed 1000 (15000 pairs)": {
+        "acting_positions_differing_before_zeroing": 210000,
+        "fields_compared": [
+          "acting",
+          "action_item",
+          "action_pos",
+          "action_who",
+          "agent_marker_tok",
+          "assign_agent_at",
+          "assign_marker_pos",
+          "assign_value_pos",
+          "targets",
+          "tokens"
+        ],
+        "zeroed_batches_identical": true
+      },
+      "train seed 1001 (15000 pairs)": {
+        "acting_positions_differing_before_zeroing": 210000,
+        "fields_compared": [
+          "acting",
+          "action_item",
+          "action_pos",
+          "action_who",
+          "agent_marker_tok",
+          "assign_agent_at",
+          "assign_marker_pos",
+          "assign_value_pos",
+          "targets",
+          "tokens"
+        ],
+        "zeroed_batches_identical": true
+      },
+      "train seed 1002 (15000 pairs)": {
+        "acting_positions_differing_before_zeroing": 210000,
+        "fields_compared": [
+          "acting",
+          "action_item",
+          "action_pos",
+          "action_who",
+          "agent_marker_tok",
+          "assign_agent_at",
+          "assign_marker_pos",
+          "assign_value_pos",
+          "targets",
+          "tokens"
+        ],
+        "zeroed_batches_identical": true
+      }
+    },
+    "name_only_solver_recomputed": {
+      "n": 3000,
+      "other": 1.0,
+      "own": 0.238
+    }
+  },
+  "R-6": {
+    "grammar_attributes_used": {
+      "floor_check": [],
+      "measure": [],
+      "reading": []
+    },
+    "reaches_rendering": false
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "bar": {
+    "as_a_share": 0.2633333333333333,
+    "episodes": 3000,
+    "min_correct": 790
+  },
+  "name_only_solver": {
+    "n": 3000,
+    "other": 1.0,
+    "own": 0.238
+  },
+  "runs": {
+    "C/base/0": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.19066666666666668,
+      "lesioned_own": 0.20933333333333334,
+      "n": 3000,
+      "other": 0.26466666666666666,
+      "other_clears": true,
+      "other_correct": 794,
+      "own": 0.7993333333333333,
+      "own_clears": true,
+      "own_correct": 2398
+    },
+    "C/base/1": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.20133333333333334,
+      "lesioned_own": 0.20133333333333334,
+      "n": 3000,
+      "other": 0.244,
+      "other_clears": false,
+      "other_correct": 732,
+      "own": 0.5703333333333334,
+      "own_clears": true,
+      "own_correct": 1711
+    },
+    "C/base/2": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.19266666666666668,
+      "lesioned_own": 0.209,
+      "n": 3000,
+      "other": 0.235,
+      "other_clears": false,
+      "other_correct": 705,
+      "own": 0.5583333333333333,
+      "own_clears": true,
+      "own_correct": 1675
+    },
+    "F/base/0": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.21666666666666667,
+      "lesioned_own": 0.212,
+      "n": 3000,
+      "other": 0.258,
+      "other_clears": false,
+      "other_correct": 774,
+      "own": 0.5733333333333334,
+      "own_clears": true,
+      "own_correct": 1720
+    },
+    "F/base/1": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.19333333333333333,
+      "lesioned_own": 0.20633333333333334,
+      "n": 3000,
+      "other": 0.24333333333333335,
+      "other_clears": false,
+      "other_correct": 730,
+      "own": 0.5553333333333333,
+      "own_clears": true,
+      "own_correct": 1666
+    },
+    "F/base/2": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.20133333333333334,
+      "lesioned_own": 0.211,
+      "n": 3000,
+      "other": 0.253,
+      "other_clears": false,
+      "other_correct": 759,
+      "own": 0.5676666666666667,
+      "own_clears": true,
+      "own_correct": 1703
+    },
+    "T/base/0": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 1.0,
+      "lesioned_own": 0.24666666666666667,
+      "n": 3000,
+      "other": 1.0,
+      "other_clears": true,
+      "other_correct": 3000,
+      "own": 1.0,
+      "own_clears": true,
+      "own_correct": 3000
+    },
+    "T/base/1": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 1.0,
+      "lesioned_own": 0.251,
+      "n": 3000,
+      "other": 1.0,
+      "other_clears": true,
+      "other_correct": 3000,
+      "own": 1.0,
+      "own_clears": true,
+      "own_correct": 3000
+    },
+    "T/base/2": {
+      "lesion_collapses_own": false,
+      "lesioned_other": 1.0,
+      "lesioned_own": 0.2733333333333333,
+      "n": 3000,
+      "other": 1.0,
+      "other_clears": true,
+      "other_correct": 3000,
+      "own": 1.0,
+      "own_clears": true,
+      "own_correct": 3000
+    }
+  },
+  "verdicts": {
+    "C/base": {
+      "learn_both": false,
+      "other_passes_the_ruled_line": false,
+      "other_seeds_clearing": 1,
+      "own_seeds_clearing": 3,
+      "seeds": 3
+    },
+    "F/base": {
+      "learn_both": false,
+      "other_passes_the_ruled_line": false,
+      "other_seeds_clearing": 0,
+      "own_seeds_clearing": 3,
+      "seeds": 3
+    },
+    "T/base": {
+      "learn_both": true,
+      "other_passes_the_ruled_line": true,
+      "other_seeds_clearing": 3,
+      "own_seeds_clearing": 3,
+      "seeds": 3
+    }
+  }
+}

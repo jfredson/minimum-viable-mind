@@ -1,0 +1,189 @@
+{
+  "negative_at_nomination": {
+    "C/base/0": {
+      "reading": {
+        "accuracy_ownership_only": 0.0625,
+        "accuracy_untouched": 0.0625,
+        "accuracy_whole": 0.5625,
+        "arm_own_accuracy": 0.57125,
+        "degree": 1.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.40700000000000003,
+          "room": 0.5
+        },
+        "raw_difference": 0.5,
+        "status": "valid",
+        "version1_form": 0.8888888888888888
+      },
+      "site_set": {
+        "accuracy_ownership_only": 0.03,
+        "accuracy_whole": 0.7283333333333334,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.6173333333333334,
+          "room": 0.7000000000000001
+        },
+        "layers": [
+          3
+        ],
+        "positions": "action",
+        "rank": 4
+      }
+    },
+    "F/base/0": {
+      "reading": {
+        "accuracy_ownership_only": 0.06875,
+        "accuracy_untouched": 0.06875,
+        "accuracy_whole": 0.46125,
+        "arm_own_accuracy": 0.5725,
+        "degree": null,
+        "floor": {
+          "clears": false,
+          "clears_plain_form": true,
+          "required_room": 0.403,
+          "room": 0.39249999999999996
+        },
+        "raw_difference": 0.39249999999999996,
+        "status": "no verdict",
+        "version1_form": 0.8509485094850948
+      },
+      "site_set": {
+        "accuracy_ownership_only": 0.06166666666666667,
+        "accuracy_whole": 0.5416666666666666,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.42800000000000005,
+          "room": 0.48
+        },
+        "layers": [
+          3
+        ],
+        "positions": "action",
+        "rank": 1
+      }
+    },
+    "T/base/0": {
+      "reading": {
+        "accuracy_ownership_only": 0.885,
+        "accuracy_untouched": 0.08375,
+        "accuracy_whole": 0.75875,
+        "arm_own_accuracy": 0.75875,
+        "degree": -0.18703703703703697,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.54,
+          "room": 0.675
+        },
+        "raw_difference": -0.12624999999999997,
+        "status": "negative",
+        "version1_form": -0.1663920922570016
+      },
+      "site_set": {
+        "accuracy_ownership_only": 1.0,
+        "accuracy_whole": 1.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.8,
+          "room": 1.0
+        },
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      }
+    }
+  },
+  "negative_search": {
+    "found_at_nomination": [
+      "T/base/0"
+    ],
+    "widened": false
+  },
+  "no_verdict": {
+    "T/base/0": {
+      "lands": true,
+      "reading": {
+        "accuracy_ownership_only": 0.0,
+        "accuracy_untouched": 0.0,
+        "accuracy_whole": 0.0,
+        "arm_own_accuracy": 1.0,
+        "degree": null,
+        "floor": {
+          "clears": false,
+          "clears_plain_form": false,
+          "required_room": 0.8,
+          "room": 0.0
+        },
+        "raw_difference": 0.0,
+        "status": "no verdict",
+        "version1_form": null
+      },
+      "site_set": {
+        "layers": [
+          0
+        ],
+        "positions": "pre-identity",
+        "rank": 2
+      }
+    },
+    "T/base/1": {
+      "lands": true,
+      "reading": {
+        "accuracy_ownership_only": 0.0,
+        "accuracy_untouched": 0.0,
+        "accuracy_whole": 0.0,
+        "arm_own_accuracy": 1.0,
+        "degree": null,
+        "floor": {
+          "clears": false,
+          "clears_plain_form": false,
+          "required_room": 0.8,
+          "room": 0.0
+        },
+        "raw_difference": 0.0,
+        "status": "no verdict",
+        "version1_form": null
+      },
+      "site_set": {
+        "layers": [
+          0
+        ],
+        "positions": "pre-identity",
+        "rank": 2
+      }
+    },
+    "T/base/2": {
+      "lands": true,
+      "reading": {
+        "accuracy_ownership_only": 0.0,
+        "accuracy_untouched": 0.0,
+        "accuracy_whole": 0.0,
+        "arm_own_accuracy": 1.0,
+        "degree": null,
+        "floor": {
+          "clears": false,
+          "clears_plain_form": false,
+          "required_room": 0.8,
+          "room": 0.0
+        },
+        "raw_difference": 0.0,
+        "status": "no verdict",
+        "version1_form": null
+      },
+      "site_set": {
+        "layers": [
+          0
+        ],
+        "positions": "pre-identity",
+        "rank": 2
+      }
+    }
+  }
+}
