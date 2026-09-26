@@ -325,6 +325,30 @@ def nominate(model, recip, donor, reads, cond: int, device) -> dict:
     return res
 
 
+def pick_without_all_positions(grid: list):
+    """NOT PRE-STATED. Added 2026-09-25 after the arm C nominations came back
+    choosing the first layer at every position: copying any layer at every
+    position hands the rest of the forward pass to the donor wherever ownership
+    lives only in the running state, so the ruled exclusion of "every layer at
+    every position" is too narrow. The same rule as `nominate`, steps 3 and 4,
+    over the same development grid, with every "all" position set removed.
+    Reported as a sensitivity row beside the pre-stated nomination, never in
+    place of it."""
+    pos_index = {P: i for i, P in enumerate(POSITION_SETS)}
+    clearing = [g for g in grid if g["floor"]["clears"] and g["positions"] != "all"]
+    if not clearing:
+        return None
+    smallest = {}
+    for g in clearing:
+        key = (len(g["layers"]), g["layers"])
+        if g["positions"] not in smallest or key < smallest[g["positions"]]:
+            smallest[g["positions"]] = key
+    cands = [g for g in clearing
+             if (len(g["layers"]), g["layers"]) == smallest[g["positions"]]]
+    return min(cands, key=lambda g: (-g["accuracy_ownership_only"], g["rank"],
+                                     pos_index[g["positions"]]))
+
+
 def named_swap(pairs: list, seed: int) -> list:
     """Control 2's donor (method file, section 4.2): the same content and the
     same acting agent, with the named agent replaced by one that is neither
@@ -554,6 +578,20 @@ def stage_measure(device, arms, recipe, seeds):
                                 d_tgt, G.OWN).mean())
                 row["rider_at_arm_T_site_set"] = dict(site_set=tspec,
                                                       reading=reading(tw, to, u, acc))
+
+            # ------------- sensitivity, NOT pre-stated: no "all" position sets
+            xspec = pick_without_all_positions(nom["ownership"]["grid"])
+            if xspec is not None:
+                x_sites = X.Sites(tuple(xspec["layers"]), xspec["positions"])
+                x_mask = X.position_mask(recip, xspec["positions"])
+                x_basis = {l: RH.basis_for(reads["own"][l]["coef"], xspec["rank"], device)
+                           for l in x_sites.layers}
+                xw = float(hits(run(m, recip, d_states, x_sites, x_mask, None),
+                                d_tgt, G.OWN).mean())
+                xo = float(hits(run(m, recip, d_states, x_sites, x_mask, x_basis),
+                                d_tgt, G.OWN).mean())
+                row["sensitivity_without_all_positions"] = dict(
+                    site_set=xspec, reading=reading(xw, xo, u, acc))
 
             # ---------------------------- oracle, and the fourth arm's route check
             if arm in ("T", "M"):
