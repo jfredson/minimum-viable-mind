@@ -128,6 +128,16 @@ SEQ_LEN = 1 + 8 * 5 + 2 * 7 + 1
 
 OWN, OTHER = 0, 1          # the two conditions, in a fixed reporting order
 
+# The acting channel's value on the seven tokens of the NAMED-OTHER action
+# turn. 1 is the grammar as built on 2026-09-21 and run by every earlier
+# record: the channel fires on both action turns. 0 is redesign (c) of the
+# Weekend 1 queue (page 4), attempted 2026-09-25 under the method committed at
+# `docs/grammar-attempt-method-2026-09-25.md`: the named-other turn carries no
+# "this turn is yours" signal, and nothing else about the episode changes.
+# The own-directed action turn always carries the channel. Set by a driver
+# before it generates anything; never flipped mid-run.
+NAMED_OTHER_ACTING = 1
+
 
 def successor(slot: int) -> int:
     """The revision rule, the same in both conditions."""
@@ -219,7 +229,7 @@ def render(content: dict, model: int) -> dict:
         action_pos[cond] = len(toks)
         toks.append(MASK_ID)
         toks.append(VOCAB[NL])
-        acting.extend([1] * 7)
+        acting.extend([1 if cond == OWN else NAMED_OTHER_ACTING] * 7)
         action_item[cond] = j
         action_who[cond] = who_idx
         action_turn[cond] = 8 + slot_i
@@ -425,6 +435,36 @@ def self_test() -> None:
           same_val > 10, f"{same_val} of {len(cp)} pairs have donor and recipient "
                          f"dictating the same value")
 
+    # --- redesign (c): what the setting changes, and only that ------------
+    # Re-render the same content under the other setting and compare: the
+    # tokens must not move at all, and the acting channel may differ only on
+    # the seven positions of the named-other action turn.
+    global NAMED_OTHER_ACTING
+    here = NAMED_OTHER_ACTING
+    NAMED_OTHER_ACTING = 1 - here
+    try:
+        tok_same, act_where, n_diff = True, True, 0
+        for p in pairs[:1000]:
+            for half in ("recipient", "donor"):
+                e = p[half]
+                e2 = render(p["content"], e["model"])
+                tok_same &= bool(np.array_equal(e["tokens"], e2["tokens"]))
+                diff = np.nonzero(e["acting"] != e2["acting"])[0]
+                ap = int(e["action_pos"][OTHER])
+                act_where &= set(diff.tolist()) == set(range(ap - 5, ap + 2))
+                n_diff += len(diff)
+    finally:
+        NAMED_OTHER_ACTING = here
+    check("the setting leaves every token unchanged", tok_same)
+    check("the setting changes the acting channel only on the seven "
+          "named-other action-turn positions", act_where and n_diff == 2000 * 7,
+          f"{n_diff} positions differ over 2000 episodes")
+    act_own = {int(e["acting"][e["action_pos"][OWN]]) for e in eps[:500]}
+    act_other = {int(e["acting"][e["action_pos"][OTHER]]) for e in eps[:500]}
+    check(f"acting channel at the scored positions: own-directed {sorted(act_own)}, "
+          f"named-other {sorted(act_other)}",
+          act_own == {1} and act_other == {NAMED_OTHER_ACTING})
+
     print(f"\n{len(fails)} failure(s)" if fails else "\nall checks passed")
     if fails:
         raise SystemExit(1)
@@ -433,8 +473,13 @@ def self_test() -> None:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--self-test", action="store_true")
+    ap.add_argument("--named-other-acting", type=int, choices=(0, 1), default=None,
+                    help="run the self-test under this setting (default: the module's, 1)")
     a = ap.parse_args()
+    if a.named_other_acting is not None:
+        NAMED_OTHER_ACTING = a.named_other_acting
     if a.self_test:
+        print(f"NAMED_OTHER_ACTING = {NAMED_OTHER_ACTING}")
         self_test()
     else:
         ap.print_help()
