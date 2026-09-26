@@ -1,0 +1,52 @@
+Read-only vendor readings, taken by the checking session. Nothing created, nothing deleted.
+$ date -u; runpodctl pod list
+2026-09-26T01:25:56Z
+[]
+$ runpodctl user   (balance and spend rate lines only)
+  "clientBalance": 75.917054611,
+  "currentSpendPerHr": 0.01,
+$ runpodctl billing pods --grouping podId --start-time 2026-09-25T00:00:00Z
+[
+  {
+    "amount": 0.15618446352891624,
+    "diskSpaceBilledGb": 40,
+    "podId": "c14x21x0u3ju7r",
+    "time": "2026-09-25 00:00:00",
+    "timeBilledMs": 566260
+  },
+  {
+    "amount": 0.3599700457416475,
+    "diskSpaceBilledGb": 100,
+    "podId": "c14x21x0u3ju7r",
+    "time": "2026-09-26 00:00:00",
+    "timeBilledMs": 1305615
+  }
+]
+$ runpodctl billing pods --pod-id c14x21x0u3ju7r --bucket-size hour --start-time 2026-09-25T20:00:00Z
+[
+  {
+    "amount": 0.15618446352891624,
+    "diskSpaceBilledGb": 40,
+    "gpuId": "NVIDIA GeForce RTX 5090",
+    "time": "2026-09-25 23:00:00",
+    "timeBilledMs": 566260
+  },
+  {
+    "amount": 0.3599700457416475,
+    "diskSpaceBilledGb": 100,
+    "gpuId": "NVIDIA GeForce RTX 5090",
+    "time": "2026-09-26 00:00:00",
+    "timeBilledMs": 1305615
+  }
+]
+$ python3 -c 'print(round(76.4526535694-75.9553006582,10))'   # the findings' two balance readings
+0.4973529112
+
+$ python3 arithmetic on the readings above and on the findings' receipts (rented-slice-2026-09-25/pre-user.txt, stop.txt, step1-launch.txt)
+billed to machine c14x21x0u3ju7r so far: $0.3215 over 1165878 ms = 19.43 min
+at $0.99/h, 1165878 ms is $0.3206 (the rest of the billed amount is disk)
+machine life 23:48:33Z to 00:19:46Z: 1873 s = 31 min 13 s; in the 23:00 hour 687 s, in the 00:00 hour 1186 s
+balance fall 00:22:10Z -> this reading: $0.0382
+total balance fall since 23:45:19Z: $0.5356
+hard cap / rate: 2.00 / 0.99 * 3600 = 7272.7 s, cut to 7272 s
+storage drip over 00:22:10Z -> 01:25:56Z (this file's reading) at $0.01/h: $0.0106

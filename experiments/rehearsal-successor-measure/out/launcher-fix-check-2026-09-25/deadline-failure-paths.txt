@@ -1,0 +1,31 @@
+=== A. the vendor tool errors on every call (network down, key revoked)
+  | [2026-09-26T01:11:45Z] machine-deadline: armed for machine fakepod (t): deletes at 2026-09-26T01:11:46Z,
+  | [2026-09-26T01:11:45Z] machine-deadline: 1s after creation (hard cap $0.0011 at $0.99 an hour)
+  | [2026-09-26T01:11:46Z] machine-deadline: DEADLINE REACHED. Deleting fakepod. Reason: hard cap reached: $0.0011 at $0.99 an hour allows 1s of machine life; run state was not consulted
+  | [2026-09-26T01:11:46Z] machine-deadline: delete attempt 1: exit 1: Error: request failed
+  | [2026-09-26T01:12:06Z] machine-deadline: delete attempt 2: exit 1: Error: request failed
+  | [2026-09-26T01:12:26Z] machine-deadline: delete attempt 3: exit 1: Error: request failed
+  | [2026-09-26T01:12:46Z] machine-deadline: delete command FAILED 3 times (exit 1) -- the machine may already be gone, or may still be billing: check the vendor's machine list NOW
+  | LEDGER-STYLE LINE: | 2026-09-25 | machine deadline for `t`: machine `fakepod` delete command FAILED 3 times (exit 1) -- the machine may already be gone, or may still be billing: check the vendor's machine list NOW at 2026-09-26T01:12:46Z. Reason: hard cap reached: $0.0011 at $0.99 an hour allows 1s of machine life; run state was not consulted | (see the run's row) | act: about 0.02 h of machine life by the laptop clock | cap $0.0011 | by arithmetic at most about $0.02; read the vendor balance for the actual | — |
+  exit=1 after 61s; delete calls: 3
+=== B. the vendor tool fails twice, then succeeds (network back after ~40s)
+  | [2026-09-26T01:12:47Z] machine-deadline: delete attempt 1: exit 1: Error
+  | [2026-09-26T01:13:07Z] machine-deadline: delete attempt 2: exit 1: Error
+  | [2026-09-26T01:13:28Z] machine-deadline: delete attempt 3: exit 0: deleted
+  | [2026-09-26T01:13:28Z] machine-deadline: DELETED by the laptop's machine deadline
+  | LEDGER-STYLE LINE: | 2026-09-25 | machine deadline for `t`: machine `fakepod` DELETED by the laptop's machine deadline at 2026-09-26T01:13:28Z. Reason: hard cap reached: $0.0011 at $0.99 an hour allows 1s of machine life; run state was not consulted | (see the run's row) | act: about 0.01 h of machine life by the laptop clock | cap $0.0011 | by arithmetic at most about $0.01; read the vendor balance for the actual | — |
+  after 42s
+=== C. the vendor tool hangs on delete (watched for 20s)
+  still waiting on attempt 1 after 20s (no time limit on the delete call)
+  | [2026-09-26T01:13:28Z] machine-deadline: armed for machine fakepod (t): deletes at 2026-09-26T01:13:29Z,
+  | [2026-09-26T01:13:28Z] machine-deadline: 1s after creation (hard cap $0.0011 at $0.99 an hour)
+  | [2026-09-26T01:13:29Z] machine-deadline: DEADLINE REACHED. Deleting fakepod. Reason: hard cap reached: $0.0011 at $0.99 an hour allows 1s of machine life; run state was not consulted
+/Users/john/.claude/jobs/1a8d030f/tmp/deadline_paths.sh: line 40: 79822 Terminated: 15          run bash "$MD" "$T/e.env" > "$T/c.log" 2>&1
+=== D. the vendor tool exits 0 but says it did not delete (answer not checked)
+  | [2026-09-26T01:13:49Z] machine-deadline: delete attempt 1: exit 0: {"error": "pod not found"}
+  | [2026-09-26T01:13:49Z] machine-deadline: DELETED by the laptop's machine deadline
+  | LEDGER-STYLE LINE: | 2026-09-25 | machine deadline for `t`: machine `fakepod` DELETED by the laptop's machine deadline at 2026-09-26T01:13:49Z. Reason: hard cap reached: $0.0011 at $0.99 an hour allows 1s of machine life; run state was not consulted | (see the run's row) | act: about 0.00 h of machine life by the laptop clock | cap $0.0011 | by arithmetic at most about $0.00; read the vendor balance for the actual | — |
+=== E. signals to the launcher's whole process group, spawned exactly as the launcher does
+  SIGINT to the group: delete calls after the deadline: 1
+  SIGTERM to the group: delete calls after the deadline: 0
+  SIGHUP to the group: delete calls after the deadline: 1
