@@ -1,0 +1,64 @@
+{
+  "arms": {
+    "C": {
+      "arm": "C",
+      "batch": 32,
+      "d_model": 448,
+      "fastest": 0.01347208023071289,
+      "median_seconds_per_step": 0.013514995574951172,
+      "n_heads": 8,
+      "n_layers": 12,
+      "parameters": 29329735,
+      "seconds_per_step": 0.013524413108825684,
+      "sequence_length": 56,
+      "slowest": 0.013899803161621094,
+      "steps": 50
+    },
+    "F": {
+      "arm": "F",
+      "batch": 32,
+      "d_model": 448,
+      "fastest": 0.01249551773071289,
+      "median_seconds_per_step": 0.012522220611572266,
+      "n_heads": 8,
+      "n_layers": 12,
+      "parameters": 29049735,
+      "seconds_per_step": 0.01252530574798584,
+      "sequence_length": 56,
+      "slowest": 0.012578964233398438,
+      "steps": 50
+    },
+    "T": {
+      "arm": "T",
+      "batch": 32,
+      "d_model": 448,
+      "fastest": 0.013047218322753906,
+      "median_seconds_per_step": 0.01307821273803711,
+      "n_heads": 8,
+      "n_layers": 12,
+      "parameters": 26065471,
+      "seconds_per_step": 0.013080244064331054,
+      "sequence_length": 56,
+      "slowest": 0.013134956359863281,
+      "steps": 50
+    }
+  },
+  "complete": true,
+  "device": "cuda",
+  "machine": {
+    "accelerator": "NVIDIA GeForce RTX 5090",
+    "platform": "Linux-6.8.0-142-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "torch": "2.8.0+cu128"
+  },
+  "ratio_to_arm_F": {
+    "C": 1.0797671035695482,
+    "F": 1.0,
+    "T": 1.0443053708636574
+  },
+  "shape": {
+    "d_model": 448,
+    "n_heads": 8,
+    "n_layers": 12
+  }
+}
