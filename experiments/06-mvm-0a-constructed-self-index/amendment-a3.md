@@ -557,3 +557,252 @@ the launcher at `src/launch_a3.sh`.
 Next is Gate 2, the pilot: one register-less 30M run at seed 0, on John's
 authorization in his own words, quoted verbatim in the ledger row. Nothing
 has been spent on A3 to this point.
+
+---
+
+## Closure of Amendment A3, 2026-09-25
+
+**Outcome: not testable — the registered comparison was undefined for every
+possible model. Separately, removing the ownership-input channel reduced
+primary-battery accuracy on all three trained seeds.** This is the loss
+condition's sense of the phrase, not the validity-gate bin of the same name —
+the bin for an ablation that damages the model so broadly that no reading of it
+can be trusted. The validity-gate bin was not evaluated: its gates were
+unimplemented and unapplied. No code for them was written for this design, and
+they were never applied to the input-channel lesion, the only lesion A3 ran, on
+any seed (the independent review of 2026-09-19 searched the source and the
+three endpoint records and found neither — `red-team-a4.md`, its seventeenth
+finding, labelled there F17).
+
+The pre-registered loss condition fired: *no non-self cross-turn control
+can be built that is state-requiring at ceiling — then the differential
+discriminator is dead here and the honest report is "not testable"*
+(`pre-registration.md`, under "Loss conditions"). The control battery's
+ownership-blind ceiling was measured at 1.0
+(`ceiling-measurement-findings.md`, 2026-09-17), so the registered
+differential clause had no computable value for any model from the day it
+was registered. The same measurement shows why this is structural rather than a
+defect of this control alone: the ceiling-corrected metric is incompatible by
+construction with any control fully determined by the visible episode and not
+requiring ownership, because every such control has an ownership-blind ceiling
+of 1.0. The number the registration recorded as that ceiling had not been
+attacked before registration, which is registered separately as a defect in the
+instrument (`ceiling-defect-2026-09-17.md`). An unregistered pilot giving the
+control its own loss term, per-row gradient weight quadrupled, did not make it
+usable — 0.3125 against a bar of 0.60 that was pre-stated before the code
+existed (`control-learnability-pilot-findings.md`). The clause is not repaired;
+a successor grammar is a new registration. A successor must demonstrate both its
+control ceiling and a usable comparison metric; measuring the ceiling alone does
+not resolve this defect.
+
+**What A3 measured.** On three seeds trained from scratch, the primary
+battery learned (intact 0.5683, 0.5633, 0.5738) and collapsed when the
+ownership input channel was zeroed (0.1988, 0.2015, 0.1447), while the
+syntax battery was unchanged. The state drop was 0.0769 on seed 2, versus
+0.0018 and 0.0002 on the other seeds; all were below the locked 0.1172
+threshold. The six primary-battery scores are means across six evaluation
+seeds, paired within seed, and every figure in this paragraph is recorded at
+`seeds-endpoint-findings.md`. The ownership input is load-bearing **for the
+primary battery**. The matched contrast against a non-self control could not be
+run.
+
+**What A3 did not measure.** Whether the network built an internal
+structure around the ownership input — a center in the sense of something
+the network acquired — is not testable with these instruments. The section
+of the amendment that defines what is ablated (§3.1) says why: the
+input-channel lesion removes a sense organ, not a structure the network
+built. The registration concedes a second limit alongside it: attending
+back to marked positions is a re-readable pointer rather than a carried
+binding, both routes need the channel, and so the wire lesion cannot
+separate them (`amendment-a3.md`, the file this block lands in, registration
+revision 8 of 2026-09-15, "The central claim is narrowed").
+The instrument the registration names as the discriminator for that
+question, the mid-episode re-indexing probe, has never run (the red team
+ledger's finding `RT-114`, which lists it among the registered discriminators
+that have never fired).
+
+Four localization runs bear on where ownership sits, and none of them
+localizes it. A fitted linear classifier at eleven positions and five
+layers found the register index — the four-way rank of the marker, not the
+registered target itself — nowhere except where its marker is the input
+(`fitted-position-sweep-findings.md`, with its sensitivity corrected at
+`fitted-position-sweep-findings-CORRECTION-2026-09-20.md`). A standardised
+refit, a different estimator on the same states, was run next
+(`standardised-refit-findings.md`). The second estimator produced one nominal
+crossing; its folds and permutation draws also differed, so the change cannot be
+attributed to scaling alone. (The folds are the way the episodes were split
+between fitting and testing; the permutation draws are the shuffled-label runs
+the bar is built from. That both differed is shown from the refit's code and its
+three committed output files, not from its findings file, in the check of
+2026-09-25, `reviews/2026-09-25-a3-dispositions-check-claude-worktree.md`,
+section 3.) The crossing sits at the third checkpoint, at the **other** agent's
+revision value, at layer 3. It is an accuracy margin of 0.000484, equivalent to
+1.94 of 4,000 episodes — a margin computed in the review of that run and not
+stated in its findings file (`red_team_ledger.md`, finding `RT-128`, which ruled
+that the number and its fragility travel together or neither travels) — and is
+recorded as a sub-bar pattern measured twice, not a clearance. The registered
+matched control (§L2(a), the other-agent index) had its **probe half** run for
+the first time, with rank matched by design and accuracy matched as observed;
+it excluded the exclusion confound in the form proposed, a four-way rank of the
+other agent that this probe could decode (`other-index-position-sweep-findings.md`).
+A purely relational encoding remains open as a route that would produce both the
+pattern and this null (the red team ledger's finding `RT-125`, carried open).
+The control's **lesion half** — a localized other-agent subspace whose
+ablation leaves the self-directed condition intact — remains unavailable,
+because no such subspace was found and there is nothing to ablate; running
+the probe half does not discharge the registered requirement. All the
+rulings in this paragraph are the Gate B rulings of 2026-09-21 on the two
+follow-up runs (ledger RT-120 to RT-142).
+
+The registered probe target, the model's own marker word, has been read at
+these positions only by the weaker difference-of-averages method. The
+difference-of-averages sweep found no discovery-position clearance for either
+target: 135 tests read the registered marker-word target and 135 read the
+register index. Positive-control detections occurred where the answer was
+supplied by the input token (`powered-position-sweep-findings.md`). (That file
+states 270 tests across the two targets; the 135 per target is derived from it,
+as nine testable positions × five layers × three checkpoints, the arithmetic
+`powered-position-sweep-method.md` sets out.) (The
+discovery positions are the positions under test; the positive controls are
+the positions where the answer is the input token, which any working read should
+find.) Reading the registered target with a sensitive instrument is one unrun
+job of about seventy processor-hours at no money cost (both the price and the
+fact that the job was dropped before that run rather than after it are recorded
+in the red team ledger's finding `RT-89`), and until it runs, only the narrower
+sentence above is available. Causal patching — copying internal activity from
+one run into another to test whether it causes the behaviour — which the
+section on how the ablation is localized (§3.2) requires alongside the probe
+before anything counts as localized or as absent, was never run and has no code
+for this design (the ruling of 2026-09-20 that patching is new code rather than
+existing machinery, ledger RT-96). Because causal patching was never run,
+agreement between probe and patching could not be tested and no L1 subspace
+(§3.1's name for the located region of the network's internal activity that
+carries which marker is its own) was ever localized; so the registered
+uncarvable signature H_diffuse was never reachable either: it requires a carved
+subspace to compare against the matched controls, and none was carved.
+
+**Hard kill K5 is not reached.** A hard kill is a registered stop condition
+with a named consequence. K5 (`amendment-a3.md`, §4.2, its list of hard kill criteria: "Probe-patching
+convergence fails on all three seeds: *not testable (localization)*, reported
+as such; no further seeds") tests whether two instruments agree. Causal
+patching was never built for this design (ruling of 2026-09-20, ledger RT-96),
+so the test was never run, and this closure does not report a measured K5
+failure. The term *not testable (localization)* rests instead on §3.2's
+convergence requirement, that nothing counts as localized until probe and
+patching agree, and A3 closes under the pre-registration's loss condition
+above, with no further A3 seeds. This reading of the registered kill list is
+John's, ruled on 2026-09-25
+(`docs/rulings/2026-09-25-a3-closure-tier2-dispositions.md`, item 1).
+
+**The registered term for the line is therefore *not testable
+(localization)*, and the registered reading of this null is instrument
+failure, not absence.** The registration reads "ownership is known to be
+load-bearing and the instruments cannot find it" as a failure of the
+instruments until causal patching has run, and that reading stands. What
+can be said descriptively, and separately from it, is limited to each read
+above and its own target. The fitted register-index read had a heuristic
+reach of approximately one episode in eleven, calculated using its
+positive-control accuracy. This is not measured detection power at the
+discovery positions and does not establish the sensitivity of the unrun
+fitted marker-word read
+(`fitted-position-sweep-findings-CORRECTION-2026-09-20.md`, which John ruled
+on 2026-09-20 must be cited wherever that figure is used). What may not be
+said is that the structure is absent, or that these nulls make it less
+likely, because every number in these runs is conditional on this stack being
+able to recover such a structure. Ownership-channel dependence was established;
+recovery of an acquired internal representation by this stack was not.
+John ruled the 2026-09-16 blind arm (the registered blind-localization run,
+meant to show the instruments can find something known to be there)
+discharged, so it does not block this closure. That disposition does not
+establish successful recovery of an acquired ownership representation on the
+A3 design. The unmet sensitivity requirement carries into the successor's
+rehearsal (`docs/rulings/2026-09-21-followup-runs-and-blind-arm.md`,
+reconciling the December-result ruling's item 3 with the step 4 ruling).
+
+**Where this sits on the project's gradient.** Under the ruling of
+2026-09-20 that a load-bearing self-index is a center
+(`docs/rulings/2026-09-20-center-as-degree.md`), "center" has a second and
+weaker sense than the one used above: a pointer that is causally
+load-bearing for the act is a center at the bottom of the gradient, with no
+requirement that the network built a structure to hold it. In that weaker
+sense — and only in it — what the lesion measured puts these checkpoints
+above zero. "Above zero" is the project's classification under its 2026-09-20
+definition of a load-bearing input, not a measured integration score. A3 does
+not establish that binding specifies its center in the same act, and it
+provides no licensed verdict about consciousness or experience. (The first of
+those two limits is the one `pre-registration.md` requires every write-up to
+state, under "Scope: this is Q5, not the removal test".) Their degree on the
+integration axis, how much of the act is organized around the ownership
+signal rather than consulting it, is unmeasured, because the metric for that
+axis (Stage 2) does not yet exist. The sentence this experiment supports in
+public is: Removing the ownership-input channel reduced primary-battery
+accuracy on three trained seeds. The matched comparison was unavailable;
+whether an acquired internal ownership structure exists was not established,
+and integration degree was not measured. The above-zero classification may
+follow it only when expressly attributed to the ruling of 2026-09-20. No
+result of A3 is described as "a structural signature of self-indexing" or
+"a structural signature of ownership-specific learning".
+
+**Successor.** A matched-role causal-interchange experiment with a
+learn-both eligibility gate, whose purpose is to develop and validate the
+Stage 2 degree metric on contrast cases known by construction. The name
+"matched-role causal-interchange" is the one item 5 of
+`docs/rulings/2026-09-20-center-as-degree.md` gives the successor; "learn-both"
+is the name `docs/rulings/2026-09-23-range-and-direction-only.md` uses for the
+eligibility check; the contrast cases are set out in
+`docs/competing-mechanisms-2026-09-20.md`. It registers in 2026
+(`docs/rulings/2026-09-20-december-result-roadmap.md`, item 1, which amends
+item 5 of `docs/rulings/2026-09-20-center-as-degree.md`). The successor
+proceeds through Gate A with both tiers as soon as its prerequisites are
+complete. The operative deadlines remain registration by 2026-10-18 and
+launch of the registered runs by 2026-11-01; missing either is recorded as a
+schedule failure (`docs/rulings/2026-09-20-december-result-roadmap.md`,
+including its 2026-09-21 annotation). Since item 23 of
+`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, a missed
+date no longer moves the roadmap to outcome R4 (hibernating with a registered
+design and a rehearsal) by itself, and launching past one takes a fresh ruling
+naming what comes off the back end; the second date binds the launch of the
+remaining eight registered runs, not the single free-arm run before them. Three
+things the successor inherits and must carry: measuring the control's
+ceiling properly is a precondition of any successor amendment (John,
+2026-09-17, `ceiling-defect-2026-09-17.md`); nothing counts as localized or
+as absent until both instruments, probe and causal patching, agree; and the
+successor's whole purpose is a measurement that does not yet exist, so the
+rehearsal requirement — that a full measurement procedure be demonstrated
+before it is registered (`docs/outside-review-protocol.md`, its section on
+the measurement rehearsal required before any Gate A) — applies to it even
+though it does not apply to this closure.
+
+**Open items carried on this closure.** The instrument-sensitivity
+requirement the blind arm served, carried into the successor's rehearsal
+(the arm itself is discharged, above). The registered
+probe target, the marker word, unread by a sensitive instrument at these
+positions — deferred because reading it was priced at about seventy
+processor-hours against about eleven for the register-index read done in its
+place, and dropped before that run rather than because of anything the run
+found (the red team ledger's finding `RT-89`); whether it runs before the
+paper draft is one of the questions the ruling of 2026-09-20 on centers as a
+matter of degree expressly leaves undecided
+(`docs/rulings/2026-09-20-center-as-degree.md`, "What this ruling does not
+decide"). Causal patching, unwritten and unrun. The mid-episode re-indexing
+probe, the registered discriminator for pointer against carried binding,
+unrun. The lesion half of the registered other-agent control, unavailable.
+The relational-encoding route at the other agent's revision value, untested.
+
+Patching is not scheduled for A3; the December-result ruling assigns its
+construction to the successor (`docs/rulings/2026-09-20-december-result-roadmap.md`,
+item 2). No further investigation of the other-agent revision-value position is
+authorised under the follow-up ruling
+(`docs/rulings/2026-09-21-followup-runs-and-blind-arm.md`, item 3). The
+marker-word fitted read remains deferred, and whether it runs before the paper
+remains undecided. These limitations do not imply that the missing measurements
+have been satisfied.
+
+**Money.** As of the compute ledger's 2026-09-21 row (the measurement
+rehearsal's rented slice), about $46.2 was counted against Amendment A3's $100
+stop and about $227.6 had been spent across the programme, including $1.904
+spent on the two follow-up machines of 2026-09-20 that the instrument's own
+reproducibility check refused (`compute-ledger.md`). The programme ceiling
+those figures count against was raised from $400 to $450 on 2026-09-25
+(`docs/rulings/2026-09-26-weekend-1-queue.md`, page 6). The ledger was re-read
+on 2026-09-25 and carries no row after 2026-09-21.
