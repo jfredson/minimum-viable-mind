@@ -1,0 +1,20 @@
+Folder-clear refusals, run on the 8aaf6e4 launcher with a blocking runpodctl first on the path.
+$ CLEAR_RUN_SUBDIR=1 DRYRUN=1 OUT=slice_handshake SCALE=10M MAXTOK=2000000 launch_a3_fetch_first.sh
+refusing to run: CLEAR_RUN_SUBDIR=1 needs RUN_SUBDIR -- the shared run folder is never emptied
+exit=2
+$ CLEAR_RUN_SUBDIR=1 RUN_SUBDIR= DRYRUN= OUT=slice_handshake SCALE=10M MAXTOK=2000000 launch_a3_fetch_first.sh
+refusing to run: CLEAR_RUN_SUBDIR=1 needs RUN_SUBDIR -- the shared run folder is never emptied
+exit=2
+$ CLEAR_RUN_SUBDIR=yes RUN_SUBDIR=slice_handshake DRYRUN=1 OUT=slice_handshake SCALE=10M MAXTOK=2000000 launch_a3_fetch_first.sh
+refusing to run: CLEAR_RUN_SUBDIR takes 1 or nothing, got 'yes'
+exit=2
+$ RUN_SUBDIR=. DRYRUN=1 OUT=slice_handshake SCALE=10M MAXTOK=2000000 launch_a3_fetch_first.sh
+refusing to run: RUN_SUBDIR must be a plain folder name, got '.'
+exit=2
+$ RUN_SUBDIR=.. DRYRUN=1 OUT=slice_handshake SCALE=10M MAXTOK=2000000 launch_a3_fetch_first.sh
+refusing to run: RUN_SUBDIR must be a plain folder name, got '..'
+exit=2
+$ RUN_SUBDIR=a/b DRYRUN=1 OUT=slice_handshake SCALE=10M MAXTOK=2000000 launch_a3_fetch_first.sh
+refusing to run: RUN_SUBDIR must be a plain folder name, got 'a/b'
+exit=2
+calls that reached the blocking runpodctl: 0

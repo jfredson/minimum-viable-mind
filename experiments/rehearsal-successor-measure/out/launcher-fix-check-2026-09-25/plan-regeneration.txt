@@ -1,0 +1,30 @@
+Stager at 8aaf6e4 run in an extracted copy of that commit (git archive), RUN_FROM left at its default.
+$ cmp <committed plan at 8aaf6e4> <regenerated plan>
+identical
+$ diff <plan.diff hunks> <regenerated diff hunks>   (header lines dropped: they name file paths and blob ids)
+     111
+     111
+hunks identical
+$ grep -c 'worktrees\|jobs/' <regenerated plan>
+0
+--- the stager's preconditions:
+staging the rented slice — NOTHING IS RENTED AND NOTHING IS SPENT
+
+local preconditions
+  [ ok ] interpreter: /Users/john/Code/minimum-viable-mind/.venv/bin/python
+  [ ok ] grammar self-test passes
+  [ ok ] arms self-test passes
+  [ ok ] transplant self-test passes
+  [ ok ] measure self-test passes
+  [ ok ] the derived launcher is present (registered launcher untouched)
+  [ ok ] the laptop's machine deadline is present
+  [ ok ] the machine's own shutdown watcher is present
+  [ ok ] the shutdown watcher parses
+  [ ok ] a dedicated reaper key is present and is mode 600
+  [ ok ] launchers refuse arguments (RT-198 check passes)
+  [note] launch_a3.sh is registered and still unguarded: pass it NO
+  [note] arguments until the Gate A amendment clears.
+  [ ok ] no remote background start can hold the launcher (check_remote_forms.py passes)
+  [ ok ] runpodctl is on the path: /Users/john/.claude/jobs/1a8d030f/tmp/block/runpodctl
+
+the plan

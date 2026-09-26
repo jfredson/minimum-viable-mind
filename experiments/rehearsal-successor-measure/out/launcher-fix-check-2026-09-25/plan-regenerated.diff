@@ -1,0 +1,115 @@
+diff --git a/Users/john/.claude/jobs/1a8d030f/tmp/main44/experiments/rehearsal-successor-measure/out/rented-slice-plan.txt b/Users/john/.claude/jobs/1a8d030f/tmp/fix/experiments/rehearsal-successor-measure/out/rented-slice-plan.txt
+index 8febd01..e98fe44 100644
+--- a/Users/john/.claude/jobs/1a8d030f/tmp/main44/experiments/rehearsal-successor-measure/out/rented-slice-plan.txt
++++ b/Users/john/.claude/jobs/1a8d030f/tmp/fix/experiments/rehearsal-successor-measure/out/rented-slice-plan.txt
+@@ -20,7 +20,8 @@ THE COMMANDS, IN ORDER
+   run below is the genuinely inert path — its guard exits before anything is
+   created — and the launchers now refuse any argument outright.
+     DRYRUN=1 SCALE=10M MAXTOK=2000000 OUT=slice_handshake \
+-      GRACE_S=600 RUN_SUBDIR=slice_handshake \
++      GRACE_S=600 RUN_SUBDIR=slice_handshake CLEAR_RUN_SUBDIR=1 \
++      HARD_CAP_USD=2.00 RATE_PER_HOUR_USD=0.99 \
+       PRE_TRAIN_DIR=/Users/john/Code/minimum-viable-mind/experiments/rehearsal-successor-measure/src \
+       PRE_TRAIN_CMD="python bench_arms.py --device cuda --steps 50 --batch 32 --out /workspace/mvm-out/slice_handshake/bench_arms.json" \
+       /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh
+@@ -28,16 +29,43 @@ THE COMMANDS, IN ORDER
+   and a "before training" block naming bench_arms.py. If it prints the
+   shared folder /workspace/mvm-out instead, stop: the final copy would
+   bring home every earlier run's model files as well.
++  It must also print these two, added 2026-09-25 after the first attempt
++  hung; if either is missing, stop:
++    "machine deadline: ON -- hard cap $2.00 at $0.99 an hour"
++        and "deletes the machine 7272s after creation"
++    "clear the run folder, before the shutdown watcher starts"
++        naming /workspace/mvm-out/slice_handshake
+ 
+   Step 1 — the toy run, through the DERIVED launcher (the registered
+   launcher launch_a3.sh is not used and not edited):
+     SCALE=10M MAXTOK=2000000 OUT=slice_handshake \
+-      GRACE_S=600 RUN_SUBDIR=slice_handshake \
++      GRACE_S=600 RUN_SUBDIR=slice_handshake CLEAR_RUN_SUBDIR=1 \
++      HARD_CAP_USD=2.00 RATE_PER_HOUR_USD=0.99 \
+       PRE_TRAIN_DIR=/Users/john/Code/minimum-viable-mind/experiments/rehearsal-successor-measure/src \
+       PRE_TRAIN_CMD="python bench_arms.py --device cuda --steps 50 --batch 32 --out /workspace/mvm-out/slice_handshake/bench_arms.json" \
+       /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh
+   This one command also does the timing (step 2). There is nothing to type
+   on the machine.
++  Straight after "pod:" it must print "MACHINE DEADLINE ARMED", with the
++  time this laptop will delete the machine: 2 h 01 min (7272s)
++  after creation, which is the hard cap of $2.00 at $0.99 an
++  hour. If it does not, delete the machine at once
++  (runpodctl pod delete <id>) and stop: the cap is not enforced.
++
++  Step 1a — the pre-flight clear, done by the launcher inside step 1,
++  BEFORE the machine's shutdown watcher starts. The first attempt, on
++  2026-09-25, left /workspace/mvm-out/slice_handshake holding one file,
++  reaper.log (docs/2026-09-25-rented-slice-findings.md, section 6), read
++  on the machine 33 seconds before it was deleted. The volume cannot be
++  read from this laptop, so this is the first moment it can be checked.
++  The launcher lists the folder, names any "LEFTOVER:" finished-marker
++  (slice_handshake.DONE), receipt (slice_handshake.FETCHED), model file or timing
++  file, and then empties it. A leftover marker would otherwise let the
++  watcher delete the machine before training. Look for:
++    "clearing the run folder before anything on the machine starts"
++    "files left after clearing: 0"
++  Any "LEFTOVER:" line is a finding to record, not a reason to stop: the
++  clear has already removed it.
+ 
+   Step 2 — the timing, done by the launcher inside step 1. After the
+   machine is up and its shutdown path is settled, and BEFORE training
+@@ -57,7 +85,11 @@ THE COMMANDS, IN ORDER
+     "before-training step finished (exit 0)"
+ 
+   Step 3 — FIRST, read which shutdown path the launcher armed. It says so
+-  after "ssh up:" and before training starts:
++  after "ssh up:" and before training starts. Since 2026-09-25 the command
++  that starts the machine's watcher cannot hold the launcher: it returns at
++  once, and is cut off at 60 seconds if it does not. A silence of more than
++  a couple of minutes after "VERIFIED" is therefore a difference from the
++  plan: stop and delete.
+     "shutdown watcher RUNNING on the machine"  — the handshake is being
+         tested; go on to the three signals below.
+     "SHUTDOWN WATCHER DID NOT START" or "REAP: pod-side reaping NOT armed"
+@@ -102,6 +134,11 @@ WHAT PASSING LOOKS LIKE, WRITTEN DOWN BEFORE IT RUNS
+     NO VERDICT  the slice does not run. Then the handshake is exercised
+           against local stand-ins only, and the registration says so in its
+           own text.
++    CUT OFF BY THE CAP  (added 2026-09-25) the laptop's machine deadline
++          deleted the machine: its log, machine-deadline.log beside the
++          run's files, says "DEADLINE REACHED". Whatever the handshake had
++          reached by then is reported as far as it got, and the handshake
++          is NOT a pass: the thing that ended the billing was the cap.
+ 
+ WHAT IT COSTS
+   A toy run at 2000000 tokens finishes in a few minutes; timing 50
+@@ -111,14 +148,28 @@ WHAT IT COSTS
+   one (2.5 GB on each of the last two A3 copies). Well under an hour of
+   rented time at $0.99 an hour.
+     estimate   about $0.75 to $1.00
+-    hard cap   $2.00
++    hard cap   $2.00, ENFORCED BY CODE since 2026-09-25: this laptop
++               deletes the machine 2 h 01 min after creation
++               ($2.00 / $0.99 an hour = 7272s),
++               whatever the run is doing, and sooner if the vendor's
++               creation record states a higher rate. The first attempt had
++               no such deadline, and unattended would have billed until the
++               machine's own +24h deadline, about $24.
++               The deadline keeps this laptop's clock, so the laptop must
++               stay awake and on the network until then, as it already
++               must for the watchdog. Billing between the deadline and the
++               vendor acting on the delete is not covered (seconds).
+   The precedent for a short deliberately-capped test is the self-delete test
+   of 2026-09-16, authorised at a $0.50 cap and billed at $0.29. This sits
+   inside the first release of money John authorised on 2026-09-21, whose
+   rehearsal line is up to $10.
+ 
+ WHAT IS OWED BEFORE IT RUNS
+-  - John's spoken go naming this run, per commitment C2(b).
++  - John's spoken go naming this run, per commitment C2(b). The go of
++    2026-09-25 named one run of the plan at commit 4d98cfc; that run
++    happened and was stopped when the launcher hung
++    (docs/2026-09-25-rented-slice-findings.md), so a fresh go names this
++    plan and the fixed launcher.
+   - A decision on the dedicated reaper key: without it the machine's own
+     watcher is not armed and only the laptop-only path is tested, which is
+     the smaller half of what the slice is for.

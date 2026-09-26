@@ -1,0 +1,20 @@
+$ bash four-selftests.sh   (a blocking runpodctl first on the path; any call past a test's own stand-ins is recorded and refused)
+2026-09-26T01:27:14Z
+check_launcher_argument_guard.sh exit=0
+  [ ok ] so these checks detect the property rather than always passing
+
+all checks pass. nothing was created and nothing was spent.
+launch_gate_selftest.sh exit=0
+checks passed: 369   failed: 0
+launch gate self-test OK — nothing was rented, no vendor was contacted,
+and this Mac's real power settings were never read or changed.
+sleep_guard_selftest.sh exit=0
+checks passed: 67   failed: 0
+sleep guard self-test OK — nothing was rented, no vendor was contacted,
+and this Mac's real power settings were never read or changed.
+reap_handshake_selftest.sh exit=0
+
+checks passed: 26   failed: 0
+reap handshake self-test OK — no machine was rented and no vendor contacted
+calls that reached the blocking runpodctl:        0
+argument-guard [ ok ] lines: 21

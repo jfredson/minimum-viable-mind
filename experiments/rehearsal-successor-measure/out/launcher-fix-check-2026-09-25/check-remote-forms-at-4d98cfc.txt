@@ -1,0 +1,14 @@
+$ git show 4d98cfc:experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh > launcher-4d98cfc.sh
+$ LAUNCHER=launcher-4d98cfc.sh python3 <8aaf6e4>/src/check_remote_forms.py
+remote background starts, run against a real local shell (| cat stands in for ssh; the background program holds 8s)
+
+launcher-4d98cfc.sh
+  [FAIL] launcher-4d98cfc.sh line 467: returned after 8.1s -- HOLDS the connection and nothing cuts it off: a real ssh would wait for the background program
+  [ ok ] launcher-4d98cfc.sh line 547: returned after 8.1s -- HOLDS the connection; cut off by the launcher's inline cap 60s (line 552)
+
+negative control: the pre-fix form of 2026-09-25 must be REJECTED
+  [rejected] stand-in line 1: returned after 8.1s -- HOLDS the connection and nothing cuts it off: a real ssh would wait for the background program
+  [ ok ] the uncapped `cd … && nohup … &` stand-in is rejected, so this check detects the hang
+
+1 problem(s). Nothing was rented and nothing was spent.
+exit=1

@@ -1,0 +1,10 @@
+$ git show -s --format='%H author %aI committer %cI' 8af960a
+8af960a145dad4a290030f5b6db1c6ca3a81ba01 author 2026-09-25T16:47:19-07:00 committer 2026-09-25T16:47:19-07:00
+$ git show 8af960a:…/compute-ledger.md | grep '^| 2026-09-25' | cut -d'|' -f6-8   (hours, $ est, $ actual)
+ **est well under 1h**: a toy run of a few minutes, fifty timed steps on each of three architectures, and a bounded wait of 600 seconds that the passing path never reaches | **$0.75–1.00, hard cap $2.00** | — 
+$ grep -E 'ledger row|Rented by|creating' rented-slice-2026-09-25/step1-launch.txt; cat step1-start.txt
+local pre-flight: is there a ledger row with an estimate for 'slice_handshake'?
+  ok: ledger row at line 75 names 'slice_handshake', dated within 2 days, estimate written, no actual cost yet
+creating SECURE pod (NVIDIA GeForce RTX 5090) for 10M/2000000 tok (out: slice_handshake)
+  "lastStatusChange": "Rented by User: Fri Sep 25 2026 23:48:33 GMT+0000 (Coordinated Universal Time)",
+2026-09-25T23:48:27Z
