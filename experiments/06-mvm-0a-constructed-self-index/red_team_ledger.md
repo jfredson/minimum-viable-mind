@@ -754,6 +754,7 @@ rows; and move the blind-arm reconciliation somewhere a reviewer may read it.
 | RT-162 | The registered blind-localization arm appears nowhere in the block, including the ordering John ruled the day before (`RT-141`, one of that block's three decisions: it "runs before any further work on that position"), and its status is formally unreconciled in the last committed ruling on it | serious | ACCEPT (drafted) | It is the measurement that makes every localization number in the block readable, and `separation-clause-requirements.md` Part 3 item 1 requires "a positive control the stack recovers, on this design". The Gate C review already made this finding against the step 4 proposal (`RT-99`) with the closure "the step 4 text says where step 3 stands"; the closure block is that text's registered descendant and says nothing. Done in version 3 as a carried open item. |
 | RT-163 | The ceiling precondition is not handed to the successor: "If A4 opens, measuring the control's ceiling properly is a precondition of the amendment" (John, 2026-09-17), carried at `RT-69` and `RT-115` | serious | ACCEPT (drafted) | The successor is a new design with new contrast cases registering on a date this block sets. It is handed the purpose and the date and not the one precondition John attached to any successor amendment. One sentence. Done in version 3. |
 | RT-164 | The block adopts hard kill K5's exact consequence — the term *not testable (localization)* — without saying whether K5 fired. Patching never ran, so the convergence requirement of §3.2 step 4 cannot be met on any seed. Separately, the two-instrument requirement is given only as an explanation for A3 and not as the standing requirement the successor inherits | serious | ACCEPT (drafted) | A hard kill is a registered event with consequences attached ("no further seeds"); adopting its outcome while leaving it unnamed makes the amendment's own kill list unauditable. Either it fired and the block records it, or the block says why the same term applies without it. Done in version 3. |
+| — (annotation to RT-164, 2026-09-25) | RT-164's closure note, "Done in version 3", was not so. Neither version 3 nor version 4 of the closure text names hard kill K5 (the registered stop condition "probe-patching convergence fails on all three seeds"); both outside reviewers of version 4 found this independently (Gemini G5, ChatGPT A7), and neither of the two checks of version 4 looked for it | serious | RULED 2026-09-25 by John, item 1 of `docs/rulings/2026-09-25-a3-closure-tier2-dispositions.md`: K5 is not reached | K5 tests whether probe and causal patching agree; patching was never built for this design (RT-96), so the test was never run. *Not testable (localization)* rests on §3.2's convergence requirement, and A3 closes under the pre-registration's loss condition with no further A3 seeds. Version 5 of the closure text (`docs/a3-closure-text-draft-2026-09-25-v5.md`) names K5 and says so. The RT-164 row above is not edited. |
 | RT-165 | The deferred marker-word read is not carried as an open item in the registered text. `RT-89` (fatal to a sentence) and `RT-112` establish that closure "can only make the narrower sentence until it runs", and Gemini's fifth question is carried open for John on exactly this: it is "the only sensitive-instrument test of the registered probe target", about seventy processor-hours at $0 | serious | ACCEPT (drafted) | The closure rule provides for precisely this: serious findings are closed "or carried as an open item named in the registered text, with John's ruling and reason". A reader of `amendment-a3.md` otherwise cannot tell whether the line is parked one cheap run short of its registered target or finished. Done in version 3. |
 | RT-166 | No registered bin or signature is named. The closest fit, H_diffuse, is not addressed: its first and third conjuncts happened and its second did not, because no subspace was ever localized to compare against the matched controls. The heading also still carries the placeholder "[date of Gate A pass]" | worth-noting | ACCEPT (drafted) | Why a registered signature did not fire is the kind of thing a closure block should say, especially when the signature and the outcome are one missing run apart. The placeholder is fine in a draft and cannot survive the registration commit; the closure line should name the commit that fills it. Done in version 3. |
 | RT-167 | "Outcome: not testable" standing alone will be read as "Amendment A3 found nothing", when the programme's strongest measured result — a three-seed input dependence replicating to within 0.011 and collapsing at seven to nine times the locked threshold — is three lines below it | serious | ACCEPT (drafted) | Not a case for softening the registered word. A summary table carries the outcome line and not the paragraph, so the outcome line should carry both halves. One added clause. Done in version 3. |
@@ -761,3 +762,106 @@ rows; and move the blind-arm reconciliation somewhere a reviewer may read it.
 | RT-169 | "Strong, readily recoverable versions of it are less plausible than before" is the block's only inference and carries no number. The record's figure is about one legible episode in eleven (the correction note of 2026-09-20), and Astra's eleventh finding, accepted, says that figure "is not measured detection power" and is to be annotated as heuristic | serious | ACCEPT (drafted) | The one inference rests on a number the block does not give, which the record calls heuristic, and which is a good deal less impressive than "strong" implies. Compounds `RT-161`, which says the sentence points the wrong way to begin with. Version 3 replaces it with a descriptive sentence carrying the heuristic reach. |
 | RT-170 | Bare identifiers in registered text: "§3.1", "§3.2", "§L2(a)", "ledger RT-120 to RT-142", and in the preamble "RT-58 and RT-59" and "PR 10" | worth-noting | ACCEPT (drafted) | The house plain-language rule, already ruled once on the step 4 proposal (`RT-116`), where John was "asked to rule that three things happen and is not told what any of them is". Registered text is where it matters most, because it outlives the session that wrote it. Four or five words each. Done in version 3. |
 | RT-171 | The two refused claim phrases are named and refused inside the registered text rather than merely omitted | worth-noting (credit) | ACCEPT AS CREDIT (drafted) | An omission can be undone by a later writer who does not know it was deliberate; a refusal that names what it refuses cannot. Given that the programme's recorded failure mode is a caveat drifting to nothing across successive documents, this is the best-designed sentence in the block and should be the template for the limits it currently only implies. |
+
+## Tier 1 reviewer-owned check of the closure text, version 5 (2026-09-25): eight findings, ruled by John the same day
+
+*Added 2026-09-25 (Pacific) by the session that appended the Amendment A3
+closure block to `amendment-a3.md` (the registration commit). The findings are
+the tier 1 reviewer's, from the closure rule's reviewer-owned check of version 5
+(`reviews/2026-09-25-a3-closure-v5-tier1-check-claude-worktree.md`, on the main
+line at commit `0e9cd4a`, pull request 45; its Re-check section, which closes
+RT-204 and adds RT-211, landed as commit `cc26bbd`, pull request 47). John's
+rulings are recorded in `docs/rulings/2026-09-25-a3-closure-v5-tier1-rulings.md`;
+the dispositions are his and the wording of these rows is this session's. The
+check ran what the closure rule asks of a Gate A with nothing fatal in it: 82
+lookups of figures and quotations in their cited files (the check's appendix
+E), the five known failures tested against the text (its section 5), and a
+word-for-word check of every adopted wording (its appendix B). Nothing fatal.*
+
+| ID | Finding | Severity | Ruling (John, 2026-09-25) | Reason / closure |
+|---|---|---|---|---|
+| RT-204 | The successor paragraph's schedule sentence cites `docs/rulings/2026-09-20-december-result-roadmap.md` (with its 2026-09-21 annotation) for the two kill dates, and that file's stated consequence for a missed date — dropping the roadmap to outcome R4 — was withdrawn by item 23 of `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, which the sentence did not cite; the sentence's "launch of the registered runs" is also wider than the step item 23 says the second date binds | serious | ACCEPT — closed by the clause the check proposed | A reader following the citation would conclude a missed date means hibernation, which is no longer the rule. **Closure:** the proposed clause added after the citation, word for word, plus a gloss on R4 in item 23's own words, landed in version 5 at `3393f7d` (pull request 43, merged as `ea52a02`); MEASURED by the reviewer, who did not write the fix, in the check file's Re-check section "RT-204, closed: the clause as landed": the landed clause minus the gloss equals the proposal, the gloss is present exactly once, and item 23 says each thing the clause says. Closed. |
+| RT-205 | "135 tests read the registered marker-word target and 135 read the register index" is cited to `powered-position-sweep-findings.md`, which states 270 and never 135 | minor | ACCEPT as wording | The number is right (nine testable positions × five layers × three checkpoints, `powered-position-sweep-method.md`) and traceable. A parenthesis after the citation now says 135 is derived and cites the method file; ChatGPT's adopted sentences are unchanged. Applied at `3393f7d`, confirmed by the Re-check. |
+| RT-206 | The $450 programme ceiling the money paragraph cites (`docs/rulings/2026-09-26-weekend-1-queue.md`, page 6) has no line in `compute-ledger.md`, the programme's single home for money | minor | LEDGER NOTE — not a text defect | Version 5 does what item 8 of the tier 2 ruling says. A dated ceiling note now sits under the ledger's header paragraph, recording $200, then $400 (2026-08-16), then $450 (2026-09-25); the stale $200 cap sentence is annotated beside, not rewritten. Landed with the registration commit. |
+| RT-207 | The gloss on "L1 subspace" says "§3.2's name"; section 3.1 of `amendment-a3.md` defines L1 and section 3.2 says how it is localized | minor | ACCEPT as wording | "§3.1's name". Applied at `3393f7d`, confirmed by the Re-check. |
+| RT-208 | The "causal patching" gloss, inserted into a version 4 sentence that item 2 of the tier 2 ruling did not replace, is not declared in the change table, whose preamble promises every gloss is listed | minor | ACCEPT as wording | Declared in the change table's item 2 row. No change to the block. Applied at `3393f7d`, confirmed by the Re-check. |
+| RT-209 | Version 4's clause that a blind-arm re-run would be a $0 side item does not survive item 14's replacement of the blind-arm sentences | minor | STAYS AS RECORDED | The drop is deliberate, not a loss: the fact is in `docs/rulings/2026-09-20-december-result-roadmap.md` (item 3) and `docs/rulings/2026-09-21-followup-runs-and-blind-arm.md`, both cited by the block. No change. |
+| RT-210 | The successor's description ("matched-role causal-interchange", "learn-both"), inherited from version 4, cites only `docs/competing-mechanisms-2026-09-20.md`, which contains neither term | minor | ACCEPT as wording | Now cites item 5 of `docs/rulings/2026-09-20-center-as-degree.md` for the name and `docs/rulings/2026-09-23-range-and-direction-only.md` for "learn-both", keeping the competing-mechanisms file for the contrast cases. Applied at `3393f7d`, confirmed by the Re-check. |
+| RT-211 | The version 5 file cites the check as commit `99b8b64`, which the squash merge of pull request 45 left off the main line; the check is at `0e9cd4a` (a Re-check finding) | minor | ACCEPT — a citation fix outside the block | Both citations (the preamble, line 38, and the change table's header, line 337, of `docs/a3-closure-text-draft-2026-09-25-v5.md`) changed to `0e9cd4a` in the registration commit. The closure block carries neither and is untouched. |
+
+**Numbering note, 2026-09-25**, under item 21 of
+`docs/rulings/2026-09-25-a3-closure-tier2-dispositions.md` (the numbering rule:
+adopted findings are numbered from RT-204, and a later session reconciles RT-172
+to RT-203, "which appear in filed reviews but have no ledger rows"). Nothing is
+renumbered here. What the thirty-two numbers refer to, from a search of every
+`.md` and `.toml` file in the repository for them on 2026-09-25 (162 matching
+lines in 20 files; none of the thirty-two has a row in this ledger, whose rows
+stopped at RT-171 before this section). They were assigned in filed reviews
+without ledger rows:
+
+- **RT-172 to RT-188** were assigned by the review of the successor proposal,
+  `reviews/2026-09-21-successor-proposal-claude-worktree.md` (its line 14: "This
+  review runs RT-172 to RT-188"; the findings table is at its lines 56 to 72,
+  and every severity and summary below is that table's). RT-172 (fatal): the
+  registered reading divides by an uncorrected accuracy, so its top of scale is
+  different for every arm — the per-arm-ceiling finding that
+  `docs/known-failure-modes.md` and `docs/outside-review-protocol.md` now cite
+  by number. RT-173 (fatal): the discriminating control's first cell is empty by
+  construction. RT-174 to RT-182 (serious, lines 58 to 66 of
+  `reviews/2026-09-21-successor-proposal-claude-worktree.md`): the
+  development-run price cites the wrong ledger row; the 1.55-times premium is
+  attached to a gap of 1.195 times; the plan totals $175 against a $130 cap it
+  never reconciles; the one permitted re-run is paid for twice under decision
+  7's named alternative; the most likely outcome's cost is stated as about $32
+  in one section and about $44 in two; the rehearsal measures three
+  architectures John has not ruled on, on code and a grammar that are not
+  frozen; three human-gated steps sit between the first registered run and the
+  remaining eight; "the matched control first ran on 2026-09-21" repeats an
+  elision this ledger ruled fatal; the invalid verdict has no registered
+  outcome term. Of these, RT-176 is closed in words: the first part of page 6
+  of `docs/rulings/2026-09-26-weekend-1-queue.md` says "This sentence is the
+  closure of RT-176". RT-183 to RT-187 (worth-noting, lines 67 to 71 of the
+  same review): the rented slice's pass rule assumes three shutdowns where its
+  cost table buys one; a method note cited on a branch when it was already on
+  the main line; a ruling's figure quoted as $328 where the ruling says $326; a
+  ten-hour run's destruction and $97.04 attributed to one failure where the
+  record has two events; bare identifiers and unglossed terms. RT-188 (credit):
+  what held.
+- **RT-189 to RT-197** were assigned by the check of the protocol's
+  pairing-rule amendment,
+  `reviews/2026-09-21-protocol-pairing-rule-claude-worktree.md` (its line 50,
+  numbering from RT-189 to avoid a collision with the review above). RT-189
+  (fatal): ruling item 3 recorded as landed and did not land — which the
+  protocol-repair check below records as now landed, "in all three places" (its
+  line 81). RT-190 to RT-193 (serious): failure 2's test cannot fail on the
+  failure it is written from; the first part of failure 3's test does not run;
+  the new filing rule names a precedent that does not contain what it claims;
+  failure 4's word list misses the document's own headline claim. RT-194 to
+  RT-197 (worth-noting): failure 1's first test is a display, not a detector;
+  citations that sit off the main line; three seams of internal consistency;
+  the plain-language rule.
+- **RT-198 to RT-203** were assigned by the check of the protocol repair,
+  `reviews/2026-09-21-protocol-repair-claude-worktree.md` (its line 72: "I
+  number from RT-198"). RT-198 (worth-noting): failure 4's first-part
+  route-sentence search is a proxy for a detector, and the entry does not say
+  so. RT-199 and RT-200 (serious): failure 2's second part is neither printed
+  nor run, against the list's own claim that every repaired test is printed
+  with an output; the ruling file still says item 3 landed via pull request 13.
+  RT-201 to RT-203 (worth-noting): whether the filing rule is followable as
+  written; four bare commit identifiers; a count that does not match what it
+  counts.
+- **RT-198 carries two meanings.** Besides the protocol-repair finding above,
+  `docs/rulings/2026-09-22-launcher-argument-guard.md` (line 12),
+  `argument-guard-method.md` (line 10), `docs/known-failure-modes.md` (under
+  failure 5) and this experiment's `compute-ledger.md` (its row for the
+  launcher-argument guard) all use RT-198 for the launcher's silent-argument
+  finding of 2026-09-22 and say it is filed in this ledger. It is not: neither
+  meaning has a row. The reconciliation that item 21 assigns to a later session
+  has to settle which finding keeps the number.
+- **RT-204 to RT-211** are, by the rows above, the tier 1 check's findings, on
+  John's instruction of 2026-09-25 to the session that added them. Item 21 had
+  reserved RT-204 onward for the adopted tier 2 findings (Gemini G1 to G6,
+  ChatGPT A1 to A15) when they reach this ledger; they have no rows yet and,
+  when they get them, take numbers after RT-211. The check's own "note on
+  numbering" (its section 6) foresaw the collision and said the ledger's rows
+  should win.

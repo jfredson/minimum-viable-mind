@@ -7,6 +7,25 @@ derivations in `registration-decision-memo.md` §1. Once the registration
 lands, exceeding the cap is a protocol violation, not just an overspend:
 work stops and any continuation is a registered amendment.*
 
+**Ceiling note, 2026-09-25 (Pacific), beside the cap sentence above.** The cap
+the paragraph above states — $200 for the entire registered design, adjudicated
+2026-08-07 — is left exactly as it was written and is no longer the ceiling. It
+was raised to $400 on 2026-08-16, when Amendment A2 registered (the top-up
+paragraph of 2026-08-16 under "Reconciliation baseline" below: "the $400 A2
+cap"), and the programme ceiling was raised again, from $400 to **$450**, on
+2026-09-25 (`docs/rulings/2026-09-26-weekend-1-queue.md`, page 6, "The
+envelope": the base plan of about $175 on top of about $227.63 spent, plus one
+extension, with $3 to $15 left; it does not hold two extensions). Rule 2 below
+still says $200 for the same reason, and reads $450 from this date. Every
+running total in the table below, up to and including the 2026-09-21 row, is
+stated against $400, as it was when written; nothing below is rewritten.
+Recorded here because the tier 1 check of the Amendment A3 closure text,
+version 5 (`reviews/2026-09-25-a3-closure-v5-tier1-check-claude-worktree.md`,
+its finding RT-206), found that the $450 ceiling had no line in this ledger,
+and John ruled on 2026-09-25 that it is a ledger note
+(`docs/rulings/2026-09-25-a3-closure-v5-tier1-rulings.md`, item 3). Written by
+the session that appended the Amendment A3 closure block to `amendment-a3.md`.
+
 ## Rules
 
 1. **Every pod session gets a row** — written in the same session the pod

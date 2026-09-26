@@ -35,7 +35,7 @@ where it was, beside version 4.*
 closure block. It has not landed. The tier 1 reviewer-owned check that item 22
 of the ruling requires has been run and filed
 (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-a3-closure-v5-tier1-check-claude-worktree.md`,
-commit `99b8b64`, pull request 45). It found one serious finding (RT-204) and
+commit `0e9cd4a`, pull request 45). It found one serious finding (RT-204) and
 six minor ones (RT-205 to RT-210). John ruled on them on 2026-09-25, and this
 version was revised the same day to apply those rulings; the revisions are the
 last rows of the change table after the block. Those revisions are binding text
@@ -334,7 +334,7 @@ beside it is named.
 These rows apply John's rulings of 2026-09-25 on the tier 1 reviewer-owned check
 of this version at commit `432e966`
 (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-a3-closure-v5-tier1-check-claude-worktree.md`,
-commit `99b8b64`, pull request 45; "section 3" below is that file's findings
+commit `0e9cd4a`, pull request 45; "section 3" below is that file's findings
 section). The rulings were given in the session that asked for these revisions
 and are not yet in a committed ruling file. They were written by this version's
 writer and are owed a re-check by a different session.

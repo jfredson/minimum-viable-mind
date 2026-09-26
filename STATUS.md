@@ -19,6 +19,35 @@ disagree.
 *This section is the current state. Everything below it is the older
 record, newest first, and is left exactly as written.*
 
+**2026-09-25: Amendment A3 closed on the registration commit.** Version 5 of
+the closure text (`docs/a3-closure-text-draft-2026-09-25-v5.md`, on the main
+line as `ea52a02`, pull request 43; its revisions after the tier 1 check are the
+branch commit `3393f7d` that the checks name) was appended to
+`experiments/06-mvm-0a-constructed-self-index/amendment-a3.md` as a dated
+closure block, verbatim from the main-line file with the date placeholder
+filled and the three-line note about the placeholder dropped, by a session that
+neither wrote it nor checked it. It went in after the tier 1 reviewer-owned
+check and its Re-check
+(`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-a3-closure-v5-tier1-check-claude-worktree.md`)
+closed with the line that version 5 at `3393f7d` may be appended. The outcome,
+as the block's headline states it: **not testable — the registered comparison
+was undefined for every possible model. Separately, removing the
+ownership-input channel reduced primary-battery accuracy on all three trained
+seeds.** John's merge of the pull request that carries this paragraph (pull
+request PRNUM) is the registration commit. The same pull request lands the two
+annotations proposed on 2026-09-25 (a row beside RT-164 in the red team ledger,
+and a separate dated file beside the ChatGPT review), red team ledger rows
+RT-204 to RT-211 with John's rulings on the tier 1 check
+(`docs/rulings/2026-09-25-a3-closure-v5-tier1-rulings.md`), a dated note in
+that ledger listing what RT-172 to RT-203 refer to, and a dated ceiling note in
+the compute ledger recording the programme ceiling raised from $400 to $450 on
+2026-09-25 (`docs/rulings/2026-09-26-weekend-1-queue.md`, page 6). The compute
+ledger was re-read on 2026-09-25: its last row is still the 2026-09-21 row, so
+the block's money sentence stands — about $46.2 of Amendment A3's $100 stop and
+about $227.6 across the programme
+(`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`). Nothing was
+launched, rented or spent.
+
 **Read the entry below first; it is still right.** It is the handoff for
 2026-09-22 and 2026-09-23. It was drafted by a session that ran from the wrong
 folder (`~/Code`, which is not a git repository), left there as
