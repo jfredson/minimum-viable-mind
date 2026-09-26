@@ -1,0 +1,99 @@
+{
+  "all_agree": true,
+  "entries_in_list": 15,
+  "files": {
+    "ckpt_C_base_seed0.pt": {
+      "agree": true,
+      "first_pass_read": "47326bb90c5f4ad03beacc74da1d33eec1fd4462314a2e9ce385c36a1e7ffeee",
+      "models_commit_list": "47326bb90c5f4ad03beacc74da1d33eec1fd4462314a2e9ce385c36a1e7ffeee",
+      "second_pass_read": "47326bb90c5f4ad03beacc74da1d33eec1fd4462314a2e9ce385c36a1e7ffeee"
+    },
+    "ckpt_C_base_seed1.pt": {
+      "agree": true,
+      "first_pass_read": "b3596f309e780e5820a7064ccb207a413a71be439170986b18479fe957e0af2a",
+      "models_commit_list": "b3596f309e780e5820a7064ccb207a413a71be439170986b18479fe957e0af2a",
+      "second_pass_read": "b3596f309e780e5820a7064ccb207a413a71be439170986b18479fe957e0af2a"
+    },
+    "ckpt_C_base_seed2.pt": {
+      "agree": true,
+      "first_pass_read": "2fc87d0454af22bc2d1c00b7247c220ff0705b8c2500005b47a9cb491ac202f0",
+      "models_commit_list": "2fc87d0454af22bc2d1c00b7247c220ff0705b8c2500005b47a9cb491ac202f0",
+      "second_pass_read": "2fc87d0454af22bc2d1c00b7247c220ff0705b8c2500005b47a9cb491ac202f0"
+    },
+    "ckpt_F_base_seed0.pt": {
+      "agree": true,
+      "first_pass_read": "c3afe0c6354f49f185b1806a433e6f0563b48a14f6e4559b2264ecb0abeea88d",
+      "models_commit_list": "c3afe0c6354f49f185b1806a433e6f0563b48a14f6e4559b2264ecb0abeea88d",
+      "second_pass_read": "c3afe0c6354f49f185b1806a433e6f0563b48a14f6e4559b2264ecb0abeea88d"
+    },
+    "ckpt_F_base_seed1.pt": {
+      "agree": true,
+      "first_pass_read": "2e51df7efd952e044b63702a5dc63c88e12de41ffe89c1b15c35892756cb219b",
+      "models_commit_list": "2e51df7efd952e044b63702a5dc63c88e12de41ffe89c1b15c35892756cb219b",
+      "second_pass_read": "2e51df7efd952e044b63702a5dc63c88e12de41ffe89c1b15c35892756cb219b"
+    },
+    "ckpt_F_base_seed2.pt": {
+      "agree": true,
+      "first_pass_read": "d5b59d8b8d32d42327beb4e6866107fe6e1167f4de1d0d73e3e201ed9d1683b1",
+      "models_commit_list": "d5b59d8b8d32d42327beb4e6866107fe6e1167f4de1d0d73e3e201ed9d1683b1",
+      "second_pass_read": "d5b59d8b8d32d42327beb4e6866107fe6e1167f4de1d0d73e3e201ed9d1683b1"
+    },
+    "ckpt_M_base_seed0.pt": {
+      "agree": true,
+      "first_pass_read": "e0f55d92d42bffdb3774cb267bbd8caf16f901fd3fa2f127e9989780188ceda2",
+      "models_commit_list": "e0f55d92d42bffdb3774cb267bbd8caf16f901fd3fa2f127e9989780188ceda2",
+      "second_pass_read": "e0f55d92d42bffdb3774cb267bbd8caf16f901fd3fa2f127e9989780188ceda2"
+    },
+    "ckpt_M_base_seed1.pt": {
+      "agree": true,
+      "first_pass_read": "d9b8010c9bec5ae20aaacabd38acd89497ef121599643a15d548ad44f688ecab",
+      "models_commit_list": "d9b8010c9bec5ae20aaacabd38acd89497ef121599643a15d548ad44f688ecab",
+      "second_pass_read": "d9b8010c9bec5ae20aaacabd38acd89497ef121599643a15d548ad44f688ecab"
+    },
+    "ckpt_M_base_seed2.pt": {
+      "agree": true,
+      "first_pass_read": "eeb3a7a43628791f1c85ac85d6108b74e89c0a209f1688c7342d864ce4926dba",
+      "models_commit_list": "eeb3a7a43628791f1c85ac85d6108b74e89c0a209f1688c7342d864ce4926dba",
+      "second_pass_read": "eeb3a7a43628791f1c85ac85d6108b74e89c0a209f1688c7342d864ce4926dba"
+    },
+    "ckpt_T_base_seed0.pt": {
+      "agree": true,
+      "first_pass_read": "b679bf6cd7884f28a137a6e6a669728213c085ba9cba5c9a2574b947885cfe68",
+      "models_commit_list": "b679bf6cd7884f28a137a6e6a669728213c085ba9cba5c9a2574b947885cfe68",
+      "second_pass_read": "b679bf6cd7884f28a137a6e6a669728213c085ba9cba5c9a2574b947885cfe68"
+    },
+    "ckpt_T_base_seed1.pt": {
+      "agree": true,
+      "first_pass_read": "1558acb2fce628335f28c3a29acef43fdf0d409151e1b5774d8e75aa7f489113",
+      "models_commit_list": "1558acb2fce628335f28c3a29acef43fdf0d409151e1b5774d8e75aa7f489113",
+      "second_pass_read": "1558acb2fce628335f28c3a29acef43fdf0d409151e1b5774d8e75aa7f489113"
+    },
+    "ckpt_T_base_seed2.pt": {
+      "agree": true,
+      "first_pass_read": "84f48372c995c7c53baa80d9379a3778bb8c1845e45589b743bd2b8c083c90c2",
+      "models_commit_list": "84f48372c995c7c53baa80d9379a3778bb8c1845e45589b743bd2b8c083c90c2",
+      "second_pass_read": "84f48372c995c7c53baa80d9379a3778bb8c1845e45589b743bd2b8c083c90c2"
+    },
+    "ckpt_blind_base_seed0.pt": {
+      "agree": true,
+      "first_pass_read": null,
+      "models_commit_list": "027f5ac0c78576e9263ad488ce18f0cb64070e5eeb89ff30e9a177294e25e162",
+      "second_pass_read": "027f5ac0c78576e9263ad488ce18f0cb64070e5eeb89ff30e9a177294e25e162"
+    },
+    "ckpt_blind_base_seed1.pt": {
+      "agree": true,
+      "first_pass_read": null,
+      "models_commit_list": "9b44cd386e6de0298a52355868652bdc9a9c0e3c3c4cd7af48485cc53ba9c3f5",
+      "second_pass_read": "9b44cd386e6de0298a52355868652bdc9a9c0e3c3c4cd7af48485cc53ba9c3f5"
+    },
+    "ckpt_blind_base_seed2.pt": {
+      "agree": true,
+      "first_pass_read": null,
+      "models_commit_list": "092393bdc1b488cfef7706a02804988bb4d672489bc0f332eada603d42f52ba6",
+      "second_pass_read": "092393bdc1b488cfef7706a02804988bb4d672489bc0f332eada603d42f52ba6"
+    }
+  },
+  "files_in_list_not_read_here": [],
+  "models_commit": "235c385",
+  "sums_file": "their_sums.txt"
+}
