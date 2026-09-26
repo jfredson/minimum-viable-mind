@@ -1,0 +1,146 @@
+== 1. the ledger row: committed, and pushed, before the machine existed
+commit 3658a8f  author date 2026-09-25T18:44:04-07:00  committer date 2026-09-25T18:44:04-07:00  Ledger row for the rented slice's second attempt, written before anything is created
+  commit time in UTC: 2026-09-26T01:44:04Z
+  push record (this Mac's copy of the remote branch; local to this repository):
+    7da1946 refs/remotes/origin/worktree-mvm-w1f-rented-slice-attempt-2@{2026-09-25T18:56:53-07:00}: update by push
+    3658a8f refs/remotes/origin/worktree-mvm-w1f-rented-slice-attempt-2@{2026-09-25T18:44:12-07:00}: update by push
+  dry run started (step0-dryrun.txt line 1): 2026-09-26T01:44:24Z
+  creation record (step1-launch.txt):
+    34:  "lastStatusChange": "Rented by User: Sat Sep 26 2026 01:46:33 GMT+0000 (Coordinated Universal Time)",
+    46:pod: alpua1c0w6jonx
+    47:MACHINE DEADLINE ARMED (pid 7745): this laptop deletes alpua1c0w6jonx at
+  lines the row commit added to the ledger: 1
+  the row is ledger line 95
+  row-before estimate "$0.75–1.00, hard cap $2.00" present: 1; go opens: 1; go signed: 1
+  row-after  estimate "$0.75–1.00, hard cap $2.00" present: 1; go opens: 1; go signed: 1
+  the go's text: 1450 characters before, 1450 after; identical: True
+  cells in the row: 8 before, 8 after; cells unchanged: 0, 1, 2, 3, 5; cells changed: 4, 6, 7
+  the settings the go names, each found in the plan's step 1 command at a96f873:
+    SCALE=10M                    in the go: 1   in the plan: 2
+    MAXTOK=2000000               in the go: 1   in the plan: 2
+    OUT=slice_handshake          in the go: 1   in the plan: 2
+    GRACE_S=600                  in the go: 1   in the plan: 2
+    RUN_SUBDIR=slice_handshake   in the go: 1   in the plan: 2
+    CLEAR_RUN_SUBDIR=1           in the go: 1   in the plan: 2
+    HARD_CAP_USD=2.00            in the go: 1   in the plan: 2
+    RATE_PER_HOUR_USD=0.99       in the go: 1   in the plan: 2
+    PRE_TRAIN_DIR                in the go: 1   in the plan: 2
+    PRE_TRAIN_CMD                in the go: 1   in the plan: 2
+
+== 2. the actual: the two balance readings
+  pre-user.txt           2026-09-26T01:43:03Z  "clientBalance": 75.917054611
+  post-user.txt          2026-09-26T01:50:01Z  "clientBalance": 75.917054611
+  post-user-2.txt        2026-09-26T01:52:46Z  "clientBalance": 75.917054611
+  post-user-settled.txt  2026-09-26T01:54:04Z  "clientBalance": 75.864512286
+  billing-this-pod.txt   2026-09-26T01:54:05Z  []
+  post-pod-list.txt      2026-09-26T01:50:00Z  []
+  75.917054611 - 75.864512286 = 0.052542325  -> $0.0525
+  190 s at $0.99 an hour = 0.052250; the remainder 0.000292 is 1.06 s more at $0.99, or 105 s at $0.01
+
+== 3. bench_arms.json against the launcher's log
+  "complete": true, "device": "cuda", accelerator NVIDIA GeForce RTX 5090
+  json, 2 places: arm T mean 13.08 ms, median 13.08, fastest 13.05, slowest 13.13, 50 steps
+    json at the log's precision: arm T: 13.1 ms/step (median 13.1), 26,065,471 parameters
+    the launcher's log line:     arm T: 13.1 ms/step (median 13.1), 26,065,471 parameters
+    identical: True
+  json, 2 places: arm C mean 13.52 ms, median 13.51, fastest 13.47, slowest 13.90, 50 steps
+    json at the log's precision: arm C: 13.5 ms/step (median 13.5), 29,329,735 parameters
+    the launcher's log line:     arm C: 13.5 ms/step (median 13.5), 29,329,735 parameters
+    identical: True
+  json, 2 places: arm F mean 12.53 ms, median 12.52, fastest 12.50, slowest 12.58, 50 steps
+    json at the log's precision: arm F: 12.5 ms/step (median 12.5), 29,049,735 parameters
+    the launcher's log line:     arm F: 12.5 ms/step (median 12.5), 29,049,735 parameters
+    identical: True
+  ratios recomputed from the means: T 1.044, C 1.080
+  ratios stored in the file:        T 1.044, C 1.080
+  the launcher's log line:          ratios to the freely trained arm: T 1.044, C 1.080, F 1.000
+  arm T: slowest step is 0.4% above the median
+  arm C: slowest step is 2.8% above the median
+  arm F: slowest step is 0.5% above the median
+
+== 4. the second-release arithmetic
+  script exit 0
+  the re-run output is byte-identical to the committed second-release-arithmetic.txt
+  ledger anchor ($10.04 a run) on line: 88:| 2026-09-17 | A3
+  independent recomputation: per run F 10.04, T 10.48, C 10.84; eight runs 84.06; re-run 10.84; second release 129.90; both releases 161.90
+  from the rounded ratios 1.044 and 1.080: second release 129.90
+  headroom from $228.1 spent: $400 ceiling 10.0, $450 ceiling 60.0
+  the provisional figures, in section 12.4 of the successor proposal:
+    $96 (eight runs) on line 1051
+    $143 (second release) on line 1055
+    $32 (first release) on line 954
+    $175 (both) on line 1067
+    item R-11, "Five hundred steps per arm", on line 695
+
+== 5. receipt, checksum and delete, in the logs, in order
+13:[2026-09-26T01:49:38Z] final fetch OK
+15:[2026-09-26T01:49:41Z] final checkpoint VERIFIED (md5 b4e56e1c69cc)
+16:[2026-09-26T01:49:43Z] receipt written on the machine — it may delete itself now
+17:[2026-09-26T01:49:43Z] deleting pod alpua1c0w6jonx
+19:  "deleted": true,
+22:[2026-09-26T01:49:55Z] pod gone; billing stopped
+  the machine's own watcher log (reaper.log), last line fetched home:
+    [2026-09-26T01:49:01Z] reap-agent: this machine if the receipt never comes.
+  lines in reaper.log containing 'receipt found': 0
+  model-md5.txt: b4e56e1c69cc10f4033cece45bab4da8
+  md5 of the home copy now (git-ignored, main checkout): b4e56e1c69cc10f4033cece45bab4da8, 77450933 bytes
+
+== 6. the code behind 'the machine half cannot be seen on a normal run'
+  code unchanged by the checked branch (files under both src folders, a96f873..7da1946): 0
+  watch_run_a3.sh lines 235-245 (on_finished):
+    on_finished() {
+      say "finished-marker found — training complete"
+      local tries=0
+      while [ "$tries" -lt "$FINAL_TRIES" ]; do
+        tries=$((tries + 1))
+        if fetch_final; then
+          write_receipt
+          kill_pod
+          say "run complete; artifacts in $DEST"
+          exit 0
+        fi
+  watch_run_a3.sh line 91: KILL_SETTLE_S="${KILL_SETTLE_S:-10}"     # wait before confirming the delete
+  watch_run_a3.sh: every line naming fetch_final (on_finished exits at line 244, after kill_pod):
+    58:#     `fetch_final; kill_pod` in sequence and deleted the machine even
+    156:fetch_final() {  # everything in RUN_DIR, incl. full log + DONE sentinel
+    240:    if fetch_final; then
+    290:    fetch_final || needs_recovery "the deadline was reached and the final copy could not be checked before the machine was deleted"
+  reap_agent.sh line 97: AGENT_POLL_S="${AGENT_POLL_S:-15}"
+  reap_agent.sh lines 234-236 and 258:
+            if [ -f "$RECEIPT_FILE" ]; then
+                say "receipt found: the laptop has the files and has checked them."
+                delete_machine "laptop receipt"
+        sleep "$AGENT_POLL_S"
+  launch_a3_fetch_first.sh: where AGENT_POLL_S is set and passed to the machine:
+    166:AGENT_POLL_S="${AGENT_POLL_S:-15}"
+    606:        'AGENT_POLL_S=$AGENT_POLL_S' > /root/mvm/reap.env" >/dev/null 2>&1
+  AGENT_POLL_S set anywhere in the plan's step 1 command: 0
+  the watcher's next checks after 01:49:01, at 15 s apart: 01:49:16, 01:49:31, 01:49:46
+  receipt written 01:49:43; delete issued 01:49:43; next check 01:49:46: the watcher sees the receipt
+  only if the vendor has not yet stopped the machine about 1 to 3 s after the delete returned.
+
+== 7. failure 6's test, on the launcher that ran (unchanged at 7da1946)
+remote background starts, run against a real local shell (| cat stands in for ssh; the background program holds 8s)
+
+launch_a3_fetch_first.sh
+  [ ok ] launch_a3_fetch_first.sh line 616: returned after 0.0s -- returns at once
+  [ ok ] launch_a3_fetch_first.sh line 697: returned after 8.1s -- HOLDS the connection; cut off by the launcher's inline cap 60s (line 702)
+
+negative control: the pre-fix form of 2026-09-25 must be REJECTED
+  [rejected] stand-in line 1: returned after 8.2s -- HOLDS the connection and nothing cuts it off: a real ssh would wait for the background program
+  [ ok ] the uncapped `cd … && nohup … &` stand-in is rejected, so this check detects the hang
+
+all checks pass. Nothing was rented and nothing was spent.
+  exit 0
+
+== 8. the first attempt's leftover reaper.log: 469 bytes then, 469 bytes found
+  first attempt at its stop: -rw-rw-rw- 1 root root     469 Sep 25 23:49 reaper.log
+  second attempt before clearing: -rw-rw-rw- 1 root root     469 Sep 25 23:49 reaper.log
+
+== 9. smaller checks cited in the review
+  bench_arms.json: the fetched home copy is byte-identical to the slice receipts' copy
+  reaper.log in the slice receipts: 873 bytes
+  launcher line 510 (the folder-clear listing): echo 'found before clearing:'; ls -la
+  the word 'probe' in the findings: 0; in the arithmetic note: 0
+  files in the slice receipts carrying an email address: 4
+  files on main (a96f873) carrying one: 1

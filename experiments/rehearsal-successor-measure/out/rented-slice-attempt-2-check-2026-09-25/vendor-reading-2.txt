@@ -1,0 +1,66 @@
+2026-09-26T02:19:40Z
+$ runpodctl user
+{
+  "clientBalance": 75.8547900638,
+  "currentSpendPerHr": 0.01,
+  "email": "<redacted>",
+  "id": "user_<redacted>",
+  "notifyLowBalance": true,
+  "notifyPodsGeneral": true,
+  "notifyPodsStale": true,
+  "spendLimit": 80
+}
+$ runpodctl pod list
+[]
+$ runpodctl billing pods --pod-id alpua1c0w6jonx --bucket-size hour --grouping podId --start-time 2026-09-26T00:00:00Z
+[]
+$ runpodctl billing pods --bucket-size hour --grouping podId --start-time 2026-09-25T20:00:00Z
+[
+  {
+    "amount": 0.15618446352891624,
+    "diskSpaceBilledGb": 40,
+    "podId": "c14x21x0u3ju7r",
+    "time": "2026-09-25 23:00:00",
+    "timeBilledMs": 566260
+  },
+  {
+    "amount": 0.3599700457416475,
+    "diskSpaceBilledGb": 100,
+    "podId": "c14x21x0u3ju7r",
+    "time": "2026-09-26 00:00:00",
+    "timeBilledMs": 1305615
+  }
+]
+$ runpodctl billing network-volume --bucket-size hour --start-time 2026-09-25T20:00:00Z
+[
+  {
+    "amount": 0.009722222574055195,
+    "diskSpaceBilledGb": 100,
+    "time": ""
+  },
+  {
+    "amount": 0.009722222574055195,
+    "diskSpaceBilledGb": 100,
+    "time": ""
+  },
+  {
+    "amount": 0.009722222574055195,
+    "diskSpaceBilledGb": 100,
+    "time": ""
+  },
+  {
+    "amount": 0.009722222574055195,
+    "diskSpaceBilledGb": 100,
+    "time": ""
+  },
+  {
+    "amount": 0.009722222574055195,
+    "diskSpaceBilledGb": 100,
+    "time": ""
+  },
+  {
+    "amount": 0.01944444514811039,
+    "diskSpaceBilledGb": 200,
+    "time": ""
+  }
+]
