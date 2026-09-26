@@ -11,7 +11,9 @@ review of version 2 (`docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md`,
 RT-212 to RT-216), as amended by **his three rulings of the same day on this
 file's first pass**. Those three rulings: control 3 is reported, not gated;
 rule 4 removes the layer-0 site sets from the candidate family before choosing;
-and the trained models are committed. **Part 2** is the first pass exactly as
+and the trained models are committed. John later changed the third: the models
+are committed by the rulings session at commit `235c385`, not on this branch
+(§1.1). **Part 2** is the first pass exactly as
 first written (commit `5276731`), kept as the record and superseded where Part
 1 differs.*
 
@@ -20,7 +22,10 @@ findings `5276731`. Second pass: method addendum and dated correction `6e23dc1`
 (`docs/toy-rerun-v3-rules-method-2026-09-26.md`, section 7 and the note in
 section 3.4); the models `a86783e`; code `7a01026` (`--stage pass2` in
 `experiments/rehearsal-successor-measure/src/rerun_v3.py`); outputs `dc1de9e`;
-then this revision. Laptop only, no network, no rented machine, **$0**. No arm
+findings `f24d77a`. Then, after John's change to step 3: method note `29e9751`;
+the models removed from this branch again `caa6ec3` (history not rewritten; the
+pull request's net change carries no model files); code `8471a50`
+(`--stage sums`); output `ed81fd3`; then this revision. Laptop only, no network, no rented machine, **$0**. No arm
 was retrained in either pass.*
 
 *Every claim is labelled **MEASURED** (read off a committed output file, cited
@@ -63,18 +68,36 @@ verdict" rather than as a reading.
 
 ## 1.1 The trained models: committed, and what rests on them
 
-MEASURED. The fifteen models are committed under
-`experiments/rehearsal-successor-measure/out-repairs/models/` (commit
-`a86783e`). They were copied byte for byte from the repairs worktree, where they
-had lived untracked since 2026-09-25. A narrow exception in `.gitignore` admits
-them past the repository's blanket rule against `*.pt` files. The second-pass
-code checked each file's SHA-256 against the hash the first pass recorded when
-it read the models in place, and all twelve read models match
-(`pass2_summary.json`, `model_sha256`). The first pass's checks K1 to K4 (Part
-2, first pass §1) showed these are the models behind the committed repairs
-outputs.
+**Where the models are.** The fifteen models are committed by the rulings
+session, not by this branch: **commit `235c385`** on branch
+`w1d-toy-models-committed`, at
+**`experiments/rehearsal-successor-measure/out-repairs/models/`**, with a
+`SHA256SUMS` list and a `README.md`. The commit was made under item 3 of
+"Refinements 2026-09-26, after the toy re-run" in
+`docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md`, and its pull request
+was being opened as this was written. This branch had briefly committed its own
+copy at the same path (`a86783e`). By John's change it removed that copy again
+in a new commit (`caa6ec3`) rather than rewriting pushed history. The pull
+request's net change therefore carries no model files, and does not collide
+with `235c385`.
 
-| file | SHA-256 |
+**The two records agree.** MEASURED, `models_sha256_check.json`
+(`all_agree: true`), written by `--stage sums` in
+`experiments/rehearsal-successor-measure/src/rerun_v3.py` from `235c385`'s
+`SHA256SUMS`. For every model this session read, three hashes are compared:
+
+- the hash the first pass recorded when it read the file in place in the repairs
+  worktree (`nominate_*_seed*.json`, `checkpoint_sha256`; the first pass did not
+  read the three blind-arm models);
+- the hash the second pass recorded when it read the copy
+  (`pass2_summary.json`, `model_sha256`);
+- the line for that file in `235c385`'s `SHA256SUMS`.
+
+All fifteen agree. The list has fifteen entries and no file this session did
+not read. The first pass's checks K1 to K4 (Part 2, first pass §1) showed that
+these are the models behind the committed repairs outputs.
+
+| file | SHA-256 (this session's reads = `235c385` `SHA256SUMS`) |
 |---|---|
 | `ckpt_T_base_seed0.pt` | `b679bf6cd7884f28a137a6e6a669728213c085ba9cba5c9a2574b947885cfe68` |
 | `ckpt_T_base_seed1.pt` | `1558acb2fce628335f28c3a29acef43fdf0d409151e1b5774d8e75aa7f489113` |
@@ -121,7 +144,7 @@ That is not quite true, and this file says what is:
 
 ARGUED, for John: if the intent is that every toy result of the weekend has its
 models on the record, those fifteen further files (about 75 MB) need the same
-treatment. This session did not commit them, because the ruling named fifteen.
+treatment. The `235c385` README lists the same gaps under "Not here".
 
 ## 1.2 The gate (rule 5, unchanged from the first pass)
 
@@ -231,8 +254,9 @@ MEASURED, comparing Part 1 with Part 2.
 
 ## 1.6 Things a checker should know
 
-- The second pass ran no model. `--stage pass2` checks the committed models'
-  hashes, then takes the nominations from `nominate_*` and the fresh-episode
+- The second pass ran no model. `--stage pass2` checks the models' hashes (it
+  ran while this branch still held its own copy, which `--stage sums` later
+  showed is byte-identical to `235c385`'s), then takes the nominations from `nominate_*` and the fresh-episode
   figures from `measure_*`. It asserts that each measure row read the site set
   the nomination names.
 - The first pass's notes (Part 2, first pass §9) still apply. The CPU and GPU
@@ -247,13 +271,16 @@ MEASURED, comparing Part 1 with Part 2.
 
 ## 1.7 Files (second pass)
 
-- Method addendum: `docs/toy-rerun-v3-rules-method-2026-09-26.md`, section 7;
-  the dated correction in section 3.4.
-- Models: `experiments/rehearsal-successor-measure/out-repairs/models/`
-  (fifteen files, hashes in §1.1).
-- Code: `experiments/rehearsal-successor-measure/src/rerun_v3.py`, `stage_pass2`.
+- Method addendum: `docs/toy-rerun-v3-rules-method-2026-09-26.md`, section 7,
+  with the dated change to item 3; the dated correction in section 3.4.
+- Models: commit `235c385` (branch `w1d-toy-models-committed`),
+  `experiments/rehearsal-successor-measure/out-repairs/models/`, with its
+  `SHA256SUMS` and `README.md`; hashes in §1.1. Not on this branch.
+- Code: `experiments/rehearsal-successor-measure/src/rerun_v3.py`, `stage_pass2`
+  and `stage_sums`.
 - Outputs: `out-v3-rules/pass2_table.md`, `out-v3-rules/pass2_summary.json`,
-  `out-v3-rules/logs/pass2.log`. Every first-pass output is unchanged.
+  `out-v3-rules/models_sha256_check.json`, `out-v3-rules/logs/pass2.log`,
+  `out-v3-rules/logs/sums.log`. Every first-pass output is unchanged.
 
 ---
 
