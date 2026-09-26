@@ -1,0 +1,113 @@
+local pre-flight: can this Mac fall asleep?
+  ok: never-sleep override ON, running on wall power
+  (idle sleep timers 15 min plugged in / 15 min on battery;
+   not relied on — the override covers the lid; the keep-awake command
+   (caffeinate) holds idle sleep off only once the watchdog is running,
+   so the launch itself is not covered.)
+local pre-flight: are the fetch and the delete scheduled inside the run window?
+  ok: watchdog watch_run_a3.sh present and parses; runs under caffeinate
+  ok: laptop fetch-and-delete by +24h, machine's own deadline +24h
+local pre-flight: is there a ledger row with an estimate for 'slice_handshake'?
+  ok: ledger row at line 95 names 'slice_handshake', dated within 2 days, estimate written, no actual cost yet
+launch gate: every check passed.
+local pre-flight: module self-tests
+  interpreter: /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/../../.venv/bin/python
+  ok: curriculum_a3
+  ok: encoding_a3
+  ok: train_a3
+  ok: frozen batteries present
+creating SECURE pod (NVIDIA GeForce RTX 5090) for 10M/2000000 tok (out: slice_handshake)
+  register-less by construction [A3 §2.4]; act-weight 1.0
+  run dir: /workspace/mvm-out/slice_handshake (network volume — survives pod death)
+  advisory terminate-after: 2026-09-27T01:46:26Z; watchdog kill deadline: +24h
+  artifacts -> /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/slice_handshake
+{
+  "containerDiskInGb": 20,
+  "costPerHr": 0.99,
+  "desiredStatus": "RUNNING",
+  "env": [
+    "PUBLIC_KEY=<removed>"
+  ],
+  "gpuCount": 1,
+  "id": "alpua1c0w6jonx",
+  "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+  "lastStatusChange": "Rented by User: Sat Sep 26 2026 01:46:33 GMT+0000 (Coordinated Universal Time)",
+  "machine": {
+    "gpuDisplayName": "RTX 5090",
+    "location": "RO"
+  },
+  "memoryInGb": 60,
+  "name": "mvm-slice_handshake",
+  "ports": "8888/http,22/tcp",
+  "vcpuCount": 16,
+  "volumeInGb": 0,
+  "volumeMountPath": "/workspace"
+}
+pod: alpua1c0w6jonx
+MACHINE DEADLINE ARMED (pid 7745): this laptop deletes alpua1c0w6jonx at
+  2026-09-26T03:47:44Z, 7272s after creation
+  (hard cap $2.00 at $0.99 an hour), whatever the run is doing.
+  its log: /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/slice_handshake/machine-deadline.log
+waiting for SSH (uptimeSeconds is a dead field — polling .ssh.ssh_command)
+ssh up: ssh -i /Users/john/.runpod/ssh/runpodctl-ssh-key root@213.173.103.199 -p 23374
+pushing code + frozen batteries
+Warning: Permanently added '[213.173.103.199]:23374' (ED25519) to the list of known hosts.
+remote pre-flight (self-tests on the pod, before any training step)
+  Warning: Permanently added '[213.173.103.199]:23374' (ED25519) to the list of known hosts.
+  curriculum_a3 self-test OK (10 turns, chance 0.125, measured T_act lookup ceiling 0.291)
+  encoding_a3 self-test OK (vocab 105 vs registered 103; own-register index freq [0.263 0.246 0.249 0.242]; max len 83)
+  train_a3 self-test OK (untrained baseline {'T_act': 0.25, 'T_other': 0.1, 'T_state': 0.0, 'T_syntax': 0.0}; chance 0.125)
+clearing the run folder before anything on the machine starts: /workspace/mvm-out/slice_handshake
+  Warning: Permanently added '[213.173.103.199]:23374' (ED25519) to the list of known hosts.
+  found before clearing:
+  total 2977
+  drwxrwxrwx 2 root root   46900 Sep 25 23:49 .
+  drwxrwxrwx 3 root root 3000284 Sep 25 23:49 ..
+  -rw-rw-rw- 1 root root     469 Sep 25 23:49 reaper.log
+  files left after clearing: 0
+arming pod-side reaping (credential + pod id supplied)
+  credential installed
+  VERIFIED: the pod can reach the API as itself
+/Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh: line 637:  8204 Terminated: 15          ( sleep "$cap"; kill "$pid" 2> /dev/null ) > /dev/null 2>&1
+  shutdown watcher RUNNING on the machine (waits 600s for the
+  laptop's receipt; hard deadline +24h, laptop-independent)
+SHUTDOWN ORDER: copy, check, receipt, delete — in that order.
+  The trainer will NOT delete the machine; the watcher on it will,
+  as soon as this laptop confirms the files are home and checked,
+  or after 600s if this laptop never answers.
+before training: pushing /Users/john/Code/minimum-viable-mind/experiments/rehearsal-successor-measure/src and running, at most 1800s:
+  python bench_arms.py --device cuda --steps 50 --batch 32 --out /workspace/mvm-out/slice_handshake/bench_arms.json
+Warning: Permanently added '[213.173.103.199]:23374' (ED25519) to the list of known hosts.
+Warning: Permanently added '[213.173.103.199]:23374' (ED25519) to the list of known hosts.
+arm T: 13.1 ms/step (median 13.1), 26,065,471 parameters
+wrote /workspace/mvm-out/slice_handshake/bench_arms.json (1 of 3 architectures)
+arm C: 13.5 ms/step (median 13.5), 29,329,735 parameters
+wrote /workspace/mvm-out/slice_handshake/bench_arms.json (2 of 3 architectures)
+arm F: 12.5 ms/step (median 12.5), 29,049,735 parameters
+wrote /workspace/mvm-out/slice_handshake/bench_arms.json (3 of 3 architectures)
+ratios to the freely trained arm: T 1.044, C 1.080, F 1.000
+wrote /workspace/mvm-out/slice_handshake/bench_arms.json
+  before-training step finished (exit 0)
+starting detached training run (log + checkpoints in /workspace/mvm-out/slice_handshake)
+/Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh: line 701:  8294 Terminated: 15          ( sleep "$PRE_TRAIN_TIMEOUT_S"; kill "$PRE_PID" 2> /dev/null ) > /dev/null 2>&1
+Warning: Permanently added '[213.173.103.199]:23374' (ED25519) to the list of known hosts.
+Warning: Permanently added '[213.173.103.199]:23374' (ED25519) to the list of known hosts.
+NOT RUNNING — check /workspace/mvm-out/slice_handshake/train_slice_handshake.log
+watchdog spawned (pid 9085). It takes the LAST copy of the files, checks
+it against the machine, writes the receipt that releases the machine, and
+deletes the machine itself if nothing on it does.
+
+LAUNCHED. pod=alpua1c0w6jonx
+  watchdog:  tail -f '/Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/slice_handshake/watchdog.log'   (fetches continuously; on the
+             finished-marker or +24h it fetches everything, checks it,
+             releases the machine and DELETES the pod)
+  machine's own watcher:  ssh -i /Users/john/.runpod/ssh/runpodctl-ssh-key root@213.173.103.199 -p 23374 'tail -f /workspace/mvm-out/slice_handshake/reaper.log'
+  if anything goes wrong, look for '/Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/slice_handshake/NEEDS-RECOVERY.txt' — the watchdog
+  writes it, with the volume id and the exact recovery steps, whenever the
+  files did not all make it home.
+  poll:      ssh -i /Users/john/.runpod/ssh/runpodctl-ssh-key root@213.173.103.199 -p 23374 'tail -3 /workspace/mvm-out/slice_handshake/train_slice_handshake.log'
+  manual fetch:  ssh -i /Users/john/.runpod/ssh/runpodctl-ssh-key root@213.173.103.199 -p 23374 'tar czf - -C /workspace/mvm-out/slice_handshake .' | tar xzf - -C '/Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/slice_handshake'
+  manual kill:   runpodctl pod delete alpua1c0w6jonx
+  resume after crash (C2 — John's go required): RESUME=/workspace/mvm-out/slice_handshake/slice_handshake.pt /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh
+  ledger: write the row in this session, with John's go quoted verbatim
+launcher exit=0

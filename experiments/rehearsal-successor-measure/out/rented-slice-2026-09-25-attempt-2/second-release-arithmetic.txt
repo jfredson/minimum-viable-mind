@@ -1,0 +1,29 @@
+== measured on the rented RTX 5090 (bench_arms.json)
+  arm T: mean 13.08 ms/step, median 13.08, fastest 13.05, slowest 13.13, 50 steps, batch 32, sequence 56, 26,065,471 parameters
+  arm C: mean 13.52 ms/step, median 13.51, fastest 13.47, slowest 13.90, 50 steps, batch 32, sequence 56, 29,329,735 parameters
+  arm F: mean 12.53 ms/step, median 12.52, fastest 12.50, slowest 12.58, 50 steps, batch 32, sequence 56, 29,049,735 parameters
+  ratio to arm F: T 1.044, C 1.080, F 1.000
+  the proposal's inferred premium for a constructed arm: 1.55
+
+== per-run cost: the measured registered-size run ($10.04) times each arm's measured ratio
+  arm T: $10.48
+  arm C: $10.84
+  arm F: $10.04
+  (the same method with the inferred 1.55: $15.56 for each constructed arm)
+
+== the second release, section 12.4's table with the run lines repriced
+  eight remaining runs (2 F, 3 T, 3 C): $84.06   (provisional $96)
+  one permitted re-run, at the dearest arm (C): $10.84   (provisional $12)
+  transplanting and measurement, unchanged: $12.00
+  billing-anomaly and idle margin, unchanged: $23.00
+  second release, measured: $129.90   (provisional $143)
+  both releases: $161.90   (provisional $175)
+
+== against the programme's money (compute ledger)
+  ceiling $400: headroom before this slice about $171.9; both releases leave about $10.0
+  ceiling $450: headroom before this slice about $221.9; both releases leave about $60.0
+
+== why the seconds are not turned straight into hours (the absolute check)
+  a timed step here: 1,792 tokens; a registered A3 step: 10,624 tokens
+  the A3 token budget at this step size: 326,759 steps; arm F at the timed pace: 1.14 h, $1.13
+  the registered A3 run, per 1,792 tokens: 108.8 ms, 8.7 times the timed pace

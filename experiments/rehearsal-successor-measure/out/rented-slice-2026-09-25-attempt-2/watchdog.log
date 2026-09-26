@@ -1,0 +1,23 @@
+[2026-09-26T01:49:22Z] watchdog up: pod=alpua1c0w6jonx out=slice_handshake dest=/Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/slice_handshake deadline=2026-09-27T01:46:26Z
+[2026-09-26T01:49:22Z] fix 1 active: checkpoint pulls are archive-based and checksum-verified
+[2026-09-26T01:49:22Z] fixes 3-6 active: finished-marker checked every 60s; files copied
+[2026-09-26T01:49:22Z] every 600s; on finishing, the copy is checked, then a receipt is
+[2026-09-26T01:49:22Z] written on the machine, then the machine is deleted — in that order.
+[2026-09-26T01:49:22Z] REAP: the machine's own agent (src/reap_agent.sh) holds it open until
+[2026-09-26T01:49:22Z] that receipt arrives, or a bounded wait runs out. Lid open is still the
+[2026-09-26T01:49:22Z] right habit — it is what keeps the wait short — but a shut lid now costs
+[2026-09-26T01:49:22Z] a bounded idle bill and a recovery note, not an unbounded one.
+[2026-09-26T01:49:25Z] finished-marker found — training complete
+[2026-09-26T01:49:25Z] final fetch of /workspace/mvm-out/slice_handshake
+Warning: Permanently added '[213.173.103.199]:23374' (ED25519) to the list of known hosts.
+[2026-09-26T01:49:38Z] final fetch OK
+Warning: Permanently added '[213.173.103.199]:23374' (ED25519) to the list of known hosts.
+[2026-09-26T01:49:41Z] final checkpoint VERIFIED (md5 b4e56e1c69cc)
+[2026-09-26T01:49:43Z] receipt written on the machine — it may delete itself now
+[2026-09-26T01:49:43Z] deleting pod alpua1c0w6jonx
+{
+  "deleted": true,
+  "id": "alpua1c0w6jonx"
+}
+[2026-09-26T01:49:55Z] pod gone; billing stopped
+[2026-09-26T01:49:55Z] run complete; artifacts in /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/slice_handshake

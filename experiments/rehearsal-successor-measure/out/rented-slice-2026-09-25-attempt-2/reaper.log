@@ -1,0 +1,9 @@
+[2026-09-26T01:47:46Z] reap-agent: up. run dir /workspace/mvm-out/slice_handshake, run slice_handshake
+[2026-09-26T01:47:46Z] reap-agent: waits for the laptop's receipt at /workspace/mvm-out/slice_handshake/slice_handshake.FETCHED once /workspace/mvm-out/slice_handshake/slice_handshake.DONE appears
+[2026-09-26T01:47:46Z] reap-agent: grace after finishing: 600s; hard deadline epoch: 1790473661
+[2026-09-26T01:47:46Z] reap-agent: machine id present; deletion is armed
+[2026-09-26T01:49:01Z] reap-agent: training finished. Holding this machine open so the laptop can
+[2026-09-26T01:49:01Z] reap-agent: take the last copy and check it. Waiting up to 600s for
+[2026-09-26T01:49:01Z] reap-agent: the receipt.
+[2026-09-26T01:49:01Z] reap-agent: the model file is on the network volume, so it outlives
+[2026-09-26T01:49:01Z] reap-agent: this machine if the receipt never comes.
