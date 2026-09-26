@@ -13,6 +13,7 @@ worktree (method file, section 1). Local, toy scale, no network, $0.
     $PY rerun_v3.py --stage null --arms T          # one process per arm is fine
     $PY rerun_v3.py --stage measure --arms T,C,F,M
     $PY rerun_v3.py --stage table
+    $PY rerun_v3.py --stage pass2                  # method section 7: arithmetic only
 
 Outputs go to `../out-v3-rules/`; nothing under `../out-repairs/` is written.
 """
@@ -38,9 +39,10 @@ import transplant as X
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.abspath(os.path.join(HERE, "..", "out-v3-rules"))
 COMMITTED = R.OUT                      # ../out-repairs, the committed outputs
-CKPT_DIR = os.path.expanduser(
-    "~/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/"
-    "experiments/rehearsal-successor-measure/out-repairs")
+# The first pass read the models in place from the repairs worktree, where they
+# lived untracked. They are committed now (method file, section 7.1, item 3),
+# byte for byte; `stage_pass2` checks each hash against the first pass's record.
+CKPT_DIR = os.path.join(COMMITTED, "models")
 RECIPE = "base"
 SEEDS = (0, 1, 2)
 ARMS = ("T", "C", "F", "M")
@@ -514,8 +516,126 @@ def stage_table(device, arms, seeds):
     log(f"  wrote {save('summary.json', summary)}")
 
 
+# ------------------------------------------------------------------ pass 2
+#
+# Method file, section 7: John's three rulings of 2026-09-26 on the first
+# pass's findings. Pure arithmetic on the committed first-pass outputs; every
+# site set read here was already read on fresh episodes by `stage_measure`.
+
+PASS2_ROWS = {                          # pass-2 row -> first-pass measure row
+    "primary": "unruled_layer0_injection_removed",
+    "stricter": "unruled_every_layer0_removed",
+}
+PASS2_NOMS = {
+    "primary": "unruled_v60_with_layer0_injection_sets_removed_before_choosing",
+    "stricter": "unruled_v60_with_every_layer0_set_removed_before_choosing",
+}
+M_PASS = (0.3, 0.7)                     # repairs ruling, item 2
+SEPARATION_BAR = 0.5                    # queue ruling, page 1a
+
+
+def pass2_verdict(spec, nom, null, gate_pass, row):
+    """Section 7.3: gate, nomination, fit floor, whole-state floor. Control 3
+    is reported beside it and decides nothing."""
+    reasons = []
+    if not gate_pass:
+        reasons.append("arm failed its gate")
+    if spec is None:
+        reasons.append("no site set clears the whole-state floor")
+        return dict(status="no verdict", reasons=reasons)
+    fits = {l: nom["fit_accuracy"][str(l)] for l in spec["layers"]}
+    worst = min(spec["layers"], key=lambda l: (fits[l], l))
+    if fits[worst] < FIT_FLOOR:
+        reasons.append("read failed its floor")
+    if not row["reading"]["floor"]["clears"]:
+        reasons.append("whole-state transplant misses the four-fifths floor on fresh episodes")
+    nl = null["layers"][str(worst)]
+    return dict(status="reading" if not reasons else "no verdict", reasons=reasons,
+                fit_layer=worst, fit_accuracy=fits[worst], fit_floor_passes=fits[worst] >= FIT_FLOOR,
+                null_p95=nl["null_p95"], null_p99=nl["null_p99"])
+
+
+def control3_report(c3):
+    r = np.array(c3["random_donor_shares"])
+    o = c3["ownership_only"]
+    return dict(median=float(np.median(r)), p95=float(np.percentile(r, C3_PERCENTILE)),
+                ownership_only=o, draws=len(r), draws_below=int((r < o).sum()),
+                draws_equal=int((r == o).sum()), draws_above=int((r > o).sum()))
+
+
+def stage_pass2(device, arms, seeds):
+    # the committed model files are the ones the first pass read
+    hashes = {}
+    for arm in arms:
+        for seed in seeds:
+            h = sha256(ckpt(arm, seed))
+            rec = load(f"nominate_{arm}_seed{seed}.json")["checkpoint_sha256"]
+            assert h == rec, f"{arm}/{seed}: committed model {h} is not the one read ({rec})"
+            hashes[f"{arm}/{seed}"] = h
+    for seed in seeds:                  # the ownership-blind arm, not re-read here
+        hashes[f"blind/{seed}"] = sha256(os.path.join(CKPT_DIR, f"ckpt_blind_{RECIPE}_seed{seed}.pt"))
+    gate = load("gate.json")["verdicts"]
+    out = {"model_sha256": hashes, "arms": {}}
+    lines = ["| arm/seed | row | site set | fit (layer) | null 95th / 99th | fit floor | "
+             "control 3: median / 95th of 20 draws; ownership-only (draws below / equal / above) | "
+             "chance-corrected number | verdict |",
+             "|---|---|---|---|---|---|---|---|---|"]
+    for arm in arms:
+        for seed in seeds:
+            nom = load(f"nominate_{arm}_seed{seed}.json")
+            null = load(f"null_{arm}_seed{seed}.json")
+            ms = load(f"measure_{arm}_seed{seed}.json")
+            res = {}
+            for kind in ("primary", "stricter"):
+                spec = spec_of(nom[PASS2_NOMS[kind]])
+                row = ms["rows"][PASS2_ROWS[kind]]
+                assert (spec is None and row["site_set"] is None) or spec == row["site_set"], (arm, seed, kind)
+                v = pass2_verdict(spec, nom, null, gate[arm]["passes"], row)
+                entry = dict(site_set=spec, verdict=v)
+                if spec is not None:
+                    entry.update(reading=row["reading"], control3=control3_report(row["control3"]))
+                res[kind] = entry
+                if spec is None:
+                    lines.append(f"| {arm}/{seed} | {kind} | none | – | – | – | – | – | no verdict |")
+                    continue
+                c3, deg = entry["control3"], row["reading"]["degree"]
+                lines.append(
+                    f"| {arm}/{seed} | {kind} | layers {tuple(spec['layers'])} at {spec['positions']}, "
+                    f"rank {spec['rank']} | {v['fit_accuracy']:.3f} ({v['fit_layer']}) | "
+                    f"{v['null_p95']:.3f} / {v['null_p99']:.3f} | "
+                    f"{'passes' if v['fit_floor_passes'] else 'fails'} | "
+                    f"{c3['median']:.4f} / {c3['p95']:.4f}; {c3['ownership_only']:.4f} "
+                    f"({c3['draws_below']} / {c3['draws_equal']} / {c3['draws_above']}) | "
+                    f"{'none' if deg is None else f'{deg:.4f}'} | "
+                    + ("reading" if v["status"] == "reading" else f"no verdict ({'; '.join(v['reasons'])})")
+                    + " |")
+            out["arms"][f"{arm}/{seed}"] = res
+
+    def reading_of(arm, seed, kind="primary"):
+        r = out["arms"].get(f"{arm}/{seed}", {}).get(kind)
+        return r["reading"]["degree"] if r and r["verdict"]["status"] == "reading" else None
+
+    m = [reading_of("M", s) for s in seeds]
+    out["arm_M_pass"] = dict(readings=m, band=list(M_PASS),
+                             met_on_every_seed=all(x is not None and M_PASS[0] <= x <= M_PASS[1] for x in m))
+    sep = {}
+    for s in seeds:
+        c, t = reading_of("C", s), reading_of("T", s)
+        sep[str(s)] = None if c is None or t is None else dict(C=c, T=t, C_minus_T=c - t,
+                                                               clears_0_5=(c - t) >= SEPARATION_BAR)
+    out["separation"] = sep
+    out["arm_F"] = {str(s): out["arms"][f"F/{s}"]["primary"]["verdict"] for s in seeds}
+    p = os.path.join(OUT, "pass2_table.md")
+    with open(p, "w") as f:
+        f.write("\n".join(lines) + "\n")
+    log(f"  wrote {p}")
+    log(f"  wrote {save('pass2_summary.json', out)}")
+    log(f"  arm M readings {m}: 0.3 to 0.7 on every seed: {out['arm_M_pass']['met_on_every_seed']}")
+    log(f"  separation per seed: {sep}")
+
+
 STAGES = dict(gate=stage_gate, nominate=stage_nominate, null=stage_null,
-              measure=stage_measure, table=stage_table)
+              measure=stage_measure, table=stage_table, pass2=stage_pass2)
 
 
 def main():
