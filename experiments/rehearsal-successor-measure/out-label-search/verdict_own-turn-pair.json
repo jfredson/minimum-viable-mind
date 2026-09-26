@@ -1,0 +1,99 @@
+{
+  "arms": {
+    "C": {
+      "best_fit_per_seed": {
+        "0": 0.4111111111111111,
+        "1": 0.5222222222222223,
+        "2": 0.42777777777777776
+      },
+      "best_fixed_extent_fit_per_seed": {
+        "0": 0.40555555555555556,
+        "1": 0.3888888888888889,
+        "2": 0.2111111111111111
+      },
+      "clears_over_all_60": false,
+      "clears_over_fixed_extent_45": false,
+      "fixed_extent_site_sets_clearing_on_all_seeds": [],
+      "own_directed_accuracy": {
+        "0": 0.5703333333333334,
+        "1": 0.5676666666666667,
+        "2": 0.5756666666666667
+      },
+      "seeds_with_some_clearing_fixed_extent_site": 0,
+      "seeds_with_some_clearing_site": 0,
+      "site_sets_clearing_on_all_seeds": []
+    },
+    "F": {
+      "best_fit_per_seed": {
+        "0": 0.7333333333333333,
+        "1": 0.48333333333333334,
+        "2": 0.7888888888888889
+      },
+      "best_fixed_extent_fit_per_seed": {
+        "0": 0.7333333333333333,
+        "1": 0.38333333333333336,
+        "2": 0.4777777777777778
+      },
+      "clears_over_all_60": false,
+      "clears_over_fixed_extent_45": false,
+      "fixed_extent_site_sets_clearing_on_all_seeds": [],
+      "own_directed_accuracy": {
+        "0": 0.5596666666666666,
+        "1": 0.5513333333333333,
+        "2": 0.5546666666666666
+      },
+      "seeds_with_some_clearing_fixed_extent_site": 0,
+      "seeds_with_some_clearing_site": 0,
+      "site_sets_clearing_on_all_seeds": []
+    },
+    "M": {
+      "best_fit_per_seed": {
+        "0": 0.3111111111111111,
+        "1": 0.37222222222222223,
+        "2": 0.4111111111111111
+      },
+      "best_fixed_extent_fit_per_seed": {
+        "0": 0.08333333333333333,
+        "1": 0.15,
+        "2": 0.24444444444444444
+      },
+      "clears_over_all_60": false,
+      "clears_over_fixed_extent_45": false,
+      "fixed_extent_site_sets_clearing_on_all_seeds": [],
+      "own_directed_accuracy": {
+        "0": 0.864,
+        "1": 0.8613333333333333,
+        "2": 0.8666666666666667
+      },
+      "seeds_with_some_clearing_fixed_extent_site": 0,
+      "seeds_with_some_clearing_site": 0,
+      "site_sets_clearing_on_all_seeds": []
+    },
+    "T": {
+      "best_fit_per_seed": {
+        "0": 0.28888888888888886,
+        "1": 0.29444444444444445,
+        "2": 0.2833333333333333
+      },
+      "best_fixed_extent_fit_per_seed": {
+        "0": 0.06666666666666667,
+        "1": 0.06666666666666667,
+        "2": 0.06666666666666667
+      },
+      "clears_over_all_60": false,
+      "clears_over_fixed_extent_45": false,
+      "fixed_extent_site_sets_clearing_on_all_seeds": [],
+      "own_directed_accuracy": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      },
+      "seeds_with_some_clearing_fixed_extent_site": 0,
+      "seeds_with_some_clearing_site": 0,
+      "site_sets_clearing_on_all_seeds": []
+    }
+  },
+  "description": "candidate 1: which two assignment turns are the model's own",
+  "fails_the_floor_on_arm_F": true,
+  "label": "own-turn-pair"
+}

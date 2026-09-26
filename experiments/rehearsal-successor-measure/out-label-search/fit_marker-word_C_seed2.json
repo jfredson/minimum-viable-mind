@@ -1,0 +1,854 @@
+{
+ "arm": "C",
+ "best_site": {
+  "fit": 1.0,
+  "layers": [
+   0,
+   1
+  ],
+  "positions": "action+ans"
+ },
+ "checkpoint": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_C_base_seed2.pt",
+ "checkpoint_sha256": "2fc87d0454af22bc2d1c00b7247c220ff0705b8c2500005b47a9cb491ac202f0",
+ "description": "reference: which marker word is the model's own (the ruled label)",
+ "floor": 0.8,
+ "label": "marker-word",
+ "n_heldout": 180,
+ "n_train": 420,
+ "null": {
+  "max": 0.16111111111111112,
+  "mean": 0.08266666666666665,
+  "n": 200,
+  "p95": 0.12222222222222222,
+  "p99": 0.1500555555555555,
+  "share_at_or_above_real": 0.0,
+  "values": [
+   0.09444444444444444,
+   0.05,
+   0.1,
+   0.08333333333333333,
+   0.03333333333333333,
+   0.08888888888888889,
+   0.05,
+   0.08333333333333333,
+   0.12222222222222222,
+   0.08888888888888889,
+   0.1111111111111111,
+   0.07777777777777778,
+   0.05555555555555555,
+   0.05,
+   0.07222222222222222,
+   0.1111111111111111,
+   0.1,
+   0.08888888888888889,
+   0.07222222222222222,
+   0.08333333333333333,
+   0.07777777777777778,
+   0.06666666666666667,
+   0.08333333333333333,
+   0.07777777777777778,
+   0.07777777777777778,
+   0.13333333333333333,
+   0.11666666666666667,
+   0.044444444444444446,
+   0.1,
+   0.03333333333333333,
+   0.044444444444444446,
+   0.08333333333333333,
+   0.044444444444444446,
+   0.07777777777777778,
+   0.12222222222222222,
+   0.06111111111111111,
+   0.06666666666666667,
+   0.09444444444444444,
+   0.06666666666666667,
+   0.05555555555555555,
+   0.16111111111111112,
+   0.044444444444444446,
+   0.08888888888888889,
+   0.07777777777777778,
+   0.12222222222222222,
+   0.06666666666666667,
+   0.1,
+   0.06666666666666667,
+   0.09444444444444444,
+   0.07777777777777778,
+   0.05,
+   0.08333333333333333,
+   0.07777777777777778,
+   0.1,
+   0.1,
+   0.06666666666666667,
+   0.11666666666666667,
+   0.03333333333333333,
+   0.12222222222222222,
+   0.1111111111111111,
+   0.1,
+   0.044444444444444446,
+   0.05,
+   0.06111111111111111,
+   0.08888888888888889,
+   0.05555555555555555,
+   0.08333333333333333,
+   0.1111111111111111,
+   0.08333333333333333,
+   0.08333333333333333,
+   0.07777777777777778,
+   0.08888888888888889,
+   0.06666666666666667,
+   0.09444444444444444,
+   0.1111111111111111,
+   0.07222222222222222,
+   0.07777777777777778,
+   0.06111111111111111,
+   0.08888888888888889,
+   0.07222222222222222,
+   0.05555555555555555,
+   0.05555555555555555,
+   0.10555555555555556,
+   0.09444444444444444,
+   0.06666666666666667,
+   0.14444444444444443,
+   0.08333333333333333,
+   0.07222222222222222,
+   0.06111111111111111,
+   0.09444444444444444,
+   0.10555555555555556,
+   0.10555555555555556,
+   0.07777777777777778,
+   0.06666666666666667,
+   0.05,
+   0.05555555555555555,
+   0.07777777777777778,
+   0.05555555555555555,
+   0.11666666666666667,
+   0.08333333333333333,
+   0.06666666666666667,
+   0.07777777777777778,
+   0.11666666666666667,
+   0.06666666666666667,
+   0.044444444444444446,
+   0.08888888888888889,
+   0.08333333333333333,
+   0.06111111111111111,
+   0.12777777777777777,
+   0.06666666666666667,
+   0.07777777777777778,
+   0.09444444444444444,
+   0.08333333333333333,
+   0.044444444444444446,
+   0.06666666666666667,
+   0.11666666666666667,
+   0.11666666666666667,
+   0.07222222222222222,
+   0.08888888888888889,
+   0.05555555555555555,
+   0.07222222222222222,
+   0.044444444444444446,
+   0.1111111111111111,
+   0.08333333333333333,
+   0.11666666666666667,
+   0.03333333333333333,
+   0.06111111111111111,
+   0.09444444444444444,
+   0.044444444444444446,
+   0.1,
+   0.15,
+   0.06666666666666667,
+   0.1,
+   0.09444444444444444,
+   0.12777777777777777,
+   0.12777777777777777,
+   0.07222222222222222,
+   0.08333333333333333,
+   0.07222222222222222,
+   0.07777777777777778,
+   0.1,
+   0.07222222222222222,
+   0.10555555555555556,
+   0.09444444444444444,
+   0.09444444444444444,
+   0.07222222222222222,
+   0.10555555555555556,
+   0.05555555555555555,
+   0.07222222222222222,
+   0.09444444444444444,
+   0.12777777777777777,
+   0.06111111111111111,
+   0.07222222222222222,
+   0.06111111111111111,
+   0.07777777777777778,
+   0.03888888888888889,
+   0.09444444444444444,
+   0.07222222222222222,
+   0.1111111111111111,
+   0.044444444444444446,
+   0.08333333333333333,
+   0.12222222222222222,
+   0.11666666666666667,
+   0.05,
+   0.12222222222222222,
+   0.08333333333333333,
+   0.07777777777777778,
+   0.08888888888888889,
+   0.08888888888888889,
+   0.044444444444444446,
+   0.1,
+   0.1,
+   0.08333333333333333,
+   0.06111111111111111,
+   0.07777777777777778,
+   0.1111111111111111,
+   0.08888888888888889,
+   0.10555555555555556,
+   0.05,
+   0.07222222222222222,
+   0.11666666666666667,
+   0.1,
+   0.07222222222222222,
+   0.08888888888888889,
+   0.05,
+   0.044444444444444446,
+   0.07777777777777778,
+   0.08333333333333333,
+   0.11666666666666667,
+   0.15555555555555556,
+   0.07222222222222222,
+   0.09444444444444444,
+   0.08333333333333333,
+   0.12222222222222222,
+   0.08333333333333333,
+   0.07222222222222222,
+   0.08333333333333333,
+   0.1111111111111111,
+   0.027777777777777776,
+   0.06666666666666667
+  ]
+ },
+ "seconds": 34.18721294403076,
+ "seconds_fitting_sites": 0.5501749515533447,
+ "seed": 2,
+ "shuffles": 200,
+ "sites": [
+  {
+   "chance_corrected": -0.011385658914728675,
+   "clears": false,
+   "fit": 0.07222222222222222,
+   "layers": [
+    0
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": -0.011385658914728675,
+   "clears": false,
+   "fit": 0.07222222222222222,
+   "layers": [
+    0
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": -0.005329457364341068,
+   "clears": false,
+   "fit": 0.07777777777777778,
+   "layers": [
+    0
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 0.7819767441860466,
+   "clears": true,
+   "fit": 0.8,
+   "layers": [
+    0
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9878875968992249,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    0,
+    1
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9878875968992249,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    0,
+    1,
+    2
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9757751937984496,
+   "clears": true,
+   "fit": 0.9777777777777777,
+   "layers": [
+    1
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9878875968992249,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    1,
+    2
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9818313953488371,
+   "clears": true,
+   "fit": 0.9833333333333333,
+   "layers": [
+    2
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3,
+    4
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3,
+    4
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3,
+    4
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3,
+    4
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    3
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    3
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    3
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    3
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    3,
+    4
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    3,
+    4
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    3,
+    4
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    3,
+    4
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    4
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    4
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    4
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    4
+   ],
+   "positions": "post-identity"
+  }
+ ]
+}

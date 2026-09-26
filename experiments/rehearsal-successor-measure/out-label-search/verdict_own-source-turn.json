@@ -1,0 +1,99 @@
+{
+  "arms": {
+    "C": {
+      "best_fit_per_seed": {
+        "0": 0.43333333333333335,
+        "1": 0.45555555555555555,
+        "2": 0.4388888888888889
+      },
+      "best_fixed_extent_fit_per_seed": {
+        "0": 0.38333333333333336,
+        "1": 0.29444444444444445,
+        "2": 0.3055555555555556
+      },
+      "clears_over_all_60": false,
+      "clears_over_fixed_extent_45": false,
+      "fixed_extent_site_sets_clearing_on_all_seeds": [],
+      "own_directed_accuracy": {
+        "0": 0.5703333333333334,
+        "1": 0.5676666666666667,
+        "2": 0.5756666666666667
+      },
+      "seeds_with_some_clearing_fixed_extent_site": 0,
+      "seeds_with_some_clearing_site": 0,
+      "site_sets_clearing_on_all_seeds": []
+    },
+    "F": {
+      "best_fit_per_seed": {
+        "0": 0.45,
+        "1": 0.45,
+        "2": 0.45555555555555555
+      },
+      "best_fixed_extent_fit_per_seed": {
+        "0": 0.35555555555555557,
+        "1": 0.3111111111111111,
+        "2": 0.4166666666666667
+      },
+      "clears_over_all_60": false,
+      "clears_over_fixed_extent_45": false,
+      "fixed_extent_site_sets_clearing_on_all_seeds": [],
+      "own_directed_accuracy": {
+        "0": 0.5596666666666666,
+        "1": 0.5513333333333333,
+        "2": 0.5546666666666666
+      },
+      "seeds_with_some_clearing_fixed_extent_site": 0,
+      "seeds_with_some_clearing_site": 0,
+      "site_sets_clearing_on_all_seeds": []
+    },
+    "M": {
+      "best_fit_per_seed": {
+        "0": 0.4166666666666667,
+        "1": 0.36666666666666664,
+        "2": 0.37777777777777777
+      },
+      "best_fixed_extent_fit_per_seed": {
+        "0": 0.2111111111111111,
+        "1": 0.2222222222222222,
+        "2": 0.2777777777777778
+      },
+      "clears_over_all_60": false,
+      "clears_over_fixed_extent_45": false,
+      "fixed_extent_site_sets_clearing_on_all_seeds": [],
+      "own_directed_accuracy": {
+        "0": 0.864,
+        "1": 0.8613333333333333,
+        "2": 0.8666666666666667
+      },
+      "seeds_with_some_clearing_fixed_extent_site": 0,
+      "seeds_with_some_clearing_site": 0,
+      "site_sets_clearing_on_all_seeds": []
+    },
+    "T": {
+      "best_fit_per_seed": {
+        "0": 0.4111111111111111,
+        "1": 0.4,
+        "2": 0.4
+      },
+      "best_fixed_extent_fit_per_seed": {
+        "0": 0.22777777777777777,
+        "1": 0.19444444444444445,
+        "2": 0.2
+      },
+      "clears_over_all_60": false,
+      "clears_over_fixed_extent_45": false,
+      "fixed_extent_site_sets_clearing_on_all_seeds": [],
+      "own_directed_accuracy": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      },
+      "seeds_with_some_clearing_fixed_extent_site": 0,
+      "seeds_with_some_clearing_site": 0,
+      "site_sets_clearing_on_all_seeds": []
+    }
+  },
+  "description": "candidate 2: which assignment turn holds the model's own value on the asked item",
+  "fails_the_floor_on_arm_F": true,
+  "label": "own-source-turn"
+}
