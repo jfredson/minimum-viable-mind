@@ -684,9 +684,10 @@ beat every shuffle, and the seconds the seed took.
 
 ## 7. In plain language
 
-No. The free system carries three things that its own-directed task forces on it:
-which of the earlier turns were its own, which of them holds the value it is asked
-to revise, and what that value is. A straight-line read recovers each one far
+Not for the three candidates pre-stated in the method. The free system carries
+three things that its own-directed task forces on it: which of the earlier turns
+were its own, which of them holds the value it is asked to revise, and what that
+value is. A straight-line read recovers each one far
 above chance on arm F, but none of them gets to four fifths at any site on any
 seed.
 - The closest is which two turns were its own. It reaches 0.73 in the tokens of
@@ -711,5 +712,9 @@ moved three things in this paragraph:*
   ruled label reaches 0.206 and 0.211 on two seeds, and both beat all 200
   shuffles.*
 - *"never passes 0.48" became 0.49, because the seed-1 best is 0.4833.*
+
+*The paragraph's opening "No." was narrowed the same day, at John's request, to
+"Not for the three candidates pre-stated in the method", for the same reason as
+the first of these.*
 
 *No verdict changes.*
