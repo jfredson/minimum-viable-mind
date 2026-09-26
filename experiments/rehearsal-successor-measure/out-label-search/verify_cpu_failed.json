@@ -1,0 +1,271 @@
+{
+  "all_match": false,
+  "checkpoints": {
+    "C/0": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_C_base_seed0.pt",
+      "sha256": "47326bb90c5f4ad03beacc74da1d33eec1fd4462314a2e9ce385c36a1e7ffeee"
+    },
+    "C/1": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_C_base_seed1.pt",
+      "sha256": "b3596f309e780e5820a7064ccb207a413a71be439170986b18479fe957e0af2a"
+    },
+    "C/2": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_C_base_seed2.pt",
+      "sha256": "2fc87d0454af22bc2d1c00b7247c220ff0705b8c2500005b47a9cb491ac202f0"
+    },
+    "F/0": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_F_base_seed0.pt",
+      "sha256": "c3afe0c6354f49f185b1806a433e6f0563b48a14f6e4559b2264ecb0abeea88d"
+    },
+    "F/1": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_F_base_seed1.pt",
+      "sha256": "2e51df7efd952e044b63702a5dc63c88e12de41ffe89c1b15c35892756cb219b"
+    },
+    "F/2": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_F_base_seed2.pt",
+      "sha256": "d5b59d8b8d32d42327beb4e6866107fe6e1167f4de1d0d73e3e201ed9d1683b1"
+    },
+    "M/0": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_M_base_seed0.pt",
+      "sha256": "e0f55d92d42bffdb3774cb267bbd8caf16f901fd3fa2f127e9989780188ceda2"
+    },
+    "M/1": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_M_base_seed1.pt",
+      "sha256": "d9b8010c9bec5ae20aaacabd38acd89497ef121599643a15d548ad44f688ecab"
+    },
+    "M/2": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_M_base_seed2.pt",
+      "sha256": "eeb3a7a43628791f1c85ac85d6108b74e89c0a209f1688c7342d864ce4926dba"
+    },
+    "T/0": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_T_base_seed0.pt",
+      "sha256": "b679bf6cd7884f28a137a6e6a669728213c085ba9cba5c9a2574b947885cfe68"
+    },
+    "T/1": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_T_base_seed1.pt",
+      "sha256": "1558acb2fce628335f28c3a29acef43fdf0d409151e1b5774d8e75aa7f489113"
+    },
+    "T/2": {
+      "path": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_T_base_seed2.pt",
+      "sha256": "84f48372c995c7c53baa80d9379a3778bb8c1845e45589b743bd2b8c083c90c2"
+    }
+  },
+  "pairs": {
+    "C/0": {
+      "committed": {
+        "0": 0.07222222222222222,
+        "1": 0.9944444444444445,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      },
+      "largest_gap": 0.0,
+      "match": true,
+      "refit": {
+        "0": 0.07222222222222222,
+        "1": 0.9944444444444445,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      }
+    },
+    "C/1": {
+      "committed": {
+        "0": 0.07222222222222222,
+        "1": 0.9833333333333333,
+        "2": 0.9666666666666667,
+        "3": 0.9833333333333333,
+        "4": 0.9611111111111111
+      },
+      "largest_gap": 0.0,
+      "match": true,
+      "refit": {
+        "0": 0.07222222222222222,
+        "1": 0.9833333333333333,
+        "2": 0.9666666666666667,
+        "3": 0.9833333333333333,
+        "4": 0.9611111111111111
+      }
+    },
+    "C/2": {
+      "committed": {
+        "0": 0.07222222222222222,
+        "1": 0.9777777777777777,
+        "2": 0.9833333333333333,
+        "3": 1.0,
+        "4": 1.0
+      },
+      "largest_gap": 0.0,
+      "match": true,
+      "refit": {
+        "0": 0.07222222222222222,
+        "1": 0.9777777777777777,
+        "2": 0.9833333333333333,
+        "3": 1.0,
+        "4": 1.0
+      }
+    },
+    "F/0": {
+      "committed": {
+        "0": 0.07222222222222222,
+        "1": 0.17222222222222222,
+        "2": 0.14444444444444443,
+        "3": 0.10555555555555556,
+        "4": 0.06666666666666667
+      },
+      "largest_gap": 0.005555555555555564,
+      "match": false,
+      "refit": {
+        "0": 0.07222222222222222,
+        "1": 0.17777777777777778,
+        "2": 0.14444444444444443,
+        "3": 0.10555555555555556,
+        "4": 0.06666666666666667
+      }
+    },
+    "F/1": {
+      "committed": {
+        "0": 0.07222222222222222,
+        "1": 0.06666666666666667,
+        "2": 0.11666666666666667,
+        "3": 0.14444444444444443,
+        "4": 0.11666666666666667
+      },
+      "largest_gap": 0.0111111111111111,
+      "match": false,
+      "refit": {
+        "0": 0.07222222222222222,
+        "1": 0.06666666666666667,
+        "2": 0.11666666666666667,
+        "3": 0.13333333333333333,
+        "4": 0.11666666666666667
+      }
+    },
+    "F/2": {
+      "committed": {
+        "0": 0.07222222222222222,
+        "1": 0.10555555555555556,
+        "2": 0.1388888888888889,
+        "3": 0.1111111111111111,
+        "4": 0.1111111111111111
+      },
+      "largest_gap": 0.00555555555555555,
+      "match": false,
+      "refit": {
+        "0": 0.07222222222222222,
+        "1": 0.1,
+        "2": 0.1388888888888889,
+        "3": 0.1111111111111111,
+        "4": 0.1111111111111111
+      }
+    },
+    "M/0": {
+      "committed": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 0.9888888888888889,
+        "4": 0.9888888888888889
+      },
+      "largest_gap": 0.005555555555555536,
+      "match": false,
+      "refit": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 0.9944444444444445,
+        "4": 0.9888888888888889
+      }
+    },
+    "M/1": {
+      "committed": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      },
+      "largest_gap": 0.0,
+      "match": true,
+      "refit": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      }
+    },
+    "M/2": {
+      "committed": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      },
+      "largest_gap": 0.0,
+      "match": true,
+      "refit": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      }
+    },
+    "T/0": {
+      "committed": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      },
+      "largest_gap": 0.0,
+      "match": true,
+      "refit": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      }
+    },
+    "T/1": {
+      "committed": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      },
+      "largest_gap": 0.0,
+      "match": true,
+      "refit": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      }
+    },
+    "T/2": {
+      "committed": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      },
+      "largest_gap": 0.0,
+      "match": true,
+      "refit": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      }
+    }
+  }
+}

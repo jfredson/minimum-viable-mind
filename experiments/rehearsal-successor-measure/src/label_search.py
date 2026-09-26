@@ -70,6 +70,9 @@ PERMS_F, PERMS_OTHER = 100, 20
 # Method file, section 5.
 FLOOR = 0.8
 
+# Method file, amendment 1: forward passes on the device the committed runs used.
+DEVICE = torch.device("mps")
+
 
 def log(*a):
     print(*a, flush=True)
@@ -87,12 +90,12 @@ def load(arm: str, seed: int, ckpt_dir: str):
     path = os.path.join(ckpt_dir, f"ckpt_{arm}_{RECIPE}_seed{seed}.pt")
     m = R.build_for(arm)()
     m.load_state_dict(torch.load(path, map_location="cpu"))
-    return m.eval(), path
+    return m.to(DEVICE).eval(), path
 
 
 def dev_data():
     pairs, _ = T.make_data(DEV_PAIRS, seed=DEV_SEED, pool="dev", device="cpu")
-    recip = A.to_torch(G.batch([p["recipient"] for p in pairs]), "cpu")
+    recip = A.to_torch(G.batch([p["recipient"] for p in pairs]), DEVICE)
     return pairs, recip
 
 
@@ -132,7 +135,7 @@ def per_layer_features(model, recip: dict) -> dict:
     assert len(states) == N_STATES, len(states)
     ap = recip["action_pos"][:, G.OWN]
     n = ap.shape[0]
-    rows = torch.arange(n)
+    rows = torch.arange(n, device=ap.device)
     # the fixed-length sets are exactly transplant.position_mask's positions
     for P, offs in FIXED_OFFSETS.items():
         mask = X.position_mask(recip, P)
@@ -144,9 +147,9 @@ def per_layer_features(model, recip: dict) -> dict:
     feats = {}
     for li, st in enumerate(states):
         for P, offs in FIXED_OFFSETS.items():
-            feats[(li, P)] = torch.cat([st[rows, ap + o] for o in offs], dim=-1).numpy()
+            feats[(li, P)] = torch.cat([st[rows, ap + o] for o in offs], dim=-1).cpu().numpy()
         pooled = (st * post[..., None]).sum(1) / post.sum(1, keepdim=True)
-        feats[(li, "post-identity")] = pooled.numpy()
+        feats[(li, "post-identity")] = pooled.cpu().numpy()
     return feats
 
 
@@ -329,7 +332,10 @@ def main():
     ap.add_argument("--arms", default=",".join(ARMS))
     ap.add_argument("--ckpt-dir")
     ap.add_argument("--jobs", type=int, default=8)
+    ap.add_argument("--device", default="mps")
     a = ap.parse_args()
+    global DEVICE
+    DEVICE = torch.device(a.device)
     torch.set_num_threads(4)
     if a.stage == "verify":
         stage_verify(a.ckpt_dir)
