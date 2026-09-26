@@ -34,7 +34,7 @@ as the block's headline states it: **not testable — the registered comparison
 was undefined for every possible model. Separately, removing the
 ownership-input channel reduced primary-battery accuracy on all three trained
 seeds.** John's merge of the pull request that carries this paragraph (pull
-request PRNUM) is the registration commit. The same pull request lands the two
+request 49) is the registration commit. The same pull request lands the two
 annotations proposed on 2026-09-25 (a row beside RT-164 in the red team ledger,
 and a separate dated file beside the ChatGPT review), red team ledger rows
 RT-204 to RT-211 with John's rulings on the tier 1 check
