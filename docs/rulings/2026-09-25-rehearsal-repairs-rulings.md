@@ -91,3 +91,74 @@ the (c) attempt as a 2026-09-26 item.
 It edits nothing. Session (c)'s findings are still owed their check; if that
 check moves a number above, the ruling is re-read against the checked figure
 and this file is annotated, not rewritten.
+
+---
+
+## Annotations 2026-09-26, after the check on pull request 58
+
+*Added 2026-09-26. Session (c)'s findings have now had their check:
+`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-26-rehearsal-repairs-check-claude-worktree.md`,
+merged to main by pull request 58 (commit `d216dbc`), which re-ran the repairs
+from clean and read this ruling against the result, number by number. As the
+section above says, this file is annotated, not rewritten: every sentence above
+stands as recorded. Each entry below quotes the sentence it annotates and gives
+the checked figure, with the check file's section. Nothing here is a new ruling;
+the five decisions stand unchanged, and none of the corrections below bears on
+any of them (check file, section 5.1).*
+
+1. **Item 2: "($161.90, `docs/2026-09-25-rented-slice-attempt-2-findings.md`)".**
+   When this ruling was recorded, that findings file (the rented slice's second
+   attempt) was on an unmerged branch, so the figure's source was not yet on
+   main. It is now: pull request 51 merged it (commit `9f802db`). The figure
+   itself is as cited; that file's section 7 gives $161.90 (check file,
+   section 5).
+
+2. **Item 2: "leaves the programme at about $434 of $450".** That is the top of
+   the range, not the single figure. The attempt-2 findings leave about $60.0 of
+   $450 after both releases, so about $390 is committed; adding arm M's three
+   runs at $32 to $44 gives **$422 to $434 of $450** (check file, section 5,
+   where the arithmetic is shown).
+
+3. **Item 4: "The two readings differed on 7 of 12 arm-and-seed pairs by 0.02
+   or less".** The committed run's files show **8 of 12**, largest gap 0.0200
+   (check file, section 4.1). The check's re-run shows **6 of 12, by up to
+   0.0233** (check file, sections 4.1 and 5.1). No exact count is a property of
+   the code; about half the pairs, by about 0.02, is what both runs support.
+
+   **Item 2: "within 0.04 of its construction's prediction".** The largest miss
+   on the committed run is **0.0418**, just over 0.04 (check file, section 4.3);
+   on the re-run the misses are 0.0405, 0.0408 and **0.0530** (check file,
+   section 5.1). Both runs are well inside the pre-stated pass line of 0.10, so
+   arm M's pass stands.
+
+   **Item 3: "the rule nominated such a set on arm C, seeds 0 and 1".** That is
+   true of the committed run only. On the check's re-run the rule's pick of an
+   every-position set landed on **arm F, seed 0** instead (check file,
+   section 5.1). This strengthens the reason for the widened exclusion: the rule
+   picks such a set on a second arm in a second run.
+
+4. **Item 3: "The site count is the rule's output (296 on the toy, 1,816 on the
+   registered 12-layer model with the toy's position sets)".** Those two counts
+   are the ones under page 1e's old, narrow exclusion. Under this item's own
+   widened exclusion, keeping the toy's five position sets and counting only the
+   "every position" set as spanning every position, the counts are **240 on the
+   toy and 1,456 on the registered model** (check file, section 5, where the
+   command that computes them is shown). The check notes that the true count
+   still depends on the position list the registration prints. The principle
+   that the count is the rule's output is unaffected.
+
+   **Item 3: "the packet's 176 was hand arithmetic".** The 176 was not hand
+   arithmetic: it is the size of the family of site sets actually run, listed by
+   hand in the code and checked there (`repairs.py`: `assert len(SITE_SETS) ==
+   44 and FAMILY_SIZE == 176`), and recorded in every `nominate_base_*.json`
+   (check file, section 5). "Hand-listed", not "hand arithmetic". It is still
+   superseded, as item 3 says.
+
+5. **Also ruled: the page 3 rider "returns 'no verdict' where the whole-state
+   transplant moves nothing at arm T's site set".** That describes arms C and F,
+   not arm M. On arm M, copying the donor's whole state at arm T's site set
+   moves the action in **about 0.41** of trials against about 0.01 untouched, on
+   both the committed run and the re-run; its "no verdict" there is a miss of
+   the four-fifths floor, not nothing moving (check file, section 4.2). The
+   rider's "no verdict" therefore means two different things across the arms,
+   and the report should say which.
