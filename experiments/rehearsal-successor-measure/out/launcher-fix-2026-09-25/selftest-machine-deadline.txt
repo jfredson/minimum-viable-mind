@@ -1,0 +1,50 @@
+=== 1. the deadline program alone, deadline 3s away
+      | [2026-09-26T01:01:20Z] machine-deadline: armed for machine fakepod0000001 (deadline_test): deletes at 2026-09-26T01:01:23Z,
+      | [2026-09-26T01:01:20Z] machine-deadline: 3s after creation (hard cap $0.0011 at $0.99 an hour)
+      | [2026-09-26T01:01:23Z] machine-deadline: DEADLINE REACHED. Deleting fakepod0000001. Reason: hard cap reached: $0.0011 at $0.99 an hour allows 3s of machine life; run state was not consulted
+      | [2026-09-26T01:01:23Z] machine-deadline: delete attempt 1: exit 0: pod fakepod0000001 deleted
+      | [2026-09-26T01:01:23Z] machine-deadline: DELETED by the laptop's machine deadline
+      | LEDGER-STYLE LINE: | 2026-09-25 | machine deadline for `deadline_test`: machine `fakepod0000001` DELETED by the laptop's machine deadline at 2026-09-26T01:01:23Z. Reason: hard cap reached: $0.0011 at $0.99 an hour allows 3s of machine life; run state was not consulted | (see the run's row) | act: about 0.00 h of machine life by the laptop clock | cap $0.0011 | by arithmetic at most about $0.00; read the vendor balance for the actual | — |
+    pass: one delete call, naming the machine
+    pass: not before the deadline (took 3s for a 3s deadline)
+    pass: wrote the reason
+    pass: said run state was not consulted
+    pass: wrote a ledger-style line
+=== 2. NEGATIVE CONTROL: deadline 60s away, watched for 4s
+    pass: nothing deleted before the deadline, so case 1 measured the deadline
+=== 3. the whole launcher, hung on its first ssh; cap $0.0011 at $0.99/h = 4s
+    pass: the launcher armed the deadline
+    pass: the launcher is still stuck on its first ssh (the hang is reproduced)
+    pass: the machine was deleted anyway, about 6s after the launch began
+    pass: creation to delete: 4s, for a 4s deadline
+    pass: reason written to machine-deadline.log beside the run's files
+    pass: ledger-style line written there too
+      launcher output, from creation:
+      | pod: fakepod0000001
+      | MACHINE DEADLINE ARMED (pid 75514): this laptop deletes fakepod0000001 at
+      |   2026-09-26T01:01:32Z, 4s after creation
+      |   (hard cap $0.0011 at $0.99 an hour), whatever the run is doing.
+      |   its log: $TMP/dest/artifacts/deadline_test/machine-deadline.log
+      | waiting for SSH (uptimeSeconds is a dead field — polling .ssh.ssh_command)
+      | ssh up: $TMP/bin/fakessh root@203.0.113.1
+      | pushing code + frozen batteries
+      deadline log:
+      | [2026-09-26T01:01:28Z] machine-deadline: armed for machine fakepod0000001 (deadline_test): deletes at 2026-09-26T01:01:32Z,
+      | [2026-09-26T01:01:28Z] machine-deadline: 4s after creation (hard cap $0.0011 at $0.99 an hour)
+      | [2026-09-26T01:01:32Z] machine-deadline: DEADLINE REACHED. Deleting fakepod0000001. Reason: hard cap reached: $0.0011 at $0.99 an hour allows 4s of machine life; run state was not consulted
+      | [2026-09-26T01:01:32Z] machine-deadline: delete attempt 1: exit 0: pod fakepod0000001 deleted
+      | [2026-09-26T01:01:32Z] machine-deadline: DELETED by the laptop's machine deadline
+      | LEDGER-STYLE LINE: | 2026-09-25 | machine deadline for `deadline_test`: machine `fakepod0000001` DELETED by the laptop's machine deadline at 2026-09-26T01:01:32Z. Reason: hard cap reached: $0.0011 at $0.99 an hour allows 4s of machine life; run state was not consulted | (see the run's row) | act: about 0.00 h of machine life by the laptop clock | cap $0.0011 | by arithmetic at most about $0.00; read the vendor balance for the actual | — |
+=== 4. the vendor states $1.98/h, above the $0.99 given: deadline halves to 2s
+    pass: said it used the higher stated rate
+    pass: deadline set to 2s after creation
+=== 5. default off: no HARD_CAP_USD, launcher hung on ssh, watched for 6s
+    pass: no deadline armed
+    pass: nothing deleted the machine (the behaviour before this change)
+    pass: (the launcher did reach the stand-in create, so this case ran)
+=== 6. a cap with no rate is refused before anything runs
+    pass: exit 2
+    pass: said why
+    pass: never reached the rental command
+
+20 passed, 0 failed. Nothing was rented and nothing was spent.

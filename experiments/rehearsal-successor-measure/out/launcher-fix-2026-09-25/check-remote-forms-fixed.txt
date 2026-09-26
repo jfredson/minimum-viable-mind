@@ -1,0 +1,12 @@
+remote background starts, run against a real local shell (| cat stands in for ssh; the background program holds 8s)
+
+launch_a3_fetch_first.sh
+  [ ok ] launch_a3_fetch_first.sh line 616: returned after 0.0s -- returns at once
+  [ ok ] launch_a3_fetch_first.sh line 697: returned after 8.1s -- HOLDS the connection; cut off by the launcher's inline cap 60s (line 702)
+
+negative control: the pre-fix form of 2026-09-25 must be REJECTED
+  [rejected] stand-in line 1: returned after 8.1s -- HOLDS the connection and nothing cuts it off: a real ssh would wait for the background program
+  [ ok ] the uncapped `cd … && nohup … &` stand-in is rejected, so this check detects the hang
+
+all checks pass. Nothing was rented and nothing was spent.
+exit=0

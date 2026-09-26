@@ -1,0 +1,8 @@
+Run on the laptop, 2026-09-26 UTC (2026-09-25 Pacific). Nothing rented, no vendor contacted.
+`| cat` stands in for ssh: like ssh, cat waits until the far side closes its output.
+
+$ s=$(date +%s); bash -c 'cd /tmp && nohup sleep 8 >> /dev/null 2>&1 < /dev/null &' | cat; echo "form as launched (cd && nohup ... &): returned after $(( $(date +%s)-s ))s"
+form as launched (cd && nohup ... &): returned after 8s
+
+$ s=$(date +%s); bash -c 'cd /tmp; nohup sleep 8 >> /dev/null 2>&1 < /dev/null &' | cat; echo "control (cd ; nohup ... &): returned after $(( $(date +%s)-s ))s"
+control (cd ; nohup ... &): returned after 0s

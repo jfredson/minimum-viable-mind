@@ -1,0 +1,14 @@
+The stop, as run by the session, 2026-09-26 UTC (2026-09-25 Pacific). Commands and outputs.
+
+2026-09-26T00:19:37Z  kill 39959   (the launcher, silent since "VERIFIED" at about 23:49Z)
+                      kill 40389   (its ssh, which started the machine's shutdown watcher and never returned)
+2026-09-26T00:19:40Z  ps -p 39959,40389 -o pid,command   ->  header only: neither process exists
+2026-09-26T00:19:45Z  runpodctl pod delete c14x21x0u3ju7r
+                      {
+                        "deleted": true,
+                        "id": "c14x21x0u3ju7r"
+                      }
+2026-09-26T00:19:46Z
+2026-09-26T00:19:56Z  runpodctl pod list   ->  []
+                      runpodctl user       ->  "clientBalance": 75.9553006582, "currentSpendPerHr": 0.01
+The launcher log's last line: "launcher exit=143" (ended by the signal above).

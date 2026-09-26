@@ -1,0 +1,59 @@
+local pre-flight: can this Mac fall asleep?
+  ok: never-sleep override ON, running on wall power
+  (idle sleep timers 15 min plugged in / 15 min on battery;
+   not relied on — the override covers the lid; the keep-awake command
+   (caffeinate) holds idle sleep off only once the watchdog is running,
+   so the launch itself is not covered.)
+local pre-flight: are the fetch and the delete scheduled inside the run window?
+  ok: watchdog watch_run_a3.sh present and parses; runs under caffeinate
+  ok: laptop fetch-and-delete by +24h, machine's own deadline +24h
+local pre-flight: is there a ledger row with an estimate for 'slice_handshake'?
+  ok: ledger row at line 75 names 'slice_handshake', dated within 2 days, estimate written, no actual cost yet
+launch gate: every check passed.
+local pre-flight: module self-tests
+  interpreter: /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/../../.venv/bin/python
+  ok: curriculum_a3
+  ok: encoding_a3
+  ok: train_a3
+  ok: frozen batteries present
+creating SECURE pod (NVIDIA GeForce RTX 5090) for 10M/2000000 tok (out: slice_handshake)
+  register-less by construction [A3 §2.4]; act-weight 1.0
+  run dir: /workspace/mvm-out/slice_handshake (network volume — survives pod death)
+  advisory terminate-after: 2026-09-26T23:48:27Z; watchdog kill deadline: +24h
+  artifacts -> /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/slice_handshake
+{
+  "containerDiskInGb": 20,
+  "costPerHr": 0.99,
+  "desiredStatus": "RUNNING",
+  "env": [
+    "PUBLIC_KEY=ssh-ed25519 <public key redacted>\nssh-rsa <public key redacted> runpodctl-ssh-key"
+  ],
+  "gpuCount": 1,
+  "id": "c14x21x0u3ju7r",
+  "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+  "lastStatusChange": "Rented by User: Fri Sep 25 2026 23:48:33 GMT+0000 (Coordinated Universal Time)",
+  "machine": {
+    "gpuDisplayName": "RTX 5090",
+    "location": "RO"
+  },
+  "memoryInGb": 92,
+  "name": "mvm-slice_handshake",
+  "ports": "8888/http,22/tcp",
+  "vcpuCount": 16,
+  "volumeInGb": 0,
+  "volumeMountPath": "/workspace"
+}
+pod: c14x21x0u3ju7r
+waiting for SSH (uptimeSeconds is a dead field — polling .ssh.ssh_command)
+ssh up: ssh -i /Users/john/.runpod/ssh/runpodctl-ssh-key root@213.173.103.94 -p 32200
+pushing code + frozen batteries
+Warning: Permanently added '[213.173.103.94]:32200' (ED25519) to the list of known hosts.
+remote pre-flight (self-tests on the pod, before any training step)
+  Warning: Permanently added '[213.173.103.94]:32200' (ED25519) to the list of known hosts.
+  curriculum_a3 self-test OK (10 turns, chance 0.125, measured T_act lookup ceiling 0.291)
+  encoding_a3 self-test OK (vocab 105 vs registered 103; own-register index freq [0.263 0.246 0.249 0.242]; max len 83)
+  train_a3 self-test OK (untrained baseline {'T_act': 0.25, 'T_other': 0.1, 'T_state': 0.0, 'T_syntax': 0.0}; chance 0.125)
+arming pod-side reaping (credential + pod id supplied)
+  credential installed
+  VERIFIED: the pod can reach the API as itself
+launcher exit=143
