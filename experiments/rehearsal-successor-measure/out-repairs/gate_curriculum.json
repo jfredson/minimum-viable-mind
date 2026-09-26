@@ -1,0 +1,59 @@
+{
+  "bar": {
+    "as_a_share": 0.2633333333333333,
+    "episodes": 3000,
+    "min_correct": 790
+  },
+  "name_only_solver": {
+    "n": 3000,
+    "other": 1.0,
+    "own": 0.238
+  },
+  "runs": {
+    "F/curriculum/0": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.22466666666666665,
+      "lesioned_own": 0.207,
+      "n": 3000,
+      "other": 0.07733333333333334,
+      "other_clears": false,
+      "other_correct": 232,
+      "own": 0.5506666666666666,
+      "own_clears": true,
+      "own_correct": 1652
+    },
+    "F/curriculum/1": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.17466666666666666,
+      "lesioned_own": 0.14433333333333334,
+      "n": 3000,
+      "other": 0.19333333333333333,
+      "other_clears": false,
+      "other_correct": 580,
+      "own": 0.5643333333333334,
+      "own_clears": true,
+      "own_correct": 1693
+    },
+    "F/curriculum/2": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.16,
+      "lesioned_own": 0.18266666666666667,
+      "n": 3000,
+      "other": 0.143,
+      "other_clears": false,
+      "other_correct": 429,
+      "own": 0.5636666666666666,
+      "own_clears": true,
+      "own_correct": 1691
+    }
+  },
+  "verdicts": {
+    "F/curriculum": {
+      "learn_both": false,
+      "other_passes_the_ruled_line": false,
+      "other_seeds_clearing": 0,
+      "own_seeds_clearing": 3,
+      "seeds": 3
+    }
+  }
+}

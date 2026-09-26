@@ -1,0 +1,246 @@
+{
+  "bar": {
+    "as_a_share": 0.2633333333333333,
+    "episodes": 3000,
+    "min_correct": 790
+  },
+  "name_only_solver": {
+    "n": 3000,
+    "other": 1.0,
+    "own": 0.238
+  },
+  "runs": {
+    "C/base/0": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.20666666666666667,
+      "lesioned_own": 0.178,
+      "n": 3000,
+      "other": 0.25333333333333335,
+      "other_clears": false,
+      "other_correct": 760,
+      "own": 0.5703333333333334,
+      "own_clears": true,
+      "own_correct": 1711
+    },
+    "C/base/1": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.21,
+      "lesioned_own": 0.183,
+      "n": 3000,
+      "other": 0.25033333333333335,
+      "other_clears": false,
+      "other_correct": 751,
+      "own": 0.5676666666666667,
+      "own_clears": true,
+      "own_correct": 1703
+    },
+    "C/base/2": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.168,
+      "lesioned_own": 0.17033333333333334,
+      "n": 3000,
+      "other": 0.236,
+      "other_clears": false,
+      "other_correct": 708,
+      "own": 0.5756666666666667,
+      "own_clears": true,
+      "own_correct": 1727
+    },
+    "F/base/0": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.21533333333333332,
+      "lesioned_own": 0.176,
+      "n": 3000,
+      "other": 0.3313333333333333,
+      "other_clears": true,
+      "other_correct": 994,
+      "own": 0.5596666666666666,
+      "own_clears": true,
+      "own_correct": 1679
+    },
+    "F/base/1": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.212,
+      "lesioned_own": 0.185,
+      "n": 3000,
+      "other": 0.26033333333333336,
+      "other_clears": false,
+      "other_correct": 781,
+      "own": 0.5513333333333333,
+      "own_clears": true,
+      "own_correct": 1654
+    },
+    "F/base/2": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.19,
+      "lesioned_own": 0.194,
+      "n": 3000,
+      "other": 0.24866666666666667,
+      "other_clears": false,
+      "other_correct": 746,
+      "own": 0.5546666666666666,
+      "own_clears": true,
+      "own_correct": 1664
+    },
+    "M/base/0": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.528,
+      "lesioned_own": 0.223,
+      "n": 3000,
+      "other": 0.5543333333333333,
+      "other_clears": true,
+      "other_correct": 1663,
+      "own": 0.864,
+      "own_by_route": {
+        "entangled": 0.7745856353591161,
+        "entangled_share": 0.6033333333333334,
+        "separable": 1.0
+      },
+      "own_clears": true,
+      "own_correct": 2592
+    },
+    "M/base/1": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.5306666666666666,
+      "lesioned_own": 0.219,
+      "n": 3000,
+      "other": 0.5663333333333334,
+      "other_clears": true,
+      "other_correct": 1699,
+      "own": 0.8613333333333333,
+      "own_by_route": {
+        "entangled": 0.7701657458563536,
+        "entangled_share": 0.6033333333333334,
+        "separable": 1.0
+      },
+      "own_clears": true,
+      "own_correct": 2584
+    },
+    "M/base/2": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.5266666666666666,
+      "lesioned_own": 0.22033333333333333,
+      "n": 3000,
+      "other": 0.5516666666666666,
+      "other_clears": true,
+      "other_correct": 1655,
+      "own": 0.8666666666666667,
+      "own_by_route": {
+        "entangled": 0.7790055248618785,
+        "entangled_share": 0.6033333333333334,
+        "separable": 1.0
+      },
+      "own_clears": true,
+      "own_correct": 2600
+    },
+    "T/base/0": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 1.0,
+      "lesioned_own": 0.24666666666666667,
+      "n": 3000,
+      "other": 1.0,
+      "other_clears": true,
+      "other_correct": 3000,
+      "own": 1.0,
+      "own_clears": true,
+      "own_correct": 3000
+    },
+    "T/base/1": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 1.0,
+      "lesioned_own": 0.251,
+      "n": 3000,
+      "other": 1.0,
+      "other_clears": true,
+      "other_correct": 3000,
+      "own": 1.0,
+      "own_clears": true,
+      "own_correct": 3000
+    },
+    "T/base/2": {
+      "lesion_collapses_own": false,
+      "lesioned_other": 1.0,
+      "lesioned_own": 0.2733333333333333,
+      "n": 3000,
+      "other": 1.0,
+      "other_clears": true,
+      "other_correct": 3000,
+      "own": 1.0,
+      "own_clears": true,
+      "own_correct": 3000
+    },
+    "blind/base/0": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.23733333333333334,
+      "lesioned_own": 0.234,
+      "n": 3000,
+      "other": 0.23733333333333334,
+      "other_clears": false,
+      "other_correct": 712,
+      "own": 0.234,
+      "own_clears": false,
+      "own_correct": 702
+    },
+    "blind/base/1": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.242,
+      "lesioned_own": 0.23833333333333334,
+      "n": 3000,
+      "other": 0.242,
+      "other_clears": false,
+      "other_correct": 726,
+      "own": 0.23833333333333334,
+      "own_clears": false,
+      "own_correct": 715
+    },
+    "blind/base/2": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.21666666666666667,
+      "lesioned_own": 0.234,
+      "n": 3000,
+      "other": 0.21666666666666667,
+      "other_clears": false,
+      "other_correct": 650,
+      "own": 0.234,
+      "own_clears": false,
+      "own_correct": 702
+    }
+  },
+  "verdicts": {
+    "C/base": {
+      "learn_both": false,
+      "other_passes_the_ruled_line": false,
+      "other_seeds_clearing": 0,
+      "own_seeds_clearing": 3,
+      "seeds": 3
+    },
+    "F/base": {
+      "learn_both": false,
+      "other_passes_the_ruled_line": false,
+      "other_seeds_clearing": 1,
+      "own_seeds_clearing": 3,
+      "seeds": 3
+    },
+    "M/base": {
+      "learn_both": true,
+      "other_passes_the_ruled_line": true,
+      "other_seeds_clearing": 3,
+      "own_seeds_clearing": 3,
+      "seeds": 3
+    },
+    "T/base": {
+      "learn_both": true,
+      "other_passes_the_ruled_line": true,
+      "other_seeds_clearing": 3,
+      "own_seeds_clearing": 3,
+      "seeds": 3
+    },
+    "blind/base": {
+      "learn_both": false,
+      "other_passes_the_ruled_line": false,
+      "other_seeds_clearing": 0,
+      "own_seeds_clearing": 0,
+      "seeds": 3
+    }
+  }
+}

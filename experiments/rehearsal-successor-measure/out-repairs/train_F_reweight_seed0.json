@@ -1,0 +1,18 @@
+{
+  "arm": "F",
+  "batch": 256,
+  "device": "mps",
+  "parameters": 1265191,
+  "recipe": "reweight",
+  "recipe_options": {
+    "cond_weights": [
+      0.4,
+      1.6
+    ],
+    "other_only_steps": 0
+  },
+  "seconds": 1116.6929001808167,
+  "seconds_per_step": 0.44667716007232666,
+  "seed": 0,
+  "steps": 2500
+}

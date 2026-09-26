@@ -1,0 +1,106 @@
+{
+  "arms": {
+    "C": {
+      "across_seed_sd_of_raw_difference": 0.04664247885065003,
+      "degree_range": [
+        0.9926829268292683,
+        1.0
+      ],
+      "per_seed_degree": [
+        0.9976580796252927,
+        0.9926829268292683,
+        1.0
+      ],
+      "per_seed_raw_difference": [
+        0.5325,
+        0.50875,
+        0.44249999999999995
+      ],
+      "within_seed_bootstrap_se": [
+        0.019443285222265683,
+        0.01953746272189342,
+        0.020289236332043156
+      ]
+    },
+    "F": {
+      "across_seed_sd_of_raw_difference": 0.04985917668794782,
+      "degree_range": [
+        1.0,
+        1.002932551319648
+      ],
+      "per_seed_degree": [
+        1.002932551319648,
+        1.0,
+        1.0
+      ],
+      "per_seed_raw_difference": [
+        0.4275,
+        0.51125,
+        0.4225
+      ],
+      "within_seed_bootstrap_se": [
+        0.020238356982704278,
+        0.01885819109788569,
+        0.01986497781901606
+      ]
+    },
+    "M": {
+      "across_seed_sd_of_raw_difference": 0.030855847635955988,
+      "degree_range": [
+        0.48458904109589046,
+        0.5321543408360129
+      ],
+      "per_seed_degree": [
+        0.5104669887278582,
+        0.48458904109589046,
+        0.5321543408360129
+      ],
+      "per_seed_raw_difference": [
+        0.39624999999999994,
+        0.35375000000000006,
+        0.41375
+      ],
+      "within_seed_bootstrap_se": [
+        0.017707567194211068,
+        0.016668560776485025,
+        0.018378312584062226
+      ]
+    },
+    "T": {
+      "across_seed_sd_of_raw_difference": 0.0,
+      "degree_range": [
+        0.0,
+        0.0
+      ],
+      "per_seed_degree": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_seed_raw_difference": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "within_seed_bootstrap_se": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "separation": {
+    "0": {
+      "C_minus_T": 0.9976580796252927,
+      "clears_0_5": true
+    },
+    "1": {
+      "C_minus_T": 0.9926829268292683,
+      "clears_0_5": true
+    },
+    "2": {
+      "C_minus_T": 1.0,
+      "clears_0_5": true
+    }
+  }
+}

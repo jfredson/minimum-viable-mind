@@ -1,0 +1,59 @@
+{
+  "bar": {
+    "as_a_share": 0.2633333333333333,
+    "episodes": 3000,
+    "min_correct": 790
+  },
+  "name_only_solver": {
+    "n": 3000,
+    "other": 1.0,
+    "own": 0.238
+  },
+  "runs": {
+    "F/reweight/0": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.21333333333333335,
+      "lesioned_own": 0.21266666666666667,
+      "n": 3000,
+      "other": 0.23166666666666666,
+      "other_clears": false,
+      "other_correct": 695,
+      "own": 0.17233333333333334,
+      "own_clears": false,
+      "own_correct": 517
+    },
+    "F/reweight/1": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.19666666666666666,
+      "lesioned_own": 0.22433333333333333,
+      "n": 3000,
+      "other": 0.20633333333333334,
+      "other_clears": false,
+      "other_correct": 619,
+      "own": 0.17,
+      "own_clears": false,
+      "own_correct": 510
+    },
+    "F/reweight/2": {
+      "lesion_collapses_own": true,
+      "lesioned_other": 0.22866666666666666,
+      "lesioned_own": 0.21066666666666667,
+      "n": 3000,
+      "other": 0.23766666666666666,
+      "other_clears": false,
+      "other_correct": 713,
+      "own": 0.176,
+      "own_clears": false,
+      "own_correct": 528
+    }
+  },
+  "verdicts": {
+    "F/reweight": {
+      "learn_both": false,
+      "other_passes_the_ruled_line": false,
+      "other_seeds_clearing": 0,
+      "own_seeds_clearing": 0,
+      "seeds": 3
+    }
+  }
+}

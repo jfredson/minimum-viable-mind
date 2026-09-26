@@ -39,6 +39,10 @@ order:
 | `src/bench_arms.py` | seconds per step per architecture, on whatever machine it runs on |
 | `src/stage_rented_slice.sh` | stages the one short slice of rented time — and cannot run it |
 | `out/` | checkpoints and results; nothing is overwritten across stages |
+| `src/repairs.py` | the 2026-09-25 repairs driver: the ruled nomination rule (one label, 176 comparisons), the chance-corrected reading, control 2 as the proposal states it, the rider; method in `docs/rehearsal-repairs-method-2026-09-25.md`, findings in `docs/2026-09-26-rehearsal-repairs.md` |
+| `src/arm_middle.py` | arm M, the fourth arm, built to be partly separable (a mixture by item) |
+| `src/diagnose_named_other.py` | an exploratory, not pre-stated, classification of the free arm's named-other answers |
+| `out-repairs/` | the repairs' outputs; `out/` is left as the 2026-09-21 record |
 
 ## Running it
 
