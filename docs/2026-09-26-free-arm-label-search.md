@@ -62,6 +62,14 @@ Neither reaches 0.80.
     at one of the model's own turns, so where it starts gives part of the answer
     away (method, section 3).
 
+*Reconciliation with the 0.172, added 2026-09-26 from the check of this search
+(pull request 70):* this search fits one read per site set, laying layers and
+positions end to end and averaging the post-identity span. The registered rule
+fits one read per layer at the `<mask>` position and reports the worst layer of
+the nominated set. That rule gives 0.172 on arm F. This search's 0.556 / 0.483 /
+0.433 for the ruled label all come from the layer-0 post-identity span that the
+RT-216 ruling excludes.
+
 ### 2.1 Things that went differently from the method as first committed
 
 1. **The identity check failed on the first run, and the cause was the processor, not the weights (amendment 1).**
@@ -685,11 +693,23 @@ seed.
   the action turn at the first two layers on one seed, and 0.79 averaged over the
   post-identity span on another. That span begins at one of those very turns, so
   the method had already said a fit there proves little. On the third seed it
-  never passes 0.48.
+  never passes 0.49.
 - The model's own value on the asked item reaches 0.61 to 0.63 at the action, a
   little above how often the arm answers correctly.
-- The ruled label reads perfectly on arms T and M and nearly so on arm C, and is
-  near chance at arm F's fixed-extent sites.
+- The ruled label reads perfectly on arms T and M and nearly so on arm C.
 
-At toy scale, then, no read the free system is forced to carry clears the floor on
-arm F, on any of the 60 site sets.
+At toy scale, then, none of the three candidates pre-stated in the method clears
+the floor on arm F, on any of the 60 site sets.
+
+*Note, 2026-09-26: the check of this search (pull request 70,
+`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-26-free-arm-label-search-check-claude-worktree.md`)
+moved three things in this paragraph:*
+- *"no read the free system is forced to carry clears the floor" became "none of
+  the three candidates pre-stated in the method clears the floor". Three
+  candidates, chosen in advance, are all that was measured.*
+- *"and is near chance at arm F's fixed-extent sites" was struck. There the
+  ruled label reaches 0.206 and 0.211 on two seeds, and both beat all 200
+  shuffles.*
+- *"never passes 0.48" became 0.49, because the seed-1 best is 0.4833.*
+
+*No verdict changes.*
