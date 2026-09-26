@@ -162,3 +162,28 @@ A read fitting on arm F shows the quantity is linearly recoverable there, not
 that the arm uses it, and not that transplanting along it would carry ownership.
 Whether any candidate should become the registered label is John's ruling; the
 findings make no recommendation about it.
+
+---
+
+## Amendment 1 (2026-09-26, after the identity check and before any candidate was fitted)
+
+**What happened.** The identity check of section 4, run as committed (code at
+`883bc81`) with the forward pass on the laptop's processor, **failed**. Arms T and C
+and arm M seeds 1 and 2 matched exactly. Arm F seeds 0, 1 and 2 and arm M seed 0
+differed by one or two of the 180 held-out episodes (largest gaps 0.0056, 0.0111,
+0.0056 and 0.0056). As section 4 required, nothing else was fitted.
+
+**Why (MEASURED).** The committed runs computed their forward passes on the laptop's
+graphics processor (`"device": "mps"` in every `out-repairs/train_*.json`). Re-running
+exactly `repairs.fit_reads` with the forward pass there (a scratch diagnostic, not
+committed as output) reproduced the committed figures on **all twelve** arm-and-seed
+pairs with a largest gap of 0. The weights are the committed ones. The CPU gaps are
+floating-point differences between the two processors, which flip one or two
+near-tied held-out predictions. They show up on arm F, where the read sits near
+chance and many predictions are near ties.
+
+**The change.** Every forward pass in this search runs on `mps`, as the committed
+runs did. The fitting stays on the processor, unchanged. The identity check is run
+again on `mps` and must pass on all twelve pairs, to within 1e-9, before anything
+else is fitted. Nothing else in sections 1 to 6 changes. The failed processor-run
+check stays on record in the findings.
