@@ -1187,3 +1187,331 @@ $ python3 E/reviews/2026-09-25-a3-closure-v5-tier1-check-scripts/numbers_in_file
 The first reads version 4 from its committed path; the third reads only
 committed files. The row labels in `numbers_in_files.py` are the ones printed in
 appendix E, and its search patterns are the quoted phrases.
+
+---
+
+## Re-check, 2026-09-25: version 5 at commit `3393f7d`, after John's rulings on the findings above
+
+*Appended 2026-09-25 (Pacific) by the same session that filed the check above,
+now on a branch cut from the main line at `0e9cd4a` (the commit that merged the
+check, pull request 45). John ruled on the findings above on 2026-09-25, in the
+session that asked for the revisions, and passed the rulings to this session in
+his message: RT-204 accepted and closed by the clause the check proposes;
+RT-205, RT-207, RT-208 and RT-210 accepted as wording changes; RT-209 stays as
+recorded; RT-206 is a ledger note for the registration commit, not a text
+defect; the RT-164 annotation stays as written; the "not verified either way"
+reading in the ChatGPT annotation stands. The writer applied them as commit
+`3393f7d` on branch `worktree-a3-closure-v5` (pull request 43). This session
+did not write that commit. It re-read the file with `git show 3393f7d:docs/a3-closure-text-draft-2026-09-25-v5.md`
+(362 lines; SHA-256 `4b46347dcf1c60fb42b506de9174437b5130cf1b2c85c56194fab74faa347596`).
+Nothing was edited, launched or spent.*
+
+### The answer
+
+**Version 5 at `3393f7d` may be appended to `amendment-a3.md` as the
+registration commit under the closure rule.** The RT-204 clause is the proposed
+clause word for word, with one gloss on "R4" taken from item 23's own words,
+and it cites item 23 correctly. Every accepted minor fix is applied as ruled.
+Nothing else in the closure block changed: a sentence-level diff of the two
+blocks gives exactly four hunks, one per accepted text change. Outside the
+block, the preamble records the check and the change table gains one amended
+row and six new rows, each citing the check. The citation checker now resolves
+this file. Two things are owed to the red team ledger with or before the
+registration commit, neither a defect in the text (below), and one minor
+citation slip outside the block is recorded as RT-211.
+
+### RT-204, closed: the clause as landed, MEASURED
+
+The clause in the block (`3393f7d` lines 250 to 255) was compared with the
+proposal in section 3 above, both with whitespace collapsed:
+
+```
+PROPOSAL: Since item 23 of `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, a missed date no longer moves the roadmap to outcome R4 by itself, and launching past one takes a fresh ruling naming what comes off the back end; the second date binds the launch of the remaining eight registered runs, not the single free-arm run before them.
+LANDED  : Since item 23 of `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, a missed date no longer moves the roadmap to outcome R4 (hibernating with a registered design and a rehearsal) by itself, and launching past one takes a fresh ruling naming what comes off the back end; the second date binds the launch of the remaining eight registered runs, not the single free-arm run before them.
+landed == proposal byte for byte: False
+landed minus the R4 gloss == proposal: True
+gloss present exactly once: True
+```
+
+The one difference is the parenthesis glossing R4. Its words are item 23's
+own: `docs/rulings/2026-09-21-review-verification-and-staged-spending.md` line
+275, "(R4: hibernate with a registered design and a rehearsal, on the record as
+a schedule failure)". The clause cites item 23 by file, and item 23 (lines 271
+to 300 of that file) says each thing the clause says: "a missed date no longer
+puts the roadmap there by itself", "launching is now still possible, but only
+on a fresh ruling that names what comes off the back end", and "the launch of
+the remaining eight runs … not the single free-arm run before it". The clause
+sits directly after the citation of the December-result ruling's annotation
+(line 250), where the proposal put it. **Closed**: this is the MEASURED check
+by a session other than the fix's writer that the closure rule asks for. The
+ledger line is owed (see "Owed to the ledger").
+
+### The minor fixes, each against its ruling, MEASURED
+
+The sentence-level diff of the closure block at `432e966` (lines 43 to 283,
+79 sentences) against the block at `3393f7d` (lines 49 to 301, 81 sentences)
+gives four hunks and no others:
+
+```
+=== hunk 1: replace ===   (RT-205)
+- (The discovery positions are the positions under test; …)  Reading the registered target …
++ (That file states 270 tests across the two targets; the 135 per target is derived from it, as nine testable positions × five layers × three checkpoints, the arithmetic `powered-position-sweep-method.md` sets out.) (The discovery positions are the positions under test; …)  Reading the registered target …
+
+=== hunk 2: replace ===   (RT-207)
+- … no L1 subspace (§3.2's name for the located region of the network's internal activity that carries which marker is its own) was ever localized; …
++ … no L1 subspace (§3.1's name for the located region of the network's internal activity that carries which marker is its own) was ever localized; …
+
+=== hunk 3: replace ===   (RT-210)
+- **Successor.** A matched-role causal-interchange experiment with a learn-both eligibility gate, whose purpose is to develop and validate the Stage 2 degree metric on contrast cases known by construction (`docs/competing-mechanisms-2026-09-20.md`).
++ **Successor.** A matched-role causal-interchange experiment with a learn-both eligibility gate, whose purpose is to develop and validate the Stage 2 degree metric on contrast cases known by construction.
++ The name "matched-role causal-interchange" is the one item 5 of `docs/rulings/2026-09-20-center-as-degree.md` gives the successor; "learn-both" is the name `docs/rulings/2026-09-23-range-and-direction-only.md` uses for the eligibility check; the contrast cases are set out in `docs/competing-mechanisms-2026-09-20.md`.
+
+=== hunk 4: insert ===   (RT-204)
++ Since item 23 of … not the single free-arm run before them.
+
+4 hunks in the block
+```
+
+- **RT-205 (135 per target), applied as ruled.** ChatGPT's two adopted
+  sentences are untouched (`verbatim.py` re-run on `3393f7d`: every row
+  identical to its run on `432e966`, save that "270 tests" is now present,
+  which is this parenthesis). The arithmetic matches
+  `E/powered-position-sweep-method.md` line 107, "Two arms × nine testable
+  positions × five layers × three checkpoints =", and that file is now cited.
+- **RT-207 (the L1 gloss), applied as ruled.** "§3.1's name", matching
+  `E/amendment-a3.md` line 195, where L1 is defined under "### 3.1 What is
+  ablated: three levels" (line 193).
+- **RT-208 (the undeclared gloss), applied as ruled.** No block change. The
+  change table's item 2 row now declares the causal-patching gloss and quotes
+  it (diff hunk 5, below).
+- **RT-209 (the "$0 side item" clause), stays as recorded.** No block change
+  at that place (no hunk touches the blind-arm sentences). The table's RT-209
+  row says so and names the two rulings that still carry the fact.
+- **RT-210 (the inherited phrase), applied as ruled.** The sentence now cites
+  item 5 of `docs/rulings/2026-09-20-center-as-degree.md` for the name (line
+  63 of that file: "The successor experiment is Astra's matched-role
+  causal-interchange design"), `docs/rulings/2026-09-23-range-and-direction-only.md`
+  for "learn-both" (line 96: "On the learn-both check, each of the two arms
+  clears its …"), and keeps `docs/competing-mechanisms-2026-09-20.md` for the
+  contrast cases (line 67 of that file, "same matched-role task").
+- **RT-206, not a text change, as ruled.** The table's paragraph after the new
+  rows (line 351) says it is a note for the ledger and that nothing in the text
+  changes for it. Correct as ruled; owed to the ledger (below).
+
+### Nothing else changed: the whole diff, MEASURED
+
+The diff of `432e966` against `3393f7d` touches one file, 51 insertions and 9
+deletions, in six hunks. Four are the block changes above (the RT-210 and
+RT-204 changes share one hunk). The other two are outside the block: the
+preamble paragraph that records that the check ran and the revisions await a
+re-check, and the change table (item 2 row amended; a new section "Revisions
+after the tier 1 check (2026-09-25)" with six rows and the RT-206 paragraph).
+The full diff, pasted:
+
+```
+diff --git a/docs/a3-closure-text-draft-2026-09-25-v5.md b/docs/a3-closure-text-draft-2026-09-25-v5.md
+index a4b0916..0d731fc 100644
+--- a/docs/a3-closure-text-draft-2026-09-25-v5.md
++++ b/docs/a3-closure-text-draft-2026-09-25-v5.md
+@@ -32,9 +32,15 @@ where it was, beside version 4.*
+ 
+ *This is registered text once it lands in
+ `experiments/06-mvm-0a-constructed-self-index/amendment-a3.md` as a dated
+-closure block. It has not landed. Nothing is appended until the tier 1
+-reviewer-owned check on this version has been run and filed (item 22 of the
+-ruling). The session that appends it re-reads the compute ledger that day, as
++closure block. It has not landed. The tier 1 reviewer-owned check that item 22
++of the ruling requires has been run and filed
++(`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-a3-closure-v5-tier1-check-claude-worktree.md`,
++commit `99b8b64`, pull request 45). It found one serious finding (RT-204) and
++six minor ones (RT-205 to RT-210). John ruled on them on 2026-09-25, and this
++version was revised the same day to apply those rulings; the revisions are the
++last rows of the change table after the block. Those revisions are binding text
++written by this version's writer, so they wait on a re-check by a different
++session. Nothing is appended until that re-check is filed. The session that appends it re-reads the compute ledger that day, as
+ item 8 of the ruling asks, and changes the money paragraph only if a row has
+ been added since.*
+ 
+@@ -143,7 +149,10 @@ these positions only by the weaker difference-of-averages method. The
+ difference-of-averages sweep found no discovery-position clearance for either
+ target: 135 tests read the registered marker-word target and 135 read the
+ register index. Positive-control detections occurred where the answer was
+-supplied by the input token (`powered-position-sweep-findings.md`). (The
++supplied by the input token (`powered-position-sweep-findings.md`). (That file
++states 270 tests across the two targets; the 135 per target is derived from it,
++as nine testable positions × five layers × three checkpoints, the arithmetic
++`powered-position-sweep-method.md` sets out.) (The
+ discovery positions are the positions under test; the positive controls are
+ the positions where the answer is the input token, which any working read should
+ find.) Reading the registered target with a sensitive instrument is one unrun
+@@ -157,7 +166,7 @@ before anything counts as localized or as absent, was never run and has no code
+ for this design (the ruling of 2026-09-20 that patching is new code rather than
+ existing machinery, ledger RT-96). Because causal patching was never run,
+ agreement between probe and patching could not be tested and no L1 subspace
+-(§3.2's name for the located region of the network's internal activity that
++(§3.1's name for the located region of the network's internal activity that
+ carries which marker is its own) was ever localized; so the registered
+ uncarvable signature H_diffuse was never reachable either: it requires a carved
+ subspace to compare against the matched controls, and none was carved.
+@@ -226,15 +235,24 @@ result of A3 is described as "a structural signature of self-indexing" or
+ 
+ **Successor.** A matched-role causal-interchange experiment with a
+ learn-both eligibility gate, whose purpose is to develop and validate the
+-Stage 2 degree metric on contrast cases known by construction
+-(`docs/competing-mechanisms-2026-09-20.md`). It registers in 2026
++Stage 2 degree metric on contrast cases known by construction. The name
++"matched-role causal-interchange" is the one item 5 of
++`docs/rulings/2026-09-20-center-as-degree.md` gives the successor; "learn-both"
++is the name `docs/rulings/2026-09-23-range-and-direction-only.md` uses for the
++eligibility check; the contrast cases are set out in
++`docs/competing-mechanisms-2026-09-20.md`. It registers in 2026
+ (`docs/rulings/2026-09-20-december-result-roadmap.md`, item 1, which amends
+ item 5 of `docs/rulings/2026-09-20-center-as-degree.md`). The successor
+ proceeds through Gate A with both tiers as soon as its prerequisites are
+ complete. The operative deadlines remain registration by 2026-10-18 and
+ launch of the registered runs by 2026-11-01; missing either is recorded as a
+ schedule failure (`docs/rulings/2026-09-20-december-result-roadmap.md`,
+-including its 2026-09-21 annotation). Three
++including its 2026-09-21 annotation). Since item 23 of
++`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, a missed
++date no longer moves the roadmap to outcome R4 (hibernating with a registered
++design and a rehearsal) by itself, and launching past one takes a fresh ruling
++naming what comes off the back end; the second date binds the launch of the
++remaining eight registered runs, not the single free-arm run before them. Three
+ things the successor inherits and must carry: measuring the control's
+ ceiling properly is a precondition of any successor amendment (John,
+ 2026-09-17, `ceiling-defect-2026-09-17.md`); nothing counts as localized or
+@@ -291,7 +309,7 @@ beside it is named.
+ | Ruling item | Reviewer finding | What changed |
+ |---|---|---|
+ | 1 | Gemini G5, ChatGPT A7 | New paragraph "Hard kill K5 is not reached", in the ruling's words: K5 tests whether two instruments agree; patching was never built (RT-96), so the test was never run; *not testable (localization)* rests on §3.2's convergence requirement; A3 closes under the loss condition with no further A3 seeds; stated as John's interpretation. The annotation beside RT-164 in the red team ledger is drafted separately, not made here. |
+-| 2 | Gemini G4, G6 | "Because the two instruments never converged on any seed" replaced with Gemini's G6 rewrite, in the ruling's words ("agreement between probe and patching could not be tested"). Gloss added for "L1 subspace". |
++| 2 | Gemini G4, G6 | "Because the two instruments never converged on any seed" replaced with Gemini's G6 rewrite, in the ruling's words ("agreement between probe and patching could not be tested"). Gloss added for "L1 subspace". Gloss also added for "causal patching" ("copying internal activity from one run into another to test whether it causes the behaviour") in the version 4 sentence before it, which item 2 did not replace (declared after the tier 1 check; see the RT-208 row below). |
+ | 5 | Gemini G3 | "never applied to any lesion" becomes "never applied to the input-channel lesion, the only lesion A3 ran, on any seed". |
+ | 6 | ChatGPT A1 | "at quadrupled weight" becomes "per-row gradient weight quadrupled". |
+ | 7 | ChatGPT A2 | The 270-test sentence replaced with ChatGPT's replacement, verbatim. Gloss added for "discovery positions" and "positive controls". |
+@@ -311,6 +329,30 @@ beside it is named.
+ | 19(e) | ChatGPT A15 | "found the same thing everywhere but one cell" replaced with ChatGPT's sentence, verbatim. Cited to the dispositions check of 2026-09-25, section 3, not to `standardised-refit-findings.md`, as the ruling requires. Glosses added for "folds" and "permutation draws". |
+ | 19(f) | ChatGPT A15 | "a center that is known to be there" replaced; ChatGPT's sentence added, verbatim. |
+ 
++### Revisions after the tier 1 check (2026-09-25)
++
++These rows apply John's rulings of 2026-09-25 on the tier 1 reviewer-owned check
++of this version at commit `432e966`
++(`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-25-a3-closure-v5-tier1-check-claude-worktree.md`,
++commit `99b8b64`, pull request 45; "section 3" below is that file's findings
++section). The rulings were given in the session that asked for these revisions
++and are not yet in a committed ruling file. They were written by this version's
++writer and are owed a re-check by a different session.
++
++| Check finding | Severity as filed | John's ruling, 2026-09-25 | What changed |
++|---|---|---|---|
++| RT-204 (section 3) | serious | Accepted; closed by the clause the check proposes | In the successor paragraph, after the citation of the December-result ruling's 2026-09-21 annotation, the check's proposed clause is added: since item 23 of `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, a missed date no longer moves the roadmap to outcome R4 by itself, and launching past one takes a fresh ruling naming what comes off the back end; the second date binds the launch of the remaining eight registered runs, not the single free-arm run before them. Gloss added for R4 ("hibernating with a registered design and a rehearsal"), from item 23's own words. |
++| RT-205 (section 3) | minor | Accepted: state 135 as derived from the cited 270 | ChatGPT's two sentences are unchanged. A parenthesis after the citation says the findings file states 270 across the two targets and that 135 per target is derived, as nine testable positions × five layers × three checkpoints, citing `powered-position-sweep-method.md`. |
++| RT-207 (section 3) | minor | Accepted: fix the gloss's section | "§3.2's name" becomes "§3.1's name" in the gloss on "L1 subspace". Section 3.1 of `amendment-a3.md` defines L1; section 3.2 says how it is localized. |
++| RT-208 (section 3) | minor | Accepted: declare the undeclared gloss | No change to the block. The "causal patching" gloss is now declared in the item 2 row above. |
++| RT-209 (section 3) | minor | Accepted: the removal of the "$0 side item" clause stays as recorded | No change. Version 4's clause that a blind-arm re-run would be a $0 side item stays out of the block, as item 14's replacement left it. The fact is still in the December-result ruling's item 3 and in `docs/rulings/2026-09-21-followup-runs-and-blind-arm.md`, both cited in the block. |
++| RT-210 (section 3) | minor | Accepted: correct the inherited phrase's citation | The successor's description, unchanged from version 4, cited only `docs/competing-mechanisms-2026-09-20.md`, which does not contain "causal-interchange" or "learn-both". It now cites item 5 of `docs/rulings/2026-09-20-center-as-degree.md` for the name, `docs/rulings/2026-09-23-range-and-direction-only.md` for "learn-both", and keeps the competing-mechanisms document for the contrast cases. |
++
++RT-206 (minor, section 3: the $450 ceiling is not yet in the compute ledger) was
++not part of the rulings passed to this session, and the check says itself that
++it is not a defect in this text. It is a note for the ledger, and nothing here
++changes for it.
++
+ Not applied here, because the ruling gives them no text change: items 3, 4,
+ 10 and 13 (credit or records), item 20 (an annotation beside the ChatGPT
+ review file, drafted separately), item 21 (finding numbers from RT-204, which
+```
+
+### The change table cites the check, MEASURED
+
+```
+$ grep -c "2026-09-25-a3-closure-v5-tier1-check-claude-worktree.md" <v5 at 3393f7d>
+2
+$ grep -c "^| RT-2.. (section 3)" <v5 at 3393f7d>
+6
+```
+
+The file is named in the preamble (line 37) and in the new section's header
+(line 336); each of the six new rows names its finding and "(section 3)", the
+findings section of this file. The rows' "John's ruling" column matches the
+rulings John passed to this session, item for item.
+
+### The citation checker now resolves this file, MEASURED
+
+Run on a copy of the `3393f7d` file placed at its own path in a worktree at
+`0e9cd4a`, then removed:
+
+```
+$ python3 scripts/check_citations.py --only docs/a3-closure-text-draft-2026-09-25-v5.md
+[CONFIDENT] 0 reference(s) name a file that is not in the repository
+[LOOK AT IT] 4 bare name(s) match more than one file
+  …:67  pre-registration.md   …:114 red_team_ledger.md   …:212 pre-registration.md   …:328 red_team_ledger.md
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+Confident findings: 0. Things for a human to look at: 4.
+$ rm docs/a3-closure-text-draft-2026-09-25-v5.md; ls docs/a3-closure-text-draft-2026-09-25-v5.md
+ls: docs/a3-closure-text-draft-2026-09-25-v5.md: No such file or directory
+```
+
+The writer's commit message reported two confident findings, both this check
+file, because pull request 45 had not merged when the writer ran it. It has
+now (`0e9cd4a`), and the two are gone. The four bare names are the same four as
+before, resolved the same way.
+
+### RT-211 — minor, MEASURED: the file cites this check by a commit that is not on the main line
+
+The preamble (line 38) and the new section's header (line 337) cite this check
+as "commit `99b8b64`, pull request 45". Pull request 45 was squash-merged, so
+that commit is not an ancestor of the main line (the ancestor test returns
+status 1; the merge commit `0e9cd4a` has the single parent `4d98cfc`):
+
+```
+$ git merge-base --is-ancestor 99b8b64 origin/main; echo $?
+1
+$ git show --format='%h parents:%p %s' -s 0e9cd4a
+0e9cd4a parents:4d98cfc Tier 1 check of the A3 closure text, version 5 at 432e966: one serious finding, nothing fatal (#45)
+```
+
+`99b8b64` exists only on the review branch, which will be deleted, and the
+known-failure list itself warns that a citation anchored to a session branch
+"loses its signpost without anyone editing the sentence"
+(`docs/known-failure-modes.md`, section 1). The check is on the main line at
+`0e9cd4a`. Both citations are outside the closure block (the preamble and the
+change table are not appended to `amendment-a3.md`), so this does not bear on
+the registration commit; it is a one-token fix for whoever next touches the
+file, and the file path and pull request number already locate the check
+without the hash.
+
+### Owed to the red team ledger, with or before the registration commit
+
+Neither is a defect in the text, and neither was in John's rulings on the
+text; both are what the closure rule and the ruling's item 21 already require:
+
+1. **A closure line for RT-204** in `E/red_team_ledger.md`, in the ledger's
+   form: the finding, the commit that lands the fix (`3393f7d`), and the
+   MEASURED check by a session other than the fix's writer, which is the
+   section "RT-204, closed" above. Rows for RT-205 to RT-211 with John's
+   rulings as passed. None exists yet:
+   ```
+   $ grep -n "RT-20[4-9]\|RT-210\|RT-211" E/red_team_ledger.md
+   (no output)
+   ```
+   The numbering question in section 6 above still stands: item 21 reserves
+   RT-204 onward for the adopted tier 2 findings when they reach the ledger,
+   and the reconciliation it assigns to a later session should settle both
+   ranges at once.
+2. **A dated line in the compute ledger for the $450 ceiling** (RT-206), so
+   the re-read of the ledger on landing day, which the version 5 preamble
+   requires, finds the ceiling where money lives.
+
+### Closing line
+
+**Version 5 at `3393f7d` may be appended to `amendment-a3.md` as the
+registration commit under the closure rule.** RT-204 is closed by a clause that
+matches the proposal word for word plus a gloss in item 23's own words; the
+minor fixes are applied as ruled and nothing else in the block changed; the
+change table cites the check; the citation checker is clean. The appending
+session fills the date placeholder, re-reads the compute ledger that day as
+the preamble requires, and the two ledger items above go in with or before
+that commit. RT-211 is a one-token fix outside the block and does not wait on
+anything.
