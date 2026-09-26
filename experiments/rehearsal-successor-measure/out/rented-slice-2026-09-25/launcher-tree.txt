@@ -1,0 +1,4 @@
+  PID  PPID ELAPSED COMMAND
+39955 27605   30:36 /bin/zsh -c source <shell snapshot> 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && 
+39959 39955   30:36 /bin/bash /Users/john/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh
+40389 39959   29:37 ssh -i /Users/john/.runpod/ssh/runpodctl-ssh-key root@213.173.103.94 -p 32200 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=20 -o ServerAliveInterva
