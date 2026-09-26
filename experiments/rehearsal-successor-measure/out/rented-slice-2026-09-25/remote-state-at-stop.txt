@@ -1,0 +1,20 @@
+2026-09-26T00:19:13Z
+283 bash -c cd /root/mvm/src && nohup sh reap_agent.sh /root/mvm/reap.env         >> /workspace/mvm-out/slice_handshake/reaper.log 2>&1 < /dev/null &
+284 sh reap_agent.sh /root/mvm/reap.env
+---
+total 2977
+drwxrwxrwx 2 root root   46900 Sep 25 23:49 .
+drwxrwxrwx 3 root root 3000284 Sep 25 23:49 ..
+-rw-rw-rw- 1 root root     469 Sep 25 23:49 reaper.log
+--- reaper.log
+[2026-09-25T23:49:28Z] reap-agent: up. run dir /workspace/mvm-out/slice_handshake, run slice_handshake
+[2026-09-25T23:49:28Z] reap-agent: waits for the laptop's receipt at /workspace/mvm-out/slice_handshake/slice_handshake.FETCHED once /workspace/mvm-out/slice_handshake/slice_handshake.DONE appears
+[2026-09-25T23:49:28Z] reap-agent: grace after finishing: 600s; hard deadline epoch: 1790466563
+[2026-09-25T23:49:28Z] reap-agent: machine id present; deletion is armed
+--- reap.env keys
+RUN_DIR
+OUT
+POD_ID_FILE
+DEADLINE_EPOCH
+GRACE_S
+AGENT_POLL_S
