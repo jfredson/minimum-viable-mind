@@ -335,7 +335,8 @@ a 0.10 shuffle baseline (search findings, section 4) is the argument that the
 twelve-layer model may clear the floor; and $44 is the price of finding out
 before $130 is spent.
 
-*What this changes:* version 3's section 7.2 (the registered read, and the
-three candidates as exploratory fits), section 11 (the stop after the first
+*What this changes:* version 3's section 3 (arm F may return no verdict at
+registered scale; the first release is the test of it), section 7.2 (the
+registered read, and the three candidates as exploratory fits), section 11 (the stop after the first
 release's arm F run) and the reporting table (arm F's nomination fit against
 the floor). This addendum edits nothing else.
