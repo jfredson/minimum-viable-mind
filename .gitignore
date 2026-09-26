@@ -39,9 +39,3 @@ experiments/**/checkpoints/
 # is why the control pilot's log was missing from the repository for a day
 # (red-team ledger row RT-56, the missing training log). Records win.
 !experiments/**/a3-gates/*.log
-
-# The fifteen trained toy models behind the 2026-09-25 rehearsal repairs and
-# the 2026-09-26 re-run under the version 3 rules. Arms C, F and M do not
-# rebuild from code and seed, so these files are the record, not a cache.
-# Committed by John's ruling of 2026-09-26 (pull request 62). Records win.
-!experiments/rehearsal-successor-measure/out-repairs/models/*.pt
