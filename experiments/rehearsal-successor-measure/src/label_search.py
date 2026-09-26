@@ -65,7 +65,8 @@ assert len(LAYER_SETS) == 15 and len(SITE_SETS) == 60
 # Method file, section 4.
 DEV_PAIRS, DEV_SEED = 600, 4242
 TRAIN_SHARE = 0.7
-PERMS_F, PERMS_OTHER = 100, 20
+# Method file, amendment 2: 200 shuffles, at each arm and seed's best site set only.
+N_SHUFFLES = 200
 
 # Method file, section 5.
 FLOOR = 0.8
@@ -234,7 +235,6 @@ def stage_fit(ckpt_dir: str, label: str, arms: list, n_jobs: int) -> None:
     y = labels(pairs, recip, label)
     n_tr = int(TRAIN_SHARE * len(y))
     for arm in arms:
-        n_perm = PERMS_F if (arm == "F" and label != "marker-word") else PERMS_OTHER
         for seed in SEEDS:
             path = os.path.join(OUT, f"fit_{label}_{arm}_seed{seed}.json")
             if os.path.exists(path):
@@ -243,40 +243,35 @@ def stage_fit(ckpt_dir: str, label: str, arms: list, n_jobs: int) -> None:
             t0 = time.time()
             m, ck = load(arm, seed, ckpt_dir)
             feats = per_layer_features(m, recip)
-            jobs, keys = [], []
-            for L, P in SITE_SETS:
-                Xs = site_features(feats, L, P)
-                for k in [None] + list(range(n_perm)):
-                    # shuffles seeded by site set and shuffle number, so a rerun
-                    # draws the same ones
-                    ps = None if k is None else 1_000_003 * (SITE_SETS.index((L, P)) + 1) + k
-                    jobs.append(delayed(_one)(Xs, y, n_tr, ps))
-                    keys.append((L, P, k))
-            res = Parallel(n_jobs=n_jobs, batch_size=8)(jobs)
-            by_site = {}
-            for (L, P, k), v in zip(keys, res):
-                d = by_site.setdefault((L, P), dict(real=None, null=[]))
-                if k is None:
-                    d["real"] = v
-                else:
-                    d["null"].append(v)
-            sites = []
-            for (L, P), d in by_site.items():
-                ns = null_summary(d["real"], d["null"])
-                cc = (d["real"] - ns["mean"]) / (1 - ns["mean"])
-                sites.append(dict(layers=list(L), positions=P, fit=d["real"],
-                                  chance_corrected=cc, null=ns,
-                                  clears=bool(d["real"] >= FLOOR and d["real"] > ns["max"])))
+            # every site set is fitted and scored ...
+            fits = Parallel(n_jobs=n_jobs)(
+                delayed(_one)(site_features(feats, L, P), y, n_tr, None) for L, P in SITE_SETS)
+            t_fit = time.time() - t0
+            # ... and the null runs at the best one only (method file, amendment 2);
+            # max() keeps the first of equal fits, the earlier site set in rule order
+            bi = max(range(len(SITE_SETS)), key=lambda i: fits[i])
+            bL, bP = SITE_SETS[bi]
+            Xb = site_features(feats, bL, bP)
+            # shuffles seeded by site set and shuffle number, so a rerun draws the same ones
+            null = Parallel(n_jobs=n_jobs, batch_size=4)(
+                delayed(_one)(Xb, y, n_tr, 1_000_003 * (bi + 1) + k) for k in range(N_SHUFFLES))
+            ns = null_summary(fits[bi], null)
+            sites = [dict(layers=list(L), positions=P, fit=f,
+                          chance_corrected=(f - ns["mean"]) / (1 - ns["mean"]),
+                          clears=bool(f >= FLOOR and f > ns["max"]))
+                     for (L, P), f in zip(SITE_SETS, fits)]
             out = dict(label=label, description=LABELS[label], arm=arm, seed=seed,
                        checkpoint=ck, checkpoint_sha256=sha256(ck), n_train=n_tr,
-                       n_heldout=len(y) - n_tr, shuffles=n_perm, floor=FLOOR,
-                       seconds=time.time() - t0, sites=sites)
+                       n_heldout=len(y) - n_tr, shuffles=N_SHUFFLES, floor=FLOOR,
+                       best_site=dict(layers=list(bL), positions=bP, fit=fits[bi]),
+                       null=ns, seconds=time.time() - t0, seconds_fitting_sites=t_fit,
+                       sites=sites)
             with open(path, "w") as f:
                 json.dump(out, f, indent=1, sort_keys=True)
-            best = max(sites, key=lambda s: s["fit"])
-            log(f"  {label} {arm}/{seed}: best fit {best['fit']:.4f} at layers "
-                f"{best['layers']} {best['positions']}; {sum(s['clears'] for s in sites)} "
-                f"of 60 site sets clear; {out['seconds']:.0f}s")
+            log(f"  {label} {arm}/{seed}: best fit {fits[bi]:.4f} at layers {list(bL)} {bP}; "
+                f"null mean {ns['mean']:.4f} 95th {ns['p95']:.4f} max {ns['max']:.4f}; "
+                f"{sum(s['clears'] for s in sites)} of 60 site sets clear; "
+                f"{out['seconds']:.0f}s ({t_fit:.0f}s fitting the 60 site sets)")
 
 
 def stage_verdict(label: str) -> dict:
