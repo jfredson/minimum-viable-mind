@@ -334,6 +334,20 @@ are otherwise unchanged. Same models, laptop only, $0.*
    byte from the repairs worktree. The findings list each file's SHA-256, and
    the code checks it against the hash each first-pass output recorded.
 
+   > **Changed, 2026-09-26, by John, after the models commit (`a86783e`) was
+   > pushed.** The model files are **not** committed on this branch. The rulings
+   > session committed all fifteen, with a SHA-256 list (`SHA256SUMS`) and a
+   > README, at the same path, as commit `235c385` on branch
+   > `w1d-toy-models-committed` (under item 3 of "Refinements 2026-09-26, after
+   > the toy re-run" in `docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md`).
+   > So this branch removes them again in a new commit, together with the
+   > `.gitignore` exception added for them. History is not rewritten; the files
+   > stay on this laptop, untracked. The findings cite `235c385` for the models.
+   > A new stage, `--stage sums`, compares the SHA-256 of every model file this
+   > session read (both passes' recorded hashes) against that commit's
+   > `SHA256SUMS`, and writes `out-v3-rules/models_sha256_check.json`. The
+   > second pass's other items stand.
+
 ### 7.2 What is computed, and from what
 
 Every site set named in 7.1 was already read on the fresh episodes in the first
