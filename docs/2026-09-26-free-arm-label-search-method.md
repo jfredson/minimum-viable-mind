@@ -187,3 +187,37 @@ runs did. The fitting stays on the processor, unchanged. The identity check is r
 again on `mps` and must pass on all twelve pairs, to within 1e-9, before anything
 else is fitted. Nothing else in sections 1 to 6 changes. The failed processor-run
 check stays on record in the findings.
+
+---
+
+## Amendment 2 (2026-09-26, ruled by John during the run; candidate 1 arm F seed 1 stopped part-way)
+
+**Why.** The null of section 4 (100 shuffles at every one of the 60 site sets on
+arm F) made each arm F seed take 5,493 seconds (about 92 minutes) for candidate 1.
+Other jobs were loading the laptop at the same time (load average near 105 for
+part of it). The null only matters at the best site, where the result is read.
+John ruled the change below. Candidate 1 arm F seed 0 had finished under the old
+plan. Its file is kept, renamed
+`superseded_fit_own-turn-pair_F_seed0_every-site-100-shuffles.json`, and is not
+used for any verdict. Seed 1 was stopped part-way and wrote nothing.
+
+**The change.** For every candidate, the reference row and every arm:
+
+- The straight-line read is still fitted, and scored on the held-out episodes, at
+  **all 60 site sets**, exactly as before.
+- The label-permutation null runs **only at the single best-fitting site set** of
+  each arm and seed: the one with the highest held-out fit, ties going to the
+  earlier site set in the rule's order. There it is **200 shuffles**, on every
+  arm alike, replacing the 100 (arm F) and 20 (other arms).
+- **Clearing on a seed** (section 5) now means: held-out fit at least 0.80 and
+  above every one of the 200 shuffles at that arm and seed's best site set. For
+  the best site set itself this is the old test. For any other site set it
+  borrows the best site set's null. That rests on one observation, made before
+  this amendment on the superseded arm F seed 0 file: across all 60 site sets the
+  null's 95th percentile ran only from 0.056 to 0.067, and no single shuffle
+  anywhere exceeded 0.10.
+- Sections 2, 3 and 5 are otherwise unchanged. The stop rule still uses the 45
+  fixed-extent site sets, and the verdict is still taken across all three seeds.
+- Every seed is refitted from scratch under this rule, seed 0 included. The fits
+  are deterministic, so seed 0's 60 fits come out the same as in the superseded
+  file (checked when the findings are written).
