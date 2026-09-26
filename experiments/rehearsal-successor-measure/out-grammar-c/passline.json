@@ -1,0 +1,34 @@
+{
+  "a_named_other_clears": false,
+  "arm": "F",
+  "b_own_directed_not_below": true,
+  "bar": {
+    "as_a_share": 0.2633333333333333,
+    "episodes": 3000,
+    "min_correct": 790
+  },
+  "cleared": false,
+  "named_other": [
+    0.258,
+    0.24333333333333335,
+    0.253
+  ],
+  "named_other_correct": [
+    774,
+    730,
+    759
+  ],
+  "named_other_seeds_clearing": 0,
+  "own_directed": [
+    0.5733333333333334,
+    0.5553333333333333,
+    0.5676666666666667
+  ],
+  "own_directed_mean": 0.5654444444444445,
+  "own_level": 0.5513,
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

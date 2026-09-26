@@ -1,0 +1,69 @@
+=== grammar attempt, stage: gate (mps); NAMED_OTHER_ACTING = 0; out /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c ===
+    F/base/0: own 0.5733 (1720), named-other 0.2580 (774)   lesioned own 0.2120, named-other 0.2167
+    F/base/1: own 0.5553 (1666), named-other 0.2433 (730)   lesioned own 0.2063, named-other 0.1933
+    F/base/2: own 0.5677 (1703), named-other 0.2530 (759)   lesioned own 0.2110, named-other 0.2013
+    T/base/0: own 1.0000 (3000), named-other 1.0000 (3000)   lesioned own 0.2467, named-other 1.0000
+    T/base/1: own 1.0000 (3000), named-other 1.0000 (3000)   lesioned own 0.2510, named-other 1.0000
+    T/base/2: own 1.0000 (3000), named-other 1.0000 (3000)   lesioned own 0.2733, named-other 1.0000
+    C/base/0: own 0.7993 (2398), named-other 0.2647 (794)   lesioned own 0.2093, named-other 0.1907
+    C/base/1: own 0.5703 (1711), named-other 0.2440 (732)   lesioned own 0.2013, named-other 0.2013
+    C/base/2: own 0.5583 (1675), named-other 0.2350 (705)   lesioned own 0.2090, named-other 0.1927
+  wrote /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c/gate_base.json
+    C/base: named-other clears on 1 of 3, own-directed on 3 of 3
+    F/base: named-other clears on 0 of 3, own-directed on 3 of 3
+    T/base: named-other clears on 3 of 3, own-directed on 3 of 3
+  (42.7s)
+=== grammar attempt, stage: nominate (mps); NAMED_OTHER_ACTING = 0; out /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c ===
+    F/base/0: action layers [3] rank 1: whole 0.5417 ownership-only 0.0617; 35 of 44 site sets clear   | control 2 named-agent nomination: no verdict
+    F/base/1: action layers [3] rank 8: whole 0.5733 ownership-only 0.0617; 35 of 44 site sets clear   | control 2 named-agent nomination: no verdict
+    F/base/2: post-identity layers [0] rank 1: whole 0.5033 ownership-only 0.0633; 35 of 44 site sets clear   | control 2 named-agent nomination: no verdict
+    T/base/0: action layers [0] rank 8: whole 1.0000 ownership-only 1.0000; 44 of 44 site sets clear   | control 2 named-agent nomination: no verdict
+    T/base/1: action layers [0] rank 8: whole 1.0000 ownership-only 1.0000; 44 of 44 site sets clear   | control 2 named-agent nomination: no verdict
+    T/base/2: action layers [0] rank 8: whole 1.0000 ownership-only 1.0000; 44 of 44 site sets clear   | control 2 named-agent nomination: no verdict
+    C/base/0: action layers [3] rank 4: whole 0.7283 ownership-only 0.0300; 34 of 44 site sets clear   | control 2 named-agent nomination: no verdict
+    C/base/1: post-identity layers [0] rank 8: whole 0.4967 ownership-only 0.0617; 35 of 44 site sets clear   | control 2 named-agent nomination: nominated
+    C/base/2: action layers [3] rank 1: whole 0.5233 ownership-only 0.0567; 35 of 44 site sets clear   | control 2 named-agent nomination: no verdict
+  wrote /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c/nominate_base_F_T_C.json
+  (1855.1s)
+=== grammar attempt, stage: measure (mps); NAMED_OTHER_ACTING = 0; out /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c ===
+    F/base/0: untouched 0.0575 whole 0.4875 ownership-only 0.0575 -> valid, degree 1.0000   (arm own accuracy 0.5563)
+    F/base/1: untouched 0.0638 whole 0.5663 ownership-only 0.0638 -> valid, degree 1.0000   (arm own accuracy 0.5850)
+    F/base/2: untouched 0.0663 whole 0.5138 ownership-only 0.0663 -> valid, degree 1.0000   (arm own accuracy 0.5737)
+    T/base/0: untouched 0.0000 whole 1.0000 ownership-only 1.0000 -> valid, degree 0.0000   (arm own accuracy 1.0000)
+    T/base/1: untouched 0.0000 whole 1.0000 ownership-only 1.0000 -> valid, degree 0.0000   (arm own accuracy 1.0000)
+    T/base/2: untouched 0.0000 whole 1.0000 ownership-only 1.0000 -> valid, degree 0.0000   (arm own accuracy 1.0000)
+    C/base/0: untouched 0.0300 whole 0.7300 ownership-only 0.0288 -> valid, degree 1.0018   (arm own accuracy 0.7987)
+    C/base/1: untouched 0.0475 whole 0.5038 ownership-only 0.0537 -> valid, degree 0.9863   (arm own accuracy 0.5863)
+    C/base/2: untouched 0.0650 whole 0.5088 ownership-only 0.0638 -> valid, degree 1.0028   (arm own accuracy 0.5475)
+  wrote /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c/measure_base_F_T_C.json
+  (114.1s)
+=== grammar attempt, stage: summary (mps); NAMED_OTHER_ACTING = 0; out /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c ===
+  wrote /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c/summary_base.json
+    F: degrees [1.0, 1.0, 1.0], raw [0.43, 0.5025, 0.4475], across-seed sd 0.037831864876053924
+    T: degrees [0.0, 0.0, 0.0], raw [0.0, 0.0, 0.0], across-seed sd 0.0
+    C: degrees [1.0018, 0.9863, 1.0028], raw [0.7012, 0.45, 0.445], across-seed sd 0.1465239599291983
+    separation C - T per seed: {'0': {'C_minus_T': 1.0017857142857143, 'clears_0_5': True}, '1': {'C_minus_T': 0.9863013698630136, 'clears_0_5': True}, '2': {'C_minus_T': 1.0028169014084507, 'clears_0_5': True}}
+  (0.2s)
+=== grammar attempt, stage: diagnose (mps); NAMED_OTHER_ACTING = 0; out /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c ===
+    F/base/0: named 0.2580  own 0.0543  other_in_item 0.5020  not_in_item 0.1857
+    F/base/1: named 0.2433  own 0.0493  other_in_item 0.5310  not_in_item 0.1763
+    F/base/2: named 0.2530  own 0.0637  other_in_item 0.5037  not_in_item 0.1797
+  wrote /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c/diagnose_named_other.json
+  (7.1s)
+=== grammar attempt, stage: outcomes (mps); NAMED_OTHER_ACTING = 0; out /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c ===
+    no verdict case, T seed 0: whole 0.0000 -> no verdict
+    no verdict case, T seed 1: whole 0.0000 -> no verdict
+    no verdict case, T seed 2: whole 0.0000 -> no verdict
+    unseen vocabulary, F/base/0 at its nomination: whole 0.4612 ownership-only 0.0688 -> no verdict
+    unseen vocabulary, T/base/0 at its nomination: whole 0.7588 ownership-only 0.8850 -> negative, degree -0.1870
+    unseen vocabulary, C/base/0 at its nomination: whole 0.5625 ownership-only 0.0625 -> valid, degree 1.0000
+  wrote /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c/outcomes.json
+  (16.1s)
+ALL STAGES DONE
+
+=== grammar attempt, stage: passline (mps); NAMED_OTHER_ACTING = 0; out /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c ===
+  wrote /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c/passline.json
+    named-other correct [774, 730, 759] -> 0 of 3 seeds at 790 or more: (a) False
+    own-directed mean 0.5654 vs 0.5513: (b) True
+    PASS LINE CLEARED: False
+  (0.0s)
