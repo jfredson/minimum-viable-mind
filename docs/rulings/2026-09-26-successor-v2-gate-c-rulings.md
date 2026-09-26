@@ -283,6 +283,14 @@ findings', with the section cited.*
    section 6.2), so the fold-in pass stands; arms C and F still fall to the fit
    floor.
 
+   *Annotation 2026-09-26, after the check of the toy re-run
+   (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-26-toy-rerun-v3-rules-check-claude-worktree.md`,
+   pull request 65, sections 3.2 and 6). The clause "arms C and F still fall
+   to the fit floor" is wrong for arm C. Arm C's read fits at 1.000, 0.961 and
+   0.978, and it reads on every seed; only arm F falls to the fit floor.
+   Nothing ruled depends on the clause, and the sentence above stands as
+   recorded.*
+
 3. **New: the fifteen trained toy models are committed.** The fifteen trained
    toy models behind every committed result of 2026-09-25 and 2026-09-26 are
    committed to the repository with a sha256 list (a list of each file's
