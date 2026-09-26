@@ -1,4 +1,4 @@
-# The fifteen trained toy models behind the 2026-09-25 and 2026-09-26 results
+# The thirty trained toy models behind the 2026-09-25 and 2026-09-26 results
 
 *Committed 2026-09-26 under item 3 of "Refinements 2026-09-26, after the toy
 re-run" in `docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md`: these
@@ -27,8 +27,34 @@ recorded in each `out-v3-rules/nominate_*_seed*.json` and
 read the three blind-solver models, so no earlier file records their
 fingerprints; they are byte-identical to the repairs originals.
 
-**Not here.** The six free-arm models from the two training redesigns that
-failed (`ckpt_F_curriculum_seed*.pt`, `ckpt_F_reweight_seed*.pt`, behind
-`gate_curriculum.json` and `gate_reweight.json`), and the nine models from the
-grammar attempt (pull request 57, `out-grammar-c/`). They are still untracked in
-their own worktrees.
+## Added in a second commit: the other fifteen
+
+The fifteen above were the ones the ruling named. Fifteen more trained toy
+models sat untracked for the same reason and are committed the same way, with
+their fingerprints appended to the same `SHA256SUMS`, so the one command above
+checks all thirty.
+
+**The six free-arm models from the two training redesigns that failed**, in
+this folder: `ckpt_F_curriculum_seed*.pt` (redesign (b), a curriculum) and
+`ckpt_F_reweight_seed*.pt` (redesign (a), loss re-weighting), three seeds each,
+trained by the rehearsal repairs on 2026-09-25. The committed
+`gate_curriculum.json` and `gate_reweight.json` in the folder above were
+computed from them (the 0 of 3 seeds under each redesign in the repairs ruling,
+item 1). Copied unchanged from the same repairs worktree.
+
+**The nine models from the grammar attempt**, redesign (c), in
+`../../out-grammar-c/models/`: arms T, C and F, base recipe, three seeds each,
+trained on the evening of 2026-09-25 by the grammar-attempt session (pull
+request 57, main-line commit `ff778ea`). Every committed output in
+`out-grammar-c/` was computed from them. They keep the same file names as the
+repairs models (`ckpt_C_base_seed0.pt` and so on) but are different models,
+trained on the changed grammar, which is why they sit in their own folder.
+Copied unchanged from that session's worktree
+(`.claude/worktrees/w1c-grammar-attempt/experiments/rehearsal-successor-measure/out-grammar-c/`).
+`SHA256SUMS` names them by that relative path.
+
+No committed file records fingerprints for any of these fifteen, so the only
+check available is that each copy is byte-identical to the original it was
+copied from, which it is. The later check of the grammar attempt (pull request
+61) re-trained its own models and did not reproduce the seed count, which is
+the plainest evidence that these files cannot be rebuilt from code and seed.
