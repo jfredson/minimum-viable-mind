@@ -2,7 +2,9 @@
 
 *Written 2026-09-26 (Pacific) by the Claude Code session "MVM W1d proposal v3",
 in its own worktree (branch `worktree-w1d-proposal-v3`, cut from the main line
-at `70be9fb`, the merge of the toy re-run's check). **Status: PROPOSAL, version
+at `70be9fb`, the merge of the toy re-run's check; revised the same day on
+John's rulings on its decisions 20 to 22 and the check of the label search,
+after merging the main line at `a11f1d3`). **Status: PROPOSAL, version
 3. Nothing here is registered and nothing here binds.** It is written from
 version 2 (`docs/successor-experiment-proposal-2026-09-26-v2.md`, main line at
 `a3013be`, pull request 54, left unedited) and from John's rulings of
@@ -27,24 +29,24 @@ the particular trained models on the record, not a property of the code.*
 ## What this version rests on
 
 Every source version 2 named as pending has since merged to the main line, and
-every source is cited here by its main-line merge commit. One source, the
-route (b) label search, had reported but had not yet had its check when this
-was written; it is named once so a reader knows which figures that check may
-still move.
+every source is cited here by its main-line merge commit. Two sources, the
+route (b) label search and its check, were open pull requests when this
+revision was written and are cited by branch and commit; both are named once
+here so a reader knows which citations change form when they merge.
 
 | Source | Main-line commit | Standing |
 |---|---|---|
 | The Gate C tier 1 review of version 2, findings RT-212 to RT-229 | `c17dbdc` (pull request 56): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-27-successor-v2-gate-c-claude-worktree.md` | Reviewed version 2 at `e88c3c0`; one fatal finding (RT-212, the empty read on the free arm), four serious, thirteen minor |
-| John's rulings on that review | `3af189d` (pull request 60), refined at `4bb5727` (pull request 63): `docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md` | **Binding on this version.** Its "What this changes, and where" is the checklist this version was written to; its three refinements after the toy re-run are carried too |
+| John's rulings on that review | `3af189d` (pull request 60), refined at `4bb5727` (pull request 63), annotated at `da41c20` (pull request 68), and extended at `a11f1d3` (pull request 69, "RT-212 item 3 resolved"): `docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md` | **Binding on this version.** Its "What this changes, and where" is the checklist this version was written to; its three refinements after the toy re-run, the annotation of refinement 2's arm C clause, and the resolution of RT-212 item 3 after the label search are carried too |
 | The five rehearsal-repairs rulings of 2026-09-25, with their annotations after the check | `62c3824` (pull request 53): `docs/rulings/2026-09-25-rehearsal-repairs-rulings.md` | Binding; read with the annotations |
 | The rehearsal repairs, session (c), and their check | findings `882f252` (pull request 52): `docs/2026-09-26-rehearsal-repairs.md`; check `d216dbc` (pull request 58) | Checked: every verdict reproduces from the committed code; the decimals on arms C, F and M do not, as the 2026-09-23 ruling expects |
 | The toy re-run under the version 3 rules, and its check | findings `9d9d31a` (pull request 62): `docs/2026-09-26-toy-rerun-v3-rules.md`, Part 1; check `70be9fb` (pull request 65): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-26-toy-rerun-v3-rules-check-claude-worktree.md` | **Every toy figure in this version for arms C, F and M is taken from Part 1 of the re-run findings, under the rules this version registers**; the check recomputed every figure from the committed outputs and found no disagreement. Arm T's figures reproduce exactly and are the same in every record |
-| The fifteen trained toy models | `8038275` (pull request 64): `experiments/rehearsal-successor-measure/out-repairs/models/` with `SHA256SUMS` | Committed, with each file's fingerprint; section 10 says what rests on them and what does not |
+| The thirty trained toy models | `8038275` (pull request 64) for the fifteen behind the repairs and the re-run, and `7ed2b0e` (pull request 67) for the other fifteen: `experiments/rehearsal-successor-measure/out-repairs/models/` (twenty-one) and `out-grammar-c/models/` (nine), with one `SHA256SUMS` covering all thirty | Committed, with each file's fingerprint; every toy result of 2026-09-25 and 2026-09-26 rests on them (section 10) |
 | The grammar attempt (redesign (c)) and its check | attempt `ff778ea` (pull request 57): `docs/2026-09-26-grammar-attempt.md`; check `f1ea004` (pull request 61) | The pass line was not cleared; fallback (d) registers for the named-other condition (section 4.4) |
 | The rented slice, second attempt, and its check | `9f802db` (pull request 51): `docs/2026-09-25-rented-slice-attempt-2-findings.md` and the note `docs/preauthorised-spending-proposal-2026-09-21-note-2026-09-25-attempt-2.md`; check `afb5183` (pull request 55) | Checked: every point passes, point 1 in part (the go was not compared with John's own message, which no committed file holds) |
 | Version 2's failure-mode pass | `a3013be` (pull request 54): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-26-successor-v2-failure-mode-pass-claude-worktree.md` | The author's run on version 2; this version's own run is section 17 |
 | The Weekend 1 queue ruling (nine pages, 2026-09-25) | main line: `docs/rulings/2026-09-26-weekend-1-queue.md` | Ruled. Its own check under the pairing rule was owed when version 2 was written and is still owed; this version relies on it as version 2 did, and says so |
-| **The route (b) label search on the free arm** | branch `w1d-free-arm-label-search` at `26b737f` (pull request 66, open): `docs/2026-09-26-free-arm-label-search.md` | Reported: none of its three candidate reads clears the four-fifths floor on arm F, and John ruled on 2026-09-26 that this version registers with the fit floor alone (section 7.2, item 1). **Its check under the pairing rule was being run when this was written** and is cited by number once it lands; one of the search's figures is withheld until that check reconciles it (section 7.2, item 1) |
+| **The route (b) label search on the free arm, and its check** | search: branch `w1d-free-arm-label-search` at `26b737f` (pull request 66, open): `docs/2026-09-26-free-arm-label-search.md`; check: branch `check-free-arm-label-search` at `75b7cf9` (pull request 70, open): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-26-free-arm-label-search-check-claude-worktree.md` | Reported and checked: none of its three candidate reads clears the four-fifths floor on arm F, every figure recomputes, and John ruled on 2026-09-26 that this version registers with the fit floor alone (the rulings file at `a11f1d3`; section 7.2, item 1). The check also reconciled the search's fit for the ruled label with the re-run's 0.172: they are two different reads, and the registered rule produces the 0.172 (section 7.2, item 3) |
 
 ---
 
@@ -258,7 +260,8 @@ withdrawn from the record under failure 2's own rule (the pre-stated target
 changed before registration, so the null already collected is withdrawn
 rather than reported). **At registered scale the same can happen, and the
 first release is the test of it** (John's ruling of 2026-09-26 on the route
-(b) result, section 7.2, item 1): the single arm F run of step 5a has its
+(b) result, the rulings file at `a11f1d3`, "RT-212 item 3 resolved", item 5;
+section 7.2, item 1): the single arm F run of step 5a has its
 nomination fit reported against the floor before the second release is asked
 for, and a miss is a stop there, beside the learn-both stop (section 11). If
 arm F returns no verdict, R1 is not reached by a number at the entangled end:
@@ -923,15 +926,18 @@ no-verdict rules, written before it runs:
    construction: on an arm that has learned the task,
    `own_directed_accuracy − accuracy_untouched` is large, and the denominator
    is at least four fifths of it.
-2. **The fit floor (new; ruled, the Gate C rulings, RT-212, item 1).** The
-   straight-line read that nominates the ownership subspace must fit at
-   **four fifths or better on held-out development episodes** at the nominated
-   layer, the same convention as the whole-state floor. A read that misses it
-   returns **"no verdict, read failed its floor"** for that arm and seed, and
-   the transplant arithmetic is not reported as a reading. The fit is printed
-   in the reporting table, with the label-permutation null beside it as a
-   reference and not as the bar. Section 7.2, item 1, gives the rule in full
-   and its toy demonstration.
+2. **The fit floor (new; ruled, the Gate C rulings, RT-212, item 1; applied
+   per arm and seed, ruled 2026-09-26 on decision 21).** The straight-line
+   read that nominates the ownership subspace, one read per layer at the
+   action position (section 7.2, item 3), must fit at **four fifths or better
+   on held-out development episodes** at every layer of the nominated site
+   set, the same convention as the whole-state floor; a site set's fit is the
+   worst of its layers. A read that misses it returns **"no verdict, read
+   failed its floor"** for that arm and seed, and the transplant arithmetic is
+   not reported as a reading. The fit is printed in the reporting table, with
+   the label-permutation null beside it as a reference and not as the bar.
+   Section 7.2, items 1 and 3, give the rule in full and its toy
+   demonstration.
 3. **The no-transplant sanity rule, with the review's formula and the
    allowance as re-worded (ruled, the Gate C rulings, RT-222).** Version 1
    said the no-transplant rate "should be near the one-in-eight guessing
@@ -1060,11 +1066,13 @@ Part 1, section 1.3).
    is reported beside it and is not the bar. The reason recorded in the
    ruling: a permutation null alone would likely certify a read at 0.172,
    which recovers the label on about one episode in six, and that is not an
-   instrument worth transplanting. The floor is applied per seed, as the
-   re-run applied it; the check at `70be9fb`, section 4.1, notes that the
-   ruling's "on that arm" leaves per-seed against per-arm open, and that on
-   the toy it is moot because every arm passes or fails on all three seeds
-   alike (decision 21).
+   instrument worth transplanting. **The floor applies per arm and seed**
+   (ruled 2026-09-26 on decision 21), as the re-run applied it: an arm's three
+   seeds are reported one by one, each a reading or a no verdict, and the
+   across-seed spread of section 9 is taken over the seeds that read. The
+   check at `70be9fb`, section 4.1, had noted that the RT-212 ruling's "on
+   that arm" left per-seed against per-arm open; on the toy it is moot,
+   because every arm passes or fails on all three seeds alike.
 
    **The toy demonstration the ruling required (MEASURED: the re-run findings
    at `9d9d31a`, Part 1, section 1.3; the check at `70be9fb`, section 3.2).**
@@ -1074,10 +1082,12 @@ Part 1, section 1.3).
    0.961 and 0.978; arm M at 1.000 on every seed; the permutation null's 95th
    percentile sits at 0.111 to 0.128 across all twelve pairs. The lowest fit
    among the reads that clear is 0.961. **One clause of the rulings file's
-   refinement item 2 is wrong on this point and is owed an annotation**: it
-   says that under the layer-0 removal "arms C and F still fall to the fit
-   floor"; arm C does not, and only arm F falls to the floor (the check at
-   `70be9fb`, section 6). Nothing ruled depends on the clause.
+   refinement item 2 was wrong on this point and now carries an annotation**
+   (the rulings file at `da41c20`, pull request 68): it said that under the
+   layer-0 removal "arms C and F still fall to the fit floor"; arm C does
+   not, and only arm F falls to the floor (the check at `70be9fb`, section
+   6). Nothing ruled depends on the clause, and the sentence stands as
+   recorded with the annotation beside it.
 
    **The route (b) investigation, and what it found (the Gate C rulings,
    RT-212, item 3; the result ruled 2026-09-26).** Route (b) asked for a label
@@ -1095,19 +1105,38 @@ Part 1, section 1.3).
    away; anchored at the action position the three candidates reach 0.733,
    0.383 and 0.478. All three sit well above their shuffle null, so they are
    carried by the free arm, just not at the floor (MEASURED: the search's
-   findings at `26b737f`, sections 1 and 2; **its check under the pairing rule
-   was being run when this was written and is cited by number when it
-   lands**). **John's ruling of 2026-09-26: this version registers with the
-   fit floor alone; the ruled label, which marker word is the model's own,
-   stays the one registered read; and the three candidates enter the toy
-   record as exploratory fits, not as registered reads.** One of the search's
-   figures is withheld here: its fit for the ruled label on arm F over the 60
-   site sets differs from the 0.172 the Gate C review and the re-run report,
-   and it is not quoted until the search's check reconciles the two; the 0.172
-   quoted throughout this version is the re-run's. What follows from the
-   ruling for the launch order: the single arm F run of step 5a has its
-   nomination fit reported against the floor before the second release is
-   asked for, and a miss is a stop there (section 11, step 5a).
+   findings at `26b737f`, sections 1 and 2; its check,
+   `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-26-free-arm-label-search-check-claude-worktree.md`
+   on branch `check-free-arm-label-search` at `75b7cf9`, pull request 70,
+   recomputed every best fit, shuffle summary and verdict from the committed
+   files with no disagreement, and confirmed the twelve models against the
+   committed fingerprint list; its section 6 narrows the search's closing
+   sentence to "none of three candidates chosen in advance", which is how it
+   is stated here). **John's ruling of 2026-09-26 (the rulings file at
+   `a11f1d3`, "RT-212 item 3 resolved", items 1 to 5): this version registers
+   with the fit floor alone; the ruled label, which marker word is the model's
+   own, stays the one registered read; the three candidates enter the toy
+   record as exploratory fits, not as registered reads; the experiment
+   proceeds; and the first release's single arm F run reports its nomination
+   fit against the floor, a miss being a stop before the second release
+   draws** (section 11, step 5a). The reason recorded there: the toy is a
+   five-layer model, the fits rising to 0.79 above a 0.10 shuffle baseline is
+   the argument that the twelve-layer model may clear the floor, and $44 is
+   the price of finding out before $130 is spent. **The search also printed a
+   fit for the ruled label on arm F of 0.556, 0.483 and 0.433 over its 60 site
+   sets, which is not the 0.172 the Gate C review and the re-run report. The
+   check reconciled the two: they are different reads of the same models,
+   episodes, split and fitter.** The registered rule fits one read per layer
+   at the action position only and reports the worst layer of the nominated
+   set; the search fitted one read per site set, with the layers and
+   positions of the set laid end to end and the post-identity span averaged,
+   and all three of its higher figures come from that averaged span at layers
+   0 to 1 or 0, which starts at the model's own marker word and which the
+   layer-0 removal of item 2 excludes. On the search's own cell for the
+   registered read (layer 1, the action position) it prints 0.172, 0.067 and
+   0.106 to the digit (MEASURED: the check at `75b7cf9`, "Verdict" and section
+   2). Item 3 registers which read is meant, so the two cannot be confused
+   again; the 0.172 quoted throughout this version is the registered read's.
 
 2. **Candidate sites: the rule, the printed list, and what is removed from the
    family.** The site list is registered as the rule that generates it
@@ -1172,9 +1201,11 @@ Part 1, section 1.3).
      its parenthesis names `post-identity` and any set including the marked
      turns, which on this grammar is `post-identity` alone (MEASURED: the check
      at `70be9fb`, section 4.4, by a script printed in its appendix C and not
-     committed as a file). This version
-     registers the reading as run, layer 0 kept at `action` only, and puts the
-     narrower one to John as decision 20. On the separable arms layer 0 inside
+     committed as a file). **This version registers the reading as run, layer
+     0 kept at `action` only, 45 site sets on the toy and 325 on the
+     registered model (ruled 2026-09-26 on decision 20)**; the narrower
+     reading is recorded beside it as the alternative that was put and not
+     taken. On the separable arms layer 0 inside
      the action turn does move the action (arm T's whole-state share there is
      1.000 against 0.000 untouched; arm M's about 0.40, short of its floor),
      so it is the rule's position-set order, `action` first, that decides the
@@ -1206,10 +1237,27 @@ Part 1, section 1.3).
      section 1.3; the check at `70be9fb`, section 3.7). The reason recorded
      for not ruling it blind: it may move arm T's anchor read off the layer
      its slot was built at, which on the toy is exactly what it does.
-3. **Candidate directions.** At each site, fit the straight-line read for the
-   label above and take its leading directions, at each of the rank caps
-   **1, 2, 4 and 8**; **the registered cap is 8** and the search family
-   reports all four (ruled, the queue ruling, page 1d).
+3. **Candidate directions, and the read that supplies them, registered.**
+   **The read the rule uses is one fitted straight-line read per layer, on
+   the running state at the mask token of the own-directed action (the
+   `action` position), labelled with the model's own marker word, fitted on
+   the development episodes and scored on the held-out part of them** (in the
+   rehearsal code, `repairs.fit_reads`: one logistic regression per layer, the
+   same read whatever site set is later nominated). At each site set the
+   directions transplanted are that read's leading directions at each layer
+   in the set, at each of the rank caps **1, 2, 4 and 8**; **the registered
+   cap is 8** and the search family reports all four (ruled, the queue ruling,
+   page 1d). **A nominated site set's fit, for the floor of item 1, is the
+   fit of the worst layer in the set**, as the re-run's verdict code reports
+   it; on the toy no nomination has more than one layer, so this has not yet
+   bitten. **What is not the registered read:** a read fitted per site set,
+   with the states of every layer and every position in the set laid end to
+   end and a multi-position span averaged over its positions, which is what
+   the route (b) label search fitted (its `site_features`). That is a
+   different quantity, it can score far higher on the same models (0.556
+   against 0.172 on arm F seed 0, item 1), and nothing in this design uses it
+   (the label-search check at `75b7cf9`, section 2, which traced both reads
+   through the code).
 4. **The layer set for the whole-state transplant: "the smallest that clears
    the floor", in one reading** (ruled, the repairs rulings, item 4). For each
    position set, the layer set with the fewest layers that clears the
@@ -1579,10 +1627,10 @@ invented here.** The registration text freezes them in this form.
 |---|---|---|
 | Separation bar between arms T and C (R1 against R2) | **0.5**: the minimum gap between arm C's reading and arm T's, on the chance-corrected form, per seed | `docs/rulings/2026-09-26-weekend-1-queue.md`, page 1a. **Under this version's rules the toy cleared it on every seed, at 1.0051, 1.0025 and 1.0000** (MEASURED: the re-run findings at `9d9d31a`, Part 1, section 1.0, from `out-v3-rules/pass2_summary.json`, `separation`). Version 2's 0.9977 and 0.9927 came from the pre-widening family, at site sets the rule excludes, and are superseded (the Gate C rulings, RT-221) |
 | Gate on learning (R3) | above one in four at the 0.05 level, one-sided binomial, on at least two seeds of three: **0.2633 on 3,000 held-out episodes** (790 or more correct), or the same rule at the registered count; **on the own-directed condition only for arms T, C and M, on both conditions for arm F**; the ownership-blind and name-only solvers reported beside it as references | the queue ruling, page 1b; the Gate C rulings, RT-213, item 1 |
-| Fit floor on the nominating read | **four fifths on held-out development episodes**, at the nominated layer, per arm and seed; the permutation null reported beside it and not used as the bar | the Gate C rulings, RT-212, item 1 |
+| Fit floor on the nominating read | **four fifths on held-out development episodes**, per arm and seed, on the registered read (one read per layer at the action position; a site set's fit is its worst layer); the permutation null reported beside it and not used as the bar | the Gate C rulings, RT-212, item 1; per arm and seed and the read itself ruled 2026-09-26 (decision 21; section 7.2, item 3) |
 | Whole-state floor (whether a site set is usable) | **four fifths of the arm's own own-directed accuracy** on the same fresh episodes, on the chance-corrected scale; the whole-state layer set is **the smallest that clears it, per position set, then the highest ownership-only share among those**; every all-positions site set excluded; every layer-0 site set removed at position sets other than `action` | the queue ruling, page 1c; the repairs rulings, items 3 and 4; the Gate C rulings, RT-216, item 1, as clarified by refinement item 2 |
 | Rank cap on the nominated subspace | **8**, with the family reporting caps 1, 2, 4 and 8 | the queue ruling, page 1d |
-| Candidate site list and its family correction | the rule of section 7.2, printed for the registered 12-layer model: **325 site sets and 1,300 comparisons** after the layer-0 removal (45 and 180 on the toy); the count is the rule's output, not hand arithmetic | the queue ruling, page 1e; the repairs rulings, item 3; the Gate C rulings, RT-215 and RT-216 |
+| Candidate site list and its family correction | the rule of section 7.2, printed for the registered 12-layer model: **325 site sets and 1,300 comparisons** with layer 0 kept at the action position set only (45 and 180 on the toy); the count is the rule's output, not hand arithmetic | the queue ruling, page 1e; the repairs rulings, item 3; the Gate C rulings, RT-215 and RT-216; the reading of the layer-0 exclusion ruled 2026-09-26 (decision 20) |
 | Control 3 | **a twenty-draw null, reported and not gated**: median, 95th percentile, and the ownership-only share's place among the draws | the Gate C rulings, RT-214, items 1 and 2, as refined on 2026-09-26, refinement item 1 |
 | Seed count per arm | **three**; the toy arithmetic implying one seed was not carried across | the queue ruling, page 1f |
 | Uncertainty across seeds | **the across-seed spread of the raw difference** is the registered uncertainty; the within-seed bootstrap over matched pairs is reported beside it; neither measures drift between runs of one seed, and the registration says so | the queue ruling, page 1g; on the repairs run the two disagreed by more than two to one on arms C and F (the repairs findings at `882f252`, section 6.2; figures at pre-rule site sets, not carried) |
@@ -1613,35 +1661,45 @@ part that spent money is item R-11. Total spent on the rehearsal so far:
 about $0.57, the sum of the compute ledger's three slice rows, of the
 rehearsal line's $10 (item 10 of the 2026-09-21 ruling; section 12.3).
 
-**The models every toy result rests on.** The fifteen trained toy models
-behind the repairs and the re-run (arms T, C, F and M and the ownership-blind
-solver, three seeds each) are committed at
-`experiments/rehearsal-successor-measure/out-repairs/models/` with their
-`SHA256SUMS` list and a `README.md` (main line at `8038275`, pull request 64),
-because they cannot be rebuilt from code and seed (the repairs check at
-`d216dbc` retrained from clean and got different nominations) and an
-uncommitted record the reader cannot open is the form of ledger item RT-145.
-The re-run's fingerprint check compared three recorded hashes per file with
-that list and found all fifteen agree, and its check hashed the stored files
-themselves and found the same (MEASURED: `out-v3-rules/models_sha256_check.json`,
-`all_agree: true`; the check at `70be9fb`, section 2.1). **What rests on
-them:** every base-recipe result of the repairs (`gate_base.json`,
-`nominate_base_*.json`, `measure_base_*.json`, `summary_base.json`, the
-training records `train_*_base_seed*.json` and the `F/base/*` rows of
-`diagnose_named_other.json`), the whole of `out-v3-rules/`, and every toy
-figure in sections 3, 5, 7, 8 and 9 of this version. **What rests on models
-not committed at the time of writing, named so nothing is stepped over:** the
-two training-redesign results of section 4.4 (the curriculum and the loss
-re-weighting, 0 of 3 seeds each), which rest on six further free-arm models
-still untracked in the repairs worktree; the grammar attempt of section 4.4
-(774, 730 and 759), which rests on its own nine models, untracked in its
-worktree; the grammar check's and the repairs check's re-run figures, which
-rest on models those sessions trained and did not commit; and the rented
-slice's seconds per step (section 9), whose timing model exists on the record
-only as a checksum (the check at `70be9fb`, section 2.2). None of those
-figures is a reading of the measure; each is a gate count or a timing, quoted
-as such. Whether those fifteen further files get the same treatment is put to
-John as decision 22.
+**The models every toy result rests on: thirty, all committed.** The fifteen
+trained toy models behind the repairs and the re-run (arms T, C, F and M and
+the ownership-blind solver, three seeds each) are committed at
+`experiments/rehearsal-successor-measure/out-repairs/models/` (main line at
+`8038275`, pull request 64), because they cannot be rebuilt from code and
+seed (the repairs check at `d216dbc` retrained from clean and got different
+nominations) and an uncommitted record the reader cannot open is the form of
+ledger item RT-145. The other fifteen are committed too (main line at
+`7ed2b0e`, pull request 67): the six free-arm models behind the two training
+redesigns that failed (`ckpt_F_curriculum_seed*.pt` and
+`ckpt_F_reweight_seed*.pt`, in the same folder) and the nine behind the
+grammar attempt (arms T, C and F, three seeds each, at
+`experiments/rehearsal-successor-measure/out-grammar-c/models/`). One
+fingerprint list, `out-repairs/models/SHA256SUMS`, covers all thirty, with a
+`README.md` beside it saying where each file came from. The re-run's
+fingerprint check compared three recorded hashes per file with the list for
+the first fifteen and found all agree, its check hashed the stored files
+themselves and found the same, and the label-search check found all thirty
+files on the main line check against the list (MEASURED:
+`out-v3-rules/models_sha256_check.json`, `all_agree: true`; the check at
+`70be9fb`, section 2.1; the label-search check at `75b7cf9`, section 4).
+**What rests on them: every toy result of 2026-09-25 and 2026-09-26 that
+this version quotes.** On the first fifteen: every base-recipe result of the
+repairs (`gate_base.json`, `nominate_base_*.json`, `measure_base_*.json`,
+`summary_base.json`, the training records `train_*_base_seed*.json` and the
+`F/base/*` rows of `diagnose_named_other.json`), the whole of
+`out-v3-rules/`, the label search's fits, and every toy figure in sections 3,
+5, 7, 8 and 9 of this version. On the six redesign models: the curriculum and
+loss re-weighting results of section 4.4 (0 of 3 seeds each). On the nine
+grammar-attempt models: the grammar attempt's figures of section 4.4 (774,
+730 and 759, and everything in `out-grammar-c/`). Two kinds of figure quoted
+in this version are not toy results and rest on no committed model, and are
+said to be what they are where they appear: the rented slice's seconds per
+step (section 9), a timing of a model that exists on the record as a
+checksum only; and the two checks' own re-run figures (the grammar check's
+750, 809 and 739; the repairs check's 6 of 12), which are the checks'
+verification of a verdict, quoted as such, from retrainings those checks
+recorded but did not keep. Decision 22, which asked whether the further
+fifteen should be committed, is done.
 
 **A pre-stated quantity the rehearsal never exercised is a fatal finding on
 its own** (item 5 of the 2026-09-21 ruling). Each item below therefore says
@@ -1725,9 +1783,8 @@ what exercised it.
   the machine half of the handshake is still untested (decision 18). Cost:
   about $0.57 across three rows against the item's $3 (section 12.3).
 
-**What happens next.** This version goes to its Gate C tier 1 review, with
-the route (b) search's check cited by number once it lands; John rules on
-section 15; rehearsal items R-1 to R-6 are re-run once more on the registered rules
+**What happens next.** This version goes to its Gate C tier 1 review; John
+rules on the open items of section 15; rehearsal items R-1 to R-6 are re-run once more on the registered rules
 to refresh the control figures of section 7.3 and the arm M true-slot check
 of section 5.3 at the registered site sets; the registration text (version 4,
 with every frozen number and the printed site list) goes to Gate A, both
@@ -1742,9 +1799,9 @@ There is no target date; the only date is the kill date of 2026-10-18
 Binding if registered, in this order, on the chain of section 4 of
 `docs/december-result-roadmap-2026-09-20.md` as amended 2026-09-21:
 
-1. Gate C tier 1 on this version → John's rulings on section 15 → the route
-   (b) search's check read against section 7.2, item 1, and its figures
-   annotated if the check moves one.
+1. Gate C tier 1 on this version → John's rulings on the open items of
+   section 15 → the label search and its check cited by their main-line merge
+   commits once they land.
 2. Registration text (version 4) with every frozen number and the printed site
    list → **Gate A, both tiers** → registration commit. **No target date.
    Kill date 2026-10-18**, past which committing it takes a fresh ruling
@@ -2290,7 +2347,8 @@ remove it.
 Each with how confident the recommendation is, whether it is ordinary practice
 or a judgment call, and the strongest alternative, so nothing is inherited by
 default. Version 2's nineteen are kept under their numbers; the ones ruled
-since are marked so and carry the ruling; three new ones follow.
+since are marked so and carry the ruling; four new ones follow, three of them
+ruled or done on 2026-09-26 in the revision of this version.
 
 1. **Nomination runs blind on every arm, including arms T and M.** The
    procedure is one instrument (section 7.2). *Ruled 2026-09-25 (the queue
@@ -2435,43 +2493,47 @@ since are marked so and carry the ruling; three new ones follow.
     between the source assignment and the action, one set each, which has not
     been run and would change the count.
 
-20. **Which reading of the layer-0 exclusion is registered (new).** The
-    RT-216 ruling's first sentence keeps layer 0 at the action position set
-    only; its parenthesis names the position sets spanning the acting turns,
-    which on this grammar is `post-identity` alone. The two readings differ on
+20. **Which reading of the layer-0 exclusion is registered.** The RT-216
+    ruling's first sentence keeps layer 0 at the action position set only;
+    its parenthesis names the position sets spanning the acting turns, which
+    on this grammar is `post-identity` alone. The two readings differ on
     `action+ans` and `action+3`, and on the toy they give the same twelve
-    nominations (the check at `70be9fb`, section 4.4). Recommendation: register
-    the reading as run, layer 0 kept at `action` only (45 site sets on the toy,
-    325 on the registered model), because it is the one the re-run exercised
-    and it is the stricter of the two where they differ. *Confidence:
-    moderate. Judgment call.* **Alternative:** the narrower reading, layer 0
+    nominations (the check at `70be9fb`, section 4.4). *Ruled 2026-09-26: the
+    reading as run, layer 0 kept at `action` only, 45 site sets on the toy and
+    325 on the registered model.* Registered in section 7.2, item 2. The
+    alternative that was put and not taken: the narrower reading, layer 0
     removed at `post-identity` only (55 and 351), which follows the ruling's
     parenthesis and keeps two more site sets that on the separable arms do
-    move the action (section 7.2, item 2).
+    move the action.
 
-21. **The fit floor is applied per arm and seed, not per arm (new).** The
-    RT-212 ruling says a read that misses the floor "returns no verdict on
-    that arm"; the re-run applied it per seed, and the check calls that an
+21. **The fit floor is applied per arm and seed, not per arm.** The RT-212
+    ruling says a read that misses the floor "returns no verdict on that
+    arm"; the re-run applied it per seed, and the check calls that an
     interpretation, moot on the toy because every arm passes or fails on all
-    three seeds alike (the check at `70be9fb`, section 4.1). Recommendation:
-    per arm and seed, because every other quantity in the reporting table is
-    per seed and the across-seed spread is the registered uncertainty.
-    *Confidence: moderate. Judgment call.* **Alternative:** per arm, with the
-    arm returning no verdict if fewer than two seeds of three clear, which
-    matches the shape of the learn-both and lesion rules and would let one
-    seed's reading stand beside two no verdicts.
+    three seeds alike (the check at `70be9fb`, section 4.1). *Ruled
+    2026-09-26: per arm and seed.* Written into sections 6.4 and 7.2. The
+    alternative that was put and not taken: per arm, with the arm returning
+    no verdict if fewer than two seeds of three clear.
 
 22. **Whether the fifteen further toy models get the same treatment as the
-    fifteen committed (new).** The six free-arm models behind the two training
-    redesigns, and the nine behind the grammar attempt, are still untracked in
-    their worktrees (section 10); the re-run findings and the models' own
-    README both name the gap. Recommendation: commit them with a fingerprint
-    list, about 75 MB, because the sentence "every toy result of the weekend
-    has its models on the record" is otherwise false in a way the RT-145 form
-    describes. *Confidence: moderate. Judgment call; the money is $0 and the
-    cost is repository size.* **Alternative:** leave them, since none of the
-    results resting on them is a reading of the measure, and say so in the
-    registration, which section 10 already does.
+    fifteen committed.** *Done: pull request 67 (main line at `7ed2b0e`)
+    committed the six redesign models under `out-repairs/models/` and the
+    nine grammar-attempt models under `out-grammar-c/models/`, with the one
+    `SHA256SUMS` covering all thirty.* Section 10 now says that every toy
+    result of 2026-09-25 and 2026-09-26 rests on committed models.
+
+23. **The registered read is one read per layer at the action position, with
+    a site set's fit being its worst layer (new, and ruled with the
+    revision).** Put here so the choice is on the record beside the others:
+    the rule's read is `repairs.fit_reads`, one logistic regression per layer
+    at the mask token, scored on held-out development episodes; the label
+    search's pooled per-site-set read is a different quantity and is not
+    registered (section 7.2, item 3). *Ruled 2026-09-26, in John's revision
+    instruction for this version.* The alternative that exists and was not
+    taken: register the pooled read, which scores higher on arm F (0.556
+    against 0.172 on seed 0) because it strings positions together and
+    averages a span that starts at the model's own marker word, and which the
+    layer-0 removal would then cut into.
 
 *Nothing above is registered. The registration commit, if it comes, follows
 the Gate C pass, John's decisions, and Gate A, and every run it affects is
@@ -2492,7 +2554,10 @@ launched after it.*
   scripts in `reviews/2026-09-27-successor-v2-gate-c-scripts/`.
 - The rulings this version is built to:
   `docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md` (main line at
-  `3af189d`, pull request 60; its refinements at `4bb5727`, pull request 63);
+  `3af189d`, pull request 60; its refinements at `4bb5727`, pull request 63;
+  the annotation of refinement 2's arm C clause at `da41c20`, pull request
+  68; the resolution of RT-212 item 3 after the label search at `a11f1d3`,
+  pull request 69);
   `docs/rulings/2026-09-25-rehearsal-repairs-rulings.md` (five decisions and
   five annotations; main line at `62c3824`, pull request 53);
   `docs/rulings/2026-09-26-weekend-1-queue.md` (nine pages, 2026-09-25);
@@ -2501,9 +2566,10 @@ launched after it.*
   `docs/rulings/2026-09-23-nomination-label.md` and
   `docs/rulings/2026-09-23-range-and-direction-only.md`;
   `docs/rulings/2026-09-20-center-as-degree.md` and
-  `docs/rulings/2026-09-20-december-result-roadmap.md`. John's ruling of
-  2026-09-26 on the route (b) result is carried in section 7.2, item 1, from
-  his message; it has no ruling file of its own at the time of writing.
+  `docs/rulings/2026-09-20-december-result-roadmap.md`. John's rulings of
+  2026-09-26 on this version's decisions 20 to 23 are carried in sections
+  7.2, 6.4 and 15 from his revision instruction; they have no ruling file of
+  their own at the time of writing.
 - The three rehearsals: `docs/2026-09-21-successor-measure-rehearsal.md`
   (main line); `docs/2026-09-26-rehearsal-repairs.md` (main line at
   `882f252`, pull request 52; checked at `d216dbc`, pull request 58); and
@@ -2514,17 +2580,22 @@ launched after it.*
   `docs/toy-rerun-v3-rules-method-2026-09-26.md`; code and outputs under
   `experiments/rehearsal-successor-measure/` (`out/`, `out-repairs/`,
   `out-v3-rules/`).
-- The fifteen trained toy models:
-  `experiments/rehearsal-successor-measure/out-repairs/models/`, with
-  `SHA256SUMS` and `README.md` (main line at `8038275`, pull request 64).
+- The thirty trained toy models:
+  `experiments/rehearsal-successor-measure/out-repairs/models/` (twenty-one)
+  and `experiments/rehearsal-successor-measure/out-grammar-c/models/` (nine),
+  with the one `SHA256SUMS` and the `README.md` in the first folder (main line
+  at `8038275`, pull request 64, and `7ed2b0e`, pull request 67).
 - The grammar attempt: `docs/2026-09-26-grammar-attempt.md` (main line at
   `ff778ea`, pull request 57; its method note
   `docs/grammar-attempt-method-2026-09-25.md`; outputs `out-grammar-c/`),
   checked at `f1ea004` (pull request 61):
   `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-26-grammar-attempt-check-claude-worktree.md`.
 - The route (b) label search: `docs/2026-09-26-free-arm-label-search.md`
-  (branch `w1d-free-arm-label-search` at `26b737f`, pull request 66, open;
-  its check cited here once it lands).
+  (branch `w1d-free-arm-label-search` at `26b737f`, pull request 66, open),
+  and its check,
+  `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-26-free-arm-label-search-check-claude-worktree.md`
+  (branch `check-free-arm-label-search` at `75b7cf9`, pull request 70, open).
+  Both are cited by their main-line merge commits once they land.
 - The rented slice: `docs/2026-09-25-rented-slice-findings.md` (first attempt,
   main line) and `docs/2026-09-25-rented-slice-attempt-2-findings.md` with
   the note `docs/preauthorised-spending-proposal-2026-09-21-note-2026-09-25-attempt-2.md`
@@ -2614,10 +2685,10 @@ route-sentence search, with this design's own wording in the pattern:
 
 ```
 $ grep -n -iE 'route by which|carried by the token|forced by the loss|is the input token' docs/successor-experiment-proposal-2026-09-26-v3.md
-1031:   own**. *The route by which that quantity reaches the model's states, in one
-1032:   sentence:* the marker word is the input token at every turn the model's own
-1033:   assignments are spoken on, so it is carried by the token into the running
-1037:   claim, that which marker word is the model's own is forced by the loss at
+1037:   own**. *The route by which that quantity reaches the model's states, in one
+1038:   sentence:* the marker word is the input token at every turn the model's own
+1039:   assignments are spoken on, so it is carried by the token into the running
+1043:   claim, that which marker word is the model's own is forced by the loss at
 ```
 
 (The same four lines match again inside this section, where the command's
@@ -2790,14 +2861,17 @@ blocks match the patterns and would count themselves):
 ```
 $ awk '/^## 17\. /{exit} {print}' docs/successor-experiment-proposal-2026-09-26-v3.md > "$T/v3-through16.md"
 $ grep -c -iE 'verif|measur|calibrat|attack|reproduc|confirm|\brun|\bran\b|check|shows|showed|found|observed|recorded|returns|returned|yield|result' "$T/v3-through16.md"
-573
+587
 $ grep -c -E '[0-9]+\.[0-9]{2,}|[0-9]{1,3},[0-9]{3}' "$T/v3-through16.md"
-195
+204
 $ grep -c MEASURED "$T/v3-through16.md"; grep -c ARGUED "$T/v3-through16.md"; wc -l < "$T/v3-through16.md"
-56
+57
 15
-2552
+2623
 ```
+
+(These are the counts on the revised file; the first commit's were 573, 195,
+56, 15 and 2,552 lines.)
 
 Part two was run by reading, for every MEASURED claim this version takes
 from the re-run, the repairs, the 2026-09-21 rehearsal, the grammar attempt,
@@ -2808,9 +2882,10 @@ M that version 2 quoted from the repairs' 44-set family does not reproduce
 under the registered rule, and this version replaces each with the re-run's
 figure or, for the controls the re-run did not re-run (controls 1, 2, 4 and
 6, the true-slot check on arm M, and the uncertainty row), drops the figure
-and says it is owed (sections 5.3, 7.3, 9 and W11). The figures that rest on
-models not committed at the time of writing are named in section 10. The
-repository's own two checkers, run on the whole document. A first run, before
+and says it is owed (sections 5.3, 7.3, 9 and W11). Every toy result quoted
+rests on the thirty committed models, and the two kinds of figure that are
+not toy results are named in section 10. The repository's own two checkers,
+run on the whole document. A first run, before
 this section existed, found four references to files not in the repository
 and six figures absent from the file cited; one reference was a script name
 printed in a check's appendix rather than a file, and three figures were arm
@@ -2820,8 +2895,8 @@ section 5.3). The run on the file as it stands:
 
 ```
 $ .venv/bin/python scripts/check_citations.py --only docs/successor-experiment-proposal-2026-09-26-v3.md
-[CONFIDENT] 3 reference(s) name a file that is not in the repository
-  (every one is the route (b) search's findings file, on pull request 66 and not yet merged, cited by branch and commit at each place)
+[CONFIDENT] 6 reference(s) name a file that is not in the repository
+  (three are the route (b) search's findings file, on pull request 66, and three its check, on pull request 70; neither had merged when this was committed, and each is cited by branch and commit at every place; the first commit of this version had 3, before the check existed)
 [CONFIDENT] 3 exact figure(s) absent from the one file their sentence cites
   (every one is the section number 1.3, in "Part 1, section 1.3", read as a figure)
 $ .venv/bin/python scripts/check_single_source.py --only docs/successor-experiment-proposal-2026-09-26-v3.md
@@ -2961,8 +3036,8 @@ at `c17dbdc`) and the rulings on them
   read, the three candidates as exploratory fits (section 7.2, item 1;
   sections 3, 7.4, 9); the fit-floor stop added to step 5a beside the
   learn-both stop, as S4a (section 11; W5); the search's figure for the ruled
-  label withheld until its check reconciles it with 0.172 (section 7.2, item
-  1).
+  label withheld until its check reconciled it with 0.172, which the check
+  then did (the revision block below; section 7.2, items 1 and 3).
 - **RT-213 (serious: arm C fails the learn-both gate on every toy seed).**
   Ruled, items 1 to 3. Arms T, C and M gated on the own-directed condition
   only, arm F on both, with the reason recorded (sections 3, 8.1, 9); arm C's
@@ -2998,8 +3073,9 @@ at `c17dbdc`) and the rulings on them
   rule (section 13); version 2's argument about identical twin states inside
   the action turn not repeated, and the tie-break on arm T stated (section
   7.2, item 2); which reading of "spanning the acting turns" is registered put
-  to John as decision 20; the refinements' wrong clause about arm C falling to
-  the fit floor named as owed an annotation (section 7.2, item 1).
+  to John as decision 20, since ruled (the revision block below); the
+  refinements' wrong clause about arm C falling to the fit floor named as
+  owed an annotation, since annotated at `da41c20` (section 7.2, item 1).
 - **RT-217 (minor: the $16 wager).** Ruled. The wager stated on the ruled
   split against the full range, with a $10 floor, and the worst case, $14.79,
   printed (sections 12.4, 12.8, 15 item 7; section 17, candidate 7).
@@ -3064,6 +3140,42 @@ at `c17dbdc`) and the rulings on them
   carry version 2's text with only the citations updated; version 1's
   decisions 2, 3, 4, 8, 12 and 13 stand as put.
 
+**Revision of 2026-09-26, second commit on the same branch**, from John's
+rulings on this version's decisions 20 to 22, the check of the label search
+(pull request 70), and three merges to the main line the same day:
+
+- **Decision 20 ruled:** the layer-0 exclusion registered as run, layer 0
+  kept at the action position set only, 45 site sets on the toy and 325 on
+  the registered model (sections 7.2 item 2, 9, 15).
+- **Decision 21 ruled:** the fit floor applies per arm and seed (sections
+  6.4 item 2, 7.2 item 1, 9, 15).
+- **Decision 22 done:** pull request 67 (`7ed2b0e`) committed the other
+  fifteen models with one fingerprint list over all thirty; section 10's
+  models paragraph rewritten so that every toy result of 2026-09-25 and
+  2026-09-26 is described as resting on committed models, with the two kinds
+  of figure that are not toy results named (the timing; the checks' own
+  re-runs); the source table and section 16 updated.
+- **The registered read stated (new decision 23):** section 7.2, item 3,
+  now says which read the rule uses, one read per layer at the mask position
+  scored on held-out development episodes, with a nominated site set's fit
+  being its worst layer, and says the label search's pooled per-site-set read
+  is a different quantity and not the registered read (also sections 6.4
+  item 2 and 9).
+- **The label-search check (pull request 70, `75b7cf9`) cited**, and its
+  reconciliation carried: the search's 0.556, 0.483 and 0.433 for the ruled
+  label are the pooled read, the registered rule produces 0.172, and the
+  withheld-figure sentence of the first commit is replaced by that account
+  (section 7.2, item 1; the source table).
+- **The route (b) ruling cited from the rulings file** (pull request 69,
+  `a11f1d3`, "RT-212 item 3 resolved", items 1 to 5, with its recorded
+  reason), where the first commit cited it from John's message (sections 3,
+  7.2 item 1, 16).
+- **The arm C annotation cited** (pull request 68, `da41c20`): section 7.2,
+  item 1, no longer says the annotation is owed.
+- **The main line merged into the branch** at `a11f1d3`, so every path this
+  version cites under `out-repairs/models/` and `out-grammar-c/models/`
+  exists on the branch.
+
 ---
 
 ## What this version does not do
@@ -3072,7 +3184,8 @@ It edits nothing: not version 2, not any ruling, registered text or protocol
 text, and not the re-run's or the label search's findings. It issues no go,
 releases no money, launches nothing and rents nothing. It does not close the
 Gate C review of version 1's finding RT-182 or rule on any of the open
-decisions in section 15. It does not fill in the route (b) search's check,
-which is cited by number once it lands. Under the pairing rule of
+decisions in section 15. It cites the label search and its check by branch
+and commit, and by their main-line merge commits once they land. Under the
+pairing rule of
 `docs/outside-review-protocol.md` it is checked by a session that did not
 write it, the Gate C tier 1 reviewer, before anything relies on it.
