@@ -14,6 +14,7 @@ worktree (method file, section 1). Local, toy scale, no network, $0.
     $PY rerun_v3.py --stage measure --arms T,C,F,M
     $PY rerun_v3.py --stage table
     $PY rerun_v3.py --stage pass2                  # method section 7: arithmetic only
+    $PY rerun_v3.py --stage sums --sums SHA256SUMS # the models commit's list (235c385)
 
 Outputs go to `../out-v3-rules/`; nothing under `../out-repairs/` is written.
 """
@@ -40,9 +41,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.abspath(os.path.join(HERE, "..", "out-v3-rules"))
 COMMITTED = R.OUT                      # ../out-repairs, the committed outputs
 # The first pass read the models in place from the repairs worktree, where they
-# lived untracked. They are committed now (method file, section 7.1, item 3),
-# byte for byte; `stage_pass2` checks each hash against the first pass's record.
+# lived untracked. They are committed at this path by the rulings session,
+# commit 235c385 (method file, section 7.1, item 3, and its dated change), not
+# by this branch; `stage_pass2` checks each hash against the first pass's
+# record and `stage_sums` checks them against that commit's SHA256SUMS.
 CKPT_DIR = os.path.join(COMMITTED, "models")
+MODELS_COMMIT = "235c385"
 RECIPE = "base"
 SEEDS = (0, 1, 2)
 ARMS = ("T", "C", "F", "M")
@@ -634,8 +638,40 @@ def stage_pass2(device, arms, seeds):
     log(f"  separation per seed: {sep}")
 
 
+def stage_sums(device, arms, seeds, sums_path):
+    """Method file, section 7.1, item 3 (dated change): every model hash this
+    session recorded, from both passes, against the SHA256SUMS the rulings
+    session committed with the models. Arithmetic only; reads no model."""
+    theirs = {}
+    with open(sums_path) as f:
+        for line in f:
+            if line.strip():
+                h, name = line.split()
+                theirs[name.lstrip("*")] = h
+    p2 = load("pass2_summary.json")["model_sha256"]
+    rows, all_match = {}, True
+    for arm in list(arms) + ["blind"]:
+        for seed in seeds:
+            name = f"ckpt_{arm}_{RECIPE}_seed{seed}.pt"
+            first = (load(f"nominate_{arm}_seed{seed}.json")["checkpoint_sha256"]
+                     if arm != "blind" else None)
+            second = p2[f"{arm}/{seed}"]
+            listed = theirs.get(name)
+            ok = listed is not None and second == listed and (first is None or first == listed)
+            all_match &= ok
+            rows[name] = dict(first_pass_read=first, second_pass_read=second,
+                              models_commit_list=listed, agree=ok)
+            log(f"    {name}: {'agree' if ok else 'DISAGREE'}")
+    extra = sorted(set(theirs) - set(rows))
+    res = dict(models_commit=MODELS_COMMIT, sums_file=os.path.basename(sums_path),
+               files=rows, all_agree=all_match and not extra,
+               files_in_list_not_read_here=extra, entries_in_list=len(theirs))
+    log(f"  all agree: {res['all_agree']}; wrote {save('models_sha256_check.json', res)}")
+
+
 STAGES = dict(gate=stage_gate, nominate=stage_nominate, null=stage_null,
-              measure=stage_measure, table=stage_table, pass2=stage_pass2)
+              measure=stage_measure, table=stage_table, pass2=stage_pass2,
+              sums=stage_sums)
 
 
 def main():
@@ -644,13 +680,21 @@ def main():
     ap.add_argument("--arms", default=",".join(ARMS))
     ap.add_argument("--seeds", default="0,1,2")
     ap.add_argument("--device", default="auto")
+    ap.add_argument("--sums", default=None,
+                    help="for --stage sums: SHA256SUMS from the models commit, e.g. "
+                         "git show 235c385:experiments/rehearsal-successor-measure/"
+                         "out-repairs/models/SHA256SUMS > /tmp/SHA256SUMS")
     a = ap.parse_args()
     device = T.pick_device(a.device)
     arms = a.arms.split(",")
     seeds = tuple(int(s) for s in a.seeds.split(","))
     log(f"\n=== rerun_v3 stage: {a.stage} ({device}) arms {arms} seeds {seeds} ===")
     t0 = time.time()
-    STAGES[a.stage](device, arms, seeds)
+    if a.stage == "sums":
+        assert a.sums, "--stage sums needs --sums PATH (the models commit's SHA256SUMS)"
+        stage_sums(device, arms, seeds, a.sums)
+    else:
+        STAGES[a.stage](device, arms, seeds)
     log(f"  ({time.time() - t0:.1f}s)")
 
 
