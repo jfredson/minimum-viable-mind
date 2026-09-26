@@ -1,0 +1,854 @@
+{
+ "arm": "C",
+ "best_site": {
+  "fit": 1.0,
+  "layers": [
+   0,
+   1
+  ],
+  "positions": "action+ans"
+ },
+ "checkpoint": "/Users/john/Code/minimum-viable-mind/.claude/worktrees/w1c-rehearsal-repairs/experiments/rehearsal-successor-measure/out-repairs/ckpt_C_base_seed1.pt",
+ "checkpoint_sha256": "b3596f309e780e5820a7064ccb207a413a71be439170986b18479fe957e0af2a",
+ "description": "reference: which marker word is the model's own (the ruled label)",
+ "floor": 0.8,
+ "label": "marker-word",
+ "n_heldout": 180,
+ "n_train": 420,
+ "null": {
+  "max": 0.15,
+  "mean": 0.08513888888888889,
+  "n": 200,
+  "p95": 0.12777777777777777,
+  "p99": 0.1389444444444444,
+  "share_at_or_above_real": 0.0,
+  "values": [
+   0.06111111111111111,
+   0.07777777777777778,
+   0.1,
+   0.07222222222222222,
+   0.08333333333333333,
+   0.06111111111111111,
+   0.09444444444444444,
+   0.07777777777777778,
+   0.10555555555555556,
+   0.13333333333333333,
+   0.06111111111111111,
+   0.07222222222222222,
+   0.05,
+   0.08333333333333333,
+   0.044444444444444446,
+   0.12222222222222222,
+   0.08888888888888889,
+   0.05555555555555555,
+   0.05,
+   0.1,
+   0.1,
+   0.09444444444444444,
+   0.10555555555555556,
+   0.1,
+   0.07222222222222222,
+   0.12777777777777777,
+   0.09444444444444444,
+   0.03888888888888889,
+   0.1,
+   0.06111111111111111,
+   0.10555555555555556,
+   0.044444444444444446,
+   0.05,
+   0.06111111111111111,
+   0.09444444444444444,
+   0.09444444444444444,
+   0.07777777777777778,
+   0.06666666666666667,
+   0.06666666666666667,
+   0.08333333333333333,
+   0.12222222222222222,
+   0.1,
+   0.08888888888888889,
+   0.07222222222222222,
+   0.12777777777777777,
+   0.1111111111111111,
+   0.07222222222222222,
+   0.12222222222222222,
+   0.12222222222222222,
+   0.08888888888888889,
+   0.08888888888888889,
+   0.07222222222222222,
+   0.07777777777777778,
+   0.07222222222222222,
+   0.09444444444444444,
+   0.10555555555555556,
+   0.10555555555555556,
+   0.11666666666666667,
+   0.06111111111111111,
+   0.12777777777777777,
+   0.10555555555555556,
+   0.05,
+   0.06666666666666667,
+   0.05555555555555555,
+   0.08333333333333333,
+   0.07777777777777778,
+   0.08333333333333333,
+   0.05555555555555555,
+   0.07222222222222222,
+   0.05555555555555555,
+   0.12222222222222222,
+   0.10555555555555556,
+   0.09444444444444444,
+   0.08333333333333333,
+   0.12777777777777777,
+   0.06111111111111111,
+   0.08333333333333333,
+   0.06666666666666667,
+   0.07222222222222222,
+   0.08333333333333333,
+   0.05,
+   0.07222222222222222,
+   0.08888888888888889,
+   0.08888888888888889,
+   0.08333333333333333,
+   0.1,
+   0.1111111111111111,
+   0.10555555555555556,
+   0.08333333333333333,
+   0.10555555555555556,
+   0.12777777777777777,
+   0.06666666666666667,
+   0.06666666666666667,
+   0.07222222222222222,
+   0.1111111111111111,
+   0.06111111111111111,
+   0.06666666666666667,
+   0.05555555555555555,
+   0.09444444444444444,
+   0.08888888888888889,
+   0.12777777777777777,
+   0.03888888888888889,
+   0.08888888888888889,
+   0.1111111111111111,
+   0.05,
+   0.1,
+   0.1,
+   0.10555555555555556,
+   0.12777777777777777,
+   0.05555555555555555,
+   0.07777777777777778,
+   0.08888888888888889,
+   0.09444444444444444,
+   0.03888888888888889,
+   0.09444444444444444,
+   0.06111111111111111,
+   0.06666666666666667,
+   0.07222222222222222,
+   0.12222222222222222,
+   0.05555555555555555,
+   0.08888888888888889,
+   0.08333333333333333,
+   0.08888888888888889,
+   0.06666666666666667,
+   0.12222222222222222,
+   0.08888888888888889,
+   0.11666666666666667,
+   0.06666666666666667,
+   0.08333333333333333,
+   0.08888888888888889,
+   0.12222222222222222,
+   0.044444444444444446,
+   0.08333333333333333,
+   0.07222222222222222,
+   0.1111111111111111,
+   0.14444444444444443,
+   0.05555555555555555,
+   0.1111111111111111,
+   0.03888888888888889,
+   0.05,
+   0.07777777777777778,
+   0.08888888888888889,
+   0.07222222222222222,
+   0.08888888888888889,
+   0.1,
+   0.05555555555555555,
+   0.08333333333333333,
+   0.12222222222222222,
+   0.08888888888888889,
+   0.07777777777777778,
+   0.05555555555555555,
+   0.05555555555555555,
+   0.08333333333333333,
+   0.07222222222222222,
+   0.06666666666666667,
+   0.06111111111111111,
+   0.11666666666666667,
+   0.10555555555555556,
+   0.1111111111111111,
+   0.07777777777777778,
+   0.07777777777777778,
+   0.12222222222222222,
+   0.08888888888888889,
+   0.09444444444444444,
+   0.07777777777777778,
+   0.1388888888888889,
+   0.07222222222222222,
+   0.11666666666666667,
+   0.10555555555555556,
+   0.06666666666666667,
+   0.08888888888888889,
+   0.1111111111111111,
+   0.09444444444444444,
+   0.08333333333333333,
+   0.06666666666666667,
+   0.05555555555555555,
+   0.05555555555555555,
+   0.09444444444444444,
+   0.06666666666666667,
+   0.07777777777777778,
+   0.06111111111111111,
+   0.09444444444444444,
+   0.08333333333333333,
+   0.05,
+   0.09444444444444444,
+   0.06111111111111111,
+   0.06111111111111111,
+   0.1,
+   0.08333333333333333,
+   0.15,
+   0.1111111111111111,
+   0.09444444444444444,
+   0.08888888888888889,
+   0.1111111111111111,
+   0.08888888888888889,
+   0.09444444444444444,
+   0.09444444444444444,
+   0.05,
+   0.05,
+   0.09444444444444444
+  ]
+ },
+ "seconds": 23.36483120918274,
+ "seconds_fitting_sites": 0.7431631088256836,
+ "seed": 1,
+ "shuffles": 200,
+ "sites": [
+  {
+   "chance_corrected": -0.014118718688325496,
+   "clears": false,
+   "fit": 0.07222222222222222,
+   "layers": [
+    0
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": -0.014118718688325496,
+   "clears": false,
+   "fit": 0.07222222222222222,
+   "layers": [
+    0
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": -0.008046151510551084,
+   "clears": false,
+   "fit": 0.07777777777777778,
+   "layers": [
+    0
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 0.6720813724001822,
+   "clears": false,
+   "fit": 0.7,
+   "layers": [
+    0
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9817822984666768,
+   "clears": true,
+   "fit": 0.9833333333333333,
+   "layers": [
+    0,
+    1
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9878548656444512,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    0,
+    1,
+    2
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9817822984666768,
+   "clears": true,
+   "fit": 0.9833333333333333,
+   "layers": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 0.9939274328222256,
+   "clears": true,
+   "fit": 0.9944444444444445,
+   "layers": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9878548656444512,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 0.9878548656444512,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 0.9939274328222256,
+   "clears": true,
+   "fit": 0.9944444444444445,
+   "layers": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9817822984666768,
+   "clears": true,
+   "fit": 0.9833333333333333,
+   "layers": [
+    1
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9817822984666768,
+   "clears": true,
+   "fit": 0.9833333333333333,
+   "layers": [
+    1,
+    2
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9817822984666768,
+   "clears": true,
+   "fit": 0.9833333333333333,
+   "layers": [
+    1,
+    2,
+    3
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 0.9939274328222256,
+   "clears": true,
+   "fit": 0.9944444444444445,
+   "layers": [
+    1,
+    2,
+    3
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9878548656444512,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 0.9878548656444512,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9635645969333536,
+   "clears": true,
+   "fit": 0.9666666666666667,
+   "layers": [
+    2
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9817822984666768,
+   "clears": true,
+   "fit": 0.9833333333333333,
+   "layers": [
+    2,
+    3
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 0.9939274328222256,
+   "clears": true,
+   "fit": 0.9944444444444445,
+   "layers": [
+    2,
+    3
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9878548656444512,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    2,
+    3,
+    4
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 0.9878548656444512,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    2,
+    3,
+    4
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3,
+    4
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    2,
+    3,
+    4
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9817822984666768,
+   "clears": true,
+   "fit": 0.9833333333333333,
+   "layers": [
+    3
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 0.9939274328222256,
+   "clears": true,
+   "fit": 0.9944444444444445,
+   "layers": [
+    3
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    3
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 0.9939274328222256,
+   "clears": true,
+   "fit": 0.9944444444444445,
+   "layers": [
+    3
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9878548656444512,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    3,
+    4
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 0.9878548656444512,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    3,
+    4
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 0.9939274328222256,
+   "clears": true,
+   "fit": 0.9944444444444445,
+   "layers": [
+    3,
+    4
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    3,
+    4
+   ],
+   "positions": "post-identity"
+  },
+  {
+   "chance_corrected": 0.9574920297555792,
+   "clears": true,
+   "fit": 0.9611111111111111,
+   "layers": [
+    4
+   ],
+   "positions": "action"
+  },
+  {
+   "chance_corrected": 0.9757097312889024,
+   "clears": true,
+   "fit": 0.9777777777777777,
+   "layers": [
+    4
+   ],
+   "positions": "action+ans"
+  },
+  {
+   "chance_corrected": 0.9878548656444512,
+   "clears": true,
+   "fit": 0.9888888888888889,
+   "layers": [
+    4
+   ],
+   "positions": "action+3"
+  },
+  {
+   "chance_corrected": 1.0,
+   "clears": true,
+   "fit": 1.0,
+   "layers": [
+    4
+   ],
+   "positions": "post-identity"
+  }
+ ]
+}
