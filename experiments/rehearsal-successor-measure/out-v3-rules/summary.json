@@ -1,0 +1,892 @@
+{
+  "arms": {
+    "C/0": {
+      "control3_primary": false,
+      "control7": true,
+      "moved": true,
+      "old44_site": {
+        "layers": [
+          0
+        ],
+        "positions": "all",
+        "rank": 2
+      },
+      "primary": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "2": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 2,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12222222222222222,
+        "reasons": [
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      },
+      "primary_site": {
+        "layers": [
+          2
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "rule3": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12222222222222222,
+        "reasons": [
+          "at the acting channel's injection",
+          "read failed its floor"
+        ],
+        "status": "no verdict"
+      },
+      "stricter": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "2": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 2,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12222222222222222,
+        "reasons": [
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "C/1": {
+      "control3_primary": true,
+      "control7": true,
+      "moved": true,
+      "old44_site": {
+        "layers": [
+          0
+        ],
+        "positions": "all",
+        "rank": 4
+      },
+      "primary": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12222222222222222,
+        "reasons": [
+          "at the acting channel's injection",
+          "read failed its floor"
+        ],
+        "status": "no verdict"
+      },
+      "primary_site": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 8
+      },
+      "rule3": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12222222222222222,
+        "reasons": [
+          "at the acting channel's injection",
+          "read failed its floor"
+        ],
+        "status": "no verdict"
+      },
+      "stricter": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12222222222222222,
+        "reasons": [
+          "layer 0 excluded (stricter variant)",
+          "read failed its floor"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "C/2": {
+      "control3_primary": false,
+      "control7": true,
+      "moved": false,
+      "old44_site": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 2
+      },
+      "primary": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12783333333333327,
+        "reasons": [
+          "at the acting channel's injection",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      },
+      "primary_site": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 2
+      },
+      "rule3": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12783333333333327,
+        "reasons": [
+          "at the acting channel's injection",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      },
+      "stricter": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12783333333333327,
+        "reasons": [
+          "layer 0 excluded (stricter variant)",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "F/0": {
+      "control3_primary": false,
+      "control7": true,
+      "moved": false,
+      "old44_site": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 2
+      },
+      "primary": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12222222222222222,
+        "reasons": [
+          "arm failed its gate",
+          "at the acting channel's injection",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      },
+      "primary_site": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 2
+      },
+      "rule3": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12222222222222222,
+        "reasons": [
+          "arm failed its gate",
+          "at the acting channel's injection",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      },
+      "stricter": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12222222222222222,
+        "reasons": [
+          "arm failed its gate",
+          "layer 0 excluded (stricter variant)",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "F/1": {
+      "control3_primary": false,
+      "control7": true,
+      "moved": false,
+      "old44_site": {
+        "layers": [
+          1
+        ],
+        "positions": "action+3",
+        "rank": 4
+      },
+      "primary": {
+        "fit_accuracy": 0.06666666666666667,
+        "fit_accuracy_per_layer": {
+          "1": 0.06666666666666667
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 1,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12227777777777772,
+        "reasons": [
+          "arm failed its gate",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      },
+      "primary_site": {
+        "layers": [
+          1
+        ],
+        "positions": "action+3",
+        "rank": 4
+      },
+      "rule3": {
+        "fit_accuracy": 0.06666666666666667,
+        "fit_accuracy_per_layer": {
+          "1": 0.06666666666666667
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 1,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12227777777777772,
+        "reasons": [
+          "arm failed its gate",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      },
+      "stricter": {
+        "fit_accuracy": 0.06666666666666667,
+        "fit_accuracy_per_layer": {
+          "1": 0.06666666666666667
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 1,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12227777777777772,
+        "reasons": [
+          "arm failed its gate",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "F/2": {
+      "control3_primary": false,
+      "control7": true,
+      "moved": false,
+      "old44_site": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 1
+      },
+      "primary": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12783333333333327,
+        "reasons": [
+          "arm failed its gate",
+          "at the acting channel's injection",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      },
+      "primary_site": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 1
+      },
+      "rule3": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12783333333333327,
+        "reasons": [
+          "arm failed its gate",
+          "at the acting channel's injection",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      },
+      "stricter": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12783333333333327,
+        "reasons": [
+          "arm failed its gate",
+          "layer 0 excluded (stricter variant)",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "M/0": {
+      "control3_primary": true,
+      "control7": true,
+      "moved": false,
+      "old44_site": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 8
+      },
+      "primary": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11694444444444435,
+        "null_p99": 0.13338888888888883,
+        "reasons": [
+          "at the acting channel's injection"
+        ],
+        "status": "no verdict"
+      },
+      "primary_site": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 8
+      },
+      "rule3": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11694444444444435,
+        "null_p99": 0.13338888888888883,
+        "reasons": [
+          "at the acting channel's injection"
+        ],
+        "status": "no verdict"
+      },
+      "stricter": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11694444444444435,
+        "null_p99": 0.13338888888888883,
+        "reasons": [
+          "layer 0 excluded (stricter variant)"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "M/1": {
+      "control3_primary": true,
+      "control7": true,
+      "moved": false,
+      "old44_site": {
+        "layers": [
+          3
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "primary": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "3": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 3,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [],
+        "status": "reading"
+      },
+      "primary_site": {
+        "layers": [
+          3
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "rule3": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "3": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 3,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [],
+        "status": "reading"
+      },
+      "stricter": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "3": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 3,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [],
+        "status": "reading"
+      }
+    },
+    "M/2": {
+      "control3_primary": true,
+      "control7": true,
+      "moved": false,
+      "old44_site": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 8
+      },
+      "primary": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11138888888888879,
+        "null_p99": 0.12788888888888877,
+        "reasons": [
+          "at the acting channel's injection"
+        ],
+        "status": "no verdict"
+      },
+      "primary_site": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 8
+      },
+      "rule3": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11138888888888879,
+        "null_p99": 0.12788888888888877,
+        "reasons": [
+          "at the acting channel's injection"
+        ],
+        "status": "no verdict"
+      },
+      "stricter": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11138888888888879,
+        "null_p99": 0.12788888888888877,
+        "reasons": [
+          "layer 0 excluded (stricter variant)"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "T/0": {
+      "control3_primary": true,
+      "control7": true,
+      "moved": false,
+      "old44_site": {
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "primary": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [],
+        "status": "reading"
+      },
+      "primary_site": {
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "rule3": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [],
+        "status": "reading"
+      },
+      "stricter": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [
+          "layer 0 excluded (stricter variant)"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "T/1": {
+      "control3_primary": true,
+      "control7": true,
+      "moved": false,
+      "old44_site": {
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "primary": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12788888888888877,
+        "reasons": [],
+        "status": "reading"
+      },
+      "primary_site": {
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "rule3": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12788888888888877,
+        "reasons": [],
+        "status": "reading"
+      },
+      "stricter": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12788888888888877,
+        "reasons": [
+          "layer 0 excluded (stricter variant)"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "T/2": {
+      "control3_primary": true,
+      "control7": true,
+      "moved": false,
+      "old44_site": {
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "primary": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11138888888888879,
+        "null_p99": 0.12783333333333327,
+        "reasons": [],
+        "status": "reading"
+      },
+      "primary_site": {
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "rule3": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11138888888888879,
+        "null_p99": 0.12783333333333327,
+        "reasons": [],
+        "status": "reading"
+      },
+      "stricter": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11138888888888879,
+        "null_p99": 0.12783333333333327,
+        "reasons": [
+          "layer 0 excluded (stricter variant)"
+        ],
+        "status": "no verdict"
+      }
+    }
+  },
+  "checks": {
+    "C/0": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": true,
+        "action+ans": true
+      }
+    },
+    "C/1": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": true,
+        "action+ans": true
+      }
+    },
+    "C/2": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": true,
+        "action+ans": true
+      }
+    },
+    "F/0": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": true,
+        "action+ans": true
+      }
+    },
+    "F/1": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": true,
+        "action+ans": true
+      }
+    },
+    "F/2": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": true,
+        "action+ans": true
+      }
+    },
+    "M/0": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": false,
+        "action+ans": false
+      }
+    },
+    "M/1": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": false,
+        "action+ans": false
+      }
+    },
+    "M/2": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": false,
+        "action+ans": false
+      }
+    },
+    "T/0": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": false,
+        "action+ans": false
+      }
+    },
+    "T/1": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": false,
+        "action+ans": false
+      }
+    },
+    "T/2": {
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "layer0_noop_inside_action_turn": {
+        "action+3": false,
+        "action+ans": false
+      }
+    }
+  },
+  "gate": {
+    "C": {
+      "other_seeds_clearing": 0,
+      "own_seeds_clearing": 3,
+      "passes": true,
+      "rule": "own-directed only",
+      "version2_learn_both": false
+    },
+    "F": {
+      "other_seeds_clearing": 1,
+      "own_seeds_clearing": 3,
+      "passes": false,
+      "rule": "learn-both",
+      "version2_learn_both": false
+    },
+    "M": {
+      "other_seeds_clearing": 3,
+      "own_seeds_clearing": 3,
+      "passes": true,
+      "rule": "own-directed only",
+      "version2_learn_both": true
+    },
+    "T": {
+      "other_seeds_clearing": 3,
+      "own_seeds_clearing": 3,
+      "passes": true,
+      "rule": "own-directed only",
+      "version2_learn_both": true
+    }
+  }
+}

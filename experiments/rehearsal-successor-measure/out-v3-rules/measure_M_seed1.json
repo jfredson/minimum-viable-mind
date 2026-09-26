@@ -1,0 +1,353 @@
+{
+  "arm": "M",
+  "arm_own_accuracy_fresh": 0.88,
+  "checkpoint_sha256": "d9b8010c9bec5ae20aaacabd38acd89497ef121599643a15d548ad44f688ecab",
+  "control7_null_transplant_bit_identical": true,
+  "gate": {
+    "other_seeds_clearing": 3,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": true
+  },
+  "n_trials": 800,
+  "rows": {
+    "primary": {
+      "control3": {
+        "ownership_only": 0.39375,
+        "p95": 0.07006250000000001,
+        "passes": true,
+        "random_donor_shares": [
+          0.06375,
+          0.0625,
+          0.07125,
+          0.0525,
+          0.05625,
+          0.06625,
+          0.05875,
+          0.07,
+          0.05625,
+          0.0525,
+          0.045,
+          0.03875,
+          0.05375,
+          0.03625,
+          0.04625,
+          0.03625,
+          0.04625,
+          0.06125,
+          0.04375,
+          0.0375
+        ],
+        "random_max": 0.07125,
+        "single_draw_as_repairs": 0.05625,
+        "version2_form_passes": false
+      },
+      "reading": {
+        "accuracy_ownership_only": 0.39375,
+        "accuracy_untouched": 0.0175,
+        "accuracy_whole": 0.7475,
+        "arm_own_accuracy": 0.88,
+        "degree": 0.48458904109589046,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.6900000000000001,
+          "room": 0.7300000000000001
+        },
+        "raw_difference": 0.35375000000000006,
+        "status": "valid",
+        "version1_form": 0.4732441471571907
+      },
+      "site_set": {
+        "layers": [
+          3
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "verdict": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "3": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 3,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [],
+        "status": "reading"
+      }
+    },
+    "rule3": {
+      "control3": {
+        "ownership_only": 0.39375,
+        "p95": 0.07006250000000001,
+        "passes": true,
+        "random_donor_shares": [
+          0.06375,
+          0.0625,
+          0.07125,
+          0.0525,
+          0.05625,
+          0.06625,
+          0.05875,
+          0.07,
+          0.05625,
+          0.0525,
+          0.045,
+          0.03875,
+          0.05375,
+          0.03625,
+          0.04625,
+          0.03625,
+          0.04625,
+          0.06125,
+          0.04375,
+          0.0375
+        ],
+        "random_max": 0.07125,
+        "single_draw_as_repairs": 0.05625,
+        "version2_form_passes": false
+      },
+      "reading": {
+        "accuracy_ownership_only": 0.39375,
+        "accuracy_untouched": 0.0175,
+        "accuracy_whole": 0.7475,
+        "arm_own_accuracy": 0.88,
+        "degree": 0.48458904109589046,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.6900000000000001,
+          "room": 0.7300000000000001
+        },
+        "raw_difference": 0.35375000000000006,
+        "status": "valid",
+        "version1_form": 0.4732441471571907
+      },
+      "site_set": {
+        "layers": [
+          3
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "verdict": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "3": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 3,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [],
+        "status": "reading"
+      }
+    },
+    "stricter": {
+      "control3": {
+        "ownership_only": 0.39375,
+        "p95": 0.07006250000000001,
+        "passes": true,
+        "random_donor_shares": [
+          0.06375,
+          0.0625,
+          0.07125,
+          0.0525,
+          0.05625,
+          0.06625,
+          0.05875,
+          0.07,
+          0.05625,
+          0.0525,
+          0.045,
+          0.03875,
+          0.05375,
+          0.03625,
+          0.04625,
+          0.03625,
+          0.04625,
+          0.06125,
+          0.04375,
+          0.0375
+        ],
+        "random_max": 0.07125,
+        "single_draw_as_repairs": 0.05625,
+        "version2_form_passes": false
+      },
+      "reading": {
+        "accuracy_ownership_only": 0.39375,
+        "accuracy_untouched": 0.0175,
+        "accuracy_whole": 0.7475,
+        "arm_own_accuracy": 0.88,
+        "degree": 0.48458904109589046,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.6900000000000001,
+          "room": 0.7300000000000001
+        },
+        "raw_difference": 0.35375000000000006,
+        "status": "valid",
+        "version1_form": 0.4732441471571907
+      },
+      "site_set": {
+        "layers": [
+          3
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "verdict": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "3": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 3,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [],
+        "status": "reading"
+      }
+    },
+    "unruled_every_layer0_removed": {
+      "control3": {
+        "ownership_only": 0.40625,
+        "p95": 0.0225625,
+        "passes": true,
+        "random_donor_shares": [
+          0.01625,
+          0.02375,
+          0.01875,
+          0.01625,
+          0.02125,
+          0.01625,
+          0.01875,
+          0.015,
+          0.0175,
+          0.01625,
+          0.0175,
+          0.0175,
+          0.02,
+          0.01875,
+          0.01875,
+          0.0225,
+          0.01875,
+          0.01875,
+          0.02,
+          0.01625
+        ],
+        "random_max": 0.02375,
+        "single_draw_as_repairs": 0.01875,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 0.40625,
+        "accuracy_untouched": 0.0175,
+        "accuracy_whole": 0.77375,
+        "arm_own_accuracy": 0.88,
+        "degree": 0.4859504132231405,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.6900000000000001,
+          "room": 0.7562500000000001
+        },
+        "raw_difference": 0.36750000000000005,
+        "status": "valid",
+        "version1_form": 0.47495961227786754
+      },
+      "site_set": {
+        "layers": [
+          1
+        ],
+        "positions": "post-identity",
+        "rank": 8
+      },
+      "verdict": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "1": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 1,
+        "null_p95": 0.11694444444444435,
+        "null_p99": 0.1389444444444444,
+        "reasons": [],
+        "status": "reading"
+      }
+    },
+    "unruled_layer0_injection_removed": {
+      "control3": {
+        "ownership_only": 0.40625,
+        "p95": 0.0225625,
+        "passes": true,
+        "random_donor_shares": [
+          0.01625,
+          0.02375,
+          0.01875,
+          0.01625,
+          0.02125,
+          0.01625,
+          0.01875,
+          0.015,
+          0.0175,
+          0.01625,
+          0.0175,
+          0.0175,
+          0.02,
+          0.01875,
+          0.01875,
+          0.0225,
+          0.01875,
+          0.01875,
+          0.02,
+          0.01625
+        ],
+        "random_max": 0.02375,
+        "single_draw_as_repairs": 0.01875,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 0.40625,
+        "accuracy_untouched": 0.0175,
+        "accuracy_whole": 0.77375,
+        "arm_own_accuracy": 0.88,
+        "degree": 0.4859504132231405,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.6900000000000001,
+          "room": 0.7562500000000001
+        },
+        "raw_difference": 0.36750000000000005,
+        "status": "valid",
+        "version1_form": 0.47495961227786754
+      },
+      "site_set": {
+        "layers": [
+          1
+        ],
+        "positions": "post-identity",
+        "rank": 8
+      },
+      "verdict": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "1": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 1,
+        "null_p95": 0.11694444444444435,
+        "null_p99": 0.1389444444444444,
+        "reasons": [],
+        "status": "reading"
+      }
+    }
+  },
+  "seed": 1,
+  "untouched_fresh": 0.0175
+}

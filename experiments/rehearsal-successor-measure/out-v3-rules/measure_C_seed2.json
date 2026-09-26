@@ -1,0 +1,369 @@
+{
+  "arm": "C",
+  "arm_own_accuracy_fresh": 0.5525,
+  "checkpoint_sha256": "2fc87d0454af22bc2d1c00b7247c220ff0705b8c2500005b47a9cb491ac202f0",
+  "control7_null_transplant_bit_identical": true,
+  "gate": {
+    "other_seeds_clearing": 0,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": false
+  },
+  "n_trials": 800,
+  "rows": {
+    "primary": {
+      "control3": {
+        "ownership_only": 0.06,
+        "p95": 0.0625,
+        "passes": false,
+        "random_donor_shares": [
+          0.05875,
+          0.05875,
+          0.06125,
+          0.05875,
+          0.06,
+          0.06,
+          0.0575,
+          0.06125,
+          0.06,
+          0.0625,
+          0.0625,
+          0.06,
+          0.06,
+          0.06,
+          0.06,
+          0.0625,
+          0.05875,
+          0.06125,
+          0.0625,
+          0.05875
+        ],
+        "random_max": 0.0625,
+        "single_draw_as_repairs": 0.0625,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 0.06,
+        "accuracy_untouched": 0.06,
+        "accuracy_whole": 0.5025,
+        "arm_own_accuracy": 0.5525,
+        "degree": 1.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.394,
+          "room": 0.44249999999999995
+        },
+        "raw_difference": 0.44249999999999995,
+        "status": "valid",
+        "version1_form": 0.8805970149253731
+      },
+      "site_set": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 2
+      },
+      "verdict": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12783333333333327,
+        "reasons": [
+          "at the acting channel's injection",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "rule3": {
+      "control3": {
+        "ownership_only": 0.06,
+        "p95": 0.0625,
+        "passes": false,
+        "random_donor_shares": [
+          0.05875,
+          0.05875,
+          0.06125,
+          0.05875,
+          0.06,
+          0.06,
+          0.0575,
+          0.06125,
+          0.06,
+          0.0625,
+          0.0625,
+          0.06,
+          0.06,
+          0.06,
+          0.06,
+          0.0625,
+          0.05875,
+          0.06125,
+          0.0625,
+          0.05875
+        ],
+        "random_max": 0.0625,
+        "single_draw_as_repairs": 0.0625,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 0.06,
+        "accuracy_untouched": 0.06,
+        "accuracy_whole": 0.5025,
+        "arm_own_accuracy": 0.5525,
+        "degree": 1.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.394,
+          "room": 0.44249999999999995
+        },
+        "raw_difference": 0.44249999999999995,
+        "status": "valid",
+        "version1_form": 0.8805970149253731
+      },
+      "site_set": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 2
+      },
+      "verdict": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12783333333333327,
+        "reasons": [
+          "at the acting channel's injection",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "stricter": {
+      "control3": {
+        "ownership_only": 0.06,
+        "p95": 0.0625,
+        "passes": false,
+        "random_donor_shares": [
+          0.05875,
+          0.05875,
+          0.06125,
+          0.05875,
+          0.06,
+          0.06,
+          0.0575,
+          0.06125,
+          0.06,
+          0.0625,
+          0.0625,
+          0.06,
+          0.06,
+          0.06,
+          0.06,
+          0.0625,
+          0.05875,
+          0.06125,
+          0.0625,
+          0.05875
+        ],
+        "random_max": 0.0625,
+        "single_draw_as_repairs": 0.0625,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 0.06,
+        "accuracy_untouched": 0.06,
+        "accuracy_whole": 0.5025,
+        "arm_own_accuracy": 0.5525,
+        "degree": 1.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.394,
+          "room": 0.44249999999999995
+        },
+        "raw_difference": 0.44249999999999995,
+        "status": "valid",
+        "version1_form": 0.8805970149253731
+      },
+      "site_set": {
+        "layers": [
+          0
+        ],
+        "positions": "post-identity",
+        "rank": 2
+      },
+      "verdict": {
+        "fit_accuracy": 0.07222222222222222,
+        "fit_accuracy_per_layer": {
+          "0": 0.07222222222222222
+        },
+        "fit_floor_passes": false,
+        "fit_layer": 0,
+        "null_p95": 0.1111111111111111,
+        "null_p99": 0.12783333333333327,
+        "reasons": [
+          "layer 0 excluded (stricter variant)",
+          "read failed its floor",
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "unruled_every_layer0_removed": {
+      "control3": {
+        "ownership_only": 0.06,
+        "p95": 0.06525,
+        "passes": false,
+        "random_donor_shares": [
+          0.06,
+          0.06125,
+          0.0625,
+          0.05125,
+          0.06375,
+          0.07,
+          0.06,
+          0.0625,
+          0.05875,
+          0.065,
+          0.06,
+          0.0625,
+          0.06375,
+          0.06,
+          0.05875,
+          0.06,
+          0.06,
+          0.06,
+          0.06,
+          0.06
+        ],
+        "random_max": 0.07,
+        "single_draw_as_repairs": 0.06125,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 0.06,
+        "accuracy_untouched": 0.06,
+        "accuracy_whole": 0.54625,
+        "arm_own_accuracy": 0.5525,
+        "degree": 1.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.394,
+          "room": 0.48625
+        },
+        "raw_difference": 0.48625,
+        "status": "valid",
+        "version1_form": 0.8901601830663616
+      },
+      "site_set": {
+        "layers": [
+          1
+        ],
+        "positions": "post-identity",
+        "rank": 1
+      },
+      "verdict": {
+        "fit_accuracy": 0.9777777777777777,
+        "fit_accuracy_per_layer": {
+          "1": 0.9777777777777777
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 1,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12788888888888877,
+        "reasons": [
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "unruled_layer0_injection_removed": {
+      "control3": {
+        "ownership_only": 0.06,
+        "p95": 0.06525,
+        "passes": false,
+        "random_donor_shares": [
+          0.06,
+          0.06125,
+          0.0625,
+          0.05125,
+          0.06375,
+          0.07,
+          0.06,
+          0.0625,
+          0.05875,
+          0.065,
+          0.06,
+          0.0625,
+          0.06375,
+          0.06,
+          0.05875,
+          0.06,
+          0.06,
+          0.06,
+          0.06,
+          0.06
+        ],
+        "random_max": 0.07,
+        "single_draw_as_repairs": 0.06125,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 0.06,
+        "accuracy_untouched": 0.06,
+        "accuracy_whole": 0.54625,
+        "arm_own_accuracy": 0.5525,
+        "degree": 1.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.394,
+          "room": 0.48625
+        },
+        "raw_difference": 0.48625,
+        "status": "valid",
+        "version1_form": 0.8901601830663616
+      },
+      "site_set": {
+        "layers": [
+          1
+        ],
+        "positions": "post-identity",
+        "rank": 1
+      },
+      "verdict": {
+        "fit_accuracy": 0.9777777777777777,
+        "fit_accuracy_per_layer": {
+          "1": 0.9777777777777777
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 1,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.12788888888888877,
+        "reasons": [
+          "control 3: ownership-only does not beat the 95th percentile of 20 random subspaces"
+        ],
+        "status": "no verdict"
+      }
+    }
+  },
+  "seed": 2,
+  "untouched_fresh": 0.06
+}

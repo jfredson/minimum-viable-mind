@@ -1,0 +1,355 @@
+{
+  "arm": "T",
+  "arm_own_accuracy_fresh": 1.0,
+  "checkpoint_sha256": "b679bf6cd7884f28a137a6e6a669728213c085ba9cba5c9a2574b947885cfe68",
+  "control7_null_transplant_bit_identical": true,
+  "gate": {
+    "other_seeds_clearing": 3,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": true
+  },
+  "n_trials": 800,
+  "rows": {
+    "primary": {
+      "control3": {
+        "ownership_only": 1.0,
+        "p95": 0.0,
+        "passes": true,
+        "random_donor_shares": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "random_max": 0.0,
+        "single_draw_as_repairs": 0.0,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 1.0,
+        "accuracy_untouched": 0.0,
+        "accuracy_whole": 1.0,
+        "arm_own_accuracy": 1.0,
+        "degree": 0.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.8,
+          "room": 1.0
+        },
+        "raw_difference": 0.0,
+        "status": "valid",
+        "version1_form": 0.0
+      },
+      "site_set": {
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "verdict": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [],
+        "status": "reading"
+      }
+    },
+    "rule3": {
+      "control3": {
+        "ownership_only": 1.0,
+        "p95": 0.0,
+        "passes": true,
+        "random_donor_shares": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "random_max": 0.0,
+        "single_draw_as_repairs": 0.0,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 1.0,
+        "accuracy_untouched": 0.0,
+        "accuracy_whole": 1.0,
+        "arm_own_accuracy": 1.0,
+        "degree": 0.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.8,
+          "room": 1.0
+        },
+        "raw_difference": 0.0,
+        "status": "valid",
+        "version1_form": 0.0
+      },
+      "site_set": {
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "verdict": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [],
+        "status": "reading"
+      }
+    },
+    "stricter": {
+      "control3": {
+        "ownership_only": 1.0,
+        "p95": 0.0,
+        "passes": true,
+        "random_donor_shares": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "random_max": 0.0,
+        "single_draw_as_repairs": 0.0,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 1.0,
+        "accuracy_untouched": 0.0,
+        "accuracy_whole": 1.0,
+        "arm_own_accuracy": 1.0,
+        "degree": 0.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.8,
+          "room": 1.0
+        },
+        "raw_difference": 0.0,
+        "status": "valid",
+        "version1_form": 0.0
+      },
+      "site_set": {
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "verdict": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [
+          "layer 0 excluded (stricter variant)"
+        ],
+        "status": "no verdict"
+      }
+    },
+    "unruled_every_layer0_removed": {
+      "control3": {
+        "ownership_only": 1.0,
+        "p95": 0.0,
+        "passes": true,
+        "random_donor_shares": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "random_max": 0.0,
+        "single_draw_as_repairs": 0.0,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 1.0,
+        "accuracy_untouched": 0.0,
+        "accuracy_whole": 1.0,
+        "arm_own_accuracy": 1.0,
+        "degree": 0.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.8,
+          "room": 1.0
+        },
+        "raw_difference": 0.0,
+        "status": "valid",
+        "version1_form": 0.0
+      },
+      "site_set": {
+        "layers": [
+          1
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "verdict": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "1": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 1,
+        "null_p95": 0.11694444444444435,
+        "null_p99": 0.13333333333333333,
+        "reasons": [],
+        "status": "reading"
+      }
+    },
+    "unruled_layer0_injection_removed": {
+      "control3": {
+        "ownership_only": 1.0,
+        "p95": 0.0,
+        "passes": true,
+        "random_donor_shares": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "random_max": 0.0,
+        "single_draw_as_repairs": 0.0,
+        "version2_form_passes": true
+      },
+      "reading": {
+        "accuracy_ownership_only": 1.0,
+        "accuracy_untouched": 0.0,
+        "accuracy_whole": 1.0,
+        "arm_own_accuracy": 1.0,
+        "degree": 0.0,
+        "floor": {
+          "clears": true,
+          "clears_plain_form": true,
+          "required_room": 0.8,
+          "room": 1.0
+        },
+        "raw_difference": 0.0,
+        "status": "valid",
+        "version1_form": 0.0
+      },
+      "site_set": {
+        "layers": [
+          0
+        ],
+        "positions": "action",
+        "rank": 8
+      },
+      "verdict": {
+        "fit_accuracy": 1.0,
+        "fit_accuracy_per_layer": {
+          "0": 1.0
+        },
+        "fit_floor_passes": true,
+        "fit_layer": 0,
+        "null_p95": 0.11666666666666667,
+        "null_p99": 0.13338888888888883,
+        "reasons": [],
+        "status": "reading"
+      }
+    }
+  },
+  "seed": 0,
+  "untouched_fresh": 0.0
+}
