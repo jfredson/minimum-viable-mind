@@ -71,6 +71,23 @@ HARD_CAP="${HARD_CAP:-2.00}"
 # written, before anything is allowed to delete the machine.
 SLICE_RUN_DIR="/workspace/mvm-out/$SLICE_OUT"
 BENCH_CMD="python bench_arms.py --device cuda --steps $BENCH_STEPS --batch 32 --out $SLICE_RUN_DIR/bench_arms.json"
+# 2026-09-25, after the first attempt hung (docs/2026-09-25-rented-slice-
+# findings.md), ruled by John 2026-09-25 ("agreed on all"): the plan passes
+# the hard cap and the rate to the launcher, which then deletes the machine
+# from this laptop once HARD_CAP / RATE_PER_HOUR hours have passed since
+# creation, whatever the run is doing; and it asks the launcher to list and
+# empty the slice's folder before anything on the machine starts, because
+# the volume can only be read from a rented machine.
+DEADLINE_SECS=$(awk -v c="$HARD_CAP" -v r="$RATE_PER_HOUR" 'BEGIN { printf "%d", c / r * 3600 }')
+DEADLINE_HM=$(awk -v s="$DEADLINE_SECS" 'BEGIN { printf "%d h %02d min", s / 3600, (s % 3600) / 60 }')
+# The plan is run from the main checkout once this branch has merged, which is
+# where the launcher's own DEST_ROOT default already points; the paths it
+# PRINTS name that checkout even when it is regenerated from a worktree. Only
+# the printed commands use this. Every check above runs against this script's
+# own tree.
+RUN_FROM="${RUN_FROM:-$HOME/Code/minimum-viable-mind}"
+P_EXP06="$RUN_FROM/experiments/06-mvm-0a-constructed-self-index"
+P_REHEARSAL_SRC="$RUN_FROM/experiments/rehearsal-successor-measure/src"
 
 if [ "${1:-}" = "--help" ]; then sed -n '2,60p' "$0"; exit 0; fi
 
@@ -101,6 +118,11 @@ if [ -x "$EXP06/src/launch_a3_fetch_first.sh" ]; then
     ok "the derived launcher is present (registered launcher untouched)"
 else
     bad "the derived launcher launch_a3_fetch_first.sh is missing"
+fi
+if [ -x "$EXP06/src/machine_deadline.sh" ]; then
+    ok "the laptop's machine deadline is present"
+else
+    bad "machine_deadline.sh is missing -- the hard cap would not be enforced"
 fi
 if [ -x "$EXP06/src/reap_agent.sh" ]; then
     ok "the machine's own shutdown watcher is present"
@@ -151,6 +173,20 @@ else
     bad "the RT-198 argument-guard check is missing at $GUARDCHK"
 fi
 
+# 2026-09-25: the check for failure 6 of docs/known-failure-modes.md. Every
+# background start the launcher sends over ssh is run against a real local
+# shell; one that would hold the connection with no cap fails the staging.
+FORMCHK="$EXP06/src/check_remote_forms.py"
+if [ -n "$PY" ] && [ -f "$FORMCHK" ]; then
+    if "$PY" "$FORMCHK" >/dev/null 2>&1; then
+        ok "no remote background start can hold the launcher (check_remote_forms.py passes)"
+    else
+        bad "a remote background start can hold the launcher open. Run $FORMCHK to see which."
+    fi
+else
+    bad "the remote-forms check is missing at $FORMCHK, or there is no interpreter"
+fi
+
 if command -v runpodctl >/dev/null 2>&1; then
     ok "runpodctl is on the path: $(command -v runpodctl)"
 else
@@ -183,24 +219,52 @@ THE COMMANDS, IN ORDER
   run below is the genuinely inert path — its guard exits before anything is
   created — and the launchers now refuse any argument outright.
     DRYRUN=1 SCALE=$SLICE_SCALE MAXTOK=$SLICE_TOKENS OUT=$SLICE_OUT \\
-      GRACE_S=$SLICE_GRACE_S RUN_SUBDIR=$SLICE_OUT \\
-      PRE_TRAIN_DIR=$REHEARSAL_SRC \\
+      GRACE_S=$SLICE_GRACE_S RUN_SUBDIR=$SLICE_OUT CLEAR_RUN_SUBDIR=1 \\
+      HARD_CAP_USD=$HARD_CAP RATE_PER_HOUR_USD=$RATE_PER_HOUR \\
+      PRE_TRAIN_DIR=$P_REHEARSAL_SRC \\
       PRE_TRAIN_CMD="$BENCH_CMD" \\
-      $EXP06/src/launch_a3_fetch_first.sh
+      $P_EXP06/src/launch_a3_fetch_first.sh
   Before going on, the dry run must print "run dir: $SLICE_RUN_DIR"
   and a "before training" block naming bench_arms.py. If it prints the
   shared folder /workspace/mvm-out instead, stop: the final copy would
   bring home every earlier run's model files as well.
+  It must also print these two, added 2026-09-25 after the first attempt
+  hung; if either is missing, stop:
+    "machine deadline: ON -- hard cap \$$HARD_CAP at \$$RATE_PER_HOUR an hour"
+        and "deletes the machine ${DEADLINE_SECS}s after creation"
+    "clear the run folder, before the shutdown watcher starts"
+        naming $SLICE_RUN_DIR
 
   Step 1 — the toy run, through the DERIVED launcher (the registered
   launcher launch_a3.sh is not used and not edited):
     SCALE=$SLICE_SCALE MAXTOK=$SLICE_TOKENS OUT=$SLICE_OUT \\
-      GRACE_S=$SLICE_GRACE_S RUN_SUBDIR=$SLICE_OUT \\
-      PRE_TRAIN_DIR=$REHEARSAL_SRC \\
+      GRACE_S=$SLICE_GRACE_S RUN_SUBDIR=$SLICE_OUT CLEAR_RUN_SUBDIR=1 \\
+      HARD_CAP_USD=$HARD_CAP RATE_PER_HOUR_USD=$RATE_PER_HOUR \\
+      PRE_TRAIN_DIR=$P_REHEARSAL_SRC \\
       PRE_TRAIN_CMD="$BENCH_CMD" \\
-      $EXP06/src/launch_a3_fetch_first.sh
+      $P_EXP06/src/launch_a3_fetch_first.sh
   This one command also does the timing (step 2). There is nothing to type
   on the machine.
+  Straight after "pod:" it must print "MACHINE DEADLINE ARMED", with the
+  time this laptop will delete the machine: ${DEADLINE_HM} (${DEADLINE_SECS}s)
+  after creation, which is the hard cap of \$$HARD_CAP at \$$RATE_PER_HOUR an
+  hour. If it does not, delete the machine at once
+  (runpodctl pod delete <id>) and stop: the cap is not enforced.
+
+  Step 1a — the pre-flight clear, done by the launcher inside step 1,
+  BEFORE the machine's shutdown watcher starts. The first attempt, on
+  2026-09-25, left $SLICE_RUN_DIR holding one file,
+  reaper.log (docs/2026-09-25-rented-slice-findings.md, section 6), read
+  on the machine 33 seconds before it was deleted. The volume cannot be
+  read from this laptop, so this is the first moment it can be checked.
+  The launcher lists the folder, names any "LEFTOVER:" finished-marker
+  ($SLICE_OUT.DONE), receipt ($SLICE_OUT.FETCHED), model file or timing
+  file, and then empties it. A leftover marker would otherwise let the
+  watcher delete the machine before training. Look for:
+    "clearing the run folder before anything on the machine starts"
+    "files left after clearing: 0"
+  Any "LEFTOVER:" line is a finding to record, not a reason to stop: the
+  clear has already removed it.
 
   Step 2 — the timing, done by the launcher inside step 1. After the
   machine is up and its shutdown path is settled, and BEFORE training
@@ -220,7 +284,11 @@ THE COMMANDS, IN ORDER
     "before-training step finished (exit 0)"
 
   Step 3 — FIRST, read which shutdown path the launcher armed. It says so
-  after "ssh up:" and before training starts:
+  after "ssh up:" and before training starts. Since 2026-09-25 the command
+  that starts the machine's watcher cannot hold the launcher: it returns at
+  once, and is cut off at 60 seconds if it does not. A silence of more than
+  a couple of minutes after "VERIFIED" is therefore a difference from the
+  plan: stop and delete.
     "shutdown watcher RUNNING on the machine"  — the handshake is being
         tested; go on to the three signals below.
     "SHUTDOWN WATCHER DID NOT START" or "REAP: pod-side reaping NOT armed"
@@ -234,7 +302,7 @@ WHAT PASSING LOOKS LIKE, WRITTEN DOWN BEFORE IT RUNS
     PASS  three seconds-per-step figures, one per architecture, with the
           spread over the timed steps, written to bench_arms.json with
           "complete": true, and fetched home by the laptop's final copy to
-          $EXP06/artifacts/$SLICE_OUT/bench_arms.json.
+          $P_EXP06/artifacts/$SLICE_OUT/bench_arms.json.
           A file with "complete": false was cut short; its figures stand
           only for the architectures it lists.
     FAIL  any architecture will not run at the registered shape on the
@@ -265,6 +333,11 @@ WHAT PASSING LOOKS LIKE, WRITTEN DOWN BEFORE IT RUNS
     NO VERDICT  the slice does not run. Then the handshake is exercised
           against local stand-ins only, and the registration says so in its
           own text.
+    CUT OFF BY THE CAP  (added 2026-09-25) the laptop's machine deadline
+          deleted the machine: its log, machine-deadline.log beside the
+          run's files, says "DEADLINE REACHED". Whatever the handshake had
+          reached by then is reported as far as it got, and the handshake
+          is NOT a pass: the thing that ended the billing was the cap.
 
 WHAT IT COSTS
   A toy run at $SLICE_TOKENS tokens finishes in a few minutes; timing 50
@@ -274,14 +347,28 @@ WHAT IT COSTS
   one (2.5 GB on each of the last two A3 copies). Well under an hour of
   rented time at \$$RATE_PER_HOUR an hour.
     estimate   about \$0.75 to \$1.00
-    hard cap   \$$HARD_CAP
+    hard cap   \$$HARD_CAP, ENFORCED BY CODE since 2026-09-25: this laptop
+               deletes the machine ${DEADLINE_HM} after creation
+               (\$$HARD_CAP / \$$RATE_PER_HOUR an hour = ${DEADLINE_SECS}s),
+               whatever the run is doing, and sooner if the vendor's
+               creation record states a higher rate. The first attempt had
+               no such deadline, and unattended would have billed until the
+               machine's own +24h deadline, about \$24.
+               The deadline keeps this laptop's clock, so the laptop must
+               stay awake and on the network until then, as it already
+               must for the watchdog. Billing between the deadline and the
+               vendor acting on the delete is not covered (seconds).
   The precedent for a short deliberately-capped test is the self-delete test
   of 2026-09-16, authorised at a \$0.50 cap and billed at \$0.29. This sits
   inside the first release of money John authorised on 2026-09-21, whose
   rehearsal line is up to \$10.
 
 WHAT IS OWED BEFORE IT RUNS
-  - John's spoken go naming this run, per commitment C2(b).
+  - John's spoken go naming this run, per commitment C2(b). The go of
+    2026-09-25 named one run of the plan at commit 4d98cfc; that run
+    happened and was stopped when the launcher hung
+    (docs/2026-09-25-rented-slice-findings.md), so a fresh go names this
+    plan and the fixed launcher.
   - A decision on the dedicated reaper key: without it the machine's own
     watcher is not armed and only the laptop-only path is tested, which is
     the smaller half of what the slice is for.

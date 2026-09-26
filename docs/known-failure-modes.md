@@ -804,6 +804,165 @@ differ in exactly that respect and in no other.
 
 ---
 
+## 6. A remote step tested only against stand-ins
+
+*Added 2026-09-25 (Pacific). John ruled the addition on 2026-09-25 ("agreed
+on all", on section 7 of `docs/2026-09-25-rented-slice-findings.md`, whose
+item 3 proposed it). The session that wrote this entry also wrote the fix it
+describes; under the pairing rule a different session checks both. The
+opening section of this file still counts five failures and fifteen printed
+blocks: it predates this entry and is left as written.*
+
+**What it was.** A command sent to a rented machine over `ssh` whose every
+test replaced `ssh` with a stand-in. The command was the one that starts the
+machine's own shutdown watcher, line 467 of
+`experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh`
+at commit `4d98cfc`, in the form `cd /root/mvm/src && nohup sh reap_agent.sh
+… >> …/reaper.log 2>&1 < /dev/null &`. In that form the `&` sends the whole
+`cd && nohup` chain to the background as one subshell. The redirections
+apply to `nohup` only, so the subshell keeps the connection's output open
+until the watcher exits, and `ssh` waits for it. The watcher runs until its
++24-hour deadline. Every test of the launcher used a stand-in `ssh` that
+exits at once (`reap_handshake_selftest.sh` sets `SSH="$BIN/fakessh"`), and a
+stand-in that exits at once returns at once **whatever the remote command
+does**. So no test could have seen the hang. The same file had already met
+the same hang, on the training start, in August 2026: its comment says "this
+ssh can HANG after the remote nohup succeeds", and that call had been capped
+at 60 seconds ever since. The watcher start, added on 2026-09-21, was not.
+
+**How it showed up.** On the first real `ssh` that line ever met, on
+2026-09-25, during the rented slice. The launcher hung for about 30 minutes
+after the watcher had started, never reaching the timing step, the training
+or the laptop watchdog. A session watching the log stopped it and deleted
+the machine; it cost $0.4974, and neither measurement was taken (the
+2026-09-25 row of `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`,
+and `docs/2026-09-25-rented-slice-findings.md` sections 4 and 5).
+**Unattended, nothing on the laptop would have deleted the machine** — the
+laptop watchdog is spawned after training starts — so it would have billed
+until its own +24-hour deadline, about $24 against a hard cap of $2.00
+(findings section 5, ARGUED there from the watcher's code).
+
+**Why this is a species and not an instance of failure 5.** Failure 5 is a
+command that does something its documentation says it does not. This one
+does exactly what it says; what was wrong was the evidence that it worked.
+A stand-in is built to answer the way the far end is *expected* to answer,
+so a test against it can only confirm the expectation. The more a remote
+step's behaviour depends on the far end — how a shell backgrounds a job,
+what a vendor's tool accepts, what a machine carries — the less a stand-in
+test says about it. The shutdown handshake itself was, until 2026-09-25,
+"verified against local stand-ins only" in its own author's words
+(`experiments/rehearsal-successor-measure/src/stage_rented_slice.sh`,
+header), and the slice existed to close exactly that gap.
+
+**The fix.** Ruled by John 2026-09-25. The watcher start now runs only
+`nohup` in the background, with all its output redirected (`cd … || exit 1;
+nohup … &`), so nothing holds the connection; and the `ssh` that sends it is
+cut off at 60 seconds whatever happens, the same cap the training start
+has. The laptop's machine deadline (`src/machine_deadline.sh`) bounds the
+money if some other remote step hangs.
+
+**The reproduction, with nothing rented.** The findings reproduced the hang
+on the laptop by putting `| cat` where `ssh` would be: like `ssh`, `cat`
+waits until everything on the far side has closed its output. Re-run on
+2026-09-25 (Pacific) by the session that wrote this entry, first the
+findings' own two commands, then the launcher's real old and new watcher
+forms with the watcher replaced by `sleep 8`:
+
+```
+== the findings' reproduction, rerun 2026-09-26T00:49:55Z (2026-09-25 Pacific)
+form as launched (cd && nohup ... &): returned after 8s
+control (cd ; nohup ... &): returned after 0s
+== the launcher's watcher-start form, old (line 467 at 4d98cfc) and new, with the watcher replaced by sleep 8
+OLD  cd … && nohup … &        : returned after 8s
+NEW  cd … || exit 1; nohup … & : returned after 0s
+(a background sleep 8 is still running after the new form returned: it was started, not skipped)
+```
+
+The script that printed this is filed as
+`experiments/rehearsal-successor-measure/out/launcher-fix-2026-09-25/hang-reproduction.sh`,
+beside its output.
+
+**The test.** One command. It rents nothing and contacts no vendor. For each
+command a launcher sends over `ssh` that starts something in the background
+(it contains `nohup`), it rewrites the command to run on this laptop, with
+the backgrounded program replaced by a stand-in that leaves a marker file and
+holds for 8 seconds, runs it through `bash -c '…' | cat`, and times it. A
+start that returns in under 2 seconds passes. One that holds the connection
+passes only if the launcher cuts that `ssh` off with a time cap. One that
+holds and is not capped fails. A start whose stand-in never ran fails too,
+because a command that returns at once by doing nothing has not been shown
+to return at once. Then a negative control, the pre-fix form, must be
+rejected.
+
+```
+$ experiments/06-mvm-0a-constructed-self-index/src/check_remote_forms.py
+```
+
+```
+remote background starts, run against a real local shell (| cat stands in for ssh; the background program holds 8s)
+
+launch_a3_fetch_first.sh
+  [ ok ] launch_a3_fetch_first.sh line 616: returned after 0.0s -- returns at once
+  [ ok ] launch_a3_fetch_first.sh line 697: returned after 8.1s -- HOLDS the connection; cut off by the launcher's inline cap 60s (line 702)
+
+negative control: the pre-fix form of 2026-09-25 must be REJECTED
+  [rejected] stand-in line 1: returned after 8.1s -- HOLDS the connection and nothing cuts it off: a real ssh would wait for the background program
+  [ ok ] the uncapped `cd … && nohup … &` stand-in is rejected, so this check detects the hang
+
+all checks pass. Nothing was rented and nothing was spent.
+```
+
+**It fails on the design that produced the finding.** Pointed at the
+launcher as it was at `4d98cfc`, the commit the slice ran:
+
+```
+$ git show 4d98cfc:experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh > "$TMPDIR/launcher-4d98cfc.sh"
+$ LAUNCHER="$TMPDIR/launcher-4d98cfc.sh" experiments/06-mvm-0a-constructed-self-index/src/check_remote_forms.py
+```
+
+```
+remote background starts, run against a real local shell (| cat stands in for ssh; the background program holds 8s)
+
+launcher-4d98cfc.sh
+  [FAIL] launcher-4d98cfc.sh line 467: returned after 8.1s -- HOLDS the connection and nothing cuts it off: a real ssh would wait for the background program
+  [ ok ] launcher-4d98cfc.sh line 547: returned after 8.1s -- HOLDS the connection; cut off by the launcher's inline cap 60s (line 552)
+
+negative control: the pre-fix form of 2026-09-25 must be REJECTED
+  [rejected] stand-in line 1: returned after 8.2s -- HOLDS the connection and nothing cuts it off: a real ssh would wait for the background program
+  [ ok ] the uncapped `cd … && nohup … &` stand-in is rejected, so this check detects the hang
+
+1 problem(s). Nothing was rented and nothing was spent.
+```
+
+Both outputs were produced on 2026-09-25 (Pacific) by the session that wrote
+this entry, and no other session has re-run them. **The timings are wall
+clock**, so a re-run will differ from the text above by a tenth of a second
+here and there; compare the verdicts and the whole seconds, not the bytes.
+The line numbers are those of the file at the commit this entry landed in,
+and move when the launcher is edited.
+
+**What the output has to show**, for any design this is pointed at: every
+background start a launcher sends over `ssh` either returns at once or is
+cut off by a time cap in the launcher; no start is reported as never having
+run; and the negative control is rejected. **The control is what makes the
+rest worth reading.** If it is ever accepted, the check has stopped
+measuring what it claims to.
+
+**What this test does not cover, stated so it is not read as covering it
+(ARGUED).** It catches one way a remote step can differ from its stand-in:
+a background job holding the connection. The species is wider. A vendor
+tool on the machine that takes different arguments from the laptop's (the
+2026-09-17 finding recorded at the verb-first check in the launcher), a
+credential the machine does not carry (2026-09-16), a path that exists only
+on the laptop — none of these is exercised here, and none can be by any
+check that does not reach the real far end or a faithful copy of it. The
+general discipline, for which no single command exists: **before a remote
+step is counted as tested, say what stood in for the far end, and what that
+stand-in cannot do that the far end can.** A test run only against a
+stand-in is evidence about the stand-in.
+
+---
+
 ## Adding to this list
 
 A fatal finding that is a new species — not a new instance of one of the four

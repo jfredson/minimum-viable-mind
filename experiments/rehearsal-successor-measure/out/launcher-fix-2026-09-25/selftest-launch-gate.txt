@@ -1,0 +1,460 @@
+
+=== launch_a3_fetch_first.sh
+  control — a safe Mac, a good ledger row, a sound watchdog: a REAL launch must get through
+[32m    pass: the gate passed it[0m
+[32m    pass: it did not refuse[0m
+[32m    pass: it reached the (stand-in) rental command, so the gate let it through[0m
+[32m    pass: it found the right row[0m
+  1 — the never-sleep override is off
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'SleepDisabled 0'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2 — no ledger row names this run
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names this run's output name 'gate_test_run''[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2b — a row names a LONGER name that merely starts with this one
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2c — a row names a hyphenated cousin of this run (gate_test_run-v2)
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2d — a row names a dotted cousin of this run (gate_test_run.v2)
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2e — control: the run name ending a sentence still counts
+[32m    pass: a name followed by a full stop matched[0m
+  2f — a row names a hyphen-PREFIXED cousin (x-gate_test_run)
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2g — control: a row naming the machine, mvm-gate_test_run, names the run
+[32m    pass: the launcher's own machine name matched[0m
+  14 — the real 2026-08-17 row's shape: a '|' in the prose AND an annotation cell, no closing '|'
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'has 10 cells, expected 8'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: it did not blame the estimate[0m
+  14b — an annotation cell appended with a closing '|'
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'has 9 cells, expected 8'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  14c — control: a '|' in the prose written as '\|' is prose, and the row passes
+[32m    pass: the escaped pipe was read as prose[0m
+  3 — the only row is five days old
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: '5 days ago (must be within 2)'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  3b — the only row is dated in the future
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'in the future'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  3c — the row's date cell is empty: refused as undated, no field shifted
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'line 7 has no date'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: no later field slid into the date's place[0m
+  4 — the row has no dollar estimate
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no dollar figure in its estimate column'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  5 — the row already records an actual cost, so it is an earlier launch's
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'already records an actual cost'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  6 — the ledger file is missing
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'the compute ledger is not where it should be'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  7 — the watchdog it would spawn is missing
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'is missing'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  7b — the watchdog it would spawn does not parse
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'does not parse'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  8 — the keep-awake command cannot be found
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'cannot be found'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  9 — the laptop's delete is due after the machine's own deadline
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'after the machine's own deadline'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  9b — control: equal deadlines are allowed
+[32m    pass: equal deadlines passed[0m
+  10 — a delete deadline of zero hours
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'not a whole number of hours'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  11 — two problems at once are both reported
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'SleepDisabled 0'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: and the ledger problem in the same refusal[0m
+  12 — the sleep override does not override anything else
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: the sleep problem was overridden out loud[0m
+[32m    pass: and said what that can cost[0m
+  13 — a dry run reports every problem, exits 0, and creates nothing
+[32m    pass: the dry run exited 0[0m
+[32m    pass: it said a real launch would be refused[0m
+[32m    pass: including the stale ledger row[0m
+[32m    pass: and it reached its own dry-run report[0m
+[32m    pass: and never reached the rental command[0m
+
+=== launch_ctl_pilot.sh
+  control — a safe Mac, a good ledger row, a sound watchdog: a REAL launch must get through
+[32m    pass: the gate passed it[0m
+[32m    pass: it did not refuse[0m
+[32m    pass: it reached the (stand-in) rental command, so the gate let it through[0m
+[32m    pass: it found the right row[0m
+  1 — the never-sleep override is off
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'SleepDisabled 0'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2 — no ledger row names this run
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names this run's output name 'gate_test_run''[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2b — a row names a LONGER name that merely starts with this one
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2c — a row names a hyphenated cousin of this run (gate_test_run-v2)
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2d — a row names a dotted cousin of this run (gate_test_run.v2)
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2e — control: the run name ending a sentence still counts
+[32m    pass: a name followed by a full stop matched[0m
+  2f — a row names a hyphen-PREFIXED cousin (x-gate_test_run)
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2g — control: a row naming the machine, mvm-gate_test_run, names the run
+[32m    pass: the launcher's own machine name matched[0m
+  14 — the real 2026-08-17 row's shape: a '|' in the prose AND an annotation cell, no closing '|'
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'has 10 cells, expected 8'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: it did not blame the estimate[0m
+  14b — an annotation cell appended with a closing '|'
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'has 9 cells, expected 8'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  14c — control: a '|' in the prose written as '\|' is prose, and the row passes
+[32m    pass: the escaped pipe was read as prose[0m
+  3 — the only row is five days old
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: '5 days ago (must be within 2)'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  3b — the only row is dated in the future
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'in the future'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  3c — the row's date cell is empty: refused as undated, no field shifted
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'line 7 has no date'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: no later field slid into the date's place[0m
+  4 — the row has no dollar estimate
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no dollar figure in its estimate column'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  5 — the row already records an actual cost, so it is an earlier launch's
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'already records an actual cost'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  6 — the ledger file is missing
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'the compute ledger is not where it should be'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  7 — the watchdog it would spawn is missing
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'is missing'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  7b — the watchdog it would spawn does not parse
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'does not parse'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  8 — the keep-awake command cannot be found
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'cannot be found'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  9 — the laptop's delete is due after the machine's own deadline
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'after the machine's own deadline'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  9b — control: equal deadlines are allowed
+[32m    pass: equal deadlines passed[0m
+  10 — a delete deadline of zero hours
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'not a whole number of hours'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  11 — two problems at once are both reported
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'SleepDisabled 0'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: and the ledger problem in the same refusal[0m
+  12 — the sleep override does not override anything else
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: the sleep problem was overridden out loud[0m
+[32m    pass: and said what that can cost[0m
+  13 — a dry run reports every problem, exits 0, and creates nothing
+[32m    pass: the dry run exited 0[0m
+[32m    pass: it said a real launch would be refused[0m
+[32m    pass: including the stale ledger row[0m
+[32m    pass: and it reached its own dry-run report[0m
+[32m    pass: and never reached the rental command[0m
+
+=== launch_pilot_a1.sh
+  control — a safe Mac, a good ledger row, a sound watchdog: a REAL launch must get through
+[32m    pass: the gate passed it[0m
+[32m    pass: it did not refuse[0m
+[32m    pass: it reached the (stand-in) rental command, so the gate let it through[0m
+[32m    pass: it found the right row[0m
+  1 — the never-sleep override is off
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'SleepDisabled 0'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2 — no ledger row names this run
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names this run's output name 'gate_test_run''[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2b — a row names a LONGER name that merely starts with this one
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2c — a row names a hyphenated cousin of this run (gate_test_run-v2)
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2d — a row names a dotted cousin of this run (gate_test_run.v2)
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2e — control: the run name ending a sentence still counts
+[32m    pass: a name followed by a full stop matched[0m
+  2f — a row names a hyphen-PREFIXED cousin (x-gate_test_run)
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  2g — control: a row naming the machine, mvm-gate_test_run, names the run
+[32m    pass: the launcher's own machine name matched[0m
+  14 — the real 2026-08-17 row's shape: a '|' in the prose AND an annotation cell, no closing '|'
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'has 10 cells, expected 8'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: it did not blame the estimate[0m
+  14b — an annotation cell appended with a closing '|'
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'has 9 cells, expected 8'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  14c — control: a '|' in the prose written as '\|' is prose, and the row passes
+[32m    pass: the escaped pipe was read as prose[0m
+  3 — the only row is five days old
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: '5 days ago (must be within 2)'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  3b — the only row is dated in the future
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'in the future'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  3c — the row's date cell is empty: refused as undated, no field shifted
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'line 7 has no date'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: no later field slid into the date's place[0m
+  4 — the row has no dollar estimate
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no dollar figure in its estimate column'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  5 — the row already records an actual cost, so it is an earlier launch's
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'already records an actual cost'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  6 — the ledger file is missing
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'the compute ledger is not where it should be'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  7 — the watchdog it would spawn is missing
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'is missing'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  7b — the watchdog it would spawn does not parse
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'does not parse'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  8 — the keep-awake command cannot be found
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'cannot be found'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  9 — the laptop's delete is due after the machine's own deadline
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'after the machine's own deadline'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  9b — control: equal deadlines are allowed
+[32m    pass: equal deadlines passed[0m
+  10 — a delete deadline of zero hours
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'not a whole number of hours'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+  11 — two problems at once are both reported
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'SleepDisabled 0'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: and the ledger problem in the same refusal[0m
+  12 — the sleep override does not override anything else
+[32m    pass: exited 1[0m
+[32m    pass: said it was refusing[0m
+[32m    pass: named the problem: 'no row in the ledger table names'[0m
+[32m    pass: it stopped at the gate[0m
+[32m    pass: never reached the rental command[0m
+[32m    pass: the sleep problem was overridden out loud[0m
+[32m    pass: and said what that can cost[0m
+  13 — a dry run reports every problem, exits 0, and creates nothing
+[32m    pass: the dry run exited 0[0m
+[32m    pass: it said a real launch would be refused[0m
+[32m    pass: including the stale ledger row[0m
+[32m    pass: and it reached its own dry-run report[0m
+[32m    pass: and never reached the rental command[0m
+
+checks passed: 369   failed: 0
+launch gate self-test OK — nothing was rented, no vendor was contacted,
+and this Mac's real power settings were never read or changed.

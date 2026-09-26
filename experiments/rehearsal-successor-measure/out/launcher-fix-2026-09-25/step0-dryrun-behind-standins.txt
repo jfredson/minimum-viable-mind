@@ -1,0 +1,58 @@
+runpodctl resolves to: /Users/john/.claude/jobs/3eb5118f/tmp/step0/bin/runpodctl
+$ DRYRUN=1 SCALE=10M MAXTOK=2000000 OUT=slice_handshake GRACE_S=600 RUN_SUBDIR=slice_handshake CLEAR_RUN_SUBDIR=1 HARD_CAP_USD=2.00 RATE_PER_HOUR_USD=0.99 PRE_TRAIN_DIR=… PRE_TRAIN_CMD="python bench_arms.py …" launch_a3_fetch_first.sh
+local pre-flight: can this Mac fall asleep?
+  ok: never-sleep override ON, running on wall power
+  (idle sleep timers 15 min plugged in / 15 min on battery;
+   not relied on — the override covers the lid; the keep-awake command
+   (caffeinate) holds idle sleep off only once the watchdog is running,
+   so the launch itself is not covered.)
+local pre-flight: are the fetch and the delete scheduled inside the run window?
+  ok: watchdog watch_run_a3.sh present and parses; runs under caffeinate
+  ok: laptop fetch-and-delete by +24h, machine's own deadline +24h
+local pre-flight: is there a ledger row with an estimate for 'slice_handshake'?
+  ok: ledger row at line 5 names 'slice_handshake', dated within 2 days, estimate written, no actual cost yet
+launch gate: every check passed.
+local pre-flight: module self-tests
+  interpreter: /Users/john/Code/minimum-viable-mind/.venv/bin/python
+  ok: curriculum_a3
+  ok: encoding_a3
+  ok: train_a3
+  ok: frozen batteries present
+creating SECURE pod (NVIDIA GeForce RTX 5090) for 10M/2000000 tok (out: slice_handshake)
+  register-less by construction [A3 §2.4]; act-weight 1.0
+  run dir: /workspace/mvm-out/slice_handshake (network volume — survives pod death)
+  advisory terminate-after: 2026-09-27T00:57:20Z; watchdog kill deadline: +24h
+  artifacts -> /Users/john/.claude/jobs/3eb5118f/tmp/step0/home/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/slice_handshake
+DRYRUN — nothing created, nothing spawned. Would run:
+  runpodctl pod create --name "mvm-slice_handshake" \
+    --template-id runpod-torch-v280 --gpu-id "NVIDIA GeForce RTX 5090" \
+    --cloud-type "SECURE"  --network-volume-id x9f8pkn58t --terminate-after "2026-09-27T00:57:20Z"
+  machine deadline: ON -- hard cap $2.00 at $0.99 an hour:
+    this laptop deletes the machine 7272s after creation, whatever
+    the run is doing (sooner if the vendor states a higher rate)
+  push: src + batteries-a3  ->  /root/mvm
+  remote pre-flight: python curriculum_a3.py --self-test
+                     python encoding_a3.py  --self-test
+                     python train_a3.py     --self-test
+  clear the run folder, before the shutdown watcher starts:
+    list, then empty, /workspace/mvm-out/slice_handshake
+    (a leftover slice_handshake.DONE or slice_handshake.FETCHED is reported by name)
+  before training (waits for it, at most 1800s):
+    push: /Users/john/Code/minimum-viable-mind/.claude/worktrees/w1f-launcher-fix/experiments/rehearsal-successor-measure/src  ->  /root/pre-train
+    run:  cd /root/pre-train && python bench_arms.py --device cuda --steps 50 --batch 32 --out /workspace/mvm-out/slice_handshake/bench_arms.json
+  train: python train_a3.py --scale 10M --seed 0 --twin --batch 128 --steps 200000 --max-tokens 2000000 --act-weight 1.0 --eval-every 500 --eval-n 100 --device cuda \
+    --out /workspace/mvm-out/slice_handshake/slice_handshake.pt
+  aliveness: pgrep -f '[t]rain_a3.py'
+  watchdog env dest: /Users/john/.claude/jobs/3eb5118f/tmp/step0/home/Code/minimum-viable-mind/experiments/06-mvm-0a-constructed-self-index/artifacts/slice_handshake
+  shutdown watcher: sh reap_agent.sh /root/mvm/reap.env, started detached,
+                    connection cut off at 60s if it does not return
+                    (holds the machine open for the laptop's receipt, up to
+                     600s, then deletes if the files are on the volume;
+                     hard deadline +24h)
+  trainer gets --no-self-terminate ONLY if that watcher is confirmed running;
+  otherwise the fallback is ON_UNARMED=self-terminate
+  NOTE: the register is never trained in an A3 run; this script has no
+        flag that could enable it.
+exit=0
+stand-in runpodctl calls: 0
+stand-in ssh calls: 0

@@ -1,0 +1,36 @@
+case 0 — negative control: the OLD order, which must break the rule
+[32m    pass: the machine was deleted (by the trainer)[0m
+[32m    pass: the rule was BROKEN, as expected: deleted with no receipt and a stale local copy[0m
+[32m    pass: the laptop was left with no model file at all[0m
+case 1 — run finishes normally, laptop awake
+[32m    pass: the watchdog reported success[0m
+[32m    pass: the laptop's model file matches the machine's, byte for byte[0m
+[32m    pass: the machine was deleted exactly once[0m
+[32m    pass: the receipt existed at the moment of deletion[0m
+[32m    pass: THE RULE HELD: the files were home and checked before the machine went[0m
+[32m    pass: no recovery note on a clean run[0m
+case 2 — laptop never answers; the bounded wait must end the billing
+[32m    pass: the machine deleted itself with no laptop present[0m
+[32m    pass: it waited about the grace period first (8s, grace 6s)[0m
+[32m    pass: it recorded that no receipt had arrived[0m
+[32m    pass: the machine's log says why it went, and that the copy needs recovering[0m
+case 3 — files are only on the machine's disk; the wait must NOT be enough
+[32m    pass: the machine refused to delete itself[0m
+[32m    pass: it says why: deleting would destroy the only copy[0m
+case 4 — the final copy does not check out; nothing may be deleted
+[32m    pass: the watchdog reported an unchecked copy[0m
+[32m    pass: the machine was left running rather than deleted[0m
+[32m    pass: no receipt was written, so the machine stays up[0m
+[32m    pass: a recovery note was written[0m
+case 5 — the machine vanishes mid-run; the laptop must leave instructions
+[32m    pass: the watchdog reported a vanished machine[0m
+[32m    pass: a recovery note was written[0m
+[32m    pass: the note names the network volume to recover from[0m
+[32m    pass: the note says renting a machine needs John's go[0m
+case 6 — a single failed API call must not look like a deleted machine
+[32m    pass: the watchdog kept going through the failed API call[0m
+[32m    pass: no recovery note for a live machine[0m
+[32m    pass: and it still completed the run normally afterwards[0m
+
+checks passed: 26   failed: 0
+reap handshake self-test OK — no machine was rented and no vendor contacted

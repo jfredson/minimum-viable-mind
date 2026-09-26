@@ -1,0 +1,84 @@
+case 0 — negative control: a safe Mac must NOT be refused
+[32m    pass: the check passed the safe Mac and said so[0m
+[32m    pass: it did not refuse[0m
+[32m    pass: the launcher ran on past the check to its dry-run block[0m
+[32m    pass: it reported the idle timers it read from 'pmset -g custom'[0m
+[32m    pass: the banner says when the idle-sleep cover starts[0m
+[32m    pass: and that the launch window is outside it[0m
+[32m    pass: and that the lid is what the override covers[0m
+case 1 — the never-sleep override is OFF: a real launch must refuse
+[32m    pass: it exited 1[0m
+[32m    pass: it said it was refusing, in those words[0m
+[32m    pass: and it stopped there, before any later precondition[0m
+[32m    pass: it named the reading it refused on[0m
+[32m    pass: it printed the command that corrects the setting[0m
+[32m    pass: and the command that puts it back afterwards[0m
+[32m    pass: it named the way to override it[0m
+[32m    pass: nothing was created — the launcher never reached a vendor command[0m
+case 2 — override ON but on battery: a real launch must still refuse
+[32m    pass: it exited 1[0m
+[32m    pass: it said it was refusing, in those words[0m
+[32m    pass: and it stopped there, before any later precondition[0m
+[32m    pass: it named the power source it refused on[0m
+[32m    pass: it printed the fix[0m
+[32m    pass: nothing was created — the launcher never reached a vendor command[0m
+case 3 — the setting cannot be read: silence must not count as safe
+[32m    pass: it exited 1[0m
+[32m    pass: it said it was refusing, in those words[0m
+[32m    pass: and it stopped there, before any later precondition[0m
+[32m    pass: it said the reading was missing rather than guessing[0m
+[32m    pass: nothing was created — the launcher never reached a vendor command[0m
+case 3b — the power source cannot be read either
+[32m    pass: it exited 1[0m
+[32m    pass: it said it was refusing, in those words[0m
+[32m    pass: and it stopped there, before any later precondition[0m
+[32m    pass: it said which reading was missing[0m
+[32m    pass: nothing was created — the launcher never reached a vendor command[0m
+case 4 — a dry run reports the problem and still exits 0
+[32m    pass: the dry run still exited 0[0m
+[32m    pass: it still told the operator the problem[0m
+[32m    pass: and still printed the fix[0m
+[32m    pass: and still reported creating nothing[0m
+case 4b — the explicit override launches anyway, out loud
+[32m    pass: it said the guard had been overridden[0m
+[32m    pass: it said what the override can cost[0m
+[32m    pass: it did not refuse[0m
+[32m    pass: it carried on to the next precondition[0m
+[32m    pass: and was stopped there instead, by the harness's own second stop[0m
+[32m    pass: nothing was created — the launcher never reached a vendor command[0m
+case 5 — ALLOW_LAPTOP_SLEEP=0 must NOT switch the guard off
+[32m    pass: it exited 1[0m
+[32m    pass: it said it was refusing, in those words[0m
+[32m    pass: and it stopped there, before any later precondition[0m
+[32m    pass: it did not announce an override it was not given[0m
+[32m    pass: it said the value was seen and not taken[0m
+[32m    pass: nothing was created — the launcher never reached a vendor command[0m
+case 5b — ALLOW_LAPTOP_SLEEP=false must NOT switch the guard off
+[32m    pass: it exited 1[0m
+[32m    pass: it said it was refusing, in those words[0m
+[32m    pass: and it stopped there, before any later precondition[0m
+[32m    pass: an unrecognised value left the refusal standing[0m
+[32m    pass: nothing was created — the launcher never reached a vendor command[0m
+case 5c — control: the one value that IS the override still works
+[32m    pass: 1 still overrides, so 0 and false are being read, not refused wholesale[0m
+[32m    pass: it did not refuse[0m
+[32m    pass: nothing was created — the launcher never reached a vendor command[0m
+case 6 — the comment says when the idle-sleep cover begins, and when it does not
+[32m    pass: launch_a3_fetch_first.sh: the cover starts at line 726, after the machine exists at line 384, as the comment says[0m
+[32m    pass: launch_ctl_pilot.sh: the cover starts at line 417, after the machine exists at line 236, as the comment says[0m
+[32m    pass: launch_pilot_a1.sh: the cover starts at line 212, after the machine exists at line 127, as the comment says[0m
+[32m    pass: the comment says plainly that the launch window is uncovered[0m
+[32m    pass: and it states the order this case checks[0m
+case 7 — wall power but the battery is discharging: a real launch must refuse
+[32m    pass: it exited 1[0m
+[32m    pass: it said it was refusing, in those words[0m
+[32m    pass: and it stopped there, before any later precondition[0m
+[32m    pass: it named what it refused on[0m
+[32m    pass: it printed the fix[0m
+[32m    pass: nothing was created — the launcher never reached a vendor command[0m
+case 7b — control: a Mac holding its charge on purpose must NOT be refused
+[32m    pass: the check passed a Mac that is plugged in and holding its charge[0m
+
+checks passed: 67   failed: 0
+sleep guard self-test OK — nothing was rented, no vendor was contacted,
+and this Mac's real power settings were never read or changed.

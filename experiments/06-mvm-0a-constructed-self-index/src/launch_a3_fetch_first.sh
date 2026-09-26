@@ -61,9 +61,11 @@
 # refuses command-line arguments, marked "2026-09-22", and the launch gate
 # (sleep, scheduled fetch and delete, ledger row), marked "2026-09-24", which
 # lives in src/launch_gate.sh and is shared with the other two unregistered
-# launchers.
+# launchers. Blocks marked "2026-09-25" came after: the slice's own folder and
+# before-training step, then, after the slice hung, the capped and detached
+# watcher start, the laptop's machine deadline and the run-folder clear.
 # src/derive_fetch_first_launcher.py, which produced this file, carries none
-# of the three, so re-running it no longer reproduces this file.
+# of these, so re-running it no longer reproduces this file.
 #
 # What differs from the A1 launcher, and why (carried over):
 #   * runs train_a3.py, not train.py — the A3 grammar, tokenizer and the
@@ -202,6 +204,57 @@ if [ -n "$PRE_TRAIN_DIR$PRE_TRAIN_CMD" ]; then
   fi
   [ -d "$PRE_TRAIN_DIR" ] || { echo "refusing to run: PRE_TRAIN_DIR '$PRE_TRAIN_DIR' is not a folder" >&2; exit 2; }
 fi
+# ---- 2026-09-25 (after the hung slice): a deadline on this laptop, and a --
+# ---- clear run folder before anything on the machine starts ---------------
+# Ruled by John 2026-09-25 ("agreed on all"), on section 7 of
+# docs/2026-09-25-rented-slice-findings.md. Both are OFF unless set, so every
+# run that does not set them launches exactly as before. The rented slice
+# sets them (stage_rented_slice.sh).
+#
+# HARD_CAP_USD / RATE_PER_HOUR_USD: the MACHINE DEADLINE. When both are set,
+# a small program on this laptop (src/machine_deadline.sh), started the moment
+# the machine exists and detached from this script, deletes the machine once
+# HARD_CAP_USD / RATE_PER_HOUR_USD hours have passed since creation --
+# whatever the run is doing, whether or not this launcher is still running,
+# and whether or not anything else has deleted it already. On 2026-09-25 this
+# launcher hung before it spawned anything that could delete the machine,
+# and only a person watching the log kept a $2.00 cap from becoming about $24
+# of billing. This is what makes a stated hard cap enforced by code.
+# If the vendor's creation record states a HIGHER hourly rate than the one
+# given, the higher one is used, so the deadline can only come sooner.
+HARD_CAP_USD="${HARD_CAP_USD:-}"
+RATE_PER_HOUR_USD="${RATE_PER_HOUR_USD:-}"
+DEADLINE_POLL_S="${DEADLINE_POLL_S:-30}"
+DEADLINE_S=""
+if [ -n "$HARD_CAP_USD$RATE_PER_HOUR_USD" ]; then
+  for _v in "HARD_CAP_USD=$HARD_CAP_USD" "RATE_PER_HOUR_USD=$RATE_PER_HOUR_USD"; do
+    case "${_v#*=}" in
+      ''|*[!0-9.]*|*.*.*|.) echo "refusing to run: set both HARD_CAP_USD and RATE_PER_HOUR_USD as dollar amounts, or neither (got ${_v})" >&2
+            exit 2 ;;
+    esac
+  done
+  DEADLINE_S=$(awk -v c="$HARD_CAP_USD" -v r="$RATE_PER_HOUR_USD" \
+               'BEGIN { if (c <= 0 || r <= 0) print ""; else printf "%d", c / r * 3600 }')
+  [ -n "$DEADLINE_S" ] && [ "$DEADLINE_S" -gt 0 ] || {
+    echo "refusing to run: HARD_CAP_USD and RATE_PER_HOUR_USD must both be above zero" >&2; exit 2; }
+fi
+# CLEAR_RUN_SUBDIR=1: before the machine's shutdown watcher starts, list the
+# run's own folder on the network volume and then empty it. The watcher
+# deletes the machine the moment it sees a finished-marker ($OUT.DONE) AND a
+# receipt ($OUT.FETCHED) in that folder, and training only removes them after
+# the watcher is already running -- so markers left by an earlier attempt
+# could delete a fresh machine before it trains. The volume can only be read
+# from a rented machine, so this is the first moment the folder can be
+# checked. Allowed only with RUN_SUBDIR: the shared folder is never emptied.
+CLEAR_RUN_SUBDIR="${CLEAR_RUN_SUBDIR:-}"
+case "$CLEAR_RUN_SUBDIR" in
+  ''|1) ;;
+  *) echo "refusing to run: CLEAR_RUN_SUBDIR takes 1 or nothing, got '$CLEAR_RUN_SUBDIR'" >&2; exit 2 ;;
+esac
+if [ -n "$CLEAR_RUN_SUBDIR" ] && [ -z "$RUN_SUBDIR" ]; then
+  echo "refusing to run: CLEAR_RUN_SUBDIR=1 needs RUN_SUBDIR -- the shared run folder is never emptied" >&2
+  exit 2
+fi
 # Where fetched artifacts land. Defaults to the MAIN checkout, never the
 # worktree this script happens to be running from: a git worktree is scratch
 # space and can be removed when a session ends, which would take a ten-hour
@@ -287,10 +340,22 @@ DRYRUN — nothing created, nothing spawned. Would run:
   runpodctl pod create --name "mvm-$OUT" \\
     --template-id runpod-torch-v280 --gpu-id "$GPU" \\
     --cloud-type "$CLOUD" $PUBIP $VOLARGS --terminate-after "$TERM_AT"
+$(if [ -n "$DEADLINE_S" ]; then
+  echo "  machine deadline: ON -- hard cap \$$HARD_CAP_USD at \$$RATE_PER_HOUR_USD an hour:"
+  echo "    this laptop deletes the machine ${DEADLINE_S}s after creation, whatever"
+  echo "    the run is doing (sooner if the vendor states a higher rate)"
+else
+  echo "  machine deadline: OFF (no HARD_CAP_USD given)"
+fi)
   push: src + batteries-a3  ->  /root/mvm
   remote pre-flight: python curriculum_a3.py --self-test
                      python encoding_a3.py  --self-test
                      python train_a3.py     --self-test
+$(if [ -n "$CLEAR_RUN_SUBDIR" ]; then
+  echo "  clear the run folder, before the shutdown watcher starts:"
+  echo "    list, then empty, $RUN_DIR"
+  echo "    (a leftover $OUT.DONE or $OUT.FETCHED is reported by name)"
+fi)
 $(if [ -n "$PRE_TRAIN_CMD" ]; then
   echo "  before training (waits for it, at most ${PRE_TRAIN_TIMEOUT_S}s):"
   echo "    push: $PRE_TRAIN_DIR  ->  /root/pre-train"
@@ -300,7 +365,8 @@ fi)
     --out $RUN_DIR/$OUT.pt
   aliveness: pgrep -f '[t]rain_a3.py'
   watchdog env dest: $DEST_ROOT/artifacts/$OUT
-  shutdown watcher: sh reap_agent.sh /root/mvm/reap.env
+  shutdown watcher: sh reap_agent.sh /root/mvm/reap.env, started detached,
+                    connection cut off at 60s if it does not return
                     (holds the machine open for the laptop's receipt, up to
                      ${GRACE_S}s, then deletes if the files are on the volume;
                      hard deadline +${TERM_H}h)
@@ -312,6 +378,9 @@ DRYEOF
   exit 0
 fi
 
+# 2026-09-25: the machine deadline counts from here, just BEFORE the create
+# call, so the clock can only start early, never late.
+CREATED_AT_EPOCH=$(date +%s)
 CREATE_OUT=$(runpodctl pod create --name "mvm-$OUT" \
   --template-id runpod-torch-v280 --gpu-id "$GPU" \
   --cloud-type "$CLOUD" $PUBIP $VOLARGS --terminate-after "$TERM_AT")
@@ -330,6 +399,47 @@ if [ -z "$POD" ]; then
   exit 1
 fi
 echo "pod: $POD"
+
+# ---- 2026-09-25: the machine deadline, armed before anything else runs ----
+# Spawned here, before the first ssh, because the first ssh is where the
+# launcher can hang. Detached and under the keep-awake command, like the
+# watchdog below, so neither a hung launcher nor one that has been stopped
+# takes the deadline with it.
+if [ -n "$DEADLINE_S" ]; then
+  POSTED_RATE=$(echo "$CREATE_OUT" | python3 -c '
+import sys, json
+try:
+    d = json.JSONDecoder(strict=False).decode(sys.stdin.read())
+    print(d.get("costPerHr") or "")
+except Exception:
+    print("")')
+  EFF_RATE="$RATE_PER_HOUR_USD"
+  if [ -n "$POSTED_RATE" ] && awk -v p="$POSTED_RATE" -v g="$RATE_PER_HOUR_USD" 'BEGIN { exit !(p > g) }'; then
+    EFF_RATE="$POSTED_RATE"
+    echo "  the creation record states \$$POSTED_RATE an hour, above the \$$RATE_PER_HOUR_USD given:"
+    echo "  the machine deadline uses \$$POSTED_RATE, so it comes sooner"
+  fi
+  DEADLINE_S=$(awk -v c="$HARD_CAP_USD" -v r="$EFF_RATE" 'BEGIN { printf "%d", c / r * 3600 }')
+  DL_DIR="$DEST_ROOT/artifacts/$OUT"
+  mkdir -p "$DL_DIR"
+  DL_ENV="$DL_DIR/machine_deadline_$POD.env"
+  cat > "$DL_ENV" <<DLEOF
+POD="$POD"
+OUT="$OUT"
+CREATED_AT_EPOCH=$CREATED_AT_EPOCH
+DELETE_AT_EPOCH=$(( CREATED_AT_EPOCH + DEADLINE_S ))
+HARD_CAP_USD="$HARD_CAP_USD"
+RATE_PER_HOUR_USD="$EFF_RATE"
+POSTED_RATE="$POSTED_RATE"
+POLL_S=$DEADLINE_POLL_S
+DLEOF
+  nohup "$CAFFEINATE" -dimsu bash "$SRC_DIR/machine_deadline.sh" "$DL_ENV" \
+    >> "$DL_DIR/machine-deadline.log" 2>&1 < /dev/null &
+  echo "MACHINE DEADLINE ARMED (pid $!): this laptop deletes $POD at"
+  echo "  $(date -u -r $(( CREATED_AT_EPOCH + DEADLINE_S )) +%Y-%m-%dT%H:%M:%SZ), ${DEADLINE_S}s after creation"
+  echo "  (hard cap \$$HARD_CAP_USD at \$$EFF_RATE an hour), whatever the run is doing."
+  echo "  its log: $DL_DIR/machine-deadline.log"
+fi
 
 echo "waiting for SSH (uptimeSeconds is a dead field — polling .ssh.ssh_command)"
 SSH_CMD=""
@@ -354,6 +464,22 @@ fi
 # fetch loop AND its deadline kill for the rest of the run
 SSH="$SSH_CMD -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=20 -o ServerAliveInterval=30 -o ServerAliveCountMax=4 -o BatchMode=yes"
 echo "ssh up: $SSH_CMD"
+# 2026-09-25: run one command on the machine and stop waiting for it after
+# $1 seconds. The training start below has carried this cap inline since
+# 2026-08-17; the watcher start had none, and on 2026-09-25 it held the
+# launcher for 30 minutes (docs/2026-09-25-rented-slice-findings.md §4).
+# Returns the command's status, or non-zero when cut off: callers check the
+# machine for what they need rather than trusting this status.
+ssh_capped() {
+  local cap="$1"; shift
+  $SSH "$@" &
+  local pid=$!
+  ( sleep "$cap"; kill "$pid" 2>/dev/null ) >/dev/null 2>&1 &
+  local killer=$!
+  wait "$pid"; local rc=$?
+  kill "$killer" 2>/dev/null
+  return $rc
+}
 
 echo "pushing code + frozen batteries"
 COPYFILE_DISABLE=1 tar czf - --exclude='__pycache__' --exclude='._*' \
@@ -374,6 +500,20 @@ fi
 
 RESUME_FLAG=""
 [ -n "$RESUME" ] && RESUME_FLAG="--resume $RESUME"
+
+# ---- 2026-09-25: clear the run's own folder before the watcher starts -----
+# See CLEAR_RUN_SUBDIR above. RUN_DIR here is always <volume>/<RUN_SUBDIR>,
+# never the shared folder: the settings refuse CLEAR_RUN_SUBDIR without it.
+if [ -n "$CLEAR_RUN_SUBDIR" ]; then
+  echo "clearing the run folder before anything on the machine starts: $RUN_DIR"
+  ssh_capped 60 "mkdir -p '$RUN_DIR' && cd '$RUN_DIR' || exit 1
+    echo 'found before clearing:'; ls -la
+    for f in '$OUT.DONE' '$OUT.FETCHED' '$OUT.pt' bench_arms.json; do
+      [ -e \"\$f\" ] && echo \"LEFTOVER: \$f\"
+    done
+    find . -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+    echo \"files left after clearing: \$(find . -mindepth 1 | wc -l)\"" 2>&1 | sed 's/^/  /'
+fi
 
 # ---- pod-side reaping: ENABLED by John's ruling of 2026-09-17 ------------
 # A paid test on 2026-09-16 established that a pod carries NO credential and
@@ -464,8 +604,18 @@ if [ -n "$POD_KEY" ] && [ "$NETVOL" != "none" ]; then
         'POD_ID_FILE=\"/root/mvm/pod_id\"' \
         'DEADLINE_EPOCH=$AGENT_DEADLINE' 'GRACE_S=$GRACE_S' \
         'AGENT_POLL_S=$AGENT_POLL_S' > /root/mvm/reap.env" >/dev/null 2>&1
-  $SSH "cd /root/mvm/src && nohup sh reap_agent.sh /root/mvm/reap.env \
-        >> $RUN_DIR/reaper.log 2>&1 < /dev/null &" >/dev/null 2>&1
+  # 2026-09-25, fixed both ways after it hung the rented slice for 30 minutes
+  # (docs/2026-09-25-rented-slice-findings.md §4 and §7, ruled by John
+  # 2026-09-25). The old form, `cd … && nohup … &`, backgrounds the whole
+  # `cd && nohup` chain as a subshell whose output is still the connection,
+  # so ssh waited for the watcher to exit -- up to a day. Here only `nohup` is
+  # backgrounded, with all of its output redirected, so nothing holds the
+  # connection; and the connection is cut off at 60s whatever happens. The
+  # pgrep check below decides whether the watcher is up.
+  # Tested against a local shell, not a stand-in: src/check_remote_forms.py.
+  ssh_capped 60 "cd /root/mvm/src || exit 1; nohup sh reap_agent.sh /root/mvm/reap.env \
+        >> $RUN_DIR/reaper.log 2>&1 < /dev/null &" >/dev/null 2>&1 \
+    || echo "  (the watcher-start connection ended with an error or was cut off at 60s; the check below decides)"
   sleep 5
   # [r]eap guard, same trap as the training aliveness check: without the
   # bracket, pgrep matches the checking shell itself and reports a false yes.
