@@ -302,3 +302,41 @@ findings', with the section cited.*
 table (item 1); the records of the re-run and the repairs, which gain the models
 and their list (item 3). This addendum edits nothing else and commits no model
 itself.
+
+---
+
+## RT-212 item 3 resolved, 2026-09-26
+
+*Added 2026-09-26 (Pacific). RT-212 item 3 sent the review's route (b), a
+label the own-directed loss forces on a free system, to a $0 toy-scale
+investigation. Its findings are `docs/2026-09-26-free-arm-label-search.md` on
+pull request 66 (commit `26b737f`). Mixed authorship as before: the ruling
+was put to John in plain language with a recommendation, and he ruled
+"Agreed". No compute was launched and no money was spent under this ruling.
+Every number below is the search findings', with the section cited. Every
+earlier sentence of this file stands as recorded.*
+
+**What the search found.** No read the free system is forced to carry clears
+four fifths on arm F at toy scale. The best is 0.789 (candidate 1, which two
+turns are the model's own), and all three candidates beat their shuffle null
+(search findings, sections 1 and 4).
+
+**What was ruled.**
+
+1. Version 3 registers with the fit floor alone (RT-212 item 1).
+2. The ruled label stays the registered read.
+3. The three candidates are recorded as exploratory fits, not registered reads.
+4. The experiment proceeds.
+5. The first release's single arm F run reports its nomination fit against the
+   floor, and a miss is a stop before the second release draws.
+
+Reason recorded: the toy is a five-layer model; the fits rising to 0.79 above
+a 0.10 shuffle baseline (search findings, section 4) is the argument that the
+twelve-layer model may clear the floor; and $44 is the price of finding out
+before $130 is spent.
+
+*What this changes:* version 3's section 3 (arm F may return no verdict at
+registered scale; the first release is the test of it), section 7.2 (the
+registered read, and the three candidates as exploratory fits), section 11 (the stop after the first
+release's arm F run) and the reporting table (arm F's nomination fit against
+the floor). This addendum edits nothing else.
