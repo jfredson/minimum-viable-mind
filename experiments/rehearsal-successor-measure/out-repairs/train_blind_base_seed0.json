@@ -1,0 +1,15 @@
+{
+  "arm": "blind",
+  "batch": 256,
+  "device": "mps",
+  "parameters": 1265191,
+  "recipe": "base",
+  "recipe_options": {
+    "cond_weights": null,
+    "other_only_steps": 0
+  },
+  "seconds": 675.1395261287689,
+  "seconds_per_step": 0.27005581045150756,
+  "seed": 0,
+  "steps": 2500
+}

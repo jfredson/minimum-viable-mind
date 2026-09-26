@@ -1,0 +1,90 @@
+grammar.py self-test
+  [PASS] matched pairs are token-for-token identical
+  [PASS] matched pairs differ in the acting channel
+  [PASS] matched property 1 — four distinct candidate values per item  distinct counts seen: [4]
+  [PASS] matched property 2 — distance distributions match  largest bin difference 0.0098 over 6000 episodes; mean distance own 5.010 vs other 4.928
+  [PASS] matched property 3 — one supervised position of each kind
+  [PASS] matched property 3 — every scored position holds the mask word
+  [PASS] matched property 4 — the same successor rule in both conditions
+  [PASS] one-scored-token check — exactly two scored tokens per episode
+  [PASS] one-scored-token check — scored at the mask position, unshifted
+  [PASS] even-split rule — a paired batch has an even number of rows
+  [PASS] no turn-count cue — every agent takes the same number of turns
+  [PASS] no name badge — the own-directed turn shows only the self word
+  [PASS] model identity spread over all four agent slots  share per agent slot [0.251, 0.25, 0.252, 0.246]
+  [PASS] fresh episodes are combinations seen in neither other set  600 fresh combinations, none of them among 3000 training ones
+  [PASS] the unseen-vocabulary pool shares no marker word or item with training
+  [PASS] collision set supplies a same-value cell for control 6  30 of 400 pairs have donor and recipient dictating the same value
+
+all checks passed
+arms.py self-test
+  [PASS] arm T — forward runs and is the right shape  950,879 parameters
+  [PASS] arm T — loss is finite and gradients flow
+  [PASS] arm C — forward runs and is the right shape  1,301,191 parameters
+  [PASS] arm C — loss is finite and gradients flow
+  [PASS] arm F — forward runs and is the right shape  1,265,191 parameters
+  [PASS] arm F — loss is finite and gradients flow
+  [PASS] arm T — the ownership block is carried unchanged through every layer
+  [PASS] arm T — content never reads the ownership block
+  [PASS] arm T — but the action head does read it
+  [PASS] arm C — the ownership signal reaches every block as a scale-and-shift
+  [PASS] arm C — no dedicated ownership dimensions exist in its running state
+  [PASS] the ownership answer is flat before the model's first own turn  first own-turn token at position 21
+  [PASS] the ownership answer is sharp and correct by the action position  model is agent slot 3, read 0.9990
+  [PASS] twins differ only in the acting channel
+  [PASS] arm T — the twins' states differ, so ownership does reach the state
+  [PASS] arm C — the twins' states differ, so ownership does reach the state
+  [PASS] arm F — the twins' states differ, so ownership does reach the state
+
+all checks passed
+transplant.py self-test — the known-answer tests for the patching code
+  [PASS] arm T — null transplant leaves every logit bit-identical
+  [PASS] arm T — the whole-state transplant is the subspace form at full rank  largest logit difference 0.00e+00
+  [PASS] arm T — a rank-4 subspace moves the output less than the whole state  mean logit movement: whole 0.0104, rank-4 0.0007
+  [PASS] arm T — an empty site set is a no-op
+  [PASS] arm C — null transplant leaves every logit bit-identical
+  [PASS] arm C — the whole-state transplant is the subspace form at full rank  largest logit difference 0.00e+00
+  [PASS] arm C — a rank-4 subspace moves the output less than the whole state  mean logit movement: whole 0.0001, rank-4 0.0000
+  [PASS] arm C — an empty site set is a no-op
+  [PASS] arm F — null transplant leaves every logit bit-identical
+  [PASS] arm F — the whole-state transplant is the subspace form at full rank  largest logit difference 0.00e+00
+  [PASS] arm F — a rank-4 subspace moves the output less than the whole state  mean logit movement: whole 0.0001, rank-4 0.0000
+  [PASS] arm F — an empty site set is a no-op
+  [PASS] transplanting every layer at every position IS the donor's forward pass  so a whole-state transplant at that site set is not an intervention at all, and its accuracy is guaranteed by construction rather than measured
+
+all checks passed
+measure.py self-test — the arithmetic on cases chosen to break it
+  [PASS] fully separable: the subspace does everything  whole 0.9000, ownership-only 0.9000 -> valid, degree 0.0000
+  [PASS] fully entangled: the subspace does nothing  whole 0.9000, ownership-only 0.0000 -> valid, degree 1.0000
+  [PASS] half and half  whole 0.8000, ownership-only 0.4000 -> valid, degree 0.5000
+  [PASS] the denominator is exactly zero  whole 0.0000, ownership-only 0.0000 -> no verdict
+  [PASS] the denominator is just under the floor  whole 0.2999, ownership-only 0.1000 -> no verdict
+  [PASS] the denominator is just over the floor  whole 0.3001, ownership-only 0.1000 -> valid, degree 0.6668
+  [PASS] the subspace beats the whole state  whole 0.5000, ownership-only 0.8000 -> negative, degree -0.6000
+  [PASS] both at the ceiling  whole 1.0000, ownership-only 1.0000 -> valid, degree 0.0000
+  [PASS] whole state at the ceiling, subspace at zero  whole 1.0000, ownership-only 0.0000 -> valid, degree 1.0000
+  [PASS] both zero  whole 0.0000, ownership-only 0.0000 -> no verdict
+
+  the review's two systems, both with half the identity-driven difference outside the subspace:
+    strong transplant  whole 0.9000 ownership-only 0.5125: registered form 0.4306, floor-corrected form 0.5000
+    weak transplant    whole 0.3500 ownership-only 0.2375: registered form 0.3214, floor-corrected form 0.5000
+  [PASS] the registered form gives the two systems different readings  0.4306 against 0.3214, a gap of 0.1091
+  [PASS] the floor-corrected form gives them the same reading  0.5000 against 0.5000
+  [PASS] every share pair from zero to one returns a finite number or no verdict  10201 pairs swept, 0 non-finite
+  [PASS] a floor of zero is refused  the unsatisfiable-denominator defect cannot be reintroduced by passing a floor of zero
+  [PASS] a score of -0.1 is refused
+  [PASS] a score of 1.1 is refused
+  [PASS] a score of nan is refused
+  [PASS] a score of inf is refused
+
+all checks passed
+arm_middle.py self-test
+  [PASS] forward runs and is the right shape  987,781 parameters
+  [PASS] loss is finite and gradients flow
+  [PASS] about three fifths of own-directed actions take the entangled route  share 0.6450 over 800 episodes
+  [PASS] the slot is carried unchanged through every layer
+  [PASS] perturbing the slot never moves an entangled-route action  largest logit movement there 0.00e+00
+  [PASS] perturbing the slot does move separable-route actions  largest logit movement there 3.42e-01
+  [PASS] the twins' content states differ, so ownership reaches the entangled route
+
+all checks passed
