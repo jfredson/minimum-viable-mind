@@ -226,6 +226,18 @@ variant, layer 0 excluded at every position set, as a sensitivity row.*
   reading and the "differs between twins" reading therefore give the same
   nominations. The code checks this (the layer-0 whole-state donor share at
   those two sets equals the untouched share).
+
+  > **Correction, added 2026-09-26 after the first pass's outputs (commit
+  > `6f9428b`).** The sentence above, "at those two the layer-0 states of the
+  > twins are identical, so a layer-0 whole-state transplant there cannot move
+  > anything", is **wrong for arms T and M**. The check it names came back true
+  > on arms C and F and false on arms T and M
+  > (`out-v3-rules/nominate_{arm}_seed{s}.json`,
+  > `layer0_whole_equals_untouched_inside_action_turn`). Arms T and M build their
+  > ownership slot into the layer-0 state at every position from the acting
+  > channel, so the twins differ there as well. It changed no nomination, because
+  > none landed on layer 0 at `action+ans` or `action+3`. The sentence is left as
+  > written, as the record of what was argued before the run.
 - **The stricter variant (sensitivity row):** a nomination containing layer 0
   at any position set, `action` included, returns "no verdict: layer 0
   excluded". Its unruled "removed before choosing" column is recorded too.
@@ -285,3 +297,72 @@ of laptop time, **$0**, no network.
 It cannot say anything about the registered size, and it cannot make arms C, F
 or M reproducible: it re-reads three particular trained models per arm, one per seed, which is
 what the rules are about.
+
+---
+
+## 7. Addendum 2026-09-26: the second pass, committed before its code
+
+*Added after the first pass's findings (commit `5276731`, pull request 62) and
+before any second-pass code. John ruled three things on those findings on
+2026-09-26, as relayed in this session's second brief. The first pass's rules,
+as recorded in `docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md` on main,
+are otherwise unchanged. Same models, laptop only, $0.*
+
+### 7.1 The three rulings, and how each is applied
+
+1. **Control 3 is reported, not gated, on every arm.** The twenty-draw null of
+   §3.2 is kept as it is. For each of the twelve arm-and-seed pairs, the table
+   reports the null's median and 95th percentile (numpy default, linear
+   interpolation) and where the ownership-only donor share sits in the
+   distribution: how many of the twenty draws fall strictly below it, how many
+   equal it, and how many fall above it. **No arm loses its reading on control
+   3.** It is dropped from the verdict list of §4.
+2. **Rule 4 means exclusion from the candidate family.** A site set whose layer
+   set contains layer 0, at any position set other than `action`, is removed
+   from the 60-set family before nomination, and the rule of §3.3 chooses again
+   from what remains, the same way the degenerate all-positions exclusion works.
+   That is the family the first pass already recorded as the unruled column
+   `unruled_v60_with_layer0_injection_sets_removed_before_choosing`; it is now
+   the **primary** nomination. The **stricter variant** (every site set
+   containing layer 0 removed, `action` included, then choose again) is the
+   first pass's `unruled_v60_with_every_layer0_set_removed_before_choosing`,
+   kept as a sensitivity row. Because layer 0 can no longer be nominated at those
+   sets, the "at the acting channel's injection" verdict can no longer occur.
+3. **The fifteen trained models are committed** under
+   `experiments/rehearsal-successor-measure/out-repairs/models/`: arms T, C, F,
+   M and the ownership-blind arm, recipe `base`, seeds 0 to 2, copied byte for
+   byte from the repairs worktree. The findings list each file's SHA-256, and
+   the code checks it against the hash each first-pass output recorded.
+
+### 7.2 What is computed, and from what
+
+Every site set named in 7.1 was already read on the fresh episodes in the first
+pass, by the same code, with its twenty random draws
+(`out-v3-rules/measure_{arm}_seed{s}.json`, `rows.unruled_layer0_injection_removed`
+and `rows.unruled_every_layer0_removed`). So the second pass is **pure
+arithmetic on committed outputs**, with no new model runs: a new stage,
+`--stage pass2`, in `src/rerun_v3.py`, which
+
+- points the driver at the committed model files and checks that every file's
+  SHA-256 equals the one the first-pass outputs recorded (if one differs, the
+  stage stops);
+- takes the primary and stricter site sets from the nomination files (and checks
+  they are the ones the measure files read);
+- applies the verdicts below and writes `out-v3-rules/pass2_table.md` and
+  `out-v3-rules/pass2_summary.json`, leaving every first-pass file untouched.
+
+### 7.3 The verdicts in the second pass
+
+In this order, all printed, none short-circuiting the others: the gate (rule 5,
+unchanged: arms T, C and M on the own-directed condition only, arm F on
+learn-both); a nomination exists; the fit floor (rule 1, unchanged: the lowest
+fit among the nominated layers is at least 0.8, with the permutation null
+beside it); the whole-state four-fifths floor on fresh episodes. **Reading** if
+all pass, otherwise **no verdict** with every failing reason. Control 3 is
+printed beside it and decides nothing.
+
+Also reported, from the readings: arm M's reading per seed, and whether all
+three lie between 0.3 and 0.7 (the pass of the 2026-09-25 repairs ruling, item
+2); arm C's reading per seed, and the separation figure per seed, arm C's
+reading minus arm T's, against the 0.5 bar (page 1a of the Weekend 1 queue
+ruling), computed only on a seed where both are readings.
