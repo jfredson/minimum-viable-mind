@@ -1,0 +1,1165 @@
+{
+  "arm_F": {
+    "0": {
+      "fit_accuracy": 0.17222222222222222,
+      "fit_floor_passes": false,
+      "fit_layer": 1,
+      "null_p95": 0.12777777777777777,
+      "null_p99": 0.13333333333333333,
+      "reasons": [
+        "arm failed its gate",
+        "read failed its floor"
+      ],
+      "status": "no verdict"
+    },
+    "1": {
+      "fit_accuracy": 0.06666666666666667,
+      "fit_floor_passes": false,
+      "fit_layer": 1,
+      "null_p95": 0.11666666666666667,
+      "null_p99": 0.12227777777777772,
+      "reasons": [
+        "arm failed its gate",
+        "read failed its floor"
+      ],
+      "status": "no verdict"
+    },
+    "2": {
+      "fit_accuracy": 0.10555555555555556,
+      "fit_floor_passes": false,
+      "fit_layer": 1,
+      "null_p95": 0.11666666666666667,
+      "null_p99": 0.13333333333333333,
+      "reasons": [
+        "arm failed its gate",
+        "read failed its floor"
+      ],
+      "status": "no verdict"
+    }
+  },
+  "arm_M_pass": {
+    "band": [
+      0.3,
+      0.7
+    ],
+    "met_on_every_seed": true,
+    "readings": [
+      0.4885993485342019,
+      0.4859504132231405,
+      0.5448717948717948
+    ]
+  },
+  "arms": {
+    "C/0": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 20,
+          "draws_below": 0,
+          "draws_equal": 0,
+          "median": 0.05875,
+          "ownership_only": 0.04875,
+          "p95": 0.063875
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.04875,
+          "accuracy_untouched": 0.05125,
+          "accuracy_whole": 0.54,
+          "arm_own_accuracy": 0.54875,
+          "degree": 1.0051150895140666,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.39799999999999996,
+            "room": 0.48875
+          },
+          "raw_difference": 0.49125,
+          "status": "valid",
+          "version1_form": 0.9097222222222222
+        },
+        "site_set": {
+          "layers": [
+            2
+          ],
+          "positions": "action",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 2,
+          "null_p95": 0.1111111111111111,
+          "null_p99": 0.12222222222222222,
+          "reasons": [],
+          "status": "reading"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 20,
+          "draws_below": 0,
+          "draws_equal": 0,
+          "median": 0.05875,
+          "ownership_only": 0.04875,
+          "p95": 0.063875
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.04875,
+          "accuracy_untouched": 0.05125,
+          "accuracy_whole": 0.54,
+          "arm_own_accuracy": 0.54875,
+          "degree": 1.0051150895140666,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.39799999999999996,
+            "room": 0.48875
+          },
+          "raw_difference": 0.49125,
+          "status": "valid",
+          "version1_form": 0.9097222222222222
+        },
+        "site_set": {
+          "layers": [
+            2
+          ],
+          "positions": "action",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 2,
+          "null_p95": 0.1111111111111111,
+          "null_p99": 0.12222222222222222,
+          "reasons": [],
+          "status": "reading"
+        }
+      }
+    },
+    "C/1": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 19,
+          "draws_below": 0,
+          "draws_equal": 1,
+          "median": 0.055,
+          "ownership_only": 0.0475,
+          "p95": 0.0613125
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.0475,
+          "accuracy_untouched": 0.04875,
+          "accuracy_whole": 0.5575,
+          "arm_own_accuracy": 0.58125,
+          "degree": 1.0024570024570023,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.4260000000000001,
+            "room": 0.50875
+          },
+          "raw_difference": 0.51,
+          "status": "valid",
+          "version1_form": 0.9147982062780269
+        },
+        "site_set": {
+          "layers": [
+            4
+          ],
+          "positions": "action",
+          "rank": 2
+        },
+        "verdict": {
+          "fit_accuracy": 0.9611111111111111,
+          "fit_floor_passes": true,
+          "fit_layer": 4,
+          "null_p95": 0.12222222222222222,
+          "null_p99": 0.1389444444444444,
+          "reasons": [],
+          "status": "reading"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 19,
+          "draws_below": 0,
+          "draws_equal": 1,
+          "median": 0.055,
+          "ownership_only": 0.0475,
+          "p95": 0.0613125
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.0475,
+          "accuracy_untouched": 0.04875,
+          "accuracy_whole": 0.5575,
+          "arm_own_accuracy": 0.58125,
+          "degree": 1.0024570024570023,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.4260000000000001,
+            "room": 0.50875
+          },
+          "raw_difference": 0.51,
+          "status": "valid",
+          "version1_form": 0.9147982062780269
+        },
+        "site_set": {
+          "layers": [
+            4
+          ],
+          "positions": "action",
+          "rank": 2
+        },
+        "verdict": {
+          "fit_accuracy": 0.9611111111111111,
+          "fit_floor_passes": true,
+          "fit_layer": 4,
+          "null_p95": 0.12222222222222222,
+          "null_p99": 0.1389444444444444,
+          "reasons": [],
+          "status": "reading"
+        }
+      }
+    },
+    "C/2": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 8,
+          "draws_below": 3,
+          "draws_equal": 9,
+          "median": 0.06,
+          "ownership_only": 0.06,
+          "p95": 0.06525
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.06,
+          "accuracy_untouched": 0.06,
+          "accuracy_whole": 0.54625,
+          "arm_own_accuracy": 0.5525,
+          "degree": 1.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.394,
+            "room": 0.48625
+          },
+          "raw_difference": 0.48625,
+          "status": "valid",
+          "version1_form": 0.8901601830663616
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 1
+        },
+        "verdict": {
+          "fit_accuracy": 0.9777777777777777,
+          "fit_floor_passes": true,
+          "fit_layer": 1,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.12788888888888877,
+          "reasons": [],
+          "status": "reading"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 8,
+          "draws_below": 3,
+          "draws_equal": 9,
+          "median": 0.06,
+          "ownership_only": 0.06,
+          "p95": 0.06525
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.06,
+          "accuracy_untouched": 0.06,
+          "accuracy_whole": 0.54625,
+          "arm_own_accuracy": 0.5525,
+          "degree": 1.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.394,
+            "room": 0.48625
+          },
+          "raw_difference": 0.48625,
+          "status": "valid",
+          "version1_form": 0.8901601830663616
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 1
+        },
+        "verdict": {
+          "fit_accuracy": 0.9777777777777777,
+          "fit_floor_passes": true,
+          "fit_layer": 1,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.12788888888888877,
+          "reasons": [],
+          "status": "reading"
+        }
+      }
+    },
+    "F/0": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 7,
+          "draws_below": 6,
+          "draws_equal": 7,
+          "median": 0.05875,
+          "ownership_only": 0.05875,
+          "p95": 0.0625
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.05875,
+          "accuracy_untouched": 0.05875,
+          "accuracy_whole": 0.485,
+          "arm_own_accuracy": 0.55875,
+          "degree": 1.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.4,
+            "room": 0.42625
+          },
+          "raw_difference": 0.42625,
+          "status": "valid",
+          "version1_form": 0.8788659793814434
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 1
+        },
+        "verdict": {
+          "fit_accuracy": 0.17222222222222222,
+          "fit_floor_passes": false,
+          "fit_layer": 1,
+          "null_p95": 0.12777777777777777,
+          "null_p99": 0.13333333333333333,
+          "reasons": [
+            "arm failed its gate",
+            "read failed its floor"
+          ],
+          "status": "no verdict"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 7,
+          "draws_below": 6,
+          "draws_equal": 7,
+          "median": 0.05875,
+          "ownership_only": 0.05875,
+          "p95": 0.0625
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.05875,
+          "accuracy_untouched": 0.05875,
+          "accuracy_whole": 0.485,
+          "arm_own_accuracy": 0.55875,
+          "degree": 1.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.4,
+            "room": 0.42625
+          },
+          "raw_difference": 0.42625,
+          "status": "valid",
+          "version1_form": 0.8788659793814434
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 1
+        },
+        "verdict": {
+          "fit_accuracy": 0.17222222222222222,
+          "fit_floor_passes": false,
+          "fit_layer": 1,
+          "null_p95": 0.12777777777777777,
+          "null_p99": 0.13333333333333333,
+          "reasons": [
+            "arm failed its gate",
+            "read failed its floor"
+          ],
+          "status": "no verdict"
+        }
+      }
+    },
+    "F/1": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 17,
+          "draws_below": 2,
+          "draws_equal": 1,
+          "median": 0.05875,
+          "ownership_only": 0.05625,
+          "p95": 0.065
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.05625,
+          "accuracy_untouched": 0.05625,
+          "accuracy_whole": 0.5675,
+          "arm_own_accuracy": 0.56625,
+          "degree": 1.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.40800000000000003,
+            "room": 0.51125
+          },
+          "raw_difference": 0.51125,
+          "status": "valid",
+          "version1_form": 0.9008810572687225
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "action+3",
+          "rank": 4
+        },
+        "verdict": {
+          "fit_accuracy": 0.06666666666666667,
+          "fit_floor_passes": false,
+          "fit_layer": 1,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.12227777777777772,
+          "reasons": [
+            "arm failed its gate",
+            "read failed its floor"
+          ],
+          "status": "no verdict"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 17,
+          "draws_below": 2,
+          "draws_equal": 1,
+          "median": 0.05875,
+          "ownership_only": 0.05625,
+          "p95": 0.065
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.05625,
+          "accuracy_untouched": 0.05625,
+          "accuracy_whole": 0.5675,
+          "arm_own_accuracy": 0.56625,
+          "degree": 1.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.40800000000000003,
+            "room": 0.51125
+          },
+          "raw_difference": 0.51125,
+          "status": "valid",
+          "version1_form": 0.9008810572687225
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "action+3",
+          "rank": 4
+        },
+        "verdict": {
+          "fit_accuracy": 0.06666666666666667,
+          "fit_floor_passes": false,
+          "fit_layer": 1,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.12227777777777772,
+          "reasons": [
+            "arm failed its gate",
+            "read failed its floor"
+          ],
+          "status": "no verdict"
+        }
+      }
+    },
+    "F/2": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 9,
+          "draws_below": 8,
+          "draws_equal": 3,
+          "median": 0.06375,
+          "ownership_only": 0.06375,
+          "p95": 0.066375
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.06375,
+          "accuracy_untouched": 0.06875,
+          "accuracy_whole": 0.53,
+          "arm_own_accuracy": 0.55625,
+          "degree": 1.010840108401084,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.39000000000000007,
+            "room": 0.46125000000000005
+          },
+          "raw_difference": 0.46625000000000005,
+          "status": "valid",
+          "version1_form": 0.8797169811320755
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 0.10555555555555556,
+          "fit_floor_passes": false,
+          "fit_layer": 1,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.13333333333333333,
+          "reasons": [
+            "arm failed its gate",
+            "read failed its floor"
+          ],
+          "status": "no verdict"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 9,
+          "draws_below": 8,
+          "draws_equal": 3,
+          "median": 0.06375,
+          "ownership_only": 0.06375,
+          "p95": 0.066375
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.06375,
+          "accuracy_untouched": 0.06875,
+          "accuracy_whole": 0.53,
+          "arm_own_accuracy": 0.55625,
+          "degree": 1.010840108401084,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.39000000000000007,
+            "room": 0.46125000000000005
+          },
+          "raw_difference": 0.46625000000000005,
+          "status": "valid",
+          "version1_form": 0.8797169811320755
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 0.10555555555555556,
+          "fit_floor_passes": false,
+          "fit_layer": 1,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.13333333333333333,
+          "reasons": [
+            "arm failed its gate",
+            "read failed its floor"
+          ],
+          "status": "no verdict"
+        }
+      }
+    },
+    "M/0": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.015,
+          "ownership_only": 0.405,
+          "p95": 0.019000000000000003
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.405,
+          "accuracy_untouched": 0.0125,
+          "accuracy_whole": 0.78,
+          "arm_own_accuracy": 0.87125,
+          "degree": 0.4885993485342019,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.687,
+            "room": 0.7675000000000001
+          },
+          "raw_difference": 0.375,
+          "status": "valid",
+          "version1_form": 0.4807692307692307
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 1,
+          "null_p95": 0.12222222222222222,
+          "null_p99": 0.1389444444444444,
+          "reasons": [],
+          "status": "reading"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.015,
+          "ownership_only": 0.405,
+          "p95": 0.019000000000000003
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.405,
+          "accuracy_untouched": 0.0125,
+          "accuracy_whole": 0.78,
+          "arm_own_accuracy": 0.87125,
+          "degree": 0.4885993485342019,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.687,
+            "room": 0.7675000000000001
+          },
+          "raw_difference": 0.375,
+          "status": "valid",
+          "version1_form": 0.4807692307692307
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 1,
+          "null_p95": 0.12222222222222222,
+          "null_p99": 0.1389444444444444,
+          "reasons": [],
+          "status": "reading"
+        }
+      }
+    },
+    "M/1": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.01875,
+          "ownership_only": 0.40625,
+          "p95": 0.0225625
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.40625,
+          "accuracy_untouched": 0.0175,
+          "accuracy_whole": 0.77375,
+          "arm_own_accuracy": 0.88,
+          "degree": 0.4859504132231405,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.6900000000000001,
+            "room": 0.7562500000000001
+          },
+          "raw_difference": 0.36750000000000005,
+          "status": "valid",
+          "version1_form": 0.47495961227786754
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 1,
+          "null_p95": 0.11694444444444435,
+          "null_p99": 0.1389444444444444,
+          "reasons": [],
+          "status": "reading"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.01875,
+          "ownership_only": 0.40625,
+          "p95": 0.0225625
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.40625,
+          "accuracy_untouched": 0.0175,
+          "accuracy_whole": 0.77375,
+          "arm_own_accuracy": 0.88,
+          "degree": 0.4859504132231405,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.6900000000000001,
+            "room": 0.7562500000000001
+          },
+          "raw_difference": 0.36750000000000005,
+          "status": "valid",
+          "version1_form": 0.47495961227786754
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 1,
+          "null_p95": 0.11694444444444435,
+          "null_p99": 0.1389444444444444,
+          "reasons": [],
+          "status": "reading"
+        }
+      }
+    },
+    "M/2": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.015,
+          "ownership_only": 0.36875,
+          "p95": 0.02125
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.36875,
+          "accuracy_untouched": 0.01375,
+          "accuracy_whole": 0.79375,
+          "arm_own_accuracy": 0.87125,
+          "degree": 0.5448717948717948,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.6859999999999999,
+            "room": 0.7799999999999999
+          },
+          "raw_difference": 0.42499999999999993,
+          "status": "valid",
+          "version1_form": 0.5354330708661417
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 1,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.14449999999999993,
+          "reasons": [],
+          "status": "reading"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.015,
+          "ownership_only": 0.36875,
+          "p95": 0.02125
+        },
+        "reading": {
+          "accuracy_ownership_only": 0.36875,
+          "accuracy_untouched": 0.01375,
+          "accuracy_whole": 0.79375,
+          "arm_own_accuracy": 0.87125,
+          "degree": 0.5448717948717948,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.6859999999999999,
+            "room": 0.7799999999999999
+          },
+          "raw_difference": 0.42499999999999993,
+          "status": "valid",
+          "version1_form": 0.5354330708661417
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "post-identity",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 1,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.14449999999999993,
+          "reasons": [],
+          "status": "reading"
+        }
+      }
+    },
+    "T/0": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.0,
+          "ownership_only": 1.0,
+          "p95": 0.0
+        },
+        "reading": {
+          "accuracy_ownership_only": 1.0,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 1.0,
+          "arm_own_accuracy": 1.0,
+          "degree": 0.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.8,
+            "room": 1.0
+          },
+          "raw_difference": 0.0,
+          "status": "valid",
+          "version1_form": 0.0
+        },
+        "site_set": {
+          "layers": [
+            0
+          ],
+          "positions": "action",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 0,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.13338888888888883,
+          "reasons": [],
+          "status": "reading"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.0,
+          "ownership_only": 1.0,
+          "p95": 0.0
+        },
+        "reading": {
+          "accuracy_ownership_only": 1.0,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 1.0,
+          "arm_own_accuracy": 1.0,
+          "degree": 0.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.8,
+            "room": 1.0
+          },
+          "raw_difference": 0.0,
+          "status": "valid",
+          "version1_form": 0.0
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "action",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 1,
+          "null_p95": 0.11694444444444435,
+          "null_p99": 0.13333333333333333,
+          "reasons": [],
+          "status": "reading"
+        }
+      }
+    },
+    "T/1": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.0,
+          "ownership_only": 1.0,
+          "p95": 0.0
+        },
+        "reading": {
+          "accuracy_ownership_only": 1.0,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 1.0,
+          "arm_own_accuracy": 1.0,
+          "degree": 0.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.8,
+            "room": 1.0
+          },
+          "raw_difference": 0.0,
+          "status": "valid",
+          "version1_form": 0.0
+        },
+        "site_set": {
+          "layers": [
+            0
+          ],
+          "positions": "action",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 0,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.12788888888888877,
+          "reasons": [],
+          "status": "reading"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.0,
+          "ownership_only": 1.0,
+          "p95": 0.0
+        },
+        "reading": {
+          "accuracy_ownership_only": 1.0,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 1.0,
+          "arm_own_accuracy": 1.0,
+          "degree": 0.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.8,
+            "room": 1.0
+          },
+          "raw_difference": 0.0,
+          "status": "valid",
+          "version1_form": 0.0
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "action",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 1,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.12783333333333327,
+          "reasons": [],
+          "status": "reading"
+        }
+      }
+    },
+    "T/2": {
+      "primary": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.0,
+          "ownership_only": 1.0,
+          "p95": 0.0
+        },
+        "reading": {
+          "accuracy_ownership_only": 1.0,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 1.0,
+          "arm_own_accuracy": 1.0,
+          "degree": 0.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.8,
+            "room": 1.0
+          },
+          "raw_difference": 0.0,
+          "status": "valid",
+          "version1_form": 0.0
+        },
+        "site_set": {
+          "layers": [
+            0
+          ],
+          "positions": "action",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 0,
+          "null_p95": 0.11138888888888879,
+          "null_p99": 0.12783333333333327,
+          "reasons": [],
+          "status": "reading"
+        }
+      },
+      "stricter": {
+        "control3": {
+          "draws": 20,
+          "draws_above": 0,
+          "draws_below": 20,
+          "draws_equal": 0,
+          "median": 0.0,
+          "ownership_only": 1.0,
+          "p95": 0.0
+        },
+        "reading": {
+          "accuracy_ownership_only": 1.0,
+          "accuracy_untouched": 0.0,
+          "accuracy_whole": 1.0,
+          "arm_own_accuracy": 1.0,
+          "degree": 0.0,
+          "floor": {
+            "clears": true,
+            "clears_plain_form": true,
+            "required_room": 0.8,
+            "room": 1.0
+          },
+          "raw_difference": 0.0,
+          "status": "valid",
+          "version1_form": 0.0
+        },
+        "site_set": {
+          "layers": [
+            1
+          ],
+          "positions": "action",
+          "rank": 8
+        },
+        "verdict": {
+          "fit_accuracy": 1.0,
+          "fit_floor_passes": true,
+          "fit_layer": 1,
+          "null_p95": 0.11666666666666667,
+          "null_p99": 0.12783333333333327,
+          "reasons": [],
+          "status": "reading"
+        }
+      }
+    }
+  },
+  "model_sha256": {
+    "C/0": "47326bb90c5f4ad03beacc74da1d33eec1fd4462314a2e9ce385c36a1e7ffeee",
+    "C/1": "b3596f309e780e5820a7064ccb207a413a71be439170986b18479fe957e0af2a",
+    "C/2": "2fc87d0454af22bc2d1c00b7247c220ff0705b8c2500005b47a9cb491ac202f0",
+    "F/0": "c3afe0c6354f49f185b1806a433e6f0563b48a14f6e4559b2264ecb0abeea88d",
+    "F/1": "2e51df7efd952e044b63702a5dc63c88e12de41ffe89c1b15c35892756cb219b",
+    "F/2": "d5b59d8b8d32d42327beb4e6866107fe6e1167f4de1d0d73e3e201ed9d1683b1",
+    "M/0": "e0f55d92d42bffdb3774cb267bbd8caf16f901fd3fa2f127e9989780188ceda2",
+    "M/1": "d9b8010c9bec5ae20aaacabd38acd89497ef121599643a15d548ad44f688ecab",
+    "M/2": "eeb3a7a43628791f1c85ac85d6108b74e89c0a209f1688c7342d864ce4926dba",
+    "T/0": "b679bf6cd7884f28a137a6e6a669728213c085ba9cba5c9a2574b947885cfe68",
+    "T/1": "1558acb2fce628335f28c3a29acef43fdf0d409151e1b5774d8e75aa7f489113",
+    "T/2": "84f48372c995c7c53baa80d9379a3778bb8c1845e45589b743bd2b8c083c90c2",
+    "blind/0": "027f5ac0c78576e9263ad488ce18f0cb64070e5eeb89ff30e9a177294e25e162",
+    "blind/1": "9b44cd386e6de0298a52355868652bdc9a9c0e3c3c4cd7af48485cc53ba9c3f5",
+    "blind/2": "092393bdc1b488cfef7706a02804988bb4d672489bc0f332eada603d42f52ba6"
+  },
+  "separation": {
+    "0": {
+      "C": 1.0051150895140666,
+      "C_minus_T": 1.0051150895140666,
+      "T": 0.0,
+      "clears_0_5": true
+    },
+    "1": {
+      "C": 1.0024570024570023,
+      "C_minus_T": 1.0024570024570023,
+      "T": 0.0,
+      "clears_0_5": true
+    },
+    "2": {
+      "C": 1.0,
+      "C_minus_T": 1.0,
+      "T": 0.0,
+      "clears_0_5": true
+    }
+  }
+}
