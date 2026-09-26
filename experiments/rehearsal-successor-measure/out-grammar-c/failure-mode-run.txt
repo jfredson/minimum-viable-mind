@@ -1,0 +1,25 @@
+### failure 1: denominators, from the measured file
+C/base/0: room (whole - untouched) 0.7000, required 0.6150, clears True, top of scale when ownership-only = untouched: 1.0000
+C/base/1: room (whole - untouched) 0.4563, required 0.4310, clears True, top of scale when ownership-only = untouched: 1.0000
+C/base/2: room (whole - untouched) 0.4438, required 0.3860, clears True, top of scale when ownership-only = untouched: 1.0000
+F/base/0: room (whole - untouched) 0.4300, required 0.3990, clears True, top of scale when ownership-only = untouched: 1.0000
+F/base/1: room (whole - untouched) 0.5025, required 0.4170, clears True, top of scale when ownership-only = untouched: 1.0000
+F/base/2: room (whole - untouched) 0.4475, required 0.4060, clears True, top of scale when ownership-only = untouched: 1.0000
+T/base/0: room (whole - untouched) 1.0000, required 0.8000, clears True, top of scale when ownership-only = untouched: 1.0000
+T/base/1: room (whole - untouched) 1.0000, required 0.8000, clears True, top of scale when ownership-only = untouched: 1.0000
+T/base/2: room (whole - untouched) 1.0000, required 0.8000, clears True, top of scale when ownership-only = untouched: 1.0000
+### failure 2: route sentence for the named-other target
+85:sits there: the `<who>` word is three tokens before the scored position, which
+### failure 3: trials in every pre-stated cell
+gate cells, episodes per condition per run: [3000]
+C/base/0 control 6 same-value trials 81 different-value trials 719 reading trials 800
+C/base/1 control 6 same-value trials 81 different-value trials 719 reading trials 800
+C/base/2 control 6 same-value trials 81 different-value trials 719 reading trials 800
+F/base/0 control 6 same-value trials 81 different-value trials 719 reading trials 800
+F/base/1 control 6 same-value trials 81 different-value trials 719 reading trials 800
+F/base/2 control 6 same-value trials 81 different-value trials 719 reading trials 800
+T/base/0 control 6 same-value trials 81 different-value trials 719 reading trials 800
+T/base/1 control 6 same-value trials 81 different-value trials 719 reading trials 800
+T/base/2 control 6 same-value trials 81 different-value trials 719 reading trials 800
+### failures 5 and 6: anything that creates, rents or reaches a remote machine
+experiments/rehearsal-successor-measure/src/grammar.py:66:Corrigibility: this module generates data. It trains nothing, launches
