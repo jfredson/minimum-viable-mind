@@ -250,3 +250,47 @@ the combined re-run or the route (b) investigation moves a number above, the
 ruling is re-read against the new figure and this file is annotated, not
 rewritten; RT-214's fold-in returns to John as a fresh ruling if arm M fails
 the new null on any seed.
+
+---
+
+## Refinements 2026-09-26, after the toy re-run
+
+*Added 2026-09-26 (Pacific). Three rulings John made on the findings of the toy
+re-run under the version 3 rules, `docs/2026-09-26-toy-rerun-v3-rules.md` on
+pull request 62 (branch `worktree-w1d-toy-rerun-v3`, commit `5276731`). Mixed
+authorship as before: each was put to John in plain language with a
+recommendation, and he ruled "Agreed". No compute was launched and no money was
+spent under these rulings. Every earlier sentence of this file stands as
+recorded; where one is refined, that is said. Every number below is the re-run
+findings', with the section cited.*
+
+1. **RT-214, item 1 refined: control 3 is reported, not gated, on every arm.**
+   The twenty-draw random-subspace null stays, and its distribution and the
+   ownership-only transplant's place in it go in the reporting table. Reason
+   recorded: a gate on this control cannot pass a separable arm and an
+   entangled arm in the same direction. An entangled arm's ownership-only
+   transplant is meant to move nothing, so it can never beat random subspaces;
+   arm C seed 0's read fits at 1.000 and was blocked only by this (re-run
+   findings, sections 3.1 and 7). Its job of catching a leaky site set is done
+   by the whole-state floor and the no-transplant rule. Items 2 and 3 of RT-214
+   stand.
+
+2. **RT-216, item 1 clarified.** "Excluded by rule" means the layer-0 site sets
+   at position sets spanning the acting turns are removed from the candidate
+   family before nomination, and the rule chooses again, as the degenerate
+   all-positions exclusion works. Under that reading arm M reads on all three
+   seeds (0.486 to 0.545 on the re-run's first pass; re-run findings,
+   section 6.2), so the fold-in pass stands; arms C and F still fall to the fit
+   floor.
+
+3. **New: the fifteen trained toy models are committed.** The fifteen trained
+   toy models behind every committed result of 2026-09-25 and 2026-09-26 are
+   committed to the repository with a sha256 list (a list of each file's
+   fingerprint), because they cannot be rebuilt from code and seed, and an
+   uncommitted record the reader cannot open is the form of RT-145 (re-run
+   findings, section 1).
+
+*What these change:* version 3's sections 7.2 (item 2) and 7.3 and the reporting
+table (item 1); the records of the re-run and the repairs, which gain the models
+and their list (item 3). This addendum edits nothing else and commits no model
+itself.
