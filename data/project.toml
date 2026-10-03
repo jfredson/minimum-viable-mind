@@ -500,6 +500,16 @@ source = "experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-27-succes
 stage = "2"
 kind = "ruled"
 
+[[findings]]
+id = "F18"
+date = "2026-10-03"
+title = "The accuracy floor was certifying the read, not the piece that gets transplanted"
+what = "The first independent review of proposal version 3 found nothing fatal. Its main finding: the four-fifths floor is scored on the whole straight-line read, but what is transplanted is the read's leading 1, 2, 4 or 8 directions, and where no transplant moves anything the rule's choice of size is made among sampling noise, with ties to the smallest. On two of the three entangled-model seeds the chosen piece carries the label at 0.544 and 0.306. The entangled model's reading does not depend on it: it reads 0.99 to 1.005 at every size, and the largest piece carries the label at 0.90 or better."
+so_what = "Ruled 2026-10-03, authorship mixed: only pieces that themselves carry the label at four fifths may be chosen, and that figure is printed beside the reading. The same ruling settled the proposal's thirteen open decisions, including a fifth registered outcome for the likeliest ending, a validated measure and a free model that returns no verdict: metric validated, degree not read. Three cautions are on the record: one session wrote the review, the packet and the ruling record, and neither the packet nor the rulings file has yet been checked by a second session."
+source = "experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-successor-v3-gate-c-claude-code.md; docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md"
+stage = "2"
+kind = "ruled"
+
 # ---------------------------------------------------------------------------
 # Next steps, in order of value. `decision = true` marks items that wait on John.
 # ---------------------------------------------------------------------------
@@ -627,27 +637,27 @@ status = "done"
 [[next_steps]]
 id = "N13"
 title = "Merge proposal version 3 and John's rulings on its decisions 20 and 21 (pull requests 71 and 72)"
-when = "now; everything else waits on it"
+when = "done 2026-10-03"
 owner = "John"
 cost = "$0"
 decision = true
 teaches = "Nothing new. It puts the proposal the review will read, and two rulings it depends on, where sessions look for them."
-status = "pending"
+status = "done"
 
 [[next_steps]]
 id = "N14"
 title = "First independent review of proposal version 3"
-when = "as soon as pull requests 71 and 72 are merged"
+when = "done 2026-10-03"
 owner = "a fresh Claude Code session that did not write version 3"
 cost = "$0"
 decision = false
-teaches = "Whether the repairs to version 2's fatal finding hold: the four-fifths floor, the first-layer exclusion, the random-subspace comparison reported rather than used as a gate, and the stop after the first free-model run. A clean review opens the registration text."
-status = "pending"
+teaches = "Nothing fatal. The repairs to version 2's fatal finding hold, with one gap: the four-fifths floor was scored on the whole read while the piece transplanted can be as small as one direction, and on two of three entangled-model seeds that piece does not carry the label at the floor. The readings survive at every size. John ruled the same day that only pieces which themselves clear the floor may be chosen."
+status = "done"
 
 [[next_steps]]
 id = "N15"
 title = "Registration text drafted and reviewed on both tiers, then committed on John's ruling"
-when = "after version 3's review is clean; realistic commit date 2026-10-10/11; kill date 2026-10-18"
+when = "after the controls re-run and version 4 of the proposal; realistic commit date 2026-10-10/11; kill date 2026-10-18"
 owner = "Claude Code session drafts, a second checks, John runs the two outside reviewer sessions and rules"
 cost = "$0"
 decision = true
@@ -684,6 +694,16 @@ decision = false
 teaches = "Nothing new. Each is ruled or already identified; none is done."
 status = "pending"
 
+[[next_steps]]
+id = "N19"
+title = "Re-run the rehearsal's controls under the registered rules, with the ruled change to how the transplanted piece is chosen"
+when = "now; it blocks the registration review"
+owner = "Claude Code session, checked by a session that did not run it"
+cost = "$0, laptop"
+decision = false
+teaches = "Four of the seven controls have no figure on three of the four toy models at the places the registered rule chooses. A pre-stated quantity the rehearsal never exercised is a fatal finding at the registration review, so this comes first. It is also the first end-to-end run of the rule John ruled on 2026-10-03."
+status = "pending"
+
 # ---------------------------------------------------------------------------
 # Spend. Registered caps are protocol, not budget: exceeding one is a violation.
 # ---------------------------------------------------------------------------
@@ -712,6 +732,12 @@ note = "Updated 2026-10-03: plus about $0.55 for the two attempts at the small r
 # The story so far: one row per STATUS.md entry, newest first. kind:
 # result | null | ruling | process | spend | build
 # ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-10-03"
+kind = "ruling"
+title = "Proposal version 3 is merged, reviewed with nothing fatal, and ruled: the floor now applies to the piece that is transplanted, and a fifth outcome is registered"
+summary = "The first independent review found two serious findings and five minor ones (RT-230 to RT-236 in the red team ledger's sequence). John ruled all seven and the proposal's thirteen open decisions in one sitting. The controls re-run at $0 comes before the registration review. A free model that returns no verdict after the built models separate is reported as metric validated, degree not read. Nothing spent."
 
 [[timeline]]
 date = "2026-10-03"

@@ -84,6 +84,13 @@ program's own rules; only the fourth row is a failure of this roadmap.
 | R3 | **substrate not a testbed** | One or more arms fail the learn-both eligibility gate after the one permitted re-run. Astra's reading: this recipe and size are not yet a mechanism testbed. Registered as such; resumption starts from a size or recipe change. | Yes, if the gate was reached |
 | R4 | (none) | The programme hibernates with a registered design and a rehearsal only: nothing trains, and no degree is read. This is where the roadmap lands if the work is put down rather than launched late. Since 2026-09-21 a missed kill date does **not** put it here by itself — past a date, launching is still open, on a fresh ruling that names what comes off the back end to make room (section 5). | No. Recorded as a schedule failure, not a scientific one |
 
+*Dated note, 2026-10-03 (Pacific), beside the table above, which is left as
+written. John ruled on 2026-10-03 that the successor's registration carries a
+fifth term: **"metric validated, degree not read"**, for the case where the
+by-construction arms separate and the free-trained model returns no verdict.
+It is satisfactory, and stated as weaker than R1
+(`docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md`, page 11).*
+
 The separation bar for R1 versus R2, the eligibility threshold for R3, the
 seed count and the paired-uncertainty method are set by the rehearsal (section
 4, step 2 of the chain) and fixed in the registration text. This document does not invent
