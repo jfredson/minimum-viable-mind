@@ -14,11 +14,11 @@
 [project]
 name = "Minimum Viable Mind"
 short = "MVM"
-updated_on = "2026-09-25"
+updated_on = "2026-10-03"
 question = "What is the smallest set of working parts that would make it defensible to say there is someone home, and can we measure, in systems that exist now or that we build, whether any of those parts are present?"
 one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
-where_we_are = "Two lines are live, and one of them is now closed on the record. Amendment A3, the first constructed self-index experiment, closed on 2026-09-20 under its registered term, not testable, and on 2026-09-25 its closure block was appended to its registration file, amendment-a3.md, as the registration commit (John's merge of pull request 49). The block's headline: not testable, because the registered comparison was undefined for every possible model; separately, removing the ownership-input channel reduced primary-battery accuracy on all three trained seeds. It got there through two outside reviews read by hand (Gemini and ChatGPT, neither with a fatal finding), John's rulings on them, a fifth version of the text written by a session that did not draft the rulings, a tier 1 check by a session that did not write the text (one serious finding, closed by the reviewer's own clause, and seven minor ones), and a re-check of the fixes by the reviewer. The successor experiment, which is meant to supply the missing metric for degree, has been through an outside review that found two fatal flaws and then a measurement rehearsal that confirmed both by measurement and found a third and worse one: the step that decides what the straight-line read is fitted against had no definition at all, and two of its three possible meanings made the instrument report a degree of 0.982 to 1.000 for an arm built to have a degree of exactly zero. John ruled on 2026-09-23 that the read is fitted against which marker word is the model's own, and ruled the same day that the two arms whose training does not reproduce may be quoted in the registration as a range and a direction only, never as a decimal. Those two rulings, and the notes they add to the rehearsal findings, reached the main line on 2026-09-24 as pull request 28. The same day the launcher gained a precondition that refuses to rent a machine while the laptop could fall asleep or is off wall power (pull request 30), and a weekend-by-weekend schedule to 2026-12-21 was written and mirrored in TimeAssembler. Nothing has been spent since 2026-09-21; the programme ceiling was raised from $400 to $450 on 2026-09-25 and the compute ledger now says so."
-where_we_are_going = "One result by 2026-12-21, or a named schedule failure. The programme roadmap of 2026-09-20 is the open-ended plan, whose lines of work are neither ordered nor dated; the December-result roadmap of the same day refines it rather than replacing it and is the one dated line inside it; and the weekend roadmap of 2026-09-24 is only a schedule laid over that dated line. The December-result roadmap (approved 2026-09-20) brings the degree metric forward as the successor experiment: train the same small model three ways on a matched-role task, one built so its self-pointer is separable, one built so it is entangled with everything else, one free, and test whether a decomposability metric (how much accuracy is lost when only the pointer is patched rather than the whole state) tells the built cases apart. If it does, the free model gets the program's first degree reading. If it does not, or the models fail to learn the task, that is a registered result too. Work is measured in task time rather than calendar time (ruled 2026-09-21), so each step starts as soon as the things it depends on are finished: the registration is committed once its outside-review gate has been answered on both tiers and John rules; the first registered run is launched once the implementation is frozen and tested and he gives the go naming it; the rest follow once that first run's result is read; the closure goes through outside review once the result is in. The dates that remain are backstops, not pacing. Two of them are kill dates: the registration committed by 2026-10-18, and the remaining eight registered runs launched by 2026-11-01 (the second binds those eight, not the single free-arm run before them). Since a ruling of 2026-09-21, passing either one no longer records a schedule failure on its own: launching past it takes a fresh ruling that names what comes off the back end to make room. Nothing new is launched after the 2026-12-21 wrap-up start, and the SERE pipeline start on 2027-01-04 is the deadline for a resumable hibernation. Claims are whatever the registered results support, in the terms registered for them. Never a conscious machine. What stands between here and the registration text is narrower than it was: the label the reading is fitted against is ruled, and what may be quoted from the two unreproducible arms is ruled. What is still open is the free arm reading at the entangled anchor rather than between the anchors, a control that as written would veto the very arm it exists to validate, a condition that clears its learn-both bar on one seed of three, and the list of numbers in section 11 of the rehearsal findings that only John can set."
+where_we_are = "Amendment A3, the first constructed self-index experiment, is closed on the record as not testable (2026-09-25). All the work now is on the successor experiment, which is meant to supply the missing measure of degree: train small models whose self-pointer is separable, entangled or mixed by construction, check that a decomposability measure tells them apart, then read a freely trained model with it. Weekend 1 (2026-09-26/27) did its four jobs. A3 closed. Every decision blocking the registration was ruled. A small rented test run measured training speed on the rented machine and put the planned cost of the registered runs at $161.90. And version 2 of the proposal went through its first independent review, which found one fatal flaw and four serious ones; John ruled all of them the same day. What the toy-scale rehearsal now says: the measure reads all three built-by-construction models correctly on every seed (about 0 for the separable one, about 1.0 for the entangled one, about 0.5 for the mixed one), and on the freely trained model it returns no verdict, because the read that is supposed to find the ownership signal fits at 0.07 to 0.17 against a floor of four fifths. A search for a different label found none that clears the floor; the best reached 0.789. John ruled that the floor registers as it is and that the first full-size free-model run, about $12 inside a first release of about $44, is the test of whether there is anything to read at twelve layers, with a miss stopping the experiment before the larger second release is drawn. The condition where the model must act on the other agent's marker does not learn at toy scale by any route tried, and the fallback ruled in advance applies. Version 3 of the proposal carries all of this and is written, but it is an open pull request (71) with no independent review yet, and John's rulings on two of its decisions are a second open pull request (72). Nothing has happened since 2026-09-26. About $228 of the $450 ceiling is spent."
+where_we_are_going = "One result by 2026-12-21, or a named schedule failure. The programme roadmap of 2026-09-20 is the open-ended plan; the December-result roadmap of the same day is the one dated line inside it; the weekend roadmap of 2026-09-24 is only a schedule laid over that line. The next steps are fixed in order. John merges the two open pull requests; a fresh session reviews proposal version 3; if that review is clean the registration text is drafted, reviewed on both tiers and committed on John's ruling. The first kill date is the registration committed by 2026-10-18. The weekend roadmap had it committed on 2026-10-03/04; that will not happen, and the realistic date is 2026-10-10/11. Alongside, at $0, the code is frozen and tested, and the small development runs (about $10) follow on John's go. Then the first full-size run, of the freely trained model alone: it must learn both task conditions and its ownership read must clear the four-fifths floor, or the experiment stops there with a registered result. If it passes, the remaining runs launch (the second kill date is 2026-11-01 and binds those, not the single run before them), the measure is validated on the built-by-construction models, and the free model gets the programme's first degree reading. The one-weekend slip moves the full-size runs to 2026-10-17/18 and is absorbed by the first reserve weekend, 2026-11-14/15. Passing either kill date takes a fresh ruling naming what comes off the back end. Nothing new launches after 2026-12-21, and 2027-01-04 is the deadline for a resumable hibernation. Claims are whatever the registered results support, in the terms registered for them. Never a conscious machine."
 hibernation_by = "2027-01-04"
 wrap_up_start = "2026-12-21"
 pipeline_resumes = "2027-01-04"
@@ -95,7 +95,7 @@ adjudicates = "The corpus's own account: self-indexed temporal integration. The 
 id = "2"
 name = "The shape of binding"
 status = "in-progress"
-progress = 15
+progress = 25
 one_line = "Whether within-pass integration has the shape of global mutual constraint, rather than a bundle of modular shortcuts that never compose into one act. Since 2026-09-20 this is the program's open question: the degree axis on which a load-bearing self-pointer sits above zero."
 delivered = ["Scoped deliberately small on 2026-07-01: deliver the metric, not a verdict", "2026-09-20: a candidate metric named (decomposability: accuracy lost when only the pointer is patched rather than the joint state) and the successor experiment that validates it brought forward to 2026, per the December-result roadmap"]
 remaining = ["No pre-registration yet; it is committed as soon as its outside-review gate is answered on both tiers and John rules, with 2026-10-18 as its kill date; past it, committing the registration takes a fresh ruling naming what comes off the back end to make room. The field has no agreed metric. The successor supplies the contrast cases: a model built so its self-pointer is separable, one built so it is entangled, and a free model to be read"]
@@ -480,6 +480,26 @@ source = "experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-22-rehear
 stage = "2"
 kind = "diagnostic"
 
+[[findings]]
+id = "F16"
+date = "2026-09-26"
+title = "At toy scale the measure reads every built-by-construction model correctly"
+what = "Re-run under the rules that will be registered (the site-set rule as written, a four-fifths floor on the read that nominates the ownership subspace, a twenty-draw random-subspace comparison, no first-layer sites where the acting channel is injected), the measure reads the separable model at 0.0000, the entangled model at 1.0051, 1.0025 and 1.0000, and the mixed model at 0.4886, 0.4860 and 0.5449, on all three seeds each. A session that did not write the re-run checked it and it holds."
+so_what = "The ruler has a zero, a one and a middle, which is what the first independent review of proposal version 2 said it had not shown. Toy models are five layers; the registered ones are twelve, so this is a rehearsal result and not the validation the registration will ask for. The entangled model still fails the other-agent condition on every toy seed; John ruled on 2026-09-26 that the three built models are gated on the own-marker condition only, because their ownership slot is built in rather than learned."
+source = "docs/2026-09-26-toy-rerun-v3-rules.md; experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-26-toy-rerun-v3-rules-check-claude-worktree.md; docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md"
+stage = "2"
+kind = "diagnostic"
+
+[[findings]]
+id = "F17"
+date = "2026-09-26"
+title = "On the freely trained toy model the measure returns no verdict: the ownership read finds nothing to read"
+what = "The fatal finding of the first independent review of proposal version 2 (RT-212 in the red team ledger): on the free model the straight-line read of which marker word is the model's own fits at 0.172, 0.067 and 0.106 across seeds, barely above chance, where it fits at or near 1.0 on the built models. The earlier toy reading of fully entangled for the free model therefore came from a subspace carrying nothing, and nothing in the design caught it. A $0 search for a different label that the training objective forces the free model to carry found three that beat their shuffled-label baseline and none that clears four fifths; the best reached 0.789."
+so_what = "Ruled 2026-09-26, authorship mixed: a read that misses a four-fifths floor returns no verdict on that model; the free model's toy reading is withdrawn; the ruled label stays the one registered read and the three alternatives are recorded as exploratory. The experiment proceeds, and the first full-size free-model run reports its fit against the floor, with a miss stopping the experiment before the second release of money is drawn. John's recorded reason: fits rising to 0.79 on a five-layer model argue that a twelve-layer one may clear the floor, and about $44 is the price of finding out before $130 is spent. It means the registered experiment may end with no degree reading of the free model at all."
+source = "experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-27-successor-v2-gate-c-claude-worktree.md; docs/2026-09-26-free-arm-label-search.md; docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md"
+stage = "2"
+kind = "ruled"
+
 # ---------------------------------------------------------------------------
 # Next steps, in order of value. `decision = true` marks items that wait on John.
 # ---------------------------------------------------------------------------
@@ -531,8 +551,8 @@ when = "before the A3 closure text"
 owner = "John runs the sessions, Cowork drafts"
 cost = "$0"
 decision = false
-teaches = "Where two other-lab readers disagree with the program's own reading of itself, before anything is written down as closed."
-status = "in-progress"
+teaches = "Where two other-lab readers disagree with the program's own reading of itself, before anything is written down as closed. Done: the two outside responses on the A3 closure were filed on 2026-09-25 and John ruled on them the same day."
+status = "done"
 
 [[next_steps]]
 id = "N6"
@@ -556,23 +576,23 @@ status = "pending"
 
 [[next_steps]]
 id = "N8"
-title = "Successor proposal v1: matched-role task grammar, three arms (separable by construction, entangled by construction, free), the decomposability metric, rehearsal plan, spend estimate"
-when = "nothing waits on it; it is at the head of the chain. Its advisory review follows as soon as the draft is in"
+title = "Successor proposal, versions 1 and 2: the task, the arms, the measure, the rehearsal plan and the spend estimate"
+when = "done 2026-09-26; version 3 is the step that follows"
 owner = "Claude Code session drafts, Cowork reviews, John rules"
 cost = "$0"
 decision = false
-teaches = "The text the whole December roadmap hangs on. The registration is committed as soon as both review tiers are answered and John rules, with no target date; the one date that binds is the kill date of 2026-10-18, and passing it takes a fresh ruling naming what comes off the back end, not an end to the line. Version 1 is drafted and has been through Gate C tier 1, which returned two fatal findings; the repair is owed and must be demonstrated by the rehearsal rather than argued."
-status = "in-progress"
+teaches = "Version 1 drew two fatal findings at its first independent review. Version 2 repaired them by rehearsal rather than argument, added a fourth, mixed model, and drew one fatal finding and four serious ones (RT-212 to RT-229 in the red team ledger), all ruled by John on 2026-09-26."
+status = "done"
 
 [[next_steps]]
 id = "N9"
 title = "Measurement rehearsal before the successor's Gate A: tiny models, all three arms constructible, the pointer patchable in the separable arm, the joint patch working in the entangled arm, the metric returning positive, negative and invalid values on toy cases, throughput of the new grammar"
-when = "after the successor proposal's first review tier comes back, and before any registration review opens — the protocol now requires it there"
+when = "done 2026-09-26"
 owner = "Claude Code session"
 cost = "$0 to $10"
 decision = false
-teaches = "Whether the entangled-by-construction arm has a degree that is actually known, which decides three arms or two; and the numbers the registration fixes (separation bar, eligibility threshold, seed count). Built and answering: both fatal findings confirmed by measurement, the nomination label found undefined and since ruled, and the training found not to reproduce on two of the three arms. Its one rented slice is staged and not run."
-status = "in-progress"
+teaches = "The rehearsal answered what it was built to answer. The measure reads the separable, entangled and mixed toy models correctly on every seed; it returns no verdict on the freely trained one; the other-agent condition does not learn at toy scale by any of four routes; and the numbers the registration fixes are ruled. All thirty trained toy models are committed with their file fingerprints."
+status = "done"
 
 [[next_steps]]
 id = "N10"
@@ -597,11 +617,71 @@ status = "done"
 [[next_steps]]
 id = "N12"
 title = "The one short slice of rented time: seconds per step on all three architectures, and the shutdown handshake against the real vendor for the first time"
-when = "on John's spoken go naming this run; the earlier go has lapsed"
+when = "done 2026-09-25, on John's go, in two attempts"
 owner = "John gives the go, Claude Code session runs it"
-cost = "about $0.75 to $1.00, hard cap $2.00"
+cost = "$0.55 measured across both attempts ($0.50, stopped when the launcher hung, and $0.0525)"
+decision = false
+teaches = "Training speed on the rented card: 13.08, 13.52 and 12.53 milliseconds per step on the separable, entangled and free models, so the built models cost 1.04 and 1.08 times the free one rather than the 1.55 assumed. The registered runs are re-priced at $161.90 across the two releases. The half of the shutdown test that runs on the rented machine was not exercised and is owed on the next rented run."
+status = "done"
+
+[[next_steps]]
+id = "N13"
+title = "Merge proposal version 3 and John's rulings on its decisions 20 and 21 (pull requests 71 and 72)"
+when = "now; everything else waits on it"
+owner = "John"
+cost = "$0"
 decision = true
-teaches = "The measured per-step figure the second release of money may not be asked for without, and whether the fix for the race between a machine deleting itself and the laptop taking the final copy survives contact with the real vendor. The launcher now refuses to rent while the laptop's never-sleep setting is off or it is on battery (pull request 30); leave the lid open as well: idle billing has cost about $10.30 across four occurrences."
+teaches = "Nothing new. It puts the proposal the review will read, and two rulings it depends on, where sessions look for them."
+status = "pending"
+
+[[next_steps]]
+id = "N14"
+title = "First independent review of proposal version 3"
+when = "as soon as pull requests 71 and 72 are merged"
+owner = "a fresh Claude Code session that did not write version 3"
+cost = "$0"
+decision = false
+teaches = "Whether the repairs to version 2's fatal finding hold: the four-fifths floor, the first-layer exclusion, the random-subspace comparison reported rather than used as a gate, and the stop after the first free-model run. A clean review opens the registration text."
+status = "pending"
+
+[[next_steps]]
+id = "N15"
+title = "Registration text drafted and reviewed on both tiers, then committed on John's ruling"
+when = "after version 3's review is clean; realistic commit date 2026-10-10/11; kill date 2026-10-18"
+owner = "Claude Code session drafts, a second checks, John runs the two outside reviewer sessions and rules"
+cost = "$0"
+decision = true
+teaches = "The commitment everything after it is held to: the four models, the measure, the floor, the four registered outcomes and the stop points, fixed before any full-size run."
+status = "pending"
+
+[[next_steps]]
+id = "N16"
+title = "Freeze and test the code: the task generator, the four models, the transplant measurement"
+when = "alongside the registration text; nothing waits on a ruling"
+owner = "Claude Code session, checked by a session that did not write it"
+cost = "$0"
+decision = false
+teaches = "That what gets launched is what was registered. Causal patching (N4) is built here, once, for the successor's task."
+status = "pending"
+
+[[next_steps]]
+id = "N17"
+title = "Development runs at 10 million parameters, all four models"
+when = "once the code is frozen, on John's go naming the runs"
+owner = "John gives the go, Claude Code session runs them"
+cost = "about $10, inside the first release"
+decision = true
+teaches = "Whether the four models train on the rented machine at all before the full-size money is spent, and the first exercise of the mixed model's code and of the shutdown test's machine half there."
+status = "pending"
+
+[[next_steps]]
+id = "N18"
+title = "Small things owed from Weekend 1: the correction note beside the old review's key count, the launcher's deadline gaps and acknowledgement wait, the settled billing figures in the ledger, the old agent working folders"
+when = "any quiet hour; before the first full-size launch for the launcher items"
+owner = "Claude Code session"
+cost = "$0"
+decision = false
+teaches = "Nothing new. Each is ruled or already identified; none is done."
 status = "pending"
 
 # ---------------------------------------------------------------------------
@@ -609,29 +689,47 @@ status = "pending"
 # ---------------------------------------------------------------------------
 
 [spend]
-as_of = "2026-09-25"
-account_balance = 77.35
-account_note = "RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit John set; topped up in increments he chooses. The balance is the last one the compute ledger records being read from the account, on 2026-09-21 ($77.3451); it fell from $79.82 because the two follow-up runs of 2026-09-20 cost a measured $1.90 and the storage volume drips about a cent an hour whether or not anything is running. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
+as_of = "2026-10-03"
+account_balance = 75.86
+account_note = "RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit John set; topped up in increments he chooses. The balance is the last one the compute ledger records being read from the account, after the second rented test run on 2026-09-25 ($75.8645). Before that it read $77.3451 on 2026-09-21, having fallen from $79.82 because the two follow-up runs of 2026-09-20 cost a measured $1.90 and the storage volume drips about a cent an hour whether or not anything is running. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
 idle_billing_lost = 10.30
 idle_billing_note = "Four occurrences of finished pods billing idle; the reason every launch now carries a terminate window and a watchdog."
 
 [[spend.lines]]
 name = "Amendment A3 hard stop"
 cap = 100
-spent = 46.2
-note = "All vendors, cumulative, and added up row by row from the compute ledger, which is the system of record: the learnability pilot that opened Amendment A3 ($13.92), the short test of whether a rented machine can delete itself ($0.29), seeds 1 and 2 run as one wave ($20.10), the run that asked whether the control question can be learned when it is taught properly (about $9.90), the recovery of that run's final checkpoint ($0.07), the two follow-up reading runs of 2026-09-20 — the matched control and the standardised refit — which were created on rented machines, refused by the instrument's own reproducibility check and deleted (a measured $1.90), and the measurement rehearsal of 2026-09-21 (about $0.02). Corrected 2026-09-22 from $44.3: that figure counted the two follow-up runs as costing nothing, but the account balance moved $79.7159 to $77.8119 while they ran. That leaves $53.80 under the stop. Option D would draw $27–39 of it if charged here."
+spent = 46.75
+note = "Updated 2026-10-03: plus the two attempts at the small rented test run of 2026-09-25 (about $0.50 and $0.0525), which the ledger charges here; the first has since been billed at $0.5162, an annotation still owed. That leaves about $53.25 under the stop. The rest of this note is as written on 2026-09-22. All vendors, cumulative, and added up row by row from the compute ledger, which is the system of record: the learnability pilot that opened Amendment A3 ($13.92), the short test of whether a rented machine can delete itself ($0.29), seeds 1 and 2 run as one wave ($20.10), the run that asked whether the control question can be learned when it is taught properly (about $9.90), the recovery of that run's final checkpoint ($0.07), the two follow-up reading runs of 2026-09-20 — the matched control and the standardised refit — which were created on rented machines, refused by the instrument's own reproducibility check and deleted (a measured $1.90), and the measurement rehearsal of 2026-09-21 (about $0.02). Corrected 2026-09-22 from $44.3: that figure counted the two follow-up runs as costing nothing, but the account balance moved $79.7159 to $77.8119 while they ran. That leaves $53.80 under the stop. Option D would draw $27–39 of it if charged here."
 
 [[spend.lines]]
 name = "MVM-0a registered design envelope (Amendment A2)"
 cap = 450
-spent = 227.6
-note = "Raised from $400 to $450 on 2026-09-25 by page 6 of the Weekend 1 queue ruling (docs/rulings/2026-09-26-weekend-1-queue.md), to hold the successor's base plan plus one extension; the compute ledger carries a dated ceiling note saying so. Before that, raised from $200 to $400 on 2026-08-16 at measured 5090-secure pricing. Includes the lost 30M pilot ($97) and the 30M re-run ($18.9). Two corrections got it here. The figure was $215.7 until 2026-09-21, when two ledger rows turned out to have been written without a programme running total, which had left out the run that tested whether the control question can be learned (about $9.90) and the recovery of its checkpoint ($0.07). It then read $225.7 until 2026-09-22, when the two follow-up reading runs of 2026-09-20 — described in several places as costing nothing — turned out to have moved the account balance from $79.7159 to $77.8119, a measured $1.90 that the ledger's own correction of 2026-09-21 already carries. Headroom is therefore $172.40, not $174.30, and that gap is worth stating: the two spending releases John staged on 2026-09-21 come to about $175, which is about $2.60 more than the programme has left rather than the seventy cents over that was reported at the time."
+spent = 228.15
+note = "Updated 2026-10-03: plus about $0.55 for the two attempts at the small rented test run of 2026-09-25, so headroom is about $221.85. The successor's two releases are re-priced at $161.90 from the measured training speed, which would put the programme at $422 to $434. The rest of this note is as written on 2026-09-25, and its headroom figures are against the old $400 ceiling. Raised from $400 to $450 on 2026-09-25 by page 6 of the Weekend 1 queue ruling (docs/rulings/2026-09-26-weekend-1-queue.md), to hold the successor's base plan plus one extension; the compute ledger carries a dated ceiling note saying so. Before that, raised from $200 to $400 on 2026-08-16 at measured 5090-secure pricing. Includes the lost 30M pilot ($97) and the 30M re-run ($18.9). Two corrections got it here. The figure was $215.7 until 2026-09-21, when two ledger rows turned out to have been written without a programme running total, which had left out the run that tested whether the control question can be learned (about $9.90) and the recovery of its checkpoint ($0.07). It then read $225.7 until 2026-09-22, when the two follow-up reading runs of 2026-09-20 — described in several places as costing nothing — turned out to have moved the account balance from $79.7159 to $77.8119, a measured $1.90 that the ledger's own correction of 2026-09-21 already carries. Headroom is therefore $172.40, not $174.30, and that gap is worth stating: the two spending releases John staged on 2026-09-21 come to about $175, which is about $2.60 more than the programme has left rather than the seventy cents over that was reported at the time."
 
 
 # ---------------------------------------------------------------------------
 # The story so far: one row per STATUS.md entry, newest first. kind:
 # result | null | ruling | process | spend | build
 # ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-10-03"
+kind = "process"
+title = "The record catches up after a week's gap: Weekend 1 did its four jobs, proposal version 3 is written and unreviewed, and the registration slips one weekend"
+summary = "No work between 2026-09-26 and 2026-10-03. This entry is the skipped Sunday handoff and the skipped weekly re-plan, done late. Proposal version 3 and John's rulings on two of its decisions are open pull requests (71 and 72). The registration will not be committed on 2026-10-03/04 as the weekend roadmap planned; the realistic date is 2026-10-10/11, a week inside the first kill date, and the first reserve weekend absorbs the slip. About $228.15 of $450; nothing spent since 2026-09-25."
+
+[[timeline]]
+date = "2026-09-26"
+kind = "ruling"
+title = "Proposal version 2's first independent review is fatal and John rules it the same day; at toy scale the measure reads the three built models and returns no verdict on the free one"
+summary = "One fatal finding and four serious ones (RT-212 to RT-229 in the red team ledger). Ruled: a four-fifths floor on the read that nominates the ownership subspace, the free model's toy reading withdrawn, the built models gated on the own-marker condition only, no first-layer sites where the acting channel is injected, the random-subspace comparison reported rather than used as a gate. The toy re-run under those rules reads the separable model at 0, the entangled one at 1.0 and the mixed one at about 0.5 on every seed. A search for another label on the free model tops out at 0.789, and John ruled the experiment proceeds with the first full-size free-model run as the stop point. The other-agent condition failed a fourth repair attempt. Thirty trained toy models committed. Version 3 written. $0."
+
+[[timeline]]
+date = "2026-09-25"
+kind = "spend"
+title = "The small rented test run, in two attempts: training speed measured, the registered runs re-priced at $161.90"
+summary = "The first attempt hung while starting the machine's own shutdown watcher and was stopped at about $0.50 with nothing measured; the launcher was fixed and checked. The second attempt ($0.0525) measured 13.08, 13.52 and 12.53 milliseconds per step on the separable, entangled and free models. The half of the shutdown test that runs on the rented machine was not exercised. The same day John ruled the nine-page queue of decisions blocking the registration, including the ceiling raised from $400 to $450."
 
 [[timeline]]
 date = "2026-09-25"

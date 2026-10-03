@@ -27,7 +27,7 @@
 [roadmap]
 title = "The weekend roadmap to 2026-12-21"
 written_on = "2026-09-24"
-updated_on = "2026-09-24"
+updated_on = "2026-10-03"
 source = "docs/weekend-roadmap-2026-09-24.md"
 one_line = "Twelve working weekends between 2026-09-26 and 2026-12-20, front-loaded so that both kill dates pass with their work already done, the December result exists by 2026-11-08, and five weekends stay in hand for slipped gates and for the extensions that make the conclusion stronger."
 question = "Can a decomposability measure, validated on systems whose degree is known by construction, read the degree of a freely trained 30-million-parameter transformer that acquired a load-bearing ownership pointer under task pressure? If so, what does it read?"
@@ -74,7 +74,7 @@ number = 1
 start = "2026-09-26"
 end = "2026-09-27"
 days = 2
-status = "active"
+status = "partial"
 title = "Clear the queue, close A3, repair the proposal"
 outcome = "Amendment A3 (the earlier constructed self-index experiment) closed under Gate A; every registration-blocking decision ruled; the rented slice's seconds per step in the release arithmetic; successor proposal version 2 through its Gate C first-tier review."
 beside = "Book text lock 2026-09-30 is off the table (done or moved)."
@@ -86,14 +86,14 @@ john_items = [
   "Optional, ten minutes: the two Cloudflare secrets and the repository visibility flip, so the site deploys",
 ]
 goals = [
-  { id = "W1.1", text = "A3 closure through Gate A, both tiers, and the closure commit landed", owner = "both", status = "planned" },
-  { id = "W1.2", text = "Every registration-blocking decision ruled and recorded in docs/rulings/2026-09-26-weekend-1-queue.md", owner = "john", status = "planned" },
+  { id = "W1.1", text = "A3 closure through Gate A, both tiers, and the closure commit landed", owner = "both", status = "done", note = "Landed 2026-09-25: closure text version 5 appended to the registration file by pull request 49, after both outside reviews, John's rulings, a first-tier check and its re-check" },
+  { id = "W1.2", text = "Every registration-blocking decision ruled and recorded in docs/rulings/2026-09-26-weekend-1-queue.md", owner = "john", status = "done", note = "Ruled 2026-09-25, all nine pages; the five follow-on decisions from the rehearsal repairs are in docs/rulings/2026-09-25-rehearsal-repairs-rulings.md (pull request 53)" },
   { id = "W1.3", text = "The 2026-09-22/23 handoff landed at the top of STATUS.md with a 2026-09-24 entry; data/project.toml current; merged worktrees pruned", owner = "agents", status = "done", note = "Landed 2026-09-24 evening: PR 29 and PR 31; no worktree folder was prunable by git's definition (all 69 branches merged), so clearing them is a later git worktree remove pass" },
   { id = "W1.4", text = "The launcher refuses to rent a machine when the laptop can sleep, and the launch checklist is a gate it checks", owner = "agents", status = "done", note = "Landed 2026-09-24 evening: PR 33 (shared src/launch_gate.sh, 351 and 67 harness checks, charger case and empty-date field covered), checked on PR 36" },
-  { id = "W1.5", text = "The rented slice run: seconds per step per arm measured on the rented machine and written into the second release's arithmetic; the shutdown path exercised end to end", owner = "both", status = "planned" },
-  { id = "W1.6", text = "Rehearsal repairs at toy scale: the named-other condition redesigned (or the risk accepted on record), the nomination procedure shown to be one instrument across arms, control 2 built as stated, the fourth arm attempted if ruled", owner = "agents", status = "planned" },
-  { id = "W1.7", text = "Successor proposal version 2 written with the ruled numbers, label and form, the failure-modes checklist exercised against it with commands and output, both checking scripts clean", owner = "agents", status = "planned" },
-  { id = "W1.8", text = "Gate C first-tier review of version 2 filed; if clean, the registration text drafted and its Gate A first tier launched overnight", owner = "agents", status = "planned" },
+  { id = "W1.5", text = "The rented slice run: seconds per step per arm measured on the rented machine and written into the second release's arithmetic; the shutdown path exercised end to end", owner = "both", status = "carried", note = "Half done 2026-09-25: seconds per step measured on the second attempt (pull request 51, checked on 55) and the registered runs re-priced at $161.90. The half of the shutdown test that runs on the rented machine was not exercised; it moves to weekend 2's development runs (W2.4), the next time a machine is rented" },
+  { id = "W1.6", text = "Rehearsal repairs at toy scale: the named-other condition redesigned (or the risk accepted on record), the nomination procedure shown to be one instrument across arms, control 2 built as stated, the fourth arm attempted if ruled", owner = "agents", status = "done", note = "Landed 2026-09-26 (pull request 52, checked on 58): the named-other redesigns failed, and a later change to the task grammar failed too (pull request 57), so the fallback ruled in advance applies and the risk is on the record; the nomination is one instrument; the fourth, mixed arm passed and is folded into the registration" },
+  { id = "W1.7", text = "Successor proposal version 2 written with the ruled numbers, label and form, the failure-modes checklist exercised against it with commands and output, both checking scripts clean", owner = "agents", status = "done", note = "Landed 2026-09-26 as pull request 54" },
+  { id = "W1.8", text = "Gate C first-tier review of version 2 filed; if clean, the registration text drafted and its Gate A first tier launched overnight", owner = "agents", status = "done", note = "Review filed 2026-09-26 (pull request 56): not clean, one fatal finding and four serious, so the registration text was not drafted. John ruled every finding the same day; version 3 was written from the rulings and is pull request 71, open. Its own review is goal W2.6" },
   { id = "W1.9", text = "The Saturday ruling packet built and checked (PR 34)", owner = "agents", status = "done", note = "Landed 2026-09-24 evening: PR 34, checked on PR 35, both merged; the packet is docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md" },
 ]
 
@@ -103,21 +103,23 @@ number = 2
 start = "2026-10-03"
 end = "2026-10-04"
 days = 2
-status = "planned"
+status = "active"
 title = "Register"
 outcome = "The registration committed through Gate A, both tiers, two weeks ahead of kill date 1; the implementation frozen and tested; the development runs at 10 million parameters landed."
 beside = ""
 john_hours = "about 2.5"
 john_items = [
+  "Added at the 2026-10-03 re-plan, and first: merge pull requests 72 (the rulings on decisions 20 and 21) and 71 (proposal version 3)",
   "Run the two second-tier reviewer sessions on the registration text and rule the drafted dispositions",
   "Give the go naming the development runs (about $10, inside the first release)",
 ]
 goals = [
-  { id = "W2.1", text = "Registration text through Gate A, both tiers; dispositions ruled; text fixes paired-checked; citation and single-source scripts clean on the final text", owner = "both", status = "planned" },
-  { id = "W2.2", text = "Registration committed (kill date 1 is 2026-10-18)", owner = "both", status = "planned" },
+  { id = "W2.1", text = "Registration text through Gate A, both tiers; dispositions ruled; text fixes paired-checked; citation and single-source scripts clean on the final text", owner = "both", status = "planned", note = "Re-plan 2026-10-03: waits on W2.6. The first tier can run this weekend if version 3's review is clean; John's two second-tier sessions are expected on 2026-10-10" },
+  { id = "W2.2", text = "Registration committed (kill date 1 is 2026-10-18)", owner = "both", status = "planned", note = "Re-plan 2026-10-03: will not land this weekend. Expected 2026-10-10/11, a week inside the kill date; weekend 8 absorbs the slip" },
   { id = "W2.3", text = "Implementation frozen: generator, arms T and C, the transplant code; unit tests; the even-split rule (RT-58) and the one-scored-token self-test carried over", owner = "agents", status = "planned" },
   { id = "W2.4", text = "Development runs at 10 million parameters landed and checked by a session that did not write the code; ledger rows opened before any machine existed", owner = "both", status = "planned" },
   { id = "W2.5", text = "The go packet for the first registered run assembled: launch checklist, ledger row with estimate, sleep gate, scheduled fetch and kill", owner = "agents", status = "planned" },
+  { id = "W2.6", text = "Proposal version 3 and the rulings on its decisions 20 and 21 merged (pull requests 71 and 72), and version 3 through its Gate C first-tier review by a session that did not write it", owner = "both", status = "planned", note = "Added at the 2026-10-03 re-plan: weekend 1's review of version 2 was fatal, so this step exists and comes before the registration text" },
 ]
 
 [[weekends]]
@@ -239,7 +241,7 @@ john_items = [
   "Only if E1 was ruled: the go naming the three runs",
 ]
 goals = [
-  { id = "W8.1", text = "Absorb a slipped gate from weekends 2 to 7, if any", owner = "both", status = "planned" },
+  { id = "W8.1", text = "Absorb a slipped gate from weekends 2 to 7, if any", owner = "both", status = "planned", note = "Re-plan 2026-10-03: expected to be used. The registration slips one weekend, so the full-size runs move to weekend 4 and each of weekends 4 to 7 takes the work of the one before; those entries are left as written until the 2026-10-04 handoff knows what landed" },
   { id = "W8.2", text = "Else: extension E1 launched and landed", owner = "both", status = "planned" },
 ]
 

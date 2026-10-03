@@ -467,3 +467,52 @@ unruled design choices, the registered-launcher amendment's timing); the
 spoken go for the rented slice. If Friday evening has three hours, all of
 this moves a day earlier and the agent sessions (c), (d), (f), (g) follow
 the same night.
+
+### Weekend 1, outcome (written late, 2026-10-03)
+
+The Sunday-night handoff was skipped; this is it, six days late. Against the
+four outcomes: A3 is closed (pull request 49, 2026-09-25); every blocking
+decision is ruled (`docs/rulings/2026-09-26-weekend-1-queue.md` and
+`docs/rulings/2026-09-25-rehearsal-repairs-rulings.md`); the rented test run's
+seconds per step are in the release arithmetic (pull request 51; both releases
+$161.90), though the half of its shutdown test that runs on the rented machine
+was not exercised; and version 2 went through its Gate C first-tier review,
+which found one fatal flaw and four serious ones (pull request 56). John ruled
+all of them on 2026-09-26
+(`docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md`), and version 3 was
+written from the rulings the same day. The branch that needed a clean review
+(registration text drafted, its first tier launched Sunday) did not fire. Goal
+statuses are in `data/roadmap.toml`; the weekend is marked partial because
+goal W1.5's shutdown half is carried.
+
+### Weekend 2, 2026-10-03 to 04 (re-planned 2026-10-03, a day late)
+
+Nothing happened between 2026-09-26 and 2026-10-03, and the Thursday or Friday
+re-plan was skipped. Where the weekend starts: version 3 of the proposal and
+John's rulings on its decisions 20 and 21 are open pull requests (71 and 72);
+version 3 has had no independent review; the registration text does not exist.
+
+John's items, in order: merge pull requests 72 and 71; the go for the
+development runs if the code freeze gets that far.
+
+Agent sessions, each paired with a checker: (a) Gate C first tier on version
+3, by a session that did not write it (new goal W2.6); (b) if clean, the
+registration text and its Gate A first tier; (c) the code freeze and its
+tests, which wait on no ruling; (d) the small items owed from weekend 1 (the
+correction note of queue ruling page 8a, the launcher's deadline gaps and
+acknowledgement wait, the settled billing figures in the ledger).
+
+**The slip, and which weekend absorbs it.** The registration will not be
+committed this weekend. The expected date is 2026-10-10/11, with John's two
+second-tier sessions that Saturday; kill date 1 (2026-10-18) holds with a week
+in hand. The full-size runs move from weekend 3 to weekend 4, and each of
+weekends 4 to 7 takes the work of the one before. **Weekend 8, the first
+reserve weekend, absorbs it**, which leaves weekend 9 as the only reserve and
+moves extension E1 behind it. Kill date 2 (2026-11-01) is then met with one
+week in hand, not three. Section 3's entries for weekends 3 to 7 are left as
+written until Sunday's handoff knows what landed. This is a session's
+re-plan, not a ruling.
+
+Outcome to report Sunday night: version 3 through its review or which findings
+block; whether the registration text exists and where its review stands; what
+of the code is frozen and tested.
