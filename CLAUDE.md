@@ -42,9 +42,10 @@ STATUS.md also updates `data/project.toml` in the same commit**: bump
 `[[timeline]]` row at the top, add any `[[findings]]`, refresh `[[next_steps]]`
 and idea statuses, adjust stage progress and `[spend]`. Write it in plain
 language with every code name explained on first use, the same rule as the
-scheduled reviews. Then validate:
+scheduled reviews. Then validate, from the root of the checkout you edited (the
+script checks the copy it sits in):
 
-    cd ~/Code/minimum-viable-mind && .venv/bin/python scripts/export_site.py --check
+    python3 scripts/export_site.py --check
 
 STATUS.md stays the record of record; where the two disagree, fix the data
 file. Deploying the site is a launch and stays behind John's gate.
@@ -57,4 +58,4 @@ the Sunday-night handoff sets each goal's status there** (a carried goal gets a
 `note` naming where it moved) and the weekend's own status. Both then run the
 same check, which validates this file alongside `data/project.toml`:
 
-    cd ~/Code/minimum-viable-mind/site && npm run check
+    cd site && npm run check
