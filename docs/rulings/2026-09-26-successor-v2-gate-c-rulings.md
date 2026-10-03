@@ -335,7 +335,39 @@ a 0.10 shuffle baseline (search findings, section 4) is the argument that the
 twelve-layer model may clear the floor; and $44 is the price of finding out
 before $130 is spent.
 
-*What this changes:* version 3's section 7.2 (the registered read, and the
-three candidates as exploratory fits), section 11 (the stop after the first
+*What this changes:* version 3's section 3 (arm F may return no verdict at
+registered scale; the first release is the test of it), section 7.2 (the
+registered read, and the three candidates as exploratory fits), section 11 (the stop after the first
 release's arm F run) and the reporting table (arm F's nomination fit against
 the floor). This addendum edits nothing else.
+
+---
+
+## Decisions 20 and 21 of proposal version 3, ruled 2026-09-26
+
+*Added 2026-09-26 (Pacific). Version 3 of the successor proposal is
+`docs/successor-experiment-proposal-2026-09-26-v3.md` on pull request 71
+(branch `worktree-w1d-proposal-v3`, commit `c8f2406`); its section 15 puts
+decisions 20, 21 and 22 to John. Mixed authorship as before: each was put to
+John in plain language with a recommendation, and he ruled "Agreed". No
+compute was launched and no money was spent under these rulings. Every
+earlier sentence of this file stands as recorded.*
+
+**Decision 20: which reading of the layer-0 exclusion is registered.** The
+layer-0 exclusion (RT-216 item 1, as clarified in refinement 2) is registered
+as run: layer 0 is kept at the action position set only (45 site sets on the
+toy, 325 on the registered model). Reason recorded: it carries a rehearsal
+line, and it is the stricter reading where the two differ.
+
+**Decision 21: the fit floor applies per arm and seed.** The RT-212 fit floor
+is applied to each arm and seed, not to each arm. Reason recorded: every other
+quantity in the reporting table is per seed, and the across-seed spread is the
+registered uncertainty.
+
+**Decision 22** (whether the fifteen further toy models are committed like the
+first fifteen) is noted as done: pull request 67 committed them with their
+fingerprints.
+
+*What this changes:* version 3's section 7.2 (the site-set family registered
+with layer 0 at the action position set only) and the reporting table (the fit
+floor per arm and seed). This addendum edits nothing else.
