@@ -41,8 +41,7 @@ STATUS.md also updates `data/project.toml` in the same commit**: bump
 `project.updated_on` and rewrite the two "where" paragraphs, add a
 `[[timeline]]` row at the top, add any `[[findings]]`, refresh `[[next_steps]]`
 and idea statuses, adjust stage progress and `[spend]`. Write it in plain
-language with every code name explained on first use, the same rule as the
-scheduled reviews. Then validate, from the root of the checkout you edited (the
+language, per the workspace rule. Then validate, from the root of the checkout you edited (the
 script checks the copy it sits in):
 
     python3 scripts/export_site.py --check
