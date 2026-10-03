@@ -119,7 +119,8 @@ goals = [
   { id = "W2.3", text = "Implementation frozen: generator, arms T and C, the transplant code; unit tests; the even-split rule (RT-58) and the one-scored-token self-test carried over", owner = "agents", status = "planned" },
   { id = "W2.4", text = "Development runs at 10 million parameters landed and checked by a session that did not write the code; ledger rows opened before any machine existed", owner = "both", status = "planned" },
   { id = "W2.5", text = "The go packet for the first registered run assembled: launch checklist, ledger row with estimate, sleep gate, scheduled fetch and kill", owner = "agents", status = "planned" },
-  { id = "W2.6", text = "Proposal version 3 and the rulings on its decisions 20 and 21 merged (pull requests 71 and 72), and version 3 through its Gate C first-tier review by a session that did not write it", owner = "both", status = "planned", note = "Added at the 2026-10-03 re-plan: weekend 1's review of version 2 was fatal, so this step exists and comes before the registration text" },
+  { id = "W2.6", text = "Proposal version 3 and the rulings on its decisions 20 and 21 merged (pull requests 71 and 72), and version 3 through its Gate C first-tier review by a session that did not write it", owner = "both", status = "done", note = "Done 2026-10-03: merged, reviewed with nothing fatal (pull request 74), and ruled the same day (docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md). The review session was not a fresh one and says so" },
+  { id = "W2.7", text = "The rehearsal's controls re-run under the registered rules, with the ruled change to how the transplanted piece is chosen; method committed before output; checked by a session that did not run it", owner = "agents", status = "planned", note = "Added 2026-10-03 by John's ruling on the review of version 3: a precondition of the registration review" },
 ]
 
 [[weekends]]

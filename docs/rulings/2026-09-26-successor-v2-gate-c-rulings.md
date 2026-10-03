@@ -335,6 +335,13 @@ a 0.10 shuffle baseline (search findings, section 4) is the argument that the
 twelve-layer model may clear the floor; and $44 is the price of finding out
 before $130 is spent.
 
+*Dated note, 2026-10-03 (Pacific). "A five-layer model" above counts the
+toy's running states: it has four blocks and five states. The registered
+model has twelve blocks and thirteen states, so like for like the depths are
+four against twelve (the review of proposal version 3, finding RT-236,
+`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-successor-v3-gate-c-claude-code.md`).
+The ruling stands as recorded.*
+
 *What this changes:* version 3's section 3 (arm F may return no verdict at
 registered scale; the first release is the test of it), section 7.2 (the
 registered read, and the three candidates as exploratory fits), section 11 (the stop after the first

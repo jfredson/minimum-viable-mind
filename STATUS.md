@@ -27,6 +27,33 @@ does both jobs late. Every statement is checked against the main line, the two
 open pull requests or the compute ledger, and says which. Nothing here is a
 ruling. Nothing was launched, rented or spent by this session.*
 
+**Later the same day, 2026-10-03: version 3 is merged, reviewed and ruled.**
+John merged pull requests 72, 71, 73 and 74. The first independent review of
+proposal version 3
+(`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-successor-v3-gate-c-claude-code.md`)
+found nothing fatal, two serious findings and five minor ones, numbered RT-230
+to RT-236 in the red team ledger's sequence. The main one: the four-fifths
+floor was scored on the whole straight-line read, but the piece actually
+transplanted is its leading 1, 2, 4 or 8 directions, and on two of the three
+entangled-model seeds that piece holds the label at only 0.544 and 0.306; the
+readings survive at every size (0.99 to 1.005). John ruled all seven findings
+and the proposal's thirteen open decisions in the words "Agreed on all", from
+a sixteen-page packet (`docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md`,
+authorship mixed). Ruled, among the rest: only pieces that themselves carry
+the label at four fifths may be chosen; the $0 re-run of the controls under
+the registered rules comes before the registration review; and a free model
+that returns no verdict after the built models separate is a fifth registered
+outcome, "metric validated, degree not read", satisfactory and weaker than a
+reading. **Three cautions on that ruling:** the session that wrote the review
+also wrote the packet and recorded the ruling; neither the packet nor the
+rulings file has been checked by a second session; and the review session was
+not a fresh one. **What is next:** the controls re-run, method committed
+before output and checked by a second session; then version 4 of the
+proposal as registration text; then the registration review. Nothing was
+spent. The paragraphs below were written that morning and are left as written;
+"What is not on the main line" and step 1 of "What is next" are overtaken by
+this paragraph.
+
 **The gap.** The last work was Saturday 2026-09-26. Nothing happened on Sunday
 2026-09-27 or in the week after, apart from two small edits to the working
 guide (`eefc11c`, `c2acb0d`).
