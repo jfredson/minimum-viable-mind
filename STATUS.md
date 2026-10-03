@@ -14,10 +14,144 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
-## WHERE THINGS STAND 2026-09-24 (evening) — the record is current: the 2026-09-22/23 handoff is the entry below, the weekend roadmap is mirrored in TimeAssembler, the launcher refuses to rent while the laptop can sleep; nothing spent
+## WHERE THINGS STAND 2026-10-03 — Weekend 1 did its four jobs and the proposal is at version 3, unreviewed and unmerged; nothing has moved since 2026-09-26; the registration will not be committed this weekend
 
 *This section is the current state. Everything below it is the older
-record, newest first, and is left exactly as written.*
+record, newest first, and is left exactly as written (except that this
+two-line note was moved up from the entry below).*
+
+*Written 2026-10-03 by a Claude Code session that did none of the work it
+describes. It is a catch-up: the Sunday-night handoff of 2026-09-27 and the
+Thursday or Friday re-plan of 2026-10-01/02 were both skipped, so this entry
+does both jobs late. Every statement is checked against the main line, the two
+open pull requests or the compute ledger, and says which. Nothing here is a
+ruling. Nothing was launched, rented or spent by this session.*
+
+**The gap.** The last work was Saturday 2026-09-26. Nothing happened on Sunday
+2026-09-27 or in the week after, apart from two small edits to the working
+guide (`eefc11c`, `c2acb0d`).
+
+**Money.** About **$228.15 of $450**, leaving about **$221.85**; Amendment A3,
+the first constructed self-index experiment, at about **$46.75 of its $100
+stop** — the running totals in the last row of
+`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`. The only
+spend since 2026-09-21 is the small rented test run of 2026-09-25, in two
+attempts: about $0.50 (stopped when the launcher hung) and $0.0525. The first
+attempt has since been billed at $0.5162 against the $0.4974 the ledger row
+carries; that annotation is still owed, so the totals above are about two
+cents low. The planned cost of the successor's registered runs is $161.90
+across its two releases, which would put the programme at $422 to $434 of $450
+(proposal version 3, section 12; pull request 71, not merged).
+
+**Weekend 1 against its four outcomes.**
+
+1. *Amendment A3 closed: done* on 2026-09-25, as the paragraph at the head of
+   the entry below records (pull request 49).
+2. *Every decision blocking the registration ruled: done.* The nine pages are
+   `docs/rulings/2026-09-26-weekend-1-queue.md`; the five follow-on decisions
+   from the rehearsal repairs are
+   `docs/rulings/2026-09-25-rehearsal-repairs-rulings.md` (pull request 53).
+3. *The rented test run's timing in the spending arithmetic: done.* Second
+   attempt, pull request 51, checked on pull request 55: 13.08, 13.52 and
+   12.53 milliseconds per training step on the separable, entangled and free
+   models. The half of the shutdown test that runs on the rented machine was
+   not exercised, and is still owed on the next rented run.
+4. *Proposal version 2 through its first independent review (Gate C tier 1):
+   done, and the review was fatal.* One fatal finding and four serious ones,
+   numbered RT-212 to RT-229 in the red team ledger (pull request 56). John
+   ruled all of them on 2026-09-26
+   (`docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md`, authorship
+   mixed), then refined three after the toy re-run, then resolved the last
+   open item after the label search. The branch of the plan that needed a
+   clean review (draft the registration text, start its review on Sunday) did
+   not fire.
+
+**What the toy-scale rehearsal now says**
+(`docs/2026-09-26-toy-rerun-v3-rules.md`, checked on pull request 65;
+`docs/2026-09-26-free-arm-label-search.md`, checked on pull request 70). The
+toy models are five layers; the registered ones will be twelve.
+
+- The measure reads all three models whose answer is known by construction, on
+  every seed: the separable one (arm T) at 0.0000, the entangled one (arm C)
+  at 1.0051, 1.0025 and 1.0000, and the mixed one (arm M) at 0.4886, 0.4860
+  and 0.5449.
+- On the freely trained model (arm F) it returns **no verdict**. The
+  straight-line read that is supposed to find which marker word is the model's
+  own fits at 0.172, 0.067 and 0.106, against the floor of four fifths John
+  ruled on 2026-09-26. The earlier toy reading of "fully entangled" for this
+  model is withdrawn: it came from a read that had found nothing.
+- A $0 search for a different label the free model might carry found none that
+  clears four fifths; the best was 0.789. John ruled that the floor registers
+  as it is, the ruled label stays the one registered read, and the first
+  full-size free-model run reports its fit against the floor, with a miss
+  stopping the experiment before the second, larger release of money is drawn.
+  His recorded reason: the fits rising to 0.79 on a five-layer model is the
+  argument that a twelve-layer one may clear the floor, and about $44 is the
+  price of finding out before $130 is spent.
+- The condition where the model must act on the *other* agent's marker does
+  not learn at toy scale by any route tried: a curriculum (0 seeds of 3),
+  re-weighting the loss (0 of 3), the unchanged recipe (1 of 3) and a change
+  to the task grammar (0 of 3; pull request 57, checked on pull request 61).
+  The fallback John ruled in advance applies: the registration records the
+  failure, and the single free-model run is read before the rest are paid for.
+  The three built-by-construction models are now gated on the own-marker
+  condition only.
+- All thirty trained toy models behind these results are committed with their
+  file fingerprints (pull requests 64 and 67).
+
+**What is not on the main line.**
+
+- **Proposal version 3**, `docs/successor-experiment-proposal-2026-09-26-v3.md`,
+  is pull request 71, open. It has had no independent review.
+- **John's rulings on its decisions 20 and 21** (the layer-0 exclusion
+  registered as it was run; the fit floor applied per model and seed) are pull
+  request 72, open. It also restores one line that a merge dropped.
+- **Pull request 46**, a draft from the first rented-run attempt, is still
+  open. This session did not check whether anything in it is missing from the
+  main line.
+
+**What is next, in order.**
+
+1. John merges pull requests 72 and 71. A fresh session that did not write
+   version 3 runs its independent review (Gate C tier 1).
+2. If that review is clean: the registration text is drafted and goes through
+   its own first-tier review; then John's two outside reviewer sessions, his
+   rulings, and the registration commit. **The first kill date, registration
+   committed by 2026-10-18, is fifteen days away.**
+3. Alongside, at $0: the code is frozen and tested (the task generator, the
+   four models, the transplant measurement). Then the small development runs,
+   about $10, on John's go.
+
+**The schedule.** Weekend 2's planned outcome, the registration committed on
+2026-10-03/04, will not be met: version 3 has not been reviewed and the
+registration text does not exist. The realistic date is the weekend of
+2026-10-10/11, a week inside the kill date. That moves the first full-size
+runs from Weekend 3 to Weekend 4 (2026-10-17/18), and everything behind them
+by one weekend. Weekend 8 (2026-11-14/15), the first of the two held in
+reserve, absorbs it. The second kill date (the remaining runs launched by
+2026-11-01) would then be met with one week in hand rather than three. This is
+this session's reading, not a ruling; `data/roadmap.toml` and section 7 of
+`docs/weekend-roadmap-2026-09-24.md` carry it, and the per-weekend entries for
+Weekends 3 to 7 are left as written until Sunday's handoff knows what landed.
+
+**Small things owed.**
+
+- The dated note beside finding F17 in
+  `experiments/06-mvm-0a-constructed-self-index/red-team-a4.md`, ruled on page
+  8a of the Weekend 1 queue ruling (the count of 110 keys is unsupported; the
+  measured counts are 15, 15 and 7). A search of that file on 2026-10-03 finds
+  no such note.
+- The launcher items the Weekend 1 handoff listed
+  (`docs/weekend-1-handoff-2026-09-26.md`, "Weekend 2 items already
+  identified"): the shutdown watchdog waiting for the machine's
+  acknowledgement, four gaps in the deadline script, the settled billing
+  figures in the ledger, and reconciling ledger rows RT-172 to RT-203.
+- Old agent working folders: 105 besides the main checkout, none removed.
+- The "Bookkeeping owed" paragraph in section 1 of the weekend roadmap, which
+  the entry below flagged as stale, was corrected on 2026-09-24; nothing is
+  owed there.
+
+## WHERE THINGS STAND 2026-09-24 (evening) — the record is current: the 2026-09-22/23 handoff is the entry below, the weekend roadmap is mirrored in TimeAssembler, the launcher refuses to rent while the laptop can sleep; nothing spent
 
 **2026-09-25: Amendment A3 closed on the registration commit.** Version 5 of
 the closure text (`docs/a3-closure-text-draft-2026-09-25-v5.md`, on the main
