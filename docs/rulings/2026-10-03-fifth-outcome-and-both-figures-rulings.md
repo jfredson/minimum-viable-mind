@@ -64,6 +64,18 @@ misses at three to six of ten positions.*
    first own turn and the five before the action, and the positions between
    them are covered by the average only.
 
+*Dated note, 2026-10-03 (Pacific), late evening, beside item 3, which is left
+as written. The check of this record
+(`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-short-prestated-run-check-claude-code.md`,
+finding 19) found that "print both figures" accepted the computation in item
+3 by implication only, and asked John whether section 4 of the short run's
+method is what he meant. He answered in the words **"Yes, section 4 of the
+method is what I meant"**. Mixed authorship: the question was the checking
+session's, the choice is his. Item 3 therefore rests on his own words. The
+same check found that the figure taken on the average moves by one episode in
+180 depending on the order the average is added up in (its finding 11); that
+is a note for version 4 of the proposal and is not part of this ruling.*
+
 ---
 
 ## What this changes, and where

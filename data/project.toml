@@ -516,8 +516,8 @@ id = "F19"
 date = "2026-10-03"
 title = "A transplanted piece carries the ownership label where the model acts, and often not at the other positions it is transplanted at"
 what = "A session that wrote none of the day's work checked it and made one short run stated in advance. The controls re-run reproduces exactly from its committed code: all 26 output files are equal value for value. The too-early-position control, redefined to use only positions before both twins of a pair have had a turn of their own, leaves every model's outputs bit-identical on all twelve toy models. That is true by construction, because up to there the twins have read the same input, so it is a test of the pairing and the code and says nothing about any model. The new reported figure: away from the action position the chosen piece often falls below four fifths. On two entangled-model seeds it is as low as 30 to 33 right of 180 at some positions. On the mixed model it clears four fifths on the average over its site and misses it at three to six of ten positions taken one at a time. The other-agent control's code ran end to end for the first time, as a test of the code and not a result."
-so_what = "No reading changes: readings come from what the transplants do to the action. What changes is a sentence. 'The piece held the label and did nothing' is shown at the action position, not across the whole site, and the registration should say so. Two things went to John and he ruled both the same evening: the new figure is printed both ways in the registered table, per position and on the average over the site, since the two disagree about the mixed model; and the fifth registered outcome is satisfactory and weaker than a reading, now in his own words. The short run is owed a check by another session."
-source = "experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-controls-rerun-check-claude-code.md; docs/2026-10-03-short-prestated-run.md; experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-rulings-2026-10-03-check-claude-code.md"
+so_what = "No reading changes: readings come from what the transplants do to the action. What changes is a sentence. 'The piece held the label and did nothing' is shown at the action position, not across the whole site, and the registration should say so. Two things went to John and he ruled both the same evening: the new figure is printed both ways in the registered table, per position and on the average over the site, since the two disagree about the mixed model; and the fifth registered outcome is satisfactory and weaker than a reading, now in his own words. The short run was checked later that evening by another session: it reproduces byte for byte and its method was committed before its output. That check left three notes for version 4 of the proposal: the outputs the redefined control compares are the model's scores at its two action positions; the figure on the average over a site is good to an episode or two; and how the two figures are computed, which John confirmed in his own words that evening, should be set out in full in the registration text."
+source = "experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-controls-rerun-check-claude-code.md; docs/2026-10-03-short-prestated-run.md; experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-short-prestated-run-check-claude-code.md; experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-rulings-2026-10-03-check-claude-code.md"
 stage = "2"
 kind = "process"
 
@@ -718,7 +718,7 @@ status = "done"
 [[next_steps]]
 id = "N20"
 title = "A fresh session checks today's work and makes one short pre-stated run"
-when = "done 2026-10-03, in three pull requests (79, 80, 81) that John merged that evening; the short run is itself owed a check"
+when = "done 2026-10-03, in three pull requests (79, 80, 81), all merged that evening; the short run was then checked by another session and holds"
 owner = "a Claude Code session that wrote none of the 2026-10-03 work"
 cost = "$0, laptop"
 decision = false
@@ -779,6 +779,12 @@ date = "2026-10-03"
 kind = "process"
 title = "Version 4 of the proposal is drafted; three things stand between it and the registration review"
 summary = "Version 3 with every ruling of 2026-10-03 written in, as a new file; version 3 is left unedited. The accuracy floor sits on the piece that is transplanted; the other-agent control has no pass line and is said never to have run at toy scale; the too-early-position control holds and is described as a test of the pairing and the code; the fifth outcome is in. Toy figures come from the controls re-run. The 325 site sets for the full-size model are printed. Not ready for the review: the check of the short run and the evening ruling is filed but not merged, version 4 needs its own check, and seven questions go to John. Nothing spent."
+
+[[timeline]]
+date = "2026-10-03"
+kind = "process"
+title = "The short run stated in advance, and the record of the evening ruling, are checked and hold"
+summary = "A session that wrote neither checked both from committed files. The run's method and code were committed and pushed before any output and the script is unchanged; run again, the output files are byte-identical; separately written code agrees, and shows the redefined control is not an empty test. Three notes for version 4 of the proposal, none changing a figure: the record cannot show the script was never run before the method was committed; the outputs compared are the model's scores at its two action positions; the figure on the average over a site is good to an episode or two. The ruling record matches John's words except that it set down how the two figures are computed, which his words accepted only by implication; asked, he confirmed it that evening. Laptop only, $0."
 
 [[timeline]]
 date = "2026-10-03"

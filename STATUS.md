@@ -66,6 +66,36 @@ episodes the full-size measurement uses, and what an arm's outcome is when
 its three seeds disagree. **A correction to the two paragraphs below:** they
 say pull requests 79, 80 and 81 were not merged. John merged all three that
 evening (main line at `e184a6e`, `853988f` and `f32ba0c`).
+**Later still on 2026-10-03: the short pre-stated run and the record of the
+evening ruling are checked by a session that wrote neither, and both hold.**
+(`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-short-prestated-run-check-claude-code.md`;
+committed files only, no chat or transcript opened; laptop, $0; filed as its
+own pull request, not merged by that session.) Pull requests 79, 80 and 81 are
+on the main line, so the merge the paragraph below says is owed is done.
+**The run:** the method and code were committed and pushed before any output
+(GitHub's record of the two pushes, 2 minutes 39 seconds apart) and the
+script is unchanged since; run again from the committed code, the four output
+files are byte-identical; every figure in the findings matches them; the code
+does what the method and the ruling say. Separately written code agrees: the
+twins' states are identical at every layer before both first own turns, and
+the same transplant with noise added does change the outputs, so the control
+is not an empty test. **Three notes, none changing a figure or a reading:**
+(a) the record shows the order of commits, and cannot show that the script
+was never run before the method was committed; little turns on it, since
+part (a) cannot fail on correct pairs, part (b) has no pass line and part (c)
+is not a result; (b) the "outputs" the redefined control compares are the
+model's scores at its two action positions, and version 4 should say so;
+(c) the new figure taken on the average over a site moves by one episode in
+180 on three of eight models depending on the order the same average is
+added up in, so version 4 should say it is good to an episode or two or fix
+the arithmetic. **The ruling record** says what John's words say, with one
+narrow exception: it sets down *how* the two figures are computed as part of
+what was ruled, which "print both figures" accepts by implication only.
+John was asked and confirmed it the same evening in the words "Yes, section 4
+of the method is what I meant" (a dated note beside item 3 of the ruling
+record; authorship mixed), so nothing from this check is left with him. The
+roadmap's second dated note is right. **Nothing blocks version 4 of the
+proposal.**
 
 **Last of all on 2026-10-03: John ruled the two things the checks left him**
 (`docs/rulings/2026-10-03-fifth-outcome-and-both-figures-rulings.md`, in the
