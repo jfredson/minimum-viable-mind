@@ -1,0 +1,283 @@
+{
+ "NOT_A_RESULT": "a test that the code runs end to end, with the accuracy floor switched off; its figures are not a pass or a fail of anything",
+ "arm": "F",
+ "checkpoint_sha256": "c3afe0c6354f49f185b1806a433e6f0563b48a14f6e4559b2264ecb0abeea88d",
+ "device": "cpu",
+ "ran_end_to_end": true,
+ "returned": {
+  "candidates": [
+   {
+    "dev_ownership_only": 0.19666666666666666,
+    "dev_whole": 0.3333333333333333,
+    "layers": [
+     1
+    ],
+    "piece_correct": 22,
+    "positions": "action+3",
+    "rank": 1,
+    "whole_read_correct": 95
+   },
+   {
+    "dev_ownership_only": 0.2,
+    "dev_whole": 0.3333333333333333,
+    "layers": [
+     1
+    ],
+    "piece_correct": 43,
+    "positions": "action+3",
+    "rank": 2,
+    "whole_read_correct": 95
+   },
+   {
+    "dev_ownership_only": 0.2,
+    "dev_whole": 0.3333333333333333,
+    "layers": [
+     1
+    ],
+    "piece_correct": 74,
+    "positions": "action+3",
+    "rank": 4,
+    "whole_read_correct": 95
+   },
+   {
+    "dev_ownership_only": 0.21166666666666667,
+    "dev_whole": 0.3333333333333333,
+    "layers": [
+     1
+    ],
+    "piece_correct": 92,
+    "positions": "action+3",
+    "rank": 8,
+    "whole_read_correct": 95
+   },
+   {
+    "dev_ownership_only": 0.19666666666666666,
+    "dev_whole": 0.3333333333333333,
+    "layers": [
+     1
+    ],
+    "piece_correct": 22,
+    "positions": "post-identity",
+    "rank": 1,
+    "whole_read_correct": 95
+   },
+   {
+    "dev_ownership_only": 0.2,
+    "dev_whole": 0.3333333333333333,
+    "layers": [
+     1
+    ],
+    "piece_correct": 43,
+    "positions": "post-identity",
+    "rank": 2,
+    "whole_read_correct": 95
+   },
+   {
+    "dev_ownership_only": 0.2,
+    "dev_whole": 0.3333333333333333,
+    "layers": [
+     1
+    ],
+    "piece_correct": 74,
+    "positions": "post-identity",
+    "rank": 4,
+    "whole_read_correct": 95
+   },
+   {
+    "dev_ownership_only": 0.21166666666666667,
+    "dev_whole": 0.3333333333333333,
+    "layers": [
+     1
+    ],
+    "piece_correct": 92,
+    "positions": "post-identity",
+    "rank": 8,
+    "whole_read_correct": 95
+   },
+   {
+    "dev_ownership_only": 0.19333333333333333,
+    "dev_whole": 0.33,
+    "layers": [
+     3
+    ],
+    "piece_correct": 31,
+    "positions": "action",
+    "rank": 1,
+    "whole_read_correct": 127
+   },
+   {
+    "dev_ownership_only": 0.19333333333333333,
+    "dev_whole": 0.33,
+    "layers": [
+     3
+    ],
+    "piece_correct": 50,
+    "positions": "action",
+    "rank": 2,
+    "whole_read_correct": 127
+   },
+   {
+    "dev_ownership_only": 0.19166666666666668,
+    "dev_whole": 0.33,
+    "layers": [
+     3
+    ],
+    "piece_correct": 79,
+    "positions": "action",
+    "rank": 4,
+    "whole_read_correct": 127
+   },
+   {
+    "dev_ownership_only": 0.19666666666666666,
+    "dev_whole": 0.33,
+    "layers": [
+     3
+    ],
+    "piece_correct": 115,
+    "positions": "action",
+    "rank": 8,
+    "whole_read_correct": 127
+   },
+   {
+    "dev_ownership_only": 0.19333333333333333,
+    "dev_whole": 0.33,
+    "layers": [
+     3
+    ],
+    "piece_correct": 31,
+    "positions": "action+ans",
+    "rank": 1,
+    "whole_read_correct": 127
+   },
+   {
+    "dev_ownership_only": 0.19333333333333333,
+    "dev_whole": 0.33,
+    "layers": [
+     3
+    ],
+    "piece_correct": 50,
+    "positions": "action+ans",
+    "rank": 2,
+    "whole_read_correct": 127
+   },
+   {
+    "dev_ownership_only": 0.19166666666666668,
+    "dev_whole": 0.33,
+    "layers": [
+     3
+    ],
+    "piece_correct": 79,
+    "positions": "action+ans",
+    "rank": 4,
+    "whole_read_correct": 127
+   },
+   {
+    "dev_ownership_only": 0.19666666666666666,
+    "dev_whole": 0.33,
+    "layers": [
+     3
+    ],
+    "piece_correct": 115,
+    "positions": "action+ans",
+    "rank": 8,
+    "whole_read_correct": 127
+   }
+  ],
+  "dev_named_other_accuracy": 0.32166666666666666,
+  "dev_untouched": 0.19333333333333333,
+  "named_other_correct": 994,
+  "named_other_moved": 0.09624999761581421,
+  "named_read_fits": {
+   "0": {
+    "piece": {
+     "1": 20,
+     "2": 16,
+     "4": 16,
+     "8": 16
+    },
+    "whole": 16
+   },
+   "1": {
+    "piece": {
+     "1": 22,
+     "2": 43,
+     "4": 74,
+     "8": 92
+    },
+    "whole": 95
+   },
+   "2": {
+    "piece": {
+     "1": 40,
+     "2": 64,
+     "4": 96,
+     "8": 139
+    },
+    "whole": 137
+   },
+   "3": {
+    "piece": {
+     "1": 31,
+     "2": 50,
+     "4": 79,
+     "8": 115
+    },
+    "whole": 127
+   },
+   "4": {
+    "piece": {
+     "1": 38,
+     "2": 51,
+     "4": 67,
+     "8": 102
+    },
+    "whole": 102
+   }
+  },
+  "own_directed_moved": 0.0012499999720603228,
+  "random_pieces": {
+   "above": 19,
+   "below": 0,
+   "draws": 20,
+   "equal": 1,
+   "median": 0.0037499999161809683,
+   "own_directed_moved": [
+    0.0024999999441206455,
+    0.0037499999161809683,
+    0.0012499999720603228,
+    0.004999999888241291,
+    0.0037499999161809683,
+    0.004999999888241291,
+    0.004999999888241291,
+    0.008750000037252903,
+    0.004999999888241291,
+    0.0037499999161809683,
+    0.0037499999161809683,
+    0.0037499999161809683,
+    0.0037499999161809683,
+    0.004999999888241291,
+    0.0024999999441206455,
+    0.0037499999161809683,
+    0.004999999888241291,
+    0.0037499999161809683,
+    0.004999999888241291,
+    0.004999999888241291
+   ],
+   "p95": 0.005187499895691874
+  },
+  "single_random_piece_as_the_earlier_code_drew_it": 0.0062500000931322575,
+  "site_set": {
+   "layers": [
+    1
+   ],
+   "piece_correct": 92,
+   "positions": "action+3",
+   "rank": 8,
+   "whole_read_correct": 95
+  },
+  "status": "reported; no pass line",
+  "trials": 800
+ },
+ "seed": 0,
+ "torch": "2.12.1"
+}
