@@ -697,12 +697,12 @@ status = "pending"
 [[next_steps]]
 id = "N19"
 title = "Re-run the rehearsal's controls under the registered rules, with the ruled change to how the transplanted piece is chosen"
-when = "now; it blocks the registration review"
+when = "run 2026-10-03; its check by a second session, and two rulings from John, are still owed"
 owner = "Claude Code session, checked by a session that did not run it"
 cost = "$0, laptop"
 decision = false
-teaches = "Four of the seven controls have no figure on three of the four toy models at the places the registered rule chooses. A pre-stated quantity the rehearsal never exercised is a fatal finding at the registration review, so this comes first. It is also the first end-to-end run of the rule John ruled on 2026-10-03."
-status = "pending"
+teaches = "Run, at $0. The ruled change works on the toy: the separable model reads 0, the entangled model 0.99 to 1.005, the mixed model about 0.5, the free model no verdict, and the transplant code's known-answer test passes everywhere. Two things came out of it for John: the other-agent control cannot be exercised on any toy model, and the too-early-position control was transplanting at positions where the donor already knows who it is."
+status = "in-progress"
 
 # ---------------------------------------------------------------------------
 # Spend. Registered caps are protocol, not budget: exceeding one is a violation.
@@ -732,6 +732,12 @@ note = "Updated 2026-10-03: plus about $0.55 for the two attempts at the small r
 # The story so far: one row per STATUS.md entry, newest first. kind:
 # result | null | ruling | process | spend | build
 # ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-10-03"
+kind = "result"
+title = "The controls re-run: the ruled change holds on the toy, one control cannot be exercised, and another turns out to be defined wrongly"
+summary = "Method committed before output; laptop only; $0. Readings under the registered rules: separable 0.0000, entangled 1.0051, 0.9926 and 0.9974, mixed 0.4886, 0.4860 and 0.5449, free no verdict on every seed. The other-agent control has no figure on any model because the named agent's read misses the floor on the one model that learned the condition. The too-early-position control came back above nothing on six of twelve models; an after-the-fact diagnostic shows it returns exactly nothing once its positions are taken before both twins' first own turns. Both go to John. A second session's check is owed."
 
 [[timeline]]
 date = "2026-10-03"

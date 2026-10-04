@@ -1,0 +1,112 @@
+{
+ "arm": "F",
+ "control2": {
+  "named_other_correct": 746,
+  "reason": "the arm has not learned the named-other condition",
+  "status": "no verdict"
+ },
+ "gate": {
+  "other_seeds_clearing": 1,
+  "own_seeds_clearing": 3,
+  "passes": false,
+  "rule": "learn-both",
+  "version2_learn_both": false
+ },
+ "gate_run": {
+  "other_clears": false,
+  "other_correct": 746,
+  "own_clears": true,
+  "own_correct": 1664
+ },
+ "nomination_status": "read failed its floor: no size's piece reaches four fifths",
+ "primary": {
+  "controls": {
+   "1": {
+    "complement_donor_share": 0.54,
+    "holds_on_arm_T": null,
+    "untouched": 0.06875,
+    "whole": 0.53
+   },
+   "3": {
+    "above": 9,
+    "below": 8,
+    "equal": 3,
+    "median": 0.06375,
+    "ownership_only": 0.06375,
+    "p95": 0.066375
+   },
+   "4": {
+    "above_untouched": 0.065,
+    "donor_share": 0.13375,
+    "untouched": 0.06875
+   },
+   "6": {
+    "different_value_moved": 0.8915159702301025,
+    "different_value_trials": 719,
+    "same_value_moved": 0.6296296119689941,
+    "same_value_trials": 81
+   },
+   "7": {
+    "bit_identical": true
+   }
+  },
+  "described_only": true,
+  "no_transplant": {
+   "formula": 0.06339285714285714,
+   "inside_allowance": true,
+   "miss": 0.005357142857142866,
+   "rate": 0.06875
+  },
+  "reading": {
+   "accuracy_ownership_only": 0.06375,
+   "accuracy_untouched": 0.06875,
+   "accuracy_whole": 0.53,
+   "arm_own_accuracy": 0.55625,
+   "degree": 1.010840108401084,
+   "floor": {
+    "clears": true,
+    "clears_plain_form": true,
+    "required_room": 0.39000000000000007,
+    "room": 0.46125000000000005
+   },
+   "raw_difference": 0.46625000000000005,
+   "status": "valid",
+   "version1_form": 0.8797169811320755
+  },
+  "site_set": {
+   "layers": [
+    1
+   ],
+   "piece_correct": 18,
+   "positions": "post-identity",
+   "rank": 8,
+   "whole_read_correct": 18
+  }
+ },
+ "rider_at_arm_T_site_set": {
+  "reading": {
+   "accuracy_ownership_only": 0.06875,
+   "accuracy_untouched": 0.06875,
+   "accuracy_whole": 0.06875,
+   "arm_own_accuracy": 0.55625,
+   "degree": null,
+   "floor": {
+    "clears": false,
+    "clears_plain_form": false,
+    "required_room": 0.39000000000000007,
+    "room": 0.0
+   },
+   "raw_difference": 0.0,
+   "status": "no verdict",
+   "version1_form": 0.0
+  },
+  "site_set": {
+   "layers": [
+    0
+   ],
+   "positions": "action",
+   "rank": 8
+  }
+ },
+ "seed": 2
+}
