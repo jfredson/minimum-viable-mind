@@ -27,6 +27,46 @@ does both jobs late. Every statement is checked against the main line, the two
 open pull requests or the compute ledger, and says which. Nothing here is a
 ruling. Nothing was launched, rented or spent by this session.*
 
+**Evening of 2026-10-03: the day's work is checked by a session that wrote
+none of it, and the short pre-stated run is done. Nothing blocks version 4 of
+the proposal; two small things are John's.** A Claude Code checking session,
+working from committed files only and opening no chat or transcript of the
+session that wrote the work, did three jobs at $0 on the laptop and filed each
+as its own pull request (79, 80 and 81; none merged).
+(1) **The controls re-run reproduces exactly**
+(`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-controls-rerun-check-claude-code.md`):
+run again from the committed code, all 26 output files are equal value for
+value; the method and code were committed before the outputs and the script
+is unchanged since. **The after-the-fact diagnostic of the too-early-position
+control (control 4) holds**, confirmed by separately written code, so John's
+ruling on that control stands and does not return to him. The redefined
+control is true by construction (before both twins' first own turns their
+states are identical), so it tests the pairing and the code and says nothing
+about any model. A handful of wording slips and code-against-method notes;
+none changes a figure.
+(2) **The short pre-stated run** (`docs/2026-10-03-short-prestated-run-method.md`,
+committed with the code and no output, then `docs/2026-10-03-short-prestated-run.md`):
+the redefined control holds on all twelve toy models, outputs bit-identical;
+the new reported figure is filled, and **away from the action position the
+chosen piece often does not carry the label at four fifths**, on the entangled
+model's seeds 1 and 2 and, position by position, on the mixed model too
+(though on the average over its site the mixed model's piece clears); the
+other-agent control's (control 2's) code ran end to end on the free model's
+seed 0 with the floor off, which is a test of the code and not a result. No
+stop fired. No reading changes. This run is owed a check by another session.
+(3) **The two ruling packets and their records**
+(`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-rulings-2026-10-03-check-claude-code.md`):
+no number in either packet is wrong (161 claims in the first: 142 exact, 15
+in part, 1 not matching, 3 not findable in a committed file); both records
+say what the packets put. **For John:** (a) one sentence confirming or
+overturning that the fifth registered outcome, "metric validated, degree not
+read", counts as satisfactory: the packet put it to him as an open question
+with a suggestion, "Agreed on all" was recorded as settling it, and the note
+added to the December-result roadmap states it without that caveat; (b) how
+the new reported figure is computed in the registered table, per position or
+on the average over the site, since the two disagree about the mixed model.
+**Next:** version 4 of the proposal, as registration text.
+
 **Last on 2026-10-03: John ruled the three questions the re-run raised**
 (`docs/rulings/2026-10-03-controls-rerun-rulings.md`, "Agreed on all",
 authorship mixed). The other-agent control (control 2) is kept as a reported
@@ -210,6 +250,10 @@ Weekends 3 to 7 are left as written until Sunday's handoff knows what landed.
   acknowledgement, four gaps in the deadline script, the settled billing
   figures in the ledger, and reconciling ledger rows RT-172 to RT-203.
 - Old agent working folders: 105 besides the main checkout, none removed.
+  *Dated note, 2026-10-03 (Pacific), evening: this figure is stale. All of
+  those folders were removed that evening, along with the old branches. The
+  checking session's own count (`git worktree list`): the main checkout and
+  one working folder, its own.*
 - The "Bookkeeping owed" paragraph in section 1 of the weekend roadmap, which
   the entry below flagged as stale, was corrected on 2026-09-24; nothing is
   owed there.
