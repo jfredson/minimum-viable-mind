@@ -14,6 +14,124 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-10-04 — the registration review is open; the inside review finds one fatal flaw (small to fix) and four serious ones; the outside-review packet is built, checked and with John
+
+*This section is the current state. Everything below it is the older record,
+newest first, and is left exactly as written.*
+
+*Written 2026-10-04 (Pacific) by the Claude Code session that ran the
+registration review's first half (branch `gate-a-registration-review-successor-v4`).
+It did not write version 4, any run, or any ruling it summarises other than the
+one it recorded. Nothing was rented or spent.*
+
+**What happened since the entry below** (all on the main line, pull requests 86
+to 91): a session that did not write version 4 checked it and the record of its
+seven questions (pull request 86), and John ruled the check's two questions
+(pull request 87, `docs/rulings/2026-10-03-version-4-check-questions-rulings.md`).
+The ordinary competing solver was put through the measurement as now registered
+(pull request 88, `docs/2026-10-03-competing-solver-run.md`): no verdict on
+every seed. The other-agent control was re-coded to draw twenty random pieces and
+its code test run again (pull request 89, NOT A RESULT). Both were checked by
+another session (pull request 90), and John ruled the seven questions that
+raised, in the words "Agreed on all seven" (pull request 91,
+`docs/rulings/2026-10-04-competing-solver-and-control-2-rulings.md`). That
+cleared every item version 4 listed as standing between it and the review.
+
+**John opened the registration review** (Gate A of
+`docs/outside-review-protocol.md`, both tiers) on version 4. Asked directly at
+the start of this session whether his planning-session words ("run everything
+as soon as possible…", "everything is approved") counted as opening it, he chose
+"Yes, it's opened" (`docs/rulings/2026-10-04-registration-review-opened.md`;
+authorship john). In the same planning session he ruled that Minimum Viable
+Mind work is no longer scheduled on future dates: each step runs as soon as what
+it waits on is done. The weekend roadmap (`docs/weekend-roadmap-2026-09-24.md`)
+no longer sets timing, and the two kill dates, 2026-10-18 and 2026-11-01, stay
+as outer limits only. That ruling has no file of its own yet; this paragraph is
+its only record in this repository.
+
+**The inside review (tier 1)** ran in a fresh session in its own worktree, from
+committed files only, with no chat, no STATUS.md and no pull request
+descriptions. It is filed as
+`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-claude-code.md`
+(findings RT-237 to RT-246, scripts and outputs beside it; $0, laptop
+processor). It reviewed version 4 together with every ruled change not yet
+written into it.
+
+- **What held, and this matters most.** The reviewer rebuilt the rule for
+  choosing where to transplant from version 4's words alone, in code that imports
+  nothing from the committed code. It picks the same places, size and verdict on
+  all 24 toy rows, reproduces every toy reading, and lands the toy on the fifth
+  registered outcome (metric validated, free model not read) at a separation of
+  0.9926. The committed code, run again from clean, reproduced all 26,722
+  committed values. **The text describes the instrument that actually ran.**
+- **One fatal finding, small to fix (RT-237, MEASURED).** The check that lets the
+  freely trained model be read at all requires that "the ownership-free state and
+  syntax batteries must hold". Those are question sets from the closed Amendment
+  A3 design. The successor's task has none, no line says what "hold" means, and
+  nothing ever tested it. Under the design's own stop rule a check that cannot be
+  evaluated counts as failed, so as written the free model could never be read.
+  The clause has been carried word for word since version 1, and no earlier review
+  caught it.
+- **Four serious findings.**
+  - The printed floor on the whole-state transplant lets a model at chance through
+    with a divisor of zero or less, and only an unwritten clause in the code stops
+    it (RT-238).
+  - Version 4 says its task extends the closed design's grammar, which shows the
+    model its own name just before it acts. The two deliberate changes that remove
+    that cue in the rehearsal grammar are written nowhere (RT-239).
+  - The ruled number of fitting episodes was only rehearsed at the toy's width. On
+    a crude stand-in at the registered width, the entangled model's read drops below
+    the four-fifths floor on two seeds of three (RT-240, NOT A RESULT).
+  - Some reachable outcomes have no registered name (RT-241).
+- **Five worth noting** (RT-242 to RT-246), including that the ruled sentence
+  about the competing solver is not quite true as worded (RT-244), and a first
+  timing of the registered measurement on the laptop: about 25 hours for all
+  twelve models (RT-245).
+
+So the registration is **not** ready to commit. RT-237 must be closed, with a
+check by a session that did not write the fix, and the serious findings must be
+closed or carried as named open items with John's reasons.
+
+**The outside-review packet (tier 2) is built and checked.** It was generated
+by `scripts/build_successor_v4_tier2_packets.py` into
+`experiments/06-mvm-0a-constructed-self-index/reviews/packets/2026-10-04-successor-v4-tier2-*`.
+There is one document for Gemini and 33 files of up to 28,000 characters for
+ChatGPT, carrying the same 25 records character for character. The records are
+the brief, version 4, the inside findings, every ruling and check that changes
+version 4, the run records its numbers come from, the known-failure list, and
+the opening descriptions of the two task grammars. John's instructions are in
+`…/packets/2026-10-04-successor-v4-tier2-INDEX-how-to-run-these-sessions.md`.
+A session that did not build the packet checked it, using code that shares
+nothing with the builder (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-tier2-packet-check-claude-code.md`).
+Every record matches its source in both packets. Two sentences in the opening
+note were wrong: a stale $108 spend figure, and a claim about which rulings are
+not yet written into version 4. Both were fixed, along with four smaller points,
+and the checker confirmed the fixes without the material changing
+(`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-tier2-packet-recheck-claude-code.md`).
+Left open, neither affecting the review: `--verify` needs the repository's git
+history to check the instruction sheet, and the list of files not carried
+names the wrong README. The ChatGPT packet is large, at roughly 200,000 to
+230,000 tokens, so John's sheet tells him how to make sure the model still
+has the brief before it answers.
+
+**What comes next, in the order things wait on each other.**
+
+1. John runs the two outside sessions (about two hours) and files both answers
+   word for word. This needs nothing else first.
+2. A session drafts a ruling packet on every item from both tiers, and John
+   rules.
+3. The registration text is written: version 4 with every ruled change and
+   every fix. Then a session that did not write it checks the fixes, with a
+   measured check of RT-237's closure.
+4. The registration is committed. The outer limit is the first kill date,
+   2026-10-18.
+
+Separately, and waiting on none of this, the code freeze and the small
+development runs continue on their own step. Nothing was rented or spent in this
+session. About $228 of the $450 ceiling is spent, unchanged.
+
+---
+
 ## WHERE THINGS STAND 2026-10-03 — Weekend 1 did its four jobs and the proposal is at version 3, unreviewed and unmerged; nothing has moved since 2026-09-26; the registration will not be committed this weekend
 
 *This section is the current state. Everything below it is the older
