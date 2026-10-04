@@ -1,0 +1,29 @@
+--- section 6.3 (v4 lines 1088 to 1092): two made-up systems, true share 0.5
+strong transplant, version 1 form / chance-corrected form                  v4: 0.4323 / 0.5018              file: 0.4323 / 0.5018
+weak transplant, version 1 form / chance-corrected form                    v4: 0.3222 / 0.5013              file: 0.3222 / 0.5013
+--- section 6.4 item 3 (v4 lines 1185 to 1188): the largest measured miss against (1 - p) / 7
+largest |measured - formula|, and where                                    v4: 0.017536, free arm, one seed file: 0.017536 at F/2
+--- section 7.3 item 6 (v4 lines 1959 to 1972): control 6's empty cell and the relaxed set
+same-value trials, distinct grammar                                        v4: 0 of 4,000                   file: 0 of 4000
+blind solver, strict set to relaxed set                                    v4: 0.2467 to 0.3095             file: 0.24675 to 0.3095
+--- section 7.1 (v4 lines 1254 to 1258): the unseen-vocabulary diagnostic
+arm T own-directed on unseen marker words, seeds 0/1/2                     v4: 0.7612, 0.6512, 0.6512       file: 0.76125, 0.65125, 0.65125
+negative readings on that pool (rehearsal R-4)                             v4: -0.1706 and -0.2755          file: -0.1706 and -0.2755 (version 1 form)
+arm T seed 0 on the grammar attempt's unseen pool (v4 line 2387)           v4: -0.1870                      file: -0.1870
+--- section 4.4 (v4 lines 597 to 626): the named-other condition
+curriculum: named-other seeds clearing, counts                             v4: 0 of 3                       file: 0 of 3, [232, 580, 429]
+reweight: named-other seeds clearing, counts                               v4: 0 of 3                       file: 0 of 3, [695, 619, 713]
+grammar attempt: named-other counts; own-directed mean; level              v4: 774, 730, 759; 0.5654; 0.5513 file: [774, 730, 759]; 0.5654; 0.5513
+the grammar check's own re-run (its line 38)                               v4: 750, 809, 739                file: 750, 809 and 739 found
+--- section 5.3 (v4 lines 855 to 860): arm M's entangled share
+fourth_arm.entangled_share, seeds 0/1/2                                    v4: 0.60375 (483 of 800)         file: 0.60375, 0.60375, 0.60375
+--- section 9 and W8: the rented slice
+ms per step T / C / F                                                      v4: 13.08 / 13.52 / 12.53        file: 13.08 / 13.52 / 12.53
+arm C slowest step over its median                                         v4: 2.9%                         file: 2.8%
+--- section 7.2 item 1 (v4 lines 1384 to 1389, 1414 to 1418): the route (b) label search, arm F
+  own-turn-pair    best over all 60 site sets 0.789; best over the fixed-extent 45 0.733; per seed [0.733, 0.483, 0.789]; clears: False
+  own-source-turn  best over all 60 site sets 0.456; best over the fixed-extent 45 0.417; per seed [0.45, 0.45, 0.456]; clears: False
+  own-value        best over all 60 site sets 0.633; best over the fixed-extent 45 0.633; per seed [0.611, 0.611, 0.633]; clears: False
+  marker-word      best over all 60 site sets 0.556; best over the fixed-extent 45 0.211; per seed [0.556, 0.483, 0.433]; clears: False
+--- section 10: the thirty models' fingerprints
+out-v3-rules/models_sha256_check.json all_agree                            v4: true                         file: True

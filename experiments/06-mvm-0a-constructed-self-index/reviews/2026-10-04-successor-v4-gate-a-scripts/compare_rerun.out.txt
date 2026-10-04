@@ -1,0 +1,28 @@
+measure_C_seed0.json     values compared    110; differ 0
+measure_C_seed1.json     values compared    110; differ 0
+measure_C_seed2.json     values compared    110; differ 0
+measure_F_seed0.json     values compared    209; differ 0
+measure_F_seed1.json     values compared     70; differ 0
+measure_F_seed2.json     values compared     70; differ 0
+measure_M_seed0.json     values compared    137; differ 0
+measure_M_seed1.json     values compared    137; differ 0
+measure_M_seed2.json     values compared    137; differ 0
+measure_T_seed0.json     values compared    133; differ 0
+measure_T_seed1.json     values compared    133; differ 0
+measure_T_seed2.json     values compared    133; differ 0
+nominate_C_seed0.json    values compared   1980; differ 0
+nominate_C_seed1.json    values compared   1980; differ 0
+nominate_C_seed2.json    values compared   1980; differ 0
+nominate_F_seed0.json    values compared   1972; differ 0
+nominate_F_seed1.json    values compared   1972; differ 0
+nominate_F_seed2.json    values compared   1972; differ 0
+nominate_M_seed0.json    values compared   1980; differ 0
+nominate_M_seed1.json    values compared   1980; differ 0
+nominate_M_seed2.json    values compared   1980; differ 0
+nominate_T_seed0.json    values compared   1980; differ 0
+nominate_T_seed1.json    values compared   1980; differ 0
+nominate_T_seed2.json    values compared   1980; differ 0
+summary.json             values compared   1497; differ 0
+table.md identical: True
+TOTAL: 25 JSON files, 26722 values, 0 differ
+fresh run: separation field {'0': 1.0051, '1': 0.9926, '2': 0.9974} | device cpu | torch 2.12.1 | seconds 1485

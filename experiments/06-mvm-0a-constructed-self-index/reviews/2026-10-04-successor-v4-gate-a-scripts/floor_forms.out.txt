@@ -1,0 +1,10 @@
+out-repairs/nominate_base_*.json              floor records   4254; the two forms disagree on 576
+out-repairs/measure_base_*.json               floor records     81; the two forms disagree on 0
+out-v3-rules/nominate_*.json                  floor records   3672; the two forms disagree on 0
+out-v3-rules/measure_*.json                   floor records     60; the two forms disagree on 0
+out-controls-rerun/nominate_*.json            floor records   2160; the two forms disagree on 0
+out-controls-rerun/measure_*.json             floor records     45; the two forms disagree on 0
+out-grammar-c/nominate_base_F_T_C.json        floor records   3188; the two forms disagree on 892
+out-grammar-c/measure_base_F_T_C.json         floor records     58; the two forms disagree on 0
+out-grammar-c/outcomes.json                   floor records      9; the two forms disagree on 1
+out-competing-solver-run/nominate_*.json      floor records   1080; the two forms disagree on 1080

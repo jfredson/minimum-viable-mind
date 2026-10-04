@@ -1,0 +1,40 @@
+paragraphs in sections 0 to 16: 274; using one of the four words: 99; of those, naming no file, commit, ledger item, section, page, ruling or item: 13
+
+--- lines 95 to 121
+The project's open question is one of degree: a small transformer that has learned a causally load-bearing answer to "which agent am I" counts as a centre at the bottom of the gradient, and what would separate it from a centre in the fuller sense is how much of its act is organised around that answer. Nobody has a measure of that. So the successor experiment builds systems whose degree is fixed by how they are built, one where "which agent am I" sits in a slot that can be swapped on its own, one where it is stirred into everything, and one that is a mixture of the two by item, and one ordinary freely trained system, and asks whether a candidate measure can tell the built systems apart and place the mixture between them. The measure is: transplant the part of the internal state that says who is acting from one run into a matched run and see whether the action follows the transplanted identity; compare that with transplanting the whole internal state at the same places; the gap between the two, as a share of the room the whole-state transplant had to move, is the reading. If the measure separates the two built anchors at the ruled bar, the freely trained system gets a reading and the project's current sentence "degree unmeasured" is replaced by a number. If it does not separate them, that is a result too, and the measure is not used. The reading is made only where the piece of the internal state that is actually transplanted has been shown to hold its label, at a pre-stated floor, so that an empty instrument returns *no verdict* rather than a number at the entangled end; on the toy that is exactly what the freely trained system returns, on every seed. And the admission that remains is narrower than before: the toy can now tell an empty instrument from a ceiling, from a number the procedure already computes, and what it still cannot tell is a system that is entangled from one whose ownership answer lives somewhere the read did not look.
+
+--- lines 234 to 237
+> Can a measure of how far an act can be pulled apart, validated on systems > whose degree is known by how they were built, read the degree of a freely > trained 30-million-parameter transformer that acquired a load-bearing > ownership answer under task pressure? If so, what does it read?
+
+--- lines 820 to 827
+**Why the fallback is weaker, said plainly.** With arms T and F only, the measure is anchored at one end. A reading on arm F above arm T's would show the measure responds to something, and that arm F is less separable than a system built to be separable, but there would be no known-high case, so nothing would establish that the measure *scales* rather than merely *detects*, and the number given to arm F would have no upper reference. The registration text, if the fallback fires, says that in those words, and the R1 sentence is correspondingly weaker.
+
+--- lines 1014 to 1014
+## 6. The measure
+
+--- lines 1040 to 1045
+The second is a restriction of the first to a subspace, not a smaller or different intervention. That is deliberate: it means the measure reads *how much of the identity-driven difference at these places lives outside the nominated subspace*, and not *how many places you had to touch*. The rehearsal's transplanting code proves the restriction as a tensor identity in its self-test (rehearsal item R-8).
+
+--- lines 1105 to 1105
+### 6.4 When the measure returns no verdict
+
+--- lines 1228 to 1228
+## 7. The measurement procedure
+
+--- lines 2225 to 2230
+**What this check does and does not establish, in the closed design's own registered words: it removes a sense organ, not a structure the network built.** It is a precondition for reading arm F, since it shows the ownership answer is load-bearing for the act, which is what makes arm F worth measuring; it is not evidence of a centre and is never reported as such (ruled 2026-10-03, decision 10).
+
+--- lines 2692 to 2692
+### 12.4 The second release: from the measured seconds per step, then arm M's three runs
+
+--- lines 2711 to 2716
+| Per run | Version 1's planning figure | From the measurement | |---|---|---| | Arm F | $12 | **$10.04** | | Arm T | $12 | **$10.48** (ratio 1.044) | | Arm C | $12 | **$10.84** (ratio 1.080) | | Arm M | (none: arm M is new in version 2) | **not measured**; priced from ledger rows below |
+
+--- lines 2718 to 2725
+| Item | Version 1 (provisional) | From the measurement (the note's table) | |---|---|---| | The remaining eight registered runs of arms T, C and F (two F, three T, three C) | $96 | **$84.06** | | One permitted re-run, priced at the dearest arm (C) | $12 | **$10.84** | | Transplanting and measurement on fresh episodes | $12 | $12.00, unchanged: not a throughput line | | Billing-anomaly and idle-billing margin | $23 | $23.00, unchanged: not a throughput line | | **Second release, before arm M** | **$143** | **$129.90** | | **Both releases, before arm M** (the note's first release of about $32) | $175 | **$161.90** |
+
+--- lines 2799 to 2801
+Both are measured against the posted rate read from the machine's creation record, not remembered. **Either ratio at or above 1.25 is a trip.** When it trips:
+
+--- lines 2875 to 2876
+The Gate C brief asks what a result will be read as claiming beyond what it measures. Answering it before the reviewer does.

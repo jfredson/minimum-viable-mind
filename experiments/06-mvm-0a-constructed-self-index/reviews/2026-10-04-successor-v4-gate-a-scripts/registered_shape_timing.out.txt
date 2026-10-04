@@ -1,0 +1,7 @@
+torch 2.12.1, threads 4, sequence 56, pairs 600
+toy shape (160 wide, 4 blocks): 1,265,191 parameters; capture 0.52 s; one transplant pass over 600 pairs 0.506 s (median of 6); one read fit 0.02 s
+   nomination grid: 45 site sets -> 227 passes, 25 fits -> about 1.9 minutes per model and seed (control 2's own grid, where it runs, about doubles it)
+registered shape (448 wide, 12 blocks): 29,049,735 parameters; capture 6.55 s; one transplant pass over 600 pairs 4.590 s (median of 6); one read fit 0.09 s
+   nomination grid: 325 site sets -> 1627 passes, 65 fits -> about 124.6 minutes per model and seed (control 2's own grid, where it runs, about doubles it)
+registered against toy, per model and seed: 65 times
+twelve registered models, nomination grids only: about 24.9 hours on this processor
