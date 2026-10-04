@@ -15,13 +15,19 @@ and no machine is rented by this document.*
 **This version cannot go to the registration review yet. Three things stand
 in front of it.**
 
-1. **The short pre-stated run and the record of John's evening ruling have
-   not been checked by a second session.** This session looked for that check
-   under `experiments/06-mvm-0a-constructed-self-index/reviews/` on the main
-   line at `f32ba0c` and found none. Every figure quoted from the short run
-   below is marked **"not yet checked by a second session"**. Until that
-   check is filed, and this version is brought into line with whatever it
-   finds, this text does not go to the registration review.
+1. **The check of the short pre-stated run and of the record of John's
+   evening ruling is filed, and is not on the main line yet.** When this
+   draft was begun, no such check existed on the main line at `f32ba0c`, and
+   the first commit of this version marked every figure from the short run
+   "not yet checked by a second session". The check was filed while this
+   version was being written, as pull request 82 (branch
+   `check/short-prestated-run-2026-10-03` at `01c7d68`, open):
+   `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-short-prestated-run-check-claude-code.md`.
+   It finds that the run and the record both hold, and it lists four things
+   for this version, all of which are now written in (section 20). **Every
+   figure from the short run below is marked "checked, pull request 82, not
+   yet merged". Until John merges that pull request the check is cited by
+   branch and commit, and this text does not go to the registration review.**
 2. **This version is itself owed a check by a session that did not write
    it**, under the pairing rule of the protocol.
 3. **Section 19 lists seven questions for John**, places where a ruling is
@@ -42,8 +48,9 @@ the particular trained models on the record, not a property of the code.*
 
 ## What this version rests on
 
-Every source is on the main line and is cited by its main-line commit. The
-first eight rows are new since version 3.
+Every source but one is on the main line and is cited by its main-line
+commit. The one that is not is the check of the short pre-stated run, on pull
+request 82. The first nine rows are new since version 3.
 
 | Source | Main-line commit | Standing |
 |---|---|---|
@@ -52,9 +59,10 @@ first eight rows are new since version 3.
 | **John's rulings of 2026-10-03 on that review and on version 3's open decisions (sixteen pages)** | `56a5a86` (pull request 75), with a dated note added under its decisions table at `fe5df65` (pull request 77): `docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md` | **Binding on this version.** Its "What this changes, and where" is the first checklist this version was written to. Two rows of its decisions table (decisions 15 and 16) were changed later the same day by the ruling two rows below; the dated note says so |
 | **The controls re-run under the registered rules, and its check** | re-run: `821f154` (pull request 76): `docs/2026-10-03-controls-rerun.md`, method `docs/controls-rerun-method-2026-10-03.md`, outputs `experiments/rehearsal-successor-measure/out-controls-rerun/`; check: `e184a6e` (pull request 79): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-controls-rerun-check-claude-code.md` | **Every toy nomination, reading and control figure in this version is taken from this re-run**, under the rule that only a piece which itself carries the label at four fifths may be chosen. Checked by a session that did not run it: run again from the committed code, all 26 output files are equal value for value |
 | **John's three rulings of 2026-10-03 after the controls re-run** | `fe5df65` (pull request 77): `docs/rulings/2026-10-03-controls-rerun-rulings.md` | **Binding on this version.** Control 2 kept as a reported description with no pass line; control 4 redefined and made a control that holds; the piece's accuracy at the other positions of its site reported, not gated |
-| **The short pre-stated run** | method and code with no output: `9e978d9`; findings and outputs: `853988f` (pull request 80): `docs/2026-10-03-short-prestated-run-method.md`, `docs/2026-10-03-short-prestated-run.md`, outputs `experiments/rehearsal-successor-measure/out-short-prestated-run/` | The redefined control 4 as a pre-stated quantity, the new reported column for all twelve toy models, and one end-to-end run of control 2's code. **Not yet checked by a second session. Every figure quoted from it below carries those words** |
+| **The short pre-stated run** | method and code with no output: `9e978d9`; findings and outputs: `853988f` (pull request 80): `docs/2026-10-03-short-prestated-run-method.md`, `docs/2026-10-03-short-prestated-run.md`, outputs `experiments/rehearsal-successor-measure/out-short-prestated-run/` | The redefined control 4 as a pre-stated quantity, the new reported column for all twelve toy models, and one end-to-end run of control 2's code. **Checked by a second session (next row): run again from the committed code, its output files are identical byte for byte, and every figure in its findings matches them** |
+| **The check of the short pre-stated run and of the evening ruling's record** | **not on the main line**: pull request 82, branch `check/short-prestated-run-2026-10-03` at `01c7d68`: `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-short-prestated-run-check-claude-code.md`, with its scripts in `reviews/2026-10-03-short-prestated-run-check-scripts/` | Both hold. Four notes for this version, all followed: say the too-early-position control compares the outputs at the two action positions; set out how the new column's two figures are computed and deal with the figure on the average moving by an episode; say that what the short run added for the other-agent control is the part of its code after the floor; say the piece's four fifths is established at the action position only. **Cited by branch and commit until John merges it** |
 | The check of the two ruling packets of 2026-10-03 and their records | `f32ba0c` (pull request 81): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-rulings-2026-10-03-check-claude-code.md` | No number in either packet is wrong; six places where a page says a little more or less than its source. Its section 7 lists what this version should and should not carry, and this version follows it |
-| **John's evening ruling of 2026-10-03** | `f32ba0c` (pull request 81): `docs/rulings/2026-10-03-fifth-outcome-and-both-figures-rulings.md` | **Binding on this version.** The fifth registered outcome is satisfactory and stated as weaker than R1; the new reported figure is printed both ways. **The record of this ruling has not yet been checked by a second session** |
+| **John's evening ruling of 2026-10-03** | `f32ba0c` (pull request 81): `docs/rulings/2026-10-03-fifth-outcome-and-both-figures-rulings.md` | **Binding on this version.** The fifth registered outcome is satisfactory and stated as weaker than R1; the new reported figure is printed both ways. The record is checked (the row above): it says what John's words say. On the one part that rested on implication, how the two figures are computed, John confirmed that evening in the words "Yes, section 4 of the method is what I meant"; the dated note recording that is on pull request 82 and not yet on the main line |
 | The Gate C tier 1 review of version 2, findings RT-212 to RT-229 | `c17dbdc` (pull request 56): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-27-successor-v2-gate-c-claude-worktree.md` | Reviewed version 2 at `e88c3c0`; one fatal finding (RT-212, the empty read on the free arm), four serious, thirteen minor |
 | John's rulings on that review | `3af189d` (pull request 60), refined at `4bb5727` (pull request 63), annotated at `da41c20` (pull request 68), and extended at `a11f1d3` (pull request 69, "RT-212 item 3 resolved"): `docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md` | **Binding on this version.** Its "What this changes, and where" is the checklist this version was written to; its three refinements after the toy re-run, the annotation of refinement 2's arm C clause, and the resolution of RT-212 item 3 after the label search are carried too |
 | The five rehearsal-repairs rulings of 2026-09-25, with their annotations after the check | `62c3824` (pull request 53): `docs/rulings/2026-09-25-rehearsal-repairs-rulings.md` | Binding; read with the annotations |
@@ -364,7 +372,7 @@ positions; on arm M it clears on the average on every seed (163, 174 and 175)
 and misses at six, six and three of the ten positions reported. The whole
 state at those positions holds the label throughout (149 to 180 of 180 on the
 built systems), so the label is there and is not held in the chosen
-directions (MEASURED, **not yet checked by a second session**:
+directions (MEASURED, **checked, pull request 82, not yet merged**:
 `docs/2026-10-03-short-prestated-run.md` at `853988f`, section 4, from
 `out-short-prestated-run/part_b.json`). So "the piece held the label and the
 transplant of it did nothing" is true at the action position and is not shown
@@ -729,7 +737,7 @@ four fifths.** On seed 1 the piece is right on 139, 139 and 33 of 180 at the
 one, two and three positions before the action, and 113 on the average over
 those three. On seed 2 it is below 144 at all ten positions reported, from 30
 to 139, and 123 on the average over the other positions of its site. Seed 0's
-site is a single position (MEASURED, **not yet checked by a second session**:
+site is a single position (MEASURED, **checked, pull request 82, not yet merged**:
 the short pre-stated run at `853988f`, section 4). The whole state holds the
 label at every one of those positions. This is reported and not gated
 (section 7.2, item 3; weakness W13).
@@ -881,8 +889,7 @@ the one that ran it, expected.** On the average over the other positions of
 its site the piece is right on 163, 174 and 175 of 180, above four fifths on
 every seed. Position by position it reaches 144 at only four, four and seven
 of the ten positions reported, and at the fourth token of the model's first
-own turn (the value word) it is right on 34, 71 and 33 (MEASURED, **not yet
-checked by a second session**: the short pre-stated run at `853988f`, section
+own turn (the value word) it is right on 34, 71 and 33 (MEASURED, **checked, pull request 82, not yet merged**: the short pre-stated run at `853988f`, section
 4, whose author records that it expected better and was wrong). The two ways
 of computing the figure give different pictures of this arm, which is why
 John ruled that the registered table prints both (section 7.5).
@@ -1550,9 +1557,31 @@ action, on its three seeds; the controls re-run at `821f154`, section 3).
      A site at the action position alone is printed as "single position".
    - **The count on the average** is the same count taken on the state
      averaged over every position of the site except the action position.
+     **In the registered code that average is taken in 64-bit arithmetic.**
+     The reason is the check of the short run, finding 11: on the toy, the
+     same average of the same numbers added up in a different order moved the
+     count by one episode of 180 on three of the eight figures (arm F seed
+     0's whole state, 90 against 91; arm F seed 2's, 74 against 73; arm M
+     seed 0's piece, 164 against 163), and in 64-bit arm F seed 0 gives 92
+     and 24. The check offered two ways to deal with it, saying the figure is
+     good to an episode or two, or fixing the arithmetic; this draft does
+     both, and the choice of 64-bit is this draft's. **The toy figures on the
+     average quoted in this version are therefore good to an episode or
+     two.** The per-position counts did not move.
    - For a site set with more than one layer, the worst layer's figure.
+   - **How much of a span the ten named positions cover:** a span from the
+     first own turn to the action runs 16 to 53 positions on the toy, 39.2 on
+     average, so the ten positions reported one by one are about a quarter of
+     it, and the rest is seen only through the average (the check of the
+     short run, finding 14).
 
-   *What the toy shows (MEASURED, **not yet checked by a second session**:
+   **This computation rests on John's own words.** The evening ruling
+   recorded it as ruled from "print both figures", which accepts it by
+   implication only; the check of that record said so (its finding 19), John
+   was asked, and he answered "Yes, section 4 of the method is what I meant"
+   (a dated note beside item 3 of the ruling record, on pull request 82).
+
+   *What the toy shows (MEASURED, **checked, pull request 82, not yet merged**:
    `docs/2026-10-03-short-prestated-run.md` at `853988f`, section 4, from
    `out-short-prestated-run/part_b.json`; each cell is whole state then
    piece, right of 180).* Arm T on every seed and arm C seed 0: single
@@ -1733,8 +1762,13 @@ description; no reading" (the re-run's method, rule 12).
      condition have not produced a toy model that learns it (section 4.4).
    - **A no verdict is the expected result at registered scale too**, and is
      reported as "no verdict" with which of the two reasons applies.
-   - **Its code has run end to end once, and that run is NOT A RESULT.** So
-     that the registered run is not the first time this code executes, the
+   - **The part of its code after the floor has run once, and that run is NOT
+     A RESULT.** The function has three early exits, and the controls re-run
+     took all three: "not applicable" on the six separable and mixed models,
+     "has not learned" on five, and the floor on arm F seed 0. What had never
+     run was everything after the floor (the check of the short run, finding
+     15). So that the registered run is not the first time that code
+     executes, the
      re-run's own function for the control was called once on arm F seed 0
      with the piece's accuracy floor switched off for that one call, at $0.
      It ran without error and returned its figures: a site at layer 1, the
@@ -1744,7 +1778,7 @@ description; no reading" (the re-run's method, rule 12).
      named-other action in 0.0962. **Those figures are evidence that the code
      ran. They are not a pass or a fail of anything**, because the piece
      transplanted is not known to carry the named agent at all (**NOT A
-     RESULT**, and **not yet checked by a second session**:
+     RESULT**, and **checked, pull request 82, not yet merged**:
      `docs/2026-10-03-short-prestated-run.md` at `853988f`, section 5, from
      `out-short-prestated-run/part_c_NOT_A_RESULT.json`). What is still true
      after it: the control has never been exercised on a model whose read of
@@ -1795,8 +1829,12 @@ description; no reading" (the re-run's method, rule 12).
      first own turn is the first position at which its acting channel is on.
      The control takes the site set's layers and not its positions.
    - **The pass line: the transplant changes nothing.** The model's outputs
-     with the transplant are compared with its outputs without it, on every
-     pair, as the null transplant's are, and must be bit-identical. Reported
+     at its two action positions (its scores over the vocabulary there, which
+     is what the null transplant has always compared) with the transplant are
+     compared with the same outputs without it, on every pair, and must be
+     bit-identical. "Outputs" here and wherever this control is described
+     means those, and not the outputs at every position (the check of the
+     short run, finding 7). Reported
      beside it: the share of trials landing on the donor's value with the
      transplant, the no-transplant share, and the number of trials whose
      action changed. **A failure withholds the reading for that arm and
@@ -1843,11 +1881,23 @@ description; no reading" (the re-run's method, rule 12).
      every line; no trial's action changes; a null transplant at the same
      positions is bit-identical; and across the 800 pairs the control
      transplants at between 1 and 21 positions per pair, about 5 on average,
-     never none, so it is never an empty test (MEASURED, **not yet checked by
-     a second session**: `docs/2026-10-03-short-prestated-run.md` at
+     never none, so it is never an empty test (MEASURED, **checked, pull request 82, not yet merged**: `docs/2026-10-03-short-prestated-run.md` at
      `853988f`, section 3, from `out-short-prestated-run/part_a.json`). The
      method said in advance that this was not a blind prediction: the session
      had already observed it with different code while checking the re-run.
+     **The check of that run** ran it again from the committed code and got
+     byte-identical output files, found the same thing with separately
+     written code at all five running states of every model, and showed the
+     test is not empty: with random noise added to the donor's state at the
+     same positions the outputs change on all twelve models, so the
+     transplant does write there, and it changes nothing in the real control
+     because what it writes is what was already there (findings 4, 8 and 9).
+     **One limit the check records on the word "pre-stated"** (finding 3):
+     the record shows that the method and code were committed and pushed
+     before the output, 2 minutes 39 seconds apart; no committed file can
+     show that the script was never run before the method was committed.
+     Little turns on it, because this control cannot fail on correctly built
+     pairs whenever it is run.
 
    The alternative that was put to John and not taken: redefining the
    positions and keeping the control reported only.
@@ -2177,7 +2227,8 @@ outputs `out-controls-rerun/`, checked at `e184a6e`), which the rulings of
 2026-10-03, page 2, made a precondition of the registration review; **and the
 short pre-stated run of the same day** (`docs/2026-10-03-short-prestated-run.md`
 at `853988f`, method at `9e978d9`, code `src/short_prestated_run.py`, outputs
-`out-short-prestated-run/`; **not yet checked by a second session**). The
+`out-short-prestated-run/`; checked by a second session, pull request 82, not
+yet merged). The
 last two loaded the twelve committed base-recipe models, checked each file's
 fingerprint against the committed list before loading it, trained nothing and
 spent nothing. The one part that spent money is item R-11. Total spent on the rehearsal so far:
@@ -2320,18 +2371,19 @@ what exercised it.
 **The seven controls, and what exercised each under the registered rules.**
 Controls 1, 3, 6 and 7, the true-slot reference, the rider and the stricter
 row: the controls re-run, on all twelve toy models, checked (section 7.3).
-Control 4 as redefined: the short pre-stated run, on all twelve, **not yet
-checked by a second session**; the same fact was measured independently, with
+Control 4 as redefined: the short pre-stated run, on all twelve, **checked, pull request 82, not yet merged**; the same fact was measured independently, with
 separately written code, by the check of the controls re-run (section 7.3,
 item 4). Control 5 holds by construction. **Control 2 was never exercised at
 toy scale, and the registration says so in terms** (section 7.3, item 2). It
 carries no pre-stated number, so by John's ruling nothing about it is an
-unexercised quantity in the sense of item 5 of the 2026-09-21 ruling; its
-code has run end to end once, in a run labelled NOT A RESULT.
+unexercised quantity in the sense of item 5 of the 2026-09-21 ruling; the
+part of its code after the floor has run once, in a run labelled NOT A
+RESULT.
 
-**What happens next.** The short pre-stated run and the record of the evening
-ruling are checked by a session that wrote neither; this version is checked
-under the pairing rule by a session that did not write it; John answers the
+**What happens next.** John merges the check of the short pre-stated run
+(pull request 82), and this version's citations of it change from branch and
+commit to the main-line commit; this version is checked under the pairing
+rule by a session that did not write it; John answers the
 questions of section 19; this text is brought into line with all three; then
 it goes to Gate A, both tiers, when John opens that review; the registration
 commits when both tiers are answered and he rules. There is no target date;
@@ -2347,9 +2399,10 @@ Binding if registered, in this order, on the chain of section 4 of
 1. **Done.** The first independent review of version 3 (RT-230 to RT-236);
    John's rulings of 2026-10-03 on it and on version 3's open decisions; the
    controls re-run under the registered rules, and its check; John's three
-   rulings after it; the short pre-stated run; John's evening ruling. **Owed
-   before step 2:** the check of the short pre-stated run and of the evening
-   ruling's record by a second session; the check of this version under the
+   rulings after it; the short pre-stated run; John's evening ruling. The check of the short
+   pre-stated run and of the evening ruling's record is filed as pull request
+   82. **Owed before step 2:** John's merge of that pull request; the check
+   of this version under the
    pairing rule; John's answers to the questions of section 19.
 2. This text, brought into line with those → **Gate A, both tiers**, opened
    by John → registration commit. **No target date. Kill date 2026-10-18**,
@@ -2894,7 +2947,7 @@ The floor is applied there, where the registered read is fitted. Where the
 chosen site covers several positions the same directions are transplanted at
 all of them, and on the toy the piece often falls below four fifths away from
 the action position: on arm C seeds 1 and 2, and, position by position, on
-arm M (sections 3, 5.2 and 5.3; **not yet checked by a second session**). So
+arm M (sections 3, 5.2 and 5.3; **checked, pull request 82, not yet merged**). So
 a sentence of the form "the piece held the label and transplanting it did
 nothing", or "did half", is true at the action position and is not shown
 across the whole site. The readings do not depend on it: they come from what
@@ -3231,8 +3284,12 @@ and every run it affects is launched after it.*
   (main line at `9e978d9`) and `docs/2026-10-03-short-prestated-run.md` (main
   line at `853988f`; pull request 80), code `src/short_prestated_run.py`,
   outputs `experiments/rehearsal-successor-measure/out-short-prestated-run/`,
-  of which `part_c_NOT_A_RESULT.json` is named for what it is. **No check of
-  it by a second session exists yet.**
+  of which `part_c_NOT_A_RESULT.json` is named for what it is. Its check,
+  which also checks the record of the evening ruling:
+  `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-short-prestated-run-check-claude-code.md`,
+  with scripts in `reviews/2026-10-03-short-prestated-run-check-scripts/`.
+  **Not on the main line: pull request 82, branch
+  `check/short-prestated-run-2026-10-03` at `01c7d68`.**
 - The Gate C tier 1 review of version 2, whose one fatal finding and four
   serious findings this version repairs:
   `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-27-successor-v2-gate-c-claude-worktree.md`
@@ -3379,10 +3436,10 @@ sections 0 to 16 of this file (the text before this section):
 ```
 $ awk '/^## 17\. /{exit} {print}' docs/successor-experiment-proposal-2026-10-03-v4.md > "$T/v4-through16.md"
 $ grep -n -iE 'route by which|carried by the token|forced by the loss|is the input token' "$T/v4-through16.md"
-1232:   own**. *The route by which that quantity reaches the model's states, in one
-1233:   sentence:* the marker word is the input token at every turn the model's own
-1234:   assignments are spoken on, so it is carried by the token into the running
-1238:   claim, that which marker word is the model's own is forced by the loss at
+1249:   own**. *The route by which that quantity reaches the model's states, in one
+1250:   sentence:* the marker word is the input token at every turn the model's own
+1251:   assignments are spoken on, so it is carried by the token into the running
+1255:   claim, that which marker word is the model's own is forced by the loss at
 ```
 
 A route sentence exists (section 7.2, item 1), and the fourth match is the
@@ -3473,7 +3530,9 @@ control 2: toy models on which it returned a figure: 0 of 6 it applies to
 Both of control 6's cells have trials on every arm and seed, so the RT-173
 repair holds. Control 4 as redefined transplants at one position or more in
 every pair, so it is never an empty test (that line is from the short
-pre-stated run, **not yet checked by a second session**). Control 2 returned
+pre-stated run; its check added that the transplant does write there, since
+noise added to the donor's state changes the outputs on all twelve models).
+Control 2 returned
 a figure on none of the six toy models it applies to, and has zero clearing
 site sets by construction on arms T and M, which the repairs rulings' item 5
 records as not applicable. **So control 2's cell is empty at toy scale. The
@@ -3556,15 +3615,15 @@ patterns and would count themselves):
 
 ```
 $ grep -c -iE 'verif|measur|calibrat|attack|reproduc|confirm|\brun|\bran\b|check|shows|showed|found|observed|recorded|returns|returned|yield|result' "$T/v4-through16.md"
-732
+758
 $ grep -c -E '[0-9]+\.[0-9]{2,}|[0-9]{1,3},[0-9]{3}' "$T/v4-through16.md"
 231
 $ grep -c MEASURED "$T/v4-through16.md"; grep -c ARGUED "$T/v4-through16.md"; wc -l < "$T/v4-through16.md"
 68
 14
-3308
-$ grep -c 'not yet checked by a second session' "$T/v4-through16.md"
-7
+3366
+$ grep -c 'checked, pull request 82, not yet merged' "$T/v4-through16.md"
+8
 ```
 
 Part two was run by reading every MEASURED claim this version adds or changes
@@ -3575,12 +3634,19 @@ review of version 3; and the three rulings files. The commands in failures 1
 to 3 and candidate 7 are the ones that can be shown. **Where it fires, and
 what the text does about it:**
 
-- **Every figure taken from the short pre-stated run rests on a record that
-  no second session has checked.** The record exists and its method was
-  committed before its output; what is missing is the check. Each such figure
-  carries the words "not yet checked by a second session" (the count above),
-  and the head of this version says it does not go to the registration review
-  until that check is in.
+- **Every figure taken from the short pre-stated run rests on a check that is
+  not on the main line.** The check exists, ran the script again and got
+  byte-identical files; it is pull request 82, open. A record a reader of the
+  main line cannot open is the form of ledger item RT-145, so each such
+  figure carries the words "checked, pull request 82, not yet merged" (the
+  count above), the check is cited by branch and commit, and the head of
+  this version says it does not go to the registration review until that
+  pull request is merged.
+- **The figure on the average over a site does not reproduce to the episode
+  under a different order of addition** (three of eight toy figures move by
+  one of 180; the check of the short run, finding 11). The text says the toy
+  figures are good to an episode or two and requires 64-bit averaging in the
+  registered code (section 7.2, item 3).
 - **Version 3's figures for arm C's seeds 1 and 2 do not hold under the piece
   rule** and are replaced by the controls re-run's (RT-230).
 - **One figure in the controls re-run's own prose does not reproduce to its
@@ -3593,8 +3659,8 @@ The repository's own two checkers, run on the whole document as it stands:
 
 ```
 $ .venv/bin/python scripts/check_citations.py --only docs/successor-experiment-proposal-2026-10-03-v4.md
-[CONFIDENT] 0 reference(s) name a file that is not in the repository
-  (version 3 had six, all to the label search and its check, which had not merged then; both are on the main line now)
+[CONFIDENT] 5 reference(s) name a file that is not in the repository
+  (all five are the check of the short pre-stated run or its scripts folder, which are on pull request 82 and not on the main line or this branch; each is cited by branch and commit where it appears. Version 3's six, to the label search and its check, are gone: both are on the main line now)
 [CONFIDENT] 1 exact figure(s) absent from the one file their sentence cites
   (the count of arm M's entangled gate episodes, in a sentence of section 5.3 carried unchanged from version 3: the file cited holds the share and not the count, which is that share of the gate's episodes)
 $ .venv/bin/python scripts/check_single_source.py --only docs/successor-experiment-proposal-2026-10-03-v4.md
@@ -3668,9 +3734,10 @@ outputs:
 - **The fifth outcome term** ("metric validated, degree not read"): produced.
   It is where the toy lands, by the path the text expects: the anchors
   separate and arm F returns "read failed its floor".
-- **Control 4's pass line** (bit-identical outputs): produced on all twelve,
-  by code committed before its output (**not yet checked by a second
-  session**).
+- **Control 4's pass line** (bit-identical outputs at the two action
+  positions): produced on all twelve, by code committed before its output,
+  and reproduced byte for byte by its check (pull request 82, not yet
+  merged).
 - **Control 2's reported description**: **cannot be produced on the path the
   toy offers, on any model.** The text says so in terms and attaches no line
   to it. This is the one place the candidate fires.
@@ -3713,8 +3780,8 @@ Whether the candidate is a new species or an instance of failure 3 is John's
 ruling, still open; on this version it catches control 2, which failure 3's
 test catches too.
 
-**What this pass leaves open, in one place.** The check of the short
-pre-stated run and of the evening ruling's record; the check of this version;
+**What this pass leaves open, in one place.** John's merge of the check of
+the short pre-stated run (pull request 82); the check of this version;
 the seven questions of section 19; the code owed before step 4 of section 11
 (the training entry point for arms T, C and M, the tripwire, and the
 withholding of a reading on a failed control); and the reviewer's own pass,
@@ -4006,10 +4073,26 @@ findings RT-230 to RT-236 (`4cb7f8e`). "The check of the re-run" is at
   have been measured under the piece rule (sections 7.3, 8.1, 10 R-5;
   question 7).
 - **The short pre-stated run.** Quoted for control 4 as redefined, for the
-  new column, and for control 2's one end-to-end run. **Every figure from it
-  is marked "not yet checked by a second session", and the head of this
-  version says it cannot go to the registration review until that check is
-  in.**
+  new column, and for the one run of the part of control 2's code after the
+  floor, labelled NOT A RESULT.
+- **From the check of the short pre-stated run (pull request 82, not yet
+  merged), section 10 (not a ruling).** Filed while this version was being
+  written; the first commit of this version had marked the short run's
+  figures as unchecked. All four of its notes are followed: control 4 is
+  said to compare the outputs at the two action positions (section 7.3, item
+  4); the new column's computation is set out in full, the figure on the
+  average is said to be good to an episode or two on the toy, and the
+  registered code averages in 64-bit (section 7.2, item 3); what the short
+  run added for control 2 is said to be the part of its code after the floor
+  (section 7.3, item 2; section 10); and the piece's four fifths is said to
+  be established at the action position only (sections 3, 5.2, 5.3, W13).
+  Also carried from it: the test is not empty (noise changes the outputs),
+  the ten named positions are about a quarter of a span, the limit on what
+  "pre-stated" can be shown to mean, and John's confirmation that section 4
+  of the short run's method is what "print both figures" means. **Every
+  figure from the short run is marked "checked, pull request 82, not yet
+  merged", and the head of this version says it cannot go to the
+  registration review until that pull request is merged.**
 - **The header, the source table, section 16 and section 17.** Rewritten for
   this version: sources by main-line commit, the eight new ones first; the
   author's failure-mode pass run again with this session's commands on the
@@ -4029,8 +4112,8 @@ findings RT-230 to RT-236 (`4cb7f8e`). "The check of the re-run" is at
 It edits nothing: not version 3, not any ruling, registered text or protocol
 text, and not the findings of any run. It issues no go, releases no money,
 launches nothing, trains nothing and rents nothing. It does not open the
-registration review, and it is not ready for it: the short pre-stated run and
-the evening ruling's record are owed a check by a second session, this
-version is owed its own check under the pairing rule of
+registration review, and it is not ready for it: the check of the short
+pre-stated run and of the evening ruling's record is filed and not yet
+merged (pull request 82), this version is owed its own check under the pairing rule of
 `docs/outside-review-protocol.md`, and section 19 has seven questions that
 are John's. It resolves none of them.

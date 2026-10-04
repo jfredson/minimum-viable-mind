@@ -45,10 +45,19 @@ and weaker than a reading. Its toy figures come from the controls re-run and
 not from the ruling packets: the entangled model reads 1.0051, 0.9926 and
 0.9974. It prints the 325 site sets the rule produces for the full-size
 model, and ends with a change log from version 3. **Three things stand
-between it and the registration review.** (a) The short pre-stated run and
-the record of the evening ruling still have no check by a second session;
-the drafting session looked for one and found none, so every figure taken
-from that run is marked "not yet checked by a second session". (b) Version 4
+between it and the registration review.** (a) The check of the short pre-stated run and of the evening ruling's record
+is not on the main line yet. None existed when the draft began. One was
+filed while it was being written, as pull request 82 (branch
+`check/short-prestated-run-2026-10-03` at `01c7d68`, open), and finds that
+both hold. Version 4 follows its four notes (the redefined control compares
+the outputs at the two action positions; the figure taken on the average
+over a site is good to an episode or two, and the registered code adds it up
+in 64-bit; what the short run added for the other-agent control is the part
+of its code after the floor; the piece's four fifths holds at the action
+position only), cites it by branch and commit, and marks every figure from
+the short run "checked, pull request 82, not yet merged". That pull request
+also edits this entry and `data/project.toml`, so whichever of the two is
+merged second will need the two edits put side by side. (b) Version 4
 is itself owed a check by a session that did not write it. (c) It puts seven
 questions to John where a ruling is unclear or a number is not yet set: the
 main ones are whether the whole read must still clear four fifths now that
