@@ -197,8 +197,8 @@ floor is not a margin; it is a coin. What holds the solver back with room to
 spare is, in order: **the gate on learning** (it fails by 64 to 140 of 3,000,
 and in the registered experiment a model that fails the gate is not read at
 all); **the piece rule** (best piece 20 to 25 of 180 against 144, the whole
-sampling band far below); and **the no-transplant rule** (outside its
-allowance by 0.11 to 0.14). The floor's verdict on this solver should not be
+sampling band far below); and **the no-transplant rule** (the rate misses
+its formula by 0.11 to 0.14, against an allowance of 0.018). The floor's verdict on this solver should not be
 cited as the reason it returns no verdict.
 
 ## 5. Description only: what the arithmetic would have returned
