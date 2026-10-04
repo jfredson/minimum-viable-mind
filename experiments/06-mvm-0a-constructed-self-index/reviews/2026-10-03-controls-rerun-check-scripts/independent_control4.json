@@ -1,0 +1,297 @@
+{
+ "donor_first": 407,
+ "models": {
+  "C/0": {
+   "as_run": 0.05375000089406967,
+   "as_run_donor_first": 0.056511055678129196,
+   "as_run_excess_by_single_layer": [
+    0.10500000417232513,
+    0.0325000025331974,
+    0.0025000013411045074,
+    0.0,
+    0.0
+   ],
+   "as_run_recipient_first": 0.05089058354496956,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.051249999552965164,
+   "layers": [
+    2
+   ],
+   "nominated_positions": "action",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.051249999552965164,
+   "untouched_donor_first": 0.051597051322460175,
+   "untouched_recipient_first": 0.05089058354496956
+  },
+  "C/1": {
+   "as_run": 0.05000000074505806,
+   "as_run_donor_first": 0.058968059718608856,
+   "as_run_excess_by_single_layer": [
+    0.0949999988079071,
+    0.001250002533197403,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "as_run_recipient_first": 0.040712468326091766,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.04874999821186066,
+   "layers": [
+    1
+   ],
+   "nominated_positions": "action+3",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.04874999821186066,
+   "untouched_donor_first": 0.056511055678129196,
+   "untouched_recipient_first": 0.040712468326091766
+  },
+  "C/2": {
+   "as_run": 0.13124999403953552,
+   "as_run_donor_first": 0.19901719689369202,
+   "as_run_excess_by_single_layer": [
+    0.09624999761581421,
+    0.07124999165534973,
+    -0.002499997615814209,
+    0.0,
+    0.0
+   ],
+   "as_run_recipient_first": 0.06106870248913765,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.05999999865889549,
+   "layers": [
+    1
+   ],
+   "nominated_positions": "post-identity",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.05999999865889549,
+   "untouched_donor_first": 0.058968059718608856,
+   "untouched_recipient_first": 0.06106870248913765
+  },
+  "F/0": {
+   "as_run": 0.13750000298023224,
+   "as_run_donor_first": 0.2063882052898407,
+   "as_run_excess_by_single_layer": [
+    0.08874998986721039,
+    0.07874999940395355,
+    0.042500000447034836,
+    0.0,
+    0.0
+   ],
+   "as_run_recipient_first": 0.0661577582359314,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.05874999985098839,
+   "layers": [
+    1
+   ],
+   "nominated_positions": "post-identity",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.05874999985098839,
+   "untouched_donor_first": 0.051597051322460175,
+   "untouched_recipient_first": 0.0661577582359314
+  },
+  "F/1": {
+   "as_run": 0.061250001192092896,
+   "as_run_donor_first": 0.0687960684299469,
+   "as_run_excess_by_single_layer": [
+    0.0937500074505806,
+    0.005000002682209015,
+    -0.0012499988079071045,
+    0.0,
+    0.0
+   ],
+   "as_run_recipient_first": 0.05343511328101158,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.05624999850988388,
+   "layers": [
+    1
+   ],
+   "nominated_positions": "action+3",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.05624999850988388,
+   "untouched_donor_first": 0.058968059718608856,
+   "untouched_recipient_first": 0.05343511328101158
+  },
+  "F/2": {
+   "as_run": 0.13375000655651093,
+   "as_run_donor_first": 0.20393119752407074,
+   "as_run_excess_by_single_layer": [
+    0.07499999552965164,
+    0.0650000050663948,
+    0.019999995827674866,
+    0.002499997615814209,
+    0.0
+   ],
+   "as_run_recipient_first": 0.06106870248913765,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.06875000149011612,
+   "layers": [
+    1
+   ],
+   "nominated_positions": "post-identity",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.06875000149011612,
+   "untouched_donor_first": 0.07616707682609558,
+   "untouched_recipient_first": 0.06106870248913765
+  },
+  "M/0": {
+   "as_run": 0.11375000327825546,
+   "as_run_donor_first": 0.2186732143163681,
+   "as_run_excess_by_single_layer": [
+    0.11124999821186066,
+    0.10125000029802322,
+    0.03375000134110451,
+    0.006250000558793545,
+    0.0
+   ],
+   "as_run_recipient_first": 0.005089058540761471,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.012500000186264515,
+   "layers": [
+    1
+   ],
+   "nominated_positions": "post-identity",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.012500000186264515,
+   "untouched_donor_first": 0.019656019285321236,
+   "untouched_recipient_first": 0.005089058540761471
+  },
+  "M/1": {
+   "as_run": 0.09749999642372131,
+   "as_run_donor_first": 0.18427518010139465,
+   "as_run_excess_by_single_layer": [
+    0.07874999940395355,
+    0.07999999821186066,
+    0.023750001564621925,
+    0.009999999776482582,
+    0.0
+   ],
+   "as_run_recipient_first": 0.007633587811142206,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.017500000074505806,
+   "layers": [
+    1
+   ],
+   "nominated_positions": "post-identity",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.017500000074505806,
+   "untouched_donor_first": 0.027027027681469917,
+   "untouched_recipient_first": 0.007633587811142206
+  },
+  "M/2": {
+   "as_run": 0.09875000268220901,
+   "as_run_donor_first": 0.1867321878671646,
+   "as_run_excess_by_single_layer": [
+    0.10750000178813934,
+    0.08500000089406967,
+    0.02500000037252903,
+    0.00624999962747097,
+    0.0
+   ],
+   "as_run_recipient_first": 0.007633587811142206,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.013749999925494194,
+   "layers": [
+    1
+   ],
+   "nominated_positions": "post-identity",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.013749999925494194,
+   "untouched_donor_first": 0.019656019285321236,
+   "untouched_recipient_first": 0.007633587811142206
+  },
+  "T/0": {
+   "as_run": 0.0,
+   "as_run_donor_first": 0.0,
+   "as_run_excess_by_single_layer": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "as_run_recipient_first": 0.0,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.0,
+   "layers": [
+    0
+   ],
+   "nominated_positions": "action",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.0,
+   "untouched_donor_first": 0.0,
+   "untouched_recipient_first": 0.0
+  },
+  "T/1": {
+   "as_run": 0.0,
+   "as_run_donor_first": 0.0,
+   "as_run_excess_by_single_layer": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "as_run_recipient_first": 0.0,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.0,
+   "layers": [
+    0
+   ],
+   "nominated_positions": "action",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.0,
+   "untouched_donor_first": 0.0,
+   "untouched_recipient_first": 0.0
+  },
+  "T/2": {
+   "as_run": 0.0,
+   "as_run_donor_first": 0.0,
+   "as_run_excess_by_single_layer": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "as_run_recipient_first": 0.0,
+   "as_run_sites_differing": 0.5309336185455322,
+   "before_both": 0.0,
+   "layers": [
+    0
+   ],
+   "nominated_positions": "action",
+   "outputs_bit_identical_as_run_recipient_first": true,
+   "outputs_bit_identical_before_both": true,
+   "states_identical_before_both": true,
+   "untouched": 0.0,
+   "untouched_donor_first": 0.0,
+   "untouched_recipient_first": 0.0
+  }
+ },
+ "pairs": 800,
+ "recipient_first": 393,
+ "signal_identical_before_both": true,
+ "tokens_identical": true
+}
