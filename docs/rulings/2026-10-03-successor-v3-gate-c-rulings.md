@@ -107,6 +107,15 @@ re-run.
 | 17 | Fifty timed steps are accepted for the second release's arithmetic; the five-hundred-step figure is taken from the first full-size run, and the later runs are repriced from it before the second release is asked for |
 | 19 | The position sets are the rehearsal's four, by name |
 
+*Dated note, 2026-10-03 (Pacific), later the same day, beside the table
+above, which is left as written. After the controls re-run John ruled again
+on two of its rows (`docs/rulings/2026-10-03-controls-rerun-rulings.md`):
+**decision 15's 0.05 tolerance is withdrawn**, control 2 being kept as a
+reported description with no pre-stated pass line; and **decision 16 is
+reversed**, control 4 being redefined on both twins and made a control that
+holds. Page 1 of this file also gains a reported figure, the piece's accuracy
+at the other positions of its site, with the rule itself unchanged.*
+
 ### Page 11 — what a no verdict maps to (decision 14)
 
 1. **No verdict on arm C** fires the two-arm fallback already accepted on

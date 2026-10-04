@@ -27,6 +27,22 @@ does both jobs late. Every statement is checked against the main line, the two
 open pull requests or the compute ledger, and says which. Nothing here is a
 ruling. Nothing was launched, rented or spent by this session.*
 
+**Last on 2026-10-03: John ruled the three questions the re-run raised**
+(`docs/rulings/2026-10-03-controls-rerun-rulings.md`, "Agreed on all",
+authorship mixed). The other-agent control (control 2) is kept as a reported
+description and its 0.05 pass line is withdrawn. The too-early-position
+control (control 4) is redefined on both twins and can withhold a reading
+again; this reverses his ruling of that morning and rests on an
+after-the-fact diagnostic that no second session has checked. A piece
+transplanted at several positions has its accuracy at the other positions
+reported, not gated. **What is owed before version 4 of the proposal can go
+to the registration review, all at $0 and all for a session that has written
+none of today's work:** the check of the re-run; one short pre-stated run
+(control 4 as redefined, the new column, control 2's code path with the
+floor switched off); and the check of the two ruling packets and their
+records. One session wrote the review, both packets, both ruling records and
+the re-run; that is the thing the checks exist to offset.
+
 **Later still, 2026-10-03: the controls re-run is done; two things go to
 John.** The re-run John's ruling made a precondition of the registration
 review ran on the laptop at $0, method committed before output
