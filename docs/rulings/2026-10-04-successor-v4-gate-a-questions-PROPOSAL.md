@@ -25,8 +25,9 @@ packet asks only the questions that are John's, six of them.
    write the review. It did run two small measurements at $0 that pages 1
    and 4 rest on (`docs/2026-10-04-gate-a-v4-dispositions-measurements.md`,
    with the method committed before the output).
-2. **It is owed a check** by a session that did not write it, before John
-   relies on a number in it.
+2. **It has been checked** by a session that did not write it (pull
+   request 96): both measurements reproduced exactly; four wording defects
+   it found are fixed here, and its caveat is on page 1.
 3. **The outside reviewers have not answered yet.** Their findings will come
    in their own packet. These six can be ruled now; nothing here waits on
    them.
@@ -41,7 +42,7 @@ session checks it.
 
 | Page | Question | Recommendation (John's to overturn) | Confidence |
 |---|---|---|---|
-| 1 | **The fatal one.** The free model's gate requires "batteries" this task does not have, so as written the free model could never be read (RT-237). Strike the clause, or replace it? | **Replace** it with a check the task can evaluate: with the acting channel removed, the model still answers with one of the four values the rest of the act allows, 1,546 or more of 3,000, on two seeds of three. Amends your ruling of 2026-09-26, page 1h | moderate to high |
+| 1 | **The fatal one.** The free model's gate requires "batteries" this task does not have, so as written the free model could never be read (RT-237). Strike the clause, or replace it? | **Replace** it with a check the task can evaluate: with the acting channel removed, the model still answers with one of the four values the rest of the act allows, 1,546 or more of 3,000, on two seeds of three. Amends your ruling of 2026-09-26, page 1h. Weaker than it looks: see page 1's caveat | moderate; striking the clause is a close second |
 | 2 | The floor as printed would let a model at chance through, and a sentence you adopted on 2026-10-04 has a wrong figure (RT-238, RT-244) | Write the code's own safeguard into the text, and correct the figure | high |
 | 3 | The text never writes down the episode format that keeps the model's own name out of the moment it acts (RT-239) | Register the format in full: the rehearsal's grammar at its sizes, its two deliberate differences from the closed design, and the self-tests that check them | high |
 | 4 | The episode counts you ruled on 2026-10-03 were tried only at a third of the registered width (RT-240) | Fit every read on 1,800 development episodes, not 420; one $0 toy re-run, checked, before registration | moderate |
@@ -88,13 +89,26 @@ four:
 - **(a) Replace the clause with that count**, line 1,546 of 3,000, on two
   seeds of three.
 - **(b) Strike the clause**, with its reason on the record. Simpler; a
-  channel removal that wrecked the model would then count as a collapse.
+  channel removal that left the model answering at random would then count
+  as a collapse.
 - **(c) Report the count with no line.** Weaker than either.
 
-**Recommendation: (a).** It keeps what page 1h asked for, it has been
-measured on every toy model, its line comes from chance rather than from any
-toy figure, and it passes the free model by more than 550 episodes.
-*Confidence: moderate to high.* **Strongest alternative: (b).**
+**The caveat, found by the independent check of this packet (pull request
+96, section 6).** The check refuses a model that answers with noise. It
+cannot tell whether switching the channel off broke the step "find the item
+the action names": a model that had lost the item and answered the successor
+of any of the eight values shown would score about **2,257** of 3,000, above
+the line and above the free model's lowest seed (2,100). The line cannot be
+raised to catch that without failing the toy's free model on two seeds and
+its entangled model on all three. So what (a) shows is only "the model still
+answers with the successor of a value it was shown", and if it is ruled, the
+registered sentence says exactly that.
+
+**Recommendation: (a), narrowly.** It keeps part of what page 1h asked for,
+it has been measured on every toy model, its line comes from chance rather
+than from any toy figure, and it passes the free model by more than 550
+episodes. But for the reason above it is closer to (b) than it first looked.
+*Confidence: moderate.* **Strongest alternative, and a close one: (b).**
 
 **Either way**, the closure rule requires a measured check by a session other
 than the one that writes the fix. The dispositions file lists it: every

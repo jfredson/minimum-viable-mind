@@ -39,7 +39,13 @@ the registration text, and why.*
 2. **It is owed a check.** A proposal on its way to John is binding text
    under the pairing rule (`docs/outside-review-protocol.md`, "The pairing
    rule"), so a session that did not write it checks it, and checks the two
-   measurements, before John relies on a number in it. That has not happened.
+   measurements, before John relies on a number in it. **Done:** an independent check was
+   filed as pull request 96 (branch `check-gate-a-v4-dispositions`, filed in
+   the experiment's reviews folder on that branch, not yet on this one; called "the check of these dispositions"
+   below). Both measurements reproduced exactly. It found four text defects
+   and two smaller points, all fixed in this revision, and a caveat on the
+   battery-clause repair, now stated under RT-237 and on page 1 of the
+   packet.
 3. **The outside review is not in it.** The outside (tier 2) packet is with
    John; no outside response is filed. The outside reviewers' findings will
    need their own dispositions. These ten can be ruled now or together with
@@ -85,9 +91,9 @@ All from the root of this worktree on 2026-10-04, with the project's Python
 
 | # | Command (abridged to what it tests) | Output | What it shows |
 |---|---|---|---|
-| C1 | `grep -n -i "batter" V4` (excluding the three hits about the closed design's batteries) | line 2223: "the ownership-free state and syntax batteries **must hold**."; line 2270: "...the ownership-free batteries must hold; gates arm F only" | The battery clause is in section 8.2 and the section 9 row, as the review says |
+| C1 | `grep -n -i "batter" V4` (excluding the four other hits: three about the closed design's batteries and one, line 1769, about this design's "control battery") | line 2223: "the ownership-free state and syntax batteries **must hold**."; line 2270: "...the ownership-free batteries must hold; gates arm F only" | The battery clause is in section 8.2 and the section 9 row, as the review says |
 | C2 | `grep -n "batteries" docs/rulings/2026-09-26-weekend-1-queue.md` | line 66: "...named-other clause is reported and not gated; the ownership-free batteries" | John's ruling of 2026-09-26, page 1h, carries the clause; removing it amends that ruling |
-| C3 | `lesion_content_check.py` (part A of this session's measurements) | line 1,546 of 3,000; with the channel zeroed the free model's candidate counts are 2,100 / 2,238 / 2,324, arms T, C, M and the competing solver hold on 3 of 3 seeds, untrained weights 0 / 620 / 726 hold on 0 of 3 | The proposed replacement clause can be evaluated, refuses a broken model and passes every trained one (MEASURED, NOT A RESULT about the question) |
+| C3 | `lesion_content_check.py` (part A of this session's measurements) | line 1,546 of 3,000; with the channel zeroed the free model's candidate counts are 2,100 / 2,238 / 2,324, arms T, C, M and the competing solver hold on 3 of 3 seeds, untrained weights 0 / 620 / 726 hold on 0 of 3 | The proposed replacement clause can be evaluated, refuses a model that answers with noise and passes every trained one (it would also pass a model that lost which item is named: see RT-237) (MEASURED, NOT A RESULT about the question) |
 | C4 | compare part A's correct counts with `out-repairs/gate_base.json` | 15 of 15 trained models equal, with the channel on and zeroed | The new script measures on the same episodes and models as the committed gate |
 | C5 | `sed -n 276p experiments/rehearsal-successor-measure/src/repairs.py` and `grep -c "need > 0" V4` | `clears=bool(whole - untouched >= need and need > 0)`; `0` | The code refuses a requirement at or below zero; the text does not say so (RT-238) |
 | C6 | re-run of the review's `solver_sentence.py`, `floor_forms.py` and `older_figures.py`, diffed against their committed outputs | 0 lines differ in all three | The figures behind RT-242, RT-243 and RT-244 reproduce; the replacement sentences below quote them |
@@ -106,13 +112,13 @@ the recommendation is the right ruling.
 
 | Finding | Reviewer | The finding, in plain words | Severity as filed | Proposed ruling | Confidence | What closes it |
 |---|---|---|---|---|---|---|
-| RT-237 | tier 1 (the review) | The free model's channel-removal gate requires "the ownership-free state and syntax batteries" to hold; the task has no such batteries, so the gate cannot be evaluated and, by stop condition S8, counts as failed: the free model could never be read | fatal | **PROPOSED: ACCEPT WITH CHANGE.** Replace the clause with the ownership-free part of the act, with a chance line of 1,546 of 3,000, two seeds of three. Amends page 1h of the 2026-09-26 ruling | high that the clause must go; moderate-to-high on the replacement over striking it | The registration text without the battery clause, and the reviewer-owned measured check listed under RT-237 below |
+| RT-237 | tier 1 (the review) | The free model's channel-removal gate requires "the ownership-free state and syntax batteries" to hold; the task has no such batteries, so the gate cannot be evaluated and, by stop condition S8, counts as failed: the free model could never be read | fatal | **PROPOSED: ACCEPT WITH CHANGE.** Replace the clause with the ownership-free part of the act, with a chance line of 1,546 of 3,000, two seeds of three. Amends page 1h of the 2026-09-26 ruling | high that the clause must go; moderate on the replacement over striking it (the check of these dispositions showed it would pass a model that lost which item is named) | The registration text without the battery clause, and the reviewer-owned measured check listed under RT-237 below |
 | RT-238 | tier 1 | The whole-state floor as printed admits every site set, with a divisor of zero or below, on a model at chance; only an unwritten clause of the code refuses it | serious | **PROPOSED: ACCEPT.** Write the code's clause (the requirement must be above zero) into section 6.4 item 1 and the section 9 row | high | The text change, and the review's floor-from-text check re-run with the clause, giving 0 of 45 site sets on the competing solver, as the code does |
 | RT-239 | tier 1 | The registration describes the grammar as an extension of the closed design's, which shows the model its own name three tokens before it acts; the two departures that remove that cue are written nowhere in it | serious | **PROPOSED: ACCEPT WITH CHANGE.** Register the episode format in full (the rehearsal's grammar at its sizes), with both departures and the self-tests that assert them; say the closed design's batteries and twelve turns are not carried | high | The text change; a search showing the departures and self-tests named; step 3's self-test run on the built generator |
 | RT-240 | tier 1 | The ruled counts (a read fitted on 420 episodes) were rehearsed only at width 160; on a stand-in at the registered width 448 the entangled model's read falls below the floor on two seeds of three | serious | **PROPOSED: ACCEPT WITH CHANGE.** Fit every read on 1,800 development episodes with 180 held out; the transplant passes stay on 600 pairs. Toy re-run under it before registration. New weakness stating the stand-in's limits. Amends ruling 4 of 2026-10-03, late evening | moderate | The toy re-run and its check; the text change |
 | RT-241 | tier 1 | The outcome map has holes: no verdict on the separable model maps to nothing; the two-model fallback has no term; "R3 for that arm"; a failed channel-removal check; who gets the one re-run | serious | **PROPOSED: ACCEPT WITH CHANGE.** One outcome table in section 3, frozen in section 7.4, with three new registered terms, arm M's gate failure dropping arm M, and a stated rule for the one re-run | moderate; low on the exact words of the new terms, which are John's | The table in the text, and a check that every arm-level state the review lists maps to exactly one term |
 | RT-242 | tier 1 | "The three candidates reach 0.733, 0.383 and 0.478" quotes one candidate's three seeds | worth-noting | **PROPOSED: ACCEPT** as the review words the fix | high | The text change (figures reproduce, C6) |
-| RT-243 | tier 1 | "On the toy [the two forms of the floor] never did [disagree]" holds for the own-directed grids only; they disagree on 576, 892 and 1,080 rows elsewhere, always with the plain form passing a model near chance | worth-noting | **PROPOSED: ACCEPT.** Narrow the sentence and cite the disagreements as the reason the corrected form is registered | high | The text change (figures reproduce, C6) |
+| RT-243 | tier 1 | "On the toy [the two forms of the floor] never did [disagree]" holds for the own-directed grids only; they disagree on 576, 892 and 1,080 rows elsewhere, always with the plain form passing where the registered form refuses, almost always on a model near chance | worth-noting | **PROPOSED: ACCEPT.** Narrow the sentence and cite the disagreements as the reason the corrected form is registered | high | The text change (figures reproduce, C6) |
 | RT-244 | tier 1 | The sentence John ruled in on 2026-10-04 says the solver's untouched rate "missed the no-transplant rule by 0.11 or more"; it missed the formula by 0.109 or more and the allowance by 0.091 or more | worth-noting | **PROPOSED: ACCEPT WITH CHANGE.** Correct the figure; its first clause becomes true once RT-238 is accepted. Amends the wording of ruling 2 of 2026-10-04 | high | The text change (figures reproduce, C6) |
 | RT-245 | tier 1 | Running the registered nomination on the laptop is argued, not measured; the device ruling covers the read's fit, not the transplant passes that choose the site set | worth-noting | **PROPOSED: ACCEPT WITH CHANGE.** Cite the review's timing (about two hours per model, about 25 hours for twelve, $0) in place of the argument; name the processor and number format for the whole nomination and reading | high | The text change |
 | RT-246 | tier 1 | The weakness ruled on 2026-10-04 says the toy has no model doing the task "by another route"; the free model is one, and the measure returns no verdict on it | worth-noting | **PROPOSED: ACCEPT WITH CHANGE.** Write the weakness with both halves: the route the toy has seen, and the one it has not | high | The text change |
@@ -161,8 +167,13 @@ honestly", added at its end:**
 > and 726 and do not (MEASURED, a rehearsal record and not a result:
 > `docs/2026-10-04-gate-a-v4-dispositions-measurements.md` at [commit],
 > part A, from `out-lesion-content-check/lesion_content_check.json`; checked
-> at [commit of the check]). So the check refuses a model whose lesion broke
-> the act and passes every trained toy model by 554 episodes or more.
+> at [commit of the check]). So the check refuses a model that answers with
+> noise and passes every trained toy model by 554 episodes or more. It shows
+> that the model still answers with the successor of a value it was shown;
+> it does **not** show that the model still uses the right item: a model
+> that had lost which item the action names, and answered the successor of
+> any of the eight values shown, would score about 2,257 of 3,000 and pass
+> (the check of these dispositions, pull request 96, section 6).
 
 **Text change 3, the section 9 row "Ownership-lesion collapse threshold"
 (line 2270).** Replace "the ownership-free batteries must hold" with "with
@@ -176,8 +187,9 @@ ownership-lesion rule with its two-of-three clause" with "and the
 channel-removal rule: its collapse line and its ownership-free line (1,546 of
 3,000), each with its two-of-three clause".
 
-**Text change 5, section 6.4, item 5's requirement on the registered code**,
-one sentence added: "The gate's code writes, for every arm and seed, the
+**Text change 5, section 8.2, after the bullets, and the gate code named in
+section 11, step 3** (placed where a builder of the gate looks, not under
+section 6.4's reading controls), one sentence added: "The gate's code writes, for every arm and seed, the
 lesioned own-directed count and the lesioned candidate count, so that every
 clause of every gate is evaluated on a named field."
 
@@ -195,13 +207,23 @@ values on the right item, and the one-in-four collapse level the gate
 already uses assumes exactly that. Measured today at $0 on every committed
 toy model, the counterpart can be evaluated on a field every gate run can
 record, its line comes from chance and not from any toy figure, it refuses a
-broken model (untrained weights reach at most 726 against 1,546) and it
-passes every trained model, the free one by 554 episodes or more. So it adds
-no realistic new way for the free model to go unread, and it is rehearsed,
+model that answers with noise (untrained weights reach at most 726 against
+1,546) and it passes every trained model, the free one by 554 episodes or
+more. So it adds no realistic new way for the free model to go unread, and it is rehearsed,
 which is the reason a second collapse line was not taken on 2026-09-26 (the
-Gate C rulings, RT-220). **Strongest alternative:** strike the clause, with
-its reason on the record. That is simpler and is a valid ruling; its cost is
-that a channel removal that wrecked the model would count as a collapse.
+Gate C rulings, RT-220). **What it does not do, found by the check of these
+dispositions (section 6):** it cannot tell whether the lesion broke the step
+"find the item the action names". A model that lost the item and answered the
+successor of any value shown would score about 2,257, above the line and above
+the free model's lowest seed (2,100), and the line cannot be raised to catch
+it without failing arm F on two seeds and arm C on all three. So the check is
+weaker than "the model kept its grip on the episode": it shows only that the
+model still answers the successor of a value it was shown, and the
+registered sentence should say exactly that. **Strongest alternative,
+closer than it first looked for that reason:** strike the clause, with its
+reason on the record. That is simpler and is a valid ruling; its cost is
+that a channel removal that left the model answering at random would count
+as a collapse.
 **A second alternative:** keep the new count as a reported figure with no
 line. Weaker than either, because page 1h made the clause a condition.
 
@@ -214,9 +236,18 @@ rule makes it the tier 1 reviewer's, not the author's: `docs/outside-review-prot
    named-other report, the ownership-free line and its two-of-three clause),
    name the field of a committed rehearsal output file that evaluates it and
    print the field's values for arm F's three seeds. A clause with no field
-   leaves the finding open. And `grep -n -i "batter"` over sections 0 to 16
-   returns only the sentence recording the replacement. (This is the test the
-   review proposed for the known-failure list, run on this gate.)
+   leaves the finding open. **The test is for a condition, not a word:** no
+   sentence in sections 0 to 16 sets a condition on any battery, question set
+   or other quantity the successor's task does not produce. A word search is
+   only a way to find candidates: on the proposed text `grep -n -i "batter"`
+   over sections 0 to 16 finds six lines (the check of these dispositions,
+   section 1.2), namely the sentence recording the replacement (section 8.2),
+   the sentence saying the closed design's batteries are not carried
+   (section 4.1), three passages describing the closed design's record
+   (sections 1 and 3) and the phrase "the control battery" (section 7.3), and
+   none of them sets a condition. Each hit is read and classified; a hit that
+   sets a condition leaves the finding open. (This is the test the review
+   proposed for the known-failure list, run on this gate.)
 2. **The figures recompute from independent code.** Without importing
    `lesion_content_check.py`, compute the candidate count with the channel
    zeroed on the fifteen committed trained models (arms T, C, M, F and the
@@ -296,7 +327,8 @@ rehearsal's shrunken version of it is
 > training, development and fresh pools; 56 tokens). **Eight assignment
 > turns**, one per agent and item, in random order, rendered
 > `<marker> assign <item> <value>`; within an item the four values are
-> distinct. **Two action turns**, last, in random order, rendered
+> distinct, except in the collision set for control 6, where two agents
+> share a value on one item (section 4.2). **Two action turns**, last, in random order, rendered
 > `<act> revise <who> <item> <ans> <mask>`: on the own-directed action
 > `<who>` is the special word meaning "your own", and on the named-other
 > action it is the named agent's marker word. The correct answer is the
@@ -354,10 +386,12 @@ only".
 
 > **The read's fitting count was chosen on a stand-in.** The toy's state is
 > 160 wide and the registered model's 448. Fitted on 420 episodes, the read
-> held the label on every toy model; on a stand-in at width 448 (the toy
-> states with 288 coordinates of independent noise appended) the entangled
-> model's 8-direction piece fell to as low as 74 and 129 of 180 on two seeds
-> against 144. Fitting on 1,800 episodes brought every seed back above the
+> held the label on every constructed toy model (arms T, C and M; the free
+> model's read failed its floor on every seed, as section 5.4 records); on a
+> stand-in at width 448 (the toy states with 288 coordinates of independent
+> noise appended) the entangled model's 8-direction piece fell to as low as
+> 76 and 126 of 180 on two seeds against 144 (the review's 600 episodes), and
+> 74 and 129 on a larger pool with a fixed held-out set (part B). Fitting on 1,800 episodes brought every seed back above the
 > floor on every noise draw (smallest 156); 900 episodes and stronger
 > regularisation did not (MEASURED on a stand-in, NOT A RESULT: the inside
 > review of version 4, RT-240, `width_vs_count.out.txt`;
@@ -405,7 +439,9 @@ verdict maps to".
 **Text change 1, section 3, the new table and its two rules:**
 
 > **Every state the registered runs can reach, and its registered term
-> (the inside review of version 4, RT-241; ruled [date]).** An arm *reads*
+> (ruled 2026-10-03, page 11, closing the no-verdict finding RT-182 of the
+> review of version 1, for arms C, M and F; completed for every arm by the
+> inside review of version 4, RT-241, ruled [date]).** An arm *reads*
 > if two or more of its seeds read; it returns *no verdict* if two or more
 > seeds do. Rules are applied in this order.
 >
@@ -515,11 +551,14 @@ with
 > (MEASURED: the repairs findings at `882f252`, section 3; the re-run records
 > both forms on every row,
 > `experiments/rehearsal-successor-measure/out-v3-rules/measure_*_seed*.json`,
-> `reading.floor`). Elsewhere on the toy they do, always the same way: the
-> plain form passes a model near chance and the registered form refuses it,
-> on 576 rows of the repairs run's other-agent grids, 892 rows of the grammar
+> `reading.floor`). Elsewhere on the toy they do, always in the same
+> direction, the plain form passing where the registered form refuses: on
+> 576 rows of the repairs run's other-agent grids, 892 rows of the grammar
 > attempt's grids and all 1,080 rows of the competing solver's (MEASURED: the
-> inside review of version 4, RT-243, `floor_forms.out.txt`). That is the
+> inside review of version 4, RT-243, `floor_forms.out.txt`). Almost all are
+> on models near chance; five are on the grammar attempt's free model with
+> its own-directed condition learned, missed by 0.011 or less (the check of
+> these dispositions, section 3.2, defect 3). That is the
 > reason the chance-corrected form is the one registered.
 
 **Reason.** The counts reproduce (C6). The narrowed sentence is true, and the
