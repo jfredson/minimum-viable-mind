@@ -354,3 +354,47 @@ either PROPOSAL document, or write version 5. It did not run the toy re-run
 that RT-240 asks for, or train anything. It did not check the outside packet
 or any outside response (none is filed). It did not merge anything. It did
 not spend anything.
+
+---
+
+## Re-check of the fixes at `52f8d54` (2026-10-04, Pacific)
+
+*The same checking session did this, in a new worktree detached at
+`origin/gate-a-v4-dispositions` (`52f8d54`). It checked only the changes from
+`4fec1a5` to `52f8d54`. Nothing was spent.*
+
+**What changed.** `git diff --stat 4fec1a5 52f8d54` touches only the two
+PROPOSAL documents. The measurement documents, scripts and outputs are
+untouched. Every changed passage answers an item of this check, or says the
+check was done. Nothing else in either document changed.
+
+| Item | Asked for | At `52f8d54` | Verdict |
+|---|---|---|---|
+| Defect 1, the "batter" search in RT-237's closure check | Test for a condition, not the word; list the expected hits | The check is reworded to "no sentence sets a condition". It lists the six hits and says each is to be read and classified. `batter_search.py`, run again on the revised text, still finds exactly those six (lines 263, 436, 438, 503, 1794, 2250). C1 now counts four other hits. | **holds**, with one location slip noted below |
+| Defect 2, the false RT-240 weakness | "every constructed toy model (arms T, C and M)"; the review's 76 and 126 beside part B's 74 and 129 | Both done. The free model's failed read is cited to section 5.4, which records it (best piece 34 of 180). | **holds** |
+| Defect 3, RT-243's "near chance" | Keep the direction; say five rows are on the grammar attempt's free model, missed by 0.011 or less | Done, in the replacement text and in the summary table | **holds** (nit below) |
+| Defect 4, RT-239's "values distinct" | Add the exception for control 6's collision set | Done, citing section 4.2 | **holds** |
+| Smaller point, RT-237 text change 5 | Move it to section 8.2 and step 3 | Moved | **holds** |
+| Smaller point, RT-241's provenance | Keep the page 11 / RT-182 citation | Kept in the table's heading, alongside RT-241 | **holds** |
+| Page-1 caveat | Say what the check does and does not show; about 2,257; the line can't be raised | It is in RT-237's text change 2, its reason, the C3 and summary-table rows, and page 1 of the packet. Confidence is lowered to moderate, and (b) is named as a close second. The figures (2,257; 2,100; two seeds of arm F, all three of arm C) match section 6. | **holds** |
+| Checker scripts on the two revised documents | Run them | `check_citations.py`: 0 confident findings in each document; one item to look at (the same "$0" as before). `check_single_source.py`: 0 confident findings; one item to look at ("$0"). | **holds** |
+
+**Two slips, neither blocking (MEASURED by locating the lines in version 4):**
+
+- **Wrong section, and the slip is mine.** The closure check's list puts the
+  closed design's passages in "sections 1 and 3". Line 263 is in section 2,
+  so it should read "sections 2 and 3". This came from the wording I
+  suggested in defect 1, which made the same error.
+- **"Three passages" should be "two".** The revised text says "three
+  passages". Lines 436 and 438 are one sentence, so there are two passages
+  (three lines).
+
+**Nit on defect 3.** The sentence says "five are on the grammar attempt's free
+model". Four of those five are among the 892 rows it counts. The fifth is in
+`out-grammar-c/outcomes.json`, which it does not count. The text is accurate
+enough, and the next edit could say so.
+
+**Verdict.** All four defects, both smaller points and the page-1 caveat are
+fixed as this check asked. Nothing else changed. The dispositions and the
+packet are fit to go to John. The two slips can be corrected whenever version
+5 is written.
