@@ -704,6 +704,26 @@ decision = false
 teaches = "Run, at $0. The ruled change works on the toy: the separable model reads 0, the entangled model 0.99 to 1.005, the mixed model about 0.5, the free model no verdict, and the transplant code's known-answer test passes everywhere. Two things came out of it for John: the other-agent control cannot be exercised on any toy model, and the too-early-position control was transplanting at positions where the donor already knows who it is."
 status = "in-progress"
 
+[[next_steps]]
+id = "N20"
+title = "A fresh session checks today's work and makes one short pre-stated run"
+when = "next; version 4 of the proposal waits on it"
+owner = "a Claude Code session that wrote none of the 2026-10-03 work"
+cost = "$0, laptop"
+decision = false
+teaches = "Whether the controls re-run reproduces from its committed code; whether the redefined too-early-position control really changes nothing on every toy model when run as a pre-stated quantity; what a transplanted piece's accuracy is at the other positions of its site; and whether the two ruling packets and their records say what the review and the re-run say. One session wrote all of it, so this is the offset."
+status = "pending"
+
+[[next_steps]]
+id = "N21"
+title = "Version 4 of the proposal, as registration text"
+when = "after the checks and the short run"
+owner = "a Claude Code session drafts, a second checks"
+cost = "$0"
+decision = false
+teaches = "Every ruling of 2026-10-03 written into one text with its frozen numbers and the printed site list, ready for the registration review on both tiers."
+status = "pending"
+
 # ---------------------------------------------------------------------------
 # Spend. Registered caps are protocol, not budget: exceeding one is a violation.
 # ---------------------------------------------------------------------------
@@ -732,6 +752,12 @@ note = "Updated 2026-10-03: plus about $0.55 for the two attempts at the small r
 # The story so far: one row per STATUS.md entry, newest first. kind:
 # result | null | ruling | process | spend | build
 # ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-10-03"
+kind = "ruling"
+title = "Three rulings after the controls re-run: one control loses its pass line, one is redefined and can veto again, one new figure is reported"
+summary = "The other-agent control is kept as a description with no pre-stated pass line, since no toy model can exercise it. The too-early-position control is redefined on both twins of a pair and becomes a control that holds, reversing the morning's ruling; this rests on an after-the-fact diagnostic not yet checked by a second session. The accuracy of a piece transplanted at several positions is reported at each. One short pre-stated run and three checks are owed before the registration text. Nothing spent."
 
 [[timeline]]
 date = "2026-10-03"
