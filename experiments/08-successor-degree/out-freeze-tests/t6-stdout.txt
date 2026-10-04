@@ -1,0 +1,22 @@
+  [10M T train] TRAINING COMPLETE
+  [10M T measure] [T/0] done in 394s: arithmetic 0.0, controls 7/4 hold True/True -> out-freeze-tests/t6-pipeline/10M/measure/row_T_seed0.json
+  [10M C train] TRAINING COMPLETE
+  [10M C measure] [C/0] done in 401s: no site set -> out-freeze-tests/t6-pipeline/10M/measure/row_C_seed0.json
+  [10M M train] TRAINING COMPLETE
+  [10M M measure] [M/0] done in 412s: arithmetic 0.0, controls 7/4 hold True/True -> out-freeze-tests/t6-pipeline/10M/measure/row_M_seed0.json
+  [10M F train] TRAINING COMPLETE
+  [10M F measure] [F/0] done in 339s: no site set -> out-freeze-tests/t6-pipeline/10M/measure/row_F_seed0.json
+  [10M summary] 
+  [10M summary] outcome: substrate not a testbed
+  [10M summary] note: arm M returned no verdict; it is dropped and carried as an extension (section 3)
+  [10M summary] 
+  [30M T train] TRAINING COMPLETE
+  [30M T measure] [T/0] done in 1659s: arithmetic 0.0, controls 7/4 hold True/True -> out-freeze-tests/t6-pipeline/30M/measure/row_T_seed0.json
+  [30M C train] TRAINING COMPLETE
+  [30M C measure] [C/0] done in 1684s: arithmetic None, controls 7/4 hold True/True -> out-freeze-tests/t6-pipeline/30M/measure/row_C_seed0.json
+  [30M M train] TRAINING COMPLETE
+  [30M M measure] [M/0] done in 1396s: arithmetic None, controls 7/4 hold True/True -> out-freeze-tests/t6-pipeline/30M/measure/row_M_seed0.json
+  [30M F train] TRAINING COMPLETE
+  [30M F measure] [F/0] done in 971s: no site set -> out-freeze-tests/t6-pipeline/30M/measure/row_F_seed0.json
+exit 1 (30M arm F and the 30M summary run separately after the job hit its time limit)
+summarise re-run for 10M and 30M after fixing the table writer (a true-slot reading that was not made crashed it); both exit 0

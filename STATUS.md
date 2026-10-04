@@ -14,11 +14,77 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
-## WHERE THINGS STAND 2026-10-03 — Weekend 1 did its four jobs and the proposal is at version 3, unreviewed and unmerged; nothing has moved since 2026-09-26; the registration will not be committed this weekend
+## WHERE THINGS STAND 2026-10-04 — the successor's code is frozen and tested at $0; the go packet for the four development runs is ready; nothing launched
 
 *This section is the current state. Everything below it is the older
 record, newest first, and is left exactly as written (except that this
 two-line note was moved up from the entry below).*
+
+*Written 2026-10-04 by the Claude Code session that froze the code. Laptop
+only; nothing rented; $0. Method before any test ran:
+`docs/successor-code-freeze-method-2026-10-04.md`; findings:
+`docs/2026-10-04-successor-code-freeze.md`.*
+
+**What changed in how work is scheduled (John, 2026-10-04, relayed by the
+planning session that day).** No Minimum Viable Mind step is scheduled on a
+future date any more: each runs as soon as what it needs is in place. The
+weekend plan (`docs/weekend-roadmap-2026-09-24.md`) no longer sets timing; the
+two kill dates (registration committed by 2026-10-18; the remaining registered
+runs launched by 2026-11-01) stay as outer limits only.
+
+**What happened between the entry below and this one** (all on the main line
+before this session began; this session did none of it): the ordinary
+competing solver was put through the measurement as now registered (pull
+request 88), the other-agent control was run against twenty random pieces
+(pull request 89, not a result), both were checked by another session (pull
+request 90), and John ruled the seven questions they raised in the words
+"Agreed on all seven" (`docs/rulings/2026-10-04-competing-solver-and-control-2-rulings.md`,
+pull request 91). The registration review's inside pass is with another
+session.
+
+**The code freeze (step 3 of version 4, section 11).** A new folder,
+`experiments/08-successor-degree/`, holds the episode generator, the four
+models at three sizes, the transplanting code, the measurement procedure, the
+trainer for the rented machine, the spending tripwire version 4 asked for, and
+a launcher derived from the one it names. Tested against pass lines written
+in advance:
+
+- every self-test passes (195 checks), including the even-split rule (RT-58)
+  and the one-scored-token check (RT-59) on the built generator and on the
+  models' own loss;
+- the twelve committed toy models load into the frozen code with outputs and
+  internal states identical to the bit;
+- run on those models with the toy record's reads, the frozen procedure
+  reproduces all 502 figures compared, none different (the entangled model
+  still reads 1.0051, 0.9926 and 0.9974);
+- with the reads fitted once on the laptop's processor, as the registered run
+  will do, no decision moves on the toy; 25 lesser figures move, piece counts
+  by at most 7 of 180;
+- the site-set rule gives version 4's 325 site sets on the registered model;
+- everything runs end to end at 10 million and 30 million parameters;
+- the launcher creates nothing on a dry run and calls no vendor.
+
+**Two things for the registration text, found and not changed.** (1) Applied
+as written, version 4's outcome rules put the toy on R3, "substrate not a
+testbed", because the free model fails its learning gate; version 4's section
+3 says the toy reaches the fifth term. Step 5a agrees with the code, so the
+section 3 sentence is the loose one. (2) No ruling sets the full-size training
+recipe; the trainer's defaults are this session's call (the rehearsal's
+optimiser, the closed design's 585,544,960 tokens, training episodes generated
+fresh and kept out of every evaluation set) and the registration text must
+fix them.
+
+**What is owed next.** The development runs (step 4): the go packet is
+`docs/rulings/2026-10-04-development-runs-go-PROPOSAL.md`, four runs at 10
+million, one per arm, arm M first and alone, about $0.60 to $1.25 each, hard
+cap $2.50 each and $10 for the four. Four ledger rows hold the estimates. A
+planning session relayed that John said "the $10 is approved"; the launching
+session quotes his own words in the rows before any machine exists. **Before
+a real launch the Mac's never-sleep override must be switched on: it read off
+on 2026-10-04, and the launcher refuses until it is.** Then the check of this
+code and of the runs' results by a session that wrote neither.
+
+## WHERE THINGS STAND 2026-10-03 — Weekend 1 did its four jobs and the proposal is at version 3, unreviewed and unmerged; nothing has moved since 2026-09-26; the registration will not be committed this weekend
 
 *Written 2026-10-03 by a Claude Code session that did none of the work it
 describes. It is a catch-up: the Sunday-night handoff of 2026-09-27 and the

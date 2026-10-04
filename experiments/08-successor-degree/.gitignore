@@ -1,2 +1,5 @@
 __pycache__/
 artifacts/
+# the pipeline test's untrained checkpoints (1.5 GB at 30M with optimiser state);
+# they are rebuilt by tests/pipeline.sh and carry nothing a reader needs
+out-freeze-tests/t6-pipeline/*/ckpt_*.pt

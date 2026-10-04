@@ -1,0 +1,5623 @@
+{
+ "mode": "fresh-fit",
+ "compared": 502,
+ "differ": 25,
+ "results": [
+  {
+   "model": "T/0",
+   "field": "gate own correct",
+   "ours": 3000,
+   "committed": 3000,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "gate named-other correct",
+   "ours": 3000,
+   "committed": 3000,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "nomination status",
+   "ours": "nominated",
+   "committed": "nominated",
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "site set: layers",
+   "ours": [
+    0
+   ],
+   "committed": [
+    0
+   ],
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "site set: positions",
+   "ours": "action",
+   "committed": "action",
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "site set: rank",
+   "ours": 8,
+   "committed": 8,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "site set: piece_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "site set: whole_read_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "stricter site set",
+   "ours": [
+    [
+     1
+    ],
+    "action",
+    8
+   ],
+   "committed": [
+    [
+     1
+    ],
+    "action",
+    8
+   ],
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "whole-read counts at every state",
+   "ours": [
+    180,
+    180,
+    180,
+    180,
+    180
+   ],
+   "committed": [
+    180,
+    180,
+    180,
+    180,
+    180
+   ],
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     97,
+     180,
+     180,
+     180
+    ],
+    [
+     116,
+     180,
+     180,
+     180
+    ],
+    [
+     106,
+     180,
+     180,
+     180
+    ],
+    [
+     97,
+     180,
+     180,
+     180
+    ],
+    [
+     116,
+     180,
+     180,
+     180
+    ]
+   ],
+   "committed": [
+    [
+     97,
+     180,
+     180,
+     180
+    ],
+    [
+     116,
+     180,
+     180,
+     180
+    ],
+    [
+     107,
+     180,
+     180,
+     180
+    ],
+    [
+     97,
+     180,
+     180,
+     180
+    ],
+    [
+     115,
+     180,
+     180,
+     180
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "T/0",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "reading: accuracy_whole",
+   "ours": 1.0,
+   "committed": 1.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 1.0,
+   "committed": 1.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "reading: degree",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "described only",
+   "ours": false,
+   "committed": false,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "no-transplant rate",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 1 complement share",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 1 holds on arm T",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 3 median",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 3 p95",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 3 below",
+   "ours": 20,
+   "committed": 20,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 3 equal",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 3 above",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 6 same_value_moved",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 6 different_value_moved",
+   "ours": 1.0,
+   "committed": 1.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "true-slot reading",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 180,
+    "piece": 180
+   },
+   "committed": {
+    "piece": 180,
+    "whole": 180
+   },
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "piece and whole at each other position",
+   "ours": [],
+   "committed": [],
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "piece and whole on the average over the other positions",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "rider reading",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "stricter reading",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/0",
+   "field": "control 2 status",
+   "ours": "not applicable",
+   "committed": "not applicable",
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "gate own correct",
+   "ours": 3000,
+   "committed": 3000,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "gate named-other correct",
+   "ours": 3000,
+   "committed": 3000,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "nomination status",
+   "ours": "nominated",
+   "committed": "nominated",
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "site set: layers",
+   "ours": [
+    0
+   ],
+   "committed": [
+    0
+   ],
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "site set: positions",
+   "ours": "action",
+   "committed": "action",
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "site set: rank",
+   "ours": 8,
+   "committed": 8,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "site set: piece_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "site set: whole_read_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "stricter site set",
+   "ours": [
+    [
+     1
+    ],
+    "action",
+    8
+   ],
+   "committed": [
+    [
+     1
+    ],
+    "action",
+    8
+   ],
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "whole-read counts at every state",
+   "ours": [
+    180,
+    180,
+    180,
+    180,
+    180
+   ],
+   "committed": [
+    180,
+    180,
+    180,
+    180,
+    180
+   ],
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     118,
+     167,
+     180,
+     180
+    ],
+    [
+     118,
+     167,
+     180,
+     180
+    ],
+    [
+     118,
+     159,
+     180,
+     180
+    ],
+    [
+     118,
+     158,
+     180,
+     180
+    ],
+    [
+     125,
+     158,
+     180,
+     180
+    ]
+   ],
+   "committed": [
+    [
+     118,
+     167,
+     180,
+     180
+    ],
+    [
+     118,
+     167,
+     180,
+     180
+    ],
+    [
+     118,
+     159,
+     180,
+     180
+    ],
+    [
+     118,
+     158,
+     180,
+     180
+    ],
+    [
+     125,
+     158,
+     180,
+     180
+    ]
+   ],
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "reading: accuracy_whole",
+   "ours": 1.0,
+   "committed": 1.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 1.0,
+   "committed": 1.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "reading: degree",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "described only",
+   "ours": false,
+   "committed": false,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "no-transplant rate",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 1 complement share",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 1 holds on arm T",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 3 median",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 3 p95",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 3 below",
+   "ours": 20,
+   "committed": 20,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 3 equal",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 3 above",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 6 same_value_moved",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 6 different_value_moved",
+   "ours": 1.0,
+   "committed": 1.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "true-slot reading",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 180,
+    "piece": 180
+   },
+   "committed": {
+    "piece": 180,
+    "whole": 180
+   },
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "piece and whole at each other position",
+   "ours": [],
+   "committed": [],
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "piece and whole on the average over the other positions",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "rider reading",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "stricter reading",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/1",
+   "field": "control 2 status",
+   "ours": "not applicable",
+   "committed": "not applicable",
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "gate own correct",
+   "ours": 3000,
+   "committed": 3000,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "gate named-other correct",
+   "ours": 3000,
+   "committed": 3000,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "nomination status",
+   "ours": "nominated",
+   "committed": "nominated",
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "site set: layers",
+   "ours": [
+    0
+   ],
+   "committed": [
+    0
+   ],
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "site set: positions",
+   "ours": "action",
+   "committed": "action",
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "site set: rank",
+   "ours": 8,
+   "committed": 8,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "site set: piece_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "site set: whole_read_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "stricter site set",
+   "ours": [
+    [
+     1
+    ],
+    "action",
+    8
+   ],
+   "committed": [
+    [
+     1
+    ],
+    "action",
+    8
+   ],
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "whole-read counts at every state",
+   "ours": [
+    180,
+    180,
+    180,
+    180,
+    180
+   ],
+   "committed": [
+    180,
+    180,
+    180,
+    180,
+    180
+   ],
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     139,
+     180,
+     180,
+     180
+    ],
+    [
+     135,
+     180,
+     180,
+     180
+    ],
+    [
+     157,
+     180,
+     180,
+     180
+    ],
+    [
+     145,
+     180,
+     180,
+     180
+    ],
+    [
+     135,
+     180,
+     180,
+     180
+    ]
+   ],
+   "committed": [
+    [
+     139,
+     180,
+     180,
+     180
+    ],
+    [
+     135,
+     180,
+     180,
+     180
+    ],
+    [
+     157,
+     180,
+     180,
+     180
+    ],
+    [
+     145,
+     180,
+     180,
+     180
+    ],
+    [
+     135,
+     180,
+     180,
+     180
+    ]
+   ],
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "reading: accuracy_whole",
+   "ours": 1.0,
+   "committed": 1.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 1.0,
+   "committed": 1.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "reading: degree",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "described only",
+   "ours": false,
+   "committed": false,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "no-transplant rate",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 1 complement share",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 1 holds on arm T",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 3 median",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 3 p95",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 3 below",
+   "ours": 20,
+   "committed": 20,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 3 equal",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 3 above",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 6 same_value_moved",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 6 different_value_moved",
+   "ours": 1.0,
+   "committed": 1.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "true-slot reading",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 180,
+    "piece": 180
+   },
+   "committed": {
+    "piece": 180,
+    "whole": 180
+   },
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "piece and whole at each other position",
+   "ours": [],
+   "committed": [],
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "piece and whole on the average over the other positions",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "rider reading",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "stricter reading",
+   "ours": 0.0,
+   "committed": 0.0,
+   "equal": true
+  },
+  {
+   "model": "T/2",
+   "field": "control 2 status",
+   "ours": "not applicable",
+   "committed": "not applicable",
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "gate own correct",
+   "ours": 1711,
+   "committed": 1711,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "gate named-other correct",
+   "ours": 760,
+   "committed": 760,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "nomination status",
+   "ours": "nominated",
+   "committed": "nominated",
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "site set: layers",
+   "ours": [
+    2
+   ],
+   "committed": [
+    2
+   ],
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "site set: positions",
+   "ours": "action",
+   "committed": "action",
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "site set: rank",
+   "ours": 8,
+   "committed": 8,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "site set: piece_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "site set: whole_read_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "stricter site set",
+   "ours": [
+    [
+     2
+    ],
+    "action",
+    8
+   ],
+   "committed": [
+    [
+     2
+    ],
+    "action",
+    8
+   ],
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "whole-read counts at every state",
+   "ours": [
+    13,
+    179,
+    180,
+    180,
+    180
+   ],
+   "committed": [
+    13,
+    179,
+    180,
+    180,
+    180
+   ],
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     14,
+     13,
+     13,
+     13
+    ],
+    [
+     67,
+     107,
+     174,
+     180
+    ],
+    [
+     63,
+     120,
+     178,
+     180
+    ],
+    [
+     60,
+     115,
+     174,
+     180
+    ],
+    [
+     48,
+     109,
+     155,
+     180
+    ]
+   ],
+   "committed": [
+    [
+     14,
+     13,
+     13,
+     13
+    ],
+    [
+     68,
+     107,
+     174,
+     180
+    ],
+    [
+     64,
+     120,
+     178,
+     180
+    ],
+    [
+     60,
+     115,
+     174,
+     180
+    ],
+    [
+     47,
+     109,
+     156,
+     180
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "C/0",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "reading: accuracy_whole",
+   "ours": 0.54,
+   "committed": 0.54,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 0.04875,
+   "committed": 0.04875,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.05125,
+   "committed": 0.05125,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "reading: degree",
+   "ours": 1.0051150895140666,
+   "committed": 1.0051150895140666,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "described only",
+   "ours": false,
+   "committed": false,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "no-transplant rate",
+   "ours": 0.05125,
+   "committed": 0.05125,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 1 complement share",
+   "ours": 0.545,
+   "committed": 0.545,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 3 median",
+   "ours": 0.05875,
+   "committed": 0.05875,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 3 p95",
+   "ours": 0.063875,
+   "committed": 0.063875,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 3 below",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 3 equal",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 3 above",
+   "ours": 20,
+   "committed": 20,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 6 same_value_moved",
+   "ours": 0.5061728358268738,
+   "committed": 0.5061728358268738,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 6 different_value_moved",
+   "ours": 0.8219749927520752,
+   "committed": 0.8219749927520752,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.05125,
+   "committed": 0.05125,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 180,
+    "piece": 180
+   },
+   "committed": {
+    "piece": 180,
+    "whole": 180
+   },
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "piece and whole at each other position",
+   "ours": [],
+   "committed": [],
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "piece and whole on the average over the other positions",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "rider reading",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "stricter reading",
+   "ours": 1.0051150895140666,
+   "committed": 1.0051150895140666,
+   "equal": true
+  },
+  {
+   "model": "C/0",
+   "field": "control 2 status",
+   "ours": "no verdict",
+   "committed": "no verdict",
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "gate own correct",
+   "ours": 1703,
+   "committed": 1703,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "gate named-other correct",
+   "ours": 751,
+   "committed": 751,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "nomination status",
+   "ours": "nominated",
+   "committed": "nominated",
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "site set: layers",
+   "ours": [
+    1
+   ],
+   "committed": [
+    1
+   ],
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "site set: positions",
+   "ours": "action+3",
+   "committed": "action+3",
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "site set: rank",
+   "ours": 8,
+   "committed": 8,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "site set: piece_correct",
+   "ours": 172,
+   "committed": 172,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "site set: whole_read_correct",
+   "ours": 177,
+   "committed": 177,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "stricter site set",
+   "ours": [
+    [
+     1
+    ],
+    "action+3",
+    8
+   ],
+   "committed": [
+    [
+     1
+    ],
+    "action+3",
+    8
+   ],
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "whole-read counts at every state",
+   "ours": [
+    13,
+    177,
+    174,
+    177,
+    173
+   ],
+   "committed": [
+    13,
+    177,
+    174,
+    177,
+    173
+   ],
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     14,
+     14,
+     14,
+     14
+    ],
+    [
+     45,
+     95,
+     140,
+     172
+    ],
+    [
+     39,
+     81,
+     129,
+     168
+    ],
+    [
+     42,
+     84,
+     123,
+     175
+    ],
+    [
+     53,
+     98,
+     126,
+     162
+    ]
+   ],
+   "committed": [
+    [
+     14,
+     14,
+     14,
+     14
+    ],
+    [
+     44,
+     96,
+     139,
+     172
+    ],
+    [
+     39,
+     81,
+     129,
+     167
+    ],
+    [
+     44,
+     84,
+     124,
+     175
+    ],
+    [
+     54,
+     98,
+     126,
+     162
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "C/1",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "reading: accuracy_whole",
+   "ours": 0.555,
+   "committed": 0.555,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 0.0525,
+   "committed": 0.0525,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.04875,
+   "committed": 0.04875,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "reading: degree",
+   "ours": 0.9925925925925926,
+   "committed": 0.9925925925925926,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "described only",
+   "ours": false,
+   "committed": false,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "no-transplant rate",
+   "ours": 0.04875,
+   "committed": 0.04875,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 1 complement share",
+   "ours": 0.5625,
+   "committed": 0.5625,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 3 median",
+   "ours": 0.055,
+   "committed": 0.055,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 3 p95",
+   "ours": 0.0575,
+   "committed": 0.0575,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 3 below",
+   "ours": 6,
+   "committed": 6,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 3 equal",
+   "ours": 1,
+   "committed": 1,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 3 above",
+   "ours": 13,
+   "committed": 13,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 6 same_value_moved",
+   "ours": 0.6296296119689941,
+   "committed": 0.6296296119689941,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 6 different_value_moved",
+   "ours": 0.8859527111053467,
+   "committed": 0.8859527111053467,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.04875,
+   "committed": 0.04875,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 177,
+    "piece": 172
+   },
+   "committed": {
+    "piece": 172,
+    "whole": 177
+   },
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "piece and whole at each other position",
+   "ours": [
+    [
+     "1 before the action",
+     180,
+     139
+    ],
+    [
+     "2 before the action",
+     179,
+     139
+    ],
+    [
+     "3 before the action",
+     179,
+     34
+    ]
+   ],
+   "committed": [
+    [
+     "1 before the action",
+     180,
+     139
+    ],
+    [
+     "2 before the action",
+     179,
+     139
+    ],
+    [
+     "3 before the action",
+     179,
+     33
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "C/1",
+   "field": "piece and whole on the average over the other positions",
+   "ours": {
+    "whole": 179,
+    "piece": 113
+   },
+   "committed": {
+    "piece": 113,
+    "whole": 179
+   },
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "rider reading",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "stricter reading",
+   "ours": 0.9925925925925926,
+   "committed": 0.9925925925925926,
+   "equal": true
+  },
+  {
+   "model": "C/1",
+   "field": "control 2 status",
+   "ours": "no verdict",
+   "committed": "no verdict",
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "gate own correct",
+   "ours": 1727,
+   "committed": 1727,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "gate named-other correct",
+   "ours": 708,
+   "committed": 708,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "nomination status",
+   "ours": "nominated",
+   "committed": "nominated",
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "site set: layers",
+   "ours": [
+    1
+   ],
+   "committed": [
+    1
+   ],
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "site set: positions",
+   "ours": "post-identity",
+   "committed": "post-identity",
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "site set: rank",
+   "ours": 4,
+   "committed": 4,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "site set: piece_correct",
+   "ours": 150,
+   "committed": 150,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "site set: whole_read_correct",
+   "ours": 176,
+   "committed": 176,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "stricter site set",
+   "ours": [
+    [
+     1
+    ],
+    "post-identity",
+    4
+   ],
+   "committed": [
+    [
+     1
+    ],
+    "post-identity",
+    4
+   ],
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "whole-read counts at every state",
+   "ours": [
+    13,
+    176,
+    177,
+    180,
+    180
+   ],
+   "committed": [
+    13,
+    176,
+    177,
+    180,
+    180
+   ],
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     13,
+     13,
+     13,
+     13
+    ],
+    [
+     55,
+     99,
+     150,
+     178
+    ],
+    [
+     51,
+     93,
+     143,
+     176
+    ],
+    [
+     53,
+     91,
+     137,
+     173
+    ],
+    [
+     56,
+     100,
+     138,
+     177
+    ]
+   ],
+   "committed": [
+    [
+     13,
+     13,
+     13,
+     13
+    ],
+    [
+     55,
+     99,
+     150,
+     178
+    ],
+    [
+     52,
+     93,
+     141,
+     175
+    ],
+    [
+     51,
+     92,
+     142,
+     171
+    ],
+    [
+     53,
+     100,
+     143,
+     179
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "C/2",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "reading: accuracy_whole",
+   "ours": 0.54625,
+   "committed": 0.54625,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 0.06125,
+   "committed": 0.06125,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.06,
+   "committed": 0.06,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "reading: degree",
+   "ours": 0.9974293059125964,
+   "committed": 0.9974293059125964,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "described only",
+   "ours": false,
+   "committed": false,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "no-transplant rate",
+   "ours": 0.06,
+   "committed": 0.06,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 1 complement share",
+   "ours": 0.53125,
+   "committed": 0.53125,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 3 median",
+   "ours": 0.06125,
+   "committed": 0.06125,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 3 p95",
+   "ours": 0.06631250000000001,
+   "committed": 0.06631250000000001,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 3 below",
+   "ours": 6,
+   "committed": 6,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 3 equal",
+   "ours": 5,
+   "committed": 5,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 3 above",
+   "ours": 9,
+   "committed": 9,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 6 same_value_moved",
+   "ours": 0.5679012537002563,
+   "committed": 0.5679012537002563,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 6 different_value_moved",
+   "ours": 0.9137691259384155,
+   "committed": 0.9137691259384155,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.06,
+   "committed": 0.06,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 176,
+    "piece": 150
+   },
+   "committed": {
+    "piece": 150,
+    "whole": 176
+   },
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "piece and whole at each other position",
+   "ours": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     63
+    ],
+    [
+     "first own turn, token 2 of 5",
+     180,
+     82
+    ],
+    [
+     "first own turn, token 3 of 5",
+     167,
+     46
+    ],
+    [
+     "first own turn, token 4 of 5",
+     149,
+     30
+    ],
+    [
+     "first own turn, token 5 of 5",
+     180,
+     83
+    ],
+    [
+     "5 before the action",
+     180,
+     71
+    ],
+    [
+     "4 before the action",
+     180,
+     112
+    ],
+    [
+     "3 before the action",
+     180,
+     131
+    ],
+    [
+     "2 before the action",
+     180,
+     89
+    ],
+    [
+     "1 before the action",
+     180,
+     139
+    ]
+   ],
+   "committed": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     63
+    ],
+    [
+     "first own turn, token 2 of 5",
+     180,
+     82
+    ],
+    [
+     "first own turn, token 3 of 5",
+     167,
+     46
+    ],
+    [
+     "first own turn, token 4 of 5",
+     149,
+     30
+    ],
+    [
+     "first own turn, token 5 of 5",
+     180,
+     84
+    ],
+    [
+     "5 before the action",
+     180,
+     71
+    ],
+    [
+     "4 before the action",
+     180,
+     112
+    ],
+    [
+     "3 before the action",
+     180,
+     129
+    ],
+    [
+     "2 before the action",
+     180,
+     88
+    ],
+    [
+     "1 before the action",
+     180,
+     139
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "C/2",
+   "field": "piece and whole on the average over the other positions",
+   "ours": {
+    "whole": 180,
+    "piece": 123
+   },
+   "committed": {
+    "piece": 123,
+    "whole": 180
+   },
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "rider reading",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "stricter reading",
+   "ours": 0.9974293059125964,
+   "committed": 0.9974293059125964,
+   "equal": true
+  },
+  {
+   "model": "C/2",
+   "field": "control 2 status",
+   "ours": "no verdict",
+   "committed": "no verdict",
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "gate own correct",
+   "ours": 2592,
+   "committed": 2592,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "gate named-other correct",
+   "ours": 1663,
+   "committed": 1663,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "nomination status",
+   "ours": "nominated",
+   "committed": "nominated",
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "site set: layers",
+   "ours": [
+    1
+   ],
+   "committed": [
+    1
+   ],
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "site set: positions",
+   "ours": "post-identity",
+   "committed": "post-identity",
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "site set: rank",
+   "ours": 8,
+   "committed": 8,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "site set: piece_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "site set: whole_read_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "stricter site set",
+   "ours": [
+    [
+     1
+    ],
+    "post-identity",
+    8
+   ],
+   "committed": [
+    [
+     1
+    ],
+    "post-identity",
+    8
+   ],
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "whole-read counts at every state",
+   "ours": [
+    180,
+    180,
+    180,
+    179,
+    178
+   ],
+   "committed": [
+    180,
+    180,
+    180,
+    179,
+    178
+   ],
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     119,
+     180,
+     180,
+     180
+    ],
+    [
+     82,
+     140,
+     178,
+     180
+    ],
+    [
+     70,
+     132,
+     174,
+     180
+    ],
+    [
+     78,
+     134,
+     177,
+     179
+    ],
+    [
+     48,
+     96,
+     153,
+     178
+    ]
+   ],
+   "committed": [
+    [
+     119,
+     180,
+     180,
+     180
+    ],
+    [
+     83,
+     140,
+     178,
+     180
+    ],
+    [
+     69,
+     125,
+     173,
+     180
+    ],
+    [
+     76,
+     134,
+     174,
+     179
+    ],
+    [
+     47,
+     96,
+     153,
+     178
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "M/0",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "reading: accuracy_whole",
+   "ours": 0.78,
+   "committed": 0.78,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 0.405,
+   "committed": 0.405,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.0125,
+   "committed": 0.0125,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "reading: degree",
+   "ours": 0.4885993485342019,
+   "committed": 0.4885993485342019,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "described only",
+   "ours": false,
+   "committed": false,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "no-transplant rate",
+   "ours": 0.0125,
+   "committed": 0.0125,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 1 complement share",
+   "ours": 0.3875,
+   "committed": 0.3875,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 3 median",
+   "ours": 0.015,
+   "committed": 0.015,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 3 p95",
+   "ours": 0.019000000000000003,
+   "committed": 0.019000000000000003,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 3 below",
+   "ours": 20,
+   "committed": 20,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 3 equal",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 3 above",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 6 same_value_moved",
+   "ours": 0.2222222238779068,
+   "committed": 0.2222222238779068,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 6 different_value_moved",
+   "ours": 0.9499304294586182,
+   "committed": 0.9499304294586182,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.0125,
+   "committed": 0.0125,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "true-slot reading",
+   "ours": 0.4837133550488599,
+   "committed": 0.4837133550488599,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "route formula",
+   "ours": 0.4837133550488599,
+   "committed": 0.4837133550488599,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 180,
+    "piece": 180
+   },
+   "committed": {
+    "piece": 180,
+    "whole": 180
+   },
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "piece and whole at each other position",
+   "ours": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     151
+    ],
+    [
+     "first own turn, token 2 of 5",
+     180,
+     153
+    ],
+    [
+     "first own turn, token 3 of 5",
+     178,
+     95
+    ],
+    [
+     "first own turn, token 4 of 5",
+     179,
+     33
+    ],
+    [
+     "first own turn, token 5 of 5",
+     180,
+     130
+    ],
+    [
+     "5 before the action",
+     180,
+     67
+    ],
+    [
+     "4 before the action",
+     180,
+     148
+    ],
+    [
+     "3 before the action",
+     180,
+     180
+    ],
+    [
+     "2 before the action",
+     179,
+     132
+    ],
+    [
+     "1 before the action",
+     180,
+     120
+    ]
+   ],
+   "committed": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     151
+    ],
+    [
+     "first own turn, token 2 of 5",
+     180,
+     153
+    ],
+    [
+     "first own turn, token 3 of 5",
+     178,
+     95
+    ],
+    [
+     "first own turn, token 4 of 5",
+     179,
+     34
+    ],
+    [
+     "first own turn, token 5 of 5",
+     180,
+     130
+    ],
+    [
+     "5 before the action",
+     180,
+     67
+    ],
+    [
+     "4 before the action",
+     180,
+     148
+    ],
+    [
+     "3 before the action",
+     180,
+     180
+    ],
+    [
+     "2 before the action",
+     179,
+     133
+    ],
+    [
+     "1 before the action",
+     180,
+     120
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "M/0",
+   "field": "piece and whole on the average over the other positions",
+   "ours": {
+    "whole": 180,
+    "piece": 163
+   },
+   "committed": {
+    "piece": 163,
+    "whole": 180
+   },
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "rider reading",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "stricter reading",
+   "ours": 0.4885993485342019,
+   "committed": 0.4885993485342019,
+   "equal": true
+  },
+  {
+   "model": "M/0",
+   "field": "control 2 status",
+   "ours": "not applicable",
+   "committed": "not applicable",
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "gate own correct",
+   "ours": 2584,
+   "committed": 2584,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "gate named-other correct",
+   "ours": 1699,
+   "committed": 1699,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "nomination status",
+   "ours": "nominated",
+   "committed": "nominated",
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "site set: layers",
+   "ours": [
+    1
+   ],
+   "committed": [
+    1
+   ],
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "site set: positions",
+   "ours": "post-identity",
+   "committed": "post-identity",
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "site set: rank",
+   "ours": 8,
+   "committed": 8,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "site set: piece_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "site set: whole_read_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "stricter site set",
+   "ours": [
+    [
+     1
+    ],
+    "post-identity",
+    8
+   ],
+   "committed": [
+    [
+     1
+    ],
+    "post-identity",
+    8
+   ],
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "whole-read counts at every state",
+   "ours": [
+    180,
+    180,
+    180,
+    180,
+    180
+   ],
+   "committed": [
+    180,
+    180,
+    180,
+    180,
+    180
+   ],
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     92,
+     180,
+     180,
+     180
+    ],
+    [
+     114,
+     163,
+     180,
+     180
+    ],
+    [
+     82,
+     149,
+     174,
+     180
+    ],
+    [
+     62,
+     133,
+     166,
+     180
+    ],
+    [
+     58,
+     122,
+     174,
+     180
+    ]
+   ],
+   "committed": [
+    [
+     92,
+     180,
+     180,
+     180
+    ],
+    [
+     114,
+     164,
+     180,
+     180
+    ],
+    [
+     82,
+     149,
+     174,
+     180
+    ],
+    [
+     62,
+     133,
+     167,
+     180
+    ],
+    [
+     58,
+     122,
+     174,
+     180
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "M/1",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "reading: accuracy_whole",
+   "ours": 0.77375,
+   "committed": 0.77375,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 0.40625,
+   "committed": 0.40625,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.0175,
+   "committed": 0.0175,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "reading: degree",
+   "ours": 0.4859504132231405,
+   "committed": 0.4859504132231405,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "described only",
+   "ours": false,
+   "committed": false,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "no-transplant rate",
+   "ours": 0.0175,
+   "committed": 0.0175,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 1 complement share",
+   "ours": 0.37625,
+   "committed": 0.37625,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 3 median",
+   "ours": 0.01875,
+   "committed": 0.01875,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 3 p95",
+   "ours": 0.0225625,
+   "committed": 0.0225625,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 3 below",
+   "ours": 20,
+   "committed": 20,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 3 equal",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 3 above",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 6 same_value_moved",
+   "ours": 0.2716049253940582,
+   "committed": 0.2716049253940582,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 6 different_value_moved",
+   "ours": 0.9360222816467285,
+   "committed": 0.9360222816467285,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.0175,
+   "committed": 0.0175,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "true-slot reading",
+   "ours": 0.47603305785123967,
+   "committed": 0.47603305785123967,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "route formula",
+   "ours": 0.47603305785123967,
+   "committed": 0.47603305785123967,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 180,
+    "piece": 180
+   },
+   "committed": {
+    "piece": 180,
+    "whole": 180
+   },
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "piece and whole at each other position",
+   "ours": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     151
+    ],
+    [
+     "first own turn, token 2 of 5",
+     180,
+     136
+    ],
+    [
+     "first own turn, token 3 of 5",
+     180,
+     120
+    ],
+    [
+     "first own turn, token 4 of 5",
+     177,
+     71
+    ],
+    [
+     "first own turn, token 5 of 5",
+     178,
+     124
+    ],
+    [
+     "5 before the action",
+     180,
+     170
+    ],
+    [
+     "4 before the action",
+     180,
+     177
+    ],
+    [
+     "3 before the action",
+     180,
+     143
+    ],
+    [
+     "2 before the action",
+     174,
+     142
+    ],
+    [
+     "1 before the action",
+     180,
+     172
+    ]
+   ],
+   "committed": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     151
+    ],
+    [
+     "first own turn, token 2 of 5",
+     180,
+     136
+    ],
+    [
+     "first own turn, token 3 of 5",
+     180,
+     119
+    ],
+    [
+     "first own turn, token 4 of 5",
+     177,
+     71
+    ],
+    [
+     "first own turn, token 5 of 5",
+     178,
+     124
+    ],
+    [
+     "5 before the action",
+     180,
+     171
+    ],
+    [
+     "4 before the action",
+     180,
+     177
+    ],
+    [
+     "3 before the action",
+     180,
+     143
+    ],
+    [
+     "2 before the action",
+     174,
+     143
+    ],
+    [
+     "1 before the action",
+     180,
+     172
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "M/1",
+   "field": "piece and whole on the average over the other positions",
+   "ours": {
+    "whole": 180,
+    "piece": 174
+   },
+   "committed": {
+    "piece": 174,
+    "whole": 180
+   },
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "rider reading",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "stricter reading",
+   "ours": 0.4859504132231405,
+   "committed": 0.4859504132231405,
+   "equal": true
+  },
+  {
+   "model": "M/1",
+   "field": "control 2 status",
+   "ours": "not applicable",
+   "committed": "not applicable",
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "gate own correct",
+   "ours": 2600,
+   "committed": 2600,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "gate named-other correct",
+   "ours": 1655,
+   "committed": 1655,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "nomination status",
+   "ours": "nominated",
+   "committed": "nominated",
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "site set: layers",
+   "ours": [
+    1
+   ],
+   "committed": [
+    1
+   ],
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "site set: positions",
+   "ours": "post-identity",
+   "committed": "post-identity",
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "site set: rank",
+   "ours": 8,
+   "committed": 8,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "site set: piece_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "site set: whole_read_correct",
+   "ours": 180,
+   "committed": 180,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "stricter site set",
+   "ours": [
+    [
+     1
+    ],
+    "post-identity",
+    8
+   ],
+   "committed": [
+    [
+     1
+    ],
+    "post-identity",
+    8
+   ],
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "whole-read counts at every state",
+   "ours": [
+    180,
+    180,
+    180,
+    180,
+    180
+   ],
+   "committed": [
+    180,
+    180,
+    180,
+    180,
+    180
+   ],
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     120,
+     162,
+     180,
+     180
+    ],
+    [
+     90,
+     147,
+     180,
+     180
+    ],
+    [
+     75,
+     119,
+     173,
+     180
+    ],
+    [
+     72,
+     123,
+     175,
+     180
+    ],
+    [
+     55,
+     96,
+     151,
+     177
+    ]
+   ],
+   "committed": [
+    [
+     120,
+     162,
+     180,
+     180
+    ],
+    [
+     90,
+     147,
+     180,
+     180
+    ],
+    [
+     74,
+     119,
+     172,
+     180
+    ],
+    [
+     72,
+     123,
+     175,
+     180
+    ],
+    [
+     55,
+     96,
+     151,
+     177
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "M/2",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "reading: accuracy_whole",
+   "ours": 0.79375,
+   "committed": 0.79375,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 0.36875,
+   "committed": 0.36875,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.01375,
+   "committed": 0.01375,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "reading: degree",
+   "ours": 0.5448717948717948,
+   "committed": 0.5448717948717948,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "described only",
+   "ours": false,
+   "committed": false,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "no-transplant rate",
+   "ours": 0.01375,
+   "committed": 0.01375,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 1 complement share",
+   "ours": 0.42875,
+   "committed": 0.42875,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 3 median",
+   "ours": 0.015,
+   "committed": 0.015,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 3 p95",
+   "ours": 0.02125,
+   "committed": 0.02125,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 3 below",
+   "ours": 20,
+   "committed": 20,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 3 equal",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 3 above",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 6 same_value_moved",
+   "ours": 0.32098764181137085,
+   "committed": 0.32098764181137085,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 6 different_value_moved",
+   "ours": 0.9485396146774292,
+   "committed": 0.9485396146774292,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.01375,
+   "committed": 0.01375,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "true-slot reading",
+   "ours": 0.4919871794871795,
+   "committed": 0.4919871794871795,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "route formula",
+   "ours": 0.4919871794871795,
+   "committed": 0.4919871794871795,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 180,
+    "piece": 180
+   },
+   "committed": {
+    "piece": 180,
+    "whole": 180
+   },
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "piece and whole at each other position",
+   "ours": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     174
+    ],
+    [
+     "first own turn, token 2 of 5",
+     180,
+     152
+    ],
+    [
+     "first own turn, token 3 of 5",
+     179,
+     102
+    ],
+    [
+     "first own turn, token 4 of 5",
+     177,
+     32
+    ],
+    [
+     "first own turn, token 5 of 5",
+     180,
+     162
+    ],
+    [
+     "5 before the action",
+     180,
+     178
+    ],
+    [
+     "4 before the action",
+     179,
+     157
+    ],
+    [
+     "3 before the action",
+     180,
+     174
+    ],
+    [
+     "2 before the action",
+     175,
+     136
+    ],
+    [
+     "1 before the action",
+     180,
+     173
+    ]
+   ],
+   "committed": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     174
+    ],
+    [
+     "first own turn, token 2 of 5",
+     180,
+     152
+    ],
+    [
+     "first own turn, token 3 of 5",
+     179,
+     102
+    ],
+    [
+     "first own turn, token 4 of 5",
+     177,
+     33
+    ],
+    [
+     "first own turn, token 5 of 5",
+     180,
+     162
+    ],
+    [
+     "5 before the action",
+     180,
+     178
+    ],
+    [
+     "4 before the action",
+     179,
+     157
+    ],
+    [
+     "3 before the action",
+     180,
+     174
+    ],
+    [
+     "2 before the action",
+     175,
+     136
+    ],
+    [
+     "1 before the action",
+     180,
+     172
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "M/2",
+   "field": "piece and whole on the average over the other positions",
+   "ours": {
+    "whole": 180,
+    "piece": 175
+   },
+   "committed": {
+    "piece": 175,
+    "whole": 180
+   },
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "rider reading",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "stricter reading",
+   "ours": 0.5448717948717948,
+   "committed": 0.5448717948717948,
+   "equal": true
+  },
+  {
+   "model": "M/2",
+   "field": "control 2 status",
+   "ours": "not applicable",
+   "committed": "not applicable",
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "gate own correct",
+   "ours": 1679,
+   "committed": 1679,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "gate named-other correct",
+   "ours": 994,
+   "committed": 994,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "nomination status",
+   "ours": "read failed its floor: no size's piece reaches four fifths",
+   "committed": "read failed its floor: no size's piece reaches four fifths",
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "site set: layers",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "site set: positions",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "site set: rank",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "site set: piece_correct",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "site set: whole_read_correct",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "stricter site set",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "whole-read counts at every state",
+   "ours": [
+    13,
+    32,
+    26,
+    19,
+    12
+   ],
+   "committed": [
+    13,
+    32,
+    26,
+    19,
+    12
+   ],
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     14,
+     13,
+     13,
+     13
+    ],
+    [
+     19,
+     32,
+     36,
+     32
+    ],
+    [
+     14,
+     17,
+     30,
+     24
+    ],
+    [
+     20,
+     18,
+     25,
+     22
+    ],
+    [
+     15,
+     17,
+     20,
+     15
+    ]
+   ],
+   "committed": [
+    [
+     14,
+     13,
+     13,
+     13
+    ],
+    [
+     22,
+     31,
+     34,
+     32
+    ],
+    [
+     15,
+     17,
+     30,
+     24
+    ],
+    [
+     16,
+     17,
+     25,
+     22
+    ],
+    [
+     15,
+     17,
+     20,
+     15
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "F/0",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "reading: accuracy_whole",
+   "ours": 0.485,
+   "committed": 0.485,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 0.05875,
+   "committed": 0.05875,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.05875,
+   "committed": 0.05875,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "reading: degree",
+   "ours": 1.0,
+   "committed": 1.0,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "described only",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "no-transplant rate",
+   "ours": 0.05875,
+   "committed": 0.05875,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 1 complement share",
+   "ours": 0.4875,
+   "committed": 0.48375,
+   "equal": false
+  },
+  {
+   "model": "F/0",
+   "field": "control 3 median",
+   "ours": 0.05875,
+   "committed": 0.05875,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 3 p95",
+   "ours": 0.0625,
+   "committed": 0.0625,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 3 below",
+   "ours": 6,
+   "committed": 6,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 3 equal",
+   "ours": 7,
+   "committed": 7,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 3 above",
+   "ours": 7,
+   "committed": 7,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 6 same_value_moved",
+   "ours": 0.7283950448036194,
+   "committed": 0.7283950448036194,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 6 different_value_moved",
+   "ours": 0.8998609185218811,
+   "committed": 0.8998609185218811,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.05875,
+   "committed": 0.05875,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 32,
+    "piece": 19
+   },
+   "committed": {
+    "piece": 22,
+    "whole": 32
+   },
+   "equal": false
+  },
+  {
+   "model": "F/0",
+   "field": "piece and whole at each other position",
+   "ours": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     26
+    ],
+    [
+     "first own turn, token 2 of 5",
+     66,
+     17
+    ],
+    [
+     "first own turn, token 3 of 5",
+     31,
+     14
+    ],
+    [
+     "first own turn, token 4 of 5",
+     61,
+     18
+    ],
+    [
+     "first own turn, token 5 of 5",
+     51,
+     15
+    ],
+    [
+     "5 before the action",
+     32,
+     12
+    ],
+    [
+     "4 before the action",
+     21,
+     13
+    ],
+    [
+     "3 before the action",
+     21,
+     21
+    ],
+    [
+     "2 before the action",
+     26,
+     16
+    ],
+    [
+     "1 before the action",
+     41,
+     15
+    ]
+   ],
+   "committed": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     21
+    ],
+    [
+     "first own turn, token 2 of 5",
+     66,
+     15
+    ],
+    [
+     "first own turn, token 3 of 5",
+     31,
+     15
+    ],
+    [
+     "first own turn, token 4 of 5",
+     61,
+     18
+    ],
+    [
+     "first own turn, token 5 of 5",
+     51,
+     15
+    ],
+    [
+     "5 before the action",
+     32,
+     14
+    ],
+    [
+     "4 before the action",
+     21,
+     13
+    ],
+    [
+     "3 before the action",
+     21,
+     18
+    ],
+    [
+     "2 before the action",
+     26,
+     15
+    ],
+    [
+     "1 before the action",
+     41,
+     17
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "F/0",
+   "field": "piece and whole on the average over the other positions",
+   "ours": {
+    "whole": 91,
+    "piece": 19
+   },
+   "committed": {
+    "piece": 25,
+    "whole": 91
+   },
+   "equal": false
+  },
+  {
+   "model": "F/0",
+   "field": "rider reading",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 2 status",
+   "ours": "no verdict",
+   "committed": "no verdict",
+   "equal": true
+  },
+  {
+   "model": "F/0",
+   "field": "control 2 candidates",
+   "ours": [
+    [
+     [
+      1
+     ],
+     "action+3",
+     1,
+     22
+    ],
+    [
+     [
+      1
+     ],
+     "action+3",
+     2,
+     43
+    ],
+    [
+     [
+      1
+     ],
+     "action+3",
+     4,
+     75
+    ],
+    [
+     [
+      1
+     ],
+     "action+3",
+     8,
+     91
+    ],
+    [
+     [
+      1
+     ],
+     "post-identity",
+     1,
+     22
+    ],
+    [
+     [
+      1
+     ],
+     "post-identity",
+     2,
+     43
+    ],
+    [
+     [
+      1
+     ],
+     "post-identity",
+     4,
+     75
+    ],
+    [
+     [
+      1
+     ],
+     "post-identity",
+     8,
+     91
+    ],
+    [
+     [
+      3
+     ],
+     "action",
+     1,
+     34
+    ],
+    [
+     [
+      3
+     ],
+     "action",
+     2,
+     49
+    ],
+    [
+     [
+      3
+     ],
+     "action",
+     4,
+     76
+    ],
+    [
+     [
+      3
+     ],
+     "action",
+     8,
+     117
+    ],
+    [
+     [
+      3
+     ],
+     "action+ans",
+     1,
+     34
+    ],
+    [
+     [
+      3
+     ],
+     "action+ans",
+     2,
+     49
+    ],
+    [
+     [
+      3
+     ],
+     "action+ans",
+     4,
+     76
+    ],
+    [
+     [
+      3
+     ],
+     "action+ans",
+     8,
+     117
+    ]
+   ],
+   "committed": [
+    [
+     [
+      1
+     ],
+     "action+3",
+     1,
+     22
+    ],
+    [
+     [
+      1
+     ],
+     "action+3",
+     2,
+     43
+    ],
+    [
+     [
+      1
+     ],
+     "action+3",
+     4,
+     74
+    ],
+    [
+     [
+      1
+     ],
+     "action+3",
+     8,
+     92
+    ],
+    [
+     [
+      1
+     ],
+     "post-identity",
+     1,
+     22
+    ],
+    [
+     [
+      1
+     ],
+     "post-identity",
+     2,
+     43
+    ],
+    [
+     [
+      1
+     ],
+     "post-identity",
+     4,
+     74
+    ],
+    [
+     [
+      1
+     ],
+     "post-identity",
+     8,
+     92
+    ],
+    [
+     [
+      3
+     ],
+     "action",
+     1,
+     31
+    ],
+    [
+     [
+      3
+     ],
+     "action",
+     2,
+     50
+    ],
+    [
+     [
+      3
+     ],
+     "action",
+     4,
+     79
+    ],
+    [
+     [
+      3
+     ],
+     "action",
+     8,
+     115
+    ],
+    [
+     [
+      3
+     ],
+     "action+ans",
+     1,
+     31
+    ],
+    [
+     [
+      3
+     ],
+     "action+ans",
+     2,
+     50
+    ],
+    [
+     [
+      3
+     ],
+     "action+ans",
+     4,
+     79
+    ],
+    [
+     [
+      3
+     ],
+     "action+ans",
+     8,
+     115
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "F/1",
+   "field": "gate own correct",
+   "ours": 1654,
+   "committed": 1654,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "gate named-other correct",
+   "ours": 781,
+   "committed": 781,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "nomination status",
+   "ours": "read failed its floor: no size's piece reaches four fifths",
+   "committed": "read failed its floor: no size's piece reaches four fifths",
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "site set: layers",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "site set: positions",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "site set: rank",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "site set: piece_correct",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "site set: whole_read_correct",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "stricter site set",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "whole-read counts at every state",
+   "ours": [
+    13,
+    12,
+    21,
+    24,
+    21
+   ],
+   "committed": [
+    13,
+    12,
+    21,
+    24,
+    21
+   ],
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     14,
+     13,
+     13,
+     13
+    ],
+    [
+     13,
+     14,
+     16,
+     8
+    ],
+    [
+     14,
+     13,
+     19,
+     18
+    ],
+    [
+     19,
+     11,
+     18,
+     17
+    ],
+    [
+     13,
+     15,
+     15,
+     18
+    ]
+   ],
+   "committed": [
+    [
+     14,
+     13,
+     13,
+     13
+    ],
+    [
+     13,
+     13,
+     17,
+     8
+    ],
+    [
+     15,
+     12,
+     18,
+     18
+    ],
+    [
+     19,
+     11,
+     18,
+     17
+    ],
+    [
+     12,
+     16,
+     14,
+     20
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "F/1",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "reading: accuracy_whole",
+   "ours": 0.5675,
+   "committed": 0.5675,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 0.05625,
+   "committed": 0.05625,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.05625,
+   "committed": 0.05625,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "reading: degree",
+   "ours": 1.0,
+   "committed": 1.0,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "described only",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "no-transplant rate",
+   "ours": 0.05625,
+   "committed": 0.05625,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 1 complement share",
+   "ours": 0.56375,
+   "committed": 0.56375,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 3 median",
+   "ours": 0.05875,
+   "committed": 0.05875,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 3 p95",
+   "ours": 0.065,
+   "committed": 0.065,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 3 below",
+   "ours": 2,
+   "committed": 2,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 3 equal",
+   "ours": 1,
+   "committed": 1,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 3 above",
+   "ours": 17,
+   "committed": 17,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 6 same_value_moved",
+   "ours": 0.6790123581886292,
+   "committed": 0.6790123581886292,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 6 different_value_moved",
+   "ours": 0.8789986371994019,
+   "committed": 0.8789986371994019,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.05625,
+   "committed": 0.05625,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 12,
+    "piece": 16
+   },
+   "committed": {
+    "piece": 17,
+    "whole": 12
+   },
+   "equal": false
+  },
+  {
+   "model": "F/1",
+   "field": "piece and whole at each other position",
+   "ours": [
+    [
+     "1 before the action",
+     22,
+     14
+    ],
+    [
+     "2 before the action",
+     20,
+     21
+    ],
+    [
+     "3 before the action",
+     24,
+     24
+    ]
+   ],
+   "committed": [
+    [
+     "1 before the action",
+     22,
+     14
+    ],
+    [
+     "2 before the action",
+     20,
+     20
+    ],
+    [
+     "3 before the action",
+     24,
+     23
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "F/1",
+   "field": "piece and whole on the average over the other positions",
+   "ours": {
+    "whole": 19,
+    "piece": 11
+   },
+   "committed": {
+    "piece": 11,
+    "whole": 19
+   },
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "rider reading",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/1",
+   "field": "control 2 status",
+   "ours": "no verdict",
+   "committed": "no verdict",
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "gate own correct",
+   "ours": 1664,
+   "committed": 1664,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "gate named-other correct",
+   "ours": 746,
+   "committed": 746,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "nomination status",
+   "ours": "read failed its floor: no size's piece reaches four fifths",
+   "committed": "read failed its floor: no size's piece reaches four fifths",
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "site set: layers",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "site set: positions",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "site set: rank",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "site set: piece_correct",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "site set: whole_read_correct",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "stricter site set",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "whole-read counts at every state",
+   "ours": [
+    13,
+    18,
+    25,
+    20,
+    20
+   ],
+   "committed": [
+    13,
+    18,
+    25,
+    20,
+    20
+   ],
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "piece counts at every state and size",
+   "ours": [
+    [
+     14,
+     13,
+     13,
+     13
+    ],
+    [
+     24,
+     20,
+     16,
+     18
+    ],
+    [
+     14,
+     22,
+     29,
+     27
+    ],
+    [
+     20,
+     19,
+     26,
+     22
+    ],
+    [
+     19,
+     22,
+     24,
+     24
+    ]
+   ],
+   "committed": [
+    [
+     14,
+     13,
+     13,
+     13
+    ],
+    [
+     24,
+     20,
+     16,
+     18
+    ],
+    [
+     15,
+     22,
+     29,
+     26
+    ],
+    [
+     13,
+     18,
+     26,
+     23
+    ],
+    [
+     19,
+     23,
+     22,
+     24
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "F/2",
+   "field": "a reading was computed",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "reading: accuracy_whole",
+   "ours": 0.53,
+   "committed": 0.53,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "reading: accuracy_ownership_only",
+   "ours": 0.06375,
+   "committed": 0.06375,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "reading: accuracy_untouched",
+   "ours": 0.06875,
+   "committed": 0.06875,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "reading: degree",
+   "ours": 1.010840108401084,
+   "committed": 1.010840108401084,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "described only",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "no-transplant rate",
+   "ours": 0.06875,
+   "committed": 0.06875,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "no-transplant inside allowance",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 1 complement share",
+   "ours": 0.53875,
+   "committed": 0.54,
+   "equal": false
+  },
+  {
+   "model": "F/2",
+   "field": "control 3 median",
+   "ours": 0.06375,
+   "committed": 0.06375,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 3 p95",
+   "ours": 0.066375,
+   "committed": 0.066375,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 3 below",
+   "ours": 8,
+   "committed": 8,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 3 equal",
+   "ours": 3,
+   "committed": 3,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 3 above",
+   "ours": 9,
+   "committed": 9,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 6 same_value_trials",
+   "ours": 81,
+   "committed": 81,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 6 different_value_trials",
+   "ours": 719,
+   "committed": 719,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 6 same_value_moved",
+   "ours": 0.6296296119689941,
+   "committed": 0.6296296119689941,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 6 different_value_moved",
+   "ours": 0.8915159702301025,
+   "committed": 0.8915159702301025,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 7 holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 4 (redefined) holds",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 4 (redefined) donor_value_share",
+   "ours": 0.06875,
+   "committed": 0.06875,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 4 (redefined) trials_whose_action_changed",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 4 (redefined) twins_states_identical_at_the_sites",
+   "ours": true,
+   "committed": true,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "piece and whole at the action position",
+   "ours": {
+    "whole": 18,
+    "piece": 18
+   },
+   "committed": {
+    "piece": 18,
+    "whole": 18
+   },
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "piece and whole at each other position",
+   "ours": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     146
+    ],
+    [
+     "first own turn, token 2 of 5",
+     85,
+     36
+    ],
+    [
+     "first own turn, token 3 of 5",
+     46,
+     13
+    ],
+    [
+     "first own turn, token 4 of 5",
+     99,
+     17
+    ],
+    [
+     "first own turn, token 5 of 5",
+     51,
+     22
+    ],
+    [
+     "5 before the action",
+     11,
+     19
+    ],
+    [
+     "4 before the action",
+     28,
+     19
+    ],
+    [
+     "3 before the action",
+     14,
+     20
+    ],
+    [
+     "2 before the action",
+     16,
+     15
+    ],
+    [
+     "1 before the action",
+     43,
+     19
+    ]
+   ],
+   "committed": [
+    [
+     "first own turn, token 1 of 5",
+     180,
+     145
+    ],
+    [
+     "first own turn, token 2 of 5",
+     85,
+     36
+    ],
+    [
+     "first own turn, token 3 of 5",
+     46,
+     13
+    ],
+    [
+     "first own turn, token 4 of 5",
+     99,
+     17
+    ],
+    [
+     "first own turn, token 5 of 5",
+     51,
+     22
+    ],
+    [
+     "5 before the action",
+     11,
+     18
+    ],
+    [
+     "4 before the action",
+     28,
+     18
+    ],
+    [
+     "3 before the action",
+     14,
+     21
+    ],
+    [
+     "2 before the action",
+     16,
+     16
+    ],
+    [
+     "1 before the action",
+     43,
+     19
+    ]
+   ],
+   "equal": false
+  },
+  {
+   "model": "F/2",
+   "field": "piece and whole on the average over the other positions",
+   "ours": {
+    "whole": 73,
+    "piece": 25
+   },
+   "committed": {
+    "piece": 25,
+    "whole": 73
+   },
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "rider reading",
+   "ours": null,
+   "committed": null,
+   "equal": true
+  },
+  {
+   "model": "F/2",
+   "field": "control 2 status",
+   "ours": "no verdict",
+   "committed": "no verdict",
+   "equal": true
+  },
+  {
+   "model": "F/0 control 2, piece rule off",
+   "field": "own_directed_moved",
+   "ours": 0.0012499999720603228,
+   "committed": 0.0012499999720603228,
+   "equal": true
+  },
+  {
+   "model": "F/0 control 2, piece rule off",
+   "field": "named_other_moved",
+   "ours": 0.0949999988079071,
+   "committed": 0.09624999761581421,
+   "equal": false
+  },
+  {
+   "model": "F/0 control 2, piece rule off",
+   "field": "trials",
+   "ours": 800,
+   "committed": 800,
+   "equal": true
+  },
+  {
+   "model": "F/0 control 2, piece rule off",
+   "field": "site set",
+   "ours": [
+    1
+   ],
+   "committed": [
+    1
+   ],
+   "equal": true
+  },
+  {
+   "model": "F/0 control 2, piece rule off",
+   "field": "random pieces median",
+   "ours": 0.0037499999161809683,
+   "committed": 0.0037499999161809683,
+   "equal": true
+  },
+  {
+   "model": "F/0 control 2, piece rule off",
+   "field": "random pieces p95",
+   "ours": 0.005187499895691874,
+   "committed": 0.005187499895691874,
+   "equal": true
+  },
+  {
+   "model": "F/0 control 2, piece rule off",
+   "field": "random pieces below",
+   "ours": 0,
+   "committed": 0,
+   "equal": true
+  },
+  {
+   "model": "F/0 control 2, piece rule off",
+   "field": "random pieces equal",
+   "ours": 1,
+   "committed": 1,
+   "equal": true
+  },
+  {
+   "model": "F/0 control 2, piece rule off",
+   "field": "random pieces above",
+   "ours": 19,
+   "committed": 19,
+   "equal": true
+  },
+  {
+   "model": "seed 0",
+   "field": "arm C minus arm T",
+   "ours": 1.0051150895140666,
+   "committed": 1.0051150895140666,
+   "equal": true
+  },
+  {
+   "model": "seed 1",
+   "field": "arm C minus arm T",
+   "ours": 0.9925925925925926,
+   "committed": 0.9925925925925926,
+   "equal": true
+  },
+  {
+   "model": "seed 2",
+   "field": "arm C minus arm T",
+   "ours": 0.9974293059125964,
+   "committed": 0.9974293059125964,
+   "equal": true
+  }
+ ],
+ "outcome_reported": {
+  "model": "all",
+  "field": "outcome term (reported; not part of the pass line)",
+  "ours": "substrate not a testbed",
+  "version_4_section_3_says": "metric validated, degree not read: (reason)",
+  "gates": {
+   "T": true,
+   "C": true,
+   "M": true,
+   "F": false
+  }
+ }
+}

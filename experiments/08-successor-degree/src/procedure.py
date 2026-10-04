@@ -768,6 +768,13 @@ def summarise(out_dir: str, gates_after_rerun: dict | None = None) -> dict:
     return res
 
 
+def _deg(x) -> str:
+    """A reading or share as printed: four places, or "no verdict" when the
+    arithmetic was not made (an untrained model's true-slot reference, for
+    one; the toy never produced one, the 30M pipeline test did)."""
+    return "no verdict" if x is None else f"{x:.4f}"
+
+
 def table(rows, per_seed, res) -> str:
     def site(s):
         return "" if s is None else f"states {tuple(s['layers'])} at {s['positions']}, {s['rank']} directions"
@@ -799,9 +806,9 @@ def table(rows, per_seed, res) -> str:
             f"{rd['accuracy_whole']:.4f}, {rd['accuracy_ownership_only']:.4f}, {rd['accuracy_untouched']:.4f} | "
             f"{p['no_transplant']['miss']:+.4f} | {c['3']['median']:.4f}, {c['3']['p95']:.4f}; "
             f"{c['3']['below']}/{c['3']['equal']}/{c['3']['above']} | {c['7']['holds']}, {c['1']['holds']}, {c['4']['holds']} | "
-            f"{c['6']['same_value_moved']} / {c['6']['different_value_moved']:.4f} | {c2['status']} | "
-            f"{'' if not ts else round(ts['reading']['degree'], 4)} | "
-            f"{'' if not rider else rider['reading']['degree']} | {r['gate']['lesioned_own_correct']} |")
+            f"{_deg(c['6']['same_value_moved'])} / {_deg(c['6']['different_value_moved'])} | {c2['status']} | "
+            f"{'' if not ts else _deg(ts['reading']['degree'])} | "
+            f"{'' if not rider else _deg(rider['reading']['degree'])} | {r['gate']['lesioned_own_correct']} |")
     o = res.get("outcome")
     out += ["", f"outcome: {o['term'] if o else 'not computed (arms missing)'}"]
     if o and o.get("separation"):
@@ -839,6 +846,8 @@ def self_test() -> None:
           first_rows == [13, 48, 44, 40, 36, 32, 28, 24, 20, 16, 12, 8, 4], str(first_rows))
     check("the gate bar on 3,000 episodes is 790 by the one-sided binomial rule",
           binomial_bar(3000) == 790)
+    check("the table prints a reading that was not made as 'no verdict' instead of failing",
+          _deg(None) == "no verdict" and _deg(0.48859) == "0.4886")
     print(f"\n{len(fails)} failure(s)" if fails else "\nall checks passed")
     if fails:
         raise SystemExit(1)
