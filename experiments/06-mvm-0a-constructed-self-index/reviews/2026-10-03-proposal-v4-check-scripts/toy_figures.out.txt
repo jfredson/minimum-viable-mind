@@ -1,0 +1,317 @@
+=== 1. Readings (sections 3, 5.1 to 5.3, 9, 10)
+MATCH  | arm T reading, every seed
+         version 4: [0.0, 0.0, 0.0]
+         files:     [0.0, 0.0, 0.0]
+MATCH  | arm C reading
+         version 4: [1.0051, 0.9926, 0.9974]
+         files:     [1.0051, 0.9926, 0.9974]
+MATCH  | arm M reading
+         version 4: [0.4886, 0.486, 0.5449]
+         files:     [0.4886, 0.486, 0.5449]
+MATCH  | arm F is described only, no reading
+         version 4: [True, True, True]
+         files:     [True, True, True]
+MATCH  | arm F, the number the arithmetic would have returned (section 5.4)
+         version 4: [1.0, 1.0, 1.0108]
+         files:     [1.0, 1.0, 1.0108]
+MATCH  | arm F nomination status, every seed
+         version 4: ["read failed its floor: no size's piece reaches four fifths", "read failed its floor: no size's piece reaches four fifths", "read failed its floor: no size's piece reaches four fifths"]
+         files:     ["read failed its floor: no size's piece reaches four fifths", "read failed its floor: no size's piece reaches four fifths", "read failed its floor: no size's piece reaches four fifths"]
+
+=== 2. The separation (sections 3, 9; the packet page 6; record B ruling 6)
+    summary.json, field separation (paired by seed number): {'0': 1.0051, '1': 0.9926, '2': 0.9974}
+MATCH  | lowest arm C reading minus highest arm T reading
+         version 4: [0.9926]
+         files:     [0.9926]
+
+=== 3. Arm C table (section 5.2) and the sites of arms T and M
+MATCH  | arm C seed 0: layers, positions, size, whole read, piece, whole-state, ownership-only, no-transplant
+         version 4: [[2], 'action', 8, 180, 180, 0.54, 0.0488, 0.0512]
+         files:     [[2], 'action', 8, 180, 180, 0.54, 0.0488, 0.0512]
+MATCH  | arm C seed 1: layers, positions, size, whole read, piece, whole-state, ownership-only, no-transplant
+         version 4: [[1], 'action+3', 8, 177, 172, 0.555, 0.0525, 0.0488]
+         files:     [[1], 'action+3', 8, 177, 172, 0.555, 0.0525, 0.0488]
+MATCH  | arm C seed 2: layers, positions, size, whole read, piece, whole-state, ownership-only, no-transplant
+         version 4: [[1], 'post-identity', 4, 176, 150, 0.5463, 0.0612, 0.06]
+         files:     [[1], 'post-identity', 4, 176, 150, 0.5463, 0.0612, 0.06]
+MATCH  | arm C: ownership-only within 0.004 of the no-transplant rate (largest gap)
+         version 4: [True]
+         files:     [True]
+         gaps: [-0.0025, 0.0037, 0.0013]
+MATCH  | arm T seed 0: layers, positions, size, whole read, piece
+         version 4: [[0], 'action', 8, 180, 180]
+         files:     [[0], 'action', 8, 180, 180]
+MATCH  | arm T seed 1: layers, positions, size, whole read, piece
+         version 4: [[0], 'action', 8, 180, 180]
+         files:     [[0], 'action', 8, 180, 180]
+MATCH  | arm T seed 2: layers, positions, size, whole read, piece
+         version 4: [[0], 'action', 8, 180, 180]
+         files:     [[0], 'action', 8, 180, 180]
+MATCH  | arm M seed 0: layers, positions, size, whole read, piece
+         version 4: [[1], 'post-identity', 8, 180, 180]
+         files:     [[1], 'post-identity', 8, 180, 180]
+MATCH  | arm M seed 1: layers, positions, size, whole read, piece
+         version 4: [[1], 'post-identity', 8, 180, 180]
+         files:     [[1], 'post-identity', 8, 180, 180]
+MATCH  | arm M seed 2: layers, positions, size, whole read, piece
+         version 4: [[1], 'post-identity', 8, 180, 180]
+         files:     [[1], 'post-identity', 8, 180, 180]
+MATCH  | arm M whole-state share
+         version 4: [0.78, 0.7738, 0.7937]
+         files:     [0.78, 0.7738, 0.7937]
+MATCH  | arm M ownership-only share
+         version 4: [0.405, 0.4062, 0.3688]
+         files:     [0.405, 0.4062, 0.3688]
+MATCH  | arm T stricter row: layer, positions, size, reading (seed 0..2)
+         version 4: [[1], 'action', 8, 0.0, [1], 'action', 8, 0.0, [1], 'action', 8, 0.0]
+         files:     [[1], 'action', 8, 0.0, [1], 'action', 8, 0.0, [1], 'action', 8, 0.0]
+
+=== 4. Counts against the four-fifths floor, 144 of 180 (sections 3, 5.4, 6.4, 7.2)
+MATCH  | arm F: best piece at any layer, size, seed
+         version 4: [34]
+         files:     [34]
+MATCH  | arm F whole read at layer 1, seeds 0..2
+         version 4: [32, 12, 18]
+         files:     [32, 12, 18]
+MATCH  | arm F seed 1, layer 1: piece against whole (section 6.4 item 2)
+         version 4: [17, 12]
+         files:     [17, 12]
+MATCH  | every chosen piece's whole read is 176 or more of 180
+         version 4: [176]
+         files:     [176]
+MATCH  | lowest piece among those that clear
+         version 4: [150]
+         files:     [150]
+MATCH  | every chosen piece on arms T, C, M is at or above 144
+         version 4: [True]
+         files:     [True]
+MATCH  | arms T, C, M: a piece reaches 144 at every running state past layer 0 (lowest best piece)
+         version 4: [True]
+         files:     [True]
+         lowest best piece past layer 0 on the built arms: 162
+
+=== 5. Whole-state floor on development and fresh episodes (section 6.4 item 1; section 17 failure 1)
+    arm F seed 0, site with the piece rule switched off: {'layers': [1], 'piece_correct': 22, 'positions': 'post-identity', 'rank': 1, 'whole_read_correct': 32}
+MATCH  | arm F seed 0 on development episodes: room against room needed
+         version 4: [0.4433, 0.428]
+         files:     [0.4433, 0.428]
+         margin in episodes of 600: 9.2
+MATCH  | whole-state floor on fresh episodes clears on all twelve
+         version 4: [True]
+         files:     [True]
+MATCH  | smallest denominator among the nine that read (arm C seed 2); arm F seed 0
+         version 4: [0.4863, 0.4263]
+         files:     [0.4863, 0.4263]
+MATCH  | arm F denominator clears the floor by 0.026 to 0.103 (section 17)
+         version 4: [0.026, 0.103]
+         files:     [0.026, 0.103]
+
+=== 6. Controls (section 7.3)
+MATCH  | control 1, arm T complement share
+         version 4: [0.0, 0.0, 0.0]
+         files:     [0.0, 0.0, 0.0]
+MATCH  | control 1, arm C complement share
+         version 4: [0.545, 0.5625, 0.5312]
+         files:     [0.545, 0.5625, 0.5312]
+MATCH  | control 1, arm M complement share
+         version 4: [0.3875, 0.3762, 0.4288]
+         files:     [0.3875, 0.3762, 0.4288]
+MATCH  | control 1, arm F complement share
+         version 4: [0.4838, 0.5637, 0.54]
+         files:     [0.4838, 0.5637, 0.54]
+MATCH  | arm F whole-state share (described)
+         version 4: [0.485, 0.5675, 0.53]
+         files:     [0.485, 0.5675, 0.53]
+MATCH  | control 3, arm C seed 0: below, equal, above
+         version 4: [0, 0, 20]
+         files:     [0, 0, 20]
+MATCH  | control 3, arm C seed 1: below, equal, above
+         version 4: [6, 1, 13]
+         files:     [6, 1, 13]
+MATCH  | control 3, arm C seed 2: below, equal, above
+         version 4: [6, 5, 9]
+         files:     [6, 5, 9]
+MATCH  | control 3, arms T and M: the ownership-only share is above all twenty draws (draws below = 20)
+         version 4: [20, 20, 20, 20, 20, 20]
+         files:     [20, 20, 20, 20, 20, 20]
+MATCH  | control 3, arm M random medians 0.015 to 0.019
+         version 4: [0.015, 0.019]
+         files:     [0.015, 0.019]
+         arm F control 3 (below, equal, above): [[6, 7, 7], [2, 1, 17], [8, 3, 9]]
+    control 4 as version 3 defined it, excess over the no-transplant rate, sorted: [0.0, 0.0, 0.0, 0.0013, 0.0025, 0.005, 0.065, 0.0713, 0.0788, 0.08, 0.085, 0.1013]
+MATCH  | old control 4: six at 0.005 or less, six between 0.065 and 0.10 (to two decimals; the largest is 0.1013)
+         version 4: [6, 6]
+         files:     [6, 6]
+MATCH  | control 6, trial counts same-value / different-value on all twelve
+         version 4: [81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719]
+         files:     [81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719, 81, 719]
+MATCH  | control 6, arm T same-value and different-value moved
+         version 4: [0.0, 1.0, 0.0, 1.0, 0.0, 1.0]
+         files:     [0.0, 1.0, 0.0, 1.0, 0.0, 1.0]
+MATCH  | control 6 same-value moved, arm C
+         version 4: [0.5062, 0.6296, 0.5679]
+         files:     [0.5062, 0.6296, 0.5679]
+MATCH  | control 6 same-value moved, arm M
+         version 4: [0.2222, 0.2716, 0.321]
+         files:     [0.2222, 0.2716, 0.321]
+MATCH  | control 6 same-value moved, arm F
+         version 4: [0.7284, 0.679, 0.6296]
+         files:     [0.7284, 0.679, 0.6296]
+MATCH  | control 6 different-value moved on arms C, M, F: 0.82 to 0.95
+         version 4: [0.82, 0.95]
+         files:     [0.82, 0.95]
+MATCH  | control 7 holds at fifteen different places
+         version 4: [15]
+         files:     [15]
+
+=== 7. Rider and true-slot reference (section 7.2 items 6, 7; section 5.3)
+MATCH  | rider, arm C whole-state share at arm T's site
+         version 4: [0.0512, 0.0488, 0.06]
+         files:     [0.0512, 0.0488, 0.06]
+MATCH  | rider, arm F whole-state share at arm T's site
+         version 4: [0.0587, 0.0563, 0.0688]
+         files:     [0.0587, 0.0563, 0.0688]
+MATCH  | rider, arm M whole-state share at arm T's site
+         version 4: [0.4088, 0.4138, 0.41]
+         files:     [0.4088, 0.4138, 0.41]
+MATCH  | rider returns no verdict on arms C, F, M on every seed
+         version 4: ['no verdict', 'no verdict', 'no verdict', 'no verdict', 'no verdict', 'no verdict', 'no verdict', 'no verdict', 'no verdict']
+         files:     ['no verdict', 'no verdict', 'no verdict', 'no verdict', 'no verdict', 'no verdict', 'no verdict', 'no verdict', 'no verdict']
+MATCH  | arm M true-slot reading
+         version 4: [0.4837, 0.476, 0.492]
+         files:     [0.4837, 0.476, 0.492]
+MATCH  | arm M route formula agrees with the true-slot reading to four decimals
+         version 4: [True]
+         files:     [True]
+MATCH  | arm M blind reading minus true-slot reading
+         version 4: [0.0049, 0.0099, 0.0529]
+         files:     [0.0049, 0.0099, 0.0529]
+         unrounded, seed 1: 0.009917355371900805
+MATCH  | arm T true-slot reading
+         version 4: [0.0, 0.0, 0.0]
+         files:     [0.0, 0.0, 0.0]
+MATCH  | arm M entangled share of the fresh trials
+         version 4: [0.60375, 0.60375, 0.60375]
+         files:     [0.60375, 0.60375, 0.60375]
+
+=== 8. Control 2 on arm F seed 0 (section 7.3 item 2; section 6.4 item 2; the packet pages 1 and 2)
+MATCH  | named read: best whole read at any layer, best piece at any layer
+         version 4: [137, 139]
+         files:     [137, 139]
+    candidate layer sets: [(1,), (3,)]
+MATCH  | the packet page 2: candidates at layers 1 and 3, best pieces 92 and 115; layer 2 best piece 139
+         version 4: [92, 115, 139]
+         files:     [92, 115, 139]
+MATCH  | named-other correct of 3,000: arm C, then arm F
+         version 4: [760, 751, 708, 994, 781, 746]
+         files:     [760, 751, 708, 994, 781, 746]
+MATCH  | control 2 status on arms T and M
+         version 4: ['not applicable', 'not applicable', 'not applicable', 'not applicable', 'not applicable', 'not applicable']
+         files:     ['not applicable', 'not applicable', 'not applicable', 'not applicable', 'not applicable', 'not applicable']
+
+=== 9. Arm C seed 1: the choice between layer 1 and layer 4 (section 5.2)
+    candidate, 8 directions: [1] action+3 dev ownership-only 0.0533 piece 172
+    candidate, 8 directions: [1] post-identity dev ownership-only 0.0533 piece 172
+    candidate, 8 directions: [4] action dev ownership-only 0.0517 piece 162
+    candidate, 8 directions: [4] action+ans dev ownership-only 0.0517 piece 162
+MATCH  | arm C seed 1: top two development ownership-only shares among sizes that clear
+         version 4: [0.0533, 0.0517]
+         files:     [0.0533, 0.0517]
+         top candidate: [1] action+3 8 | the gap in episodes of 600: 1.0
+
+=== 10. The short pre-stated run (sections 3, 5.2, 5.3, 7.2 item 3, 7.3 items 2 and 4)
+MATCH  | control 4 as redefined holds on all twelve; outputs bit-identical; no action changed
+         version 4: [True, True, 0]
+         files:     [True, True, 0]
+MATCH  | donor-value share equals the no-transplant share on every line
+         version 4: [True]
+         files:     [True]
+MATCH  | null transplant at the same positions bit-identical on all twelve
+         version 4: [True]
+         files:     [True]
+MATCH  | positions transplanted per pair: min, max, mean about 5
+         version 4: [1, 21, 5.2]
+         files:     [1, 21, 5.2]
+MATCH  | action-position counts equal the controls re-run on all twelve
+         version 4: [True]
+         files:     [True]
+MATCH  | arm C seed 1, piece at 1, 2, 3 before the action; on the average
+         version 4: [139, 139, 33, 113]
+         files:     [139, 139, 33, 113]
+MATCH  | arm C seed 1, whole state at 1, 2, 3 before; on the average
+         version 4: [180, 179, 179, 179]
+         files:     [180, 179, 179, 179]
+         positions: ['1 before the action', '2 before the action', '3 before the action']
+MATCH  | arm C seed 2: ten positions; piece from 30 to 139, all below 144; whole 149 to 180; average 123 (whole 180)
+         version 4: [10, 30, 139, 149, 180, 123, 180]
+         files:     [10, 30, 139, 149, 180, 123, 180]
+MATCH  | arm M piece on the average (whole 180 each)
+         version 4: [163, 174, 175, 180, 180, 180]
+         files:     [163, 174, 175, 180, 180, 180]
+MATCH  | arm M: positions of ten at which the piece reaches 144
+         version 4: [4, 4, 7]
+         files:     [4, 4, 7]
+MATCH  | arm M: piece at the fourth token of the first own turn
+         version 4: [34, 71, 33]
+         files:     [34, 71, 33]
+MATCH  | whole state at the other positions on the built arms: 149 to 180
+         version 4: [149, 180]
+         files:     [149, 180]
+MATCH  | arm F: piece between 11 and 36 everywhere except one position (seed 2, first token, 145)
+         version 4: [1, 'F/2', 'first own turn, token 1 of 5', 145]
+         files:     [1, 'F/2', 'first own turn, token 1 of 5', 145]
+         arm F on the average (piece, whole): [{'piece': 25, 'whole': 91}, {'piece': 11, 'whole': 19}, {'piece': 25, 'whole': 73}]
+MATCH  | single-position sites: arm T every seed and arm C seed 0
+         version 4: [0, 0, 0, 0]
+         files:     [0, 0, 0, 0]
+    part C keys returned: ['dev_named_other_accuracy', 'dev_untouched', 'named_other_correct', 'named_other_moved', 'named_read_fits', 'own_directed_moved', 'own_directed_moved_random_piece', 'site_set']
+       dev_named_other_accuracy = 0.32166666666666666
+       dev_untouched = 0.19333333333333333
+       named_other_correct = 994
+       named_other_moved = 0.09624999761581421
+       own_directed_moved = 0.0012499999720603228
+       own_directed_moved_random_piece = 0.0062500000931322575
+       site_set = {'layers': [1], 'piece_correct': 92, 'positions': 'action+3', 'rank': 8, 'whole_read_correct': 95}
+
+=== 11. The gate file (sections 4.4, 5.3, 5.4, 8.1, 8.2)
+MATCH  | the bar: 790 of 3,000
+         version 4: [790, 3000]
+         files:     [790, 3000]
+MATCH  | arm F named-other correct
+         version 4: [994, 781, 746]
+         files:     [994, 781, 746]
+MATCH  | arm C named-other correct
+         version 4: [760, 751, 708]
+         files:     [760, 751, 708]
+MATCH  | arm F own-directed 0.5513 to 0.5597
+         version 4: [0.5513, 0.5597]
+         files:     [0.5513, 0.5597]
+MATCH  | ownership-blind solver own-directed 0.2340 to 0.2383
+         version 4: [0.234, 0.2383]
+         files:     [0.234, 0.2383]
+MATCH  | arm F lesioned own-directed 0.1760 to 0.1940
+         version 4: [0.176, 0.194]
+         files:     [0.176, 0.194]
+MATCH  | arm M own-directed 0.8613 to 0.8667
+         version 4: [0.8613, 0.8667]
+         files:     [0.8613, 0.8667]
+MATCH  | arm M named-other 0.5517 to 0.5663
+         version 4: [0.5517, 0.5663]
+         files:     [0.5517, 0.5663]
+MATCH  | arm C lesioned 0.1703 to 0.1830; arm M 0.2190 to 0.2230
+         version 4: [0.1703, 0.183, 0.219, 0.223]
+         files:     [0.1703, 0.183, 0.219, 0.223]
+MATCH  | arm T lesioned own-directed
+         version 4: [0.2467, 0.251, 0.2733]
+         files:     [0.2467, 0.251, 0.2733]
+MATCH  | arm T learned both to 1.0000
+         version 4: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+         files:     [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+MATCH  | name-only solver: named-other 1.0000, own-directed 0.2380
+         version 4: [1.0, 0.238]
+         files:     [1.0, 0.238]
+
+=== 12. What summary.json records about the software (section 7.2 item 1)
+    top-level fields of summary.json other than arms and separation: {'device': 'cpu', 'seconds': 967.1754839420319, 'torch': '2.12.1'}
+
+ALL MATCH

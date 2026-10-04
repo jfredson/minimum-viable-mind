@@ -1,0 +1,35 @@
+ledger lines that are dated table rows: 18 | the last five: [(91, '2026-09-20'), (92, '2026-09-20'), (93, '2026-09-21'), (94, '2026-09-25'), (95, '2026-09-25')]
+the last row of the run table is line 95 dated 2026-09-25
+
+FOUND   | 228.15       | spent across the programme | line 95
+FOUND   | 46.75        | Amendment A3 against its $100 stop | line 95
+FOUND   | 9.43         | rehearsal line left, of $10 | line 95
+FOUND   | 0.0525       | second attempt cost | line 95
+FOUND   | 75.8645      | vendor balance on 2026-09-26T01:54Z | line 95
+FOUND   | 0.4974       | first attempt cost | line 94
+FOUND   | 0.02         | the 2026-09-21 slice row | line 93
+FOUND   | 8.47         | 2026-08-08 anomaly, billed and existed hours | line 93
+FOUND   | 2.42         | 2026-08-08 anomaly, billed and existed hours | line 93
+FOUND   | 8.47         | the same, in the note | line 423
+FOUND   | 2.42         | the same, in the note | line 423
+FOUND   | 20.28        | two-run pod-hours and rate | line 88
+FOUND   | 0.99         | two-run pod-hours and rate | line 88
+FOUND   | 1.943        | 10-million run trued up | lines 393 and 400
+FOUND   | 450          | ceiling raised to $450 on 2026-09-25 | the top of the file
+FOUND   | 2026-09-25   | ceiling raised to $450 on 2026-09-25 | the top of the file
+
+FOUND   | $10.48       | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | $10.84       | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | $10.04       | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | $84.06       | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | $129.90      | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | $161.90      | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | 1.044        | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | 1.080        | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | 13.08        | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | 13.52        | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | 12.53        | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | 1,792        | the note's arithmetic | second-release-arithmetic.txt
+FOUND   | 10,624       | the note's arithmetic | second-release-arithmetic.txt
+
+nothing missing

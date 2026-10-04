@@ -1,0 +1,51 @@
+==============================================================================
+check_single_source.py - does every money figure trace back to the compute ledger?
+==============================================================================
+System of record: experiments/06-mvm-0a-constructed-self-index/compute-ledger.md
+Documents read: 1   scope: live   figures below $0 ignored
+Figures that are in the ledger and point at it: 12
+Set aside as forecasts (a proposal pricing something, not a record of spend): 94
+Set aside as neither, by the wording around them: 62
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 1: a dollar figure the ledger does not contain
+------------------------------------------------------------------------------
+0 found. Either the document is stale or the ledger is missing
+a number it should state. A total summed across ledger rows lands here too.
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 2: in the ledger, but the sentence names another file as source
+------------------------------------------------------------------------------
+2 found. This is a second home being built for a number
+that already has one.
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2645   $44
+      names instead: docs/rulings/2026-09-21-review-verification-and-staged-spending.md
+      in: - **The flat $130 cap of 2026-09-20 is superseded** by the two releases of the 2026-09-21 ruling (items 10, 11 and 19 of `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, with its 
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2645   $131
+      names instead: docs/rulings/2026-09-21-review-verification-and-staged-spending.md
+      in: - **The flat $130 cap of 2026-09-20 is superseded** by the two releases of the 2026-09-21 ruling (items 10, 11 and 19 of `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, with its 
+
+------------------------------------------------------------------------------
+[LOOK AT IT] Group 3: in the ledger, and no source named
+------------------------------------------------------------------------------
+3 found. Right today, and with nothing pointing at the record that
+would correct it tomorrow. This is the state the stale $215.70 copies were in.
+By document:
+     3  docs/successor-experiment-proposal-2026-10-03-v4.md
+
+The first 3 in full (use --only <path> for one document's own):
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2635   $0.0525   in: the same row; the check at `afb5183`, point 3, confirms the $0.0525 against the two balance readings and the vendor's po
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2855   $16   in: Version 2's $16 floor was already lost at the top of the range on the ruled split (the Gate C review, RT-217), which is 
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2855   $10   in: Version 2's $16 floor was already lost at the top of the range on the ruled split (the Gate C review, RT-217), which is 
+
+------------------------------------------------------------------------------
+[LOOK AT IT] The same figure in many documents
+------------------------------------------------------------------------------
+0 figure(s) appear in four or more documents. A figure with many homes
+is a figure a correction has to find many times.
+
+==============================================================================
+Confident findings: 2. Things for a human to look at: 3 unsourced figures and 0 widely repeated ones.
+The ledger is taken as true here. Read the 'what this cannot check' note at the
+top of this file before reading a clean run as reassurance.
+==============================================================================

@@ -1,0 +1,50 @@
+=== 1. The site-set rule, run
+states | contiguous layer sets | full family | registered | x4 | narrower | x4 | stricter | x4
+     5 |                    15 |          60 |         45 |  180 |       55 |  220 |       40 |  160
+    13 |                    91 |         364 |        325 | 1300 |      351 | 1404 |      312 | 1248
+version 4 prints: toy 60 / 45 and 180 / 55 and 220 / 40 and 160; registered model 91 layer sets, 364 / 325 and 1,300 / 351 and 1,404 / 312 and 1,248
+
+=== 2. The list printed in section 18, parsed and compared set for set
+registered model: printed list holds 325 site sets; the rule gives 325; in the list and not the rule: 0; in the rule and not the list: 0
+   its own total line: total: 325 site sets, 1300 comparisons at sizes 1, 2, 4 and 8
+toy model: printed list holds 45 site sets; the rule gives 45; in the list and not the rule: 0; in the rule and not the list: 0
+   its own total line: total: 45 site sets, 180 comparisons at sizes 1, 2, 4 and 8
+
+=== 3. What the toy code asserts
+   rerun_controls.py: assert len(FAMILY) == 45 and len(FAMILY) * len(RANKS) == 180 and len(STRICT) == 40
+
+=== 4. Thresholds
+gate bar: smallest count with a one-sided tail at or under 0.05 at one in four, of 3,000: 790 (share 0.2633, tail 0.0485)
+four fifths of 180: 144 | one episode of 180: 0.0056
+sampling spread of a count of 180 at a true share of 0.8: one standard deviation 5.37 episodes (0.0298); two 10.7 episodes (0.060)
+a piece whose true accuracy is exactly 0.8 reaches 144 of 180 with probability 0.544; lands in 139 to 149 with probability 0.695
+at three times as many held-out episodes (540): one standard deviation 0.0172
+   a piece whose true accuracy is 0.78 reaches 144 of 180 with probability 0.293
+   a piece whose true accuracy is 0.82 reaches 144 of 180 with probability 0.789
+no-transplant formula at own-directed 0.2633: 0.1052; a broken pairing (0.1250) misses by 0.0198; margin over 0.018: 0.0018
+no-transplant formula at own-directed 0.56: 0.0629; a broken pairing (0.1250) misses by 0.0621; margin over 0.018: 0.0441
+graphics-chip fits as shares of 180: 31, 12, 19 -> [0.172, 0.067, 0.106]
+407 of 800 = 0.50875 | 483 of 800 = 0.60375 | 1810 of 3000 = 0.6033
+permutation null 0.111 to 0.128 of 180 = 20.0 to 23.0 | 0.072 of 180 = 13.0
+ten positions of a span of 39.2 on average = 0.255
+
+=== 5. Money (section 12), from the figures version 4 cites to the ledger and the note
+headroom: 450.0 - 228.15 = 221.85
+rehearsal line: 0.02 + 0.50 + 0.05 = 0.57; 10 - 0.57 = 9.43
+four development runs at 1.943: 7.77
+a registered-size run: 20.28 hours x 0.99 / 2 = 10.04
+per run from the measured ratios: F 10.04, T 10.48, C 10.84
+eight runs (two F, three T, three C): 84.04; + re-run at C 10.84 + 12 + 23 = 129.88; with a first release of 32: 161.88
+ruled split: 44 + 119.06 = 163.06; difference from 161.90: 1.16
+   ruled split with arm M at 29.7: programme after 420.91, left 29.09
+   ruled split with arm M at 30.12: programme after 421.33, left 28.67
+   ruled split with arm M at 36: programme after 427.21, left 22.79
+   ruled split with arm M at 41.76: programme after 432.97, left 17.03
+   ruled split with arm M at 32: programme after 423.21, left 26.79
+   ruled split with arm M at 44: programme after 435.21, left 14.79
+   the note's split (161.90) with arm M at 30: successor 191.90, programme after 420.05, left 29.95
+   the note's split (161.90) with arm M at 42: successor 203.90, programme after 432.05, left 17.95
+   the note's split (161.90) with arm M at 32: successor 193.90, programme after 422.05, left 27.95
+   the note's split (161.90) with arm M at 44: successor 205.90, programme after 434.05, left 15.95
+arm M at arm C's ratio, lower end: 29.70 x 1.080 = 32.08; three runs at 10.04 = 30.12
+whole successor on the ruled split: 193 to 205; with arm M at 32 to 44 less 1.94: 193.12 to 205.12
