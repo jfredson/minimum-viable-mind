@@ -51,7 +51,7 @@ with the channel on and zeroed equal `out-repairs/gate_base.json`
 twelve arm models and the solver's three, episode for episode, though that
 file was computed on the graphics chip:
 
-    $ python -c "...compare gate_base.json runs with lesion_content_check.json models..."
+    $ python -c "...compare out-repairs/gate_base.json runs with lesion_content_check.json models..."
     T 0 gate file lesioned own 740 this run 740 | gate own 3000 this run 3000 | other 3000 3000
     ...
     F 2 gate file lesioned own 582 this run 582 | gate own 1664 this run 1664 | other 746 746
