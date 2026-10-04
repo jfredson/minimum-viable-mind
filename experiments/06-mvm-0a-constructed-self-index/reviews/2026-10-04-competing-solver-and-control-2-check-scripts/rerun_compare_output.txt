@@ -1,0 +1,35 @@
+# Pull request 88 (re-run in a detached worktree at 3d55865). The run does not write stdout.txt (its output was sent to rerun_solver_stdout.txt), so the stdout.txt line below compares the committed file with itself; the printed output is compared at the end of this section.
+SAME  measure_blind_seed0_channel_left_on.json: byte-identical True
+SAME  measure_blind_seed0_channel_removed.json: byte-identical True
+SAME  measure_blind_seed1_channel_left_on.json: byte-identical True
+SAME  measure_blind_seed1_channel_removed.json: byte-identical True
+SAME  measure_blind_seed2_channel_left_on.json: byte-identical True
+SAME  measure_blind_seed2_channel_removed.json: byte-identical True
+SAME  nominate_blind_seed0_channel_left_on.json: byte-identical True
+SAME  nominate_blind_seed0_channel_removed.json: byte-identical True
+SAME  nominate_blind_seed1_channel_left_on.json: byte-identical True
+SAME  nominate_blind_seed1_channel_removed.json: byte-identical True
+SAME  nominate_blind_seed2_channel_left_on.json: byte-identical True
+SAME  nominate_blind_seed2_channel_removed.json: byte-identical True
+SAME  reads_blind_seed0_channel_left_on.npz: 5 arrays, array-equal True, largest difference 0.0, bytes identical True
+SAME  reads_blind_seed0_channel_removed.npz: 5 arrays, array-equal True, largest difference 0.0, bytes identical True
+SAME  reads_blind_seed1_channel_left_on.npz: 5 arrays, array-equal True, largest difference 0.0, bytes identical True
+SAME  reads_blind_seed1_channel_removed.npz: 5 arrays, array-equal True, largest difference 0.0, bytes identical True
+SAME  reads_blind_seed2_channel_left_on.npz: 5 arrays, array-equal True, largest difference 0.0, bytes identical True
+SAME  reads_blind_seed2_channel_removed.npz: 5 arrays, array-equal True, largest difference 0.0, bytes identical True
+SAME  stdout.txt: byte-identical True
+DIFF  summary.json: byte-identical False; 1 lines differ of 394 / 394; first: [(388, ' "seconds": 839.0525853633881,', ' "seconds": 929.9147808551788,')]
+SAME  table.md: byte-identical True
+21 files compared, 1 differ
+
+# printed output of the re-run against the committed stdout.txt, leaving out the timing and exit-code lines
+identical
+
+# Pull request 89 (re-run in a detached worktree at c148bf1). Same note about stdout.txt.
+SAME  code_test_NOT_A_RESULT.json: byte-identical True
+SAME  stdout.txt: byte-identical True
+SAME  table.md: byte-identical True
+3 files compared, 0 differ
+
+# printed output of the re-run against the committed stdout.txt, leaving out the timing and exit-code lines
+identical
