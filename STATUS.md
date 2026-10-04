@@ -52,8 +52,9 @@ added up in, so version 4 should say it is good to an episode or two or fix
 the arithmetic. **The ruling record** says what John's words say, with one
 narrow exception: it sets down *how* the two figures are computed as part of
 what was ruled, which "print both figures" accepts by implication only.
-**For John, optional:** one sentence that the computation in section 4 of the
-run's method is what he means, or leave it to the registration review. The
+John was asked and confirmed it the same evening in the words "Yes, section 4
+of the method is what I meant" (a dated note beside item 3 of the ruling
+record; authorship mixed), so nothing from this check is left with him. The
 roadmap's second dated note is right. **Nothing blocks version 4 of the
 proposal.**
 

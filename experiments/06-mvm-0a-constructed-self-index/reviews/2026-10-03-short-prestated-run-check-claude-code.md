@@ -300,6 +300,12 @@ words but the record. What follows checks the record against those words.
     full so that the registration review and his ruling on the registration
     cover it. Until one of those, item 2.3 should be read as "the session's
     reading, not objected to". This session has not edited the record.
+
+    *Dated note, 2026-10-03, late evening, after this document was filed:
+    John was asked and answered in the words "Yes, section 4 of the method is
+    what I meant". Item 2.3 now rests on his own words. This session added a
+    dated note saying so beside item 3 of the record and changed nothing else
+    in it. The finding above is left as written.*
 20. **MEASURED. The record's cautions are accurate.** It says neither source
     document had been checked by a second session, or merged, when John
     ruled. The record was committed at 01:28:13 UTC; the three pull requests
