@@ -27,6 +27,17 @@ does both jobs late. Every statement is checked against the main line, the two
 open pull requests or the compute ledger, and says which. Nothing here is a
 ruling. Nothing was launched, rented or spent by this session.*
 
+**Last of all on 2026-10-03: John ruled the two things the checks left him**
+(`docs/rulings/2026-10-03-fifth-outcome-and-both-figures-rulings.md`, in the
+words "Yes, satisfactory and weaker than R1; print both figures", authorship
+mixed). The fifth registered outcome, "metric validated, degree not read", is
+satisfactory and stated as weaker than R1, now on his own words and not on a
+general agreement. The new reported figure is printed both ways in the
+registered table, per position and on the average over the site, with no pass
+line on either. Items (a) and (b) in the paragraph below are therefore
+settled. Still owed: John's merge of pull requests 79, 80 and 81; a check of
+the short pre-stated run and of this ruling's record by another session.
+
 **Evening of 2026-10-03: the day's work is checked by a session that wrote
 none of it, and the short pre-stated run is done. Nothing blocks version 4 of
 the proposal; two small things are John's.** A Claude Code checking session,

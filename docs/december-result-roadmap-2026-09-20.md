@@ -91,6 +91,12 @@ by-construction arms separate and the free-trained model returns no verdict.
 It is satisfactory, and stated as weaker than R1
 (`docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md`, page 11).*
 
+*Second dated note, 2026-10-03 (Pacific), evening. "Satisfactory" above was
+first recorded from a general "Agreed on all" to a question the packet had
+put as open. John confirmed it that evening in his own words: "Yes,
+satisfactory and weaker than R1"
+(`docs/rulings/2026-10-03-fifth-outcome-and-both-figures-rulings.md`).*
+
 The separation bar for R1 versus R2, the eligibility threshold for R3, the
 seed count and the paired-uncertainty method are set by the rehearsal (section
 4, step 2 of the chain) and fixed in the registration text. This document does not invent
