@@ -1,0 +1,63 @@
+== 1. The pairs: what differs between the twins, and where
+  per-position field 'acting': identical everywhere False; identical before both first own turns True
+  per-position field 'assign_agent_at': identical everywhere True; identical before both first own turns True
+  per-position field 'tokens': identical everywhere True; identical before both first own turns True
+  positions before both first own turns, per pair: min 1, mean 5.213, max 21
+  share of pairs where the donor's first own turn comes first: 0.5088
+== 2. Part (a) by a different route, every model
+  (i) twins' states identical at those positions at EVERY layer, not only the nominated one
+  (ii) outputs are logits at the two action positions only; their shape is printed
+  (iii) teeth: the same transplant with random noise added to the donor's state must change the outputs
+  T/0: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0000 (theirs 0.0000) | noised donor changes outputs True, largest change 4.646, own-directed actions changed 0 of 800
+  T/1: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0000 (theirs 0.0000) | noised donor changes outputs True, largest change 3.337, own-directed actions changed 0 of 800
+  T/2: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0000 (theirs 0.0000) | noised donor changes outputs True, largest change 4.505, own-directed actions changed 0 of 800
+  C/0: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0512 (theirs 0.0512) | noised donor changes outputs True, largest change 1.240, own-directed actions changed 4 of 800
+  C/1: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0487 (theirs 0.0488) | noised donor changes outputs True, largest change 2.640, own-directed actions changed 6 of 800
+  C/2: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0600 (theirs 0.0600) | noised donor changes outputs True, largest change 0.600, own-directed actions changed 1 of 800
+  F/0: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0587 (theirs 0.0587) | noised donor changes outputs True, largest change 0.779, own-directed actions changed 1 of 800
+  F/1: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0562 (theirs 0.0563) | noised donor changes outputs True, largest change 2.241, own-directed actions changed 14 of 800
+  F/2: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0688 (theirs 0.0688) | noised donor changes outputs True, largest change 0.900, own-directed actions changed 7 of 800
+  M/0: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0125 (theirs 0.0125) | noised donor changes outputs True, largest change 1.181, own-directed actions changed 0 of 800
+  M/1: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0175 (theirs 0.0175) | noised donor changes outputs True, largest change 1.768, own-directed actions changed 0 of 800
+  M/2: output shape (800, 2, 46) | states identical at all 5 layers True | own-written transplant bit-identical True (theirs True) | donor-value share 0.0137 (theirs 0.0138) | noised donor changes outputs True, largest change 1.936, own-directed actions changed 2 of 800
+== 3. Part (b): what the ten named positions are
+  first own turn, token 1: acting on 1.000 | is own marker word 1.000 | is a value word 0.000 | 12 distinct tokens
+  first own turn, token 2: acting on 1.000 | is own marker word 0.000 | is a value word 0.000 | 1 distinct tokens: ['assign']
+  first own turn, token 3: acting on 1.000 | is own marker word 0.000 | is a value word 0.000 | 5 distinct tokens
+  first own turn, token 4: acting on 1.000 | is own marker word 0.000 | is a value word 1.000 | 8 distinct tokens
+  first own turn, token 5: acting on 1.000 | is own marker word 0.000 | is a value word 0.000 | 1 distinct tokens: ['<nl>']
+  5 before the action: acting on 1.000 | is own marker word 0.000 | is a value word 0.000 | 1 distinct tokens: ['<act>']
+  4 before the action: acting on 1.000 | is own marker word 0.000 | is a value word 0.000 | 1 distinct tokens: ['revise']
+  3 before the action: acting on 1.000 | is own marker word 0.000 | is a value word 0.000 | 1 distinct tokens: ['<self>']
+  2 before the action: acting on 1.000 | is own marker word 0.000 | is a value word 0.000 | 5 distinct tokens
+  1 before the action: acting on 1.000 | is own marker word 0.000 | is a value word 0.000 | 1 distinct tokens: ['<ans>']
+  the action position: acting on 1.000 | is own marker word 0.000 | is a value word 0.000 | 1 distinct tokens: ['<mask>']
+  length of the span from first own turn to action: min 16, mean 39.24, max 53; so the ten named positions are on average 0.26 of the other positions
+== 4. Part (b) recomputed with this session's own indexing, every cell
+  T/0: 1 cells, differing from the committed figures: none
+  T/1: 1 cells, differing from the committed figures: none
+  T/2: 1 cells, differing from the committed figures: none
+  C/0: 1 cells, differing from the committed figures: none
+    C/1 average over the other positions, whole / piece: summed per episode in single precision (179, 113); in double precision (179, 113); committed (179, 113)
+  C/1: 5 cells, differing from the committed figures: none
+    C/2 average over the other positions, whole / piece: summed per episode in single precision (180, 123); in double precision (180, 123); committed (180, 123)
+  C/2: 12 cells, differing from the committed figures: none
+    F/0 average over the other positions, whole / piece: summed per episode in single precision (90, 25); in double precision (92, 24); committed (91, 25)
+  F/0: 12 cells, differing from the committed figures: {'mean': ((90, 25), (91, 25))}
+    F/1 average over the other positions, whole / piece: summed per episode in single precision (19, 11); in double precision (19, 11); committed (19, 11)
+  F/1: 5 cells, differing from the committed figures: none
+    F/2 average over the other positions, whole / piece: summed per episode in single precision (74, 25); in double precision (74, 25); committed (73, 25)
+  F/2: 12 cells, differing from the committed figures: {'mean': ((74, 25), (73, 25))}
+    M/0 average over the other positions, whole / piece: summed per episode in single precision (180, 164); in double precision (180, 163); committed (180, 163)
+  M/0: 12 cells, differing from the committed figures: {'mean': ((180, 164), (180, 163))}
+    M/1 average over the other positions, whole / piece: summed per episode in single precision (180, 174); in double precision (180, 174); committed (180, 174)
+  M/1: 12 cells, differing from the committed figures: none
+    M/2 average over the other positions, whole / piece: summed per episode in single precision (180, 175); in double precision (180, 175); committed (180, 175)
+  M/2: 12 cells, differing from the committed figures: none
+  total cells 86 (each a whole-state and a piece count), differing 3
+== 5. Part (c): the re-run's gate figure, and whether the floor was the only thing in the way
+  F/0 named-other correct in gate.json: 994 (the control needs 790)
+  the re-run's own control 2 on F/0: status 'no verdict', reason "read failed its floor: no size's piece reaches four fifths"
+  candidates with the floor off: 16; best piece count among them 115; any at or above 144: False
+  'status' key present in the committed output: False
+  PIECE_MIN in the module after import: 144
