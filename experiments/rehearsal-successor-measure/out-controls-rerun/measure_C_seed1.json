@@ -1,0 +1,176 @@
+{
+ "arm": "C",
+ "control2": {
+  "named_other_correct": 751,
+  "reason": "the arm has not learned the named-other condition",
+  "status": "no verdict"
+ },
+ "gate": {
+  "other_seeds_clearing": 0,
+  "own_seeds_clearing": 3,
+  "passes": true,
+  "rule": "own-directed only",
+  "version2_learn_both": false
+ },
+ "gate_run": {
+  "other_clears": false,
+  "other_correct": 751,
+  "own_clears": true,
+  "own_correct": 1703
+ },
+ "nomination_status": "nominated",
+ "primary": {
+  "controls": {
+   "1": {
+    "complement_donor_share": 0.5625,
+    "holds_on_arm_T": null,
+    "untouched": 0.04875,
+    "whole": 0.555
+   },
+   "3": {
+    "above": 13,
+    "below": 6,
+    "equal": 1,
+    "median": 0.055,
+    "ownership_only": 0.0525,
+    "p95": 0.0575
+   },
+   "4": {
+    "above_untouched": 0.0012500000000000011,
+    "donor_share": 0.05,
+    "untouched": 0.04875
+   },
+   "6": {
+    "different_value_moved": 0.8859527111053467,
+    "different_value_trials": 719,
+    "same_value_moved": 0.6296296119689941,
+    "same_value_trials": 81
+   },
+   "7": {
+    "bit_identical": true
+   }
+  },
+  "described_only": false,
+  "no_transplant": {
+   "formula": 0.05982142857142857,
+   "inside_allowance": true,
+   "miss": -0.011071428571428565,
+   "rate": 0.04875
+  },
+  "reading": {
+   "accuracy_ownership_only": 0.0525,
+   "accuracy_untouched": 0.04875,
+   "accuracy_whole": 0.555,
+   "arm_own_accuracy": 0.58125,
+   "degree": 0.9925925925925926,
+   "floor": {
+    "clears": true,
+    "clears_plain_form": true,
+    "required_room": 0.4260000000000001,
+    "room": 0.5062500000000001
+   },
+   "raw_difference": 0.5025000000000001,
+   "status": "valid",
+   "version1_form": 0.9054054054054055
+  },
+  "site_set": {
+   "layers": [
+    1
+   ],
+   "piece_correct": 172,
+   "positions": "action+3",
+   "rank": 8,
+   "whole_read_correct": 177
+  }
+ },
+ "rider_at_arm_T_site_set": {
+  "reading": {
+   "accuracy_ownership_only": 0.04875,
+   "accuracy_untouched": 0.04875,
+   "accuracy_whole": 0.04875,
+   "arm_own_accuracy": 0.58125,
+   "degree": null,
+   "floor": {
+    "clears": false,
+    "clears_plain_form": false,
+    "required_room": 0.4260000000000001,
+    "room": 0.0
+   },
+   "raw_difference": 0.0,
+   "status": "no verdict",
+   "version1_form": 0.0
+  },
+  "site_set": {
+   "layers": [
+    0
+   ],
+   "positions": "action",
+   "rank": 8
+  }
+ },
+ "seed": 1,
+ "stricter": {
+  "controls": {
+   "1": {
+    "complement_donor_share": 0.5625,
+    "holds_on_arm_T": null,
+    "untouched": 0.04875,
+    "whole": 0.555
+   },
+   "3": {
+    "above": 13,
+    "below": 6,
+    "equal": 1,
+    "median": 0.055,
+    "ownership_only": 0.0525,
+    "p95": 0.0575
+   },
+   "4": {
+    "above_untouched": 0.0012500000000000011,
+    "donor_share": 0.05,
+    "untouched": 0.04875
+   },
+   "6": {
+    "different_value_moved": 0.8859527111053467,
+    "different_value_trials": 719,
+    "same_value_moved": 0.6296296119689941,
+    "same_value_trials": 81
+   },
+   "7": {
+    "bit_identical": true
+   }
+  },
+  "described_only": false,
+  "no_transplant": {
+   "formula": 0.05982142857142857,
+   "inside_allowance": true,
+   "miss": -0.011071428571428565,
+   "rate": 0.04875
+  },
+  "reading": {
+   "accuracy_ownership_only": 0.0525,
+   "accuracy_untouched": 0.04875,
+   "accuracy_whole": 0.555,
+   "arm_own_accuracy": 0.58125,
+   "degree": 0.9925925925925926,
+   "floor": {
+    "clears": true,
+    "clears_plain_form": true,
+    "required_room": 0.4260000000000001,
+    "room": 0.5062500000000001
+   },
+   "raw_difference": 0.5025000000000001,
+   "status": "valid",
+   "version1_form": 0.9054054054054055
+  },
+  "site_set": {
+   "layers": [
+    1
+   ],
+   "piece_correct": 172,
+   "positions": "action+3",
+   "rank": 8,
+   "whole_read_correct": 177
+  }
+ }
+}

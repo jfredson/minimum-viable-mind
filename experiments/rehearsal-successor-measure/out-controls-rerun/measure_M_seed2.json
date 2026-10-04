@@ -1,0 +1,215 @@
+{
+ "arm": "M",
+ "control2": {
+  "reason": "ruled: the named agent is held outside the running state",
+  "status": "not applicable"
+ },
+ "gate": {
+  "other_seeds_clearing": 3,
+  "own_seeds_clearing": 3,
+  "passes": true,
+  "rule": "own-directed only",
+  "version2_learn_both": true
+ },
+ "gate_run": {
+  "other_clears": true,
+  "other_correct": 1655,
+  "own_clears": true,
+  "own_correct": 2600
+ },
+ "nomination_status": "nominated",
+ "primary": {
+  "controls": {
+   "1": {
+    "complement_donor_share": 0.42875,
+    "holds_on_arm_T": null,
+    "untouched": 0.01375,
+    "whole": 0.79375
+   },
+   "3": {
+    "above": 0,
+    "below": 20,
+    "equal": 0,
+    "median": 0.015,
+    "ownership_only": 0.36875,
+    "p95": 0.02125
+   },
+   "4": {
+    "above_untouched": 0.085,
+    "donor_share": 0.09875,
+    "untouched": 0.01375
+   },
+   "6": {
+    "different_value_moved": 0.9485396146774292,
+    "different_value_trials": 719,
+    "same_value_moved": 0.32098764181137085,
+    "same_value_trials": 81
+   },
+   "7": {
+    "bit_identical": true
+   }
+  },
+  "described_only": false,
+  "no_transplant": {
+   "formula": 0.01839285714285715,
+   "inside_allowance": true,
+   "miss": -0.004642857142857148,
+   "rate": 0.01375
+  },
+  "reading": {
+   "accuracy_ownership_only": 0.36875,
+   "accuracy_untouched": 0.01375,
+   "accuracy_whole": 0.79375,
+   "arm_own_accuracy": 0.87125,
+   "degree": 0.5448717948717948,
+   "floor": {
+    "clears": true,
+    "clears_plain_form": true,
+    "required_room": 0.6859999999999999,
+    "room": 0.7799999999999999
+   },
+   "raw_difference": 0.42499999999999993,
+   "status": "valid",
+   "version1_form": 0.5354330708661417
+  },
+  "site_set": {
+   "layers": [
+    1
+   ],
+   "piece_correct": 180,
+   "positions": "post-identity",
+   "rank": 8,
+   "whole_read_correct": 180
+  },
+  "true_slot": {
+   "entangled_share": 0.60375,
+   "reading": {
+    "accuracy_ownership_only": 0.41,
+    "accuracy_untouched": 0.01375,
+    "accuracy_whole": 0.79375,
+    "arm_own_accuracy": 0.87125,
+    "degree": 0.4919871794871795,
+    "floor": {
+     "clears": true,
+     "clears_plain_form": true,
+     "required_room": 0.6859999999999999,
+     "room": 0.7799999999999999
+    },
+    "raw_difference": 0.38375,
+    "status": "valid",
+    "version1_form": 0.48346456692913387
+   },
+   "route_formula": 0.4919871794871795
+  }
+ },
+ "rider_at_arm_T_site_set": {
+  "reading": {
+   "accuracy_ownership_only": 0.38,
+   "accuracy_untouched": 0.01375,
+   "accuracy_whole": 0.41,
+   "arm_own_accuracy": 0.87125,
+   "degree": null,
+   "floor": {
+    "clears": false,
+    "clears_plain_form": false,
+    "required_room": 0.6859999999999999,
+    "room": 0.39625
+   },
+   "raw_difference": 0.02999999999999997,
+   "status": "no verdict",
+   "version1_form": 0.07317073170731701
+  },
+  "site_set": {
+   "layers": [
+    0
+   ],
+   "positions": "action",
+   "rank": 8
+  }
+ },
+ "seed": 2,
+ "stricter": {
+  "controls": {
+   "1": {
+    "complement_donor_share": 0.42875,
+    "holds_on_arm_T": null,
+    "untouched": 0.01375,
+    "whole": 0.79375
+   },
+   "3": {
+    "above": 0,
+    "below": 20,
+    "equal": 0,
+    "median": 0.015,
+    "ownership_only": 0.36875,
+    "p95": 0.02125
+   },
+   "4": {
+    "above_untouched": 0.085,
+    "donor_share": 0.09875,
+    "untouched": 0.01375
+   },
+   "6": {
+    "different_value_moved": 0.9485396146774292,
+    "different_value_trials": 719,
+    "same_value_moved": 0.32098764181137085,
+    "same_value_trials": 81
+   },
+   "7": {
+    "bit_identical": true
+   }
+  },
+  "described_only": false,
+  "no_transplant": {
+   "formula": 0.01839285714285715,
+   "inside_allowance": true,
+   "miss": -0.004642857142857148,
+   "rate": 0.01375
+  },
+  "reading": {
+   "accuracy_ownership_only": 0.36875,
+   "accuracy_untouched": 0.01375,
+   "accuracy_whole": 0.79375,
+   "arm_own_accuracy": 0.87125,
+   "degree": 0.5448717948717948,
+   "floor": {
+    "clears": true,
+    "clears_plain_form": true,
+    "required_room": 0.6859999999999999,
+    "room": 0.7799999999999999
+   },
+   "raw_difference": 0.42499999999999993,
+   "status": "valid",
+   "version1_form": 0.5354330708661417
+  },
+  "site_set": {
+   "layers": [
+    1
+   ],
+   "piece_correct": 180,
+   "positions": "post-identity",
+   "rank": 8,
+   "whole_read_correct": 180
+  },
+  "true_slot": {
+   "entangled_share": 0.60375,
+   "reading": {
+    "accuracy_ownership_only": 0.41,
+    "accuracy_untouched": 0.01375,
+    "accuracy_whole": 0.79375,
+    "arm_own_accuracy": 0.87125,
+    "degree": 0.4919871794871795,
+    "floor": {
+     "clears": true,
+     "clears_plain_form": true,
+     "required_room": 0.6859999999999999,
+     "room": 0.7799999999999999
+    },
+    "raw_difference": 0.38375,
+    "status": "valid",
+    "version1_form": 0.48346456692913387
+   },
+   "route_formula": 0.4919871794871795
+  }
+ }
+}

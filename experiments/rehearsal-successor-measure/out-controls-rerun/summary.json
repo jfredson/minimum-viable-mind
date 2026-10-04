@@ -1,0 +1,2390 @@
+{
+ "arms": {
+  "C/0": {
+   "arm": "C",
+   "control2": {
+    "named_other_correct": 760,
+    "reason": "the arm has not learned the named-other condition",
+    "status": "no verdict"
+   },
+   "gate": {
+    "other_seeds_clearing": 0,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": false
+   },
+   "gate_run": {
+    "other_clears": false,
+    "other_correct": 760,
+    "own_clears": true,
+    "own_correct": 1711
+   },
+   "nomination_status": "nominated",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.545,
+      "holds_on_arm_T": null,
+      "untouched": 0.05125,
+      "whole": 0.54
+     },
+     "3": {
+      "above": 20,
+      "below": 0,
+      "equal": 0,
+      "median": 0.05875,
+      "ownership_only": 0.04875,
+      "p95": 0.063875
+     },
+     "4": {
+      "above_untouched": 0.0025000000000000022,
+      "donor_share": 0.05375,
+      "untouched": 0.05125
+     },
+     "6": {
+      "different_value_moved": 0.8219749927520752,
+      "different_value_trials": 719,
+      "same_value_moved": 0.5061728358268738,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.06446428571428572,
+     "inside_allowance": true,
+     "miss": -0.013214285714285727,
+     "rate": 0.05125
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.04875,
+     "accuracy_untouched": 0.05125,
+     "accuracy_whole": 0.54,
+     "arm_own_accuracy": 0.54875,
+     "degree": 1.0051150895140666,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.39799999999999996,
+      "room": 0.48875
+     },
+     "raw_difference": 0.49125,
+     "status": "valid",
+     "version1_form": 0.9097222222222222
+    },
+    "site_set": {
+     "layers": [
+      2
+     ],
+     "piece_correct": 180,
+     "positions": "action",
+     "rank": 8,
+     "whole_read_correct": 180
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 0.05125,
+     "accuracy_untouched": 0.05125,
+     "accuracy_whole": 0.05125,
+     "arm_own_accuracy": 0.54875,
+     "degree": null,
+     "floor": {
+      "clears": false,
+      "clears_plain_form": false,
+      "required_room": 0.39799999999999996,
+      "room": 0.0
+     },
+     "raw_difference": 0.0,
+     "status": "no verdict",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 0,
+   "stricter": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.545,
+      "holds_on_arm_T": null,
+      "untouched": 0.05125,
+      "whole": 0.54
+     },
+     "3": {
+      "above": 20,
+      "below": 0,
+      "equal": 0,
+      "median": 0.05875,
+      "ownership_only": 0.04875,
+      "p95": 0.063875
+     },
+     "4": {
+      "above_untouched": 0.0025000000000000022,
+      "donor_share": 0.05375,
+      "untouched": 0.05125
+     },
+     "6": {
+      "different_value_moved": 0.8219749927520752,
+      "different_value_trials": 719,
+      "same_value_moved": 0.5061728358268738,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.06446428571428572,
+     "inside_allowance": true,
+     "miss": -0.013214285714285727,
+     "rate": 0.05125
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.04875,
+     "accuracy_untouched": 0.05125,
+     "accuracy_whole": 0.54,
+     "arm_own_accuracy": 0.54875,
+     "degree": 1.0051150895140666,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.39799999999999996,
+      "room": 0.48875
+     },
+     "raw_difference": 0.49125,
+     "status": "valid",
+     "version1_form": 0.9097222222222222
+    },
+    "site_set": {
+     "layers": [
+      2
+     ],
+     "piece_correct": 180,
+     "positions": "action",
+     "rank": 8,
+     "whole_read_correct": 180
+    }
+   }
+  },
+  "C/1": {
+   "arm": "C",
+   "control2": {
+    "named_other_correct": 751,
+    "reason": "the arm has not learned the named-other condition",
+    "status": "no verdict"
+   },
+   "gate": {
+    "other_seeds_clearing": 0,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": false
+   },
+   "gate_run": {
+    "other_clears": false,
+    "other_correct": 751,
+    "own_clears": true,
+    "own_correct": 1703
+   },
+   "nomination_status": "nominated",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.5625,
+      "holds_on_arm_T": null,
+      "untouched": 0.04875,
+      "whole": 0.555
+     },
+     "3": {
+      "above": 13,
+      "below": 6,
+      "equal": 1,
+      "median": 0.055,
+      "ownership_only": 0.0525,
+      "p95": 0.0575
+     },
+     "4": {
+      "above_untouched": 0.0012500000000000011,
+      "donor_share": 0.05,
+      "untouched": 0.04875
+     },
+     "6": {
+      "different_value_moved": 0.8859527111053467,
+      "different_value_trials": 719,
+      "same_value_moved": 0.6296296119689941,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.05982142857142857,
+     "inside_allowance": true,
+     "miss": -0.011071428571428565,
+     "rate": 0.04875
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.0525,
+     "accuracy_untouched": 0.04875,
+     "accuracy_whole": 0.555,
+     "arm_own_accuracy": 0.58125,
+     "degree": 0.9925925925925926,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.4260000000000001,
+      "room": 0.5062500000000001
+     },
+     "raw_difference": 0.5025000000000001,
+     "status": "valid",
+     "version1_form": 0.9054054054054055
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 172,
+     "positions": "action+3",
+     "rank": 8,
+     "whole_read_correct": 177
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 0.04875,
+     "accuracy_untouched": 0.04875,
+     "accuracy_whole": 0.04875,
+     "arm_own_accuracy": 0.58125,
+     "degree": null,
+     "floor": {
+      "clears": false,
+      "clears_plain_form": false,
+      "required_room": 0.4260000000000001,
+      "room": 0.0
+     },
+     "raw_difference": 0.0,
+     "status": "no verdict",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 1,
+   "stricter": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.5625,
+      "holds_on_arm_T": null,
+      "untouched": 0.04875,
+      "whole": 0.555
+     },
+     "3": {
+      "above": 13,
+      "below": 6,
+      "equal": 1,
+      "median": 0.055,
+      "ownership_only": 0.0525,
+      "p95": 0.0575
+     },
+     "4": {
+      "above_untouched": 0.0012500000000000011,
+      "donor_share": 0.05,
+      "untouched": 0.04875
+     },
+     "6": {
+      "different_value_moved": 0.8859527111053467,
+      "different_value_trials": 719,
+      "same_value_moved": 0.6296296119689941,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.05982142857142857,
+     "inside_allowance": true,
+     "miss": -0.011071428571428565,
+     "rate": 0.04875
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.0525,
+     "accuracy_untouched": 0.04875,
+     "accuracy_whole": 0.555,
+     "arm_own_accuracy": 0.58125,
+     "degree": 0.9925925925925926,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.4260000000000001,
+      "room": 0.5062500000000001
+     },
+     "raw_difference": 0.5025000000000001,
+     "status": "valid",
+     "version1_form": 0.9054054054054055
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 172,
+     "positions": "action+3",
+     "rank": 8,
+     "whole_read_correct": 177
+    }
+   }
+  },
+  "C/2": {
+   "arm": "C",
+   "control2": {
+    "named_other_correct": 708,
+    "reason": "the arm has not learned the named-other condition",
+    "status": "no verdict"
+   },
+   "gate": {
+    "other_seeds_clearing": 0,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": false
+   },
+   "gate_run": {
+    "other_clears": false,
+    "other_correct": 708,
+    "own_clears": true,
+    "own_correct": 1727
+   },
+   "nomination_status": "nominated",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.53125,
+      "holds_on_arm_T": null,
+      "untouched": 0.06,
+      "whole": 0.54625
+     },
+     "3": {
+      "above": 9,
+      "below": 6,
+      "equal": 5,
+      "median": 0.06125,
+      "ownership_only": 0.06125,
+      "p95": 0.06631250000000001
+     },
+     "4": {
+      "above_untouched": 0.07125000000000001,
+      "donor_share": 0.13125,
+      "untouched": 0.06
+     },
+     "6": {
+      "different_value_moved": 0.9137691259384155,
+      "different_value_trials": 719,
+      "same_value_moved": 0.5679012537002563,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.06392857142857143,
+     "inside_allowance": true,
+     "miss": -0.003928571428571434,
+     "rate": 0.06
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.06125,
+     "accuracy_untouched": 0.06,
+     "accuracy_whole": 0.54625,
+     "arm_own_accuracy": 0.5525,
+     "degree": 0.9974293059125964,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.394,
+      "room": 0.48625
+     },
+     "raw_difference": 0.485,
+     "status": "valid",
+     "version1_form": 0.8878718535469107
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 150,
+     "positions": "post-identity",
+     "rank": 4,
+     "whole_read_correct": 176
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 0.06,
+     "accuracy_untouched": 0.06,
+     "accuracy_whole": 0.06,
+     "arm_own_accuracy": 0.5525,
+     "degree": null,
+     "floor": {
+      "clears": false,
+      "clears_plain_form": false,
+      "required_room": 0.394,
+      "room": 0.0
+     },
+     "raw_difference": 0.0,
+     "status": "no verdict",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 2,
+   "stricter": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.53125,
+      "holds_on_arm_T": null,
+      "untouched": 0.06,
+      "whole": 0.54625
+     },
+     "3": {
+      "above": 9,
+      "below": 6,
+      "equal": 5,
+      "median": 0.06125,
+      "ownership_only": 0.06125,
+      "p95": 0.06631250000000001
+     },
+     "4": {
+      "above_untouched": 0.07125000000000001,
+      "donor_share": 0.13125,
+      "untouched": 0.06
+     },
+     "6": {
+      "different_value_moved": 0.9137691259384155,
+      "different_value_trials": 719,
+      "same_value_moved": 0.5679012537002563,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.06392857142857143,
+     "inside_allowance": true,
+     "miss": -0.003928571428571434,
+     "rate": 0.06
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.06125,
+     "accuracy_untouched": 0.06,
+     "accuracy_whole": 0.54625,
+     "arm_own_accuracy": 0.5525,
+     "degree": 0.9974293059125964,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.394,
+      "room": 0.48625
+     },
+     "raw_difference": 0.485,
+     "status": "valid",
+     "version1_form": 0.8878718535469107
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 150,
+     "positions": "post-identity",
+     "rank": 4,
+     "whole_read_correct": 176
+    }
+   }
+  },
+  "F/0": {
+   "arm": "F",
+   "control2": {
+    "candidates": [
+     {
+      "dev_ownership_only": 0.19666666666666666,
+      "dev_whole": 0.3333333333333333,
+      "layers": [
+       1
+      ],
+      "piece_correct": 22,
+      "positions": "action+3",
+      "rank": 1,
+      "whole_read_correct": 95
+     },
+     {
+      "dev_ownership_only": 0.2,
+      "dev_whole": 0.3333333333333333,
+      "layers": [
+       1
+      ],
+      "piece_correct": 43,
+      "positions": "action+3",
+      "rank": 2,
+      "whole_read_correct": 95
+     },
+     {
+      "dev_ownership_only": 0.2,
+      "dev_whole": 0.3333333333333333,
+      "layers": [
+       1
+      ],
+      "piece_correct": 74,
+      "positions": "action+3",
+      "rank": 4,
+      "whole_read_correct": 95
+     },
+     {
+      "dev_ownership_only": 0.21166666666666667,
+      "dev_whole": 0.3333333333333333,
+      "layers": [
+       1
+      ],
+      "piece_correct": 92,
+      "positions": "action+3",
+      "rank": 8,
+      "whole_read_correct": 95
+     },
+     {
+      "dev_ownership_only": 0.19666666666666666,
+      "dev_whole": 0.3333333333333333,
+      "layers": [
+       1
+      ],
+      "piece_correct": 22,
+      "positions": "post-identity",
+      "rank": 1,
+      "whole_read_correct": 95
+     },
+     {
+      "dev_ownership_only": 0.2,
+      "dev_whole": 0.3333333333333333,
+      "layers": [
+       1
+      ],
+      "piece_correct": 43,
+      "positions": "post-identity",
+      "rank": 2,
+      "whole_read_correct": 95
+     },
+     {
+      "dev_ownership_only": 0.2,
+      "dev_whole": 0.3333333333333333,
+      "layers": [
+       1
+      ],
+      "piece_correct": 74,
+      "positions": "post-identity",
+      "rank": 4,
+      "whole_read_correct": 95
+     },
+     {
+      "dev_ownership_only": 0.21166666666666667,
+      "dev_whole": 0.3333333333333333,
+      "layers": [
+       1
+      ],
+      "piece_correct": 92,
+      "positions": "post-identity",
+      "rank": 8,
+      "whole_read_correct": 95
+     },
+     {
+      "dev_ownership_only": 0.19333333333333333,
+      "dev_whole": 0.33,
+      "layers": [
+       3
+      ],
+      "piece_correct": 31,
+      "positions": "action",
+      "rank": 1,
+      "whole_read_correct": 127
+     },
+     {
+      "dev_ownership_only": 0.19333333333333333,
+      "dev_whole": 0.33,
+      "layers": [
+       3
+      ],
+      "piece_correct": 50,
+      "positions": "action",
+      "rank": 2,
+      "whole_read_correct": 127
+     },
+     {
+      "dev_ownership_only": 0.19166666666666668,
+      "dev_whole": 0.33,
+      "layers": [
+       3
+      ],
+      "piece_correct": 79,
+      "positions": "action",
+      "rank": 4,
+      "whole_read_correct": 127
+     },
+     {
+      "dev_ownership_only": 0.19666666666666666,
+      "dev_whole": 0.33,
+      "layers": [
+       3
+      ],
+      "piece_correct": 115,
+      "positions": "action",
+      "rank": 8,
+      "whole_read_correct": 127
+     },
+     {
+      "dev_ownership_only": 0.19333333333333333,
+      "dev_whole": 0.33,
+      "layers": [
+       3
+      ],
+      "piece_correct": 31,
+      "positions": "action+ans",
+      "rank": 1,
+      "whole_read_correct": 127
+     },
+     {
+      "dev_ownership_only": 0.19333333333333333,
+      "dev_whole": 0.33,
+      "layers": [
+       3
+      ],
+      "piece_correct": 50,
+      "positions": "action+ans",
+      "rank": 2,
+      "whole_read_correct": 127
+     },
+     {
+      "dev_ownership_only": 0.19166666666666668,
+      "dev_whole": 0.33,
+      "layers": [
+       3
+      ],
+      "piece_correct": 79,
+      "positions": "action+ans",
+      "rank": 4,
+      "whole_read_correct": 127
+     },
+     {
+      "dev_ownership_only": 0.19666666666666666,
+      "dev_whole": 0.33,
+      "layers": [
+       3
+      ],
+      "piece_correct": 115,
+      "positions": "action+ans",
+      "rank": 8,
+      "whole_read_correct": 127
+     }
+    ],
+    "dev_named_other_accuracy": 0.32166666666666666,
+    "dev_untouched": 0.19333333333333333,
+    "named_other_correct": 994,
+    "named_read_fits": {
+     "0": {
+      "piece": {
+       "1": 20,
+       "2": 16,
+       "4": 16,
+       "8": 16
+      },
+      "whole": 16
+     },
+     "1": {
+      "piece": {
+       "1": 22,
+       "2": 43,
+       "4": 74,
+       "8": 92
+      },
+      "whole": 95
+     },
+     "2": {
+      "piece": {
+       "1": 40,
+       "2": 64,
+       "4": 96,
+       "8": 139
+      },
+      "whole": 137
+     },
+     "3": {
+      "piece": {
+       "1": 31,
+       "2": 50,
+       "4": 79,
+       "8": 115
+      },
+      "whole": 127
+     },
+     "4": {
+      "piece": {
+       "1": 38,
+       "2": 51,
+       "4": 67,
+       "8": 102
+      },
+      "whole": 102
+     }
+    },
+    "reason": "read failed its floor: no size's piece reaches four fifths",
+    "status": "no verdict"
+   },
+   "gate": {
+    "other_seeds_clearing": 1,
+    "own_seeds_clearing": 3,
+    "passes": false,
+    "rule": "learn-both",
+    "version2_learn_both": false
+   },
+   "gate_run": {
+    "other_clears": true,
+    "other_correct": 994,
+    "own_clears": true,
+    "own_correct": 1679
+   },
+   "nomination_status": "read failed its floor: no size's piece reaches four fifths",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.48375,
+      "holds_on_arm_T": null,
+      "untouched": 0.05875,
+      "whole": 0.485
+     },
+     "3": {
+      "above": 7,
+      "below": 6,
+      "equal": 7,
+      "median": 0.05875,
+      "ownership_only": 0.05875,
+      "p95": 0.0625
+     },
+     "4": {
+      "above_untouched": 0.07875000000000001,
+      "donor_share": 0.1375,
+      "untouched": 0.05875
+     },
+     "6": {
+      "different_value_moved": 0.8998609185218811,
+      "different_value_trials": 719,
+      "same_value_moved": 0.7283950448036194,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": true,
+    "no_transplant": {
+     "formula": 0.06303571428571429,
+     "inside_allowance": true,
+     "miss": -0.0042857142857142955,
+     "rate": 0.05875
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.05875,
+     "accuracy_untouched": 0.05875,
+     "accuracy_whole": 0.485,
+     "arm_own_accuracy": 0.55875,
+     "degree": 1.0,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.4,
+      "room": 0.42625
+     },
+     "raw_difference": 0.42625,
+     "status": "valid",
+     "version1_form": 0.8788659793814434
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 22,
+     "positions": "post-identity",
+     "rank": 1,
+     "whole_read_correct": 32
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 0.05875,
+     "accuracy_untouched": 0.05875,
+     "accuracy_whole": 0.05875,
+     "arm_own_accuracy": 0.55875,
+     "degree": null,
+     "floor": {
+      "clears": false,
+      "clears_plain_form": false,
+      "required_room": 0.4,
+      "room": 0.0
+     },
+     "raw_difference": 0.0,
+     "status": "no verdict",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 0
+  },
+  "F/1": {
+   "arm": "F",
+   "control2": {
+    "named_other_correct": 781,
+    "reason": "the arm has not learned the named-other condition",
+    "status": "no verdict"
+   },
+   "gate": {
+    "other_seeds_clearing": 1,
+    "own_seeds_clearing": 3,
+    "passes": false,
+    "rule": "learn-both",
+    "version2_learn_both": false
+   },
+   "gate_run": {
+    "other_clears": false,
+    "other_correct": 781,
+    "own_clears": true,
+    "own_correct": 1654
+   },
+   "nomination_status": "read failed its floor: no size's piece reaches four fifths",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.56375,
+      "holds_on_arm_T": null,
+      "untouched": 0.05625,
+      "whole": 0.5675
+     },
+     "3": {
+      "above": 17,
+      "below": 2,
+      "equal": 1,
+      "median": 0.05875,
+      "ownership_only": 0.05625,
+      "p95": 0.065
+     },
+     "4": {
+      "above_untouched": 0.0049999999999999975,
+      "donor_share": 0.06125,
+      "untouched": 0.05625
+     },
+     "6": {
+      "different_value_moved": 0.8789986371994019,
+      "different_value_trials": 719,
+      "same_value_moved": 0.6790123581886292,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": true,
+    "no_transplant": {
+     "formula": 0.06196428571428571,
+     "inside_allowance": true,
+     "miss": -0.0057142857142857065,
+     "rate": 0.05625
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.05625,
+     "accuracy_untouched": 0.05625,
+     "accuracy_whole": 0.5675,
+     "arm_own_accuracy": 0.56625,
+     "degree": 1.0,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.40800000000000003,
+      "room": 0.51125
+     },
+     "raw_difference": 0.51125,
+     "status": "valid",
+     "version1_form": 0.9008810572687225
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 17,
+     "positions": "action+3",
+     "rank": 4,
+     "whole_read_correct": 12
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 0.05625,
+     "accuracy_untouched": 0.05625,
+     "accuracy_whole": 0.05625,
+     "arm_own_accuracy": 0.56625,
+     "degree": null,
+     "floor": {
+      "clears": false,
+      "clears_plain_form": false,
+      "required_room": 0.40800000000000003,
+      "room": 0.0
+     },
+     "raw_difference": 0.0,
+     "status": "no verdict",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 1
+  },
+  "F/2": {
+   "arm": "F",
+   "control2": {
+    "named_other_correct": 746,
+    "reason": "the arm has not learned the named-other condition",
+    "status": "no verdict"
+   },
+   "gate": {
+    "other_seeds_clearing": 1,
+    "own_seeds_clearing": 3,
+    "passes": false,
+    "rule": "learn-both",
+    "version2_learn_both": false
+   },
+   "gate_run": {
+    "other_clears": false,
+    "other_correct": 746,
+    "own_clears": true,
+    "own_correct": 1664
+   },
+   "nomination_status": "read failed its floor: no size's piece reaches four fifths",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.54,
+      "holds_on_arm_T": null,
+      "untouched": 0.06875,
+      "whole": 0.53
+     },
+     "3": {
+      "above": 9,
+      "below": 8,
+      "equal": 3,
+      "median": 0.06375,
+      "ownership_only": 0.06375,
+      "p95": 0.066375
+     },
+     "4": {
+      "above_untouched": 0.065,
+      "donor_share": 0.13375,
+      "untouched": 0.06875
+     },
+     "6": {
+      "different_value_moved": 0.8915159702301025,
+      "different_value_trials": 719,
+      "same_value_moved": 0.6296296119689941,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": true,
+    "no_transplant": {
+     "formula": 0.06339285714285714,
+     "inside_allowance": true,
+     "miss": 0.005357142857142866,
+     "rate": 0.06875
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.06375,
+     "accuracy_untouched": 0.06875,
+     "accuracy_whole": 0.53,
+     "arm_own_accuracy": 0.55625,
+     "degree": 1.010840108401084,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.39000000000000007,
+      "room": 0.46125000000000005
+     },
+     "raw_difference": 0.46625000000000005,
+     "status": "valid",
+     "version1_form": 0.8797169811320755
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 18,
+     "positions": "post-identity",
+     "rank": 8,
+     "whole_read_correct": 18
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 0.06875,
+     "accuracy_untouched": 0.06875,
+     "accuracy_whole": 0.06875,
+     "arm_own_accuracy": 0.55625,
+     "degree": null,
+     "floor": {
+      "clears": false,
+      "clears_plain_form": false,
+      "required_room": 0.39000000000000007,
+      "room": 0.0
+     },
+     "raw_difference": 0.0,
+     "status": "no verdict",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 2
+  },
+  "M/0": {
+   "arm": "M",
+   "control2": {
+    "reason": "ruled: the named agent is held outside the running state",
+    "status": "not applicable"
+   },
+   "gate": {
+    "other_seeds_clearing": 3,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": true
+   },
+   "gate_run": {
+    "other_clears": true,
+    "other_correct": 1663,
+    "own_clears": true,
+    "own_correct": 2592
+   },
+   "nomination_status": "nominated",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.3875,
+      "holds_on_arm_T": null,
+      "untouched": 0.0125,
+      "whole": 0.78
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.015,
+      "ownership_only": 0.405,
+      "p95": 0.019000000000000003
+     },
+     "4": {
+      "above_untouched": 0.10125,
+      "donor_share": 0.11375,
+      "untouched": 0.0125
+     },
+     "6": {
+      "different_value_moved": 0.9499304294586182,
+      "different_value_trials": 719,
+      "same_value_moved": 0.2222222238779068,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.01839285714285715,
+     "inside_allowance": true,
+     "miss": -0.005892857142857148,
+     "rate": 0.0125
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.405,
+     "accuracy_untouched": 0.0125,
+     "accuracy_whole": 0.78,
+     "arm_own_accuracy": 0.87125,
+     "degree": 0.4885993485342019,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.687,
+      "room": 0.7675000000000001
+     },
+     "raw_difference": 0.375,
+     "status": "valid",
+     "version1_form": 0.4807692307692307
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 180,
+     "positions": "post-identity",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "entangled_share": 0.60375,
+     "reading": {
+      "accuracy_ownership_only": 0.40875,
+      "accuracy_untouched": 0.0125,
+      "accuracy_whole": 0.78,
+      "arm_own_accuracy": 0.87125,
+      "degree": 0.4837133550488599,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.687,
+       "room": 0.7675000000000001
+      },
+      "raw_difference": 0.37125,
+      "status": "valid",
+      "version1_form": 0.4759615384615385
+     },
+     "route_formula": 0.4837133550488599
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 0.3925,
+     "accuracy_untouched": 0.0125,
+     "accuracy_whole": 0.40875,
+     "arm_own_accuracy": 0.87125,
+     "degree": null,
+     "floor": {
+      "clears": false,
+      "clears_plain_form": false,
+      "required_room": 0.687,
+      "room": 0.39625
+     },
+     "raw_difference": 0.016249999999999987,
+     "status": "no verdict",
+     "version1_form": 0.03975535168195715
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 0,
+   "stricter": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.3875,
+      "holds_on_arm_T": null,
+      "untouched": 0.0125,
+      "whole": 0.78
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.015,
+      "ownership_only": 0.405,
+      "p95": 0.019000000000000003
+     },
+     "4": {
+      "above_untouched": 0.10125,
+      "donor_share": 0.11375,
+      "untouched": 0.0125
+     },
+     "6": {
+      "different_value_moved": 0.9499304294586182,
+      "different_value_trials": 719,
+      "same_value_moved": 0.2222222238779068,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.01839285714285715,
+     "inside_allowance": true,
+     "miss": -0.005892857142857148,
+     "rate": 0.0125
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.405,
+     "accuracy_untouched": 0.0125,
+     "accuracy_whole": 0.78,
+     "arm_own_accuracy": 0.87125,
+     "degree": 0.4885993485342019,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.687,
+      "room": 0.7675000000000001
+     },
+     "raw_difference": 0.375,
+     "status": "valid",
+     "version1_form": 0.4807692307692307
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 180,
+     "positions": "post-identity",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "entangled_share": 0.60375,
+     "reading": {
+      "accuracy_ownership_only": 0.40875,
+      "accuracy_untouched": 0.0125,
+      "accuracy_whole": 0.78,
+      "arm_own_accuracy": 0.87125,
+      "degree": 0.4837133550488599,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.687,
+       "room": 0.7675000000000001
+      },
+      "raw_difference": 0.37125,
+      "status": "valid",
+      "version1_form": 0.4759615384615385
+     },
+     "route_formula": 0.4837133550488599
+    }
+   }
+  },
+  "M/1": {
+   "arm": "M",
+   "control2": {
+    "reason": "ruled: the named agent is held outside the running state",
+    "status": "not applicable"
+   },
+   "gate": {
+    "other_seeds_clearing": 3,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": true
+   },
+   "gate_run": {
+    "other_clears": true,
+    "other_correct": 1699,
+    "own_clears": true,
+    "own_correct": 2584
+   },
+   "nomination_status": "nominated",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.37625,
+      "holds_on_arm_T": null,
+      "untouched": 0.0175,
+      "whole": 0.77375
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.01875,
+      "ownership_only": 0.40625,
+      "p95": 0.0225625
+     },
+     "4": {
+      "above_untouched": 0.08,
+      "donor_share": 0.0975,
+      "untouched": 0.0175
+     },
+     "6": {
+      "different_value_moved": 0.9360222816467285,
+      "different_value_trials": 719,
+      "same_value_moved": 0.2716049253940582,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.017142857142857144,
+     "inside_allowance": true,
+     "miss": 0.00035714285714285796,
+     "rate": 0.0175
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.40625,
+     "accuracy_untouched": 0.0175,
+     "accuracy_whole": 0.77375,
+     "arm_own_accuracy": 0.88,
+     "degree": 0.4859504132231405,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.6900000000000001,
+      "room": 0.7562500000000001
+     },
+     "raw_difference": 0.36750000000000005,
+     "status": "valid",
+     "version1_form": 0.47495961227786754
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 180,
+     "positions": "post-identity",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "entangled_share": 0.60375,
+     "reading": {
+      "accuracy_ownership_only": 0.41375,
+      "accuracy_untouched": 0.0175,
+      "accuracy_whole": 0.77375,
+      "arm_own_accuracy": 0.88,
+      "degree": 0.47603305785123967,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.6900000000000001,
+       "room": 0.7562500000000001
+      },
+      "raw_difference": 0.36000000000000004,
+      "status": "valid",
+      "version1_form": 0.46526655896607433
+     },
+     "route_formula": 0.47603305785123967
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 0.355,
+     "accuracy_untouched": 0.0175,
+     "accuracy_whole": 0.41375,
+     "arm_own_accuracy": 0.88,
+     "degree": null,
+     "floor": {
+      "clears": false,
+      "clears_plain_form": false,
+      "required_room": 0.6900000000000001,
+      "room": 0.39625
+     },
+     "raw_difference": 0.058750000000000024,
+     "status": "no verdict",
+     "version1_form": 0.14199395770392756
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 1,
+   "stricter": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.37625,
+      "holds_on_arm_T": null,
+      "untouched": 0.0175,
+      "whole": 0.77375
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.01875,
+      "ownership_only": 0.40625,
+      "p95": 0.0225625
+     },
+     "4": {
+      "above_untouched": 0.08,
+      "donor_share": 0.0975,
+      "untouched": 0.0175
+     },
+     "6": {
+      "different_value_moved": 0.9360222816467285,
+      "different_value_trials": 719,
+      "same_value_moved": 0.2716049253940582,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.017142857142857144,
+     "inside_allowance": true,
+     "miss": 0.00035714285714285796,
+     "rate": 0.0175
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.40625,
+     "accuracy_untouched": 0.0175,
+     "accuracy_whole": 0.77375,
+     "arm_own_accuracy": 0.88,
+     "degree": 0.4859504132231405,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.6900000000000001,
+      "room": 0.7562500000000001
+     },
+     "raw_difference": 0.36750000000000005,
+     "status": "valid",
+     "version1_form": 0.47495961227786754
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 180,
+     "positions": "post-identity",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "entangled_share": 0.60375,
+     "reading": {
+      "accuracy_ownership_only": 0.41375,
+      "accuracy_untouched": 0.0175,
+      "accuracy_whole": 0.77375,
+      "arm_own_accuracy": 0.88,
+      "degree": 0.47603305785123967,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.6900000000000001,
+       "room": 0.7562500000000001
+      },
+      "raw_difference": 0.36000000000000004,
+      "status": "valid",
+      "version1_form": 0.46526655896607433
+     },
+     "route_formula": 0.47603305785123967
+    }
+   }
+  },
+  "M/2": {
+   "arm": "M",
+   "control2": {
+    "reason": "ruled: the named agent is held outside the running state",
+    "status": "not applicable"
+   },
+   "gate": {
+    "other_seeds_clearing": 3,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": true
+   },
+   "gate_run": {
+    "other_clears": true,
+    "other_correct": 1655,
+    "own_clears": true,
+    "own_correct": 2600
+   },
+   "nomination_status": "nominated",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.42875,
+      "holds_on_arm_T": null,
+      "untouched": 0.01375,
+      "whole": 0.79375
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.015,
+      "ownership_only": 0.36875,
+      "p95": 0.02125
+     },
+     "4": {
+      "above_untouched": 0.085,
+      "donor_share": 0.09875,
+      "untouched": 0.01375
+     },
+     "6": {
+      "different_value_moved": 0.9485396146774292,
+      "different_value_trials": 719,
+      "same_value_moved": 0.32098764181137085,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.01839285714285715,
+     "inside_allowance": true,
+     "miss": -0.004642857142857148,
+     "rate": 0.01375
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.36875,
+     "accuracy_untouched": 0.01375,
+     "accuracy_whole": 0.79375,
+     "arm_own_accuracy": 0.87125,
+     "degree": 0.5448717948717948,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.6859999999999999,
+      "room": 0.7799999999999999
+     },
+     "raw_difference": 0.42499999999999993,
+     "status": "valid",
+     "version1_form": 0.5354330708661417
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 180,
+     "positions": "post-identity",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "entangled_share": 0.60375,
+     "reading": {
+      "accuracy_ownership_only": 0.41,
+      "accuracy_untouched": 0.01375,
+      "accuracy_whole": 0.79375,
+      "arm_own_accuracy": 0.87125,
+      "degree": 0.4919871794871795,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.6859999999999999,
+       "room": 0.7799999999999999
+      },
+      "raw_difference": 0.38375,
+      "status": "valid",
+      "version1_form": 0.48346456692913387
+     },
+     "route_formula": 0.4919871794871795
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 0.38,
+     "accuracy_untouched": 0.01375,
+     "accuracy_whole": 0.41,
+     "arm_own_accuracy": 0.87125,
+     "degree": null,
+     "floor": {
+      "clears": false,
+      "clears_plain_form": false,
+      "required_room": 0.6859999999999999,
+      "room": 0.39625
+     },
+     "raw_difference": 0.02999999999999997,
+     "status": "no verdict",
+     "version1_form": 0.07317073170731701
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 2,
+   "stricter": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.42875,
+      "holds_on_arm_T": null,
+      "untouched": 0.01375,
+      "whole": 0.79375
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.015,
+      "ownership_only": 0.36875,
+      "p95": 0.02125
+     },
+     "4": {
+      "above_untouched": 0.085,
+      "donor_share": 0.09875,
+      "untouched": 0.01375
+     },
+     "6": {
+      "different_value_moved": 0.9485396146774292,
+      "different_value_trials": 719,
+      "same_value_moved": 0.32098764181137085,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.01839285714285715,
+     "inside_allowance": true,
+     "miss": -0.004642857142857148,
+     "rate": 0.01375
+    },
+    "reading": {
+     "accuracy_ownership_only": 0.36875,
+     "accuracy_untouched": 0.01375,
+     "accuracy_whole": 0.79375,
+     "arm_own_accuracy": 0.87125,
+     "degree": 0.5448717948717948,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.6859999999999999,
+      "room": 0.7799999999999999
+     },
+     "raw_difference": 0.42499999999999993,
+     "status": "valid",
+     "version1_form": 0.5354330708661417
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 180,
+     "positions": "post-identity",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "entangled_share": 0.60375,
+     "reading": {
+      "accuracy_ownership_only": 0.41,
+      "accuracy_untouched": 0.01375,
+      "accuracy_whole": 0.79375,
+      "arm_own_accuracy": 0.87125,
+      "degree": 0.4919871794871795,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.6859999999999999,
+       "room": 0.7799999999999999
+      },
+      "raw_difference": 0.38375,
+      "status": "valid",
+      "version1_form": 0.48346456692913387
+     },
+     "route_formula": 0.4919871794871795
+    }
+   }
+  },
+  "T/0": {
+   "arm": "T",
+   "control2": {
+    "reason": "ruled: the named agent is held outside the running state",
+    "status": "not applicable"
+   },
+   "gate": {
+    "other_seeds_clearing": 3,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": true
+   },
+   "gate_run": {
+    "other_clears": true,
+    "other_correct": 3000,
+    "own_clears": true,
+    "own_correct": 3000
+   },
+   "nomination_status": "nominated",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.0,
+      "holds_on_arm_T": true,
+      "untouched": 0.0,
+      "whole": 1.0
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.0,
+      "ownership_only": 1.0,
+      "p95": 0.0
+     },
+     "4": {
+      "above_untouched": 0.0,
+      "donor_share": 0.0,
+      "untouched": 0.0
+     },
+     "6": {
+      "different_value_moved": 1.0,
+      "different_value_trials": 719,
+      "same_value_moved": 0.0,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.0,
+     "inside_allowance": true,
+     "miss": 0.0,
+     "rate": 0.0
+    },
+    "reading": {
+     "accuracy_ownership_only": 1.0,
+     "accuracy_untouched": 0.0,
+     "accuracy_whole": 1.0,
+     "arm_own_accuracy": 1.0,
+     "degree": 0.0,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.8,
+      "room": 1.0
+     },
+     "raw_difference": 0.0,
+     "status": "valid",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "piece_correct": 180,
+     "positions": "action",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "reading": {
+      "accuracy_ownership_only": 1.0,
+      "accuracy_untouched": 0.0,
+      "accuracy_whole": 1.0,
+      "arm_own_accuracy": 1.0,
+      "degree": 0.0,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.8,
+       "room": 1.0
+      },
+      "raw_difference": 0.0,
+      "status": "valid",
+      "version1_form": 0.0
+     }
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 1.0,
+     "accuracy_untouched": 0.0,
+     "accuracy_whole": 1.0,
+     "arm_own_accuracy": 1.0,
+     "degree": 0.0,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.8,
+      "room": 1.0
+     },
+     "raw_difference": 0.0,
+     "status": "valid",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 0,
+   "stricter": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.0,
+      "holds_on_arm_T": true,
+      "untouched": 0.0,
+      "whole": 1.0
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.0,
+      "ownership_only": 1.0,
+      "p95": 0.0
+     },
+     "4": {
+      "above_untouched": 0.0,
+      "donor_share": 0.0,
+      "untouched": 0.0
+     },
+     "6": {
+      "different_value_moved": 1.0,
+      "different_value_trials": 719,
+      "same_value_moved": 0.0,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.0,
+     "inside_allowance": true,
+     "miss": 0.0,
+     "rate": 0.0
+    },
+    "reading": {
+     "accuracy_ownership_only": 1.0,
+     "accuracy_untouched": 0.0,
+     "accuracy_whole": 1.0,
+     "arm_own_accuracy": 1.0,
+     "degree": 0.0,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.8,
+      "room": 1.0
+     },
+     "raw_difference": 0.0,
+     "status": "valid",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 180,
+     "positions": "action",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "reading": {
+      "accuracy_ownership_only": 1.0,
+      "accuracy_untouched": 0.0,
+      "accuracy_whole": 1.0,
+      "arm_own_accuracy": 1.0,
+      "degree": 0.0,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.8,
+       "room": 1.0
+      },
+      "raw_difference": 0.0,
+      "status": "valid",
+      "version1_form": 0.0
+     }
+    }
+   }
+  },
+  "T/1": {
+   "arm": "T",
+   "control2": {
+    "reason": "ruled: the named agent is held outside the running state",
+    "status": "not applicable"
+   },
+   "gate": {
+    "other_seeds_clearing": 3,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": true
+   },
+   "gate_run": {
+    "other_clears": true,
+    "other_correct": 3000,
+    "own_clears": true,
+    "own_correct": 3000
+   },
+   "nomination_status": "nominated",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.0,
+      "holds_on_arm_T": true,
+      "untouched": 0.0,
+      "whole": 1.0
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.0,
+      "ownership_only": 1.0,
+      "p95": 0.0
+     },
+     "4": {
+      "above_untouched": 0.0,
+      "donor_share": 0.0,
+      "untouched": 0.0
+     },
+     "6": {
+      "different_value_moved": 1.0,
+      "different_value_trials": 719,
+      "same_value_moved": 0.0,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.0,
+     "inside_allowance": true,
+     "miss": 0.0,
+     "rate": 0.0
+    },
+    "reading": {
+     "accuracy_ownership_only": 1.0,
+     "accuracy_untouched": 0.0,
+     "accuracy_whole": 1.0,
+     "arm_own_accuracy": 1.0,
+     "degree": 0.0,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.8,
+      "room": 1.0
+     },
+     "raw_difference": 0.0,
+     "status": "valid",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "piece_correct": 180,
+     "positions": "action",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "reading": {
+      "accuracy_ownership_only": 1.0,
+      "accuracy_untouched": 0.0,
+      "accuracy_whole": 1.0,
+      "arm_own_accuracy": 1.0,
+      "degree": 0.0,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.8,
+       "room": 1.0
+      },
+      "raw_difference": 0.0,
+      "status": "valid",
+      "version1_form": 0.0
+     }
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 1.0,
+     "accuracy_untouched": 0.0,
+     "accuracy_whole": 1.0,
+     "arm_own_accuracy": 1.0,
+     "degree": 0.0,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.8,
+      "room": 1.0
+     },
+     "raw_difference": 0.0,
+     "status": "valid",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 1,
+   "stricter": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.0,
+      "holds_on_arm_T": true,
+      "untouched": 0.0,
+      "whole": 1.0
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.0,
+      "ownership_only": 1.0,
+      "p95": 0.0
+     },
+     "4": {
+      "above_untouched": 0.0,
+      "donor_share": 0.0,
+      "untouched": 0.0
+     },
+     "6": {
+      "different_value_moved": 1.0,
+      "different_value_trials": 719,
+      "same_value_moved": 0.0,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.0,
+     "inside_allowance": true,
+     "miss": 0.0,
+     "rate": 0.0
+    },
+    "reading": {
+     "accuracy_ownership_only": 1.0,
+     "accuracy_untouched": 0.0,
+     "accuracy_whole": 1.0,
+     "arm_own_accuracy": 1.0,
+     "degree": 0.0,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.8,
+      "room": 1.0
+     },
+     "raw_difference": 0.0,
+     "status": "valid",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 180,
+     "positions": "action",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "reading": {
+      "accuracy_ownership_only": 1.0,
+      "accuracy_untouched": 0.0,
+      "accuracy_whole": 1.0,
+      "arm_own_accuracy": 1.0,
+      "degree": 0.0,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.8,
+       "room": 1.0
+      },
+      "raw_difference": 0.0,
+      "status": "valid",
+      "version1_form": 0.0
+     }
+    }
+   }
+  },
+  "T/2": {
+   "arm": "T",
+   "control2": {
+    "reason": "ruled: the named agent is held outside the running state",
+    "status": "not applicable"
+   },
+   "gate": {
+    "other_seeds_clearing": 3,
+    "own_seeds_clearing": 3,
+    "passes": true,
+    "rule": "own-directed only",
+    "version2_learn_both": true
+   },
+   "gate_run": {
+    "other_clears": true,
+    "other_correct": 3000,
+    "own_clears": true,
+    "own_correct": 3000
+   },
+   "nomination_status": "nominated",
+   "primary": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.0,
+      "holds_on_arm_T": true,
+      "untouched": 0.0,
+      "whole": 1.0
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.0,
+      "ownership_only": 1.0,
+      "p95": 0.0
+     },
+     "4": {
+      "above_untouched": 0.0,
+      "donor_share": 0.0,
+      "untouched": 0.0
+     },
+     "6": {
+      "different_value_moved": 1.0,
+      "different_value_trials": 719,
+      "same_value_moved": 0.0,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.0,
+     "inside_allowance": true,
+     "miss": 0.0,
+     "rate": 0.0
+    },
+    "reading": {
+     "accuracy_ownership_only": 1.0,
+     "accuracy_untouched": 0.0,
+     "accuracy_whole": 1.0,
+     "arm_own_accuracy": 1.0,
+     "degree": 0.0,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.8,
+      "room": 1.0
+     },
+     "raw_difference": 0.0,
+     "status": "valid",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "piece_correct": 180,
+     "positions": "action",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "reading": {
+      "accuracy_ownership_only": 1.0,
+      "accuracy_untouched": 0.0,
+      "accuracy_whole": 1.0,
+      "arm_own_accuracy": 1.0,
+      "degree": 0.0,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.8,
+       "room": 1.0
+      },
+      "raw_difference": 0.0,
+      "status": "valid",
+      "version1_form": 0.0
+     }
+    }
+   },
+   "rider_at_arm_T_site_set": {
+    "reading": {
+     "accuracy_ownership_only": 1.0,
+     "accuracy_untouched": 0.0,
+     "accuracy_whole": 1.0,
+     "arm_own_accuracy": 1.0,
+     "degree": 0.0,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.8,
+      "room": 1.0
+     },
+     "raw_difference": 0.0,
+     "status": "valid",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      0
+     ],
+     "positions": "action",
+     "rank": 8
+    }
+   },
+   "seed": 2,
+   "stricter": {
+    "controls": {
+     "1": {
+      "complement_donor_share": 0.0,
+      "holds_on_arm_T": true,
+      "untouched": 0.0,
+      "whole": 1.0
+     },
+     "3": {
+      "above": 0,
+      "below": 20,
+      "equal": 0,
+      "median": 0.0,
+      "ownership_only": 1.0,
+      "p95": 0.0
+     },
+     "4": {
+      "above_untouched": 0.0,
+      "donor_share": 0.0,
+      "untouched": 0.0
+     },
+     "6": {
+      "different_value_moved": 1.0,
+      "different_value_trials": 719,
+      "same_value_moved": 0.0,
+      "same_value_trials": 81
+     },
+     "7": {
+      "bit_identical": true
+     }
+    },
+    "described_only": false,
+    "no_transplant": {
+     "formula": 0.0,
+     "inside_allowance": true,
+     "miss": 0.0,
+     "rate": 0.0
+    },
+    "reading": {
+     "accuracy_ownership_only": 1.0,
+     "accuracy_untouched": 0.0,
+     "accuracy_whole": 1.0,
+     "arm_own_accuracy": 1.0,
+     "degree": 0.0,
+     "floor": {
+      "clears": true,
+      "clears_plain_form": true,
+      "required_room": 0.8,
+      "room": 1.0
+     },
+     "raw_difference": 0.0,
+     "status": "valid",
+     "version1_form": 0.0
+    },
+    "site_set": {
+     "layers": [
+      1
+     ],
+     "piece_correct": 180,
+     "positions": "action",
+     "rank": 8,
+     "whole_read_correct": 180
+    },
+    "true_slot": {
+     "reading": {
+      "accuracy_ownership_only": 1.0,
+      "accuracy_untouched": 0.0,
+      "accuracy_whole": 1.0,
+      "arm_own_accuracy": 1.0,
+      "degree": 0.0,
+      "floor": {
+       "clears": true,
+       "clears_plain_form": true,
+       "required_room": 0.8,
+       "room": 1.0
+      },
+      "raw_difference": 0.0,
+      "status": "valid",
+      "version1_form": 0.0
+     }
+    }
+   }
+  }
+ },
+ "device": "cpu",
+ "seconds": 967.1754839420319,
+ "separation": {
+  "0": {
+   "C_minus_T": 1.0051150895140666,
+   "clears_0_5": true
+  },
+  "1": {
+   "C_minus_T": 0.9925925925925926,
+   "clears_0_5": true
+  },
+  "2": {
+   "C_minus_T": 0.9974293059125964,
+   "clears_0_5": true
+  }
+ },
+ "torch": "2.12.1"
+}

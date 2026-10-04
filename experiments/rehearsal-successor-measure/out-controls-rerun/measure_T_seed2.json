@@ -1,0 +1,211 @@
+{
+ "arm": "T",
+ "control2": {
+  "reason": "ruled: the named agent is held outside the running state",
+  "status": "not applicable"
+ },
+ "gate": {
+  "other_seeds_clearing": 3,
+  "own_seeds_clearing": 3,
+  "passes": true,
+  "rule": "own-directed only",
+  "version2_learn_both": true
+ },
+ "gate_run": {
+  "other_clears": true,
+  "other_correct": 3000,
+  "own_clears": true,
+  "own_correct": 3000
+ },
+ "nomination_status": "nominated",
+ "primary": {
+  "controls": {
+   "1": {
+    "complement_donor_share": 0.0,
+    "holds_on_arm_T": true,
+    "untouched": 0.0,
+    "whole": 1.0
+   },
+   "3": {
+    "above": 0,
+    "below": 20,
+    "equal": 0,
+    "median": 0.0,
+    "ownership_only": 1.0,
+    "p95": 0.0
+   },
+   "4": {
+    "above_untouched": 0.0,
+    "donor_share": 0.0,
+    "untouched": 0.0
+   },
+   "6": {
+    "different_value_moved": 1.0,
+    "different_value_trials": 719,
+    "same_value_moved": 0.0,
+    "same_value_trials": 81
+   },
+   "7": {
+    "bit_identical": true
+   }
+  },
+  "described_only": false,
+  "no_transplant": {
+   "formula": 0.0,
+   "inside_allowance": true,
+   "miss": 0.0,
+   "rate": 0.0
+  },
+  "reading": {
+   "accuracy_ownership_only": 1.0,
+   "accuracy_untouched": 0.0,
+   "accuracy_whole": 1.0,
+   "arm_own_accuracy": 1.0,
+   "degree": 0.0,
+   "floor": {
+    "clears": true,
+    "clears_plain_form": true,
+    "required_room": 0.8,
+    "room": 1.0
+   },
+   "raw_difference": 0.0,
+   "status": "valid",
+   "version1_form": 0.0
+  },
+  "site_set": {
+   "layers": [
+    0
+   ],
+   "piece_correct": 180,
+   "positions": "action",
+   "rank": 8,
+   "whole_read_correct": 180
+  },
+  "true_slot": {
+   "reading": {
+    "accuracy_ownership_only": 1.0,
+    "accuracy_untouched": 0.0,
+    "accuracy_whole": 1.0,
+    "arm_own_accuracy": 1.0,
+    "degree": 0.0,
+    "floor": {
+     "clears": true,
+     "clears_plain_form": true,
+     "required_room": 0.8,
+     "room": 1.0
+    },
+    "raw_difference": 0.0,
+    "status": "valid",
+    "version1_form": 0.0
+   }
+  }
+ },
+ "rider_at_arm_T_site_set": {
+  "reading": {
+   "accuracy_ownership_only": 1.0,
+   "accuracy_untouched": 0.0,
+   "accuracy_whole": 1.0,
+   "arm_own_accuracy": 1.0,
+   "degree": 0.0,
+   "floor": {
+    "clears": true,
+    "clears_plain_form": true,
+    "required_room": 0.8,
+    "room": 1.0
+   },
+   "raw_difference": 0.0,
+   "status": "valid",
+   "version1_form": 0.0
+  },
+  "site_set": {
+   "layers": [
+    0
+   ],
+   "positions": "action",
+   "rank": 8
+  }
+ },
+ "seed": 2,
+ "stricter": {
+  "controls": {
+   "1": {
+    "complement_donor_share": 0.0,
+    "holds_on_arm_T": true,
+    "untouched": 0.0,
+    "whole": 1.0
+   },
+   "3": {
+    "above": 0,
+    "below": 20,
+    "equal": 0,
+    "median": 0.0,
+    "ownership_only": 1.0,
+    "p95": 0.0
+   },
+   "4": {
+    "above_untouched": 0.0,
+    "donor_share": 0.0,
+    "untouched": 0.0
+   },
+   "6": {
+    "different_value_moved": 1.0,
+    "different_value_trials": 719,
+    "same_value_moved": 0.0,
+    "same_value_trials": 81
+   },
+   "7": {
+    "bit_identical": true
+   }
+  },
+  "described_only": false,
+  "no_transplant": {
+   "formula": 0.0,
+   "inside_allowance": true,
+   "miss": 0.0,
+   "rate": 0.0
+  },
+  "reading": {
+   "accuracy_ownership_only": 1.0,
+   "accuracy_untouched": 0.0,
+   "accuracy_whole": 1.0,
+   "arm_own_accuracy": 1.0,
+   "degree": 0.0,
+   "floor": {
+    "clears": true,
+    "clears_plain_form": true,
+    "required_room": 0.8,
+    "room": 1.0
+   },
+   "raw_difference": 0.0,
+   "status": "valid",
+   "version1_form": 0.0
+  },
+  "site_set": {
+   "layers": [
+    1
+   ],
+   "piece_correct": 180,
+   "positions": "action",
+   "rank": 8,
+   "whole_read_correct": 180
+  },
+  "true_slot": {
+   "reading": {
+    "accuracy_ownership_only": 1.0,
+    "accuracy_untouched": 0.0,
+    "accuracy_whole": 1.0,
+    "arm_own_accuracy": 1.0,
+    "degree": 0.0,
+    "floor": {
+     "clears": true,
+     "clears_plain_form": true,
+     "required_room": 0.8,
+     "room": 1.0
+    },
+    "raw_difference": 0.0,
+    "status": "valid",
+    "version1_form": 0.0
+   }
+  }
+ }
+}

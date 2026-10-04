@@ -27,6 +27,26 @@ does both jobs late. Every statement is checked against the main line, the two
 open pull requests or the compute ledger, and says which. Nothing here is a
 ruling. Nothing was launched, rented or spent by this session.*
 
+**Later still, 2026-10-03: the controls re-run is done; two things go to
+John.** The re-run John's ruling made a precondition of the registration
+review ran on the laptop at $0, method committed before output
+(`docs/controls-rerun-method-2026-10-03.md`, then
+`docs/2026-10-03-controls-rerun.md`). No stop fired. With only pieces that
+themselves carry the label allowed, the separable model reads 0.0000 on every
+seed, the entangled model 1.0051, 0.9926 and 0.9974, the mixed model 0.4886,
+0.4860 and 0.5449, and the free model returns no verdict on every seed. The
+null transplant is bit-identical everywhere. **Open, and John's:** (1) the
+other-agent control (control 2) has no figure on any toy model and cannot
+have one, because the one model that learned the other-agent condition has a
+read of the named agent's marker that misses the floor; its tolerance, ruled
+that morning, has never been exercised, which blocks the registration review
+until he rules how it is registered. (2) The too-early-position control
+(control 4) comes back above "nothing" on six of twelve models, and an
+after-the-fact diagnostic says the control's positions are defined on the
+recipient only while the donor twin may already know who it is; defined on
+both twins it returns exactly nothing on all twelve. The run is owed a check
+by a session that did not write it.
+
 **Later the same day, 2026-10-03: version 3 is merged, reviewed and ruled.**
 John merged pull requests 72, 71, 73 and 74. The first independent review of
 proposal version 3
