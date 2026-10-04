@@ -27,6 +27,30 @@ does both jobs late. Every statement is checked against the main line, the two
 open pull requests or the compute ledger, and says which. Nothing here is a
 ruling. Nothing was launched, rented or spent by this session.*
 
+**Last on 2026-10-03: John ruled version 4's seven questions, and one short
+run is now owed before the registration review.** He ruled in the words
+"Agreed on all", taking the drafting session's suggestion on each
+(`docs/rulings/2026-10-03-proposal-v4-seven-questions-rulings.md`; authorship
+mixed; recorded by the session that put the questions, so the record is owed
+a check). The accuracy floor is on the transplanted piece only, with the
+whole read's count printed beside it. The piece rule is applied after the
+layers are chosen. The registered fit is computed on the laptop's processor.
+The full-size measurement uses the toy's numbers of episodes (600
+development with 180 held out, 800 fresh pairs, 3,000 for the gates). The
+other-agent control is described beside twenty random pieces, not one. When
+an arm's three seeds disagree, two of three decide and the third is
+reported; the drafting session had flagged that one as deserving more of his
+attention than a general agreement gives, and the record says so. And the
+ordinary competing solver is to be put through the measurement as now
+registered, at $0, method first, by another session, before the registration
+review opens. Version 4 carries all seven. The check of the short run
+(pull request 82) is merged, the main line is merged into the version 4
+branch, and version 4 now cites that check by its main-line commit, so points
+(a) and (c) of the paragraph below are settled. **What stands between version
+4 and the registration review now:** the competing solver's run and its
+check; a check of version 4 and of this ruling's record by a session that
+wrote neither; then John opens the review. Nothing was rented or spent.
+
 **Later still on 2026-10-03: version 4 of the proposal is drafted, and it is
 not yet ready for the registration review.** A Claude Code drafting session
 wrote `docs/successor-experiment-proposal-2026-10-03-v4.md` as a new file
