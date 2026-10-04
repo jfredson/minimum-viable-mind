@@ -12,6 +12,19 @@ money was spent under this ruling.*
 `docs/successor-experiment-proposal-2026-10-03-v4.md` (pull request 83). The
 questions are its section 19 as first filed, at commit `a64aa82`.*
 
+*Dated note, 2026-10-03 (Pacific), night, added by a session that did not
+write this file; the text below is left as written. The same seven questions
+were put to John a second time that evening, in another session, and
+recorded in `docs/rulings/2026-10-03-version-4-questions-rulings.md`. The two
+records differ on four points: rulings 2, 3, 4 and 6 below. **John ruled that
+the other record stands on all four**
+(`docs/rulings/2026-10-03-seven-questions-reconciliation.md`): the library
+versions are pinned, not only recorded; the registration says what applying
+the piece rule after the layers are chosen can miss; the sampling band is
+printed at the floor; and the separation is the lowest of arm C's readings
+minus the highest of arm T's, not compared seed by seed. On everything else
+this record stands.*
+
 **Cautions recorded with the ruling.**
 
 1. The session that recorded it also wrote version 4, the questions and the

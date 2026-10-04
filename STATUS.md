@@ -27,6 +27,23 @@ does both jobs late. Every statement is checked against the main line, the two
 open pull requests or the compute ledger, and says which. Nothing here is a
 ruling. Nothing was launched, rented or spent by this session.*
 
+**Night of 2026-10-03: the seven questions were ruled twice, and John settled
+which record stands.** The session drafting version 4 and a second session
+each put the same seven questions to John within minutes of each other, and
+each recorded his "Agreed on all". The two records differ on four points.
+John ruled that `docs/rulings/2026-10-03-version-4-questions-rulings.md`
+stands on all four (`docs/rulings/2026-10-03-seven-questions-reconciliation.md`):
+the library versions are pinned, not only recorded; the registration says what
+applying the piece rule after the layers are chosen can miss; the sampling
+band is printed beside every count taken against the four-fifths floor; and
+the separation between the two built models is the lowest entangled reading
+minus the highest separable one, not compared seed by seed (0.9926 on the
+toy). Both records carry a dated note, and version 4 was edited at the
+passages that state those points by the session that recorded the
+reconciliation, not by its author; a sentence elsewhere in it may still say
+one of them the old way, and the check version 4 is owed should look. The
+paragraph below was written before this and is left as written.
+
 **Last on 2026-10-03: John ruled version 4's seven questions, and one short
 run is now owed before the registration review.** He ruled in the words
 "Agreed on all", taking the drafting session's suggestion on each

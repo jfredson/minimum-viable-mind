@@ -44,6 +44,19 @@ reproduce are quoted with the caution
 `docs/rulings/2026-09-23-range-and-direction-only.md` requires: they describe
 the particular trained models on the record, not a property of the code.*
 
+**Notice, 2026-10-03 (night), added by a session that did not write this
+version.** The seven questions of section 19 were ruled twice that evening,
+in two sessions, and the two records differed on four points. John ruled that
+`docs/rulings/2026-10-03-version-4-questions-rulings.md` stands on all four
+(`docs/rulings/2026-10-03-seven-questions-reconciliation.md`). The passages below that state
+those points were edited to match, each marked "reconciled". They are: the
+library versions are pinned (section 7.2, item 1); the registration says what
+applying the piece rule after the layers are chosen can miss (section 7.2,
+item 3); the sampling band is printed at the floor (sections 7.4, 7.5, 9);
+and the separation is the lowest of arm C's readings minus the highest of arm
+T's, not paired by seed number (sections 3, 9). **If a sentence elsewhere in
+this version still states one of the four the old way, that ruling governs.**
+
 ## What this version rests on
 
 Every source but one is on the main line and is cited by its main-line
@@ -59,7 +72,7 @@ version on pull request 83. The first ten rows are new since version 3.
 | **John's three rulings of 2026-10-03 after the controls re-run** | `fe5df65` (pull request 77): `docs/rulings/2026-10-03-controls-rerun-rulings.md` | **Binding on this version.** Control 2 kept as a reported description with no pass line; control 4 redefined and made a control that holds; the piece's accuracy at the other positions of its site reported, not gated |
 | **The short pre-stated run** | method and code with no output: `9e978d9`; findings and outputs: `853988f` (pull request 80): `docs/2026-10-03-short-prestated-run-method.md`, `docs/2026-10-03-short-prestated-run.md`, outputs `experiments/rehearsal-successor-measure/out-short-prestated-run/` | The redefined control 4 as a pre-stated quantity, the new reported column for all twelve toy models, and one end-to-end run of control 2's code. **Checked by a second session (next row): run again from the committed code, its output files are identical byte for byte, and every figure in its findings matches them** |
 | **The check of the short pre-stated run and of the evening ruling's record** | `53c8100` (pull request 82): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-short-prestated-run-check-claude-code.md`, with its scripts in `reviews/2026-10-03-short-prestated-run-check-scripts/` | Both hold. Four notes for this version, all followed: say the too-early-position control compares the outputs at the two action positions; set out how the new column's two figures are computed and deal with the figure on the average moving by an episode; say that what the short run added for the other-agent control is the part of its code after the floor; say the piece's four fifths is established at the action position only. |
-| **John's late-evening ruling of 2026-10-03 on this version's seven questions** | **filed with this version, pull request 83**: `docs/rulings/2026-10-03-proposal-v4-seven-questions-rulings.md` | **Binding on this version.** The floor on the piece only; the piece rule after the layers are chosen; the laptop's processor; the toy's episode counts at full size; twenty random pieces for the other-agent control; two seeds of three when an arm's seeds disagree; the competing solver run before the registration review. Recorded by the session that wrote this version, and owed a check |
+| **John's late-evening ruling of 2026-10-03 on this version's seven questions** | **filed with this version, pull request 83**: `docs/rulings/2026-10-03-proposal-v4-seven-questions-rulings.md` | **Binding on this version.** The floor on the piece only; the piece rule after the layers are chosen; the laptop's processor; the toy's episode counts at full size; twenty random pieces for the other-agent control; two seeds of three when an arm's seeds disagree; the competing solver run before the registration review. Recorded by the session that wrote this version, and owed a check. **Read with the second record of the same evening, `docs/rulings/2026-10-03-version-4-questions-rulings.md`, which by John's ruling stands on the four points where the two differ (`docs/rulings/2026-10-03-seven-questions-reconciliation.md`)** |
 | The check of the two ruling packets of 2026-10-03 and their records | `f32ba0c` (pull request 81): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-rulings-2026-10-03-check-claude-code.md` | No number in either packet is wrong; six places where a page says a little more or less than its source. Its section 7 lists what this version should and should not carry, and this version follows it |
 | **John's evening ruling of 2026-10-03** | `f32ba0c` (pull request 81): `docs/rulings/2026-10-03-fifth-outcome-and-both-figures-rulings.md` | **Binding on this version.** The fifth registered outcome is satisfactory and stated as weaker than R1; the new reported figure is printed both ways. The record is checked (the row above): it says what John's words say. On the one part that rested on implication, how the two figures are computed, John confirmed that evening in the words "Yes, section 4 of the method is what I meant"; the dated note recording that is beside item 3 of the ruling record |
 | The Gate C tier 1 review of version 2, findings RT-212 to RT-229 | `c17dbdc` (pull request 56): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-27-successor-v2-gate-c-claude-worktree.md` | Reviewed version 2 at `e88c3c0`; one fatal finding (RT-212, the empty read on the free arm), four serious, thirteen minor |
@@ -460,10 +473,18 @@ ruling 6).** The floors and the controls that hold apply per arm and seed
 on the third. The rule is the one the design already uses for its gates. As
 this session reads it, in wording that is its own and John's to overturn: an
 arm is read if at least two of its three seeds return a reading, and returns
-no verdict, as an arm, if two or more of its seeds do; the separation bar is
-cleared if arm C's reading minus arm T's is 0.5 or more on at least two of
-the three seeds, compared seed by seed; and every seed is printed, whichever
-way it went. On the toy every arm behaves alike on all three seeds, so the
+no verdict, as an arm, if two or more of its seeds do; and every seed is
+printed, whichever way it went. **Reconciled 2026-10-03 (night): the
+separation is not compared seed by seed.** It is the lowest reading among arm
+C's seeds that read, minus the highest among arm T's seeds that read, and it
+must be at least 0.5; seeds are not paired by number, because seed 0 of one
+arm has no relation to seed 0 of another. "Metric validated" means arms T and
+C each read on at least two seeds and that separation clears; "degree read"
+means arm F reads on at least two seeds; if arm F reads on one seed only, the
+outcome is "metric validated, degree not read" and that seed's figure is
+printed as a description (`docs/rulings/2026-10-03-version-4-questions-rulings.md`,
+ruling 6; `docs/rulings/2026-10-03-seven-questions-reconciliation.md`). On the
+toy that separation is 0.9926. On the toy every arm behaves alike on all three seeds, so the
 rule has not yet been exercised on a split. The record of that ruling notes
 that this was the one question the session flagged as deserving more of
 John's attention than a general agreement gives it.
@@ -1313,9 +1334,14 @@ action, on its three seeds; the controls re-run at `821f154`, section 3).
    model's states are computed in the model's own 32-bit floating-point
    format; the read is scikit-learn's logistic regression, which fits in
    64-bit; and the versions of torch, scikit-learn and numpy are recorded in
-   the output file and are not pinned by the registration, as the controls
-   re-run did (torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0,
-   `out-controls-rerun/summary.json`). The processor is the device the
+   the output file, as the controls re-run did (torch 2.12.1, scikit-learn
+   1.9.0, numpy 2.5.0, `out-controls-rerun/summary.json`). **Reconciled
+   2026-10-03 (night): those versions are also pinned, in a committed file
+   named in the registration**, in the way `.venv-lock-2026-08-28.txt` does
+   for the project's environment, so that a line read to one episode does not
+   move because a library was upgraded between the registration and the
+   reading (`docs/rulings/2026-10-03-version-4-questions-rulings.md`, ruling
+   3; `docs/rulings/2026-10-03-seven-questions-reconciliation.md`). The processor is the device the
    controls re-run and the short pre-stated run, which supply every toy
    figure in this version, ran on. The alternative that was put and not
    taken: the graphics chip. **In the registered run the
@@ -1533,7 +1559,16 @@ action, on its three seeds; the controls re-run at `821f154`, section 3).
    (`docs/controls-rerun-method-2026-10-03.md`, rule 7; the check at
    `e184a6e`, section 4, item 6); he confirmed it. The alternative that was
    put and not taken: letting the piece's accuracy also decide between layer
-   sets, which has not been run.
+   sets, which has not been run. **Reconciled 2026-10-03 (night): what this
+   order can miss, stated as the ruling requires.** The earliest layers at
+   which the whole-state transplant works need not be layers at which the
+   label can be read where the model acts. A model whose label is readable
+   only at later layers returns "no verdict, read failed its floor" although
+   a later layer might have passed. The report for the first full-size
+   free-model run prints the accuracy at every layer and the candidates the
+   rule chose among (section 11), so such a miss is visible when John rules
+   at that stop (`docs/rulings/2026-10-03-version-4-questions-rulings.md`,
+   ruling 2; `docs/rulings/2026-10-03-seven-questions-reconciliation.md`).
 
    **The piece's accuracy at the other positions of its site: reported both
    ways, gated in neither (ruled 2026-10-03:
@@ -2034,6 +2069,11 @@ Committed to git, with the commit hash recorded in the registration file,
   the last 180 held out for every fit, so the floor is 144 of 180; 800 fresh
   matched pairs; 800 pairs on the relaxed set; 3,000 held-out episodes for
   the gates, so the bar is 790; 200 shuffles for the permutation null**;
+- **(reconciled 2026-10-03, night) the band that sampling alone puts around
+  every count taken against the four-fifths floor, printed beside it; the
+  committed file that pins the library versions; and the separation as the
+  lowest of arm C's readings minus the highest of arm T's**
+  (`docs/rulings/2026-10-03-seven-questions-reconciliation.md`);
 - **the rule for an arm whose seeds disagree: two of three, the third
   reported** (section 3);
 - the reporting table's columns (section 7.5), including the rider;
@@ -2062,7 +2102,10 @@ bears on:
    count on the average over those positions, each with the whole state's
    count beside it; reported, with no pass line on either** (ruled
    2026-10-03; section 7.2, item 3);
-4. whether the fit floor passes;
+4. whether the fit floor passes, **with the band that sampling alone would
+   put around the count printed beside it** (reconciled 2026-10-03, night:
+   at 180 held-out episodes one episode is 0.0056, and a piece whose true
+   accuracy is exactly four fifths passes about half the time);
 5. the whole-state, ownership-only and no-transplant accuracies on fresh
    episodes, the raw difference, and whether the whole-state floor clears in
    both forms, **on development episodes and again on fresh ones** (RT-234);
@@ -2210,11 +2253,11 @@ version was first filed and were ruled the same night.
 
 | Number | Set to | Ruled in |
 |---|---|---|
-| Separation bar between arms T and C (R1 against R2) | **0.5**: the minimum gap between arm C's reading and arm T's, on the chance-corrected form, per seed | `docs/rulings/2026-09-26-weekend-1-queue.md`, page 1a. **Under this version's rules the toy cleared it on every seed, at 1.0051, 0.9926 and 0.9974** (MEASURED: the controls re-run at `821f154`, section 2, from `out-controls-rerun/summary.json`, `separation`). Version 3's 1.0051, 1.0025 and 1.0000 were read on two seeds through pieces that do not hold the label and are superseded (the review of version 3, RT-230) |
+| Separation bar between arms T and C (R1 against R2) | **0.5**: the minimum gap between arm C's reading and arm T's, on the chance-corrected form. **Reconciled 2026-10-03 (night): taken as the lowest reading among arm C's seeds that read minus the highest among arm T's, not paired by seed number** | `docs/rulings/2026-09-26-weekend-1-queue.md`, page 1a, which does not say how the gap is taken across seeds; `docs/rulings/2026-10-03-version-4-questions-rulings.md`, ruling 6. On the toy this is 0.9926. **Under this version's rules the toy cleared it on every seed, at 1.0051, 0.9926 and 0.9974** (MEASURED: the controls re-run at `821f154`, section 2, from `out-controls-rerun/summary.json`, `separation`). Version 3's 1.0051, 1.0025 and 1.0000 were read on two seeds through pieces that do not hold the label and are superseded (the review of version 3, RT-230) |
 | Gate on learning (R3) | above one in four at the 0.05 level, one-sided binomial, on at least two seeds of three: **0.2633 on 3,000 held-out episodes** (790 or more correct), or the same rule at the registered count; **on the own-directed condition only for arms T, C and M, on both conditions for arm F**; the ownership-blind and name-only solvers reported beside it as references | the queue ruling, page 1b; the Gate C rulings, RT-213, item 1 |
 | Fit floor | **four fifths of held-out development episodes, on the piece that is transplanted, at the action position**, per arm and seed, stated as a count (144 of 180 on the toy); only sizes whose piece reaches it may be chosen; the whole read's count printed beside it and not a second floor; the permutation null reported beside it and not used as the bar | the rulings on the review of version 2, RT-212, item 1; per arm and seed, and the read itself, ruled 2026-09-26 (decisions 21 and 23); moved to the piece by `docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md`, page 1; on the piece only, and applied after the layers are chosen, by `docs/rulings/2026-10-03-proposal-v4-seven-questions-rulings.md`, rulings 1 and 2 |
 | The piece's accuracy at the other positions of its site | **reported both ways, with no pass line on either**: a count at each other position, and a count on the average over them, computed as section 7.2, item 3, states | `docs/rulings/2026-10-03-controls-rerun-rulings.md`, ruling 3; `docs/rulings/2026-10-03-fifth-outcome-and-both-figures-rulings.md`, ruling 2 |
-| The device and number format of the registered fit | **the laptop's processor; the figure computed there is the registered one.** States in 32-bit, the read fitted in 64-bit by scikit-learn, library versions recorded and not pinned | the review of version 3, RT-232, accepted as the review states it by the rulings of 2026-10-03, page 3; the device by `docs/rulings/2026-10-03-proposal-v4-seven-questions-rulings.md`, ruling 3 |
+| The device and number format of the registered fit | **the laptop's processor; the figure computed there is the registered one.** States in 32-bit, the read fitted in 64-bit by scikit-learn, library versions recorded, **and pinned in a committed file named in the registration (reconciled 2026-10-03, night)** | the review of version 3, RT-232, accepted as the review states it by the rulings of 2026-10-03, page 3; the device by `docs/rulings/2026-10-03-proposal-v4-seven-questions-rulings.md`, ruling 3 |
 | Whole-state floor (whether a site set is usable) | **four fifths of the arm's own own-directed accuracy**, on the chance-corrected scale, **applied on development episodes at nomination and again on the fresh episodes at the reading; a site set that clears the first and misses the second returns no verdict**; the whole-state layer set is **the smallest that clears it, per position set, then the highest ownership-only share among those**; every all-positions site set excluded; every layer-0 site set removed at position sets other than `action` | the queue ruling, page 1c; the repairs rulings, items 3 and 4; the rulings on the review of version 2, RT-216, item 1, as clarified by refinement item 2; the review of version 3, RT-234, accepted 2026-10-03, page 3 |
 | Rank cap on the nominated subspace | **8**, with the family reporting caps 1, 2, 4 and 8 | the queue ruling, page 1d |
 | Candidate site list and its family correction | the rule of section 7.2, printed for the registered 12-layer model: **325 site sets and 1,300 comparisons** with layer 0 kept at the action position set only (45 and 180 on the toy); the count is the rule's output, not hand arithmetic | the queue ruling, page 1e; the repairs rulings, item 3; the Gate C rulings, RT-215 and RT-216; the reading of the layer-0 exclusion ruled 2026-09-26 (decision 20) |
@@ -2230,8 +2273,8 @@ version was first filed and were ruled the same night.
 | The label | **which marker word is the model's own**, the one registered read; the route (b) candidates recorded as exploratory fits only | `docs/rulings/2026-09-23-nomination-label.md`; the queue ruling, page 3; the Gate C rulings, RT-212, item 3; John's ruling of 2026-09-26 on the route (b) result (section 7.2, item 1) |
 | Seconds per step, per arm, on the rented machine | **Measured 2026-09-25 for arms T, C and F**: 13.08, 13.52 and 12.53 milliseconds per step, ratios to arm F of 1.044, 1.080 and 1.000, on a secure RTX 5090 at $0.99 an hour, at the registered shape, fifty timed steps after five warm-up steps | `docs/2026-09-25-rented-slice-attempt-2-findings.md` at `9f802db`, section 3, from `experiments/rehearsal-successor-measure/out/rented-slice-2026-09-25-attempt-2/bench_arms.json`; checked at `afb5183`, point 5. **Arm M was not timed.** **Fifty timed steps are accepted for the second release's arithmetic; the five-hundred-step figure is taken from the first full-size run, and the later runs are repriced from it before the second release is asked for** (ruled 2026-10-03, decision 17) |
 | Arm M's predicted reading | between **0.3 and 0.7** on every seed, and within **0.10** of its true-slot reading on the same fresh episodes (the formula of section 5.3, which is that reading written in route accuracies). On the toy under the registered rules: 0.4886, 0.4860 and 0.5449, within 0.0049, 0.0099 and 0.0529 of the true-slot reading | the queue ruling, page 5 (the band); the repairs method note at `882f252`, section 5 (the formula and the 0.10); the rulings on the review of version 2, RT-223; the toy figures from the review of version 3, RT-231, and the controls re-run at `821f154` |
-| The numbers of episodes at the registered size | **the toy's, unchanged: 600 development episodes with the last 180 held out for every fit (the floor is 144 of 180); 800 fresh matched pairs; 800 pairs on the relaxed set; 3,000 held-out episodes for the gates (the bar is 790); 200 shuffles for the permutation null.** The caution carried with it: at 180, one episode is 0.0056 of the scale | `docs/rulings/2026-10-03-proposal-v4-seven-questions-rulings.md`, ruling 4 |
-| An arm whose three seeds disagree | **two seeds of three decide, the third reported**: an arm is read if two or more seeds read; the separation bar is cleared if cleared on two or more seeds | the same file, ruling 6 |
+| The numbers of episodes at the registered size | **the toy's, unchanged: 600 development episodes with the last 180 held out for every fit (the floor is 144 of 180); 800 fresh matched pairs; 800 pairs on the relaxed set; 3,000 held-out episodes for the gates (the bar is 790); 200 shuffles for the permutation null.** The caution carried with it: at 180, one episode is 0.0056 of the scale. **Reconciled 2026-10-03 (night): the band that sampling alone puts around each count against the floor is printed beside it** | `docs/rulings/2026-10-03-proposal-v4-seven-questions-rulings.md`, ruling 4 |
+| An arm whose three seeds disagree | **two seeds of three decide, the third reported**: an arm is read if two or more seeds read. **Reconciled 2026-10-03 (night): the separation is the lowest of arm C's readings minus the highest of arm T's, among the seeds that read, and is not compared seed by seed** | the same file, ruling 6 |
 
 ---
 
@@ -4141,7 +4184,8 @@ findings RT-230 to RT-236 (`4cb7f8e`). "The check of the re-run" is at
   this version).** Each written in where it bears: the floor on the piece
   only (sections 6.4 item 2, 7.2 item 1, 9); the piece rule applied after
   the layers are chosen (section 7.2, item 3); the registered fit on the
-  laptop's processor, library versions recorded and not pinned (sections 7.2
+  laptop's processor, library versions recorded (and, by the reconciliation
+  ruling of the same night, pinned) (sections 7.2
   item 1, 7.4, 9); the toy's episode counts at the full size (sections 7.4,
   8.1, 9); twenty random pieces for control 2, with the code change that
   implies (sections 7.3 item 2, 7.4, 7.5, 9); two seeds of three when an

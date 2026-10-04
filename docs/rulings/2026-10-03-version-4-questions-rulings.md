@@ -13,6 +13,14 @@ section 19 of version 4 of the successor experiment proposal,
 `docs/successor-experiment-proposal-2026-10-03-v4.md`, read at `a64aa82` on
 pull request 83, which was open and unmerged when John ruled.*
 
+*Dated note, 2026-10-03 (Pacific), night; the text below is left as written.
+The same seven questions were put to John in the session that drafted version
+4, and recorded there as
+`docs/rulings/2026-10-03-proposal-v4-seven-questions-rulings.md`. The two
+records differ on four points (rulings 2, 3, 4 and 6). **John ruled that this
+record stands on all four**
+(`docs/rulings/2026-10-03-seven-questions-reconciliation.md`).*
+
 **Cautions recorded with the ruling.**
 
 1. The session that recorded it wrote the packet, and before that the review
