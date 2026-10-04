@@ -34,6 +34,12 @@ this file issues none).
 - **1a.** Separation bar 0.5: the minimum gap between the entangled arm's
   reading and the separable arm's reading, on the chance-corrected form
   page 2 registers.
+  *Dated note, 2026-10-03 (Pacific), beside 1a, which is left as written.
+  1a does not say how the gap is taken across seeds. John ruled on 2026-10-03
+  that it is the lowest reading among the entangled arm's seeds that read,
+  minus the highest among the separable arm's, with seeds not paired by
+  number (`docs/rulings/2026-10-03-version-4-questions-rulings.md`, ruling
+  6).*
 - **1b.** Learn-both threshold, per condition: the rehearsal's pre-stated cell,
   above the one-in-four level at the 0.05 level under a binomial test on at
   least two seeds of three (0.2630 on 3,000 held-out episodes, or the same rule
