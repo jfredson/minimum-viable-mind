@@ -43,6 +43,14 @@ arm C at 0.96 or above from layer 1.*
    Version 3 must show, measured at toy scale, that the floor returns no
    verdict on the committed arm F reads and a reading on T, C and M.
 
+   *Dated note, 2026-10-03 (Pacific), beside item 1, which is left as
+   written. Item 1 put the floor on the whole read. On 2026-10-03 John ruled
+   that the floor applies to the piece that is transplanted
+   (`docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md`, page 1), and
+   then that the whole read is not a second condition, its count being
+   printed beside the piece's
+   (`docs/rulings/2026-10-03-version-4-questions-rulings.md`, ruling 1).*
+
 2. **Arm F's toy reading is withdrawn from the record** under failure 2's own
    rule (the pre-stated target changes before registration, and the null
    already collected is withdrawn rather than reported). The toy record states
