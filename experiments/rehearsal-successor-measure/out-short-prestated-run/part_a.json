@@ -1,0 +1,264 @@
+{
+ "device": "cpu",
+ "models": {
+  "C/0": {
+   "checkpoint_sha256": "47326bb90c5f4ad03beacc74da1d33eec1fd4462314a2e9ce385c36a1e7ffeee",
+   "described_only": false,
+   "donor_value_share": 0.05125,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.05125,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     2
+    ],
+    "piece_correct": 180,
+    "positions": "action",
+    "rank": 8,
+    "whole_read_correct": 180
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  },
+  "C/1": {
+   "checkpoint_sha256": "b3596f309e780e5820a7064ccb207a413a71be439170986b18479fe957e0af2a",
+   "described_only": false,
+   "donor_value_share": 0.04875,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.04875,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 172,
+    "positions": "action+3",
+    "rank": 8,
+    "whole_read_correct": 177
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  },
+  "C/2": {
+   "checkpoint_sha256": "2fc87d0454af22bc2d1c00b7247c220ff0705b8c2500005b47a9cb491ac202f0",
+   "described_only": false,
+   "donor_value_share": 0.06,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.06,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 150,
+    "positions": "post-identity",
+    "rank": 4,
+    "whole_read_correct": 176
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  },
+  "F/0": {
+   "checkpoint_sha256": "c3afe0c6354f49f185b1806a433e6f0563b48a14f6e4559b2264ecb0abeea88d",
+   "described_only": true,
+   "donor_value_share": 0.05875,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.05875,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 22,
+    "positions": "post-identity",
+    "rank": 1,
+    "whole_read_correct": 32
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  },
+  "F/1": {
+   "checkpoint_sha256": "2e51df7efd952e044b63702a5dc63c88e12de41ffe89c1b15c35892756cb219b",
+   "described_only": true,
+   "donor_value_share": 0.05625,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.05625,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 17,
+    "positions": "action+3",
+    "rank": 4,
+    "whole_read_correct": 12
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  },
+  "F/2": {
+   "checkpoint_sha256": "d5b59d8b8d32d42327beb4e6866107fe6e1167f4de1d0d73e3e201ed9d1683b1",
+   "described_only": true,
+   "donor_value_share": 0.06875,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.06875,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 18,
+    "positions": "post-identity",
+    "rank": 8,
+    "whole_read_correct": 18
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  },
+  "M/0": {
+   "checkpoint_sha256": "e0f55d92d42bffdb3774cb267bbd8caf16f901fd3fa2f127e9989780188ceda2",
+   "described_only": false,
+   "donor_value_share": 0.0125,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.0125,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 180,
+    "positions": "post-identity",
+    "rank": 8,
+    "whole_read_correct": 180
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  },
+  "M/1": {
+   "checkpoint_sha256": "d9b8010c9bec5ae20aaacabd38acd89497ef121599643a15d548ad44f688ecab",
+   "described_only": false,
+   "donor_value_share": 0.0175,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.0175,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 180,
+    "positions": "post-identity",
+    "rank": 8,
+    "whole_read_correct": 180
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  },
+  "M/2": {
+   "checkpoint_sha256": "eeb3a7a43628791f1c85ac85d6108b74e89c0a209f1688c7342d864ce4926dba",
+   "described_only": false,
+   "donor_value_share": 0.01375,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.01375,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 180,
+    "positions": "post-identity",
+    "rank": 8,
+    "whole_read_correct": 180
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  },
+  "T/0": {
+   "checkpoint_sha256": "b679bf6cd7884f28a137a6e6a669728213c085ba9cba5c9a2574b947885cfe68",
+   "described_only": false,
+   "donor_value_share": 0.0,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.0,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     0
+    ],
+    "piece_correct": 180,
+    "positions": "action",
+    "rank": 8,
+    "whole_read_correct": 180
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  },
+  "T/1": {
+   "checkpoint_sha256": "1558acb2fce628335f28c3a29acef43fdf0d409151e1b5774d8e75aa7f489113",
+   "described_only": false,
+   "donor_value_share": 0.0,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.0,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     0
+    ],
+    "piece_correct": 180,
+    "positions": "action",
+    "rank": 8,
+    "whole_read_correct": 180
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  },
+  "T/2": {
+   "checkpoint_sha256": "84f48372c995c7c53baa80d9379a3778bb8c1845e45589b743bd2b8c083c90c2",
+   "described_only": false,
+   "donor_value_share": 0.0,
+   "holds": true,
+   "largest_output_difference": 0.0,
+   "no_transplant_share": 0.0,
+   "null_transplant_at_these_positions_bit_identical": true,
+   "outputs_bit_identical": true,
+   "site_set": {
+    "layers": [
+     0
+    ],
+    "piece_correct": 180,
+    "positions": "action",
+    "rank": 8,
+    "whole_read_correct": 180
+   },
+   "trials_whose_action_changed": 0,
+   "twins_states_identical_at_the_sites": true
+  }
+ },
+ "pairs": 800,
+ "positions_per_pair": {
+  "max": 21,
+  "mean": 5.212500095367432,
+  "min": 1
+ },
+ "torch": "2.12.1"
+}
