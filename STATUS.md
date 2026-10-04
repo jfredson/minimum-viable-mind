@@ -27,6 +27,86 @@ does both jobs late. Every statement is checked against the main line, the two
 open pull requests or the compute ledger, and says which. Nothing here is a
 ruling. Nothing was launched, rented or spent by this session.*
 
+**Night of 2026-10-03: the seven questions were ruled twice, and John settled
+which record stands.** The session drafting version 4 and a second session
+each put the same seven questions to John within minutes of each other, and
+each recorded his "Agreed on all". The two records differ on four points.
+John ruled that `docs/rulings/2026-10-03-version-4-questions-rulings.md`
+stands on all four (`docs/rulings/2026-10-03-seven-questions-reconciliation.md`):
+the library versions are pinned, not only recorded; the registration says what
+applying the piece rule after the layers are chosen can miss; the sampling
+band is printed beside every count taken against the four-fifths floor; and
+the separation between the two built models is the lowest entangled reading
+minus the highest separable one, not compared seed by seed (0.9926 on the
+toy). Both records carry a dated note, and version 4 was edited at the
+passages that state those points by the session that recorded the
+reconciliation, not by its author; a sentence elsewhere in it may still say
+one of them the old way, and the check version 4 is owed should look. The
+paragraph below was written before this and is left as written.
+
+**Last on 2026-10-03: John ruled version 4's seven questions, and one short
+run is now owed before the registration review.** He ruled in the words
+"Agreed on all", taking the drafting session's suggestion on each
+(`docs/rulings/2026-10-03-proposal-v4-seven-questions-rulings.md`; authorship
+mixed; recorded by the session that put the questions, so the record is owed
+a check). The accuracy floor is on the transplanted piece only, with the
+whole read's count printed beside it. The piece rule is applied after the
+layers are chosen. The registered fit is computed on the laptop's processor.
+The full-size measurement uses the toy's numbers of episodes (600
+development with 180 held out, 800 fresh pairs, 3,000 for the gates). The
+other-agent control is described beside twenty random pieces, not one. When
+an arm's three seeds disagree, two of three decide and the third is
+reported; the drafting session had flagged that one as deserving more of his
+attention than a general agreement gives, and the record says so. And the
+ordinary competing solver is to be put through the measurement as now
+registered, at $0, method first, by another session, before the registration
+review opens. Version 4 carries all seven. The check of the short run
+(pull request 82) is merged, the main line is merged into the version 4
+branch, and version 4 now cites that check by its main-line commit, so points
+(a) and (c) of the paragraph below are settled. **What stands between version
+4 and the registration review now:** the competing solver's run and its
+check; a check of version 4 and of this ruling's record by a session that
+wrote neither; then John opens the review. Nothing was rented or spent.
+
+**Later still on 2026-10-03: version 4 of the proposal is drafted, and it is
+not yet ready for the registration review.** A Claude Code drafting session
+wrote `docs/successor-experiment-proposal-2026-10-03-v4.md` as a new file
+beside version 3, which is left unedited, and filed it as a pull request for
+John to merge. Nothing was rented, trained or spent. It is version 3 with the
+three sets of rulings of 2026-10-03 written in, each cited by its file: the
+accuracy floor moved to the piece of the internal state that is actually
+transplanted; the other-agent control kept as a reported description with no
+pass line, with the plain statement that it never ran at toy scale; the
+too-early-position control redefined on both twins of a pair, made a control
+that holds, and described as a test of the pairing and the code that says
+nothing about any model; the piece's accuracy at the other positions of its
+site reported both ways and gated in neither; and the fifth outcome, a
+validated measure with no reading of the free model, entered as satisfactory
+and weaker than a reading. Its toy figures come from the controls re-run and
+not from the ruling packets: the entangled model reads 1.0051, 0.9926 and
+0.9974. It prints the 325 site sets the rule produces for the full-size
+model, and ends with a change log from version 3. **Three things stand
+between it and the registration review.** (a) The check of the short pre-stated run and of the evening ruling's record
+is not on the main line yet. None existed when the draft began. One was
+filed while it was being written, as pull request 82 (branch
+`check/short-prestated-run-2026-10-03` at `01c7d68`, open), and finds that
+both hold. Version 4 follows its four notes (the redefined control compares
+the outputs at the two action positions; the figure taken on the average
+over a site is good to an episode or two, and the registered code adds it up
+in 64-bit; what the short run added for the other-agent control is the part
+of its code after the floor; the piece's four fifths holds at the action
+position only), cites it by branch and commit, and marks every figure from
+the short run "checked, pull request 82, not yet merged". That pull request
+also edits this entry and `data/project.toml`, so whichever of the two is
+merged second will need the two edits put side by side. (b) Version 4
+is itself owed a check by a session that did not write it. (c) It puts seven
+questions to John where a ruling is unclear or a number is not yet set: the
+main ones are whether the whole read must still clear four fifths now that
+the piece does, which device the registered fit is computed on, how many
+episodes the full-size measurement uses, and what an arm's outcome is when
+its three seeds disagree. **A correction to the two paragraphs below:** they
+say pull requests 79, 80 and 81 were not merged. John merged all three that
+evening (main line at `e184a6e`, `853988f` and `f32ba0c`).
 **Later still on 2026-10-03: the short pre-stated run and the record of the
 evening ruling are checked by a session that wrote neither, and both hold.**
 (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-short-prestated-run-check-claude-code.md`;
