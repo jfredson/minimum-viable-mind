@@ -1,0 +1,40 @@
+== claim 1: whose first own turn comes first
+pairs: 800
+donor's first own turn before the recipient's: 407 of 800 = 0.5088
+recipient's before the donor's:                393 of 800 = 0.4913
+the same position:                             0 of 800
+
+== A: are the twins' inputs identical before both first own turns
+token sequences identical in every pair, at every position: True
+'this turn is yours' signal identical before both first own turns, every pair: True
+and different at the earlier of the two first own turns, every pair: True
+
+== claim 2, A and B, at each model's nominated layers (from the committed summary.json)
+arm/seed | layers | no transplant | as run | as run, donor-first pairs | as run, recipient-first pairs | before both | outputs bit-identical before both | states identical before both, every layer | share of as-run sites where donor state differs
+T/0 | (0,) | 0.0000 | 0.0000 (+0.0000) | 0.0000 (no transplant 0.0000) | 0.0000 (no transplant 0.0000; bit-identical True) | 0.0000 | True | True | 0.5309
+T/1 | (0,) | 0.0000 | 0.0000 (+0.0000) | 0.0000 (no transplant 0.0000) | 0.0000 (no transplant 0.0000; bit-identical True) | 0.0000 | True | True | 0.5309
+T/2 | (0,) | 0.0000 | 0.0000 (+0.0000) | 0.0000 (no transplant 0.0000) | 0.0000 (no transplant 0.0000; bit-identical True) | 0.0000 | True | True | 0.5309
+C/0 | (2,) | 0.0512 | 0.0538 (+0.0025) | 0.0565 (no transplant 0.0516) | 0.0509 (no transplant 0.0509; bit-identical True) | 0.0512 | True | True | 0.5309
+C/1 | (1,) | 0.0487 | 0.0500 (+0.0013) | 0.0590 (no transplant 0.0565) | 0.0407 (no transplant 0.0407; bit-identical True) | 0.0487 | True | True | 0.5309
+C/2 | (1,) | 0.0600 | 0.1312 (+0.0712) | 0.1990 (no transplant 0.0590) | 0.0611 (no transplant 0.0611; bit-identical True) | 0.0600 | True | True | 0.5309
+F/0 | (1,) | 0.0587 | 0.1375 (+0.0788) | 0.2064 (no transplant 0.0516) | 0.0662 (no transplant 0.0662; bit-identical True) | 0.0587 | True | True | 0.5309
+F/1 | (1,) | 0.0562 | 0.0613 (+0.0050) | 0.0688 (no transplant 0.0590) | 0.0534 (no transplant 0.0534; bit-identical True) | 0.0562 | True | True | 0.5309
+F/2 | (1,) | 0.0688 | 0.1338 (+0.0650) | 0.2039 (no transplant 0.0762) | 0.0611 (no transplant 0.0611; bit-identical True) | 0.0688 | True | True | 0.5309
+M/0 | (1,) | 0.0125 | 0.1138 (+0.1013) | 0.2187 (no transplant 0.0197) | 0.0051 (no transplant 0.0051; bit-identical True) | 0.0125 | True | True | 0.5309
+M/1 | (1,) | 0.0175 | 0.0975 (+0.0800) | 0.1843 (no transplant 0.0270) | 0.0076 (no transplant 0.0076; bit-identical True) | 0.0175 | True | True | 0.5309
+M/2 | (1,) | 0.0137 | 0.0988 (+0.0850) | 0.1867 (no transplant 0.0197) | 0.0076 (no transplant 0.0076; bit-identical True) | 0.0137 | True | True | 0.5309
+
+== C: the control as run (positions before the recipient's first own turn), one layer at a time
+excess over no transplant, at running state 0, 1, 2, 3, 4; the nominated site's position set beside it
+T/0 | nominated: layers (0,) at action | +0.0000 +0.0000 +0.0000 +0.0000 +0.0000
+T/1 | nominated: layers (0,) at action | +0.0000 +0.0000 +0.0000 +0.0000 +0.0000
+T/2 | nominated: layers (0,) at action | +0.0000 +0.0000 +0.0000 +0.0000 +0.0000
+C/0 | nominated: layers (2,) at action | +0.1050 +0.0325 +0.0025 +0.0000 +0.0000
+C/1 | nominated: layers (1,) at action+3 | +0.0950 +0.0013 +0.0000 +0.0000 +0.0000
+C/2 | nominated: layers (1,) at post-identity | +0.0962 +0.0712 -0.0025 +0.0000 +0.0000
+F/0 | nominated: layers (1,) at post-identity | +0.0887 +0.0787 +0.0425 +0.0000 +0.0000
+F/1 | nominated: layers (1,) at action+3 | +0.0938 +0.0050 -0.0012 +0.0000 +0.0000
+F/2 | nominated: layers (1,) at post-identity | +0.0750 +0.0650 +0.0200 +0.0025 +0.0000
+M/0 | nominated: layers (1,) at post-identity | +0.1112 +0.1013 +0.0338 +0.0063 +0.0000
+M/1 | nominated: layers (1,) at post-identity | +0.0787 +0.0800 +0.0238 +0.0100 +0.0000
+M/2 | nominated: layers (1,) at post-identity | +0.1075 +0.0850 +0.0250 +0.0062 +0.0000
