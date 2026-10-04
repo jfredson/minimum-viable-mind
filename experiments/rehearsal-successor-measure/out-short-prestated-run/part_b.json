@@ -1,0 +1,596 @@
+{
+ "device": "cpu",
+ "models": {
+  "C/0": {
+   "at_the_action_position": {
+    "piece": 180,
+    "whole": 180
+   },
+   "described_only": false,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": null,
+   "other_positions": [],
+   "site_set": {
+    "layers": [
+     2
+    ],
+    "piece_correct": 180,
+    "positions": "action",
+    "rank": 8,
+    "whole_read_correct": 180
+   }
+  },
+  "C/1": {
+   "at_the_action_position": {
+    "piece": 172,
+    "whole": 177
+   },
+   "described_only": false,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": {
+    "piece": 113,
+    "whole": 179
+   },
+   "other_positions": [
+    {
+     "piece": 139,
+     "position": "1 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 139,
+     "position": "2 before the action",
+     "whole": 179
+    },
+    {
+     "piece": 33,
+     "position": "3 before the action",
+     "whole": 179
+    }
+   ],
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 172,
+    "positions": "action+3",
+    "rank": 8,
+    "whole_read_correct": 177
+   }
+  },
+  "C/2": {
+   "at_the_action_position": {
+    "piece": 150,
+    "whole": 176
+   },
+   "described_only": false,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": {
+    "piece": 123,
+    "whole": 180
+   },
+   "other_positions": [
+    {
+     "piece": 63,
+     "position": "first own turn, token 1 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 82,
+     "position": "first own turn, token 2 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 46,
+     "position": "first own turn, token 3 of 5",
+     "whole": 167
+    },
+    {
+     "piece": 30,
+     "position": "first own turn, token 4 of 5",
+     "whole": 149
+    },
+    {
+     "piece": 84,
+     "position": "first own turn, token 5 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 71,
+     "position": "5 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 112,
+     "position": "4 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 129,
+     "position": "3 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 88,
+     "position": "2 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 139,
+     "position": "1 before the action",
+     "whole": 180
+    }
+   ],
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 150,
+    "positions": "post-identity",
+    "rank": 4,
+    "whole_read_correct": 176
+   }
+  },
+  "F/0": {
+   "at_the_action_position": {
+    "piece": 22,
+    "whole": 32
+   },
+   "described_only": true,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": {
+    "piece": 25,
+    "whole": 91
+   },
+   "other_positions": [
+    {
+     "piece": 21,
+     "position": "first own turn, token 1 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 15,
+     "position": "first own turn, token 2 of 5",
+     "whole": 66
+    },
+    {
+     "piece": 15,
+     "position": "first own turn, token 3 of 5",
+     "whole": 31
+    },
+    {
+     "piece": 18,
+     "position": "first own turn, token 4 of 5",
+     "whole": 61
+    },
+    {
+     "piece": 15,
+     "position": "first own turn, token 5 of 5",
+     "whole": 51
+    },
+    {
+     "piece": 14,
+     "position": "5 before the action",
+     "whole": 32
+    },
+    {
+     "piece": 13,
+     "position": "4 before the action",
+     "whole": 21
+    },
+    {
+     "piece": 18,
+     "position": "3 before the action",
+     "whole": 21
+    },
+    {
+     "piece": 15,
+     "position": "2 before the action",
+     "whole": 26
+    },
+    {
+     "piece": 17,
+     "position": "1 before the action",
+     "whole": 41
+    }
+   ],
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 22,
+    "positions": "post-identity",
+    "rank": 1,
+    "whole_read_correct": 32
+   }
+  },
+  "F/1": {
+   "at_the_action_position": {
+    "piece": 17,
+    "whole": 12
+   },
+   "described_only": true,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": {
+    "piece": 11,
+    "whole": 19
+   },
+   "other_positions": [
+    {
+     "piece": 14,
+     "position": "1 before the action",
+     "whole": 22
+    },
+    {
+     "piece": 20,
+     "position": "2 before the action",
+     "whole": 20
+    },
+    {
+     "piece": 23,
+     "position": "3 before the action",
+     "whole": 24
+    }
+   ],
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 17,
+    "positions": "action+3",
+    "rank": 4,
+    "whole_read_correct": 12
+   }
+  },
+  "F/2": {
+   "at_the_action_position": {
+    "piece": 18,
+    "whole": 18
+   },
+   "described_only": true,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": {
+    "piece": 25,
+    "whole": 73
+   },
+   "other_positions": [
+    {
+     "piece": 145,
+     "position": "first own turn, token 1 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 36,
+     "position": "first own turn, token 2 of 5",
+     "whole": 85
+    },
+    {
+     "piece": 13,
+     "position": "first own turn, token 3 of 5",
+     "whole": 46
+    },
+    {
+     "piece": 17,
+     "position": "first own turn, token 4 of 5",
+     "whole": 99
+    },
+    {
+     "piece": 22,
+     "position": "first own turn, token 5 of 5",
+     "whole": 51
+    },
+    {
+     "piece": 18,
+     "position": "5 before the action",
+     "whole": 11
+    },
+    {
+     "piece": 18,
+     "position": "4 before the action",
+     "whole": 28
+    },
+    {
+     "piece": 21,
+     "position": "3 before the action",
+     "whole": 14
+    },
+    {
+     "piece": 16,
+     "position": "2 before the action",
+     "whole": 16
+    },
+    {
+     "piece": 19,
+     "position": "1 before the action",
+     "whole": 43
+    }
+   ],
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 18,
+    "positions": "post-identity",
+    "rank": 8,
+    "whole_read_correct": 18
+   }
+  },
+  "M/0": {
+   "at_the_action_position": {
+    "piece": 180,
+    "whole": 180
+   },
+   "described_only": false,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": {
+    "piece": 163,
+    "whole": 180
+   },
+   "other_positions": [
+    {
+     "piece": 151,
+     "position": "first own turn, token 1 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 153,
+     "position": "first own turn, token 2 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 95,
+     "position": "first own turn, token 3 of 5",
+     "whole": 178
+    },
+    {
+     "piece": 34,
+     "position": "first own turn, token 4 of 5",
+     "whole": 179
+    },
+    {
+     "piece": 130,
+     "position": "first own turn, token 5 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 67,
+     "position": "5 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 148,
+     "position": "4 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 180,
+     "position": "3 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 133,
+     "position": "2 before the action",
+     "whole": 179
+    },
+    {
+     "piece": 120,
+     "position": "1 before the action",
+     "whole": 180
+    }
+   ],
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 180,
+    "positions": "post-identity",
+    "rank": 8,
+    "whole_read_correct": 180
+   }
+  },
+  "M/1": {
+   "at_the_action_position": {
+    "piece": 180,
+    "whole": 180
+   },
+   "described_only": false,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": {
+    "piece": 174,
+    "whole": 180
+   },
+   "other_positions": [
+    {
+     "piece": 151,
+     "position": "first own turn, token 1 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 136,
+     "position": "first own turn, token 2 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 119,
+     "position": "first own turn, token 3 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 71,
+     "position": "first own turn, token 4 of 5",
+     "whole": 177
+    },
+    {
+     "piece": 124,
+     "position": "first own turn, token 5 of 5",
+     "whole": 178
+    },
+    {
+     "piece": 171,
+     "position": "5 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 177,
+     "position": "4 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 143,
+     "position": "3 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 143,
+     "position": "2 before the action",
+     "whole": 174
+    },
+    {
+     "piece": 172,
+     "position": "1 before the action",
+     "whole": 180
+    }
+   ],
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 180,
+    "positions": "post-identity",
+    "rank": 8,
+    "whole_read_correct": 180
+   }
+  },
+  "M/2": {
+   "at_the_action_position": {
+    "piece": 180,
+    "whole": 180
+   },
+   "described_only": false,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": {
+    "piece": 175,
+    "whole": 180
+   },
+   "other_positions": [
+    {
+     "piece": 174,
+     "position": "first own turn, token 1 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 152,
+     "position": "first own turn, token 2 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 102,
+     "position": "first own turn, token 3 of 5",
+     "whole": 179
+    },
+    {
+     "piece": 33,
+     "position": "first own turn, token 4 of 5",
+     "whole": 177
+    },
+    {
+     "piece": 162,
+     "position": "first own turn, token 5 of 5",
+     "whole": 180
+    },
+    {
+     "piece": 178,
+     "position": "5 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 157,
+     "position": "4 before the action",
+     "whole": 179
+    },
+    {
+     "piece": 174,
+     "position": "3 before the action",
+     "whole": 180
+    },
+    {
+     "piece": 136,
+     "position": "2 before the action",
+     "whole": 175
+    },
+    {
+     "piece": 172,
+     "position": "1 before the action",
+     "whole": 180
+    }
+   ],
+   "site_set": {
+    "layers": [
+     1
+    ],
+    "piece_correct": 180,
+    "positions": "post-identity",
+    "rank": 8,
+    "whole_read_correct": 180
+   }
+  },
+  "T/0": {
+   "at_the_action_position": {
+    "piece": 180,
+    "whole": 180
+   },
+   "described_only": false,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": null,
+   "other_positions": [],
+   "site_set": {
+    "layers": [
+     0
+    ],
+    "piece_correct": 180,
+    "positions": "action",
+    "rank": 8,
+    "whole_read_correct": 180
+   }
+  },
+  "T/1": {
+   "at_the_action_position": {
+    "piece": 180,
+    "whole": 180
+   },
+   "described_only": false,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": null,
+   "other_positions": [],
+   "site_set": {
+    "layers": [
+     0
+    ],
+    "piece_correct": 180,
+    "positions": "action",
+    "rank": 8,
+    "whole_read_correct": 180
+   }
+  },
+  "T/2": {
+   "at_the_action_position": {
+    "piece": 180,
+    "whole": 180
+   },
+   "described_only": false,
+   "matches_the_controls_rerun": true,
+   "mean_over_the_other_positions": null,
+   "other_positions": [],
+   "site_set": {
+    "layers": [
+     0
+    ],
+    "piece_correct": 180,
+    "positions": "action",
+    "rank": 8,
+    "whole_read_correct": 180
+   }
+  }
+ },
+ "torch": "2.12.1"
+}

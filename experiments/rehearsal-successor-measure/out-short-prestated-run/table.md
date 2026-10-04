@@ -1,0 +1,41 @@
+## (a) The too-early-position control as redefined: positions before both twins' first own turns
+
+| arm/seed | layers | outputs bit-identical (holds) | share landing on the donor's value | no-transplant share | trials whose action changed |
+|---|---|---|---|---|---|
+| T/0 | (0,) | identical | 0.0000 | 0.0000 | 0 |
+| T/1 | (0,) | identical | 0.0000 | 0.0000 | 0 |
+| T/2 | (0,) | identical | 0.0000 | 0.0000 | 0 |
+| C/0 | (2,) | identical | 0.0512 | 0.0512 | 0 |
+| C/1 | (1,) | identical | 0.0488 | 0.0488 | 0 |
+| C/2 | (1,) | identical | 0.0600 | 0.0600 | 0 |
+| F/0 | (1,) | identical | 0.0587 | 0.0587 | 0 |
+| F/1 | (1,) | identical | 0.0563 | 0.0563 | 0 |
+| F/2 | (1,) | identical | 0.0688 | 0.0688 | 0 |
+| M/0 | (1,) | identical | 0.0125 | 0.0125 | 0 |
+| M/1 | (1,) | identical | 0.0175 | 0.0175 | 0 |
+| M/2 | (1,) | identical | 0.0138 | 0.0138 | 0 |
+
+## (b) The chosen piece's accuracy at the other positions of its site (reported; no pass line)
+
+Each cell is whole state / piece, correct of 180 held-out development episodes.
+
+| arm/seed | site set | at the action position | at each other position | mean over the other positions |
+|---|---|---|---|---|
+| T/0 | layers (0,) at action, 8 directions | 180 / 180 | single position |  |
+| T/1 | layers (0,) at action, 8 directions | 180 / 180 | single position |  |
+| T/2 | layers (0,) at action, 8 directions | 180 / 180 | single position |  |
+| C/0 | layers (2,) at action, 8 directions | 180 / 180 | single position |  |
+| C/1 | layers (1,) at action+3, 8 directions | 177 / 172 | 1 before the action: 180 / 139; 2 before the action: 179 / 139; 3 before the action: 179 / 33 | 179 / 113 |
+| C/2 | layers (1,) at post-identity, 4 directions | 176 / 150 | first own turn, token 1 of 5: 180 / 63; first own turn, token 2 of 5: 180 / 82; first own turn, token 3 of 5: 167 / 46; first own turn, token 4 of 5: 149 / 30; first own turn, token 5 of 5: 180 / 84; 5 before the action: 180 / 71; 4 before the action: 180 / 112; 3 before the action: 180 / 129; 2 before the action: 180 / 88; 1 before the action: 180 / 139 | 180 / 123 |
+| F/0 | layers (1,) at post-identity, 1 directions (described only; no reading) | 32 / 22 | first own turn, token 1 of 5: 180 / 21; first own turn, token 2 of 5: 66 / 15; first own turn, token 3 of 5: 31 / 15; first own turn, token 4 of 5: 61 / 18; first own turn, token 5 of 5: 51 / 15; 5 before the action: 32 / 14; 4 before the action: 21 / 13; 3 before the action: 21 / 18; 2 before the action: 26 / 15; 1 before the action: 41 / 17 | 91 / 25 |
+| F/1 | layers (1,) at action+3, 4 directions (described only; no reading) | 12 / 17 | 1 before the action: 22 / 14; 2 before the action: 20 / 20; 3 before the action: 24 / 23 | 19 / 11 |
+| F/2 | layers (1,) at post-identity, 8 directions (described only; no reading) | 18 / 18 | first own turn, token 1 of 5: 180 / 145; first own turn, token 2 of 5: 85 / 36; first own turn, token 3 of 5: 46 / 13; first own turn, token 4 of 5: 99 / 17; first own turn, token 5 of 5: 51 / 22; 5 before the action: 11 / 18; 4 before the action: 28 / 18; 3 before the action: 14 / 21; 2 before the action: 16 / 16; 1 before the action: 43 / 19 | 73 / 25 |
+| M/0 | layers (1,) at post-identity, 8 directions | 180 / 180 | first own turn, token 1 of 5: 180 / 151; first own turn, token 2 of 5: 180 / 153; first own turn, token 3 of 5: 178 / 95; first own turn, token 4 of 5: 179 / 34; first own turn, token 5 of 5: 180 / 130; 5 before the action: 180 / 67; 4 before the action: 180 / 148; 3 before the action: 180 / 180; 2 before the action: 179 / 133; 1 before the action: 180 / 120 | 180 / 163 |
+| M/1 | layers (1,) at post-identity, 8 directions | 180 / 180 | first own turn, token 1 of 5: 180 / 151; first own turn, token 2 of 5: 180 / 136; first own turn, token 3 of 5: 180 / 119; first own turn, token 4 of 5: 177 / 71; first own turn, token 5 of 5: 178 / 124; 5 before the action: 180 / 171; 4 before the action: 180 / 177; 3 before the action: 180 / 143; 2 before the action: 174 / 143; 1 before the action: 180 / 172 | 180 / 174 |
+| M/2 | layers (1,) at post-identity, 8 directions | 180 / 180 | first own turn, token 1 of 5: 180 / 174; first own turn, token 2 of 5: 180 / 152; first own turn, token 3 of 5: 179 / 102; first own turn, token 4 of 5: 177 / 33; first own turn, token 5 of 5: 180 / 162; 5 before the action: 180 / 178; 4 before the action: 179 / 157; 3 before the action: 180 / 174; 2 before the action: 175 / 136; 1 before the action: 180 / 172 | 180 / 175 |
+
+## (c) NOT A RESULT: the other-agent control's code path, arm F seed 0, floor switched off
+
+ran end to end: True
+site set {'layers': [1], 'positions': 'action+3', 'rank': 8, 'piece_correct': 92, 'whole_read_correct': 95}; own-directed action moved 0.0012; under a random piece 0.0063; named-other action moved 0.0962. These figures are not a pass or a fail of anything.
+
