@@ -27,6 +27,37 @@ does both jobs late. Every statement is checked against the main line, the two
 open pull requests or the compute ledger, and says which. Nothing here is a
 ruling. Nothing was launched, rented or spent by this session.*
 
+**Later still on 2026-10-03: version 4 of the proposal is drafted, and it is
+not yet ready for the registration review.** A Claude Code drafting session
+wrote `docs/successor-experiment-proposal-2026-10-03-v4.md` as a new file
+beside version 3, which is left unedited, and filed it as a pull request for
+John to merge. Nothing was rented, trained or spent. It is version 3 with the
+three sets of rulings of 2026-10-03 written in, each cited by its file: the
+accuracy floor moved to the piece of the internal state that is actually
+transplanted; the other-agent control kept as a reported description with no
+pass line, with the plain statement that it never ran at toy scale; the
+too-early-position control redefined on both twins of a pair, made a control
+that holds, and described as a test of the pairing and the code that says
+nothing about any model; the piece's accuracy at the other positions of its
+site reported both ways and gated in neither; and the fifth outcome, a
+validated measure with no reading of the free model, entered as satisfactory
+and weaker than a reading. Its toy figures come from the controls re-run and
+not from the ruling packets: the entangled model reads 1.0051, 0.9926 and
+0.9974. It prints the 325 site sets the rule produces for the full-size
+model, and ends with a change log from version 3. **Three things stand
+between it and the registration review.** (a) The short pre-stated run and
+the record of the evening ruling still have no check by a second session;
+the drafting session looked for one and found none, so every figure taken
+from that run is marked "not yet checked by a second session". (b) Version 4
+is itself owed a check by a session that did not write it. (c) It puts seven
+questions to John where a ruling is unclear or a number is not yet set: the
+main ones are whether the whole read must still clear four fifths now that
+the piece does, which device the registered fit is computed on, how many
+episodes the full-size measurement uses, and what an arm's outcome is when
+its three seeds disagree. **A correction to the two paragraphs below:** they
+say pull requests 79, 80 and 81 were not merged. John merged all three that
+evening (main line at `e184a6e`, `853988f` and `f32ba0c`).
+
 **Last of all on 2026-10-03: John ruled the two things the checks left him**
 (`docs/rulings/2026-10-03-fifth-outcome-and-both-figures-rulings.md`, in the
 words "Yes, satisfactory and weaker than R1; print both figures", authorship
