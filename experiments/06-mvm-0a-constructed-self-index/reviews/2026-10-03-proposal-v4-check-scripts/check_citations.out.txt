@@ -1,0 +1,138 @@
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 reference(s) name a file that is not in the repository
+
+[LOOK AT IT] 8 bare name(s) match more than one file
+  docs/successor-experiment-proposal-2026-10-03-v4.md:736  summary.json
+      could be: experiments/rehearsal-successor-measure/out-controls-rerun/summary.json
+      could be: experiments/rehearsal-successor-measure/out-v3-rules/summary.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2310  README.md
+      could be: README.md
+      could be: docs/reviews/2026-09-20-program-review/README.md
+      could be: experiments/01-self-indexing-removal-test/src/playground/README.md
+      could be: experiments/README.md
+      could be: experiments/rehearsal-successor-measure/README.md
+      could be: experiments/rehearsal-successor-measure/out-repairs/models/README.md
+      ... and 1 more
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2310  gate_base.json
+      could be: experiments/rehearsal-successor-measure/out-grammar-c/gate_base.json
+      could be: experiments/rehearsal-successor-measure/out-repairs/gate_base.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2310  summary_base.json
+      could be: experiments/rehearsal-successor-measure/out-grammar-c/summary_base.json
+      could be: experiments/rehearsal-successor-measure/out-repairs/summary_base.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2310  diagnose_named_other.json
+      could be: experiments/rehearsal-successor-measure/out-grammar-c/diagnose_named_other.json
+      could be: experiments/rehearsal-successor-measure/out-repairs/diagnose_named_other.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:3410  README.md
+      could be: README.md
+      could be: docs/reviews/2026-09-20-program-review/README.md
+      could be: experiments/01-self-indexing-removal-test/src/playground/README.md
+      could be: experiments/README.md
+      could be: experiments/rehearsal-successor-measure/README.md
+      could be: experiments/rehearsal-successor-measure/out-repairs/models/README.md
+      ... and 1 more
+  docs/successor-experiment-proposal-2026-10-03-v4.md:3712  table.md
+      could be: experiments/rehearsal-successor-measure/out-controls-rerun/table.md
+      could be: experiments/rehearsal-successor-measure/out-short-prestated-run/table.md
+      could be: experiments/rehearsal-successor-measure/out-v3-rules/table.md
+  docs/successor-experiment-proposal-2026-10-03-v4.md:3712  summary.json
+      could be: experiments/rehearsal-successor-measure/out-controls-rerun/summary.json
+      could be: experiments/rehearsal-successor-measure/out-v3-rules/summary.json
+
+[LOOK AT IT] 1 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+  docs/successor-experiment-proposal-2026-10-03-v4.md:1320  .venv-lock-2026-08-28.txt
+      in: **Reconciled 2026-10-03 (night): those versions are also pinned, in a committed file named in the registration**, in the way `.venv-lock-2026-08-28.txt` does fo
+
+[LOOK AT IT] 12 reference(s) written with a gap or a wildcard that matched nothing
+  docs/successor-experiment-proposal-2026-10-03-v4.md:352  out-controls-rerun/measure_C_seed*.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:736  out-controls-rerun/nominate_C_seed*.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:736  measure_C_seed*.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:891  out-controls-rerun/measure_M_seed*.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:961  out-controls-rerun/nominate_F_seed*.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:1120  out-v3-rules/measure_*_seed*.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:1456  out-v3-rules/nominate_*_seed*.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:1953  out-repairs/measure_base_*.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2310  nominate_base_*.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2310  measure_base_*.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2310  train_*_base_seed*.json
+  docs/successor-experiment-proposal-2026-10-03-v4.md:3472  measure_*_seed*.json
+
+[NOT CHECKED] 1 reference(s) to files outside this repository
+     1x  ~/Documents/Code/CLAUDE.md
+
+[NOT CHECKED] 0 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 1 exact figure(s) absent from the one file their sentence cites
+  docs/successor-experiment-proposal-2026-10-03-v4.md:850
+      figure: 1,810    cited: out-repairs/gate_base.json
+      in:     The repairs findings print 0.6033, which is the same share on the held-out gate episodes, 1,810 of 3,000 (MEASURED: `out-repairs/gate_base.json` at `882f252`, the field `own_by_route.entangled_share`)
+
+[LOOK AT IT] 16 figure(s) worth a human eye
+  docs/successor-experiment-proposal-2026-10-03-v4.md:850
+      figure: 0.6033    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     The repairs findings print 0.6033, which is the same share on the held-out gate episodes, 1,810 of 3,000 (MEASURED: `out-repairs/gate_base.json` at `882f252`, the field `own_by_route.entangled_share`)
+  docs/successor-experiment-proposal-2026-10-03-v4.md:876
+      figure: 0.4895    cited: out-repairs/measure_base_M.json    (only an approximate match found)
+      in:     **That formula is the true-slot reading of section 7.2, item 6, written in route accuracies: one check, not two.** By algebra, a transplant that carries the separable route fully and the entangled rou
+  docs/successor-experiment-proposal-2026-10-03-v4.md:876
+      figure: 0.4572    cited: out-repairs/measure_base_M.json    (only an approximate match found)
+      in:     **That formula is the true-slot reading of section 7.2, item 6, written in route accuracies: one check, not two.** By algebra, a transplant that carries the separable route fully and the entangled rou
+  docs/successor-experiment-proposal-2026-10-03-v4.md:876
+      figure: 0.4904    cited: out-repairs/measure_base_M.json    (only an approximate match found)
+      in:     **That formula is the true-slot reading of section 7.2, item 6, written in route accuracies: one check, not two.** By algebra, a transplant that carries the separable route fully and the entangled rou
+  docs/successor-experiment-proposal-2026-10-03-v4.md:891
+      figure: 0.8613    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     Arm M passes its gate on the own-directed condition on all three seeds (0.8613 to 0.8667), and clears the named-other condition too (0.5517 to 0.5663), although that is no longer gated for it (MEASURE
+  docs/successor-experiment-proposal-2026-10-03-v4.md:891
+      figure: 0.8667    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     Arm M passes its gate on the own-directed condition on all three seeds (0.8613 to 0.8667), and clears the named-other condition too (0.5517 to 0.5663), although that is no longer gated for it (MEASURE
+  docs/successor-experiment-proposal-2026-10-03-v4.md:891
+      figure: 0.5517    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     Arm M passes its gate on the own-directed condition on all three seeds (0.8613 to 0.8667), and clears the named-other condition too (0.5517 to 0.5663), although that is no longer gated for it (MEASURE
+  docs/successor-experiment-proposal-2026-10-03-v4.md:891
+      figure: 0.5663    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     Arm M passes its gate on the own-directed condition on all three seeds (0.8613 to 0.8667), and clears the named-other condition too (0.5517 to 0.5663), although that is no longer gated for it (MEASURE
+  docs/successor-experiment-proposal-2026-10-03-v4.md:1182
+      figure: 0.017536    cited: docs/2026-09-21-successor-measure-rehearsal.md, out/denominator_floor.json    (several files cited beside it)
+      in:     **The rule carries room for a miss of at most the largest measured miss, rounded up to 0.018.** The largest miss the rehearsal measured against this formula was 0.017536, on the free arm at one seed (
+  docs/successor-experiment-proposal-2026-10-03-v4.md:1739
+      figure: 26,700    cited: docs/2026-10-03-controls-rerun.md    (hedged figure)
+      in:     The controls re-run of 2026-10-03 ran controls 1, 3, 4, 6 and 7, the true-slot reference, the rider and the stricter row on all twelve toy models, with its method and code committed before its output 
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2167
+      figure: 0.2633    cited: docs/rehearsal-repairs-method-2026-09-25.md, out-repairs/gate_base.json    (only an approximate match found)
+      in:     The ruling writes the bar as "above 0.2630"; on 3,000 held-out episodes that is 790 or more correct, a share of 0.2633 (MEASURED: the bar's derivation is printed in `docs/rehearsal-repairs-method-2026
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2177
+      figure: 0.2383    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     - Reference points reported alongside, and they are references and not thresholds: one in eight for guessing, one in four for a solver that cannot tell whose value it needs, and the **measured** accur
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2232
+      figure: 0.1703    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     **On the toy, described honestly (ruled, the Gate C rulings, RT-220):** arm T collapses on two of three seeds, at 0.2467 and 0.2510, and its seed 2 reads 0.2733 against the bar of 0.2633, so under the
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2256
+      figure: 1.0051    cited: out-controls-rerun/summary.json    (only an approximate match found)
+      in:     **Under this version's rules the toy cleared it on every seed, at 1.0051, 0.9926 and 0.9974** (MEASURED: the controls re-run at `821f154`, section 2, from `out-controls-rerun/summary.json`, `separatio
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2256
+      figure: 0.9926    cited: out-controls-rerun/summary.json    (only an approximate match found)
+      in:     **Under this version's rules the toy cleared it on every seed, at 1.0051, 0.9926 and 0.9974** (MEASURED: the controls re-run at `821f154`, section 2, from `out-controls-rerun/summary.json`, `separatio
+  docs/successor-experiment-proposal-2026-10-03-v4.md:2256
+      figure: 0.9974    cited: out-controls-rerun/summary.json    (only an approximate match found)
+      in:     **Under this version's rules the toy cleared it on every seed, at 1.0051, 0.9926 and 0.9974** (MEASURED: the controls re-run at `821f154`, section 2, from `out-controls-rerun/summary.json`, `separatio
+
+==============================================================================
+Confident findings: 1. Things for a human to look at: 37.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================

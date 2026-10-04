@@ -1,0 +1,123 @@
+=== lines marked reconciled
+51:(`docs/rulings/2026-10-03-seven-questions-reconciliation.md`). The passages below that state
+52:those points were edited to match, each marked "reconciled". They are: the
+75:| **John's late-evening ruling of 2026-10-03 on this version's seven questions** | **filed with this version, pull request 83**: `docs/rulings/2026
+477:printed, whichever way it went. **Reconciled 2026-10-03 (night): the
+486:ruling 6; `docs/rulings/2026-10-03-seven-questions-reconciliation.md`). On the
+1338:   1.9.0, numpy 2.5.0, `out-controls-rerun/summary.json`). **Reconciled
+1344:   3; `docs/rulings/2026-10-03-seven-questions-reconciliation.md`). The processor is the device the
+1417:   check reconciled the two: they are different reads of the same models,
+1562:   sets, which has not been run. **Reconciled 2026-10-03 (night): what this
+1571:   ruling 2; `docs/rulings/2026-10-03-seven-questions-reconciliation.md`).
+2072:- **(reconciled 2026-10-03, night) the band that sampling alone puts around
+2076:  (`docs/rulings/2026-10-03-seven-questions-reconciliation.md`);
+2106:   put around the count printed beside it** (reconciled 2026-10-03, night:
+2256:| Separation bar between arms T and C (R1 against R2) | **0.5**: the minimum gap between arm C's reading and arm T's, on the chance-corrected for
+2260:| The device and number format of the registered fit | **the laptop's processor; the figure computed there is the registered one.** States in 32-
+2276:| The numbers of episodes at the registered size | **the toy's, unchanged: 600 development episodes with the last 180 held out for every fit (the
+2277:| An arm whose three seeds disagree | **two seeds of three decide, the third reported**: an arm is read if two or more seeds read. **Reconciled 2
+2683:| Development runs | **Four arms, one seed each**, at the 10-million size: pipeline, self-tests, throughput, and arm M's first run on the rented 
+2790:  compute ledger already reconciles at phase boundaries, and the one the
+2827:on ratio A, reconciled to the ledger.
+4187:  laptop's processor, library versions recorded (and, by the reconciliation
+
+=== point 1: library versions (recorded / pinned)
+53:library versions are pinned (section 7.2, item 1); the registration says what
+1336:   64-bit; and the versions of torch, scikit-learn and numpy are recorded in
+1339:   2026-10-03 (night): those versions are also pinned, in a committed file
+2074:  committed file that pins the library versions; and the separation as the
+2260:| The device and number format of the registered fit | **the laptop's processor; the figure computed there is the registered one.** States in 32-bit, the read fitted
+3984:   versions recorded (section 7.2, item 1).* **Suggestion: confirm that.**
+3987:   have; moderate on whether the registration should also pin the library
+4187:  laptop's processor, library versions recorded (and, by the reconciliation
+4188:  ruling of the same night, pinned) (sections 7.2
+
+=== point 2: the separation (seed by seed / per seed / on every seed / two or more seeds)
+56:and the separation is the lowest of arm C's readings minus the highest of arm
+57:T's, not paired by seed number (sections 3, 9). **If a sentence elsewhere in
+407:separation, if it has any, would be within each trial (section 5.3).
+413:separation, arm C minus arm T, is 1.0051, 0.9926 and 0.9974 and clears 0.5 on
+478:separation is not compared seed by seed.** It is the lowest reading among arm
+480:must be at least 0.5; seeds are not paired by number, because seed 0 of one
+482:C each read on at least two seeds and that separation clears; "degree read"
+487:toy that separation is 0.9926. On the toy every arm behaves alike on all three seeds, so the
+741:entangled end on every seed, quoted per seed for these particular models and
+763:figures for this arm (0.99 to 1.00, and the separation figures 0.9977 and
+864:not partial separation within a trial** (the repairs rulings, item 2, in those
+931:not show that the measure scales on a system whose partial separation is
+1077:resists being pulled apart at these sites. The separation bar (section 9, 1a)
+1129:   than repaired. The floor keeps the denominator away from zero by
+2060:- the separation bar between R1 and R2 (0.5);
+2074:  committed file that pins the library versions; and the separation as the
+2256:| Separation bar between arms T and C (R1 against R2) | **0.5**: the minimum gap between arm C's reading and arm T's, on the chance-corrected form. **Reconciled 2026
+2277:| An arm whose three seeds disagree | **two seeds of three decide, the third reported**: an arm is read if two or more seeds read. **Reconciled 2026-10-03 (night): t
+2418:- **R-10. The separation bar is set.** Ruled at 0.5 from a toy separation of
+2992:system's partial separation, if it has any, would be within each trial, and
+3253:    arm"; the re-run applied it per seed, and the check calls that an
+3545:print('separation:', {s:round(v['C_minus_T'],4) for s,v in S['separation'].items()}, 'all clear 0.5:', all(v['clears_0_5'] for v in S['separation'].values()))
+3561:separation: {'0': 1.0051, '1': 0.9926, '2': 0.9974} all clear 0.5: True
+3575:repaired, and the registration says so. **A second place the same failure
+3638:print('a fully collapsed arm (own-directed exactly 1/4) is read as NOT collapsed with probability %.4f per seed'%float(tail(k)))
+3645:a fully collapsed arm (own-directed exactly 1/4) is read as NOT collapsed with probability 0.0485 per seed
+3656:collapsed arm 4.85% of the time per seed, which is what the two-of-three
+3814:- **The separation line** (0.5 on every seed): produced (failure 2's output).
+4024:   and does not say how many seeds make that so. The separation bar is
+4025:   written "per seed" in the same way, without saying what follows if it is
+--- 'clear(s|ed) ... every seed' and the three per-seed figures given as the separation
+2256:| Separation bar between arms T and C (R1 against R2) | **0.5**: the minimum gap between arm C's reading and arm T's, on the chance-corrected form. **Reconciled 2026
+2419:  0.873 to 0.885 on 2026-09-21, and cleared at 1.0051, 0.9926 and 0.9974 under
+3814:- **The separation line** (0.5 on every seed): produced (failure 2's output).
+
+=== point 3: the episode counts and the sampling band
+55:item 3); the sampling band is printed at the floor (sections 7.4, 7.5, 9);
+75:| **John's late-evening ruling of 2026-10-03 on this version's seven questions** | **filed with this version, pull request 83**: `docs/rulings/2026-10-03-proposal-v4-s
+321:any size on any seed, is right on 34 of 180 held-out episodes against 144
+414:every seed; arm M reads 0.4886, 0.4860 and 0.5449, inside its band on every
+776:**The choice among candidates is made among sampling noise on this arm, and
+965:size, on any seed: the best is right on 34 of 180 held-out episodes against
+1100:no-transplant rate. Both are sampling noise around "the subspace does
+1242:  development episodes (on the toy, the last 180 of 600), never on the fresh
+1359:   of 180 held-out episodes at the action position, whole read then chosen
+1686:   sampling noise, and the registration says so** (the review of version 3,
+1802:     is right on at most 137 of 180 held-out episodes and the best piece on
+2067:- **the numbers of episodes at the registered size, which are the toy's
+2068:  (ruled 2026-10-03, late evening, ruling 4): 600 development episodes with
+2069:  the last 180 held out for every fit, so the floor is 144 of 180; 800 fresh
+2072:- **(reconciled 2026-10-03, night) the band that sampling alone puts around
+2105:4. whether the fit floor passes, **with the band that sampling alone would
+2107:   at 180 held-out episodes one episode is 0.0056, and a piece whose true
+2142:on is picked among sampling noise, so the stop of step 5a must not be decided
+2251:The device row and the last row, the numbers of episodes, were open when this
+2275:| Arm M's predicted reading | between **0.3 and 0.7** on every seed, and within **0.10** of its true-slot reading on the same fresh episodes (the formula of section 
+2276:| The numbers of episodes at the registered size | **the toy's, unchanged: 600 development episodes with the last 180 held out for every fit (the floor is 144 of 180
+2374:  pre-stated band.** On arm C the read holds the label, the piece
+2378:  0.9974; arm M reads 0.4886, 0.4860 and 0.5449 against a band of 0.3 to 0.7,
+2879:architecture, in parameter count within the size band, in how they route
+3538:print('right of 180 held-out episodes, per running state 0 to 4: whole read | best piece of 1, 2, 4 or 8 directions')
+3548:right of 180 held-out episodes, per running state 0 to 4: whole read | best piece of 1, 2, 4 or 8 directions
+3642:print('piece floor on the toy: four fifths of 180 held-out episodes =', Fr(4,5)*180, '; one episode is %.4f of the scale'%(1/180))
+3649:piece floor on the toy: four fifths of 180 held-out episodes = 144 ; one episode is 0.0056 of the scale
+3660:both ends on the toy; one episode is 0.0056 of the scale, which is why the
+3661:device is named and why the caution about 180 held-out episodes is carried
+3992:4. **The numbers of episodes at the registered size.** The brief for this
+3999:   **Suggestion: the toy's counts, unchanged: 600 development episodes with
+4000:   the last 180 held out, 800 fresh matched pairs, 800 on the relaxed set,
+4006:   one episode is 0.0056, and the toy has already shown fits moving by one
+4114:  sampling noise.
+4189:  item 1, 7.4, 9); the toy's episode counts at the full size (sections 7.4,
+
+=== point 4: the order of the piece rule, and what it can miss
+54:applying the piece rule after the layers are chosen can miss (section 7.2,
+75:| **John's late-evening ruling of 2026-10-03 on this version's seven questions** | **filed with this version, pull request 83**: `docs/rulings/2026-10-03-proposal-v4-s
+1486:     0, every one to a single later layer (the re-run findings, Part 1,
+1555:   sizes as extra rows. **The requirement is applied after the layer set is
+1556:   chosen (item 4), so it decides which sizes may be chosen and never changes
+1557:   which layers are used (ruled 2026-10-03, late evening, ruling 2).** The
+1563:   order can miss, stated as the ruling requires.** The earliest layers at
+1566:   only at later layers returns "no verdict, read failed its floor" although
+1567:   a later layer might have passed. The report for the first full-size
+2258:| Fit floor | **four fifths of held-out development episodes, on the piece that is transplanted, at the action position**, per arm and seed, stated as a count (144 o
+3316:    floor on the piece only; the piece rule applied after the layers are
+3970:2. **The piece rule is applied after the layers are chosen.** So it decides
+3971:   which sizes may be chosen and never changes which layers are used. That
+4186:  the layers are chosen (section 7.2, item 3); the registered fit on the
