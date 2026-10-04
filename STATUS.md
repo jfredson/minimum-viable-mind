@@ -77,9 +77,10 @@ fix them.
 **What is owed next.** The development runs (step 4): the go packet is
 `docs/rulings/2026-10-04-development-runs-go-PROPOSAL.md`, four runs at 10
 million, one per arm, arm M first and alone, about $0.60 to $1.25 each, hard
-cap $2.50 each and $10 for the four. Four ledger rows hold the estimates. A
-planning session relayed that John said "the $10 is approved"; the launching
-session quotes his own words in the rows before any machine exists. **Before
+cap $2.50 each and $10 for the four. Four ledger rows hold the estimates. John's
+go, "yes, make the change and the $10 is approved" (2026-10-04, in the
+planning session, relayed to this one), is quoted in the rows with that
+provenance. **Before
 a real launch the Mac's never-sleep override must be switched on: it read off
 on 2026-10-04, and the launcher refuses until it is.** Then the check of this
 code and of the runs' results by a session that wrote neither.

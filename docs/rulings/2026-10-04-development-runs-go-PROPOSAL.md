@@ -32,14 +32,14 @@ meets real billing for the first time; and the seconds per step of the real
 training loop, data generation included, are measured on the card, which
 reprices the later runs.
 
-**What John has said so far, as it reached this session.** A planning session
-of 2026-10-04 relayed that John said "the $10 is approved" for these runs, and
-recorded it on the TimeAssembler step "Development runs at 10 million
-parameters" (task `8130343a`). This session did not hear him say it, and the
-ledger's rule is that a launch quotes John's go verbatim in the run's own row
-before the machine exists [C2(b)]. **The session that launches should quote
-his words from where he said them, or ask him for a line naming these four
-runs and this estimate.** Either way this session launched nothing.
+**What John has said, as it reached this session.** In the Claude Code session
+"Weekly project priorities review" on 2026-10-04 (Pacific), asked "Is the
+~$10 for the small test runs approved too?", John typed: **"yes, make the
+change and the $10 is approved"** (the "change" was the roadmap restructure).
+That session relayed the words by message the same day and recorded them on
+the TimeAssembler step "Development runs at 10 million parameters" (task
+`8130343a`). They are quoted in each run's ledger row with that provenance
+[C2(b)]. This session did not hear them directly, and launched nothing.
 
 ## 2. The money
 
@@ -87,7 +87,8 @@ is optional.
 1. **This pull request is merged**, so the frozen code is on the main line
    and the launcher runs from the main checkout (its default artifact folder is
    `~/Code/minimum-viable-mind/experiments/08-successor-degree/artifacts/`).
-2. **John's go, quoted verbatim** in each run's ledger row (section 1).
+2. **John's go, quoted verbatim** in each run's ledger row: done, as relayed
+   (section 1).
 3. **The Mac cannot fall asleep.** On 2026-10-04 the launch gate read the
    never-sleep override as **off** (`SleepDisabled 0`), so a real launch
    would be refused today. John sets it with
@@ -150,6 +151,7 @@ code.
 
 ## 7. What John is asked
 
-One go, in his own words, naming these four runs, the estimate of about $2.40
-to $5.00, and the $10 cap; or a change to any of it (for example, arm M alone
-first and the other three only after he has seen its figures).
+His go is recorded (section 1). What is left for him: merging this pull
+request, and switching the never-sleep override on, which needs his password.
+He may still change any of this (for example, arm M alone first and the
+other three only after he has seen its figures).
