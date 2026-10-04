@@ -14,11 +14,90 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
-## WHERE THINGS STAND 2026-10-03 — Weekend 1 did its four jobs and the proposal is at version 3, unreviewed and unmerged; nothing has moved since 2026-09-26; the registration will not be committed this weekend
+## WHERE THINGS STAND 2026-10-03 (late evening) — everything owed before the registration review is done, checked and merged; the registration text is next
 
 *This section is the current state. Everything below it is the older
 record, newest first, and is left exactly as written (except that this
 two-line note was moved up from the entry below).*
+
+*Written late on 2026-10-03 (Pacific) by the Claude Code coordination
+session, which took over coordination from the long session of that day
+(TimeAssembler handoff entry `17e6a964`, "Handoff: the long Minimum Viable
+Mind session of 2026-10-03 hands coordination to a fresh session on Opus").
+That session coordinated and recorded. It did none of the science described
+here. Each merge below was confirmed on the main line, not taken from a
+report. Nothing was launched, rented or spent. The main line is at
+`d19f914`.*
+
+**What landed, in order, all at $0:**
+
+- **The check of version 4 of the proposal** (pull request 86,
+  `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-proposal-v4-check-claude-code.md`).
+  The check was written by a session that wrote none of version 4. Every
+  number matched: 89 toy figures, the 325 site sets and every dollar figure.
+  It lists thirty wording fixes for the registration text, and none of them
+  changes a number or a rule. It also found six places where the two records
+  of the seven-question ruling differ that the reconciliation did not list.
+  On five, the second record simply says more. On one, the two records
+  disagree about when the other-agent control's code is changed.
+- **John's ruling on that check's two questions** (pull request 87,
+  `docs/rulings/2026-10-03-version-4-check-questions-rulings.md`; authorship
+  mixed; "Agreed on both suggestions"). The other-agent control moves to
+  twenty random pieces, with its code test re-run, before the registration
+  review. The rule that separates the two built models stays as ruled, and
+  the registration says what it forgives.
+- **The ordinary competing solver put through the measurement as now ruled**
+  (pull request 88, `docs/2026-10-03-competing-solver-run.md`). This is the
+  solver trained with no acting channel. **It returned no verdict on every
+  seed, as expected**, with the acting channel removed and with it left on.
+  The read of its own marker word is near chance: at best 20 to 25 of 180,
+  against 144.
+- **The other-agent control against twenty random pieces** (pull request 89,
+  `docs/2026-10-03-control-2-twenty-draws.md`). This was a code test, not a
+  result. It ran end to end, and the figures the change should not touch
+  match the earlier test exactly.
+- **The check of both** (pull request 90,
+  `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-competing-solver-and-control-2-check-claude-code.md`).
+  It was written by a session that ran neither. Both re-runs reproduce the
+  committed outputs, and 69 of 69 figures recount. One explanation in the
+  solver's findings was wrong: version 4 does not apply the gate on learning
+  to competing solvers. What stopped the solver was that no site set cleared
+  the floor at nomination; the piece rule and the no-transplant rule stood
+  behind it.
+- **John's ruling on the seven questions those three raised** (pull request
+  91, `docs/rulings/2026-10-04-competing-solver-and-control-2-rulings.md`;
+  authorship mixed; "Agreed on all seven"). The solver is cited with its
+  acting channel removed, which says nothing about the measure, and with the
+  channel left on beside it, which is the reading that tests the measure.
+  The registration says what stopped it, in the check's sentence. The
+  no-transplant formula is not described as true of every model. The
+  registered other-agent control is `control2_twenty_draws.control2`. The
+  95th percentile of the twenty pieces stays as the summary, with all twenty
+  printed. The wrong explanation is corrected in the registration text.
+  **There is no new run.** Instead the registration states a weakness: this
+  solver fails the task outright, so the run cannot show what the measure
+  does on a model that does the task by another route.
+
+**Questions went to John from one session only**, the coordination session,
+as the handoff asked. That is why there is one record of each ruling.
+
+**What stands between here and the registration commit:**
+1. A session on Fable writes the registration text as a new file beside
+   version 4, carrying everything above (prompt written; not yet started).
+2. A fresh session on Opus checks it against its sources.
+3. John opens the registration review on both tiers, realistically Saturday
+   2026-10-10, then the registration is committed on his ruling. The first
+   kill date is 2026-10-18.
+
+**Also owed:** Weekend 2's Sunday-night handoff in `data/roadmap.toml`,
+which also moves Weekends 3 to 7 back by the one-weekend slip; four
+leftover GitHub branches from merged work; and the correction note ruled on
+2026-09-25 beside the old review's key count, still not filed.
+
+**Spend:** unchanged. About $228.15 of the $450 ceiling; nothing since
+2026-09-25.
+
+## WHERE THINGS STAND 2026-10-03 — Weekend 1 did its four jobs and the proposal is at version 3, unreviewed and unmerged; nothing has moved since 2026-09-26; the registration will not be committed this weekend
 
 *Written 2026-10-03 by a Claude Code session that did none of the work it
 describes. It is a catch-up: the Sunday-night handoff of 2026-09-27 and the
