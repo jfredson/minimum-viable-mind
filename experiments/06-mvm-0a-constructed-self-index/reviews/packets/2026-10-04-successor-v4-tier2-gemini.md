@@ -20,19 +20,26 @@ two by item - plus one ordinary freely trained system, and asks whether a
 transplant-based measure can tell the built systems apart. If it can, the freely
 trained system gets a reading. You are reviewing it **as registration text**:
 once this review closes, it becomes the binding registration, and the runs it
-describes (about $108 of rented compute) are launched against it.
+describes (about $192 to $204 of rented compute in all, released in two parts,
+by version 4's section 12.4) are launched against it.
 
 **What the registration will actually say.** Version 4 is not quite the final
-wording. Several rulings and two checks made after it was written say what must
-be changed in it before it is committed (records 6 to 15). Read version 4
-together with them. Where version 4 conflicts with a ruling, or a ruled change
-cannot be written in as described, that is in scope.
+wording. Records 6 to 15 are the rulings and checks that bear on it. Records 6
+to 11 are already written into version 4: 6 to 8 came before it, and 9 to 11
+were committed with it. Records 12 and 13 (two later rulings) and the wording
+fixes listed in the two checks (records 14 and 15) are **not yet** written in.
+The inside review (record 5) lists every one of those changes in its section
+"The registration text as reviewed". Read version 4 together with them. Where
+version 4 conflicts with a ruling, or a ruled change cannot be written in as
+described, that is in scope.
 
 **Version 4's opening says it "cannot go to the registration review yet"** and
 lists three things in front of it: a check of version 4 by another session, a
 run of an ordinary competing solver, and John opening the review. All three are
 done: the check is record 14, the solver run is record 21 with its check in
-record 15, and John opened this review on 2026-10-04. That opening paragraph is
+record 15, and John opened this review on 2026-10-04 (recorded in
+`docs/rulings/2026-10-04-registration-review-opened.md`, not carried here
+because it changes nothing in version 4). That opening paragraph is
 history, not a live condition.
 
 **Who has already looked.** An inside reviewer - a separate Claude session with
@@ -55,8 +62,8 @@ turns on one of them, say which, and say what you would need it to contain:
 that is a useful finding, not a failure of the review.
 
 **How the material is marked.** Every record opens with a line beginning
-`===== RECORD` that names it, says whether it is a complete file or whole
-sections of one, and gives its path in the repository, and closes with a line
+`===== RECORD` that names it, says whether it is a complete file, whole
+sections of one, or a range of its lines, and gives its path in the repository, and closes with a line
 beginning `===== END OF RECORD`. Cite records by that path, and version 4 by its
 section numbers.
 
@@ -96,12 +103,10 @@ and what held.
 24. the opening description of the closed design's task grammar, which version 4 says its grammar extends (inside finding RT-239) - `experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py` (lines 1 to 118)
 25. the opening description of the rehearsal's task grammar (inside finding RT-239) - `experiments/rehearsal-successor-measure/src/grammar.py` (lines 1 to 70)
 
-**Files version 4 cites that are not in this packet** (85 of them; named so you know they exist, not because you need them):
+**Files version 4 cites that are not in this packet** (81 of them; named so you know they exist, not because you need them; found by looking for file names in version 4, so a short name that matches several files, or none, is left off, and a file cited in some other way may be missing):
 
-- `.venv-lock-2026-08-28.txt`
 - `README.md`
 - `ROADMAP.md`
-- `diagnose_named_other.json`
 - `docs/2026-09-25-rented-slice-attempt-2-findings.md`
 - `docs/2026-09-25-rented-slice-findings.md`
 - `docs/2026-09-26-free-arm-label-search.md`
@@ -150,6 +155,8 @@ and what held.
 - `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-short-prestated-run-check-claude-code.md`
 - `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-successor-v3-gate-c-claude-code.md`
 - `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-successor-v3-gate-c-scripts/arm_m_true_slot.py`
+- `experiments/06-mvm-0a-constructed-self-index/src/launch_a3.sh`
+- `experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh`
 - `experiments/rehearsal-successor-measure/out-controls-rerun/measure_F_seed0.json`
 - `experiments/rehearsal-successor-measure/out-controls-rerun/summary.json`
 - `experiments/rehearsal-successor-measure/out-grammar-c/diagnose_named_other.json`
@@ -178,11 +185,7 @@ and what held.
 - `experiments/rehearsal-successor-measure/src/rerun_v3.py`
 - `experiments/rehearsal-successor-measure/src/short_prestated_run.py`
 - `experiments/rehearsal-successor-measure/src/transplant.py`
-- `gate_base.json`
 - `spec/corrigibility-commitments.md`
-- `summary.json`
-- `summary_base.json`
-- `table.md`
 
 *This is the whole packet in one document. Read it from start to finish before
 answering - do not search it for passages that match the questions. Then answer
@@ -12351,4 +12354,29 @@ nothing, rents nothing and costs nothing [C1/C2].
 """
 ===== END OF RECORD 25 =====
 
-*End of the packet. Answer the brief (record 1) now. Label your findings G1, G2, G3 and so on.*
+*End of the packet. Answer the brief now. Label your findings G1, G2, G3 and so on. The brief is record 1; it is repeated here, unchanged, so it is fresh when you answer:*
+
+## The brief, fixed, sent unchanged with every packet
+
+Four parts, in this order, a table first in each, severity marked fatal,
+serious, or worth-noting, and a one-paragraph kill case at the end whether or
+not the reviewer thinks the target should ship.
+
+1. **Feasibility.** For every quantity the target pre-states or thresholds:
+   can it be measured at all with the stated instrument, and can the control
+   or comparison condition actually reach the stated threshold? Cite the
+   committed record that shows so, or say that none exists. A "verified" or
+   "measured" claim in the text with no record behind it is a fatal finding
+   on its own.
+2. **Satisfied by the wrong thing.** Every way the clause, its baselines, or
+   its threshold calibration could be satisfied by a model with none of the
+   structure it claims to detect, or fitted to data the text says is excluded.
+3. **No verdict.** Every way the target could fail to return any verdict on
+   the runs it is written for.
+4. **Over-reading.** What the result will be read as claiming beyond what it
+   measures, in the paper, in STATUS.md, and in public.
+
+Plain language throughout. Lookup allowed and flagged. Do not soften findings
+to be polite, and do not manufacture severity to look thorough. A pass that
+finds nothing fatal is a valid result, reported as what was checked and what
+held.

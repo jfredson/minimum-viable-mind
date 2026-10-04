@@ -14,7 +14,7 @@ reviewer's findings, every ruling and check that changes version 4 before it is
 registered, and the run records its numbers come from. Only the delivery
 differs:
 
-- **Gemini** gets one document, 806 KB.
+- **Gemini** gets one document, 808 KB.
 - **ChatGPT** gets the same material as 33 files, none bigger than
   28 KB, pasted into **one** conversation, in order.
 
@@ -52,6 +52,13 @@ record in each of several chats has reviewed nothing.
 3. Each file tells it to reply with one short line and wait. After file 33
    it gives the review. If it starts early, tell it to wait for the rest.
 4. The files are numbered in their names; filename order is the right order.
+5. **This packet is large**: roughly 200,000 to 230,000 tokens (a rough
+   estimate, not counted), nearly twice the packet ChatGPT read in full on
+   2026-09-21. Use the model with the largest memory the app offers. The last
+   file repeats the brief, so it is fresh when the model answers. Before it
+   gives its review, ask it to quote the four part headings of the brief and
+   the first line of record 4. If it cannot, it has lost the start of the
+   packet: stop and say so, rather than filing a review of part of it.
 
 ## If the app balks
 
@@ -89,8 +96,8 @@ first registered run can launch.
 
 | order | file | size | what is in it |
 |---|---|---|---|
-| Gemini session | `2026-10-04-successor-v4-tier2-gemini.md` | 806 KB | the whole packet in one document |
-| ChatGPT 1 of 33 | `2026-10-04-successor-v4-tier2-chatgpt-01-of-33-start-here-and-records-1-to-3.md` | 23.3 KB | orientation, the list of records, and how to answer; 1. THE BRIEF - the questions you are answering (fixed protocol text, sent unchanged to every reviewer); 2. the closure rule this text is being reviewed under; 3. the rule that a full measurement rehearsal comes before any registration review |
+| Gemini session | `2026-10-04-successor-v4-tier2-gemini.md` | 808 KB | the whole packet in one document |
+| ChatGPT 1 of 33 | `2026-10-04-successor-v4-tier2-chatgpt-01-of-33-start-here-and-records-1-to-3.md` | 24.0 KB | orientation, the list of records, and how to answer; 1. THE BRIEF - the questions you are answering (fixed protocol text, sent unchanged to every reviewer); 2. the closure rule this text is being reviewed under; 3. the rule that a full measurement rehearsal comes before any registration review |
 | ChatGPT 2 of 33 | `2026-10-04-successor-v4-tier2-chatgpt-02-of-33-records-4.md` | 26.4 KB | 4. THE TEXT UNDER REVIEW - successor experiment proposal, version 4 |
 | ChatGPT 3 of 33 | `2026-10-04-successor-v4-tier2-chatgpt-03-of-33-records-4.md` | 25.8 KB | 4. THE TEXT UNDER REVIEW - successor experiment proposal, version 4 |
 | ChatGPT 4 of 33 | `2026-10-04-successor-v4-tier2-chatgpt-04-of-33-records-4.md` | 26.7 KB | 4. THE TEXT UNDER REVIEW - successor experiment proposal, version 4 |
@@ -122,7 +129,7 @@ first registered run can launch.
 | ChatGPT 30 of 33 | `2026-10-04-successor-v4-tier2-chatgpt-30-of-33-records-20-to-22.md` | 25.7 KB | 20. the short pre-stated run; 21. the ordinary competing solver put through the measurement; 22. the other-agent control against twenty random pieces (NOT A RESULT: a code test) |
 | ChatGPT 31 of 33 | `2026-10-04-successor-v4-tier2-chatgpt-31-of-33-records-22-to-23.md` | 26.0 KB | 22. the other-agent control against twenty random pieces (NOT A RESULT: a code test); 23. the list of what has gone wrong in this program before, which the inside reviewer ran against version 4 |
 | ChatGPT 32 of 33 | `2026-10-04-successor-v4-tier2-chatgpt-32-of-33-records-23.md` | 26.6 KB | 23. the list of what has gone wrong in this program before, which the inside reviewer ran against version 4 |
-| ChatGPT 33 of 33 | `2026-10-04-successor-v4-tier2-chatgpt-33-of-33-records-23-to-25.md` | 18.7 KB | 23. the list of what has gone wrong in this program before, which the inside reviewer ran against version 4; 24. the opening description of the closed design's task grammar, which version 4 says its grammar extends (inside finding RT-239); 25. the opening description of the rehearsal's task grammar (inside finding RT-239) |
+| ChatGPT 33 of 33 | `2026-10-04-successor-v4-tier2-chatgpt-33-of-33-records-23-to-25.md` | 20.2 KB | 23. the list of what has gone wrong in this program before, which the inside reviewer ran against version 4; 24. the opening description of the closed design's task grammar, which version 4 says its grammar extends (inside finding RT-239); 25. the opening description of the rehearsal's task grammar (inside finding RT-239) |
 
 ## What was built from what
 
@@ -134,5 +141,6 @@ first registered run can launch.
 ## If version 4, the findings, or any record changes before you run the sessions
 
 Run `python3 scripts/build_successor_v4_tier2_packets.py` from the top of the
-repository. It rebuilds both packets and this page and prints the check. Only
-the files that changed need re-pasting.
+repository. It rebuilds both packets and this page and prints the check. Then
+use the rebuilt files from the start: a change to an early record can move every
+later cut between files. Do not mix files from two builds.

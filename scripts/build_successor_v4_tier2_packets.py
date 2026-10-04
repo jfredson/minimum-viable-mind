@@ -124,19 +124,26 @@ two by item - plus one ordinary freely trained system, and asks whether a
 transplant-based measure can tell the built systems apart. If it can, the freely
 trained system gets a reading. You are reviewing it **as registration text**:
 once this review closes, it becomes the binding registration, and the runs it
-describes (about $108 of rented compute) are launched against it.
+describes (about $192 to $204 of rented compute in all, released in two parts,
+by version 4's section 12.4) are launched against it.
 
 **What the registration will actually say.** Version 4 is not quite the final
-wording. Several rulings and two checks made after it was written say what must
-be changed in it before it is committed (records 6 to 15). Read version 4
-together with them. Where version 4 conflicts with a ruling, or a ruled change
-cannot be written in as described, that is in scope.
+wording. Records 6 to 15 are the rulings and checks that bear on it. Records 6
+to 11 are already written into version 4: 6 to 8 came before it, and 9 to 11
+were committed with it. Records 12 and 13 (two later rulings) and the wording
+fixes listed in the two checks (records 14 and 15) are **not yet** written in.
+The inside review (record 5) lists every one of those changes in its section
+"The registration text as reviewed". Read version 4 together with them. Where
+version 4 conflicts with a ruling, or a ruled change cannot be written in as
+described, that is in scope.
 
 **Version 4's opening says it "cannot go to the registration review yet"** and
 lists three things in front of it: a check of version 4 by another session, a
 run of an ordinary competing solver, and John opening the review. All three are
 done: the check is record 14, the solver run is record 21 with its check in
-record 15, and John opened this review on 2026-10-04. That opening paragraph is
+record 15, and John opened this review on 2026-10-04 (recorded in
+`docs/rulings/2026-10-04-registration-review-opened.md`, not carried here
+because it changes nothing in version 4). That opening paragraph is
 history, not a live condition.
 
 **Who has already looked.** An inside reviewer - a separate Claude session with
@@ -159,8 +166,8 @@ turns on one of them, say which, and say what you would need it to contain:
 that is a useful finding, not a failure of the review.
 
 **How the material is marked.** Every record opens with a line beginning
-`===== RECORD` that names it, says whether it is a complete file or whole
-sections of one, and gives its path in the repository, and closes with a line
+`===== RECORD` that names it, says whether it is a complete file, whole
+sections of one, or a range of its lines, and gives its path in the repository, and closes with a line
 beginning `===== END OF RECORD`. Cite records by that path, and version 4 by its
 section numbers.
 
@@ -269,7 +276,7 @@ def close_line(i, part=None):
 def cited_not_included():
     """Every repository file version 4 names that this packet does not carry."""
     text = read(TARGET)
-    names = set(re.findall(r"`([A-Za-z0-9_./-]+\.(?:md|py|toml|json|csv|txt))`", text))
+    names = set(re.findall(r"`([A-Za-z0-9_./-]+\.(?:md|py|sh|toml|json|csv|txt))`", text))
     tracked = subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True,
                              text=True, check=True).stdout.split()
     included = {r["source"] for r in RECORDS}
@@ -279,7 +286,9 @@ def cited_not_included():
             path = n
         else:
             hits = [t for t in tracked if t.endswith("/" + n)]
-            path = hits[0] if len(hits) == 1 else n
+            if len(hits) != 1:
+                continue  # a short name matching no committed file, or several
+            path = hits[0]
         if path not in included:
             out.add(path)
     return sorted(out)
@@ -319,7 +328,9 @@ def build():
                                              {"whole": "complete", "sections": "whole sections",
                                               "lines": "lines {} to {}".format(r.get("first"), r.get("last"))}[r["kind"]])
     head += ("\n**Files version 4 cites that are not in this packet** ({} of them; "
-             "named so you know they exist, not because you need them):\n\n".format(len(missing)))
+             "named so you know they exist, not because you need them; found by looking for "
+             "file names in version 4, so a short name that matches several files, or none, is "
+             "left off, and a file cited in some other way may be missing):\n\n".format(len(missing)))
     head += "\n".join("- `{}`".format(m) for m in missing) + "\n"
 
     # Gemini: one document.
@@ -327,7 +338,9 @@ def build():
     for i, (r, b) in enumerate(zip(RECORDS, bodies), 1):
         gem += [open_line(i, n, r, b), "\n", b, "\n" if not b.endswith("\n") else "",
                 close_line(i), "\n\n"]
-    gem.append("*End of the packet. Answer the brief (record 1) now. Label your findings G1, G2, G3 and so on.*\n")
+    gem.append("*End of the packet. Answer the brief now. Label your findings G1, G2, G3 and so on. "
+               "The brief is record 1; it is repeated here, unchanged, so it is fresh when you answer:*\n\n")
+    gem.append(bodies[0])
     gemini = "".join(gem)
 
     # ChatGPT: the same, cut into files of at most LIMIT bytes, only at record
@@ -398,7 +411,11 @@ def build():
         else:
             tmpl = CHATGPT_LASTFILE if j == nfiles else CHATGPT_MIDFILE
             top = tmpl.format(i=j, n=nfiles, what=what(fl)) + "\n\n"
-        out[j] = (slug, top + render(fl))
+        tail = ""
+        if j == nfiles:
+            tail = ("*End of the packet. The brief is record 1, in file 1; it is repeated "
+                    "here, unchanged, so it is fresh when you answer:*\n\n" + bodies[0])
+        out[j] = (slug, top + render(fl) + tail)
 
     paths = {}
     paths[OUT + STAMP + "-gemini.md"] = gemini
@@ -462,6 +479,13 @@ record in each of several chats has reviewed nothing.
 3. Each file tells it to reply with one short line and wait. After file {nfiles}
    it gives the review. If it starts early, tell it to wait for the rest.
 4. The files are numbered in their names; filename order is the right order.
+5. **This packet is large**: roughly 200,000 to 230,000 tokens (a rough
+   estimate, not counted), nearly twice the packet ChatGPT read in full on
+   2026-09-21. Use the model with the largest memory the app offers. The last
+   file repeats the brief, so it is fresh when the model answers. Before it
+   gives its review, ask it to quote the four part headings of the brief and
+   the first line of record 4. If it cannot, it has lost the start of the
+   packet: stop and say so, rather than filing a review of part of it.
 
 ## If the app balks
 
@@ -535,8 +559,9 @@ BUILT_FROM = """
 ## If version 4, the findings, or any record changes before you run the sessions
 
 Run `python3 scripts/build_successor_v4_tier2_packets.py` from the top of the
-repository. It rebuilds both packets and this page and prints the check. Only
-the files that changed need re-pasting.
+repository. It rebuilds both packets and this page and prints the check. Then
+use the rebuilt files from the start: a change to an early record can move every
+later cut between files. Do not mix files from two builds.
 """.format(target=TARGET, tier1=TIER1, protocol=PROTOCOL)
 
 

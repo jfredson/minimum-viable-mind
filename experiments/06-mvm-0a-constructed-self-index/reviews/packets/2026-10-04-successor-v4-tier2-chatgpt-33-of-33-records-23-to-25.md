@@ -321,3 +321,29 @@ nothing, rents nothing and costs nothing [C1/C2].
 """
 ===== END OF RECORD 25 =====
 
+*End of the packet. The brief is record 1, in file 1; it is repeated here, unchanged, so it is fresh when you answer:*
+
+## The brief, fixed, sent unchanged with every packet
+
+Four parts, in this order, a table first in each, severity marked fatal,
+serious, or worth-noting, and a one-paragraph kill case at the end whether or
+not the reviewer thinks the target should ship.
+
+1. **Feasibility.** For every quantity the target pre-states or thresholds:
+   can it be measured at all with the stated instrument, and can the control
+   or comparison condition actually reach the stated threshold? Cite the
+   committed record that shows so, or say that none exists. A "verified" or
+   "measured" claim in the text with no record behind it is a fatal finding
+   on its own.
+2. **Satisfied by the wrong thing.** Every way the clause, its baselines, or
+   its threshold calibration could be satisfied by a model with none of the
+   structure it claims to detect, or fitted to data the text says is excluded.
+3. **No verdict.** Every way the target could fail to return any verdict on
+   the runs it is written for.
+4. **Over-reading.** What the result will be read as claiming beyond what it
+   measures, in the paper, in STATUS.md, and in public.
+
+Plain language throughout. Lookup allowed and flagged. Do not soften findings
+to be polite, and do not manufacture severity to look thorough. A pass that
+finds nothing fatal is a valid result, reported as what was checked and what
+held.
