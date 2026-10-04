@@ -1,0 +1,46 @@
+RT-198 — launchers must refuse arguments rather than launch
+
+unregistered launchers: an argument is refused
+  [ ok ] launch_a3_fetch_first.sh refuses an argument (exit 2)
+  [ ok ] launch_a3_fetch_first.sh says why it refused
+  [ ok ] launch_a3_fetch_first.sh names DRYRUN=1 as the way to preview
+  [ ok ] launch_a3_fetch_first.sh guard (line 121) precedes any vendor command (line 340)
+  [ ok ] launch_ctl_pilot.sh refuses an argument (exit 2)
+  [ ok ] launch_ctl_pilot.sh says why it refused
+  [ ok ] launch_ctl_pilot.sh names DRYRUN=1 as the way to preview
+  [ ok ] launch_ctl_pilot.sh guard (line 93) precedes any vendor command (line 219)
+  [ ok ] launch_pilot_a1.sh refuses an argument (exit 2)
+  [ ok ] launch_pilot_a1.sh says why it refused
+  [ ok ] launch_pilot_a1.sh names DRYRUN=1 as the way to preview
+  [ ok ] launch_pilot_a1.sh guard (line 48) precedes any vendor command (line 117)
+
+unregistered launchers: the guard did not break the real path
+  [ ok ] launch_a3_fetch_first.sh dry run still exits 0
+  [ ok ] launch_a3_fetch_first.sh dry run still creates nothing
+  [ ok ] launch_ctl_pilot.sh dry run still exits 0
+  [ ok ] launch_ctl_pilot.sh dry run still creates nothing
+  [ ok ] launch_pilot_a1.sh dry run still exits 0
+  [ ok ] launch_pilot_a1.sh dry run still creates nothing
+
+registered launcher: read, never run
+  [ ok ] launch_a3.sh does NOT carry the guard, which is expected before Gate A
+
+  ***********************************************************************
+  STANDING PROHIBITION, in force until the Gate A amendment clears:
+  launch_a3.sh is REGISTERED TEXT and still has NO argument handling.
+  An argument passed to it is SILENTLY IGNORED and it proceeds to a REAL
+  LAUNCH at its defaults -- about ten hours and about ten dollars,
+  writing into the registered seed-0 directory on the network volume.
+
+      NO SESSION INVOKES A REGISTERED LAUNCHER WITH ANY ARGUMENT.
+
+  To preview it without creating anything:  DRYRUN=1 ./launch_a3.sh
+  Ruled by John 2026-09-22. Method: ../argument-guard-method.md [RT-198]
+  ***********************************************************************
+
+
+negative control: the check must FAIL on an unguarded launcher
+  [ ok ] an unguarded launcher is REJECTED (exit 0, no refusal, no guard)
+  [ ok ] so these checks detect the property rather than always passing
+
+all checks pass. nothing was created and nothing was spent.

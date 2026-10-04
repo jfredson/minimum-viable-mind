@@ -1,0 +1,9 @@
+seed 0 channel_removed  best piece  24 (short of 144 by 120); untouched 0.2487 vs formula 0.1107: miss 0.1380, beyond the 0.018 room 0.1200; gate own 702, named-other 712 of 3000 (bar 790)
+seed 0 channel_left_on  best piece  25 (short of 144 by 119); untouched 0.2500 vs formula 0.1107: miss 0.1393, beyond the 0.018 room 0.1213; gate own 707, named-other 710 of 3000 (bar 790)
+seed 1 channel_removed  best piece  23 (short of 144 by 121); untouched 0.2300 vs formula 0.1116: miss 0.1184, beyond the 0.018 room 0.1004; gate own 715, named-other 726 of 3000 (bar 790)
+seed 1 channel_left_on  best piece  20 (short of 144 by 124); untouched 0.2313 vs formula 0.1116: miss 0.1196, beyond the 0.018 room 0.1016; gate own 716, named-other 722 of 3000 (bar 790)
+seed 2 channel_removed  best piece  23 (short of 144 by 121); untouched 0.2200 vs formula 0.1109: miss 0.1091, beyond the 0.018 room 0.0911; gate own 702, named-other 650 of 3000 (bar 790)
+seed 2 channel_left_on  best piece  21 (short of 144 by 123); untouched 0.2225 vs formula 0.1109: miss 0.1116, beyond the 0.018 room 0.0936; gate own 698, named-other 653 of 3000 (bar 790)
+piece rule missed by: 119 to 124 of 180  -> '119 or more': True
+untouched rate against the formula: 0.1091 to 0.1393  -> '0.11 or more': False
+untouched rate beyond the rule's room: 0.0911 to 0.1213  -> '0.11 or more': False
