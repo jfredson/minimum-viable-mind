@@ -1,0 +1,11 @@
+CLAUDE.md:54:Friday re-plan edits `data/roadmap.toml`** (the coming weekend's goals, which
+CLAUDE.md:56:the Sunday-night handoff sets each goal's status there** (a carried goal gets a
+site/README.md:20:| `/roadmap/` | The weekend roadmap to 2026-12-21 from `data/roadmap.toml`: the question and the two rules (what weekdays carry, the weekly re-plan); progress (goals done, weekends done, days to each kill date, wrap-up and hibernation); the thirteen weekends on one date line with the fixed dates marked; one card per weekend with its outcome, goals and their status and owner, John's items and hours; the extensions table. |
+site/README.md:30:`data/roadmap.toml` is the structured twin of the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md`). The Thursday or Friday evening re-plan edits it (the coming weekend's goals, which weekend absorbs a slip, `roadmap.updated_on`, which weekend is `active`), and the Sunday-night handoff sets each goal's status there (a carried goal gets a `note` naming the weekend it moved to) and the weekend's own status; both then run `npm run check`, which validates this file alongside `data/project.toml`.
+6:# way, and the weekend log in prose). The Thursday/Friday re-plan edits both,
+7:# and the Sunday-night handoff sets each goal's status here.
+56:      <p><span class="kicker-inline">The weekly re-plan</span> {r.replan_rule}</p>
+66:        <Meter value={goalsPct} caption={`${Math.round(goalsPct)}% of the goals that count. ${carried} carried to a later weekend, ${dropped} dropped${notNeeded ? `; ${notNeeded} not needed and left out` : ''}.`} />
+316:                raise Bad(f"{gw}: a carried goal needs a note saying which weekend it moved to")
+681:when = "after the competing solver's run and the check of version 4; realistic commit date 2026-10-10/11; kill date 2026-10-18"
+14:only a schedule laid over that dated line and gives way to it wherever the two

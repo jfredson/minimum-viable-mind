@@ -1,0 +1,39 @@
+== v4 opening list, item 3
+26:3. **Opening the registration review is John's step.**
+== v4 section 11 title
+2465:## 11. Order of work, and where it stops
+== protocol Amendments, the 2026-09-21 task-time quote
+595:measured in task time, not calendar time. In his words, "We are not working on a
+== pull requests 76, 79, 85 to 91 on origin/main (subject line, date)
+d19f914 2026-10-03 Merge pull request #91 from jfredson/rulings-2026-10-04-solver-and-control-2
+ecf3820 2026-10-03 Merge pull request #90 from jfredson/w2d-check-competing-solver-and-control-2
+3fea27e 2026-10-03 Merge pull request #89 from jfredson/w2b-job2-control-2-twenty-draws
+2b3fbee 2026-10-03 Merge pull request #88 from jfredson/w2b-job1-competing-solver-run
+7a55fe0 2026-10-03 Merge pull request #87 from jfredson/rulings-2026-10-03-v4-check-questions
+d425543 2026-10-03 Merge pull request #86 from jfredson/w2c-proposal-v4-check
+41b0bd3 2026-10-03 Version 4 of the proposal, both records of the seven-question ruling, and John's ruling on which stands (supersedes 83 and 84) (#85)
+e184a6e 2026-10-03 Check of the controls re-run of 2026-10-03: it reproduces exactly, and the too-early-position diagnostic holds (#79)
+821f154 2026-10-03 Controls re-run under the registered rules: the ruled change holds; controls 2 and 4 go to John (#76)
+== pull request 97 (the code freeze): on origin/main? in 655b371?
+53ae82c 2026-10-04 17:08:06 -0700 Merge pull request #97 from jfredson/freeze-successor-code-2026-10-04
+655b371 committed 2026-10-04 17:49:34 -0700
+freeze merge is NOT in 655b371
+== kill dates and what they bind
+42-date = "2026-10-18"
+43-title = "Kill date 1: the registration committed"
+44-kind = "kill_date"
+49-date = "2026-11-01"
+50-title = "Kill date 2: the remaining eight registered runs launched"
+51-kind = "kill_date"
+277:    possible, but only on a fresh ruling that names what comes off the back end
+292:    wants to spend. **The same ruling settles which step the second kill date
+293:    binds**: the launch of the remaining eight runs (step 5b of the chain in
+44:7. **The two kill dates are accepted**: registration committed by 2026-10-18;
+== wrap-up and hibernation
+34:wrap_up_start = "2026-12-21"
+35:hibernation_by = "2027-01-04"
+177:| 14. Wrap-up | Everything above, or a kill date having fired. **Starts 2026-12-21** (ruled); nothing new is launched after that date. | **Wrap-up** (ruled): hibernation condition per the program roadmap, **complete by 2027-01-04**. | — | Final ruling that the hibernation condition is met. |
+== tier 1 counts quoted in W2.1
+37:**One fatal finding, four serious, five worth-noting.** The fatal one is small
+== John's go on the development runs (W2.4 note)
+c9791c9 2026-10-04 Quote John's go for the four 10M development runs in their ledger rows, with its provenance
