@@ -27,14 +27,14 @@
 [roadmap]
 title = "The weekend roadmap to 2026-12-21"
 written_on = "2026-09-24"
-updated_on = "2026-10-03"
+updated_on = "2026-10-04"
 source = "docs/weekend-roadmap-2026-09-24.md"
-one_line = "Twelve working weekends between 2026-09-26 and 2026-12-20, front-loaded so that both kill dates pass with their work already done, the December result exists by 2026-11-08, and five weekends stay in hand for slipped gates and for the extensions that make the conclusion stronger."
+one_line = "No longer a schedule (ruled 2026-10-04, docs/rulings/2026-10-04-no-future-dates.md): each step now runs as soon as what it waits on is done, and the dates below are the plan as it stood, not targets. The kill dates, the wrap-up start and the hibernation deadline still bind as outer limits. As first written: twelve working weekends between 2026-09-26 and 2026-12-20, front-loaded so that both kill dates pass with their work already done, the December result exists by 2026-11-08, and five weekends stay in hand for slipped gates and for the extensions that make the conclusion stronger."
 question = "Can a decomposability measure, validated on systems whose degree is known by construction, read the degree of a freely trained 30-million-parameter transformer that acquired a load-bearing ownership pointer under task pressure? If so, what does it read?"
 wrap_up_start = "2026-12-21"
 hibernation_by = "2027-01-04"
-weekday_rule = "Weekdays carry rulings and spoken go's only, from a queue a session pre-assembles; weekends carry the reviewer sessions John runs by hand and the launches; agents run unattended between weekends."
-replan_rule = "Every Thursday or Friday evening the coming weekend is re-planned from the top of STATUS.md. Kill dates and the wrap-up start never move; what moves is which weekend absorbs a slip, and the re-plan names it."
+weekday_rule = "Retired 2026-10-04 (docs/rulings/2026-10-04-no-future-dates.md). Work is no longer split between weekdays and weekends: each step runs as soon as what it waits on is done, and a step that waits on John (a ruling, a go, the outside-review sessions) waits on him without a date. As first written: weekdays carry rulings and spoken go's only, from a queue a session pre-assembles; weekends carry the reviewer sessions John runs by hand and the launches; agents run unattended between weekends."
+replan_rule = "Retired 2026-10-04 (docs/rulings/2026-10-04-no-future-dates.md): there is no weekly re-plan and no Sunday-night handoff. Kill dates and the wrap-up start still never move. As first written: every Thursday or Friday evening the coming weekend is re-planned from the top of STATUS.md, and the re-plan names which weekend absorbs a slip."
 
 # Fixed dates the plan is held to. These never move.
 [[milestones]]
@@ -103,7 +103,7 @@ number = 2
 start = "2026-10-03"
 end = "2026-10-04"
 days = 2
-status = "active"
+status = "partial"
 title = "Register"
 outcome = "The registration committed through Gate A, both tiers, two weeks ahead of kill date 1; the implementation frozen and tested; the development runs at 10 million parameters landed."
 beside = ""
@@ -114,13 +114,13 @@ john_items = [
   "Give the go naming the development runs (about $10, inside the first release)",
 ]
 goals = [
-  { id = "W2.1", text = "Registration text through Gate A, both tiers; dispositions ruled; text fixes paired-checked; citation and single-source scripts clean on the final text", owner = "both", status = "planned", note = "Re-plan 2026-10-03: waits on W2.6. The first tier can run this weekend if version 3's review is clean; John's two second-tier sessions are expected on 2026-10-10" },
-  { id = "W2.2", text = "Registration committed (kill date 1 is 2026-10-18)", owner = "both", status = "planned", note = "Re-plan 2026-10-03: will not land this weekend. Expected 2026-10-10/11, a week inside the kill date; weekend 8 absorbs the slip" },
-  { id = "W2.3", text = "Implementation frozen: generator, arms T and C, the transplant code; unit tests; the even-split rule (RT-58) and the one-scored-token self-test carried over", owner = "agents", status = "planned" },
-  { id = "W2.4", text = "Development runs at 10 million parameters landed and checked by a session that did not write the code; ledger rows opened before any machine existed", owner = "both", status = "planned" },
-  { id = "W2.5", text = "The go packet for the first registered run assembled: launch checklist, ledger row with estimate, sleep gate, scheduled fetch and kill", owner = "agents", status = "planned" },
+  { id = "W2.1", text = "Registration text through Gate A, both tiers; dispositions ruled; text fixes paired-checked; citation and single-source scripts clean on the final text", owner = "both", status = "carried", note = "Not finished this weekend. Tier 1, the inside review, ran 2026-10-04: one fatal finding and four serious ones (RT-237 to RT-246, pull request 94). The outside-review packet is built, checked and with John. No longer assigned to a weekend (ruled 2026-10-04, docs/rulings/2026-10-04-no-future-dates.md); it runs as soon as what it waits on is done." },
+  { id = "W2.2", text = "Registration committed (kill date 1 is 2026-10-18)", owner = "both", status = "carried", note = "Not landed. Waits on both review tiers, John's rulings, and the fixes written in and checked. Outer limit: kill date 1, 2026-10-18. No longer assigned to a weekend (ruled 2026-10-04, docs/rulings/2026-10-04-no-future-dates.md); it runs as soon as what it waits on is done." },
+  { id = "W2.3", text = "Implementation frozen: generator, arms T and C, the transplant code; unit tests; the even-split rule (RT-58) and the one-scored-token self-test carried over", owner = "agents", status = "carried", note = "Under way on its own step, which waits on no ruling. No longer assigned to a weekend (ruled 2026-10-04, docs/rulings/2026-10-04-no-future-dates.md); it runs as soon as what it waits on is done." },
+  { id = "W2.4", text = "Development runs at 10 million parameters landed and checked by a session that did not write the code; ledger rows opened before any machine existed", owner = "both", status = "carried", note = "Waits on the code freeze (W2.3); John approved the spend on 2026-10-04. No longer assigned to a weekend (ruled 2026-10-04, docs/rulings/2026-10-04-no-future-dates.md); it runs as soon as what it waits on is done." },
+  { id = "W2.5", text = "The go packet for the first registered run assembled: launch checklist, ledger row with estimate, sleep gate, scheduled fetch and kill", owner = "agents", status = "carried", note = "Waits on the registration commit. No longer assigned to a weekend (ruled 2026-10-04, docs/rulings/2026-10-04-no-future-dates.md); it runs as soon as what it waits on is done." },
   { id = "W2.6", text = "Proposal version 3 and the rulings on its decisions 20 and 21 merged (pull requests 71 and 72), and version 3 through its Gate C first-tier review by a session that did not write it", owner = "both", status = "done", note = "Done 2026-10-03: merged, reviewed with nothing fatal (pull request 74), and ruled the same day (docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md). The review session was not a fresh one and says so" },
-  { id = "W2.7", text = "The rehearsal's controls re-run under the registered rules, with the ruled change to how the transplanted piece is chosen; method committed before output; checked by a session that did not run it", owner = "agents", status = "planned", note = "Added 2026-10-03 by John's ruling on the review of version 3: a precondition of the registration review" },
+  { id = "W2.7", text = "The rehearsal's controls re-run under the registered rules, with the ruled change to how the transplanted piece is chosen; method committed before output; checked by a session that did not run it", owner = "agents", status = "done", note = "Done 2026-10-03: the controls re-run (pull request 76), checked by a session that did not run it (pull request 79); it reproduces exactly" },
 ]
 
 [[weekends]]

@@ -46,8 +46,11 @@ authorship john). In the same planning session he ruled that Minimum Viable
 Mind work is no longer scheduled on future dates: each step runs as soon as what
 it waits on is done. The weekend roadmap (`docs/weekend-roadmap-2026-09-24.md`)
 no longer sets timing, and the two kill dates, 2026-10-18 and 2026-11-01, stay
-as outer limits only. That ruling has no file of its own yet; this paragraph is
-its only record in this repository.
+as outer limits only. Filed later the same day, at John's instruction, as
+`docs/rulings/2026-10-04-no-future-dates.md` (authorship john). The weekend
+roadmap carries a dated note saying it no longer sets timing, and
+`data/roadmap.toml` marks weekend 2 as partly done, with its unfinished goals
+carried and no longer assigned to any weekend.
 
 **The inside review (tier 1)** ran in a fresh session in its own worktree, from
 committed files only, with no chat, no STATUS.md and no pull request
