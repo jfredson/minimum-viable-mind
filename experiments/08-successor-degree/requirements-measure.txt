@@ -1,0 +1,13 @@
+# The library versions the successor's registered fit is computed with, pinned
+# (reconciled 2026-10-03, night: docs/rulings/2026-10-03-seven-questions-reconciliation.md,
+# question 3). Read from the laptop environment the toy figures were produced in
+# (the controls re-run recorded torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0)
+# on 2026-10-04 by the code freeze. Python 3.12.13. Device: the laptop's processor.
+# The rented machine trains with its own image's torch; only the measurement,
+# which runs on the laptop, is held to these.
+torch==2.12.1
+scikit-learn==1.9.0
+numpy==2.5.0
+scipy==1.18.0
+joblib==1.5.3
+threadpoolctl==3.6.0

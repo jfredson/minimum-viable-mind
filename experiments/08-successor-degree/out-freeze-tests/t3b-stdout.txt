@@ -1,0 +1,608 @@
+[T/0] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/0] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/0] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/0] done in 198s: arithmetic 0.0, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_T_seed0.json
+[T/1] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/1] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/1] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/1] done in 205s: arithmetic 0.0, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_T_seed1.json
+[T/2] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/2] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/2] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/2] done in 198s: arithmetic 0.0, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_T_seed2.json
+[C/0] gate: own 1711, named-other 760 of 3000 (bar 790)
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[C/0] reads: whole-read counts by state [13, 179, 180, 180, 180] of 180
+[C/0] nomination: nominated {'layers': [2], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[C/0] done in 346s: arithmetic 1.0051150895140666, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_C_seed0.json
+[C/1] gate: own 1703, named-other 751 of 3000 (bar 790)
+[C/1] reads: whole-read counts by state [13, 177, 174, 177, 173] of 180
+[C/1] nomination: nominated {'layers': [1], 'positions': 'action+3', 'rank': 8, 'piece_correct': 172, 'whole_read_correct': 177}
+[C/1] done in 261s: arithmetic 0.9925925925925926, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_C_seed1.json
+[C/2] gate: own 1727, named-other 708 of 3000 (bar 790)
+[C/2] reads: whole-read counts by state [13, 176, 177, 180, 180] of 180
+[C/2] nomination: nominated {'layers': [1], 'positions': 'post-identity', 'rank': 4, 'piece_correct': 150, 'whole_read_correct': 176}
+[C/2] done in 314s: arithmetic 0.9974293059125964, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_C_seed2.json
+[M/0] gate: own 2592, named-other 1663 of 3000 (bar 790)
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[M/0] reads: whole-read counts by state [180, 180, 180, 179, 178] of 180
+[M/0] nomination: nominated {'layers': [1], 'positions': 'post-identity', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[M/0] done in 335s: arithmetic 0.4885993485342019, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_M_seed0.json
+[M/1] gate: own 2584, named-other 1699 of 3000 (bar 790)
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[M/1] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[M/1] nomination: nominated {'layers': [1], 'positions': 'post-identity', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[M/1] done in 380s: arithmetic 0.4859504132231405, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_M_seed1.json
+[M/2] gate: own 2600, named-other 1655 of 3000 (bar 790)
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[M/2] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[M/2] nomination: nominated {'layers': [1], 'positions': 'post-identity', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[M/2] done in 455s: arithmetic 0.5448717948717948, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_M_seed2.json
+[F/0] gate: own 1679, named-other 994 of 3000 (bar 790)
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[F/0] reads: whole-read counts by state [13, 32, 26, 19, 12] of 180
+[F/0] nomination: read failed its floor: no size's piece reaches four fifths None
+[F/0] done in 446s: arithmetic 1.0, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_F_seed0.json
+[F/1] gate: own 1654, named-other 781 of 3000 (bar 790)
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[F/1] reads: whole-read counts by state [13, 12, 21, 24, 21] of 180
+[F/1] nomination: read failed its floor: no size's piece reaches four fifths None
+[F/1] done in 390s: arithmetic 1.0, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_F_seed1.json
+[F/2] gate: own 1664, named-other 746 of 3000 (bar 790)
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[F/2] reads: whole-read counts by state [13, 18, 25, 20, 20] of 180
+[F/2] nomination: read failed its floor: no size's piece reaches four fifths None
+[F/2] done in 455s: arithmetic 1.010840108401084, controls 7/4 hold True/True -> out-freeze-tests/t3b-fresh-fit/row_F_seed2.json
+
+fresh-fit: 502 figures compared, 25 differ
+  DIFFERS T/0 piece counts at every state and size: ours [[97, 180, 180, 180], [116, 180, 180, 180], [106, 180, 180, 180], [97, 180, 180, 180], [116, 180, 180, 180]] committed [[97, 180, 180, 180], [116, 180, 180, 180], [107, 180, 180, 180], [97, 180, 180, 180], [115, 180, 180, 180]]
+  DIFFERS C/0 piece counts at every state and size: ours [[14, 13, 13, 13], [67, 107, 174, 180], [63, 120, 178, 180], [60, 115, 174, 180], [48, 109, 155, 180]] committed [[14, 13, 13, 13], [68, 107, 174, 180], [64, 120, 178, 180], [60, 115, 174, 180], [47, 109, 156, 180]]
+  DIFFERS C/1 piece counts at every state and size: ours [[14, 14, 14, 14], [45, 95, 140, 172], [39, 81, 129, 168], [42, 84, 123, 175], [53, 98, 126, 162]] committed [[14, 14, 14, 14], [44, 96, 139, 172], [39, 81, 129, 167], [44, 84, 124, 175], [54, 98, 126, 162]]
+  DIFFERS C/1 piece and whole at each other position: ours [('1 before the action', 180, 139), ('2 before the action', 179, 139), ('3 before the action', 179, 34)] committed [('1 before the action', 180, 139), ('2 before the action', 179, 139), ('3 before the action', 179, 33)]
+  DIFFERS C/2 piece counts at every state and size: ours [[13, 13, 13, 13], [55, 99, 150, 178], [51, 93, 143, 176], [53, 91, 137, 173], [56, 100, 138, 177]] committed [[13, 13, 13, 13], [55, 99, 150, 178], [52, 93, 141, 175], [51, 92, 142, 171], [53, 100, 143, 179]]
+  DIFFERS C/2 piece and whole at each other position: ours [('first own turn, token 1 of 5', 180, 63), ('first own turn, token 2 of 5', 180, 82), ('first own turn, token 3 of 5', 167, 46), ('first own turn, token 4 of 5', 149, 30), ('first own turn, token 5 of 5', 180, 83), ('5 before the action', 180, 71), ('4 before the action', 180, 112), ('3 before the action', 180, 131), ('2 before the action', 180, 89), ('1 before the action', 180, 139)] committed [('first own turn, token 1 of 5', 180, 63), ('first own turn, token 2 of 5', 180, 82), ('first own turn, token 3 of 5', 167, 46), ('first own turn, token 4 of 5', 149, 30), ('first own turn, token 5 of 5', 180, 84), ('5 before the action', 180, 71), ('4 before the action', 180, 112), ('3 before the action', 180, 129), ('2 before the action', 180, 88), ('1 before the action', 180, 139)]
+  DIFFERS M/0 piece counts at every state and size: ours [[119, 180, 180, 180], [82, 140, 178, 180], [70, 132, 174, 180], [78, 134, 177, 179], [48, 96, 153, 178]] committed [[119, 180, 180, 180], [83, 140, 178, 180], [69, 125, 173, 180], [76, 134, 174, 179], [47, 96, 153, 178]]
+  DIFFERS M/0 piece and whole at each other position: ours [('first own turn, token 1 of 5', 180, 151), ('first own turn, token 2 of 5', 180, 153), ('first own turn, token 3 of 5', 178, 95), ('first own turn, token 4 of 5', 179, 33), ('first own turn, token 5 of 5', 180, 130), ('5 before the action', 180, 67), ('4 before the action', 180, 148), ('3 before the action', 180, 180), ('2 before the action', 179, 132), ('1 before the action', 180, 120)] committed [('first own turn, token 1 of 5', 180, 151), ('first own turn, token 2 of 5', 180, 153), ('first own turn, token 3 of 5', 178, 95), ('first own turn, token 4 of 5', 179, 34), ('first own turn, token 5 of 5', 180, 130), ('5 before the action', 180, 67), ('4 before the action', 180, 148), ('3 before the action', 180, 180), ('2 before the action', 179, 133), ('1 before the action', 180, 120)]
+  DIFFERS M/1 piece counts at every state and size: ours [[92, 180, 180, 180], [114, 163, 180, 180], [82, 149, 174, 180], [62, 133, 166, 180], [58, 122, 174, 180]] committed [[92, 180, 180, 180], [114, 164, 180, 180], [82, 149, 174, 180], [62, 133, 167, 180], [58, 122, 174, 180]]
+  DIFFERS M/1 piece and whole at each other position: ours [('first own turn, token 1 of 5', 180, 151), ('first own turn, token 2 of 5', 180, 136), ('first own turn, token 3 of 5', 180, 120), ('first own turn, token 4 of 5', 177, 71), ('first own turn, token 5 of 5', 178, 124), ('5 before the action', 180, 170), ('4 before the action', 180, 177), ('3 before the action', 180, 143), ('2 before the action', 174, 142), ('1 before the action', 180, 172)] committed [('first own turn, token 1 of 5', 180, 151), ('first own turn, token 2 of 5', 180, 136), ('first own turn, token 3 of 5', 180, 119), ('first own turn, token 4 of 5', 177, 71), ('first own turn, token 5 of 5', 178, 124), ('5 before the action', 180, 171), ('4 before the action', 180, 177), ('3 before the action', 180, 143), ('2 before the action', 174, 143), ('1 before the action', 180, 172)]
+  DIFFERS M/2 piece counts at every state and size: ours [[120, 162, 180, 180], [90, 147, 180, 180], [75, 119, 173, 180], [72, 123, 175, 180], [55, 96, 151, 177]] committed [[120, 162, 180, 180], [90, 147, 180, 180], [74, 119, 172, 180], [72, 123, 175, 180], [55, 96, 151, 177]]
+  DIFFERS M/2 piece and whole at each other position: ours [('first own turn, token 1 of 5', 180, 174), ('first own turn, token 2 of 5', 180, 152), ('first own turn, token 3 of 5', 179, 102), ('first own turn, token 4 of 5', 177, 32), ('first own turn, token 5 of 5', 180, 162), ('5 before the action', 180, 178), ('4 before the action', 179, 157), ('3 before the action', 180, 174), ('2 before the action', 175, 136), ('1 before the action', 180, 173)] committed [('first own turn, token 1 of 5', 180, 174), ('first own turn, token 2 of 5', 180, 152), ('first own turn, token 3 of 5', 179, 102), ('first own turn, token 4 of 5', 177, 33), ('first own turn, token 5 of 5', 180, 162), ('5 before the action', 180, 178), ('4 before the action', 179, 157), ('3 before the action', 180, 174), ('2 before the action', 175, 136), ('1 before the action', 180, 172)]
+  DIFFERS F/0 piece counts at every state and size: ours [[14, 13, 13, 13], [19, 32, 36, 32], [14, 17, 30, 24], [20, 18, 25, 22], [15, 17, 20, 15]] committed [[14, 13, 13, 13], [22, 31, 34, 32], [15, 17, 30, 24], [16, 17, 25, 22], [15, 17, 20, 15]]
+  DIFFERS F/0 control 1 complement share: ours 0.4875 committed 0.48375
+  DIFFERS F/0 piece and whole at the action position: ours {'whole': 32, 'piece': 19} committed {'piece': 22, 'whole': 32}
+  DIFFERS F/0 piece and whole at each other position: ours [('first own turn, token 1 of 5', 180, 26), ('first own turn, token 2 of 5', 66, 17), ('first own turn, token 3 of 5', 31, 14), ('first own turn, token 4 of 5', 61, 18), ('first own turn, token 5 of 5', 51, 15), ('5 before the action', 32, 12), ('4 before the action', 21, 13), ('3 before the action', 21, 21), ('2 before the action', 26, 16), ('1 before the action', 41, 15)] committed [('first own turn, token 1 of 5', 180, 21), ('first own turn, token 2 of 5', 66, 15), ('first own turn, token 3 of 5', 31, 15), ('first own turn, token 4 of 5', 61, 18), ('first own turn, token 5 of 5', 51, 15), ('5 before the action', 32, 14), ('4 before the action', 21, 13), ('3 before the action', 21, 18), ('2 before the action', 26, 15), ('1 before the action', 41, 17)]
+  DIFFERS F/0 piece and whole on the average over the other positions: ours {'whole': 91, 'piece': 19} committed {'piece': 25, 'whole': 91}
+  DIFFERS F/0 control 2 candidates: ours [([1], 'action+3', 1, 22), ([1], 'action+3', 2, 43), ([1], 'action+3', 4, 75), ([1], 'action+3', 8, 91), ([1], 'post-identity', 1, 22), ([1], 'post-identity', 2, 43), ([1], 'post-identity', 4, 75), ([1], 'post-identity', 8, 91), ([3], 'action', 1, 34), ([3], 'action', 2, 49), ([3], 'action', 4, 76), ([3], 'action', 8, 117), ([3], 'action+ans', 1, 34), ([3], 'action+ans', 2, 49), ([3], 'action+ans', 4, 76), ([3], 'action+ans', 8, 117)] committed [([1], 'action+3', 1, 22), ([1], 'action+3', 2, 43), ([1], 'action+3', 4, 74), ([1], 'action+3', 8, 92), ([1], 'post-identity', 1, 22), ([1], 'post-identity', 2, 43), ([1], 'post-identity', 4, 74), ([1], 'post-identity', 8, 92), ([3], 'action', 1, 31), ([3], 'action', 2, 50), ([3], 'action', 4, 79), ([3], 'action', 8, 115), ([3], 'action+ans', 1, 31), ([3], 'action+ans', 2, 50), ([3], 'action+ans', 4, 79), ([3], 'action+ans', 8, 115)]
+  DIFFERS F/1 piece counts at every state and size: ours [[14, 13, 13, 13], [13, 14, 16, 8], [14, 13, 19, 18], [19, 11, 18, 17], [13, 15, 15, 18]] committed [[14, 13, 13, 13], [13, 13, 17, 8], [15, 12, 18, 18], [19, 11, 18, 17], [12, 16, 14, 20]]
+  DIFFERS F/1 piece and whole at the action position: ours {'whole': 12, 'piece': 16} committed {'piece': 17, 'whole': 12}
+  DIFFERS F/1 piece and whole at each other position: ours [('1 before the action', 22, 14), ('2 before the action', 20, 21), ('3 before the action', 24, 24)] committed [('1 before the action', 22, 14), ('2 before the action', 20, 20), ('3 before the action', 24, 23)]
+  DIFFERS F/2 piece counts at every state and size: ours [[14, 13, 13, 13], [24, 20, 16, 18], [14, 22, 29, 27], [20, 19, 26, 22], [19, 22, 24, 24]] committed [[14, 13, 13, 13], [24, 20, 16, 18], [15, 22, 29, 26], [13, 18, 26, 23], [19, 23, 22, 24]]
+  DIFFERS F/2 control 1 complement share: ours 0.53875 committed 0.54
+  DIFFERS F/2 piece and whole at each other position: ours [('first own turn, token 1 of 5', 180, 146), ('first own turn, token 2 of 5', 85, 36), ('first own turn, token 3 of 5', 46, 13), ('first own turn, token 4 of 5', 99, 17), ('first own turn, token 5 of 5', 51, 22), ('5 before the action', 11, 19), ('4 before the action', 28, 19), ('3 before the action', 14, 20), ('2 before the action', 16, 15), ('1 before the action', 43, 19)] committed [('first own turn, token 1 of 5', 180, 145), ('first own turn, token 2 of 5', 85, 36), ('first own turn, token 3 of 5', 46, 13), ('first own turn, token 4 of 5', 99, 17), ('first own turn, token 5 of 5', 51, 22), ('5 before the action', 11, 18), ('4 before the action', 28, 18), ('3 before the action', 14, 21), ('2 before the action', 16, 16), ('1 before the action', 43, 19)]
+  DIFFERS F/0 control 2, piece rule off named_other_moved: ours 0.0949999988079071 committed 0.09624999761581421
+outcome, reported and not part of the pass line: substrate not a testbed (gates: {'T': True, 'C': True, 'M': True, 'F': False}); version 4 section 3 describes the toy as the fifth term
+exit 0
