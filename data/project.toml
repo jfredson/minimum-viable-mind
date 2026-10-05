@@ -17,8 +17,8 @@ short = "MVM"
 updated_on = "2026-10-04"
 question = "What is the smallest set of working parts that would make it defensible to say there is someone home, and can we measure, in systems that exist now or that we build, whether any of those parts are present?"
 one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
-where_we_are = "Amendment A3, the first constructed self-index experiment, is closed on the record as not testable (2026-09-25). All the work now is on the successor experiment, which is meant to supply the missing measure of degree: train small models whose self-pointer is separable, entangled or mixed by construction, check that a transplant-based measure tells them apart, then read a freely trained model with it. On the toy rehearsal the measure reads the three built models correctly on every seed and returns no verdict on the freely trained one. Version 4 of the proposal, the text meant to become the registration, is on the main line with every ruling written in or listed. A session that did not write it checked it. The ordinary competing solver, put through the measurement as now registered, returns no verdict on every seed. The other-agent control was re-coded to draw twenty random pieces. Those runs were checked, and John ruled all the questions they raised. On 2026-10-04 John opened the registration review. The inside review, a fresh session working only from committed files, found that the text describes the instrument that actually ran: it rebuilt the choice rule from the words alone and matched the committed code on all 24 toy rows, and the committed code reproduced all 26,722 committed values. It also found one fatal flaw that is small to fix. The check that lets the freely trained model be read at all requires question sets from the closed A3 design that the successor's task does not have, so as written the free model could never be read. It found four serious flaws too: a floor that lets a model at chance through, a name cue the text never removes, a sample size rehearsed only at the toy's width, and outcomes with no registered name. The outside-review packet is built, checked and with John. The registration is not ready to commit until the fatal flaw is fixed and the fix is checked. Nothing was spent. About $228 of the $450 ceiling is spent."
-where_we_are_going = "One result by 2026-12-21, or a named schedule failure. John ruled on 2026-10-04 that work is no longer scheduled on future dates: each step runs as soon as what it waits on is done, and the weekend roadmap no longer sets timing. The two kill dates stay as outer limits: the registration committed by 2026-10-18, and the registered runs by 2026-11-01. Next, in the order things wait on each other: John runs the two outside reviews (about two hours); every item from both reviews is put to him and ruled; the registration text is written with every ruled change and fix, and a session that did not write it checks the fixes, with a measured check that the fatal flaw is closed; then the registration is committed. Alongside, waiting on none of that, the code is frozen and tested and the small development runs (about $10) follow. Then the first full-size run, of the freely trained model alone: it must learn both task conditions and its ownership read must clear the four-fifths floor, or the experiment stops there with a registered result. If it passes, the remaining runs launch, the measure is validated on the built models, and the free model gets the programme's first degree reading. Nothing new launches after 2026-12-21, and 2027-01-04 is the deadline for a resumable hibernation. Claims are whatever the registered results support, in the terms registered for them. Never a conscious machine."
+where_we_are = "Amendment A3, the first constructed self-index experiment, is closed on the record as not testable (2026-09-25). All the work now is on the successor experiment, which is meant to supply the missing measure of degree: train small models whose self-pointer is separable, entangled or mixed by construction, check that a decomposability measure tells them apart, then read a freely trained model with it. On the toy scale the measure reads the three built models correctly on every seed (0 for the separable one, about 1.0 for the entangled one, about 0.5 for the mixed one) and returns no verdict on the freely trained one, whose read of the ownership signal falls far below the four-fifths floor. Version 4 of the proposal, the text meant for the registration review, is merged with John's rulings on its seven questions and its check. On 2026-10-03 and 04 the ordinary competing solver was put through the measurement as now registered, the other-agent control was run against twenty random pieces, both were checked by another session, and John ruled the seven questions they raised. On 2026-10-04 the successor's code was frozen and tested at $0 in a new folder, experiments/08-successor-degree: the episode generator, the four models at three sizes, the measurement, the trainer for the rented machine, the spending tripwire and a launcher. The frozen code reproduces all 502 toy figures it was compared against, gives version 4's 325 places to look on the full-size model, and runs end to end at 10 million and 30 million parameters. It found two things for the registration text: applied as written, the outcome rules put the toy on 'substrate not a testbed' rather than the fifth outcome version 4 describes, and no ruling sets the full-size training recipe. The go packet for the four development runs (about $10 at most) is written with its ledger rows; nothing has been launched. Also on 2026-10-04 John opened the registration review. Its inside pass, a fresh session working only from committed files, found that the text describes the instrument that actually ran: it rebuilt the choice rule from the words alone and matched the committed code on all 24 toy rows, and the committed code reproduced all 26,722 committed values. It also found one fatal flaw that is small to fix: the check that lets the freely trained model be read at all requires question sets from the closed A3 design that the successor's task does not have, so as written the free model could never be read. It found four serious flaws too: a floor that lets a model at chance through, a name cue the text never removes, a sample size rehearsed only at the toy's width, and outcomes with no registered name. The outside-review packet is built, checked and with John. About $228 of the $450 ceiling is spent."
+where_we_are_going = "One result by 2026-12-21, or a named schedule failure. Since 2026-10-04 no step is scheduled on a future date: each runs as soon as what it needs is in place, and the two kill dates (registration committed by 2026-10-18; the remaining registered runs launched by 2026-11-01) are outer limits only. Next, in order of what each waits on: the four development runs at 10 million parameters, on John's go in his own words, with the Mac's never-sleep override switched on first; a check of the frozen code and of those runs by a session that wrote neither; the registration review's outside pass, which John runs from the checked packet and which waits on nothing; John's rulings on every item from both review tiers; the registration text written with every ruled change and fix (the inside review's fatal flaw, the toy-outcome sentence and the training recipe among them) and checked by a session that did not write it; then the registration committed on John's ruling. Then the first full-size run, of the freely trained model alone: it must learn both task conditions and its ownership read must clear the four-fifths floor, or the experiment stops there with a registered result. If it passes, the remaining runs launch, the measure is validated on the built models, and the free model gets the programme's first degree reading. Nothing new launches after 2026-12-21, and 2027-01-04 is the deadline for a resumable hibernation. Claims are whatever the registered results support, in the terms registered for them. Never a conscious machine."
 hibernation_by = "2027-01-04"
 wrap_up_start = "2026-12-21"
 pipeline_resumes = "2027-01-04"
@@ -95,7 +95,7 @@ adjudicates = "The corpus's own account: self-indexed temporal integration. The 
 id = "2"
 name = "The shape of binding"
 status = "in-progress"
-progress = 25
+progress = 30
 one_line = "Whether within-pass integration has the shape of global mutual constraint, rather than a bundle of modular shortcuts that never compose into one act. Since 2026-09-20 this is the program's open question: the degree axis on which a load-bearing self-pointer sits above zero."
 delivered = ["Scoped deliberately small on 2026-07-01: deliver the metric, not a verdict", "2026-09-20: a candidate metric named (decomposability: accuracy lost when only the pointer is patched rather than the joint state) and the successor experiment that validates it brought forward to 2026, per the December-result roadmap"]
 remaining = ["No pre-registration yet; it is committed as soon as its outside-review gate is answered on both tiers and John rules, with 2026-10-18 as its kill date; past it, committing the registration takes a fresh ruling naming what comes off the back end to make room. The field has no agreed metric. The successor supplies the contrast cases: a model built so its self-pointer is separable, one built so it is entangled, and a free model to be read"]
@@ -524,6 +524,16 @@ kind = "process"
 [[findings]]
 id = "F20"
 date = "2026-10-04"
+title = "The successor's code is frozen, and it reproduces the toy record exactly"
+what = "The episode generator, the four models, the measurement, a trainer for the rented machine, the spending tripwire and a launcher are in one new folder. The twelve committed toy models load into it and give outputs identical to the bit. Run with the reads the toy record used, the frozen measurement reproduces all 502 figures it was compared against. With the reads fitted once on the laptop's processor, as the registered run will do, no reading, site set or control verdict moves; lesser counts move by at most 7 of 180. The site-set rule gives version 4's 325 places to look on the full-size model, and everything runs end to end at 10 million and 30 million parameters."
+so_what = "The development runs can launch once John gives his go in his own words and the Mac's never-sleep override is on. Two things go into the registration text: applied as written, the outcome rules put the toy on 'substrate not a testbed', because its free model fails the learning gate, while version 4 describes it as the fifth outcome; and no ruling sets the full-size training recipe, so the trainer's defaults are the freeze session's call until the registration fixes them. The code is owed a check by a session that did not write it."
+source = "docs/2026-10-04-successor-code-freeze.md; docs/successor-code-freeze-method-2026-10-04.md; experiments/08-successor-degree/"
+stage = "2"
+kind = "process"
+
+[[findings]]
+id = "F21"
+date = "2026-10-04"
 title = "The registration text describes the instrument that ran, but one clause would stop the free model ever being read"
 what = "The inside registration review rebuilt the rule for choosing where to transplant from version 4's words alone, in code sharing nothing with the committed code. It matched the committed code's choice, size and verdict on all 24 toy rows and reproduced every toy reading. The committed code, run again from clean, reproduced all 26,722 committed values. The review also found one fatal flaw. The check that lets the freely trained model be read requires 'ownership-free state and syntax batteries' to hold. Those are question sets from the closed A3 design, absent from the successor's task, with no line saying what 'hold' means, and nothing ever tested them. Under the design's own rule a check that cannot be evaluated counts as failed. The clause had been carried word for word since version 1. It found four serious flaws: the printed floor on the whole-state transplant lets a model at chance through with a divisor of zero or less, which only an unwritten clause in the code prevents; the text never removes the name cue the old grammar shows the model as it acts; the ruled 420 fitting episodes were rehearsed only at the toy's width, and a crude stand-in at the registered width drops the entangled model's read below the floor on two seeds of three; and some reachable outcomes have no registered name."
 so_what = "The measure itself holds up. The fatal flaw is a stale clause, small to fix, but the registration cannot be committed until it is fixed and a session that did not write the fix has checked it. The serious flaws are closed or carried as named open items, with John's reasons. The outside reviewers get these findings so they can look elsewhere."
@@ -678,7 +688,7 @@ status = "done"
 [[next_steps]]
 id = "N15"
 title = "Registration text drafted and reviewed on both tiers, then committed on John's ruling"
-when = "after the competing solver's run and the check of version 4; realistic commit date 2026-10-10/11; kill date 2026-10-18"
+when = "as soon as both review tiers are in and ruled and the fixes are checked; no date is set (docs/rulings/2026-10-04-no-future-dates.md); outer limit, kill date 1, 2026-10-18"
 owner = "Claude Code session drafts, a second checks, John runs the two outside reviewer sessions and rules"
 cost = "$0"
 decision = true
@@ -688,19 +698,19 @@ status = "pending"
 [[next_steps]]
 id = "N16"
 title = "Freeze and test the code: the task generator, the four models, the transplant measurement"
-when = "alongside the registration text; nothing waits on a ruling"
+when = "done 2026-10-04 at $0; owed a check by a session that did not write it"
 owner = "Claude Code session, checked by a session that did not write it"
 cost = "$0"
 decision = false
 teaches = "That what gets launched is what was registered. Causal patching (N4) is built here, once, for the successor's task."
-status = "pending"
+status = "done"
 
 [[next_steps]]
 id = "N17"
 title = "Development runs at 10 million parameters, all four models"
-when = "once the code is frozen, on John's go naming the runs"
+when = "now that the code is frozen: on John's go in his own words, with the never-sleep override switched on first; packet docs/rulings/2026-10-04-development-runs-go-PROPOSAL.md"
 owner = "John gives the go, Claude Code session runs them"
-cost = "about $10, inside the first release"
+cost = "about $2.40 to $5.00 estimated, $10 hard cap, inside the first release"
 decision = true
 teaches = "Whether the four models train on the rented machine at all before the full-size money is spent, and the first exercise of the mixed model's code and of the shutdown test's machine half there."
 status = "pending"
@@ -758,7 +768,7 @@ status = "done"
 [[next_steps]]
 id = "N23"
 title = "Run the ordinary competing solver through the measurement as now registered; check that run, version 4 and the record of the last ruling"
-when = "done 2026-10-03/04 (pull requests 86 to 91): no verdict on every seed; John ruled the seven questions it raised"
+when = "done 2026-10-03 and 04 (pull requests 88 to 91)"
 owner = "a Claude Code session that did not draft version 4 runs it; another checks"
 cost = "$0, laptop"
 decision = false
@@ -767,22 +777,22 @@ status = "done"
 
 [[next_steps]]
 id = "N24"
+title = "Check the frozen code and the development runs' results, by a session that wrote neither"
+when = "once the development runs are home"
+owner = "a Claude Code session that did not write the code"
+cost = "$0"
+decision = false
+teaches = "Whether the port of the toy scripts into one procedure is faithful, whether the outcome rule and the tripwire do what the rulings say, and whether the trainer ran the loop it claims on the rented machine."
+status = "pending"
+
+[[next_steps]]
+id = "N25"
 title = "Outside review of the registration text: two models from other labs, run by John from the checked packet"
 when = "now; it waits on nothing"
 owner = "John runs the two sessions (about two hours); a Claude session files the answers word for word"
 cost = "$0"
 decision = true
 teaches = "What a reader from another lab finds in the registration text that the inside review did not. The packet is in experiments/06-mvm-0a-constructed-self-index/reviews/packets/, starting with the 2026-10-04 instruction sheet."
-status = "pending"
-
-[[next_steps]]
-id = "N25"
-title = "Rule every item from both reviews; write the registration text with the fixes; check the fix to the fatal flaw; commit the registration"
-when = "as soon as both outside answers are filed; outer limit 2026-10-18"
-owner = "a session drafts the ruling packet; John rules; a session writes the text; a different session checks it"
-cost = "$0"
-decision = true
-teaches = "Whether the registration can be committed with the free model's gate made checkable (the fatal flaw, RT-237) and the four serious findings closed or carried by name."
 status = "pending"
 
 # ---------------------------------------------------------------------------
@@ -819,6 +829,12 @@ date = "2026-10-04"
 kind = "process"
 title = "The registration review opens; the inside review finds one fatal flaw, small to fix; the outside packet is with John"
 summary = "John opened the registration review on version 4. A fresh session reviewed it from committed files only. The text describes the instrument that actually ran: the choice rule was rebuilt from the words alone and matched on all 24 toy rows, and the committed code reproduced every value. One fatal flaw: the free model's gate requires question sets the successor's task does not have, so as written it could never be read. Four serious flaws. The outside-review packet was built and checked by another session, then handed to John. Nothing spent."
+
+[[timeline]]
+date = "2026-10-04"
+kind = "build"
+title = "The successor's code is frozen and tested at $0; the go packet for the development runs is ready"
+summary = "A new folder holds the episode generator, the four models, the measurement, a trainer for the rented machine, the spending tripwire and a launcher. The frozen code reproduces all 502 toy figures compared, gives the 325 places to look on the full-size model, and runs end to end at 10 and 30 million parameters. Two things go to the registration text: the outcome rules as written put the toy on 'substrate not a testbed', and no ruling sets the full-size training recipe. The four development runs' go packet and ledger rows are written; nothing launched, nothing spent. John also ruled that no step is scheduled on a future date any more."
 
 [[timeline]]
 date = "2026-10-03"

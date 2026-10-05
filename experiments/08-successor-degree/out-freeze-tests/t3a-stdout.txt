@@ -1,0 +1,53 @@
+[T/0] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/0] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/0] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/0] done in 110s: arithmetic 0.0, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_T_seed0.json
+[T/1] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/1] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/1] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/1] done in 118s: arithmetic 0.0, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_T_seed1.json
+[T/2] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/2] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/2] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/2] done in 119s: arithmetic 0.0, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_T_seed2.json
+[C/0] gate: own 1711, named-other 760 of 3000 (bar 790)
+[C/0] reads: whole-read counts by state [13, 179, 180, 180, 180] of 180
+[C/0] nomination: nominated {'layers': [2], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[C/0] done in 166s: arithmetic 1.0051150895140666, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_C_seed0.json
+[C/1] gate: own 1703, named-other 751 of 3000 (bar 790)
+[C/1] reads: whole-read counts by state [13, 177, 174, 177, 173] of 180
+[C/1] nomination: nominated {'layers': [1], 'positions': 'action+3', 'rank': 8, 'piece_correct': 172, 'whole_read_correct': 177}
+[C/1] done in 159s: arithmetic 0.9925925925925926, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_C_seed1.json
+[C/2] gate: own 1727, named-other 708 of 3000 (bar 790)
+[C/2] reads: whole-read counts by state [13, 176, 177, 180, 180] of 180
+[C/2] nomination: nominated {'layers': [1], 'positions': 'post-identity', 'rank': 4, 'piece_correct': 150, 'whole_read_correct': 176}
+[C/2] done in 141s: arithmetic 0.9974293059125964, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_C_seed2.json
+[M/0] gate: own 2592, named-other 1663 of 3000 (bar 790)
+[M/0] reads: whole-read counts by state [180, 180, 180, 179, 178] of 180
+[M/0] nomination: nominated {'layers': [1], 'positions': 'post-identity', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[M/0] done in 130s: arithmetic 0.4885993485342019, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_M_seed0.json
+[M/1] gate: own 2584, named-other 1699 of 3000 (bar 790)
+[M/1] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[M/1] nomination: nominated {'layers': [1], 'positions': 'post-identity', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[M/1] done in 138s: arithmetic 0.4859504132231405, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_M_seed1.json
+[M/2] gate: own 2600, named-other 1655 of 3000 (bar 790)
+[M/2] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[M/2] nomination: nominated {'layers': [1], 'positions': 'post-identity', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[M/2] done in 139s: arithmetic 0.5448717948717948, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_M_seed2.json
+[F/0] gate: own 1679, named-other 994 of 3000 (bar 790)
+[F/0] reads: whole-read counts by state [13, 32, 26, 19, 12] of 180
+[F/0] nomination: read failed its floor: no size's piece reaches four fifths None
+[F/0] done in 177s: arithmetic 1.0, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_F_seed0.json
+[F/1] gate: own 1654, named-other 781 of 3000 (bar 790)
+[F/1] reads: whole-read counts by state [13, 12, 21, 24, 21] of 180
+[F/1] nomination: read failed its floor: no size's piece reaches four fifths None
+[F/1] done in 98s: arithmetic 1.0, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_F_seed1.json
+[F/2] gate: own 1664, named-other 746 of 3000 (bar 790)
+[F/2] reads: whole-read counts by state [13, 18, 25, 20, 20] of 180
+[F/2] nomination: read failed its floor: no size's piece reaches four fifths None
+[F/2] done in 100s: arithmetic 1.010840108401084, controls 7/4 hold True/True -> out-freeze-tests/t3a-committed-reads/row_F_seed2.json
+
+committed-reads: 502 figures compared, 0 differ
+outcome, reported and not part of the pass line: substrate not a testbed (gates: {'T': True, 'C': True, 'M': True, 'F': False}); version 4 section 3 describes the toy as the fifth term
+T3a PASSES
+exit 0
