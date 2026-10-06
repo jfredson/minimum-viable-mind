@@ -328,7 +328,8 @@ Outside findings that repeat inside ones (A1, A3, A4, A5, the first half of
 A10, and Gemini's G1 to G9) take the inside finding's number, as the outside
 dispositions dispose them (lines 84 to 104). **No ledger rows were written by
 this session**; rows for RT-237 to RT-250 are owed, with the earlier rows
-already listed as owed.
+already listed as owed. *Later the same day, four more outside findings were
+ruled and take RT-251 to RT-254: see the addendum at the end of this file, "Follow-up, same day".*
 
 ---
 
@@ -348,26 +349,34 @@ already listed as owed.
    John's word before version 5 carries them. The same is true of one small
    item in the outside dispositions (lines 122 to 129: a line in the generator
    self-test asserting no fresh or relaxed combination occurs in training).
+   **Now ruled, in part (2026-10-06, follow-up):** A7, A8, A11 and A12 are
+   accepted as drafted and take RT-251 to RT-254. **A2 stays owed work**, with
+   no ledger number. The generator self-test line is still unruled.
 2. **Page 6's note says RT-245 and RT-246 amend wording ruled 2026-10-04.**
    RT-246 does (ruling 7 of 2026-10-04). RT-245 does not: the device it
    widens was ruled on 2026-10-03, late evening (ruling 3), and the
    2026-10-04 rulings say nothing about the device. This record notes RT-245
-   beside ruling 3 of 2026-10-03.
+   beside ruling 3 of 2026-10-03. **Not put to John; this record's reading
+   stands for the checker to confirm.**
 3. **Page 11's scope phrase.** John's note names one phrase, for "metric
    validated". The drafted text he adopted by "go with the recommendation"
    also pairs "degree read" with a second phrase ("as a ratio of two
    transplants at the sites this procedure chose"), which the page itself did
-   not show. Neither says whether the three new terms of page 5, two of which
+   not show. Neither says whether the three new terms of page 5, all of which
    contain "metric", carry the phrase too. This record adopts the drafted text
    as written; the writer of version 5 should apply the phrase to every term
    containing "metric validated" and ask John about the other new terms.
+   **Now ruled (2026-10-06, follow-up):** both phrases apply, and the three
+   new terms containing "metric" carry the phrase too.
 4. **Page 8's "control 4 ... is the registered pairing check".** The drafted
    text has two pairing checks: the generator's self-test and control 4. This
    record reads John's words as naming control 4 as the check that withholds,
-   with the self-test kept as drafted.
+   with the self-test kept as drafted. **Now ruled (2026-10-06, follow-up):**
+   as read here.
 5. **The word "restore" on page 8.** The drafted text does not drop the
    detection-margin sentence; it replaces it with the 56 per cent figure. This
-   record reads "restore" as keeping that replacement.
+   record reads "restore" as keeping that replacement. **Not put to John;
+   this record's reading stands for the checker to confirm.**
 
 ---
 
@@ -419,3 +428,65 @@ All at $0, on the laptop, with no new money.
 It releases no money and issues no go. It does not write version 5, edit
 version 4, the reviews, the ledger, the known-failure list, the protocol or
 the frozen code. It does not decide page 12.
+
+---
+
+## Follow-up, same day: the items this record listed as unruled
+
+*Dated addendum, 2026-10-06 (Pacific), added on branch
+`rulings-2026-10-06-addendum` for pull request 103. **Authorship: mixed.**
+After this record listed what the word-for-word note left unruled, the
+coordination session put three questions to John, and he answered in the
+words **"accept all four, yes, yes"**. The questions and his answer are in the
+"Follow-up, same day" section of the same word-for-word note. No compute was
+launched and no money was spent: $0.*
+
+1. **The four wording fixes from the outside review: "accept all four".**
+   Accepted as drafted in the outside dispositions:
+   - **A7**, control 6 cannot tell "who is acting" from "the answer": the
+     claim that control 6 tells them apart is struck, its two cells are kept
+     as description, and weakness W11 is retitled and rewritten (lines 426 to
+     474).
+   - **A8**, the toy runs are development evidence, not an untouched test of
+     the final rule: one sentence in section 10 and weakness W5 (lines 478 to
+     486).
+   - **A11**, a no verdict does not mean the structure is absent: one
+     paragraph in section 3 (lines 686 to 695).
+   - **A12**, the registered uncertainty covers the raw difference only; the
+     reading and the separation are labelled as descriptions with no
+     registered uncertainty (lines 701 to 707).
+2. **The scope phrases: "yes".** Both apply. "Metric validated" is followed in
+   the same sentence by "on these constructed systems, for this intervention
+   procedure", and "degree read" by "as a ratio of two transplants at the
+   sites this procedure chose". **The three new terms of page 5, which all
+   contain "metric", carry the first phrase too**: "metric checked against
+   the separable model only, degree read", the same with "degree not read",
+   and "metric not validated". This widens page 11 as drafted (lines 715 to
+   729), which named only "metric validated".
+3. **The pairing check: "yes".** Control 4 (the donor's states from before
+   either twin's own turn transplanted, output required to be bit-identical)
+   is the pairing check that withholds a reading. The generator's self-test
+   on every matched pair is kept as a second check, as drafted under A9
+   (lines 515 to 552).
+
+**Ledger numbers**, continuing the table above, in the red team ledger
+(`experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md`; rows still
+owed, not written here):
+
+| Ledger number | Outside finding | What it is |
+|---|---|---|
+| RT-251 | A7 | Control 6 cannot tell copying who is acting from copying the answer |
+| RT-252 | A8 | The toy runs are development evidence |
+| RT-253 | A11 | A no verdict is not evidence of absence |
+| RT-254 | A12 | The registered uncertainty belongs to the raw difference only |
+
+**Still not ruled, and not changed by this addendum:** A2, the fatal finding
+that the final decision procedure must be brought to these rulings and run on
+made-up failure cases, stays **owed work** with no ledger number (item 5 of
+the owed list above); the small generator self-test line on unseen
+combinations (outside dispositions, lines 122 to 129) is unruled; and this
+record's readings on RT-245's date and on the word "restore" were not put to
+John.
+
+This addendum, like the rest of the file, is owed a check by a session that
+did not write it.
