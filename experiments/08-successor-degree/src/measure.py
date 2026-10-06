@@ -380,7 +380,8 @@ def outcome(gates: dict, arms: dict, true_slot_M: dict | None = None,
         failed.append("F")
         notes.append("arm F failed its gate on learning and no record shows it passed at step 5a")
     if failed:
-        return done("R3", "arm(s) " + ", ".join(failed) + " failed the gate on learning")
+        names = " and ".join(f"arm {a}" for a in failed)
+        return done("R3", f"{names} failed {'its' if len(failed) == 1 else 'their'} gate on learning")
     # rule 2: the readings decide
     if not arms["T"]["read"]:
         return done("not_validated", _reasons(arms["T"]))

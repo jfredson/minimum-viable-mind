@@ -1,0 +1,738 @@
+{
+ "inputs_sha256": {
+  "row_C_seed0.json": "698cc77530016ca2a999dc283504e3d6876e1816bdf5b2df02de529ddf76efc7",
+  "row_C_seed1.json": "50aeaf8312c209dbb4279f23e7515c34031ba5fba573a850c3bb2ccd7e3caaf1",
+  "row_C_seed2.json": "25435d4fa0ffb5c99832057f148dde2dbdf5314b710bcfeaf3ced754bb7f14c6",
+  "row_F_seed0.json": "f451e5daffac6c9682a128205c55d48566e65d4ca16cf814c693ca0472e94063",
+  "row_F_seed1.json": "b1f78e094d57a26a111aecaf52dafe50174e45114dd3ff5a7b5c9769c395d35e",
+  "row_F_seed2.json": "49cde326978c41909bbee91c1550b75be82a72af5891cc96a97f49cac16a5df0",
+  "row_M_seed0.json": "1827044901b66346f8898b55f1ce80439c76fd512ed4f381f0c143983a72706e",
+  "row_M_seed1.json": "bac5a02800e95bff5333fd27e84951aeb1bb7548d6179152e628e97078c83e26",
+  "row_M_seed2.json": "ef31200b71ed56d49f8843156479f2bce3a78d28e4f20cdc250281bff68108fb",
+  "row_T_seed0.json": "de367b672c33a8adddb820e2074e65139b37854d49d68e8e282c0d96d97c9832",
+  "row_T_seed1.json": "554439ebb51aec55d4993d90ae46637e57b322d73868021dda60d61695f8f1d6",
+  "row_T_seed2.json": "8ecb84e9345983a261416794532089b4758375a66aaf9eadf26daa0dafeb91be"
+ },
+ "toy_dir": "out-freeze-tests/t3a-committed-reads",
+ "cases": [
+  {
+   "name": "toy",
+   "about": "the toy as it actually is: no step record, no ownership-free field",
+   "expected": "R3",
+   "got": "R3",
+   "term": "substrate not a testbed: arm F failed its gate on learning",
+   "sentence": "substrate not a testbed: arm F failed its gate on learning",
+   "notes": [
+    "arm F failed its gate on learning and no record shows it passed at step 5a"
+   ],
+   "checks": {
+    "outcome code": true,
+    "reason has 'arm F'": true,
+    "F/0 lists 'ownership-free line was not run'": true,
+    "F/1 lists 'failed its gate on learning'": true,
+    "F/1 lists 'ownership-free line was not run'": true,
+    "F/0 withheld": true,
+    "F/1 withheld": true,
+    "F/2 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [
+    "F/0 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/0 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/0 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/0 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/0 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/0 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/0 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/0 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/0 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/1 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/1 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/1 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/1 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/1 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/1 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/1 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/1 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/1 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app"
+   ],
+   "matches": true,
+   "per_seed_reasons": {
+    "F/0": [
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "F/1": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "F/2": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   }
+  },
+  {
+   "name": "toy-step5a-seed0",
+   "about": "the toy, if seed 0 is taken as arm F's step 5a run",
+   "expected": "fifth",
+   "got": "fifth",
+   "term": "metric validated, degree not read: failed its gate on learning",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree not read: failed its gate on learning",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'failed its gate on learning'": true,
+    "F/0 withheld": true,
+    "F/1 withheld": true,
+    "F/2 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [
+    "F/0 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/0 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/0 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/0 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/0 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/0 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/0 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/0 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/0 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/1 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/1 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/1 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/1 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/1 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/1 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/1 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/1 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/1 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app"
+   ],
+   "matches": true,
+   "per_seed_reasons": {
+    "F/0": [
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "F/1": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "F/2": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   }
+  },
+  {
+   "name": "toy-step5a-seed1",
+   "about": "the toy, if seed 1 is taken as arm F's step 5a run",
+   "expected": "R3",
+   "got": "R3",
+   "term": "substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4)",
+   "sentence": "substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4)",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'step 5a'": true,
+    "F/0 withheld": true,
+    "F/1 withheld": true,
+    "F/2 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [
+    "F/0 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/0 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/0 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/0 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/0 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/0 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/0 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/0 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/0 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/1 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/1 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/1 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/1 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/1 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/1 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app",
+    "F/1 1.0000 in table.md: ..., 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, ",
+    "F/1 1.0000 in table.md: ...ctions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 |",
+    "F/1 1.0000 in table.md: ...0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not app"
+   ],
+   "matches": true,
+   "per_seed_reasons": {
+    "F/0": [
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "F/1": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "F/2": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   }
+  },
+  {
+   "name": "r1",
+   "about": "every arm reads, the anchors separate",
+   "expected": "R1",
+   "got": "R1",
+   "term": "metric validated, degree read",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "sentence has 'on these constructed systems, for this intervention procedure'": true,
+    "sentence has 'as a ratio of two transplants at the sites this procedure chose'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {}
+  },
+  {
+   "name": "r2",
+   "about": "arm C reads 0.40 to 0.50: separation 0.40 - 0.02 is under 0.5",
+   "expected": "R2",
+   "got": "R2",
+   "term": "metric does not separate",
+   "sentence": "metric does not separate",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {}
+  },
+  {
+   "name": "fallback-read",
+   "about": "arm C no verdict on two seeds (control 7), arm F reads",
+   "expected": "fallback_read",
+   "got": "fallback_read",
+   "term": "metric checked against the separable model only, degree read",
+   "sentence": "metric checked against the separable model only on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose",
+   "notes": [
+    "arm C returned no verdict: the two-model fallback; arm F's figure has no upper reference"
+   ],
+   "checks": {
+    "outcome code": true,
+    "sentence has 'on these constructed systems, for this intervention procedure'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "C/0": [
+     "control 7, the null transplant failed"
+    ],
+    "C/1": [
+     "control 7, the null transplant failed"
+    ]
+   }
+  },
+  {
+   "name": "fallback-not-read",
+   "about": "arm C no verdict, arm F learns but fails nomination on every seed",
+   "expected": "fallback_not_read",
+   "got": "fallback_not_read",
+   "term": "metric checked against the separable model only, degree not read: read failed its floor: no size's piece reaches four fifths; reported for description only (the site set was chosen with the piece rule switched off)",
+   "sentence": "metric checked against the separable model only on these constructed systems, for this intervention procedure, degree not read: read failed its floor: no size's piece reaches four fifths; reported for description only (the site set was chosen with the piece rule switched off)",
+   "notes": [
+    "arm C returned no verdict: the two-model fallback; arm F's figure has no upper reference"
+   ],
+   "checks": {
+    "outcome code": true,
+    "reason has 'no size's piece reaches four fifths'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "C/0": [
+     "control 7, the null transplant failed"
+    ],
+    "C/1": [
+     "control 7, the null transplant failed"
+    ],
+    "F/0": [
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "F/1": [
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "F/2": [
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   }
+  },
+  {
+   "name": "T-no-verdict",
+   "about": "arm T no verdict on two seeds (control 1), everything else reads",
+   "expected": "not_validated",
+   "got": "not_validated",
+   "term": "metric not validated: control 1, the content transplant, on arm T failed",
+   "sentence": "metric not validated on these constructed systems, for this intervention procedure: control 1, the content transplant, on arm T failed",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'control 1'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "T/0": [
+     "control 1, the content transplant, on arm T failed"
+    ],
+    "T/1": [
+     "control 1, the content transplant, on arm T failed"
+    ]
+   }
+  },
+  {
+   "name": "T-and-C-no-verdict",
+   "about": "arm T and arm C both no verdict: arm T's row of the table applies",
+   "expected": "not_validated",
+   "got": "not_validated",
+   "term": "metric not validated: control 1, the content transplant, on arm T failed",
+   "sentence": "metric not validated on these constructed systems, for this intervention procedure: control 1, the content transplant, on arm T failed",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'control 1'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "T/0": [
+     "control 1, the content transplant, on arm T failed"
+    ],
+    "T/1": [
+     "control 1, the content transplant, on arm T failed"
+    ],
+    "C/0": [
+     "control 7, the null transplant failed"
+    ],
+    "C/1": [
+     "control 7, the null transplant failed"
+    ]
+   }
+  },
+  {
+   "name": "split-review-table",
+   "about": "the review's A10 table on arm F, step 5a on seed 1",
+   "expected": "fifth",
+   "got": "fifth",
+   "term": "metric validated, degree not read: failed its gate on learning",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree not read: failed its gate on learning",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'failed its gate on learning'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "F/0": [
+     "failed its gate on learning (named-other condition: failed)"
+    ],
+    "F/1": [
+     "the channel removal did not collapse own-directed answers below the gate bar"
+    ],
+    "F/2": [
+     "failed its gate on learning (own-directed condition: failed)",
+     "read failed its floor: no size's piece reaches four fifths"
+    ]
+   }
+  },
+  {
+   "name": "split-learning-passes",
+   "about": "each F seed fails one different later condition",
+   "expected": "fifth",
+   "got": "fifth",
+   "term": "metric validated, degree not read: read failed its floor: no size's piece reaches four fifths; the channel removal did not collapse own-directed answers below the gate bar; the ownership-free line failed (with the channel zeroed, own-directed answers among the four candidates, line 1,546 of 3,000)",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree not read: read failed its floor: no size's piece reaches four fifths; the channel removal did not collapse own-directed answers below the gate bar; the ownership-free line failed (with the channel zeroed, own-directed answers among the four candidates, line 1,546 of 3,000)",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'did not collapse'": true,
+    "reason has 'ownership-free line'": true,
+    "reason has 'no size's piece'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "F/0": [
+     "read failed its floor: no size's piece reaches four fifths"
+    ],
+    "F/1": [
+     "the channel removal did not collapse own-directed answers below the gate bar"
+    ],
+    "F/2": [
+     "the ownership-free line failed (with the channel zeroed, own-directed answers among the four candidates, line 1,546 of 3,000)"
+    ]
+   }
+  },
+  {
+   "name": "split-one-seed-everything",
+   "about": "only seed 0 of arm F passes everything; separate counts would pass",
+   "expected": "fifth",
+   "got": "fifth",
+   "term": "metric validated, degree not read: failed its gate on learning (named-other condition: failed); the channel removal did not collapse own-directed answers below the gate bar",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree not read: failed its gate on learning (named-other condition: failed); the channel removal did not collapse own-directed answers below the gate bar",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "F/1": [
+     "failed its gate on learning (named-other condition: failed)"
+    ],
+    "F/2": [
+     "the channel removal did not collapse own-directed answers below the gate bar"
+    ]
+   }
+  },
+  {
+   "name": "overlap-one-seed",
+   "about": "four failures on arm T seed 2, all listed; T reads on 0 and 1",
+   "expected": "R1",
+   "got": "R1",
+   "term": "metric validated, degree read",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "T/2 lists 'no site set clears'": true,
+    "T/2 lists 'development episodes'": true,
+    "T/2 lists 'control 7'": true,
+    "T/2 lists 'control 4'": true,
+    "T/2 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [
+    "T/2 0.0 in summary.json: ...F\": 0.0425245027405769,   \"M\": 0.031258332222518365,   \"T\": 0.0  },  \"arm",
+    "T/2 0.0 in summary.json: ...led\"     ]    },    \"read\": true,    \"readings\": {     \"0\": 0.0,     \"1\":",
+    "T/2 0.0 in summary.json: ...},    \"read\": true,    \"readings\": {     \"0\": 0.0,     \"1\": 0.0    },    ",
+    "T/2 0.0 in summary.json: ...on_margin_at_the_bar\": 0.0017619047619047597,    \"formula\": 0.0,    \"insi",
+    "T/2 0.0 in summary.json: ...    \"formula\": 0.0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate",
+    "T/2 0.0 in summary.json: ....0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate\": 0.0,    \"room",
+    "T/2 0.0 in summary.json: ...on_margin_at_the_bar\": 0.0017619047619047597,    \"formula\": 0.0,    \"insi",
+    "T/2 0.0 in summary.json: ...    \"formula\": 0.0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate",
+    "T/2 0.0 in summary.json: ....0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate\": 0.0,    \"room",
+    "T/2 0.0 in summary.json: ....5,    \"clears\": true,    \"computed\": true,    \"highest_T\": 0.0,    \"lowe",
+    "T/2 0.0 in summary.json: ...ed\",      \"reading computed\": \"passed\"     },     \"degree\": 0.0,     \"lea",
+    "T/2 0.0 in summary.json: ...ed\",      \"reading computed\": \"passed\"     },     \"degree\": 0.0,     \"lea",
+    "T/2 0.0000 in table.md: ...--|---|---|---|---|---|---|---|---|---|---|---|---| | T/0 | 0.0000 | states ",
+    "T/2 0.0000 in table.md: ... 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000",
+    "T/2 0.0000 in table.md: ... (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000,",
+    "T/2 0.0000 in table.md: ...180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; ",
+    "T/2 0.0000 in table.md: ...ingle position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; 20/0/0 |",
+    "T/2 0.0000 in table.md: ...000 | +0.0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 ",
+    "T/2 0.0000 in table.md: ...0/0 | True, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 ",
+    "T/2 0.0000 in table.md: ...e, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 | 740 | 3",
+    "T/2 0.0000 in table.md: ...0 | not applicable | 0.0000 | 0.0000 | 740 | 3000 | | T/1 | 0.0000 | states ",
+    "T/2 0.0000 in table.md: ... 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000",
+    "T/2 0.0000 in table.md: ... (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000,",
+    "T/2 0.0000 in table.md: ...180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; ",
+    "T/2 0.0000 in table.md: ...ingle position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; 20/0/0 |",
+    "T/2 0.0000 in table.md: ...000 | +0.0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 ",
+    "T/2 0.0000 in table.md: ...0/0 | True, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 ",
+    "T/2 0.0000 in table.md: ...e, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 | 753 | 3"
+   ],
+   "matches": true,
+   "per_seed_reasons": {
+    "T/2": [
+     "no site set clears the whole-state floor",
+     "floor on development episodes failed",
+     "control 7, the null transplant failed",
+     "control 4, the pairing check (too-early positions) failed"
+    ]
+   }
+  },
+  {
+   "name": "M-outside-band",
+   "about": "arm M reads 0.80 to 0.90: no term changes, the sentence says so",
+   "expected": "R1",
+   "got": "R1",
+   "term": "metric validated, degree read",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose; arm M missed its predicted reading (0.3 to 0.7, and within 0.10 of its true-slot reading: seed 0: 0.8000 (true slot 0.4837), seed 1: 0.8500 (true slot 0.4760), seed 2: 0.9000 (true slot 0.4920)), so arm F's figure is placed against arms T and C only",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "sentence has 'arm M missed its predicted reading'": true,
+    "sentence has 'against arms T and C only'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {}
+  },
+  {
+   "name": "M-fails-gate",
+   "about": "arm M fails its gate on two seeds: dropped, no term changes",
+   "expected": "R1",
+   "got": "R1",
+   "term": "metric validated, degree read",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose",
+   "notes": [
+    "arm M failed its gate on learning; it is dropped and carried as an extension (section 3)"
+   ],
+   "checks": {
+    "outcome code": true,
+    "sentence has 'arm M'": true,
+    "sentence has 'dropped'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "M/0": [
+     "failed its gate on learning (own-directed condition: failed)"
+    ],
+    "M/1": [
+     "failed its gate on learning (own-directed condition: failed)"
+    ]
+   }
+  },
+  {
+   "name": "withheld-seed",
+   "about": "arm F seed 2 computes 0.123456 but fails control 4: withheld everywhere",
+   "expected": "R1",
+   "got": "R1",
+   "term": "metric validated, degree read",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "F/2 lists 'control 4'": true,
+    "F/2 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "F/2": [
+     "control 4, the pairing check (too-early positions) failed"
+    ]
+   }
+  },
+  {
+   "name": "never-run-line",
+   "about": "the ownership-free line never ran on arm F",
+   "expected": "fifth",
+   "got": "fifth",
+   "term": "metric validated, degree not read: the ownership-free line was not run",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree not read: the ownership-free line was not run",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'ownership-free line was not run'": true,
+    "F/0 lists 'ownership-free line was not run'": true,
+    "F/0 withheld": true,
+    "F/1 withheld": true,
+    "F/2 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "F/0": [
+     "the ownership-free line was not run"
+    ],
+    "F/1": [
+     "the ownership-free line was not run"
+    ],
+    "F/2": [
+     "the ownership-free line was not run"
+    ]
+   }
+  },
+  {
+   "name": "never-run-control",
+   "about": "control 4 never ran on two arm C seeds",
+   "expected": "fallback_read",
+   "got": "fallback_read",
+   "term": "metric checked against the separable model only, degree read",
+   "sentence": "metric checked against the separable model only on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose",
+   "notes": [
+    "arm C returned no verdict: the two-model fallback; arm F's figure has no upper reference"
+   ],
+   "checks": {
+    "outcome code": true,
+    "C/0 lists 'control 4'": true,
+    "C/0 lists 'not run'": true,
+    "C/0 withheld": true,
+    "C/1 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "C/0": [
+     "control 4, the pairing check (too-early positions) was not run"
+    ],
+    "C/1": [
+     "control 4, the pairing check (too-early positions) was not run"
+    ]
+   }
+  },
+  {
+   "name": "no-transplant-outside",
+   "about": "arm T's no-transplant rate is 0.05 off the formula on every seed",
+   "expected": "R1",
+   "got": "R1",
+   "term": "metric validated, degree read",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {}
+  },
+  {
+   "name": "F-channel-removal",
+   "about": "arm F learns but its channel removal does not collapse on two seeds",
+   "expected": "fifth",
+   "got": "fifth",
+   "term": "metric validated, degree not read: the channel removal did not collapse own-directed answers below the gate bar",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree not read: the channel removal did not collapse own-directed answers below the gate bar",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'did not collapse'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "F/0": [
+     "the channel removal did not collapse own-directed answers below the gate bar"
+    ],
+    "F/1": [
+     "the channel removal did not collapse own-directed answers below the gate bar"
+    ]
+   }
+  },
+  {
+   "name": "T-fails-gate",
+   "about": "arm T fails its learning gate; arm C is no verdict too",
+   "expected": "R3",
+   "got": "R3",
+   "term": "substrate not a testbed: arm T failed its gate on learning",
+   "sentence": "substrate not a testbed: arm T failed its gate on learning",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'arm T'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "T/0": [
+     "failed its gate on learning (own-directed condition: failed)"
+    ],
+    "T/1": [
+     "failed its gate on learning (own-directed condition: failed)"
+    ],
+    "C/0": [
+     "control 7, the null transplant failed"
+    ],
+    "C/1": [
+     "control 7, the null transplant failed"
+    ]
+   }
+  },
+  {
+   "name": "F-fails-5a",
+   "about": "arm F fails at step 5a; nothing else launched, only F's records exist",
+   "expected": "R3",
+   "got": "R3",
+   "term": "substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4)",
+   "sentence": "substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4)",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'step 5a'": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "F/0": [
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "F/1": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "F/2": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   }
+  }
+ ]
+}
