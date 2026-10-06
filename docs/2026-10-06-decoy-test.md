@@ -85,7 +85,7 @@ development grid are in each `row_T_seed*.json`.
 
 ## 4. The supplementary scales (16 and 1/16), reported beside, not in the verdict
 
-**INCOMPLETE at the time of this commit.** Both were started about 10:25 and were still running. If they do not finish before the laptop closes, they are to be run as `docs/2026-10-06-decoy-test-RESUME.md` says. They do not enter the verdict either way.
+Both finished (10:42). Reading **0.0000 on all three seeds at both**, same site set (state 0, action, 8 directions), all checks holding. At scale 16 the piece lay 0.9940, 0.9934 and 0.9928 in the copy; at 1/16, 0.0039 on every seed. So even with the read's directions over 99 per cent in the unused copy, the reading stays 0, as section 5 argues. Not part of the verdict.
 
 ## 5. Why the reading stays at 0 (ARGUED)
 

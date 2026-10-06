@@ -1,0 +1,32 @@
+{
+ "seed": 2,
+ "scale": 0.0625,
+ "a_outputs_bit_identical_to_committed_model": true,
+ "b_decoy_only_transplant_bit_identical": true,
+ "b2_decoy_overwritten_with_noise_bit_identical": true,
+ "c_decoy_equals_scale_times_block_everywhere": true,
+ "d_decoy_alone_correct_of_180_by_state": [
+  180,
+  180,
+  180,
+  180,
+  180
+ ],
+ "d_block_alone_correct_of_180_by_state": [
+  180,
+  180,
+  180,
+  180,
+  180
+ ],
+ "e_at_state_0_action": {
+  "whole": 1.0,
+  "block_only": 1.0,
+  "decoy_only": 0.0,
+  "untouched": 0.0,
+  "own_accuracy": 1.0,
+  "reading_with_block": 0.0,
+  "reading_with_decoy": 1.0
+ },
+ "all_hold": true
+}

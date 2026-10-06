@@ -1,5 +1,15 @@
 {
+ "0.0625": {
+  "verdict": "not fooled",
+  "reason": "every seed that reads, and at least two, reads 0.2 or less",
+  "seeds": 3
+ },
  "0.25": {
+  "verdict": "not fooled",
+  "reason": "every seed that reads, and at least two, reads 0.2 or less",
+  "seeds": 3
+ },
+ "16": {
   "verdict": "not fooled",
   "reason": "every seed that reads, and at least two, reads 0.2 or less",
   "seeds": 3

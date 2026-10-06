@@ -1,4 +1,4 @@
-# Decoy test (page 10, finding A6): resume note — INCOMPLETE
+# Decoy test (page 10, finding A6): resume note — SUPERSEDED, everything finished at 10:42; nothing to resume or discard
 
 *Written 2026-10-06 about 10:10 Pacific, because the laptop is being closed
 at about 10:50 and the run may be cut off. Branch `decoy-test-a6`. The method
