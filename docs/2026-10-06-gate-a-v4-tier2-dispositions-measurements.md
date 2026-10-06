@@ -18,9 +18,10 @@ reader can dispute.*
 > committed at `025ce90`).** Part A's conclusion, that the decision
 > procedure "does not exist as code", is **wrong**. Its commands ran on this
 > branch, cut from `gate-a-v4-dispositions` before pull request 97 merged the
-> frozen successor code into main (`53ae82c`, 2026-10-05); the command
-> `ls -d experiments/08-successor-degree` was true of this branch and false
-> of main. See "Correction to Part A" at the end of this file. Parts B and C
+> frozen successor code into main (`53ae82c`, 2026-10-05). On this branch,
+> `ls -d experiments/08-successor-degree` found no such folder; on main the
+> folder exists. (Wording of this sentence fixed later on 2026-10-06, after
+> the independent check, pull request 102, called it muddled.) See "Correction to Part A" at the end of this file. Parts B and C
 > are unaffected, except Part C's description of the gate code, corrected
 > there too.
 
@@ -158,3 +159,22 @@ the procedure is missing. It is because:
 three condition by condition" is true of the rehearsal's `repairs.py` and
 only partly true of the frozen code, as described above. Part C's
 measurement, from the rehearsal's gate file, is unchanged.
+
+## Second correction, 2026-10-06, after the independent check (pull request 102)
+
+Two points in "Correction to Part A" above were incomplete:
+
+- "Withholds per seed ... with every reason" overstates it. `withhold`
+  checks the controls only when a reading was computed, and `summarise`
+  adds arm F's channel-removal reason only to a seed that would otherwise
+  read. Also, `summarise` writes each withheld seed's figure into
+  `summary.json` as `arithmetic_withheld` (on the toy, 1.0, 1.0 and 1.0108
+  for arm F).
+- "Aggregates seeds partly jointly" is right, but the frozen gate is
+  tighter than that phrase suggests. Over all 512 pass-or-fail patterns of
+  arm F's three conditions on three seeds, it never passes the arm with no
+  seed passing everything. Separate counts do, on 6 patterns. The gap that
+  remains is 18 patterns where exactly one seed passes everything and the
+  arm still passes. The review's own split table fails arm F's gate under
+  the frozen code. (These counts are MEASURED by the check, not by this
+  session.)

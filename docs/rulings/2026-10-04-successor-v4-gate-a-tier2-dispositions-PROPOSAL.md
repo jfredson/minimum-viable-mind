@@ -107,6 +107,29 @@ is recorded as a pass that found nothing new, which the protocol counts as a
 valid result. (The inside finding RT-243, that the two forms of the floor do
 disagree on the toy, was not restated by either outside review.)
 
+**Three remarks in the ChatGPT review's feasibility table, not lettered,
+each covered (the check of these dispositions, pull request 102, section
+7):**
+
+- *"The final committed dependency file must actually be named and
+  present."* Already covered: one of the ruled wording fixes from the inside
+  review (its line 149) names the pinned file; the frozen code pins
+  `experiments/08-successor-degree/requirements-measure.txt` (on main). The
+  closure check confirms the file named in version 5 exists at the
+  registration commit.
+- *"Different random seeds alone do not prove that combinations never
+  overlap"* (control 5, unseen combinations). Not yet shown: the frozen
+  generator's training stream skips an excluded set of fingerprints, which
+  may answer it, but neither this session nor the check verified it.
+  **Proposed:** one line added to the generator self-test at section 11,
+  step 3, asserting that no fresh or relaxed episode's combination occurs in
+  the training stream, and its output cited in version 5. Small; no ruling
+  needed beyond accepting it.
+- *"The registered single-fit-and-reload procedure also differs from the
+  toy's historical two-fit provenance."* Already disclosed in version 4,
+  section 7.2, item 1, and the frozen code fits once and reloads; nothing
+  further.
+
 ---
 
 ## The new findings, one line each (ledger form)
@@ -118,7 +141,7 @@ disagree on the toy, was not restated by either outside review.)
 | A7 | ChatGPT | Copying the donor's answer gives the same pattern on control 6 as copying who is acting, so control 6 does not tell them apart | serious | **PROPOSED: ACCEPT WITH CHANGE.** Strike the claim that control 6 discriminates; keep its two cells as description; rewrite weakness W11 | high | The text change; a search showing no sentence claims control 6 separates the two |
 | A8 | ChatGPT | The toy runs are development evidence, adapted after looking at outputs, not an untouched test of the final rule | worth-noting | **PROPOSED: ACCEPT.** Say so where the toy is quoted as a demonstration | high | The text change |
 | A9 | ChatGPT | The no-transplant check withholds correctly paired, competent models whose errors go to other agents' values; and near the bar it barely catches a broken pairing | serious | **PROPOSED: ACCEPT WITH CHANGE.** Report the no-transplant rate against the formula, no longer as a veto; check the pairing directly in the generator's self-test | moderate | The text change; the generator self-test run on the built generator at step 3 |
-| A10 | ChatGPT | Two new outcome cases: arm M reads but misses its predicted band; and different seeds can each pass different conditions, so an arm passes with no seed passing everything. Also: the toy is called the fifth outcome though arm F failed its gate | serious | **PROPOSED: ACCEPT WITH CHANGE.** A seed counts only if it passes everything; arm M's miss is reported, not a term change; arm F's gate failure maps to the fifth term, not R3 (a change to the inside table, page 5) | moderate | The text change, and the A2 run's cases (e), (f) and (g) |
+| A10 | ChatGPT | Two new outcome cases: arm M reads but misses its predicted band; and different seeds can each pass different conditions, so an arm passes with no seed passing everything. Also: the toy is called the fifth outcome though arm F failed its gate | serious | **PROPOSED: ACCEPT WITH CHANGE.** A seed counts only if it passes everything; arm M's miss is reported, not a term change; arm F's gate failure at step 5b (not at step 5a, which stays R3 with stop S4) maps to the fifth term (a change to the inside table, page 5) | moderate; John rules it with page 5 | The text change (including section 3's R3 and R2 rows and the toy sentence; step 5a and stop S4 unchanged), and the A2 run's cases (e), (f) and (g) |
 | A11 | ChatGPT | Many legitimate routes to "no verdict" exist; none means the structure is absent | worth-noting | **PROPOSED: ACCEPT.** One registered sentence on what a no verdict means | high | The text change |
 | A12 | ChatGPT | The registered uncertainty is for the raw difference, not for the reading or the separation | worth-noting | **PROPOSED: ACCEPT WITH CHANGE.** Label the reading and the separation as descriptive, with no registered uncertainty | high | The text change |
 | A13 | ChatGPT | The outcome words ("metric validated", "known high anchor") read as more than the experiment shows | serious | **PROPOSED: ACCEPT WITH CHANGE.** Keep John's terms, and require a fixed scope phrase beside every use; register the review's "defensible scope" table | moderate; low on whether to rename the terms instead | The text change; a search showing every "metric validated" in sections 0 to 16 carries the scope phrase |
@@ -147,8 +170,8 @@ with its self-test re-run, MEASURED: `measure.py --self-test`, "all checks
 passed").**
 
 - **Per-seed withholding: yes.** `measure.withhold` replaces the reading
-  with "no verdict" and lists **every** reason, in the output file and the
-  table: the arm's gate failed; no site set or read failed its floor at
+  with "no verdict" and lists its reasons, in the output file and the
+  table (not always every reason: see "what it does not do", item 6): the arm's gate failed; no site set or read failed its floor at
   nomination; described-only; the whole-state floor missed on fresh or on
   development episodes; the no-transplant rate outside 0.018; control 7
   failed; control 1 failed on arm T; control 4 failed. A control that could
@@ -200,11 +223,20 @@ rulings.**
 5. **No independent check of the freeze's outcome logic against the
    registration text** has been filed that this session found; the freeze
    report is its author's.
+6. **It does not always list every reason, and it keeps the withheld
+   figure in its output file** (found by the check of these dispositions,
+   pull request 102, section 2). `withhold` checks the controls only when a
+   reading was computed, so a seed already withheld at nomination never
+   shows a failed control; and `summarise` adds arm F's channel-removal
+   reason only to a seed that would otherwise read. And `summarise` writes
+   each withheld seed's figure into `summary.json` as `arithmetic_withheld`
+   (on the toy, 1.0, 1.0 and 1.0108 for arm F), which version 4 section
+   6.4, item 5, and the R-13 text below forbid. The table is clean.
 
 **Status: still not closed at $0 today, for a different reason.** The
 procedure exists and has run end to end on the toy, which is most of what
 A2 asks. What remains: (i) the rules it encodes are about to change,
-because four pending rulings change it (RT-237's line, RT-241's table, A9,
+because five pending rulings change it (RT-237's line, RT-241's table, A9,
 A10, and page 9's precedence); a closure measurement on today's code would
 certify rules John is about to replace; (ii) the constructed cases have
 not been run through the whole path; (iii) another session's check. All
@@ -216,7 +248,7 @@ the earlier "what must be built").**
 1. **The ruled outcome table** in `measure.outcome`: R3 for arm T or C
    failing its gate (or T, C or F, if John keeps page 5's draft); "metric
    not validated" for arm T no verdict; the two fallback terms in place of
-   R1-with-a-note; arm M's missed prediction stated in the outcome's
+   R1 or the fifth term with a note; arm M's missed prediction stated in the outcome's
    sentence (page 9).
 2. **The seed rule John picks on page 7**, in one place: if joint, the
    per-seed gate (every condition, the channel-removal collapse and the
@@ -232,6 +264,16 @@ the earlier "what must be built").**
    changed), runs `procedure.summarise` on each directory, and compares
    each term with the one written beside it before it ran. Method first;
    by a session other than this one; $0.
+7. **Every reason listed, and nothing withheld left in the output.**
+   `withhold` evaluates every check whether or not a reading was computed,
+   and lists every failure; arm F's channel-removal failure is listed on
+   every seed it applies to (item 2 does this if John picks the joint
+   rule); and `arithmetic_withheld` is removed from `summary.json`. (The
+   alternative, for John: keep it, as a record of what was not reported,
+   and reword R-13 and the closure check's step 2 to say the figure may
+   appear only under that one named field and never as a reading. This
+   file recommends removing it: a figure in the output file is one a later
+   session will quote.)
 6. **The freeze's own self-test updated** so that "the toy lands on the
    fifth term" is tested with the toy's real gate (arm F failing), not with
    every gate passed.
@@ -339,6 +381,18 @@ reading is near 1**, the instrument calls a separable model entangled, and
 the high anchor means much less than its name. Method first; $0; a few
 hours on the laptop; a session other than this one; checked. It is a
 constructed stand-in, not a trained model, and would be said to be one.
+**Ties, stated in advance** (the check of these dispositions, pull request
+102): arm T's true slot is already read perfectly, and an exact copy of the
+marker would be too, so which one the read and the nomination favour may be
+decided by tie-breaking (the fit's weighting between two perfect features,
+then the rule's order: highest ownership-only share, smaller size, earlier
+position set), not by which is "easier to read". **So the test runs both
+ways round, fixed in its method before it runs:** once with the copy at
+larger scale than the slot (so a fit that weights by scale favours the
+copy) and once at smaller scale, at the same layers and positions as the
+slot so the rule's order cannot exclude it; both readings are reported.
+The counterexample bites if, in either run, the transplanted piece lies
+mostly in the copy and the reading is near 1.
 
 **Reason.** The finding goes to what a high reading means, which is half
 of what the experiment validates. The wording change is cheap and true
@@ -390,7 +444,18 @@ that has smuggled a value across changes the action in both." with:**
 > model erring differently for the two owners; it does not say which (the
 > ChatGPT outside review of version 4, A7).
 
-**Text change 3, W11, replace its body with:**
+**Text change 2b, the same item 6, its later sentence** "an entangled arm
+is expected to move the same-value cell too, and that is reported as the
+caveat it is (weakness W11): on those arms the whole-state transplant
+carries something besides identity" — replace from "on those arms" with:
+"on those arms the whole-state transplant moves the action where neither
+copying who is acting nor copying the answer would, which may be other
+content carried across or the model erring differently by owner; the cell
+does not say which."
+
+**Text change 3, W11, retitle it "W11. On the entangled arms, the
+same-value cell of control 6 moves, and control 6 cannot say why." and
+replace its body with:**
 
 > On the relaxed set the same-value cell moved on arm C in 0.51 to 0.63 of
 > trials and on arm M in 0.22 to 0.32 (section 7.3, item 6). Neither
@@ -463,9 +528,18 @@ and nothing is read for that arm." to the end of the item with:**
 > directly instead:** the registered generator's self-test asserts, on every
 > matched pair, that the donor's dictated answer is computed from the
 > donor's own identity and value on the named item, and differs from the
-> recipient's except in the relaxed set's same-value trials; control 4's
-> bit-identity and control 7 check that the transplant code uses the pairs
-> as built. The rate, the formula's value, their difference and the share of
+> recipient's except in the relaxed set's same-value trials; and **control
+> 4**, which already withholds a reading, transplants the donor's states
+> from before either twin's own turn and requires the output to be
+> bit-identical, which a mismatched pair would break. (Control 7, the null
+> transplant, checks the transplant code, not the pairing.) **Version 4's
+> detection-margin sentence is replaced, not dropped silently:** "the
+> detection margin at the bar is printed in the reporting table ... 0.0198,
+> a margin of only 0.0018 over the allowance; at 0.56 ... 0.0441" becomes
+> "the chance the formula would flag a broken pairing on 800 pairs is
+> printed beside the rate: 0.56 at the learn-both bar (the ChatGPT outside
+> review, A9: the 0.0018 margin was not a demonstration of detection)". The
+> rate, the formula's value, their difference and the share of
 > errors landing on the donor's answer are printed in the reporting table.
 
 and in section 6.4, item 5, delete "a no-transplant miss outside its
@@ -495,9 +569,14 @@ what the review describes).** The rehearsal's `repairs.py` (lines 157 to
 `procedure.gate` requires own-directed and (on arm F) named-other on the
 same seed, but counts the channel-removal collapse separately, and applies
 the arm's gate to every seed, so a seed that failed the gate can still be
-one of the two that read (see A2). The review's table (each condition
-passing on two seeds, no seed passing all) would still pass the collapse
-column separately from the others. The toy has no such split: under either rule every toy
+one of the two that read (see A2). **Run through the frozen code, the
+review's own table fails arm F's gate** (only seed 1 passes both learning
+conditions), and over all 512 pass-or-fail patterns of arm F's three
+conditions on three seeds the frozen code never passes an arm where no
+seed passes everything; separate majorities do so on 6 patterns. The
+frozen code's remaining gap is the **18 patterns where exactly one seed
+passes everything** and the arm still passes (MEASURED by the check of
+these dispositions, pull request 102, section 4.2). The toy has no such split: under either rule every toy
 gate verdict is the same (this session's measurements, Part C). The
 precedence conflict is real too: version 4 section 3 calls the toy the fifth
 term although arm F fails its gate (named-other on seeds 1 and 2), while R3
@@ -518,10 +597,29 @@ end-to-end toy run lands on R3, which the freeze report found and reported
    reading" with the figures, and arm F's figure is then placed against
    arms T and C only. The prediction holds if every seed of arm M that reads
    is inside 0.3 to 0.7 and within 0.10 of its true-slot reading.
-3. **Arm F failing its gate** is a "no verdict" on arm F with the reason
-   "failed its gate on learning", and so maps to the fifth term when arms T
-   and C separate (or R2 when they do not). R3 is for arm T or arm C failing
-   its gate; arm M failing is dropped (as the inside table already says).
+3. **Arm F failing its gate: narrowed to step 5b** (revised after the check
+   of these dispositions, pull request 102, defect 1). Under ruled text,
+   arm F's first registered run is trained alone at step 5a, and if it and
+   its one re-run fail the learn-both gate, "the outcome is R3 and nothing
+   else launches" (version 4, section 11, step 5a, and stop S4). That is
+   the design's most likely failure, and this proposal **does not change
+   it**: S4 is a ruled stop that keeps the loss to the first release. The
+   case this rule covers is narrower: arm F passes at step 5a, then its
+   other seeds, trained at step 5b alongside arms T and C, fail the gate so
+   that the arm fails it. Then arm F is a "no verdict" with the reason
+   "failed its gate on learning", mapping to the fifth term when arms T and
+   C separate (or R2 when they do not). R3 is for arm T or arm C failing
+   its gate, or arm F failing at step 5a; arm M failing is dropped (as the
+   inside table already says).
+   **The frozen code returns R3 for any arm F gate failure, by design**,
+   following step 5a and S4 (the freeze report,
+   `docs/2026-10-04-successor-code-freeze.md` on main, section 4.1), and
+   **the toy is "substrate not a testbed" in that code today**. Under this
+   rule the toy's pattern (arm F passes both conditions on seed 0, fails
+   named-other on seeds 1 and 2) would be the fifth term if seed 0 is taken
+   as the step 5a run, and R3 if seed 1 or 2 is; version 5's toy sentence
+   in section 3 says exactly that instead of "the toy reaches the fifth
+   term".
 
 **Text change 1, section 3, the paragraph "When an arm's three seeds
 disagree", replace "an arm is read if at least two of its three seeds
@@ -539,10 +637,25 @@ least two seeds of three" with "on at least two seeds of three, **the same
 seeds passing every condition**".
 
 **Text change 2, the inside table (RT-241), rule 1:** replace "If arm T, C
-or F fails its gate" with "If arm T or arm C fails its gate", and add to the
+or F fails its gate" with "If arm T or arm C fails its gate, or arm F fails
+its gate at step 5a after its re-run (section 11, stop S4)", and add to the
 table's arm F column, in the two rows that read "no verdict, or fails the
-channel-removal check", "or fails its gate on learning". Then section 3's
-toy sentence ("the toy reaches the fifth term") stays true.
+channel-removal check", "or, having passed at step 5a, fails its gate on
+learning at step 5b". **Four other places then change to match:**
+
+- **Section 3, the R3 row**, "One or more arms fail its gate after the one
+  permitted re-run" becomes "Arm T or arm C fails its gate after the one
+  permitted re-run, or arm F fails it at step 5a after its re-run".
+- **Section 3, the R2 row**, "Every arm carried passes its gate (... both
+  conditions on arm F)" becomes "Arms T and C pass their gates and do not
+  separate at the bar; arm F is not read, whether or not it passed its gate
+  at step 5b".
+- **The inside dispositions' text change 2 to section 8.1**, "R3 for the
+  experiment (arm M excepted: it is dropped)" becomes "R3 for the
+  experiment (arm M excepted: it is dropped; arm F excepted after step 5a:
+  section 3, rule 1)".
+- **Section 3's toy sentence**, as rule 3 above says. Step 5a and stop S4
+  are **not** changed.
 
 **Text change 3, the inside table, below "Arm M never changes the term",
 add:** "If arm M reads and misses its prediction (section 9), the report
@@ -554,12 +667,17 @@ met all the conditions the claim rests on; the joint rule costs nothing on
 the toy. For arm F, R3's meaning ("this recipe and size are not a place to
 study mechanism") is wrong once the two built anchors have learned and
 separated: the free model's failure to learn is then a fact about the free
-model, which is what the fifth term with its reason says. This matches how
-section 3 already describes the toy, and how the rehearsal code already
-treats a gate failure (as a reason for no verdict). **Strongest
-alternative on the precedence:** R3 for any of T, C or F, as the inside
-table drafted it; simpler and stricter, but then the toy and the outcome
-version 4 calls most likely are both R3.
+model, which is what the fifth term with its reason says. At step 5a the
+anchors have not been trained yet, so nothing has been validated and R3
+with the stop is right; that is why step 5a and S4 stay. The rehearsal code
+treats a gate failure as a reason for no verdict; **the frozen registered
+code does the opposite, R3, deliberately**, so adopting this rule means
+changing `measure.outcome` (A2, item 1). **Alternatives:** (a) R3 for any
+gate failure of T, C or F, as page 5 drafted and the frozen code does:
+simplest, no change to code, and the toy is R3. (b) Extend the fifth term
+to a step 5a failure too, rewriting step 5a and S4: not recommended, since
+S4's stop exists to avoid spending the second release on a free model that
+did not learn. **John should rule page 5 and page 9 together.**
 
 ### A11 (worth-noting): no verdict is not absence
 

@@ -31,7 +31,7 @@ pages 10, 11 and 12.** They are marked ⚑.
 | — | **The fatal one (A2): the final procedure that withholds bad readings and assigns the outcome has never run end to end.** Not a question, but you should know: **it is not closed.** *Corrected 2026-10-06:* the procedure does exist, in the frozen successor code merged on 2026-10-05, and it has run end to end on the toy (landing on "substrate not a testbed", not the fifth term). What remains: change it to the rules you are about to rule, run made-up failure cases through it, and have another session check it, at $0 | Do that straight after you rule pages 5, 7, 8 and 9 | high |
 | 7 | When different seeds pass different conditions, does the arm pass? (A10) | **No: two seeds must each pass everything.** No toy verdict changes | moderate |
 | 8 | The no-transplant check would refuse good models (A9). Keep it as a veto? | **No: report it; check the pairing directly instead** | moderate |
-| 9 | If the free model fails its learning gate but the two built models separate, is that "substrate not a testbed" (R3) or "metric validated, degree not read"? And what if the middle model misses its band? (A10) | **The latter, with the reason**; the middle model's miss is reported, not a change of outcome. Changes page 5's table | moderate |
+| 9 | If the free model passes its first registered run (step 5a) but then fails its learning gate at step 5b, while the two built models separate, is that "substrate not a testbed" (R3) or "metric validated, degree not read"? And what if the middle model misses its band? (A10) | **The latter, with the reason**; a failure at step 5a stays R3 with nothing else launched, as ruled. The middle model's miss is reported, not a change of outcome. **Changes page 5's table: rule pages 5 and 9 together** | moderate |
 | 10 ⚑ | A $0 "decoy" test of whether the read can be fooled by an unused copy of the owner's marker (A6) | **Yes, run it before deciding to register** | moderate |
 | 11 ⚑ | The outcome words claim more than the experiment shows (A13). Add a fixed scope phrase, or rename the terms? | **Fixed scope phrase**; renaming is a close second | low |
 | 12 ⚑ | The review's kill case: is the narrow result worth the remaining spend? | **Decide after page 10's test** | moderate |
@@ -46,17 +46,22 @@ $0, on the laptop. Everything else is wording in version 5.
 
 ## Page 7 — split seeds (A10)
 
-**The question.** Today each gate condition is counted across seeds
+**The question.** Version 4's text counts each gate condition across seeds
 separately: two of three for learning own-directed, two of three for
 named-other, and so on. So an arm can pass when every condition passes on
 two seeds but **no single seed passes all of them**. Should a seed have to
 pass everything to count?
 
 **The facts.** The rehearsal's gate code counts conditions separately
-(MEASURED). *Corrected 2026-10-06:* the frozen successor code is partly
-joint: learning own-directed and named-other must pass on the same seed,
-but the free model's channel-removal check is counted separately, and a
-seed that failed the gate can still be one of the two that read. On the
+(MEASURED). *Corrected 2026-10-06:* the frozen successor code is mostly
+joint already: learning own-directed and named-other must pass on the same
+seed. Over all 512 pass-or-fail patterns of the free model's three
+conditions on three seeds, it **never** passes the arm with no seed passing
+everything (separate counts do, on 6). Its remaining gap: **18 patterns
+where only one seed passes everything** and the arm still passes, because
+the channel-removal check is counted separately; and a seed that failed the
+gate can still be one of the two that read (MEASURED by the independent
+check, pull request 102). On the
 toy no verdict changes either way: arms T, C and M pass every condition on
 every seed, and the free model fails named-other on two seeds under both
 rules.
@@ -86,27 +91,45 @@ why they passed.
 
 **Recommendation: report the figure, stop using it to refuse a reading, and
 test the pairing directly** in the episode generator's self-test, which
-cannot refuse a good model. The reading itself already uses the measured
-rate, so it does not need the check. *Confidence: moderate.*
+cannot refuse a good model. **Dropping the veto loses little:** the
+registered code already has a direct, bit-for-bit pairing check that
+withholds a reading, control 4, which transplants the donor's states from
+before either twin's own turn and requires the output to be unchanged; a
+mismatched pair would break it. The reading itself already uses the
+measured rate, so it does not need the check. The independent check
+confirmed the arithmetic still holds when accuracy is measured on the same
+pairs. *Confidence: moderate.*
 **Alternative:** keep the veto as a stated restriction on which models can
 be read. *Changes the Gate C ruling RT-222.*
 
 ## Page 9 — which outcome wins, and the middle model's band (A10; changes page 5)
 
-**The question, part 1.** The free model is the one most likely to fail its
-learning gate (the design's own honest prior). If it does, and the two built
-models still learn and separate, is the outcome "substrate not a testbed"
-(R3) or "metric validated, degree not read: failed its gate on learning"?
-Version 4 calls the toy the second, although the toy's free model failed
-its gate. Page 5's table, as drafted, would make it the first.
+**First, what is already ruled.** The free model's first registered run
+is trained alone (step 5a). If it and its one re-run fail the learning
+gate, "the outcome is R3 and nothing else launches" (step 5a and stop S4).
+That is the design's most likely failure, and **this page does not change
+it**: the stop keeps the loss to the first release. The frozen registered
+code returns R3 for **any** free-model gate failure, by design, and **the
+toy is "substrate not a testbed" in that code today** (the freeze report,
+section 4.1), although version 4's text calls the toy the fifth term.
 
-**Recommendation: the second.** R3 is for the built models failing to
-learn; once they have learned and separated, the free model's failure is a
-fact about the free model, which the fifth term with its reason states.
-This keeps version 4's description of the toy true and matches how the
-rehearsal code already treats it. *Confidence: moderate.*
-**Alternative:** R3 for any of the three, as page 5 drafted; stricter, but
-then the toy and the most likely registered result are both R3.
+**The question, part 1.** The narrower case: the free model passes at step
+5a, its other seeds are trained at step 5b beside the built models, and
+they fail the learning gate, while the two built models learn and separate.
+Is that R3 or "metric validated, degree not read: failed its gate on
+learning"?
+
+**Recommendation: the second, for step 5b only.** By then the built models
+have learned and separated, so the free model's failure is a fact about the
+free model, which the fifth term with its reason states. It means changing
+section 3's R3 and R2 rows, page 5's rule 1 and its section 8.1 change, the
+frozen code's outcome function, and version 4's toy sentence: under this
+rule the toy would be the fifth term if its passing seed is taken as the
+step 5a run, R3 otherwise, and version 5 says so. *Confidence: moderate.*
+**Alternative:** R3 for any free-model gate failure, as page 5 drafted and
+the frozen code already does: simplest, no code change, and the toy is R3.
+**Not recommended:** extending this to step 5a, which would rewrite stop
+S4. **Please rule pages 5 and 9 together.**
 
 **Part 2.** If the middle model (arm M) reads but outside its predicted 0.3
 to 0.7, or more than 0.10 from its reference: **recommendation: no change of
@@ -129,7 +152,11 @@ nomination and reading unchanged. If it still reads near 0, the read finds
 the slot that is used. If it reads near 1, the instrument can be fooled this
 simply, and "metric validated" means much less. $0; a few hours on the
 laptop; method first; another session checks it. It is a constructed
-stand-in, not a trained model.
+stand-in, not a trained model. Because the separable model's slot is
+already read perfectly, an exact copy would tie with it, and tie-breaking,
+not ease of reading, could decide which the read favours; so the test is
+run both ways round (the copy stronger, then weaker, than the slot), as
+fixed in its method before it runs, and both results are reported.
 
 **Recommendation: yes, run it, and decide page 12 with its result.** The
 wording changes to the registration happen either way. *Confidence:
