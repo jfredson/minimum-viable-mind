@@ -55,7 +55,8 @@ was run) or **ARGUED**.
 | 2. The amendments to earlier rulings | **Pass, with one wording defect.** Of the four the note did not name, three are real consequences of what John ruled. The fourth (page 1 "amending" the collapse rule of the 2026-09-26 Gate C ruling) is not an amendment, and its note misdescribes what that ruling declined. Nothing needs John's word |
 | 3. The dated notes | **Pass.** Lines only added, each beside the ruling it names, each saying the ruling is left as written. One note carries the wording defect of check 2 |
 | 4. STATUS.md, project.toml and the three scripts | **Pass, with two small defects.** The order of owed work puts page 1's closure check before the text it checks; and the owed list decides a choice the outside dispositions left to John (removing the withheld figure from the output). The site exporter passes; the citation and single-source checkers add nothing new except references to frozen code that is on main and not on this branch |
-| 5. The record's list of what it could not settle | **Pass.** Each item is flagged in plain words and none is silently decided in the record itself. Four were then ruled in the follow-up; two remain (section 7) |
+| 5. The record's list of what it could not settle | **Pass.** Each item is flagged in plain words and none is silently decided in the record itself. Four were then ruled in the follow-up, and the self-test line after it; one remains, A2, with a choice inside it (section 8) |
+| The addendum commits `055988e` and `abb7e0a` | **Pass.** They record John's follow-up words exactly and point at the right drafted text (section 7) |
 
 ## 2. Check 1: John's words, and what each page records
 
@@ -227,7 +228,7 @@ parent commit `227cfb7`):
 |---|---|---|
 | A7, A8, A11, A12 (four wording fixes) not ruled | Yes. "The four wording fixes need John's word before version 5 carries them"; no ledger numbers given | **Ruled in the follow-up**: accepted as drafted |
 | A2 (the decision procedure, fatal) treated as owed | Yes. The record says it treats the work as owed and why (pages 5, 7, 8 and 9 cannot be registered without it), and gives A2 no ledger number. But see section 5, item 2: the owed list then fixes one of A2's open choices | **Not settled.** The follow-up did not cover it |
-| The generator self-test line on unseen combinations (outside dispositions, lines 122 to 129) | Yes, named beside the four wording fixes | **Not settled** |
+| The generator self-test line on unseen combinations (outside dispositions, lines 122 to 129) | Yes, named beside the four wording fixes | **Ruled later the same day** (RT-255; section 7) |
 | The date of the ruling RT-245 amends | Yes, and resolved correctly from the record (section 3b) | Needs nothing from John |
 | Page 11's second phrase, and whether the new "metric …" terms carry the phrase | Yes. The record adopts the drafted text and tells the writer of version 5 to ask | **Ruled in the follow-up**: both phrases apply, including to the three new terms |
 | Page 8's two pairing checks | Yes, with the record's reading stated as a reading | **Ruled in the follow-up**: control 4 withholds; the self-test is a second check. The record's reading was right |
@@ -239,11 +240,44 @@ John's follow-up words and date; A7, A8, A11 and A12 accepted as drafted
 numbers (RT-251 to RT-254, if A2 stays unnumbered); both scope phrases on
 every use, including the three new terms containing "metric"; control 4 as
 the withholding pairing check and the self-test as a second; and the matching
-updates to STATUS.md and step N25 of `project.toml`. Together with the two
+updates to STATUS.md and step N25 of `project.toml`. (The author has since added it; section 7 checks it.) Together with the two
 fixes of section 5 (order of the closure check, the withheld-figure choice)
 and the RT-220 wording of section 3a.
 
-## 7. Questions still needing John's word
+## 7. The two commits added to pull request 103 after this check began
+
+*Added 2026-10-06 (Pacific), 10:10, after the coordination session reported
+two new commits: `055988e` (the same-day addendum) and `abb7e0a` (John adopts
+the generator self-test, RT-255). Checked against the word-for-word note's
+"Follow-up, same day" section, which now also records the self-test ruling.*
+
+**What they change** (MEASURED, `git diff ccd3341 abb7e0a`): the record gains
+an addendum section and a dated "now ruled" line under each open item;
+STATUS.md's paragraph on open items and `project.toml` step N25 are updated.
+Nothing else; the dispositions files are byte-identical, so every line
+pointer above still holds.
+
+| Point | Result |
+|---|---|
+| John's words | **Match.** "accept all four, yes, yes" and "yes to the self-test, go with the recommendation" are exactly as in the note |
+| A7, A8, A11, A12 accepted as drafted, pointers | **Correct.** A7's text changes run from line 426 to its reason ending at 474; A8 478 to 486; A11 686 to 695; A12 701 to 707 |
+| Both scope phrases, including the three new "metric" terms | **Correct, and honestly labelled** as widening page 11's drafted text. The addendum also corrects "two of which contain 'metric'" to "all of which"; right, since all three new terms contain the word |
+| Control 4 withholds; the self-test a second check | **Correct**, matches the note |
+| The self-test on unseen combinations (RT-255) | **Correct, and the one difference is flagged.** The note's summary says "fresh episode"; the drafted text John adopted ("go with the recommendation") says "fresh or relaxed", and the addendum records the drafted words and says why. Right reading |
+| Ledger numbers RT-251 to RT-255 | **Correct**, continuing from RT-250; A2 still unnumbered |
+| The two recording readings (RT-245's date; "restore") | **Correct.** Recorded as left to the checker as housekeeping, John told and not objecting, exactly as the note says. This check agrees with both readings (sections 3b and 6) |
+| A2 | **Correct.** Still owed work, not ruled |
+| STATUS.md and project.toml | **Match** the addendum |
+
+**Still not fixed by the new commits** (none needs John except where section
+8 says so): the RT-220 wording under page 1 (section 3a); page 1's closure
+check listed before version 5 in the record and STATUS.md (section 5, item 1);
+the withheld-figure choice decided in the owed list (section 5, item 2); and
+the start-now disagreement between the record and project.toml (section 5,
+item 3). The addendum, like the record, is owed this check; this section is
+that check.
+
+## 8. Questions still needing John's word
 
 1. **The decision procedure (A2, the outside review's fatal finding).** Accept
    its drafted disposition: bring the frozen decision code to the new rules,
@@ -254,8 +288,7 @@ and the RT-220 wording of section 3a.
 2. **Inside that: the withheld figure.** Remove `arithmetic_withheld` from the
    output file (recommended), or keep it under one named field and reword the
    closure check to allow it there?
-3. **The generator self-test line** asserting that no fresh or relaxed
-   episode's combination occurs in training (outside dispositions, lines 122
-   to 129). Accept it?
 
-Nothing else in the record needs his word.
+The generator self-test line, listed here as a third question when this
+check was first written, was ruled by John later the same day (RT-255,
+section 7). Nothing else in the record needs his word.
