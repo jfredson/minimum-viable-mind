@@ -531,6 +531,18 @@ owed, not written here):
 |---|---|---|
 | RT-256 | A2 (fatal) | The final decision procedure that withholds bad readings and assigns the outcome had not run end to end on the rules as ruled |
 
+7. **Two refinements: "yes, stricter, go with the recommendation".** Ruled
+   later the same day (TimeAssembler decision entry `f4aa2083`). Both refine
+   items already numbered, so neither takes a new ledger number.
+   - **R2, "metric does not separate", also carries the scope phrase** "on
+     these constructed systems, for this intervention procedure", in the same
+     sentence, as "metric validated" and the three new terms do (refines
+     page 11, RT-250, and item 2 above).
+   - **The generator self-test on unseen combinations (RT-255, item 4 above)
+     takes the stricter reading:** it checks the specific pairing that makes
+     an episode fresh or relaxed, not only the whole episode's content, and
+     asserts that no such pairing occurs in the training stream.
+
 **Nothing from the packet or its follow-ups is now unruled**, except page 12,
 which waits on the decoy test.
 

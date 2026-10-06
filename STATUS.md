@@ -72,6 +72,9 @@ check. He also adopted a one-line generator self-test that no fresh or
 relaxed episode's combination appears in training, and accepted the fatal
 finding on the decision procedure (A2) as drafted, with the withheld figure
 removed from its output ("yes, remove"); that work is item 4 below.
+Two refinements followed ("yes, stricter, go with the recommendation"): R2,
+"metric does not separate", carries the scope phrase too, and the self-test
+checks the specific pairing that makes an episode fresh or relaxed.
 
 **What is now owed before the registration commit, in the order things wait
 on each other.** All $0, on the laptop. Items 3 and 4 proceed now,
