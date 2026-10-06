@@ -62,10 +62,15 @@ his words quoted for each page). In short:
   redesign before registration; if not, to continue.
 
 The rulings amend eleven earlier rulings in small ways; each carries a dated
-note beside it, listed in the ruling file. Five outside findings were not put
-to John as questions and have no recorded answer (the fatal A2 notice and four
-wording fixes); the ruling file says so, and the four wording fixes wait on
-his word.
+note beside it, listed in the ruling file. The first record left a few items
+unruled; later the same day John ruled them ("accept all four, yes, yes",
+recorded in the ruling file's follow-up section): the four outside wording
+fixes are accepted as drafted, both scope phrases apply (including to the
+three new terms that contain "metric"), and control 4 is the pairing check
+that withholds a reading, with the generator's self-test kept as a second
+check. He also adopted a one-line generator self-test that no fresh or
+relaxed episode's combination appears in training. The fatal A2 notice stays
+as owed work (item 5 below).
 
 **What is now owed before the registration commit, in the order things wait
 on each other.** All $0, on the laptop.
