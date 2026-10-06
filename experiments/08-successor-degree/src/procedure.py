@@ -136,7 +136,9 @@ class EvalData:
         self.dev = rd(self.dev_pairs)
         self.fresh = rd(self.fresh_pairs)
         self.relaxed = rd(self.relaxed_pairs)
-        self.gate = M.to_torch(G.batch(G.episodes_from_pairs(self.gate_pairs)), DEVICE)
+        gate_eps = G.episodes_from_pairs(self.gate_pairs)
+        self.gate = M.to_torch(G.batch(gate_eps), DEVICE)
+        self.gate_candidates = candidate_ids(gate_eps)
         self.dev_swap = M.to_torch(G.batch(G.named_swap(self.dev_pairs, G.DEV_SWAP_SEED)), DEVICE)
         self.fresh_swap = M.to_torch(G.batch(G.named_swap(self.fresh_pairs, G.FRESH_SWAP_SEED)), DEVICE)
         n = len(self.dev_pairs)
@@ -151,7 +153,7 @@ class EvalData:
 # ------------------------------------------------------------ the gate
 
 @torch.no_grad()
-def _accuracy(m, b, lesion=False, chunk=512):
+def _accuracy(m, b, lesion=False, chunk=512, with_predictions=False):
     """The rehearsal's `training.accuracy`: each condition separately, never
     combined, argmax over the whole vocabulary."""
     if lesion:
@@ -159,12 +161,35 @@ def _accuracy(m, b, lesion=False, chunk=512):
         b["acting"] = torch.zeros_like(b["acting"])
     n = b["tokens"].shape[0]
     hits = np.zeros(2, dtype=np.int64)
+    preds = []
     for s in range(0, n, chunk):
         sl = {k: v[s:min(s + chunk, n)] for k, v in b.items()}
         logits = m(sl)
+        preds.append(logits.argmax(-1).cpu().numpy())
         for c in (G.OWN, G.OTHER):
             hits[c] += int((logits[:, c].argmax(-1) == sl["targets"][:, c]).sum())
+    if with_predictions:
+        return int(hits[G.OWN]), int(hits[G.OTHER]), n, np.concatenate(preds)
     return int(hits[G.OWN]), int(hits[G.OTHER]), n
+
+
+def candidate_ids(episodes: list) -> np.ndarray:
+    """Per episode and condition, the vocabulary ids of the four candidate
+    answers that remain once "which agent am I" is taken away: the successor
+    of each of the four agents' earlier values on the item that condition's
+    action names (page 1, RT-237; the rehearsal's
+    `lesion_content_check.candidates`)."""
+    out = np.zeros((len(episodes), 2, G.N_AGENTS), dtype=np.int64)
+    for i, e in enumerate(episodes):
+        for c, item in ((G.OWN, e["own_item"]), (G.OTHER, e["other_item"])):
+            for a in range(G.N_AGENTS):
+                out[i, c, a] = G.VOCAB[G.SLOTS[G.successor(int(e["values"][a, item]))]]
+    return out
+
+
+def candidate_count(pred: np.ndarray, cand: np.ndarray, cond: int) -> int:
+    """How many answers in condition `cond` are one of the four candidates."""
+    return int((pred[:, cond][:, None] == cand[:, cond, :]).any(axis=1).sum())
 
 
 def binomial_bar(n: int) -> int:
@@ -180,11 +205,18 @@ def binomial_bar(n: int) -> int:
 def gate(m, arm: str, data: EvalData) -> dict:
     """Section 8.1, and the lesion of section 8.2 computed for every arm."""
     own, oth, n = _accuracy(m, data.gate)
-    l_own, l_oth, _ = _accuracy(m, data.gate, lesion=True)
+    l_own, l_oth, _, l_pred = _accuracy(m, data.gate, lesion=True, with_predictions=True)
     bar = data.gate_min if data.gate_min is not None else binomial_bar(n)
+    line = MS.ownership_free_line(n)
+    if n == MS.GATE_EPISODES:
+        assert line == MS.OWNERSHIP_FREE_LINE
     row = dict(episodes=n, bar=bar, own_correct=own, other_correct=oth,
                own=own / n, other=oth / n,
                lesioned_own_correct=l_own, lesioned_other_correct=l_oth,
+               # page 1 (RT-237): the field the ownership-free line is evaluated on
+               lesioned_candidate_own_correct=candidate_count(l_pred, data.gate_candidates, G.OWN),
+               lesioned_candidate_other_correct=candidate_count(l_pred, data.gate_candidates, G.OTHER),
+               ownership_free_line=line,
                own_clears=own >= bar, other_clears=oth >= bar,
                lesion_collapses_own=l_own < bar)
     row["seed_passes"] = row["own_clears"] and (arm != "F" or row["other_clears"])
@@ -720,42 +752,52 @@ def _json_default(o):
 # ------------------------------------------------------------ summarise
 
 def summarise(out_dir: str, gates_after_rerun: dict | None = None) -> dict:
-    """Every row in `out_dir` to the registered outcome. An arm's gate passes
-    on two seeds of three (section 8.1); arm F is read only if its lesion
-    collapses on two of three (section 8.2)."""
+    """Every row in `out_dir` to the registered outcome, under the rulings of
+    2026-10-06. Each seed is judged on its own gate conditions and every
+    withholding check (page 7: `measure.withhold`); an arm passes its
+    learning gate if two seeds each pass every learning condition, and reads
+    if two seeds count. Arm F's step 5a run is named in `steps.json` beside
+    the rows (`{"arm_F_step_5a_seed": s}`), if there is one. Nothing a
+    withheld seed computed is written to `summary.json` or `table.md`."""
     rows = {}
     for f in sorted(os.listdir(out_dir)):
         if f.startswith("row_") and f.endswith(".json"):
             r = json.load(open(os.path.join(out_dir, f)))
             rows[(r["arm"], r["seed"])] = r
+    steps_path = os.path.join(out_dir, "steps.json")
+    steps = json.load(open(steps_path)) if os.path.exists(steps_path) else {}
     arms_present = sorted({a for a, _ in rows}, key=M.ARMS.index)
     gates, verdicts, per_seed = {}, {}, {}
     for arm in arms_present:
         seeds = sorted(s for a, s in rows if a == arm)
-        gate_ok = sum(rows[(arm, s)]["gate"]["seed_passes"] for s in seeds) >= 2
-        if gates_after_rerun and arm in gates_after_rerun:
-            gate_ok = gates_after_rerun[arm]
-        gates[arm] = gate_ok
-        lesion_ok = sum(rows[(arm, s)]["gate"]["lesion_collapses_own"] for s in seeds) >= 2
         per_seed[arm] = {}
         for s in seeds:
             r = rows[(arm, s)]
             p = r.get("primary") or {}
-            w = MS.withhold(dict(nomination_status=r["nomination_status"], gate_passes=gate_ok,
-                                 described_only=p.get("described_only", True),
-                                 reading=p.get("reading"), dev_floor_clears=p.get("dev_floor_clears", False),
-                                 no_transplant=p.get("no_transplant"), controls=p.get("controls")), arm)
-            if arm == "F" and not lesion_ok and w["status"] == "reading":
-                w = dict(status=MS.NO_VERDICT, degree=None,
-                         reasons=["the ownership-lesion check did not collapse on two seeds of three"],
-                         arithmetic_withheld=w["degree"])
-            per_seed[arm][s] = w
+            w_in = dict(gate=r.get("gate"), nomination_status=r.get("nomination_status"),
+                        reading=p.get("reading"), controls=p.get("controls"))
+            for k in ("described_only", "dev_floor_clears"):
+                if k in p:
+                    w_in[k] = p[k]
+            per_seed[arm][s] = MS.withhold(w_in, arm)
         verdicts[arm] = MS.arm_outcome(per_seed[arm])
+        gates[arm] = verdicts[arm]["gate_passes"]
+        if gates_after_rerun and arm in gates_after_rerun:
+            gates[arm] = gates_after_rerun[arm]
+    step_5a = None
+    if "arm_F_step_5a_seed" in steps:
+        s5 = int(steps["arm_F_step_5a_seed"])
+        w = per_seed.get("F", {}).get(s5)
+        step_5a = dict(seed=s5, passed=bool(w and w["learning_passes"]))
     true_slot = {s: rows[("M", s)]["primary"]["true_slot"]["reading"]["degree"]
-                 for a, s in rows if a == "M" and rows[(a, s)].get("primary", {}).get("true_slot")}
-    res = dict(per_seed=per_seed, arms=verdicts, gates=gates)
-    if all(a in verdicts for a in ("T", "C", "F")):
-        res["outcome"] = MS.outcome(gates, verdicts, true_slot)
+                 for a, s in rows if a == "M" and (rows[(a, s)].get("primary") or {}).get("true_slot")}
+    res = dict(per_seed=per_seed, arms=verdicts, gates=gates, steps=steps)
+    res["outcome"] = MS.outcome(gates, verdicts, true_slot, step_5a)
+    # reported, never a veto (page 8)
+    res["no_transplant_reported"] = {
+        f"{a}/{s}": rows[(a, s)]["primary"]["no_transplant"]
+        for (a, s) in rows if (rows[(a, s)].get("primary") or {}).get("no_transplant")
+        and per_seed[a][s]["status"] == "reading"}
     raw = {a: [rows[(a, s)]["primary"]["reading"]["raw_difference"] for s in sorted(per_seed[a])
                if per_seed[a][s]["status"] == "reading"] for a in arms_present}
     res["across_seed_spread_of_raw_difference"] = {a: (float(np.std(v, ddof=1)) if len(v) > 1 else None)
@@ -781,15 +823,18 @@ def table(rows, per_seed, res) -> str:
     out = ["| arm/seed | reading or no verdict | site set | whole read / piece of the held-out count (band) | "
            "piece elsewhere: per position; average | whole, ownership-only, untouched (fresh) | "
            "no-transplant miss | control 3 median, 95th; below/equal/above | controls 7, 1 (arm T), 4 hold | "
-           "control 6 same / different moved | control 2 | true slot | rider | lesion own |",
-           "|" + "---|" * 14]
+           "control 6 same / different moved | control 2 | true slot | rider | lesion own | lesion candidates |",
+           "|" + "---|" * 15]
     for (arm, s), r in sorted(rows.items(), key=lambda kv: (M.ARMS.index(kv[0][0]), kv[0][1])):
         w = per_seed[arm][s]
         verdict = (f"{w['degree']:.4f}" if w["status"] == "reading"
                    else "no verdict: " + "; ".join(w["reasons"]))
         p = r.get("primary")
-        if not p:
-            out.append(f"| {arm}/{s} | {verdict} |" + " |" * 12 + f" {r['gate']['lesioned_own_correct']} |")
+        lc = r["gate"].get("lesioned_candidate_own_correct", "not run")
+        if not p or w["status"] != "reading":
+            # a withheld seed: nothing computed from its reading is printed (A2, item 7)
+            out.append(f"| {arm}/{s} | {verdict} |" + " withheld |" * 12
+                       + f" {r['gate']['lesioned_own_correct']} | {lc} |")
             continue
         sp, rd, c = p["site_set"], p["reading"], p["controls"]
         b = p["fit_floor"]
@@ -808,11 +853,15 @@ def table(rows, per_seed, res) -> str:
             f"{c['3']['below']}/{c['3']['equal']}/{c['3']['above']} | {c['7']['holds']}, {c['1']['holds']}, {c['4']['holds']} | "
             f"{_deg(c['6']['same_value_moved'])} / {_deg(c['6']['different_value_moved'])} | {c2['status']} | "
             f"{'' if not ts else _deg(ts['reading']['degree'])} | "
-            f"{'' if not rider else _deg(rider['reading']['degree'])} | {r['gate']['lesioned_own_correct']} |")
+            f"{'' if not rider else _deg(rider['reading']['degree'])} | {r['gate']['lesioned_own_correct']} | {lc} |")
     o = res.get("outcome")
-    out += ["", f"outcome: {o['term'] if o else 'not computed (arms missing)'}"]
+    out += ["", f"outcome: {o['term'] if o and o.get('code') else 'not computed: ' + str(o and o.get('reason'))}"]
+    if o and o.get("sentence"):
+        out.append(f"as reported: {o['sentence']}")
     if o and o.get("separation"):
-        out.append(f"separation (arm C lowest minus arm T highest): {o['separation']}")
+        sp = o["separation"]
+        out.append("separation (arm C lowest minus arm T highest): "
+                   + (f"{sp['value']:.4f} against {sp['bar']}" if sp.get("computed") else sp.get("reason", "")))
     if o and o.get("notes"):
         out += [f"note: {n}" for n in o["notes"]]
     return "\n".join(out)
@@ -846,6 +895,21 @@ def self_test() -> None:
           first_rows == [13, 48, 44, 40, 36, 32, 28, 24, 20, 16, 12, 8, 4], str(first_rows))
     check("the gate bar on 3,000 episodes is 790 by the one-sided binomial rule",
           binomial_bar(3000) == 790)
+    eps = G.episodes_from_pairs(G.eval_pairs("gate"))
+    cand = candidate_ids(eps)
+    tgt = np.stack([e["targets"] for e in eps])
+    check("ownership-free line: four distinct candidates per answer on every gate episode, the right "
+          "answer always among them (page 1, RT-237)",
+          all(len(set(cand[i, c])) == 4 and tgt[i, c] in cand[i, c] for i in range(len(eps)) for c in (0, 1)))
+    check("ownership-free line: answering the right value counts as a candidate, a non-value word does not",
+          candidate_count(tgt, cand, G.OWN) == len(eps)
+          and candidate_count(np.zeros_like(tgt), cand, G.OWN) == 0)
+    torch.manual_seed(0)
+    g = gate(M.build("F", "toy"), "F", EvalData(scale=0.02))
+    check("the gate writes the lesioned candidate count and its line for every arm and seed (RT-237, change 5)",
+          {"lesioned_candidate_own_correct", "lesioned_candidate_other_correct", "ownership_free_line"} <= set(g)
+          and g["ownership_free_line"] == MS.ownership_free_line(g["episodes"]),
+          f"{g['lesioned_candidate_own_correct']} of {g['episodes']}, line {g['ownership_free_line']}")
     check("the table prints a reading that was not made as 'no verdict' instead of failing",
           _deg(None) == "no verdict" and _deg(0.48859) == "0.4886")
     print(f"\n{len(fails)} failure(s)" if fails else "\nall checks passed")

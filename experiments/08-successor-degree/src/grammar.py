@@ -525,6 +525,25 @@ def self_test() -> None:
     check("a training content planted in the exclusion list is skipped",
           fingerprint(victim) not in got and planted2.skipped == 1 and len(got) == 48)
 
+    # --- control 5, unseen combinations (RT-255, adopted 2026-10-06) ---------
+    # No fresh or relaxed episode's combination occurs in the training stream.
+    # A "combination" is the episode's whole content (every random draw except
+    # which agent the model is), which is what `fingerprint` covers. Two parts:
+    # the default stream's exclusion list holds every fresh and relaxed content,
+    # so the stream cannot yield one at any step; and over sampled steps of the
+    # default stream none appears.
+    held = set(fps["fresh"]) | set(fps["relaxed"])
+    default_stream = TrainingStream(run_seed=0)
+    sampled = set()
+    for s in range(1, 201):
+        for p in default_stream.pairs_for_step(s, 48):
+            sampled.add(fingerprint(p["content"]))
+    check("control 5: no fresh or relaxed episode's combination occurs in the training stream "
+          "(every one is in the stream's exclusion list, and none in 200 sampled steps)",
+          held <= default_stream.excluded and not (sampled & held),
+          f"{len(held):,} fresh and relaxed contents; {len(sampled):,} training contents sampled, "
+          f"{len(sampled & held)} shared; {default_stream.skipped} skipped by the exclusion")
+
     # --- this machine builds the episodes the laptop built -----------------
     check("the evaluation sets are the ones built on the laptop (pinned digest)",
           eval_sets_digest() == EVAL_SETS_DIGEST)
