@@ -354,3 +354,61 @@ CASES = [
          expect="R3", reason_has=["step 5a"],
          about="arm F fails at step 5a; nothing else launched, only F's records exist"),
 ]
+
+
+# ------------------------------------------------------------ addendum, 2026-10-06
+# Added after the independent check (pull request 107) and John's two
+# follow-up rulings, committed BEFORE the changed code or these cases ran.
+# Method: the dated addendum at the end of
+# docs/2026-10-06-successor-a2-decision-procedure-method.md.
+
+def floor_fresh(rows, arm, seed):
+    rows[(arm, seed)]["primary"]["reading"]["floor"]["clears"] = False
+
+
+def c_C_fresh_floor(rows):
+    make_F_read(rows)
+    floor_fresh(rows, "C", 0)
+    floor_fresh(rows, "C", 1)
+
+
+def c_T_dev_floor(rows):
+    make_F_read(rows)
+    rows[("T", 0)]["primary"]["dev_floor_clears"] = False
+    rows[("T", 1)]["primary"]["dev_floor_clears"] = False
+
+
+def c_F_fresh_floor(rows):
+    make_F_read(rows)
+    floor_fresh(rows, "F", 0)
+    floor_fresh(rows, "F", 1)
+
+
+CASES += [
+    dict(name="C-fresh-floor", build=c_C_fresh_floor, steps={"arm_F_step_5a_seed": 0},
+         expect="fallback_read", seed_reasons_have={"C/0": ["floor on fresh episodes failed"],
+                                                    "C/1": ["floor on fresh episodes failed"]},
+         withheld=[("C", 0), ("C", 1)],
+         about="addendum: arm C misses the fresh-episode floor on seeds 0 and 1"),
+    dict(name="T-dev-floor", build=c_T_dev_floor, steps={"arm_F_step_5a_seed": 0},
+         expect="not_validated", reason_has=["floor on development episodes failed"],
+         withheld=[("T", 0), ("T", 1)],
+         about="addendum: arm T misses the development-episode floor on seeds 0 and 1"),
+    dict(name="F-fresh-floor", build=c_F_fresh_floor, steps={"arm_F_step_5a_seed": 0},
+         expect="fifth", reason_has=["floor on fresh episodes failed"],
+         withheld=[("F", 0), ("F", 1)],
+         about="addendum: arm F misses the fresh-episode floor on seeds 0 and 1"),
+]
+
+# Addendum expectations on existing cases (the originals above are unchanged):
+# R3 names the failed gate condition as well as the arm (check, defect 2);
+# R2 carries the scope phrase (John, 2026-10-06 follow-up).
+ADDENDUM_EXPECT = {
+    "toy": dict(sentence_has=["arm F", "named-other condition"]),
+    "toy-step5a-seed1": dict(sentence_has=["arm F", "named-other condition", "step 5a"]),
+    "T-fails-gate": dict(sentence_has=["arm T", "own-directed condition"]),
+    "F-fails-5a": dict(sentence_has=["arm F", "named-other condition", "step 5a"]),
+    "r2": dict(sentence_has=["metric does not separate on these constructed systems, "
+                             "for this intervention procedure"]),
+}
+
