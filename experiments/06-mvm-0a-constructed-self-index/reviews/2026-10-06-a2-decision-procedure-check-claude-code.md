@@ -230,3 +230,48 @@ the R3 sentence.
 - `base.json`, `off_*.json`: its outputs, with the input hashes.
 - `leaks.py`, `leaks.txt`, `coincidences.txt`: point 2.
 - `self-tests.txt`: `run_self_tests.sh` output on this branch.
+
+---
+
+## Re-check, 2026-10-06 (Pacific), against the fixed head `d776c70`
+
+*Same checking session, same scripts, unchanged, rerun on pull request 105's
+new head (merged into this branch). Outputs in
+`2026-10-06-a2-decision-procedure-check-scripts/recheck/`. $0.*
+
+- **Order: pass.** The method addendum and the three new cases with their
+  expectations (`400c265`, 10:24) came before the changed code and its
+  outputs (`d776c70`, 10:25; code and outputs share one commit, which is
+  fine because the expectations were already committed). The original 22
+  expectations are unchanged; the new ones are appended.
+- **Recompute: pass.** 25 of 25 cases agree three ways (my rules, the code,
+  the written expectation). Input hashes still match.
+- **Each rule turned off: pass, now for every listed rule.** Turning off the
+  fresh-episode floor changes C-fresh-floor (to R1) and F-fresh-floor (to R1);
+  turning off the development-episode floor changes T-dev-floor (to R1).
+  Every other rule changes the same cases as before (`recheck/veto_off.txt`).
+  **Defect 1 is closed.**
+- **Withheld readings: pass.** 54 withheld seed-cases, no leak
+  (`recheck/leaks.txt`).
+- **Defect 2 closed.** The "substrate not a testbed" (R3) sentence now names
+  the condition and seeds, for example "arm F failed its gate on learning
+  (named-other condition, on seeds 1 and 2)".
+- **R2 scope phrase: done** as John ruled: "metric does not separate on these
+  constructed systems, for this intervention procedure".
+- **Self-tests: pass** (`ALL SELF-TESTS PASS`), including the new stricter
+  control 5 test: of 1,600 fresh and relaxed answer tables (which marker
+  holds which value on which item), none appears among the 9,600 sampled
+  training tables.
+
+**For John: does the stricter ruling need training to exclude by pairing?**
+In my reading, yes, or something equivalent. The adopted line asserts that no
+fresh or relaxed episode's combination "occurs in the training stream". That
+is a claim about the whole stream. Under John's stricter meaning, the
+combination is the marker, item and value pairing. The training stream still
+excludes episodes only when the whole content matches, so an episode with a
+held-out pairing and different other content is not blocked. A 200-step
+sample that finds no overlap is evidence, not the guarantee the sentence
+states. To make the sentence true, either the stream must exclude by pairing,
+or every pairing in the registered training run must be checked in full. Either
+change touches the frozen training code and needs John's go. The other choice
+is to reword the registered line to say "in a sample of 200 steps".
