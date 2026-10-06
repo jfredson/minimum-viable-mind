@@ -1,5 +1,7 @@
 # Proposal for John, addendum: six more questions, from the outside reviews of proposal version 4 (pages 7 to 12)
 
+*Dated note, 2026-10-06 (Pacific): ruled. John ruled pages 7 to 12 on 2026-10-06, one page at a time, in a planning session; his words and what was adopted are recorded in `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`. The text below is left as written and still reads PROPOSED; that file says what stands.*
+
 *Written 2026-10-06 (Pacific) by a Claude Code session in its own worktree,
 on branch `gate-a-v4-tier2-dispositions`. **This is a proposal, not a
 ruling. Everything in it is PROPOSED.** It adds to the six pages already

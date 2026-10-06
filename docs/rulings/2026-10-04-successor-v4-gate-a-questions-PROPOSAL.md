@@ -1,5 +1,7 @@
 # Proposal for John, 2026-10-04: six questions from the inside review of proposal version 4, one page each
 
+*Dated note, 2026-10-06 (Pacific): ruled. John ruled pages 1 to 6 on 2026-10-06, one page at a time, in a planning session; his words and what was adopted are recorded in `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`. The text below is left as written and still reads PROPOSED; that file says what stands.*
+
 *Written 2026-10-04 (Pacific) by a Claude Code session in its own worktree,
 on branch `gate-a-v4-dispositions`. **This is a proposal, not a ruling.
 Everything in it is PROPOSED. Nothing is decided or registered, and no

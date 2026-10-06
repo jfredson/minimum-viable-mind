@@ -1,5 +1,7 @@
 # PROPOSAL — draft dispositions for the outside reviews of successor proposal version 4 (ChatGPT A1 to A13, Gemini G1 to G9)
 
+*Dated note, 2026-10-06 (Pacific): ruled. John ruled the drafted text behind pages 7 to 12 on 2026-10-06, one page at a time, in a planning session; his words and what was adopted are recorded in `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`. The text below is left as written and still reads PROPOSED; that file says what stands.*
+
 *Drafted 2026-10-06 (Pacific) by a Claude Code session in its own worktree,
 on branch `gate-a-v4-tier2-dispositions`, cut from `gate-a-v4-dispositions`
 (the inside-review dispositions, pull requests 95 and 96) with the two filed

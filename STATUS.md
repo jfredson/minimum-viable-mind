@@ -14,6 +14,83 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-10-06 — John has ruled all twelve pages of the registration-review packet; whether to go on waits on a $0 decoy test; nothing launched
+
+*This section is the current state. Everything below it is the older record,
+newest first, and is left exactly as written.*
+
+*Written 2026-10-06 (Pacific) by the Claude Code session that recorded John's
+rulings (branch `rulings-2026-10-06-gate-a-v4`). It wrote none of the packet,
+the drafted dispositions, the reviews or their checks. Nothing was rented or
+spent.*
+
+**What happened since the entry below.** Both outside reviews of version 4
+came back and were filed word for word: Gemini (pull request 99), whose nine
+findings all repeat the inside review's, and ChatGPT (pull request 100), whose
+thirteen add nine new ones, one of them fatal. Drafted answers to every
+finding, inside and outside, were written as two proposals with a twelve-page
+question packet for John (pull requests 95 and 101), and each was checked by a
+session that did not write it (pull requests 96 and 102, with a re-check of
+the fixes on 102).
+
+**John ruled all twelve pages on 2026-10-06**, one page at a time, in a
+planning session. The record is
+`docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md` (authorship mixed;
+his words quoted for each page). In short:
+
+- **The fatal flaw is answered** (page 1): the free model's gate no longer
+  asks for question sets the task does not have. It asks instead that, with
+  the acting channel switched off, the model still answers with the successor
+  of a value it was shown, on 1,546 or more of 3,000 episodes.
+- **Every read is fitted on 1,800 episodes, not 420** (page 4), because at the
+  registered width the smaller count failed on a stand-in.
+- **One outcome table names every reachable result** (pages 5 and 9), with
+  three new terms. If the free model passes its first run and then fails its
+  learning gate later, after the two built models have separated, that is the
+  weaker satisfactory result with the reason, not "substrate not a testbed".
+  A failure at its first run still stops everything, as ruled before.
+- **A seed counts only if it passes everything** (page 7). **The
+  no-transplant check is reported and no longer refuses a reading** (page 8).
+  The episode format is written down in full (page 3), the floor carries the
+  code's safeguard and a wrong figure is corrected (page 2), and four wording
+  fixes are accepted (page 6).
+- **The outcome words keep a fixed phrase**: "metric validated, on these
+  constructed systems, for this intervention procedure" (page 11).
+- **Whether to go on at all is not decided** (page 12). It waits on a $0
+  "decoy" test (page 10): does the read get fooled by an unused copy of the
+  owner's marker? If it is fooled, the recommendation on record is to stop or
+  redesign before registration; if not, to continue.
+
+The rulings amend eleven earlier rulings in small ways; each carries a dated
+note beside it, listed in the ruling file. Five outside findings were not put
+to John as questions and have no recorded answer (the fatal A2 notice and four
+wording fixes); the ruling file says so, and the four wording fixes wait on
+his word.
+
+**What is now owed before the registration commit, in the order things wait
+on each other.** All $0, on the laptop.
+
+1. The check of the ruling file, by a session that did not write it.
+2. The decoy test, method committed first, run both ways round, and its
+   check. John then decides page 12.
+3. The toy re-run of the nomination and reading with every read fitted on
+   1,800 episodes, method first, and its check.
+4. The closure check of page 1's repair (four parts, measured).
+5. The changes to the frozen decision code (`procedure.py` and `measure.py`
+   in `experiments/08-successor-degree/src/`, on main): the ruled outcome
+   table, the one-place seed rule, the new ownership-free line, the
+   no-transplant check moved out of the vetoes, every reason listed, and the
+   withheld figure (`arithmetic_withheld`) removed from the output. Then a run
+   on the toy and on made-up failure cases, method first, and its check.
+6. Version 5, the registration text, with every ruled change, and its check.
+7. The registration commit. Outer limit: 2026-10-18.
+
+Nothing was rented or spent in this session. About $228 of the $450 ceiling
+is spent, unchanged (the compute ledger,
+`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`).
+
+---
+
 ## WHERE THINGS STAND 2026-10-04 — the registration review is open; the inside review finds one fatal flaw (small to fix) and four serious ones; the outside-review packet is built, checked and with John
 
 *This section is the current state. Everything below it is the older record,

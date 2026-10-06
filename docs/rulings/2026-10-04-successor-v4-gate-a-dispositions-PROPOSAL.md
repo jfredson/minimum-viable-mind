@@ -1,5 +1,7 @@
 # PROPOSAL — draft dispositions for the inside review of successor proposal version 4 (findings RT-237 to RT-246)
 
+*Dated note, 2026-10-06 (Pacific): ruled. John ruled the drafted text behind pages 1 to 6 on 2026-10-06, one page at a time, in a planning session; his words and what was adopted are recorded in `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`. The text below is left as written and still reads PROPOSED; that file says what stands.*
+
 *Drafted 2026-10-04 (Pacific) by a Claude Code session in its own worktree,
 on branch `gate-a-v4-dispositions`, cut from the review branch
 `gate-a-registration-review-successor-v4` at `0fcc25c` (pull request 94).

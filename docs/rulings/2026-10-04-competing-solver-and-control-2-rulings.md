@@ -30,11 +30,26 @@ all seven"**. No compute was launched and no money was spent.*
    failed the gate on learning had it been gated as the free model is. For
    a model near chance the floor itself is close to zero and is decided by
    one or two episodes."
+
+   *Dated note, 2026-10-06 (Pacific), beside ruling 2, which is left as
+   written. "0.11 or more" is true on neither reading of the figures. John
+   ruled on 2026-10-06 that the sentence is written into the registration as
+   "its untouched rate was 0.109 or more above the no-transplant formula and
+   0.091 or more outside the rule's allowance", and that its last sentence
+   says that where the floor's requirement is not above zero no site set is
+   usable (the inside review of version 4, RT-244 and RT-238; `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`, page 2).*
 3. **The no-transplant formula is reported, not generalised.** It withholds
    a reading here, which is the right outcome. But it assumes wrong answers
    spread evenly over the other values, and this solver's do not, so the
    registration does not describe the formula as true of every model
    (version 4, lines 1178 to 1183).
+
+   *Dated note, 2026-10-06 (Pacific), beside ruling 3, which is left as
+   written. John ruled on 2026-10-06 that the no-transplant formula no
+   longer withholds a reading on any model: the rate is reported against
+   it, and the pairing is checked directly (the ChatGPT outside review of
+   version 4, A9; `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`, page 8). The solver still returns
+   no verdict, because no site set cleared the floor at nomination.*
 4. **The registered other-agent control is `control2_twenty_draws.control2`.**
    `rerun_controls.control2` is named as the earlier version, kept as the
    record of the re-run. The full-size registered code takes control 2 from
@@ -54,6 +69,14 @@ all seven"**. No compute was launched and no money was spent.*
    show what the measure does on a model that does the task by another
    route. The alternative, training a solver that learns from another cue
    before the review, was not taken.
+
+   *Dated note, 2026-10-06 (Pacific), beside ruling 7, which is left as
+   written. John ruled on 2026-10-06 that the weakness is written with both
+   halves: the free model is a toy model that does the task by another
+   route, and the measure returns no verdict on it; what the toy has no case
+   of is a model that does the task another way and still leaves the label
+   readable where it acts (the inside review of version 4, RT-246;
+   `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`, page 6).*
 
 ## Also merged on John's instruction
 

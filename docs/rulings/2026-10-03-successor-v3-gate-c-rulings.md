@@ -135,6 +135,17 @@ at the other positions of its site, with the rule itself unchanged.*
 6. The stop after the first full-size free-model run is unchanged: a miss of
    the floor there still goes to John before the second release.
 
+*Dated note, 2026-10-06 (Pacific), beside page 11, which is left as
+written. John ruled on 2026-10-06 one outcome table covering every state
+the registered runs can reach (`docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`, pages 5 and
+9). Arm M is also dropped if it fails its gate. Arm F's failed
+channel-removal check, and arm F failing its gate at step 5b after passing
+at step 5a, map to the fifth term when arms T and C separate. Three terms
+are added: "metric checked against the separable model only, degree read",
+the same with "degree not read", and "metric not validated" for a no
+verdict on arm T. A failure at step 5a stays R3, with nothing else
+launched.*
+
 ### Page 15 — the handshake's machine half (decision 18)
 
 **Option (b):** the registration says what is true today, that on the normal
