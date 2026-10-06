@@ -394,3 +394,79 @@ It did not rule, or edit version 4, the reviews, the rulings, the ledger,
 the frozen code, the author's measurement files or either PROPOSAL document.
 It did not write version 5, build the decoy, or change the decision
 procedure. It did not merge anything. It spent nothing and rented nothing.
+
+---
+
+## Re-check of the fixes at `dedd56c`, 2026-10-06 (later the same day)
+
+*The same checking session, in a fresh worktree. It read only the diff from
+`cbf2f03` to `dedd56c` (three files: the measurements file and both PROPOSAL
+documents), version 4's step 5a, stop S4 and section 7.2, and the frozen
+code's `measure.outcome` and `procedure.summarise` on main. Nothing was run
+that is not named here; $0.*
+
+**Nothing else changed (MEASURED).** `dedd56c` touches only those three
+files. In the measurements file it removes three lines only: the muddled
+sentence in the first correction note, itself added at `cbf2f03`. That
+sentence is reworded in place with a dated note. `025ce90`'s text is
+untouched (the removed wording does not occur in it). Every other change in
+the diff answers one of the nine defects or one of the "For John" points
+above.
+
+| Defect | Fix at `dedd56c` | Verdict |
+|---|---|---|
+| 1. Page 9 against step 5a and stop S4 | Narrowed to a free-model gate failure at step 5b. Step 5a and S4 are left as ruled. The R3 and R2 rows, the inside section 8.1 change and the toy sentence are now listed for change. The frozen code is described as returning R3 by design. The packet tells John to rule pages 5 and 9 together | **Holds**, with one precision point below |
+| 2. `arithmetic_withheld` | New "does not do" item 6, and new must-be-added item 7: remove the field, with John's alternative (keep it, and reword R-13 and the closure check's step 2) stated | **Holds**. Small slip: item 7 is printed between items 5 and 6 |
+| 3. A7's two contrary sentences | Text change 2b rewrites item 6's later sentence; W11 is retitled | **Holds** |
+| 4. A9's detection margin and control 7 | The margin sentence is now replaced openly, with a 0.56 chance of flagging at the learn-both bar (0.5589 measured; 0.5562 with accuracy measured on the same pairs). Control 4 is named as the pairing check; control 7 is said to check the transplant code only | **Holds**, with two small points below |
+| 5. The frozen gate described as too loose | The A10 text and page 7 now give 0 (frozen code), 6 (separate counts) and 18 (exactly one seed passes everything), and say the review's table fails under the frozen code. The figures are attributed to this check | **Holds**. The counts equal this check's part D output, and the "because the collapse is counted separately" explanation is right |
+| 6. "Every reason" | Reworded, and covered by the new items 6 and 7 | **Holds** |
+| 7. Small wording | "five pending rulings"; "R1 or the fifth term with a note"; the correction note reworded | **Holds** |
+| 8. The pull request 101 description | Rewritten: the code exists, the toy lands on R3, `arithmetic_withheld` is to be removed, page 9 is narrowed | **Holds** |
+| 9. Three feasibility-table remarks | One line each. Checked: `experiments/08-successor-degree/requirements-measure.txt` exists on main; the fit-once-and-reload disclosure is in version 4 section 7.2, item 1; the control 5 point is honestly left "not yet shown", with a generator self-test line proposed | **Holds** |
+
+**Page 9's reasoning, against version 4 and the frozen code (ARGUED, from
+the text and the code).**
+
+- **Step 5a and S4 really are left alone.** The new rule 1 makes a step 5a
+  failure after its re-run R3, which is what step 5a and S4 say.
+- **The 5a run is one of arm F's three seeds.** Step 5b's "eleven later
+  runs" make twelve with the 5a run, so "passes at 5a, fails the gate at 5b"
+  means one seed passed and two failed. That is a real, reachable case.
+- **It fits the frozen code's structure.** A step 5a stop launches nothing
+  else, and `summarise` computes an outcome only when arms T, C and F are
+  all present, so the code never sees a step 5a failure. `measure.outcome`
+  only has to stop returning R3 for an arm F gate failure, which A2's item 1
+  already covers.
+- **The toy sentence is right, with one condition the text does not state.**
+  The toy's arm F passes both conditions on seed 0 and fails named-other on
+  seeds 1 and 2.
+  - If seed 0 is the step 5a run, it passes, and seeds 1 and 2 fail at step
+    5b. That is the fifth term.
+  - If seed 1 or 2 is the step 5a run, it fails. "R3 otherwise" then needs
+    the re-run to fail too. The toy has no re-run (the freeze report says
+    so). If the toy's other failing seed stands in for the re-run, the
+    answer is R3. If seed 0 stood in for it, the re-run would pass and the
+    case would go on.
+
+  Version 5's toy sentence should add "the toy has no re-run" or "taking the
+  re-run as failed". This does not change the recommendation.
+
+**Smaller points left (none blocks).**
+
+- **The section 9 row.** A9's replacement middle column for "The
+  no-transplant allowance" still omits the flagging chance that item 3 now
+  prints. Add it, so the row and the item agree.
+- **"0.56" means two things.** In the new A9 sentence it is a probability.
+  In the version 4 sentence it replaces, 0.56 is the toy free model's
+  accuracy. Writing "a 56 per cent chance" would avoid misreading.
+- **Item 7 needs one more clause.** It says `withhold` "evaluates every check
+  whether or not a reading was computed". For a seed with no reading the
+  controls may never have run. Under the code's own "unevaluated counts as
+  failed" rule, item 7 would then list failures of checks that were never
+  run. Add "and lists a check that was not run as not run".
+
+**Re-check verdict.** All nine defects are fixed as asked, and nothing else
+changed. Page 9 is now consistent with version 4's step 5a and stop S4 and
+with the frozen code. The pull request is fit for John once the three small
+points are tidied, which can wait until version 5 is written.
