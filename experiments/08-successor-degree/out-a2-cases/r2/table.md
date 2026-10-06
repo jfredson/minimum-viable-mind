@@ -14,5 +14,5 @@
 | F/2 | 0.7100 | states (1,) at post-identity, 8 directions | 18 / 18 (10 to 28) | 145, 36, 13, 17, 22, 18, 18, 21, 16, 19; 25 | 0.5300, 0.0638, 0.0688 | +0.0054 | 0.0638, 0.0664; 8/3/9 | True, None, True | 0.6296 / 0.8915 | no verdict |  | no verdict | 582 | 2324 |
 
 outcome: metric does not separate
-as reported: metric does not separate
+as reported: metric does not separate on these constructed systems, for this intervention procedure
 separation (arm C lowest minus arm T highest): 0.4000 against 0.5

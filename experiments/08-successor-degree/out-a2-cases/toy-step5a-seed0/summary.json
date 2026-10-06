@@ -8,6 +8,7 @@
  "arms": {
   "C": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {
@@ -25,6 +26,12 @@
   },
   "F": {
    "gate_passes": false,
+   "learning_failures": {
+    "named-other condition": [
+     1,
+     2
+    ]
+   },
    "no_verdict": {
     "0": [
      "the ownership-free line was not run",
@@ -54,6 +61,7 @@
   },
   "M": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {
@@ -71,6 +79,7 @@
   },
   "T": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {

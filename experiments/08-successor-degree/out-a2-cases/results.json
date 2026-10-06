@@ -20,14 +20,16 @@
    "about": "the toy as it actually is: no step record, no ownership-free field",
    "expected": "R3",
    "got": "R3",
-   "term": "substrate not a testbed: arm F failed its gate on learning",
-   "sentence": "substrate not a testbed: arm F failed its gate on learning",
+   "term": "substrate not a testbed: arm F failed its gate on learning (named-other condition, on seeds 1 and 2)",
+   "sentence": "substrate not a testbed: arm F failed its gate on learning (named-other condition, on seeds 1 and 2)",
    "notes": [
     "arm F failed its gate on learning and no record shows it passed at step 5a"
    ],
    "checks": {
     "outcome code": true,
     "reason has 'arm F'": true,
+    "addendum: sentence has 'arm F'": true,
+    "addendum: sentence has 'named-other condition'": true,
     "F/0 lists 'ownership-free line was not run'": true,
     "F/1 lists 'failed its gate on learning'": true,
     "F/1 lists 'ownership-free line was not run'": true,
@@ -141,12 +143,15 @@
    "about": "the toy, if seed 1 is taken as arm F's step 5a run",
    "expected": "R3",
    "got": "R3",
-   "term": "substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4)",
-   "sentence": "substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4)",
+   "term": "substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4)",
+   "sentence": "substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4)",
    "notes": [],
    "checks": {
     "outcome code": true,
     "reason has 'step 5a'": true,
+    "addendum: sentence has 'arm F'": true,
+    "addendum: sentence has 'named-other condition'": true,
+    "addendum: sentence has 'step 5a'": true,
     "F/0 withheld": true,
     "F/1 withheld": true,
     "F/2 withheld": true,
@@ -219,10 +224,11 @@
    "expected": "R2",
    "got": "R2",
    "term": "metric does not separate",
-   "sentence": "metric does not separate",
+   "sentence": "metric does not separate on these constructed systems, for this intervention procedure",
    "notes": [],
    "checks": {
     "outcome code": true,
+    "addendum: sentence has 'metric does not separate on these constructed systems, for this intervention procedure'": true,
     "term is a registered term": true
    },
    "leaks": [],
@@ -672,12 +678,14 @@
    "about": "arm T fails its learning gate; arm C is no verdict too",
    "expected": "R3",
    "got": "R3",
-   "term": "substrate not a testbed: arm T failed its gate on learning",
-   "sentence": "substrate not a testbed: arm T failed its gate on learning",
+   "term": "substrate not a testbed: arm T failed its gate on learning (own-directed condition, on seeds 0 and 1)",
+   "sentence": "substrate not a testbed: arm T failed its gate on learning (own-directed condition, on seeds 0 and 1)",
    "notes": [],
    "checks": {
     "outcome code": true,
     "reason has 'arm T'": true,
+    "addendum: sentence has 'arm T'": true,
+    "addendum: sentence has 'own-directed condition'": true,
     "term is a registered term": true
    },
    "leaks": [],
@@ -703,12 +711,15 @@
    "about": "arm F fails at step 5a; nothing else launched, only F's records exist",
    "expected": "R3",
    "got": "R3",
-   "term": "substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4)",
-   "sentence": "substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4)",
+   "term": "substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4)",
+   "sentence": "substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4)",
    "notes": [],
    "checks": {
     "outcome code": true,
     "reason has 'step 5a'": true,
+    "addendum: sentence has 'arm F'": true,
+    "addendum: sentence has 'named-other condition'": true,
+    "addendum: sentence has 'step 5a'": true,
     "term is a registered term": true
    },
    "leaks": [],
@@ -731,6 +742,117 @@
      "the ownership-free line was not run",
      "read failed its floor: no size's piece reaches four fifths",
      "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   }
+  },
+  {
+   "name": "C-fresh-floor",
+   "about": "addendum: arm C misses the fresh-episode floor on seeds 0 and 1",
+   "expected": "fallback_read",
+   "got": "fallback_read",
+   "term": "metric checked against the separable model only, degree read",
+   "sentence": "metric checked against the separable model only on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose",
+   "notes": [
+    "arm C returned no verdict: the two-model fallback; arm F's figure has no upper reference"
+   ],
+   "checks": {
+    "outcome code": true,
+    "C/0 lists 'floor on fresh episodes failed'": true,
+    "C/1 lists 'floor on fresh episodes failed'": true,
+    "C/0 withheld": true,
+    "C/1 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "C/0": [
+     "floor on fresh episodes failed"
+    ],
+    "C/1": [
+     "floor on fresh episodes failed"
+    ]
+   }
+  },
+  {
+   "name": "T-dev-floor",
+   "about": "addendum: arm T misses the development-episode floor on seeds 0 and 1",
+   "expected": "not_validated",
+   "got": "not_validated",
+   "term": "metric not validated: floor on development episodes failed",
+   "sentence": "metric not validated on these constructed systems, for this intervention procedure: floor on development episodes failed",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'floor on development episodes failed'": true,
+    "T/0 withheld": true,
+    "T/1 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [
+    "T/0 0.0 in summary.json: ...ed\"     ]    },    \"read\": false,    \"readings\": {     \"2\": 0.0    },    ",
+    "T/0 0.0 in summary.json: ...on_margin_at_the_bar\": 0.0017619047619047597,    \"formula\": 0.0,    \"insi",
+    "T/0 0.0 in summary.json: ...    \"formula\": 0.0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate",
+    "T/0 0.0 in summary.json: ....0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate\": 0.0,    \"room",
+    "T/0 0.0 in summary.json: ...ed\",      \"reading computed\": \"passed\"     },     \"degree\": 0.0,     \"lea",
+    "T/0 0.0000 in table.md: ...eld | withheld | withheld | withheld | 753 | 3000 | | T/2 | 0.0000 | states ",
+    "T/0 0.0000 in table.md: ... 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000",
+    "T/0 0.0000 in table.md: ... (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000,",
+    "T/0 0.0000 in table.md: ...180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; ",
+    "T/0 0.0000 in table.md: ...ingle position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; 20/0/0 |",
+    "T/0 0.0000 in table.md: ...000 | +0.0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 ",
+    "T/0 0.0000 in table.md: ...0/0 | True, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 ",
+    "T/0 0.0000 in table.md: ...e, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 | 820 | 3",
+    "T/1 0.0 in summary.json: ...ed\"     ]    },    \"read\": false,    \"readings\": {     \"2\": 0.0    },    ",
+    "T/1 0.0 in summary.json: ...on_margin_at_the_bar\": 0.0017619047619047597,    \"formula\": 0.0,    \"insi",
+    "T/1 0.0 in summary.json: ...    \"formula\": 0.0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate",
+    "T/1 0.0 in summary.json: ....0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate\": 0.0,    \"room",
+    "T/1 0.0 in summary.json: ...ed\",      \"reading computed\": \"passed\"     },     \"degree\": 0.0,     \"lea",
+    "T/1 0.0000 in table.md: ...eld | withheld | withheld | withheld | 753 | 3000 | | T/2 | 0.0000 | states ",
+    "T/1 0.0000 in table.md: ... 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000",
+    "T/1 0.0000 in table.md: ... (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000,",
+    "T/1 0.0000 in table.md: ...180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; ",
+    "T/1 0.0000 in table.md: ...ingle position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; 20/0/0 |",
+    "T/1 0.0000 in table.md: ...000 | +0.0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 ",
+    "T/1 0.0000 in table.md: ...0/0 | True, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 ",
+    "T/1 0.0000 in table.md: ...e, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 | 820 | 3"
+   ],
+   "matches": true,
+   "per_seed_reasons": {
+    "T/0": [
+     "floor on development episodes failed"
+    ],
+    "T/1": [
+     "floor on development episodes failed"
+    ]
+   }
+  },
+  {
+   "name": "F-fresh-floor",
+   "about": "addendum: arm F misses the fresh-episode floor on seeds 0 and 1",
+   "expected": "fifth",
+   "got": "fifth",
+   "term": "metric validated, degree not read: floor on fresh episodes failed",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree not read: floor on fresh episodes failed",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'floor on fresh episodes failed'": true,
+    "F/0 withheld": true,
+    "F/1 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "F/0": [
+     "floor on fresh episodes failed"
+    ],
+    "F/1": [
+     "floor on fresh episodes failed"
     ]
    }
   }

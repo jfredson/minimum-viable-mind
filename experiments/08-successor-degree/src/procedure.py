@@ -788,7 +788,9 @@ def summarise(out_dir: str, gates_after_rerun: dict | None = None) -> dict:
     if "arm_F_step_5a_seed" in steps:
         s5 = int(steps["arm_F_step_5a_seed"])
         w = per_seed.get("F", {}).get(s5)
-        step_5a = dict(seed=s5, passed=bool(w and w["learning_passes"]))
+        step_5a = dict(seed=s5, passed=bool(w and w["learning_passes"]),
+                       failed_conditions=[MS._GATE_REASON[k] for k, v in ((w or {}).get("checks") or {}).items()
+                                          if k.endswith("learning") and v != MS.PASSED])
     true_slot = {s: rows[("M", s)]["primary"]["true_slot"]["reading"]["degree"]
                  for a, s in rows if a == "M" and (rows[(a, s)].get("primary") or {}).get("true_slot")}
     res = dict(per_seed=per_seed, arms=verdicts, gates=gates, steps=steps)

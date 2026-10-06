@@ -8,6 +8,7 @@
  "arms": {
   "C": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {
@@ -25,6 +26,7 @@
   },
   "F": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {
     "0": [
      "the channel removal did not collapse own-directed answers below the gate bar"
@@ -47,6 +49,7 @@
   },
   "M": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {
@@ -64,6 +67,7 @@
   },
   "T": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {

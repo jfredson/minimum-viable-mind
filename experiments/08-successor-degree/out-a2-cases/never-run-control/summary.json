@@ -8,6 +8,7 @@
  "arms": {
   "C": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {
     "0": [
      "control 4, the pairing check (too-early positions) was not run"
@@ -30,6 +31,7 @@
   },
   "F": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {
@@ -47,6 +49,7 @@
   },
   "M": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {
@@ -64,6 +67,7 @@
   },
   "T": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {

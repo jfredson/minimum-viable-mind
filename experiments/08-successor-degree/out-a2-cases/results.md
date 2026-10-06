@@ -2,9 +2,9 @@
 
 | # | case | expected | got | all checks | withheld figure found in outputs | term as reported |
 |---|---|---|---|---|---|---|
-| 1 | toy | R3 | R3 | yes | none | substrate not a testbed: arm F failed its gate on learning |
+| 1 | toy | R3 | R3 | yes | none | substrate not a testbed: arm F failed its gate on learning (named-other condition, on seeds 1 and 2) |
 | 2 | toy-step5a-seed0 | fifth | fifth | yes | none | metric validated, degree not read: failed its gate on learning |
-| 3 | toy-step5a-seed1 | R3 | R3 | yes | none | substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4) |
+| 3 | toy-step5a-seed1 | R3 | R3 | yes | none | substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4) |
 | 4 | r1 | R1 | R1 | yes | none | metric validated, degree read |
 | 5 | r2 | R2 | R2 | yes | none | metric does not separate |
 | 6 | fallback-read | fallback_read | fallback_read | yes | none | metric checked against the separable model only, degree read |
@@ -22,8 +22,11 @@
 | 18 | never-run-control | fallback_read | fallback_read | yes | none | metric checked against the separable model only, degree read |
 | 19 | no-transplant-outside | R1 | R1 | yes | none | metric validated, degree read |
 | 20 | F-channel-removal | fifth | fifth | yes | none | metric validated, degree not read: the channel removal did not collapse own-directed answers below the gate bar |
-| 21 | T-fails-gate | R3 | R3 | yes | none | substrate not a testbed: arm T failed its gate on learning |
-| 22 | F-fails-5a | R3 | R3 | yes | none | substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4) |
+| 21 | T-fails-gate | R3 | R3 | yes | none | substrate not a testbed: arm T failed its gate on learning (own-directed condition, on seeds 0 and 1) |
+| 22 | F-fails-5a | R3 | R3 | yes | none | substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4) |
+| 23 | C-fresh-floor | fallback_read | fallback_read | yes | none | metric checked against the separable model only, degree read |
+| 24 | T-dev-floor | not_validated | not_validated | yes | none | metric not validated: floor on development episodes failed |
+| 25 | F-fresh-floor | fifth | fifth | yes | none | metric validated, degree not read: floor on fresh episodes failed |
 
 Input rows (SHA-256):
 

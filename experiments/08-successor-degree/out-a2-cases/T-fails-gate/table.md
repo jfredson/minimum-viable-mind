@@ -13,5 +13,5 @@
 | F/1 | 0.6600 | states (1,) at action+3, 4 directions | 12 / 17 (10 to 27) | 14, 20, 23; 11 | 0.5675, 0.0563, 0.0563 | -0.0057 | 0.0587, 0.0650; 2/1/17 | True, None, True | 0.6790 / 0.8790 | no verdict |  | no verdict | 555 | 2238 |
 | F/2 | 0.7100 | states (1,) at post-identity, 8 directions | 18 / 18 (10 to 28) | 145, 36, 13, 17, 22, 18, 18, 21, 16, 19; 25 | 0.5300, 0.0638, 0.0688 | +0.0054 | 0.0638, 0.0664; 8/3/9 | True, None, True | 0.6296 / 0.8915 | no verdict |  | no verdict | 582 | 2324 |
 
-outcome: substrate not a testbed: arm T failed its gate on learning
-as reported: substrate not a testbed: arm T failed its gate on learning
+outcome: substrate not a testbed: arm T failed its gate on learning (own-directed condition, on seeds 0 and 1)
+as reported: substrate not a testbed: arm T failed its gate on learning (own-directed condition, on seeds 0 and 1)

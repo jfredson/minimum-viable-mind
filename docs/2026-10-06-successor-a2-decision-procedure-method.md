@@ -191,3 +191,56 @@ The independent check listed under A2 (outside dispositions, lines 303 to
 outcome with independent code from the ruling text; show withheld readings
 appear nowhere; turn each veto off in turn and see an outcome change; every
 registered term reached and no unregistered one; inputs confirmed by SHA-256.
+
+---
+
+## Addendum, 2026-10-06, after the independent check (pull request 107) and two follow-up rulings
+
+*Committed before any of the changes below ran. Same session as the method.*
+
+**What prompted it.** The independent check (pull request 107,
+`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-06-a2-decision-procedure-check-claude-code.md`
+on branch `check-a2-decision-procedure`) agreed with all 22 cases three ways,
+and found two defects: no case exercises the floor on fresh episodes, so
+switching that rule off changes nothing (the floor on development episodes is
+in the same state); and the R3 sentence names the arm but not the gate
+condition that failed. John then ruled two follow-ups, in his words "yes,
+stricter, go with the recommendation": R2 carries the scope phrase, and the
+control 5 self-test checks the pairing that makes an episode fresh or
+relaxed, not only the whole episode.
+
+**Changes.**
+
+1. **R3 names the condition.** The R3 reason and sentence give the arm, the
+   gate condition that failed (own-directed or named-other), and on which
+   seeds: for example "arm T failed its gate on learning (own-directed
+   condition, on seeds 0 and 1)".
+2. **R2's sentence** reads "metric does not separate on these constructed
+   systems, for this intervention procedure". The registered term itself is
+   unchanged.
+3. **Control 5, stricter.** Section 7.1 of version 4 defines a fresh episode
+   as an unseen *combination of marker words, items and values*. The added
+   check takes, for every fresh and relaxed episode, its assignment table:
+   the set of (marker word, item word, value) triples, ignoring turn order,
+   the named agent, which items the actions name and the action order. It
+   asserts that no such table occurs in any sampled training episode (the
+   same 200 steps). This is stronger than the whole-content check, which
+   would pass a training episode with the same table and a different turn
+   order. It is a sampled check, not a guarantee: the training stream's
+   exclusion is still by whole content, and this change does not alter the
+   generator (so the pinned first-batch digest is unaffected).
+
+**Three added cases, expectations written now:**
+
+| # | Case | What is changed | Expected outcome |
+|---|---|---|---|
+| 23 | Arm C misses the fresh-episode floor | as case 4, arm C seeds 0 and 1 fail the fresh floor | **"metric checked against the separable model only, degree read"**; C seeds 0 and 1 list "floor on fresh episodes failed" |
+| 24 | Arm T misses the development-episode floor | as case 4, arm T seeds 0 and 1 fail the development floor | **"metric not validated"**, reason "floor on development episodes failed" |
+| 25 | Arm F misses the fresh-episode floor | as case 4, arm F seeds 0 and 1 fail the fresh floor | **fifth term**, reason "floor on fresh episodes failed" |
+
+**Added expectations on existing cases** (originals kept unchanged in
+`a2_cases.py`; these are `ADDENDUM_EXPECT`): the sentence of case 1 (the toy)
+and case 3 names arm F and "named-other condition"; case 3 and case 22 also
+"step 5a"; case 21 names arm T and "own-directed condition"; case 5 (R2) reads
+"metric does not separate on these constructed systems, for this intervention
+procedure".

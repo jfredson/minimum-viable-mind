@@ -544,6 +544,27 @@ def self_test() -> None:
           f"{len(held):,} fresh and relaxed contents; {len(sampled):,} training contents sampled, "
           f"{len(sampled & held)} shared; {default_stream.skipped} skipped by the exclusion")
 
+    # Stricter (John, 2026-10-06 follow-up): the pairing that makes an episode
+    # fresh or relaxed, i.e. its assignment table of (marker word, item word,
+    # value) triples (version 4, section 7.1: unseen combinations of marker
+    # words, items and values), ignoring turn order, the named agent, the
+    # items the actions name and the action order. Sampled, not guaranteed:
+    # the stream's exclusion is by whole content.
+    def table(c):
+        return frozenset((int(c["markers"][a]), int(c["items"][j]), int(c["values"][a, j]))
+                         for a in range(N_AGENTS) for j in range(N_ITEMS_PER_EPISODE))
+    held_tables = {table(p["content"]) for name in ("fresh", "relaxed") for p in eval_pairs(name)}
+    sampled_tables = set()
+    st5 = TrainingStream(run_seed=0, excluded=default_stream.excluded)
+    for s in range(1, 201):
+        for p in st5.pairs_for_step(s, 48):
+            sampled_tables.add(table(p["content"]))
+    check("control 5, stricter: no fresh or relaxed episode's assignment table (which marker holds "
+          "which value on which item) occurs in 200 sampled training steps",
+          not (sampled_tables & held_tables),
+          f"{len(held_tables):,} fresh and relaxed tables; {len(sampled_tables):,} training tables, "
+          f"{len(sampled_tables & held_tables)} shared")
+
     # --- this machine builds the episodes the laptop built -----------------
     check("the evaluation sets are the ones built on the laptop (pinned digest)",
           eval_sets_digest() == EVAL_SETS_DIGEST)

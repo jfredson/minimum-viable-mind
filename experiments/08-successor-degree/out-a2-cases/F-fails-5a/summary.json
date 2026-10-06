@@ -5,6 +5,12 @@
  "arms": {
   "F": {
    "gate_passes": false,
+   "learning_failures": {
+    "named-other condition": [
+     1,
+     2
+    ]
+   },
    "no_verdict": {
     "0": [
      "the ownership-free line was not run",
@@ -41,10 +47,10 @@
   "arm_M": null,
   "code": "R3",
   "notes": [],
-  "reason": "arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4)",
+  "reason": "arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4)",
   "registered_term": "substrate not a testbed",
-  "sentence": "substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4)",
-  "term": "substrate not a testbed: arm F failed its gate on learning at step 5a (seed 1), after its re-run; nothing else launches (stop S4)"
+  "sentence": "substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4)",
+  "term": "substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4)"
  },
  "per_seed": {
   "F": {
