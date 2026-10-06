@@ -28,7 +28,7 @@ pages 10, 11 and 12.** They are marked ⚑.
 
 | Page | Question | Recommendation (yours to overturn) | Confidence |
 |---|---|---|---|
-| — | **The fatal one (A2): the final procedure that withholds bad readings and assigns the outcome has never run end to end.** Not a question, but you should know: **it is not closed.** It does not exist as code. It must be built, run on the toy and on made-up failure cases, and checked by another session before registration, at $0. Pages 7, 8 and 9 set three of its rules | Build it after you rule pages 7 to 9 | high |
+| — | **The fatal one (A2): the final procedure that withholds bad readings and assigns the outcome has never run end to end.** Not a question, but you should know: **it is not closed.** *Corrected 2026-10-06:* the procedure does exist, in the frozen successor code merged on 2026-10-05, and it has run end to end on the toy (landing on "substrate not a testbed", not the fifth term). What remains: change it to the rules you are about to rule, run made-up failure cases through it, and have another session check it, at $0 | Do that straight after you rule pages 5, 7, 8 and 9 | high |
 | 7 | When different seeds pass different conditions, does the arm pass? (A10) | **No: two seeds must each pass everything.** No toy verdict changes | moderate |
 | 8 | The no-transplant check would refuse good models (A9). Keep it as a veto? | **No: report it; check the pairing directly instead** | moderate |
 | 9 | If the free model fails its learning gate but the two built models separate, is that "substrate not a testbed" (R3) or "metric validated, degree not read"? And what if the middle model misses its band? (A10) | **The latter, with the reason**; the middle model's miss is reported, not a change of outcome. Changes page 5's table | moderate |
@@ -38,7 +38,8 @@ pages 10, 11 and 12.** They are marked ⚑.
 | — | Wording only: control 6 does not tell "who is acting" from "the answer" (A7); the toy is development evidence (A8); no verdict is not absence (A11); the uncertainty is for the raw difference only (A12) | Accept all four as drafted | high |
 
 **What "yes on all" adds before registration:** building and checking the
-decision procedure (A2), and the decoy test and its check (page 10). Both
+decision procedure to your rulings, its failure-case run and check (A2),
+and the decoy test and its check (page 10). Both
 $0, on the laptop. Everything else is wording in version 5.
 
 ---
@@ -51,7 +52,11 @@ named-other, and so on. So an arm can pass when every condition passes on
 two seeds but **no single seed passes all of them**. Should a seed have to
 pass everything to count?
 
-**The facts (MEASURED).** The gate code counts conditions separately. On the
+**The facts.** The rehearsal's gate code counts conditions separately
+(MEASURED). *Corrected 2026-10-06:* the frozen successor code is partly
+joint: learning own-directed and named-other must pass on the same seed,
+but the free model's channel-removal check is counted separately, and a
+seed that failed the gate can still be one of the two that read. On the
 toy no verdict changes either way: arms T, C and M pass every condition on
 every seed, and the free model fails named-other on two seeds under both
 rules.

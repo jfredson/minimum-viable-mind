@@ -14,6 +14,16 @@ session that did not write them** (the pairing rule of
 is given here or in the committed file named; ARGUED means reasoning a
 reader can dispute.*
 
+> **Correction, 2026-10-06 (later the same day; the text below is left as
+> committed at `025ce90`).** Part A's conclusion, that the decision
+> procedure "does not exist as code", is **wrong**. Its commands ran on this
+> branch, cut from `gate-a-v4-dispositions` before pull request 97 merged the
+> frozen successor code into main (`53ae82c`, 2026-10-05); the command
+> `ls -d experiments/08-successor-degree` was true of this branch and false
+> of main. See "Correction to Part A" at the end of this file. Parts B and C
+> are unaffected, except Part C's description of the gate code, corrected
+> there too.
+
 ## Part A. The final decision procedure does not exist as one runnable thing, so A2 is not closed
 
 **The commands, as the method pre-stated them, and what they returned
@@ -97,3 +107,54 @@ constructed cases of Part A, which wait on the code.
 It does not close A2: nothing was run end to end. Part B does not show what
 a registered-size model's errors will look like. Part C does not exercise
 either rule. Nothing here was checked by another session yet.
+
+## Correction to Part A, 2026-10-06
+
+**What was wrong.** The search ran only on this branch. On main,
+`experiments/08-successor-degree/src/` (frozen 2026-10-04, merged by pull
+request 97) holds the procedure. Read from `origin/main` for this
+correction:
+
+| Command | Output |
+|---|---|
+| `git ls-tree -r --name-only origin/main experiments/08-successor-degree` | `src/` with `measure.py` and `procedure.py`, among others; `out-freeze-tests/` with test T3a's `summary.json` and `table.md` on the toy |
+| `git show origin/main:.../src/measure.py > measure.py; python measure.py --self-test` (project Python, run from a scratch copy) | every check PASS, "all checks passed", among them withholding on control 7, 4 and 1 (arm T), the no-transplant rate, the fresh floor and the gate; two of three; the separation; outcomes R1, R2, R3, fifth, the fallback note, and arm M dropped |
+| `git show origin/main:.../out-freeze-tests/t3a-committed-reads/summary.json` | gates T, C, M pass and F fails; every T, C and M seed reads; every F seed is withheld with three reasons; outcome `substrate not a testbed` (R3), reason "arm(s) F failed the gate" |
+
+**What the frozen code does.**
+
+- **Withholds per seed**, in the output file and the table, with every
+  reason (`measure.withhold`).
+- **Aggregates seeds partly jointly.** `procedure.gate` needs own-directed
+  and, on arm F, named-other to pass on the same seed. Arm F's
+  channel-removal collapse is counted separately, two of three on its own.
+  The arm's gate verdict is then applied to every seed, so a seed that
+  failed the gate itself can still be one of the two that read.
+- **Assigns one of version 4's four terms** (`measure.outcome`). Any gate
+  failure on T, C or F gives R3. If arm T returns no verdict while arm C
+  reads, the result is R2. The two-model fallback gives R1 with a note.
+  Arm M's band is computed and printed but changes nothing.
+- **Has run end to end on the toy** (freeze test T3a, landing on R3) and on
+  untrained 10-million and 30-million parameter models (test T6).
+
+**What it does not do.**
+
+- It has no ownership-free line (RT-237).
+- It has no "metric not validated" term and no fallback terms (RT-241).
+- No constructed failure case has been run through `summarise`: no split
+  seeds, no overlapping failures on one seed, no arm M outside its band.
+- The self-test's "the toy lands on the fifth term" case passes every gate.
+  That is not the toy's real state.
+
+**What this changes.** A2 is still not closed. That is no longer because
+the procedure is missing. It is because:
+
+1. its rules are about to change under the pending rulings (RT-237, RT-241,
+   A9, A10 and page 9);
+2. the constructed cases have not been run through the whole path;
+3. another session has not checked it.
+
+**Correction to Part C.** Its sentence that "the gate code applies two of
+three condition by condition" is true of the rehearsal's `repairs.py` and
+only partly true of the frozen code, as described above. Part C's
+measurement, from the rehearsal's gate file, is unchanged.

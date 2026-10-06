@@ -58,11 +58,13 @@ Every new finding is recommended for acceptance, most with a change. None is
 recommended for decline.**
 
 - **A2, fatal (the final procedure that withholds readings and assigns
-  outcomes has never run end to end): not closed, and it cannot be closed at
-  $0 today**, because that procedure does not exist as code (MEASURED). It
-  has to be built, run on the toy and on constructed failure cases, and
-  checked by another session, before registration. Three of its rules are
-  John's to set first (pages 7, 8 and 9).
+  outcomes has never run end to end): not closed today.** *Corrected
+  2026-10-06:* the procedure **does** exist, in the frozen successor code on
+  main (`experiments/08-successor-degree`, pull request 97), and it has run
+  end to end on the toy, landing on R3 rather than the fifth term. What
+  remains: changing it to the rules John is about to rule (pages 5, 7, 8 and
+  9, and RT-237), running constructed failure cases through the whole path,
+  and another session's check. All $0, after he rules.
 - **A9, serious (the no-transplant check can withhold a correctly paired,
   competent model): the review's arithmetic holds and it read the formula
   correctly** (MEASURED). Recommended: stop using that check as a veto; check
@@ -111,7 +113,7 @@ disagree on the toy, was not restated by either outside review.)
 
 | Finding | Reviewer | The finding, in plain words | Severity as filed | Proposed ruling | Confidence | What closes it |
 |---|---|---|---|---|---|---|
-| A2 | ChatGPT | The final procedure that withholds bad readings and assigns the outcome has never been run end to end | fatal | **PROPOSED: ACCEPT.** Build it, run it on the toy and constructed failure cases, check it, before registration | high | The built procedure, its method-first run, and the check listed under A2, by another session. **Open** |
+| A2 | ChatGPT | The final procedure that withholds bad readings and assigns the outcome has never been run end to end | fatal | **PROPOSED: ACCEPT.** The frozen procedure (`experiments/08-successor-degree`) already runs end to end on the toy; bring it to the ruled rules, run constructed failure cases through it, check it, before registration | high | The changed code, its method-first constructed-case run, and the check listed under A2, by another session. **Open** |
 | A6 | ChatGPT | A readable but unused copy of the owner's marker could be what the read finds, so a separable model reads as entangled; nothing independent shows the high anchor is entangled | serious | **PROPOSED: ACCEPT WITH CHANGE.** Narrow what arm C is said to show; and, on John's go, a $0 decoy test before deciding to register | moderate | The text change; the decoy test's method, output and check if John orders it; otherwise carried open in the registration by name |
 | A7 | ChatGPT | Copying the donor's answer gives the same pattern on control 6 as copying who is acting, so control 6 does not tell them apart | serious | **PROPOSED: ACCEPT WITH CHANGE.** Strike the claim that control 6 discriminates; keep its two cells as description; rewrite weakness W11 | high | The text change; a search showing no sentence claims control 6 separates the two |
 | A8 | ChatGPT | The toy runs are development evidence, adapted after looking at outputs, not an untouched test of the final rule | worth-noting | **PROPOSED: ACCEPT.** Say so where the toy is quoted as a demonstration | high | The text change |
@@ -130,57 +132,109 @@ writer of version 5 fills in.
 
 ### A2 (fatal): the final decision procedure has never run end to end
 
-**Is the finding right? Yes (MEASURED).** This session's measurements,
-Part A: `experiments/08-successor-degree` does not exist; no Python file
-assigns a registered outcome term; the only per-seed withholding function
-(`rerun_v3.verdicts`) is written to version 3's rules and leaves out
-controls 1, 4 and 7 and the no-transplant check; the version 4 rehearsal
-code (`rerun_controls.py`) records failed controls as true-or-false fields
-printed beside the reading; and the gate code applies two of three to each
-condition separately. Version 4 itself says the withholding is "a
-requirement on the registered code" (section 6.4, item 5). Under the
-protocol's measurement rehearsal, item 5 (made-up cases driven to every
-outcome), the procedure as registered has not been rehearsed.
+**Corrected 2026-10-06.** The first version of this section said the
+procedure "does not exist as code". **That was wrong.** This session searched
+only its own branch, which was cut before pull request 97 merged the frozen
+successor code into main (`53ae82c`, 2026-10-05). On main,
+`experiments/08-successor-degree/src/measure.py` and `procedure.py` hold the
+procedure, frozen 2026-10-04 and reported in
+`docs/2026-10-04-successor-code-freeze.md` (on main). The corrected account
+follows; the correction is also recorded, dated, in this session's
+measurements file.
 
-**Status: not closed at $0, and not closable by running what exists.** The
-method committed before any output
-(`docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements-method.md`,
-Part A) describes the full run; its pre-stated rule was not to stitch one
-together, for two reasons: a procedure this session wrote to pass its own
-cases would be the fix's author checking the fix, and three of its rules are
-not yet ruled (pages 7, 8 and 9 of the addendum).
+**What the frozen code does (read from origin/main, ARGUED from the code,
+with its self-test re-run, MEASURED: `measure.py --self-test`, "all checks
+passed").**
 
-**What must be built (draft).**
+- **Per-seed withholding: yes.** `measure.withhold` replaces the reading
+  with "no verdict" and lists **every** reason, in the output file and the
+  table: the arm's gate failed; no site set or read failed its floor at
+  nomination; described-only; the whole-state floor missed on fresh or on
+  development episodes; the no-transplant rate outside 0.018; control 7
+  failed; control 1 failed on arm T; control 4 failed. A control that could
+  not be evaluated counts as failed. The withheld figure is kept in a
+  separate field (`arithmetic_withheld`).
+- **Seed aggregation: partly joint, partly separate.** In
+  `procedure.gate`, a seed passes the learning gate only if it clears
+  own-directed **and**, on arm F, named-other on that same seed
+  (`seed_passes`), and the arm passes if two seeds do: joint for those two
+  conditions. The channel-removal collapse on arm F is counted across seeds
+  **separately** (`lesion_ok`, two of three on its own). And the gate is
+  then applied **at arm level** to every seed (`withhold` receives the
+  arm's `gate_ok`), so a seed that itself failed the gate still counts
+  toward "two of three read" if the arm passed. Readings: `arm_outcome`
+  reads an arm if two or more seeds survive `withhold`.
+- **Outcome term: yes, one of the four version 4 terms.** `measure.outcome`
+  returns R3 if arm T, C or F failed its gate; otherwise R2 if T and C do
+  not separate; R1 if F reads; otherwise the fifth term with F's reasons.
+  Arm M's band and true-slot check is computed (`arm_M_check`,
+  `prediction_met`) and printed but never changes the term or the
+  sentence.
+- **It has run end to end on the toy** (freeze test T3a, on the committed
+  reads: `out-freeze-tests/t3a-committed-reads/summary.json` and
+  `table.md`, on main): every arm T, C and M seed reads; every arm F seed
+  is withheld with three reasons; **the outcome is R3, "substrate not a
+  testbed"**, because arm F fails its gate. The freeze report found and
+  reported this (its section 4.1): version 4 section 3 says the toy reaches
+  the fifth term. That is A10's precedence point, already found by the
+  freeze. It also ran end to end on untrained 10-million and 30-million
+  parameter models (test T6), each landing on R3.
 
-1. **One module**, proposed name `decide.py` (not yet written; the citation checker flags it for that reason), in the rehearsal folder now and carried to
-   the registered code folder later, with one entry point. Input: for each
-   arm (T, C, M, F) and seed, one record with named fields: the gate
-   conditions (own-directed, named-other, channel-removal collapse, the
-   ownership-free line of RT-237); the nominated site set, or none; the
-   piece's count against 144 of 180; the three accuracies; the
-   fresh-episode floor; controls 1 (arm T only), 4 and 7; the no-transplant
-   rate and formula (reported, or a veto, as page 8 rules); arm M's
-   true-slot reading. Output: per seed, a reading or "no verdict" with
-   **every** reason; per arm, read or not under the seed rule John picks on
-   page 7; the separation (lowest arm C reading minus highest arm T, among
-   seeds that read); and **exactly one** registered term with its reason. It
-   writes a machine-readable file and a table, and **a withheld reading
-   appears in neither**, only its reasons.
-2. **Its rules are written from the registration text**, not from the
-   rehearsal scripts, in the order section 3's outcome table sets (inside
-   disposition RT-241, as amended by page 9 here).
-3. **The run**, with its method committed first: on the toy's committed
-   records, and on the constructed cases (a) to (j) of the method note,
-   each with its expected term written beside it before it runs: a
-   withholding control failing on one seed and on two; the no-transplant
-   miss; overlapping failures on one seed; the split seeds of the A10
-   table; arm M outside its band, and too far from its true-slot reading;
-   arms T and C not separating; arm F reading on one seed; a negative
-   reading on arm T kept as observed. Together they must reach a positive
-   outcome (R1), a negative one (R2), the fifth term, both fallback terms,
-   "metric not validated" and R3.
-4. **Written by a session other than this one** (this session wrote the
-   method), at $0 on the laptop.
+**What it does not do, measured against the review and the pending
+rulings.**
+
+1. **No constructed failure cases through the whole path.** The self-test
+   drives `withhold`, `arm_outcome` and `outcome` separately with made-up
+   inputs and reaches R1, R2, R3, the fifth term, the fallback and "arm M
+   dropped". It does not run `summarise` on constructed row files, so it
+   never exercises: the arm-level gate meeting per-seed readings; split
+   seeds as in A10's table; overlapping failures on one seed; arm M reading
+   outside its band; arm T returning no verdict.
+2. **Two mappings that the inside dispositions (RT-241) call holes are
+   coded as version 4 wrote them:** arm T no verdict with arm C reading
+   gives R2 (nothing was compared, so R2 is wrong; RT-241 proposes "metric
+   not validated"); and the two-model fallback returns the R1 term with a
+   note, not a registered fallback term.
+3. **The battery replacement (RT-237) is absent**: no ownership-free line.
+4. **The no-transplant check is a veto** (A9 proposes it is not).
+5. **No independent check of the freeze's outcome logic against the
+   registration text** has been filed that this session found; the freeze
+   report is its author's.
+
+**Status: still not closed at $0 today, for a different reason.** The
+procedure exists and has run end to end on the toy, which is most of what
+A2 asks. What remains: (i) the rules it encodes are about to change,
+because four pending rulings change it (RT-237's line, RT-241's table, A9,
+A10, and page 9's precedence); a closure measurement on today's code would
+certify rules John is about to replace; (ii) the constructed cases have
+not been run through the whole path; (iii) another session's check. All
+three are $0 and can follow straight after John rules.
+
+**What must be added to `procedure.py` and `measure.py` (draft, replacing
+the earlier "what must be built").**
+
+1. **The ruled outcome table** in `measure.outcome`: R3 for arm T or C
+   failing its gate (or T, C or F, if John keeps page 5's draft); "metric
+   not validated" for arm T no verdict; the two fallback terms in place of
+   R1-with-a-note; arm M's missed prediction stated in the outcome's
+   sentence (page 9).
+2. **The seed rule John picks on page 7**, in one place: if joint, the
+   per-seed gate (every condition, the channel-removal collapse and the
+   ownership-free line included) is passed into `withhold` per seed, not
+   the arm's `gate_ok`; `lesion_ok` stops being a separate count.
+3. **The ownership-free line** (RT-237) as a field of `procedure.gate` and
+   a condition of the arm F gate.
+4. **The no-transplant check** moved from `withhold`'s reasons to the
+   reported fields, if page 8 is ruled as recommended.
+5. **A constructed-case run through `summarise`**: a small script that
+   writes row files for the toy plus the cases (a) to (j) of this
+   session's method note (each a copy of the T3a rows with named fields
+   changed), runs `procedure.summarise` on each directory, and compares
+   each term with the one written beside it before it ran. Method first;
+   by a session other than this one; $0.
+6. **The freeze's own self-test updated** so that "the toy lands on the
+   fifth term" is tested with the toy's real gate (arm F failing), not with
+   every gate passed.
 
 **Text change, section 10 (the rehearsal) and section 11, before step 1, one
 item added:**
@@ -188,13 +242,14 @@ item added:**
 > **R-13. The final decision procedure, run end to end before registration
 > (the ChatGPT outside review of version 4, A2, ruled [date]).** The module
 > that turns per-seed records into one registered term
-> (`experiments/rehearsal-successor-measure/src/decide.py` at [commit]) was
+> (`experiments/08-successor-degree/src/measure.py` and `procedure.py`,
+> `summarise`, at [commit]) was
 > run on the toy's committed records, giving [term], and on [n] constructed
 > cases, each landing on the term written beside it before it ran, among
 > them R1, R2, the fifth term, both fallback terms, "metric not validated"
 > and R3; no withheld reading appears in its output file or its table
 > (MEASURED: [findings file] at [commit]; checked at [commit]). The
-> registered code calls this module unchanged.
+> registered runs use this code unchanged.
 
 and in section 6.4, item 5, replace "A requirement on the registered code:
 it withholds the reading itself." with "**It withholds the reading itself;
@@ -205,7 +260,7 @@ the procedure that does so was rehearsed end to end before registration
 nor its run** (the closure rule gives a fatal finding's check to the tier 1
 reviewer of this Gate A). It must:
 
-1. **Recompute every outcome independently.** Without importing `decide.py`,
+1. **Recompute every outcome independently.** Without importing `measure.py` or `procedure.py`,
    write the rules from the registration text and compute the term for the
    toy records and every constructed case. Every term must equal the
    module's. This comes out wrong if the module disagrees with the text.
@@ -434,15 +489,22 @@ free model.
 Extends RT-241; the inside table (page 5 of the packet) is assumed.
 
 **Is the counterexample right? Yes (ARGUED, and MEASURED that the code does
-what the review describes).** `repairs.py` lines 157 to 160 count each gate
-condition across seeds separately and pass the arm if each count reaches
-two, so the review's table (each condition passing on two seeds, no seed
-passing all) passes. The toy has no such split: under either rule every toy
+what the review describes).** The rehearsal's `repairs.py` (lines 157 to
+160) counts each gate condition across seeds separately. *Corrected
+2026-10-06:* the frozen successor code on main is partly joint:
+`procedure.gate` requires own-directed and (on arm F) named-other on the
+same seed, but counts the channel-removal collapse separately, and applies
+the arm's gate to every seed, so a seed that failed the gate can still be
+one of the two that read (see A2). The review's table (each condition
+passing on two seeds, no seed passing all) would still pass the collapse
+column separately from the others. The toy has no such split: under either rule every toy
 gate verdict is the same (this session's measurements, Part C). The
 precedence conflict is real too: version 4 section 3 calls the toy the fifth
 term although arm F fails its gate (named-other on seeds 1 and 2), while R3
 says an arm failing its gate gives R3; and the inside table's rule 1, as
-drafted, would make the toy R3.
+drafted, would make the toy R3. The frozen code already does: its
+end-to-end toy run lands on R3, which the freeze report found and reported
+(`docs/2026-10-04-successor-code-freeze.md` on main, section 4.1).
 
 **Proposed rules (each John's; page 7 and page 9).**
 
@@ -561,7 +623,8 @@ the middle, and still show only that the probe finds arm T's deliberately
 exposed slot and misses the representation that matters elsewhere; "if
 that limited result is not worth the cost on its own, the registration
 should stop here." This is John's question (page 11). This file's view
-(ARGUED): A7, A9 and A13 can be fixed in text, and A2 at $0. A6 cannot be
+(ARGUED): A7, A9 and A13 can be fixed in text, and A2 at $0 once John has
+ruled the rules it encodes. A6 cannot be
 fixed in text, and it decides how limited the limited result is. The $0
 decoy test answers the sharpest version of it before any money moves.
 
@@ -579,4 +642,6 @@ rule 1), A13 (the outcome terms' use) and A6 (only if the decoy test runs).
 ## What this session did not do
 
 It did not rule, edit version 4 or any ruling, write version 5, build
-`decide.py`, or build the decoy. It did not check its own work.
+the decoy, or change the frozen successor code. It did not check its own work.
+**Its first version wrongly said the decision procedure did not exist as code,
+having searched only its own branch; corrected 2026-10-06 under A2.**
