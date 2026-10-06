@@ -18,7 +18,16 @@ method is `docs/decoy-test-method-2026-10-06.md`.*
   `experiments/rehearsal-successor-measure/out-decoy-test/checks_only.json`
   and `checks_only.log`. No stop fired.
 
-## What was running when this note was written
+## Update, about 10:26
+
+**The two ruled orientations finished** (scale 4 and 1/4, three seeds each,
+committed at `0ac3f7e`); findings at `docs/2026-10-06-decoy-test.md`. Only the
+supplementary scales (16 and 1/16), which do not enter the verdict, were
+started about 10:25 and may be cut off. Restart them with the commands below;
+discard their folders `out-decoy-test/scale_16/` and `scale_0.0625/` unless
+they hold `summary.json` (then they finished).
+
+## What was running when this note was first written
 
 Started about 10:09, in parallel, from
 `experiments/rehearsal-successor-measure/src/`:
