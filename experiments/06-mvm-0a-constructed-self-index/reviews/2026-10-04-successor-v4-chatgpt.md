@@ -2,7 +2,7 @@ Model: GPT-6 Astra (Medium), as the ChatGPT app reports it
 Date: 2026-10-06
 Mode: documents shown (the 33 packet files `packets/2026-10-04-successor-v4-tier2-chatgpt-01-of-33-…` to `…-33-of-33-…`, pasted as text, one per message, in one conversation); lookup setting not recorded
 
-*Filed word for word from John's paste by a Claude Code planning session. Only the review itself is filed: the one-line acknowledgements between files are not. Whether the pre-review check (quote the brief's four part headings and the first line of record 4) was run has not been recorded; the review's own first line says all 33 files arrived and were read in full.*
+*Filed word for word from John's paste by a Claude Code planning session. Only the review itself is filed: the one-line acknowledgements between files are not. The pre-review check (quote the brief's four part headings and the first line of record 4) was skipped before the review and run afterwards in the same conversation, at the end of this file; both quotations match the packet exactly (brief headings at file 01 lines 207-218, record 4's first line at file 02 line 4), so the reviewer still held the start of the packet.*
 
 ---
 
@@ -193,3 +193,25 @@ The current weakness sections should remain, but they cannot do all this work at
 Under `docs/outside-review-protocol.md`, A1 and A2 require reviewer-owned measured closure before registration. Serious findings require either measured closure or a named carried item with John’s ruling and reason. This document review supplies neither a closure measurement nor authorization to treat the gate as passed.
 
 **Kill case.** The experiment can spend its full envelope, separate T from C, place M in the middle and still learn only that its probe finds T’s deliberately exposed ownership slot while missing the causally relevant representation in other architectures. A readable but unused marker signal can make a separable solver look maximally entangled; copying an answer can satisfy the purported identity-transfer pattern; the no-transplant veto can exclude competent models with ordinary ownership-confusion errors; and F can remain unreadable throughout. The surviving claim would be that a particular search and intervention pipeline distinguishes its selected constructions. If that limited result is not worth the cost on its own, the registration should stop here.
+
+
+---
+**Prompt (John), same conversation, sent after the review:**
+
+> Before I file your review: quote the four part headings of the brief, and the first line of record 4, exactly as they appear in the packet.
+
+---
+**Answer (GPT-6 Astra):**
+
+The four part headings:
+
+1. Feasibility.
+2. Satisfied by the wrong thing.
+3. No verdict.
+4. Over-reading.
+
+The first line of record 4:
+
+```
+# Successor experiment, proposal version 4: reading how much of the act is organised around who is acting
+```
