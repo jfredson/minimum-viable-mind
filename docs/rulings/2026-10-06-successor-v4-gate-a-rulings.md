@@ -329,7 +329,7 @@ A10, and Gemini's G1 to G9) take the inside finding's number, as the outside
 dispositions dispose them (lines 84 to 104). **No ledger rows were written by
 this session**; rows for RT-237 to RT-250 are owed, with the earlier rows
 already listed as owed. *Later the same day, four more outside findings were
-ruled and take RT-251 to RT-254: see the addendum at the end of this file, "Follow-up, same day".*
+ruled and take RT-251 to RT-254, and one unlettered remark takes RT-255: see the addendum at the end of this file, "Follow-up, same day".*
 
 ---
 
@@ -351,13 +351,15 @@ ruled and take RT-251 to RT-254: see the addendum at the end of this file, "Foll
    self-test asserting no fresh or relaxed combination occurs in training).
    **Now ruled, in part (2026-10-06, follow-up):** A7, A8, A11 and A12 are
    accepted as drafted and take RT-251 to RT-254. **A2 stays owed work**, with
-   no ledger number. The generator self-test line is still unruled.
+   no ledger number. The generator self-test line was ruled later still (item
+   4 of the follow-up section) and takes RT-255.
 2. **Page 6's note says RT-245 and RT-246 amend wording ruled 2026-10-04.**
    RT-246 does (ruling 7 of 2026-10-04). RT-245 does not: the device it
    widens was ruled on 2026-10-03, late evening (ruling 3), and the
    2026-10-04 rulings say nothing about the device. This record notes RT-245
-   beside ruling 3 of 2026-10-03. **Not put to John; this record's reading
-   stands for the checker to confirm.**
+   beside ruling 3 of 2026-10-03. **Not put to John as a question. Left to
+   the checker as housekeeping (2026-10-06, follow-up); John was told and did
+   not object.**
 3. **Page 11's scope phrase.** John's note names one phrase, for "metric
    validated". The drafted text he adopted by "go with the recommendation"
    also pairs "degree read" with a second phrase ("as a ratio of two
@@ -375,8 +377,9 @@ ruled and take RT-251 to RT-254: see the addendum at the end of this file, "Foll
    as read here.
 5. **The word "restore" on page 8.** The drafted text does not drop the
    detection-margin sentence; it replaces it with the 56 per cent figure. This
-   record reads "restore" as keeping that replacement. **Not put to John;
-   this record's reading stands for the checker to confirm.**
+   record reads "restore" as keeping that replacement. **Not put to John as
+   a question. Left to the checker as housekeeping (2026-10-06, follow-up);
+   John was told and did not object.**
 
 ---
 
@@ -479,14 +482,28 @@ owed, not written here):
 | RT-252 | A8 | The toy runs are development evidence |
 | RT-253 | A11 | A no verdict is not evidence of absence |
 | RT-254 | A12 | The registered uncertainty belongs to the raw difference only |
+| RT-255 | the ChatGPT review's feasibility table, unlettered remark on control 5 | Different random seeds alone do not show that unseen combinations never appear in training |
+
+4. **The generator self-test on unseen combinations: "yes to the self-test,
+   go with the recommendation".** Ruled later the same day, in John's words
+   as quoted, and recorded in the word-for-word note's follow-up section.
+   Adopted as the outside dispositions draft it (lines 122 to 129): one line
+   added to the registered generator's self-test at section 11, step 3,
+   asserting that no fresh or relaxed episode's combination occurs in the
+   training stream, with its output cited in version 5. It answers an
+   unlettered remark in the ChatGPT review's feasibility table, numbered
+   RT-255 above. (The note's summary says "fresh episode"; the drafted text
+   John adopted says "fresh or relaxed", and that is what is recorded.)
+5. **The two recording readings** (that RT-245 amends the device ruling of
+   2026-10-03, not one of 2026-10-04; and that "restore" on page 8 means
+   keeping the drafted 56 per cent sentence) were left to the checker as
+   housekeeping, as the planning session framed them. John was told and did
+   not object.
 
 **Still not ruled, and not changed by this addendum:** A2, the fatal finding
 that the final decision procedure must be brought to these rulings and run on
 made-up failure cases, stays **owed work** with no ledger number (item 5 of
-the owed list above); the small generator self-test line on unseen
-combinations (outside dispositions, lines 122 to 129) is unruled; and this
-record's readings on RT-245's date and on the word "restore" were not put to
-John.
+the owed list above).
 
 This addendum, like the rest of the file, is owed a check by a session that
 did not write it.

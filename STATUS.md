@@ -68,7 +68,9 @@ recorded in the ruling file's follow-up section): the four outside wording
 fixes are accepted as drafted, both scope phrases apply (including to the
 three new terms that contain "metric"), and control 4 is the pairing check
 that withholds a reading, with the generator's self-test kept as a second
-check. The fatal A2 notice stays as owed work (item 5 below).
+check. He also adopted a one-line generator self-test that no fresh or
+relaxed episode's combination appears in training. The fatal A2 notice stays
+as owed work (item 5 below).
 
 **What is now owed before the registration commit, in the order things wait
 on each other.** All $0, on the laptop.
