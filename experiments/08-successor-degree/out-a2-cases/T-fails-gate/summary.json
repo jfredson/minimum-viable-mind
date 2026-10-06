@@ -8,6 +8,7 @@
  "arms": {
   "C": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {
     "0": [
      "control 7, the null transplant failed"
@@ -30,6 +31,7 @@
   },
   "F": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {
@@ -47,6 +49,7 @@
   },
   "M": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {
@@ -64,6 +67,12 @@
   },
   "T": {
    "gate_passes": false,
+   "learning_failures": {
+    "own-directed condition": [
+     0,
+     1
+    ]
+   },
    "no_verdict": {
     "0": [
      "failed its gate on learning (own-directed condition: failed)"
@@ -185,10 +194,10 @@
   },
   "code": "R3",
   "notes": [],
-  "reason": "arm T failed its gate on learning",
+  "reason": "arm T failed its gate on learning (own-directed condition, on seeds 0 and 1)",
   "registered_term": "substrate not a testbed",
-  "sentence": "substrate not a testbed: arm T failed its gate on learning",
-  "term": "substrate not a testbed: arm T failed its gate on learning"
+  "sentence": "substrate not a testbed: arm T failed its gate on learning (own-directed condition, on seeds 0 and 1)",
+  "term": "substrate not a testbed: arm T failed its gate on learning (own-directed condition, on seeds 0 and 1)"
  },
  "per_seed": {
   "C": {

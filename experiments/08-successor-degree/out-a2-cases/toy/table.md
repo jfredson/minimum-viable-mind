@@ -13,6 +13,6 @@
 | F/1 | no verdict: failed its gate on learning (named-other condition: failed); the ownership-free line was not run; read failed its floor: no size's piece reaches four fifths; reported for description only (the site set was chosen with the piece rule switched off) | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | 555 | not run |
 | F/2 | no verdict: failed its gate on learning (named-other condition: failed); the ownership-free line was not run; read failed its floor: no size's piece reaches four fifths; reported for description only (the site set was chosen with the piece rule switched off) | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | 582 | not run |
 
-outcome: substrate not a testbed: arm F failed its gate on learning
-as reported: substrate not a testbed: arm F failed its gate on learning
+outcome: substrate not a testbed: arm F failed its gate on learning (named-other condition, on seeds 1 and 2)
+as reported: substrate not a testbed: arm F failed its gate on learning (named-other condition, on seeds 1 and 2)
 note: arm F failed its gate on learning and no record shows it passed at step 5a

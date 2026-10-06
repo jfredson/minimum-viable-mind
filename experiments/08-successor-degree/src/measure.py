@@ -276,6 +276,12 @@ def arm_outcome(seed_rows: dict) -> dict:
                seeds_passing_learning=learned, gate_passes=len(learned) >= 2,
                no_verdict={s: r["reasons"] for s, r in seed_rows.items()
                            if r["status"] != "reading"})
+    fails = {}
+    for sd, r in sorted(seed_rows.items()):
+        for name, state in (r.get("checks") or {}).items():
+            if name.endswith("learning") and state != PASSED:
+                fails.setdefault(_GATE_REASON[name], []).append(sd)
+    out["learning_failures"] = fails
     out["read"] = len(read) >= 2
     if out["read"] and len(read) < len(seed_rows):
         out["reported_not_deciding"] = sorted(set(seed_rows) - set(read))
@@ -333,6 +339,8 @@ def sentence(code: str, reason: str | None) -> str:
         s = f"metric checked against the separable model only {SCOPE_METRIC}, degree not read"
     elif code == "not_validated":
         s = f"metric not validated {SCOPE_METRIC}"
+    elif code == "R2":
+        s = f"metric does not separate {SCOPE_METRIC}"
     else:
         s = term
     return s + (f": {reason}" if reason else "")
@@ -369,8 +377,9 @@ def outcome(gates: dict, arms: dict, true_slot_M: dict | None = None,
 
     # rule 1: the gate on learning comes first
     if step_5a is not None and not step_5a.get("passed", False):
-        return done("R3", f"arm F failed its gate on learning at step 5a (seed {step_5a.get('seed')}), "
-                          "after its re-run; nothing else launches (stop S4)")
+        conds = ", ".join(step_5a.get("failed_conditions") or []) or "condition not recorded"
+        return done("R3", f"arm F failed its gate on learning at step 5a ({conds}, on seed "
+                          f"{step_5a.get('seed')}), after its re-run; nothing else launches (stop S4)")
     for a in ("T", "C", "F"):
         if a not in arms:
             return dict(code=None, term=None, reason=f"arm {a} has no records", notes=notes, arm_M=m)
@@ -380,8 +389,12 @@ def outcome(gates: dict, arms: dict, true_slot_M: dict | None = None,
         failed.append("F")
         notes.append("arm F failed its gate on learning and no record shows it passed at step 5a")
     if failed:
-        names = " and ".join(f"arm {a}" for a in failed)
-        return done("R3", f"{names} failed {'its' if len(failed) == 1 else 'their'} gate on learning")
+        def what(a):
+            lf = arms[a].get("learning_failures") or {}
+            conds = "; ".join(f"{c}, on seed{'s' if len(v) > 1 else ''} "
+                              + " and ".join(str(x) for x in v) for c, v in lf.items())
+            return f"arm {a} failed its gate on learning" + (f" ({conds})" if conds else "")
+        return done("R3", "; ".join(what(a) for a in failed))
     # rule 2: the readings decide
     if not arms["T"]["read"]:
         return done("not_validated", _reasons(arms["T"]))
@@ -546,7 +559,12 @@ def self_test() -> None:
           outcome(dict(g, M=False), dict(T=T, C=C, M=Mm, F=F_read))["code"] == "R1")
     close = arm_outcome({0: R(0.3), 1: R(0.35), 2: R(0.4)})
     check("outcome: anchors do not separate -> R2",
-          outcome(g, dict(T=T, C=close, M=Mm, F=F_read))["code"] == "R2")
+          outcome(g, dict(T=T, C=close, M=Mm, F=F_read))["code"] == "R2"
+          and SCOPE_METRIC in outcome(g, dict(T=T, C=close, M=Mm, F=F_read))["sentence"])
+    T_gf = arm_outcome({0: dict(NV("x", False), checks={"own-directed learning": FAILED}),
+                        1: dict(NV("x", False), checks={"own-directed learning": FAILED}), 2: R(0.0)})
+    check("outcome: R3 names the failed condition and its seeds",
+          "own-directed condition, on seeds 0 and 1" in outcome(dict(g, T=False), dict(T=T_gf, C=C, M=Mm, F=F_read))["sentence"])
     C_nv = arm_outcome({s: NV("floor missed on fresh episodes") for s in range(3)})
     o2 = outcome(g, dict(T=T, C=C_nv, M=Mm, F=F_read))
     check("outcome: arm C no verdict, arm F reads -> the fallback, degree read",

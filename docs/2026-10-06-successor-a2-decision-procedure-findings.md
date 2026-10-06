@@ -98,3 +98,25 @@ control 4, the fresh floor, the piece floor, the gate, the seed rule) and see
 at least one case's outcome change; (4) every registered term reached and no
 unregistered one; (5) inputs confirmed by SHA-256 (listed in `results.md`);
 (6) file it.
+
+---
+
+## Addendum, 2026-10-06: after the independent check (pull request 107) and John's follow-ups
+
+The method addendum and the three new cases were committed first (`400c265`). Then the code changed:
+- R3 now names the gate condition that failed and the seeds it failed on.
+- R2's sentence now carries the scope phrase.
+- Control 5 now also checks each fresh and relaxed episode's assignment table, meaning which marker holds which value on which item.
+
+**All 25 cases match their expectations on the first run**, including the
+addendum's expectations on cases 1, 3, 5, 21 and 22:
+- **Case 23, arm C misses the fresh-episode floor:** "metric checked against the separable model only, degree read".
+- **Case 24, arm T misses the development-episode floor:** "metric not validated: floor on development episodes failed".
+- **Case 25, arm F misses the fresh-episode floor:** "metric validated, degree not read: floor on fresh episodes failed".
+
+The fresh and development floors are each now exercised by a case. The
+stricter control 5 check found 1,600 fresh and relaxed tables, and none of
+them among 9,600 sampled training tables. It is a sampled check, because the
+stream's exclusion is still by whole content. All self-tests pass
+(`experiments/08-successor-degree/out-a2-cases/self-tests.txt`). Still
+unchecked: the checker's point 3 needs rerunning with the new cases.

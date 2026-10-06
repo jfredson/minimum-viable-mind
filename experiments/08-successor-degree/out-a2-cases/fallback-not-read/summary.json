@@ -8,6 +8,7 @@
  "arms": {
   "C": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {
     "0": [
      "control 7, the null transplant failed"
@@ -30,6 +31,7 @@
   },
   "F": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {
     "0": [
      "read failed its floor: no size's piece reaches four fifths",
@@ -56,6 +58,7 @@
   },
   "M": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {
@@ -73,6 +76,7 @@
   },
   "T": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {

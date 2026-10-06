@@ -75,6 +75,8 @@ def main():
             checks[f"reason has '{t}'"] = t in (o.get("reason") or "")
         for t in case.get("sentence_has", []):
             checks[f"sentence has '{t}'"] = t in (o.get("sentence") or "") + " ".join(o.get("notes") or [])
+        for t in getattr(K, "ADDENDUM_EXPECT", {}).get(case["name"], {}).get("sentence_has", []):
+            checks[f"addendum: sentence has '{t}'"] = t in (o.get("sentence") or "")
         for key, texts in case.get("seed_reasons_have", {}).items():
             a, s = key.split("/")
             listed = res["per_seed"][a][int(s)]["reasons"]

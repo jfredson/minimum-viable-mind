@@ -8,6 +8,7 @@
  "arms": {
   "C": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {
@@ -25,6 +26,7 @@
   },
   "F": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {
@@ -42,6 +44,12 @@
   },
   "M": {
    "gate_passes": false,
+   "learning_failures": {
+    "own-directed condition": [
+     0,
+     1
+    ]
+   },
    "no_verdict": {
     "0": [
      "failed its gate on learning (own-directed condition: failed)"
@@ -62,6 +70,7 @@
   },
   "T": {
    "gate_passes": true,
+   "learning_failures": {},
    "no_verdict": {},
    "read": true,
    "readings": {

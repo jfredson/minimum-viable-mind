@@ -18,6 +18,7 @@ grammar.py self-test
   [PASS] streamed training content never matches an evaluation set  19,200 training contents over 400 steps, 0 shared
   [PASS] a training content planted in the exclusion list is skipped
   [PASS] control 5: no fresh or relaxed episode's combination occurs in the training stream (every one is in the stream's exclusion list, and none in 200 sampled steps)  1,600 fresh and relaxed contents; 9,600 training contents sampled, 0 shared; 0 skipped by the exclusion
+  [PASS] control 5, stricter: no fresh or relaxed episode's assignment table (which marker holds which value on which item) occurs in 200 sampled training steps  1,600 fresh and relaxed tables; 9,600 training tables, 0 shared
   [PASS] the evaluation sets are the ones built on the laptop (pinned digest)
   [PASS] the first training batch of seed 0 is the one built on the laptop (pinned digest)
   [PASS] even-split rule (RT-58): an even row count is accepted, an odd one is not
@@ -187,6 +188,7 @@ measure.py self-test: each case's landing is written in the test before it runs
   [PASS] outcome: arm T fails its gate -> R3 whatever else
   [PASS] outcome: arm M fails its gate -> dropped, term unchanged
   [PASS] outcome: anchors do not separate -> R2
+  [PASS] outcome: R3 names the failed condition and its seeds
   [PASS] outcome: arm C no verdict, arm F reads -> the fallback, degree read
   [PASS] outcome: arm C no verdict, arm F no verdict -> the fallback, degree not read, with the reason
   [PASS] outcome: arm T no verdict -> metric not validated (not R2)
