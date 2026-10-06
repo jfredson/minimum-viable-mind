@@ -1,26 +1,9 @@
 # Check of the four 10-million development runs (arms M, T, C, F, seed 0)
 
-> **INCOMPLETE (checkpoint 2026-10-06 about 17:15Z).** The first checking
-> session was cut off on 2026-10-05 while the laptop procedure for arms M, C
-> and F was running (all three started together at about 01:25Z; their output
-> stops at 01:37Z with no error and no row file, so the session was stopped,
-> not the procedure failing). A second session on 2026-10-06 reran them one at
-> a time. Done: arm T (first session, 1,749 s), arm C (2,159 s) and arm M
-> (1,607 s), rows in `experiments/08-successor-degree/out-dev-10m-check/`.
-> Running at checkpoint: arm F. Sections 7 to 9 below are not yet brought up
-> to date with those rows.
->
-> **To finish**, from `experiments/08-successor-degree/` in this worktree:
->
->     ~/Code/minimum-viable-mind/.venv/bin/python src/procedure.py model --ckpt ~/Code/minimum-viable-mind/experiments/08-successor-degree/artifacts/succ_f_10m_seed0/succ_f_10m_seed0.pt --seed 0 --out out-dev-10m-check > out-dev-10m-check/stdout_F.txt 2>&1
->     ~/Code/minimum-viable-mind/.venv/bin/python src/procedure.py summarise --dir out-dev-10m-check
->
-> (skip the first if `row_F_seed0.json` is already present), then fill
-> section 7, check sections 1 to 8 against the rows, commit, push, open the
-> pull request, and add its link to the TimeAssembler task.
-
-*Written 2026-10-04 (Pacific; the work ran 2026-10-05 00:50Z to about
-02:30Z) by a Claude Code checking session, on branch `check-dev-10m`, cut
+*Written 2026-10-04 (Pacific; the work ran 2026-10-05 from 00:50Z) by a
+Claude Code checking session, and finished 2026-10-06 (15:29Z to 17:20Z) by
+a second checking session that also wrote none of the code, launched none of
+the runs and wrote none of the ledger rows, on branch `check-dev-10m`, cut
 from the main line at `53ae82c`. Method committed and pushed first, at
 `b55dcd3` (`docs/2026-10-04-development-runs-check-method.md`). Laptop,
 processor only. Nothing rented, nothing created, nothing trained, nothing
@@ -38,6 +21,17 @@ registered runs depend on.*
 **The pairing rule.** This session did not write the successor code (pull
 request 97), did not launch the runs, and did not write the ledger rows (pull
 request 98). It did not open the transcript of any session that did.
+
+**Why it was finished by a second session.** The first session ran the
+laptop procedure on arm T alone (1,749 seconds, row written), then started
+arms M, C and F together at about 01:25Z. Their printed output stops at
+01:37Z after the gate line and some hundreds of solver warnings, with no
+error and no row file: the session was cut off, the procedure did not fail.
+The second session reran M, C and F from the start, one at a time, with the
+command the method names (C 2,159 s, M 1,607 s, F 2,608 s), then ran
+`summarise`. Arm T's completed row was kept, not rerun. Everything else
+below was written by the first session and checked by the second against the
+new rows; where the second changed it, it says so (sections 6 and 7).
 
 ## In short
 
@@ -66,6 +60,10 @@ Two findings matter more than the four verdicts:
   called `m5` and an agent called `m4` is also in the episode, arm T picks
   `m4`, every time. Its ownership answer itself is right on every episode.
   Its registered reading is still 0.0000, valid, with its controls holding.
+- **The laptop procedure runs end to end on all four real checkpoints**
+  (section 7). Arm T is read (0.0000); arms C, M and F return no verdict
+  because the procedure cannot find ownership in their running state, which
+  for C and M is the flat answer above seen a second, independent way.
 
 ## What this session opened
 
@@ -360,8 +358,9 @@ own-directed actions), chooses the right agent's row in only a quarter of
 episodes, as a flat answer must, yet gets **every** own-directed action on
 that route right (1.000), and forcing the right row changes nothing (1.000).
 So on arm M's separable route the action no longer depends on the ownership
-slot at all; the network carries who-the-model-is somewhere in its running
-state, through the acting channel, and writes it into the table. The
+slot at all. (The first session added that the network carries
+who-the-model-is in its running state and writes it into the table; section
+7 corrects that: the procedure's read does not find it there.) The
 "separable by construction" half of arm M is not separable at 10 million. The
 toy arm M, by contrast, chose the right row on every episode.
 
@@ -390,7 +389,55 @@ The laptop procedure's readings on arms C and M are in section 7.
 
 ## 7. The laptop procedure on all four checkpoints
 
-PROCEDURE_RESULTS
+**MEASURED** (`out-dev-10m-check/row_{T,C,M,F}_seed0.json`, `table.md`,
+`summary.json`; registered counts, episode scale 1.0, 200 null shuffles).
+The procedure ran end to end on all four real 10-million checkpoints, on the
+processor, in 27 to 44 minutes each, without error. Nothing here is read as
+a result about learning or the question.
+
+| Arm | Gate: own / named-other right of 3,000 (bar 790) | Ownership read, best layer, held-out right of 180 (floor 144) | Site set nominated? | Reading |
+|---|---|---|---|---|
+| T | 2,750 / 2,913 | 180 (layer 0) | yes: layer 0, action, 8 directions | **0.0000, valid**, controls 1, 4, 7 hold |
+| C | 1,700 / 1,701 | 41 (layer 4) | no: no piece reaches four fifths | no verdict (arithmetic 0.99, described only) |
+| M | 2,592 / 1,755 | 45 (layer 8) | no: same reason | no verdict (arithmetic 1.00, described only) |
+| F | 1,689 / 924 | 22 (layer 1) | no: same reason | no verdict (arithmetic 0.99, described only) |
+
+The read's labels are the twelve name words, so a read that knows nothing
+gets about 15 of 180. Every arm's own gate passes and every arm's ownership
+lesion collapses its own-directed accuracy (lesioned: T 758, C 526, M 579,
+F 435).
+
+What this adds:
+
+- **Arm T** is as section 5.3 says (that section was written from the same
+  row).
+- **Arms C and M: the procedure cannot find "which agent am I" in their
+  running state at all**, at any of the nine states, at the action position
+  where the read is fitted (C 13 to 41 of 180, M 26 to 45, against a floor of
+  144). On the toy the same read found it at 180 of 180 for both arms (the
+  pull request 97 freeze tests, `out-freeze-tests/t3a-committed-reads/`). This
+  is the procedure's own registered route reaching section 6's finding
+  independently: with the built-in answer flat, the constructed arms carry no
+  readable ownership where the procedure looks, so they return no verdict.
+  Arm C's named-other read, by contrast, is 180 of 180 at layers 1 to 6: the
+  network reads names fine; it is the self that is missing.
+- **Arm F** reads at about chance (10 to 22 of 180); its named-other gate
+  (924) clears the bar narrowly.
+- **`summarise` says every arm "failed its gate", and the outcome "substrate
+  not a testbed".** That is an artefact of one seed per arm, not a finding:
+  the registered rule passes an arm's gate on two seeds of three, and one seed
+  can never make two. Each row's own gate passes. The development runs were
+  registered as telling nothing about the outcome, and this line is not one.
+- **Correction to section 6, arm M.** The first session wrote that arm M
+  "carries who-the-model-is somewhere in its running state ... and writes it
+  into the table". The procedure's read finds no such thing at the action
+  position (best 45 of 180). Where arm M's separable route gets its answer
+  from is therefore not located by this check; that it does not come through
+  the ownership slot (section 6) stands. A side observation, ARGUED: the toy
+  arm M and the 10-million arm M get exactly the same own-directed count
+  (2,592) and the same entangled-route accuracy (0.7746) on the gate
+  episodes, which suggests that figure is a ceiling set by the episodes rather
+  than by either model; not checked here.
 
 ## 8. What should change before the registered runs
 
@@ -421,7 +468,7 @@ Each is a change to frozen code or to the plan, so each is John's ruling.
    wrong, confused name pairs) beside its gate, so a damaged lookup is seen as
    such.
 7. **Before the registration text: a ruling on arms C and M's flat ownership
-   answer** (section 6). Options this check can see, without recommending
+   answer** (sections 6 and 7; the procedure's own read now confirms it). Options this check can see, without recommending
    among them: (a) hold the learned sharpness fixed at its starting value in
    the constructed arms, so the construction cannot be switched off (a change
    to what the arms are, needing its own check on the toy); (b) exclude it
@@ -431,6 +478,10 @@ Each is a change to frozen code or to the plan, so each is John's ruling.
    did not hold as a no-verdict for that arm; (d) accept the risk as W3
    already does. The first two would want a short rerun at 10 million to show
    the construction now holds, which is a spend and needs a go.
+
+8. **`summarise` on fewer than three seeds** should say "gate not decidable
+   on one seed" rather than "failed its gate", so a development folder cannot
+   print a false outcome line. Small, reporting only.
 
 ## 9. What this does not do
 
