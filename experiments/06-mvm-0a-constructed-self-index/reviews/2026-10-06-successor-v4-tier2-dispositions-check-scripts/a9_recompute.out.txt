@@ -1,0 +1,36 @@
+== Part 1: the twelve toy records
+arm/seed | p | U (rate) | committed formula | (1-p)/7 recomputed | equal | erring trials | share of errors on donor's answer | review-case gap (1-p)(1/3-1/7) | gap > 0.018
+T/0 | 1.00000 | 0.00000 | 0.000000 | 0.000000 | True | 0 | no errors | 0.0000 | False
+T/1 | 1.00000 | 0.00000 | 0.000000 | 0.000000 | True | 0 | no errors | 0.0000 | False
+T/2 | 1.00000 | 0.00000 | 0.000000 | 0.000000 | True | 0 | no errors | 0.0000 | False
+C/0 | 0.54875 | 0.05125 | 0.064464 | 0.064464 | True | 361 | 41/361 = 0.1136 | 0.0860 | True
+C/1 | 0.58125 | 0.04875 | 0.059821 | 0.059821 | True | 335 | 39/335 = 0.1164 | 0.0798 | True
+C/2 | 0.55250 | 0.06000 | 0.063929 | 0.063929 | True | 358 | 48/358 = 0.1341 | 0.0852 | True
+M/0 | 0.87125 | 0.01250 | 0.018393 | 0.018393 | True | 103 | 10/103 = 0.0971 | 0.0245 | True
+M/1 | 0.88000 | 0.01750 | 0.017143 | 0.017143 | True | 96 | 14/96 = 0.1458 | 0.0229 | True
+M/2 | 0.87125 | 0.01375 | 0.018393 | 0.018393 | True | 103 | 11/103 = 0.1068 | 0.0245 | True
+F/0 | 0.55875 | 0.05875 | 0.063036 | 0.063036 | True | 353 | 47/353 = 0.1331 | 0.0840 | True
+F/1 | 0.56625 | 0.05625 | 0.061964 | 0.061964 | True | 347 | 45/347 = 0.1297 | 0.0826 | True
+F/2 | 0.55625 | 0.06875 | 0.063393 | 0.063393 | True | 355 | 55/355 = 0.1549 | 0.0845 | True
+share range over the nine models with errors: 0.0971 (M/0) to 0.1549 (F/2); even spread would be 1/7 = 0.1429; review's case 1/3
+
+== Part 2: the review's case, exactly
+(1-p)/3 at p=0.8: 0.0667; (1-p)/7: 0.0286; gap 0.0381; over 0.018 by 0.0201
+gap exceeds 0.018 for every p below 1811/2000 = 0.905500
+
+== Part 3: the rule's behaviour on 800 pairs, p treated as known (as the author did)
+  broken pairing flagged, p = 790/3000 (exact bar): 0.5589
+  broken pairing flagged, p = 0.2633 (author's rounding): 0.5589
+  broken pairing flagged, p = 0.56: 1.0000
+  healthy, even errors, withheld, p = 0.2633: 0.0945
+  healthy, even errors, withheld, p = 0.56: 0.0347
+  healthy, even errors, withheld, p = 0.8: 0.0023
+  healthy, review's case, withheld, p = 0.56: 1.0000
+  healthy, review's case, withheld, p = 0.8: 0.9904
+  version 4's margin at the bar: 1/8 - (1 - 790/3000)/7 - 0.018 = 0.00176
+
+== Part 4: weakness W11's control 6 figures, traced to the same records
+T: same-value moved [0.0, 0.0, 0.0], different-value moved [1.0, 1.0, 1.0], trials [(81, 719), (81, 719), (81, 719)]
+C: same-value moved [0.5062, 0.6296, 0.5679], different-value moved [0.822, 0.886, 0.9138], trials [(81, 719), (81, 719), (81, 719)]
+M: same-value moved [0.2222, 0.2716, 0.321], different-value moved [0.9499, 0.936, 0.9485], trials [(81, 719), (81, 719), (81, 719)]
+F: same-value moved [0.7284, 0.679, 0.6296], different-value moved [0.8999, 0.879, 0.8915], trials [(81, 719), (81, 719), (81, 719)]

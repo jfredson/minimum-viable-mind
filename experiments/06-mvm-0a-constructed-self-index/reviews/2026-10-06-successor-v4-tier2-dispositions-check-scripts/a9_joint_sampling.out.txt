@@ -1,0 +1,8 @@
+p measured on the same 800 pairs (exact joint distribution):
+  broken pairing flagged, p = 0.2633: 0.5562
+  broken pairing flagged, p = 0.5600: 0.9999
+  healthy, even errors, withheld, p = 0.2633: 0.0908
+  healthy, even errors, withheld, p = 0.5600: 0.0286
+  healthy, even errors, withheld, p = 0.8000: 0.0014
+  healthy, review's case, withheld, p = 0.5600: 1.0000
+  healthy, review's case, withheld, p = 0.8000: 0.9961

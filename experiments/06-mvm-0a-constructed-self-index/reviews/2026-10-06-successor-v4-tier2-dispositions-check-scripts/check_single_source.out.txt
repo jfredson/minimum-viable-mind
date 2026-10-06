@@ -1,0 +1,177 @@
+# check_single_source.py, one run per new document
+== docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements-method.md
+==============================================================================
+check_single_source.py - does every money figure trace back to the compute ledger?
+==============================================================================
+System of record: experiments/06-mvm-0a-constructed-self-index/compute-ledger.md
+Documents read: 1   scope: live   figures below $0 ignored
+Figures that are in the ledger and point at it: 0
+Set aside as forecasts (a proposal pricing something, not a record of spend): 0
+Set aside as neither, by the wording around them: 2
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 1: a dollar figure the ledger does not contain
+------------------------------------------------------------------------------
+0 found. Either the document is stale or the ledger is missing
+a number it should state. A total summed across ledger rows lands here too.
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 2: in the ledger, but the sentence names another file as source
+------------------------------------------------------------------------------
+0 found. This is a second home being built for a number
+that already has one.
+
+------------------------------------------------------------------------------
+[LOOK AT IT] Group 3: in the ledger, and no source named
+------------------------------------------------------------------------------
+1 found. Right today, and with nothing pointing at the record that
+would correct it tomorrow. This is the state the stale $215.70 copies were in.
+By document:
+     1  docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements-method.md
+
+The first 1 in full (use --only <path> for one document's own):
+  docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements-method.md:3   $0   in: Nothing is trained, rented or spent: $0.
+
+------------------------------------------------------------------------------
+[LOOK AT IT] The same figure in many documents
+------------------------------------------------------------------------------
+0 figure(s) appear in four or more documents. A figure with many homes
+is a figure a correction has to find many times.
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 1 unsourced figures and 0 widely repeated ones.
+The ledger is taken as true here. Read the 'what this cannot check' note at the
+top of this file before reading a clean run as reassurance.
+==============================================================================
+== docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md
+==============================================================================
+check_single_source.py - does every money figure trace back to the compute ledger?
+==============================================================================
+System of record: experiments/06-mvm-0a-constructed-self-index/compute-ledger.md
+Documents read: 1   scope: live   figures below $0 ignored
+Figures that are in the ledger and point at it: 0
+Set aside as forecasts (a proposal pricing something, not a record of spend): 0
+Set aside as neither, by the wording around them: 1
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 1: a dollar figure the ledger does not contain
+------------------------------------------------------------------------------
+0 found. Either the document is stale or the ledger is missing
+a number it should state. A total summed across ledger rows lands here too.
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 2: in the ledger, but the sentence names another file as source
+------------------------------------------------------------------------------
+0 found. This is a second home being built for a number
+that already has one.
+
+------------------------------------------------------------------------------
+[LOOK AT IT] Group 3: in the ledger, and no source named
+------------------------------------------------------------------------------
+1 found. Right today, and with nothing pointing at the record that
+would correct it tomorrow. This is the state the stale $215.70 copies were in.
+By document:
+     1  docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md
+
+The first 1 in full (use --only <path> for one document's own):
+  docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md:3   $0   in: No model was loaded; nothing was trained, rented or spent: $0.
+
+------------------------------------------------------------------------------
+[LOOK AT IT] The same figure in many documents
+------------------------------------------------------------------------------
+0 figure(s) appear in four or more documents. A figure with many homes
+is a figure a correction has to find many times.
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 1 unsourced figures and 0 widely repeated ones.
+The ledger is taken as true here. Read the 'what this cannot check' note at the
+top of this file before reading a clean run as reassurance.
+==============================================================================
+== docs/rulings/2026-10-04-successor-v4-gate-a-tier2-dispositions-PROPOSAL.md
+==============================================================================
+check_single_source.py - does every money figure trace back to the compute ledger?
+==============================================================================
+System of record: experiments/06-mvm-0a-constructed-self-index/compute-ledger.md
+Documents read: 1   scope: live   figures below $0 ignored
+Figures that are in the ledger and point at it: 0
+Set aside as forecasts (a proposal pricing something, not a record of spend): 1
+Set aside as neither, by the wording around them: 9
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 1: a dollar figure the ledger does not contain
+------------------------------------------------------------------------------
+0 found. Either the document is stale or the ledger is missing
+a number it should state. A total summed across ledger rows lands here too.
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 2: in the ledger, but the sentence names another file as source
+------------------------------------------------------------------------------
+0 found. This is a second home being built for a number
+that already has one.
+
+------------------------------------------------------------------------------
+[LOOK AT IT] Group 3: in the ledger, and no source named
+------------------------------------------------------------------------------
+1 found. Right today, and with nothing pointing at the record that
+would correct it tomorrow. This is the state the stale $215.70 copies were in.
+By document:
+     1  docs/rulings/2026-10-04-successor-v4-gate-a-tier2-dispositions-PROPOSAL.md
+
+The first 1 in full (use --only <path> for one document's own):
+  docs/rulings/2026-10-04-successor-v4-gate-a-tier2-dispositions-PROPOSAL.md:3   $0   in: Nothing was rented or spent: $0.*
+
+------------------------------------------------------------------------------
+[LOOK AT IT] The same figure in many documents
+------------------------------------------------------------------------------
+0 figure(s) appear in four or more documents. A figure with many homes
+is a figure a correction has to find many times.
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 1 unsourced figures and 0 widely repeated ones.
+The ledger is taken as true here. Read the 'what this cannot check' note at the
+top of this file before reading a clean run as reassurance.
+==============================================================================
+== docs/rulings/2026-10-04-successor-v4-gate-a-tier2-questions-PROPOSAL.md
+==============================================================================
+check_single_source.py - does every money figure trace back to the compute ledger?
+==============================================================================
+System of record: experiments/06-mvm-0a-constructed-self-index/compute-ledger.md
+Documents read: 1   scope: live   figures below $0 ignored
+Figures that are in the ledger and point at it: 0
+Set aside as forecasts (a proposal pricing something, not a record of spend): 1
+Set aside as neither, by the wording around them: 6
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 1: a dollar figure the ledger does not contain
+------------------------------------------------------------------------------
+0 found. Either the document is stale or the ledger is missing
+a number it should state. A total summed across ledger rows lands here too.
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 2: in the ledger, but the sentence names another file as source
+------------------------------------------------------------------------------
+0 found. This is a second home being built for a number
+that already has one.
+
+------------------------------------------------------------------------------
+[LOOK AT IT] Group 3: in the ledger, and no source named
+------------------------------------------------------------------------------
+1 found. Right today, and with nothing pointing at the record that
+would correct it tomorrow. This is the state the stale $215.70 copies were in.
+By document:
+     1  docs/rulings/2026-10-04-successor-v4-gate-a-tier2-questions-PROPOSAL.md
+
+The first 1 in full (use --only <path> for one document's own):
+  docs/rulings/2026-10-04-successor-v4-gate-a-tier2-questions-PROPOSAL.md:3   $0   in: Nothing was rented or spent: $0.*
+
+------------------------------------------------------------------------------
+[LOOK AT IT] The same figure in many documents
+------------------------------------------------------------------------------
+0 figure(s) appear in four or more documents. A figure with many homes
+is a figure a correction has to find many times.
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 1 unsourced figures and 0 widely repeated ones.
+The ledger is taken as true here. Read the 'what this cannot check' note at the
+top of this file before reading a clean run as reassurance.
+==============================================================================
