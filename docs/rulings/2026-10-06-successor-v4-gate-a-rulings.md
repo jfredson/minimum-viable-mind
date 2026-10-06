@@ -75,11 +75,14 @@ request 96, section 6).
 to 267, by a session that wrote neither the fix nor version 5.
 
 **Amends** page 1h of the ruling of 2026-09-26
-(`docs/rulings/2026-09-26-weekend-1-queue.md`), which wrote the batteries in,
-and the collapse rule of the Gate C ruling of the same day, RT-220
-(`docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md`), which declined a
-second line beside the collapse because none had been rehearsed; this one has
-been. Both carry a dated note.
+(`docs/rulings/2026-09-26-weekend-1-queue.md`), which wrote the batteries in;
+it carries a dated note. The new line **sits beside** the collapse rule of
+the Gate C ruling of the same day, RT-220
+(`docs/rulings/2026-09-26-successor-v2-gate-c-rulings.md`), and does not
+amend it: RT-220 declined a second collapse threshold, and this is a
+different condition, replacing page 1h's batteries. (RT-220 is amended by
+page 7 only. Corrected 2026-10-06 after the check of this record, pull
+request 104; the first version said page 1 amended RT-220.)
 
 ### Page 2 — a safeguard only in the code, and a wrong figure in an adopted sentence (inside review, RT-238 and RT-244)
 
@@ -351,7 +354,8 @@ ruled and take RT-251 to RT-254, and one unlettered remark takes RT-255: see the
    self-test asserting no fresh or relaxed combination occurs in training).
    **Now ruled, in part (2026-10-06, follow-up):** A7, A8, A11 and A12 are
    accepted as drafted and take RT-251 to RT-254. **A2 stays owed work**, with
-   no ledger number. The generator self-test line was ruled later still (item
+   no ledger number (A2 was ruled later still, item 6 of the follow-up
+   section, and takes RT-256). The generator self-test line was ruled later still (item
    4 of the follow-up section) and takes RT-255.
 2. **Page 6's note says RT-245 and RT-246 amend wording ruled 2026-10-04.**
    RT-246 does (ruling 7 of 2026-10-04). RT-245 does not: the device it
@@ -385,26 +389,33 @@ ruled and take RT-251 to RT-254, and one unlettered remark takes RT-255: see the
 
 ## What is now owed before the registration commit, in the order things wait on each other
 
-All at $0, on the laptop, with no new money.
+All at $0, on the laptop, with no new money. *Corrected 2026-10-06 after the
+check of this record (pull request 104): page 1's closure check runs on the
+registration text, so it now follows version 5; and items 3 and 4 proceed
+now, alongside the decoy test, since they cost nothing and wait on nothing
+but their own method notes. If John stops or redesigns after the decoy test,
+their results are kept on the record and version 5 is not written as
+planned.*
 
 1. **The check of this record**, by a session that did not write it.
 2. **The decoy test** (page 10), method committed first, both ways round,
-   **and its check**. Then John decides page 12 with the checked result. If
-   he stops or redesigns, nothing below runs as planned.
+   **and its check**. Then John decides page 12 with the checked result.
 3. **The page 4 toy re-run** of the nomination and reading with every read
    fitted on 1,800 development episodes, method first, **and its check**.
-4. **Page 1's closure check**: the four-part measured check of the
-   replacement clause (the inside dispositions, lines 232 to 267).
-5. **The A2 additions to `procedure.py` and `measure.py`** in
+4. **The A2 additions to `procedure.py` and `measure.py`** in
    `experiments/08-successor-degree/src/` (on main): the ruled outcome table;
    the seed rule of page 7 in one place; the ownership-free line; the
    no-transplant check moved from the vetoes to the reported fields; every
-   reason listed and `arithmetic_withheld` removed from the summary file `summarise` writes; the
+   reason listed and `arithmetic_withheld` removed from the summary file
+   `summarise` writes (ruled by John in the follow-up, item 6); the
    freeze's self-test updated (the outside dispositions, A2, lines 247 to
    281). Then the run through `summarise` on the toy and the made-up failure
    cases, method first, **and its check** (lines 303 to 323).
-6. **Version 5**, the registration text, written with every change ruled here
+5. **Version 5**, the registration text, written with every change ruled here
    and earlier, **and checked** by a session that did not write it.
+6. **Page 1's closure check**: the four-part measured check of the
+   replacement clause, run on version 5 (the inside dispositions, lines 232
+   to 267).
 7. **The registration commit.** Outer limit: the first kill date, 2026-10-18.
 
 ---
@@ -500,10 +511,28 @@ owed, not written here):
    housekeeping, as the planning session framed them. John was told and did
    not object.
 
-**Still not ruled, and not changed by this addendum:** A2, the fatal finding
-that the final decision procedure must be brought to these rulings and run on
-made-up failure cases, stays **owed work** with no ledger number (item 5 of
-the owed list above).
+6. **The fatal finding on the decision procedure (A2): "yes, remove".**
+   Ruled later the same day, recorded in the word-for-word note. John was
+   asked whether to accept the finding as drafted, and whether to remove the
+   withheld figure (`arithmetic_withheld`) from the decision code's output or
+   keep it under one named field. **Accepted as drafted** (outside
+   dispositions, A2, lines 158 to 333): the frozen decision code
+   (`procedure.py` and `measure.py` in `experiments/08-successor-degree/src/`,
+   on main) is brought to the ruled rules (the item list at lines 247 to
+   281); it is run end to end on the toy and on made-up failure cases, method
+   first; a session that wrote neither the code nor its run checks it (lines
+   303 to 323); and version 5 carries the item "R-13. The final decision
+   procedure, run end to end before registration" (lines 283 to 301).
+   **The withheld figure is removed** from the output file, not kept under a
+   named field. The work itself is item 4 of the owed list above and is still
+   to be done.
+
+| Ledger number | Outside finding | What it is |
+|---|---|---|
+| RT-256 | A2 (fatal) | The final decision procedure that withholds bad readings and assigns the outcome had not run end to end on the rules as ruled |
+
+**Nothing from the packet or its follow-ups is now unruled**, except page 12,
+which waits on the decoy test.
 
 This addendum, like the rest of the file, is owed a check by a session that
 did not write it.

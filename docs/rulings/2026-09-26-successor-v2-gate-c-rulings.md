@@ -163,12 +163,14 @@ below the learn-both bar was considered and not taken, because it adds a second
 pre-stated number nobody has rehearsed. This refines queue ruling page 1h.
 
 *Dated note, 2026-10-06 (Pacific), beside RT-220, which is left as written.
-Two later rulings touch it (`docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`). Page 1: a second line
-now sits beside the collapse, the ownership-free count of 1,546 of 3,000,
-replacing page 1h's batteries; unlike the line declined here, it was measured
-on every toy model before it was ruled. Page 7: "at least two of three seeds
-collapse" is now counted on the same seeds that pass every other gate
-condition and withholding check, not as a separate two-of-three count.*
+It is amended by page 7 of `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`:
+"at least two of three seeds collapse" is now counted on the same seeds that
+pass every other gate condition and withholding check, not as a separate
+two-of-three count. Page 1 of the same ruling adds a line that sits beside the
+collapse rule without amending it: the ownership-free count of 1,546 of 3,000.
+RT-220 declined a second collapse threshold; that line is a different
+condition, replacing page 1h's batteries. (Reworded the same day after the
+check of the 2026-10-06 record, pull request 104.)*
 
 ### RT-222 (minor). The 0.0175 allowance
 

@@ -18,7 +18,7 @@ updated_on = "2026-10-06"
 question = "What is the smallest set of working parts that would make it defensible to say there is someone home, and can we measure, in systems that exist now or that we build, whether any of those parts are present?"
 one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
 where_we_are = "Amendment A3, the first constructed self-index experiment, is closed on the record as not testable (2026-09-25). All the work now is on the successor experiment, which is meant to supply the missing measure of degree: train small models whose self-pointer is separable, entangled or mixed by construction, check that a transplant-based measure tells them apart, then read a freely trained model with it. On the toy rehearsal the measure reads the three built models correctly on every seed and returns no verdict on the freely trained one. Version 4 of the proposal, the text meant to become the registration, went through the registration review: an inside review, then two outside reviews from other labs. Drafted answers to every finding were checked by sessions that did not write them, and on 2026-10-06 John ruled all twelve pages of the question packet, one at a time. The fatal flaw is answered: the free model's gate no longer asks for question sets the task does not have. Every read is now fitted on 1,800 episodes; one outcome table names every result the runs can reach; a seed counts only if it passes everything; the no-transplant check is reported rather than used to refuse a reading; and every use of 'metric validated' carries the phrase 'on these constructed systems, for this intervention procedure'. Whether to go on at all is not yet decided: it waits on a $0 decoy test of whether the read can be fooled by an unused copy of the owner's marker. Nothing was spent. About $228 of the $450 ceiling is spent."
-where_we_are_going = "One result by 2026-12-21, or a named schedule failure. Work is not scheduled on future dates: each step runs as soon as what it waits on is done. The two kill dates stay as outer limits: the registration committed by 2026-10-18, and the registered runs by 2026-11-01. Next, in the order things wait on each other, all at $0 on the laptop: a session that did not write it checks the record of John's 2026-10-06 rulings; the decoy test runs, both ways round, and is checked, and John decides with its result whether to continue, stop or redesign; the toy re-run with reads fitted on 1,800 episodes, and its check; the closure check of the fatal flaw's repair; the frozen decision code brought to the new rules and run on made-up failure cases, and checked; version 5, the registration text, written with every ruled change and checked; then the registration commit. Then the first full-size run, of the freely trained model alone: it must learn both task conditions and its ownership read must clear the four-fifths floor, or the experiment stops there with a registered result. If it passes, the remaining runs launch, the measure is checked on the built models, and the free model gets the programme's first degree reading. Nothing new launches after 2026-12-21, and 2027-01-04 is the deadline for a resumable hibernation. Claims are whatever the registered results support, in the terms registered for them. Never a conscious machine."
+where_we_are_going = "One result by 2026-12-21, or a named schedule failure. Work is not scheduled on future dates: each step runs as soon as what it waits on is done. The two kill dates stay as outer limits: the registration committed by 2026-10-18, and the registered runs by 2026-11-01. Next, in the order things wait on each other, all at $0 on the laptop: a session that did not write it checks the record of John's 2026-10-06 rulings; the decoy test runs, both ways round, and is checked, and John decides with its result whether to continue, stop or redesign; alongside it, the toy re-run with reads fitted on 1,800 episodes, and its check, and the frozen decision code brought to the new rules and run on made-up failure cases, and checked; version 5, the registration text, written with every ruled change and checked; the closure check of the fatal flaw's repair, run on version 5; then the registration commit. Then the first full-size run, of the freely trained model alone: it must learn both task conditions and its ownership read must clear the four-fifths floor, or the experiment stops there with a registered result. If it passes, the remaining runs launch, the measure is checked on the built models, and the free model gets the programme's first degree reading. Nothing new launches after 2026-12-21, and 2027-01-04 is the deadline for a resumable hibernation. Claims are whatever the registered results support, in the terms registered for them. Never a conscious machine."
 hibernation_by = "2027-01-04"
 wrap_up_start = "2026-12-21"
 pipeline_resumes = "2027-01-04"
@@ -782,7 +782,7 @@ when = "done 2026-10-06: John ruled all twelve pages of the packet one at a time
 owner = "sessions drafted and checked the packet; John ruled; a session recorded it"
 cost = "$0"
 decision = true
-teaches = "The fatal flaw's repair, the fitting count of 1,800, one outcome table with three new terms, the seed rule, the no-transplant check reported rather than used as a veto, the fixed scope phrase, and the decoy test. Recorded in docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md, with authorship mixed and his words quoted per page. Later the same day he ruled the items the first record left open: four outside wording fixes accepted as drafted, both scope phrases applied, and control 4 named as the pairing check that withholds a reading. The fatal A2 finding stays as owed work."
+teaches = "The fatal flaw's repair, the fitting count of 1,800, one outcome table with three new terms, the seed rule, the no-transplant check reported rather than used as a veto, the fixed scope phrase, and the decoy test. Recorded in docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md, with authorship mixed and his words quoted per page. Later the same day he ruled the items the first record left open: four outside wording fixes accepted as drafted, both scope phrases applied, and control 4 named as the pairing check that withholds a reading. He also adopted the generator self-test on unseen combinations, and accepted the fatal finding on the decision procedure (A2) as drafted, with the withheld figure removed from its output; that work is N30."
 status = "done"
 
 [[next_steps]]
@@ -808,7 +808,7 @@ status = "pending"
 [[next_steps]]
 id = "N28"
 title = "Re-run the toy's nomination and reading with every read fitted on 1,800 episodes; check it"
-when = "now; method committed first"
+when = "now, alongside the decoy test; method committed first"
 owner = "a Claude Code session runs it; another checks it"
 cost = "$0, laptop"
 decision = false
@@ -828,7 +828,7 @@ status = "pending"
 [[next_steps]]
 id = "N30"
 title = "Bring the frozen decision code to the ruled rules, run it on the toy and on made-up failure cases, and check it"
-when = "now; method committed first for the run"
+when = "now, alongside the decoy test; method committed first for the run"
 owner = "a Claude Code session changes and runs it; another checks it"
 cost = "$0, laptop"
 decision = false
@@ -838,7 +838,7 @@ status = "pending"
 [[next_steps]]
 id = "N31"
 title = "Write version 5, the registration text, with every ruled change; check it; commit the registration"
-when = "after N26 to N30, and only if John decides to go on after the decoy test; outer limit 2026-10-18"
+when = "after N26, N27, N28 and N30; N29 then runs on its text before the commit; and only if John decides to go on after the decoy test; outer limit 2026-10-18"
 owner = "a session writes the text; a different session checks it"
 cost = "$0"
 decision = true

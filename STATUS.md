@@ -69,25 +69,29 @@ fixes are accepted as drafted, both scope phrases apply (including to the
 three new terms that contain "metric"), and control 4 is the pairing check
 that withholds a reading, with the generator's self-test kept as a second
 check. He also adopted a one-line generator self-test that no fresh or
-relaxed episode's combination appears in training. The fatal A2 notice stays
-as owed work (item 5 below).
+relaxed episode's combination appears in training, and accepted the fatal
+finding on the decision procedure (A2) as drafted, with the withheld figure
+removed from its output ("yes, remove"); that work is item 4 below.
 
 **What is now owed before the registration commit, in the order things wait
-on each other.** All $0, on the laptop.
+on each other.** All $0, on the laptop. Items 3 and 4 proceed now,
+alongside the decoy test.
 
 1. The check of the ruling file, by a session that did not write it.
 2. The decoy test, method committed first, run both ways round, and its
    check. John then decides page 12.
 3. The toy re-run of the nomination and reading with every read fitted on
    1,800 episodes, method first, and its check.
-4. The closure check of page 1's repair (four parts, measured).
-5. The changes to the frozen decision code (`procedure.py` and `measure.py`
+4. The changes to the frozen decision code (`procedure.py` and `measure.py`
    in `experiments/08-successor-degree/src/`, on main): the ruled outcome
    table, the one-place seed rule, the new ownership-free line, the
    no-transplant check moved out of the vetoes, every reason listed, and the
-   withheld figure (`arithmetic_withheld`) removed from the output. Then a run
-   on the toy and on made-up failure cases, method first, and its check.
-6. Version 5, the registration text, with every ruled change, and its check.
+   withheld figure (`arithmetic_withheld`) removed from the output (John:
+   "yes, remove"). Then a run on the toy and on made-up failure cases,
+   method first, and its check.
+5. Version 5, the registration text, with every ruled change, and its check.
+6. The closure check of page 1's repair (four parts, measured), run on
+   version 5.
 7. The registration commit. Outer limit: 2026-10-18.
 
 Nothing was rented or spent in this session. About $228 of the $450 ceiling
