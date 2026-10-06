@@ -648,6 +648,30 @@ if it is not built, (f) is a sentence. Either the gates are implemented
 and run on the seen seeds before registration, with the result
 reported, or (f) should say what it actually binds.
 
+> **ANNOTATION, 2026-10-04. Nothing in this finding is edited. This note only
+> corrects one count in it: the "110 keys" above is unsupported.**
+>
+> The sentence above says the endpoint records for seeds 0 to 2 carry no such
+> field "among their 110 keys", and the finding is labelled MEASURED. That
+> count does not reproduce. Measured: the seed 1 and seed 2 endpoint records
+> (`a3-gates/endpoint_a3_30m_seed1.json` and `a3-gates/endpoint_a3_30m_seed2.json`)
+> each hold 15 top-level keys, and the earlier pilot record
+> (`a3-gates/pilot_endpoint.json`) holds 7. The number 110 is not any of them,
+> and no committed version of those files supports it. The finding's substance,
+> that condition (f)'s gates were never applied to this lesion on any seed, is
+> not disturbed: none of the three records carries such a field.
+>
+> Filed under John's ruling of 2026-09-25, page 8a
+> (`docs/rulings/2026-09-26-weekend-1-queue.md`): "A dated note beside finding
+> F17 … giving the measured counts (15, 15 and 7 top-level keys) and saying the
+> 110 is unsupported; the original sentence untouched." The count was first
+> found not to reproduce in item 20 of the ruling of 2026-09-21
+> (`docs/rulings/2026-09-21-review-verification-and-staged-spending.md`), which
+> this note discharges.
+>
+> Added 2026-10-04 by a later session, not by the reviewer. It corrects one
+> number and changes no finding; every other word of the pass stands as filed.
+
 ### F18 — The random baseline is not matched to the input-channel lesion in any stated sense
 
 **Severity: serious. ARGUED from the code.**
