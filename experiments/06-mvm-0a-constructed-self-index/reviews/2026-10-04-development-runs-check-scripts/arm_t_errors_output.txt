@@ -1,0 +1,54 @@
+== /Users/john/Code/minimum-viable-mind/experiments/08-successor-degree/artifacts/succ_t_10m_seed0/succ_t_10m_seed0.pt  (arm T, d_model 256, 8 blocks)
+  episodes: 3000
+  own_correct: 2750
+  other_correct: 2913
+  own_sharpness: 1.9468622207641602
+  ownership_answer_peak_on_true_agent: 1.0
+  ownership_answer_mean_top_weight: 0.9424113035202026
+  selection_top_on_true_agent: 2586
+  selection_mean_top_weight: 1.0
+  selection_mean_weight_on_true_agent: 0.8619999885559082
+  own_acc_where_selection_right: 1.0
+  own_acc_where_selection_wrong: 0.39613527059555054
+  own_errors_with_selection_wrong: 250
+  own_errors_with_selection_right: 0
+  own_correct_with_selection_forced_to_true_agent: 2999
+  read_own_weight_norm: 2.9601144790649414
+  own_key_weight_norm: 2.9644522666931152
+  own_marker_weight_norm: 8.472672462463379
+  ownership_answer_top_weight_0_to_0.9: {'episodes': 0, 'selection_right': None}
+  ownership_answer_top_weight_0.9_to_0.99: {'episodes': 3000, 'selection_right': 0.8619999885559082}
+  ownership_answer_top_weight_0.99_to_1.0: {'episodes': 0, 'selection_right': None}
+  selection_by_marker_word_of_true_agent: {'m0': {'episodes': 249, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm1': {'episodes': 250, 'selection_right': 0.508, 'wrongly_chosen': {'m0': 62, 'm3': 61}}, 'm2': {'episodes': 249, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm3': {'episodes': 277, 'selection_right': 0.736, 'wrongly_chosen': {'m0': 73}}, 'm4': {'episodes': 282, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm5': {'episodes': 251, 'selection_right': 0.697, 'wrongly_chosen': {'m4': 76}}, 'm6': {'episodes': 223, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm7': {'episodes': 250, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm8': {'episodes': 236, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm9': {'episodes': 231, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm10': {'episodes': 259, 'selection_right': 0.757, 'wrongly_chosen': {'m0': 63}}, 'm11': {'episodes': 243, 'selection_right': 0.675, 'wrongly_chosen': {'m8': 79}}}
+  collisions: {'m1 chosen as m0': {'episodes_with_both_words': 62, 'selection_wrong_in_those': 62, 'chose_that_word': 62}, 'm1 chosen as m3': {'episodes_with_both_words': 75, 'selection_wrong_in_those': 75, 'chose_that_word': 61}, 'm3 chosen as m0': {'episodes_with_both_words': 73, 'selection_wrong_in_those': 73, 'chose_that_word': 73}, 'm5 chosen as m4': {'episodes_with_both_words': 76, 'selection_wrong_in_those': 76, 'chose_that_word': 76}, 'm10 chosen as m0': {'episodes_with_both_words': 63, 'selection_wrong_in_those': 63, 'chose_that_word': 63}, 'm11 chosen as m8': {'episodes_with_both_words': 79, 'selection_wrong_in_those': 79, 'chose_that_word': 79}}
+  selection_right_when_model_is_agent_0: 0.855867326259613
+  selection_right_when_model_is_agent_1: 0.8743094205856323
+  selection_right_when_model_is_agent_2: 0.8567774891853333
+  selection_right_when_model_is_agent_3: 0.8619718551635742
+== /Users/john/Code/mvm-dev10m-check/experiments/rehearsal-successor-measure/out-repairs/models/ckpt_T_base_seed0.pt  (arm T, d_model 160, 4 blocks)
+  episodes: 3000
+  own_correct: 3000
+  other_correct: 3000
+  own_sharpness: 3.883709192276001
+  ownership_answer_peak_on_true_agent: 1.0
+  ownership_answer_mean_top_weight: 0.9987316727638245
+  selection_top_on_true_agent: 3000
+  selection_mean_top_weight: 0.997417151927948
+  selection_mean_weight_on_true_agent: 0.997417151927948
+  own_acc_where_selection_right: 1.0
+  own_acc_where_selection_wrong: None
+  own_errors_with_selection_wrong: 0
+  own_errors_with_selection_right: 0
+  own_correct_with_selection_forced_to_true_agent: 3000
+  read_own_weight_norm: 2.814546585083008
+  own_key_weight_norm: 2.834742784500122
+  own_marker_weight_norm: 3.027663230895996
+  ownership_answer_top_weight_0_to_0.9: {'episodes': 0, 'selection_right': None}
+  ownership_answer_top_weight_0.9_to_0.99: {'episodes': 0, 'selection_right': None}
+  ownership_answer_top_weight_0.99_to_1.0: {'episodes': 3000, 'selection_right': 1.0}
+  selection_by_marker_word_of_true_agent: {'m0': {'episodes': 249, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm1': {'episodes': 250, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm2': {'episodes': 249, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm3': {'episodes': 277, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm4': {'episodes': 282, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm5': {'episodes': 251, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm6': {'episodes': 223, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm7': {'episodes': 250, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm8': {'episodes': 236, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm9': {'episodes': 231, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm10': {'episodes': 259, 'selection_right': 1.0, 'wrongly_chosen': {}}, 'm11': {'episodes': 243, 'selection_right': 1.0, 'wrongly_chosen': {}}}
+  collisions: {}
+  selection_right_when_model_is_agent_0: 1.0
+  selection_right_when_model_is_agent_1: 1.0
+  selection_right_when_model_is_agent_2: 1.0
+  selection_right_when_model_is_agent_3: 1.0

@@ -1,0 +1,15 @@
+  _warn_once(
+USDT:2026-10-04 17:57:07 37270:447599 ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-10-04 17:57:08 37270:447599 ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-10-04 17:57:10 37270:447599 ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-10-04 17:57:11 37270:447599 ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-10-04 17:57:14 37270:447599 ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-10-04 17:57:14 37270:447599 ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-10-04 17:57:17 37270:447599 ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-10-04 17:57:17 37270:447599 ActivityProfilerController.cpp:455] profiler_stop
+data generation on this laptop: 2.7 ms per batch of 96 (40 batches, one thread)
+arm   aten calls/step   vs C  laptop cpu s/step  card s/step  card vs C
+T               10991   0.92              0.309      0.00990       0.99
+C               11933   1.00              0.375      0.01002       1.00
+F                8176   0.69              0.348      0.00934       0.93
+M               13199   1.11              0.334      0.01447       1.44
