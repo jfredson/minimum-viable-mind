@@ -27,7 +27,7 @@ EOS
   rm -rf "$T"
 }
 echo "Deadline timer, second round:"
-case_ "genuine wording, good empty list, time for two checks" "$GENUINE" '[]' 8
+case_ "genuine wording, good empty list, time for two checks" "$GENUINE" "[]" 20
 case_ "genuine wording, the list still shows the machine" "$GENUINE" '[{"id":"fakepod"}]' 6
 case_ "404 page wording, good empty list" 'Error: api error: 404 page not found (status 404)' '[]' 6
 case_ "'pod not found' without '(status 404)', good empty list" '{"error":"pod not found"}' '[]' 6

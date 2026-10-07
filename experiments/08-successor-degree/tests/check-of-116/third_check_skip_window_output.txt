@@ -1,0 +1,4 @@
+Timer with every vendor read hanging (stand-in):
+  cap 3s, poll 10s, deadline 20s: vendor reads 1; delete issued 4s after the deadline
+  cap 3s, poll 10s, deadline 25s: vendor reads 1; delete issued 0s after the deadline
+  cap 5s, poll 20s, deadline 40s: vendor reads 1; delete issued 5s after the deadline
