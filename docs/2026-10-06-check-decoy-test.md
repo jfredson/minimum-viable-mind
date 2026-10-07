@@ -36,7 +36,7 @@ trained model.*
   block's size. At the site the decoy test always chose (the first running
   state, the action position, 8 directions) the readings were **0.28, 0.23
   and 0.29** on the three seeds, against 0.00 for the exact copy. With fewer
-  directions they rise to 0.66 to 0.96. Under the decoy test's own bands,
+  directions they rise, to between 0.52 and 0.96. Under the decoy test's own bands,
   0.23 to 0.29 is "inconclusive", not "not fooled". I had predicted 0.20 or
   less; I was wrong, and section 4 says why.
 - **Verdict: confirmed as a reproduction, with corrections to how it is
