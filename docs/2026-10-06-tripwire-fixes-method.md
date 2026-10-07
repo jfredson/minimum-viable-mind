@@ -260,3 +260,98 @@ edge: the replay figure is therefore about **1.00** (0.999 at 00:56, 1.004 at
 01:11), and **0.99** (0.9899, 0.9948) with the "pod gone" times the
 development-run check used. Either way it is about 1, against the old
 alarm's 0.40.
+
+## 11. Corrections after the independent check (pull request 117), stated before the code
+
+The check (branch `check-tripwire-fixes`,
+`docs/2026-10-06-tripwire-fixes-check-findings.md`) passed this work with
+fixes needed. The coordinator asked for its problems 1, 2, 4, 7 and 8 to be
+fixed, plus an operator note. **Its problems 3, 5 and 10 (a bill posted only
+in part, a built-in "too early" refusal for the end-of-wave comparison, and
+a top-up during a wave) are left unchanged here: John is ruling on them.**
+Everything below was written before the code changed. Cost: $0.
+
+### 11.1 Proof that a machine is deleted (check problems 1 and 2)
+
+The old test, any answer containing "not found" or `"status":404`, is
+replaced everywhere. The check showed three answers that wrongly passed it:
+a 404 from something other than the machine ("404 page not found (status
+404)"), the shell saying the tool is missing ("runpodctl: command not
+found"), and a configuration message ("Config File … Not Found in …").
+
+**The vendor's word** now means: the answer contains the vendor's own phrase
+"pod not found" **and** "(status 404)", as in the one recorded answer
+(2026-09-26, to a delete):
+`{"error":"api error: {\"error\":\"pod not found to terminate\",\"status\":404} (status 404)"}`.
+Anything else is a failed reading.
+
+**A confirmed deletion** (what lets the deadline timer stand down, and what
+lets the watchdog write its "machine gone" record) now needs, in addition,
+**a machine list that succeeds** (the tool exits 0 and prints a list) **and
+does not show the machine, twice, 5 minutes apart.**
+
+- The deadline timer already asks the vendor every 5 minutes. It now counts
+  checks in a row at which both hold (the vendor's word, and a good list
+  without the machine). At two it stands down. Any check that fails either
+  part sets the count back to zero. So the earliest stand-down is 5 minutes
+  after the first good check.
+- The watchdog writes its record when its delete was accepted (exit 0) or
+  answered with the vendor's word, **and** a good list without the machine,
+  read twice 5 minutes apart (`GONE_CONFIRM_GAP_S`, default 300). If either
+  list read fails or shows the machine, no record. Its "found gone" path
+  (three silent checks) needs the vendor's word to `pod get`, and then the
+  same two list reads. A failed read never writes the record.
+- The time written into the alarm's records is still the moment the delete
+  came back. It is written once the deletion is confirmed.
+- The launcher's two emergency deletes and the alarm's own in-flight delete
+  only write into the alarm's records, never the timer's. They now use the
+  stricter wording, without the list reads. A wrong record there makes the
+  alarm read high (it trips; it never hides spending).
+
+### 11.2 A lock on the alarm's records (check problem 4)
+
+Every load-change-save of `state.json` in `tripwire.py` is done under a file
+lock (`state.lock` in the wave's folder). Vendor reads happen **outside** the
+lock: the watcher and the check before a launch read the vendor first, then
+lock, load, apply, save and unlock. So a `gone` or `register` from another
+program during the read is never overwritten.
+
+### 11.3 The flaky timing test (check problem 7)
+
+The timer tests measured time from the unrounded clock, but the deadline was
+written rounded down to a whole second. They now check that the delete came
+at or after the written deadline, and no more than the cap plus 3 seconds
+after it. The timer itself is unchanged.
+
+### 11.4 Operator note (asked by the coordinator)
+
+In the launcher's usage notes and the alarm's notes: **run the end-of-wave
+comparison (`tripwire.py reconcile`) no earlier than 3 hours after the last
+deletion**, since bills post late and an empty bill is a trip; and **never
+reuse an old wave name** (for example `dev-10m`, which still holds the
+2026-10-04 records). The usage example stops naming `dev-10m`.
+
+### 11.5 Expected outcomes, stated before running
+
+| # | Case | Expected |
+|---|---|---|
+| N1 | Deadline timer; `pod get` answers "Error: api error: 404 page not found (status 404)"; list good and empty | Stays armed; deletes at its deadline |
+| N2 | Deadline timer; the vendor tool missing from its command path | Stays armed; tries its delete at the deadline (which fails: no tool) and does not stand down |
+| N3 | Deadline timer; `pod get` answers `Config File "config" Not Found in "[/Users/x/.runpod]"` | Stays armed; deletes at its deadline |
+| N4 | Deadline timer; the recorded "pod not found … (status 404)" wording, and a good list without the machine, at two checks | Stands down; no delete; no deadline line |
+| N5 | The same wording, but the machine list fails | Stays armed; deletes |
+| N6 | The same wording, but the list shows the machine | Stays armed; deletes |
+| N7 | The same wording and a good list, but only one check fits before the deadline | Stays armed; deletes |
+| N8 | The old T11 answer, `{"error":"pod not found","status":404}` (no "(status 404)") | Now stays armed and deletes (T11 is changed to N4's wording) |
+| W1 | Watchdog; delete accepted; list good without the machine at both reads | Record written; the alarm gets the delete time |
+| W2 | Watchdog; delete accepted; first list read fails | No record; no alarm time |
+| W3 | Watchdog; delete accepted; first list good, second shows the machine | No record |
+| W4 | Watchdog; delete answered with the recorded wording; lists good | Record written |
+| W5 | Watchdog; delete fails "HTTP 503"; lists good and empty | No record (the delete was neither accepted nor answered with the vendor's word) |
+| W6 | Watchdog "found gone"; `pod get` gives the vendor's word; lists good | Record written |
+| W7 | Watchdog "found gone"; `pod get` gives the 404-page wording | No record |
+| L1 | The check's race, case 1: the watchdog's `gone` lands while the watcher reads the vendor | The watchdog's time survives |
+| L2 | The check's race, case 2: a `register` lands while the watcher reads the vendor | The second machine survives |
+| L3 | Another process holds the lock for 2 seconds | `gone` waits for it, then records |
+| F1 | The deadline-timer cases, five full runs in a row | Pass every time |
+| — | Everything earlier: the alarm's self-test, the launcher check, the deadline timer's and the watchdog's self-tests, all successor self-tests, the replay figures (0.9899, 0.9948, 0.9988, 1.0038, 0.401) | Unchanged; pass |
