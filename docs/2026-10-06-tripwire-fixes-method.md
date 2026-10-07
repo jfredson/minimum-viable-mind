@@ -573,3 +573,34 @@ handshake self-test, the launcher check, and all successor self-tests.
 **Open:** under very heavy load (above about 200) the five-run timing check
 failed now and then in attempt 3 (1 or 2 of 20 cases); attempt 4 could not
 say which, since the load stayed low.
+
+## 14. Correction after the third check, stated before the code
+
+The third check (`docs/2026-10-07-tripwire-fixes-third-check-findings.md` on
+branch `check-tripwire-fixes`) passes this work as ready to merge, with one
+inaccuracy. **Section 13.1 above is wrong where it says the vendor check
+"can no longer delay the deadline at all".** After a vendor check the timer
+worked out its sleep from the clock reading taken *before* the check. A check
+that starts just outside the skip window can take up to two caps, and the
+sleep after it can then run past the deadline: up to about 28 seconds with
+the real settings (20-second cap, 30-second poll). The third check measured
+4 and 5 seconds late with small settings. The code comment says the same
+wrong thing. Cost of the fault: under a cent. Cost of this work: $0.
+
+**Fix:** read the clock again just before working out the sleep, and never
+sleep past the deadline (a time already past means no sleep, and the loop
+then deletes). The comment is corrected to say: the skip window keeps a
+vendor check from running past the deadline, and the fresh clock reading
+keeps the sleep after it from doing so.
+
+**Why the tests missed it:** they poll every second, so any sleep is at most
+a second. A new test uses a slow poll.
+
+### 14.1 Expected outcomes, stated before running
+
+| # | Case | Expected |
+|---|---|---|
+| S1 | Timer; poll 10 s, cap 3 s, checks every 1 s, deadline 20 s; `pod get` answers the vendor's words and the machine list hangs, so a check started at about 10 s takes about 6 s | Delete issued within 2 s of the written deadline (the old code: about 6 s late) |
+| S2 | Timer; poll 20 s, cap 5 s, deadline 40 s, the same answers | Delete issued within 2 s of the written deadline (the old code: about 10 s late) |
+| S3 | S1 and S2 run against the timer as it stood before this fix (`a164eaf`) | Both fail: the delete is more than 2 s late. This shows the test catches the fault |
+| — | The whole check, eight runs in a row at low load; the other suites | All pass (the one pre-stated replay range still reported as missed) |
