@@ -542,7 +542,7 @@ TRIP_DIR="{td}"
     if want_gets is not None:
         ok = ok and gets == want_gets
     if not quiet:
-        check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+d}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
+        check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+.0f}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
                         f"deadline line: {line}, stood down: {stood}")
     if trip:
         m = T.load_state(td)["machines"]["fakepod0000001"]

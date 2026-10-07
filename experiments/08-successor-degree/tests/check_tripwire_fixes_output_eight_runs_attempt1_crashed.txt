@@ -1,0 +1,640 @@
+######## run 1 of 8, 2026-10-07T05:31:48Z
+Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
+laptop load at start: (186.6494140625, 307.4951171875, 430.70458984375)
+T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
+  [PASS] no trip at any reading
+  [PASS] the watcher ends at minute 66, 30 minutes after the last deletion  (ended 66)
+  [PASS] final comparison 0.99 to 1.01  (0.9982)
+T2  overbilled wave, 3.5 times the rate, same machines
+  [PASS] trips at minute 26, while both machines still run  (tripped at 26)
+  [PASS] by rule S, two readings in a row  (TRIPPED 2027-01-15T08:26:00Z: ratio B 1.929 at or above 1.25 (rule S, two readings in a ro)
+  [PASS] ledger figures written with the halt
+  [PASS] the check before a next machine then refuses
+T3  mild overcharge (1.4 times) hidden by an 8-minute lag, one 20-minute machine
+  [PASS] rule S never trips; rule D trips at minute 36, 15 minutes after the deletion  (tripped at 36: TRIPPED 2027-01-15T08:36:00Z: ratio B 1.392 at or above 1.25 (rule D, after a de)
+  [PASS] ratio about 1.39  (1.3924)
+T4  honest but lumpy: ten minutes charged in advance at each ten-minute mark
+  [PASS] no trip  (ratios in flight: 1:9.91, 6:1.66, 11:1.81, 16:1.25, 21:1.42, 26:1.15, 31:1.00)
+  [PASS] final comparison 1.00  (1.0000)
+T5  honest, long lag (14 min), one 20-minute machine
+  [PASS] no trip
+  [PASS] final comparison 0.98 to 1.00  (0.9921)
+T6  failed vendor reading in flight (balance read errors at minute 11)
+  [PASS] trip at minute 11, a check that cannot run
+T7  empty bills at the end of a wave
+  [PASS] an empty bill ([]): a trip, cannot be checked yet
+  [PASS] a bill of zero hours: a trip, cannot be checked yet
+  [PASS] a bill with no row for this machine: a trip, cannot be checked yet
+  [PASS] a real row (191,063 ms against 191.063 s of life) passes at 1.0
+  [PASS] the old code passed the empty bill (the fault being fixed)  (old exit 0)
+B1-B4  a bill posted only in part (ruled 2026-10-06: below 0.90 of life is 'cannot be checked yet')
+  [PASS] B1 the recorded partial bill (566,260 ms against 1,873 s, 0.30): a trip, cannot be checked yet
+  [PASS] B2 the recorded complete bill (1,871,875 ms against 1,873 s, 0.9994): passes
+  [PASS] B3 billed 0.90 of life passes; 0.899 is a trip, cannot be checked yet
+  [PASS] B4 billed 3.5 times life: still a trip, over the line
+R7-R9  an inferred deletion: the 0.90 line judged against the last listing
+  [PASS] R7 listed 20 min, inferred 5 min later, billed 20 min: passes (1.00 against the last listing)
+  [PASS] R8 the same, billed 10 min: a trip, cannot be checked yet
+  [PASS] R9 the same, billed 32.5 min (1.3 times life to the inferred deletion): a trip as overbilling
+U1-U5  a top-up during a wave (ruled 2026-10-06: restart the comparison, record it, do not trip)
+  [PASS] U1 honest wave, lagged, $75 top-up at minute 13: no trip
+  [PASS] U1 the restart is recorded at minute 16, with the rise  (restart at 16, rise 74.9167)
+  [PASS] U1 final comparison about 0.895 (0.85 to 0.95)  (0.8954)
+  [PASS] U1 the watcher's log says the balance rose, restarts, not a trip
+  [PASS] U2 overbilled 3.5 times with a top-up: restart at 16, trips in flight at minute 31  (tripped at 31)
+  [PASS] U3 overbilled 1.4 times with a top-up: NOT caught (the stated cost), final about 1.25  (1.2536)
+  [PASS] U4 honest, no lag, with a top-up: no trip, reads low (about 0.62)  (0.6184)
+  [PASS] U5 the plain restart (no allowance) would false-trip U1 at minute 56  (tripped at 56)
+T8  deletion records in the alarm
+  [PASS] a recorded time replaces an inferred one, even a later one
+  [PASS] between two recorded times the earlier is kept
+  [PASS] an inferred time never replaces a recorded one
+  [PASS] a machine this wave never registered is reported, not added
+  [PASS] (added) a machine missing from one list and listed again is not left marked deleted
+  [PASS] the command line records the time and who  (tripwire: podA deleted at 1970-01-01T00:18:20Z by the watchdog)
+T9/W1-W7  the watchdog's deletion record (corrected after the check: the vendor's own
+          'pod not found ... (status 404)', and two good machine lists without the machine)
+  [PASS] R10 (W1) every watchdog machine list uses --all
+  [PASS] W1 delete accepted; both lists good, machine absent: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:31:52Z (1791351112), confirmed by the watchdog: the delet)
+  [PASS] R10 (W2/R4) every watchdog machine list uses --all
+  [PASS] W2/R4 delete accepted; first list read fails: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W3/R5) every watchdog machine list uses --all
+  [PASS] W3/R5 delete accepted; first list good, second shows the machine: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W4) every watchdog machine list uses --all
+  [PASS] W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:32:02Z (1791351122), confirmed by the watchdog: the vendo)
+  [PASS] W5 delete fails 'HTTP 503'; lists good and empty: no record anywhere  (no record file)
+  [PASS] (T9) a failed delete, machine still listed: no record anywhere  (no record file)
+  [PASS] W6 found gone; pod get gives the vendor's words; lists good: record written
+  [PASS] W7 found gone; pod get gives 'Error: api error: 404 page not found (status 404)': no record
+  [PASS] (T9) found gone; three failed readings only: no record
+T10-T15, N1-N8  the laptop deadline timer
+Traceback (most recent call last):
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 735, in <module>
+    deadline_cases()
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 558, in deadline_cases
+    run_timer("T10 the watchdog's record names this machine: stands down, no delete, no deadline line",
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 545, in run_timer
+    check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+d}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'd' for object of type 'float'
+exit 1
+######## run 2 of 8, 2026-10-07T05:32:24Z
+Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
+laptop load at start: (174.65673828125, 291.09716796875, 419.759765625)
+T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
+  [PASS] no trip at any reading
+  [PASS] the watcher ends at minute 66, 30 minutes after the last deletion  (ended 66)
+  [PASS] final comparison 0.99 to 1.01  (0.9982)
+T2  overbilled wave, 3.5 times the rate, same machines
+  [PASS] trips at minute 26, while both machines still run  (tripped at 26)
+  [PASS] by rule S, two readings in a row  (TRIPPED 2027-01-15T08:26:00Z: ratio B 1.929 at or above 1.25 (rule S, two readings in a ro)
+  [PASS] ledger figures written with the halt
+  [PASS] the check before a next machine then refuses
+T3  mild overcharge (1.4 times) hidden by an 8-minute lag, one 20-minute machine
+  [PASS] rule S never trips; rule D trips at minute 36, 15 minutes after the deletion  (tripped at 36: TRIPPED 2027-01-15T08:36:00Z: ratio B 1.392 at or above 1.25 (rule D, after a de)
+  [PASS] ratio about 1.39  (1.3924)
+T4  honest but lumpy: ten minutes charged in advance at each ten-minute mark
+  [PASS] no trip  (ratios in flight: 1:9.91, 6:1.66, 11:1.81, 16:1.25, 21:1.42, 26:1.15, 31:1.00)
+  [PASS] final comparison 1.00  (1.0000)
+T5  honest, long lag (14 min), one 20-minute machine
+  [PASS] no trip
+  [PASS] final comparison 0.98 to 1.00  (0.9921)
+T6  failed vendor reading in flight (balance read errors at minute 11)
+  [PASS] trip at minute 11, a check that cannot run
+T7  empty bills at the end of a wave
+  [PASS] an empty bill ([]): a trip, cannot be checked yet
+  [PASS] a bill of zero hours: a trip, cannot be checked yet
+  [PASS] a bill with no row for this machine: a trip, cannot be checked yet
+  [PASS] a real row (191,063 ms against 191.063 s of life) passes at 1.0
+  [PASS] the old code passed the empty bill (the fault being fixed)  (old exit 0)
+B1-B4  a bill posted only in part (ruled 2026-10-06: below 0.90 of life is 'cannot be checked yet')
+  [PASS] B1 the recorded partial bill (566,260 ms against 1,873 s, 0.30): a trip, cannot be checked yet
+  [PASS] B2 the recorded complete bill (1,871,875 ms against 1,873 s, 0.9994): passes
+  [PASS] B3 billed 0.90 of life passes; 0.899 is a trip, cannot be checked yet
+  [PASS] B4 billed 3.5 times life: still a trip, over the line
+R7-R9  an inferred deletion: the 0.90 line judged against the last listing
+  [PASS] R7 listed 20 min, inferred 5 min later, billed 20 min: passes (1.00 against the last listing)
+  [PASS] R8 the same, billed 10 min: a trip, cannot be checked yet
+  [PASS] R9 the same, billed 32.5 min (1.3 times life to the inferred deletion): a trip as overbilling
+U1-U5  a top-up during a wave (ruled 2026-10-06: restart the comparison, record it, do not trip)
+  [PASS] U1 honest wave, lagged, $75 top-up at minute 13: no trip
+  [PASS] U1 the restart is recorded at minute 16, with the rise  (restart at 16, rise 74.9167)
+  [PASS] U1 final comparison about 0.895 (0.85 to 0.95)  (0.8954)
+  [PASS] U1 the watcher's log says the balance rose, restarts, not a trip
+  [PASS] U2 overbilled 3.5 times with a top-up: restart at 16, trips in flight at minute 31  (tripped at 31)
+  [PASS] U3 overbilled 1.4 times with a top-up: NOT caught (the stated cost), final about 1.25  (1.2536)
+  [PASS] U4 honest, no lag, with a top-up: no trip, reads low (about 0.62)  (0.6184)
+  [PASS] U5 the plain restart (no allowance) would false-trip U1 at minute 56  (tripped at 56)
+T8  deletion records in the alarm
+  [PASS] a recorded time replaces an inferred one, even a later one
+  [PASS] between two recorded times the earlier is kept
+  [PASS] an inferred time never replaces a recorded one
+  [PASS] a machine this wave never registered is reported, not added
+  [PASS] (added) a machine missing from one list and listed again is not left marked deleted
+  [PASS] the command line records the time and who  (tripwire: podA deleted at 1970-01-01T00:18:20Z by the watchdog)
+T9/W1-W7  the watchdog's deletion record (corrected after the check: the vendor's own
+          'pod not found ... (status 404)', and two good machine lists without the machine)
+  [PASS] R10 (W1) every watchdog machine list uses --all
+  [PASS] W1 delete accepted; both lists good, machine absent: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:32:32Z (1791351152), confirmed by the watchdog: the delet)
+  [PASS] R10 (W2/R4) every watchdog machine list uses --all
+  [PASS] W2/R4 delete accepted; first list read fails: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W3/R5) every watchdog machine list uses --all
+  [PASS] W3/R5 delete accepted; first list good, second shows the machine: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W4) every watchdog machine list uses --all
+  [PASS] W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:32:45Z (1791351165), confirmed by the watchdog: the vendo)
+  [PASS] W5 delete fails 'HTTP 503'; lists good and empty: no record anywhere  (no record file)
+  [PASS] (T9) a failed delete, machine still listed: no record anywhere  (no record file)
+  [PASS] W6 found gone; pod get gives the vendor's words; lists good: record written
+  [PASS] W7 found gone; pod get gives 'Error: api error: 404 page not found (status 404)': no record
+  [PASS] (T9) found gone; three failed readings only: no record
+T10-T15, N1-N8  the laptop deadline timer
+Traceback (most recent call last):
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 735, in <module>
+    deadline_cases()
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 558, in deadline_cases
+    run_timer("T10 the watchdog's record names this machine: stands down, no delete, no deadline line",
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 545, in run_timer
+    check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+d}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'd' for object of type 'float'
+exit 1
+######## run 3 of 8, 2026-10-07T05:33:02Z
+Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
+laptop load at start: (152.4189453125, 271.13525390625, 406.55859375)
+T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
+  [PASS] no trip at any reading
+  [PASS] the watcher ends at minute 66, 30 minutes after the last deletion  (ended 66)
+  [PASS] final comparison 0.99 to 1.01  (0.9982)
+T2  overbilled wave, 3.5 times the rate, same machines
+  [PASS] trips at minute 26, while both machines still run  (tripped at 26)
+  [PASS] by rule S, two readings in a row  (TRIPPED 2027-01-15T08:26:00Z: ratio B 1.929 at or above 1.25 (rule S, two readings in a ro)
+  [PASS] ledger figures written with the halt
+  [PASS] the check before a next machine then refuses
+T3  mild overcharge (1.4 times) hidden by an 8-minute lag, one 20-minute machine
+  [PASS] rule S never trips; rule D trips at minute 36, 15 minutes after the deletion  (tripped at 36: TRIPPED 2027-01-15T08:36:00Z: ratio B 1.392 at or above 1.25 (rule D, after a de)
+  [PASS] ratio about 1.39  (1.3924)
+T4  honest but lumpy: ten minutes charged in advance at each ten-minute mark
+  [PASS] no trip  (ratios in flight: 1:9.91, 6:1.66, 11:1.81, 16:1.25, 21:1.42, 26:1.15, 31:1.00)
+  [PASS] final comparison 1.00  (1.0000)
+T5  honest, long lag (14 min), one 20-minute machine
+  [PASS] no trip
+  [PASS] final comparison 0.98 to 1.00  (0.9921)
+T6  failed vendor reading in flight (balance read errors at minute 11)
+  [PASS] trip at minute 11, a check that cannot run
+T7  empty bills at the end of a wave
+  [PASS] an empty bill ([]): a trip, cannot be checked yet
+  [PASS] a bill of zero hours: a trip, cannot be checked yet
+  [PASS] a bill with no row for this machine: a trip, cannot be checked yet
+  [PASS] a real row (191,063 ms against 191.063 s of life) passes at 1.0
+  [PASS] the old code passed the empty bill (the fault being fixed)  (old exit 0)
+B1-B4  a bill posted only in part (ruled 2026-10-06: below 0.90 of life is 'cannot be checked yet')
+  [PASS] B1 the recorded partial bill (566,260 ms against 1,873 s, 0.30): a trip, cannot be checked yet
+  [PASS] B2 the recorded complete bill (1,871,875 ms against 1,873 s, 0.9994): passes
+  [PASS] B3 billed 0.90 of life passes; 0.899 is a trip, cannot be checked yet
+  [PASS] B4 billed 3.5 times life: still a trip, over the line
+R7-R9  an inferred deletion: the 0.90 line judged against the last listing
+  [PASS] R7 listed 20 min, inferred 5 min later, billed 20 min: passes (1.00 against the last listing)
+  [PASS] R8 the same, billed 10 min: a trip, cannot be checked yet
+  [PASS] R9 the same, billed 32.5 min (1.3 times life to the inferred deletion): a trip as overbilling
+U1-U5  a top-up during a wave (ruled 2026-10-06: restart the comparison, record it, do not trip)
+  [PASS] U1 honest wave, lagged, $75 top-up at minute 13: no trip
+  [PASS] U1 the restart is recorded at minute 16, with the rise  (restart at 16, rise 74.9167)
+  [PASS] U1 final comparison about 0.895 (0.85 to 0.95)  (0.8954)
+  [PASS] U1 the watcher's log says the balance rose, restarts, not a trip
+  [PASS] U2 overbilled 3.5 times with a top-up: restart at 16, trips in flight at minute 31  (tripped at 31)
+  [PASS] U3 overbilled 1.4 times with a top-up: NOT caught (the stated cost), final about 1.25  (1.2536)
+  [PASS] U4 honest, no lag, with a top-up: no trip, reads low (about 0.62)  (0.6184)
+  [PASS] U5 the plain restart (no allowance) would false-trip U1 at minute 56  (tripped at 56)
+T8  deletion records in the alarm
+  [PASS] a recorded time replaces an inferred one, even a later one
+  [PASS] between two recorded times the earlier is kept
+  [PASS] an inferred time never replaces a recorded one
+  [PASS] a machine this wave never registered is reported, not added
+  [PASS] (added) a machine missing from one list and listed again is not left marked deleted
+  [PASS] the command line records the time and who  (tripwire: podA deleted at 1970-01-01T00:18:20Z by the watchdog)
+T9/W1-W7  the watchdog's deletion record (corrected after the check: the vendor's own
+          'pod not found ... (status 404)', and two good machine lists without the machine)
+  [PASS] R10 (W1) every watchdog machine list uses --all
+  [PASS] W1 delete accepted; both lists good, machine absent: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:33:14Z (1791351194), confirmed by the watchdog: the delet)
+  [PASS] R10 (W2/R4) every watchdog machine list uses --all
+  [PASS] W2/R4 delete accepted; first list read fails: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W3/R5) every watchdog machine list uses --all
+  [PASS] W3/R5 delete accepted; first list good, second shows the machine: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W4) every watchdog machine list uses --all
+  [PASS] W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:33:30Z (1791351210), confirmed by the watchdog: the vendo)
+  [PASS] W5 delete fails 'HTTP 503'; lists good and empty: no record anywhere  (no record file)
+  [PASS] (T9) a failed delete, machine still listed: no record anywhere  (no record file)
+  [PASS] W6 found gone; pod get gives the vendor's words; lists good: record written
+  [PASS] W7 found gone; pod get gives 'Error: api error: 404 page not found (status 404)': no record
+  [PASS] (T9) found gone; three failed readings only: no record
+T10-T15, N1-N8  the laptop deadline timer
+Traceback (most recent call last):
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 735, in <module>
+    deadline_cases()
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 558, in deadline_cases
+    run_timer("T10 the watchdog's record names this machine: stands down, no delete, no deadline line",
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 545, in run_timer
+    check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+d}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'd' for object of type 'float'
+exit 1
+######## run 4 of 8, 2026-10-07T05:33:45Z
+Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
+laptop load at start: (142.35693359375, 251.95263671875, 392.52294921875)
+T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
+  [PASS] no trip at any reading
+  [PASS] the watcher ends at minute 66, 30 minutes after the last deletion  (ended 66)
+  [PASS] final comparison 0.99 to 1.01  (0.9982)
+T2  overbilled wave, 3.5 times the rate, same machines
+  [PASS] trips at minute 26, while both machines still run  (tripped at 26)
+  [PASS] by rule S, two readings in a row  (TRIPPED 2027-01-15T08:26:00Z: ratio B 1.929 at or above 1.25 (rule S, two readings in a ro)
+  [PASS] ledger figures written with the halt
+  [PASS] the check before a next machine then refuses
+T3  mild overcharge (1.4 times) hidden by an 8-minute lag, one 20-minute machine
+  [PASS] rule S never trips; rule D trips at minute 36, 15 minutes after the deletion  (tripped at 36: TRIPPED 2027-01-15T08:36:00Z: ratio B 1.392 at or above 1.25 (rule D, after a de)
+  [PASS] ratio about 1.39  (1.3924)
+T4  honest but lumpy: ten minutes charged in advance at each ten-minute mark
+  [PASS] no trip  (ratios in flight: 1:9.91, 6:1.66, 11:1.81, 16:1.25, 21:1.42, 26:1.15, 31:1.00)
+  [PASS] final comparison 1.00  (1.0000)
+T5  honest, long lag (14 min), one 20-minute machine
+  [PASS] no trip
+  [PASS] final comparison 0.98 to 1.00  (0.9921)
+T6  failed vendor reading in flight (balance read errors at minute 11)
+  [PASS] trip at minute 11, a check that cannot run
+T7  empty bills at the end of a wave
+  [PASS] an empty bill ([]): a trip, cannot be checked yet
+  [PASS] a bill of zero hours: a trip, cannot be checked yet
+  [PASS] a bill with no row for this machine: a trip, cannot be checked yet
+  [PASS] a real row (191,063 ms against 191.063 s of life) passes at 1.0
+  [PASS] the old code passed the empty bill (the fault being fixed)  (old exit 0)
+B1-B4  a bill posted only in part (ruled 2026-10-06: below 0.90 of life is 'cannot be checked yet')
+  [PASS] B1 the recorded partial bill (566,260 ms against 1,873 s, 0.30): a trip, cannot be checked yet
+  [PASS] B2 the recorded complete bill (1,871,875 ms against 1,873 s, 0.9994): passes
+  [PASS] B3 billed 0.90 of life passes; 0.899 is a trip, cannot be checked yet
+  [PASS] B4 billed 3.5 times life: still a trip, over the line
+R7-R9  an inferred deletion: the 0.90 line judged against the last listing
+  [PASS] R7 listed 20 min, inferred 5 min later, billed 20 min: passes (1.00 against the last listing)
+  [PASS] R8 the same, billed 10 min: a trip, cannot be checked yet
+  [PASS] R9 the same, billed 32.5 min (1.3 times life to the inferred deletion): a trip as overbilling
+U1-U5  a top-up during a wave (ruled 2026-10-06: restart the comparison, record it, do not trip)
+  [PASS] U1 honest wave, lagged, $75 top-up at minute 13: no trip
+  [PASS] U1 the restart is recorded at minute 16, with the rise  (restart at 16, rise 74.9167)
+  [PASS] U1 final comparison about 0.895 (0.85 to 0.95)  (0.8954)
+  [PASS] U1 the watcher's log says the balance rose, restarts, not a trip
+  [PASS] U2 overbilled 3.5 times with a top-up: restart at 16, trips in flight at minute 31  (tripped at 31)
+  [PASS] U3 overbilled 1.4 times with a top-up: NOT caught (the stated cost), final about 1.25  (1.2536)
+  [PASS] U4 honest, no lag, with a top-up: no trip, reads low (about 0.62)  (0.6184)
+  [PASS] U5 the plain restart (no allowance) would false-trip U1 at minute 56  (tripped at 56)
+T8  deletion records in the alarm
+  [PASS] a recorded time replaces an inferred one, even a later one
+  [PASS] between two recorded times the earlier is kept
+  [PASS] an inferred time never replaces a recorded one
+  [PASS] a machine this wave never registered is reported, not added
+  [PASS] (added) a machine missing from one list and listed again is not left marked deleted
+  [PASS] the command line records the time and who  (tripwire: podA deleted at 1970-01-01T00:18:20Z by the watchdog)
+T9/W1-W7  the watchdog's deletion record (corrected after the check: the vendor's own
+          'pod not found ... (status 404)', and two good machine lists without the machine)
+  [PASS] R10 (W1) every watchdog machine list uses --all
+  [PASS] W1 delete accepted; both lists good, machine absent: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:33:49Z (1791351229), confirmed by the watchdog: the delet)
+  [PASS] R10 (W2/R4) every watchdog machine list uses --all
+  [PASS] W2/R4 delete accepted; first list read fails: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W3/R5) every watchdog machine list uses --all
+  [PASS] W3/R5 delete accepted; first list good, second shows the machine: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W4) every watchdog machine list uses --all
+  [PASS] W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:34:02Z (1791351242), confirmed by the watchdog: the vendo)
+  [PASS] W5 delete fails 'HTTP 503'; lists good and empty: no record anywhere  (no record file)
+  [PASS] (T9) a failed delete, machine still listed: no record anywhere  (no record file)
+  [PASS] W6 found gone; pod get gives the vendor's words; lists good: record written
+  [PASS] W7 found gone; pod get gives 'Error: api error: 404 page not found (status 404)': no record
+  [PASS] (T9) found gone; three failed readings only: no record
+T10-T15, N1-N8  the laptop deadline timer
+Traceback (most recent call last):
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 735, in <module>
+    deadline_cases()
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 558, in deadline_cases
+    run_timer("T10 the watchdog's record names this machine: stands down, no delete, no deadline line",
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 545, in run_timer
+    check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+d}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'd' for object of type 'float'
+exit 1
+######## run 5 of 8, 2026-10-07T05:34:15Z
+Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
+laptop load at start: (129.27490234375, 238.28955078125, 382.69873046875)
+T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
+  [PASS] no trip at any reading
+  [PASS] the watcher ends at minute 66, 30 minutes after the last deletion  (ended 66)
+  [PASS] final comparison 0.99 to 1.01  (0.9982)
+T2  overbilled wave, 3.5 times the rate, same machines
+  [PASS] trips at minute 26, while both machines still run  (tripped at 26)
+  [PASS] by rule S, two readings in a row  (TRIPPED 2027-01-15T08:26:00Z: ratio B 1.929 at or above 1.25 (rule S, two readings in a ro)
+  [PASS] ledger figures written with the halt
+  [PASS] the check before a next machine then refuses
+T3  mild overcharge (1.4 times) hidden by an 8-minute lag, one 20-minute machine
+  [PASS] rule S never trips; rule D trips at minute 36, 15 minutes after the deletion  (tripped at 36: TRIPPED 2027-01-15T08:36:00Z: ratio B 1.392 at or above 1.25 (rule D, after a de)
+  [PASS] ratio about 1.39  (1.3924)
+T4  honest but lumpy: ten minutes charged in advance at each ten-minute mark
+  [PASS] no trip  (ratios in flight: 1:9.91, 6:1.66, 11:1.81, 16:1.25, 21:1.42, 26:1.15, 31:1.00)
+  [PASS] final comparison 1.00  (1.0000)
+T5  honest, long lag (14 min), one 20-minute machine
+  [PASS] no trip
+  [PASS] final comparison 0.98 to 1.00  (0.9921)
+T6  failed vendor reading in flight (balance read errors at minute 11)
+  [PASS] trip at minute 11, a check that cannot run
+T7  empty bills at the end of a wave
+  [PASS] an empty bill ([]): a trip, cannot be checked yet
+  [PASS] a bill of zero hours: a trip, cannot be checked yet
+  [PASS] a bill with no row for this machine: a trip, cannot be checked yet
+  [PASS] a real row (191,063 ms against 191.063 s of life) passes at 1.0
+  [PASS] the old code passed the empty bill (the fault being fixed)  (old exit 0)
+B1-B4  a bill posted only in part (ruled 2026-10-06: below 0.90 of life is 'cannot be checked yet')
+  [PASS] B1 the recorded partial bill (566,260 ms against 1,873 s, 0.30): a trip, cannot be checked yet
+  [PASS] B2 the recorded complete bill (1,871,875 ms against 1,873 s, 0.9994): passes
+  [PASS] B3 billed 0.90 of life passes; 0.899 is a trip, cannot be checked yet
+  [PASS] B4 billed 3.5 times life: still a trip, over the line
+R7-R9  an inferred deletion: the 0.90 line judged against the last listing
+  [PASS] R7 listed 20 min, inferred 5 min later, billed 20 min: passes (1.00 against the last listing)
+  [PASS] R8 the same, billed 10 min: a trip, cannot be checked yet
+  [PASS] R9 the same, billed 32.5 min (1.3 times life to the inferred deletion): a trip as overbilling
+U1-U5  a top-up during a wave (ruled 2026-10-06: restart the comparison, record it, do not trip)
+  [PASS] U1 honest wave, lagged, $75 top-up at minute 13: no trip
+  [PASS] U1 the restart is recorded at minute 16, with the rise  (restart at 16, rise 74.9167)
+  [PASS] U1 final comparison about 0.895 (0.85 to 0.95)  (0.8954)
+  [PASS] U1 the watcher's log says the balance rose, restarts, not a trip
+  [PASS] U2 overbilled 3.5 times with a top-up: restart at 16, trips in flight at minute 31  (tripped at 31)
+  [PASS] U3 overbilled 1.4 times with a top-up: NOT caught (the stated cost), final about 1.25  (1.2536)
+  [PASS] U4 honest, no lag, with a top-up: no trip, reads low (about 0.62)  (0.6184)
+  [PASS] U5 the plain restart (no allowance) would false-trip U1 at minute 56  (tripped at 56)
+T8  deletion records in the alarm
+  [PASS] a recorded time replaces an inferred one, even a later one
+  [PASS] between two recorded times the earlier is kept
+  [PASS] an inferred time never replaces a recorded one
+  [PASS] a machine this wave never registered is reported, not added
+  [PASS] (added) a machine missing from one list and listed again is not left marked deleted
+  [PASS] the command line records the time and who  (tripwire: podA deleted at 1970-01-01T00:18:20Z by the watchdog)
+T9/W1-W7  the watchdog's deletion record (corrected after the check: the vendor's own
+          'pod not found ... (status 404)', and two good machine lists without the machine)
+  [PASS] R10 (W1) every watchdog machine list uses --all
+  [PASS] W1 delete accepted; both lists good, machine absent: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:34:18Z (1791351258), confirmed by the watchdog: the delet)
+  [PASS] R10 (W2/R4) every watchdog machine list uses --all
+  [PASS] W2/R4 delete accepted; first list read fails: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W3/R5) every watchdog machine list uses --all
+  [PASS] W3/R5 delete accepted; first list good, second shows the machine: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W4) every watchdog machine list uses --all
+  [PASS] W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:34:24Z (1791351264), confirmed by the watchdog: the vendo)
+  [PASS] W5 delete fails 'HTTP 503'; lists good and empty: no record anywhere  (no record file)
+  [PASS] (T9) a failed delete, machine still listed: no record anywhere  (no record file)
+  [PASS] W6 found gone; pod get gives the vendor's words; lists good: record written
+  [PASS] W7 found gone; pod get gives 'Error: api error: 404 page not found (status 404)': no record
+  [PASS] (T9) found gone; three failed readings only: no record
+T10-T15, N1-N8  the laptop deadline timer
+Traceback (most recent call last):
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 735, in <module>
+    deadline_cases()
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 558, in deadline_cases
+    run_timer("T10 the watchdog's record names this machine: stands down, no delete, no deadline line",
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 545, in run_timer
+    check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+d}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'd' for object of type 'float'
+exit 1
+######## run 6 of 8, 2026-10-07T05:34:31Z
+Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
+laptop load at start: (157.0712890625, 239.0791015625, 380.455078125)
+T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
+  [PASS] no trip at any reading
+  [PASS] the watcher ends at minute 66, 30 minutes after the last deletion  (ended 66)
+  [PASS] final comparison 0.99 to 1.01  (0.9982)
+T2  overbilled wave, 3.5 times the rate, same machines
+  [PASS] trips at minute 26, while both machines still run  (tripped at 26)
+  [PASS] by rule S, two readings in a row  (TRIPPED 2027-01-15T08:26:00Z: ratio B 1.929 at or above 1.25 (rule S, two readings in a ro)
+  [PASS] ledger figures written with the halt
+  [PASS] the check before a next machine then refuses
+T3  mild overcharge (1.4 times) hidden by an 8-minute lag, one 20-minute machine
+  [PASS] rule S never trips; rule D trips at minute 36, 15 minutes after the deletion  (tripped at 36: TRIPPED 2027-01-15T08:36:00Z: ratio B 1.392 at or above 1.25 (rule D, after a de)
+  [PASS] ratio about 1.39  (1.3924)
+T4  honest but lumpy: ten minutes charged in advance at each ten-minute mark
+  [PASS] no trip  (ratios in flight: 1:9.91, 6:1.66, 11:1.81, 16:1.25, 21:1.42, 26:1.15, 31:1.00)
+  [PASS] final comparison 1.00  (1.0000)
+T5  honest, long lag (14 min), one 20-minute machine
+  [PASS] no trip
+  [PASS] final comparison 0.98 to 1.00  (0.9921)
+T6  failed vendor reading in flight (balance read errors at minute 11)
+  [PASS] trip at minute 11, a check that cannot run
+T7  empty bills at the end of a wave
+  [PASS] an empty bill ([]): a trip, cannot be checked yet
+  [PASS] a bill of zero hours: a trip, cannot be checked yet
+  [PASS] a bill with no row for this machine: a trip, cannot be checked yet
+  [PASS] a real row (191,063 ms against 191.063 s of life) passes at 1.0
+  [PASS] the old code passed the empty bill (the fault being fixed)  (old exit 0)
+B1-B4  a bill posted only in part (ruled 2026-10-06: below 0.90 of life is 'cannot be checked yet')
+  [PASS] B1 the recorded partial bill (566,260 ms against 1,873 s, 0.30): a trip, cannot be checked yet
+  [PASS] B2 the recorded complete bill (1,871,875 ms against 1,873 s, 0.9994): passes
+  [PASS] B3 billed 0.90 of life passes; 0.899 is a trip, cannot be checked yet
+  [PASS] B4 billed 3.5 times life: still a trip, over the line
+R7-R9  an inferred deletion: the 0.90 line judged against the last listing
+  [PASS] R7 listed 20 min, inferred 5 min later, billed 20 min: passes (1.00 against the last listing)
+  [PASS] R8 the same, billed 10 min: a trip, cannot be checked yet
+  [PASS] R9 the same, billed 32.5 min (1.3 times life to the inferred deletion): a trip as overbilling
+U1-U5  a top-up during a wave (ruled 2026-10-06: restart the comparison, record it, do not trip)
+  [PASS] U1 honest wave, lagged, $75 top-up at minute 13: no trip
+  [PASS] U1 the restart is recorded at minute 16, with the rise  (restart at 16, rise 74.9167)
+  [PASS] U1 final comparison about 0.895 (0.85 to 0.95)  (0.8954)
+  [PASS] U1 the watcher's log says the balance rose, restarts, not a trip
+  [PASS] U2 overbilled 3.5 times with a top-up: restart at 16, trips in flight at minute 31  (tripped at 31)
+  [PASS] U3 overbilled 1.4 times with a top-up: NOT caught (the stated cost), final about 1.25  (1.2536)
+  [PASS] U4 honest, no lag, with a top-up: no trip, reads low (about 0.62)  (0.6184)
+  [PASS] U5 the plain restart (no allowance) would false-trip U1 at minute 56  (tripped at 56)
+T8  deletion records in the alarm
+  [PASS] a recorded time replaces an inferred one, even a later one
+  [PASS] between two recorded times the earlier is kept
+  [PASS] an inferred time never replaces a recorded one
+  [PASS] a machine this wave never registered is reported, not added
+  [PASS] (added) a machine missing from one list and listed again is not left marked deleted
+  [PASS] the command line records the time and who  (tripwire: podA deleted at 1970-01-01T00:18:20Z by the watchdog)
+T9/W1-W7  the watchdog's deletion record (corrected after the check: the vendor's own
+          'pod not found ... (status 404)', and two good machine lists without the machine)
+  [PASS] R10 (W1) every watchdog machine list uses --all
+  [PASS] W1 delete accepted; both lists good, machine absent: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:35:03Z (1791351303), confirmed by the watchdog: the delet)
+  [PASS] R10 (W2/R4) every watchdog machine list uses --all
+  [PASS] W2/R4 delete accepted; first list read fails: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W3/R5) every watchdog machine list uses --all
+  [PASS] W3/R5 delete accepted; first list good, second shows the machine: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W4) every watchdog machine list uses --all
+  [PASS] W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:35:19Z (1791351319), confirmed by the watchdog: the vendo)
+  [PASS] W5 delete fails 'HTTP 503'; lists good and empty: no record anywhere  (no record file)
+  [PASS] (T9) a failed delete, machine still listed: no record anywhere  (no record file)
+  [PASS] W6 found gone; pod get gives the vendor's words; lists good: record written
+  [PASS] W7 found gone; pod get gives 'Error: api error: 404 page not found (status 404)': no record
+  [PASS] (T9) found gone; three failed readings only: no record
+T10-T15, N1-N8  the laptop deadline timer
+Traceback (most recent call last):
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 735, in <module>
+    deadline_cases()
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 558, in deadline_cases
+    run_timer("T10 the watchdog's record names this machine: stands down, no delete, no deadline line",
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 545, in run_timer
+    check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+d}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'd' for object of type 'float'
+exit 1
+######## run 7 of 8, 2026-10-07T05:35:34Z
+Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
+laptop load at start: (157.05224609375, 224.91064453125, 365.5703125)
+T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
+  [PASS] no trip at any reading
+  [PASS] the watcher ends at minute 66, 30 minutes after the last deletion  (ended 66)
+  [PASS] final comparison 0.99 to 1.01  (0.9982)
+T2  overbilled wave, 3.5 times the rate, same machines
+  [PASS] trips at minute 26, while both machines still run  (tripped at 26)
+  [PASS] by rule S, two readings in a row  (TRIPPED 2027-01-15T08:26:00Z: ratio B 1.929 at or above 1.25 (rule S, two readings in a ro)
+  [PASS] ledger figures written with the halt
+  [PASS] the check before a next machine then refuses
+T3  mild overcharge (1.4 times) hidden by an 8-minute lag, one 20-minute machine
+  [PASS] rule S never trips; rule D trips at minute 36, 15 minutes after the deletion  (tripped at 36: TRIPPED 2027-01-15T08:36:00Z: ratio B 1.392 at or above 1.25 (rule D, after a de)
+  [PASS] ratio about 1.39  (1.3924)
+T4  honest but lumpy: ten minutes charged in advance at each ten-minute mark
+  [PASS] no trip  (ratios in flight: 1:9.91, 6:1.66, 11:1.81, 16:1.25, 21:1.42, 26:1.15, 31:1.00)
+  [PASS] final comparison 1.00  (1.0000)
+T5  honest, long lag (14 min), one 20-minute machine
+  [PASS] no trip
+  [PASS] final comparison 0.98 to 1.00  (0.9921)
+T6  failed vendor reading in flight (balance read errors at minute 11)
+  [PASS] trip at minute 11, a check that cannot run
+T7  empty bills at the end of a wave
+  [PASS] an empty bill ([]): a trip, cannot be checked yet
+  [PASS] a bill of zero hours: a trip, cannot be checked yet
+  [PASS] a bill with no row for this machine: a trip, cannot be checked yet
+  [PASS] a real row (191,063 ms against 191.063 s of life) passes at 1.0
+  [PASS] the old code passed the empty bill (the fault being fixed)  (old exit 0)
+B1-B4  a bill posted only in part (ruled 2026-10-06: below 0.90 of life is 'cannot be checked yet')
+  [PASS] B1 the recorded partial bill (566,260 ms against 1,873 s, 0.30): a trip, cannot be checked yet
+  [PASS] B2 the recorded complete bill (1,871,875 ms against 1,873 s, 0.9994): passes
+  [PASS] B3 billed 0.90 of life passes; 0.899 is a trip, cannot be checked yet
+  [PASS] B4 billed 3.5 times life: still a trip, over the line
+R7-R9  an inferred deletion: the 0.90 line judged against the last listing
+  [PASS] R7 listed 20 min, inferred 5 min later, billed 20 min: passes (1.00 against the last listing)
+  [PASS] R8 the same, billed 10 min: a trip, cannot be checked yet
+  [PASS] R9 the same, billed 32.5 min (1.3 times life to the inferred deletion): a trip as overbilling
+U1-U5  a top-up during a wave (ruled 2026-10-06: restart the comparison, record it, do not trip)
+  [PASS] U1 honest wave, lagged, $75 top-up at minute 13: no trip
+  [PASS] U1 the restart is recorded at minute 16, with the rise  (restart at 16, rise 74.9167)
+  [PASS] U1 final comparison about 0.895 (0.85 to 0.95)  (0.8954)
+  [PASS] U1 the watcher's log says the balance rose, restarts, not a trip
+  [PASS] U2 overbilled 3.5 times with a top-up: restart at 16, trips in flight at minute 31  (tripped at 31)
+  [PASS] U3 overbilled 1.4 times with a top-up: NOT caught (the stated cost), final about 1.25  (1.2536)
+  [PASS] U4 honest, no lag, with a top-up: no trip, reads low (about 0.62)  (0.6184)
+  [PASS] U5 the plain restart (no allowance) would false-trip U1 at minute 56  (tripped at 56)
+T8  deletion records in the alarm
+  [PASS] a recorded time replaces an inferred one, even a later one
+  [PASS] between two recorded times the earlier is kept
+  [PASS] an inferred time never replaces a recorded one
+  [PASS] a machine this wave never registered is reported, not added
+  [PASS] (added) a machine missing from one list and listed again is not left marked deleted
+  [PASS] the command line records the time and who  (tripwire: podA deleted at 1970-01-01T00:18:20Z by the watchdog)
+T9/W1-W7  the watchdog's deletion record (corrected after the check: the vendor's own
+          'pod not found ... (status 404)', and two good machine lists without the machine)
+  [PASS] R10 (W1) every watchdog machine list uses --all
+  [PASS] W1 delete accepted; both lists good, machine absent: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:35:36Z (1791351336), confirmed by the watchdog: the delet)
+  [PASS] R10 (W2/R4) every watchdog machine list uses --all
+  [PASS] W2/R4 delete accepted; first list read fails: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W3/R5) every watchdog machine list uses --all
+  [PASS] W3/R5 delete accepted; first list good, second shows the machine: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W4) every watchdog machine list uses --all
+  [PASS] W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:35:41Z (1791351341), confirmed by the watchdog: the vendo)
+  [PASS] W5 delete fails 'HTTP 503'; lists good and empty: no record anywhere  (no record file)
+  [PASS] (T9) a failed delete, machine still listed: no record anywhere  (no record file)
+  [PASS] W6 found gone; pod get gives the vendor's words; lists good: record written
+  [PASS] W7 found gone; pod get gives 'Error: api error: 404 page not found (status 404)': no record
+  [PASS] (T9) found gone; three failed readings only: no record
+T10-T15, N1-N8  the laptop deadline timer
+Traceback (most recent call last):
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 735, in <module>
+    deadline_cases()
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 558, in deadline_cases
+    run_timer("T10 the watchdog's record names this machine: stands down, no delete, no deadline line",
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 545, in run_timer
+    check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+d}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'd' for object of type 'float'
+exit 1
+######## run 8 of 8, 2026-10-07T05:35:49Z
+Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
+laptop load at start: (179.9140625, 226.5009765625, 363.6708984375)
+T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
+  [PASS] no trip at any reading
+  [PASS] the watcher ends at minute 66, 30 minutes after the last deletion  (ended 66)
+  [PASS] final comparison 0.99 to 1.01  (0.9982)
+T2  overbilled wave, 3.5 times the rate, same machines
+  [PASS] trips at minute 26, while both machines still run  (tripped at 26)
+  [PASS] by rule S, two readings in a row  (TRIPPED 2027-01-15T08:26:00Z: ratio B 1.929 at or above 1.25 (rule S, two readings in a ro)
+  [PASS] ledger figures written with the halt
+  [PASS] the check before a next machine then refuses
+T3  mild overcharge (1.4 times) hidden by an 8-minute lag, one 20-minute machine
+  [PASS] rule S never trips; rule D trips at minute 36, 15 minutes after the deletion  (tripped at 36: TRIPPED 2027-01-15T08:36:00Z: ratio B 1.392 at or above 1.25 (rule D, after a de)
+  [PASS] ratio about 1.39  (1.3924)
+T4  honest but lumpy: ten minutes charged in advance at each ten-minute mark
+  [PASS] no trip  (ratios in flight: 1:9.91, 6:1.66, 11:1.81, 16:1.25, 21:1.42, 26:1.15, 31:1.00)
+  [PASS] final comparison 1.00  (1.0000)
+T5  honest, long lag (14 min), one 20-minute machine
+  [PASS] no trip
+  [PASS] final comparison 0.98 to 1.00  (0.9921)
+T6  failed vendor reading in flight (balance read errors at minute 11)
+  [PASS] trip at minute 11, a check that cannot run
+T7  empty bills at the end of a wave
+  [PASS] an empty bill ([]): a trip, cannot be checked yet
+  [PASS] a bill of zero hours: a trip, cannot be checked yet
+  [PASS] a bill with no row for this machine: a trip, cannot be checked yet
+  [PASS] a real row (191,063 ms against 191.063 s of life) passes at 1.0
+  [PASS] the old code passed the empty bill (the fault being fixed)  (old exit 0)
+B1-B4  a bill posted only in part (ruled 2026-10-06: below 0.90 of life is 'cannot be checked yet')
+  [PASS] B1 the recorded partial bill (566,260 ms against 1,873 s, 0.30): a trip, cannot be checked yet
+  [PASS] B2 the recorded complete bill (1,871,875 ms against 1,873 s, 0.9994): passes
+  [PASS] B3 billed 0.90 of life passes; 0.899 is a trip, cannot be checked yet
+  [PASS] B4 billed 3.5 times life: still a trip, over the line
+R7-R9  an inferred deletion: the 0.90 line judged against the last listing
+  [PASS] R7 listed 20 min, inferred 5 min later, billed 20 min: passes (1.00 against the last listing)
+  [PASS] R8 the same, billed 10 min: a trip, cannot be checked yet
+  [PASS] R9 the same, billed 32.5 min (1.3 times life to the inferred deletion): a trip as overbilling
+U1-U5  a top-up during a wave (ruled 2026-10-06: restart the comparison, record it, do not trip)
+  [PASS] U1 honest wave, lagged, $75 top-up at minute 13: no trip
+  [PASS] U1 the restart is recorded at minute 16, with the rise  (restart at 16, rise 74.9167)
+  [PASS] U1 final comparison about 0.895 (0.85 to 0.95)  (0.8954)
+  [PASS] U1 the watcher's log says the balance rose, restarts, not a trip
+  [PASS] U2 overbilled 3.5 times with a top-up: restart at 16, trips in flight at minute 31  (tripped at 31)
+  [PASS] U3 overbilled 1.4 times with a top-up: NOT caught (the stated cost), final about 1.25  (1.2536)
+  [PASS] U4 honest, no lag, with a top-up: no trip, reads low (about 0.62)  (0.6184)
+  [PASS] U5 the plain restart (no allowance) would false-trip U1 at minute 56  (tripped at 56)
+T8  deletion records in the alarm
+  [PASS] a recorded time replaces an inferred one, even a later one
+  [PASS] between two recorded times the earlier is kept
+  [PASS] an inferred time never replaces a recorded one
+  [PASS] a machine this wave never registered is reported, not added
+  [PASS] (added) a machine missing from one list and listed again is not left marked deleted
+  [PASS] the command line records the time and who  (tripwire: podA deleted at 1970-01-01T00:18:20Z by the watchdog)
+T9/W1-W7  the watchdog's deletion record (corrected after the check: the vendor's own
+          'pod not found ... (status 404)', and two good machine lists without the machine)
+  [PASS] R10 (W1) every watchdog machine list uses --all
+  [PASS] W1 delete accepted; both lists good, machine absent: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:35:52Z (1791351352), confirmed by the watchdog: the delet)
+  [PASS] R10 (W2/R4) every watchdog machine list uses --all
+  [PASS] W2/R4 delete accepted; first list read fails: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W3/R5) every watchdog machine list uses --all
+  [PASS] W3/R5 delete accepted; first list good, second shows the machine: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W4) every watchdog machine list uses --all
+  [PASS] W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:35:58Z (1791351358), confirmed by the watchdog: the vendo)
+  [PASS] W5 delete fails 'HTTP 503'; lists good and empty: no record anywhere  (no record file)
+  [PASS] (T9) a failed delete, machine still listed: no record anywhere  (no record file)
+  [PASS] W6 found gone; pod get gives the vendor's words; lists good: record written
+  [PASS] W7 found gone; pod get gives 'Error: api error: 404 page not found (status 404)': no record
+  [PASS] (T9) found gone; three failed readings only: no record
+T10-T15, N1-N8  the laptop deadline timer
+Traceback (most recent call last):
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 735, in <module>
+    deadline_cases()
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 558, in deadline_cases
+    run_timer("T10 the watchdog's record names this machine: stands down, no delete, no deadline line",
+  File "/Users/john/Code/mvm-tripwire/experiments/08-successor-degree/tests/check_tripwire_fixes.py", line 545, in run_timer
+    check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+d}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'd' for object of type 'float'
+exit 1
