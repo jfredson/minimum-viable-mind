@@ -540,7 +540,7 @@ TRIP_DIR="{td}"
     else:
         ok = (not deleted) and (not line) and end < written_deadline and r.returncode == 0 and stood
     if want_gets is not None:
-        ok = ok and gets == want_gets
+        ok = ok and (gets >= 1 if want_gets == "some" else gets == want_gets)
     if not quiet:
         check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+.0f}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
                         f"deadline line: {line}, stood down: {stood}")
@@ -559,37 +559,41 @@ def deadline_cases() -> None:
               "1|HTTP 503", record_for="fakepod0000001", deadline_s=6, want_delete=False)
     run_timer("T11/N4 the recorded 'pod not found ... (status 404)' and a good list without it, two checks: stands down",
               "1|" + RECORDED_NOTFOUND, deadline_s=14, want_delete=False)
-    run_timer("T12 a failed vendor reading (error, no 'not found'): keeps running, deletes at the deadline", "1|HTTP 503")
-    run_timer("T13 an empty vendor answer: keeps running, deletes at the deadline", "0|")
+    # Section 13.6: every case that tests an answer has a deadline long enough
+    # (14 s, cap 2 s) for vendor reads outside the skip window, and must make one.
+    run_timer("T12 a failed vendor reading (error, no 'not found'): keeps running, deletes at the deadline", "1|HTTP 503",
+              deadline_s=14, want_gets="some")
+    run_timer("T13 an empty vendor answer: keeps running, deletes at the deadline", "0|", deadline_s=14, want_gets="some")
     run_timer("T14 a record naming another machine: ignored, deletes at the deadline", "1|HTTP 503",
               record_for="someotherpod00")
     run_timer("T15 deletes at its deadline with the alarm configured", '0|{"id": "fakepod0000001"}', trip=True)
-    run_timer("(added) a vendor read that hangs: the deadline still deletes", "hang", deadline_s=5)
+    run_timer("(added) a vendor read that hangs: the deadline still deletes", "hang", deadline_s=14, want_gets="some")
     run_timer("R2 every vendor read hangs (cap 2 s, deadline 12 s): deletes at the deadline, within 10 s", "hang",
               lists=("hang",), deadline_s=12)
     r3 = run_timer("R3 cap 20 s, deadline 10 s: no vendor read at all (inside the skip window); deletes",
                    "1|" + RECORDED_NOTFOUND, deadline_s=10, cap=20, want_gets=0)
     # the check's three false-positive answers (pull request 117, problem 1)
     run_timer("N1 'Error: api error: 404 page not found (status 404)', list good: stays armed, deletes",
-              "1|Error: api error: 404 page not found (status 404)", deadline_s=5)
+              "1|Error: api error: 404 page not found (status 404)", deadline_s=14, want_gets="some")
     print("      (N2 waits for the timer's three failed delete attempts, about 40 seconds)")
     run_timer("N2 the vendor tool missing from the command path ('command not found'): never stands down",
               "1|unused", deadline_s=5, no_tool=True)
     run_timer("N3 'Config File \"config\" Not Found in \"[/Users/x/.runpod]\"': stays armed, deletes",
-              '1|Config File "config" Not Found in "[/Users/x/.runpod]"', deadline_s=5)
+              '1|Config File "config" Not Found in "[/Users/x/.runpod]"', deadline_s=14, want_gets="some")
     run_timer("N5 the vendor's words, but the machine list fails: stays armed, deletes",
-              "1|" + RECORDED_NOTFOUND, lists=("1|Error: request failed",), deadline_s=5)
+              "1|" + RECORDED_NOTFOUND, lists=("1|Error: request failed",), deadline_s=14, want_gets="some")
     run_timer("N6 the vendor's words, but the list shows the machine: stays armed, deletes",
-              "1|" + RECORDED_NOTFOUND, lists=(LIST_WITH_IT,), deadline_s=5)
+              "1|" + RECORDED_NOTFOUND, lists=(LIST_WITH_IT,), deadline_s=14, want_gets="some")
     run_timer("N7 the vendor's words and a good list, but only one check before the deadline: stays armed, deletes",
-              "1|" + RECORDED_NOTFOUND, deadline_s=5, check_s=3)
+              "1|" + RECORDED_NOTFOUND, deadline_s=14, check_s=5, want_gets=1)
     run_timer("N8 the old T11 answer '{\"error\":\"pod not found\",\"status\":404}': now stays armed, deletes",
-              '1|{"error":"pod not found","status":404}', deadline_s=5)
+              '1|{"error":"pod not found","status":404}', deadline_s=14, want_gets="some")
     print("F1  the timing cases, five full runs in a row")
     results = []
     for _ in range(5):
-        results += [run_timer("", "1|HTTP 503", quiet=True), run_timer("", "0|", quiet=True),
-                    run_timer("", "hang", deadline_s=5, quiet=True),
+        results += [run_timer("", "1|HTTP 503", deadline_s=10, want_gets="some", quiet=True),
+                    run_timer("", "0|", deadline_s=10, want_gets="some", quiet=True),
+                    run_timer("", "hang", deadline_s=10, want_gets="some", quiet=True),
                     run_timer("", "1|" + RECORDED_NOTFOUND, deadline_s=14, want_delete=False, quiet=True)]
     check("F1 all pass in five runs", all(results), f"{sum(results)} of {len(results)}")
 

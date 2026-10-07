@@ -529,3 +529,18 @@ of which starts several small programs. **Changed after seeing this, and
 said so:** the tests now take the moment the delete was issued from the
 stand-in tool's own timestamped log, keep the 10-second allowance, and print
 the laptop's load at the start. The timer code is not changed by this.
+
+### 13.6 Two more test-script faults found while running the eight runs (kept)
+
+- **Attempt 1 crashed** in every run at the first timer case: the new "delete
+  issued" figure was printed as a whole number when no delete had been issued.
+  Output kept (`..._eight_runs_attempt1_crashed.txt`); format fixed.
+- **Attempt 2 was stopped after its first run, which passed, because that pass
+  was hollow.** With the new skip window (two caps plus 2 seconds, 6 seconds
+  in the tests) the cases with 5-second deadlines (N1, N3, N5 to N8, T12, T13
+  and the hung-read case) made **no vendor read at all**, so they passed
+  without testing the answer they name. Output kept
+  (`..._eight_runs_attempt2_stopped.txt`). **Fix:** those cases now run with
+  14-second deadlines and must make at least one vendor read (N7: exactly
+  one, with checks every 5 seconds); the five-run timing cases use 10-second
+  deadlines and must read too. Expected outcomes are unchanged from 13.4.
