@@ -76,6 +76,20 @@
 #     and hourly cadences. This is what keeps the machine's waiting time,
 #     and so the worst-case idle bill, short.
 #
+# 2026-10-06 — THE DELETION RECORD (John's rulings of 2026-10-06, page 2 of
+#   the ruling packet on the built models that lost their ownership route,
+#   fixes 2 and 4; method: docs/2026-10-06-tripwire-fixes-method.md).
+#   When this watcher confirms a machine is deleted it writes
+#   $DEST/machine_gone_$POD, naming the machine, the time and the basis. The
+#   laptop deadline timer stops itself on that file and on nothing weaker.
+#   "Confirmed" means the vendor accepted the delete or answered that the
+#   machine does not exist, and the machine is not listed afterwards; after
+#   three silent checks, one more reading must say "not found". If the
+#   settings file names the spending alarm's records (TRIP_PY, TRIP_SCRIPT,
+#   TRIP_DIR: only the successor launcher writes them), the deletion time is
+#   also written there, so the alarm stops charging the machine from then.
+#   Nothing else here changes.
+#
 #   usage: watch_run_a3.sh <env-file>   (the launcher writes the env file)
 set -uo pipefail
 ENVF="${1:?usage: watch_run_a3.sh <env-file>}"
@@ -102,6 +116,29 @@ say() { echo "[$(ts)] $*"; }
 
 pod_exists() {
   runpodctl pod get "$POD" -o json 2>/dev/null | grep -q '"id"'
+}
+
+# 2026-10-06: the vendor SAYING the machine does not exist, as distinct from
+# a reading that failed or came back empty. On 2026-09-26 the vendor answered
+# a delete of a machine already gone with "pod not found to terminate",
+# status 404.
+says_not_found() {
+  printf '%s' "$1" | tr -d ' ' | tr 'A-Z' 'a-z' | grep -qE 'notfound|"status":404'
+}
+
+# 2026-10-06: the deletion record. $1 the deletion time (epoch), $2 the basis.
+record_gone() {
+  local at="$1" basis="$2"
+  printf 'machine %s (%s) deleted at %s (%s), confirmed by the watchdog: %s\n' \
+    "$POD" "$OUT" "$(date -u -r "$at" +%Y-%m-%dT%H:%M:%SZ)" "$at" "$basis" \
+    > "$DEST/machine_gone_$POD.tmp" && mv "$DEST/machine_gone_$POD.tmp" "$DEST/machine_gone_$POD"
+  say "deletion record written: $DEST/machine_gone_$POD ($basis)"
+  # $3 = "file-only" when $1 is when the absence was found, not when the
+  # delete happened: the spending alarm then keeps its own reading of it.
+  if [ "${3:-}" != "file-only" ] && [ -n "${TRIP_PY:-}" ] && [ -n "${TRIP_SCRIPT:-}" ] && [ -n "${TRIP_DIR:-}" ]; then
+    "$TRIP_PY" "$TRIP_SCRIPT" gone --state "$TRIP_DIR" --pod "$POD" --at "$at" --by "the watchdog" 2>&1 \
+      | sed 's/^/  /' || say "could not write the deletion time into the spending alarm's records"
+  fi
 }
 
 # FIX 5: one failed API call is not proof the machine is gone. Believing it
@@ -224,9 +261,24 @@ RECEOF
 
 kill_pod() {
   say "deleting pod $POD"
-  runpodctl pod delete "$POD" && sleep "$KILL_SETTLE_S"
-  pod_exists && say "WARNING: pod still present after delete — retry manually" \
-             || say "pod gone; billing stopped"
+  local answer rc at
+  answer=$(runpodctl pod delete "$POD" 2>&1); rc=$?
+  at=$(date +%s)
+  [ -n "$answer" ] && printf '%s\n' "$answer"
+  [ "$rc" -eq 0 ] && sleep "$KILL_SETTLE_S"
+  if pod_exists; then
+    say "WARNING: pod still present after delete — retry manually"
+  else
+    say "pod gone; billing stopped"
+    # 2026-10-06: the record only on a confirmed deletion
+    if [ "$rc" -eq 0 ]; then
+      record_gone "$at" "the delete was accepted and the machine is no longer listed"
+    elif says_not_found "$answer"; then
+      record_gone "$at" "the vendor answered that the machine does not exist"
+    else
+      say "no deletion record: the delete failed (exit $rc) and the machine's absence is only a failed or empty reading"
+    fi
+  fi
 }
 
 # FIX 4: the completion path. A checked copy first, THEN the receipt, THEN
@@ -259,6 +311,15 @@ on_finished() {
 on_machine_gone() {
   say "the machine is gone, confirmed over $MISSING_CONFIRM checks: it deleted"
   say "itself on finishing, was killed, or crashed."
+  # 2026-10-06: silent checks are not a confirmed deletion; one more reading
+  # must say "not found" before the deadline timer may stand down.
+  local answer
+  answer=$(runpodctl pod get "$POD" -o json 2>&1)
+  if says_not_found "$answer"; then
+    record_gone "$(date +%s)" "found gone: the vendor answered that the machine does not exist (deleted at or before this time)" file-only
+  else
+    say "no deletion record: the vendor did not say the machine does not exist, so the deadline timer stays armed"
+  fi
   if [ -f "$DEST/$OUT.DONE" ] && [ -f "$DEST/$OUT.pt" ]; then
     say "the finished-marker and the model file are both already here, so the"
     say "run is complete and nothing needs recovering."

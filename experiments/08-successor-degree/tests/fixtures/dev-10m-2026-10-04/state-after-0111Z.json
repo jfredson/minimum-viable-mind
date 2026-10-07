@@ -1,0 +1,73 @@
+{
+ "machines": {
+  "28guwiucofsjyr": {
+   "created": 1791159651.118145,
+   "created_iso": "2026-10-05T00:20:51Z",
+   "estimate_hours": 1.25,
+   "gone": 1791162680.5164201,
+   "out": "succ_f_10m_seed0",
+   "pod": "28guwiucofsjyr",
+   "rate": 0.99
+  },
+  "4kabf0hn4erbbg": {
+   "created": 1791159280.845951,
+   "created_iso": "2026-10-05T00:14:40Z",
+   "estimate_hours": 1.25,
+   "gone": 1791162680.5164201,
+   "out": "succ_t_10m_seed0",
+   "pod": "4kabf0hn4erbbg",
+   "rate": 0.99
+  },
+  "n4q0qur7iqdrom": {
+   "created": 1791159467.539392,
+   "created_iso": "2026-10-05T00:17:47Z",
+   "estimate_hours": 1.25,
+   "gone": 1791162680.5164201,
+   "out": "succ_c_10m_seed0",
+   "pod": "n4q0qur7iqdrom",
+   "rate": 0.99
+  },
+  "pfk1yqygezezlo": {
+   "created": 1791159078.6194692,
+   "created_iso": "2026-10-05T00:11:18Z",
+   "estimate_hours": 1.25,
+   "gone": 1791162680.5164201,
+   "last_seen": 1791159079.57517,
+   "out": "succ_m_10m_seed0",
+   "pod": "pfk1yqygezezlo",
+   "rate": 0.99
+  }
+ },
+ "readings": [
+  {
+   "balance": 73.774234513,
+   "source": "preflight",
+   "t": 1791159077.63534
+  },
+  {
+   "balance": 73.774234513,
+   "source": "watch",
+   "t": 1791159079.57517
+  },
+  {
+   "balance": 73.774234513,
+   "source": "preflight",
+   "t": 1791159279.930921
+  },
+  {
+   "balance": 73.774234513,
+   "source": "preflight",
+   "t": 1791159466.676372
+  },
+  {
+   "balance": 73.6141019436,
+   "source": "preflight",
+   "t": 1791159650.2147899
+  },
+  {
+   "balance": 72.3080334993,
+   "source": "watch",
+   "t": 1791162680.5164201
+  }
+ ]
+}

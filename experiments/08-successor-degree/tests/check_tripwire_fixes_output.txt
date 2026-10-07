@@ -1,0 +1,63 @@
+# run 2026-10-07T02:32:58Z on branch tripwire-fixes
+Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
+T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
+  [PASS] no trip at any reading
+  [PASS] the watcher ends at minute 66, 30 minutes after the last deletion  (ended 66)
+  [PASS] final comparison 0.99 to 1.01  (0.9982)
+T2  overbilled wave, 3.5 times the rate, same machines
+  [PASS] trips at minute 26, while both machines still run  (tripped at 26)
+  [PASS] by rule S, two readings in a row  (TRIPPED 2027-01-15T08:26:00Z: ratio B 1.929 at or above 1.25 (rule S, two readings in a ro)
+  [PASS] ledger figures written with the halt
+  [PASS] the check before a next machine then refuses
+T3  mild overcharge (1.4 times) hidden by an 8-minute lag, one 20-minute machine
+  [PASS] rule S never trips; rule D trips at minute 36, 15 minutes after the deletion  (tripped at 36: TRIPPED 2027-01-15T08:36:00Z: ratio B 1.392 at or above 1.25 (rule D, after a de)
+  [PASS] ratio about 1.39  (1.3924)
+T4  honest but lumpy: ten minutes charged in advance at each ten-minute mark
+  [PASS] no trip  (ratios in flight: 1:9.91, 6:1.66, 11:1.81, 16:1.25, 21:1.42, 26:1.15, 31:1.00)
+  [PASS] final comparison 1.00  (1.0000)
+T5  honest, long lag (14 min), one 20-minute machine
+  [PASS] no trip
+  [PASS] final comparison 0.98 to 1.00  (0.9921)
+T6  failed vendor reading in flight (balance read errors at minute 11)
+  [PASS] trip at minute 11, a check that cannot run
+T7  empty bills at the end of a wave
+  [PASS] an empty bill ([]): a trip, cannot be checked yet
+  [PASS] a bill of zero hours: a trip, cannot be checked yet
+  [PASS] a bill with no row for this machine: a trip, cannot be checked yet
+  [PASS] a real row (191,063 ms against 191.063 s of life) passes at 1.0
+  [PASS] the old code passed the empty bill (the fault being fixed)  (old exit 0)
+T8  deletion records in the alarm
+  [PASS] a recorded time replaces an inferred one, even a later one
+  [PASS] between two recorded times the earlier is kept
+  [PASS] an inferred time never replaces a recorded one
+  [PASS] a machine this wave never registered is reported, not added
+  [PASS] the command line records the time and who  (tripwire: podA deleted at 1970-01-01T00:18:20Z by the watchdog)
+T9  the watchdog's delete writes the deletion record
+  [PASS] an accepted delete: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T02:33:04Z (1791340384), confirmed by the watchdog:)
+  [PASS] a delete answered not found (404): record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T02:33:06Z (1791340386), confirmed by the watchdog:)
+  [PASS] a failed delete, machine still listed: no record anywhere  (no record file)
+  [PASS] a failed delete, then a failed reading: no record anywhere  (no record file)
+  [PASS] found gone, the vendor says not found: record written
+  [PASS] found gone, three failed readings only: no record
+T10-T15  the laptop deadline timer
+  [PASS] T10 the watchdog's record names this machine: stands down, no delete, no deadline line  (0.2s, delete called: False, deadline line: False)
+  [PASS] T11 the vendor says pod not found (404): stands down, no delete  (1.4s, delete called: False, deadline line: False)
+  [PASS] T12 a failed vendor reading (error, no 'not found'): keeps running, deletes at the deadline  (3.6s, delete called: True, deadline line: True)
+  [PASS] T13 an empty vendor answer: keeps running, deletes at the deadline  (4.8s, delete called: True, deadline line: True)
+  [PASS] T14 a record naming another machine: ignored, deletes at the deadline  (4.9s, delete called: True, deadline line: True)
+  [PASS] T15 deletes at its deadline with the alarm configured  (4.2s, delete called: True, deadline line: True)
+  [PASS] T15 the alarm's records show the timer's deletion time, by the machine deadline
+R   the development run's recorded readings through the new alarm
+      deletion times from the "pod gone" lines:
+        2026-10-05T00:56:28Z: ratio B 0.9899 (drawn $1.4564, predicted $1.4713); comparison at deletion applies: True; watcher says continue; halt: False
+        2026-10-05T01:11:20Z: ratio B 0.9948 (drawn $1.4662, predicted $1.4738); comparison at deletion applies: True; watcher says done; halt: False
+  [PASS] with the check's 00:56 reading: 0.9899, no trip  (0.9899)
+  [PASS] with the 01:11:20 reading: about 0.995, no trip, the watcher finishes  (0.9948)
+      deletion times from the "deleting pod" lines:
+        2026-10-05T00:56:28Z: ratio B 0.9988 (drawn $1.4564, predicted $1.4581); comparison at deletion applies: True; watcher says continue; halt: False
+        2026-10-05T01:11:20Z: ratio B 1.0038 (drawn $1.4662, predicted $1.4606); comparison at deletion applies: True; watcher says done; halt: False
+  [FAIL] with the earlier edge of each delete: 0.98 to 1.00 at both readings, no trip  (0.9988, 1.0038)
+  [PASS] the old code's arithmetic, deletions inferred at 01:11: 0.401 (as its watcher logged)  (0.4015)
+
+1 failure(s): ['with the earlier edge of each delete: 0.98 to 1.00 at both readings, no trip']
+exit 1
