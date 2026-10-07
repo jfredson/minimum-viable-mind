@@ -147,6 +147,19 @@
   "own": 0.5703333333333334,
   "own_clears": true,
   "own_correct": 1711,
+  "route_in_use": {
+   "made_up": true,
+   "routes": {
+    "entangled": {
+     "actions": 3000,
+     "right_with_true_answer": 2000,
+     "route_use": 0.95,
+     "still_right_with_swapped_answer": 100
+    }
+   },
+   "sharpness": 4.0,
+   "weight_on_true_agent": 0.999
+  },
   "seed_passes": true
  },
  "grid": [
