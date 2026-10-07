@@ -1,6 +1,6 @@
-######## run 8 of 8, 2026-10-07T07:37:57Z
+######## run 1 of 8, 2026-10-07T05:42:53Z
 Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
-laptop load at start: (3.39599609375, 3.7060546875, 4.37841796875)
+laptop load at start: (226.537109375, 254.21484375, 330.158203125)
 T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
   [PASS] no trip at any reading
   [PASS] the watcher ends at minute 66, 30 minutes after the last deletion  (ended 66)
@@ -55,41 +55,38 @@ T8  deletion records in the alarm
 T9/W1-W7  the watchdog's deletion record (corrected after the check: the vendor's own
           'pod not found ... (status 404)', and two good machine lists without the machine)
   [PASS] R10 (W1) every watchdog machine list uses --all
-  [PASS] W1 delete accepted; both lists good, machine absent: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T07:37:58Z (1791358678), confirmed by the watchdog: the delet)
+  [PASS] W1 delete accepted; both lists good, machine absent: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:42:57Z (1791351777), confirmed by the watchdog: the delet)
   [PASS] R10 (W2/R4) every watchdog machine list uses --all
   [PASS] W2/R4 delete accepted; first list read fails: no record file; the alarm gets the deletion time  (no record file)
   [PASS] R10 (W3/R5) every watchdog machine list uses --all
   [PASS] W3/R5 delete accepted; first list good, second shows the machine: no record file; the alarm gets the deletion time  (no record file)
   [PASS] R10 (W4) every watchdog machine list uses --all
-  [PASS] W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T07:38:01Z (1791358681), confirmed by the watchdog: the vendo)
+  [PASS] W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T05:43:05Z (1791351785), confirmed by the watchdog: the vendo)
   [PASS] W5 delete fails 'HTTP 503'; lists good and empty: no record anywhere  (no record file)
   [PASS] (T9) a failed delete, machine still listed: no record anywhere  (no record file)
   [PASS] W6 found gone; pod get gives the vendor's words; lists good: record written
   [PASS] W7 found gone; pod get gives 'Error: api error: 404 page not found (status 404)': no record
   [PASS] (T9) found gone; three failed readings only: no record
 T10-T15, N1-N8  the laptop deadline timer
-  [PASS] T10 the watchdog's record names this machine: stands down, no delete, no deadline line  (vendor reads 0, delete issued -5s, ended -5.3s from the written deadline, delete called: False, deadline line: False, stood down: True)
+  [PASS] T10 the watchdog's record names this machine: stands down, no delete, no deadline line  (vendor reads 0, delete issued -5s, ended -4.9s from the written deadline, delete called: False, deadline line: False, stood down: True)
   [PASS] R10 every timer machine list uses --all (2 calls)
-  [PASS] T11/N4 the recorded 'pod not found ... (status 404)' and a good list without it, two checks: stands down  (vendor reads 2, delete issued -11s, ended -10.8s from the written deadline, delete called: False, deadline line: False, stood down: True)
-  [PASS] T12 a failed vendor reading (error, no 'not found'): keeps running, deletes at the deadline  (vendor reads 8, delete issued +0s, ended +0.8s from the written deadline, delete called: True, deadline line: True, stood down: False)
-  [PASS] T13 an empty vendor answer: keeps running, deletes at the deadline  (vendor reads 7, delete issued +0s, ended +0.5s from the written deadline, delete called: True, deadline line: True, stood down: False)
-  [PASS] T14 a record naming another machine: ignored, deletes at the deadline  (vendor reads 0, delete issued +0s, ended +0.9s from the written deadline, delete called: True, deadline line: True, stood down: False)
-  [PASS] T15 deletes at its deadline with the alarm configured  (vendor reads 0, delete issued +0s, ended +0.3s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] T11/N4 the recorded 'pod not found ... (status 404)' and a good list without it, two checks: stands down  (vendor reads 2, delete issued -9s, ended -9.4s from the written deadline, delete called: False, deadline line: False, stood down: True)
+  [PASS] T12 a failed vendor reading (error, no 'not found'): keeps running, deletes at the deadline  (vendor reads 0, delete issued +0s, ended +1.0s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] T13 an empty vendor answer: keeps running, deletes at the deadline  (vendor reads 0, delete issued +1s, ended +1.9s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] T14 a record naming another machine: ignored, deletes at the deadline  (vendor reads 0, delete issued +1s, ended +2.4s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] T15 deletes at its deadline with the alarm configured  (vendor reads 0, delete issued +0s, ended +0.9s from the written deadline, delete called: True, deadline line: True, stood down: False)
   [PASS] T15 the alarm's records show the timer's deletion time, by the machine deadline
-  [PASS] (added) a vendor read that hangs: the deadline still deletes  (vendor reads 3, delete issued +0s, ended +0.8s from the written deadline, delete called: True, deadline line: True, stood down: False)
-  [PASS] R2 every vendor read hangs (cap 2 s, deadline 12 s): deletes at the deadline, within 10 s  (vendor reads 2, delete issued +0s, ended +0.1s from the written deadline, delete called: True, deadline line: True, stood down: False)
-  [PASS] R3 cap 20 s, deadline 10 s: no vendor read at all (inside the skip window); deletes  (vendor reads 0, delete issued +0s, ended +1.0s from the written deadline, delete called: True, deadline line: True, stood down: False)
-  [PASS] N1 'Error: api error: 404 page not found (status 404)', list good: stays armed, deletes  (vendor reads 8, delete issued +0s, ended +0.8s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] (added) a vendor read that hangs: the deadline still deletes  (vendor reads 0, delete issued +0s, ended +0.6s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] R2 every vendor read hangs (cap 2 s, deadline 12 s): deletes at the deadline, within 10 s  (vendor reads 2, delete issued +0s, ended +0.5s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] R3 cap 20 s, deadline 10 s: no vendor read at all (inside the skip window); deletes  (vendor reads 0, delete issued +1s, ended +1.8s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] N1 'Error: api error: 404 page not found (status 404)', list good: stays armed, deletes  (vendor reads 0, delete issued +0s, ended +1.8s from the written deadline, delete called: True, deadline line: True, stood down: False)
       (N2 waits for the timer's three failed delete attempts, about 40 seconds)
-  [PASS] N2 the vendor tool missing from the command path ('command not found'): never stands down  (vendor reads 0, delete issued +61s, ended +61.1s from the written deadline, delete called: False, deadline line: True, stood down: False)
-  [PASS] N3 'Config File "config" Not Found in "[/Users/x/.runpod]"': stays armed, deletes  (vendor reads 8, delete issued +0s, ended +1.0s from the written deadline, delete called: True, deadline line: True, stood down: False)
-  [PASS] R10 every timer machine list uses --all (8 calls)
-  [PASS] N5 the vendor's words, but the machine list fails: stays armed, deletes  (vendor reads 8, delete issued +0s, ended +0.9s from the written deadline, delete called: True, deadline line: True, stood down: False)
-  [PASS] R10 every timer machine list uses --all (7 calls)
-  [PASS] N6 the vendor's words, but the list shows the machine: stays armed, deletes  (vendor reads 7, delete issued +0s, ended +1.0s from the written deadline, delete called: True, deadline line: True, stood down: False)
-  [PASS] R10 every timer machine list uses --all (1 calls)
-  [PASS] N7 the vendor's words and a good list, but only one check before the deadline: stays armed, deletes  (vendor reads 1, delete issued +0s, ended +0.6s from the written deadline, delete called: True, deadline line: True, stood down: False)
-  [PASS] N8 the old T11 answer '{"error":"pod not found","status":404}': now stays armed, deletes  (vendor reads 7, delete issued +0s, ended +0.2s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] N2 the vendor tool missing from the command path ('command not found'): never stands down  (vendor reads 0, delete issued +75s, ended +74.7s from the written deadline, delete called: False, deadline line: True, stood down: False)
+  [PASS] N3 'Config File "config" Not Found in "[/Users/x/.runpod]"': stays armed, deletes  (vendor reads 0, delete issued +1s, ended +1.4s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] N5 the vendor's words, but the machine list fails: stays armed, deletes  (vendor reads 0, delete issued +1s, ended +1.1s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] N6 the vendor's words, but the list shows the machine: stays armed, deletes  (vendor reads 0, delete issued +0s, ended +0.7s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] N7 the vendor's words and a good list, but only one check before the deadline: stays armed, deletes  (vendor reads 0, delete issued +1s, ended +1.2s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] N8 the old T11 answer '{"error":"pod not found","status":404}': now stays armed, deletes  (vendor reads 0, delete issued +0s, ended +0.7s from the written deadline, delete called: True, deadline line: True, stood down: False)
 F1  the timing cases, five full runs in a row
   [PASS] F1 all pass in five runs  (20 of 20)
 L1-L3  the lock on the alarm's records (the check's race, reproduced)
@@ -111,3 +108,4 @@ R   the development run's recorded readings through the new alarm
 
 all checks pass. nothing was rented and nothing was spent.
 exit 0
+######## run 2 of 8, 2026-10-07T05:47:29Z

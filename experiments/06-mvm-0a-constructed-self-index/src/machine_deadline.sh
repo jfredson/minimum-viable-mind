@@ -93,7 +93,7 @@ capped() {
 # Anything else, including no python3 to read it, is a failed reading.
 list_without_machine() {
   local out rc
-  out=$(capped pod list)
+  out=$(capped pod list --all)      # --all: stopped machines too; "omitted" must mean "does not exist"
   rc=$(printf '%s\n' "$out" | tail -1); rc=${rc#rc=}
   [ "$rc" = "0" ] || return 1
   printf '%s\n' "$out" | sed '$d' | python3 -c '
@@ -121,9 +121,16 @@ while :; do
   if [ -f "$GONE_RECORD" ] && grep -q "machine $POD " "$GONE_RECORD" 2>/dev/null; then
     stand_down "the watchdog's record: $(head -1 "$GONE_RECORD" | cut -c1-200)"
   fi
-  if [ $(( NOW - LAST_VENDOR )) -ge "$VENDOR_CHECK_S" ]; then
+  # Corrected after the re-check (problem 1): a check makes two capped calls,
+  # so it is skipped when the deadline is less than two caps plus 2 s away.
+  # A check started earlier ends before the deadline, so vendor reads never
+  # delay it; the only lateness left is the poll's rounding and starting the
+  # delete.
+  if [ $(( NOW - LAST_VENDOR )) -ge "$VENDOR_CHECK_S" ] && \
+     [ $(( DELETE_AT_EPOCH - NOW )) -ge $(( 2 * VENDOR_CAP_S + 2 )) ]; then
     LAST_VENDOR=$NOW
-    # capped, so a vendor call that hangs can never hold the deadline back
+    # each call capped at VENDOR_CAP_S; with the skip above, a hung call
+    # cannot hold the deadline back
     V=$(capped pod get "$POD" -o json | sed '$d')
     if says_not_found "$V" && list_without_machine; then
       CONFIRMED=$(( CONFIRMED + 1 ))

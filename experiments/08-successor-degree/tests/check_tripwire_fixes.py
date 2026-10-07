@@ -213,6 +213,28 @@ def empty_bills() -> None:
           rc == 0 and h is None and rc2 == 3 and "cannot be checked yet" in (h2 or ""))
     rc, h = wave(row(p, 3500000), T, life=1000)
     check("B4 billed 3.5 times life: still a trip, over the line", rc == 3 and "at or above 1.25" in (h or ""))
+    print("R7-R9  an inferred deletion: the 0.90 line judged against the last listing")
+
+    def inferred(billed_ms):
+        d = tempfile.mkdtemp()
+        json.dump(row(p, billed_ms), open(ctl, "w"))
+        c = 1790000000.0
+        T.save_state(d, dict(machines={p: dict(pod=p, rate=0.99, estimate_hours=0.5, created=c,
+                                               created_iso="2026-09-21T14:13:20Z", out="o", last_seen=c + 1200,
+                                               gone=c + 1500, gone_inferred=True, gone_by="the watcher")},
+                             readings=[]))
+        T.RUNPODCTL = stub
+        with Quiet():
+            rc = T.cmd_reconcile(d)
+        return rc, T.halted(d)
+    rc, h = inferred(1200000)
+    check("R7 listed 20 min, inferred 5 min later, billed 20 min: passes (1.00 against the last listing)",
+          rc == 0 and h is None, (h or "").splitlines()[0][:100] if h else "")
+    rc, h = inferred(600000)
+    check("R8 the same, billed 10 min: a trip, cannot be checked yet", rc == 3 and "cannot be checked yet" in (h or ""))
+    rc, h = inferred(1950000)
+    check("R9 the same, billed 32.5 min (1.3 times life to the inferred deletion): a trip as overbilling",
+          rc == 3 and "at or above 1.25" in (h or ""))
     shutil.rmtree(tmp, ignore_errors=True)
 
 
@@ -354,6 +376,7 @@ def stub_vendor(tmp: str, delete: str, get: str, lists=(GOOD_EMPTY_LIST,)) -> st
     with open(os.path.join(b, "runpodctl"), "w") as f:
         f.write(f"""#!/bin/bash
 echo "$*" >> "{calls}"
+echo "$(date +%s) $*" >> "{calls}.timed"
 case "$1 $2" in
   "pod delete") {part(delete)} ;;
   "pod get") {part(get)} ;;
@@ -384,9 +407,9 @@ def watchdog_cases() -> None:
     for name, delete, get, lists, want in (
         ("W1 delete accepted; both lists good, machine absent", "0|pod fakepod0000001 deleted", "1|",
          (GOOD_EMPTY_LIST,), True),
-        ("W2 delete accepted; first list read fails", "0|deleted", "1|", ("1|Error: request failed",), False),
-        ("W3 delete accepted; first list good, second shows the machine", "0|deleted", "1|",
-         (GOOD_EMPTY_LIST, LIST_WITH_IT), False),
+        ("W2/R4 delete accepted; first list read fails", "0|deleted", "1|", ("1|Error: request failed",), "alarm-only"),
+        ("W3/R5 delete accepted; first list good, second shows the machine", "0|deleted", "1|",
+         (GOOD_EMPTY_LIST, LIST_WITH_IT), "alarm-only"),
         ("W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good", "1|" + RECORDED_NOTFOUND,
          "1|", (GOOD_EMPTY_LIST,), True),
         ("W5 delete fails 'HTTP 503'; lists good and empty", "1|HTTP 503", "1|", (GOOD_EMPTY_LIST,), False),
@@ -416,13 +439,20 @@ TRIP_DIR="{td}"
                                 GONE_CONFIRM_GAP_S="1"), timeout=60)
         rec = os.path.join(dest, "machine_gone_fakepod0000001")
         m = T.load_state(td)["machines"]["fakepod0000001"]
-        if want:
-            ok = (os.path.exists(rec) and "machine fakepod0000001 " in open(rec).read()
-                  and m.get("gone") and t0 - 1 <= m["gone"] <= time.time() + 1 and m.get("gone_by") == "the watchdog")
+        alarm_ok = bool(m.get("gone")) and t0 - 1 <= m["gone"] <= time.time() + 1 and m.get("gone_by") == "the watchdog"
+        if want == "alarm-only":
+            ok = not os.path.exists(rec) and alarm_ok
+            label = "no record file; the alarm gets the deletion time"
+        elif want:
+            ok = os.path.exists(rec) and "machine fakepod0000001 " in open(rec).read() and alarm_ok
+            label = "record file and alarm time written"
         else:
             ok = not os.path.exists(rec) and not m.get("gone")
-        check(f"{name}: {'record file and alarm time written' if want else 'no record anywhere'}", ok,
-              (open(rec).read().strip()[:110] if os.path.exists(rec) else "no record file"))
+            label = "no record anywhere"
+        lists = [c for c in open(os.path.join(tmp, "calls")).read().splitlines() if c.startswith("pod list")]
+        if lists:
+            check(f"R10 ({name.split()[0]}) every watchdog machine list uses --all", all("--all" in c for c in lists))
+        check(f"{name}: {label}", ok, (open(rec).read().strip()[:110] if os.path.exists(rec) else "no record file"))
         shutil.rmtree(tmp, ignore_errors=True)
 
     # found gone over three silent checks: the record needs the vendor's own words, then two good lists
@@ -454,7 +484,7 @@ CAP_S = 2
 
 
 def run_timer(name, get, lists=(GOOD_EMPTY_LIST,), record_for=None, deadline_s=4, want_delete=True,
-              trip=False, check_s=1, no_tool=False, quiet=False):
+              trip=False, check_s=1, no_tool=False, quiet=False, cap=None, want_gets=None):
     """One run of the laptop deadline timer against a stand-in. Timing is
     measured against the deadline as WRITTEN (whole seconds), not the
     unrounded clock (the check's problem 7)."""
@@ -478,7 +508,7 @@ RATE_PER_HOUR_USD="0.99"
 POSTED_RATE="0.99"
 POLL_S=1
 VENDOR_CHECK_S={check_s}
-VENDOR_CAP_S={CAP_S}
+VENDOR_CAP_S={cap or CAP_S}
 """ + (f"""TRIP_PY="{sys.executable}"
 TRIP_SCRIPT="{os.path.join(SRC, 'tripwire.py')}"
 TRIP_DIR="{td}"
@@ -488,17 +518,35 @@ TRIP_DIR="{td}"
                        env=dict(os.environ, PATH=b + ":" + SAFE_PATH), timeout=120)
     end = time.time()
     calls = open(os.path.join(tmp, "calls")).read() if os.path.exists(os.path.join(tmp, "calls")) else ""
+    lists = [c for c in calls.splitlines() if c.startswith("pod list")]
+    if lists and not quiet:
+        check(f"R10 every timer machine list uses --all ({len(lists)} calls)", all("--all" in c for c in lists))
+    gets = sum(1 for c in calls.splitlines() if c.startswith("pod get"))
+    # when the delete was ISSUED, from the stand-in's own timestamped log (whole
+    # seconds), not when the whole program finished: the method, section 13.5
+    timed = os.path.join(tmp, "calls.timed")
+    issued = [int(l.split()[0]) for l in (open(timed).read().splitlines() if os.path.exists(timed) else [])
+              if " pod delete" in l]
+    del_at = issued[0] if issued else end
     deleted = "pod delete" in calls
     line = "DEADLINE REACHED" in r.stdout
     stood = "STANDING DOWN" in r.stdout
     if no_tool:
         ok = not stood and line and "FAILED" in r.stdout and end >= written_deadline
     elif want_delete:
-        ok = deleted and line and not stood and written_deadline <= end <= written_deadline + CAP_S + 3
+        # re-check problem 1: the vendor check is skipped within two caps of the
+        # deadline, so lateness is only rounding and start-up; 10 s allowed here
+        ok = deleted and line and not stood and written_deadline <= del_at <= written_deadline + 10
     else:
         ok = (not deleted) and (not line) and end < written_deadline and r.returncode == 0 and stood
+    if want_gets is not None:
+        ok = ok and (gets >= 1 if want_gets == "some" else gets == want_gets)
+    if quiet and not ok:      # the five-run check names any case that fails (diagnosis only)
+        print(f"      F1 case failed: get answer {get[:40]!r}, deadline {deadline_s}s, vendor reads {gets}, "
+              f"delete issued {del_at - written_deadline:+.0f}s, ended {end - written_deadline:+.1f}s, "
+              f"stood down {stood}, load {os.getloadavg()[0]:.0f}")
     if not quiet:
-        check(name, ok, f"ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
+        check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+.0f}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
                         f"deadline line: {line}, stood down: {stood}")
     if trip:
         m = T.load_state(td)["machines"]["fakepod0000001"]
@@ -514,36 +562,43 @@ def deadline_cases() -> None:
     run_timer("T10 the watchdog's record names this machine: stands down, no delete, no deadline line",
               "1|HTTP 503", record_for="fakepod0000001", deadline_s=6, want_delete=False)
     run_timer("T11/N4 the recorded 'pod not found ... (status 404)' and a good list without it, two checks: stands down",
-              "1|" + RECORDED_NOTFOUND, deadline_s=8, want_delete=False)
-    run_timer("T12 a failed vendor reading (error, no 'not found'): keeps running, deletes at the deadline", "1|HTTP 503")
-    run_timer("T13 an empty vendor answer: keeps running, deletes at the deadline", "0|")
+              "1|" + RECORDED_NOTFOUND, deadline_s=14, want_delete=False)
+    # Section 13.6: every case that tests an answer has a deadline long enough
+    # (14 s, cap 2 s) for vendor reads outside the skip window, and must make one.
+    run_timer("T12 a failed vendor reading (error, no 'not found'): keeps running, deletes at the deadline", "1|HTTP 503",
+              deadline_s=14, want_gets="some")
+    run_timer("T13 an empty vendor answer: keeps running, deletes at the deadline", "0|", deadline_s=14, want_gets="some")
     run_timer("T14 a record naming another machine: ignored, deletes at the deadline", "1|HTTP 503",
               record_for="someotherpod00")
     run_timer("T15 deletes at its deadline with the alarm configured", '0|{"id": "fakepod0000001"}', trip=True)
-    run_timer("(added) a vendor read that hangs: the deadline still deletes, at most the cap late", "hang",
-              deadline_s=5)
+    run_timer("(added) a vendor read that hangs: the deadline still deletes", "hang", deadline_s=14, want_gets="some")
+    run_timer("R2 every vendor read hangs (cap 2 s, deadline 12 s): deletes at the deadline, within 10 s", "hang",
+              lists=("hang",), deadline_s=12)
+    r3 = run_timer("R3 cap 20 s, deadline 10 s: no vendor read at all (inside the skip window); deletes",
+                   "1|" + RECORDED_NOTFOUND, deadline_s=10, cap=20, want_gets=0)
     # the check's three false-positive answers (pull request 117, problem 1)
     run_timer("N1 'Error: api error: 404 page not found (status 404)', list good: stays armed, deletes",
-              "1|Error: api error: 404 page not found (status 404)", deadline_s=5)
+              "1|Error: api error: 404 page not found (status 404)", deadline_s=14, want_gets="some")
     print("      (N2 waits for the timer's three failed delete attempts, about 40 seconds)")
     run_timer("N2 the vendor tool missing from the command path ('command not found'): never stands down",
               "1|unused", deadline_s=5, no_tool=True)
     run_timer("N3 'Config File \"config\" Not Found in \"[/Users/x/.runpod]\"': stays armed, deletes",
-              '1|Config File "config" Not Found in "[/Users/x/.runpod]"', deadline_s=5)
+              '1|Config File "config" Not Found in "[/Users/x/.runpod]"', deadline_s=14, want_gets="some")
     run_timer("N5 the vendor's words, but the machine list fails: stays armed, deletes",
-              "1|" + RECORDED_NOTFOUND, lists=("1|Error: request failed",), deadline_s=5)
+              "1|" + RECORDED_NOTFOUND, lists=("1|Error: request failed",), deadline_s=14, want_gets="some")
     run_timer("N6 the vendor's words, but the list shows the machine: stays armed, deletes",
-              "1|" + RECORDED_NOTFOUND, lists=(LIST_WITH_IT,), deadline_s=5)
+              "1|" + RECORDED_NOTFOUND, lists=(LIST_WITH_IT,), deadline_s=14, want_gets="some")
     run_timer("N7 the vendor's words and a good list, but only one check before the deadline: stays armed, deletes",
-              "1|" + RECORDED_NOTFOUND, deadline_s=5, check_s=3)
+              "1|" + RECORDED_NOTFOUND, deadline_s=14, check_s=5, want_gets=1)
     run_timer("N8 the old T11 answer '{\"error\":\"pod not found\",\"status\":404}': now stays armed, deletes",
-              '1|{"error":"pod not found","status":404}', deadline_s=5)
+              '1|{"error":"pod not found","status":404}', deadline_s=14, want_gets="some")
     print("F1  the timing cases, five full runs in a row")
     results = []
     for _ in range(5):
-        results += [run_timer("", "1|HTTP 503", quiet=True), run_timer("", "0|", quiet=True),
-                    run_timer("", "hang", deadline_s=5, quiet=True),
-                    run_timer("", "1|" + RECORDED_NOTFOUND, deadline_s=8, want_delete=False, quiet=True)]
+        results += [run_timer("", "1|HTTP 503", deadline_s=10, want_gets="some", quiet=True),
+                    run_timer("", "0|", deadline_s=10, want_gets="some", quiet=True),
+                    run_timer("", "hang", deadline_s=10, want_gets="some", quiet=True),
+                    run_timer("", "1|" + RECORDED_NOTFOUND, deadline_s=14, want_delete=False, quiet=True)]
     check("F1 all pass in five runs", all(results), f"{sum(results)} of {len(results)}")
 
 
@@ -679,6 +734,7 @@ def replay() -> None:
 
 if __name__ == "__main__":
     print("Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)")
+    print("laptop load at start:", os.getloadavg())
     made_up_waves()
     empty_bills()
     top_ups()

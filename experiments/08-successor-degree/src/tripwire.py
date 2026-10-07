@@ -511,16 +511,26 @@ def cmd_reconcile(d: str) -> int:
             return 3
         existed = ((m.get("gone") or m.get("last_seen") or now()) - m["created"]) / 3600   # recorded deletion time
         ra = ratio_a(b, existed)
-        rows.append(dict(pod=m["pod"], billed_hours=b, existence_hours=existed, ratio_a=ra))
+        # Corrected after the re-check (problem 2): for a deletion only inferred
+        # (up to one reading late), the 0.90 line is judged against the last
+        # reading that still listed the machine; the 1.25 line keeps the inferred time.
+        if m.get("gone_inferred") and m.get("last_seen"):
+            listed = (m["last_seen"] - m["created"]) / 3600
+            ra_partial = ratio_a(b, listed)
+        else:
+            ra_partial = ra
+        rows.append(dict(pod=m["pod"], billed_hours=b, existence_hours=existed, ratio_a=ra,
+                         ratio_for_partial_line=ra_partial))
         worst = max(worst, ra or 0)
         print(f"tripwire reconcile: {m['pod']}: billed {b:.3f} h, existed about {existed:.3f} h, "
               f"ratio A {ra if ra is None else round(ra, 3)}")
     with open(os.path.join(d, "reconcile.json"), "w") as f:
         json.dump(rows, f, indent=1)
     # Ruled 2026-10-06 (check problem 3): a bill posted only in part
-    partial = [r for r in rows if r["ratio_a"] is not None and r["ratio_a"] < BILL_COMPLETE_MIN - 1e-9]   # "below", not rounding
+    partial = [r for r in rows if r["ratio_for_partial_line"] is not None
+               and r["ratio_for_partial_line"] < BILL_COMPLETE_MIN - 1e-9]   # "below", not rounding
     if partial:
-        names = ", ".join(f"{r['pod']} {r['ratio_a']:.3f}" for r in partial)
+        names = ", ".join(f"{r['pod']} {r['ratio_for_partial_line']:.3f}" for r in partial)
         write_halt(d, f"a check that cannot run is a trip: cannot be checked yet: the bill covers less than "
                       f"{BILL_COMPLETE_MIN} of the machine's life ({names}), so it has posted only in part. "
                       f"Tell John; run reconcile again after he clears this.", dict(rows=rows))
