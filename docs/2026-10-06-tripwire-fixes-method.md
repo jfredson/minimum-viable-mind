@@ -561,3 +561,15 @@ was made, so that run tested them, but they were committed in `a164eaf`,
 whose message says "Timer code unchanged". That message is wrong: `a164eaf`
 carries the 13.1 to 13.3 code changes as well as the test change. No code has
 changed since `a164eaf`.
+
+### 13.8 Eight-run attempt 4: 8 of 8 passed
+
+With the laptop's load between about 4 and 6, all eight runs passed (82
+checks each; the one pre-stated replay range still reported as missed, as in
+section 10). R1 to R10 held as stated in 13.4. The other suites, run after
+the last code change (`a164eaf`) in attempt 3's sequence, all passed: the
+alarm's self-test, the deadline timer's self-test (20 of 20), the watchdog
+handshake self-test, the launcher check, and all successor self-tests.
+**Open:** under very heavy load (above about 200) the five-run timing check
+failed now and then in attempt 3 (1 or 2 of 20 cases); attempt 4 could not
+say which, since the load stayed low.
