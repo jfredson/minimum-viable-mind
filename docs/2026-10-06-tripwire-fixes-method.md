@@ -626,7 +626,7 @@ successor self-tests) passed in this attempt. Attempt 2 follows.
 
 ### 14.4 Eight runs, attempt 2: 8 of 8 passed
 
-Load about 1 to 2.5. Every check passed in all eight runs (85 checks each;
+Load about 1 to 2.5. Every check passed in all eight runs (87 checks each;
 the one pre-stated replay range still reported as missed, as in section 10).
 S1 and S2 deleted at the written deadline. The old timer was late in every
 run: 6 s in S1 and 10 s in S2. The other suites passed on this code in
