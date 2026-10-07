@@ -688,9 +688,10 @@ def self_test() -> None:
     twin = relisted(victim, (3, 1, 0, 2), (1, 0), np.random.default_rng(7))
     pl2 = TrainingStream(run_seed=0, excluded=set(), excluded_pairings={pairing(twin)})
     got2 = [pairing(p["content"]) for p in pl2.pairs_for_step(7, 48)]
-    check("G3: planting the pairing of a re-listed copy, which no whole-content rule matches, "
-          "skips it all the same",
-          fingerprint(twin) != fingerprint(victim) and pairing(victim) not in got2
+    check("G3: planting a same-table copy with a different turn order (and listing), which no "
+          "whole-content rule matches, makes training skip the original all the same",
+          fingerprint(twin) != fingerprint(victim) and twin["order"] != victim["order"]
+          and pairing(twin) == pairing(victim) and pairing(victim) not in got2
           and pl2.skipped == 1 and len(got2) == 48)
 
     # The made-up cases. Expected (method note, section 4, committed first):
