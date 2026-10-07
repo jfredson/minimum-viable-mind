@@ -349,8 +349,8 @@ def pairing(content: dict) -> frozenset:
     item word, value word) triples, one per agent and item. It is built from
     the markers, items and values only, so it ignores the turn order, the
     named agent, the asked-about items, the action order and the order in
-    which agents and items are listed. The same table as the A2 branch's
-    stricter control 5 check."""
+    which agents and items are listed. The same table as the self-test's
+    "control 5, stricter" check."""
     markers, items, values = content["markers"], content["items"], content["values"]
     return frozenset((int(markers[a]), int(items[j]), int(values[a][j]))
                      for a in range(N_AGENTS) for j in range(N_ITEMS_PER_EPISODE))
@@ -587,8 +587,10 @@ def self_test() -> None:
     # fresh or relaxed, i.e. its assignment table of (marker word, item word,
     # value) triples (version 4, section 7.1: unseen combinations of marker
     # words, items and values), ignoring turn order, the named agent, the
-    # items the actions name and the action order. Sampled, not guaranteed:
-    # the stream's exclusion is by whole content.
+    # items the actions name and the action order. This one is a sample, and
+    # cannot fail by chance (it finds no shared table even with the exclusion
+    # switched off). Since John's ruling of 2026-10-06 the stream also
+    # excludes by this table, and the guarantee is checks G1 to G4 below.
     def table(c):
         return frozenset((int(c["markers"][a]), int(c["items"][j]), int(c["values"][a, j]))
                          for a in range(N_AGENTS) for j in range(N_ITEMS_PER_EPISODE))

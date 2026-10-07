@@ -17,6 +17,8 @@ grammar.py self-test
   [PASS] rows 2k and 2k+1 of a streamed batch are a matched pair
   [PASS] streamed training content never matches an evaluation set  19,200 training contents over 400 steps, 0 shared
   [PASS] a training content planted in the exclusion list is skipped
+  [PASS] control 5: no fresh or relaxed episode's combination occurs in the training stream (every one is in the stream's exclusion list, and none in 200 sampled steps)  1,600 fresh and relaxed contents; 9,600 training contents sampled, 0 shared; 0 skipped by the exclusion
+  [PASS] control 5, stricter: no fresh or relaxed episode's assignment table (which marker holds which value on which item) occurs in 200 sampled training steps  1,600 fresh and relaxed tables; 9,600 training tables, 0 shared
   [PASS] the evaluation sets are the ones built on the laptop (pinned digest)
   [PASS] the first training batch of seed 0 is the one built on the laptop (pinned digest)
   [PASS] even-split rule (RT-58): an even row count is accepted, an odd one is not
@@ -153,33 +155,53 @@ measure.py self-test: each case's landing is written in the test before it runs
   [PASS] reading refuses a share of nan
   [PASS] no-transplant rule: inside 0.018 of (1 - p) / 7  formula 0.0486, miss +0.0026
   [PASS] no-transplant rule: 0.019 off is outside
-  [PASS] no-transplant rule: the detection margin at the bar is 0.0018 (version 4, 6.4 item 3)  0.0018
+  [PASS] no-transplant rule: reported, never a veto (page 8)
+  [PASS] no-transplant rule: the formula flags a broken pairing on 800 pairs about 0.56 of the time at the bar (A9: 0.5589)  0.5589
   [PASS] band: 144 of 180 passes, and the band around it straddles the floor  [132, 155]
   [PASS] band: a true four fifths lands roughly 133 to 154 of 180 (about six points either side)  [133, 154]
   [PASS] band: 143 fails by one episode
   [PASS] band: the ends are handled
+  [PASS] the ownership-free line is 1,546 of 3,000, computed from the binomial tail
   [PASS] withhold: a clean row reads
-  [PASS] withhold: control 7 failed -> no verdict, with the reason in the output  control 7, the null transplant, failed
-  [PASS] withhold: control 4 failed -> no verdict, with the reason in the output  control 4, the too-early-position control, failed
-  [PASS] withhold: control 1 failed on arm T -> no verdict, with the reason in the output  control 1, the content transplant, failed on arm T
-  [PASS] withhold: control 1 missing on arm T counts as failed -> no verdict, with the reason in the output  control 1, the content transplant, failed on arm T
-  [PASS] withhold: a control that could not be evaluated counts as failed -> no verdict, with the reason in the output  control 7, the null transplant, failed
-  [PASS] withhold: no-transplant rate outside -> no verdict, with the reason in the output  no-transplant rate outside its allowance: the pairing is suspect
-  [PASS] withhold: floor missed on fresh episodes -> no verdict, with the reason in the output  floor missed on fresh episodes
-  [PASS] withhold: gate failed -> no verdict, with the reason in the output  the arm failed its gate
+  [PASS] withhold: a clean arm F row reads
+  [PASS] withhold: a withheld seed's figure is not returned
+  [PASS] withhold: control 7 failed -> no verdict, with the reason in the output  control 7, the null transplant failed
+  [PASS] withhold: control 4 failed -> no verdict, with the reason in the output  control 4, the pairing check (too-early positions) failed
+  [PASS] withhold: control 1 failed on arm T -> no verdict, with the reason in the output  control 1, the content transplant, on arm T failed
+  [PASS] withhold: control 1 absent on arm T is listed as not run -> no verdict, with the reason in the output  control 1, the content transplant, on arm T was not run
+  [PASS] withhold: a control that could not be evaluated says so -> no verdict, with the reason in the output  control 7, the null transplant was could not be evaluated
+  [PASS] withhold: floor missed on fresh episodes -> no verdict, with the reason in the output  floor on fresh episodes failed
+  [PASS] withhold: this seed's own gate failed -> no verdict, with the reason in the output  failed its gate on learning (own-directed condition: failed)
+  [PASS] withhold: arm F named-other failed on this seed -> no verdict, with the reason in the output  failed its gate on learning (named-other condition: failed)
+  [PASS] withhold: arm F collapse failed -> no verdict, with the reason in the output  the channel removal did not collapse own-directed answers below the gate bar
+  [PASS] withhold: arm F ownership-free line failed -> no verdict, with the reason in the output  the ownership-free line failed (with the channel zeroed, own-directed answers among the four candidates, line 1,546 of 3,000)
+  [PASS] withhold: arm F ownership-free line never ran -> no verdict, with the reason in the output  the ownership-free line was not run
   [PASS] withhold: read failed its floor at nomination -> no verdict, with the reason in the output  read failed its floor: no size's piece reaches four fifths; reported for description only (the site set was chosen with the piece rule switched off)
+  [PASS] withhold: the ownership-free line at exactly 1,546 passes
+  [PASS] withhold: the ownership-free line is not asked of arms T, C and M
+  [PASS] withhold: every reason is listed, even when nomination failed and no reading exists  8 reasons
+  [PASS] withhold: the no-transplant rate withholds nothing (page 8)
   [PASS] withhold: control 1 failing on arm C does not withhold (it holds on arm T only)
-  [PASS] two of three: three readings read
-  [PASS] two of three: two readings read, the third is reported
-  [PASS] two of three: one reading does not read
+  [PASS] two seeds: three readings read
+  [PASS] two seeds: two readings read, the third is reported
+  [PASS] two seeds: one reading does not read
+  [PASS] two seeds: the learning gate needs two seeds each passing every learning condition
   [PASS] separation: lowest C minus highest T, unpaired (toy figures: 0.9926 - 0.02)
   [PASS] separation: unpaired means arm T's worst seed counts against any of arm C's
-  [PASS] outcome: the toy lands on the fifth term with its reason after a colon  metric validated, degree not read: read failed its floor
-  [PASS] outcome: arm F reads on two seeds -> R1
-  [PASS] outcome: arm F fails its gate -> R3
+  [PASS] outcome: the toy's real gate, seed 0 as step 5a -> fifth term, failed its gate on learning  metric validated, degree not read: failed its gate on learning
+  [PASS] outcome: the toy's real gate, seed 1 as step 5a -> R3
+  [PASS] outcome: the toy's real gate, no step record -> R3
+  [PASS] outcome: arm F reads on two seeds -> R1, with both scope phrases
+  [PASS] outcome: arm T fails its gate -> R3 whatever else
+  [PASS] outcome: arm M fails its gate -> dropped, term unchanged
   [PASS] outcome: anchors do not separate -> R2
-  [PASS] outcome: arm C no verdict fires the two-arm fallback and says so
+  [PASS] outcome: R3 names the failed condition and its seeds
+  [PASS] outcome: arm C no verdict, arm F reads -> the fallback, degree read
+  [PASS] outcome: arm C no verdict, arm F no verdict -> the fallback, degree not read, with the reason
+  [PASS] outcome: arm T no verdict -> metric not validated (not R2)
   [PASS] outcome: arm M no verdict drops arm M and says so
+  [PASS] outcome: arm M outside its band changes no term; the sentence says so
+  [PASS] outcome: arm F failed at step 5a -> R3 with nothing else launched
 
 all checks passed
 == procedure
@@ -190,6 +212,9 @@ procedure.py self-test: the site-set rule
   [PASS] the registered model's list is version 4's section 18: 325 site sets, 1,300 comparisons; stricter 312
   [PASS] row by row as section 18 prints it (13, 48, 44, ... 4)  [13, 48, 44, 40, 36, 32, 28, 24, 20, 16, 12, 8, 4]
   [PASS] the gate bar on 3,000 episodes is 790 by the one-sided binomial rule
+  [PASS] ownership-free line: four distinct candidates per answer on every gate episode, the right answer always among them (page 1, RT-237)
+  [PASS] ownership-free line: answering the right value counts as a candidate, a non-value word does not
+  [PASS] the gate writes the lesioned candidate count and its line for every arm and seed (RT-237, change 5)  4 of 60, line 37
   [PASS] the table prints a reading that was not made as 'no verdict' instead of failing
 
 all checks passed

@@ -17,9 +17,10 @@ not write this.*
   through it. The old whole-content rule stays, for every evaluation set.
 - **Every new check passed on its first run, and the three made-up cases landed
   exactly as written in advance** (section 3).
-- **The full self-test suite of the frozen code passes: 202 checks, none
-  failed, none skipped** (195 before, plus 7 new ones). Both pinned digests are
-  unchanged, so seed 0's first training batch is the same as before.
+- **The full self-test suite of the frozen code passes: 227 checks, none
+  failed, none skipped** (the 220 on `main`, which now includes the A2 work,
+  plus 7 new ones). Both pinned digests are unchanged, so seed 0's first
+  training batch is the same as before.
 - **The development runs most likely saw no fresh pairing.** Replaying the old
   stream for seed 0 over its 108,919 steps (5,228,112 contents) finds none, in
   line with the 0.3 expected beforehand.
@@ -50,12 +51,21 @@ committed, show the checks can fail: with the pairing rule removed from
 78,400, the originals themselves); with `pairs_for_step` bypassing `admits`
 and using the old rule, both G3 checks fail.
 
-Full suite (`src/run_self_tests.sh`, on the branch's last commit):
-grammar 32 pass, measure 40, models 52, procedure 7, train_successor 12,
-transplant 44, tripwire 15; 0 fail, 0 skip; "ALL SELF-TESTS PASS". Output:
+Full suite (`src/run_self_tests.sh`, after rebasing onto `main` with the A2
+work in it): grammar 34 pass, measure 60, models 52, procedure 10,
+train_successor 12, transplant 44, tripwire 15; 0 fail, 0 skip; "ALL
+SELF-TESTS PASS". Before the rebase, on the freeze's code, it was 202 checks
+(the freeze's 195 plus the 7 new), also all passing. Output:
 `experiments/08-successor-degree/out-pairing-exclusion-tests/t1-self-tests.txt`.
 The launcher's dry-run test (T7) passes, 21 checks as at the freeze; the only
 difference from the freeze's output is one timing (8.0 seconds against 8.1).
+That run was before the rebase; the launcher is untouched by either change.
+
+The whole-pipeline test (T6) was started but not finished: it takes over an
+hour on the laptop, and it was stopped when the branch was rebased under it.
+Its first two short trainings (arms T and C at 10 million parameters, on the
+new stream) completed, and arm T's measurement ran. It is not part of the
+self-test suite and is not claimed here.
 
 ## 4. The old stream, replayed (information only)
 
@@ -81,11 +91,11 @@ decision-code additions.
 - **Which sets.** The pairing rule covers the fresh and relaxed sets only, as
   ruled. The development, gate and trajectory sets keep the whole-content rule;
   their tables can still appear in training.
-- **The A2 work.** The A2 branch (pull request 105) adds a generator self-test,
-  "control 5, stricter", that samples 200 training steps for fresh and relaxed
-  tables and says the exclusion is by whole content. Once both are merged that
-  sentence is out of date, and the sampled check becomes a secondary one beside
-  G1 to G4. The two changes touch different parts of `grammar.py`'s self-test,
-  so they should merge without a clash, but whoever merges second should fix
-  that sentence. This branch was cut from `main`, not from the A2 branch,
-  because nothing here depends on A2's code.
+- **The A2 work.** The A2 work (pull request 105), merged into `main` while
+  this was being done, added a generator self-test, "control 5, stricter",
+  that samples 200 training steps for fresh and relaxed tables, with a comment
+  saying the exclusion was by whole content. This branch was cut from `main`
+  before that merge (nothing here depends on A2's code) and then rebased onto
+  it without a clash; the out-of-date comment now says the sampled check is
+  secondary and points to G1 to G4. The full suite was run again after the
+  rebase (section 3 gives that run).
