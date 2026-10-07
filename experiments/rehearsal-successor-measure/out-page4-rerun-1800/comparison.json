@@ -1,0 +1,1032 @@
+{
+ "concerns": {
+  "A: a built model (arm T, C or M) loses its nomination": [],
+  "B: arm T's reading is not 0.0000, or its control 1 does not hold": [],
+  "C: the separation (arm C minus arm T) is below 0.5 or missing on a seed": [],
+  "D: arm M's reading is outside 0.3 to 0.7 on a seed": [],
+  "E: the free model's read reaches the floor (a piece of 144 or more anywhere)": [],
+  "F: the solver returns a reading": [],
+  "G: control 7 or control 4 fails anywhere": []
+ },
+ "models": {
+  "C/0": {
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.54375,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control3_below_equal_above": [
+     0,
+     1,
+     19
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 178,
+    "reading": 1.0025575447570334,
+    "rider": null,
+    "site_set": [
+     [
+      2
+     ],
+     "action",
+     4
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      2
+     ],
+     "action",
+     4,
+     178
+    ],
+    "true_slot": null,
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.545,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control3_below_equal_above": [
+     0,
+     0,
+     20
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 1.0051150895140666,
+    "rider": null,
+    "site_set": [
+     [
+      2
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      2
+     ],
+     "action",
+     8,
+     180
+    ],
+    "true_slot": null,
+    "whole_read_correct": 180
+   }
+  },
+  "C/1": {
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.55875,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control3_below_equal_above": [
+     0,
+     0,
+     20
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 178,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": [
+     [
+      4
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      4
+     ],
+     "action",
+     8,
+     178
+    ],
+    "true_slot": null,
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 175,
+    "control1_complement": 0.5625,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control3_below_equal_above": [
+     6,
+     1,
+     13
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 172,
+    "reading": 0.9925925925925926,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "action+3",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action+3",
+     8,
+     172
+    ],
+    "true_slot": null,
+    "whole_read_correct": 177
+   }
+  },
+  "C/2": {
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.54,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control3_below_equal_above": [
+     3,
+     3,
+     14
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 165,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     4
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     4,
+     165
+    ],
+    "true_slot": null,
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 178,
+    "control1_complement": 0.53125,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control3_below_equal_above": [
+     6,
+     5,
+     9
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 150,
+    "reading": 0.9974293059125964,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     4
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     4,
+     150
+    ],
+    "true_slot": null,
+    "whole_read_correct": 176
+   }
+  },
+  "F/0": {
+   "new": {
+    "best_piece_anywhere": 40,
+    "control1_complement": 0.485,
+    "control1_holds": null,
+    "control2": "reported; no pass line",
+    "control3_below_equal_above": [
+     6,
+     7,
+     7
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": true,
+    "piece_correct": 18,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     1
+    ],
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "true_slot": null,
+    "whole_read_correct": 34
+   },
+   "old": {
+    "best_piece_anywhere": 36,
+    "control1_complement": 0.4875,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control3_below_equal_above": [
+     6,
+     7,
+     7
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": true,
+    "piece_correct": 19,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     1
+    ],
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "true_slot": null,
+    "whole_read_correct": 32
+   }
+  },
+  "F/1": {
+   "new": {
+    "best_piece_anywhere": 19,
+    "control1_complement": 0.57125,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control3_below_equal_above": [
+     0,
+     0,
+     20
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": true,
+    "piece_correct": 16,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": [
+     [
+      4
+     ],
+     "action",
+     1
+    ],
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "true_slot": null,
+    "whole_read_correct": 14
+   },
+   "old": {
+    "best_piece_anywhere": 19,
+    "control1_complement": 0.56375,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control3_below_equal_above": [
+     2,
+     1,
+     17
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": true,
+    "piece_correct": 16,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "action+3",
+     4
+    ],
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "true_slot": null,
+    "whole_read_correct": 12
+   }
+  },
+  "F/2": {
+   "new": {
+    "best_piece_anywhere": 36,
+    "control1_complement": 0.51375,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control3_below_equal_above": [
+     4,
+     8,
+     8
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": true,
+    "piece_correct": 22,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": [
+     [
+      3
+     ],
+     "action",
+     1
+    ],
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "true_slot": null,
+    "whole_read_correct": 30
+   },
+   "old": {
+    "best_piece_anywhere": 29,
+    "control1_complement": 0.53875,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control3_below_equal_above": [
+     8,
+     3,
+     9
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": true,
+    "piece_correct": 18,
+    "reading": 1.010840108401084,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     8
+    ],
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "true_slot": null,
+    "whole_read_correct": 18
+   }
+  },
+  "M/0": {
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.42,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.525236593059937,
+    "rider": null,
+    "site_set": [
+     [
+      3
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      3
+     ],
+     "action",
+     8,
+     180
+    ],
+    "true_slot": 0.5,
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.3875,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.4885993485342019,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     8,
+     180
+    ],
+    "true_slot": 0.4837133550488599,
+    "whole_read_correct": 180
+   }
+  },
+  "M/1": {
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.37625,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.4793388429752066,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     8,
+     180
+    ],
+    "true_slot": 0.47603305785123967,
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.37625,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.4859504132231405,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     8,
+     180
+    ],
+    "true_slot": 0.47603305785123967,
+    "whole_read_correct": 180
+   }
+  },
+  "M/2": {
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.41,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.5208333333333334,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     8,
+     180
+    ],
+    "true_slot": 0.4919871794871795,
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.42875,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.5448717948717948,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     8,
+     180
+    ],
+    "true_slot": 0.4919871794871795,
+    "whole_read_correct": 180
+   }
+  },
+  "T/0": {
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.0,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "true_slot": 0.0,
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.0,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "true_slot": 0.0,
+    "whole_read_correct": 180
+   }
+  },
+  "T/1": {
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.0,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "true_slot": 0.0,
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.0,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "true_slot": 0.0,
+    "whole_read_correct": 180
+   }
+  },
+  "T/2": {
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.0,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "true_slot": 0.0,
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_complement": 0.0,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control3_below_equal_above": [
+     20,
+     0,
+     0
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "described_only": false,
+    "piece_correct": 180,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "true_slot": 0.0,
+    "whole_read_correct": 180
+   }
+  }
+ },
+ "outcome": {
+  "gates_new": {
+   "C": true,
+   "F": false,
+   "M": true,
+   "T": true
+  },
+  "gates_old": {
+   "C": true,
+   "F": false,
+   "M": true,
+   "T": true
+  },
+  "new": {
+   "arm_M": {
+    "prediction_met": true,
+    "seeds": {
+     "0": {
+      "in_band": true,
+      "reading": 0.525236593059937,
+      "true_slot": 0.5,
+      "within": 0.025236593059936974,
+      "within_tolerance": true
+     },
+     "1": {
+      "in_band": true,
+      "reading": 0.4793388429752066,
+      "true_slot": 0.47603305785123967,
+      "within": 0.0033057851239669533,
+      "within_tolerance": true
+     },
+     "2": {
+      "in_band": true,
+      "reading": 0.5208333333333334,
+      "true_slot": 0.4919871794871795,
+      "within": 0.028846153846153855,
+      "within_tolerance": true
+     }
+    },
+    "status": "read"
+   },
+   "code": "R3",
+   "notes": [],
+   "reason": "arm(s) F failed the gate",
+   "term": "substrate not a testbed"
+  },
+  "old": {
+   "arm_M": {
+    "prediction_met": true,
+    "seeds": {
+     "0": {
+      "in_band": true,
+      "reading": 0.4885993485342019,
+      "true_slot": 0.4837133550488599,
+      "within": 0.004885993485341966,
+      "within_tolerance": true
+     },
+     "1": {
+      "in_band": true,
+      "reading": 0.4859504132231405,
+      "true_slot": 0.47603305785123967,
+      "within": 0.009917355371900805,
+      "within_tolerance": true
+     },
+     "2": {
+      "in_band": true,
+      "reading": 0.5448717948717948,
+      "true_slot": 0.4919871794871795,
+      "within": 0.05288461538461531,
+      "within_tolerance": true
+     }
+    },
+    "status": "read"
+   },
+   "code": "R3",
+   "notes": [],
+   "reason": "arm(s) F failed the gate",
+   "term": "substrate not a testbed"
+  }
+ },
+ "reproduction_models": {
+  "compared": 29154,
+  "differ": 0,
+  "differences": []
+ },
+ "reproduction_solver": {
+  "compared": 11712,
+  "differ": 0,
+  "differences": []
+ },
+ "separation_C_minus_T": {
+  "0": {
+   "new": 1.0025575447570334,
+   "old": 1.0051150895140666
+  },
+  "1": {
+   "new": 1.0,
+   "old": 0.9925925925925926
+  },
+  "2": {
+   "new": 1.0,
+   "old": 0.9974293059125964
+  }
+ },
+ "site_set_or_size_changed_on": [
+  "C/0",
+  "C/1",
+  "M/0",
+  "F/1",
+  "F/2"
+ ],
+ "solver": {
+  "channel_left_on/0": {
+   "new": {
+    "best_piece": 18,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 25,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  },
+  "channel_left_on/1": {
+   "new": {
+    "best_piece": 17,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 20,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  },
+  "channel_left_on/2": {
+   "new": {
+    "best_piece": 20,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 21,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  },
+  "channel_removed/0": {
+   "new": {
+    "best_piece": 19,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 24,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  },
+  "channel_removed/1": {
+   "new": {
+    "best_piece": 17,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 23,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  },
+  "channel_removed/2": {
+   "new": {
+    "best_piece": 20,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 23,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  }
+ }
+}

@@ -1,0 +1,12 @@
+reproduction check, models at 420 fitted: 29154 values compared, 0 differ: PASSES
+reproduction check, solver at 420 fitted: 11712 values compared, 0 differ: PASSES
+## The pre-stated concerns (method, section 6)
+
+- A: a built model (arm T, C or M) loses its nomination: no
+- B: arm T's reading is not 0.0000, or its control 1 does not hold: no
+- C: the separation (arm C minus arm T) is below 0.5 or missing on a seed: no
+- D: arm M's reading is outside 0.3 to 0.7 on a seed: no
+- E: the free model's read reaches the floor (a piece of 144 or more anywhere): no
+- F: the solver returns a reading: no
+- G: control 7 or control 4 fails anywhere: no
+- Reported, not a concern on its own: the chosen site set or size changed on C/0, C/1, M/0, F/1, F/2
