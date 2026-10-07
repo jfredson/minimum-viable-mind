@@ -36,7 +36,7 @@ arm C's sharpness there ended at 1.73, 0.70 and 0.93 on its three seeds. Each
 development run is one seed, but both arms C and M went flat. **Why:** the
 setting that slowly shrinks every learned number (weight decay) alone would
 have left it at about 1.34, and arm T, under the same setting, kept 1.95; so
-decay explains about two-thirds of the fall, and training pushed it to zero.
+weight decay alone would have left it at about 1.34; training pushed it the rest of the way.
 
 **Why it matters.** The claim rests on the measure telling apart models whose
 answer is known from how they were built: T low, C high, M between. With the
@@ -60,7 +60,7 @@ built arms removes the cause found and keeps the built arms alike (arm T is
 drifting too); the check catches the network routing round it. **Time cost:**
 a change to frozen code, retraining and re-reading the laptop models, the new
 check, three reruns on your go, and an independent check of each; by this
-session's estimate several working days of the twelve left before the
+session's estimate several working days of the twelve calendar days left before the
 registration deadline (2026-10-18), beside other work owed in the same code.
 
 **Page 12 (continue or stop).** Your words were "decide after the decoy test,
