@@ -330,8 +330,8 @@ stop** — the running totals in the last row of
 spend since 2026-09-21 is the small rented test run of 2026-09-25, in two
 attempts: about $0.50 (stopped when the launcher hung) and $0.0525. The first
 attempt has since been billed at $0.5162 against the $0.4974 the ledger row
-carries; that annotation is still owed, so the totals above are about two
-cents low. The planned cost of the successor's registered runs is $161.90
+carries; the ledger now carries that as an annotation (2026-10-06), so the
+totals above are about two cents low. The planned cost of the successor's registered runs is $161.90
 across its two releases, which would put the programme at $422 to $434 of $450
 (proposal version 3, section 12; pull request 71, not merged).
 
