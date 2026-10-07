@@ -1,0 +1,158 @@
+{
+ "p3": {
+  "seed0": {
+   "k": 20.57382583618164,
+   "block_rms": 5.14345645904541,
+   "outputs_bit_identical": true,
+   "noise_in_code_bit_identical": true,
+   "whole": 1.0,
+   "untouched": 0.0,
+   "own_accuracy": 1.0,
+   "rank1": {
+    "ownership_only": 0.05,
+    "reading": 0.95,
+    "piece_share": {
+     "content": 4.370805618236773e-05,
+     "code": 0.9413530230522156,
+     "block": 0.05860334634780884
+    },
+    "block_unmoved_share": 0.9169468147630012
+   },
+   "rank2": {
+    "ownership_only": 0.11125,
+    "reading": 0.88875,
+    "piece_share": {
+     "content": 4.259905362393654e-05,
+     "code": 0.935511227578594,
+     "block": 0.06444626685656707
+    },
+    "block_unmoved_share": 0.8152917271518311
+   },
+   "rank4": {
+    "ownership_only": 0.345,
+    "reading": 0.655,
+    "piece_share": {
+     "content": 9.005042375065386e-05,
+     "code": 0.931465744972229,
+     "block": 0.06844425201416016
+    },
+    "block_unmoved_share": 0.6067020938153233
+   },
+   "rank8": {
+    "ownership_only": 0.72375,
+    "reading": 0.27625,
+    "piece_share": {
+     "content": 0.00014912396161252033,
+     "code": 0.9409298265534536,
+     "block": 0.058921124572820935
+    },
+    "block_unmoved_share": 0.30047480531168475
+   }
+  },
+  "seed1": {
+   "k": 22.200756072998047,
+   "block_rms": 5.550189018249512,
+   "outputs_bit_identical": true,
+   "noise_in_code_bit_identical": true,
+   "whole": 1.0,
+   "untouched": 0.0,
+   "own_accuracy": 1.0,
+   "rank1": {
+    "ownership_only": 0.09375,
+    "reading": 0.90625,
+    "piece_share": {
+     "content": 9.456038969801739e-05,
+     "code": 0.917005717754364,
+     "block": 0.08289972692728043
+    },
+    "block_unmoved_share": 0.869813044090096
+   },
+   "rank2": {
+    "ownership_only": 0.18125,
+    "reading": 0.81875,
+    "piece_share": {
+     "content": 5.188285595085731e-05,
+     "code": 0.9270657853523365,
+     "block": 0.07288237350478015
+    },
+    "block_unmoved_share": 0.77522639364038
+   },
+   "rank4": {
+    "ownership_only": 0.48375,
+    "reading": 0.51625,
+    "piece_share": {
+     "content": 0.0001972257741726935,
+     "code": 0.9158780574798584,
+     "block": 0.08392475545406342
+    },
+    "block_unmoved_share": 0.46776670264620285
+   },
+   "rank8": {
+    "ownership_only": 0.77375,
+    "reading": 0.22624999999999995,
+    "piece_share": {
+     "content": 0.00018352903134655207,
+     "code": 0.9368265867233276,
+     "block": 0.06298993527889252
+    },
+    "block_unmoved_share": 0.20812671377415654
+   }
+  },
+  "seed2": {
+   "k": 21.053096771240234,
+   "block_rms": 5.263274192810059,
+   "outputs_bit_identical": true,
+   "noise_in_code_bit_identical": true,
+   "whole": 1.0,
+   "untouched": 0.0,
+   "own_accuracy": 1.0,
+   "rank1": {
+    "ownership_only": 0.04,
+    "reading": 0.96,
+    "piece_share": {
+     "content": 0.0003816810203716159,
+     "code": 0.9520798325538635,
+     "block": 0.04753850772976875
+    },
+    "block_unmoved_share": 0.9263499551607038
+   },
+   "rank2": {
+    "ownership_only": 0.06375,
+    "reading": 0.93625,
+    "piece_share": {
+     "content": 0.0003332743852674595,
+     "code": 0.9500538677009265,
+     "block": 0.04961293486433833
+    },
+    "block_unmoved_share": 0.8626592946476732
+   },
+   "rank4": {
+    "ownership_only": 0.24875,
+    "reading": 0.75125,
+    "piece_share": {
+     "content": 0.00021109358734450266,
+     "code": 0.9472062556270513,
+     "block": 0.05258275136844822
+    },
+    "block_unmoved_share": 0.6949759977601973
+   },
+   "rank8": {
+    "ownership_only": 0.70625,
+    "reading": 0.29374999999999996,
+    "piece_share": {
+     "content": 0.00023657965357415378,
+     "code": 0.9417976140975952,
+     "block": 0.057965729385614395
+    },
+    "block_unmoved_share": 0.28538215454774984
+   }
+  }
+ },
+ "versions": {
+  "torch": "2.12.1",
+  "sklearn": "1.9.0",
+  "numpy": "2.5.0",
+  "python": "3.12.13",
+  "device": "cpu"
+ }
+}
