@@ -60,7 +60,12 @@ How the launcher uses it
     python tripwire.py register  --state DIR --pod ID --rate 0.99 --estimate-hours 1.5
     python tripwire.py watch     --state DIR             # spawned once per wave, every 5 minutes
     python tripwire.py gone      --state DIR --pod ID --at EPOCH --by WHO   # every deleting step
-    python tripwire.py reconcile --state DIR             # ratio A, once the bills have posted
+    python tripwire.py reconcile --state DIR             # ratio A, NO EARLIER THAN 3 HOURS after the last deletion
+
+Operator notes (2026-10-06, after the independent check, pull request 117):
+never reuse a wave name (an old folder such as dev-10m holds an old starting
+balance and old machines); run reconcile no earlier than 3 hours after the
+last deletion, because bills post late and an empty bill is a trip.
 
 Contacts the vendor only to read the balance, the machine list and billing,
 and to delete a machine when the in-flight clause says it must. Creates
@@ -71,11 +76,13 @@ nothing [C1/C2].
 from __future__ import annotations
 
 import argparse
+import fcntl
 import json
 import os
 import subprocess
 import sys
 import time
+from contextlib import contextmanager
 from datetime import datetime, timezone
 
 TRIP_RATIO = 1.25
@@ -159,8 +166,9 @@ def says_not_found(text: str) -> bool:
     """The vendor saying a machine does not exist. On 2026-09-26 a delete of a
     machine already gone answered exit 1, "pod not found to terminate", status
     404 (the attempt-2 check, section 9)."""
-    t = text.lower().replace(" ", "")
-    return "notfound" in t or '"status":404' in t
+    # corrected after the independent check (pull request 117, problem 1):
+    # the vendor's own phrase AND the status, never any "not found" or any 404
+    return "pod not found" in text.lower() and "(status 404)" in text
 
 
 def delete_pod(pod: str) -> tuple:
@@ -182,6 +190,21 @@ def load_state(d: str) -> dict:
         return dict(machines={}, readings=[])
     with open(p) as f:
         return json.load(f)
+
+
+@contextmanager
+def locked(d: str):
+    """Added after the independent check (pull request 117, problem 4): the
+    watcher, the watchdog, the deadline timer and the launcher all write
+    these records, so every load-change-save happens under one file lock,
+    and vendor reads happen outside it."""
+    os.makedirs(d, exist_ok=True)
+    with open(os.path.join(d, "state.lock"), "a") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(f, fcntl.LOCK_UN)
 
 
 def save_state(d: str, st: dict) -> None:
@@ -311,15 +334,16 @@ def cmd_preflight(d: str) -> int:
     if h:
         print(f"tripwire: REFUSING to launch: the tripwire has tripped and not been cleared.\n{h}")
         return 3
-    st = load_state(d)
     try:
         bal = read_balance()
         live = running_pods()
     except CheckFailed as e:
-        write_halt(d, f"a check that cannot run is a trip: {e}", dict(state=st))
+        write_halt(d, f"a check that cannot run is a trip: {e}", dict(state=load_state(d)))
         return 3
-    st["readings"].append(dict(t=now(), balance=bal, source="preflight"))
-    save_state(d, st)
+    with locked(d):                 # the vendor has been read; now load, apply, save
+        st = load_state(d)
+        st["readings"].append(dict(t=now(), balance=bal, source="preflight"))
+        save_state(d, st)
     ours = [m for m in st["machines"].values() if m["pod"] in live]
     print(f"tripwire: balance ${bal:.4f}; {len(live)} machine(s) on the account, {len(ours)} of this wave")
     if st["machines"]:
@@ -337,10 +361,11 @@ def cmd_preflight(d: str) -> int:
 
 
 def cmd_register(d: str, pod: str, rate: float, estimate_hours: float, out: str) -> int:
-    st = load_state(d)
-    st["machines"][pod] = dict(pod=pod, rate=rate, estimate_hours=estimate_hours, created=now(),
-                               created_iso=iso(now()), out=out, gone=None)
-    save_state(d, st)
+    with locked(d):
+        st = load_state(d)
+        st["machines"][pod] = dict(pod=pod, rate=rate, estimate_hours=estimate_hours, created=now(),
+                                   created_iso=iso(now()), out=out, gone=None)
+        save_state(d, st)
     print(f"tripwire: registered {pod} at ${rate}/h, estimate {estimate_hours} h")
     return 0
 
@@ -348,12 +373,13 @@ def cmd_register(d: str, pod: str, rate: float, estimate_hours: float, out: str)
 def cmd_gone(d: str, pod: str, at: float, by: str) -> int:
     """Ruled 2026-10-06: the step that deletes a machine writes the deletion
     time here. A machine this wave never registered is reported, not added."""
-    st = load_state(d)
-    if pod not in st["machines"]:
-        print(f"tripwire: {pod} is not a machine of this wave; nothing recorded")
-        return 1
-    changed = record_gone(st, pod, at, by)
-    save_state(d, st)
+    with locked(d):
+        st = load_state(d)
+        if pod not in st["machines"]:
+            print(f"tripwire: {pod} is not a machine of this wave; nothing recorded")
+            return 1
+        changed = record_gone(st, pod, at, by)
+        save_state(d, st)
     m = st["machines"][pod]
     print(f"tripwire: {pod} deleted at {iso(m['gone'])} by {m['gone_by']}"
           + ("" if changed else f" (kept; {by}'s {iso(at)} is not earlier)"))
@@ -362,28 +388,29 @@ def cmd_gone(d: str, pod: str, at: float, by: str) -> int:
 
 def watch_once(d: str, allow_delete: bool) -> str:
     """One reading. Returns "continue", "done" or "tripped"."""
-    st = load_state(d)
     try:
         bal = read_balance()
         live = running_pods()
     except CheckFailed as e:
-        write_halt(d, f"a check that cannot run is a trip: {e}", dict(state=st))
+        write_halt(d, f"a check that cannot run is a trip: {e}", dict(state=load_state(d)))
         return "tripped"
     t = now()
-    st["readings"].append(dict(t=t, balance=bal, source="watch"))
-    for m in st["machines"].values():
-        if m["pod"] in live:
-            m["last_seen"] = t
-            if m.get("gone") and m.get("gone_inferred"):
-                # listed again: the earlier absence was the vendor's list lagging,
-                # not a deletion; charging it as deleted would read as overbilling
-                for k in ("gone", "gone_iso", "gone_by", "gone_inferred"):
-                    m.pop(k, None)
-                m["gone"] = None
-        elif not m.get("gone"):
-            # no deleting step recorded it: the first reading without it, flagged
-            record_gone(st, m["pod"], t, "the watcher: not in the machine list", inferred=True)
-    save_state(d, st)
+    with locked(d):                 # the vendor has been read; now load, apply, save
+        st = load_state(d)
+        st["readings"].append(dict(t=t, balance=bal, source="watch"))
+        for m in st["machines"].values():
+            if m["pod"] in live:
+                m["last_seen"] = t
+                if m.get("gone") and m.get("gone_inferred"):
+                    # listed again: the earlier absence was the vendor's list lagging,
+                    # not a deletion; charging it as deleted would read as overbilling
+                    for k in ("gone", "gone_iso", "gone_by", "gone_inferred"):
+                        m.pop(k, None)
+                    m["gone"] = None
+            elif not m.get("gone"):
+                # no deleting step recorded it: the first reading without it, flagged
+                record_gone(st, m["pod"], t, "the watcher: not in the machine list", inferred=True)
+        save_state(d, st)
     s, dd = rule_s(st["readings"], st["machines"]), rule_d(st["readings"], st["machines"])
     rb = s["rb"]
     shown = "unread" if rb.get("ratio") is None else f"{rb['ratio']:.3f}"
@@ -400,9 +427,10 @@ def watch_once(d: str, allow_delete: bool) -> str:
                 if allow_delete:
                     ok, res = delete_pod(dec["pod"])
                     if ok:
-                        st = load_state(d)
-                        record_gone(st, dec["pod"], now(), "the tripwire, in flight")
-                        save_state(d, st)
+                        with locked(d):
+                            st = load_state(d)
+                            record_gone(st, dec["pod"], now(), "the tripwire, in flight")
+                            save_state(d, st)
                 else:
                     res = "not deleted: --allow-delete not given"
                 print(f"tripwire: {dec['pod']}: {dec['decision']} -> {res}", flush=True)

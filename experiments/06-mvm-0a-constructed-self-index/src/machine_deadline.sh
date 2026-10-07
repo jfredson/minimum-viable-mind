@@ -32,9 +32,14 @@
 # CONFIRMED DELETION AND ON NOTHING WEAKER:
 #   * the watchdog's own deletion record, $GONE_RECORD (default
 #     machine_gone_$POD beside this settings file), naming this machine; or
-#   * the vendor SAYING the machine does not exist ("not found" / status
-#     404), asked every VENDOR_CHECK_S seconds with a read.
-# A failed reading, an empty answer, an unreadable answer, or a record naming
+#   * the vendor SAYING the machine does not exist, asked every
+#     VENDOR_CHECK_S seconds with a read. Corrected 2026-10-06 after the
+#     independent check (pull request 117, problem 1): that means the
+#     vendor's own phrase "pod not found" together with "(status 404)", AND a
+#     machine list that succeeds and does not show the machine, at
+#     VENDOR_CONFIRMS checks in a row (2, so 5 minutes apart).
+# A failed reading, an empty answer, an unreadable answer, "command not
+# found", a configuration message, any other 404, or a record naming
 # another machine leaves it armed to its deadline. If TRIP_PY, TRIP_SCRIPT
 # and TRIP_DIR are set (the successor launcher sets them), a delete it makes
 # is written into the spending alarm's records with its time.
@@ -56,6 +61,7 @@ RUNPODCTL="${RUNPODCTL:-runpodctl}"
 GONE_RECORD="${GONE_RECORD:-$(dirname "$ENVF")/machine_gone_$POD}"
 VENDOR_CHECK_S="${VENDOR_CHECK_S:-300}"
 VENDOR_CAP_S="${VENDOR_CAP_S:-20}"
+VENDOR_CONFIRMS="${VENDOR_CONFIRMS:-2}"
 
 stamp() { date -u +%Y-%m-%dT%H:%M:%SZ; }
 say()   { echo "[$(stamp)] machine-deadline: $*"; }
@@ -63,10 +69,42 @@ say()   { echo "[$(stamp)] machine-deadline: $*"; }
 say "armed for machine $POD ($OUT): deletes at $(date -u -r "$DELETE_AT_EPOCH" +%Y-%m-%dT%H:%M:%SZ),"
 say "$(( DELETE_AT_EPOCH - CREATED_AT_EPOCH ))s after creation (hard cap \$$HARD_CAP_USD at \$$RATE_PER_HOUR_USD an hour)"
 
-# 2026-10-06: the vendor saying the machine does not exist. Exit status is
+# 2026-10-06: the vendor saying the machine does not exist: its own phrase
+# and the status, as in the one recorded answer (2026-09-26). Exit status is
 # not trusted either way; only the words are.
 says_not_found() {
-  printf '%s' "$1" | tr -d ' ' | tr 'A-Z' 'a-z' | grep -qE 'notfound|"status":404'
+  printf '%s' "$1" | grep -qi 'pod not found' && printf '%s' "$1" | grep -qF '(status 404)'
+}
+# run one vendor command, capped at VENDOR_CAP_S; prints its output, then a
+# last line "rc=N" (N=124 if it was cut off)
+capped() {
+  local f p k rc
+  f=$(mktemp)
+  "$RUNPODCTL" "$@" > "$f" 2>&1 < /dev/null &
+  p=$!
+  ( sleep "$VENDOR_CAP_S"; kill "$p" 2>/dev/null ) >/dev/null 2>&1 &
+  k=$!
+  wait "$p" 2>/dev/null; rc=$?
+  kill "$k" 2>/dev/null; wait "$k" 2>/dev/null
+  cat "$f"; rm -f "$f"
+  echo "rc=$rc"
+}
+# a machine list that SUCCEEDS (exit 0, a JSON list) and does not show $POD.
+# Anything else, including no python3 to read it, is a failed reading.
+list_without_machine() {
+  local out rc
+  out=$(capped pod list)
+  rc=$(printf '%s\n' "$out" | tail -1); rc=${rc#rc=}
+  [ "$rc" = "0" ] || return 1
+  printf '%s\n' "$out" | sed '$d' | python3 -c '
+import json, sys
+try:
+    d = json.JSONDecoder(strict=False).decode(sys.stdin.read())
+except Exception:
+    sys.exit(1)
+if not isinstance(d, list) or not all(isinstance(p, dict) for p in d):
+    sys.exit(1)
+sys.exit(0 if all(p.get("id") != sys.argv[1] for p in d) else 1)' "$POD" 2>/dev/null
 }
 stand_down() {
   say "STANDING DOWN without deleting: $POD is confirmed deleted ($1)."
@@ -76,6 +114,7 @@ stand_down() {
 say "stands down only on a confirmed deletion: $GONE_RECORD naming $POD, or the vendor saying it does not exist (asked every ${VENDOR_CHECK_S}s)"
 
 LAST_VENDOR=$(date +%s)
+CONFIRMED=0
 while :; do
   NOW=$(date +%s)
   [ "$NOW" -ge "$DELETE_AT_EPOCH" ] && break
@@ -85,16 +124,15 @@ while :; do
   if [ $(( NOW - LAST_VENDOR )) -ge "$VENDOR_CHECK_S" ]; then
     LAST_VENDOR=$NOW
     # capped, so a vendor call that hangs can never hold the deadline back
-    VF=$(mktemp)
-    "$RUNPODCTL" pod get "$POD" -o json > "$VF" 2>&1 < /dev/null &
-    VPID=$!
-    ( sleep "$VENDOR_CAP_S"; kill "$VPID" 2>/dev/null ) >/dev/null 2>&1 &
-    VKILL=$!
-    wait "$VPID" 2>/dev/null
-    kill "$VKILL" 2>/dev/null; wait "$VKILL" 2>/dev/null
-    V=$(cat "$VF"); rm -f "$VF"
-    if says_not_found "$V"; then
-      stand_down "the vendor answered: $(printf '%s' "$V" | tr '\n' ' ' | cut -c1-160)"
+    V=$(capped pod get "$POD" -o json | sed '$d')
+    if says_not_found "$V" && list_without_machine; then
+      CONFIRMED=$(( CONFIRMED + 1 ))
+      say "the vendor says $POD does not exist and a good machine list does not show it (check $CONFIRMED of $VENDOR_CONFIRMS)"
+      [ "$CONFIRMED" -ge "$VENDOR_CONFIRMS" ] && \
+        stand_down "the vendor answered '$(printf '%s' "$V" | tr '\n' ' ' | cut -c1-140)' and a good machine list omitted it, $CONFIRMED checks in a row"
+    else
+      [ "$CONFIRMED" -gt 0 ] && say "not confirmed at this check; the count starts again"
+      CONFIRMED=0
     fi
   fi
   LEFT=$(( DELETE_AT_EPOCH - NOW ))

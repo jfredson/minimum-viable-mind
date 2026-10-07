@@ -49,10 +49,22 @@
 #
 # Usage (environment variables only; this launcher takes no arguments):
 #   dry run, creates nothing and contacts no vendor:
-#     DRYRUN=1 ARM=C SIZE=10M SEED=0 WAVE=dev-10m ESTIMATE_HOURS=1.5 \
+#     DRYRUN=1 ARM=C SIZE=10M SEED=0 WAVE=<a new wave name> ESTIMATE_HOURS=1.5 \
 #       HARD_CAP_USD=2.50 RATE_PER_HOUR_USD=0.99 ./launch_successor.sh
 #   a real launch: the same without DRYRUN, after the ledger row exists.
 #   OUT defaults to succ_<arm>_<size>_seed<seed>, which the ledger row names.
+#
+# OPERATOR NOTES for the spending tripwire (2026-10-06, after the independent
+# check of its fixes, pull request 117):
+#   * NEVER REUSE A WAVE NAME. Each wave's records live in
+#     artifacts/tripwire/<WAVE>/; an old one (for example dev-10m, which holds
+#     the 2026-10-04 records) carries an old starting balance, old machines
+#     and a stale watcher number, and the balance comparison would read about
+#     0.5 and hide an overcharge. Pick a new name for every wave.
+#   * Run the end-of-wave comparison (src/tripwire.py reconcile --state
+#     artifacts/tripwire/<WAVE>) NO EARLIER THAN 3 HOURS AFTER THE LAST
+#     DELETION. Bills post late; an empty bill is a trip (section 12.7), and a
+#     trip halts every launch until John clears it.
 set -uo pipefail
 
 # 2026-09-22 [RT-198]: this launcher takes NO command-line arguments and never
@@ -97,7 +109,10 @@ delete_and_record() {
   answer=$(runpodctl pod delete "$POD" 2>&1); rc=$?
   at=$(date +%s)
   printf '%s\n' "$answer"
-  if [ "$rc" -eq 0 ] || printf '%s' "$answer" | tr -d ' ' | tr 'A-Z' 'a-z' | grep -qE 'notfound|"status":404'; then
+  # the vendor's own phrase with its status (corrected after the check, pull
+  # request 117); this writes only the tripwire's records, never the timer's
+  if [ "$rc" -eq 0 ] || { printf '%s' "$answer" | grep -qi 'pod not found' \
+                          && printf '%s' "$answer" | grep -qF '(status 404)'; }; then
     "$PY_LOCAL" "$SRC_DIR/tripwire.py" gone --state "$TRIP_DIR" --pod "$POD" --at "$at" \
       --by "the launcher: $1" | sed 's/^/  /'
   else
