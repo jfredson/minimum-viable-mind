@@ -122,15 +122,15 @@ while :; do
     stand_down "the watchdog's record: $(head -1 "$GONE_RECORD" | cut -c1-200)"
   fi
   # Corrected after the re-check (problem 1): a check makes two capped calls,
-  # so it is skipped when the deadline is less than two caps plus 2 s away.
-  # A check started earlier ends before the deadline, so vendor reads never
-  # delay it; the only lateness left is the poll's rounding and starting the
-  # delete.
+  # so it is skipped when the deadline is less than two caps plus 2 s away;
+  # that keeps a check from running past the deadline. Corrected again after
+  # the third check: the sleep below is worked out from a FRESH clock reading,
+  # so the sleep after a check cannot run past the deadline either. What is
+  # left is the clock's whole-second rounding and starting the delete.
   if [ $(( NOW - LAST_VENDOR )) -ge "$VENDOR_CHECK_S" ] && \
      [ $(( DELETE_AT_EPOCH - NOW )) -ge $(( 2 * VENDOR_CAP_S + 2 )) ]; then
     LAST_VENDOR=$NOW
-    # each call capped at VENDOR_CAP_S; with the skip above, a hung call
-    # cannot hold the deadline back
+    # each call capped at VENDOR_CAP_S
     V=$(capped pod get "$POD" -o json | sed '$d')
     if says_not_found "$V" && list_without_machine; then
       CONFIRMED=$(( CONFIRMED + 1 ))
@@ -142,7 +142,9 @@ while :; do
       CONFIRMED=0
     fi
   fi
-  LEFT=$(( DELETE_AT_EPOCH - NOW ))
+  # third check: read the clock again; a vendor check may have taken two caps
+  LEFT=$(( DELETE_AT_EPOCH - $(date +%s) ))
+  [ "$LEFT" -le 0 ] && continue
   sleep $(( LEFT < POLL_S ? LEFT : POLL_S ))
 done
 

@@ -370,6 +370,9 @@ def stub_vendor(tmp: str, delete: str, get: str, lists=(GOOD_EMPTY_LIST,)) -> st
     def part(spec):
         if spec == "hang":
             return "exec sleep 3600"
+        if spec.startswith("slow|"):              # slow|seconds|rc|text: answers after a wait
+            _, secs, rc, text = spec.split("|", 3)
+            return f"sleep {secs}; printf '%s\\n' '{text}'; exit {rc}"
         rc, text = spec.split("|", 1)
         return f"printf '%s\\n' '{text}'; exit {rc}"
     arms = "\n".join(f'    {i}) {part(x)} ;;' for i, x in enumerate(lists))
@@ -484,7 +487,8 @@ CAP_S = 2
 
 
 def run_timer(name, get, lists=(GOOD_EMPTY_LIST,), record_for=None, deadline_s=4, want_delete=True,
-              trip=False, check_s=1, no_tool=False, quiet=False, cap=None, want_gets=None):
+              trip=False, check_s=1, no_tool=False, quiet=False, cap=None, want_gets=None,
+              poll=1, late_max=10, timer=None):
     """One run of the laptop deadline timer against a stand-in. Timing is
     measured against the deadline as WRITTEN (whole seconds), not the
     unrounded clock (the check's problem 7)."""
@@ -506,7 +510,7 @@ DELETE_AT_EPOCH={written_deadline}
 HARD_CAP_USD="0.0011"
 RATE_PER_HOUR_USD="0.99"
 POSTED_RATE="0.99"
-POLL_S=1
+POLL_S={poll}
 VENDOR_CHECK_S={check_s}
 VENDOR_CAP_S={cap or CAP_S}
 """ + (f"""TRIP_PY="{sys.executable}"
@@ -514,8 +518,8 @@ TRIP_SCRIPT="{os.path.join(SRC, 'tripwire.py')}"
 TRIP_DIR="{td}"
 """ if trip else ""))
     t0 = time.time()
-    r = subprocess.run(["bash", os.path.join(OPS, "machine_deadline.sh"), envf], capture_output=True, text=True,
-                       env=dict(os.environ, PATH=b + ":" + SAFE_PATH), timeout=120)
+    r = subprocess.run(["bash", timer or os.path.join(OPS, "machine_deadline.sh"), envf], capture_output=True,
+                       text=True, env=dict(os.environ, PATH=b + ":" + SAFE_PATH), timeout=180)
     end = time.time()
     calls = open(os.path.join(tmp, "calls")).read() if os.path.exists(os.path.join(tmp, "calls")) else ""
     lists = [c for c in calls.splitlines() if c.startswith("pod list")]
@@ -536,13 +540,13 @@ TRIP_DIR="{td}"
     elif want_delete:
         # re-check problem 1: the vendor check is skipped within two caps of the
         # deadline, so lateness is only rounding and start-up; 10 s allowed here
-        ok = deleted and line and not stood and written_deadline <= del_at <= written_deadline + 10
+        ok = deleted and line and not stood and written_deadline <= del_at <= written_deadline + late_max
     else:
         ok = (not deleted) and (not line) and end < written_deadline and r.returncode == 0 and stood
     if want_gets is not None:
         ok = ok and (gets >= 1 if want_gets == "some" else gets == want_gets)
     if quiet and not ok:      # the five-run check names any case that fails (diagnosis only)
-        print(f"      F1 case failed: get answer {get[:40]!r}, deadline {deadline_s}s, vendor reads {gets}, "
+        print(f"      quiet case did not pass (F1, or the old timer in S3): get answer {get[:40]!r}, deadline {deadline_s}s, vendor reads {gets}, "
               f"delete issued {del_at - written_deadline:+.0f}s, ended {end - written_deadline:+.1f}s, "
               f"stood down {stood}, load {os.getloadavg()[0]:.0f}")
     if not quiet:
@@ -592,6 +596,22 @@ def deadline_cases() -> None:
               "1|" + RECORDED_NOTFOUND, deadline_s=14, check_s=5, want_gets=1)
     run_timer("N8 the old T11 answer '{\"error\":\"pod not found\",\"status\":404}': now stays armed, deletes",
               '1|{"error":"pod not found","status":404}', deadline_s=14, want_gets="some")
+    # third check: a slow poll, so a sleep worked out before a vendor check
+    # would run past the deadline (method, section 14)
+    print("S1-S3  slow polls: the sleep after a vendor check must not run past the deadline")
+    s1 = dict(lists=("hang",), check_s=1, want_gets="some", late_max=2)
+    run_timer("S1 poll 10 s, cap 3 s, deadline 20 s, a check of about two caps at ~10 s: delete within 2 s",
+              "slow|2.5|1|" + RECORDED_NOTFOUND, deadline_s=20, cap=3, poll=10, **s1)
+    run_timer("S2 poll 20 s, cap 5 s, deadline 40 s, the same: delete within 2 s",
+              "slow|4.5|1|" + RECORDED_NOTFOUND, deadline_s=40, cap=5, poll=20, **s1)
+    old = os.path.join(tempfile.mkdtemp(), "machine_deadline_a164eaf.sh")
+    open(old, "w").write(subprocess.run(
+        ["git", "-C", HERE, "show", "a164eaf:experiments/06-mvm-0a-constructed-self-index/src/machine_deadline.sh"],
+        capture_output=True, text=True, check=True).stdout)
+    o1 = run_timer("", "slow|2.5|1|" + RECORDED_NOTFOUND, deadline_s=20, cap=3, poll=10, quiet=True, timer=old, **s1)
+    o2 = run_timer("", "slow|4.5|1|" + RECORDED_NOTFOUND, deadline_s=40, cap=5, poll=20, quiet=True, timer=old, **s1)
+    check("S3 the same two cases FAIL on the timer as it stood before this fix (the test catches the fault)",
+          not o1 and not o2, f"old timer passed: S1 {o1}, S2 {o2}")
     print("F1  the timing cases, five full runs in a row")
     results = []
     for _ in range(5):

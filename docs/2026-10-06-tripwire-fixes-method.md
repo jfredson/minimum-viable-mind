@@ -604,3 +604,9 @@ a second. A new test uses a slow poll.
 | S2 | Timer; poll 20 s, cap 5 s, deadline 40 s, the same answers | Delete issued within 2 s of the written deadline (the old code: about 10 s late) |
 | S3 | S1 and S2 run against the timer as it stood before this fix (`a164eaf`) | Both fail: the delete is more than 2 s late. This shows the test catches the fault |
 | — | The whole check, eight runs in a row at low load; the other suites | All pass (the one pre-stated replay range still reported as missed) |
+
+### 14.2 First run (kept as it came out)
+
+All checks passed at load about 3. S1 and S2 issued the delete at the
+written deadline (+0 s). The old timer issued it 5 s late in S1 (stated:
+about 6) and 10 s late in S2 (stated: about 10), so S3 holds.
