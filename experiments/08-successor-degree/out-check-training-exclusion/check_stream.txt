@@ -1,0 +1,18 @@
+[PASS] pairing() equals main's control 5 table on all 1,600 fresh and relaxed episodes and 20,000 training contents  
+[PASS] every pairing has 8 triples (4 agents x 2 items), so no information is lost  
+[PASS] held_out_pairings() equals main's held_tables  
+[PASS] the whole-content list still covers all five evaluation sets  3,900 contents
+[PASS] the pairing rule covers fresh and relaxed only  
+[PASS] the replay draws exactly the old stream's contents and recipient/donor agents, steps 1 to 2,000  0 steps differ (first None)
+[PASS] the new stream draws exactly the old stream's episodes, steps 1 to 2,000  0 steps differ; skipped old 0, new 0
+[PASS] negative control: a replay without the eligible-model draw diverges from the stream at step 1  
+[PASS] pinned digest constant is the same on main and the branch  
+[PASS] step 1 of seed 0 draws nothing the new rule refuses, so its batch is the same under every exclusion (full, pairing only, none, main's)  skipped 0
+[PASS] no training content among 20,000 gives two agents the same value on an item  
+[PASS] every relaxed episode does give two agents the same value on one item  
+[PASS] all 800 relaxed episodes are refused by admits, and their 800 pairings are in the list  
+[PASS] no relaxed pairing is also a fresh pairing (so the relaxed half is not covered by the fresh half)  
+[PASS] relaxed contents planted into the stream's own draw are skipped by pairs_for_step (re-dressed, so the whole-content rule alone would let them through)  skipped 2
+[PASS] negative control: with the pairing list empty the same planted relaxed contents get through  
+
+16 of 16 passed
