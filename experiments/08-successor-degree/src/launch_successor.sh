@@ -63,8 +63,14 @@
 #     0.5 and hide an overcharge. Pick a new name for every wave.
 #   * Run the end-of-wave comparison (src/tripwire.py reconcile --state
 #     artifacts/tripwire/<WAVE>) NO EARLIER THAN 3 HOURS AFTER THE LAST
-#     DELETION. Bills post late; an empty bill is a trip (section 12.7), and a
-#     trip halts every launch until John clears it.
+#     DELETION. Bills post late; an empty bill, or one covering less than 0.90
+#     of a machine's life, is a trip ("cannot be checked yet", section 12.7 as
+#     extended by John 2026-10-06), and a trip halts every launch. If it
+#     halts with "cannot be checked yet", tell John, and run it again after
+#     he clears the halt.
+#   * DO NOT TOP UP THE ACCOUNT DURING A WAVE. A rise in the balance restarts
+#     the tripwire's in-flight comparison (logged, not a trip), which then
+#     reads low and can miss a mild overcharge on the rest of the wave.
 set -uo pipefail
 
 # 2026-09-22 [RT-198]: this launcher takes NO command-line arguments and never

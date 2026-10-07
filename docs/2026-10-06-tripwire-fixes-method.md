@@ -435,3 +435,25 @@ and the reason for the operator rule.
 | U4 | Honest, no lag, one machine 0 to 40, $75 top-up at minute 13 | No trip; reads low, about 0.62 |
 | U5 | U1 with the 15-minute allowance set to zero (the plain restart) | Trips at minute 56: shows why the allowance is there |
 | — | Everything earlier (section 8 and 11.5 cases, self-tests, replay) | Unchanged |
+
+### 12.5 After running
+
+All of 12.4 held except B3 on its first run: a bill of exactly 0.90 of life
+tripped, because 0.25 hours over 0.2778 hours comes out a hair under 0.90 in
+the computer's arithmetic. "Below 0.90" was meant, so the code now ignores
+differences under one part in a billion; B3 then passes as stated. Nothing
+else changed.
+
+### 12.6 For version 5 (amendments to version 4, not written here)
+
+In addition to section 7: (a) section 12.7 is extended: at the end-of-wave
+comparison, a machine billed for less than 0.90 of its life "cannot be
+checked yet", which is a trip; (b) operator rule: run that comparison no
+sooner than 3 hours after the last deletion, and if it halts with "cannot be
+checked yet", tell John and run it again after he clears it (no built-in
+refusal); (c) section 12.5: a rise in the balance between readings is not a
+trip; it is logged and the in-flight comparison restarts from that reading,
+predicting from 15 minutes before it; operator rule: do not top up during a
+wave; (d) proof that a machine is deleted is the vendor's "pod not found"
+with "(status 404)" and two good machine lists without it, 5 minutes apart
+(the check's corrections, section 11).

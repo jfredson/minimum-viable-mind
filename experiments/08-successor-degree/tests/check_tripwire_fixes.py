@@ -79,7 +79,7 @@ def posted(t: float, machines: list, m: float, lag: float, step: float, prepay: 
 
 
 def simulate(machines: list, m: float = 1.0, lag: float = 0, step: float = 1, prepay=None,
-             fail_at: float | None = None) -> dict:
+             fail_at: float | None = None, topup: tuple | None = None) -> dict:
     """Run the alarm through one wave on a fake clock. Readings: a check before
     each machine is created, then the watcher at 1, 6, 11, ... minutes.
     Deletions are written by `gone` at their minute, as the deleting step would."""
@@ -88,7 +88,8 @@ def simulate(machines: list, m: float = 1.0, lag: float = 0, step: float = 1, pr
     T.now = lambda: clock[0]
     t_min = lambda: (clock[0] - T0) / 60                                        # noqa: E731
     T.read_balance = lambda: (_ for _ in ()).throw(T.CheckFailed("HTTP 503 (stand-in)")) \
-        if fail_at is not None and abs(t_min() - fail_at) < 1e-6 else B0 - posted(t_min(), machines, m, lag, step, prepay)
+        if fail_at is not None and abs(t_min() - fail_at) < 1e-6 else (B0 - posted(t_min(), machines, m, lag, step, prepay)
+                                                                    + (topup[1] if topup and t_min() >= topup[0] else 0))
     T.running_pods = lambda: {f"pod{i}" for i, (c, g) in enumerate(machines) if c <= t_min() < g}
     events = [(c, 0, "create", i) for i, (c, g) in enumerate(machines)]
     events += [(g, 1, "gone", i) for i, (c, g) in enumerate(machines)]
@@ -107,6 +108,8 @@ def simulate(machines: list, m: float = 1.0, lag: float = 0, step: float = 1, pr
                 T.cmd_gone(d, f"pod{i}", T0 + when * 60, "the watchdog")
             else:
                 r = T.watch_once(d, allow_delete=False)
+                if T.load_state(d).get("restarts") and "restart_at" not in out:
+                    out["restart_at"] = when
         if kind != "watch":
             continue
         st = T.load_state(d)
@@ -174,12 +177,12 @@ def empty_bills() -> None:
         f.write(f"#!{sys.executable}\nimport json,sys\nprint(open({ctl!r}).read())\n")
     os.chmod(stub, 0o755)
 
-    def wave(bill, version):
+    def wave(bill, version, life=191.063):
         d = tempfile.mkdtemp()
         json.dump(bill, open(ctl, "w"))
         st = dict(machines={"alpua1c0w6jonx": dict(pod="alpua1c0w6jonx", rate=0.99, estimate_hours=0.1,
                                                     created=1790000000.0, created_iso="2026-09-21T14:13:20Z",
-                                                    out="o", gone=1790000000.0 + 191.063)}, readings=[])
+                                                    out="o", gone=1790000000.0 + life)}, readings=[])
         version.save_state(d, st)
         version.RUNPODCTL = stub
         with Quiet():
@@ -197,7 +200,71 @@ def empty_bills() -> None:
     old = old_tripwire()
     rc, h = wave([], old)
     check("the old code passed the empty bill (the fault being fixed)", rc == 0 and h is None, f"old exit {rc}")
+    print("B1-B4  a bill posted only in part (ruled 2026-10-06: below 0.90 of life is 'cannot be checked yet')")
+    p = "alpua1c0w6jonx"
+    rc, h = wave(row(p, 566260), T, life=1873)
+    check("B1 the recorded partial bill (566,260 ms against 1,873 s, 0.30): a trip, cannot be checked yet",
+          rc == 3 and "cannot be checked yet" in (h or ""))
+    rc, h = wave(row(p, 566260) + row(p, 1305615), T, life=1873)
+    check("B2 the recorded complete bill (1,871,875 ms against 1,873 s, 0.9994): passes", rc == 0 and h is None)
+    rc, h = wave(row(p, 900000), T, life=1000)
+    rc2, h2 = wave(row(p, 899000), T, life=1000)
+    check("B3 billed 0.90 of life passes; 0.899 is a trip, cannot be checked yet",
+          rc == 0 and h is None and rc2 == 3 and "cannot be checked yet" in (h2 or ""))
+    rc, h = wave(row(p, 3500000), T, life=1000)
+    check("B4 billed 3.5 times life: still a trip, over the line", rc == 3 and "at or above 1.25" in (h or ""))
     shutil.rmtree(tmp, ignore_errors=True)
+
+
+def top_ups() -> None:
+    print("U1-U5  a top-up during a wave (ruled 2026-10-06: restart the comparison, record it, do not trip)")
+    r = simulate([(0, 40)], m=1.0, lag=8, step=5, topup=(13, 75.0))
+    st = T.load_state(r["dir"])
+    check("U1 honest wave, lagged, $75 top-up at minute 13: no trip", r["trip_at"] is None)
+    check("U1 the restart is recorded at minute 16, with the rise", r.get("restart_at") == 16
+          and len(st.get("restarts", [])) == 1 and abs(st["restarts"][0]["rise"] - 75.0) < 0.5,
+          f"restart at {r.get('restart_at')}, rise {st.get('restarts', [{}])[0].get('rise', 0):.4f}")
+    check("U1 final comparison about 0.895 (0.85 to 0.95)", 0.85 <= (T.rule_d(st["readings"], st["machines"])["rb"]["ratio"]) <= 0.95,
+          f"{T.rule_d(st['readings'], st['machines'])['rb']['ratio']:.4f}")
+    buf = os.path.join(tempfile.mkdtemp(), "out.txt")
+    so = sys.stdout
+    sys.stdout = open(buf, "w")
+    try:
+        d = tempfile.mkdtemp()
+        T.now = lambda: 1000.0
+        T.read_balance = lambda: 70.0
+        T.running_pods = lambda: set()
+        T.cmd_preflight(d)
+        T.now = lambda: 1300.0
+        T.read_balance = lambda: 90.0
+        T.watch_once(d, False)
+    finally:
+        sys.stdout.close()
+        sys.stdout = so
+    check("U1 the watcher's log says the balance rose, restarts, not a trip",
+          "ROSE by $20.0000" in open(buf).read() and "Not a trip" in open(buf).read())
+    r = simulate([(0, 60), (3, 63)], m=3.5, lag=8, step=5, topup=(13, 75.0))
+    check("U2 overbilled 3.5 times with a top-up: restart at 16, trips in flight at minute 31",
+          r.get("restart_at") == 16 and r["trip_at"] == 31 and "rule S" in (r["halt"] or ""), f"tripped at {r['trip_at']}")
+    r = simulate([(0, 40)], m=1.4, lag=8, step=5, topup=(13, 75.0))
+    st = T.load_state(r["dir"])
+    fin = T.rule_d(st["readings"], st["machines"])["rb"]["ratio"]
+    check("U3 overbilled 1.4 times with a top-up: NOT caught (the stated cost), final about 1.25",
+          r["trip_at"] is None and 1.20 <= fin <= 1.30, f"{fin:.4f}")
+    r = simulate([(0, 40)], m=1.0, lag=0, step=1, topup=(13, 75.0))
+    st = T.load_state(r["dir"])
+    fin = T.rule_d(st["readings"], st["machines"])["rb"]["ratio"]
+    check("U4 honest, no lag, with a top-up: no trip, reads low (about 0.62)", r["trip_at"] is None and 0.58 <= fin <= 0.66,
+          f"{fin:.4f}")
+    keep = T.RESTART_LOOKBACK_S
+    T.RESTART_LOOKBACK_S = 0
+    try:
+        r = simulate([(0, 40)], m=1.0, lag=8, step=5, topup=(13, 75.0))
+    finally:
+        T.RESTART_LOOKBACK_S = keep
+    check("U5 the plain restart (no allowance) would false-trip U1 at minute 56", r["trip_at"] == 56,
+          f"tripped at {r['trip_at']}")
+    T.now = REAL_NOW
 
 
 def old_tripwire():
@@ -614,6 +681,7 @@ if __name__ == "__main__":
     print("Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)")
     made_up_waves()
     empty_bills()
+    top_ups()
     deletion_records()
     watchdog_cases()
     deadline_cases()

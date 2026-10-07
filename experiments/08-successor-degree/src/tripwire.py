@@ -65,7 +65,10 @@ How the launcher uses it
 Operator notes (2026-10-06, after the independent check, pull request 117):
 never reuse a wave name (an old folder such as dev-10m holds an old starting
 balance and old machines); run reconcile no earlier than 3 hours after the
-last deletion, because bills post late and an empty bill is a trip.
+last deletion, because bills post late and an empty bill is a trip; if it
+halts with "cannot be checked yet", tell John and run it again after he
+clears the halt; do not top up the account during a wave (a rise in the
+balance restarts the in-flight comparison and weakens it).
 
 Contacts the vendor only to read the balance, the machine list and billing,
 and to delete a machine when the in-flight clause says it must. Creates
@@ -96,6 +99,11 @@ S_ALLOW_USD = 0.05                 # about three machine-minutes posted early
 D_SETTLE_S = 900                   # the balance lagged at least 6.5 min in the development run
 D_FLOOR_USD = 0.10
 D_ALLOW_USD = 0.02                 # rounding only
+# Ruled by John 2026-10-06 on the independent check's open items (pull request 117):
+BILL_COMPLETE_MIN = 0.90           # billed below this share of life: "cannot be checked yet" (a trip).
+                                   # Recorded honest bills read 0.9994 and 1.00; the recorded partial one 0.30.
+RESTART_LOOKBACK_S = 900           # after a top-up restart, predict from 15 min before the restart
+                                   # reading, so charges posted late are not read as overbilling
 HALT = "HALT"
 RUNPODCTL = os.environ.get("RUNPODCTL", "runpodctl")
 
@@ -237,9 +245,11 @@ def write_halt(d: str, why: str, figures: dict) -> None:
 
 # ------------------------------------------------------------ the arithmetic
 
-def ratio_b(readings: list, machines: dict, t_now: float) -> dict:
+def ratio_b(readings: list, machines: dict, t_now: float, lookback: float = 0.0) -> dict:
     """Cumulative drawdown since the first reading, per hour, against what the
-    machines that were running should have cost over the same time."""
+    machines that were running should have cost over the same time. After a
+    top-up restart, `lookback` seconds before the first reading are predicted
+    too (charges for that time post after it)."""
     if len(readings) < 2:
         return dict(ratio=None, reason="fewer than two balance readings")
     t0, b0 = readings[0]["t"], readings[0]["balance"]
@@ -247,9 +257,10 @@ def ratio_b(readings: list, machines: dict, t_now: float) -> dict:
     hours = (t1 - t0) / 3600
     if hours <= 0:
         return dict(ratio=None, reason="no time between readings")
-    expected = VOLUME_DRIP_PER_HOUR * hours
+    p0 = t0 - lookback
+    expected = VOLUME_DRIP_PER_HOUR * (t1 - p0) / 3600
     for m in machines.values():
-        start = max(t0, m["created"])
+        start = max(p0, m["created"])
         end = min(t1, m.get("gone") or t1)
         if end > start:
             expected += m["rate"] * (end - start) / 3600
@@ -265,12 +276,41 @@ def over_line(rb: dict, floor: float, allow: float) -> bool:
             and rb["drawn"] >= TRIP_RATIO * rb["expected"] + allow)
 
 
+def rose(prev: dict, cur: dict) -> bool:
+    """The balance went up: never honest spending (a top-up, or a refund)."""
+    return cur["balance"] > prev["balance"] + 1e-6
+
+
+def segment(readings: list) -> tuple:
+    """Ruled 2026-10-06 (check problem 10): the comparison restarts at the last
+    reading higher than the one before it. Returns (readings from there, the
+    prediction's look-back in seconds)."""
+    for i in range(len(readings) - 1, 0, -1):
+        if rose(readings[i - 1], readings[i]):
+            return readings[i:], RESTART_LOOKBACK_S
+    return readings, 0.0
+
+
+def note_rise(st: dict, reading: dict) -> None:
+    """Record a top-up in the records and the log. Not a trip."""
+    if st["readings"] and rose(st["readings"][-1], reading):
+        up = reading["balance"] - st["readings"][-1]["balance"]
+        st.setdefault("restarts", []).append(dict(t=reading["t"], iso=iso(reading["t"]), rise=up,
+                                                  before=st["readings"][-1]["balance"], after=reading["balance"]))
+        print(f"[{iso(reading['t'])}] tripwire: the balance ROSE by ${up:.4f} (a top-up or refund). Not a trip. "
+              f"The in-flight comparison restarts from this reading, predicting from "
+              f"{RESTART_LOOKBACK_S // 60} minutes before it. Operator rule: do not top up during a wave.",
+              flush=True)
+
+
 def rule_s(readings: list, machines: dict) -> dict:
-    """In flight: the latest two readings both over the line."""
+    """In flight: the latest two readings both over the line (within the
+    current comparison, which restarts after a top-up)."""
+    readings, back = segment(readings)
     if len(readings) < 3:                       # the first reading is the baseline
-        return dict(trip=False, rb=ratio_b(readings, machines, 0))
-    now_rb = ratio_b(readings, machines, readings[-1]["t"])
-    prev_rb = ratio_b(readings[:-1], machines, readings[-2]["t"])
+        return dict(trip=False, rb=ratio_b(readings, machines, 0, back))
+    now_rb = ratio_b(readings, machines, readings[-1]["t"], back)
+    prev_rb = ratio_b(readings[:-1], machines, readings[-2]["t"], back)
     trip = over_line(now_rb, S_FLOOR_USD, S_ALLOW_USD) and over_line(prev_rb, S_FLOOR_USD, S_ALLOW_USD)
     return dict(trip=trip, rb=now_rb, previous=prev_rb)
 
@@ -279,11 +319,13 @@ def rule_d(readings: list, machines: dict) -> dict:
     """At each deletion: the whole wave so far, at a reading taken at least
     D_SETTLE_S after some machine's deletion. Inferred deletions count too:
     they are late, which only makes this read low."""
+    readings, back = segment(readings)
     if len(readings) < 2:
         return dict(trip=False, applies=False)
-    t1 = readings[-1]["t"]
-    settled = [m["pod"] for m in machines.values() if m.get("gone") and t1 - m["gone"] >= D_SETTLE_S]
-    rb = ratio_b(readings, machines, t1)
+    t1, p0 = readings[-1]["t"], readings[0]["t"] - back
+    settled = [m["pod"] for m in machines.values()
+               if m.get("gone") and m["gone"] > p0 and t1 - m["gone"] >= D_SETTLE_S]
+    rb = ratio_b(readings, machines, t1, back)
     applies = bool(settled)
     return dict(trip=applies and over_line(rb, D_FLOOR_USD, D_ALLOW_USD), applies=applies,
                 settled=settled, rb=rb)
@@ -342,7 +384,9 @@ def cmd_preflight(d: str) -> int:
         return 3
     with locked(d):                 # the vendor has been read; now load, apply, save
         st = load_state(d)
-        st["readings"].append(dict(t=now(), balance=bal, source="preflight"))
+        r = dict(t=now(), balance=bal, source="preflight")
+        note_rise(st, r)
+        st["readings"].append(r)
         save_state(d, st)
     ours = [m for m in st["machines"].values() if m["pod"] in live]
     print(f"tripwire: balance ${bal:.4f}; {len(live)} machine(s) on the account, {len(ours)} of this wave")
@@ -397,7 +441,9 @@ def watch_once(d: str, allow_delete: bool) -> str:
     t = now()
     with locked(d):                 # the vendor has been read; now load, apply, save
         st = load_state(d)
-        st["readings"].append(dict(t=t, balance=bal, source="watch"))
+        r = dict(t=t, balance=bal, source="watch")
+        note_rise(st, r)
+        st["readings"].append(r)
         for m in st["machines"].values():
             if m["pod"] in live:
                 m["last_seen"] = t
@@ -471,6 +517,14 @@ def cmd_reconcile(d: str) -> int:
               f"ratio A {ra if ra is None else round(ra, 3)}")
     with open(os.path.join(d, "reconcile.json"), "w") as f:
         json.dump(rows, f, indent=1)
+    # Ruled 2026-10-06 (check problem 3): a bill posted only in part
+    partial = [r for r in rows if r["ratio_a"] is not None and r["ratio_a"] < BILL_COMPLETE_MIN - 1e-9]   # "below", not rounding
+    if partial:
+        names = ", ".join(f"{r['pod']} {r['ratio_a']:.3f}" for r in partial)
+        write_halt(d, f"a check that cannot run is a trip: cannot be checked yet: the bill covers less than "
+                      f"{BILL_COMPLETE_MIN} of the machine's life ({names}), so it has posted only in part. "
+                      f"Tell John; run reconcile again after he clears this.", dict(rows=rows))
+        return 3
     if trips(worst):
         write_halt(d, f"ratio A {worst:.3f} at or above {TRIP_RATIO} at the wave boundary", dict(rows=rows))
         return 3
