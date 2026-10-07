@@ -1,0 +1,40 @@
+line: 1546  (count of ways to get >= 1546 of 3000, times 20, <= 2^3000; one fewer would not be)
+
+expected own-directed count of 3,000 under answer rules (line 1546):
+   1500.0  fails   guess among the eight value words
+   2256.8  passes  successor of any of the eight values shown (the caveat)
+   1513.5  fails   successor of one of the four values on the OTHER item
+   1261.5  fails   a value shown on the named item, NOT stepped on
+   1372.5  fails   a value shown on any item, NOT stepped on
+
+channel zeroed, own-directed, of 3,000:
+         model  allowed  author  same  correct  succ-of-any-shown
+           T/0     3000    3000  True      740               3000
+           T/1     3000    3000  True      753               3000
+           T/2     3000    3000  True      820               3000
+           C/0     2236    2236  True      534               2998
+           C/1     2160    2160  True      549               3000
+           C/2     2132    2132  True      511               2996
+           M/0     2770    2770  True      669               3000
+           M/1     2686    2686  True      657               2964
+           M/2     2660    2660  True      661               2946
+           F/0     2100    2100  True      528               2778
+           F/1     2238    2238  True      555               3000
+           F/2     2324    2324  True      582               3000
+       blind/0     2784    2784  True      702               3000
+       blind/1     2880    2880  True      715               3000
+       blind/2     2768    2768  True      702               3000
+ untrained-F/0        0       0  True        0                  0
+ untrained-F/1      620     620  True      157                918
+ untrained-F/2      726     726  True      181               1092
+
+verdict, holds on at least two seeds of three:
+            T: 3 of 3 -> holds
+            C: 3 of 3 -> holds
+            M: 3 of 3 -> holds
+            F: 3 of 3 -> holds
+        blind: 3 of 3 -> holds
+  untrained-F: 0 of 3 -> does not hold
+
+free model margin over the line: 554 to 778
+counts differing from the author's file: 0 of 18
