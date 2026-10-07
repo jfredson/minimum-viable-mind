@@ -599,7 +599,7 @@ def deadline_cases() -> None:
     # third check: a slow poll, so a sleep worked out before a vendor check
     # would run past the deadline (method, section 14)
     print("S1-S3  slow polls: the sleep after a vendor check must not run past the deadline")
-    s1 = dict(lists=("hang",), check_s=1, want_gets="some", late_max=2)
+    s1 = dict(lists=("hang",), check_s=5, want_gets="some", late_max=2)   # 5: first check at the first poll (14.3)
     run_timer("S1 poll 10 s, cap 3 s, deadline 20 s, a check of about two caps at ~10 s: delete within 2 s",
               "slow|2.5|1|" + RECORDED_NOTFOUND, deadline_s=20, cap=3, poll=10, **s1)
     run_timer("S2 poll 20 s, cap 5 s, deadline 40 s, the same: delete within 2 s",

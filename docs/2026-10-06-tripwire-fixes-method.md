@@ -610,3 +610,16 @@ a second. A new test uses a slow poll.
 All checks passed at load about 3. S1 and S2 issued the delete at the
 written deadline (+0 s). The old timer issued it 5 s late in S1 (stated:
 about 6) and 10 s late in S2 (stated: about 10), so S3 holds.
+
+### 14.3 Eight runs, attempt 1 (kept): 7 of 8 passed; the control was flaky
+
+Every check of the fixed timer passed in all eight runs, including S1 and S2.
+In run 6, S3 failed: the **old** timer happened to be on time in S1. The
+control depended on where the first second ticked over: with checks allowed
+every 1 second, the old timer sometimes made its vendor check at about 1
+second instead of 10, and its stale sleep then ended well before the
+deadline. **Fix (test only):** S1 to S3 allow vendor checks every 5 seconds,
+so the first check always comes at the first poll (10 s in S1, 20 s in S2),
+where the old timer's stale sleep must overrun. The other suites (alarm
+self-test, deadline timer 20 of 20, watchdog handshake, launcher check, all
+successor self-tests) passed in this attempt. Attempt 2 follows.
