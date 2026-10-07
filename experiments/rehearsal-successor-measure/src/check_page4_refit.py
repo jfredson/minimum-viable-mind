@@ -77,8 +77,12 @@ def load(arm, seed):
     got = hashlib.sha256(open(path, "rb").read()).hexdigest()
     assert got == want[os.path.basename(path)], f"fingerprint differs: {path}"
     obj = torch.load(path, map_location="cpu", weights_only=True)
-    m = M.build_from_config(obj["cfg"])
-    m.load_state_dict(obj["state"], strict=True)
+    if isinstance(obj, dict) and "cfg" in obj:
+        m = M.build_from_config(obj["cfg"])
+        m.load_state_dict(obj["state"], strict=True)
+    else:                                   # the toy files are bare weights
+        m = M.build(arm, "toy")
+        m.load_state_dict(obj, strict=True)
     return m.eval()
 
 

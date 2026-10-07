@@ -1,0 +1,5 @@
+[C/1] pool 1980 development episodes: reads fitted on the first 1800, scored on the last 180; transplants on the frozen 600 pairs; torch threads 4
+[C/1] gate: own 1703, named-other 751 of 3000 (bar 790)
+[C/1] reads: whole-read counts by state [17, 180, 180, 180, 180] of 180
+[C/1] nomination: nominated {'layers': [4], 'positions': 'action', 'rank': 8, 'piece_correct': 178, 'whole_read_correct': 180}
+[C/1] done in 234s: arithmetic 1.0, controls 7/4 hold True/True -> ../out-page4-check/recompute-1800/models-1800/row_C_seed1.json
