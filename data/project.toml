@@ -832,7 +832,7 @@ when = "now, alongside the decoy test; method committed first for the run"
 owner = "a Claude Code session changes and runs it; another checks it"
 cost = "$0, laptop"
 decision = false
-teaches = "That the code which turns per-seed records into one registered outcome follows the ruled table, the seed rule and the new gate line, lists every reason, and leaves no withheld figure in its output (the field arithmetic_withheld is removed)."
+teaches = "That the code which turns per-seed records into one registered outcome follows the ruled table, the seed rule and the new gate line, lists every reason, and leaves no withheld figure in its output (the field arithmetic_withheld is removed). Alongside it, the frozen training code leaves fresh and relaxed pairings out of training outright, with a self-test asserting it, method first, then the self-tests re-run and an independent check (branch training-exclusion-pairing)."
 status = "pending"
 
 [[next_steps]]
