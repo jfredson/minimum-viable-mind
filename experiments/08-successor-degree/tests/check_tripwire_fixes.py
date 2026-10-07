@@ -541,6 +541,10 @@ TRIP_DIR="{td}"
         ok = (not deleted) and (not line) and end < written_deadline and r.returncode == 0 and stood
     if want_gets is not None:
         ok = ok and (gets >= 1 if want_gets == "some" else gets == want_gets)
+    if quiet and not ok:      # the five-run check names any case that fails (diagnosis only)
+        print(f"      F1 case failed: get answer {get[:40]!r}, deadline {deadline_s}s, vendor reads {gets}, "
+              f"delete issued {del_at - written_deadline:+.0f}s, ended {end - written_deadline:+.1f}s, "
+              f"stood down {stood}, load {os.getloadavg()[0]:.0f}")
     if not quiet:
         check(name, ok, f"vendor reads {gets}, delete issued {del_at - written_deadline:+.0f}s, ended {end - written_deadline:+.1f}s from the written deadline, delete called: {deleted}, "
                         f"deadline line: {line}, stood down: {stood}")

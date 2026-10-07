@@ -544,3 +544,12 @@ the laptop's load at the start. The timer code is not changed by this.
   14-second deadlines and must make at least one vendor read (N7: exactly
   one, with checks every 5 seconds); the five-run timing cases use 10-second
   deadlines and must read too. Expected outcomes are unchanged from 13.4.
+
+### 13.7 Eight-run attempt 3 (kept): 6 of 8 passed
+
+Runs 1 and 2 each failed only the five-run timing check (19 and 18 of 20),
+with the laptop's load at 386 and 240; runs 3 to 8, with the load falling
+from 181 to under 10, all passed. Every named case passed in all eight. The
+five-run check did not say which case failed, so it now prints any failing
+case's details (answer, vendor reads, when the delete was issued, load). The
+pass rule is unchanged. Attempt 4 is the eight-run result reported.
