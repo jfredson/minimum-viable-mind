@@ -411,6 +411,11 @@ planned.*
    freeze's self-test updated (the outside dispositions, A2, lines 247 to
    281). Then the run through `summarise` on the toy and the made-up failure
    cases, method first, **and its check** (lines 303 to 323).
+   *Added 2026-10-06 after John's ruling in item 8 of the follow-up:* the
+   frozen training code in `experiments/08-successor-degree` leaves fresh and
+   relaxed pairings out of training outright, with a self-test asserting it,
+   method first, then the self-tests re-run **and its check** (branch
+   `training-exclusion-pairing`).
 5. **Version 5**, the registration text, written with every change ruled here
    and earlier, **and checked** by a session that did not write it.
 6. **Page 1's closure check**: the four-part measured check of the
@@ -541,7 +546,30 @@ owed, not written here):
    - **The generator self-test on unseen combinations (RT-255, item 4 above)
      takes the stricter reading:** it checks the specific pairing that makes
      an episode fresh or relaxed, not only the whole episode's content, and
-     asserts that no such pairing occurs in the training stream.
+     asserts that no such pairing occurs in the training stream. It is the
+     stricter reading because an overlap on that pairing alone would have
+     passed the self-test as built.
+   - Both were raised by the independent check of the decision-code work
+     (pull request 107, checking pull request 105).
+
+8. **How training keeps those pairings out: "(a), go with the
+   recommendation".** Ruled later the same day (TimeAssembler decision entry
+   `9fbca0db`). After item 7, the re-check of the decision-code work (pull
+   request 107, at commit `d776c70`) found that the self-test samples only
+   200 training steps, so it cannot promise the registered claim that no
+   fresh or relaxed pairing "occurs in the training stream". John was offered
+   three options: (a) change training to leave those pairings out outright, a
+   small change to the frozen training code, $0, with the frozen code
+   re-tested; (b) check every training step in full; (c) reword the claim to
+   "in a sample of 200 steps". **Chosen: (a).**
+   - **Owed:** in `experiments/08-successor-degree`, the exclusion changes
+     from whole episode content to the pairing of marker, item and value,
+     with a self-test asserting it; the method committed first; then the
+     self-tests re-run and an independent check, all before registration.
+   - **The four 10-million development runs** used the old exclusion. They
+     are development evidence only and need no re-run.
+   - That work is being done separately, on branch
+     `training-exclusion-pairing`. This record does not do it.
 
 **Nothing from the packet or its follow-ups is now unruled**, except page 12,
 which waits on the decoy test.

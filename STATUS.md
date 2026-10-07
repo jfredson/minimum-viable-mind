@@ -74,7 +74,12 @@ finding on the decision procedure (A2) as drafted, with the withheld figure
 removed from its output ("yes, remove"); that work is item 4 below.
 Two refinements followed ("yes, stricter, go with the recommendation"): R2,
 "metric does not separate", carries the scope phrase too, and the self-test
-checks the specific pairing that makes an episode fresh or relaxed.
+checks the specific pairing that makes an episode fresh or relaxed. Because
+the self-test samples only 200 training steps, John then chose to have
+training leave those pairings out outright ("(a), go with the
+recommendation"); that work is added to item 4 below. The four 10-million
+development runs used the old exclusion; they are development evidence only
+and need no re-run.
 
 **What is now owed before the registration commit, in the order things wait
 on each other.** All $0, on the laptop. Items 3 and 4 proceed now,
@@ -91,7 +96,10 @@ alongside the decoy test.
    no-transplant check moved out of the vetoes, every reason listed, and the
    withheld figure (`arithmetic_withheld`) removed from the output (John:
    "yes, remove"). Then a run on the toy and on made-up failure cases,
-   method first, and its check.
+   method first, and its check. Alongside it, the frozen training code
+   changed to leave fresh and relaxed pairings out of training outright, with
+   a self-test asserting it, method first, then the self-tests re-run and
+   its check (branch `training-exclusion-pairing`).
 5. Version 5, the registration text, with every ruled change, and its check.
 6. The closure check of page 1's repair (four parts, measured), run on
    version 5.
