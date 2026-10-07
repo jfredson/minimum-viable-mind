@@ -20,36 +20,34 @@ end.*
 
 ## Page 1 — the decision: arms C and M lost their built-in ownership route
 
-**What was found.** Each built model works out "which agent am I" by counting
-how often the "this turn is yours" signal fired on each agent's turns and
-turning the counts into weights over the four agents. One learned number, the
-*sharpness*, sets how decisive those weights are; it starts at 4.0, nearly all
-weight on the right agent. In the 10-million-parameter development runs it
+**What was found.** Each built model works out "which agent am I" from how
+often the "this turn is yours" signal fired on each agent's turns. One learned
+number, the *sharpness*, sets how decisive that answer is; it starts at 4.0,
+nearly all weight on the right agent. In the 10-million-parameter development runs it
 fell to about zero in arm C (built with ownership stirred into everything, the
 high end of the scale: 4.0 to −0.09) and arm M (built half separable, half
 stirred in, the middle: to −0.01). At zero the answer puts a quarter on each
-of the four agents and says nothing. The measuring procedure confirms it
-independently: it cannot find "which agent am I" in either model (best 41 and
+of the four agents and says nothing; the measuring procedure, independently,
+cannot find "which agent am I" in either model (best 41 and
 45 right of 180, where the pass mark is 144, four fifths). Arm T (ownership
 kept in one swappable slot, the low end) still works, though its sharpness
 also fell, to 1.95. The fall was already visible in the small laptop models:
 arm C's sharpness there ended at 1.73, 0.70 and 0.93 on its three seeds. Each
-development run is one seed, but both arms C and M went flat. **Why it fell:**
-the training setting that slowly shrinks every learned number (weight decay)
-would on its own have left it at about 1.34 over these runs, and arm T, under
-the same setting, kept 1.95. So decay accounts for about two-thirds of the
-fall; training pushed it the rest of the way to zero.
+development run is one seed, but both arms C and M went flat. **Why:** the
+setting that slowly shrinks every learned number (weight decay) alone would
+have left it at about 1.34, and arm T, under the same setting, kept 1.95; so
+decay explains about two-thirds of the fall, and training pushed it to zero.
 
 **Why it matters.** The claim rests on the measure telling apart models whose
 answer is known from how they were built: T low, C high, M between. With the
-built route switched off, arm C is just a second freely trained model, and
-"the measure separates the built ends" stops testing what it says. Version 4
+route off, arm C is just a second freely trained model, and "the measure
+separates the built ends" stops testing what it says. Version 4
 named this as weakness W3 and expected to see it only after both blocks of
 spending you approved in advance had been spent. It has been seen first.
 
 | Option | Cost | What it changes | What it risks |
 |---|---|---|---|
-| **1. Fix the sharpness at 4.0.** (a) arms C and M only; (b) all three built arms, T too | (a) rerun C and M, about $0.81; (b) about $1.14, plus re-reading arm T on the laptop. Both from the $8.53 left of the $10 you approved for development runs; both need your go | The model code fixed and tested on 2026-10-04 to be registered as is ("frozen"); version 4's arm descriptions | The network may route round it by shrinking the layers that apply the answer; the toy evidence was gathered with the number learned |
+| **1. Fix the sharpness at 4.0.** (a) arms C and M only; (b) all three built arms, T too | (a) rerun C and M, about $0.81; (b) about $1.14, plus re-reading arm T on the laptop. Both from the $8.53 left of the $10 you approved for development runs; both need your go | The model code fixed and tested on 2026-10-04 to be registered as is ("frozen"); version 4's arm descriptions | The network may route round it by shrinking the layers that apply the answer; the toy evidence had the number learned |
 | **2. Exempt it from weight decay, and check it stays above a minimum** | about $0.81 to $1.14 as above | Frozen training code; a new check | Decay is only part of the cause, so the check would likely fire: a failure found, not prevented |
 | **3. Keep it learned, but never below a minimum** | as above | Frozen model code | Same route-round risk as 1; one more setting to choose |
 | **4. Add an in-use check** that fails a built model whose route has gone flat | $0 code and its check | Frozen measuring code and version 4's gates; joins the open decision-code work (pull requests 105 and 107) | Detects, does not prevent: a failure is found after spending, but recorded as "construction did not hold" |
@@ -63,8 +61,7 @@ drifting too); the check catches the network routing round it. **Time cost:**
 a change to frozen code, retraining and re-reading the laptop models, the new
 check, three reruns on your go, and an independent check of each; by this
 session's estimate several working days of the twelve left before the
-registration deadline (2026-10-18), alongside other work already owed in the
-same code.
+registration deadline (2026-10-18), beside other work owed in the same code.
 
 **Page 12 (continue or stop).** Your words were "decide after the decoy test,
 go with the recommendation", whose condition was "continue if not fooled".
