@@ -35,8 +35,8 @@ also fell, to 1.95. The fall was already visible in the small laptop models:
 arm C's sharpness there ended at 1.73, 0.70 and 0.93 on its three seeds. Each
 development run is one seed, but both arms C and M went flat. **Why:** the
 setting that slowly shrinks every learned number (weight decay) alone would
-have left it at about 1.34, and arm T, under the same setting, kept 1.95; so
-weight decay alone would have left it at about 1.34; training pushed it the rest of the way.
+have left it at about 1.34, and arm T, under the same setting, kept 1.95;
+training pushed arms C and M the rest of the way.
 
 **Why it matters.** The claim rests on the measure telling apart models whose
 answer is known from how they were built: T low, C high, M between. With the
