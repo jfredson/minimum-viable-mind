@@ -1,0 +1,28 @@
+base: 1 toy=R3, 2 toy-step5a-seed0=fifth, 3 toy-step5a-seed1=R3, 4 r1=R1, 5 r2=R2, 6 fallback-read=fallback_read, 7 fallback-not-read=fallback_not_read, 8 T-no-verdict=not_validated, 9 T-and-C-no-verdict=not_validated, 10 split-review-table=fifth, 11 split-learning-passes=fifth, 12 split-one-seed-everything=fifth, 13 overlap-one-seed=R1, 14 M-outside-band=R1, 15 M-fails-gate=R1, 16 withheld-seed=R1, 17 never-run-line=fifth, 18 never-run-control=fallback_read, 19 no-transplant-outside=R1, 20 F-channel-removal=fifth, 21 T-fails-gate=R3, 22 F-fails-5a=R3, 23 C-fresh-floor=fallback_read, 24 T-dev-floor=not_validated, 25 F-fresh-floor=fifth
+agree with written expectation: 25 of 25
+
+R3 sentences, condition and seeds from the records:
+  1 toy: [('F', {'named-other': [1, 2]})]
+  3 toy-step5a-seed1: [('F', {'named-other': [1]})]
+  21 T-fails-gate: [('T', {'own-directed': [0, 1]})]
+  22 F-fails-5a: [('F', {'named-other': [1]})]
+
+Each rule turned off in turn (case number, name, outcome with rule on -> off):
+  c7          6 fallback-read: fallback_read -> R1; 7 fallback-not-read: fallback_not_read -> fifth
+  c1T         8 T-no-verdict: not_validated -> R1; 9 T-and-C-no-verdict: not_validated -> fallback_read
+  c4          18 never-run-control: fallback_read -> R1
+  fresh       23 C-fresh-floor: fallback_read -> R1; 25 F-fresh-floor: fifth -> R1
+  dev         24 T-dev-floor: not_validated -> R1
+  nomination  NO CASE CHANGES
+  descr       NO CASE CHANGES
+  noreading   NO CASE CHANGES
+  gate_own    21 T-fails-gate: R3 -> fallback_read
+  gate_other  1 toy: R3 -> fifth; 3 toy-step5a-seed1: R3 -> fifth; 12 split-one-seed-everything: fifth -> R1
+  collapse    12 split-one-seed-everything: fifth -> R1; 20 F-channel-removal: fifth -> R1
+  line        17 never-run-line: fifth -> R1
+  seedrule    12 split-one-seed-everything: fifth -> R1
+  s5a         3 toy-step5a-seed1: R3 -> fifth
+  nostep      1 toy: R3 -> fifth
+  sep         5 r2: R2 -> R1
+('nomination', 'descr') [('fallback-not-read', 'fallback_not_read', 'fallback_read')]
+('nomination', 'descr', 'noreading') [('fallback-not-read', 'fallback_not_read', 'fallback_read')]

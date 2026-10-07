@@ -64,7 +64,15 @@ OUTCOME_TERMS = {
     "R2": "metric does not separate",
     "R3": "substrate not a testbed",
     "fifth": "metric validated, degree not read",
+    # the three new terms of page 5 (ruled 2026-10-06)
+    "fallback_read": "metric checked against the separable model only, degree read",
+    "fallback_not_read": "metric checked against the separable model only, degree not read",
+    "not_validated": "metric not validated",
 }
+SCOPE_METRIC = "on these constructed systems, for this intervention procedure"
+SCOPE_DEGREE = "as a ratio of two transplants at the sites this procedure chose"
+OWNERSHIP_FREE_LINE = 1546      # page 1 (RT-237); recomputed by ownership_free_line()
+OWNERSHIP_FREE_CHANCE = 0.5     # four candidate successors among eight value words
 
 
 def _share(name, v):
@@ -99,18 +107,24 @@ def reading(whole: float, own: float, untouched: float, acc: float) -> dict:
                 version1_form=((whole - own) / whole if whole > 0 else None))
 
 
-def no_transplant_rule(untouched: float, acc: float) -> dict:
-    """Section 6.4, item 3: the untouched model lands on the donor's answer
-    only by erring onto exactly that one of the seven other slots, so the
-    rate should be near (1 - p) / 7, within 0.018. The detection margin at
-    the bar is printed beside it."""
+def no_transplant_rule(untouched: float, acc: float, pairs: int = FRESH_PAIRS) -> dict:
+    """Section 6.4, item 3, as ruled 2026-10-06 (page 8, outside finding A9):
+    the untouched model's rate of landing on the donor's answer is REPORTED
+    against (1 - p) / 7, and no longer withholds a reading. Control 4 is the
+    pairing check that withholds. Printed beside the rate: the formula, their
+    difference, the share of errors landing on the donor's answer, and the
+    chance the formula would flag a fully broken pairing on `pairs` pairs at
+    the learning bar (about 0.56 on 800)."""
     formula = (1 - acc) / 7
     bar_acc = GATE_MIN_CORRECT / GATE_EPISODES
-    broken_flag = 1 / 8 - (1 - bar_acc) / 7
+    bar_formula = (1 - bar_acc) / 7
+    pmf = _binom.pmf(range(pairs + 1), pairs, 1 / 8)
+    flag = float(sum(q for k, q in enumerate(pmf) if abs(k / pairs - bar_formula) > NO_TRANSPLANT_ROOM))
     return dict(rate=untouched, formula=formula, miss=untouched - formula,
-                room=NO_TRANSPLANT_ROOM,
+                room=NO_TRANSPLANT_ROOM, vetoes=False,
                 inside_allowance=abs(untouched - formula) <= NO_TRANSPLANT_ROOM,
-                detection_margin_at_the_bar=broken_flag - NO_TRANSPLANT_ROOM)
+                share_of_errors_on_donor_answer=(untouched / (1 - acc)) if acc < 1 else None,
+                chance_formula_flags_a_broken_pairing_at_the_bar=flag)
 
 
 def sampling_band(count: int, n: int = HELD_OUT, floor: int = PIECE_MIN) -> dict:
@@ -128,57 +142,146 @@ def sampling_band(count: int, n: int = HELD_OUT, floor: int = PIECE_MIN) -> dict
                 episodes_from_the_floor=int(count) - floor)
 
 
-def withhold(row: dict, arm: str) -> dict:
-    """Section 6.4, item 5: the reading for one arm and seed, or "no verdict"
-    and every reason, decided here and not by whoever reads the table.
+PASSED, FAILED, NOT_RUN, NOT_EVALUATED, NOT_APPLICABLE = (
+    "passed", "failed", "not run", "could not be evaluated", "not applicable")
 
-    `row` carries: `nomination_status` ("nominated" or the no-verdict reason
-    at nomination), `gate_passes`, `described_only`, `reading` (from
-    `reading`), `dev_floor_clears`, `no_transplant` (from
-    `no_transplant_rule`), and `controls` with keys "7", "1" and "4" each
-    holding a `holds` flag (control 1's is None except on arm T)."""
-    reasons = []
-    if not row.get("gate_passes", False):
-        reasons.append("the arm failed its gate")
-    if row.get("nomination_status") != "nominated":
-        reasons.append(row.get("nomination_status") or "not nominated")
+
+def _flag(present: bool, value) -> str:
+    """A check's state from its field: absent means it never ran; present but
+    empty means it ran and could not be evaluated. Both count against the
+    seed (stop S8); they are labelled as what they are."""
+    if not present:
+        return NOT_RUN
+    if value is None:
+        return NOT_EVALUATED
+    return PASSED if bool(value) else FAILED
+
+
+def ownership_free_line(n: int = GATE_EPISODES) -> int:
+    """Page 1 (RT-237): the smallest count above one half at the 0.05 level,
+    one-sided, exact binomial; one half is what a model guessing among the
+    eight value words reaches on the four candidates. 1,546 of 3,000."""
+    k = int(n * OWNERSHIP_FREE_CHANCE)
+    while _binom.sf(k - 1, n, OWNERSHIP_FREE_CHANCE) > 0.05:
+        k += 1
+    return k
+
+
+def seed_gate(g: dict | None, arm: str) -> dict:
+    """One seed's gate conditions, judged on that seed alone (page 7). `g` is
+    the `gate` field of a row. Learning (section 8.1): own-directed, and on
+    arm F named-other too. Channel removal (section 8.2, arm F only): the
+    collapse below the bar, and the ownership-free line of page 1."""
+    g = g or {}
+    bar = g.get("bar")
+    have = bar is not None
+
+    def at_least(key):
+        return _flag(have and key in g, None if g.get(key) is None else g[key] >= bar)
+
+    checks = {"own-directed learning": at_least("own_correct")}
+    if arm == "F":
+        checks["named-other learning"] = at_least("other_correct")
+        lo = g.get("lesioned_own_correct")
+        checks["channel-removal collapse"] = _flag(have and "lesioned_own_correct" in g,
+                                                   None if lo is None else lo < bar)
+        line = g.get("ownership_free_line", OWNERSHIP_FREE_LINE)
+        cc = g.get("lesioned_candidate_own_correct")
+        checks["ownership-free line"] = _flag("lesioned_candidate_own_correct" in g,
+                                              None if cc is None else cc >= line)
+    learning = all(checks[k] == PASSED for k in checks if k.endswith("learning"))
+    return dict(checks=checks, learning_passes=learning,
+                channel_removal_passes=all(v == PASSED for k, v in checks.items()
+                                           if not k.endswith("learning")))
+
+
+_GATE_REASON = {
+    "own-directed learning": "own-directed condition",
+    "named-other learning": "named-other condition",
+    "channel-removal collapse": "the channel removal did not collapse own-directed answers below the gate bar",
+    }
+
+
+def withhold(row: dict, arm: str) -> dict:
+    """Section 6.4, item 5, with the 2026-10-06 rulings: the reading for one
+    arm and seed, or "no verdict" with EVERY reason, decided here.
+
+    Every check is evaluated whether or not a reading was computed (A2 item
+    7). A seed counts only if it passes its own gate conditions (not the
+    arm's: page 7), every withholding check, and returns a reading. The
+    no-transplant rate is not a check (page 8). A withheld seed's figure is
+    not returned.
+
+    `row` carries: `gate` (the row's gate field), `nomination_status`,
+    `described_only`, `reading` (from `reading`), `dev_floor_clears`, and
+    `controls` with keys "7", "1" and "4". A key that is absent means the
+    check never ran."""
+    sg = seed_gate(row.get("gate"), arm)
+    checks = dict(sg["checks"])
+    nom = row.get("nomination_status")
+    checks["nomination"] = PASSED if nom == "nominated" else (NOT_RUN if nom is None else FAILED)
+    checks["not description-only"] = (FAILED if row.get("described_only")
+                                      else _flag("described_only" in row, True))
     r = row.get("reading")
-    if r is None:
-        if not reasons:
-            reasons.append("no reading was computed")
-    else:
-        if row.get("described_only"):
+    checks["reading computed"] = PASSED if r is not None else NOT_RUN
+    checks["floor on fresh episodes"] = NOT_RUN if r is None else _flag(True, r["floor"]["clears"])
+    checks["floor on development episodes"] = _flag("dev_floor_clears" in row, row.get("dev_floor_clears"))
+    c = row.get("controls")
+    c = c if isinstance(c, dict) else {}
+    for k, label in (("7", "control 7, the null transplant"), ("4", "control 4, the pairing check (too-early positions)")):
+        checks[label] = _flag(k in c and isinstance(c[k], dict) and "holds" in c[k],
+                              (c.get(k) or {}).get("holds"))
+    if arm == "T":
+        checks["control 1, the content transplant, on arm T"] = _flag(
+            "1" in c and isinstance(c["1"], dict) and "holds" in c["1"], (c.get("1") or {}).get("holds"))
+    reasons = []
+    for name, state in checks.items():
+        if state in (PASSED, NOT_APPLICABLE):
+            continue
+        if name.endswith("learning"):
+            reasons.append(f"failed its gate on learning ({_GATE_REASON[name]}: {state})"
+                           if state == FAILED else f"gate on learning, {_GATE_REASON[name]}, {state}")
+        elif name == "channel-removal collapse":
+            reasons.append(_GATE_REASON[name] if state == FAILED else f"the channel-removal collapse was {state}")
+        elif name == "ownership-free line":
+            reasons.append(f"the ownership-free line {state if state != FAILED else 'failed'} "
+                           f"(with the channel zeroed, own-directed answers among the four candidates, "
+                           f"line {OWNERSHIP_FREE_LINE:,} of {GATE_EPISODES:,})"
+                           if state != NOT_RUN else "the ownership-free line was not run")
+        elif name == "nomination":
+            reasons.append(nom if state == FAILED else "nomination was not run")
+        elif name == "not description-only":
             reasons.append("reported for description only (the site set was chosen with the "
-                           "piece rule switched off)")
-        if not r["floor"]["clears"]:
-            reasons.append("floor missed on fresh episodes")
-        if not row.get("dev_floor_clears", True):
-            reasons.append("floor missed on development episodes")
-        nt = row.get("no_transplant")
-        if nt is None or not nt["inside_allowance"]:
-            reasons.append("no-transplant rate outside its allowance: the pairing is suspect")
-        c = row.get("controls") or {}
-        if c.get("7", {}).get("holds") is not True:
-            reasons.append("control 7, the null transplant, failed")
-        if arm == "T" and c.get("1", {}).get("holds") is not True:
-            reasons.append("control 1, the content transplant, failed on arm T")
-        if c.get("4", {}).get("holds") is not True:
-            reasons.append("control 4, the too-early-position control, failed")
+                           "piece rule switched off)" if state == FAILED else f"description-only flag {state}")
+        elif name == "reading computed":
+            reasons.append("no reading was computed")
+        else:
+            reasons.append(f"{name} " + ("failed" if state == FAILED else f"was {state}"))
     if reasons:
-        return dict(status=NO_VERDICT, degree=None, reasons=reasons,
-                    arithmetic_withheld=None if r is None else r["degree"])
-    return dict(status="reading", degree=r["degree"], reasons=[],
+        return dict(status=NO_VERDICT, degree=None, reasons=reasons, checks=checks,
+                    learning_passes=sg["learning_passes"])
+    return dict(status="reading", degree=r["degree"], reasons=[], checks=checks,
+                learning_passes=sg["learning_passes"],
                 negative=r["degree"] < 0, above_one=r["degree"] > 1)
 
 
 def arm_outcome(seed_rows: dict) -> dict:
-    """Two of three (ruled 2026-10-03, ruling 6): an arm is read if two or
-    more of its seeds read; the third is reported. `seed_rows` maps seed to
-    the dict `withhold` returned."""
+    """Page 7: an arm passes its learning gate if two or more seeds EACH pass
+    every learning condition, and reads if two or more seeds each count
+    (every gate condition and every withholding check, and a reading).
+    `seed_rows` maps seed to the dict `withhold` returned."""
     read = {s: r["degree"] for s, r in seed_rows.items() if r["status"] == "reading"}
+    learned = sorted(s for s, r in seed_rows.items() if r.get("learning_passes"))
     out = dict(seeds=len(seed_rows), seeds_read=len(read), readings=read,
+               seeds_passing_learning=learned, gate_passes=len(learned) >= 2,
                no_verdict={s: r["reasons"] for s, r in seed_rows.items()
                            if r["status"] != "reading"})
+    fails = {}
+    for sd, r in sorted(seed_rows.items()):
+        for name, state in (r.get("checks") or {}).items():
+            if name.endswith("learning") and state != PASSED:
+                fails.setdefault(_GATE_REASON[name], []).append(sd)
+    out["learning_failures"] = fails
     out["read"] = len(read) >= 2
     if out["read"] and len(read) < len(seed_rows):
         out["reported_not_deciding"] = sorted(set(seed_rows) - set(read))
@@ -197,9 +300,13 @@ def separation(arm_T: dict, arm_C: dict) -> dict:
                 bar=SEPARATION_BAR, clears=(lo_C - hi_T) >= SEPARATION_BAR)
 
 
-def arm_M_check(arm_M: dict, true_slot: dict) -> dict:
+def arm_M_check(arm_M: dict, true_slot: dict, gate_passes: bool = True) -> dict:
     """Arm M's prediction: between 0.3 and 0.7 on every seed that reads, and
-    within 0.10 of its true-slot reading on the same fresh episodes."""
+    within 0.10 of its true-slot reading on the same fresh episodes. Arm M
+    failing its gate, or returning no verdict, drops it."""
+    if not gate_passes:
+        return dict(status="dropped", reason="arm M failed its gate on learning; it is dropped and "
+                                             "carried as an extension (section 3)")
     if not arm_M["read"]:
         return dict(status="dropped", reason="arm M returned no verdict; it is dropped and "
                                              "carried as an extension (section 3)")
@@ -214,37 +321,95 @@ def arm_M_check(arm_M: dict, true_slot: dict) -> dict:
                 prediction_met=all(r["in_band"] and r["within_tolerance"] for r in rows.values()))
 
 
-def outcome(gates: dict, arms: dict, true_slot_M: dict | None = None) -> dict:
-    """The registered outcome term, from the gates and the four arms.
+def _reasons(arm: dict) -> str:
+    return "; ".join(sorted({r for rs in arm["no_verdict"].values() for r in rs}))
 
-    `gates[arm]` is True if the arm passed its gate (section 8.1: own-directed
-    only on T, C and M; both conditions on F) after any permitted re-run.
-    `arms[arm]` is what `arm_outcome` returned."""
-    notes = []
-    failed = [a for a in ("T", "C", "F") if not gates.get(a, False)]
-    m = arm_M_check(arms["M"], true_slot_M or {}) if "M" in arms else None
-    if m is not None and m["status"] == "dropped":
-        notes.append(m["reason"])
-    if failed:
-        return dict(term=OUTCOME_TERMS["R3"], code="R3",
-                    reason=f"arm(s) {', '.join(failed)} failed the gate", arm_M=m, notes=notes)
-    two_arm = not arms["C"]["read"]
-    if two_arm:
-        notes.append("arm C returned no verdict: the two-arm fallback fires, anchored at one "
-                     "end only, and the R1 sentence is correspondingly weaker")
-        sep = dict(computed=False, clears=False, reason="two-arm fallback")
-        validated = arms["T"]["read"]
+
+def sentence(code: str, reason: str | None) -> str:
+    """The term as reported, with the scope phrases of page 11 and the
+    2026-10-06 addendum in the same sentence."""
+    term = OUTCOME_TERMS[code]
+    if code == "R1":
+        s = f"metric validated {SCOPE_METRIC}, degree read {SCOPE_DEGREE}"
+    elif code == "fifth":
+        s = f"metric validated {SCOPE_METRIC}, degree not read"
+    elif code == "fallback_read":
+        s = f"metric checked against the separable model only {SCOPE_METRIC}, degree read {SCOPE_DEGREE}"
+    elif code == "fallback_not_read":
+        s = f"metric checked against the separable model only {SCOPE_METRIC}, degree not read"
+    elif code == "not_validated":
+        s = f"metric not validated {SCOPE_METRIC}"
+    elif code == "R2":
+        s = f"metric does not separate {SCOPE_METRIC}"
     else:
-        sep = separation(arms["T"], arms["C"])
-        validated = sep["clears"]
-    if not validated:
-        return dict(term=OUTCOME_TERMS["R2"], code="R2", separation=sep, arm_M=m, notes=notes)
-    if arms["F"]["read"]:
-        return dict(term=OUTCOME_TERMS["R1"], code="R1", separation=sep, arm_M=m,
-                    arm_F=arms["F"]["readings"], notes=notes)
-    reasons = sorted({r for rs in arms["F"]["no_verdict"].values() for r in rs})
-    return dict(term=f"{OUTCOME_TERMS['fifth']}: {'; '.join(reasons)}", code="fifth",
-                separation=sep, arm_M=m, notes=notes)
+        s = term
+    return s + (f": {reason}" if reason else "")
+
+
+def outcome(gates: dict, arms: dict, true_slot_M: dict | None = None,
+            step_5a: dict | None = None) -> dict:
+    """The registered term (section 3's table as ruled 2026-10-06, pages 5
+    and 9), applied in order.
+
+    `gates[arm]` is True if the arm passed its learning gate (two seeds each
+    passing every learning condition) after any permitted re-run. `arms[arm]`
+    is what `arm_outcome` returned; arms that never launched are absent.
+    `step_5a` is None (no record) or dict(seed=s, passed=bool): arm F's step
+    5a run and whether it passed its learning gate after its re-run."""
+    notes = []
+    m = None
+    if "M" in arms:
+        m = arm_M_check(arms["M"], true_slot_M or {}, gates.get("M", False))
+        if m["status"] == "dropped":
+            notes.append(m["reason"])
+
+    def done(code, reason=None, **kw):
+        sent = sentence(code, reason)
+        if m is not None and m["status"] == "read" and not m["prediction_met"]:
+            figs = ", ".join(f"seed {s}: {v['reading']:.4f} (true slot "
+                             + ("none" if v["true_slot"] is None else f"{v['true_slot']:.4f}") + ")"
+                             for s, v in sorted(m["seeds"].items()))
+            sent += (f"; arm M missed its predicted reading (0.3 to 0.7, and within 0.10 of its "
+                     f"true-slot reading: {figs}), so arm F's figure is placed against arms T and C only")
+        return dict(code=code, term=OUTCOME_TERMS[code] + (f": {reason}" if reason else ""),
+                    registered_term=OUTCOME_TERMS[code], reason=reason, sentence=sent,
+                    arm_M=m, notes=notes, **kw)
+
+    # rule 1: the gate on learning comes first
+    if step_5a is not None and not step_5a.get("passed", False):
+        conds = ", ".join(step_5a.get("failed_conditions") or []) or "condition not recorded"
+        return done("R3", f"arm F failed its gate on learning at step 5a ({conds}, on seed "
+                          f"{step_5a.get('seed')}), after its re-run; nothing else launches (stop S4)")
+    for a in ("T", "C", "F"):
+        if a not in arms:
+            return dict(code=None, term=None, reason=f"arm {a} has no records", notes=notes, arm_M=m)
+    failed = [a for a in ("T", "C") if not gates.get(a, False)]
+    F_failed_5b = not gates.get("F", False)
+    if F_failed_5b and step_5a is None:
+        failed.append("F")
+        notes.append("arm F failed its gate on learning and no record shows it passed at step 5a")
+    if failed:
+        def what(a):
+            lf = arms[a].get("learning_failures") or {}
+            conds = "; ".join(f"{c}, on seed{'s' if len(v) > 1 else ''} "
+                              + " and ".join(str(x) for x in v) for c, v in lf.items())
+            return f"arm {a} failed its gate on learning" + (f" ({conds})" if conds else "")
+        return done("R3", "; ".join(what(a) for a in failed))
+    # rule 2: the readings decide
+    if not arms["T"]["read"]:
+        return done("not_validated", _reasons(arms["T"]))
+    F_reason = "failed its gate on learning" if F_failed_5b else _reasons(arms["F"])
+    if not arms["C"]["read"]:
+        notes.append("arm C returned no verdict: the two-model fallback; arm F's figure has no upper reference")
+        if arms["F"]["read"] and not F_failed_5b:
+            return done("fallback_read", arm_F=arms["F"]["readings"])
+        return done("fallback_not_read", F_reason)
+    sep = separation(arms["T"], arms["C"])
+    if not sep["clears"]:
+        return done("R2", separation=sep)
+    if arms["F"]["read"] and not F_failed_5b:
+        return done("R1", separation=sep, arm_F=arms["F"]["readings"])
+    return done("fifth", F_reason, separation=sep)
 
 
 # ---------------------------------------------------------------- self-test
@@ -288,9 +453,10 @@ def self_test() -> None:
     check("no-transplant rule: inside 0.018 of (1 - p) / 7", nt["inside_allowance"],
           f"formula {nt['formula']:.4f}, miss {nt['miss']:+.4f}")
     check("no-transplant rule: 0.019 off is outside", not no_transplant_rule(0.019 + (1 - 0.5) / 7, 0.5)["inside_allowance"])
-    check("no-transplant rule: the detection margin at the bar is 0.0018 (version 4, 6.4 item 3)",
-          abs(nt["detection_margin_at_the_bar"] - 0.0018) < 0.0001,
-          f"{nt['detection_margin_at_the_bar']:.4f}")
+    check("no-transplant rule: reported, never a veto (page 8)", nt["vetoes"] is False)
+    fl = nt["chance_formula_flags_a_broken_pairing_at_the_bar"]
+    check("no-transplant rule: the formula flags a broken pairing on 800 pairs about 0.56 of the time "
+          "at the bar (A9: 0.5589)", abs(fl - 0.5589) < 0.01, f"{fl:.4f}")
 
     # --- the sampling band ---------------------------------------------------
     b = sampling_band(144)
@@ -304,42 +470,64 @@ def self_test() -> None:
     check("band: the ends are handled", sampling_band(0)["interval_95"][0] == 0
           and sampling_band(180)["interval_95"][1] == 180)
 
-    # --- withholding ------------------------------------------------------
+    # --- withholding, every check evaluated, judged per seed (pages 7 and 8, A2 item 7)
+    check("the ownership-free line is 1,546 of 3,000, computed from the binomial tail",
+          ownership_free_line(3000) == OWNERSHIP_FREE_LINE == 1546)
     good_reading = reading(0.9, 0.05, 0.05, 0.95)
-    good = dict(nomination_status="nominated", gate_passes=True, described_only=False,
+    G_ok = dict(bar=790, own_correct=2000, other_correct=2000, lesioned_own_correct=500,
+                lesioned_candidate_own_correct=2000)
+    good = dict(gate=G_ok, nomination_status="nominated", described_only=False,
                 reading=good_reading, dev_floor_clears=True,
-                no_transplant=no_transplant_rule(0.05, 0.66),
                 controls={"7": dict(holds=True), "1": dict(holds=None), "4": dict(holds=True)})
     check("withhold: a clean row reads", withhold(good, "C")["status"] == "reading")
-    for label, change, arm in (
-        ("control 7 failed", {"controls": {"7": dict(holds=False), "1": dict(holds=None), "4": dict(holds=True)}}, "C"),
-        ("control 4 failed", {"controls": {"7": dict(holds=True), "1": dict(holds=None), "4": dict(holds=False)}}, "C"),
-        ("control 1 failed on arm T", {"controls": {"7": dict(holds=True), "1": dict(holds=False), "4": dict(holds=True)}}, "T"),
-        ("control 1 missing on arm T counts as failed", {"controls": {"7": dict(holds=True), "4": dict(holds=True)}}, "T"),
-        ("a control that could not be evaluated counts as failed", {"controls": {"7": dict(holds=None), "1": dict(holds=None), "4": dict(holds=True)}}, "C"),
-        ("no-transplant rate outside", {"no_transplant": no_transplant_rule(0.2, 0.66)}, "C"),
-        ("floor missed on fresh episodes", {"reading": reading(0.3, 0.1, 0.05, 0.95)}, "C"),
-        ("gate failed", {"gate_passes": False}, "F"),
-        ("read failed its floor at nomination", {"nomination_status": "read failed its floor: no size's piece reaches four fifths", "described_only": True}, "F"),
+    check("withhold: a clean arm F row reads", withhold(good, "F")["status"] == "reading")
+    check("withhold: a withheld seed's figure is not returned",
+          "arithmetic_withheld" not in withhold(dict(good, gate=dict(G_ok, own_correct=10)), "C")
+          and withhold(dict(good, gate=dict(G_ok, own_correct=10)), "C")["degree"] is None)
+    for label, change, arm, want in (
+        ("control 7 failed", {"controls": {"7": dict(holds=False), "1": dict(holds=None), "4": dict(holds=True)}}, "C", "control 7"),
+        ("control 4 failed", {"controls": {"7": dict(holds=True), "1": dict(holds=None), "4": dict(holds=False)}}, "C", "control 4"),
+        ("control 1 failed on arm T", {"controls": {"7": dict(holds=True), "1": dict(holds=False), "4": dict(holds=True)}}, "T", "control 1"),
+        ("control 1 absent on arm T is listed as not run", {"controls": {"7": dict(holds=True), "4": dict(holds=True)}}, "T", "control 1, the content transplant, on arm T was not run"),
+        ("a control that could not be evaluated says so", {"controls": {"7": dict(holds=None), "1": dict(holds=None), "4": dict(holds=True)}}, "C", "could not be evaluated"),
+        ("floor missed on fresh episodes", {"reading": reading(0.3, 0.1, 0.05, 0.95)}, "C", "floor on fresh episodes failed"),
+        ("this seed's own gate failed", {"gate": dict(G_ok, own_correct=700)}, "C", "failed its gate on learning"),
+        ("arm F named-other failed on this seed", {"gate": dict(G_ok, other_correct=700)}, "F", "named-other"),
+        ("arm F collapse failed", {"gate": dict(G_ok, lesioned_own_correct=800)}, "F", "did not collapse"),
+        ("arm F ownership-free line failed", {"gate": dict(G_ok, lesioned_candidate_own_correct=1545)}, "F", "ownership-free line failed"),
+        ("arm F ownership-free line never ran", {"gate": {k: v for k, v in G_ok.items() if k != "lesioned_candidate_own_correct"}}, "F", "the ownership-free line was not run"),
+        ("read failed its floor at nomination", {"nomination_status": "read failed its floor: no size's piece reaches four fifths", "described_only": True}, "F", "no size's piece"),
     ):
-        row = dict(good, **change)
-        w = withhold(row, arm)
+        w = withhold(dict(good, **change), arm)
         check(f"withhold: {label} -> no verdict, with the reason in the output",
-              w["status"] == NO_VERDICT and w["degree"] is None and w["reasons"], "; ".join(w["reasons"]))
+              w["status"] == NO_VERDICT and w["degree"] is None and any(want in x for x in w["reasons"]),
+              "; ".join(w["reasons"]))
+    check("withhold: the ownership-free line at exactly 1,546 passes",
+          withhold(dict(good, gate=dict(G_ok, lesioned_candidate_own_correct=1546)), "F")["status"] == "reading")
+    check("withhold: the ownership-free line is not asked of arms T, C and M",
+          withhold(dict(good, gate={k: v for k, v in G_ok.items() if k != "lesioned_candidate_own_correct"}), "C")["status"] == "reading")
+    many = withhold(dict(good, nomination_status="no site set clears the whole-state floor", reading=None,
+                         dev_floor_clears=False, gate=dict(G_ok, own_correct=10),
+                         controls={"7": dict(holds=False), "4": dict(holds=False)}), "T")
+    check("withhold: every reason is listed, even when nomination failed and no reading exists",
+          len(many["reasons"]) >= 7, f"{len(many['reasons'])} reasons")
+    check("withhold: the no-transplant rate withholds nothing (page 8)",
+          withhold(dict(good, no_transplant=dict(inside_allowance=False)), "C")["status"] == "reading")
     check("withhold: control 1 failing on arm C does not withhold (it holds on arm T only)",
           withhold(dict(good, controls={"7": dict(holds=True), "1": dict(holds=False), "4": dict(holds=True)}), "C")["status"] == "reading")
 
-    # --- two of three, the separation, the outcome ---------------------------
-    R = lambda d: dict(status="reading", degree=d, reasons=[])
-    NV = lambda why: dict(status=NO_VERDICT, degree=None, reasons=[why])
+    # --- two seeds, each passing everything; the separation; the outcome ----
+    R = lambda d: dict(status="reading", degree=d, reasons=[], learning_passes=True)
+    NV = lambda why, learned=True: dict(status=NO_VERDICT, degree=None, reasons=[why], learning_passes=learned)
     T = arm_outcome({0: R(0.0), 1: R(0.0), 2: R(0.02)})
     C = arm_outcome({0: R(1.0051), 1: R(0.9926), 2: R(0.9974)})
     Mm = arm_outcome({0: R(0.4886), 1: R(0.4860), 2: R(0.5449)})
-    F_nv = arm_outcome({s: NV("read failed its floor") for s in range(3)})
-    check("two of three: three readings read", T["read"] and T["seeds_read"] == 3)
+    check("two seeds: three readings read", T["read"] and T["seeds_read"] == 3)
     two = arm_outcome({0: R(0.9), 1: NV("control 4 failed"), 2: R(0.95)})
-    check("two of three: two readings read, the third is reported", two["read"] and two["reported_not_deciding"] == [1])
-    check("two of three: one reading does not read", not arm_outcome({0: R(0.9), 1: NV("x"), 2: NV("y")})["read"])
+    check("two seeds: two readings read, the third is reported", two["read"] and two["reported_not_deciding"] == [1])
+    check("two seeds: one reading does not read", not arm_outcome({0: R(0.9), 1: NV("x"), 2: NV("y")})["read"])
+    check("two seeds: the learning gate needs two seeds each passing every learning condition",
+          not arm_outcome({0: R(0.9), 1: NV("x", False), 2: NV("y", False)})["gate_passes"])
     s = separation(T, C)
     check("separation: lowest C minus highest T, unpaired (toy figures: 0.9926 - 0.02)",
           s["clears"] and abs(s["value"] - (0.9926 - 0.02)) < 1e-12)
@@ -347,27 +535,58 @@ def self_test() -> None:
                     arm_outcome({0: R(1.0), 1: R(1.0), 2: R(1.0)}))
     check("separation: unpaired means arm T's worst seed counts against any of arm C's",
           not s2["clears"] and abs(s2["value"] - 0.4) < 1e-12)
+    ts = {0: 0.4837, 1: 0.4760, 2: 0.4920}
     g = dict(T=True, C=True, M=True, F=True)
-    o = outcome(g, dict(T=T, C=C, M=Mm, F=F_nv), {0: 0.4837, 1: 0.4760, 2: 0.4920})
-    check("outcome: the toy lands on the fifth term with its reason after a colon",
-          o["code"] == "fifth" and o["term"] == "metric validated, degree not read: read failed its floor"
+    # the toy's real gate: arm F learns named-other on seed 0 only
+    F_toy = arm_outcome({0: NV("read failed its floor"), 1: NV("failed its gate on learning", False),
+                         2: NV("failed its gate on learning", False)})
+    toy_g = dict(g, F=F_toy["gate_passes"])
+    o = outcome(toy_g, dict(T=T, C=C, M=Mm, F=F_toy), ts, dict(seed=0, passed=True))
+    check("outcome: the toy's real gate, seed 0 as step 5a -> fifth term, failed its gate on learning",
+          o["code"] == "fifth" and o["term"] == "metric validated, degree not read: failed its gate on learning"
           and o["arm_M"]["prediction_met"], o["term"])
+    check("outcome: the toy's real gate, seed 1 as step 5a -> R3",
+          outcome(toy_g, dict(T=T, C=C, M=Mm, F=F_toy), ts, dict(seed=1, passed=False))["code"] == "R3")
+    check("outcome: the toy's real gate, no step record -> R3",
+          outcome(toy_g, dict(T=T, C=C, M=Mm, F=F_toy), ts, None)["code"] == "R3")
     F_read = arm_outcome({0: R(0.7), 1: R(0.75), 2: NV("control 7 failed")})
-    check("outcome: arm F reads on two seeds -> R1",
-          outcome(g, dict(T=T, C=C, M=Mm, F=F_read))["code"] == "R1")
-    check("outcome: arm F fails its gate -> R3",
-          outcome(dict(g, F=False), dict(T=T, C=C, M=Mm, F=F_read))["code"] == "R3")
+    o1 = outcome(g, dict(T=T, C=C, M=Mm, F=F_read), ts)
+    check("outcome: arm F reads on two seeds -> R1, with both scope phrases",
+          o1["code"] == "R1" and SCOPE_METRIC in o1["sentence"] and SCOPE_DEGREE in o1["sentence"])
+    check("outcome: arm T fails its gate -> R3 whatever else",
+          outcome(dict(g, T=False), dict(T=T, C=C, M=Mm, F=F_read))["code"] == "R3")
+    check("outcome: arm M fails its gate -> dropped, term unchanged",
+          outcome(dict(g, M=False), dict(T=T, C=C, M=Mm, F=F_read))["code"] == "R1")
     close = arm_outcome({0: R(0.3), 1: R(0.35), 2: R(0.4)})
     check("outcome: anchors do not separate -> R2",
-          outcome(g, dict(T=T, C=close, M=Mm, F=F_read))["code"] == "R2")
+          outcome(g, dict(T=T, C=close, M=Mm, F=F_read))["code"] == "R2"
+          and SCOPE_METRIC in outcome(g, dict(T=T, C=close, M=Mm, F=F_read))["sentence"])
+    T_gf = arm_outcome({0: dict(NV("x", False), checks={"own-directed learning": FAILED}),
+                        1: dict(NV("x", False), checks={"own-directed learning": FAILED}), 2: R(0.0)})
+    check("outcome: R3 names the failed condition and its seeds",
+          "own-directed condition, on seeds 0 and 1" in outcome(dict(g, T=False), dict(T=T_gf, C=C, M=Mm, F=F_read))["sentence"])
     C_nv = arm_outcome({s: NV("floor missed on fresh episodes") for s in range(3)})
     o2 = outcome(g, dict(T=T, C=C_nv, M=Mm, F=F_read))
-    check("outcome: arm C no verdict fires the two-arm fallback and says so",
-          o2["code"] == "R1" and any("two-arm fallback" in n for n in o2["notes"]))
+    check("outcome: arm C no verdict, arm F reads -> the fallback, degree read",
+          o2["code"] == "fallback_read" and SCOPE_METRIC in o2["sentence"])
+    F_nv = arm_outcome({s: NV("read failed its floor") for s in range(3)})
+    check("outcome: arm C no verdict, arm F no verdict -> the fallback, degree not read, with the reason",
+          outcome(g, dict(T=T, C=C_nv, M=Mm, F=F_nv))["term"]
+          == "metric checked against the separable model only, degree not read: read failed its floor")
+    T_nv = arm_outcome({s: NV("control 1 failed") for s in range(3)})
+    check("outcome: arm T no verdict -> metric not validated (not R2)",
+          outcome(g, dict(T=T_nv, C=C, M=Mm, F=F_read))["term"] == "metric not validated: control 1 failed")
     M_nv = arm_outcome({s: NV("x") for s in range(3)})
     o3 = outcome(g, dict(T=T, C=C, M=M_nv, F=F_read))
     check("outcome: arm M no verdict drops arm M and says so",
-          o3["arm_M"]["status"] == "dropped" and any("dropped" in n for n in o3["notes"]))
+          o3["arm_M"]["status"] == "dropped" and any("dropped" in n for n in o3["notes"]) and o3["code"] == "R1")
+    M_out = arm_outcome({0: R(0.8), 1: R(0.85), 2: R(0.9)})
+    o4 = outcome(g, dict(T=T, C=C, M=M_out, F=F_read), ts)
+    check("outcome: arm M outside its band changes no term; the sentence says so",
+          o4["code"] == "R1" and "arm M missed its predicted reading" in o4["sentence"]
+          and "against arms T and C only" in o4["sentence"])
+    check("outcome: arm F failed at step 5a -> R3 with nothing else launched",
+          outcome({"F": False}, dict(F=F_toy), None, dict(seed=1, passed=False))["code"] == "R3")
 
     print(f"\n{len(fails)} failure(s)" if fails else "\nall checks passed")
     if fails:

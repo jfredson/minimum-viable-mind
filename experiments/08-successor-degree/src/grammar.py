@@ -525,6 +525,46 @@ def self_test() -> None:
     check("a training content planted in the exclusion list is skipped",
           fingerprint(victim) not in got and planted2.skipped == 1 and len(got) == 48)
 
+    # --- control 5, unseen combinations (RT-255, adopted 2026-10-06) ---------
+    # No fresh or relaxed episode's combination occurs in the training stream.
+    # A "combination" is the episode's whole content (every random draw except
+    # which agent the model is), which is what `fingerprint` covers. Two parts:
+    # the default stream's exclusion list holds every fresh and relaxed content,
+    # so the stream cannot yield one at any step; and over sampled steps of the
+    # default stream none appears.
+    held = set(fps["fresh"]) | set(fps["relaxed"])
+    default_stream = TrainingStream(run_seed=0)
+    sampled = set()
+    for s in range(1, 201):
+        for p in default_stream.pairs_for_step(s, 48):
+            sampled.add(fingerprint(p["content"]))
+    check("control 5: no fresh or relaxed episode's combination occurs in the training stream "
+          "(every one is in the stream's exclusion list, and none in 200 sampled steps)",
+          held <= default_stream.excluded and not (sampled & held),
+          f"{len(held):,} fresh and relaxed contents; {len(sampled):,} training contents sampled, "
+          f"{len(sampled & held)} shared; {default_stream.skipped} skipped by the exclusion")
+
+    # Stricter (John, 2026-10-06 follow-up): the pairing that makes an episode
+    # fresh or relaxed, i.e. its assignment table of (marker word, item word,
+    # value) triples (version 4, section 7.1: unseen combinations of marker
+    # words, items and values), ignoring turn order, the named agent, the
+    # items the actions name and the action order. Sampled, not guaranteed:
+    # the stream's exclusion is by whole content.
+    def table(c):
+        return frozenset((int(c["markers"][a]), int(c["items"][j]), int(c["values"][a, j]))
+                         for a in range(N_AGENTS) for j in range(N_ITEMS_PER_EPISODE))
+    held_tables = {table(p["content"]) for name in ("fresh", "relaxed") for p in eval_pairs(name)}
+    sampled_tables = set()
+    st5 = TrainingStream(run_seed=0, excluded=default_stream.excluded)
+    for s in range(1, 201):
+        for p in st5.pairs_for_step(s, 48):
+            sampled_tables.add(table(p["content"]))
+    check("control 5, stricter: no fresh or relaxed episode's assignment table (which marker holds "
+          "which value on which item) occurs in 200 sampled training steps",
+          not (sampled_tables & held_tables),
+          f"{len(held_tables):,} fresh and relaxed tables; {len(sampled_tables):,} training tables, "
+          f"{len(sampled_tables & held_tables)} shared")
+
     # --- this machine builds the episodes the laptop built -----------------
     check("the evaluation sets are the ones built on the laptop (pinned digest)",
           eval_sets_digest() == EVAL_SETS_DIGEST)

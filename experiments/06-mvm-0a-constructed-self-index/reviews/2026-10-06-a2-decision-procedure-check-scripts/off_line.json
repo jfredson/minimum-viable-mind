@@ -1,0 +1,43 @@
+{
+ "off": [
+  "line"
+ ],
+ "sums": {
+  "row_C_seed0.json": "698cc77530016ca2a999dc283504e3d6876e1816bdf5b2df02de529ddf76efc7",
+  "row_C_seed1.json": "50aeaf8312c209dbb4279f23e7515c34031ba5fba573a850c3bb2ccd7e3caaf1",
+  "row_C_seed2.json": "25435d4fa0ffb5c99832057f148dde2dbdf5314b710bcfeaf3ced754bb7f14c6",
+  "row_F_seed0.json": "f451e5daffac6c9682a128205c55d48566e65d4ca16cf814c693ca0472e94063",
+  "row_F_seed1.json": "b1f78e094d57a26a111aecaf52dafe50174e45114dd3ff5a7b5c9769c395d35e",
+  "row_F_seed2.json": "49cde326978c41909bbee91c1550b75be82a72af5891cc96a97f49cac16a5df0",
+  "row_M_seed0.json": "1827044901b66346f8898b55f1ce80439c76fd512ed4f381f0c143983a72706e",
+  "row_M_seed1.json": "bac5a02800e95bff5333fd27e84951aeb1bb7548d6179152e628e97078c83e26",
+  "row_M_seed2.json": "ef31200b71ed56d49f8843156479f2bce3a78d28e4f20cdc250281bff68108fb",
+  "row_T_seed0.json": "de367b672c33a8adddb820e2074e65139b37854d49d68e8e282c0d96d97c9832",
+  "row_T_seed1.json": "554439ebb51aec55d4993d90ae46637e57b322d73868021dda60d61695f8f1d6",
+  "row_T_seed2.json": "8ecb84e9345983a261416794532089b4758375a66aaf9eadf26daa0dafeb91be"
+ },
+ "outcomes": {
+  "toy": "R3",
+  "toy-step5a-seed0": "fifth",
+  "toy-step5a-seed1": "R3",
+  "r1": "R1",
+  "r2": "R2",
+  "fallback-read": "fallback_read",
+  "fallback-not-read": "fallback_not_read",
+  "T-no-verdict": "not_validated",
+  "T-and-C-no-verdict": "not_validated",
+  "split-review-table": "fifth",
+  "split-learning-passes": "fifth",
+  "split-one-seed-everything": "fifth",
+  "overlap-one-seed": "R1",
+  "M-outside-band": "R1",
+  "M-fails-gate": "R1",
+  "withheld-seed": "R1",
+  "never-run-line": "R1",
+  "never-run-control": "fallback_read",
+  "no-transplant-outside": "R1",
+  "F-channel-removal": "fifth",
+  "T-fails-gate": "R3",
+  "F-fails-5a": "R3"
+ }
+}

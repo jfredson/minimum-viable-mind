@@ -1,0 +1,453 @@
+{
+ "across_seed_spread_of_raw_difference": {
+  "C": 0.00886824860574702,
+  "F": 0.0425245027405769,
+  "M": null,
+  "T": 0.0
+ },
+ "arms": {
+  "C": {
+   "gate_passes": true,
+   "learning_failures": {},
+   "no_verdict": {},
+   "read": true,
+   "readings": {
+    "0": 1.0051150895140666,
+    "1": 0.9925925925925926,
+    "2": 0.9974293059125964
+   },
+   "seeds": 3,
+   "seeds_passing_learning": [
+    0,
+    1,
+    2
+   ],
+   "seeds_read": 3
+  },
+  "F": {
+   "gate_passes": true,
+   "learning_failures": {},
+   "no_verdict": {},
+   "read": true,
+   "readings": {
+    "0": 0.62,
+    "1": 0.66,
+    "2": 0.71
+   },
+   "seeds": 3,
+   "seeds_passing_learning": [
+    0,
+    1,
+    2
+   ],
+   "seeds_read": 3
+  },
+  "M": {
+   "gate_passes": false,
+   "learning_failures": {
+    "own-directed condition": [
+     0,
+     1
+    ]
+   },
+   "no_verdict": {
+    "0": [
+     "failed its gate on learning (own-directed condition: failed)"
+    ],
+    "1": [
+     "failed its gate on learning (own-directed condition: failed)"
+    ]
+   },
+   "read": false,
+   "readings": {
+    "2": 0.5448717948717948
+   },
+   "seeds": 3,
+   "seeds_passing_learning": [
+    2
+   ],
+   "seeds_read": 1
+  },
+  "T": {
+   "gate_passes": true,
+   "learning_failures": {},
+   "no_verdict": {},
+   "read": true,
+   "readings": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0
+   },
+   "seeds": 3,
+   "seeds_passing_learning": [
+    0,
+    1,
+    2
+   ],
+   "seeds_read": 3
+  }
+ },
+ "gates": {
+  "C": true,
+  "F": true,
+  "M": false,
+  "T": true
+ },
+ "no_transplant_reported": {
+  "C/0": {
+   "detection_margin_at_the_bar": 0.0017619047619047597,
+   "formula": 0.06446428571428572,
+   "inside_allowance": true,
+   "miss": -0.013214285714285727,
+   "rate": 0.05125,
+   "room": 0.018
+  },
+  "C/1": {
+   "detection_margin_at_the_bar": 0.0017619047619047597,
+   "formula": 0.05982142857142857,
+   "inside_allowance": true,
+   "miss": -0.011071428571428565,
+   "rate": 0.04875,
+   "room": 0.018
+  },
+  "C/2": {
+   "detection_margin_at_the_bar": 0.0017619047619047597,
+   "formula": 0.06392857142857143,
+   "inside_allowance": true,
+   "miss": -0.003928571428571434,
+   "rate": 0.06,
+   "room": 0.018
+  },
+  "F/0": {
+   "detection_margin_at_the_bar": 0.0017619047619047597,
+   "formula": 0.06303571428571429,
+   "inside_allowance": true,
+   "miss": -0.0042857142857142955,
+   "rate": 0.05875,
+   "room": 0.018
+  },
+  "F/1": {
+   "detection_margin_at_the_bar": 0.0017619047619047597,
+   "formula": 0.06196428571428571,
+   "inside_allowance": true,
+   "miss": -0.0057142857142857065,
+   "rate": 0.05625,
+   "room": 0.018
+  },
+  "F/2": {
+   "detection_margin_at_the_bar": 0.0017619047619047597,
+   "formula": 0.06339285714285714,
+   "inside_allowance": true,
+   "miss": 0.005357142857142866,
+   "rate": 0.06875,
+   "room": 0.018
+  },
+  "M/2": {
+   "detection_margin_at_the_bar": 0.0017619047619047597,
+   "formula": 0.01839285714285715,
+   "inside_allowance": true,
+   "miss": -0.004642857142857148,
+   "rate": 0.01375,
+   "room": 0.018
+  },
+  "T/0": {
+   "detection_margin_at_the_bar": 0.0017619047619047597,
+   "formula": 0.0,
+   "inside_allowance": true,
+   "miss": 0.0,
+   "rate": 0.0,
+   "room": 0.018
+  },
+  "T/1": {
+   "detection_margin_at_the_bar": 0.0017619047619047597,
+   "formula": 0.0,
+   "inside_allowance": true,
+   "miss": 0.0,
+   "rate": 0.0,
+   "room": 0.018
+  },
+  "T/2": {
+   "detection_margin_at_the_bar": 0.0017619047619047597,
+   "formula": 0.0,
+   "inside_allowance": true,
+   "miss": 0.0,
+   "rate": 0.0,
+   "room": 0.018
+  }
+ },
+ "outcome": {
+  "arm_F": {
+   "0": 0.62,
+   "1": 0.66,
+   "2": 0.71
+  },
+  "arm_M": {
+   "reason": "arm M failed its gate on learning; it is dropped and carried as an extension (section 3)",
+   "status": "dropped"
+  },
+  "code": "R1",
+  "notes": [
+   "arm M failed its gate on learning; it is dropped and carried as an extension (section 3)"
+  ],
+  "reason": null,
+  "registered_term": "metric validated, degree read",
+  "sentence": "metric validated on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose",
+  "separation": {
+   "bar": 0.5,
+   "clears": true,
+   "computed": true,
+   "highest_T": 0.0,
+   "lowest_C": 0.9925925925925926,
+   "value": 0.9925925925925926
+  },
+  "term": "metric validated, degree read"
+ },
+ "per_seed": {
+  "C": {
+   "0": {
+    "above_one": true,
+    "checks": {
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 1.0051150895140666,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "1": {
+    "above_one": false,
+    "checks": {
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.9925925925925926,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "2": {
+    "above_one": false,
+    "checks": {
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.9974293059125964,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  },
+  "F": {
+   "0": {
+    "above_one": false,
+    "checks": {
+     "channel-removal collapse": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "named-other learning": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "ownership-free line": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.62,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "1": {
+    "above_one": false,
+    "checks": {
+     "channel-removal collapse": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "named-other learning": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "ownership-free line": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.66,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "2": {
+    "above_one": false,
+    "checks": {
+     "channel-removal collapse": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "named-other learning": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "ownership-free line": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.71,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  },
+  "M": {
+   "0": {
+    "checks": {
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "failed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": false,
+    "reasons": [
+     "failed its gate on learning (own-directed condition: failed)"
+    ],
+    "status": "no verdict"
+   },
+   "1": {
+    "checks": {
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "failed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": false,
+    "reasons": [
+     "failed its gate on learning (own-directed condition: failed)"
+    ],
+    "status": "no verdict"
+   },
+   "2": {
+    "above_one": false,
+    "checks": {
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.5448717948717948,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  },
+  "T": {
+   "0": {
+    "above_one": false,
+    "checks": {
+     "control 1, the content transplant, on arm T": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.0,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "1": {
+    "above_one": false,
+    "checks": {
+     "control 1, the content transplant, on arm T": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.0,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "2": {
+    "above_one": false,
+    "checks": {
+     "control 1, the content transplant, on arm T": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.0,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  }
+ },
+ "steps": {
+  "arm_F_step_5a_seed": 0
+ },
+ "versions": {
+  "device": "cpu",
+  "numpy": "2.5.0",
+  "python": "3.12.13",
+  "sklearn": "1.9.0",
+  "torch": "2.12.1"
+ }
+}
