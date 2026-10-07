@@ -355,3 +355,83 @@ reuse an old wave name** (for example `dev-10m`, which still holds the
 | L3 | Another process holds the lock for 2 seconds | `gone` waits for it, then records |
 | F1 | The deadline-timer cases, five full runs in a row | Pass every time |
 | — | Everything earlier: the alarm's self-test, the launcher check, the deadline timer's and the watchdog's self-tests, all successor self-tests, the replay figures (0.9899, 0.9948, 0.9988, 1.0038, 0.401) | Unchanged; pass |
+
+## 12. John's three rulings on the check's open items (2026-10-06), stated before the code
+
+John ruled on the check's problems 3, 5 and 10, each on the check's
+recommendation. All three are **amendments for version 5** (section 12.5 and
+12.7 of version 4), noted here; version 5 is not written by this work.
+Cost: $0.
+
+### 12.1 A bill posted only in part is "cannot be checked yet" (check problem 3)
+
+**Ruling:** at the end-of-wave comparison, billed time well below the
+machine's life counts as "cannot be checked yet", which is a trip (an
+extension of section 12.7).
+
+**Threshold: below 0.90 of the machine's life.** From the recorded bills:
+
+- The two honest complete bills on record read **0.9994** (2026-09-25, first
+  machine: two hourly rows, 566,260 ms and 1,305,615 ms, against 1,873 s of
+  life) and **1.00** (the second machine, 191,063 ms).
+- The one recorded partial bill, the same first machine with only its first
+  hourly row posted, reads **0.30**.
+- Honest bills sit within about 0.1% of life; a missing hourly row of a
+  short run removes far more than 10%. A line at 0.90 leaves a tenth of the
+  life for disagreement between the laptop's clock of the machine's life and
+  the vendor's billed time (two minutes of a 20-minute run), and still catches
+  any missing row worth more than a tenth of the life. **What it cannot
+  catch:** on a long run, a missing last row worth less than a tenth of the
+  life (for example the final 40 minutes of a 10-hour run). Only two honest
+  bills are on record, so the 0.90 rests on thin evidence; if an honest bill
+  ever reads below it, the halt says "cannot be checked yet" and John decides.
+- Overbilling (at or above 1.25) is still a trip as before.
+
+### 12.2 When to run the end-of-wave comparison: a written rule only (check problem 5)
+
+**Ruling:** no built-in "too early" refusal. The operator rule, in the
+launcher's notes and the alarm's notes: run the end-of-wave comparison no
+sooner than 3 hours after the last deletion; if it halts with "cannot be
+checked yet", tell John, and run it again after he clears the halt.
+
+### 12.3 A top-up during a wave (check problem 10)
+
+**Ruling:** when the balance rises between readings, restart the in-flight
+comparison from the next reading, record the event in the alarm's log, and do
+not trip. Operator rule: do not top up during a wave.
+
+**How, and one design choice that needs flagging.** A rise in the balance
+never comes from honest spending, so at a reading higher than the one before,
+the alarm records the event (in its records, under "restarts", and as a line
+in the watcher's log saying the balance rose, by how much, and that the
+comparison restarts here; not a trip), and from then on both rules work only
+on readings from that reading onward. The risen reading is the new starting
+point.
+
+A plain restart would false-trip an honest wave, because the balance runs
+late: charges for machine time *before* the restart post *after* it, and get
+counted as spending in the new comparison, which starts its prediction at the
+restart. Worked out in a scratch calculation (one honest 40-minute machine,
+charges 8 minutes late in 5-minute steps, a $75 top-up at minute 13): the
+plain restart reads 1.45 and trips at minute 56. So **the restarted
+comparison's prediction starts 15 minutes before the restart reading** (the
+same 15-minute allowance for late posting as the comparison at deletion).
+The cost: after a top-up the comparison reads low by up to 15 machine-minutes,
+so it still catches a gross overcharge (3.5 times) but can miss a mild one
+(1.4 times) on what is left of the wave. That is the price of not tripping,
+and the reason for the operator rule.
+
+### 12.4 Expected outcomes, stated before running
+
+| # | Case | Expected |
+|---|---|---|
+| B1 | End-of-wave comparison, the recorded partial bill (566,260 ms against 1,873 s of life, 0.30) | Trip, "cannot be checked yet", exit 3 |
+| B2 | The recorded complete bill (1,871,875 ms against 1,873 s, 0.9994) | Passes, exit 0 |
+| B3 | Billed exactly 0.90 of life; billed 0.899 | 0.90 passes; 0.899 is a trip, "cannot be checked yet" |
+| B4 | Billed 3.5 times life | Still a trip, as over the line (unchanged) |
+| U1 | Honest wave, one machine 0 to 40 min, charges 8 min late in 5-min steps, $75 top-up at minute 13 | No trip. A restart recorded at minute 16 and a line in the watcher's output. Final comparison about 0.895 (0.85 to 0.95) |
+| U2 | Overbilled 3.5 times, machines 0 to 60 and 3 to 63 min, same lag, $75 top-up at minute 13 | Restart at 16; trips by the in-flight rule at minute 31 |
+| U3 | Overbilled 1.4 times, one machine 0 to 40, same lag, $75 top-up at minute 13 | **Not caught** (final about 1.25, just under the line with its allowance): the stated cost |
+| U4 | Honest, no lag, one machine 0 to 40, $75 top-up at minute 13 | No trip; reads low, about 0.62 |
+| U5 | U1 with the 15-minute allowance set to zero (the plain restart) | Trips at minute 56: shows why the allowance is there |
+| — | Everything earlier (section 8 and 11.5 cases, self-tests, replay) | Unchanged |
