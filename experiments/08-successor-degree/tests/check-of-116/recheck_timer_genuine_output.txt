@@ -1,0 +1,6 @@
+Deadline timer, second round:
+  STANDS DOWN; delete called: 0: genuine wording, good empty list, time for two checks
+  stays armed; delete called: 1: genuine wording, the list still shows the machine
+  stays armed; delete called: 1: 404 page wording, good empty list
+  stays armed; delete called: 1: 'pod not found' without '(status 404)', good empty list
+  stays armed; delete called: 1: genuine wording, list answers not-a-list
