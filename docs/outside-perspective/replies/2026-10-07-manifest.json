@@ -1,0 +1,107 @@
+{
+  "inputs": {
+    "round_one_paste": {
+      "path": "docs/outside-perspective/PASTE-round-one.md",
+      "sha256": "63ee469f43f40338b7c6a9d0f9873ba153e2e659ec64055a2163480a21cb19ea",
+      "words": 3035
+    },
+    "round_two_paste": {
+      "path": "docs/outside-perspective/PASTE-round-two.md",
+      "sha256": "623cd89a92205830e4fcb67ed6df806ccf8d8f33a1a8e0948064ee6fc5cd1b10",
+      "words": 1008
+    },
+    "book_summary": {
+      "path": "/Users/john/Code/calibration-problem/editorial/argument-summary-2026-10-07.md",
+      "sha256": "73881ae66e233b7ccf9037a9855614f6c003de473e15f16198666b7bf2847ecb",
+      "words": 5181
+    },
+    "round_one_message_sha256": "263966bf4da3afd1d5f2d27701a3d202b0cd571a582619aa47211ab2951a50db",
+    "round_two_message_sha256": "2560548d9cc43395b6b8dbcab3a69f5b4295870d67401cfb5ec3c81c02137d9a"
+  },
+  "runs": {
+    "gemini": {
+      "model": "gemini-3.1-pro-preview",
+      "provider_version": "3.1-pro-preview-01-2026",
+      "round_one": {
+        "started": "2026-10-07T17:38:07Z",
+        "finished": "2026-10-07T17:38:56Z",
+        "usage": {
+          "input_tokens": 11488,
+          "output_tokens": 1755,
+          "thinking_tokens": 3095
+        },
+        "saved": "docs/outside-perspective/replies/2026-10-07-gemini-round-one.md",
+        "words": 1289
+      },
+      "round_two": {
+        "started": "2026-10-07T17:38:56Z",
+        "finished": "2026-10-07T17:39:22Z",
+        "usage": {
+          "input_tokens": 14740,
+          "output_tokens": 1000,
+          "thinking_tokens": 1440
+        },
+        "saved": "docs/outside-perspective/replies/2026-10-07-gemini-round-two.md",
+        "words": 749
+      }
+    },
+    "openai": {
+      "model": "gpt-6-astra",
+      "provider_version": 1787853604,
+      "round_one": {
+        "started": "2026-10-07T17:39:23Z",
+        "finished": "2026-10-07T17:42:58Z",
+        "usage": {
+          "input_tokens": 11209,
+          "output_tokens": 8415,
+          "reasoning_tokens": 3955,
+          "status": "completed",
+          "response_id": "resp_0013d91d6f59ab8e006ac683ccd4f487d0ac4bc670b47dce41"
+        },
+        "saved": "docs/outside-perspective/replies/2026-10-07-openai-round-one.md",
+        "words": 3491
+      },
+      "round_two": {
+        "started": "2026-10-07T17:42:58Z",
+        "finished": "2026-10-07T17:44:39Z",
+        "usage": {
+          "input_tokens": 21071,
+          "output_tokens": 3835,
+          "reasoning_tokens": 1552,
+          "status": "completed",
+          "response_id": "resp_0013d91d6f59ab8e006ac684a3477c87d099f6d0959eb51a26"
+        },
+        "saved": "docs/outside-perspective/replies/2026-10-07-openai-round-two.md",
+        "words": 1833
+      }
+    },
+    "anthropic": {
+      "model": "claude-opus-5-5",
+      "provider_version": "2026-09-21 16:24:00+00:00",
+      "round_one": {
+        "started": "2026-10-07T17:44:40Z",
+        "finished": "2026-10-07T17:47:40Z",
+        "usage": {
+          "input_tokens": 16217,
+          "output_tokens": 16000,
+          "stop_reason": "max_tokens"
+        },
+        "saved": "docs/outside-perspective/replies/2026-10-07-anthropic-round-one.md",
+        "words": 3209
+      },
+      "round_two": {
+        "started": "2026-10-07T17:47:40Z",
+        "finished": "2026-10-07T17:48:33Z",
+        "usage": {
+          "input_tokens": 24464,
+          "output_tokens": 4615,
+          "stop_reason": "end_turn"
+        },
+        "saved": "docs/outside-perspective/replies/2026-10-07-anthropic-round-two.md",
+        "words": 1258
+      },
+      "note": "A stale error line from the dry run of the same day, before the script learned to read the repository .env, was removed here after the run; the run itself set up and completed both rounds. Round one stopped at the 16,000-token output limit (stop_reason max_tokens) and is saved as cut."
+    }
+  },
+  "script": "docs/outside-perspective/run_poll.py"
+}
