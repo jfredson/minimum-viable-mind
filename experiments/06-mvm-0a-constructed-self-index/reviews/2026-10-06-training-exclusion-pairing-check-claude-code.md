@@ -20,7 +20,8 @@ sets keep the whole-content rule; nothing else changed. The replay script
 draws exactly what the real stream draws, and a second, independent count
 through the real old stream agrees with its 0. The full self-test suite
 passes, 227 of 227, and the pinned digests are unchanged, rightly.
-**The whole-pipeline test (T6)**: see section 9.
+**The whole-pipeline test (T6) passes at both sizes**, every figure the same
+as at the freeze (section 9).
 
 None of the three notes (section 10) affects the guarantee.
 
@@ -136,21 +137,29 @@ on `main`, and both checks pass. They should not have changed:
   pairing list still applies by default. That makes no difference to step 1,
   as shown.
 
-## 9. The whole-pipeline test (T6)
+## 9. The whole-pipeline test (T6): passes, the same as at the freeze
 
-*Still running when this was first committed; this section is updated when it
-finishes.* Started after the method commit, with `tests/pipeline.sh` exactly
-as at the freeze (both sizes, 30 training steps an arm, a quarter of the
-episodes, three shuffles). So far, at 10 million parameters: arms T, C and M
-trained and were measured, and arm F trained, each with 0 contents skipped.
-Arm T's training log is figure for figure the freeze's T6 log, its fitted
-reads file is byte-identical to the freeze's, and its measurement row has the
-same value in every field the two share (the 15 differences are the
-checkpoint's path and digest, the run time, and fields the decision-code work
-added on `main` since the freeze). That is as expected: the new stream draws
-exactly the old stream's episodes in these steps. The laptop is heavily
-loaded by other work, so each measurement takes two to four times as long as
-at the freeze.
+Started after the method commit and finished on 2026-10-07, with
+`tests/pipeline.sh` exactly as at the freeze: both sizes, each arm trained for
+30 steps by `train_successor.py` as the rented machine runs it, then measured
+with a quarter of the episodes and three shuffles. Output:
+`out-check-training-exclusion/t6-stdout.txt` and `t6/` (logs, measurement rows,
+fitted reads and summaries; checkpoints not committed).
+
+- **It ran to the end at both sizes** ("T6 ran to the end at: 10M 30M"), with
+  no crash and no separate command needed.
+- **Every one of the eight trainings skipped 0 contents.**
+- **The outcome at both sizes is "substrate not a testbed" (R3)**, as at the
+  freeze; untrained models return no verdict, which is a pass here.
+- **Every figure is the freeze's.** All eight training logs match the freeze's
+  T6 logs figure for figure (apart from timings), and all eight measurement
+  rows have the same value in every field the two share (7,216 to 17,344
+  fields a row; none differs). The only differences are the checkpoint's path
+  and digest, the run time, and fields the decision-code work added on `main`
+  after the freeze. That is as expected: in these steps the new stream draws
+  exactly the old stream's episodes.
+- It was slow: the laptop was heavily loaded by other work for the first
+  hours, so measurements took up to eight times as long as at the freeze.
 
 ## 10. Notes, ranked
 
@@ -181,5 +190,5 @@ All in `experiments/08-successor-degree/out-check-training-exclusion/`:
 `check_stream.py` and its output `check_stream.txt` (16 of 16 pass; it needs
 `main`'s `grammar.py` at `93501f7` saved to a file, given as its second
 argument); `count_real_old_stream.py` and `count_real_old_stream.txt`;
-`t1-self-tests.txt`; `t6-stdout.txt` and the T6 logs and measurement rows
-under `t6/` (checkpoints not committed).
+`t1-self-tests.txt`; `t6-stdout.txt` and the T6 logs, measurement rows and
+summaries under `t6/` (checkpoints not committed).
