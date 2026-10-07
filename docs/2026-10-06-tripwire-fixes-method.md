@@ -553,3 +553,11 @@ from 181 to under 10, all passed. Every named case passed in all eight. The
 five-run check did not say which case failed, so it now prints any failing
 case's details (answer, vendor reads, when the delete was issued, load). The
 pass rule is unchanged. Attempt 4 is the eight-run result reported.
+
+**A commit-labelling error, stated plainly.** The code corrections of
+sections 13.1 to 13.3 (`machine_deadline.sh`, `watch_run_a3.sh`,
+`tripwire.py`) were in the working copy when the kept first run (`7e91693`)
+was made, so that run tested them, but they were committed in `a164eaf`,
+whose message says "Timer code unchanged". That message is wrong: `a164eaf`
+carries the 13.1 to 13.3 code changes as well as the test change. No code has
+changed since `a164eaf`.
