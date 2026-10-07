@@ -237,6 +237,24 @@ def deletion_records() -> None:
     out = subprocess.run([sys.executable, os.path.join(SRC, "tripwire.py"), "gone", "--state", d, "--pod", "podA",
                           "--at", "1100", "--by", "the watchdog"], capture_output=True, text=True)
     m = T.load_state(d)["machines"]["podA"]
+    # added after the method was written (not pre-stated): a machine the
+    # vendor's list misses once, then lists again, must not stay "deleted"
+    d2 = tempfile.mkdtemp()
+    clock = [T0]
+    T.now = lambda: clock[0]
+    T.read_balance = lambda: B0
+    with Quiet():
+        T.cmd_preflight(d2)
+        T.cmd_register(d2, "podL", 0.99, 1.0, "o")
+        T.running_pods = lambda: set()
+        clock[0] += 1
+        T.watch_once(d2, False)
+        T.running_pods = lambda: {"podL"}
+        clock[0] += 300
+        T.watch_once(d2, False)
+    check("(added) a machine missing from one list and listed again is not left marked deleted",
+          T.load_state(d2)["machines"]["podL"]["gone"] is None)
+    T.now = REAL_NOW
     check("the command line records the time and who", out.returncode == 0 and m["gone"] == 1100.0
           and m["gone_by"] == "the watchdog", out.stdout.strip()[:90])
 

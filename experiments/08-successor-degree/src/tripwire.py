@@ -374,6 +374,12 @@ def watch_once(d: str, allow_delete: bool) -> str:
     for m in st["machines"].values():
         if m["pod"] in live:
             m["last_seen"] = t
+            if m.get("gone") and m.get("gone_inferred"):
+                # listed again: the earlier absence was the vendor's list lagging,
+                # not a deletion; charging it as deleted would read as overbilling
+                for k in ("gone", "gone_iso", "gone_by", "gone_inferred"):
+                    m.pop(k, None)
+                m["gone"] = None
         elif not m.get("gone"):
             # no deleting step recorded it: the first reading without it, flagged
             record_gone(st, m["pod"], t, "the watcher: not in the machine list", inferred=True)
