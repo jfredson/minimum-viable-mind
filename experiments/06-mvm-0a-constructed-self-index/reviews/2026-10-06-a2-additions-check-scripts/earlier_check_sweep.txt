@@ -1,0 +1,11 @@
+earlier check's script, all rules on: 25 of 25 agree with written expectation
+c7        [('fallback-read', 'fallback_read', 'R1'), ('fallback-not-read', 'fallback_not_read', 'fifth')]
+c1        [('T-no-verdict', 'not_validated', 'R1'), ('T-and-C-no-verdict', 'not_validated', 'fallback_read')]
+c4        [('never-run-control', 'fallback_read', 'R1')]
+fresh     [('C-fresh-floor', 'fallback_read', 'R1'), ('F-fresh-floor', 'fifth', 'R1')]
+piece     [('fallback-not-read', 'fallback_not_read', 'fallback_read')]
+dev       [('T-dev-floor', 'not_validated', 'R1')]
+gate      [('toy', 'R3', 'fifth'), ('toy-step5a-seed1', 'R3', 'fifth'), ('split-one-seed-everything', 'fifth', 'R1'), ('T-fails-gate', 'R3', 'fallback_read')]
+seedrule  [('split-learning-passes', 'fifth', 'R1'), ('split-one-seed-everything', 'fifth', 'R1')]
+collapse  [('split-one-seed-everything', 'fifth', 'R1'), ('F-channel-removal', 'fifth', 'R1')]
+line      [('never-run-line', 'fifth', 'R1')]
