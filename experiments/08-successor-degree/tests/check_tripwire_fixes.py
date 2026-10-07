@@ -268,6 +268,8 @@ def stub_vendor(tmp: str, delete: str, get: str) -> str:
     os.makedirs(b, exist_ok=True)
     calls = os.path.join(tmp, "calls")
     def part(spec):
+        if spec == "hang":
+            return "exec sleep 3600"
         rc, text = spec.split("|", 1)
         return f"printf '%s\\n' '{text}'; exit {rc}"
     with open(os.path.join(b, "runpodctl"), "w") as f:
@@ -378,6 +380,7 @@ RATE_PER_HOUR_USD="0.99"
 POSTED_RATE="0.99"
 POLL_S=1
 VENDOR_CHECK_S=1
+VENDOR_CAP_S=2
 """ + (f"""TRIP_PY="{sys.executable}"
 TRIP_SCRIPT="{os.path.join(SRC, 'tripwire.py')}"
 TRIP_DIR="{td}"
@@ -409,6 +412,11 @@ TRIP_DIR="{td}"
     run("T14 a record naming another machine: ignored, deletes at the deadline", "1|HTTP 503",
         record_for="someotherpod00")
     run("T15 deletes at its deadline with the alarm configured", '0|{"id": "fakepod0000001"}', trip=True)
+    # added after the method was written (not pre-stated): the vendor read is
+    # capped (VENDOR_CAP_S, 20 s by default; 2 s here), so a hung read cannot
+    # hold the deadline back by more than the cap
+    run("(added) a vendor read that hangs: the deadline still deletes, at most the cap late", "hang",
+        deadline_s=5)
 
 
 # ---------------------------------------------------------------- the replay

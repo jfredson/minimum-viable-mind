@@ -1,4 +1,4 @@
-# run 2026-10-07T02:47:22Z on branch tripwire-fixes
+# run 2026-10-07T02:59:14Z on branch tripwire-fixes
 Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
 T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
   [PASS] no trip at any reading
@@ -34,20 +34,21 @@ T8  deletion records in the alarm
   [PASS] (added) a machine missing from one list and listed again is not left marked deleted
   [PASS] the command line records the time and who  (tripwire: podA deleted at 1970-01-01T00:18:20Z by the watchdog)
 T9  the watchdog's delete writes the deletion record
-  [PASS] an accepted delete: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T02:47:27Z (1791341247), confirmed by the watchdog:)
-  [PASS] a delete answered not found (404): record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T02:47:28Z (1791341248), confirmed by the watchdog:)
+  [PASS] an accepted delete: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T02:59:19Z (1791341959), confirmed by the watchdog:)
+  [PASS] a delete answered not found (404): record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T02:59:21Z (1791341961), confirmed by the watchdog:)
   [PASS] a failed delete, machine still listed: no record anywhere  (no record file)
   [PASS] a failed delete, then a failed reading: no record anywhere  (no record file)
   [PASS] found gone, the vendor says not found: record written
   [PASS] found gone, three failed readings only: no record
 T10-T15  the laptop deadline timer
-  [PASS] T10 the watchdog's record names this machine: stands down, no delete, no deadline line  (0.3s, delete called: False, deadline line: False)
-  [PASS] T11 the vendor says pod not found (404): stands down, no delete  (1.7s, delete called: False, deadline line: False)
-  [PASS] T12 a failed vendor reading (error, no 'not found'): keeps running, deletes at the deadline  (4.0s, delete called: True, deadline line: True)
-  [PASS] T13 an empty vendor answer: keeps running, deletes at the deadline  (5.2s, delete called: True, deadline line: True)
-  [PASS] T14 a record naming another machine: ignored, deletes at the deadline  (4.7s, delete called: True, deadline line: True)
-  [PASS] T15 deletes at its deadline with the alarm configured  (5.6s, delete called: True, deadline line: True)
+  [PASS] T10 the watchdog's record names this machine: stands down, no delete, no deadline line  (0.2s, delete called: False, deadline line: False)
+  [PASS] T11 the vendor says pod not found (404): stands down, no delete  (1.5s, delete called: False, deadline line: False)
+  [PASS] T12 a failed vendor reading (error, no 'not found'): keeps running, deletes at the deadline  (4.8s, delete called: True, deadline line: True)
+  [PASS] T13 an empty vendor answer: keeps running, deletes at the deadline  (4.8s, delete called: True, deadline line: True)
+  [PASS] T14 a record naming another machine: ignored, deletes at the deadline  (3.8s, delete called: True, deadline line: True)
+  [PASS] T15 deletes at its deadline with the alarm configured  (4.4s, delete called: True, deadline line: True)
   [PASS] T15 the alarm's records show the timer's deletion time, by the machine deadline
+  [PASS] (added) a vendor read that hangs: the deadline still deletes, at most the cap late  (7.6s, delete called: True, deadline line: True)
 R   the development run's recorded readings through the new alarm
       deletion times from the "pod gone" lines:
         2026-10-05T00:56:28Z: ratio B 0.9899 (drawn $1.4564, predicted $1.4713); comparison at deletion applies: True; watcher says continue; halt: False

@@ -55,6 +55,7 @@ ENVF="${1:?usage: machine_deadline.sh <env file written by the launcher>}"
 RUNPODCTL="${RUNPODCTL:-runpodctl}"
 GONE_RECORD="${GONE_RECORD:-$(dirname "$ENVF")/machine_gone_$POD}"
 VENDOR_CHECK_S="${VENDOR_CHECK_S:-300}"
+VENDOR_CAP_S="${VENDOR_CAP_S:-20}"
 
 stamp() { date -u +%Y-%m-%dT%H:%M:%SZ; }
 say()   { echo "[$(stamp)] machine-deadline: $*"; }
@@ -83,7 +84,15 @@ while :; do
   fi
   if [ $(( NOW - LAST_VENDOR )) -ge "$VENDOR_CHECK_S" ]; then
     LAST_VENDOR=$NOW
-    V=$("$RUNPODCTL" pod get "$POD" -o json 2>&1)
+    # capped, so a vendor call that hangs can never hold the deadline back
+    VF=$(mktemp)
+    "$RUNPODCTL" pod get "$POD" -o json > "$VF" 2>&1 < /dev/null &
+    VPID=$!
+    ( sleep "$VENDOR_CAP_S"; kill "$VPID" 2>/dev/null ) >/dev/null 2>&1 &
+    VKILL=$!
+    wait "$VPID" 2>/dev/null
+    kill "$VKILL" 2>/dev/null; wait "$VKILL" 2>/dev/null
+    V=$(cat "$VF"); rm -f "$VF"
     if says_not_found "$V"; then
       stand_down "the vendor answered: $(printf '%s' "$V" | tr '\n' ' ' | cut -c1-160)"
     fi
