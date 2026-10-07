@@ -1,0 +1,13 @@
+git merge-base --is-ancestor 400c265 d776c70: yes
+parent of 400c265: 74967f8
+commit times:
+  d776c70 2026-10-06 10:25:25 -0700 A2: R3 names its failed condition, R2 carries the scope phrase, stricter control 5; 25 of 25 cases match
+  400c265 2026-10-06 10:24:12 -0700 A2 method addendum: three floor cases, R3 naming its condition, R2 scope phrase, stricter control 5; expectations committed before running
+  74967f8 2026-10-06 10:15:11 -0700 A2: the end-to-end run on the toy and 22 made-up cases, and its findings
+files changed by 400c265:
+  docs/2026-10-06-successor-a2-decision-procedure-method.md
+  experiments/08-successor-degree/tests/a2_cases.py
+lines removed by 400c265 (any file): 0
+case file or method note touched by d776c70: 0
+case file changed between 590a630 and 74967f8: 0
+rerun of a2_run_cases.py + run_self_tests.sh in this worktree: committed outputs reproduced byte for byte (git status clean for out-a2-cases)

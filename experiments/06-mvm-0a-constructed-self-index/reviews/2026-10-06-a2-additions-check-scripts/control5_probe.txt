@@ -1,0 +1,9 @@
+fresh and relaxed tables: 1600 distinct of 1600
+planted: same table: True | same whole content: False -> the stricter test catches it, the whole-content test does not
+relaxed tables with a shared value on an item: 800 of 800; training draws values without repeats, so these can never match
+200 steps, exclusion switched OFF: 9600 training tables, 0 shared with fresh/relaxed
+200 steps of run seed 1 (the self-test samples seed 0 only): 0 shared, exclusion off
+200 steps of run seed 2 (the self-test samples seed 0 only): 0 shared, exclusion off
+distinct possible tables (fresh pool, no shared values): about 1.4e+10; expected chance matches of 800 fresh tables in 9,600 sampled: 0.00055
+one full run's stream: 5,228,112 contents; expected chance matches with the 800 fresh tables 0.30 (chance of at least one 26%); over the three seeds' streams 0.90 (chance of at least one 59%). Whole-content exclusion does not block these.
+single (marker, item, value) triples: 480 in fresh/relaxed, 480 of them in the 200 sampled training steps (of 480 possible); so 'pairing' must mean the whole table, as built

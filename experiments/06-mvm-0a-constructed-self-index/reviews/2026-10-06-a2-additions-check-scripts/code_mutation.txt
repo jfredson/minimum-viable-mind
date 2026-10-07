@@ -1,0 +1,22 @@
+== decision code with the fresh-episode floor switched off
+227c227
+<     checks["floor on fresh episodes"] = NOT_RUN if r is None else _flag(True, r["floor"]["clears"])
+---
+>     checks["floor on fresh episodes"] = PASSED  # MUTATION: rule off
+25 cases; 2 differ from expectation or leak: ['C-fresh-floor', 'F-fresh-floor']
+== decision code with the dev-episode floor switched off
+228c228
+<     checks["floor on development episodes"] = _flag("dev_floor_clears" in row, row.get("dev_floor_clears"))
+---
+>     checks["floor on development episodes"] = PASSED  # MUTATION: rule off
+25 cases; 2 differ from expectation or leak: ['overlap-one-seed', 'T-dev-floor']
+== fresh: rows of cases that differ
+| 13 | overlap-one-seed | R1 | R1 | yes | none | metric validated, degree read |
+| 23 | C-fresh-floor | fallback_read | R1 | NO: outcome code; C/0 lists 'floor on fresh episodes failed'; C/1 lists 'floor on fresh episodes failed'; C/0 withheld; C/1 withheld | C/0 figure in summary.json readings; C/0 figure in its own table row; C/1 figure in summary.json readings; C/1 figure in its own table row | metric validated, degree read |
+| 24 | T-dev-floor | not_validated | not_validated | yes | none | metric not validated: floor on development episodes failed |
+| 25 | F-fresh-floor | fifth | R1 | NO: outcome code; reason has 'floor on fresh episodes failed'; F/0 withheld; F/1 withheld | F/0 figure in summary.json readings; F/0 figure in its own table row; F/1 figure in summary.json readings; F/1 figure in its own table row | metric validated, degree read |
+== dev: rows of cases that differ
+| 13 | overlap-one-seed | R1 | R1 | NO: T/2 lists 'development episodes' | none | metric validated, degree read |
+| 23 | C-fresh-floor | fallback_read | fallback_read | yes | none | metric checked against the separable model only, degree read |
+| 24 | T-dev-floor | not_validated | R1 | NO: outcome code; reason has 'floor on development episodes failed'; T/0 withheld; T/1 withheld | T/0 figure in summary.json readings; T/0 figure in its own table row; T/1 figure in summary.json readings; T/1 figure in its own table row | metric validated, degree read |
+| 25 | F-fresh-floor | fifth | fifth | yes | none | metric validated, degree not read: floor on fresh episodes failed |
