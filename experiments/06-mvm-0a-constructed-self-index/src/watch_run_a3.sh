@@ -135,7 +135,7 @@ GONE_CONFIRM_GAP_S="${GONE_CONFIRM_GAP_S:-300}"
 # a machine list that SUCCEEDS (exit 0, a JSON list) and does not show $POD
 list_without_machine() {
   local out
-  out=$(runpodctl pod list 2>/dev/null) || return 1
+  out=$(runpodctl pod list --all 2>/dev/null) || return 1   # --all: stopped machines too
   printf '%s' "$out" | python3 -c '
 import json, sys
 try:
@@ -145,6 +145,17 @@ except Exception:
 if not isinstance(d, list) or not all(isinstance(p, dict) for p in d):
     sys.exit(1)
 sys.exit(0 if all(p.get("id") != sys.argv[1] for p in d) else 1)' "$POD" 2>/dev/null
+}
+
+# Corrected after the re-check (problem 2): the alarm's deletion time is
+# written straight after an accepted delete (a wrong time there only makes
+# the alarm read high); the two good machine lists are needed only for the
+# record FILE the deadline timer reads.
+alarm_time() {
+  if [ -n "${TRIP_PY:-}" ] && [ -n "${TRIP_SCRIPT:-}" ] && [ -n "${TRIP_DIR:-}" ]; then
+    "$TRIP_PY" "$TRIP_SCRIPT" gone --state "$TRIP_DIR" --pod "$POD" --at "$1" --by "the watchdog" 2>&1 \
+      | sed 's/^/  /' || say "could not write the deletion time into the spending alarm's records"
+  fi
 }
 
 # $1 time, $2 basis, $3 optional "file-only": the record, only after two good
@@ -158,7 +169,7 @@ confirm_and_record() {
   if ! list_without_machine; then
     say "no deletion record: the second machine list failed or shows $POD"; return 1
   fi
-  record_gone "$1" "$2; two good machine lists ${GONE_CONFIRM_GAP_S}s apart omit it" "${3:-}"
+  record_gone "$1" "$2; two good machine lists ${GONE_CONFIRM_GAP_S}s apart omit it" file-only
 }
 
 # 2026-10-06: the deletion record. $1 the deletion time (epoch), $2 the basis.
@@ -307,8 +318,10 @@ kill_pod() {
     say "pod gone; billing stopped"
     # 2026-10-06: the record only on a confirmed deletion
     if [ "$rc" -eq 0 ]; then
+      alarm_time "$at"
       confirm_and_record "$at" "the delete was accepted"
     elif says_not_found "$answer"; then
+      alarm_time "$at"
       confirm_and_record "$at" "the vendor answered that the machine does not exist"
     else
       say "no deletion record: the delete failed (exit $rc) and the machine's absence is only a failed or empty reading"

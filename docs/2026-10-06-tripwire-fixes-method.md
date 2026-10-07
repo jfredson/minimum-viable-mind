@@ -514,3 +514,18 @@ since plain `pod list` shows running machines only.
 | R9 | The same machine billed 1.3 times its life to the inferred deletion (that is, 32.5 minutes) | Trip as overbilling, at or above 1.25 |
 | R10 | The list checks | Every `pod list` call the timer and the watchdog make carries `--all` |
 | — | Everything else in sections 8, 11.5 and 12.4, and every other suite | Unchanged; pass |
+
+### 13.5 After the first run (kept as it came out, in its own commit)
+
+The first run failed four timing checks: T13 and T14 deleted 20 and 15
+seconds after the written deadline, R2 10.5 seconds, and the five-run check
+passed 18 of 20. **T13 and T14 made no vendor read at all**, so the lateness
+was not the vendor check. The laptop was under very heavy load from other
+work (load average about 450 earlier in the evening, 230 when measured just
+after); a timer run by hand straight afterwards issued its delete at the
+written deadline to the second. The tests had measured "late" as the moment
+the whole timer program finished, including its log and ledger lines, each
+of which starts several small programs. **Changed after seeing this, and
+said so:** the tests now take the moment the delete was issued from the
+stand-in tool's own timestamped log, keep the 10-second allowance, and print
+the laptop's load at the start. The timer code is not changed by this.
