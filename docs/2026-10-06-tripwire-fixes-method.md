@@ -236,3 +236,27 @@ session is changing those on other branches), the proposal, the ledger.
 The alarm and the successor launcher are frozen code (2026-10-04 freeze);
 John's 2026-10-06 rulings are the authority for these changes, and each
 changed file says so.
+
+## 10. After running (added after the first run, which is committed as it came out)
+
+Every pre-stated outcome held except one range. **The replay using the
+earlier edge of each delete (the "deleting pod" log lines) read 0.9988 with
+the 00:56 reading and 1.0038 with the 01:11:20 reading; section 8 stated 0.98
+to 1.00, so the second is outside it.** The range was written as a guess, not
+worked out, and it was wrong: taking each deletion about 12 seconds earlier
+shortens the predicted spend by about $0.013, and the balance kept falling
+slightly after 00:56 ($0.0098 in 15 minutes, more than the volume's $0.0025),
+so the later reading against the shorter lives comes out just over 1. Nothing
+trips either way (the line is 1.25). The first run's output is kept as it
+came out (`tests/check_tripwire_fixes_output.txt` in the commit that added
+it). From the next run the check reports this as a missed prediction, by
+name, and does not count it as a fault in the code; the range is not quietly
+widened.
+
+**Which figure the new code would actually have given.** The new watchdog
+writes the moment its delete command came back, before its 10-second settle,
+so in the development run it would have written times close to the earlier
+edge: the replay figure is therefore about **1.00** (0.999 at 00:56, 1.004 at
+01:11), and **0.99** (0.9899, 0.9948) with the "pod gone" times the
+development-run check used. Either way it is about 1, against the old
+alarm's 0.40.
