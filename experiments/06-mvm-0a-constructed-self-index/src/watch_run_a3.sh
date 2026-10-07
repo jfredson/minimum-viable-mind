@@ -84,7 +84,12 @@
 #   laptop deadline timer stops itself on that file and on nothing weaker.
 #   "Confirmed" means the vendor accepted the delete or answered that the
 #   machine does not exist, and the machine is not listed afterwards; after
-#   three silent checks, one more reading must say "not found". If the
+#   three silent checks, one more reading must say "not found".
+#   Corrected the same day after the independent check (pull request 117,
+#   problems 1 and 2): "answered that it does not exist" means the vendor's
+#   own phrase "pod not found" with "(status 404)", and "not listed" means a
+#   machine list that SUCCEEDS and omits the machine, read twice
+#   GONE_CONFIRM_GAP_S apart (5 minutes). A failed read never writes it. If the
 #   settings file names the spending alarm's records (TRIP_PY, TRIP_SCRIPT,
 #   TRIP_DIR: only the successor launcher writes them), the deletion time is
 #   also written there, so the alarm stops charging the machine from then.
@@ -123,7 +128,37 @@ pod_exists() {
 # a delete of a machine already gone with "pod not found to terminate",
 # status 404.
 says_not_found() {
-  printf '%s' "$1" | tr -d ' ' | tr 'A-Z' 'a-z' | grep -qE 'notfound|"status":404'
+  printf '%s' "$1" | grep -qi 'pod not found' && printf '%s' "$1" | grep -qF '(status 404)'
+}
+
+GONE_CONFIRM_GAP_S="${GONE_CONFIRM_GAP_S:-300}"
+# a machine list that SUCCEEDS (exit 0, a JSON list) and does not show $POD
+list_without_machine() {
+  local out
+  out=$(runpodctl pod list 2>/dev/null) || return 1
+  printf '%s' "$out" | python3 -c '
+import json, sys
+try:
+    d = json.JSONDecoder(strict=False).decode(sys.stdin.read())
+except Exception:
+    sys.exit(1)
+if not isinstance(d, list) or not all(isinstance(p, dict) for p in d):
+    sys.exit(1)
+sys.exit(0 if all(p.get("id") != sys.argv[1] for p in d) else 1)' "$POD" 2>/dev/null
+}
+
+# $1 time, $2 basis, $3 optional "file-only": the record, only after two good
+# machine lists without the machine, GONE_CONFIRM_GAP_S apart
+confirm_and_record() {
+  if ! list_without_machine; then
+    say "no deletion record: the machine list failed or still shows $POD"; return 1
+  fi
+  say "a good machine list omits $POD; reading it again in ${GONE_CONFIRM_GAP_S}s before writing the deletion record"
+  sleep "$GONE_CONFIRM_GAP_S"
+  if ! list_without_machine; then
+    say "no deletion record: the second machine list failed or shows $POD"; return 1
+  fi
+  record_gone "$1" "$2; two good machine lists ${GONE_CONFIRM_GAP_S}s apart omit it" "${3:-}"
 }
 
 # 2026-10-06: the deletion record. $1 the deletion time (epoch), $2 the basis.
@@ -272,9 +307,9 @@ kill_pod() {
     say "pod gone; billing stopped"
     # 2026-10-06: the record only on a confirmed deletion
     if [ "$rc" -eq 0 ]; then
-      record_gone "$at" "the delete was accepted and the machine is no longer listed"
+      confirm_and_record "$at" "the delete was accepted"
     elif says_not_found "$answer"; then
-      record_gone "$at" "the vendor answered that the machine does not exist"
+      confirm_and_record "$at" "the vendor answered that the machine does not exist"
     else
       say "no deletion record: the delete failed (exit $rc) and the machine's absence is only a failed or empty reading"
     fi
@@ -316,7 +351,7 @@ on_machine_gone() {
   local answer
   answer=$(runpodctl pod get "$POD" -o json 2>&1)
   if says_not_found "$answer"; then
-    record_gone "$(date +%s)" "found gone: the vendor answered that the machine does not exist (deleted at or before this time)" file-only
+    confirm_and_record "$(date +%s)" "found gone: the vendor answered that the machine does not exist (deleted at or before this time)" file-only
   else
     say "no deletion record: the vendor did not say the machine does not exist, so the deadline timer stays armed"
   fi
