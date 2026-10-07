@@ -412,3 +412,60 @@ ADDENDUM_EXPECT = {
                              "for this intervention procedure"]),
 }
 
+
+
+# ---------------------------------------------------------------------------
+# The in-use check on the built arms (John's ruling of 2026-10-06, option 4;
+# method `docs/2026-10-06-sharpness-fix-inuse-check-method.md`, section 3,
+# cases 18 to 20; expectations written there before this ran).
+#
+# The committed toy rows predate the check, so a2_run_cases.py gives every
+# built-arm row a passing `route_in_use` (ROUTE_PASS) before a case's own
+# changes, and the 25 cases above keep testing what they tested.
+
+ROUTE_PASS = dict(sharpness=4.0, weight_on_true_agent=0.999, made_up=True,
+                  routes={"entangled": dict(actions=3000, right_with_true_answer=2000,
+                                            still_right_with_swapped_answer=100, route_use=0.95)})
+
+
+def route_flat(rows, arm, seed):
+    r = dict(ROUTE_PASS, routes={"entangled": dict(actions=3000, right_with_true_answer=2000,
+                                                   still_right_with_swapped_answer=1990,
+                                                   route_use=0.005)})
+    rows[(arm, seed)]["gate"]["route_in_use"] = r
+
+
+def c_inuse_C(rows):
+    make_F_read(rows)
+    route_flat(rows, "C", 0)
+    route_flat(rows, "C", 1)
+
+
+def c_inuse_T(rows):
+    make_F_read(rows)
+    route_flat(rows, "T", 0)
+    route_flat(rows, "T", 1)
+
+
+def c_inuse_M(rows):
+    make_F_read(rows)
+    route_flat(rows, "M", 0)
+    route_flat(rows, "M", 1)
+
+
+CASES += [
+    dict(name="inuse-C-flat", build=c_inuse_C, steps={"arm_F_step_5a_seed": 0},
+         expect="fallback_read",
+         seed_reasons_have={"C/0": ["construction did not hold"], "C/1": ["construction did not hold"]},
+         withheld=[("C", 0), ("C", 1)],
+         about="in-use check: every arm reads (as case r1) but arm C's route is flat on seeds 0 and 1"),
+    dict(name="inuse-T-flat", build=c_inuse_T, steps={"arm_F_step_5a_seed": 0},
+         expect="not_validated", reason_has=["construction did not hold"],
+         withheld=[("T", 0), ("T", 1)],
+         about="in-use check: arm T's route is flat on seeds 0 and 1"),
+    dict(name="inuse-M-flat", build=c_inuse_M, steps={"arm_F_step_5a_seed": 0},
+         expect="R1",
+         seed_reasons_have={"M/0": ["construction did not hold"], "M/1": ["construction did not hold"]},
+         withheld=[("M", 0), ("M", 1)],
+         about="in-use check: arm M's route is flat on seeds 0 and 1; arm M has no verdict, outcome unchanged"),
+]

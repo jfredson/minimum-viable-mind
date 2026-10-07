@@ -56,6 +56,9 @@ def main():
     results = []
     for case in K.CASES:
         rows = copy.deepcopy(toy)
+        for (a, s), r in rows.items():      # the in-use check (ruled 2026-10-06): see a2_cases.ROUTE_PASS
+            if a in P.MS.BUILT_ARMS and "route_in_use" not in r["gate"]:
+                r["gate"]["route_in_use"] = copy.deepcopy(K.ROUTE_PASS)
         case["build"](rows)
         d = os.path.join(OUT, case["name"])
         os.makedirs(d)
