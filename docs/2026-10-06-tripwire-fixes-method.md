@@ -457,3 +457,60 @@ predicting from 15 minutes before it; operator rule: do not top up during a
 wave; (d) proof that a machine is deleted is the vendor's "pod not found"
 with "(status 404)" and two good machine lists without it, 5 minutes apart
 (the check's corrections, section 11).
+
+## 13. Corrections after the re-check, stated before the code
+
+The re-check (`docs/2026-10-06-tripwire-fixes-recheck-findings.md` on branch
+`check-tripwire-fixes`) found two blockers and one minor point; no ruling is
+needed. It also noted that the failing first run of section 12 (B3) was not
+kept; **this round keeps its first run's output, as it comes out, in its own
+commit before anything is fixed after it.** Cost: $0.
+
+### 13.1 The deadline timer's vendor check can delay the deadline (re-check problem 1)
+
+Each check now makes two capped calls (`pod get`, then the machine list), so
+the deadline could slip by about two caps plus a poll (about 70 seconds with
+the real settings), and the comment saying "no more than the cap" was wrong.
+**Fix in the code:** the timer skips its vendor check whenever the deadline
+is less than two caps plus 2 seconds away. Two capped calls started earlier
+than that end before the deadline, so the vendor check can no longer delay
+the deadline at all; the only remaining lateness is the poll's own rounding
+and the time to start the delete. The comment is corrected to say this.
+**Fix in the tests:** the allowance becomes 10 seconds after the written
+deadline (this laptop runs other heavy work, and the earlier runs showed
+start-up delays of several seconds), and the stand-down cases get deadlines
+long enough for two checks outside the skip window.
+
+### 13.2 An inferred deletion time can halt an honest short machine (re-check problem 2)
+
+- **The alarm's deletion time is written straight after the watchdog's delete
+  is accepted** (exit 0) or answered with the vendor's words, as in the first
+  round, whether or not the two machine lists then succeed. A wrong time
+  there only makes the alarm read high, the safe way. The two good machine
+  lists, 5 minutes apart, stay the condition for the **record file** the
+  deadline timer reads.
+- **The 0.90 line, for a deletion the alarm only inferred,** is judged
+  against the machine's life up to the last reading that still listed it. The
+  1.25 line keeps using the inferred time. A recorded deletion time is used
+  for both, as now.
+
+### 13.3 "Not listed" must mean "does not exist" (re-check problem 3)
+
+Both list checks (the timer's and the watchdog's) use `pod list --all`,
+since plain `pod list` shows running machines only.
+
+### 13.4 Expected outcomes, stated before running
+
+| # | Case | Expected |
+|---|---|---|
+| R1 | The whole check, eight runs in a row | All eight pass (the one pre-stated range still reported as missed) |
+| R2 | Timer; every vendor read hangs; cap 2 s, deadline 12 s, checks every 1 s | Deletes no earlier than the written deadline and within 10 s after it |
+| R3 | Timer; cap 20 s, deadline 10 s, checks every 1 s | Makes no vendor read at all (the deadline is inside the skip window); deletes at its deadline |
+| R4 | Watchdog; delete accepted; first list read fails (old W2) | No record file; **the alarm gets the deletion time**, by "the watchdog" |
+| R5 | Watchdog; delete accepted; second list shows the machine (old W3) | No record file; the alarm gets the deletion time |
+| R6 | Watchdog; delete fails "HTTP 503" (W5) | Neither (unchanged) |
+| R7 | End-of-wave comparison; machine listed for 20 minutes, deletion inferred 5 minutes after the last listing, billed 20 minutes | Passes (judged against the last listing, 1.00; against the inferred time it would read 0.80 and trip) |
+| R8 | The same with only 10 minutes billed | Trip, "cannot be checked yet" |
+| R9 | The same machine billed 1.3 times its life to the inferred deletion (that is, 32.5 minutes) | Trip as overbilling, at or above 1.25 |
+| R10 | The list checks | Every `pod list` call the timer and the watchdog make carries `--all` |
+| — | Everything else in sections 8, 11.5 and 12.4, and every other suite | Unchanged; pass |
