@@ -1,0 +1,40 @@
+branch at d4b03b8
+
+== the floor's missing condition (RT-238)
+   measure.py:floor_check: identical on the branch
+   measure.py:reading: identical on the branch
+   procedure.py:grid: identical on the branch
+   procedure.py:pick: identical on the branch
+   procedure.py:pick_sensitivity: identical on the branch
+   procedure.py:measure_at: identical on the branch
+   procedure.py:site_family: identical on the branch
+
+== the episode format (RT-239)
+   grammar.py:_content: identical on the branch
+   grammar.py:render: identical on the branch
+   grammar.py:make_pairs: identical on the branch
+   grammar.py:eligible_models: identical on the branch
+   grammar.py:successor: identical on the branch
+   grammar.py:build_vocab: identical on the branch
+
+== control 6 (RT-251)
+   procedure.py:measure_at: identical on the branch
+   procedure.py:table: CHANGED on the branch
+   measure.py:withhold: identical on the branch
+   measure.py:arm_outcome: CHANGED on the branch
+   measure.py:outcome: CHANGED on the branch
+   grammar.py self-test line 'matched pairs are token-for-token identical': identical
+   grammar.py self-test line 'no name badge': identical
+   grammar.py constant SEQ_LEN: identical
+   grammar.py constant POOLS: identical
+   grammar.py constant N_AGENTS: identical
+   grammar.py constant N_SLOTS: identical
+
+   control 6 lines on the branch's procedure.py:
+      # control 6: same value against different value, on the relaxed set
+      c["6"] = dict(same_value_trials=int(same.sum()), different_value_trials=int((~same).sum()),
+      "control 6 same / different moved | control 2 | true slot | rider | lesion own | lesion candidates | "
+      f"{_deg(c['6']['same_value_moved'])} / {_deg(c['6']['different_value_moved'])} | {c2['status']} | "
+   branch lines with a word of discrimination outside the outcome words:
+      measure.py:696: check("outcome: the fifth term's sentence carries the scope phrase after 'instrument discriminates'",
+   (1 such lines)

@@ -1,0 +1,123 @@
+== 1. every line of version 5 naming control 6, its cells or the relaxed set
+722:control 6, where two agents share a value on one item (section 4.2). **Two
+755:differs from the recipient's except in the relaxed set's same-value trials
+817:Sections 4.2, 6.1 and 8.1 lean on that. Control 6 in section 7.3 needs its
+818:negation for one of its two cells, so control 6 runs on a **separately
+819:generated relaxed set** in which one item per episode has two agents sharing
+821:appears. The relaxed set is never used for the reading, the gates or any
+1783:   except in the relaxed set's same-value trials; and **control 4**, which
+2641:6. **Same-value and different-value cells. Reported, on the relaxed set.
+2647:   pattern: nothing moves in the same-value cell, everything in the
+2648:   different-value cell. A moved same-value cell shows the whole-state
+2658:   control 6 runs on the **separately generated relaxed set** of section 4.2,
+2660:   both cells have trials: 81 same-value and 719 different-value trials of 800
+2665:   is restated for the relaxed set, where it rises (on the toy, from 0.2467 to
+2668:   same-value cell and everything in the different-value cell; an entangled
+2669:   arm is expected to move the same-value cell too, and that is reported as
+2675:   and 4):* arm T moves 0.0000 of the same-value cell and 1.0000 of the
+2676:   different-value cell on every seed; the same-value cell moves on arm C
+2678:   description, on arm F (0.7284, 0.6790 and 0.6296); the different-value
+2776:  figure on one toy model of six**; **control 6 as a description that cannot
+2778:  the relaxed set for control 6 and its generating seed;
+2810:  pairs on the relaxed set; 3,000 held-out episodes for the gates, so the bar
+2876:    reason; control 6's two cells**, each with its pre-stated expectation
+3086:| The numbers of episodes at the registered size | **for every read, 1,980 development episodes, the first 1,800 fitted and the last 180 held out (the floor is 144 of 180); the nomination's transplant passes on 600 
+4101:**W11. On the entangled arms, the same-value cell of control 6 moves, and
+4102:control 6 cannot say why** (retitled and rewritten 2026-10-06, follow-up item
+4103:1, closing the outside review's A7, adopted as RT-251). On the relaxed set
+4104:the same-value cell moved on arm C in 0.51 to 0.63 of trials and on arm M in
+4108:the models err differently by owner. Control 6 cannot separate copying who
+4148:the pairing and the code and not a model, that control 6 is a description
+4219:with control 6 added to the last row).** The scope phrases of section 3
+4915:  control 6, T/0: same-value trials 81, different-value trials 719 (C/0, F/0, M/0 the same; seeds 1 and 2 the same: the relaxed set has a fixed seed)
+4923:Both of control 6's cells have trials on every arm and seed (the RT-173
+5314:   on the relaxed set, how many held-out episodes the gates are scored on, or
+5318:   the last 180 held out, 800 fresh matched pairs, 800 on the relaxed set,
+
+== 2. every line of version 5 with a word of discrimination
+141:transplant had to move, is the reading. If the measure separates the two
+160:can show: an instrument that discriminates specified constructed mechanisms,
+259:  "metric validated" becomes **"instrument discriminates specified constructed
+314:for "the metric cannot distinguish the known cases". This proposal supplies the
+380:decision 3: "metric validated" becomes "instrument discriminates specified
+392:| **R1** | **instrument discriminates specified constructed mechanisms, degree read** | metric validated, degree read | The measure separates arms T and C at the pre-stated bar (section 9: 0.5 on the chance-corrected
+393:| **R2** | **instrument does not discriminate the specified constructed mechanisms** | metric does not separate | Arms T and C pass their gates and do not separate at the bar; arm F is not read, whether or not it pas
+396:| **The fifth term** | **instrument discriminates specified constructed mechanisms, degree not read** | metric validated, degree not read | Arms T and C separate at the pre-stated bar, and arm F returns no verdict, f
+403:term containing "instrument discriminates", "instrument checked" or "instrument
+501:the fifth term, "instrument discriminates specified constructed mechanisms,
+518:carried nothing. **The toy can tell those two apart, from a number the
+687:ruling 2). "Instrument discriminates specified constructed mechanisms" means
+1574:experiment tell the two apart is withdrawn).
+2642:   A description, not a discriminator (ruled 2026-10-06, follow-up item 1,
+2652:   discriminating control" and said a transplant that smuggled a value across
+3553:   outcome is the fifth term, "instrument discriminates specified constructed
+4108:the models err differently by owner. Control 6 cannot separate copying who
+4963:10-million arms, flat), so as a threshold it does not yet separate the two
+
+== 3. the same words within three lines of 'control 6' (a claim split over lines)
+818:negation for one of its two cells, so control 6 runs on a **separately
+2658:   control 6 runs on the **separately generated relaxed set** of section 4.2,
+4108:the models err differently by owner. Control 6 cannot separate copying who
+
+== 4. the reporting table, section 7.5: its lines on control 6
+47:    reason; control 6's two cells**, each with its pre-stated expectation
+
+== 5. the frozen code: every mention of control 6 and its fields
+experiments/08-successor-degree/src/grammar.py:33:   fresh or relaxed episode, however its turns are ordered, so no such
+experiments/08-successor-degree/src/grammar.py:130:# Each entry: (number of matched pairs, seed, pool, relaxed).
+experiments/08-successor-degree/src/grammar.py:135:    "relaxed": (800, 778, "fresh", True),    # control 6 only
+experiments/08-successor-degree/src/grammar.py:159:        # One item where two agents share a value, so that control 6 ("who is
+experiments/08-successor-degree/src/grammar.py:330:    n, seed, pool, relaxed = EVAL_SETS[name]
+experiments/08-successor-degree/src/grammar.py:331:    return make_pairs(n, seed=seed, pool=pool, collide=relaxed)
+experiments/08-successor-degree/src/grammar.py:342:# Version 4, section 7.1: training contains no fresh or relaxed pairing. By
+experiments/08-successor-degree/src/grammar.py:344:PAIRING_EXCLUDED_SETS = ("fresh", "relaxed")
+experiments/08-successor-degree/src/grammar.py:360:    """The pairing of every fresh and relaxed episode. Training skips these."""
+experiments/08-successor-degree/src/grammar.py:396:    `excluded_pairings`, pairings (the fresh and relaxed sets; John's ruling of
+experiments/08-successor-degree/src/grammar.py:409:        evaluation episode, and not the pairing of any fresh or relaxed one."""
+experiments/08-successor-degree/src/grammar.py:527:          sizes == {"dev": 600, "fresh": 800, "relaxed": 800, "gate": 1500, "trajectory": 200},
+experiments/08-successor-degree/src/grammar.py:568:    # No fresh or relaxed episode's combination occurs in the training stream.
+experiments/08-successor-degree/src/grammar.py:571:    # the default stream's exclusion list holds every fresh and relaxed content,
+experiments/08-successor-degree/src/grammar.py:574:    held = set(fps["fresh"]) | set(fps["relaxed"])
+experiments/08-successor-degree/src/grammar.py:580:    check("control 5: no fresh or relaxed episode's combination occurs in the training stream "
+experiments/08-successor-degree/src/grammar.py:583:          f"{len(held):,} fresh and relaxed contents; {len(sampled):,} training contents sampled, "
+experiments/08-successor-degree/src/grammar.py:587:    # fresh or relaxed, i.e. its assignment table of (marker word, item word,
+experiments/08-successor-degree/src/grammar.py:597:    held_tables = {table(p["content"]) for name in ("fresh", "relaxed") for p in eval_pairs(name)}
+experiments/08-successor-degree/src/grammar.py:603:    check("control 5, stricter: no fresh or relaxed episode's assignment table (which marker holds "
+experiments/08-successor-degree/src/grammar.py:606:          f"{len(held_tables):,} fresh and relaxed tables; {len(sampled_tables):,} training tables, "
+experiments/08-successor-degree/src/grammar.py:637:    # --- fresh and relaxed pairings never reach training (2026-10-06) ------
+experiments/08-successor-degree/src/grammar.py:646:    check("G1: the stream's pairing exclusion list is every fresh and relaxed pairing, and only those",
+experiments/08-successor-degree/src/grammar.py:648:          f"{len(held_contents):,} fresh and relaxed episodes, {len(want_pairings):,} distinct pairings")
+experiments/08-successor-degree/src/grammar.py:679:    check("G2: the exclusion function refuses every fresh and relaxed episode and every "
+experiments/08-successor-degree/src/grammar.py:719:    case_b = made_up(eval_pairs("relaxed")[0]["content"])
+experiments/08-successor-degree/src/grammar.py:730:    check("G4: case B (a relaxed pairing re-dressed) gets through the old rule and is blocked by the new",
+experiments/08-successor-degree/src/grammar.py:731:          verdicts["B"] == expected["B"] and pairing(case_b) == pairing(eval_pairs("relaxed")[0]["content"]),
+experiments/08-successor-degree/src/grammar.py:746:        for name, (n, seed, pool, relaxed) in EVAL_SETS.items():
+experiments/08-successor-degree/src/grammar.py:749:            a = batch(episodes_from_pairs(make_pairs(n, seed, pool, relaxed)))
+experiments/08-successor-degree/src/grammar.py:750:            b = RG.batch(RG.episodes_from_pairs(RG.make_pairs(n, seed, pool, relaxed)))
+experiments/08-successor-degree/src/measure.py:49:RELAXED_PAIRS = 800
+experiments/08-successor-degree/src/procedure.py:124:            n, seed, pool, relaxed = G.EVAL_SETS[name]
+experiments/08-successor-degree/src/procedure.py:126:            return G.make_pairs(n, seed=seed, pool=pool, collide=relaxed)
+experiments/08-successor-degree/src/procedure.py:134:        self.relaxed_pairs = pairs("relaxed")
+experiments/08-successor-degree/src/procedure.py:138:        self.relaxed = rd(self.relaxed_pairs)
+experiments/08-successor-degree/src/procedure.py:580:    # control 6: same value against different value, on the relaxed set
+experiments/08-successor-degree/src/procedure.py:581:    cr, cd = data.relaxed
+experiments/08-successor-degree/src/procedure.py:589:    c["6"] = dict(same_value_trials=int(same.sum()), different_value_trials=int((~same).sum()),
+experiments/08-successor-degree/src/procedure.py:590:                  same_value_moved=float(moved[same].float().mean()) if int(same.sum()) else None,
+experiments/08-successor-degree/src/procedure.py:591:                  different_value_moved=float(moved[~same].float().mean()))
+experiments/08-successor-degree/src/procedure.py:888:           "control 6 same / different moved | control 2 | true slot | rider | lesion own | lesion candidates |",
+experiments/08-successor-degree/src/procedure.py:916:            f"{_deg(c['6']['same_value_moved'])} / {_deg(c['6']['different_value_moved'])} | {c2['status']} | "
+experiments/08-successor-degree/src/train_successor.py:17:step, never matching an evaluation set and never carrying a fresh or relaxed
+experiments/08-successor-degree/src/train_successor.py:128:                  data="fresh per step, evaluation sets excluded, fresh and relaxed pairings excluded")
+
+== 6. the frozen code: any word of discrimination anywhere
+(end; nothing above this line means no hit)
+
+== 7. does any decision code read control 6? (withhold, arm_outcome, outcome)
+measure.py: no reference to control 6
+
+== 8. the label control 6 prints under, in the committed reporting tables of the frozen code
+  24 control 6 different_value_moved",
+  24 control 6 different_value_trials",
+  35 control 6 same / different moved 
+  24 control 6 same_value_moved",
+  24 control 6 same_value_trials",

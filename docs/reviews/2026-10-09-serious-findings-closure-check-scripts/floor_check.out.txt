@@ -1,0 +1,29 @@
+== 1. the frozen code's floor
+def floor_check(whole: float, untouched: float, acc: float) -> dict:
+    """The whole-state floor on the chance-corrected scale, with the plain
+    form beside it (section 6.4, item 1)."""
+    need = FLOOR_SHARE * (acc - untouched)
+    return dict(clears=bool(whole - untouched >= need and need > 0),
+                room=whole - untouched, required_room=need,
+                clears_plain_form=bool(whole >= FLOOR_SHARE * acc))
+
+== 2. text rule against code, every count out of 60 for all three (61^3 inputs)
+   agree on 226,981 of 226,981; first disagreements []
+   random counts out of 800: agree on 200,000 of 200,000
+   inputs with own at or under untouched: 115,351; the printed inequality alone admits 69,172; the code admits 0
+
+== 3. the small case on the toy's family
+   toy family: 45 site sets, 180 comparisons
+   own equals untouched: untouched 0.24, own 0.24; required room +0.0000; printed inequality alone admits 37 of 45; code clears 0; pick -> 'no site set clears the whole-state floor'; reading at whole 0.9 -> 'no verdict'
+   own below untouched: untouched 0.25, own 0.2333; required room -0.0134; printed inequality alone admits 37 of 45; code clears 0; pick -> 'no site set clears the whole-state floor'; reading at whole 0.9 -> 'no verdict'
+   own a hair below untouched: untouched 0.2417, own 0.24; required room -0.0014; printed inequality alone admits 37 of 45; code clears 0; pick -> 'no site set clears the whole-state floor'; reading at whole 0.9 -> 'no verdict'
+   positive control: own above untouched: untouched 0.12, own 0.95; required room +0.6640; printed inequality alone admits 10 of 45; code clears 10; pick -> 'nominated'; reading at whole 0.9 -> 'valid'
+
+== 4. the competing solver's six committed nomination grids, re-judged by the frozen code
+   blind_seed0_channel_left_on: untouched 0.2417, own 0.2383, required room -0.0027; printed inequality alone admits 45 of 45; frozen code clears 0 (the run's own record: 0); pick -> 'no site set clears the whole-state floor'
+   blind_seed0_channel_removed: untouched 0.2400, own 0.2333, required room -0.0053; printed inequality alone admits 45 of 45; frozen code clears 0 (the run's own record: 0); pick -> 'no site set clears the whole-state floor'
+   blind_seed1_channel_left_on: untouched 0.2300, own 0.2100, required room -0.0160; printed inequality alone admits 45 of 45; frozen code clears 0 (the run's own record: 0); pick -> 'no site set clears the whole-state floor'
+   blind_seed1_channel_removed: untouched 0.2300, own 0.2100, required room -0.0160; printed inequality alone admits 45 of 45; frozen code clears 0 (the run's own record: 0); pick -> 'no site set clears the whole-state floor'
+   blind_seed2_channel_left_on: untouched 0.2300, own 0.2367, required room +0.0053; printed inequality alone admits 0 of 45; frozen code clears 0 (the run's own record: 0); pick -> 'no site set clears the whole-state floor'
+   blind_seed2_channel_removed: untouched 0.2300, own 0.2333, required room +0.0027; printed inequality alone admits 0 of 45; frozen code clears 0 (the run's own record: 0); pick -> 'no site set clears the whole-state floor'
+   runs where the printed inequality alone admits all 45: 4 of 6; runs where the frozen code clears any: 0

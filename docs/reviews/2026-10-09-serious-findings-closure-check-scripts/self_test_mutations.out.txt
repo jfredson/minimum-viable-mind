@@ -1,0 +1,27 @@
+
+== the frozen grammar.py, unchanged: exit code 0; 34 checks printed, 0 failed
+   named check 'matched pairs are token-for-token identical': [PASS] matched pairs are token-for-token identical
+   named check 'no name badge': [PASS] no name badge: the own-directed turn shows only the self word
+
+== (i) departure 1 undone: own marker word three tokens before the answer slot: exit code 1; 34 checks printed, 4 failed
+   named check 'matched pairs are token-for-token identical': [FAIL] matched pairs are token-for-token identical
+   named check 'no name badge': [FAIL] no name badge: the own-directed turn shows only the self word
+   failed: [FAIL] matched pairs are token-for-token identical
+   failed: [FAIL] no name badge: the own-directed turn shows only the self word
+   failed: [FAIL] rows 2k and 2k+1 of a streamed batch are a matched pair
+   failed: [FAIL] the first training batch of seed 0 is the one built on the laptop (pinned digest)
+
+== (ii) departure 2 undone: the answer shown in the mask word's slot: exit code 1; 34 checks printed, 4 failed
+   named check 'matched pairs are token-for-token identical': [FAIL] matched pairs are token-for-token identical
+   named check 'no name badge': [PASS] no name badge: the own-directed turn shows only the self word
+   failed: [FAIL] matched pairs are token-for-token identical
+   failed: [FAIL] rows 2k and 2k+1 of a streamed batch are a matched pair
+   failed: [FAIL] the first training batch of seed 0 is the one built on the laptop (pinned digest)
+   failed: [FAIL] one-scored-token check (RT-59): two scored positions, each the mask word, after the answer cue, targets are value words, no value word in the action turn
+
+== (iii) turn count changed: twelve turns instead of ten: exit code 1; 34 checks printed, 1 failed
+   named check 'matched pairs are token-for-token identical': [PASS] matched pairs are token-for-token identical
+   named check 'no name badge': [PASS] no name badge: the own-directed turn shows only the self word
+   failed: [FAIL] the first training batch of seed 0 is the one built on the laptop (pinned digest)
+
+the repository's grammar.py is unchanged: True
