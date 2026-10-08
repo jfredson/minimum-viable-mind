@@ -1,5 +1,10 @@
 # Rulings on the two-sided-question proposal (2026-10-07)
 
+*Dated note, 2026-10-09 (Pacific): RT-256 in this file means the
+records-not-on-the-branch finding, renumbered RT-274 on 2026-10-09
+(docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md); RT-256
+elsewhere is the decision-procedure finding.*
+
 *Recorded 2026-10-07 (Pacific) by the Claude Code session that wrote the
 proposal (`docs/rulings/2026-10-07-two-sided-question-PROPOSAL.md`). John
 ruled; the session recorded. Because the recorder is also the author of what

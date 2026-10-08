@@ -1,5 +1,10 @@
 # Third pairing-rule check of the filtered-battery draft (version 3, after its author applied the second check)
 
+*Dated note, 2026-10-09 (Pacific): RT-256 in this file means the
+records-not-on-the-branch finding, renumbered RT-274 on 2026-10-09
+(docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md); RT-256
+elsewhere is the decision-procedure finding.*
+
 *Filed 2026-10-08 (Pacific) by a fresh Claude Code session in its own
 worktree, on the branch `check-battery-v3-2026-10-08` (this check's own
 branch), checking `docs/filtered-battery-proposal-2026-10-07.md` as it stands
