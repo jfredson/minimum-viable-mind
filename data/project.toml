@@ -17,7 +17,7 @@ short = "MVM"
 updated_on = "2026-10-08"
 question = "Two sides, ruled 2026-10-07 (spec text pending Gate A): what is the smallest system whose presence in interaction cannot be produced by a cheaper route (lookup, imitation of a corpus about minds, routing of who is speaking), and at what point do observers' detections of presence begin to track that structure rather than fluency? The earlier question, whether the smallest self-centred act of integration (the floor) is present in a system, stays in the spec as the founding wager and stops being a measurement target."
 one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
-where_we_are = "On 2026-10-07 the project was refounded, and on 2026-10-08 the refounding reached the main line and the site was brought up to date with it. What changed: a brief asking whether the project was measuring the right thing was checked against the record and put, by API and in two rounds, to Gemini 3.1 Pro, GPT and Claude Opus 5.5, every reply saved word for word. All three agreed that experiment 1's router control could not tell bookkeeping from a centre (a check the same day reached the same conclusion from the registration text: both accounts predict damage on every battery, and the control fired by a margin inside the noise), that the project's reframe added nothing beyond the identity bet, and that no second release of the degree experiment should be funded now. John then named what he perceives from: what it is like to be among minds that are present or shallow on the book's axes. That perception is of the axes, not of the floor. He ruled all eight decisions of the refounding proposal, two of them revised the same evening after the Gate C pass: the two-sided question is the measurement target; experiment A is relabelled as unable to discriminate; experiment C keeps both releases, the second conditional on the first; experiment D is promoted to the pipeline and reference profile of a filtered battery; the two kill dates stand and no new calendar dates are set; the table and battery are the next paper work; the human study is deferred; the book changes go upstream. Pull request 123 carried all of it to the main line at his word. Two drafts wait on checks: version 5 of the registration text, with twelve open items (the largest: the bar for 'the repaired route holds' is unruled and, as coded, fails the toy's own built models), and version 3 of the battery draft. About $229.62 of the $450 ceiling is spent; nothing has been rented since the four development runs of 2026-10-04."
+where_we_are = "On 2026-10-07 the project was refounded on a two-sided question, and on 2026-10-08 the refounding reached the main line, the site went live and now publishes itself on every merge, and every question the registration text had left open was answered. The refounding: three outside models, polled by API and checked against the record, agreed that experiment 1's router control could not tell bookkeeping from a centre and that no second release of the degree experiment should be funded now; John named what he perceives from, what it is like to be among minds present or shallow on the book's axes, and ruled the eight decisions that follow from it (experiment A relabelled as unable to discriminate, experiment C kept with its second release conditional on the first, experiment D promoted to a filtered battery, the kill dates kept, no new calendar dates). On 2026-10-08 he ruled the bar for 'the repaired route holds' at 0.9 and 0.5, which the toy's own built models miss, so the likeliest ending of experiment C is an early stop at about $1.14; adopted a one-page restatement of the December result that counts such a stop as a registered ending; and, at the end of the day, answered the eleven remaining open items of version 5 of the registration text as recommended, with the eighth outcome renamed 'instrument returned no reading on the separable mechanism' and a confirming record of his 2026-10-06 decisions on the flat built models and the spending alarm. Version 5 was checked and its fixes re-checked, and all fifteen branches it cites are on the main line. What stands before the registration commit is work, not decisions: the code changes and the re-run those answers ask for, a test with a differently coded decoy, the red-team ledger's rows, the closure check of the fatal flaw's repair, and a check of each. About $229.62 of the $450 ceiling is spent; nothing has been rented since 2026-10-04."
 where_we_are_going = "Two things run side by side to the end of the year. The first is the degree experiment (experiment C), which the December-result roadmap still binds: the registration committed by 2026-10-18 with the $1.14 repair written in, the repaired built models verified (a failure stops C there), one free-arm run at full size (a gate or floor miss stops C there), and the second release of about $150 to $172 asked for only on those figures, a pass being necessary and not sufficient. The project's own stated prior is that the free model most likely returns no verdict or fails its gate, so the likeliest ending for C is an early stop written up as instrument research, which is a registered outcome and not a schedule failure. The second is the new question, in task order with no step on a date: the two-sided-question text and the table of felt features through Gate A; the battery's first two entries on experiment D's pipeline by API, about $20 together, as reference readings of what the cheaper routes produce; then the construction line, small systems whose positions on the axes are set from outside, which needs a state-carrying mechanism neither toy pipeline has, and is where every test that can discriminate lives; last, and designed before it is run, the human study that calibrates the detector. By 2026-12-21, realistically: C run to a registered outcome, the new question in the spec, the table and the first two battery entries registered and run, the relabelling of experiment A in the paper draft, and the packet of three changes sent to the book. Not this year: a degree reading of a free model, a discriminating depth reading, or an observer-side measurement. Loss conditions are written for every new line. Claims are whatever the registered results support: a position on the axes, the route named, the degree measured, never a verdict. Never a conscious machine."
 hibernation_by = "2027-01-04"
 wrap_up_start = "2026-12-21"
@@ -1003,12 +1003,32 @@ status = "done"
 [[next_steps]]
 id = "N41"
 title = "Write version 5, the registration text, with every ruled change; check it; commit the registration"
-when = "version 5 drafted 2026-10-07, checked 2026-10-08, its five must-fix items applied and re-checked the same day; the commit waits on the merges of section 16 and John's open items; outer limit 2026-10-18"
+when = "version 5 drafted 2026-10-07, checked 2026-10-08, its five must-fix items applied and re-checked the same day; its fifteen cited branches merged and every open item ruled the same evening; the commit waits on the work those rulings ask for (N43) and the closure check (N39); outer limit 2026-10-18"
 owner = "a session writes the text; a different session checks it"
 cost = "$0"
 decision = true
 teaches = "Whether the registration can be committed with every finding closed or carried by name."
 status = "in-progress"
+
+[[next_steps]]
+id = "N42"
+title = "John answers the eleven remaining open items of version 5 of the registration text"
+when = "ruled 2026-10-08 in John's words 'Agreed on all.', and '1' for the wording of the confirmation (docs/rulings/2026-10-08-v5-open-items-rulings.md; docs/rulings/2026-10-08-flat-models-ruling-confirmed.md; authorship mixed)"
+owner = "version 5 recommended each; a session put them to John as one packet; John ruled"
+cost = "$0"
+decision = true
+teaches = "Every item went as recommended. The eighth outcome is renamed 'instrument returned no reading on the separable mechanism', because 'validated' is the word the refounding retired. The scope phrases stay with the renamed outcomes. The training recipe is confirmed. A failure of the hand-set model's rerun also stops experiment C. The fitting step's limit goes to 10,000. A test with a differently coded decoy runs before the commit. Two of three reporting changes are approved (the code for them is owed, N43). The derived launcher is confirmed, and the red-team ledger's missing rows get written. A dated file confirms the 2026-10-06 decisions on the flat built models and the spending alarm, which had none."
+status = "done"
+
+[[next_steps]]
+id = "N43"
+title = "The work those answers ask for before the registration commit: the code changes, the re-run under the new fitting limit, the differently coded decoy test, the red-team ledger's rows, each checked; then the registered code named"
+when = "before the registration commit; outer limit 2026-10-18"
+owner = "Claude Code sessions do each piece; a session that did not do it checks it"
+cost = "$0, laptop"
+decision = false
+teaches = "Whether the registered code prints the registered outcome words and fits each read to its optimum, whether the measure can be partly fooled by an unused representation coded differently from the one the model uses (the sharpest cheap test of what a high reading on the entangled model would mean), and that every finding the registration cites has its row."
+status = "pending"
 
 # ---------------------------------------------------------------------------
 # Spend. Registered caps are protocol, not budget: exceeding one is a violation.
@@ -1038,6 +1058,12 @@ note = "Updated 2026-10-03: plus about $0.55 for the two attempts at the small r
 # The story so far: one row per STATUS.md entry, newest first. kind:
 # result | null | ruling | process | spend | build
 # ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-10-08"
+kind = "ruling"
+title = "Every open item of the registration text is answered"
+summary = "At the end of the day John answered the eleven questions version 5 of the registration text had left open, all as recommended ('Agreed on all.'), with one change of words: the eighth outcome becomes 'instrument returned no reading on the separable mechanism'. A dated file now confirms his 2026-10-06 decisions on the flat built models and the spending alarm, which had none. Nothing is left for him to decide before the registration commit; what stands before it is checked work: code changes, a re-run under a higher fitting limit, a test with a differently coded decoy, the red-team ledger's rows, and the closure check of the fatal flaw's repair."
 
 [[timeline]]
 date = "2026-10-08"
