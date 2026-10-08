@@ -883,12 +883,12 @@ status = "pending"
 [[next_steps]]
 id = "N30"
 title = "John rules the bar for 'the repaired route holds', the decision the registration turns on"
-when = "before the fifteen branches merge and before the three reruns; it is open item 1 of version 5"
-owner = "John rules; the checking session records"
+when = "ruled 2026-10-08 in John's words, 'Rule the verification bar now, keep it at 0.5' (docs/rulings/2026-10-08-verification-bar-ruling.md, authorship mixed)"
+owner = "John ruled; a session that wrote neither version 5 nor the findings recorded it"
 cost = "$0"
-decision = true
-teaches = "The stop condition John ruled on 2026-10-07 turns on a number nobody has ruled. As coded, the in-use check's second part (at least half the right answers lost when the built-in answer is swapped) fails every toy seed of the two built models, so with that bar the reruns would most likely fail and experiment C would stop at about $1.14. The drafting session recommends keeping the bar and letting the stop condition do what it was ruled for; the alternative is to redesign the built models so the built route is the only route."
-status = "pending"
+decision = false
+teaches = "The bar stays as the method note stated it before any figure was seen: the built-in answer's weight on the true agent at least 0.9, and at least half the right answers lost when that answer is swapped, on every built route. The record predicts the two built models will miss it (route use about a quarter and a tenth on the toy), in which case the stop condition fires, experiment C ends at about $1.14, and the finding is that the built arms as designed are not references. Redesigning them so the built route is the only route stays the named way to a real reference, with its own ruling."
+status = "done"
 
 [[next_steps]]
 id = "N31"
