@@ -1,0 +1,25 @@
+  [10M T train] TRAINING COMPLETE
+  [10M T measure] [T/0] done in 3196s: arithmetic 0.0, controls 7/4 hold True/True -> /Users/john/Code/mvm-train-exclusion-check/experiments/08-successor-degree/out-check-training-exclusion/t6/10M/measure/row_T_seed0.json
+  [10M C train] TRAINING COMPLETE
+  [10M C measure] [C/0] done in 884s: no site set -> /Users/john/Code/mvm-train-exclusion-check/experiments/08-successor-degree/out-check-training-exclusion/t6/10M/measure/row_C_seed0.json
+  [10M M train] TRAINING COMPLETE
+  [10M M measure] [M/0] done in 1737s: arithmetic 0.0, controls 7/4 hold True/True -> /Users/john/Code/mvm-train-exclusion-check/experiments/08-successor-degree/out-check-training-exclusion/t6/10M/measure/row_M_seed0.json
+  [10M F train] TRAINING COMPLETE
+  [10M F measure] [F/0] done in 1871s: no site set -> /Users/john/Code/mvm-train-exclusion-check/experiments/08-successor-degree/out-check-training-exclusion/t6/10M/measure/row_F_seed0.json
+  [10M summary] as reported: substrate not a testbed: arm T failed its gate on learning; arm C failed its gate on learning (own-directed condition, on seed 0); arm F failed its gate on learning (own-directed condition, on seed 0; named-other condition, on seed 0)
+  [10M summary] note: arm M failed its gate on learning; it is dropped and carried as an extension (section 3)
+  [10M summary] note: arm F failed its gate on learning and no record shows it passed at step 5a
+  [10M summary] 
+  [30M T train] TRAINING COMPLETE
+  [30M T measure] [T/0] done in 3392s: arithmetic 0.0, controls 7/4 hold True/True -> /Users/john/Code/mvm-train-exclusion-check/experiments/08-successor-degree/out-check-training-exclusion/t6/30M/measure/row_T_seed0.json
+  [30M C train] TRAINING COMPLETE
+  [30M C measure] [C/0] done in 1733s: arithmetic None, controls 7/4 hold True/True -> /Users/john/Code/mvm-train-exclusion-check/experiments/08-successor-degree/out-check-training-exclusion/t6/30M/measure/row_C_seed0.json
+  [30M M train] TRAINING COMPLETE
+  [30M M measure] [M/0] done in 1512s: arithmetic None, controls 7/4 hold True/True -> /Users/john/Code/mvm-train-exclusion-check/experiments/08-successor-degree/out-check-training-exclusion/t6/30M/measure/row_M_seed0.json
+  [30M F train] TRAINING COMPLETE
+  [30M F measure] [F/0] done in 1329s: no site set -> /Users/john/Code/mvm-train-exclusion-check/experiments/08-successor-degree/out-check-training-exclusion/t6/30M/measure/row_F_seed0.json
+  [30M summary] as reported: substrate not a testbed: arm T failed its gate on learning; arm C failed its gate on learning (own-directed condition, on seed 0); arm F failed its gate on learning (own-directed condition, on seed 0; named-other condition, on seed 0)
+  [30M summary] note: arm M failed its gate on learning; it is dropped and carried as an extension (section 3)
+  [30M summary] note: arm F failed its gate on learning and no record shows it passed at step 5a
+  [30M summary] 
+T6 ran to the end at: 10M 30M
