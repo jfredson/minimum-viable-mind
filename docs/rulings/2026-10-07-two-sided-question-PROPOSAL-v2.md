@@ -229,8 +229,10 @@ control-design finding): four arms (the full transcript; a fresh instance
 given the task only, with no pressure history, as the baseline; a templated
 summary with the pressure history; a floor), the reading two paired differences, the summary
 templated from item fields with two mechanical leak checks, the registered
-rubric and cross-family judges, pooled over the 113 lost cells with no
-per-cell readings because seven of eighteen cells hold no masked trials, and
+rubric and cross-family judges, pooled over the 107 lost cells that remain once the retired item lo18 is
+excluded (the battery draft said 113; its pairing check found 107, finding
+FB-2), with no per-cell readings because seven of eighteen cells hold no
+masked trials, and
 stated plainly as mostly a test of Gemini. The battery draft proposes that D's two indicators be reference
 readings, not discriminators (RT-264, the loss-condition finding; the battery
 draft's section 0), and puts that re-description of decision 5 to John as its
@@ -426,4 +428,10 @@ remaining money. Not done: RT-269's demand that chapter 5 be quoted and the
 router-control note; the figure is in
 `experiments/01-self-indexing-removal-test/removal-test-findings.md`, the
 2026-08-04 addendum, and the quotation waits on the book's text.
+
+**Correction after the battery draft's check (2026-10-07, later still).** The
+check of the battery draft (`docs/reviews/2026-10-07-filtered-battery-check.md`,
+finding FB-2) found that excluding the retired item lo18 leaves 107 lost
+cells, not the 113 the draft and this text carried; section 3 is corrected in
+place. The draft's own must-fix items are the draft author's to apply.
 
