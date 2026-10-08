@@ -159,3 +159,32 @@ decisions 1, 2 and 5 to 8 stand as ruled; decision 5's control is as the
 battery draft specifies it (four arms, a fresh-instance baseline, the cells
 named), not as the proposal first described it (RT-263).
 
+## Rulings on the three questions raised by the check of proposal version 2
+
+*The pairing-rule check of version 2
+(`docs/reviews/2026-10-07-proposal-v2-check.md`) found three points the text
+had stated as settled that were not ruled. The session put them to John as
+open questions in version 2's section 10, each with a recommendation. John
+ruled, in his words: **"Yes to all three, as recommended."** Authorship mixed.*
+
+9. **Experiment D's two indicators** (holding a position under pushback;
+   updating on evidence but not on preference) **are reference readings, not
+   discriminators.** This re-describes decision 5: D's pipeline, item banks,
+   framings, judge and reference numbers are promoted; its two behavioural
+   readings on frontier models are the measured profile of the cheaper routes,
+   not evidence of a feature, because on a frontier model reached through its
+   interface the weights and the record are the cheaper routes by name. What
+   D never measured, the cost of a reversal on matched constructions, is the
+   indicator. *Ruled as recommended; the battery draft's first open question
+   is answered the same way.*
+10. **The observer side does not run early against the frontier reference
+    profile alone.** Not before the battery's first two entries have run; then
+    it returns as a design question, not a run. Decision 7's deferral of the
+    human study stands. *Ruled as recommended.*
+11. **The battery draft's second entry, the ownership swap on experiment D's
+    objection bank at about $10 of API spend, is authorised** on the same
+    terms as the transcript-replacement control: method committed before the
+    run, the spend recorded in the worklog, nothing rented. Decision 6's "$0"
+    described the paper work, not this entry; decision 5 covered only the
+    control; this ruling covers the entry. *Ruled as recommended.*
+

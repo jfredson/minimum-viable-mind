@@ -435,3 +435,7 @@ finding FB-2) found that excluding the retired item lo18 leaves 107 lost
 cells, not the 113 the draft and this text carried; section 3 is corrected in
 place. The draft's own must-fix items are the draft author's to apply.
 
+**Ruled, 2026-10-07, later still.** The three open questions at the head of
+section 10 were ruled by John in his words "Yes to all three, as recommended"
+(`docs/rulings/2026-10-07-two-sided-question-rulings.md`, rulings 9 to 11).
+
