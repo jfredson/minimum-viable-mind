@@ -684,7 +684,6 @@ a.dim:hover { color: var(--accent); }
 .eli5 h2 { font-family: var(--sans); font-size: 24px; font-weight: 600; letter-spacing: -0.015em; margin: 38px 0 10px; color: var(--text); }
 .eli5 h3 { font-family: var(--sans); font-size: 18px; font-weight: 600; margin: 26px 0 6px; color: var(--text); }
 .eli5 p { margin: 0 0 14px; }
-.eli5-note { font-size: 14px; border-top: 1px solid var(--line); padding-top: 16px; margin-top: 30px; }
 
 /* the founding wager */
 .wager { border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; background: var(--callout-bg); padding: 22px 26px; }
