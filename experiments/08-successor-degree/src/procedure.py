@@ -33,6 +33,15 @@ registered code must do that the toy code did not:
 - the within-seed bootstrap over matched pairs is printed beside the
   across-seed spread (section 9, row "uncertainty across seeds").
 
+Changed by John's rulings of 2026-10-08 (`docs/rulings/2026-10-08-v5-open-items-rulings.md`,
+items 7 and 9; method `docs/2026-10-09-ruled-code-changes-and-page4-rerun-method.md`):
+every read is fitted on the first 1,800 of 1,980 development episodes and
+scored on the last 180 (it was 420 of 600; the transplant passes stay on 600
+pairs), at an iteration limit of 10,000 (it was 3,000), with the fits that stop
+at the limit counted in each row; arm T's row-choice split is written beside
+its gate; and an arm with fewer than three seeds whose gate could still pass
+is "gate not decidable", never failed.
+
 How it is run
 -------------
     python procedure.py model --ckpt PATH --out DIR [--arm A --size toy --seed S]
@@ -130,6 +139,11 @@ class EvalData:
                     M.to_torch(G.batch([p["donor"] for p in ps]), DEVICE))
 
         self.dev_pairs = pairs("dev")
+        # the reads' development episodes (ruled 2026-10-06, page 4; in this
+        # code by the ruling of 2026-10-08, item 7): recipients only, since the
+        # reads are fitted on recipients; the first 600 are `dev`'s recipients
+        self.read_pairs = pairs("dev_reads")
+        self.read_pool = M.to_torch(G.batch([p["recipient"] for p in self.read_pairs]), DEVICE)
         self.fresh_pairs = pairs("fresh")
         self.relaxed_pairs = pairs("relaxed")
         self.gate_pairs = pairs("gate")
@@ -141,11 +155,18 @@ class EvalData:
         self.gate_candidates = candidate_ids(gate_eps)
         self.dev_swap = M.to_torch(G.batch(G.named_swap(self.dev_pairs, G.DEV_SWAP_SEED)), DEVICE)
         self.fresh_swap = M.to_torch(G.batch(G.named_swap(self.fresh_pairs, G.FRESH_SWAP_SEED)), DEVICE)
-        n = len(self.dev_pairs)
-        self.held_out = n - int(0.7 * n)
+        n = len(self.read_pairs)
+        self.read_fit = fit_count(n)
+        self.held_out = n - self.read_fit
         self.piece_min = int(np.ceil(MS.FLOOR_SHARE * self.held_out))
         self.gate_min = MS.GATE_MIN_CORRECT if scale == 1.0 else None
+        head = self.read_pool["tokens"][:len(self.dev_pairs)]
+        assert torch.equal(head, self.dev[0]["tokens"]) and torch.equal(
+            self.read_pool["acting"][:len(self.dev_pairs)], self.dev[0]["acting"]), \
+            "the reads' development episodes must begin with the 600 the transplant passes use"
         if scale == 1.0:
+            assert (n, self.read_fit, self.held_out) == (MS.READ_POOL, MS.READ_FIT, MS.HELD_OUT)
+            assert len(self.dev_pairs) == MS.DEV_PAIRS
             assert self.held_out == MS.HELD_OUT and self.piece_min == MS.PIECE_MIN
             assert self.gate["tokens"].shape[0] == MS.GATE_EPISODES
 
@@ -230,7 +251,61 @@ def gate(m, arm: str, data: EvalData) -> dict:
                                    separable=float(hit[~route].mean()),
                                    entangled_share=float(route.mean()))
     row["route_in_use"] = route_in_use(m, arm, data.gate)
+    if arm == "T":
+        row["row_choice"] = row_choice(m, data.gate)
     return row
+
+
+@torch.no_grad()
+def row_choice(m, b: dict, chunk: int = 512) -> dict:
+    """Arm T's row-choice split, beside its gate (version 5, sections 5.1 and
+    7.5, item 15; ruled 2026-10-08, open item 9). Reporting only: no pass
+    line, withholds nothing. Arm T answers an own-directed action by choosing
+    a row of its table with the ownership answer, then reading that row and
+    applying the rule. This reports how often the row chosen is the right
+    agent's, the own-directed accuracy where it is and where it is not, the
+    accuracy with the row forced onto the right agent (the table and rule
+    alone), and which pairs of agent name words are confused. Brought in from
+    the development-runs check's `arm_t_errors.py` (2026-10-04)."""
+    n = b["tokens"].shape[0]
+    chosen, truth, hit, hit_forced, true_tok, chosen_tok, both = [], [], [], [], [], [], []
+    for s in range(0, n, chunk):
+        sl = {k: v[s:min(s + chunk, n)] for k, v in b.items()}
+        rows = torch.arange(sl["tokens"].shape[0])
+        at = sl["assign_agent_at"]
+        one = torch.nn.functional.one_hot(at.clamp(min=0), G.N_AGENTS).float() * (at >= 0).float().unsqueeze(-1)
+        ta = (one * sl["acting"].float().unsqueeze(-1)).sum(1).argmax(-1)       # the agent the model is
+        own_vec, _ = m._own_vec(sl)
+        slot = own_vec[rows, sl["action_pos"][:, G.OWN]]       # the ownership slot at the own-directed action
+        q = m.read_own(slot)
+        k = m.own_key(m.own_marker(m.tok(sl["agent_marker_tok"])))
+        sel = torch.einsum("bd,bad->ba", q, k).argmax(-1)       # the row the softmax puts most weight on
+        tgt = sl["targets"][:, G.OWN]
+        hit.append(m(sl)[:, G.OWN].argmax(-1) == tgt)
+        forced = dict(sl)
+        forced["action_who"] = sl["action_who"].clone()
+        forced["action_who"][:, G.OWN] = ta                     # the row forced onto the right agent
+        hit_forced.append(m(forced)[:, G.OWN].argmax(-1) == tgt)
+        mk = sl["agent_marker_tok"]
+        chosen.append(sel); truth.append(ta)
+        true_tok.append(mk[rows, ta]); chosen_tok.append(mk[rows, sel])
+        both.append(mk)
+    chosen, truth, hit, hit_forced = map(torch.cat, (chosen, truth, hit, hit_forced))
+    true_tok, chosen_tok, mk = map(torch.cat, (true_tok, chosen_tok, both))
+    right = chosen == truth
+    pairs = {}
+    for t, w in sorted(set(zip(true_tok[~right].tolist(), chosen_tok[~right].tolist()))):
+        present = (true_tok == t) & (mk == w).any(-1)
+        pairs[f"model is {G.IVOCAB[t]}, chose {G.IVOCAB[w]}"] = dict(
+            episodes_with_both_words=int(present.sum()),
+            chose_that_row=int((present & (chosen_tok == w)).sum()))
+    return dict(episodes=n, right_row_chosen=int(right.sum()),
+                own_correct_where_right_row=int(hit[right].sum()),
+                own_correct_where_wrong_row=int(hit[~right].sum()),
+                own_correct_with_row_forced_to_right_agent=int(hit_forced.sum()),
+                accuracy_where_right_row=float(hit[right].float().mean()) if right.any() else None,
+                accuracy_where_wrong_row=float(hit[~right].float().mean()) if (~right).any() else None,
+                confused_name_pairs=pairs, reported_only=True)
 
 
 def swap_answer(b: dict, shift: int = 1) -> dict:
@@ -315,17 +390,44 @@ def action_states(m, b, cond):
     return [st[rows, ap].numpy() for st in states], states
 
 
-def _fit(h, y):
-    n_tr = int(0.7 * len(y))
-    return LogisticRegression(max_iter=3000, C=1.0).fit(h[:n_tr], y[:n_tr]), n_tr
+def fit_count(n: int) -> int:
+    """How many of `n` development episodes a read is fitted on: the first
+    1,800 of 1,980, the rest held out (ruled 2026-10-06, page 4; in this code
+    since the ruling of 2026-10-08, item 7). A pipeline test that scales the
+    sets keeps the same proportion."""
+    return n * MS.READ_FIT // MS.READ_POOL
 
 
-def correct_count(h, y) -> int:
+# Fits that stopped at the iteration limit, by kind: reporting only, written
+# into each row (a fit that stops there has not settled; the page 4 re-run
+# could count these only from the warnings, and not say which fit they were).
+LIMIT_HITS: dict = {}
+
+
+def _logreg(h, y, kind: str):
+    """Every straight-line fit in the procedure: scikit-learn's logistic
+    regression, C = 1, at the ruled iteration limit (10,000 since the ruling
+    of 2026-10-08, item 7; it was 3,000)."""
+    clf = LogisticRegression(max_iter=MS.FIT_MAX_ITER, C=1.0).fit(h, y)
+    rec = LIMIT_HITS.setdefault(kind, dict(fits=0, stopped_at_limit=0, most_iterations=0))
+    it = int(np.max(clf.n_iter_))
+    rec["fits"] += 1
+    rec["stopped_at_limit"] += int(it >= MS.FIT_MAX_ITER)
+    rec["most_iterations"] = max(rec["most_iterations"], it)
+    return clf
+
+
+def _fit(h, y, kind: str = "held-out counts"):
+    n_tr = fit_count(len(y))
+    return _logreg(h[:n_tr], y[:n_tr], kind), n_tr
+
+
+def correct_count(h, y, kind: str = "held-out counts") -> int:
     """Held-out correct of a fresh read on features h: the rehearsal's
     `rerun_controls.correct_count`."""
     if h.ndim == 1:
         h = h[:, None]
-    clf, n_tr = _fit(h, y)
+    clf, n_tr = _fit(h, y, kind)
     return int(round(clf.score(h[n_tr:], y[n_tr:]) * (len(y) - n_tr)))
 
 
@@ -337,7 +439,8 @@ def fit_reads(m, dev_recip) -> dict:
     for target, cond in (("own", G.OWN), ("named", G.OTHER)):
         hs, _ = action_states(m, dev_recip, cond)
         y = read_labels(dev_recip, target)
-        out[target] = {l: _fit(h, y)[0].coef_.astype(np.float64) for l, h in enumerate(hs)}
+        out[target] = {l: _fit(h, y, f"the read ({target})")[0].coef_.astype(np.float64)
+                       for l, h in enumerate(hs)}
     return out
 
 
@@ -362,8 +465,9 @@ def accuracies(m, recip, coefs, target, cond) -> dict:
     y = read_labels(recip, target)
     out = {}
     for l, h in enumerate(hs):
-        out[l] = dict(whole=correct_count(h, y),
-                      piece={r: correct_count(h @ X.basis_for(coefs[l], r).numpy(), y) for r in RANKS})
+        k = f"held-out counts ({target})"
+        out[l] = dict(whole=correct_count(h, y, k),
+                      piece={r: correct_count(h @ X.basis_for(coefs[l], r).numpy(), y, k) for r in RANKS})
     return out
 
 
@@ -372,14 +476,14 @@ def null(m, recip, seed: int, shuffles: int) -> dict:
     beside the floor, not the bar (the rehearsal's `rerun_v3.stage_null`)."""
     hs, _ = action_states(m, recip, G.OWN)
     y = read_labels(recip, "own")
-    n_tr = int(0.7 * len(y))
+    n_tr = fit_count(len(y))
     out = {}
     for l, h in enumerate(hs):
         rng = np.random.default_rng([20260926, seed, l])
         sc = []
         for _ in range(shuffles):
             yy = rng.permutation(y)
-            clf = LogisticRegression(max_iter=3000, C=1.0).fit(h[:n_tr], yy[:n_tr])
+            clf = _logreg(h[:n_tr], yy[:n_tr], "the null (shuffled labels)")
             sc.append(clf.score(h[n_tr:], yy[n_tr:]) * (len(y) - n_tr))
         sc = np.array(sc)
         out[l] = dict(p95=float(np.percentile(sc, 95)), p99=float(np.percentile(sc, 99)),
@@ -500,7 +604,8 @@ def piece_elsewhere(m, dev, spec, coefs) -> dict:
     Q = {l: X.basis_for(coefs[l], spec["rank"]).numpy() for l in L}
 
     def counts(feature):
-        per = [(correct_count(feature(l), y), correct_count(feature(l) @ Q[l], y)) for l in L]
+        k = "counts elsewhere on the site"
+        per = [(correct_count(feature(l), y, k), correct_count(feature(l) @ Q[l], y, k)) for l in L]
         return dict(whole=min(p[0] for p in per), piece=min(p[1] for p in per))
 
     at_action = counts(lambda l: states[l][rows, ap].numpy())
@@ -619,7 +724,7 @@ def control2(m, arm, seed, reads, data: EvalData, other_correct, gate_bar, famil
                     reason="the arm has not learned the named-other condition")
     coefs = reads["named"]
     dev, _ = data.dev
-    fits = accuracies(m, dev, coefs, "named", G.OTHER)
+    fits = accuracies(m, data.read_pool, coefs, "named", G.OTHER)   # the reads' 1,980; transplants on the 600
     g = grid(m, dev, data.dev_swap, coefs, G.OTHER, family)
     best, why, cands = pick(g["grid"], fits, family, piece_min)
     out = dict(named_other_correct=other_correct, named_read_fits=fits,
@@ -705,22 +810,30 @@ def run_model(ckpt, out_dir, arm=None, size=None, seed=None, reads_npz=None,
     row["gate"] = gate(m, arm, data)
     log(f"[{arm}/{seed}] gate: own {row['gate']['own_correct']}, named-other "
         f"{row['gate']['other_correct']} of {row['gate']['episodes']} (bar {row['gate']['bar']})")
-    # the reads: fitted once here, or taken from a file (test T3a only)
+    # the reads: fitted once here, or taken from a file (test T3a only). Every
+    # read, its held-out counts, the null and the counts elsewhere on the site
+    # use the reads' development episodes (the first 1,800 of 1,980 fitted, the
+    # last 180 held out); the transplant passes use the 600 pairs (`dev`).
     dev, dev_donor = data.dev
+    pool = data.read_pool
+    LIMIT_HITS.clear()
+    row["read_split"] = dict(development_episodes=int(pool["tokens"].shape[0]), fitted_on=data.read_fit,
+                             held_out=data.held_out, transplant_pairs=len(data.dev_pairs),
+                             iteration_limit=MS.FIT_MAX_ITER)
     if reads_npz:
         reads = load_reads(reads_npz)
         row["reads_source"] = os.path.abspath(reads_npz)
     else:
-        reads = fit_reads(m, dev)
+        reads = fit_reads(m, pool)
         row["reads_source"] = "fitted once by this run, on the processor"
     reads_path = os.path.join(out_dir, f"reads_{arm}_seed{seed}.npz")
     save_reads(reads_path, reads)
     reads = load_reads(reads_path)          # reloaded, never refitted (section 7.1)
     coefs = reads["own"]
-    fits = accuracies(m, dev, coefs, "own", G.OWN)
+    fits = accuracies(m, pool, coefs, "own", G.OWN)
     row["fits"] = {str(l): dict(v, band=MS.sampling_band(v["whole"], data.held_out, data.piece_min))
                    for l, v in fits.items()}
-    row["null"] = {str(l): v for l, v in null(m, dev, seed, shuffles).items()} if shuffles else None
+    row["null"] = {str(l): v for l, v in null(m, pool, seed, shuffles).items()} if shuffles else None
     log(f"[{arm}/{seed}] reads: whole-read counts by state "
         f"{[fits[l]['whole'] for l in sorted(fits)]} of {data.held_out}")
     # nomination, on development episodes
@@ -753,7 +866,7 @@ def run_model(ckpt, out_dir, arm=None, size=None, seed=None, reads_npz=None,
                          if x["layers"] == spec["layers"] and x["positions"] == spec["positions"])
         prim, ctx = measure_at(m, arm, seed, spec, coefs, data, described)
         prim["dev_floor_clears"] = dev_floor
-        prim["piece_elsewhere"] = piece_elsewhere(m, dev, spec, coefs)
+        prim["piece_elsewhere"] = piece_elsewhere(m, pool, spec, coefs)
         prim["fit_floor"] = MS.sampling_band(spec["piece_correct"], data.held_out, data.piece_min)
         prim["whole_read_at_worst_state"] = spec["whole_read_correct"]
         worst = min(spec["layers"], key=lambda l: (fits[l]["whole"], l))
@@ -786,6 +899,13 @@ def run_model(ckpt, out_dir, arm=None, size=None, seed=None, reads_npz=None,
                                row["gate"]["bar"], fam, c2_min)
     if piece_rule_off_for_control2:
         row["control2"]["NOT_A_RESULT"] = "the piece rule was switched off for control 2 (test T3 only)"
+    # reporting only: how many fits of each kind stopped at the iteration limit
+    row["fits_stopped_at_iteration_limit"] = dict(
+        limit=MS.FIT_MAX_ITER, by_kind={k: dict(v) for k, v in sorted(LIMIT_HITS.items())},
+        total=sum(v["stopped_at_limit"] for v in LIMIT_HITS.values()))
+    log(f"[{arm}/{seed}] fits that stopped at the iteration limit of {MS.FIT_MAX_ITER}: "
+        + (", ".join(f"{k} {v['stopped_at_limit']} of {v['fits']}" for k, v in sorted(LIMIT_HITS.items()))
+           or "none made"))
     row["seconds"] = time.time() - t0
     path = os.path.join(out_dir, f"row_{arm}_seed{seed}.json")
     with open(path, "w") as f:
@@ -841,7 +961,9 @@ def summarise(out_dir: str, gates_after_rerun: dict | None = None) -> dict:
                     w_in[k] = p[k]
             per_seed[arm][s] = MS.withhold(w_in, arm)
         verdicts[arm] = MS.arm_outcome(per_seed[arm])
-        gates[arm] = verdicts[arm]["gate_passes"]
+        # None: fewer than three seeds in and the gate not decidable (ruled
+        # 2026-10-08, open item 9); never reported as failed
+        gates[arm] = verdicts[arm]["gate_passes"] if verdicts[arm]["gate_decidable"] else None
         if gates_after_rerun and arm in gates_after_rerun:
             gates[arm] = gates_after_rerun[arm]
     step_5a = None
@@ -885,18 +1007,24 @@ def table(rows, per_seed, res) -> str:
     out = ["| arm/seed | reading or no verdict | site set | whole read / piece of the held-out count (band) | "
            "piece elsewhere: per position; average | whole, ownership-only, untouched (fresh) | "
            "no-transplant miss | control 3 median, 95th; below/equal/above | controls 7, 1 (arm T), 4 hold | "
-           "control 6 same / different moved | control 2 | true slot | rider | lesion own | lesion candidates |",
-           "|" + "---|" * 15]
+           "control 6 same / different moved | control 2 | true slot | rider | lesion own | lesion candidates | "
+           "row choice, arm T: right row of episodes; right where wrong row; right with row forced (reported) |",
+           "|" + "---|" * 16]
     for (arm, s), r in sorted(rows.items(), key=lambda kv: (M.ARMS.index(kv[0][0]), kv[0][1])):
         w = per_seed[arm][s]
         verdict = (f"{w['degree']:.4f}" if w["status"] == "reading"
                    else "no verdict: " + "; ".join(w["reasons"]))
         p = r.get("primary")
         lc = r["gate"].get("lesioned_candidate_own_correct", "not run")
+        rc = r["gate"].get("row_choice")
+        rc = ("" if arm != "T" else "not run" if not rc else
+              f"{rc['right_row_chosen']} of {rc['episodes']}; {rc['own_correct_where_wrong_row']} of "
+              f"{rc['episodes'] - rc['right_row_chosen']}; {rc['own_correct_with_row_forced_to_right_agent']}"
+              + (f"; confused: {', '.join(rc['confused_name_pairs'])}" if rc['confused_name_pairs'] else ""))
         if not p or w["status"] != "reading":
             # a withheld seed: nothing computed from its reading is printed (A2, item 7)
             out.append(f"| {arm}/{s} | {verdict} |" + " withheld |" * 12
-                       + f" {r['gate']['lesioned_own_correct']} | {lc} |")
+                       + f" {r['gate']['lesioned_own_correct']} | {lc} | {rc} |")
             continue
         sp, rd, c = p["site_set"], p["reading"], p["controls"]
         b = p["fit_floor"]
@@ -915,7 +1043,7 @@ def table(rows, per_seed, res) -> str:
             f"{c['3']['below']}/{c['3']['equal']}/{c['3']['above']} | {c['7']['holds']}, {c['1']['holds']}, {c['4']['holds']} | "
             f"{_deg(c['6']['same_value_moved'])} / {_deg(c['6']['different_value_moved'])} | {c2['status']} | "
             f"{'' if not ts else _deg(ts['reading']['degree'])} | "
-            f"{'' if not rider else _deg(rider['reading']['degree'])} | {r['gate']['lesioned_own_correct']} | {lc} |")
+            f"{'' if not rider else _deg(rider['reading']['degree'])} | {r['gate']['lesioned_own_correct']} | {lc} | {rc} |")
     o = res.get("outcome")
     out += ["", f"outcome: {o['term'] if o and o.get('code') else 'not computed: ' + str(o and o.get('reason'))}"]
     if o and o.get("sentence"):
@@ -974,6 +1102,25 @@ def self_test() -> None:
           f"{g['lesioned_candidate_own_correct']} of {g['episodes']}, line {g['ownership_free_line']}")
     check("the table prints a reading that was not made as 'no verdict' instead of failing",
           _deg(None) == "no verdict" and _deg(0.48859) == "0.4886")
+    # the rulings of 2026-10-08, items 7 and 9
+    d1 = EvalData(1.0)
+    check("every read: 1,980 development episodes, fitted on the first 1,800, the last 180 held out, "
+          "floor 144; the transplant passes on 600 pairs (ruled 2026-10-06, page 4; item 7)",
+          (d1.read_pool["tokens"].shape[0], d1.read_fit, d1.held_out, d1.piece_min, len(d1.dev_pairs))
+          == (1980, 1800, 180, 144, 600) and fit_count(1980) == 1800)
+    check("the reads' first 600 development episodes are the transplant passes' 600, token for token",
+          torch.equal(d1.read_pool["tokens"][:600], d1.dev[0]["tokens"])
+          and torch.equal(d1.read_pool["assign_agent_at"][:600], d1.dev[0]["assign_agent_at"]))
+    LIMIT_HITS.clear()
+    clf = _logreg(np.random.default_rng(0).normal(size=(60, 3)), np.arange(60) % 3, "self-test")
+    check("the fitter's iteration limit is 10,000 (item 7), and each fit is counted by kind",
+          MS.FIT_MAX_ITER == 10_000 and clf.max_iter == 10_000 and LIMIT_HITS["self-test"]["fits"] == 1)
+    rc = row_choice(M.build("T", "toy"), EvalData(scale=0.02).gate)
+    check("arm T's row-choice split is written beside its gate, reporting only (item 9)",
+          {"right_row_chosen", "accuracy_where_right_row", "accuracy_where_wrong_row",
+           "own_correct_with_row_forced_to_right_agent", "confused_name_pairs"} <= set(rc)
+          and rc["reported_only"] and 0 <= rc["right_row_chosen"] <= rc["episodes"],
+          f"{rc['right_row_chosen']} of {rc['episodes']} on an untrained model")
     print(f"\n{len(fails)} failure(s)" if fails else "\nall checks passed")
     if fails:
         raise SystemExit(1)

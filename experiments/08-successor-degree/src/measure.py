@@ -21,6 +21,13 @@ lists each as owed (section 17, "What this pass leaves open"):
    reading among arm C's seeds that read, minus the highest among arm T's,
    not compared seed by seed.
 
+Changed by John's rulings of 2026-10-08 (`docs/rulings/2026-10-08-v5-open-items-rulings.md`,
+items 3, 4, 7 and 9): the outcome terms are version 5's registered words
+(`docs/successor-experiment-proposal-2026-10-07-v5.md`, section 3) with their
+scope phrases; the read's fitting numbers and iteration limit are 1,800 of
+1,980 and 10,000; a gate that fewer than three seeds cannot yet decide is "gate
+not decidable on one seed" (or two), never failed.
+
 The reading is the chance-corrected form (the queue ruling of 2026-09-25,
 page 2):
 
@@ -43,8 +50,16 @@ from scipy.stats import beta as _beta, binom as _binom
 # ---------------------------------------------------------------- the numbers
 # Version 4, section 9. Nothing here is set by this file.
 FLOOR_SHARE = 0.8              # whole-state floor and fit floor: four fifths
-DEV_PAIRS, HELD_OUT = 600, 180  # the last 180 of 600 development episodes are held out
+DEV_PAIRS = 600                # the nomination's transplant passes: 600 development pairs
+# Every straight-line read is fitted on the first 1,800 of 1,980 development
+# episodes and scored on the last 180 (ruled 2026-10-06, page 4; put in the
+# frozen code by the ruling of 2026-10-08, item 7; it was 420 of 600).
+READ_POOL, READ_FIT = 1980, 1800
+HELD_OUT = READ_POOL - READ_FIT  # 180
 PIECE_MIN = 144                 # four fifths of 180
+# The fitter's iteration limit (ruled 2026-10-08, item 7: raised from 3,000,
+# at which arm M's reads on 1,800 episodes often stopped short).
+FIT_MAX_ITER = 10_000
 FRESH_PAIRS = 800
 RELAXED_PAIRS = 800
 GATE_EPISODES, GATE_MIN_CORRECT = 3000, 790
@@ -59,15 +74,28 @@ CONTROL1_ROOM = NO_TRANSPLANT_ROOM   # control 1 on arm T: the complement moves 
 
 VALID, NEGATIVE, NO_VERDICT = "valid", "negative", "no verdict"
 
+# The registered terms: version 5, section 3, the "Registered term" column
+# (renamed to what they measure by the ruling of 2026-10-07, decision 3; the
+# words adopted 2026-10-08, open item 3, with the eighth term's words chosen
+# then). The codes follow that section's table. Version 4's names, which this
+# code printed until 2026-10-08, are kept below for a reader of the earlier
+# records only and are never printed.
 OUTCOME_TERMS = {
-    "R1": "metric validated, degree read",
-    "R2": "metric does not separate",
+    "R1": "instrument discriminates specified constructed mechanisms, degree read",
+    "R2": "instrument does not discriminate the specified constructed mechanisms",
     "R3": "substrate not a testbed",
-    "fifth": "metric validated, degree not read",
-    # the three new terms of page 5 (ruled 2026-10-06)
-    "fallback_read": "metric checked against the separable model only, degree read",
-    "fallback_not_read": "metric checked against the separable model only, degree not read",
-    "not_validated": "metric not validated",
+    "fifth": "instrument discriminates specified constructed mechanisms, degree not read",
+    "sixth": "instrument checked against the separable mechanism only, degree read",
+    "seventh": "instrument checked against the separable mechanism only, degree not read",
+    "eighth": "instrument returned no reading on the separable mechanism",
+}
+# History only. Codes then: R1, R2, R3, fifth, fallback_read, fallback_not_read, not_validated.
+VERSION_4_NAMES = {
+    "R1": "metric validated, degree read", "R2": "metric does not separate",
+    "R3": "substrate not a testbed", "fifth": "metric validated, degree not read",
+    "sixth": "metric checked against the separable model only, degree read",
+    "seventh": "metric checked against the separable model only, degree not read",
+    "eighth": "metric not validated",
 }
 SCOPE_METRIC = "on these constructed systems, for this intervention procedure"
 SCOPE_DEGREE = "as a ratio of two transplants at the sites this procedure chose"
@@ -320,6 +348,14 @@ def withhold(row: dict, arm: str) -> dict:
                 negative=r["degree"] < 0, above_one=r["degree"] > 1)
 
 
+N_SEEDS = 3   # seeds per arm (version 5, section 9)
+_COUNT_WORDS = {0: "no", 1: "one", 2: "two"}
+
+
+def gate_not_decidable(n_seeds: int) -> str:
+    return f"gate not decidable on {_COUNT_WORDS.get(n_seeds, n_seeds)} seed{'' if n_seeds == 1 else 's'}"
+
+
 def arm_outcome(seed_rows: dict) -> dict:
     """Page 7: an arm passes its learning gate if two or more seeds EACH pass
     every learning condition, and reads if two or more seeds each count
@@ -337,6 +373,13 @@ def arm_outcome(seed_rows: dict) -> dict:
             if name.endswith("learning") and state != PASSED:
                 fails.setdefault(_GATE_REASON[name], []).append(sd)
     out["learning_failures"] = fails
+    # Fewer than three seeds in (ruled 2026-10-08, open item 9): a gate that
+    # has not passed but could still pass if the missing seeds passed is not
+    # decidable, and is never reported as failed.
+    missing = max(0, N_SEEDS - len(seed_rows))
+    out["gate_decidable"] = len(learned) >= 2 or len(learned) + missing < 2
+    out["gate_status"] = ("passes" if out["gate_passes"] else "fails" if out["gate_decidable"]
+                          else gate_not_decidable(len(seed_rows)))
     out["read"] = len(read) >= 2
     if out["read"] and len(read) < len(seed_rows):
         out["reported_not_deciding"] = sorted(set(seed_rows) - set(read))
@@ -358,7 +401,11 @@ def separation(arm_T: dict, arm_C: dict) -> dict:
 def arm_M_check(arm_M: dict, true_slot: dict, gate_passes: bool = True) -> dict:
     """Arm M's prediction: between 0.3 and 0.7 on every seed that reads, and
     within 0.10 of its true-slot reading on the same fresh episodes. Arm M
-    failing its gate, or returning no verdict, drops it."""
+    failing its gate, or returning no verdict, drops it. `gate_passes` is
+    None when fewer than three seeds are in and the gate is not decidable."""
+    if gate_passes is None:
+        return dict(status="not decidable",
+                    reason=f"arm M: {gate_not_decidable(arm_M.get('seeds', 0))}; not dropped, not read")
     if not gate_passes:
         return dict(status="dropped", reason="arm M failed its gate on learning; it is dropped and "
                                              "carried as an extension (section 3)")
@@ -381,21 +428,25 @@ def _reasons(arm: dict) -> str:
 
 
 def sentence(code: str, reason: str | None) -> str:
-    """The term as reported, with the scope phrases of page 11 and the
-    2026-10-06 addendum in the same sentence."""
+    """The term as reported, with the scope phrases in the same sentence
+    (version 5, section 3, the scope rule; ruled 2026-10-06, page 11 and
+    follow-up items 2 and 7; kept with the renamed terms 2026-10-08, open item
+    4): every "instrument ..." term and R2 is followed by SCOPE_METRIC, and
+    "degree read" by SCOPE_DEGREE."""
     term = OUTCOME_TERMS[code]
     if code == "R1":
-        s = f"metric validated {SCOPE_METRIC}, degree read {SCOPE_DEGREE}"
+        s = f"instrument discriminates specified constructed mechanisms {SCOPE_METRIC}, degree read {SCOPE_DEGREE}"
     elif code == "fifth":
-        s = f"metric validated {SCOPE_METRIC}, degree not read"
-    elif code == "fallback_read":
-        s = f"metric checked against the separable model only {SCOPE_METRIC}, degree read {SCOPE_DEGREE}"
-    elif code == "fallback_not_read":
-        s = f"metric checked against the separable model only {SCOPE_METRIC}, degree not read"
-    elif code == "not_validated":
-        s = f"metric not validated {SCOPE_METRIC}"
+        s = f"instrument discriminates specified constructed mechanisms {SCOPE_METRIC}, degree not read"
+    elif code == "sixth":
+        s = (f"instrument checked against the separable mechanism only {SCOPE_METRIC}, "
+             f"degree read {SCOPE_DEGREE}")
+    elif code == "seventh":
+        s = f"instrument checked against the separable mechanism only {SCOPE_METRIC}, degree not read"
+    elif code == "eighth":
+        s = f"instrument returned no reading on the separable mechanism {SCOPE_METRIC}"
     elif code == "R2":
-        s = f"metric does not separate {SCOPE_METRIC}"
+        s = f"instrument does not discriminate the specified constructed mechanisms {SCOPE_METRIC}"
     else:
         s = term
     return s + (f": {reason}" if reason else "")
@@ -438,8 +489,11 @@ def outcome(gates: dict, arms: dict, true_slot_M: dict | None = None,
     for a in ("T", "C", "F"):
         if a not in arms:
             return dict(code=None, term=None, reason=f"arm {a} has no records", notes=notes, arm_M=m)
-    failed = [a for a in ("T", "C") if not gates.get(a, False)]
-    F_failed_5b = not gates.get("F", False)
+    # a gate of None is not decidable: fewer than three seeds are in and the
+    # missing ones could still pass it (ruled 2026-10-08, open item 9)
+    undecided = [a for a in ("T", "C", "F") if a in gates and gates[a] is None]
+    failed = [a for a in ("T", "C") if a not in undecided and not gates.get(a, False)]
+    F_failed_5b = "F" not in undecided and not gates.get("F", False)
     if F_failed_5b and step_5a is None:
         failed.append("F")
         notes.append("arm F failed its gate on learning and no record shows it passed at step 5a")
@@ -450,15 +504,18 @@ def outcome(gates: dict, arms: dict, true_slot_M: dict | None = None,
                               + " and ".join(str(x) for x in v) for c, v in lf.items())
             return f"arm {a} failed its gate on learning" + (f" ({conds})" if conds else "")
         return done("R3", "; ".join(what(a) for a in failed))
+    if undecided:
+        return dict(code=None, term=None, notes=notes, arm_M=m,
+                    reason="; ".join(f"arm {a}: {gate_not_decidable(arms[a]['seeds'])}" for a in undecided))
     # rule 2: the readings decide
     if not arms["T"]["read"]:
-        return done("not_validated", _reasons(arms["T"]))
+        return done("eighth", _reasons(arms["T"]))
     F_reason = "failed its gate on learning" if F_failed_5b else _reasons(arms["F"])
     if not arms["C"]["read"]:
         notes.append("arm C returned no verdict: the two-model fallback; arm F's figure has no upper reference")
         if arms["F"]["read"] and not F_failed_5b:
-            return done("fallback_read", arm_F=arms["F"]["readings"])
-        return done("fallback_not_read", F_reason)
+            return done("sixth", arm_F=arms["F"]["readings"])
+        return done("seventh", F_reason)
     sep = separation(arms["T"], arms["C"])
     if not sep["clears"]:
         return done("R2", separation=sep)
@@ -633,8 +690,13 @@ def self_test() -> None:
     toy_g = dict(g, F=F_toy["gate_passes"])
     o = outcome(toy_g, dict(T=T, C=C, M=Mm, F=F_toy), ts, dict(seed=0, passed=True))
     check("outcome: the toy's real gate, seed 0 as step 5a -> fifth term, failed its gate on learning",
-          o["code"] == "fifth" and o["term"] == "metric validated, degree not read: failed its gate on learning"
+          o["code"] == "fifth" and o["term"] == ("instrument discriminates specified constructed mechanisms, "
+                                                 "degree not read: failed its gate on learning")
           and o["arm_M"]["prediction_met"], o["term"])
+    check("outcome: the fifth term's sentence carries the scope phrase after 'instrument discriminates'",
+          o["sentence"].startswith("instrument discriminates specified constructed mechanisms on these "
+                                   "constructed systems, for this intervention procedure, degree not read: "),
+          o["sentence"])
     check("outcome: the toy's real gate, seed 1 as step 5a -> R3",
           outcome(toy_g, dict(T=T, C=C, M=Mm, F=F_toy), ts, dict(seed=1, passed=False))["code"] == "R3")
     check("outcome: the toy's real gate, no step record -> R3",
@@ -657,15 +719,59 @@ def self_test() -> None:
           "own-directed condition, on seeds 0 and 1" in outcome(dict(g, T=False), dict(T=T_gf, C=C, M=Mm, F=F_read))["sentence"])
     C_nv = arm_outcome({s: NV("floor missed on fresh episodes") for s in range(3)})
     o2 = outcome(g, dict(T=T, C=C_nv, M=Mm, F=F_read))
-    check("outcome: arm C no verdict, arm F reads -> the fallback, degree read",
-          o2["code"] == "fallback_read" and SCOPE_METRIC in o2["sentence"])
+    check("outcome: arm C no verdict, arm F reads -> the sixth term, both scope phrases",
+          o2["code"] == "sixth" and SCOPE_METRIC in o2["sentence"] and SCOPE_DEGREE in o2["sentence"])
     F_nv = arm_outcome({s: NV("read failed its floor") for s in range(3)})
-    check("outcome: arm C no verdict, arm F no verdict -> the fallback, degree not read, with the reason",
+    check("outcome: arm C no verdict, arm F no verdict -> the seventh term, with the reason",
           outcome(g, dict(T=T, C=C_nv, M=Mm, F=F_nv))["term"]
-          == "metric checked against the separable model only, degree not read: read failed its floor")
+          == "instrument checked against the separable mechanism only, degree not read: read failed its floor")
     T_nv = arm_outcome({s: NV("control 1 failed") for s in range(3)})
-    check("outcome: arm T no verdict -> metric not validated (not R2)",
-          outcome(g, dict(T=T_nv, C=C, M=Mm, F=F_read))["term"] == "metric not validated: control 1 failed")
+    o8 = outcome(g, dict(T=T_nv, C=C, M=Mm, F=F_read), ts)
+    check("outcome: arm T no verdict -> the eighth term, 'instrument returned no reading on the separable "
+          "mechanism' (not R2), with its scope phrase",
+          o8["code"] == "eighth"
+          and o8["term"] == "instrument returned no reading on the separable mechanism: control 1 failed"
+          and o8["sentence"] == ("instrument returned no reading on the separable mechanism on these "
+                                 "constructed systems, for this intervention procedure: control 1 failed"),
+          o8["sentence"])
+    o_r2 = outcome(g, dict(T=T, C=close, M=Mm, F=F_read))
+    check("outcome: R2 in version 5's words, with its scope phrase",
+          o_r2["sentence"].startswith("instrument does not discriminate the specified constructed mechanisms "
+                                      "on these constructed systems, for this intervention procedure"),
+          o_r2["sentence"])
+    check("outcome: R1 in version 5's words; 'degree read' followed by its scope phrase",
+          o1["sentence"] == ("instrument discriminates specified constructed mechanisms on these constructed "
+                             "systems, for this intervention procedure, degree read as a ratio of two "
+                             "transplants at the sites this procedure chose"), o1["sentence"])
+    check("outcome words: every registered term is version 5's, and the retired word 'validated' "
+          "and the old name 'metric' appear in none",
+          set(OUTCOME_TERMS) == {"R1", "R2", "R3", "fifth", "sixth", "seventh", "eighth"}
+          and not any("validated" in t or "metric" in t for t in OUTCOME_TERMS.values())
+          and all(not any(w in sentence(c, None) for w in ("validated", "metric")) for c in OUTCOME_TERMS))
+    # --- fewer than three seeds (ruled 2026-10-08, open item 9) ------------------
+    one_seed = arm_outcome({0: R(0.0)})
+    check("fewer seeds: one seed passing everything -> 'gate not decidable on one seed', not failed",
+          one_seed["gate_status"] == "gate not decidable on one seed" and not one_seed["gate_decidable"],
+          one_seed["gate_status"])
+    two_bad = arm_outcome({0: NV("x", False), 1: NV("y", False)})
+    check("fewer seeds: two seeds both failing their learning gate -> failed (no third seed can make two)",
+          two_bad["gate_status"] == "fails" and two_bad["gate_decidable"])
+    two_one = arm_outcome({0: R(0.0), 1: NV("y", False)})
+    check("fewer seeds: two seeds, one passing -> 'gate not decidable on two seeds'",
+          two_one["gate_status"] == "gate not decidable on two seeds")
+    check("fewer seeds: three seeds, one passing -> fails, as before",
+          arm_outcome({0: R(0.0), 1: NV("y", False), 2: NV("z", False)})["gate_status"] == "fails")
+    dev_like = {a: arm_outcome({0: R(0.0)}) for a in "TCMF"}
+    o_dev = outcome({a: None for a in "TCMF"}, dev_like)
+    check("fewer seeds: one seed per arm (as the development runs) -> no term; the reason says the gate is "
+          "not decidable on one seed and never 'failed its gate'",
+          o_dev["code"] is None and "arm T: gate not decidable on one seed" in o_dev["reason"]
+          and "failed" not in o_dev["reason"], o_dev["reason"])
+    check("fewer seeds: a gate that has failed outright still gives R3 beside an undecidable one",
+          outcome(dict(g, T=False, C=None), dict(T=T, C=one_seed, M=Mm, F=F_read))["code"] == "R3")
+    check("fewer seeds: arm M with an undecidable gate is not called dropped",
+          outcome(dict(g, M=None), dict(T=T, C=C, M=arm_outcome({0: R(0.5)}), F=F_read))["arm_M"]["status"]
+          == "not decidable")
     M_nv = arm_outcome({s: NV("x") for s in range(3)})
     o3 = outcome(g, dict(T=T, C=C, M=M_nv, F=F_read))
     check("outcome: arm M no verdict drops arm M and says so",

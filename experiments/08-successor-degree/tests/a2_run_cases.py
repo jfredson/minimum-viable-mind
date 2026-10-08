@@ -25,6 +25,8 @@ import a2_cases as K    # noqa: E402
 
 TOY = os.path.join(ROOT, "out-freeze-tests", "t3a-committed-reads")
 OUT = os.path.join(ROOT, "out-a2-cases")
+if len(sys.argv) > 1:                     # a later run writes beside, not over, the committed record
+    OUT = os.path.abspath(sys.argv[1])
 
 
 def sha(path):
@@ -73,12 +75,15 @@ def main():
         summary_txt = open(os.path.join(d, "summary.json")).read()
         table_txt = open(os.path.join(d, "table.md")).read()
         checks = {}
-        checks["outcome code"] = o.get("code") == case["expect"]
+        expect = getattr(K, "CODE_RENAMED", {}).get(case["expect"], case["expect"])
+        checks["outcome code"] = o.get("code") == expect
         for t in case.get("reason_has", []):
             checks[f"reason has '{t}'"] = t in (o.get("reason") or "")
         for t in case.get("sentence_has", []):
             checks[f"sentence has '{t}'"] = t in (o.get("sentence") or "") + " ".join(o.get("notes") or [])
         for t in getattr(K, "ADDENDUM_EXPECT", {}).get(case["name"], {}).get("sentence_has", []):
+            for old, new in getattr(K, "WORDS_RENAMED", {}).items():
+                t = t.replace(old, new)
             checks[f"addendum: sentence has '{t}'"] = t in (o.get("sentence") or "")
         for key, texts in case.get("seed_reasons_have", {}).items():
             a, s = key.split("/")
@@ -111,9 +116,10 @@ def main():
         for name, txt in (("summary.json", summary_txt), ("table.md", table_txt)):
             if "arithmetic_withheld" in txt:
                 leaks.append(f"field arithmetic_withheld in {name}")
-        terms_ok = o.get("registered_term") in P.MS.OUTCOME_TERMS.values()
+        terms_ok = (o.get("registered_term") in P.MS.OUTCOME_TERMS.values()
+                    or (expect is None and o.get("code") is None and o.get("term") is None))
         checks["term is a registered term"] = terms_ok
-        results.append(dict(name=case["name"], about=case["about"], expected=case["expect"],
+        results.append(dict(name=case["name"], about=case["about"], expected=expect,
                             got=o.get("code"), term=o.get("term"), sentence=o.get("sentence"),
                             notes=o.get("notes"), checks=checks, leaks=leaks,
                             same_number_elsewhere=elsewhere,
