@@ -1,0 +1,6 @@
+[M/0] iteration limit 10000; torch threads 3
+[M/0] gate: own 2592, named-other 1663 of 3000 (bar 790)
+[M/0] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[M/0] nomination: nominated {'layers': [3], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[M/0] fits that stopped at the iteration limit of 10000: counts elsewhere on the site 0 of 2, held-out counts (own) 0 of 25, the null (shuffled labels) 0 of 1000, the read (named) 0 of 5, the read (own) 0 of 5
+[M/0] done in 801s: arithmetic 0.525236593059937, controls 7/4 hold True/True -> out-ruled-code-changes/passB-limit10000/row_M_seed0.json

@@ -1,0 +1,6 @@
+[F/2] iteration limit 10000; torch threads 3
+[F/2] gate: own 1664, named-other 746 of 3000 (bar 790)
+[F/2] reads: whole-read counts by state [17, 25, 39, 30, 27] of 180
+[F/2] nomination: read failed its floor: no size's piece reaches four fifths None
+[F/2] fits that stopped at the iteration limit of 10000: counts elsewhere on the site 0 of 2, held-out counts (own) 0 of 25, the null (shuffled labels) 0 of 1000, the read (named) 0 of 5, the read (own) 0 of 5
+[F/2] done in 624s: arithmetic 1.0, controls 7/4 hold True/True -> out-ruled-code-changes/passB-limit10000/row_F_seed2.json

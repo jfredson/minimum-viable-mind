@@ -1,0 +1,46 @@
+{
+ "a_reading_was_returned": false,
+ "arm": "blind",
+ "fresh_accuracy": 0.21875,
+ "fresh_arithmetic_DESCRIPTION_ONLY": {
+  "DESCRIPTION_ONLY": "no floor applied; not a reading",
+  "comparisons": 180,
+  "defined": 160,
+  "max": 1.0,
+  "median": 1.0,
+  "min": 1.0,
+  "required_room_for_the_floor": -0.010000000000000009,
+  "whole_minus_untouched": {
+   "max": 0.0,
+   "min": -0.0012500000000000011
+  },
+  "zero_divided_by_zero_or_by_zero": 20
+ },
+ "fresh_site_sets_clearing": 0,
+ "fresh_twins": {
+  "actions_that_differ": 3,
+  "inputs_identical": false,
+  "largest_state_difference": 26.83502960205078,
+  "states_identical": false
+ },
+ "fresh_untouched": 0.23125,
+ "gate": {
+  "bar": 790,
+  "n": 3000,
+  "other_clears": false,
+  "other_correct": 722,
+  "own_clears": false,
+  "own_correct": 716
+ },
+ "no_transplant": {
+  "formula": 0.11160714285714286,
+  "inside_allowance": false,
+  "miss": 0.11964285714285715,
+  "rate": 0.23125
+ },
+ "nomination_status": "no site set clears the whole-state floor",
+ "null_bit_identical_at_every_site_set": true,
+ "reading_of_the_solver": "channel_left_on",
+ "seed": 1,
+ "status": "no verdict: no site set clears the whole-state floor"
+}

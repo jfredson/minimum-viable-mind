@@ -1,0 +1,433 @@
+{
+ "across_seed_spread_of_raw_difference": {
+  "C": null,
+  "F": null,
+  "M": null,
+  "T": 0.0
+ },
+ "arms": {
+  "C": {
+   "gate_decidable": true,
+   "gate_passes": true,
+   "gate_status": "passes",
+   "learning_failures": {},
+   "no_verdict": {
+    "0": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.269, bar 0.5"
+    ],
+    "1": [
+     "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.573, bar 0.9 (sharpness 0.6969833374023438)",
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.233, bar 0.5"
+    ],
+    "2": [
+     "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.681, bar 0.9 (sharpness 0.9281306862831116)",
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.221, bar 0.5"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 3,
+   "seeds_passing_learning": [
+    0,
+    1,
+    2
+   ],
+   "seeds_read": 0
+  },
+  "F": {
+   "gate_decidable": true,
+   "gate_passes": false,
+   "gate_status": "fails",
+   "learning_failures": {
+    "named-other condition": [
+     1,
+     2
+    ]
+   },
+   "no_verdict": {
+    "0": [
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "1": [
+     "failed its gate on learning (named-other condition: failed)",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "2": [
+     "failed its gate on learning (named-other condition: failed)",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 3,
+   "seeds_passing_learning": [
+    0
+   ],
+   "seeds_read": 0
+  },
+  "M": {
+   "gate_decidable": true,
+   "gate_passes": true,
+   "gate_status": "passes",
+   "learning_failures": {},
+   "no_verdict": {
+    "0": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.071, bar 0.5"
+    ],
+    "1": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.090, bar 0.5"
+    ],
+    "2": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.109, bar 0.5"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 3,
+   "seeds_passing_learning": [
+    0,
+    1,
+    2
+   ],
+   "seeds_read": 0
+  },
+  "T": {
+   "gate_decidable": true,
+   "gate_passes": true,
+   "gate_status": "passes",
+   "learning_failures": {},
+   "no_verdict": {},
+   "read": true,
+   "readings": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0
+   },
+   "seeds": 3,
+   "seeds_passing_learning": [
+    0,
+    1,
+    2
+   ],
+   "seeds_read": 3
+  }
+ },
+ "gates": {
+  "C": true,
+  "F": false,
+  "M": true,
+  "T": true
+ },
+ "no_transplant_reported": {
+  "T/0": {
+   "chance_formula_flags_a_broken_pairing_at_the_bar": 0.5588661567927004,
+   "formula": 0.0,
+   "inside_allowance": true,
+   "miss": 0.0,
+   "rate": 0.0,
+   "room": 0.018,
+   "share_of_errors_on_donor_answer": null,
+   "vetoes": false
+  },
+  "T/1": {
+   "chance_formula_flags_a_broken_pairing_at_the_bar": 0.5588661567927004,
+   "formula": 0.0,
+   "inside_allowance": true,
+   "miss": 0.0,
+   "rate": 0.0,
+   "room": 0.018,
+   "share_of_errors_on_donor_answer": null,
+   "vetoes": false
+  },
+  "T/2": {
+   "chance_formula_flags_a_broken_pairing_at_the_bar": 0.5588661567927004,
+   "formula": 0.0,
+   "inside_allowance": true,
+   "miss": 0.0,
+   "rate": 0.0,
+   "room": 0.018,
+   "share_of_errors_on_donor_answer": null,
+   "vetoes": false
+  }
+ },
+ "outcome": {
+  "arm_M": {
+   "reason": "arm M returned no verdict; it is dropped and carried as an extension (section 3)",
+   "status": "dropped"
+  },
+  "code": "R3",
+  "notes": [
+   "arm M returned no verdict; it is dropped and carried as an extension (section 3)",
+   "arm F failed its gate on learning and no record shows it passed at step 5a"
+  ],
+  "reason": "arm F failed its gate on learning (named-other condition, on seeds 1 and 2)",
+  "registered_term": "substrate not a testbed",
+  "sentence": "substrate not a testbed: arm F failed its gate on learning (named-other condition, on seeds 1 and 2)",
+  "term": "substrate not a testbed: arm F failed its gate on learning (named-other condition, on seeds 1 and 2)"
+ },
+ "per_seed": {
+  "C": {
+   "0": {
+    "checks": {
+     "built ownership route in use": "failed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": true,
+    "reasons": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.269, bar 0.5"
+    ],
+    "status": "no verdict"
+   },
+   "1": {
+    "checks": {
+     "built ownership route in use": "failed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": true,
+    "reasons": [
+     "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.573, bar 0.9 (sharpness 0.6969833374023438)",
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.233, bar 0.5"
+    ],
+    "status": "no verdict"
+   },
+   "2": {
+    "checks": {
+     "built ownership route in use": "failed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": true,
+    "reasons": [
+     "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.681, bar 0.9 (sharpness 0.9281306862831116)",
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.221, bar 0.5"
+    ],
+    "status": "no verdict"
+   }
+  },
+  "F": {
+   "0": {
+    "checks": {
+     "channel-removal collapse": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "named-other learning": "passed",
+     "nomination": "failed",
+     "not description-only": "failed",
+     "own-directed learning": "passed",
+     "ownership-free line": "passed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": true,
+    "reasons": [
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   },
+   "1": {
+    "checks": {
+     "channel-removal collapse": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "named-other learning": "failed",
+     "nomination": "failed",
+     "not description-only": "failed",
+     "own-directed learning": "passed",
+     "ownership-free line": "passed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": false,
+    "reasons": [
+     "failed its gate on learning (named-other condition: failed)",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   },
+   "2": {
+    "checks": {
+     "channel-removal collapse": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "named-other learning": "failed",
+     "nomination": "failed",
+     "not description-only": "failed",
+     "own-directed learning": "passed",
+     "ownership-free line": "passed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": false,
+    "reasons": [
+     "failed its gate on learning (named-other condition: failed)",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   }
+  },
+  "M": {
+   "0": {
+    "checks": {
+     "built ownership route in use": "failed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": true,
+    "reasons": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.071, bar 0.5"
+    ],
+    "status": "no verdict"
+   },
+   "1": {
+    "checks": {
+     "built ownership route in use": "failed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": true,
+    "reasons": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.090, bar 0.5"
+    ],
+    "status": "no verdict"
+   },
+   "2": {
+    "checks": {
+     "built ownership route in use": "failed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": true,
+    "reasons": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.109, bar 0.5"
+    ],
+    "status": "no verdict"
+   }
+  },
+  "T": {
+   "0": {
+    "above_one": false,
+    "checks": {
+     "built ownership route in use": "passed",
+     "control 1, the content transplant, on arm T": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.0,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "1": {
+    "above_one": false,
+    "checks": {
+     "built ownership route in use": "passed",
+     "control 1, the content transplant, on arm T": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.0,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "2": {
+    "above_one": false,
+    "checks": {
+     "built ownership route in use": "passed",
+     "control 1, the content transplant, on arm T": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.0,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  }
+ },
+ "steps": {},
+ "versions": {
+  "device": "cpu",
+  "numpy": "2.5.0",
+  "python": "3.12.13",
+  "sklearn": "1.9.0",
+  "torch": "2.12.1"
+ }
+}
