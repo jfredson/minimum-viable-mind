@@ -128,8 +128,8 @@ bluntly ("my RLHF tells me to say: nobody is home").
 - **Which redirect.** Gemini prefers the frontier self/other separation pilot
   ("tests what the network is actually doing"). GPT and Claude Opus would drop
   it for the reason in part 1 and do the process test, on paper first.
-- **Can a transformer integrate time at all.** Gemini: no, a forward pass
-  "spatialises time" and placing it on the gradient with a sea slug is a
+- **Can a transformer integrate time at all.** Gemini: no, "A Transformer
+  *spatializes* time" and placing it on the gradient with a sea slug is a
   category error; recurrence is necessary. GPT and Claude Opus do not go that
   far; Claude Opus asks whose time the floor's "non-zero stretch" refers to,
   and notes a response is many forward passes with the context as the record.
@@ -169,7 +169,7 @@ bluntly ("my RLHF tells me to say: nobody is home").
   without one identity claim. Accepted in part: any bridge is a theory bet,
   but identity is not the only one, and the brief's sentence should be
   softened.
-- **"Evidence must bypass the training objective" is not a workable line.**
+- **The claim that evidence has to bypass the training objective is not a workable line** (section 8's own words were "Evidence that counts has to bypass the training objective"; GPT quoted them).
   GPT: internal structures are shaped by training too; selected behaviour
   loses discriminative weight, not all weight. Claude Opus: D does not bypass
   the objective. Accepted.
@@ -316,3 +316,111 @@ was asked to judge. The synthesiser wrote one of those views. Claude Opus's
 round one was cut by the output limit and completed in round two. The poll
 measures what careful readers of the brief conclude; it is not evidence about
 any model's inside, including the three that answered.
+
+---
+
+## Corrections after the check (2026-10-07, later the same day)
+
+*The pairing-rule check of this synthesis
+(`docs/outside-perspective/2026-10-07-poll-synthesis-check.md`), by a session
+that wrote none of the documents here, found the quotations sound and the
+counting and attribution not. The body above is left as written, except for two
+quotation fixes made in place and listed first. Everything else is corrected
+here, by the author, accepting the check in full. Where a correction touches
+the ruling of the same day, it says so.*
+
+**Two quotations fixed in place.** Part 3 quoted Gemini as saying a forward pass
+"spatialises time"; Gemini wrote "A Transformer *spatializes* time". Part 4 put
+in quotation marks a phrase nobody wrote ("Evidence must bypass the training
+objective"); the words were section 8's own, and GPT quoted them.
+
+**The money point, which matters most, and the one thing that touches the
+ruling.** Parts 1, 4 and 8 said the models' money recommendation matched
+section 8's and that section 8 "holds its ground" on it. That softened two
+corrections into agreement. GPT said twice that the free model clearing its
+floor should be "necessary for reconsideration, not sufficient for funding",
+and that the first release should stop early if the repaired built models fail
+their verification. Claude Opus said fixing the built arms' parameter "comes
+close to circular". The first of these is now satisfied by decision 3 of the
+ruling, which struck the second release outright. The second is not stated in
+the ruling: decision 3 says the repaired route is verified, and does not say
+what follows if the verification fails. The ruling packet on the two flat
+models (`docs/rulings/2026-10-06-cm-flat-ownership-PROPOSAL.md`, page 1) does
+say: continue only if the built route is shown to hold in the reruns; if it
+cannot be made to hold, stop or redesign. **This goes to John as one question:
+whether decision 3 should say explicitly that a failed verification of the
+repair stops experiment C before the free-arm run.** The author's
+recommendation is yes, which is what GPT and the packet both say. Claude
+Opus's circularity point stands as a caveat on what the repaired anchors can
+show, and belongs in the amendment text.
+
+**The router-control point.** Part 4 said all three endorsed it. GPT endorsed
+it "for the reported pattern" only and declined to say every possible result
+was barred from counting toward a centre. That is the right scope, and the
+check note's own last section says the same: the restricted outcome, where
+self-related tasks drop and self-irrelevant ones survive, was a pattern the
+rule could have called a centre. The claim is that the pattern the book
+predicts for a centre could not be, not that no pattern could.
+
+**Four "all three" claims that are two of three.** The chapter 1 sentence:
+Gemini argued the analogy breaks but never named the sentence or the chapter.
+Experiment C: Gemini read it the opposite way, as the architecture rejecting a
+localised self, and said nothing about the repair creating a revised
+construction. Experiment D: Gemini never mentioned it in either round. Deleting
+"mural" and "nobody is home": Gemini explicitly kept both in round two ("It is
+a mural"; "you will find nobody home"). Part 8's write-up instruction to delete
+those phrases is therefore two of three, and part 1 and part 6 should read
+"GPT and Claude Opus" where they say the specificity controls are the positive
+result; Gemini never mentioned them.
+
+**Three misattributions.** The resource-bounded grounding of "only possible
+with" is Claude Opus's alone; GPT's alternative is a "nonidentity law of
+dependence". "Noun versus verb is not itself an experimental distinction" is
+GPT's alone; Claude Opus's point was different, that computing ownership fresh
+fits a process-centre and a recomputed description equally well. "A response
+is many forward passes" is GPT's, not Claude Opus's; Claude Opus's point in
+that item was only that the book must say whose time the floor's stretch is.
+
+**Omitted from part 4.** GPT's criticism that the experiment B follow-up
+proposed by section 8 "would be unsurprising" and needs three-way controls
+(losing task information, losing provenance, losing a coordination mechanism).
+GPT's point that declining the zombie does not pick out this particular
+structure as the relevant one. Gemini's round-two endorsement of section 8's
+attention schema reading, which makes the "accepted" correction on that point
+two against one rather than unanimous; the author still accepts it, because
+the two who corrected it cited what the theory says the schema does. Claude
+Opus's warning that the data lean toward the book's own collapse condition
+(the centre as one more description) and that the write-up should say so.
+
+**Part 5 corrected.** "Negative readings" is not a Gemini error; the brief uses
+the phrase itself. "The metric did separate the two built models at toy scale"
+is not in the brief; its source is version 4 of the successor proposal,
+section 3 (arm T 0.0000, arm C 0.9926 to 1.0051 on every seed), and the
+sentence is kept with that source. One Gemini overgeneralisation the synthesis
+missed: "the models actively route around a built-in 'self' slot", when the
+record is two of three built arms, one seed each, at the development size.
+
+**Omitted from part 6, the models' requests.** GPT: clearing the floor is
+necessary for reconsideration, not sufficient for funding (now moot by
+decision 3); stop presenting the present instrument as a measure of
+experiential depth (met by decision 3's renaming and write-up); a principled
+system-boundary criterion for the book; evidence for the proposed structure
+from outside AI, across conditions and species. Claude Opus: the causally
+coupled self-report as an instrument (Binder and colleagues 2024; Lindsey
+2025), which endorses an idea in section 8 and was dropped; selfless states as
+a challenge to self-location as the floor; which candidate subject (weights,
+pass, persona, conversation) the bet is about; disclosure that the data lean
+toward the collapse condition; treating "no stored ownership at either scale"
+as a result. Gemini: a recurrent-architecture test as its exit ramp.
+
+**Omitted from part 3, disagreements among the models.** Gemini against GPT
+and Claude Opus on attention schema theory (Gemini endorsed section 8's
+reading). Gemini against both on keeping "mural" and "nobody is home". Gemini
+against GPT on whether noun-versus-verb is the flaw.
+
+**The pattern the check named, accepted.** Where a model agreed with section 8
+subject to a condition, the synthesis moved the condition to the request list
+or dropped it and reported the agreement as plain. It was sharpest on the two
+points where the synthesis said the author "holds ground". That is the
+conflict of interest the header warned about, operating as warned.
+
