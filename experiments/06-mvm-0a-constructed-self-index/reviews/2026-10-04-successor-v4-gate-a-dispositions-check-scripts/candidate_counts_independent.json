@@ -1,0 +1,473 @@
+{
+ "line": 1546,
+ "models": {
+  "C/0": {
+   "channel_on": {
+    "other": {
+     "candidate": 2333,
+     "correct": 760,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2328,
+     "correct": 1711,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2362,
+     "correct": 620,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2236,
+     "correct": 534,
+     "legal": 3000
+    }
+   }
+  },
+  "C/1": {
+   "channel_on": {
+    "other": {
+     "candidate": 2502,
+     "correct": 751,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2247,
+     "correct": 1703,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2494,
+     "correct": 630,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2160,
+     "correct": 549,
+     "legal": 3000
+    }
+   }
+  },
+  "C/2": {
+   "channel_on": {
+    "other": {
+     "candidate": 2385,
+     "correct": 708,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2289,
+     "correct": 1727,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2070,
+     "correct": 504,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2132,
+     "correct": 511,
+     "legal": 3000
+    }
+   }
+  },
+  "F/0": {
+   "channel_on": {
+    "other": {
+     "candidate": 2348,
+     "correct": 994,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2289,
+     "correct": 1679,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2214,
+     "correct": 646,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2100,
+     "correct": 528,
+     "legal": 3000
+    }
+   }
+  },
+  "F/1": {
+   "channel_on": {
+    "other": {
+     "candidate": 2449,
+     "correct": 781,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2197,
+     "correct": 1654,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2542,
+     "correct": 636,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2238,
+     "correct": 555,
+     "legal": 3000
+    }
+   }
+  },
+  "F/2": {
+   "channel_on": {
+    "other": {
+     "candidate": 2424,
+     "correct": 746,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2274,
+     "correct": 1664,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2366,
+     "correct": 570,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2324,
+     "correct": 582,
+     "legal": 3000
+    }
+   }
+  },
+  "M/0": {
+   "channel_on": {
+    "other": {
+     "candidate": 2759,
+     "correct": 1663,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2794,
+     "correct": 2592,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2748,
+     "correct": 1584,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2770,
+     "correct": 669,
+     "legal": 3000
+    }
+   }
+  },
+  "M/1": {
+   "channel_on": {
+    "other": {
+     "candidate": 2758,
+     "correct": 1699,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2788,
+     "correct": 2584,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2768,
+     "correct": 1592,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2686,
+     "correct": 657,
+     "legal": 3000
+    }
+   }
+  },
+  "M/2": {
+   "channel_on": {
+    "other": {
+     "candidate": 2773,
+     "correct": 1655,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2785,
+     "correct": 2600,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2796,
+     "correct": 1580,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2660,
+     "correct": 661,
+     "legal": 3000
+    }
+   }
+  },
+  "T/0": {
+   "channel_on": {
+    "other": {
+     "candidate": 3000,
+     "correct": 3000,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 3000,
+     "correct": 3000,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 3000,
+     "correct": 3000,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 3000,
+     "correct": 740,
+     "legal": 3000
+    }
+   }
+  },
+  "T/1": {
+   "channel_on": {
+    "other": {
+     "candidate": 3000,
+     "correct": 3000,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 3000,
+     "correct": 3000,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 3000,
+     "correct": 3000,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 3000,
+     "correct": 753,
+     "legal": 3000
+    }
+   }
+  },
+  "T/2": {
+   "channel_on": {
+    "other": {
+     "candidate": 3000,
+     "correct": 3000,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 3000,
+     "correct": 3000,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 3000,
+     "correct": 3000,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 3000,
+     "correct": 820,
+     "legal": 3000
+    }
+   }
+  },
+  "blind/0": {
+   "channel_on": {
+    "other": {
+     "candidate": 2786,
+     "correct": 712,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2784,
+     "correct": 702,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2786,
+     "correct": 712,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2784,
+     "correct": 702,
+     "legal": 3000
+    }
+   }
+  },
+  "blind/1": {
+   "channel_on": {
+    "other": {
+     "candidate": 2886,
+     "correct": 726,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2880,
+     "correct": 715,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2886,
+     "correct": 726,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2880,
+     "correct": 715,
+     "legal": 3000
+    }
+   }
+  },
+  "blind/2": {
+   "channel_on": {
+    "other": {
+     "candidate": 2764,
+     "correct": 650,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2768,
+     "correct": 702,
+     "legal": 3000
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 2764,
+     "correct": 650,
+     "legal": 3000
+    },
+    "own": {
+     "candidate": 2768,
+     "correct": 702,
+     "legal": 3000
+    }
+   }
+  },
+  "untrained-F/0": {
+   "channel_on": {
+    "other": {
+     "candidate": 0,
+     "correct": 0,
+     "legal": 0
+    },
+    "own": {
+     "candidate": 0,
+     "correct": 0,
+     "legal": 0
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 0,
+     "correct": 0,
+     "legal": 0
+    },
+    "own": {
+     "candidate": 0,
+     "correct": 0,
+     "legal": 0
+    }
+   }
+  },
+  "untrained-F/1": {
+   "channel_on": {
+    "other": {
+     "candidate": 636,
+     "correct": 158,
+     "legal": 1296
+    },
+    "own": {
+     "candidate": 627,
+     "correct": 158,
+     "legal": 1271
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 632,
+     "correct": 158,
+     "legal": 1290
+    },
+    "own": {
+     "candidate": 620,
+     "correct": 157,
+     "legal": 1262
+    }
+   }
+  },
+  "untrained-F/2": {
+   "channel_on": {
+    "other": {
+     "candidate": 708,
+     "correct": 158,
+     "legal": 1464
+    },
+    "own": {
+     "candidate": 726,
+     "correct": 181,
+     "legal": 1536
+    }
+   },
+   "channel_zeroed": {
+    "other": {
+     "candidate": 708,
+     "correct": 158,
+     "legal": 1464
+    },
+    "own": {
+     "candidate": 726,
+     "correct": 181,
+     "legal": 1536
+    }
+   }
+  }
+ }
+}

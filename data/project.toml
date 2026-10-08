@@ -586,6 +586,16 @@ source = "docs/filtered-battery-proposal-2026-10-07.md, section 0; docs/reviews/
 stage = "6"
 kind = "ruled"
 
+[[findings]]
+id = "F24"
+date = "2026-10-04"
+title = "The registration text describes the instrument that ran, but one clause would stop the free model ever being read"
+what = "The inside registration review rebuilt the rule for choosing where to transplant from version 4's words alone, in code sharing nothing with the committed code. It matched the committed code's choice, size and verdict on all 24 toy rows and reproduced every toy reading. The committed code, run again from clean, reproduced all 26,722 committed values. The review also found one fatal flaw. The check that lets the freely trained model be read requires 'ownership-free state and syntax batteries' to hold. Those are question sets from the closed A3 design, absent from the successor's task, with no line saying what 'hold' means, and nothing ever tested them. Under the design's own rule a check that cannot be evaluated counts as failed. The clause had been carried word for word since version 1. It found four serious flaws: the printed floor on the whole-state transplant lets a model at chance through with a divisor of zero or less, which only an unwritten clause in the code prevents; the text never removes the name cue the old grammar shows the model as it acts; the ruled 420 fitting episodes were rehearsed only at the toy's width, and a crude stand-in at the registered width drops the entangled model's read below the floor on two seeds of three; and some reachable outcomes have no registered name."
+so_what = "The measure itself holds up. The fatal flaw is a stale clause, small to fix, but the registration cannot be committed until it is fixed and a session that did not write the fix has checked it. The serious flaws are closed or carried as named open items, with John's reasons. The outside reviewers get these findings so they can look elsewhere."
+source = "experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-claude-code.md"
+stage = "2"
+kind = "process"
+
 # ---------------------------------------------------------------------------
 # Next steps, in order of value. `decision = true` marks items that wait on John.
 # ---------------------------------------------------------------------------
@@ -893,12 +903,12 @@ status = "done"
 [[next_steps]]
 id = "N31"
 title = "Merge the fifteen checked branches the registration text cites, so that every citation resolves at a main-line commit"
-when = "before the registration can be committed; the sharpness branch (pull request 118) is owed its check first"
-owner = "John merges; a session checks the sharpness branch"
+when = "done 2026-10-08 at John's word, through one integration branch, after the sharpness branch's check (every figure reproduced; one wording range corrected)"
+owner = "John ruled; a session merged and resolved the record's conflicts"
 cost = "$0"
-decision = true
+decision = false
 teaches = "Nothing new. A registration may not rest on a record its reader cannot open at a main-line commit (failure 4 of the known-failure list), and fifty of version 5's citations point at unmerged branches today."
-status = "pending"
+status = "done"
 
 [[next_steps]]
 id = "N32"
@@ -919,6 +929,86 @@ cost = "$0"
 decision = false
 teaches = "Nothing new. From this point every merge to the main line that touches the site or its data publishes it; the hand deploy of the same morning is no longer needed. A token that had been misnamed after the secret and never used was deleted the same day."
 status = "done"
+
+[[next_steps]]
+id = "N34"
+title = "Outside review of the registration text: two models from other labs, run by John from the checked packet"
+when = "done by 2026-10-06"
+owner = "John runs the two sessions (about two hours); a Claude session files the answers word for word"
+cost = "$0"
+decision = true
+teaches = "What a reader from another lab finds in the registration text that the inside review did not. Done: Gemini's nine findings all repeat the inside review's (pull request 99); ChatGPT's thirteen add nine new ones, one fatal (pull request 100). Both filed word for word."
+status = "done"
+
+[[next_steps]]
+id = "N35"
+title = "Rule every item from both reviews"
+when = "done 2026-10-06: John ruled all twelve pages of the packet one at a time; page 12, whether to go on, waits on the decoy test (N27)"
+owner = "sessions drafted and checked the packet; John ruled; a session recorded it"
+cost = "$0"
+decision = true
+teaches = "The fatal flaw's repair, the fitting count of 1,800, one outcome table with three new terms, the seed rule, the no-transplant check reported rather than used as a veto, the fixed scope phrase, and the decoy test. Recorded in docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md, with authorship mixed and his words quoted per page. Later the same day he ruled the items the first record left open: four outside wording fixes accepted as drafted, both scope phrases applied, and control 4 named as the pairing check that withholds a reading. He also adopted the generator self-test on unseen combinations, and accepted the fatal finding on the decision procedure (A2) as drafted, with the withheld figure removed from its output; that work is N30. Two refinements followed: the phrase \"metric does not separate\" carries the scope phrase too, and the self-test checks the specific pairing that makes an episode fresh or relaxed. Because that self-test samples only 200 training steps, he then chose to have training leave those pairings out outright, with its own self-test and check before registration."
+status = "done"
+
+[[next_steps]]
+id = "N36"
+title = "Check the record of the 2026-10-06 rulings and the dated notes it adds to eleven earlier rulings"
+when = "filed as pull request 104 on the record's branch; not yet on the main line"
+owner = "a Claude Code session that did not write it"
+cost = "$0"
+decision = false
+teaches = "Whether the record says what John said, page by page, and points at the right drafted text."
+status = "pending"
+
+[[next_steps]]
+id = "N37"
+title = "The decoy test: can an unused copy of the owner's marker fool the read? Run both ways round, then checked; John then decides whether to go on"
+when = "done 2026-10-06 (pull request 108) and checked (pull request 120): not fooled both ways round; John ruled to go on through the first release on 2026-10-07"
+owner = "a Claude Code session runs it; another checks it; John decides"
+cost = "$0, laptop"
+decision = true
+teaches = "Whether the instrument calls a separable model entangled when an easily read but unused copy of its marker sits beside the slot it uses. If it is fooled, the recommendation on record is to stop or redesign before registration; if not, to continue."
+status = "done"
+
+[[next_steps]]
+id = "N38"
+title = "Re-run the toy's nomination and reading with every read fitted on 1,800 episodes; check it"
+when = "done 2026-10-06/07 (pull request 121) and checked (pull request 122): no toy decision moves"
+owner = "a Claude Code session runs it; another checks it"
+cost = "$0, laptop"
+decision = false
+teaches = "Whether the new fitting count changes which site set and piece size are chosen on any toy model, before the count is registered."
+status = "done"
+
+[[next_steps]]
+id = "N39"
+title = "Closure check of the fatal flaw's repair (the free model's gate)"
+when = "once the registration text carries the repair"
+owner = "a Claude Code session that wrote neither the repair nor the text"
+cost = "$0, laptop"
+decision = false
+teaches = "That every clause of the free model's gate is evaluated on a named field of a committed output file, and that the counts behind the new line recompute from independent code."
+status = "pending"
+
+[[next_steps]]
+id = "N40"
+title = "Bring the frozen decision code to the ruled rules, run it on the toy and on made-up failure cases, and check it"
+when = "done 2026-10-06 (pull request 105) and checked twice (pull requests 107 and 113)"
+owner = "a Claude Code session changes and runs it; another checks it"
+cost = "$0, laptop"
+decision = false
+teaches = "That the code which turns per-seed records into one registered outcome follows the ruled table, the seed rule and the new gate line, lists every reason, and leaves no withheld figure in its output (the field arithmetic_withheld is removed). Alongside it, the frozen training code leaves fresh and relaxed pairings out of training outright, with a self-test asserting it, method first, then the self-tests re-run and an independent check (branch training-exclusion-pairing)."
+status = "done"
+
+[[next_steps]]
+id = "N41"
+title = "Write version 5, the registration text, with every ruled change; check it; commit the registration"
+when = "version 5 drafted 2026-10-07, checked 2026-10-08, its five must-fix items applied and re-checked the same day; the commit waits on the merges of section 16 and John's open items; outer limit 2026-10-18"
+owner = "a session writes the text; a different session checks it"
+cost = "$0"
+decision = true
+teaches = "Whether the registration can be committed with every finding closed or carried by name."
+status = "in-progress"
 
 # ---------------------------------------------------------------------------
 # Spend. Registered caps are protocol, not budget: exceeding one is a violation.
@@ -960,6 +1050,18 @@ date = "2026-10-07"
 kind = "ruling"
 title = "The project is refounded on the two-sided question; three outside models polled; experiment A relabelled, C kept with a conditional second release, D promoted"
 summary = "A brief for outside models was checked against the record and revised, then put by API to Gemini 3.1 Pro, GPT and Claude Opus 5.5 in two rounds, every reply saved word for word. All three agreed the reframe adds nothing beyond the identity bet, that experiment 1's router control cannot tell bookkeeping from a centre, that neither of John's two readings survives as written, and that no second release of the degree experiment should be funded now. A check of the registration text reached the same conclusion about the control. John then named what he perceives from, the axes rather than the floor, and ruled all eight decisions of the refounding proposal before the Gate C pass, at his own instruction: the two-sided question is the measurement target; A is relabelled; C keeps its second release conditional (struck by the first ruling, restored after the Gate C pass found the narrowing left no reachable outcome); D is promoted to the seed of a filtered battery; the kill dates stand and no new dates are set; the table and battery are next; the human study is deferred; the book changes go upstream. Seven commits on one unmerged branch; two checks running; $0 rented."
+
+[[timeline]]
+date = "2026-10-06"
+kind = "ruling"
+title = "John rules all twelve pages of the registration-review packet; whether to go on waits on a $0 decoy test"
+summary = "Both outside reviews came back; drafted answers to every finding were checked by other sessions. John ruled each page in his own words. The fatal flaw is answered with a count the task can evaluate. Reads are fitted on 1,800 episodes. One outcome table names every reachable result. A seed counts only if it passes everything. The no-transplant check is reported, not a veto. The outcome words carry a fixed scope phrase. Whether to go on is decided after a decoy test. Six $0 steps are owed before the registration commit. Nothing spent."
+
+[[timeline]]
+date = "2026-10-04"
+kind = "process"
+title = "The registration review opens; the inside review finds one fatal flaw, small to fix; the outside packet is with John"
+summary = "John opened the registration review on version 4. A fresh session reviewed it from committed files only. The text describes the instrument that actually ran: the choice rule was rebuilt from the words alone and matched on all 24 toy rows, and the committed code reproduced every value. One fatal flaw: the free model's gate requires question sets the successor's task does not have, so as written it could never be read. Four serious flaws. The outside-review packet was built and checked by another session, then handed to John. Nothing spent."
 
 [[timeline]]
 date = "2026-10-04"

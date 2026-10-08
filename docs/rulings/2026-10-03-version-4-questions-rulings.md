@@ -72,6 +72,14 @@ committed file named in the registration**, in the way
 computed that way is the registered one. If the processor proves impractical
 at full size, that is a fresh question for John, not a switch.
 
+*Dated note, 2026-10-06 (Pacific), beside ruling 3, which is left as
+written. John ruled on 2026-10-06 that the laptop's processor computes the
+whole nomination and reading (every forward pass, every transplant pass that
+chooses the site set, and every fit), not only the read's fit, because the
+choice of site set once turned on one episode in 600; and that the
+registration cites the measured timing, about two hours per model and about
+25 hours for twelve (the inside review of version 4, RT-245; `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`, page 6).*
+
 ### 4. The episode counts are the toy's, and the sampling band is printed at the floor
 
 600 development episodes with the last 180 held out; 800 fresh matched pairs;
@@ -85,6 +93,16 @@ band beside it.
 
 The alternative that was put and not taken: more held-out episodes for the
 read, which would need the toy fits run once at the new count.
+
+*Dated note, 2026-10-06 (Pacific), beside ruling 4, which is left as
+written. For the read's fitting count only: John ruled on 2026-10-06 that
+every read is fitted on 1,800 development episodes, with the last 180 still
+held out (1,980 in all, floor still 144 of 180) and the transplant passes
+still on 600 pairs, because on a stand-in at the registered width the
+entangled model's read fell below the floor at the ruled count (the inside
+review of version 4, RT-240; `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`, page 4). A $0 toy
+re-run under the new count, and its check, are owed before registration.
+The other counts stand.*
 
 ### 5. The other-agent control is compared with twenty random pieces
 
@@ -123,6 +141,14 @@ This ruling says how. That file gains a dated note.
 
 The alternatives that were put and not taken: all three seeds; and keeping
 the gap paired by seed number.
+
+*Dated note, 2026-10-06 (Pacific), beside ruling 6, which is left as
+written. John ruled on 2026-10-06 that a seed counts only if it passes every
+gate condition and every check that withholds a reading, and returns a
+reading; an arm passes its gate, or reads, only if two seeds each do.
+Separate two-of-three counts per condition are no longer used (the ChatGPT
+outside review of version 4, A10; `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`, page 7). The
+separation between the built arms, as ruled here, is unchanged.*
 
 ### 7. The ordinary competing solver is run under the rules as now registered
 

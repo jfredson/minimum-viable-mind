@@ -1,0 +1,44 @@
+ChatGPT files: 33
+numbered 1..N with nothing missing: True | 'of' values: [33]
+largest ChatGPT file: 26,827 bytes (2026-10-04-successor-v4-tier2-chatgpt-20-of-33-records-14.md); files over 28,000 bytes: []
+
+rec | how cut | source | parts G/C | equal to source G/C
+  1 | section 'The brief, fixed, sent...' up to 'The closure rule, whic...' | docs/outside-review-protocol.md | 1/1 | True/True
+  2 | section 'The closure rule, whic...' up to 'Rebuild a document whe...' | docs/outside-review-protocol.md | 1/1 | True/True
+  3 | section 'The measurement rehear...' up to 'The failure-mode pass:...' | docs/outside-review-protocol.md | 1/1 | True/True
+  4 | whole file | docs/successor-experiment-proposal-2026-10-03-v4.md | 1/12 | True/True
+  5 | whole file | experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-claude-code.md | 1/4 | True/True
+  6 | whole file | docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md | 1/1 | True/True
+  7 | whole file | docs/rulings/2026-10-03-controls-rerun-rulings.md | 1/1 | True/True
+  8 | whole file | docs/rulings/2026-10-03-fifth-outcome-and-both-figures-rulings.md | 1/1 | True/True
+  9 | whole file | docs/rulings/2026-10-03-proposal-v4-seven-questions-rulings.md | 1/1 | True/True
+ 10 | whole file | docs/rulings/2026-10-03-version-4-questions-rulings.md | 1/1 | True/True
+ 11 | whole file | docs/rulings/2026-10-03-seven-questions-reconciliation.md | 1/1 | True/True
+ 12 | whole file | docs/rulings/2026-10-03-version-4-check-questions-rulings.md | 1/1 | True/True
+ 13 | whole file | docs/rulings/2026-10-04-competing-solver-and-control-2-rulings.md | 1/1 | True/True
+ 14 | whole file | experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-proposal-v4-check-claude-code.md | 1/3 | True/True
+ 15 | whole file | experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-competing-solver-and-control-2-check-claude-code.md | 1/3 | True/True
+ 16 | whole file | docs/2026-09-21-successor-measure-rehearsal.md | 1/3 | True/True
+ 17 | whole file | docs/2026-09-26-rehearsal-repairs.md | 1/3 | True/True
+ 18 | whole file | docs/2026-09-26-toy-rerun-v3-rules.md | 1/2 | True/True
+ 19 | whole file | docs/2026-10-03-controls-rerun.md | 1/2 | True/True
+ 20 | whole file | docs/2026-10-03-short-prestated-run.md | 1/2 | True/True
+ 21 | whole file | docs/2026-10-03-competing-solver-run.md | 1/1 | True/True
+ 22 | whole file | docs/2026-10-03-control-2-twenty-draws.md | 1/2 | True/True
+ 23 | whole file | docs/known-failure-modes.md | 1/3 | True/True
+ 24 | lines 1-118 of 650 | experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py | 1/1 | True/True
+ 25 | lines 1-70 of 485 | experiments/rehearsal-successor-measure/src/grammar.py | 1/1 | True/True
+
+material = the 25 records cut from source at this commit, joined in record order, utf-8
+characters: 785,686 | bytes: 786,335
+sha256 from sources:         2e9d1a9180a922b2eb7cf0b473549049507d9671817e1b2d6d3e42e96710d1f5
+sha256 from Gemini doc:      2e9d1a9180a922b2eb7cf0b473549049507d9671817e1b2d6d3e42e96710d1f5
+sha256 from ChatGPT files:   2e9d1a9180a922b2eb7cf0b473549049507d9671817e1b2d6d3e42e96710d1f5
+sha256 in instruction sheet: 2e9d1a9180a922b2eb7cf0b473549049507d9671817e1b2d6d3e42e96710d1f5
+
+Text outside every record, Gemini (first 100 characters of each chunk):
+    # Review packet - the registration text of the successor experiment (Minimum Viable Mind), Gate A, o
+    *End of the packet. Answer the brief now. Label your findings G1, G2, G3 and so on. The brief is rec
+Text outside every record, ChatGPT: 34 chunks (expected 33: file 1's orientation and 32 file headers)
+
+No problems found.

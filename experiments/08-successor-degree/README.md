@@ -63,3 +63,16 @@ Measuring a trained model, on the laptop's processor:
 python src/procedure.py model --ckpt artifacts/<run>/<run>.pt --seed 0 --out DIR
 python src/procedure.py summarise --dir DIR
 ```
+
+## Change after the freeze: the ownership sharpness and the in-use check (2026-10-06, ruled by John)
+
+In arms T, C and M the number that sets how decisive the built-in "which
+agent am I" answer is (the sharpness) is now fixed at 4.0, not learned
+(`src/models.py`); arm F is unchanged. And a check fails a built model whose
+ownership route has gone flat (`procedure.route_in_use`, judged in
+`measure.route_check` and `measure.withhold`): such a seed gets no verdict,
+recorded as "construction did not hold". Method:
+`docs/2026-10-06-sharpness-fix-inuse-check-method.md`. Tests:
+`tests/inuse_cases.py` (made-up cases on real models), the decision-code case
+runner `tests/a2_run_cases.py` (cases 26 to 28), and the toy retrain
+`tests/retrain_toy_fixed.py`; outputs in `out-sharpness-fix/`.

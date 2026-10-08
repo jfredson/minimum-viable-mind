@@ -162,6 +162,16 @@ of three seeds collapse, with the third reported.** A separate collapse bar
 below the learn-both bar was considered and not taken, because it adds a second
 pre-stated number nobody has rehearsed. This refines queue ruling page 1h.
 
+*Dated note, 2026-10-06 (Pacific), beside RT-220, which is left as written.
+It is amended by page 7 of `docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`:
+"at least two of three seeds collapse" is now counted on the same seeds that
+pass every other gate condition and withholding check, not as a separate
+two-of-three count. Page 1 of the same ruling adds a line that sits beside the
+collapse rule without amending it: the ownership-free count of 1,546 of 3,000.
+RT-220 declined a second collapse threshold; that line is a different
+condition, replacing page 1h's batteries. (Reworded the same day after the
+check of the 2026-10-06 record, pull request 104.)*
+
 ### RT-222 (minor). The 0.0175 allowance
 
 *Review, RT-222. The allowance was set from a miss of 0.017536, which fails it;
@@ -171,6 +181,16 @@ The allowance is written as **"at most the largest measured miss, rounded up to
 0.018"**, and the detection margin at the bar is printed in the reporting table.
 The mechanism is not changed this weekend. This refines the wording of queue
 ruling page 2's "room for the miss of up to 0.0175".
+
+*Dated note, 2026-10-06 (Pacific), beside RT-222, which is left as written.
+John ruled on 2026-10-06 that the no-transplant rate is reported against the
+formula and no longer withholds a reading: a correctly paired model whose
+mistakes go to other agents' values falls outside 0.018 at most accuracies,
+and near the learning bar the check catches a broken pairing only about 56
+per cent of the time (the ChatGPT outside review of version 4, A9). The
+pairing is checked directly by the generator's self-test and by control 4.
+The detection margin printed here is replaced by that 56 per cent chance
+(`docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`, page 8).*
 
 ### RT-229 (minor). Which release pays for arm M's development run
 

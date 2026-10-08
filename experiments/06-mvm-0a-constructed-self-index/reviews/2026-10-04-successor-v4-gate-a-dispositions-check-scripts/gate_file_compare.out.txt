@@ -1,0 +1,62 @@
+gate file keys: ['C/base/0', 'C/base/1', 'C/base/2', 'F/base/0', 'F/base/1', 'F/base/2', 'M/base/0', 'M/base/1', 'M/base/2', 'T/base/0', 'T/base/1', 'T/base/2', 'blind/base/0', 'blind/base/1', 'blind/base/2']
+C/base/0     own_correct          gate file 1711  this check 1711  same
+C/base/0     other_correct        gate file 760  this check 760  same
+C/base/0     lesioned_own x n     gate file 534  this check 534  same
+C/base/0     lesioned_other x n   gate file 620  this check 620  same
+C/base/1     own_correct          gate file 1703  this check 1703  same
+C/base/1     other_correct        gate file 751  this check 751  same
+C/base/1     lesioned_own x n     gate file 549  this check 549  same
+C/base/1     lesioned_other x n   gate file 630  this check 630  same
+C/base/2     own_correct          gate file 1727  this check 1727  same
+C/base/2     other_correct        gate file 708  this check 708  same
+C/base/2     lesioned_own x n     gate file 511  this check 511  same
+C/base/2     lesioned_other x n   gate file 504  this check 504  same
+F/base/0     own_correct          gate file 1679  this check 1679  same
+F/base/0     other_correct        gate file 994  this check 994  same
+F/base/0     lesioned_own x n     gate file 528  this check 528  same
+F/base/0     lesioned_other x n   gate file 646  this check 646  same
+F/base/1     own_correct          gate file 1654  this check 1654  same
+F/base/1     other_correct        gate file 781  this check 781  same
+F/base/1     lesioned_own x n     gate file 555  this check 555  same
+F/base/1     lesioned_other x n   gate file 636  this check 636  same
+F/base/2     own_correct          gate file 1664  this check 1664  same
+F/base/2     other_correct        gate file 746  this check 746  same
+F/base/2     lesioned_own x n     gate file 582  this check 582  same
+F/base/2     lesioned_other x n   gate file 570  this check 570  same
+M/base/0     own_correct          gate file 2592  this check 2592  same
+M/base/0     other_correct        gate file 1663  this check 1663  same
+M/base/0     lesioned_own x n     gate file 669  this check 669  same
+M/base/0     lesioned_other x n   gate file 1584  this check 1584  same
+M/base/1     own_correct          gate file 2584  this check 2584  same
+M/base/1     other_correct        gate file 1699  this check 1699  same
+M/base/1     lesioned_own x n     gate file 657  this check 657  same
+M/base/1     lesioned_other x n   gate file 1592  this check 1592  same
+M/base/2     own_correct          gate file 2600  this check 2600  same
+M/base/2     other_correct        gate file 1655  this check 1655  same
+M/base/2     lesioned_own x n     gate file 661  this check 661  same
+M/base/2     lesioned_other x n   gate file 1580  this check 1580  same
+T/base/0     own_correct          gate file 3000  this check 3000  same
+T/base/0     other_correct        gate file 3000  this check 3000  same
+T/base/0     lesioned_own x n     gate file 740  this check 740  same
+T/base/0     lesioned_other x n   gate file 3000  this check 3000  same
+T/base/1     own_correct          gate file 3000  this check 3000  same
+T/base/1     other_correct        gate file 3000  this check 3000  same
+T/base/1     lesioned_own x n     gate file 753  this check 753  same
+T/base/1     lesioned_other x n   gate file 3000  this check 3000  same
+T/base/2     own_correct          gate file 3000  this check 3000  same
+T/base/2     other_correct        gate file 3000  this check 3000  same
+T/base/2     lesioned_own x n     gate file 820  this check 820  same
+T/base/2     lesioned_other x n   gate file 3000  this check 3000  same
+blind/base/0 own_correct          gate file 702  this check 702  same
+blind/base/0 other_correct        gate file 712  this check 712  same
+blind/base/0 lesioned_own x n     gate file 702  this check 702  same
+blind/base/0 lesioned_other x n   gate file 712  this check 712  same
+blind/base/1 own_correct          gate file 715  this check 715  same
+blind/base/1 other_correct        gate file 726  this check 726  same
+blind/base/1 lesioned_own x n     gate file 715  this check 715  same
+blind/base/1 lesioned_other x n   gate file 726  this check 726  same
+blind/base/2 own_correct          gate file 702  this check 702  same
+blind/base/2 other_correct        gate file 650  this check 650  same
+blind/base/2 lesioned_own x n     gate file 702  this check 702  same
+blind/base/2 lesioned_other x n   gate file 650  this check 650  same
+differing: 0

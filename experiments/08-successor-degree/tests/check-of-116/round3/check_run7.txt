@@ -1,0 +1,112 @@
+load: 2.80 2.82 3.17
+Checks of the spending-alarm fixes ruled 2026-10-06 (stand-in vendor; $0)
+laptop load at start: (2.8046875, 2.822265625, 3.16845703125)
+T1  honest wave, lagged (8 min) and lumpy (5-min steps), two machines
+  [PASS] no trip at any reading
+  [PASS] the watcher ends at minute 66, 30 minutes after the last deletion  (ended 66)
+  [PASS] final comparison 0.99 to 1.01  (0.9982)
+T2  overbilled wave, 3.5 times the rate, same machines
+  [PASS] trips at minute 26, while both machines still run  (tripped at 26)
+  [PASS] by rule S, two readings in a row  (TRIPPED 2027-01-15T08:26:00Z: ratio B 1.929 at or above 1.25 (rule S, two readings in a ro)
+  [PASS] ledger figures written with the halt
+  [PASS] the check before a next machine then refuses
+T3  mild overcharge (1.4 times) hidden by an 8-minute lag, one 20-minute machine
+  [PASS] rule S never trips; rule D trips at minute 36, 15 minutes after the deletion  (tripped at 36: TRIPPED 2027-01-15T08:36:00Z: ratio B 1.392 at or above 1.25 (rule D, after a de)
+  [PASS] ratio about 1.39  (1.3924)
+T4  honest but lumpy: ten minutes charged in advance at each ten-minute mark
+  [PASS] no trip  (ratios in flight: 1:9.91, 6:1.66, 11:1.81, 16:1.25, 21:1.42, 26:1.15, 31:1.00)
+  [PASS] final comparison 1.00  (1.0000)
+T5  honest, long lag (14 min), one 20-minute machine
+  [PASS] no trip
+  [PASS] final comparison 0.98 to 1.00  (0.9921)
+T6  failed vendor reading in flight (balance read errors at minute 11)
+  [PASS] trip at minute 11, a check that cannot run
+T7  empty bills at the end of a wave
+  [PASS] an empty bill ([]): a trip, cannot be checked yet
+  [PASS] a bill of zero hours: a trip, cannot be checked yet
+  [PASS] a bill with no row for this machine: a trip, cannot be checked yet
+  [PASS] a real row (191,063 ms against 191.063 s of life) passes at 1.0
+  [PASS] the old code passed the empty bill (the fault being fixed)  (old exit 0)
+B1-B4  a bill posted only in part (ruled 2026-10-06: below 0.90 of life is 'cannot be checked yet')
+  [PASS] B1 the recorded partial bill (566,260 ms against 1,873 s, 0.30): a trip, cannot be checked yet
+  [PASS] B2 the recorded complete bill (1,871,875 ms against 1,873 s, 0.9994): passes
+  [PASS] B3 billed 0.90 of life passes; 0.899 is a trip, cannot be checked yet
+  [PASS] B4 billed 3.5 times life: still a trip, over the line
+R7-R9  an inferred deletion: the 0.90 line judged against the last listing
+  [PASS] R7 listed 20 min, inferred 5 min later, billed 20 min: passes (1.00 against the last listing)
+  [PASS] R8 the same, billed 10 min: a trip, cannot be checked yet
+  [PASS] R9 the same, billed 32.5 min (1.3 times life to the inferred deletion): a trip as overbilling
+U1-U5  a top-up during a wave (ruled 2026-10-06: restart the comparison, record it, do not trip)
+  [PASS] U1 honest wave, lagged, $75 top-up at minute 13: no trip
+  [PASS] U1 the restart is recorded at minute 16, with the rise  (restart at 16, rise 74.9167)
+  [PASS] U1 final comparison about 0.895 (0.85 to 0.95)  (0.8954)
+  [PASS] U1 the watcher's log says the balance rose, restarts, not a trip
+  [PASS] U2 overbilled 3.5 times with a top-up: restart at 16, trips in flight at minute 31  (tripped at 31)
+  [PASS] U3 overbilled 1.4 times with a top-up: NOT caught (the stated cost), final about 1.25  (1.2536)
+  [PASS] U4 honest, no lag, with a top-up: no trip, reads low (about 0.62)  (0.6184)
+  [PASS] U5 the plain restart (no allowance) would false-trip U1 at minute 56  (tripped at 56)
+T8  deletion records in the alarm
+  [PASS] a recorded time replaces an inferred one, even a later one
+  [PASS] between two recorded times the earlier is kept
+  [PASS] an inferred time never replaces a recorded one
+  [PASS] a machine this wave never registered is reported, not added
+  [PASS] (added) a machine missing from one list and listed again is not left marked deleted
+  [PASS] the command line records the time and who  (tripwire: podA deleted at 1970-01-01T00:18:20Z by the watchdog)
+T9/W1-W7  the watchdog's deletion record (corrected after the check: the vendor's own
+          'pod not found ... (status 404)', and two good machine lists without the machine)
+  [PASS] R10 (W1) every watchdog machine list uses --all
+  [PASS] W1 delete accepted; both lists good, machine absent: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T08:32:10Z (1791361930), confirmed by the watchdog: the delet)
+  [PASS] R10 (W2/R4) every watchdog machine list uses --all
+  [PASS] W2/R4 delete accepted; first list read fails: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W3/R5) every watchdog machine list uses --all
+  [PASS] W3/R5 delete accepted; first list good, second shows the machine: no record file; the alarm gets the deletion time  (no record file)
+  [PASS] R10 (W4) every watchdog machine list uses --all
+  [PASS] W4 delete answered with the recorded 'pod not found ... (status 404)'; lists good: record file and alarm time written  (machine fakepod0000001 (t9) deleted at 2026-10-07T08:32:13Z (1791361933), confirmed by the watchdog: the vendo)
+  [PASS] W5 delete fails 'HTTP 503'; lists good and empty: no record anywhere  (no record file)
+  [PASS] (T9) a failed delete, machine still listed: no record anywhere  (no record file)
+  [PASS] W6 found gone; pod get gives the vendor's words; lists good: record written
+  [PASS] W7 found gone; pod get gives 'Error: api error: 404 page not found (status 404)': no record
+  [PASS] (T9) found gone; three failed readings only: no record
+T10-T15, N1-N8  the laptop deadline timer
+  [PASS] T10 the watchdog's record names this machine: stands down, no delete, no deadline line  (vendor reads 0, delete issued -6s, ended -5.8s from the written deadline, delete called: False, deadline line: False, stood down: True)
+  [PASS] R10 every timer machine list uses --all (2 calls)
+  [PASS] T11/N4 the recorded 'pod not found ... (status 404)' and a good list without it, two checks: stands down  (vendor reads 2, delete issued -11s, ended -11.5s from the written deadline, delete called: False, deadline line: False, stood down: True)
+  [PASS] T12 a failed vendor reading (error, no 'not found'): keeps running, deletes at the deadline  (vendor reads 8, delete issued +0s, ended +0.1s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] T13 an empty vendor answer: keeps running, deletes at the deadline  (vendor reads 8, delete issued +0s, ended +0.7s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] T14 a record naming another machine: ignored, deletes at the deadline  (vendor reads 0, delete issued +0s, ended +0.9s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] T15 deletes at its deadline with the alarm configured  (vendor reads 0, delete issued +1s, ended +1.2s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] T15 the alarm's records show the timer's deletion time, by the machine deadline
+  [PASS] (added) a vendor read that hangs: the deadline still deletes  (vendor reads 3, delete issued +0s, ended +0.5s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] R2 every vendor read hangs (cap 2 s, deadline 12 s): deletes at the deadline, within 10 s  (vendor reads 2, delete issued +0s, ended +0.6s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] R3 cap 20 s, deadline 10 s: no vendor read at all (inside the skip window); deletes  (vendor reads 0, delete issued +0s, ended +1.0s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] N1 'Error: api error: 404 page not found (status 404)', list good: stays armed, deletes  (vendor reads 7, delete issued +0s, ended +0.4s from the written deadline, delete called: True, deadline line: True, stood down: False)
+      (N2 waits for the timer's three failed delete attempts, about 40 seconds)
+  [PASS] N2 the vendor tool missing from the command path ('command not found'): never stands down  (vendor reads 0, delete issued +61s, ended +60.5s from the written deadline, delete called: False, deadline line: True, stood down: False)
+  [PASS] N3 'Config File "config" Not Found in "[/Users/x/.runpod]"': stays armed, deletes  (vendor reads 7, delete issued +0s, ended +0.1s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] R10 every timer machine list uses --all (8 calls)
+  [PASS] N5 the vendor's words, but the machine list fails: stays armed, deletes  (vendor reads 8, delete issued +0s, ended +0.7s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] R10 every timer machine list uses --all (7 calls)
+  [PASS] N6 the vendor's words, but the list shows the machine: stays armed, deletes  (vendor reads 7, delete issued +0s, ended +0.5s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] R10 every timer machine list uses --all (1 calls)
+  [PASS] N7 the vendor's words and a good list, but only one check before the deadline: stays armed, deletes  (vendor reads 1, delete issued +0s, ended +0.9s from the written deadline, delete called: True, deadline line: True, stood down: False)
+  [PASS] N8 the old T11 answer '{"error":"pod not found","status":404}': now stays armed, deletes  (vendor reads 7, delete issued +0s, ended +0.5s from the written deadline, delete called: True, deadline line: True, stood down: False)
+F1  the timing cases, five full runs in a row
+  [PASS] F1 all pass in five runs  (20 of 20)
+L1-L3  the lock on the alarm's records (the check's race, reproduced)
+  [PASS] L1 the watchdog's deletion time, written during the watcher's vendor read, survives  ('the watchdog')
+  [PASS] L2 a second machine registered during the watcher's vendor read survives
+  [PASS] L3 with the lock held by another program for 2 s, gone waits for it, then records  (waited 2.0s)
+R   the development run's recorded readings through the new alarm
+      deletion times from the "pod gone" lines:
+        2026-10-05T00:56:28Z: ratio B 0.9899 (drawn $1.4564, predicted $1.4713); comparison at deletion applies: True; watcher says continue; halt: False
+        2026-10-05T01:11:20Z: ratio B 0.9948 (drawn $1.4662, predicted $1.4738); comparison at deletion applies: True; watcher says done; halt: False
+  [PASS] with the check's 00:56 reading: 0.9899, no trip  (0.9899)
+  [PASS] with the 01:11:20 reading: about 0.995, no trip, the watcher finishes  (0.9948)
+      deletion times from the "deleting pod" lines:
+        2026-10-05T00:56:28Z: ratio B 0.9988 (drawn $1.4564, predicted $1.4581); comparison at deletion applies: True; watcher says continue; halt: False
+        2026-10-05T01:11:20Z: ratio B 1.0038 (drawn $1.4662, predicted $1.4606); comparison at deletion applies: True; watcher says done; halt: False
+  [PASS] with the earlier edge of each delete: no trip at either reading
+  [MISS] pre-stated range 0.98 to 1.00 for both readings  (0.9988, 1.0038): a missed prediction, see the method, section 10
+  [PASS] the old code's arithmetic, deletions inferred at 01:11: 0.401 (as its watcher logged)  (0.4015)
+
+all checks pass. nothing was rented and nothing was spent.

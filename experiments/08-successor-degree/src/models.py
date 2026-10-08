@@ -13,6 +13,13 @@ weight, so a committed toy model loads here unchanged and gives the same
 outputs bit for bit (test T2 of the method note). What is added is the three
 sizes, by name, and the one-scored-token check run on the models' own loss.
 
+Changed 2026-10-06 by John's ruling (option 1(b) of
+`docs/rulings/2026-10-06-cm-flat-ownership-PROPOSAL.md`; method
+`docs/2026-10-06-sharpness-fix-inuse-check-method.md`): in arms T, C and M
+the ownership answer's sharpness is fixed at 4.0, not learned. In the
+10-million-parameter development runs training drove it to about zero in
+arms C and M, which switched their built route off. Arm F is unchanged.
+
 The four models
 ---------------
 All share a trunk: token embedding, learned position embedding, a learned
@@ -113,6 +120,21 @@ def config_for(arm: str, size: str) -> Config:
     return Config(arm=arm, **SIZES[size])
 
 
+OWN_SHARPNESS = 4.0
+BUILT_ARMS = ("T", "C", "M")
+
+
+def _fix_sharpness(module: nn.Module) -> None:
+    """The ownership answer's sharpness, FIXED at 4.0 in the built arms
+    (John's ruling of 2026-10-06, option 1(b) of
+    `docs/rulings/2026-10-06-cm-flat-ownership-PROPOSAL.md`). A buffer, not a
+    parameter: saved with the model under the same name, so every saved model
+    still loads strictly, but never handed to the optimiser, so neither
+    training nor weight decay can move it. A model saved before the ruling
+    loads with the value it learned; `procedure.route_in_use` flags it."""
+    module.register_buffer("own_sharpness", torch.tensor(OWN_SHARPNESS))
+
+
 class Block(nn.Module):
     def __init__(self, width: int, n_heads: int, film: bool, d_own: int):
         super().__init__()
@@ -199,7 +221,11 @@ class Arm(_Shared):
         self.pos = nn.Embedding(cfg.max_len, w)
         self.act_vec = nn.Parameter(torch.randn(w) * 0.02)
         self.own_marker = nn.Linear(w, cfg.d_own)
-        self.own_sharpness = nn.Parameter(torch.tensor(4.0))
+        if cfg.arm == "F":
+            # the free model computes the answer and never uses it; unchanged
+            self.own_sharpness = nn.Parameter(torch.tensor(OWN_SHARPNESS))
+        else:
+            _fix_sharpness(self)
         film = cfg.arm == "C"
         self.blocks = nn.ModuleList(
             [Block(w, cfg.n_heads, film, cfg.d_own) for _ in range(cfg.n_layers)])
@@ -275,7 +301,7 @@ class MiddleArm(_Shared):
         self.pos = nn.Embedding(cfg.max_len, w)
         self.act_vec = nn.Parameter(torch.randn(w) * 0.02)
         self.own_marker = nn.Linear(w, cfg.d_own)
-        self.own_sharpness = nn.Parameter(torch.tensor(4.0))
+        _fix_sharpness(self)
         self.blocks = nn.ModuleList(
             [Block(w, cfg.n_heads, True, cfg.d_own) for _ in range(cfg.n_layers)])
         self.lnf = nn.LayerNorm(w)
@@ -484,6 +510,28 @@ def self_test(sizes=("toy", "10M", "30M")) -> None:
         mm = build(arm, "toy")
         check(f"arm {arm}: the twins' final states differ",
               not torch.allclose(mm(r, capture=True)[1][-1], mm(d, capture=True)[1][-1], atol=1e-6))
+
+    # --- the sharpness: fixed at 4.0 in the built arms (ruled 2026-10-06) ---
+    for arm in ARMS:
+        torch.manual_seed(0)
+        m = build(arm, "toy")
+        learned = any(n == "own_sharpness" for n, _ in m.named_parameters())
+        if arm in BUILT_ARMS:
+            opt = torch.optim.AdamW(m.parameters(), lr=0.1, weight_decay=0.5)
+            for _ in range(3):
+                opt.zero_grad(); m.loss(b).backward(); opt.step()
+            sd = m.state_dict()
+            check(f"arm {arm}: the sharpness is fixed at 4.0, not learned; still exactly 4.0 "
+                  f"after optimiser steps with weight decay; saved under its old name",
+                  not learned and float(m.own_sharpness) == OWN_SHARPNESS
+                  and "own_sharpness" in sd and float(sd["own_sharpness"]) == OWN_SHARPNESS)
+            m2 = build(arm, "toy")
+            sd2 = dict(sd); sd2["own_sharpness"] = torch.tensor(1.73)
+            m2.load_state_dict(sd2, strict=True)
+            check(f"arm {arm}: a model saved with a learned sharpness loads strictly, with its value",
+                  abs(float(m2.own_sharpness) - 1.73) < 1e-6)
+        else:
+            check("arm F: the sharpness is still a learned number (unchanged)", learned)
 
     # --- a model rebuilt from its saved configuration is the same model ------
     for arm in ARMS:

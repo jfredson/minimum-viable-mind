@@ -29,12 +29,12 @@ title = "The weekend roadmap to 2026-12-21"
 written_on = "2026-09-24"
 updated_on = "2026-10-08"
 source = "docs/weekend-roadmap-2026-09-24.md"
-one_line = "Twelve working weekends between 2026-09-26 and 2026-12-20, front-loaded so that both kill dates pass with their work already done and reserve weekends stay in hand for slipped gates. Re-planned 2026-10-08: the registration slipped two weekends and the refounding of 2026-10-07 changed what the degree experiment is for (instrument research, with a stop after the repaired built models are verified and another after the single free-arm run); the second release is conditional on both. Weekends 4 to 7 are left as written until the handoff after weekend 3 knows what landed."
+one_line = "No longer a schedule (ruled 2026-10-04, docs/rulings/2026-10-04-no-future-dates.md): each step now runs as soon as what it waits on is done, and the dates below are the plan as it stood, not targets. The kill dates, the wrap-up start and the hibernation deadline still bind as outer limits. As first written: twelve working weekends between 2026-09-26 and 2026-12-20, front-loaded so that both kill dates pass with their work already done, the December result exists by 2026-11-08, and five weekends stay in hand for slipped gates and for the extensions that make the conclusion stronger."
 question = "Can a decomposability measure, validated on systems whose degree is known by construction, read the degree of a freely trained 30-million-parameter transformer that acquired a load-bearing ownership pointer under task pressure? If so, what does it read?"
 wrap_up_start = "2026-12-21"
 hibernation_by = "2027-01-04"
-weekday_rule = "Weekdays carry rulings and spoken go's only, from a queue a session pre-assembles; weekends carry the reviewer sessions John runs by hand and the launches; agents run unattended between weekends."
-replan_rule = "Every Thursday or Friday evening the coming weekend is re-planned from the top of STATUS.md. Kill dates and the wrap-up start never move; what moves is which weekend absorbs a slip, and the re-plan names it."
+weekday_rule = "Retired 2026-10-04 (docs/rulings/2026-10-04-no-future-dates.md). Work is no longer split between weekdays and weekends: each step runs as soon as what it waits on is done, and a step that waits on John (a ruling, a go, the outside-review sessions) waits on him without a date. As first written: weekdays carry rulings and spoken go's only, from a queue a session pre-assembles; weekends carry the reviewer sessions John runs by hand and the launches; agents run unattended between weekends."
+replan_rule = "Retired 2026-10-04 (docs/rulings/2026-10-04-no-future-dates.md): there is no weekly re-plan and no Sunday-night handoff. Kill dates and the wrap-up start still never move. As first written: every Thursday or Friday evening the coming weekend is re-planned from the top of STATUS.md, and the re-plan names which weekend absorbs a slip."
 
 # Fixed dates the plan is held to. These never move.
 [[milestones]]
@@ -131,7 +131,7 @@ end = "2026-10-12"
 days = 3
 status = "active"
 title = "Register, verify the repair, then the first run if it holds"
-outcome = "Re-planned 2026-10-08. The registration committed inside kill date 1 with the repair and both stop conditions written in; the three 10-million reruns of the repaired built models landed and verified against the bar John rules; if they hold, the single free-arm run at full size launched on his go. The second release is not this weekend: it is asked for only after both the reruns and the free arm pass, and he gives the go on the figures."
+outcome = "The next ordered steps as set 2026-10-08, not a schedule (the weekly re-plan was retired by the ruling of 2026-10-04, docs/rulings/2026-10-04-no-future-dates.md). The registration committed inside kill date 1 with the repair and both stop conditions written in; the three 10-million reruns of the repaired built models landed and verified against the bar John rules; if they hold, the single free-arm run at full size launched on his go. The second release is not this weekend: it is asked for only after both the reruns and the free arm pass, and he gives the go on the figures."
 beside = "Columbus Day makes it three days. The field exercise of 2026-10-13 to 14 follows (blackout, tentative)."
 john_hours = "about 2, spread across the three days"
 john_items = [

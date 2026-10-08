@@ -65,6 +65,15 @@ this file issues none).
 - **1h.** Lesion collapse: own-directed accuracy falls below the 1b bar; the
   named-other clause is reported and not gated; the ownership-free batteries
   must hold. Gates arm F only, as proposal section 8.2 has it.
+  *Dated note, 2026-10-06 (Pacific), beside 1h, which is left as written.
+  The successor's task has no batteries, so "the ownership-free batteries
+  must hold" could never be evaluated (the inside review of version 4,
+  RT-237, fatal). John ruled on 2026-10-06 that the clause is replaced: with
+  the acting channel zeroed, the own-directed answer must still be the
+  successor of one of the four agents' values on the item named, on 1,546 or
+  more of 3,000 gate episodes, on two seeds of three; the registered sentence
+  says only that the model still answers with the successor of a value it
+  was shown (`docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`, page 1).*
 
 *Changes:* successor proposal version 2, sections 6.4, 7.2, 7.4, 8.1, 8.2.
 

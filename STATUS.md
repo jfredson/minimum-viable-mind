@@ -81,7 +81,7 @@ every push. The weekend 1 plan listed setting them as an optional ten-minute
 item and it was never done. Deploying is a launch and stays John's call; the
 step is on the roadmap as a decision for him.
 
-**Addendum, later the same day.** John merged this branch (pull request 124) and ran the first deploy himself (`npm run deploy` from `site/`); the site is live at https://minimumviablemind.sentient-horizons.com, and the first deploy created the subdomain's record and certificate on its own. The two Cloudflare secrets were then set the same afternoon (a new token from the Workers template, scoped to one account and the sentient-horizons.com zone, created by John in the dashboard with the session driving the form to the summary page; the account id set by the session), and the deploy workflow ran green end to end, so every merge to the main line that touches the site now publishes it on its own. The project name's .com, .org and .net were registered by someone else on 2025-04-15 (Squarespace Domains, expiring 2027-04-15; the .com shows a "Coming Soon" page), so the site stays at the subdomain by John's word. The essay draft for Sentient Horizons, *The Smallest Possible Mind*, is on a branch in that repo with the site linked at its home, learned, roadmap and spend pages. Later still, John ruled the verification bar, the decision the registration turns on, in his words "Rule the verification bar now, keep it at 0.5": the in-use check's two parts stay at 0.9 and 0.5 as the method note stated them, a miss fires the stop condition and ends experiment C at about $1.14 as instrument research, and the redesign of the built arms stays the named route to a real reference (`docs/rulings/2026-10-08-verification-bar-ruling.md`, authorship mixed: the drafting session recommended it, John chose it). Then, at his word "Write the one-page restatement of the December result" and "Merge it and approve all the decisions from the doc", the restatement was written, merged (pull request 127) and ruled in full: five things on the record by 2026-12-21, an early stop of experiment C counted as a registered ending, its public sentence confirmed, and the state-of-the-programme write-up folded into the closing STATUS entry with the essay as its public face (`docs/rulings/2026-10-08-december-result-restatement-rulings.md`, authorship mixed). A dated note now heads the December-result roadmap.
+**Addendum, later the same day.** John merged this branch (pull request 124) and ran the first deploy himself (`npm run deploy` from `site/`); the site is live at https://minimumviablemind.sentient-horizons.com, and the first deploy created the subdomain's record and certificate on its own. The two Cloudflare secrets were then set the same afternoon (a new token from the Workers template, scoped to one account and the sentient-horizons.com zone, created by John in the dashboard with the session driving the form to the summary page; the account id set by the session), and the deploy workflow ran green end to end, so every merge to the main line that touches the site now publishes it on its own. The project name's .com, .org and .net were registered by someone else on 2025-04-15 (Squarespace Domains, expiring 2027-04-15; the .com shows a "Coming Soon" page), so the site stays at the subdomain by John's word. The essay draft for Sentient Horizons, *The Smallest Possible Mind*, is on a branch in that repo with the site linked at its home, learned, roadmap and spend pages. Later still, John ruled the verification bar, the decision the registration turns on, in his words "Rule the verification bar now, keep it at 0.5": the in-use check's two parts stay at 0.9 and 0.5 as the method note stated them, a miss fires the stop condition and ends experiment C at about $1.14 as instrument research, and the redesign of the built arms stays the named route to a real reference (`docs/rulings/2026-10-08-verification-bar-ruling.md`, authorship mixed: the drafting session recommended it, John chose it). Then, at his word "Write the one-page restatement of the December result" and "Merge it and approve all the decisions from the doc", the restatement was written, merged (pull request 127) and ruled in full: five things on the record by 2026-12-21, an early stop of experiment C counted as a registered ending, its public sentence confirmed, and the state-of-the-programme write-up folded into the closing STATUS entry with the essay as its public face (`docs/rulings/2026-10-08-december-result-restatement-rulings.md`, authorship mixed). A dated note now heads the December-result roadmap. Later still, at John's word "Merge both and start the sharpness branch check" and "Merge it and merge the fifteen branches": the version 5 check and its re-check were merged with the five fixes and two leftovers applied; the sharpness branch was checked by a fresh session (every figure reproduced; one wording range corrected, 22 to 29 per cent rather than 24 to 29); and the fifteen branches version 5 cites were landed on the main line through one integration branch. Six of the checks had been merged into their drafting branches rather than into the main line, because their pull requests were opened against those branches, so landing them meant merging the updated drafting branches and the registration-review branch (pull request 94), whose conflicts with this record were resolved by keeping the 2026-10-08 state and placing its two older entries (2026-10-06 and the registration review of 2026-10-04) below in date order. One thing that merge surfaced: the ruling of 2026-10-04 (`docs/rulings/2026-10-04-no-future-dates.md`) retired the weekly re-plan and the Sunday handoff, which the repository guide still describes and which this entry's weekend 3 re-plan followed; the roadmap data now carries the retirement, weekend 3's goals stand as ordered steps rather than a schedule, and the guide is John's to amend.
 
 **What is owed next, in order.** John's merge of this branch; his ruling on
 the verification bar and the other open items of version 5; the check of
@@ -232,6 +232,223 @@ eighteen findings is the next commit. The sentences above in this entry that
 say the second release was struck and that new dates were set are superseded
 by this addendum and left as written. Everything remains on the one branch,
 unmerged, unpushed; $0 of rented computing.
+
+## WHERE THINGS STAND 2026-10-06 — John has ruled all twelve pages of the registration-review packet; whether to go on waits on a $0 decoy test; nothing launched
+
+*Landed on the main line on 2026-10-08, below the entries written after it, when the registration-review branch it was written on was merged; its note that it was the current state has been moved up.*
+
+*Written 2026-10-06 (Pacific) by the Claude Code session that recorded John's
+rulings (branch `rulings-2026-10-06-gate-a-v4`). It wrote none of the packet,
+the drafted dispositions, the reviews or their checks. Nothing was rented or
+spent.*
+
+**What happened since the entry below.** Both outside reviews of version 4
+came back and were filed word for word: Gemini (pull request 99), whose nine
+findings all repeat the inside review's, and ChatGPT (pull request 100), whose
+thirteen add nine new ones, one of them fatal. Drafted answers to every
+finding, inside and outside, were written as two proposals with a twelve-page
+question packet for John (pull requests 95 and 101), and each was checked by a
+session that did not write it (pull requests 96 and 102, with a re-check of
+the fixes on 102).
+
+**John ruled all twelve pages on 2026-10-06**, one page at a time, in a
+planning session. The record is
+`docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md` (authorship mixed;
+his words quoted for each page). In short:
+
+- **The fatal flaw is answered** (page 1): the free model's gate no longer
+  asks for question sets the task does not have. It asks instead that, with
+  the acting channel switched off, the model still answers with the successor
+  of a value it was shown, on 1,546 or more of 3,000 episodes.
+- **Every read is fitted on 1,800 episodes, not 420** (page 4), because at the
+  registered width the smaller count failed on a stand-in.
+- **One outcome table names every reachable result** (pages 5 and 9), with
+  three new terms. If the free model passes its first run and then fails its
+  learning gate later, after the two built models have separated, that is the
+  weaker satisfactory result with the reason, not "substrate not a testbed".
+  A failure at its first run still stops everything, as ruled before.
+- **A seed counts only if it passes everything** (page 7). **The
+  no-transplant check is reported and no longer refuses a reading** (page 8).
+  The episode format is written down in full (page 3), the floor carries the
+  code's safeguard and a wrong figure is corrected (page 2), and four wording
+  fixes are accepted (page 6).
+- **The outcome words keep a fixed phrase**: "metric validated, on these
+  constructed systems, for this intervention procedure" (page 11).
+- **Whether to go on at all is not decided** (page 12). It waits on a $0
+  "decoy" test (page 10): does the read get fooled by an unused copy of the
+  owner's marker? If it is fooled, the recommendation on record is to stop or
+  redesign before registration; if not, to continue.
+
+The rulings amend eleven earlier rulings in small ways; each carries a dated
+note beside it, listed in the ruling file. The first record left a few items
+unruled; later the same day John ruled them ("accept all four, yes, yes",
+recorded in the ruling file's follow-up section): the four outside wording
+fixes are accepted as drafted, both scope phrases apply (including to the
+three new terms that contain "metric"), and control 4 is the pairing check
+that withholds a reading, with the generator's self-test kept as a second
+check. He also adopted a one-line generator self-test that no fresh or
+relaxed episode's combination appears in training, and accepted the fatal
+finding on the decision procedure (A2) as drafted, with the withheld figure
+removed from its output ("yes, remove"); that work is item 4 below.
+Two refinements followed ("yes, stricter, go with the recommendation"): R2,
+"metric does not separate", carries the scope phrase too, and the self-test
+checks the specific pairing that makes an episode fresh or relaxed. Because
+the self-test samples only 200 training steps, John then chose to have
+training leave those pairings out outright ("(a), go with the
+recommendation"); that work is added to item 4 below. The four 10-million
+development runs used the old exclusion; they are development evidence only
+and need no re-run.
+
+**What is now owed before the registration commit, in the order things wait
+on each other.** All $0, on the laptop. Items 3 and 4 proceed now,
+alongside the decoy test.
+
+1. The check of the ruling file, by a session that did not write it.
+2. The decoy test, method committed first, run both ways round, and its
+   check. John then decides page 12.
+3. The toy re-run of the nomination and reading with every read fitted on
+   1,800 episodes, method first, and its check.
+4. The changes to the frozen decision code (`procedure.py` and `measure.py`
+   in `experiments/08-successor-degree/src/`, on main): the ruled outcome
+   table, the one-place seed rule, the new ownership-free line, the
+   no-transplant check moved out of the vetoes, every reason listed, and the
+   withheld figure (`arithmetic_withheld`) removed from the output (John:
+   "yes, remove"). Then a run on the toy and on made-up failure cases,
+   method first, and its check. Alongside it, the frozen training code
+   changed to leave fresh and relaxed pairings out of training outright, with
+   a self-test asserting it, method first, then the self-tests re-run and
+   its check (branch `training-exclusion-pairing`).
+5. Version 5, the registration text, with every ruled change, and its check.
+6. The closure check of page 1's repair (four parts, measured), run on
+   version 5.
+7. The registration commit. Outer limit: 2026-10-18.
+
+Nothing was rented or spent in this session. About $228 of the $450 ceiling
+is spent, unchanged (the compute ledger,
+`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`).
+
+---
+
+## WHERE THINGS STAND 2026-10-04 — the registration review is open; the inside review finds one fatal flaw (small to fix) and four serious ones; the outside-review packet is built, checked and with John
+
+*This section is the current state. Everything below it is the older record,
+newest first, and is left exactly as written.*
+
+*Written 2026-10-04 (Pacific) by the Claude Code session that ran the
+registration review's first half (branch `gate-a-registration-review-successor-v4`).
+It did not write version 4, any run, or any ruling it summarises other than the
+one it recorded. Nothing was rented or spent.*
+
+**What happened since the entry below** (all on the main line, pull requests 86
+to 91): a session that did not write version 4 checked it and the record of its
+seven questions (pull request 86), and John ruled the check's two questions
+(pull request 87, `docs/rulings/2026-10-03-version-4-check-questions-rulings.md`).
+The ordinary competing solver was put through the measurement as now registered
+(pull request 88, `docs/2026-10-03-competing-solver-run.md`): no verdict on
+every seed. The other-agent control was re-coded to draw twenty random pieces and
+its code test run again (pull request 89, NOT A RESULT). Both were checked by
+another session (pull request 90), and John ruled the seven questions that
+raised, in the words "Agreed on all seven" (pull request 91,
+`docs/rulings/2026-10-04-competing-solver-and-control-2-rulings.md`). That
+cleared every item version 4 listed as standing between it and the review.
+
+**John opened the registration review** (Gate A of
+`docs/outside-review-protocol.md`, both tiers) on version 4. Asked directly at
+the start of this session whether his planning-session words ("run everything
+as soon as possible…", "everything is approved") counted as opening it, he chose
+"Yes, it's opened" (`docs/rulings/2026-10-04-registration-review-opened.md`;
+authorship john). In the same planning session he ruled that Minimum Viable
+Mind work is no longer scheduled on future dates: each step runs as soon as what
+it waits on is done. The weekend roadmap (`docs/weekend-roadmap-2026-09-24.md`)
+no longer sets timing, and the two kill dates, 2026-10-18 and 2026-11-01, stay
+as outer limits only. Filed later the same day, at John's instruction, as
+`docs/rulings/2026-10-04-no-future-dates.md` (authorship john). The weekend
+roadmap carries a dated note saying it no longer sets timing, and
+`data/roadmap.toml` marks weekend 2 as partly done, with its unfinished goals
+carried and no longer assigned to any weekend.
+
+**The inside review (tier 1)** ran in a fresh session in its own worktree, from
+committed files only, with no chat, no STATUS.md and no pull request
+descriptions. It is filed as
+`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-claude-code.md`
+(findings RT-237 to RT-246, scripts and outputs beside it; $0, laptop
+processor). It reviewed version 4 together with every ruled change not yet
+written into it.
+
+- **What held, and this matters most.** The reviewer rebuilt the rule for
+  choosing where to transplant from version 4's words alone, in code that imports
+  nothing from the committed code. It picks the same places, size and verdict on
+  all 24 toy rows, reproduces every toy reading, and lands the toy on the fifth
+  registered outcome (metric validated, free model not read) at a separation of
+  0.9926. The committed code, run again from clean, reproduced all 26,722
+  committed values. **The text describes the instrument that actually ran.**
+- **One fatal finding, small to fix (RT-237, MEASURED).** The check that lets the
+  freely trained model be read at all requires that "the ownership-free state and
+  syntax batteries must hold". Those are question sets from the closed Amendment
+  A3 design. The successor's task has none, no line says what "hold" means, and
+  nothing ever tested it. Under the design's own stop rule a check that cannot be
+  evaluated counts as failed, so as written the free model could never be read.
+  The clause has been carried word for word since version 1, and no earlier review
+  caught it.
+- **Four serious findings.**
+  - The printed floor on the whole-state transplant lets a model at chance through
+    with a divisor of zero or less, and only an unwritten clause in the code stops
+    it (RT-238).
+  - Version 4 says its task extends the closed design's grammar, which shows the
+    model its own name just before it acts. The two deliberate changes that remove
+    that cue in the rehearsal grammar are written nowhere (RT-239).
+  - The ruled number of fitting episodes was only rehearsed at the toy's width. On
+    a crude stand-in at the registered width, the entangled model's read drops below
+    the four-fifths floor on two seeds of three (RT-240, NOT A RESULT).
+  - Some reachable outcomes have no registered name (RT-241).
+- **Five worth noting** (RT-242 to RT-246), including that the ruled sentence
+  about the competing solver is not quite true as worded (RT-244), and a first
+  timing of the registered measurement on the laptop: about 25 hours for all
+  twelve models (RT-245).
+
+So the registration is **not** ready to commit. RT-237 must be closed, with a
+check by a session that did not write the fix, and the serious findings must be
+closed or carried as named open items with John's reasons.
+
+**The outside-review packet (tier 2) is built and checked.** It was generated
+by `scripts/build_successor_v4_tier2_packets.py` into
+`experiments/06-mvm-0a-constructed-self-index/reviews/packets/2026-10-04-successor-v4-tier2-*`.
+There is one document for Gemini and 33 files of up to 28,000 characters for
+ChatGPT, carrying the same 25 records character for character. The records are
+the brief, version 4, the inside findings, every ruling and check that changes
+version 4, the run records its numbers come from, the known-failure list, and
+the opening descriptions of the two task grammars. John's instructions are in
+`…/packets/2026-10-04-successor-v4-tier2-INDEX-how-to-run-these-sessions.md`.
+A session that did not build the packet checked it, using code that shares
+nothing with the builder (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-tier2-packet-check-claude-code.md`).
+Every record matches its source in both packets. Two sentences in the opening
+note were wrong: a stale $108 spend figure, and a claim about which rulings are
+not yet written into version 4. Both were fixed, along with four smaller points,
+and the checker confirmed the fixes without the material changing
+(`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-tier2-packet-recheck-claude-code.md`).
+Left open, neither affecting the review: `--verify` needs the repository's git
+history to check the instruction sheet, and the list of files not carried
+names the wrong README. The ChatGPT packet is large, at roughly 200,000 to
+230,000 tokens, so John's sheet tells him how to make sure the model still
+has the brief before it answers.
+
+**What comes next, in the order things wait on each other.**
+
+1. John runs the two outside sessions (about two hours) and files both answers
+   word for word. This needs nothing else first.
+2. A session drafts a ruling packet on every item from both tiers, and John
+   rules.
+3. The registration text is written: version 4 with every ruled change and
+   every fix. Then a session that did not write it checks the fixes, with a
+   measured check of RT-237's closure.
+4. The registration is committed. The outer limit is the first kill date,
+   2026-10-18.
+
+Separately, and waiting on none of this, the code freeze and the small
+development runs continue on their own step. Nothing was rented or spent in this
+session. About $228 of the $450 ceiling is spent, unchanged.
+
+---
 
 ## WHERE THINGS STAND 2026-10-04 — the successor's code is frozen and tested at $0; the go packet for the four development runs is ready; nothing launched
 

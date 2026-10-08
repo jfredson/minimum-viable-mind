@@ -1,0 +1,8 @@
+The 0.90 line after the third round's correction (honest bills unless stated):
+  20-min machine, deletion inferred at the next reading, honest bill: exit 0; inferred True; 
+  29-min machine, inferred about 3 min late, honest bill: exit 0; inferred True; 
+  44-min machine, inferred, honest bill: exit 0; inferred True; 
+  same 20-min machine, only half its bill posted: exit 3; inferred True; TRIPPED 2030-03-17T21:46:40Z: a check that cannot run is a trip: cannot be checked yet: the bill covers less t
+  same 20-min machine, billed 1.3 times its life: exit 0; inferred True; 
+  3-min machine, never seen listed by the watcher, inferred, honest bill: exit 0; inferred True; 
+  3-min machine, deletion recorded by the watchdog, honest bill: exit 0; inferred False; 

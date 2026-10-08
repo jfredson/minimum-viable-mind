@@ -237,6 +237,7 @@
    "0": {
     "above_one": true,
     "checks": {
+     "built ownership route in use": "passed",
      "control 4, the pairing check (too-early positions)": "passed",
      "control 7, the null transplant": "passed",
      "floor on development episodes": "passed",
@@ -255,6 +256,7 @@
    "1": {
     "above_one": false,
     "checks": {
+     "built ownership route in use": "passed",
      "control 4, the pairing check (too-early positions)": "passed",
      "control 7, the null transplant": "passed",
      "floor on development episodes": "passed",
@@ -273,6 +275,7 @@
    "2": {
     "above_one": false,
     "checks": {
+     "built ownership route in use": "passed",
      "control 4, the pairing check (too-early positions)": "passed",
      "control 7, the null transplant": "passed",
      "floor on development episodes": "passed",
@@ -358,6 +361,7 @@
    "0": {
     "above_one": false,
     "checks": {
+     "built ownership route in use": "passed",
      "control 4, the pairing check (too-early positions)": "passed",
      "control 7, the null transplant": "passed",
      "floor on development episodes": "passed",
@@ -376,6 +380,7 @@
    "1": {
     "above_one": false,
     "checks": {
+     "built ownership route in use": "passed",
      "control 4, the pairing check (too-early positions)": "passed",
      "control 7, the null transplant": "passed",
      "floor on development episodes": "passed",
@@ -394,6 +399,7 @@
    "2": {
     "above_one": false,
     "checks": {
+     "built ownership route in use": "passed",
      "control 4, the pairing check (too-early positions)": "passed",
      "control 7, the null transplant": "passed",
      "floor on development episodes": "passed",
@@ -414,6 +420,7 @@
    "0": {
     "above_one": false,
     "checks": {
+     "built ownership route in use": "passed",
      "control 1, the content transplant, on arm T": "passed",
      "control 4, the pairing check (too-early positions)": "passed",
      "control 7, the null transplant": "passed",
@@ -433,6 +440,7 @@
    "1": {
     "above_one": false,
     "checks": {
+     "built ownership route in use": "passed",
      "control 1, the content transplant, on arm T": "passed",
      "control 4, the pairing check (too-early positions)": "passed",
      "control 7, the null transplant": "passed",
@@ -451,6 +459,7 @@
    },
    "2": {
     "checks": {
+     "built ownership route in use": "passed",
      "control 1, the content transplant, on arm T": "passed",
      "control 4, the pairing check (too-early positions)": "failed",
      "control 7, the null transplant": "failed",

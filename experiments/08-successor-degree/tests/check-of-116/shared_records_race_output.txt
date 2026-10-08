@@ -1,0 +1,9 @@
+1. the watchdog writes a deletion time while the watcher is reading the vendor
+   recorded: gone at 1900001800.0 by 'the watcher: not in the machine list', inferred True
+   the watchdog's time (1900001795.0) WAS LOST (replaced by the watcher inferring it)
+
+2. the launcher registers a second machine while the watcher is reading the vendor
+   machines in the records afterwards: ['podA']
+   the second machine WAS LOST: its spending is now unpredicted, so the comparison reads high
+
+a write can be lost

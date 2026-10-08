@@ -1,0 +1,45 @@
+(a) a $75 top-up at minute 13; charges posted late in 5-minute steps
+    honest waves first (must not trip), at several lags:
+      lag    0 min, machines [(0, 40)]: no trip; final 0.643
+      lag    0 min, machines [(0, 120)]: no trip; final 0.883
+      lag    0 min, machines 4 x 60 min: no trip; final 0.829
+      lag  6.5 min, machines [(0, 40)]: no trip; final 0.895
+      lag  6.5 min, machines [(0, 120)]: no trip; final 0.966
+      lag  6.5 min, machines 4 x 60 min: no trip; final 0.974
+      lag    8 min, machines [(0, 40)]: no trip; final 0.895
+      lag    8 min, machines [(0, 120)]: no trip; final 0.966
+      lag    8 min, machines 4 x 60 min: no trip; final 0.974
+      lag   12 min, machines [(0, 40)]: no trip; final 1.021
+      lag   12 min, machines [(0, 120)]: no trip; final 1.007
+      lag   12 min, machines 4 x 60 min: no trip; final 1.004
+      lag   15 min, machines [(0, 40)]: no trip; final 1.021
+      lag   15 min, machines [(0, 120)]: no trip; final 1.007
+      lag   15 min, machines 4 x 60 min: no trip; final 1.004
+      lag   20 min, machines [(0, 40)]: no trip; final 1.020
+      lag   20 min, machines [(0, 120)]: no trip; final 1.007
+      lag   20 min, machines 4 x 60 min: no trip; final 1.003
+    overbilled waves (should trip), lag 8 min, by length of the wave after the top-up:
+      1.3 times, one machine:   40 min: MISSED (1.16);   60 min: MISSED (1.21);  120 min: MISSED (1.26);  240 min: trip @256;  480 min: trip @461
+      1.4 times, one machine:   40 min: MISSED (1.25);   60 min: trip @76;  120 min: trip @131;  240 min: trip @171;  480 min: trip @171
+      1.5 times, one machine:   40 min: trip @56;   60 min: trip @76;  120 min: trip @111;  240 min: trip @111;  480 min: trip @111
+      2.0 times, one machine:   40 min: trip @51;   60 min: trip @51;  120 min: trip @51;  240 min: trip @51;  480 min: trip @51
+      3.5 times, one machine:   40 min: trip @31;   60 min: trip @31;  120 min: trip @31;  240 min: trip @31;  480 min: trip @31
+      1.4 times, four machines of 60 min: trip @76
+      2.0 times, four machines of 60 min: trip @46
+    the same 1.4 times, no top-up (for comparison):
+      40 min: trip @56
+      60 min: trip @76
+      120 min: trip @126
+
+(b) the end-of-wave comparison: billed time over machine life, honest bill
+    (the vendor bills from creation: the first 2026-09-25 machine billed 1,871.9 s
+     against 1,873 s of life by the laptop's clock, start-up time included)
+    life   3 min, deletion time in the records   12s late: 0.938;   60s late: 0.750 TRIP;  150s late: 0.545 TRIP;  300s late: 0.375 TRIP;  330s late: 0.353 TRIP
+    life  10 min, deletion time in the records   12s late: 0.980;   60s late: 0.909;  150s late: 0.800 TRIP;  300s late: 0.667 TRIP;  330s late: 0.645 TRIP
+    life  20 min, deletion time in the records   12s late: 0.990;   60s late: 0.952;  150s late: 0.889 TRIP;  300s late: 0.800 TRIP;  330s late: 0.784 TRIP
+    life  30 min, deletion time in the records   12s late: 0.993;   60s late: 0.968;  150s late: 0.923;  300s late: 0.857 TRIP;  330s late: 0.845 TRIP
+    life  45 min, deletion time in the records   12s late: 0.996;   60s late: 0.978;  150s late: 0.947;  300s late: 0.900;  330s late: 0.891 TRIP
+    life  60 min, deletion time in the records   12s late: 0.997;   60s late: 0.984;  150s late: 0.960;  300s late: 0.923;  330s late: 0.916
+    life 120 min, deletion time in the records   12s late: 0.998;   60s late: 0.992;  150s late: 0.980;  300s late: 0.960;  330s late: 0.956
+    (12 s is the watchdog's own recorded time; up to 300-330 s is a deletion the watcher
+     only inferred: one reading interval plus the read; below 0.90 is 'cannot be checked yet')

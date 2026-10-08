@@ -1,0 +1,17 @@
+The deadline timer, given answers that do not mean 'the machine does not exist':
+  stays armed: a gateway or wrong address answers 404
+  stays armed: the vendor tool is not on the timer's command path
+  stays armed: a viper-style config message (in the 2.6.1 binary's text)
+For comparison, the answers that do mean it:
+  stays armed: the recorded 2026-09-26 wording (to a delete)
+  stays armed: a failed request (network down), recorded form
+
+1. the watchdog writes a deletion time while the watcher is reading the vendor
+   recorded: gone at 1900001795.0 by 'the watchdog', inferred False
+   the watchdog's time (1900001795.0) survived
+
+2. the launcher registers a second machine while the watcher is reading the vendor
+   machines in the records afterwards: ['podA', 'podB']
+   the second machine survived
+
+no write lost

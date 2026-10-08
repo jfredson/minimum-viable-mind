@@ -142,6 +142,17 @@ def sampling_band(count: int, n: int = HELD_OUT, floor: int = PIECE_MIN) -> dict
                 episodes_from_the_floor=int(count) - floor)
 
 
+# The in-use check on the built arms (John's ruling of 2026-10-06, option 4 of
+# `docs/rulings/2026-10-06-cm-flat-ownership-PROPOSAL.md`; method
+# `docs/2026-10-06-sharpness-fix-inuse-check-method.md`, section 2).
+BUILT_ARMS = ("T", "C", "M")
+ROUTE_WEIGHT_MIN = 0.9    # part A: mean weight the built answer puts on the true agent
+ROUTE_USE_MIN = 0.5       # part B: share of right own-directed answers lost when the answer is swapped
+ROUTE_CHECK = "built ownership route in use"
+ROUTE_LABELS = {"slot": "the slot route", "entangled": "the stirred-in route",
+                "separable": "the separable route (items it0 and it4)",
+                "entangled_items": "the stirred-in route (items it1 to it3)"}
+
 PASSED, FAILED, NOT_RUN, NOT_EVALUATED, NOT_APPLICABLE = (
     "passed", "failed", "not run", "could not be evaluated", "not applicable")
 
@@ -195,6 +206,42 @@ def seed_gate(g: dict | None, arm: str) -> dict:
                                            if not k.endswith("learning")))
 
 
+def route_check(rec: dict | None, arm: str) -> tuple:
+    """The in-use check for one built seed: (state, reasons). `rec` is the
+    row's `gate.route_in_use` (written by `procedure.route_in_use`). Part A:
+    the built answer's mean weight on the true agent is at least 0.9. Part B,
+    on every route the arm is built with: of the own-directed actions the
+    model gets right with the true answer, at least half are lost when the
+    answer is swapped to another agent. Absent: not run. A route with no
+    right answer to lose: could not be evaluated. Both count against."""
+    if arm not in BUILT_ARMS:
+        return NOT_APPLICABLE, []
+    if not isinstance(rec, dict) or "weight_on_true_agent" not in rec or "routes" not in rec:
+        return NOT_RUN, ["the built-route check (construction held?) was not run"]
+    why, unevaluated = [], []
+    w = rec["weight_on_true_agent"]
+    if w is None:
+        unevaluated.append("the built answer's weight could not be computed")
+    elif w < ROUTE_WEIGHT_MIN:
+        why.append(f"the built answer is flat: weight on the true agent {w:.3f}, bar "
+                   f"{ROUTE_WEIGHT_MIN} (sharpness {rec.get('sharpness')})")
+    if not rec["routes"]:
+        unevaluated.append("no built route was measured")
+    for name, r in rec["routes"].items():
+        label = ROUTE_LABELS.get(name, name)
+        u = r.get("route_use")
+        if u is None:
+            unevaluated.append(f"{label}: no own-directed action right, so its use could not be evaluated")
+        elif u < ROUTE_USE_MIN:
+            why.append(f"{label} is not in use: route use {u:.3f}, bar {ROUTE_USE_MIN}")
+    if why:
+        return FAILED, [f"the built ownership route has gone flat (construction did not hold): {x}"
+                        for x in why + unevaluated]
+    if unevaluated:
+        return NOT_EVALUATED, [f"the built-route check could not be evaluated: {x}" for x in unevaluated]
+    return PASSED, []
+
+
 _GATE_REASON = {
     "own-directed learning": "own-directed condition",
     "named-other learning": "named-other condition",
@@ -215,7 +262,9 @@ def withhold(row: dict, arm: str) -> dict:
     `row` carries: `gate` (the row's gate field), `nomination_status`,
     `described_only`, `reading` (from `reading`), `dev_floor_clears`, and
     `controls` with keys "7", "1" and "4". A key that is absent means the
-    check never ran."""
+    check never ran. On arms T, C and M, `gate.route_in_use` carries the
+    in-use check (ruled 2026-10-06; `route_check`): a built model whose
+    ownership route has gone flat gets no verdict for that seed."""
     sg = seed_gate(row.get("gate"), arm)
     checks = dict(sg["checks"])
     nom = row.get("nomination_status")
@@ -234,9 +283,15 @@ def withhold(row: dict, arm: str) -> dict:
     if arm == "T":
         checks["control 1, the content transplant, on arm T"] = _flag(
             "1" in c and isinstance(c["1"], dict) and "holds" in c["1"], (c.get("1") or {}).get("holds"))
+    route_state, route_reasons = route_check((row.get("gate") or {}).get("route_in_use"), arm)
+    if arm in BUILT_ARMS:
+        checks[ROUTE_CHECK] = route_state
     reasons = []
     for name, state in checks.items():
         if state in (PASSED, NOT_APPLICABLE):
+            continue
+        if name == ROUTE_CHECK:
+            reasons.extend(route_reasons)
             continue
         if name.endswith("learning"):
             reasons.append(f"failed its gate on learning ({_GATE_REASON[name]}: {state})"
@@ -474,8 +529,11 @@ def self_test() -> None:
     check("the ownership-free line is 1,546 of 3,000, computed from the binomial tail",
           ownership_free_line(3000) == OWNERSHIP_FREE_LINE == 1546)
     good_reading = reading(0.9, 0.05, 0.05, 0.95)
+    ROUTE_OK = dict(sharpness=4.0, weight_on_true_agent=0.999,
+                    routes={"entangled": dict(right_with_true_answer=2000,
+                                              still_right_with_swapped_answer=200, route_use=0.9)})
     G_ok = dict(bar=790, own_correct=2000, other_correct=2000, lesioned_own_correct=500,
-                lesioned_candidate_own_correct=2000)
+                lesioned_candidate_own_correct=2000, route_in_use=ROUTE_OK)
     good = dict(gate=G_ok, nomination_status="nominated", described_only=False,
                 reading=good_reading, dev_floor_clears=True,
                 controls={"7": dict(holds=True), "1": dict(holds=None), "4": dict(holds=True)})
@@ -515,6 +573,38 @@ def self_test() -> None:
           withhold(dict(good, no_transplant=dict(inside_allowance=False)), "C")["status"] == "reading")
     check("withhold: control 1 failing on arm C does not withhold (it holds on arm T only)",
           withhold(dict(good, controls={"7": dict(holds=True), "1": dict(holds=False), "4": dict(holds=True)}), "C")["status"] == "reading")
+
+    # --- the in-use check on the built arms (ruled 2026-10-06; method note,
+    #     section 3, cases 14 to 17) ------------------------------------------
+    def route(**kw):
+        r = dict(ROUTE_OK, **{k: v for k, v in kw.items() if k != "routes"})
+        if "routes" in kw:
+            r["routes"] = kw["routes"]
+        return dict(good, gate=dict(G_ok, route_in_use=r))
+    flat_use = {"entangled": dict(right_with_true_answer=2000, still_right_with_swapped_answer=1990, route_use=0.005)}
+    for label, row, arm, want in (
+        ("case 15: route use below the bar", route(routes=flat_use), "C", "construction did not hold"),
+        ("the answer flat (part A)", route(weight_on_true_agent=0.25, sharpness=0.0), "C", "the built answer is flat"),
+        ("case 16: arm T row with no in-use field", dict(good, gate={k: v for k, v in G_ok.items() if k != "route_in_use"}), "T", "was not run"),
+        ("case 16: arm M row with no in-use field", dict(good, gate={k: v for k, v in G_ok.items() if k != "route_in_use"}), "M", "was not run"),
+        ("a route with nothing right to lose", route(routes={"slot": dict(right_with_true_answer=0, still_right_with_swapped_answer=0, route_use=None)}), "T", "could not be evaluated"),
+        ("arm M: one route of two flat", route(routes={"entangled_items": dict(route_use=0.95), "separable": dict(route_use=0.0)}), "M", "the separable route (items it0 and it4) is not in use"),
+    ):
+        w = withhold(row, arm)
+        check(f"in-use check: {label} -> no verdict, reason given", w["status"] == NO_VERDICT
+              and w["checks"].get(ROUTE_CHECK) != PASSED and any(want in x for x in w["reasons"]),
+              "; ".join(w["reasons"]))
+    check("in-use check, case 14: a clean built row with a passing check reads",
+          all(withhold(g_, a)["status"] == "reading" and withhold(g_, a)["checks"][ROUTE_CHECK] == PASSED
+              for a in ("T", "C", "M")
+              for g_ in [dict(good, controls={"7": dict(holds=True), "1": dict(holds=True), "4": dict(holds=True)})]))
+    check("in-use check, case 17: arm F is not judged, field or no field",
+          withhold(dict(good, gate={k: v for k, v in G_ok.items() if k != "route_in_use"}), "F")["status"] == "reading"
+          and ROUTE_CHECK not in withhold(good, "F")["checks"])
+    check("in-use check: exactly at the bars passes (0.9 weight, 0.5 use)",
+          withhold(route(weight_on_true_agent=0.9, routes={"slot": dict(route_use=0.5)}), "C")["status"] == "reading")
+    check("in-use check: the in-use failure is not a learning failure (never R3 by itself)",
+          withhold(route(routes=flat_use), "C")["learning_passes"] is True)
 
     # --- two seeds, each passing everything; the separation; the outcome ----
     R = lambda d: dict(status="reading", degree=d, reasons=[], learning_passes=True)

@@ -1,0 +1,12 @@
+T 0 passed 3.884 0.999 {'slot': 1.0}
+T 1 passed 3.884 0.999 {'slot': 1.0}
+T 2 passed 3.882 0.999 {'slot': 1.0}
+C 0 failed 1.731 0.914 {'entangled': 0.269}
+C 1 failed 0.697 0.573 {'entangled': 0.233}
+C 2 failed 0.928 0.681 {'entangled': 0.221}
+M 0 failed 2.842 0.99 {'entangled_items': 0.071, 'separable': 1.0}
+M 1 failed 2.691 0.986 {'entangled_items': 0.09, 'separable': 1.0}
+M 2 failed 2.417 0.977 {'entangled_items': 0.109, 'separable': 1.0}
+F 0 not applicable 4.0 0.999 {'entangled': 0.0}
+F 1 not applicable 4.0 0.999 {'entangled': 0.0}
+F 2 not applicable 4.0 0.999 {'entangled': 0.0}
