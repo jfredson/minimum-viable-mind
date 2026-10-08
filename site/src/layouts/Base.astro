@@ -81,7 +81,7 @@ const longDate = (iso: string) => {
             <a href="/story/">The story so far</a>
           </p>
           <p class="footer-meta">
-            © {currentYear} John Fredrickson, <a href="https://sentient-horizons.com/with-claude/">with Claude</a>. Last built {longDate(derived.exported_on)}{derived.commit ? ` (version ${derived.commit})` : ''} from the project record as of {longDate(project.updated_on)}. Free to reuse with credit (<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>); code under the MIT licence.
+            © {currentYear} John Fredrickson, <a class="with-claude" href="https://sentient-horizons.com/with-claude/">with Claude</a>. Last built {longDate(derived.exported_on)}{derived.commit ? ` (version ${derived.commit})` : ''} from the project record as of {longDate(project.updated_on)}. Free to reuse with credit (<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>); code under the MIT licence.
           </p>
           <p class="footer-parent"><a href="https://sentient-horizons.com" rel="noopener">A Sentient Horizons project.</a></p>
         </div>
