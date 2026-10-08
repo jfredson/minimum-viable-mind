@@ -2769,8 +2769,8 @@ Committed to git, with the commit hash recorded in the registration file,
   tell copying who is acting from copying the answer**; the pre-stated cells,
   the relaxed set for control 6 and its generating seed;
 - **the in-use check on the built arms, both parts, with its bars as
-  section 5.6 fixes them** (ruled 2026-10-08, `docs/rulings/2026-10-08-verification-bar-ruling.md`; the
-  bar);
+  section 5.6 fixes them** (ruled 2026-10-08,
+  `docs/rulings/2026-10-08-verification-bar-ruling.md`);
 - **that the code withholds a reading when a control that holds, a floor, a
   gate, the channel-removal check or the in-use check fails, lists every
   reason, and keeps no withheld figure in its output** (section 6.4, item 5;
@@ -3069,7 +3069,7 @@ version was first filed and were ruled the same night.
 | Seed count per arm | **three**; the toy arithmetic implying one seed was not carried across | the queue ruling, page 1f |
 | Uncertainty across seeds | **the across-seed spread of the raw difference** is the registered uncertainty; the within-seed bootstrap over matched pairs is reported beside it; neither measures drift between runs of one seed, and the registration says so. **This is the spread of the raw difference, not of the reading, whose denominator moves too, and not of the separation between arms T and C, which is a decision rule on point figures. Neither the reading nor the separation has a registered uncertainty; both are reported as descriptions. The sampling band printed beside a piece's count does not account for that piece having been chosen on the same held-out episodes** | the queue ruling, page 1g; on the repairs run the two disagreed by more than two to one on arms C and F (the repairs findings at `882f252`, section 6.2; figures at pre-rule site sets, not carried); the labelling by the 2026-10-06 ruling, follow-up item 1, closing the outside review's A12 (RT-254) |
 | Channel-removal check (whether arm F is read) | own-directed accuracy **below the learn-both bar** with the acting channel zeroed, **on at least two seeds of three, the same seeds passing every other condition, the third reported**; the named-other clause reported and not gated; **with the channel zeroed, the own-directed answer is one of the four candidate values on 1,546 or more of 3,000 gate episodes, on two seeds of three**; gates arm F only | the queue ruling, page 1h; the Gate C rulings, RT-220; the ownership-free line by the 2026-10-06 ruling, page 1 (RT-237), amending page 1h; the same seeds by page 7 (RT-249) |
-| The in-use check (whether a built arm's seed counts) | **part A: the built-in answer's weight on the true agent at least 0.9; part B: route use at least 0.5 on every built route; ruled 2026-10-08 at these figures (`docs/rulings/2026-10-08-verification-bar-ruling.md`)**; a failure gives no verdict for that seed, "construction did not hold" | the 2026-10-07 ruling, decision 3, and the flat-models packet's option 4; the bars from `docs/2026-10-06-sharpness-fix-inuse-check-method.md`, branch `fix-sharpness-inuse-check` at `644238e`, not ruled |
+| The in-use check (whether a built arm's seed counts) | **part A: the built-in answer's weight on the true agent at least 0.9; part B: route use at least 0.5 on every built route; ruled 2026-10-08 at these figures (`docs/rulings/2026-10-08-verification-bar-ruling.md`)**; a failure gives no verdict for that seed, "construction did not hold" | the 2026-10-07 ruling, decision 3, and the flat-models packet's option 4; the bars from `docs/2026-10-06-sharpness-fix-inuse-check-method.md`, branch `fix-sharpness-inuse-check` at `644238e`; ruled 2026-10-08, `docs/rulings/2026-10-08-verification-bar-ruling.md` |
 | The no-transplant allowance | **at most the largest measured miss, rounded up to 0.018; reported, not a veto**: the rate beside `(1 − p) / 7`, their difference, the share of errors on the donor's answer, and the chance of flagging a broken pairing on 800 pairs (0.56 at the bar); the pairing checked by control 4 and the generator's self-test | the queue ruling, page 2; the Gate C rulings, RT-222, as amended by the 2026-10-06 ruling, page 8 (RT-248) |
 | The form of the reading | **the chance-corrected form** of section 6.3 | the queue ruling, page 2 |
 | The label | **which marker word is the model's own**, the one registered read; the route (b) candidates recorded as exploratory fits only | `docs/rulings/2026-09-23-nomination-label.md`; the queue ruling, page 3; the Gate C rulings, RT-212, item 3; John's ruling of 2026-09-26 on the route (b) result (section 7.2, item 1) |
@@ -5616,5 +5616,9 @@ John's word "Merge both and apply the version 5 fixes":
 
 No figure, bar, term meaning or stop changed. The other should-fix items
 (the check's findings 4 to 7) and open items 2 to 12 stand for the next
-edit and for John. This edit is owed a short re-check that the five landed
-and nothing else moved.
+edit and for John. The re-check (`docs/reviews/2026-10-08-successor-v5-fixes-recheck-claude-code.md`,
+pull request 132) found four of the five landed fully and the fifth at nine
+of ten places, no change outside the five, and both rulings quoted
+faithfully; its two leftovers, the words "not ruled" at the end of section
+9's in-use row and a stray fragment in section 7.4's frozen list, were fixed
+the same evening in this file.
