@@ -14,11 +14,146 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
-## WHERE THINGS STAND 2026-10-04 — the successor's code is frozen and tested at $0; the go packet for the four development runs is ready; nothing launched
+## WHERE THINGS STAND 2026-10-07 — the project is refounded on the two-sided question; experiment A relabelled, C narrowed to its first release, D promoted; the poll of three outside models and its synthesis are on the record; all on one unmerged branch
 
 *This section is the current state. Everything below it is the older
 record, newest first, and is left exactly as written (except that this
 two-line note was moved up from the entry below).*
+
+*Written 2026-10-07 by the Claude Code session that did the day's work and
+also wrote what was ruled on, so every document named here is owed a check by
+a session that wrote none of it; two such checks were running when this was
+written. Laptop only; nothing rented; $0 of rented computing; API spend of
+cents to a few dollars for the poll. Everything is on the branch
+`outside-perspective-poll`, seven commits, not merged, not pushed.*
+
+**What the day was.** John brought a brief for outside AI models asking
+whether the project is asking the right question. The session reviewed it
+against the record, found an experiment missing (the retained-independence
+experiment on frontier models), a finding overstated (experiment B's
+self-attribution route was load-bearing only in the runs that never learned
+the task), and three figures without a source. A first search of the main
+line called all three unsourced; two had sources on open pull requests (the
+development-runs check, pull request 106, and the decoy test, pull request
+108), and one had been read the wrong way round. Corrected the same day in
+version 2 of the brief and in the worklog. Lesson, recorded: search the open
+pull requests as well as the main line before calling a claim unsourced.
+
+**The check of experiment 1's router control**
+(`docs/outside-perspective/2026-10-07-router-control-check.md`, ARGUED, owed a
+check). The registered control reads damage spread across every battery as
+conversational bookkeeping; the book's chapter 5 predicts the same spread when
+a real centre is removed. On the three batteries the two accounts make the
+same prediction, so the control chose the cheaper account in advance rather
+than discriminating, and it fired by a margin inside the noise (+0.033 with an
+interval spanning zero). The figures of 2026-07-18 stand. What the
+registration did not say is that the test was a definition, not an
+instrument. Points the other way, also recorded: the structure was found by a
+turn contrast, so the router prior was high; the reflexivity and length
+controls did not fire, so what was removed was specific to the model's own
+turn.
+
+**The poll** (`docs/outside-perspective/2026-10-07-poll-method.md`,
+`run_poll.py`, six replies word for word under `replies/` with a manifest,
+`2026-10-07-poll-synthesis.md`). Version 2 of the brief, two rounds, by API,
+one fresh conversation each, to Gemini 3.1 Pro, GPT (the model pinned as
+gpt-6-astra) and Claude Opus 5.5. All three: the reframe adds nothing beyond
+the identity bet; experiment A cannot discriminate and should be relabelled;
+neither of John's two readings survives as written (bookkeeping describes what
+was found once "mural" and "nobody home" are deleted; the wrong-target
+reading describes what the tools could not have found, as a critique of
+instruments, not evidence of a hidden self); the book has never stated a
+damage pattern a centre predicts and routing does not; no second release of
+the degree experiment now. Two of three: approve the $1.14 repair as a dated
+amendment, run the first release to its stop, drop the frontier self/other
+pilot. The models corrected the reviewing session's own view on four points
+(attention schema theory mischaracterised; "identity or not at all" too
+strong; "evidence must bypass training" not a workable line, and experiment D
+does not bypass it; the sham-record prediction does not discriminate), and
+the synthesis records the corrections as accepted. The three replies are
+correlated, not independent, and said so themselves.
+
+**The refounding** (`docs/rulings/2026-10-07-two-sided-question-PROPOSAL.md`;
+ruled in `docs/rulings/2026-10-07-two-sided-question-rulings.md`, authorship
+mixed). John said what frustrates him most: he wrote the book from awareness
+of what it is like to be surrounded by what appear to be thinking minds, and
+to interact with a mind shallow on some or all of the axes. The session's
+reading, which he accepted: that perception is of the axes (depth,
+integration), not of the floor (self-location); the project went to the one
+place the book says is least reachable and left the place he perceives from;
+and the book already names the language (the five indicators of depth in
+chapter 6, the four diagnostic questions in chapter 15). The new measurement
+target has two sides: what is the smallest system whose presence in
+interaction cannot be produced by a cheaper route (lookup, imitation,
+routing), and at what point do observers' detections track that structure
+rather than fluency. The floor stays in the spec as the founding wager, stated
+once, and stops being a measurement target.
+
+**What John ruled, in his words "Yes this all looks good. Let's move forward
+with this" and then "Rule now, don't wait for the pass"**, so the ruling came
+before the Gate C tier 1 pass, at his instruction; the pass continues and
+reports to him. All eight decisions as proposed: (1) the two-sided question
+adopted; the spec text goes through Gate A before it is committed. (2)
+Experiment A relabelled from "the located structure is dialogue routing" to
+"the test could not discriminate routing from a centre; the cheaper account
+was taken in advance", its specificity controls as the positive result, the
+wager's adoption date (2026-09-20, after A, B and D ran) disclosed in any
+write-up; registered figures unchanged. (3) Experiment C narrowed to its
+first release: the repair as a dated amendment, the repaired route verified,
+one free-arm run at registered size, stop on a floor miss; the second release
+of about $131 struck; outcomes renamed to what they measure; C written up as
+instrument research. This answers the continue-or-stop question of the ruling
+packet on the two flat models. (4) Kill dates moved under item 23 of the
+2026-09-21 ruling: C's narrowed registration by 2026-10-18; the table and
+battery through Gate A by 2026-11-08; the construction line's registration by
+2026-11-29; the human study's design by 2026-12-21; off the back end comes the
+December result as a degree reading of a free model. (5) Experiment D
+promoted to the seed of the filtered battery; its transcript-replacement
+control first, method before run. (6) The table and battery are the next
+paper work. (7) The human study deferred. (8) The book changes go upstream as
+a proposal packet.
+
+**What is owed next, in order.** The Gate C pass on the proposal and the check
+of the synthesis, both running in fresh sessions when this was written, filed
+and brought to John; John's merge of the branch; the table and the filtered
+battery as Gate A text (Appendix A of the proposal is the first draft); the
+narrowed registration text by 2026-10-18 with its own check; experiment D's
+transcript-replacement control, method first; the relabelling of A in the
+paper draft; the upstream packet. The three 10M reruns of the repair and the
+single free-arm run follow the registration. Money unchanged: about $229.62 of
+$450 spent after the four development runs; account balance $73.77.
+
+**Addendum, later the same day: the three fresh sessions reported, and two
+rulings of this entry were revised.** The pairing-rule check of the poll
+synthesis (`docs/outside-perspective/2026-10-07-poll-synthesis-check.md`)
+found the quotations sound and the counting and attribution not; every
+correction is accepted in a dated section appended to the synthesis, and the
+stop condition it found softened out is now in decision 3 (John: "Yes, add the
+stop condition to decision 3"). The Gate C tier 1 pass on the proposal
+(`docs/reviews/2026-10-07-two-sided-question-gate-c-tier1.md`, RT-256 to
+RT-273) found one fatal flaw: striking the second release left experiment C no
+registered outcome it could reach, because the built anchors train at
+registered size only in step 5b (RT-262), and no poll reply had proposed
+striking it (RT-261); and found decision 4 misread the kill-date rule (RT-258)
+and set calendar dates John's rule of 2026-10-04 forbids (RT-268). John ruled,
+in his words, "Keep the second release conditional, and withdraw the calendar
+dates." So: experiment C keeps both releases, the second asked for only after
+the repaired built models hold and the free model clears its gate and floor at
+registered size, a pass being necessary and not sufficient; the two kill dates
+stand exactly as written and the second binds step 5b again; the new lines are
+ordered steps with preconditions and no step is scheduled on a date. The
+battery draft (`docs/filtered-battery-proposal-2026-10-07.md`, by a fresh
+session) landed: 14 rows, 9 kept, 6 discarded, with the finding that no kept
+indicator can discriminate on a frontier model through the interface, so
+frontier models supply a reference profile of the cheaper routes and the
+Depth rows wait on a construction line that carries state, which neither toy
+pipeline does. It is owed its check. A version 2 of the proposal applying all
+eighteen findings is the next commit. The sentences above in this entry that
+say the second release was struck and that new dates were set are superseded
+by this addendum and left as written. Everything remains on the one branch,
+unmerged, unpushed; $0 of rented computing.
+
+## WHERE THINGS STAND 2026-10-04 — the successor's code is frozen and tested at $0; the go packet for the four development runs is ready; nothing launched
 
 *Written 2026-10-04 by the Claude Code session that froze the code. Laptop
 only; nothing rented; $0. Method before any test ran:

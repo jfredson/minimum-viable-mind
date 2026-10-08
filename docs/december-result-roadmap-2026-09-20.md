@@ -251,6 +251,8 @@ slip there costs the closure gate or the quality of the result, not a kill date.
 
 ## 5. Kill dates and what they trigger
 
+> **Dated note, 2026-10-07.** The fresh ruling this section says a kill date needs was given on 2026-10-07 (`docs/rulings/2026-10-07-two-sided-question-rulings.md`, decision 4; authorship mixed). **Corrected later the same day, after the Gate C pass on that proposal (RT-258, the kill-date-rule finding) and John's words "Keep the second release conditional, and withdraw the calendar dates":** the second release is kept, conditional on the first release's results, so step 5b's runs are still what the 2026-11-01 date binds; no new calendar dates are set; the dates below do not move, as item 23 says. The earlier version of this note said the second release was struck and new dates were set; that was wrong and is withdrawn. The text below is left as written.
+
 These are the dates the plan is held to. They are backstops, not pacing: each
 piece of work starts when its prerequisites are done, and the kill date is the
 point past which carrying on stops being anybody's call in the moment.

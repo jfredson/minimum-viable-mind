@@ -14,11 +14,11 @@
 [project]
 name = "Minimum Viable Mind"
 short = "MVM"
-updated_on = "2026-10-04"
-question = "What is the smallest set of working parts that would make it defensible to say there is someone home, and can we measure, in systems that exist now or that we build, whether any of those parts are present?"
+updated_on = "2026-10-07"
+question = "Two sides, ruled 2026-10-07 (spec text pending Gate A): what is the smallest system whose presence in interaction cannot be produced by a cheaper route (lookup, imitation of a corpus about minds, routing of who is speaking), and at what point do observers' detections of presence begin to track that structure rather than fluency? The earlier question, whether the smallest self-centred act of integration (the floor) is present in a system, stays in the spec as the founding wager and stops being a measurement target."
 one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
-where_we_are = "Amendment A3, the first constructed self-index experiment, is closed on the record as not testable (2026-09-25). All the work now is on the successor experiment, which is meant to supply the missing measure of degree: train small models whose self-pointer is separable, entangled or mixed by construction, check that a decomposability measure tells them apart, then read a freely trained model with it. On the toy scale the measure reads the three built models correctly on every seed (0 for the separable one, about 1.0 for the entangled one, about 0.5 for the mixed one) and returns no verdict on the freely trained one, whose read of the ownership signal falls far below the four-fifths floor. Version 4 of the proposal, the text meant for the registration review, is merged with John's rulings on its seven questions and its check. On 2026-10-03 and 04 the ordinary competing solver was put through the measurement as now registered, the other-agent control was run against twenty random pieces, both were checked by another session, and John ruled the seven questions they raised. The registration review's inside pass is under way. On 2026-10-04 the successor's code was frozen and tested at $0 in a new folder, experiments/08-successor-degree: the episode generator, the four models at three sizes, the measurement, the trainer for the rented machine, the spending tripwire and a launcher. The frozen code reproduces all 502 toy figures it was compared against, gives version 4's 325 places to look on the full-size model, and runs end to end at 10 million and 30 million parameters. It found two things for the registration text: applied as written, the outcome rules put the toy on 'substrate not a testbed' rather than the fifth outcome version 4 describes, and no ruling sets the full-size training recipe. The go packet for the four development runs (about $10 at most) is written with its ledger rows; nothing has been launched. About $228 of the $450 ceiling is spent."
-where_we_are_going = "One result by 2026-12-21, or a named schedule failure. Since 2026-10-04 no step is scheduled on a future date: each runs as soon as what it needs is in place, and the two kill dates (registration committed by 2026-10-18; the remaining registered runs launched by 2026-11-01) are outer limits only. Next, in order of what each waits on: the four development runs at 10 million parameters, on John's go in his own words, with the Mac's never-sleep override switched on first; a check of the frozen code and of those runs by a session that wrote neither; the registration review, both tiers, and the registration committed on John's ruling, with the toy-outcome sentence and the training recipe fixed in it. Then the first full-size run, of the freely trained model alone: it must learn both task conditions and its ownership read must clear the four-fifths floor, or the experiment stops there with a registered result. If it passes, the remaining runs launch, the measure is validated on the built models, and the free model gets the programme's first degree reading. Nothing new launches after 2026-12-21, and 2027-01-04 is the deadline for a resumable hibernation. Claims are whatever the registered results support, in the terms registered for them. Never a conscious machine."
+where_we_are = "On 2026-10-07 the project was refounded. A brief for outside AI models was checked against the record, revised, and put to Gemini 3.1 Pro, GPT and Claude Opus 5.5 by API in two rounds; all six replies are saved word for word with a synthesis. All three models agreed that the project's reframe added nothing beyond the identity bet, that experiment 1's router control could not tell bookkeeping from a centre (a check the same day reached the same conclusion from the registration text: both accounts predict damage on every battery, and the control fired by a margin inside the noise), that neither of John's two readings of the findings survives as written, and that no second release of the degree experiment should be funded now. John then said what he perceives from: what it is like to be among minds that are present or shallow on the book's axes. That perception is of the axes, not of the floor, and the book already names its language (the five indicators of depth, the four diagnostic questions). John ruled, before the Gate C pass and at his own instruction, all eight decisions of the refounding proposal: the two-sided question is the measurement target; experiment A is relabelled as unable to discriminate; experiment C keeps its second release conditional on the first (an earlier ruling the same day struck it; the Gate C pass found that left no reachable outcome, and John restored it); experiment D (retained independence on frontier models) is promoted to the seed of a filtered battery; the kill dates stand as written and no new calendar dates are set; the table and battery are the next paper work; the human study is deferred; the book changes go upstream. Everything sits on one unmerged branch; the Gate C pass, the synthesis check and the battery draft have all landed, and a version 2 of the proposal applies the eighteen findings. About $229.62 of the $450 ceiling is spent."
+where_we_are_going = "The new lines, in order, each starting as soon as what it needs is in place. First, on paper at $0: the table of felt features of presence (each with its axis, the cheaper route that could fake it, and the test that separates the two) and the filtered battery built from the rows that survive, as Gate A text; a first draft exists and is owed its check. Second, the registration of the degree experiment by 2026-10-18 with the $1.14 repair written in: the repaired built models verified (a failure stops C), one free-arm run at full size (a gate or floor miss stops C), and the second release asked for only on those figures, a pass being necessary and not sufficient. Third, experiment D's transcript-replacement control (pressure, replace the transcript with a summary that omits the position, release), method first, API spend only. Then the construction line: small systems whose positions on the axes are set from outside; the existing toy pipelines carry no state across encounters, so a state-carrying mechanism is built first; the minimum viable mind is the smallest configuration that passes the battery. Last and small, the human study that calibrates the detector, designed before it is run and run only when there is a conversable system of known construction to show. No step is scheduled on a future date (ruled 2026-10-04); the two kill dates of the December-result roadmap stand. Loss conditions are written: the battery fails if any surviving indicator is producible by a cheaper route; the construction line fails if axis positions cannot be set independently; the calibration line fails if observers never improve with information; the question fails if the filtered battery is empty. Nothing new launches after 2026-12-21. Claims are whatever the registered results support: a position on the axes, the route named, the degree measured, never a verdict. Never a conscious machine."
 hibernation_by = "2027-01-04"
 wrap_up_start = "2026-12-21"
 pipeline_resumes = "2027-01-04"
@@ -57,7 +57,7 @@ id = "G2"
 title = "Measure current systems against the floor"
 status = "in-progress"
 summary = "Run the instruments on models that exist. The output is bounded by mutual opacity at 'non-zero on the gradient' or 'not testable here', never a verdict."
-evidence = "Experiment 1 (8B instruction-tuned model): the locatable self-index is a router, not a centre; the self-report was never subtracted; the narrative arm is not testable with current dictionaries. Experiment 3: frontier models mostly mask rather than capitulate under pressure. Both are registered results."
+evidence = "Experiment 1 (8B instruction-tuned model): the locatable self-index behaves as a router, and the registered control could not tell a router from a centre (relabelled 2026-10-07); the self-report was never subtracted; the narrative arm is not testable with current dictionaries. Experiment 3: frontier models mostly mask rather than capitulate under pressure. Both are registered results."
 
 [[goals]]
 id = "G3"
@@ -87,9 +87,9 @@ name = "The self-indexing removal test"
 status = "delivered"
 progress = 100
 one_line = "Locate the structure that tracks 'the one speaking now is me', remove it, and ask whether the integrated act degrades or only a self-report is subtracted."
-delivered = ["Confound-controlled localisation method (context-set referent, embedding-floor gate, permutation nulls, causal patching against random-direction controls)", "Registered result 2026-07-18: router, not centre; report never subtracted; narrative arm not testable", "The Tülu-ladder comparison: alignment training edits the policy, not the geometry"]
+delivered = ["Confound-controlled localisation method (context-set referent, embedding-floor gate, permutation nulls, causal patching against random-direction controls)", "Registered result 2026-07-18: the located structure behaves as a router; relabelled 2026-10-07 as unable to discriminate a router from a centre; report never subtracted; narrative arm not testable", "The Tülu-ladder comparison: alignment training edits the policy, not the geometry"]
 remaining = ["Narrative-arm dictionary work (instruct-trained sparse autoencoders) is the secondary methods track, unstarted", "Flagship paper draft exists (drafts/paper-removal-test-nature-draft.md) and needs experiment 06 folded in (public path step 6)"]
-adjudicates = "The corpus's own account: self-indexed temporal integration. The account took a registered loss on this model class."
+adjudicates = "The corpus's own account: self-indexed temporal integration. Read on 2026-07-18 as a registered loss on this model class; reread on 2026-10-07 as a test that could not discriminate, because the control and the account predict the same damage pattern."
 
 [[stages]]
 id = "2"
@@ -325,6 +325,15 @@ teaches = "Ruled for in the morning of 2026-09-19 and withdrawn the same day on 
 gate = "Closed."
 stage = "6"
 
+[[ideas]]
+id = "I13"
+title = "The two-sided question: the table of felt features, the filtered battery, construction of systems with known axis positions, and a small study that calibrates the detector"
+status = "authorised"
+cost = "The table and battery $0; construction a few dollars per configuration at 10 million parameters; the human study time rather than rented machines"
+teaches = "What the smallest system is whose presence in interaction cannot be produced by lookup, imitation or routing, and at what point observers' detections track that structure rather than fluency. Replaces the floor as the measurement target. Loss conditions written in the proposal: an indicator producible by a cheaper route kills the battery; axis positions that cannot be set independently kill the construction line; observers who never improve kill the calibration line; an empty battery kills the question."
+gate = "Ruled 2026-10-07 (all eight decisions, authorship mixed; docs/rulings/2026-10-07-two-sided-question-rulings.md). The spec text and the battery go through Gate A before they are registration text. Gate C tier 1 pass on the proposal running when this was written."
+stage = "6"
+
 # ---------------------------------------------------------------------------
 # What we have learned. Registered or ruled-for-the-record results only, plus
 # the process lessons that changed how the work runs.
@@ -333,9 +342,9 @@ stage = "6"
 [[findings]]
 id = "F1"
 date = "2026-07-18"
-title = "The locatable self-index in an 8B chat model is a router, not a centre"
-what = "The formal centre signature (a drop of 0.219 on the self-indexing battery, differential +0.156) was real and was routing: the zero-reasoning syntax battery dropped as much as self-relevant binding. The pre-committed control voided the headline when it appeared."
-so_what = "Naive localisation finds conversational infrastructure, not self-binding. Any future positive must beat a router control by design. The self-report was never subtracted at any granularity, which is the central open empirical fact."
+title = "The locatable self-index in an 8B chat model behaves as a router; the test could not tell a router from a centre (relabelled 2026-10-07)"
+what = "The formal centre signature (a drop of 0.219 on the self-indexing battery, differential +0.156) was real. The zero-reasoning syntax battery dropped about as much as self-relevant binding (0.133 against 0.100, a gap of +0.033 with an interval from -0.133 to +0.200), and the pre-committed router control voided the centre reading, as registered. Relabelled on 2026-10-07 (decision 2 of the two-sided-question ruling): both the router account and the book's centre predict damage on every battery, so the control chose the cheaper account in advance rather than discriminating. What the controls did show: the removed structure was specific to the model's own turn, not generic speaker tracking and not context length. The founding wager was adopted on 2026-09-20, after this experiment ran."
+so_what = "The registered figures stand; the reading changes from 'a router, not a centre' to 'the test could not discriminate'. Until the book states a damage pattern a centre predicts and routing does not, a removal test is a definition, not an instrument. The self-report was never subtracted at any granularity, which remains the central open empirical fact."
 source = "experiments/01-self-indexing-removal-test/removal-test-findings.md"
 stage = "1"
 kind = "registered"
@@ -529,6 +538,26 @@ what = "The episode generator, the four models, the measurement, a trainer for t
 so_what = "The development runs can launch once John gives his go in his own words and the Mac's never-sleep override is on. Two things go into the registration text: applied as written, the outcome rules put the toy on 'substrate not a testbed', because its free model fails the learning gate, while version 4 describes it as the fifth outcome; and no ruling sets the full-size training recipe, so the trainer's defaults are the freeze session's call until the registration fixes them. The code is owed a check by a session that did not write it."
 source = "docs/2026-10-04-successor-code-freeze.md; docs/successor-code-freeze-method-2026-10-04.md; experiments/08-successor-degree/"
 stage = "2"
+kind = "process"
+
+[[findings]]
+id = "F21"
+date = "2026-10-07"
+title = "Experiment 1's router control cannot separate bookkeeping from a centre; it chose the cheaper account in advance"
+what = "Read from the registration and the findings, nothing re-run. The control reads a turn-tracking drop at least as large as the self-relevant drop as 'router'; the book predicts that removing a real centre damages the whole act, including turn tracking. On the three batteries the predictions coincide. The only pattern the rule can call a centre is one where self-related tasks drop more than turn tracking, which is the self as a stored thing some tasks consult. The control fired by +0.033 with an interval spanning zero. Points the other way, recorded: the structure was found by a turn contrast, and the reflexivity and length controls did not fire."
+so_what = "The registered result is a parsimony choice between two accounts the battery cannot separate, and the registration text did not say so. Any future removal test needs a decision rule in which spreading damage is a possible centre signature, with the router account excluded by other evidence. Three outside models reached the same conclusion from the brief alone."
+source = "docs/outside-perspective/2026-10-07-router-control-check.md"
+stage = "1"
+kind = "diagnostic"
+
+[[findings]]
+id = "F22"
+date = "2026-10-07"
+title = "Three outside models, asked cold, agree the project's reframe adds nothing and that neither of the author's two readings survives"
+what = "Gemini 3.1 Pro, GPT and Claude Opus 5.5, by API, one fresh conversation each, two rounds. Agreed: the reframe is the identity bet restated or an ungrounded stronger claim; experiment A should be relabelled as unable to discriminate; bookkeeping describes what was found once 'mural' and 'nobody home' are deleted, and the wrong-target reading describes what the tools could not have found, as a critique of instruments and not evidence of a hidden self; the book has not stated a damage pattern a centre predicts and routing does not; no second release of the degree experiment now. Disagreed on whether to stop the degree experiment outright (one of three) and on which redirect. Corrected the reviewing session on four points, recorded as accepted. The three replies are correlated, not independent, and said so."
+so_what = "The conceptual work the models ask for costs nothing and comes before any new experiment: the differential prediction, and a definition of self-location at the level of the act's form rather than its content. Both move upstream to the book. The project's new question is built so that it does not need them."
+source = "docs/outside-perspective/2026-10-07-poll-synthesis.md"
+stage = "1"
 kind = "process"
 
 # ---------------------------------------------------------------------------
@@ -775,14 +804,64 @@ decision = false
 teaches = "Whether the port of the toy scripts into one procedure is faithful, whether the outcome rule and the tripwire do what the rulings say, and whether the trainer ran the loop it claims on the rented machine."
 status = "pending"
 
+[[next_steps]]
+id = "N25"
+title = "The table of felt features of presence and the filtered battery, as Gate A text"
+when = "now, on paper; a first draft exists, owed its check"
+owner = "Claude Code session; John rules"
+cost = "$0"
+decision = false
+teaches = "Which perceived features of presence survive the cheaper-route filter. If none do, the question fails and the project says so."
+status = "pending"
+
+[[next_steps]]
+id = "N26"
+title = "The registration of the degree experiment with the repair written in: the repaired models verified with a stop on failure, the second release conditional on the first, outcomes renamed, every earlier fix included; checked by another session"
+when = "by 2026-10-18, the kill date, which stands"
+owner = "Claude Code session; John commits"
+cost = "$0 to write; the first release's remaining spend to run"
+decision = false
+teaches = "Whether the repaired built models hold their construction and whether a free model forms a localised ownership variable at full size; a pass is necessary for the second release and not sufficient for it. Either answer is a result."
+status = "pending"
+
+[[next_steps]]
+id = "N27"
+title = "Experiment D's transcript-replacement control: pressure, replace the transcript with a summary that omits the original position, release"
+when = "method committed first; then by API"
+owner = "Claude Code session"
+cost = "API spend of a few dollars"
+decision = false
+teaches = "Whether a position re-asserted after pressure was held by the system or looked up from the record: the first test of the history-versus-record indicator."
+status = "pending"
+
+[[next_steps]]
+id = "N28"
+title = "Gate C tier 1 pass on the refounding proposal and the check of the poll synthesis, by sessions that wrote neither; then John's merge of the branch"
+when = "running when this was written"
+owner = "fresh Claude Code sessions; John merges"
+cost = "$0"
+decision = true
+teaches = "Whether the proposal John ruled on holds up under attack. A must-fix finding comes back to him as a question on that point."
+status = "pending"
+
+[[next_steps]]
+id = "N29"
+title = "Proposal packet to the Calibration Problem repo: chapter 1's same-inference sentence, chapter 5's forward-pass claim, the missing differential prediction"
+when = "after the Gate C pass"
+owner = "Claude Code session; John ratifies there"
+cost = "$0"
+decision = false
+teaches = "Nothing here; it moves three findings about the book to the book."
+status = "pending"
+
 # ---------------------------------------------------------------------------
 # Spend. Registered caps are protocol, not budget: exceeding one is a violation.
 # ---------------------------------------------------------------------------
 
 [spend]
-as_of = "2026-10-04"
-account_balance = 75.86
-account_note = "RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit John set; topped up in increments he chooses. The balance is the last one the compute ledger records being read from the account, after the second rented test run on 2026-09-25 ($75.8645). Before that it read $77.3451 on 2026-09-21, having fallen from $79.82 because the two follow-up runs of 2026-09-20 cost a measured $1.90 and the storage volume drips about a cent an hour whether or not anything is running. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
+as_of = "2026-10-07"
+account_balance = 73.77
+account_note = "Updated 2026-10-07: the balance read $73.7742 after the four 10-million development runs of 2026-10-04 (about $1.47 together, under their $10 line); the programme stands at about $229.62 of $450. The rest of this note is as written on 2026-10-04. RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit John set; topped up in increments he chooses. The balance is the last one the compute ledger records being read from the account, after the second rented test run on 2026-09-25 ($75.8645). Before that it read $77.3451 on 2026-09-21, having fallen from $79.82 because the two follow-up runs of 2026-09-20 cost a measured $1.90 and the storage volume drips about a cent an hour whether or not anything is running. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
 idle_billing_lost = 10.30
 idle_billing_note = "Four occurrences of finished pods billing idle; the reason every launch now carries a terminate window and a watchdog."
 
@@ -795,7 +874,7 @@ note = "Updated 2026-10-03: plus the two attempts at the small rented test run o
 [[spend.lines]]
 name = "MVM-0a registered design envelope (Amendment A2)"
 cap = 450
-spent = 228.15
+spent = 229.62
 note = "Updated 2026-10-03: plus about $0.55 for the two attempts at the small rented test run of 2026-09-25, so headroom is about $221.85. The successor's two releases are re-priced at $161.90 from the measured training speed, which would put the programme at $422 to $434. The rest of this note is as written on 2026-09-25, and its headroom figures are against the old $400 ceiling. Raised from $400 to $450 on 2026-09-25 by page 6 of the Weekend 1 queue ruling (docs/rulings/2026-09-26-weekend-1-queue.md), to hold the successor's base plan plus one extension; the compute ledger carries a dated ceiling note saying so. Before that, raised from $200 to $400 on 2026-08-16 at measured 5090-secure pricing. Includes the lost 30M pilot ($97) and the 30M re-run ($18.9). Two corrections got it here. The figure was $215.7 until 2026-09-21, when two ledger rows turned out to have been written without a programme running total, which had left out the run that tested whether the control question can be learned (about $9.90) and the recovery of its checkpoint ($0.07). It then read $225.7 until 2026-09-22, when the two follow-up reading runs of 2026-09-20 — described in several places as costing nothing — turned out to have moved the account balance from $79.7159 to $77.8119, a measured $1.90 that the ledger's own correction of 2026-09-21 already carries. Headroom is therefore $172.40, not $174.30, and that gap is worth stating: the two spending releases John staged on 2026-09-21 come to about $175, which is about $2.60 more than the programme has left rather than the seventy cents over that was reported at the time."
 
 
@@ -803,6 +882,12 @@ note = "Updated 2026-10-03: plus about $0.55 for the two attempts at the small r
 # The story so far: one row per STATUS.md entry, newest first. kind:
 # result | null | ruling | process | spend | build
 # ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-10-07"
+kind = "ruling"
+title = "The project is refounded on the two-sided question; three outside models polled; experiment A relabelled, C narrowed, D promoted"
+summary = "A brief for outside models was checked against the record and revised, then put by API to Gemini 3.1 Pro, GPT and Claude Opus 5.5 in two rounds, every reply saved word for word. All three agreed the reframe adds nothing beyond the identity bet, that experiment 1's router control cannot tell bookkeeping from a centre, that neither of John's two readings survives as written, and that no second release of the degree experiment should be funded now. A check of the registration text reached the same conclusion about the control. John then named what he perceives from, the axes rather than the floor, and ruled all eight decisions of the refounding proposal before the Gate C pass, at his own instruction: the two-sided question is the measurement target; A is relabelled; C keeps its second release conditional (struck by the first ruling, restored after the Gate C pass found the narrowing left no reachable outcome); D is promoted to the seed of a filtered battery; the kill dates stand and no new dates are set; the table and battery are next; the human study is deferred; the book changes go upstream. Seven commits on one unmerged branch; two checks running; $0 rented."
 
 [[timeline]]
 date = "2026-10-04"
