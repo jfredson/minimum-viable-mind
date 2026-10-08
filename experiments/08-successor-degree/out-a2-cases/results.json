@@ -855,6 +855,120 @@
      "floor on fresh episodes failed"
     ]
    }
+  },
+  {
+   "name": "inuse-C-flat",
+   "about": "in-use check: every arm reads (as case r1) but arm C's route is flat on seeds 0 and 1",
+   "expected": "fallback_read",
+   "got": "fallback_read",
+   "term": "metric checked against the separable model only, degree read",
+   "sentence": "metric checked against the separable model only on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose",
+   "notes": [
+    "arm C returned no verdict: the two-model fallback; arm F's figure has no upper reference"
+   ],
+   "checks": {
+    "outcome code": true,
+    "C/0 lists 'construction did not hold'": true,
+    "C/1 lists 'construction did not hold'": true,
+    "C/0 withheld": true,
+    "C/1 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "C/0": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.005, bar 0.5"
+    ],
+    "C/1": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.005, bar 0.5"
+    ]
+   }
+  },
+  {
+   "name": "inuse-T-flat",
+   "about": "in-use check: arm T's route is flat on seeds 0 and 1",
+   "expected": "not_validated",
+   "got": "not_validated",
+   "term": "metric not validated: the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.005, bar 0.5",
+   "sentence": "metric not validated on these constructed systems, for this intervention procedure: the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.005, bar 0.5",
+   "notes": [],
+   "checks": {
+    "outcome code": true,
+    "reason has 'construction did not hold'": true,
+    "T/0 withheld": true,
+    "T/1 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [
+    "T/0 0.0 in summary.json: ....5\"     ]    },    \"read\": false,    \"readings\": {     \"2\": 0.0    },    ",
+    "T/0 0.0 in summary.json: ...on_margin_at_the_bar\": 0.0017619047619047597,    \"formula\": 0.0,    \"insi",
+    "T/0 0.0 in summary.json: ...    \"formula\": 0.0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate",
+    "T/0 0.0 in summary.json: ....0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate\": 0.0,    \"room",
+    "T/0 0.0 in summary.json: ...ed\",      \"reading computed\": \"passed\"     },     \"degree\": 0.0,     \"lea",
+    "T/0 0.0000 in table.md: ...eld | withheld | withheld | withheld | 753 | 3000 | | T/2 | 0.0000 | states ",
+    "T/0 0.0000 in table.md: ... 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000",
+    "T/0 0.0000 in table.md: ... (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000,",
+    "T/0 0.0000 in table.md: ...180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; ",
+    "T/0 0.0000 in table.md: ...ingle position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; 20/0/0 |",
+    "T/0 0.0000 in table.md: ...000 | +0.0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 ",
+    "T/0 0.0000 in table.md: ...0/0 | True, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 ",
+    "T/0 0.0000 in table.md: ...e, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 | 820 | 3",
+    "T/1 0.0 in summary.json: ....5\"     ]    },    \"read\": false,    \"readings\": {     \"2\": 0.0    },    ",
+    "T/1 0.0 in summary.json: ...on_margin_at_the_bar\": 0.0017619047619047597,    \"formula\": 0.0,    \"insi",
+    "T/1 0.0 in summary.json: ...    \"formula\": 0.0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate",
+    "T/1 0.0 in summary.json: ....0,    \"inside_allowance\": true,    \"miss\": 0.0,    \"rate\": 0.0,    \"room",
+    "T/1 0.0 in summary.json: ...ed\",      \"reading computed\": \"passed\"     },     \"degree\": 0.0,     \"lea",
+    "T/1 0.0000 in table.md: ...eld | withheld | withheld | withheld | 753 | 3000 | | T/2 | 0.0000 | states ",
+    "T/1 0.0000 in table.md: ... 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000",
+    "T/1 0.0000 in table.md: ... (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000,",
+    "T/1 0.0000 in table.md: ...180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; ",
+    "T/1 0.0000 in table.md: ...ingle position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; 20/0/0 |",
+    "T/1 0.0000 in table.md: ...000 | +0.0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 ",
+    "T/1 0.0000 in table.md: ...0/0 | True, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 ",
+    "T/1 0.0000 in table.md: ...e, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 | 820 | 3"
+   ],
+   "matches": true,
+   "per_seed_reasons": {
+    "T/0": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.005, bar 0.5"
+    ],
+    "T/1": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.005, bar 0.5"
+    ]
+   }
+  },
+  {
+   "name": "inuse-M-flat",
+   "about": "in-use check: arm M's route is flat on seeds 0 and 1; arm M has no verdict, outcome unchanged",
+   "expected": "R1",
+   "got": "R1",
+   "term": "metric validated, degree read",
+   "sentence": "metric validated on these constructed systems, for this intervention procedure, degree read as a ratio of two transplants at the sites this procedure chose",
+   "notes": [
+    "arm M returned no verdict; it is dropped and carried as an extension (section 3)"
+   ],
+   "checks": {
+    "outcome code": true,
+    "M/0 lists 'construction did not hold'": true,
+    "M/1 lists 'construction did not hold'": true,
+    "M/0 withheld": true,
+    "M/1 withheld": true,
+    "term is a registered term": true
+   },
+   "leaks": [],
+   "same_number_elsewhere": [],
+   "matches": true,
+   "per_seed_reasons": {
+    "M/0": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.005, bar 0.5"
+    ],
+    "M/1": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.005, bar 0.5"
+    ]
+   }
   }
  ]
 }

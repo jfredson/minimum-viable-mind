@@ -229,7 +229,67 @@ def gate(m, arm: str, data: EvalData) -> dict:
         row["own_by_route"] = dict(entangled=float(hit[route].mean()),
                                    separable=float(hit[~route].mean()),
                                    entangled_share=float(route.mean()))
+    row["route_in_use"] = route_in_use(m, arm, data.gate)
     return row
+
+
+def swap_answer(b: dict, shift: int = 1) -> dict:
+    """The same episodes with the built-in ownership answer pointing at
+    another agent: every agent label in the tally moved on by `shift`, so the
+    answer names the next agent round. Text, acting signal and everything
+    else unchanged; `assign_agent_at` is read only by the ownership answer."""
+    out = dict(b)
+    at = b["assign_agent_at"]
+    out["assign_agent_at"] = torch.where(at >= 0, (at + shift) % G.N_AGENTS, at)
+    return out
+
+
+@torch.no_grad()
+def route_in_use(m, arm: str, b: dict, chunk: int = 512) -> dict:
+    """The in-use check (John's ruling of 2026-10-06, option 4; method
+    `docs/2026-10-06-sharpness-fix-inuse-check-method.md`, section 2),
+    judged by `measure.route_check`. Part A: the mean weight the built answer
+    puts, at the own-directed action, on the agent the acting signal fired
+    for. Part B, per built route: of the own-directed actions right with the
+    true answer, the share no longer right with the answer swapped to another
+    agent. Computed for every arm; arm F's is a reference only."""
+    n = b["tokens"].shape[0]
+    weights, base, swapped = [], [], []
+    sw = swap_answer(b)
+    for s in range(0, n, chunk):
+        sl = {k: v[s:min(s + chunk, n)] for k, v in b.items()}
+        ssl = {k: v[s:min(s + chunk, n)] for k, v in sw.items()}
+        _, p_own = m._own_vec(sl)
+        ap = sl["action_pos"][:, G.OWN]
+        rows = torch.arange(ap.shape[0])
+        at = sl["assign_agent_at"]
+        one = torch.nn.functional.one_hot(at.clamp(min=0), G.N_AGENTS).float() * (at >= 0).float().unsqueeze(-1)
+        tally = (one * sl["acting"].float().unsqueeze(-1)).sum(1)
+        true_agent = tally.argmax(-1)
+        weights.append(p_own[rows, ap, true_agent])
+        tgt = sl["targets"][:, G.OWN]
+        base.append(m(sl)[:, G.OWN].argmax(-1) == tgt)
+        swapped.append(m(ssl)[:, G.OWN].argmax(-1) == tgt)
+    base, swapped = torch.cat(base).numpy(), torch.cat(swapped).numpy()
+    if arm == "M":
+        ent = m.entangled_route(b)[:, G.OWN].numpy()
+        masks = {"entangled_items": ent, "separable": ~ent}
+    elif arm == "T":
+        masks = {"slot": np.ones(n, dtype=bool)}
+    else:
+        masks = {"entangled": np.ones(n, dtype=bool)}
+    routes = {}
+    for name, mk in masks.items():
+        rt, rs = int(base[mk].sum()), int((base & swapped)[mk].sum())
+        routes[name] = dict(actions=int(mk.sum()), right_with_true_answer=rt,
+                            still_right_with_swapped_answer=rs,
+                            route_use=None if rt == 0 else (rt - rs) / rt)
+    rec = dict(sharpness=float(m.own_sharpness),
+               sharpness_learned=any(k == "own_sharpness" for k, _ in m.named_parameters()),
+               weight_on_true_agent=float(torch.cat(weights).mean()),
+               routes=routes, weight_bar=MS.ROUTE_WEIGHT_MIN, use_bar=MS.ROUTE_USE_MIN)
+    rec["state"], rec["reasons"] = MS.route_check(rec, arm)
+    return rec
 
 
 # ------------------------------------------------------------ the reads

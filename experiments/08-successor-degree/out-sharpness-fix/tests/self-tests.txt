@@ -31,27 +31,27 @@ grammar.py self-test
 all checks passed
 == models
 models.py self-test
-  [PASS] toy arm T: forward runs, right shape, 5 running states  950,879 parameters
+  [PASS] toy arm T: forward runs, right shape, 5 running states  950,878 parameters
   [PASS] toy arm T: loss finite and gradients flow
-  [PASS] toy arm C: forward runs, right shape, 5 running states  1,301,191 parameters
+  [PASS] toy arm C: forward runs, right shape, 5 running states  1,301,190 parameters
   [PASS] toy arm C: loss finite and gradients flow
-  [PASS] toy arm M: forward runs, right shape, 5 running states  987,781 parameters
+  [PASS] toy arm M: forward runs, right shape, 5 running states  987,780 parameters
   [PASS] toy arm M: loss finite and gradients flow
   [PASS] toy arm F: forward runs, right shape, 5 running states  1,265,191 parameters
   [PASS] toy arm F: loss finite and gradients flow
-  [PASS] 10M arm T: forward runs, right shape, 9 running states  5,265,759 parameters
+  [PASS] 10M arm T: forward runs, right shape, 9 running states  5,265,758 parameters
   [PASS] 10M arm T: loss finite and gradients flow
-  [PASS] 10M arm C: forward runs, right shape, 9 running states  6,471,751 parameters
+  [PASS] 10M arm C: forward runs, right shape, 9 running states  6,471,750 parameters
   [PASS] 10M arm C: loss finite and gradients flow
-  [PASS] 10M arm M: forward runs, right shape, 9 running states  5,375,077 parameters
+  [PASS] 10M arm M: forward runs, right shape, 9 running states  5,375,076 parameters
   [PASS] 10M arm M: loss finite and gradients flow
   [PASS] 10M arm F: forward runs, right shape, 9 running states  6,362,951 parameters
   [PASS] 10M arm F: loss finite and gradients flow
-  [PASS] 30M arm T: forward runs, right shape, 13 running states  26,065,471 parameters
+  [PASS] 30M arm T: forward runs, right shape, 13 running states  26,065,470 parameters
   [PASS] 30M arm T: loss finite and gradients flow
-  [PASS] 30M arm C: forward runs, right shape, 13 running states  29,329,735 parameters
+  [PASS] 30M arm C: forward runs, right shape, 13 running states  29,329,734 parameters
   [PASS] 30M arm C: loss finite and gradients flow
-  [PASS] 30M arm M: forward runs, right shape, 13 running states  26,350,021 parameters
+  [PASS] 30M arm M: forward runs, right shape, 13 running states  26,350,020 parameters
   [PASS] 30M arm M: loss finite and gradients flow
   [PASS] 30M arm F: forward runs, right shape, 13 running states  29,049,735 parameters
   [PASS] 30M arm F: loss finite and gradients flow
@@ -79,6 +79,13 @@ models.py self-test
   [PASS] arm C: the twins' final states differ
   [PASS] arm M: the twins' final states differ
   [PASS] arm F: the twins' final states differ
+  [PASS] arm T: the sharpness is fixed at 4.0, not learned; still exactly 4.0 after optimiser steps with weight decay; saved under its old name
+  [PASS] arm T: a model saved with a learned sharpness loads strictly, with its value
+  [PASS] arm C: the sharpness is fixed at 4.0, not learned; still exactly 4.0 after optimiser steps with weight decay; saved under its old name
+  [PASS] arm C: a model saved with a learned sharpness loads strictly, with its value
+  [PASS] arm M: the sharpness is fixed at 4.0, not learned; still exactly 4.0 after optimiser steps with weight decay; saved under its old name
+  [PASS] arm M: a model saved with a learned sharpness loads strictly, with its value
+  [PASS] arm F: the sharpness is still a learned number (unchanged)
   [PASS] 10M arm T: rebuilt from its saved configuration, bit-identical
   [PASS] 10M arm C: rebuilt from its saved configuration, bit-identical
   [PASS] 10M arm M: rebuilt from its saved configuration, bit-identical
@@ -175,6 +182,16 @@ measure.py self-test: each case's landing is written in the test before it runs
   [PASS] withhold: every reason is listed, even when nomination failed and no reading exists  8 reasons
   [PASS] withhold: the no-transplant rate withholds nothing (page 8)
   [PASS] withhold: control 1 failing on arm C does not withhold (it holds on arm T only)
+  [PASS] in-use check: case 15: route use below the bar -> no verdict, reason given  the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.005, bar 0.5
+  [PASS] in-use check: the answer flat (part A) -> no verdict, reason given  the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.250, bar 0.9 (sharpness 0.0)
+  [PASS] in-use check: case 16: arm T row with no in-use field -> no verdict, reason given  control 1, the content transplant, on arm T was could not be evaluated; the built-route check (construction held?) was not run
+  [PASS] in-use check: case 16: arm M row with no in-use field -> no verdict, reason given  the built-route check (construction held?) was not run
+  [PASS] in-use check: a route with nothing right to lose -> no verdict, reason given  control 1, the content transplant, on arm T was could not be evaluated; the built-route check could not be evaluated: the slot route: no own-directed action right, so its use could not be evaluated
+  [PASS] in-use check: arm M: one route of two flat -> no verdict, reason given  the built ownership route has gone flat (construction did not hold): the separable route (items it0 and it4) is not in use: route use 0.000, bar 0.5
+  [PASS] in-use check, case 14: a clean built row with a passing check reads
+  [PASS] in-use check, case 17: arm F is not judged, field or no field
+  [PASS] in-use check: exactly at the bars passes (0.9 weight, 0.5 use)
+  [PASS] in-use check: the in-use failure is not a learning failure (never R3 by itself)
   [PASS] two seeds: three readings read
   [PASS] two seeds: two readings read, the third is reported
   [PASS] two seeds: one reading does not read
@@ -251,3 +268,4 @@ train_successor self-test OK
 
 all checks passed
 ALL SELF-TESTS PASS
+exit 0

@@ -1,0 +1,17 @@
+{
+ "seconds": 1776.0738990306854,
+ "seconds_per_step": 0.7104295596122742,
+ "steps": 2500,
+ "batch": 256,
+ "parameters": 1301190,
+ "arm": "C",
+ "seed": 1,
+ "device": "mps",
+ "sharpness_at_end": 4.0,
+ "recipe": {
+  "steps": 2500,
+  "batch": 256,
+  "lr": 0.003,
+  "train_pairs": 15000
+ }
+}

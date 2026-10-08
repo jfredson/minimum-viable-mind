@@ -1,0 +1,101 @@
+{
+ "T/0": {
+  "state": "passed",
+  "sharpness": 3.883709192276001,
+  "weight": 0.9987316727638245,
+  "route_use": {
+   "slot": 1.0
+  }
+ },
+ "T/1": {
+  "state": "passed",
+  "sharpness": 3.883528709411621,
+  "weight": 0.9987314343452454,
+  "route_use": {
+   "slot": 1.0
+  }
+ },
+ "T/2": {
+  "state": "passed",
+  "sharpness": 3.8824939727783203,
+  "weight": 0.9987287521362305,
+  "route_use": {
+   "slot": 1.0
+  }
+ },
+ "C/0": {
+  "state": "failed",
+  "sharpness": 1.731031060218811,
+  "weight": 0.9139975309371948,
+  "route_use": {
+   "entangled": 0.2688486265341905
+  }
+ },
+ "C/1": {
+  "state": "failed",
+  "sharpness": 0.6969833374023438,
+  "weight": 0.5733065009117126,
+  "route_use": {
+   "entangled": 0.23253082795067528
+  }
+ },
+ "C/2": {
+  "state": "failed",
+  "sharpness": 0.9281306862831116,
+  "weight": 0.6808432340621948,
+  "route_use": {
+   "entangled": 0.22119281991893458
+  }
+ },
+ "M/0": {
+  "state": "failed",
+  "sharpness": 2.842078685760498,
+  "weight": 0.9899044632911682,
+  "route_use": {
+   "entangled_items": 0.07061340941512126,
+   "separable": 1.0
+  }
+ },
+ "M/1": {
+  "state": "failed",
+  "sharpness": 2.691391944885254,
+  "weight": 0.9864025115966797,
+  "route_use": {
+   "entangled_items": 0.0896700143472023,
+   "separable": 1.0
+  }
+ },
+ "M/2": {
+  "state": "failed",
+  "sharpness": 2.417440414428711,
+  "weight": 0.9767123460769653,
+  "route_use": {
+   "entangled_items": 0.10851063829787234,
+   "separable": 1.0
+  }
+ },
+ "F/0": {
+  "state": "not applicable",
+  "sharpness": 4.0,
+  "weight": 0.9989947080612183,
+  "route_use": {
+   "entangled": 0.0
+  }
+ },
+ "F/1": {
+  "state": "not applicable",
+  "sharpness": 4.0,
+  "weight": 0.9989947080612183,
+  "route_use": {
+   "entangled": 0.0
+  }
+ },
+ "F/2": {
+  "state": "not applicable",
+  "sharpness": 4.0,
+  "weight": 0.9989947080612183,
+  "route_use": {
+   "entangled": 0.0
+  }
+ }
+}
