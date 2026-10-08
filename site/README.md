@@ -17,7 +17,7 @@ The program log: where the project is, where it is going, what is on the table, 
 |---|---|
 | `/` | Where we are and where we are going, in two paragraphs; at-a-glance numbers (days to hibernation and to wrap-up, decisions waiting, A3 spend); the founding wager; the next most valuable steps and what each teaches; decisions waiting on John; the three nested goals; the ladder strip; ideas on the table. |
 | `/ladder/` | The eight stages: status, progress, delivered, remaining, and which account of consciousness each adjudicates. |
-| `/roadmap/` | The weekend roadmap to 2026-12-21 from `data/roadmap.toml`: the question and the two rules (what weekdays carry, the weekly re-plan); progress (goals done, weekends done, days to each kill date, wrap-up and hibernation); the thirteen weekends on one date line with the fixed dates marked; one card per weekend with its outcome, goals and their status and owner, John's items and hours; the extensions table. |
+| *(none)* | The weekend roadmap (`data/roadmap.toml`) is not published: it is a working plan for John and the sessions (John, 2026-10-08). The export still writes `roadmap.json` and validates the TOML; no page reads it. |
 | `/questions/` | The questions that matter (current answer, what answers it, what would count against it) and every idea on the table grouped by status. |
 | `/learned/` | Findings on record, newest first: what was found, so what, source path. |
 | `/story/` | One row per STATUS.md entry, by month. |
