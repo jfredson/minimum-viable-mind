@@ -34,17 +34,43 @@
 #     is created, src/tripwire.py preflight must pass (it refuses while a
 #     trip is uncleared, and a balance it cannot read is a trip); after
 #     creation the machine is registered with it at the rate on its creation
-#     record; and one hourly tripwire watcher per wave runs on this laptop
-#     under the keep-awake command, beside the watchdog;
+#     record; and one tripwire watcher per wave runs on this laptop under
+#     the keep-awake command, beside the watchdog, reading every 5 minutes
+#     (ruled 2026-10-06; it was hourly);
+#   * 2026-10-06, ruled by John (page 2 of the ruling packet on the built
+#     models that lost their ownership route; method:
+#     docs/2026-10-06-tripwire-fixes-method.md): every step that deletes a
+#     machine writes the deletion time into the tripwire's records -- the
+#     watchdog and the machine deadline through TRIP_PY, TRIP_SCRIPT and
+#     TRIP_DIR in their settings files, and this launcher's own two
+#     emergency deletes below;
 #   * the ledger the launch gate reads is experiment 06's compute ledger, the
 #     programme's one record of money (ruled 2026-10-03, decision 8).
 #
 # Usage (environment variables only; this launcher takes no arguments):
 #   dry run, creates nothing and contacts no vendor:
-#     DRYRUN=1 ARM=C SIZE=10M SEED=0 WAVE=dev-10m ESTIMATE_HOURS=1.5 \
+#     DRYRUN=1 ARM=C SIZE=10M SEED=0 WAVE=<a new wave name> ESTIMATE_HOURS=1.5 \
 #       HARD_CAP_USD=2.50 RATE_PER_HOUR_USD=0.99 ./launch_successor.sh
 #   a real launch: the same without DRYRUN, after the ledger row exists.
 #   OUT defaults to succ_<arm>_<size>_seed<seed>, which the ledger row names.
+#
+# OPERATOR NOTES for the spending tripwire (2026-10-06, after the independent
+# check of its fixes, pull request 117):
+#   * NEVER REUSE A WAVE NAME. Each wave's records live in
+#     artifacts/tripwire/<WAVE>/; an old one (for example dev-10m, which holds
+#     the 2026-10-04 records) carries an old starting balance, old machines
+#     and a stale watcher number, and the balance comparison would read about
+#     0.5 and hide an overcharge. Pick a new name for every wave.
+#   * Run the end-of-wave comparison (src/tripwire.py reconcile --state
+#     artifacts/tripwire/<WAVE>) NO EARLIER THAN 3 HOURS AFTER THE LAST
+#     DELETION. Bills post late; an empty bill, or one covering less than 0.90
+#     of a machine's life, is a trip ("cannot be checked yet", section 12.7 as
+#     extended by John 2026-10-06), and a trip halts every launch. If it
+#     halts with "cannot be checked yet", tell John, and run it again after
+#     he clears the halt.
+#   * DO NOT TOP UP THE ACCOUNT DURING A WAVE. A rise in the balance restarts
+#     the tripwire's in-flight comparison (logged, not a trip), which then
+#     reads low and can miss a mild overcharge on the rest of the wave.
 set -uo pipefail
 
 # 2026-09-22 [RT-198]: this launcher takes NO command-line arguments and never
@@ -82,6 +108,23 @@ case "$WAVE" in ''|*/*|.|..|*[!A-Za-z0-9_.-]*) echo "refusing to run: set WAVE t
 case "$ESTIMATE_HOURS" in ''|*[!0-9.]*|*.*.*|.) echo "refusing to run: set ESTIMATE_HOURS to this run's estimated machine hours (got '$ESTIMATE_HOURS')" >&2; exit 2 ;; esac
 LEDGER="${LEDGER:-$EXP_DIR/../06-mvm-0a-constructed-self-index/compute-ledger.md}"
 TRIP_DIR="$EXP_DIR/artifacts/tripwire/$WAVE"
+# 2026-10-06: a delete this launcher makes itself, written into the tripwire's
+# records only when the vendor accepted it or said the machine does not exist.
+delete_and_record() {
+  local answer rc at
+  answer=$(runpodctl pod delete "$POD" 2>&1); rc=$?
+  at=$(date +%s)
+  printf '%s\n' "$answer"
+  # the vendor's own phrase with its status (corrected after the check, pull
+  # request 117); this writes only the tripwire's records, never the timer's
+  if [ "$rc" -eq 0 ] || { printf '%s' "$answer" | grep -qi 'pod not found' \
+                          && printf '%s' "$answer" | grep -qF '(status 404)'; }; then
+    "$PY_LOCAL" "$SRC_DIR/tripwire.py" gone --state "$TRIP_DIR" --pod "$POD" --at "$at" \
+      --by "the launcher: $1" | sed 's/^/  /'
+  else
+    echo "  the delete was not confirmed (exit $rc): CHECK THE VENDOR'S MACHINE LIST NOW; the machine deadline stays armed"
+  fi
+}
 GPU="${GPU:-NVIDIA GeForce RTX 5090}"          # measured venue: the workload
                                                # is enactment-bound, so an
                                                # H100 buys nothing
@@ -305,7 +348,8 @@ fi)
                      python transplant.py --self-test --sizes toy
                      python train_successor.py --self-test
   tripwire: register the machine at the rate on its creation record;
-            start the wave's hourly watcher if it is not already running
+            start the wave's watcher (every 5 minutes) if it is not already running;
+            every deleting step writes the deletion time into its records
 $(if [ -n "$CLEAR_RUN_SUBDIR" ]; then
   echo "  clear the run folder, before the shutdown watcher starts:"
   echo "    list, then empty, $RUN_DIR"
@@ -373,7 +417,7 @@ else
   nohup "$CAFFEINATE" -dimsu "$PY_LOCAL" "$SRC_DIR/tripwire.py" watch --state "$TRIP_DIR" \
     --allow-delete >> "$TRIP_DIR/watch.log" 2>&1 < /dev/null &
   echo $! > "$TRIP_DIR/watch.pid"
-  echo "  TRIPWIRE WATCHER started (pid $!): hourly, log $TRIP_DIR/watch.log"
+  echo "  TRIPWIRE WATCHER started (pid $!): every 5 minutes while machines run, log $TRIP_DIR/watch.log"
 fi
 
 # ---- 2026-09-25: the machine deadline, armed before anything else runs ----
@@ -408,6 +452,9 @@ HARD_CAP_USD="$HARD_CAP_USD"
 RATE_PER_HOUR_USD="$EFF_RATE"
 POSTED_RATE="$POSTED_RATE"
 POLL_S=$DEADLINE_POLL_S
+TRIP_PY="$PY_LOCAL"
+TRIP_SCRIPT="$SRC_DIR/tripwire.py"
+TRIP_DIR="$TRIP_DIR"
 DLEOF
   nohup "$CAFFEINATE" -dimsu bash "$OPS_DIR/machine_deadline.sh" "$DL_ENV" \
     >> "$DL_DIR/machine-deadline.log" 2>&1 < /dev/null &
@@ -432,7 +479,7 @@ except Exception:
 done
 if [ -z "$SSH_CMD" ]; then
   echo "no SSH after 8 min — pod will never boot; deleting (bills nothing while stuck)"
-  runpodctl pod delete "$POD"
+  delete_and_record "no connection after 8 minutes"
   echo "re-run me (stock rotates), or try NETVOL=none / another GPU"
   exit 1
 fi
@@ -474,7 +521,7 @@ echo "$PREFLIGHT" | sed 's/^/  /'
 if ! echo "$PREFLIGHT" | grep -q "train_successor self-test OK"; then
   echo "REMOTE PRE-FLIGHT FAILED — deleting the pod rather than billing a"
   echo "run on a broken tree. Inspect the output above."
-  runpodctl pod delete "$POD"
+  delete_and_record "the remote self-tests failed"
   exit 1
 fi
 
@@ -702,6 +749,9 @@ DEST="$DEST"
 DEADLINE_EPOCH=$DEADLINE_EPOCH
 NETVOL="$NETVOL"
 GRACE_S=$GRACE_S
+TRIP_PY="$PY_LOCAL"
+TRIP_SCRIPT="$SRC_DIR/tripwire.py"
+TRIP_DIR="$TRIP_DIR"
 ENVEOF
 nohup "$CAFFEINATE" -dimsu bash "$WATCHDOG" "$ENVF" \
   >> "$DEST/watchdog.log" 2>&1 < /dev/null &

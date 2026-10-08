@@ -1,0 +1,24 @@
+Recorded data from the four 10-million-parameter development runs launched
+together on 2026-10-04 (Pacific; 2026-10-05 UTC). Copied unchanged, for the
+replay in ../../check_tripwire_fixes.py. $0: nothing here was read from the
+vendor by this work.
+
+state-0052Z.json, state-after-0111Z.json, watch-after-0111Z.log
+    The spending alarm's records as the independent check of the development
+    runs kept them (pull request 106, branch check-dev-10m, commit 2185718,
+    folder experiments/06-mvm-0a-constructed-self-index/reviews/
+    2026-10-04-development-runs-check-scripts/, subfolders
+    tripwire-state-snapshot-0052Z and tripwire-state-after-0111Z).
+    The 0052Z copy was taken before the old hourly watcher's 01:11 reading
+    charged all four machines up to 01:11.
+
+watchdog-deletion-lines.txt
+    The "watchdog up", "deleting pod" and "pod gone; billing stopped" lines
+    from each run's watchdog.log in the main checkout
+    (experiments/08-successor-degree/artifacts/<run>/watchdog.log, not in
+    git). The check took the deletion times from the "pod gone" lines.
+
+The check's own later balance reading, $72.3178 (72.3178 to four places), is
+taken from its printed output (tripwire_after_the_fact_output.txt, same
+folder): "balance 73.7742 -> 72.3178" over 0.753 h from the first reading,
+which puts it at about 00:56:28 UTC. Only four decimal places were printed.

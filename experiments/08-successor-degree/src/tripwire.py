@@ -1,7 +1,10 @@
 """The spending tripwire: 1.25, halt not trim, with the in-flight clause.
 
 FROZEN CODE, NOT YET REGISTERED. Frozen 2026-10-04 under
-`docs/successor-code-freeze-method-2026-10-04.md`. It implements section 12.5
+`docs/successor-code-freeze-method-2026-10-04.md`; changed 2026-10-06 under
+John's four rulings of that day (page 2 of the ruling packet on the built
+models that lost their ownership route; method:
+`docs/2026-10-06-tripwire-fixes-method.md`). It implements section 12.5
 of `docs/successor-experiment-proposal-2026-10-03-v4.md`, adopted by John on
 2026-09-25 (the queue ruling, page 6, part 3), which says the tripwire is
 written into the launch preconditions beside the sleep guard and the argument
@@ -33,12 +36,39 @@ Either at or above 1.25 is a trip. **A check that cannot run is a trip**
    needs his own words. Removing the halt file is his decision, not this
    program's.
 
+When ratio B is read (ruled 2026-10-06, amending section 12.5's "hourly")
+-------------------------------------------------------------------------
+The watcher reads every 5 minutes while machines run, and for 30 minutes
+after the last deletion. The vendor balance is lagged and lumpy (in the
+development run it did not move for 6.5 minutes of a running machine), so:
+
+- **Rule S, in flight:** once the predicted spend is at least $0.25, ratio B
+  is over the line when drawn >= 1.25 x predicted + $0.05; it trips when the
+  latest TWO readings are both over the line.
+- **Rule D, at each deletion (the steadier one):** at any reading at least
+  15 minutes after a recorded deletion, with predicted spend at least $0.10,
+  drawn >= 1.25 x predicted + $0.02 trips on one reading.
+
+Every step that deletes a machine records the time (`gone`); a machine that
+vanishes with no record is marked deleted at the first reading without it,
+flagged as inferred. Empty or zero bills at reconcile are "cannot be checked
+yet": a trip (section 12.7).
+
 How the launcher uses it
 ------------------------
     python tripwire.py preflight --state DIR             # before creating a machine
     python tripwire.py register  --state DIR --pod ID --rate 0.99 --estimate-hours 1.5
-    python tripwire.py watch     --state DIR             # spawned once per wave, hourly
-    python tripwire.py reconcile --state DIR             # ratio A at the wave boundary
+    python tripwire.py watch     --state DIR             # spawned once per wave, every 5 minutes
+    python tripwire.py gone      --state DIR --pod ID --at EPOCH --by WHO   # every deleting step
+    python tripwire.py reconcile --state DIR             # ratio A, NO EARLIER THAN 3 HOURS after the last deletion
+
+Operator notes (2026-10-06, after the independent check, pull request 117):
+never reuse a wave name (an old folder such as dev-10m holds an old starting
+balance and old machines); run reconcile no earlier than 3 hours after the
+last deletion, because bills post late and an empty bill is a trip; if it
+halts with "cannot be checked yet", tell John and run it again after he
+clears the halt; do not top up the account during a wave (a rise in the
+balance restarts the in-flight comparison and weakens it).
 
 Contacts the vendor only to read the balance, the machine list and billing,
 and to delete a machine when the in-flight clause says it must. Creates
@@ -49,16 +79,31 @@ nothing [C1/C2].
 from __future__ import annotations
 
 import argparse
+import fcntl
 import json
 import os
 import subprocess
 import sys
 import time
+from contextlib import contextmanager
 from datetime import datetime, timezone
 
 TRIP_RATIO = 1.25
 VOLUME_DRIP_PER_HOUR = 0.01        # the network volume's storage, read as currentSpendPerHr when idle
-WATCH_EVERY_S = 3600
+WATCH_EVERY_S = 300                # ruled 2026-10-06: every few minutes while machines run
+AFTER_LAST_S = 1800                # keep reading this long after the last deletion
+# Rule S, in flight (fast, rough): two readings in a row over the line.
+S_FLOOR_USD = 0.25                 # below this predicted spend, one lump dominates
+S_ALLOW_USD = 0.05                 # about three machine-minutes posted early
+# Rule D, at each deletion (steady): one reading, once the deleted machine has settled.
+D_SETTLE_S = 900                   # the balance lagged at least 6.5 min in the development run
+D_FLOOR_USD = 0.10
+D_ALLOW_USD = 0.02                 # rounding only
+# Ruled by John 2026-10-06 on the independent check's open items (pull request 117):
+BILL_COMPLETE_MIN = 0.90           # billed below this share of life: "cannot be checked yet" (a trip).
+                                   # Recorded honest bills read 0.9994 and 1.00; the recorded partial one 0.30.
+RESTART_LOOKBACK_S = 900           # after a top-up restart, predict from 15 min before the restart
+                                   # reading, so charges posted late are not read as overbilling
 HALT = "HALT"
 RUNPODCTL = os.environ.get("RUNPODCTL", "runpodctl")
 
@@ -111,15 +156,38 @@ def billed_hours(pod: str, since: str) -> float:
                  "--grouping", "podId", "--start-time", since])
     if not isinstance(d, list):
         raise CheckFailed("the billing reading is not a list")
-    return sum(float(x.get("timeBilledMs", 0)) for x in d if x.get("podId") == pod) / 3.6e6
+    rows = [x for x in d if isinstance(x, dict) and x.get("podId") == pod]
+    # Ruled 2026-10-06: a bill not yet posted is "cannot be checked yet",
+    # which is a trip (section 12.7), never "zero hours billed".
+    if not rows:
+        raise CheckFailed(f"cannot be checked yet: the vendor's bill for {pod} is empty (not yet posted)")
+    try:
+        ms = sum(float(x.get("timeBilledMs") or 0) for x in rows)
+    except (TypeError, ValueError) as e:
+        raise CheckFailed(f"the bill for {pod} is not readable: {e}")
+    if ms <= 0:
+        raise CheckFailed(f"cannot be checked yet: the vendor's bill for {pod} shows no billed time")
+    return ms / 3.6e6
 
 
-def delete_pod(pod: str) -> str:
+def says_not_found(text: str) -> bool:
+    """The vendor saying a machine does not exist. On 2026-09-26 a delete of a
+    machine already gone answered exit 1, "pod not found to terminate", status
+    404 (the attempt-2 check, section 9)."""
+    # corrected after the independent check (pull request 117, problem 1):
+    # the vendor's own phrase AND the status, never any "not found" or any 404
+    return "pod not found" in text.lower() and "(status 404)" in text
+
+
+def delete_pod(pod: str) -> tuple:
+    """Returns (confirmed, text): confirmed when the vendor accepted the delete
+    or said the machine does not exist."""
     try:
         r = subprocess.run([RUNPODCTL, "pod", "delete", pod], capture_output=True, text=True, timeout=120)
-        return f"rc={r.returncode} {(r.stdout + r.stderr).strip()[:200]}"
+        out = (r.stdout + r.stderr).strip()
+        return (r.returncode == 0 or says_not_found(out)), f"rc={r.returncode} {out[:200]}"
     except Exception as e:                                   # noqa: BLE001
-        return f"could not run: {e}"
+        return False, f"could not run: {e}"
 
 
 # ------------------------------------------------------------ the state
@@ -130,6 +198,21 @@ def load_state(d: str) -> dict:
         return dict(machines={}, readings=[])
     with open(p) as f:
         return json.load(f)
+
+
+@contextmanager
+def locked(d: str):
+    """Added after the independent check (pull request 117, problem 4): the
+    watcher, the watchdog, the deadline timer and the launcher all write
+    these records, so every load-change-save happens under one file lock,
+    and vendor reads happen outside it."""
+    os.makedirs(d, exist_ok=True)
+    with open(os.path.join(d, "state.lock"), "a") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(f, fcntl.LOCK_UN)
 
 
 def save_state(d: str, st: dict) -> None:
@@ -162,9 +245,11 @@ def write_halt(d: str, why: str, figures: dict) -> None:
 
 # ------------------------------------------------------------ the arithmetic
 
-def ratio_b(readings: list, machines: dict, t_now: float) -> dict:
+def ratio_b(readings: list, machines: dict, t_now: float, lookback: float = 0.0) -> dict:
     """Cumulative drawdown since the first reading, per hour, against what the
-    machines that were running should have cost over the same time."""
+    machines that were running should have cost over the same time. After a
+    top-up restart, `lookback` seconds before the first reading are predicted
+    too (charges for that time post after it)."""
     if len(readings) < 2:
         return dict(ratio=None, reason="fewer than two balance readings")
     t0, b0 = readings[0]["t"], readings[0]["balance"]
@@ -172,15 +257,95 @@ def ratio_b(readings: list, machines: dict, t_now: float) -> dict:
     hours = (t1 - t0) / 3600
     if hours <= 0:
         return dict(ratio=None, reason="no time between readings")
-    expected = VOLUME_DRIP_PER_HOUR * hours
+    p0 = t0 - lookback
+    expected = VOLUME_DRIP_PER_HOUR * (t1 - p0) / 3600
     for m in machines.values():
-        start = max(t0, m["created"])
+        start = max(p0, m["created"])
         end = min(t1, m.get("gone") or t1)
         if end > start:
             expected += m["rate"] * (end - start) / 3600
     drawn = b0 - b1
     return dict(ratio=drawn / expected if expected > 0 else None, drawn=drawn, expected=expected,
                 hours=hours, first=readings[0], last=readings[-1])
+
+
+def over_line(rb: dict, floor: float, allow: float) -> bool:
+    """Drawn at or above 1.25 times the prediction plus an allowance, once the
+    prediction is big enough that a lump of a few cents cannot dominate."""
+    return (rb.get("ratio") is not None and rb["expected"] >= floor
+            and rb["drawn"] >= TRIP_RATIO * rb["expected"] + allow)
+
+
+def rose(prev: dict, cur: dict) -> bool:
+    """The balance went up: never honest spending (a top-up, or a refund)."""
+    return cur["balance"] > prev["balance"] + 1e-6
+
+
+def segment(readings: list) -> tuple:
+    """Ruled 2026-10-06 (check problem 10): the comparison restarts at the last
+    reading higher than the one before it. Returns (readings from there, the
+    prediction's look-back in seconds)."""
+    for i in range(len(readings) - 1, 0, -1):
+        if rose(readings[i - 1], readings[i]):
+            return readings[i:], RESTART_LOOKBACK_S
+    return readings, 0.0
+
+
+def note_rise(st: dict, reading: dict) -> None:
+    """Record a top-up in the records and the log. Not a trip."""
+    if st["readings"] and rose(st["readings"][-1], reading):
+        up = reading["balance"] - st["readings"][-1]["balance"]
+        st.setdefault("restarts", []).append(dict(t=reading["t"], iso=iso(reading["t"]), rise=up,
+                                                  before=st["readings"][-1]["balance"], after=reading["balance"]))
+        print(f"[{iso(reading['t'])}] tripwire: the balance ROSE by ${up:.4f} (a top-up or refund). Not a trip. "
+              f"The in-flight comparison restarts from this reading, predicting from "
+              f"{RESTART_LOOKBACK_S // 60} minutes before it. Operator rule: do not top up during a wave.",
+              flush=True)
+
+
+def rule_s(readings: list, machines: dict) -> dict:
+    """In flight: the latest two readings both over the line (within the
+    current comparison, which restarts after a top-up)."""
+    readings, back = segment(readings)
+    if len(readings) < 3:                       # the first reading is the baseline
+        return dict(trip=False, rb=ratio_b(readings, machines, 0, back))
+    now_rb = ratio_b(readings, machines, readings[-1]["t"], back)
+    prev_rb = ratio_b(readings[:-1], machines, readings[-2]["t"], back)
+    trip = over_line(now_rb, S_FLOOR_USD, S_ALLOW_USD) and over_line(prev_rb, S_FLOOR_USD, S_ALLOW_USD)
+    return dict(trip=trip, rb=now_rb, previous=prev_rb)
+
+
+def rule_d(readings: list, machines: dict) -> dict:
+    """At each deletion: the whole wave so far, at a reading taken at least
+    D_SETTLE_S after some machine's deletion. Inferred deletions count too:
+    they are late, which only makes this read low."""
+    readings, back = segment(readings)
+    if len(readings) < 2:
+        return dict(trip=False, applies=False)
+    t1, p0 = readings[-1]["t"], readings[0]["t"] - back
+    settled = [m["pod"] for m in machines.values()
+               if m.get("gone") and m["gone"] > p0 and t1 - m["gone"] >= D_SETTLE_S]
+    rb = ratio_b(readings, machines, t1, back)
+    applies = bool(settled)
+    return dict(trip=applies and over_line(rb, D_FLOOR_USD, D_ALLOW_USD), applies=applies,
+                settled=settled, rb=rb)
+
+
+def record_gone(st: dict, pod: str, at: float, by: str, inferred: bool = False) -> bool:
+    """A deletion time. A recorded time replaces an inferred one; between two
+    recorded times the earlier is kept; an inferred time never replaces a
+    recorded one. Returns whether the record changed."""
+    m = st["machines"].get(pod)
+    if m is None:
+        return False
+    old, old_inf = m.get("gone"), m.get("gone_inferred", False)
+    if old is not None:
+        if inferred and not old_inf:
+            return False
+        if inferred == old_inf and old <= at:
+            return False
+    m["gone"], m["gone_iso"], m["gone_by"], m["gone_inferred"] = at, iso(at), by, inferred
+    return True
 
 
 def trips(ratio: float | None) -> bool:
@@ -211,76 +376,118 @@ def cmd_preflight(d: str) -> int:
     if h:
         print(f"tripwire: REFUSING to launch: the tripwire has tripped and not been cleared.\n{h}")
         return 3
-    st = load_state(d)
     try:
         bal = read_balance()
         live = running_pods()
     except CheckFailed as e:
-        write_halt(d, f"a check that cannot run is a trip: {e}", dict(state=st))
+        write_halt(d, f"a check that cannot run is a trip: {e}", dict(state=load_state(d)))
         return 3
-    st["readings"].append(dict(t=now(), balance=bal, source="preflight"))
-    save_state(d, st)
+    with locked(d):                 # the vendor has been read; now load, apply, save
+        st = load_state(d)
+        r = dict(t=now(), balance=bal, source="preflight")
+        note_rise(st, r)
+        st["readings"].append(r)
+        save_state(d, st)
     ours = [m for m in st["machines"].values() if m["pod"] in live]
     print(f"tripwire: balance ${bal:.4f}; {len(live)} machine(s) on the account, {len(ours)} of this wave")
-    rb = ratio_b(st["readings"], st["machines"], now())
-    if ours and rb["ratio"] is not None and rb["hours"] >= 0.5:
-        print(f"tripwire: ratio B so far {rb['ratio']:.3f} over {rb['hours']:.2f} hours")
-        if trips(rb["ratio"]):
-            write_halt(d, f"ratio B {rb['ratio']:.3f} at or above {TRIP_RATIO} before the next machine",
-                       dict(ratio_b=rb))
+    if st["machines"]:
+        s, dd = rule_s(st["readings"], st["machines"]), rule_d(st["readings"], st["machines"])
+        if s["rb"].get("ratio") is not None:
+            print(f"tripwire: ratio B so far {s['rb']['ratio']:.3f} (drawn ${s['rb']['drawn']:.4f}, "
+                  f"predicted ${s['rb']['expected']:.4f})")
+        if s["trip"] or dd["trip"]:
+            which = "rule S (two readings in a row)" if s["trip"] else "rule D (after a deletion)"
+            write_halt(d, f"ratio B {s['rb']['ratio']:.3f} over the line by {which}, before the next machine",
+                       dict(rule_s=s, rule_d=dd))
             return 3
-    elif ours:
-        # before the second machine of a wave: ratio B needs some time to mean anything
-        print("tripwire: a machine of this wave is running but ratio B has under half an hour "
-              "of readings; launching another now is allowed by the rule, and the watcher keeps reading")
     print("tripwire: ok to launch")
     return 0
 
 
 def cmd_register(d: str, pod: str, rate: float, estimate_hours: float, out: str) -> int:
-    st = load_state(d)
-    st["machines"][pod] = dict(pod=pod, rate=rate, estimate_hours=estimate_hours, created=now(),
-                               created_iso=iso(now()), out=out, gone=None)
-    save_state(d, st)
+    with locked(d):
+        st = load_state(d)
+        st["machines"][pod] = dict(pod=pod, rate=rate, estimate_hours=estimate_hours, created=now(),
+                                   created_iso=iso(now()), out=out, gone=None)
+        save_state(d, st)
     print(f"tripwire: registered {pod} at ${rate}/h, estimate {estimate_hours} h")
     return 0
 
 
+def cmd_gone(d: str, pod: str, at: float, by: str) -> int:
+    """Ruled 2026-10-06: the step that deletes a machine writes the deletion
+    time here. A machine this wave never registered is reported, not added."""
+    with locked(d):
+        st = load_state(d)
+        if pod not in st["machines"]:
+            print(f"tripwire: {pod} is not a machine of this wave; nothing recorded")
+            return 1
+        changed = record_gone(st, pod, at, by)
+        save_state(d, st)
+    m = st["machines"][pod]
+    print(f"tripwire: {pod} deleted at {iso(m['gone'])} by {m['gone_by']}"
+          + ("" if changed else f" (kept; {by}'s {iso(at)} is not earlier)"))
+    return 0
+
+
 def watch_once(d: str, allow_delete: bool) -> str:
-    """One hourly check. Returns "continue", "done" or "tripped"."""
-    st = load_state(d)
+    """One reading. Returns "continue", "done" or "tripped"."""
     try:
         bal = read_balance()
         live = running_pods()
     except CheckFailed as e:
-        write_halt(d, f"a check that cannot run is a trip: {e}", dict(state=st))
+        write_halt(d, f"a check that cannot run is a trip: {e}", dict(state=load_state(d)))
         return "tripped"
     t = now()
-    st["readings"].append(dict(t=t, balance=bal, source="watch"))
-    for m in st["machines"].values():
-        if m["pod"] in live:
-            m["last_seen"] = t
-        elif not m.get("gone"):
-            m["gone"] = t
-    save_state(d, st)
-    rb = ratio_b(st["readings"], st["machines"], t)
-    shown = "unread" if rb["ratio"] is None else f"{rb['ratio']:.3f}"
-    print(f"[{iso(t)}] tripwire: balance ${bal:.4f}; ratio B {shown}", flush=True)
-    if rb["ratio"] is not None and rb["hours"] >= 0.9 and trips(rb["ratio"]):
+    with locked(d):                 # the vendor has been read; now load, apply, save
+        st = load_state(d)
+        r = dict(t=t, balance=bal, source="watch")
+        note_rise(st, r)
+        st["readings"].append(r)
+        for m in st["machines"].values():
+            if m["pod"] in live:
+                m["last_seen"] = t
+                if m.get("gone") and m.get("gone_inferred"):
+                    # listed again: the earlier absence was the vendor's list lagging,
+                    # not a deletion; charging it as deleted would read as overbilling
+                    for k in ("gone", "gone_iso", "gone_by", "gone_inferred"):
+                        m.pop(k, None)
+                    m["gone"] = None
+            elif not m.get("gone"):
+                # no deleting step recorded it: the first reading without it, flagged
+                record_gone(st, m["pod"], t, "the watcher: not in the machine list", inferred=True)
+        save_state(d, st)
+    s, dd = rule_s(st["readings"], st["machines"]), rule_d(st["readings"], st["machines"])
+    rb = s["rb"]
+    shown = "unread" if rb.get("ratio") is None else f"{rb['ratio']:.3f}"
+    print(f"[{iso(t)}] tripwire: balance ${bal:.4f}; ratio B {shown}"
+          + (" (after a deletion)" if dd["applies"] else ""), flush=True)
+    if s["trip"] or dd["trip"]:
+        which = "rule S, two readings in a row in flight" if s["trip"] else "rule D, after a deletion"
         decisions = [in_flight_decision(m, rb["ratio"], bal, t)
                      for m in st["machines"].values() if m["pod"] in live]
-        write_halt(d, f"ratio B {rb['ratio']:.3f} at or above {TRIP_RATIO}",
-                   dict(ratio_b=rb, in_flight=decisions))
+        write_halt(d, f"ratio B {rb['ratio']:.3f} at or above {TRIP_RATIO} ({which})",
+                   dict(rule_s=s, rule_d=dd, in_flight=decisions))
         for dec in decisions:
             if dec["decision"].startswith("delete"):
-                res = delete_pod(dec["pod"]) if allow_delete else "not deleted: --allow-delete not given"
+                if allow_delete:
+                    ok, res = delete_pod(dec["pod"])
+                    if ok:
+                        with locked(d):
+                            st = load_state(d)
+                            record_gone(st, dec["pod"], now(), "the tripwire, in flight")
+                            save_state(d, st)
+                else:
+                    res = "not deleted: --allow-delete not given"
                 print(f"tripwire: {dec['pod']}: {dec['decision']} -> {res}", flush=True)
             else:
                 print(f"tripwire: {dec['pod']}: left to finish; the funded balance covers its "
                       f"projected remaining ${dec['projected_remaining_cost']:.2f}", flush=True)
         return "tripped"
     if not any(m["pod"] in live for m in st["machines"].values()):
-        return "done"
+        last = max((m["gone"] for m in st["machines"].values() if m.get("gone")), default=t)
+        if t - last >= AFTER_LAST_S:
+            return "done"
     return "continue"
 
 
@@ -302,14 +509,32 @@ def cmd_reconcile(d: str) -> int:
         except CheckFailed as e:
             write_halt(d, f"a check that cannot run is a trip: ratio A for {m['pod']}: {e}", dict(state=st))
             return 3
-        existed = ((m.get("gone") or m.get("last_seen") or now()) - m["created"]) / 3600
+        existed = ((m.get("gone") or m.get("last_seen") or now()) - m["created"]) / 3600   # recorded deletion time
         ra = ratio_a(b, existed)
-        rows.append(dict(pod=m["pod"], billed_hours=b, existence_hours=existed, ratio_a=ra))
+        # Corrected after the re-check (problem 2): for a deletion only inferred
+        # (up to one reading late), the 0.90 line is judged against the last
+        # reading that still listed the machine; the 1.25 line keeps the inferred time.
+        if m.get("gone_inferred") and m.get("last_seen"):
+            listed = (m["last_seen"] - m["created"]) / 3600
+            ra_partial = ratio_a(b, listed)
+        else:
+            ra_partial = ra
+        rows.append(dict(pod=m["pod"], billed_hours=b, existence_hours=existed, ratio_a=ra,
+                         ratio_for_partial_line=ra_partial))
         worst = max(worst, ra or 0)
         print(f"tripwire reconcile: {m['pod']}: billed {b:.3f} h, existed about {existed:.3f} h, "
               f"ratio A {ra if ra is None else round(ra, 3)}")
     with open(os.path.join(d, "reconcile.json"), "w") as f:
         json.dump(rows, f, indent=1)
+    # Ruled 2026-10-06 (check problem 3): a bill posted only in part
+    partial = [r for r in rows if r["ratio_for_partial_line"] is not None
+               and r["ratio_for_partial_line"] < BILL_COMPLETE_MIN - 1e-9]   # "below", not rounding
+    if partial:
+        names = ", ".join(f"{r['pod']} {r['ratio_for_partial_line']:.3f}" for r in partial)
+        write_halt(d, f"a check that cannot run is a trip: cannot be checked yet: the bill covers less than "
+                      f"{BILL_COMPLETE_MIN} of the machine's life ({names}), so it has posted only in part. "
+                      f"Tell John; run reconcile again after he clears this.", dict(rows=rows))
+        return 3
     if trips(worst):
         write_halt(d, f"ratio A {worst:.3f} at or above {TRIP_RATIO} at the wave boundary", dict(rows=rows))
         return 3
@@ -338,8 +563,9 @@ def self_test() -> None:
     stub = os.path.join(tmp, "runpodctl")
     ctl = os.path.join(tmp, "ctl.json")
 
-    def vendor(balance=75.8450678416, pods=(), fail=None, billed_ms=191063):
-        json.dump(dict(balance=balance, pods=list(pods), fail=fail, billed_ms=billed_ms), open(ctl, "w"))
+    def vendor(balance=75.8450678416, pods=(), fail=None, billed_ms=191063, bill_rows=True):
+        json.dump(dict(balance=balance, pods=list(pods), fail=fail, billed_ms=billed_ms,
+                       bill_rows=bill_rows), open(ctl, "w"))
 
     with open(stub, "w") as f:
         f.write(f"""#!{sys.executable}
@@ -352,7 +578,7 @@ elif a[:2] == ["pod", "list"]: print(json.dumps([{{"id": p}} for p in c["pods"]]
 elif a[:2] == ["pod", "delete"]: open({ctl!r} + ".deleted", "a").write(a[2] + "\\n"); print("deleted")
 elif a[:2] == ["billing", "pods"]:
     pid = a[a.index("--pod-id") + 1]
-    print(json.dumps([{{"amount": 0.05, "podId": pid, "timeBilledMs": c["billed_ms"]}}]))
+    print(json.dumps([{{"amount": 0.05, "podId": pid, "timeBilledMs": c["billed_ms"]}}] if c["bill_rows"] else []))
 else: sys.exit(2)
 """)
     os.chmod(stub, 0o755)
@@ -377,7 +603,12 @@ else: sys.exit(2)
         clock[0] += 3600
         vendor(balance=75.8450678416 - 1.00 - 3.5, pods=["podA"])
         r = watch_once(d, True)
-        check("billing at 2.25 times the rate over two hours trips", r == "tripped" and halted(d))
+        check("one reading over the line in flight is not yet a trip (rule S wants two in a row)",
+              r == "continue" and not halted(d))
+        clock[0] += 300
+        vendor(balance=75.8450678416 - 1.00 - 3.6, pods=["podA"])
+        r = watch_once(d, True)
+        check("billing at about 2.25 times the rate, two readings in a row, trips", r == "tripped" and halted(d))
         figs = [f for f in os.listdir(d) if f.startswith("ledger-figures")]
         check("the ledger figures are written with the halt", len(figs) == 1)
         check("after a trip, preflight refuses every launch", cmd_preflight(d) == 3)
@@ -412,6 +643,15 @@ else: sys.exit(2)
         st["machines"]["alpua1c0w6jonx"]["gone"] = st["machines"]["alpua1c0w6jonx"]["created"] + 191.063 / 3.5
         save_state(d4, st)
         check("the 2026-08-08 shape (billed 3.5 times existence) trips at reconcile", cmd_reconcile(d4) == 3)
+        # ruled 2026-10-06: an empty bill is "cannot be checked yet", a trip
+        for name, kw in (("an empty bill", dict(bill_rows=False)), ("a bill of zero hours", dict(billed_ms=0))):
+            d4b = os.path.join(tmp, "wave4b-" + str(len(name)))
+            vendor()
+            cmd_preflight(d4b)
+            cmd_register(d4b, "podE", 0.99, 0.1, "o")
+            vendor(**kw)
+            check(f"{name} at reconcile is a trip (cannot be checked yet)",
+                  cmd_reconcile(d4b) == 3 and "cannot be checked yet" in (halted(d4b) or ""))
         # the watcher ends when no machine of the wave is left
         d5 = os.path.join(tmp, "wave5")
         vendor()
@@ -419,7 +659,13 @@ else: sys.exit(2)
         cmd_register(d5, "podC", 0.99, 1.0, "o")
         clock[0] += 3600
         vendor(balance=75.8450678416 - 0.5, pods=[])
-        check("the watcher stops when the wave's machines are gone", watch_once(d5, True) == "done")
+        check("the watcher keeps reading for 30 minutes after the last machine is gone",
+              watch_once(d5, True) == "continue")
+        clock[0] += AFTER_LAST_S
+        check("then it stops", watch_once(d5, True) == "done")
+        g = load_state(d5)["machines"]["podC"]
+        check("a machine gone with no deletion record is marked inferred",
+              g.get("gone_inferred") is True and "watcher" in g.get("gone_by", ""))
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     print(f"\n{len(fails)} failure(s)" if fails else "\nall checks passed")
@@ -431,7 +677,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--self-test", action="store_true")
     sub = ap.add_subparsers(dest="cmd")
-    for name in ("preflight", "register", "watch", "reconcile"):
+    for name in ("preflight", "register", "watch", "reconcile", "gone"):
         s = sub.add_parser(name)
         s.add_argument("--state", required=True)
         if name == "register":
@@ -439,6 +685,10 @@ def main():
             s.add_argument("--rate", type=float, required=True)
             s.add_argument("--estimate-hours", type=float, required=True)
             s.add_argument("--out", default="")
+        if name == "gone":
+            s.add_argument("--pod", required=True)
+            s.add_argument("--at", type=float, required=True, help="the deletion time, seconds since 1970")
+            s.add_argument("--by", required=True, help="which step deleted it")
         if name == "watch":
             s.add_argument("--every", type=int, default=WATCH_EVERY_S)
             s.add_argument("--allow-delete", action="store_true")
@@ -454,6 +704,8 @@ def main():
         sys.exit(cmd_watch(a.state, a.every, a.allow_delete))
     if a.cmd == "reconcile":
         sys.exit(cmd_reconcile(a.state))
+    if a.cmd == "gone":
+        sys.exit(cmd_gone(a.state, a.pod, a.at, a.by))
     ap.print_help()
 
 
