@@ -121,7 +121,9 @@ narrowed registration text by 2026-10-18 with its own check; experiment D's
 transcript-replacement control, method first; the relabelling of A in the
 paper draft; the upstream packet. The three 10M reruns of the repair and the
 single free-arm run follow the registration. Money unchanged: about $229.62 of
-$450 spent after the four development runs; account balance $73.77.
+$450 spent after the four development runs; account balance $72.32 (the
+$73.77 first written here was the reading just before the last machine of
+the wave; corrected the same day from the registration draft's handoff).
 
 **Addendum, later the same day: the three fresh sessions reported, and two
 rulings of this entry were revised.** The pairing-rule check of the poll
