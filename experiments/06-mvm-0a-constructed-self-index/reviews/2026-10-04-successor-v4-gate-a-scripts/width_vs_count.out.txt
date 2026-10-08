@@ -1,0 +1,7 @@
+arm/seed layer | width 160: whole read, piece of 8 | width 448 (288 noise coords), five noise draws: whole read; piece of 8
+C/0 layer 2 | 180, 180 | [147, 156, 159, 156, 162]; [163, 157, 166, 157, 158]  (noise scale 7.941)
+C/1 layer 1 | 177, 172 | [91, 94, 89, 90, 92]; [80, 88, 79, 76, 85]  (noise scale 2.250)
+C/2 layer 1 | 176, 178 | [123, 134, 132, 126, 130]; [128, 132, 134, 126, 138]  (noise scale 2.929)
+M/0 layer 1 | 180, 180 | [180, 180, 180, 179, 180]; [180, 180, 180, 180, 180]  (noise scale 2.048)
+T/0 layer 1 | 180, 180 | [180, 180, 180, 180, 180]; [180, 180, 180, 180, 180]  (noise scale 0.648)
+floor: 144 of 180. NOT A RESULT: a stand-in for width, with independent noise in place of a wider model's own coordinates.

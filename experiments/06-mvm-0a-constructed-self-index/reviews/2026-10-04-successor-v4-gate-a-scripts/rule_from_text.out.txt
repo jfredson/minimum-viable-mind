@@ -1,0 +1,68 @@
+=== 1. Nomination: the text's rule against the committed code's choice, twelve toy models
+primary  T/0: text -> nominated, ((0,), 'action', 8); code -> nominated, ((0,), 'action', 8); same: True
+primary  T/1: text -> nominated, ((0,), 'action', 8); code -> nominated, ((0,), 'action', 8); same: True
+primary  T/2: text -> nominated, ((0,), 'action', 8); code -> nominated, ((0,), 'action', 8); same: True
+primary  C/0: text -> nominated, ((2,), 'action', 8); code -> nominated, ((2,), 'action', 8); same: True
+primary  C/1: text -> nominated, ((1,), 'action+3', 8); code -> nominated, ((1,), 'action+3', 8); same: True
+primary  C/2: text -> nominated, ((1,), 'post-identity', 4); code -> nominated, ((1,), 'post-identity', 4); same: True
+primary  F/0: text -> read failed its floor: no size's piece reaches four fifths, None; code -> read failed its floor: no size's piece reaches four fifths, None; same: True
+primary  F/1: text -> read failed its floor: no size's piece reaches four fifths, None; code -> read failed its floor: no size's piece reaches four fifths, None; same: True
+primary  F/2: text -> read failed its floor: no size's piece reaches four fifths, None; code -> read failed its floor: no size's piece reaches four fifths, None; same: True
+primary  M/0: text -> nominated, ((1,), 'post-identity', 8); code -> nominated, ((1,), 'post-identity', 8); same: True
+primary  M/1: text -> nominated, ((1,), 'post-identity', 8); code -> nominated, ((1,), 'post-identity', 8); same: True
+primary  M/2: text -> nominated, ((1,), 'post-identity', 8); code -> nominated, ((1,), 'post-identity', 8); same: True
+stricter T/0: text -> nominated, ((1,), 'action', 8); code -> nominated, ((1,), 'action', 8); same: True
+stricter T/1: text -> nominated, ((1,), 'action', 8); code -> nominated, ((1,), 'action', 8); same: True
+stricter T/2: text -> nominated, ((1,), 'action', 8); code -> nominated, ((1,), 'action', 8); same: True
+stricter C/0: text -> nominated, ((2,), 'action', 8); code -> nominated, ((2,), 'action', 8); same: True
+stricter C/1: text -> nominated, ((1,), 'action+3', 8); code -> nominated, ((1,), 'action+3', 8); same: True
+stricter C/2: text -> nominated, ((1,), 'post-identity', 4); code -> nominated, ((1,), 'post-identity', 4); same: True
+stricter F/0: text -> read failed its floor: no size's piece reaches four fifths, None; code -> read failed its floor: no size's piece reaches four fifths, None; same: True
+stricter F/1: text -> read failed its floor: no size's piece reaches four fifths, None; code -> read failed its floor: no size's piece reaches four fifths, None; same: True
+stricter F/2: text -> read failed its floor: no size's piece reaches four fifths, None; code -> read failed its floor: no size's piece reaches four fifths, None; same: True
+stricter M/0: text -> nominated, ((1,), 'post-identity', 8); code -> nominated, ((1,), 'post-identity', 8); same: True
+stricter M/1: text -> nominated, ((1,), 'post-identity', 8); code -> nominated, ((1,), 'post-identity', 8); same: True
+stricter M/2: text -> nominated, ((1,), 'post-identity', 8); code -> nominated, ((1,), 'post-identity', 8); same: True
+agree on 24 of 24 (twelve primary, twelve stricter)
+
+=== 2. The reading on fresh episodes, from the text, against the committed degree
+T/0: text degree 0.0000; committed 0.0000; no-transplant miss +0.0000; controls 7/1/4 True/True/True; gate True -> reads
+T/1: text degree 0.0000; committed 0.0000; no-transplant miss +0.0000; controls 7/1/4 True/True/True; gate True -> reads
+T/2: text degree 0.0000; committed 0.0000; no-transplant miss +0.0000; controls 7/1/4 True/True/True; gate True -> reads
+C/0: text degree 1.0051; committed 1.0051; no-transplant miss -0.0132; controls 7/1/4 True/True/True; gate True -> reads
+C/1: text degree 0.9926; committed 0.9926; no-transplant miss -0.0111; controls 7/1/4 True/True/True; gate True -> reads
+C/2: text degree 0.9974; committed 0.9974; no-transplant miss -0.0039; controls 7/1/4 True/True/True; gate True -> reads
+F/0: text degree 1.0000; committed 1.0000; no-transplant miss -0.0043; controls 7/1/4 True/True/True; gate False -> no verdict: read failed its floor (described only), fails its gate
+F/1: text degree 1.0000; committed 1.0000; no-transplant miss -0.0057; controls 7/1/4 True/True/True; gate False -> no verdict: read failed its floor (described only), fails its gate
+F/2: text degree 1.0108; committed 1.0108; no-transplant miss +0.0054; controls 7/1/4 True/True/True; gate False -> no verdict: read failed its floor (described only), fails its gate
+M/0: text degree 0.4886; committed 0.4886; no-transplant miss -0.0059; controls 7/1/4 True/True/True; gate True -> reads
+M/1: text degree 0.4860; committed 0.4860; no-transplant miss +0.0004; controls 7/1/4 True/True/True; gate True -> reads
+M/2: text degree 0.5449; committed 0.5449; no-transplant miss -0.0046; controls 7/1/4 True/True/True; gate True -> reads
+
+=== 3. Two seeds of three, the separation, and the outcome term (section 3)
+arm T: reads on 3 of 3 seeds: [0.0, 0.0, 0.0]
+arm C: reads on 3 of 3 seeds: [1.0051, 0.9926, 0.9974]
+arm F: reads on 0 of 3 seeds: []
+arm M: reads on 3 of 3 seeds: [0.4886, 0.486, 0.5449]
+separation, lowest of arm C minus highest of arm T: 0.9926; clears 0.5: True
+outcome by the text's rules: the fifth term, metric validated, degree not read
+
+=== 4. The ordinary competing solver: the text's floor against the code's floor, development episodes
+seed 0, channel_removed: own-directed 0.2333, untouched 0.2400, floor asks for -0.0053; whole - untouched over the family: +0.0000 to +0.0000
+    text's floor: 45 of 45 site sets clear -> read failed its floor: no size's piece reaches four fifths
+    code's floor: 0 of 45 site sets clear -> no site set clears the whole-state floor   (committed: no site set clears the whole-state floor)
+seed 0, channel_left_on: own-directed 0.2383, untouched 0.2417, floor asks for -0.0027; whole - untouched over the family: -0.0017 to +0.0017
+    text's floor: 45 of 45 site sets clear -> read failed its floor: no size's piece reaches four fifths
+    code's floor: 0 of 45 site sets clear -> no site set clears the whole-state floor   (committed: no site set clears the whole-state floor)
+seed 1, channel_removed: own-directed 0.2100, untouched 0.2300, floor asks for -0.0160; whole - untouched over the family: +0.0000 to +0.0000
+    text's floor: 45 of 45 site sets clear -> read failed its floor: no size's piece reaches four fifths
+    code's floor: 0 of 45 site sets clear -> no site set clears the whole-state floor   (committed: no site set clears the whole-state floor)
+seed 1, channel_left_on: own-directed 0.2100, untouched 0.2300, floor asks for -0.0160; whole - untouched over the family: +0.0000 to +0.0033
+    text's floor: 45 of 45 site sets clear -> read failed its floor: no size's piece reaches four fifths
+    code's floor: 0 of 45 site sets clear -> no site set clears the whole-state floor   (committed: no site set clears the whole-state floor)
+seed 2, channel_removed: own-directed 0.2333, untouched 0.2300, floor asks for +0.0027; whole - untouched over the family: +0.0000 to +0.0000
+    text's floor: 0 of 45 site sets clear -> no site set clears the whole-state floor
+    code's floor: 0 of 45 site sets clear -> no site set clears the whole-state floor   (committed: no site set clears the whole-state floor)
+seed 2, channel_left_on: own-directed 0.2367, untouched 0.2300, floor asks for +0.0053; whole - untouched over the family: -0.0017 to +0.0017
+    text's floor: 0 of 45 site sets clear -> no site set clears the whole-state floor
+    code's floor: 0 of 45 site sets clear -> no site set clears the whole-state floor   (committed: no site set clears the whole-state floor)

@@ -1,0 +1,75 @@
+=== failure 1, part one: where every no-transplant rate the denominator uses comes from
+  T/0: accuracy_untouched 0.0000  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_T_seed0.json, primary.reading
+  T/1: accuracy_untouched 0.0000  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_T_seed1.json, primary.reading
+  T/2: accuracy_untouched 0.0000  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_T_seed2.json, primary.reading
+  C/0: accuracy_untouched 0.0512  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_C_seed0.json, primary.reading
+  C/1: accuracy_untouched 0.0488  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_C_seed1.json, primary.reading
+  C/2: accuracy_untouched 0.0600  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_C_seed2.json, primary.reading
+  F/0: accuracy_untouched 0.0587  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_F_seed0.json, primary.reading
+  F/1: accuracy_untouched 0.0563  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_F_seed1.json, primary.reading
+  F/2: accuracy_untouched 0.0688  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_F_seed2.json, primary.reading
+  M/0: accuracy_untouched 0.0125  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_M_seed0.json, primary.reading
+  M/1: accuracy_untouched 0.0175  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_M_seed1.json, primary.reading
+  M/2: accuracy_untouched 0.0138  <- experiments/rehearsal-successor-measure/out-controls-rerun/measure_M_seed2.json, primary.reading
+=== failure 1, part two: denominator and top of scale at the chosen site set (registered form)
+  T/0: denominator 1.0000; top of scale 1.0000; reads
+  T/1: denominator 1.0000; top of scale 1.0000; reads
+  T/2: denominator 1.0000; top of scale 1.0000; reads
+  C/0: denominator 0.4888; top of scale 1.0000; reads
+  C/1: denominator 0.5063; top of scale 1.0000; reads
+  C/2: denominator 0.4863; top of scale 1.0000; reads
+  F/0: denominator 0.4263; top of scale 1.0000; described only
+  F/1: denominator 0.5112; top of scale 1.0000; described only
+  F/2: denominator 0.4613; top of scale 1.0000; described only
+  M/0: denominator 0.7675; top of scale 1.0000; reads
+  M/1: denominator 0.7563; top of scale 1.0000; reads
+  M/2: denominator 0.7800; top of scale 1.0000; reads
+  smallest denominator among those that read: (0.48625, 'C/2')
+=== failure 1, the case the text's floor admits: a model whose own-directed accuracy is at or under its no-transplant rate
+  solver seed 0 channel_removed : floor asks -0.0053; rows the printed formula admits 180 of 180; denominators among them +0.0000 to +0.0000
+  solver seed 0 channel_left_on : floor asks -0.0027; rows the printed formula admits 180 of 180; denominators among them -0.0017 to +0.0017
+  solver seed 1 channel_removed : floor asks -0.0160; rows the printed formula admits 180 of 180; denominators among them +0.0000 to +0.0000
+  solver seed 1 channel_left_on : floor asks -0.0160; rows the printed formula admits 180 of 180; denominators among them +0.0000 to +0.0033
+  solver seed 2 channel_removed : floor asks +0.0027; rows the printed formula admits 0 of 180; denominators among them +nan to +nan
+  solver seed 2 channel_left_on : floor asks +0.0053; rows the printed formula admits 0 of 180; denominators among them +nan to +nan
+
+=== failure 2, part one: a route sentence in sections 0 to 16, this design's own words
+  1277: own**. *The route by which that quantity reaches the model's states, in one
+  1278: sentence:* the marker word is the input token at every turn the model's own
+  1279: assignments are spoken on, so it is carried by the token into the running
+  1283: claim, that which marker word is the model's own is forced by the loss at
+=== failure 2, part two: the same read, the same bar (144 of 180), at the position where the marker word
+    IS the input token (the first token of the model's first own turn) and at the registered action position
+  T/0: whole state at the marker's own token (single-position site: not reported); whole read at the action position 180 -> both clear
+  T/1: whole state at the marker's own token (single-position site: not reported); whole read at the action position 180 -> both clear
+  T/2: whole state at the marker's own token (single-position site: not reported); whole read at the action position 180 -> both clear
+  C/0: whole state at the marker's own token (single-position site: not reported); whole read at the action position 180 -> both clear
+  C/1: whole state at the marker's own token (single-position site: not reported); whole read at the action position 177 -> both clear
+  C/2: whole state at the marker's own token 180; whole read at the action position 176 -> both clear
+  F/0: whole state at the marker's own token 180; whole read at the action position 32 -> second clears, first does not
+  F/1: whole state at the marker's own token (single-position site: not reported); whole read at the action position 12 -> see figures
+  F/2: whole state at the marker's own token 180; whole read at the action position 18 -> second clears, first does not
+  M/0: whole state at the marker's own token 180; whole read at the action position 180 -> both clear
+  M/1: whole state at the marker's own token 180; whole read at the action position 180 -> both clear
+  M/2: whole state at the marker's own token 180; whole read at the action position 180 -> both clear
+  the named agent's read (control 2) on the one model that learned the named-other condition, arm F seed 0:
+    {'0': (16, 20), '1': (95, 92), '2': (137, 139), '3': (127, 115), '4': (102, 102)} -> best 139 of 144 needed
+
+=== failure 3, part one: every pre-stated cell, counted
+  control 6, T/0: same-value 81, different-value 719
+  control 6, C/0: same-value 81, different-value 719
+  control 6, F/0: same-value 81, different-value 719
+  control 6, M/0: same-value 81, different-value 719
+  control 4 as redefined, positions per pair: {'max': 21, 'mean': 5.212500095367432, 'min': 1}
+  control 2: toy models on which it returned a figure: 0 of 12
+  the two-of-three rule: arms whose three seeds disagree on the toy: 0 of 4
+  the lesion clause 'the ownership-free state and syntax batteries must hold': fields the gate file records: ['lesion_collapses_own', 'lesioned_other', 'lesioned_own', 'n', 'other', 'other_clears', 'other_correct', 'own', 'own_by_route', 'own_clears', 'own_correct']
+  grep of the rehearsal code for a state or syntax battery: (no file)
+=== failure 3, part three: thresholds at both ends
+  gate bar 790 of 3,000; a model at one in four clears it with probability 0.0485
+  no-transplant rule at own-directed 1.0: formula 0.0000; a broken pairing (0.125) flagged: True
+  no-transplant rule at own-directed 0.8712: formula 0.0184; a broken pairing (0.125) flagged: True
+  no-transplant rule at own-directed 0.56: formula 0.0629; a broken pairing (0.125) flagged: True
+  no-transplant rule at own-directed 0.2633: formula 0.1052; a broken pairing (0.125) flagged: True
+  piece floor at 144 of 180: the competing solver's best piece 20 to 25, arm F's 34, the built arms' chosen pieces 150 to 180
+  whole-state floor, printed formula, at the broken end (solver seeds 0 and 1): admits every site set (above); at the working end: section 1 of rule_from_text.out.txt
