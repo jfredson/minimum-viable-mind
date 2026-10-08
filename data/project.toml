@@ -913,12 +913,12 @@ status = "pending"
 [[next_steps]]
 id = "N33"
 title = "The two Cloudflare secrets on the repository, so every push to the main line deploys the site on its own"
-when = "any ten minutes; the site went live on 2026-10-08 from John's machine, and until the secrets exist each later push still fails at the deploy step"
-owner = "John"
+when = "done 2026-10-08: a new token (github-actions-mvm, the Workers template, one account and one zone) and the account id set as repository secrets; the deploy workflow then ran green end to end"
+owner = "John created the token and stored it; a session set the account id and re-ran the workflow"
 cost = "$0"
-decision = true
-teaches = "Nothing new. John ran the first deploy himself on 2026-10-08 at https://minimumviablemind.sentient-horizons.com, which created the subdomain's record and certificate. The workflow validates the data and builds the pages on every push, then fails because the token and account id are not set, so the site shows the last hand deploy until they are."
-status = "pending"
+decision = false
+teaches = "Nothing new. From this point every merge to the main line that touches the site or its data publishes it; the hand deploy of the same morning is no longer needed. A token that had been misnamed after the secret and never used was deleted the same day."
+status = "done"
 
 # ---------------------------------------------------------------------------
 # Spend. Registered caps are protocol, not budget: exceeding one is a violation.
@@ -953,7 +953,7 @@ note = "Updated 2026-10-03: plus about $0.55 for the two attempts at the small r
 date = "2026-10-08"
 kind = "process"
 title = "The refounding is on the main line; the registration text and the battery draft wait on checks; the site is brought up to date"
-summary = "Pull request 123 merged at John's word, carrying the poll, the router-control check, the refounding proposal with its reviews and eleven rulings, and the battery draft. Two drafts written by fresh sessions on 2026-10-07 wait on their checks: version 5 of the registration text (39 ruled changes written in; twelve open items, the largest the unruled bar for 'the repaired route holds', which as coded fails the toy's own built models; fifty citations to fifteen unmerged branches) and version 3 of the battery draft. A session read the whole record and gave John its assessment: the diagnosis behind the refounding is sound; everything that can discriminate depends on a construction line that does not exist yet; the likeliest ending for experiment C this year is an early stop recorded as instrument research. He agreed to three recommendations: rule the verification bar first, restate the December result under the refounding in one page, and bring the site current so a Sentient Horizons post can be written from it. The site's data, the weekend re-plan and the plain-language page were rewritten the same day. Later the same day John ran the first deploy from his machine and the site went live at its subdomain; the two Cloudflare secrets, needed for pushes to deploy on their own, are still unset. The project name's .com, .org and .net are registered to someone else until at least April 2027, so the subdomain stays. Nothing spent."
+summary = "Pull request 123 merged at John's word, carrying the poll, the router-control check, the refounding proposal with its reviews and eleven rulings, and the battery draft. Two drafts written by fresh sessions on 2026-10-07 wait on their checks: version 5 of the registration text (39 ruled changes written in; twelve open items, the largest the unruled bar for 'the repaired route holds', which as coded fails the toy's own built models; fifty citations to fifteen unmerged branches) and version 3 of the battery draft. A session read the whole record and gave John its assessment: the diagnosis behind the refounding is sound; everything that can discriminate depends on a construction line that does not exist yet; the likeliest ending for experiment C this year is an early stop recorded as instrument research. He agreed to three recommendations: rule the verification bar first, restate the December result under the refounding in one page, and bring the site current so a Sentient Horizons post can be written from it. The site's data, the weekend re-plan and the plain-language page were rewritten the same day. Later the same day John ran the first deploy from his machine and the site went live at its subdomain; the two Cloudflare secrets were set the same afternoon and the deploy workflow ran green, so every merge now publishes the site on its own. The project name's .com, .org and .net are registered to someone else until at least April 2027, so the subdomain stays. Nothing spent."
 
 [[timeline]]
 date = "2026-10-07"
