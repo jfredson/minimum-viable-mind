@@ -1,0 +1,5 @@
+[C/1] pool 600 development episodes: reads fitted on the first 420, scored on the last 180; transplants on the frozen 600 pairs; torch threads 4
+[C/1] gate: own 1703, named-other 751 of 3000 (bar 790)
+[C/1] reads: whole-read counts by state [13, 177, 174, 177, 173] of 180
+[C/1] nomination: nominated {'layers': [1], 'positions': 'action+3', 'rank': 8, 'piece_correct': 172, 'whole_read_correct': 177}
+[C/1] done in 1076s: arithmetic 0.9925925925925926, controls 7/4 hold True/True -> ../out-page4-rerun-1800/models-420/row_C_seed1.json

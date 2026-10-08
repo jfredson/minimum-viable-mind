@@ -1,0 +1,23 @@
+[C/0] pool 600 development episodes: reads fitted on the first 420, scored on the last 180; transplants on the frozen 600 pairs; torch threads 4
+[C/0] gate: own 1711, named-other 760 of 3000 (bar 790)
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/Users/john/Code/minimum-viable-mind/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 3000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=3000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[C/0] reads: whole-read counts by state [13, 179, 180, 180, 180] of 180
+[C/0] nomination: nominated {'layers': [2], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[C/0] done in 2582s: arithmetic 1.0051150895140666, controls 7/4 hold True/True -> ../out-page4-rerun-1800/models-420/row_C_seed0.json
