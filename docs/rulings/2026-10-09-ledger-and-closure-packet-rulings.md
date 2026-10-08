@@ -1,6 +1,10 @@
 # Rulings 2026-10-09: five decisions from the ledger rows and the closure checks
 
-*Written 2026-10-09 (Friday, Pacific) by a Claude Code session. Authorship:
+*Written 2026-10-08 (Thursday evening, Pacific) by a Claude Code session.
+**A note on the date:** John's answer and this file are both of 2026-10-08,
+Pacific time, the clock the commit carries. The "2026-10-09" in the file's
+name and heading is the drafting session's error; the name is kept because
+other records already cite it. Authorship:
 **mixed** throughout. The session drafted each question and recommendation
 from what the ledger-rows work (pull request 141), its check (pull request
 143) and the closure check of the fatal flaw's repair (pull request 142)
