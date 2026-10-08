@@ -123,6 +123,36 @@ paper draft; the upstream packet. The three 10M reruns of the repair and the
 single free-arm run follow the registration. Money unchanged: about $229.62 of
 $450 spent after the four development runs; account balance $73.77.
 
+**Addendum, later the same day: the three fresh sessions reported, and two
+rulings of this entry were revised.** The pairing-rule check of the poll
+synthesis (`docs/outside-perspective/2026-10-07-poll-synthesis-check.md`)
+found the quotations sound and the counting and attribution not; every
+correction is accepted in a dated section appended to the synthesis, and the
+stop condition it found softened out is now in decision 3 (John: "Yes, add the
+stop condition to decision 3"). The Gate C tier 1 pass on the proposal
+(`docs/reviews/2026-10-07-two-sided-question-gate-c-tier1.md`, RT-256 to
+RT-273) found one fatal flaw: striking the second release left experiment C no
+registered outcome it could reach, because the built anchors train at
+registered size only in step 5b (RT-262), and no poll reply had proposed
+striking it (RT-261); and found decision 4 misread the kill-date rule (RT-258)
+and set calendar dates John's rule of 2026-10-04 forbids (RT-268). John ruled,
+in his words, "Keep the second release conditional, and withdraw the calendar
+dates." So: experiment C keeps both releases, the second asked for only after
+the repaired built models hold and the free model clears its gate and floor at
+registered size, a pass being necessary and not sufficient; the two kill dates
+stand exactly as written and the second binds step 5b again; the new lines are
+ordered steps with preconditions and no step is scheduled on a date. The
+battery draft (`docs/filtered-battery-proposal-2026-10-07.md`, by a fresh
+session) landed: 14 rows, 9 kept, 6 discarded, with the finding that no kept
+indicator can discriminate on a frontier model through the interface, so
+frontier models supply a reference profile of the cheaper routes and the
+Depth rows wait on a construction line that carries state, which neither toy
+pipeline does. It is owed its check. A version 2 of the proposal applying all
+eighteen findings is the next commit. The sentences above in this entry that
+say the second release was struck and that new dates were set are superseded
+by this addendum and left as written. Everything remains on the one branch,
+unmerged, unpushed; $0 of rented computing.
+
 ## WHERE THINGS STAND 2026-10-04 — the successor's code is frozen and tested at $0; the go packet for the four development runs is ready; nothing launched
 
 *Written 2026-10-04 by the Claude Code session that froze the code. Laptop

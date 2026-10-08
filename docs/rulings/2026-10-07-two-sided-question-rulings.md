@@ -109,3 +109,53 @@ John.
 - STATUS.md's current-state entry for 2026-10-07 and `data/project.toml`.
 - The TimeAssembler worklog, as a decision entry with authorship mixed.
 - The roadmap: the follow-on steps for decisions 1, 3, 5, 6 and 8.
+
+## Rulings later the same day, after the Gate C pass
+
+*The Gate C tier 1 pass (`docs/reviews/2026-10-07-two-sided-question-gate-c-tier1.md`,
+findings RT-256 to RT-273) found decision 3 as ruled incoherent (RT-262, the
+narrowing-leaves-no-outcome finding, fatal) and decision 4 built on a
+misreading of the kill-date rule and on calendar dates John's own rule of
+2026-10-04 forbids (RT-258, RT-268). The session put two questions to John
+with its recommendation on each. John ruled, in his words: **"Keep the second
+release conditional, and withdraw the calendar dates."** Authorship mixed:
+the options were the reviewer's, the recommendation the session's, the choice
+John's in his own words.*
+
+**Decision 3, revised.** Experiment C keeps its two releases. The first
+release runs as decision 3 says (the $1.14 repair as an amendment written into
+the registration text before it is committed; the repaired built models
+verified; the stop condition of the same day if they fail; the single
+free-arm run at registered size; a floor or gate miss there stops C). The
+second release, about $131 by the superseded planning figure and about $150
+to $172 by version 4's own section 12.4 including arm M, is **kept and
+conditional**: it is asked for only after the first release has ended with the
+repaired route holding and the free model clearing its gate and its floor, and
+a pass is necessary for that request and not sufficient for it; John gives the
+go on the figures, as the registered design always said. The sentence of the
+earlier ruling striking the second release is withdrawn. The renaming of the
+outcomes stands, now applied to outcomes the design can reach. What the poll
+and the flat-models packet said is restored to its record: they kept the
+second release conditional; none proposed striking it (RT-261).
+
+**Decision 4, revised.** No new calendar dates. The three dates of the
+earlier ruling (2026-11-08, 2026-11-29, 2026-12-21 for the new lines) are
+withdrawn. The two kill dates of the December-result roadmap stand exactly as
+written: the registration committed by 2026-10-18, and the second release's
+runs (step 5b) launched by 2026-11-01, which binds again now that step 5b is
+kept. Item 23 of the 2026-09-21 ruling is read as its words say: the dates do
+not move; a fresh ruling can only permit registering or launching past one by
+naming what comes off the closure end. The December-result roadmap stays in
+force. The new lines (the table and battery through Gate A; the construction
+line; the human study's design) are **ordered steps with preconditions**, as
+John ruled on 2026-10-04 that no step is scheduled on a future date, and a
+kill date is set only where money is at stake, when the construction line's
+first rented run is proposed. The dated notes the session added to the
+December-result roadmap and to the weekend roadmap data saying the second
+release was struck are corrected the same day.
+
+**What follows.** A version 2 of the proposal applies all eighteen findings;
+decisions 1, 2 and 5 to 8 stand as ruled; decision 5's control is as the
+battery draft specifies it (four arms, a fresh-instance baseline, the cells
+named), not as the proposal first described it (RT-263).
+
