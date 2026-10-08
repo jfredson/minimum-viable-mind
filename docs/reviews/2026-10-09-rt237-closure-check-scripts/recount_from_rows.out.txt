@@ -1,0 +1,104 @@
+(a) the lines, exact binomial tail, integer arithmetic
+    learning bar on 3,000 at one in four: 790 (tail 0.04851)
+    ownership-free line on 3,000 at one half: 1546 (tail 0.04831)
+    the same rule on 750 episodes (the scaled pipeline rows): bar 208, ownership-free line 399
+
+(b) the fields, in every committed arm F row
+    columns: own, other, lesioned own, lesioned other, lesioned candidate own, lesioned candidate other, ownership_free_line  ('-' = field absent)
+    out-a2-cases/C-fresh-floor: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/F-channel-removal: n=3000 bar=790  s0 1679/900/900/646/2100/-/-  s1 1654/900/900/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/F-fails-5a: n=3000 bar=790  s0 1679/994/528/646/-/-/-  s1 1654/781/555/636/-/-/-  s2 1664/746/582/570/-/-/-
+    out-a2-cases/F-fresh-floor: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/M-fails-gate: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/M-outside-band: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/T-and-C-no-verdict: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/T-dev-floor: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/T-fails-gate: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/T-no-verdict: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/fallback-not-read: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/fallback-read: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/inuse-C-flat: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/inuse-M-flat: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/inuse-T-flat: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/never-run-control: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/never-run-line: n=3000 bar=790  s0 1679/900/528/646/-/-/-  s1 1654/900/555/636/-/-/-  s2 1664/900/582/570/-/-/-
+    out-a2-cases/no-transplant-outside: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/overlap-one-seed: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/r1: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/r2: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-a2-cases/split-learning-passes: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/900/636/2238/-/-  s2 1664/900/582/570/1500/-/-
+    out-a2-cases/split-one-seed-everything: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/700/555/636/2238/-/-  s2 1664/900/900/570/2324/-/-
+    out-a2-cases/split-review-table: n=3000 bar=790  s0 1679/700/528/646/2100/-/-  s1 1654/900/900/636/2238/-/-  s2 700/900/582/570/2324/-/-
+    out-a2-cases/toy: n=3000 bar=790  s0 1679/994/528/646/-/-/-  s1 1654/781/555/636/-/-/-  s2 1664/746/582/570/-/-/-
+    out-a2-cases/toy-step5a-seed0: n=3000 bar=790  s0 1679/994/528/646/-/-/-  s1 1654/781/555/636/-/-/-  s2 1664/746/582/570/-/-/-
+    out-a2-cases/toy-step5a-seed1: n=3000 bar=790  s0 1679/994/528/646/-/-/-  s1 1654/781/555/636/-/-/-  s2 1664/746/582/570/-/-/-
+    out-a2-cases/withheld-seed: n=3000 bar=790  s0 1679/900/528/646/2100/-/-  s1 1654/900/555/636/2238/-/-  s2 1664/900/582/570/2324/-/-
+    out-check-training-exclusion/t6/10M/measure: n=750 bar=208  s0 86/88/86/88/350/372/399
+    out-check-training-exclusion/t6/30M/measure: n=750 bar=208  s0 97/108/97/108/388/392/399
+    out-dev-10m-check: n=3000 bar=790  s0 1689/924/435/690/-/-/-
+    out-freeze-tests/t3a-committed-reads: n=3000 bar=790  s0 1679/994/528/646/-/-/-  s1 1654/781/555/636/-/-/-  s2 1664/746/582/570/-/-/-
+    out-freeze-tests/t3b-fresh-fit: n=3000 bar=790  s0 1679/994/528/646/-/-/-  s1 1654/781/555/636/-/-/-  s2 1664/746/582/570/-/-/-
+    out-freeze-tests/t6-pipeline/10M/measure: n=750 bar=208  s0 86/88/86/88/-/-/-
+    out-freeze-tests/t6-pipeline/30M/measure: n=750 bar=208  s0 97/108/97/108/-/-/-
+
+(c) each gated clause judged from the counts, against the decision code's summary.json
+    out-a2-cases/C-fresh-floor: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome fallback_read
+    out-a2-cases/F-channel-removal: clauses L1 L2 C1 C4 per seed s0:PPFP s1:PPFP s2:PPPP; seeds passing every gate clause (mine) [2]; code: learning [0, 1, 2], read False, seeds read [2]; outcome fifth
+    out-a2-cases/F-fails-5a: clauses L1 L2 C1 C4 per seed s0:PPP- s1:PFP- s2:PFP-; seeds passing every gate clause (mine) []; code: learning [0], read False, seeds read []; outcome R3
+    out-a2-cases/F-fresh-floor: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read False, seeds read [2]; outcome fifth
+    out-a2-cases/M-fails-gate: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome R1
+    out-a2-cases/M-outside-band: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome R1
+    out-a2-cases/T-and-C-no-verdict: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome not_validated
+    out-a2-cases/T-dev-floor: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome not_validated
+    out-a2-cases/T-fails-gate: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome R3
+    out-a2-cases/T-no-verdict: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome not_validated
+    out-a2-cases/fallback-not-read: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read False, seeds read []; outcome fallback_not_read
+    out-a2-cases/fallback-read: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome fallback_read
+    out-a2-cases/inuse-C-flat: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome fallback_read
+    out-a2-cases/inuse-M-flat: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome R1
+    out-a2-cases/inuse-T-flat: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome not_validated
+    out-a2-cases/never-run-control: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome fallback_read
+    out-a2-cases/never-run-line: clauses L1 L2 C1 C4 per seed s0:PPP- s1:PPP- s2:PPP-; seeds passing every gate clause (mine) []; code: learning [0, 1, 2], read False, seeds read []; outcome fifth
+    out-a2-cases/no-transplant-outside: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome R1
+    out-a2-cases/overlap-one-seed: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome R1
+    out-a2-cases/r1: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome R1
+    out-a2-cases/r2: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1, 2]; outcome R2
+    out-a2-cases/split-learning-passes: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPFP s2:PPPF; seeds passing every gate clause (mine) [0]; code: learning [0, 1, 2], read False, seeds read []; outcome fifth
+    out-a2-cases/split-one-seed-everything: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PFPP s2:PPFP; seeds passing every gate clause (mine) [0]; code: learning [0, 2], read False, seeds read [0]; outcome fifth
+    out-a2-cases/split-review-table: clauses L1 L2 C1 C4 per seed s0:PFPP s1:PPFP s2:FPPP; seeds passing every gate clause (mine) []; code: learning [1], read False, seeds read []; outcome fifth
+    out-a2-cases/toy: clauses L1 L2 C1 C4 per seed s0:PPP- s1:PFP- s2:PFP-; seeds passing every gate clause (mine) []; code: learning [0], read False, seeds read []; outcome R3
+    out-a2-cases/toy-step5a-seed0: clauses L1 L2 C1 C4 per seed s0:PPP- s1:PFP- s2:PFP-; seeds passing every gate clause (mine) []; code: learning [0], read False, seeds read []; outcome fifth
+    out-a2-cases/toy-step5a-seed1: clauses L1 L2 C1 C4 per seed s0:PPP- s1:PFP- s2:PFP-; seeds passing every gate clause (mine) []; code: learning [0], read False, seeds read []; outcome R3
+    out-a2-cases/withheld-seed: clauses L1 L2 C1 C4 per seed s0:PPPP s1:PPPP s2:PPPP; seeds passing every gate clause (mine) [0, 1, 2]; code: learning [0, 1, 2], read True, seeds read [0, 1]; outcome R1
+    out-check-training-exclusion/t6/10M/measure: clauses L1 L2 C1 C4 per seed s0:FFPF; seeds passing every gate clause (mine) []; code: learning [], read False, seeds read []; outcome R3
+    out-check-training-exclusion/t6/30M/measure: clauses L1 L2 C1 C4 per seed s0:FFPF; seeds passing every gate clause (mine) []; code: learning [], read False, seeds read []; outcome R3
+    out-dev-10m-check: summary.json written by earlier code, with no per-seed clause states; nothing to compare (my states: s0:PPP-)
+    out-freeze-tests/t3a-committed-reads: summary.json written by earlier code, with no per-seed clause states; nothing to compare (my states: s0:PPP- s1:PFP- s2:PFP-)
+    out-freeze-tests/t3b-fresh-fit: summary.json written by earlier code, with no per-seed clause states; nothing to compare (my states: s0:PPP- s1:PFP- s2:PFP-)
+    out-freeze-tests/t6-pipeline/10M/measure: summary.json written by earlier code, with no per-seed clause states; nothing to compare (my states: s0:FFP-)
+    out-freeze-tests/t6-pipeline/30M/measure: summary.json written by earlier code, with no per-seed clause states; nothing to compare (my states: s0:FFP-)
+    clause states compared: 344; mismatches of any kind: 0
+
+(e) the candidate counts in the made-up cases against the committed rehearsal record
+    the record's line: {'alpha': 0.05, 'chance': 0.5, 'min_candidate_count': 1546}
+    T/0: case row candidate 3000, record 3000; toy row lesioned own/other correct 740/3000, record 740/3000  same
+    T/1: case row candidate 3000, record 3000; toy row lesioned own/other correct 753/3000, record 753/3000  same
+    T/2: case row candidate 3000, record 3000; toy row lesioned own/other correct 820/3000, record 820/3000  same
+    C/0: case row candidate 2236, record 2236; toy row lesioned own/other correct 534/620, record 534/620  same
+    C/1: case row candidate 2160, record 2160; toy row lesioned own/other correct 549/630, record 549/630  same
+    C/2: case row candidate 2132, record 2132; toy row lesioned own/other correct 511/504, record 511/504  same
+    M/0: case row candidate 2770, record 2770; toy row lesioned own/other correct 669/1584, record 669/1584  same
+    M/1: case row candidate 2686, record 2686; toy row lesioned own/other correct 657/1592, record 657/1592  same
+    M/2: case row candidate 2660, record 2660; toy row lesioned own/other correct 661/1580, record 661/1580  same
+    F/0: case row candidate 2100, record 2100; toy row lesioned own/other correct 528/646, record 528/646  same
+    F/1: case row candidate 2238, record 2238; toy row lesioned own/other correct 555/636, record 555/636  same
+    F/2: case row candidate 2324, record 2324; toy row lesioned own/other correct 582/570, record 582/570  same
+    blind/0 (record only, no case row): candidate own 2784
+    blind/1 (record only, no case row): candidate own 2880
+    blind/2 (record only, no case row): candidate own 2768
+    untrained-F/0 (record only, no case row): candidate own 0
+    untrained-F/1 (record only, no case row): candidate own 620
+    untrained-F/2 (record only, no case row): candidate own 726
+    differences: 0
+
+RESULT: every recount matches
