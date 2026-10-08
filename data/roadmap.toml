@@ -284,7 +284,7 @@ john_items = [
   "Read and rule on the state-of-the-programme write-up",
 ]
 goals = [
-  { id = "W10.1", text = "State-of-the-programme write-up drafted and reviewed", owner = "both", status = "planned" },
+  { id = "W10.1", text = "State-of-the-programme write-up drafted and reviewed", owner = "both", status = "planned", note = "Ruled 2026-10-08 (decision 3 of the December-result restatement): not a separate document. The Sentient Horizons essay draft is its public face and the internal write-up folds into the closing STATUS entry at wrap-up" },
   { id = "W10.2", text = "Write-up sent to the outside human reader", owner = "john", status = "planned" },
   { id = "W10.3", text = "explainer.md refreshed to cover the registered results, MVM-0, A3 and the successor", owner = "agents", status = "planned" },
   { id = "W10.4", text = "Site and data/project.toml current with the December result", owner = "agents", status = "planned" },

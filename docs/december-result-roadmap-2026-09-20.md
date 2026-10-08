@@ -52,6 +52,8 @@ stays in section 2 as an outcome; it is no longer something a missed date
 triggers on its own. Mixed authorship: the session proposed, John approved, and
 none of this wording is his.*
 
+> **Dated note, 2026-10-08 (Pacific), ruled by John in his words "Merge it and approve all the decisions from the doc" (authorship mixed).** The project's measurement target moved on 2026-10-07 from the floor to the axes an observer perceives, so the degree experiment this roadmap plans (experiment C) is now instrument research with two stops before its large spend, and the project's own prior is that it most likely stops early. What the year delivers is restated in one page, `docs/rulings/2026-10-08-december-result-restatement-PROPOSAL.md`, ruled in `docs/rulings/2026-10-08-december-result-restatement-rulings.md`: five things on the record by 2026-12-21 (experiment C run to one of its registered endings; the two-sided question in the specification; the table and battery registered with its first two entries run; experiment A relabelled and the packet sent to the book; the hibernation condition met), with an early stop of C counted as a registered ending and not a failure of the year, and the public sentence for it confirmed: "the built arms as designed are not references; the measure was not reached." Nothing below this note changes: the registered terms, both kill dates, the caps and the order of work stand as written. The state-of-the-programme write-up of steps 11 and 12 folds into the closing STATUS entry; the Sentient Horizons essay draft is its public face.
+
 ## 1. The question, restated so it can be answered by 2026-12-21
 
 After the 2026-09-20 rulings the program's open question is one of degree: a

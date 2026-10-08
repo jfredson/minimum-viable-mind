@@ -86,3 +86,5 @@ term, never a verdict; never a conscious machine.
    12) stays in the year now that the Sentient Horizons essay draft exists.
    *Proposed: the essay is its public face, and the internal write-up folds
    into the record's closing STATUS entry rather than a separate document.*
+
+**Ruled, 2026-10-08, later the same day.** All three decisions ruled as proposed, in John's words "Merge it and approve all the decisions from the doc" (`docs/rulings/2026-10-08-december-result-restatement-rulings.md`, authorship mixed).
