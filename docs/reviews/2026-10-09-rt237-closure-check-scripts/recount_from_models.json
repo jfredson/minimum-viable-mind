@@ -1,0 +1,146 @@
+{
+ "C/0": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2236,
+  "lesioned_other_correct": 620,
+  "lesioned_own_correct": 534,
+  "other_correct": 760,
+  "own_correct": 1711,
+  "passes_1546": true
+ },
+ "C/1": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2160,
+  "lesioned_other_correct": 630,
+  "lesioned_own_correct": 549,
+  "other_correct": 751,
+  "own_correct": 1703,
+  "passes_1546": true
+ },
+ "C/2": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2132,
+  "lesioned_other_correct": 504,
+  "lesioned_own_correct": 511,
+  "other_correct": 708,
+  "own_correct": 1727,
+  "passes_1546": true
+ },
+ "F/0": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2100,
+  "lesioned_other_correct": 646,
+  "lesioned_own_correct": 528,
+  "other_correct": 994,
+  "own_correct": 1679,
+  "passes_1546": true
+ },
+ "F/1": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2238,
+  "lesioned_other_correct": 636,
+  "lesioned_own_correct": 555,
+  "other_correct": 781,
+  "own_correct": 1654,
+  "passes_1546": true
+ },
+ "F/2": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2324,
+  "lesioned_other_correct": 570,
+  "lesioned_own_correct": 582,
+  "other_correct": 746,
+  "own_correct": 1664,
+  "passes_1546": true
+ },
+ "M/0": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2770,
+  "lesioned_other_correct": 1584,
+  "lesioned_own_correct": 669,
+  "other_correct": 1663,
+  "own_correct": 2592,
+  "passes_1546": true
+ },
+ "M/1": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2686,
+  "lesioned_other_correct": 1592,
+  "lesioned_own_correct": 657,
+  "other_correct": 1699,
+  "own_correct": 2584,
+  "passes_1546": true
+ },
+ "M/2": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2660,
+  "lesioned_other_correct": 1580,
+  "lesioned_own_correct": 661,
+  "other_correct": 1655,
+  "own_correct": 2600,
+  "passes_1546": true
+ },
+ "T/0": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 3000,
+  "lesioned_other_correct": 3000,
+  "lesioned_own_correct": 740,
+  "other_correct": 3000,
+  "own_correct": 3000,
+  "passes_1546": true
+ },
+ "T/1": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 3000,
+  "lesioned_other_correct": 3000,
+  "lesioned_own_correct": 753,
+  "other_correct": 3000,
+  "own_correct": 3000,
+  "passes_1546": true
+ },
+ "T/2": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 3000,
+  "lesioned_other_correct": 3000,
+  "lesioned_own_correct": 820,
+  "other_correct": 3000,
+  "own_correct": 3000,
+  "passes_1546": true
+ },
+ "blind/0": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2784,
+  "passes_1546": true,
+  "record": 2784
+ },
+ "blind/1": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2880,
+  "passes_1546": true,
+  "record": 2880
+ },
+ "blind/2": {
+  "checkpoint_sha256_matches": true,
+  "lesioned_candidate_own_correct": 2768,
+  "passes_1546": true,
+  "record": 2768
+ },
+ "untrained-F/0": {
+  "checkpoint_sha256_matches": null,
+  "lesioned_candidate_own_correct": 0,
+  "passes_1546": false,
+  "record": 0
+ },
+ "untrained-F/1": {
+  "checkpoint_sha256_matches": null,
+  "lesioned_candidate_own_correct": 620,
+  "passes_1546": false,
+  "record": 620
+ },
+ "untrained-F/2": {
+  "checkpoint_sha256_matches": null,
+  "lesioned_candidate_own_correct": 726,
+  "passes_1546": false,
+  "record": 726
+ }
+}

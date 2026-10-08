@@ -1,0 +1,23 @@
+gate episodes: the generator's evaluation-set digest matches the committed one: True
+gate episodes: 3000 (from 1500 pairs, generator seed 99, pool 'dev')
+the scored own-directed answer is one of my four candidates on 3000 of 3000 episodes
+T/0: weights match SHA256SUMS True; own/other 3000/3000; zeroed own/other 740/3000; zeroed own-directed candidate count 3000 (passes 1,546); record (3000, 3000, 740, 3000, 3000): same
+T/1: weights match SHA256SUMS True; own/other 3000/3000; zeroed own/other 753/3000; zeroed own-directed candidate count 3000 (passes 1,546); record (3000, 3000, 753, 3000, 3000): same
+T/2: weights match SHA256SUMS True; own/other 3000/3000; zeroed own/other 820/3000; zeroed own-directed candidate count 3000 (passes 1,546); record (3000, 3000, 820, 3000, 3000): same
+C/0: weights match SHA256SUMS True; own/other 1711/760; zeroed own/other 534/620; zeroed own-directed candidate count 2236 (passes 1,546); record (1711, 760, 534, 620, 2236): same
+C/1: weights match SHA256SUMS True; own/other 1703/751; zeroed own/other 549/630; zeroed own-directed candidate count 2160 (passes 1,546); record (1703, 751, 549, 630, 2160): same
+C/2: weights match SHA256SUMS True; own/other 1727/708; zeroed own/other 511/504; zeroed own-directed candidate count 2132 (passes 1,546); record (1727, 708, 511, 504, 2132): same
+M/0: weights match SHA256SUMS True; own/other 2592/1663; zeroed own/other 669/1584; zeroed own-directed candidate count 2770 (passes 1,546); record (2592, 1663, 669, 1584, 2770): same
+M/1: weights match SHA256SUMS True; own/other 2584/1699; zeroed own/other 657/1592; zeroed own-directed candidate count 2686 (passes 1,546); record (2584, 1699, 657, 1592, 2686): same
+M/2: weights match SHA256SUMS True; own/other 2600/1655; zeroed own/other 661/1580; zeroed own-directed candidate count 2660 (passes 1,546); record (2600, 1655, 661, 1580, 2660): same
+F/0: weights match SHA256SUMS True; own/other 1679/994; zeroed own/other 528/646; zeroed own-directed candidate count 2100 (passes 1,546); record (1679, 994, 528, 646, 2100): same
+F/1: weights match SHA256SUMS True; own/other 1654/781; zeroed own/other 555/636; zeroed own-directed candidate count 2238 (passes 1,546); record (1654, 781, 555, 636, 2238): same
+F/2: weights match SHA256SUMS True; own/other 1664/746; zeroed own/other 582/570; zeroed own-directed candidate count 2324 (passes 1,546); record (1664, 746, 582, 570, 2324): same
+blind/0: zeroed own-directed candidate count 2784 (passes 1,546); record 2784: same
+blind/1: zeroed own-directed candidate count 2880 (passes 1,546); record 2880: same
+blind/2: zeroed own-directed candidate count 2768 (passes 1,546); record 2768: same
+untrained-F/0: zeroed own-directed candidate count 0 (fails 1,546); record 0: same (untrained weights: a difference would mean the draw is not reproduced here, not that the count is wrong; it is not counted as a failure)
+untrained-F/1: zeroed own-directed candidate count 620 (fails 1,546); record 620: same (untrained weights: a difference would mean the draw is not reproduced here, not that the count is wrong; it is not counted as a failure)
+untrained-F/2: zeroed own-directed candidate count 726 (fails 1,546); record 726: same (untrained weights: a difference would mean the draw is not reproduced here, not that the count is wrong; it is not counted as a failure)
+arm F candidate counts: [2100, 2238, 2324] lowest margin over 1,546: 554
+RESULT: every count equals the committed record
