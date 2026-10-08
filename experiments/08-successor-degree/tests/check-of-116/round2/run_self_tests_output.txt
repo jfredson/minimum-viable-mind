@@ -1,0 +1,236 @@
+== grammar
+grammar.py self-test
+  [PASS] matched pairs are token-for-token identical
+  [PASS] matched pairs differ in the acting channel
+  [PASS] matched property 1: four distinct candidate values per item  distinct counts seen: [4]
+  [PASS] matched property 2: distance distributions match  largest bin difference 0.0098 over 6000 episodes
+  [PASS] matched property 3: one supervised position of each kind
+  [PASS] matched property 4: the same successor rule in both conditions
+  [PASS] no turn-count cue: every agent takes the same number of turns
+  [PASS] no name badge: the own-directed turn shows only the self word
+  [PASS] the acting channel fires at both scored positions (fixed, version 4 section 4.1)
+  [PASS] evaluation sets have the registered sizes  {'dev': 600, 'fresh': 800, 'relaxed': 800, 'gate': 1500, 'trajectory': 200}
+  [PASS] no content is shared between any two evaluation sets  {}
+  [PASS] no content repeats inside an evaluation set (fresh, at least)  repeats per set {'dev': 0, 'fresh': 0, 'relaxed': 0, 'gate': 0, 'trajectory': 0}
+  [PASS] a step's batch is the same every time it is generated (resume-safe)
+  [PASS] a different run seed gives different episodes
+  [PASS] rows 2k and 2k+1 of a streamed batch are a matched pair
+  [PASS] streamed training content never matches an evaluation set  19,200 training contents over 400 steps, 0 shared
+  [PASS] a training content planted in the exclusion list is skipped
+  [PASS] the evaluation sets are the ones built on the laptop (pinned digest)
+  [PASS] the first training batch of seed 0 is the one built on the laptop (pinned digest)
+  [PASS] even-split rule (RT-58): an even row count is accepted, an odd one is not
+  [PASS] even-split rule (RT-58): the stream refuses an odd batch
+  [PASS] one-scored-token check (RT-59): two scored positions, each the mask word, after the answer cue, targets are value words, no value word in the action turns
+  [PASS] one-scored-token check (RT-59) catches an answer leaked into the input
+  [PASS] one-scored-token check (RT-59) catches scoring shifted by one position
+  [PASS] the toy's evaluation sets come out array for array as the rehearsal generator builds them
+
+all checks passed
+== models
+models.py self-test
+  [PASS] toy arm T: forward runs, right shape, 5 running states  950,879 parameters
+  [PASS] toy arm T: loss finite and gradients flow
+  [PASS] toy arm C: forward runs, right shape, 5 running states  1,301,191 parameters
+  [PASS] toy arm C: loss finite and gradients flow
+  [PASS] toy arm M: forward runs, right shape, 5 running states  987,781 parameters
+  [PASS] toy arm M: loss finite and gradients flow
+  [PASS] toy arm F: forward runs, right shape, 5 running states  1,265,191 parameters
+  [PASS] toy arm F: loss finite and gradients flow
+  [PASS] 10M arm T: forward runs, right shape, 9 running states  5,265,759 parameters
+  [PASS] 10M arm T: loss finite and gradients flow
+  [PASS] 10M arm C: forward runs, right shape, 9 running states  6,471,751 parameters
+  [PASS] 10M arm C: loss finite and gradients flow
+  [PASS] 10M arm M: forward runs, right shape, 9 running states  5,375,077 parameters
+  [PASS] 10M arm M: loss finite and gradients flow
+  [PASS] 10M arm F: forward runs, right shape, 9 running states  6,362,951 parameters
+  [PASS] 10M arm F: loss finite and gradients flow
+  [PASS] 30M arm T: forward runs, right shape, 13 running states  26,065,471 parameters
+  [PASS] 30M arm T: loss finite and gradients flow
+  [PASS] 30M arm C: forward runs, right shape, 13 running states  29,329,735 parameters
+  [PASS] 30M arm C: loss finite and gradients flow
+  [PASS] 30M arm M: forward runs, right shape, 13 running states  26,350,021 parameters
+  [PASS] 30M arm M: loss finite and gradients flow
+  [PASS] 30M arm F: forward runs, right shape, 13 running states  29,049,735 parameters
+  [PASS] 30M arm F: loss finite and gradients flow
+  [PASS] RT-59, arm T: the loss is the cross-entropy over exactly the two scored positions per episode
+  [PASS] RT-59, arm T: tokens after the scored positions cannot change the loss (and, by construction, neither can the cue before them)
+  [PASS] RT-59, arm T: the batch the loss is computed on passes the generator's check
+  [PASS] RT-59, arm C: the loss is the cross-entropy over exactly the two scored positions per episode
+  [PASS] RT-59, arm C: tokens after the scored positions cannot change the loss; the cue before them can
+  [PASS] RT-59, arm C: the batch the loss is computed on passes the generator's check
+  [PASS] RT-59, arm M: the loss is the cross-entropy over exactly the two scored positions per episode
+  [PASS] RT-59, arm M: tokens after the scored positions cannot change the loss; the cue before them can
+  [PASS] RT-59, arm M: the batch the loss is computed on passes the generator's check
+  [PASS] RT-59, arm F: the loss is the cross-entropy over exactly the two scored positions per episode
+  [PASS] RT-59, arm F: tokens after the scored positions cannot change the loss; the cue before them can
+  [PASS] RT-59, arm F: the batch the loss is computed on passes the generator's check
+  [PASS] toy arm T: the ownership block passes every layer unchanged, content never reads it, the head does
+  [PASS] 10M arm T: the ownership block passes every layer unchanged, content never reads it, the head does
+  [PASS] 30M arm T: the ownership block passes every layer unchanged, content never reads it, the head does
+  [PASS] arm C: the ownership signal reaches every block as a scale-and-shift, and its running state has no ownership dimensions
+  [PASS] toy arm M: about three fifths entangled; the slot never moves an entangled action and does move separable ones  share 0.6875
+  [PASS] 10M arm M: about three fifths entangled; the slot never moves an entangled action and does move separable ones  share 0.6875
+  [PASS] 30M arm M: about three fifths entangled; the slot never moves an entangled action and does move separable ones  share 0.6875
+  [PASS] the ownership answer is flat before the model's first own turn and correct by the action
+  [PASS] arm T: the twins' final states differ
+  [PASS] arm C: the twins' final states differ
+  [PASS] arm M: the twins' final states differ
+  [PASS] arm F: the twins' final states differ
+  [PASS] 10M arm T: rebuilt from its saved configuration, bit-identical
+  [PASS] 10M arm C: rebuilt from its saved configuration, bit-identical
+  [PASS] 10M arm M: rebuilt from its saved configuration, bit-identical
+  [PASS] 10M arm F: rebuilt from its saved configuration, bit-identical
+
+all checks passed
+== transplant
+transplant.py self-test: the known-answer tests for the patching code
+  [PASS] toy arm T: null transplant leaves every output bit-identical
+  [PASS] toy arm T: the whole-state transplant is the subspace form at full rank  largest difference 0.00e+00
+  [PASS] toy arm T: a piece and its complement together are the whole state
+  [PASS] toy arm T: an empty site set is a no-op
+  [PASS] toy arm T: before both twins' first own turns the twins' states are identical, so a transplant there changes nothing (control 4)
+  [PASS] toy arm C: null transplant leaves every output bit-identical
+  [PASS] toy arm C: the whole-state transplant is the subspace form at full rank  largest difference 0.00e+00
+  [PASS] toy arm C: a piece and its complement together are the whole state
+  [PASS] toy arm C: an empty site set is a no-op
+  [PASS] toy arm C: before both twins' first own turns the twins' states are identical, so a transplant there changes nothing (control 4)
+  [PASS] toy arm M: null transplant leaves every output bit-identical
+  [PASS] toy arm M: the whole-state transplant is the subspace form at full rank  largest difference 0.00e+00
+  [PASS] toy arm M: a piece and its complement together are the whole state
+  [PASS] toy arm M: an empty site set is a no-op
+  [PASS] toy arm M: before both twins' first own turns the twins' states are identical, so a transplant there changes nothing (control 4)
+  [PASS] toy arm F: null transplant leaves every output bit-identical
+  [PASS] toy arm F: the whole-state transplant is the subspace form at full rank  largest difference 0.00e+00
+  [PASS] toy arm F: a piece and its complement together are the whole state
+  [PASS] toy arm F: an empty site set is a no-op
+  [PASS] toy arm F: before both twins' first own turns the twins' states are identical, so a transplant there changes nothing (control 4)
+  [PASS] toy: every state at every position IS the donor's forward pass, so it is no intervention and the family excludes it
+  [PASS] 10M arm T: null transplant leaves every output bit-identical
+  [PASS] 10M arm T: the whole-state transplant is the subspace form at full rank  largest difference 0.00e+00
+  [PASS] 10M arm T: a piece and its complement together are the whole state
+  [PASS] 10M arm T: an empty site set is a no-op
+  [PASS] 10M arm T: before both twins' first own turns the twins' states are identical, so a transplant there changes nothing (control 4)
+  [PASS] 10M arm C: null transplant leaves every output bit-identical
+  [PASS] 10M arm C: the whole-state transplant is the subspace form at full rank  largest difference 0.00e+00
+  [PASS] 10M arm C: a piece and its complement together are the whole state
+  [PASS] 10M arm C: an empty site set is a no-op
+  [PASS] 10M arm C: before both twins' first own turns the twins' states are identical, so a transplant there changes nothing (control 4)
+  [PASS] 10M arm M: null transplant leaves every output bit-identical
+  [PASS] 10M arm M: the whole-state transplant is the subspace form at full rank  largest difference 0.00e+00
+  [PASS] 10M arm M: a piece and its complement together are the whole state
+  [PASS] 10M arm M: an empty site set is a no-op
+  [PASS] 10M arm M: before both twins' first own turns the twins' states are identical, so a transplant there changes nothing (control 4)
+  [PASS] 10M arm F: null transplant leaves every output bit-identical
+  [PASS] 10M arm F: the whole-state transplant is the subspace form at full rank  largest difference 0.00e+00
+  [PASS] 10M arm F: a piece and its complement together are the whole state
+  [PASS] 10M arm F: an empty site set is a no-op
+  [PASS] 10M arm F: before both twins' first own turns the twins' states are identical, so a transplant there changes nothing (control 4)
+  [PASS] 10M: every state at every position IS the donor's forward pass, so it is no intervention and the family excludes it
+  [PASS] a read's piece has orthonormal directions at sizes 1, 2, 4 and 8
+  [PASS] control 3 draws twenty random pieces, reproducibly
+
+all checks passed
+== measure
+measure.py self-test: each case's landing is written in the test before it runs
+  [PASS] reading: separable  -> valid 0.0
+  [PASS] reading: entangled  -> valid 1.0
+  [PASS] reading: half  -> valid 0.5000000000000001
+  [PASS] reading: whole state does not clear the floor  -> no verdict None
+  [PASS] reading: untouched as high as the arm: no room  -> no verdict None
+  [PASS] reading: subspace beats the whole state  -> negative -0.1333333333333333
+  [PASS] reading: ownership-only below untouched: above one, not clipped  -> valid 1.011764705882353
+  [PASS] reading: the chance-corrected form is (whole - own) / (whole - untouched)
+  [PASS] reading refuses a share of -0.1
+  [PASS] reading refuses a share of 1.1
+  [PASS] reading refuses a share of nan
+  [PASS] no-transplant rule: inside 0.018 of (1 - p) / 7  formula 0.0486, miss +0.0026
+  [PASS] no-transplant rule: 0.019 off is outside
+  [PASS] no-transplant rule: the detection margin at the bar is 0.0018 (version 4, 6.4 item 3)  0.0018
+  [PASS] band: 144 of 180 passes, and the band around it straddles the floor  [132, 155]
+  [PASS] band: a true four fifths lands roughly 133 to 154 of 180 (about six points either side)  [133, 154]
+  [PASS] band: 143 fails by one episode
+  [PASS] band: the ends are handled
+  [PASS] withhold: a clean row reads
+  [PASS] withhold: control 7 failed -> no verdict, with the reason in the output  control 7, the null transplant, failed
+  [PASS] withhold: control 4 failed -> no verdict, with the reason in the output  control 4, the too-early-position control, failed
+  [PASS] withhold: control 1 failed on arm T -> no verdict, with the reason in the output  control 1, the content transplant, failed on arm T
+  [PASS] withhold: control 1 missing on arm T counts as failed -> no verdict, with the reason in the output  control 1, the content transplant, failed on arm T
+  [PASS] withhold: a control that could not be evaluated counts as failed -> no verdict, with the reason in the output  control 7, the null transplant, failed
+  [PASS] withhold: no-transplant rate outside -> no verdict, with the reason in the output  no-transplant rate outside its allowance: the pairing is suspect
+  [PASS] withhold: floor missed on fresh episodes -> no verdict, with the reason in the output  floor missed on fresh episodes
+  [PASS] withhold: gate failed -> no verdict, with the reason in the output  the arm failed its gate
+  [PASS] withhold: read failed its floor at nomination -> no verdict, with the reason in the output  read failed its floor: no size's piece reaches four fifths; reported for description only (the site set was chosen with the piece rule switched off)
+  [PASS] withhold: control 1 failing on arm C does not withhold (it holds on arm T only)
+  [PASS] two of three: three readings read
+  [PASS] two of three: two readings read, the third is reported
+  [PASS] two of three: one reading does not read
+  [PASS] separation: lowest C minus highest T, unpaired (toy figures: 0.9926 - 0.02)
+  [PASS] separation: unpaired means arm T's worst seed counts against any of arm C's
+  [PASS] outcome: the toy lands on the fifth term with its reason after a colon  metric validated, degree not read: read failed its floor
+  [PASS] outcome: arm F reads on two seeds -> R1
+  [PASS] outcome: arm F fails its gate -> R3
+  [PASS] outcome: anchors do not separate -> R2
+  [PASS] outcome: arm C no verdict fires the two-arm fallback and says so
+  [PASS] outcome: arm M no verdict drops arm M and says so
+
+all checks passed
+== procedure
+procedure.py self-test: the site-set rule
+  [PASS] toy (5 running states): 45 site sets, 180 comparisons; stricter 40; none spans every position; layer 0 at `action` only
+  [PASS] 10M (9 running states): 153 site sets, 612 comparisons; stricter 144; none spans every position; layer 0 at `action` only
+  [PASS] 30M (13 running states): 325 site sets, 1300 comparisons; stricter 312; none spans every position; layer 0 at `action` only
+  [PASS] the registered model's list is version 4's section 18: 325 site sets, 1,300 comparisons; stricter 312
+  [PASS] row by row as section 18 prints it (13, 48, 44, ... 4)  [13, 48, 44, 40, 36, 32, 28, 24, 20, 16, 12, 8, 4]
+  [PASS] the gate bar on 3,000 episodes is 790 by the one-sided binomial rule
+  [PASS] the table prints a reading that was not made as 'no verdict' instead of failing
+
+all checks passed
+== train_successor
+train_successor.py self-test
+  [PASS] the default token budget is 108,919 steps of 96 episodes
+  [PASS] arm T: trains, writes the checkpoint, the log and the finished-marker
+  [PASS] arm T: the checkpoint rebuilds the model it came from
+  [PASS] arm C: trains, writes the checkpoint, the log and the finished-marker
+  [PASS] arm C: the checkpoint rebuilds the model it came from
+  [PASS] arm M: trains, writes the checkpoint, the log and the finished-marker
+  [PASS] arm M: the checkpoint rebuilds the model it came from
+  [PASS] arm F: trains, writes the checkpoint, the log and the finished-marker
+  [PASS] arm F: the checkpoint rebuilds the model it came from
+  [PASS] a run resumed from its step-6 checkpoint ends bit-identical to one never stopped
+  [PASS] an odd batch is refused before anything trains (RT-58)
+  [PASS] the machine is never asked to delete itself when the checkpoint is off the network volume
+
+all checks passed
+train_successor self-test OK
+== tripwire
+  [PASS] preflight with nothing running: ok to launch
+  [PASS] the committed reading parses: balance 75.8451
+[2026-09-21T15:13:20Z] tripwire: balance $74.8451; ratio B 1.000
+  [PASS] an hour billed at the posted rate is not a trip
+  [PASS] ratio B reads 1.0 at the posted rate  1.0000
+[2026-09-21T16:13:20Z] tripwire: balance $71.3451; ratio B 2.250
+  [PASS] one reading over the line in flight is not yet a trip (rule S wants two in a row)
+[2026-09-21T16:18:20Z] tripwire: balance $71.2451; ratio B 2.208
+  [PASS] billing at about 2.25 times the rate, two readings in a row, trips
+  [PASS] the ledger figures are written with the halt
+
+  [PASS] after a trip, preflight refuses every launch
+  [PASS] in flight: a machine whose remaining cost at the ratio exceeds the balance is deleted  projected $27.72 against $5
+  [PASS] in flight: a machine the balance covers is left to finish
+  [PASS] 1.25 exactly trips; 1.2499 does not; an unread ratio does not by itself
+  [PASS] an unreadable balance at preflight is a trip, not a skip
+  [PASS] an unreadable machine list in flight is a trip
+  [PASS] ratio A from the committed billing row of the second slice reads 1.0
+  [PASS] the 2026-08-08 shape (billed 3.5 times existence) trips at reconcile
+  [PASS] an empty bill at reconcile is a trip (cannot be checked yet)
+  [PASS] a bill of zero hours at reconcile is a trip (cannot be checked yet)
+[2026-09-21T18:18:20Z] tripwire: balance $75.3451; ratio B 0.500
+  [PASS] the watcher keeps reading for 30 minutes after the last machine is gone
+[2026-09-21T18:48:20Z] tripwire: balance $75.3451; ratio B 0.498 (after a deletion)
+  [PASS] then it stops
+  [PASS] a machine gone with no deletion record is marked inferred
+
+all checks passed
+ALL SELF-TESTS PASS
+exit 0

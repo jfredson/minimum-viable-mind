@@ -1,0 +1,11 @@
+The deadline timer, given answers that do not mean 'the machine does not exist':
+  STANDS DOWN (timer disarmed, nothing deleted): a gateway or wrong address answers 404
+      [2026-10-07T03:59:47Z] machine-deadline: STANDING DOWN without deleting: fakepod is confirmed deleted (the vendor answered: Error: api error: 404 page not found (status 404)).
+  STANDS DOWN (timer disarmed, nothing deleted): the vendor tool is not on the timer's command path
+      [2026-10-07T03:59:49Z] machine-deadline: STANDING DOWN without deleting: fakepod is confirmed deleted (the vendor answered: /Users/john/Code/mvm-tripwire-check/experiments/08-successor-degree/te
+  STANDS DOWN (timer disarmed, nothing deleted): a viper-style config message (in the 2.6.1 binary's text)
+      [2026-10-07T03:59:50Z] machine-deadline: STANDING DOWN without deleting: fakepod is confirmed deleted (the vendor answered: Config File "config" Not Found in "[/Users/x/.runpod]").
+For comparison, the answers that do mean it:
+  STANDS DOWN (timer disarmed, nothing deleted): the recorded 2026-09-26 wording (to a delete)
+      [2026-10-07T03:59:52Z] machine-deadline: STANDING DOWN without deleting: fakepod is confirmed deleted (the vendor answered: {"error":"api error: {\"error\":\"pod not found to terminate\",\"statu
+  stays armed: a failed request (network down), recorded form
