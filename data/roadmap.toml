@@ -27,7 +27,7 @@
 [roadmap]
 title = "The weekend roadmap to 2026-12-21"
 written_on = "2026-09-24"
-updated_on = "2026-10-03"
+updated_on = "2026-10-07"
 source = "docs/weekend-roadmap-2026-09-24.md"
 one_line = "Twelve working weekends between 2026-09-26 and 2026-12-20, front-loaded so that both kill dates pass with their work already done, the December result exists by 2026-11-08, and five weekends stay in hand for slipped gates and for the extensions that make the conclusion stronger."
 question = "Can a decomposability measure, validated on systems whose degree is known by construction, read the degree of a freely trained 30-million-parameter transformer that acquired a load-bearing ownership pointer under task pressure? If so, what does it read?"
@@ -49,7 +49,7 @@ id = "K2"
 date = "2026-11-01"
 title = "Kill date 2: the remaining eight registered runs launched"
 kind = "kill_date"
-note = "Binds the launch of the eight runs of step 5b, not the single free-arm run before it (ruled 2026-09-21)."
+note = "Binds the launch of the eight runs of step 5b, not the single free-arm run before it (ruled 2026-09-21). Dated note 2026-10-07: those eight runs were struck by the fresh ruling of that day (decision 3 and 4 of docs/rulings/2026-10-07-two-sided-question-rulings.md), so nothing remains for this date to bind; the new dates for the project's new lines are set in that ruling (table and battery through Gate A by 2026-11-08; construction line registered by 2026-11-29; human study designed by 2026-12-21)."
 
 [[milestones]]
 id = "W"
@@ -141,7 +141,7 @@ john_items = [
 ]
 goals = [
   { id = "W3.1", text = "The free-arm run (step 5a) launched and landed; the learn-both gate and the ownership-lesion check evaluated by a paired session; billing read against the ledger's rate", owner = "both", status = "planned" },
-  { id = "W3.2", text = "The remaining eight runs (step 5b) launched in parallel on John's go and landed by Monday", owner = "both", status = "planned" },
+  { id = "W3.2", text = "The remaining eight runs (step 5b) launched in parallel on John's go and landed by Monday", owner = "both", status = "dropped", note = "Struck 2026-10-07 by decision 3 of the two-sided-question ruling (docs/rulings/2026-10-07-two-sided-question-rulings.md): the degree experiment is narrowed to its first release and the second release of about $131, which these runs were, no longer exists in the registration." },
   { id = "W3.3", text = "Fetch, checksum, reap, ledger actual-after rows for all nine", owner = "agents", status = "planned" },
   { id = "W3.4", text = "Branch: the one permitted re-run if the free arm failed the gate", owner = "both", status = "planned" },
   { id = "W3.5", text = "Branch: if the re-run also fails, outcome R3 is recorded and extension E3 (one registered recipe change) is proposed with its number", owner = "agents", status = "planned" },
