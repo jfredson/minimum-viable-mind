@@ -6,6 +6,13 @@ as that note says; the findings are `docs/2026-10-04-successor-code-freeze.md`.
 The registration text, which will name this code by commit, does not exist
 yet. Nothing in this folder is a result about the scientific question.
 
+**One change since the freeze (2026-10-06, ruled by John):** the training
+stream in `src/grammar.py` now also leaves out every episode whose pairing
+(which marker holds which value on which item) is that of a fresh or relaxed
+episode, so no such pairing can reach training. Method and expected results:
+`docs/2026-10-06-successor-training-exclusion-pairing-method.md`. The four
+10-million development runs predate it and stay development evidence only.
+
 What the experiment is: `docs/successor-experiment-proposal-2026-10-03-v4.md`.
 In one sentence: four small language models, two built so that how much their
 action depends on "who am I" is known (arm T separable, arm C entangled), one
@@ -22,7 +29,7 @@ programme's one record of money (ruled 2026-10-03, decision 8):
 
 | File | What it is |
 |---|---|
-| `src/grammar.py` | the episode generator, the evaluation sets and their seeds, the streamed training data, the even-split rule and the one-scored-token check |
+| `src/grammar.py` | the episode generator, the evaluation sets and their seeds, the streamed training data (which leaves out every evaluation episode, and every fresh or relaxed pairing whatever its turn order), the even-split rule and the one-scored-token check |
 | `src/models.py` | the four arms at three sizes (`toy`, `10M`, `30M`; 30M is the registered size) |
 | `src/transplant.py` | the transplanting code and its known-answer tests |
 | `src/measure.py` | the reading, its no-verdict rules, the withholding of a reading, two of three, the separation and the outcome terms |

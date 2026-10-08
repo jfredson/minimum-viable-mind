@@ -28,7 +28,11 @@ gives the rehearsal's episodes array for array. Three things differ:
    construction. The rehearsal drew from a fixed set of 12,000 pairs, which at
    the full token budget would be shown to the model about 430 times over.
    This is the freeze session's choice, not a ruling (the method note,
-   section 3).
+   section 3). Since 2026-10-06 the stream also skips any episode whose
+   *pairing* (which marker holds which value on which item) is that of a
+   fresh or relaxed episode, however its turns are ordered, so no such
+   pairing can occur in training at all. That is John's ruling of 2026-10-06
+   (method note `docs/2026-10-06-successor-training-exclusion-pairing-method.md`).
 
 What one episode is
 -------------------
@@ -335,6 +339,28 @@ def eval_fingerprints() -> set[bytes]:
     return out
 
 
+# Version 4, section 7.1: training contains no fresh or relaxed pairing. By
+# John's ruling of 2026-10-06 this is guaranteed by the stream, not sampled.
+PAIRING_EXCLUDED_SETS = ("fresh", "relaxed")
+
+
+def pairing(content: dict) -> frozenset:
+    """An episode's pairing: its assignment table, the set of (marker word,
+    item word, value word) triples, one per agent and item. It is built from
+    the markers, items and values only, so it ignores the turn order, the
+    named agent, the asked-about items, the action order and the order in
+    which agents and items are listed. The same table as the self-test's
+    "control 5, stricter" check."""
+    markers, items, values = content["markers"], content["items"], content["values"]
+    return frozenset((int(markers[a]), int(items[j]), int(values[a][j]))
+                     for a in range(N_AGENTS) for j in range(N_ITEMS_PER_EPISODE))
+
+
+def held_out_pairings() -> set[frozenset]:
+    """The pairing of every fresh and relaxed episode. Training skips these."""
+    return {pairing(p["content"]) for name in PAIRING_EXCLUDED_SETS for p in eval_pairs(name)}
+
+
 # What the evaluation sets and the first training batch of seed 0 are, as
 # built on the laptop on 2026-10-04 (numpy 2.5.0). The rented machine has its
 # own numpy; if it built different episodes from the same seeds, training
@@ -363,20 +389,33 @@ class TrainingStream:
 
     Step `s` of a run with seed `k` draws its pairs from the generator seeded
     with `(1000 + k, s)`, so a resumed run sees exactly the episodes it would
-    have seen, and two runs with different seeds see different ones. Any
-    content that appears in an evaluation set is skipped and counted."""
+    have seen, and two runs with different seeds see different ones. A content
+    is used only if `admits` passes it; anything else is skipped and counted.
 
-    def __init__(self, run_seed: int, excluded: set[bytes] | None = None):
+    Two exclusion lists: `excluded`, whole contents (every evaluation set), and
+    `excluded_pairings`, pairings (the fresh and relaxed sets; John's ruling of
+    2026-10-06). Each defaults to the full list when not given."""
+
+    def __init__(self, run_seed: int, excluded: set[bytes] | None = None,
+                 excluded_pairings: set[frozenset] | None = None):
         self.run_seed = int(run_seed)
         self.excluded = eval_fingerprints() if excluded is None else excluded
+        self.excluded_pairings = (held_out_pairings() if excluded_pairings is None
+                                  else excluded_pairings)
         self.skipped = 0
+
+    def admits(self, content: dict) -> bool:
+        """The whole exclusion, in one place: not the whole content of any
+        evaluation episode, and not the pairing of any fresh or relaxed one."""
+        return (fingerprint(content) not in self.excluded
+                and pairing(content) not in self.excluded_pairings)
 
     def pairs_for_step(self, step: int, n_pairs: int) -> list[dict]:
         rng = np.random.default_rng([1000 + self.run_seed, int(step)])
         pairs = []
         while len(pairs) < n_pairs:
             content = _content(rng, "train", False)
-            if fingerprint(content) in self.excluded:
+            if not self.admits(content):
                 self.skipped += 1
                 continue
             r, d = rng.choice(eligible_models(content), size=2, replace=False)
@@ -548,8 +587,10 @@ def self_test() -> None:
     # fresh or relaxed, i.e. its assignment table of (marker word, item word,
     # value) triples (version 4, section 7.1: unseen combinations of marker
     # words, items and values), ignoring turn order, the named agent, the
-    # items the actions name and the action order. Sampled, not guaranteed:
-    # the stream's exclusion is by whole content.
+    # items the actions name and the action order. This one is a sample, and
+    # cannot fail by chance (it finds no shared table even with the exclusion
+    # switched off). Since John's ruling of 2026-10-06 the stream also
+    # excludes by this table, and the guarantee is checks G1 to G4 below.
     def table(c):
         return frozenset((int(c["markers"][a]), int(c["items"][j]), int(c["values"][a, j]))
                          for a in range(N_AGENTS) for j in range(N_ITEMS_PER_EPISODE))
@@ -592,6 +633,105 @@ def self_test() -> None:
     shifted["action_pos"] = shifted["action_pos"] - 1
     check("one-scored-token check (RT-59) catches scoring shifted by one position",
           bool(scored_token_check(shifted)))
+
+    # --- fresh and relaxed pairings never reach training (2026-10-06) ------
+    # John's ruling of 2026-10-06: guaranteed, not sampled. Method note and
+    # the made-up cases' expected results, committed before this ran:
+    # docs/2026-10-06-successor-training-exclusion-pairing-method.md.
+    held_contents = [p["content"] for name in PAIRING_EXCLUDED_SETS for p in eval_pairs(name)]
+    want_pairings = {frozenset((int(c["markers"][a]), int(c["items"][j]), int(c["values"][a, j]))
+                               for a in range(N_AGENTS) for j in range(N_ITEMS_PER_EPISODE))
+                     for c in held_contents}
+    default_stream = TrainingStream(run_seed=0)
+    check("G1: the stream's pairing exclusion list is every fresh and relaxed pairing, and only those",
+          default_stream.excluded_pairings == want_pairings and held_out_pairings() == want_pairings,
+          f"{len(held_contents):,} fresh and relaxed episodes, {len(want_pairings):,} distinct pairings")
+
+    import itertools
+
+    def relisted(c: dict, agent_order, item_order, rng) -> dict:
+        """The same pairing, listed differently, with everything else that is
+        not the pairing drawn again."""
+        ao, io = list(agent_order), list(item_order)
+        return dict(
+            markers=[c["markers"][a] for a in ao],
+            items=[c["items"][j] for j in io],
+            values=np.asarray(c["values"])[np.ix_(ao, io)].copy(),
+            order=[int(o) for o in rng.permutation(N_AGENTS * N_ITEMS_PER_EPISODE)],
+            named=int(rng.integers(N_AGENTS)),
+            own_item=int(rng.integers(N_ITEMS_PER_EPISODE)),
+            other_item=int(rng.integers(N_ITEMS_PER_EPISODE)),
+            action_order=[int(o) for o in rng.permutation(2)],
+            collide_pair=None, pool="train")
+
+    rng_g2 = np.random.default_rng(20261006)
+    tried = refused = 0
+    same_pairing = True
+    for c in held_contents:
+        tried += 1
+        refused += not default_stream.admits(c)
+        for ao in itertools.permutations(range(N_AGENTS)):
+            for io in itertools.permutations(range(N_ITEMS_PER_EPISODE)):
+                v = relisted(c, ao, io, rng_g2)
+                same_pairing &= pairing(v) == pairing(c)
+                tried += 1
+                refused += not default_stream.admits(v)
+    check("G2: the exclusion function refuses every fresh and relaxed episode and every "
+          "re-listing of it (all agent and item orders, turns, named agent, asked items and "
+          "action order changed)",
+          same_pairing and tried == len(held_contents) * 49 and refused == tried,
+          f"{refused:,} of {tried:,} refused")
+
+    victim = TrainingStream(run_seed=0, excluded=set(), excluded_pairings=set()).pairs_for_step(7, 48)[3]["content"]
+    pl = TrainingStream(run_seed=0, excluded=set(), excluded_pairings={pairing(victim)})
+    got = [pairing(p["content"]) for p in pl.pairs_for_step(7, 48)]
+    check("G3: a training pairing planted only in the pairing list is skipped by the stream",
+          pairing(victim) not in got and pl.skipped == 1 and len(got) == 48)
+    twin = relisted(victim, (3, 1, 0, 2), (1, 0), np.random.default_rng(7))
+    pl2 = TrainingStream(run_seed=0, excluded=set(), excluded_pairings={pairing(twin)})
+    got2 = [pairing(p["content"]) for p in pl2.pairs_for_step(7, 48)]
+    check("G3: planting a same-table copy with a different turn order (and listing), which no "
+          "whole-content rule matches, makes training skip the original all the same",
+          fingerprint(twin) != fingerprint(victim) and twin["order"] != victim["order"]
+          and pairing(twin) == pairing(victim) and pairing(victim) not in got2
+          and pl2.skipped == 1 and len(got2) == 48)
+
+    # The made-up cases. Expected (method note, section 4, committed first):
+    # A and B: the old whole-content rule lets them through, the new one
+    # blocks them. C: both let it through.
+    every_eval = eval_fingerprints()
+    old_rule = TrainingStream(run_seed=0, excluded=every_eval, excluded_pairings=set())
+
+    def made_up(c: dict) -> dict:
+        n = N_AGENTS
+        return dict(
+            markers=list(reversed(c["markers"])),
+            items=list(reversed(c["items"])),
+            values=np.asarray(c["values"])[::-1, ::-1].copy(),
+            order=list(reversed(c["order"])),
+            named=(n - 1 - c["named"] + 1) % n,
+            own_item=1 - (N_ITEMS_PER_EPISODE - 1 - c["own_item"]),
+            other_item=1 - (N_ITEMS_PER_EPISODE - 1 - c["other_item"]),
+            action_order=list(reversed(c["action_order"])),
+            collide_pair=None, pool="train")
+
+    case_a = made_up(eval_pairs("fresh")[0]["content"])
+    case_b = made_up(eval_pairs("relaxed")[0]["content"])
+    case_c = dict(case_a, values=case_a["values"].copy())
+    case_c["values"][[0, 1], 0] = case_c["values"][[1, 0], 0]
+    verdicts = {name: ("through" if old_rule.admits(c) else "blocked",
+                       "through" if default_stream.admits(c) else "blocked")
+                for name, c in (("A", case_a), ("B", case_b), ("C", case_c))}
+    expected = {"A": ("through", "blocked"), "B": ("through", "blocked"),
+                "C": ("through", "through")}
+    check("G4: case A (a fresh pairing re-dressed) gets through the old rule and is blocked by the new",
+          verdicts["A"] == expected["A"] and pairing(case_a) == pairing(eval_pairs("fresh")[0]["content"]),
+          f"old {verdicts['A'][0]}, new {verdicts['A'][1]}")
+    check("G4: case B (a relaxed pairing re-dressed) gets through the old rule and is blocked by the new",
+          verdicts["B"] == expected["B"] and pairing(case_b) == pairing(eval_pairs("relaxed")[0]["content"]),
+          f"old {verdicts['B'][0]}, new {verdicts['B'][1]}")
+    check("G4: case C (case A with two values swapped) gets through both rules",
+          verdicts["C"] == expected["C"], f"old {verdicts['C'][0]}, new {verdicts['C'][1]}")
 
     # --- the copy is the rehearsal's generator ------------------------------
     import importlib.util

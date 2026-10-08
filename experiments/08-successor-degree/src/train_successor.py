@@ -14,7 +14,8 @@ The rehearsal's optimiser and schedule, unchanged (`training.train_arm` in
 decay 0.01, a one-cycle schedule with the first tenth warming up, gradients
 clipped at 1.0. At full size it runs to a token budget, by default the closed
 design's 585,544,960 tokens, on training episodes generated fresh at every
-step and never matching an evaluation set (`grammar.TrainingStream`). Every
+step, never matching an evaluation set and never carrying a fresh or relaxed
+pairing (`grammar.TrainingStream`; the second since 2026-10-06). Every
 number is an argument and is written into the checkpoint and the log. **The
 defaults are the freeze session's call and the registration text must fix
 them** (the method note, sections 3 and 6).
@@ -124,7 +125,7 @@ def run(args) -> dict:
                   weight_decay=args.weight_decay, warmup_frac=args.warmup_frac,
                   max_tokens=args.max_tokens, steps=steps, clip=1.0,
                   tokens_per_step=args.batch * G.SEQ_LEN, parameters=n_params,
-                  data="fresh per step, evaluation sets excluded")
+                  data="fresh per step, evaluation sets excluded, fresh and relaxed pairings excluded")
     print(f"recipe {json.dumps(recipe)}", flush=True)
 
     traj = M.to_torch(G.batch(G.episodes_from_pairs(G.eval_pairs("trajectory"))), device)
