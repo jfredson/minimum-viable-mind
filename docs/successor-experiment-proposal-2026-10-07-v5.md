@@ -48,7 +48,10 @@ before the free-arm run, with a stop if it does not. And the second release
 of money is kept and conditional: asked for only after the first release ends
 with the repaired route holding and the free model clearing its gate and its
 floor, a pass being necessary and not sufficient (section 11; the same
-ruling, decision 3 as revised).
+ruling, decision 3 as revised). Since 2026-10-08 two more things: the bar
+for "the repaired route holds" is ruled at 0.9 and 0.5 (section 5.6), and
+an early stop at that verification is a registered ending of experiment C
+with its own ruled sentence (stop S4b).
 
 **Marking.** A passage marked *(ruled: ...)* comes from a rulings file that
 records John's answer. A passage marked **[OPEN ITEM n for John: ...]** is
@@ -72,7 +75,7 @@ standing has moved.
 | **The two outside (tier 2) reviews of version 4**: ChatGPT (GPT-6 Astra), findings A1 to A13; Gemini 3.1 Pro, findings G1 to G9 | **unmerged:** branch `tier2-chatgpt-v4` at `6136407`: `reviews/2026-10-04-successor-v4-chatgpt.md`; branch `tier2-gemini-v4` at `8da74c4`: `reviews/2026-10-04-successor-v4-gemini.md` | Filed word for word. Gemini's nine repeat inside findings and, asked again, it found nothing new. ChatGPT's A2 (fatal), A6, A7, A9, A10, A13 (serious), A8, A11, A12 (worth-noting) are adopted as RT-256, RT-247, RT-251, RT-248, RT-249, RT-250, RT-252, RT-253, RT-254 |
 | **The ruling packet on the two built models that lost their ownership route, and four fixes to the spending alarm** | **unmerged:** branch `ruling-packet-cm-flat` at `7583326`: `docs/rulings/2026-10-06-cm-flat-ownership-PROPOSAL.md`; checked in pull request 112 | A PROPOSAL. Its option 1(b) plus option 4 (fix the sharpness at 4.0 in all three built arms; add an in-use check) and its page 2 (the alarm fixes) are reported as ruled on 2026-10-06 by the two method notes that did the work; **no rulings file records those words** (section 21, open item 2). The repair itself is ruled by decision 3 of 2026-10-07, which names it |
 | **The check of the four development runs at 10 million parameters** (the flat ownership route in arms C and M; arm T's lookup confusion; the spending alarm that read 0.40 where the true figure was 0.99) | **unmerged:** branch `check-dev-10m` at `51ec07d`: `reviews/2026-10-04-development-runs-check-claude-code.md`, scripts beside it; the laptop procedure's rows in `experiments/08-successor-degree/out-dev-10m-check/` | MEASURED on the four real checkpoints. The source of every 10-million figure in sections 5, 11 and 12 |
-| **The sharpness fixed at 4.0, the in-use check, and the toy retrain** | **unmerged:** branch `fix-sharpness-inuse-check` at `644238e`: `docs/2026-10-06-sharpness-fix-inuse-check-method.md` (committed first), `docs/2026-10-06-sharpness-fix-inuse-check-findings.md`, code in `experiments/08-successor-degree/src/`, outputs in `out-sharpness-fix/`; **owed its check** | The amendment of section 5.6 rests on it. Its concern 2 fired: the in-use check's second part fails every toy arm C and arm M seed before and after the fix (section 5.6; section 21, open item 1) |
+| **The sharpness fixed at 4.0, the in-use check, and the toy retrain** | **unmerged:** branch `fix-sharpness-inuse-check` at `644238e`: `docs/2026-10-06-sharpness-fix-inuse-check-method.md` (committed first), `docs/2026-10-06-sharpness-fix-inuse-check-findings.md`, code in `experiments/08-successor-degree/src/`, outputs in `out-sharpness-fix/`; **owed its check** | The amendment of section 5.6 rests on it. Its concern 2 fired: the in-use check's second part fails every toy arm C and arm M seed before and after the fix (section 5.6; the bar ruled 2026-10-08, `docs/rulings/2026-10-08-verification-bar-ruling.md`) |
 | **The page 4 toy re-run with every read fitted on 1,800 development episodes, and its check** | **unmerged:** branch `page4-toy-rerun-1800` at `e948899` (pull request 121): `docs/2026-10-06-page4-toy-rerun-1800.md`, outputs in `experiments/rehearsal-successor-measure/out-page4-rerun-1800/`; check on branch `check-page4-rerun` at `1e168f3` (pull request 122): `docs/2026-10-07-page4-rerun-check.md` | **Every toy read figure in this version is taken from this re-run**, as John's page 4 ruling requires and its findings direct. Checked: 40,855 values recomputed, none different; no toy decision moves |
 | **The decoy test (page 10, finding A6) and its check** | **unmerged:** branch `decoy-test-a6` at `6794155` (pull request 108): `docs/2026-10-06-decoy-test.md`, `docs/decoy-test-method-2026-10-06.md`; check on branch `check-decoy-test-a6` at `ba5d64f`: `docs/2026-10-06-check-decoy-test.md` | Not fooled by an exact unused copy of the owner's marker, both ways round, reading 0.0000 on all six runs; reproduced exactly. The check adds that the test could not have failed, and that a differently coded decoy partly fools the read (0.23 to 0.29): weakness W18 |
 | **The decision procedure brought to the 2026-10-06 rulings and run end to end on the toy and 25 made-up cases (outside finding A2, RT-256), with its two checks** | main line at `bd0de26` (pull request 105): `docs/2026-10-06-successor-a2-decision-procedure-method.md`, `docs/2026-10-06-successor-a2-decision-procedure-findings.md`, code `experiments/08-successor-degree/src/measure.py` and `procedure.py`, outputs `out-a2-cases/`; checks at `e6dd8fa` (pull request 107) and `f609c9d` (pull request 113) | 25 of 25 cases land on the term written for them in advance; every registered term reached; no withheld figure in any output. Rehearsal item R-13 |
@@ -80,6 +83,8 @@ standing has moved.
 | **The four fixes to the spending alarm and its helpers, and their three checks** | **unmerged:** branch `tripwire-fixes` at `5e2faf9` (pull request 116): `docs/2026-10-06-tripwire-fixes-method.md`; checks on branch `check-tripwire-fixes` at `b01e564`: `docs/2026-10-07-tripwire-fixes-third-check-findings.md` | The amendment to section 12.5 rests on it. Third check: "ready to merge", eight runs of 82 checks all passing; one minor timing point left |
 | **The code freeze of 2026-10-04** (`experiments/08-successor-degree/`, step 3 of section 11) and the four development runs' ledger rows | main line at `53ae82c` (pull request 97): `docs/2026-10-04-successor-code-freeze.md`, method `docs/successor-code-freeze-method-2026-10-04.md`; ledger rows at `865f108` (pull request 98) | The frozen code every registered run uses, as changed since by pull request 105 and the three branches above. Its section 4.1 (the toy is R3 under the rules as written) and 4.2 (no ruling set the training recipe) are both answered here (sections 3 and 5.5) |
 | **The ruling of 2026-10-04 on the competing-solver run and the twenty-piece control (seven rulings), and the ruling of 2026-10-03 (night) on the check of version 4's two questions, with that check's thirty wording fixes** | main line: `docs/rulings/2026-10-04-competing-solver-and-control-2-rulings.md`; `docs/rulings/2026-10-03-version-4-check-questions-rulings.md`; `reviews/2026-10-03-proposal-v4-check-claude-code.md`, section 4; `reviews/2026-10-04-competing-solver-and-control-2-check-claude-code.md`, section 7 | **Binding on this version.** Version 4 was filed before them; the inside review's table "The registration text as reviewed" lists each as ruled and not yet written. All are written in here |
+| **John's ruling of 2026-10-08 on the bar for "the repaired route holds"** | main line (pull request 126): `docs/rulings/2026-10-08-verification-bar-ruling.md` | **Binding on this version.** The in-use check's bars 0.9 and 0.5 are ruled; open item 1 closed |
+| **John's rulings of 2026-10-08 on the December-result restatement** | main line (pull request 128): `docs/rulings/2026-10-08-december-result-restatement-rulings.md`; the restatement itself, `docs/rulings/2026-10-08-december-result-restatement-PROPOSAL.md`, now a dated note at the head of `docs/december-result-roadmap-2026-09-20.md` | **Binding on this version.** The early stop of S4b is a registered ending with its ruled sentence; terms, kill dates and caps unchanged |
 | Version 3 of this proposal | `6d4ec3a` (pull request 71): `docs/successor-experiment-proposal-2026-09-26-v3.md` | The text this version starts from. Left unedited |
 | The first independent review of version 3, findings RT-230 to RT-236 | `4cb7f8e` (pull request 74): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-successor-v3-gate-c-claude-code.md`, with its scripts in `reviews/2026-10-03-successor-v3-gate-c-scripts/` | Reviewed version 3 at `37269ad`. Nothing fatal; two serious findings (RT-230, the floor certified the read and not the piece transplanted; RT-233, four controls had no figure under the registered rules); five minor |
 | **John's rulings of 2026-10-03 on that review and on version 3's open decisions (sixteen pages)** | `56a5a86` (pull request 75), with a dated note added under its decisions table at `fe5df65` (pull request 77): `docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md` | **Binding on this version.** Its "What this changes, and where" is the first checklist this version was written to. Two rows of its decisions table (decisions 15 and 16) were changed later the same day by the ruling two rows below; the dated note says so |
@@ -348,7 +353,9 @@ reads it.**
 ## 3. What counts as a result
 
 Reproduced from section 2 of the December-result roadmap, which John accepted
-as the basis of this proposal, with R4 restated to the ruling of 2026-09-21
+as the basis of this proposal (its dated head note of 2026-10-08 says what the
+result means now that the measurement target has moved, and changes none of
+the terms, kill dates or caps), with R4 restated to the ruling of 2026-09-21
 (item 23 of
 `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`), with
 the fifth term John ruled on 2026-10-03
@@ -382,7 +389,8 @@ to set.]**
 
 **Scope, fixed with the terms (ruled 2026-10-06, page 11 and follow-up items
 2 and 7, closing the outside review's A13, adopted as RT-250).** Wherever a
-term containing "instrument discriminates" or "instrument checked" appears,
+term containing "instrument discriminates", "instrument checked" or "instrument
+not validated" appears,
 in this text, `STATUS.md`, the paper or in public, it is followed in the same
 sentence by **"on these constructed systems, for this intervention
 procedure"**; so is R2. "Degree read" is followed by **"as a ratio of two
@@ -480,7 +488,8 @@ item 3 resolved", item 5; section 7.2, item 1): the single arm F run of step
 5a has its nomination reported against the floor before the second release
 is asked for, and a miss is a stop there, beside the learn-both stop (section
 11). **If arms T and C separate and arm F returns no verdict, the outcome is
-the fifth term, "metric validated, degree not read", with its reason after a
+the fifth term, "instrument discriminates specified constructed mechanisms,
+degree not read", with its reason after a
 colon; it is not reported under R1** (ruled 2026-10-03, page 11, item 3). The
 route (b) investigation, which looked for a label the own-directed loss does
 force on a free system, found none that clears the floor at toy scale
@@ -1465,7 +1474,9 @@ seed to count:
   count against.
 
 The bars 0.9 and 0.5 are the method note's, stated before any figure was
-seen, and are not ruled. **The verification John ruled (decision 3 and its
+seen, and **are ruled: on 2026-10-08, in John's words "Rule the verification
+bar now, keep it at 0.5" (`docs/rulings/2026-10-08-verification-bar-ruling.md`, authorship mixed), they are fixed here as
+written.** **The verification John ruled (decision 3 and its
 addition) is: the three built arms are retrained once more at 10 million
 parameters, seed 0, with the sharpness fixed (about $1.14 from the first
 release's development line, of which $8.53 remains: the compute ledger's
@@ -1478,7 +1489,10 @@ condition to decision 3").** If that verification fails, that is, if the
 rerun built models at 10 million parameters do not hold their built-in
 ownership route (the stirred-in model and the half-and-half model) or do not
 do the task, **experiment C stops there, before the free-arm run at
-registered size, and the rest of the first release is not spent.** A
+registered size, and the rest of the first release is not spent.** That
+ending is reported in the words ruled on 2026-10-08, "the built arms as
+designed are not references; the measure was not reached", and is a
+registered ending of experiment C, not a failure of the year (`docs/rulings/2026-10-08-december-result-restatement-rulings.md`). A
 verification that passes is evidence for the 30-million size, not proof of
 it. **A failure of arm T's rerun is not named by the ruling; this text
 treats it the same way and says so.** **[OPEN ITEM 6 for John: confirm that
@@ -1506,12 +1520,12 @@ which detects a route switched off (as at 10 million) but not a minority
 carrier; (c) part A only, the literal reading of "gone flat"; (d) change arm
 C and arm M's stirred-in half so the built route is the only route (for
 example, no acting signal in their trunk), which is a change to what the arms
-are and needs its own toy retrain and check. **[OPEN ITEM 1 for John, the
-largest in this text: the figure for "holds" is not ruled, and the figure as
-coded fails the toy itself. Section 21 gives this session's
-recommendation.]** Whichever bar is ruled, the registration fixes it here
-before the reruns launch, as the ruling requires, and the route-use figure is
-recorded for every built arm and seed whatever the bar.
+are and needs its own toy retrain and check. *(Ruled 2026-10-08: option (a)
+taken; (b), (c) and (d) declined, (d) staying the named route to a real
+reference if the stop fires, with its own toy work and ruling; `docs/rulings/2026-10-08-verification-bar-ruling.md`. Open
+item 1 of section 21 is closed by that ruling.)* The bar is ruled at 0.5 and
+fixed here before the reruns launch, as the 2026-10-07 ruling requires, and
+the route-use figure is recorded for every built arm and seed.
 
 **What the toy record quoted in this text rests on, after the repair.** Every
 toy reading in sections 3, 5, 7 and 9 was measured on the twelve committed
@@ -2755,7 +2769,7 @@ Committed to git, with the commit hash recorded in the registration file,
   tell copying who is acting from copying the answer**; the pre-stated cells,
   the relaxed set for control 6 and its generating seed;
 - **the in-use check on the built arms, both parts, with its bars as
-  section 5.6 fixes them** (section 21, open item 1, until John sets the
+  section 5.6 fixes them** (ruled 2026-10-08, `docs/rulings/2026-10-08-verification-bar-ruling.md`; the
   bar);
 - **that the code withholds a reading when a control that holds, a floor, a
   gate, the channel-removal check or the in-use check fails, lists every
@@ -3055,7 +3069,7 @@ version was first filed and were ruled the same night.
 | Seed count per arm | **three**; the toy arithmetic implying one seed was not carried across | the queue ruling, page 1f |
 | Uncertainty across seeds | **the across-seed spread of the raw difference** is the registered uncertainty; the within-seed bootstrap over matched pairs is reported beside it; neither measures drift between runs of one seed, and the registration says so. **This is the spread of the raw difference, not of the reading, whose denominator moves too, and not of the separation between arms T and C, which is a decision rule on point figures. Neither the reading nor the separation has a registered uncertainty; both are reported as descriptions. The sampling band printed beside a piece's count does not account for that piece having been chosen on the same held-out episodes** | the queue ruling, page 1g; on the repairs run the two disagreed by more than two to one on arms C and F (the repairs findings at `882f252`, section 6.2; figures at pre-rule site sets, not carried); the labelling by the 2026-10-06 ruling, follow-up item 1, closing the outside review's A12 (RT-254) |
 | Channel-removal check (whether arm F is read) | own-directed accuracy **below the learn-both bar** with the acting channel zeroed, **on at least two seeds of three, the same seeds passing every other condition, the third reported**; the named-other clause reported and not gated; **with the channel zeroed, the own-directed answer is one of the four candidate values on 1,546 or more of 3,000 gate episodes, on two seeds of three**; gates arm F only | the queue ruling, page 1h; the Gate C rulings, RT-220; the ownership-free line by the 2026-10-06 ruling, page 1 (RT-237), amending page 1h; the same seeds by page 7 (RT-249) |
-| The in-use check (whether a built arm's seed counts) | **part A: the built-in answer's weight on the true agent at least 0.9; part B: route use at least 0.5 on every built route; as coded, pending John's ruling on the bar (open item 1)**; a failure gives no verdict for that seed, "construction did not hold" | the 2026-10-07 ruling, decision 3, and the flat-models packet's option 4; the bars from `docs/2026-10-06-sharpness-fix-inuse-check-method.md`, branch `fix-sharpness-inuse-check` at `644238e`, not ruled |
+| The in-use check (whether a built arm's seed counts) | **part A: the built-in answer's weight on the true agent at least 0.9; part B: route use at least 0.5 on every built route; ruled 2026-10-08 at these figures (`docs/rulings/2026-10-08-verification-bar-ruling.md`)**; a failure gives no verdict for that seed, "construction did not hold" | the 2026-10-07 ruling, decision 3, and the flat-models packet's option 4; the bars from `docs/2026-10-06-sharpness-fix-inuse-check-method.md`, branch `fix-sharpness-inuse-check` at `644238e`, not ruled |
 | The no-transplant allowance | **at most the largest measured miss, rounded up to 0.018; reported, not a veto**: the rate beside `(1 − p) / 7`, their difference, the share of errors on the donor's answer, and the chance of flagging a broken pairing on 800 pairs (0.56 at the bar); the pairing checked by control 4 and the generator's self-test | the queue ruling, page 2; the Gate C rulings, RT-222, as amended by the 2026-10-06 ruling, page 8 (RT-248) |
 | The form of the reading | **the chance-corrected form** of section 6.3 | the queue ruling, page 2 |
 | The label | **which marker word is the model's own**, the one registered read; the route (b) candidates recorded as exploratory fits only | `docs/rulings/2026-09-23-nomination-label.md`; the queue ruling, page 3; the Gate C rulings, RT-212, item 3; John's ruling of 2026-09-26 on the route (b) result (section 7.2, item 1) |
@@ -3408,8 +3422,9 @@ Binding if registered, in this order, on the chain of section 4 of
    spending alarm's four fixes (branch `tripwire-fixes`, three checks). **Two
    changes still owed in the code:** the read fitted on 1,800 of 1,980
    development episodes (the frozen procedure still fits on 420 of 600; the
-   page 4 re-run made the change at run time only), and the bar of the in-use
-   check once John sets it (open items 1 and 7). The registration names the
+   page 4 re-run made the change at run time only), and the renamed outcome
+   words (open item 7 for the episode count; the bar of the in-use check is
+   ruled at 0.9 and 0.5, which the frozen code already carries). The registration names the
    commit of the frozen code it registers; **that commit does not exist until
    the branches are merged (open item 10).**
 4. **Done: the development runs at the 10-million size, four arms, one seed
@@ -3517,7 +3532,8 @@ Binding if registered, in this order, on the chain of section 4 of
    M drops arm M (section 3).
 8. If arms T and C separate: arm F read on the frozen procedure, confirmation
    seeds. If arm F reads, the outcome is R1; if it returns no verdict, the
-   outcome is the fifth term, "metric validated, degree not read", with its
+   outcome is the fifth term, "instrument discriminates specified constructed
+   mechanisms, degree not read", with its
    reason. Findings; Gate B; closure text through Gate A. Wrap-up starts 2026-12-21 whatever
    state the chain is in.
 
@@ -3554,10 +3570,13 @@ Binding if registered, in this order, on the chain of section 4 of
   the bar section 5.6 fixes) or do not do the task (fail their gate on
   learning). **Experiment C stops, before the free-arm run at registered
   size; the rest of the first release is not spent.** About $1.14 spent on
-  the reruns, plus the $1.47 of the development runs. Not an outcome term:
-  it is reported as "the repaired construction did not hold at 10 million
-  parameters", with the figures, and goes to John; the alternatives the
-  flat-models packet named (redesign the arms; version 4's fallback) are his.
+  the reruns, plus the $1.47 of the development runs. Not one of the eight
+  outcome terms, which are unchanged, but **a registered ending of experiment
+  C, reached by its own stop rule**, reported in the words ruled on 2026-10-08:
+  **"the built arms as designed are not references; the measure was not
+  reached"** (`docs/rulings/2026-10-08-december-result-restatement-rulings.md`, decision 2; `docs/rulings/2026-10-08-verification-bar-ruling.md`), with the figures, and goes to John;
+  the redesign of the arms so the built route is the only route is the named
+  route to a real reference and needs its own ruling.
 - **S10 (new, with the in-use check, section 5.6).** At the registered size,
   a built arm whose seed fails the in-use check returns no verdict for that
   seed, "construction did not hold"; the arm's outcome follows section 3's
@@ -4157,7 +4176,7 @@ acting signal in its trunk, the free route arm F uses, and is "entangled by
 construction" only in part. Fixing the sharpness repairs the number that
 went flat; it does not make the built route the carrier. Whether the
 reruns at 10 million show the built route in use at the bar section 5.6 fixes
-is the verification of step 4b, and the bar is open item 1. The toy
+is the verification of step 4b, and the bar is ruled at 0.5 (2026-10-08). The toy
 readings quoted in this text were taken on the learned-sharpness models; the
 hand-set models have been read on one of nine.
 
@@ -4534,6 +4553,22 @@ ruled the same night.
 34. **The training recipe** is fixed in this text from the frozen trainer's
     defaults and is **not ruled** (open item 5). Section 5.5.
 
+35. **The bar for "the repaired route holds".** *Ruled 2026-10-08, "Rule the
+    verification bar now, keep it at 0.5" (`docs/rulings/2026-10-08-verification-bar-ruling.md`; authorship mixed: the
+    drafting session recommended option (a), John chose it).* Section 5.6;
+    section 9; stop S4b. **The alternatives not taken:** a small bar against
+    the free model's 0.000 such as 0.1; part A alone; redesigning arm C and
+    arm M's stirred-in half so the built route is the only route, which
+    stays the named route to a real reference if the stop fires.
+
+36. **The December result restated under the refounding.** *Ruled
+    2026-10-08, "Merge it and approve all the decisions from the doc"
+    (`docs/rulings/2026-10-08-december-result-restatement-rulings.md`; authorship mixed).* The early stop of S4b is a registered ending
+    of experiment C with the public sentence "the built arms as designed are
+    not references; the measure was not reached"; the eight outcome terms,
+    the kill dates and the caps are unchanged; the restatement is a dated
+    note at the head of the December-result roadmap. Section 3 and stop S4b.
+
 *Nothing above is registered. The registration commit, if it comes, follows
 the check owed on this version, John's answers to the open items of section
 21, the closure check of RT-237, and the merge of the branches of section
@@ -4878,7 +4913,7 @@ at both ends, for every threshold this version attaches to a count:
   no-transplant formula at own-directed 1.0: 0.0000; 0.8712: 0.0184; 0.56: 0.0629; 0.2633: 0.1052; a broken pairing (0.125) flagged by the 0.018 room in every case: True; reported, not a veto
   a correctly paired model whose errors go to the other three agents, p = 0.8: rate 0.0667 against formula 0.0286, gap 0.0381 > 0.018: True (why it is no longer a veto)
   piece floor at 144 of 180: the free model's best piece anywhere 40; the built arms' chosen pieces [165, 178, 178, 180, 180, 180, 180, 180, 180]
-  the in-use check at both ends: arm T 1.000 passes; the 10-million arms C 0.018 and M 0.000 fail; the toy arms C 0.22 to 0.29 and M 0.07 to 0.11 fail at 0.5 (open item 1)
+  the in-use check at both ends: arm T 1.000 passes; the 10-million arms C 0.018 and M 0.000 fail; the toy arms C 0.22 to 0.29 and M 0.07 to 0.11 fail at 0.5 (the bar ruled 2026-10-08)
 ```
 
 The bar reproduces at 790 of 3,000 and the ownership-free line at 1,546 of
@@ -4891,7 +4926,7 @@ model that confuses owners, which is why it reports and no longer withholds
 against 165 to 180). **The in-use check fails on the working end of the toy
 (arms C and M, trained and reading correctly) and on the broken end (the
 10-million arms, flat), so as a threshold it does not yet separate the two
-ends on the toy; that is open item 1 and weakness W17, stated rather than
+ends on the toy; that is weakness W17 (the bar ruled 2026-10-08), stated rather than
 stepped over.** Control 4's pass line, bit-identical outputs, has no working
 end to test; it cannot fail on a correctly built model, which section 7.3,
 item 4, says.
@@ -5065,7 +5100,9 @@ needs, and show that path can run in the order the line requires.
   M the line is not met**, before and after the fix, so the verification of
   step 4b at the bar as coded is a line the design has not produced on any
   built-to-be-entangled model. **This is the one place the candidate fires
-  on this version**, and it is open item 1.
+  on this version.** The bar is ruled at 0.5 (2026-10-08), and the firing
+  stands as the record's own prediction that the stop of S4b will most
+  likely fire, which the ruling says in its own words.
 - **The money lines of section 12:**
 
 ```
@@ -5412,7 +5449,11 @@ text does meanwhile, and this session's recommendation with its confidence.
 None is this session's to decide, and the registration commit should not be
 made until each has John's answer or his word that it may stand open.
 
-1. **The bar for "the repaired route holds" (section 5.6; the largest).**
+1. **The bar for "the repaired route holds" (section 5.6; the largest). CLOSED,
+   ruled 2026-10-08 in John's words "Rule the verification bar now, keep it at
+   0.5" (`docs/rulings/2026-10-08-verification-bar-ruling.md`, authorship mixed): option (a), the recommendation
+   below, taken; the number is kept so that the body's cross-references still
+   land. The text below is as it stood before the ruling.**
    *Source:* the 2026-10-07 ruling's addition says what "holds" means in
    figures is fixed in the amendment text before the reruns launch; the
    in-use check as coded (part A at 0.9; part B, route use, at 0.5) fails
@@ -5538,13 +5579,42 @@ of the twelve open items of section 21: each is John's. It is not the
 registration: that is John's commit, after this text is checked by a session
 that did not write it, after the closure check of RT-237 runs on it, and
 after every record it cites is on the main line. **It is the text meant for
-that commit, with everything ruled by 2026-10-07 written in.**## What this version does not do
+that commit, with everything ruled by 2026-10-07 written in.**
 
-It edits nothing: not version 3, not any ruling, registered text or protocol
-text, and not the findings of any run. It issues no go, releases no money,
-launches nothing, trains nothing and rents nothing. It does not open the
-registration review, and it is not ready for it: the competing solver's run
-under the piece rule is owed, and this version and the record of the
-late-evening ruling are owed a check under the pairing rule of
-`docs/outside-review-protocol.md`. The seven questions of section 19 were
-John's, and he ruled them; this version resolved none of them itself.
+---
+
+## Changes after the check (2026-10-08)
+
+The check by a session that wrote none of this text
+(`docs/reviews/2026-10-08-successor-v5-check-claude-code.md`, pull request
+130) found every ruling of 2026-10-06 and 2026-10-07 carried in substance and
+every figure matching its file, and five must-fix items. All five are applied
+above, in place, by a session that wrote neither the text nor the check, at
+John's word "Merge both and apply the version 5 fixes":
+
+1. Version 4's closing section, left at the end of the file after this
+   version's own and joined to it without a line break, is removed (the
+   check's finding 1).
+2. The scope rule of section 3 now names "instrument not validated" too, so
+   the eighth term keeps the scope phrase the 2026-10-06 ruling's follow-up
+   item 2 gave it (finding 3).
+3. The two registered sentences that still named the fifth term by its old
+   words (section 3; section 11, step 8) now use its renamed words
+   (finding 8). Section 15's record of the 2026-10-03 ruling keeps the old
+   words as history.
+4. The verification-bar ruling of 2026-10-08 is written in: section 5.6's
+   "are not ruled" is replaced by the ruling and its citation, the options
+   marked as taken or declined, open item 1 closed in section 21, and the
+   pointers in sections 7.4, 9, 11 (step 3), 13 (W17) and 17 changed to
+   match; section 15 gains entry 35 and the source table a row (finding 12).
+5. The December-result restatement rulings of 2026-10-08 are written in:
+   stop S4b and section 5.6 report an early stop in the ruled sentence, "the
+   built arms as designed are not references; the measure was not reached",
+   as a registered ending of experiment C; section 15 gains entry 36 and the
+   source table a row (finding 13). Section 3's opening cites the roadmap's
+   dated head note (the check's should-fix B.2).
+
+No figure, bar, term meaning or stop changed. The other should-fix items
+(the check's findings 4 to 7) and open items 2 to 12 stand for the next
+edit and for John. This edit is owed a short re-check that the five landed
+and nothing else moved.
