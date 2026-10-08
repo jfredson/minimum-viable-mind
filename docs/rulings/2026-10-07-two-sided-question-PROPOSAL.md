@@ -17,6 +17,8 @@ of section 4.1), Gate A applies as well, with the failure-mode pass against
 
 *Written under the workspace plain-language rule.*
 
+*Dated note, 2026-10-07, later the same day. John read the proposal and the table and said, in his words, "Yes this all looks good. Let's move forward with this." That is recorded here as approval in principle. It is not recorded as a ruling on the eight decisions of section 10, because the outside-review protocol John put in force on 2026-09-19 has a Gate C proposal carry a tier 1 pass by a session that did not write it before he rules, and the pass had not been filed when he said this. The pass and the check of the synthesis were started at once. The ruling is recorded in a separate file once John has seen the pass; if he rules without waiting for it, that is his call and the ruling file says so.*
+
 ---
 
 ## 0. The whole thing in eight sentences
