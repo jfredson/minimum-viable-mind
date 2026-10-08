@@ -16,6 +16,11 @@ const {
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const currentYear = new Date().getFullYear();
+// "7 October 2026" for the footer; the design standard writes dates out there.
+const longDate = (iso: string) => {
+  const [y, m, d] = iso.split('-').map(Number);
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+};
 ---
 
 <!doctype html>
@@ -74,11 +79,11 @@ const currentYear = new Date().getFullYear();
             <a href="/questions/">Questions and ideas</a>
             <a href="/learned/">What we have learned</a>
             <a href="/story/">The story so far</a>
-            <a href="https://sentient-horizons.com" rel="noopener">Sentient Horizons</a>
           </p>
           <p class="footer-meta">
-            © {currentYear} John Fredrickson, with Claude. Project map last updated {fmtDate(project.updated_on)}; site exported {fmtDate(derived.exported_on)}{derived.commit ? ` from commit ${derived.commit}` : ''}. The public program log, updated whenever STATUS.md is.
+            © {currentYear} John Fredrickson, <a href="https://sentient-horizons.com/with-claude/">with Claude</a>. Last built {longDate(derived.exported_on)}{derived.commit ? ` (version ${derived.commit})` : ''} from the project record as of {longDate(project.updated_on)}. Free to reuse with credit (<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>); code under the MIT licence.
           </p>
+          <p class="footer-parent"><a href="https://sentient-horizons.com" rel="noopener">A Sentient Horizons project.</a></p>
         </div>
       </div>
     </footer>
