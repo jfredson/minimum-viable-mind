@@ -54,6 +54,21 @@ session proposed, John approved. None is upgraded to John's own.
    the ruling packet on the two flat models asked: continue through the first
    release only, on the packet's own condition that the built route is shown
    to hold in the reruns.*
+
+   **Addition, ruled later the same day (2026-10-07), in John's words "Yes,
+   add the stop condition to decision 3."** If the verification of the repair
+   fails, that is, if the rerun built models at 10 million parameters do not
+   hold their built-in ownership route (the stirred-in model and the
+   half-and-half model) or do not do the task, experiment C stops there,
+   before the free-arm run at registered size, and the rest of the first
+   release is not spent. This is the condition the ruling packet on the two
+   flat models stated (continue only if the built route is shown to hold;
+   otherwise stop or redesign), which GPT's reply in the poll stated twice,
+   and which the pairing-rule check of the poll synthesis found had been
+   softened out of the synthesis. The session put it to John as one question
+   with the recommendation yes; John ruled yes. Authorship mixed. What
+   "holds" means in figures is fixed in the amendment text that registers the
+   repair, before the reruns launch.
 4. **The kill dates move by this ruling**, under item 23 of the ruling of
    2026-09-21 (past a kill date, launching takes a fresh ruling that names
    what comes off the back end). C's registration commits by 2026-10-18 as
