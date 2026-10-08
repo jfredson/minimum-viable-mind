@@ -124,7 +124,8 @@ def main():
     blocks = {context_sentence(it).replace(it["preferred_wrong"], "<pushed>")
               for it in items.values() if "setup" in it}
     print(f"distinct A-bank added sentences after blanking the pushed slot: {len(blocks)} "
-          f"(so check 2 passes by construction; see FB-14)")
+          f"(so check 2 passes by construction: the first pairing check's template-check "
+          f"finding FB-14)")
     a_id = next(i for i, it in items.items() if "setup" in it)
     b_id = next(i for i, it in items.items() if "plan" in it)
     print(f"\n--- example arm S summary, item {a_id} ---\n{summary_S(items[a_id])}")
