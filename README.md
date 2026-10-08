@@ -33,3 +33,7 @@ A floor system instantiates self-indexed temporal integration that survives the 
 ## Status
 
 v0.1 — founding proposal in `spec/`, checked against the corpus (no contradictions with the corpus-positions ledger). Next: turn the build section into a staged experiment plan with pre-registered metrics, and stand up the first component.
+
+## Licence
+
+The data files and the written record are under Creative Commons Attribution 4.0 (`LICENSE-DATA`): reuse them freely, with credit. The code and the site are under the MIT licence (`LICENSE`). Added 2026-10-08 under the Sentient Horizons design standard.
