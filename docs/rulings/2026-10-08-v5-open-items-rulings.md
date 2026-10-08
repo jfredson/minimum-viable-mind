@@ -3,9 +3,14 @@
 *Written 2026-10-08 (Thursday evening, Pacific) by a Claude Code session.
 Authorship: **mixed** throughout. The recommendations were version 5's own
 (section 21 of `docs/successor-experiment-proposal-2026-10-07-v5.md`), put to
-John by this session as one packet in plain language, with two updated
-against the main line as it stood that evening (items 10 and 12 below); John
-accepted every one.*
+John by this session as one packet in plain language; John accepted every
+one. Where the packet differed from section 21's text: version 5's items 10
+and 12 were updated against the main line as it stood that evening (the
+branches already merged; the ledger rows still missing); in item 3 the
+packet recommended, for the eighth term, the alternative words section 21
+itself offered; and in item 9 it stated the recommendation on arm M's
+per-step copy as "no, for now", which is what section 21's "only if John
+wants" means in practice.*
 
 ## John's words
 

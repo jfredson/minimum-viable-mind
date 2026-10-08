@@ -37,11 +37,16 @@ The session offered three wordings. John answered "1", choosing this one:
   whose ownership route has gone flat; such a seed gets "no verdict",
   recorded as "construction did not hold".
 - The three reruns at the 10-million-parameter size are approved, to run only
-  after that code change and its independent check pass. The condition for
-  going on, which had been "continue if the decoy test is not fooled",
-  became "continue only if the built route is shown to hold in those
-  reruns" (the packet, page 1, "Page 12"). The bar for "holds" was ruled
-  separately on 2026-10-08 (`docs/rulings/2026-10-08-verification-bar-ruling.md`).
+  after that code change and its independent check pass.
+
+Not part of this confirmation, and noted here only so the reader is not
+misled: the packet (page 1, "Page 12") also proposed changing the condition
+for going on to "continue only if the built route is shown to hold in those
+reruns". The method notes do not record that as ruled on 2026-10-06. It is
+ruled by a later decision: the stop condition John added on 2026-10-07 ("Yes,
+add the stop condition to decision 3", `docs/rulings/2026-10-07-two-sided-question-rulings.md`),
+with the bar for "holds" ruled on 2026-10-08
+(`docs/rulings/2026-10-08-verification-bar-ruling.md`).
 
 **On the spending alarm (the packet's page 2), as recorded in
 `docs/2026-10-06-tripwire-fixes-method.md`, section 1:**
