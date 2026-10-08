@@ -860,8 +860,8 @@ status = "pending"
 
 [spend]
 as_of = "2026-10-07"
-account_balance = 73.77
-account_note = "Updated 2026-10-07: the balance read $73.7742 after the four 10-million development runs of 2026-10-04 (about $1.47 together, under their $10 line); the programme stands at about $229.62 of $450. The rest of this note is as written on 2026-10-04. RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit John set; topped up in increments he chooses. The balance is the last one the compute ledger records being read from the account, after the second rented test run on 2026-09-25 ($75.8645). Before that it read $77.3451 on 2026-09-21, having fallen from $79.82 because the two follow-up runs of 2026-09-20 cost a measured $1.90 and the storage volume drips about a cent an hour whether or not anything is running. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
+account_balance = 72.32
+account_note = "Updated 2026-10-07, corrected later the same day from the handoff for the registration draft: the balance read $72.3178 after the four 10-million development runs of 2026-10-04 (the $73.7742 first quoted was the reading just before the last machine; the runs cost about $1.47 together, under their $10 line); the programme stands at about $229.62 of $450. The rest of this note is as written on 2026-10-04. RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit John set; topped up in increments he chooses. The balance is the last one the compute ledger records being read from the account, after the second rented test run on 2026-09-25 ($75.8645). Before that it read $77.3451 on 2026-09-21, having fallen from $79.82 because the two follow-up runs of 2026-09-20 cost a measured $1.90 and the storage volume drips about a cent an hour whether or not anything is running. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
 idle_billing_lost = 10.30
 idle_billing_note = "Four occurrences of finished pods billing idle; the reason every launch now carries a terminate window and a watchdog."
 
