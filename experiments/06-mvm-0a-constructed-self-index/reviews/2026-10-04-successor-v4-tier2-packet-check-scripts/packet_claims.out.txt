@@ -1,0 +1,21 @@
+1. orientation and record list identical in Gemini doc and ChatGPT file 1: True
+   Gemini delivery note: *This is the whole packet in one document. Read it from start to finish before answering - do not search it for passages that match the questions. Then answer the brief, which is record 1. Label your findings G1, G2, G3 and so on.*
+2. last ChatGPT file opens with the answer-now instruction: True
+   Gemini document ends with: '*End of the packet. Answer the brief (record 1) now. Label your findings G1, G2, G3 and so on.*'
+   files 2..32 each open with 'reply with one short line ... wait': True
+3. finding labels asked for, Gemini (outside the records): 2 x 'G1, G2, G3'; any 'A1, A2' outside records: False
+   ChatGPT headers: 'A1, A2, A3' x 2 | 'G1' anywhere in headers: False
+   index: G1 mentions 2 | A1 mentions 1
+4. index rows: 33 | rows whose size or record list is wrong: none
+   Gemini size in index: 806 KB; actual 806,670 bytes
+   index says files in filename order are 01..33; sorted names give numbers: True
+5. '$108' in version 4: False | '108' anywhere in v4 money sections: False
+   version 4's own total for the successor: about $192 to $204
+   version 4 length in characters: 292,507 (orientation: 'about 290,000')
+   v4 opening quote present: True
+   record 14: the check of version 4 by a session that did not write it (holds the wording fixes the registration text must carry) - `experiments/06-mvm-0a-construc
+   record 15: the check of the competing-solver run and the twenty-piece control - `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-competing-solver
+   record 21: the ordinary competing solver put through the measurement - `docs/2026-10-03-competing-solver-run.md` (complete)
+   ruling that opened the review is in the packet: False
+6. successor-experiment-proposal-2026-10-03-v4.md: index names 41b0bd3 (True); content at 41b0bd3 same as at 6279573: True; last commit touching it: 41b0bd3
+6. 2026-10-04-successor-v4-gate-a-claude-code.md: index names 135c1f7 (True); content at 135c1f7 same as at 6279573: True; last commit touching it: 135c1f7

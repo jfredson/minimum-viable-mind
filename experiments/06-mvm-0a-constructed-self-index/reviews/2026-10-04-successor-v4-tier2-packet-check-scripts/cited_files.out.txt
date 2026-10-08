@@ -1,0 +1,31 @@
+records in the packet's list: 25 | distinct files: 23
+files in the 'not in this packet' list: 85
+distinct path-like names in version 4: 117
+  resolve to one tracked file: 101 distinct files
+  do not resolve to one tracked file: 8
+
+(a) listed as not in the packet, but not a tracked file path at this commit:
+    .venv-lock-2026-08-28.txt  (tracked files ending in /.venv-lock-2026-08-28.txt: 0)
+    diagnose_named_other.json  (tracked files ending in /diagnose_named_other.json: 2)
+    gate_base.json  (tracked files ending in /gate_base.json: 2)
+    summary.json  (tracked files ending in /summary.json: 3)
+    summary_base.json  (tracked files ending in /summary_base.json: 2)
+    table.md  (tracked files ending in /table.md: 5)
+(b) listed as not in the packet, but carried as a record: none
+(c) cited by version 4, a tracked file, neither carried nor listed (6):
+    experiments/06-mvm-0a-constructed-self-index/src/check_launcher_argument_guard.sh   <- cited as ['experiments/06-mvm-0a-constructed-self-index/src/check_launcher_argument_guard.sh']
+    experiments/06-mvm-0a-constructed-self-index/src/check_remote_forms.py   <- cited as ['experiments/06-mvm-0a-constructed-self-index/src/check_remote_forms.py']
+    experiments/06-mvm-0a-constructed-self-index/src/launch_a3.sh   <- cited as ['launch_a3.sh']
+    experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh   <- cited as ['experiments/06-mvm-0a-constructed-self-index/src/launch_a3_fetch_first.sh', 'launch_a3_fetch_first.sh']
+    scripts/check_citations.py   <- cited as ['scripts/check_citations.py']
+    scripts/check_single_source.py   <- cited as ['scripts/check_single_source.py']
+(d) names in version 4 that resolve to no single tracked file (8):
+    .venv-lock-2026-08-28.txt   (0 tracked files end with it)  [listed in packet]
+    T/v4-through16.md   (0 tracked files end with it)
+    diagnose_named_other.json   (2 tracked files end with it)  [listed in packet]
+    gate_base.json   (2 tracked files end with it)  [listed in packet]
+    summary.json   (3 tracked files end with it)  [listed in packet]
+    summary_base.json   (2 tracked files end with it)  [listed in packet]
+    table.md   (5 tracked files end with it)  [listed in packet]
+    ~/Documents/Code/CLAUDE.md   (0 tracked files end with it)
+(e) records carried only in part: ['experiments/rehearsal-successor-measure/src/grammar.py', 'experiments/06-mvm-0a-constructed-self-index/src/curriculum_a3.py']

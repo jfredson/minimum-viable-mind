@@ -15,6 +15,16 @@ TimeAssembler roadmap carries one step per weekend, due on the Sunday, so the
 from the current top of `STATUS.md`; edit this file and the TimeAssembler
 steps together.*
 
+> **No longer a schedule, 2026-10-04.** John ruled that Minimum Viable Mind work
+> is no longer scheduled on future dates: each step runs as soon as what it
+> waits on is done (`docs/rulings/2026-10-04-no-future-dates.md`). This
+> document no longer sets timing, and the Thursday or Friday re-plan and the
+> Sunday-night handoff it describes are retired. The kill dates, 2026-10-18 and
+> 2026-11-01, stay as outer limits only. Nothing below is edited: it is the plan
+> as it stood. `data/roadmap.toml` carries the goals' final statuses, with
+> weekend 2's unfinished goals marked as carried and no longer assigned to any
+> weekend.
+
 ---
 
 ## 1. Where the project stands on 2026-09-24

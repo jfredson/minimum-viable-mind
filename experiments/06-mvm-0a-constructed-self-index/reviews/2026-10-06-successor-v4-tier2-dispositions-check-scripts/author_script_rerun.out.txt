@@ -1,0 +1,31 @@
+PART B. The no-transplant check's assumption about errors (A9)
+arm/seed | p (own-directed) | U (untouched) | formula (committed) | (1-p)/7 recomputed | erring trials | share of errors on donor's answer U/(1-p) | review's-case gap | > 0.018
+T/0 | 1.00000 | 0.00000 | 0.00000 | 0.00000 | 0.0 | n/a | 0.0000 | False
+T/1 | 1.00000 | 0.00000 | 0.00000 | 0.00000 | 0.0 | n/a | 0.0000 | False
+T/2 | 1.00000 | 0.00000 | 0.00000 | 0.00000 | 0.0 | n/a | 0.0000 | False
+C/0 | 0.54875 | 0.05125 | 0.06446 | 0.06446 | 361.0 | 0.1136 | 0.0860 | True
+C/1 | 0.58125 | 0.04875 | 0.05982 | 0.05982 | 335.0 | 0.1164 | 0.0798 | True
+C/2 | 0.55250 | 0.06000 | 0.06393 | 0.06393 | 358.0 | 0.1341 | 0.0852 | True
+M/0 | 0.87125 | 0.01250 | 0.01839 | 0.01839 | 103.0 | 0.0971 | 0.0245 | True
+M/1 | 0.88000 | 0.01750 | 0.01714 | 0.01714 | 96.0 | 0.1458 | 0.0229 | True
+M/2 | 0.87125 | 0.01375 | 0.01839 | 0.01839 | 103.0 | 0.1068 | 0.0245 | True
+F/0 | 0.55875 | 0.05875 | 0.06304 | 0.06304 | 353.0 | 0.1331 | 0.0840 | True
+F/1 | 0.56625 | 0.05625 | 0.06196 | 0.06196 | 347.0 | 0.1297 | 0.0826 | True
+F/2 | 0.55625 | 0.06875 | 0.06339 | 0.06339 | 355.0 | 0.1549 | 0.0845 | True
+review's case exceeds 0.018 for every p below 0.9055
+  broken_pairing_flagged_at_p=0.2633: 0.5589
+  broken_pairing_flagged_at_p=0.56: 1.0000
+  healthy_even_errors_withheld_at_p=0.2633: 0.0945
+  healthy_even_errors_withheld_at_p=0.56: 0.0347
+  healthy_even_errors_withheld_at_p=0.8: 0.0023
+  healthy_review_case_withheld_at_p=0.56: 1.0000
+  healthy_review_case_withheld_at_p=0.8: 0.9904
+
+PART C. Separate majorities against joint seeds, on the toy gates (A10)
+T: seed 0 own=P reads=True; seed 1 own=P reads=True; seed 2 own=P reads=True | separate majorities: True | joint: True | differs: False | seeds passing the gate and reading: [0, 1, 2]
+C: seed 0 own=P reads=True; seed 1 own=P reads=True; seed 2 own=P reads=True | separate majorities: True | joint: True | differs: False | seeds passing the gate and reading: [0, 1, 2]
+M: seed 0 own=P reads=True; seed 1 own=P reads=True; seed 2 own=P reads=True | separate majorities: True | joint: True | differs: False | seeds passing the gate and reading: [0, 1, 2]
+F: seed 0 own=P,other=P,collapse=P,ownership_free_line=P reads=False; seed 1 own=P,other=F,collapse=P,ownership_free_line=P reads=False; seed 2 own=P,other=F,collapse=P,ownership_free_line=P reads=False | separate majorities: False | joint: False | differs: False | seeds passing the gate and reading: []
+
+wrote /private/tmp/claude-501/-Users-john-Code-timeassembler/d2afc395-eec3-435b-b7cc-7032642d3277/scratchpad/merged/experiments/rehearsal-successor-measure/out-tier2-dispositions-check/check.json
+byte-identical to committed check.json: yes (cmp)

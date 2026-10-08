@@ -1,0 +1,13 @@
+out-repairs/nominate_base_*.json {'plain True, registered False': 576}
+      528  arms/C/base/#/control#_named_agent/grid/floor
+       48  arms/F/base/#/control#_named_agent/grid/floor
+out-grammar-c/nominate_base_F_T_C.json {'plain True, registered False': 892}
+      528  arms/F/base/#/control#_named_agent/grid/floor
+      360  arms/C/base/#/control#_named_agent/grid/floor
+        4  arms/F/base/#/ownership/grid/floor
+out-grammar-c/outcomes.json {'plain True, registered False': 1}
+        1  negative_at_nomination/F/base/#/reading/floor
+out-competing-solver-run/nominate_*.json {'plain True, registered False': 1080}
+     1080  grid/floor
+out-v3-rules/nominate_*.json {}
+out-controls-rerun/nominate_*.json {}

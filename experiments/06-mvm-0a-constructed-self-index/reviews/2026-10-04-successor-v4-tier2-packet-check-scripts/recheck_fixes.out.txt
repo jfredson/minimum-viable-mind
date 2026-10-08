@@ -1,0 +1,17 @@
+same set of packet file names: True | 35 files
+changed: 2026-10-04-successor-v4-tier2-INDEX-how-to-run-these-sessions.md       records region identical: (no records)
+changed: 2026-10-04-successor-v4-tier2-chatgpt-01-of-33-start-here-and-records- records region identical: True
+changed: 2026-10-04-successor-v4-tier2-chatgpt-33-of-33-records-23-to-25.md     records region identical: True
+changed: 2026-10-04-successor-v4-tier2-gemini.md                                records region identical: True
+Gemini: text after the last record ends with the brief exactly: True | brief starts 174 characters into the tail | anything after the brief: ''
+   lead-in line: *End of the packet. Answer the brief now. Label your findings G1, G2, G3 and so on. The brief is record 1; it is repeated here, unchanged, so it is fresh when you answer:*
+ChatGPT file 33: text after the last record ends with the brief exactly: True | brief starts 121 characters into the tail | anything after the brief: ''
+   lead-in line: *End of the packet. The brief is record 1, in file 1; it is repeated here, unchanged, so it is fresh when you answer:*
+largest ChatGPT file (bytes): 26827
+file 1 first line still the title; file 33 first line still says 'Answer the brief': True True
+
+spend sentence in orientation: describes (about $192 to $204 of rented compute in all, released in two parts, by version 4's section 12.4)
+version 4 section 12.4 total: about $192 to $204 | '## 12.4' or '### 12.4' heading present: True
+'$108' left anywhere in the new packet files: []
+opening ruling exists at 26159e5 : True
+'not in this packet' entries: 81 | heading says: 81 | entries that are not tracked paths: []

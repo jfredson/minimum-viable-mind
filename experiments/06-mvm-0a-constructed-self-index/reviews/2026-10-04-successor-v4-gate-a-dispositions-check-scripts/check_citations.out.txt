@@ -1,0 +1,155 @@
+##### check_citations --only docs/2026-10-04-gate-a-v4-dispositions-measurements-method.md
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 reference(s) name a file that is not in the repository
+
+[LOOK AT IT] 0 bare name(s) match more than one file
+
+[LOOK AT IT] 0 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+
+[LOOK AT IT] 0 reference(s) written with a gap or a wildcard that matched nothing
+
+[NOT CHECKED] 0 reference(s) to files outside this repository
+
+[NOT CHECKED] 0 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+
+[LOOK AT IT] 0 figure(s) worth a human eye
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 0.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================
+##### check_citations --only docs/2026-10-04-gate-a-v4-dispositions-measurements.md
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 reference(s) name a file that is not in the repository
+
+[LOOK AT IT] 0 bare name(s) match more than one file
+
+[LOOK AT IT] 0 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+
+[LOOK AT IT] 0 reference(s) written with a gap or a wildcard that matched nothing
+
+[NOT CHECKED] 0 reference(s) to files outside this repository
+
+[NOT CHECKED] 0 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+
+[LOOK AT IT] 0 figure(s) worth a human eye
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 0.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================
+##### check_citations --only docs/rulings/2026-10-04-successor-v4-gate-a-dispositions-PROPOSAL.md
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 reference(s) name a file that is not in the repository
+
+[LOOK AT IT] 0 bare name(s) match more than one file
+
+[LOOK AT IT] 0 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+
+[LOOK AT IT] 0 reference(s) written with a gap or a wildcard that matched nothing
+
+[NOT CHECKED] 0 reference(s) to files outside this repository
+
+[NOT CHECKED] 0 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+
+[LOOK AT IT] 1 figure(s) worth a human eye
+  docs/rulings/2026-10-04-successor-v4-gate-a-dispositions-PROPOSAL.md:561
+      figure: $0    cited: registered_shape_timing.out.txt    (only an approximate match found)
+      in:     > (MEASURED at the registered shape on the laptop's processor: one > transplant pass over the 600 development pairs takes 4.59 seconds, so one > model's nomination takes about two hours and the twelve
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 1.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================
+##### check_citations --only docs/rulings/2026-10-04-successor-v4-gate-a-questions-PROPOSAL.md
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 reference(s) name a file that is not in the repository
+
+[LOOK AT IT] 0 bare name(s) match more than one file
+
+[LOOK AT IT] 0 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+
+[LOOK AT IT] 0 reference(s) written with a gap or a wildcard that matched nothing
+
+[NOT CHECKED] 0 reference(s) to files outside this repository
+
+[NOT CHECKED] 0 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+
+[LOOK AT IT] 0 figure(s) worth a human eye
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 0.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================

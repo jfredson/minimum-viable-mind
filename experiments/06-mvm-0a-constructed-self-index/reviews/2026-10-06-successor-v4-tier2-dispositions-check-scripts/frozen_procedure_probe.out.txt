@@ -1,0 +1,36 @@
+frozen code and T3a rows extracted from origin/main at 53ae82cb2b7db8c88b81338d58eaa4eeaf33c000
+
+== A. measure.py --self-test, run from the copy of main
+  [AS EXPECTED] self-test passes  -> 40 PASS, 0 FAIL, last line 'all checks passed'
+
+== B. summarise on the committed T3a rows
+  [AS EXPECTED] toy lands on R3, as the committed summary.json does  -> substrate not a testbed; reason: arm(s) F failed the gate; gates {'T': True, 'C': True, 'M': True, 'F': False}
+  [AS EXPECTED] every arm F seed withheld, three reasons each  -> F/0: 3; F/1: 3; F/2: 3
+  [AS EXPECTED] (defect probe) the withheld arm F arithmetic is still written to summary.json  -> arithmetic_withheld = {0: 1.0, 1: 1.0, 2: 1.010840108401084}
+  [AS EXPECTED] the table does not print the withheld F reading to four places  -> column 2 of each F row is 'no verdict: ...'; the three accuracies the reading is made from are printed in column 6: 0.4850, 0.0587, 0.0587; 0.5675, 0.0563, 0.0563; 0.5300, 0.0638, 0.0688
+
+== C. constructed cases through summarise (landing written before each runs)
+  [AS EXPECTED] C1 arm T no verdict, arm C reads -> frozen code gives R2 (RT-241 calls this a hole)  -> R2: metric does not separate; T read False
+  [AS EXPECTED] C2 a seed that itself failed the gate still reads when its arm passed (arm-level gate applied to every seed)  -> C gate True; C/2 reading 0.9974293059125964
+  [AS EXPECTED] C3 the review's own split table: frozen code already FAILS arm F's gate (own and named-other are joint per seed; only seed 1 passes both)  -> F gate False; outcome R3
+  [AS EXPECTED] C4 one seed of three passes everything: frozen code passes arm F's gate and the collapse  -> F gate True; outcome fifth (F still unread here because the toy F read failed its floor)
+  [AS EXPECTED] C5 two-model fallback with arm F unread -> the fifth term with the fallback note (not R1)  -> fifth: metric validated, degree not read: read failed its floor: no...; notes 1
+  [AS EXPECTED] C6 arms T and C both no verdict -> frozen code gives R2  -> R2
+  [AS EXPECTED] C7 (defect probe) a failed collapse is NOT listed when the seed is already withheld for another reason  -> read failed its floor: no size's piece reaches four fifths; reported for description only (the site set was chosen with the piece rule switched off)
+  [AS EXPECTED] C8 arm M reads outside 0.3 to 0.7 -> outcome term unchanged (fifth), prediction_met False, nothing about it in the term or notes  -> fifth; M readings [0.95, 0.95, 0.545]
+
+== D. arm F's three gate conditions (own, named-other, collapse), every pattern on three seeds
+  patterns: 512
+  separate majorities pass, no seed passes all three: 6
+  frozen rule passes, no seed passes all three:       0
+  frozen rule passes, exactly one seed passes all:    18
+  frozen rule passes, joint rule fails:               18
+  separate passes, frozen fails:                       24
+
+== E. the toy gates from raw counts (out-repairs/gate_base.json), bar 790 of 3,000
+  T own-directed per seed: [True, True, True]
+  C own-directed per seed: [True, True, True]
+  M own-directed per seed: [True, True, True]
+  F per seed (own, named-other, collapse, ownership-free line): [(True, True, True, True), (True, False, True, True), (True, False, True, True)]; separate False, frozen False, joint False
+
+every case landed as written beside it

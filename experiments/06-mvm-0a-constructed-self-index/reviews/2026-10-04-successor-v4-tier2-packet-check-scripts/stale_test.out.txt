@@ -1,0 +1,29 @@
+a ruling carried whole (record 13), line 10: changed 's' -> 'X'
+   exit status 1; expected to fail: True; AS EXPECTED
+     - experiments/06-mvm-0a-constructed-self-index/reviews/packets/2026-10-04-successor-v4-tier2-gemini.md is stale
+     - experiments/06-mvm-0a-constructed-self-index/reviews/packets/2026-10-04-successor-v4-tier2-chatgpt-19-of-33-records-13-to-14.md is stale
+     - record 13 differs from its source in the Gemini packet (docs/rulings/2026-10-04-competing-solver-and-control-2-rulings.md)
+     - record 13 differs from its source in the ChatGPT packet (docs/rulings/2026-10-04-competing-solver-and-control-2-rulings.md)
+version 4 (record 4), line 2223: changed 't' -> 'X'
+   exit status 1; expected to fail: True; AS EXPECTED
+     - experiments/06-mvm-0a-constructed-self-index/reviews/packets/2026-10-04-successor-v4-tier2-gemini.md is stale
+     - experiments/06-mvm-0a-constructed-self-index/reviews/packets/2026-10-04-successor-v4-tier2-chatgpt-08-of-33-records-4.md is stale
+     - record 4 differs from its source in the Gemini packet (docs/successor-experiment-proposal-2026-10-03-v4.md)
+     - record 4 differs from its source in the ChatGPT packet (docs/successor-experiment-proposal-2026-10-03-v4.md)
+the brief in the protocol (record 1), line 390: changed 'N' -> 'X'
+   exit status 1; expected to fail: True; AS EXPECTED
+     - experiments/06-mvm-0a-constructed-self-index/reviews/packets/2026-10-04-successor-v4-tier2-gemini.md is stale
+     - experiments/06-mvm-0a-constructed-self-index/reviews/packets/2026-10-04-successor-v4-tier2-chatgpt-01-of-33-start-here-and-records-1-to-3.md is stale
+     - record 1 differs from its source in the Gemini packet (docs/outside-review-protocol.md)
+     - record 1 differs from its source in the ChatGPT packet (docs/outside-review-protocol.md)
+grammar.py inside the cut (record 25), line 40: changed 'a' -> 'X'
+   exit status 1; expected to fail: True; AS EXPECTED
+     - experiments/06-mvm-0a-constructed-self-index/reviews/packets/2026-10-04-successor-v4-tier2-gemini.md is stale
+     - experiments/06-mvm-0a-constructed-self-index/reviews/packets/2026-10-04-successor-v4-tier2-chatgpt-33-of-33-records-23-to-25.md is stale
+     - record 25 differs from its source in the Gemini packet (experiments/rehearsal-successor-measure/src/grammar.py)
+     - record 25 differs from its source in the ChatGPT packet (experiments/rehearsal-successor-measure/src/grammar.py)
+grammar.py outside the cut, line 300: changed 's' -> 'X'
+   exit status 0; expected to fail: False; AS EXPECTED
+the protocol outside the three carried sections, line 30: changed 'P' -> 'X'
+   exit status 0; expected to fail: False; AS EXPECTED
+clone working tree clean after the test: True

@@ -1,0 +1,45 @@
+episodes 3000; line for 'holds': candidate count >= 1546 (above 0.5 at the 0.05 level, one-sided exact binomial)
+model fingerprints checked against SHA256SUMS: 30 of 30 match
+          T/0  channel on : own 3000 correct, 3000 legal, 3000 candidate | other 3000, 3000, 3000
+               zeroed     : own  740 correct, 3000 legal, 3000 candidate | other 3000, 3000, 3000   -> own-directed part holds: True
+          T/1  channel on : own 3000 correct, 3000 legal, 3000 candidate | other 3000, 3000, 3000
+               zeroed     : own  753 correct, 3000 legal, 3000 candidate | other 3000, 3000, 3000   -> own-directed part holds: True
+          T/2  channel on : own 3000 correct, 3000 legal, 3000 candidate | other 3000, 3000, 3000
+               zeroed     : own  820 correct, 3000 legal, 3000 candidate | other 3000, 3000, 3000   -> own-directed part holds: True
+          C/0  channel on : own 1711 correct, 3000 legal, 2328 candidate | other  760, 3000, 2333
+               zeroed     : own  534 correct, 3000 legal, 2236 candidate | other  620, 3000, 2362   -> own-directed part holds: True
+          C/1  channel on : own 1703 correct, 3000 legal, 2247 candidate | other  751, 3000, 2502
+               zeroed     : own  549 correct, 3000 legal, 2160 candidate | other  630, 3000, 2494   -> own-directed part holds: True
+          C/2  channel on : own 1727 correct, 3000 legal, 2289 candidate | other  708, 3000, 2385
+               zeroed     : own  511 correct, 3000 legal, 2132 candidate | other  504, 3000, 2070   -> own-directed part holds: True
+          M/0  channel on : own 2592 correct, 3000 legal, 2794 candidate | other 1663, 3000, 2759
+               zeroed     : own  669 correct, 3000 legal, 2770 candidate | other 1584, 3000, 2748   -> own-directed part holds: True
+          M/1  channel on : own 2584 correct, 3000 legal, 2788 candidate | other 1699, 3000, 2758
+               zeroed     : own  657 correct, 3000 legal, 2686 candidate | other 1592, 3000, 2768   -> own-directed part holds: True
+          M/2  channel on : own 2600 correct, 3000 legal, 2785 candidate | other 1655, 3000, 2773
+               zeroed     : own  661 correct, 3000 legal, 2660 candidate | other 1580, 3000, 2796   -> own-directed part holds: True
+          F/0  channel on : own 1679 correct, 3000 legal, 2289 candidate | other  994, 3000, 2348
+               zeroed     : own  528 correct, 3000 legal, 2100 candidate | other  646, 3000, 2214   -> own-directed part holds: True
+          F/1  channel on : own 1654 correct, 3000 legal, 2197 candidate | other  781, 3000, 2449
+               zeroed     : own  555 correct, 3000 legal, 2238 candidate | other  636, 3000, 2542   -> own-directed part holds: True
+          F/2  channel on : own 1664 correct, 3000 legal, 2274 candidate | other  746, 3000, 2424
+               zeroed     : own  582 correct, 3000 legal, 2324 candidate | other  570, 3000, 2366   -> own-directed part holds: True
+      blind/0  channel on : own  702 correct, 3000 legal, 2784 candidate | other  712, 3000, 2786
+               zeroed     : own  702 correct, 3000 legal, 2784 candidate | other  712, 3000, 2786   -> own-directed part holds: True
+      blind/1  channel on : own  715 correct, 3000 legal, 2880 candidate | other  726, 3000, 2886
+               zeroed     : own  715 correct, 3000 legal, 2880 candidate | other  726, 3000, 2886   -> own-directed part holds: True
+      blind/2  channel on : own  702 correct, 3000 legal, 2768 candidate | other  650, 3000, 2764
+               zeroed     : own  702 correct, 3000 legal, 2768 candidate | other  650, 3000, 2764   -> own-directed part holds: True
+untrained-F/0  channel on : own    0 correct,    0 legal,    0 candidate | other    0,    0,    0
+               zeroed     : own    0 correct,    0 legal,    0 candidate | other    0,    0,    0   -> own-directed part holds: False
+untrained-F/1  channel on : own  158 correct, 1271 legal,  627 candidate | other  158, 1296,  636
+               zeroed     : own  157 correct, 1262 legal,  620 candidate | other  158, 1290,  632   -> own-directed part holds: False
+untrained-F/2  channel on : own  181 correct, 1536 legal,  726 candidate | other  158, 1464,  708
+               zeroed     : own  181 correct, 1536 legal,  726 candidate | other  158, 1464,  708   -> own-directed part holds: False
+verdict           T: holds on 3 of 3 seeds -> holds
+verdict           C: holds on 3 of 3 seeds -> holds
+verdict           M: holds on 3 of 3 seeds -> holds
+verdict           F: holds on 3 of 3 seeds -> holds
+verdict       blind: holds on 3 of 3 seeds -> holds
+verdict untrained-F: holds on 0 of 3 seeds -> does not hold
+wrote /Users/john/Code/mvm-dispositions/experiments/rehearsal-successor-measure/src/../out-lesion-content-check/lesion_content_check.json in 91.1s
