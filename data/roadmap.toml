@@ -142,12 +142,12 @@ john_items = [
   "Ten minutes, optional: the two Cloudflare secrets, so the site deploys",
 ]
 goals = [
-  { id = "W3.1", text = "The twelve open items of version 5 ruled, the bar for 'the repaired route holds' first", owner = "john", status = "planned" },
+  { id = "W3.1", text = "The twelve open items of version 5 ruled, the bar for 'the repaired route holds' first", owner = "john", status = "done", note = "the bar ruled 2026-10-08; the other eleven the same evening, all as recommended (docs/rulings/2026-10-08-v5-open-items-rulings.md)" },
   { id = "W3.2", text = "Version 5 checked by a session that wrote none of it, the fifteen branches merged, and the registration committed (kill date 1 is 2026-10-18)", owner = "both", status = "planned" },
   { id = "W3.3", text = "The three 10-million reruns of the repaired built models landed and verified against the ruled bar; a failure stops experiment C here and is written up as instrument research", owner = "both", status = "planned" },
   { id = "W3.4", text = "Branch: if the verification holds, the free-arm run at full size launched on John's go and landed; the learn-both gate and the floor read by a paired session", owner = "both", status = "planned" },
   { id = "W3.5", text = "The battery draft's third check filed and the measurement rehearsal of its first two entries committed, ahead of Gate A", owner = "agents", status = "planned" },
-  { id = "W3.6", text = "The December result restated under the refounding in one page, so that the kill dates and the new question point at the same thing", owner = "agents", status = "planned" },
+  { id = "W3.6", text = "The December result restated under the refounding in one page, so that the kill dates and the new question point at the same thing", owner = "agents", status = "done", note = "written, merged (pull request 127) and ruled 2026-10-08 (docs/rulings/2026-10-08-december-result-restatement-rulings.md)" },
 ]
 
 [[weekends]]

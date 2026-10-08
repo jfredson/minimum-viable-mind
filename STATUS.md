@@ -14,6 +14,52 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-10-08 (night) — every open item of the registration text is answered; what stands before the registration commit is checked work, not decisions
+
+*Written 2026-10-08 (Thursday night) by the Claude Code session that put the
+open items to John. Laptop only; nothing rented; $0. On the branch
+`v5-open-items-rulings-2026-10-08`, cut from the main line after pull request
+136.*
+
+**What John ruled.** Version 5 of the registration text
+(`docs/successor-experiment-proposal-2026-10-07-v5.md`) left twelve
+questions open in its section 21; the first, the verification bar, was ruled
+earlier the same day. The session put the other eleven to John as one packet
+in plain language, each with version 5's recommendation, two of them updated
+against the main line (the fifteen branches had already landed; the
+red-team ledger still has no rows from entry 230 on). His answer: "Agreed on
+all." For the one item that needed his own words, a dated file confirming his
+2026-10-06 decisions on the two flat built models and the spending alarm,
+which had no rulings file, the session drafted three wordings and he chose
+the first ("1"). Recorded in `docs/rulings/2026-10-08-v5-open-items-rulings.md`
+and `docs/rulings/2026-10-08-flat-models-ruling-confirmed.md`, authorship
+mixed throughout. The one change from the drafted text: the eighth outcome is
+renamed "instrument returned no reading on the separable mechanism", because
+"validated" is the word the refounding retired. One substantive change of
+rule: a failure of the hand-set model's rerun (arm T) now stops experiment C
+too, as a failure of the other two built models already did.
+
+**What was written in.** Version 5's body: each open-item marker replaced by
+a note of the ruling; the eighth term renamed in section 3's table and its
+scope rule; sections 5.6 and 11 (step 4b) carry arm T's stop; section 12.5
+and section 15 (entries 33 and 34) cite the confirmation; section 15 gains
+entry 37 and the source table a row; a change note at the end. No figure, bar
+or other stop changed. The site's data file and the roadmap data are brought
+up to date (the open-items goal and the restatement goal marked done).
+
+**What stands before the registration commit (kill date 1, 2026-10-18).**
+Nothing waits on John until the commit itself. Owed, each by a session and
+checked by another: the code changes the rulings ask for (the fitting step's
+iteration limit raised to 10,000 with the change to 1,800 of 1,980 episodes;
+the summary saying "gate not decidable on one seed"; the renamed outcome
+words, which the code does not yet print); the page 4 measurement pass re-run
+under the new limit, its figures quoted in section 7.2; the test with a
+differently coded decoy (weakness W18), before the commit if possible; the
+red-team ledger's rows from entry 230 on; the closure check of the fatal
+flaw's repair (the free model's gate); then section 7.4 names the main-line
+commit of the registered code. This branch itself is owed its check before it
+merges.
+
 ## WHERE THINGS STAND 2026-10-08 — the refounding is on the main line; the site is brought current so a Sentient Horizons post can be written from it; the registration text and the battery draft wait on checks
 
 *Written 2026-10-08 (Thursday) by the Claude Code session that brought the
