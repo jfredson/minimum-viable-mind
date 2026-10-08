@@ -1,0 +1,231 @@
+# check_citations.py, one run per new document, on the branch at cbf2f03 alone (confident findings and summary lines only)
+== docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements-method.md
+[CONFIDENT] 1 reference(s) name a file that is not in the repository
+      names: experiments/08-successor-degree/
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+Confident findings: 1. Things for a human to look at: 1.
+== docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md
+[CONFIDENT] 3 reference(s) name a file that is not in the repository
+      names: experiments/08-successor-degree/src/
+      names: procedure.py
+      names: out-freeze-tests/
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+Confident findings: 3. Things for a human to look at: 3.
+== docs/rulings/2026-10-04-successor-v4-gate-a-tier2-dispositions-PROPOSAL.md
+[CONFIDENT] 8 reference(s) name a file that is not in the repository
+      names: experiments/08-successor-degree/src/measure.py
+      names: procedure.py
+      names: docs/2026-10-04-successor-code-freeze.md
+      names: procedure.py
+      names: experiments/08-successor-degree/src/measure.py
+      names: procedure.py
+      names: procedure.py
+      names: docs/2026-10-04-successor-code-freeze.md
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+Confident findings: 8. Things for a human to look at: 4.
+== docs/rulings/2026-10-04-successor-v4-gate-a-tier2-questions-PROPOSAL.md
+[CONFIDENT] 0 reference(s) name a file that is not in the repository
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+Confident findings: 0. Things for a human to look at: 0.
+
+# the same, full output, on a scratch copy of the branch with origin/main's experiments/08-successor-degree and docs/2026-10-04-successor-code-freeze.md laid over it
+== docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements-method.md
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 reference(s) name a file that is not in the repository
+
+[LOOK AT IT] 0 bare name(s) match more than one file
+
+[LOOK AT IT] 0 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+
+[LOOK AT IT] 1 reference(s) written with a gap or a wildcard that matched nothing
+  docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements-method.md:143  out-controls-rerun/measure_<arm>_seed<s>.json
+
+[NOT CHECKED] 0 reference(s) to files outside this repository
+
+[NOT CHECKED] 0 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+
+[LOOK AT IT] 0 figure(s) worth a human eye
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 1.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================
+== docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 reference(s) name a file that is not in the repository
+
+[LOOK AT IT] 4 bare name(s) match more than one file
+  docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md:120  src/
+      could be: experiments/01-self-indexing-removal-test/src
+      could be: experiments/03-retained-independence/src
+      could be: experiments/06-mvm-0a-constructed-self-index/src
+      could be: experiments/08-successor-degree/src
+      could be: experiments/rehearsal-successor-measure/src
+      could be: site/src
+      ... and 1 more
+  docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md:120  measure.py
+      could be: experiments/08-successor-degree/src/measure.py
+      could be: experiments/rehearsal-successor-measure/src/measure.py
+  docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md:120  summary.json
+      could be: experiments/08-successor-degree/out-freeze-tests/t3a-committed-reads/summary.json
+      could be: experiments/08-successor-degree/out-freeze-tests/t3b-fresh-fit/summary.json
+      could be: experiments/08-successor-degree/out-freeze-tests/t6-pipeline/10M/measure/summary.json
+      could be: experiments/08-successor-degree/out-freeze-tests/t6-pipeline/30M/measure/summary.json
+      could be: experiments/rehearsal-successor-measure/out-competing-solver-run/summary.json
+      could be: experiments/rehearsal-successor-measure/out-controls-rerun/summary.json
+      ... and 1 more
+  docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md:120  table.md
+      could be: experiments/08-successor-degree/out-freeze-tests/t3a-committed-reads/table.md
+      could be: experiments/08-successor-degree/out-freeze-tests/t3b-fresh-fit/table.md
+      could be: experiments/08-successor-degree/out-freeze-tests/t6-pipeline/10M/measure/table.md
+      could be: experiments/08-successor-degree/out-freeze-tests/t6-pipeline/30M/measure/table.md
+      could be: experiments/rehearsal-successor-measure/out-competing-solver-run/table.md
+      could be: experiments/rehearsal-successor-measure/out-control-2-twenty-draws/table.md
+      ... and 3 more
+
+[LOOK AT IT] 0 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+
+[LOOK AT IT] 0 reference(s) written with a gap or a wildcard that matched nothing
+
+[NOT CHECKED] 0 reference(s) to files outside this repository
+
+[NOT CHECKED] 0 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+
+[LOOK AT IT] 0 figure(s) worth a human eye
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 4.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================
+== docs/rulings/2026-10-04-successor-v4-gate-a-tier2-dispositions-PROPOSAL.md
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 reference(s) name a file that is not in the repository
+
+[LOOK AT IT] 3 bare name(s) match more than one file
+  docs/rulings/2026-10-04-successor-v4-gate-a-tier2-dispositions-PROPOSAL.md:173  table.md
+      could be: experiments/08-successor-degree/out-freeze-tests/t3a-committed-reads/table.md
+      could be: experiments/08-successor-degree/out-freeze-tests/t3b-fresh-fit/table.md
+      could be: experiments/08-successor-degree/out-freeze-tests/t6-pipeline/10M/measure/table.md
+      could be: experiments/08-successor-degree/out-freeze-tests/t6-pipeline/30M/measure/table.md
+      could be: experiments/rehearsal-successor-measure/out-competing-solver-run/table.md
+      could be: experiments/rehearsal-successor-measure/out-control-2-twenty-draws/table.md
+      ... and 3 more
+  docs/rulings/2026-10-04-successor-v4-gate-a-tier2-dispositions-PROPOSAL.md:213  measure.py
+      could be: experiments/08-successor-degree/src/measure.py
+      could be: experiments/rehearsal-successor-measure/src/measure.py
+  docs/rulings/2026-10-04-successor-v4-gate-a-tier2-dispositions-PROPOSAL.md:263  measure.py
+      could be: experiments/08-successor-degree/src/measure.py
+      could be: experiments/rehearsal-successor-measure/src/measure.py
+
+[LOOK AT IT] 0 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+
+[LOOK AT IT] 0 reference(s) written with a gap or a wildcard that matched nothing
+
+[NOT CHECKED] 0 reference(s) to files outside this repository
+
+[NOT CHECKED] 0 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+
+[LOOK AT IT] 2 figure(s) worth a human eye
+  docs/rulings/2026-10-04-successor-v4-gate-a-tier2-dispositions-PROPOSAL.md:452
+      figure: 0.9    cited: docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md    (only an approximate match found)
+      in:     A > correctly paired model whose errors go to the other three agents' values > lands at `(1 − p) / 3`, outside the allowance at any accuracy below about > 0.9; on 800 pairs a rule of 0.018 would withh
+  docs/rulings/2026-10-04-successor-v4-gate-a-tier2-dispositions-PROPOSAL.md:452
+      figure: 0.99    cited: docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md    (only an approximate match found)
+      in:     A > correctly paired model whose errors go to the other three agents' values > lands at `(1 − p) / 3`, outside the allowance at any accuracy below about > 0.9; on 800 pairs a rule of 0.018 would withh
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 5.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================
+== docs/rulings/2026-10-04-successor-v4-gate-a-tier2-questions-PROPOSAL.md
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 reference(s) name a file that is not in the repository
+
+[LOOK AT IT] 0 bare name(s) match more than one file
+
+[LOOK AT IT] 0 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+
+[LOOK AT IT] 0 reference(s) written with a gap or a wildcard that matched nothing
+
+[NOT CHECKED] 0 reference(s) to files outside this repository
+
+[NOT CHECKED] 0 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 0 exact figure(s) absent from the one file their sentence cites
+
+[LOOK AT IT] 0 figure(s) worth a human eye
+
+==============================================================================
+Confident findings: 0. Things for a human to look at: 0.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================

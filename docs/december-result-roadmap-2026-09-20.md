@@ -97,6 +97,17 @@ put as open. John confirmed it that evening in his own words: "Yes,
 satisfactory and weaker than R1"
 (`docs/rulings/2026-10-03-fifth-outcome-and-both-figures-rulings.md`).*
 
+*Third dated note, 2026-10-06 (Pacific). John ruled on 2026-10-06
+(`docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md`, pages 5 and 9) that R3's "one or more arms"
+now means arm T or arm C failing its gate, or the free-trained arm failing
+it at its first run (step 5a), after the one permitted re-run; the mixed arm
+failing its gate is dropped, not R3; and the free-trained arm failing its
+gate later, at step 5b, once the two built arms have separated, is the fifth
+term with that reason. The registration also carries three new terms for a
+no verdict on a built arm. Every use of "metric validated" carries the
+phrase "on these constructed systems, for this intervention procedure"
+(page 11).*
+
 The separation bar for R1 versus R2, the eligibility threshold for R3, the
 seed count and the paired-uncertainty method are set by the rehearsal (section
 4, step 2 of the chain) and fixed in the registration text. This document does not invent

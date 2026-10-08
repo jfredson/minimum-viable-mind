@@ -1,0 +1,287 @@
+{
+ "part_b": {
+  "rows": {
+   "T/0": {
+    "p": 1.0,
+    "untouched": 0.0,
+    "formula_committed": 0.0,
+    "formula_recomputed": 0.0,
+    "formula_equal": true,
+    "erring_trials": 0.0,
+    "share_on_donor": null,
+    "review_case_gap": 0.0,
+    "review_case_exceeds": false
+   },
+   "T/1": {
+    "p": 1.0,
+    "untouched": 0.0,
+    "formula_committed": 0.0,
+    "formula_recomputed": 0.0,
+    "formula_equal": true,
+    "erring_trials": 0.0,
+    "share_on_donor": null,
+    "review_case_gap": 0.0,
+    "review_case_exceeds": false
+   },
+   "T/2": {
+    "p": 1.0,
+    "untouched": 0.0,
+    "formula_committed": 0.0,
+    "formula_recomputed": 0.0,
+    "formula_equal": true,
+    "erring_trials": 0.0,
+    "share_on_donor": null,
+    "review_case_gap": 0.0,
+    "review_case_exceeds": false
+   },
+   "C/0": {
+    "p": 0.54875,
+    "untouched": 0.05125,
+    "formula_committed": 0.06446428571428572,
+    "formula_recomputed": 0.06446428571428572,
+    "formula_equal": true,
+    "erring_trials": 361.00000000000006,
+    "share_on_donor": 0.11357340720221605,
+    "review_case_gap": 0.08595238095238095,
+    "review_case_exceeds": true
+   },
+   "C/1": {
+    "p": 0.58125,
+    "untouched": 0.04875,
+    "formula_committed": 0.05982142857142857,
+    "formula_recomputed": 0.05982142857142857,
+    "formula_equal": true,
+    "erring_trials": 334.99999999999994,
+    "share_on_donor": 0.11641791044776122,
+    "review_case_gap": 0.07976190476190474,
+    "review_case_exceeds": true
+   },
+   "C/2": {
+    "p": 0.5525,
+    "untouched": 0.06,
+    "formula_committed": 0.06392857142857143,
+    "formula_recomputed": 0.06392857142857143,
+    "formula_equal": true,
+    "erring_trials": 358.0,
+    "share_on_donor": 0.1340782122905028,
+    "review_case_gap": 0.08523809523809524,
+    "review_case_exceeds": true
+   },
+   "M/0": {
+    "p": 0.87125,
+    "untouched": 0.0125,
+    "formula_committed": 0.01839285714285715,
+    "formula_recomputed": 0.01839285714285715,
+    "formula_equal": true,
+    "erring_trials": 103.00000000000003,
+    "share_on_donor": 0.09708737864077668,
+    "review_case_gap": 0.02452380952380953,
+    "review_case_exceeds": true
+   },
+   "M/1": {
+    "p": 0.88,
+    "untouched": 0.0175,
+    "formula_committed": 0.017142857142857144,
+    "formula_recomputed": 0.017142857142857144,
+    "formula_equal": true,
+    "erring_trials": 96.0,
+    "share_on_donor": 0.14583333333333334,
+    "review_case_gap": 0.022857142857142857,
+    "review_case_exceeds": true
+   },
+   "M/2": {
+    "p": 0.87125,
+    "untouched": 0.01375,
+    "formula_committed": 0.01839285714285715,
+    "formula_recomputed": 0.01839285714285715,
+    "formula_equal": true,
+    "erring_trials": 103.00000000000003,
+    "share_on_donor": 0.10679611650485435,
+    "review_case_gap": 0.02452380952380953,
+    "review_case_exceeds": true
+   },
+   "F/0": {
+    "p": 0.55875,
+    "untouched": 0.05875,
+    "formula_committed": 0.06303571428571429,
+    "formula_recomputed": 0.06303571428571429,
+    "formula_equal": true,
+    "erring_trials": 353.0,
+    "share_on_donor": 0.13314447592067988,
+    "review_case_gap": 0.08404761904761905,
+    "review_case_exceeds": true
+   },
+   "F/1": {
+    "p": 0.56625,
+    "untouched": 0.05625,
+    "formula_committed": 0.06196428571428571,
+    "formula_recomputed": 0.06196428571428571,
+    "formula_equal": true,
+    "erring_trials": 347.0,
+    "share_on_donor": 0.12968299711815562,
+    "review_case_gap": 0.0826190476190476,
+    "review_case_exceeds": true
+   },
+   "F/2": {
+    "p": 0.55625,
+    "untouched": 0.06875,
+    "formula_committed": 0.06339285714285714,
+    "formula_recomputed": 0.06339285714285714,
+    "formula_equal": true,
+    "erring_trials": 355.0,
+    "share_on_donor": 0.15492957746478875,
+    "review_case_gap": 0.08452380952380953,
+    "review_case_exceeds": true
+   }
+  },
+  "review_case_exceeds_below_p": 0.9055,
+  "power_800_pairs": {
+   "broken_pairing_flagged_at_p=0.2633": 0.5588661567927002,
+   "broken_pairing_flagged_at_p=0.56": 0.9999697301356166,
+   "healthy_even_errors_withheld_at_p=0.2633": 0.09446384420703155,
+   "healthy_even_errors_withheld_at_p=0.56": 0.03465448574261015,
+   "healthy_even_errors_withheld_at_p=0.8": 0.002267709033741002,
+   "healthy_review_case_withheld_at_p=0.56": 0.9999999934413623,
+   "healthy_review_case_withheld_at_p=0.8": 0.9903850998074184
+  }
+ },
+ "part_c": {
+  "T": {
+   "per_seed": {
+    "0": {
+     "conditions": {
+      "own": true
+     },
+     "all_pass": true,
+     "reads": true
+    },
+    "1": {
+     "conditions": {
+      "own": true
+     },
+     "all_pass": true,
+     "reads": true
+    },
+    "2": {
+     "conditions": {
+      "own": true
+     },
+     "all_pass": true,
+     "reads": true
+    }
+   },
+   "gate_separate_majorities": true,
+   "gate_joint": true,
+   "seeds_passing_gate_and_reading": [
+    0,
+    1,
+    2
+   ],
+   "verdict_differs": false
+  },
+  "C": {
+   "per_seed": {
+    "0": {
+     "conditions": {
+      "own": true
+     },
+     "all_pass": true,
+     "reads": true
+    },
+    "1": {
+     "conditions": {
+      "own": true
+     },
+     "all_pass": true,
+     "reads": true
+    },
+    "2": {
+     "conditions": {
+      "own": true
+     },
+     "all_pass": true,
+     "reads": true
+    }
+   },
+   "gate_separate_majorities": true,
+   "gate_joint": true,
+   "seeds_passing_gate_and_reading": [
+    0,
+    1,
+    2
+   ],
+   "verdict_differs": false
+  },
+  "M": {
+   "per_seed": {
+    "0": {
+     "conditions": {
+      "own": true
+     },
+     "all_pass": true,
+     "reads": true
+    },
+    "1": {
+     "conditions": {
+      "own": true
+     },
+     "all_pass": true,
+     "reads": true
+    },
+    "2": {
+     "conditions": {
+      "own": true
+     },
+     "all_pass": true,
+     "reads": true
+    }
+   },
+   "gate_separate_majorities": true,
+   "gate_joint": true,
+   "seeds_passing_gate_and_reading": [
+    0,
+    1,
+    2
+   ],
+   "verdict_differs": false
+  },
+  "F": {
+   "per_seed": {
+    "0": {
+     "conditions": {
+      "own": true,
+      "other": true,
+      "collapse": true,
+      "ownership_free_line": true
+     },
+     "all_pass": true,
+     "reads": false
+    },
+    "1": {
+     "conditions": {
+      "own": true,
+      "other": false,
+      "collapse": true,
+      "ownership_free_line": true
+     },
+     "all_pass": false,
+     "reads": false
+    },
+    "2": {
+     "conditions": {
+      "own": true,
+      "other": false,
+      "collapse": true,
+      "ownership_free_line": true
+     },
+     "all_pass": false,
+     "reads": false
+    }
+   },
+   "gate_separate_majorities": false,
+   "gate_joint": false,
+   "seeds_passing_gate_and_reading": [],
+   "verdict_differs": false
+  }
+ }
+}

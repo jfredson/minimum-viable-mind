@@ -1,0 +1,39 @@
+line: candidate count >= 1546  (P(X>=1546) = 0.04831; P(X>=1545) = 0.05208)
+          T/0 on : own {'correct': 3000, 'legal': 3000, 'candidate': 3000}  other {'correct': 3000, 'legal': 3000, 'candidate': 3000}
+              off: own {'correct': 740, 'legal': 3000, 'candidate': 3000}  other {'correct': 3000, 'legal': 3000, 'candidate': 3000}  holds(own) True
+          T/1 on : own {'correct': 3000, 'legal': 3000, 'candidate': 3000}  other {'correct': 3000, 'legal': 3000, 'candidate': 3000}
+              off: own {'correct': 753, 'legal': 3000, 'candidate': 3000}  other {'correct': 3000, 'legal': 3000, 'candidate': 3000}  holds(own) True
+          T/2 on : own {'correct': 3000, 'legal': 3000, 'candidate': 3000}  other {'correct': 3000, 'legal': 3000, 'candidate': 3000}
+              off: own {'correct': 820, 'legal': 3000, 'candidate': 3000}  other {'correct': 3000, 'legal': 3000, 'candidate': 3000}  holds(own) True
+          C/0 on : own {'correct': 1711, 'legal': 3000, 'candidate': 2328}  other {'correct': 760, 'legal': 3000, 'candidate': 2333}
+              off: own {'correct': 534, 'legal': 3000, 'candidate': 2236}  other {'correct': 620, 'legal': 3000, 'candidate': 2362}  holds(own) True
+          C/1 on : own {'correct': 1703, 'legal': 3000, 'candidate': 2247}  other {'correct': 751, 'legal': 3000, 'candidate': 2502}
+              off: own {'correct': 549, 'legal': 3000, 'candidate': 2160}  other {'correct': 630, 'legal': 3000, 'candidate': 2494}  holds(own) True
+          C/2 on : own {'correct': 1727, 'legal': 3000, 'candidate': 2289}  other {'correct': 708, 'legal': 3000, 'candidate': 2385}
+              off: own {'correct': 511, 'legal': 3000, 'candidate': 2132}  other {'correct': 504, 'legal': 3000, 'candidate': 2070}  holds(own) True
+          M/0 on : own {'correct': 2592, 'legal': 3000, 'candidate': 2794}  other {'correct': 1663, 'legal': 3000, 'candidate': 2759}
+              off: own {'correct': 669, 'legal': 3000, 'candidate': 2770}  other {'correct': 1584, 'legal': 3000, 'candidate': 2748}  holds(own) True
+          M/1 on : own {'correct': 2584, 'legal': 3000, 'candidate': 2788}  other {'correct': 1699, 'legal': 3000, 'candidate': 2758}
+              off: own {'correct': 657, 'legal': 3000, 'candidate': 2686}  other {'correct': 1592, 'legal': 3000, 'candidate': 2768}  holds(own) True
+          M/2 on : own {'correct': 2600, 'legal': 3000, 'candidate': 2785}  other {'correct': 1655, 'legal': 3000, 'candidate': 2773}
+              off: own {'correct': 661, 'legal': 3000, 'candidate': 2660}  other {'correct': 1580, 'legal': 3000, 'candidate': 2796}  holds(own) True
+          F/0 on : own {'correct': 1679, 'legal': 3000, 'candidate': 2289}  other {'correct': 994, 'legal': 3000, 'candidate': 2348}
+              off: own {'correct': 528, 'legal': 3000, 'candidate': 2100}  other {'correct': 646, 'legal': 3000, 'candidate': 2214}  holds(own) True
+          F/1 on : own {'correct': 1654, 'legal': 3000, 'candidate': 2197}  other {'correct': 781, 'legal': 3000, 'candidate': 2449}
+              off: own {'correct': 555, 'legal': 3000, 'candidate': 2238}  other {'correct': 636, 'legal': 3000, 'candidate': 2542}  holds(own) True
+          F/2 on : own {'correct': 1664, 'legal': 3000, 'candidate': 2274}  other {'correct': 746, 'legal': 3000, 'candidate': 2424}
+              off: own {'correct': 582, 'legal': 3000, 'candidate': 2324}  other {'correct': 570, 'legal': 3000, 'candidate': 2366}  holds(own) True
+      blind/0 on : own {'correct': 702, 'legal': 3000, 'candidate': 2784}  other {'correct': 712, 'legal': 3000, 'candidate': 2786}
+              off: own {'correct': 702, 'legal': 3000, 'candidate': 2784}  other {'correct': 712, 'legal': 3000, 'candidate': 2786}  holds(own) True
+      blind/1 on : own {'correct': 715, 'legal': 3000, 'candidate': 2880}  other {'correct': 726, 'legal': 3000, 'candidate': 2886}
+              off: own {'correct': 715, 'legal': 3000, 'candidate': 2880}  other {'correct': 726, 'legal': 3000, 'candidate': 2886}  holds(own) True
+      blind/2 on : own {'correct': 702, 'legal': 3000, 'candidate': 2768}  other {'correct': 650, 'legal': 3000, 'candidate': 2764}
+              off: own {'correct': 702, 'legal': 3000, 'candidate': 2768}  other {'correct': 650, 'legal': 3000, 'candidate': 2764}  holds(own) True
+untrained-F/0 on : own {'correct': 0, 'legal': 0, 'candidate': 0}  other {'correct': 0, 'legal': 0, 'candidate': 0}
+              off: own {'correct': 0, 'legal': 0, 'candidate': 0}  other {'correct': 0, 'legal': 0, 'candidate': 0}  holds(own) False
+untrained-F/1 on : own {'correct': 158, 'legal': 1271, 'candidate': 627}  other {'correct': 158, 'legal': 1296, 'candidate': 636}
+              off: own {'correct': 157, 'legal': 1262, 'candidate': 620}  other {'correct': 158, 'legal': 1290, 'candidate': 632}  holds(own) False
+untrained-F/2 on : own {'correct': 181, 'legal': 1536, 'candidate': 726}  other {'correct': 158, 'legal': 1464, 'candidate': 708}
+              off: own {'correct': 181, 'legal': 1536, 'candidate': 726}  other {'correct': 158, 'legal': 1464, 'candidate': 708}  holds(own) False
+author's line 1546, this line 1546
+values compared: 216; differing: 0

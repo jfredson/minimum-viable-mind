@@ -1,0 +1,29 @@
+# Part A's five commands, on the branch at cbf2f03 (gate-a-v4-tier2-dispositions)
+$ ls -d experiments/08-successor-degree
+ls: experiments/08-successor-degree: No such file or directory
+$ grep -rln "metric validated\|degree not read\|substrate not a testbed" --include=*.py experiments
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-scripts/rule_from_text.py
+$ grep -n "def verdicts" experiments/rehearsal-successor-measure/src/rerun_v3.py
+374:def verdicts(row_kind, spec, nom, null, gate_pass, read):
+$ grep -n "seeds_clearing\|learn_both" .../repairs.py
+157:            own_seeds_clearing=sum(r["own_clears"] for r in rows),
+158:            other_seeds_clearing=sum(r["other_clears"] for r in rows),
+160:            learn_both=(sum(r["own_clears"] for r in rows) >= 2
+170:        log(f"    {k}: named-other clears on {v['other_seeds_clearing']} of {v['seeds']}, "
+171:            f"own-directed on {v['own_seeds_clearing']} of {v['seeds']}")
+$ grep -n "described_only\|inside_allowance\|bit_identical" .../rerun_controls.py
+156:def measure_at(m, arm, seed, spec, coefs, fresh, coll_pairs, described_only):
+174:    row = dict(site_set=spec, described_only=described_only,
+177:                                  inside_allowance=abs(u - (1 - acc) / 7) <= ROOM))
+210:    c["7"] = dict(bit_identical=bool(torch.equal(clean, null)))
+339:                + (f" | degree {p['reading']['degree']} | c7 {p['controls']['7']['bit_identical']}" if p else "")
+344:        if all(x and not x["described_only"] and x["reading"]["degree"] is not None for x in t):
+365:            if p["described_only"]:
+383:                f"{'identical' if c['7']['bit_identical'] else 'DIFFERS'} | {c2l} | {tsl} | {rdl} |")
+
+# The same first two, against origin/main at 53ae82c
+$ git ls-tree -d --name-only origin/main experiments/08-successor-degree
+experiments/08-successor-degree
+$ git grep -l ... origin/main -- "*.py"
+origin/main:experiments/08-successor-degree/src/measure.py
+origin/main:experiments/08-successor-degree/tests/reproduce_toy.py
