@@ -251,6 +251,8 @@ slip there costs the closure gate or the quality of the result, not a kill date.
 
 ## 5. Kill dates and what they trigger
 
+> **Dated note, 2026-10-07.** The fresh ruling this section says a kill date needs was given on 2026-10-07 (`docs/rulings/2026-10-07-two-sided-question-rulings.md`, decision 4; authorship mixed). The successor's registration commits by 2026-10-18 as its narrowed first release only, with the second release struck; the remaining registered runs of the second release no longer exist to be launched by 2026-11-01. New dates for the project's new lines are set there. What comes off the back end is named there: the December result as a degree reading of a free model. The text below is left as written.
+
 These are the dates the plan is held to. They are backstops, not pacing: each
 piece of work starts when its prerequisites are done, and the kill date is the
 point past which carrying on stops being anybody's call in the moment.
