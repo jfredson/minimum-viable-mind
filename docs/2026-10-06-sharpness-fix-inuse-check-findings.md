@@ -186,3 +186,5 @@ any figure was seen. Changing the bar is one constant in `measure.py`
 No rented machine, no spending, no rerun. The 11 remaining toy re-reads
 (about an hour; `out-sharpness-fix/logs/run_reread.sh` runs them). The
 independent check of this work.
+
+*Corrected 2026-10-08 after the branch's independent check (`docs/reviews/2026-10-08-sharpness-fix-check-claude-code.md`, its one must-fix item): the summary's ranges for route use now cover all six seeds, before and after the fix: arm C loses 22 to 29 per cent of its right own-directed answers (the earlier text said 24 to 29, omitting the before-fix 0.221 and 0.233), and arm M's stirred-in route 7 to 11 per cent (the earlier text said 9 to 11, omitting the before-fix 0.071). The direction of the claim is unchanged. Every figure in the tables reproduced in that check.*

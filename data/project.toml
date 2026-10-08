@@ -903,12 +903,12 @@ status = "done"
 [[next_steps]]
 id = "N31"
 title = "Merge the fifteen checked branches the registration text cites, so that every citation resolves at a main-line commit"
-when = "before the registration can be committed; the sharpness branch (pull request 118) is owed its check first"
-owner = "John merges; a session checks the sharpness branch"
+when = "done 2026-10-08 at John's word, through one integration branch, after the sharpness branch's check (every figure reproduced; one wording range corrected)"
+owner = "John ruled; a session merged and resolved the record's conflicts"
 cost = "$0"
-decision = true
+decision = false
 teaches = "Nothing new. A registration may not rest on a record its reader cannot open at a main-line commit (failure 4 of the known-failure list), and fifty of version 5's citations point at unmerged branches today."
-status = "pending"
+status = "done"
 
 [[next_steps]]
 id = "N32"

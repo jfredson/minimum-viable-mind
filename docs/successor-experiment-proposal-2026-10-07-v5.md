@@ -1503,7 +1503,7 @@ arm T's rerun failing its in-use check or gate also stops experiment C.]**
 committed toy models and on the nine retrained with the sharpness fixed, part
 A passes everywhere the number is 4.0. **Part B fails every arm C and arm M
 seed, before the fix and after it.** Swapping arm C's built answer to another
-agent loses only 24 to 29 per cent of its right own-directed answers (route
+agent loses only 22 to 29 per cent of its right own-directed answers (route
 use 0.269, 0.233, 0.221 before; 0.285, 0.273, 0.244 after); arm M's
 stirred-in route loses 7 to 11 per cent (0.071, 0.090, 0.109 before; 0.090,
 0.106, 0.100 after); arm T and arm M's separable route lose 100 per cent
@@ -4169,7 +4169,7 @@ the hand-set reference is a reference only as far as the in-use check
 certifies it** (section 5.6; new in this version, from the sharpness
 findings). On the twelve committed toy models and the nine retrained with the
 sharpness fixed, swapping arm C's built-in answer to another agent loses only
-24 to 29 per cent of its right own-directed answers, and arm M's stirred-in
+22 to 29 per cent of its right own-directed answers, and arm M's stirred-in
 route 7 to 11 per cent; arm T and arm M's separable route lose all of them.
 So on the toy, arm C's network gets most of "which agent am I" through the
 acting signal in its trunk, the free route arm F uses, and is "entangled by
@@ -5621,4 +5621,8 @@ pull request 132) found four of the five landed fully and the fifth at nine
 of ten places, no change outside the five, and both rulings quoted
 faithfully; its two leftovers, the words "not ruled" at the end of section
 9's in-use row and a stray fragment in section 7.4's frozen list, were fixed
-the same evening in this file.
+the same evening in this file. The check of the sharpness branch
+(`docs/reviews/2026-10-08-sharpness-fix-check-claude-code.md`), which found
+every figure reproduced, asked for one wording range to be corrected in
+section 5.6 and in the findings: arm C's route use before and after the fix
+spans 22 to 29 per cent, not 24 to 29; corrected the same evening.

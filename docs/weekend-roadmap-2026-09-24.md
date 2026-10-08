@@ -558,7 +558,9 @@ expected to be used. The likeliest ending, by the project's own prior, is that
 experiment C stops at one of its two stops and the back half of the block
 goes to the write-up and to the new lines (the battery's first two entries,
 the Gate A pass on the two-sided-question text). This is a session's re-plan,
-not a ruling.
+not a ruling. Noted later the same day: the ruling of 2026-10-04
+(`docs/rulings/2026-10-04-no-future-dates.md`) retired the weekly re-plan,
+so the goals above stand as the next ordered steps and not as a schedule.
 
 Outcome to report Sunday night: whether the registration is committed; what
 the reruns' verification read against the ruled bar; whether the free arm
