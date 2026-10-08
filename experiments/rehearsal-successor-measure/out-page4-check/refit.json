@@ -1,0 +1,528 @@
+{
+ "compared": 150,
+ "differ": 0,
+ "models": {
+  "C2": {
+   "0": {
+    "whole": 17,
+    "committed_whole": 17,
+    "piece": {
+     "1": 17,
+     "2": 17,
+     "4": 17,
+     "8": 17
+    },
+    "committed_piece": {
+     "1": 17,
+     "2": 17,
+     "4": 17,
+     "8": 17
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "1": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 49,
+     "2": 102,
+     "4": 165,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 49,
+     "2": 102,
+     "4": 165,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "2": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 53,
+     "2": 108,
+     "4": 166,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 53,
+     "2": 108,
+     "4": 166,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "3": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 62,
+     "2": 103,
+     "4": 158,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 62,
+     "2": 103,
+     "4": 158,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "4": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 52,
+     "2": 106,
+     "4": 162,
+     "8": 179
+    },
+    "committed_piece": {
+     "1": 52,
+     "2": 106,
+     "4": 162,
+     "8": 179
+    },
+    "read_max_abs_diff": 0.0
+   }
+  },
+  "M0": {
+   "0": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 132,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 132,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "1": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 91,
+     "2": 165,
+     "4": 180,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 91,
+     "2": 165,
+     "4": 180,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "2": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 71,
+     "2": 144,
+     "4": 179,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 71,
+     "2": 144,
+     "4": 179,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "3": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 78,
+     "2": 162,
+     "4": 180,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 78,
+     "2": 162,
+     "4": 180,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "4": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 66,
+     "2": 147,
+     "4": 180,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 66,
+     "2": 147,
+     "4": 180,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   }
+  },
+  "T0": {
+   "0": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 164,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 164,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "1": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 164,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 164,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "2": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 164,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 164,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "3": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 166,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 166,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "4": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 168,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 168,
+     "2": 180,
+     "4": 180,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   }
+  },
+  "F0": {
+   "0": {
+    "whole": 17,
+    "committed_whole": 17,
+    "piece": {
+     "1": 17,
+     "2": 17,
+     "4": 17,
+     "8": 17
+    },
+    "committed_piece": {
+     "1": 17,
+     "2": 17,
+     "4": 17,
+     "8": 17
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "1": {
+    "whole": 34,
+    "committed_whole": 34,
+    "piece": {
+     "1": 18,
+     "2": 25,
+     "4": 28,
+     "8": 30
+    },
+    "committed_piece": {
+     "1": 18,
+     "2": 25,
+     "4": 28,
+     "8": 30
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "2": {
+    "whole": 30,
+    "committed_whole": 30,
+    "piece": {
+     "1": 21,
+     "2": 23,
+     "4": 30,
+     "8": 30
+    },
+    "committed_piece": {
+     "1": 21,
+     "2": 23,
+     "4": 30,
+     "8": 30
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "3": {
+    "whole": 36,
+    "committed_whole": 36,
+    "piece": {
+     "1": 15,
+     "2": 21,
+     "4": 31,
+     "8": 40
+    },
+    "committed_piece": {
+     "1": 15,
+     "2": 21,
+     "4": 31,
+     "8": 40
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "4": {
+    "whole": 34,
+    "committed_whole": 34,
+    "piece": {
+     "1": 22,
+     "2": 22,
+     "4": 21,
+     "8": 33
+    },
+    "committed_piece": {
+     "1": 22,
+     "2": 22,
+     "4": 21,
+     "8": 33
+    },
+    "read_max_abs_diff": 0.0
+   }
+  },
+  "C1": {
+   "0": {
+    "whole": 17,
+    "committed_whole": 17,
+    "piece": {
+     "1": 17,
+     "2": 17,
+     "4": 17,
+     "8": 17
+    },
+    "committed_piece": {
+     "1": 17,
+     "2": 17,
+     "4": 17,
+     "8": 17
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "1": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 47,
+     "2": 75,
+     "4": 143,
+     "8": 180
+    },
+    "committed_piece": {
+     "1": 47,
+     "2": 75,
+     "4": 143,
+     "8": 180
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "2": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 39,
+     "2": 86,
+     "4": 138,
+     "8": 178
+    },
+    "committed_piece": {
+     "1": 39,
+     "2": 86,
+     "4": 138,
+     "8": 178
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "3": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 53,
+     "2": 80,
+     "4": 134,
+     "8": 178
+    },
+    "committed_piece": {
+     "1": 53,
+     "2": 80,
+     "4": 134,
+     "8": 178
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "4": {
+    "whole": 180,
+    "committed_whole": 180,
+    "piece": {
+     "1": 53,
+     "2": 76,
+     "4": 128,
+     "8": 178
+    },
+    "committed_piece": {
+     "1": 53,
+     "2": 76,
+     "4": 128,
+     "8": 178
+    },
+    "read_max_abs_diff": 0.0
+   }
+  },
+  "F2": {
+   "0": {
+    "whole": 17,
+    "committed_whole": 17,
+    "piece": {
+     "1": 17,
+     "2": 17,
+     "4": 17,
+     "8": 17
+    },
+    "committed_piece": {
+     "1": 17,
+     "2": 17,
+     "4": 17,
+     "8": 17
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "1": {
+    "whole": 25,
+    "committed_whole": 25,
+    "piece": {
+     "1": 15,
+     "2": 17,
+     "4": 23,
+     "8": 24
+    },
+    "committed_piece": {
+     "1": 15,
+     "2": 17,
+     "4": 23,
+     "8": 24
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "2": {
+    "whole": 39,
+    "committed_whole": 39,
+    "piece": {
+     "1": 28,
+     "2": 28,
+     "4": 36,
+     "8": 36
+    },
+    "committed_piece": {
+     "1": 28,
+     "2": 28,
+     "4": 36,
+     "8": 36
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "3": {
+    "whole": 30,
+    "committed_whole": 30,
+    "piece": {
+     "1": 22,
+     "2": 20,
+     "4": 24,
+     "8": 27
+    },
+    "committed_piece": {
+     "1": 22,
+     "2": 20,
+     "4": 24,
+     "8": 27
+    },
+    "read_max_abs_diff": 0.0
+   },
+   "4": {
+    "whole": 27,
+    "committed_whole": 27,
+    "piece": {
+     "1": 21,
+     "2": 22,
+     "4": 28,
+     "8": 26
+    },
+    "committed_piece": {
+     "1": 21,
+     "2": 22,
+     "4": 28,
+     "8": 26
+    },
+    "read_max_abs_diff": 0.0
+   }
+  }
+ }
+}

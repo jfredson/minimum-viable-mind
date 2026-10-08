@@ -1,0 +1,215 @@
+{
+ "across_seed_spread_of_raw_difference": {
+  "C": 0.012054563451241198,
+  "F": null,
+  "M": 0.028586491565073164,
+  "T": 0.0
+ },
+ "arms": {
+  "C": {
+   "no_verdict": {},
+   "read": true,
+   "readings": {
+    "0": 1.0025575447570334,
+    "1": 1.0,
+    "2": 1.0
+   },
+   "seeds": 3,
+   "seeds_read": 3
+  },
+  "F": {
+   "no_verdict": {
+    "0": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "1": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "2": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 3,
+   "seeds_read": 0
+  },
+  "M": {
+   "no_verdict": {},
+   "read": true,
+   "readings": {
+    "0": 0.525236593059937,
+    "1": 0.4793388429752066,
+    "2": 0.5208333333333334
+   },
+   "seeds": 3,
+   "seeds_read": 3
+  },
+  "T": {
+   "no_verdict": {},
+   "read": true,
+   "readings": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0
+   },
+   "seeds": 3,
+   "seeds_read": 3
+  }
+ },
+ "gates": {
+  "C": true,
+  "F": false,
+  "M": true,
+  "T": true
+ },
+ "outcome": {
+  "arm_M": {
+   "prediction_met": true,
+   "seeds": {
+    "0": {
+     "in_band": true,
+     "reading": 0.525236593059937,
+     "true_slot": 0.5,
+     "within": 0.025236593059936974,
+     "within_tolerance": true
+    },
+    "1": {
+     "in_band": true,
+     "reading": 0.4793388429752066,
+     "true_slot": 0.47603305785123967,
+     "within": 0.0033057851239669533,
+     "within_tolerance": true
+    },
+    "2": {
+     "in_band": true,
+     "reading": 0.5208333333333334,
+     "true_slot": 0.4919871794871795,
+     "within": 0.028846153846153855,
+     "within_tolerance": true
+    }
+   },
+   "status": "read"
+  },
+  "code": "R3",
+  "notes": [],
+  "reason": "arm(s) F failed the gate",
+  "term": "substrate not a testbed"
+ },
+ "per_seed": {
+  "C": {
+   "0": {
+    "above_one": true,
+    "degree": 1.0025575447570334,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "1": {
+    "above_one": false,
+    "degree": 1.0,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "2": {
+    "above_one": false,
+    "degree": 1.0,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  },
+  "F": {
+   "0": {
+    "arithmetic_withheld": 1.0,
+    "degree": null,
+    "reasons": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   },
+   "1": {
+    "arithmetic_withheld": 1.0,
+    "degree": null,
+    "reasons": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   },
+   "2": {
+    "arithmetic_withheld": 1.0,
+    "degree": null,
+    "reasons": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   }
+  },
+  "M": {
+   "0": {
+    "above_one": false,
+    "degree": 0.525236593059937,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "1": {
+    "above_one": false,
+    "degree": 0.4793388429752066,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "2": {
+    "above_one": false,
+    "degree": 0.5208333333333334,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  },
+  "T": {
+   "0": {
+    "above_one": false,
+    "degree": 0.0,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "1": {
+    "above_one": false,
+    "degree": 0.0,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "2": {
+    "above_one": false,
+    "degree": 0.0,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  }
+ },
+ "versions": {
+  "device": "cpu",
+  "numpy": "2.5.0",
+  "python": "3.12.13",
+  "sklearn": "1.9.0",
+  "torch": "2.12.1"
+ }
+}
