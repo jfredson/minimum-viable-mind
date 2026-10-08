@@ -74,11 +74,11 @@ const currentYear = new Date().getFullYear();
             <a href="/questions/">Questions and ideas</a>
             <a href="/learned/">What we have learned</a>
             <a href="/story/">The story so far</a>
-            <a href="https://sentient-horizons.com" rel="noopener">Sentient Horizons</a>
           </p>
           <p class="footer-meta">
             © {currentYear} John Fredrickson, with Claude. Project map last updated {fmtDate(project.updated_on)}; site exported {fmtDate(derived.exported_on)}{derived.commit ? ` from commit ${derived.commit}` : ''}. The public program log, updated whenever STATUS.md is.
           </p>
+          <p class="footer-parent"><a href="https://sentient-horizons.com" rel="noopener">A Sentient Horizons project.</a></p>
         </div>
       </div>
     </footer>
