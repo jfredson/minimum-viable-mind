@@ -81,6 +81,8 @@ every push. The weekend 1 plan listed setting them as an optional ten-minute
 item and it was never done. Deploying is a launch and stays John's call; the
 step is on the roadmap as a decision for him.
 
+**Addendum, later the same day.** John merged this branch (pull request 124) and ran the first deploy himself (`npm run deploy` from `site/`); the site is live at https://minimumviablemind.sentient-horizons.com, and the first deploy created the subdomain's record and certificate on its own. The deploy-on-push workflow still fails until the two Cloudflare secrets exist; the walkthrough was given in conversation. The project name's .com, .org and .net were registered by someone else on 2025-04-15 (Squarespace Domains, expiring 2027-04-15; the .com shows a "Coming Soon" page), so the site stays at the subdomain by John's word. The essay draft for Sentient Horizons, *The Smallest Possible Mind*, is on a branch in that repo with the site linked at its home, learned, roadmap and spend pages.
+
 **What is owed next, in order.** John's merge of this branch; his ruling on
 the verification bar and the other open items of version 5; the check of
 version 5 by a session that wrote none of it; the merge of the fifteen
