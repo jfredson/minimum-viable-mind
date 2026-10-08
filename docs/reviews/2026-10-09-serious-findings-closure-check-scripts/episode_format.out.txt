@@ -1,0 +1,66 @@
+vocabulary size 46 words; episode length 56 tokens
+
+== dev: 600 pairs, 1200 episodes (pool dev, relaxed False)
+   every field holds on every episode: True
+   matched pairs token-for-token identical: 600 of 600; acting channel differs: 600 of 600
+   decoded named agent agrees with the generator: 1200 of 1200
+   share of episodes whose own-directed action comes first: 0.5
+   first assignment turn, by agent index: {0: 137, 1: 166, 2: 150, 3: 147}
+
+== fresh: 800 pairs, 1600 episodes (pool fresh, relaxed False)
+   every field holds on every episode: True
+   matched pairs token-for-token identical: 800 of 800; acting channel differs: 800 of 800
+   decoded named agent agrees with the generator: 1600 of 1600
+   share of episodes whose own-directed action comes first: 0.5075
+   first assignment turn, by agent index: {0: 189, 1: 208, 2: 212, 3: 191}
+
+== relaxed: 800 pairs, 1600 episodes (pool fresh, relaxed True)
+   every field holds on every episode: True
+   matched pairs token-for-token identical: 800 of 800; acting channel differs: 800 of 800
+   decoded named agent agrees with the generator: 1600 of 1600
+   share of episodes whose own-directed action comes first: 0.52
+   first assignment turn, by agent index: {0: 197, 1: 201, 2: 198, 3: 204}
+
+== gate: 1500 pairs, 3000 episodes (pool dev, relaxed False)
+   every field holds on every episode: True
+   matched pairs token-for-token identical: 1500 of 1500; acting channel differs: 1500 of 1500
+   decoded named agent agrees with the generator: 3000 of 3000
+   share of episodes whose own-directed action comes first: 0.512
+   first assignment turn, by agent index: {0: 383, 1: 369, 2: 370, 3: 378}
+
+== trajectory: 200 pairs, 400 episodes (pool dev, relaxed False)
+   every field holds on every episode: True
+   matched pairs token-for-token identical: 200 of 200; acting channel differs: 200 of 200
+   decoded named agent agrees with the generator: 400 of 400
+   share of episodes whose own-directed action comes first: 0.495
+   first assignment turn, by agent index: {0: 51, 1: 58, 2: 53, 3: 38}
+
+== train sample: 3000 pairs, 6000 episodes (pool train, relaxed False)
+   every field holds on every episode: True
+   matched pairs token-for-token identical: 3000 of 3000; acting channel differs: 3000 of 3000
+   decoded named agent agrees with the generator: 6000 of 6000
+   share of episodes whose own-directed action comes first: 0.5033
+   first assignment turn, by agent index: {0: 732, 1: 727, 2: 795, 3: 746}
+
+fields checked on every episode:
+   - length is 56 tokens
+   - starts <bos>, ends <eos>
+   - ten turns: eight of five tokens, then two of seven
+   - each assignment turn is: marker, 'assign', item, value, newline
+   - each action turn is: act word, 'revise', who-word, item, answer cue, mask word, newline
+   - four agents (four marker words) and two items
+   - marker words and items from the pool (train: m0-m11, it0-it4)
+   - eight assignment turns, one per agent and item
+   - eight value slots (v0-v7)
+   - within an item the four values are distinct
+   - the acting channel fires on all of exactly one agent's two assignment turns, and on none of the rest
+   - the acting channel fires on both action turns, every token
+   - one action turn's who-word is the 'your own' word, the other's a marker word
+   - the named marker word is one of the episode's four agents
+   - departure 1: the model's own marker word appears in neither action turn
+   - departure 1: the token three before the own-directed answer slot is the 'your own' word
+   - departure 2: the answer slot holds the mask word in both action turns
+   - departure 2: no value word appears in either action turn
+   - own-directed answer = successor of the model's own earlier value on that item, round eight
+   - named-other answer = successor of the named agent's earlier value on that item, round eight
+   - the scored positions are the two mask words

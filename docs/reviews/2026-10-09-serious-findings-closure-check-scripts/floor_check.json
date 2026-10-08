@@ -1,0 +1,113 @@
+{
+ "grid_agree": [
+  226981,
+  226981
+ ],
+ "random_agree": [
+  200000,
+  200000
+ ],
+ "at_or_under": {
+  "inputs": 115351,
+  "printed_alone": 69172,
+  "code": 0
+ },
+ "small_case": {
+  "own equals untouched": {
+   "untouched": 0.24,
+   "own": 0.24,
+   "site_sets": 45,
+   "printed_alone_admits": 37,
+   "code_clears": 0,
+   "pick": "no site set clears the whole-state floor",
+   "reading_status": "no verdict",
+   "required_room": 0.0
+  },
+  "own below untouched": {
+   "untouched": 0.25,
+   "own": 0.2333,
+   "site_sets": 45,
+   "printed_alone_admits": 37,
+   "code_clears": 0,
+   "pick": "no site set clears the whole-state floor",
+   "reading_status": "no verdict",
+   "required_room": -0.013359999999999995
+  },
+  "own a hair below untouched": {
+   "untouched": 0.2417,
+   "own": 0.24,
+   "site_sets": 45,
+   "printed_alone_admits": 37,
+   "code_clears": 0,
+   "pick": "no site set clears the whole-state floor",
+   "reading_status": "no verdict",
+   "required_room": -0.0013600000000000057
+  },
+  "positive control: own above untouched": {
+   "untouched": 0.12,
+   "own": 0.95,
+   "site_sets": 45,
+   "printed_alone_admits": 10,
+   "code_clears": 10,
+   "pick": "nominated",
+   "reading_status": "valid",
+   "required_room": 0.664
+  }
+ },
+ "competing_solver": {
+  "blind_seed0_channel_left_on": {
+   "untouched": 0.24166666666666667,
+   "own": 0.23833333333333334,
+   "required_room": -0.002666666666666662,
+   "printed_alone_admits": 45,
+   "code_clears": 0,
+   "recorded_clears": 0,
+   "pick": "no site set clears the whole-state floor"
+  },
+  "blind_seed0_channel_removed": {
+   "untouched": 0.24,
+   "own": 0.23333333333333334,
+   "required_room": -0.005333333333333324,
+   "printed_alone_admits": 45,
+   "code_clears": 0,
+   "recorded_clears": 0,
+   "pick": "no site set clears the whole-state floor"
+  },
+  "blind_seed1_channel_left_on": {
+   "untouched": 0.23,
+   "own": 0.21,
+   "required_room": -0.016000000000000014,
+   "printed_alone_admits": 45,
+   "code_clears": 0,
+   "recorded_clears": 0,
+   "pick": "no site set clears the whole-state floor"
+  },
+  "blind_seed1_channel_removed": {
+   "untouched": 0.23,
+   "own": 0.21,
+   "required_room": -0.016000000000000014,
+   "printed_alone_admits": 45,
+   "code_clears": 0,
+   "recorded_clears": 0,
+   "pick": "no site set clears the whole-state floor"
+  },
+  "blind_seed2_channel_left_on": {
+   "untouched": 0.23,
+   "own": 0.23666666666666666,
+   "required_room": 0.005333333333333324,
+   "printed_alone_admits": 0,
+   "code_clears": 0,
+   "recorded_clears": 0,
+   "pick": "no site set clears the whole-state floor"
+  },
+  "blind_seed2_channel_removed": {
+   "untouched": 0.23,
+   "own": 0.23333333333333334,
+   "required_room": 0.002666666666666662,
+   "printed_alone_admits": 0,
+   "code_clears": 0,
+   "recorded_clears": 0,
+   "pick": "no site set clears the whole-state floor"
+  }
+ }
+}
