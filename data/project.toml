@@ -902,11 +902,11 @@ status = "pending"
 
 [[next_steps]]
 id = "N32"
-title = "Restate the December result under the refounding, in one page: what the year's deliverable is now, and that an early stop of experiment C counts as a result"
-when = "this week; John agreed to the recommendation on 2026-10-08"
-owner = "Claude Code session drafts, John reads"
+title = "Rule the one-page restatement of the December result under the refounding: what the year's deliverable is now, and that an early stop of experiment C counts as a result"
+when = "drafted 2026-10-08 as a proposal (docs/rulings/2026-10-08-december-result-restatement-PROPOSAL.md); three decisions wait on John"
+owner = "Claude Code session drafted; John rules"
 cost = "$0"
-decision = false
+decision = true
 teaches = "The December-result roadmap still asks the old question (can the measure read the degree of a free model) while the project's own prior says the free model most likely returns no verdict. One page that says what the year closes with, so that the kill dates and the new question point at the same thing and a $1.14 stop is not experienced as the year failing."
 status = "pending"
 
