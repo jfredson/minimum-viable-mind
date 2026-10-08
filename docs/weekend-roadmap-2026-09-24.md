@@ -516,3 +516,40 @@ re-plan, not a ruling.
 Outcome to report Sunday night: version 3 through its review or which findings
 block; whether the registration text exists and where its review stands; what
 of the code is frozen and tested.
+
+### Weekend 3, 2026-10-10 to 12 (re-planned 2026-10-08, Thursday)
+
+Where the weekend starts: the refounding of 2026-10-07 is on the main line
+(pull request 123). The degree experiment is now instrument research with two
+stops: the repaired built models are verified at 10 million parameters before
+the free-arm run, and the free arm's gate and floor are read before the second
+release can be asked for. Version 5 of the registration text has every ruling
+written in and twelve open items; it is owed a check by a session that wrote
+none of it. The battery draft is at version 3 and owed a third check.
+
+John's items, in order: rule the bar for "the repaired route holds" (the
+decision the registration turns on; as coded it fails the toy's own built
+models) and the other open items; merge the fifteen checked branches the text
+cites; commit the registration once its check is clean; the go for the three
+reruns (about $1.14), then, only if they hold, the go for the free-arm run
+(about $12).
+
+Agent sessions: the check of version 5; the check of the sharpness branch;
+the battery draft's third check and the rehearsal of its first two entries;
+the one-page restatement of the December result under the refounding (John
+agreed to it on 2026-10-08).
+
+**The slip, and which weekend absorbs it.** The registration has slipped two
+weekends from the plan as first written and lands inside kill date 1 with six
+days in hand if it lands this weekend. The second release cannot be asked for
+before weekend 4, and only if both stops are passed; weekends 4 to 7 are left
+as written until Sunday's handoff. Both reserve weekends (8 and 9) are now
+expected to be used. The likeliest ending, by the project's own prior, is that
+experiment C stops at one of its two stops and the back half of the block
+goes to the write-up and to the new lines (the battery's first two entries,
+the Gate A pass on the two-sided-question text). This is a session's re-plan,
+not a ruling.
+
+Outcome to report Sunday night: whether the registration is committed; what
+the reruns' verification read against the ruled bar; whether the free arm
+ran and what its gate and floor read; where the battery draft stands.

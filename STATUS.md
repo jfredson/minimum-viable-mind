@@ -14,6 +14,82 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-10-08 — the refounding is on the main line; the site is brought current so a Sentient Horizons post can be written from it; the registration text and the battery draft wait on checks
+
+*Written 2026-10-08 (Thursday) by the Claude Code session that brought the
+site current. Laptop only; nothing rented; $0. Everything is on the branch
+`site-current-2026-10-08`, cut from the main line after pull request 123,
+with the balance correction of the previous evening carried over.*
+
+**What stands this morning.** Pull request 123 merged at John's word
+("Merge it") on the evening of 2026-10-07, so the poll, the router-control
+check, the refounding proposal with its reviews and eleven rulings, and the
+battery draft are on the main line; the entry below, which says "all on one
+unmerged branch", was true when written. Two drafts by fresh sessions wait on
+checks, both on branches: version 5 of the registration text
+(`docs/successor-experiment-proposal-2026-10-07-v5.md`, 39 ruled changes
+written in, twelve open items; the largest is the bar for "the repaired route
+holds", which as coded fails the toy's own built models, and fifty of its
+citations point at fifteen unmerged branches) and version 3 of the battery
+draft. Money unchanged: about $229.62 of $450; balance $72.32.
+
+**The assessment John asked for, and what he agreed to.** He asked for the
+state of the project, the new direction, and whether the philosophy and the
+roadmap are sound. The session's reading, given in conversation: the
+diagnosis behind the refounding is sound and overdue (a test aimed at the
+floor could not lose; the axes can); the win condition is instrument
+validation, not evidence of presence; everything that can discriminate
+depends on a construction line that does not exist yet, so the new question
+has not yet produced a test that can lose in 2026; the refounding is one day
+old and has had one day of correlated scrutiny. On the year: a result by
+2026-12-21 is achievable, and the result the December-result roadmap was
+written for is probably not, which the project's own prior already says
+(version 5, section 3: the free model most likely returns no verdict or
+fails its gate). Three recommendations, which John answered "Ok sounds good
+to me": rule the verification bar first, before the branches merge; restate
+the December result under the refounding in one page; triage which documents
+need a full pairing check with ten weekends left. These are a session's
+views, not rulings; the first two are on the roadmap as next steps.
+
+**The site.** John asked whether the site could be brought, by the end of
+the day, to a state from which a Sentient Horizons post could be written
+covering the goals, what has been learned, what the year is trying to learn,
+and what running the project has taught about applying the book's
+philosophy. Done on this branch: `data/project.toml` rewritten for the
+refounding (the two "where" paragraphs; goals 2 and 3 reframed from the
+floor to the axes and to construction; stage 2 and stage 6 remaining work;
+question 1 parked and the two sides of the new question added as questions 8
+and 9; a finding for the battery draft's central result; next steps closed,
+updated and added, including the verification bar, the fifteen branches, the
+one-page restatement and the site's missing secrets; a timeline row for
+today); `data/roadmap.toml` re-planned for weekend 3 as the Thursday rule
+asks (weekend 2 marked partial with its goals settled and two carried;
+weekend 3 active with six goals: the open items ruled, the registration
+committed, the reruns verified, the free-arm run if they hold, the battery's
+third check, the restatement); the markdown twin's weekend log extended;
+and the plain-language page (`site/src/pages/eli5.astro`) rewritten with
+the four things the post needs, including a section on what running the
+project has taught about the book's rules in practice. Both data files
+validate and the site builds.
+
+**One finding about the site itself.** It has never been public. Every
+"Deploy site" workflow run since the site was built on 2026-09-20 has failed
+at the deploy step because the two Cloudflare secrets
+(`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`) were never set on the
+repository (`gh secret list` returns nothing); validation and build pass on
+every push. The weekend 1 plan listed setting them as an optional ten-minute
+item and it was never done. Deploying is a launch and stays John's call; the
+step is on the roadmap as a decision for him.
+
+**What is owed next, in order.** John's merge of this branch; his ruling on
+the verification bar and the other open items of version 5; the check of
+version 5 by a session that wrote none of it; the merge of the fifteen
+branches; the registration commit inside 2026-10-18; the battery draft's
+third check; the one-page restatement of the December result. The blog post
+itself is written in the Sentient Horizons repo and passes the Voice
+Calibration Protocol and the Cold Reader before it goes anywhere; nothing on
+the site is publish-track prose.
+
 ## WHERE THINGS STAND 2026-10-07 — the project is refounded on the two-sided question; experiment A relabelled, C narrowed to its first release, D promoted; the poll of three outside models and its synthesis are on the record; all on one unmerged branch
 
 *This section is the current state. Everything below it is the older
