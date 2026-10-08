@@ -1,0 +1,18 @@
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:839.)
+  f"{float(m.own_sharpness):+.4f}; weight on the true agent {float(w):.4f}")
+succ_t_10m_seed0.pt              arm T d_model 256: sharpness +1.9469; weight on the true agent 0.9424
+succ_c_10m_seed0.pt              arm C d_model 256: sharpness -0.0886; weight on the true agent 0.2183
+succ_m_10m_seed0.pt              arm M d_model 256: sharpness -0.0083; weight on the true agent 0.2469
+succ_f_10m_seed0.pt              arm F d_model 256: sharpness +4.0000; weight on the true agent 0.9990
+ckpt_T_base_seed0.pt             arm T d_model 160: sharpness +3.8837; weight on the true agent 0.9987
+ckpt_T_base_seed1.pt             arm T d_model 160: sharpness +3.8835; weight on the true agent 0.9987
+ckpt_T_base_seed2.pt             arm T d_model 160: sharpness +3.8825; weight on the true agent 0.9987
+ckpt_C_base_seed0.pt             arm C d_model 160: sharpness +1.7310; weight on the true agent 0.9140
+ckpt_C_base_seed1.pt             arm C d_model 160: sharpness +0.6970; weight on the true agent 0.5733
+ckpt_C_base_seed2.pt             arm C d_model 160: sharpness +0.9281; weight on the true agent 0.6808
+ckpt_M_base_seed0.pt             arm M d_model 160: sharpness +2.8421; weight on the true agent 0.9899
+ckpt_M_base_seed1.pt             arm M d_model 160: sharpness +2.6914; weight on the true agent 0.9864
+ckpt_M_base_seed2.pt             arm M d_model 160: sharpness +2.4174; weight on the true agent 0.9767
+ckpt_F_base_seed0.pt             arm F d_model 160: sharpness +4.0000; weight on the true agent 0.9990
+ckpt_F_base_seed1.pt             arm F d_model 160: sharpness +4.0000; weight on the true agent 0.9990
+ckpt_F_base_seed2.pt             arm F d_model 160: sharpness +4.0000; weight on the true agent 0.9990

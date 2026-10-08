@@ -1,0 +1,4 @@
+succ_m_10m_seed0: loads strictly (arm M, 5,375,077 parameters); step 108919 of 108919; tokens 585,548,544; batch 96; lr 0.002; evaluations logged 55; stream skipped 0; md5 29c853a6cac2 watchdog ['29c853a6cac2'] match True
+succ_t_10m_seed0: loads strictly (arm T, 5,265,759 parameters); step 108919 of 108919; tokens 585,548,544; batch 96; lr 0.002; evaluations logged 55; stream skipped 0; md5 98900e74ec34 watchdog ['98900e74ec34'] match True
+succ_c_10m_seed0: loads strictly (arm C, 6,471,751 parameters); step 108919 of 108919; tokens 585,548,544; batch 96; lr 0.002; evaluations logged 55; stream skipped 0; md5 7a091f3add5a watchdog ['7a091f3add5a'] match True
+succ_f_10m_seed0: loads strictly (arm F, 6,362,951 parameters); step 108919 of 108919; tokens 585,548,544; batch 96; lr 0.002; evaluations logged 55; stream skipped 0; md5 41934775de12 watchdog ['41934775de12'] match True

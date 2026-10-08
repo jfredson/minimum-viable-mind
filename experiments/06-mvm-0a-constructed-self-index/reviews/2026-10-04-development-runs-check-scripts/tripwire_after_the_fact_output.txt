@@ -1,0 +1,13 @@
+machines, with deletion times from the watchdog logs:
+  succ_m_10m_seed0: created 2026-10-05T00:11:18Z, gone 2026-10-05T00:40:02Z, 28.72 min
+  succ_t_10m_seed0: created 2026-10-05T00:14:40Z, gone 2026-10-05T00:34:56Z, 20.25 min
+  succ_c_10m_seed0: created 2026-10-05T00:17:47Z, gone 2026-10-05T00:38:01Z, 20.22 min
+  succ_f_10m_seed0: created 2026-10-05T00:20:51Z, gone 2026-10-05T00:40:22Z, 19.51 min
+ratio B over the whole wave: 0.9899 (drawn $1.4565 against expected $1.4713 over 0.753 h; balance 73.7742 -> 72.3178)
+ratio A (the vendor's billed hours / machine life), by the frozen reconcile:
+tripwire reconcile: 28guwiucofsjyr: billed 0.000 h, existed about 0.325 h, ratio A 0.0
+tripwire reconcile: 4kabf0hn4erbbg: billed 0.000 h, existed about 0.338 h, ratio A 0.0
+tripwire reconcile: n4q0qur7iqdrom: billed 0.000 h, existed about 0.337 h, ratio A 0.0
+tripwire reconcile: pfk1yqygezezlo: billed 0.000 h, existed about 0.479 h, ratio A 0.0
+reconcile exit code 0 (0 = no trip, 3 = trip or a check that could not run)
+HALT written in scratch: False

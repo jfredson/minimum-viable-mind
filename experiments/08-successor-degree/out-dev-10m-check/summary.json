@@ -1,0 +1,133 @@
+{
+ "across_seed_spread_of_raw_difference": {
+  "C": null,
+  "F": null,
+  "M": null,
+  "T": null
+ },
+ "arms": {
+  "C": {
+   "no_verdict": {
+    "0": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 1,
+   "seeds_read": 0
+  },
+  "F": {
+   "no_verdict": {
+    "0": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 1,
+   "seeds_read": 0
+  },
+  "M": {
+   "no_verdict": {
+    "0": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 1,
+   "seeds_read": 0
+  },
+  "T": {
+   "no_verdict": {
+    "0": [
+     "the arm failed its gate"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 1,
+   "seeds_read": 0
+  }
+ },
+ "gates": {
+  "C": false,
+  "F": false,
+  "M": false,
+  "T": false
+ },
+ "outcome": {
+  "arm_M": {
+   "reason": "arm M returned no verdict; it is dropped and carried as an extension (section 3)",
+   "status": "dropped"
+  },
+  "code": "R3",
+  "notes": [
+   "arm M returned no verdict; it is dropped and carried as an extension (section 3)"
+  ],
+  "reason": "arm(s) T, C, F failed the gate",
+  "term": "substrate not a testbed"
+ },
+ "per_seed": {
+  "C": {
+   "0": {
+    "arithmetic_withheld": 0.9895561357702349,
+    "degree": null,
+    "reasons": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   }
+  },
+  "F": {
+   "0": {
+    "arithmetic_withheld": 0.9945652173913044,
+    "degree": null,
+    "reasons": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   }
+  },
+  "M": {
+   "0": {
+    "arithmetic_withheld": 1.0,
+    "degree": null,
+    "reasons": [
+     "the arm failed its gate",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   }
+  },
+  "T": {
+   "0": {
+    "arithmetic_withheld": 0.0,
+    "degree": null,
+    "reasons": [
+     "the arm failed its gate"
+    ],
+    "status": "no verdict"
+   }
+  }
+ },
+ "versions": {
+  "device": "cpu",
+  "numpy": "2.5.0",
+  "python": "3.12.13",
+  "sklearn": "1.9.0",
+  "torch": "2.12.1"
+ }
+}
