@@ -1,0 +1,53 @@
+{
+ "across_seed_spread_of_raw_difference": {
+  "T": 0.0
+ },
+ "arms": {
+  "T": {
+   "no_verdict": {},
+   "read": true,
+   "readings": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0
+   },
+   "seeds": 3,
+   "seeds_read": 3
+  }
+ },
+ "gates": {
+  "T": true
+ },
+ "per_seed": {
+  "T": {
+   "0": {
+    "above_one": false,
+    "degree": 0.0,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "1": {
+    "above_one": false,
+    "degree": 0.0,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   },
+   "2": {
+    "above_one": false,
+    "degree": 0.0,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  }
+ },
+ "versions": {
+  "device": "cpu",
+  "numpy": "2.5.0",
+  "python": "3.12.13",
+  "sklearn": "1.9.0",
+  "torch": "2.12.1"
+ }
+}

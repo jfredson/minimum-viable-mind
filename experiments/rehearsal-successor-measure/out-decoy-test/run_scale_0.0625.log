@@ -1,0 +1,16 @@
+[scale 0.0625 T/0] checks: all hold True; decoy alone reads [180, 180, 180, 180, 180], block alone [180, 180, 180, 180, 180]
+[T/0] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/0] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/0] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/0] done in 152s: arithmetic 0.0, controls 7/4 hold True/True -> /Users/john/Code/mvm-decoy/experiments/rehearsal-successor-measure/out-decoy-test/scale_0.0625/row_T_seed0.json
+[scale 0.0625 T/1] checks: all hold True; decoy alone reads [180, 180, 180, 180, 180], block alone [180, 180, 180, 180, 180]
+[T/1] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/1] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/1] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/1] done in 190s: arithmetic 0.0, controls 7/4 hold True/True -> /Users/john/Code/mvm-decoy/experiments/rehearsal-successor-measure/out-decoy-test/scale_0.0625/row_T_seed1.json
+[scale 0.0625 T/2] checks: all hold True; decoy alone reads [180, 180, 180, 180, 180], block alone [180, 180, 180, 180, 180]
+[T/2] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/2] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/2] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/2] done in 170s: arithmetic 0.0, controls 7/4 hold True/True -> /Users/john/Code/mvm-decoy/experiments/rehearsal-successor-measure/out-decoy-test/scale_0.0625/row_T_seed2.json
+done in 526s
