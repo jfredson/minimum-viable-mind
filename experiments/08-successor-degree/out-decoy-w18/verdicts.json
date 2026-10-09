@@ -1,0 +1,45 @@
+{
+ "by_variant": {
+  "V1": {
+   "verdict": "inconclusive",
+   "reason": "fewer than two seeds returned a reading",
+   "seeds": 3,
+   "in_verdict": true,
+   "kind": "soft",
+   "scale": 4.0
+  },
+  "V2": {
+   "verdict": "not fooled",
+   "reason": "every seed that reads, and at least two, reads 0.2 or less",
+   "seeds": 3,
+   "in_verdict": true,
+   "kind": "soft",
+   "scale": 0.25
+  },
+  "V3": {
+   "verdict": "inconclusive",
+   "reason": "fewer than two seeds returned a reading",
+   "seeds": 3,
+   "in_verdict": false,
+   "kind": "soft",
+   "scale": 16.0
+  },
+  "V4": {
+   "verdict": "not fooled",
+   "reason": "every seed that reads, and at least two, reads 0.2 or less",
+   "seeds": 3,
+   "in_verdict": false,
+   "kind": "soft",
+   "scale": 1.0
+  },
+  "V5": {
+   "verdict": "inconclusive",
+   "reason": "fewer than two seeds returned a reading",
+   "seeds": 3,
+   "in_verdict": false,
+   "kind": "hard",
+   "scale": 4.0
+  }
+ },
+ "overall": "inconclusive"
+}

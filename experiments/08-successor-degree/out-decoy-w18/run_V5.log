@@ -1,0 +1,22 @@
+[V5 T/0] checks: all hold True; code alone reads [180, 180, 180, 180, 180], block alone [180, 180, 180, 180, 180] of 180
+[T/0] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/0] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/0] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/0] fits that stopped at the iteration limit of 10000: counts elsewhere on the site 0 of 2, held-out counts (own) 0 of 25, the null (shuffled labels) 0 of 1000, the read (named) 0 of 5, the read (own) 0 of 5
+[T/0] done in 331s: arithmetic 0.14875000000000005, controls 7/4 hold True/True -> /Users/john/Code/minimum-viable-mind/.claude/worktrees/agent-aa29c99f771511a56/experiments/08-successor-degree/out-decoy-w18/V5/row_T_seed0.json
+[V5 T/0] nominated {'site_set': {'layers': [0], 'piece_correct': 180, 'positions': 'action', 'rank': 8, 'whole_read_correct': 180}, 'status': 'nominated'}; arithmetic 0.14875000000000005
+[V5 T/1] checks: all hold True; code alone reads [180, 180, 180, 180, 180], block alone [180, 180, 180, 180, 180] of 180
+[T/1] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/1] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/1] nomination: nominated {'layers': [1], 'positions': 'action+ans', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/1] fits that stopped at the iteration limit of 10000: counts elsewhere on the site 0 of 6, held-out counts (own) 0 of 25, the null (shuffled labels) 0 of 1000, the read (named) 0 of 5, the read (own) 0 of 5
+[T/1] done in 235s: arithmetic 0.21250000000000002, controls 7/4 hold True/True -> /Users/john/Code/minimum-viable-mind/.claude/worktrees/agent-aa29c99f771511a56/experiments/08-successor-degree/out-decoy-w18/V5/row_T_seed1.json
+[V5 T/1] nominated {'site_set': {'layers': [1], 'piece_correct': 180, 'positions': 'action+ans', 'rank': 8, 'whole_read_correct': 180}, 'status': 'nominated'}; arithmetic 0.21250000000000002
+[V5 T/2] checks: all hold True; code alone reads [180, 180, 180, 180, 180], block alone [180, 180, 180, 180, 180] of 180
+[T/2] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/2] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/2] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/2] fits that stopped at the iteration limit of 10000: counts elsewhere on the site 0 of 2, held-out counts (own) 0 of 25, the null (shuffled labels) 0 of 1000, the read (named) 0 of 5, the read (own) 0 of 5
+[T/2] done in 253s: arithmetic 0.11624999999999996, controls 7/4 hold True/True -> /Users/john/Code/minimum-viable-mind/.claude/worktrees/agent-aa29c99f771511a56/experiments/08-successor-degree/out-decoy-w18/V5/row_T_seed2.json
+[V5 T/2] nominated {'site_set': {'layers': [0], 'piece_correct': 180, 'positions': 'action', 'rank': 8, 'whole_read_correct': 180}, 'status': 'nominated'}; arithmetic 0.11624999999999996
+V5 done in 919s
