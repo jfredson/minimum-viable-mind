@@ -49,6 +49,13 @@ Seven files got the dated note under their title:
 The last three use RT-256 only inside the quoted title of the Gate C pass's
 commit ("RT-256 to RT-273"); the note is true of them too.
 
+*Dated note, 2026-10-08 (evening, Pacific), added after this note's check
+(`docs/reviews/2026-10-09-ledger-packet-and-rows-212-229-check-claude-code.md`,
+should-fix 1): one more ledger edit was made and not listed above. The
+heading of the refounding pass's section changed from "(RT-256 to RT-273)" to
+"(RT-257 to RT-274; filed by the pass as RT-256 to RT-273)", as ruling 1
+requires.*
+
 ## What could not be traced, or does not match
 
 1. **RT-219's owed correction was never made.** The ruling says "the
