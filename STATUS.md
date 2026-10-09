@@ -14,7 +14,7 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
-## WHERE THINGS STAND 2026-10-08 (late night) — the registration text is ready for John's commit; nothing waits on any session
+## WHERE THINGS STAND 2026-10-08 (late night) — the registration text is nearly ready for John's commit: two checks remain
 
 *Written 2026-10-08 (Thursday, late night, Pacific) by the Claude Code
 session that put the open items to John. Laptop only; nothing rented; $0.
@@ -63,8 +63,13 @@ with W18 named and sized rather than add a new guard before the deadline.
 registered code, the frozen code in `experiments/08-successor-degree/src/`
 as at `6c47c56`. The ledger has no open row that bears on the registration
 (checked 21, accepted 18, carried by name 1, open 5, all five on the
-refounding proposal, which registers nothing). **The one thing left is John's
-registration commit, inside kill date 1 (2026-10-18).** After it: the three
+refounding proposal, which registers nothing). **What remains before John's
+registration commit, inside kill date 1 (2026-10-18):** the check of the
+end-to-end re-run (pull request 157), which ruling 3 asks for; and the Gate A
+tier 1 reviewer's own failure-mode pass on version 5, which section 17 says
+is still owed and which the protocol requires before a registration commit.
+Then the commit itself, which changes version 5's status line from draft and
+records `6c47c56`. After it: the three
 10-million reruns (about $1.14) on his go in his own words; a miss of the
 ruled bar stops experiment C there. This branch is owed its check before it
 merges, and pull request 157 its check.

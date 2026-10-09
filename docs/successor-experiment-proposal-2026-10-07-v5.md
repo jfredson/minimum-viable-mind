@@ -3,8 +3,8 @@
 *Written 2026-10-07 (Pacific) by a fresh Claude Code session in its own
 worktree (branch `worktree-agent-a43545d6649460124`, cut from the main line
 at `597a3f5`, the merge of pull request 123, the outside-perspective poll).
-**Status: the registration text, DRAFT, not yet checked, not yet committed as
-registered. Nothing here binds until John makes the registration commit.** It
+**Status: the registration text, DRAFT, checked (pull requests 130 and 132,
+and the checks since), not yet committed as registered. Nothing here binds until John makes the registration commit.** It
 is version 4 (`docs/successor-experiment-proposal-2026-10-03-v4.md`, main
 line at `41b0bd3`, pull request 85, left unedited) with every change John has
 ruled since written in, each marked in a phrase with the ruling or finding it
@@ -32,8 +32,7 @@ is ruled, every item, in `docs/rulings/2026-10-08-verification-bar-ruling.md`
 and `docs/rulings/2026-10-08-v5-open-items-rulings.md`, with work those
 rulings ask for done and checked by the night of 2026-10-08; (3) is done,
 pull request 142, with its fired condition met by pull request 152; (4) is
-done, pull request 136 and the pull requests before it. **What remains is
-John's registration commit.**)* (3) The closure check of the fatal finding RT-237 (the free model's
+done, pull request 136 and the pull requests before it. **What remains is the check of the end-to-end re-run (pull request 157) and the Gate A tier 1 reviewer's own failure-mode pass on this text (section 17), then John's registration commit.**)* (3) The closure check of the fatal finding RT-237 (the free model's
 gate named question sets this task does not have) runs on this text, by the
 tier 1 reviewer, as the closure rule requires. (4) Every record this version
 cites from an unmerged branch must be on the main line at the registration
@@ -3349,8 +3348,8 @@ what exercised it.
   at four times the block's size gave readings of **0.28, 0.23 and 0.29** at
   the site the test always chose with 8 directions, and 0.52 to 0.96 with
   fewer, which under the test's own bands is "inconclusive", not "not
-  fooled". *Exercised in its ruled form; the differently coded decoy is
-  untested as a ruled test; ruled 2026-10-08 (open item 8) to be run before
+  fooled". *Exercised in its ruled form; the differently coded decoy was
+  untested as a ruled test when this was written; ruled 2026-10-08 (open item 8) to be run before
   the registration commit, or, failing that, before step 5b with W18 named.
   Run 2026-10-08 and checked: inconclusive, control 1 withholding arm T on
   every seed; registered with W18 named and sized by John's ruling of the
@@ -3434,8 +3433,8 @@ closure check of RT-237 runs on this text; the branches of section 16 reach
 the main line; John commits the registration. *(Since 2026-10-08: the check
 and its re-check are done, pull requests 130 and 132; every open item is
 ruled, `docs/rulings/2026-10-08-v5-open-items-rulings.md`; every cited branch is on the main line, the last of them through pull request 136. The
-closure check of RT-237, the work the rulings ask for, and John's commit
-remain.)* There is no target date; the
+closure check of RT-237 and the work the rulings ask for are done and
+checked; what remains is the check of the end-to-end re-run (pull request 157) and the Gate A tier 1 reviewer's own failure-mode pass on this text (section 17), then John's registration commit.)* There is no target date; the
 only date is the kill date of 2026-10-18 (section 11). Then the three reruns
 of section 11, step 4b.
 
@@ -3488,11 +3487,11 @@ Binding if registered, in this order, on the chain of section 4 of
    10,000, the renamed outcome words, "gate not decidable on one seed", and
    arm T's row-choice split reported (pull request 151, checked in pull
    request 152); and the reporting table's one-cell layout fix on withheld
-   seeds (this batch). The bar of the in-use check is ruled at 0.9 and 0.5,
+   seeds (pull request 153). The bar of the in-use check is ruled at 0.9 and 0.5,
    which the frozen code already carries. The registration names the commit of the frozen code it
    registers; the cited branches are on the main line (the last of them through pull request 136), and
-   **that commit is named after those code changes land (open item 10, ruled
-   2026-10-08).**
+   **that commit is named in section 7.4, `6c47c56`, now that those code
+   changes have landed (open item 10, ruled 2026-10-08).**
 4. **Done: the development runs at the 10-million size, four arms, one seed
    each, including arm M** (2026-10-04, from the first release's development
    line; $1.47; rehearsal item R-14). **This was a pipeline and throughput
@@ -4263,7 +4262,8 @@ one-of-twelve code of the owner's marker word at four times the block's size
 and got readings of 0.28, 0.23 and 0.29 at 8 directions, and 0.52 to 0.96 at
 fewer, on a model whose true reading is 0. So a separable model carrying such
 a decoy could read part way to entangled, and a high reading on arm C could
-in principle be of that kind. Nothing in the design excludes it. A ruled test
+in principle be of that kind. Nothing in the design excluded it when this was
+written; the ruled test below shows what does and does not. A ruled test
 of the differently coded decoy, about an hour on the laptop at $0, was open
 item 8; ruled 2026-10-08 (`docs/rulings/2026-10-08-v5-open-items-rulings.md`) to run before the registration
 commit, or, failing that, before step 5b with this weakness named.
@@ -4273,27 +4273,34 @@ request 155, method first; reproduced exactly by `docs/reviews/2026-10-08-decoy-
 156): inconclusive against its pre-stated bands.** Each of the three arm T
 toy models carried an unused code of the owner's marker word, read through
 the registered nomination and procedure. At four times the block's size every
-seed returned no verdict, because control 1 held: transplanting everything
+seed returned no verdict, because control 1 failed and withheld the reading: transplanting everything
 but the chosen piece moved 0.1313, 0.1638 and 0.1038 of actions against the
 allowance of 0.018. Underneath, the read was partly fooled: the withheld
 readings at the chosen site were 0.1488, 0.2137 and 0.1162, with the chosen
 piece about 94 per cent in the unused code. At a quarter of the size and at
-equal size it was not fooled (0.0000 on every seed); at sixteen times it was
-withheld, with readings of 0.28 to 0.41 at the chosen site. **What it means.**
+quarter size, the second ruled variant, it was not fooled (0.0000 on every
+seed); of the variants reported beside the verdict, equal size was not fooled
+and sixteen times was withheld, with readings of 0.28 to 0.41 at the chosen
+site. **What it means.**
 On arm T the design catches such a decoy and ends in the eighth term, not a
 false "entangled". Control 1 withholds on arm T only, by design (section 7.3,
 item 1), so on arms C, M and F nothing catches it: if arm F were separable
 and carried such a code, its reading could rise, by an amount argued from arm
 T and not measured, of roughly 0.1 to 0.4. At the chosen site no reading went
 above 0.41, so a decoy of this kind does not explain a reading near 1; the
-procedure's own search reaches 0.94 to 0.997 at sites it did not choose. The
+procedure's own search, on development pairs, reaches 0.94 to 0.997 at sites
+and sizes it did not choose. The
 high readings at 1 and 2 directions are mostly present without the decoy
-(the unaltered model reads about 0.86 at 1 direction and 0.57 to 0.67 at 2),
+(the unaltered model reads about 0.85 to 0.86 at 1 direction and 0.57 to 0.67 at 2),
 so the probe's "0.52 to 0.96 at fewer" above is not the decoy's effect alone.
 A decoy that is not a straight-line function of the block is untested.
 **Ruled 2026-10-08, "Option 1" (`docs/rulings/2026-10-08-decoy-w18-ruling.md`, authorship mixed): registered
 with this weakness named and sized; a middling reading on arm F is read with
-this caution; no guard is added to arms C, M and F.**
+this caution; no guard is added to arms C, M and F.** The reason, from the
+ruling: a guard on the other arms would be a new kind of control, since
+control 1 cannot veto an entangled model, needing its own design, code,
+re-run and checks before 2026-10-18 and changing the registered procedure;
+naming the weakness costs nothing and changes neither.
 
 **How results may be summarised (ruled 2026-10-06, page 11, closing the
 outside review's A13, RT-250; the reviewer's table, registered as written,
@@ -4700,7 +4707,7 @@ ruled the same night.
     an entangled model by design.
 
 *Nothing above is registered. The registration commit, if it comes, follows
-the check owed on this version, John's answers to the open items of section
+the check of this version (done, pull requests 130 and 132), John's answers to the open items of section
 21 (given 2026-10-08), the closure check of RT-237, and the merge of the branches of section
 16; every run it affects is launched after it.*
 
@@ -5268,8 +5275,8 @@ failure 3's part three catches too.
 
 **What this pass leaves open, in one place.** The twelve open items of
 section 21 (all ruled 2026-10-08; the work items 7, 9 and 12 ask for is
-done and checked, and item 8's test with a differently coded decoy is still
-owed); the check of this version by a session that did not write it;
+done and checked, and item 8's test with a differently coded decoy was run
+and checked, and ruled on, 2026-10-08); the check of this version by a session that did not write it;
 the closure check of RT-237 on this text; the merges of section 16; the
 ledger's rows; the eleven re-reads of the hand-set toy models; the
 re-summary of the page 4 re-run under the current decision code (done
@@ -5885,5 +5892,13 @@ section 15 gains entries 38 and 39 and the source table a row; the leftover
 wording from the last batch's re-check is fixed (section 5.1's arm T
 heading, the "otherwise" in the headings of sections 5.2 and 5.3, section
 5.6's sharpness-check sentence, the 1.0051 examples of sections 6.3 and 10,
-and section 9's arm M citation). Nothing waits on any session now: what
-remains is John's registration commit, inside kill date 1, 2026-10-18.
+and section 9's arm M citation). What remains is the check of the end-to-end re-run (pull request 157) and the Gate A tier 1 reviewer's own failure-mode pass on this text (section 17), then John's registration commit, inside kill date 1, 2026-10-18.
+
+The check of this change (`docs/reviews/2026-10-08-registration-ready-check-claude-code.md`,
+pull request 159) found two must-fix items, applied the same night: W18 said
+control 1 "held" where it failed, which in this text's usage reversed the
+result; and this note and the header said nothing waited on any session,
+while the check of the end-to-end re-run and the reviewer's own failure-mode
+pass were still owed. Its should-fix items too: the reason for John's
+decoy ruling is now in W18; six stale "owed" or "remain" phrases are
+brought current; two accuracy points in W18.
