@@ -32,7 +32,7 @@ is ruled, every item, in `docs/rulings/2026-10-08-verification-bar-ruling.md`
 and `docs/rulings/2026-10-08-v5-open-items-rulings.md`, with work those
 rulings ask for done and checked by the night of 2026-10-08; (3) is done,
 pull request 142, with its fired condition met by pull request 152; (4) is
-done, pull request 136 and the pull requests before it. **What remains is the check of the end-to-end re-run (pull request 157) and the Gate A tier 1 reviewer's own failure-mode pass on this text (section 17), then John's registration commit.**)* (3) The closure check of the fatal finding RT-237 (the free model's
+done, pull request 136 and the pull requests before it. **What remains is John's registration commit (the check of the end-to-end re-run is filed, `docs/reviews/2026-10-08-end-to-end-final-code-check-claude-code.md`, pull request 160, and the Gate A tier 1 reviewer's own failure-mode pass, `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md`, pull request 161).**)* (3) The closure check of the fatal finding RT-237 (the free model's
 gate named question sets this task does not have) runs on this text, by the
 tier 1 reviewer, as the closure rule requires. (4) Every record this version
 cites from an unmerged branch must be on the main line at the registration
@@ -1440,7 +1440,8 @@ in arm C and −0.008 in arm M, so their answers put 0.218 and 0.247 of their
 weight on the agent the model actually was, where a flat answer puts 0.25;
 arm T's fell to 1.947 and still worked (0.942). The registered procedure,
 independently, could not find "which agent am I" in arm C's or arm M's
-running state (best pieces 41 and 45 of 180 against a floor of 144) and
+running state (best whole reads 41 and 45 of 180, best pieces 45 and 43,
+against a floor of 144) and
 returned no verdict on both. The fall was already visible in the toy models:
 arm C's sharpness ended at 1.73, 0.70 and 0.93 on its three seeds, arm M's at
 2.84, 2.69 and 2.42. Weight decay alone shrinks a number toward zero and
@@ -1835,7 +1836,9 @@ no-verdict rules, written before it runs:
    check on a built arm replaces the reading with "no verdict" and **every**
    reason that applies, in the output file and in the table; a check that
    could not be evaluated counts as failed; and the figure the arithmetic
-   would have given appears nowhere in the output (the field that carried it,
+   would have given appears nowhere in the summary file or the table (the
+   per-seed row files keep it, marked as the arithmetic of a seed that was
+   withheld; the reviewer's RT-277; the field that carried it,
    `arithmetic_withheld`, was removed on John's word "yes, remove"). The
    no-transplant rate no longer withholds (item 3). Exercised on 25 made-up
    cases (MEASURED: `docs/2026-10-06-successor-a2-decision-procedure-findings.md`
@@ -2776,7 +2779,9 @@ ran on exactly this code (`docs/2026-10-08-end-to-end-final-code-findings.md`, p
 checksums in `experiments/08-successor-degree/out-e2e-final-code/code-identity.txt`):
 all 31 made-up decision cases land on the term written for them in advance,
 the toy summary is R3 as recorded, the 14 in-use cases come out as
-expected, and the whole-pipeline test runs at both sizes. The registration
+expected, and the whole-pipeline test runs at both sizes; checked by a
+session that did not run it, which re-ran it on the main line and found every
+output byte-identical (`docs/reviews/2026-10-08-end-to-end-final-code-check-claude-code.md`, pull request 160). The registration
 commit records this hash; any later change to that folder is a change to
 registered code.
 
@@ -3193,6 +3198,13 @@ themselves and found the same, and the label-search check found all thirty
 files on the main line check against the list (MEASURED:
 `out-v3-rules/models_sha256_check.json`, `all_agree: true`; the check at
 `70be9fb`, section 2.1; the label-search check at `ecd2b6c`, section 4).
+*(Since 2026-10-08, night: nine more, committed after the reviewer's RT-276.
+The nine hand-set toy models retrained with the sharpness fixed at 4.0 (arms
+T, C and M, three seeds each), behind section 5.6's in-use figures, rehearsal
+item R-15 and weakness W17, are at
+`experiments/08-successor-degree/out-sharpness-fix/models/`, every file
+matching that folder's `SHA256SUMS`. So the toy results this version quotes
+rest on thirty-nine committed models.)*
 **What rests on them: every toy result of 2026-09-25 and 2026-09-26 that
 this version quotes.** On the first fifteen: every base-recipe result of the
 repairs (`gate_base.json`, `nominate_base_*.json`, `measure_base_*.json`,
@@ -3434,7 +3446,7 @@ the main line; John commits the registration. *(Since 2026-10-08: the check
 and its re-check are done, pull requests 130 and 132; every open item is
 ruled, `docs/rulings/2026-10-08-v5-open-items-rulings.md`; every cited branch is on the main line, the last of them through pull request 136. The
 closure check of RT-237 and the work the rulings ask for are done and
-checked; what remains is the check of the end-to-end re-run (pull request 157) and the Gate A tier 1 reviewer's own failure-mode pass on this text (section 17), then John's registration commit.)* There is no target date; the
+checked; what remains is John's registration commit (the check of the end-to-end re-run is filed, `docs/reviews/2026-10-08-end-to-end-final-code-check-claude-code.md`, pull request 160, and the Gate A tier 1 reviewer's own failure-mode pass, `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md`, pull request 161).)* There is no target date; the
 only date is the kill date of 2026-10-18 (section 11). Then the three reruns
 of section 11, step 4b.
 
@@ -4880,6 +4892,19 @@ the check of this version (done, pull requests 130 and 132), John's answers to t
 
 ## 17. This version's failure-mode pass, entry by entry
 
+*(Dated note, 2026-10-08, night. This is the author's pass. The Gate A tier 1
+reviewer's own pass, which the protocol requires and which does not stand in
+for this one or the other way round, is filed at `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md` (pull request
+161): nothing fatal; one serious finding, RT-276, the nine retrained toy
+models not committed, closed by committing them (`experiments/08-successor-degree/out-sharpness-fix/models/`,
+all nine matching the committed hash list); seven worth-noting, RT-275 and
+RT-277 to RT-282, each in the ledger. The reviewer's RT-279 finds that this
+section prints records that no longer hold: the ledger rows, now written; the
+count of files off the main line, now none that this text cites; the toy rows,
+which now carry the ownership-free field; a "leaves open" list of items since
+done; and blocks printed by two scripts never committed. Read this section's
+figures of that kind as of 2026-10-07.)*
+
 The outside-review protocol's failure-mode pass belongs to the Gate A tier 1
 reviewer, and "an author's run never stands in for the reviewer's"
 (`docs/outside-review-protocol.md`, "The failure-mode pass"). This is the
@@ -5002,8 +5027,8 @@ rather than repairing it: the floor on the piece turns it into a registered
 no verdict on arm F on every seed, and the withdrawn number is not reported
 as a reading. **A second place the same failure fires, new at 10 million
 parameters:** on the real development checkpoints the procedure's read found
-no readable ownership in arms C and M either (best pieces 41 and 45 of 180
-against 144; the check of the development runs, section 7; not recomputed
+no readable ownership in arms C and M either (best whole reads 41 and 45 of
+180, best pieces 45 and 43, against 144; the check of the development runs, section 7; not recomputed
 here), which is the independent face of the flat ownership answer of section
 5.6; the registered rule returned no verdict on both. **A third, carried
 from version 4 and now narrower:** the named agent's read that control 2
@@ -5281,7 +5306,7 @@ the closure check of RT-237 on this text; the merges of section 16; the
 ledger's rows; the eleven re-reads of the hand-set toy models; the
 re-summary of the page 4 re-run under the current decision code (done
 2026-10-08, R3; see failure 4); the
-reviewer's own pass, which is still owed, as the protocol says.
+reviewer's own pass, filed 2026-10-08 (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md`, pull request 161).
 
 **The two scans the method note promised, run on the finished file.**
 Em-dashes and en-dashes: `grep -c` for each character returns 0 and 0
@@ -5892,7 +5917,7 @@ section 15 gains entries 38 and 39 and the source table a row; the leftover
 wording from the last batch's re-check is fixed (section 5.1's arm T
 heading, the "otherwise" in the headings of sections 5.2 and 5.3, section
 5.6's sharpness-check sentence, the 1.0051 examples of sections 6.3 and 10,
-and section 9's arm M citation). What remains is the check of the end-to-end re-run (pull request 157) and the Gate A tier 1 reviewer's own failure-mode pass on this text (section 17), then John's registration commit, inside kill date 1, 2026-10-18.
+and section 9's arm M citation). What remains is John's registration commit (the check of the end-to-end re-run is filed, `docs/reviews/2026-10-08-end-to-end-final-code-check-claude-code.md`, pull request 160, and the Gate A tier 1 reviewer's own failure-mode pass, `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md`, pull request 161), inside kill date 1, 2026-10-18.
 
 The check of this change (`docs/reviews/2026-10-08-registration-ready-check-claude-code.md`,
 pull request 159) found two must-fix items, applied the same night: W18 said
@@ -5902,3 +5927,16 @@ while the check of the end-to-end re-run and the reviewer's own failure-mode
 pass were still owed. Its should-fix items too: the reason for John's
 decoy ruling is now in W18; six stale "owed" or "remain" phrases are
 brought current; two accuracy points in W18.
+
+The Gate A tier 1 reviewer's failure-mode pass (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md`, pull
+request 161) and the check of the end-to-end re-run (`docs/reviews/2026-10-08-end-to-end-final-code-check-claude-code.md`, pull
+request 160) were filed the same night. The reviewer's serious finding,
+RT-276, is closed by committing the nine retrained toy models; its
+worth-noting findings are in the ledger, and three are written in here
+(RT-277 in section 6.4, item 5; RT-279 as a note heading section 17; RT-280
+in sections 5.6 and 17). RT-281 notes that docstrings in the registered
+`measure.py` and `procedure.py` describe rules the code no longer applies (the
+no-transplant rate withholding; seeds counted two of three); the code and its
+self-tests are right, and the docstrings are left unchanged so that the
+registered code stays exactly the code the end-to-end run and its check ran,
+a session's call, decided by: agent, for John to overturn.
