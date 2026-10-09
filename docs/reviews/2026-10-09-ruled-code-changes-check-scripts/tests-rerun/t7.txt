@@ -1,0 +1,35 @@
+1. the argument guard (RT-198)
+  [ ok ] an argument is refused (exit 2)
+  [ ok ] it says why
+  [ ok ] it names DRYRUN=1
+  [ ok ] the guard (line 17) precedes any vendor command (line 115)
+2. a dry run creates nothing and calls no vendor
+  [ ok ] dry run exits 0
+  [ ok ] dry run says nothing was created
+  [ ok ] the vendor tool was never called
+  [ ok ] the training command is the successor trainer with the recipe spelled out
+3. required settings
+  [ ok ] refuses without ARM
+  [ ok ] refuses without SIZE
+  [ ok ] refuses without WAVE
+  [ ok ] refuses without ESTIMATE_HOURS
+  [ ok ] refuses without HARD_CAP_USD
+  [ ok ] refuses the toy size on a rented machine
+4. a halt file is reported
+  [ ok ] the dry run says a real launch would be refused
+5. remote starts return or are capped (experiment 06's check, pointed here)
+  [ ok ] check_remote_forms.py passes on this launcher
+      remote background starts, run against a real local shell (| cat stands in for ssh; the background program holds 8s)
+      
+      launch_successor.sh
+        [ ok ] launch_successor.sh line 643: returned after 0.0s -- returns at once
+        [ ok ] launch_successor.sh line 724: returned after 8.1s -- HOLDS the connection; cut off by the launcher's inline cap 60s (line 729)
+      
+      negative control: the pre-fix form of 2026-09-25 must be REJECTED
+        [rejected] stand-in line 1: returned after 8.1s -- HOLDS the connection and nothing cuts it off: a real ssh would wait for the background program
+        [ ok ] the uncapped `cd … && nohup … &` stand-in is rejected, so this check detects the hang
+      
+      all checks pass. Nothing was rented and nothing was spent.
+
+all checks pass. nothing was created and nothing was spent.
+t7 exit 0
