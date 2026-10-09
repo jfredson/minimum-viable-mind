@@ -36,7 +36,7 @@ re-run under them: no toy decision moved, and the registered ownership read
 never hit the limit. A one-number fix to the reporting table followed (pull
 request 153, checked and re-checked in 154). The end-to-end test of the
 decision code was re-run on the final code: all 31 made-up cases on their
-terms (pull request 157, its check running). Two small batches of wording
+terms (pull request 157, checked in pull request 160). Two small batches of wording
 fixes went in (pull requests 140 and 149, checked in 143 and 150).
 
 **John's rulings tonight, all recorded with his words, authorship mixed.**
@@ -72,8 +72,18 @@ the ledger). **What remains is John's registration commit, inside kill date 1
 (2026-10-18),** which changes version 5's status line from draft and records
 `6c47c56`. After it: the three
 10-million reruns (about $1.14) on his go in his own words; a miss of the
-ruled bar stops experiment C there. This branch is owed its check before it
-merges, and pull request 157 its check.
+ruled bar stops experiment C there. Merge order, so that no citation points
+at a missing file: pull requests 157, 160, 161, 159, then this one, 158.
+
+**Before the commit, one line for John.** The reviewer's eight findings,
+RT-275 to RT-282, were disposed by this session, not by John: one serious,
+closed by committing the nine models; seven worth-noting, three corrected in
+the text, four carried open (the denominator margin, the in-use judge's
+leniency, the stale code comments, the re-pinned digest untested off the
+laptop). They are in the ledger as a session's calls. His registration
+commit is not a ruling on them unless he says so. With them the ledger's
+rows from RT-230 on are: checked 22, accepted 18, carried by name 1, carried
+open 4, noted only 3, open 5 (the five on the refounding proposal).
 
 ## WHERE THINGS STAND 2026-10-08 (night) — every open item of the registration text is answered; what stands before the registration commit is checked work, not decisions
 

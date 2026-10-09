@@ -1836,9 +1836,10 @@ no-verdict rules, written before it runs:
    check on a built arm replaces the reading with "no verdict" and **every**
    reason that applies, in the output file and in the table; a check that
    could not be evaluated counts as failed; and the figure the arithmetic
-   would have given appears nowhere in the summary file or the table (the
-   per-seed row files keep it, marked as the arithmetic of a seed that was
-   withheld; the reviewer's RT-277; the field that carried it,
+   would have given appears nowhere in the summary file or the table; the
+   per-seed row files keep the arithmetic as a record of the computation, under
+   `primary.reading.degree` with `status: "valid"`, and it is never the
+   reported figure (the reviewer's RT-277; the field that carried it,
    `arithmetic_withheld`, was removed on John's word "yes, remove"). The
    no-transplant rate no longer withholds (item 3). Exercised on 25 made-up
    cases (MEASURED: `docs/2026-10-06-successor-a2-decision-procedure-findings.md`
@@ -2771,7 +2772,11 @@ episodes, as section 8.1 says.
 Committed to git, with the commit hash recorded in the registration file,
 **before a single fresh episode is evaluated**:
 
-**The registered code (named 2026-10-08, open item 10):** the frozen code in
+**The registered code (named 2026-10-08, open item 10):** *(The re-pinned
+digest of the evaluation sets has been built and checked on the laptop only;
+the rented machine's pre-flight meets it first at step 4b, where a mismatch
+deletes the machine before training, at a cost of cents: the reviewer's
+RT-282.)* the frozen code in
 `experiments/08-successor-degree/src/` as at main-line commit `6c47c56`
 (merged by pull request 153), unchanged on the main line since. The
 end-to-end run of the decision code that ruling 3 of `docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md` asks for
@@ -3177,7 +3182,8 @@ spent nothing. The one part that spent money is item R-11. Total spent on the re
 about $0.57, the sum of the compute ledger's three slice rows, of the
 rehearsal line's $10 (item 10 of the 2026-09-21 ruling; section 12.3).
 
-**The models every toy result rests on: thirty, all committed.** The fifteen
+**The models every toy result rests on: thirty, all committed (thirty-nine
+since 2026-10-08; see the note below).** The fifteen
 trained toy models behind the repairs and the re-run (arms T, C, F and M and
 the ownership-blind solver, three seeds each) are committed at
 `experiments/rehearsal-successor-measure/out-repairs/models/` (main line at
@@ -4903,7 +4909,9 @@ section prints records that no longer hold: the ledger rows, now written; the
 count of files off the main line, now none that this text cites; the toy rows,
 which now carry the ownership-free field; a "leaves open" list of items since
 done; and blocks printed by two scripts never committed. Read this section's
-figures of that kind as of 2026-10-07.)*
+figures of that kind as of 2026-10-07. The claim that no cited file is off
+the main line holds once pull requests 157, 160, 161, 159 and 158 have
+merged, in that order.)*
 
 The outside-review protocol's failure-mode pass belongs to the Gate A tier 1
 reviewer, and "an author's run never stands in for the reviewer's"
@@ -5936,7 +5944,8 @@ worth-noting findings are in the ledger, and three are written in here
 (RT-277 in section 6.4, item 5; RT-279 as a note heading section 17; RT-280
 in sections 5.6 and 17). RT-281 notes that docstrings in the registered
 `measure.py` and `procedure.py` describe rules the code no longer applies (the
-no-transplant rate withholding; seeds counted two of three); the code and its
+no-transplant rate withholding; seeds counted two of three without the newer
+rule that the same seeds pass every condition); the code and its
 self-tests are right, and the docstrings are left unchanged so that the
 registered code stays exactly the code the end-to-end run and its check ran,
 a session's call, decided by: agent, for John to overturn.
