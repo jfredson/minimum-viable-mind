@@ -596,7 +596,10 @@ with seed 1; MEASURED: `docs/2026-10-06-successor-a2-decision-procedure-findings
 at `bd0de26`). So the toy sentence is: **the anchors separate, the middle
 model reads in its band, the free model is not read, and the registered
 outcome is the fifth term or R3 according to which free-model seed stands
-for the step 5a run.** The anchors' figures, with every read fitted on 1,800
+for the step 5a run.** The separation and arm M's band below are each toy
+row's own arithmetic: the current decision code withholds arms C and M on
+every toy seed by the in-use check (these toy models were trained with the
+sharpness learned), so its summary computes no separation (`docs/2026-10-09-ruled-code-changes-and-page4-rerun-findings.md`). The anchors' figures, with every read fitted on 1,800
 development episodes (ruled 2026-10-06, page 4): arm T reads 0.0000 and arm C
 **1.0026, 1.0000 and 1.0000**, so the separation, the lowest of arm C minus
 the highest of arm T, is 1.0000 and clears 0.5; arm M reads 0.5252, 0.4793
@@ -1040,8 +1043,10 @@ part of the state fails to reproduce the counterfactual action, while
 transplanting the whole state at the same places succeeds. **Its reading should
 be high.**
 
-**What the toy measured, under the rules this version registers (MEASURED:
-the controls re-run at `821f154`, sections 2 to 4, from
+**What the toy measured with every read fitted on 420 episodes, under the
+rules this version registers otherwise (the registered fitting count of 1,800
+gives the figures later in this section; MEASURED: the controls re-run at
+`821f154`, sections 2 to 4, from
 `out-controls-rerun/nominate_C_seed*.json`, `measure_C_seed*.json` and
 `summary.json`; reproduced value for value by the check at `e184a6e`, section
 3).** It reads **1.0051, 0.9926 and 0.9974** on seeds 0, 1 and 2, at the
@@ -1226,8 +1231,10 @@ within 0.10 of the true-slot reading on the same fresh episodes.** The
 true-slot reading is computed and written down before the blind reading is
 looked at.
 
-**What the toy measured, under the rules this version registers (MEASURED:
-the controls re-run at `821f154`, sections 2 and 4, from
+**What the toy measured with every read fitted on 420 episodes, under the
+rules this version registers otherwise (the registered fitting count of 1,800
+gives the figures later in this section; MEASURED: the controls re-run at
+`821f154`, sections 2 and 4, from
 `out-controls-rerun/measure_M_seed*.json`; reproduced by the check at
 `e184a6e`, section 3).** The blind reading is **0.4886, 0.4860 and 0.5449**
 on seeds 0, 1 and 2, inside 0.3 to 0.7 on every seed, so the fold-in pass
@@ -1855,8 +1862,8 @@ Three disjoint sets, generated from separate seeds and committed before use:
   was read: `docs/2026-09-21-successor-measure-rehearsal.md`, section 9, item 3).
   The fit of section 7.2, item 1, is scored on a held-out part of the
   development episodes (the last 180 of 1,980, the first 1,800 being fitted, on
-  the toy as at the registered size; the toy's reads before 2026-10-08 held out
-  the last 180 of 600), never on the fresh
+  the toy as at the registered size, as in the page 4 re-run of 2026-10-06;
+  the toy's earlier reads, fitted on 420, held out the last 180 of 600), never on the fresh
   episodes.
 - **Fresh episodes and confirmation seeds**: evaluated once, after the freeze.
   **No fresh or relaxed episode's pairing (which marker holds which value on
@@ -3099,8 +3106,8 @@ version was first filed and were ruled the same night.
 | The form of the reading | **the chance-corrected form** of section 6.3 | the queue ruling, page 2 |
 | The label | **which marker word is the model's own**, the one registered read; the route (b) candidates recorded as exploratory fits only | `docs/rulings/2026-09-23-nomination-label.md`; the queue ruling, page 3; the Gate C rulings, RT-212, item 3; John's ruling of 2026-09-26 on the route (b) result (section 7.2, item 1) |
 | Seconds per step, per arm, on the rented machine | **Measured 2026-09-25 for arms T, C and F**: 13.08, 13.52 and 12.53 milliseconds per step, ratios to arm F of 1.044, 1.080 and 1.000, on a secure RTX 5090 at $0.99 an hour, at the registered shape, fifty timed steps after five warm-up steps | `docs/2026-09-25-rented-slice-attempt-2-findings.md` at `9f802db`, section 3, from `experiments/rehearsal-successor-measure/out/rented-slice-2026-09-25-attempt-2/bench_arms.json`; checked at `afb5183`, point 5. **Arm M was not timed.** **Fifty timed steps are accepted for the second release's arithmetic; the five-hundred-step figure is taken from the first full-size run, and the later runs are repriced from it before the second release is asked for** (ruled 2026-10-03, decision 17) |
-| Arm M's predicted reading | between **0.3 and 0.7** on every seed, and within **0.10** of its true-slot reading on the same fresh episodes (the formula of section 5.3, which is that reading written in route accuracies). On the toy under the registered rules (every read fitted on 1,800, at an iteration limit of 10,000): 0.5252, 0.4793 and 0.5208, within 0.0252, 0.0033 and 0.0288 of the true-slot reading (fitted on 420, they were 0.4886, 0.4860 and 0.5449) | the queue ruling, page 5 (the band); the repairs method note at `882f252`, section 5 (the formula and the 0.10); the rulings on the review of version 2, RT-223; the toy figures from the review of version 3, RT-231, and the controls re-run at `821f154` |
-| The numbers of episodes at the registered size | **for every read, 1,980 development episodes, the first 1,800 fitted, at an iteration limit of 10,000, and the last 180 held out (the floor is 144 of 180); the nomination's transplant passes on 600 development pairs, as rehearsed; 800 fresh matched pairs; 800 pairs on the relaxed set; 3,000 held-out episodes for the gates (the bar is 790; the ownership-free line 1,546); 200 shuffles for the permutation null.** The caution carried with it: at 180, one episode is 0.0056 of the scale. **The band that sampling alone puts around each count against the floor is printed beside it, as a 95 per cent Wilson interval** | record B, ruling 4 (`docs/rulings/2026-10-03-version-4-questions-rulings.md`) and the reconciliation; the read's fitting count amended by the 2026-10-06 ruling, page 4 (RT-240), for the read only; the band's method adopted 2026-10-04 from the check of pull requests 88 and 89 |
+| Arm M's predicted reading | between **0.3 and 0.7** on every seed, and within **0.10** of its true-slot reading on the same fresh episodes (the formula of section 5.3, which is that reading written in route accuracies). On the toy under the registered rules (every read fitted on 1,800, at an iteration limit of 10,000): 0.5252, 0.4793 and 0.5208, within 0.0252, 0.0033 and 0.0288 of the true-slot reading (fitted on 420, they were 0.4886, 0.4860 and 0.5449) | the queue ruling, page 5 (the band); the repairs method note at `882f252`, section 5 (the formula and the 0.10); the rulings on the review of version 2, RT-223; the toy figures fitted on 1,800 from the page 4 re-run at `e948899` (checked at `1e168f3`), reproduced at the 10,000 limit (`docs/2026-10-09-ruled-code-changes-and-page4-rerun-findings.md`); the figures fitted on 420 from the review of version 3, RT-231, and the controls re-run at `821f154` |
+| The numbers of episodes at the registered size | **for every read, 1,980 development episodes, the first 1,800 fitted, at an iteration limit of 10,000, and the last 180 held out (the floor is 144 of 180); the nomination's transplant passes on 600 development pairs, as rehearsed; 800 fresh matched pairs; 800 pairs on the relaxed set; 3,000 held-out episodes for the gates (the bar is 790; the ownership-free line 1,546); 200 shuffles for the permutation null.** The caution carried with it: at 180, one episode is 0.0056 of the scale. **The band that sampling alone puts around each count against the floor is printed beside it, as a 95 per cent Wilson interval** | record B, ruling 4 (`docs/rulings/2026-10-03-version-4-questions-rulings.md`) and the reconciliation; the read's fitting count amended by the 2026-10-06 ruling, page 4 (RT-240), for the read only; the band's method adopted 2026-10-04 from the check of pull requests 88 and 89; the iteration limit of 10,000, item 7 of `docs/rulings/2026-10-08-v5-open-items-rulings.md` |
 | An arm whose three seeds disagree | **a seed counts only if it passes every gate condition and every check that withholds a reading, and returns a reading; two seeds of three decide, the third reported**; separate counts per condition are not used. **The separation is the lowest of arm C's readings minus the highest of arm T's, among the seeds that read, and is not compared seed by seed** | record B, ruling 6, as amended by the 2026-10-06 ruling, page 7 (RT-249) |
 | The training recipe | **the frozen trainer's defaults** (section 5.5): AdamW, peak learning rate 0.002, weight decay 0.01, one-cycle schedule with a tenth of the steps as warm-up, gradients clipped at 1.0, 96 episodes a step, 585,544,960 tokens in 108,919 steps, fresh training episodes excluded from every evaluation set and from fresh and relaxed pairings | `experiments/08-successor-degree/src/train_successor.py` at `53ae82c`; **ruled 2026-10-08** (open item 5, `docs/rulings/2026-10-08-v5-open-items-rulings.md`) |
 | The spending alarm's cadence | **every 5 minutes while a machine runs, and for 30 minutes after the last deletion; rule S in flight and rule D at each deletion** (section 12.5) | the flat-models packet, page 2, reported ruled 2026-10-06 in `docs/2026-10-06-tripwire-fixes-method.md`, section 1 (branch `tripwire-fixes` at `5e2faf9`); confirmed 2026-10-08 in `docs/rulings/2026-10-08-flat-models-ruling-confirmed.md` (open item 2) |
@@ -3373,9 +3380,9 @@ decision moves; none of its seven pre-stated concerns happened; its figures
 are quoted in sections 3, 5 and 9 (MEASURED: `docs/2026-10-06-page4-toy-rerun-1800.md`,
 branch `page4-toy-rerun-1800` at `e948899`; checked at `1e168f3`). Two of
 its records are carried: its outcome line was made under the rules frozen
-before pull request 105 and must be summarised again with the current
-decision code before it is quoted as an outcome (this text quotes its
-per-model figures only); and the two-hour time limit its method set was
+before pull request 105, and has since been summarised again with the
+current decision code (R3, with arms C and M withheld by the in-use check;
+section 17, failure 4; `docs/2026-10-09-ruled-code-changes-and-page4-rerun-findings.md`); and the two-hour time limit its method set was
 reset to three hours by the coordinating session, an agent's call and not
 John's, after the laptop's load fell.
 
@@ -5148,7 +5155,8 @@ arithmetic.)*
 - **The toy's own outcome line:** R3 as the toy actually is; the fifth term
   if seed 0 is taken as the step 5a run (section 3); produced by the
   decision procedure's cases 1 to 3. The page 4 re-run's outcome line was
-  made under the pre-A2 rules and is to be summarised again (section 10).
+  made under the pre-A2 rules, and has since been summarised again under the
+  current decision code: R3 (see the note above).
 - **Arm M's pass line** ("between 0.3 and 0.7 on every seed, and within 0.10
   of its true-slot reading"): produced, both halves, at 1,800 (failure 2's
   output above: prediction met).
@@ -5191,8 +5199,9 @@ ruling, still open; on this version it catches the in-use check's bar, which
 failure 3's part three catches too.
 
 **What this pass leaves open, in one place.** The twelve open items of
-section 21 (all ruled 2026-10-08; the work items 7, 8, 9 and 12 ask for is
-still owed); the check of this version by a session that did not write it;
+section 21 (all ruled 2026-10-08; the work items 7, 9 and 12 ask for is
+done and checked, and item 8's test with a differently coded decoy is still
+owed); the check of this version by a session that did not write it;
 the closure check of RT-237 on this text; the merges of section 16; the
 ledger's rows; the eleven re-reads of the hand-set toy models; the
 re-summary of the page 4 re-run under the current decision code (done
@@ -5786,3 +5795,13 @@ row. The code also gains a one-number fix: the reporting table printed one
 cell too many on withheld seeds (12 for 11), so two columns sat under the
 wrong headings; no figure or decision changes, as re-summarising the page 4
 pass from its stored rows shows (summary identical, every row 16 cells).
+
+The check of this batch (`docs/reviews/2026-10-08-final-batch-check-claude-code.md`,
+pull request 154) found two must-fix items, applied the same night: three
+places that still called done work owed (section 10's page 4 paragraph,
+section 17 failure 4's outcome bullet, and the list of what the pass leaves
+open, where only item 8's decoy test is still owed), and the headings of sections 5.2 and 5.3 over the figures fitted on 420,
+which now say so (5.2 had the same fault). Its should-fix
+items too: section 7.1's note on the toy's held-out part, the citations of
+section 9's arm M row and episode-count row, and section 3's toy sentence,
+which now says the separation and the band are each row's arithmetic.
