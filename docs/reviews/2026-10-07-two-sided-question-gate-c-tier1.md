@@ -1,5 +1,10 @@
 # Gate C tier 1 review (the inside pass) of the proposal to refound the project on the two-sided question
 
+*Dated note, 2026-10-09 (Pacific): RT-256 in this file means the
+records-not-on-the-branch finding, renumbered RT-274 on 2026-10-09
+(docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md); RT-256
+elsewhere is the decision-procedure finding.*
+
 *Filed 2026-10-07 (Pacific) by a fresh Claude Code session in its own worktree
 (branch `worktree-agent-a5f29f93630089c3a`), reviewing
 `docs/rulings/2026-10-07-two-sided-question-PROPOSAL.md` at commit `9184ad9`

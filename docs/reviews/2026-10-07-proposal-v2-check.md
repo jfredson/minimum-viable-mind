@@ -1,5 +1,10 @@
 # Pairing-rule check of version 2 of the two-sided-question proposal
 
+*Dated note, 2026-10-09 (Pacific): RT-256 in this file means the
+records-not-on-the-branch finding, renumbered RT-274 on 2026-10-09
+(docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md); RT-256
+elsewhere is the decision-procedure finding.*
+
 *Filed 2026-10-07 (Pacific) by a fresh Claude Code session in its own worktree
 (branch `worktree-agent-af0cb850000b6793b`, reset to the tip of
 `outside-perspective-poll` at commit `5de5fff`, the commit that added version 2).

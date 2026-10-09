@@ -1,5 +1,10 @@
 # PROPOSAL, version 2: refound the project on the two-sided question
 
+*Dated note, 2026-10-09 (Pacific): RT-256 in this file means the
+records-not-on-the-branch finding, renumbered RT-274 on 2026-10-09
+(docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md); RT-256
+elsewhere is the decision-procedure finding.*
+
 *Written 2026-10-07 (Pacific), later the same day as version 1
 (`docs/rulings/2026-10-07-two-sided-question-PROPOSAL.md`), by the session
 that wrote version 1. It applies all eighteen findings of the Gate C tier 1

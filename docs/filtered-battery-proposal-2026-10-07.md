@@ -1,5 +1,10 @@
 # PROPOSAL: the table of felt features of presence, and the filtered battery built from it
 
+*Dated note, 2026-10-09 (Pacific): RT-256 in this file means the
+records-not-on-the-branch finding, renumbered RT-274 on 2026-10-09
+(docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md); RT-256
+elsewhere is the decision-procedure finding.*
+
 *Written 2026-10-07 (Pacific). This is a draft of Gate A registration text,
 not registration text: nothing here binds until it has been through Gate A,
 both tiers, with the failure-mode pass filed. It is the paper work ruled as
