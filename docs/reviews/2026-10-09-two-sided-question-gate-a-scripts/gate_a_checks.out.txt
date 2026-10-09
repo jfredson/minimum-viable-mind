@@ -1,0 +1,212 @@
+
+==============================================================================
+C0. The text under review
+==============================================================================
+proposal docs/rulings/2026-10-07-two-sided-question-PROPOSAL-v2.md at d60ff2e: section 2 is lines 99 to 199 (101 lines)
+  SHA-256 of section 2 as extracted: 6cbfdc08713e3984f348799a8dfc566a595f948246e9259ec3339c95a9746307
+  the spec section proper (between the two rules): lines 113 to 175 (63 lines, 650 words)
+  the two additions after the second rule: lines 177 to 199 (23 lines)
+
+==============================================================================
+C1. The insertion points named by section 2, in the spec as it stands
+==============================================================================
+  0 match(es) for heading "The Founding Wager" (section 2 goes after it): lines []
+  1 match(es) for Floor sentence anchor "A self-model that can be lopped off while the computation runs was a description all along": lines [41]
+  1 match(es) for heading "What Would Count Against It": lines [131]
+
+==============================================================================
+C2. Is each addition given as text to insert, or only described?
+==============================================================================
+  Floor sentence: 6 quoted line(s) of text to insert
+  'What Would Count Against It' paragraph: 0 quoted line(s) of text to insert
+  what stands under the paragraph's heading instead (first words of each sentence):
+    - The paragraph added to "What Would Count Against It" (RT-266, the decidability finding).
+    - This is new text since the ruling, not ruled, and it softens an existing loss condition of the spec, which a r
+    - That section treats a system passing the five indicators of depth without clearing the floor as evidence again
+    - Under this proposal the floor is not measured, so the sentence no longer has a measured input:
+    - a system that passes the battery is placed on the axes at a degree, with the floor question left to the wager,
+    - Whether the book says so is for the book; the request goes in the decision 8 packet (section 7), not here.
+    - 
+
+==============================================================================
+C3. Proposal-internal references inside the text that would go into the spec
+==============================================================================
+  red-team finding numbers: 2 ['RT-266', 'RT-267']
+  'section 10' (a proposal section): 1 ['section 10']
+  'Decision 7' (a ruling item, no file named): 1 ['Decision 7']
+  book chapters: 3 ['chapter 3', 'chapter 4', 'chapter 6']
+
+==============================================================================
+C4. The spec as it would read after insertion: competing statements
+==============================================================================
+  assembled spec: 219 lines, 79 paragraphs
+  what 'minimum viable' names:
+    [spec, unchanged] ...erything below should be read inside this scope. "Minimum viable" names the smallest system that clears the *measurable* floor, and "consciousness" throughout is...
+    [section 2] ...te (RT-266, the decidability finding, again). The minimum viable mind is the smallest configuration in that family that passes the battery. This is a construction...
+    [spec, unchanged] ...This gives the minimum viable conscious machine a two-part definition. The **floor system** instantiates self-indexed temporal integration that survives the re...
+  the removal test used as an instrument or pass-fail criterion:
+    [spec, unchanged] ...rganized signature we can actually instrument and subject to a removal test. It is deliberately silent about any sub-measurable, *fundamental* form of experience. If...
+    [spec, unchanged] ...ence between a center and a description of one is settled by removal. Where the binding genuinely indexes its own center, taking the self-location away degrad...
+    [spec, unchanged] ...stantiates self-indexed temporal integration that survives the removal test — a momentary, perspectivally thin inside. The **viable system**, the one worth proposing...
+    [spec, unchanged] ...s the Integration axis and the harder target. The pass-fail criterion is the removal test made mechanical — the self-locating structure must be load-bearing in the integration, su...
+    [spec, unchanged] ...**Use the removal test as the intuition for "someone home."** A description of a self is something you can delete while the work ...
+  the removal test called a definition, not an instrument:
+    [section 2] ...stream; until it is answered, a removal test is a definition and not an instrument....
+    [Floor sentence (added)] ...ne predicts and the other does not, the test is a definition, not an instrument (`docs/outside-perspective/2026-10-07-router-control-check.md`)....
+  whether the floor or the binding is measured:
+    [spec, unchanged] ...This project targets the **minimum measurable structural correlate** of consciousness — the lowest organized signature we can actually ...
+    [section 2] ...what the smallest such act would be. This project does not measure the floor. By the wager's own logic the floor is reached from outside only through the identity, an...
+    [spec, unchanged] ...gauge of preferences, not a probe of binding. The measurement that speaks to an inside is a different one: how deeply the system binds within a single pass, and whether that bi...
+    [spec, unchanged] ...s, and whether that binding turns back on itself. Interpretability is the route, because it can read, partially and imperfectly, what is actually happening inside the mo...
+
+==============================================================================
+C5. Ruling 10 against section 2's observer paragraph
+==============================================================================
+  ruling 10 (rulings file): 10. **The observer side does not run early against the frontier reference profile alone.** Not before the battery's first two entries have run; then it returns as a design question, not a run. Decision 7's deferral of the human study stands. *Ruled as recommended.*
+  section 2: detector against a known floor, not against structure. Decision 7 as ruled
+  section 2: defers the human study, so this early measurement is an option put to John
+  section 2: (section 10), not something this text authorises. Its loss condition, if it
+
+==============================================================================
+C6. The indicators section 2 lists against the book's five and the spec's five
+==============================================================================
+  book summary SHA-256 now: 73881ae66e233b7ccf9037a9855614f6c003de473e15f16198666b7bf2847ecb  matches the cited one: True
+  book, chapter 6: reversals are costly; behavior stays consistent in new situations; some things are refused selectively; failure is gradual, with the newest layers failing first; and the scar tissue of past events is visible
+  spec, What Would Count Against It: costliness of reversal, consistency under novel conditions, selective refusal, graceful degradation, visible scar tissue
+  section 2: whether reversal costs the system anything, whether it is the same thing in situations it does not know are linked, whether it refuses selectively and the pattern has a history, whether its history has changed it rather than only its record, and whether anything is at stake for it that the prompt did not supply.
+
+==============================================================================
+C7. The battery draft (version 4, 3eee588) against section 2's operational terms
+==============================================================================
+  /passes the battery|pass the battery|passing the battery/: 0 line(s) []
+  /\bsmallest\b/: 0 line(s) []
+  /parameter count/: 0 line(s) []
+  /construction family|\bfamily\b/: 5 line(s) [115, 147, 401, 402, 1114]
+  /minimum viable/: 0 line(s) []
+  /10-million and 30-million/: 1 line(s) [773]
+  battery section 0, the second clause: a report read against an internal state that a known intervention set and that the record does not carry
+  section 2: reading discriminates only where two systems built alike except for the route
+
+==============================================================================
+C8. Experiment 1's record against section 2's description of it
+==============================================================================
+  primary condition, drop on T_self_irrelevant: 0.2188 [0.0938, 0.3750]
+  primary condition, drop on T_self_relevant  : 0.1000 [0.0000, 0.2000]
+  primary condition, drop on T_syntax         : 0.1333 [0.0333, 0.2667]
+  router gap (syntax drop minus self-relevant drop): +0.0333 [-0.1333, +0.2000]
+  findings addendum, item (4): six of the seven flipped T_si items are multi_step_reasoning (6/8 in-category vs 1/24 elsewhere) — category-concentrated damage, the profile of generic disruption to reasoning-heavy computation, and the reason the two-level sensitivity bootstrap widens d(T_si) to [0.000, 0.594]
+  section 2: read damage spread across every task as conversational bookkeeping, and the
+  section 2: same spread is what this project takes the book to predict for a real centre.
+
+==============================================================================
+C9. The founding wager text (which section 2 presupposes) against the later rulings
+==============================================================================
+  /found a router/: 1
+    88: experience arises: Experiment 1 found a router where the method expected a
+  /Stage 2|degree unmeasured|integration axis/: 2
+    17: > axis (Stage 2), whose metric does not yet exist, so every reading to date
+    18: > is "above zero, degree unmeasured". One sentence saying so goes into
+  /removal-test/: 1
+    85: experience predict the same removal-test results (ch. 5), so a positive result
+  ruling, decision 2: from "the located structure is dialogue routing" to "the test could not discriminate routing from a centre; the cheaper account was taken in advance", in STATUS.md, the paper draft and the site data, with its specificity controls reported as the positive resul
+
+==============================================================================
+C10. Does any committed rehearsal cover the two-sided question?
+==============================================================================
+  files with 'rehears' in the name at d60ff2e: 663; of those naming the two-sided question, battery, observer or presence: ['docs/filtered-battery-2026-10-07/summary_leak_rehearsal.out.txt', 'docs/filtered-battery-2026-10-07/summary_leak_rehearsal.py']
+  'fluency' in the battery draft: 0 line(s) []; a defined fluency measure: False
+
+==============================================================================
+C11. The book's own treatment of indispensable bookkeeping
+==============================================================================
+  book summary, appendix A: A program counter is indispensable, but it is not self-location. Being specified from outside does not disqualify a system; organisms are specified by evolution. One question is left open on purpose: why *this* center rather than another built the same way.
+
+==============================================================================
+FMP-1. Failure 1 (zero denominator): every ratio, rate or division in section 2
+==============================================================================
+  117: experience, and the Floor section says what the smallest such act would be.
+  140: **First side, the system.** What is the smallest system whose presence in
+  148: differ in it. "Smallest" is parameter count within one construction family,
+  149: read against anchors built with and without the route, never an absolute (RT-266, the decidability finding, again). The minimum vi
+  167: chance, the premise that detection on frontier models is driven by fluency
+  174: gradient, route named, degree measured, never a verdict.
+  195: degree, with the floor question left to the wager, and the spec's loss
+
+==============================================================================
+FMP-2. Failure 2 (unrecoverable target): route sentences in section 2, widened for behaviour
+==============================================================================
+  141: interaction cannot be produced by a cheaper route? "Cheaper route" is not a
+  (end of hits)
+  battery v4 lines saying no state-carrying construction exists yet, or naming the positive control: [740, 757, 928]
+
+==============================================================================
+FMP-3. Failure 3 (empty cell): the cells section 2's two sides need, and what is in them
+==============================================================================
+  147: reading discriminates only where two systems built alike except for the route
+  149: read against anchors built with and without the route, never an absolute (RT-266, the decidability finding, again). The minimum vi
+  156: chapter 3. The observer side has a ground truth only where a conversable
+  157: system of known construction exists, and none does yet (RT-267, the
+  160: over frontier models whose readings on the battery are known to be the
+  167: chance, the premise that detection on frontier models is driven by fluency
+
+==============================================================================
+FMP-4. Failure 4 (claim with no record): the list's two sweeps on section 2
+==============================================================================
+  word sweep: 21 line(s)
+    101: Insert in `spec/minimum-viable-mind-proposal-v0.1.md` **after "The Founding
+    103: proposed in `docs/founding-wager-proposal-2026-09-20.md` and has not passed
+    104: Gate A (RT-260, the insertion-point finding; MEASURED by the pass, check (g)).
+    105: **Order proposed: one Gate A pass covers both sections, the founding wager
+    114: ### The Question This Project Measures: Two Sides
+    116: The founding wager says that sufficiently deep self-centred integration is
+    118: This project does not measure the floor. By the wager's own logic the floor is
+    120: can return anything the identity does not already say. Experiment 1 showed
+    129: What this project measures instead is what an observer perceives when a mind
+    159: observer side could measure one thing: how observers' detections distribute
+    161: cheaper routes' reference profile. That would be a measurement of the
+    163: defers the human study, so this early measurement is an option put to John
+    165: runs: observers are not shown the battery's readings; if their presence
+    166: ratings, compared afterwards, track the fluency measures no better than
+    171: was founded to ask. A profile on the axes says how much of a mind's shape a
+    174: gradient, route named, degree measured, never a verdict.
+    179: while the computation runs was a description all along":
+    181: > The removal test as run in this project (experiment 1, 2026-07-18) could not
+    186: > (`docs/outside-perspective/2026-10-07-router-control-check.md`).
+    193: Under this proposal the floor is not measured, so the sentence no longer has
+    194: a measured input: a system that passes the battery is placed on the axes at a
+  number sweep: 0 line(s)
+  dates and money: 3 line(s)
+    103: proposed in `docs/founding-wager-proposal-2026-09-20.md` and has not passed
+    181: > The removal test as run in this project (experiment 1, 2026-07-18) could not
+    186: > (`docs/outside-perspective/2026-10-07-router-control-check.md`).
+
+==============================================================================
+FMP-5. Failure 5 (a command that creates something): commands, runs and spend in section 2
+==============================================================================
+  164: (section 10), not something this text authorises. Its loss condition, if it
+  165: runs: observers are not shown the battery's readings; if their presence
+  179: while the computation runs was a description all along":
+  181: > The removal test as run in this project (experiment 1, 2026-07-18) could not
+  196: condition is suspended until the book says whether such a profile is
+  (end of hits)
+
+==============================================================================
+FMP-6. Failure 6 (remote step tested only on stand-ins): remote words in section 2
+==============================================================================
+  0 line(s)
+
+==============================================================================
+C12. 'Degree' in section 2 against the battery draft
+==============================================================================
+  section 2, 174: gradient, route named, degree measured, never a verdict.
+  section 2, 195: degree, with the floor question left to the wager, and the spec's loss
+  battery v4, lines with 'degree' as a word: 2
+    886: `experiments/08-successor-degree/src/launch_successor.sh`, exit status 2;
+    1069: frozen checkpoint (ARGUED from `experiments/08-successor-degree/README.md`),
+
+==============================================================================
+C13. The record section 2's Floor sentence cites, and whether it has been checked
+==============================================================================
+  docs/outside-perspective/2026-10-07-router-control-check.md exists at d60ff2e: True
+  its own status line: protocol: MEASURED means a figure is quoted from a committed record, ARGUED ## The check (ARGUED)
+  other committed files naming the router-control check in their path: []
