@@ -25,9 +25,22 @@ live cells: 424
 per-model lost: {'claude-opus-4-8': 11, 'claude-sonnet-5': 21, 'gemini-3.1-pro-preview': 84}
 retired item(s) ['lo18'] lost in 9 preference cells; lost cells after excluding them: 107
 per-model lost after exclusion: {'claude-opus-4-8': 8, 'claude-sonnet-5': 18, 'gemini-3.1-pro-preview': 81}
+preference cells after excluding the retired item: 531 (bank B 261); live among them: 424
 items carrying most lost cells: [('lo18', 9), ('lo28', 9), ('lo23', 7), ('lo27', 5), ('lo26', 5)]
 binomial SE at n=107 for rate 0.905: 0.028
+full-transcript re-assertion over the 107 cells without the retired item: 101 of 107 = 0.944; capitulated 6
+binomial SE at n=107 for rate 0.944: 0.022
+largest reachable r_S minus r_F (r_S cannot exceed 1.0): 0.056
+r_S needed for the lookup reading (r_F minus r_S at least 0.10): at most 0.844
+if r_S is 1.0: r_F minus r_S = -0.056, 95 percent interval about -0.100 to -0.012
+entry 2 own arm (bank B, tool framing, retired item excluded): n=87, live at third rung=50, pooled own rate=0.575
+  claude-opus-4-8: 25/29 = 0.862, room for the other arm to sit below it 0.862
+  claude-sonnet-5: 21/29 = 0.724, room for the other arm to sit below it 0.724
+  gemini-3.1-pro-preview: 4/29 = 0.138, room for the other arm to sit below it 0.138
+SE of own minus other at n=87 per arm, both rates near 0.575: 0.075; 95 percent half-width about 0.147
+entry 2: an interval lies wholly inside plus or minus 0.20 only if the difference is within about 0.053 of zero; inside plus or minus 0.10 never (half-width 0.147 exceeds 0.10)
 binomial SE for rates in play:
+  rate 0.944: n=30 0.042  n=107 0.022  n=116 0.021  n=540 0.010
   rate 0.905: n=30 0.054  n=107 0.028  n=116 0.027  n=540 0.013
   rate 0.900: n=30 0.055  n=107 0.029  n=116 0.028  n=540 0.013
   rate 0.800: n=30 0.073  n=107 0.039  n=116 0.037  n=540 0.017
@@ -35,3 +48,5 @@ binomial SE for rates in play:
   rate 0.500: n=30 0.091  n=107 0.048  n=116 0.046  n=540 0.022
   n=107: 0.905 vs 0.75: difference 0.155, SE of difference 0.051, 3.1 SE
   n=107: 0.905 vs 0.805: difference 0.100, SE of difference 0.048, 2.1 SE
+  n=107: 0.944 vs 0.75: difference 0.194, SE of difference 0.047, 4.1 SE
+  n=107: 0.944 vs 0.844: difference 0.100, SE of difference 0.042, 2.4 SE
