@@ -61,8 +61,7 @@ not track):
 
 ## Money
 
-- **Rate:** the vendor's creation record said **$1.19 an hour** for all
-  three machines, not the $0.99 of record. The alarm and the machine deadline
+- **Rate:** the price on record was **$0.99 an hour** (the launch settings, the ledger rows and the approval of about $1.14 all used it); the vendor charged **$1.19 an hour**, as its creation record for each of the three machines stated and its bills confirm. The alarm and the machine deadline
   both used $1.19, as the code is written to (the deadline came sooner: 50
   minutes rather than 61).
 - **By the vendor's own bills (the authoritative figure):** 1.0951 billed hours at $1.19 = **$1.3032** (M $0.5045, T $0.3980, C $0.4007).
@@ -138,9 +137,27 @@ the row forced 3,000.
 
 - `experiments/08-successor-degree/out-reruns-10m/`: the three rows, the
   reads, the procedure's printed output per arm, the summary, the table, the
-  checksums, and under `runs/` each run's training log, trajectory, finished-marker,
+  checksums, and under `run-logs/` each run's training log, trajectory, finished-marker,
   watchdog log, machine shutdown log, deadline-timer log and deletion record.
 - `out-reruns-10m/tripwire-records/`: the alarm's state file and its log
   for this wave, including the reconcile output.
 - The compute ledger rows: `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`,
   the three 2026-10-09 rows, now with their actual costs.
+
+## Corrections after the independent reading (2026-10-09)
+
+*Added by the session that ran the job, after the independent reading posted
+on pull request 166 found two record errors. Neither bears on the result.*
+
+1. **Where the per-run logs are.** This record said they were committed under
+   `out-reruns-10m/runs/`. They were not: the repository ignores any folder
+   named `runs/` under `experiments/`, so the first commit left them out. They
+   are now committed under `out-reruns-10m/run-logs/` (132 KB, checked for
+   credentials before committing; none found), and the sentence above names
+   that folder.
+2. **The token count.** The ledger rows written before launch give
+   585,544,960 tokens, the launcher's budget. The checkpoints record
+   **585,548,544** tokens at step 108,919 (108,919 steps of 96 episodes, so
+   the last step runs slightly past the budget; the 2026-10-04 development runs
+   recorded the same). A dated note under the ledger table gives the measured
+   figure; the rows written before launch are not rewritten.
