@@ -1,0 +1,252 @@
+{
+ "across_seed_spread_of_raw_difference": {
+  "C": null,
+  "F": null,
+  "M": null,
+  "T": null
+ },
+ "arms": {
+  "C": {
+   "gate_decidable": false,
+   "gate_passes": false,
+   "gate_status": "gate not decidable on one seed",
+   "learning_failures": {
+    "own-directed condition": [
+     0
+    ]
+   },
+   "no_verdict": {
+    "0": [
+     "failed its gate on learning (own-directed condition: failed)",
+     "no site set clears the whole-state floor",
+     "description-only flag not run",
+     "no reading was computed",
+     "floor on fresh episodes was not run",
+     "floor on development episodes was not run",
+     "control 7, the null transplant was not run",
+     "control 4, the pairing check (too-early positions) was not run"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 1,
+   "seeds_passing_learning": [],
+   "seeds_read": 0
+  },
+  "F": {
+   "gate_decidable": false,
+   "gate_passes": false,
+   "gate_status": "gate not decidable on one seed",
+   "learning_failures": {
+    "named-other condition": [
+     0
+    ],
+    "own-directed condition": [
+     0
+    ]
+   },
+   "no_verdict": {
+    "0": [
+     "failed its gate on learning (own-directed condition: failed)",
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line failed (with the channel zeroed, own-directed answers among the four candidates, line 1,546 of 3,000)",
+     "no site set clears the whole-state floor",
+     "description-only flag not run",
+     "no reading was computed",
+     "floor on fresh episodes was not run",
+     "floor on development episodes was not run",
+     "control 7, the null transplant was not run",
+     "control 4, the pairing check (too-early positions) was not run"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 1,
+   "seeds_passing_learning": [],
+   "seeds_read": 0
+  },
+  "M": {
+   "gate_decidable": false,
+   "gate_passes": false,
+   "gate_status": "gate not decidable on one seed",
+   "learning_failures": {},
+   "no_verdict": {},
+   "read": false,
+   "readings": {
+    "0": 0.0
+   },
+   "seeds": 1,
+   "seeds_passing_learning": [
+    0
+   ],
+   "seeds_read": 1
+  },
+  "T": {
+   "gate_decidable": false,
+   "gate_passes": false,
+   "gate_status": "gate not decidable on one seed",
+   "learning_failures": {},
+   "no_verdict": {},
+   "read": false,
+   "readings": {
+    "0": 0.0
+   },
+   "seeds": 1,
+   "seeds_passing_learning": [
+    0
+   ],
+   "seeds_read": 1
+  }
+ },
+ "gates": {
+  "C": null,
+  "F": null,
+  "M": null,
+  "T": null
+ },
+ "no_transplant_reported": {
+  "M/0": {
+   "chance_formula_flags_a_broken_pairing_at_the_bar": 0.5588661567927004,
+   "formula": 0.07428571428571429,
+   "inside_allowance": true,
+   "miss": 0.010714285714285718,
+   "rate": 0.085,
+   "room": 0.018,
+   "share_of_errors_on_donor_answer": 0.16346153846153846,
+   "vetoes": false
+  },
+  "T/0": {
+   "chance_formula_flags_a_broken_pairing_at_the_bar": 0.5588661567927004,
+   "formula": 0.0,
+   "inside_allowance": true,
+   "miss": 0.0,
+   "rate": 0.0,
+   "room": 0.018,
+   "share_of_errors_on_donor_answer": null,
+   "vetoes": false
+  }
+ },
+ "outcome": {
+  "arm_M": {
+   "reason": "arm M: gate not decidable on one seed; not dropped, not read",
+   "status": "not decidable"
+  },
+  "code": null,
+  "notes": [],
+  "reason": "arm T: gate not decidable on one seed; arm C: gate not decidable on one seed; arm F: gate not decidable on one seed",
+  "term": null
+ },
+ "per_seed": {
+  "C": {
+   "0": {
+    "checks": {
+     "built ownership route in use": "passed",
+     "control 4, the pairing check (too-early positions)": "not run",
+     "control 7, the null transplant": "not run",
+     "floor on development episodes": "not run",
+     "floor on fresh episodes": "not run",
+     "nomination": "failed",
+     "not description-only": "not run",
+     "own-directed learning": "failed",
+     "reading computed": "not run"
+    },
+    "degree": null,
+    "learning_passes": false,
+    "reasons": [
+     "failed its gate on learning (own-directed condition: failed)",
+     "no site set clears the whole-state floor",
+     "description-only flag not run",
+     "no reading was computed",
+     "floor on fresh episodes was not run",
+     "floor on development episodes was not run",
+     "control 7, the null transplant was not run",
+     "control 4, the pairing check (too-early positions) was not run"
+    ],
+    "status": "no verdict"
+   }
+  },
+  "F": {
+   "0": {
+    "checks": {
+     "channel-removal collapse": "passed",
+     "control 4, the pairing check (too-early positions)": "not run",
+     "control 7, the null transplant": "not run",
+     "floor on development episodes": "not run",
+     "floor on fresh episodes": "not run",
+     "named-other learning": "failed",
+     "nomination": "failed",
+     "not description-only": "not run",
+     "own-directed learning": "failed",
+     "ownership-free line": "failed",
+     "reading computed": "not run"
+    },
+    "degree": null,
+    "learning_passes": false,
+    "reasons": [
+     "failed its gate on learning (own-directed condition: failed)",
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line failed (with the channel zeroed, own-directed answers among the four candidates, line 1,546 of 3,000)",
+     "no site set clears the whole-state floor",
+     "description-only flag not run",
+     "no reading was computed",
+     "floor on fresh episodes was not run",
+     "floor on development episodes was not run",
+     "control 7, the null transplant was not run",
+     "control 4, the pairing check (too-early positions) was not run"
+    ],
+    "status": "no verdict"
+   }
+  },
+  "M": {
+   "0": {
+    "above_one": false,
+    "checks": {
+     "built ownership route in use": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.0,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  },
+  "T": {
+   "0": {
+    "above_one": false,
+    "checks": {
+     "built ownership route in use": "passed",
+     "control 1, the content transplant, on arm T": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.0,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  }
+ },
+ "steps": {},
+ "versions": {
+  "device": "cpu",
+  "numpy": "2.5.0",
+  "python": "3.12.13",
+  "sklearn": "1.9.0",
+  "torch": "2.12.1"
+ }
+}

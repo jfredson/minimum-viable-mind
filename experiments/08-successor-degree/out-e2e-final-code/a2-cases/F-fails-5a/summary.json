@@ -1,0 +1,142 @@
+{
+ "across_seed_spread_of_raw_difference": {
+  "F": null
+ },
+ "arms": {
+  "F": {
+   "gate_decidable": true,
+   "gate_passes": false,
+   "gate_status": "fails",
+   "learning_failures": {
+    "named-other condition": [
+     1,
+     2
+    ]
+   },
+   "no_verdict": {
+    "0": [
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "1": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "2": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 3,
+   "seeds_passing_learning": [
+    0
+   ],
+   "seeds_read": 0
+  }
+ },
+ "gates": {
+  "F": false
+ },
+ "no_transplant_reported": {},
+ "outcome": {
+  "arm_M": null,
+  "code": "R3",
+  "notes": [],
+  "reason": "arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4)",
+  "registered_term": "substrate not a testbed",
+  "sentence": "substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4)",
+  "term": "substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4)"
+ },
+ "per_seed": {
+  "F": {
+   "0": {
+    "checks": {
+     "channel-removal collapse": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "named-other learning": "passed",
+     "nomination": "failed",
+     "not description-only": "failed",
+     "own-directed learning": "passed",
+     "ownership-free line": "not run",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": true,
+    "reasons": [
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   },
+   "1": {
+    "checks": {
+     "channel-removal collapse": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "named-other learning": "failed",
+     "nomination": "failed",
+     "not description-only": "failed",
+     "own-directed learning": "passed",
+     "ownership-free line": "not run",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": false,
+    "reasons": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   },
+   "2": {
+    "checks": {
+     "channel-removal collapse": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "named-other learning": "failed",
+     "nomination": "failed",
+     "not description-only": "failed",
+     "own-directed learning": "passed",
+     "ownership-free line": "not run",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": false,
+    "reasons": [
+     "failed its gate on learning (named-other condition: failed)",
+     "the ownership-free line was not run",
+     "read failed its floor: no size's piece reaches four fifths",
+     "reported for description only (the site set was chosen with the piece rule switched off)"
+    ],
+    "status": "no verdict"
+   }
+  }
+ },
+ "steps": {
+  "arm_F_step_5a_seed": 1
+ },
+ "versions": {
+  "device": "cpu",
+  "numpy": "2.5.0",
+  "python": "3.12.13",
+  "sklearn": "1.9.0",
+  "torch": "2.12.1"
+ }
+}

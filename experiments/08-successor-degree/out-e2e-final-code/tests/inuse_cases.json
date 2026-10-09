@@ -1,0 +1,271 @@
+{
+ "cases": [
+  {
+   "case": 1,
+   "about": "committed toy arm T seed 0, unchanged",
+   "arm": "T",
+   "expected": "passed",
+   "got": "passed",
+   "matches": true,
+   "sharpness": 3.883709192276001,
+   "weight": 0.9987316727638245,
+   "route_use": {
+    "slot": 1.0
+   },
+   "reasons": []
+  },
+  {
+   "case": 2,
+   "about": "toy arm T seed 0, sharpness set to 0 (flat)",
+   "arm": "T",
+   "expected": "failed",
+   "got": "failed",
+   "matches": true,
+   "sharpness": 0.0,
+   "weight": 0.25,
+   "route_use": {
+    "slot": 0.0
+   },
+   "reasons": [
+    "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.250, bar 0.9 (sharpness 0.0)",
+    "the built ownership route has gone flat (construction did not hold): the slot route is not in use: route use 0.000, bar 0.5"
+   ]
+  },
+  {
+   "case": 3,
+   "about": "toy arm T seed 0, sharpness -0.09",
+   "arm": "T",
+   "expected": "failed",
+   "got": "failed",
+   "matches": true,
+   "sharpness": -0.09000000357627869,
+   "weight": 0.21778656542301178,
+   "route_use": {
+    "slot": 0.01232394366197183
+   },
+   "reasons": [
+    "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.218, bar 0.9 (sharpness -0.09000000357627869)",
+    "the built ownership route has gone flat (construction did not hold): the slot route is not in use: route use 0.012, bar 0.5"
+   ]
+  },
+  {
+   "case": 4,
+   "about": "toy arm C seed 0, sharpness 4.0, scale-and-shift and binding zeroed (route round it)",
+   "arm": "C",
+   "expected": "failed",
+   "got": "failed",
+   "matches": true,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "route_use": {
+    "entangled": 0.0
+   },
+   "reasons": [
+    "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.000, bar 0.5"
+   ]
+  },
+  {
+   "case": 5,
+   "about": "toy arm T seed 0, slot reader zeroed",
+   "arm": "T",
+   "expected": "failed",
+   "got": "failed",
+   "matches": true,
+   "sharpness": 3.883709192276001,
+   "weight": 0.9987316727638245,
+   "route_use": {
+    "slot": 0.0
+   },
+   "reasons": [
+    "the built ownership route has gone flat (construction did not hold): the slot route is not in use: route use 0.000, bar 0.5"
+   ]
+  },
+  {
+   "case": 6,
+   "about": "toy arm M seed 0, sharpness 4.0, separable slot reader zeroed",
+   "arm": "M",
+   "expected": "failed",
+   "got": "failed",
+   "matches": true,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "route_use": {
+    "entangled_items": 0.07571428571428572,
+    "separable": 0.45161290322580644
+   },
+   "reasons": [
+    "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.076, bar 0.5",
+    "the built ownership route has gone flat (construction did not hold): the separable route (items it0 and it4) is not in use: route use 0.452, bar 0.5"
+   ]
+  },
+  {
+   "case": 7,
+   "about": "toy arm M seed 0, sharpness 4.0, scale-and-shift and binding zeroed",
+   "arm": "M",
+   "expected": "failed",
+   "got": "failed",
+   "matches": true,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "route_use": {
+    "entangled_items": 0.0,
+    "separable": 0.99479618386817
+   },
+   "reasons": [
+    "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.000, bar 0.5"
+   ]
+  },
+  {
+   "case": 8,
+   "about": "committed toy arm C seed 1, unchanged",
+   "arm": "C",
+   "expected": "failed",
+   "got": "failed",
+   "matches": true,
+   "sharpness": 0.6969833374023438,
+   "weight": 0.5733065009117126,
+   "route_use": {
+    "entangled": 0.23253082795067528
+   },
+   "reasons": [
+    "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.573, bar 0.9 (sharpness 0.6969833374023438)",
+    "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.233, bar 0.5"
+   ]
+  },
+  {
+   "case": 8,
+   "about": "committed toy arm C seed 2, unchanged",
+   "arm": "C",
+   "expected": "failed",
+   "got": "failed",
+   "matches": true,
+   "sharpness": 0.9281306862831116,
+   "weight": 0.6808432340621948,
+   "route_use": {
+    "entangled": 0.22119281991893458
+   },
+   "reasons": [
+    "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.681, bar 0.9 (sharpness 0.9281306862831116)",
+    "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.221, bar 0.5"
+   ]
+  },
+  {
+   "case": 9,
+   "about": "committed toy arm F seed 0 (not judged; reference)",
+   "arm": "F",
+   "expected": "not applicable",
+   "got": "not applicable",
+   "matches": true,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "route_use": {
+    "entangled": 0.0
+   },
+   "reasons": []
+  },
+  {
+   "case": 10,
+   "about": "real 10-million arm C",
+   "arm": "C",
+   "expected": "failed",
+   "got": "failed",
+   "matches": true,
+   "sharpness": -0.08860761672258377,
+   "weight": 0.21826127171516418,
+   "route_use": {
+    "entangled": 0.01764705882352941
+   },
+   "reasons": [
+    "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.218, bar 0.9 (sharpness -0.08860761672258377)",
+    "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.018, bar 0.5"
+   ],
+   "checkpoint_sha256": "11a53c266d0a6926e7f4dc1d803e3fee5dd60b452bdd39f05192b4679c7aa38d"
+  },
+  {
+   "case": 11,
+   "about": "real 10-million arm M",
+   "arm": "M",
+   "expected": "failed",
+   "got": "failed",
+   "matches": true,
+   "sharpness": -0.008293974213302135,
+   "weight": 0.2469026893377304,
+   "route_use": {
+    "entangled_items": 0.0,
+    "separable": 0.0
+   },
+   "reasons": [
+    "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.247, bar 0.9 (sharpness -0.008293974213302135)",
+    "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.000, bar 0.5",
+    "the built ownership route has gone flat (construction did not hold): the separable route (items it0 and it4) is not in use: route use 0.000, bar 0.5"
+   ],
+   "checkpoint_sha256": "c71b391892b88d3b36646983ade8b76bc0f842a6c9b8b4f7a4f923ea5e989a4e"
+  },
+  {
+   "case": 12,
+   "about": "real 10-million arm T",
+   "arm": "T",
+   "expected": "passed",
+   "got": "passed",
+   "matches": true,
+   "sharpness": 1.9468622207641602,
+   "weight": 0.9424113035202026,
+   "route_use": {
+    "slot": 0.9236363636363636
+   },
+   "reasons": [],
+   "checkpoint_sha256": "5eafbd8e36d09a678fc50a9cc903f5ff618c27caf3198b83a72bf58bef46e96e"
+  },
+  {
+   "case": 13,
+   "about": "untrained toy arm C (nothing right to lose)",
+   "arm": "C",
+   "expected": [
+    "could not be evaluated",
+    "failed"
+   ],
+   "got": "failed",
+   "matches": true,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "route_use": {
+    "entangled": 0.0
+   },
+   "reasons": [
+    "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.000, bar 0.5"
+   ]
+  }
+ ],
+ "toy_sha256": {
+  "ckpt_blind_base_seed0.pt": "027f5ac0c78576e9263ad488ce18f0cb64070e5eeb89ff30e9a177294e25e162",
+  "ckpt_blind_base_seed1.pt": "9b44cd386e6de0298a52355868652bdc9a9c0e3c3c4cd7af48485cc53ba9c3f5",
+  "ckpt_blind_base_seed2.pt": "092393bdc1b488cfef7706a02804988bb4d672489bc0f332eada603d42f52ba6",
+  "ckpt_C_base_seed0.pt": "47326bb90c5f4ad03beacc74da1d33eec1fd4462314a2e9ce385c36a1e7ffeee",
+  "ckpt_C_base_seed1.pt": "b3596f309e780e5820a7064ccb207a413a71be439170986b18479fe957e0af2a",
+  "ckpt_C_base_seed2.pt": "2fc87d0454af22bc2d1c00b7247c220ff0705b8c2500005b47a9cb491ac202f0",
+  "ckpt_F_base_seed0.pt": "c3afe0c6354f49f185b1806a433e6f0563b48a14f6e4559b2264ecb0abeea88d",
+  "ckpt_F_base_seed1.pt": "2e51df7efd952e044b63702a5dc63c88e12de41ffe89c1b15c35892756cb219b",
+  "ckpt_F_base_seed2.pt": "d5b59d8b8d32d42327beb4e6866107fe6e1167f4de1d0d73e3e201ed9d1683b1",
+  "ckpt_M_base_seed0.pt": "e0f55d92d42bffdb3774cb267bbd8caf16f901fd3fa2f127e9989780188ceda2",
+  "ckpt_M_base_seed1.pt": "d9b8010c9bec5ae20aaacabd38acd89497ef121599643a15d548ad44f688ecab",
+  "ckpt_M_base_seed2.pt": "eeb3a7a43628791f1c85ac85d6108b74e89c0a209f1688c7342d864ce4926dba",
+  "ckpt_T_base_seed0.pt": "b679bf6cd7884f28a137a6e6a669728213c085ba9cba5c9a2574b947885cfe68",
+  "ckpt_T_base_seed1.pt": "1558acb2fce628335f28c3a29acef43fdf0d409151e1b5774d8e75aa7f489113",
+  "ckpt_T_base_seed2.pt": "84f48372c995c7c53baa80d9379a3778bb8c1845e45589b743bd2b8c083c90c2",
+  "ckpt_F_curriculum_seed0.pt": "8dee3f31e1a9906711e9e8b71609b8a77126853091f48b2db351d39daf8b7a90",
+  "ckpt_F_curriculum_seed1.pt": "6664647fa3a754485fbddda97e2684c1fe86260159057064aa8cc021e7f88a74",
+  "ckpt_F_curriculum_seed2.pt": "dec4599e9793ebc6b2ff665fc39c5c52754b2d70fc065c7ce370015daf28b205",
+  "ckpt_F_reweight_seed0.pt": "c4d9f6c332ce0fea2496012ff8276a47528f807ea797bf2daf621a9e6bea06ac",
+  "ckpt_F_reweight_seed1.pt": "b5cd12a751211374285ac41dc8afe2d21f711b3c5a2d493e26018a687c7aae1a",
+  "ckpt_F_reweight_seed2.pt": "56f6f692d50b582a4e9cbfef48a459c0642efe3c85a0b0e80c781836b6bb6637",
+  "../../out-grammar-c/models/ckpt_C_base_seed0.pt": "853bb15317f0b899391527f741447b51f0fbbdb0e342205322c3822f1ff42e02",
+  "../../out-grammar-c/models/ckpt_C_base_seed1.pt": "23b77fae44530f7a98c53725c4212e0ae5044bd26c830cd9a9830091c14c8b43",
+  "../../out-grammar-c/models/ckpt_C_base_seed2.pt": "c0ea0de5d68716f82c17bfb026328303254af59a44ba5d1bfcb01c9390c62de9",
+  "../../out-grammar-c/models/ckpt_F_base_seed0.pt": "13847d386077484c0df5dded422050c68013b4eb0ba8822dead7cdf0419d240a",
+  "../../out-grammar-c/models/ckpt_F_base_seed1.pt": "114f473332f67cde84e211ab6722a5182600fa23bad1f9cd82d207a5907bb55e",
+  "../../out-grammar-c/models/ckpt_F_base_seed2.pt": "077aa75d37c7bf9c654e61e3518f0890efad3b1610012c87ade9f2951abd5d35",
+  "../../out-grammar-c/models/ckpt_T_base_seed0.pt": "c4accce07dcc50e4592503d64252bc1dac3307853bff9dd5cfff9850990f1056",
+  "../../out-grammar-c/models/ckpt_T_base_seed1.pt": "e74f3eb004b33ffd3c4b7ca442672ea65e61b0a86f860c19c3228ae1071ba6d5",
+  "../../out-grammar-c/models/ckpt_T_base_seed2.pt": "8173bef7eb449db09298907cd1007f1171934e70503c69850776dcf12beb4eac"
+ }
+}
