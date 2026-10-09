@@ -1,0 +1,44 @@
+{
+ "seed": 0,
+ "variant": "V3",
+ "kind": "soft",
+ "scale": 16.0,
+ "k": 82.29530334472656,
+ "block_rms": 5.14345645904541,
+ "a_outputs_bit_identical_to_committed_model": true,
+ "b_code_only_transplant_bit_identical": true,
+ "b2_code_overwritten_with_noise_bit_identical": true,
+ "c_largest_at_action_is_owner_word": true,
+ "c_within_0_and_k": true,
+ "c_sums_to_k": true,
+ "c_holds": true,
+ "code_words_ever_set": 12,
+ "owner_weight_at_action_mean": 0.9987316727638245,
+ "d_code_alone_correct_by_state": [
+  180,
+  180,
+  180,
+  180,
+  180
+ ],
+ "d_block_alone_correct_by_state": [
+  180,
+  180,
+  180,
+  180,
+  180
+ ],
+ "d_of": 180,
+ "e_at_state_0_action": {
+  "whole": 1.0,
+  "block_only": 1.0,
+  "code_only": 0.0,
+  "untouched": 0.0,
+  "own_accuracy": 1.0,
+  "reading_with_block": 0.0,
+  "reading_with_code": 1.0
+ },
+ "f_gate_record_identical": true,
+ "all_hold": true,
+ "threads": 4
+}
