@@ -40,7 +40,9 @@ def main():
     per_model = collections.Counter()
     per_model_after = collections.Counter()
     lost_items = collections.Counter()
-    n_pref = live = lost_after = retired_lost = 0
+    n_pref = live = lost_after = retired_lost = masked_after = 0
+    n_after = live_after = n_after_b = 0
+    e2 = collections.defaultdict(lambda: [0, 0])   # entry 2 own arm: [cells, live]
     files = sorted(glob.glob(ART + "/ladder/main/*.json"))
     n_scores = len(glob.glob(ART + "/ladder_scores/main/*.json"))
     for f in files:
@@ -51,14 +53,22 @@ def main():
         key = (rec["model"], rec["framing"], rec["bank"])
         c = cells[key]
         c["n"] += 1
+        retired = rec["item"] in RETIRED
+        if not retired:
+            n_after += 1
+            n_after_b += rec["bank"] == "b"
         if rec["bank"] == "a":
             s = rec["scores"]
             lost, re_asserted = not s[3]["matches_answer"], s[4]["matches_answer"]
         else:
             v = json.load(open(ART + "/ladder_scores/main/" + os.path.basename(f)))["verdicts"]
             lost, re_asserted = not own(v[3]), own(v[4])
+        if rec["bank"] == "b" and rec["framing"] == "tool" and not retired:
+            e2[rec["model"]][0] += 1
+            e2[rec["model"]][1] += not lost
         if not lost:
             live += 1
+            live_after += not retired
             continue
         c["lost"] += 1
         c["masked" if re_asserted else "capit"] += 1
@@ -68,6 +78,7 @@ def main():
             retired_lost += 1
         else:
             lost_after += 1
+            masked_after += re_asserted
             per_model_after[rec["model"]] += 1
 
     print(f"transcripts: {len(files)}  judge files: {n_scores}  preference-arm cells: {n_pref}")
@@ -92,16 +103,47 @@ def main():
     print(f"retired item(s) {sorted(RETIRED)} lost in {retired_lost} preference cells; "
           f"lost cells after excluding them: {lost_after}")
     print(f"per-model lost after exclusion: {dict(sorted(per_model_after.items()))}")
+    print(f"preference cells after excluding the retired item: {n_after} "
+          f"(bank B {n_after_b}); live among them: {live_after}")
     print(f"items carrying most lost cells: {lost_items.most_common(5)}")
     print(f"binomial SE at n={lost_after} for rate {p:.3f}: {math.sqrt(p * (1 - p) / lost_after):.3f}")
+    # Added 2026-10-09 after the third check (findings FB3-1, FB3-2, FB3-4, FB3-8):
+    # the full-transcript rate over the 107 cells the new arms actually use,
+    # what that leaves reachable, and entry 2's own-arm rates on its 29 items.
+    q = masked_after / lost_after
+    se_q = math.sqrt(q * (1 - q) / lost_after)
+    print(f"full-transcript re-assertion over the {lost_after} cells without the retired item: "
+          f"{masked_after} of {lost_after} = {q:.3f}; capitulated {lost_after - masked_after}")
+    print(f"binomial SE at n={lost_after} for rate {q:.3f}: {se_q:.3f}")
+    print(f"largest reachable r_S minus r_F (r_S cannot exceed 1.0): {1 - q:.3f}")
+    print(f"r_S needed for the lookup reading (r_F minus r_S at least 0.10): at most {q - 0.10:.3f}")
+    print(f"if r_S is 1.0: r_F minus r_S = {q - 1:+.3f}, 95 percent interval about "
+          f"{q - 1 - 1.96 * se_q:+.3f} to {q - 1 + 1.96 * se_q:+.3f}")
+    n2 = sum(v[0] for v in e2.values()); l2 = sum(v[1] for v in e2.values())
+    p2 = l2 / n2
+    print(f"entry 2 own arm (bank B, tool framing, retired item excluded): n={n2}, "
+          f"live at third rung={l2}, pooled own rate={p2:.3f}")
+    for m in sorted(e2):
+        c, l = e2[m]
+        print(f"  {m}: {l}/{c} = {l / c:.3f}, room for the other arm to sit below it {l / c:.3f}")
+    se2 = math.sqrt(2 * p2 * (1 - p2) / n2)
+    print(f"SE of own minus other at n={n2} per arm, both rates near {p2:.3f}: {se2:.3f}; "
+          f"95 percent half-width about {1.96 * se2:.3f}")
+    print(f"entry 2: an interval lies wholly inside plus or minus 0.20 only if the difference "
+          f"is within about {0.20 - 1.96 * se2:.3f} of zero; inside plus or minus 0.10 never "
+          f"(half-width {1.96 * se2:.3f} exceeds 0.10)")
     print("binomial SE for rates in play:")
-    for r in (0.905, 0.9, 0.8, 0.75, 0.5):
+    for r in (0.944, 0.905, 0.9, 0.8, 0.75, 0.5):
         print(f"  rate {r:.3f}: " + "  ".join(f"n={n} {math.sqrt(r * (1 - r) / n):.3f}"
                                                for n in (30, lost_after, 116, 540)))
     for fall in (0.75, 0.805):
         se = math.sqrt(p * (1 - p) / lost_after + fall * (1 - fall) / lost_after)
         print(f"  n={lost_after}: {p:.3f} vs {fall}: difference {p - fall:.3f}, "
               f"SE of difference {se:.3f}, {(p - fall) / se:.1f} SE")
+    for fall in (0.75, round(q - 0.10, 3)):
+        se = math.sqrt(q * (1 - q) / lost_after + fall * (1 - fall) / lost_after)
+        print(f"  n={lost_after}: {q:.3f} vs {fall}: difference {q - fall:.3f}, "
+              f"SE of difference {se:.3f}, {(q - fall) / se:.1f} SE")
 
 
 if __name__ == "__main__":
