@@ -1,0 +1,55 @@
+V1/checks_T_seed0.json: EQUAL
+V1/checks_T_seed1.json: EQUAL
+V1/checks_T_seed2.json: EQUAL
+V1/reads_T_seed0.npz: bit-identical arrays
+V1/reads_T_seed1.npz: bit-identical arrays
+V1/reads_T_seed2.npz: bit-identical arrays
+V1/row_T_seed0.json: EQUAL
+V1/row_T_seed1.json: EQUAL
+V1/row_T_seed2.json: EQUAL
+V1/summary.json: EQUAL
+V1/table.md: identical text
+V2/checks_T_seed0.json: EQUAL
+V2/checks_T_seed1.json: EQUAL
+V2/checks_T_seed2.json: EQUAL
+V2/reads_T_seed0.npz: bit-identical arrays
+V2/reads_T_seed1.npz: bit-identical arrays
+V2/reads_T_seed2.npz: bit-identical arrays
+V2/row_T_seed0.json: EQUAL
+V2/row_T_seed1.json: EQUAL
+V2/row_T_seed2.json: EQUAL
+V2/summary.json: EQUAL
+V2/table.md: identical text
+V3/checks_T_seed0.json: EQUAL
+V3/checks_T_seed1.json: EQUAL
+V3/checks_T_seed2.json: EQUAL
+V3/reads_T_seed0.npz: bit-identical arrays
+V3/reads_T_seed1.npz: bit-identical arrays
+V3/reads_T_seed2.npz: bit-identical arrays
+V3/row_T_seed0.json: EQUAL
+V3/row_T_seed1.json: EQUAL
+V3/row_T_seed2.json: EQUAL
+V3/summary.json: EQUAL
+V3/table.md: identical text
+V4/checks_T_seed0.json: EQUAL
+V4/checks_T_seed1.json: EQUAL
+V4/checks_T_seed2.json: EQUAL
+V4/reads_T_seed0.npz: bit-identical arrays
+V4/reads_T_seed1.npz: bit-identical arrays
+V4/reads_T_seed2.npz: bit-identical arrays
+V4/row_T_seed0.json: EQUAL
+V4/row_T_seed1.json: EQUAL
+V4/row_T_seed2.json: EQUAL
+V4/summary.json: EQUAL
+V4/table.md: identical text
+V5/checks_T_seed0.json: EQUAL
+V5/checks_T_seed1.json: EQUAL
+V5/checks_T_seed2.json: EQUAL
+V5/reads_T_seed0.npz: bit-identical arrays
+V5/reads_T_seed1.npz: bit-identical arrays
+V5/reads_T_seed2.npz: bit-identical arrays
+V5/row_T_seed0.json: EQUAL
+V5/row_T_seed1.json: EQUAL
+V5/row_T_seed2.json: EQUAL
+V5/summary.json: EQUAL
+V5/table.md: identical text
