@@ -1,0 +1,2229 @@
+{
+ "concerns": {
+  "A: a built model (arm T, C or M) loses its nomination": [],
+  "B: arm T's reading is not 0.0000, or its control 1 does not hold": [],
+  "C: the separation (arm C's lowest minus arm T's highest) is below 0.5 or missing": [],
+  "D2 (arm M's prediction): further than 0.10 from its true-slot reading on a seed": [],
+  "D: arm M's reading is outside 0.3 to 0.7 on a seed": [],
+  "E: the free model's read reaches the floor (a piece of 144 or more anywhere)": [],
+  "F: the solver returns a reading": [],
+  "G: control 7 or control 4 fails anywhere (the chosen, stricter and sensitivity rows)": []
+ },
+ "fields_changed": {
+  "C/0": [],
+  "C/1": [],
+  "C/2": [],
+  "F/0": [],
+  "F/1": [],
+  "F/2": [],
+  "M/0": [],
+  "M/1": [],
+  "M/2": [],
+  "T/0": [],
+  "T/1": [],
+  "T/2": []
+ },
+ "models": {
+  "C/0": {
+   "in_use": "failed",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 2,
+      "most_iterations": 249,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 1272,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 2527,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 213,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 45,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 178,
+    "piece_elsewhere_mean": null,
+    "reading": 1.0025575447570334,
+    "rider": null,
+    "site_set": [
+     [
+      2
+     ],
+     "action",
+     4
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      2
+     ],
+     "action",
+     4,
+     178
+    ],
+    "stricter_reading": 1.0025575447570334,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.05125,
+     0.54,
+     0.54875
+    ],
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 178,
+    "piece_elsewhere_mean": null,
+    "reading": 1.0025575447570334,
+    "rider": null,
+    "site_set": [
+     [
+      2
+     ],
+     "action",
+     4
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      2
+     ],
+     "action",
+     4,
+     178
+    ],
+    "stricter_reading": 1.0025575447570334,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.05125,
+     0.54,
+     0.54875
+    ],
+    "whole_read_correct": 180
+   },
+   "read_arrays_identical": true,
+   "read_arrays_largest_difference": 0.0,
+   "row_choice": null
+  },
+  "C/1": {
+   "in_use": "failed",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 2,
+      "most_iterations": 246,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 906,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 1523,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 927,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 80,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      178
+     ],
+     [
+      180,
+      178
+     ],
+     [
+      180,
+      178
+     ]
+    ],
+    "piece_correct": 178,
+    "piece_elsewhere_mean": null,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": [
+     [
+      4
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      4
+     ],
+     "action",
+     8,
+     178
+    ],
+    "stricter_reading": 1.0,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.04875,
+     0.5575,
+     0.58125
+    ],
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      178
+     ],
+     [
+      180,
+      178
+     ],
+     [
+      180,
+      178
+     ]
+    ],
+    "piece_correct": 178,
+    "piece_elsewhere_mean": null,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": [
+     [
+      4
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      4
+     ],
+     "action",
+     8,
+     178
+    ],
+    "stricter_reading": 1.0,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.04875,
+     0.5575,
+     0.58125
+    ],
+    "whole_read_correct": 180
+   },
+   "read_arrays_identical": true,
+   "read_arrays_largest_difference": 0.0,
+   "row_choice": null
+  },
+  "C/2": {
+   "in_use": "failed",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 24,
+      "most_iterations": 1730,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 754,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 1807,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 3750,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 57,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      179
+     ]
+    ],
+    "piece_correct": 165,
+    "piece_elsewhere_mean": 137,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     4
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     4,
+     165
+    ],
+    "stricter_reading": 1.0,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.06,
+     0.54625,
+     0.5525
+    ],
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      179
+     ]
+    ],
+    "piece_correct": 165,
+    "piece_elsewhere_mean": 137,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     4
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     4,
+     165
+    ],
+    "stricter_reading": 1.0,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.06,
+     0.54625,
+     0.5525
+    ],
+    "whole_read_correct": 180
+   },
+   "read_arrays_identical": false,
+   "read_arrays_largest_difference": 0.049481600522994995,
+   "row_choice": null
+  },
+  "F/0": {
+   "in_use": "not applicable",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 24,
+      "most_iterations": 2785,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (named)": {
+      "fits": 25,
+      "most_iterations": 1762,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 2054,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 4736,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 1762,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 2054,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 40,
+    "control1_holds": null,
+    "control2": "reported; no pass line",
+    "control2_named_best_piece": 176,
+    "control2_own_directed_moved": 0.0,
+    "control2_random_median": 0.0024999999441206455,
+    "control2_site_set": [
+     [
+      3
+     ],
+     "action",
+     8,
+     171
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      34,
+      30
+     ],
+     [
+      30,
+      30
+     ],
+     [
+      36,
+      40
+     ],
+     [
+      34,
+      33
+     ]
+    ],
+    "piece_correct": null,
+    "piece_elsewhere_mean": 20,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": null,
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "stricter_reading": null,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.05875,
+     0.485,
+     0.55875
+    ],
+    "whole_read_correct": null
+   },
+   "old": {
+    "best_piece_anywhere": 40,
+    "control1_holds": null,
+    "control2": "reported; no pass line",
+    "control2_named_best_piece": 176,
+    "control2_own_directed_moved": 0.0,
+    "control2_random_median": 0.0024999999441206455,
+    "control2_site_set": [
+     [
+      3
+     ],
+     "action",
+     8,
+     171
+    ],
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      34,
+      30
+     ],
+     [
+      30,
+      30
+     ],
+     [
+      36,
+      40
+     ],
+     [
+      34,
+      33
+     ]
+    ],
+    "piece_correct": null,
+    "piece_elsewhere_mean": 20,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": null,
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "stricter_reading": null,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.05875,
+     0.485,
+     0.55875
+    ],
+    "whole_read_correct": null
+   },
+   "read_arrays_identical": true,
+   "read_arrays_largest_difference": 0.0,
+   "row_choice": null
+  },
+  "F/1": {
+   "in_use": "not applicable",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 2,
+      "most_iterations": 876,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 2506,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 3547,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 3191,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 2506,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 19,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      15,
+      18
+     ],
+     [
+      17,
+      17
+     ],
+     [
+      20,
+      19
+     ],
+     [
+      14,
+      19
+     ]
+    ],
+    "piece_correct": null,
+    "piece_elsewhere_mean": null,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": null,
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "stricter_reading": null,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.05625,
+     0.57125,
+     0.56625
+    ],
+    "whole_read_correct": null
+   },
+   "old": {
+    "best_piece_anywhere": 19,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      15,
+      18
+     ],
+     [
+      17,
+      17
+     ],
+     [
+      20,
+      19
+     ],
+     [
+      14,
+      19
+     ]
+    ],
+    "piece_correct": null,
+    "piece_elsewhere_mean": null,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": null,
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "stricter_reading": null,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.05625,
+     0.57125,
+     0.56625
+    ],
+    "whole_read_correct": null
+   },
+   "read_arrays_identical": false,
+   "read_arrays_largest_difference": 0.01444941759109497,
+   "row_choice": null
+  },
+  "F/2": {
+   "in_use": "not applicable",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 2,
+      "most_iterations": 2960,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 2960,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 3660,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 535,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 2960,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 36,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      25,
+      24
+     ],
+     [
+      39,
+      36
+     ],
+     [
+      30,
+      27
+     ],
+     [
+      27,
+      28
+     ]
+    ],
+    "piece_correct": null,
+    "piece_elsewhere_mean": null,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": null,
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "stricter_reading": null,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.06875,
+     0.51375,
+     0.55625
+    ],
+    "whole_read_correct": null
+   },
+   "old": {
+    "best_piece_anywhere": 36,
+    "control1_holds": null,
+    "control2": "no verdict",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      17,
+      17
+     ],
+     [
+      25,
+      24
+     ],
+     [
+      39,
+      36
+     ],
+     [
+      30,
+      27
+     ],
+     [
+      27,
+      28
+     ]
+    ],
+    "piece_correct": null,
+    "piece_elsewhere_mean": null,
+    "reading": 1.0,
+    "rider": null,
+    "site_set": null,
+    "status": "read failed its floor: no size's piece reaches four fifths",
+    "stricter": null,
+    "stricter_reading": null,
+    "true_slot": null,
+    "true_slot_distance": null,
+    "untouched_whole_own_accuracy": [
+     0.06875,
+     0.51375,
+     0.55625
+    ],
+    "whole_read_correct": null
+   },
+   "read_arrays_identical": true,
+   "read_arrays_largest_difference": 0.0,
+   "row_choice": null
+  },
+  "M/0": {
+   "in_use": "failed",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 2,
+      "most_iterations": 30,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 1139,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 7385,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 5535,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 57,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": null,
+    "reading": 0.525236593059937,
+    "rider": null,
+    "site_set": [
+     [
+      3
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      3
+     ],
+     "action",
+     8,
+     180
+    ],
+    "stricter_reading": 0.525236593059937,
+    "true_slot": 0.5,
+    "true_slot_distance": 0.025236593059936974,
+    "untouched_whole_own_accuracy": [
+     0.0125,
+     0.805,
+     0.87125
+    ],
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": null,
+    "reading": 0.525236593059937,
+    "rider": null,
+    "site_set": [
+     [
+      3
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      3
+     ],
+     "action",
+     8,
+     180
+    ],
+    "stricter_reading": 0.525236593059937,
+    "true_slot": 0.5,
+    "true_slot_distance": 0.025236593059936974,
+    "untouched_whole_own_accuracy": [
+     0.0125,
+     0.805,
+     0.87125
+    ],
+    "whole_read_correct": 180
+   },
+   "read_arrays_identical": false,
+   "read_arrays_largest_difference": 0.25672296434640884,
+   "row_choice": null
+  },
+  "M/1": {
+   "in_use": "failed",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 24,
+      "most_iterations": 2361,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 1470,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 4815,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 3206,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 44,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": 179,
+    "reading": 0.4793388429752066,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     8,
+     180
+    ],
+    "stricter_reading": 0.4793388429752066,
+    "true_slot": 0.47603305785123967,
+    "true_slot_distance": 0.0033057851239669533,
+    "untouched_whole_own_accuracy": [
+     0.0175,
+     0.77375,
+     0.88
+    ],
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": 179,
+    "reading": 0.4793388429752066,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     8,
+     180
+    ],
+    "stricter_reading": 0.4793388429752066,
+    "true_slot": 0.47603305785123967,
+    "true_slot_distance": 0.0033057851239669533,
+    "untouched_whole_own_accuracy": [
+     0.0175,
+     0.77375,
+     0.88
+    ],
+    "whole_read_correct": 180
+   },
+   "read_arrays_identical": false,
+   "read_arrays_largest_difference": 0.046979427337646484,
+   "row_choice": null
+  },
+  "M/2": {
+   "in_use": "failed",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 24,
+      "most_iterations": 707,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 763,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 3536,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 4017,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 50,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      179
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": 179,
+    "reading": 0.5208333333333334,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     8,
+     180
+    ],
+    "stricter_reading": 0.5208333333333334,
+    "true_slot": 0.4919871794871795,
+    "true_slot_distance": 0.028846153846153855,
+    "untouched_whole_own_accuracy": [
+     0.01375,
+     0.79375,
+     0.87125
+    ],
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_holds": null,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      179
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": 179,
+    "reading": 0.5208333333333334,
+    "rider": null,
+    "site_set": [
+     [
+      1
+     ],
+     "post-identity",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "post-identity",
+     8,
+     180
+    ],
+    "stricter_reading": 0.5208333333333334,
+    "true_slot": 0.4919871794871795,
+    "true_slot_distance": 0.028846153846153855,
+    "untouched_whole_own_accuracy": [
+     0.01375,
+     0.79375,
+     0.87125
+    ],
+    "whole_read_correct": 180
+   },
+   "read_arrays_identical": false,
+   "read_arrays_largest_difference": 0.0511487927287817,
+   "row_choice": null
+  },
+  "T/0": {
+   "in_use": "passed",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 2,
+      "most_iterations": 25,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 80,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 711,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 1699,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 37,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": null,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "stricter_reading": 0.0,
+    "true_slot": 0.0,
+    "true_slot_distance": 0.0,
+    "untouched_whole_own_accuracy": [
+     0.0,
+     1.0,
+     1.0
+    ],
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": null,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "stricter_reading": 0.0,
+    "true_slot": 0.0,
+    "true_slot_distance": 0.0,
+    "untouched_whole_own_accuracy": [
+     0.0,
+     1.0,
+     1.0
+    ],
+    "whole_read_correct": 180
+   },
+   "read_arrays_identical": true,
+   "read_arrays_largest_difference": 0.0,
+   "row_choice": {
+    "accuracy_where_right_row": 1.0,
+    "accuracy_where_wrong_row": null,
+    "confused_name_pairs": {},
+    "episodes": 3000,
+    "own_correct_where_right_row": 3000,
+    "own_correct_where_wrong_row": 0,
+    "own_correct_with_row_forced_to_right_agent": 3000,
+    "reported_only": true,
+    "right_row_chosen": 3000
+   }
+  },
+  "T/1": {
+   "in_use": "passed",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 2,
+      "most_iterations": 19,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 126,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 724,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 1114,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 37,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": null,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "stricter_reading": 0.0,
+    "true_slot": 0.0,
+    "true_slot_distance": 0.0,
+    "untouched_whole_own_accuracy": [
+     0.0,
+     1.0,
+     1.0
+    ],
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": null,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "stricter_reading": 0.0,
+    "true_slot": 0.0,
+    "true_slot_distance": 0.0,
+    "untouched_whole_own_accuracy": [
+     0.0,
+     1.0,
+     1.0
+    ],
+    "whole_read_correct": 180
+   },
+   "read_arrays_identical": true,
+   "read_arrays_largest_difference": 0.0,
+   "row_choice": {
+    "accuracy_where_right_row": 1.0,
+    "accuracy_where_wrong_row": null,
+    "confused_name_pairs": {},
+    "episodes": 3000,
+    "own_correct_where_right_row": 3000,
+    "own_correct_where_wrong_row": 0,
+    "own_correct_with_row_forced_to_right_agent": 3000,
+    "reported_only": true,
+    "right_row_chosen": 3000
+   }
+  },
+  "T/2": {
+   "in_use": "passed",
+   "limit_hits": {
+    "by_kind": {
+     "counts elsewhere on the site": {
+      "fits": 2,
+      "most_iterations": 30,
+      "stopped_at_limit": 0
+     },
+     "held-out counts (own)": {
+      "fits": 25,
+      "most_iterations": 158,
+      "stopped_at_limit": 0
+     },
+     "the null (shuffled labels)": {
+      "fits": 1000,
+      "most_iterations": 655,
+      "stopped_at_limit": 0
+     },
+     "the read (named)": {
+      "fits": 5,
+      "most_iterations": 1396,
+      "stopped_at_limit": 0
+     },
+     "the read (own)": {
+      "fits": 5,
+      "most_iterations": 40,
+      "stopped_at_limit": 0
+     }
+    },
+    "limit": 10000,
+    "total": 0
+   },
+   "new": {
+    "best_piece_anywhere": 180,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": null,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "stricter_reading": 0.0,
+    "true_slot": 0.0,
+    "true_slot_distance": 0.0,
+    "untouched_whole_own_accuracy": [
+     0.0,
+     1.0,
+     1.0
+    ],
+    "whole_read_correct": 180
+   },
+   "old": {
+    "best_piece_anywhere": 180,
+    "control1_holds": true,
+    "control2": "not applicable",
+    "control2_named_best_piece": null,
+    "control2_own_directed_moved": null,
+    "control2_random_median": null,
+    "control2_site_set": null,
+    "control4_holds": true,
+    "control7_holds": true,
+    "grid_whole_and_best_piece": [
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ],
+     [
+      180,
+      180
+     ]
+    ],
+    "piece_correct": 180,
+    "piece_elsewhere_mean": null,
+    "reading": 0.0,
+    "rider": 0.0,
+    "site_set": [
+     [
+      0
+     ],
+     "action",
+     8
+    ],
+    "status": "nominated",
+    "stricter": [
+     [
+      1
+     ],
+     "action",
+     8,
+     180
+    ],
+    "stricter_reading": 0.0,
+    "true_slot": 0.0,
+    "true_slot_distance": 0.0,
+    "untouched_whole_own_accuracy": [
+     0.0,
+     1.0,
+     1.0
+    ],
+    "whole_read_correct": 180
+   },
+   "read_arrays_identical": true,
+   "read_arrays_largest_difference": 0.0,
+   "row_choice": {
+    "accuracy_where_right_row": 1.0,
+    "accuracy_where_wrong_row": null,
+    "confused_name_pairs": {},
+    "episodes": 3000,
+    "own_correct_where_right_row": 3000,
+    "own_correct_where_wrong_row": 0,
+    "own_correct_with_row_forced_to_right_agent": 3000,
+    "reported_only": true,
+    "right_row_chosen": 3000
+   }
+  }
+ },
+ "reproduction": {
+  "compared": 29077,
+  "differ": 0,
+  "differences": [],
+  "only_in_one": [
+   "/fits_stopped_at_iteration_limit (new only)",
+   "/gate/lesioned_candidate_other_correct (new only)",
+   "/gate/lesioned_candidate_own_correct (new only)",
+   "/gate/ownership_free_line (new only)",
+   "/gate/route_in_use (new only)",
+   "/gate/row_choice (new only)",
+   "/primary/no_transplant/chance_formula_flags_a_broken_pairing_at_the_bar (new only)",
+   "/primary/no_transplant/detection_margin_at_the_bar (old only)",
+   "/primary/no_transplant/share_of_errors_on_donor_answer (new only)",
+   "/primary/no_transplant/vetoes (new only)",
+   "/read_split (new only)",
+   "/sensitivity/no_transplant/chance_formula_flags_a_broken_pairing_at_the_bar (new only)",
+   "/sensitivity/no_transplant/detection_margin_at_the_bar (old only)",
+   "/sensitivity/no_transplant/share_of_errors_on_donor_answer (new only)",
+   "/sensitivity/no_transplant/vetoes (new only)",
+   "/stricter/no_transplant/chance_formula_flags_a_broken_pairing_at_the_bar (new only)",
+   "/stricter/no_transplant/detection_margin_at_the_bar (old only)",
+   "/stricter/no_transplant/share_of_errors_on_donor_answer (new only)",
+   "/stricter/no_transplant/vetoes (new only)"
+  ],
+  "warnings": {
+   "C/0": {
+    "new": 0,
+    "old": 0
+   },
+   "C/1": {
+    "new": 0,
+    "old": 0
+   },
+   "C/2": {
+    "new": 1,
+    "old": 1
+   },
+   "F/0": {
+    "new": 2,
+    "old": 2
+   },
+   "F/1": {
+    "new": 11,
+    "old": 11
+   },
+   "F/2": {
+    "new": 10,
+    "old": 10
+   },
+   "M/0": {
+    "new": 132,
+    "old": 132
+   },
+   "M/1": {
+    "new": 240,
+    "old": 240
+   },
+   "M/2": {
+    "new": 99,
+    "old": 99
+   },
+   "T/0": {
+    "new": 0,
+    "old": 0
+   },
+   "T/1": {
+    "new": 0,
+    "old": 0
+   },
+   "T/2": {
+    "new": 0,
+    "old": 0
+   }
+  }
+ },
+ "separation_lowest_C_minus_highest_T_from_the_rows": {
+  "new": 1.0,
+  "old": 1.0
+ },
+ "solver": {
+  "channel_left_on/0": {
+   "new": {
+    "best_piece": 18,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 18,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  },
+  "channel_left_on/1": {
+   "new": {
+    "best_piece": 17,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 17,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  },
+  "channel_left_on/2": {
+   "new": {
+    "best_piece": 20,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 20,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  },
+  "channel_removed/0": {
+   "new": {
+    "best_piece": 19,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 19,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  },
+  "channel_removed/1": {
+   "new": {
+    "best_piece": 17,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 17,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  },
+  "channel_removed/2": {
+   "new": {
+    "best_piece": 20,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   },
+   "old": {
+    "best_piece": 20,
+    "nomination": "no site set clears the whole-state floor",
+    "reading_returned": false,
+    "status": "no verdict: no site set clears the whole-state floor"
+   }
+  }
+ },
+ "solver_warnings": {
+  "new": 0,
+  "old": 2
+ },
+ "summary_new": {
+  "gates": {
+   "C": true,
+   "F": false,
+   "M": true,
+   "T": true
+  },
+  "outcome": {
+   "arm_M": {
+    "reason": "arm M returned no verdict; it is dropped and carried as an extension (section 3)",
+    "status": "dropped"
+   },
+   "code": "R3",
+   "notes": [
+    "arm M returned no verdict; it is dropped and carried as an extension (section 3)",
+    "arm F failed its gate on learning and no record shows it passed at step 5a"
+   ],
+   "reason": "arm F failed its gate on learning (named-other condition, on seeds 1 and 2)",
+   "registered_term": "substrate not a testbed",
+   "sentence": "substrate not a testbed: arm F failed its gate on learning (named-other condition, on seeds 1 and 2)",
+   "term": "substrate not a testbed: arm F failed its gate on learning (named-other condition, on seeds 1 and 2)"
+  },
+  "per_seed": {
+   "C": {
+    "0": {
+     "reasons": [
+      "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.269, bar 0.5"
+     ],
+     "status": "no verdict"
+    },
+    "1": {
+     "reasons": [
+      "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.573, bar 0.9 (sharpness 0.6969833374023438)",
+      "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.233, bar 0.5"
+     ],
+     "status": "no verdict"
+    },
+    "2": {
+     "reasons": [
+      "the built ownership route has gone flat (construction did not hold): the built answer is flat: weight on the true agent 0.681, bar 0.9 (sharpness 0.9281306862831116)",
+      "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.221, bar 0.5"
+     ],
+     "status": "no verdict"
+    }
+   },
+   "F": {
+    "0": {
+     "reasons": [
+      "read failed its floor: no size's piece reaches four fifths",
+      "reported for description only (the site set was chosen with the piece rule switched off)"
+     ],
+     "status": "no verdict"
+    },
+    "1": {
+     "reasons": [
+      "failed its gate on learning (named-other condition: failed)",
+      "read failed its floor: no size's piece reaches four fifths",
+      "reported for description only (the site set was chosen with the piece rule switched off)"
+     ],
+     "status": "no verdict"
+    },
+    "2": {
+     "reasons": [
+      "failed its gate on learning (named-other condition: failed)",
+      "read failed its floor: no size's piece reaches four fifths",
+      "reported for description only (the site set was chosen with the piece rule switched off)"
+     ],
+     "status": "no verdict"
+    }
+   },
+   "M": {
+    "0": {
+     "reasons": [
+      "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.071, bar 0.5"
+     ],
+     "status": "no verdict"
+    },
+    "1": {
+     "reasons": [
+      "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.090, bar 0.5"
+     ],
+     "status": "no verdict"
+    },
+    "2": {
+     "reasons": [
+      "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.109, bar 0.5"
+     ],
+     "status": "no verdict"
+    }
+   },
+   "T": {
+    "0": {
+     "reasons": [],
+     "status": "reading"
+    },
+    "1": {
+     "reasons": [],
+     "status": "reading"
+    },
+    "2": {
+     "reasons": [],
+     "status": "reading"
+    }
+   }
+  }
+ },
+ "warnings_by_arm": {
+  "C": {
+   "new": 0,
+   "new_counted": 0,
+   "old": 1
+  },
+  "F": {
+   "new": 0,
+   "new_counted": 0,
+   "old": 23
+  },
+  "M": {
+   "new": 0,
+   "new_counted": 0,
+   "old": 471
+  },
+  "T": {
+   "new": 0,
+   "new_counted": 0,
+   "old": 0
+  }
+ }
+}

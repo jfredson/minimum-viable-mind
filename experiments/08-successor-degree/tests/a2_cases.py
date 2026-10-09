@@ -469,3 +469,54 @@ CASES += [
          withheld=[("M", 0), ("M", 1)],
          about="in-use check: arm M's route is flat on seeds 0 and 1; arm M has no verdict, outcome unchanged"),
 ]
+
+
+# ---------------------------------------------------------------------------
+# Addendum 2026-10-08, the rulings on version 5's open items (items 3, 4 and
+# 9; method `docs/2026-10-09-ruled-code-changes-and-page4-rerun-method.md`),
+# written before the changed code ran on any case. The expectations above are
+# NOT edited: the outcome codes and words were renamed to version 5's
+# registered terms, and the runner reads each old expectation through these
+# two maps.
+CODE_RENAMED = {"fallback_read": "sixth", "fallback_not_read": "seventh", "not_validated": "eighth"}
+WORDS_RENAMED = {"metric does not separate": "instrument does not discriminate the specified constructed mechanisms"}
+
+
+def c_one_seed_each(rows):
+    """Every arm with seed 0 only, as the four development runs: the toy's
+    arm F seed 0 passes both learning conditions, so no arm's gate has failed
+    and none is decided."""
+    make_F_read(rows)
+    for k in [k for k in rows if k[1] != 0]:
+        del rows[k]
+
+
+def c_two_seeds_T_split(rows):
+    """Arm T with two seeds in, one failing its learning gate: still decidable
+    either way by a third seed, so not decidable; every other arm complete."""
+    make_F_read(rows)
+    del rows[("T", 2)]
+    gate(rows, "T", 1, own=700)
+
+
+def c_two_seeds_T_both_fail(rows):
+    """Arm T with two seeds in, both failing: no third seed can make two, so
+    the gate has failed and the outcome is R3, as before."""
+    make_F_read(rows)
+    del rows[("T", 2)]
+    gate(rows, "T", 0, own=700)
+    gate(rows, "T", 1, own=700)
+
+
+CASES += [
+    dict(name="one-seed-each", build=c_one_seed_each, steps=None,
+         expect=None, reason_has=["arm T: gate not decidable on one seed", "arm C: gate not decidable on one seed",
+                                  "arm F: gate not decidable on one seed"],
+         about="fewer than three seeds: one seed per arm, every gate condition passed; no term, never 'failed'"),
+    dict(name="two-seeds-T-split", build=c_two_seeds_T_split, steps={"arm_F_step_5a_seed": 0},
+         expect=None, reason_has=["arm T: gate not decidable on two seeds"],
+         about="fewer than three seeds: arm T on two seeds, one failing; not decidable"),
+    dict(name="two-seeds-T-both-fail", build=c_two_seeds_T_both_fail, steps={"arm_F_step_5a_seed": 0},
+         expect="R3", reason_has=["arm T failed its gate on learning"],
+         about="fewer than three seeds: arm T on two seeds, both failing; R3 as before"),
+]

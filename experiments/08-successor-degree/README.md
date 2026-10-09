@@ -76,3 +76,20 @@ recorded as "construction did not hold". Method:
 `tests/inuse_cases.py` (made-up cases on real models), the decision-code case
 runner `tests/a2_run_cases.py` (cases 26 to 28), and the toy retrain
 `tests/retrain_toy_fixed.py`; outputs in `out-sharpness-fix/`.
+
+## Changes after the freeze: the fitting step, the outcome words, short seed counts, arm T's row choice (2026-10-08, ruled by John)
+
+By the rulings on version 5's open items (`docs/rulings/2026-10-08-v5-open-items-rulings.md`,
+items 3, 4, 7 and 9): every straight-line read is fitted on the first 1,800 of
+1,980 development episodes and scored on the last 180 (the 1,980 are a named
+evaluation set, `dev_reads` in `src/grammar.py`, whose first 600 are the 600
+the transplant passes still use), at an iteration limit of 10,000, with the
+fits that stop at the limit counted in each row; the outcome terms are version
+5's registered words with their scope phrases; an arm with fewer than three
+seeds whose gate could still pass is reported as "gate not decidable on one
+seed" (or two), never as failed; and arm T's row-choice split is written beside
+its gate, reporting only. Arm M's per-step copy is unchanged (declined).
+Method: `docs/2026-10-09-ruled-code-changes-and-page4-rerun-method.md`;
+findings, with the page 4 re-run under the new code:
+`docs/2026-10-09-ruled-code-changes-and-page4-rerun-findings.md`; outputs in
+`out-ruled-code-changes/`.

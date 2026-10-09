@@ -1,0 +1,6 @@
+[T/1] iteration limit 3000; torch threads 3
+[T/1] gate: own 3000, named-other 3000 of 3000 (bar 790)
+[T/1] reads: whole-read counts by state [180, 180, 180, 180, 180] of 180
+[T/1] nomination: nominated {'layers': [0], 'positions': 'action', 'rank': 8, 'piece_correct': 180, 'whole_read_correct': 180}
+[T/1] fits that stopped at the iteration limit of 3000: counts elsewhere on the site 0 of 2, held-out counts (own) 0 of 25, the null (shuffled labels) 0 of 1000, the read (named) 0 of 5, the read (own) 0 of 5
+[T/1] done in 395s: arithmetic 0.0, controls 7/4 hold True/True -> out-ruled-code-changes/passA-limit3000/row_T_seed1.json

@@ -1,0 +1,26 @@
+  [10M T train] TRAINING COMPLETE
+  [10M T measure] [T/0] done in 171s: arithmetic 0.0, controls 7/4 hold True/True -> out-ruled-code-changes/t6-pipeline/10M/measure/row_T_seed0.json
+  [10M C train] TRAINING COMPLETE
+  [10M C measure] [C/0] done in 181s: no site set -> out-ruled-code-changes/t6-pipeline/10M/measure/row_C_seed0.json
+  [10M M train] TRAINING COMPLETE
+  [10M M measure] [M/0] done in 193s: arithmetic 0.0, controls 7/4 hold True/True -> out-ruled-code-changes/t6-pipeline/10M/measure/row_M_seed0.json
+  [10M F train] TRAINING COMPLETE
+  [10M F measure] [F/0] done in 167s: no site set -> out-ruled-code-changes/t6-pipeline/10M/measure/row_F_seed0.json
+  [10M summary] | F/0 | no verdict: failed its gate on learning (own-directed condition: failed); failed its gate on learning (named-other condition: failed); the ownership-free line failed (with the channel zeroed, own-directed answers among the four candidates, line 1,546 of 3,000); no site set clears the whole-state floor; description-only flag not run; no reading was computed; floor on fresh episodes was not run; floor on development episodes was not run; control 7, the null transplant was not run; control 4, the pairing check (too-early positions) was not run | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | 86 | 350 |  |
+  [10M summary] 
+  [10M summary] outcome: not computed: arm T: gate not decidable on one seed; arm C: gate not decidable on one seed; arm F: gate not decidable on one seed
+  [10M summary] 
+  [30M T train] TRAINING COMPLETE
+  [30M T measure] [T/0] done in 1075s: arithmetic 0.0, controls 7/4 hold True/True -> out-ruled-code-changes/t6-pipeline/30M/measure/row_T_seed0.json
+  [30M C train] TRAINING COMPLETE
+  [30M C measure] [C/0] done in 1327s: arithmetic None, controls 7/4 hold True/True -> out-ruled-code-changes/t6-pipeline/30M/measure/row_C_seed0.json
+  [30M M train] TRAINING COMPLETE
+  [30M M measure] [M/0] done in 1282s: arithmetic None, controls 7/4 hold True/True -> out-ruled-code-changes/t6-pipeline/30M/measure/row_M_seed0.json
+  [30M F train] TRAINING COMPLETE
+  [30M F measure] [F/0] done in 1084s: no site set -> out-ruled-code-changes/t6-pipeline/30M/measure/row_F_seed0.json
+  [30M summary] | F/0 | no verdict: failed its gate on learning (own-directed condition: failed); failed its gate on learning (named-other condition: failed); the ownership-free line failed (with the channel zeroed, own-directed answers among the four candidates, line 1,546 of 3,000); no site set clears the whole-state floor; description-only flag not run; no reading was computed; floor on fresh episodes was not run; floor on development episodes was not run; control 7, the null transplant was not run; control 4, the pairing check (too-early positions) was not run | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | withheld | 97 | 388 |  |
+  [30M summary] 
+  [30M summary] outcome: not computed: arm T: gate not decidable on one seed; arm C: gate not decidable on one seed; arm F: gate not decidable on one seed
+  [30M summary] 
+T6 ran to the end at: 10M 30M
+exit 0

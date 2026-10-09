@@ -1,0 +1,78 @@
+{
+ "reproduction": {
+  "compared": 29077,
+  "differ": 0,
+  "differences": [],
+  "only_in_one": [
+   "/fits_stopped_at_iteration_limit (new only)",
+   "/gate/lesioned_candidate_other_correct (new only)",
+   "/gate/lesioned_candidate_own_correct (new only)",
+   "/gate/ownership_free_line (new only)",
+   "/gate/route_in_use (new only)",
+   "/gate/row_choice (new only)",
+   "/primary/no_transplant/chance_formula_flags_a_broken_pairing_at_the_bar (new only)",
+   "/primary/no_transplant/detection_margin_at_the_bar (old only)",
+   "/primary/no_transplant/share_of_errors_on_donor_answer (new only)",
+   "/primary/no_transplant/vetoes (new only)",
+   "/read_split (new only)",
+   "/sensitivity/no_transplant/chance_formula_flags_a_broken_pairing_at_the_bar (new only)",
+   "/sensitivity/no_transplant/detection_margin_at_the_bar (old only)",
+   "/sensitivity/no_transplant/share_of_errors_on_donor_answer (new only)",
+   "/sensitivity/no_transplant/vetoes (new only)",
+   "/stricter/no_transplant/chance_formula_flags_a_broken_pairing_at_the_bar (new only)",
+   "/stricter/no_transplant/detection_margin_at_the_bar (old only)",
+   "/stricter/no_transplant/share_of_errors_on_donor_answer (new only)",
+   "/stricter/no_transplant/vetoes (new only)"
+  ],
+  "warnings": {
+   "C/0": {
+    "new": 0,
+    "old": 0
+   },
+   "C/1": {
+    "new": 0,
+    "old": 0
+   },
+   "C/2": {
+    "new": 1,
+    "old": 1
+   },
+   "F/0": {
+    "new": 2,
+    "old": 2
+   },
+   "F/1": {
+    "new": 11,
+    "old": 11
+   },
+   "F/2": {
+    "new": 10,
+    "old": 10
+   },
+   "M/0": {
+    "new": 132,
+    "old": 132
+   },
+   "M/1": {
+    "new": 240,
+    "old": 240
+   },
+   "M/2": {
+    "new": 99,
+    "old": 99
+   },
+   "T/0": {
+    "new": 0,
+    "old": 0
+   },
+   "T/1": {
+    "new": 0,
+    "old": 0
+   },
+   "T/2": {
+    "new": 0,
+    "old": 0
+   }
+  }
+ }
+}

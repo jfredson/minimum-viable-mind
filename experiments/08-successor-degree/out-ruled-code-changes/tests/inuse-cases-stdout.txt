@@ -1,0 +1,16 @@
+  1 ok  T passed                   w=0.999 use={'slot': 1.0} | committed toy arm T seed 0, unchanged
+  2 ok  T failed                   w=0.250 use={'slot': 0.0} | toy arm T seed 0, sharpness set to 0 (flat)
+  3 ok  T failed                   w=0.218 use={'slot': 0.012} | toy arm T seed 0, sharpness -0.09
+  4 ok  C failed                   w=0.999 use={'entangled': 0.0} | toy arm C seed 0, sharpness 4.0, scale-and-shift and binding zeroed (route round it)
+  5 ok  T failed                   w=0.999 use={'slot': 0.0} | toy arm T seed 0, slot reader zeroed
+  6 ok  M failed                   w=0.999 use={'entangled_items': 0.076, 'separable': 0.452} | toy arm M seed 0, sharpness 4.0, separable slot reader zeroed
+  7 ok  M failed                   w=0.999 use={'entangled_items': 0.0, 'separable': 0.995} | toy arm M seed 0, sharpness 4.0, scale-and-shift and binding zeroed
+  8 ok  C failed                   w=0.573 use={'entangled': 0.233} | committed toy arm C seed 1, unchanged
+  8 ok  C failed                   w=0.681 use={'entangled': 0.221} | committed toy arm C seed 2, unchanged
+  9 ok  F not applicable           w=0.999 use={'entangled': 0.0} | committed toy arm F seed 0 (not judged; reference)
+ 10 ok  C failed                   w=0.218 use={'entangled': 0.018} | real 10-million arm C
+ 11 ok  M failed                   w=0.247 use={'entangled_items': 0.0, 'separable': 0.0} | real 10-million arm M
+ 12 ok  T passed                   w=0.942 use={'slot': 0.924} | real 10-million arm T
+ 13 ok  C failed                   w=0.999 use={'entangled': 0.0} | untrained toy arm C (nothing right to lose)
+
+14 checks; differ from expectation: []

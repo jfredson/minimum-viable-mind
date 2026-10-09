@@ -130,7 +130,12 @@ NAMED_OTHER_ACTING = 1
 # Each entry: (number of matched pairs, seed, pool, relaxed).
 
 EVAL_SETS = {
-    "dev": (600, 4242, "dev", False),        # nomination; last 180 held out for fits
+    "dev": (600, 4242, "dev", False),        # nomination: the transplant passes that choose the site set
+    # every straight-line read: fitted on the first 1,800, scored on the last
+    # 180 (ruled 2026-10-06, page 4; in the frozen code since the ruling of
+    # 2026-10-08, item 7). Same generator and seed as "dev", so its first 600
+    # pairs ARE the 600 above; the self-test asserts it.
+    "dev_reads": (1980, 4242, "dev", False),
     "fresh": (800, 777, "fresh", False),     # the reading
     "relaxed": (800, 778, "fresh", True),    # control 6 only
     "gate": (1500, 99, "dev", False),        # the gates: 3,000 episodes
@@ -367,7 +372,9 @@ def held_out_pairings() -> set[frozenset]:
 # would skip the wrong ones and the sets would no longer be disjoint by
 # construction. The self-test, which the machine runs before any training
 # step, fails if either differs, and the launcher then deletes the machine.
-EVAL_SETS_DIGEST = "0cc3dafb2348eec07d8b4c0c9e9f3263809102f656bffc344c65a97577a8cf1f"
+# Re-pinned 2026-10-08 when the reads' 1,980 development episodes became an
+# evaluation set (was 0cc3dafb...a8cf1f); the first training batch is unchanged.
+EVAL_SETS_DIGEST = "a5a39300914e5905b310c37e09b12764f50910fa4e7d4db8fa9fc712657a76b7"
 FIRST_BATCH_DIGEST = "81a96f086be9d09f09acc6aa052fbf28521b2b170177462f6044881e8eec8659"
 
 
@@ -524,12 +531,23 @@ def self_test() -> None:
     fps = {name: [fingerprint(p["content"]) for p in eval_pairs(name)] for name in EVAL_SETS}
     sizes = {name: len(v) for name, v in fps.items()}
     check("evaluation sets have the registered sizes",
-          sizes == {"dev": 600, "fresh": 800, "relaxed": 800, "gate": 1500, "trajectory": 200},
+          sizes == {"dev": 600, "dev_reads": 1980, "fresh": 800, "relaxed": 800, "gate": 1500,
+                    "trajectory": 200},
           str(sizes))
+    head = batch(episodes_from_pairs(eval_pairs("dev_reads")[:600]))
+    dev600 = batch(episodes_from_pairs(eval_pairs("dev")))
+    check("the reads' 1,980 development episodes begin with the 600 the transplant passes use "
+          "(the first 600 pairs equal: contents, and both halves array for array)",
+          fps["dev_reads"][:600] == fps["dev"]
+          and all(np.array_equal(head[k], dev600[k]) for k in BATCH_KEYS))
     names = list(EVAL_SETS)
+    # "dev_reads" contains "dev" by design; every other two sets share nothing,
+    # and the 1,380 further development episodes share nothing with any set
     overlap = {f"{a}/{b}": len(set(fps[a]) & set(fps[b]))
-               for i, a in enumerate(names) for b in names[i + 1:]}
-    check("no content is shared between any two evaluation sets",
+               for i, a in enumerate(names) for b in names[i + 1:] if {a, b} != {"dev", "dev_reads"}}
+    overlap["dev/dev_reads beyond the 600"] = len(set(fps["dev_reads"][600:]) & set(fps["dev"]))
+    check("no content is shared between any two evaluation sets (apart from the 600 that "
+          "the reads' set holds by design)",
           sum(overlap.values()) == 0, str({k: v for k, v in overlap.items() if v}))
     within = {name: len(v) - len(set(v)) for name, v in fps.items()}
     check("no content repeats inside an evaluation set (fresh, at least)",

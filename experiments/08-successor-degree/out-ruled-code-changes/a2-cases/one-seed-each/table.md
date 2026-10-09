@@ -1,0 +1,8 @@
+| arm/seed | reading or no verdict | site set | whole read / piece of the held-out count (band) | piece elsewhere: per position; average | whole, ownership-only, untouched (fresh) | no-transplant miss | control 3 median, 95th; below/equal/above | controls 7, 1 (arm T), 4 hold | control 6 same / different moved | control 2 | true slot | rider | lesion own | lesion candidates | row choice, arm T: right row of episodes; right where wrong row; right with row forced (reported) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| T/0 | 0.0000 | states (0,) at action, 8 directions | 180 / 180 (176 to 180) | single position | 1.0000, 1.0000, 0.0000 | +0.0000 | 0.0000, 0.0000; 20/0/0 | True, True, True | 0.0000 / 1.0000 | not applicable | 0.0000 | 0.0000 | 740 | 3000 | not run |
+| C/0 | 1.0051 | states (2,) at action, 8 directions | 180 / 180 (176 to 180) | single position | 0.5400, 0.0488, 0.0512 | -0.0132 | 0.0587, 0.0639; 0/0/20 | True, None, True | 0.5062 / 0.8220 | no verdict |  | no verdict | 534 | 2236 |  |
+| M/0 | 0.4886 | states (1,) at post-identity, 8 directions | 180 / 180 (176 to 180) | 151, 153, 95, 34, 130, 67, 148, 180, 133, 120; 163 | 0.7800, 0.4050, 0.0125 | -0.0059 | 0.0150, 0.0190; 20/0/0 | True, None, True | 0.2222 / 0.9499 | not applicable | 0.4837 | no verdict | 669 | 2770 |  |
+| F/0 | 0.6200 | states (1,) at post-identity, 1 directions | 32 / 22 (14 to 33) | 21, 15, 15, 18, 15, 14, 13, 18, 15, 17; 25 | 0.4850, 0.0587, 0.0587 | -0.0043 | 0.0587, 0.0625; 6/7/7 | True, None, True | 0.7284 / 0.8999 | no verdict |  | no verdict | 528 | 2100 |  |
+
+outcome: not computed: arm T: gate not decidable on one seed; arm C: gate not decidable on one seed; arm F: gate not decidable on one seed
