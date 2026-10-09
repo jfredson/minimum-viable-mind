@@ -130,3 +130,7 @@ not write them (ruling 2 of 2026-10-09). One fix to this session's own new row
 went in with this note: RT-213's row now gives the gate file's full path
 (`experiments/rehearsal-successor-measure/out-v3-rules/gate.json`), which the
 citation checker could not resolve from its bare name.
+
+*Dated note, 2026-10-08 (evening, Pacific): RT-219, called open above, is now
+closed with the argument accepted, after a dated note was added beside the
+repairs findings' sentence (pull request 149).*

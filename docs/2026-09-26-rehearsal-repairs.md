@@ -330,10 +330,10 @@ about items `it1` to `it3` go through the entangled route, `it0` and `it4`
 through the separable one, about three fifths entangled (0.6033 of the fresh
 episodes, `measure_base_M.json`). *(Dated note, 2026-10-08, closing red-team
 finding RT-219: this figure is cited to the wrong episodes and file. 0.6033 is
-1,810 of the 3,000 held-out gate episodes, `gate_base.json`, field
-`runs.M/base/*.own_by_route.entangled_share`; the share of the 800 fresh
-measurement trials is 0.60375, 483 of 800, `measure_base_M.json`, field
-`fourth_arm.entangled_share`; the review of version 2 measured both.)* Its self-test passes all seven checks,
+1,810 of the 3,000 held-out gate episodes, `out-repairs/gate_base.json`,
+field `runs.M/base/*.own_by_route.entangled_share`; the share of the 800 fresh
+measurement trials is 0.60375, 483 of 800, `out-repairs/measure_base_M.json`,
+field `arms.M/base/*.fourth_arm.entangled_share`; the review of version 2 measured both.)* Its self-test passes all seven checks,
 including "perturbing the slot never moves an entangled-route action" (largest
 logit movement 0.00e+00) — `out-repairs/self-tests.txt`. **It is a mixture by
 item, not partial separation within each trial**, and page 5's strongest

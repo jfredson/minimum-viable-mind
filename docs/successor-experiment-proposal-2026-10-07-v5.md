@@ -715,8 +715,9 @@ extension of the closed design's generator
 has twelve turns, four revision turns and the end-of-episode question sets
 the closed design called batteries; none of those is carried. One episode has
 four agents, two items, eight value slots and a closed vocabulary (twelve
-marker words and five items in the training, development and fresh pools; 46
-words in all, `grammar.py`'s own count). An episode is **56 tokens**: a start
+marker words and five items in the training, development and fresh pools;
+the whole vocabulary, special words included, is 46 words, `grammar.py`'s own
+count). An episode is **56 tokens**: a start
 word, then **eight assignment turns**, one per agent and item, in random order,
 each rendered as the marker word, the word "assign", the item and the value,
 then a line-break word (5 tokens each);
@@ -5729,9 +5730,10 @@ no longer call the sharpness branch unchecked.
 ## Small fixes after the checks of 2026-10-08 (evening)
 
 Applied by the session that put the open items to John, from the should-fix
-items of four checks (`docs/reviews/2026-10-09-ledger-rows-and-v5-wording-check-claude-code.md`,
+items of three checks (`docs/reviews/2026-10-09-ledger-rows-and-v5-wording-check-claude-code.md`,
 `docs/reviews/2026-10-09-serious-findings-closure-check-claude-code.md`,
-`docs/reviews/2026-10-09-ledger-packet-and-rows-212-229-check-claude-code.md`):
+`docs/reviews/2026-10-09-ledger-packet-and-rows-212-229-check-claude-code.md`),
+themselves checked in `docs/reviews/2026-10-08-small-fixes-batch-check-claude-code.md`:
 section 4.1 now gives the vocabulary as 46 words and the episode as 56 tokens,
 with the start, line-break and end words that the count needs (checked against
 `grammar.py`: 1 + 8 × 5 + 2 × 7 + 1); section 13's sentence on arm M's code is
