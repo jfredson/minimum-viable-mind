@@ -1,0 +1,22 @@
+The exact code the end-to-end test on the final code ran
+(method: docs/2026-10-08-end-to-end-final-code-method.md)
+
+Recorded at the start, Thu Oct  8 19:23:45 PDT 2026, and again at the end,
+Thu Oct  8 21:56:49 PDT 2026. Both readings are identical.
+
+git rev-parse HEAD: d4fd02658426987d256c595d09197e82fa14e5ec
+  (branch e2e-final-code: the method note only, on top of commit 6c47c56,
+  the last batch before the registration, pull request 153; src/ is the same
+  as at 6c47c56)
+git status --porcelain experiments/08-successor-degree/src/: empty (no change)
+
+shasum -a 256 experiments/08-successor-degree/src/*:
+466ccca1fa6353843a85fa979a2dd228740e414004f09f5ed9c4b9239727c1cc  grammar.py
+9c60cb41d4a5425752ac5bee1ee0088b604d17b746bab1588e275e5c42eb11e4  launch_successor.sh
+4ed6beee1085dd6beb221832b925d01933b40153f3871095d3768c40001fad37  measure.py
+6a62c0e4f9706034e133dc3ed026cc46ea452f1a9544b90996b3540d93b42eed  models.py
+4cc908909f782f4e1e1803efbfbdc5f3d343f779ae81417fdf0a781bc6741ecc  procedure.py
+d7b31ba38a79778199eb4ed38e98b0003e2f8c6c99249caed401db38fc51c9e2  run_self_tests.sh
+9fe876e43533b39dee05e9620a5789a4e6a715e2c49d6ffa3a3b2b7d9a3002c1  train_successor.py
+6cf6abd11c8b5cedf87c295517d1278d45db76dc79cb9f2ce1ca4129c5faad1f  transplant.py
+e300bb34b484c0a56cd1d9f9ea9ae2357d21e245e80c62d692b9c1611698f51d  tripwire.py
