@@ -1,0 +1,57 @@
+==============================================================================
+check_single_source.py - does every money figure trace back to the compute ledger?
+==============================================================================
+System of record: experiments/06-mvm-0a-constructed-self-index/compute-ledger.md
+Documents read: 1   scope: live   figures below $0 ignored
+Figures that are in the ledger and point at it: 13
+Set aside as forecasts (a proposal pricing something, not a record of spend): 151
+Set aside as neither, by the wording around them: 80
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 1: a dollar figure the ledger does not contain
+------------------------------------------------------------------------------
+2 found. Either the document is stale or the ledger is missing
+a number it should state. A total summed across ledger rows lands here too.
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3709   $221.85
+      in: Version 4 carried $228.15 spent (the ledger's second 2026-09-25 row, line 95) and $221.85 of headroom (arithmetic, $450 minus that).
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3754   $7.39
+      in: The four runs cost far less than the ledger's 2026-08-12 figure of $1.943 each had suggested (the card ran 0.0093 to 0.0145 seconds a step: the check of the development runs, section 4), so $2.61 of t
+
+------------------------------------------------------------------------------
+[CONFIDENT] Group 2: in the ledger, but the sentence names another file as source
+------------------------------------------------------------------------------
+2 found. This is a second home being built for a number
+that already has one.
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3716   $44
+      names instead: docs/rulings/2026-09-21-review-verification-and-staged-spending.md
+      in: - **The flat $130 cap of 2026-09-20 is superseded** by the two releases of the 2026-09-21 ruling (items 10, 11 and 19 of `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, with its 
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3716   $131
+      names instead: docs/rulings/2026-09-21-review-verification-and-staged-spending.md
+      in: - **The flat $130 cap of 2026-09-20 is superseded** by the two releases of the 2026-09-21 ruling (items 10, 11 and 19 of `docs/rulings/2026-09-21-review-verification-and-staged-spending.md`, with its 
+
+------------------------------------------------------------------------------
+[LOOK AT IT] Group 3: in the ledger, and no source named
+------------------------------------------------------------------------------
+5 found. Right today, and with nothing pointing at the record that
+would correct it tomorrow. This is the state the stale $215.70 copies were in.
+By document:
+     5  docs/successor-experiment-proposal-2026-10-07-v5.md
+
+The first 5 in full (use --only <path> for one document's own):
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3704   $0.0525   in: the same row; the check at `afb5183`, point 3, confirms the $0.0525 against the two balance readings and the vendor's po
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3927   $0.25   in: **Rule S, in flight:** the comparison counts as over the line when the predicted spending so far is at least $0.25 and t
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3927   $0.05   in: **Rule S, in flight:** the comparison counts as over the line when the predicted spending so far is at least $0.25 and t
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3990   $16   in: Version 2's $16 floor was already lost at the top of the range on the ruled split (the Gate C review, RT-217), which is 
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3990   $10   in: Version 2's $16 floor was already lost at the top of the range on the ruled split (the Gate C review, RT-217), which is 
+
+------------------------------------------------------------------------------
+[LOOK AT IT] The same figure in many documents
+------------------------------------------------------------------------------
+0 figure(s) appear in four or more documents. A figure with many homes
+is a figure a correction has to find many times.
+
+==============================================================================
+Confident findings: 4. Things for a human to look at: 5 unsourced figures and 0 widely repeated ones.
+The ledger is taken as true here. Read the 'what this cannot check' note at the
+top of this file before reading a clean run as reassurance.
+==============================================================================

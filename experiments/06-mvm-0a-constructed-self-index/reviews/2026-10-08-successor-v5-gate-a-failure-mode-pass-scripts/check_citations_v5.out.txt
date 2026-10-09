@@ -1,0 +1,226 @@
+==============================================================================
+check_citations.py - do the pointers land, and are the cited numbers there?
+==============================================================================
+Documents read: 1   scope: live
+
+------------------------------------------------------------------------------
+PART (a): does every file a document names exist?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 9 reference(s) name a file that is not in the repository
+  docs/successor-experiment-proposal-2026-10-07-v5.md:102
+      names: docs/rulings/2026-10-08-decoy-w18-ruling.md
+      in:    main line: `docs/2026-10-08-decoy-w18-findings.md` (pull request 155), `docs/reviews/2026-10-08-decoy-w18-check-claude-code.md` (pull request 156), `docs/ruling
+  docs/successor-experiment-proposal-2026-10-07-v5.md:102
+      names: docs/2026-10-08-end-to-end-final-code-findings.md
+      in:    main line: `docs/2026-10-08-decoy-w18-findings.md` (pull request 155), `docs/reviews/2026-10-08-decoy-w18-check-claude-code.md` (pull request 156), `docs/ruling
+  docs/successor-experiment-proposal-2026-10-07-v5.md:2771
+      names: docs/2026-10-08-end-to-end-final-code-findings.md
+      in:    The end-to-end run of the decision code that ruling 3 of `docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md` asks for ran on exactly this code (`docs
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3328
+      names: docs/rulings/2026-10-08-decoy-w18-ruling.md
+      in:    Run 2026-10-08 and checked: inconclusive, control 1 withholding arm T on every seed; registered with W18 named and sized by John's ruling of the same night (wea
+  docs/successor-experiment-proposal-2026-10-07-v5.md:4271
+      names: docs/rulings/2026-10-08-decoy-w18-ruling.md
+      in:    **Ruled 2026-10-08, "Option 1" (`docs/rulings/2026-10-08-decoy-w18-ruling.md`, authorship mixed): registered with this weakness named and sized; a middling read
+  docs/successor-experiment-proposal-2026-10-07-v5.md:4703
+      names: docs/rulings/2026-10-08-decoy-w18-ruling.md
+      in:    **The decoy weakness, registered named and sized.** *Ruled 2026-10-08, "Option 1" (`docs/rulings/2026-10-08-decoy-w18-ruling.md`; authorship mixed: the session 
+  docs/successor-experiment-proposal-2026-10-07-v5.md:4883
+      names: failure_pass_v5.py
+      in:    The script that printed the blocks below is this session's `failure_pass_v5.py`, kept in its scratch folder and described here command by command; the inside re
+  docs/successor-experiment-proposal-2026-10-07-v5.md:5286
+      names: scan_ids.py
+      in:    Bare identifiers: the script `scan_ids.py` lists every RT number, commit identifier, pull request number, branch name and outside finding label and flags any wi
+  docs/successor-experiment-proposal-2026-10-07-v5.md:5897
+      names: docs/reviews/2026-10-08-registration-ready-check-claude-code.md
+      in:    The check of this change (`docs/reviews/2026-10-08-registration-ready-check-claude-code.md`, pull request 159) found two must-fix items, applied the same night:
+
+[LOOK AT IT] 14 bare name(s) match more than one file
+  docs/successor-experiment-proposal-2026-10-07-v5.md:583  comparison.md
+      could be: experiments/08-successor-degree/out-ruled-code-changes/comparison.md
+      could be: experiments/rehearsal-successor-measure/out-page4-rerun-1800/comparison.md
+  docs/successor-experiment-proposal-2026-10-07-v5.md:713  grammar.py
+      could be: experiments/08-successor-degree/src/grammar.py
+      could be: experiments/rehearsal-successor-measure/src/grammar.py
+  docs/successor-experiment-proposal-2026-10-07-v5.md:836  grammar.py
+      could be: experiments/08-successor-degree/src/grammar.py
+      could be: experiments/rehearsal-successor-measure/src/grammar.py
+  docs/successor-experiment-proposal-2026-10-07-v5.md:845  grammar.py
+      could be: experiments/08-successor-degree/src/grammar.py
+      could be: experiments/rehearsal-successor-measure/src/grammar.py
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1050  summary.json
+      could be: experiments/08-successor-degree/out-a2-cases/C-fresh-floor/summary.json
+      could be: experiments/08-successor-degree/out-a2-cases/F-channel-removal/summary.json
+      could be: experiments/08-successor-degree/out-a2-cases/F-fails-5a/summary.json
+      could be: experiments/08-successor-degree/out-a2-cases/F-fresh-floor/summary.json
+      could be: experiments/08-successor-degree/out-a2-cases/M-fails-gate/summary.json
+      could be: experiments/08-successor-degree/out-a2-cases/M-outside-band/summary.json
+      ... and 83 more
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1369  grammar.py
+      could be: experiments/08-successor-degree/src/grammar.py
+      could be: experiments/rehearsal-successor-measure/src/grammar.py
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1569  measure.py
+      could be: experiments/08-successor-degree/src/measure.py
+      could be: experiments/rehearsal-successor-measure/src/measure.py
+  docs/successor-experiment-proposal-2026-10-07-v5.md:2131  src/transplant.py
+      could be: experiments/08-successor-degree/src/transplant.py
+      could be: experiments/rehearsal-successor-measure/src/transplant.py
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3175  README.md
+      could be: README.md
+      could be: docs/reviews/2026-09-20-program-review/README.md
+      could be: experiments/01-self-indexing-removal-test/src/playground/README.md
+      could be: experiments/08-successor-degree/README.md
+      could be: experiments/08-successor-degree/out-ruled-code-changes/table-layout-fix/README.md
+      could be: experiments/README.md
+      ... and 3 more
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3175  gate_base.json
+      could be: experiments/rehearsal-successor-measure/out-grammar-c/gate_base.json
+      could be: experiments/rehearsal-successor-measure/out-repairs/gate_base.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3175  summary_base.json
+      could be: experiments/rehearsal-successor-measure/out-grammar-c/summary_base.json
+      could be: experiments/rehearsal-successor-measure/out-repairs/summary_base.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3175  diagnose_named_other.json
+      could be: experiments/rehearsal-successor-measure/out-grammar-c/diagnose_named_other.json
+      could be: experiments/rehearsal-successor-measure/out-repairs/diagnose_named_other.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:4841  README.md
+      could be: README.md
+      could be: docs/reviews/2026-09-20-program-review/README.md
+      could be: experiments/01-self-indexing-removal-test/src/playground/README.md
+      could be: experiments/08-successor-degree/README.md
+      could be: experiments/08-successor-degree/out-ruled-code-changes/table-layout-fix/README.md
+      could be: experiments/README.md
+      ... and 3 more
+  docs/successor-experiment-proposal-2026-10-07-v5.md:5839  grammar.py
+      could be: experiments/08-successor-degree/src/grammar.py
+      could be: experiments/rehearsal-successor-measure/src/grammar.py
+
+[LOOK AT IT] 1 name(s) of run-output files that are not in the repository
+             (this repo does not commit `artifacts/`, so most of these point at
+              uncommitted output rather than at a broken citation)
+  docs/successor-experiment-proposal-2026-10-07-v5.md:2771  experiments/08-successor-degree/out-e2e-final-code/code-identity.txt
+      in: The end-to-end run of the decision code that ruling 3 of `docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md` asks for ran on exactly this code (`docs
+
+[LOOK AT IT] 14 reference(s) written with a gap or a wildcard that matched nothing
+  docs/successor-experiment-proposal-2026-10-07-v5.md:85  ...-dispositions-PROPOSAL.md
+  docs/successor-experiment-proposal-2026-10-07-v5.md:85  ...-tier2-questions-PROPOSAL.md
+  docs/successor-experiment-proposal-2026-10-07-v5.md:85  ...-tier2-dispositions-PROPOSAL.md
+  docs/successor-experiment-proposal-2026-10-07-v5.md:516  out-controls-rerun/measure_C_seed*.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1050  out-controls-rerun/nominate_C_seed*.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1050  measure_C_seed*.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1239  out-controls-rerun/measure_M_seed*.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1344  out-controls-rerun/nominate_F_seed*.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1687  out-v3-rules/measure_*_seed*.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:2144  out-v3-rules/nominate_*_seed*.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:2669  out-repairs/measure_base_*.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3175  nominate_base_*.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3175  measure_base_*.json
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3175  train_*_base_seed*.json
+
+[NOT CHECKED] 1 reference(s) to files outside this repository
+     1x  ~/Documents/Code/CLAUDE.md
+
+[NOT CHECKED] 1 reference(s) to paths .gitignore keeps out of the repository (run outputs and caches, deliberately not committed)
+     1x  experiments/08-successor-degree/artifacts/
+
+------------------------------------------------------------------------------
+PART (b): is a figure given with a citation actually in the file cited?
+------------------------------------------------------------------------------
+
+[CONFIDENT] 6 exact figure(s) absent from the one file their sentence cites
+  docs/successor-experiment-proposal-2026-10-07-v5.md:583
+      figure: 40,855    cited: out-page4-rerun-1800/models-1800/summary.json
+      in:     The anchors' figures, with every read fitted on 1,800 development episodes (ruled 2026-10-06, page 4): arm T reads 0.0000 and arm C **1.0026, 1.0000 and 1.0000**, so the separation, the lowest of arm 
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1198
+      figure: 1,810    cited: out-repairs/gate_base.json
+      in:     The repairs findings print 0.6033, which is the same share on the held-out gate episodes, 1,810 of 3,000 (MEASURED: `out-repairs/gate_base.json` at `882f252`, the field `own_by_route.entangled_share`)
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1279
+      figure: 0.10    cited: out-page4-rerun-1800/models-1800/summary.json
+      in:     **With every read fitted on 1,800 development episodes (ruled 2026-10-06, page 4; MEASURED: the page 4 re-run at `e948899`, section 2; checked at `1e168f3`):** the blind reading is **0.5252, 0.4793 an
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3110
+      figure: 1,800    cited: out-page4-rerun-1800/models-1800/summary.json
+      in:     On the toy, with every read fitted on 1,800 development episodes, the separation is **1.0000** (arm C's three readings 1.0026, 1.0000 and 1.0000; MEASURED: the page 4 re-run at `e948899`, from `out-pa
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3110
+      figure: 0.9926    cited: out-page4-rerun-1800/models-1800/summary.json
+      in:     On the toy, with every read fitted on 1,800 development episodes, the separation is **1.0000** (arm C's three readings 1.0026, 1.0000 and 1.0000; MEASURED: the page 4 re-run at `e948899`, from `out-pa
+  docs/successor-experiment-proposal-2026-10-07-v5.md:5613
+      figure: 0.29    cited: docs/2026-10-06-sharpness-fix-inuse-check-findings.md
+      in:     The text below is as it stood before the ruling.** *Source:* the 2026-10-07 ruling's addition says what "holds" means in figures is fixed in the amendment text before the reruns launch; the in-use che
+
+[LOOK AT IT] 23 figure(s) worth a human eye
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1198
+      figure: 0.6033    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     The repairs findings print 0.6033, which is the same share on the held-out gate episodes, 1,810 of 3,000 (MEASURED: `out-repairs/gate_base.json` at `882f252`, the field `own_by_route.entangled_share`)
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1224
+      figure: 0.4895    cited: out-repairs/measure_base_M.json    (only an approximate match found)
+      in:     **That formula is the true-slot reading of section 7.2, item 6, written in route accuracies: one check, not two.** By algebra, a transplant that carries the separable route fully and the entangled rou
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1224
+      figure: 0.4572    cited: out-repairs/measure_base_M.json    (only an approximate match found)
+      in:     **That formula is the true-slot reading of section 7.2, item 6, written in route accuracies: one check, not two.** By algebra, a transplant that carries the separable route fully and the entangled rou
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1224
+      figure: 0.4904    cited: out-repairs/measure_base_M.json    (only an approximate match found)
+      in:     **That formula is the true-slot reading of section 7.2, item 6, written in route accuracies: one check, not two.** By algebra, a transplant that carries the separable route fully and the entangled rou
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1239
+      figure: 0.8613    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     Arm M passes its gate on the own-directed condition on all three seeds (0.8613 to 0.8667), and clears the named-other condition too (0.5517 to 0.5663), although that is no longer gated for it (MEASURE
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1239
+      figure: 0.8667    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     Arm M passes its gate on the own-directed condition on all three seeds (0.8613 to 0.8667), and clears the named-other condition too (0.5517 to 0.5663), although that is no longer gated for it (MEASURE
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1239
+      figure: 0.5517    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     Arm M passes its gate on the own-directed condition on all three seeds (0.8613 to 0.8667), and clears the named-other condition too (0.5517 to 0.5663), although that is no longer gated for it (MEASURE
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1239
+      figure: 0.5663    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     Arm M passes its gate on the own-directed condition on all three seeds (0.8613 to 0.8667), and clears the named-other condition too (0.5517 to 0.5663), although that is no longer gated for it (MEASURE
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1279
+      figure: 0.4760    cited: out-page4-rerun-1800/models-1800/summary.json    (only an approximate match found)
+      in:     **With every read fitted on 1,800 development episodes (ruled 2026-10-06, page 4; MEASURED: the page 4 re-run at `e948899`, section 2; checked at `1e168f3`):** the blind reading is **0.5252, 0.4793 an
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1279
+      figure: 0.4920    cited: out-page4-rerun-1800/models-1800/summary.json    (only an approximate match found)
+      in:     **With every read fitted on 1,800 development episodes (ruled 2026-10-06, page 4; MEASURED: the page 4 re-run at `e948899`, section 2; checked at `1e168f3`):** the blind reading is **0.5252, 0.4793 an
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1279
+      figure: 0.0252    cited: out-page4-rerun-1800/models-1800/summary.json    (only an approximate match found)
+      in:     **With every read fitted on 1,800 development episodes (ruled 2026-10-06, page 4; MEASURED: the page 4 re-run at `e948899`, section 2; checked at `1e168f3`):** the blind reading is **0.5252, 0.4793 an
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1279
+      figure: 0.0033    cited: out-page4-rerun-1800/models-1800/summary.json    (only an approximate match found)
+      in:     **With every read fitted on 1,800 development episodes (ruled 2026-10-06, page 4; MEASURED: the page 4 re-run at `e948899`, section 2; checked at `1e168f3`):** the blind reading is **0.5252, 0.4793 an
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1279
+      figure: 0.0288    cited: out-page4-rerun-1800/models-1800/summary.json    (only an approximate match found)
+      in:     **With every read fitted on 1,800 development episodes (ruled 2026-10-06, page 4; MEASURED: the page 4 re-run at `e948899`, section 2; checked at `1e168f3`):** the blind reading is **0.5252, 0.4793 an
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1772
+      figure: 0.017536    cited: docs/2026-09-21-successor-measure-rehearsal.md, out/denominator_floor.json    (several files cited beside it)
+      in:     Version 2 set the room at the largest measured miss, 0.017536 on the free arm at one seed, rounded up to 0.018 (MEASURED: `docs/2026-09-21-successor-measure-rehearsal.md`, section 5, from `out/denomin
+  docs/successor-experiment-proposal-2026-10-07-v5.md:1785
+      figure: 0.99    cited: docs/2026-10-06-gate-a-v4-tier2-dispositions-measurements.md    (only an approximate match found)
+      in:     A correctly paired model whose errors go to the other three agents' values lands at `(1 − p) / 3`, outside the allowance at any accuracy below about 0.9: at an accuracy of 0.8 that is 0.0667 against t
+  docs/successor-experiment-proposal-2026-10-07-v5.md:2429
+      figure: 26,700    cited: docs/2026-10-03-controls-rerun.md    (hedged figure)
+      in:     The controls re-run of 2026-10-03 ran controls 1, 3, 4, 6 and 7, the true-slot reference, the rider and the stricter row on all twelve toy models, with its method and code committed before its output 
+  docs/successor-experiment-proposal-2026-10-07-v5.md:2964
+      figure: 0.2633    cited: docs/rehearsal-repairs-method-2026-09-25.md, out-repairs/gate_base.json    (only an approximate match found)
+      in:     The ruling writes the bar as "above 0.2630"; on 3,000 held-out episodes that is 790 or more correct, a share of 0.2633 (MEASURED: the bar's derivation is printed in `docs/rehearsal-repairs-method-2026
+  docs/successor-experiment-proposal-2026-10-07-v5.md:2976
+      figure: 0.2383    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     - Reference points reported alongside, and they are references and not thresholds: one in eight for guessing, one in four for a solver that cannot tell whose value it needs, and the **measured** accur
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3085
+      figure: 0.1703    cited: out-repairs/gate_base.json    (only an approximate match found)
+      in:     **On the toy, described honestly (ruled, the Gate C rulings, RT-220):** arm T collapses on two of three seeds, at 0.2467 and 0.2510, and its seed 2 reads 0.2733 against the bar of 0.2633, so under the
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3110
+      figure: 1.0026    cited: out-page4-rerun-1800/models-1800/summary.json    (only an approximate match found)
+      in:     On the toy, with every read fitted on 1,800 development episodes, the separation is **1.0000** (arm C's three readings 1.0026, 1.0000 and 1.0000; MEASURED: the page 4 re-run at `e948899`, from `out-pa
+  docs/successor-experiment-proposal-2026-10-07-v5.md:3527
+      figure: $0    cited: registered_shape_timing.out.txt    (only an approximate match found)
+      in:     The nomination and the fit are computed on the laptop's processor from the fetched checkpoint, as the toy nominations were, and draw no rented time (MEASURED at the registered shape on the laptop's pr
+  docs/successor-experiment-proposal-2026-10-07-v5.md:5613
+      figure: 0.22    cited: docs/2026-10-06-sharpness-fix-inuse-check-findings.md    (only an approximate match found)
+      in:     The text below is as it stood before the ruling.** *Source:* the 2026-10-07 ruling's addition says what "holds" means in figures is fixed in the amendment text before the reruns launch; the in-use che
+  docs/successor-experiment-proposal-2026-10-07-v5.md:5613
+      figure: 0.07    cited: docs/2026-10-06-sharpness-fix-inuse-check-findings.md    (only an approximate match found)
+      in:     The text below is as it stood before the ruling.** *Source:* the 2026-10-07 ruling's addition says what "holds" means in figures is fixed in the amendment text before the reruns launch; the in-use che
+
+==============================================================================
+Confident findings: 15. Things for a human to look at: 52.
+A confident finding is not a verdict. Read the sentence before acting on it,
+and read the 'what this cannot check' note at the top of this file before
+reading a clean run as reassurance.
+==============================================================================
