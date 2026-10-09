@@ -37,7 +37,7 @@ commit and say in one line whether he accepted the session's handling.
   code, changes.
 - Before writing this, the overseer confirmed that `6c47c56` is on the main
   line and that `experiments/08-successor-degree/src/` is identical between
-  `6c47c56` and the main line at `d60ff2e` (the merge of pull request 158).
+  `6c47c56` and the main line at `d60ff2e` (the merge of pull request 158, the registration-ready change).
 - Ledger rows RT-275 to RT-282 stand as handled, now with John's acceptance;
   the four carried open stay open as named weaknesses, not closed.
 - Next, on John's go given the same day ("Approved."): the three 10-million
