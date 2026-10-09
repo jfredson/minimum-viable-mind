@@ -3,8 +3,8 @@
 *Written 2026-10-07 (Pacific) by a fresh Claude Code session in its own
 worktree (branch `worktree-agent-a43545d6649460124`, cut from the main line
 at `597a3f5`, the merge of pull request 123, the outside-perspective poll).
-**Status: the registration text, DRAFT, not yet checked, not yet committed as
-registered. Nothing here binds until John makes the registration commit.** It
+**Status: the registration text, DRAFT, checked (pull requests 130 and 132,
+and the checks since), not yet committed as registered. Nothing here binds until John makes the registration commit.** It
 is version 4 (`docs/successor-experiment-proposal-2026-10-03-v4.md`, main
 line at `41b0bd3`, pull request 85, left unedited) with every change John has
 ruled since written in, each marked in a phrase with the ruling or finding it
@@ -30,8 +30,9 @@ are John's; each has a recommendation and the text says what it does
 meanwhile. *(Since 2026-10-08: (1) is done, pull requests 130 and 132; (2)
 is ruled, every item, in `docs/rulings/2026-10-08-verification-bar-ruling.md`
 and `docs/rulings/2026-10-08-v5-open-items-rulings.md`, with work those
-rulings ask for still owed before the commit; (4) is done, pull request
-136.)* (3) The closure check of the fatal finding RT-237 (the free model's
+rulings ask for done and checked by the night of 2026-10-08; (3) is done,
+pull request 142, with its fired condition met by pull request 152; (4) is
+done, pull request 136 and the pull requests before it. **What remains is John's registration commit (the check of the end-to-end re-run is filed, `docs/reviews/2026-10-08-end-to-end-final-code-check-claude-code.md`, pull request 160, and the Gate A tier 1 reviewer's own failure-mode pass, `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md`, pull request 161).**)* (3) The closure check of the fatal finding RT-237 (the free model's
 gate named question sets this task does not have) runs on this text, by the
 tier 1 reviewer, as the closure rule requires. (4) Every record this version
 cites from an unmerged branch must be on the main line at the registration
@@ -98,6 +99,7 @@ standing has moved.
 | **John's rulings of 2026-10-08 on the December-result restatement** | main line (pull request 128): `docs/rulings/2026-10-08-december-result-restatement-rulings.md`; the restatement itself, `docs/rulings/2026-10-08-december-result-restatement-PROPOSAL.md`, now a dated note at the head of `docs/december-result-roadmap-2026-09-20.md` | **Binding on this version.** The early stop of S4b is a registered ending with its ruled sentence; terms, kill dates and caps unchanged |
 | **John's rulings of 2026-10-08 on open items 2 to 12 of section 21** | `docs/rulings/2026-10-08-v5-open-items-rulings.md` and `docs/rulings/2026-10-08-flat-models-ruling-confirmed.md` | **Binding on this version.** Every open item ruled as recommended, with the eighth term renamed "instrument returned no reading on the separable mechanism" |
 | **The ruled code changes of 2026-10-08 and the page 4 pass re-run under them, with their check** | main line (pull request 151): `docs/2026-10-09-ruled-code-changes-and-page4-rerun-method.md` (committed first), `docs/2026-10-09-ruled-code-changes-and-page4-rerun-findings.md`, outputs `experiments/08-successor-degree/out-ruled-code-changes/`; check, pull request 152: `docs/reviews/2026-10-09-ruled-code-changes-check-claude-code.md` | MEASURED and checked. At limit 3,000 the new code reproduces the page 4 record exactly (29,077 values); at 10,000 no fit stops early on any toy model and **every page 4 figure this text quotes is unchanged**, so those citations stand for the registered code too; the free model's gate closure re-run on this code, 740 of 740 clause states agreeing |
+| **The decoy test of W18, its check, and John's ruling on it; the end-to-end re-run on the final code** | main line: `docs/2026-10-08-decoy-w18-findings.md` (pull request 155), `docs/reviews/2026-10-08-decoy-w18-check-claude-code.md` (pull request 156), `docs/rulings/2026-10-08-decoy-w18-ruling.md`; `docs/2026-10-08-end-to-end-final-code-findings.md` (pull request 157) | **Binding on this version.** W18 registered named and sized; the registered code named in section 7.4 |
 | Version 3 of this proposal | `6d4ec3a` (pull request 71): `docs/successor-experiment-proposal-2026-09-26-v3.md` | The text this version starts from. Left unedited |
 | The first independent review of version 3, findings RT-230 to RT-236 | `4cb7f8e` (pull request 74): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-successor-v3-gate-c-claude-code.md`, with its scripts in `reviews/2026-10-03-successor-v3-gate-c-scripts/` | Reviewed version 3 at `37269ad`. Nothing fatal; two serious findings (RT-230, the floor certified the read and not the piece transplanted; RT-233, four controls had no figure under the registered rules); five minor |
 | **John's rulings of 2026-10-03 on that review and on version 3's open decisions (sixteen pages)** | `56a5a86` (pull request 75), with a dated note added under its decisions table at `fe5df65` (pull request 77): `docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md` | **Binding on this version.** Its "What this changes, and where" is the first checklist this version was written to. Two rows of its decisions table (decisions 15 and 16) were changed later the same day by the ruling two rows below; the dated note says so |
@@ -984,7 +986,9 @@ network may or may not discover, and the ownership slot is a single place that
 can be transplanted on its own. **Its degree is zero by construction**, and
 that is the point of the arm.
 
-What the toy measured, under the rules this version registers: it reads
+What the toy measured, under the rules this version registers (these
+figures were read with the fit on 420 episodes; every arm T figure is the
+same with the registered 1,800): it reads
 **0.0000 on every seed**, nominated at layer 0 at the action position with a
 piece of 8 directions, the whole read and the piece each right on 180 of 180
 held-out episodes on every seed; its ownership-only transplant moves the
@@ -1044,7 +1048,8 @@ transplanting the whole state at the same places succeeds. **Its reading should
 be high.**
 
 **What the toy measured with every read fitted on 420 episodes, under the
-rules this version registers otherwise (the registered fitting count of 1,800
+rules this version registers but for the fitting count and the earlier
+iteration limit of 3,000 (the registered fitting count of 1,800
 gives the figures later in this section; MEASURED: the controls re-run at
 `821f154`, sections 2 to 4, from
 `out-controls-rerun/nominate_C_seed*.json`, `measure_C_seed*.json` and
@@ -1232,7 +1237,8 @@ true-slot reading is computed and written down before the blind reading is
 looked at.
 
 **What the toy measured with every read fitted on 420 episodes, under the
-rules this version registers otherwise (the registered fitting count of 1,800
+rules this version registers but for the fitting count and the earlier
+iteration limit of 3,000 (the registered fitting count of 1,800
 gives the figures later in this section; MEASURED: the controls re-run at
 `821f154`, sections 2 and 4, from
 `out-controls-rerun/measure_M_seed*.json`; reproduced by the check at
@@ -1434,7 +1440,8 @@ in arm C and −0.008 in arm M, so their answers put 0.218 and 0.247 of their
 weight on the agent the model actually was, where a flat answer puts 0.25;
 arm T's fell to 1.947 and still worked (0.942). The registered procedure,
 independently, could not find "which agent am I" in arm C's or arm M's
-running state (best pieces 41 and 45 of 180 against a floor of 144) and
+running state (best whole reads 41 and 45 of 180, best pieces 45 and 43,
+against a floor of 144) and
 returned no verdict on both. The fall was already visible in the toy models:
 arm C's sharpness ended at 1.73, 0.70 and 0.93 on its three seeds, arm M's at
 2.84, 2.69 and 2.42. Weight decay alone shrinks a number toward zero and
@@ -1462,8 +1469,9 @@ unchanged and the sharpness fixed all ended at exactly 4.0, arm C's weight
 on the true agent rose from 0.914, 0.573 and 0.681 to 0.999 on every seed,
 and no seed lost more than 36 of 3,000 own-directed answers (MEASURED:
 `docs/2026-10-06-sharpness-fix-inuse-check-findings.md`, section 4, from
-`out-sharpness-fix/retrained_inuse.txt`). **This work is owed its independent
-check before the reruns.**
+`out-sharpness-fix/retrained_inuse.txt`). **This work was owed its
+independent check before the reruns; it was checked 2026-10-08, every figure
+reproduced (`docs/reviews/2026-10-08-sharpness-fix-check-claude-code.md`).**
 
 **The in-use check, as ruled (option 4), and what "holds" means in figures.**
 A built model whose ownership route has gone flat anyway returns no verdict
@@ -1657,8 +1665,9 @@ repairs rulings, the paragraph after item 5). A negative reading means the
 ownership-only transplant moved the action more than the whole-state one; a
 reading above 1 means the ownership-only transplant landed below the
 no-transplant rate. Both are sampling noise around "the subspace does
-nothing" when small (arm C reads 1.0051 at one toy seed; the controls re-run
-at `821f154`, section 2) and a warning about the instrument when large. The
+nothing" when small (arm C reads 1.0051 at one toy seed with the fit on 420,
+the controls re-run at `821f154`, section 2, and 1.0026 with the registered
+1,800, the page 4 re-run) and a warning about the instrument when large. The
 rehearsal showed a negative value is reachable (rehearsal item R-4).
 
 ### 6.4 When the measure returns no verdict
@@ -1827,7 +1836,10 @@ no-verdict rules, written before it runs:
    check on a built arm replaces the reading with "no verdict" and **every**
    reason that applies, in the output file and in the table; a check that
    could not be evaluated counts as failed; and the figure the arithmetic
-   would have given appears nowhere in the output (the field that carried it,
+   would have given appears nowhere in the summary file or the table; the
+   per-seed row files keep the arithmetic as a record of the computation, under
+   `primary.reading.degree` with `status: "valid"`, and it is never the
+   reported figure (the reviewer's RT-277; the field that carried it,
    `arithmetic_withheld`, was removed on John's word "yes, remove"). The
    no-transplant rate no longer withholds (item 3). Exercised on 25 made-up
    cases (MEASURED: `docs/2026-10-06-successor-a2-decision-procedure-findings.md`
@@ -2760,6 +2772,25 @@ episodes, as section 8.1 says.
 Committed to git, with the commit hash recorded in the registration file,
 **before a single fresh episode is evaluated**:
 
+**The registered code (named 2026-10-08, open item 10):** *(The re-pinned
+digest of the evaluation sets has been built and checked on the laptop only;
+the rented machine's pre-flight meets it first at step 4b, where a mismatch
+deletes the machine before training, at a cost of cents: the reviewer's
+RT-282.)* the frozen code in
+`experiments/08-successor-degree/src/` as at main-line commit `6c47c56`
+(merged by pull request 153), unchanged on the main line since. The
+end-to-end run of the decision code that ruling 3 of `docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md` asks for
+ran on exactly this code (`docs/2026-10-08-end-to-end-final-code-findings.md`, pull request 157; the code files'
+checksums in `experiments/08-successor-degree/out-e2e-final-code/code-identity.txt`):
+all 31 made-up decision cases land on the term written for them in advance,
+the toy summary is R3 as recorded, the 14 in-use cases come out as
+expected, and the whole-pipeline test runs at both sizes; checked by a
+session that did not run it, which re-ran it on the main line and found every
+output byte-identical (`docs/reviews/2026-10-08-end-to-end-final-code-check-claude-code.md`, pull request 160). The registration
+commit records this hash; any later change to that folder is a change to
+registered code.
+
+
 - the label (which marker word), in code and in text, as the one registered
   read; the three route (b) candidates recorded as exploratory fits and not
   frozen as reads;
@@ -3106,7 +3137,7 @@ version was first filed and were ruled the same night.
 | The form of the reading | **the chance-corrected form** of section 6.3 | the queue ruling, page 2 |
 | The label | **which marker word is the model's own**, the one registered read; the route (b) candidates recorded as exploratory fits only | `docs/rulings/2026-09-23-nomination-label.md`; the queue ruling, page 3; the Gate C rulings, RT-212, item 3; John's ruling of 2026-09-26 on the route (b) result (section 7.2, item 1) |
 | Seconds per step, per arm, on the rented machine | **Measured 2026-09-25 for arms T, C and F**: 13.08, 13.52 and 12.53 milliseconds per step, ratios to arm F of 1.044, 1.080 and 1.000, on a secure RTX 5090 at $0.99 an hour, at the registered shape, fifty timed steps after five warm-up steps | `docs/2026-09-25-rented-slice-attempt-2-findings.md` at `9f802db`, section 3, from `experiments/rehearsal-successor-measure/out/rented-slice-2026-09-25-attempt-2/bench_arms.json`; checked at `afb5183`, point 5. **Arm M was not timed.** **Fifty timed steps are accepted for the second release's arithmetic; the five-hundred-step figure is taken from the first full-size run, and the later runs are repriced from it before the second release is asked for** (ruled 2026-10-03, decision 17) |
-| Arm M's predicted reading | between **0.3 and 0.7** on every seed, and within **0.10** of its true-slot reading on the same fresh episodes (the formula of section 5.3, which is that reading written in route accuracies). On the toy under the registered rules (every read fitted on 1,800, at an iteration limit of 10,000): 0.5252, 0.4793 and 0.5208, within 0.0252, 0.0033 and 0.0288 of the true-slot reading (fitted on 420, they were 0.4886, 0.4860 and 0.5449) | the queue ruling, page 5 (the band); the repairs method note at `882f252`, section 5 (the formula and the 0.10); the rulings on the review of version 2, RT-223; the toy figures fitted on 1,800 from the page 4 re-run at `e948899` (checked at `1e168f3`), reproduced at the 10,000 limit (`docs/2026-10-09-ruled-code-changes-and-page4-rerun-findings.md`); the figures fitted on 420 from the review of version 3, RT-231, and the controls re-run at `821f154` |
+| Arm M's predicted reading | between **0.3 and 0.7** on every seed, and within **0.10** of its true-slot reading on the same fresh episodes (the formula of section 5.3, which is that reading written in route accuracies). On the toy under the registered rules (every read fitted on 1,800, at an iteration limit of 10,000): 0.5252, 0.4793 and 0.5208, within 0.0252, 0.0033 and 0.0288 of the true-slot reading (fitted on 420, they were 0.4886, 0.4860 and 0.5449) | the queue ruling, page 5 (the band); the repairs method note at `882f252`, section 5 (the formula and the 0.10); the rulings on the review of version 2, RT-223; the toy figures fitted on 1,800 from the page 4 re-run at `e948899` (checked at `1e168f3`), reproduced at the 10,000 limit (`docs/2026-10-09-ruled-code-changes-and-page4-rerun-findings.md`, checked in `docs/reviews/2026-10-09-ruled-code-changes-check-claude-code.md`); the figures fitted on 420 from the review of version 3, RT-231, and the controls re-run at `821f154` |
 | The numbers of episodes at the registered size | **for every read, 1,980 development episodes, the first 1,800 fitted, at an iteration limit of 10,000, and the last 180 held out (the floor is 144 of 180); the nomination's transplant passes on 600 development pairs, as rehearsed; 800 fresh matched pairs; 800 pairs on the relaxed set; 3,000 held-out episodes for the gates (the bar is 790; the ownership-free line 1,546); 200 shuffles for the permutation null.** The caution carried with it: at 180, one episode is 0.0056 of the scale. **The band that sampling alone puts around each count against the floor is printed beside it, as a 95 per cent Wilson interval** | record B, ruling 4 (`docs/rulings/2026-10-03-version-4-questions-rulings.md`) and the reconciliation; the read's fitting count amended by the 2026-10-06 ruling, page 4 (RT-240), for the read only; the band's method adopted 2026-10-04 from the check of pull requests 88 and 89; the iteration limit of 10,000, item 7 of `docs/rulings/2026-10-08-v5-open-items-rulings.md` |
 | An arm whose three seeds disagree | **a seed counts only if it passes every gate condition and every check that withholds a reading, and returns a reading; two seeds of three decide, the third reported**; separate counts per condition are not used. **The separation is the lowest of arm C's readings minus the highest of arm T's, among the seeds that read, and is not compared seed by seed** | record B, ruling 6, as amended by the 2026-10-06 ruling, page 7 (RT-249) |
 | The training recipe | **the frozen trainer's defaults** (section 5.5): AdamW, peak learning rate 0.002, weight decay 0.01, one-cycle schedule with a tenth of the steps as warm-up, gradients clipped at 1.0, 96 episodes a step, 585,544,960 tokens in 108,919 steps, fresh training episodes excluded from every evaluation set and from fresh and relaxed pairings | `experiments/08-successor-degree/src/train_successor.py` at `53ae82c`; **ruled 2026-10-08** (open item 5, `docs/rulings/2026-10-08-v5-open-items-rulings.md`) |
@@ -3151,7 +3182,8 @@ spent nothing. The one part that spent money is item R-11. Total spent on the re
 about $0.57, the sum of the compute ledger's three slice rows, of the
 rehearsal line's $10 (item 10 of the 2026-09-21 ruling; section 12.3).
 
-**The models every toy result rests on: thirty, all committed.** The fifteen
+**The models every toy result rests on: thirty, all committed (thirty-nine
+since 2026-10-08; see the note below).** The fifteen
 trained toy models behind the repairs and the re-run (arms T, C, F and M and
 the ownership-blind solver, three seeds each) are committed at
 `experiments/rehearsal-successor-measure/out-repairs/models/` (main line at
@@ -3172,6 +3204,13 @@ themselves and found the same, and the label-search check found all thirty
 files on the main line check against the list (MEASURED:
 `out-v3-rules/models_sha256_check.json`, `all_agree: true`; the check at
 `70be9fb`, section 2.1; the label-search check at `ecd2b6c`, section 4).
+*(Since 2026-10-08, night: nine more, committed after the reviewer's RT-276.
+The nine hand-set toy models retrained with the sharpness fixed at 4.0 (arms
+T, C and M, three seeds each), behind section 5.6's in-use figures, rehearsal
+item R-15 and weakness W17, are at
+`experiments/08-successor-degree/out-sharpness-fix/models/`, every file
+matching that folder's `SHA256SUMS`. So the toy results this version quotes
+rest on thirty-nine committed models.)*
 **What rests on them: every toy result of 2026-09-25 and 2026-09-26 that
 this version quotes.** On the first fifteen: every base-recipe result of the
 repairs (`gate_base.json`, `nominate_base_*.json`, `measure_base_*.json`,
@@ -3240,7 +3279,8 @@ what exercised it.
 - **R-4. All the measure's outcomes are reachable.** Near zero (arm T), high
   (arm C), the middle (arm M), negative (the unseen-vocabulary diagnostic,
   section 7.1; and arm T seed 0 on the grammar attempt's unseen pool, at
-  −0.1870), above one (arm C at 1.0051), and no verdict (arm F on every seed,
+  −0.1870), above one (arm C at 1.0051 with the fit on 420, 1.0026 with the
+  registered 1,800), and no verdict (arm F on every seed,
   by the gate and by the fit floor; control 2 on five toy models of six at
   1,800 fitting episodes; the ordinary competing solver on every seed under
   both readings; arms C, M and F at 10 million parameters). *Exercised.*
@@ -3326,9 +3366,12 @@ what exercised it.
   at four times the block's size gave readings of **0.28, 0.23 and 0.29** at
   the site the test always chose with 8 directions, and 0.52 to 0.96 with
   fewer, which under the test's own bands is "inconclusive", not "not
-  fooled". *Exercised in its ruled form; the differently coded decoy is
-  untested as a ruled test; ruled 2026-10-08 (open item 8) to be run before
-  the registration commit, or, failing that, before step 5b with W18 named.*
+  fooled". *Exercised in its ruled form; the differently coded decoy was
+  untested as a ruled test when this was written; ruled 2026-10-08 (open item 8) to be run before
+  the registration commit, or, failing that, before step 5b with W18 named.
+  Run 2026-10-08 and checked: inconclusive, control 1 withholding arm T on
+  every seed; registered with W18 named and sized by John's ruling of the
+  same night (weakness W18; `docs/rulings/2026-10-08-decoy-w18-ruling.md`).*
 - **R-13. The final decision procedure, run end to end before registration
   (ruled 2026-10-06, follow-up item 6, closing the outside review's fatal
   finding A2, adopted as RT-256).** The module that turns per-seed records
@@ -3408,8 +3451,8 @@ closure check of RT-237 runs on this text; the branches of section 16 reach
 the main line; John commits the registration. *(Since 2026-10-08: the check
 and its re-check are done, pull requests 130 and 132; every open item is
 ruled, `docs/rulings/2026-10-08-v5-open-items-rulings.md`; every cited branch is on the main line, the last of them through pull request 136. The
-closure check of RT-237, the work the rulings ask for, and John's commit
-remain.)* There is no target date; the
+closure check of RT-237 and the work the rulings ask for are done and
+checked; what remains is John's registration commit (the check of the end-to-end re-run is filed, `docs/reviews/2026-10-08-end-to-end-final-code-check-claude-code.md`, pull request 160, and the Gate A tier 1 reviewer's own failure-mode pass, `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md`, pull request 161).)* There is no target date; the
 only date is the kill date of 2026-10-18 (section 11). Then the three reruns
 of section 11, step 4b.
 
@@ -3462,11 +3505,11 @@ Binding if registered, in this order, on the chain of section 4 of
    10,000, the renamed outcome words, "gate not decidable on one seed", and
    arm T's row-choice split reported (pull request 151, checked in pull
    request 152); and the reporting table's one-cell layout fix on withheld
-   seeds (this batch). The bar of the in-use check is ruled at 0.9 and 0.5,
+   seeds (pull request 153). The bar of the in-use check is ruled at 0.9 and 0.5,
    which the frozen code already carries. The registration names the commit of the frozen code it
    registers; the cited branches are on the main line (the last of them through pull request 136), and
-   **that commit is named after those code changes land (open item 10, ruled
-   2026-10-08).**
+   **that commit is named in section 7.4, `6c47c56`, now that those code
+   changes have landed (open item 10, ruled 2026-10-08).**
 4. **Done: the development runs at the 10-million size, four arms, one seed
    each, including arm M** (2026-10-04, from the first release's development
    line; $1.47; rehearsal item R-14). **This was a pipeline and throughput
@@ -4237,10 +4280,45 @@ one-of-twelve code of the owner's marker word at four times the block's size
 and got readings of 0.28, 0.23 and 0.29 at 8 directions, and 0.52 to 0.96 at
 fewer, on a model whose true reading is 0. So a separable model carrying such
 a decoy could read part way to entangled, and a high reading on arm C could
-in principle be of that kind. Nothing in the design excludes it. A ruled test
+in principle be of that kind. Nothing in the design excluded it when this was
+written; the ruled test below shows what does and does not. A ruled test
 of the differently coded decoy, about an hour on the laptop at $0, was open
 item 8; ruled 2026-10-08 (`docs/rulings/2026-10-08-v5-open-items-rulings.md`) to run before the registration
 commit, or, failing that, before step 5b with this weakness named.
+
+**The ruled test, run 2026-10-08 (MEASURED on the toy: `docs/2026-10-08-decoy-w18-findings.md`, pull
+request 155, method first; reproduced exactly by `docs/reviews/2026-10-08-decoy-w18-check-claude-code.md`, pull request
+156): inconclusive against its pre-stated bands.** Each of the three arm T
+toy models carried an unused code of the owner's marker word, read through
+the registered nomination and procedure. At four times the block's size every
+seed returned no verdict, because control 1 failed and withheld the reading: transplanting everything
+but the chosen piece moved 0.1313, 0.1638 and 0.1038 of actions against the
+allowance of 0.018. Underneath, the read was partly fooled: the withheld
+readings at the chosen site were 0.1488, 0.2137 and 0.1162, with the chosen
+piece about 94 per cent in the unused code. At a quarter of the size and at
+quarter size, the second ruled variant, it was not fooled (0.0000 on every
+seed); of the variants reported beside the verdict, equal size was not fooled
+and sixteen times was withheld, with readings of 0.28 to 0.41 at the chosen
+site. **What it means.**
+On arm T the design catches such a decoy and ends in the eighth term, not a
+false "entangled". Control 1 withholds on arm T only, by design (section 7.3,
+item 1), so on arms C, M and F nothing catches it: if arm F were separable
+and carried such a code, its reading could rise, by an amount argued from arm
+T and not measured, of roughly 0.1 to 0.4. At the chosen site no reading went
+above 0.41, so a decoy of this kind does not explain a reading near 1; the
+procedure's own search, on development pairs, reaches 0.94 to 0.997 at sites
+and sizes it did not choose. The
+high readings at 1 and 2 directions are mostly present without the decoy
+(the unaltered model reads about 0.85 to 0.86 at 1 direction and 0.57 to 0.67 at 2),
+so the probe's "0.52 to 0.96 at fewer" above is not the decoy's effect alone.
+A decoy that is not a straight-line function of the block is untested.
+**Ruled 2026-10-08, "Option 1" (`docs/rulings/2026-10-08-decoy-w18-ruling.md`, authorship mixed): registered
+with this weakness named and sized; a middling reading on arm F is read with
+this caution; no guard is added to arms C, M and F.** The reason, from the
+ruling: a guard on the other arms would be a new kind of control, since
+control 1 cannot veto an entangled model, needing its own design, code,
+re-run and checks before 2026-10-18 and changing the registered procedure;
+naming the weakness costs nothing and changes neither.
 
 **How results may be summarised (ruled 2026-10-06, page 11, closing the
 outside review's A13, RT-250; the reviewer's table, registered as written,
@@ -4631,8 +4709,23 @@ ruled the same night.
     written. Sections 3, 5, 5.1, 5.5, 5.6, 7.2, 10, 11, 12.4, 12.5, 21. **The
     alternatives not taken** are in section 21 under each item.
 
+38. **Five decisions from the ledger rows and the closure checks.** *Ruled
+    2026-10-08, "As recommended" (`docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md`, dated in its name a day
+    late; authorship mixed).* The decision-procedure finding keeps RT-256 and
+    the refounding's missing-records finding becomes RT-274; the ledger rows
+    RT-212 to RT-229 written; the end-to-end test re-run on the final code
+    (section 7.4); one check of three serious findings (RT-238, RT-239,
+    RT-251, all closed as checked); the open rows that bear on the
+    registration closed before the commit.
+
+39. **The decoy weakness, registered named and sized.** *Ruled 2026-10-08,
+    "Option 1" (`docs/rulings/2026-10-08-decoy-w18-ruling.md`; authorship mixed: the session recommended it,
+    John chose it).* Weakness W18. **The alternative not taken:** a new
+    guard on arms C, M and F before the commit, since control 1 cannot veto
+    an entangled model by design.
+
 *Nothing above is registered. The registration commit, if it comes, follows
-the check owed on this version, John's answers to the open items of section
+the check of this version (done, pull requests 130 and 132), John's answers to the open items of section
 21 (given 2026-10-08), the closure check of RT-237, and the merge of the branches of section
 16; every run it affects is launched after it.*
 
@@ -4805,6 +4898,21 @@ the check owed on this version, John's answers to the open items of section
 
 ## 17. This version's failure-mode pass, entry by entry
 
+*(Dated note, 2026-10-08, night. This is the author's pass. The Gate A tier 1
+reviewer's own pass, which the protocol requires and which does not stand in
+for this one or the other way round, is filed at `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md` (pull request
+161): nothing fatal; one serious finding, RT-276, the nine retrained toy
+models not committed, closed by committing them (`experiments/08-successor-degree/out-sharpness-fix/models/`,
+all nine matching the committed hash list); seven worth-noting, RT-275 and
+RT-277 to RT-282, each in the ledger. The reviewer's RT-279 finds that this
+section prints records that no longer hold: the ledger rows, now written; the
+count of files off the main line, now none that this text cites; the toy rows,
+which now carry the ownership-free field; a "leaves open" list of items since
+done; and blocks printed by two scripts never committed. Read this section's
+figures of that kind as of 2026-10-07. The claim that no cited file is off
+the main line holds once pull requests 157, 160, 161, 159 and 158 have
+merged, in that order.)*
+
 The outside-review protocol's failure-mode pass belongs to the Gate A tier 1
 reviewer, and "an author's run never stands in for the reviewer's"
 (`docs/outside-review-protocol.md`, "The failure-mode pass"). This is the
@@ -4927,8 +5035,8 @@ rather than repairing it: the floor on the piece turns it into a registered
 no verdict on arm F on every seed, and the withdrawn number is not reported
 as a reading. **A second place the same failure fires, new at 10 million
 parameters:** on the real development checkpoints the procedure's read found
-no readable ownership in arms C and M either (best pieces 41 and 45 of 180
-against 144; the check of the development runs, section 7; not recomputed
+no readable ownership in arms C and M either (best whole reads 41 and 45 of
+180, best pieces 45 and 43, against 144; the check of the development runs, section 7; not recomputed
 here), which is the independent face of the flat ownership answer of section
 5.6; the registered rule returned no verdict on both. **A third, carried
 from version 4 and now narrower:** the named agent's read that control 2
@@ -5200,13 +5308,13 @@ failure 3's part three catches too.
 
 **What this pass leaves open, in one place.** The twelve open items of
 section 21 (all ruled 2026-10-08; the work items 7, 9 and 12 ask for is
-done and checked, and item 8's test with a differently coded decoy is still
-owed); the check of this version by a session that did not write it;
+done and checked, and item 8's test with a differently coded decoy was run
+and checked, and ruled on, 2026-10-08); the check of this version by a session that did not write it;
 the closure check of RT-237 on this text; the merges of section 16; the
 ledger's rows; the eleven re-reads of the hand-set toy models; the
 re-summary of the page 4 re-run under the current decision code (done
 2026-10-08, R3; see failure 4); the
-reviewer's own pass, which is still owed, as the protocol says.
+reviewer's own pass, filed 2026-10-08 (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md`, pull request 161).
 
 **The two scans the method note promised, run on the finished file.**
 Em-dashes and en-dashes: `grep -c` for each character returns 0 and 0
@@ -5805,3 +5913,39 @@ which now say so (5.2 had the same fault). Its should-fix
 items too: section 7.1's note on the toy's held-out part, the citations of
 section 9's arm M row and episode-count row, and section 3's toy sentence,
 which now says the separation and the band are each row's arithmetic.
+
+---
+
+## Ready for the registration commit (2026-10-08, night)
+
+By the session that put the open items to John. The decoy test's result and
+John's ruling on it are written into weakness W18 and rehearsal item R-12;
+the registered code is named in section 7.4, with the end-to-end run on it;
+section 15 gains entries 38 and 39 and the source table a row; the leftover
+wording from the last batch's re-check is fixed (section 5.1's arm T
+heading, the "otherwise" in the headings of sections 5.2 and 5.3, section
+5.6's sharpness-check sentence, the 1.0051 examples of sections 6.3 and 10,
+and section 9's arm M citation). What remains is John's registration commit (the check of the end-to-end re-run is filed, `docs/reviews/2026-10-08-end-to-end-final-code-check-claude-code.md`, pull request 160, and the Gate A tier 1 reviewer's own failure-mode pass, `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md`, pull request 161), inside kill date 1, 2026-10-18.
+
+The check of this change (`docs/reviews/2026-10-08-registration-ready-check-claude-code.md`,
+pull request 159) found two must-fix items, applied the same night: W18 said
+control 1 "held" where it failed, which in this text's usage reversed the
+result; and this note and the header said nothing waited on any session,
+while the check of the end-to-end re-run and the reviewer's own failure-mode
+pass were still owed. Its should-fix items too: the reason for John's
+decoy ruling is now in W18; six stale "owed" or "remain" phrases are
+brought current; two accuracy points in W18.
+
+The Gate A tier 1 reviewer's failure-mode pass (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-08-successor-v5-gate-a-failure-mode-pass-claude-code.md`, pull
+request 161) and the check of the end-to-end re-run (`docs/reviews/2026-10-08-end-to-end-final-code-check-claude-code.md`, pull
+request 160) were filed the same night. The reviewer's serious finding,
+RT-276, is closed by committing the nine retrained toy models; its
+worth-noting findings are in the ledger, and three are written in here
+(RT-277 in section 6.4, item 5; RT-279 as a note heading section 17; RT-280
+in sections 5.6 and 17). RT-281 notes that docstrings in the registered
+`measure.py` and `procedure.py` describe rules the code no longer applies (the
+no-transplant rate withholding; seeds counted two of three without the newer
+rule that the same seeds pass every condition); the code and its
+self-tests are right, and the docstrings are left unchanged so that the
+registered code stays exactly the code the end-to-end run and its check ran,
+a session's call, decided by: agent, for John to overturn.

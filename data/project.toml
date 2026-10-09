@@ -17,7 +17,7 @@ short = "MVM"
 updated_on = "2026-10-08"
 question = "Two sides, ruled 2026-10-07 (spec text pending Gate A): what is the smallest system whose presence in interaction cannot be produced by a cheaper route (lookup, imitation of a corpus about minds, routing of who is speaking), and at what point do observers' detections of presence begin to track that structure rather than fluency? The earlier question, whether the smallest self-centred act of integration (the floor) is present in a system, stays in the spec as the founding wager and stops being a measurement target."
 one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
-where_we_are = "On 2026-10-07 the project was refounded on a two-sided question, and on 2026-10-08 the refounding reached the main line, the site went live and now publishes itself on every merge, and every question the registration text had left open was answered. The refounding: three outside models, polled by API and checked against the record, agreed that experiment 1's router control could not tell bookkeeping from a centre and that no second release of the degree experiment should be funded now; John named what he perceives from, what it is like to be among minds present or shallow on the book's axes, and ruled the eight decisions that follow from it (experiment A relabelled as unable to discriminate, experiment C kept with its second release conditional on the first, experiment D promoted to a filtered battery, the kill dates kept, no new calendar dates). On 2026-10-08 he ruled the bar for 'the repaired route holds' at 0.9 and 0.5, which the toy's own built models miss, so the likeliest ending of experiment C is an early stop at about $1.14; adopted a one-page restatement of the December result that counts such a stop as a registered ending; and, at the end of the day, answered the eleven remaining open items of version 5 of the registration text as recommended, with the eighth outcome renamed 'instrument returned no reading on the separable mechanism' and a confirming record of his 2026-10-06 decisions on the flat built models and the spending alarm. Version 5 was checked and its fixes re-checked, and all fifteen branches it cites are on the main line. What stands before the registration commit is work, not decisions: the code changes and the re-run those answers ask for, a test with a differently coded decoy, the red-team ledger's rows, the closure check of the fatal flaw's repair, and a check of each. About $229.62 of the $450 ceiling is spent; nothing has been rented since 2026-10-04."
+where_we_are = "The project was refounded on 2026-10-07 on a two-sided question, and on 2026-10-08 the site went live and the registration text for the degree experiment was made ready for John's commit. In one day John ruled the bar for 'the repaired route holds' (0.9 and 0.5, which the toy's own built models miss, so the likeliest ending of the experiment is an early stop at about $1.14), adopted a one-page restatement of the December result that counts such a stop as a registered ending, answered every open question of version 5 of the registration text, and ruled five questions about the red-team record and one about a decoy test. Sessions then did the work those answers asked for, each piece checked by another session: the experiment's code now fits each read on 1,800 episodes at a higher iteration limit and prints the registered outcome words, with no toy decision moved; the closure check of the fatal flaw's repair passed; three serious findings were closed by measurement; the red-team ledger's missing rows were written; and the decision code was re-run end to end on the final code and checked. One result was not a pass: a test of a differently coded decoy found that an unused copy of the model's identity can partly fool the measure. A built-in check catches it on the easiest model only, and John ruled to register with that weakness named and measured. A check of the end-to-end re-run and the reviewer's own failure-mode pass on the text followed, the pass finding nothing fatal and one serious gap, closed the same night. What remains is John's registration commit, inside kill date 1 (2026-10-18). About $229.62 of the $450 ceiling is spent; nothing has been rented since 2026-10-04."
 where_we_are_going = "Two things run side by side to the end of the year. The first is the degree experiment (experiment C), which the December-result roadmap still binds: the registration committed by 2026-10-18 with the $1.14 repair written in, the repaired built models verified (a failure stops C there), one free-arm run at full size (a gate or floor miss stops C there), and the second release of about $150 to $172 asked for only on those figures, a pass being necessary and not sufficient. The project's own stated prior is that the free model most likely returns no verdict or fails its gate, so the likeliest ending for C is an early stop written up as instrument research, which is a registered outcome and not a schedule failure. The second is the new question, in task order with no step on a date: the two-sided-question text and the table of felt features through Gate A; the battery's first two entries on experiment D's pipeline by API, about $20 together, as reference readings of what the cheaper routes produce; then the construction line, small systems whose positions on the axes are set from outside, which needs a state-carrying mechanism neither toy pipeline has, and is where every test that can discriminate lives; last, and designed before it is run, the human study that calibrates the detector. By 2026-12-21, realistically: C run to a registered outcome, the new question in the spec, the table and the first two battery entries registered and run, the relabelling of experiment A in the paper draft, and the packet of three changes sent to the book. Not this year: a degree reading of a free model, a discriminating depth reading, or an observer-side measurement. Loss conditions are written for every new line. Claims are whatever the registered results support: a position on the axes, the route named, the degree measured, never a verdict. Never a conscious machine."
 hibernation_by = "2027-01-04"
 wrap_up_start = "2026-12-21"
@@ -354,6 +354,16 @@ stage = "6"
 # What we have learned. Registered or ruled-for-the-record results only, plus
 # the process lessons that changed how the work runs.
 # ---------------------------------------------------------------------------
+
+[[findings]]
+id = "F25"
+date = "2026-10-08"
+title = "An unused, differently coded copy of the model's identity can partly fool the measure; a built-in check catches it on the separable model only"
+what = "The ruled test, method first and reproduced exactly by a second session: three separable toy models were each given an unused code of the owner's marker word and read through the registered procedure. At four times the block's size the read was partly fooled underneath (withheld readings 0.15, 0.21 and 0.12 at the chosen site, the chosen piece about 94 per cent in the unused code), but the content-transplant control withheld every seed, so the experiment would end in 'instrument returned no reading on the separable mechanism', not a false 'entangled'. Smaller decoys did not fool it. Against its pre-stated bands the result is inconclusive."
+so_what = "That control cannot veto an entangled model by design, so nothing catches such a decoy on the other models: a middling reading of the free model could carry an unflagged rise, argued at roughly 0.1 to 0.4. It cannot explain a reading near 1 at the chosen site. John ruled to register with the weakness named and sized rather than add a new guard before the deadline. A decoy that is not a straight-line copy of the block is untested."
+source = "docs/2026-10-08-decoy-w18-findings.md"
+stage = "2"
+kind = "diagnostic"
 
 [[findings]]
 id = "F1"
@@ -853,12 +863,12 @@ status = "pending"
 [[next_steps]]
 id = "N26"
 title = "The registration of the degree experiment with the repair written in: the repaired models verified with a stop on failure, the second release conditional on the first, outcomes renamed, every earlier fix included; checked by another session"
-when = "version 5 drafted 2026-10-07 with 39 ruled changes written in and twelve open items; owed a check by a session that wrote none of it; by 2026-10-18, the kill date, which stands"
+when = "folded into N41 on 2026-10-08: version 5 is that registration text, checked, its open items ruled; by 2026-10-18, the kill date, which stands"
 owner = "Claude Code session; a second checks; John rules the open items and commits"
 cost = "$0 to write; the first release's remaining spend to run"
 decision = false
 teaches = "Whether the repaired built models hold their construction and whether a free model forms a localised ownership variable at full size; a pass is necessary for the second release and not sufficient for it. Either answer is a result."
-status = "pending"
+status = "in-progress"
 
 [[next_steps]]
 id = "N27"
@@ -988,7 +998,7 @@ owner = "a Claude Code session that wrote neither the repair nor the text"
 cost = "$0, laptop"
 decision = false
 teaches = "That every clause of the free model's gate is evaluated on a named field of a committed output file, and that the counts behind the new line recompute from independent code."
-status = "pending"
+status = "done"
 
 [[next_steps]]
 id = "N40"
@@ -1003,7 +1013,7 @@ status = "done"
 [[next_steps]]
 id = "N41"
 title = "Write version 5, the registration text, with every ruled change; check it; commit the registration"
-when = "version 5 drafted 2026-10-07, checked 2026-10-08, its five must-fix items applied and re-checked the same day; its fifteen cited branches merged and every open item ruled the same evening; the commit waits on the work those rulings ask for (N43) and the closure check (N39); outer limit 2026-10-18"
+when = "version 5 drafted 2026-10-07, checked 2026-10-08; every open item ruled and the work they asked for done the same night; the registered code named (the frozen code as at 6c47c56); the check of the end-to-end re-run and the reviewer's failure-mode pass filed the same night; the commit is John's, outer limit 2026-10-18"
 owner = "a session writes the text; a different session checks it"
 cost = "$0"
 decision = true
@@ -1028,7 +1038,7 @@ owner = "Claude Code sessions do each piece; a session that did not do it checks
 cost = "$0, laptop"
 decision = false
 teaches = "Whether the registered code prints the registered outcome words and fits each read to its optimum, whether the measure can be partly fooled by an unused representation coded differently from the one the model uses (the sharpest cheap test of what a high reading on the entangled model would mean), and that every finding the registration cites has its row."
-status = "pending"
+status = "done"
 
 # ---------------------------------------------------------------------------
 # Spend. Registered caps are protocol, not budget: exceeding one is a violation.
@@ -1058,6 +1068,12 @@ note = "Updated 2026-10-03: plus about $0.55 for the two attempts at the small r
 # The story so far: one row per STATUS.md entry, newest first. kind:
 # result | null | ruling | process | spend | build
 # ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-10-08"
+kind = "process"
+title = "The registration text is ready for John's commit"
+summary = "Through the night the work John's answers asked for was done, and nearly all of it checked by a second session and merged at his word: the experiment's code now fits each read properly and prints the registered outcome words, with no toy decision moved; the closure check of the fatal flaw's repair passed; three serious findings were closed by measurement; the red-team ledger's missing rows were written; the decision code was re-run end to end on the final code and checked; the reviewer's own pass of the known-failure list found nothing fatal. A decoy test came back inconclusive, and John ruled to register with that weakness named and sized. The registered code is named. What remains is his commit, inside 2026-10-18. Nothing spent."
 
 [[timeline]]
 date = "2026-10-08"

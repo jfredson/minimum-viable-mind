@@ -14,6 +14,77 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-10-08 (late night) — the registration text is ready for John's commit
+
+*Written 2026-10-08 (Thursday, late night, Pacific) by the Claude Code
+session that put the open items to John. Laptop only; nothing rented; $0.
+On the branch `registration-ready-2026-10-08`.*
+
+**What was done tonight, each piece checked by a session that did not do
+it, and merged at John's word.** The red-team ledger's missing rows were
+written, RT-212 to RT-229 and RT-230 to RT-274 (pull requests 141 and 145,
+checked in 143 and 148). The closure check of the fatal flaw's repair, the
+free model's gate (RT-237), passed with two conditions; the one that fired
+was met when its scripts were re-run on the final code (pull requests 142
+and 152). One check closed three serious findings by measurement: the
+floor's condition, the episode format and control 6 (pull request 146).
+John's ruled code changes went into the frozen code: every read fitted on
+1,800 of 1,980 development episodes at an iteration limit of 10,000, the
+registered outcome words printed, "gate not decidable on one seed", arm T's
+row-choice split (pull request 151, checked in 152). The page 4 toy pass was
+re-run under them: no toy decision moved, and the registered ownership read
+never hit the limit. A one-number fix to the reporting table followed (pull
+request 153, checked and re-checked in 154). The end-to-end test of the
+decision code was re-run on the final code: all 31 made-up cases on their
+terms (pull request 157, checked in pull request 160). Two small batches of wording
+fixes went in (pull requests 140 and 149, checked in 143 and 150).
+
+**John's rulings tonight, all recorded with his words, authorship mixed.**
+"Agreed on all." and "1" on version 5's open items 2 to 12
+(`docs/rulings/2026-10-08-v5-open-items-rulings.md`,
+`docs/rulings/2026-10-08-flat-models-ruling-confirmed.md`); "As recommended"
+on five ledger and closure-check questions
+(`docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md`, dated a day
+late in its name); "Option 1" on the decoy
+(`docs/rulings/2026-10-08-decoy-w18-ruling.md`).
+
+**The decoy test, the one result tonight that was not a pass.** The ruled
+test of a differently coded decoy (weakness W18) came back inconclusive
+against its pre-stated bands (pull request 155, reproduced exactly in 156).
+On the separable toy models a strong unused code of the owner's marker
+partly fooled the read underneath (withheld readings 0.12 to 0.21 at the
+chosen site), and control 1 withheld every seed, so the design catches it
+there. Control 1 cannot veto an entangled model by design, so nothing catches
+such a decoy on the other arms; a middling reading on the free model could
+carry an unflagged rise, argued at roughly 0.1 to 0.4. John ruled to register
+with W18 named and sized rather than add a new guard before the deadline.
+
+**Where things stand.** Version 5 of the registration text names the
+registered code, the frozen code in `experiments/08-successor-degree/src/`
+as at `6c47c56`. The ledger has no open row that bears on the registration
+(checked 21, accepted 18, carried by name 1, open 5, all five on the
+refounding proposal, which registers nothing). **Both checks owed before the commit were filed later the same night:** the
+check of the end-to-end re-run (pull request 160, every output reproduced)
+and the Gate A tier 1 reviewer's own failure-mode pass on version 5 (pull
+request 161: nothing fatal; one serious finding, the nine retrained toy
+models not committed, closed by committing them; seven worth-noting, each in
+the ledger). **What remains is John's registration commit, inside kill date 1
+(2026-10-18),** which changes version 5's status line from draft and records
+`6c47c56`. After it: the three
+10-million reruns (about $1.14) on his go in his own words; a miss of the
+ruled bar stops experiment C there. Merge order, so that no citation points
+at a missing file: pull requests 157, 160, 161, 159, then this one, 158.
+
+**Before the commit, one line for John.** The reviewer's eight findings,
+RT-275 to RT-282, were disposed by this session, not by John: one serious,
+closed by committing the nine models; seven worth-noting, three corrected in
+the text, four carried open (the denominator margin, the in-use judge's
+leniency, the stale code comments, the re-pinned digest untested off the
+laptop). They are in the ledger as a session's calls. His registration
+commit is not a ruling on them unless he says so. With them the ledger's
+rows from RT-230 on are: checked 22, accepted 18, carried by name 1, carried
+open 4, noted only 3, open 5 (the five on the refounding proposal).
+
 ## WHERE THINGS STAND 2026-10-08 (night) — every open item of the registration text is answered; what stands before the registration commit is checked work, not decisions
 
 *Written 2026-10-08 (Thursday night) by the Claude Code session that put the
