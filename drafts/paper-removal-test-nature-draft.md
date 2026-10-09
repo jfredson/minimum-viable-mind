@@ -10,6 +10,16 @@ cited inline; the only new analysis is the registered uncertainty re-analysis
 (pre-registration amendment 2026-08-04, committed before computation): 95%
 bootstrap CIs on all registered quantities. No registered verdict changed.*
 
+*Dated note, 2026-10-09 (Pacific): relabelled under decision 2 of the ruling
+of 2026-10-07 (`docs/rulings/2026-10-07-two-sided-question-rulings.md`).
+The result's label changes from "the located structure is dialogue routing"
+to "the test could not discriminate routing from a centre; the cheaper
+account was taken in advance". The registered figures, the registered
+decision rule (quoted as committed in the Results) and the rest of the
+argument are unchanged in this pass; the title, the Discussion and the
+"supports the router reading twice over" paragraph still read the old label
+and are left for John.*
+
 ---
 
 **Authors:** [John —], [Claude (Anthropic) — contribution statement to be
@@ -37,8 +47,8 @@ locked. In the registered run, ablating the self-index produced the signature
 of a load-bearing center — integrated-task degradation (d = 0.219, 95% CI
 0.094–0.375) exceeding a matched control by the registered margin — but the
 experiment's own router control voided it: a zero-reasoning turn-boundary task
-degraded as much, identifying the structure as dialogue-state routing
-infrastructure. Judged self-report was never reduced by any on-manifold
+degraded as much. The test could not discriminate routing from a centre; the
+cheaper account was taken in advance. Judged self-report was never reduced by any on-manifold
 intervention. Across an alignment ladder, surface self-presentation changed
 markedly while the localized geometry was stable: alignment edits the policy,
 not the geometry. In this model class, self-indexed integration is not
@@ -247,8 +257,9 @@ layer — implicating dictionary coverage, not irremovability).
 ### The registered verdict
 
 No center was removed, and no description was subtracted. On this substrate,
-the locatable self-index structure is dialogue-state routing infrastructure:
-removing it degrades integration generically while the system's capacity to
+the test could not discriminate routing from a centre; the cheaper account
+was taken in advance. Removing the locatable self-index structure degrades
+integration generically while the system's capacity to
 track itself in its reports is untouched. The self-binding the floor claim
 targets is either implemented diffusely, in structure our localization does
 not carve, or is not present as a removable object at all. Per the registered

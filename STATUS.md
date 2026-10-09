@@ -2973,6 +2973,20 @@ before claiming a roadmap step or batch-committing.
 
 ## THE REGISTERED REMOVAL TEST HAS RUN — verdict: router, not center; report never subtracted; narrative not testable (2026-07-18, night)
 
+*Dated note, 2026-10-09 (Pacific): experiment A (this removal test) is
+relabelled under decision 2 of the ruling of 2026-10-07
+(`docs/rulings/2026-10-07-two-sided-question-rulings.md`), from "the located
+structure is dialogue routing" to "the test could not discriminate routing
+from a centre; the cheaper account was taken in advance". The router control
+fired as registered, but the router account and the book's centre both
+predict damage on every battery, so the control chose the cheaper account
+rather than telling the two apart. Its specificity controls (the removed
+structure tracked the model's own turn, not speakers in general and not
+context length) are the positive result. The founding wager was adopted on
+2026-09-20, after A, B and D ran. The figures and the entry below are
+unchanged; the heading and "registered reading" below are the label as it
+stood on 2026-07-18.*
+
 Experiment 1's registered result is in (`removal-test-findings.md`; final
 judge spot-check PASSED AS-IS, John, same day). Held-out test set went
 92/92 at baseline after a three-pass cull. The primary condition

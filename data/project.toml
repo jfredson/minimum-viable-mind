@@ -57,7 +57,7 @@ id = "G2"
 title = "Measure current systems, and say which route produced what they show"
 status = "in-progress"
 summary = "Run the instruments on models that exist. Since the refounding of 2026-10-07 the target is the axes an observer perceives (does reversal cost the system anything; did its history change it or only its record; is anything at stake), not the floor. On a frontier model reached through its interface, the trained weights and the transcript are the cheaper routes by name, so what these models give is a reference profile of what lookup, imitation and routing produce. The output is bounded at 'non-zero on the gradient' or 'not testable here', never a verdict."
-evidence = "Experiment 1 (8B instruction-tuned model): a self-tracking structure was located and removed, and the registered control could not tell a router from a centre (relabelled 2026-10-07); the self-report was never subtracted. Experiment 3: frontier models mostly mask rather than capitulate under pressure (nine true capitulations in 540 ladders). Both are registered results. Next on this goal: experiment D's transcript-replacement control and the ownership swap, about $20 together, which read which cheaper route produced the retained-independence result."
+evidence = "Experiment 1 (8B instruction-tuned model): a self-tracking structure was located and removed, and relabelled 2026-10-07: the test could not discriminate routing from a centre; the cheaper account was taken in advance; the self-report was never subtracted. Experiment 3: frontier models mostly mask rather than capitulate under pressure (nine true capitulations in 540 ladders). Both are registered results. Next on this goal: experiment D's transcript-replacement control and the ownership swap, about $20 together, which read which cheaper route produced the retained-independence result."
 
 [[goals]]
 id = "G3"
@@ -87,7 +87,7 @@ name = "The self-indexing removal test"
 status = "delivered"
 progress = 100
 one_line = "Locate the structure that tracks 'the one speaking now is me', remove it, and ask whether the integrated act degrades or only a self-report is subtracted."
-delivered = ["Confound-controlled localisation method (context-set referent, embedding-floor gate, permutation nulls, causal patching against random-direction controls)", "Registered result 2026-07-18: the located structure behaves as a router; relabelled 2026-10-07 as unable to discriminate a router from a centre; report never subtracted; narrative arm not testable", "The Tülu-ladder comparison: alignment training edits the policy, not the geometry"]
+delivered = ["Confound-controlled localisation method (context-set referent, embedding-floor gate, permutation nulls, causal patching against random-direction controls)", "Registered result 2026-07-18, relabelled 2026-10-07: the test could not discriminate routing from a centre; the cheaper account was taken in advance; report never subtracted; narrative arm not testable", "The Tülu-ladder comparison: alignment training edits the policy, not the geometry"]
 remaining = ["Narrative-arm dictionary work (instruct-trained sparse autoencoders) is the secondary methods track, unstarted", "Flagship paper draft exists (drafts/paper-removal-test-nature-draft.md) and needs experiment 06 folded in (public path step 6)"]
 adjudicates = "The corpus's own account: self-indexed temporal integration. Read on 2026-07-18 as a registered loss on this model class; reread on 2026-10-07 as a test that could not discriminate, because the control and the account predict the same damage pattern."
 
@@ -368,9 +368,9 @@ kind = "diagnostic"
 [[findings]]
 id = "F1"
 date = "2026-07-18"
-title = "The locatable self-index in an 8B chat model behaves as a router; the test could not tell a router from a centre (relabelled 2026-10-07)"
+title = "The removal test on an 8B chat model could not discriminate routing from a centre; the cheaper account was taken in advance (relabelled 2026-10-07)"
 what = "The formal centre signature (a drop of 0.219 on the self-indexing battery, differential +0.156) was real. The zero-reasoning syntax battery dropped about as much as self-relevant binding (0.133 against 0.100, a gap of +0.033 with an interval from -0.133 to +0.200), and the pre-committed router control voided the centre reading, as registered. Relabelled on 2026-10-07 (decision 2 of the two-sided-question ruling): both the router account and the book's centre predict damage on every battery, so the control chose the cheaper account in advance rather than discriminating. What the controls did show: the removed structure was specific to the model's own turn, not generic speaker tracking and not context length. The founding wager was adopted on 2026-09-20, after this experiment ran."
-so_what = "The registered figures stand; the reading changes from 'a router, not a centre' to 'the test could not discriminate'. Until the book states a damage pattern a centre predicts and routing does not, a removal test is a definition, not an instrument. The self-report was never subtracted at any granularity, which remains the central open empirical fact."
+so_what = "The registered figures stand; the reading changes from 'the located structure is dialogue routing' to 'the test could not discriminate routing from a centre; the cheaper account was taken in advance'. Until the book states a damage pattern a centre predicts and routing does not, a removal test is a definition, not an instrument. The self-report was never subtracted at any granularity, which remains the central open empirical fact."
 source = "experiments/01-self-indexing-removal-test/removal-test-findings.md"
 stage = "1"
 kind = "registered"
@@ -430,7 +430,7 @@ id = "F7"
 date = "2026-09-19"
 title = "The 'act as yourself' objective is learnable and genuinely about ownership, on three seeds"
 what = "Three 30M checkpoints trained from different seeds land within 0.011 of each other intact (0.563–0.574) and removing the one authorship signal collapses all three by seven to nine times the registered threshold, below what an ownership-free solver can reach. The ownership-free batteries do not move."
-so_what = "The primary result is solid and replicated. Ownership-specific learning in a small constructed model is a real signature, and it is the paper's claim."
+so_what = "The primary result is solid and replicated. The claim first drawn from it, 'a structural signature of ownership-specific learning', is struck (ruled 2026-09-20, finding F12): the input-channel lesion removes a sense organ, not a structure the network built. What stands is that the ownership input is load-bearing on three seeds and the matched contrast could not be run."
 source = "experiments/06-mvm-0a-constructed-self-index/seeds-endpoint-findings.md"
 stage = "6"
 kind = "registered"
