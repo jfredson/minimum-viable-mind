@@ -715,13 +715,17 @@ extension of the closed design's generator
 has twelve turns, four revision turns and the end-of-episode question sets
 the closed design called batteries; none of those is carried. One episode has
 four agents, two items, eight value slots and a closed vocabulary (twelve
-marker words and five items in the training, development and fresh pools; 56
-tokens). **Eight assignment turns**, one per agent and item, in random order,
-rendered as the marker word, the word "assign", the item and the value;
+marker words and five items in the training, development and fresh pools;
+the whole vocabulary, special words included, is 46 words, `grammar.py`'s own
+count). An episode is **56 tokens**: a start
+word, then **eight assignment turns**, one per agent and item, in random order,
+each rendered as the marker word, the word "assign", the item and the value,
+then a line-break word (5 tokens each);
 within an item the four values are distinct, except in the collision set for
 control 6, where two agents share a value on one item (section 4.2). **Two
 action turns**, last, in random order, rendered as the act word, the word
-"revise", the who-word, the item, the answer cue and the mask word: on the
+"revise", the who-word, the item, the answer cue and the mask word, then a
+line-break word (7 tokens each), and an end word (1 + 40 + 14 + 1 = 56): on the
 own-directed action the who-word is the special word meaning "your own", and
 on the named-other action it is the named agent's marker word. The correct
 answer is the successor of the relevant earlier value, counted round the
@@ -3383,7 +3387,7 @@ session that did not write it; the open items of section 21 go to John; the
 closure check of RT-237 runs on this text; the branches of section 16 reach
 the main line; John commits the registration. *(Since 2026-10-08: the check
 and its re-check are done, pull requests 130 and 132; every open item is
-ruled, `docs/rulings/2026-10-08-v5-open-items-rulings.md`; the branches are on the main line, pull request 136. The
+ruled, `docs/rulings/2026-10-08-v5-open-items-rulings.md`; every cited branch is on the main line, the last of them through pull request 136. The
 closure check of RT-237, the work the rulings ask for, and John's commit
 remain.)* There is no target date; the
 only date is the kill date of 2026-10-18 (section 11). Then the three reruns
@@ -3441,7 +3445,7 @@ Binding if registered, in this order, on the chain of section 4 of
    9 adds the summary's "gate not decidable on one seed"; the bar of the
    in-use check is ruled at 0.9 and 0.5, which the frozen code already
    carries). The registration names the commit of the frozen code it
-   registers; the cited branches are on the main line (pull request 136), and
+   registers; the cited branches are on the main line (the last of them through pull request 136), and
    **that commit is named after those code changes land (open item 10, ruled
    2026-10-08).**
 4. **Done: the development runs at the 10-million size, four arms, one seed
@@ -4084,11 +4088,14 @@ failing to answer, and it comes off the Weekend 2 launcher items. **The
 caution John ruled with is carried: twelve full-size runs rest on a backstop
 that has not fired against the real vendor.** **Beside it (ruled, the rulings
 on the review of version 2, RT-228): arm M's code,
-`experiments/rehearsal-successor-measure/src/arm_middle.py`, has run only on
-this laptop; the rented slice timed arms T, C and F only, and no training
-entry point for arms T, C or M exists on the rented machine yet.** By failure
-6's discipline both are untested until they have met the far end; step 4 of
-section 11 is where arm M first does.
+`experiments/rehearsal-successor-measure/src/arm_middle.py`, had run only on
+this laptop when this was ruled; the rented slice timed arms T, C and F only,
+and no training entry point for arms T, C or M existed on the rented machine.**
+By failure 6's discipline both were untested until they met the far end.
+*(Since 2026-10-04 both have: the four development runs trained arms T, C, M
+and F end to end on rented machines, arm M for the first time; section 12.3,
+the compute ledger's four rows of that day, and the development-runs check,
+`reviews/2026-10-04-development-runs-check-claude-code.md`, item 1.)*
 
 **W10. Arm M's degree is a design intention, and it is a mixture by item.**
 Its construction fixes which actions go through which route; a freely trained
@@ -4619,7 +4626,7 @@ the check owed on this version, John's answers to the open items of section
   (main line at `41b0bd3`, pull request 85).
 - **The records this text cites that are not on the main line, each of which
   must be merged before the registration commit (open item 10; all fifteen
-  branches landed on the main line 2026-10-08, pull request 136):** the
+  branches are on the main line as of 2026-10-08, several through their own pull requests and the rest through pull request 136):** the
   twelve-page ruling and the four packets it adopts, with the two
   measurement files (`rulings-2026-10-06-gate-a-v4` at `525a625`); the
   inside Gate A review and its scripts (`gate-a-tier1-successor-v4` at
@@ -5717,3 +5724,20 @@ since several came by their own pull requests earlier the same day, and say
 only what was verified; the paragraph above the source table no longer calls
 those rows unmerged; and rehearsal items R-13 and R-14 and section 11's step 3
 no longer call the sharpness branch unchecked.
+
+---
+
+## Small fixes after the checks of 2026-10-08 (evening)
+
+Applied by the session that put the open items to John, from the should-fix
+items of three checks (`docs/reviews/2026-10-09-ledger-rows-and-v5-wording-check-claude-code.md`,
+`docs/reviews/2026-10-09-serious-findings-closure-check-claude-code.md`,
+`docs/reviews/2026-10-09-ledger-packet-and-rows-212-229-check-claude-code.md`),
+themselves checked in `docs/reviews/2026-10-08-small-fixes-batch-check-claude-code.md`:
+section 4.1 now gives the vocabulary as 46 words and the episode as 56 tokens,
+with the start, line-break and end words that the count needs (checked against
+`grammar.py`: 1 + 8 × 5 + 2 × 7 + 1); section 13's sentence on arm M's code is
+marked as overtaken by the development runs of 2026-10-04; and three places
+that credited pull request 136 alone with bringing every branch to the main
+line now say several came by their own pull requests. No figure, bar, term or
+stop changed.
