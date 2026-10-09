@@ -1023,7 +1023,7 @@ def table(rows, per_seed, res) -> str:
               + (f"; confused: {', '.join(rc['confused_name_pairs'])}" if rc['confused_name_pairs'] else ""))
         if not p or w["status"] != "reading":
             # a withheld seed: nothing computed from its reading is printed (A2, item 7)
-            out.append(f"| {arm}/{s} | {verdict} |" + " withheld |" * 12
+            out.append(f"| {arm}/{s} | {verdict} |" + " withheld |" * 11
                        + f" {r['gate']['lesioned_own_correct']} | {lc} | {rc} |")
             continue
         sp, rd, c = p["site_set"], p["reading"], p["controls"]
