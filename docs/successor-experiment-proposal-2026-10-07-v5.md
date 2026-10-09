@@ -3,8 +3,11 @@
 *Written 2026-10-07 (Pacific) by a fresh Claude Code session in its own
 worktree (branch `worktree-agent-a43545d6649460124`, cut from the main line
 at `597a3f5`, the merge of pull request 123, the outside-perspective poll).
-**Status: the registration text, DRAFT, checked (pull requests 130 and 132,
-and the checks since), not yet committed as registered. Nothing here binds until John makes the registration commit.** It
+**Status: REGISTERED 2026-10-09 by John's registration commit
+(`docs/rulings/2026-10-09-registration-commit-ruling.md`), checked (pull
+requests 130 and 132, and the checks since). The registered code is the frozen
+code in `experiments/08-successor-degree/src/` as at `6c47c56`. This text now
+binds.** It
 is version 4 (`docs/successor-experiment-proposal-2026-10-03-v4.md`, main
 line at `41b0bd3`, pull request 85, left unedited) with every change John has
 ruled since written in, each marked in a phrase with the ruling or finding it
