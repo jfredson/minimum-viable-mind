@@ -294,3 +294,19 @@ block; that the code built is the check's probe 3 code (compare `k` with
 control 1 is right to withhold on arm T here (on arm T the content and the
 code carry no ownership the action reads, so the complement of the piece
 moving the action means the piece missed part of the block).
+
+---
+
+*Dated note, 2026-10-08 (night, Pacific), from the check of these findings
+(`docs/reviews/2026-10-08-decoy-w18-check-claude-code.md`, should-fix S1 to
+S3), added by the session that coordinated the work, which wrote neither
+these findings nor the check. (S1) "Nothing computed went above 0.41" holds
+at the site the procedure chose only; the procedure's own search on
+development pairs reaches 0.94 to 0.997 on the four-times decoy at sites it
+did not choose. (S2) The high readings at 1 and 2 directions are mostly
+present without the decoy: the unaltered model reads about 0.86 at 1
+direction and 0.57 to 0.67 at 2; the decoy's own effect shows at 2, 4 and 8
+directions. (S3) The 0.1 to 0.4 rise suggested for the free model is arm T's
+figure carried over, argued and not measured. John ruled the same night to
+register with weakness W18 named and sized
+(`docs/rulings/2026-10-08-decoy-w18-ruling.md`).*
