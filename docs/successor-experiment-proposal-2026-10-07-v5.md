@@ -97,6 +97,7 @@ standing has moved.
 | **John's ruling of 2026-10-08 on the bar for "the repaired route holds"** | main line (pull request 126): `docs/rulings/2026-10-08-verification-bar-ruling.md` | **Binding on this version.** The in-use check's bars 0.9 and 0.5 are ruled; open item 1 closed |
 | **John's rulings of 2026-10-08 on the December-result restatement** | main line (pull request 128): `docs/rulings/2026-10-08-december-result-restatement-rulings.md`; the restatement itself, `docs/rulings/2026-10-08-december-result-restatement-PROPOSAL.md`, now a dated note at the head of `docs/december-result-roadmap-2026-09-20.md` | **Binding on this version.** The early stop of S4b is a registered ending with its ruled sentence; terms, kill dates and caps unchanged |
 | **John's rulings of 2026-10-08 on open items 2 to 12 of section 21** | `docs/rulings/2026-10-08-v5-open-items-rulings.md` and `docs/rulings/2026-10-08-flat-models-ruling-confirmed.md` | **Binding on this version.** Every open item ruled as recommended, with the eighth term renamed "instrument returned no reading on the separable mechanism" |
+| **The ruled code changes of 2026-10-08 and the page 4 pass re-run under them, with their check** | main line (pull request 151): `docs/2026-10-09-ruled-code-changes-and-page4-rerun-method.md` (committed first), `docs/2026-10-09-ruled-code-changes-and-page4-rerun-findings.md`, outputs `experiments/08-successor-degree/out-ruled-code-changes/`; check, pull request 152: `docs/reviews/2026-10-09-ruled-code-changes-check-claude-code.md` | MEASURED and checked. At limit 3,000 the new code reproduces the page 4 record exactly (29,077 values); at 10,000 no fit stops early on any toy model and **every page 4 figure this text quotes is unchanged**, so those citations stand for the registered code too; the free model's gate closure re-run on this code, 740 of 740 clause states agreeing |
 | Version 3 of this proposal | `6d4ec3a` (pull request 71): `docs/successor-experiment-proposal-2026-09-26-v3.md` | The text this version starts from. Left unedited |
 | The first independent review of version 3, findings RT-230 to RT-236 | `4cb7f8e` (pull request 74): `experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-03-successor-v3-gate-c-claude-code.md`, with its scripts in `reviews/2026-10-03-successor-v3-gate-c-scripts/` | Reviewed version 3 at `37269ad`. Nothing fatal; two serious findings (RT-230, the floor certified the read and not the piece transplanted; RT-233, four controls had no figure under the registered rules); five minor |
 | **John's rulings of 2026-10-03 on that review and on version 3's open decisions (sixteen pages)** | `56a5a86` (pull request 75), with a dated note added under its decisions table at `fe5df65` (pull request 77): `docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md` | **Binding on this version.** Its "What this changes, and where" is the first checklist this version was written to. Two rows of its decisions table (decisions 15 and 16) were changed later the same day by the ruling two rows below; the dated note says so |
@@ -1853,7 +1854,9 @@ Three disjoint sets, generated from separate seeds and committed before use:
   from (the rehearsal caught itself doing that and fixed it before any result
   was read: `docs/2026-09-21-successor-measure-rehearsal.md`, section 9, item 3).
   The fit of section 7.2, item 1, is scored on a held-out part of the
-  development episodes (on the toy, the last 180 of 600), never on the fresh
+  development episodes (the last 180 of 1,980, the first 1,800 being fitted, on
+  the toy as at the registered size; the toy's reads before 2026-10-08 held out
+  the last 180 of 600), never on the fresh
   episodes.
 - **Fresh episodes and confirmation seeds**: evaluated once, after the freeze.
   **No fresh or relaxed episode's pairing (which marker holds which value on
@@ -1966,13 +1969,19 @@ action, on its three seeds; the controls re-run at `821f154`, section 3).
    recorded:** 1,800 is the smallest of three sizes tried that held on the
    stand-in, not a size derived from anything (weakness W15); and at 1,800
    the straight-line fit stopped at its iteration limit of 3,000 far more
-   often on arm M (471 warnings against 27 at 420), so arm M's reads there
-   are partly a product of where the fitter stopped, and a wider model may
-   hit the limit more often still. *(ruled 2026-10-08, open item 7,
-   `docs/rulings/2026-10-08-v5-open-items-rulings.md`: the limit is raised to 10,000 in the frozen code with the
-   change to 1,980, the page 4 pass is re-run under it and checked, and those
-   figures replace the ones quoted here before the registration commit; until
-   then the frozen code still fits on 420 of 600 at 3,000.)* **The registration names the device and the number format
+   often on arm M (471 warnings against 27 at 420). *(ruled 2026-10-08, open
+   item 7, `docs/rulings/2026-10-08-v5-open-items-rulings.md`; done the same
+   day and checked: `docs/2026-10-09-ruled-code-changes-and-page4-rerun-findings.md`, pull request 151; `docs/reviews/2026-10-09-ruled-code-changes-check-claude-code.md`, pull request
+   152.)* The frozen code now fits every read on the first 1,800 of 1,980
+   development episodes at a limit of 10,000 iterations, and counts the fits
+   that stop at the limit, by kind. Re-run under it, the page 4 pass gives 0
+   such fits on every toy model, and every figure this text quotes from the
+   page 4 re-run is unchanged. **The earlier worry does not stand:** of arm
+   M's 471 early stops at 3,000, 467 were fits of the shuffled-label
+   comparison and 4 were fits of the named agent's read, which arm M does not
+   use; **the registered ownership read never stopped at the limit on any
+   model.** A wider model may still need more iterations, which the count by
+   kind will now show. **The registration names the device and the number format
    the registered fit is computed on, and the figure on that device is the
    registered one.** The reason: the floor is a hard line, per arm and seed,
    and on the toy two of twelve reads moved by exactly one held-out episode
@@ -2808,8 +2817,12 @@ Committed to git, with the commit hash recorded in the registration file,
 - the uncertainty method (section 9, 1g) and the seed count (three);
 - **the numbers of episodes at the registered size (ruled 2026-10-03, late
   evening, ruling 4; the read's fitting count amended 2026-10-06, page 4):
-  for every read, 1,980 development episodes, the first 1,800 fitted and the
-  last 180 held out, so the floor is 144 of 180; the nomination's transplant
+  for every read, 1,980 development episodes, the first 1,800 fitted at an
+  iteration limit of 10,000 and the last 180 held out, so the floor is 144 of
+  180 (in the code since 2026-10-08, pull request 151; because the 1,980 are a
+  named evaluation set that training refuses, the pinned digest of the
+  evaluation sets was re-pinned, a session's call, decided by: agent, which a
+  replay of all three training runs shows changes no training step); the nomination's transplant
   passes on 600 development pairs, as rehearsed; 800 fresh matched pairs; 800
   pairs on the relaxed set; 3,000 held-out episodes for the gates, so the bar
   is 790 and the ownership-free line 1,546; 200 shuffles for the permutation
@@ -2882,7 +2895,7 @@ bears on:
 15. the channel-removal result on arm F (the collapse line and the
     ownership-free count, section 8.2), and, described, on the built arms;
     **on arm T, the row-choice split beside its gate** (section 5.1; open
-    item 9);
+    item 9; printed by the code since 2026-10-08, pull request 151);
 16. **on the built arms, the in-use check: the sharpness as read from the
     model, the weight on the true agent, and the route use per built route,
     with pass or fail** (section 5.6);
@@ -3086,8 +3099,8 @@ version was first filed and were ruled the same night.
 | The form of the reading | **the chance-corrected form** of section 6.3 | the queue ruling, page 2 |
 | The label | **which marker word is the model's own**, the one registered read; the route (b) candidates recorded as exploratory fits only | `docs/rulings/2026-09-23-nomination-label.md`; the queue ruling, page 3; the Gate C rulings, RT-212, item 3; John's ruling of 2026-09-26 on the route (b) result (section 7.2, item 1) |
 | Seconds per step, per arm, on the rented machine | **Measured 2026-09-25 for arms T, C and F**: 13.08, 13.52 and 12.53 milliseconds per step, ratios to arm F of 1.044, 1.080 and 1.000, on a secure RTX 5090 at $0.99 an hour, at the registered shape, fifty timed steps after five warm-up steps | `docs/2026-09-25-rented-slice-attempt-2-findings.md` at `9f802db`, section 3, from `experiments/rehearsal-successor-measure/out/rented-slice-2026-09-25-attempt-2/bench_arms.json`; checked at `afb5183`, point 5. **Arm M was not timed.** **Fifty timed steps are accepted for the second release's arithmetic; the five-hundred-step figure is taken from the first full-size run, and the later runs are repriced from it before the second release is asked for** (ruled 2026-10-03, decision 17) |
-| Arm M's predicted reading | between **0.3 and 0.7** on every seed, and within **0.10** of its true-slot reading on the same fresh episodes (the formula of section 5.3, which is that reading written in route accuracies). On the toy under the registered rules: 0.4886, 0.4860 and 0.5449, within 0.0049, 0.0099 and 0.0529 of the true-slot reading | the queue ruling, page 5 (the band); the repairs method note at `882f252`, section 5 (the formula and the 0.10); the rulings on the review of version 2, RT-223; the toy figures from the review of version 3, RT-231, and the controls re-run at `821f154` |
-| The numbers of episodes at the registered size | **for every read, 1,980 development episodes, the first 1,800 fitted and the last 180 held out (the floor is 144 of 180); the nomination's transplant passes on 600 development pairs, as rehearsed; 800 fresh matched pairs; 800 pairs on the relaxed set; 3,000 held-out episodes for the gates (the bar is 790; the ownership-free line 1,546); 200 shuffles for the permutation null.** The caution carried with it: at 180, one episode is 0.0056 of the scale. **The band that sampling alone puts around each count against the floor is printed beside it, as a 95 per cent Wilson interval** | record B, ruling 4 (`docs/rulings/2026-10-03-version-4-questions-rulings.md`) and the reconciliation; the read's fitting count amended by the 2026-10-06 ruling, page 4 (RT-240), for the read only; the band's method adopted 2026-10-04 from the check of pull requests 88 and 89 |
+| Arm M's predicted reading | between **0.3 and 0.7** on every seed, and within **0.10** of its true-slot reading on the same fresh episodes (the formula of section 5.3, which is that reading written in route accuracies). On the toy under the registered rules (every read fitted on 1,800, at an iteration limit of 10,000): 0.5252, 0.4793 and 0.5208, within 0.0252, 0.0033 and 0.0288 of the true-slot reading (fitted on 420, they were 0.4886, 0.4860 and 0.5449) | the queue ruling, page 5 (the band); the repairs method note at `882f252`, section 5 (the formula and the 0.10); the rulings on the review of version 2, RT-223; the toy figures from the review of version 3, RT-231, and the controls re-run at `821f154` |
+| The numbers of episodes at the registered size | **for every read, 1,980 development episodes, the first 1,800 fitted, at an iteration limit of 10,000, and the last 180 held out (the floor is 144 of 180); the nomination's transplant passes on 600 development pairs, as rehearsed; 800 fresh matched pairs; 800 pairs on the relaxed set; 3,000 held-out episodes for the gates (the bar is 790; the ownership-free line 1,546); 200 shuffles for the permutation null.** The caution carried with it: at 180, one episode is 0.0056 of the scale. **The band that sampling alone puts around each count against the floor is printed beside it, as a 95 per cent Wilson interval** | record B, ruling 4 (`docs/rulings/2026-10-03-version-4-questions-rulings.md`) and the reconciliation; the read's fitting count amended by the 2026-10-06 ruling, page 4 (RT-240), for the read only; the band's method adopted 2026-10-04 from the check of pull requests 88 and 89 |
 | An arm whose three seeds disagree | **a seed counts only if it passes every gate condition and every check that withholds a reading, and returns a reading; two seeds of three decide, the third reported**; separate counts per condition are not used. **The separation is the lowest of arm C's readings minus the highest of arm T's, among the seeds that read, and is not compared seed by seed** | record B, ruling 6, as amended by the 2026-10-06 ruling, page 7 (RT-249) |
 | The training recipe | **the frozen trainer's defaults** (section 5.5): AdamW, peak learning rate 0.002, weight decay 0.01, one-cycle schedule with a tenth of the steps as warm-up, gradients clipped at 1.0, 96 episodes a step, 585,544,960 tokens in 108,919 steps, fresh training episodes excluded from every evaluation set and from fresh and relaxed pairings | `experiments/08-successor-degree/src/train_successor.py` at `53ae82c`; **ruled 2026-10-08** (open item 5, `docs/rulings/2026-10-08-v5-open-items-rulings.md`) |
 | The spending alarm's cadence | **every 5 minutes while a machine runs, and for 30 minutes after the last deletion; rule S in flight and rule D at each deletion** (section 12.5) | the flat-models packet, page 2, reported ruled 2026-10-06 in `docs/2026-10-06-tripwire-fixes-method.md`, section 1 (branch `tripwire-fixes` at `5e2faf9`); confirmed 2026-10-08 in `docs/rulings/2026-10-08-flat-models-ruling-confirmed.md` (open item 2) |
@@ -3436,15 +3449,14 @@ Binding if registered, in this order, on the chain of section 4 of
    (pull request 105, merged); the training exclusion by pairing (branch
    `training-exclusion-pairing`, checked); the sharpness fixed and the
    in-use check (branch `fix-sharpness-inuse-check`, checked 2026-10-08); the
-   spending alarm's four fixes (branch `tripwire-fixes`, three checks). **Two
-   changes still owed in the code:** the read fitted on 1,800 of 1,980
-   development episodes (the frozen procedure still fits on 420 of 600; the
-   page 4 re-run made the change at run time only), and the renamed outcome
-   words (open items 3 and 7, ruled 2026-10-08: the eighth term's new words,
-   and the iteration limit raised to 10,000 with the episode count; open item
-   9 adds the summary's "gate not decidable on one seed"; the bar of the
-   in-use check is ruled at 0.9 and 0.5, which the frozen code already
-   carries). The registration names the commit of the frozen code it
+   spending alarm's four fixes (branch `tripwire-fixes`, three checks); and,
+   on 2026-10-08, the changes ruled that day (open items 3, 7 and 9): the
+   read fitted on 1,800 of 1,980 development episodes at an iteration limit of
+   10,000, the renamed outcome words, "gate not decidable on one seed", and
+   arm T's row-choice split reported (pull request 151, checked in pull
+   request 152); and the reporting table's one-cell layout fix on withheld
+   seeds (this batch). The bar of the in-use check is ruled at 0.9 and 0.5,
+   which the frozen code already carries. The registration names the commit of the frozen code it
    registers; the cited branches are on the main line (the last of them through pull request 136), and
    **that commit is named after those code changes land (open item 10, ruled
    2026-10-08).**
@@ -4172,7 +4184,9 @@ part B, branch `rulings-2026-10-06-gate-a-v4` at `525a625`). A wider model's
 extra coordinates carry structured content, not noise, so this is not a
 forecast, and 1,800 is the smallest of three sizes tried that held, not a
 size derived from anything. At 1,800 the fitter stopped at its iteration
-limit far more often on arm M (section 7.2, item 1). The read at the
+limit of 3,000 far more often on arm M; at the registered limit of 10,000 it
+never does on the toy, and the registered ownership read never stopped at
+either limit (section 7.2, item 1). The read at the
 registered width is first seen on arm F at step 5a and on arm C at step 5b.
 
 **W16. The toy's competing solvers do not test the measure on a model that
@@ -5118,12 +5132,19 @@ needs, and show that path can run in the order the line requires.
   the toy's own outcome at 1,800 (pre-A2 rules, to be re-summarised): R3, 'substrate not a testbed', reason 'arm(s) F failed the gate'
 ```
 
+*(Re-summarised 2026-10-08 under the current decision code, `docs/2026-10-09-ruled-code-changes-and-page4-rerun-findings.md`,
+checked: R3, "substrate not a testbed", because arm F fails the named-other
+condition on seeds 1 and 2; and the current code withholds arms C and M on
+every toy seed by the in-use check, "construction did not hold", as expected
+for these learned-sharpness toy models, so the summary itself computes no
+separation; the separation of 1.0000 quoted in this text is each row's
+arithmetic.)*
+
 - **The eight outcome terms of section 3:** each reached by at least one of
   the 25 made-up cases, and no output carries a term that is not registered
-  (R-13). **The renamed words are not yet in the code**, which prints version
-  4's names (open item 3, ruled 2026-10-08; the change is owed with those of
-  open items 7 and 9): a line the design can produce under a name the
-  text no longer uses, until the code follows the ruling.
+  (R-13). *(Since 2026-10-08 the code prints the registered words of section
+  3 with their scope phrases, open item 3, pull request 151, checked in pull
+  request 152; all 31 made-up cases land on their term.)*
 - **The toy's own outcome line:** R3 as the toy actually is; the fifth term
   if seed 0 is taken as the step 5a run (section 3); produced by the
   decision procedure's cases 1 to 3. The page 4 re-run's outcome line was
@@ -5174,7 +5195,8 @@ section 21 (all ruled 2026-10-08; the work items 7, 8, 9 and 12 ask for is
 still owed); the check of this version by a session that did not write it;
 the closure check of RT-237 on this text; the merges of section 16; the
 ledger's rows; the eleven re-reads of the hand-set toy models; the
-re-summary of the page 4 re-run under the current decision code; the
+re-summary of the page 4 re-run under the current decision code (done
+2026-10-08, R3; see failure 4); the
 reviewer's own pass, which is still owed, as the protocol says.
 
 **The two scans the method note promised, run on the finished file.**
@@ -5495,7 +5517,8 @@ text does meanwhile, and this session's recommendation with its confidence.
 None is this session's to decide, and the registration commit should not be
 made until each has John's answer or his word that it may stand open.
 
-**All twelve are now ruled.** Item 1 on 2026-10-08
+**All twelve are now ruled**, and the code changes items 3, 7 and 9 asked
+for are made and checked (pull requests 151 and 152, 2026-10-08). Item 1 on 2026-10-08
 (`docs/rulings/2026-10-08-verification-bar-ruling.md`); items 2 to 12 the same
 evening, in John's words "Agreed on all." (`docs/rulings/2026-10-08-v5-open-items-rulings.md`; authorship mixed),
 each as recommended below, with the eighth term of item 3 renamed
@@ -5741,3 +5764,25 @@ marked as overtaken by the development runs of 2026-10-04; and three places
 that credited pull request 136 alone with bringing every branch to the main
 line now say several came by their own pull requests. No figure, bar, term or
 stop changed.
+
+---
+
+## The ruled code changes written in (2026-10-08, night)
+
+After the ruled code changes and their check (pull requests 151 and 152),
+by the session that put the open items to John: section 7.1 gives the
+held-out part as the last 180 of 1,980; section 7.2's second caution is
+corrected, since the registered ownership read never stopped at the
+iteration limit and the early stops were the shuffled-label comparison's;
+weakness W15 says the same; section 9's arm M row quotes the toy figures
+fitted on 1,800 (0.5252, 0.4793, 0.5208) in place of those fitted on 420;
+section 9's and section 7.4's episode counts name the limit of 10,000, and
+section 7.4 records the re-pinned digest of the evaluation sets as a
+session's call; section 11 step 3 lists the changes as made; section 7.5
+item 15 notes the row-choice split is printed; section 17 failure 4 records
+the toy's re-summary (R3, with arms C and M withheld by the in-use check)
+and that the code prints the registered words; the source table gains a
+row. The code also gains a one-number fix: the reporting table printed one
+cell too many on withheld seeds (12 for 11), so two columns sat under the
+wrong headings; no figure or decision changes, as re-summarising the page 4
+pass from its stored rows shows (summary identical, every row 16 cells).
