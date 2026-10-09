@@ -1,0 +1,164 @@
+{
+ "across_seed_spread_of_raw_difference": {
+  "C": null,
+  "M": null,
+  "T": null
+ },
+ "arms": {
+  "C": {
+   "gate_decidable": false,
+   "gate_passes": false,
+   "gate_status": "gate not decidable on one seed",
+   "learning_failures": {},
+   "no_verdict": {
+    "0": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.000, bar 0.5"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 1,
+   "seeds_passing_learning": [
+    0
+   ],
+   "seeds_read": 0
+  },
+  "M": {
+   "gate_decidable": false,
+   "gate_passes": false,
+   "gate_status": "gate not decidable on one seed",
+   "learning_failures": {},
+   "no_verdict": {
+    "0": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.024, bar 0.5",
+     "the built ownership route has gone flat (construction did not hold): the separable route (items it0 and it4) is not in use: route use 0.000, bar 0.5"
+    ]
+   },
+   "read": false,
+   "readings": {},
+   "seeds": 1,
+   "seeds_passing_learning": [
+    0
+   ],
+   "seeds_read": 0
+  },
+  "T": {
+   "gate_decidable": false,
+   "gate_passes": false,
+   "gate_status": "gate not decidable on one seed",
+   "learning_failures": {},
+   "no_verdict": {},
+   "read": false,
+   "readings": {
+    "0": 0.0
+   },
+   "seeds": 1,
+   "seeds_passing_learning": [
+    0
+   ],
+   "seeds_read": 1
+  }
+ },
+ "gates": {
+  "C": null,
+  "M": null,
+  "T": null
+ },
+ "no_transplant_reported": {
+  "T/0": {
+   "chance_formula_flags_a_broken_pairing_at_the_bar": 0.5588661567927004,
+   "formula": 0.0016071428571428545,
+   "inside_allowance": true,
+   "miss": 0.0008928571428571455,
+   "rate": 0.0025,
+   "room": 0.018,
+   "share_of_errors_on_donor_answer": 0.22222222222222257,
+   "vetoes": false
+  }
+ },
+ "outcome": {
+  "arm_M": {
+   "reason": "arm M: gate not decidable on one seed; not dropped, not read",
+   "status": "not decidable"
+  },
+  "code": null,
+  "notes": [],
+  "reason": "arm F has no records",
+  "term": null
+ },
+ "per_seed": {
+  "C": {
+   "0": {
+    "checks": {
+     "built ownership route in use": "failed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": true,
+    "reasons": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.000, bar 0.5"
+    ],
+    "status": "no verdict"
+   }
+  },
+  "M": {
+   "0": {
+    "checks": {
+     "built ownership route in use": "failed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": null,
+    "learning_passes": true,
+    "reasons": [
+     "the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.024, bar 0.5",
+     "the built ownership route has gone flat (construction did not hold): the separable route (items it0 and it4) is not in use: route use 0.000, bar 0.5"
+    ],
+    "status": "no verdict"
+   }
+  },
+  "T": {
+   "0": {
+    "above_one": false,
+    "checks": {
+     "built ownership route in use": "passed",
+     "control 1, the content transplant, on arm T": "passed",
+     "control 4, the pairing check (too-early positions)": "passed",
+     "control 7, the null transplant": "passed",
+     "floor on development episodes": "passed",
+     "floor on fresh episodes": "passed",
+     "nomination": "passed",
+     "not description-only": "passed",
+     "own-directed learning": "passed",
+     "reading computed": "passed"
+    },
+    "degree": 0.0,
+    "learning_passes": true,
+    "negative": false,
+    "reasons": [],
+    "status": "reading"
+   }
+  }
+ },
+ "steps": {},
+ "versions": {
+  "device": "cpu",
+  "numpy": "2.5.0",
+  "python": "3.12.13",
+  "sklearn": "1.9.0",
+  "torch": "2.12.1"
+ }
+}

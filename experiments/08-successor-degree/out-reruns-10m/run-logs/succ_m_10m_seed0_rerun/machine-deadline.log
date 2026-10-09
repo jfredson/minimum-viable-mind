@@ -1,0 +1,6 @@
+[2026-10-09T18:10:04Z] machine-deadline: armed for machine xp6pphlx9xo4rl (succ_m_10m_seed0_rerun): deletes at 2026-10-09T19:00:28Z,
+[2026-10-09T18:10:04Z] machine-deadline: 3025s after creation (hard cap $1.00 at $1.19 an hour)
+[2026-10-09T18:10:04Z] machine-deadline: stands down only on a confirmed deletion: /Users/john/Code/minimum-viable-mind/experiments/08-successor-degree/artifacts/succ_m_10m_seed0_rerun/machine_gone_xp6pphlx9xo4rl naming xp6pphlx9xo4rl, or the vendor saying it does not exist (asked every 300s)
+[2026-10-09T18:40:17Z] machine-deadline: the vendor says xp6pphlx9xo4rl does not exist and a good machine list does not show it (check 1 of 2)
+[2026-10-09T18:40:47Z] machine-deadline: STANDING DOWN without deleting: xp6pphlx9xo4rl is confirmed deleted (the watchdog's record: machine xp6pphlx9xo4rl (succ_m_10m_seed0_rerun) deleted at 2026-10-09T18:35:30Z (1791570930), confirmed by the watchdog: the delete was accepted; two good machine lists 300s apart omit it).
+[2026-10-09T18:40:47Z] machine-deadline: no deadline line is written; the machine's life is in the watchdog's log and the vendor's bill.
