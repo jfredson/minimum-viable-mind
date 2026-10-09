@@ -1,0 +1,5 @@
+failure 5, check_launcher_argument_guard.sh: exit 0
+failure 6, check_remote_forms.py on launch_a3_fetch_first.sh: exit 0
+failure 6, check_remote_forms.py on launch_successor.sh: exit 0
+test T7 on launch_successor.sh: exit 0
+the stand-in vendor tool was never called

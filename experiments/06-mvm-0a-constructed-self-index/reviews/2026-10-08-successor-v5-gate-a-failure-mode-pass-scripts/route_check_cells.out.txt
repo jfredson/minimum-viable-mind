@@ -1,0 +1,14 @@
+measure.route_check on hand-made in-use records (the registered judge of part B)
+  arm M, both routes present and in use (as procedure.route_in_use writes them):
+      code returns 'passed'; the text's rule gives passed
+  arm M, stirred-in route present and flat:
+      code returns 'failed'; the text's rule gives failed; reasons ['the built ownership route has gone flat (construction did not hold): the stirred-in route (items it1 to it3) is not in use: route use 0.005, bar 0.5']
+  arm M, stirred-in route MISSING from the record, separable in use:
+      code returns 'passed'; the text's rule gives not run (text: a missing field counts against)
+  arm C, its stirred-in route missing, an unrelated 'slot' route in use:
+      code returns 'passed'; the text's rule gives not run (text: arm C's stirred-in route)
+  arm T, recorded under the wrong name ('entangled', as a2_cases.route_flat builds it), flat:
+      code returns 'failed'; the text's rule gives failed (on a route arm T does not have); reasons ['the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.005, bar 0.5']
+
+Which route names does the code expect per arm? ROUTE_LABELS: {'slot': 'the slot route', 'entangled': 'the stirred-in route', 'separable': 'the separable route (items it0 and it4)', 'entangled_items': 'the stirred-in route (items it1 to it3)'}
+Does route_check compare the recorded route names with the arm's built routes? no: it judges whichever routes the record lists
