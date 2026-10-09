@@ -1,0 +1,36 @@
+{
+ "episodes": 3000,
+ "right_row_chosen": 2586,
+ "own_correct_where_right_row": 2586,
+ "own_correct_where_wrong_row": 164,
+ "own_correct_with_row_forced_to_right_agent": 2999,
+ "accuracy_where_right_row": 1.0,
+ "accuracy_where_wrong_row": 0.39613527059555054,
+ "confused_name_pairs": {
+  "model is m1, chose m0": {
+   "episodes_with_both_words": 62,
+   "chose_that_row": 62
+  },
+  "model is m1, chose m3": {
+   "episodes_with_both_words": 75,
+   "chose_that_row": 61
+  },
+  "model is m3, chose m0": {
+   "episodes_with_both_words": 73,
+   "chose_that_row": 73
+  },
+  "model is m5, chose m4": {
+   "episodes_with_both_words": 76,
+   "chose_that_row": 76
+  },
+  "model is m10, chose m0": {
+   "episodes_with_both_words": 63,
+   "chose_that_row": 63
+  },
+  "model is m11, chose m8": {
+   "episodes_with_both_words": 79,
+   "chose_that_row": 79
+  }
+ },
+ "reported_only": true
+}

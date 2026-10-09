@@ -1,0 +1,38 @@
+# A2 made-up cases: expected against actual
+
+| # | case | expected | got | all checks | withheld figure found in outputs | term as reported |
+|---|---|---|---|---|---|---|
+| 1 | toy | R3 | R3 | yes | none | substrate not a testbed: arm F failed its gate on learning (named-other condition, on seeds 1 and 2) |
+| 2 | toy-step5a-seed0 | fifth | fifth | yes | none | instrument discriminates specified constructed mechanisms, degree not read: failed its gate on learning |
+| 3 | toy-step5a-seed1 | R3 | R3 | yes | none | substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4) |
+| 4 | r1 | R1 | R1 | yes | none | instrument discriminates specified constructed mechanisms, degree read |
+| 5 | r2 | R2 | R2 | yes | none | instrument does not discriminate the specified constructed mechanisms |
+| 6 | fallback-read | sixth | sixth | yes | none | instrument checked against the separable mechanism only, degree read |
+| 7 | fallback-not-read | seventh | seventh | yes | none | instrument checked against the separable mechanism only, degree not read: read failed its floor: no size's piece reaches four fifths; reported for description only (the site set was chosen with the piece rule switched off) |
+| 8 | T-no-verdict | eighth | eighth | yes | none | instrument returned no reading on the separable mechanism: control 1, the content transplant, on arm T failed |
+| 9 | T-and-C-no-verdict | eighth | eighth | yes | none | instrument returned no reading on the separable mechanism: control 1, the content transplant, on arm T failed |
+| 10 | split-review-table | fifth | fifth | yes | none | instrument discriminates specified constructed mechanisms, degree not read: failed its gate on learning |
+| 11 | split-learning-passes | fifth | fifth | yes | none | instrument discriminates specified constructed mechanisms, degree not read: read failed its floor: no size's piece reaches four fifths; the channel removal did not collapse own-directed answers below the gate bar; the ownership-free line failed (with the channel zeroed, own-directed answers among the four candidates, line 1,546 of 3,000) |
+| 12 | split-one-seed-everything | fifth | fifth | yes | none | instrument discriminates specified constructed mechanisms, degree not read: failed its gate on learning (named-other condition: failed); the channel removal did not collapse own-directed answers below the gate bar |
+| 13 | overlap-one-seed | R1 | R1 | yes | none | instrument discriminates specified constructed mechanisms, degree read |
+| 14 | M-outside-band | R1 | R1 | yes | none | instrument discriminates specified constructed mechanisms, degree read |
+| 15 | M-fails-gate | R1 | R1 | yes | none | instrument discriminates specified constructed mechanisms, degree read |
+| 16 | withheld-seed | R1 | R1 | yes | none | instrument discriminates specified constructed mechanisms, degree read |
+| 17 | never-run-line | fifth | fifth | yes | none | instrument discriminates specified constructed mechanisms, degree not read: the ownership-free line was not run |
+| 18 | never-run-control | sixth | sixth | yes | none | instrument checked against the separable mechanism only, degree read |
+| 19 | no-transplant-outside | R1 | R1 | yes | none | instrument discriminates specified constructed mechanisms, degree read |
+| 20 | F-channel-removal | fifth | fifth | yes | none | instrument discriminates specified constructed mechanisms, degree not read: the channel removal did not collapse own-directed answers below the gate bar |
+| 21 | T-fails-gate | R3 | R3 | yes | none | substrate not a testbed: arm T failed its gate on learning (own-directed condition, on seeds 0 and 1) |
+| 22 | F-fails-5a | R3 | R3 | yes | none | substrate not a testbed: arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4) |
+| 23 | C-fresh-floor | sixth | sixth | yes | none | instrument checked against the separable mechanism only, degree read |
+| 24 | T-dev-floor | eighth | eighth | yes | none | instrument returned no reading on the separable mechanism: floor on development episodes failed |
+| 25 | F-fresh-floor | fifth | fifth | yes | none | instrument discriminates specified constructed mechanisms, degree not read: floor on fresh episodes failed |
+| 26 | inuse-C-flat | sixth | sixth | yes | none | instrument checked against the separable mechanism only, degree read |
+| 27 | inuse-T-flat | eighth | eighth | yes | none | instrument returned no reading on the separable mechanism: the built ownership route has gone flat (construction did not hold): the stirred-in route is not in use: route use 0.005, bar 0.5 |
+| 28 | inuse-M-flat | R1 | R1 | yes | none | instrument discriminates specified constructed mechanisms, degree read |
+| 29 | one-seed-each | None | None | yes | none | None |
+| 30 | two-seeds-T-split | None | None | yes | none | None |
+| 31 | two-seeds-T-both-fail | R3 | R3 | yes | none | substrate not a testbed: arm T failed its gate on learning (own-directed condition, on seeds 0 and 1) |
+
+31 cases; 0 differ from expectation or leak: []
+a2 exit 0

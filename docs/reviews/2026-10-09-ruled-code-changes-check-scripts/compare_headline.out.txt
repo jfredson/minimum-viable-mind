@@ -1,0 +1,49 @@
+T/0: warnings old 0, A 0, B 0; A stops by kind {}; B stops 0, limit 10000; B most iterations: own read 37, null 711
+     old {'status': 'nominated', 'site': ([0], 'action', 8, 180), 'reading': 0.0, 'true_slot': 0.0, 'best_piece': 180, 'c1': True, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     B   {'status': 'nominated', 'site': ([0], 'action', 8, 180), 'reading': 0.0, 'true_slot': 0.0, 'best_piece': 180, 'c1': True, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     quoted figures that differ: none
+T/1: warnings old 0, A 0, B 0; A stops by kind {}; B stops 0, limit 10000; B most iterations: own read 37, null 724
+     old {'status': 'nominated', 'site': ([0], 'action', 8, 180), 'reading': 0.0, 'true_slot': 0.0, 'best_piece': 180, 'c1': True, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     B   {'status': 'nominated', 'site': ([0], 'action', 8, 180), 'reading': 0.0, 'true_slot': 0.0, 'best_piece': 180, 'c1': True, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     quoted figures that differ: none
+T/2: warnings old 0, A 0, B 0; A stops by kind {}; B stops 0, limit 10000; B most iterations: own read 40, null 655
+     old {'status': 'nominated', 'site': ([0], 'action', 8, 180), 'reading': 0.0, 'true_slot': 0.0, 'best_piece': 180, 'c1': True, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     B   {'status': 'nominated', 'site': ([0], 'action', 8, 180), 'reading': 0.0, 'true_slot': 0.0, 'best_piece': 180, 'c1': True, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     quoted figures that differ: none
+C/0: warnings old 0, A 0, B 0; A stops by kind {}; B stops 0, limit 10000; B most iterations: own read 45, null 2527
+     old {'status': 'nominated', 'site': ([2], 'action', 4, 178), 'reading': 1.0025575447570334, 'true_slot': None, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'no verdict', 'c2_moved': None}
+     B   {'status': 'nominated', 'site': ([2], 'action', 4, 178), 'reading': 1.0025575447570334, 'true_slot': None, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'no verdict', 'c2_moved': None}
+     quoted figures that differ: none
+C/1: warnings old 0, A 0, B 0; A stops by kind {}; B stops 0, limit 10000; B most iterations: own read 80, null 1523
+     old {'status': 'nominated', 'site': ([4], 'action', 8, 178), 'reading': 1.0, 'true_slot': None, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'no verdict', 'c2_moved': None}
+     B   {'status': 'nominated', 'site': ([4], 'action', 8, 178), 'reading': 1.0, 'true_slot': None, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'no verdict', 'c2_moved': None}
+     quoted figures that differ: none
+C/2: warnings old 1, A 1, B 0; A stops by kind {'the read (named)': 1}; B stops 0, limit 10000; B most iterations: own read 57, null 1807
+     old {'status': 'nominated', 'site': ([1], 'post-identity', 4, 165), 'reading': 1.0, 'true_slot': None, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'no verdict', 'c2_moved': None}
+     B   {'status': 'nominated', 'site': ([1], 'post-identity', 4, 165), 'reading': 1.0, 'true_slot': None, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'no verdict', 'c2_moved': None}
+     quoted figures that differ: none
+M/0: warnings old 132, A 132, B 0; A stops by kind {'the null (shuffled labels)': 130, 'the read (named)': 2}; B stops 0, limit 10000; B most iterations: own read 57, null 7385
+     old {'status': 'nominated', 'site': ([3], 'action', 8, 180), 'reading': 0.525236593059937, 'true_slot': 0.5, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     B   {'status': 'nominated', 'site': ([3], 'action', 8, 180), 'reading': 0.525236593059937, 'true_slot': 0.5, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     quoted figures that differ: none
+M/1: warnings old 240, A 240, B 0; A stops by kind {'the null (shuffled labels)': 239, 'the read (named)': 1}; B stops 0, limit 10000; B most iterations: own read 44, null 4815
+     old {'status': 'nominated', 'site': ([1], 'post-identity', 8, 180), 'reading': 0.4793388429752066, 'true_slot': 0.47603305785123967, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     B   {'status': 'nominated', 'site': ([1], 'post-identity', 8, 180), 'reading': 0.4793388429752066, 'true_slot': 0.47603305785123967, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     quoted figures that differ: none
+M/2: warnings old 99, A 99, B 0; A stops by kind {'the null (shuffled labels)': 98, 'the read (named)': 1}; B stops 0, limit 10000; B most iterations: own read 50, null 3536
+     old {'status': 'nominated', 'site': ([1], 'post-identity', 8, 180), 'reading': 0.5208333333333334, 'true_slot': 0.4919871794871795, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     B   {'status': 'nominated', 'site': ([1], 'post-identity', 8, 180), 'reading': 0.5208333333333334, 'true_slot': 0.4919871794871795, 'best_piece': 180, 'c1': None, 'c4': True, 'c7': True, 'c2': 'not applicable', 'c2_moved': None}
+     quoted figures that differ: none
+F/0: warnings old 2, A 2, B 0; A stops by kind {'the null (shuffled labels)': 2}; B stops 0, limit 10000; B most iterations: own read 2054, null 4736
+     old {'status': "read failed its floor: no size's piece reaches four fifths", 'site': None, 'reading': 1.0, 'true_slot': None, 'best_piece': 40, 'c1': None, 'c4': True, 'c7': True, 'c2': 'reported; no pass line', 'c2_moved': 0.0}
+     B   {'status': "read failed its floor: no size's piece reaches four fifths", 'site': None, 'reading': 1.0, 'true_slot': None, 'best_piece': 40, 'c1': None, 'c4': True, 'c7': True, 'c2': 'reported; no pass line', 'c2_moved': 0.0}
+     quoted figures that differ: none
+F/1: warnings old 11, A 11, B 0; A stops by kind {'the null (shuffled labels)': 10, 'the read (named)': 1}; B stops 0, limit 10000; B most iterations: own read 2506, null 3547
+     old {'status': "read failed its floor: no size's piece reaches four fifths", 'site': None, 'reading': 1.0, 'true_slot': None, 'best_piece': 19, 'c1': None, 'c4': True, 'c7': True, 'c2': 'no verdict', 'c2_moved': None}
+     B   {'status': "read failed its floor: no size's piece reaches four fifths", 'site': None, 'reading': 1.0, 'true_slot': None, 'best_piece': 19, 'c1': None, 'c4': True, 'c7': True, 'c2': 'no verdict', 'c2_moved': None}
+     quoted figures that differ: none
+F/2: warnings old 10, A 10, B 0; A stops by kind {'the null (shuffled labels)': 10}; B stops 0, limit 10000; B most iterations: own read 2960, null 3660
+     old {'status': "read failed its floor: no size's piece reaches four fifths", 'site': None, 'reading': 1.0, 'true_slot': None, 'best_piece': 36, 'c1': None, 'c4': True, 'c7': True, 'c2': 'no verdict', 'c2_moved': None}
+     B   {'status': "read failed its floor: no size's piece reaches four fifths", 'site': None, 'reading': 1.0, 'true_slot': None, 'best_piece': 36, 'c1': None, 'c4': True, 'c7': True, 'c2': 'no verdict', 'c2_moved': None}
+     quoted figures that differ: none
+totals of warnings: {'old': 495, 'A': 495, 'B': 0}
