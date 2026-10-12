@@ -14,11 +14,11 @@
 [project]
 name = "Minimum Viable Mind"
 short = "MVM"
-updated_on = "2026-10-08"
+updated_on = "2026-10-09"
 question = "Two sides, ruled 2026-10-07 (spec text pending Gate A): what is the smallest system whose presence in interaction cannot be produced by a cheaper route (lookup, imitation of a corpus about minds, routing of who is speaking), and at what point do observers' detections of presence begin to track that structure rather than fluency? The earlier question, whether the smallest self-centred act of integration (the floor) is present in a system, stays in the spec as the founding wager and stops being a measurement target."
 one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
-where_we_are = "The project was refounded on 2026-10-07 on a two-sided question, and on 2026-10-08 the site went live and the registration text for the degree experiment was made ready for John's commit. In one day John ruled the bar for 'the repaired route holds' (0.9 and 0.5, which the toy's own built models miss, so the likeliest ending of the experiment is an early stop at about $1.14), adopted a one-page restatement of the December result that counts such a stop as a registered ending, answered every open question of version 5 of the registration text, and ruled five questions about the red-team record and one about a decoy test. Sessions then did the work those answers asked for, each piece checked by another session: the experiment's code now fits each read on 1,800 episodes at a higher iteration limit and prints the registered outcome words, with no toy decision moved; the closure check of the fatal flaw's repair passed; three serious findings were closed by measurement; the red-team ledger's missing rows were written; and the decision code was re-run end to end on the final code and checked. One result was not a pass: a test of a differently coded decoy found that an unused copy of the model's identity can partly fool the measure. A built-in check catches it on the easiest model only, and John ruled to register with that weakness named and measured. A check of the end-to-end re-run and the reviewer's own failure-mode pass on the text followed, the pass finding nothing fatal and one serious gap, closed the same night. What remains is John's registration commit, inside kill date 1 (2026-10-18). About $229.62 of the $450 ceiling is spent; nothing has been rented since 2026-10-04."
-where_we_are_going = "Two things run side by side to the end of the year. The first is the degree experiment (experiment C), which the December-result roadmap still binds: the registration committed by 2026-10-18 with the $1.14 repair written in, the repaired built models verified (a failure stops C there), one free-arm run at full size (a gate or floor miss stops C there), and the second release of about $150 to $172 asked for only on those figures, a pass being necessary and not sufficient. The project's own stated prior is that the free model most likely returns no verdict or fails its gate, so the likeliest ending for C is an early stop written up as instrument research, which is a registered outcome and not a schedule failure. The second is the new question, in task order with no step on a date: the two-sided-question text and the table of felt features through Gate A; the battery's first two entries on experiment D's pipeline by API, about $20 together, as reference readings of what the cheaper routes produce; then the construction line, small systems whose positions on the axes are set from outside, which needs a state-carrying mechanism neither toy pipeline has, and is where every test that can discriminate lives; last, and designed before it is run, the human study that calibrates the detector. By 2026-12-21, realistically: C run to a registered outcome, the new question in the spec, the table and the first two battery entries registered and run, the relabelling of experiment A in the paper draft, and the packet of three changes sent to the book. Not this year: a degree reading of a free model, a discriminating depth reading, or an observer-side measurement. Loss conditions are written for every new line. Claims are whatever the registered results support: a position on the axes, the route named, the degree measured, never a verdict. Never a conscious machine."
+where_we_are = "The degree experiment (experiment C) was registered on 2026-10-09: John had the registration commit made, accepted how the reviewer's eight findings were handled, and merged it at 10:52 Pacific, inside kill date 1 (2026-10-18). Version 5's sentences written before the commit are left unedited on purpose; the status line governs. The same day, on his go, the three 10-million reruns of the repaired built models ran on rented machines and came home, costing $1.3032 against the about $1.14 approved, because the vendor's price had moved from $0.99 to $1.19 an hour; the spending alarm met real billing for the first time and held. A session that ran none of it read the result against the registered bar: the hand-set separable model uses its built-in route (0.986), but the stirred-in model reads 0.000 and the half-and-half model 0.024 and 0.000, against a bar of 0.5. In that reading the verification fails and experiment C stops at its registered stop for a failed verification, in the ruled words 'the built arms as designed are not references; the measure was not reached'. That is the independent reading; John has not yet read it, and C is not stopped until he does. On the new question, three drafts wait on him: the relabel of experiment A, version 4 of the table of felt features (checked, his questions 10 to 12 open), and the two-sided question text's Gate A review, which found one fatal flaw and leaves him six calls. Five older check pull requests were never merged and wait on him to land or close. About $230.94 of the $450 ceiling is spent."
+where_we_are_going = "Two things run side by side to the end of the year. The first is the degree experiment (experiment C), registered on 2026-10-09. Its repaired built models were rerun the same day, and an independent reading says they fail the verification, which under the registration stops C before the free-arm run at full size and leaves the rest of the first release and the whole second release unspent. If John reads it the same way, C's ending is written up as instrument research, a registered outcome and not a schedule failure; a redesign in which the built route is the only route would need its own ruling. The second is the new question, in task order with no step on a date: the two-sided-question text and the table of felt features through Gate A; the battery's first two entries on experiment D's pipeline by API, about $20 together, as reference readings of what the cheaper routes produce; then the construction line, small systems whose positions on the axes are set from outside, which needs a state-carrying mechanism neither toy pipeline has, and is where every test that can discriminate lives; last, and designed before it is run, the human study that calibrates the detector. By 2026-12-21, realistically: C run to a registered outcome, the new question in the spec, the table and the first two battery entries registered and run, the relabelling of experiment A in the paper draft, and the packet of three changes sent to the book. Not this year: a degree reading of a free model, a discriminating depth reading, or an observer-side measurement. Loss conditions are written for every new line. Claims are whatever the registered results support: a position on the axes, the route named, the degree measured, never a verdict. Never a conscious machine."
 hibernation_by = "2027-01-04"
 wrap_up_start = "2026-12-21"
 pipeline_resumes = "2027-01-04"
@@ -64,7 +64,7 @@ id = "G3"
 title = "Build what is missing and re-measure"
 status = "in-progress"
 summary = "Construct small systems whose structure is known, because that is the only place a reading can discriminate: two systems built alike except for one route, read on the same indicator. MVM-0a, the constructed self-index, was the first step. The degree experiment (C) is the second: built models at both ends of a scale and a free model read between them. The construction line of the two-sided question is the third: systems whose positions on the axes are set from outside, the smallest of which that passes the battery is the minimum viable mind, within its construction family."
-evidence = "MVM-0a exists as three 30-million-parameter checkpoints; the ownership input is load-bearing on three seeds, and Amendment A3 closed 2026-09-20 as not testable because its matched contrast could never be run. The degree experiment's code is frozen and reproduces the toy record; at 10 million parameters two of three built models switched their built-in route off, so a $1.14 repair is written into the registration and verified before any full-size run. The construction line needs a state-carrying mechanism neither pipeline has; nothing of it exists yet beyond the battery draft's entries 3 to 8."
+evidence = "MVM-0a exists as three 30-million-parameter checkpoints; the ownership input is load-bearing on three seeds, and Amendment A3 closed 2026-09-20 as not testable because its matched contrast could never be run. The degree experiment's code is frozen and reproduces the toy record; at 10 million parameters two of three built models switched their built-in route off, so a $1.14 repair was written into the registration, registered on 2026-10-09. The repaired models were rerun that day ($1.3032); an independent reading says two of the three still do not use the built-in route, so the verification fails and C stops before any full-size run, pending John's read. The construction line needs a state-carrying mechanism neither pipeline has; nothing of it exists yet beyond the battery draft's entries 3 to 8."
 
 # ---------------------------------------------------------------------------
 # The stage ladder (experiments/README.md, statuses from ROADMAP.md and STATUS.md).
@@ -97,8 +97,8 @@ name = "The shape of binding"
 status = "in-progress"
 progress = 30
 one_line = "Whether within-pass integration has the shape of global mutual constraint, rather than a bundle of modular shortcuts that never compose into one act. Since 2026-09-20 this is the program's open question: the degree axis on which a load-bearing self-pointer sits above zero."
-delivered = ["Scoped deliberately small on 2026-07-01: deliver the metric, not a verdict", "2026-09-20: a candidate metric named (decomposability: accuracy lost when only the pointer is patched rather than the joint state) and the successor experiment that validates it brought forward to 2026, per the December-result roadmap"]
-remaining = ["The registration: version 5 of the text is drafted with every ruling written in and twelve open items for John, the largest being the bar for 'the repaired route holds', which as coded fails the toy's own built models; it cannot be committed until the fifteen branches it cites are merged. Kill date 2026-10-18; past it, committing takes a fresh ruling naming what comes off the back end", "Then, in order with stops between: the three 10-million reruns of the repaired built models (about $1.14), one free-arm run at full size (about $12), and the second release of about $150 to $172 only on John's go after both pass", "The project's own prior: the free model most likely returns no verdict or fails its gate, so the likeliest ending is an early stop written up as instrument research"]
+delivered = ["Scoped deliberately small on 2026-07-01: deliver the metric, not a verdict", "2026-09-20: a candidate metric named (decomposability: accuracy lost when only the pointer is patched rather than the joint state) and the successor experiment that validates it brought forward to 2026, per the December-result roadmap", "2026-10-09: the successor experiment registered (version 5 at the frozen code 6c47c56, pull request 162, merged by John at 10:52 Pacific), and the three 10-million reruns of the repaired built models run the same day ($1.3032; outputs in draft pull request 166)"]
+remaining = ["John reads the independent reading of the three reruns: the separable model uses its built-in route (0.986), the stirred-in model reads 0.000 and the half-and-half model 0.024 and 0.000, against a bar of 0.5, so in that reading the verification fails and experiment C stops at its registered stop for a failed verification. Not stopped until he has read it", "If it stops: the ending written up as instrument research, in the ruled words 'the built arms as designed are not references; the measure was not reached'; the free-arm run at full size (about $12) and the second release (about $150 to $172) are not spent. A redesign in which the built route is the only route would need its own ruling", "Pull request 166, the reruns' outputs and run record, checked for merge once John has read it"]
 adjudicates = "Global Workspace theory, read as a specification."
 
 [[stages]]
@@ -138,7 +138,7 @@ status = "in-progress"
 progress = 40
 one_line = "Everything before this measures; this constructs. First a system whose self-index is explicit, trained-against and removable by design (MVM-0); then, since 2026-10-07, systems whose positions on the book's axes are set from outside, so that a reading on the battery can be checked against a construction that is known; then the depth loop, where the system carries the residue of interactions forward and is changed by them."
 delivered = ["Fork adjudicated 2026-08-02: MVM-0 build is the primary track", "Corrigibility commitments committed before any training run (spec/corrigibility-commitments.md, v1.1)", "MVM-0a registered 2026-08-07; scale ladder climbed from 10M to 30M parameters (H_scale, 2026-08-16)", "Register-lesion diagnostic 2026-08-19: binding survives total removal of the architectural self-register. The register was self-reference, not self-location; the one load-bearing authorship mechanism is the acting channel", "Amendment A3 ('act as yourself', no installed register, the centre acquired under task pressure) ratified 2026-09-15 and run: primary battery learnable and the ownership input load-bearing on three seeds (2026-09-19)", "Amendment A3 closed 2026-09-20 under its registered term, not testable: the pre-registered loss condition fired (no ownership-free control can be state-requiring at ceiling)"]
-remaining = ["The two-sided-question text and the table of felt features through Gate A, both tiers, with the failure-mode pass filed (version 3 of the battery draft is owed its third check, then a measurement rehearsal of its first two entries)", "The battery's first two entries on experiment D's pipeline, about $20 together: the transcript-replacement control and the ownership swap, both reference readings", "The construction line: a state-carrying mechanism first (neither toy pipeline carries anything across encounters), then two systems built alike except for one route, then the Depth entries of the battery; its first rented run gets its own kill date", "The human study that calibrates the detector, designed before it is run and run only when a conversable system of known construction exists; John is not a subject", "MVM-0b amplifiers and the MVM-1 depth loop, only behind the corrigibility gate, now folded into the construction line's ordering"]
+remaining = ["The two-sided-question text and the table of felt features through Gate A, both tiers, with the failure-mode pass filed (on 2026-10-09 version 4 of the battery draft was checked and its two conditions met, John's questions 10 to 12 open, in draft pull request 164; the two-sided question text's Gate A review, both tiers, found one fatal flaw and leaves John six calls, in draft pull request 165)", "The battery's first two entries on experiment D's pipeline, about $20 together: the transcript-replacement control and the ownership swap, both reference readings", "The construction line: a state-carrying mechanism first (neither toy pipeline carries anything across encounters), then two systems built alike except for one route, then the Depth entries of the battery; its first rented run gets its own kill date", "The human study that calibrates the detector, designed before it is run and run only when a conversable system of known construction exists; John is not a subject", "MVM-0b amplifiers and the MVM-1 depth loop, only behind the corrigibility gate, now folded into the construction line's ordering"]
 adjudicates = "The corpus's floor claim, inverted: predict a load-bearing centre in a system built to have one; lose if the network routes around it."
 
 [[stages]]
@@ -347,7 +347,7 @@ title = "The two-sided question: the table of felt features, the filtered batter
 status = "authorised"
 cost = "The table and battery $0; construction a few dollars per configuration at 10 million parameters; the human study time rather than rented machines"
 teaches = "What the smallest system is whose presence in interaction cannot be produced by lookup, imitation or routing, and at what point observers' detections track that structure rather than fluency. Replaces the floor as the measurement target. Loss conditions written in the proposal: an indicator producible by a cheaper route kills the battery; axis positions that cannot be set independently kill the construction line; observers who never improve kill the calibration line; an empty battery kills the question."
-gate = "Ruled 2026-10-07 (all eight decisions, authorship mixed; docs/rulings/2026-10-07-two-sided-question-rulings.md), two of them revised the same evening after the Gate C pass found one fatal flaw (narrowing experiment C left it no reachable outcome) and three further rulings given on the battery draft's questions. Version 2 of the proposal applies all eighteen findings and was checked by a session that wrote none of it; the battery draft is at version 3 and owed a third check. The spec text and the battery go through Gate A, both tiers, before they are registration text. On the main line since 2026-10-07 (pull request 123)."
+gate = "Ruled 2026-10-07 (all eight decisions, authorship mixed; docs/rulings/2026-10-07-two-sided-question-rulings.md), two of them revised the same evening after the Gate C pass found one fatal flaw (narrowing experiment C left it no reachable outcome) and three further rulings given on the battery draft's questions. Version 2 of the proposal applies all eighteen findings and was checked by a session that wrote none of it. On the main line since 2026-10-07 (pull request 123). The spec text and the battery go through Gate A, both tiers, before they are registration text. On 2026-10-09 the spec text's Gate A ran both tiers and found one fatal flaw, seven serious and five worth noting (draft pull request 165, six calls for John); the battery draft reached version 4, checked, with John's questions 10 to 12 open (draft pull request 164)."
 stage = "6"
 
 # ---------------------------------------------------------------------------
@@ -853,7 +853,7 @@ status = "pending"
 [[next_steps]]
 id = "N25"
 title = "The table of felt features of presence and the filtered battery, as Gate A text"
-when = "version 3 of the draft exists after two checks; owed a third check, then a measurement rehearsal of its first two entries, then Gate A"
+when = "version 4 written 2026-10-09 with the third check's fixes, checked by a fresh session and its two conditions met (draft pull request 164); John's questions 10 to 12 open; then the method file, a measurement rehearsal of its first two entries, then Gate A"
 owner = "Claude Code session; John rules"
 cost = "$0"
 decision = false
@@ -863,7 +863,7 @@ status = "pending"
 [[next_steps]]
 id = "N26"
 title = "The registration of the degree experiment with the repair written in: the repaired models verified with a stop on failure, the second release conditional on the first, outcomes renamed, every earlier fix included; checked by another session"
-when = "folded into N41 on 2026-10-08: version 5 is that registration text, checked, its open items ruled; by 2026-10-18, the kill date, which stands"
+when = "folded into N41 on 2026-10-08; registered 2026-10-09. The three reruns of the repaired models ran the same day ($1.3032, draft pull request 166), and an independent reading says the verification fails, which stops C at its registered stop; pending John's read (N44)"
 owner = "Claude Code session; a second checks; John rules the open items and commits"
 cost = "$0 to write; the first release's remaining spend to run"
 decision = false
@@ -963,7 +963,7 @@ status = "done"
 [[next_steps]]
 id = "N36"
 title = "Check the record of the 2026-10-06 rulings and the dated notes it adds to eleven earlier rulings"
-when = "filed as pull request 104 on the record's branch; not yet on the main line"
+when = "filed as pull request 104 on the record's branch; found on 2026-10-09 never merged and not on the main line, one of five such pull requests waiting on John (N47)"
 owner = "a Claude Code session that did not write it"
 cost = "$0"
 decision = false
@@ -1013,12 +1013,12 @@ status = "done"
 [[next_steps]]
 id = "N41"
 title = "Write version 5, the registration text, with every ruled change; check it; commit the registration"
-when = "version 5 drafted 2026-10-07, checked 2026-10-08; every open item ruled and the work they asked for done the same night; the registered code named (the frozen code as at 6c47c56); the check of the end-to-end re-run and the reviewer's failure-mode pass filed the same night; the commit is John's, outer limit 2026-10-18"
+when = "version 5 drafted 2026-10-07, checked 2026-10-08; every open item ruled and the work they asked for done the same night; the registered code named (the frozen code as at 6c47c56); the check of the end-to-end re-run and the reviewer's failure-mode pass filed the same night; done 2026-10-09: the registration commit (pull request 162), checked by a session that wrote none of it and passed with conditions, merged by John at 10:52 Pacific, inside kill date 1 (2026-10-18). Version 5's sentences written before the commit are left unedited on purpose"
 owner = "a session writes the text; a different session checks it"
 cost = "$0"
 decision = true
 teaches = "Whether the registration can be committed with every finding closed or carried by name."
-status = "in-progress"
+status = "done"
 
 [[next_steps]]
 id = "N42"
@@ -1040,14 +1040,54 @@ decision = false
 teaches = "Whether the registered code prints the registered outcome words and fits each read to its optimum, whether the measure can be partly fooled by an unused representation coded differently from the one the model uses (the sharpest cheap test of what a high reading on the entangled model would mean), and that every finding the registration cites has its row."
 status = "done"
 
+[[next_steps]]
+id = "N44"
+title = "John reads the independent reading of the three reruns and says whether experiment C stops at its registered stop"
+when = "now; the reading was filed 2026-10-09 as a review comment on draft pull request 166"
+owner = "John"
+cost = "$0"
+decision = true
+teaches = "Whether the degree experiment ends here. The reader found the separable model uses its built-in route (0.986) and the stirred-in and half-and-half models do not (0.000; 0.024 and 0.000), against a bar of 0.5, so in that reading the verification fails and C stops before the free-arm run, in the ruled words 'the built arms as designed are not references; the measure was not reached'. If he reads it so, the ending is written up as instrument research and pull request 166 goes to its check for merge; a redesign would need its own ruling."
+status = "pending"
+
+[[next_steps]]
+id = "N45"
+title = "John makes the six calls on the Gate A review of the two-sided question text"
+when = "now; both tiers filed 2026-10-09 in draft pull request 165, the calls in docs/reviews/2026-10-09-two-sided-question-gate-a-INDEX.md on that branch"
+owner = "John"
+cost = "$0; the review itself cost up to about $1.04 by API"
+decision = true
+teaches = "How the one fatal finding (the observer-side loss condition has no instrument) and seven serious ones are answered, so the text can be fixed, written into the spec, and its ledger rows written."
+status = "pending"
+
+[[next_steps]]
+id = "N46"
+title = "John reads the relabel of experiment A and answers questions 10 to 12 of the felt-features battery"
+when = "now; draft pull requests 163 (the relabel, which also takes two struck claims off the site) and 164 (the battery, version 4, checked)"
+owner = "John"
+cost = "$0"
+decision = true
+teaches = "The relabel puts the ruled label for experiment A on the site and in the paper draft's header; the three answers unblock the battery's method file and the measurement rehearsal of its first two entries."
+status = "pending"
+
+[[next_steps]]
+id = "N47"
+title = "John lands or closes the five check pull requests that were never merged (92, 104, 110, 111, 112)"
+when = "now; found 2026-10-09 while three stale ones (96, 101, 102) were closed as already on the main line"
+owner = "John"
+cost = "$0"
+decision = true
+teaches = "Nothing new. Pull request 92 is a status and site update of 2026-10-03; the other four are checks whose 14 review, method and script files the main line does not have, so citations to them do not resolve."
+status = "pending"
+
 # ---------------------------------------------------------------------------
 # Spend. Registered caps are protocol, not budget: exceeding one is a violation.
 # ---------------------------------------------------------------------------
 
 [spend]
-as_of = "2026-10-07"
-account_balance = 72.32
-account_note = "Updated 2026-10-07, corrected later the same day from the handoff for the registration draft: the balance read $72.3178 after the four 10-million development runs of 2026-10-04 (the $73.7742 first quoted was the reading just before the last machine; the runs cost about $1.47 together, under their $10 line); the programme stands at about $229.62 of $450. The rest of this note is as written on 2026-10-04. RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit John set; topped up in increments he chooses. The balance is the last one the compute ledger records being read from the account, after the second rented test run on 2026-09-25 ($75.8645). Before that it read $77.3451 on 2026-09-21, having fallen from $79.82 because the two follow-up runs of 2026-09-20 cost a measured $1.90 and the storage volume drips about a cent an hour whether or not anything is running. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
+as_of = "2026-10-09"
+account_balance = 69.89
+account_note = "Updated 2026-10-09: the balance fell from $71.2191 to $69.8935 across the three 10-million reruns of the repaired built models, a fall of $1.3256, of which $1.3032 is the reruns' rented machine time (1.0951 billed hours at $1.19) and about two cents the storage volume's standing charge. The programme stands at about $230.94 of $450. The rest of this note is as written on 2026-10-07. Updated 2026-10-07, corrected later the same day from the handoff for the registration draft: the balance read $72.3178 after the four 10-million development runs of 2026-10-04 (the $73.7742 first quoted was the reading just before the last machine; the runs cost about $1.47 together, under their $10 line); the programme stands at about $229.62 of $450. The rest of this note is as written on 2026-10-04. RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit John set; topped up in increments he chooses. The balance is the last one the compute ledger records being read from the account, after the second rented test run on 2026-09-25 ($75.8645). Before that it read $77.3451 on 2026-09-21, having fallen from $79.82 because the two follow-up runs of 2026-09-20 cost a measured $1.90 and the storage volume drips about a cent an hour whether or not anything is running. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
 idle_billing_lost = 10.30
 idle_billing_note = "Four occurrences of finished pods billing idle; the reason every launch now carries a terminate window and a watchdog."
 
@@ -1060,14 +1100,20 @@ note = "Updated 2026-10-03: plus the two attempts at the small rented test run o
 [[spend.lines]]
 name = "MVM-0a registered design envelope (Amendment A2)"
 cap = 450
-spent = 229.62
-note = "Updated 2026-10-03: plus about $0.55 for the two attempts at the small rented test run of 2026-09-25, so headroom is about $221.85. The successor's two releases are re-priced at $161.90 from the measured training speed, which would put the programme at $422 to $434. The rest of this note is as written on 2026-09-25, and its headroom figures are against the old $400 ceiling. Raised from $400 to $450 on 2026-09-25 by page 6 of the Weekend 1 queue ruling (docs/rulings/2026-09-26-weekend-1-queue.md), to hold the successor's base plan plus one extension; the compute ledger carries a dated ceiling note saying so. Before that, raised from $200 to $400 on 2026-08-16 at measured 5090-secure pricing. Includes the lost 30M pilot ($97) and the 30M re-run ($18.9). Two corrections got it here. The figure was $215.7 until 2026-09-21, when two ledger rows turned out to have been written without a programme running total, which had left out the run that tested whether the control question can be learned (about $9.90) and the recovery of its checkpoint ($0.07). It then read $225.7 until 2026-09-22, when the two follow-up reading runs of 2026-09-20 — described in several places as costing nothing — turned out to have moved the account balance from $79.7159 to $77.8119, a measured $1.90 that the ledger's own correction of 2026-09-21 already carries. Headroom is therefore $172.40, not $174.30, and that gap is worth stating: the two spending releases John staged on 2026-09-21 come to about $175, which is about $2.60 more than the programme has left rather than the seventy cents over that was reported at the time."
+spent = 230.94
+note = "Updated 2026-10-09: plus $1.3032 for the three 10-million reruns of the repaired built models, against the about $1.14 John approved, because the vendor's posted price was $1.19 an hour rather than the $0.99 of record; drawn from the first release's development line, which has about $7.23 left. The rest of this note is as written on 2026-10-03. Updated 2026-10-03: plus about $0.55 for the two attempts at the small rented test run of 2026-09-25, so headroom is about $221.85. The successor's two releases are re-priced at $161.90 from the measured training speed, which would put the programme at $422 to $434. The rest of this note is as written on 2026-09-25, and its headroom figures are against the old $400 ceiling. Raised from $400 to $450 on 2026-09-25 by page 6 of the Weekend 1 queue ruling (docs/rulings/2026-09-26-weekend-1-queue.md), to hold the successor's base plan plus one extension; the compute ledger carries a dated ceiling note saying so. Before that, raised from $200 to $400 on 2026-08-16 at measured 5090-secure pricing. Includes the lost 30M pilot ($97) and the 30M re-run ($18.9). Two corrections got it here. The figure was $215.7 until 2026-09-21, when two ledger rows turned out to have been written without a programme running total, which had left out the run that tested whether the control question can be learned (about $9.90) and the recovery of its checkpoint ($0.07). It then read $225.7 until 2026-09-22, when the two follow-up reading runs of 2026-09-20 — described in several places as costing nothing — turned out to have moved the account balance from $79.7159 to $77.8119, a measured $1.90 that the ledger's own correction of 2026-09-21 already carries. Headroom is therefore $172.40, not $174.30, and that gap is worth stating: the two spending releases John staged on 2026-09-21 come to about $175, which is about $2.60 more than the programme has left rather than the seventy cents over that was reported at the time."
 
 
 # ---------------------------------------------------------------------------
 # The story so far: one row per STATUS.md entry, newest first. kind:
 # result | null | ruling | process | spend | build
 # ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-10-09"
+kind = "result"
+title = "The successor experiment is registered; the three reruns ran, and an independent reading says experiment C stops at its registered stop, pending John's read"
+summary = "John had the registration commit made and merged it at 10:52 Pacific (pull request 162), inside kill date 1, accepting how the reviewer's eight findings were handled; version 5's sentences written before the commit are left unedited on purpose. On his go the three 10-million reruns of the repaired built models ran the same day for $1.3032, against about $1.14 approved, the vendor's price having moved from $0.99 to $1.19 an hour; the spending alarm held. A session that ran none of it read the result: the separable model uses its built-in route (0.986), the stirred-in and half-and-half models do not (0.000; 0.024 and 0.000), against a bar of 0.5. In that reading the verification fails and C stops before the free-arm run, in the ruled words 'the built arms as designed are not references; the measure was not reached'. John has not yet read it. Three drafts on the new question wait on him: the relabel of experiment A, version 4 of the felt-features battery, and the two-sided question text's Gate A review (one fatal finding, six calls)."
 
 [[timeline]]
 date = "2026-10-08"
