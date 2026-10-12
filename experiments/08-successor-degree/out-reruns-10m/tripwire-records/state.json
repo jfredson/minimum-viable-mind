@@ -1,0 +1,170 @@
+{
+ "machines": {
+  "ao52cuhyg8lpor": {
+   "created": 1791570856.930384,
+   "created_iso": "2026-10-09T18:34:16Z",
+   "estimate_hours": 0.5,
+   "gone": 1791572069.0,
+   "gone_by": "the watchdog",
+   "gone_inferred": false,
+   "gone_iso": "2026-10-09T18:54:29Z",
+   "last_seen": 1791571816.024307,
+   "out": "succ_c_10m_seed0_rerun",
+   "pod": "ao52cuhyg8lpor",
+   "rate": 1.19
+  },
+  "f08ds538z5ld7p": {
+   "created": 1791569983.0201652,
+   "created_iso": "2026-10-09T18:19:43Z",
+   "estimate_hours": 0.5,
+   "gone": 1791571187.0,
+   "gone_by": "the watchdog",
+   "gone_inferred": false,
+   "gone_iso": "2026-10-09T18:39:47Z",
+   "last_seen": 1791570912.164468,
+   "out": "succ_t_10m_seed0_rerun",
+   "pod": "f08ds538z5ld7p",
+   "rate": 1.19
+  },
+  "xp6pphlx9xo4rl": {
+   "created": 1791569404.526685,
+   "created_iso": "2026-10-09T18:10:04Z",
+   "estimate_hours": 0.5,
+   "gone": 1791570930.0,
+   "gone_by": "the watchdog",
+   "gone_inferred": false,
+   "gone_iso": "2026-10-09T18:35:30Z",
+   "last_seen": 1791570912.164468,
+   "out": "succ_m_10m_seed0_rerun",
+   "pod": "xp6pphlx9xo4rl",
+   "rate": 1.19
+  }
+ },
+ "readings": [
+  {
+   "balance": 71.2191446129,
+   "source": "preflight",
+   "t": 1791568687.025252
+  },
+  {
+   "balance": 71.2191446129,
+   "source": "preflight",
+   "t": 1791568744.870738
+  },
+  {
+   "balance": 71.2094223907,
+   "source": "preflight",
+   "t": 1791569073.957052
+  },
+  {
+   "balance": 71.2094223907,
+   "source": "preflight",
+   "t": 1791569403.6264918
+  },
+  {
+   "balance": 71.2094223907,
+   "source": "watch",
+   "t": 1791569405.600383
+  },
+  {
+   "balance": 71.1553870426,
+   "source": "preflight",
+   "t": 1791569651.530787
+  },
+  {
+   "balance": 71.1553870426,
+   "source": "watch",
+   "t": 1791569707.013999
+  },
+  {
+   "balance": 71.0569838667,
+   "source": "preflight",
+   "t": 1791569981.9730859
+  },
+  {
+   "balance": 71.0569838667,
+   "source": "watch",
+   "t": 1791570008.278858
+  },
+  {
+   "balance": 70.8976711093,
+   "source": "preflight",
+   "t": 1791570197.41722
+  },
+  {
+   "balance": 70.8976711093,
+   "source": "watch",
+   "t": 1791570309.5664
+  },
+  {
+   "balance": 70.6984245963,
+   "source": "preflight",
+   "t": 1791570526.8432078
+  },
+  {
+   "balance": 70.6984245963,
+   "source": "watch",
+   "t": 1791570610.84171
+  },
+  {
+   "balance": 70.4977930556,
+   "source": "preflight",
+   "t": 1791570856.0028312
+  },
+  {
+   "balance": 70.4977930556,
+   "source": "watch",
+   "t": 1791570912.164468
+  },
+  {
+   "balance": 70.2767854093,
+   "source": "watch",
+   "t": 1791571213.388118
+  },
+  {
+   "balance": 70.1368297473,
+   "source": "watch",
+   "t": 1791571514.533854
+  },
+  {
+   "balance": 70.0361847436,
+   "source": "watch",
+   "t": 1791571816.024307
+  },
+  {
+   "balance": 69.9365472732,
+   "source": "watch",
+   "t": 1791572117.1208131
+  },
+  {
+   "balance": 69.9032500815,
+   "source": "watch",
+   "t": 1791572418.0729542
+  },
+  {
+   "balance": 69.8935278593,
+   "source": "watch",
+   "t": 1791572719.274291
+  },
+  {
+   "balance": 69.8935278593,
+   "source": "watch",
+   "t": 1791573020.345418
+  },
+  {
+   "balance": 69.8935278593,
+   "source": "watch",
+   "t": 1791573321.7207239
+  },
+  {
+   "balance": 69.8935278593,
+   "source": "watch",
+   "t": 1791573623.074336
+  },
+  {
+   "balance": 69.8935278593,
+   "source": "watch",
+   "t": 1791573924.261152
+  }
+ ]
+}

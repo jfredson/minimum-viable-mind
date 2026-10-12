@@ -1,0 +1,6 @@
+[2026-10-09T18:34:16Z] machine-deadline: armed for machine ao52cuhyg8lpor (succ_c_10m_seed0_rerun): deletes at 2026-10-09T19:24:41Z,
+[2026-10-09T18:34:16Z] machine-deadline: 3025s after creation (hard cap $1.00 at $1.19 an hour)
+[2026-10-09T18:34:16Z] machine-deadline: stands down only on a confirmed deletion: /Users/john/Code/minimum-viable-mind/experiments/08-successor-degree/artifacts/succ_c_10m_seed0_rerun/machine_gone_ao52cuhyg8lpor naming ao52cuhyg8lpor, or the vendor saying it does not exist (asked every 300s)
+[2026-10-09T18:59:26Z] machine-deadline: the vendor says ao52cuhyg8lpor does not exist and a good machine list does not show it (check 1 of 2)
+[2026-10-09T18:59:56Z] machine-deadline: STANDING DOWN without deleting: ao52cuhyg8lpor is confirmed deleted (the watchdog's record: machine ao52cuhyg8lpor (succ_c_10m_seed0_rerun) deleted at 2026-10-09T18:54:29Z (1791572069), confirmed by the watchdog: the delete was accepted; two good machine lists 300s apart omit it).
+[2026-10-09T18:59:56Z] machine-deadline: no deadline line is written; the machine's life is in the watchdog's log and the vendor's bill.

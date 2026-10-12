@@ -1,0 +1,7 @@
+[2026-10-09T18:19:43Z] machine-deadline: armed for machine f08ds538z5ld7p (succ_t_10m_seed0_rerun): deletes at 2026-10-09T19:10:06Z,
+[2026-10-09T18:19:43Z] machine-deadline: 3025s after creation (hard cap $1.00 at $1.19 an hour)
+[2026-10-09T18:19:43Z] machine-deadline: stands down only on a confirmed deletion: /Users/john/Code/minimum-viable-mind/experiments/08-successor-degree/artifacts/succ_t_10m_seed0_rerun/machine_gone_f08ds538z5ld7p naming f08ds538z5ld7p, or the vendor saying it does not exist (asked every 300s)
+[2026-10-09T18:39:50Z] machine-deadline: the vendor says f08ds538z5ld7p does not exist and a good machine list does not show it (check 1 of 2)
+[2026-10-09T18:44:52Z] machine-deadline: the vendor says f08ds538z5ld7p does not exist and a good machine list does not show it (check 2 of 2)
+[2026-10-09T18:44:52Z] machine-deadline: STANDING DOWN without deleting: f08ds538z5ld7p is confirmed deleted (the vendor answered '{"error":"api error: {\"error\":\"pod not found\",\"status\":404}\n (status 404)"} Usage:   runpodctl pod get <pod-id> [flags]  Flags:   -h,' and a good machine list omitted it, 2 checks in a row).
+[2026-10-09T18:44:52Z] machine-deadline: no deadline line is written; the machine's life is in the watchdog's log and the vendor's bill.

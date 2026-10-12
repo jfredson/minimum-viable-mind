@@ -1,0 +1,35 @@
+[2026-10-09T18:12:54Z] watchdog up: pod=xp6pphlx9xo4rl out=succ_m_10m_seed0_rerun dest=/Users/john/Code/minimum-viable-mind/experiments/08-successor-degree/artifacts/succ_m_10m_seed0_rerun deadline=2026-10-10T18:09:35Z
+[2026-10-09T18:12:54Z] fix 1 active: checkpoint pulls are archive-based and checksum-verified
+[2026-10-09T18:12:54Z] fixes 3-6 active: finished-marker checked every 60s; files copied
+[2026-10-09T18:12:54Z] every 600s; on finishing, the copy is checked, then a receipt is
+[2026-10-09T18:12:54Z] written on the machine, then the machine is deleted — in that order.
+[2026-10-09T18:12:54Z] REAP: the machine's own agent (src/reap_agent.sh) holds it open until
+[2026-10-09T18:12:54Z] that receipt arrives, or a bounded wait runs out. Lid open is still the
+[2026-10-09T18:12:54Z] right habit — it is what keeps the wait short — but a shut lid now costs
+[2026-10-09T18:12:54Z] a bounded idle bill and a recovery note, not an unbounded one.
+Warning: Permanently added '[213.173.103.32]:42418' (ED25519) to the list of known hosts.
+Warning: Permanently added '[213.173.103.32]:42418' (ED25519) to the list of known hosts.
+[2026-10-09T18:13:04Z] poll 1: {"step": 6000, "loss": 0.6285, "tokens": 32256000, "lr": 0.0011929129502955137, "traj_own": 0.9, "traj_other": 0.6275, "skipped": 0, "sec": 79.0, "sec_per_step"
+Warning: Permanently added '[213.173.103.32]:42418' (ED25519) to the list of known hosts.
+Warning: Permanently added '[213.173.103.32]:42418' (ED25519) to the list of known hosts.
+[2026-10-09T18:23:36Z] poll 2: {"step": 56000, "loss": 0.4193, "tokens": 301056000, "lr": 0.0011248078302841624, "traj_own": 0.875, "traj_other": 0.625, "skipped": 0, "sec": 714.2, "sec_per_s
+Warning: Permanently added '[213.173.103.32]:42418' (ED25519) to the list of known hosts.
+Warning: Permanently added '[213.173.103.32]:42418' (ED25519) to the list of known hosts.
+[2026-10-09T18:34:09Z] poll 3: {"step": 104000, "loss": 0.5262, "tokens": 559104000, "lr": 1.2403199122235354e-05, "traj_own": 0.885, "traj_other": 0.6475, "skipped": 0, "sec": 1340.9, "sec_p
+[2026-10-09T18:35:12Z] finished-marker found — training complete
+[2026-10-09T18:35:12Z] final fetch of /workspace/mvm-out/succ_m_10m_seed0_rerun
+Warning: Permanently added '[213.173.103.32]:42418' (ED25519) to the list of known hosts.
+[2026-10-09T18:35:24Z] final fetch OK
+Warning: Permanently added '[213.173.103.32]:42418' (ED25519) to the list of known hosts.
+[2026-10-09T18:35:27Z] final checkpoint VERIFIED (md5 c4701f70e796)
+[2026-10-09T18:35:29Z] receipt written on the machine — it may delete itself now
+[2026-10-09T18:35:29Z] deleting pod xp6pphlx9xo4rl
+{
+  "deleted": true,
+  "id": "xp6pphlx9xo4rl"
+}
+[2026-10-09T18:35:41Z] pod gone; billing stopped
+  tripwire: xp6pphlx9xo4rl deleted at 2026-10-09T18:35:30Z by the watchdog
+[2026-10-09T18:35:42Z] a good machine list omits xp6pphlx9xo4rl; reading it again in 300s before writing the deletion record
+[2026-10-09T18:40:43Z] deletion record written: /Users/john/Code/minimum-viable-mind/experiments/08-successor-degree/artifacts/succ_m_10m_seed0_rerun/machine_gone_xp6pphlx9xo4rl (the delete was accepted; two good machine lists 300s apart omit it)
+[2026-10-09T18:40:43Z] run complete; artifacts in /Users/john/Code/minimum-viable-mind/experiments/08-successor-degree/artifacts/succ_m_10m_seed0_rerun
