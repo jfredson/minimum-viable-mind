@@ -1,0 +1,123 @@
+# Searches for the old battery clause, run 2026-10-06 on branch check-page1-closure (base 5a4b45b) and origin/main (865f108), origin/a2-decision-procedure (d776c70)
+
+## 1. version 4, every line with 'batter' (any case)
+$ grep -n -i batter docs/successor-experiment-proposal-2026-10-03-v4.md
+263:primary-battery accuracy on all three trained seeds.* Three things the
+436:query battery, landing at 0.2877, 0.3057 and 0.3195 against 0.3227 for a
+438:battery's own loss term reached 0.3125 and changed nothing
+1769:   the reading on exactly the arm the control battery exists to validate, and
+2223:- the ownership-free state and syntax batteries **must hold**.
+2270:| Ownership-lesion collapse threshold (whether arm F is read) | own-directed accuracy **below the learn-both bar** with the acting channel zeroed, **on at least two seeds of three, the third reported**; the named-ot
+
+## 2. the phrase of the clause, every tracked file on this branch (packet copies and review chunks excluded)
+$ git grep -n -i -I -E 'ownership-free (state and syntax )?batter|state and syntax batter|batteries must hold'
+STATUS.md:161:  syntax batteries must hold". Those are question sets from the closed Amendment
+STATUS.md:1152:ownership can reach. The ownership-free batteries do not move: the
+STATUS.md:1304:while the ownership-free batteries do not move. Under the registered
+data/project.toml:397:what = "Three 30M checkpoints trained from different seeds land within 0.011 of each other intact (0.563–0.574) and removing the one authorship signal collapses all three by se
+data/project.toml:528:what = "The inside registration review rebuilt the rule for choosing where to transplant from version 4's words alone, in code sharing nothing with the committed code. It matched
+docs/2026-10-04-gate-a-v4-dispositions-measurements-method.md:33:yours"), and ends: "the ownership-free state and syntax batteries must hold".
+docs/2026-10-06-page1-closure-check-method.md:23:ends with "the ownership-free batteries must hold", and the successor's task
+docs/control-clause-proposal-2026-09-19.md:330:breaks the ownership task, while two ownership-free batteries hold. The
+docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md:416:and the ownership-free batteries must hold. (ii) The proposal's shape as
+docs/rulings/2026-09-26-weekend-1-queue.md:66:  named-other clause is reported and not gated; the ownership-free batteries
+docs/rulings/2026-09-26-weekend-1-queue.md:69:  The successor's task has no batteries, so "the ownership-free batteries
+docs/rulings/2026-10-04-successor-v4-gate-a-dispositions-PROPOSAL.md:96:| C1 | `grep -n -i "batter" V4` (excluding the four other hits: three about the closed design's batteries and one, line 1769, ab
+docs/rulings/2026-10-04-successor-v4-gate-a-dispositions-PROPOSAL.md:97:| C2 | `grep -n "batteries" docs/rulings/2026-09-26-weekend-1-queue.md` | line 66: "...named-other clause is reported and not ga
+docs/rulings/2026-10-04-successor-v4-gate-a-dispositions-PROPOSAL.md:117:| RT-237 | tier 1 (the review) | The free model's channel-removal gate requires "the ownership-free state and syntax batteries"
+docs/rulings/2026-10-04-successor-v4-gate-a-dispositions-PROPOSAL.md:142:> - the ownership-free state and syntax batteries **must hold**.
+docs/rulings/2026-10-04-successor-v4-gate-a-dispositions-PROPOSAL.md:148:>   syntax batteries must hold", which was written for the closed design's
+docs/rulings/2026-10-04-successor-v4-gate-a-dispositions-PROPOSAL.md:181:(line 2270).** Replace "the ownership-free batteries must hold" with "with
+docs/rulings/2026-10-04-successor-v4-gate-a-questions-PROPOSAL.md:65:ownership-free batteries must hold". Those batteries were question sets at
+docs/rulings/2026-10-06-successor-v4-gate-a-rulings.md:58:ownership-free batteries must hold", but the successor's task has no
+docs/successor-experiment-proposal-2026-09-21.md:568:- the ownership-free state and syntax batteries hold.
+docs/successor-experiment-proposal-2026-09-26-v2.md:1048:- the ownership-free state and syntax batteries **must hold**.
+docs/successor-experiment-proposal-2026-09-26-v2.md:1078:| Ownership-lesion collapse threshold (whether arm F is read) | own-directed accuracy **below the learn-both bar** with the acting channel zero
+docs/successor-experiment-proposal-2026-09-26-v3.md:1598:- the ownership-free state and syntax batteries **must hold**.
+docs/successor-experiment-proposal-2026-09-26-v3.md:1637:| Ownership-lesion collapse threshold (whether arm F is read) | own-directed accuracy **below the learn-both bar** with the acting channel zero
+docs/successor-experiment-proposal-2026-10-03-v4.md:2223:- the ownership-free state and syntax batteries **must hold**.
+docs/successor-experiment-proposal-2026-10-03-v4.md:2270:| Ownership-lesion collapse threshold (whether arm F is read) | own-directed accuracy **below the learn-both bar** with the acting channel zero
+experiments/06-mvm-0a-constructed-self-index/SESSION-BRIEF-2026-09-16.md:121:0.182 while the ownership-free batteries do not move at all. Across 120
+experiments/06-mvm-0a-constructed-self-index/amendment-a3.md:101:>   while the ownership-free batteries hold at 0.999 and 1.000, and across
+experiments/06-mvm-0a-constructed-self-index/blind-arm-positive-control-proposal.md:33:ownership-free batteries do not move at all (1.000 to 0.999, and 1.000 to
+experiments/06-mvm-0a-constructed-self-index/blind-control-findings.md:98:from 0.506 to 0.182, while the ownership-free batteries hold at 0.999 and
+experiments/06-mvm-0a-constructed-self-index/compute-ledger.md:86:| 2026-09-15 | A3 Gate 2 (learnability pilot) | **IN FLIGHT — the first A3 run and the first A3 dollar.** One register-less 30M run,
+experiments/06-mvm-0a-constructed-self-index/control-learnability-pilot.md:98:**A consequence worth naming:** the state and syntax batteries drop from
+experiments/06-mvm-0a-constructed-self-index/gate1-curriculum-findings.md:219:every ownership-free battery is untouched in both. The separation is the
+experiments/06-mvm-0a-constructed-self-index/gate2-pilot-findings.md:62:primary battery from 0.506 to 0.182, while the ownership-free batteries
+experiments/06-mvm-0a-constructed-self-index/gate2-pilot-findings.md:209:   to 0.182 while the ownership-free batteries do not move.
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-20-control-learnability-claude-worktree.md:276:coupling, stated rather than buried" — the state and syntax batteries
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-20-control-learnability-claude-worktree.md:280:The state and syntax batteries finishing at 0.9960 and 1.0000 does not
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-chatgpt.md:19:| **A1** | **fatal** | The state and syntax batteries required by v4 §8.2 have no defined successor measurem
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-claude-code.md:40:syntax batteries must hold" (version 4, line 2223, frozen by line 2064 and the
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-claude-code.md:127:| RT-237 | **fatal** | MEASURED | 1, 3 | 2223, 2270, 2064; S8 at 2599 to 2609 | The free model's 
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-claude-code.md:181:| **"The ownership-free state and syntax batteries must hold"** (section 8.2) | **Cannot be measu
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-claude-code.md:193:state and syntax batteries **must hold**." The section 9 row (line 2270)
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-claude-code.md:221:  the lesion clause 'the ownership-free state and syntax batteries must hold': fields the gate fi
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-claude-code.md:232:ownership-free state and syntax batteries hold"), was ruled into the queue
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-claude-code.md:794:  the lesion clause 'the ownership-free state and syntax batteries must hold': fields the gate fi
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-dispositions-check-claude-code.md:136:  2249: syntax batteries must hold", which was written for the closed design's
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-dispositions-check-scripts/batter_search.out.txt:7:  2249: syntax batteries must hold", which was written for the cl
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-dispositions-check-scripts/batter_search.py:27:old1 = "- the ownership-free state and syntax batteries **must hold**
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-dispositions-check-scripts/batter_search.py:42:old3 = "the ownership-free batteries must hold"
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-scripts/failure_mode_pass.out.txt:66:  the lesion clause 'the ownership-free state and syntax batteries must hold': 
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gate-a-scripts/failure_mode_pass.py:83:print("  the lesion clause 'the ownership-free state and syntax batteries must hold'
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gemini.md:45:| G5 | Gate requires "ownership-free state and syntax batteries" which do not exist in the task. | Fatal |
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gemini.md:48:**G5: Non-existent batteries clause.** Version 4 Section 8.2 dictates that "the ownership-free state and synta
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gemini.md:70:The registration text, including the referenced file "2026-10-04-successor-v4-tier2-gemini.md", should not be 
+experiments/06-mvm-0a-constructed-self-index/reviews/2026-10-04-successor-v4-gemini.md:112:The registration text should not ship in its current state, entirely due to the fatal and serious findings al
+experiments/06-mvm-0a-constructed-self-index/src/blind_control_a3.py:28:0.506 to 0.182, while the ownership-free batteries do not move (1.000 to
+experiments/rehearsal-successor-measure/src/lesion_content_check.py:11:batteries must hold". The successor's task has no such batteries. This script
+
+## 3. version 4, the passages that state or cite the channel-removal rule
+$ grep -n -i -E 'ownership-lesion|lesion rule' docs/successor-experiment-proposal-2026-10-03-v4.md
+958:gate, the ownership-lesion check in section 8, and the fit floor of section
+2064:  learn-both bar on arm F, and the ownership-lesion rule with its two-of-three
+2133:15. the ownership-lesion result;
+2201:### 8.2 The ownership-lesion check, for arm F only
+2270:| Ownership-lesion collapse threshold (whether arm F is read) | own-directed accuracy **below the learn-both bar** with the acting channel zeroed, **on at least two seeds of three, the third repo
+3141:10. **The ownership-lesion check is a precondition for reading arm F, and is
+
+## 4. successor code: any battery, any lesion field, any candidate count
+$ git grep -n -i -E 'batter|lesion|candidate_own|ownership_free' HEAD -- experiments/08-successor-degree/src experiments/rehearsal-successor-measure/src/repairs.py
+HEAD:experiments/rehearsal-successor-measure/src/repairs.py:137:                    lesioned_own=les["own"], lesioned_other=les["other"])
+$ git grep -n -i -E 'batter|lesion|candidate_own|ownership_free' origin/main -- experiments/08-successor-degree/src experiments/rehearsal-successor-measure/src/repairs.py
+origin/main:experiments/08-successor-degree/src/launch_successor.sh:28:#     frozen batteries (the successor has none);
+origin/main:experiments/08-successor-degree/src/procedure.py:187:               lesioned_own_correct=l_own, lesioned_other_correct=l_oth,
+origin/main:experiments/08-successor-degree/src/procedure.py:792:            out.append(f"| {arm}/{s} | {verdict} |" + " |" * 12 + f" {r['gate']['lesioned_own_correct']} |")
+origin/main:experiments/08-successor-degree/src/procedure.py:811:            f"{'' if not rider else _deg(rider['reading']['degree'])} | {r['gate']['lesioned_own_correct']} |")
+origin/main:experiments/rehearsal-successor-measure/src/repairs.py:137:                    lesioned_own=les["own"], lesioned_other=les["other"])
+$ git grep -n -i -E 'batter|lesion|candidate_own|ownership_free' origin/a2-decision-procedure -- experiments/08-successor-degree/src experiments/rehearsal-successor-measure/src/repairs.py
+origin/a2-decision-procedure:experiments/08-successor-degree/src/launch_successor.sh:28:#     frozen batteries (the successor has none);
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:74:OWNERSHIP_FREE_LINE = 1546      # page 1 (RT-237); recomputed by ownership_free_line()
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:160:def ownership_free_line(n: int = GATE_EPISODES) -> int:
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:185:        lo = g.get("lesioned_own_correct")
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:186:        checks["channel-removal collapse"] = _flag(have and "lesioned_own_correct" in g,
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:188:        line = g.get("ownership_free_line", OWNERSHIP_FREE_LINE)
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:189:        cc = g.get("lesioned_candidate_own_correct")
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:190:        checks["ownership-free line"] = _flag("lesioned_candidate_own_correct" in g,
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:249:                           f"line {OWNERSHIP_FREE_LINE:,} of {GATE_EPISODES:,})"
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:475:          ownership_free_line(3000) == OWNERSHIP_FREE_LINE == 1546)
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:477:    G_ok = dict(bar=790, own_correct=2000, other_correct=2000, lesioned_own_correct=500,
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:478:                lesioned_candidate_own_correct=2000)
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:496:        ("arm F collapse failed", {"gate": dict(G_ok, lesioned_own_correct=800)}, "F", "did not collapse"),
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:497:        ("arm F ownership-free line failed", {"gate": dict(G_ok, lesioned_candidate_own_correct=1545)}, "F", "ownership-
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:498:        ("arm F ownership-free line never ran", {"gate": {k: v for k, v in G_ok.items() if k != "lesioned_candidate_own_
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:506:          withhold(dict(good, gate=dict(G_ok, lesioned_candidate_own_correct=1546)), "F")["status"] == "reading")
+origin/a2-decision-procedure:experiments/08-successor-degree/src/measure.py:508:          withhold(dict(good, gate={k: v for k, v in G_ok.items() if k != "lesioned_candidate_own_correct"}), "C")["stat
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:210:    line = MS.ownership_free_line(n)
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:212:        assert line == MS.OWNERSHIP_FREE_LINE
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:215:               lesioned_own_correct=l_own, lesioned_other_correct=l_oth,
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:217:               lesioned_candidate_own_correct=candidate_count(l_pred, data.gate_candidates, G.OWN),
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:218:               lesioned_candidate_other_correct=candidate_count(l_pred, data.gate_candidates, G.OTHER),
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:219:               ownership_free_line=line,
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:835:        lc = r["gate"].get("lesioned_candidate_own_correct", "not run")
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:839:                       + f" {r['gate']['lesioned_own_correct']} | {lc} |")
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:858:            f"{'' if not rider else _deg(rider['reading']['degree'])} | {r['gate']['lesioned_own_correct']} | {lc} |")
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:912:          {"lesioned_candidate_own_correct", "lesioned_candidate_other_correct", "ownership_free_line"} <= set(g)
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:913:          and g["ownership_free_line"] == MS.ownership_free_line(g["episodes"]),
+origin/a2-decision-procedure:experiments/08-successor-degree/src/procedure.py:914:          f"{g['lesioned_candidate_own_correct']} of {g['episodes']}, line {g['ownership_free_line']}")
+origin/a2-decision-procedure:experiments/rehearsal-successor-measure/src/repairs.py:137:                    lesioned_own=les["own"], lesioned_other=les["other"])
+
+## 5. any version 5 or registration draft of the successor, on any remote branch
+(no output above = none found)

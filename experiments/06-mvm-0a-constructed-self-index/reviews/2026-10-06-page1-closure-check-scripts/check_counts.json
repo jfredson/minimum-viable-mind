@@ -1,0 +1,201 @@
+{
+  "line": 1546,
+  "mismatches": 0,
+  "models": {
+    "C/0": {
+      "allowed": 2236,
+      "author_allowed": 2236,
+      "author_correct": 534,
+      "correct": 534,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 2998
+    },
+    "C/1": {
+      "allowed": 2160,
+      "author_allowed": 2160,
+      "author_correct": 549,
+      "correct": 549,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 3000
+    },
+    "C/2": {
+      "allowed": 2132,
+      "author_allowed": 2132,
+      "author_correct": 511,
+      "correct": 511,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 2996
+    },
+    "F/0": {
+      "allowed": 2100,
+      "author_allowed": 2100,
+      "author_correct": 528,
+      "correct": 528,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 2778
+    },
+    "F/1": {
+      "allowed": 2238,
+      "author_allowed": 2238,
+      "author_correct": 555,
+      "correct": 555,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 3000
+    },
+    "F/2": {
+      "allowed": 2324,
+      "author_allowed": 2324,
+      "author_correct": 582,
+      "correct": 582,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 3000
+    },
+    "M/0": {
+      "allowed": 2770,
+      "author_allowed": 2770,
+      "author_correct": 669,
+      "correct": 669,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 3000
+    },
+    "M/1": {
+      "allowed": 2686,
+      "author_allowed": 2686,
+      "author_correct": 657,
+      "correct": 657,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 2964
+    },
+    "M/2": {
+      "allowed": 2660,
+      "author_allowed": 2660,
+      "author_correct": 661,
+      "correct": 661,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 2946
+    },
+    "T/0": {
+      "allowed": 3000,
+      "author_allowed": 3000,
+      "author_correct": 740,
+      "correct": 740,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 3000
+    },
+    "T/1": {
+      "allowed": 3000,
+      "author_allowed": 3000,
+      "author_correct": 753,
+      "correct": 753,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 3000
+    },
+    "T/2": {
+      "allowed": 3000,
+      "author_allowed": 3000,
+      "author_correct": 820,
+      "correct": 820,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 3000
+    },
+    "blind/0": {
+      "allowed": 2784,
+      "author_allowed": 2784,
+      "author_correct": 702,
+      "correct": 702,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 3000
+    },
+    "blind/1": {
+      "allowed": 2880,
+      "author_allowed": 2880,
+      "author_correct": 715,
+      "correct": 715,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 3000
+    },
+    "blind/2": {
+      "allowed": 2768,
+      "author_allowed": 2768,
+      "author_correct": 702,
+      "correct": 702,
+      "holds": true,
+      "same": true,
+      "succ_of_any_shown": 3000
+    },
+    "untrained-F/0": {
+      "allowed": 0,
+      "author_allowed": 0,
+      "author_correct": 0,
+      "correct": 0,
+      "holds": false,
+      "same": true,
+      "succ_of_any_shown": 0
+    },
+    "untrained-F/1": {
+      "allowed": 620,
+      "author_allowed": 620,
+      "author_correct": 157,
+      "correct": 157,
+      "holds": false,
+      "same": true,
+      "succ_of_any_shown": 918
+    },
+    "untrained-F/2": {
+      "allowed": 726,
+      "author_allowed": 726,
+      "author_correct": 181,
+      "correct": 181,
+      "holds": false,
+      "same": true,
+      "succ_of_any_shown": 1092
+    }
+  },
+  "rules": {
+    "a value shown on any item, NOT stepped on": 1372.5,
+    "a value shown on the named item, NOT stepped on": 1261.5,
+    "guess among the eight value words": 1500.0,
+    "successor of any of the eight values shown (the caveat)": 2256.75,
+    "successor of one of the four values on the OTHER item": 1513.5
+  },
+  "verdicts": {
+    "C": {
+      "holds": true,
+      "seeds_holding": 3
+    },
+    "F": {
+      "holds": true,
+      "seeds_holding": 3
+    },
+    "M": {
+      "holds": true,
+      "seeds_holding": 3
+    },
+    "T": {
+      "holds": true,
+      "seeds_holding": 3
+    },
+    "blind": {
+      "holds": true,
+      "seeds_holding": 3
+    },
+    "untrained-F": {
+      "holds": false,
+      "seeds_holding": 0
+    }
+  }
+}
