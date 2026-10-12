@@ -12,7 +12,7 @@ built models ran (step 4b of the registered plan): arm T (the separable
 built model), arm C (the stirred-in built model) and arm M (the
 half-and-half built model), at $1.3032 against the about $1.14 approved.
 Their outputs and run record are in pull request 166 (the reruns' outputs
-and run record), which John merged on 2026-10-12 at 10:03 Pacific.
+and run record), merged by the overseer on John's word ("merge the ready ones") on 2026-10-12 at 10:03 Pacific.
 
 A session that ran none of it and wrote none of the registration read the
 outputs against version 5 of the registration text

@@ -41,7 +41,7 @@ own stop rule, not one of the eight outcome terms. The ruling, with version
 the second release (about $150 to $172) is never asked for. Experiment C
 spent about $1.47 on the development runs and $1.3032 on the reruns; the
 programme stands at about $230.94 of $450, unchanged since 2026-10-09.
-John merged pull request 166 (the reruns' outputs and run record) at 10:03
+Pull request 166 (the reruns' outputs and run record) was merged by the overseer on John's word ("merge the ready ones") at 10:03
 Pacific today, and pull request 163 (the relabel of experiment A) a minute
 later, so both are on the main line. Version 5 and every earlier ruling are
 left unedited.
