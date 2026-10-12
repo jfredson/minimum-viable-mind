@@ -1,0 +1,38 @@
+#!/bin/sh
+# STATUS.md and data/project.toml move together (added 2026-10-12, audit item 33).
+# When a commit adds a new "## WHERE THINGS STAND <date>" entry to STATUS.md, it must
+# also change data/project.toml, and that file's project.updated_on must be on or
+# after the new entry's date. The full list of what to update is in site/README.md.
+# Bypass for a deliberate exception: git commit --no-verify
+git diff --cached --name-only | grep -qx STATUS.md || exit 0
+command -v python3 >/dev/null 2>&1 || exit 0
+exec python3 - <<'PY'
+import re, subprocess, sys
+
+def show(spec):
+    r = subprocess.run(["git", "show", spec], capture_output=True, text=True)
+    return r.stdout if r.returncode == 0 else ""
+
+head = show("HEAD:STATUS.md") + show("HEAD:STATUS-archive.md")
+staged = show(":STATUS.md")
+heading = re.compile(r"^## WHERE THINGS STAND (\d{4}-\d{2}-\d{2}).*$", re.M)
+new = [m for m in heading.finditer(staged) if m.group(0) not in head]
+if not new:
+    sys.exit(0)
+newest = max(m.group(1) for m in new)
+changed = subprocess.run(["git", "diff", "--cached", "--name-only"], capture_output=True, text=True).stdout.split()
+toml = show(":data/project.toml")
+m = re.search(r'^updated_on\s*=\s*"(\d{4}-\d{2}-\d{2})"', toml, re.M)
+problems = []
+if "data/project.toml" not in changed:
+    problems.append("data/project.toml is not part of this commit")
+if not m or m.group(1) < newest:
+    problems.append(f"project.updated_on is {m.group(1) if m else 'missing'}, older than the new entry ({newest})")
+if problems:
+    print("pre-commit: this commit adds a WHERE THINGS STAND entry to STATUS.md, but", file=sys.stderr)
+    for p in problems:
+        print("  - " + p, file=sys.stderr)
+    print("Update data/project.toml as site/README.md describes, then run", file=sys.stderr)
+    print("  cd ~/Code/minimum-viable-mind && python3 scripts/export_site.py --check", file=sys.stderr)
+    sys.exit(1)
+PY

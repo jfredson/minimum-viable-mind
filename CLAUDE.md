@@ -36,15 +36,14 @@ Standalone git repo. Commit with clear messages describing what changed and why.
 `site/README.md`, decisions in `docs/site-plan-2026-09-20.md`). It renders
 `data/project.toml`, the structured twin of `STATUS.md`: goals, the stage
 ladder, the questions, the ideas on the table, findings, next steps, spend,
-and a timeline. **Any session that adds a "WHERE THINGS STAND" entry to
-STATUS.md also updates `data/project.toml` in the same commit**: bump
-`project.updated_on` and rewrite the two "where" paragraphs, add a
-`[[timeline]]` row at the top, add any `[[findings]]`, refresh `[[next_steps]]`
-and idea statuses, adjust stage progress and `[spend]`. Write it in plain
-language, per the workspace rule. Then validate, from the root of the checkout you edited (the
-script checks the copy it sits in):
+and a timeline. **A commit that adds a "WHERE THINGS STAND" entry to `STATUS.md`
+also updates `data/project.toml`** (what to change: `site/README.md`); the pre-commit
+hook in `.githooks/` enforces it (since 2026-10-12). Then validate:
 
-    python3 scripts/export_site.py --check
+    cd ~/Code/minimum-viable-mind && python3 scripts/export_site.py --check
+
+(In a worktree, `cd` to that checkout instead; the script checks the copy it sits in.)
+Older STATUS.md entries live in `STATUS-archive.md`; read only what you need.
 
 STATUS.md stays the record of record; where the two disagree, fix the data
 file. Deploying the site is a launch and stays behind John's gate.
