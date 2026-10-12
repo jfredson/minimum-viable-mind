@@ -362,12 +362,19 @@ Where none exists, the verification is still owed, as at least one decisive
 measured check on the text being registered.
 
 **Tier 2, the outside pass.** At least two models from labs other than
-Anthropic, run by John through their apps, exactly as the Belt Equation's
-step-27 protocol does it (`belt-equation/docs/reviews/protocol.md`). Same
-packet as tier 1 plus the tier 1 findings, so the outside reader can go
-looking elsewhere. All findings are ARGUED, since these models see documents
-and not a running checkout. Model, version, date and mode recorded at the top
-of every filed response; responses filed verbatim and never edited.
+Anthropic, sent the packet by API from a script: one message per model, no
+system prompt, no tools, no web access, the same way the 2026-10-07 poll was
+run (`docs/outside-perspective/2026-10-07-poll-method.md`), with the token
+counts and the price used recorded in the pass's covering note and the API
+spend in the worklog (ruled by John on 2026-10-12; before that date the
+packet was pasted by John into each model's app, exactly as the Belt
+Equation's step-27 protocol does it,
+`belt-equation/docs/reviews/protocol.md`, and the replies filed before then
+were gathered that way). Same packet as tier 1 plus the tier 1 findings, so
+the outside reader can go looking elsewhere. All findings are ARGUED, since
+these models see documents and not a running checkout. Model, version, date
+and mode recorded at the top of every filed response; responses filed
+verbatim and never edited.
 
 The tier 1 pass runs first. The tier 2 packet includes its findings. Neither
 tier's author writes the fix for its own finding's closure check (below).
@@ -752,3 +759,18 @@ What changed here:
 The four rules themselves are unchanged, and the check recommended adopting them.
 Nothing registered, no ledger row, no findings file and no review file was touched.
 No compute was launched and no money was spent.
+
+**2026-10-12, one wording change, ruled by John** (ruling 5 of his six Gate A
+rulings of 2026-10-12, posted as the last comment on pull request 165, the Gate A
+pass on the two-sided question text, in his words "all as recommended"; the
+recommendation was the overseer session's, so the authorship is mixed). Tier 2
+is now sent by API from a script rather than "run by John through their apps".
+The Gate A pass of 2026-10-09 ran it that way as a departure from this text and
+said so in its covering note
+(`docs/reviews/2026-10-09-two-sided-question-gate-a-INDEX.md`); the ruling makes
+that the standing method and does not re-run the packet in the apps. The tier 2
+paragraph above is the only paragraph changed. Decision 5 in the list of the
+seven original decisions, which names the two models "via the ChatGPT app" and
+"via its app", is left as written because it is a record of what was ruled on
+2026-09-19, not a plan. Nothing else changed: no gate, brief item, closure rule
+or filing path. Nothing was run or spent.
