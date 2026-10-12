@@ -1,0 +1,5 @@
+sum of learning rates over the run: 109.35
+decay alone multiplies a parameter by 0.3350
+sharpness 4.0 under decay alone would end at +1.340
+measured at the end (pull request 106): arm T +1.947, arm C -0.089, arm M -0.008
+parameter untouched without a gradient (arm F's case): +4.0000
