@@ -1,0 +1,66 @@
+{
+  "built": "2026-10-09T18:00:31Z",
+  "pins": {
+    "main": "d60ff2e",
+    "battery": "3eee588",
+    "tier1": "eb1682a"
+  },
+  "book_summary_sha256": "73881ae66e233b7ccf9037a9855614f6c003de473e15f16198666b7bf2847ecb",
+  "packet": {
+    "path": "docs/reviews/packets/2026-10-09-two-sided-question-gate-a-tier2-packet.md",
+    "sha256_gemini_version": "39e7c4a23309c28f85f40832d7b87efc2ad7e22a914af84f4d25f0d24e17f712",
+    "sha256_gpt_version": "3598235869d7fd6c088b626eaff554a9e29301bc7c31777907c5750b39ac9268",
+    "words": 29871,
+    "characters": 185787,
+    "estimated_tokens": 50213
+  },
+  "max_output_tokens": 12000,
+  "price_per_million_assumed": {
+    "gemini": [
+      2.0,
+      12.0
+    ],
+    "openai": [
+      10.0,
+      40.0
+    ]
+  },
+  "runs": {
+    "gemini": {
+      "model": "gemini-3.1-pro-preview",
+      "provider_version": "3.1-pro-preview-01-2026",
+      "started": "2026-10-09T18:00:42Z",
+      "finished": "2026-10-09T18:01:31Z",
+      "usage": {
+        "input_tokens": 45014,
+        "output_tokens": 1345,
+        "thinking_tokens": 4131
+      },
+      "billed_output_tokens": 5476,
+      "estimated_cost_usd": 0.1557,
+      "message_sha256": "39e7c4a23309c28f85f40832d7b87efc2ad7e22a914af84f4d25f0d24e17f712",
+      "saved": "docs/reviews/2026-10-09-two-sided-question-gate-a-gemini.md"
+    },
+    "openai": {
+      "model": "gpt-6-astra",
+      "provider_version": 1787853604,
+      "started": "2026-10-09T18:01:44Z",
+      "finished": "2026-10-09T18:06:16Z",
+      "usage": {
+        "input_tokens": 42780,
+        "output_tokens": 11393,
+        "reasoning_tokens": 6214,
+        "status": "completed",
+        "response_id": "resp_0240bab56b859211006ac92c09a1b087d08b48096d183f82a5"
+      },
+      "billed_output_tokens": 11393,
+      "estimated_cost_usd": 0.8835,
+      "message_sha256": "3598235869d7fd6c088b626eaff554a9e29301bc7c31777907c5750b39ac9268",
+      "saved": "docs/reviews/2026-10-09-two-sided-question-gate-a-gpt.md"
+    }
+  },
+  "estimated_cost_upper_usd": {
+    "gemini": 0.244,
+    "openai": 0.982
+  }
+}
