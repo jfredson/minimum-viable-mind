@@ -14,11 +14,11 @@
 [project]
 name = "Minimum Viable Mind"
 short = "MVM"
-updated_on = "2026-10-09"
+updated_on = "2026-10-12"
 question = "Two sides, ruled 2026-10-07 (spec text pending Gate A): what is the smallest system whose presence in interaction cannot be produced by a cheaper route (lookup, imitation of a corpus about minds, routing of who is speaking), and at what point do observers' detections of presence begin to track that structure rather than fluency? The earlier question, whether the smallest self-centred act of integration (the floor) is present in a system, stays in the spec as the founding wager and stops being a measurement target."
 one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
-where_we_are = "The degree experiment (experiment C) was registered on 2026-10-09: John had the registration commit made, accepted how the reviewer's eight findings were handled, and merged it at 10:52 Pacific, inside kill date 1 (2026-10-18). Version 5's sentences written before the commit are left unedited on purpose; the status line governs. The same day, on his go, the three 10-million reruns of the repaired built models ran on rented machines and came home, costing $1.3032 against the about $1.14 approved, because the vendor's price had moved from $0.99 to $1.19 an hour; the spending alarm met real billing for the first time and held. A session that ran none of it read the result against the registered bar: the hand-set separable model uses its built-in route (0.986), but the stirred-in model reads 0.000 and the half-and-half model 0.024 and 0.000, against a bar of 0.5. In that reading the verification fails and experiment C stops at its registered stop for a failed verification, in the ruled words 'the built arms as designed are not references; the measure was not reached'. That is the independent reading; John has not yet read it, and C is not stopped until he does. On the new question, three drafts wait on him: the relabel of experiment A, version 4 of the table of felt features (checked, his questions 10 to 12 open), and the two-sided question text's Gate A review, which found one fatal flaw and leaves him six calls. Five older check pull requests were never merged and wait on him to land or close. About $230.94 of the $450 ceiling is spent."
-where_we_are_going = "Two things run side by side to the end of the year. The first is the degree experiment (experiment C), registered on 2026-10-09. Its repaired built models were rerun the same day, and an independent reading says they fail the verification, which under the registration stops C before the free-arm run at full size and leaves the rest of the first release and the whole second release unspent. If John reads it the same way, C's ending is written up as instrument research, a registered outcome and not a schedule failure; a redesign in which the built route is the only route would need its own ruling. The second is the new question, in task order with no step on a date: the two-sided-question text and the table of felt features through Gate A; the battery's first two entries on experiment D's pipeline by API, about $20 together, as reference readings of what the cheaper routes produce; then the construction line, small systems whose positions on the axes are set from outside, which needs a state-carrying mechanism neither toy pipeline has, and is where every test that can discriminate lives; last, and designed before it is run, the human study that calibrates the detector. By 2026-12-21, realistically: C run to a registered outcome, the new question in the spec, the table and the first two battery entries registered and run, the relabelling of experiment A in the paper draft, and the packet of three changes sent to the book. Not this year: a degree reading of a free model, a discriminating depth reading, or an observer-side measurement. Loss conditions are written for every new line. Claims are whatever the registered results support: a position on the axes, the route named, the degree measured, never a verdict. Never a conscious machine."
+where_we_are = "The degree experiment (experiment C) stopped on 2026-10-12 at its registered stop for a failed verification of the built models (stop S4b), on John's ruling, in his words 'accept the stop'. It was registered on 2026-10-09, and the same day, on his go, the three 10-million reruns of the repaired built models ran for $1.3032 against the about $1.14 approved, the vendor's price having moved from $0.99 to $1.19 an hour. A session that ran none of it read the result against the registered bar of 0.5: the hand-set separable model uses its built-in route (0.986), but the stirred-in model reads 0.000 and the half-and-half model 0.024 and 0.000. John accepted that reading, so C stops before the free-arm run at full size and the rest of the first release is not spent; the ending is reported in the ruled words 'the built arms as designed are not references; the measure was not reached', a registered ending and not a failure of the year (docs/rulings/2026-10-12-experiment-c-stop-ruling.md). Not decided: whether C continues in a new form, with the arms rebuilt so the built route is the only route, which would need its own ruling; and why the half-and-half model's separable half reads 0.000 where the toy models read 1.000. The reruns' outputs and the relabel of experiment A were merged by the overseer on John's word ('merge the ready ones') on 2026-10-12. On the new question, two drafts wait on him: version 4 of the table of felt features (checked, his questions 10 to 12 open) and the two-sided question text's Gate A review, which found one fatal flaw and leaves him six calls. Five older check pull requests were never merged and wait on him to land or close. About $230.94 of the $450 ceiling is spent."
+where_we_are_going = "The degree experiment (experiment C) has ended at its registered stop: on 2026-10-12 John accepted the reading that its repaired built models fail the verification, so the free-arm run at full size, the rest of the first release and the whole second release are not spent. A new form of C, with the arms rebuilt so the built route is the only route, would need its own ruling and is not started. The work to the end of the year is the new question, in task order with no step on a date: the two-sided-question text and the table of felt features through Gate A; the battery's first two entries on experiment D's pipeline by API, about $20 together, as reference readings of what the cheaper routes produce; then the construction line, small systems whose positions on the axes are set from outside, which needs a state-carrying mechanism neither toy pipeline has, and is where every test that can discriminate lives; last, and designed before it is run, the human study that calibrates the detector. By 2026-12-21, realistically: C written up at its registered ending, the new question in the spec, the table and the first two battery entries registered and run, the relabelling of experiment A in the paper draft, and the packet of three changes sent to the book. Not this year: a degree reading of a free model, a discriminating depth reading, or an observer-side measurement. Loss conditions are written for every new line. Claims are whatever the registered results support: a position on the axes, the route named, the degree measured, never a verdict. Never a conscious machine."
 hibernation_by = "2027-01-04"
 wrap_up_start = "2026-12-21"
 pipeline_resumes = "2027-01-04"
@@ -64,7 +64,7 @@ id = "G3"
 title = "Build what is missing and re-measure"
 status = "in-progress"
 summary = "Construct small systems whose structure is known, because that is the only place a reading can discriminate: two systems built alike except for one route, read on the same indicator. MVM-0a, the constructed self-index, was the first step. The degree experiment (C) is the second: built models at both ends of a scale and a free model read between them. The construction line of the two-sided question is the third: systems whose positions on the axes are set from outside, the smallest of which that passes the battery is the minimum viable mind, within its construction family."
-evidence = "MVM-0a exists as three 30-million-parameter checkpoints; the ownership input is load-bearing on three seeds, and Amendment A3 closed 2026-09-20 as not testable because its matched contrast could never be run. The degree experiment's code is frozen and reproduces the toy record; at 10 million parameters two of three built models switched their built-in route off, so a $1.14 repair was written into the registration, registered on 2026-10-09. The repaired models were rerun that day ($1.3032); an independent reading says two of the three still do not use the built-in route, so the verification fails and C stops before any full-size run, pending John's read. The construction line needs a state-carrying mechanism neither pipeline has; nothing of it exists yet beyond the battery draft's entries 3 to 8."
+evidence = "MVM-0a exists as three 30-million-parameter checkpoints; the ownership input is load-bearing on three seeds, and Amendment A3 closed 2026-09-20 as not testable because its matched contrast could never be run. The degree experiment's code is frozen and reproduces the toy record; at 10 million parameters two of three built models switched their built-in route off, so a $1.14 repair was written into the registration, registered on 2026-10-09. The repaired models were rerun that day ($1.3032); two of the three still do not use the built-in route, so the verification failed, and on 2026-10-12 John accepted the stop: C ends at its registered stop before any full-size run. The construction line needs a state-carrying mechanism neither pipeline has; nothing of it exists yet beyond the battery draft's entries 3 to 8."
 
 # ---------------------------------------------------------------------------
 # The stage ladder (experiments/README.md, statuses from ROADMAP.md and STATUS.md).
@@ -97,8 +97,8 @@ name = "The shape of binding"
 status = "in-progress"
 progress = 30
 one_line = "Whether within-pass integration has the shape of global mutual constraint, rather than a bundle of modular shortcuts that never compose into one act. Since 2026-09-20 this is the program's open question: the degree axis on which a load-bearing self-pointer sits above zero."
-delivered = ["Scoped deliberately small on 2026-07-01: deliver the metric, not a verdict", "2026-09-20: a candidate metric named (decomposability: accuracy lost when only the pointer is patched rather than the joint state) and the successor experiment that validates it brought forward to 2026, per the December-result roadmap", "2026-10-09: the successor experiment registered (version 5 at the frozen code 6c47c56, pull request 162, merged by John at 10:52 Pacific), and the three 10-million reruns of the repaired built models run the same day ($1.3032; outputs in draft pull request 166)"]
-remaining = ["John reads the independent reading of the three reruns: the separable model uses its built-in route (0.986), the stirred-in model reads 0.000 and the half-and-half model 0.024 and 0.000, against a bar of 0.5, so in that reading the verification fails and experiment C stops at its registered stop for a failed verification. Not stopped until he has read it", "If it stops: the ending written up as instrument research, in the ruled words 'the built arms as designed are not references; the measure was not reached'; the free-arm run at full size (about $12) and the second release (about $150 to $172) are not spent. A redesign in which the built route is the only route would need its own ruling", "Pull request 166, the reruns' outputs and run record, checked for merge once John has read it"]
+delivered = ["Scoped deliberately small on 2026-07-01: deliver the metric, not a verdict", "2026-09-20: a candidate metric named (decomposability: accuracy lost when only the pointer is patched rather than the joint state) and the successor experiment that validates it brought forward to 2026, per the December-result roadmap", "2026-10-09: the successor experiment registered (version 5 at the frozen code 6c47c56, pull request 162, merged by John at 10:52 Pacific), and the three 10-million reruns of the repaired built models run the same day ($1.3032; outputs in pull request 166, merged 2026-10-12)", "2026-10-12: experiment C stopped at its registered stop for a failed verification (S4b), on John's ruling ('accept the stop'): the stirred-in and half-and-half models do not use their built-in route (0.000; 0.024 and 0.000, against a bar of 0.5). Reported as 'the built arms as designed are not references; the measure was not reached', a registered ending; the free-arm run and the second release are not spent"]
+remaining = ["Whether experiment C continues in a new form: rebuilding the stirred-in and half-and-half models so the built route is the only route needs its own toy retrain, check and ruling; nothing is started", "Unexplained, and not bearing on the stop: the half-and-half model's separable half reads 0.000 where the toy models read 1.000", "The degree axis itself stays the open question; this experiment did not reach a measure of it"]
 adjudicates = "Global Workspace theory, read as a specification."
 
 [[stages]]
@@ -354,6 +354,16 @@ stage = "6"
 # What we have learned. Registered or ruled-for-the-record results only, plus
 # the process lessons that changed how the work runs.
 # ---------------------------------------------------------------------------
+
+[[findings]]
+id = "F26"
+date = "2026-10-12"
+title = "At 10 million parameters, the repaired stirred-in and half-and-half models still do not use their built-in route, so experiment C stopped at its registered stop"
+what = "The three reruns of 2026-10-09, read against the registered bar of 0.5 for route use (the share of right answers about the model's own turn lost when the built-in 'which agent am I' answer is swapped): the separable model 0.986 (2,918 of 2,959), the stirred-in model 0.000 (0 of 3,000), the half-and-half model 0.024 on its stirred-in items (33 of 1,387) and 0.000 on its separable items (0 of 1,190). All three put 0.999 weight on the true agent and passed their gate on learning, so they do the task without the built-in answer. A session that ran none of it re-ran the frozen gate step at $0 and reproduced every field."
+so_what = "Under the registration the verification fails, and John accepted the stop on 2026-10-12 ('accept the stop'): the built arms as designed are not references; the measure was not reached. The registration had predicted it. A new form of the experiment, with the arms rebuilt so the built route is the only route, would need its own ruling. Why the half-and-half model's separable half reads 0.000 where the toy models read 1.000 is unexplained."
+source = "docs/rulings/2026-10-12-experiment-c-stop-ruling.md"
+stage = "2"
+kind = "registered"
 
 [[findings]]
 id = "F25"
@@ -863,7 +873,7 @@ status = "pending"
 [[next_steps]]
 id = "N26"
 title = "The registration of the degree experiment with the repair written in: the repaired models verified with a stop on failure, the second release conditional on the first, outcomes renamed, every earlier fix included; checked by another session"
-when = "folded into N41 on 2026-10-08; registered 2026-10-09. The three reruns of the repaired models ran the same day ($1.3032, draft pull request 166), and an independent reading says the verification fails, which stops C at its registered stop; pending John's read (N44)"
+when = "folded into N41 on 2026-10-08; registered 2026-10-09. The three reruns of the repaired models ran the same day ($1.3032, pull request 166), the verification failed, and on 2026-10-12 John accepted the stop at S4b (N44)"
 owner = "Claude Code session; a second checks; John rules the open items and commits"
 cost = "$0 to write; the first release's remaining spend to run"
 decision = false
@@ -1043,12 +1053,12 @@ status = "done"
 [[next_steps]]
 id = "N44"
 title = "John reads the independent reading of the three reruns and says whether experiment C stops at its registered stop"
-when = "now; the reading was filed 2026-10-09 as a review comment on draft pull request 166"
+when = "done 2026-10-12: John ruled 'accept the stop' (docs/rulings/2026-10-12-experiment-c-stop-ruling.md); pull request 166 merged the same day"
 owner = "John"
 cost = "$0"
 decision = true
 teaches = "Whether the degree experiment ends here. The reader found the separable model uses its built-in route (0.986) and the stirred-in and half-and-half models do not (0.000; 0.024 and 0.000), against a bar of 0.5, so in that reading the verification fails and C stops before the free-arm run, in the ruled words 'the built arms as designed are not references; the measure was not reached'. If he reads it so, the ending is written up as instrument research and pull request 166 goes to its check for merge; a redesign would need its own ruling."
-status = "pending"
+status = "done"
 
 [[next_steps]]
 id = "N45"
@@ -1063,7 +1073,7 @@ status = "pending"
 [[next_steps]]
 id = "N46"
 title = "John reads the relabel of experiment A and answers questions 10 to 12 of the felt-features battery"
-when = "now; draft pull requests 163 (the relabel, which also takes two struck claims off the site) and 164 (the battery, version 4, checked)"
+when = "the relabel, pull request 163, merged by the overseer on John's word ('merge the ready ones') on 2026-10-12; questions 10 to 12 remain, in draft pull request 164 (the battery, version 4, checked)"
 owner = "John"
 cost = "$0"
 decision = true
@@ -1078,6 +1088,16 @@ owner = "John"
 cost = "$0"
 decision = true
 teaches = "Nothing new. Pull request 92 is a status and site update of 2026-10-03; the other four are checks whose 14 review, method and script files the main line does not have, so citations to them do not resolve."
+status = "pending"
+
+[[next_steps]]
+id = "N48"
+title = "John says, only if he wants one, whether experiment C continues in a new form"
+when = "open since 2026-10-12, when C stopped at its registered stop S4b; nothing is started"
+owner = "John"
+cost = "$0 to decide; a new form needs its own toy retrain and check before anything is rented"
+decision = true
+teaches = "Whether the degree experiment is redesigned so the stirred-in and half-and-half models have the built route as their only route (option (d) of the verification-bar ruling), which would need its own ruling, or stays ended at its registered stop."
 status = "pending"
 
 # ---------------------------------------------------------------------------
@@ -1108,6 +1128,12 @@ note = "Updated 2026-10-09: plus $1.3032 for the three 10-million reruns of the 
 # The story so far: one row per STATUS.md entry, newest first. kind:
 # result | null | ruling | process | spend | build
 # ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-10-12"
+kind = "ruling"
+title = "Experiment C stopped at its registered stop S4b, on John's ruling"
+summary = "John ruled 'accept the stop', accepting the independent reading of the three 10-million reruns: route use 0.986 on the separable model, 0.000 on the stirred-in model, 0.024 and 0.000 on the half-and-half model, against a bar of 0.5. Under the registration, experiment C stops before the free-arm run at full size and the rest of the first release is not spent, reported as 'the built arms as designed are not references; the measure was not reached'. Not decided: whether C continues in a new form, and why the half-and-half model's separable half reads 0.000. The reruns' outputs (pull request 166) and the relabel of experiment A (pull request 163) were merged by the overseer on John's word ('merge the ready ones')."
 
 [[timeline]]
 date = "2026-10-09"

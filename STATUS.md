@@ -14,6 +14,69 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-10-12 — experiment C stopped at its registered stop S4b, on John's ruling
+
+*Written 2026-10-12 (Monday, Pacific, the last day of the four-day weekend)
+by a helper session of the weekend overseer. Records only: this session ran
+nothing and spent nothing. On the branch
+`ruling-2026-10-12-experiment-c-stop`.*
+
+**John ruled: "accept the stop".** He was accepting the independent reading
+of the three 10-million reruns, posted as a comment on pull request 166 (the
+reruns' outputs and run record). Route use against the bar of 0.5: arm T
+(the separable built model) 0.986, arm C (the stirred-in built model) 0.000,
+arm M (the half-and-half built model) 0.024 on its stirred-in items and
+0.000 on its separable items. So, under version 5, section 5.6 and section
+11's stop S4b (the stop for a failed verification of the built models),
+experiment C stops before the free-arm run at registered size, and the rest
+of the first release is not spent. The ending is reported in the ruled
+words: **"the built arms as designed are not references; the measure was
+not reached."** It is a registered ending of experiment C, reached by its
+own stop rule, not one of the eight outcome terms. The ruling, with version
+5's sentences quoted exactly, is
+`docs/rulings/2026-10-12-experiment-c-stop-ruling.md` (authorship john).
+**The 2026-10-09 evening entry's "pending John's read" is now settled.**
+
+**What follows from it.** The free-arm run (about $12) does not launch, and
+the second release (about $150 to $172) is never asked for. Experiment C
+spent about $1.47 on the development runs and $1.3032 on the reruns; the
+programme stands at about $230.94 of $450, unchanged since 2026-10-09.
+Pull request 166 (the reruns' outputs and run record) was merged by the overseer on John's word ("merge the ready ones") at 10:03
+Pacific today, and pull request 163 (the relabel of experiment A) a minute
+later, so both are on the main line. Version 5 and every earlier ruling are
+left unedited.
+
+**Not decided.** Whether experiment C continues in a new form: rebuilding
+arms C and M so the built route is the only route (option (d) of the
+verification-bar ruling) changes what the arms are and needs its own toy
+retrain, check and ruling. Nothing is started. And arm M's separable half
+reads 0.000 where the toy models read 1.000 (arm T's separable slot reads
+0.986 in the same reruns); the registration says nothing about it, it does
+not change the miss, and it stays unexplained.
+
+**The site data.** `data/project.toml` and `data/roadmap.toml` change in
+this commit: experiment C is recorded as stopped at S4b on John's ruling,
+not pending; a finding and a timeline row are added; the step that asked
+him to read the reruns is done and a new one asks whether C continues in a
+new form; the reruns' verification goal (W3.3) is done and the free-arm
+branch goal (W3.4) is not needed.
+
+**What stays open for John, each with what it unblocks.**
+
+1. Make the six calls in pull request 165's index
+   (`docs/reviews/2026-10-09-two-sided-question-gate-a-INDEX.md`, Gate A on
+   the two-sided question text). That unblocks fixing the text, writing it
+   into the spec, and writing its ledger rows.
+2. Answer questions 10 to 12 in pull request 164 (the felt-features battery,
+   version 4). That unblocks the method file, then the measurement
+   rehearsal of the battery's first two entries (about $20 when run), then
+   Gate A on the battery.
+3. Land or close the five never-merged check pull requests: 92, 104, 110,
+   111 and 112 (named in the 2026-10-09 evening entry). Landing the last
+   four puts their 14 files on the main line so citations to them resolve.
+4. Say, only if he wants one, whether experiment C continues in a new form.
+   Until then it stays stopped.
+
 ## WHERE THINGS STAND 2026-10-09 (evening) — the successor experiment is registered; the three reruns ran, and an independent reading says the verification fails and experiment C stops at its registered stop, pending John's read
 
 *Written 2026-10-09 (Friday evening, Pacific, the first day of the four-day
