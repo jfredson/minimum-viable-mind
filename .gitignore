@@ -39,3 +39,6 @@ experiments/**/checkpoints/
 # is why the control pilot's log was missing from the repository for a day
 # (red-team ledger row RT-56, the missing training log). Records win.
 !experiments/**/a3-gates/*.log
+
+# Outputs moved out of removed worktrees (2026-10-12). Kept on disk only.
+experiments/archive/
