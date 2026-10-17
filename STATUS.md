@@ -107,8 +107,10 @@ repository (`proposal-mvm-poll-three-book-changes-2026-10-17.md`), with
 offered wording under each and John ratifying, amending or declining item
 by item there. Nothing in any chapter is edited.
 
-**What is running as sessions, each by a session that did not write what
-it touches (the pairing rule).** John started all three in the afternoon:
+**What ran as sessions, each by a session that did not write what it
+touches (the pairing rule).** John started all three in the afternoon and
+all three landed as pull requests the same evening, unmerged, each owed a
+check by a session that did not write it (proposed the same evening):
 
 1. The ledger rows from RT-283 on (tier 1, plus the tier 2 findings ruling
    6 gives numbers to), carrying the six rulings and the three closure
@@ -129,11 +131,42 @@ it touches (the pairing rule).** John started all three in the afternoon:
    note drafted for the two jobs the shortlist names, addressed to no one
    until John names the reader.
 
+What they produced. **Pull request 173**: 22 ledger rows (RT-283 to
+RT-304, fourteen tier 2 duplicates recorded with reasons) carrying the six
+rulings and the three closure lines (RT-289 and RT-284 checked and closed;
+RT-283 open for John on the one hit), and section 2 version 3 written into
+the spec with SHA-256 `3d0baaca…6df119`, matching the closure checks
+exactly; two layout tidies and the section's heading level ("###" where the
+spec uses "##") are John's one-character calls. **Pull request 174**: the
+method file for the rehearsal of entries 1 and 2, the version 1.2 rubric
+addendum in its own file (experiment D's registered rubric pinned by
+checksum and never opened for writing), a runner that is dry-run by default
+and gated for the real run, and the dry run's output; nothing ran against a
+model. New for John: costed from token counts and list prices rather than
+by scaling experiment D's spend, the two entries come to **about $19 if
+Gemini bills no thinking tokens and about $38 if it bills about 1,500 a
+call**, against the draft's about $20; his go on the day is on that
+bracket, or on the $10-per-entry ceilings with a likely stop partway.
+**Pull request 175**: `explainer.md` refreshed (about 2,900 words of prose,
+over the brief's 2,500, with the cut named in the Cold Reader report);
+paper draft version 0.3 with results sections for experiment 06 with
+Amendment A3 and for experiment C at its registered stop, the nulls and
+kills and two tables each, Methods and abstract sentences, the founding
+wager's adoption date disclosed; the three places John reserved on
+2026-10-09 untouched with proposed wording in a dated note, and one
+Discussion paragraph ("The constructive turn") replaced because its fact
+was no longer true, its old text kept in the note; the Voice Calibration
+and Cold Reader records filed as self-passes, which say so; the
+outside-reader approach note in two versions, addressed to no one.
+Flagged: the paper mixes American spelling (version 0.2) with British (the
+new sections and the records they quote), and one half has to move before
+the draft leaves the repository.
+
 **What still stands between the record and the preprint**, in order:
-the ledger rows and the spec commit,
-checked; the battery's method file, checked, then his go and the rehearsal
-run (about $20) and its Gate A, both tiers; the paper fold through both
-writing passes, then his three reserved sentences; the outside reader
+the checks of pull requests 173, 174 and 175 and their merges; John's
+ruling on RT-283's one hit; his go on the rehearsal's bracket (about $19
+to $38) and the run, then its Gate A, both tiers; his three reserved
+sentences in the paper and the spelling choice; the outside reader
 named and sent the packet, and the red-team read answered; the Sentient
 Horizons essay's hold lifted (a separate call); then the public release
 (the repository opened with its registrations and ledger, the preprint,
