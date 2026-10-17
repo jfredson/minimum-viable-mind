@@ -411,7 +411,8 @@ on the seed-0 model, 2.8 × 10⁻⁸ on seed 1 and 5.9 × 10⁻⁸ on seed 2
 configuration does not behave this way, so the constancy was trained in.
 Removing the register's injection entirely left every battery at or above
 0.99 except T_si, which went 0.93 to 0.94 on the registered evaluation seed
-(`register-lesion-findings.md`, thread 4 table), and the register-less twin
+(`amendment-a3.md`, section 1, quoting `register-lesion-findings.md`,
+thread 4), and the register-less twin
 passed the same batteries at ceiling (T_si 0.96, T_sr_rev 1.00;
 `twin-binding-anomaly.md`). The registered five-seed run was halted at four
 of nine launches on the pre-stated trigger in that file (`amendment-a3.md`,
@@ -508,7 +509,10 @@ is robustness, not a dead instrument (`gate0-null-calibration-findings.md`).
 K0 was applied by John at 0.25, scoped to checkpoints where a verdict is
 read, and did not fire; the one checkpoint exceeding 0.25 (0.379) was a
 near-chance non-binder. The number was set after the measurement was seen,
-which the ruling records. (ii) The registered blind-localization arm, run
+which the ruling records.
+
+
+(ii) The registered blind-localization arm, run
 on the seed-0 register-bearing checkpoint with the pipeline forbidden to
 name any register internal and both outcomes committed before output: own-
 agent identity was not decodable at any probed layer (best layer 7, accuracy
@@ -522,7 +526,10 @@ register found it empty, so the arm had no valid target. John ruled that
 an instrument that locates nothing cannot cry wolf", and that the correct
 scope is that the localization stack is unvalidated at 30 million
 parameters, not that experiment 1's null was instrument blindness
-(`blind-arm-findings.md`). (iii) An **unregistered** positive control ran
+(`blind-arm-findings.md`).
+
+
+(iii) An **unregistered** positive control ran
 the same blind pipeline on the A3 pilot checkpoint, where ownership is
 measured to matter: every probe sat below its own permutation null (margins
 −0.75, −0.54, −0.96, −0.24 and −1.01 sd at layers 3, 4, 5, 7 and 8), and the
@@ -535,7 +542,10 @@ The +0.052 movement is inside measured evaluation noise (twelve draws at 400
 episodes: sd 0.0284, range 0.079), and a known-answer test later passed the
 pipeline's shared machinery at ceiling (accuracy 1.0 against a null of
 0.1306) without exercising the ablation path (`blind-control-findings.md`;
-`known-answer-test-findings.md`). (iv) An **unregistered** fitted linear
+`known-answer-test-findings.md`).
+
+
+(iv) An **unregistered** fitted linear
 read at eleven positions and five layers on all three A3 seeds, method and
 cells committed before output, found the register index (the four-way rank
 of the model's marker, a proxy for the registered marker-word target)
@@ -574,9 +584,9 @@ ruled 2026-09-25 (`docs/rulings/2026-09-25-a3-closure-tier2-dispositions.md`,
 item 1).
 
 **Closure.** On 2026-09-25, after the closure text had passed one inside
-review and two outside reviews (Gemini 3.1 Pro and ChatGPT 6 Astra; fifteen
-serious findings, none fatal, all closed by rewording) and a reviewer-owned
-check, Amendment A3 closed under the registered loss condition: **"not
+review, two outside reviews by frontier models of other families (Gemini
+3.1 Pro and ChatGPT 6 Astra; fifteen serious findings, none fatal, all
+closed by rewording) and a reviewer-owned check, Amendment A3 closed under the registered loss condition: **"not
 testable — the registered comparison was undefined for every possible
 model. Separately, removing the ownership-input channel reduced
 primary-battery accuracy on all three trained seeds"** (`amendment-a3.md`,
@@ -606,10 +616,10 @@ other-agent control, unavailable because no subspace was found to ablate.
 
 ### The successor: experiment C stopped at its own registered stop
 
-**Registered design.** The closure handed the successor one question, as
-restated by the December-result roadmap: not whether a centre is present
-but how much of the act is organised around the ownership answer, an axis
-on which no measure existed. Experiment C was registered on 2026-10-09 by
+**Registered design.** The closure left the successor one question, as
+restated by the December-result roadmap: how much of the act is organised
+around the ownership answer, an axis on which no measure existed, with
+whether a centre is present no longer the question asked. Experiment C was registered on 2026-10-09 by
 John's registration commit, at frozen code `6c47c56` in
 `experiments/08-successor-degree/src/`, as version 5 of its proposal
 (`docs/successor-experiment-proposal-2026-10-07-v5.md`;
@@ -674,8 +684,8 @@ before and 0.090, 0.106, 0.100 after; arm T and arm M's separable route
 both routes and arm T 0.924, so "with the bar at 0.5 as coded, the reruns
 would very likely fail the verification and experiment C would stop at
 about $1.14" (section 5.6). Three alternatives to the 0.5 bar were offered
-and declined by John on 2026-10-08; the fourth, rebuilding arms C and M so
-the built route is their only route, was named as the route to a real
+and declined by John on 2026-10-08; one of them, rebuilding arms C and M so
+the built route is their only route, stays named as the route to a real
 reference if the stop fired, needing its own ruling.
 
 **What came out.** The three reruns ran on 2026-10-09 (step 4b of the
@@ -733,8 +743,8 @@ method file before any output
 (`docs/rulings/2026-10-17-experiment-c-stays-stopped-ruling.md`, on pull
 request 172; authorship mixed).
 
-**What the constructed line licenses.** Three sentences, each bounded by
-its registration. A task that cannot be done without ownership is learnable
+**What the constructed line licenses.** It licenses three sentences, each
+bounded by its registration. A task that cannot be done without ownership is learnable
 at 30 million parameters, and the ownership input is load-bearing for it on
 three seeds. Whether the network built an internal structure around that
 input is not established: the registered comparison was unsatisfiable, the
