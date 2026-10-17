@@ -16,7 +16,7 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
-## WHERE THINGS STAND 2026-10-17 — three of the four open calls were ruled on 2026-10-12 after the entry below was written; the closure checks on section 2 are filed; the chain to the spec, the battery's method file and the paper fold are proposed as paired sessions
+## WHERE THINGS STAND 2026-10-17 — experiment C stays stopped on John's ruling; three of the four open calls had been ruled on 2026-10-12 after the entry below was written; the closure checks on section 2 are filed; the chain to the spec, the battery's method file and the paper fold are running as paired sessions
 
 *Written 2026-10-17 (Saturday, Pacific) by a helper session of the weekend
 master session for the tracker sites, which handed Minimum Viable Mind to it
@@ -49,26 +49,32 @@ the work happened but not in this file or the site data until now:
    later entries. The 14 files citations pointed at are now on the main
    line.
 
-**Still open: whether experiment C continues in a new form.** Nothing is
-started, and it stays stopped at its registered stop S4b until John says
-otherwise. What a new form would be: option (d) of the verification-bar
-ruling (`docs/rulings/2026-10-08-verification-bar-ruling.md`), arms C and M
-rebuilt so the built route is their only route, for example by not adding
-the acting signal to their trunk; the ruling says it "needs its own toy
-work and its own ruling and is not authorised here". What it would cost
-before anything is rented: a toy retrain and an in-use check on the laptop
-at $0, a method file first, a check by a session that wrote neither, then a
-ruling; the 10-million reruns of the new arms would be about $1.30 at the
-2026-10-09 price, from the first release's development line (about $7.23
-left of $10), and the free-arm run and the first release behind them are
-the registered ones (about $12, then about $96) if the new arms pass. What
-staying stopped means: C is written up at its registered ending in the
-ruled words, "the built arms as designed are not references; the measure
-was not reached", and the paper carries it as a registered ending reached
-by its own stop rule. The question this session put to John today is that
-one, with the costs above and no recommendation beyond the record's own
-prior (the verification-bar ruling predicted this ending as the likelier
-one).
+**Ruled: experiment C stays stopped at its registered ending.** The one
+call still open from 2026-10-12 was put to John today with what each way
+would cost, and he asked for the session's recommendation and reasoning
+before ruling. The recommendation was to stay stopped: the record predicted
+this ending (the verification-bar ruling called it the likelier one, and
+the toy models already read arm C at about 0.25 and arm M at about 0.10
+before the reruns read both at zero, training having driven those routes
+to zero while arm T's survived); a rebuilt arm C is a different
+construction, which the poll warned "must not retrospectively rescue the
+original contrast", and nobody has shown that only-route arms would still
+differ from arm T on the entanglement axis while in use; arm M's separable
+half reads 0.000 against the toy's 1.000 and is unexplained; the
+refounding of 2026-10-07 moved the measurement target to the two-sided
+question; and the paper does not need a positive C. John's words: "Ok,
+that works for me" (authorship mixed; the ruling, with the recommendation
+as given, is `docs/rulings/2026-10-17-experiment-c-stays-stopped-ruling.md`).
+What is ruled: C stays at its stop S4b with the ruled public sentence,
+"the built arms as designed are not references; the measure was not
+reached"; option (d) of the verification-bar ruling (arms C and M rebuilt
+so the built route is their only route) stays on the record as the named
+route if C is ever reopened, not authorised, no toy work toward it
+authorised; any reopening waits on one precondition, that arm M's 0.000 is
+explained first from the existing checkpoints at $0, by a session that did
+not write the reruns, with a method file before any output, which belongs
+in the write-up either way; and the paper chain comes first. Nothing
+spent.
 
 **The closure checks on section 2 are filed.** The three fatal findings of
 the Gate A pass (RT-283, RT-284, RT-289) each have the closure check the
@@ -101,9 +107,8 @@ repository (`proposal-mvm-poll-three-book-changes-2026-10-17.md`), with
 offered wording under each and John ratifying, amending or declining item
 by item there. Nothing in any chapter is edited.
 
-**What is proposed as sessions, each by a session that did not write what
-it touches (the pairing rule).** Three session cards wait on John to start
-them:
+**What is running as sessions, each by a session that did not write what
+it touches (the pairing rule).** John started all three in the afternoon:
 
 1. The ledger rows from RT-283 on (tier 1, plus the tier 2 findings ruling
    6 gives numbers to), carrying the six rulings and the three closure
@@ -125,7 +130,7 @@ them:
    until John names the reader.
 
 **What still stands between the record and the preprint**, in order:
-John's word on experiment C's form; the ledger rows and the spec commit,
+the ledger rows and the spec commit,
 checked; the battery's method file, checked, then his go and the rehearsal
 run (about $20) and its Gate A, both tiers; the paper fold through both
 writing passes, then his three reserved sentences; the outside reader
@@ -137,8 +142,9 @@ programme stands at about $230.94 of $450, unchanged since 2026-10-09.
 
 **The site data.** `data/project.toml` records the three rulings of
 2026-10-12 (next steps N45 to N47 done, N36 done with the check's merge,
-N29 done with the packet), adds the closure checks and the three proposed
-sessions as next steps, and a timeline row for today; `data/roadmap.toml`
+N29 done with the packet) and today's (N48 done, N52 added for the arm M
+explanation), adds the closure checks and the three sessions as next
+steps, and a timeline row for today; `data/roadmap.toml`
 marks weekend 4's four goals as not needed, since the validation result
 they planned for cannot exist after the stop, and says where the work went.
 
