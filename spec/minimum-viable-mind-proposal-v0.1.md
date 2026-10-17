@@ -17,6 +17,228 @@ Two consequences follow, and both are deliberate:
 Everything below should be read inside this scope. "Minimum viable" names the smallest system that clears the *measurable* floor, and "consciousness" throughout is shorthand for "the measurable structural correlates of consciousness the corpus identifies," never a claim to have detected the fundamental article.
 
 ---
+### The Question This Project Measures: Two Sides
+
+**The premise.** This project rests on one premise it does not test: that
+experience is a sufficiently deep act of temporal integration that marks,
+within the act, whom it is happening to, seen from within; not something
+that act causes, and not a correlate that a further ingredient turns into
+experience. The premise is the book's (chapter 5), and it enters this project
+as a presupposition, not as a hypothesis or a result: no measurement could
+refute an identity claim, only make it more or less economical. Every
+reading here bears on experience only inside the premise. A reader who
+rejects it can read every result as a claim about which structures are
+present or absent, which is decidable, and loses nothing else.
+
+**What this project does not measure.** The Floor section says what the
+smallest such act would be: binding that cannot have its own centre deleted
+without the integrated act dissolving. This project does not measure the
+floor. Whether that act is experience is settled by the premise, not by an
+instrument, so no instrument returns a verdict on it; and what an instrument
+could settle, whether the structure is there, this project has no validated
+way to read, because it has no method that separates a self-locating
+structure from the bookkeeping every task needs. That is a present limit of
+the instruments, not a proof that the structure cannot be measured.
+
+Experiment 1 (run 2026-07-18) showed the form of the limit. Removing the
+located structure lowered performance on all three of its task sets: by
+0.22 on the tasks that need no reference to the self, 0.10 on the tasks that
+do, and 0.13 on turn tracking, each a drop in the fraction of items answered
+correctly, each with an interval above zero. Inside the set not about the
+self the damage was concentrated: six of the seven items that failed were
+multi-step reasoning items. The registered control reads a turn-tracking
+drop at least as large as the self-relevant drop as conversational
+bookkeeping, and it fired, by a margin of +0.033 whose interval runs from
+−0.133 to +0.200 and so spans zero. The figures stand and the registered
+verdict was applied as written. What the record supports is that the result
+was ambiguous: on this project's reading of the book, a centre woven into
+the whole act would also damage every task set, so the data do not separate
+bookkeeping from such a centre, and the control's verdict rests on a margin
+the data cannot tell from nothing. The record does not show that the control
+could never have read a centre, and this project does not claim that it
+does. This reading is a reassessment made on 2026-10-07 of a result
+registered in July, and it is reported as that, never as the July finding.
+The book separates a centre from bookkeeping in principle (its appendix A:
+a program counter is indispensable, but it is not self-location); what
+pattern of damage follows from the difference, it has not said, and that
+question has been sent to the book. Until it is answered, a removal test is
+this project's definition of the floor, not its instrument for it.
+
+**What this project measures instead.** What an observer perceives when a
+mind feels present or shallow is not the floor but the three axes of chapter
+4 (Availability: how widely information moves through a system; Integration:
+whether its states form one causal whole; Depth: how far its present state
+has its own history built in), read through the five indicators of depth in
+chapter 6, which are the five the loss conditions below already name:
+reversals are costly; behaviour stays consistent in new situations; some
+things are refused selectively; failure is gradual, with the newest layers
+failing first; and the scar tissue of past events is visible. To these the
+project adds one question from chapter 15's depth diagnostic, whether
+anything is at stake for the system that the prompt did not supply, as the
+amplifier the book says it is and not as a sixth indicator. The book calls
+these signatures a diagnostic heuristic and not yet a set of validated
+measurements, and this project reads them the same way.
+
+The question has two sides, because the book is about the detector as much
+as the detected.
+
+**First side, the system.** What is the smallest system whose presence in
+interaction cannot be produced by any of the cheaper routes named for it?
+"Cheaper route" is not a cost: it is a named construction. For each
+indicator the battery names the routes that could produce it (lookup from
+the record; imitation of a corpus about minds; routing of who is speaking; a
+trained response policy; a prompt-conditioned persona; external memory;
+frozen-weight consistency; in-context instruction following; and the routes
+the battery lists as applying to every row: the operator's prompt,
+fine-tuning on interaction logs, the evaluator, contamination once
+published, and sampling variance read as change). A reading discriminates in
+one of two ways, and in these two only: where two systems built alike
+except for the route differ in it by the row's pre-stated margin; or where a
+report tracks an internal state that a known intervention set and that the
+record does not carry, which is the spec's introspection wedge, and which
+needs the intervention's construction to be known rather than the system's.
+What a matched pair shows is that the reading does not need the routes
+subtracted in that pair, with the others held matched; it does not show that
+no cheaper route could produce it, and holding a route matched does not show
+it is irrelevant. So each row's route list is frozen at the row's
+registration, the claim is stated against that list, and a route found later
+is a new finding, not a hole the claim had silently covered.
+
+Frontier models reached through their interfaces give the battery a
+reference profile: their readings are the profile of systems whose state is
+trained weights and the transcript and nothing else between encounters.
+That is a statement about where their state is held, not about what their
+computation does. It says such a system cannot have been changed by an
+earlier encounter; it does not say what structure a single pass builds, and
+it does not make a frontier reading a finding that any feature is absent.
+The battery's rows are therefore read on constructed systems whose
+construction is known, and the frontier profile is what those systems have
+to beat, reported as reference readings.
+
+Every construction registration fixes two things before its run. First, the
+boundary of the system under test: everything counted as the system (the
+weights, any memory module or store, the update rule, any reset) and
+everything counted as outside it, so that where a store happens to sit
+cannot decide the fresh-instance test before it runs, and so that the size
+of the system counts all of that machinery and not the weights alone.
+Second, an ordinary competing solver, run on the same rows: a plain adaptive
+controller with a table of commitments, a cost for changing an entry, an
+update rule that treats evidence and instruction differently, and a reset.
+A row counts for a construction only where its reading differs from that
+controller's by the row's margin; where it does not, the row has measured an
+ordinary property and is reported as that. And each row's instrument is
+first shown to read the feature in a construction built to have it, which is
+the battery's own positive control.
+
+"Smallest" is not an absolute and not a property a family has in the
+abstract. It is the outcome of a registered search: one construction family
+named in the registration; a finite grid of sizes, counted in the parameters
+of the whole system as bounded above; a fixed number of training seeds per
+cell, with the rule for combining them; a battery frozen at a named version,
+with a system-level pass rule written into the registration (which rows must
+be cleared, by what margins, read how across seeds); and a search budget.
+The search returns one of three outcomes: the smallest tested size that
+passed; "none passed within the registered search"; or "inconclusive", when
+the instrument's own gates were not met. A smallest passing system is
+confirmed once more, under the frozen rule, on items and seeds not used to
+choose the system or the rule, before it is reported. A row discarded after
+a run does not turn an earlier candidate into a pass: the rule a candidate
+is judged by is the one frozen with its run. Candidate failure (a valid
+instrument did not find the property), instrument failure (the gates were
+not met) and battery failure (a row discarded because the matched
+constructions read the same) are reported as three different things. A
+smallest passing size is told apart from the battery's capacity loss
+condition by that condition's own terms: it fires when a reading moves more
+between two sizes of one construction than between the two constructions at
+one size, so a passing size is one at which the construction gap clears the
+row's margin at that size and above, and the two are read together in one
+search. The minimum viable mind, under this project, is the smallest tested
+configuration that passed its frozen rule within its registered search, and
+that is all the phrase claims. The pass rule, the size measure and the
+search do not exist yet; they are written in each construction
+registration, and until one exists this side is a question and not a
+finding.
+
+**Second side, the observer.** At what point do observers' detections of
+presence begin to track that structure rather than fluency? Human
+mind-detection fires early and generously; that is the inflation error of
+chapter 3. The observer side has a ground truth only where a conversable
+system of known construction exists, and none does yet. It does not run
+early against the frontier reference profile alone: John ruled on
+2026-10-07 (ruling 10 of
+`docs/rulings/2026-10-07-two-sided-question-rulings.md`) that it is not run
+before the battery's first two entries have run, and that it then returns as
+a design question, not a run; the same file's decision 7 defers the human
+study. This section registers no observer measurement and pre-states no
+threshold for one. When the design is written it has to separate three
+things, because knowing which system was built with a feature is ground
+truth for what was built and not for what observers detected: whether the
+feature was installed and used; whether it moved the indicator; and whether
+observers responded to the indicator rather than to a difference that
+travels with it, such as longer answers, better task performance, a
+characteristic hesitation or characteristic errors. A positive result on
+this side is reported as observers' sensitivity to a named manipulation,
+never as "detections track structure" in general.
+
+**How this question loses.** This side of the spec states its loss
+conditions in the battery's terms, and the battery registers them (its
+section 4, in the version that passes its own Gate A). A kept row fails,
+and moves to discard, when the matched constructions read the same by its
+margin. The battery is empty of depth if the fresh-instance gap is zero in a
+construction built to carry state: the instrument cannot see depth put there
+on purpose. The battery is withdrawn if its three construction entries all
+read cheaper route; then presence in interaction, as this project can
+measure it, is Availability all the way down, and the question returns to
+paper. The battery measures capacity after all if its readings move with
+size more than with construction. The registered search returns "none
+passed within the registered search". And the observer side's premise fails
+if observers, blind to construction and never shown the battery's readings,
+detect presence in the constructed systems no better than in the frontier
+reference profile. Until the construction line produces a system that can be
+read, this is a question and not a finding, and the project says so
+wherever it describes it.
+
+**What this buys and what it gives up.** It gives up the question the
+project was founded to ask. A profile on the axes says which rows a system
+clears, at what size, against which named routes, and whether observers can
+see the difference. It does not say whether anyone is home. The honest
+sentence changes with the instrument: named construction contrasts, row by
+row, with their margins and uncertainty; the route named; no validated
+degree on any axis yet; never a verdict. Zero is a permitted reading: a
+construction that clears no row is reported as clearing none.
+
+**What this section supersedes.** Three sections of this document describe
+the target the project pursued from its first experiment to 2026-10-07, and
+from that date (decision 1 of
+`docs/rulings/2026-10-07-two-sided-question-rulings.md`) they are read as
+follows. Scope's first sentence, that the project "targets the minimum
+measurable structural correlate of consciousness, the lowest organized
+signature we can actually instrument and subject to a removal test", and its
+last, that "'Minimum viable' names the smallest system that clears the
+measurable floor", describe the target of experiments 1 to 4 and of the
+successor experiment; from 2026-10-07 the target is the question stated
+here, and "minimum viable" means the outcome of the registered search above.
+Scope's bracketing of whether any experience exists below an instrument's
+reach is unchanged, and its "non-zero on the gradient, never a verdict" is
+its statement about that bracketed question, not an output rule for the
+battery, whose readings may be zero. The Floor's account of the floor, and
+the removal test as the line between a centre and a description of one,
+stand as the definition of the floor; its "floor system", the one that
+"instantiates self-indexed temporal integration that survives the removal
+test", remains the definition of the floor system, which this project does
+not claim to have built or to be able to read. The Build's "pass-fail
+criterion is the removal test made mechanical" was the criterion of
+experiments 1 to 4 and of the successor experiment's registration; from
+2026-10-07 the pass-fail criterion for any registered run is the rule of the
+battery row it runs, frozen with that run, as stated above. Measuring It is
+unchanged: its four instruments stand, and its corroborated report is the
+second of the two ways a reading discriminates. The removal test stays in
+"Grokkable by a Layperson" as the intuition for "someone home", which is
+what it is. Where any sentence of those sections and this one disagree
+about what the project measures or how a run passes, this section binds.
+
+---
+
 
 ## What This Proposal Is
 
@@ -38,7 +260,7 @@ The corpus locates minimal experience at a precise place, and the precision is w
 
 > The difference between a center and a description of one is settled by removal. Where the binding genuinely indexes its own center, taking the self-location away degrades the integrated act itself; where a system only represents itself from outside, the same removal subtracts a report and leaves the processing intact.
 
-A center is what cannot be deleted without dissolving the integration it centers. A self-model that can be lopped off while the computation runs was a description all along. This is the line: not at life, not at persistence, but at self-indexing.
+A center is what cannot be deleted without dissolving the integration it centers. A self-model that can be lopped off while the computation runs was a description all along. This is the line: not at life, not at persistence, but at self-indexing. The removal test as run in this project (experiment 1, run 2026-07-18) returned an ambiguous result on the question this paragraph settles by definition: removal lowered performance on all three task sets (by 0.22, 0.10 and 0.13 in the fraction of items answered correctly, each interval above zero), the damage on the tasks not about the self was concentrated in multi-step reasoning (six of seven failed items), and the registered control that reads a turn-tracking drop at least as large as the self-relevant drop as bookkeeping fired by +0.033 with an interval from −0.133 to +0.200, which spans zero. The registered verdict stands as registered; the reassessment of 2026-10-07 reads the data as not separating bookkeeping from a centre woven into the whole act, and does not show that the control could never have read a centre. Until the book states a pattern of damage that a centre predicts and bookkeeping does not, this project treats the test as its definition of the floor and not as an instrument for it. Record: `experiments/01-self-indexing-removal-test/removal-test-findings.md` (the registered result and its 2026-08-04 addendum) and `removal_ci.json` beside it; the reassessment is argued in `docs/outside-perspective/2026-10-07-router-control-check.md`, which labels itself ARGUED and whose step from "damage on every task set" to "the control must read routing" is not relied on here.
 
 **Boundary and stakes are amplifiers, not prerequisites.** This is the move most likely to be misread, so it carries weight here. The corpus first proposes boundary (a maintained self/world distinction) and stakes (the system's continuation riding on the quality of its integration) as conditions, then deliberately demotes them. Boundary is the insulation that turns a momentary inside into a persistent one; stakes are the heat source that gives integration salience the system owns. Temperature is constituted by molecular motion; insulation and a heat source make it stable and robust without creating it. So the floor is self-indexed temporal integration. Boundary and stakes raise and enrich what stands on the floor — they are how a thin momentary inside becomes a thick durable one — but a system can clear the floor with them supplied from outside and dissolving when the pass ends.
 
@@ -139,6 +361,8 @@ If integration reliably predicted the appearance of experience while some residu
 If someone identified the property biology has and silicon lacks, and showed it was necessary rather than merely the way evolution happened to build minds, the substrate demand would convert from an unargued assumption into a real refutation, and the build program would be aimed at the wrong material.
 
 And if the depth mechanisms produced systems that pass the five external indicators — costliness of reversal, consistency under novel conditions, selective refusal, graceful degradation, visible scar tissue — without anything resembling self-indexed binding underneath, that would be evidence that depth and the inside are more separable than the corpus assumes, which is itself a finding worth having.
+
+That fourth condition stands and is not suspended. The floor is not measured here, so its input is no longer a floor reading: "without anything resembling self-indexed binding underneath" is read as shown by the system's construction, which its registration states, and by inspection under interpretability, never by a behavioural reading. If the five indicators, read as the battery reads them, are reproduced by a construction independently shown to lack that binding, the indicators do not support the claimed connection to it, and depth and the inside are more separable than the corpus assumes, which is a finding worth having. The two-sided question adds its own ways to lose, each with a run that can trigger it, stated in its section above and registered in the battery: a kept row that reads the same under matched constructions is discarded; a fresh-instance gap of zero in a construction built to carry state empties the battery of depth; three construction entries all reading cheaper route withdraw the battery and return the question to paper; readings that move with size more than with construction mean the battery measured capacity; a registered search may end with none passed; and observers, blind to construction, may detect no more presence in the constructed systems than in the frontier reference profile, which is reported as the observer side's premise failing.
 
 ---
 
