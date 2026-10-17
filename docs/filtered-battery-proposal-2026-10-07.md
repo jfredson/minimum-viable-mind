@@ -851,8 +851,8 @@ printed here because a commit message cannot be corrected after the file
 moves (the third check's sweep finding `FB3-7`: version 3's message gave
 236, 62 and 13,118 words, which did not reproduce on the committed file,
 237, 63 and 13,139, because the file was edited once more after the sweeps
-ran), are 310 for the claim-word sweep, 120 for the
-number sweep and 17400 words by `wc -w`, the commands being the two
+ran), are 322 for the claim-word sweep, 120 for the
+number sweep and 17737 words by `wc -w`, the commands being the two
 `grep -c` lines quoted in the third check's section 7 and `wc -w` on this
 file; no hit was a claim without a file, the second check having
 traced every measured figure to the committed outputs (its section 2.1).
@@ -904,7 +904,7 @@ machine of the project's; their only far end is the vendor's interface.
 Entries 3 to 7 will have rented machines and inherit the 08 launcher's
 checks.
 
-## 6. Open questions for John
+## 6. Questions for John, with the rulings so far
 
 1. **Ruled, not open: D's place in the battery.** The first version asked
    John to re-describe decision 5's control and D's place, recommending that
@@ -1533,3 +1533,37 @@ failure-mode item 4, which are re-taken on this text as that item requires.
   that "other above own" cannot reach 0.20 in Opus's cell (room 0.138), and
   that per-model readings carry no threshold; a line says the leak checks'
   540 includes the retired item.
+
+## Changes after the fourth check (2026-10-12; recorded 2026-10-17)
+
+The fourth pairing-rule check
+(`docs/reviews/2026-10-12-filtered-battery-check-4-claude-code.md`, pull
+request 169, "Fourth check of the filtered-battery draft") passed version 4
+with no conditions on the author. Its one edit, made by the checking session
+itself and recorded in its section 4, closed questions 10 to 12 as ruled by
+John on 2026-10-12 ("all as recommended") and re-took the sweep counts. It
+left two notes for the next edit, both applied here by the session that wrote
+the method file (which wrote none of versions 1 to 4 and none of the checks):
+
+- Note a: this section, so the draft's own record of its checks is complete.
+- Note b: section 6 is now headed "Questions for John, with the rulings so
+  far", since questions 1, 10, 11 and 12 are ruled and the heading said
+  "Open questions". The numbering is unchanged.
+
+What else this edit does and does not do. The method file for the
+measurement rehearsal of entries 1 and 2 now exists at
+`docs/filtered-battery-2026-10-07/rehearsal-method-entries-1-2.md`, with the
+version 1.2 rubric addendum in its own file beside it
+(`docs/filtered-battery-2026-10-07/liveness_rubric_v1.2_entry2.md`) and the
+runner (`docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py`),
+whose dry run calls nothing; the committed dry-run output is beside them. The
+method file's cost estimate, taken from token counts and the vendors' list
+prices rather than by scaling experiment D's "low tens of dollars", comes
+out above this draft's "under about ten dollars" per entry at its high end,
+and the method file says so and leaves the figure to John. Entry 1's full
+text has not yet been cut down to indicator, arms, readings, gates and cost
+with the detail moved into the method file, as the second check's length
+finding (`FC-11`) proposed for when the method file existed; that cut is a
+change to the registration text and waits for its own edit. No figure,
+reading, band, gate or ruling in this draft changed. Failure-mode item 4's
+three sweep counts are re-taken on this text, as that item requires.
