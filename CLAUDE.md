@@ -30,6 +30,17 @@ Any prose promoted out of this repo toward publication (an essay, a thread, a po
 
 Standalone git repo. Commit with clear messages describing what changed and why.
 
+## Design
+
+The site wears its own skin, "Notebook" (a lab notebook; ruled by John 2026-10-17 from the proposal
+in `sentient-horizons/design/proposals/minimum-viable-mind-skin-2026-10-17.md`), on the family's
+shared skeleton (design standard, section 3a). `site/src/styles/skin.css` holds this site's tokens
+for both themes and its backdrop (graph paper, no sky); `site/src/styles/global.css` imports it,
+then carries `sentient-horizons/design/shell.css` copied unchanged with the version noted, then this
+site's own rules below the marked line. Never edit the skeleton here; update the copy when the
+standard changes. Light is the default theme. Every colour is a token; data (the meters, the bars)
+is coloured with `--accent-3`. No web fonts.
+
 ## Keeping the site current
 
 `site/` is the project's internal visualizer (built 2026-09-20; how it works in

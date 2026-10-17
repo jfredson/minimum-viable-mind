@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
-import Starfield from '../components/Starfield.astro';
 import { project, derived, fmtDate } from '../lib/project';
 
 interface Props {
@@ -36,14 +35,14 @@ const longDate = (iso: string) => {
           var theme =
             stored === 'light' || stored === 'dark'
               ? stored
-              : window.matchMedia('(prefers-color-scheme: light)').matches
-                ? 'light'
-                : 'dark';
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
           document.documentElement.dataset.theme = theme;
         } catch (e) {}
       })();
     </script>
-    <meta id="theme-color-meta" name="theme-color" content="#08070f" />
+    <meta id="theme-color-meta" name="theme-color" content="#f4f4f1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="John Fredrickson" />
@@ -57,11 +56,8 @@ const longDate = (iso: string) => {
     <meta name="twitter:card" content="summary" />
   </head>
   <body>
-    <div class="space-bg" aria-hidden="true">
-      <div class="galaxy"></div>
-      <div class="core"></div>
-      <Starfield count={150} />
-    </div>
+    {/* The Notebook skin's backdrop (ruled 2026-10-17): graph paper, drawn by the skin on this element; no sky. */}
+    <div class="space-bg" aria-hidden="true"></div>
     <Nav />
     <main class="container">
       <slot />

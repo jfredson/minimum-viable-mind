@@ -9,7 +9,7 @@ The program log: where the project is, where it is going, what is on the table, 
 
 - **Python owns the data.** `scripts/export_site.py` validates `data/project.toml` (status vocabularies, dates, stage references, spend under cap, timeline newest-first) and `data/roadmap.toml` (the vocabularies in its header, real dates, weekends in order with start on or before end, goal ids unique, at most one active weekend, a note on every carried goal), and writes `site/src/data/project.json` and `site/src/data/roadmap.json`. The JSON is generated, not committed; `npm run build` and `npm run dev` run the export first.
 - **Astro owns the pages.** Astro 5, fully static. `src/lib/project.ts` is the typed view of the project JSON and holds the human labels for every status code; `src/lib/roadmap.ts` is the typed view of the roadmap JSON. Every page reads from one of them.
-- **Styles are copied** from the Belt Equation site (`global.css`), with the MVM additions at the bottom of the file.
+- **The styles are the family's skeleton with this site's own skin.** `src/styles/skin.css` is the "Notebook" skin (a lab notebook: a cool off-white with a faint grid behind the first screen, the ink violet, a slate for the meters; light by default; ruled by John 2026-10-17 from `sentient-horizons/design/proposals/minimum-viable-mind-skin-2026-10-17.md`), every token for both themes plus the backdrop. `src/styles/global.css` imports it, then carries `sentient-horizons/design/shell.css` copied unchanged (version noted at the marked line), then this site's own rules: the Belt Equation's components copied on 2026-09-20 and the MVM additions, with the notebook's register (the monospace on the labels, the squared at-a-glance card) at the top of them.
 
 ## Pages
 
