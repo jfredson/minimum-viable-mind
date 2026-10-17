@@ -180,13 +180,6 @@ a.dim:hover { color: var(--accent); }
    coloured with --accent-3 (design standard, sections 3a, 4 and 9).
    =============================================================== */
 
-/* ---- the notebook's register (the Notebook skin, ruled 2026-10-17) ----
-   The monospace leads the labels, so the page reads as a record kept by instrument; the
-   at-a-glance card is squared with a slate rule at its left edge, a block in the notebook. */
-.eyebrow, .dial-label, .stat-label, .shead span, .step-meta, .status { font-family: var(--mono); letter-spacing: 0.02em; text-transform: none; }
-.eyebrow { font-size: 12px; }
-.dial { border-radius: 0; border-left: 3px solid var(--accent-3); }
-
 /* ---- home: the number first, then the chain (2026-09-19) ---- */
 .home-hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; align-items: start; padding: 64px 0 40px; }
 .home-hero .eyebrow { margin-bottom: 18px; }
@@ -792,3 +785,11 @@ a.dim:hover { color: var(--accent); }
   .rm-week-head { flex-direction: column; gap: 8px; }
   .rm-week-cols { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* ---- the notebook's register (the Notebook skin, ruled 2026-10-17) ----
+   The monospace leads the labels, so the page reads as a record kept by instrument; the
+   at-a-glance card is squared with a slate rule at its left edge, a block in the notebook. Last, so it wins over the copied components above. */
+.eyebrow, .dial-label, .stat-label, .shead span, .step-meta, .status { font-family: var(--mono); letter-spacing: 0.02em; text-transform: none; }
+.eyebrow { font-size: 12px; }
+.dial { border-radius: 0; border-left: 3px solid var(--accent-3); }
+
