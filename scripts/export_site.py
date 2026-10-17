@@ -3,12 +3,23 @@
 
     data/project.toml  ->  site/src/data/project.json   (every page)
     data/roadmap.toml  ->  site/src/data/roadmap.json   (/roadmap/)
+    data/project.toml  ->  data/headline.json            (the headline file, committed)
+                       ->  site/public/data/headline.json (its public copy, served at /data/headline.json)
 
 Same pattern as belt-equation/scripts/export.py: Python owns the data, the
 site only renders what passes validation here. Run from anywhere:
 
-    python3 scripts/export_site.py          # write both JSON files
-    python3 scripts/export_site.py --check  # validate both, exit 1 on error
+    python3 scripts/export_site.py          # write the JSON files, the headline file and its public copy
+    python3 scripts/export_site.py --check  # validate both data files, exit 1 on error;
+                                            # warn if data/headline.json lags data/project.toml
+
+The headline file (added 2026-10-17, the site's first adoption from the
+Sentient Horizons lessons review of the same day) is the few numbers another
+site needs to say where this project stands: the stages of the ladder
+delivered, the ladder's mean progress, the spend against the ceiling, the day
+the log was last updated, the programme's state in one sentence, and a status
+line. Every value is read from data/project.toml; nothing is computed from
+anything else, and the one sentence is the record's own first sentence.
 
 Needs Python 3.11+ (tomllib). No third-party packages.
 """
@@ -28,6 +39,10 @@ SRC = ROOT / "data" / "project.toml"
 OUT = ROOT / "site" / "src" / "data" / "project.json"
 ROADMAP_SRC = ROOT / "data" / "roadmap.toml"
 ROADMAP_OUT = ROOT / "site" / "src" / "data" / "roadmap.json"
+HEADLINE_OUT = ROOT / "data" / "headline.json"
+HEADLINE_PUBLIC = ROOT / "site" / "public" / "data" / "headline.json"
+# The site's address, the same value as `site` in site/astro.config.mjs.
+SITE = "https://minimumviablemind.sentient-horizons.com"
 
 # Every date in the data files is Pacific, so "today" for the day counts is
 # the Pacific date too, not the build machine's clock (the deploy runs on UTC,
@@ -246,6 +261,103 @@ def derive(d: dict) -> dict:
     }
 
 
+def usd(n: float) -> str:
+    """$450 for a whole number, $230.94 otherwise; the site's own rule (src/lib/project.ts)."""
+    return f"${n:.0f}" if float(n).is_integer() else f"${n:.2f}"
+
+
+def join_words(items: list[str]) -> str:
+    """'a, b and c', the way the home page joins the delivered stages' names."""
+    if len(items) <= 1:
+        return "".join(items)
+    return f"{', '.join(items[:-1])} and {items[-1]}"
+
+
+def first_sentence(text: str) -> str:
+    """The record's own first sentence: up to the first full stop, question mark or
+    exclamation mark (a closing quote may follow it) that is followed by a space and
+    a capital letter, or by the end of the text. A decimal point or a date inside a
+    sentence does not end it, because no space follows it."""
+    m = re.match(r"(.+?[.!?]['’\"”]?)(?:\s+(?=[A-Z\"'“‘])|\s*$)", text, re.S)
+    if not m or len(m.group(1)) < 40:
+        raise Bad("[project].where_we_are: could not take a first sentence from it")
+    return m.group(1).strip()
+
+
+def headline(d: dict, derived: dict) -> dict:
+    """The headline file: the few numbers another site needs to say where this
+    project stands, every one read from data/project.toml (nothing from anywhere
+    else). What the home page shows is what this says: the count of delivered
+    stages with their names, the ladder's mean progress, and the spend line the
+    record calls the programme's ceiling (the spend line with the largest cap)."""
+    p = d["project"]
+    stages = d["stages"]
+    delivered = [s for s in stages if s["status"] == "delivered"]
+    names = [s["name"][0].lower() + s["name"][1:] for s in delivered]
+    by_status: dict[str, int] = {}
+    for s in stages:
+        by_status[s["status"]] = by_status.get(s["status"], 0) + 1
+    ceiling = max(d["spend"]["lines"], key=lambda ln: ln["cap"])
+    latest = d["timeline"][0]
+    state = first_sentence(p["where_we_are"])
+    ladder_words = (f"{len(delivered)} of {len(stages)} stages of the project's ladder "
+                    f"delivered so far: {join_words(names)}")
+    spend_words = f"about {usd(ceiling['spent'])} of the {usd(ceiling['cap'])} ceiling spent"
+    return {
+        "computed_on": derived["exported_on"],
+        "project": {
+            "name": p["name"],
+            "short": p["short"],
+            "repo": p["repo"],
+            "site": SITE,
+            "served_at": f"{SITE}/data/headline.json",
+        },
+        "source": {
+            "file": "data/project.toml",
+            "script": "scripts/export_site.py",
+            "record": "STATUS.md is the record of record; data/project.toml is its structured twin and the only input here",
+            "rule": "every value is read from the data file as written; nothing is computed from anything else, and the one-sentence state is the record's own first sentence",
+        },
+        "record_updated_on": p["updated_on"],
+        "ladder": {
+            "delivered": len(delivered),
+            "total": len(stages),
+            "delivered_names": [s["name"] for s in delivered],
+            "by_status": by_status,
+            "mean_progress": derived["stage_progress_mean"],
+            "words": ladder_words,
+            "mean_progress_words": f"Ladder progress, mean across the {len(stages)} stages: {derived['stage_progress_mean']}%",
+        },
+        "spend": {
+            "spent": ceiling["spent"],
+            "cap": ceiling["cap"],
+            "line": ceiling["name"],
+            "as_of": d["spend"]["as_of"],
+            "words": spend_words,
+            "lines": [{"name": ln["name"], "spent": ln["spent"], "cap": ln["cap"]} for ln in d["spend"]["lines"]],
+        },
+        "state": state,
+        "latest_entry": {"date": latest["date"], "title": latest["title"]},
+        "status": (f"{len(delivered)} of {len(stages)} stages delivered; {spend_words}; "
+                   f"log last updated {p['updated_on']}."),
+        "dates": {
+            "wrap_up_start": p["wrap_up_start"],
+            "hibernation_by": p["hibernation_by"],
+        },
+    }
+
+
+def headline_is_current(fresh: dict) -> bool:
+    """Whether the committed data/headline.json says what the data file says now,
+    the day it was computed aside."""
+    try:
+        old = json.loads(HEADLINE_OUT.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    strip = lambda h: {k: v for k, v in h.items() if k != "computed_on"}
+    return strip(old) == strip(fresh)
+
+
 def one_of(obj: dict, key: str, allowed: set[str], where: str) -> str:
     v = need(obj, key, where, str)
     if v not in allowed:
@@ -398,6 +510,11 @@ def main(argv: list[str]) -> int:
         return 1
     d["derived"] = derive(d)
     rm["derived"] = derive_roadmap(rm)
+    try:
+        hl = headline(d, d["derived"])
+    except Bad as e:
+        print(f"export_site: {SRC.relative_to(ROOT)}: {e}", file=sys.stderr)
+        return 1
     if check_only:
         print(f"export_site: {SRC.relative_to(ROOT)} is valid "
               f"({len(d['stages'])} stages, {len(d['questions'])} questions, "
@@ -407,8 +524,15 @@ def main(argv: list[str]) -> int:
         print(f"export_site: {ROADMAP_SRC.relative_to(ROOT)} is valid "
               f"({len(rm['weekends'])} weekends, {rd['goals_total']} goals, "
               f"{len(rm['milestones'])} milestones, {len(rm['extensions'])} extensions)")
+        print(f"export_site: headline reads: {hl['status']}")
+        if not headline_is_current(hl):
+            # A warning, not an error: the build always writes the served copy fresh,
+            # so the site stays honest; only the committed copy is behind.
+            print(f"export_site: warning: {HEADLINE_OUT.relative_to(ROOT)} lags "
+                  f"{SRC.relative_to(ROOT)}; run `python3 scripts/export_site.py` and commit it",
+                  file=sys.stderr)
         return 0
-    for out, obj in ((OUT, d), (ROADMAP_OUT, rm)):
+    for out, obj in ((OUT, d), (ROADMAP_OUT, rm), (HEADLINE_OUT, hl), (HEADLINE_PUBLIC, hl)):
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         print(f"export_site: wrote {out.relative_to(ROOT)}")
