@@ -27,7 +27,7 @@
 [roadmap]
 title = "The weekend roadmap to 2026-12-21"
 written_on = "2026-09-24"
-updated_on = "2026-10-12"
+updated_on = "2026-10-17"
 source = "docs/weekend-roadmap-2026-09-24.md"
 one_line = "No longer a schedule (ruled 2026-10-04, docs/rulings/2026-10-04-no-future-dates.md): each step now runs as soon as what it waits on is done, and the dates below are the plan as it stood, not targets. The kill dates, the wrap-up start and the hibernation deadline still bind as outer limits. As first written: twelve working weekends between 2026-09-26 and 2026-12-20, front-loaded so that both kill dates pass with their work already done, the December result exists by 2026-11-08, and five weekends stay in hand for slipped gates and for the extensions that make the conclusion stronger."
 question = "Can a decomposability measure, validated on systems whose degree is known by construction, read the degree of a freely trained 30-million-parameter transformer that acquired a load-bearing ownership pointer under task pressure? If so, what does it read?"
@@ -156,7 +156,7 @@ number = 4
 start = "2026-10-17"
 end = "2026-10-18"
 days = 2
-status = "planned"
+status = "partial"
 title = "The validation result"
 outcome = "As written 2026-09-24; left as written at the 2026-10-08 re-plan until weekend 3's handoff knows what landed. If the reruns and the free arm both held, this is the earliest weekend the second release (the remaining eight runs, about $150 to $172) can be asked for on the figures; if either stopped experiment C, this weekend starts the instrument-research write-up instead. Kill date 1 passes on Sunday."
 beside = "Kill date 1 is Sunday 2026-10-18."
@@ -165,10 +165,10 @@ john_items = [
   "The queue only; one ruling if the nomination freeze needs one",
 ]
 goals = [
-  { id = "W4.1", text = "Nomination procedure frozen and committed, method before output", owner = "agents", status = "planned" },
-  { id = "W4.2", text = "Transplants run on fresh episodes on every arm", owner = "agents", status = "planned" },
-  { id = "W4.3", text = "The measure computed on T and C: the validation result, with paired uncertainty", owner = "agents", status = "planned" },
-  { id = "W4.4", text = "Validation findings drafted and Gate B first-tier review launched", owner = "agents", status = "planned" },
+  { id = "W4.1", text = "Nomination procedure frozen and committed, method before output", owner = "agents", status = "not_needed", note = "Experiment C stopped at its registered stop S4b on 2026-10-12, so there is no validation result for this weekend to produce; the weekend went to the record instead (the closure checks on section 2, the book packet, and the chain to the spec, the battery's method file and the paper fold proposed as paired sessions, all 2026-10-17)" },
+  { id = "W4.2", text = "Transplants run on fresh episodes on every arm", owner = "agents", status = "not_needed", note = "Not needed after the stop of 2026-10-12" },
+  { id = "W4.3", text = "The measure computed on T and C: the validation result, with paired uncertainty", owner = "agents", status = "not_needed", note = "Not needed after the stop of 2026-10-12: the built arms C and M failed the verification, so the measure is not computed" },
+  { id = "W4.4", text = "Validation findings drafted and Gate B first-tier review launched", owner = "agents", status = "not_needed", note = "Not needed after the stop of 2026-10-12; the instrument-research write-up this weekend's outcome named instead is the paper fold proposed on 2026-10-17" },
 ]
 
 [[weekends]]
