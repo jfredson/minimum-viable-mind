@@ -10,14 +10,24 @@ const decisions = steps.filter((n) => n.decision);
 const work = steps.filter((n) => !n.decision).slice(0, 4);
 const openIdeas = data.ideas.filter((i) => i.status === 'on-the-table' || i.status === 'authorised');
 const latest = data.timeline[0];
+// The trunk above the opening paragraph (2026-10-16): one number a stranger can hold, the count
+// of delivered stages on the project's ladder, with the stage names as its claim. Drawn from the
+// stage list in data/project.toml, never typed in.
+const delivered = data.stages.filter((s) => s.status === 'delivered');
+const deliveredNames = delivered.map((s) => s.name.charAt(0).toLowerCase() + s.name.slice(1));
+const joined = deliveredNames.length > 1
+  ? `${deliveredNames.slice(0, -1).join(', ')} and ${deliveredNames[deliveredNames.length - 1]}`
+  : deliveredNames.join('');
 ---
 
 <Base>
   <section class="home-hero mvm-hero">
     <div>
       <p class="eyebrow">Where we are · updated {fmtDate(project.updated_on)}</p>
-      <h1 class="big-claim">{project.where_we_are}</h1>
-      <p class="big-sub">{project.where_we_are_going}</p>
+      <p class="big-number">{delivered.length}<small>of {data.stages.length}</small></p>
+      <h1 class="big-claim">Stages of the project's ladder delivered so far: {joined}.</h1>
+      <p class="prose hero-prose">{project.where_we_are}</p>
+      <p class="prose hero-prose dim">{project.where_we_are_going}</p>
       <div class="ctas">
         <a class="btn" href="#next">The next most valuable steps</a>
         <a class="btn btn-ghost" href="/learned/">What we have learned</a>

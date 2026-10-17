@@ -15,7 +15,7 @@ The program log: where the project is, where it is going, what is on the table, 
 
 | Path | What it shows |
 |---|---|
-| `/` | Where we are and where we are going, in two paragraphs; at-a-glance numbers (days to hibernation and to wrap-up, decisions waiting, A3 spend); the founding wager; the next most valuable steps and what each teaches; decisions waiting on John; the three nested goals; the ladder strip; ideas on the table. |
+| `/` | One number first (how many of the eight stages are delivered, with their names), then where we are and where we are going, in two paragraphs at the reading size; at-a-glance numbers (days to hibernation and to wrap-up, decisions waiting, A3 spend); the founding wager; the next most valuable steps and what each teaches; decisions waiting on John; the three nested goals; the ladder strip; ideas on the table. |
 | `/ladder/` | The eight stages: status, progress, delivered, remaining, and which account of consciousness each adjudicates. |
 | *(none)* | The weekend roadmap (`data/roadmap.toml`) is not published: it is a working plan for John and the sessions (John, 2026-10-08). The export still writes `roadmap.json` and validates the TOML; no page reads it. |
 | `/questions/` | The questions that matter (current answer, what answers it, what would count against it) and every idea on the table grouped by status. |
@@ -40,3 +40,9 @@ Run from `site/`. Needs Node and Python 3.11 or later.
     cd ~/Code/minimum-viable-mind/site && npm run deploy    build, then wrangler deploy (needs `npx wrangler login`)
 
 The Worker is named `mvm`. Its address is https://minimumviablemind.sentient-horizons.com: `wrangler.jsonc` declares it as a custom domain, so the first deploy creates the DNS record and certificate in the sentient-horizons.com zone automatically (the zone is on the same Cloudflare account). https://mvm.jfredson.workers.dev also works as a fallback address. `.github/workflows/deploy-site.yml` deploys on push to main once the two Cloudflare secrets exist on the repo (same names as belt-equation's).
+
+## Changes to the site
+
+Newest first, with absolute dates. The project's record of record is `STATUS.md`; this list is only for the site itself.
+
+- 2026-10-16: the home page opens on one number a stranger can hold, the count of delivered stages on the ladder (3 of 8) in the monospace with aligned figures, with the stage names as its claim in the sans; the "where we are" and "where we are going" paragraphs moved under it at the reading size instead of the large sans. Asked for by John on 2026-10-16 after the Sentient Horizons design review of the same day found this the one home page in the family that gave a stranger nothing to hold. Pictures at 1280 pixels before and after: `docs/home-page-2026-10-16-before.png` and `docs/home-page-2026-10-16-after.png`. Not deployed: the site's deploy stays behind John's gate.

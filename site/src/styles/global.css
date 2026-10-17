@@ -574,7 +574,16 @@ a.dim:hover { color: var(--accent); }
    =============================================================== */
 .btn-ghost { background: transparent; color: var(--text); border-color: var(--line-strong); }
 .btn-ghost:hover { border-color: var(--accent); }
-.mvm-hero .big-claim { font-size: clamp(22px, 2.3vw, 30px); font-weight: 500; }
+/* The first screen's trunk (2026-10-16, after the Sentient Horizons design review of the same day
+   found this home page opening on a long paragraph in large sans): the count of delivered stages in
+   the monospace with aligned figures, its claim in the sans, and the two paragraphs at the prose
+   size. The faces come from the base .big-number and .big-claim rules above the line, which are
+   The Belt Equation's; only sizes and spacing are set here. */
+.mvm-hero .big-number { font-size: clamp(76px, 9.5vw, 128px); margin: 0 0 10px; }
+.mvm-hero .big-number small { font-size: 0.38em; color: var(--muted); letter-spacing: -0.01em; margin-left: 0.18em; }
+.mvm-hero .big-claim { font-size: clamp(20px, 2.1vw, 27px); font-weight: 500; margin: 0 0 18px; }
+.mvm-hero .hero-prose { margin: 0 0 1.1em; max-width: 620px; }
+.mvm-hero .hero-prose.dim { color: var(--muted); }
 .dial-stats-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .stat-of { font-family: var(--mono); font-size: 15px; color: var(--muted); letter-spacing: 0; }
 
