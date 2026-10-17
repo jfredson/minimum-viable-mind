@@ -1,0 +1,65 @@
+{
+  "computed_on": "2026-10-17",
+  "project": {
+    "name": "Minimum Viable Mind",
+    "short": "MVM",
+    "repo": "jfredson/minimum-viable-mind",
+    "site": "https://minimumviablemind.sentient-horizons.com",
+    "served_at": "https://minimumviablemind.sentient-horizons.com/data/headline.json"
+  },
+  "source": {
+    "file": "data/project.toml",
+    "script": "scripts/export_site.py",
+    "record": "STATUS.md is the record of record; data/project.toml is its structured twin and the only input here",
+    "rule": "every value is read from the data file as written; nothing is computed from anything else, and the one-sentence state is the record's own first sentence"
+  },
+  "record_updated_on": "2026-10-12",
+  "ladder": {
+    "delivered": 3,
+    "total": 8,
+    "delivered_names": [
+      "Bench and baselines",
+      "The self-indexing removal test",
+      "Retained independence"
+    ],
+    "by_status": {
+      "delivered": 3,
+      "in-progress": 2,
+      "waiting": 1,
+      "descoped": 1,
+      "conditional": 1
+    },
+    "mean_progress": 49,
+    "words": "3 of 8 stages of the project's ladder delivered so far: bench and baselines, the self-indexing removal test and retained independence",
+    "mean_progress_words": "Ladder progress, mean across the 8 stages: 49%"
+  },
+  "spend": {
+    "spent": 230.94,
+    "cap": 450,
+    "line": "MVM-0a registered design envelope (Amendment A2)",
+    "as_of": "2026-10-09",
+    "words": "about $230.94 of the $450 ceiling spent",
+    "lines": [
+      {
+        "name": "Amendment A3 hard stop",
+        "spent": 46.75,
+        "cap": 100
+      },
+      {
+        "name": "MVM-0a registered design envelope (Amendment A2)",
+        "spent": 230.94,
+        "cap": 450
+      }
+    ]
+  },
+  "state": "The degree experiment (experiment C) stopped on 2026-10-12 at its registered stop for a failed verification of the built models (stop S4b), on John's ruling, in his words 'accept the stop'.",
+  "latest_entry": {
+    "date": "2026-10-12",
+    "title": "Experiment C stopped at its registered stop S4b, on John's ruling"
+  },
+  "status": "3 of 8 stages delivered; about $230.94 of the $450 ceiling spent; log last updated 2026-10-12.",
+  "dates": {
+    "wrap_up_start": "2026-12-21",
+    "hibernation_by": "2027-01-04"
+  }
+}
