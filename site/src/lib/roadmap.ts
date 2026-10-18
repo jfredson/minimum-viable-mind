@@ -48,13 +48,13 @@ export const milestoneShort = (m: Milestone) => (m.title.includes(':') ? m.title
 
 export const daysTo = (id: string) => rm.derived.milestones.find((m) => m.id === id)?.days_to ?? 0;
 
-// "Sep 26–27, 2026", or "Oct 31 – Nov 1, 2026" across a month boundary.
+// "Sep 26 to 27, 2026", or "Oct 31 to Nov 1, 2026" across a month boundary.
 export function fmtRange(start: string, end: string): string {
   const d = (iso: string) => { const [y, m, dd] = iso.split('-').map(Number); return new Date(Date.UTC(y, m - 1, dd)); };
   const a = d(start), b = d(end);
   const mon = (x: Date) => x.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' });
   const yr = b.getUTCFullYear();
   if (start === end) return `${mon(a)} ${a.getUTCDate()}, ${yr}`;
-  if (a.getUTCMonth() === b.getUTCMonth()) return `${mon(a)} ${a.getUTCDate()}–${b.getUTCDate()}, ${yr}`;
-  return `${mon(a)} ${a.getUTCDate()} – ${mon(b)} ${b.getUTCDate()}, ${yr}`;
+  if (a.getUTCMonth() === b.getUTCMonth()) return `${mon(a)} ${a.getUTCDate()} to ${b.getUTCDate()}, ${yr}`;
+  return `${mon(a)} ${a.getUTCDate()} to ${mon(b)} ${b.getUTCDate()}, ${yr}`;
 }
