@@ -1,0 +1,94 @@
+
+==============================================================================
+C0. The text under check, at main-line commit a99e8e9
+==============================================================================
+  docs/rulings/2026-10-12-two-sided-question-section-2-v3.md: SHA-256 7acf6d83e8c60a1cd06c7841741ddc7b390707073f0393b7411a5e503befe415
+  spec/minimum-viable-mind-proposal-v0.1.md: SHA-256 acd0cc5b8fcad36912c9593c7abb07a3f1131437c219ee6707ac68e919d3bf55
+  section 2 proper: v3 lines 75 to 294 (219 lines, 2454 words)
+  Floor sentence: 21 quoted lines, 214 words
+  'What Would Count Against It' paragraph: 20 quoted lines, 223 words
+
+==============================================================================
+C1. The three insertion points, in the spec as it stands
+==============================================================================
+  1 match(es) for heading "## What This Proposal Is" (section 2 goes before it, after Scope): lines [21]
+  1 match(es) for Floor sentence anchor "...was a description all along": lines [41]
+  1 match(es) for fourth condition "And if the depth mechanisms produced systems...": lines [141]
+  assembled spec: 377 lines (spec as it stands: 153 lines)
+  SHA-256 of the assembled spec: 3d0baaca5fbf1af08d86652e455ca4e0462c98f7fb424fde09292623256df119
+
+==============================================================================
+RT-283 closure check (tier 1 note, under RT-283): on the revised text, 'no better than' 0, 'fluency measures' 0, and the rulings file cited where ruling 10 is stated
+==============================================================================
+  grep -c "no better than"  -> section 2 text: 1; whole assembled spec: 1
+  grep -c "fluency measures"  -> section 2 text: 0; whole assembled spec: 0
+  lines of section 2 that mention ruling 10: 1
+    | 2026-10-07 (ruling 10 of
+  lines of section 2 citing docs/rulings/2026-10-07-two-sided-question-rulings.md by path: 2
+  the path appears in the joined section text: 2 time(s)
+  within 400 characters before a 'ruling 10' mention, the path appears: True
+
+==============================================================================
+RT-289 closure check (v3 file, under RT-289): 'degree measured' 0, 'at a degree' 0, 'non-zero' 1 in the section text and the hit is the sentence about Scope's 'non-zero'
+==============================================================================
+  grep -c "degree measured"  -> section 2 text: 0; whole assembled spec: 0
+  grep -c "at a degree"  -> section 2 text: 0; whole assembled spec: 0
+  grep -c "non-zero"  -> section 2 text (the three inserts): 1
+    | reach is unchanged, and its "non-zero on the gradient, never a verdict" is
+  'non-zero' in the spec as it stands (John's unchanged text): 3 line(s): [10, 14, 149]
+  'non-zero' in the whole assembled spec: 4 line(s)
+  'non-zero' with the hyphen split across a line break in section 2: 0
+  'degree' in the section text at all: 1 hit(s)
+    | The honest sentence changes with the instrument: named construction contrasts, row by row, with their margins and uncertainty; the route named; no validated degree on any axis yet; never a verdict.
+
+==============================================================================
+RT-284 closure check (tier 1 note, under RT-284; check C4 on the revised spec): the same four searches, every hit in the unchanged groups named in the supersession paragraph
+==============================================================================
+  assembled spec: 86 paragraphs
+  the supersession paragraph: 330 words
+  what 'minimum viable' names:
+    [spec, unchanged] ...Everything below should be read inside this scope. "Minimum viable" names the smallest system that clears the *measurable* floor, and...
+        named in the supersession paragraph: False
+    [spec, unchanged] ...This gives the minimum viable conscious machine a two-part definition. The **floor system** instantiates self-indexed temporal in...
+        named in the supersession paragraph: False
+  the removal test used as an instrument or pass-fail criterion:
+    [spec, unchanged] ...e lowest organized signature we can actually instrument and subject to a removal test. It is deliberately silent about any sub-measurable, *funda...
+        named in the supersession paragraph: True
+    [section 2] ...e lowest organized signature we can actually instrument and subject to a removal test", and its last, that "'Minimum viable' names the smallest s...
+    [section 2] ...e that "instantiates self-indexed temporal integration that survives the removal test", remains the definition of the floor system, which this pr...
+    [section 2] ...not claim to have built or to be able to read. The Build's "pass-fail criterion is the removal test made mechanical" was the criterion of experiments 1 to 4 an...
+    [spec, unchanged] ...The difference between a center and a description of one is settled by removal. Where the binding genuinely indexes its own center, taking...
+        named in the supersession paragraph: False
+    [spec, unchanged] ...ystem** instantiates self-indexed temporal integration that survives the removal test — a momentary, perspectivally thin inside. The **viable sys...
+        named in the supersession paragraph: True
+    [spec, unchanged] ...ct. This is the Integration axis and the harder target. The pass-fail criterion is the removal test made mechanical — the self-locating structure must be load-...
+        named in the supersession paragraph: True
+    [spec, unchanged] ...**Use the removal test as the intuition for "someone home."** A description of a self is something ...
+        named in the supersession paragraph: False
+  the removal test called a definition, not an instrument:
+  whether the floor or the binding is measured:
+    [spec, unchanged] ...This project targets the **minimum measurable structural correlate** of consciousness — the lowest organi...
+        named in the supersession paragraph: True
+    [section 2] ...deleted without the integrated act dissolving. This project does not measure the floor. Whether that act is experience is settled by the premise, ...
+    [spec, unchanged] ...tion is a gauge of preferences, not a probe of binding. The measurement that speaks to an inside is a different one: how deeply the system binds within a si...
+        named in the supersession paragraph: False
+    [spec, unchanged] ...single pass, and whether that binding turns back on itself. Interpretability is the route, because it can read, partially and imperfectly, what is ac...
+        named in the supersession paragraph: False
+    [paragraph (added)] ...That fourth condition stands and is not suspended. The floor is not measured here, so its input is no longer a floor reading: "without a...
+
+  unchanged-spec hits NOT named in the supersession paragraph: 6
+    - [what 'minimum viable' names] "Minimum viable" names"
+    - [what 'minimum viable' names] "minimum viable conscious machine a two-part definition"
+    - [the removal test used as an instrument or pass-fail criterion] "settled by removal"
+    - [the removal test used as an instrument or pass-fail criterion] "removal test as the intuition"
+    - [whether the floor or the binding is measured] "measurement that speaks to an inside"
+    - [whether the floor or the binding is measured] "Interpretability is the route"
+  the supersession paragraph's closing rule:
+    | Where any sentence of those sections and this one disagree about what the project measures or how a run passes, this section binds.
+
+==============================================================================
+Also: the one other thing the v3 file says the spec commit changes
+==============================================================================
+  v3 says Scope, The Floor and The Build are not edited or annotated; the commit inserts three pieces of text only.
+  lines of the spec as it stands that the assembly changed in place: 1 (the Floor anchor line, by appending the sentence)
+  lines inserted: 224
