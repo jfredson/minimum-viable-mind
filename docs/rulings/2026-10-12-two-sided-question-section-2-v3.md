@@ -23,6 +23,11 @@ returned 1 hit against an expected 0 in a different sentence (lines 249 to
 is put to John on its ledger row and was not ruled when the commit was made.
 Nothing else in this file is edited.*
 
+*Dated note, 2026-10-18 (Pacific): John ruled RT-283 closed on reading; the
+sentence stands unedited, with the condition that the observer comparison is
+rehearsed before any observer study is registered
+(`docs/rulings/2026-10-18-rt283-closure-ruling.md`).*
+
 *Written 2026-10-12 (Monday, Pacific) by a helper session of the weekend
 overseer that wrote neither version 1 nor version 2 of the proposal, nor the
 Gate A pass on it, nor the battery draft. Records and text only: nothing was
