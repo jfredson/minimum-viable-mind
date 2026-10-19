@@ -1,0 +1,80 @@
+
+==============================================================================
+R0. What the fix commit 950dfe1 touches
+==============================================================================
+  parent of 950dfe1: 92bc33b (expected 92bc33b)
+  files: ['M\tdocs/rulings/2026-10-12-two-sided-question-section-2-v3.md', 'M\tdocs/rulings/2026-10-18-rt283-closure-ruling.md', 'M\texperiments/06-mvm-0a-constructed-self-index/red_team_ledger.md', 'M\tspec/minimum-viable-mind-proposal-v0.1.md']
+  ledger rows changed 38133fc..950dfe1, with the cells changed: {283: [5], 284: [5], 292: [4, 5], 304: [4]}
+  rows added or removed: []
+  ledger changes other than those four rows: [('insert', 1317, 1316, 1317, 1328)]
+    first added line: 
+
+==============================================================================
+R1. Condition 1: RT-284's counts are the closure output's
+==============================================================================
+  'ten hits' in RT-284's closure cell: True
+  "nine rows in the check file's table; line 87 holds two" in RT-284's closure cell: True
+  "four pass the script's strict substring test and six are flagged" in RT-284's closure cell: True
+  'nine hits' in RT-284's closure cell: False
+  'three of the nine' in RT-284's closure cell: False
+
+==============================================================================
+R2. Condition 2 and John's first answer: RT-283 covers both copies
+==============================================================================
+  RT-283 names spec line 365: True; quotes the second copy: True
+  John's words in the row:          ['my RT-283 reading and its rehearsal condition cover both copies of the observer comparison']
+  John's words in the ruling file:  ['my RT-283 reading and its rehearsal condition cover both copies of the observer comparison']
+  row == ruling file: True; equal to the relayed words with 'his' for 'my': True
+  ruling file diff 38133fc..950dfe1: removed lines 0
+  the earlier ruling quote is still in the row: True
+
+==============================================================================
+R3. Condition 3 and John's second answer: RT-292 and the Floor sentence's interval clause
+==============================================================================
+  spec SHA-256 at 38133fc: 3d0baaca5fbf1af08d86652e455ca4e0462c98f7fb424fde09292623256df119 (expected 3d0baaca5fbf…: True)
+  spec SHA-256 at 950dfe1: c824cd81b53b3cebc3a0dda350b63ece66c54c6dd77e6580eb132466eb7d0413 (expected c824cd81b53b…: True)
+  spec lines 378 -> 378; lines that differ: [263]
+  line 263: 6 change(s)
+    insert: '' -> 'th'
+    insert: '' -> ' first '
+    replace: 'c' -> 'nd t'
+    insert: '' -> 'ird'
+    insert: '' -> 's'
+    insert: '' -> ' and the second, from 0.00 to 0.20, touching it'
+  the spec at 38133fc with only 'each interval above zero' replaced by the relayed wording equals the spec at 950dfe1: True
+  counts at 950dfe1: 'each interval above zero' 0; relayed wording 1
+  removal_ci.json, primary condition (the C8 read re-run):
+    T_self_irrelevant: 0.2188 [0.0938, 0.3750]  lower bound above zero: True; equal to zero: False
+    T_self_relevant: 0.1000 [0.0000, 0.2000]  lower bound above zero: False; equal to zero: True
+    T_syntax: 0.1333 [0.0333, 0.2667]  lower bound above zero: True; equal to zero: False
+  the clause's order matches the sentence's figures (0.22, 0.10, 0.13 = self-irrelevant, self-relevant, syntax): True
+  'first and third above zero': True; 'second, from 0.00 to 0.20, touching it': True
+  RT-292 closure cell starts 'Open': True; records 0.0000 to 0.2000: True; gives the corrected wording: True
+  RT-292 disposition marks 'each interval above zero' as version 3's words the record contradicts: True
+  words the RT-292 row quotes as John's: ['fix the removal-test interval sentence in the spec before it merges, with the wording you proposed']
+  committed files at 950dfe1 containing them: ['950dfe1:experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md']
+
+==============================================================================
+R4. Condition 4: RT-304 quotes the Floor sentence as it reads
+==============================================================================
+  RT-304 disposition: ['"this project treats ... as its definition of the floor and not as an instrument for it"']
+  each fragment of that quote is in the Floor line at 950dfe1: [('this project treats', True), ('as its definition of the floor and not as an instrument for it', True)]
+  'treats the test as its definition of the floor and not as an instrument for it' in the Floor line: True
+
+==============================================================================
+R5. Condition 5: a dated note on the count, and does it match the rows
+==============================================================================
+  closure words over the 22 rows at 950dfe1: Closed on John's reading: 1 [283]; Closed: the claim was checked: 2 [284, 289]; Closed: the argument was accepted: 17 [285, 286, 287, 288, 290, 291, 293, 294, 295, 296, 297, 298, 299, 300, 301, 303, 304]; Open: 2 [292, 302]
+  the dated note on the count is present: True
+    checked 2: True
+    accepted 17: True
+    reading 1: True
+    open 2: True
+
+==============================================================================
+R6. Version 3 below its notes still equals bfd1d5d
+==============================================================================
+  version 3 at 950dfe1 with its lines 3..40 (its three dated notes) removed equals bfd1d5d: True
+  diff 38133fc..950dfe1: blocks ['@@ -30,0 +31,10 @@']; removed 0
+  the new note gives the corrected wording: True; the new checksum: True
+  the section in the spec still equals version 3 lines 75..293: True

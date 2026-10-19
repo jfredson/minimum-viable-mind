@@ -1,3 +1,5 @@
+**Re-check, 2026-10-18, after the five conditions were applied (commit `950dfe1`): PASS WITH ONE CONDITION.** All five conditions are met as stated. RT-292's re-run matches the record, so RT-292 closes. The spec's only change since `3d0baaca…` is the one clause. The one condition is that the words the RT-292 row quotes as John's have no committed source. See "Re-check" at the end; the first check's verdict follows unchanged.
+
 **Verdict: PASS WITH CONDITIONS.** The spec commit is exact (checksum, three inserts, nothing else changed) and the numbering, rulings and tier 2 coverage of the 22 rows all hold. John's RT-283 ruling (commit 3, added 2026-10-18) is recorded faithfully, touches only its three files, and leaves the spec's checksum unchanged. Five changes are needed before merge: RT-284's closure line miscounts the hits; RT-283's row should say the ruling also covers a second copy of the same comparison; RT-292 carries a figure the record contradicts and must go to Open; RT-304 misquotes the Floor sentence; and the section's count line still lists RT-283 as open. The changes are listed under "Conditions" below.
 
 # Check of pull request 173: ledger rows RT-283 to RT-304, and section 2 version 3 written into the spec
@@ -453,3 +455,106 @@ for the row at commit 3, which keeps the same MEASURED text.
   (condition 2 assumes it does).
 - The writing session's other two open questions (RT-292's grade, RT-287's
   closure choice) stand as they put them.
+
+## Re-check, 2026-10-18: the conditions applied (commit `950dfe1`)
+
+*The session that started this check asked for a re-check. The rows' author
+had stopped on usage credits, so the master session for this project applied
+the five conditions and John's two answers of 2026-10-18 as one commit,
+`950dfe1`, on top of this record's merge into the branch (`92bc33b`). This
+session wrote none of it. John's answers, as relayed: his RT-283 reading and
+its rehearsal condition cover both copies of the observer comparison; and the
+Floor sentence's interval clause is fixed in the spec before it merges, to
+read "the first and third intervals above zero and the second, from 0.00 to
+0.20, touching it". Script `recheck_pr173.py`, output
+`recheck_pr173.out.txt`, both in the scripts folder.*
+
+**What the commit touches** (R0, MEASURED). Four files: the spec, the
+ledger, version 3's notes and the RT-283 ruling file. In the ledger only
+four rows changed (RT-283 and RT-284 in the closure cell, RT-292 in the
+disposition and closure cells, RT-304 in the disposition cell), plus one
+added dated note after the count. Nothing else changed.
+
+**Condition 1, RT-284's counts: met** (R1, MEASURED). The closure cell now
+says "ten hits" with "nine rows in the check file's table; line 87 holds
+two", and "four pass the script's strict substring test and six are
+flagged". "nine hits" and "three of the nine" are gone.
+
+**Condition 2 and John's first answer, both copies: met** (R2, MEASURED).
+RT-283's row names spec line 365 and quotes the second copy. John's words are
+the same in the row and the ruling file, and match the relayed answer with
+"my" for "his":
+
+```
+  John's words in the row:          ['my RT-283 reading and its rehearsal condition cover both copies of the observer comparison']
+  John's words in the ruling file:  ['my RT-283 reading and its rehearsal condition cover both copies of the observer comparison']
+  row == ruling file: True; equal to the relayed words with 'his' for 'my': True
+```
+
+The ruling file gained one section and lost no line, and the row's earlier
+quote of John is still there.
+
+**Condition 3 and John's second answer, the interval clause: met, and the
+re-run matches** (R3, MEASURED).
+
+```
+  spec SHA-256 at 950dfe1: c824cd81b53b3cebc3a0dda350b63ece66c54c6dd77e6580eb132466eb7d0413 (expected c824cd81b53b…: True)
+  spec lines 378 -> 378; lines that differ: [263]
+  the spec at 38133fc with only 'each interval above zero' replaced by the relayed wording equals the spec at 950dfe1: True
+  removal_ci.json, primary condition (the C8 read re-run):
+    T_self_irrelevant: 0.2188 [0.0938, 0.3750]  lower bound above zero: True; equal to zero: False
+    T_self_relevant: 0.1000 [0.0000, 0.2000]  lower bound above zero: False; equal to zero: True
+    T_syntax: 0.1333 [0.0333, 0.2667]  lower bound above zero: True; equal to zero: False
+  the clause's order matches the sentence's figures (0.22, 0.10, 0.13 = self-irrelevant, self-relevant, syntax): True
+  'first and third above zero': True; 'second, from 0.00 to 0.20, touching it': True
+```
+
+Replacing the one old clause with the relayed wording, and changing nothing
+else, rebuilds the new spec byte for byte. So the clause is the only change
+since `3d0baaca…`, and the new checksum is the one claimed. The corrected
+clause says what the interval file says: the first and third drops'
+intervals sit above zero, and the second runs from 0.0000 to 0.2000. "Touching
+it" is the findings file's own word for a lower bound of 0.000. RT-292's
+row is Open, records the figures, gives the corrected wording, and marks
+"each interval above zero" as version 3's words that the record contradicts.
+**The row says what closes it: a session that did not make the fix re-runs
+the read against the corrected sentence and it matches. This session did not
+make the fix, the read was re-run, and it matches. RT-292 can close.**
+
+**Condition 4, RT-304's quote: met** (R4, MEASURED). The row now quotes
+"this project treats ... as its definition of the floor and not as an
+instrument for it". Both fragments are in the Floor line as it reads.
+
+**Condition 5, the count: met** (R5, MEASURED). A dated note follows the
+count. Its numbers match the closure words on the 22 rows at `950dfe1`:
+checked 2 (RT-284, RT-289), accepted 17, closed on John's reading 1
+(RT-283), open 2 (RT-292, RT-302). When RT-292 closes, the note's open count
+drops to 1.
+
+**Version 3** (R6, MEASURED). With its three dated notes (lines 3 to 40)
+taken out, version 3 still equals what `bfd1d5d` merged. The new note adds 10
+lines and removes none, and gives the corrected wording and the new checksum.
+The section in the spec still equals version 3's lines 75 to 293.
+
+**The one condition: a source for the words RT-292 quotes as John's.** RT-292's
+closure cell quotes John: "fix the removal-test interval sentence in the spec
+before it merges, with the wording you proposed".
+
+```
+  committed files at 950dfe1 containing them: ['950dfe1:experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md']
+```
+
+MEASURED: the ledger row is the only committed place these words appear. The
+ruling file records this part of John's answer without quoting it, and the
+relayed message to this session paraphrased it differently. ARGUED: a
+quotation of John that no record holds cannot be checked by a later
+session, which is the kind of fault the protocol's known-failure list names.
+**Change to make:** add John's words, as he wrote them, to the "Added the
+same day" section of `docs/rulings/2026-10-18-rt283-closure-ruling.md`,
+beside the both-copies quote already there. Or, if those were not his exact
+words, change the row to say they are relayed. This does not affect
+RT-292's closure or the spec.
+
+**Re-check verdict: PASS WITH ONE CONDITION** (the source for RT-292's
+quotation). The spec's checksum is now
+`c824cd81b53b3cebc3a0dda350b63ece66c54c6dd77e6580eb132466eb7d0413`.
