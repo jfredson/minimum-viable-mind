@@ -48,6 +48,17 @@ second readers stay on a non-Claude model whatever the credit balance.
 Later starts of the same rehearsal run under the same go and ceilings, and
 each adds a row.
 
+**Which key and which pocket.** The first start's Anthropic calls (about 184
+of its 437) went through the Anthropic key in `minimum-viable-mind/.env` that
+ended GQAA, in the default Console workspace. By the session-routing guide
+(`timeassembler/docs/session-routing.md`) that key was Minimum Viable Mind's
+own, so no call went through another project's key. From the later starts on,
+the key is Minimum Viable Mind's new one, workspace `mvm-judge`, ending 3AAA,
+set up on 2026-10-18. Under the addendum to the spending ruling, the
+Anthropic share is paid from John's Max-plan credits (vendor "Anthropic
+credits": recorded, no go needed below about $50 a job), and the Gemini share
+is out of pocket and stays inside his "Go up to $50".
+
 ## Earlier API spends known so far (to be completed)
 
 | Date | What | Vendor | The go | Spent | Source |
