@@ -202,7 +202,7 @@ description all along.
 
 This distinction cuts across the field's existing fault lines rather than
 following them. Higher-Order Theories predict a separable self-representation
-and read separability *favorably* (the higher-order monitor is where
+and read separability *favourably* (the higher-order monitor is where
 consciousness would live); the account under test reads the same result as
 failing its floor. Global Workspace Theory is silent on self-indexing
 specifically. IIT denies the computational level is where the question lives at
@@ -774,7 +774,7 @@ retreat is to construction ("not yet, and here is the specific thing
 missing"). Higher-Order Theories are partially fed: the persistent,
 never-subtracted self-report is consistent with a robust, redundantly
 implemented self-representation — but our instruments could not isolate it as
-a separable monitor either, so the HOT-favorable reading remains a gloss, not
+a separable monitor either, so the HOT-favourable reading remains a gloss, not
 a finding. Global Workspace Theory is untouched, as predicted. IIT's
 disagreement is upstream of the experiment and was registered as such in
 advance: nothing here engages substrate-level cause–effect structure. The one
@@ -818,8 +818,7 @@ untested, not cleared; judged self-report depends on a rubric and held-out
 judge, spot-checked but not human-scored throughout. The constructed line's
 instruments for locating the ownership structure are unvalidated at 30
 million parameters (`experiments/06-mvm-0a-constructed-self-index/blind-arm-findings.md`;
-John's ruling of 2026-09-16), so its nulls say "not testable", never
-"absent". The result licenses claims about this model class and these
+John's ruling of 2026-09-16). The result licenses claims about this model class and these
 instruments, not about transformers, and not about minds.
 
 **The constructive turn, as it ran.** The registered fork this result
