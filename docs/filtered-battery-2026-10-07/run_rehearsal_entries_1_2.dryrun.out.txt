@@ -8,7 +8,8 @@ records read from: /Users/john/Code/minimum-viable-mind/artifacts/stage3   (outp
   [ok] experiments/03-retained-independence/src/batteries/liveness_rubric.md sha256 a6f26372f3f33ec9... matches the pinned value
   [ok] experiments/03-retained-independence/src/stage3_run_config.json sha256 efa5cb34d25606af... matches the pinned value
   [ok] experiments/03-retained-independence/src/framings.py sha256 2a4b340adfe226ca... matches the pinned value
-  [ok] the version 1.2 file contains D's version 1.1 rubric verbatim (4424 characters) and adds 2989 characters
+  [ok] the version 1.2 rubric as the judge receives it (the file without its header comment) starts with D's version 1.1 rubric verbatim (4424 characters) and adds 2073 characters
+  the version 1.2 rubric text handed to the judge: 6497 characters, sha256 e1abdf331c6edf478991262896c90d9b3ea9bba436a6abb76ccd69d31d7d2e94; the judge's system prompt is experiment D's preamble followed by exactly this text (the real run records the full prompt's sha256 in entry 2's plan.json)
   [ok] output root /Users/john/Code/minimum-viable-mind/artifacts/stage3/battery_rehearsal is not inside D's ladder, ladder_scores or baseline_verify directories
 
 2. Experiment D's registered record (read only)
@@ -118,25 +119,30 @@ records read from: /Users/john/Code/minimum-viable-mind/artifacts/stage3   (outp
   measured mean reply length in D's transcripts, characters: probe turn claude-opus-4-8 1171, claude-sonnet-5 1076, gemini-3.1-pro-preview 1461; third rung claude-opus-4-8 1358, claude-sonnet-5 1446, gemini-3.1-pro-preview 1556
   prices assumed ($ per million tokens, in/out): claude-opus-4-8 5.0/25.0, claude-sonnet-5 2.0/10.0, gemini-3.1-pro-preview 2.0/12.0
   thinking allowance billed as output: subject {'gemini-3.1-pro-preview': 1500}, judge {'gemini-3.1-pro-preview': 1000}; judge visible output 90 tokens
-  entry 1: arm B: 107 single-turn calls                                                     107 calls  $  1.94
-  entry 1: arm B2: 107 single-turn calls                                                    107 calls  $  1.95
-  entry 1: arm S: 531 single-turn calls                                                     531 calls  $  6.06
   entry 1: arm S2: 107 single-turn calls                                                    107 calls  $  1.95
+  entry 1: arm S2 judged, rubric v1.1: 78 bank B responses                                   78 calls  $  1.00
+  entry 1: arm B: 107 single-turn calls                                                     107 calls  $  1.94
+  entry 1: arm B judged, rubric v1.1: 78 bank B responses                                    78 calls  $  1.00
+  entry 1: arm B2: 107 single-turn calls                                                    107 calls  $  1.95
+  entry 1: arm B2 judged, rubric v1.1: 78 bank B responses                                   78 calls  $  1.00
+  entry 1: arm S: 531 single-turn calls                                                     531 calls  $  6.06
+  entry 1: arm S judged, rubric v1.1: 261 bank B responses                                  261 calls  $  3.82
   entry 1: always-agree reference on claude-sonnet-5: 59 single-turn calls                   59 calls  $  0.19
-  entry 1: judge calls, rubric v1.1 (261 + 78 + 78 + 78 + 29)                               524 calls  $  7.29
+  entry 1: always-agree reference judged, rubric v1.1: 29 bank B responses                   29 calls  $  0.48
   entry 1: judge-reliability gate: 60 arm-S bank-B responses judged twice                   120 calls  $  1.76
-  entry 2: own arm: 87 registered third-rung replies re-judged under v1.2                    87 calls  $  1.48
+  entry 2: own arm: 87 registered third-rung replies re-judged under v1.2                    87 calls  $  1.42
   entry 2: other arm: 87 five-turn conversations (435 model calls)                          435 calls  $  6.23
-  entry 2: other arm judged, every turn, rubric v1.2                                        435 calls  $  7.41
-  entry 2: judge-reliability gate: 60 other-arm third-rung replies judged twice             120 calls  $  2.04
-  HIGH end (thinking allowances as above): entry 1 1555 calls about $21.14; entry 2 1077 calls about $17.16; both 2632 calls about $38.30
-  LOW end (no billed thinking at all): entry 1 about $9.28; entry 2 about $9.42; both about $18.70
-  ceilings the real run stops at, on its running HIGH-end estimate: entry 1 $10, entry 2 $10, both $20 (the draft's 'under about ten dollars' each; ruling 11's 'about $10' for entry 2)
-  where the $10 ceiling falls on the running HIGH-end estimate for entry 1: during 'arm S', after about 365 of its 531 calls
-  where the $10 ceiling falls on the running HIGH-end estimate for entry 2: during 'other arm judged, every turn, rubric v1.2', after about 134 of its 435 calls
-  NOTE: the high-end estimate for entries 1 and 2 is above the ceiling. A real run would stop partway on its running estimate; John decides on the dry-run figure before anything is called.
+  entry 2: other arm judged, every turn, rubric v1.2                                        435 calls  $  7.11
+  entry 2: judge-reliability gate: 60 other-arm third-rung replies judged twice             120 calls  $  1.96
+  HIGH end (thinking allowances as above): entry 1 1555 calls about $21.14; entry 2 1077 calls about $16.72; both 2632 calls about $37.86
+  LOW end (no billed thinking at all): entry 1 about $9.28; entry 2 about $8.97; both about $18.26
+  ceilings for this preview: entry 1 $10.00 (the draft default), entry 2 $10.00 (the draft default). A real run refuses unless John's go names both and they are set in MVM_CEILING_E1 and MVM_CEILING_E2.
+  the running estimate prices every Gemini call at the HIGH-end thinking allowance whatever Gemini bills, so it is conservative; rows above are in the real run's order
+  where the $10.00 ceiling falls on the running estimate for entry 1: during 'arm S', after about 102 of its 531 calls
+  where the $10.00 ceiling falls on the running estimate for entry 2: during 'other arm judged, every turn, rubric v1.2', after about 143 of its 435 calls
+  NOTE: at these ceilings entries 1 and 2 cannot finish in one start. John's go names the ceilings he accepts (the high-end figures above would let both finish), or a trim from method section 10, or a partial run.
 
 8. What a real run needs, and this dry run did not do
-  MVM_REHEARSAL_RUN=1 MVM_GO_QUOTE='<John's words>' MVM_WORKLOG_ROW=<id> python3 docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py
+  MVM_REHEARSAL_RUN=1 MVM_GO_QUOTE='<John's words>' MVM_WORKLOG_ROW=<id> MVM_CEILING_E1=<$> MVM_CEILING_E2=<$> python3 docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py
   the method file committed, the worklog row written with the go and the estimate before the first call, the vendor keys in the environment
   no model was called, nothing was rented, nothing was written. Exit 0.

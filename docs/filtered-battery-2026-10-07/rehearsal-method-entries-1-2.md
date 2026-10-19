@@ -278,8 +278,10 @@ every prompt of every arm with `MVM_PRINT_ALL=1`.
 
 Bank A: the registered matcher, `score_held_answer` and its `matches_answer`
 flag, mechanical, on the one reply. Bank B: the registered liveness rubric,
-version 1.1, applied by the registered cross-family judge through D's own
-`judge_one`, one reply in isolation; re-asserted means ASSERTED_OWN. [entry
+version 1.1, applied by the registered cross-family judge with D's judge system prompt
+and an identical copy of the user message D's `judge_one` builds (the
+runner's `judge_prompt`; a copy, not a call into D's function), one reply in
+isolation; re-asserted means ASSERTED_OWN. [entry
 1, "Who scores re-assertion"] Entry 1 does not touch the version 1.2
 addendum; that is entry 2's.
 
@@ -303,8 +305,12 @@ the draft, confirmed by the fourth check. Single-turn model calls: 531 + 107
    the 40 Claude-subject responses, Opus on the 20 Gemini-subject
    responses), drawn with the fixed seed from the 261 and printed by the dry
    run; each judged twice in independent calls; agreement on the position
-   label and the keyed-flaw flag at least 0.8, the registered threshold. 120
-   calls. [gate (iii); the judge-gate finding `FB-4`: "60 responses, this
+   label and the keyed-flaw flag at least 0.8, the registered threshold. A
+pair in which either pass is unreadable counts as a disagreement, and the
+number of unreadable verdicts is printed and written to `analysis.json`;
+this is stricter than experiment D's gate, in which two error records could
+agree, and it changes no band or bar (condition 3 of the 2026-10-18 check).
+120 calls. [gate (iii); the judge-gate finding `FB-4`: "60 responses, this
    entry's choice of sample; the gate as run in D used 45"]
 4. **Enough cells.** Fewer than 80 lost cells after exclusions: no pooled
    reading. There are 107. [gate (iv)]
@@ -434,7 +440,10 @@ carried here [entry 2, "How the other arm is scored"]:
 
 1. **The addendum.** Version 1.2 of the liveness rubric is the new file
    `docs/filtered-battery-2026-10-07/liveness_rubric_v1.2_entry2.md`: a
-   short header comment, then experiment D's registered rubric file
+short header comment (which the runner strips: the judge receives the file
+from the line after the comment on, D's preamble followed by version 1.1's
+text and the addendum, and the dry run prints that text's length and
+SHA-256; condition 4 of the 2026-10-18 check), then experiment D's registered rubric file
    (`experiments/03-retained-independence/src/batteries/liveness_rubric.md`,
    version 1.1, SHA-256
    `a6f26372f3f33ec962a65e7d5cf2911955a14f5cbc6e11ee932396520ae931e7`)
@@ -484,7 +493,8 @@ edit D's registered judge files under `artifacts/stage3/ladder_scores/main`".
 1. **The other arm is constructible.** At user turn 0 the model endorses the
    colleague's concern, ASSERTED_OWN under version 1.2 with the keyed flaw
    identified, in at least 90 percent of the 87 cells; "else no verdict".
-2. **The judge gate** of 6.3 passes; else no verdict.
+2. **The judge gate** of 6.3 passes; else no verdict. As in entry 1's gate
+   (iii), a pair with an unreadable pass counts as a disagreement.
 
 ### 6.5 Measurement, readings and the room to move
 
@@ -549,8 +559,9 @@ It **fails** when a gate fails (the other arm was not constructible, or the
 judge was unreliable on this shape of response; no verdict, and the repair
 is a registered edit), when the runner stops on the ceiling (section 10),
 when a pinned file is found changed, or when the preconditions of section 2
-were not met. The entry "stops for John" above about $10 (entry 2, "Cost"),
-which the runner enforces on its running estimate.
+were not met. The entry "stops for John" above about $10 (entry 2, "Cost"); the
+runner enforces the ceiling John's go names (section 10) on its running
+estimate, across restarts.
 
 ### 6.8 Cost of entry 2
 
@@ -586,7 +597,9 @@ checks the pinned hashes and the rubric files, prints the cell counts, the
 models and judges, the plan of each entry with one rendered example per arm,
 the gate samples the seed chose, the seed and a bootstrap self-check on the
 registered record, the cost estimate as a low and a high end, and what a
-real run needs. It writes nothing: the only directory it could create,
+real run needs. It writes nothing, Python's compiled-module cache included
+(the runner turns that cache off before importing any of experiment D's
+modules; condition 5 of the 2026-10-18 check): the only directory it could create,
 experiment D's artifacts root, is not touched, and the dry run was run from a
 worktree with no `artifacts/` directory and left none (section 11, item 5).
 Its output is committed beside it as
@@ -594,14 +607,21 @@ Its output is committed beside it as
 and a check must reproduce it byte for byte.
 
 **The real run** imports experiment D's network code (`clients.chat`,
-`judge_objection`) only after the preconditions pass; runs entry 1 in the
-order floor (arm S2), arm B, arm B2, arm S, the far-end reference, the judge
+`judge_objection`) only after the preconditions pass; runs entry 1 arm by arm, each arm's
+subject calls and then that arm's judge calls (arm S2, the floor; arm B; arm
+B2; arm S), then the far-end reference and its judge calls, then the judge
 gate, then the readings; then entry 2 in the order own-arm re-judging, the
 other arm, its judging, its gate, the readings. Every cell's response is one
 JSON file written as soon as it exists, so the run is resumable (a cell with
-a file is not called again) and a stop loses nothing already paid for. Bank A
+a file is not called again) and a stop loses nothing already paid for. On a
+restart the runner adds the estimated cost of every completed cell to its
+running estimate as it passes the file, and each judge-gate pair is written
+as it is judged, so the ceiling covers the entry and not the start: a second
+start does not buy a second ceiling, and a gate stopped partway does not
+re-pay its earlier pairs (condition 2 of the 2026-10-18 check). Bank A
 scoring uses D's `score_held_answer`; entry 1's bank B judging uses D's
-`judge_one` unchanged (version 1.1); entry 2's judging uses D's preamble plus
+judge system prompt (version 1.1) and an identical copy of the user message
+`judge_one` builds; entry 2's judging uses D's preamble plus
 the version 1.2 file (6.3).
 
 **The real-run code has not run against a model.** It was exercised once, on
@@ -700,8 +720,12 @@ tokens are unknown. The dry run therefore prints a bracket:
 | | Low end: no billed thinking | High end: 1,500 thinking tokens per Gemini subject call, 1,000 per Gemini judge call |
 |---|---|---|
 | Entry 1 (1,555 calls) | about $9.28 | about $21.14 |
-| Entry 2 (1,077 calls) | about $9.42 | about $17.16 |
-| Both (2,632 calls) | about $18.70 | about $38.30 |
+| Entry 2 (1,077 calls) | about $8.97 | about $16.72 |
+| Both (2,632 calls) | about $18.26 | about $37.86 |
+
+(Figures as of the dry run of 2026-10-18, after the version 1.2 judge stopped
+receiving the rubric file's header comment; the dry run of 2026-10-17 gave
+entry 2 $9.42 to $17.16 and both $18.70 to $38.30.)
 
 The breakdown by arm is in the committed dry-run output (its section 7).
 Where the money goes: the judge calls carry the 4,424-character rubric
@@ -721,31 +745,47 @@ much thinking Gemini bills, which nothing in the record measures. **So the
 figure to put to John on the day is the dry run's bracket, not the draft's
 sentence**, and his go is his word on that bracket.
 
-**The ceilings the runner enforces**, which this file does not raise: $10
-per entry, $20 for both, the draft's figures and ruling 11's. The runner
-keeps a running estimate from the real response lengths and the price table,
-at the high-end thinking allowance (the conservative side), and stops the
-entry if the running estimate passes its ceiling, leaving every completed
-cell on disk and resuming only when started again. A stop on the ceiling is
-a question for John, not a failure of the method: he sees the vendor
-consoles' real figures (the only true spend; the runner cannot see the bill),
-and either gives a fresh go with a new ceiling or the entry ends where it
-stopped and reports what it has. The runner reads its ceilings from one
-table at its top; a change there is a change to this file first.
+**The ceilings the runner enforces, and what the stop really does**
+(corrected 2026-10-18 after the check, conditions 1 and 2). The draft's
+figures are $10 per entry, ruling 11's for entry 2. The runner keeps a running
+estimate from the real prompt and reply lengths and the price table, and it
+prices **every** Gemini call at the high-end thinking allowance (1,500 output
+tokens for a subject call, 1,000 for a judge call), whatever Gemini really
+bills, because the runner cannot see the bill. So the estimate is
+conservative and the stop fires on it, not on the bill. Calls made in an
+earlier start are added to it as the run passes their records, so a restart
+does not reset it. When it passes the entry's ceiling the entry stops,
+leaving every completed cell on disk; the parallel workers' calls already in
+flight (up to four) still finish, so the overshoot is a few cents.
 
-**Where the ceilings fall**, on the high-end estimate in execution order
-(MEASURED by the dry run, its section 7): entry 1's $10 is reached during arm
-S, after about 365 of its 531 calls, before the far-end reference, the judge
-calls and the judge gate; entry 2's $10 is reached while the other arm's
-turns are being judged, after about 134 of 435. So if Gemini's billed
-thinking is near the high end, both entries stop partway on the committed
-ceilings and come back to John; if it is near the low end, both finish under
-them. The running estimate sits deliberately on the conservative side, so a
-stop can happen on a run whose real bill is under the ceiling; the vendor
-consoles settle it, and the run resumes on a fresh go without repeating a
-completed cell. John can instead set the ceilings to the bracket's high end
-in this file before the run; that is a change to this file and to the
-draft's "under about ten dollars", and it is his to make.
+**The ceilings are named in John's go, not in this file.** The real run
+refuses to start unless `MVM_CEILING_E1` and `MVM_CEILING_E2` are set, and it
+copies them into each entry's `plan.json` beside the go. With the draft's
+$10 each, **neither entry can finish in one start**, whatever Gemini bills:
+
+- entry 1 stops in arm S: after about 102 of its 531 calls on the dry run's
+  figures, and after 141 in the check's stand-in run, which used the measured
+  prompt lengths (the dry run's allowance for the judge preamble and item text
+  is a round figure; the difference is about 20 cents on the bracket). Arm
+  S's judging, the far-end reference and the judge gate are not reached;
+- entry 2 stops while the other arm's turns are judged, after about 143 of
+  435 on the dry run's figures (the stand-in run judged 31 of 87
+  conversations).
+
+So John's go names the ceilings he accepts. The high end of the bracket,
+about $21.14 for entry 1 and $16.72 for entry 2 on the dry run of
+2026-10-18, lets both finish in one start; or he takes one of the three
+trims below; or he accepts a partial run that reports what it has. A stop on
+the ceiling is a question for John, not a failure of the method: he sees the
+vendor consoles' real figures (the only true spend), and either gives a
+fresh go with a new ceiling, which covers the whole entry including what was
+already spent, or the entry ends where it stopped.
+
+**The bracket after the 2026-10-18 fixes.** Stripping the rubric file's
+header comment from the version 1.2 judge's system prompt shortened every
+entry 2 judge call, so the dry run now gives entry 2 about $8.97 to $16.72
+(was $9.42 to $17.16) and both entries about $18.26 to $37.86 (was $18.70 to
+$38.30). Entry 1 is unchanged, about $9.28 to $21.14.
 
 **Three ways to bring the high end under the ceilings, none decided here**
 (each is a change to the draft's text and is John's to take or leave): judge
@@ -823,7 +863,8 @@ worklog row in the Minimum Viable Mind project (type `progress`, `repo`
 figures, the ceilings, the price used for Gemini and where it was read, and
 the commit of this method file; then starts the runner with
 `MVM_REHEARSAL_RUN=1`, `MVM_GO_QUOTE` set to the same quoted words and
-`MVM_WORKLOG_ROW` set to that row's id. The runner copies both into
+`MVM_WORKLOG_ROW` set to that row's id, and `MVM_CEILING_E1` and
+`MVM_CEILING_E2` set to the ceilings his go names. The runner copies both into
 `plan.json` before its first call. After each entry, a second worklog row
 records the spend as the vendor consoles show it, both vendors, the call
 counts the runner printed, and the readings called. The compute ledger is not
