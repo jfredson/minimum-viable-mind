@@ -46,3 +46,8 @@ expert before a senior one) is cancelled with it, read as an outside reader
 too. The approach note (`docs/outside-reader-approach-note-2026-10-17.md`)
 stays in the repository unsent. Step 5, the first venue, now follows steps 1
 to 3. "For now" is his: the step can come back only on his word.
+
+*Dated note, 2026-10-19: asked whether "an outside reader" meant only the
+academics the approach note was for, or also step 4's friendly reader
+(Martin Picard, or a draft posted for comment), John answered in one word,
+relayed by the sixth master session: "Both". So the reading above stands.*
