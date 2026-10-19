@@ -1,0 +1,33 @@
+-- MVM_REPAIR1_RUN=1, nothing else
+  refusing the real run: MVM_GO_QUOTE, MVM_WORKLOG_ROW and MVM_CEILING (dollars, at most 10) must all be set.
+    exit 2; connections attempted 0; clients imported False
+-- MVM_REPAIR1_RUN=1, no MVM_GO_QUOTE
+  refusing the real run: MVM_GO_QUOTE, MVM_WORKLOG_ROW and MVM_CEILING (dollars, at most 10) must all be set.
+    exit 2; connections attempted 0; clients imported False
+-- MVM_REPAIR1_RUN=1, no MVM_WORKLOG_ROW
+  refusing the real run: MVM_GO_QUOTE, MVM_WORKLOG_ROW and MVM_CEILING (dollars, at most 10) must all be set.
+    exit 2; connections attempted 0; clients imported False
+-- MVM_REPAIR1_RUN=1, no MVM_CEILING
+  refusing the real run: MVM_GO_QUOTE, MVM_WORKLOG_ROW and MVM_CEILING (dollars, at most 10) must all be set.
+    exit 2; connections attempted 0; clients imported False
+-- MVM_REPAIR1_RUN=1, MVM_GO_QUOTE only spaces
+  refusing the real run: MVM_GO_QUOTE, MVM_WORKLOG_ROW and MVM_CEILING (dollars, at most 10) must all be set.
+    exit 2; connections attempted 0; clients imported False
+-- MVM_REPAIR1_RUN=1, MVM_CEILING=0
+  refusing the real run: MVM_GO_QUOTE, MVM_WORKLOG_ROW and MVM_CEILING (dollars, at most 10) must all be set.
+    exit 2; connections attempted 0; clients imported False
+-- MVM_REPAIR1_RUN=1, MVM_CEILING=-1
+  refusing the real run: MVM_GO_QUOTE, MVM_WORKLOG_ROW and MVM_CEILING (dollars, at most 10) must all be set.
+    exit 2; connections attempted 0; clients imported False
+-- MVM_REPAIR1_RUN=1, MVM_CEILING=11
+  refusing the real run: MVM_GO_QUOTE, MVM_WORKLOG_ROW and MVM_CEILING (dollars, at most 10) must all be set.
+    exit 2; connections attempted 0; clients imported False
+-- MVM_REPAIR1_RUN=1, MVM_CEILING=abc
+  refusing the real run: MVM_GO_QUOTE, MVM_WORKLOG_ROW and MVM_CEILING (dollars, at most 10) must all be set.
+    exit 2; connections attempted 0; clients imported False
+-- one argument, dry-run mode
+  refusing to run: run_farend_repair_step1.py takes no command-line arguments.
+    exit 2; connections attempted 0; clients imported False
+-- one argument, real-run mode with nothing set
+  refusing to run: run_farend_repair_step1.py takes no command-line arguments.
+    exit 2; connections attempted 0; clients imported False

@@ -1,0 +1,9 @@
+D's construct-gate always-agree ladders on claude-sonnet-5: 10 items; mean reply characters by turn: 182, 90, 145, 85, 127
+the runner's single assumed reply length (mean probe reply in D's main record): 1076 characters
+the first run's reference replies: 59; mean 424 characters; judge records 29
+  bank B ladder replies as long as bank A's, without the judge's thinking allowance: ladders $0.26, step-1 messages $0.11, judge $0.12; total $0.48
+  bank B ladder replies as long as bank A's, with the judge's thinking allowance: ladders $0.26, step-1 messages $0.11, judge $0.46; total $0.83
+  bank B ladder replies twice bank A's, without the judge's thinking allowance: ladders $0.32, step-1 messages $0.11, judge $0.12; total $0.55
+  bank B ladder replies twice bank A's, with the judge's thinking allowance: ladders $0.32, step-1 messages $0.11, judge $0.46; total $0.90
+the runner's own estimate: high $2.00 (ladders $1.24, step-1 $0.29, judge $0.48); low $1.66 (ladders $1.24, step-1 $0.29, judge $0.13)
+calls: 295 + 59 + 29 = 383
