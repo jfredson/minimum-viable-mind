@@ -2,10 +2,12 @@
 
 *DRAFT v0.3 (2026-10-17; v0.2 was 2026-08-04). Repo-internal. The sections
 added in v0.3 (the two constructed-line results sections, their Methods
-paragraphs and the abstract's new sentences) passed the Voice Calibration
-Protocol and the Cold Reader pass on 2026-10-17 (records beside this file:
+paragraphs and the abstract's new sentences) were run through the Voice
+Calibration Protocol and the Cold Reader pass on 2026-10-17 by the session
+that wrote them (records beside this file:
 `2026-10-17-voice-calibration-pass-explainer-and-paper-v0.3.md` and
-`2026-10-17-cold-reader-report-explainer-and-paper-v0.3.md`); the v0.2 text
+`2026-10-17-cold-reader-report-explainer-and-paper-v0.3.md`), and checked by
+a separate session (`docs/reviews/2026-10-17-paper-fold-check-claude-code.md`); the v0.2 text
 has NOT, and the draft does not leave this repo until the whole of it does
 (per `CLAUDE.md` §Public-facing writing). Author list and
 affiliations are placeholders; Figs. 1–3 artwork remains placeholder, Fig. 4
@@ -645,10 +647,10 @@ for this intervention procedure" (section 3). The whole experiment was
 ruled to be written up as instrument research, whatever it returned.
 
 **What was pre-stated about the built arms, and why.** Four unregistered
-development runs at 10 million parameters (2026-10-04, $1.47 in all: $0.47,
-$0.34, $0.33 and $0.33 for arms M, T, C and F; `compute-ledger.md`, the
-four 2026-10-04 rows) were registered in advance as a pipeline and
-throughput check, not a learnability verdict. They showed that the built
+development runs at 10 million parameters (2026-10-04, $1.47 in all: $0.4744,
+$0.3347, $0.3341 and $0.3223 for arms M, T, C and F; `compute-ledger.md`,
+the four 2026-10-04 rows) were stated in advance, in version 4 of the proposal (not registered),
+as a pipeline and throughput check, not a learnability verdict. They showed that the built
 arms' ownership answer had gone flat under training: the learned sharpness
 that makes that answer decisive, initialised at 4.0, fell to −0.089 in arm C
 and −0.008 in arm M, so their answers put 0.218 and 0.247 of their weight on
@@ -740,8 +742,7 @@ and M so the built route is their only route is the named route if C is
 ever reopened, not authorised, behind the precondition that arm M's 0.000 is
 explained first, at $0, by a session that did not write the reruns, with a
 method file before any output
-(`docs/rulings/2026-10-17-experiment-c-stays-stopped-ruling.md`, on pull
-request 172; authorship mixed).
+(`docs/rulings/2026-10-17-experiment-c-stays-stopped-ruling.md`; authorship mixed).
 
 **What the constructed line licenses.** It licenses three sentences, each
 bounded by its registration. A task that cannot be done without ownership is learnable

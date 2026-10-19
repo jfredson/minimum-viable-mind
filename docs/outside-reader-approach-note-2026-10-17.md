@@ -11,8 +11,9 @@ copied from the record file named in the sources list at the end. Before it
 goes out, John fills the salutation, picks one of the two closing questions,
 and checks that the repository is open at the commit the note points to; the
 shortlist says the ask goes out with the results attached, not before. Both
-versions passed the Voice Calibration and Cold Reader passes of 2026-10-17
-(records in `drafts/`).*
+versions were run through the Voice Calibration and Cold Reader passes of
+2026-10-17 by the session that wrote them (records in `drafts/`), and checked
+by a separate session (`docs/reviews/2026-10-17-paper-fold-check-claude-code.md`).*
 
 ---
 
@@ -39,7 +40,7 @@ the ownership input was load-bearing on three seeds (primary battery 0.5683,
 zeroed), the registered comparison against a matched non-self control turned
 out undefined for every possible model, and the amendment closed as not
 testable. The third registered a transplant-ratio measure of how much of the
-act is organised around the ownership answer, validated on hand-set reference
+act is organised around the ownership answer, to be validated on hand-set reference
 systems; the pre-stated verification of those systems failed (route use
 0.986, 0.000 and 0.024 against a bar of 0.5) and it stopped at its registered
 stop. None of the three returned a positive, and each ended in the terms set
