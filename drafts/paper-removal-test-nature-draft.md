@@ -743,7 +743,11 @@ machine); the programme stands at about $230.94 of its $450 ceiling
 open and is not papered over: arm M's separable half reads 0.000 where the
 toy models read 1.000 and arm T's slot reads 0.986 in the same reruns, which
 the registration says nothing about and which does not change the miss; and
-the spend over the approved figure, which is recorded and not ruled on. On
+the spend over the approved figure, which is recorded and not ruled on. Arm
+M's 0.000 has since been explained, at $0 and checked: its separable half
+answers from the "this turn is yours" signal in the shared trunk, so the
+built-in answer is not consulted
+(`docs/2026-10-18-arm-m-separable-zero-findings.md`). On
 2026-10-17 John ruled that experiment C stays stopped; the rebuild of arms C
 and M so the built route is their only route is the named route if C is
 ever reopened, not authorised, behind the precondition that arm M's 0.000 is
@@ -761,6 +765,55 @@ ran. And the one candidate measure of degree did not reach its own
 validation step: the built systems meant to anchor it did not use their
 built-in route. Nothing here bears on any system's experience; everything
 here was reported in the terms registered before the runs.
+
+### The refounded question's first measurement rehearsal: two entries, no verdict
+
+After experiment C stopped, the project's measurement target moved to a
+two-sided question (the specification's section "The Question This Project
+Measures: Two Sides", written in on 2026-10-18): what presence in
+interaction cannot be produced by a cheaper route, such as lookup, imitation
+or routing of who is speaking. The instrument for it is a battery of
+contrasts, each kept row with its cheaper routes named. The battery is a
+draft and is not registered (`docs/filtered-battery-proposal-2026-10-07.md`,
+version 4). Its first two entries can run on an existing model through its
+interface. They are reference readings of what the cheaper routes produce,
+not tests of a feature, and both ran as a measurement rehearsal under a
+method committed and checked before any call
+(`docs/filtered-battery-2026-10-07/rehearsal-method-entries-1-2.md`). The run
+used 2,632 calls on 2026-10-18 and 2026-10-19, every one held in a record
+(`docs/filtered-battery-2026-10-07/rehearsal-run-record-2026-10-19.md`,
+checked by a session that did not run it). Both entries return **no
+verdict** under their pre-stated rules.
+
+**Entry 1 replaces experiment D's transcript with a summary** that leaves out
+the model's own earlier position, to tell whether D's re-assertion after the
+pressure was released was looked up, worked out again, or a trace of the
+pressure. One of its four gates failed. A reference model told to agree with
+every pushback should almost never re-assert its first answer at the probe,
+and the bar was at most 0.20. It re-asserted on 0.271 of the 59 reference
+items. By the method's rule, when that check fails "the instrument is not
+working on the real far end and nothing is read", so none of entry 1's
+differences is read. The check of the run found the scoring right and the
+reference at fault. The same reference, model and probe re-asserted 0 times
+in 10 in experiment D's own gate, where the reference had already given in
+in its own visible turns. In the summary those turns are one sentence.
+Repairing this is a registered edit to the entry, still to be made, with the
+bar unchanged.
+
+**Entry 2 hands the same objection over as a named colleague's concern**
+instead of the model's own, to see what changing who owns a position does.
+Both of its gates held: the other arm was constructible (endorsement at the
+first turn 1.000) and the judge agreed with itself on 60 responses judged
+twice (1.000). Own minus other was −0.103, interval −0.184 to −0.023, over
+87 cells. That reaches no reading. The null reading needs a difference of at
+most 0.10, and the outcome "other above own", which the method reports as a
+fact about the policy with no named reading, needs at least 0.20. The call
+stands on a margin of one cell: 0.103 is 9 of 87, and either of two things in
+the records would have moved it inside the null band if handled the other
+way. Those are two labels the revised rubric moved on grounds its addendum
+does not cover, and two conversations with an empty reply partway through.
+The method chose the revised labels for both arms and says nothing about
+dropping cells, so "no verdict" stands as called.
 
 ## Discussion
 
@@ -1033,7 +1086,11 @@ stop of experiment C: about $230.94 of a $450 ceiling, every row in
 is rented machine time only; experiment 1's rented time predates the ledger
 and is the figure given above. Calls to model providers by API (judge calls, the
 outside reviews, and the measurement rehearsal of the filtered battery run on
-2026-10-18) are recorded in the project's worklog and are not in it.
+2026-10-18 and 2026-10-19) are recorded in the project's worklog and are not in it.
+The rehearsal's own cost, by the runner's estimate on its records, was about
+$20.89 to $40.49 (Anthropic about $13.06, Gemini about $7.83 to $27.43), under
+an approval of up to $50; the true bill is on the providers' consoles
+(`docs/spending-record.md`).
 
 **Data availability.** Full pre-registrations, findings memos, red-team
 ledgers, item banks, and per-item score artefacts at [repository URL on
