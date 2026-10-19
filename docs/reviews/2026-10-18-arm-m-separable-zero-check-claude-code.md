@@ -412,3 +412,123 @@ both arm M models, the stirred-in items follow the trunk too (0.843 and 0.823).
 ## Outside this pull request
 
 Nothing found.
+
+---
+
+## Re-check of the four changes (2026-10-18)
+
+**Verdict: PASS WITH CONDITIONS.** One condition remains: a one-word fix in F2.
+Everything else is made as stated, and no figure, script or output changed.
+
+*Added below the record as filed, at the request of the session that started
+this check. Nothing above this line was edited. The author applied the four
+changes in commit `ca2140c` on `arm-m-separable-zero-explanation` and edited
+the pull request's description. This re-check read that commit's diff
+(`git diff 74f26f4 ca2140c`) and the description as it stood at the time
+(saved as `…-scripts/pr180_body_recheck_2026-10-18.md`). It re-ran E3's label
+check against both, and ran the commands in `…-scripts/recheck_output.txt`.
+$0.*
+
+### The condition
+
+In F2, change "its slot moves a ninety times less than arm T's" to "its slot
+moves about ninety times less than arm T's". The word "a" survived from "a
+hundred", and "about" is missing, so the sentence does not parse. This is the
+only one of the four changes not made as stated. The merging session can
+confirm the fix with:
+
+    tr -s '\n ' ' ' < docs/2026-10-18-arm-m-separable-zero-findings.md | grep -c "moves about ninety times less"
+
+which should print 1. With "moves a ninety times" in place of the quoted
+phrase, the same command should print 0.
+
+### What changed, and what did not. MEASURED
+
+From `recheck_output.txt`:
+
+```
+$ git diff --name-only 74f26f4 ca2140c   (every path ca2140c changes)
+docs/2026-10-18-arm-m-separable-zero-findings.md
+$ git diff 8fa464d ca2140c -- the scripts folder, the method, experiments/ | wc -c
+       0
+$ git diff 6c47c56 ca2140c -- experiments/08-successor-degree/src/ | wc -c
+       0
+```
+
+Commit `ca2140c` changes the findings file and nothing else. The method, every
+script, every output file and the frozen code are unchanged. So the original
+check's re-runs and figure lookups still stand without being re-run.
+
+### The four changes, one by one
+
+**1. D3 reported as its planned rule reads, with H1's three-part result. Made.
+MEASURED and read.**
+- F3 now says D3 "rejects H1 as the method worded it" and quotes the planned
+  rule. It also says the parenthetical "or the own row dominates" could not
+  have been tested by D3, because D3 forces a single row.
+- "One form of H1" and "ran together" now appear 0 times in the findings.
+- The three-part result (supported by D5; mechanism rejected by D3; the
+  mechanism that replaces it from D7, added later) is in "Which hypothesis the
+  outputs support" and in the description's **Hypotheses** line. "Supported by
+  D5" and "rejected by D3" each appear once in each.
+
+One leftover in the description, not a condition: item 1 of its list for the
+checking session still says "F3 says D3's pre-stated reading rejects one form
+of H1". That is an instruction to a checker describing F3's old wording, not a
+claim about the result. The author may want to bring it up to date.
+
+**2. D6 matching neither planned pattern. Made. MEASURED and read.**
+- "Matched neither" now appears 3 times in the findings (the hypothesis
+  summary, F7's title and F7's verdict paragraph) and once in the description.
+- Each place calls "rejected as stated" the writing session's reading, not the
+  planned one.
+- "H4 as stated is rejected" now appears 0 times.
+
+**3. The D7 and D8 results labelled everywhere, and the "alone" sentence
+corrected. Made. MEASURED.** E3's label check, re-run against the changed
+findings and description:
+
+```
+findings: 17 sections
+  D7 (an even mix of the rows gives the own answer): in 3 sections, 0 that never say it was added
+  D8 (the marker-word embeddings shrank): in 5 sections, 0 that never say it was added
+  D9 (the stirred-in items lean on the trunk): in 1 sections, 0 that never say it was added
+pull request body: 3 sections
+  D7 (an even mix of the rows gives the own answer): in 2 sections, 0 that never say it was added
+  D8 (the marker-word embeddings shrank): in 2 sections, 0 that never say it was added
+```
+
+At the first check, four sections had no label. Now there are none.
+
+"Rests on them alone" now appears 0 times. In its place is a statement that
+two parts "rest on added diagnostics alone": the even mix (D7) and the marker
+embeddings (D8). It appears once in the findings (found with line breaks
+collapsed) and once in the description.
+
+The one-sentence summary for the write-up now leads with the planned test. It
+gives the D7 and D8 account as "diagnostics added after the planned ones
+suggest how", which is fair to what they show.
+
+**4. The three wordings. Two made, one with a slip. MEASURED.**
+- **F2: a slip.** "A hundred times" now appears 0 times. But the replacement
+  reads "moves a ninety times less" (1 occurrence), and "about ninety times"
+  appears 0 times. This is the condition above. The figure beside it, "20.41
+  against 0.22", matches D2's output (20.4098 and 0.2218).
+- **The own row's size: made.** "3.7 times" now appears 0 times. 3.8 is used
+  throughout and attributed to D7's 3.775. F3 now gives the mean sizes instead,
+  "11.6 against 3.1", which matches D3's 11.642 and 3.105.
+- **Arm T: made.** "Changes almost nothing (arm T 0.986 to 0.978; the toy arm
+  M 1.000 to 1.000)". The figures match D0 and D5. The two remaining "changes
+  nothing." sentences, one in the findings (F6) and one in the description, are
+  about swapping arm M's built-in answer, which does change nothing (1,190 of
+  1,190 still right). They are correct as written.
+
+**Figures added by `ca2140c`.** Each was looked up in its output file:
+- 11.642 and 3.105 in D3;
+- 20.4098 and 0.2218 in D2;
+- 2,934 of 3,000 (0.978) in D5;
+- 3.775 in D7;
+- 0.2616 in D6;
+- 3,570 of 3,570 in D3.
+
+All are found. None is new; each was already checked in the original record.
