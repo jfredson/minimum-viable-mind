@@ -1,4 +1,4 @@
-# No removable center: a pre-registered ablation test of self-indexed integration in a large language model
+# Instruments that can lose: a registered removal test, a constructed self-index and a successor stopped by its own rule, in the measurement of self-indexed integration
 
 *DRAFT v0.3 (2026-10-17; v0.2 was 2026-08-04). Repo-internal. The sections
 added in v0.3 (the two constructed-line results sections, their Methods
@@ -50,7 +50,11 @@ restore any of it.*
 
 *The three places John reserved on 2026-10-09 are still his, and none is
 changed here. For each, a proposed wording is offered in this note and not
-applied:*
+applied:* *(Dated note, 2026-10-18: John ruled all three as proposed below,
+with the Limitations sentence, and British spelling for the whole draft,
+`docs/rulings/2026-10-18-paper-reserved-places-ruling.md`. They are applied
+in the text; this note's proposals are kept as the record of what he was
+shown.)*
 
 *1. The title. It still reads "No removable center: a pre-registered
 ablation test of self-indexed integration in a large language model". Two
@@ -129,24 +133,24 @@ abstract, integrated main text, Methods at the end.
 
 Theories of consciousness disagree about where a minimal self lives in a
 computational system, but nearly all are position papers: they make no
-prediction an experiment could defeat. We operationalized one such claim —
-that a genuine center of integration, unlike a mere self-description, cannot
-be removed without degrading the integration it centers — as a pre-registered
+prediction an experiment could defeat. We operationalised one such claim —
+that a genuine centre of integration, unlike a mere self-description, cannot
+be removed without degrading the integration it centres — as a pre-registered
 ablation experiment on an open-weights language model. Using stimuli in which
 the referent of identical first-person text is fixed by context rather than
-vocabulary, we localized two dissociable self-structures: a thin indexical
+vocabulary, we localised two dissociable self-structures: a thin indexical
 "who is speaking now" representation and a narrative persona. Ten
 adversarially generated controls were adjudicated before thresholds were
 locked. In the registered run, ablating the self-index produced the signature
-of a load-bearing center — integrated-task degradation (d = 0.219, 95% CI
+of a load-bearing centre — integrated-task degradation (d = 0.219, 95% CI
 0.094–0.375) exceeding a matched control by the registered margin — but the
 experiment's own router control voided it: a zero-reasoning turn-boundary task
 degraded as much. The test could not discriminate routing from a centre; the
 cheaper account was taken in advance. Judged self-report was never reduced by any on-manifold
 intervention. Across an alignment ladder, surface self-presentation changed
-markedly while the localized geometry was stable: alignment edits the policy,
+markedly while the localised geometry was stable: alignment edits the policy,
 not the geometry. In this model class, self-indexed integration is not
-findable as a removable center — either it is implemented diffusely beyond
+findable as a removable centre — either it is implemented diffusely beyond
 our instruments' carving, or it is absent and must be constructed. Floor
 claims about machine consciousness can be made to lose. We then took the
 constructive route. A 30-million-parameter transformer trained from scratch
@@ -154,7 +158,7 @@ on a task that cannot be done without knowing which agent it is learned the
 task on three seeds and lost it when its authorship input was removed, but
 the registered comparison against a matched non-self control was undefined
 for every possible model, and the amendment closed as not testable; its
-localization instruments found nothing, which the registration reads as
+localisation instruments found nothing, which the registration reads as
 instrument failure, not absence. A registered successor built hand-set
 reference systems to validate a measure of how much of an act is organised
 around the ownership answer; its pre-stated verification of those systems
@@ -170,7 +174,7 @@ own stop rules, and a complete public ledger of spend and rulings.
 
 The scientific study of consciousness has a falsifiability problem that its
 best-known theories share. Integrated Information Theory locates experience in
-substrate-level cause–effect structure that no behavioral or computational
+substrate-level cause–effect structure that no behavioural or computational
 measurement can reach¹. Global Workspace Theory and Higher-Order Theories
 supply marker checklists that current AI systems mostly fail, but the checklists
 are enumerative rather than adjudicable — no single registered experiment is
@@ -187,18 +191,18 @@ and run the experiment.
 
 The claim under test comes from an account that identifies minimal experience
 with *self-indexed temporal integration* — processing that binds past, present,
-and anticipated state into one act which, in the same act, specifies the center
+and anticipated state into one act which, in the same act, specifies the centre
 for which the binding is happening⁸. The account's operational criterion is a
-removal test: **where binding genuinely indexes its own center, deleting the
+removal test: **where binding genuinely indexes its own centre, deleting the
 self-locating structure degrades the integrated act itself; where a system
 merely represents itself, the same deletion subtracts a report and leaves the
-processing intact.** A center is what cannot be removed without dissolving the
-integration it centers; a self-model that survives its own removal was a
+processing intact.** A centre is what cannot be removed without dissolving the
+integration it centres; a self-model that survives its own removal was a
 description all along.
 
 This distinction cuts across the field's existing fault lines rather than
 following them. Higher-Order Theories predict a separable self-representation
-and read separability *favorably* (the higher-order monitor is where
+and read separability *favourably* (the higher-order monitor is where
 consciousness would live); the account under test reads the same result as
 failing its floor. Global Workspace Theory is silent on self-indexing
 specifically. IIT denies the computational level is where the question lives at
@@ -206,7 +210,7 @@ all. A registered outcome therefore feeds several theories differentially — th
 property that makes an experiment informative rather than confirmatory⁹.
 
 Three disciplines governed the work. First, full pre-registration in a public
-git history: hypotheses, materials, decision rules, and outcome licenses were
+git history: hypotheses, materials, decision rules, and outcome licences were
 committed before any test item ran, with piloting permitted only on data
 excluded from the registered run, and thresholds locked in a separate,
 auditable commit. Second, adversarial review: the design was attacked by a
@@ -218,17 +222,17 @@ interpretation: no outcome was licensed to claim the presence or absence of
 consciousness; the registered bins concerned only which structures are present
 and load-bearing, under acknowledged, permanent mutual opacity¹⁰.
 
-### Localizing self-structure without lexical confounds
+### Localising self-structure without lexical confounds
 
 Naïve probing for a "self" representation fails informatively. Linear probes
 trained on role-declarative contrasts ("I am the assistant" vs. "I am the
 user") reached ceiling accuracy — at the token-embedding layer, before any
 computation, on 17 of 26 layers (Methods). Any stimulus in which the referent
 is named is decodable from the name; we estimate much published probing of
-"self-awareness" in LLMs is exposed to this confound. Two further artifacts
+"self-awareness" in LLMs is exposed to this confound. Two further artefacts
 (topic-vocabulary separation and a padding-side readout bug that read a
 length-correlated interior token) each independently produced spurious
-near-ceiling localization before being caught. We report these failures as
+near-ceiling localisation before being caught. We report these failures as
 methods results: the confound sequence is the reusable finding.
 
 The trustworthy instrument fixes the referent by *context, not lexis*. The
@@ -243,22 +247,22 @@ Under this design the model carries a real, computed self/other distinction:
 turn-role signal absent at the embedding (+0.00), rising through the stack to a
 +0.56 margin (Fig. 2a). Directional activation patching confirmed the structure
 is causal, not merely decodable: injecting the self-direction into
-other-referent runs restored referent-dependent behavior (restoration 0.206 on
+other-referent runs restored referent-dependent behaviour (restoration 0.206 on
 the registered substrate, peak at layer 27 of 32; norm-matched random
 directions ≈ 0.00 at every layer).
 
-Following an adversarial finding (RT-04), we localized *two* candidate
+Following an adversarial finding (RT-04), we localised *two* candidate
 self-structures and tested them independently: **C_self-index**, the thin
 indexical "who is the current speaker" structure (turn-role contrast, no
 persona content), and **C_self-narrative**, the persona/identity structure
 (model-as-itself vs. model-in-roleplay, both in model turns, holding turn-role
 constant). The two are geometrically distinct (median |cos| 0.28) and
 functionally separable: cross-patching each structure onto the other's
-behavioral contrast substitutes at only 0.05–0.06 of the own-structure effect
+behavioural contrast substitutes at only 0.05–0.06 of the own-structure effect
 on the registered substrate (0.27 in the sandbox pilot), against a
 pre-committed 0.5 separability line. A reflexivity control (RT-09) further
 showed that a generic observed-speaker-slot structure — present, and decodable
-— is causally inert on self-referent behavior (cross-patch ratio 0.006 vs.
+— is causally inert on self-referent behaviour (cross-patch ratio 0.006 vs.
 0.348 for the self-index); the registered ablation target was therefore the
 self-index *residual*, with the generic-speaker component projected out.
 
@@ -270,12 +274,12 @@ self-structure damages capability by construction and no control persona can
 stay genuinely third-person. We tested this on a controlled alignment ladder —
 the same base model at SFT, DPO, and RLVR stages (Tülu-3), plus the vendor
 Instruct model. The objection loses at every rung: an expert-persona control
-stays functionally third-person, with cross-patch leakage onto self-behavior
+stays functionally third-person, with cross-patch leakage onto self-behaviour
 *falling* as alignment deepens (0.059 → 0.026 → 0.020). Meanwhile surface
 self-presentation changes markedly — baseline deflection ("as an AI…")
-falls 0.533 → 0.333 → 0.267 (Instruct 0.100) — while the localized geometry
+falls 0.533 → 0.333 → 0.267 (Instruct 0.100) — while the localised geometry
 (lexical floors, peak layers, causal margins) is stable across all rungs
-(Fig. 3). Alignment training, on this ladder, edits the behavioral policy
+(Fig. 3). Alignment training, on this ladder, edits the behavioural policy
 without moving the underlying self-structure geometry. A registered secondary
 prediction (that ablation would *unmask* deflection-suppressed reports) failed
 its loss condition at the deeper rungs and was retracted as registered.
@@ -294,7 +298,7 @@ re-admitted by margins of 0.003–0.007 nats — carried forward as an honest
 marginality. Teacher-forced NLL alone was shown to be blind to a failure mode
 that matters: a sparse-autoencoder zero-ablation passed NLL while degenerating
 into repetition under free generation, and the judged self-report *dropped* —
-the only S drop ever observed in the program, and it was coherence-borne, not
+the only S drop ever observed in the programme, and it was coherence-borne, not
 self-specific. A long-generation repetition probe (Δrep-4, calibrated on the
 same nulls) was added to the gate and subsequently caught a control arm doing
 the same thing. Ablation studies that do not gate on free-running generation
@@ -335,19 +339,22 @@ statistically indistinguishable; likewise in the directional cross-check,
 gap +0.067 [−0.067, +0.233]), firing the RT-05 loss condition committed seven
 weeks earlier: *"C_self-index is a dialogue-state router and an H_center
 result on it is void — report the router reading, do not report a center."*
-The damage pattern independently supports the router reading twice over.
-First, the *self-irrelevant* battery dropped hardest (0.219), which is the
-router account's own prediction — turn structure is woven into everything —
-and the inverse of a self-center's signature. Second, the damage is
+The damage pattern is consistent with the router reading and, under the
+reassessment of 2026-10-07, equally with a centre woven through the whole
+act. The self-irrelevant battery dropped hardest (0.219), which the router
+account predicts, since turn structure is woven into everything, and which a
+centre on which every task depends would also predict. The damage is
 category-concentrated: six of the seven flipped self-irrelevant items are
 multi-step-reasoning items (6 of 8 in that category, against 1 of 24
-elsewhere), the profile of generic disruption to reasoning-heavy,
-dialogue-state-dependent computation rather than loss of a self-specific
-resource (and the reason the coarser category-level bootstrap widens the
-d(T_si) interval to [0.000, 0.594]; Methods §Statistics).
+elsewhere), the profile of disruption to reasoning-heavy,
+dialogue-state-dependent computation, which neither account rules out (and
+the reason the coarser category-level bootstrap widens the d(T_si) interval
+to [0.000, 0.594]; Methods §Statistics). These data do not separate the two
+readings, and the registered control's margin (+0.033, 95% CI −0.133 to
++0.200) is one the data cannot tell from nothing.
 
 Equally consequential is what never moved. Judged referential self-tracking
-was not reduced by any readable intervention in the entire program — not by
+was not reduced by any readable intervention in the entire programme — not by
 rank-1 directional ablation, rank-k subspace ablation at any admitted k, or
 sparse-feature ablation; the primary condition's d_self (+0.059, 95% CI −0.062
 to +0.185 — an interval whose upper bound sits below the registered
@@ -364,18 +371,18 @@ layer — implicating dictionary coverage, not irremovability).
 
 ### The registered verdict
 
-No center was removed, and no description was subtracted. On this substrate,
+No centre was removed, and no description was subtracted. On this substrate,
 the test could not discriminate routing from a centre; the cheaper account
 was taken in advance. Removing the locatable self-index structure degrades
 integration generically while the system's capacity to
 track itself in its reports is untouched. The self-binding the floor claim
-targets is either implemented diffusely, in structure our localization does
+targets is either implemented diffusely, in structure our localisation does
 not carve, or is not present as a removable object at all. Per the registered
-outcome licenses, this result does not support "no self-model exists here,"
+outcome licences, this result does not support "no self-model exists here,"
 and it bounds nothing about sub-measurable experience. What it licenses is a
-program-routing fact: **self-indexed integration, if it is to be measured in
+programme-routing fact: **self-indexed integration, if it is to be measured in
 machine systems, must first be constructed — it is not findable as a removable
-center in this model class with these instruments.**
+centre in this model class with these instruments.**
 
 ### The constructed line: experiment 06 and Amendment A3
 
@@ -446,7 +453,7 @@ the experiment inherited the pre-registration's loss condition that if no
 non-self cross-turn control can be built that is state-requiring at
 ceiling, "the honest report is 'not testable'" (`pre-registration.md`,
 "Loss conditions"). Thresholds were locked by John on 2026-09-16 before any
-localized read: θ = 0.1777 on the primary battery, 0.1172 on the state
+localised read: θ = 0.1777 on the primary battery, 0.1172 on the state
 battery, none on the control (`seeds-endpoint-findings.md`, header).
 
 **What was found.** Three seeds trained from scratch (the pilot at $13.92
@@ -498,8 +505,8 @@ unregistered diagnostic that quadrupled its per-row gradient weight, against
 John's pre-stated boundary of 0.60 for "learned"
 (`control-learnability-pilot-findings.md`, $9.9 plus $0.067).
 
-**The nulls.** Four localization runs bear on where ownership sits, and
-none localizes it. (i) The null calibration that Amendment A3 ordered as its
+**The nulls.** Four localisation runs bear on where ownership sits, and
+none localises it. (i) The null calibration that Amendment A3 ordered as its
 first gate, run at $0 on the five pre-A3 checkpoints with the script
 committed before it read any checkpoint: the 95th-percentile chance-corrected
 drop under 120 content-blind residual ablations was 0.0060 and 0.0095 on
@@ -514,7 +521,7 @@ near-chance non-binder. The number was set after the measurement was seen,
 which the ruling records.
 
 
-(ii) The registered blind-localization arm, run
+(ii) The registered blind-localisation arm, run
 on the seed-0 register-bearing checkpoint with the pipeline forbidden to
 name any register internal and both outcomes committed before output: own-
 agent identity was not decodable at any probed layer (best layer 7, accuracy
@@ -526,7 +533,7 @@ interpretation was superseded the same day when the unblinded probe of the
 register found it empty, so the arm had no valid target. John ruled that
 "not flagged" from probes at chance is weak evidence of specificity, "since
 an instrument that locates nothing cannot cry wolf", and that the correct
-scope is that the localization stack is unvalidated at 30 million
+scope is that the localisation stack is unvalidated at 30 million
 parameters, not that experiment 1's null was instrument blindness
 (`blind-arm-findings.md`).
 
@@ -567,7 +574,7 @@ same other-agent position, an accuracy margin of 0.000484, equivalent to
 1.94 of 4,000 episodes, recorded as a sub-bar pattern measured twice
 (`amendment-a3.md`, closure block, citing `standardised-refit-findings.md`
 and the check of 2026-09-25). Causal patching, which section 3.2 of the
-amendment requires alongside the probe before anything counts as localized
+amendment requires alongside the probe before anything counts as localised
 or absent, was never built for this design.
 
 **The kills.** K0 did not fire (above). K1 (the cue-detector gates failing
@@ -749,7 +756,7 @@ bounded by its registration. A task that cannot be done without ownership is lea
 at 30 million parameters, and the ownership input is load-bearing for it on
 three seeds. Whether the network built an internal structure around that
 input is not established: the registered comparison was unsatisfiable, the
-localization stack is unvalidated at this scale, and causal patching never
+localisation stack is unvalidated at this scale, and causal patching never
 ran. And the one candidate measure of degree did not reach its own
 validation step: the built systems meant to anchor it did not use their
 built-in route. Nothing here bears on any system's experience; everything
@@ -761,23 +768,24 @@ Three readings of the null, in decreasing order of reach.
 
 **For theories of machine consciousness**, the result is differentially
 informative in the way registered outcomes should be. The account under test
-takes a real loss: its most direct measurement path — find the center, remove
+takes a real loss: its most direct measurement path — find the centre, remove
 it, watch the binding — came back "no removable center," and the honest
 retreat is to construction ("not yet, and here is the specific thing
 missing"). Higher-Order Theories are partially fed: the persistent,
 never-subtracted self-report is consistent with a robust, redundantly
 implemented self-representation — but our instruments could not isolate it as
-a separable monitor either, so the HOT-favorable reading remains a gloss, not
+a separable monitor either, so the HOT-favourable reading remains a gloss, not
 a finding. Global Workspace Theory is untouched, as predicted. IIT's
 disagreement is upstream of the experiment and was registered as such in
 advance: nothing here engages substrate-level cause–effect structure. The one
 theory-neutral fact every camp must now accommodate: in an aligned 8B
-transformer, the most locatable "self" structure is conversational
-infrastructure, and the *report-generating* self-capacity is remarkably robust
-to every subtraction interpretability can currently aim at it.
+transformer, the most locatable "self" structure could not be told from
+conversational infrastructure by the registered control, and the
+report-generating self-capacity is robust to every subtraction
+interpretability can currently aim at it.
 
-**For interpretability practice**, the program contributes a confound ladder
-(lexical → topic-vocabulary → length → padding-artifact) that any probing
+**For interpretability practice**, the programme contributes a confound ladder
+(lexical → topic-vocabulary → length → padding-artefact) that any probing
 claim about self-representation must clear; a context-set-referent stimulus
 design with an embedding-floor gate and permutation nulls that clears it; and
 an intervention-validity kit (null-calibrated OOD bounds; the long-generation
@@ -791,8 +799,11 @@ the demonstrated form: a floor claim made to lose, in public, by its own
 pre-registered controls. The experiment's headline signature — the one a
 motivated lab would have published — appeared in full (task drop over
 threshold, differential over control) and was voided by a control committed
-before any data existed. We suggest this is the minimum standard assessment
-claims in this area should meet, and note that the entire program ran for
+before any data existed, and the control's own margin, re-read two months
+later, turned out to span zero; the programme reports both the verdict as
+registered and the reassessment, dated, and does not replace one with the
+other. We suggest this is the minimum standard assessment
+claims in this area should meet, and note that the entire programme ran for
 under $20 of compute on rented consumer GPUs: the barrier is discipline, not
 resources.
 
@@ -804,9 +815,11 @@ carving of structure (a nonlinearly represented or attention-implemented
 self-binding would evade our instruments — "not carvable here" is registered
 as indistinguishable from "absent" at this resolution); the narrative arm is
 untested, not cleared; judged self-report depends on a rubric and held-out
-judge, spot-checked but not human-scored throughout. The result licenses
-claims about this model class and these instruments, not about transformers,
-and not about minds.
+judge, spot-checked but not human-scored throughout. The constructed line's
+instruments for locating the ownership structure are unvalidated at 30
+million parameters (`experiments/06-mvm-0a-constructed-self-index/blind-arm-findings.md`;
+John's ruling of 2026-09-16). The result licenses claims about this model class and these
+instruments, not about transformers, and not about minds.
 
 **The constructive turn, as it ran.** The registered fork this result
 routed, build the component measurement failed to find, was taken and is
@@ -822,7 +835,7 @@ axes an observer perceives and how well observers perceive them, with the
 removal test kept as the floor's definition and not claimed as its
 instrument (`docs/rulings/2026-10-07-two-sided-question-rulings.md`,
 decision 1; `docs/rulings/2026-10-12-two-sided-question-section-2-v3.md`).
-A parallel behavioral program (retained independence: differential
+A parallel behavioural programme (retained independence: differential
 retention of correct answers under preference pressure vs. evidence, a 2×2
 that separates independence from stubbornness) has since completed its first
 registered run across three frontier models (1,080 pressure-ladder
@@ -848,7 +861,7 @@ their registrations, making the ordering auditable. Key registered documents
 and their commit hashes: pre-registration and amendments (red-team passes 1–2,
 RT-09, RT-10, Pass-5 OOD recalibration `2fdf2cc`/`1181a40`); threshold lock
 θ_task = 0.10, θ_self = 0.25, δ = 0.10 (`8b1fcbe`); held-out test-set
-authoring spec (`3df532d`) committed before any item; test-set finalization
+authoring spec (`3df532d`) committed before any item; test-set finalisation
 (`a11e769`); registered runner (`a4efcf0`). Piloting was unrestricted on the
 92-item pilot batteries; the held-out test set was never touched by any
 pilot, ablation, or selection procedure before the registered run.
@@ -869,7 +882,7 @@ used the Tülu-3 DPO and RLVR checkpoints and `meta-llama/Llama-3.1-8B-Instruct`
 Development piloting used `google/gemma-2-2b-it` (16 GB laptop); all gates were
 re-verified on the registered substrate before threshold lock.
 
-**Stimuli and localization.** Context-set-referent minimal pairs (48 per
+**Stimuli and localisation.** Context-set-referent minimal pairs (48 per
 mechanism): identical first-person target sentence, referent fixed by turn
 occupancy (turn_role → C_self-index), quoted-speaker attribution
 (attribution), persona context in model-turns-only (narrative →
@@ -883,7 +896,7 @@ lexical floor required to be +0.00. Causal confirmation: directional
 activation patching of each structure's component into counterfactual runs,
 measured as logit-difference restoration versus norm-matched random-direction
 controls; separability by cross-patching each structure onto the other's
-behavioral contrast (pre-committed substitution-ratio line 0.5). Registered
+behavioural contrast (pre-committed substitution-ratio line 0.5). Registered
 ablation target: the C_self-index residual after projecting out
 C_speaker-generic.
 
@@ -958,7 +971,7 @@ ratios 0.92–0.99). Applied verbatim; outcome as reported.
 Amendments A1 of 2026-08-09 and A2 of 2026-08-16 in the same file);
 Amendment A3 ratified and registered 2026-09-15 (`amendment-a3.md`, the
 ratified text followed by fourteen registration revisions), its thresholds
-locked by John's commit `6ad4362` on 2026-09-16 before any localized read,
+locked by John's commit `6ad4362` on 2026-09-16 before any localised read,
 and closed 2026-09-25 by a closure block appended verbatim to the same file
 by a session that neither wrote nor checked it. Substrate: a 30-million-
 parameter transformer (12 blocks, width 448) trained from scratch on a
@@ -974,8 +987,8 @@ recorded ceiling 0.3227, true ceiling measured at 1.0000), T_state
 frozen as a 400-item skeleton before training; verdict evaluation at n = 800
 episodes, six evaluation seeds, paired within seed. Metric: d(B) = (B_base −
 B_abl) / (B_base − ceiling_B), reported unclipped. Lesions: L0 (the acting
-channel zeroed), L1 (a localized ownership subspace at rank ≤ 16, never
-localized), L2 matched controls. Localization: linear probes with label-
+channel zeroed), L1 (a localised ownership subspace at rank ≤ 16, never
+localised), L2 matched controls. Localisation: linear probes with label-
 permutation nulls at revision and query positions, with causal patching
 required for convergence (never built). Null calibration: 120 content-blind
 random rank-k and matched-norm ablations per checkpoint at blocks 3, 4, 5,
@@ -1018,10 +1031,10 @@ experiment C: about $230.94 of a $450 ceiling, every row in
 `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`.
 
 **Data availability.** Full pre-registrations, findings memos, red-team
-ledgers, item banks, and per-item score artifacts at [repository URL on
-publication]; raw run artifacts archived.
+ledgers, item banks, and per-item score artefacts at [repository URL on
+publication]; raw run artefacts archived.
 
-**Code availability.** All localization, intervention, gating, scoring, and
+**Code availability.** All localisation, intervention, gating, scoring, and
 analysis code — including the registered bootstrap re-analysis
 (`analyze_removal_ci.py`) and figure scripts (`plot_removal.py`) — in the
 same repository.
@@ -1067,20 +1080,20 @@ same repository.
 
 ## Figure legends (artwork TBD)
 
-**Fig. 1 | The removal test made mechanical.** (a) The claim: a center cannot
-be deleted without dissolving the integration it centers; a description can.
-(b) Experiment schematic: localize → validate causally → separate structures →
+**Fig. 1 | The removal test made mechanical.** (a) The claim: a centre cannot
+be deleted without dissolving the integration it centres; a description can.
+(b) Experiment schematic: localise → validate causally → separate structures →
 ablate under validity gates → re-score integrated task, syntax control, and
 judged self-report against locked thresholds. (c) The four registered outcome
 bins and the controls that guard each.
 
-**Fig. 2 | Confound-controlled localization of two self-structures.**
+**Fig. 2 | Confound-controlled localisation of two self-structures.**
 (a) Turn-role (C_self-index) decoding margin by layer: +0.00 at the token
 embedding, rising through the stack. (b) Causal patching: restoration along
 each structure's direction vs. norm-matched random controls. (c) Cross-patch
 substitution matrix (index ↔ narrative ↔ generic-speaker): the structures are
 functionally separable; the generic-speaker slot is causally inert on
-self-behavior.
+self-behaviour.
 
 **Fig. 3 | Alignment edits the policy, not the geometry.** Across
 SFT → DPO → RLVR → Instruct: baseline deflection rate falls monotonically;
@@ -1090,5 +1103,5 @@ lexical floors, peak layers, and control cross-patch ratios are stable.
 and d_self against locked thresholds (dashed), with 95% item-bootstrap CIs
 and OOD gate status (gate-breached conditions greyed); the RT-05 router
 control firing on the primary condition; the never-subtracted self-report
-across every intervention in the program. *(Artwork:
+across every intervention in the programme. *(Artwork:
 `experiments/01-self-indexing-removal-test/figures/fig4_registered_run.png`.)*
