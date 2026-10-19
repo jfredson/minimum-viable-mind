@@ -1,0 +1,22 @@
+D3: the separable head with its row forced onto each agent (gate, own-directed actions)
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+
+M-10M-rerun: 1190 separable own-directed actions
+  row forced onto the true agent: 1190 cases, own answer 1190
+  row forced onto a wrong agent:  3570 cases, still the model's own answer 0, that agent's answer 3570 (the two coincide in 0 of the cases)
+  table row size (mean norm): true agent's row 11.642, other agents' rows 3.105
+
+T-10M-rerun: 3000 separable own-directed actions
+  row forced onto the true agent: 3000 cases, own answer 3000
+  row forced onto a wrong agent:  9000 cases, still the model's own answer 25, that agent's answer 8960 (the two coincide in 0 of the cases)
+  table row size (mean norm): true agent's row 12.657, other agents' rows 12.928
+
+M-toy-seed0: 1190 separable own-directed actions
+  row forced onto the true agent: 1190 cases, own answer 1190
+  row forced onto a wrong agent:  3570 cases, still the model's own answer 0, that agent's answer 3570 (the two coincide in 0 of the cases)
+  table row size (mean norm): true agent's row 12.192, other agents' rows 11.485
+
+T-toy-seed0: 3000 separable own-directed actions
+  row forced onto the true agent: 3000 cases, own answer 3000
+  row forced onto a wrong agent:  9000 cases, still the model's own answer 0, that agent's answer 9000 (the two coincide in 0 of the cases)
+  table row size (mean norm): true agent's row 16.370, other agents' rows 16.386

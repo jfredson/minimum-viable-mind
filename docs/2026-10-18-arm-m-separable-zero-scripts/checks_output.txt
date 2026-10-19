@@ -1,0 +1,17 @@
+$ git diff --stat 6c47c56 -- experiments/08-successor-degree/src/   (empty output: the frozen folder is unchanged)
+exit 0
+
+$ md5 of the rerun checkpoints (recorded: M c4701f70e7967e008954640c88e89112, T c9f2684070a67920577b26f2f1662ffd)
+MD5 (~/Code/minimum-viable-mind/experiments/08-successor-degree/artifacts/succ_m_10m_seed0_rerun/succ_m_10m_seed0_rerun.pt) = c4701f70e7967e008954640c88e89112
+MD5 (~/Code/minimum-viable-mind/experiments/08-successor-degree/artifacts/succ_t_10m_seed0_rerun/succ_t_10m_seed0_rerun.pt) = c9f2684070a67920577b26f2f1662ffd
+
+$ (cd experiments/08-successor-degree/out-sharpness-fix/models && shasum -a 256 -c SHA256SUMS)
+ckpt_C_fixed_seed0.pt: OK
+ckpt_C_fixed_seed1.pt: OK
+ckpt_C_fixed_seed2.pt: OK
+ckpt_M_fixed_seed0.pt: OK
+ckpt_M_fixed_seed1.pt: OK
+ckpt_M_fixed_seed2.pt: OK
+ckpt_T_fixed_seed0.pt: OK
+ckpt_T_fixed_seed1.pt: OK
+ckpt_T_fixed_seed2.pt: OK

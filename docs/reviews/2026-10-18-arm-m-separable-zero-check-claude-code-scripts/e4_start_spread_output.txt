@@ -1,0 +1,20 @@
+E4: spread of the rebuilt starting sizes over twenty seeds
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+
+M-10M-rerun
+  read_own.weight                start seed 0   2.7171; over 20 seeds 0.994 to 1.092 of it; end over start  1.9151 (seed 0),  1.7543 to  1.9266 (extremes)
+  own_key.weight                 start seed 0   2.8529; over 20 seeds 0.944 to 1.011 of it; end over start  1.3747 (seed 0),  1.3598 to  1.4563 (extremes)
+  own_marker.weight              start seed 0   2.7874; over 20 seeds 1.000 to 1.024 of it; end over start  0.8814 (seed 0),  0.8609 to  0.8814 (extremes)
+  to_val.weight                  start seed 0   4.6242; over 20 seeds 0.993 to 1.008 of it; end over start  3.0178 (seed 0),  2.9945 to  3.0387 (extremes)
+  act_vec                        start seed 0   0.3196; over 20 seeds 0.838 to 1.024 of it; end over start 19.3449 (seed 0), 18.8828 to 23.0736 (extremes)
+  marker embeddings (mean size)  start seed 0  14.9403; over 20 seeds 0.995 to 1.035 of it; end over start  0.0337 (seed 0),  0.0325 to  0.0338 (extremes)
+  answer vector, differing part  start seed 0   2.4215; over 20 seeds 1.000 to 1.200 of it; end over start  0.0625 (seed 0),  0.0521 to  0.0625 (extremes)
+
+T-10M-rerun
+  read_own.weight                start seed 0   2.8319; over 20 seeds 0.967 to 1.015 of it; end over start  1.1252 (seed 0),  1.1084 to  1.1639 (extremes)
+  own_key.weight                 start seed 0   2.9343; over 20 seeds 0.915 to 1.003 of it; end over start  1.1274 (seed 0),  1.1235 to  1.2322 (extremes)
+  own_marker.weight              start seed 0   2.7874; over 20 seeds 1.000 to 1.024 of it; end over start  3.2672 (seed 0),  3.1915 to  3.2672 (extremes)
+  to_val.weight                  start seed 0   4.6121; over 20 seeds 0.994 to 1.009 of it; end over start  2.4219 (seed 0),  2.4012 to  2.4364 (extremes)
+  act_vec                        start seed 0   0.3196; over 20 seeds 0.838 to 1.024 of it; end over start 18.6226 (seed 0), 18.1778 to 22.2121 (extremes)
+  marker embeddings (mean size)  start seed 0  14.9403; over 20 seeds 0.995 to 1.035 of it; end over start  0.3813 (seed 0),  0.3685 to  0.3830 (extremes)
+  answer vector, differing part  start seed 0   2.4215; over 20 seeds 1.000 to 1.200 of it; end over start  5.8165 (seed 0),  4.8470 to  5.8165 (extremes)

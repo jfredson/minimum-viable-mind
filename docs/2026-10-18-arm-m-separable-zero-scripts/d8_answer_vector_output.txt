@@ -1,0 +1,12 @@
+D8: how far the built answer's vectors differ between agents (the twelve marker words in use)
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+columns: mean size of the vector; mean size of its part that differs between marker words;
+         the same for the row keys; mean size of the marker words' embeddings
+  M-10M-rerun  end   vector   1.670  differing part   0.151  keys' differing part    0.132  embeddings   0.503
+               start vector   2.541  differing part   2.422  keys' differing part    1.383  embeddings  14.940
+               differing part, end over start 0.0625 (decay alone: 0.3350)
+  T-10M-rerun  end   vector  14.258  differing part  14.085  keys' differing part   21.526  embeddings   5.697
+               start vector   2.541  differing part   2.422  keys' differing part    1.510  embeddings  14.940
+               differing part, end over start 5.8165 (decay alone: 0.3350)
+  M-toy-seed0  end   vector   4.622  differing part   4.269  keys' differing part    3.636  embeddings  10.248
+  T-toy-seed0  end   vector   5.143  differing part   5.067  keys' differing part    3.747  embeddings  11.069

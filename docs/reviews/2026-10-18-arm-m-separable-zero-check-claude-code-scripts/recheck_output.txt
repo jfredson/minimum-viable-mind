@@ -1,0 +1,53 @@
+$ git diff --name-only 74f26f4 ca2140c   (every path ca2140c changes)
+docs/2026-10-18-arm-m-separable-zero-findings.md
+
+$ git diff 8fa464d ca2140c -- the scripts folder, the method, experiments/ | wc -c
+       0
+
+$ git diff 6c47c56 ca2140c -- experiments/08-successor-degree/src/ | wc -c
+       0
+
+$ phrases the four changes should remove: count in the findings, then in the body
+  "one form of H1": findings 0, body 1
+  "ran together": findings 0, body 0
+  "a hundred times": findings 0, body 0
+  "3.7 times": findings 0, body 0
+  "H4 as stated is rejected": findings 0, body 0
+  "rests on them alone": findings 0, body 0
+  "changes nothing\.": findings 1, body 1
+
+$ phrases the four changes should add: count in the findings, then in the body
+  "supported by D5": findings 1, body 1
+  "rejected by D3": findings 1, body 1
+  "D7, added": findings 2, body 1
+  "matched neither": findings 3, body 1
+  "rest on added diagnostics alone": findings 0, body 1
+  "about ninety times": findings 0, body 0
+  "changes almost nothing": findings 1, body 0
+
+$ the F2 sentence as committed
+170-puts about a quarter on every agent under both answers, and its slot moves a
+171:ninety times less than arm T's (20.41 against 0.22). By the method's own rule, a flat row choice is
+
+$ new figures in the findings, each against its output file
+  findings has "11.6 against 3.1": 0; d3_forced_row output has "11.642": 1
+  findings has "11.6 against 3.1": 0; d3_forced_row output has "3.105": 1
+  findings has "20.41 against 0.22": 1; d2_swap_reach output has "20.4098": 1
+  findings has "20.41 against 0.22": 1; d2_swap_reach output has "0.2218": 1
+  findings has "0.986 to 0.978": 1; d5_trunk_lesion output has "2934 of  3000 (0.978)": 1
+  findings has "3.775": 2; d7_flat_choice output has "3.775": 1
+  findings has "0.2616": 2; d6_weights output has "0.2616": 1
+  findings has "3,570 of 3,570": 1; d3_forced_row output has "3570 cases, still the model's own answer 0, that agent's answer 3570": 2
+
+$ the same phrases with line breaks and runs of spaces collapsed to one space (tr -s), findings only
+  "mean size 11.6 against 3.1": 1
+  "rest on added diagnostics alone": 1
+  "about ninety times": 0
+  "moves a ninety times": 1
+
+$ where "changes nothing." remains (findings, then body), sentence around it
+ Swapping the built-in answer changes a choice that was already flat, so it changes nothing.
+ So swapping that answer changes nothing.
+
+$ where "one form of H1" remains in the body
+ In particular, F3 says D3's pre-stated reading rejects one form of H1.

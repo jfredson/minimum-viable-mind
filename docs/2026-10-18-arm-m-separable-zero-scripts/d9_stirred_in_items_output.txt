@@ -1,0 +1,12 @@
+D9: arm M's stirred-in items with the acting channel out of the trunk only (gate, own-directed)
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+
+M-10M-rerun: 1810 stirred-in own-directed actions
+  frozen          right  1387 (0.766)
+  swapped         right  1405 (0.776)
+  trunk_lesioned  right   267 (0.148)
+
+M-toy-seed0: 1810 stirred-in own-directed actions
+  frozen          right  1400 (0.773)
+  swapped         right  1398 (0.772)
+  trunk_lesioned  right   400 (0.221)

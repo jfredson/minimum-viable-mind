@@ -1,0 +1,17 @@
+E5: marker-word embeddings, end over start, words in use against words never used
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+appearances in 200 training batches (seed 0, batch 96): m0 14544, m1 14260, m2 14904, m3 14290, m4 14382, m5 14044, m6 14444, m7 14380, m8 14184, m9 14202, m10 14802, m11 14364, m12 0, m13 0, m14 0, m15 0, m16 0, m17 0, m18 0, m19 0
+
+M-10M-rerun: end over start, per marker word
+  m0-m11:  0.038 0.032 0.033 0.036 0.034 0.038 0.034 0.033 0.035 0.032 0.035 0.025
+  m12-m19: 0.335 0.335 0.335 0.335 0.335 0.335 0.335 0.335
+  mean: words in use 0.0337; words never used 0.3350 (decay arithmetic: 0.3350)
+  start rebuilt with seed 0: words never used, end over start from 0.33501 to 0.33502
+  start rebuilt with seed 1: words never used, end over start from 0.31557 to 0.36202
+
+T-10M-rerun: end over start, per marker word
+  m0-m11:  0.391 0.392 0.348 0.356 0.346 0.426 0.371 0.426 0.419 0.342 0.400 0.366
+  m12-m19: 0.335 0.335 0.335 0.335 0.335 0.335 0.335 0.335
+  mean: words in use 0.3819; words never used 0.3350 (decay arithmetic: 0.3350)
+  start rebuilt with seed 0: words never used, end over start from 0.33501 to 0.33502
+  start rebuilt with seed 1: words never used, end over start from 0.31557 to 0.36202

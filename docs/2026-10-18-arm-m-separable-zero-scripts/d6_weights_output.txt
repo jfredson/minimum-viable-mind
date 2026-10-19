@@ -1,0 +1,35 @@
+D6: weight decay, weight sizes and the flatness of the row choice
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+(a) what decoupled weight decay alone multiplies a weight by over the run
+    10 million recipe (108,919 steps, peak 0.002, decay 0.01, first tenth warming): 0.3350
+    toy recipe (2,500 steps, peak 0.003, decay 0.01, first tenth warming):          0.9631
+
+(b) weight sizes (Frobenius norm): end, start (rebuilt with the trainer's seed), end over start
+  M-10M-rerun
+    read_own.weight    end   5.2037  start   2.7171  ratio  1.9151
+    read_own.bias      end   0.3806  start   0.4624  ratio  0.8229
+    own_key.weight     end   3.9219  start   2.8529  ratio  1.3747
+    own_key.bias       end   0.1690  start   0.5139  ratio  0.3288
+    own_marker.weight  end   2.4567  start   2.7874  ratio  0.8814
+    to_val.weight      end  13.9551  start   4.6242  ratio  3.0178
+    rule.0.weight      end  22.3573  start   9.1862  ratio  2.4338
+    rule.2.weight      end  24.8791  start   3.8849  ratio  6.4041
+    act_vec            end   6.1823  start   0.3196  ratio 19.3449
+    bind.weight        end  18.7467  start   0.0000  ratio     nan
+    FiLM weights, all  end  44.5998  start  0.0000  (built at zero)
+  T-10M-rerun
+    read_own.weight    end   3.1865  start   2.8319  ratio  1.1252
+    read_own.bias      end   0.4172  start   0.4917  ratio  0.8486
+    own_key.weight     end   3.3081  start   2.9343  ratio  1.1274
+    own_key.bias       end   0.2242  start   0.6481  ratio  0.3459
+    own_marker.weight  end   9.1070  start   2.7874  ratio  3.2672
+    to_val.weight      end  11.1700  start   4.6121  ratio  2.4219
+    rule.0.weight      end  26.6410  start   9.2129  ratio  2.8917
+    rule.2.weight      end  56.8348  start   3.9409  ratio 14.4217
+    act_vec            end   5.9515  start   0.3196  ratio 18.6226
+
+(c) the row choice at the own-directed action (separable actions), true answer
+  M-10M-rerun  score gap top minus second    0.035; weight on top row 0.2616 (flat would be 0.25); spread of scores across agents 0.039; size of the slot's query 0.561
+  T-10M-rerun  score gap top minus second  278.988; weight on top row 1.0000 (flat would be 0.25); spread of scores across agents 299.602; size of the slot's query 20.479
+  M-toy-seed0  score gap top minus second   10.213; weight on top row 0.9989 (flat would be 0.25); spread of scores across agents 7.166; size of the slot's query 4.012
+  T-toy-seed0  score gap top minus second    8.914; weight on top row 0.9974 (flat would be 0.25); spread of scores across agents 7.455; size of the slot's query 3.802

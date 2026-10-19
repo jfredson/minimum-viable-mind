@@ -1,0 +1,22 @@
+D4: named-other (and own) accuracy by route, gate episodes
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+
+M-10M-rerun
+  own          separable items    1190 of  1190  1.000
+  own          stirred-in items   1387 of  1810  0.766
+  named-other  separable items    1178 of  1178  1.000
+  named-other  stirred-in items    555 of  1822  0.305
+
+M-toy-seed0
+  own          separable items    1190 of  1190  1.000
+  own          stirred-in items   1400 of  1810  0.773
+  named-other  separable items    1178 of  1178  1.000
+  named-other  stirred-in items    523 of  1822  0.287
+
+T-10M-rerun
+  own          separable items    2959 of  3000  0.986
+  named-other  separable items    2980 of  3000  0.993
+
+T-toy-seed0
+  own          separable items    3000 of  3000  1.000
+  named-other  separable items    3000 of  3000  1.000
