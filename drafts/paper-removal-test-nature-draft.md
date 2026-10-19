@@ -804,8 +804,8 @@ later, turned out to span zero; the programme reports both the verdict as
 registered and the reassessment, dated, and does not replace one with the
 other. We suggest this is the minimum standard assessment
 claims in this area should meet, and note that this experiment ran for about $10 to $20 of rented consumer
-GPU time, plus low tens of dollars of judge calls, and the whole programme of
-three registered experiments for about $230.94 of rented compute (Methods,
+GPU time, plus low tens of dollars of judge calls, and the two constructed-line
+experiments that followed for about $230.94 of rented compute (Methods,
 "Compute and cost"): the barrier is discipline, not resources.
 
 **Limitations.** One substrate family at 8B scale; one pass per registered
