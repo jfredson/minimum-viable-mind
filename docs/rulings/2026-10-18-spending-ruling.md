@@ -55,3 +55,26 @@ term cap."
 - `data/project.toml` and the headline: the spend line is the registered
   envelope again, and the headline gives the total spent across every vendor.
 - The TimeAssembler worklog, as a decision entry with authorship john.
+
+## Addendum, later on 2026-10-18: Anthropic credits on the Max plan
+
+*Relayed by the fifth master session for the tracker sites. Authorship
+**john**.*
+
+John refined the ruling the same evening. His Max plan gives $200 a month of
+Anthropic API credits, resetting on the 2nd. In his words: "a single job
+expected to cost more than about $50 comes to me first. Smaller credit-paid
+runs don't need my go, but they do get recorded."
+
+So:
+
+- **Anthropic calls paid from those credits:** a single job expected to cost
+  more than about $50 needs his go first. Smaller ones need no go, but each
+  is recorded in `docs/spending-record.md`.
+- **Out-of-pocket spend** (Gemini, rented machines, any other vendor) still
+  needs his go before it happens, with its estimate and ceiling, as item 1
+  above says.
+- **Keys.** Minimum Viable Mind has no Anthropic key or Console workspace of
+  its own yet. A session documenting the credits
+  (`timeassembler/docs/session-routing.md`) is proposing one for John to
+  create. Calls must not go through another project's key.
