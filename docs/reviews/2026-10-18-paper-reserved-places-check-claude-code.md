@@ -162,3 +162,97 @@ Read beside the new sections, each now reaches over all three experiments. Exper
 - It did not re-read the paper for anything other than these four rulings and the spelling pass.
 - It did not re-check figures. The first check of pull request 175 did that, and nothing numeric changed here. Every spelling-only pair is the same word on both sides, so no number in those lines moved. The only numbers the ruled changes add are the router paragraph's 0.219, [0.000, 0.594], +0.033 and −0.133 to +0.200, which are the main line's own figures from the same section; "30 million" in the Limitations sentence; and dates.
 - It did not judge whether British spelling should also apply to the dated notes, which the pull request leaves as they were.
+
+---
+
+## Check of pull request 193, 2026-10-18: the cost sentence and the three "programme" sentences
+
+**Verdict: PASS WITH CONDITIONS.** All five things asked hold:
+- the cost sentence is this checker's proposal plus "of rented compute";
+- the three "programme" changes sit exactly where they were named;
+- nothing else in the paper moved;
+- the ruling file quotes John as relayed;
+- the Methods addition is true of the ledger, whose every row is a rented machine or a $0 local run.
+
+But the figure both sentences carry is not the whole programme's, and that error began in this checker's own proposal in the check of pull request 190. The compute ledger opened at $0 on 2026-08-07. It says experiment 1's rented spend "predates this cap", so the $230.94 covers experiment 06 and experiment C only. The two changes:
+1. **Methods, "Compute and cost" (line 1030).** "Whole programme to the stop of experiment C: about $230.94" should read: "Experiment 06 and experiment C, from 2026-08-07, when the ledger opened, to the stop of experiment C: about $230.94 of a $450 ceiling, every row in `…compute-ledger.md`. That figure is rented machine time only; experiment 1's rented time predates the ledger and is the figure given above." The sentence about calls to model providers by API follows unchanged. Methods is not a reserved place.
+2. **Discussion (line 807).** "the whole programme of three registered experiments for about $230.94 of rented compute" should read "the two constructed-line experiments that followed for about $230.94 of rented compute". John approved the sentence as proposed, so this goes back to him as a correction of the proposal he said yes to. It is a fact about scope, not a new choice of wording.
+
+Checked by the same session as the two sections above, in its own worktree (`.claude/worktrees/check-193`, branch `check-paper-cost-sentence`, cut from `origin/paper-cost-sentence-2026-10-18` at `67f55d7`), against the main line at `6c19b01`, the branch's parent. Nothing under check was edited, no model was called and nothing was spent. The script is `docs/reviews/2026-10-18-paper-reserved-places-check-scripts/check-193/check_193.py`, and its output is beside it.
+
+### 1. The cost sentence. MEASURED. Passes.
+
+The script takes the proposal text from this record's own section above, adds "of rented compute" after "$230.94", and looks for the result in the paper:
+
+```
+1. proposal (from the check of 190): and note that this experiment ran for about $10 to $20 of rented consumer GPU time, plus low tens of dollars of judge calls, and the whole programme of three registered experiments for about $230.94 (Methods, "Compute and cost"): the barrier is discipline, not resources.
+   proposal + 'of rented compute' found in the paper: True
+   old sentence gone ('entire programme ran for under $20'): True
+```
+
+### 2. The three "programme" changes sit where they were named. MEASURED. Passes.
+
+```
+2. changed main-line lines (start, count): [('301', '', '301'), ('357', '', '357'), ('806', '3', '806'), ('1031', '', '1032'), ('1106', '', '1110')]
+   main line 301: the only S drop ever observed in the programme, and it was coherence-borne, not
+   main line 357: was not reduced by any readable intervention in the entire programme — not by
+```
+
+The Fig. 4 caption's sentence is at line 1106 on this main line. It was named as line 1107 on the branch of pull request 190. Between the two, the cut Limitations clause (pull request 192's condition 2) moved it up one line. It is the same sentence, "across every intervention in the programme". The other two hunks are the cost sentence (806) and the Methods addition (1031).
+
+### 4. Nothing else in the paper moved. MEASURED. Passes.
+
+The word diff of the whole paper is every change there is:
+
+```
+    -the programme,          +this experiment,
+    -the entire programme    +this experiment
+    -the entire programme    +this experiment
+    -under                   +about $10 to
+    -compute on  -GPUs:      +GPU time, plus low tens of dollars of judge calls, and the whole programme of
+                             +three registered experiments for about $230.94 of rented compute (Methods,
+                             +"Compute and cost"):
+                             +That figure is rented machine time only. Calls to model providers by API (judge calls, the
+                             +outside reviews, and the measurement rehearsal of the filtered battery run on
+                             +2026-10-18) are recorded in the project's worklog and are not in it.
+    -the programme.          +this experiment.
+```
+
+Apart from the paper, the pull request changes only the ruling file.
+
+### 3. The Methods addition against the ledger. MEASURED, with an ARGUED judgment. Conditions 1 and 2.
+
+```
+3. ledger rows: 25; GPU column of each: [every one a rented machine (4090, H100, 5090, A40), or "none — local M4" for the two $0 gate runs]
+   rows naming a model-provider API call as spend: 0
+   ledger baseline: RunPod balance at adjudication (John, checked 2026-08-07): **$106.73** (prior spend from $150 predates this cap — Experiment 1 / Stage 3 work; this ledger starts at $0). …
+   John's ruling of 2026-08-30, as amendment-a3.md quotes it: the Amendment A2 ceiling of $400 covers all Minimum Viable Mind compute across every vendor, true spend to date is about $281 to $300, so th…
+   ledger running total on 2026-08-17 (just before that ruling): True   [~$181.4]
+   paper says 'Whole programme to the stop of experiment C: about $230.94': True
+   paper says 'That figure is rented machine time only.': True
+   paper says 'whole programme of three registered experiments for about $230.94 of rented compute': True
+```
+
+**What is true.** "That figure is rented machine time only" holds: every ledger row is a rented machine or a $0 local run, and none is a call to a model provider. The worklog does hold the battery rehearsal's calls. Its entry of 2026-10-18 is titled "Before the first call: the measurement rehearsal of battery entries 1 and 2 starts on John's go "Go up to $50"". That was found by listing the project's worklog entries for 2026-10-18.
+
+**What is not.** The figure is not the whole programme's rented time:
+- The ledger's baseline opens at $0 on 2026-08-07, with experiment 1's earlier spend put outside it by name.
+- On 2026-08-30 John put "true spend to date" across every vendor at about $281 to $300. The ledger then read about $181.
+
+So "the whole programme of three registered experiments for about $230.94 of rented compute", and Methods' "Whole programme to the stop of experiment C", overstate what the $230.94 covers. The new sentence makes this sharper, not weaker: it says the $230.94 is rented machine time only, which invites the reader to take it as all of it.
+
+This checker wrote "the whole programme of three registered experiments for about $230.94" into its proposal in the check of pull request 190, without opening the ledger's baseline. The error is the checker's and is said so here.
+
+**Notes, not conditions:**
+- The $450 ceiling was ruled on 2026-08-30 to cover "all Minimum Viable Mind compute across every vendor". The paper's "about $230.94 of a $450 ceiling" therefore sets a figure for rented machines against a ceiling for every vendor.
+- No record opened here reconciles the all-vendor total since 2026-08-30.
+- The same "programme stands at about $230.94" phrase is in `STATUS.md` (four places) and the explainer (line 61). That is outside this pull request, and it is worth one line in each when they are next touched.
+
+### 5. The ruling file's added section. MEASURED. Passes.
+
+```
+5. ruling quotes John: "Yes to both" -> True | authorship mixed -> True
+   ruling's added section says the $230.94 is rented machine time 'to the stop of experiment C': True
+```
+
+John's words are quoted as relayed, and authorship is recorded as mixed. The section's own description of the figure ("rented machine time to the stop of experiment C") has the same scope gap as conditions 1 and 2. A dated line under it, saying the figure starts at 2026-08-07 and excludes experiment 1, would close it without editing what John approved.
