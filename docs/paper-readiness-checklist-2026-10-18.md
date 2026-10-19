@@ -9,7 +9,7 @@ down. The paper is `drafts/paper-removal-test-nature-draft.md` (version 0.3,
 with his rulings of 2026-10-18 on the title, the router paragraph, the
 Discussion and the spelling, pull request 190).*
 
-*The steps run in order. Steps 2 and 3 can start without John, but only once
+*Step 4 is cancelled for now (John, 2026-10-19). The steps run in order. Steps 2 and 3 can start without John, but only once
 the battery rehearsal of entries 1 and 2 has reported and its result is in
 the paper, and pull request 190 has merged. Steps 1, 4 and 5 are John's.*
 
@@ -18,8 +18,8 @@ the paper, and pull request 190 has merged. Steps 1, 4 and 5 are John's.*
 | 1 | John reads the paper end to end | John's | $0; about two hours of his reading | He has a list of every sentence he would not defend aloud to an expert, and each is fixed or cut |
 | 2 | Mock peer review | sessions; then an outside model | $0 for the inside reviews; about $1 to $3 by API for the outside model | Three referee reports and an outside one exist, and every major point is fixed or answered in a response file |
 | 3 | Reproduction from a clean clone | a fresh session | $0; laptop only | Every number in the paper is regenerated from the repository by its own instructions, or the gap is named |
-| 4 | A friendly expert before a senior one | John's | $0 | John has chosen a reader and has the reader's comments |
-| 5 | A proportionate first venue | John's | arXiv is free; a workshop may charge registration if accepted | John has chosen the venue, after steps 1 to 4 |
+| 4 | ~~A friendly expert before a senior one~~ **Cancelled 2026-10-19, for now** | John's | — | — |
+| 5 | A proportionate first venue | John's | arXiv is free; a workshop may charge registration if accepted | John has chosen the venue, after steps 1 to 3 |
 
 ## 1. John reads the paper end to end
 
@@ -68,7 +68,9 @@ not run.
 difference (and why), or not reproducible from the repository (and what is
 missing).
 
-## 4. A friendly expert before a senior one
+## 4. A friendly expert before a senior one: cancelled 2026-10-19, for now
+
+*Cancelled by John on 2026-10-19, in his words: "We are canceling the idea for an outside reader for now." (relayed by the sixth master session; `docs/rulings/2026-10-18-outside-reader-held-ruling.md`, addendum). Read here as covering any outside reader, the friendly expert below and the academics the approach note was for; nothing is sent to anyone. The step is kept below as written, for the record.*
 
 John chooses one of these:
 
@@ -82,7 +84,8 @@ on.
 
 ## 5. A proportionate first venue
 
-After steps 1 to 4, John chooses the first venue: an arXiv preprint, or a
+After steps 1 to 3, John chooses the first venue: an arXiv preprint, or a
 machine-learning workshop paper, before a journal of Nature's standing. The
 outside-reader approach note (`docs/outside-reader-approach-note-2026-10-17.md`)
-stays held until he says otherwise.
+is cancelled for now with step 4 (John, 2026-10-19), and stays in the
+repository unsent.
