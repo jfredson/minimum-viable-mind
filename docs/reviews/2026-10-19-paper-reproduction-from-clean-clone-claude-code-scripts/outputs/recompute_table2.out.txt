@@ -1,0 +1,42 @@
+== pilot (seed 0)
+  OK      T_act intact    recomputed 0.5683  paper 0.5683
+  OK      sd              recomputed 0.0076  paper 0.0076
+  OK      T_act lesioned  recomputed 0.1988  paper 0.1988
+  OK      sd              recomputed 0.0173  paper 0.0173
+  OK      corrected drop  recomputed 1.3370  paper 1.337
+  OK      sd              recomputed 0.0570  paper 0.057
+  OK      x theta         recomputed 7.5240  paper 7.5
+  OK      state drop      recomputed 0.0018  paper 0.0018
+  OK      syntax drop     recomputed 0.0000  paper 0.0
+  OK      T_other intact  recomputed 0.2877  paper 0.2877
+  OK      sd              recomputed 0.0302  paper 0.0302
+   stored across_seeds in the file: {'intact': 0.5683, 'lesioned': 0.1988, 'd': 1.337} state d 0.0018 | default-draw d 1.5147 intact/lesioned 0.506 0.182
+== seed 1
+  OK      T_act intact    recomputed 0.5633  paper 0.5633
+  OK      sd              recomputed 0.0316  paper 0.0316
+  OK      T_act lesioned  recomputed 0.2015  paper 0.2015
+  OK      sd              recomputed 0.0215  paper 0.0215
+  OK      corrected drop  recomputed 1.3422  paper 1.342
+  OK      sd              recomputed 0.1026  paper 0.103
+  OK      x theta         recomputed 7.5530  paper 7.6
+  OK      state drop      recomputed 0.0002  paper 0.0002
+  OK      syntax drop     recomputed 0.0000  paper 0.0
+  OK      T_other intact  recomputed 0.3057  paper 0.3057
+  OK      sd              recomputed 0.0281  paper 0.0281
+   stored across_seeds in the file: {'intact': 0.5633, 'lesioned': 0.2015, 'd': 1.3422} state d 0.0002 | default-draw d 1.2174 intact/lesioned 0.61 0.223
+== seed 2
+  OK      T_act intact    recomputed 0.5738  paper 0.5738
+  OK      sd              recomputed 0.0284  paper 0.0284
+  OK      T_act lesioned  recomputed 0.1447  paper 0.1447
+  OK      sd              recomputed 0.0127  paper 0.0127
+  OK      corrected drop  recomputed 1.5279  paper 1.528
+  OK      sd              recomputed 0.0676  paper 0.068
+  OK      x theta         recomputed 8.5980  paper 8.6
+  OK      state drop      recomputed 0.0769  paper 0.0769
+  OK      syntax drop     recomputed 0.0000  paper 0.0
+  OK      T_other intact  recomputed 0.3195  paper 0.3195
+  OK      sd              recomputed 0.0150  paper 0.015
+   stored across_seeds in the file: {'intact': 0.5738, 'lesioned': 0.1447, 'd': 1.5279} state d 0.0769 | default-draw d 1.5349 intact/lesioned 0.554 0.152
+cells differing: 0
+state theta check: seed 2 state drop 0.0769 inside 0.1172 ; ratio vs seed 0/1: 42.7 384.5
+evaluation noise, 12 draws at 400 episodes: sd 0.0284 range 0.079 (paper: sd 0.0284, range 0.079)

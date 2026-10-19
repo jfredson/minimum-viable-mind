@@ -1,0 +1,7 @@
+40-step timing of arm T at 10 million parameters, seed 0, batch 96, on this Mac (Apple Silicon, 4 performance threads), 2026-10-18.
+Nothing kept: the 40-step checkpoints were written to the scratchpad and discarded. This is not a reproduction of anything.
+  command:  python experiments/08-successor-degree/src/train_successor.py --arm T --size 10M --seed 0 --device cpu --steps 40 --eval-every 1000000 --no-self-terminate --out <scratch>/x.pt
+  cpu:  0.29947 seconds a step  (12.0 s for 40 steps)
+  mps:  0.39124 seconds a step  (15.6 s for 40 steps)
+  rented RTX 5090 (ledger rows of 2026-10-04 and 2026-10-09): 0.0098 to 0.0129 seconds a step for arms T, C and F.
+  108,919 steps at 0.29947 s = 32,618 s = 9.06 hours per arm on the laptop's processor; three arms about 27 hours.

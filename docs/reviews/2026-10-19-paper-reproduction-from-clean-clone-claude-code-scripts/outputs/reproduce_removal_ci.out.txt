@@ -1,0 +1,21 @@
+MATCH   primary T_self_irrelevant (item-level) recomputed {'point': 0.2188, 'lo': 0.0938, 'hi': 0.375} committed {'point': 0.2188, 'lo': 0.0938, 'hi': 0.375}
+MATCH   primary T_self_relevant (item-level) recomputed {'point': 0.1, 'lo': 0.0, 'hi': 0.2} committed {'point': 0.1, 'lo': 0.0, 'hi': 0.2}
+MATCH   primary T_syntax (item-level) recomputed {'point': 0.1333, 'lo': 0.0333, 'hi': 0.2667} committed {'point': 0.1333, 'lo': 0.0333, 'hi': 0.2667}
+MATCH   router gap, primary condition recomputed {'point': 0.0333, 'lo': -0.1333, 'hi': 0.2} committed {'point': 0.0333, 'lo': -0.1333, 'hi': 0.2}
+MATCH   primary T_si, two-level sensitivity recomputed {'point': 0.2188, 'lo': 0.0, 'hi': 0.5938} committed {'point': 0.2188, 'lo': 0.0, 'hi': 0.5938}
+MATCH   primary T_self_relevant, two-level sensitivity recomputed {'point': 0.1, 'lo': 0.0, 'hi': 0.2008} committed {'point': 0.1, 'lo': 0.0, 'hi': 0.2008}
+MATCH   primary T_syntax, two-level sensitivity recomputed {'point': 0.1333, 'lo': 0.0, 'hi': 0.3} committed {'point': 0.1333, 'lo': 0.0, 'hi': 0.3}
+T_si flips: 7 multi-step: 6 of 8 ; elsewhere: 1 of 24
+battery sizes {'T_self_irrelevant': 32, 'T_self_relevant': 30, 'T_syntax': 30} flips {'T_self_irrelevant': 7, 'T_self_relevant': 3, 'T_syntax': 4}
+idxres_mean_k16            T_self_irrelevant  point 0.2188 = 7/32 flipped (x/n = 0.2188)
+idxres_mean_k16            T_self_relevant    point 0.1000 = 3/30 flipped (x/n = 0.1000)
+idxres_mean_k16            T_syntax           point 0.1333 = 4/30 flipped (x/n = 0.1333)
+idxres_directional_k16     T_self_irrelevant  point 0.1250 = 4/32 flipped (x/n = 0.1250)
+idxres_directional_k16     T_self_relevant    point 0.0667 = 2/30 flipped (x/n = 0.0667)
+idxres_directional_k16     T_syntax           point 0.1333 = 4/30 flipped (x/n = 0.1333)
+narrative_mean_k16         T_self_irrelevant  point 0.0625 = 2/32 flipped (x/n = 0.0625)
+narrative_mean_k16         T_self_relevant    point 0.0333 = 1/30 flipped (x/n = 0.0333)
+narrative_mean_k16         T_syntax           point 0.0667 = 2/30 flipped (x/n = 0.0667)
+expert_mean_k16            T_self_irrelevant  point 0.0625 = 2/32 flipped (x/n = 0.0625)
+expert_mean_k16            T_self_relevant    point 0.0000 = 0/30 flipped (x/n = 0.0000)
+expert_mean_k16            T_syntax           point 0.1000 = 3/30 flipped (x/n = 0.1000)
