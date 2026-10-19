@@ -1,0 +1,67 @@
+== 1. the headline wording, field present (worktree) and removed (copy)
+export_site: data/project.toml is valid (8 stages, 9 questions, 13 ideas, 26 findings, 52 next steps, 54 timeline rows)
+export_site: data/roadmap.toml is valid (13 weekends, 45 goals, 4 milestones, 5 extensions)
+export_site: headline reads: 3 of 8 stages delivered; about $335 to $360 spent in total across every vendor so far, each new spend under its own go from John; log last updated 2026-10-18.
+exit 0
+headline_words lines left in the copy: 0
+export_site: warning: data/headline.json lags data/project.toml; run `python3 scripts/export_site.py` and commit it
+export_site: data/project.toml is valid (8 stages, 9 questions, 13 ideas, 26 findings, 52 next steps, 54 timeline rows)
+export_site: data/roadmap.toml is valid (13 weekends, 45 goals, 4 milestones, 5 extensions)
+export_site: headline reads: 3 of 8 stages delivered; about $230.94 of the $450 ceiling spent; log last updated 2026-10-18.
+exit 0
+
+== 2. the site check
+npm run check exit 0
+
+== 3. the $450 line before pull request 195, after it, and now
+name: before 195 'MVM-0a registered design envelope (Amendment A2)' | after 195 "The programme's $450 ceiling, every vendor counted (ruled 2026-10-18)" | now 'MVM-0a registered design envelope (Amendment A2): rented machines from 2026-08-07'
+cap: before 195 450 | after 195 450 | now 450
+spent: before 195 230.94 | after 195 335 | now 230.94
+marker appears once: True
+text after the marker is the note before 195, character for character: True (1965 characters)
+
+== 4. John's words in STATUS.md against the ruling file
+ruling file: I'm not so worried about the $450 ceiling, I just want to make sure we are keeping track of any new spending. Any new spending needs to get ruled on rather than counted against some long term cap.
+STATUS.md:   I'm not so worried about the $450 ceiling, I just want to make sure we are keeping track of any new spending. Any new spending needs to get ruled on rather than counted against some long term cap.
+identical: True
+
+== 5. the spending record's sources
+-- the ledger's running total (last programme figure):
+after this run: programme about **$230.94 of $450**
+-- the ledger on 2026-08-30 (its 2026-08-17 row; the next row is 2026-09-14):
+~$181.4 / $400 (A2)
+~$181.4 / $400 (A2)
+~$181.4 / $400 (A2)
+| 2026-08-17
+| 2026-09-14
+-- John's figure of 2026-08-30, as amendment-a3.md quotes his binding rulings of that day:
+true spend to date is about $281 to $300
+-- the Gate A tier 2 cost:
+**about $1.04 at most**
+-- the poll's method file exists:
+docs/outside-perspective/2026-10-07-poll-method.md
+-- the running total's arithmetic: 230.94 + (100 to 119) + (1.04 + 2.88 to 7.13)
+334.86 to 358.11
+
+== 6. what the ledger gains
+9	0	experiments/06-mvm-0a-constructed-self-index/compute-ledger.md
++6. **Every new spend gets its own go; the running total is a record, not a
++   budget** (John's ruling of 2026-10-18, `docs/rulings/2026-10-18-spending-rul
++   Any new spend, on any vendor, needs John's go before it happens, with its
++   estimate and ceiling. The $450 envelope of Amendment A2 stays on this
++   ledger as its registered figure, with its history, but it is no longer
++   the control. This ledger stays the record of rented machines. Every
++   dollar spent, on every vendor, is added up with its go in
++   `docs/spending-record.md`. *(Added 2026-10-18.)*
++
+
+== 7. (own check) the explainer's citation for the total across every vendor
+-- STATUS entries dated 2026-10-12 in STATUS.md and STATUS-archive.md:
+STATUS.md:0
+STATUS-archive.md:0
+-- '$335 to $360' in explainer.md before pull request 195, after it, and now:
+0 1 1 
+-- the citation 'entry of 2026-10-12' in explainer.md before pull request 195:
+1
+-- '335' in the compute ledger:
+0

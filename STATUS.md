@@ -16,7 +16,7 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
-## WHERE THINGS STAND 2026-10-18 (evening) — the paper's choices made and checked; John holds the outside reader for a readiness checklist; the battery rehearsal is part-run and resumes a day at a time; the spend figure corrected
+## WHERE THINGS STAND 2026-10-18 (evening) — the paper's choices made and checked; John holds the outside reader for a readiness checklist; the battery rehearsal is part-run and resumes a day at a time; the spend figure corrected, and every new spend now needs its own go
 
 *Written 2026-10-18 (Sunday evening, Pacific) by the session that worked the
 programme over the weekend, on John's answers relayed by the fifth master
@@ -96,9 +96,18 @@ $335 to $360:
 | API calls logged since, at least | about $4 to $8 (the Gate A tier 2 pass of 2026-10-09 and the first start of the rehearsal) |
 
 The poll of 2026-10-07 and any other unlogged API calls are still to be
-added. From now on, by John's ruling of 2026-10-18 (authorship mixed),
-every vendor counts against the $450 ceiling, including this rehearsal's
-API spend. The exact tally is a roadmap step. Older entries are not edited.
+added. *(Corrected the same evening: this paragraph first said John had
+ruled that every vendor counts against the $450 ceiling. He had not; the
+fifth master session corrected its relay.)* **John's ruling, in his words:**
+"I'm not so worried about the $450 ceiling, I just want to make sure we are
+keeping track of any new spending. Any new spending needs to get ruled on
+rather than counted against some long term cap." (Authorship john;
+`docs/rulings/2026-10-18-spending-ruling.md`.) So every new spend, on any
+vendor, needs his go before it happens, with its estimate and ceiling. Every
+dollar spent is tracked with its go in one place, `docs/spending-record.md`.
+The $450 stays on the record as Amendment A2's registered envelope, but it
+is no longer the control. The exact tally is a roadmap step. Older entries
+are not edited.
 
 ## WHERE THINGS STAND 2026-10-18 — the refounded question is in the spec; the paper is at version 0.3; the battery rehearsal's method is checked and waits only on John's go; RT-283 closed on his reading
 
