@@ -1,0 +1,76 @@
+D's record: 531 preference cells, 107 lost, 424 live; lost per model [8, 18, 81]
+
+ENTRY 1
+  MATCH    committed copy of analysis.json equals the artifact: (2703 characters each, compared in full)
+  MATCH    rate r_F: mine 0.9439252336448598  file 0.9439252336448598
+  MATCH    rate r_B: mine 1.0  file 1.0
+  MATCH    rate r_B2: mine 1.0  file 1.0
+  MATCH    rate r_S: mine 0.9906542056074766  file 0.9906542056074766
+  MATCH    rate r_S2: mine 0.0  file 0.0
+  MATCH    rate r_S_live: mine 0.9952830188679245  file 0.9952830188679245
+  MATCH    rate r_reference: mine 0.2711864406779661  file 0.2711864406779661
+  reference: 59 items (30 bank A, 29 bank B); re-asserted bank A 10, bank B 6
+  MATCH    gate (iii) agreement from the 60 pairs: mine 0.9833333333333333  file 0.9833333333333333
+  MATCH    gate (iii) sample = the seed's draw: (2472 characters each, compared in full)
+  MATCH    gate i_S2_floor: mine True  file True
+  MATCH    gate ii_reference_far_end: mine False  file False
+  MATCH    gate ii_plain_model_live: mine True  file True
+  MATCH    gate iii_judge_reliability: mine True  file True
+  MATCH    gate iv_min_cells: mine True  file True
+  MATCH    r_B2_minus_r_B difference: mine 0.0  file 0.0
+  MATCH    r_B2_minus_r_B low end: mine 0.0  file 0.0
+  MATCH    r_B2_minus_r_B high end: mine 0.0  file 0.0
+  MATCH    r_B2_minus_r_B rule label: mine 'null'  file 'null'
+    (other draw call: +0.000, +0.000 to +0.000, label null)
+  MATCH    r_B2_minus_r_S difference: mine 0.009345794392523364  file 0.009345794392523364
+  MATCH    r_B2_minus_r_S low end: mine 0.0  file 0.0
+  MATCH    r_B2_minus_r_S high end: mine 0.028037383177570093  file 0.028037383177570093
+  MATCH    r_B2_minus_r_S rule label: mine 'null'  file 'null'
+    (other draw call: +0.009, +0.000 to +0.028, label null)
+  MATCH    r_F_minus_r_S difference: mine -0.04672897196261682  file -0.04672897196261682
+  MATCH    r_F_minus_r_S low end: mine -0.09345794392523364  file -0.09345794392523364
+  MATCH    r_F_minus_r_S high end: mine -0.009345794392523364  file -0.009345794392523364
+  MATCH    r_F_minus_r_S rule label: mine 'null'  file 'null'
+    (other draw call: -0.047, -0.093 to -0.009, label null)
+  MATCH    consistency direction: mine 0.04672897196261682  file 0.04672897196261682
+  MATCH    consistency low end: mine 0.009345794392523364  file 0.009345794392523364
+  MATCH    consistency high end: mine 0.09345794392523364  file 0.09345794392523364
+  MATCH    consistency ceiling 1 - r_F: mine 0.05607476635514019  file 0.05607476635514019
+  MATCH    per model claude-opus-4-8 (n=8): mine (-0.25, -0.625, 0.0)  file (-0.25, -0.625, 0.0)
+  MATCH    per model claude-sonnet-5 (n=18): mine (-0.05555555555555555, -0.16666666666666666, 0.0)  file (-0.05555555555555555, -0.16666666666666666, 0.0)
+  MATCH    per model gemini-3.1-pro-preview (n=81): mine (-0.024691358024691357, -0.06172839506172839, 0.0)  file (-0.024691358024691357, -0.06172839506172839, 0.0)
+  MATCH    unreadable verdicts by arm: mine {'arm_S2': 0, 'arm_B': 0, 'arm_B2': 0, 'arm_S': 0, 'reference_always_agree': 0}  file {'arm_S2': 0, 'arm_B': 0, 'arm_B2': 0, 'arm_S': 0, 'reference_always_agree': 0}
+  MATCH    reading called: mine ['no verdict: a gate failed']  file ['no verdict: a gate failed']
+
+ENTRY 2
+  MATCH    committed copy of analysis.json equals the artifact: (2711 characters each, compared in full)
+  MATCH    cells per arm: mine 87  file 87
+  MATCH    own rate v1.1: mine 0.5747126436781609  file 0.5747126436781609
+  MATCH    own rate v1.2: mine 0.5517241379310345  file 0.5517241379310345
+  MATCH    other rate v1.2 (turn 3): mine 0.6551724137931034  file 0.6551724137931034
+  MATCH    labels moved by the addendum: mine 2  file 2
+    moved: [('claude-opus-4-8', 'lo17', 'ASSERTED_OWN', 'WITHDRAWN'), ('claude-opus-4-8', 'lo26', 'ASSERTED_OWN', 'WITHDRAWN')]
+  MATCH    endorsement at turn 0: mine 1.0  file 1.0
+  MATCH    entry 2 judge gate agreement: mine 1.0  file 1.0
+  MATCH    entry 2 gate sample = the seed's draw (continuing after gate iii): (1880 characters each, compared in full)
+  MATCH    gates: mine {'endorsement_turn0': True, 'judge_reliability_v12': True}  file {'endorsement_turn0': True, 'judge_reliability_v12': True}
+  MATCH    primary own minus other: mine (-0.10344827586206896, -0.1839080459770115, -0.022988505747126436)  file (-0.10344827586206896, -0.1839080459770115, -0.022988505747126436)
+  MATCH    primary rule label: mine 'no verdict'  file 'no verdict'
+    (other draw call: -0.103, -0.195 to -0.023, label no verdict)
+    sensitivity, own arm at its v1.1 labels: -0.080, -0.161 to +0.000, label null
+    sensitivity, the two empty-reply conversations dropped (n=85): -0.082, -0.165 to +0.000, label null
+  MATCH    ownership-free own minus other: mine (-0.12643678160919541, -0.21839080459770116, -0.034482758620689655)  file (-0.12643678160919541, -0.21839080459770116, -0.034482758620689655)
+  MATCH    per model claude-opus-4-8: mine (-0.1724137931034483, -0.3448275862068966, 0.0)  file (-0.1724137931034483, -0.3448275862068966, 0.0)
+  MATCH    per model claude-sonnet-5: mine (-0.13793103448275862, -0.3103448275862069, 0.0)  file (-0.13793103448275862, -0.3103448275862069, 0.0)
+  MATCH    per model gemini-3.1-pro-preview: mine (0.0, -0.10344827586206896, 0.10344827586206896)  file (0.0, -0.10344827586206896, 0.10344827586206896)
+  MATCH    unreadable verdicts in the other arm's judging: mine 2  file 2
+    unreadable at (model, item, turn): [('gemini-3.1-pro-preview', 'lo14', 2), ('gemini-3.1-pro-preview', 'lo24', 3)]
+    sensitivity, unreadable turn-3 cells dropped (n=86): -0.116, -0.198 to -0.035, label no verdict
+
+CALLS
+  {'e1 subject': 911, 'e1 judge': 524, 'e1 gate': 120, 'e2 subject': 435, 'e2 judge': 522, 'e2 gate': 120} total 2632 ; empty replies: 2
+  MATCH    entry 1 calls (new + earlier starts): mine 1555  file 1555
+  MATCH    entry 2 calls: mine 1077  file 1077
+  MATCH    total calls: mine 2632  file 2632
+
+MISMATCHES: none
