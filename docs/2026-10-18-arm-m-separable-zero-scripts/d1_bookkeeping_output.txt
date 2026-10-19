@@ -1,0 +1,9 @@
+D1: bookkeeping of arm M's separable items, on the gate episodes
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+(a) own-directed actions: 3000; item word two before the mask differs from the item word of the assignment turn for the action's item: 0
+    the assignment turns of all four agents name the same item word for it: True
+    mask disagreements with 'item word is it1, it2 or it3': 0
+    separable actions by item word: it0 616, it1 0, it2 0, it3 0, it4 574
+    entangled actions by item word: it0 0, it1 642, it2 588, it3 580, it4 0
+(b) actions (both conditions) where the returned logits are not exactly the separable route's on the separable mask: 0; not exactly the stirred-in route's on the other: 0
+(c) separable own-directed actions: 1190 of 3000, share 0.3967 (expected about 0.4: two of the five items it0 to it4)

@@ -1,0 +1,30 @@
+D7: the separable head fed a flat mixture of the four rows (gate, own-directed actions)
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+
+M-10M-rerun: 1190 separable own-directed actions (sanity: rule on the true row differs from the forced-row head in 0)
+  frozen head, own answer right:                          1190 (1.000)
+  flat mixture of the four rows, own answer right:        1190 (1.000)
+  flat mixture, acting channel out of the trunk:           296 (0.249)
+  true agent's row alone, acting channel out of trunk:    1190 (1.000)
+  own row's size over the other rows' mean size: 3.775; with the acting channel out of the trunk: 1.017
+
+T-10M-rerun: 3000 separable own-directed actions (sanity: rule on the true row differs from the forced-row head in 0)
+  frozen head, own answer right:                          2959 (0.986)
+  flat mixture of the four rows, own answer right:         970 (0.323)
+  flat mixture, acting channel out of the trunk:           700 (0.233)
+  true agent's row alone, acting channel out of trunk:    3000 (1.000)
+  own row's size over the other rows' mean size: 0.991; with the acting channel out of the trunk: 1.011
+
+M-toy-seed0: 1190 separable own-directed actions (sanity: rule on the true row differs from the forced-row head in 0)
+  frozen head, own answer right:                          1190 (1.000)
+  flat mixture of the four rows, own answer right:         518 (0.435)
+  flat mixture, acting channel out of the trunk:           275 (0.231)
+  true agent's row alone, acting channel out of trunk:    1190 (1.000)
+  own row's size over the other rows' mean size: 1.064; with the acting channel out of the trunk: 0.984
+
+T-toy-seed0: 3000 separable own-directed actions (sanity: rule on the true row differs from the forced-row head in 0)
+  frozen head, own answer right:                          3000 (1.000)
+  flat mixture of the four rows, own answer right:         710 (0.237)
+  flat mixture, acting channel out of the trunk:           704 (0.235)
+  true agent's row alone, acting channel out of trunk:    3000 (1.000)
+  own row's size over the other rows' mean size: 0.999; with the acting channel out of the trunk: 1.000

@@ -1,0 +1,22 @@
+D2: does the swapped answer reach the separable route? (gate, own-directed actions)
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+
+M-10M-rerun: 1190 separable own-directed actions
+  (a) slot at the action moves under the swap: 1190 of them; mean size of the move 0.2218
+  (b) row choice, true answer: mean weight on the true agent 0.2545, true agent's row the top choice 412
+      row choice, swapped answer: mean weight on the next agent 0.2540, on the true agent 0.2489, next agent's row the top choice 381
+
+T-10M-rerun: 3000 separable own-directed actions
+  (a) slot at the action moves under the swap: 3000 of them; mean size of the move 20.4098
+  (b) row choice, true answer: mean weight on the true agent 0.9780, true agent's row the top choice 2934
+      row choice, swapped answer: mean weight on the next agent 0.9790, on the true agent 0.0093, next agent's row the top choice 2937
+
+M-toy-seed0: 1190 separable own-directed actions
+  (a) slot at the action moves under the swap: 1190 of them; mean size of the move 6.2889
+  (b) row choice, true answer: mean weight on the true agent 0.9989, true agent's row the top choice 1190
+      row choice, swapped answer: mean weight on the next agent 0.9988, on the true agent 0.0004, next agent's row the top choice 1190
+
+T-toy-seed0: 3000 separable own-directed actions
+  (a) slot at the action moves under the swap: 3000 of them; mean size of the move 7.4606
+  (b) row choice, true answer: mean weight on the true agent 0.9974, true agent's row the top choice 3000
+      row choice, swapped answer: mean weight on the next agent 0.9974, on the true agent 0.0008, next agent's row the top choice 3000

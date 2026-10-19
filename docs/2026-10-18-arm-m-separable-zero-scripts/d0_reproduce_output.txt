@@ -1,0 +1,33 @@
+D0: the frozen procedure.route_in_use on EvalData().gate
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+gate episodes: 3000
+
+M-10M-rerun  (md5 c4701f70e7967e008954640c88e89112, step 108919, arm M, width 256, 8 blocks)
+  sharpness 4.0, learned False, weight on true agent 0.9990, state failed
+  routes {"entangled_items": {"actions": 1810, "right": 1387, "still_right_after_swap": 1354, "route_use": 0.0238}, "separable": {"actions": 1190, "right": 1190, "still_right_after_swap": 1190, "route_use": 0.0}}
+  (7.4 s)
+
+T-10M-rerun  (md5 c9f2684070a67920577b26f2f1662ffd, step 108919, arm T, width 256, 8 blocks)
+  sharpness 4.0, learned False, weight on true agent 0.9990, state passed
+  routes {"slot": {"actions": 3000, "right": 2959, "still_right_after_swap": 41, "route_use": 0.9861}}
+  (6.8 s)
+
+M-toy-seed0  (md5 d0dfe8673ecb1b54d0eceff24951c9ff, step 2500, arm M, width 160, 4 blocks)
+  sharpness 4.0, learned False, weight on true agent 0.9990, state failed
+  routes {"entangled_items": {"actions": 1810, "right": 1400, "still_right_after_swap": 1274, "route_use": 0.09}, "separable": {"actions": 1190, "right": 1190, "still_right_after_swap": 0, "route_use": 1.0}}
+  (1.9 s)
+
+M-toy-seed1  (md5 9f8a18dc591081db017a4f976f29b18d, step 2500, arm M, width 160, 4 blocks)
+  sharpness 4.0, learned False, weight on true agent 0.9990, state failed
+  routes {"entangled_items": {"actions": 1810, "right": 1373, "still_right_after_swap": 1228, "route_use": 0.1056}, "separable": {"actions": 1190, "right": 1190, "still_right_after_swap": 0, "route_use": 1.0}}
+  (1.9 s)
+
+M-toy-seed2  (md5 08ac2d4e48577a7abe7cc11529fc9798, step 2500, arm M, width 160, 4 blocks)
+  sharpness 4.0, learned False, weight on true agent 0.9990, state failed
+  routes {"entangled_items": {"actions": 1810, "right": 1432, "still_right_after_swap": 1289, "route_use": 0.0999}, "separable": {"actions": 1190, "right": 1190, "still_right_after_swap": 0, "route_use": 1.0}}
+  (1.8 s)
+
+T-toy-seed0  (md5 75bd5fb3bdb0d2f5889ff16939020a96, step 2500, arm T, width 160, 4 blocks)
+  sharpness 4.0, learned False, weight on true agent 0.9990, state passed
+  routes {"slot": {"actions": 3000, "right": 3000, "still_right_after_swap": 0, "route_use": 1.0}}
+  (1.7 s)

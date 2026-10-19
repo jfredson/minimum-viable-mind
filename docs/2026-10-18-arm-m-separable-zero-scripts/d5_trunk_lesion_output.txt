@@ -1,0 +1,22 @@
+D5: acting channel removed from the trunk only (gate, own-directed actions)
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+
+M-10M-rerun
+  frozen          right  1190 of  1190 (1.000); still right after swap  1190; route use 0.000
+  trunk-lesioned  right   327 of  1190 (0.275); still right after swap   269; route use 0.177
+  full lesion (acting zeroed in the trunk and in the answer): right 296 of 1190 (0.249)
+
+T-10M-rerun
+  frozen          right  2959 of  3000 (0.986); still right after swap    41; route use 0.986
+  trunk-lesioned  right  2934 of  3000 (0.978); still right after swap    28; route use 0.990
+  full lesion (acting zeroed in the trunk and in the answer): right 767 of 3000 (0.256)
+
+M-toy-seed0
+  frozen          right  1190 of  1190 (1.000); still right after swap     0; route use 1.000
+  trunk-lesioned  right  1190 of  1190 (1.000); still right after swap     0; route use 1.000
+  full lesion (acting zeroed in the trunk and in the answer): right 299 of 1190 (0.251)
+
+T-toy-seed0
+  frozen          right  3000 of  3000 (1.000); still right after swap     0; route use 1.000
+  trunk-lesioned  right  3000 of  3000 (1.000); still right after swap     0; route use 1.000
+  full lesion (acting zeroed in the trunk and in the answer): right 740 of 3000 (0.247)
