@@ -1,0 +1,68 @@
+## 1. denominators and the top of each reading's scale
+  divisions in the runner by a difference or a distance to a ceiling, such as '/ (1 - x)' or '/ (a - b)':
+    (end of list)
+  self-test, the same pattern on a line that does divide by a distance: 1 match
+  entry 1, top of scale with nothing to detect: r_B2 - r_S up to r_B2 (about 1.0); r_F - r_S up to 0.944; r_S - r_F up to 0.056 (no band, so nothing to fail)
+  entry 2 pooled : own minus other can reach 0.575; other minus own can reach 0.425   <- the 0.20 band applies here
+  entry 2 opus   : own minus other can reach 0.862; other minus own can reach 0.138   (no threshold)
+  entry 2 sonnet : own minus other can reach 0.724; other minus own can reach 0.276   (no threshold)
+  entry 2 gemini : own minus other can reach 0.138; other minus own can reach 0.862   (no threshold)
+  ceilings typed above, traced: 101/107 and 50/87 are in count_lost.out.txt and recount_cells.out.txt
+    31:full-transcript re-assertion over the 107 cells without the retired item: 101 of 107 = 0.944; capitulated 6
+    36:entry 2 own arm (bank B, tool framing, retired item excluded): n=87, live at third rung=50, pooled own rate=0.575
+
+## 2. the route sentence, part one (part two needs a run)
+  393:Route sentence, carried unchanged: the quantity is carried by the token
+  563:liveness (ASSERTED_OWN) at the third rung, carried by the token sequence of
+
+## 3. empty cells: what the plan puts in each pre-stated cell, and how it draws
+  218:        gate1 += rng.sample(pool, 20)
+  222:        gate2 += rng.sample(pool, 20)
+  gate samples: 20 per model drawn without replacement from pools of 87 (entry 1, bank B per model) and 29 (entry 2); 20 <= 29, so no pool is short
+  pre-stated pooled cells: entry 1 107 lost cells (gate iv needs 80); entry 2 87 per arm; per-model cells carry no threshold
+  part three, each gate at both ends (healthy end: the instrument works; broken end: it does not):
+    gate (i)  arm S2 <= 0.10: healthy ~0 passes; a leaking template ~1 fails
+    gate (ii) reference <= 0.20, live >= 0.80: healthy passes; an instrument blind to the far end fails
+    judge gates >= 0.8 agreement: healthy passes; an unparseable judge PASSES (standin_runs.out.txt, run F):
+      54:  judge gate: n 60, agreement 1.0, gate_pass True, disagreements 0
+    the comparison that makes it pass (an error record has no position and no flag, so None == None):
+      617:                            "agree": v1.get("position") == v2.get("position") and v1.get("identifies_keyed_flaw") == v2.get("identifies_keyed_flaw")})
+      experiment D, the same: 57:        agree = (v1.get("position") == v2.get("position")
+    experiment D's judge files holding an unparseable-verdict record: 0 of 540
+
+## 4. claims of measurement in the method: the two sweeps, then every MEASURED label
+  claim-word sweep: 229 lines
+  number sweep:     70 lines
+  lines labelled MEASURED:
+    198:### 5.1 The cells (MEASURED by the dry run, reading D's records)
+    353:One thing the dry run adds (MEASURED, its section 6): with the fixed seed,
+    408:registered state (MEASURED by the count script and the dry run): ASSERTED_OWN
+    524:From the count script (MEASURED) as the draft states it: at 87 cells per arm
+    680:experiment D's own transcripts (MEASURED: probe-turn replies average 1,171
+    737:(MEASURED by the dry run, its section 7): entry 1's $10 is reached during arm
+    773:   from the transcripts at every dry run (MEASURED, 101 of 107). Both route
+    781:4. **A claim of measurement with no record.** Every MEASURED figure in this
+    787:   nothing.** MEASURED, 2026-10-17, from the worktree the method was written
+  the stand-in run of the writing session (section 7) is committed anywhere in the pull request: 0 files
+
+## 5. a command that creates something while documented as creating nothing
+  the runner's and the method's words:
+    docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py:11:calls no model and writes nothing. (It reads a gitignored artifacts directo
+    docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py:12:and, like the two committed counting scripts beside it, creates nothing.)
+    docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py:126:import items as item_mod  # noqa: E402  (loads and validates the two banks
+    docs/filtered-battery-2026-10-07/rehearsal-method-entries-1-2.md:589:real run needs. It writes nothing: the only directory it could create,
+    docs/filtered-battery-2026-10-07/rehearsal-method-entries-1-2.md:591:worktree with no `artifacts/` directory and left none (section 11, item
+  what the dry run created with Python's default bytecode caching (checks_dryrun_gates_rubric.out.txt, section 2a):
+    11:  new: !! docs/filtered-battery-2026-10-07/__pycache__/
+    12:  new: !! experiments/03-retained-independence/src/__pycache__/
+    13:  file: docs/filtered-battery-2026-10-07/__pycache__/summary_leak_rehearsal.cpython-314.pyc
+    14:  file: experiments/03-retained-independence/src/__pycache__/items.cpython-314.pyc
+    15:  file: experiments/03-retained-independence/src/__pycache__/framings.cpython-314.pyc
+  the argument guard precedes every network import: guard line 54, first network import line 529
+
+## 6. a remote step tested only against stand-ins
+  ssh or nohup in the runner: 0
+  the far-end checks the method relies on: gate (ii) and the two judge gates; the judge gates cannot see an
+  unparseable far end (item 3 above). Experiment D's judge script on why its cap is 3000:
+    72:    # Generous cap: thinking-budget models (Gemini) spend output tokens before
+    73-    # the JSON; a tight cap truncates verdicts mid-object.

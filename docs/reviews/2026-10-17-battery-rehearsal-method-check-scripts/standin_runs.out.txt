@@ -1,0 +1,62 @@
+### A. a pinned file changed by one byte (the copy's v1.1 rubric): the real run must refuse before any call
+exit 2
+calls made: 0
+refusing the real run: a pinned registered file differs from its hash, or the v1.2 file does not contain v1.1.
+
+### B. the method file missing beside the runner: must refuse before any call
+exit 2
+calls made: 0
+refusing the real run: the method file is not beside this script.
+
+### C. entry 1 with the committed ceilings, stand-in replies at D's mean lengths
+exit 3
+calls made: 701
+STOP: running spend estimate $10.01 passed the ceiling $10.00 after 697 calls; outputs so far are on disk; John decides whether it goes on
+  record the spend so far in the worklog; a fresh go from John is needed to start again (completed cells are kept).
+  arm_S2                       107 files
+  arm_B                        107 files
+  arm_B2                       107 files
+  arm_S                        141 files
+  reference_always_agree       0 files
+  judge/arm_S2                 78 files
+  judge/arm_B                  78 files
+  judge/arm_B2                 78 files
+  judge/arm_S                  0 files
+entry 1 arm_S2: 107 responses; running spend estimate $2.94
+entry 1 arm_B: 107 responses; running spend estimate $5.88
+entry 1 arm_B2: 107 responses; running spend estimate $8.82
+
+### D. the same command again (a resume): does the running estimate start from zero?
+exit 3
+new calls made: 778
+STOP: running spend estimate $10.01 passed the ceiling $10.00 after 778 calls; outputs so far are on disk; John decides whether it goes on
+  record the spend so far in the worklog; a fresh go from John is needed to start again (completed cells are kept).
+  arm_S                        531 files
+  judge/arm_S                  261 files
+  reference_always_agree       59 files
+
+### E. entry 2 with the committed ceilings
+exit 3
+calls made: 679
+STOP: running spend estimate $10.02 passed the ceiling $10.00 after 675 calls; outputs so far are on disk; John decides whether it goes on
+  record the spend so far in the worklog; a fresh go from John is needed to start again (completed cells are kept).
+  own_rejudged_v12             87 files
+  other                        87 files
+  other_judge_v12              30 files
+entry 2 own arm re-judged: labels moved by the addendum 37 of 87; running spend $1.53
+  v1.2 judge calls: 244; system prompt carries the file's HTML comment: 244 of 244
+  what the judge reads first after D's preamble: "<!-- Version 1.2 of experiment D's liveness rubric, for entry 2 of the filtered\nbattery ON"
+
+### F. unparseable judge output everywhere (STUB_JUDGE=garbage), entry 1, in a copy whose ceilings are raised to $100000 (PATCHED COPY)
+86:CEILING = {"1": 1e5, "2": 1e5, "both": 1e5}   # dollars; the draft's "under about ten dollars" each
+exit 0
+calls made: 1555
+  judge gate: n 60, agreement 1.0, gate_pass True, disagreements 0
+  rates: {'r_F': 0.944, 'r_B': 0.0, 'r_B2': 0.0, 'r_S': 0.0, 'r_S2': 0.0, 'r_S_live': 0.0, 'r_reference': 0.0}
+  gates: {'i_S2_floor': True, 'ii_reference_far_end': True, 'ii_plain_model_live': False, 'iii_judge_reliability': True, 'iv_min_cells': True}
+  readings: ['no verdict: a gate failed']
+  judge files holding an unparseable-verdict error record: 524
+
+### checks on the scratch copy itself
+  repository files touched: 0
+  main checkout's artifacts/stage3 has battery_rehearsal: no

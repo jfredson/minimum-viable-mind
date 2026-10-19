@@ -1,0 +1,31 @@
+branch point a99e8e9; main line now 53bb84a
+main line commits since the branch point that touch the draft: 0
+
+## lines removed from the draft (every one):
+  -ran), are 310 for the claim-word sweep, 120 for the
+  -number sweep and 17400 words by `wc -w`, the commands being the two
+  -## 6. Open questions for John
+## lines added, outside the new closing section:
+  @@ -854,2 +854,2 @@ moves (the third check's sweep finding `FB3-7`: version 3's message gave | +ran), are 322 for the claim-word sweep, 120 for the
+  @@ -854,2 +854,2 @@ moves (the third check's sweep finding `FB3-7`: version 3's message gave | +number sweep and 17737 words by `wc -w`, the commands being the two
+  @@ -907 +907 @@ checks. | +## 6. Questions for John, with the rulings so far
+## hunks:
+  @@ -854,2 +854,2 @@ moves (the third check's sweep finding `FB3-7`: version 3's message gave
+  @@ -907 +907 @@ checks.
+  @@ -1535,0 +1536,34 @@ failure-mode item 4, which are re-taken on this text as that item requires.
+
+## numbers in the new closing section (dates, the pull request number, entry numbers only?):
+1 1, 1-2. 1.2 10 10, 11 12 169, 2 2. 2026-10-07 2026-10-12 2026-10-12- 2026-10-17 4 4, 4- 6 
+## words 'band', 'gate', 'reading', 'ruled', '$' in added lines:
+  9:+itself and recorded in its section 4, closed questions 10 to 12 as ruled by
+  15:+  far", since questions 1, 10, 11 and 12 are ruled and the heading said
+  28:+text has not yet been cut down to indicator, arms, readings, gates and cost
+  32:+reading, band, gate or ruling in this draft changed. Failure-mode item 4's
+
+## the three sweep counts, re-taken on the pull request's file (the draft says 322, 120 and 17737)
+322
+120
+17737
+route sentences ('carried by the token'): 9 (the hand-over note says 9)
+em-dashes and en-dashes in the draft: 0 and 0
+the version 4 header still says the version is owed a check: 1
