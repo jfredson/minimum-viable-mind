@@ -1,0 +1,25 @@
+# Runner output, entry 2, second start, 2026-10-19 (from the daily resume loop's log):
+entry 2 own arm re-judged: labels moved by the addendum 2 of 87; running spend $1.46
+{
+ "entry": 2,
+ "gates": {
+  "endorsement_turn0": true,
+  "judge_reliability_v12": true
+ },
+ "primary": {
+  "own_minus_other": -0.10344827586206896,
+  "lo": -0.1839080459770115,
+  "hi": -0.022988505747126436,
+  "reading": "no verdict"
+ },
+ "ownership_free": {
+  "own_minus_other": -0.12643678160919541,
+  "lo": -0.21839080459770116,
+  "hi": -0.034482758620689655,
+  "excludes_zero": true
+ },
+ "reading": "no verdict",
+ "spend_estimate": 18.66
+}
+2026-10-19 03:20:44 PDT runner exit 0
+2026-10-19 03:20:44 PDT both entries finished

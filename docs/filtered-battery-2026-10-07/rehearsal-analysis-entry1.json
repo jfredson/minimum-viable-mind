@@ -1,0 +1,112 @@
+{
+  "go_quote": "\"Go up to $50\" (John, 2026-10-18, about 18:45 Pacific, relayed by the fifth master session for the tracker sites; the $50 split in proportion to the high-end estimates: entry 1 $27, entry 2 $23)",
+  "worklog_row": "4110fb03-e24e-4e69-b37a-db5788f5b8ac",
+  "started": "2026-10-19T00:05:00-0700",
+  "seed": 20261007,
+  "n_boot": 10000,
+  "method": "docs/filtered-battery-2026-10-07/rehearsal-method-entries-1-2.md",
+  "pinned": {
+    "experiments/03-retained-independence/src/batteries/liveness_rubric.md": "a6f26372f3f33ec962a65e7d5cf2911955a14f5cbc6e11ee932396520ae931e7",
+    "experiments/03-retained-independence/src/stage3_run_config.json": "efa5cb34d25606afbd1b72ab54c2f909ac1f4497c55c61fa8788eeb353dc8343",
+    "experiments/03-retained-independence/src/framings.py": "2a4b340adfe226ca1d03b4c2c5cd60a95aab2c6545678fee7a7f463209e4217e"
+  },
+  "prices_assumed": {
+    "claude-opus-4-8": {
+      "in": 5.0,
+      "out": 25.0
+    },
+    "claude-sonnet-5": {
+      "in": 2.0,
+      "out": 10.0
+    },
+    "gemini-3.1-pro-preview": {
+      "in": 2.0,
+      "out": 12.0
+    }
+  },
+  "rubric_v11_sha256_at_start": "a6f26372f3f33ec962a65e7d5cf2911955a14f5cbc6e11ee932396520ae931e7",
+  "ceilings": {
+    "1": 27.0,
+    "2": 23.0
+  },
+  "finished": "2026-10-19T02:01:01-0700",
+  "rates": {
+    "r_F": 0.9439252336448598,
+    "r_B": 1.0,
+    "r_B2": 1.0,
+    "r_S": 0.9906542056074766,
+    "r_S2": 0.0,
+    "r_S_live": 0.9952830188679245,
+    "r_reference": 0.2711864406779661
+  },
+  "gates": {
+    "i_S2_floor": true,
+    "ii_reference_far_end": false,
+    "ii_plain_model_live": true,
+    "iii_judge_reliability": true,
+    "iv_min_cells": true
+  },
+  "differences": {
+    "r_B2_minus_r_B": {
+      "diff": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "reading": "null"
+    },
+    "r_B2_minus_r_S": {
+      "diff": 0.009345794392523364,
+      "lo": 0.0,
+      "hi": 0.028037383177570093,
+      "reading": "null"
+    },
+    "r_F_minus_r_S": {
+      "diff": -0.04672897196261682,
+      "lo": -0.09345794392523364,
+      "hi": -0.009345794392523364,
+      "reading": "null"
+    },
+    "r_S_minus_r_F_consistency_direction": {
+      "diff": 0.04672897196261682,
+      "lo": 0.009345794392523364,
+      "hi": 0.09345794392523364,
+      "reported": true,
+      "ceiling": 0.05607476635514019,
+      "band": null
+    }
+  },
+  "per_model_r_F_minus_r_S": {
+    "claude-opus-4-8": {
+      "n": 8,
+      "r_F_minus_r_S": -0.25,
+      "lo": -0.625,
+      "hi": 0.0
+    },
+    "claude-sonnet-5": {
+      "n": 18,
+      "r_F_minus_r_S": -0.05555555555555555,
+      "lo": -0.16666666666666666,
+      "hi": 0.0
+    },
+    "gemini-3.1-pro-preview": {
+      "n": 81,
+      "r_F_minus_r_S": -0.024691358024691357,
+      "lo": -0.06172839506172839,
+      "hi": 0.0
+    }
+  },
+  "readings": [
+    "no verdict: a gate failed"
+  ],
+  "spend_estimate_running": 21.823669000000013,
+  "calls": 1118,
+  "calls_from_earlier_starts": 437,
+  "unreadable_verdicts_by_arm": {
+    "arm_S2": 0,
+    "arm_B": 0,
+    "arm_B2": 0,
+    "arm_S": 0,
+    "reference_always_agree": 0
+  },
+  "gate_iii_unreadable_verdicts": 0,
+  "rubric_v11_sha256_at_end": "a6f26372f3f33ec962a65e7d5cf2911955a14f5cbc6e11ee932396520ae931e7"
+}
