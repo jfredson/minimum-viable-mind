@@ -1027,10 +1027,11 @@ Nothing at the registered size was launched.
 
 **Compute and cost.** Experiment 1 (development, calibration, ladder,
 registered run): ≈ $10–20 of rented GPU time plus low tens of dollars of
-judge-API calls; registered-day cost ≈ $3. Whole programme to the stop of
-experiment C: about $230.94 of a $450 ceiling, every row in
+judge-API calls; registered-day cost ≈ $3. Experiment 06 and experiment C, from 2026-08-07, when the ledger opened, to the
+stop of experiment C: about $230.94 of a $450 ceiling, every row in
 `experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`. That figure
-is rented machine time only. Calls to model providers by API (judge calls, the
+is rented machine time only; experiment 1's rented time predates the ledger
+and is the figure given above. Calls to model providers by API (judge calls, the
 outside reviews, and the measurement rehearsal of the filtered battery run on
 2026-10-18) are recorded in the project's worklog and are not in it.
 
