@@ -265,3 +265,73 @@ explainer.md, origin/main: A whole file 1682; B body with citations 1582; C body
 - It did not run the corpus-coherence read against the Sentient Horizons ledger.
 - It did not check the v0.2 text, which is not under check and still says it has not passed.
 - It did not open the outside reviewers' files.
+
+---
+
+## Re-check, 2026-10-18, after the eight conditions were applied
+
+**Verdict: PASS in the three texts. One condition is left, and it is in the pull request body, not in any file.** The eight conditions were applied by commit `9751f97` on `paper-fold-experiment-06-and-c`. That commit was made by the project's master session, which wrote none of the texts. Each condition is met as stated above. The commit changes no line that the conditions do not name, and the three places John reserved are still byte-identical to the main line.
+
+What is left: conditions 3 and 8 also named pull request 175's body. Its figures list still carries "$0.34" and "on pull request 172", and a commit cannot change the body. That is a two-phrase edit of the body (`gh pr edit 175`), for whoever holds the pull request.
+
+Done by the same checking session as above, which wrote neither the texts nor the commit that applied the conditions. It worked in the same worktree, fast-forwarded to `9751f97`, and compared against the main line at `53bb84a`. The paper and the explainer are unchanged on the main line since the merge base `a99e8e9`. No model was called and $0 was spent. The first check's outputs above are kept as filed. The re-run writes into `docs/reviews/2026-10-17-paper-fold-check-scripts/recheck-2026-10-18/`, via `sh docs/reviews/2026-10-17-paper-fold-check-scripts/recheck_run.sh`.
+
+### Each condition, by a command that would fail if it were not met. MEASURED.
+
+`recheck.py` reads each fix from the text itself, not from the commit message:
+
+```
+condition 1: MET  removal_ci.json lo/hi: {'T_self_irrelevant': (0.0938, 0.375), 'T_self_relevant': (0.0, 0.2), 'T_syntax': (0.0333, 0.2667), …}
+condition 2: MET  '… the four 2026-10-04 rows) were stated in advance, in version 4 of the proposal (not registered), as a pipeline and throughput check'
+   version 4 header says 'Nothing here is registered': True
+condition 3: MET  paper carries ('0.4744', '0.3347', '0.3341', '0.3223'); in the ledger's annotation table: {'0.4744': True, '0.3347': True, '0.3341': True, '0.3223': True}; sum 1.4655
+condition 4: MET  explainer quotes 'not testable — the registered comparison was undefined for e'… ; inside closure line 565-567: True
+condition 5: MET  {'ceiling measurement': True, 'fitted detector': True, 'C development runs': True}
+condition 6: MET  'to be validated on': 1
+condition 7: MET  paper header and note header: 'passed' gone, self-pass and the check named
+condition 8: MET  'pull request 172' in the three texts: {'explainer.md': 0, 'drafts/paper-removal-test-nature-draft.md': 0, 'docs/outside-reader-approach-note-2026-10-17.md': 0}
+   pull request 175's body (not editable by a commit): 'pull request 172' 1 ; '$0.34' 1
+```
+
+The new figures in condition 1 ("0.00 to 0.20") are the interval from `removal_ci.json` rounded to two places. The quotation pass (`quotes.py`) now finds the explainer's closure quotation in the closure block's own form ("not testable — … model. Separately, …"). The figures check still reports the same 160 of 164 for the body's own list. The four development-run costs now in the paper are the ledger's own figures, as condition 3 shows, and `ledger_rows.py` still prints DIFFERS only because it compares against the old figures the body carries.
+
+### The commit touches only the lines the conditions name. MEASURED.
+
+The explainer's lines are whole paragraphs, so `recheck.py` lists the commit word by word (`git show --word-diff=porcelain 9751f97`). Every change maps to a condition:
+
+```
+headers (7):        -passed +were run through +by the session that wrote them … +and checked by a separate session (…paper-fold-check-claude-code.md)   [paper and note]
+approach note (6):  +to be
+paper (3):          -$0.47, -$0.34, $0.33 -$0.33  +$0.4744, +$0.3347, $0.3341 +$0.3223
+paper (2):          -registered +stated  -advance +advance, in version 4 of the proposal (not registered),
+paper, explainer (8): -…stays-stopped-ruling.md`, on pull request 172 +…stays-stopped-ruling.md`
+explainer (1):      -each +two of the three -its +their -interval +intervals +zero; the self-relevant drop of 0.10 has an interval from 0.00 to 0.20, which reaches down to
+explainer (5):      -A +An unregistered (twice)  -runs +runs, which were not registered,
+explainer (4):      -testable: +testable —  -model; separately, +model. Separately,
+```
+
+Nothing else moved. The six numbers that `unlisted_numbers.py` now reports as new (91 pairs against 85) are exactly 0.00, 0.20 and the four ledger costs. The other outputs differ from the first run only where the conditions changed the text: the closure quotation in `quotes`, the approach note's sources list moving down one line, and the word counts below.
+
+### The three reserved places, re-run. MEASURED. Pass.
+
+```
+(1) title: SAME
+(2) Discussion: ¶1–¶5 SAME, ¶6 DIFFERENT (the replaced "constructive turn", as before), ¶7 SAME
+    paragraph with 'is conversational infrastructure': SAME
+    paragraph with 'was voided by a control committed before any data existed': SAME
+(3) 'router reading twice over' passage: SAME main e6b0efc223 branch e6b0efc223, 704 chars
+(4) v0.2 'constructive turn' quoted in the dated note: SAME (verbatim)
+(5) header says the v0.2 text has NOT passed: YES
+```
+
+`reserved_places.out.txt` and `paper_removed_lines.out.txt` in the re-check folder are identical to the first run's. `ruled_sentences.out.txt` is identical too: all three ruled sentences are still quoted exactly.
+
+### Word counts after the changes. MEASURED.
+
+```
+explainer.md, this branch: A whole file 3060; B body with citations 2957; C body prose 2891
+```
+
+The fixes added 27 words of prose. The explainer is now about 390 words over the brief's "under about 2,500", which remains John's to settle.
+
+The notes and options in the first check above are unchanged by this re-check, and none of them was a condition.

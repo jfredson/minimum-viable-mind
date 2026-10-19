@@ -1,0 +1,116 @@
+condition 1: MET  removal_ci.json lo/hi: {'T_self_irrelevant': (0.0938, 0.375), 'T_self_relevant': (0.0, 0.2), 'T_syntax': (0.0333, 0.2667), 'd_self': (-0.062, 0.1852)}
+condition 2: MET  'ms M, T, C and F; `compute-ledger.md`, the four 2026-10-04 rows) were stated in advance, in version 4 of the proposal (not registered), as a pipeline and throughput check'
+   version 4 header says 'Nothing here is registered': True
+condition 3: MET  paper carries ('0.4744', '0.3347', '0.3341', '0.3223'); in the ledger's annotation table: {'0.4744': True, '0.3347': True, '0.3341': True, '0.3223': True}; sum 1.4655
+condition 4: MET  explainer quotes 'not testable — the registered comparison was undefined for e'… ; inside closure line 565-567: True
+condition 5: MET  {'ceiling measurement': True, 'fitted detector': True, 'C development runs': True}
+condition 6: MET  'to be validated on': 1
+condition 7: MET  paper header and note header: 'passed' gone, self-pass and the check named
+condition 8: MET  'pull request 172' in the three texts: {'explainer.md': 0, 'drafts/paper-removal-test-nature-draft.md': 0, 'docs/outside-reader-approach-note-2026-10-17.md': 0}
+   pull request 175's body (not editable by a commit): 'pull request 172' 1 ; '$0.34' 1
+
+word-level changes of 9751f97 (- removed, + added), all three files:
+   -passed
+   +were run through
+   +by the session that wrote them
+   -`drafts/`).*
+   +`drafts/`), and checked
+   +by a separate session (`docs/reviews/2026-10-17-paper-fold-check-claude-code.md`).*
+   +to be
+   -passed
+   +were run through
+   +by the session
+   +that wrote them
+   -`2026-10-17-cold-reader-report-explainer-and-paper-v0.3.md`);
+   +`2026-10-17-cold-reader-report-explainer-and-paper-v0.3.md`), and checked by
+   +a separate session (`docs/reviews/2026-10-17-paper-fold-check-claude-code.md`);
+   -$0.47,
+   -$0.34, $0.33
+   +$0.4744,
+   +$0.3347, $0.3341
+   -$0.33
+   +$0.3223
+   -registered
+   +stated
+   -advance
+   +advance, in version 4 of the proposal (not registered),
+   -(`docs/rulings/2026-10-17-experiment-c-stays-stopped-ruling.md`, on pull
+   -request 172;
+   +(`docs/rulings/2026-10-17-experiment-c-stays-stopped-ruling.md`;
+   -each
+   +two of the three
+   -its
+   +their
+   -interval
+   +intervals
+   +zero; the self-relevant drop of 0.10 has an interval from 0.00 to 0.20, which reaches down to
+   -A
+   +An unregistered
+   -A
+   +An unregistered
+   -testable:
+   +testable —
+   -model; separately,
+   +model. Separately,
+   -runs
+   +runs, which were not registered,
+   -(`docs/rulings/2026-10-17-experiment-c-stays-stopped-ruling.md`, on pull request 172).
+   +(`docs/rulings/2026-10-17-experiment-c-stays-stopped-ruling.md`).
+
+lines changed by 9751f97 (old line number -> text):
+   --- a/docs/outside-reader-approach-note-2026-10-17.md
+   +++ b/docs/outside-reader-approach-note-2026-10-17.md
+   @@ -14,2 +14,3 @@ shortlist says the ask goes out with the results attached, not before. Both
+   -versions passed the Voice Calibration and Cold Reader passes of 2026-10-17
+   -(records in `drafts/`).*
+   +versions were run through the Voice Calibration and Cold Reader passes of
+   +2026-10-17 by the session that wrote them (records in `drafts/`), and checked
+   +by a separate session (`docs/reviews/2026-10-17-paper-fold-check-claude-code.md`).*
+   @@ -42 +43 @@ testable. The third registered a transplant-ratio measure of how much of the
+   -act is organised around the ownership answer, validated on hand-set reference
+   +act is organised around the ownership answer, to be validated on hand-set reference
+   --- a/drafts/paper-removal-test-nature-draft.md
+   +++ b/drafts/paper-removal-test-nature-draft.md
+   @@ -5,2 +5,3 @@ added in v0.3 (the two constructed-line results sections, their Methods
+   -paragraphs and the abstract's new sentences) passed the Voice Calibration
+   -Protocol and the Cold Reader pass on 2026-10-17 (records beside this file:
+   +paragraphs and the abstract's new sentences) were run through the Voice
+   +Calibration Protocol and the Cold Reader pass on 2026-10-17 by the session
+   +that wrote them (records beside this file:
+   @@ -8 +9,2 @@ Protocol and the Cold Reader pass on 2026-10-17 (records beside this file:
+   -`2026-10-17-cold-reader-report-explainer-and-paper-v0.3.md`); the v0.2 text
+   +`2026-10-17-cold-reader-report-explainer-and-paper-v0.3.md`), and checked by
+   +a separate session (`docs/reviews/2026-10-17-paper-fold-check-claude-code.md`); the v0.2 text
+   @@ -648,4 +650,4 @@ ruled to be written up as instrument research, whatever it returned.
+   -development runs at 10 million parameters (2026-10-04, $1.47 in all: $0.47,
+   -$0.34, $0.33 and $0.33 for arms M, T, C and F; `compute-ledger.md`, the
+   -four 2026-10-04 rows) were registered in advance as a pipeline and
+   -throughput check, not a learnability verdict. They showed that the built
+   +development runs at 10 million parameters (2026-10-04, $1.47 in all: $0.4744,
+   +$0.3347, $0.3341 and $0.3223 for arms M, T, C and F; `compute-ledger.md`,
+   +the four 2026-10-04 rows) were stated in advance, in version 4 of the proposal (not registered),
+   +as a pipeline and throughput check, not a learnability verdict. They showed that the built
+   @@ -743,2 +745 @@ method file before any output
+   -(`docs/rulings/2026-10-17-experiment-c-stays-stopped-ruling.md`, on pull
+   -request 172; authorship mixed).
+   +(`docs/rulings/2026-10-17-experiment-c-stays-stopped-ruling.md`; authorship mixed).
+   --- a/explainer.md
+   +++ b/explainer.md
+   @@ -31 +31 @@ Most of the work before the test was ruling out boring explanations. The first d
+   -Then the removal ran once, as registered. It lowered performance on all three task sets: by 0.22 on tasks that need no reference to the self, 0.10 on
+   +Then the removal ran once, as registered. It lowered performance on all three task sets: by 0.22 on tasks that need no reference to the self, 0.10 on
+   @@ -47 +47 @@ Amendment A3, registered 2026-09-15, turned the design round: install nothing, a
+   -The matched comparison could never be computed. A measurement on 2026-09-17 showed that any control fully determined by the visible transcript has an
+   +The matched comparison could never be computed. An unregistered measurement on 2026-09-17 showed that any control fully determined by the visible tra
+   @@ -49 +49 @@ The matched comparison could never be computed. A measurement on 2026-09-17 show
+   -**The nulls and the kills.** Four runs looked for where ownership sits inside the network, and none found it. A registered blind search of the regist
+   +**The nulls and the kills.** Four runs looked for where ownership sits inside the network, and none found it. A registered blind search of the regist
+   @@ -51 +51 @@ The matched comparison could never be computed. A measurement on 2026-09-17 show
+   -**How it closed.** On 2026-09-25, after an inside review and two outside reviews of the closure text, Amendment A3 closed under its loss condition: "
+   +**How it closed.** On 2026-09-25, after an inside review and two outside reviews of the closure text, Amendment A3 closed under its loss condition: "
+   @@ -57 +57 @@ The closure left one question open: how much of a model's act is organised aroun
+   -It was registered on 2026-10-09 at a frozen copy of its code (`docs/rulings/2026-10-09-registration-commit-ruling.md`). The registration carried an a
+   +It was registered on 2026-10-09 at a frozen copy of its code (`docs/rulings/2026-10-09-registration-commit-ruling.md`). The registration carried an a
+   @@ -61 +61 @@ The reruns ran on 2026-10-09 on John's one-word go, "Approved.", at $1.3032 agai
+   -So experiment C ended at its own registered stop, in the words ruled for it: **"the built arms as designed are not references; the measure was not re
+   +So experiment C ended at its own registered stop, in the words ruled for it: **"the built arms as designed are not references; the measure was not re
