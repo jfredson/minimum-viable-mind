@@ -16,6 +16,113 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-10-18 — the refounded question is in the spec; the paper is at version 0.3; the battery rehearsal's method is checked and waits only on John's go; RT-283 closed on his reading
+
+*Written 2026-10-18 (Sunday, Pacific) by the session that worked the
+programme on 2026-10-17, picked up again at John's word relayed by the fifth
+master session for the tracker sites ("yes, let's wake the MVM"), with merging
+and the site deploy authorised for the five open pull requests. Records
+only: nothing run against a model, nothing rented, nothing spent.*
+
+**What landed on the main line today**, each checked by a session that wrote
+none of it, and where a check left conditions, re-checked after them:
+
+1. **Pull request 171**, the closure checks on the three fatal Gate A
+   findings against section 2 version 3.
+2. **Pull request 172**, the status entry of 2026-10-17 and the ruling that
+   experiment C stays stopped.
+3. **Pull request 173**, the ledger rows RT-283 to RT-304 and **section 2
+   version 3 written into the spec** (`spec/minimum-viable-mind-proposal-v0.1.md`,
+   SHA-256 `c824cd81b53b3cebc3a0dda350b63ece66c54c6dd77e6580eb132466eb7d0413`).
+   Checked (pull request 179) and re-checked (pull request 183).
+4. **Pull request 175**, `explainer.md` refreshed and the paper draft at
+   version 0.3, with experiment 06 and the stopped experiment C folded in,
+   the nulls and kills included. Checked (pull request 181) and re-checked
+   (pull request 184).
+5. **Pull request 174**, the method file, the version 1.2 rubric file and
+   the runner for the measurement rehearsal of the battery's entries 1 and 2.
+   Nothing ran. Checked (pull request 182) and re-checked twice (pull
+   requests 186 and 187); no condition stands.
+
+The three sessions that wrote 173, 174 and 175 stopped on usage credits
+before applying their checks' conditions, so this session applied them. It
+wrote none of those texts, so the pairing rule allows that, and the checking
+sessions re-checked every fix.
+
+**John's rulings today** (authorship mixed; this session recommended, and the
+master session added the rehearsal condition):
+
+- **RT-283 is closed on his reading**, not on the letter of its check. The
+  check expected no "no better than" and found one. That hit is the
+  observer loss condition RT-285's fix added, a different comparison, and it
+  is guarded as a question and not a finding. His reading and its condition
+  cover both copies of that comparison in the spec. The condition: when the
+  observer study is designed, the comparison gets its instrument and a
+  measurement rehearsal before it is registered.
+  (`docs/rulings/2026-10-18-rt283-closure-ruling.md`.)
+- **The Floor sentence's interval clause was corrected before the spec
+  merged.** The record (`experiments/01-self-indexing-removal-test/removal_ci.json`)
+  gives the second of the removal test's three drops, 0.10, an interval from
+  0.00 to 0.20. The spec now says "the first and third intervals above zero
+  and the second, from 0.00 to 0.20, touching it". RT-292 closed when the
+  re-check matched the record.
+
+**The ledger count for the Gate A pass on section 2:** 3 closed with the
+claim checked, 17 closed with the argument accepted, 1 closed on John's
+reading, 1 open. The open one is RT-302: ruling 4's wording ("the result was
+ambiguous", not "the instrument could never return the other answer") still
+has to reach this file's older entries, the site data, the site's learned
+page, version 2 and the 2026-10-07 rulings file.
+
+**The battery rehearsal, for John's go.** Entry 1 re-runs experiment D's
+pressure-and-release test with the transcript replaced by a summary that
+leaves out the model's own earlier position. It asks whether D's
+re-assertion after release was looked up in the transcript, worked out
+again, or a trace of the pressure. Entry 2 hands the same objection over as
+a colleague's concern instead of the model's own, to see what changing who
+owns a position does. Both are reference readings of what the cheaper
+routes produce, not tests of a feature. About 2,632 calls by API, recorded
+in the worklog. The runner refuses to start unless the ceilings are set to
+the figures John's go names.
+
+| | Low end | High end |
+|---|---|---|
+| Entry 1 | about $9.28 | about $21.14 |
+| Entry 2 | about $8.97 | about $16.72 |
+| Both | about $18.26 | about $37.86 |
+
+At the draft's $10 per entry, neither entry finishes in one start. Ceilings
+of about $23 and $19 let both finish.
+
+**Arm M's zero, explained and checked, not landed.** Pull request 180 finds
+that arm M's separable half, at 10 million parameters, answers from the
+"this turn is yours" signal in the shared trunk, not from its built-in
+answer. Its check (pull request 185) passed with four reporting changes, now
+applied. It needs a short re-check of those changes and John's word to
+merge, since it was not among the five he authorised. Nothing about
+experiment C's ending changes.
+
+**What still stands between the record and the preprint**, in order:
+
+1. Pull request 180 re-checked and merged on John's word.
+2. John's go on the rehearsal's ceilings, the run, its records, then Gate A
+   on the table and entries 1 and 2, both tiers.
+3. RT-302's reach into the older texts.
+4. John's three reserved places in the paper (the title, the Discussion, the
+   "router reading twice over" paragraph; proposed wording in its dated
+   note), and the spelling choice, since the paper mixes American and
+   British spelling.
+5. The outside reader named by John and sent the approach note
+   (`docs/outside-reader-approach-note-2026-10-17.md`; links to add before
+   it goes, under the rule of 2026-10-18).
+6. The Sentient Horizons essay's hold lifted, a separate call.
+7. The public release.
+
+The programme stands at about $230.94 of $450, unchanged since 2026-10-09.
+
+**The site data.** `data/project.toml` records today: next steps N49 and N51
+done, N50 waiting on John's go, N52 done but not landed, and a timeline row.
+
 ## WHERE THINGS STAND 2026-10-17 — experiment C stays stopped on John's ruling; three of the four open calls had been ruled on 2026-10-12 after the entry below was written; the closure checks on section 2 are filed; the chain to the spec, the battery's method file and the paper fold are running as paired sessions
 
 *Written 2026-10-17 (Saturday, Pacific) by a helper session of the weekend
