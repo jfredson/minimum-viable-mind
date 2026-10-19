@@ -16,6 +16,90 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-10-18 (evening) — the paper's choices made and checked; John holds the outside reader for a readiness checklist; the battery rehearsal is part-run and resumes a day at a time; the spend figure corrected
+
+*Written 2026-10-18 (Sunday evening, Pacific) by the session that worked the
+programme over the weekend, on John's answers relayed by the fifth master
+session for the tracker sites. The entry below it, from earlier the same
+day, stands.*
+
+**The paper.** John answered its four open choices, each as recommended
+(authorship mixed; `docs/rulings/2026-10-18-paper-reserved-places-ruling.md`):
+
+- the title is now "Instruments that can lose: a registered removal test, a
+  constructed self-index and a successor stopped by its own rule, in the
+  measurement of self-indexed integration";
+- the paragraph that argued the damage pattern "supports the router reading
+  twice over" now says the data do not separate the two readings;
+- the Discussion's two changes are made, with a Limitations sentence that
+  the constructed line's locating instruments are unvalidated at 30 million
+  parameters;
+- the spelling is British, with quotations left as their sources spell them.
+
+A check then found the cost sentence untrue. On John's "Yes to both" and "Ok,
+go ahead", it now gives the removal test's own cost, and "the two
+constructed-line experiments that followed for about $230.94 of rented
+compute". Three sentences that said "programme" for the removal test now say
+"in this experiment". Pull requests 190 and 193, each checked (192 and 194),
+are merged. Pull request 180, the checked explanation of arm M's zero
+(re-checked as pull request 189), is merged on his "Go ahead".
+
+**The outside reader is held, on John's own ruling** (authorship john): "I'm
+not sure I have the confidence in it yet for that". He approved a five-step
+readiness checklist, `docs/paper-readiness-checklist-2026-10-18.md`:
+
+1. his own read of a clean copy, listing every sentence he would not defend;
+2. three mock referee reports, then an outside model;
+3. a reproduction of every number from a clean clone;
+4. a friendly expert before a senior one;
+5. a modest first venue.
+
+He said to start steps 2 and 3 now. The three referee sessions are proposed
+as session cards, and the reproduction is sent to the master session to
+start.
+
+**The battery rehearsal is part-run.** It started on John's "Go up to $50",
+with ceilings of $27 for entry 1 and $23 for entry 2 and the worklog row
+written before the first call. It stopped partway through entry 1 on Google's
+daily limit of 250 requests to Gemini 3.1 Pro, having used 253.
+
+- **Kept:** 437 calls held in records (arm S2 and arm B complete, arm B2 67
+  of 107).
+- **Spent by estimate:** about $2.88 to $7.13.
+- **No reading yet.**
+- **Left to finish:** 1,351 Gemini calls in all, so about 1,098 remain.
+
+John ruled to finish it a day at a time under the same go and ceilings. A
+loop on this Mac (`artifacts/stage3/battery_rehearsal_daily_resume.sh`,
+beside the outputs) restarts the committed runner after each midnight
+Pacific reset. Before each start it estimates the Google account's prepaid
+balance. That was $20.00 on John's reading after the first start, and the
+loop stops cleanly for a top-up if a day's calls could exhaust it. At the
+high-end thinking allowance the remaining Gemini calls come to about $23, so
+a top-up of about $10 is likely to be needed around the third or fourth
+day.
+
+**The spend figure, corrected.** This file, the site data and the explainer
+have said "the programme stands at about $230.94 of $450". That figure is
+the compute ledger only: rented machines from 2026-08-07, when the ledger
+opened, to the stop of experiment C. The ledger itself says the removal
+test's spend "predates this cap", and API calls are recorded in the worklog,
+not the ledger. On 2026-08-30 John put true spend to date across every
+vendor at about $281 to $300, when the ledger read about $181. From the
+record as it stands, the programme's spend across every vendor is roughly
+$335 to $360:
+
+| Part | Figure |
+|---|---|
+| The ledger | $230.94 |
+| Outside the ledger by 2026-08-30, by John's figure | about $100 to $119 |
+| API calls logged since, at least | about $4 to $8 (the Gate A tier 2 pass of 2026-10-09 and the first start of the rehearsal) |
+
+The poll of 2026-10-07 and any other unlogged API calls are still to be
+added. From now on, by John's ruling of 2026-10-18 (authorship mixed),
+every vendor counts against the $450 ceiling, including this rehearsal's
+API spend. The exact tally is a roadmap step. Older entries are not edited.
+
 ## WHERE THINGS STAND 2026-10-18 — the refounded question is in the spec; the paper is at version 0.3; the battery rehearsal's method is checked and waits only on John's go; RT-283 closed on his reading
 
 *Written 2026-10-18 (Sunday, Pacific) by the session that worked the

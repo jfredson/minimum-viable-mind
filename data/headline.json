@@ -34,11 +34,11 @@
     "mean_progress_words": "Ladder progress, mean across the 8 stages: 49%"
   },
   "spend": {
-    "spent": 230.94,
+    "spent": 335,
     "cap": 450,
-    "line": "MVM-0a registered design envelope (Amendment A2)",
-    "as_of": "2026-10-09",
-    "words": "about $230.94 of the $450 ceiling spent",
+    "line": "The programme's $450 ceiling, every vendor counted (ruled 2026-10-18)",
+    "as_of": "2026-10-18",
+    "words": "about $335 of the $450 ceiling spent",
     "lines": [
       {
         "name": "Amendment A3 hard stop",
@@ -46,18 +46,18 @@
         "cap": 100
       },
       {
-        "name": "MVM-0a registered design envelope (Amendment A2)",
-        "spent": 230.94,
+        "name": "The programme's $450 ceiling, every vendor counted (ruled 2026-10-18)",
+        "spent": 335,
         "cap": 450
       }
     ]
   },
-  "state": "On 2026-10-18 the project's new question went into its specification, after a two-stage review and independent checks of every fix.",
+  "state": "On 2026-10-18 the project's new question went into its specification, and the paper draft, now titled 'Instruments that can lose', took John's four choices and a corrected cost sentence, each checked.",
   "latest_entry": {
     "date": "2026-10-18",
-    "title": "The refounded question written into the spec; RT-283 closed on John's reading; the paper at version 0.3; the battery rehearsal's method checked and waiting on his go"
+    "title": "The paper's choices made and checked; the outside reader held for a readiness checklist; the battery rehearsal part-run on Google's daily limit; the spend figure corrected to count every vendor"
   },
-  "status": "3 of 8 stages delivered; about $230.94 of the $450 ceiling spent; log last updated 2026-10-18.",
+  "status": "3 of 8 stages delivered; about $335 of the $450 ceiling spent; log last updated 2026-10-18.",
   "dates": {
     "wrap_up_start": "2026-12-21",
     "hibernation_by": "2027-01-04"
