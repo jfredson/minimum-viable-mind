@@ -1,0 +1,58 @@
+$ git show 1a9752e:spec/minimum-viable-mind-proposal-v0.1.md | shasum -a 256
+3d0baaca5fbf1af08d86652e455ca4e0462c98f7fb424fde09292623256df119  -
+
+$ git diff -U0 a99e8e9 1a9752e -- spec/minimum-viable-mind-proposal-v0.1.md | grep -E '^@@'
+@@ -19,0 +20,222 @@ Everything below should be read inside this scope. "Minimum viable" names the sm
+@@ -41 +263 @@ The corpus locates minimal experience at a precise place, and the precision is w
+@@ -142,0 +365,2 @@ And if the depth mechanisms produced systems that pass the five external indicat
+
+$ git diff -U0 a99e8e9 1a9752e -- spec/minimum-viable-mind-proposal-v0.1.md | grep -c '^-[^-]'
+1
+
+$ git diff -U0 a99e8e9 1a9752e -- spec/minimum-viable-mind-proposal-v0.1.md | grep '^+' | grep -vc '^+++'; echo '(every added line, blank ones included)'
+225
+(every added line, blank ones included)
+
+$ git diff --stat a99e8e9 origin/main -- spec/minimum-viable-mind-proposal-v0.1.md docs/rulings/2026-10-12-two-sided-question-section-2-v3.md experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md | tail -1; echo '(nothing above: none of the three files changed on the main line since the branch point)'
+(nothing above: none of the three files changed on the main line since the branch point)
+
+$ diff <(git show bfd1d5d:docs/rulings/2026-10-12-two-sided-question-section-2-v3.md | sed -n 75,293p) <(git show 1a9752e:spec/minimum-viable-mind-proposal-v0.1.md | sed -n 20,238p) && echo IDENTICAL
+IDENTICAL
+
+$ diff <(git show bfd1d5d:docs/rulings/2026-10-12-two-sided-question-section-2-v3.md) <(git show 1a9752e:docs/rulings/2026-10-12-two-sided-question-section-2-v3.md | sed 3,25d) && echo IDENTICAL
+IDENTICAL
+
+$ git show a99e8e9:experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md | grep -cE 'RT-(28[3-9]|29[0-9]|30[0-4])\b'
+0
+
+$ git show 1a9752e:experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md | grep -oE '^\| RT-(28[3-9]|29[0-9]|30[0-4])\b' | sort | uniq -c | awk '{print $1}' | sort | uniq -c; echo '(read: N numbers each with exactly M rows, as "N M")'
+  22 1
+(read: N numbers each with exactly M rows, as "N M")
+
+$ git show 1a9752e:spec/minimum-viable-mind-proposal-v0.1.md | grep -n -o 'each interval above zero'
+263:each interval above zero
+
+$ git show 1a9752e:experiments/01-self-indexing-removal-test/removal_ci.json | python3 -c 'import json,sys; c=json.load(sys.stdin)["cells"]["idxres_mean_k16"]; [print(k, c[k]) for k in ("T_self_irrelevant","T_self_relevant","T_syntax")]'
+T_self_irrelevant {'point': 0.2188, 'lo': 0.0938, 'hi': 0.375}
+T_self_relevant {'point': 0.1, 'lo': 0.0, 'hi': 0.2}
+T_syntax {'point': 0.1333, 'lo': 0.0333, 'hi': 0.2667}
+
+$ git show 1a9752e:spec/minimum-viable-mind-proposal-v0.1.md | grep -n -o -E 'no better than in the frontier|no more presence in the constructed systems than'
+196:no better than in the frontier
+365:no more presence in the constructed systems than
+
+$ git diff --name-status 1a9752e 38133fc
+M	docs/rulings/2026-10-12-two-sided-question-section-2-v3.md
+A	docs/rulings/2026-10-18-rt283-closure-ruling.md
+M	experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md
+
+$ git show 38133fc:spec/minimum-viable-mind-proposal-v0.1.md | shasum -a 256
+3d0baaca5fbf1af08d86652e455ca4e0462c98f7fb424fde09292623256df119  -
+
+$ git diff -U0 1a9752e 38133fc -- experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md | grep -E '^@@'
+@@ -1280 +1280 @@ and fits and not what it says.*
+
+$ git show 38133fc:experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md | grep -c 'Open: 2 (RT-283'; echo '(1 = the count line still lists RT-283 as open)'
+1
+(1 = the count line still lists RT-283 as open)
+

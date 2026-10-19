@@ -1,5 +1,43 @@
 # Section 2 of the refounding proposal, version 3: the text for the spec after Gate A
 
+*Dated note, 2026-10-17 (Saturday, Pacific). This text was written into the
+spec, `spec/minimum-viable-mind-proposal-v0.1.md`, on 2026-10-17, by the
+commit on branch `ledger-rows-and-spec-commit-section-2` that also adds this
+note, after the ledger rows for RT-283 to RT-304 (the commit before it on the
+same branch) and the closure checks of 2026-10-17
+(`docs/reviews/2026-10-17-section-2-v3-closure-checks-claude-code.md`), in
+the order "What happens next" below sets out. The three inserts went in
+exactly as "Where it goes" and "What else changes in the spec" say: the
+section below, verbatim (lines 75 to 293 of this file as merged at
+`bfd1d5d`; this note moves them down by the twenty-three lines it adds), after
+Scope and before "What This Proposal Is"; the Floor sentence appended to its
+anchor line; the paragraph one line after a blank line under the fourth
+condition. No other sentence of the spec was changed. The spec's SHA-256
+after the commit is
+`3d0baaca5fbf1af08d86652e455ca4e0462c98f7fb424fde09292623256df119`, the
+checksum the closure checks computed for the assembled spec. The session that
+made the commit wrote neither this file nor the closure checks; the commit is
+owed a check by a session that did not make it. RT-283's closure check
+returned 1 hit against an expected 0 in a different sentence (lines 249 to
+252 as merged, the sixth loss condition of "How this question loses"), which
+is put to John on its ledger row and was not ruled when the commit was made.
+Nothing else in this file is edited.*
+
+*Dated note, 2026-10-18 (Pacific): John ruled RT-283 closed on reading; the
+sentence stands unedited, with the condition that the observer comparison is
+rehearsed before any observer study is registered
+(`docs/rulings/2026-10-18-rt283-closure-ruling.md`).*
+
+*Dated note, 2026-10-18 (Pacific), later: on John's ruling of the same day,
+the Floor sentence as written into the spec differs from the text below by
+one clause. Below it reads "each interval above zero"; the record
+(`experiments/01-self-indexing-removal-test/removal_ci.json`) gives the
+second drop, 0.10, an interval from 0.00 to 0.20, so the spec reads "the
+first and third intervals above zero and the second, from 0.00 to 0.20,
+touching it". This file is not edited below its notes; the spec binds
+(ledger row RT-292). The spec's SHA-256 after the correction is
+`c824cd81b53b3cebc3a0dda350b63ece66c54c6dd77e6580eb132466eb7d0413`.*
+
 *Written 2026-10-12 (Monday, Pacific) by a helper session of the weekend
 overseer that wrote neither version 1 nor version 2 of the proposal, nor the
 Gate A pass on it, nor the battery draft. Records and text only: nothing was
