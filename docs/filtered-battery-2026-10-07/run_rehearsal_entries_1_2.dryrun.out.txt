@@ -140,7 +140,7 @@ records read from: /Users/john/Code/minimum-viable-mind/artifacts/stage3   (outp
   the running estimate prices every Gemini call at the HIGH-end thinking allowance whatever Gemini bills, so it is conservative; rows above are in the real run's order
   where the $10.00 ceiling falls on the running estimate for entry 1: during 'arm S', after about 102 of its 531 calls
   where the $10.00 ceiling falls on the running estimate for entry 2: during 'other arm judged, every turn, rubric v1.2', after about 143 of its 435 calls
-  NOTE: at these ceilings entries 1 and 2 cannot finish in one start. John's go names the ceilings he accepts (the high-end figures above would let both finish), or a trim from method section 10, or a partial run.
+  NOTE: at these ceilings entries 1 and 2 cannot finish in one start. John's go names the ceilings he accepts (a little above the high-end figures, about $23 and $19, lets both finish; named at exactly the high end, an entry can stop a call or two short), or a trim from method section 10, or a partial run.
 
 8. What a real run needs, and this dry run did not do
   MVM_REHEARSAL_RUN=1 MVM_GO_QUOTE='<John's words>' MVM_WORKLOG_ROW=<id> MVM_CEILING_E1=<$> MVM_CEILING_E2=<$> python3 docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py

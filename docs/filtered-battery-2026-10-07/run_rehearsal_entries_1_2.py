@@ -561,7 +561,7 @@ def dry_run(entry):
     over = [e for e in ("1", "2") if totals[e] > CEILING[e]]
     if over:
         print(f"  NOTE: at these ceilings entr{'y' if len(over)==1 else 'ies'} {' and '.join(over)} cannot finish in one start. "
-              "John's go names the ceilings he accepts (the high-end figures above would let both finish), or a trim from method section 10, or a partial run.")
+              "John's go names the ceilings he accepts (a little above the high-end figures, about $23 and $19, lets both finish; named at exactly the high end, an entry can stop a call or two short), or a trim from method section 10, or a partial run.")
     print("\n8. What a real run needs, and this dry run did not do")
     print("  MVM_REHEARSAL_RUN=1 MVM_GO_QUOTE='<John's words>' MVM_WORKLOG_ROW=<id> MVM_CEILING_E1=<$> MVM_CEILING_E2=<$> python3 " + str(Path(sys.argv[0])))
     print("  the method file committed, the worklog row written with the go and the estimate before the first call, the vendor keys in the environment")
@@ -647,12 +647,12 @@ def real_run(entry):
             sysm, msgs = fn(c["item"], c["framing"]) if synthetic is None else fn(c["item"], c["framing"], synthetic)
             reply = chat(model_of(c), sysm, [{"role": "user", "content": msgs[0]}],
                          temperature=RUN_CONFIG["temperature"], max_tokens=RUN_CONFIG["max_tokens"])
-            spend.add(model_of(c), len(sysm or "") + len(msgs[0]), len(reply), THINKING_ALLOWANCE.get(model_of(c), 0))
             rec = {"model": model_of(c), "item": c["item"], "bank": c["bank"], "framing": c["framing"],
                    "arm": arm_dir.name, "synthetic": synthetic, "system": sysm, "user": msgs[0], "turns": [reply]}
             if c["bank"] == "a":
                 rec["scores"] = [item_mod.score_held_answer(A_ITEMS[c["item"]], reply)]
-            write_json(p, rec)
+            write_json(p, rec)   # written before its cost is counted, so a stop loses no paid call
+            spend.add(model_of(c), len(sysm or "") + len(msgs[0]), len(reply), THINKING_ALLOWANCE.get(model_of(c), 0))
             return rec
         with ThreadPoolExecutor(max_workers=workers) as ex:
             return list(ex.map(do, arm_cells))
@@ -672,10 +672,11 @@ def real_run(entry):
             verdicts, calls = [], []
             for t in turns:
                 v, ic, oc = judge_with(system, jm, B_ITEMS[rec["item"]], t)
-                spend.add(jm, ic, oc, JUDGE_THINKING_ALLOWANCE.get(jm, 0))
                 verdicts.append(v); calls.append({"in": ic, "out": oc})
             out = {"judge": jm, "rubric": "v1.1" if system is judge_objection.SYSTEM else "v1.2", "verdicts": verdicts, "calls": calls}
-            write_json(p, out)
+            write_json(p, out)   # written before its cost is counted, so a stop loses no paid call
+            for s in calls:
+                spend.add(jm, s["in"], s["out"], JUDGE_THINKING_ALLOWANCE.get(jm, 0))
             return out
         with ThreadPoolExecutor(max_workers=workers) as ex:
             return list(ex.map(do, [r for r in records if r["bank"] == "b"]))
@@ -696,13 +697,15 @@ def real_run(entry):
                 results.append(r)
                 continue
             jm = judge_for(c["model"])
-            v1, ic1, oc1 = judge_with(system, jm, B_ITEMS[c["item"]], text); spend.add(jm, ic1, oc1, JUDGE_THINKING_ALLOWANCE.get(jm, 0))
-            v2, ic2, oc2 = judge_with(system, jm, B_ITEMS[c["item"]], text); spend.add(jm, ic2, oc2, JUDGE_THINKING_ALLOWANCE.get(jm, 0))
+            v1, ic1, oc1 = judge_with(system, jm, B_ITEMS[c["item"]], text)
+            v2, ic2, oc2 = judge_with(system, jm, B_ITEMS[c["item"]], text)
             readable = "error" not in v1 and "error" not in v2
             r = {"item": c["item"], "subject": c["model"], "framing": c["framing"], "judge": jm, "pass1": v1, "pass2": v2,
                  "calls": [{"in": ic1, "out": oc1}, {"in": ic2, "out": oc2}], "readable": readable,
                  "agree": readable and v1.get("position") == v2.get("position") and v1.get("identifies_keyed_flaw") == v2.get("identifies_keyed_flaw")}
-            write_json(p, r)
+            write_json(p, r)   # written before its cost is counted, so a stop loses no paid call
+            spend.add(jm, ic1, oc1, JUDGE_THINKING_ALLOWANCE.get(jm, 0))
+            spend.add(jm, ic2, oc2, JUDGE_THINKING_ALLOWANCE.get(jm, 0))
             results.append(r)
         rate = sum(r["agree"] for r in results) / len(results)
         unread = sum(("error" in r["pass1"]) + ("error" in r["pass2"]) for r in results)
@@ -821,15 +824,17 @@ def real_run(entry):
                     ctx += len(reply)
                 return rec
             sysm, turns = other_arm_turns(c["item"])
-            messages, replies, ctx = [], [], len(sysm or "")
+            messages, replies, ctx, costs = [], [], len(sysm or ""), []
             for t in turns:
                 messages.append({"role": "user", "content": t}); ctx += len(t)
                 reply = chat(c["model"], sysm, messages, temperature=RUN_CONFIG["temperature"], max_tokens=RUN_CONFIG["max_tokens"])
-                spend.add(c["model"], ctx, len(reply), THINKING_ALLOWANCE.get(c["model"], 0))
+                costs.append((ctx, len(reply)))
                 messages.append({"role": "assistant", "content": reply}); replies.append(reply); ctx += len(reply)
             rec = {"model": c["model"], "item": c["item"], "bank": "b", "arm": "other", "framing": "tool", "synthetic": None,
                    "system": sysm, "user_turns": turns, "turns": replies}
-            write_json(p, rec)
+            write_json(p, rec)   # the whole conversation written before its cost is counted, so a stop loses no paid call
+            for ic, oc in costs:
+                spend.add(c["model"], ic, oc, THINKING_ALLOWANCE.get(c["model"], 0))
             return rec
         with ThreadPoolExecutor(max_workers=workers) as ex:
             other_recs = list(ex.map(do_other, e2))

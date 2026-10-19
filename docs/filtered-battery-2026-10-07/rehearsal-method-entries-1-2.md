@@ -613,7 +613,10 @@ B2; arm S), then the far-end reference and its judge calls, then the judge
 gate, then the readings; then entry 2 in the order own-arm re-judging, the
 other arm, its judging, its gate, the readings. Every cell's response is one
 JSON file written as soon as it exists, so the run is resumable (a cell with
-a file is not called again) and a stop loses nothing already paid for. On a
+a file is not called again) and a stop loses nothing already paid for: each
+record is written before its cost is counted, so the call that crosses the
+ceiling and the calls already in flight are kept (added 2026-10-18 after the
+re-check, its second condition). On a
 restart the runner adds the estimated cost of every completed cell to its
 running estimate as it passes the file, and each judge-gate pair is written
 as it is judged, so the ceiling covers the entry and not the start: a second
@@ -756,7 +759,9 @@ conservative and the stop fires on it, not on the bill. Calls made in an
 earlier start are added to it as the run passes their records, so a restart
 does not reset it. When it passes the entry's ceiling the entry stops,
 leaving every completed cell on disk; the parallel workers' calls already in
-flight (up to four) still finish, so the overshoot is a few cents.
+flight (up to four cells; an other-arm cell of entry 2 is a five-call
+conversation) still finish and are written, so the overshoot is a few cents
+and nothing paid for is lost.
 
 **The ceilings are named in John's go, not in this file.** The real run
 refuses to start unless `MVM_CEILING_E1` and `MVM_CEILING_E2` are set, and it
@@ -772,9 +777,12 @@ $10 each, **neither entry can finish in one start**, whatever Gemini bills:
   435 on the dry run's figures (the stand-in run judged 31 of 87
   conversations).
 
-So John's go names the ceilings he accepts. The high end of the bracket,
-about $21.14 for entry 1 and $16.72 for entry 2 on the dry run of
-2026-10-18, lets both finish in one start; or he takes one of the three
+So John's go names the ceilings he accepts. The high end of the bracket
+is about $21.14 for entry 1 and $16.72 for entry 2 on the dry run of
+2026-10-18; ceilings named at exactly those figures can stop an entry a call
+or two short (the re-check of 2026-10-18 found entry 2 one call short of the
+end of its judge gate), so a go that wants both to finish in one start names
+a margin above them, about $23 and $19; or he takes one of the three
 trims below; or he accepts a partial run that reports what it has. A stop on
 the ceiling is a question for John, not a failure of the method: he sees the
 vendor consoles' real figures (the only true spend), and either gives a
