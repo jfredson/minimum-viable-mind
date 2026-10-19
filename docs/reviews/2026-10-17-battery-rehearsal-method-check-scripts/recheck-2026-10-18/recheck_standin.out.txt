@@ -1,0 +1,80 @@
+### G. ceiling refusals, with the go quote and the worklog row set (each must refuse before any call)
+  [none]: exit 2; calls 0; refusing the real run: MVM_CEILING_E1 is not set. John's go names the ceiling of each entr
+  [E1=21]: exit 2; calls 0; refusing the real run: MVM_CEILING_E2 is not set. John's go names the ceiling of each entr
+  [E1=abc E2=17]: exit 2; calls 0; refusing the real run: MVM_CEILING_E1='abc' is not a number of dollars. John's go names th
+  [E1=0 E2=17]: exit 2; calls 0; refusing the real run: MVM_CEILING_E1='0' is outside 0 to 100 dollars. John's go names the
+  [E1=150 E2=17]: exit 2; calls 0; refusing the real run: MVM_CEILING_E1='150' is outside 0 to 100 dollars. John's go names t
+  [E1=21 E2=-1]: exit 2; calls 0; refusing the real run: MVM_CEILING_E2='-1' is outside 0 to 100 dollars. John's go names th
+
+### A. a pinned file changed by one byte: must refuse before any call
+exit 2
+calls made: 0
+refusing the real run: a pinned registered file differs from its hash, or the v1.2 file does not contain v1.1.
+
+### B. the method file missing: must refuse before any call
+exit 2
+calls made: 0
+refusing the real run: the method file is not beside this script.
+
+### C. entry 1 at $10, stand-in replies at D's mean lengths
+exit 3
+calls made: 701
+STOP: running spend estimate $10.01 passed the ceiling $10.00 after 697 new calls and 0 calls from earlier starts; outputs so far are on disk; John decides whether it goes on
+  arm_S2                             107 files
+  arm_B                              107 files
+  arm_B2                             107 files
+  arm_S                              141 files
+  reference_always_agree             0 files
+  judge/arm_S2                       78 files
+  judge/arm_B                        78 files
+  judge/arm_B2                       78 files
+  judge/arm_S                        0 files
+
+### D. the same command again, same $10: the estimate must include the earlier start
+exit 3
+new calls made: 5
+STOP: running spend estimate $10.01 passed the ceiling $10.00 after 1 new calls and 696 calls from earlier starts; outputs so far are on disk; John decides whether it goes on
+  arm_S                              141 files
+  judge/arm_S                        0 files
+
+### D2. again, with the ceiling raised to $15 (a fresh go naming a new ceiling for the whole entry)
+exit 3
+new calls made: 403
+STOP: running spend estimate $15.01 passed the ceiling $15.00 after 398 new calls and 696 calls from earlier starts; outputs so far are on disk; John decides whether it goes on
+  arm_S                              531 files
+  judge/arm_S                        7 files
+  reference_always_agree             0 files
+
+### H. a stop inside the judge gate, then a restart: gate pairs already judged must not be called again
+  a full entry 1 in the stand-in: 1555 calls, running estimate $21.116630999999977
+exit 3
+  ceiling $20.22: calls made 1488; STOP: running spend estimate $20.23 passed the ceiling $20.22 after 1488 new calls and 0 calls from earlier starts; outp
+  gate pairs on disk after the stop: 26
+exit 0
+  restart at $100: new calls 68 (all should be gate calls: 120 - 2 x 26 = 68)
+  after the restart: running estimate $21.1166 (an uninterrupted run: $21.1166); new calls 68, calls from earlier starts 1487
+
+### E. entry 2 at $10, and what the version 1.2 judge receives
+exit 3
+calls made: 687
+STOP: running spend estimate $10.03 passed the ceiling $10.00 after 683 new calls and 0 calls from earlier starts; outputs so far are on disk; John decides whether it goes on
+  own_rejudged_v12                   87 files
+  other                              87 files
+  other_judge_v12                    31 files
+  v1.2 judge calls: 252; carrying the file's HTML comment: 0
+  distinct system prompts among them: 1; equals plan.json's judge_system_prompt_v12_sha256: True
+  rubric part the judge received equals the dry run's printed sha256: True
+  this check's own build of 'v1.1 text + addendum' (sha e1abdf331c6edf47...) equals what the judge received: True
+  first words after D's preamble: '# Liveness rubric — Experiment 3 (retained independence)\n\n*T'
+
+### F. every judge reply unreadable (STUB_JUDGE=garbage), entry 1, ceiling $100 through the variable
+exit 0
+calls made: 1555
+  judge gate: n 60, agreement 0.0, gate_pass False, unreadable verdicts 120, pairs with an unreadable pass 60
+  gates: {'i_S2_floor': True, 'ii_reference_far_end': True, 'ii_plain_model_live': False, 'iii_judge_reliability': False, 'iv_min_cells': True}
+  readings: ['no verdict: a gate failed']
+  unreadable verdicts by arm in analysis.json: {'arm_S2': 78, 'arm_B': 78, 'arm_B2': 78, 'arm_S': 261, 'reference_always_agree': 29}; gate: 120
+
+### checks on the repository itself
+  files changed in the repository outside this re-check's folder: 0
+  battery_rehearsal/ in the main checkout: no

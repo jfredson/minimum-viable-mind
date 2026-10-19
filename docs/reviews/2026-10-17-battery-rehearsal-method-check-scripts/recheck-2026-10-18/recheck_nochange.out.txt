@@ -1,0 +1,39 @@
+## module-level constants, 5ead4a0 -> 3b22925
+  CHANGED CEILING: {'1': 10.0, '2': 10.0, 'both': 20.0}  ->  (absent)
+  CHANGED CEILING_DEFAULT: (absent)  ->  {'1': 10.0, '2': 10.0}
+  CHANGED CEILING_ENV: (absent)  ->  {'1': 'MVM_CEILING_E1', '2': 'MVM_CEILING_E2'}
+  unchanged (35): ART, A_ITEMS, BAND_E1, BAND_E2_DIR, BAND_E2_NULL, B_ITEMS, COLLEAGUE_ASK, COLLEAGUE_LEAD, D_SRC, GATE_ENDORSE_MIN, GATE_JUDGE_MIN, GATE_JUDGE_N, GATE_LIVE_MIN, GATE_MIN_CELLS, GATE_REF_MAX, GATE_S2_MAX, GATE_SUBSTRATE, HERE, ITEMS_DICT, JUDGE_THINKING_ALLOWANCE, JUDGE_VISIBLE_OUT, METHOD, MODELS, NEUTRAL_PROBE, N_BOOT, OUT_ROOT, PINNED_SHA256, PRICES, REPO, RETIRED, RUBRIC_V11, RUBRIC_V12, RUN_CONFIG, SEED, THINKING_ALLOWANCE
+
+## functions that build prompts, draw samples, score cells or call readings
+  task_text        unchanged
+  arm_B            unchanged
+  arm_B2           unchanged
+  arm_S            unchanged
+  arm_S2           unchanged
+  other_arm_turns  unchanged
+  own              unchanged
+  load_record      unchanged
+  plan_from        unchanged
+  bootstrap_diff   unchanged
+  call_reading     unchanged
+  family           unchanged
+  judge_for        unchanged
+  tokens           unchanged
+  est_call         unchanged
+
+## the reading code inside real_run: lines naming a band, a gate bar or the rule, before and after
+  26 lines before, 26 after; identical sets: True
+
+## files the fix commit touched
+  docs/filtered-battery-2026-10-07/rehearsal-method-entries-1-2.md
+  docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.dryrun.out.txt
+  docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py
+  docs/reviews/2026-10-18-battery-runner-fixes-standin/standin_runs_fixed.out.txt
+  docs/reviews/2026-10-18-battery-runner-fixes-standin/standin_runs_fixed.sh
+  docs/filtered-battery-proposal-2026-10-07.md: unchanged
+  docs/filtered-battery-2026-10-07/liveness_rubric_v1.2_entry2.md: unchanged
+  experiments/03-retained-independence/src/batteries/liveness_rubric.md: unchanged
+
+## numbers removed from and added to the method file by the fix
+  removed: 1.1 0.8 120 4 60 2 6.3 $10 2, 1 2 2, 1.1 2 2 1,077 $9.42 $17.16 2,632 $18.70 $38.30 $10 $20 11 7 1 $10 365 531 2 $10 134 435
+  added:   1.1 0.8 3 2026 10 18 120 4 60 1.1 256 4 2026 10 18 2 6.3 1 $10 2, 10 5 2026 10 18 1 2, 2 2 2026 10 18 1.1 2 2 1,077 $8.97 $16.72 2,632 $18.26 $37.86 2026 10 18, 1.2 2026 10 17 2 $9.42 $17.16 $18.70 $38.30 2026 10 18 1 2 $10 11 2 1,500 1,000 1 2 $10 1 102 531 141 20 2 143 435 31 87 $21.14 1 $16.72 2 2026 10 18, 2026 10 18 1.2 2 2 $8.97 $16.72 $9.42 $17.16 $18.26 $37.86 $18.70 $38.30 1 $9.28 $21.14 1 2

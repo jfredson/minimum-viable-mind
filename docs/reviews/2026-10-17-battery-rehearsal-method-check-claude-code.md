@@ -15,6 +15,11 @@ restart gives each entry another full $10** (condition 2); and **the
 judge-reliability gate passes when every judge reply is unreadable**
 (condition 3).
 
+*Re-checked later on 2026-10-18, after the six conditions were applied (commit
+`3b22925`, "the six conditions of the check of the battery rehearsal method
+applied"): all six are met, and two small new conditions stand. See the last
+section, "Re-check of the fixes".*
+
 *Checked 2026-10-18 (Pacific). The file name carries 2026-10-17, the date of
 the method file and the name the brief gave this record.*
 
@@ -669,3 +674,231 @@ or spend anything; the real-run code ran only in a scratch copy against a
 stand-in client. It did not check the vendors' prices against their pages,
 re-check entries 3 to 8, the fourteen rows or the ruling file, or test
 anything about the vendors' far end. It did not merge anything.
+
+---
+
+## Re-check of the fixes (2026-10-18)
+
+**Verdict: PASS WITH CONDITIONS. All six conditions are met. Two small new
+conditions stand, each a sentence or two lines.** Both bear on John's go and
+cost nothing to fix.
+
+**What was re-checked.** Commit `3b22925` on pull request 174's branch ("the
+six conditions of the check of the battery rehearsal method applied ..."),
+made by the project's master session, which wrote none of the method, the
+rubric file or the runner. This session pulled that branch into its check
+branch by fast-forward (the branch already held this record, merged as pull
+request 182). It read the commit's full diff of the runner and the method,
+the new committed dry-run output, and the master session's own stand-in
+output (`docs/reviews/2026-10-18-battery-runner-fixes-standin/`). It did not
+run that harness. Its own scripts are in
+`docs/reviews/2026-10-17-battery-rehearsal-method-check-scripts/recheck-2026-10-18/`,
+with their outputs. They are the first check's scripts, re-pointed at the
+fixed runner. The stand-in client gains two hashes of each system prompt,
+and no copy of the runner is patched: the ceilings go through
+`MVM_CEILING_E1` and `MVM_CEILING_E2`, as a real run sets them. **No model
+was called, nothing was rented, $0.**
+
+### R1. The dry run, nothing written, no network, the refusals. MEASURED.
+
+From `recheck_dryrun_refusals.sh`, with Python's default bytecode caching
+**on** (the setting under which the first check found the leftover files):
+
+```
+## 1. the dry run against its committed output (default bytecode caching on)
+exit 0
+cmp: identical
+19605efe0d64a13013b5e119fb258a4e81991f74afd40952c92693af987db1b7  dry.txt
+19605efe0d64a13013b5e119fb258a4e81991f74afd40952c92693af987db1b7  docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.dryrun.out.txt
+second run identical to the first
+## 2. the argument guard
+  args [--help]: exit 2; stdout 0 bytes; ...  (and -n, run, --dry-run, an empty argument: the same)
+## 3. refusals before any network import
+  MVM_REHEARSAL_RUN=1 alone: exit 2; stdout 0 bytes; stderr: refusing the real run: MVM_GO_QUOTE ...
+  with the ceilings but no go or row: exit 2; ...
+  with MVM_GO_QUOTE only: exit 2; ...
+  with both set to blanks: exit 2; ...
+  MVM_ENTRY=3 with the switch: exit 2; stdout 0 bytes; stderr: MVM_ENTRY must be 1, 2 or both
+  dry run with a bad ceiling value (MVM_CEILING_E1=abc):
+    exit 2;   refusing: MVM_CEILING_E1='abc' is not a number of dollars
+## 4. what all of the above left behind (must be nothing)
+  .pyc files under the runner's folder and D's src: 0
+  artifacts/ in the checkout: no; battery_rehearsal/ in the main checkout: no
+```
+
+The SHA-256 is the one the fix commit's message gives. The first check's
+network harness, re-run unchanged, finds 0 connection attempts and no network
+or experiment D call module imported. Its self-test fires, and only the
+echoed path differs from the committed output. The dry run is also identical
+on Python 3.12.13 and 3.9.6 (`recheck_network_pythons.out.txt`). **Condition
+5 is met**: `sys.dont_write_bytecode` is set at line 63, before the first
+import of D's code at line 172, and the run that left three files the first
+time leaves none.
+
+### R2. The stand-in runs, cases C to F and three new ones. MEASURED.
+
+From `recheck_standin.sh`. Each scratch copy's runner is confirmed identical
+to the committed runner before it runs.
+
+```
+### G. ceiling refusals, with the go quote and the worklog row set (each must refuse before any call)
+  [none]: exit 2; calls 0; refusing the real run: MVM_CEILING_E1 is not set. ...
+  [E1=21]: exit 2; calls 0; refusing the real run: MVM_CEILING_E2 is not set. ...
+  [E1=abc E2=17]: exit 2; calls 0; ... 'abc' is not a number of dollars ...
+  [E1=0 E2=17]: exit 2; calls 0; ... '0' is outside 0 to 100 dollars ...
+  [E1=150 E2=17]: exit 2; calls 0; ... '150' is outside 0 to 100 dollars ...
+  [E1=21 E2=-1]: exit 2; calls 0; ... '-1' is outside 0 to 100 dollars ...
+### A. a pinned file changed by one byte: exit 2, calls made: 0
+### B. the method file missing: exit 2, calls made: 0
+### C. entry 1 at $10
+exit 3
+calls made: 701
+STOP: running spend estimate $10.01 passed the ceiling $10.00 after 697 new calls and 0 calls from earlier starts; ...
+  arm_S2 107, arm_B 107, arm_B2 107, arm_S 141, reference_always_agree 0; judge/arm_S2 78, judge/arm_B 78, judge/arm_B2 78, judge/arm_S 0
+### D. the same command again, same $10: the estimate must include the earlier start
+exit 3
+new calls made: 5
+STOP: running spend estimate $10.01 passed the ceiling $10.00 after 1 new calls and 696 calls from earlier starts; ...
+### D2. again, with the ceiling raised to $15
+exit 3
+new calls made: 403
+STOP: running spend estimate $15.01 passed the ceiling $15.00 after 398 new calls and 696 calls from earlier starts; ...
+### H. a stop inside the judge gate, then a restart
+  a full entry 1 in the stand-in: 1555 calls, running estimate $21.116630999999977
+  ceiling $20.22: calls made 1488; STOP: running spend estimate $20.23 passed the ceiling $20.22 after 1488 new calls ...
+  gate pairs on disk after the stop: 26
+  restart at $100: new calls 68 (all should be gate calls: 120 - 2 x 26 = 68)
+  after the restart: running estimate $21.1166 (an uninterrupted run: $21.1166); new calls 68, calls from earlier starts 1487
+### E. entry 2 at $10, and what the version 1.2 judge receives
+exit 3
+calls made: 687
+  own_rejudged_v12 87, other 87, other_judge_v12 31
+  v1.2 judge calls: 252; carrying the file's HTML comment: 0
+  distinct system prompts among them: 1; equals plan.json's judge_system_prompt_v12_sha256: True
+  rubric part the judge received equals the dry run's printed sha256: True
+  this check's own build of 'v1.1 text + addendum' (sha e1abdf331c6edf47...) equals what the judge received: True
+### F. every judge reply unreadable, entry 1, ceiling $100 through the variable
+exit 0
+calls made: 1555
+  judge gate: n 60, agreement 0.0, gate_pass False, unreadable verdicts 120, pairs with an unreadable pass 60
+  gates: {..., 'iii_judge_reliability': False, ...}
+  readings: ['no verdict: a gate failed']
+  unreadable verdicts by arm in analysis.json: {'arm_S2': 78, 'arm_B': 78, 'arm_B2': 78, 'arm_S': 261, 'reference_always_agree': 29}; gate: 120
+```
+
+- **Condition 1 is met.** The real run refuses unless both ceilings are named,
+  and refuses a value that is missing, not a number, or outside 0 to 100
+  dollars (run G). The method's section 10 now says the estimate prices every
+  Gemini call at the high end, gives the real order, and gives the real stop
+  points. The dry run lists its rows in the real order. Its predicted stop
+  for entry 1 is about 102 of arm S's 531 calls; the stand-in stops after
+  141, and the method gives both and says why they differ. The stand-in
+  confirms the entry 2 figure: 31 of 87 conversations judged.
+- **Condition 2 is met.** A restart at the same $10 stops after 1 new
+  counted call, with the first start's 696 calls added (run D). A fresh go
+  naming $15 runs to $15 for the whole entry, not $15 more (run D2). A stop
+  inside the judge gate followed by a restart calls exactly the 68 gate
+  calls not yet made. The restarted entry's running estimate equals an
+  uninterrupted run's to four decimal places (run H).
+- **Condition 3 is met.** With every judge reply unreadable, the gate now
+  reads 0.0 and fails, and the unreadable counts are written by arm (run F).
+  The first check had it at 1.0 and passing.
+- **Condition 4 is met.** No version 1.2 judge call carries the header comment.
+  All 252 receive one system prompt, whose hash is the one `plan.json`
+  records. Its rubric part is the text whose hash the dry run prints, and it
+  equals this check's own joining of D's version 1.1 file and the addendum
+  section (run E).
+- **Condition 6 is met.** Section 5.3 and section 7 now say the runner sends
+  "an identical copy of the user message `judge_one` builds", not a call into
+  it. The order comment now matches the code. The copy is still identical to
+  `judge_one`'s prompt (the fix moved it into a `judge_prompt` function and
+  did not change the text).
+
+### R3. The cost bracket, recomputed. MEASURED.
+
+`cost_recompute_v2.py` is the first check's script with one change: the
+version 1.2 rubric's length is now the file after its header comment.
+
+```
+LOW (no billed thinking)
+  entry 1 $9.39; entry 2 $9.07; both $18.46
+HIGH (1,500 / 1,000 Gemini thinking tokens)
+  entry 1 $21.25; entry 2 $16.81; both $38.06
+```
+
+Against the method's new $18.26 to $37.86 (entry 1 $9.28 to $21.14, entry 2
+$8.97 to $16.72), this differs by the same 20 cents as the first check's
+recomputation, for the same reason: the runner's round figures for the judge
+preamble and item text. **The new bracket follows.** Entry 1 is unchanged.
+Entry 2 fell by about 45 cents at each end because the header comment no
+longer goes to the judge, which is what the method says.
+
+### R4. Nothing that counts changed. MEASURED.
+
+`recheck_nochange.py` compares the runner before the fix (`5ead4a0`) and after
+(`3b22925`) as parsed source:
+
+```
+  CHANGED CEILING: {'1': 10.0, '2': 10.0, 'both': 20.0}  ->  (absent)
+  CHANGED CEILING_DEFAULT: (absent)  ->  {'1': 10.0, '2': 10.0}
+  CHANGED CEILING_ENV: (absent)  ->  {'1': 'MVM_CEILING_E1', '2': 'MVM_CEILING_E2'}
+  unchanged (35): ... BAND_E1, BAND_E2_DIR, BAND_E2_NULL, ... COLLEAGUE_ASK, COLLEAGUE_LEAD, ... GATE_ENDORSE_MIN,
+    GATE_JUDGE_MIN, GATE_JUDGE_N, GATE_LIVE_MIN, GATE_MIN_CELLS, GATE_REF_MAX, GATE_S2_MAX, ... NEUTRAL_PROBE, N_BOOT, ...
+    PINNED_SHA256, PRICES, ... RETIRED, ... SEED, THINKING_ALLOWANCE
+  task_text, arm_B, arm_B2, arm_S, arm_S2, other_arm_turns, own, load_record, plan_from,
+    bootstrap_diff, call_reading, family, judge_for, tokens, est_call: unchanged
+  the reading code inside real_run: 26 lines before, 26 after; identical sets: True
+  docs/filtered-battery-proposal-2026-10-07.md: unchanged
+  docs/filtered-battery-2026-10-07/liveness_rubric_v1.2_entry2.md: unchanged
+  experiments/03-retained-independence/src/batteries/liveness_rubric.md: unchanged
+```
+
+The only constants that changed are the ceilings, which moved from a table
+to the go. Every band, gate bar, the seed, the resample count, the retired
+item, the three prompt strings, the pinned hashes and the prices are as they
+were. So are every function that builds a prompt or draws a sample, the
+bootstrap, the one rule, and every reading line of the real run. The draft
+and both rubric files are untouched. In the method, the numbers the fix
+removed or added are the bracket, the stop points, dates, the
+thinking-allowance figures restated, and condition numbers. **No figure,
+band, gate bar, prompt or ruling changed.**
+
+### The two new conditions (ARGUED from the measured lines named)
+
+1. **The high-end figures do not "let both finish" when named exactly.** The
+   method (line 777) and the dry run's note (runner line 564) say the high
+   end, "about $21.14 for entry 1 and $16.72 for entry 2", lets both finish
+   in one start. Named exactly, they do not. The dry run itself, given those
+   two ceilings, prints for entry 2: "where the $16.72 ceiling falls on the
+   running estimate for entry 2: during 'judge-reliability gate', after about
+   119 of its 120 calls" (R1's output, the named-ceilings line). The cause is
+   the rounding, and the running estimate uses the real reply lengths, which
+   will not equal D's means. Say instead that a ceiling must sit above the
+   high end with a margin John chooses (rounding each up to the next whole
+   dollar is the least; something like $23 and $19 leaves room for longer
+   replies). John's go should name such figures.
+2. **A stop pays for calls whose replies it then throws away.** The method
+   (line 616) says "a stop loses nothing already paid for". The runner adds
+   a call's cost after the call returns and writes the record only after
+   that. So the call that crosses the ceiling, and the calls still in flight
+   in the other workers, are paid for and not written. In stand-in run C,
+   701 calls were made and 696 records written, so 5 calls were lost. In run
+   D the restart at an unchanged ceiling made 5 calls and wrote none. In run
+   E, 687 calls were made and 677 written: 87 re-judgings, 435
+   conversation calls and 31 judged conversations of 5 calls each. The 10
+   lost there were judge calls inside conversations not finished when the
+   stop came. The money is a few cents a stop, but restarting at an
+   unchanged ceiling buys nothing and still pays for about five calls each
+   time. Either write each record before adding its cost (in entry 2's
+   judging, after each of the five calls), or change the sentence to say a
+   stop discards the few calls in flight. Either way, say that a restart
+   needs a raised ceiling to make progress.
+
+A note, not a condition: the runner refuses ceilings outside 0 to 100
+dollars, which the method does not mention. One clause in section 10 would
+cover it.
+
+**For John, in one line:** the six fixes are in and work as described, and
+nothing that decides a reading changed. When you give the go, name ceilings
+a little above the high end (say $23 for entry 1 and $19 for entry 2),
+because the exact figures in the method leave entry 2 one call short.

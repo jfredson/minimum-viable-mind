@@ -1,0 +1,20 @@
+$ python3 docs/reviews/2026-10-17-battery-rehearsal-method-check-scripts/dryrun_no_network.py <out>   (the first check's harness, unchanged)
+runner exit status: 0
+socket connection attempts: 0
+network or experiment-D call modules imported: none
+experiment D modules imported: ['framings', 'items']
+self-test: a connection attempt after the run is caught: True; an import after the run is recorded: True
+dry-run output written to rc_blocked.txt: 15256 bytes
+$ diff <harness output> <committed dry-run output>
+146c146
+<   MVM_REHEARSAL_RUN=1 MVM_GO_QUOTE='<John's words>' MVM_WORKLOG_ROW=<id> MVM_CEILING_E1=<$> MVM_CEILING_E2=<$> python3 <worktree>/docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py
+---
+>   MVM_REHEARSAL_RUN=1 MVM_GO_QUOTE='<John's words>' MVM_WORKLOG_ROW=<id> MVM_CEILING_E1=<$> MVM_CEILING_E2=<$> python3 docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py
+
+$ bash docs/reviews/2026-10-17-battery-rehearsal-method-check-scripts/dryrun_other_pythons.sh <scratch>   (unchanged)
+## Python 3.12.13 (/Users/john/Code/minimum-viable-mind/.venv/bin/python)
+exit 0
+cmp: identical to the committed output
+## Python 3.9.6 (/Library/Developer/CommandLineTools/usr/bin/python3)
+exit 0
+cmp: identical to the committed output
