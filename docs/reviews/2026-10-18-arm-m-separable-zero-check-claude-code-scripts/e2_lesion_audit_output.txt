@@ -1,0 +1,9 @@
+d5_trunk_lesion: forward passes 120: {'normal': 48, 'trunk-only lesion': 48, 'acting zeroed everywhere': 24}
+  passes that break the rule above: 0; models still carrying the override after the run: 0 of 4
+  printed output identical to the committed d5_trunk_lesion_output.txt: True
+d7_flat_choice: forward passes 72: {'normal': 48, 'trunk-only lesion': 24, 'acting zeroed everywhere': 0}
+  passes that break the rule above: 0; models still carrying the override after the run: 0 of 4
+  printed output identical to the committed d7_flat_choice_output.txt: True
+d9_stirred_in_items: forward passes 36: {'normal': 24, 'trunk-only lesion': 12, 'acting zeroed everywhere': 0}
+  passes that break the rule above: 0; models still carrying the override after the run: 0 of 2
+  printed output identical to the committed d9_stirred_in_items_output.txt: True

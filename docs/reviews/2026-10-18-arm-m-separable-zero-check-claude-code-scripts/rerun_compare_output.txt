@@ -1,0 +1,50 @@
+$ git diff 6c47c56 -- experiments/08-successor-degree/src/ | wc -c
+       0
+
+$ each script re-run from the scripts folder with ~/Code/minimum-viable-mind/.venv/bin/python, output compared byte for byte (cmp) with the committed _output.txt; wall-clock seconds from /usr/bin/time
+d0_reproduce: differs; 23.93 s
+d1_bookkeeping: identical; 5.74 s
+d2_swap_reach: identical; 19.31 s
+d3_forced_row: identical; 46.23 s
+d4_named_by_route: identical; 11.35 s
+d5_trunk_lesion: identical; 47.71 s
+d6_weights: identical; 13.44 s
+d7_flat_choice: identical; 40.38 s
+d8_answer_vector: identical; 1.90 s
+d9_stirred_in_items: identical; 15.70 s
+
+$ diff d0_reproduce_output.txt (committed) against the re-run
+18c18
+<   (1.9 s)
+---
+>   (1.8 s)
+23c23
+<   (1.9 s)
+---
+>   (1.8 s)
+
+$ creation and change times (Pacific, 2026-10-18) of the writer's files in its worktree .claude/worktrees/arm-m-zero; method commit cb3b9ee at 16:58:18, findings commit 8fa464d at 17:06:19 (git reflog)
+16:58:14 created | 16:58:14 changed | docs/2026-10-18-arm-m-separable-zero-method.md
+16:59:06 created | 16:59:06 changed | docs/2026-10-18-arm-m-separable-zero-scripts/common.py
+16:59:06 created | 16:59:06 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d0_reproduce.py
+16:59:06 created | 16:59:29 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d0_reproduce_output.txt
+17:00:22 created | 17:00:22 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d1_bookkeeping.py
+17:00:22 created | 17:00:22 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d2_swap_reach.py
+17:00:22 created | 17:00:22 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d3_forced_row.py
+17:00:22 created | 17:00:22 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d4_named_by_route.py
+17:00:22 created | 17:00:22 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d5_trunk_lesion.py
+17:00:22 created | 17:00:22 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d6_weights.py
+17:00:22 created | 17:00:27 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d1_bookkeeping_output.txt
+17:00:27 created | 17:00:47 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d2_swap_reach_output.txt
+17:00:47 created | 17:01:33 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d3_forced_row_output.txt
+17:01:33 created | 17:01:43 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d4_named_by_route_output.txt
+17:01:44 created | 17:02:29 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d5_trunk_lesion_output.txt
+17:02:29 created | 17:02:42 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d6_weights_output.txt
+17:02:57 created | 17:02:57 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d7_flat_choice.py
+17:03:30 created | 17:03:30 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d8_answer_vector.py
+17:03:30 created | 17:03:58 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d7_flat_choice_output.txt
+17:03:58 created | 17:04:00 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d8_answer_vector_output.txt
+17:04:41 created | 17:04:41 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d9_stirred_in_items.py
+17:04:41 created | 17:04:55 changed | docs/2026-10-18-arm-m-separable-zero-scripts/d9_stirred_in_items_output.txt
+17:04:56 created | 17:04:56 changed | docs/2026-10-18-arm-m-separable-zero-scripts/checks_output.txt
+17:06:11 created | 17:06:11 changed | docs/2026-10-18-arm-m-separable-zero-findings.md

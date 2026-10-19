@@ -1,0 +1,26 @@
+E1: acting channel in the trunk moved to the next agent's assignment turns; built-in answer reads the real episode (gate, own-directed actions)
+torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, python 3.12.13, device cpu
+
+M-10M-rerun
+  separable  actions  1190; right unmoved  1190
+             moved: own answer     0 (0.000); next agent's answer  1190 (1.000)
+             of those right unmoved: own answer     0 (0.000); next agent's answer  1190 (1.000)
+  stirred-in actions  1810; right unmoved  1387
+             moved: own answer    63 (0.035); next agent's answer  1401 (0.774)
+             of those right unmoved: own answer    27 (0.019); next agent's answer  1169 (0.843)
+  separable table rows, moved: next agent's row over the others' mean 3.765; own row over the others' mean 0.530
+
+T-10M-rerun
+  separable  actions  3000; right unmoved  2959
+             moved: own answer  2919 (0.973); next agent's answer    30 (0.010)
+             of those right unmoved: own answer  2919 (0.986); next agent's answer    20 (0.007)
+  separable table rows, moved: next agent's row over the others' mean 0.993; own row over the others' mean 1.009
+
+M-toy-seed0
+  separable  actions  1190; right unmoved  1190
+             moved: own answer  1190 (1.000); next agent's answer     0 (0.000)
+             of those right unmoved: own answer  1190 (1.000); next agent's answer     0 (0.000)
+  stirred-in actions  1810; right unmoved  1400
+             moved: own answer    70 (0.039); next agent's answer  1379 (0.762)
+             of those right unmoved: own answer    43 (0.031); next agent's answer  1152 (0.823)
+  separable table rows, moved: next agent's row over the others' mean 1.091; own row over the others' mean 0.956
