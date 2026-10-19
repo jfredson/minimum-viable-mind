@@ -64,3 +64,19 @@ recommended".
   apply them.
 - The TimeAssembler worklog, as a decision entry with authorship mixed, and
   the roadmap's step for these choices closed.
+
+## Added the same evening: the cost sentence and three "programme" sentences
+
+The check of the ruled changes (`docs/reviews/2026-10-18-paper-reserved-places-check-claude-code.md`,
+pull request 192) found that the Discussion's "the entire programme ran for
+under $20 of compute" was no longer true, and that three sentences said
+"programme" where they meant the removal test (its results, the registered
+verdict section and the Figure 4 caption). It proposed replacements. Put to
+John through the fifth master session; his words, 2026-10-18 evening: "Yes
+to both" (authorship mixed: the checker proposed, John approved).
+
+Applied as proposed, with one clarification the master asked for: the
+$230.94 is rented machine time to the stop of experiment C, and calls to model
+providers by API, the battery rehearsal of 2026-10-18 among them, are recorded
+in the worklog and are not in it. The sentence says "of rented compute", and
+the Methods paragraph "Compute and cost" says the rest plainly.
