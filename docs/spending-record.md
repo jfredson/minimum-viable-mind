@@ -19,7 +19,7 @@ Until it is done, the total below is a range.*
 | | Figure | Source |
 |---|---|---|
 | Rented machines, 2026-08-07 to the stop of experiment C | $230.94 | the compute ledger's running total |
-| Spend before the ledger opened, and API calls to 2026-08-30 | about $100 to $119 | John's figure of about $281 to $300 of true spend across every vendor on 2026-08-30, when the ledger read about $181 |
+| Spend before the ledger opened, and API calls to 2026-08-30 | about $100 to $119 | John's figure of about $281 to $300 of true spend across every vendor, in his binding rulings of 2026-08-30 quoted at the top of `experiments/06-mvm-0a-constructed-self-index/amendment-a3.md`; the ledger then read about $181 (its 2026-08-17 row, "~$181.4 / $400 (A2)") |
 | API calls logged since 2026-08-30 | at least about $4 to $8 | the rows below |
 | **Total spent, every vendor** | **roughly $335 to $360** | still being compiled |
 
