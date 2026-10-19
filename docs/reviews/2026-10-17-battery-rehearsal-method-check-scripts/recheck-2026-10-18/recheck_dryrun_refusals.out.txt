@@ -1,0 +1,34 @@
+runner at commit 3b22925; committed output at commit 3b22925
+## 1. the dry run against its committed output (default bytecode caching on)
+exit 0
+cmp: identical
+19605efe0d64a13013b5e119fb258a4e81991f74afd40952c92693af987db1b7  dry.txt
+19605efe0d64a13013b5e119fb258a4e81991f74afd40952c92693af987db1b7  docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.dryrun.out.txt
+second run identical to the first
+
+## 2. the argument guard
+  args [--help]: exit 2; stdout 0 bytes; refusing to run: run_rehearsal_entries_1_2.py takes no command-line arguments.
+  args [-n]: exit 2; stdout 0 bytes; refusing to run: run_rehearsal_entries_1_2.py takes no command-line arguments.
+  args [run]: exit 2; stdout 0 bytes; refusing to run: run_rehearsal_entries_1_2.py takes no command-line arguments.
+  args [--dry-run]: exit 2; stdout 0 bytes; refusing to run: run_rehearsal_entries_1_2.py takes no command-line arguments.
+  args []: exit 2; stdout 0 bytes; refusing to run: run_rehearsal_entries_1_2.py takes no command-line arguments.
+
+## 3. refusals before any network import
+  MVM_REHEARSAL_RUN=1 alone: exit 2; stdout 0 bytes; stderr: refusing the real run: MVM_GO_QUOTE (John's verbatim go) and MVM_WORKLOG_ROW (the worklog row writte
+  with the ceilings but no go or row: exit 2; stdout 0 bytes; stderr: refusing the real run: MVM_GO_QUOTE (John's verbatim go) and MVM_WORKLOG_ROW (the worklog row writte
+  with MVM_GO_QUOTE only: exit 2; stdout 0 bytes; stderr: refusing the real run: MVM_GO_QUOTE (John's verbatim go) and MVM_WORKLOG_ROW (the worklog row writte
+  with both set to blanks: exit 2; stdout 0 bytes; stderr: refusing the real run: MVM_GO_QUOTE (John's verbatim go) and MVM_WORKLOG_ROW (the worklog row writte
+  MVM_ENTRY=3 with the switch: exit 2; stdout 0 bytes; stderr: MVM_ENTRY must be 1, 2 or both
+  dry run with a bad ceiling value (MVM_CEILING_E1=abc):
+    exit 2;   refusing: MVM_CEILING_E1='abc' is not a number of dollars
+  dry run with named ceilings 21.14 and 16.72 (the high end):
+    exit 0
+      ceilings for this preview: entry 1 $21.14 (named), entry 2 $16.72 (named). A real run refuses unless John's go names both and they are set in MVM_CEILING_E1 and MVM_CEILING_E2.
+      the $21.14 ceiling is not reached on the running estimate for entry 1 (high end $21.14)
+      where the $16.72 ceiling falls on the running estimate for entry 2: during 'judge-reliability gate', after about 119 of its 120 calls
+      NOTE: at these ceilings entry 2 cannot finish in one start. John's go names the ceilings he accepts (the high-end figures above would let both finish), or a trim from method section 10, or a partial run.
+
+## 4. what all of the above left behind (must be nothing)
+  .pyc files under the runner's folder and D's src: 0
+  artifacts/ in the checkout: no; battery_rehearsal/ in the main checkout: no
+  where sys.dont_write_bytecode is set (line) and the first import of D's code (line): 63 and 172
