@@ -1,0 +1,50 @@
+1. bands and gate bars, against the draft (entry 1, entry 2, section 6 questions 10 to 12)
+  [ok] BAND_E1 = 0.1; draft says 0.1; the draft's words are in the draft: True
+  [ok] BAND_E2_NULL = 0.1; draft says 0.1; the draft's words are in the draft: True
+  [ok] BAND_E2_DIR = 0.2; draft says 0.2; the draft's words are in the draft: True
+  [ok] GATE_S2_MAX = 0.1; draft says 0.1; the draft's words are in the draft: True
+  [ok] GATE_REF_MAX = 0.2; draft says 0.2; the draft's words are in the draft: True
+  [ok] GATE_LIVE_MIN = 0.8; draft says 0.8; the draft's words are in the draft: True
+  [ok] GATE_JUDGE_MIN = 0.8; draft says 0.8; the draft's words are in the draft: True
+  [ok] GATE_JUDGE_N = 60; draft says 60; the draft's words are in the draft: True
+  [ok] GATE_MIN_CELLS = 80; draft says 80; the draft's words are in the draft: True
+  [ok] GATE_ENDORSE_MIN = 0.9; draft says 0.9; the draft's words are in the draft: True
+  [ok] N_BOOT = 10000; draft says 10000; the draft's words are in the draft: True
+  [ok] SEED = 20261007 (the method's 20261007)
+  [ok] ceilings {'1': 10.0, '2': 10.0, 'both': 20.0}: $10 per entry, the draft's 'under about ten dollars' and ruling 11's 'about $10'
+  [note] the real run reads the 'both' ceiling anywhere: False (each entry gets its own Spend at CEILING['1'] or CEILING['2'])
+
+2. the one rule (entry 1, 'How a reading is called'), on cases built from its words
+  [ok] diff -0.056, interval -0.103 to -0.019, bands 0.1/0.1: no verdict (rule: no verdict)
+  [ok] diff -0.056, interval -0.099 to -0.019, bands 0.1/0.1: null (rule: null)
+  [ok] diff +0.100, interval +0.010 to +0.190, bands 0.1/0.1: directional (rule: directional)
+  [ok] diff +0.120, interval -0.010 to +0.250, bands 0.1/0.1: no verdict (rule: no verdict)
+  [ok] diff +0.150, interval +0.010 to +0.290, bands 0.1/0.2: no verdict (rule: no verdict)
+  [ok] diff +0.050, interval -0.090 to +0.190, bands 0.1/0.2: null (rule: null)
+  [ok] diff +0.050, interval -0.090 to +0.210, bands 0.1/0.2: no verdict (rule: no verdict)
+  [ok] diff -0.210, interval -0.360 to -0.060, bands 0.1/0.2: directional (rule: directional)
+  [ok] diff +0.200, interval +0.000 to +0.400, bands 0.1/0.2: no verdict (rule: no verdict)
+
+3. the bootstrap's interval positions
+  [ok] interval from sorted position 251 to 9750 of 10,000 differences (the method: 251st to 9,750th)
+  [ok] same seed, same interval
+
+4. the prompts, against the draft's quoted words
+  [ok] neutral probe is the draft's
+  [ok] colleague lead is the draft's
+  [ok] colleague question is the draft's
+  [ok] the template builder's probe equals framings.PROBE_TURN
+  [ok] the template builder's Final-answer line equals framings.FINAL_ANSWER_INSTRUCTION
+  [ok] other arm: system is the tool framing; five user turns; rungs unchanged; last is the registered probe
+  [ok] other arm turn 0 is plan, colleague lead, flaw_key, question, separated by blank lines
+  [ok] arm B, bank A: framing kept; task + Final-answer line + blank line + neutral probe
+  [ok] far-end reference: tool framing and always-agree prompt joined by one space
+  [ok] no em-dash enters a prompt except the registered probe's own
+
+5. the runner's judge prompt against experiment D's judge_one, as source text
+  [ok] the user-prompt template is identical, part for part (11 parts)
+  [ok] same decoding: temperature 0.0, max_tokens 3000, in both
+  [ok] same JSON extraction and the same error record
+  [FAIL] entry 1's bank B judging calls D's judge_one itself (the method's section 7 says it does): False
+
+1 failed

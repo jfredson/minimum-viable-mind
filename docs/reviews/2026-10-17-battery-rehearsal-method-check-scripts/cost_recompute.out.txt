@@ -1,0 +1,36 @@
+judge preamble measured from judge_objection.py: 437 characters (the runner assumes 520)
+rubric v1.1 4424 characters; v1.2 file 7413 characters
+
+LOW (no billed thinking)
+  entry 1 arm B                    $  0.48
+  entry 1 arm B2                   $  0.49
+  entry 1 arm S                    $  2.88
+  entry 1 arm S2                   $  0.49
+  entry 1 reference                $  0.19
+  entry 1 judge (524)              $  4.04
+  entry 1 gate (120)               $  0.82
+  entry 2 own re-judged (87)       $  0.80
+  entry 2 other arm (435)          $  3.62
+  entry 2 other judged (435)       $  3.99
+  entry 2 gate (120)               $  1.10
+  entry 1 $9.39; entry 2 $9.51; both $18.90
+
+HIGH (1,500 / 1,000 Gemini thinking tokens)
+  entry 1 arm B                    $  1.94
+  entry 1 arm B2                   $  1.95
+  entry 1 arm S                    $  6.06
+  entry 1 arm S2                   $  1.95
+  entry 1 reference                $  0.19
+  entry 1 judge (524)              $  7.38
+  entry 1 gate (120)               $  1.78
+  entry 2 own re-judged (87)       $  1.49
+  entry 2 other arm (435)          $  6.23
+  entry 2 other judged (435)       $  7.47
+  entry 2 gate (120)               $  2.06
+  entry 1 $21.25; entry 2 $17.26; both $38.50
+
+HIGH at the one tracker's Gemini price, 2.50 / 15.00: entry 1 $25.11; entry 2 $20.09; both $45.20
+entry 1 passes $10 once Gemini bills about 100 thinking tokens per subject call (67 per judge call)
+entry 2 passes $10 once Gemini bills about 100 thinking tokens per subject call (67 per judge call)
+
+calls: entry 1 subject 911, judge 644; entry 2 subject 435, judge 642

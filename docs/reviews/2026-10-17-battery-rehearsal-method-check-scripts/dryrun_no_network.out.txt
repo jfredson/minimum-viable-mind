@@ -1,0 +1,12 @@
+runner exit status: 0
+socket connection attempts: 0
+network or experiment-D call modules imported: none
+experiment D modules imported: ['framings', 'items']
+self-test: a connection attempt after the run is caught: True; an import after the run is recorded: True
+dry-run output written to dryrun.blocked.txt: 14212 bytes
+$ diff <harness output> docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.dryrun.out.txt
+140c140
+<   MVM_REHEARSAL_RUN=1 MVM_GO_QUOTE='<John's words>' MVM_WORKLOG_ROW=<id> python3 <worktree>/docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py
+---
+>   MVM_REHEARSAL_RUN=1 MVM_GO_QUOTE='<John's words>' MVM_WORKLOG_ROW=<id> python3 docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py
+(the one line that differs echoes the runner's own path: runpy hands it the absolute path; nothing else differs)
