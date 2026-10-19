@@ -18,14 +18,17 @@ Until it is done, the total below is a range.*
 
 John said on 2026-10-18 that his Max plan includes $200 of Anthropic API
 credits every month, resetting on the 2nd. Anthropic's pages say unused credit
-expires at the end of each cycle and does not roll over. A run paid from those
-credits still needs its own go, with an estimate and a ceiling, like any other
-spend. It is written in this record with the vendor "Anthropic credits", so the
-total can be read two ways: everything spent, and what came out of pocket
-(credit-paid rows cost nothing out of pocket while credit remains). The
-workspace rule, the facts and the monthly rhythm are in `~/Code/CLAUDE.md`,
-section "Anthropic API credits: the monthly $200". Outside reviews and second
-readers stay on a non-Claude model whatever the credit balance.
+expires at the end of each cycle and does not roll over. His rule for runs paid
+from those credits (relayed by the fifth master session, 2026-10-18): a single
+job expected to cost more than about $50 comes to him first, with the number
+and what it buys; smaller credit-paid runs do not need his go, but each is
+recorded here, with the vendor written "Anthropic credits". Spend out of
+pocket still needs his go first, as in the spending ruling. Writing the vendor
+this way lets the total be read two ways: everything spent, and what came out
+of pocket. Minimum Viable Mind has no Console workspace or key of its own yet;
+it is proposed to John, and until it exists these runs are not on the credits.
+The guide is `timeassembler/docs/session-routing.md`. Outside reviews and
+second readers stay on a non-Claude model whatever the credit balance.
 
 ## Running total
 
