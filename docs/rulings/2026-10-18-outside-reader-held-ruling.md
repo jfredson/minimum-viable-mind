@@ -32,3 +32,17 @@ feels right, and to the master's readiness plan answered "Yes".
 - This file and the checklist, on the main line.
 - The TimeAssembler roadmap: the outside-reader task closed as held and
   replaced by the checklist's five steps.
+
+## Addendum, 2026-10-19: the outside reader cancelled for now
+
+*Relayed by the sixth master session for the tracker sites. Authorship
+**john**.*
+
+John's words: "We are canceling the idea for an outside reader for now."
+
+So the outside-reader step is cancelled, not only held: no approach note
+goes to any academic, and step 4 of the readiness checklist (a friendly
+expert before a senior one) is cancelled with it, read as an outside reader
+too. The approach note (`docs/outside-reader-approach-note-2026-10-17.md`)
+stays in the repository unsent. Step 5, the first venue, now follows steps 1
+to 3. "For now" is his: the step can come back only on his word.
