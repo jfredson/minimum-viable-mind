@@ -1,0 +1,326 @@
+HIT   register spread seed 0                           register-saturation-findings.md:20  form='7.6 × 10⁻⁸'
+        context: | pilot seed-0 full | 102095 | 3 | 7.6 × 10⁻⁸ |
+HIT   register spread seed 1                           register-saturation-findings.md:21  form='2.8 × 10⁻⁸'
+        context: | pilot seed-1 full | 102095 | 3 | 2.8 × 10⁻⁸ |
+HIT   register spread seed 2                           register-saturation-findings.md:22  form='5.9 × 10⁻⁸'
+        context: | pilot seed-2 full | 102095 | 3 | 5.9 × 10⁻⁸ |
+HIT   T_si 0.93 -> 0.94, amendment-a3 s1               amendment-a3.md:118  form='0.93 to 0.94'
+        context: s-attention injection removed entirely, T_si went 0.93 to 0.94 on the registered eval seed and 1.00 to
+HIT   T_si 0.94 in register-lesion thread 4            register-lesion-findings.md:32  form='0.94'
+        context: xattn** | **the register injection entirely** | **0.94 / 0.99** | **1.00 / 1.00** |
+HIT   twin T_si 0.96                                   twin-binding-anomaly.md:54  form='0.96'
+        context: | **seed-1 twin (`b1e6fc2a…`)** | **no** | **0.96** | **1.00** | **0.0001** | **YES ⚠** |
+HIT   twin T_sr_rev 1.00                               twin-binding-anomaly.md:51  form='1.00'
+        context: | pilot seed-0 full (`fd1eb80c…`) | yes | 0.93 | 1.00 | ~0.43 | **yes** |
+HIT   A2 pilot endpoint T_si 0.93                      pre-registration.md:729  form='T_si 0.93'
+        context: endpoint T_sr 1.00 / T_si 0.93 (max 0.990; late-run band 0.93–0.98 at
+HIT   intact seed 0                                    seeds-endpoint-findings.md:25  form='0.5683'
+        context: | pilot (seed 0) | 0.5683 (sd 0.0076) | 0.1988 (sd 0.0173) | 1.33
+HIT   intact seed 1                                    seeds-endpoint-findings.md:26  form='0.5633'
+        context: | seed 1 | 0.5633 (sd 0.0316) | 0.2015 (sd 0.0215) | 1.34
+HIT   intact seed 2                                    seeds-endpoint-findings.md:27  form='0.5738'
+        context: | seed 2 | 0.5738 (sd 0.0284) | 0.1447 (sd 0.0127) | 1.52
+HIT   L0 seed 0                                        seeds-endpoint-findings.md:25  form='0.1988'
+        context: | pilot (seed 0) | 0.5683 (sd 0.0076) | 0.1988 (sd 0.0173) | 1.337 (sd 0.057) | 7.5× |
+HIT   L0 seed 1                                        seeds-endpoint-findings.md:26  form='0.2015'
+        context: | seed 1 | 0.5633 (sd 0.0316) | 0.2015 (sd 0.0215) | 1.342 (sd 0.103) | 7.6× |
+HIT   L0 seed 2                                        seeds-endpoint-findings.md:27  form='0.1447'
+        context: | seed 2 | 0.5738 (sd 0.0284) | 0.1447 (sd 0.0127) | 1.528 (sd 0.068) | 8.6× |
+HIT   corrected drop seed 0                            seeds-endpoint-findings.md:25  form='1.337'
+        context: ed 0) | 0.5683 (sd 0.0076) | 0.1988 (sd 0.0173) | 1.337 (sd 0.057) | 7.5× |
+HIT   corrected drop seed 1                            seeds-endpoint-findings.md:26  form='1.342'
+        context: eed 1 | 0.5633 (sd 0.0316) | 0.2015 (sd 0.0215) | 1.342 (sd 0.103) | 7.6× |
+HIT   corrected drop seed 2                            seeds-endpoint-findings.md:27  form='1.528'
+        context: eed 2 | 0.5738 (sd 0.0284) | 0.1447 (sd 0.0127) | 1.528 (sd 0.068) | 8.6× |
+HIT   x theta 7.5                                      seeds-endpoint-findings.md:25  form='7.5×'
+        context: 0.0076) | 0.1988 (sd 0.0173) | 1.337 (sd 0.057) | 7.5× |
+HIT   x theta 7.6                                      seeds-endpoint-findings.md:26  form='7.6×'
+        context: 0.0316) | 0.2015 (sd 0.0215) | 1.342 (sd 0.103) | 7.6× |
+HIT   x theta 8.6                                      seeds-endpoint-findings.md:27  form='8.6×'
+        context: 0.0284) | 0.1447 (sd 0.0127) | 1.528 (sd 0.068) | 8.6× |
+HIT   state drop seed 0                                seeds-endpoint-findings.md:42  form='+0.0018'
+        context: | pilot (seed 0) | +0.0018 | 0.0000 |
+HIT   state drop seed 1                                seeds-endpoint-findings.md:43  form='+0.0002'
+        context: | seed 1 | +0.0002 | 0.0000 |
+HIT   state drop seed 2                                seeds-endpoint-findings.md:44  form='+0.0769'
+        context: | seed 2 | **+0.0769** | 0.0000 |
+HIT   control seed 0                                   seeds-endpoint-findings.md:59  form='0.2877'
+        context: | pilot (seed 0) | 0.2877 (sd 0.0302) | 0.3227 | no |
+HIT   control seed 1                                   seeds-endpoint-findings.md:60  form='0.3057'
+        context: | seed 1 | 0.3057 (sd 0.0281) | 0.3227 | no |
+HIT   control seed 2                                   seeds-endpoint-findings.md:61  form='0.3195'
+        context: | seed 2 | 0.3195 (sd 0.0150) | 0.3227 | no |
+HIT   theta primary                                    seeds-endpoint-findings.md:6  form='0.1777'
+        context: θ = 0.1777 on the primary battery and carries no t
+HIT   theta state                                      seeds-endpoint-findings.md:51  form='0.1172'
+        context: 0.1172 and 0.0769 is well inside it — but it i
+HIT   table 2 sd intact s0                             seeds-endpoint-findings.md:25  form='0.0076'
+        context: | pilot (seed 0) | 0.5683 (sd 0.0076) | 0.1988 (sd 0.0173) | 1.337 (sd 0.057
+HIT   table 2 sd intact s1                             seeds-endpoint-findings.md:26  form='0.0316'
+        context: | seed 1 | 0.5633 (sd 0.0316) | 0.2015 (sd 0.0215) | 1.342 (sd 0.103
+HIT   table 2 sd intact s2                             seeds-endpoint-findings.md:27  form='0.0284'
+        context: | seed 2 | 0.5738 (sd 0.0284) | 0.1447 (sd 0.0127) | 1.528 (sd 0.068
+HIT   table 2 sd L0 s0                                 seeds-endpoint-findings.md:25  form='0.0173'
+        context: pilot (seed 0) | 0.5683 (sd 0.0076) | 0.1988 (sd 0.0173) | 1.337 (sd 0.057) | 7.5× |
+HIT   table 2 sd L0 s1                                 seeds-endpoint-findings.md:26  form='0.0215'
+        context: | seed 1 | 0.5633 (sd 0.0316) | 0.2015 (sd 0.0215) | 1.342 (sd 0.103) | 7.6× |
+HIT   table 2 sd L0 s2                                 seeds-endpoint-findings.md:27  form='0.0127'
+        context: | seed 2 | 0.5738 (sd 0.0284) | 0.1447 (sd 0.0127) | 1.528 (sd 0.068) | 8.6× |
+HIT   table 2 sd drop s0                               seeds-endpoint-findings.md:25  form='0.057'
+        context: 5683 (sd 0.0076) | 0.1988 (sd 0.0173) | 1.337 (sd 0.057) | 7.5× |
+HIT   table 2 sd drop s1                               seeds-endpoint-findings.md:26  form='0.103'
+        context: 5633 (sd 0.0316) | 0.2015 (sd 0.0215) | 1.342 (sd 0.103) | 7.6× |
+HIT   table 2 sd drop s2                               seeds-endpoint-findings.md:27  form='0.068'
+        context: 5738 (sd 0.0284) | 0.1447 (sd 0.0127) | 1.528 (sd 0.068) | 8.6× |
+HIT   table 2 sd control s0                            seeds-endpoint-findings.md:59  form='0.0302'
+        context: | pilot (seed 0) | 0.2877 (sd 0.0302) | 0.3227 | no |
+HIT   table 2 sd control s1                            seeds-endpoint-findings.md:60  form='0.0281'
+        context: | seed 1 | 0.3057 (sd 0.0281) | 0.3227 | no |
+HIT   table 2 sd control s2                            seeds-endpoint-findings.md:61  form='0.0150'
+        context: | seed 2 | 0.3195 (sd 0.0150) | 0.3227 | no |
+HIT   pilot 0.506                                      gate2-pilot-findings.md:20  form='0.506'
+        context: | **T_act** (primary, the action) | **0.506** | **0.182** | 0.2921 |
+HIT   pilot 0.182                                      gate2-pilot-findings.md:20  form='0.182'
+        context: | **T_act** (primary, the action) | **0.506** | **0.182** | 0.2921 |
+HIT   pilot drop 1.515                                 gate2-pilot-findings.md:41  form='1.515'
+        context: states the lesion's effect. The published drop of 1.515 sits
+HIT   ceiling 1.0000                                   ceiling-measurement-findings.md:30  form='1.0000'
+        context: | name-keyed lookup | **1.0000** |
+HIT   control pilot 0.3125                             control-learnability-pilot-findings.md:15  form='0.3125'
+        context: about a third to about two thirds.** It scored **0.3125**.
+HIT   control pilot bar 0.60                           control-learnability-pilot-findings.md:40  form='0.60'
+        context: | LEARNED, at or above **0.60** | −0.2875 | **−11.98** |
+HIT   control pilot $9.9                               control-learnability-pilot-findings.md:7  form='$9.9'
+        context: not touched. Cost: **$9.9** for the run plus **$0.067** to recove
+HIT   control pilot $0.067                             control-learnability-pilot-findings.md:7  form='$0.067'
+        context: not touched. Cost: **$9.9** for the run plus **$0.067** to recover the
+HIT   control pilot sd 0.0240                          control-learnability-pilot-findings.md:30  form='0.0240'
+        context: | **control (T_other)** | **0.3125** (sd 0.0240) | 0.2613 (sd 0.0258) |
+HIT   gate0 band 0.0060                                gate0-null-calibration-findings.md:59  form='0.0060'
+        context: | pilot seed-0 full | 0.0058 | 0.0060 | 0.0022 | 0.0000 | 0.1464 |
+HIT   gate0 band 0.0095                                gate0-null-calibration-findings.md:60  form='0.0095'
+        context: | seed-1 twin | 0.0000 | 0.0095 | 0.0000 | 0.0000 | 0.0000 |
+HIT   gate0 split ~0.73                                gate0-null-calibration-findings.md:87  form='0.73'
+        context: | pilot seed-0 full | T_si | 0.960 | 0.0060 | 0.731 | no |
+HIT   K0 at 0.25                                       gate0-null-calibration-findings.md:85  form='0.25'
+        context: tery fell to the non-binder level (0.35) | band ≥ 0.25? |
+HIT   non-binder 0.379                                 gate0-null-calibration-findings.md:62  form='0.379'
+        context: | seed-0 twin | 0.0181 | 0.3790 | 0.0033 | 0.0000 | floor (Δacc +0.003
+HIT   breakage 52%                                     gate0-null-calibration-findings.md:130  form='52%'
+        context: | rand-mean | rank 128 | 9.2% of raw, 52% of centred | 0.630 | 0.618 | 0.345 | 0.
+HIT   120 ablations                                    gate0-null-calibration-findings.md:34  form='120'
+        context: and 16 (16 is A3's rank cap), twenty seeds each: 120
+HIT   blind arm best 0.2750                            blind-arm-findings.md:47  form='0.2750'
+        context: | **7** | **0.2750** | 0.2441 | 0.0237 | **1.30 sd** |
+HIT   blind arm null 0.2441                            blind-arm-findings.md:47  form='0.2441'
+        context: | **7** | **0.2750** | 0.2441 | 0.0237 | **1.30 sd** |
+HIT   blind arm sd 0.0237                              blind-arm-findings.md:47  form='0.0237'
+        context: | **7** | **0.2750** | 0.2441 | 0.0237 | **1.30 sd** |
+HIT   blind arm 1.30 sd                                blind-arm-findings.md:47  form='1.30'
+        context: | **7** | **0.2750** | 0.2441 | 0.0237 | **1.30 sd** |
+HIT   blind arm bar 3                                  blind-arm-findings.md:172  form='3 sd'
+        context: the same 3 sd bar. This separates two readings the bl
+HIT   blind arm drop -0.0739                           blind-arm-findings.md:61  form='−0.0739'
+        context: | T_sr_rev | 0.842 | 0.895 | −0.0739 |
+HIT   blind arm best layer 7                           blind-arm-findings.md:47  form='| **7** |'
+        context: | **7** | **0.2750** | 0.2441 | 0.0237 | **1.30 s
+HIT   posctl margin -0.75                              blind-control-findings.md:22  form='−0.75'
+        context: | 3 | 0.2350 | 0.2532 | 0.0243 | −0.75 sd |
+HIT   posctl margin -0.54                              blind-control-findings.md:23  form='−0.54'
+        context: | 4 | 0.2400 | 0.2529 | 0.0238 | −0.54 sd |
+HIT   posctl margin -0.96                              blind-control-findings.md:24  form='−0.96'
+        context: | 5 | 0.2275 | 0.2530 | 0.0266 | −0.96 sd |
+HIT   posctl margin -0.24                              blind-control-findings.md:25  form='−0.24'
+        context: | **7** | **0.2475** | 0.2543 | 0.0283 | **−0.24 sd** |
+HIT   posctl margin -1.01                              blind-control-findings.md:26  form='−1.01'
+        context: | 8 | 0.2250 | 0.2502 | 0.0249 | −1.01 sd |
+HIT   posctl 0.440                                     blind-control-findings.md:44  form='0.440'
+        context: | T_act (primary) | 0.440 | 0.492 | **improved** | −0.3516 | 0.17
+HIT   posctl 0.492                                     blind-control-findings.md:44  form='0.492'
+        context: | T_act (primary) | 0.440 | 0.492 | **improved** | −0.3516 | 0.1777 |
+HIT   posctl 1.000                                     blind-control-findings.md:45  form='1.000'
+        context: | T_state | 1.000 | 0.858 | damaged | 0.1523 | 0.1172 |
+HIT   posctl 0.858                                     blind-control-findings.md:45  form='0.858'
+        context: | T_state | 1.000 | 0.858 | damaged | 0.1523 | 0.1172 |
+HIT   posctl +0.052                                    blind-control-findings.md:130  form='+0.052'
+        context: > **FACT TWO: the +0.052 movement is inside evaluation noise.**
+HIT   noise sd 0.0284                                  blind-control-findings.md:136  form='0.0284'
+        context: > | 400 | ~200 | 0.5621 | 0.0284 | 0.520 | 0.599 | **0.079** |
+HIT   noise range 0.079                                blind-control-findings.md:136  form='0.079'
+        context: 400 | ~200 | 0.5621 | 0.0284 | 0.520 | 0.599 | **0.079** |
+HIT   noise twelve draws                               blind-control-findings.md:131  form='twelve'
+        context: > rather than argued, twelve independent draws of the same evaluatio
+HIT   known-answer 1.0                                 known-answer-test-findings.md:12  form='1.0'
+        context: | probe accuracy | 1.0000 |
+HIT   known-answer null 0.1306                         known-answer-test-findings.md:13  form='0.1306'
+        context: | null mean | 0.1306 |
+HIT   sweep 135 tests                                  fitted-position-sweep-findings.md:20  form='135'
+        context: le positions, five layers and three checkpoints — 135
+HIT   sweep bar 3.38                                   fitted-position-sweep-findings.md:23  form='3.38'
+        context: 3.38 standard deviations. One test on one ch
+HIT   sweep posctl +34.0                               fitted-position-sweep-findings.md:57  form='+34.0'
+        context: | seed 1 | 0.5488 – 0.5575 | +34.0 to +40.9 sd | 0 of 200 |
+HIT   sweep posctl +53.7                               fitted-position-sweep-findings.md:56  form='+53.7'
+        context: | pilot | 0.5548 – 0.5670 | +37.5 to +53.7 sd | 0 of 200 |
+HIT   sweep MARGINAL 0.2770                            fitted-position-sweep-findings.md:84  form='0.2770'
+        context: _value` | 0.2688 +2.33 (2) | 0.2700 +2.39 (2) | **0.2770 +3.34 (0)** |
+HIT   sweep MARGINAL +3.34                             fitted-position-sweep-findings.md:84  form='+3.34'
+        context: | 0.2688 +2.33 (2) | 0.2700 +2.39 (2) | **0.2770 +3.34 (0)** |
+HIT   sweep +2.33                                      fitted-position-sweep-findings.md:84  form='+2.33'
+        context: | 9 `other_revision_value` | 0.2688 +2.33 (2) | 0.2700 +2.39 (2) | **0.2770 +3.34
+HIT   sweep +2.39                                      fitted-position-sweep-findings.md:84  form='+2.39'
+        context: other_revision_value` | 0.2688 +2.33 (2) | 0.2700 +2.39 (2) | **0.2770 +3.34 (0)** |
+HIT   sweep one in twenty-seven                        fitted-position-sweep-findings.md:41  form='27'
+        context: | seed 1 | 0.4800, 0.5250, 0.5350, 0.5275, 0.5150 | below 1e-15 |
+HIT   one in eleven                                    fitted-position-sweep-findings-CORRECTION-2026-09-20.md:13  form='eleven'
+        context: legible in about **one episode in eleven**. The same correction applies to
+HIT   refit margin 0.000484                            amendment-a3.md:639  form='0.000484'
+        context: on value, at layer 3. It is an accuracy margin of 0.000484, equivalent to
+HIT   refit 1.94 of 4,000                              amendment-a3.md:640  form='1.94'
+        context: 1.94 of 4,000 episodes — a margin computed i
+HIT   gate1 clean 0.5097                               gate1-curriculum-findings.md:35  form='0.5097'
+        context: curriculum text, plus episode-relative features | 0.5097 | [0.4867, 0.5316] | 0.9433 | PASS |
+HIT   gate1 clean 0.5259                               gate1-curriculum-findings.md:36  form='0.5259'
+        context: | (ii) input tensors | 0.5259 | [0.5032, 0.5498] | 1.0000 | PASS |
+HIT   gate1 control 0.9433                             gate1-curriculum-findings.md:35  form='0.9433'
+        context: e-relative features | 0.5097 | [0.4867, 0.5316] | 0.9433 | PASS |
+HIT   gate1 control 1.0000                             gate1-curriculum-findings.md:36  form='1.0000'
+        context: (ii) input tensors | 0.5259 | [0.5032, 0.5498] | 1.0000 | PASS |
+HIT   gate1 band [0.45, 0.55]                          gate1-curriculum-findings.md:39  form='0.45'
+        context: [0.45, 0.55], and both positive controls fire
+HIT   K2 margin 0.214                                  gate2-pilot-findings.md:54  form='0.214'
+        context: **The primary battery is 0.214 above the best score any ownership-blin
+HIT   K5 not reached                                   2026-09-25-a3-closure-tier2-dispositions.md:26  form='not reached'
+        context: 1. **K5 is not reached.** Hard kill K5 of `amendment-a3.md` ("
+HIT   A3 spend $46.75                                  compute-ledger.md:95  form='46.75'
+        context: asses. **After this run:** A3 cumulative about **$46.75 / $100**; programme about **$228.15 / $
+HIT   A3 stop $100                                     compute-ledger.md:84  form='$100'
+        context: .4 / $400 (A2) unchanged; **A3 cumulative $0.00 / $100 hard stop** |
+HIT   closure outcome sentence                         amendment-a3.md:wrapped  form='the registered comparison was undefined for every possible'
+        context: mendment A3, 2026-09-25 **Outcome: not testable — the registered comparison was undefined for every possible model. Separately, removing the ownersh
+HIT   closure 'Separately, removing the ownership-input channel' amendment-a3.md:566  form='Separately, removing the ownership-input channel reduced'
+        context: possible model. Separately, removing the ownership-input channel reduced
+HIT   closure public sentence 'integration degree was not measured' amendment-a3.md:741  form='integration degree was not measured'
+        context: and integration degree was not measured. The above-zero classification may
+HIT   C dev $1.47                                      compute-ledger.md:99  form='1.47'
+        context: 29.29 before it). Development line of $10: about $1.47 spent, about $8.53 left. Wave balance c
+HIT   C dev $0.47                                      compute-ledger.md:83  form='0.47'
+        context: 35 / T_sr_rev 0.00, flat ~0.3 from step 500; loss 0.4765).** The register-less control passed
+HIT   C dev $0.34                                      compute-ledger.md:83  form='0.34'
+        context: t ~10h + ~15h → **9.63h train / 10.16h pod (twin, 0.34 s/step) + 15.39h train / 21.20h pod (fu
+HIT   C dev $0.33                                      compute-ledger.md:82  form='0.33'
+        context: /T_state 1.0); s1 full NEVER BINDS (endpoint T_si 0.33/T_sr_rev 0.00 at step 102,095 — flat fr
+HIT   sharpness -0.089                                 successor-experiment-proposal-2026-10-07-v5.md:1138  form='−0.089'
+        context: to −0.089, so the answer put 0.218 of its weight
+HIT   sharpness -0.008                                 successor-experiment-proposal-2026-10-07-v5.md:1295  form='−0.008'
+        context: fell to −0.008, its separable route chose the right ag
+HIT   sharpness 1.947                                  successor-experiment-proposal-2026-10-07-v5.md:1444  form='1.947'
+        context: arm T's fell to 1.947 and still worked (0.942). The registere
+HIT   weight 0.218                                     successor-experiment-proposal-2026-10-07-v5.md:1138  form='0.218'
+        context: to −0.089, so the answer put 0.218 of its weight on the agent the model
+HIT   weight 0.247                                     successor-experiment-proposal-2026-10-07-v5.md:1442  form='0.247'
+        context: d −0.008 in arm M, so their answers put 0.218 and 0.247 of their
+HIT   weight 0.942                                     successor-experiment-proposal-2026-10-07-v5.md:1444  form='0.942'
+        context: arm T's fell to 1.947 and still worked (0.942). The registered procedure,
+HIT   reads 41 of 180                                  successor-experiment-proposal-2026-10-07-v5.md:1142  form='41 of 180'
+        context: 41 of 180 against 144 needed; on the toy, 180); i
+HIT   reads 45 of 180                                  successor-experiment-proposal-2026-10-07-v5.md:1299  form='45 of 180'
+        context: ownership in its running state (best piece 45 of 180) and returned no
+HIT   floor 144                                        successor-experiment-proposal-2026-10-07-v5.md:487  form='144'
+        context: , is right on 34 of 180 held-out episodes against 144
+HIT   toy C before 0.269                               successor-experiment-proposal-2026-10-07-v5.md:1537  form='0.269'
+        context: use 0.269, 0.233, 0.221 before; 0.285, 0.273, 0.2
+HIT   toy C before 0.233                               successor-experiment-proposal-2026-10-07-v5.md:1537  form='0.233'
+        context: use 0.269, 0.233, 0.221 before; 0.285, 0.273, 0.244 afte
+HIT   toy C before 0.221                               successor-experiment-proposal-2026-10-07-v5.md:1537  form='0.221'
+        context: use 0.269, 0.233, 0.221 before; 0.285, 0.273, 0.244 after); arm
+HIT   toy C after 0.285                                successor-experiment-proposal-2026-10-07-v5.md:1153  form='0.285'
+        context: fails it (route use 0.244 to 0.285 against a bar of 0.5). **Also ruled, 20
+HIT   toy C after 0.273                                successor-experiment-proposal-2026-10-07-v5.md:1537  form='0.273'
+        context: use 0.269, 0.233, 0.221 before; 0.285, 0.273, 0.244 after); arm M's
+HIT   toy C after 0.244                                successor-experiment-proposal-2026-10-07-v5.md:1153  form='0.244'
+        context: fails it (route use 0.244 to 0.285 against a bar of 0.5). **Also
+HIT   toy M before 0.071                               successor-experiment-proposal-2026-10-07-v5.md:1538  form='0.071'
+        context: stirred-in route loses 7 to 11 per cent (0.071, 0.090, 0.109 before; 0.090,
+HIT   toy M before 0.090                               successor-experiment-proposal-2026-10-07-v5.md:1303  form='0.090'
+        context: its stirred-in route hardly at all (0.090 to 0.106 after the fix), so the
+HIT   toy M before 0.109                               successor-experiment-proposal-2026-10-07-v5.md:1538  form='0.109'
+        context: ed-in route loses 7 to 11 per cent (0.071, 0.090, 0.109 before; 0.090,
+HIT   toy M after 0.106                                successor-experiment-proposal-2026-10-07-v5.md:121  form='0.106'
+        context: p's graphics chip computed them (0.172, 0.067 and 0.106 on arm F). Arm T's figures reproduce ex
+HIT   toy M after 0.100                                successor-experiment-proposal-2026-10-07-v5.md:1539  form='0.100'
+        context: 0.106, 0.100 after); arm T and arm M's separable rou
+HIT   dev checkpoint C 0.018                           successor-experiment-proposal-2026-10-07-v5.md:1540  form='0.018'
+        context: 1.000). On the real 10-million checkpoints: arm C 0.018, arm M 0.000 on both
+HIT   dev checkpoint T 0.924                           successor-experiment-proposal-2026-10-07-v5.md:1541  form='0.924'
+        context: routes, arm T 0.924. So on the toy the stirred-in route was
+HIT   ~$1.14 stop estimate                             successor-experiment-proposal-2026-10-07-v5.md:87  form='1.14'
+        context: 7: decision 3 (experiment C's first release, the $1.14 repair as an amendment, the stop condit
+HIT   sharpness 4.0                                    successor-experiment-proposal-2026-10-07-v5.md:52  form='4.0'
+        context: at 4.0 and not learned, after the four develop
+HIT   gate T 2,959                                     2026-10-09-reruns-10m-run-record.md:107  form='2,959'
+        context: | T | 2,959 and 2,980; seed passes | 0.999 | slot 0
+HIT   gate T 2,980                                     2026-10-09-reruns-10m-run-record.md:107  form='2,980'
+        context: | T | 2,959 and 2,980; seed passes | 0.999 | slot 0.986 | pas
+HIT   gate C 3,000                                     2026-10-09-reruns-10m-run-record.md:105  form='3,000'
+        context: Gate on learning, this seed (own, named-other, of 3,000; bar 790) | In-use check part A: weight
+HIT   gate M 2,577                                     2026-10-09-reruns-10m-run-record.md:109  form='2,577'
+        context: | M | 2,577 and 1,733; seed passes | 0.999 | stirre
+HIT   gate M 1,733                                     2026-10-09-reruns-10m-run-record.md:109  form='1,733'
+        context: | M | 2,577 and 1,733; seed passes | 0.999 | stirred-in items
+HIT   gate bar 790                                     2026-10-09-reruns-10m-run-record.md:105  form='790'
+        context: rning, this seed (own, named-other, of 3,000; bar 790) | In-use check part A: weight on the t
+HIT   part A 0.999                                     2026-10-09-reruns-10m-run-record.md:107  form='0.999'
+        context: | T | 2,959 and 2,980; seed passes | 0.999 | slot 0.986 | passed | reading 0.0000
+HIT   route use T 0.986                                2026-10-09-reruns-10m-run-record.md:107  form='0.986'
+        context: | T | 2,959 and 2,980; seed passes | 0.999 | slot 0.986 | passed | reading 0.0000 (states (0,)
+MISS  route use T 2,918 (body cites run record)        2026-10-09-reruns-10m-run-record.md  tried=['2,918', '2918']
+HIT   route use T 2,918 (paper also cites stop ruling) 2026-10-12-experiment-c-stop-ruling.md:27  form='2,918 of 2,959'
+        context: | T (separable) | 0.986 (2,918 of 2,959) | passes |
+MISS  route use C 0 of 3,000 (body cites run record)   2026-10-09-reruns-10m-run-record.md  tried=['0 of 3,000', '0/3000', '0 / 3000', '0/3,000']
+HIT   route use C 0 of 3,000 (stop ruling)             2026-10-12-experiment-c-stop-ruling.md:28  form='0 of 3,000'
+        context: | C (stirred-in) | 0.000 (0 of 3,000) | misses |
+HIT   route use M 0.024                                2026-10-09-reruns-10m-run-record.md:109  form='0.024'
+        context: and 1,733; seed passes | 0.999 | stirred-in items 0.024; separable items 0.000 | failed | no ve
+MISS  route use M 33 of 1,387                          2026-10-09-reruns-10m-run-record.md  tried=['33 of 1,387', '33/1387', '1,387', '1387']
+MISS  route use M 0 of 1,190                           2026-10-09-reruns-10m-run-record.md  tried=['0 of 1,190', '0/1190', '1,190', '1190']
+HIT   route use M 33 of 1,387 (stop ruling)            2026-10-12-experiment-c-stop-ruling.md:29  form='33 of 1,387'
+        context: (half-and-half) | 0.024 on its stirred-in items (33 of 1,387); 0.000 on its separable items (0 of 1,
+HIT   route use M 0 of 1,190 (stop ruling)             2026-10-12-experiment-c-stop-ruling.md:29  form='0 of 1,190'
+        context: tems (33 of 1,387); 0.000 on its separable items (0 of 1,190) | misses, on both halves |
+HIT   arm T reading 0.0000                             2026-10-09-reruns-10m-run-record.md:107  form='0.0000'
+        context: ed passes | 0.999 | slot 0.986 | passed | reading 0.0000 (states (0,) at the action position, 8
+HIT   108,919 steps                                    2026-10-09-reruns-10m-run-record.md:40  form='108,919'
+        context: | Machine | Created | Deleted | Life | Training (108,919 steps) |
+HIT   585,548,544 tokens                               2026-10-09-reruns-10m-run-record.md:47  form='585,548,544'
+        context: Each trained to its last step (108,919 steps, 585,548,544 tokens) and wrote
+HIT   spend $1.3032                                    2026-10-09-reruns-10m-run-record.md:67  form='1.3032'
+        context: tive figure):** 1.0951 billed hours at $1.19 = **$1.3032** (M $0.5045, T $0.3980, C $0.4007).
+HIT   spend M $0.5045                                  2026-10-09-reruns-10m-run-record.md:67  form='0.5045'
+        context: ** 1.0951 billed hours at $1.19 = **$1.3032** (M $0.5045, T $0.3980, C $0.4007).
+HIT   spend T $0.3980                                  2026-10-09-reruns-10m-run-record.md:67  form='0.3980'
+        context: illed hours at $1.19 = **$1.3032** (M $0.5045, T $0.3980, C $0.4007).
+HIT   spend C $0.4007                                  2026-10-09-reruns-10m-run-record.md:67  form='0.4007'
+        context: at $1.19 = **$1.3032** (M $0.5045, T $0.3980, C $0.4007).
+HIT   rate $1.19                                       2026-10-09-reruns-10m-run-record.md:64  form='1.19'
+        context: f about $1.14 all used it); the vendor charged **$1.19 an hour**, as its creation record for e
+HIT   rate $0.99                                       2026-10-09-reruns-10m-run-record.md:28  form='0.99'
+        context: HARD_CAP_USD=1.00 RATE_PER_HOUR_USD=0.99 RUN_SUBDIR=<run>
+HIT   ratio 1.000                                      2026-10-09-reruns-10m-run-record.md:98  form='1.000'
+        context: **ratio A, billed hours against machine lifetime, 1.000 on every machine** (M 0.4239 h billed a
+HIT   spend $1.3032 in ledger                          compute-ledger.md:100  form='1.3032'
+        context: amme about **$230.14 of $450**. Wave of three: **$1.3032 billed** against about $1.14 approved,
+HIT   programme $230.94 in ledger                      compute-ledger.md:102  form='230.94'
+        context: ked at 1.007 | after this run: programme about **$230.94 of $450**. Wave of three: **$1.3032 bil
+HIT   programme ceiling $450 in ledger                 compute-ledger.md:15  form='450'
+        context: ogramme ceiling was raised again, from $400 to **$450**, on
+HIT   ruled stop sentence                              2026-10-08-december-result-restatement-rulings.md:wrapped  form='the built arms as designed are not references; the measure was not reached'
+        context: or an early stop of experiment C is confirmed:** "the built arms as designed are not references; the measure was not reached." That ending is a registered result re
+HIT   accept the stop                                  2026-10-12-experiment-c-stop-ruling.md:62  form='accept the stop'
+        context: **"accept the stop"**, on 2026-10-12, in reply to the inde
+HIT   C stays stopped                                  2026-10-17-experiment-c-stays-stopped-ruling.md:1  form='stays stopped' [origin/main]
+        context: # Ruling: experiment C stays stopped at its registered ending; option (d) is
+HIT   relabel sentence                                 2026-10-07-two-sided-question-rulings.md:wrapped  form='the test could not discriminate routing from a centre; the cheaper account was taken in advance'
+        context: m "the located structure is dialogue routing" to "the test could not discriminate routing from a centre; the cheaper account was taken in advance", in STATUS.md, the paper draft and the
+
+160 hit, 4 miss, 164 figures

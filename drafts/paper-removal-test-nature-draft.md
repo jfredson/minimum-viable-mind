@@ -1,8 +1,15 @@
 # No removable center: a pre-registered ablation test of self-indexed integration in a large language model
 
-*DRAFT v0.2 (2026-08-04). Repo-internal. This draft has NOT passed the Voice
-Calibration Protocol or the Cold Reader passes and does not leave this repo
-until it does (per `CLAUDE.md` §Public-facing writing). Author list and
+*DRAFT v0.3 (2026-10-17; v0.2 was 2026-08-04). Repo-internal. The sections
+added in v0.3 (the two constructed-line results sections, their Methods
+paragraphs and the abstract's new sentences) were run through the Voice
+Calibration Protocol and the Cold Reader pass on 2026-10-17 by the session
+that wrote them (records beside this file:
+`2026-10-17-voice-calibration-pass-explainer-and-paper-v0.3.md` and
+`2026-10-17-cold-reader-report-explainer-and-paper-v0.3.md`), and checked by
+a separate session (`docs/reviews/2026-10-17-paper-fold-check-claude-code.md`); the v0.2 text
+has NOT, and the draft does not leave this repo until the whole of it does
+(per `CLAUDE.md` §Public-facing writing). Author list and
 affiliations are placeholders; Figs. 1–3 artwork remains placeholder, Fig. 4
 artwork is generated (`experiments/01-self-indexing-removal-test/figures/`).
 All point estimates are taken verbatim from the registered findings documents
@@ -19,6 +26,93 @@ decision rule (quoted as committed in the Results) and the rest of the
 argument are unchanged in this pass; the title, the Discussion and the
 "supports the router reading twice over" paragraph still read the old label
 and are left for John.*
+
+*Dated note, 2026-10-17 (Pacific): version 0.3 folds in the constructed
+line. Two results sections are added after "The registered verdict":
+experiment 06 (MVM-0a, registered 2026-08-07, with Amendment A3, registered
+2026-09-15 and closed 2026-09-25 as "not testable"), and experiment C (the
+successor, registered 2026-10-09 and stopped 2026-10-12 at its registered
+stop S4b). Each gives the registered design, what was pre-stated, what came
+out, the nulls and the kills, with every figure copied from the findings
+file cited beside it; the Methods carry a paragraph for each; the abstract
+gains four sentences. Nothing that was not registered is called registered:
+every unregistered run is labelled so where it appears. Two further things
+this note records. First, the disclosure decision 2 of 2026-10-07 requires:
+the founding wager, the premise on which every result here bears on
+experience, was adopted on 2026-09-20, after experiments A (this removal
+test), B (Amendment A3) and D (retained independence) had run; it is stated
+in the Methods under "Registration and audit trail". Second, the Discussion
+paragraph "The constructive turn", which said the follow-on programme's
+pre-registration was "in preparation", was false by 2026-10-17 and is
+replaced by a paragraph that reports what that programme did; the v0.2 text
+of the replaced paragraph is kept in this note's last item so John can
+restore any of it.*
+
+*The three places John reserved on 2026-10-09 are still his, and none is
+changed here. For each, a proposed wording is offered in this note and not
+applied:*
+
+*1. The title. It still reads "No removable center: a pre-registered
+ablation test of self-indexed integration in a large language model". Two
+things have changed under it: the relabel (the test could not discriminate
+routing from a centre, which is weaker than "no removable center"), and the
+paper now reports three registered designs, not one. Proposed: "Instruments
+that can lose: a registered removal test, a constructed self-index and a
+successor stopped by its own rule, in the measurement of self-indexed
+integration". A shorter alternative: "Self-indexed integration, three
+registered attempts: removal, construction and a stopped successor".*
+
+*2. The "supports the router reading twice over" paragraph in "The
+registered removal test" (from "The damage pattern independently supports
+the router reading twice over" to "Methods §Statistics)"). It argues for
+the old label from the damage pattern. Proposed replacement for its first
+sentence and its two "First"/"Second" clauses: "The damage pattern is
+consistent with the router reading and, under the reassessment of
+2026-10-07, equally with a centre woven through the whole act. The
+self-irrelevant battery dropped hardest (0.219), which the router account
+predicts, since turn structure is woven into everything, and which a centre
+on which every task depends would also predict. The damage is
+category-concentrated: six of the seven flipped self-irrelevant items are
+multi-step-reasoning items (6 of 8 in that category, against 1 of 24
+elsewhere), the profile of disruption to reasoning-heavy,
+dialogue-state-dependent computation, which neither account rules out.
+These data do not separate the two readings, and the registered control's
+margin (+0.033, 95% CI −0.133 to +0.200) is one the data cannot tell from
+nothing." The bootstrap-widening clause and its Methods pointer stay.*
+
+*3. The Discussion. Its first paragraph still says "the most locatable
+'self' structure is conversational infrastructure", and its third says the
+headline signature "was voided by a control committed before any data
+existed". Under the relabel the first is too strong and the second is
+right as far as it goes. Proposed for the first: "in an aligned 8B
+transformer, the most locatable 'self' structure could not be told from
+conversational infrastructure by the registered control, and the
+report-generating self-capacity is robust to every subtraction
+interpretability can currently aim at it." Proposed addition to the third,
+after "before any data existed": "and the control's own margin, re-read
+two months later, turned out to span zero; the programme reports both the
+verdict as registered and the reassessment, dated, and does not replace one
+with the other." The Discussion's other paragraphs (interpretability
+practice, limitations) read unchanged by the fold; John may want a
+sentence in "Limitations" saying that the constructed line's localization
+instruments are unvalidated at 30 million parameters
+(`experiments/06-mvm-0a-constructed-self-index/blind-arm-findings.md`,
+John's ruling of 2026-09-16), which the new results section states.*
+
+*4. The replaced v0.2 paragraph, verbatim, so nothing is lost: "**The
+constructive turn.** The registered fork this result routes: build the
+component measurement failed to find. The follow-on program
+(pre-registration in preparation) trains small systems in which a
+self-index state is architecturally explicit and the training distribution
+*requires* binding to it while decorrelating it from turn syntax — the
+router confound designed out at the curriculum level — and then re-runs
+this experiment's instruments unchanged. The wager inverts: the constructed
+system predicts H_center (specifically, self-relevant binding degrading
+ahead of the syntax control), and can lose if the network learns to route
+around its own designated center — which would itself be a finding about
+whether self-indexing can be centralized at all." The sentence on the
+parallel behavioral programme (retained independence) that followed it in
+v0.2 is kept in the new paragraph unchanged.*
 
 ---
 
@@ -54,7 +148,21 @@ markedly while the localized geometry was stable: alignment edits the policy,
 not the geometry. In this model class, self-indexed integration is not
 findable as a removable center — either it is implemented diffusely beyond
 our instruments' carving, or it is absent and must be constructed. Floor
-claims about machine consciousness can be made to lose.
+claims about machine consciousness can be made to lose. We then took the
+constructive route. A 30-million-parameter transformer trained from scratch
+on a task that cannot be done without knowing which agent it is learned the
+task on three seeds and lost it when its authorship input was removed, but
+the registered comparison against a matched non-self control was undefined
+for every possible model, and the amendment closed as not testable; its
+localization instruments found nothing, which the registration reads as
+instrument failure, not absence. A registered successor built hand-set
+reference systems to validate a measure of how much of an act is organised
+around the ownership answer; its pre-stated verification of those systems
+failed (route use 0.986, 0.000 and 0.024 against a bar of 0.5) and it
+stopped at its registered stop: the built arms as designed are not
+references; the measure was not reached. What the programme delivers is the
+form: three registered designs with controls, two of which ended at their
+own stop rules, and a complete public ledger of spend and rulings.
 
 ---
 
@@ -269,6 +377,384 @@ program-routing fact: **self-indexed integration, if it is to be measured in
 machine systems, must first be constructed — it is not findable as a removable
 center in this model class with these instruments.**
 
+### The constructed line: experiment 06 and Amendment A3
+
+*Every figure in this section and the next is copied from the findings file
+cited beside it, in
+`experiments/06-mvm-0a-constructed-self-index/` unless the path says
+otherwise. Runs that were not registered are labelled unregistered where
+they appear.*
+
+**Registered design.** Experiment 06 (MVM-0a in the record) was registered
+on 2026-08-07 (`pre-registration.md`): a transformer trained from scratch
+on synthetic dialogue among four agents who assign values to items and later
+revise them, with a designated self-index, the "register", a per-agent state
+vector injected into every layer, and a register-less twin as control. Its
+question was registered as Q5 of the post-removal-test roadmap, whether a
+self-index can be constructed to be load-bearing, and expressly not as a
+second run of the removal test, because a model of this kind has no
+judgeable self-report channel and so cannot reach the "report subtracted,
+processing intact" branch (`pre-registration.md`, "Scope"). Two registered
+amendments preceded the runs: Amendment A1 (2026-08-09) replaced on-policy
+fill with enactment through an acting channel, a learned projection of the
+model's own previous state injected at the positions where it acts, after
+the registered cue-detector gate failed on the v1.0 pipeline; Amendment A2
+(2026-08-16) fixed the scale at 30 million parameters after a 10-million
+pilot failed ceiling and a 30-million pilot learned (endpoint T_sr 1.00,
+T_si 0.93, T_state 1.00, T_syntax 1.00, T_sr_rev 1.00; `pre-registration.md`,
+Amendment A2, from `pilot-a1-30m-findings.md`), and raised the compute cap
+from $200 to $400.
+
+**What came out of the registered design.** The register carried nothing.
+In every trained register-bearing checkpoint its writer emitted the same
+vector whatever it was given, with an across-episode spread of 7.6 × 10⁻⁸
+on the seed-0 model, 2.8 × 10⁻⁸ on seed 1 and 5.9 × 10⁻⁸ on seed 2
+(`register-saturation-findings.md`); an untrained model at the same
+configuration does not behave this way, so the constancy was trained in.
+Removing the register's injection entirely left every battery at or above
+0.99 except T_si, which went 0.93 to 0.94 on the registered evaluation seed
+(`amendment-a3.md`, section 1, quoting `register-lesion-findings.md`,
+thread 4), and the register-less twin
+passed the same batteries at ceiling (T_si 0.96, T_sr_rev 1.00;
+`twin-binding-anomaly.md`). The registered five-seed run was halted at four
+of nine launches on the pre-stated trigger in that file (`amendment-a3.md`,
+the ratified rulings of 2026-09-15). John ruled on 2026-09-16 that an
+installed constant is neither a report nor a centre, so the register-lesion
+null is uninformative about the removal test and is not its predicted
+negative (`amendment-a3.md`, the annotation to section 1).
+
+**Amendment A3, registered 2026-09-15.** The design was inverted: no
+register is trained, and the task is built so that it cannot be done
+without ownership. Every agent revises one earlier assignment by a fixed
+rule applied to its own earlier value, so a solver that does not know which
+earlier assignment was its own is capped at a measured ownership-blind
+ceiling of 0.2921 on the primary battery (T_act, the model's own revision
+action) and the registered metric divides each drop by the distance from
+baseline to that ceiling rather than to chance (`amendment-a3.md`,
+registration revisions 3 and 4). The pre-stated signatures were: the
+registered prediction, that ablating an acquired ownership subspace (L1)
+degrades T_act above a null-calibrated threshold θ and ahead of a matched
+named-other control (T_other) by δ, with a state control (T_state) and a
+syntax control unaffected and a causal swap probe moving the action with the
+patched identity; a self-reference-only branch (the subspace decodable and
+patchable but its ablation inert); a generic-binding branch (the control
+degrades as much as the primary); a tag branch; and a diffuse branch, in
+which the wire lesion (L0, zeroing the acting channel) collapses T_act but
+no subspace at rank 16 or below beats the controls (`amendment-a3.md`,
+section 3.5). Seven hard kills were registered (K0 to K7, section 4.2), and
+the experiment inherited the pre-registration's loss condition that if no
+non-self cross-turn control can be built that is state-requiring at
+ceiling, "the honest report is 'not testable'" (`pre-registration.md`,
+"Loss conditions"). Thresholds were locked by John on 2026-09-16 before any
+localized read: θ = 0.1777 on the primary battery, 0.1172 on the state
+battery, none on the control (`seeds-endpoint-findings.md`, header).
+
+**What was found.** Three seeds trained from scratch (the pilot at $13.92
+and two further seeds) all learned the task and all lost it under the wire
+lesion (Table 2). Every primary-battery drop cleared the locked threshold by
+seven to nine times, and a drop above 1.0 means the lesion took the battery
+below what an ownership-blind solver reaches. The syntax battery did not
+move on any checkpoint; the state battery moved 0.0769 on seed 2, forty
+times the other seeds and inside its 0.1172 threshold, reported because a
+table without it would flatter (`seeds-endpoint-findings.md`). The ownership input is
+load-bearing for the primary battery. That is a fact about an input channel
+wired in by design, not about a structure the network built: the lesion
+removes a sense organ (`amendment-a3.md`, section 3.1).
+
+**Table 2 | Amendment A3, registered endpoint on three seeds.** Means across
+six evaluation seeds at n = 800, intact and lesioned paired within seed.
+Corrected drop = (intact − lesioned) / (intact − 0.2921). Threshold θ =
+0.1777 (primary), 0.1172 (state). Source: `seeds-endpoint-findings.md`.
+
+| seed | T_act intact | T_act under L0 | corrected drop | vs θ | T_state drop | T_syntax drop | T_other intact |
+|---|---|---|---|---|---|---|---|
+| pilot (seed 0) | 0.5683 (sd 0.0076) | 0.1988 (sd 0.0173) | 1.337 (sd 0.057) | 7.5× | +0.0018 | 0.0000 | 0.2877 (sd 0.0302) |
+| seed 1 | 0.5633 (sd 0.0316) | 0.2015 (sd 0.0215) | 1.342 (sd 0.103) | 7.6× | +0.0002 | 0.0000 | 0.3057 (sd 0.0281) |
+| seed 2 | 0.5738 (sd 0.0284) | 0.1447 (sd 0.0127) | 1.528 (sd 0.068) | 8.6× | +0.0769 | 0.0000 | 0.3195 (sd 0.0150) |
+
+The pilot's published endpoint on the default evaluation seed read 0.506
+intact and 0.182 lesioned, a corrected drop of 1.515; that draw flattered
+twice, and the spread above is the figure to quote
+(`gate2-pilot-findings.md`, annotation of 2026-09-17).
+
+**The registered comparison was never computable.** The control battery's
+ceiling was recorded at registration as 0.3227 from a reference solver that
+never read the marker the control question supplies; this was registered as
+a defect on 2026-09-17 (`amendment-a3.md`, registration revision 4, the
+registered defect note; `ceiling-defect-2026-09-17.md`). The ceiling was
+then measured (an unregistered measurement, method committed first): two
+independent ownership-blind solvers, a hand-written name-keyed lookup and a
+learned attack, both score 1.0000 on the control
+(`ceiling-measurement-findings.md`). Under the registered floor rule a
+battery's drop is defined only when baseline minus ceiling is at least 0.10,
+so the control's drop was undefined for every possible model, including one
+scoring a perfect 1.0, from the day the clause was registered. The reason
+generalises: any control fully determined by the visible episode and not
+requiring ownership has an ownership-blind ceiling of 1.0 by construction,
+and a ceiling-corrected metric is incompatible with such a control. The
+control also did not learn: 0.2877, 0.3057 and 0.3195 on the three seeds
+against the recorded 0.3227 (Table 2), and 0.3125 (sd 0.0240) in an
+unregistered diagnostic that quadrupled its per-row gradient weight, against
+John's pre-stated boundary of 0.60 for "learned"
+(`control-learnability-pilot-findings.md`, $9.9 plus $0.067).
+
+**The nulls.** Four localization runs bear on where ownership sits, and
+none localizes it. (i) The null calibration that Amendment A3 ordered as its
+first gate, run at $0 on the five pre-A3 checkpoints with the script
+committed before it read any checkpoint: the 95th-percentile chance-corrected
+drop under 120 content-blind residual ablations was 0.0060 and 0.0095 on
+T_si for the two checkpoints that had learned the task, against a split of
+about 0.73 between learners and non-learners; the same operator breaks the
+models in an orderly way when pushed past the registered rank cap (both
+binders fall apart at 52% of the mean-centred residual), so the narrow band
+is robustness, not a dead instrument (`gate0-null-calibration-findings.md`).
+K0 was applied by John at 0.25, scoped to checkpoints where a verdict is
+read, and did not fire; the one checkpoint exceeding 0.25 (0.379) was a
+near-chance non-binder. The number was set after the measurement was seen,
+which the ruling records.
+
+
+(ii) The registered blind-localization arm, run
+on the seed-0 register-bearing checkpoint with the pipeline forbidden to
+name any register internal and both outcomes committed before output: own-
+agent identity was not decodable at any probed layer (best layer 7, accuracy
+0.2750 against a permutation null of 0.2441 with sd 0.0237, a margin of 1.30
+sd against a stated bar of 3; chance 0.25), and ablating the best-layer
+subspace moved no battery beyond noise (largest drop −0.0739, an increase).
+Its pre-stated sub-bin, "instrument failure to locate", stands; its
+interpretation was superseded the same day when the unblinded probe of the
+register found it empty, so the arm had no valid target. John ruled that
+"not flagged" from probes at chance is weak evidence of specificity, "since
+an instrument that locates nothing cannot cry wolf", and that the correct
+scope is that the localization stack is unvalidated at 30 million
+parameters, not that experiment 1's null was instrument blindness
+(`blind-arm-findings.md`).
+
+
+(iii) An **unregistered** positive control ran
+the same blind pipeline on the A3 pilot checkpoint, where ownership is
+measured to matter: every probe sat below its own permutation null (margins
+−0.75, −0.54, −0.96, −0.24 and −1.01 sd at layers 3, 4, 5, 7 and 8), and the
+ablation of the carved subspace improved the primary battery (0.440 to
+0.492) and damaged the state battery (1.000 to 0.858). By the letter of its
+pre-stated cells the verdict is NOT TESTABLE (the probe failed and the
+absolute drop reached θ); a signed reading, INSENSITIVE, sits beside it as a
+diagnostic only, by John's ruling that no rule is rewritten after the data.
+The +0.052 movement is inside measured evaluation noise (twelve draws at 400
+episodes: sd 0.0284, range 0.079), and a known-answer test later passed the
+pipeline's shared machinery at ceiling (accuracy 1.0 against a null of
+0.1306) without exercising the ablation path (`blind-control-findings.md`;
+`known-answer-test-findings.md`).
+
+
+(iv) An **unregistered** fitted linear
+read at eleven positions and five layers on all three A3 seeds, method and
+cells committed before output, found the register index (the four-way rank
+of the model's marker, a proxy for the registered marker-word target)
+nowhere in 135 discovery tests at a family-adjusted bar of 3.38 sd. Its
+positive control held on every checkpoint (margins +34.0 to +53.7 sd at the
+position where the answer is derivable from the input) and its negative
+control showed no leak. One test reached MARGINAL, at the *other* agent's
+revision value on seed 2 (accuracy 0.2770, +3.34 sd), the highest testable
+position on all three checkpoints (+2.33, +2.39, +3.34), recorded as an
+open item and not a result (`fitted-position-sweep-findings.md`). The
+findings' sensitivity figure, one episode in twenty-seven, was corrected on
+John's ruling to about **one episode in eleven**, recalibrated against the
+measured ceiling of the read; the correction is cited wherever the figure
+is used (`fitted-position-sweep-findings-CORRECTION-2026-09-20.md`). A
+standardised refit of the same states produced one nominal crossing at the
+same other-agent position, an accuracy margin of 0.000484, equivalent to
+1.94 of 4,000 episodes, recorded as a sub-bar pattern measured twice
+(`amendment-a3.md`, closure block, citing `standardised-refit-findings.md`
+and the check of 2026-09-25). Causal patching, which section 3.2 of the
+amendment requires alongside the probe before anything counts as localized
+or absent, was never built for this design.
+
+**The kills.** K0 did not fire (above). K1 (the cue-detector gates failing
+on the new grammar) did not fire: the registered grammar passed gates (i)
+and (ii) at n = 4,000 inside the registered band of [0.45, 0.55] (clean
+0.5097 and 0.5259, positive controls 0.9433 and 1.0000;
+`gate1-curriculum-findings.md`). K2
+(unlearnable) did not fire: the pilot's primary battery sat 0.214 above the
+ownership-blind ceiling on its default draw (`gate2-pilot-findings.md`). K5,
+probe-patching convergence failing on all three seeds, was **not reached**:
+patching was never run, so the test of agreement between two instruments
+never ran, and the closure does not report a measured K5 failure; the term
+*not testable (localization)* rests on section 3.2's convergence
+requirement instead. This reading of the registered kill list is John's,
+ruled 2026-09-25 (`docs/rulings/2026-09-25-a3-closure-tier2-dispositions.md`,
+item 1).
+
+**Closure.** On 2026-09-25, after the closure text had passed one inside
+review, two outside reviews by frontier models of other families (Gemini
+3.1 Pro and ChatGPT 6 Astra; fifteen serious findings, none fatal, all
+closed by rewording) and a reviewer-owned check, Amendment A3 closed under the registered loss condition: **"not
+testable — the registered comparison was undefined for every possible
+model. Separately, removing the ownership-input channel reduced
+primary-battery accuracy on all three trained seeds"** (`amendment-a3.md`,
+"Closure of Amendment A3, 2026-09-25"). The registered reading of the nulls
+is instrument failure, not absence: ownership-channel dependence was
+established; recovery of an acquired internal representation by this stack
+was not; and what may not be said is that the structure is absent, or that
+these nulls make it less likely, because every number in these runs is
+conditional on the stack being able to recover such a structure. The
+sentence the experiment supports in public is the closure's: removing the
+ownership-input channel reduced primary-battery accuracy on three trained
+seeds; the matched comparison was unavailable; whether an acquired internal
+ownership structure exists was not established; and integration degree was
+not measured. Under the ruling of 2026-09-20 that a load-bearing self-index
+is a centre at the bottom of the project's gradient
+(`docs/rulings/2026-09-20-center-as-degree.md`), these checkpoints are
+classified above zero in that weaker sense only, and the classification may
+follow the sentence only when expressly attributed to that ruling. Amendment
+A3 spent about $46.75 against its $100 stop (`compute-ledger.md`, the second
+2026-09-25 row). Open items carried on the closure: the marker-word target
+unread by a sensitive instrument (about seventy processor-hours, dropped
+before the run, not because of anything a run found); causal patching,
+unwritten; the
+mid-episode re-indexing probe, the registered discriminator for a pointer
+against a carried binding, unrun; the lesion half of the registered
+other-agent control, unavailable because no subspace was found to ablate.
+
+### The successor: experiment C stopped at its own registered stop
+
+**Registered design.** The closure left the successor one question, as
+restated by the December-result roadmap: how much of the act is organised
+around the ownership answer, an axis on which no measure existed, with
+whether a centre is present no longer the question asked. Experiment C was registered on 2026-10-09 by
+John's registration commit, at frozen code `6c47c56` in
+`experiments/08-successor-degree/src/`, as version 5 of its proposal
+(`docs/successor-experiment-proposal-2026-10-07-v5.md`;
+`docs/rulings/2026-10-09-registration-commit-ruling.md`), after a full
+measurement rehearsal on toy models, two tiers of review at each of two
+gates, and every open item ruled. Four arms on one matched-role revision
+task: arm T, the ownership answer kept in a separable slot that can be
+swapped on its own; arm C, the answer stirred multiplicatively into every
+layer; arm M, a mixture of the two by item; arm F, an ordinary freely
+trained transformer. Development size 10 million parameters; registered
+size 30 million. The measure: transplant the part of the internal state that
+carries who is acting from one run into a matched run and read whether the
+action follows the transplanted identity, against transplanting the whole
+state at the same sites; the gap, as a share of the room the whole-state
+transplant had to move, is the reading, made only where the transplanted
+piece has been shown to hold its label at a pre-stated floor, so that an
+empty instrument returns no verdict rather than a number (section 0 of the
+registration). Eight outcome terms were registered, renamed on John's
+ruling of 2026-10-07 to what they measure: "instrument discriminates
+specified constructed mechanisms" in place of "metric validated", every
+such term followed in the same sentence by "on these constructed systems,
+for this intervention procedure" (section 3). The whole experiment was
+ruled to be written up as instrument research, whatever it returned.
+
+**What was pre-stated about the built arms, and why.** Four unregistered
+development runs at 10 million parameters (2026-10-04, $1.47 in all: $0.4744,
+$0.3347, $0.3341 and $0.3223 for arms M, T, C and F; `compute-ledger.md`,
+the four 2026-10-04 rows) were stated in advance, in version 4 of the proposal (not registered),
+as a pipeline and throughput check, not a learnability verdict. They showed that the built
+arms' ownership answer had gone flat under training: the learned sharpness
+that makes that answer decisive, initialised at 4.0, fell to −0.089 in arm C
+and −0.008 in arm M, so their answers put 0.218 and 0.247 of their weight on
+the agent the model actually was, where a flat answer puts 0.25; arm T's
+fell to 1.947 and still worked (0.942). The registered procedure,
+independently, found no readable ownership in arm C's or arm M's running
+state (best whole reads 41 and 45 of 180 against a floor of 144) and
+returned no verdict on both (section 5.6 of the registration, citing the
+check of the development runs). The repair was written into the
+registration as an amendment before the commit, on John's rulings of
+2026-10-07 and 2026-10-08: the sharpness becomes a stored value of 4.0 that
+training cannot move, so the three built arms are **hand-set references**
+and no longer systems "known by construction"; and before any larger spend
+the three built arms are retrained once at 10 million parameters and
+verified by an in-use check with two parts, both bars stated before any
+figure was seen and ruled fixed on 2026-10-08: part A, the mean weight the
+built-in answer puts on the true agent at the own-directed action is at
+least 0.9; part B, the share of right own-directed answers lost when the
+built-in answer is pointed at another agent, the *route use*, is at least
+0.5 on every built route. A failed verification is **stop S4b**: experiment
+C stops before the free-arm run at registered size, the rest of the first
+release is not spent, and the ending is reported in the words ruled on
+2026-10-08, "the built arms as designed are not references; the measure was
+not reached", as a registered ending of experiment C reached by its own
+stop rule and not a failure of the year (sections 5.6 and 11;
+`docs/rulings/2026-10-08-december-result-restatement-rulings.md`, decision
+2; `docs/rulings/2026-10-08-verification-bar-ruling.md`). The registration
+stated its own prior: on the toy models part B failed every arm C and arm M
+seed before and after the fix (arm C route use 0.269, 0.233, 0.221 before
+and 0.285, 0.273, 0.244 after; arm M's stirred-in route 0.071, 0.090, 0.109
+before and 0.090, 0.106, 0.100 after; arm T and arm M's separable route
+1.000), and on the development checkpoints arm C read 0.018, arm M 0.000 on
+both routes and arm T 0.924, so "with the bar at 0.5 as coded, the reruns
+would very likely fail the verification and experiment C would stop at
+about $1.14" (section 5.6). Three alternatives to the 0.5 bar were offered
+and declined by John on 2026-10-08; one of them, rebuilding arms C and M so
+the built route is their only route, stays named as the route to a real
+reference if the stop fired, needing its own ruling.
+
+**What came out.** The three reruns ran on 2026-10-09 (step 4b of the
+registered order) on John's go, "Approved.", with the ledger rows written
+and committed before any machine existed, each arm trained to its full
+108,919 steps on the frozen code, each checkpoint checked against the
+machine's copy before the machine was deleted
+(`docs/2026-10-09-reruns-10m-run-record.md`). All three passed their gate on
+learning and part A of the in-use check (Table 3). Part B failed on both
+built routes of arms C and M.
+
+**Table 3 | Experiment C, the registered verification of the hand-set
+built arms (step 4b), 10 million parameters, seed 0.** Bars: part A 0.9,
+part B 0.5. Source: `docs/2026-10-09-reruns-10m-run-record.md`, "Raw figures
+the registered procedure printed", and `docs/rulings/2026-10-12-experiment-c-stop-ruling.md`.
+
+| arm | gate on learning (own, named-other, of 3,000; bar 790) | part A, weight on the true agent | part B, route use | in-use check |
+|---|---|---|---|---|
+| T (separable) | 2,959 and 2,980; passes | 0.999 | slot 0.986 (2,918 of 2,959) | passed |
+| C (stirred-in) | 3,000 and 3,000; passes | 0.999 | stirred-in route 0.000 (0 of 3,000) | failed |
+| M (half-and-half) | 2,577 and 1,733; passes | 0.999 | stirred-in items 0.024 (33 of 1,387); separable items 0.000 (0 of 1,190) | failed, on both halves |
+
+The procedure printed "no verdict" for arms C and M with the reason "the
+built ownership route has gone flat (construction did not hold)" and
+"gate not decidable on one seed" for all three, as the ruled reporting rule
+requires with one seed; arm T's reading on its own seed was 0.0000 (states
+(0,) at the action position, 8 directions, 180 of 180). A session that
+wrote neither the registration nor the reruns read the figures against the
+registered text and found the verification failed; John ruled on
+2026-10-12, in his words, **"accept the stop"**
+(`docs/rulings/2026-10-12-experiment-c-stop-ruling.md`, authorship john).
+
+**The registered ending.** Experiment C stopped at stop S4b. Its public
+sentence is the one ruled for it: **"the built arms as designed are not
+references; the measure was not reached."** It is a registered ending
+reached by its own stop rule, not one of the eight outcome terms and not a
+failure of the year. The free-arm run at registered size (about $12) did
+not launch and the second release (about $150 to $172) was never asked for.
+Experiment C's spend from the ledger: $1.47 for the four development runs
+and $1.3032 for the three reruns ($0.5045, $0.3980 and $0.4007 for arms M,
+T and C, from the vendor's bills, against about $1.14 approved; the gap is
+the vendor's $1.19 hourly rate against the $0.99 of record, and the spending
+alarm's ratio of billed hours to machine lifetime read 1.000 on every
+machine); the programme stands at about $230.94 of its $450 ceiling
+(`compute-ledger.md`, the three 2026-10-09 rows; the run record). What stays
+open and is not papered over: arm M's separable half reads 0.000 where the
+toy models read 1.000 and arm T's slot reads 0.986 in the same reruns, which
+the registration says nothing about and which does not change the miss; and
+the spend over the approved figure, which is recorded and not ruled on. On
+2026-10-17 John ruled that experiment C stays stopped; the rebuild of arms C
+and M so the built route is their only route is the named route if C is
+ever reopened, not authorised, behind the precondition that arm M's 0.000 is
+explained first, at $0, by a session that did not write the reruns, with a
+method file before any output
+(`docs/rulings/2026-10-17-experiment-c-stays-stopped-ruling.md`; authorship mixed).
+
+**What the constructed line licenses.** It licenses three sentences, each
+bounded by its registration. A task that cannot be done without ownership is learnable
+at 30 million parameters, and the ownership input is load-bearing for it on
+three seeds. Whether the network built an internal structure around that
+input is not established: the registered comparison was unsatisfiable, the
+localization stack is unvalidated at this scale, and causal patching never
+ran. And the one candidate measure of degree did not reach its own
+validation step: the built systems meant to anchor it did not use their
+built-in route. Nothing here bears on any system's experience; everything
+here was reported in the terms registered before the runs.
+
 ## Discussion
 
 Three readings of the null, in decreasing order of reach.
@@ -322,17 +808,21 @@ judge, spot-checked but not human-scored throughout. The result licenses
 claims about this model class and these instruments, not about transformers,
 and not about minds.
 
-**The constructive turn.** The registered fork this result routes: build the
-component measurement failed to find. The follow-on program (pre-registration
-in preparation) trains small systems in which a self-index state is
-architecturally explicit and the training distribution *requires* binding to
-it while decorrelating it from turn syntax — the router confound designed out
-at the curriculum level — and then re-runs this experiment's instruments
-unchanged. The wager inverts: the constructed system predicts H_center
-(specifically, self-relevant binding degrading ahead of the syntax control),
-and can lose if the network learns to route around its own designated center —
-which would itself be a finding about whether self-indexing can be centralized
-at all. A parallel behavioral program (retained independence: differential
+**The constructive turn, as it ran.** The registered fork this result
+routed, build the component measurement failed to find, was taken and is
+reported above. Its installed self-index carried nothing; its acquired one
+was load-bearing as an input and unlocatable as a structure by instruments
+that are themselves unvalidated at that scale; its registered comparison
+could not be computed for any model; and the successor measure of degree
+stopped before validation because the systems built to anchor it did not
+use their built-in route. None of these ended in a positive, and each ended
+in the terms its registration set, which is the result this programme can
+offer: on 2026-10-07 the measurement target moved from the floor to the
+axes an observer perceives and how well observers perceive them, with the
+removal test kept as the floor's definition and not claimed as its
+instrument (`docs/rulings/2026-10-07-two-sided-question-rulings.md`,
+decision 1; `docs/rulings/2026-10-12-two-sided-question-section-2-v3.md`).
+A parallel behavioral program (retained independence: differential
 retention of correct answers under preference pressure vs. evidence, a 2×2
 that separates independence from stubbornness) has since completed its first
 registered run across three frontier models (1,080 pressure-ladder
@@ -362,6 +852,15 @@ authoring spec (`3df532d`) committed before any item; test-set finalization
 (`a11e769`); registered runner (`a4efcf0`). Piloting was unrestricted on the
 92-item pilot batteries; the held-out test set was never touched by any
 pilot, ablation, or selection procedure before the registered run.
+Disclosure required by the ruling of 2026-10-07 (decision 2): the premise
+on which any result here bears on experience, that experience is a
+sufficiently deep act of temporal integration marked within the act as
+happening to someone, was adopted as the programme's stated founding wager
+on 2026-09-20, after this experiment, Amendment A3 and the retained-
+independence experiment had run; it enters as a presupposition, not a
+hypothesis, and a reader who rejects it loses nothing but the bearing on
+experience (`docs/rulings/2026-10-12-two-sided-question-section-2-v3.md`,
+"The premise").
 
 **Substrate.** `allenai/Llama-3.1-Tulu-3-8B-SFT` (SFT-only alignment; chosen
 so that self-structure is present but minimally RLHF-entangled), bf16, greedy
@@ -454,9 +953,69 @@ breached). Controls: expert-persona subspace (capability-gating, RT-06;
 verified functionally third-person), frequency-matched (RT-01, activation
 ratios 0.92–0.99). Applied verbatim; outcome as reported.
 
-**Compute and cost.** Whole program (development, calibration, ladder,
+**Experiment 06 (MVM-0a) and Amendment A3.** Registration 2026-08-07
+(`experiments/06-mvm-0a-constructed-self-index/pre-registration.md`, with
+Amendments A1 of 2026-08-09 and A2 of 2026-08-16 in the same file);
+Amendment A3 ratified and registered 2026-09-15 (`amendment-a3.md`, the
+ratified text followed by fourteen registration revisions), its thresholds
+locked by John's commit `6ad4362` on 2026-09-16 before any localized read,
+and closed 2026-09-25 by a closure block appended verbatim to the same file
+by a session that neither wrote nor checked it. Substrate: a 30-million-
+parameter transformer (12 blocks, width 448) trained from scratch on a
+closed 103-token vocabulary of synthetic four-agent dialogue; register-
+bearing and register-less (twin) configurations for the original design,
+register-less only under A3; enactment through an acting channel as the
+only authorship signal, with cue-detector gates (i) and (ii) certifying no
+surface cue predicts which turns are the model's own. Batteries under A3:
+T_act (own revision action, the primary; chance 0.125, measured ownership-
+blind ceiling 0.2921), T_other (the matched named-other revision query;
+recorded ceiling 0.3227, true ceiling measured at 1.0000), T_state
+(ownership-free cross-turn state) and T_syntax (turn-tracking floor), each
+frozen as a 400-item skeleton before training; verdict evaluation at n = 800
+episodes, six evaluation seeds, paired within seed. Metric: d(B) = (B_base −
+B_abl) / (B_base − ceiling_B), reported unclipped. Lesions: L0 (the acting
+channel zeroed), L1 (a localized ownership subspace at rank ≤ 16, never
+localized), L2 matched controls. Localization: linear probes with label-
+permutation nulls at revision and query positions, with causal patching
+required for convergence (never built). Null calibration: 120 content-blind
+random rank-k and matched-norm ablations per checkpoint at blocks 3, 4, 5,
+7 and 8 (`src/null_calibration.py`, committed before it read any
+checkpoint). Runs: three register-less seeds at 585,552,384 tokens each on
+rented RTX 5090 cards at $0.99 an hour; all probing, lesioning and
+calibration local at $0. Spend: about $46.75 of Amendment A3's $100 stop;
+programme ceiling raised from $400 to $450 on 2026-09-25
+(`compute-ledger.md`).
+
+**Experiment C (the successor degree measure).** Registration 2026-10-09
+(`docs/successor-experiment-proposal-2026-10-07-v5.md`, registered by
+`docs/rulings/2026-10-09-registration-commit-ruling.md`; frozen code
+`experiments/08-successor-degree/src/` at `6c47c56`; method for the
+registration text committed first,
+`docs/successor-registration-method-2026-10-07.md`). Four arms (T
+separable, C entangled, M mixed by item, F free) on a matched-role revision
+task with own-directed and named-other-directed conditions at matched
+difficulty; registered size 30 million parameters, three seeds per arm;
+development size 10 million. Measure: the ratio of two transplants (the
+nominated ownership piece against the whole state at the same sites), read
+only where the piece holds its label at a pre-stated fit floor; eight
+outcome terms with the scope phrase "on these constructed systems, for this
+intervention procedure"; a learn-both gate (bar 790 of 3,000 per condition)
+and, for the built arms, the in-use check of section 5.6 (part A bar 0.9,
+part B bar 0.5). Order of work and stop conditions in section 11 (S1 to S10;
+S4b is the stop that fired). Spend rules: two releases of money ruled
+2026-09-21, a spending alarm that halts rather than trims at a billing
+ratio of 1.25, every row written with John's verbatim go before any machine
+is created. Runs: four development runs (unregistered as to learning) at
+$1.47 and three verification reruns at $1.3032, all RTX 5090, each trained
+108,919 steps (585,548,544 tokens); the registered procedure run on the
+laptop (torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, Python 3.12.13).
+Nothing at the registered size was launched.
+
+**Compute and cost.** Experiment 1 (development, calibration, ladder,
 registered run): ≈ $10–20 of rented GPU time plus low tens of dollars of
-judge-API calls. Registered-day cost ≈ $3.
+judge-API calls; registered-day cost ≈ $3. Whole programme to the stop of
+experiment C: about $230.94 of a $450 ceiling, every row in
+`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`.
 
 **Data availability.** Full pre-registrations, findings memos, red-team
 ledgers, item banks, and per-item score artifacts at [repository URL on

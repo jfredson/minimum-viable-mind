@@ -1,0 +1,17 @@
+(1) title: SAME
+     # No removable center: a pre-registered ablation test of self-indexed integration in a large language model
+(2) Discussion: 7 paragraphs on main, 7 on branch
+    ¶1 SAME      main 4cba57cf66 branch 4cba57cf66  Three readings of the null, in decreasing order of reach.
+    ¶2 SAME      main bf090cb2fb branch bf090cb2fb  For theories of machine consciousness, the result is differentially in
+    ¶3 SAME      main 57c3ec6b22 branch 57c3ec6b22  For interpretability practice, the program contributes a confound ladd
+    ¶4 SAME      main 0771730b76 branch 0771730b76  For AI-welfare and consciousness-assessment efforts, the contribution 
+    ¶5 SAME      main 943929a60f branch 943929a60f  Limitations. One substrate family at 8B scale; one pass per registered
+    ¶6 DIFFERENT main f34b09a113 branch aec433dea5  The constructive turn, as it ran. The registered fork this result rout
+    ¶7 SAME      main 9efc314b65 branch 9efc314b65  ---
+    paragraph with 'is conversational infrastructure': SAME
+    paragraph with 'was voided by a control committed before any data existed': SAME
+(3) 'router reading twice over' passage (key sentence to 'Methods §Statistics).'): SAME main e6b0efc223 branch e6b0efc223, 704 chars
+(4) v0.2 'constructive turn', up to the retained-independence sentence, quoted in the dated note: SAME (verbatim)
+    main-line text compared: The constructive turn. The registered fork this result routes: build the compone … nding about whether self-indexing can be centralized at all.
+    retained-independence sentence on main kept in the new paragraph: SAME
+(5) header says the v0.2 text has NOT passed: YES

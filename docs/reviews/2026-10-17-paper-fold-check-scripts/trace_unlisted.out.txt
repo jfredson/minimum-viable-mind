@@ -1,0 +1,92 @@
+HIT   expl: si drop 0.22 (=0.219)                      removal-test-findings.md:19  form='0.219'
+        context: | idxres mean k=16 (**primary**) | **0.219** | **0.100** | 0.133 | +0.059 | +0.086
+HIT   expl: sr drop 0.10 (=0.100)                      removal_ci.json:23  form='"point": 0.1,'
+        context: "point": 0.1,
+HIT   expl: syntax drop 0.13 (=0.133)                  removal_ci.json:28  form='"point": 0.1333'
+        context: "point": 0.1333,
+HIT   expl: d_self +0.059                              removal-test-findings.md:19  form='+0.059'
+        context: 6 (**primary**) | **0.219** | **0.100** | 0.133 | +0.059 | +0.0867 ✅ (bound 0.0893) | −0.085 ✅ |
+HIT   expl: d_self lo -0.062                           removal_ci.json:34  form='"lo": -0.062'
+        context: "lo": -0.062,
+HIT   expl: d_self hi +0.185                           removal_ci.json:35  form='"hi": 0.1852'
+        context: "hi": 0.1852
+HIT   expl: router gap +0.033                          removal_ci.json:67  form='"point": 0.0333'
+        context: "point": 0.0333,
+HIT   expl: router gap lo -0.133                       removal_ci.json:113  form='"lo": -0.1333'
+        context: "lo": -0.1333,
+HIT   expl: router gap hi +0.200                       removal_ci.json:25  form='"hi": 0.2'
+        context: "hi": 0.2
+HIT   expl: cross-patch 0.006 (paper v0.2)             paper-removal-test-nature-draft.md:259  form='0.006 vs.'
+        context: nert on self-referent behavior (cross-patch ratio 0.006 vs.
+HIT   expl: cross-patch 0.348 (paper v0.2)             paper-removal-test-nature-draft.md:260  form='0.348 for the self-index'
+        context: 0.348 for the self-index); the registered ablation target was th
+HIT   expl: six of the seven (paper v0.2)              paper-removal-test-nature-draft.md:73  form='six of the seven flipped'
+        context: category-concentrated: six of the seven flipped self-irrelevant items are
+HIT   paper note: 6 of 8, 1 of 24 (paper v0.2)         paper-removal-test-nature-draft.md:74  form='(6 of 8 in that category, against 1 of 24'
+        context: multi-step-reasoning items (6 of 8 in that category, against 1 of 24
+HIT   ownership-blind ceiling 0.2921                   amendment-a3.md:404  form='0.2921'
+        context: of 0.2921 and 0.3227 the two verdict batteries co
+HIT   recorded control ceiling 0.3227                  amendment-a3.md:404  form='0.3227'
+        context: of 0.2921 and 0.3227 the two verdict batteries could show at
+HIT   T_act chance 0.125                               amendment-a3.md:126  form='chance 0.125'
+        context: collapsed from T_sr 0.96 to about 0.16 (eight-way chance 0.125) the moment the acting channel was zero
+HIT   floor rule: drop defined only if base - ceiling >= 0.10 ceiling-measurement-findings.md:46  form='0.10'
+        context: `baseline − ceiling ≥ 0.10`.
+HIT   rank cap 16                                      amendment-a3.md:209  form='k≤16'
+        context: nt 1's primary condition (proposed), so a null at k≤16 is comparable across the two experiment
+HIT   n = 800, six evaluation seeds                    seeds-endpoint-findings.md:20  form='800'
+        context: Across six independent evaluation seeds at n=800, reported as a spread
+HIT   pilot cost $13.92 (paper cites none; found in gate2) gate2-pilot-findings.md:7  form='$13.92'
+        context: ted verbatim in the ledger as "Go". Actual cost **$13.92** against a
+HIT   A2: $200 -> $400 cap                             pre-registration.md:24  form='$400'
+        context: ); registered scale is 30M and the compute cap is $400 —
+HIT   Methods: width 448                               gate0-null-calibration-findings.md:123  form='d_model 448'
+        context: **pilot seed-0 full** (d_model 448, registered cap k≤16; residual RMS norm
+HIT   Methods: 103-token vocabulary                    amendment-a3.md:144  form='103-token closed vocab'
+        context: ed content-crossing episodes), `src/encoding.py` (103-token closed vocab, register key stack), `src/model.py` (3
+HIT   Methods: 12 blocks (found in model source)       model.py:78  form='n_layers=12'
+        context: "30M": Config(d_model=448, n_layers=12, n_heads=8),
+HIT   Methods: 585,552,384 tokens per A3 seed          ctl-pilot-log-provenance-findings.md:36  form='585,552,384'
+        context: Its last reading is step 55,116 at 585,552,384 tokens. The endpoint
+HIT   Methods: $0.99 an hour                           amendment-a3.md:144  form='$0.99/hr'
+        context: n=400), and the measured venue (RTX 5090 secure, $0.99/hr, twin-architecture runs at about 10.2 h
+HIT   Methods: ceiling raised $400 -> $450             compute-ledger.md:15  form='from $400 to **$450**'
+        context: ap"), and the programme ceiling was raised again, from $400 to **$450**, on
+HIT   Methods: blocks 3,4,5,7,8                        gate0-null-calibration-findings.md:29  form='3, 4, 5, 7'
+        context: as ablated.** Residual-stream operators at blocks 3, 4, 5, 7 and 8
+HIT   Methods: fourteen registration revisions         amendment-a3.md:340  form='fourteen'
+        context: what replaces it, and why. All fourteen were ruled by John on 2026-09-15
+HIT   Methods: commit 6ad4362 threshold lock (git log also shows it) public-path-roadmap-2026-09-16.md:21  form='6ad4362'
+        context: - Threshold lock committed by John: `6ad4362` (2026-09-16 20:08 PDT).
+HIT   C: free-arm about $12                            2026-10-12-experiment-c-stop-ruling.md:73  form='about $12'
+        context: - The free-arm run at registered size (step 5a, about $12) does not launch,
+HIT   C: second release $150 to $172                   2026-10-12-experiment-c-stop-ruling.md:75  form='$150 to $172'
+        context: $150 to $172) is never asked for. What experiment C
+HIT   C: alarm ratio 1.25                              successor-experiment-proposal-2026-10-07-v5.md:255  form='1.25 halts'
+        context: or above 1.25 halts the wave (the queue ruling, page 6, par
+HIT   C: software versions                             2026-10-09-reruns-10m-run-record.md:35  form='torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, Python 3.12.13'
+        context: versions (torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, Python 3.12.13;
+HIT   C: eight outcome terms                           successor-experiment-proposal-2026-10-07-v5.md:4699  form='eight outcome terms'
+        context: not references; the measure was not reached"; the eight outcome terms,
+HIT   C: 'very likely fail ... about $1.14' quote      successor-experiment-proposal-2026-10-07-v5.md:1545  form='would very likely fail the verification and experiment C would stop at'
+        context: reruns would very likely fail the verification and experiment C would stop at
+HIT   C: 'Approved.'                                   2026-10-09-reruns-10m-run-record.md:20  form='"Approved."'
+        context: - **John's go:** "Approved." (2026-10-09, about $1.14 from the devel
+HIT   closure: two outside reviews named               2026-09-25-a3-closure-tier2-dispositions.md:14  form='Gemini 3.1 Pro'
+        context: (Gemini 3.1 Pro) and `…/2026-09-21-a3-closure-chatgpt.m
+HIT   closure: 15 serious, closable by rewording       2026-09-25-a3-closure-tier2-dispositions.md:wrapped  form='15 serious findings, all closable by rewording'
+        context: her reviewer filed a fatal finding; between them, 15 serious findings, all closable by rewording, none needing a run or money.* --- ## T
+HIT   closure: about seventy processor-hours           amendment-a3.md:669  form='about seventy processor-hours'
+        context: job of about seventy processor-hours at no money cost (both the price and th
+HIT   5-seed run halted at four of nine                amendment-a3.md:295  form='halted at four of nine'
+        context: y; and the amendment records the 5-seed design as halted at four of nine launches with the A2 wager scored again
+HIT   noise: twelve draws at 400 episodes              blind-control-findings.md:136  form='| 400 |'
+        context: > | 400 | ~200 | 0.5621 | 0.0284 | 0.520 | 0.599
+HIT   expl: wager adopted 2026-09-20                   2026-10-07-two-sided-question-rulings.md:47  form='2026-09-20, after A, B and'
+        context: result and the founding wager's adoption date (2026-09-20, after A, B and
+HIT   John's 2026-09-16 ruling: unvalidated at 30M     blind-arm-findings.md:109  form='30M'
+        context: This result says the stack is unvalidated at 30M; it does not by itself
+HIT   sweep: eleven positions and five layers          fitted-position-sweep-findings.md:1  form='eleven'
+        context: # The fitted linear read at all eleven positions — findings
+
+45 hit, 0 miss, 45 figures
