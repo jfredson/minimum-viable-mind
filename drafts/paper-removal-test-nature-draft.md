@@ -298,7 +298,7 @@ re-admitted by margins of 0.003–0.007 nats — carried forward as an honest
 marginality. Teacher-forced NLL alone was shown to be blind to a failure mode
 that matters: a sparse-autoencoder zero-ablation passed NLL while degenerating
 into repetition under free generation, and the judged self-report *dropped* —
-the only S drop ever observed in the programme, and it was coherence-borne, not
+the only S drop ever observed in this experiment, and it was coherence-borne, not
 self-specific. A long-generation repetition probe (Δrep-4, calibrated on the
 same nulls) was added to the gate and subsequently caught a control arm doing
 the same thing. Ablation studies that do not gate on free-running generation
@@ -354,7 +354,7 @@ readings, and the registered control's margin (+0.033, 95% CI −0.133 to
 +0.200) is one the data cannot tell from nothing.
 
 Equally consequential is what never moved. Judged referential self-tracking
-was not reduced by any readable intervention in the entire programme — not by
+was not reduced by any readable intervention in this experiment — not by
 rank-1 directional ablation, rank-k subspace ablation at any admitted k, or
 sparse-feature ablation; the primary condition's d_self (+0.059, 95% CI −0.062
 to +0.185 — an interval whose upper bound sits below the registered
@@ -803,9 +803,10 @@ before any data existed, and the control's own margin, re-read two months
 later, turned out to span zero; the programme reports both the verdict as
 registered and the reassessment, dated, and does not replace one with the
 other. We suggest this is the minimum standard assessment
-claims in this area should meet, and note that the entire programme ran for
-under $20 of compute on rented consumer GPUs: the barrier is discipline, not
-resources.
+claims in this area should meet, and note that this experiment ran for about $10 to $20 of rented consumer
+GPU time, plus low tens of dollars of judge calls, and the two constructed-line
+experiments that followed for about $230.94 of rented compute (Methods,
+"Compute and cost"): the barrier is discipline, not resources.
 
 **Limitations.** One substrate family at 8B scale; one pass per registered
 condition (95% item-resampling CIs on every quantity, Methods §Statistics —
@@ -1026,9 +1027,13 @@ Nothing at the registered size was launched.
 
 **Compute and cost.** Experiment 1 (development, calibration, ladder,
 registered run): ≈ $10–20 of rented GPU time plus low tens of dollars of
-judge-API calls; registered-day cost ≈ $3. Whole programme to the stop of
-experiment C: about $230.94 of a $450 ceiling, every row in
-`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`.
+judge-API calls; registered-day cost ≈ $3. Experiment 06 and experiment C, from 2026-08-07, when the ledger opened, to the
+stop of experiment C: about $230.94 of a $450 ceiling, every row in
+`experiments/06-mvm-0a-constructed-self-index/compute-ledger.md`. That figure
+is rented machine time only; experiment 1's rented time predates the ledger
+and is the figure given above. Calls to model providers by API (judge calls, the
+outside reviews, and the measurement rehearsal of the filtered battery run on
+2026-10-18) are recorded in the project's worklog and are not in it.
 
 **Data availability.** Full pre-registrations, findings memos, red-team
 ledgers, item banks, and per-item score artefacts at [repository URL on
@@ -1103,5 +1108,5 @@ lexical floors, peak layers, and control cross-patch ratios are stable.
 and d_self against locked thresholds (dashed), with 95% item-bootstrap CIs
 and OOD gate status (gate-breached conditions greyed); the RT-05 router
 control firing on the primary condition; the never-subtracted self-report
-across every intervention in the programme. *(Artwork:
+across every intervention in this experiment. *(Artwork:
 `experiments/01-self-indexing-removal-test/figures/fig4_registered_run.png`.)*

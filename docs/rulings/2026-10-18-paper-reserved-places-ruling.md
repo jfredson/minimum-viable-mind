@@ -64,3 +64,29 @@ recommended".
   apply them.
 - The TimeAssembler worklog, as a decision entry with authorship mixed, and
   the roadmap's step for these choices closed.
+
+## Added the same evening: the cost sentence and three "programme" sentences
+
+The check of the ruled changes (`docs/reviews/2026-10-18-paper-reserved-places-check-claude-code.md`,
+pull request 192) found that the Discussion's "the entire programme ran for
+under $20 of compute" was no longer true, and that three sentences said
+"programme" where they meant the removal test (its results, the registered
+verdict section and the Figure 4 caption). It proposed replacements. Put to
+John through the fifth master session; his words, 2026-10-18 evening: "Yes
+to both" (authorship mixed: the checker proposed, John approved).
+
+Applied as proposed, with one clarification the master asked for: the
+$230.94 is rented machine time to the stop of experiment C, and calls to model
+providers by API, the battery rehearsal of 2026-10-18 among them, are recorded
+in the worklog and are not in it. The sentence says "of rented compute", and
+the Methods paragraph "Compute and cost" says the rest plainly.
+
+## Added later the same evening: the cost sentence corrected again
+
+The check of pull request 193 found that the $230.94 is the compute ledger
+from 2026-08-07, when it opened, to the stop of experiment C: experiment 06
+and experiment C, not the whole programme, since experiment 1's spend
+predates the ledger. Put to John; his words, relayed by the fifth master
+session, 2026-10-18 about 20:00 Pacific: "Ok, go ahead". The Discussion now
+says "the two constructed-line experiments that followed for about $230.94
+of rented compute", and Methods names what the figure covers.
