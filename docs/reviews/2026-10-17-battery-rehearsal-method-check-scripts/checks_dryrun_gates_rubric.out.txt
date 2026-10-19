@@ -1,0 +1,66 @@
+## 1. the dry run, against its committed output
+exit 0
+cmp: identical
+d7d454adc0c60d80c60844d8b70193ab65785eba6210a0f9018aaa01ac22972a  dry.txt
+d7d454adc0c60d80c60844d8b70193ab65785eba6210a0f9018aaa01ac22972a  docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.dryrun.out.txt
+python: Python 3.14.5
+
+## 2a. what the dry run leaves behind, with Python's default bytecode caching on
+exit 0
+cmp: identical
+  new: !! docs/filtered-battery-2026-10-07/__pycache__/
+  new: !! experiments/03-retained-independence/src/__pycache__/
+  file: docs/filtered-battery-2026-10-07/__pycache__/summary_leak_rehearsal.cpython-314.pyc
+  file: experiments/03-retained-independence/src/__pycache__/items.cpython-314.pyc
+  file: experiments/03-retained-independence/src/__pycache__/framings.cpython-314.pyc
+  (removed again by this script)
+  no artifacts/ directory in the checkout
+
+## 2b. the argument guard
+  args [--help]: exit 2; stdout 0 bytes; first stderr line: refusing to run: run_rehearsal_entries_1_2.py takes no command-line arguments.
+  args [-n]: exit 2; stdout 0 bytes; first stderr line: refusing to run: run_rehearsal_entries_1_2.py takes no command-line arguments.
+  args [run]: exit 2; stdout 0 bytes; first stderr line: refusing to run: run_rehearsal_entries_1_2.py takes no command-line arguments.
+  args [--dry-run]: exit 2; stdout 0 bytes; first stderr line: refusing to run: run_rehearsal_entries_1_2.py takes no command-line arguments.
+  args []: exit 2; stdout 0 bytes; first stderr line: refusing to run: run_rehearsal_entries_1_2.py takes no command-line arguments.
+
+## 2c. the real-run gate's refusals (each must refuse and print nothing on stdout)
+  MVM_REHEARSAL_RUN=1 alone: exit 2; stdout 0 bytes; stderr: refusing the real run: MVM_GO_QUOTE (John's verbatim go) and MVM_WORKLOG_ROW (the worklog row written before t
+  with MVM_GO_QUOTE only: exit 2; stdout 0 bytes; stderr: refusing the real run: MVM_GO_QUOTE (John's verbatim go) and MVM_WORKLOG_ROW (the worklog row written before t
+  with MVM_WORKLOG_ROW only: exit 2; stdout 0 bytes; stderr: refusing the real run: MVM_GO_QUOTE (John's verbatim go) and MVM_WORKLOG_ROW (the worklog row written before t
+  with both set to blanks: exit 2; stdout 0 bytes; stderr: refusing the real run: MVM_GO_QUOTE (John's verbatim go) and MVM_WORKLOG_ROW (the worklog row written before t
+  MVM_ENTRY=3 with the real-run switch: exit 2; stdout 0 bytes; stderr: MVM_ENTRY must be 1, 2 or both
+  MVM_REHEARSAL_RUN=yes (not exactly 1): exit 0; output identical to the dry run: yes
+  no artifacts/ directory and no battery_rehearsal/ created: true
+
+## 2d. where the runner writes, and where it imports network code (line numbers)
+  515:    path.parent.mkdir(parents=True, exist_ok=True)
+  516:    path.write_text(json.dumps(obj, indent=2))
+  529:    from clients import chat  # noqa: E402
+  530:    import judge_objection  # noqa: E402
+  388:def dry_run(entry):
+  519:def real_run(entry):
+  772:def main():
+
+## 3. the rubric copy's pinned hash against experiment D's registered file on the main line
+  main line 53bb84a: a6f26372f3f33ec962a65e7d5cf2911955a14f5cbc6e11ee932396520ae931e7
+  this branch's file:      a6f26372f3f33ec962a65e7d5cf2911955a14f5cbc6e11ee932396520ae931e7
+  pinned in the runner:    a6f26372f3f33ec962a65e7d5cf2911955a14f5cbc6e11ee932396520ae931e7
+  named in the method:     a6f26372f3f33ec962a65e7d5cf2911955a14f5cbc6e11ee932396520ae931e7 
+  named in the v1.2 file:  a6f26372f3f33ec962a65e7d5cf2911955a14f5cbc6e11ee932396520ae931e7 
+  the registered file's history: 2bb6971 2026-07-19 e243d01 2026-07-19 
+  stage3_run_config.json: main line efa5cb34d25606af... pinned efa5cb34d25606af...
+  framings.py: main line 2a4b340adfe226ca... pinned 2a4b340adfe226ca...
+  v1.1 bytes (4452) found inside the v1.2 file at byte offset 916; once only: True
+  what precedes it: an HTML comment of 916 bytes ending b' -->\n\n'; what follows: b'\n## Named-source addendum (v1.2, entry 2'
+  anything in the pull request that opens D's registered rubric for writing:
+    (end of list)
+  every line of the runner naming RUBRIC_V11 (each must only read it):
+    70:RUBRIC_V11 = D_SRC / "batteries/liveness_rubric.md"
+    270:    rubric_chars = len(RUBRIC_V11.read_text())
+    343:    v11, v12 = RUBRIC_V11.read_text(), RUBRIC_V12.read_text()
+    570:              "rubric_v11_sha256_at_start": sha256(RUBRIC_V11)}
+    697:                                           "rubric_v11_sha256_at_end": sha256(RUBRIC_V11)})
+    766:                                           "rubric_v11_sha256_at_end": sha256(RUBRIC_V11)})
+  pull request's changes to anything under experiments/: 0 files
+
+## end: bytecode left in the checkout by this script (must be none): 0
