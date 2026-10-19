@@ -65,6 +65,17 @@ rehearsal when the observer study is designed."
    a measurement rehearsal before it is registered; until then the loss
    condition stays a question and not a finding, as its own text says.
 
+## Added the same day: both copies
+
+The pairing-rule check of the ledger rows found the same comparison stated a
+second time, in the paragraph added to "What Would Count Against It": observers
+"may detect no more presence in the constructed systems than in the frontier
+reference profile". Put to John; his words, in this session's chat,
+2026-10-18: "my RT-283 reading and its rehearsal condition cover both copies of
+the observer comparison". So item 1 and the condition in item 3 cover both
+sentences. In the same answer he ruled that the removal-test interval clause
+in the Floor sentence is corrected before the spec merges (ledger row RT-292).
+
 ## Where it lands
 
 - This file, beside the ledger rows on pull request 173.

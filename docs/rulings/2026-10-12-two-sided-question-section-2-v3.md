@@ -28,6 +28,16 @@ sentence stands unedited, with the condition that the observer comparison is
 rehearsed before any observer study is registered
 (`docs/rulings/2026-10-18-rt283-closure-ruling.md`).*
 
+*Dated note, 2026-10-18 (Pacific), later: on John's ruling of the same day,
+the Floor sentence as written into the spec differs from the text below by
+one clause. Below it reads "each interval above zero"; the record
+(`experiments/01-self-indexing-removal-test/removal_ci.json`) gives the
+second drop, 0.10, an interval from 0.00 to 0.20, so the spec reads "the
+first and third intervals above zero and the second, from 0.00 to 0.20,
+touching it". This file is not edited below its notes; the spec binds
+(ledger row RT-292). The spec's SHA-256 after the correction is
+`c824cd81b53b3cebc3a0dda350b63ece66c54c6dd77e6580eb132466eb7d0413`.*
+
 *Written 2026-10-12 (Monday, Pacific) by a helper session of the weekend
 overseer that wrote neither version 1 nor version 2 of the proposal, nor the
 Gate A pass on it, nor the battery draft. Records and text only: nothing was
