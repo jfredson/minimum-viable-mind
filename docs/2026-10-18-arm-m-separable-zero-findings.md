@@ -13,30 +13,47 @@ No frozen code, registered text, figure, ruling, `STATUS.md` or
 
 Arm M's separable half at 10 million parameters does not use its built-in
 ownership answer at all. **It gets the answer from the "this turn is yours"
-signal in the shared trunk instead.** The trunk makes the model's own row of
-the lookup table about four times larger than the other agents' rows, so even
-an even mix of all four rows comes out as the model's own answer. Meanwhile the
-part of the model that chooses a row has gone flat: it puts about one quarter
-on each agent whatever the built-in answer says. So swapping the built-in answer
-changes nothing, and the check reads 0.000.
+signal in the shared trunk instead** (D5, a planned diagnostic). The trunk
+makes the model's own row of the lookup table about 3.8 times larger than the
+other agents' rows (a side figure of D3, planned, and D7, added). The part of the model that chooses a row has gone flat: it
+puts about one quarter on each agent whatever the built-in answer says (D2,
+planned). An even mix of all four rows then comes out as the model's own answer
+(D7, a diagnostic added after the planned ones had printed). So swapping the
+built-in answer changes nothing, and the check reads 0.000.
 
 The row choice is flat because **the word embeddings of the agents' marker
 words, which both the built-in answer and the row keys are made from, shrank to
-about 3 per cent of their starting size.** Weight decay alone would have taken
+about 3 per cent of their starting size** (D8, added after the planned
+diagnostics had printed). Weight decay alone would have taken
 them only to about 34 per cent, so training pushed them down. It was not decay
 alone, and it was not the row-choice weights themselves, which grew.
 
 On the toy models, and in arm T at 10 million, none of this happened. The
 built-in answer chooses the row sharply there, and taking the "this turn is
-yours" signal out of the trunk changes nothing.
+yours" signal out of the trunk changes almost nothing (arm T 0.986 to 0.978;
+the toy arm M 1.000 to 1.000).
 
-**Which hypothesis the outputs support:** the first, that the trunk carries the
-acting signal for the separable items too, so their built-in answer is not
-consulted. The second (the check is wired differently) and third (a
-bookkeeping error) are rejected. The fourth (weight decay drove the
-row-choice weights to zero) is rejected as stated. What did shrink is the
-marker words' embeddings, and they shrank about ten times further than decay
-alone could take them.
+**Which hypothesis the outputs support:** the first, in part. H1's result has
+three parts:
+
+- its first claim, that the trunk's "this turn is yours" signal and not the
+  built-in answer carries the separable answers, is **supported by D5**, which
+  was planned;
+- the mechanism the method gave for it ("the answer comes out right whichever
+  row the slot selects") is **rejected by D3**, which was planned: forcing a
+  wrong row gives that agent's answer, 3,570 of 3,570;
+- the mechanism that replaces it, a flat row choice over a large own row, comes
+  from **D7, added after the planned diagnostics had printed**.
+
+The second hypothesis (the check is wired differently) and the third (a
+bookkeeping error) are rejected by their planned diagnostics. For the fourth
+(weight decay drove the row-choice weights to zero), **D6 matched neither of
+its planned patterns**: the row-choice weights grew, which is not the
+"supported" pattern, but the row choice is flat, which is not the "rejected"
+pattern. Calling it rejected as stated is this session's reading, because the
+weights it named grew; it is not the planned reading. What did shrink is the
+marker words' embeddings, about ten times further than decay alone could take
+them, and that comes from D8, added later.
 
 **What stays unexplained:** why training pushed the marker words' embeddings
 down in arm M at 10 million and not in arm T or on the toy. Also unexplained is
@@ -92,7 +109,11 @@ the script, and put it back.
 - D0 to D6 are the diagnostics the method named, in its order. **D7, D8 and D9
   were added after D0 to D6 had printed**, because those outputs raised
   questions the method did not foresee. They are labelled as added wherever
-  they are used, and nothing in the reading below rests on them alone.
+  they are used. The H1 verdict on where the answer comes from rests on D5,
+  which was planned. But two parts of the account rest on added diagnostics
+  alone: that an even mix of the rows is enough to give the own answer (D7),
+  and that the row choice is flat because the marker-word embeddings shrank
+  (D8).
 
 ## Findings
 
@@ -147,7 +168,7 @@ separable head by the same path as arm T's (`swap_answer` changes only
 `assign_agent_at`, which only `_own_vec` reads, and both arms use the same
 `_own_vec` and `_separable_logits`). What differs is that arm M's row choice
 puts about a quarter on every agent under both answers, and its slot moves a
-hundred times less than arm T's. By the method's own rule, a flat row choice is
+ninety times less than arm T's (20.41 against 0.22). By the method's own rule, a flat row choice is
 read under H4 and is not H2.
 
 ### F3. Forcing a row gives that row's agent's answer, and arm M's own row is much the largest. MEASURED
@@ -163,12 +184,16 @@ M-toy-seed0: ... that agent's answer 3570; rows 12.192 and 11.485
 T-toy-seed0: ... that agent's answer 9000; rows 16.370 and 16.386
 ```
 
-**Against the method's pre-stated reading, this rejects one form of H1:** the
-table rows do not all say "own"; each row still holds its own agent's value, in
-arm M as in arm T. But the same output shows what the method's wording ran
-together with it ("or the own row dominates"). In arm M at 10 million only, the
-model's own row is 3.7 times the size of the others. In every other model the
-rows are the same size. F5 and F6 show what that does.
+**By the method's pre-stated reading for D3, this rejects H1 as the method
+worded it** ("H1 rejected if in arm M forcing a wrong row gives that agent's
+answer, as in arm T"). The table rows do not all say "own": each row still
+holds its own agent's value, in arm M as in arm T. The method's parenthetical
+"or the own row dominates" did not anticipate what follows, because D3 forces a
+single row, so a large own row could never have produced the own answer here.
+What the same output does show, as a side figure, is that in arm M at 10
+million only the model's own row is far larger than the others (mean size 11.6
+against 3.1). In every other model the rows are the same size. F5, and F6 from
+an added diagnostic, show what that does.
 
 ### F4. Named-other actions by route. MEASURED
 
@@ -224,13 +249,14 @@ T-toy-seed0: flat mixture 710 (0.237); ratio 0.999
 
 This joins F2, F3 and F5 into one account. Arm M's row choice is flat (F2), so
 the head gets roughly an even mix of the four rows. The trunk, through the
-acting channel, makes the own row about 3.8 times the others (F3), and that is
+acting channel, makes the own row about 3.8 times the others (D7's per-action
+ratio, 3.775; F3's mean sizes say the same), and that is
 enough for the rule to give the own answer every time. Take the acting channel
 out of the trunk and the own row is no bigger than the rest (ratio 1.017), and
 the even mix falls to chance (0.249). Swapping the built-in answer changes a
 choice that was already flat, so it changes nothing.
 
-### F7. The row-choice weights grew; the marker words' embeddings shrank far below decay alone (H4 rejected as stated). MEASURED
+### F7. The row-choice weights grew; the marker words' embeddings shrank far below decay alone (D6 matched neither planned pattern for H4). MEASURED
 
 `python d6_weights.py`. Weight decay alone, by `decay_alone.py`'s arithmetic
 (pull request 112), multiplies a weight by **0.3350** over the 10-million run
@@ -256,7 +282,12 @@ T-toy-seed0  score gap top minus second    8.914; weight on top row 0.9974
 
 H4 as the method stated it predicted that `read_own` and `own_key` would end at
 or below about 0.335 of their start. They ended at 1.92 and 1.37, larger than
-arm T's, so **H4 as stated is rejected**. The row choice is flat all the same.
+arm T's, so the "supported" pattern did not fire. The "rejected" pattern needed
+arm M's weights as large as arm T's *and* its row choice as sharp, and the row
+choice is flat (weight on the top row 0.2616), so that pattern did not fire
+either. **D6 matched neither planned pattern.** This session reads H4 as
+rejected as stated, because the weights it named grew; that is this session's
+reading, not the planned one.
 
 `python d8_answer_vector.py` (D8, added after the first outputs) finds why.
 Both the slot and the row keys are made from the agents' marker-word embeddings
@@ -314,7 +345,8 @@ items, and at 10 million its table rows stayed equal (ratio 0.991).
 ## What the outputs do not settle
 
 1. **Why training pushed arm M's marker-word embeddings down at 10 million.**
-   The size argument shows the training signal did it (F7). It does not show
+   The shrinking itself comes from D8, a diagnostic added after the planned ones
+   had printed; the size argument then shows the training signal did it (F7). It does not show
    which part of the model the signal came from. In arm M the marker words feed
    the trunk as text, and through `own_marker` they feed the slot, the row
    keys, every block's scale-and-shift and the value-word binding. One possible
@@ -337,7 +369,8 @@ items, and at 10 million its table rows stayed equal (ratio 0.991).
 
 At 10 million parameters, arm M's separable half answered from the "this turn
 is yours" signal in its shared trunk rather than from its built-in ownership
-answer, because training made the model's own table row much larger than the
-others and shrank the marker words its row choice depends on until that choice
-went flat. So swapping the built-in answer changed nothing. The toy models and
-arm T kept using the built-in answer.
+answer (a planned test), so swapping the built-in answer changed nothing. The
+toy models and arm T kept using the built-in answer. Diagnostics added after
+the planned ones suggest how: training made the model's own table row much
+larger than the others, and shrank the marker words its row choice depends on
+until that choice went flat.
