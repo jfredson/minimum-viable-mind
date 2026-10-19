@@ -74,7 +74,14 @@ reference profile". Put to John; his words, in this session's chat,
 2026-10-18: "my RT-283 reading and its rehearsal condition cover both copies of
 the observer comparison". So item 1 and the condition in item 3 cover both
 sentences. In the same answer he ruled that the removal-test interval clause
-in the Floor sentence is corrected before the spec merges (ledger row RT-292).
+in the Floor sentence is corrected before the spec merges (ledger row RT-292),
+in his words: "fix the removal-test interval sentence in the spec before it
+merges, with the wording you proposed". The wording proposed to him, and now
+in the spec, is "the first and third intervals above zero and the second,
+from 0.00 to 0.20, touching it". His whole answer: "Yes to both: my RT-283
+reading and its rehearsal condition cover both copies of the observer
+comparison, and fix the removal-test interval sentence in the spec before it
+merges, with the wording you proposed."
 
 ## Where it lands
 
