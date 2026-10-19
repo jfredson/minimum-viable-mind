@@ -14,6 +14,19 @@ are what the record holds today; compiling every earlier API call with its
 source is the roadmap step "Compile the exact spend across every vendor".
 Until it is done, the total below is a range.*
 
+## Anthropic credits (added 2026-10-18)
+
+John said on 2026-10-18 that his Max plan includes $200 of Anthropic API
+credits every month, resetting on the 2nd. Anthropic's pages say unused credit
+expires at the end of each cycle and does not roll over. A run paid from those
+credits still needs its own go, with an estimate and a ceiling, like any other
+spend. It is written in this record with the vendor "Anthropic credits", so the
+total can be read two ways: everything spent, and what came out of pocket
+(credit-paid rows cost nothing out of pocket while credit remains). The
+workspace rule, the facts and the monthly rhythm are in `~/Code/CLAUDE.md`,
+section "Anthropic API credits: the monthly $200". Outside reviews and second
+readers stay on a non-Claude model whatever the credit balance.
+
 ## Running total
 
 | | Figure | Source |
