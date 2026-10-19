@@ -1,0 +1,289 @@
+
+==============================================================================
+C1. One row per number RT-283 to RT-304, none before
+==============================================================================
+  ledger lines: base 1171, commit 1 1316, head 1316
+  highest row number at base: RT-282; at head: RT-304
+  rows numbered 283..304 at base: 0 (expected 0)
+  base lines mentioning any of RT-283..RT-304 in any form (heading, prose, row): 0 []
+  rows per number at head: 283:1 284:1 285:1 286:1 287:1 288:1 289:1 290:1 291:1 292:1 293:1 294:1 295:1 296:1 297:1 298:1 299:1 300:1 301:1 302:1 303:1 304:1
+  numbers with exactly one row: 22 of 22; with none: []; with two or more: []
+  rows numbered above 304 at head: 0
+  any number at head with two rows (whole ledger): none
+  new section heading at line 1173; the 22 rows sit at lines 1280..1301; contiguous and in number order: True
+  cells per new row (pipes minus one): [5] (expected [5])
+  ledger diff base..commit 1: +145 -0 (expected -0: append only); commit 1..head: no change
+  base ledger is a prefix of head ledger: True
+
+==============================================================================
+C2. Each row's ruling cell: 'all as recommended', and a ruling of 2026-10-12 that exists in both sources
+==============================================================================
+  pr165_last_comment.md SHA-256 9bb85f30bab6e0b16c3b871545a3177cbc2148a5e6a35c7f8d5e20c5f012498b
+  'all as recommended' in the pull request 165 comment: 1
+  numbered rulings in the comment: [1, 2, 3, 4, 5, 6]
+  numbered rulings in version 3's change-log list: [1, 2, 3, 4, 5, 6]
+  the 'closing line' quoted by the rows, in the comment: True
+  "everything else is the author's to fix" in the covering note (any case): True
+  row | 'all as recommended' | 'Ruled by John 2026-10-12' | rulings cited | each cited ruling in comment / in v3 list | cited ruling names this finding
+  RT-283 | True | True | - + closing line | True | -
+  RT-284 | True | True | [2, 6] | True | {2: True, 6: True}
+  RT-285 | True | True | [3] | True | {3: True}
+  RT-286 | True | True | - + closing line | True | -
+  RT-287 | True | True | - + closing line | True | -
+  RT-288 | True | True | - + closing line | True | -
+  RT-289 | True | True | [6] + closing line | True | {6: True}
+  RT-290 | True | True | [1] | True | {1: True}
+  RT-291 | True | True | - + closing line | True | -
+  RT-292 | True | True | - + closing line | True | -
+  RT-293 | True | True | - + closing line | True | -
+  RT-294 | True | True | - + closing line | True | -
+  RT-295 | True | True | - + closing line | True | -
+  RT-296 | True | True | [6] | True | {6: True}
+  RT-297 | True | True | [6] | True | {6: True}
+  RT-298 | True | True | [6] | True | {6: True}
+  RT-299 | True | True | [6] | True | {6: True}
+  RT-300 | True | True | [6] | True | {6: True}
+  RT-301 | True | True | [6] | True | {6: True}
+  RT-302 | True | True | [4, 6] | True | {4: True, 6: True}
+  RT-303 | True | True | [3, 6] | True | {3: True, 6: True}
+  RT-304 | True | True | [6] | True | {6: True}
+  rows failing any part: 0 of 22
+
+==============================================================================
+C3. The three closure lines against the closure-check file and its output
+==============================================================================
+  closure-check file at 00b272e equals main's copy: True; output file too: True
+
+  RT-283 closure cell, first words: '**Open.** The fix landed at `bfd1d5d` (version 3, merged at '
+   s1: **Open.** The fix landed at `bfd1d5d` (version 3, merged at `03df5e3`).
+       tokens 3, not found in the closure file or its output: []
+   s2: Checked 2026-10-17 by the closure-checks session, which wrote none of it (`docs/reviews/2026-10-17-section-2-v...
+       tokens 10, not found in the closure file or its output: ['docs/reviews/2026-10-17-section-2-v3-closure-checks-claude-code.md', '171']
+   s3: MEASURED: `grep -c "fluency measures"` returns 0 in both; ruling 10 is stated on one line of the section and t...
+       tokens 5, not found in the closure file or its output: []
+   s4: `grep -c "no better than"` returns **1 against an expected 0**, in both.
+       tokens 4, not found in the closure file or its output: []
+   s5: The hit is not the deleted sentence.
+       tokens 0, not found in the closure file or its output: []
+   s6: It is the sixth loss condition of "How this question loses" (version 3, lines 249 to 252): "the observer side'...
+       tokens 7, not found in the closure file or its output: ['249', '252']
+   s7: What it shares with the deleted sentence is what RT-283 named as the defect: a pre-stated comparison for an ob...
+       tokens 5, not found in the closure file or its output: []
+   s8: **Whether that sentence reintroduces the defect, or whether its guard is enough, is for John and is not decide...
+       tokens 1, not found in the closure file or its output: []
+
+  RT-284 closure cell, first words: '**Closed: the claim was checked, with one reading stated.** '
+   s1: **Closed: the claim was checked, with one reading stated.** The fix landed at `bfd1d5d` (merged at `03df5e3`).
+       tokens 2, not found in the closure file or its output: []
+   s2: Checked 2026-10-17 by the closure-checks session, which wrote none of it (the file above, pull request 171): t...
+       tokens 8, not found in the closure file or its output: ['171']
+   s3: MEASURED: the searches return nine hits in John's unchanged text (Scope, lines 10 and 17;
+       tokens 2, not found in the closure file or its output: []
+   s4: The Floor, lines 39 and 45;
+       tokens 2, not found in the closure file or its output: []
+   s5: The Build, line 68;
+       tokens 1, not found in the closure file or its output: []
+   s6: Measuring It, line 87;
+       tokens 1, not found in the closure file or its output: []
+   s7: Grokkable by a Layperson, line 105), the precedence rule is present, and the group "the removal test called a ...
+       tokens 3, not found in the closure file or its output: []
+   s8: ARGUED, the reading: three of the nine are quoted verbatim in the supersession paragraph; six are covered by s...
+       tokens 3, not found in the closure file or its output: []
+   s9: Not shown: that a reader of Scope alone will know to look for the supersession paragraph; that is answered by ...
+       tokens 1, not found in the closure file or its output: []
+
+  RT-289 closure cell, first words: '**Closed: the claim was checked.** The fix landed at `bfd1d5'
+   s1: **Closed: the claim was checked.** The fix landed at `bfd1d5d` (merged at `03df5e3`).
+       tokens 2, not found in the closure file or its output: []
+   s2: Checked 2026-10-17 by the closure-checks session, which wrote none of it (`docs/reviews/2026-10-17-section-2-v...
+       tokens 10, not found in the closure file or its output: ['docs/reviews/2026-10-17-section-2-v3-closure-checks-claude-code.md', '171']
+   s3: MEASURED: `grep -c "degree measured"` 0 and 0;
+       tokens 4, not found in the closure file or its output: []
+   s4: `grep -c "at a degree"` 0 and 0;
+       tokens 4, not found in the closure file or its output: []
+   s5: `grep -c "non-zero"` 1 in the inserts, and the hit is the supersession paragraph's sentence saying what Scope'...
+       tokens 7, not found in the closure file or its output: []
+   s6: The Limits, line 149), which version 3 does not edit;
+       tokens 2, not found in the closure file or its output: []
+   s7: "degree" survives in the inserts once, in the sentence saying there is no validated degree.
+       tokens 1, not found in the closure file or its output: []
+   s8: The output matches what the closure claims
+       tokens 0, not found in the closure file or its output: []
+
+  RT-284: how many unchanged-spec hits the closure check's output lists, and how many pass its strict test
+    'named ... True': 4; 'named ... False': 6; total hits: 10
+    rows of the closure file's table: 9
+    the row says: ['nine hits', 'three of the nine', 'six are covered']
+
+  RT-283: where the one 'no better than' hit sits in version 3 as merged
+    file line(s) in v3 at bfd1d5d (section text only, lines 75..293): [251]
+    the same as a line number counted from the section's first line (75 = 1): [177]
+    the row says lines: ['249 to 252']; the closure file says: ['176 to 178']
+    the same comparison elsewhere in the spec at head, under other wording:
+      spec line 196: 'no better than': ...detect presence in the constructed systems no better than in the frontier...
+      spec line 365: 'no more presence': ...istered search may end with none passed; and observers, blind to construction, may detect no more presence in the constructed systems than in the frontier refer...
+
+==============================================================================
+C4. Tier 2 findings G1..G9 and A1..A14: each a numbered row or a duplicate, none missing, none twice
+==============================================================================
+  ids in the two replies' finding tables: 23: G1 G2 G3 G4 G5 G6 G7 G8 G9 A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 A12 A13 A14
+  ids with a numbered row: 9: A4 A5 A6 A7 A8 A11 A12 A13 G8
+  ids recorded as duplicates in the section note: 14: G1 G2 G3 G4 G5 G6 G7 G9 A1 A2 A3 A9 A10 A14
+  missing from both: []
+  appearing more than once across both: []
+  in the rows but not in the replies: []
+  ruling 6's named list ['A4', 'A5', 'A6', 'A7', 'A8', 'A11', 'A12', 'A13', 'G8'] == the numbered rows' ids in order: True
+
+  duplicate pairings: rows' note against version 3's change log
+    G1: rows ['RT-283']  v3 ['RT-283']  same
+    G2: rows ['RT-289']  v3 ['RT-289']  same
+    G3: rows ['RT-288']  v3 ['RT-288', 'RT-297']  DIFFERENT
+    G4: rows ['RT-287']  v3 ['RT-287']  same
+    G5: rows ['RT-286']  v3 ['RT-286']  same
+    G6: rows ['RT-285']  v3 ['RT-285']  same
+    G7: rows ['RT-292']  v3 ['RT-292']  same
+    G9: rows ['RT-291']  v3 ['RT-291']  same
+    A1: rows ['RT-283']  v3 ['RT-283']  same
+    A2: rows ['RT-289']  v3 ['RT-289']  same
+    A3: rows ['RT-286']  v3 ['RT-286']  same
+    A9: rows ['RT-285', 'RT-286']  v3 ['RT-285', 'RT-286']  same
+    A10: rows ['RT-284', 'RT-287', 'RT-290']  v3 ['RT-284', 'RT-287']  DIFFERENT
+    A14: rows ['RT-292']  v3 ['RT-292']  same
+
+  severities: each row's cell against the sources
+    RT-283: row 'fatal', expected 'fatal' ok | sources: tier 1 fatal; G1 fatal, A1 fatal
+    RT-284: row 'fatal', expected 'fatal' ok | sources: tier 1 serious; A10 serious
+    RT-285: row 'serious', expected 'serious' ok | sources: tier 1 serious; G6 serious, A9 serious
+    RT-286: row 'serious', expected 'serious' ok | sources: tier 1 serious; G5 serious, A3 serious, A9 serious
+    RT-287: row 'serious', expected 'serious' ok | sources: tier 1 serious; G4 serious, A10 serious
+    RT-288: row 'serious', expected 'serious' ok | sources: tier 1 serious; G3 serious
+    RT-289: row 'fatal', expected 'fatal' ok | sources: tier 1 serious; G2 fatal, A2 fatal
+    RT-290: row 'serious', expected 'serious' ok | sources: tier 1 serious; A10 serious
+    RT-291: row 'worth-noting', expected 'worth-noting' ok | sources: tier 1 worth-noting; G9 worth-noting
+    RT-292: row 'worth-noting', expected 'worth-noting' ok | sources: tier 1 worth-noting; G7 serious, A14 worth-noting
+    RT-293: row 'worth-noting', expected 'worth-noting' ok | sources: tier 1 worth-noting; 
+    RT-294: row 'worth-noting', expected 'worth-noting' ok | sources: tier 1 worth-noting; 
+    RT-295: row 'worth-noting', expected 'worth-noting' ok | sources: tier 1 worth-noting; 
+    RT-296: row 'serious', expected 'serious' ok | sources: A4 serious
+    RT-297: row 'serious', expected 'serious' ok | sources: A5 serious
+    RT-298: row 'serious', expected 'serious' ok | sources: A6 serious
+    RT-299: row 'serious', expected 'serious' ok | sources: A7 serious
+    RT-300: row 'worth-noting', expected 'worth-noting' ok | sources: A8 worth-noting
+    RT-301: row 'serious', expected 'serious' ok | sources: A11 serious
+    RT-302: row 'serious', expected 'serious' ok | sources: A12 serious
+    RT-303: row 'serious', expected 'serious' ok | sources: A13 serious
+    RT-304: row 'serious', expected 'serious' ok | sources: G8 serious
+
+==============================================================================
+C5. The spec at the branch head: checksum, and a diff against the main line
+==============================================================================
+  SHA-256 at 1a9752e: 3d0baaca5fbf1af08d86652e455ca4e0462c98f7fb424fde09292623256df119
+  expected:          3d0baaca5fbf1af08d86652e455ca4e0462c98f7fb424fde09292623256df119  equal: True
+  spec unchanged on the main line since the branch point (a99e8e9..origin/main): yes, no diff
+  hunks: 3: ['@@ -19,0 +20,222 @@', '@@ -41 +263 @@', '@@ -142,0 +365,2 @@']
+  lines removed: 1; lines added: 225
+  version 3 pieces: section 219 lines; Floor sentence 214 words; paragraph 223 words
+  removed line is the Floor anchor line: True; its replacement is the old line + ' ' + the Floor sentence de-quoted and joined: True
+  added lines by kind: {'section': 219, 'floor line': 1, 'paragraph': 1, 'blank': 3, 'rule ---': 1, 'other': 0}  (section lines matched in order: 219 of 219)
+  added lines matching none of the three inserts or layout: []
+  spec at head: 377 lines; section heading at line 20; line before it: '---'; '## What This Proposal Is' at line 243, preceded by 2 blank line(s)
+  paragraph at line 365; two lines up starts: 'And if the depth mechanisms produced systems that pass the f'
+  heading levels in the spec at head: ['#', '##', '###']; the inserted heading: '### The Question This Project Measures: Two Sides'
+
+==============================================================================
+C6. Inserted section against version 3 lines 75..293, byte for byte; version 3 below its note against bfd1d5d
+==============================================================================
+  version 3 lines 75..293: 14679 bytes, SHA-256 5bbf98bce8ffb11369aa0e8677af429c34f4aeae7bb4c5bc1651743d6ff8b01e
+  spec lines 20..238: 14679 bytes, SHA-256 5bbf98bce8ffb11369aa0e8677af429c34f4aeae7bb4c5bc1651743d6ff8b01e
+  identical: True
+  version 3 line 294 is blank: True; line 295: b'---'
+  version 3 unchanged between bfd1d5d and the branch point a99e8e9: True
+  diff bfd1d5d..1a9752e on version 3: hunks ['@@ -2,0 +3,23 @@']; lines removed 0; lines added 23
+  head's version 3 with its lines 3..25 (the dated note and its blank line) removed equals bfd1d5d's file: True (23 lines removed)
+
+==============================================================================
+C7. Every double-quoted phrase in the new section, looked for in the sources
+==============================================================================
+  quoted phrases: 163; found whole in at least one source: 163; not found: 0
+
+  quotes the rows attribute to the applied text ('Applied ...' clauses) that are not in the applied text:
+    RT-290: "What This Proposal Is" -> found instead in: ['v3 file', 'closure file+output', 'spec at base']
+    RT-293: "section 10" -> found instead in: ['v3 file', 'tier 1', 'rulings 2026-10-07', 'ledger before the rows']
+    RT-295: "the reference profile" -> found instead in: ['v3 file']
+    RT-295: "the identity" -> found instead in: ['v3 file', 'covering note', 'tier 1', 'GPT', 'spec at base']
+    RT-303: "What Would Count Against It" -> found instead in: ['v3 file', 'covering note', 'tier 1', 'closure file+output', 'spec at base', 'ledger before the rows']
+    RT-304: "this project's definition of the floor and not ... an instrument for it" -> found instead in: ['v3 file']
+
+  RT-304's quoted phrase, against the Floor sentence it names and against section 2:
+    "this project's definition of the floor and not" in the Floor sentence: False; in section 2: False; in version 3's change log: True
+    'treats the test as its definition of the floor and not as an instrument for it': Floor sentence True; section 2 False
+    "this project's definition of the floor, not its instrument for it": Floor sentence False; section 2 True
+
+==============================================================================
+C8. Other claims the rows make, each against its source
+==============================================================================
+  closure words over the 22 rows: Open: 2 [283, 302]; Closed: the claim was checked: 2 [284, 289]; Closed: the argument was accepted: 18 [285, 286, 287, 288, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 303, 304]
+  the section's count line says: [('2', '', ''), ('', '18', ''), ('', '', '2')]
+  version 3's numbers for the tier 2 findings: [('296', 'A4'), ('297', 'A5'), ('298', 'A6'), ('299', 'A7'), ('300', 'A8'), ('301', 'A11'), ('302', 'A12'), ('303', 'A13'), ('304', 'G8')]
+  rows' numbers for them: [('296', 'A4'), ('297', 'A5'), ('298', 'A6'), ('299', 'A7'), ('300', 'A8'), ('301', 'A11'), ('302', 'A12'), ('303', 'A13'), ('304', 'G8')]  same: True
+  GPT's A10 names the founding wager (the rows pair A10 with RT-290 too; version 3 does not): True
+  ledger headings at head: '#' 13 (lines [1, 268, 326, 366, 403, 467, 555, 592, 671, 869, 939, 1154, 1173]), '##' 9, '###' 9
+  RT-284's line numbers in John's unchanged text, against the spec at the branch point:
+    'subject to a removal test': line(s) [10] (row/closure file: 10) ok
+    'minimum measurable structural correlate': line(s) [10] (row/closure file: 10) ok
+    '"Minimum viable" names the smallest system': line(s) [17] (row/closure file: 17) ok
+    'settled by removal': line(s) [39] (row/closure file: 39) ok
+    'survives the removal test': line(s) [45] (row/closure file: 45) ok
+    'minimum viable conscious machine a two-part definition': line(s) [45] (row/closure file: 45) ok
+    'pass-fail criterion is the removal test': line(s) [68] (row/closure file: 68) ok
+    'measurement that speaks to an inside': line(s) [87] (row/closure file: 87) ok
+    'Interpretability is the route': line(s) [87] (row/closure file: 87) ok
+    'removal test as the intuition': line(s) [105] (row/closure file: 105) ok
+  RT-292's figures, read from experiment 1's committed interval file at the branch head:
+    drop on T_self_irrelevant: 0.2188 [0.0938, 0.3750]  lower bound above zero: True
+    drop on T_self_relevant: 0.1000 [0.0000, 0.2000]  lower bound above zero: False
+    drop on T_syntax: 0.1333 [0.0333, 0.2667]  lower bound above zero: True
+    router gap: +0.0333 [-0.1333, +0.2000]
+    the Floor sentence (now spec line 263) says 'each interval above zero': True
+    the RT-292 row says it too: True
+    the findings file's own word for a lower bound of 0.000: ['lower bound touches zero']
+
+==============================================================================
+C9. Commit 3 (38133fc): RT-283 closed on John's reading
+==============================================================================
+  files the commit touches: ['M\tdocs/rulings/2026-10-12-two-sided-question-section-2-v3.md', 'A\tdocs/rulings/2026-10-18-rt283-closure-ruling.md', 'M\texperiments/06-mvm-0a-constructed-self-index/red_team_ledger.md']
+  parent of 38133fc is 1a9752e: True
+  spec SHA-256 at 38133fc: 3d0baaca5fbf1af08d86652e455ca4e0462c98f7fb424fde09292623256df119  equal to expected: True; spec bytes unchanged from 1a9752e: True
+  ledger lines changed 1a9752e..38133fc: [1280] (line count 1316 -> 1316)
+  that line is RT-283's row: True; cells 1 to 4 unchanged: True; closure cell changed: True
+  ruling file: 77 lines, SHA-256 c80b6ce471d5be8cf558d10aaf02db1d72c5bf49c5e4814c2e0aa947fd9f85fc
+  quoted phrases in the new closure cell, and where each is found:
+    "fluency measures" -> ['ruling file', 'closure file+output']
+    "no better than" -> ['ruling file', 'closure file+output', 'v3 section']
+    "How this question loses" -> ['ruling file', 'closure file+output', 'v3 section']
+    "the observer side's premise fails if observers, blind to construction and never ..." -> ['ruling file', 'closure file+output', 'v3 section']
+    "Until the construction line produces a system that can be read, this is a questi..." -> ['ruling file', 'closure file+output', 'v3 section']
+    "RT-283 closes on reading: the surviving sentence is a different comparison, guar..." -> ['ruling file']
+  John's quoted words in the ruling file: 2
+    "Ok
+sounds good. Go ahead and close it...." whole in the row: False; first sentence in the row: False
+    "RT-283 closes on reading: the
+surviving sentence is a different compar..." whole in the row: False; first sentence in the row: True
+  what the ruling file rules, looked for in the row:
+    closed on reading, not on the letter: True
+    count of 1 kept: True
+    the sentence stands unedited: True
+    condition: instrument: True
+    condition: rehearsal before registration: True
+    observer study deferred by decision 7: True
+    authorship mixed: True
+    ruling file cited by path: True
+    both checked and accepted: True
+  the second place the same comparison sits (spec line 365, 'no more presence ... than'):
+    named in ruling file: False
+    named in RT-283 row: False
+    named in v3 note: False
+  the section's count line at 38133fc still lists RT-283 as open: True; says 'one is open': True; a dated note on the count after it: False
+  version 3 diff 1a9752e..38133fc: blocks ['@@ -25,0 +26,5 @@']; removed 0
+  version 3 with both dated notes (its lines 3..30) removed equals bfd1d5d's file: True
+  the new dated note says 'instrument': False; 'rehears': True; cites the ruling file: True
