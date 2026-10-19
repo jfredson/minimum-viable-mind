@@ -41,3 +41,18 @@ $ git show 1a9752e:spec/minimum-viable-mind-proposal-v0.1.md | grep -n -o -E 'no
 196:no better than in the frontier
 365:no more presence in the constructed systems than
 
+$ git diff --name-status 1a9752e 38133fc
+M	docs/rulings/2026-10-12-two-sided-question-section-2-v3.md
+A	docs/rulings/2026-10-18-rt283-closure-ruling.md
+M	experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md
+
+$ git show 38133fc:spec/minimum-viable-mind-proposal-v0.1.md | shasum -a 256
+3d0baaca5fbf1af08d86652e455ca4e0462c98f7fb424fde09292623256df119  -
+
+$ git diff -U0 1a9752e 38133fc -- experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md | grep -E '^@@'
+@@ -1280 +1280 @@ and fits and not what it says.*
+
+$ git show 38133fc:experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md | grep -c 'Open: 2 (RT-283'; echo '(1 = the count line still lists RT-283 as open)'
+1
+(1 = the count line still lists RT-283 as open)
+

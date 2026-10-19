@@ -1,4 +1,4 @@
-**Verdict: PASS WITH CONDITIONS.** The spec commit is exact (checksum, three inserts, nothing else changed) and the numbering, rulings and tier 2 coverage of the 22 rows all hold. Four rows need changes before merge: RT-284's closure line miscounts the hits, RT-283's "what closes it" misses a second copy of the same comparison, RT-292 carries a figure the record contradicts and must go to Open, and RT-304 misquotes the Floor sentence. The changes are listed under "Conditions" below.
+**Verdict: PASS WITH CONDITIONS.** The spec commit is exact (checksum, three inserts, nothing else changed) and the numbering, rulings and tier 2 coverage of the 22 rows all hold. John's RT-283 ruling (commit 3, added 2026-10-18) is recorded faithfully, touches only its three files, and leaves the spec's checksum unchanged. Five changes are needed before merge: RT-284's closure line miscounts the hits; RT-283's row should say the ruling also covers a second copy of the same comparison; RT-292 carries a figure the record contradicts and must go to Open; RT-304 misquotes the Floor sentence; and the section's count line still lists RT-283 as open. The changes are listed under "Conditions" below.
 
 # Check of pull request 173: ledger rows RT-283 to RT-304, and section 2 version 3 written into the spec
 
@@ -32,6 +32,7 @@ John's rulings of 2026-10-12 as posted on pull request 165, saved with
 | `2271b7d` | pull request 173, commit 1: the 22 ledger rows |
 | `1a9752e` | pull request 173, commit 2 and branch head: section 2 written into the spec, dated note on version 3 |
 | `bfd1d5d` | version 3 of section 2 as written (merged by pull request 170 at `03df5e3`) |
+| `38133fc` | pull request 173, commit 3, pushed 2026-10-18 after this check began: John rules RT-283 closed on reading (checked in its own section below, C9) |
 | `00b272e` | the closure checks of 2026-10-17, head of pull request 171 (merged to the main line at `57a5c95`; the file is byte-identical there, MEASURED in C3) |
 
 ## What was opened, and what was not
@@ -328,13 +329,14 @@ open 2) matches the closure words on the 22 rows (C8). Condition 3 changes it.
    two)", and "three of the nine are quoted verbatim; six are covered ..." with
    "four pass the script's strict substring test and six are flagged; the six
    are covered by section name or with the phrase altered".
-2. **RT-283's closure line, "What closes it":** add that the same
-   comparison stands a second time in the paragraph added to "What Would Count
-   Against It" (spec line 365, "may detect no more presence in the
-   constructed systems than in the frontier reference profile"), which a
-   search for "no better than" does not find. Then say either closure covers both
-   places: John's ruling that both stand, or both reworded, with the re-run
-   check searching for both wordings.
+2. **RT-283's closure line** (revised after commit 3, which closed RT-283 on
+   John's reading): add a sentence saying the same comparison stands a second
+   time in the paragraph added to "What Would Count Against It" (spec line
+   365, "may detect no more presence in the constructed systems than in the
+   frontier reference profile"), and that John's reading and its rehearsal
+   condition cover it too, since it is the same comparison. If that is not
+   how John means it, put it to him. Neither the ruling file nor the row
+   names it now (C9).
 3. **RT-292's row:** change the closure from "Closed: the argument was
    accepted" to "**Open.**" and record this check's output (the self-relevant
    drop is 0.1000 with interval [0.0000, 0.2000]; the record calls such a
@@ -344,20 +346,110 @@ open 2) matches the closure words on the 22 rows (C8). Condition 3 changes it.
    (for example "two of the three intervals above zero and the third
    touching it") by a session that did not write version 3, then
    re-checked; or John's ruling that it stands. Update the section's count
-   line to accepted 17, open 3. Correcting spec line 263 changes the spec's
+   line (see condition 5). Correcting spec line 263 changes the spec's
    checksum. That is John's call, and this check does not ask for it before the
    merge, only that the row says it is open.
 4. **RT-304's row:** quote the Floor sentence as it reads: the removal test
    is what "this project treats ... as its definition of the floor and not as
    an instrument for it".
 
+5. **The section's count line** (ledger, after the 22 rows): add a dated
+   note on the count, in the form the ledger already uses (its dated note
+   of 2026-10-08 on an earlier count). It should say that RT-283 is closed on
+   John's reading of 2026-10-18, with the ruling file's path, and give the new
+   count. With condition 3 that is: checked 2, accepted 17, closed on reading
+   1, open 2 (RT-292 and RT-302). The count line still says "Open: 2 (RT-283
+   ..." and "one is open" (C9).
+
 Nothing else needs to change. The spec commit itself (checks 5 and 6) passes as it stands.
+
+## Commit 3: RT-283 closed on John's reading (C9). MATCHES, two gaps.
+
+The session that started this check sent word that a third commit had been
+pushed to the branch on 2026-10-18 (`38133fc`): John's ruling that RT-283
+closes on reading. Checked as asked:
+
+```
+$ git diff --name-status 1a9752e 38133fc
+M	docs/rulings/2026-10-12-two-sided-question-section-2-v3.md
+A	docs/rulings/2026-10-18-rt283-closure-ruling.md
+M	experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md
+$ git show 38133fc:spec/minimum-viable-mind-proposal-v0.1.md | shasum -a 256
+3d0baaca5fbf1af08d86652e455ca4e0462c98f7fb424fde09292623256df119  -
+$ git diff -U0 1a9752e 38133fc -- experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md | grep -E '^@@'
+@@ -1280 +1280 @@ and fits and not what it says.*
+```
+
+and from C9:
+
+```
+  that line is RT-283's row: True; cells 1 to 4 unchanged: True; closure cell changed: True
+    "RT-283 closes on reading: the surviving sentence is a different compar..." whole in the row: False; first sentence in the row: True
+  what the ruling file rules, looked for in the row:
+    closed on reading, not on the letter: True
+    count of 1 kept: True
+    the sentence stands unedited: True
+    condition: instrument: True
+    condition: rehearsal before registration: True
+    observer study deferred by decision 7: True
+    authorship mixed: True
+    ruling file cited by path: True
+    both checked and accepted: True
+  the second place the same comparison sits (spec line 365, 'no more presence ... than'):
+    named in ruling file: False
+    named in RT-283 row: False
+    named in v3 note: False
+  the section's count line at 38133fc still lists RT-283 as open: True; says 'one is open': True; a dated note on the count after it: False
+  version 3 diff 1a9752e..38133fc: blocks ['@@ -25,0 +26,5 @@']; removed 0
+  version 3 with both dated notes (its lines 3..30) removed equals bfd1d5d's file: True
+  the new dated note says 'instrument': False; 'rehears': True; cites the ruling file: True
+```
+
+MEASURED, claim by claim:
+
+- **Only three files touched, spec unchanged.** Yes. The spec's bytes are
+  the same as at commit 2, and its checksum is still `3d0baaca…6df119`.
+  In the ledger, one line changed: RT-283's row. Only its closure cell
+  differs, and the other four cells are untouched.
+- **The row says what the ruling file says.** Yes, on all nine points the
+  ruling file rules: closed on reading and not on the letter; the count of 1
+  kept as measured; the sentence stands unedited; the condition (an
+  instrument and a measurement rehearsal before registration, for the study
+  decision 7 deferred); authorship mixed; the file cited by path; and the
+  closure rule's "both" (the claim checked, the argument accepted).
+- **John's quoted words match.** The row quotes the first sentence of John's
+  chat words exactly as the ruling file has them. It does not quote the rest
+  of that message or his words to the master session ("Ok sounds good. Go
+  ahead and close it."). It records their content (the count, the reason,
+  the condition) in its own words and points to the file. ARGUED: that is a
+  fair way to carry them, and no change is asked.
+- **The dated line in version 3's note.** Five lines added, nothing removed.
+  With both dated notes taken out, version 3 is still exactly what `bfd1d5d`
+  merged. ARGUED, small: the note gives the condition as "rehearsed" and
+  leaves out "gets its instrument", which the ruling file has. It cites the
+  ruling file, so no change is asked.
+- **Gap 1: the second copy of the comparison.** The ruling was put to John
+  on the sixth loss condition in section 2 (spec line 196). The same
+  comparison is stated a second time, in other words, in the paragraph added
+  to "What Would Count Against It" (spec line 365). Neither the ruling file,
+  the row nor the note mentions it. ARGUED: John's reasoning (a different
+  comparison, guarded, with a rehearsal condition) applies to the copy just
+  as well, but he was not shown it. Condition 2 is revised to ask the row to
+  say so.
+- **Gap 2: the count line is stale.** The section's count line still lists
+  RT-283 as open and says "one is open" of the three fatal findings.
+  Condition 5.
+
+My first reading of RT-283 (section (3) above) was of the row as it stood
+at commit 2. Its findings on line numbers and on the second copy still hold
+for the row at commit 3, which keeps the same MEASURED text.
 
 ## For John, not decided here
 
 - Whether to merge the spec commit with "each interval above zero" in it
   and fix it afterwards, or fix version 3 and the spec first (condition 3
   allows either).
-- The writing session's three open questions (RT-283's sentence, RT-292's
-  grade, RT-287's closure choice) stand as they put them. Condition 2 adds the
-  second sentence to the first of those.
+- Whether his RT-283 reading covers the restatement at spec line 365
+  (condition 2 assumes it does).
+- The writing session's other two open questions (RT-292's grade, RT-287's
+  closure choice) stand as they put them.

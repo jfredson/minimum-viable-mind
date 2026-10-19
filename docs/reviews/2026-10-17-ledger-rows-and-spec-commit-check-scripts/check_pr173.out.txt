@@ -247,3 +247,43 @@ C8. Other claims the rows make, each against its source
     the Floor sentence (now spec line 263) says 'each interval above zero': True
     the RT-292 row says it too: True
     the findings file's own word for a lower bound of 0.000: ['lower bound touches zero']
+
+==============================================================================
+C9. Commit 3 (38133fc): RT-283 closed on John's reading
+==============================================================================
+  files the commit touches: ['M\tdocs/rulings/2026-10-12-two-sided-question-section-2-v3.md', 'A\tdocs/rulings/2026-10-18-rt283-closure-ruling.md', 'M\texperiments/06-mvm-0a-constructed-self-index/red_team_ledger.md']
+  parent of 38133fc is 1a9752e: True
+  spec SHA-256 at 38133fc: 3d0baaca5fbf1af08d86652e455ca4e0462c98f7fb424fde09292623256df119  equal to expected: True; spec bytes unchanged from 1a9752e: True
+  ledger lines changed 1a9752e..38133fc: [1280] (line count 1316 -> 1316)
+  that line is RT-283's row: True; cells 1 to 4 unchanged: True; closure cell changed: True
+  ruling file: 77 lines, SHA-256 c80b6ce471d5be8cf558d10aaf02db1d72c5bf49c5e4814c2e0aa947fd9f85fc
+  quoted phrases in the new closure cell, and where each is found:
+    "fluency measures" -> ['ruling file', 'closure file+output']
+    "no better than" -> ['ruling file', 'closure file+output', 'v3 section']
+    "How this question loses" -> ['ruling file', 'closure file+output', 'v3 section']
+    "the observer side's premise fails if observers, blind to construction and never ..." -> ['ruling file', 'closure file+output', 'v3 section']
+    "Until the construction line produces a system that can be read, this is a questi..." -> ['ruling file', 'closure file+output', 'v3 section']
+    "RT-283 closes on reading: the surviving sentence is a different comparison, guar..." -> ['ruling file']
+  John's quoted words in the ruling file: 2
+    "Ok
+sounds good. Go ahead and close it...." whole in the row: False; first sentence in the row: False
+    "RT-283 closes on reading: the
+surviving sentence is a different compar..." whole in the row: False; first sentence in the row: True
+  what the ruling file rules, looked for in the row:
+    closed on reading, not on the letter: True
+    count of 1 kept: True
+    the sentence stands unedited: True
+    condition: instrument: True
+    condition: rehearsal before registration: True
+    observer study deferred by decision 7: True
+    authorship mixed: True
+    ruling file cited by path: True
+    both checked and accepted: True
+  the second place the same comparison sits (spec line 365, 'no more presence ... than'):
+    named in ruling file: False
+    named in RT-283 row: False
+    named in v3 note: False
+  the section's count line at 38133fc still lists RT-283 as open: True; says 'one is open': True; a dated note on the count after it: False
+  version 3 diff 1a9752e..38133fc: blocks ['@@ -25,0 +26,5 @@']; removed 0
+  version 3 with both dated notes (its lines 3..30) removed equals bfd1d5d's file: True
+  the new dated note says 'instrument': False; 'rehears': True; cites the ruling file: True

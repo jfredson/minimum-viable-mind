@@ -19,3 +19,8 @@ run "git show 1a9752e:$L | grep -oE '^\| RT-(28[3-9]|29[0-9]|30[0-4])\b' | sort 
 run "git show 1a9752e:$S | grep -n -o 'each interval above zero'"
 run "git show 1a9752e:experiments/01-self-indexing-removal-test/removal_ci.json | python3 -c 'import json,sys; c=json.load(sys.stdin)[\"cells\"][\"idxres_mean_k16\"]; [print(k, c[k]) for k in (\"T_self_irrelevant\",\"T_self_relevant\",\"T_syntax\")]'"
 run "git show 1a9752e:$S | grep -n -o -E 'no better than in the frontier|no more presence in the constructed systems than'"
+# Commit 3 (38133fc, pushed 2026-10-18): John rules RT-283 closed on reading
+run "git diff --name-status 1a9752e 38133fc"
+run "git show 38133fc:$S | shasum -a 256"
+run "git diff -U0 1a9752e 38133fc -- $L | grep -E '^@@'"
+run "git show 38133fc:$L | grep -c 'Open: 2 (RT-283'; echo '(1 = the count line still lists RT-283 as open)'"

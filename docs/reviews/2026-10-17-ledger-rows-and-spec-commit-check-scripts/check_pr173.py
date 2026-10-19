@@ -453,3 +453,63 @@ print(f"    the RT-292 row says it too: {'each interval above zero' in rows[292]
 exp1 = text(HEAD, EXP1)
 print(f"    the findings file's own word for a lower bound of 0.000: "
       f"{re.findall(r'lower bound touches zero', exp1)}")
+
+# ---------------------------------------------------------------------------
+NEW = "38133fc"       # commit 3, pushed 2026-10-18: John rules RT-283 closed on reading
+RULING = "docs/rulings/2026-10-18-rt283-closure-ruling.md"
+head(f"C9. Commit 3 ({NEW}): RT-283 closed on John's reading")
+files = git("diff", "--name-status", HEAD, NEW).split("\n")
+print(f"  files the commit touches: {[f for f in files if f]}")
+print(f"  parent of {NEW} is {HEAD}: {git('rev-parse', '--short', NEW + '^').strip() == HEAD}")
+sn = show(NEW, SPEC)
+print(f"  spec SHA-256 at {NEW}: {hashlib.sha256(sn).hexdigest()}  equal to expected: "
+      f"{hashlib.sha256(sn).hexdigest() == EXPECTED_SHA}; spec bytes unchanged from {HEAD}: {sn == spec_b}")
+nl = text(NEW, LEDGER).splitlines()
+changed = [i for i in range(max(len(nl), len(head_l))) if i >= len(nl) or i >= len(head_l) or nl[i] != head_l[i]]
+print(f"  ledger lines changed {HEAD}..{NEW}: {[i + 1 for i in changed]} (line count {len(head_l)} -> {len(nl)})")
+old283 = rows[283]
+new283 = [x.strip() for x in nl[hc[283][0] - 1].strip().strip("|").split(" | ")]
+print(f"  that line is RT-283's row: {nl[hc[283][0] - 1].startswith('| RT-283')}; cells 1 to 4 unchanged: "
+      f"{old283[:4] == new283[:4]}; closure cell changed: {old283[4] != new283[4]}")
+ru = text(NEW, RULING)
+cell = new283[4]
+print(f"  ruling file: {len(ru.splitlines())} lines, SHA-256 {hashlib.sha256(ru.encode()).hexdigest()}")
+print("  quoted phrases in the new closure cell, and where each is found:")
+for q in re.findall(r'"([^"]{3,})"', cell):
+    w = [k for k, v in (("ruling file", norm(ru)), ("closure file+output", src),
+                        ("v3 section", norm("\n".join(section)))) if norm(q) in v]
+    print(f"    \"{q[:80]}{'...' if len(q) > 80 else ''}\" -> {w}")
+jw = re.findall(r'(?s)## John\'s words\n(.*?)\n## ', ru)[0]
+jq = re.findall(r'"([^"]+)"', jw)
+print(f"  John's quoted words in the ruling file: {len(jq)}")
+for q in jq:
+    first = re.split(r"(?<=\.) ", q)[0]
+    print(f"    \"{q[:70]}...\" whole in the row: {norm(q) in norm(cell)}; first sentence in the row: {norm(first) in norm(cell)}")
+print("  what the ruling file rules, looked for in the row:")
+for label, pat in (("closed on reading, not on the letter", "not on the letter of the check"),
+                   ("count of 1 kept", "1 against an expected 0"),
+                   ("the sentence stands unedited", "sentence stands unedited"),
+                   ("condition: instrument", "gets its instrument"),
+                   ("condition: rehearsal before registration", "rehearsal before it is registered"),
+                   ("observer study deferred by decision 7", "decision 7 of 2026-10-07"),
+                   ("authorship mixed", "mixed"),
+                   ("ruling file cited by path", RULING),
+                   ("both checked and accepted", "the claim was checked and the argument accepted")):
+    print(f"    {label}: {norm(pat) in norm(cell)}")
+print("  the second place the same comparison sits (spec line 365, 'no more presence ... than'):")
+for name, t_ in (("ruling file", ru), ("RT-283 row", cell), ("v3 note", text(NEW, V3F)[:4000])):
+    print(f"    named in {name}: {'365' in t_ or 'no more presence' in t_}")
+cnt = re.sub(r"\s+", " ", "\n".join(nl[nl.index(next(l for l in nl[sec_start:] if l.startswith('**Count of the rows above.** Twenty-two'))):]))
+print(f"  the section's count line at {NEW} still lists RT-283 as open: {'Open: 2 (RT-283' in cnt}; "
+      f"says 'one is open': {'and one is open' in cnt}; a dated note on the count after it: {'Dated note' in cnt}")
+v3n = show(NEW, V3F)
+d = git("diff", "-U0", HEAD, NEW, "--", V3F)
+print(f"  version 3 diff {HEAD}..{NEW}: blocks {re.findall(r'(?m)^@@.*@@', d)}; removed "
+      f"{sum(1 for ln in d.splitlines() if ln.startswith('-') and not ln.startswith('---'))}")
+l3 = v3n.split(b"\n")
+body_at = next(i for i in range(1, len(l3)) if l3[i].startswith(b"*Written 2026-10-12"))
+print(f"  version 3 with both dated notes (its lines 3..{body_at}) removed equals {V3}'s file: "
+      f"{b'\n'.join(l3[:2] + l3[body_at:]) == v3_b}")
+note2 = norm(b"\n".join(l3[25:30]).decode())
+print(f"  the new dated note says 'instrument': {'instrument' in note2}; 'rehears': {'rehears' in note2}; "
+      f"cites the ruling file: {norm(RULING) in note2}")
