@@ -167,7 +167,7 @@ is not missing the route. **ARGUED, from the code:** the swap reaches arm M's
 separable head by the same path as arm T's (`swap_answer` changes only
 `assign_agent_at`, which only `_own_vec` reads, and both arms use the same
 `_own_vec` and `_separable_logits`). What differs is that arm M's row choice
-puts about a quarter on every agent under both answers, and its slot moves a
+puts about a quarter on every agent under both answers, and its slot moves about
 ninety times less than arm T's (20.41 against 0.22). By the method's own rule, a flat row choice is
 read under H4 and is not H2.
 
