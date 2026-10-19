@@ -1,0 +1,9 @@
+2026-10-04 succ_m_10m_seed0  ledger $0.4744 (by arithmetic)  carried $0.47  ledger rounded $0.47  matches
+2026-10-04 succ_t_10m_seed0  ledger $0.3347 (by arithmetic)  carried $0.34  ledger rounded $0.33  DIFFERS
+2026-10-04 succ_c_10m_seed0  ledger $0.3341 (by arithmetic)  carried $0.33  ledger rounded $0.33  matches
+2026-10-04 succ_f_10m_seed0  ledger $0.3223 (by arithmetic)  carried $0.33  ledger rounded $0.32  DIFFERS
+2026-10-09 succ_m_10m_seed0  ledger $0.5045 (from the vendor's own bill)  carried $0.5045  ledger rounded $0.5045  matches
+2026-10-09 succ_t_10m_seed0  ledger $0.3980 (from the vendor's own bill)  carried $0.3980  ledger rounded $0.3980  matches
+2026-10-09 succ_c_10m_seed0  ledger $0.4007 (from the vendor's own bill)  carried $0.4007  ledger rounded $0.4007  matches
+sum 2026-10-04 $1.4655
+sum 2026-10-09 $1.3032
