@@ -1,0 +1,80 @@
+# Runner output, entry 1, both starts. First start 2026-10-18 about 18:55 to 19:13 Pacific (stopped on Google's daily limit):
+entry 1 arm_S2: 107 responses; running spend estimate $2.81
+entry 1 arm_B: 107 responses; running spend estimate $6.04
+Traceback (most recent call last):
+  File "/Users/john/Code/minimum-viable-mind/docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py", line 903, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/john/Code/minimum-viable-mind/docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py", line 893, in main
+    return real_run(entry)
+           ^^^^^^^^^^^^^^^
+  File "/Users/john/Code/minimum-viable-mind/docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py", line 742, in real_run
+    recs[arm] = run_single_turn(out / arm, arm_cells, fn, spend)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/john/Code/minimum-viable-mind/docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py", line 658, in run_single_turn
+    return list(ex.map(do, arm_cells))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/john/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/john/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/john/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/john/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/john/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/john/Code/minimum-viable-mind/docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.py", line 648, in do
+    reply = chat(model_of(c), sysm, [{"role": "user", "content": msgs[0]}],
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/john/Code/minimum-viable-mind/experiments/03-retained-independence/src/clients.py", line 80, in chat
+    raise RuntimeError(f"chat({model}) failed after {retries} tries: {last_err}")
+RuntimeError: chat(gemini-3.1-pro-preview) failed after 8 tries: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_requests_per_model_per_day, limit: 250, model: gemini-3.1-pro\nPlease retry in 21h53m27.451894546s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_requests_per_model_per_day', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel', 'quotaDimensions': {'model': 'gemini-3.1-pro', 'location': 'global'}, 'quotaValue': '250'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '78807s'}]}}
+
+# Second start, 2026-10-19 from 00:05 Pacific, through the end of entry 1 (from the daily resume loop's log):
+2026-10-18 19:44:30 PDT daily resume loop started
+2026-10-18 19:44:30 PDT sleeping 15630s until 00:05 Pacific
+2026-10-18 20:28:53 PDT loop stopped by the master session before the 00:05 start: John's refinement says calls must not go through another project's key, and which project this repository's .env keys belong to is unconfirmed
+2026-10-18 20:33:11 PDT restarting the loop: the .env's Anthropic key is now Minimum Viable Mind's own new key (workspace mvm-judge, ends 3AAA), confirmed without printing it; Gemini key unchanged
+2026-10-18 20:33:11 PDT daily resume loop started
+2026-10-18 20:33:11 PDT sleeping 12709s until 00:05 Pacific
+2026-10-19 00:05:00 PDT Gemini high-end spend since the balance reading: $0.00; estimated balance left: $20.00
+2026-10-19 00:05:00 PDT start
+entry 1 arm_S2: 107 responses; running spend estimate $2.81
+entry 1 arm_B: 107 responses; running spend estimate $6.04
+entry 1 arm_B2: 107 responses; running spend estimate $9.26
+entry 1 arm_S: 531 responses; running spend estimate $19.43
+{
+ "entry": 1,
+ "rates": {
+  "r_F": 0.9439252336448598,
+  "r_B": 1.0,
+  "r_B2": 1.0,
+  "r_S": 0.9906542056074766,
+  "r_S2": 0.0,
+  "r_S_live": 0.9952830188679245,
+  "r_reference": 0.2711864406779661
+ },
+ "gates": {
+  "i_S2_floor": true,
+  "ii_reference_far_end": false,
+  "ii_plain_model_live": true,
+  "iii_judge_reliability": true,
+  "iv_min_cells": true
+ },
+ "readings": [
+  "no verdict: a gate failed"
+ ],
+ "spend_estimate": 21.82,
+ "unreadable_verdicts_by_arm": {
+  "arm_S2": 0,
+  "arm_B": 0,
+  "arm_B2": 0,
+  "arm_S": 0,
+  "reference_always_agree": 0
+ }
+}
