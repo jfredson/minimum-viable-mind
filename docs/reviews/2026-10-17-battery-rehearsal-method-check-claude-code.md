@@ -17,8 +17,9 @@ judge-reliability gate passes when every judge reply is unreadable**
 
 *Re-checked later on 2026-10-18, after the six conditions were applied (commit
 `3b22925`, "the six conditions of the check of the battery rehearsal method
-applied"): all six are met, and two small new conditions stand. See the last
-section, "Re-check of the fixes".*
+applied"): all six are met, and two small new conditions stand. See the
+section "Re-check of the fixes". Both were met in commit `8850f66`, confirmed in
+the last section: no condition stands.*
 
 *Checked 2026-10-18 (Pacific). The file name carries 2026-10-17, the date of
 the method file and the name the brief gave this record.*
@@ -902,3 +903,46 @@ cover it.
 nothing that decides a reading changed. When you give the go, name ceilings
 a little above the high end (say $23 for entry 1 and $19 for entry 2),
 because the exact figures in the method leave entry 2 one call short.
+
+### Second re-check (2026-10-18): the two new conditions met. PASS. MEASURED.
+
+Commit `8850f66` ("the re-check's two new conditions met ...") was checked
+with `recheck-2026-10-18/recheck2_calls_vs_records.sh`. It runs the dry run
+and the stand-in cases under the terms of R2, and it counts calls made
+against calls held in records. A gate pair counts as two calls, a judge
+record as one call per verdict, and a subject record as one call per reply.
+
+```
+cmp: identical
+0b5ea4fde158089e8b277b3d8054141439fcfc73944bd7e90606bfe7c88dd040  docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.dryrun.out.txt
+.pyc files left: 0
+  runner diff lines outside the dry run's note and the four record-then-cost blocks:
+    (end of list)
+  committed dry-run output, lines changed: 2
+### C. entry 1 at $10:     calls made 701; calls held in records: 701
+### D. the same command again: new calls made 0; all calls made so far 701; held: 701
+### E. entry 2 at $10:     entry 2 calls made 702; held 1403 - 701 = 702
+### H. stopped inside the judge gate at $20.22: calls made 1489; held: 1489; gate pairs on disk: 27
+         restart at $100:  new calls 66; total made 1555 (an uninterrupted entry 1 makes 1555); held: 1555
+```
+
+- **Condition 2 is met.** Every paid call is now held in a record, in every
+  case. A restart at an unchanged ceiling now makes no call at all, because
+  the earlier start's counted cost already passes the ceiling before any new
+  call goes out.
+- **Condition 1 is met.** Section 10 and the dry run's note now ask for "a
+  margin above them, about $23 and $19".
+- **Nothing else changed.** The commit touched the method (those two
+  passages and the "loses nothing" sentence), the dry-run output (the note,
+  2 lines) and the runner. In the runner, every changed line belongs to the
+  note or to the four write-the-record-then-count-its-cost blocks. It also
+  added a stand-in output file. No figure, band, gate bar, prompt or ruling
+  changed.
+- The commit message's figures for runs D and E (2 new calls; 712 calls)
+  differ from this session's (0; 702). Which calls are in flight when the
+  stop comes depends on thread timing, and in both sessions every call made
+  is held, which is the property the condition asks for.
+
+**No condition stands.** The method file, the version 1.2 rubric file and the
+runner are ready for John's go, which names the two ceilings (about $23 and
+$19 if both entries are to finish in one start). Nothing was called or spent.

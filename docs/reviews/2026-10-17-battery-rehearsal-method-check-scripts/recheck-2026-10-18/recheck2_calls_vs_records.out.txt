@@ -1,0 +1,38 @@
+## the dry run (default bytecode caching on, clean environment)
+exit 0
+cmp: identical
+0b5ea4fde158089e8b277b3d8054141439fcfc73944bd7e90606bfe7c88dd040  docs/filtered-battery-2026-10-07/run_rehearsal_entries_1_2.dryrun.out.txt
+.pyc files left: 0
+
+## what commit 8850f66 touched
+   .../rehearsal-method-entries-1-2.md                | 18 +++++--
+   .../run_rehearsal_entries_1_2.dryrun.out.txt       |  2 +-
+   .../run_rehearsal_entries_1_2.py                   | 27 ++++++----
+   .../standin_runs_fixed_after_recheck.out.txt       | 62 ++++++++++++++++++++++
+   4 files changed, 92 insertions(+), 17 deletions(-)
+  runner diff lines outside the dry run's note and the four record-then-cost blocks:
+    (end of list)
+  committed dry-run output, lines changed: 2
+
+stand-in copy's runner identical to the committed runner
+
+### C. entry 1 at $10
+exit 3
+STOP: running spend estimate $10.01 passed the ceiling $10.00 after 697 new calls and 0 calls from earlier sta
+  calls made 701; calls held in records: 701 | entry1/arm_B 107, entry1/arm_B2 107, entry1/arm_S 146, entry1/arm_S2 107, entry1/judge/arm_B 78, entry1/judge/arm_B2 78, entry1/judge/arm_S2 78
+### D. the same command again
+exit 3
+STOP: running spend estimate $10.01 passed the ceiling $10.00 after 0 new calls and 697 calls from earlier sta
+  new calls made 0; all calls made so far 701; held: 701 
+### E. entry 2 at $10
+exit 3
+STOP: running spend estimate $10.01 passed the ceiling $10.00 after 682 new calls and 0 calls from earlier sta
+  entry 2 calls made 702; held in all records now: 1403 | entry1/arm_B 107, entry1/arm_B2 107, entry1/arm_S 146, entry1/arm_S2 107, entry1/judge/arm_B 78, entry1/judge/arm_B2 78, entry1/judge/arm_S2 78, entry2/other 435, entry2/other_judge_v12 180, entry2/own_rejudged_v12 87 (entry 1's share: 701)
+### H. entry 1 stopped inside the judge gate (ceiling $20.22), then restarted at $100
+exit 3
+STOP: running spend estimate $20.23 passed the ceiling $20.22 after 1488 new calls and 0 calls from earlier st
+  calls made 1489; held: 1489 ; gate pairs on disk: 27
+exit 0
+  restart: new calls 66; total made 1555 (an uninterrupted entry 1 makes 1555); held: 1555 
+
+repository files changed outside this re-check's folder: 0
