@@ -47,6 +47,15 @@ the session that appended the Amendment A3 closure block to `amendment-a3.md`.
    increments John chooses, never past the cap's remainder. The account
    physically cannot overspend what the ledger permits.
 
+6. **Every new spend gets its own go; the running total is a record, not a
+   budget** (John's ruling of 2026-10-18, `docs/rulings/2026-10-18-spending-ruling.md`).
+   Any new spend, on any vendor, needs John's go before it happens, with its
+   estimate and ceiling. The $450 envelope of Amendment A2 stays on this
+   ledger as its registered figure, with its history, but it is no longer
+   the control. This ledger stays the record of rented machines. Every
+   dollar spent, on every vendor, is added up with its go in
+   `docs/spending-record.md`. *(Added 2026-10-18.)*
+
 ## Reconciliation baseline
 
 RunPod balance at adjudication (John, checked 2026-08-07): **$106.73**

@@ -302,7 +302,12 @@ def headline(d: dict, derived: dict) -> dict:
     state = first_sentence(p["where_we_are"])
     ladder_words = (f"{len(delivered)} of {len(stages)} stages of the project's ladder "
                     f"delivered so far: {join_words(names)}")
-    spend_words = f"about {usd(ceiling['spent'])} of the {usd(ceiling['cap'])} ceiling spent"
+    # [spend].headline_words, when set, says the spend in the record's own words
+    # (since 2026-10-18 the running total across every vendor is a record, not a
+    # cap: docs/rulings/2026-10-18-spending-ruling.md); otherwise the largest cap.
+    words = d["spend"].get("headline_words")
+    spend_words = words if isinstance(words, str) and words.strip() else \
+        f"about {usd(ceiling['spent'])} of the {usd(ceiling['cap'])} ceiling spent"
     return {
         "computed_on": derived["exported_on"],
         "project": {
