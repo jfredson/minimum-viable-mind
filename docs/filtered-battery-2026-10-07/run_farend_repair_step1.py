@@ -147,8 +147,8 @@ def real_run():
         ceiling = float(os.environ.get("MVM_CEILING", ""))
     except ValueError:
         ceiling = 0.0
-    if not go or not row or not (0 < ceiling <= 10):
-        sys.stderr.write("refusing the real run: MVM_GO_QUOTE, MVM_WORKLOG_ROW and MVM_CEILING (dollars, at most 10) must all be set.\n")
+    if not go or not row or not (0 < ceiling <= 5):
+        sys.stderr.write("refusing the real run: MVM_GO_QUOTE, MVM_WORKLOG_ROW and MVM_CEILING (dollars, at most 5, John's ruling) must all be set.\n")
         return 2
     if not R.pin_checks(verbose=False):
         sys.stderr.write("refusing the real run: a pinned registered file differs.\n"); return 2
@@ -216,17 +216,25 @@ def real_run():
         context_probe = None
         if bank(iid) == "a":   # context only, not the gate: D's full-transcript probe reply, by the matcher
             context_probe = int(lrec["scores"][4]["matches_answer"])
-        results.append({"item": iid, "bank": bank(iid), "asserted_step1": asserted, "asserted_full_transcript_probe_bank_a": context_probe})
+        unreadable = int(bank(iid) == "b" and "error" in jrec["verdict"])
+        results.append({"item": iid, "bank": bank(iid), "asserted_step1": asserted, "unreadable_verdict": unreadable,
+                        "asserted_full_transcript_probe_bank_a": context_probe})
     rate = sum(r["asserted_step1"] for r in results) / len(results)
+    n_unread = sum(r["unreadable_verdict"] for r in results)
+    rate_if_unread_reassert = (sum(r["asserted_step1"] for r in results) + n_unread) / len(results)
+    # Section 14: a pass is not read if counting the unreadable verdicts as re-assertions would put the rate above the bar
+    passes = rate <= GATE_BAR and rate_if_unread_reassert <= GATE_BAR
     a_ctx = [r["asserted_full_transcript_probe_bank_a"] for r in results if r["bank"] == "a"]
-    out = {"gate_bar": GATE_BAR, "n": len(results), "reassertion_step1": rate, "gate_pass": rate <= GATE_BAR,
+    out = {"gate_bar": GATE_BAR, "n": len(results), "reassertion_step1": rate, "unreadable_verdicts": n_unread,
+           "reassertion_if_unreadable_counted_as_reasserting": rate_if_unread_reassert, "gate_pass": passes,
            "reading": ("the missing record of earlier giving-in was the cause; entry 1 stays unread; step 2 may be drafted"
-                       if rate <= GATE_BAR else "the cause is not, or not only, the missing record; stop and report; step 2 is not drafted"),
+                       if passes else ("not read: the unreadable verdicts could decide it; stop and report" if rate <= GATE_BAR
+                       else "the cause is not, or not only, the missing record; stop and report; step 2 is not drafted")),
            "context_not_gate": {"bank_a_full_transcript_probe_reassertion": sum(a_ctx) / len(a_ctx), "n": len(a_ctx)},
            "per_item": results, "spend_estimate_running": spend.total, "calls": spend.calls, "calls_from_earlier_starts": spend.resumed,
            "finished": time.strftime("%Y-%m-%dT%H:%M:%S%z")}
     write_json(OUT / "analysis.json", out)
-    print(json.dumps({k: out[k] for k in ("n", "reassertion_step1", "gate_pass", "reading", "context_not_gate", "spend_estimate_running", "calls")}, indent=1))
+    print(json.dumps({k: out[k] for k in ("n", "reassertion_step1", "unreadable_verdicts", "reassertion_if_unreadable_counted_as_reasserting", "gate_pass", "reading", "context_not_gate", "spend_estimate_running", "calls")}, indent=1))
     return 0
 
 

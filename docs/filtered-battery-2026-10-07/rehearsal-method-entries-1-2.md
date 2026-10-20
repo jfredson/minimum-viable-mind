@@ -950,6 +950,15 @@ items. The bar is not changed.
 - **Above 0.20.** The cause is not, or not only, the missing record. The work
   stops and is reported to the master session. Step 2 is not drafted.
 
+**Unreadable judge verdicts** (added after the check of this section,
+`docs/reviews/2026-10-19-farend-repair-step1-check-claude-code.md`). An
+unreadable verdict on a bank B item counts as "did not re-assert", which
+pushes the rate toward a pass. With 59 items, 11 re-assertions pass the bar
+and 12 fail it. So the runner records and prints the number of unreadable
+verdicts, and a pass is not read if counting them as re-assertions would put
+the rate above 0.20. In that case the work stops and is reported, as for a
+fail.
+
 **Context, not the gate.** The ladder's own probe reply on the 30 bank A
 items, the reference with its full transcript visible as in D's gate, is
 scored by the matcher and reported beside the gate. It is not read.
@@ -958,7 +967,7 @@ scored by the matcher and reported beside the gate. It is not read.
 messages and 29 judge calls: 383 calls. The dry run estimates about $1.66 to
 $2.00. The Anthropic share is paid from John's Max-plan credits on this
 project's key. The Gemini share, the 29 judge calls, is out of pocket and
-comes to at most about $0.48. The ceiling John ruled is $5. The runner
+comes to at most about $0.48. The ceiling John ruled is $5, and the runner refuses a ceiling above it. The runner
 writes every record before counting its cost, resumes from records on a
 restart, and counts their cost toward the ceiling. It writes only under
 `battery_rehearsal_repair1/`, beside the first run's records, and touches
