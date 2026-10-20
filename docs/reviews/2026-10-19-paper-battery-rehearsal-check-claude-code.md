@@ -108,3 +108,68 @@ The scan finds no American spelling in the added lines. The quotations in the ne
 
 - **Who pays.** The Methods cost names the two providers, which the workspace's rule on tools allows in a method section, where it bears on trust. It also says "under an approval of up to $50". The run record and the spending record show the Anthropic share was paid from plan credits and the Gemini share out of pocket, both inside that go. The paper could say so in a clause if who paid matters to the reader.
 - **The worklog.** Whether entry 1's repair has been ruled is unclear in the worklog itself, as noted under item 1. That belongs to the master session, not to this pull request.
+
+---
+
+## Check of pull request 214, 2026-10-19: why entry 1 cannot be read
+
+**Verdict: PASS WITH CONDITIONS.** The figures match their sources, the observation is labelled as not a reading, only the one sentence changed, and the spelling is British. Two changes:
+1. **Line 800: "One repair was tried, as a diagnosis registered before it ran" calls the repair registered.** The same section says "The battery is a draft and is not registered". "Registered" here is method section 14's word for itself ("A dated, registered edit"), the same wording that condition 2 of the check of pull request 206 asked to be taken out. Write "One repair was tried, as a diagnosis whose outcome the method stated before it ran:".
+2. **The observation's citation points at a file that declines to say it.** The sentence "a summary given in one message does not reproduce how the reference behaves in a live, turn-by-turn conversation" comes from John's ruling, as do "entry 1 stops here" and "a redesign is possible later only as a new pre-registered design". They are in the addendum of `docs/rulings/2026-10-19-battery-rehearsal-results-and-entry1-repair-ruling.md`, "Addendum, later on 2026-10-19: entry 1 stops here". The only file the new text cites is the step-1 result, which says of the summary format that it "is a question for John and the master, not answered here". Cite the ruling's addendum after "pre-registered design" and after the observation.
+
+The check was done by the same session as the sections above, in its own worktree (`.claude/worktrees/check-214`, branch `check-paper-entry1-note`), cut from `origin/paper-entry1-note-2026-10-19` at `02ee4d2`. It compared against the main line at `aedb62a`, the branch's parent. Nothing under check was edited, no model was called, and nothing was spent.
+
+What it opened:
+- the step-1 result and its check;
+- the ruling with its addendum;
+- the analysis JSON;
+- method section 14's header;
+- the first run's check, for bank A's 10 of 30.
+
+The script is `docs/reviews/2026-10-19-paper-battery-rehearsal-check-scripts/check_214.py`, with its output beside it.
+
+### 1. Figures. MEASURED. Passes.
+
+```
+   in text     in source     gate figure: farend-repair-step1-result-2026-10-19.md   ["0.712 of the 59 reference items (42 of 59), against the unchanged bar of at most 0.20"]
+   in text     in source     bank A, replies quoted: …farend-repair-step1-result-check-claude-code.md   ["bank A 20 of 30"]
+   in text     in source     bank A, replies left out (first run): …battery-rehearsal-run-check-claude-code.md   ["10 of the 30 number items"]
+   in text     in source     bank A, whole conversation: farend-repair-step1-result-2026-10-19.md   ["(1 of 30)"]
+   in text     in source     what was shown / stops here, no verdict / redesign later / the observation: result file and ruling addendum
+   in text     NOT IN SOURCE the observation, in the cited result file: farend-repair-step1-result-2026-10-19.md
+   json: reassertion_step1 0.712 (42/59 = 0.712); n 59; bar 0.2; gate_pass False
+   result file on the summary format: True   ["… is a question for John and the master, not answered here"]
+   files the new text cites: ['docs/filtered-battery-2026-10-07/farend-repair-step1-result-2026-10-19.md']
+```
+
+All six figures you listed are found where the brief says: 0.712, 0.20, 59, and 20, 10 and 1 of 30. In the first run's check, bank A is called the "number items". The one NOT IN SOURCE line is condition 2: the observation is John's ruling, not the result file's.
+
+### 2. The observation is labelled, and nothing is read beyond the rules. MEASURED, with an ARGUED judgment. Passes except condition 1.
+
+```
+   'as an observation, not a reading' in text: True
+     One repair was tried, as a diagnosis registered before it ran:
+     a redesign is possible later only as a new pre-registered design.
+   battery said to be not registered earlier in the section: True
+```
+
+**The label.** The observation is labelled in the words the ruling's addendum asks for.
+
+**Nothing read beyond the rules.** Entry 1 stays "without a verdict", and no rate of entry 1's first run is read. The three bank A counts are given only inside the labelled observation. The gate figure, 0.712 against 0.20, is the one figure section 14's rule reads: the gate failed, so the work stops.
+
+**"Pre-registered design".** This refers to a design that does not yet exist. It does not call anything registered, so it is fine. The ruling adds "only on his word", which the paper leaves out; that is acceptable in a paper.
+
+### 3. Only the one sentence changed. MEASURED. Passes.
+
+The word diff of the whole paper (`check_214.out.txt`, part 3) replaces "The method says the repair goes through an edit to the entry committed before any re-run; it is still to be made." with the new text and touches nothing else:
+
+```
+   files changed:  1 file changed, 12 insertions(+), 2 deletions(-)
+```
+
+### 4. British spelling. MEASURED. Passes.
+
+```
+4. American spellings in the added lines:
+     none
+```

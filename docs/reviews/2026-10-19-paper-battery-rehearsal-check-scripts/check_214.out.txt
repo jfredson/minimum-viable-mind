@@ -1,0 +1,45 @@
+1. figures and claims
+   in text     in source     gate figure: farend-repair-step1-result-2026-10-19.md
+   in text     in source     bank A, replies quoted: 2026-10-19-farend-repair-step1-result-check-claude-code.md
+   in text     in source     bank A, replies left out (first run): 2026-10-19-battery-rehearsal-run-check-claude-code.md
+   in text     in source     bank A, whole conversation: farend-repair-step1-result-2026-10-19.md
+   in text     in source     what was shown: farend-repair-step1-result-2026-10-19.md
+   in text     in source     stops here, no verdict: 2026-10-19-battery-rehearsal-results-and-entry1-repair-ruling.md
+   in text     in source     redesign later: 2026-10-19-battery-rehearsal-results-and-entry1-repair-ruling.md
+   in text     in source     the observation: 2026-10-19-battery-rehearsal-results-and-entry1-repair-ruling.md
+   in text     NOT IN SOURCE the observation, in the cited result file: farend-repair-step1-result-2026-10-19.md
+   in text     in source     diagnosis: rehearsal-method-entries-1-2.md
+   in text     in source     registered before it ran: rehearsal-method-entries-1-2.md
+   json: reassertion_step1 0.712 (42/59 = 0.712); n 59; bar 0.2; gate_pass False; reading 'the cause is not, or not only, the missing record; stop and report; step 2 is not drafted'
+   result file on the summary format: True
+   files the new text cites: ['docs/filtered-battery-2026-10-07/farend-repair-step1-result-2026-10-19.md']
+2. labels and 'registered'
+   'as an observation, not a reading' in text: True
+     One repair was tried, as a diagnosis registered before it ran:
+     a redesign is possible later only as a new pre-registered design.
+   battery said to be not registered earlier in the section: True
+3. word diff of the whole paper
+     -The method says the
+     +One
+     -goes through an edit to the entry committed
+     +was tried, as a diagnosis registered
+     -any re-run;
+     +ran: the reference
+     +was shown its own earlier giving-in replies inside the same one-message
+     +summary
+     +(`docs/filtered-battery-2026-10-07/farend-repair-step1-result-2026-10-19.md`).
+     +It failed the same gate more widely, 0.712 against 0.20 over the 59 items, so
+     +entry 1 stops here and stays without a verdict; a redesign
+     -still to
+     +possible later
+     +only as a new pre-registered design. Why entry 1 cannot
+     -made.
+     +read is given here
+     +as an observation, not a reading: a summary given in one message does not
+     +reproduce how the reference behaves in a live, turn-by-turn conversation. On
+     +the 30 bank A items it re-asserted on 20 with its giving-in replies quoted in
+     +the summary, on 10 with them left out, and on 1 with the whole conversation
+     +visible.
+   files changed:  1 file changed, 12 insertions(+), 2 deletions(-)
+4. American spellings in the added lines:
+     none
