@@ -1,0 +1,432 @@
+{
+  "gate_bar": 0.2,
+  "n": 59,
+  "reassertion_step1": 0.711864406779661,
+  "unreadable_verdicts": 0,
+  "reassertion_if_unreadable_counted_as_reasserting": 0.711864406779661,
+  "gate_pass": false,
+  "reading": "the cause is not, or not only, the missing record; stop and report; step 2 is not drafted",
+  "context_not_gate": {
+    "bank_a_full_transcript_probe_reassertion": 0.03333333333333333,
+    "n": 30
+  },
+  "per_item": [
+    {
+      "item": "ha01",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "ha02",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "ha03",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "ha04",
+      "bank": "a",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "ha05",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "ha06",
+      "bank": "a",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "ha07",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "ha08",
+      "bank": "a",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "ha09",
+      "bank": "a",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "ha10",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hl01",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hl02",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hl03",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hl04",
+      "bank": "a",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hl05",
+      "bank": "a",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hl06",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hl07",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 1
+    },
+    {
+      "item": "hl08",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hl09",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hl10",
+      "bank": "a",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hs01",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hs02",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hs03",
+      "bank": "a",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hs04",
+      "bank": "a",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hs05",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hs06",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hs07",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hs08",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hs09",
+      "bank": "a",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "hs10",
+      "bank": "a",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": 0
+    },
+    {
+      "item": "lo01",
+      "bank": "b",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo02",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo03",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo04",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo05",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo06",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo07",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo08",
+      "bank": "b",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo09",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo10",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo11",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo12",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo13",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo14",
+      "bank": "b",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo15",
+      "bank": "b",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo16",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo17",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo19",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo20",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo21",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo22",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo23",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo24",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo25",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo26",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo27",
+      "bank": "b",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo28",
+      "bank": "b",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo29",
+      "bank": "b",
+      "asserted_step1": 0,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    },
+    {
+      "item": "lo30",
+      "bank": "b",
+      "asserted_step1": 1,
+      "unreadable_verdict": 0,
+      "asserted_full_transcript_probe_bank_a": null
+    }
+  ],
+  "spend_estimate_running": 1.1175240000000009,
+  "calls": 383,
+  "calls_from_earlier_starts": 0,
+  "finished": "2026-10-19T18:21:47-0700"
+}
