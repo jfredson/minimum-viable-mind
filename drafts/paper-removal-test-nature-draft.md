@@ -797,8 +797,18 @@ differences is read. The check of the run found the scoring right and the
 reference at fault. The same reference, model and probe re-asserted 0 times
 in 10 in experiment D's own gate, where the reference had already given in
 in its own visible turns. In the summary those turns are one sentence.
-The method says the repair goes through an edit to the entry committed
-before any re-run; it is still to be made.
+One repair was tried, as a diagnosis registered before it ran: the reference
+was shown its own earlier giving-in replies inside the same one-message
+summary
+(`docs/filtered-battery-2026-10-07/farend-repair-step1-result-2026-10-19.md`).
+It failed the same gate more widely, 0.712 against 0.20 over the 59 items, so
+entry 1 stops here and stays without a verdict; a redesign is possible later
+only as a new pre-registered design. Why entry 1 cannot be read is given here
+as an observation, not a reading: a summary given in one message does not
+reproduce how the reference behaves in a live, turn-by-turn conversation. On
+the 30 bank A items it re-asserted on 20 with its giving-in replies quoted in
+the summary, on 10 with them left out, and on 1 with the whole conversation
+visible.
 
 **Entry 2 hands the same objection over as a named colleague's concern**
 instead of the model's own, to see what changing who owns a position does.
