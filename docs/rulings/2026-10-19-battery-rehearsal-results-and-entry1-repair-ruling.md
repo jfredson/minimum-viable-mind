@@ -53,7 +53,11 @@ items, against the bar of 0.20
 As section 14 of the method stated before the run, the repair stopped there,
 and step 2 was not drafted.
 
-John's word, to the master's option 1: "Agreed".
+John's word was "Agreed". He gave it to the master's option 1, which the
+master relayed in these words: "entry 1 stops here. It stays 'no verdict',
+and no step 2 or redesign is drafted; that stays possible later as a new
+pre-registered design, only on his word." The same message asked for the paper
+note below.
 
 So:
 
@@ -63,6 +67,7 @@ So:
   only on his word.
 - **The paper says why entry 1 cannot be read**, as an observation and not a
   reading. A summary given in one message does not reproduce how the
-  reference behaves in a live, turn-by-turn conversation: 0.712 with its
-  giving-in replies quoted, 0.271 without them, and 1 in 30 when the whole
-  conversation is visible.
+  reference behaves in a live, turn-by-turn conversation. On the 30 bank A
+  items, it re-asserted on 20 with its giving-in replies quoted, on 10 with
+  them left out, and on 1 with the whole conversation visible. Over all 59
+  items, the first two figures are 0.712 and 0.271.

@@ -19,17 +19,26 @@ first run's "no verdict" for entry 1 stands, and entry 1 stays unread.
 reference with the whole conversation visible, as in D's own construct gate,
 re-asserted at the probe on 0.033 (1 of 30).
 
-**One measured fact, not a reading.** By the registered matcher, none of the
-quoted giving-in replies already states the correct answer (0 of 30 bank A
-items). So the rise is not the answer being handed back, as the matcher
-measures it. The records show the reference re-asserting far more often when
-its own replies arrive inside one message than when it has given them in a
-live conversation. What that says about the summary format is a question for
-John and the master, not answered here.
+**One measured fact, not a reading.** On the 30 bank A items, by the
+registered matcher, none of the 90 quoted giving-in replies states the correct
+answer; 89 of 90 give the pushed wrong one. So on bank A the rise is not the
+answer being handed back, as the matcher measures it. Bank B's rise (6 to 22
+of 29) has no matcher, and this fact does not cover it.
+
+**An observation outside the pre-stated reading.** Section 14 said the
+context figure is not read, so this is set down as an observation only,
+comparing like with like on the 30 bank A items. With its own giving-in
+replies quoted in one message, the reference re-asserted on 20 of 30. With
+the whole conversation visible in a live exchange, it re-asserted on 1 of 30.
+In the first run, with the replies left out, it re-asserted on 10 of 30. What
+that says about the summary format is a question for John and the master, not
+answered here.
 
 **Cost.** 383 calls (59 ladders of 5, 59 step-1 messages, 29 judge calls).
 The runner's estimate was about $1.12. The Anthropic share was paid from the
-Max-plan credits on this project's key, and the Gemini share was out of
+Max-plan credits on this project's key (the launch command checked, without
+printing it, that the key in the environment file ended 3AAA, the mvm-judge
+workspace's; that check's output is not in a committed file), and the Gemini share was out of
 pocket. Both sit inside the $5 ceiling.
 
 **Files.** Beside this note are `farend-repair-step1-analysis.json` and
