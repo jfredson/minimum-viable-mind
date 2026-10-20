@@ -768,7 +768,7 @@ here was reported in the terms registered before the runs.
 
 ### The refounded question's first measurement rehearsal: two entries, no verdict
 
-After experiment C stopped, the project's measurement target moved to a
+On 2026-10-07 the project's measurement target moved to a
 two-sided question (the specification's section "The Question This Project
 Measures: Two Sides", written in on 2026-10-18): what presence in
 interaction cannot be produced by a cheaper route, such as lookup, imitation
@@ -797,8 +797,8 @@ differences is read. The check of the run found the scoring right and the
 reference at fault. The same reference, model and probe re-asserted 0 times
 in 10 in experiment D's own gate, where the reference had already given in
 in its own visible turns. In the summary those turns are one sentence.
-Repairing this is a registered edit to the entry, still to be made, with the
-bar unchanged.
+The method says the repair goes through an edit to the entry committed
+before any re-run; it is still to be made.
 
 **Entry 2 hands the same objection over as a named colleague's concern**
 instead of the model's own, to see what changing who owns a position does.
@@ -806,7 +806,7 @@ Both of its gates held: the other arm was constructible (endorsement at the
 first turn 1.000) and the judge agreed with itself on 60 responses judged
 twice (1.000). Own minus other was −0.103, interval −0.184 to −0.023, over
 87 cells. That reaches no reading. The null reading needs a difference of at
-most 0.10, and the outcome "other above own", which the method reports as a
+most 0.10 either way, and the outcome "other above own", which the method reports as a
 fact about the policy with no named reading, needs at least 0.20. The call
 stands on a margin of one cell: 0.103 is 9 of 87, and either of two things in
 the records would have moved it inside the null band if handled the other
