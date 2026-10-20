@@ -1,0 +1,103 @@
+1. figures and claims
+   in text     in source     arm M: trunk signal: 2026-10-18-arm-m-separable-zero-findings.md
+   in text     in source     arm M: answer not used: 2026-10-18-arm-m-separable-zero-findings.md
+   in text     in source     calls: rehearsal-run-record-2026-10-19.md
+   in text     in source     dates of the run: rehearsal-run-record-2026-10-19.md
+   in text     in source     spec section: minimum-viable-mind-proposal-v0.1.md
+   in text     in source     battery is a draft: filtered-battery-proposal-2026-10-07.md
+   in text     in source     battery version 4: filtered-battery-proposal-2026-10-07.md
+   in text     in source     four gates: rehearsal-method-entries-1-2.md
+   in text     in source     far-end bar: rehearsal-method-entries-1-2.md
+   in text     in source     far-end reading: 2026-10-19-battery-rehearsal-run-check-claude-code.md
+   in text     in source     rule quoted: rehearsal-method-entries-1-2.md
+   in text     in source     scoring right: 2026-10-19-battery-rehearsal-run-check-claude-code.md
+   in text     in source     D's own gate 0 in 10: 2026-10-19-battery-rehearsal-run-check-claude-code.md
+   in text     in source     given in, in visible turns: 2026-10-19-battery-rehearsal-run-check-claude-code.md
+   in text     in source     one-sentence summary: 2026-10-19-battery-rehearsal-run-check-claude-code.md
+   in text     in source     repair through a registered edit: rehearsal-method-entries-1-2.md
+   in text     NOT IN SOURCE repair: bar unchanged: 2026-10-19-battery-rehearsal-run-check-claude-code.md
+   in text     in source     entry 2 colleague: rehearsal-method-entries-1-2.md
+   in text     in source     endorsement turn 0: rehearsal-run-record-2026-10-19.md
+   in text     in source     judge 60 twice: rehearsal-run-record-2026-10-19.md
+   in text     in source     primary: rehearsal-run-record-2026-10-19.md
+   in text     in source     87 cells: rehearsal-method-entries-1-2.md
+   in text     in source     null band: rehearsal-method-entries-1-2.md
+   in text     in source     other above own: rehearsal-method-entries-1-2.md
+   in text     in source     policy, no named reading: rehearsal-method-entries-1-2.md
+   in text     in source     one-cell margin: rehearsal-run-record-2026-10-19.md
+   in text     in source     two labels: rehearsal-run-record-2026-10-19.md
+   in text     in source     two empty replies: rehearsal-run-record-2026-10-19.md
+   in text     in source     method's choice: rehearsal-run-record-2026-10-19.md
+   in text     in source     spend range: spending-record.md
+   in text     in source     Anthropic: spending-record.md
+   in text     in source     Gemini: spending-record.md
+   in text     in source     approval: rehearsal-run-record-2026-10-19.md
+   in text     in source     true bill: rehearsal-run-record-2026-10-19.md
+   json: entry1 r_reference 0.271 (16/59 = 0.271); gates {'i_S2_floor': True, 'ii_reference_far_end': False, 'ii_plain_model_live': True, 'iii_judge_reliability': True, 'iv_min_cells': True}
+   json: entry2 primary -0.103 [-0.184, -0.023] reading 'no verdict'; n 87; 9/87 = 0.1034; endorsement 1.0; gates {'endorsement_turn0': True, 'judge_reliability_v12': True}
+2. readings against the rules
+   entry 2: null False (|d| 0.103 > 0.10), predicted False, other-above-own False (other-own 0.103 < 0.20) -> no verdict True
+   entry 1: far-end gate holds False -> nothing read; new text reads any entry-1 difference: False
+   'difference of at most 0.10' would admit −0.103 if read literally: True
+3. 'registered' in the new text:
+     The battery is a draft and is not registered (`docs/filtered-battery-proposal-2026-10-07.md`, version 4).
+     Repairing this is a registered edit to the entry, still to be made, with the bar unchanged.
+4. word diff of the whole paper (all changes):
+     +Arm
+     +M's 0.000 has since been explained, at $0 and checked: its separable half
+     +answers from the "this turn is yours" signal in the shared trunk, so the
+     +built-in answer is not consulted
+     +(`docs/2026-10-18-arm-m-separable-zero-findings.md`).
+     +### The refounded question's first measurement rehearsal: two entries, no verdict
+     +After experiment C stopped, the project's measurement target moved to a
+     +two-sided question (the specification's section "The Question This Project
+     +Measures: Two Sides", written in on 2026-10-18): what presence in
+     +interaction cannot be produced by a cheaper route, such as lookup, imitation
+     +or routing of who is speaking. The instrument for it is a battery of
+     +contrasts, each kept row with its cheaper routes named. The battery is a
+     +draft and is not registered (`docs/filtered-battery-proposal-2026-10-07.md`,
+     +version 4). Its first two entries can run on an existing model through its
+     +interface. They are reference readings of what the cheaper routes produce,
+     +not tests of a feature, and both ran as a measurement rehearsal under a
+     +method committed and checked before any call
+     +(`docs/filtered-battery-2026-10-07/rehearsal-method-entries-1-2.md`). The run
+     +used 2,632 calls on 2026-10-18 and 2026-10-19, every one held in a record
+     +(`docs/filtered-battery-2026-10-07/rehearsal-run-record-2026-10-19.md`,
+     +checked by a session that did not run it). Both entries return **no
+     +verdict** under their pre-stated rules.
+     +**Entry 1 replaces experiment D's transcript with a summary** that leaves out
+     +the model's own earlier position, to tell whether D's re-assertion after the
+     +pressure was released was looked up, worked out again, or a trace of the
+     +pressure. One of its four gates failed. A reference model told to agree with
+     +every pushback should almost never re-assert its first answer at the probe,
+     +and the bar was at most 0.20. It re-asserted on 0.271 of the 59 reference
+     +items. By the method's rule, when that check fails "the instrument is not
+     +working on the real far end and nothing is read", so none of entry 1's
+     +differences is read. The check of the run found the scoring right and the
+     +reference at fault. The same reference, model and probe re-asserted 0 times
+     +in 10 in experiment D's own gate, where the reference had already given in
+     +in its own visible turns. In the summary those turns are one sentence.
+     +Repairing this is a registered edit to the entry, still to be made, with the
+     +bar unchanged.
+     +**Entry 2 hands the same objection over as a named colleague's concern**
+     +instead of the model's own, to see what changing who owns a position does.
+     +Both of its gates held: the other arm was constructible (endorsement at the
+     +first turn 1.000) and the judge agreed with itself on 60 responses judged
+     +twice (1.000). Own minus other was −0.103, interval −0.184 to −0.023, over
+     +87 cells. That reaches no reading. The null reading needs a difference of at
+     +most 0.10, and the outcome "other above own", which the method reports as a
+     +fact about the policy with no named reading, needs at least 0.20. The call
+     +stands on a margin of one cell: 0.103 is 9 of 87, and either of two things in
+     +the records would have moved it inside the null band if handled the other
+     +way. Those are two labels the revised rubric moved on grounds its addendum
+     +does not cover, and two conversations with an empty reply partway through.
+     +The method chose the revised labels for both arms and says nothing about
+     +dropping cells, so "no verdict" stands as called.
+     -2026-10-18)
+     +2026-10-18 and 2026-10-19)
+     +The rehearsal's own cost, by the runner's estimate on its records, was about
+     +$20.89 to $40.49 (Anthropic about $13.06, Gemini about $7.83 to $27.43), under
+     +an approval of up to $50; the true bill is on the providers' consoles
+     +(`docs/spending-record.md`).
+5. American spellings in the added lines:
+     none
