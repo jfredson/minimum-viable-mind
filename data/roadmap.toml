@@ -33,7 +33,7 @@ one_line = "No longer a schedule (ruled 2026-10-04, docs/rulings/2026-10-04-no-f
 question = "Can a decomposability measure, validated on systems whose degree is known by construction, read the degree of a freely trained 30-million-parameter transformer that acquired a load-bearing ownership pointer under task pressure? If so, what does it read?"
 wrap_up_start = "2026-12-21"
 hibernation_by = "2027-01-04"
-weekday_rule = "Retired 2026-10-04 (docs/rulings/2026-10-04-no-future-dates.md). Work is no longer split between weekdays and weekends: each step runs as soon as what it waits on is done, and a step that waits on John (a ruling, a go, the outside-review sessions) waits on him without a date. As first written: weekdays carry rulings and spoken go's only, from a queue a session pre-assembles; weekends carry the reviewer sessions John runs by hand and the launches; agents run unattended between weekends."
+weekday_rule = "Retired 2026-10-04 (docs/rulings/2026-10-04-no-future-dates.md). Work is no longer split between weekdays and weekends: each step runs as soon as what it waits on is done, and a step that waits on me (a ruling, a go, the outside-review sessions) waits on me without a date. As first written: weekdays carry rulings and spoken go's only, from a queue a session pre-assembles; weekends carry the reviewer sessions I run by hand and the launches; agents run unattended between weekends."
 replan_rule = "Retired 2026-10-04 (docs/rulings/2026-10-04-no-future-dates.md): there is no weekly re-plan and no Sunday-night handoff. Kill dates and the wrap-up start still never move. As first written: every Thursday or Friday evening the coming weekend is re-planned from the top of STATUS.md, and the re-plan names which weekend absorbs a slip."
 
 # Fixed dates the plan is held to. These never move.
@@ -65,7 +65,7 @@ kind = "hibernation"
 
 # ---------------------------------------------------------------------------
 # The weekends, in order. Each has one named outcome, the goals that make it
-# up, John's items, and what sits beside it on the calendar.
+# up, my items, and what sits beside it on the calendar.
 # ---------------------------------------------------------------------------
 
 [[weekends]]
@@ -86,14 +86,14 @@ john_items = [
   "Optional, ten minutes: the two Cloudflare secrets and the repository visibility flip, so the site deploys",
 ]
 goals = [
-  { id = "W1.1", text = "A3 closure through Gate A, both tiers, and the closure commit landed", owner = "both", status = "done", note = "Landed 2026-09-25: closure text version 5 appended to the registration file by pull request 49, after both outside reviews, John's rulings, a first-tier check and its re-check" },
+  { id = "W1.1", text = "A3 closure through Gate A, both tiers, and the closure commit landed", owner = "both", status = "done", note = "Landed 2026-09-25: closure text version 5 appended to the registration file by pull request 49, after both outside reviews, my rulings, a first-tier check and its re-check" },
   { id = "W1.2", text = "Every registration-blocking decision ruled and recorded in docs/rulings/2026-09-26-weekend-1-queue.md", owner = "john", status = "done", note = "Ruled 2026-09-25, all nine pages; the five follow-on decisions from the rehearsal repairs are in docs/rulings/2026-09-25-rehearsal-repairs-rulings.md (pull request 53)" },
   { id = "W1.3", text = "The 2026-09-22/23 handoff landed at the top of STATUS.md with a 2026-09-24 entry; data/project.toml current; merged worktrees pruned", owner = "agents", status = "done", note = "Landed 2026-09-24 evening: PR 29 and PR 31; no worktree folder was prunable by git's definition (all 69 branches merged), so clearing them is a later git worktree remove pass" },
   { id = "W1.4", text = "The launcher refuses to rent a machine when the laptop can sleep, and the launch checklist is a gate it checks", owner = "agents", status = "done", note = "Landed 2026-09-24 evening: PR 33 (shared src/launch_gate.sh, 351 and 67 harness checks, charger case and empty-date field covered), checked on PR 36" },
   { id = "W1.5", text = "The rented slice run: seconds per step per arm measured on the rented machine and written into the second release's arithmetic; the shutdown path exercised end to end", owner = "both", status = "carried", note = "Half done 2026-09-25: seconds per step measured on the second attempt (pull request 51, checked on 55) and the registered runs re-priced at $161.90. The half of the shutdown test that runs on the rented machine was not exercised; it moves to weekend 2's development runs (W2.4), the next time a machine is rented" },
   { id = "W1.6", text = "Rehearsal repairs at toy scale: the named-other condition redesigned (or the risk accepted on record), the nomination procedure shown to be one instrument across arms, control 2 built as stated, the fourth arm attempted if ruled", owner = "agents", status = "done", note = "Landed 2026-09-26 (pull request 52, checked on 58): the named-other redesigns failed, and a later change to the task grammar failed too (pull request 57), so the fallback ruled in advance applies and the risk is on the record; the nomination is one instrument; the fourth, mixed arm passed and is folded into the registration" },
   { id = "W1.7", text = "Successor proposal version 2 written with the ruled numbers, label and form, the failure-modes checklist exercised against it with commands and output, both checking scripts clean", owner = "agents", status = "done", note = "Landed 2026-09-26 as pull request 54" },
-  { id = "W1.8", text = "Gate C first-tier review of version 2 filed; if clean, the registration text drafted and its Gate A first tier launched overnight", owner = "agents", status = "done", note = "Review filed 2026-09-26 (pull request 56): not clean, one fatal finding and four serious, so the registration text was not drafted. John ruled every finding the same day; version 3 was written from the rulings and is pull request 71, open. Its own review is goal W2.6" },
+  { id = "W1.8", text = "Gate C first-tier review of version 2 filed; if clean, the registration text drafted and its Gate A first tier launched overnight", owner = "agents", status = "done", note = "Review filed 2026-09-26 (pull request 56): not clean, one fatal finding and four serious, so the registration text was not drafted. I ruled every finding the same day; version 3 was written from the rulings and is pull request 71, open. Its own review is goal W2.6" },
   { id = "W1.9", text = "The Saturday ruling packet built and checked (PR 34)", owner = "agents", status = "done", note = "Landed 2026-09-24 evening: PR 34, checked on PR 35, both merged; the packet is docs/rulings/2026-09-26-weekend-1-queue-PROPOSAL.md" },
 ]
 
@@ -114,10 +114,10 @@ john_items = [
   "Give the go naming the development runs (about $10, inside the first release)",
 ]
 goals = [
-  { id = "W2.1", text = "Registration text through Gate A, both tiers; dispositions ruled; text fixes paired-checked; citation and single-source scripts clean on the final text", owner = "both", status = "carried", note = "Half done: the inside review (RT-237 to RT-246) and John's two outside sessions (RT-247 to RT-256) ran on 2026-10-06 and he ruled all twelve pages. Then the refounding of 2026-10-07 changed the text (the repair, the stop conditions, the renamed outcomes), so version 5 was written and is owed its check. Carried to weekend 3" },
-  { id = "W2.2", text = "Registration committed (kill date 1 is 2026-10-18)", owner = "both", status = "done", note = "Carried to weekend 3 (W3.2) and landed there: the registration commit (pull request 162) merged by John at 10:52 Pacific on 2026-10-09, inside kill date 1. As of 2026-10-08 two things had stood in the way: the bar for 'the repaired route holds' was unruled, and fifty of the text's citations pointed at fifteen unmerged branches" },
+  { id = "W2.1", text = "Registration text through Gate A, both tiers; dispositions ruled; text fixes paired-checked; citation and single-source scripts clean on the final text", owner = "both", status = "carried", note = "Half done: the inside review (RT-237 to RT-246) and my two outside sessions (RT-247 to RT-256) ran on 2026-10-06 and I ruled all twelve pages. Then the refounding of 2026-10-07 changed the text (the repair, the stop conditions, the renamed outcomes), so version 5 was written and is owed its check. Carried to weekend 3" },
+  { id = "W2.2", text = "Registration committed (kill date 1 is 2026-10-18)", owner = "both", status = "done", note = "Carried to weekend 3 (W3.2) and landed there: the registration commit (pull request 162) merged by me at 10:52 Pacific on 2026-10-09, inside kill date 1. As of 2026-10-08 two things had stood in the way: the bar for 'the repaired route holds' was unruled, and fifty of the text's citations pointed at fifteen unmerged branches" },
   { id = "W2.3", text = "Implementation frozen: generator, arms T and C, the transplant code; unit tests; the even-split rule (RT-58) and the one-scored-token self-test carried over", owner = "agents", status = "done", note = "Done 2026-10-04 (pull request 97): the frozen code reproduces all 502 toy figures and runs end to end at both sizes" },
-  { id = "W2.4", text = "Development runs at 10 million parameters landed and checked by a session that did not write the code; ledger rows opened before any machine existed", owner = "both", status = "done", note = "Done 2026-10-04 on John's go, about $1.47 for all four; the check (pull request 106) found two of the three built models had switched their built-in route off, which produced the $1.14 repair now written into the registration" },
+  { id = "W2.4", text = "Development runs at 10 million parameters landed and checked by a session that did not write the code; ledger rows opened before any machine existed", owner = "both", status = "done", note = "Done 2026-10-04 on my go, about $1.47 for all four; the check (pull request 106) found two of the three built models had switched their built-in route off, which produced the $1.14 repair now written into the registration" },
   { id = "W2.5", text = "The go packet for the first registered run assembled: launch checklist, ledger row with estimate, sleep gate, scheduled fetch and kill", owner = "agents", status = "done", note = "The development-runs packet served; the first registered run's go waits on the registration and on the reruns' verification" },
   { id = "W2.6", text = "Proposal version 3 and the rulings on its decisions 20 and 21 merged (pull requests 71 and 72), and version 3 through its Gate C first-tier review by a session that did not write it", owner = "both", status = "done", note = "Done 2026-10-03: merged, reviewed with nothing fatal (pull request 74), and ruled the same day (docs/rulings/2026-10-03-successor-v3-gate-c-rulings.md). The review session was not a fresh one and says so" },
   { id = "W2.7", text = "The rehearsal's controls re-run under the registered rules, with the ruled change to how the transplanted piece is chosen; method committed before output; checked by a session that did not run it", owner = "agents", status = "done", note = "Done 2026-10-03 and checked the same evening; three rulings came out of it" },
@@ -131,7 +131,7 @@ end = "2026-10-12"
 days = 3
 status = "active"
 title = "Register, verify the repair, then the first run if it holds"
-outcome = "The next ordered steps as set 2026-10-08, not a schedule (the weekly re-plan was retired by the ruling of 2026-10-04, docs/rulings/2026-10-04-no-future-dates.md). The registration committed inside kill date 1 with the repair and both stop conditions written in; the three 10-million reruns of the repaired built models landed and verified against the bar John rules; if they hold, the single free-arm run at full size launched on his go. The second release is not this weekend: it is asked for only after both the reruns and the free arm pass, and he gives the go on the figures."
+outcome = "The next ordered steps as set 2026-10-08, not a schedule (the weekly re-plan was retired by the ruling of 2026-10-04, docs/rulings/2026-10-04-no-future-dates.md). The registration committed inside kill date 1 with the repair and both stop conditions written in; the three 10-million reruns of the repaired built models landed and verified against the bar I rule; if they hold, the single free-arm run at full size launched on my go. The second release is not this weekend: it is asked for only after both the reruns and the free arm pass, and I give the go on the figures."
 beside = "Columbus Day makes it three days. The field exercise of 2026-10-13 to 14 follows (blackout, tentative)."
 john_hours = "about 2, spread across the three days"
 john_items = [
@@ -143,10 +143,10 @@ john_items = [
 ]
 goals = [
   { id = "W3.1", text = "The twelve open items of version 5 ruled, the bar for 'the repaired route holds' first", owner = "john", status = "done", note = "the bar ruled 2026-10-08; the other eleven the same evening, all as recommended (docs/rulings/2026-10-08-v5-open-items-rulings.md)" },
-  { id = "W3.2", text = "Version 5 checked by a session that wrote none of it, the fifteen branches merged, and the registration committed (kill date 1 is 2026-10-18)", owner = "both", status = "done", note = "version 5 checked and re-checked 2026-10-08 (pull requests 130 and 132); the fifteen branches merged (pull request 136); the registration commit (pull request 162) checked by a session that wrote none of it, passed with conditions, and merged by John at 10:52 Pacific on 2026-10-09. Version 5's sentences written before the commit are left unedited on purpose" },
-  { id = "W3.3", text = "The three 10-million reruns of the repaired built models landed and verified against the ruled bar; a failure stops experiment C here and is written up as instrument research", owner = "both", status = "done", note = "the reruns landed 2026-10-09 ($1.3032 against about $1.14 approved; pull request 166, merged 2026-10-12). The verification failed (route use 0.986 on the separable model, 0.000 on the stirred-in, 0.024 and 0.000 on the half-and-half, against 0.5), and on 2026-10-12 John accepted the stop: experiment C stopped at its registered stop S4b (docs/rulings/2026-10-12-experiment-c-stop-ruling.md)" },
-  { id = "W3.4", text = "Branch: if the verification holds, the free-arm run at full size launched on John's go and landed; the learn-both gate and the floor read by a paired session", owner = "both", status = "not_needed", note = "the verification did not hold; experiment C stopped at S4b on John's ruling of 2026-10-12, so the free-arm run does not launch" },
-  { id = "W3.5", text = "The battery draft's third check filed and the measurement rehearsal of its first two entries committed, ahead of Gate A", owner = "agents", status = "planned", note = "half done 2026-10-09: version 4 written with the third check's fixes and itself checked, both conditions met (draft pull request 164); John's questions 10 to 12 come before the method file and the rehearsal" },
+  { id = "W3.2", text = "Version 5 checked by a session that wrote none of it, the fifteen branches merged, and the registration committed (kill date 1 is 2026-10-18)", owner = "both", status = "done", note = "version 5 checked and re-checked 2026-10-08 (pull requests 130 and 132); the fifteen branches merged (pull request 136); the registration commit (pull request 162) checked by a session that wrote none of it, passed with conditions, and merged by me at 10:52 Pacific on 2026-10-09. Version 5's sentences written before the commit are left unedited on purpose" },
+  { id = "W3.3", text = "The three 10-million reruns of the repaired built models landed and verified against the ruled bar; a failure stops experiment C here and is written up as instrument research", owner = "both", status = "done", note = "the reruns landed 2026-10-09 ($1.3032 against about $1.14 approved; pull request 166, merged 2026-10-12). The verification failed (route use 0.986 on the separable model, 0.000 on the stirred-in, 0.024 and 0.000 on the half-and-half, against 0.5), and on 2026-10-12 I accepted the stop: experiment C stopped at its registered stop S4b (docs/rulings/2026-10-12-experiment-c-stop-ruling.md)" },
+  { id = "W3.4", text = "Branch: if the verification holds, the free-arm run at full size launched on my go and landed; the learn-both gate and the floor read by a paired session", owner = "both", status = "not_needed", note = "the verification did not hold; experiment C stopped at S4b on my ruling of 2026-10-12, so the free-arm run does not launch" },
+  { id = "W3.5", text = "The battery draft's third check filed and the measurement rehearsal of its first two entries committed, ahead of Gate A", owner = "agents", status = "planned", note = "half done 2026-10-09: version 4 written with the third check's fixes and itself checked, both conditions met (draft pull request 164); my questions 10 to 12 come before the method file and the rehearsal" },
   { id = "W3.6", text = "The December result restated under the refounding in one page, so that the kill dates and the new question point at the same thing", owner = "agents", status = "done", note = "written, merged (pull request 127) and ruled 2026-10-08 (docs/rulings/2026-10-08-december-result-restatement-rulings.md)" },
 ]
 
@@ -179,7 +179,7 @@ end = "2026-10-25"
 days = 2
 status = "planned"
 title = "Gate B, and the reading if R1"
-outcome = "John's Gate B ruling on the validation result: R1 (read arm F), or R2 or R3 (closure path). If R1, arm F read on the frozen procedure with confirmation seeds."
+outcome = "my Gate B ruling on the validation result: R1 (read arm F), or R2 or R3 (closure path). If R1, arm F read on the frozen procedure with confirmation seeds."
 beside = ""
 john_hours = "about 2.5"
 john_items = [
@@ -200,7 +200,7 @@ end = "2026-11-01"
 days = 2
 status = "planned"
 title = "The reading's findings and its Gate B"
-outcome = "Findings document for the reading (or the null); Gate B first tier run midweek before; John's two second-tier sessions and ruling. Kill date 2 passes with the runs landed three weeks earlier."
+outcome = "Findings document for the reading (or the null); Gate B first tier run midweek before; my two second-tier sessions and ruling. Kill date 2 passes with the runs landed three weeks earlier."
 beside = "Kill date 2 is Sunday 2026-11-01."
 john_hours = "about 2.5"
 john_items = [
@@ -219,7 +219,7 @@ end = "2026-11-08"
 days = 2
 status = "planned"
 title = "Closure text and Gate A: the December result exists"
-outcome = "Gate A on the closure text: first tier midweek, John's two second-tier sessions and ruling on Saturday, closure landed in the successor's registration file on Sunday. Six weeks before wrap-up."
+outcome = "Gate A on the closure text: first tier midweek, my two second-tier sessions and ruling on Saturday, closure landed in the successor's registration file on Sunday. Six weeks before wrap-up."
 beside = "The field exercise of 2026-11-10 to 11 follows."
 john_hours = "about 2.5"
 john_items = [
@@ -331,7 +331,7 @@ end = "2026-12-20"
 days = 2
 status = "planned"
 title = "Final state of the record"
-outcome = "Final state of the record before wrap-up starts Monday 2026-12-21; nothing launches. The hibernation condition is completed over the exodus break, by 2027-01-04, with John's final ruling that it is met."
+outcome = "Final state of the record before wrap-up starts Monday 2026-12-21; nothing launches. The hibernation condition is completed over the exodus break, by 2027-01-04, with my final ruling that it is met."
 beside = "Wrap-up starts 2026-12-21. Exodus break roughly 2026-12-21 to 2027-01-03 (dates inferred, not published)."
 john_hours = "about 1"
 john_items = [

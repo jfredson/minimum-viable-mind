@@ -39,7 +39,7 @@ export interface Roadmap {
 
 export const rm = raw as unknown as Roadmap;
 
-export const OWNER: Record<GoalOwner, string> = { john: 'John', agents: 'Agents', both: 'John and agents' };
+export const OWNER: Record<GoalOwner, string> = { john: 'Me', agents: 'Agents', both: 'Me and agents' };
 
 // A milestone's short name for the timeline axis: the part of its title before
 // the colon ("Kill date 1"), or its kind for titles without one.
