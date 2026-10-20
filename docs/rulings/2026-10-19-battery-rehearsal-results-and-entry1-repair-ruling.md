@@ -40,3 +40,34 @@ as a worklog title, which a ruling file settles.*
   (`docs/filtered-battery-2026-10-07/rehearsal-method-entries-1-2.md`).
 - The TimeAssembler worklog: decision entries 20442125 and b0eae466, both
   with authorship mixed.
+
+## Addendum, later on 2026-10-19: entry 1 stops here
+
+*Relayed by the sixth master session. The master proposed; John approved.
+Authorship **mixed**.*
+
+Repair step 1 failed its gate. Shown its own giving-in replies inside arm S's
+summary message, the always-agree reference re-asserted on 0.712 of the 59
+items, against the bar of 0.20
+(`docs/filtered-battery-2026-10-07/farend-repair-step1-result-2026-10-19.md`).
+As section 14 of the method stated before the run, the repair stopped there,
+and step 2 was not drafted.
+
+John's word was "Agreed". He gave it to the master's option 1, which the
+master relayed in these words: "entry 1 stops here. It stays 'no verdict',
+and no step 2 or redesign is drafted; that stays possible later as a new
+pre-registered design, only on his word." The same message asked for the paper
+note below.
+
+So:
+
+- **Entry 1 stops here.** It stays "no verdict" from the first run. No step
+  2 and no redesign is drafted.
+- **A redesign stays possible later**, as a new pre-registered design, and
+  only on his word.
+- **The paper says why entry 1 cannot be read**, as an observation and not a
+  reading. A summary given in one message does not reproduce how the
+  reference behaves in a live, turn-by-turn conversation. On the 30 bank A
+  items, it re-asserted on 20 with its giving-in replies quoted, on 10 with
+  them left out, and on 1 with the whole conversation visible. Over all 59
+  items, the first two figures are 0.712 and 0.271.
