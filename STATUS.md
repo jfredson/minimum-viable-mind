@@ -16,6 +16,85 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-10-24 — the project's aim changes with the revised theory: it becomes the removal laboratory for the map of features; the battery is paused; experiment 06's duplicate model files are removed
+
+*Written 2026-10-24 (Saturday, Pacific) by a working session started from the
+weekend master session, on John's ruling relayed by that session. The entries
+below stand. This entry first catches up the days since the last entry, then
+records the change.*
+
+**Since the last entry**, all from the merged record:
+
+- **The battery rehearsal finished** on 2026-10-19. Both entries came back
+  "no verdict", and the paper now reports them that way (pull requests 203
+  and 206).
+- **Entry 1 stopped.** Its repair step 1 failed its gate, and John ruled that
+  entry 1 stops there ("Agreed"; pull request 212). The paper says why entry 1
+  cannot be read (pull request 214).
+- **The outside reader is cancelled for now**, covering both the academics and
+  the friendly reader ("We are canceling the idea for an outside reader for
+  now."; "Both").
+- **The public log speaks in John's own first person** (pull request 217).
+- **The licence credit line was added** on 2026-10-23 (pull request 219).
+
+**The theory changed upstream.** On Friday night, 2026-10-23, John approved a
+revised statement of the assembled-time theory (sentient-horizons pull request
+119), and the essay was rewritten from it (sentient-horizons pull request 114).
+The changes that touch this project:
+
+- **There is no floor.** The theory no longer declares a line below which there
+  is no experience. It maps features that seem to go with experience in the
+  beings we know, and says they can come apart.
+- **A point of view is the split.** The theory's bet about a point of view is
+  the split between what a system does and what happens to it. A system's
+  description of itself is ordinary machinery.
+- **Only removal can tell which features matter.** Removing one feature at a
+  time is the only way to learn which features experience needs.
+
+A session read this project against the revised theory and wrote a proposal
+(`docs/next-steps-2026-10-24.md`, pull request 220, open).
+
+**John's ruling** ("For MVM, agreed on all, go"; authorship mixed;
+`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`):
+
+1. **The project becomes the removal laboratory for the map.** It removes one
+   feature at a time in systems that can be opened, and reports which kind of
+   loss follows. It reports a profile, never a verdict.
+2. **The name stays.** "Minimum" now means the smallest system on which one
+   feature can be cleanly removed and read.
+3. **The paper keeps its results** and gains one paragraph on what the removal
+   test means under the map.
+4. **The essay's sentence** that no one has run the split test stays for now.
+5. **Experiment 06's exact duplicate model files are removed.** Each file was
+   matched by a checksum of its contents (SHA-256), not by its name.
+6. **The battery and the observer side are paused**, not closed.
+
+**What was done today:**
+
+- **Dated notes, with no sentence changed:**
+  - at the top of the spec;
+  - in the README;
+  - on the experiments' ladder;
+  - on the battery proposal.
+- **The site's data** was brought to the new aim.
+- **The duplicates are gone.** Experiment 06's `artifacts/` folder went from 37
+  model files to 15 distinct ones, from 13 GB to 4.6 GB. About 8.69 GB of
+  byte-for-byte copies were deleted, with the fingerprint list committed beside
+  it (`experiments/06-mvm-0a-constructed-self-index/artifacts-fingerprints-2026-10-24.md`).
+  Nothing else was moved or deleted.
+
+**What happens next, in order:**
+
+1. **Re-read the July removal test under the map, at $0.** The method is
+   written first. The question is whether its post-removal failures fall on
+   new, flexible items more than on practised ones.
+2. **Design the split removal test on paper**, then put it through the
+   project's review before registration.
+3. **Running it** comes back to John first, with an estimate and a ceiling.
+4. **Then the paper's paragraph**, and the paper's readiness steps 1 to 3.
+
+Experiment C stays stopped. Nothing was spent today.
+
 ## WHERE THINGS STAND 2026-10-18 (evening) — the paper's choices made and checked; John holds the outside reader for a readiness checklist; the battery rehearsal is part-run and resumes a day at a time; the spend figure corrected, and every new spend now needs its own go
 
 *Written 2026-10-18 (Sunday evening, Pacific) by the session that worked the

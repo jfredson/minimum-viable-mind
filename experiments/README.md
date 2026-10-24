@@ -9,6 +9,8 @@ Two rules govern everything here:
 
 ## The ladder
 
+*Dated note, 2026-10-24. The ladder below was built to find the floor. The revised theory no longer declares a floor, and on John's ruling of 2026-10-24 (`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`) the project now removes one feature of the theory's map at a time and reads the kind of loss that follows. The stages stay as the record. Experiment C (`08-successor-degree/`) stays stopped. The body test (stage 7) is parked, because the revised theory puts a model's boundary in its weights and replaces survival stakes with mattering. The next experiment is the split removal test.*
+
 Each stage maps to a component or instrument in `spec/minimum-viable-mind-proposal-v0.1.md`. Stages are ordered so each one's instrumentation is reusable by the next. The early stages test *current* systems against the floor and the measurement instruments; the later stages build the missing components and re-test.
 
 Which account of consciousness each stage adjudicates — and which accounts no stage can reach — is tracked in `spec/theory-instrument-ledger.md`. Stage 2 is the Global Workspace test, Stage 4 the higher-order/attention-schema test, Stage 6+ the predictive-processing depth test; IIT and panpsychism are recorded there as out of reach, with reasons.
