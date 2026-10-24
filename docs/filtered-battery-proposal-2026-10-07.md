@@ -1,5 +1,7 @@
 # PROPOSAL: the table of felt features of presence, and the filtered battery built from it
 
+*Dated note, 2026-10-24 (Pacific): paused. On John's ruling of 2026-10-24 (`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`, item 6), the battery and the observer side of the two-sided question are paused, not closed. The revised assembled-time theory says behaviour cannot be the test of experience and that a machine has to be judged by its parts, so readings of behaviour in conversation have no job in the project's new aim until this is reconsidered. Entries 1 and 2 stay as rehearsed (both no verdict; entry 1 stopped on John's ruling of 2026-10-19). Nothing new runs on this file.*
+
 *Dated note, 2026-10-09 (Pacific): RT-256 in this file means the
 records-not-on-the-branch finding, renumbered RT-274 on 2026-10-09
 (docs/rulings/2026-10-09-ledger-and-closure-packet-rulings.md); RT-256

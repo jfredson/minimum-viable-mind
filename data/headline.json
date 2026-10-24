@@ -1,5 +1,5 @@
 {
-  "computed_on": "2026-10-20",
+  "computed_on": "2026-10-24",
   "project": {
     "name": "Minimum Viable Mind",
     "short": "MVM",
@@ -13,7 +13,7 @@
     "record": "STATUS.md is the record of record; data/project.toml is its structured twin and the only input here",
     "rule": "every value is read from the data file as written; nothing is computed from anything else, and the one-sentence state is the record's own first sentence"
   },
-  "record_updated_on": "2026-10-18",
+  "record_updated_on": "2026-10-24",
   "ladder": {
     "delivered": 3,
     "total": 8,
@@ -52,12 +52,12 @@
       }
     ]
   },
-  "state": "On 2026-10-18 the project's new question went into its specification, and the paper draft, now titled 'Instruments that can lose', took my four choices and a corrected cost sentence, each checked.",
+  "state": "On 2026-10-23 I revised the theory this project is built on: it no longer declares a floor below which there is no experience.",
   "latest_entry": {
-    "date": "2026-10-18",
-    "title": "The paper's choices made and checked; the outside reader held for a readiness checklist; the battery rehearsal part-run on Google's daily limit; the spend figure corrected, and every new spend under its own go"
+    "date": "2026-10-24",
+    "title": "The aim changes with the revised theory: the project becomes the removal laboratory for the map of features; the battery paused; experiment 06's duplicate model files removed"
   },
-  "status": "3 of 8 stages delivered; about $335 to $360 spent in total across every vendor so far, each new spend under its own go from me; log last updated 2026-10-18.",
+  "status": "3 of 8 stages delivered; about $335 to $360 spent in total across every vendor so far, each new spend under its own go from me; log last updated 2026-10-24.",
   "dates": {
     "wrap_up_start": "2026-12-21",
     "hibernation_by": "2027-01-04"

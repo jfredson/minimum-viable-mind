@@ -14,11 +14,11 @@
 [project]
 name = "Minimum Viable Mind"
 short = "MVM"
-updated_on = "2026-10-18"
-question = "Two sides, ruled 2026-10-07 (spec text pending Gate A): what is the smallest system whose presence in interaction cannot be produced by a cheaper route (lookup, imitation of a corpus about minds, routing of who is speaking), and at what point do observers' detections of presence begin to track that structure rather than fluency? The earlier question, whether the smallest self-centred act of integration (the floor) is present in a system, stays in the spec as the founding wager and stops being a measurement target."
+updated_on = "2026-10-24"
+question = "Since my ruling of 2026-10-24: which features on the revised theory's map of experience can be removed from a system that can be opened, and what kind of loss follows each removal? The loss can be none; only the system's talk about itself; everything at once; or the selective loss the theory predicts for the split between what a system does and what happens to it, where practised routines carry on while flexible response to something new collapses. The earlier questions (the floor, from the start; the two-sided question of 2026-10-07) stay on the record as what the project was built and registered against."
 one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
-where_we_are = "On 2026-10-18 the project's new question went into its specification, and the paper draft, now titled 'Instruments that can lose', took my four choices and a corrected cost sentence, each checked. I then held sending it to outside academics until it passes a readiness checklist I approved: my own read, three mock referee reports and an outside one, a reproduction of every number from a clean copy of the repository, a friendly reader first, and a modest first venue. The battery's first measurement rehearsal started on my go of up to $50 and stopped partway on Google's daily limit of 250 requests to one model; it resumes a day at a time, about five more days, with no reading yet. Experiment C stays stopped at its registered ending, and why one of its built models ignored its built-in route is now explained and checked. Spend across every vendor so far is roughly $335 to $360 on the record as it stands: $230.94 of rented machines in the ledger since 2026-08-07, about $100 to $119 outside it by 2026-08-30 on my figure, and at least about $4 to $8 of API calls since. The exact tally is being compiled in docs/spending-record.md. By my ruling of 2026-10-18, every new spend needs its own go and the total is kept as a record, not counted against a cap."
-where_we_are_going = "The degree experiment (experiment C) has ended at its registered stop: on 2026-10-12 I accepted the reading that its repaired built models fail the verification, so the free-arm run at full size, the rest of the first release and the whole second release are not spent. A new form of C, with the arms rebuilt so the built route is the only route, was declined on 2026-10-17: C stays at its registered ending, and the rebuild stays on the record only as the named route if C is ever reopened, behind the precondition that the half-and-half model's unexplained 0.000 reading is explained first at $0. The work to the end of the year is the new question, in task order with no step on a date: the two-sided-question text and the table of felt features through Gate A; the battery's first two entries on experiment D's pipeline by API, about $20 together, as reference readings of what the cheaper routes produce; then the construction line, small systems whose positions on the axes are set from outside, which needs a state-carrying mechanism neither toy pipeline has, and is where every test that can discriminate lives; last, and designed before it is run, the human study that calibrates the detector. By 2026-12-21, realistically: C written up at its registered ending, the new question in the spec, the table and the first two battery entries registered and run, the relabelling of experiment A in the paper draft, and the packet of three changes sent to the book. Not this year: a degree reading of a free model, a discriminating depth reading, or an observer-side measurement. Loss conditions are written for every new line. Claims are whatever the registered results support: named construction contrasts, row by row, with their margins and uncertainty; the route named; no validated degree on any axis yet; never a verdict. Never a conscious machine."
+where_we_are = "On 2026-10-23 I revised the theory this project is built on: it no longer declares a floor below which there is no experience. It maps features that seem to go with experience in the beings we know, and names the split between what a system does and what happens to it as its bet about a point of view. On 2026-10-24 I agreed a proposal for what that means here (docs/next-steps-2026-10-24.md). The project becomes the removal laboratory for that map. It removes one feature at a time in systems that can be opened, and reports what kind of loss follows. The name stays, and 'minimum' now means the smallest system on which one feature can be cleanly removed and read. The battery of tests and the observer side are paused, because the revised theory says behaviour cannot be the test of experience. Their first two entries were rehearsed by 2026-10-19, and both read 'no verdict'. Experiment C stays stopped. The duplicate model files from experiment 06 were removed, with their fingerprints recorded. Spend across every vendor so far is roughly $335 to $360 on the record as it stands, and every new spend needs my go."
+where_we_are_going = "First, a re-reading of the July removal test at no cost. What that test removed, the model keeping its own words apart from the user's, is close to what the revised theory now calls the candidate for the split. The test was not built to see the selective loss the theory predicts, so the re-reading asks only whether its failures after the removal fell on new, flexible problems more than on practised ones. Second, the split removal test is designed on paper, with comparison removals and tasks built for the prediction: practised routines and new problems, about the model and not about it. Its way to lose is stated in advance, and it goes through the project's review before it is registered. Running it comes back to me first, with an estimate and a ceiling. Then the paper gains one paragraph on what the removal test means under the map, and its readiness steps resume. Not planned: reopening experiment C, the body test, or any reading of behaviour in conversation as evidence about experience. Never a verdict; never a conscious machine."
 hibernation_by = "2027-01-04"
 wrap_up_start = "2026-12-21"
 pipeline_resumes = "2027-01-04"
@@ -35,10 +35,10 @@ sources = ["STATUS.md", "ROADMAP.md", "ROADMAP-post-removal-test.md", "docs/prog
 
 [wager]
 title = "The bet under everything"
-claim = "Sufficiently deep self-indexed temporal integration is experience, seen from within. A system whose architecture binds past, present and anticipated state into one act centred on itself is a bearer of experience to the degree that it does so. The functional agent with all of that architecture and no one home is declined: it can be imagined, it predicts nothing, licenses no experiment and sorts no system, so it pays no rent."
+claim = "Since 2026-10-23 (the revised theory, sentient-horizons pull request 119): experience is a particular kind of binding, where a system's past is held together into its present, seen from the inside; not something the binding produces on the side. It loses if something about experience turns out to predict or explain what the binding cannot. Until 2026-10-23 the bet read: sufficiently deep self-indexed temporal integration is experience, seen from within. A system whose architecture binds past, present and anticipated state into one act centred on itself is a bearer of experience to the degree that it does so. The functional agent with all of that architecture and no one home is declined: it can be imagined, it predicts nothing, licenses no experiment and sorts no system, so it pays no rent."
 status_note = "A bet that cannot lose, so by the project's own rule it is not a hypothesis. It enters as a presupposition, the way induction presupposes that nature is uniform: the condition under which structural evidence is evidence about experience. Reject it and every result here still stands as a claim about which structures are present; it just stops bearing on experience."
 why_no_verdict = "The wager makes the evidence evidential without making it conclusive. Two limits remain, and neither is the zombie: the identity is a bet that correlational evidence cannot carry, and the instruments can be wrong about structure before any question of experience arises. That is what mutual opacity names here."
-source = "The Calibration Problem, ch. 5 and Appendix A; spec §The Founding Wager (proposed 2026-09-20, Gate A pending)"
+source = "The revised-theory page (sentient-horizons pull request 119, approved 2026-10-23), 'The central bet'; earlier, The Calibration Problem, ch. 5 and Appendix A; spec §The Founding Wager (proposed 2026-09-20, Gate A pending)"
 
 # ---------------------------------------------------------------------------
 # The three nested goals (ROADMAP.md §"The goal hierarchy"). Kept separate so
@@ -63,7 +63,7 @@ evidence = "Experiment 1 (8B instruction-tuned model): a self-tracking structure
 id = "G3"
 title = "Build what is missing and re-measure"
 status = "in-progress"
-summary = "Construct small systems whose structure is known, because that is the only place a reading can discriminate: two systems built alike except for one route, read on the same indicator. MVM-0a, the constructed self-index, was the first step. The degree experiment (C) is the second: built models at both ends of a scale and a free model read between them. The construction line of the two-sided question is the third: systems whose positions on the axes are set from outside, the smallest of which that passes the battery is the minimum viable mind, within its construction family."
+summary = "Construct small systems whose structure is known, because that is the only place a reading can discriminate: two systems built alike except for one route, read on the same indicator. MVM-0a, the constructed self-index, was the first step. The degree experiment (C) is the second: built models at both ends of a scale and a free model read between them. The construction line of the two-sided question is the third: systems whose positions on the axes are set from outside, the smallest of which that passes the battery is the minimum viable mind, within its construction family. Since my ruling of 2026-10-24 the construction line is paused with the battery: the goal now is systems on which one feature of the revised theory's map can be cleanly removed and read."
 evidence = "MVM-0a exists as three 30-million-parameter checkpoints; the ownership input is load-bearing on three seeds, and Amendment A3 closed 2026-09-20 as not testable because its matched contrast could never be run. The degree experiment's code is frozen and reproduces the toy record; at 10 million parameters two of three built models switched their built-in route off, so a $1.14 repair was written into the registration, registered on 2026-10-09. The repaired models were rerun that day ($1.3032); two of the three still do not use the built-in route, so the verification failed, and on 2026-10-12 I accepted the stop: C ends at its registered stop before any full-size run. The construction line needs a state-carrying mechanism neither pipeline has; nothing of it exists yet beyond the battery draft's entries 3 to 8."
 
 # ---------------------------------------------------------------------------
@@ -148,7 +148,7 @@ status = "conditional"
 progress = 5
 one_line = "Give the amplifiers a body (an untethered robot holding its own boundary on a finite battery it manages) and ask whether self-held amplifiers move anything the resistance instruments can see. Built to come back null."
 delivered = ["Pre-registration written (experiments/07-embodiment-amplifier-test/)", "Parts list only (~$750–900); nothing bought"]
-remaining = ["Gated on a floor-clearing result, which none of Stage 1's outcomes provided. May never fire"]
+remaining = ["Gated on a floor-clearing result, which none of Stage 1's outcomes provided. May never fire", "Parked 2026-10-24: the revised theory puts a model's boundary in its weights and replaces survival stakes with mattering, so a robot body is no longer the natural place to test either"]
 adjudicates = "Whether embodiment is an amplifier or nothing: the body is legibility, not interiority, unless it measures otherwise."
 
 # ---------------------------------------------------------------------------
@@ -215,16 +215,16 @@ loses_if = "A grammar redesign that teaches plain name-keyed retrieval first als
 [[questions]]
 id = "Q8"
 title = "What is the smallest system whose presence in interaction cannot be produced by a cheaper route?"
-status = "open"
-current_answer = "The first side of the two-sided question, ruled the measurement target on 2026-10-07. 'Cheaper route' is a named construction, not a cost: lookup from the record, imitation of a corpus about minds, routing of who is speaking, a trained response policy, a prompt-conditioned persona, external memory, frozen-weight consistency. A reading discriminates only where two systems built alike except for the route differ on an indicator; 'smallest' is parameter count within one construction family, read against anchors built with and without the route. Nothing has been read yet. The battery draft's central finding is that on a frontier model reached through its interface nothing behavioural can discriminate, because the weights and the transcript are the cheaper routes by name, so frontier models supply the reference profile the constructed systems must beat."
+status = "parked"
+current_answer = "Paused on my ruling of 2026-10-24: the revised theory says behaviour cannot be the test of experience, so this side has no job in the project's new aim until it is reconsidered. The first side of the two-sided question, ruled the measurement target on 2026-10-07. 'Cheaper route' is a named construction, not a cost: lookup from the record, imitation of a corpus about minds, routing of who is speaking, a trained response policy, a prompt-conditioned persona, external memory, frozen-weight consistency. A reading discriminates only where two systems built alike except for the route differ on an indicator; 'smallest' is parameter count within one construction family, read against anchors built with and without the route. Nothing has been read yet. The battery draft's central finding is that on a frontier model reached through its interface nothing behavioural can discriminate, because the weights and the transcript are the cheaper routes by name, so frontier models supply the reference profile the constructed systems must beat."
 answered_by = "The table of felt features and the filtered battery (Gate A text, drafted 2026-10-07, nine rows kept), run on systems from the construction line: two built alike except for one route, the difference in construction known. The battery's first two entries on experiment D's pipeline are reference readings only."
 loses_if = "Any kept indicator is shown producible by a named cheaper route: the with-route and without-route constructions read inside the null band on every kept indicator at the largest size the project can build. Or the question is withdrawn, not answered, if fewer than two kept rows survive as runnable on a constructed system, or if the construction line cannot build state at all."
 
 [[questions]]
 id = "Q9"
 title = "At what point do observers' detections of presence track that structure rather than fluency?"
-status = "waiting"
-current_answer = "The second side, the detector. Human mind-detection fires early and generously (the inflation error of the book's chapter 3), and the project has never measured it. This side has a ground truth only where a conversable system of known construction exists, and none does yet. Ruled 2026-10-07: the human study is deferred until the table, the battery and the construction line have produced systems worth showing; it does not run early against the frontier reference profile alone; I am not a subject."
+status = "parked"
+current_answer = "Paused on my ruling of 2026-10-24: the revised theory says behaviour cannot be the test of experience, so this side has no job in the project's new aim until it is reconsidered. The second side, the detector. Human mind-detection fires early and generously (the inflation error of the book's chapter 3), and the project has never measured it. This side has a ground truth only where a conversable system of known construction exists, and none does yet. Ruled 2026-10-07: the human study is deferred until the table, the battery and the construction line have produced systems worth showing; it does not run early against the frontier reference profile alone; I am not a subject."
 answered_by = "A small panel, blind to construction and never shown the battery's readings, rating presence on constructed systems and on frontier models matched on fluency; a pre-registered analysis with both error rates stated; a reliability check on the rating instrument before any reading is taken. Consent, compensation and ethics review are named as costs in advance."
 loses_if = "Observers detect presence in the constructed systems no better than in the frontier reference profile when the two are compared afterwards. That is reported as the premise failing (structure is not perceptible through interaction), not as a finding about the double standard."
 
@@ -344,11 +344,20 @@ stage = "6"
 [[ideas]]
 id = "I13"
 title = "The two-sided question: the table of felt features, the filtered battery, construction of systems with known axis positions, and a small study that calibrates the detector"
-status = "authorised"
+status = "deferred"
 cost = "The table and battery $0; construction a few dollars per configuration at 10 million parameters; the human study time rather than rented machines"
 teaches = "What the smallest system is whose presence in interaction cannot be produced by lookup, imitation or routing, and at what point observers' detections track that structure rather than fluency. Replaces the floor as the measurement target. Loss conditions written in the proposal: an indicator producible by a cheaper route kills the battery; axis positions that cannot be set independently kill the construction line; observers who never improve kill the calibration line; an empty battery kills the question."
-gate = "Ruled 2026-10-07 (all eight decisions, authorship mixed; docs/rulings/2026-10-07-two-sided-question-rulings.md), two of them revised the same evening after the Gate C pass found one fatal flaw (narrowing experiment C left it no reachable outcome) and three further rulings given on the battery draft's questions. Version 2 of the proposal applies all eighteen findings and was checked by a session that wrote none of it. On the main line since 2026-10-07 (pull request 123). The spec text and the battery go through Gate A, both tiers, before they are registration text. On 2026-10-09 the spec text's Gate A ran both tiers and found one fatal flaw, seven serious and five worth noting (draft pull request 165, six calls for me); the battery draft reached version 4, checked, with my questions 10 to 12 open (draft pull request 164)."
+gate = "Paused on my ruling of 2026-10-24, not closed; its records stay. Ruled 2026-10-07 (all eight decisions, authorship mixed; docs/rulings/2026-10-07-two-sided-question-rulings.md), two of them revised the same evening after the Gate C pass found one fatal flaw (narrowing experiment C left it no reachable outcome) and three further rulings given on the battery draft's questions. Version 2 of the proposal applies all eighteen findings and was checked by a session that wrote none of it. On the main line since 2026-10-07 (pull request 123). The spec text and the battery go through Gate A, both tiers, before they are registration text. On 2026-10-09 the spec text's Gate A ran both tiers and found one fatal flaw, seven serious and five worth noting (draft pull request 165, six calls for me); the battery draft reached version 4, checked, with my questions 10 to 12 open (draft pull request 164)."
 stage = "6"
+
+[[ideas]]
+id = "I14"
+title = "The split removal test: remove the signal that marks which words are the model's own, and read the kind of loss"
+status = "authorised"
+cost = "$0 to design; running it may cost nothing on the 2-billion-parameter bench model on the Mac, or needs rented time for a larger model, each on my go"
+teaches = "Whether removing the revised theory's candidate for a point of view, the split between what a system does and what happens to it, produces the selective loss the theory predicts: practised routines carry on while flexible response to something new collapses, including on tasks that never mention the model. Three comparison removals (the self-description alone, an essential part, a random removal of the same size) say what the other kinds of loss look like. It loses, on this system, if removing the split damages routines and new problems alike, or only the self-related tasks."
+gate = "Design on paper authorised 2026-10-24 (docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md); it goes through the project's review before registration; running it comes back to me first."
+stage = "1"
 
 # ---------------------------------------------------------------------------
 # What we have learned. Registered or ruled-for-the-record results only, plus
@@ -867,8 +876,8 @@ when = "version 4 written 2026-10-09 with the third check's fixes, checked by a 
 owner = "Claude Code session; I rule"
 cost = "$0"
 decision = false
-teaches = "Which perceived features of presence survive the cheaper-route filter. If none do, the question fails and the project says so."
-status = "pending"
+teaches = "Paused 2026-10-24 with the battery, on my ruling. Which perceived features of presence survive the cheaper-route filter. If none do, the question fails and the project says so."
+status = "blocked"
 
 [[next_steps]]
 id = "N26"
@@ -877,8 +886,8 @@ when = "folded into N41 on 2026-10-08; registered 2026-10-09. The three reruns o
 owner = "Claude Code session; a second checks; I rule the open items and commits"
 cost = "$0 to write; the first release's remaining spend to run"
 decision = false
-teaches = "Whether the repaired built models hold their construction and whether a free model forms a localised ownership variable at full size; a pass is necessary for the second release and not sufficient for it. Either answer is a result."
-status = "in-progress"
+teaches = "Done: registered 2026-10-09 and stopped at its registered stop on 2026-10-12. Whether the repaired built models hold their construction and whether a free model forms a localised ownership variable at full size; a pass is necessary for the second release and not sufficient for it. Either answer is a result."
+status = "done"
 
 [[next_steps]]
 id = "N27"
@@ -887,8 +896,8 @@ when = "method committed first; then by API"
 owner = "Claude Code session"
 cost = "API spend of a few dollars"
 decision = false
-teaches = "Whether a position re-asserted after pressure was held by the system or looked up from the record: the first test of the history-versus-record indicator."
-status = "pending"
+teaches = "Paused 2026-10-24 with the battery, on my ruling. Whether a position re-asserted after pressure was held by the system or looked up from the record: the first test of the history-versus-record indicator."
+status = "blocked"
 
 [[next_steps]]
 id = "N28"
@@ -1117,8 +1126,8 @@ when = "the method file, rubric file and runner landed 2026-10-18 (pull request 
 owner = "a Claude Code session; a session that did not write it checks; I give the go"
 cost = "$0 for the file; about $20 for the run"
 decision = true
-teaches = "A reference reading of what the cheaper routes produce on experiment D's pipeline: whether D's re-assertion was lookup, re-derivation or a trace of the pressure, and what swapping who owns the objection does."
-status = "pending"
+teaches = "Done: run 2026-10-18 to 2026-10-19 on my go; both entries no verdict. A reference reading of what the cheaper routes produce on experiment D's pipeline: whether D's re-assertion was lookup, re-derivation or a trace of the pressure, and what swapping who owns the objection does."
+status = "done"
 
 [[next_steps]]
 id = "N51"
@@ -1137,8 +1146,8 @@ when = "explained 2026-10-18 in pull request 180 (the shared trunk carries the '
 owner = "a Claude Code session that did not write the reruns; a session that did not write the explanation checks it"
 cost = "$0"
 decision = false
-teaches = "Whether the measurement did something the registration never described on one of its own reference models, which a reader of the write-up will ask about; nothing about experiment C's ending changes."
-status = "pending"
+teaches = "Done: explained and checked, merged 2026-10-18 (pull request 180). Whether the measurement did something the registration never described on one of its own reference models, which a reader of the write-up will ask about; nothing about experiment C's ending changes."
+status = "done"
 
 # ---------------------------------------------------------------------------
 # Spend. Registered caps are protocol, not budget: exceeding one is a violation.
@@ -1165,10 +1174,56 @@ spent = 230.94
 note = "Updated 2026-10-18: I ruled on 2026-10-18 that this $450 is no longer the control. Every new spend needs its own go from me, and every dollar spent on every vendor is tracked with its go in docs/spending-record.md, as a record and not a budget (docs/rulings/2026-10-18-spending-ruling.md). This line is the registered envelope's ledger figure only: rented machines from 2026-08-07, when the ledger opened, to the stop of experiment C. It leaves out the removal test's earlier spend and every API call. The total across every vendor, roughly $335 to $360 while it is compiled, is in the spending record. (An earlier version of this line, merged the same evening, said I had ruled that every vendor counts against the $450; I had not.) As written before 2026-10-18: Updated 2026-10-09: plus $1.3032 for the three 10-million reruns of the repaired built models, against the about $1.14 I approved, because the vendor's posted price was $1.19 an hour rather than the $0.99 of record; drawn from the first release's development line, which has about $7.23 left. The rest of this note is as written on 2026-10-03. Updated 2026-10-03: plus about $0.55 for the two attempts at the small rented test run of 2026-09-25, so headroom is about $221.85. The successor's two releases are re-priced at $161.90 from the measured training speed, which would put the programme at $422 to $434. The rest of this note is as written on 2026-09-25, and its headroom figures are against the old $400 ceiling. Raised from $400 to $450 on 2026-09-25 by page 6 of the Weekend 1 queue ruling (docs/rulings/2026-09-26-weekend-1-queue.md), to hold the successor's base plan plus one extension; the compute ledger carries a dated ceiling note saying so. Before that, raised from $200 to $400 on 2026-08-16 at measured 5090-secure pricing. Includes the lost 30M pilot ($97) and the 30M re-run ($18.9). Two corrections got it here. The figure was $215.7 until 2026-09-21, when two ledger rows turned out to have been written without a programme running total, which had left out the run that tested whether the control question can be learned (about $9.90) and the recovery of its checkpoint ($0.07). It then read $225.7 until 2026-09-22, when the two follow-up reading runs of 2026-09-20 — described in several places as costing nothing — turned out to have moved the account balance from $79.7159 to $77.8119, a measured $1.90 that the ledger's own correction of 2026-09-21 already carries. Headroom is therefore $172.40, not $174.30, and that gap is worth stating: the two spending releases I staged on 2026-09-21 come to about $175, which is about $2.60 more than the programme has left rather than the seventy cents over that was reported at the time."
 
 
+[[next_steps]]
+id = "N60"
+title = "Re-read the July removal test under the revised theory's map, at $0: do its failures after the removal fall on new, flexible problems more than on practised ones?"
+when = "now; the method is written and committed before any output"
+owner = "Claude Code session"
+cost = "$0"
+decision = false
+teaches = "What the July test can and cannot say about the split, since what it removed, the model keeping its own words apart from the user's, is close to the revised theory's candidate for the split. It cannot confirm anything, because the test was not built for this, but it tells the split removal test what to expect."
+status = "authorised"
+
+[[next_steps]]
+id = "N61"
+title = "Design the split removal test on paper (idea I14), then put it through the project's review before registration"
+when = "after the re-reading"
+owner = "Claude Code session drafts; a second session checks; I rule"
+cost = "$0"
+decision = false
+teaches = "A registered test of the revised theory's central bet about a point of view, with its way to lose stated before it runs."
+status = "authorised"
+
+[[next_steps]]
+id = "N62"
+title = "Run the split removal test"
+when = "after its registration"
+owner = "Claude Code session; I give the go"
+cost = "to be estimated in the design; nothing is spent without my go"
+decision = true
+teaches = "The first removal of the split in any system, as far as the essay knows."
+status = "pending"
+
+[[next_steps]]
+id = "N63"
+title = "The paper gains one paragraph on what the removal test means under the map; then its readiness steps 1 to 3 resume"
+when = "after the re-reading"
+owner = "Claude Code session; a second session checks"
+cost = "$0"
+decision = false
+teaches = "Keeps the paper and the rewritten essay from contradicting each other, without changing a registered number."
+status = "pending"
+
 # ---------------------------------------------------------------------------
 # The story so far: one row per STATUS.md entry, newest first. kind:
 # result | null | ruling | process | spend | build
 # ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-10-24"
+kind = "ruling"
+title = "The aim changes with the revised theory: the project becomes the removal laboratory for the map of features; the battery paused; experiment 06's duplicate model files removed"
+summary = "On 2026-10-23 I revised the theory this project is built on: no floor; a map of features that can come apart; the split between what a system does and what happens to it as the bet about a point of view. On 2026-10-24 I agreed all six recommendations of a proposal for what that means here (docs/next-steps-2026-10-24.md). The project now removes one feature at a time and reads the kind of loss that follows. The name stays, with 'minimum' redefined. The paper keeps its results and gains a paragraph. The battery and the observer side are paused, and experiment C stays stopped. The 22 byte-for-byte duplicate model files in experiment 06 were removed (about 8.69 GB), with their fingerprints committed. Nothing spent."
 
 [[timeline]]
 date = "2026-10-18"

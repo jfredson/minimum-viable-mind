@@ -3,6 +3,8 @@
 
 *Synthesized from the consciousness corpus across The Calibration Problem (ch. 4–6, 14–15, foundational commitments) and Sentient Horizons (the three-axis essays, "The Correlates We Can Build," "The Wrong Readout," "What a Report Is Evidence Of," "The Mind Stance," "The Width of Now," "Mutual Opacity," "We Built the Alien First," and the dismissals corpus).*
 
+*Dated note, 2026-10-24 (Pacific). Upstream, the theory this specification was built on has changed. The revised assembled-time theory, set out in the one-page statement on sentient-horizons pull request 119 and approved by John on 2026-10-23, declares no floor. It maps features that seem to go with experience (binding across time, a shared workspace, the split between what a system does and what happens to it, self-awareness, a boundary, mattering, kept memory) and says they can come apart. It names the split as its bet about a point of view, and it treats a system's description of itself as ordinary machinery. On John's ruling of 2026-10-24 (`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`), this project is now the removal laboratory for that map. It removes one feature at a time in systems that can be opened and reports which kind of loss follows. "Minimum" now means the smallest system on which one feature can be cleanly removed and read. Wherever the text below speaks of a floor, a centre, or the two-sided question as the measurement target, read it as the record of what the project was built and registered against, not as its current aim. No sentence below has been changed. A rewrite of this specification's sections goes through the project's own review before it lands.*
+
 ---
 
 ## Scope: The Measurable Floor, Not the Metaphysical One

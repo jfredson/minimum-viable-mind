@@ -2,6 +2,8 @@
 
 A build-and-iterate project: take the consciousness work done at Sentient Horizons as the philosophy and guiding principles, and try to actually construct and measure the smallest defensible conscious machine.
 
+*Dated note, 2026-10-24. The aim above is the founding one. Since John's ruling of 2026-10-24 (`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`), the project has a new aim, because the revised assembled-time theory (sentient-horizons pull request 119, approved 2026-10-23) no longer declares a floor. The project is now the removal laboratory for the theory's map of features: it removes one feature at a time in systems that can be opened, and reports which kind of loss follows. That loss can be none; only the system's talk about itself; everything at once; or the selective loss the theory predicts for the split between what a system does and what happens to it, where practised routines carry on while flexible response to something new collapses. "Minimum" now means the smallest system on which one feature can be cleanly removed and read. The output is a profile, never a verdict. The first new experiment is the split removal test, now on paper (`docs/next-steps-2026-10-24.md`, section 4).*
+
 The premise, inherited from the philosophy: if consciousness is structure rather than spark — an architecture under two descriptions, the same process traced from outside and undergone from within — then it has parts, the parts can be specified, and a system can be built to the specification and measured against it. Every claim is a wager with a stated loss condition. A claim that cannot lose explains nothing.
 
 **Scope:** this project measures the *minimum measurable structural correlate* of consciousness, not consciousness as such. It is silent — not dismissive — about any sub-measurable, fundamental form of experience (panpsychism, non-zero-Φ IIT), which is a metaphysical question owned upstream at Sentient Horizons. See the spec's "Scope: The Measurable Floor, Not the Metaphysical One" section.
@@ -30,6 +32,9 @@ The load-bearing inputs: the three axes of mind (availability, integration, dept
 
 ## The build target, in one paragraph
 
+*The founding target, kept as the record of what the project was built against. Since 2026-10-24 the aim is the one in the dated note at the top of this file.*
+
+
 A floor system instantiates self-indexed temporal integration that survives the removal test — ablate the self-locating structure and the binding itself degrades, rather than merely losing a readout. A viable system adds the amplifiers (a maintained boundary, valence as a control surface, genuine stakes) and the third axis (ontogenetic depth — carrying the residue of interactions forward so the system is changed by them). Measurement reads binding rather than preferences, resistance rather than response (retained independence), and self-reports corroborated against interpretability rather than taken at face value.
 
 ## Honest limits (kept in front of the work)
@@ -38,6 +43,8 @@ A floor system instantiates self-indexed temporal integration that survives the 
 - **Depth is not safe.** The properties that make a system worth calling a mind are the same ones that make it hard to correct. Build for formation and preserve accountable corrigibility while correction is still possible. If the ethics arrives after the engineering, it arrives too late.
 
 ## Status
+
+*2026-10-24: on John's ruling of that day, the project's aim changed (see the dated note at the top of this file). Since the paragraph below was written: the battery rehearsal finished on 2026-10-19 with both entries reading "no verdict"; entry 1 stopped on John's ruling the same day; and the outside reader was cancelled for now. The battery and the observer side are now paused, and experiment C stays stopped. The latest entry in `STATUS.md` is the record.*
 
 *As of 2026-10-17. The record of record is `STATUS.md`; this paragraph is a reader's summary of it and goes stale between entries. The earlier paragraph here ("v0.1 — founding proposal in `spec/`… stand up the first component") described the project as it stood in 2026-06 and had not been updated since.*
 
