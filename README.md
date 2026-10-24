@@ -51,6 +51,6 @@ The project's public log is at https://minimumviablemind.sentient-horizons.com, 
 
 ## Licence
 
-The data files and the written record are under Creative Commons Attribution 4.0 (`LICENSE-DATA`): reuse them freely, with credit. The code and the site are under the MIT licence (`LICENSE`). Added 2026-10-08 under the Sentient Horizons design standard.
+The data files and the written record are under Creative Commons Attribution 4.0 (`LICENSE-DATA`): reuse them freely, with credit. The scripts and the site's code are under the MIT licence (`LICENSE`); its text and data are under CC BY 4.0 (`LICENSE-DATA`). Added 2026-10-08 under the Sentient Horizons design standard.
 
 When you reuse the data or the text, please credit it as: *Minimum Viable Mind*, by John Andrew Fredrickson, a Sentient Horizons project, https://minimumviablemind.sentient-horizons.com/
