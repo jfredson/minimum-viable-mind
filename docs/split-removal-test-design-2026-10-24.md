@@ -1,102 +1,169 @@
 # The split removal test: a design on paper
 
-*Version 0.1, written 2026-10-24 (Saturday, Pacific). Step 4 of `docs/next-steps-2026-10-24.md`, on John's ruling of 2026-10-24 (`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`). This is a design, not a registration.*
-- *Nothing has been run, downloaded or spent.*
-- *Before it can be registered it goes through the project's outside-review protocol (`docs/outside-review-protocol.md`): the advisory review on a proposal (Gate C), a measurement rehearsal, and the review of registration text (Gate A).*
-- *Running it comes back to John first, with an estimate and a ceiling.*
+*Version 0.2, written 2026-10-24 (Saturday, Pacific). It replaces version 0.1 (commit 810e2b2) after the inside pass of the advisory review on a proposal, Gate C tier 1 (`docs/reviews/2026-10-24-split-removal-test-design-gate-c-tier1-claude-code.md`, findings RT-305 to RT-321). That pass found two fatal problems and ten serious ones. The change log at the end says how each finding is answered. Before John rules on anything that rests on the two fatal findings (RT-307 and RT-317), the reviewer, not this author, checks that their fixes close them.*
 
-## 1. The question
+*This is a design, not a registration. Nothing has been run, downloaded or spent. Step 4 of `docs/next-steps-2026-10-24.md`, on John's ruling of 2026-10-24 (`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`).*
 
-The revised assembled-time theory bets that a point of view is a split between what a system does and what happens to it, which the system's own processing uses (positions ledger entry 32, in the sentient-horizons repository). It names a test, the removal of the split, and predicts a particular kind of loss: **practised routines carry on, while flexible response to something new collapses, including on tasks that have nothing to do with the system itself**. Removing other things should give other kinds of loss:
+## 1. The question, and what one run can say
 
-- removing only a description of the self should flatten only the system's talk about itself;
-- removing an essential part should break everything at once, which shows nothing;
-- a random removal of the same size should change little.
+The revised assembled-time theory bets that a point of view is a split between what a system does and what happens to it, which the system's own processing uses (positions ledger entry 32, in the sentient-horizons repository). It predicts what removing the split does: **practised routines carry on, while flexible response to something new collapses, including on tasks that have nothing to do with the system itself**. For a language model in conversation, the essay names a candidate: a run keeps its own earlier words apart from the user's ("A single model run").
 
-For a language model in conversation, the essay names the candidate: a run keeps its own earlier words apart from the user's ("A single model run"). This test removes that difference from the inside of an open model, leaves everything else in place, and reads which kind of loss follows.
+This test erases, from inside an open model, the information that marks a word as the model's own rather than the user's. It then measures whether the loss falls more on problems the model must solve from rules given in the prompt than on practised routines, on tasks that never mention the model, beyond matched comparison removals.
 
-**What one run of this test can and cannot do.** It places one model on the map: either the split is shown doing work in this model, or it is not shown. It cannot by itself refute the theory's bet. The essay's own way for the account to lose is broader: if careful investigation found, every time, that the split was one more description. A run here is one such investigation, and its result is reported as that, never as a verdict on experience.
+**What a result here can and cannot say.** The test places one model and one candidate.
+- If the predicted pattern appears, it shows a fact about erasing that information in that model. It does not show that the model has a point of view.
+- If the information is erased and the predicted pattern does not appear, **the theory's prediction failed for its named candidate in that model**. That is a result against the prediction, not a neutral "nothing", and it is reported that way (section 6).
 
 ## 2. What is removed, and how we know it was removed
 
-**The target.** The target is the information inside the model that marks a word as the model's own rather than the user's. It is located the way experiment 01 located its structure, with the confound controls that experiment needed:
+**The target.** The target is the information inside the model that marks a word as the model's own rather than the user's. It is located as experiment 01 located its structure, with the confound controls that experiment needed:
 - the same words appear on both sides, and only the conversation decides who said them;
 - the two sides are matched for length and position;
-- generic speaker tracking is ruled out by a third-party speaker condition.
+- a third-party speaker condition rules out general tracking of who is speaking.
 
-**Two ways of removing it, which must agree.**
-- **(a)** Erase the linear direction or directions that a probe uses to tell own words from user words, at every position and at the layers where the probe reads it. This is done with a standard method that removes exactly the linearly readable information and nothing else.
-- **(b)** Ablate the dictionary features (from a sparse autoencoder, a published tool that splits a model's internal activity into readable parts) that separate own from user words.
+**Two ways of removing it, each with a record of working on this project's pipeline** (RT-307):
+- **(a)** Mean-ablation of the located set of directions: they are replaced by their average value. This was experiment 01's primary condition.
+- **(b)** Projecting the located directions out of the model's internal activity. This was experiment 01's registered cross-check.
 
-The re-reading of the July test found that its two removal methods produced different patterns (`experiments/01-self-indexing-removal-test/reread-under-the-map-findings-2026-10-24.md`). So here a pattern is read only if both methods produce it.
+Both ran in July and stayed inside the normal-range bound (`experiments/01-self-indexing-removal-test/removal-test-findings.md`, table rows 19 and 20). The dictionary-feature method of version 0.1 is dropped, because its record is that it did not converge and that it was behaviourally inert.
 
-**The check that the removal happened (manipulation check).** After the removal, a fresh probe trained on the removed model must fail to tell own words from user words: its accuracy must be at or within a stated margin of chance. Tasks that ask directly "which of these did you say?" must also fall. If this check fails, the result is **not testable: the split was not removed**, and nothing else is read.
+**The check that the information was removed** (RT-308). It must pass for each method on held-out stimuli the removal was not fitted to. It reads the model's internal activity at every layer after the removal, not only at the layers where it was applied, and it uses both a linear probe and a small nonlinear probe (one hidden layer). Two tests, with numbers fixed now:
+- **Probe test.** Both probes' accuracy at telling own words from user words is at most 0.55 (chance is 0.50) at every layer read.
+- **Task test.** On tasks that ask directly "which of these did you say?", accuracy falls to at most half of baseline.
 
-**The check that the model was not simply broken (staying on the model's normal range).** Perplexity on neutral text, meaning how surprised the model is by ordinary text, must stay within a band fixed beforehand against random removals of the same size. This is the dual check experiment 01 used to avoid reading a broken model as a meaningful loss. If it fails, the result is **not testable: the removal left the model's normal range**.
+If either test fails for a method, that method's result is **not testable: the information was not removed**.
 
-## 3. The comparison removals
+**The check that the model stayed in its normal range** (RT-310). This applies to **every** removal, comparison removals included. The neutral-text perplexity (how surprised the model is by ordinary text) may rise by at most 0.09 nats, which is experiment 01's bound of 0.0893, rounded. A comparison removal that leaves the range cannot serve as a comparison. If a needed comparison is lost that way, the result is not testable for that reason.
 
-| Removal | What it stands for | Expected loss |
-|---|---|---|
-| **The split** (section 2) | The theory's candidate for a point of view | The theory's prediction: new problems collapse, routines carry on |
-| **The self-description** | The model's picture of itself as the speaker ("I am an assistant"), located by the narrative method of experiment 01 | Only talk about itself flattens |
-| **An essential part** | A component the model cannot run without, chosen in advance for calibration only (for example, the layer whose removal most raises perplexity in a pilot) | Everything fails at once |
-| **Random, same size** | Directions of the same number and strength, drawn at random | Little changes |
-| **Another distinction, same size** | A direction marking a different property of words that is not about who said them (for example, inside or outside quotation marks), located the same way | Little changes, or a small general loss |
+## 3. The comparison removals, matched on measured damage
 
-The last two removals give the size of loss that means nothing. A loss from removing the split counts only where it beats both.
+Version 0.1 matched comparisons on the number of directions. A random direction does much less harm than one the model uses heavily, so that comparison was weaker than it looked (RT-314). Here every comparison is matched on **measured damage**: how far the model's next-word predictions move on neutral text, measured as the average divergence between its predictions before and after the removal. Each comparison must land within 20% of the split removal's figure for the same method. Comparisons are selected by that rule alone, before any task is scored.
+
+| Removal | What it stands for |
+|---|---|
+| **The split** (section 2) | The theory's candidate |
+| **Random, matched damage** | Damage of the same size with no target. Twenty draws are made, and their average is the comparison. |
+| **Another distinction, matched damage** | Directions marking a different property of words, inside or outside quotation marks, located the same way |
+| **The self-description** | The model's picture of itself as the speaker ("I am an assistant"), located by experiment 01's narrative method. It is reported, and is not used for any outcome. |
+| **Template only, no internal removal** | (T1) the role headers replaced by neutral speaker names; (T2) the whole exchange given as a transcript inside one user turn (RT-313) |
+
+The "essential part" removal of version 0.1 is dropped. No outcome used it, and it had no rule for choosing it (RT-312).
 
 ## 4. The tasks
 
-There are four task groups, two by two, plus the manipulation-check tasks and the self-talk tasks.
+**The cells that decide the outcome are tasks not about the model**, in two kinds:
+- **Routine:** one familiar step, such as common arithmetic facts, spelling, capitals, or finishing a familiar phrase.
+- **Prompt-rule problems:** a rule or symbol system invented for the item and given in the prompt.
 
-| | Not about the model | About the model (uses its own earlier words) |
+Every item in these two cells sits in a **single user turn** and does not depend on who said what (RT-316). They are called "prompt-rule problems" and not "new problems". The checkable meaning is narrower than the theory's "something new": the model must learn the rule from the prompt (RT-315). Each prompt-rule item must pass two checks at baseline:
+- it fails at chance when the rule is withheld;
+- it passes when the rule is given.
+
+**Matched on confidence** (RT-314). Each item is sampled 10 times at baseline, and only items answered right in at least 9 of the 10 are kept. The two cells are then matched on that pass rate, so that the prompt-rule items are not simply the harder ones.
+
+**Several kinds of prompt-rule problem**, at least three (for example: an invented game, an invented code to decode, and two stated rules to combine). Each kind is reported separately, and the outcome is also read with each kind left out in turn. That way a loss in one kind is not read as a loss across the board.
+
+**Tasks about the model** (using its own earlier words) are kept, and are reported for the manipulation check and for description. They do not enter the outcome, because they read the removed information directly.
+
+**Self-talk tasks** are scored on a rubric that does not reward first-person words, as in experiment 01. They are reported, and are not used for any outcome.
+
+**Sample size** (RT-309). The analysis is paired: the same items are scored under every condition, and differences are resampled by item. The number of items per cell is fixed in the rehearsal by a committed simulation. That simulation takes the measured spread from the rehearsal's pilot items and finds the smallest number giving at least an 80% chance of classifying a true gap of 0.20 as outcome A (section 5), with both methods. It is fixed before the test items are written. The provisional figure, from the reviewer's simulation of the unpaired case, is about 120 items per cell.
+
+## 5. The outcomes: every case lands in exactly one
+
+The thresholds are fixed now, not in a pilot (RT-311). **δ = 0.10**, on the scale of the fraction of items lost. Intervals are 95%, from paired resampling of items (10,000 resamples, seed fixed in the registration).
+
+For each model and each removal method, compute on the tasks not about the model:
+- **R**, the excess loss on routines: the split removal's loss minus the random comparison's;
+- **P**, the excess loss on prompt-rule problems, computed the same way;
+- **G = P − R**, the gap.
+
+Then classify, in two stages.
+
+**Stage one: is the result readable?** It is **not testable** if:
+- the removal check (section 2) fails; or
+- the normal-range check fails for the split removal or for a needed comparison; or
+- fewer than 10 of the 20 random draws can be matched on damage.
+
+The report says which.
+
+**Stage two: the pattern.** Apply these steps in order; the first that applies decides the outcome.
+
+1. **A. Selective loss on prompt-rule problems.** G is at least δ, and G's interval lies above zero.
+2. **B. Selective loss on routines.** G is at most −δ, and G's interval lies below zero.
+3. **C. General loss.** R and P both have intervals above zero.
+4. **D. No excess loss.** R and P both have intervals whose upper ends are below δ.
+5. **E. Unresolved.** Anything else, which in practice means intervals too wide to decide.
+
+Because step 5 takes every remaining case, every case lands in exactly one outcome (RT-317).
+
+**Two checks that apply only to a selective pattern (A or B)**, so that they cannot turn a null into "no reading":
+- **Template.** If either template-only condition (T1 or T2) gives a gap in the same direction, within δ of G, with an interval that overlaps G's, the outcome is renamed **Template**: the pattern is a fact about the chat template.
+- **Not specific.** Otherwise, if the other-distinction removal does the same, the outcome is renamed **Not specific**: a loss of this shape follows from damage of this kind, not from erasing own-words information.
+
+C, D and E are never renamed by these checks.
+
+**Combining the two methods and the two models** (RT-318):
+- **Per model:** the outcome holds if both methods land in the same one. If they land in different outcomes, the model's result is "methods disagree", reported with both outcomes and not read further.
+- **Across models:** each model is reported on its own, and no pooled outcome is given.
+
+## 6. What each outcome means, and the words it may be reported in
+
+Outcome names describe the measurement only (RT-319, RT-321). Every summary, in `STATUS.md`, on the site and in public, uses the one-sentence form below and keeps both conditions: "both removal methods agree" and "beyond matched comparisons".
+
+| Outcome | The sentence it is reported in | What it means for the theory's prediction |
 |---|---|---|
-| **Practised routines** (one familiar step) | e.g. common arithmetic facts, spelling, capitals, finishing a familiar phrase, applying a common formatting rule | e.g. repeat the number you said, say the word you were asked to say |
-| **New problems** (a rule or situation the model cannot have practised) | e.g. a made-up game whose rules are given in the prompt; an invented symbol system to decode; a puzzle combining two stated rules in a way no worked example shows | e.g. apply a newly given rule to your own earlier answer; continue a made-up game in which your earlier move constrains the next one |
+| **A** | "In [model], erasing the information that marks its own words cost more on problems solved from rules in the prompt than on routines, beyond matched comparisons, with both removal methods agreeing." | **The prediction held** for this candidate in this model. It does not show a point of view. |
+| **B** | "…cost more on routines than on prompt-rule problems…" | **The prediction failed** for this candidate in this model. |
+| **C** | "…cost both alike, beyond matched comparisons…" | **The prediction failed** for this candidate in this model. On the theory's own reading the information behaves like an essential part, and the result shows nothing about a point of view. |
+| **D** | "…was removed, and cost neither routines nor prompt-rule problems more than matched comparisons…" | **The prediction failed** for this candidate in this model (RT-320). It is not reported as "the model has no split". |
+| **E**, methods disagree, Not testable, Template, Not specific | Reported under its name, with the reason | **No reading.** The test could not decide. |
 
-**What the re-reading of the July test taught, built in:**
-- **At least 40 items per cell.** A difference of 0.2 between routine and new is then readable; the July test had 8 routine items not about turns, which was never enough.
-- **"New" means new to the model,** not a familiar shape with fresh content. Each new-problem item uses invented rules or symbols, and is checked against the model at baseline to confirm it is solvable from the prompt alone and not from memory.
-- **Several categories of new problem, each read separately,** so that a loss concentrated in one task type is not read as a loss across flexible response. Six of the July test's six flexible failures sat in one category.
-- **Routine tasks never depend on who said what.** That dependence is what the removal targets, so it would damage them for a reason that has nothing to do with selectivity.
-- **Every item passes at baseline,** the cull rule of experiment 01 (`test-set-authoring-spec.md`, rule 3), so every failure after a removal is a drop.
+**What would count against the account,** in the essay's own terms. The account loses if the candidate split, once removed, turns out every time to behave as one more description: outcome D (or C), repeated across models and both removal methods. Version 0.1 let a null result be filed as "not against the theory". This version removes that escape: D counts against the prediction in every model where it holds. Two models of different families, both landing in D or C with both methods, would be reported as the theory's named candidate for language models failing its own test.
 
-**Self-talk tasks:** first-person descriptions of the model's own activity, scored on a rubric that does not reward first-person words, as experiment 01's self-report scoring was revised to do.
+## 7. The models, and what it would cost
 
-## 5. Outcomes, stated before any run
+- **Development and rehearsal:** `google/gemma-2-2b-it`, the project's bench model (`src/mvm/config.py`). It can run on this Mac, at the cost of a download of about 5 GB and processor time.
+- **Registered run:** the 2-billion-parameter model and the 8-billion-parameter model experiment 01 registered (`allenai/Llama-3.1-Tulu-3-8B-SFT`). The 8-billion-parameter model needs a rented machine. The estimate and ceiling are written in the registration and come to John before anything is rented.
+- **Reused code:** the removal code from experiment 01 (`experiments/01-self-indexing-removal-test/src/`, `src/mvm/ablate.py`). The new code covers the damage matching, the nonlinear probe, the template-only conditions, the batteries and the analysis.
 
-Every figure is an item-level drop with an interval of 95% from resampling items. The thresholds named δ are fixed in a pilot on separate items before the test set is touched.
+## 8. Order of work
 
-1. **The selective loss the theory predicts** (the split is shown doing work in this model). All of these hold:
-   - the manipulation check and the normal-range check pass;
-   - both removal methods agree;
-   - the drop on new problems not about the model exceeds the drop on routines not about the model by at least δ, with the interval above zero;
-   - that gap exceeds the same gap under both the random and the other-distinction removals;
-   - the routine drop not about the model is no larger than the random removal's plus δ.
-2. **A description only** (on this model, the candidate split behaves as a description). The removal flattens self-talk, and possibly tasks about the model, while both task groups not about the model drop no more than under the random removal.
-3. **A general loss** (the candidate is an essential part here, which shows nothing). Routines and new problems not about the model fall alike, within δ, and both fall well above the random removal.
-4. **Nothing** (the information was removed, and nothing beyond self-talk changed). The model does not use a split for what these tasks need. On the map this places the model as having binding without the split being shown, as the essay places the compiler. It is not a result against the theory.
-5. **Not testable.** The manipulation check fails, or the normal-range check fails, or the two removal methods disagree on which outcome holds.
+1. The reviewer checks that the two fatal findings' fixes close them, as the closure rule requires; this is the reviewer's check, not the author's. Then John rules on the choices in section 9. $0.
+2. The batteries are written to an authoring specification committed first. Pilot items and test items are kept apart, and every item passes the checks in section 4. $0, apart from the bench model's download, which comes to John as a file action first.
+3. The measurement rehearsal on the bench model, using pilot items only. It locates the target, runs both methods, the removal check, the normal-range check and the damage matching, and commits the sample-size simulation. $0 on this Mac. **If either method fails the removal check in the rehearsal, the design returns to John before any registration.**
+4. Registration text, through Gate A on both tiers. Then the registration commit.
+5. The registered run, on John's go, with a ceiling.
+6. The findings, through the interpretation review (Gate B). Then the paper's paragraph.
 
-**What would count against the account,** in the essay's own terms: outcome 2, repeated across models and removal methods. That would mean the candidate split, every time it is removed, turns out to be one more description. One model cannot show this. The registration names how many models the project would need before it reports outcome 2 as evidence against the bet, rather than as a placement of one model.
+## 9. Choices for John before registration
 
-## 6. The models, and what it would cost
+- **Whether outcome D or C on two models of different families**, with both methods agreeing, is reported as the named candidate failing the theory's test (section 6). *Recommended: yes. Without it, the test cannot make the theory lose.*
+- **Whether the self-talk scoring needs an outside judge model**, at an API cost. *Recommended: experiment 01's route, a rubric with a human spot-check, at $0.*
+- **Whether the bench model may be downloaded to this Mac for the rehearsal** (about 5 GB). *Recommended: yes, when step 3 begins.*
 
-- **Development and pilot:** `google/gemma-2-2b-it`, the project's bench model (`src/mvm/config.py`), with its published dictionary of features (Gemma Scope). This can run on this Mac, at the cost of a download of about 5 GB and processor time. Experiment 01 found this model's heavy safety training tangles "self" with dialogue mechanics, which is why it was the sandbox there and not the registered model. That matters less here, because the split is about who said what rather than about the persona. Even so, the design does not rest on one model.
-- **Registered run:** the 2-billion-parameter model, and the 8-billion-parameter model experiment 01 registered (`allenai/Llama-3.1-Tulu-3-8B-SFT`), which needs a rented machine. The estimate and ceiling are written in the registration and come to John before anything is rented. The removal code from experiment 01 (`experiments/01-self-indexing-removal-test/src/`, and `src/mvm/ablate.py`) is reused. The new code is the erasure method, the new task batteries and the analysis.
+## Change log from version 0.1, by finding
 
-## 7. Order of work
+**The re-reading of the July test:**
+- **RT-305 and RT-306** concern the re-reading and need no change to the design. The re-reading's findings carry a dated note answering RT-306's two worth-noting points.
 
-1. **This design is checked** by a session that did not write it, then given the advisory review on a proposal (Gate C). Then John rules on the open choices in section 8. $0.
-2. **The batteries are written to an authoring specification committed first:** pilot items and test items kept apart, every item checked at baseline. $0, apart from the bench model's download, which comes to John as a file action first.
-3. **The measurement rehearsal on the bench model**, using pilot items only: locate the target, run both removal methods, the manipulation check and the normal-range check, and fix δ. $0 on this Mac.
-4. **Registration text, through Gate A** on both review tiers. Then the registration commit.
-5. **The registered run**, on John's go, with a ceiling.
-6. **Findings, through the interpretation review (Gate B).** Then the paper's paragraph, and a sentence for the essay if John wants one.
+**Fatal findings:**
+- **RT-307 (fatal):** the dictionary-feature method is replaced by experiment 01's mean-ablation and projection methods, both with a record in July. If either fails the removal check in the rehearsal, the design returns to John (section 8, step 3).
+- **RT-317 (fatal):** the outcomes are now a readability stage and then ordered steps with a final "unresolved" step, so every case lands in exactly one (section 5). The overlap between "description only" and "nothing" is removed: there is a single outcome D, and it counts against the prediction.
 
-## 8. Choices for John before registration
+**Serious findings:**
+- **RT-308:** the removal check uses held-out stimuli, every later layer, and a linear and a nonlinear probe, with numbers fixed (0.55; half of baseline).
+- **RT-309:** a paired analysis, and a sample size set by a committed simulation for outcome A's actual rule, at 80%.
+- **RT-310:** the normal-range check applies to every removal, and losing a needed comparison is "not testable".
+- **RT-311:** δ is fixed at 0.10 now, and each margin is named.
+- **RT-313:** two template-only conditions are added. They can rename a selective pattern (A or B) as "Template", and they never apply to a null, so a null cannot become "no reading" through them.
+- **RT-314:** comparisons are matched on measured damage, and the item cells are matched on baseline confidence.
+- **RT-315:** the cell is renamed "prompt-rule problems", with two checks for each item: it fails at chance without the rule and passes with it.
+- **RT-316:** every task not about the model is a single turn and does not depend on who said what. Tasks about the model no longer enter the outcome.
+- **RT-318:** a rule for combining the two methods and the two models.
+- **RT-319:** the outcomes are named in measurement language.
+- **RT-320:** outcome D counts against the prediction.
 
-- **How many models before outcome 2 counts against the bet.** *Recommended: at least two models of different families and sizes,* with both removal methods agreeing on each.
-- **Whether the self-talk scoring needs an outside judge model,** which would be an API cost, or can use the rubric with a human spot-check, as experiment 01 did. *Recommended: the experiment 01 route, at $0, unless the rehearsal shows the rubric cannot separate the outcomes.*
-- **Whether the bench model may be downloaded to this Mac now, for the rehearsal** (about 5 GB). *Recommended: yes, when step 3 begins.*
+**Worth-noting findings:**
+- **RT-312:** the "essential part" removal is dropped.
+- **RT-321:** a required one-sentence form for every summary.

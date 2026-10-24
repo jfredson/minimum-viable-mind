@@ -46,3 +46,9 @@ Group G1 joins three categories: multi-step reasoning, coreference and finding a
 - **Routine tasks that do not depend on who said what.** Turn lookups read the removed signal directly, so damage to them is expected under any reading and cannot stand in for "routine".
 
 These go into the design of the split removal test (`docs/split-removal-test-design-2026-10-24.md`).
+
+---
+
+*Dated note, 2026-10-24, later the same day, after the Gate C inside pass (`docs/reviews/2026-10-24-split-removal-test-design-gate-c-tier1-claude-code.md`, RT-305 and RT-306). The reviewer re-ran the script and got output identical to the byte, and confirmed the "cannot be read" call at every seed from 0 to 19. It raised two points; both are fair, and the text above is not edited.*
+- *The method said that when the width rule fires, the re-reading "draws nothing from the gap". The summary paragraph and point 2 above still lean on the cross-check's gap of −0.167. Read those sentences as description only. The one conclusion this re-reading supports is the one its rule allows: the comparison cannot be read.*
+- *The method and the output were committed 51 seconds apart, so commit order alone does not prove the method came first. What the record can show is this. The method's commit (8530a8d) contains no output file. The script reads the scores file only through the grouping that the method fixes. The method also discloses the one outcome already known when it was written: six of seven failures fell in multi-step reasoning.*
