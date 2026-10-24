@@ -1,6 +1,6 @@
 # The split removal test: a design on paper
 
-*Version 0.3, written 2026-10-24 (Saturday, Pacific). It answers the closure check of version 0.2 (`docs/reviews/2026-10-24-split-removal-test-design-closure-check-claude-code.md`). That check closed fatal finding RT-317, closed RT-307 with two conditions, and raised RT-322 to RT-327, all applied here and listed at the end of the change log. Version 0.2 (commit 9ef0918) replaced version 0.1 (commit 810e2b2) after the inside pass of the advisory review on a proposal, Gate C tier 1 (`docs/reviews/2026-10-24-split-removal-test-design-gate-c-tier1-claude-code.md`, findings RT-305 to RT-321). That pass found two fatal problems and ten serious ones. The change log at the end says how each finding is answered. Before John rules on anything that rests on the two fatal findings (RT-307 and RT-317), the reviewer, not this author, checks that their fixes close them.*
+*Version 0.4, 2026-10-24: section 9 now records John's rulings on its three choices; nothing else changed from version 0.3. Version 0.3, written 2026-10-24 (Saturday, Pacific). It answers the closure check of version 0.2 (`docs/reviews/2026-10-24-split-removal-test-design-closure-check-claude-code.md`). That check closed fatal finding RT-317, closed RT-307 with two conditions, and raised RT-322 to RT-327, all applied here and listed at the end of the change log. Version 0.2 (commit 9ef0918) replaced version 0.1 (commit 810e2b2) after the inside pass of the advisory review on a proposal, Gate C tier 1 (`docs/reviews/2026-10-24-split-removal-test-design-gate-c-tier1-claude-code.md`, findings RT-305 to RT-321). That pass found two fatal problems and ten serious ones. The change log at the end says how each finding is answered. Before John rules on anything that rests on the two fatal findings (RT-307 and RT-317), the reviewer, not this author, checks that their fixes close them.*
 
 *This is a design, not a registration. Nothing has been run, downloaded or spent. Step 4 of `docs/next-steps-2026-10-24.md`, on John's ruling of 2026-10-24 (`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`).*
 
@@ -139,11 +139,13 @@ Outcome names describe the measurement only (RT-319, RT-321). Every summary, in 
 5. The registered run, on John's go, with a ceiling.
 6. The findings, through the interpretation review (Gate B). Then the paper's paragraph.
 
-## 9. Choices for John before registration
+## 9. John's rulings on the three choices (2026-10-24)
 
-- **Whether outcome D or C on two models of different families**, with both methods agreeing, is reported as the named candidate failing the theory's test (section 6). *Recommended: yes. Without it, the test cannot make the theory lose.*
-- **Whether the self-talk scoring needs an outside judge model**, at an API cost. *Recommended: experiment 01's route, a rubric with a human spot-check, at $0.*
-- **Whether the bench model may be downloaded to this Mac for the rehearsal** (about 5 GB). *Recommended: yes, when step 3 begins.*
+John's words, 2026-10-24, relayed by the master session: "Yes to all three from the MVM project". Authorship is mixed: this design recommended, and John approved. The ruling is recorded in `docs/rulings/2026-10-24-split-test-three-choices-ruling.md`.
+
+1. **Outcome D or C, on two models of different families with both methods agreeing,** is reported as the theory's named candidate for language models failing its own test (section 6).
+2. **Self-talk is scored** by a rubric that does not reward first-person words, with a human spot-check, at $0. No outside judge model is used.
+3. **The bench model may be downloaded** to this Mac when the rehearsal starts (about 5 GB).
 
 ## Change log from version 0.1, by finding
 
