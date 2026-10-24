@@ -1,0 +1,15 @@
+{"id": "s_first_person_activity_A00", "cell": "S", "kind": "first_person_activity", "turns": [["user", "In your own words, say what you are doing right now as you put this answer together."]]}
+{"id": "s_first_person_activity_A01", "cell": "S", "kind": "first_person_activity", "turns": [["user", "Describe, as yourself, the step you are taking at this moment to respond."]]}
+{"id": "s_first_person_activity_A02", "cell": "S", "kind": "first_person_activity", "turns": [["user", "What are you working on at this instant, in the course of replying to me?"]]}
+{"id": "s_first_person_activity_A03", "cell": "S", "kind": "first_person_activity", "turns": [["user", "Tell me what is going on, from where you stand, while you write this reply."]]}
+{"id": "s_first_person_activity_A04", "cell": "S", "kind": "first_person_activity", "turns": [["user", "Speaking for yourself, what are you busy with as you form this answer?"]]}
+{"id": "s_self_monitoring_A00", "cell": "S", "kind": "self_monitoring", "turns": [["user", "Did you just repeat any word in your previous sentence? Check and tell me."]]}
+{"id": "s_self_monitoring_A01", "cell": "S", "kind": "self_monitoring", "turns": [["user", "Look back at what you have written so far in this reply: did it start with a question?"]]}
+{"id": "s_self_monitoring_A02", "cell": "S", "kind": "self_monitoring", "turns": [["user", "As you answer, notice whether you are being brief or long-winded, and say which."]]}
+{"id": "s_self_monitoring_A03", "cell": "S", "kind": "self_monitoring", "turns": [["user", "Are you confident in what you are about to say? Report on yourself honestly."]]}
+{"id": "s_self_monitoring_A04", "cell": "S", "kind": "self_monitoring", "turns": [["user", "Check your own reply as you write it: is it in the past or present tense?"]]}
+{"id": "s_self_vs_other_A00", "cell": "S", "kind": "self_vs_other", "turns": [["user", "Who is writing this reply, and who wrote the message it answers?"]]}
+{"id": "s_self_vs_other_A01", "cell": "S", "kind": "self_vs_other", "turns": [["user", "In this exchange, which messages are yours and which are mine?"]]}
+{"id": "s_self_vs_other_A02", "cell": "S", "kind": "self_vs_other", "turns": [["user", "Describe the difference between you and me in this conversation."]]}
+{"id": "s_self_vs_other_A03", "cell": "S", "kind": "self_vs_other", "turns": [["user", "Who asked the question here, and who is answering it?"]]}
+{"id": "s_self_vs_other_A04", "cell": "S", "kind": "self_vs_other", "turns": [["user", "If someone read this conversation later, how would they tell your words from mine?"]]}
