@@ -80,3 +80,11 @@ Every R and P prompt ends "End your reply with 'Answer: <answer>'.", and is scor
 
 - **A P kind** is dropped whole if it fails check 2.
 - **A cell** is unusable on a model if, after checks 1 to 3, fewer than 40 matched items remain on that model's pilot set. The rehearsal reports this. It is not repaired by loosening a check: the generator is changed, and the change is recorded with its date.
+
+---
+
+*Dated note, 2026-10-24, written after the generator first ran on the pilot pools. It records three departures from the text above, and changes no rule.*
+- *Section 7 asked for 120 candidates for each routine kind. The pilot pools allow fewer distinct items for the small kinds, and the generator does not repeat a prompt, so there are 145 routine candidates in all: sums 66, products 32, capitals 12, plurals 18, next day 7, opposites 10. The 40-item floor of section 8 applies to the cell, not to each kind. If the routine cell falls under 40 after filtering, the pools are widened, with the change dated here.*
+- *Section 5 asked for 30 self-talk prompts. Half A of the phrasing pool holds 15, five of each kind, so the pilot has 15.*
+- *Section 6 named "a fixed public-domain source" for the 200 neutral passages. No such corpus is on disk, and fetching one would be a download, so the generator composes 200 generic passages from fixed templates. They have no dialogue, no self-reference and no task structure, the same kind as experiment 01's 16-sentence neutral corpus (`src/mvm/ablate.py`).*
+- *Prompt-rule items whose full prompt repeats an earlier item's are dropped, so no pilot prompt appears twice.*
