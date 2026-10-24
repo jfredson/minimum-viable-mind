@@ -1,0 +1,6 @@
+Comparisons of re-run output with committed records (cmp; no output means identical):
+table.md identical
+summary.json identical
+summary stdout identical
+gate 1 record identical to a3-gates/cue_detector_gate_a3_final.json
+ceiling record identical to a3-gates/ceiling_measure_a3.json

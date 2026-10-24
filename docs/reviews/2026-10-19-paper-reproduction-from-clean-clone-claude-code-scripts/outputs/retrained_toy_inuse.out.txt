@@ -1,0 +1,9 @@
+T/0: own 3000 -> 3000, named-other 3000 -> 3000; sharpness 3.88 -> 4.00; weight 0.999 -> 0.999; route use {'slot': 1.0} -> {'slot': 1.0}; check passed -> passed
+C/0: own 1711 -> 1731, named-other 760 -> 768; sharpness 1.73 -> 4.00; weight 0.914 -> 0.999; route use {'entangled': 0.269} -> {'entangled': 0.285}; check failed -> failed
+M/0: own 2592 -> 2590, named-other 1663 -> 1701; sharpness 2.84 -> 4.00; weight 0.990 -> 0.999; route use {'entangled_items': 0.071, 'separable': 1.0} -> {'entangled_items': 0.09, 'separable': 1.0}; check failed -> failed
+T/1: own 3000 -> 3000, named-other 3000 -> 3000; sharpness 3.88 -> 4.00; weight 0.999 -> 0.999; route use {'slot': 1.0} -> {'slot': 1.0}; check passed -> passed
+C/1: own 1703 -> 1671, named-other 751 -> 932; sharpness 0.70 -> 4.00; weight 0.573 -> 0.999; route use {'entangled': 0.233} -> {'entangled': 0.273}; check failed -> failed
+M/1: own 2584 -> 2563, named-other 1699 -> 1676; sharpness 2.69 -> 4.00; weight 0.986 -> 0.999; route use {'entangled_items': 0.09, 'separable': 1.0} -> {'entangled_items': 0.106, 'separable': 1.0}; check failed -> failed
+T/2: own 3000 -> 3000, named-other 3000 -> 3000; sharpness 3.88 -> 4.00; weight 0.999 -> 0.999; route use {'slot': 1.0} -> {'slot': 1.0}; check passed -> passed
+C/2: own 1727 -> 1691, named-other 708 -> 750; sharpness 0.93 -> 4.00; weight 0.681 -> 0.999; route use {'entangled': 0.221} -> {'entangled': 0.244}; check failed -> failed
+M/2: own 2600 -> 2622, named-other 1655 -> 1695; sharpness 2.42 -> 4.00; weight 0.977 -> 0.999; route use {'entangled_items': 0.109, 'separable': 1.0} -> {'entangled_items': 0.1, 'separable': 1.0}; check failed -> failed

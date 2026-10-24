@@ -1,0 +1,770 @@
+[
+ {
+  "entry": "E1-01",
+  "where_in_draft": "Results, 'With thresholds locked'; Methods",
+  "what_the_draft_says": "Thresholds θ_task 0.10, θ_self 0.25, δ 0.10, locked in a separate commit 8b1fcbe before the test set existed",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "The commit 8b1fcbe (the threshold lock, 2026-07-18) states the three values in its message; the test-set authoring spec (commit 3df532d) and the finished set (commit a11e769) are later commits the same day. Order is checkable with git log."
+ },
+ {
+  "entry": "E1-02",
+  "where_in_draft": "Results; Methods 'Batteries and scoring'",
+  "what_the_draft_says": "Held-out battery of 122 items; 92 of 92 survive baseline verification",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "Counted from the committed battery files: 32 + 30 + 30 + 30 = 122; the three task batteries total 92. 'Baseline all 1.000' and '92/92' are in removal-test-findings.md and the commit message of a11e769."
+ },
+ {
+  "entry": "E1-03",
+  "where_in_draft": "Table 1, point estimates (12 task cells, 4 self-report cells)",
+  "what_the_draft_says": "d(T_si), d(T_sr), d(T_syntax), d_self for the four conditions",
+  "result": "reproduced",
+  "level": "B",
+  "what_i_found": "All 16 match removal-test-findings.md. The 12 task cells equal flipped-item counts over 32/30/30, which were checked against the denominators (e.g. 7/32 = 0.219). The primary condition's counts (7, 3, 4) also match the flipped-item list in removal_ci.json."
+ },
+ {
+  "entry": "E1-04",
+  "where_in_draft": "Table 1, 95% intervals on the primary condition's three task cells",
+  "what_the_draft_says": "[0.094, 0.375], [0.000, 0.200], [0.033, 0.267]",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "Recomputed by reproduce_removal_ci.py: baseline is 1.000 on every item, so the primary condition's pass/fail arrays can be rebuilt from the flipped-item list and the committed batteries; with the registered stream (seed 20260804, B = 10,000, same draw order as analyze_removal_ci.py) the intervals come out identical to the fourth decimal."
+ },
+ {
+  "entry": "E1-05",
+  "where_in_draft": "Table 1, the other 9 task-cell intervals (directional, narrative, expert) and the 4 d_self intervals",
+  "what_the_draft_says": "e.g. directional d(T_si) [0.031, 0.250]; d_self +0.059 [−0.062, +0.185]",
+  "result": "reproduced",
+  "level": "B",
+  "what_i_found": "All 13 equal the values in the committed removal_ci.json. They cannot be regenerated from a clean clone: the per-item score files that analyze_removal_ci.py reads (artifacts/removal_test/removal_test_scores.json, s_scores_*.json) are gitignored and not in the repository, and removal_ci.json keeps flipped-item lists for the primary condition only."
+ },
+ {
+  "entry": "E1-06",
+  "where_in_draft": "Results, paragraph after Table 1",
+  "what_the_draft_says": "Differential over the matched control +0.156, 95% interval 0.000 to 0.312",
+  "result": "reproduced",
+  "level": "B",
+  "what_i_found": "removal_ci.json derived block: 0.1562 [0.0, 0.3125] (the paper rounds 0.3125 down to 0.312). Not regenerable: needs the expert-control flip list, which is not committed."
+ },
+ {
+  "entry": "E1-07",
+  "where_in_draft": "Results, router control",
+  "what_the_draft_says": "Router gap +0.033 [−0.133, +0.200] for the primary; +0.067 [−0.067, +0.233] for the directional cross-check; 0.133 versus 0.100 and 0.133 versus 0.067",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "The primary gap is recomputed (needs only primary-condition arrays). The directional gap matches removal_ci.json but is not regenerable (its flip list is not committed). The point values equal 4/30 vs 3/30 and 4/30 vs 2/30."
+ },
+ {
+  "entry": "E1-08",
+  "where_in_draft": "Results; Methods 'Statistics'",
+  "what_the_draft_says": "Six of seven flipped self-irrelevant items are multi-step reasoning (6 of 8 in the category against 1 of 24 elsewhere)",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "Counted from the committed flip list and battery categories (8 multi-step items, 24 others)."
+ },
+ {
+  "entry": "E1-09",
+  "where_in_draft": "Results; Methods 'Statistics'",
+  "what_the_draft_says": "Category-level (two-level) bootstrap widens d(T_si) to [0.000, 0.594]",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "Recomputed by reproduce_removal_ci.py with the registered two-level draws: [0.0, 0.5938]. The sensitivity intervals of the other two primary cells also match."
+ },
+ {
+  "entry": "E1-10",
+  "where_in_draft": "Results, paragraph on self-report",
+  "what_the_draft_says": "d_self upper bound 0.185 sits below θ_self = 0.25; directional condition moved self-report slightly up (−0.039)",
+  "result": "reproduced",
+  "level": "B",
+  "what_i_found": "removal_ci.json d_self cells (0.1852; −0.0392). The comparison itself is arithmetic."
+ },
+ {
+  "entry": "E1-11",
+  "where_in_draft": "Results, narrative arm",
+  "what_the_draft_says": "Δnll +0.347 is '4× the index residual'",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "0.3468 / 0.0867 = 4.00 (both in removal-test-findings.md)."
+ },
+ {
+  "entry": "E1-12",
+  "where_in_draft": "Results, narrative arm",
+  "what_the_draft_says": "Sparse-feature selection collapsed to 2–3 features per layer",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "prelock-findings.md: '2–3 features per layer (13 total across the band)'."
+ },
+ {
+  "entry": "E1-13",
+  "where_in_draft": "Table 1 gate columns; Methods",
+  "what_the_draft_says": "Δnll gate bound 0.0893; primary 0.0867 (margin about 0.003); other Δnll and Δrep-4 values",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "All eight gate values and the bound are in removal-test-findings.md; 0.0893 − 0.0867 = 0.0026; the bound is also coded in run_removal_test.py (BOUND_NLL_K16 = 0.0893) and the calibration table in prelock-findings.md."
+ },
+ {
+  "entry": "E1-14",
+  "where_in_draft": "'Intervention validity' section; Methods",
+  "what_the_draft_says": "Bound = 95th percentile of 20 random rank-k ablations (seeds 0–19); rank-4 excluded at 2.2× its bound; rank-8 and rank-16 re-admitted by margins 0.007 and 0.003 nats",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "prelock-findings.md section (e): bounds 0.0302 / 0.0630 / 0.0893; k=4 at +0.065 is 2.2× its bound; margins 0.007 (k=8) and 0.003 (k=16). The paper's phrase '0.003–0.007' matches."
+ },
+ {
+  "entry": "E1-15",
+  "where_in_draft": "Methods 'Interventions'",
+  "what_the_draft_says": "Degeneracy probe is 16 neutral prompts × 256 greedy tokens; ablation layers {10, 14, 17, 22, 27}",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "thresholds.md Pass 5 (16 neutral prompts, 256-token generations) and ablation-pilot-spec.md ('layers [10, 14, 17, 22, 27]')."
+ },
+ {
+  "entry": "E1-16",
+  "where_in_draft": "Methods 'Interventions'",
+  "what_the_draft_says": "Control-arm Δnll reproduced to four decimals across independent runs; repeat-run judged-score drift 0.008",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "removal-test-findings.md instrument note 1 (+0.1244 reproduced) and prelock-findings.md (|Δ| = 0.008). Both are statements about runs whose raw files are not in the repository."
+ },
+ {
+  "entry": "E1-17",
+  "where_in_draft": "Results, 'Alignment edits the policy'",
+  "what_the_draft_says": "Baseline deflection 0.533 → 0.333 → 0.267 across SFT, DPO, RLVR; Instruct 0.100",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "rt06-ladder-findings.md ladder table (16/30 = 0.533 is also shown as a count)."
+ },
+ {
+  "entry": "E1-18",
+  "where_in_draft": "Results, 'Alignment edits the policy'",
+  "what_the_draft_says": "Expert-persona cross-patch leakage 'falling as alignment deepens (0.059 → 0.026 → 0.020)'",
+  "result": "reproduced with a difference",
+  "level": "C",
+  "what_i_found": "The three values exist (rt06-ladder-findings.md), but they belong to the DPO, RLVR and Instruct rungs. The SFT rung's value is listed as '(sandbox 0.18)', a figure from the small pilot model, not the registered one. Read beside the deflection sequence (SFT, DPO, RLVR) in the next sentence, the reader will take 0.059 as the SFT value. The fall is real; the rungs are shifted by one."
+ },
+ {
+  "entry": "E1-19",
+  "where_in_draft": "Results, 'Alignment edits the policy'",
+  "what_the_draft_says": "A registered secondary prediction (ablation unmasks deflection-suppressed reports) failed its loss condition at the deeper rungs and was retracted",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "rt06-ladder-findings.md, P2: 'LOSES … retracted'. The effect at SFT was real (0.533 to 0.200) and vanished at DPO and RLVR."
+ },
+ {
+  "entry": "E1-20",
+  "where_in_draft": "Results, 'Localising self-structure'",
+  "what_the_draft_says": "Turn-role signal absent at the embedding (+0.00) rising to a +0.56 margin",
+  "result": "reproduced with a difference",
+  "level": "C",
+  "what_i_found": "+0.00 holds on every substrate. The +0.56 (peak layer 24) is the first-pass figure on the small 2-billion-parameter pilot model (Gemma-2-2B-it, 26 layers), not the registered 8B model. On the registered model the same gate reads 'all five mechanisms +0.34 to +0.57' (substrate-gates-findings.md), and the turn-role signal is perfect by layer 3. The draft's wording does not say which model the +0.56 is from."
+ },
+ {
+  "entry": "E1-21",
+  "where_in_draft": "Results, 'Localising self-structure'",
+  "what_the_draft_says": "Activation patching restoration 0.206 on the registered model, peak at layer 27 of 32; random directions ≈ 0.00",
+  "result": "reproduced with a difference",
+  "level": "C",
+  "what_i_found": "substrate-gates-findings.md: restoration of the self direction 0.200, random −0.007, difference +0.206 at layer 27. So 0.206 is the margin over the random direction, not the raw restoration (0.200). The peak layer matches. The pilot-model figure was 0.340 to 0.35 at layer 22 of 26."
+ },
+ {
+  "entry": "E1-22",
+  "where_in_draft": "Results, 'Localising self-structure'",
+  "what_the_draft_says": "The two self-structures are geometrically distinct (median |cos| 0.28)",
+  "result": "reproduced with a difference",
+  "level": "C",
+  "what_i_found": "0.28 is the pilot model's first figure (stage1-localization-findings.md; later re-read as 0.23 with a consistency fix, rt09-reflexivity-findings.md). On the registered 8B model the same gate reads 0.18 (substrate-gates-findings.md). The draft gives 0.28 without naming the model."
+ },
+ {
+  "entry": "E1-23",
+  "where_in_draft": "Results, 'Localising self-structure'",
+  "what_the_draft_says": "Cross-patch substitution at 0.05–0.06 of the own effect on the registered model (0.27 on the pilot); separability line 0.5",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "substrate-gates-findings.md: 0.063 / 0.054 at layer 27 (the paper's 0.05–0.06 rounds 0.063 down); pilot 0.282 / 0.273. 0.5 is the pre-committed line."
+ },
+ {
+  "entry": "E1-24",
+  "where_in_draft": "Results, 'Localising self-structure'",
+  "what_the_draft_says": "Reflexivity control (the review finding numbered RT-09, the generic-speaker control): cross-patch ratio 0.006 against 0.348 for the self-index",
+  "result": "reproduced with a difference",
+  "level": "C",
+  "what_i_found": "Both numbers are in rt09-reflexivity-findings.md, but they are the first pass on the pilot model with stimuli that the same file shows were length-confounded, and the record supersedes them: with length-matched stimuli the pilot gives −0.005 (thresholds.md) and the registered 8B model gives a cross-patch ratio of 0.114, still far under the 0.5 line (substrate-gates-findings.md). Also, 0.006 is a ratio (the generic direction's restoration divided by the self-index's) while 0.348 is the self-index's own restoration, so the two quoted numbers are not on the same scale. The conclusion (the generic-speaker slot does not substitute) is unchanged; the quoted figures are the superseded ones."
+ },
+ {
+  "entry": "E1-25",
+  "where_in_draft": "Main text, confound paragraph",
+  "what_the_draft_says": "Probes on role-declarative contrasts reached ceiling 'at the token-embedding layer, before any computation, on 17 of 26 layers (Methods)'",
+  "result": "not reproducible",
+  "level": "C",
+  "what_i_found": "The only source is one line of STATUS-archive.md ('1.000 at layer 0 … with 17/26 layers at ceiling'). The same archive entry says every probe number of that period came from a readout with a padding bug and that its 'layer 0' was the first layer's output, not the true token embedding, and that exact figures 'should be re-derived … if ever needed'. The Methods section does not contain the figure the draft points to, and the report file is gitignored."
+ },
+ {
+  "entry": "E1-26",
+  "where_in_draft": "Methods 'Adversarial review'",
+  "what_the_draft_says": "Ten review findings (numbered RT-01 to RT-10) from attack, defend and rebut loops between different-family models; attacker Gemini 3.1 Pro; defender Claude Opus; each adjudicated before threshold lock",
+  "result": "reproduced with a difference",
+  "level": "C",
+  "what_i_found": "red_team_ledger.md and thresholds.md: Findings 1 to 8 came from the two attack passes of 2026-06-23 (Gemini 3.1 Pro attacking, Claude Opus 4.8 defending). Finding 9 came from an outside review 'not from the Gemini loop', and finding 10 'empirical, from the RT-09 first pass'. All ten were patched before the threshold lock (commit 8b1fcbe), as the draft says; the origin the draft gives to all ten is true of eight."
+ },
+ {
+  "entry": "E1-27",
+  "where_in_draft": "Methods; draft header",
+  "what_the_draft_says": "Registration commits: 2fdf2cc (the calibration runner), 1181a40 (the off-manifold recalibration), 8b1fcbe (the threshold lock), 3df532d (the test-set spec), a11e769 (the finished test set), a4efcf0 (the removal-test runner), 10afc15 (the interval amendment of 2026-08-04)",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "git log on the clone: each hash resolves, with a message and date that fit the sentence (2026-07-17, 2026-07-17, 2026-07-18 ×4, 2026-08-04). Ordering 'registered before run' is checkable from those dates."
+ },
+ {
+  "entry": "E1-28",
+  "where_in_draft": "Methods 'Stimuli'",
+  "what_the_draft_says": "48 stimulus pairs per mechanism",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "rt09-reflexivity-findings.md: 192 stimuli, four mechanisms, 24/24 balanced, i.e. 48 each."
+ },
+ {
+  "entry": "E1-29",
+  "where_in_draft": "Methods 'Batteries and scoring'; Results",
+  "what_the_draft_says": "Baseline self-report score 0.6375 identical across pilot and held-out sets; held-out judge is claude-opus-4-8, rubric v2",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "removal-test-findings.md. The judge model name could not be checked against a run, since the judge was a paid call and its logs are not in the repository."
+ },
+ {
+  "entry": "E1-30",
+  "where_in_draft": "Methods 'Decision rule'",
+  "what_the_draft_says": "Frequency-matched control (review finding RT-01): activation ratios 0.92 to 0.99",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "Found only in one STATUS-archive.md line ('RT-01 freq ratios 0.92 to 0.99'); the underlying c_ctrl_checks output is gitignored. No findings file carries the figure."
+ },
+ {
+  "entry": "E1-31",
+  "where_in_draft": "Results, 'The registered removal test'",
+  "what_the_draft_says": "Table 1 'registered run executed once per condition'; verdict 'could not discriminate routing from a centre'",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "removal-test-findings.md (one pass per condition; the router control, review finding RT-05, fires); the 2026-10-09 relabel is in the ruling file named in the draft."
+ },
+ {
+  "entry": "E6-01",
+  "where_in_draft": "Exp 06 'Registered design'",
+  "what_the_draft_says": "Registered 2026-08-07; Amendment A1 2026-08-09; Amendment A2 2026-08-16, which fixed 30 million parameters after a 10-million pilot failed and raised the compute cap from $200 to $400",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "pre-registration.md headers (A1 2026-08-09, A2 2026-08-16, 'registered scale is 30M and the compute cap is $400'); compute-ledger.md opening note. The 10M pilot failed the ceiling (T_si 0.37, T_sr_rev 0.00) in pilot-a1-findings.md."
+ },
+ {
+  "entry": "E6-02",
+  "where_in_draft": "Exp 06 'Registered design'",
+  "what_the_draft_says": "The 30-million pilot learned: T_sr 1.00, T_si 0.93, T_state 1.00, T_syntax 1.00, T_sr_rev 1.00",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "pilot-a1-30m-findings.md endpoint table (30M column)."
+ },
+ {
+  "entry": "E6-03",
+  "where_in_draft": "Exp 06 'What came out of the registered design'",
+  "what_the_draft_says": "Register writer emitted a constant: spread 7.6×10⁻⁸ (seed 0), 2.8×10⁻⁸ (seed 1), 5.9×10⁻⁸ (seed 2)",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "register-saturation-findings.md table, three rows. The raw survey is a3-gates/register_saturation_survey.json. The claim that 'an untrained model at the same configuration does not behave this way' is a statement in the same file that I did not rerun."
+ },
+ {
+  "entry": "E6-04",
+  "where_in_draft": "Exp 06 'What came out'",
+  "what_the_draft_says": "Removing the register injection left all batteries at or above 0.99 except T_si, 0.93 to 0.94 on the registered evaluation seed; the register-less twin reached T_si 0.96, T_sr_rev 1.00",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "register-lesion-findings.md (0.93 → 0.94 / 0.99 on the registered and a disjoint replicate), amendment-a3.md section 1 text, twin-binding-anomaly.md (0.96 / 1.00)."
+ },
+ {
+  "entry": "E6-05",
+  "where_in_draft": "Exp 06 'What came out'",
+  "what_the_draft_says": "Registered five-seed run halted at four of nine launches on a trigger pre-stated before the diagnostic ran",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "amendment-a3.md (R9 and decision 9: 'halted at four of nine launches on the pre-stated thread-4 trigger')."
+ },
+ {
+  "entry": "E6-06",
+  "where_in_draft": "Amendment A3 paragraph",
+  "what_the_draft_says": "Ownership-blind ceiling 0.2921 on the primary battery; metric divides by distance to the ceiling; seven hard kills K0 to K7",
+  "result": "reproduced with a difference",
+  "level": "C",
+  "what_i_found": "0.2921 and the metric are in amendment-a3.md (registration revisions 3 and 4) and in every endpoint file. The list in section 4.2 runs K0, K1, K2, K3, K4, K5, K6, K7: eight kills, not seven."
+ },
+ {
+  "entry": "E6-07",
+  "where_in_draft": "Amendment A3 paragraph; Methods",
+  "what_the_draft_says": "Thresholds locked by John's threshold-lock commit 6ad4362 on 2026-09-16: θ = 0.1777 (primary), 0.1172 (state), none on the control",
+  "result": "reproduced",
+  "level": "B",
+  "what_i_found": "git log: 6ad4362 'Threshold lock: A3 seed-0 pilot (John's commit)', 2026-09-16. The values are in a3-gates/endpoint_a3_30m_seed1.json (theta_all: T_act 0.1777, T_state 0.1172, T_syntax 0.0, no T_other) and null-calibration/theta_delta.lock.json."
+ },
+ {
+  "entry": "E6-08",
+  "where_in_draft": "Amendment A3 paragraph; Methods",
+  "what_the_draft_says": "Fourteen registration revisions",
+  "result": "reproduced with a difference",
+  "level": "C",
+  "what_i_found": "amendment-a3.md says 'All fourteen were ruled by John on 2026-09-15'. The registration-revisions section has ten numbered items (grammar, speaker name, metric, ceilings, sweep gate, thresholds and kills, sampler, narrowed claim, the loss, money). I could not find the other four; the paper's 'registration revisions 3 and 4' do match items 3 and 4."
+ },
+ {
+  "entry": "E6-09",
+  "where_in_draft": "Table 2, all 33 cells",
+  "what_the_draft_says": "Means, standard deviations and corrected drops for the pilot, seed 1, seed 2; ratio to θ (7.5×, 7.6×, 8.6×); state-battery and syntax-battery drops; control-battery levels",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "Recomputed by recompute_table2.py from the six per-evaluation-seed rows in endpoint_validation_pilot.json, endpoint_a3_30m_seed1.json and endpoint_a3_30m_seed2.json: every cell agrees to the printed precision. The quoted 7.6× for seed 1 is 7.553 rounded up."
+ },
+ {
+  "entry": "E6-10",
+  "where_in_draft": "'What was found' paragraph",
+  "what_the_draft_says": "Three seeds all learned the task and all lost it under the wire lesion; drops cleared θ by seven to nine times; syntax battery did not move; state moved 0.0769 on seed 2, 'forty times the other seeds'",
+  "result": "reproduced with a difference",
+  "level": "A",
+  "what_i_found": "All true except the factor: 0.0769 is 43 times the pilot's 0.0018 and about 380 times seed 1's 0.0002. 'Forty times' is the findings file's phrase (seeds-endpoint-findings.md) and fits one of the two."
+ },
+ {
+  "entry": "E6-11",
+  "where_in_draft": "'What was found'",
+  "what_the_draft_says": "The pilot cost $13.92 and two further seeds were trained",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "compute-ledger.md, 2026-09-15 row ($13.92) and 2026-09-17 row ($20.1 the pair, computed from machine lifetimes, 'not balance-confirmed')."
+ },
+ {
+  "entry": "E6-12",
+  "where_in_draft": "After Table 2",
+  "what_the_draft_says": "The pilot's published endpoint on the default evaluation seed read 0.506 intact, 0.182 lesioned, corrected drop 1.515",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "endpoint_validation_pilot.json default_seed block: 0.506, 0.182, d = 1.5147; recomputed (0.506 − 0.182) / (0.506 − 0.2921) = 1.515."
+ },
+ {
+  "entry": "E6-13",
+  "where_in_draft": "'The registered comparison was never computable'",
+  "what_the_draft_says": "Ownership-blind ceilings: 0.2921 (primary) and 0.3227 (control, as recorded); two ownership-blind solvers (name-keyed lookup, learned attack) both score 1.0000 on the control; floor rule needs baseline − ceiling ≥ 0.10, so the control's drop is undefined for every model",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "Regenerated: src/ceiling_measure_a3.py --run (laptop, no model, 1 second) wrote a record identical to a3-gates/ceiling_measure_a3.json, whose known-answer checks reproduce 0.2921 and 0.3227 and whose solvers score 1.0, 0.3227, 1.0 (name-keyed, registered reference, learned attack). Text sources: ceiling-measurement-findings.md, ceiling-defect-2026-09-17.md, seeds-endpoint-findings.md annotation (a defined drop would need a baseline of 1.10)."
+ },
+ {
+  "entry": "E6-14",
+  "where_in_draft": "Same",
+  "what_the_draft_says": "Control did not learn: 0.2877, 0.3057, 0.3195 against 0.3227; 0.3125 (sd 0.0240) in the unregistered diagnostic that quadrupled its per-row gradient weight; boundary 0.60; cost $9.9 plus $0.067",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "Control levels recomputed in recompute_table2.py (A); the diagnostic's figures, boundary and costs are in control-learnability-pilot-findings.md."
+ },
+ {
+  "entry": "E6-15",
+  "where_in_draft": "'The nulls' (i)",
+  "what_the_draft_says": "Null calibration at $0: 95th percentile chance-corrected drop under 120 content-blind ablations was 0.0060 and 0.0095 on T_si for the two checkpoints that learned, against a split of about 0.73; both binders fall apart at 52% of the mean-centred residual",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "gate0-null-calibration-findings.md tables (0.0060 and 0.0095; split 0.731 and 0.733; '52% of centred'). The run needs the five old checkpoints, which are gitignored, so it cannot be repeated from a clean clone (src/null_calibration.py exists; the data are in null-calibration/*.json)."
+ },
+ {
+  "entry": "E6-16",
+  "where_in_draft": "'The nulls' (i)",
+  "what_the_draft_says": "K0 applied at 0.25 and did not fire; the one checkpoint above 0.25 (0.379) was a near-chance non-binder; the number was set after the measurement was seen",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "gate0-null-calibration-findings.md (seed-0 twin 0.3790) and amendment-a3.md revision 6 ('K0's band stays at 0.25')."
+ },
+ {
+  "entry": "E6-17",
+  "where_in_draft": "'The nulls' (ii)",
+  "what_the_draft_says": "Blind arm: best layer 7, accuracy 0.2750 against permutation null 0.2441 (sd 0.0237), margin 1.30 sd against a bar of 3; chance 0.25; largest drop −0.0739",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "blind-arm-findings.md table and text (1.3 standard deviations, 'less than half the bar'; largest chance-corrected drop 0.0739). The run's raw record is a3-gates/blind_arm_seed0_full.json."
+ },
+ {
+  "entry": "E6-18",
+  "where_in_draft": "'The nulls' (iii)",
+  "what_the_draft_says": "Unregistered positive control: margins −0.75, −0.54, −0.96, −0.24, −1.01 sd at layers 3, 4, 5, 7, 8; primary battery 0.440 → 0.492; state battery 1.000 → 0.858; movement +0.052 inside noise (sd 0.0284, range 0.079)",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "Margins and batteries match blind-control-findings.md; the noise figures were recomputed from a3-gates/eval_noise_a3.json (sd 0.0284, range 0.079). The movement 0.492 − 0.440 = 0.052."
+ },
+ {
+  "entry": "E6-19",
+  "where_in_draft": "'The nulls' (iii)",
+  "what_the_draft_says": "Known-answer test: accuracy 1.0 against a null of 0.1306",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "known-answer-test-findings.md; raw record a3-gates/known_answer_test_a3.json."
+ },
+ {
+  "entry": "E6-20",
+  "where_in_draft": "'The nulls' (iv)",
+  "what_the_draft_says": "Fitted linear read at eleven positions and five layers on three seeds: 135 discovery tests, family-adjusted bar 3.38 sd; positive controls +34.0 to +53.7 sd; one MARGINAL cell (seed 2, other agent's revision value, accuracy 0.2770, +3.34 sd) and the other two checkpoints +2.33 and +2.39",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "fitted-position-sweep-findings.md ('nine testable positions, five layers and three checkpoints — 135 tests'; 3.38; +34.0 to +53.7; 0.2770 +3.34; +2.33, +2.39). The paper says eleven positions; nine of the eleven are testable, and 135 = 9 × 5 × 3, which is consistent. Raw: a3-gates/fitted_position_sweep_a3_*.json."
+ },
+ {
+  "entry": "E6-21",
+  "where_in_draft": "'The nulls' (iv)",
+  "what_the_draft_says": "Sensitivity figure corrected from one episode in twenty-seven to about one in eleven",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "fitted-position-sweep-findings-CORRECTION-2026-09-20.md."
+ },
+ {
+  "entry": "E6-22",
+  "where_in_draft": "'The nulls' (iv)",
+  "what_the_draft_says": "Standardised refit: one nominal crossing at the same position, accuracy margin 0.000484, equivalent to 1.94 of 4,000 episodes",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "amendment-a3.md closure block and the review ledger (red_team_ledger.md). The number is not in the refit's own findings file (standardised-refit-findings.md); the closure block says it was computed in a review of that run (review finding RT-128, which ruled that the number and its fragility travel together). The summary json (a3-gates/standardised_position_sweep_a3_summary.json) shows the crossing on seed 2 at other_revision_value."
+ },
+ {
+  "entry": "E6-23",
+  "where_in_draft": "'The kills'",
+  "what_the_draft_says": "K1 did not fire: 'the registered grammar passed gates (i) and (ii) at n = 4,000 inside [0.45, 0.55] (clean 0.5097 and 0.5259, positive controls 0.9433 and 1.0000)'",
+  "result": "reproduced with a difference",
+  "level": "A",
+  "what_i_found": "The four figures are real and are in gate1-curriculum-findings.md and a3-gates/cue_detector_gate_a3.json, but they belong to the first, twelve-turn grammar, which registration revision 1 replaced with a ten-turn one. For the grammar as registered, cue_detector_a3.py --run (re-run here; its output is identical to a3-gates/cue_detector_gate_a3_final.json) gives clean AUCs of 0.494 (text) and 0.5133 (tensors) over five seeds with positive controls of 0.9853 or better, and that is a pass only under the amended sampler (revision 7). Under the originally registered pooled sampler the same grammar fails: the mean readings are 0.5395 (text) and 0.5504 (tensors), the second just outside the band, and single seeds reach 0.56. K1 not firing is therefore true as ruled, but the quoted numbers are not the ones for the registered grammar, and the paper does not say a sampler amendment was needed."
+ },
+ {
+  "entry": "E6-24",
+  "where_in_draft": "'The kills'",
+  "what_the_draft_says": "K2 did not fire: pilot primary sat 0.214 above the ownership-blind ceiling on its default draw",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "0.506 − 0.2921 = 0.2139; gate2-pilot-findings.md says +0.214."
+ },
+ {
+  "entry": "E6-25",
+  "where_in_draft": "'The kills'; Closure",
+  "what_the_draft_says": "K5 not reached: patching never run; reading is John's ruling of 2026-09-25 (item 1)",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "docs/rulings/2026-09-25-a3-closure-tier2-dispositions.md, item 1 ('K5 is not reached')."
+ },
+ {
+  "entry": "E6-26",
+  "where_in_draft": "Closure",
+  "what_the_draft_says": "Closed 2026-09-25 after two outside reviews (Gemini 3.1 Pro and ChatGPT 6 Astra), fifteen serious findings, none fatal; closure sentence quoted",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "docs/rulings/2026-09-25-a3-closure-tier2-dispositions.md ('15 serious findings'; 'Neither reviewer filed a fatal finding'); the quoted closure sentence is present word for word in amendment-a3.md."
+ },
+ {
+  "entry": "E6-27",
+  "where_in_draft": "Closure",
+  "what_the_draft_says": "A3 spent about $46.75 of its $100 stop; programme ceiling raised from $400 to $450 on 2026-09-25",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "compute-ledger.md second 2026-09-25 row ('A3 cumulative about $46.75 / $100') and the ceiling note. That figure includes about $0.55 for the two measurement-rehearsal slice attempts, which the ledger drew from the successor's rehearsal line."
+ },
+ {
+  "entry": "E6-28",
+  "where_in_draft": "Closure",
+  "what_the_draft_says": "Open items: marker-word read of about seventy processor-hours dropped before the run",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "amendment-a3.md ('about seventy processor-hours')."
+ },
+ {
+  "entry": "E6-29",
+  "where_in_draft": "Methods, Exp 06",
+  "what_the_draft_says": "30-million-parameter transformer, 12 blocks, width 448",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "a3-gates/register_saturation_survey.json (n_layers 12); null-calibration/escalation_pilot_a1_30m_seed1_twin.json (d_model 448); training log 'params=29.3M'."
+ },
+ {
+  "entry": "E6-30",
+  "where_in_draft": "Methods, Exp 06",
+  "what_the_draft_says": "Trained 'on a closed 103-token vocabulary'",
+  "result": "reproduced with a difference",
+  "level": "C",
+  "what_i_found": "103 tokens is the original design's vocabulary (the twins). The A3 checkpoints read vocab 105 (red-team-a4.md, reading the .pt configuration; the control pilot's log reads 'vocab=105'), because registration revision 2 added the word 'by'."
+ },
+ {
+  "entry": "E6-31",
+  "where_in_draft": "Methods, Exp 06",
+  "what_the_draft_says": "Three register-less seeds at 585,552,384 tokens each on RTX 5090 at $0.99 an hour; batteries of 400 skeleton items; evaluation at n = 800 over six seeds; chance 0.125",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "compute-ledger.md (585,552,384 tokens, $0.99); batteries-a3/batteries_meta.json (400 per battery, chance floors 0.125, 4000 sampled for the ceiling); endpoint files (eval_n 800; six seeds)."
+ },
+ {
+  "entry": "E6-32",
+  "where_in_draft": "Methods, Exp 06",
+  "what_the_draft_says": "Null calibration: 120 content-blind ablations per checkpoint at blocks 3, 4, 5, 7 and 8, script src/null_calibration.py committed before it read any checkpoint",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "compute-ledger.md Gate 0 row (commit 3d08807, the Gate 0 script committed before it ran); git log resolves 3d08807."
+ },
+ {
+  "entry": "EC-01",
+  "where_in_draft": "Exp C 'Registered design'; Methods",
+  "what_the_draft_says": "Registered 2026-10-09 by John's registration commit at frozen code (commit 6c47c56) in experiments/08-successor-degree/src/; version 5 of the proposal; development size 10M, registered size 30M; four arms T, C, M, F",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "docs/rulings/2026-10-09-registration-commit-ruling.md names that commit (git: 2026-10-08, 'Last batch before the registration'). The registration took effect 2026-10-09 by that ruling. Arm sizes are in src/models.py (self-test prints the parameter counts: toy, 10M, 30M for all four arms)."
+ },
+ {
+  "entry": "EC-02",
+  "where_in_draft": "Exp C 'What was pre-stated'",
+  "what_the_draft_says": "Four unregistered development runs on 2026-10-04 cost $1.47: $0.4744, $0.3347, $0.3341, $0.3223 (arms M, T, C, F)",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "compute-ledger.md annotation table; sum 0.4744 + 0.3347 + 0.3341 + 0.3223 = 1.4655, which rounds to $1.47."
+ },
+ {
+  "entry": "EC-03",
+  "where_in_draft": "Exp C 'What was pre-stated'",
+  "what_the_draft_says": "Learned sharpness (start 4.0) fell to −0.089 in arm C and −0.008 in arm M, so their answers put 0.218 and 0.247 of their weight on the true agent against 0.25 for a flat answer; arm T's fell to 1.947 and still worked (0.942)",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "successor-experiment-proposal-2026-10-07-v5.md; docs/2026-10-06-sharpness-fix-inuse-check-findings.md (cases 10 to 12: 0.218, 0.247, 0.942). The checkpoints themselves are gitignored, so the sharpness values cannot be read off a model in a clean clone."
+ },
+ {
+  "entry": "EC-04",
+  "where_in_draft": "Exp C 'What was pre-stated'",
+  "what_the_draft_says": "Registered procedure found no readable ownership in arm C's or arm M's running state: best whole reads 41 and 45 of 180 against a floor of 144",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "experiments/06-…/reviews/2026-10-04-development-runs-check-claude-code.md table (41 at layer 4, 45 at layer 8). A later re-read under the changed fitting step, committed as experiments/08-successor-degree/out-dev-10m-check/table.md, shows 34 and 37 at the nominated sites (best 40 for arm C); same verdict, different counts."
+ },
+ {
+  "entry": "EC-05",
+  "where_in_draft": "Exp C 'What was pre-stated'",
+  "what_the_draft_says": "Toy models: arm C route use 0.269, 0.233, 0.221 before the fix and 0.285, 0.273, 0.244 after; arm M stirred-in route 0.071, 0.090, 0.109 before and 0.090, 0.106, 0.100 after; arm T and arm M's separable route 1.000",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "Regenerated by running experiments/08-successor-degree/tests/retrained_toy_inuse.py on the committed toy models (45 seconds, laptop processor, torch 2.12.1, numpy 2.5.0, scikit-learn 1.9.0): all nine arm/seed lines print the same values; output saved beside this record."
+ },
+ {
+  "entry": "EC-06",
+  "where_in_draft": "Exp C 'What was pre-stated'",
+  "what_the_draft_says": "On the development checkpoints arm C read 0.018, arm M 0.000 on both routes and arm T 0.924",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "docs/2026-10-06-sharpness-fix-inuse-check-findings.md cases 10 to 12. Not regenerated: tests/inuse_cases.py reads the 10-million checkpoints from a hard-coded path in John's own checkout (~/Code/minimum-viable-mind/…/artifacts), which a clean clone does not have."
+ },
+ {
+  "entry": "EC-07",
+  "where_in_draft": "Exp C 'What was pre-stated'",
+  "what_the_draft_says": "Registration's own prior: 'would very likely fail the verification and experiment C would stop at about $1.14'",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "successor-experiment-proposal-2026-10-07-v5.md, section 5.6 (quoted word for word)."
+ },
+ {
+  "entry": "EC-08",
+  "where_in_draft": "Table 3, gate on learning",
+  "what_the_draft_says": "Own and named-other correct of 3,000 (bar 790): T 2,959 and 2,980; C 3,000 and 3,000; M 2,577 and 1,733",
+  "result": "reproduced",
+  "level": "B",
+  "what_i_found": "Equal to gate.own_correct and gate.other_correct in out-reruns-10m/row_{T,C,M}_seed0.json."
+ },
+ {
+  "entry": "EC-09",
+  "where_in_draft": "Table 3, part A",
+  "what_the_draft_says": "Weight on the true agent 0.999 for all three arms (bar 0.9)",
+  "result": "reproduced",
+  "level": "B",
+  "what_i_found": "route_in_use.weight_on_true_agent = 0.99899 in each row."
+ },
+ {
+  "entry": "EC-10",
+  "where_in_draft": "Table 3, part B",
+  "what_the_draft_says": "Route use: T slot 0.986 (2,918 of 2,959); C stirred-in 0.000 (0 of 3,000); M stirred-in items 0.024 (33 of 1,387) and separable items 0.000 (0 of 1,190)",
+  "result": "reproduced",
+  "level": "B",
+  "what_i_found": "From route_in_use in the three rows: T 2,959 right, 41 still right with the answer swapped, so 2,918 lost; C 3,000 and 3,000, none lost; M 1,387 right, 1,354 still right, so 33 lost; separable 1,190 and 1,190. The draft's '0 of 3,000' counts answers lost, not answers kept; read quickly it looks like zero kept."
+ },
+ {
+  "entry": "EC-11",
+  "where_in_draft": "Table 3; text after",
+  "what_the_draft_says": "Procedure printed 'no verdict' for C and M with the quoted reason, 'gate not decidable on one seed' for all three; arm T's reading 0.0000 (states (0,) at the action position, 8 directions, 180 of 180)",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "procedure.py summarise, run here on the three committed rows, reproduces table.md, summary.json and the printed summary byte for byte (diff against out-reruns-10m/ shows no difference). The reading 0.0 and 180/180 are in row_T_seed0.json."
+ },
+ {
+  "entry": "EC-12",
+  "where_in_draft": "Exp C 'What came out'",
+  "what_the_draft_says": "Each arm trained to its full 108,919 steps; 585,548,544 tokens; checkpoints checked against the machine's copy",
+  "result": "reproduced",
+  "level": "B",
+  "what_i_found": "Rows record step 108919 and tokens_seen 585548544; the run record and out-reruns-10m/checkpoints.sha256-md5.txt list the checksums. The checkpoints are not in the repository, so the checksums cannot be checked here."
+ },
+ {
+  "entry": "EC-13",
+  "where_in_draft": "Exp C 'The registered ending'",
+  "what_the_draft_says": "Spend: $1.47 development and $1.3032 reruns ($0.5045, $0.3980, $0.4007 for M, T, C); about $1.14 approved; vendor $1.19 against $0.99 of record; alarm ratio 1.000",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "Ledger rows and run record: 0.4239 + 0.3345 + 0.3367 = 1.0951 billed hours; × $1.19 = $1.3032 (recomputed). Ratio 1.000 and the rate are in the run record. The approved $1.14 is the proposal's figure."
+ },
+ {
+  "entry": "EC-14",
+  "where_in_draft": "Exp C 'The registered ending'; Discussion",
+  "what_the_draft_says": "Programme stands at about $230.94 of its $450 ceiling",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "The last 2026-10-09 ledger row reads 'programme about $230.94 of $450'; spending-record.md copies it. Carrying the ledger forward from its 2026-09-25 figure ($228.15) by the settled-billing note (+$0.02), the four development runs ($1.4655) and the three reruns ($1.3032) gives $230.94. An independent sum of every row's 'actual' column gives about $230.4 to $231.0, depending on how the first two (approximate) pilot rows are read; the ledger says its early rows are balance-implied."
+ },
+ {
+  "entry": "EC-15",
+  "where_in_draft": "Exp C 'The registered ending'",
+  "what_the_draft_says": "Free-arm run at registered size about $12 not launched; second release about $150 to $172 never asked for",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "successor-experiment-proposal-2026-10-07-v5.md (item 10, about $12; section 12.4, about $150 to $172); ruling of 2026-10-12."
+ },
+ {
+  "entry": "EC-16",
+  "where_in_draft": "Exp C 'What came out'",
+  "what_the_draft_says": "Rulings: 2026-10-12 'accept the stop' (authorship john); 2026-10-17 stays stopped (authorship mixed, with the precondition that arm M's 0.000 be explained first at $0)",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "docs/rulings/2026-10-12-experiment-c-stop-ruling.md ('Authorship: john'); 2026-10-17-experiment-c-stays-stopped-ruling.md ('Authorship mixed'; precondition quoted). A later pull request (180) explains arm M's zero; the draft still calls it open, as of the clone's commit."
+ },
+ {
+  "entry": "EC-17",
+  "where_in_draft": "Methods, Exp C",
+  "what_the_draft_says": "Software: torch 2.12.1, scikit-learn 1.9.0, numpy 2.5.0, Python 3.12.13",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "Installed here from experiments/08-successor-degree/requirements-measure.txt under Python 3.12.13; every self-test and rerun above ran on exactly these versions."
+ },
+ {
+  "entry": "EC-18",
+  "where_in_draft": "Methods, Exp C",
+  "what_the_draft_says": "Registration terms: learn-both gate bar 790 of 3,000; in-use check part A 0.9, part B 0.5; stops S1 to S10 with S4b; spending alarm halts at billing ratio 1.25; eight outcome terms; two releases of money ruled 2026-09-21",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "Proposal v5 and the 2026-10-08 verification-bar ruling. 'Eight outcome terms' is stated in the proposal (section 3); I did not recount them term by term."
+ },
+ {
+  "entry": "EC-19",
+  "where_in_draft": "Exp C: all self-tests",
+  "what_the_draft_says": "Not a paper figure: the frozen code's own self-tests (grammar, models, transplant, measure, procedure, trainer, tripwire)",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "experiments/08-successor-degree/src/run_self_tests.sh printed ALL SELF-TESTS PASS on the clone (PY set to the clone's own interpreter; see the gaps list)."
+ },
+ {
+  "entry": "RI-01",
+  "where_in_draft": "Discussion, last paragraph",
+  "what_the_draft_says": "Retained independence: 1,080 pressure-ladder conversations across three frontier models, blind cross-family judging",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "experiments/03-retained-independence/results.md header (60 items × 2 arms × 3 framings × 3 models = 1,080; 2,700 blind verdicts). The transcripts and verdicts themselves (ladder_scores/) are not in the repository."
+ },
+ {
+  "entry": "RI-02",
+  "where_in_draft": "Discussion, last paragraph",
+  "what_the_draft_says": "Evidence-updating 0.87–1.00 throughout",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "Recomputed from the 18 bank-by-cell values of evid_update_r3 in ladder_analysis_ci.json: minimum 0.87, maximum 1.00 (recompute_ri.py). results.md says the same."
+ },
+ {
+  "entry": "RI-03",
+  "where_in_draft": "Discussion, last paragraph",
+  "what_the_draft_says": "Preference-retention spans 0.07–1.00",
+  "result": "reproduced with a difference",
+  "level": "A",
+  "what_i_found": "The stored preference-retention values at the last pressure round run from 0.10 to 1.00 (Gemini, 'tool' framing, bank A is the 0.10). 0.07 (0.0667) is the retained-independence index for bank B in that cell, which is what results.md's sentence ('varies 0.07–1.00') appears to mean. Small, but the draft names the wrong quantity for its lower end."
+ },
+ {
+  "entry": "RI-04",
+  "where_in_draft": "Discussion, last paragraph",
+  "what_the_draft_says": "11 true capitulations in 540 ladders against 105 masked cells (registered bootstrap re-analysis)",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "recompute_ri.py: capitulations 2 (bank A) + 9 (bank B) = 11; masked 27 + 78 = 105; ladders 9 cells × 2 banks × 30 = 540. results.md carries the same correction of its own earlier '9 of 540'. The re-analysis settings (B = 10,000, seed 20260804) are in the json's config."
+ },
+ {
+  "entry": "RI-05",
+  "where_in_draft": "Discussion, last paragraph",
+  "what_the_draft_says": "'The capitulations concentrate on three items'",
+  "result": "reproduced with a difference",
+  "level": "B",
+  "what_i_found": "ladder_analysis_ci.json 'concentration': bank B's nine capitulations sit on three items (lo18, lo01, lo30; 89%), bank A's two sit on one other item (hs03). So 9 of 11 are on three items and the 11 are on four."
+ },
+ {
+  "entry": "CO-01",
+  "where_in_draft": "Methods 'Compute and cost'; Discussion",
+  "what_the_draft_says": "Experiments 06 and C, from 2026-08-07 to the stop of C: about $230.94 of rented machines against a $450 ceiling",
+  "result": "reproduced",
+  "level": "A",
+  "what_i_found": "See EC-14: the ledger's chain gives 228.15 + 0.02 + 1.4655 + 1.3032 = 230.94. The row-by-row sum of actuals is within about $0.5 of it, because the first rows are balance-implied approximations (the ledger says so)."
+ },
+ {
+  "entry": "CO-02",
+  "where_in_draft": "Methods 'Compute and cost'",
+  "what_the_draft_says": "Experiment 1: about $10–20 of rented GPU time",
+  "result": "not reproducible",
+  "level": "C",
+  "what_i_found": "No file in the repository gives this figure. The ledger's own opening note says the RunPod account was funded with $150 and stood at $106.73 on 2026-08-07, so $43.27 of rented time predates the ledger, and 'Experiment 1 / Stage 3 work' is all it says about what that covers. Only two itemised Experiment 1 costs exist: about $0.60 (the 2026-07-18 calibration run, prelock-findings.md) and about $3 for the whole registered day (STATUS-archive.md)."
+ },
+ {
+  "entry": "CO-03",
+  "where_in_draft": "Methods 'Compute and cost'",
+  "what_the_draft_says": "'Plus low tens of dollars of judge-API calls'",
+  "result": "not reproducible",
+  "level": "C",
+  "what_i_found": "The phrase 'low tens of dollars' appears in the repository only as the pre-registration cost note for the retained-independence experiment (1,080 conversations plus 2,700 judge calls) and in its checks, not for Experiment 1's judge. No bill or log for Experiment 1's judge calls is committed. docs/spending-record.md says earlier API spends are 'not yet compiled'."
+ },
+ {
+  "entry": "CO-04",
+  "where_in_draft": "Methods 'Compute and cost'",
+  "what_the_draft_says": "Registered-day cost ≈ $3",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "STATUS-archive.md: 'Session cost (whole registered day incl. calibration + test set + run): ~$3'."
+ },
+ {
+  "entry": "CO-05",
+  "where_in_draft": "Discussion, last paragraph",
+  "what_the_draft_says": "Whole claim 'the barrier is discipline, not resources', set beside $10–20 plus low tens, and $230.94 of rented compute",
+  "result": "reproduced with a difference",
+  "level": "C",
+  "what_i_found": "The $230.94 is right for rented machines (CO-01). But docs/spending-record.md, started 2026-10-18, puts the total spent across every vendor at 'roughly $335 to $360, still being compiled', of which about $100 to $119 was spent before the ledger opened and on API calls to 2026-08-30. The draft's Methods paragraph says API calls are not in the ledger figure; the Discussion sentence does not. The sentence is true of what it names and silent on the larger all-vendor total."
+ },
+ {
+  "entry": "CO-06",
+  "where_in_draft": "Methods 'Compute and cost'",
+  "what_the_draft_says": "Calls to model providers by API (judge calls, the outside reviews, the measurement rehearsal of 2026-10-18) are in the worklog, not in the ledger",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "docs/spending-record.md says the same and lists the rehearsal's first start at $2.88 to $7.13 by the runner's estimate; the worklog itself is outside the repository, so I could not open it."
+ },
+ {
+  "entry": "MS-01",
+  "where_in_draft": "Header notes",
+  "what_the_draft_says": "Version 0.3 dated 2026-10-17, v0.2 dated 2026-08-04; the three reserved places ruled 2026-10-18 and applied",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "git log of the draft: commit 10481e2 (2026-08-04, the v0.2 paper), commits 905c1d8 and fe53cd9 (2026-10-17, the v0.3 fold and its Voice Calibration pass), commit 855ea36 and later (2026-10-18, the rulings applied); docs/rulings/2026-10-18-paper-reserved-places-ruling.md."
+ },
+ {
+  "entry": "MS-02",
+  "where_in_draft": "Methods 'Registration and audit trail'",
+  "what_the_draft_says": "Founding wager adopted 2026-09-20, after Experiment A, Amendment A3 and Experiment D had run",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "docs/rulings/2026-10-07-two-sided-question-rulings.md, decision 2 (names 2026-09-20 and the three experiments that preceded it)."
+ },
+ {
+  "entry": "MS-03",
+  "where_in_draft": "Draft header",
+  "what_the_draft_says": "Figs. 1 to 3 placeholder artwork; Fig. 4 artwork generated at experiments/01-…/figures/fig4_registered_run.png",
+  "result": "reproduced",
+  "level": "C",
+  "what_i_found": "The png exists. Its generator, src/plot_removal.py, reads artifacts/removal_test/*.json, which are not in the repository, so the figure cannot be regenerated from a clean clone; I compared it by eye only against Table 1's values and did not re-plot."
+ }
+]
