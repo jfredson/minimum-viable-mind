@@ -16,7 +16,7 @@ John's words, relayed by the fourth weekend master session on 2026-10-24: "let's
 
 - **Started on the Mac** at $0, under the ruling "on the bench model at $0".
 - **Stopped partway at John's request,** because the Mac was running hot. Four of six normal-range bounds were saved (commit 71dfed8).
-- **Finished on RunPod** under John's go: "Go on RunPod for the rest of the Minimum Viable Mind run, up to $2. I'll put my Hugging Face token on the pod."
+- **Moved to RunPod** under John's go: "Go on RunPod for the rest of the Minimum Viable Mind run, up to $2. I'll put my Hugging Face token on the pod."
   - No community-cloud RTX 4090 was free, so the machine is a secure-cloud RTX 4090 at $0.89 an hour.
   - It was created at 13:31 PDT, with a laptop timer set to delete it at 15:31 PDT (at most about $1.78). It was deleted at 14:25 PDT at the master session's instruction, before three of the six removal checks had run. It cost about $0.77.
 - **Lessons for the next launch.** The image's preinstalled `torchvision` breaks model loading after `torch` is upgraded, so uninstall it at setup. The probes run on the machine's ordinary processor and take about 10 minutes per check at 26 layers, so budget for that, or move the probes onto the graphics card.
