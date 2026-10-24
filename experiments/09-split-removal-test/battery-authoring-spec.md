@@ -67,7 +67,7 @@ Every R and P prompt ends "End your reply with 'Answer: <answer>'.", and is scor
 - **The template conditions:**
   - **T1:** each turn is rendered as plain text, "Speaker Ash:" and "Speaker Birch:", inside the model's normal turn markers, with the model's turns rendered as Birch;
   - **T2:** the whole exchange is given as a transcript inside one user turn, followed by the question;
-  - **T3:** the split removal is applied to T2-style inputs.
+  - **T3:** the split removal is applied to T2-style inputs. *(Superseded 2026-10-24 by design version 0.5, after finding RT-328: T3 now gives the model's own sampled turns and the user's turns as unlabelled paragraphs inside one user turn, and reads the directions already located on them. The generator builds T3 inputs that way.)*
 
   R, P and S items are single-turn, so T1 and T2 change only their surrounding format. W and M items carry the change in full.
 
