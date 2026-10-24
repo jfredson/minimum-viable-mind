@@ -17,8 +17,8 @@ short = "MVM"
 updated_on = "2026-10-24"
 question = "Since my ruling of 2026-10-24: which features on the revised theory's map of experience can be removed from a system that can be opened, and what kind of loss follows each removal? The loss can be none; only the system's talk about itself; everything at once; or the selective loss the theory predicts for the split between what a system does and what happens to it, where practised routines carry on while flexible response to something new collapses. The earlier questions (the floor, from the start; the two-sided question of 2026-10-07) stay on the record as what the project was built and registered against."
 one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
-where_we_are = "On 2026-10-23 I revised the theory this project is built on: it no longer declares a floor below which there is no experience. It maps features that seem to go with experience in the beings we know, and names the split between what a system does and what happens to it as its bet about a point of view. On 2026-10-24 I agreed a proposal for what that means here (docs/next-steps-2026-10-24.md). The project becomes the removal laboratory for that map. It removes one feature at a time in systems that can be opened, and reports what kind of loss follows. The name stays, and 'minimum' now means the smallest system on which one feature can be cleanly removed and read. The battery of tests and the observer side are paused, because the revised theory says behaviour cannot be the test of experience. Their first two entries were rehearsed by 2026-10-19, and both read 'no verdict'. Experiment C stays stopped. The duplicate model files from experiment 06 were removed, with their fingerprints recorded. Spend across every vendor so far is roughly $335 to $360 on the record as it stands, and every new spend needs my go."
-where_we_are_going = "First, a re-reading of the July removal test at no cost. What that test removed, the model keeping its own words apart from the user's, is close to what the revised theory now calls the candidate for the split. The test was not built to see the selective loss the theory predicts, so the re-reading asks only whether its failures after the removal fell on new, flexible problems more than on practised ones. Second, the split removal test is designed on paper, with comparison removals and tasks built for the prediction: practised routines and new problems, about the model and not about it. Its way to lose is stated in advance, and it goes through the project's review before it is registered. Running it comes back to me first, with an estimate and a ceiling. Then the paper gains one paragraph on what the removal test means under the map, and its readiness steps resume. Not planned: reopening experiment C, the body test, or any reading of behaviour in conversation as evidence about experience. Never a verdict; never a conscious machine."
+where_we_are = "On 2026-10-23 I revised the theory this project is built on: it no longer declares a floor below which there is no experience. It maps features that seem to go with experience in the beings we know, and names the split between what a system does and what happens to it as its bet about a point of view. On 2026-10-24 I agreed a proposal for what that means here (docs/next-steps-2026-10-24.md). The project becomes the removal laboratory for that map. It removes one feature at a time in systems that can be opened, and reports what kind of loss follows. The name stays, and 'minimum' now means the smallest system on which one feature can be cleanly removed and read. The battery of tests and the observer side are paused, because the revised theory says behaviour cannot be the test of experience. Their first two entries were rehearsed by 2026-10-19, and both read 'no verdict'. Experiment C stays stopped. The duplicate model files from experiment 06 were removed, with their fingerprints recorded. Spend across every vendor so far is roughly $335 to $360 on the record as it stands, and every new spend needs my go. Later the same day the split removal test was designed and rehearsed on the 2-billion-parameter bench model. It cannot be run there by removing anything from inside the model: the information that marks a word as the model's own cannot be removed without pushing the model out of its normal range. I ruled that recorded as a result about the method, not about the theory."
+where_we_are_going = "The split removal test, as designed, cannot run on the bench model: removing the speaker information from inside the model either breaks the model or changes nothing. The test's template conditions do not cover the other route, taking the speaker cue out of the input, because on the tasks that decide the outcome they take no cue away. Next, I decide whether a test of that other route is worth designing; if it is, it is designed on paper and goes through the project's review, and any model run goes on RunPod under its own go. The paper still gains one paragraph on what the removal test means under the map, and its readiness steps resume after that. Not planned: reopening experiment C, the body test, or any reading of behaviour in conversation as evidence about experience. Never a verdict; never a conscious machine."
 hibernation_by = "2027-01-04"
 wrap_up_start = "2026-12-21"
 pipeline_resumes = "2027-01-04"
@@ -353,16 +353,26 @@ stage = "6"
 [[ideas]]
 id = "I14"
 title = "The split removal test: remove the signal that marks which words are the model's own, and read the kind of loss"
-status = "authorised"
+status = "done"
 cost = "$0 to design; running it may cost nothing on the 2-billion-parameter bench model on the Mac, or needs rented time for a larger model, each on my go"
 teaches = "Whether removing the revised theory's candidate for a point of view, the split between what a system does and what happens to it, produces the selective loss the theory predicts: practised routines carry on while flexible response to something new collapses, including on tasks that never mention the model. Three comparison removals (the self-description alone, an essential part, a random removal of the same size) say what the other kinds of loss look like. It loses, on this system, if removing the split damages routines and new problems alike, or only the self-related tasks."
-gate = "Design on paper authorised 2026-10-24 (docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md); it goes through the project's review before registration; running it comes back to me first."
+gate = "Designed on paper on 2026-10-24 (docs/split-removal-test-design-2026-10-24.md, version 0.6), reviewed, and rehearsed the same day on the bench model. Closed on my ruling of 2026-10-24: removing a located set of directions from inside the model cannot test the split on this model, because the speaker information cannot be removed without pushing the model out of its normal range. A result about the method, not the theory (experiments/09-split-removal-test/rehearsal/fixes-findings-2026-10-24.md)."
 stage = "1"
 
 # ---------------------------------------------------------------------------
 # What we have learned. Registered or ruled-for-the-record results only, plus
 # the process lessons that changed how the work runs.
 # ---------------------------------------------------------------------------
+
+[[findings]]
+id = "F27"
+date = "2026-10-24"
+title = "The split cannot be removed from inside the bench model: erasing or swapping the speaker information either breaks the model or changes nothing"
+what = "On google/gemma-2-2b-it, with pilot items only. The information that marks a sentence as the model's own rather than the user's was located cleanly. Removing 16 located directions at five layers left it readable at 0.95 to 1.00 after layer 10, and the model still answered which word it had said 93% of the time (97% with nothing removed); the removal also moved the model's predictions on ordinary text about 9 times as much as a random removal of the same size. Removing at every layer, or swapping the model's own and the user's activity, pushed the model far out of its normal range, and a probe still read who spoke at 0.86 even at layer 0. Removing at the earliest layers stayed in range only because it changed nothing. One check, projection at the earliest layers, was not run."
+so_what = "I ruled on 2026-10-24 that this be recorded: the design, which removes a located set of directions from inside the model, cannot test the split on this model. It is a result about the method, not about the theory, and it counts neither for nor against the prediction. The speaker information comes in with the role headers and is spread through the model's activity."
+source = "experiments/09-split-removal-test/rehearsal/fixes-findings-2026-10-24.md"
+stage = "1"
+kind = "diagnostic"
 
 [[findings]]
 id = "F26"
@@ -1156,8 +1166,8 @@ status = "done"
 [spend]
 as_of = "2026-10-18"
 headline_words = "about $335 to $360 spent in total across every vendor so far, each new spend under its own go from me"
-account_balance = 69.89
-account_note = "Updated 2026-10-09: the balance fell from $71.2191 to $69.8935 across the three 10-million reruns of the repaired built models, a fall of $1.3256, of which $1.3032 is the reruns' rented machine time (1.0951 billed hours at $1.19) and about two cents the storage volume's standing charge. The programme stands at about $230.94 of $450. The rest of this note is as written on 2026-10-07. Updated 2026-10-07, corrected later the same day from the handoff for the registration draft: the balance read $72.3178 after the four 10-million development runs of 2026-10-04 (the $73.7742 first quoted was the reading just before the last machine; the runs cost about $1.47 together, under their $10 line); the programme stands at about $229.62 of $450. The rest of this note is as written on 2026-10-04. RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit I set; topped up in increments I choose. The balance is the last one the compute ledger records being read from the account, after the second rented test run on 2026-09-25 ($75.8645). Before that it read $77.3451 on 2026-09-21, having fallen from $79.82 because the two follow-up runs of 2026-09-20 cost a measured $1.90 and the storage volume drips about a cent an hour whether or not anything is running. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
+account_balance = 65.62
+account_note = "Updated 2026-10-24: the balance read $65.62 after the split removal test's RunPod run (about $0.77, recorded with my go in docs/spending-record.md). Updated 2026-10-09: the balance fell from $71.2191 to $69.8935 across the three 10-million reruns of the repaired built models, a fall of $1.3256, of which $1.3032 is the reruns' rented machine time (1.0951 billed hours at $1.19) and about two cents the storage volume's standing charge. The programme stands at about $230.94 of $450. The rest of this note is as written on 2026-10-07. Updated 2026-10-07, corrected later the same day from the handoff for the registration draft: the balance read $72.3178 after the four 10-million development runs of 2026-10-04 (the $73.7742 first quoted was the reading just before the last machine; the runs cost about $1.47 together, under their $10 line); the programme stands at about $229.62 of $450. The rest of this note is as written on 2026-10-04. RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit I set; topped up in increments I choose. The balance is the last one the compute ledger records being read from the account, after the second rented test run on 2026-09-25 ($75.8645). Before that it read $77.3451 on 2026-09-21, having fallen from $79.82 because the two follow-up runs of 2026-09-20 cost a measured $1.90 and the storage volume drips about a cent an hour whether or not anything is running. Anthropic and Gemini API judge calls are billed separately and cost cents per run."
 idle_billing_lost = 10.30
 idle_billing_note = "Four occurrences of finished pods billing idle; the reason every launch now carries a terminate window and a watchdog."
 
@@ -1182,7 +1192,7 @@ owner = "Claude Code session"
 cost = "$0"
 decision = false
 teaches = "What the July test can and cannot say about the split, since what it removed, the model keeping its own words apart from the user's, is close to the revised theory's candidate for the split. It cannot confirm anything, because the test was not built for this, but it tells the split removal test what to expect."
-status = "authorised"
+status = "done"
 
 [[next_steps]]
 id = "N61"
@@ -1192,16 +1202,36 @@ owner = "Claude Code session drafts; a second session checks; I rule"
 cost = "$0"
 decision = false
 teaches = "A registered test of the revised theory's central bet about a point of view, with its way to lose stated before it runs."
-status = "authorised"
+status = "done"
 
 [[next_steps]]
 id = "N62"
 title = "Run the split removal test"
-when = "after its registration"
+when = "blocked on 2026-10-24: the design cannot run on the bench model; see the decision below"
 owner = "Claude Code session; I give the go"
 cost = "to be estimated in the design; nothing is spent without my go"
 decision = true
 teaches = "The first removal of the split in any system, as far as the essay knows."
+status = "blocked"
+
+[[next_steps]]
+id = "N64"
+title = "Check, read only, whether the split test's template conditions already cover taking the speaker cue out of the input"
+when = "done 2026-10-24"
+owner = "Claude Code session"
+cost = "$0"
+decision = false
+teaches = "They do not: they guard against misreading a positive result, take no cue away on the single-turn tasks that decide the outcome, and relabel rather than remove the cue elsewhere (experiments/09-split-removal-test/template-coverage-2026-10-24.md)."
+status = "done"
+
+[[next_steps]]
+id = "N65"
+title = "Decide whether a test that takes the speaker cue out of the input is worth designing"
+when = "now"
+owner = "me"
+cost = "$0 to decide; any design is on paper first, and any model run goes on RunPod under its own go"
+decision = true
+teaches = "Whether the split can be tested on this kind of model at all, by the one route the rehearsal left open."
 status = "pending"
 
 [[next_steps]]
@@ -1218,6 +1248,12 @@ status = "pending"
 # The story so far: one row per STATUS.md entry, newest first. kind:
 # result | null | ruling | process | spend | build
 # ---------------------------------------------------------------------------
+
+[[timeline]]
+date = "2026-10-24"
+kind = "result"
+title = "The split removal test cannot run on the bench model by removing anything from inside it; recorded on my ruling"
+summary = "The July test was re-read under the map at no cost, and its comparison cannot be read. The split removal test was designed, reviewed and rehearsed on the 2-billion-parameter bench model. Both removal methods failed: the model rebuilt which words were its own within two layers, and the removal damaged ordinary text about 9 times as much as a random one. Two further fixes I asked for (removing at every layer or the earliest ones, and swapping own and user activity) either broke the model or changed nothing. I ruled it recorded as a result about the method, not the theory. A read-only check found that the test's template conditions do not cover taking the speaker cue out of the input. About $0.77 spent on RunPod under my go of up to $2, after the Mac ran hot; from now on model runs are planned on RunPod."
 
 [[timeline]]
 date = "2026-10-24"

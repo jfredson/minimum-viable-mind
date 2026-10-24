@@ -16,6 +16,89 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-10-24 (evening) — the split removal test cannot be run on the bench model by removing anything from inside it; John ruled that recorded; the template conditions do not cover taking the cue out of the input
+
+*Written 2026-10-24 (Saturday evening, Pacific) by the working session that
+ran the split-test work, on John's ruling relayed by the fifth weekend master
+session. The entry below stands. All of today's split-test work is on pull
+request 222 until John merges it.*
+
+**What was done since the entry below**, in order:
+
+1. **The July removal test, re-read under the map** at $0. The comparison
+   cannot be read: the gap between the flexible and the routine tasks was
+   +0.125, with an interval too wide by the rule set in advance. Nothing in
+   the July data looks like the selective loss the theory predicts
+   (`experiments/01-self-indexing-removal-test/reread-under-the-map-findings-2026-10-24.md`).
+2. **The split removal test was designed on paper**, at version 0.6. It went
+   through the inside pass of the advisory review and three closure checks,
+   and John ruled on its three choices ("Yes to all three")
+   (`docs/split-removal-test-design-2026-10-24.md`).
+3. **The task batteries were written** to a specification committed first,
+   with the pilot set only (`experiments/09-split-removal-test/`).
+4. **The rehearsal's first phase ran** on the bench model on the Mac, at $0,
+   with the method committed first. Both removal methods failed the removal
+   check, and both failed the normal-range check:
+   - the model rebuilt who-said-what within two layers;
+   - its which-did-you-say accuracy fell only from 97% to 93%;
+   - the removal damaged ordinary text about 9 times as much as a random
+     removal of the same size.
+   Separately, only one of the four kinds of prompt-rule problem is answered
+   reliably by this model.
+5. **John asked for two free fixes:** removing at every layer or at the
+   earliest ones, and swapping own and user activity. Neither works:
+   - every version that changed the model enough to matter pushed it far out
+     of its normal range;
+   - removing at every layer still left who-said-what readable at 0.86 even at
+     layer 0;
+   - removing at the earliest layers stayed in range only because it changed
+     nothing.
+   The run started on the Mac and moved to RunPod when the Mac ran hot, on
+   John's go ("up to $2"). It cost about $0.77. The machine was stopped early,
+   on the master session's instruction, with three of six checks unrun
+   (`experiments/09-split-removal-test/rehearsal/fixes-findings-2026-10-24.md`).
+
+**John's ruling** (his words: "Record that the split can't be removed from
+inside this model, and have the session check whether the existing template
+tests already cover the take-it-out-of-the-input version before designing
+anything new"; decidedBy john):
+
+- **The result.** This design removes a located set of directions from inside
+  the model. It cannot test the split on the bench model, because the speaker
+  information cannot be removed without pushing the model out of its normal
+  range.
+- **What kind of result it is.** It is about the method, not about the theory,
+  and it counts neither for nor against the prediction.
+- **What was left unmeasured.** The check of projection at the earliest layers
+  was not run, and John chose not to spend on it.
+
+**The template check, read only** (`experiments/09-split-removal-test/template-coverage-2026-10-24.md`):
+the existing template conditions do **not** answer whether the split goes away
+when the speaker cue is taken out of the input.
+
+- They were built as a guard against misreading a positive result.
+- On the tasks that decide the outcome, which are single turns, they take no
+  cue away at all.
+- Where they do change the cue, they relabel it rather than remove it.
+- None of them has run.
+
+The note lists what a new design would need. Nothing is designed.
+
+**Standing rule from John** (2026-10-24): "let's prioritize using RunPod until
+I am able to get a dedicated desktop computer for this kind of research work."
+Model runs are planned on RunPod, and each still needs his go with an estimate
+and a ceiling (`experiments/09-split-removal-test/run-notes.md`).
+
+**What happens next:**
+
+- **John decides** whether a test that takes the cue out of the input is worth
+  designing.
+- **The paper's paragraph** on what the removal test means under the map is
+  still owed.
+
+Spend today: about $0.77 on RunPod, recorded with its go in
+`docs/spending-record.md`.
+
 ## WHERE THINGS STAND 2026-10-24 — the project's aim changes with the revised theory: it becomes the removal laboratory for the map of features; the battery is paused; experiment 06's duplicate model files are removed
 
 *Written 2026-10-24 (Saturday, Pacific) by a working session started from the

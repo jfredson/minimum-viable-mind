@@ -2,6 +2,16 @@
 
 *Written 2026-10-24 (Saturday, Pacific). The method was committed before the run (`experiments/09-split-removal-test/rehearsal-fixes-method.md`, commit ad58598). The numbers are in `rehearsal/fixes-2026-10-24.json`. John's ruling: "Try both free fixes on the bench model: remove at every layer or the earliest ones, and swap own and user activity. Nothing spent, nothing registered."*
 
+## The result, as recorded on John's ruling (2026-10-24)
+
+John's words, relayed by the fifth weekend master session: "Record that the split can't be removed from inside this model, and have the session check whether the existing template tests already cover the take-it-out-of-the-input version before designing anything new." (decidedBy: john.)
+
+**The result.**
+- This design removes a located set of directions from inside the model. It cannot test the split on the bench model (`google/gemma-2-2b-it`). The reason is that the speaker information cannot be removed without pushing the model out of its normal range.
+- This is a result about the method, not about the theory. It counts neither for nor against the theory's prediction.
+- The check of projection at the earliest layers was not run, and John chose not to spend on it.
+- The template conditions were checked against the question of taking the cue out of the input, read only. They do not answer it. The check and what a new design would need are in `template-coverage-2026-10-24.md`.
+
 ## In one paragraph
 
 Neither fix works. No intervention both erased the information and kept the model in its normal range:
