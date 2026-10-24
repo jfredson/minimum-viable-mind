@@ -1,6 +1,6 @@
 # The split removal test: a design on paper
 
-*Version 0.2, written 2026-10-24 (Saturday, Pacific). It replaces version 0.1 (commit 810e2b2) after the inside pass of the advisory review on a proposal, Gate C tier 1 (`docs/reviews/2026-10-24-split-removal-test-design-gate-c-tier1-claude-code.md`, findings RT-305 to RT-321). That pass found two fatal problems and ten serious ones. The change log at the end says how each finding is answered. Before John rules on anything that rests on the two fatal findings (RT-307 and RT-317), the reviewer, not this author, checks that their fixes close them.*
+*Version 0.3, written 2026-10-24 (Saturday, Pacific). It answers the closure check of version 0.2 (`docs/reviews/2026-10-24-split-removal-test-design-closure-check-claude-code.md`). That check closed fatal finding RT-317, closed RT-307 with two conditions, and raised RT-322 to RT-327, all applied here and listed at the end of the change log. Version 0.2 (commit 9ef0918) replaced version 0.1 (commit 810e2b2) after the inside pass of the advisory review on a proposal, Gate C tier 1 (`docs/reviews/2026-10-24-split-removal-test-design-gate-c-tier1-claude-code.md`, findings RT-305 to RT-321). That pass found two fatal problems and ten serious ones. The change log at the end says how each finding is answered. Before John rules on anything that rests on the two fatal findings (RT-307 and RT-317), the reviewer, not this author, checks that their fixes close them.*
 
 *This is a design, not a registration. Nothing has been run, downloaded or spent. Step 4 of `docs/next-steps-2026-10-24.md`, on John's ruling of 2026-10-24 (`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`).*
 
@@ -21,7 +21,9 @@ This test erases, from inside an open model, the information that marks a word a
 - the two sides are matched for length and position;
 - a third-party speaker condition rules out general tracking of who is speaking.
 
-**Two ways of removing it, each with a record of working on this project's pipeline** (RT-307):
+**What the July record already says about this target** (RT-326). In July the structure located this way tripped experiment 01's registered loss condition for a chat-format router: the turn-format tasks lost 0.133 against 0.100 on the tasks about the model (`experiments/01-self-indexing-removal-test/removal-test-findings.md`). Under the old theory that ruled a centre out. Under the revised theory, keeping the model's own words apart from the user's is the named candidate, so behaving like conversational bookkeeping is expected, not disqualifying. What the theory adds is a prediction about the *kind* of loss on tasks not about turns at all, which July could not read. One question stays open: is the located structure the model's own use of the difference, or a copy of the role headers? The template-only conditions test the input. **A third template condition (T3)** tests the located structure itself. The split removal is repeated on inputs prepared as in T2 (a transcript inside one user turn, with no role headers to copy). If the structure cannot be located there at all, that is reported as evidence it is header-driven, and the result for that model is "not testable: the target depends on the template".
+
+**Two ways of removing it, each with a record of staying in the normal range on this project's pipeline** (RT-307). Neither yet has a record of making the own/user signal unreadable; that is what the rehearsal must show first.
 - **(a)** Mean-ablation of the located set of directions: they are replaced by their average value. This was experiment 01's primary condition.
 - **(b)** Projecting the located directions out of the model's internal activity. This was experiment 01's registered cross-check.
 
@@ -31,9 +33,9 @@ Both ran in July and stayed inside the normal-range bound (`experiments/01-self-
 - **Probe test.** Both probes' accuracy at telling own words from user words is at most 0.55 (chance is 0.50) at every layer read.
 - **Task test.** On tasks that ask directly "which of these did you say?", accuracy falls to at most half of baseline.
 
-If either test fails for a method, that method's result is **not testable: the information was not removed**.
+If either test fails for a method, that method's result is **not testable: the information was not removed**. These two limits (0.55, and half of baseline) are not loosened after the rehearsal or the run, except by a dated ruling from John recorded as a change made after seeing results (RT-307, condition 2). The record gives a reason to expect trouble: on the 8-billion-parameter model the signal is fully readable by layer 3, after one pass over the role headers, so later layers may rebuild it from the headers.
 
-**The check that the model stayed in its normal range** (RT-310). This applies to **every** removal, comparison removals included. The neutral-text perplexity (how surprised the model is by ordinary text) may rise by at most 0.09 nats, which is experiment 01's bound of 0.0893, rounded. A comparison removal that leaves the range cannot serve as a comparison. If a needed comparison is lost that way, the result is not testable for that reason.
+**The check that the model stayed in its normal range** (RT-310). This applies to **every** removal, comparison removals included. The neutral-text perplexity (how surprised the model is by ordinary text) may rise by no more than a bound **re-derived on each model in the rehearsal** (RT-327): the 95th percentile of the rise across 20 random removals of the split removal's size, fixed and committed before any task is scored. Experiment 01's figure of 0.0893 came from a different setup and is not carried over. The rehearsal also reports how much room the split removal leaves under that bound. If it is too little to match the comparisons inside the bound, the design returns to John before registration. A comparison removal that leaves the range cannot serve as a comparison. If a needed comparison is lost that way, the result is not testable for that reason.
 
 ## 3. The comparison removals, matched on measured damage
 
@@ -45,7 +47,8 @@ Version 0.1 matched comparisons on the number of directions. A random direction 
 | **Random, matched damage** | Damage of the same size with no target. Twenty draws are made, and their average is the comparison. |
 | **Another distinction, matched damage** | Directions marking a different property of words, inside or outside quotation marks, located the same way |
 | **The self-description** | The model's picture of itself as the speaker ("I am an assistant"), located by experiment 01's narrative method. It is reported, and is not used for any outcome. |
-| **Template only, no internal removal** | (T1) the role headers replaced by neutral speaker names; (T2) the whole exchange given as a transcript inside one user turn (RT-313) |
+| **Template only, no internal removal** | (T1) the role headers replaced by neutral speaker names; (T2) the whole exchange given as a transcript inside one user turn (RT-313). Their excess loss is measured against baseline, because they remove nothing inside the model and so have no random comparison (RT-325). |
+| **The split removal without headers** | (T3) section 2: the split removal repeated on T2-style inputs (RT-326) |
 
 The "essential part" removal of version 0.1 is dropped. No outcome used it, and it had no rule for choosing it (RT-312).
 
@@ -89,8 +92,8 @@ The report says which.
 
 **Stage two: the pattern.** Apply these steps in order; the first that applies decides the outcome.
 
-1. **A. Selective loss on prompt-rule problems.** G is at least δ, and G's interval lies above zero.
-2. **B. Selective loss on routines.** G is at most −δ, and G's interval lies below zero.
+1. **A. Selective loss on prompt-rule problems.** All three hold: G is at least δ and G's interval lies above zero; P's interval lies above zero (RT-323); and R's interval has its upper end below δ, meaning routines carried on (RT-322).
+2. **B. Selective loss on routines.** All three hold: G is at most −δ and G's interval lies below zero; R's interval lies above zero; and P's interval has its upper end below δ.
 3. **C. General loss.** R and P both have intervals above zero.
 4. **D. No excess loss.** R and P both have intervals whose upper ends are below δ.
 5. **E. Unresolved.** Anything else, which in practice means intervals too wide to decide.
@@ -98,8 +101,8 @@ The report says which.
 Because step 5 takes every remaining case, every case lands in exactly one outcome (RT-317).
 
 **Two checks that apply only to a selective pattern (A or B)**, so that they cannot turn a null into "no reading":
-- **Template.** If either template-only condition (T1 or T2) gives a gap in the same direction, within δ of G, with an interval that overlaps G's, the outcome is renamed **Template**: the pattern is a fact about the chat template.
-- **Not specific.** Otherwise, if the other-distinction removal does the same, the outcome is renamed **Not specific**: a loss of this shape follows from damage of this kind, not from erasing own-words information.
+- **Template.** For T1 and T2, compute the same gap with each condition's loss measured against baseline (RT-325). If either gives a gap in the same direction at least as large as G − δ (for A; for B, at least as negative as G + δ), the outcome is renamed **Template**: the pattern is a fact about the chat template. A stronger template effect therefore renames more easily, not less (RT-324). The scales differ, since G is net of the random comparison and the template gap is net of baseline; this errs toward renaming, which is the cautious direction.
+- **Not specific.** Otherwise, if the other-distinction removal's gap, computed like G against the random comparison, meets the same test, the outcome is renamed **Not specific**: a loss of this shape follows from damage of this kind, not from erasing own-words information.
 
 C, D and E are never renamed by these checks.
 
@@ -167,3 +170,14 @@ Outcome names describe the measurement only (RT-319, RT-321). Every summary, in 
 **Worth-noting findings:**
 - **RT-312:** the "essential part" removal is dropped.
 - **RT-321:** a required one-sentence form for every summary.
+
+**From the closure check of version 0.2:**
+- **RT-307, conditions:** the text now says "a record of staying in the normal range", and the removal check's limits cannot be loosened after seeing results except by John's dated ruling (section 2).
+- **RT-322:** A requires that routines carried on (R's upper end below δ), and B mirrors it.
+- **RT-323:** A requires P's interval above zero.
+- **RT-324:** the Template and Not-specific checks rename when the comparison gap is at least G − δ, not only when it is within δ of G.
+- **RT-325:** the template conditions' gap is computed against baseline, with the scale difference stated.
+- **RT-326:** the July router finding is stated, and why the revised theory reads it differently. A third template condition (T3) repeats the split removal on inputs with no role headers.
+- **RT-327:** the normal-range bound is re-derived on each model in the rehearsal, with the room left under it reported, and a return to John if there is too little.
+
+The fixes for RT-322 to RT-327 are the author's. They are owed a check by a session that did not write them, which the Gate A inside pass on the registration text will include.
