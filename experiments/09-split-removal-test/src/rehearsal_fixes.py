@@ -178,6 +178,8 @@ def main():
     res["baseline_nll"] = base_nll
     res.setdefault("bounds", {})
     for name, (layers, rule) in conds.items():
+        if name in res["bounds"]:  # resume: bounds are deterministic (seeds 0-19), keep saved ones
+            continue
         rises, kls = [], []
         for s in range(N_RANDOM):
             nll, kl = nll_and_kl(model, tok, device, neutral, spec_for(layers, rule, random_basis(s, layers)), rule)
@@ -208,6 +210,8 @@ def main():
     res["baseline_which_did_you_say"] = base_w
     res.setdefault("checks", {})
     for name, (layers, rule) in conds.items():
+        if name in res["checks"]:
+            continue
         read = list(range(min(layers), nL))
         tok.padding_side = "left"
         with intervene(model, spec_for(layers, rule), rule):
