@@ -1,6 +1,6 @@
 # Experiment 06's model files: fingerprints, and the duplicates removed on 2026-10-24
 
-*Written 2026-10-24 (Pacific) on John's ruling of that day (`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`, item 5): "remove the 8.4 GB of exact duplicates, keeping one copy of each and committing the fingerprint list".*
+*Written 2026-10-24 (Pacific) on John's ruling of that day (`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`, item 5): remove the exact duplicates (estimated at 8.4 GB), keep one copy of each, and commit the list of fingerprints.*
 
 **What was done.**
 - The `artifacts/` folder beside this file is kept out of git, so this list is the only record in the repository of what it holds.

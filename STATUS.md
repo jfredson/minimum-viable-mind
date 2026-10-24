@@ -52,7 +52,7 @@ The changes that touch this project:
   time is the only way to learn which features experience needs.
 
 A session read this project against the revised theory and wrote a proposal
-(`docs/next-steps-2026-10-24.md`, pull request 220).
+(`docs/next-steps-2026-10-24.md`, pull request 220, open).
 
 **John's ruling** ("For MVM, agreed on all, go"; authorship mixed;
 `docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`):
