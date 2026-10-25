@@ -47,6 +47,19 @@ session proposed, John approved. None is upgraded to John's own.
    result and the founding wager's adoption date (2026-09-20, after A, B and
    D ran) disclosed in any write-up. The registered figures do not change.
    *Ruled as proposed.*
+
+   *Dated note, 2026-10-25 (Pacific), not an edit of the ruling above:
+   ruling 4 of 2026-10-12 (John, "all as recommended"; authorship mixed;
+   `docs/rulings/2026-10-12-two-sided-question-section-2-v3.md`, finding
+   RT-302 in `experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md`)
+   words this label where it rests on the router-control argument. The
+   record supports "the result was ambiguous" (the control's margin of
+   +0.033 has an interval from −0.133 to +0.200, which spans zero, and a
+   centre would also have damaged every task set). It does not support "the
+   instrument could never return the other answer": damage on every task set
+   says nothing about which drop is larger, so the step from that damage to
+   a forced routing verdict is not relied on. The site data and the site's
+   pages carry the ambiguous form since 2026-10-25.*
 3. **Experiment C is narrowed to its first release.** The $1.14 repair runs
    as a dated amendment that says it turns the built arms into hand-set
    references; the repaired route is verified; the single free-arm run at

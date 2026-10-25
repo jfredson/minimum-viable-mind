@@ -295,6 +295,7 @@ promoted to the seed of the filtered battery; its transcript-replacement
 control first, method before run. (6) The table and battery are the next
 paper work. (7) The human study deferred. (8) The book changes go upstream as
 a proposal packet.
+*(Dated pointer, 2026-10-25: under ruling 4 of 2026-10-12, finding RT-302, the router argument's missing step, this label is now worded "the result was ambiguous", not "the instrument could never return the other answer"; see the dated note under decision 2 in `docs/rulings/2026-10-07-two-sided-question-rulings.md`. This entry is not edited.)*
 
 **What is owed next, in order.** The Gate C pass on the proposal and the check
 of the synthesis, both running in fresh sessions when this was written, filed
@@ -2974,6 +2975,7 @@ context length) are the positive result. The founding wager was adopted on
 2026-09-20, after A, B and D ran. The figures and the entry below are
 unchanged; the heading and "registered reading" below are the label as it
 stood on 2026-07-18.*
+*(Dated pointer, 2026-10-25: under ruling 4 of 2026-10-12, finding RT-302, the router argument's missing step, this label is now worded "the result was ambiguous", not "the instrument could never return the other answer"; see the dated note under decision 2 in `docs/rulings/2026-10-07-two-sided-question-rulings.md`. This entry is not edited.)*
 
 Experiment 1's registered result is in (`removal-test-findings.md`; final
 judge spot-check PASSED AS-IS, John, same day). Held-out test set went
