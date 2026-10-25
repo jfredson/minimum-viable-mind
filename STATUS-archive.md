@@ -235,6 +235,7 @@ instrument. Points the other way, also recorded: the structure was found by a
 turn contrast, so the router prior was high; the reflexivity and length
 controls did not fire, so what was removed was specific to the model's own
 turn.
+*(Dated pointer, 2026-10-25: under ruling 4 of 2026-10-12, finding RT-302, the router argument's missing step, the step in this paragraph from "the two accounts make the same prediction" to "the control chose the cheaper account" is not relied on; the record supports "the result was ambiguous". See the dated note under decision 2 in `docs/rulings/2026-10-07-two-sided-question-rulings.md`. This entry is not edited.)*
 
 **The poll** (`docs/outside-perspective/2026-10-07-poll-method.md`,
 `run_poll.py`, six replies word for word under `replies/` with a manifest,

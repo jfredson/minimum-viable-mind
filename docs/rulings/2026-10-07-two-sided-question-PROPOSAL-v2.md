@@ -208,11 +208,13 @@ ran, is disclosed in any write-up. Registered figures unchanged.
 
 *Dated note, 2026-10-25 (Pacific), not an edit of version 2: under ruling 4
 of 2026-10-12 (`docs/rulings/2026-10-12-two-sided-question-section-2-v3.md`;
-finding RT-302), the record supports the wording "the result was ambiguous"
+finding RT-302, the router argument's missing step), the record supports the wording "the result was ambiguous"
 for experiment A, not "the instrument could never return the other answer".
 The label above, with its "the cheaper account was taken in advance", is read
 in that form: the control's margin spans zero, and damage on every task set
-does not show the control could never have read a centre.*
+does not show the control could never have read a centre. The same reading
+applies to the step as it is stated in section 0 ("the instrument could not
+have returned the other answer") and in section 2, which version 3 replaced.*
 
 **Experiment B.** Closed as it stands; its one load-bearing finding reported
 with the caveat that it held only in runs that never learned the task.

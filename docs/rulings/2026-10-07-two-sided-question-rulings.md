@@ -50,8 +50,8 @@ session proposed, John approved. None is upgraded to John's own.
 
    *Dated note, 2026-10-25 (Pacific), not an edit of the ruling above:
    ruling 4 of 2026-10-12 (John, "all as recommended"; authorship mixed;
-   `docs/rulings/2026-10-12-two-sided-question-section-2-v3.md`, finding
-   RT-302 in `experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md`)
+   `docs/rulings/2026-10-12-two-sided-question-section-2-v3.md`; the
+   router argument's missing step, finding RT-302 in `experiments/06-mvm-0a-constructed-self-index/red_team_ledger.md`)
    words this label where it rests on the router-control argument. The
    record supports "the result was ambiguous" (the control's margin of
    +0.033 has an interval from −0.133 to +0.200, which spans zero, and a
