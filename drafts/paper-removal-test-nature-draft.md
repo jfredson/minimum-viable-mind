@@ -118,6 +118,17 @@ whether self-indexing can be centralized at all." The sentence on the
 parallel behavioral programme (retained independence) that followed it in
 v0.2 is kept in the new paragraph unchanged.*
 
+*Dated note, 2026-10-25 (Pacific): the Discussion gains one paragraph,
+"What the removal test means under the map", after "The constructive turn,
+as it ran", on John's ruling 3a of 2026-10-24
+(`docs/rulings/2026-10-24-revised-theory-next-steps-ruling.md`). It says what
+the removal test means under the revised account's map of features, drawing
+on the re-reading of the July test done that day. No registered number,
+verdict or label changes. The paragraph was checked by a session that did
+not write it (`docs/reviews/2026-10-25-paper-map-paragraph-check-claude-code.md`);
+it has not yet been through the Voice Calibration Protocol or the Cold Reader
+pass, which the whole draft still owes before it leaves this repo.*
+
 ---
 
 **Authors:** [John —], [Claude (Anthropic) — contribution statement to be
@@ -915,6 +926,42 @@ capitulations concentrate on three items) — suggesting "sycophancy" in
 current frontier models is largely a politeness wrapper over an intact
 position, not belief revision [companion result; to be reported in full
 separately].
+
+**What the removal test means under the map.** After these experiments ran,
+the account they were built to test was revised (the one-page statement
+"Assembled time, revised", `editorial/2026-10-23-assembled-time-revised-theory.md`
+in the sentient-horizons repository, approved 2026-10-23). The revised
+account declares no floor. It maps features that seem to go with experience,
+holds that they can come apart, and holds that only removing one feature at
+a time can tell which ones experience needs and which only travel with it.
+Its bet about a point of view is the split between what a system does and
+what happens to it, and in a language model it names the signal that keeps
+the model's own words apart from the user's as the candidate for that split.
+Read this way, the removal test reported here removed a near relative of the
+split: a structure specific to the model's own turn. It was not the test the
+map calls for, because the revised account's prediction turns on a different
+comparison. If the split is removed, practised routines should carry on while
+flexible response to something new collapses, and this should hold on tasks
+that never mention the system as well as on tasks that do. We re-read the
+registered per-item answers against that prediction after the account
+changed, with the method committed before the analysis ran
+(`experiments/01-self-indexing-removal-test/reread-under-the-map-findings-2026-10-24.md`;
+unregistered, no model run). By the rule fixed in that method, the comparison
+cannot be read. On the tasks that never mention the model, the flexible items
+lost 0.250 and the routine items 0.125, a gap of +0.125 whose 95% interval
+runs from −0.167 to +0.375. Because there were only eight routine items, that
+interval is wider than the limit of 0.5 the method set for a readable gap.
+As description only, all six flexible failures were multi-step reasoning
+items, so the damage sat in one kind of task rather than across flexible
+response. The removal test is therefore silent on the split. Its items could
+not support the comparison between routine and new problems that the revised
+prediction turns on, and the items it treated as flexible were familiar task
+shapes that need more steps, not problems new to the model. No registered
+number, verdict or label in this paper changes. What the re-reading gives is
+a list of what a test of the split would need: many more routine items, none
+of which depend on who said what; problems that are actually new to the
+model; flexible categories read separately; and two methods of removal that
+must agree before any pattern is read.
 
 ---
 
