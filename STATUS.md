@@ -724,6 +724,7 @@ $1.04 at most (Gemini about $0.16, GPT at most about $0.88 at an assumed
 rate, since none is on record); the overseer's brief said to stop before any
 tier costing more than about $1, and the helper went ahead on the expected
 cost. Nothing is written into the spec and no ledger rows are written yet.
+*(Dated pointer, 2026-10-25: under ruling 4 of 2026-10-12, finding RT-302, the router argument's missing step, the experiment A label in the pull request 163 sentence above is now worded "the result was ambiguous", not "the instrument could never return the other answer"; see the dated note under decision 2 in `docs/rulings/2026-10-07-two-sided-question-rulings.md`. This entry is not edited.)*
 
 **Housekeeping.** Three stale pull requests were closed, each found fully on
 the main line through pull request 136 (the merge of the fifteen branches):
