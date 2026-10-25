@@ -37,7 +37,7 @@ rehearsal; the high end assumes the most it could have.
 **Out of pocket and from credits.** Only the battery rehearsal's and the
 far-end repair's Anthropic calls are recorded as paid from John's Max-plan
 credits (about $13.06, plus a share of the repair's $1.12). Everything else
-in the total was paid by card or prepaid balance.
+in the total is not recorded as paid from credits; the poll's Anthropic call, for one, drew on the same organisation balance the credits now cover.
 
 ## Every line, by vendor
 
@@ -46,14 +46,14 @@ in the total was paid by card or prepaid balance.
 | Dates | What | The go | Spent | Source |
 |---|---|---|---|---|
 | 2026-07-12 to 2026-08-06 | Before the ledger opened: the removal test (experiment 1) and other early rented work | Before goes were recorded per run; John's own work and approvals. No go is on record for any of it | $42.85 | RunPod billing exports, quoted in `docs/w37-spend-review-2026-09-16.md`, section 6 ("of which before the ledger opened") |
-| 2026-08-07 to 2026-09-16 | The ledger's rows from the first pilot to the A3 self-delete test, including the lost 30M pilot ($97.04) and the 30M re-run (about $18.90), plus storage on days with no machine | Each machine row's go is in the compute ledger: the registered caps of 2026-08-07 ($200) and 2026-08-16 ($400, Amendment A2), and John's go per launch. The storage has no go | $215.33 (machines $194.03, storage $21.31) | the same section 6, "of which ledger era"; the compute ledger's rows |
-| 2026-09-17 | Amendment A3 seeds 1 and 2, one wave | "Go" (John, quoted in the ledger row) | $20.10, from measured machine lifetimes | compute ledger, row of 2026-09-17 |
+| 2026-08-07 to 2026-09-16 | The ledger's rows from the first pilot to the A3 self-delete test, including the lost pilot of a model with 30 million adjustable numbers ($97.04) and its re-run (about $18.90), plus storage on days with no machine | Each machine row's go is in the compute ledger: the registered caps of 2026-08-07 ($200) and 2026-08-16 ($400, Amendment A2), and John's go per launch, except about $17.82 of the lost pilot, spent after its safety cut-off failed, which no go covered. The storage has no go | $215.33 (machines $194.03, storage $21.31) | the same section 6, "of which ledger era"; the compute ledger's rows |
+| 2026-09-17 | Amendment A3's second and third training runs (different random starts), launched together | "Go" (John, quoted in the ledger row) | $20.10, from measured machine lifetimes | compute ledger, row of 2026-09-17 |
 | 2026-09-19 | The control-learnability pilot (unregistered) | "Go. Launch the control-learnability pilot as staged…" (John, quoted in the ledger row) | about $9.90 | compute ledger, row of 2026-09-19 and its correction of 2026-09-21 |
 | 2026-09-20 | Recovery of that pilot's final checkpoint | "Go, recover the checkpoint, and kill the watchdog." (John) | $0.07 | compute ledger, row of 2026-09-20 |
 | 2026-09-20 | The two follow-up reading runs, refused by the instrument's own check and deleted | "Go" (John, quoted in the ledger rows) | $1.90, measured from the balance | compute ledger, the two rows of 2026-09-20 |
 | 2026-09-21 and 2026-09-25 | Three attempts at the small rented rehearsal slice | The rehearsal line of the first release, each row quoting John's go | about $0.57 ($0.02, $0.50 and $0.05) | compute ledger, the rows of 2026-09-21 and 2026-09-25 |
-| 2026-10-04 | Four successor development runs, 10M | John's go for the development runs, quoted in the rows | $1.47 | compute ledger, the four rows of 2026-10-04 |
-| 2026-10-09 | Three successor verification reruns, 10M | The registered repair, about $1.14 approved; billed $0.16 over at the $1.19 hourly rate | $1.30 | compute ledger, the three rows of 2026-10-09 |
+| 2026-10-04 | Four development runs of the successor experiment, on models of 10 million adjustable numbers | John's go for the development runs, quoted in the rows | $1.47 | compute ledger, the four rows of 2026-10-04 |
+| 2026-10-09 | Three verification reruns of the successor experiment, same size | The registered repair, about $1.14 approved; billed $0.16 over at the $1.19 hourly rate | $1.30 | compute ledger, the three rows of 2026-10-09 |
 | 2026-10-24 | The split removal test's two free fixes, moved off the Mac | "Go on RunPod for the rest of the Minimum Viable Mind run, up to $2…" (John, relayed by the fourth weekend master session) | about $0.77 | `experiments/09-split-removal-test/rehearsal/fixes-findings-2026-10-24.md`; the row in the table further down |
 | 2026-09-17 to 2026-10-24 | Storage for the network volume on days with no machine, which has no ledger row | **None.** It is a standing charge, about $0.24 a day since late September | about $10.12, by subtraction | the measured total less every row above |
 | **All rented machines** | | | **$304.38** | |
@@ -62,9 +62,9 @@ in the total was paid by card or prepaid balance.
 
 | Date | What | The go | Spent | Source |
 |---|---|---|---|---|
-| 2026-08-02 | The Stage 3 registered grid, Gemini arm (31 of 360 subjects before Google's quota stopped it), Vertex AI, project "CoWork" | The registered grid, launched 2026-08-02; no spending go is on record, and this was before the all-vendor ruling of 2026-08-30 | $49.77 | Google Cloud's August bill, traced in worklog entry "Cost finding: the Stage 3 Gemini arm cost $49.77…" (`558a695a`) |
+| 2026-08-02 | The Stage 3 registered grid (the retained-independence experiment), the part run on Gemini (31 of 360 subjects before Google's quota stopped it), Vertex AI, project "CoWork" | The registered grid, launched 2026-08-02; no spending go is on record, and this was before the all-vendor ruling of 2026-08-30 | $49.77 | Google Cloud's August bill, traced in worklog entry "Cost finding: the Stage 3 Gemini arm cost $49.77…" (`558a695a`) |
 | 2026-10-07 | The outside-model poll, Gemini 3.1 Pro, both rounds | "Go" (John, quoted in the poll's method file) | about $0.14, estimated | token counts in `docs/outside-perspective/replies/2026-10-07-manifest.json` (26,228 in; 7,290 out, thinking included) at $2 and $12 per million, the rate the Gate A index used |
-| 2026-10-09 | Gate A tier 2 on the two-sided question text, Gemini 3.1 Pro | The review protocol's tier 2 step, run by API. The overseer's brief said to stop before any tier costing more than about $1; the session went ahead on the expected cost, so no go covered the part above $1 | about $0.16, estimated | `docs/reviews/2026-10-09-two-sided-question-gate-a-INDEX.md`, "What it cost" |
+| 2026-10-09 | The outside review of the two-sided question text by two other companies' models (Gate A, tier 2), Gemini 3.1 Pro | The review protocol's tier 2 step, run by API. The overseer's brief said to stop before any tier costing more than about $1; the session went ahead on the expected cost, so no go covered the part above $1 | about $0.16, estimated | `docs/reviews/2026-10-09-two-sided-question-gate-a-INDEX.md`, "What it cost" |
 | 2026-10-18 and 2026-10-19 | The battery rehearsal, entries 1 and 2, both starts, Gemini share | "Go up to $50" (John) | about $7.83 to $27.43, estimated | `docs/filtered-battery-2026-10-07/rehearsal-run-record-2026-10-19.md`, "Spend". Google's prepaid balance of $20.00 refused no payment in the second start, so the true high end is a little lower |
 
 ### OpenAI
@@ -72,13 +72,13 @@ in the total was paid by card or prepaid balance.
 | Date | What | The go | Spent | Source |
 |---|---|---|---|---|
 | 2026-10-07 | The outside-model poll, GPT-6 Astra, both rounds | "Go" (John) | about $0.81 at most, estimated | the poll's manifest (32,280 in; 12,250 out) at an assumed $10 and $40 per million, the deliberately high rate the Gate A index used, since no rate for this model is on record |
-| 2026-10-09 | Gate A tier 2, GPT-6 Astra | As for the Gemini row of that day | about $0.88 at most, estimated | the Gate A index, "What it cost" |
+| 2026-10-09 | The same outside review, GPT-6 Astra | As for the Gemini row of that day | about $0.88 at most, estimated | the Gate A index, "What it cost" |
 
 ### Anthropic
 
 | Date | What | The go | Spent | Source |
 |---|---|---|---|---|
-| 2026-08-02 | The Stage 3 registered grid, Claude arm (720 of 720 subjects) | As for the Gemini row of that day | at least $40.56: two automatic top-ups of $20.38 and $20.18; a third fired the same day and its amount was never recorded | worklog entries `558a695a` and "RULED 2026-08-30 — the A2 $400 ceiling means ALL MVM compute across vendors…" (`a3834db7`) |
+| 2026-08-02 | The Stage 3 registered grid (the retained-independence experiment), the part run on Claude models (720 of 720 subjects) | As for the Gemini row of that day | at least $40.56: two automatic top-ups of $20.38 and $20.18; a third fired the same day and its amount was never recorded | worklog entries `558a695a` and "RULED 2026-08-30 — the A2 $400 ceiling means ALL MVM compute across vendors…" (`a3834db7`) |
 | 2026-10-07 | The outside-model poll, Claude Opus 5.5, both rounds | "Go" (John) | about $0.72, estimated | the poll's manifest (40,681 in; 20,615 out) at $5 and $25 per million, the Opus rate the battery runner uses; no rate for this model is on record in the repository |
 | 2026-10-18 and 2026-10-19 | The battery rehearsal, Anthropic share, both starts | "Go up to $50" (John); vendor "Anthropic credits" for the second start, through the key ending 3AAA | about $13.06, estimated | the rehearsal run record, "Spend" |
 | 2026-10-19 | Entry 1's far-end gate, repair step 1 (both vendors together) | "Agreed" (John, to option (c)) | about $1.12, estimated | `docs/filtered-battery-2026-10-07/farend-repair-step1-result-2026-10-19.md`, "Cost" |
@@ -89,7 +89,8 @@ The outside reviews of 2026-09-25 (Amendment A3's closure text) and
 2026-10-06 (the successor's registration, version 4) were run by John in the
 ChatGPT and Gemini apps under his own subscriptions, and filed word for word
 (`experiments/06-mvm-0a-constructed-self-index/reviews/2026-09-21-a3-closure-*.md`
-and `2026-10-04-successor-v4-*.md`). They added nothing to any bill, so they
+and `2026-10-04-successor-v4-*.md`). The programme review of 2026-09-20 was pasted
+in by John through the same two apps and likewise has no row. They added nothing to any bill, so they
 carry no row. Every run on the Mac, including the split removal test's
 rehearsal on 2026-10-24 before it moved to RunPod, cost $0.
 
@@ -102,15 +103,18 @@ so they are **not in the total**.
    the two recorded ones, during the Stage 3 grid's Claude arm, and its
    amount was never written down. John's figure of 2026-08-30 allowed up to
    about $18 for it. Anthropic's console, Billing page, holds it.
-2. **Experiment 1's judge calls, July 2026.** The removal test's self-report
-   battery was scored by Claude Opus through the API
-   (`experiments/01-self-indexing-removal-test/src/judge.py`), and the paper
-   puts that at "low tens of dollars of judge calls". No bill or worklog row
-   for it was found.
+2. **Experiment 1's judge calls and its outside design review, July 2026.**
+   The removal test's self-report battery was scored by Claude Opus through
+   the API (`experiments/01-self-indexing-removal-test/src/judge.py`), and its
+   design was attacked by Gemini 3.1 Pro and answered by Claude through the
+   API (`red_team.py` and `defend.py` beside it). The paper puts the judge
+   calls at "low tens of dollars". No bill or worklog row for any of it was
+   found.
 3. **Any Stage 3 calls before the registered grid of 2026-08-02**, such as
    pilots. None is recorded with a cost.
-4. **Google Cloud's July bill of $2.86**, which the 2026-08-30 finance review
-   did not attribute to anything. It may not be this project's.
+4. **Google Cloud's July bill of $2.86, and the $2.75 of August's bill
+   ($52.52) outside the Gemini arm's $49.77**, which the 2026-08-30 finance
+   review did not attribute to anything. They may not be this project's.
 
 Together these could be roughly $20 to $50, on the paper's own words and
 John's 2026-08-30 allowance, but that is a guess and is not counted.
@@ -156,6 +160,14 @@ Three things were missing from it:
   range's top end also allowed about $19 for the third Anthropic top-up,
   which is now listed as untraced instead.)
 
+The spending review of 2026-09-16 (`docs/w37-spend-review-2026-09-16.md`,
+section 6) rebuilt John's 2026-08-30 figure differently, as the earlier
+RunPod spend plus the RunPod spend since 2026-08-07 plus the Gemini arm, and
+gave a "known all-vendor spend" of $307.95. That rebuild left out the
+Anthropic top-ups of 2026-08-02 (at least $40.56), which the ruling of
+2026-08-30 counted. This record counts both the earlier RunPod spend and the
+Anthropic top-ups, so it supersedes that rebuild.
+
 ## What needs John's ruling
 
 1. **The network volume's standing charge has no go.** It is about $0.24 a
@@ -192,10 +204,10 @@ second readers stay on a non-Claude model whatever the credit balance.
 
 | Date | What | Vendor | The go | Estimate and ceiling | Spent | Source |
 |---|---|---|---|---|---|---|
-| 2026-10-18 | Measurement rehearsal of battery entries 1 and 2, first start | Anthropic and Google, by API | "Go up to $50" (John, relayed by the fifth master session) | $18.26 to $37.86; ceilings $27 for entry 1 and $23 for entry 2 | about $2.88 to $7.13 by the runner's estimate; true bill on the vendors' consoles | worklog rows 4110fb03 (before) and 255fff69 (after) |
+| 2026-10-18 | Measurement rehearsal of battery entries 1 and 2, first start | Anthropic and Google, by API | "Go up to $50" (John, relayed by the fifth master session) | $18.26 to $37.86; ceilings $27 for entry 1 and $23 for entry 2 | about $2.88 to $7.13 by the runner's estimate; true bill on the vendors' consoles | the worklog row written before the first start (`4110fb03`) and the one written after it (`255fff69`) |
 | 2026-10-19 | The same rehearsal, second start, both entries to the end | Anthropic credits (key ending 3AAA) and Google, by API | the same go and ceilings | as above | the second start alone: about $18.01 to $33.36 by the runner's estimate (the whole run, both starts, is about $20.89 to $40.49: Anthropic about $13.06, Gemini about $7.83 to $27.43); Google refused no payment against a $20.00 prepaid balance; true bill on the vendors' consoles | `docs/filtered-battery-2026-10-07/rehearsal-run-record-2026-10-19.md`; the worklog row after |
-| 2026-10-19 | Entry 1's far-end gate, repair step 1 (a diagnosis; 383 calls) | Anthropic credits (key ending 3AAA) and Google, by API | "Agreed" (John, to option (c), relayed by the sixth master session) | about $0.48 to $2.00; ceiling $5 | about $1.12 by the runner's estimate | `docs/filtered-battery-2026-10-07/farend-repair-step1-result-2026-10-19.md`; worklog row e45c580e (before) |
-| 2026-10-24 | The split removal test's two free fixes, the rest of the run (two swap bounds and six removal checks), moved off the Mac because it was running hot | RunPod, one RTX 4090, community cloud | "Go on RunPod for the rest of the Minimum Viable Mind run, up to $2. I'll put my Hugging Face token on the pod." (John, relayed by the fourth weekend master session) | about $0.70; ceiling $2.00, enforced by deleting the machine from the laptop 2 hours after creation | about $0.77: the balance fell from $66.38 to $65.62 (machine created 13:31:39 PDT, deleted 14:25:22 PDT at the master session's instruction; a secure-cloud RTX 4090 at $0.89 an hour, because no community-cloud one was free); RunPod's billing row for the day not yet posted | `experiments/09-split-removal-test/rehearsal/fixes-findings-2026-10-24.md`; the worklog rows before and after |
+| 2026-10-19 | Entry 1's far-end gate, repair step 1 (a diagnosis; 383 calls) | Anthropic credits (key ending 3AAA) and Google, by API | "Agreed" (John, to option (c), relayed by the sixth master session) | about $0.48 to $2.00; ceiling $5 | about $1.12 by the runner's estimate | `docs/filtered-battery-2026-10-07/farend-repair-step1-result-2026-10-19.md`; the worklog row written before the repair's first call (`e45c580e`) |
+| 2026-10-24 | The split removal test's two free fixes, the rest of the run (two swap bounds and six removal checks), moved off the Mac because it was running hot | RunPod, one RTX 4090 graphics card, from its cheaper shared pool | "Go on RunPod for the rest of the Minimum Viable Mind run, up to $2. I'll put my Hugging Face token on the pod." (John, relayed by the fourth weekend master session) | about $0.70; ceiling $2.00, enforced by deleting the machine from the laptop 2 hours after creation | about $0.77: the balance fell from $66.38 to $65.62 (machine created 13:31:39 PDT, deleted 14:25:22 PDT at the master session's instruction; a secure-cloud RTX 4090 at $0.89 an hour, because no community-cloud one was free); RunPod's billing row for the day not yet posted | `experiments/09-split-removal-test/rehearsal/fixes-findings-2026-10-24.md`; the worklog rows before and after |
 
 Later starts of the same rehearsal run under the same go and ceilings, and
 each adds a row.
