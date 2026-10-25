@@ -249,7 +249,11 @@ test's spend "predates this cap", and API calls are recorded in the worklog,
 not the ledger. On 2026-08-30 John put true spend to date across every
 vendor at about $281 to $300, when the ledger read about $181. From the
 record as it stands, the programme's spend across every vendor is roughly
-$335 to $360:
+$335 to $360 *(corrected 2026-10-25: the completed spending record,
+`docs/spending-record.md`, puts it at about $419 to $439 from 2026-07-12 to
+2026-10-24, with a few earlier API calls untraced and not counted; the table
+below missed the rented machines before the ledger opened, $42.85, and
+storage with no ledger row)*:
 
 | Part | Figure |
 |---|---|
