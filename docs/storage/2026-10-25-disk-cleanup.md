@@ -48,7 +48,7 @@ all of them were kept. A few small files do repeat byte for byte across the fold
 files ending `.DONE`, copied training logs and results files in `a3_30m_seed0`, `a3_30m_seed1`,
 `a3_30m_seed2` and the `pilot_a1_*` folders, and one `watch.log` that appears twice in the
 reruns archive). They were copied as they are, to keep the folder structure exactly as it was.
-The largest group is 25 identical `.DONE` marker files, each a few bytes.
+The largest group is 23 identical `.DONE` marker files.
 
 ## iCloud status
 
