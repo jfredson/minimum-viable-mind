@@ -12,7 +12,7 @@ every input, so a later session can check what was sent and what came back.
 Keys are read at run time and never printed or written anywhere:
   GEMINI_API_KEY and ANTHROPIC_API_KEY from the environment, falling back to
   the repository's gitignored .env and then the shell start-up files; OPENAI_API_KEY from
-  ~/Documents/.agi-zeitgeist/credentials.env (the same file the AGI Zeitgeist
+  ~/.config/sentient-horizons/agi-zeitgeist.env (the same file the AGI Zeitgeist
   cross-family script reads).
 
 Usage, from the repository root:
@@ -92,7 +92,7 @@ def key_env(name: str) -> str:
 
 
 def key_openai() -> str:
-    path = Path.home() / "Documents" / ".agi-zeitgeist" / "credentials.env"
+    path = Path.home() / ".config" / "sentient-horizons" / "agi-zeitgeist.env"
     if not path.exists():
         raise SystemExit("stopped: the OpenAI credentials file is not where the Zeitgeist script reads it")
     for line in path.read_text().splitlines():
