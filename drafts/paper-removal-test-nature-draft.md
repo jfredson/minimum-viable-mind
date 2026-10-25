@@ -125,7 +125,8 @@ as it ran", on John's ruling 3a of 2026-10-24
 the removal test means under the revised account's map of features, drawing
 on the re-reading of the July test done that day. No registered number,
 verdict or label changes. The paragraph was checked by a session that did
-not write it (`docs/reviews/2026-10-25-paper-map-paragraph-check-claude-code.md`);
+not write it (`docs/reviews/2026-10-25-paper-map-paragraph-check-claude-code.md`),
+and its four wording fixes were applied after that check, changing no number;
 it has not yet been through the Voice Calibration Protocol or the Cold Reader
 pass, which the whole draft still owes before it leaves this repo.*
 
@@ -944,19 +945,21 @@ comparison. If the split is removed, practised routines should carry on while
 flexible response to something new collapses, and this should hold on tasks
 that never mention the system as well as on tasks that do. We re-read the
 registered per-item answers against that prediction after the account
-changed, with the method committed before the analysis ran
+changed, with the grouping fixed in a method written down before the
+analysis, whose commit holds no output
 (`experiments/01-self-indexing-removal-test/reread-under-the-map-findings-2026-10-24.md`;
 unregistered, no model run). By the rule fixed in that method, the comparison
 cannot be read. On the tasks that never mention the model, the flexible items
 lost 0.250 and the routine items 0.125, a gap of +0.125 whose 95% interval
 runs from −0.167 to +0.375. Because there were only eight routine items, that
-interval is wider than the limit of 0.5 the method set for a readable gap.
-As description only, all six flexible failures were multi-step reasoning
-items, so the damage sat in one kind of task rather than across flexible
-response. The removal test is therefore silent on the split. Its items could
+interval spans 0.54, more than the 0.5 the method set as the widest a
+readable gap may have, so the removal test is silent on the split. As
+description only, all six flexible failures were multi-step reasoning items,
+and the seventh failure on these tasks was a routine item: the damage sat in
+one kind of task rather than across flexible response. The test's items could
 not support the comparison between routine and new problems that the revised
-prediction turns on, and the items it treated as flexible were familiar task
-shapes that need more steps, not problems new to the model. No registered
+prediction turns on, and the items the re-reading counted as flexible were
+familiar task shapes that need more steps, not problems new to the model. No registered
 number, verdict or label in this paper changes. What the re-reading gives is
 a list of what a test of the split would need: many more routine items, none
 of which depend on who said what; problems that are actually new to the
