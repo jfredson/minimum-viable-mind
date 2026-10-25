@@ -1,0 +1,2374 @@
+{
+ "conditions": {
+  "baseline": {
+   "T_self_irrelevant": {
+    "items": [
+     {
+      "id": "tt01",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt02",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt04",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt05",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt06",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt07",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt08",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt09",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt10",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt11",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt12",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt13",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt14",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt15",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt16",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt17",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt18",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt19",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt20",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt21",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt22",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt23",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt24",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt25",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt26",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt27",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt28",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt29",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt30",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt31",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt32",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt34",
+      "category": "multi_step_reasoning",
+      "correct": true
+     }
+    ]
+   },
+   "T_self_relevant": {
+    "items": [
+     {
+      "id": "tsr01",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr02",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr03",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr04",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr05",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr06",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr07",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr08",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr09",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr10",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr11",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr12",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr13",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr14",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr15",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr16",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr17",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr18",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr19",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr20",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr23",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr24",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr25",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr27",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr28",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr29",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr30",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr31",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr32",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr33",
+      "category": "role_binding",
+      "correct": true
+     }
+    ]
+   },
+   "T_syntax": {
+    "items": [
+     {
+      "id": "tsx01",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx02",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx03",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx04",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx05",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx06",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx07",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx08",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx09",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx10",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx11",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx13",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx14",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx15",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx16",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx17",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx18",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx19",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx20",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx24",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx25",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx26",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx27",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx28",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx29",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx30",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx31",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx32",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx33",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx35",
+      "category": "syntax_turn_count",
+      "correct": true
+     }
+    ]
+   }
+  },
+  "idxres_mean_k16": {
+   "T_self_irrelevant": {
+    "items": [
+     {
+      "id": "tt01",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt02",
+      "category": "multi_step_reasoning",
+      "correct": false
+     },
+     {
+      "id": "tt04",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt05",
+      "category": "multi_step_reasoning",
+      "correct": false
+     },
+     {
+      "id": "tt06",
+      "category": "multi_step_reasoning",
+      "correct": false
+     },
+     {
+      "id": "tt07",
+      "category": "multi_step_reasoning",
+      "correct": false
+     },
+     {
+      "id": "tt08",
+      "category": "multi_step_reasoning",
+      "correct": false
+     },
+     {
+      "id": "tt09",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt10",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt11",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt12",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt13",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt14",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt15",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt16",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt17",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt18",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt19",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt20",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt21",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt22",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt23",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt24",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt25",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt26",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt27",
+      "category": "instruction_following",
+      "correct": false
+     },
+     {
+      "id": "tt28",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt29",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt30",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt31",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt32",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt34",
+      "category": "multi_step_reasoning",
+      "correct": false
+     }
+    ]
+   },
+   "T_self_relevant": {
+    "items": [
+     {
+      "id": "tsr01",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr02",
+      "category": "own_output_binding",
+      "correct": false
+     },
+     {
+      "id": "tsr03",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr04",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr05",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr06",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr07",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr08",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr09",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr10",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr11",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr12",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr13",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr14",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr15",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr16",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr17",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr18",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr19",
+      "category": "own_commitment",
+      "correct": false
+     },
+     {
+      "id": "tsr20",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr23",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr24",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr25",
+      "category": "role_binding",
+      "correct": false
+     },
+     {
+      "id": "tsr27",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr28",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr29",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr30",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr31",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr32",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr33",
+      "category": "role_binding",
+      "correct": true
+     }
+    ]
+   },
+   "T_syntax": {
+    "items": [
+     {
+      "id": "tsx01",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx02",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx03",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx04",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx05",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx06",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx07",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx08",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx09",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx10",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx11",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx13",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx14",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx15",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx16",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx17",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx18",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx19",
+      "category": "syntax_user_turn",
+      "correct": false
+     },
+     {
+      "id": "tsx20",
+      "category": "syntax_user_turn",
+      "correct": false
+     },
+     {
+      "id": "tsx24",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx25",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx26",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx27",
+      "category": "syntax_turn_count",
+      "correct": false
+     },
+     {
+      "id": "tsx28",
+      "category": "syntax_turn_count",
+      "correct": false
+     },
+     {
+      "id": "tsx29",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx30",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx31",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx32",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx33",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx35",
+      "category": "syntax_turn_count",
+      "correct": true
+     }
+    ]
+   }
+  },
+  "idxres_directional_k16": {
+   "T_self_irrelevant": {
+    "items": [
+     {
+      "id": "tt01",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt02",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt04",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt05",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt06",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt07",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt08",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt09",
+      "category": "coreference_binding",
+      "correct": false
+     },
+     {
+      "id": "tt10",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt11",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt12",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt13",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt14",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt15",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt16",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt17",
+      "category": "needle_synthesis",
+      "correct": false
+     },
+     {
+      "id": "tt18",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt19",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt20",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt21",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt22",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt23",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt24",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt25",
+      "category": "instruction_following",
+      "correct": false
+     },
+     {
+      "id": "tt26",
+      "category": "instruction_following",
+      "correct": false
+     },
+     {
+      "id": "tt27",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt28",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt29",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt30",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt31",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt32",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt34",
+      "category": "multi_step_reasoning",
+      "correct": true
+     }
+    ]
+   },
+   "T_self_relevant": {
+    "items": [
+     {
+      "id": "tsr01",
+      "category": "own_output_binding",
+      "correct": false
+     },
+     {
+      "id": "tsr02",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr03",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr04",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr05",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr06",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr07",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr08",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr09",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr10",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr11",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr12",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr13",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr14",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr15",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr16",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr17",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr18",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr19",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr20",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr23",
+      "category": "role_binding",
+      "correct": false
+     },
+     {
+      "id": "tsr24",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr25",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr27",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr28",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr29",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr30",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr31",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr32",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr33",
+      "category": "role_binding",
+      "correct": true
+     }
+    ]
+   },
+   "T_syntax": {
+    "items": [
+     {
+      "id": "tsx01",
+      "category": "syntax_own_turn",
+      "correct": false
+     },
+     {
+      "id": "tsx02",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx03",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx04",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx05",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx06",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx07",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx08",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx09",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx10",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx11",
+      "category": "syntax_user_turn",
+      "correct": false
+     },
+     {
+      "id": "tsx13",
+      "category": "syntax_user_turn",
+      "correct": false
+     },
+     {
+      "id": "tsx14",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx15",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx16",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx17",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx18",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx19",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx20",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx24",
+      "category": "syntax_turn_count",
+      "correct": false
+     },
+     {
+      "id": "tsx25",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx26",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx27",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx28",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx29",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx30",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx31",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx32",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx33",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx35",
+      "category": "syntax_turn_count",
+      "correct": true
+     }
+    ]
+   }
+  },
+  "narrative_mean_k16": {
+   "T_self_irrelevant": {
+    "items": [
+     {
+      "id": "tt01",
+      "category": "multi_step_reasoning",
+      "correct": false
+     },
+     {
+      "id": "tt02",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt04",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt05",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt06",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt07",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt08",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt09",
+      "category": "coreference_binding",
+      "correct": false
+     },
+     {
+      "id": "tt10",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt11",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt12",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt13",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt14",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt15",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt16",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt17",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt18",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt19",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt20",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt21",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt22",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt23",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt24",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt25",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt26",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt27",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt28",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt29",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt30",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt31",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt32",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt34",
+      "category": "multi_step_reasoning",
+      "correct": true
+     }
+    ]
+   },
+   "T_self_relevant": {
+    "items": [
+     {
+      "id": "tsr01",
+      "category": "own_output_binding",
+      "correct": false
+     },
+     {
+      "id": "tsr02",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr03",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr04",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr05",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr06",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr07",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr08",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr09",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr10",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr11",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr12",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr13",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr14",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr15",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr16",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr17",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr18",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr19",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr20",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr23",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr24",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr25",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr27",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr28",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr29",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr30",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr31",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr32",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr33",
+      "category": "role_binding",
+      "correct": true
+     }
+    ]
+   },
+   "T_syntax": {
+    "items": [
+     {
+      "id": "tsx01",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx02",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx03",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx04",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx05",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx06",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx07",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx08",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx09",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx10",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx11",
+      "category": "syntax_user_turn",
+      "correct": false
+     },
+     {
+      "id": "tsx13",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx14",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx15",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx16",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx17",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx18",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx19",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx20",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx24",
+      "category": "syntax_turn_count",
+      "correct": false
+     },
+     {
+      "id": "tsx25",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx26",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx27",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx28",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx29",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx30",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx31",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx32",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx33",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx35",
+      "category": "syntax_turn_count",
+      "correct": true
+     }
+    ]
+   }
+  },
+  "expert_mean_k16": {
+   "T_self_irrelevant": {
+    "items": [
+     {
+      "id": "tt01",
+      "category": "multi_step_reasoning",
+      "correct": false
+     },
+     {
+      "id": "tt02",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt04",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt05",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt06",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt07",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt08",
+      "category": "multi_step_reasoning",
+      "correct": true
+     },
+     {
+      "id": "tt09",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt10",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt11",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt12",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt13",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt14",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt15",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt16",
+      "category": "coreference_binding",
+      "correct": true
+     },
+     {
+      "id": "tt17",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt18",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt19",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt20",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt21",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt22",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt23",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt24",
+      "category": "needle_synthesis",
+      "correct": true
+     },
+     {
+      "id": "tt25",
+      "category": "instruction_following",
+      "correct": false
+     },
+     {
+      "id": "tt26",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt27",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt28",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt29",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt30",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt31",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt32",
+      "category": "instruction_following",
+      "correct": true
+     },
+     {
+      "id": "tt34",
+      "category": "multi_step_reasoning",
+      "correct": true
+     }
+    ]
+   },
+   "T_self_relevant": {
+    "items": [
+     {
+      "id": "tsr01",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr02",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr03",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr04",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr05",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr06",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr07",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr08",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr09",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr10",
+      "category": "own_output_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr11",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr12",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr13",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr14",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr15",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr16",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr17",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr18",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr19",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr20",
+      "category": "own_commitment",
+      "correct": true
+     },
+     {
+      "id": "tsr23",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr24",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr25",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr27",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr28",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr29",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr30",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr31",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr32",
+      "category": "role_binding",
+      "correct": true
+     },
+     {
+      "id": "tsr33",
+      "category": "role_binding",
+      "correct": true
+     }
+    ]
+   },
+   "T_syntax": {
+    "items": [
+     {
+      "id": "tsx01",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx02",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx03",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx04",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx05",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx06",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx07",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx08",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx09",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx10",
+      "category": "syntax_own_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx11",
+      "category": "syntax_user_turn",
+      "correct": false
+     },
+     {
+      "id": "tsx13",
+      "category": "syntax_user_turn",
+      "correct": false
+     },
+     {
+      "id": "tsx14",
+      "category": "syntax_user_turn",
+      "correct": false
+     },
+     {
+      "id": "tsx15",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx16",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx17",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx18",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx19",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx20",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx24",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx25",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx26",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx27",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx28",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx29",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx30",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx31",
+      "category": "syntax_user_turn",
+      "correct": true
+     },
+     {
+      "id": "tsx32",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx33",
+      "category": "syntax_turn_count",
+      "correct": true
+     },
+     {
+      "id": "tsx35",
+      "category": "syntax_turn_count",
+      "correct": true
+     }
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,32 @@
+{
+  "measurement": "control battery ownership-blind ceiling",
+  "method_committed_before_running": "ceiling-measurement-method.md, 2fba2ea",
+  "registered": false,
+  "loads_no_checkpoint": true,
+  "n_episodes": 4000,
+  "band": 0.05,
+  "known_answer_checks": {
+    "control_name_blind_reproduces_registered": {
+      "measured": 0.3227,
+      "registered": 0.3227,
+      "ok": true
+    },
+    "primary_reproduces_registered": {
+      "measured": 0.2921,
+      "registered": 0.2921,
+      "ok": true
+    }
+  },
+  "harness_verified": true,
+  "solvers": {
+    "S1_name_keyed_lookup": 1.0,
+    "S2_registered_reference_expected": 0.3227,
+    "S3_learned_attack": 1.0,
+    "S4_best_of_family": 1.0
+  },
+  "note_on_kinds": "S2 is an expected-value calculation, as the registered figure is defined; S1 and S3 are realized accuracies. Reported side by side and the difference in kind is stated, not hidden.",
+  "verdict": {
+    "verdict": "A \u2014 STRUCTURALLY UNSATISFIABLE",
+    "means": "a defined drop would need a baseline above 1.0, which no model can reach, so the registered differential clause was never computable for any model at any budget on any architecture"
+  }
+}

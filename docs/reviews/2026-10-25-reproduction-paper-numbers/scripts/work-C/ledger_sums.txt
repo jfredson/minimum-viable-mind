@@ -1,0 +1,25 @@
+dev sum 1.4655
+rerun sum 1.3032
+billed hours 1.0951 x1.19 = 1.3032
+  M billed*1.19 0.5044 row 0.5045 ratio A billed/life 1.001 life h 0.4236
+  T billed*1.19 0.3981 row 0.398 ratio A billed/life 1.0 life h 0.3344
+  C billed*1.19 0.4007 row 0.4007 ratio A billed/life 1.0 life h 0.3367
+lifetimes x0.99 1.0838  x1.19 1.3027
+rerun / approved 1.14: 1.143
+  to 2026-08-10 (6.645+1.943+97.035, the console figures)      +105.6230 -> 105.6230
+  2026-08-15                                                   + 18.9000 -> 124.5230
+  2026-08-16                                                   + 25.2900 -> 149.8130
+  2026-08-17                                                   + 31.6300 -> 181.4430
+  2026-09-15                                                   + 13.9200 -> 195.3630
+  2026-09-16                                                   +  0.2900 -> 195.6530
+  2026-09-17                                                   + 20.1000 -> 215.7530
+  2026-09-19 control pilot (annotation ~9.9)                   +  9.9000 -> 225.6530
+  2026-09-20 recovery                                          +  0.0670 -> 225.7200
+  2026-09-20 two refused runs                                  +  1.9040 -> 227.6240
+  2026-09-21 slice (settled 0.0077)                            +  0.0077 -> 227.6317
+  2026-09-25 slice attempt 1 (settled 0.5162)                  +  0.5162 -> 228.1479
+  2026-09-25 attempt 2                                         +  0.0525 -> 228.2004
+after dev runs 229.6659
+after reruns 230.9691 of 450
+from the ledger's annotated base 228.17: 230.9387
+without the 2026-10-06 settled-billing correction (base 228.15): 230.9187
