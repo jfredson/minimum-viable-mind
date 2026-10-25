@@ -1,0 +1,612 @@
+{
+ "exact": [
+  [
+   "primary T_self_irrelevant item",
+   [
+    0.2188,
+    0.0938,
+    0.375
+   ],
+   [
+    0.2188,
+    0.0938,
+    0.375
+   ],
+   true
+  ],
+  [
+   "primary T_self_irrelevant two-level",
+   [
+    0.2188,
+    0.0,
+    0.5938
+   ],
+   [
+    0.2188,
+    0.0,
+    0.5938
+   ],
+   true
+  ],
+  [
+   "primary T_self_relevant item",
+   [
+    0.1,
+    0.0,
+    0.2
+   ],
+   [
+    0.1,
+    0.0,
+    0.2
+   ],
+   true
+  ],
+  [
+   "primary T_self_relevant two-level",
+   [
+    0.1,
+    0.0,
+    0.2008
+   ],
+   [
+    0.1,
+    0.0,
+    0.2008
+   ],
+   true
+  ],
+  [
+   "primary T_syntax item",
+   [
+    0.1333,
+    0.0333,
+    0.2667
+   ],
+   [
+    0.1333,
+    0.0333,
+    0.2667
+   ],
+   true
+  ],
+  [
+   "primary T_syntax two-level",
+   [
+    0.1333,
+    0.0,
+    0.3
+   ],
+   [
+    0.1333,
+    0.0,
+    0.3
+   ],
+   true
+  ],
+  [
+   "router gap primary item",
+   [
+    0.0333,
+    -0.1333,
+    0.2
+   ],
+   [
+    0.0333,
+    -0.1333,
+    0.2
+   ],
+   true
+  ],
+  [
+   "router gap primary two-level",
+   [
+    0.0333,
+    -0.1333,
+    0.2333
+   ],
+   [
+    0.0333,
+    -0.1333,
+    0.2333
+   ],
+   true
+  ]
+ ],
+ "placements": {
+  "idxres_directional_k16|T_self_irrelevant|item": {
+   "committed": [
+    0.125,
+    0.0312,
+    0.25
+   ],
+   "hits": 1792,
+   "total": 1792,
+   "distinct": [
+    [
+     0.125,
+     0.0312,
+     0.25,
+     1792
+    ]
+   ]
+  },
+  "idxres_directional_k16|T_self_irrelevant|two-level": {
+   "committed": [
+    0.125,
+    0.0,
+    0.2812
+   ],
+   "hits": 1792,
+   "total": 1792,
+   "distinct": [
+    [
+     0.125,
+     0.0,
+     0.2812,
+     1792
+    ]
+   ]
+  },
+  "idxres_directional_k16|T_self_relevant|item": {
+   "committed": [
+    0.0667,
+    0.0,
+    0.1667
+   ],
+   "hits": 100,
+   "total": 100,
+   "distinct": [
+    [
+     0.0667,
+     0.0,
+     0.1667,
+     100
+    ]
+   ]
+  },
+  "idxres_directional_k16|T_self_relevant|two-level": {
+   "committed": [
+    0.0667,
+    0.0,
+    0.2
+   ],
+   "hits": 91,
+   "total": 100,
+   "distinct": [
+    [
+     0.0667,
+     0.0,
+     0.2,
+     91
+    ],
+    [
+     0.0667,
+     0.0,
+     0.1667,
+     8
+    ],
+    [
+     0.0667,
+     0.0,
+     0.1675,
+     1
+    ]
+   ]
+  },
+  "idxres_directional_k16|T_syntax|item": {
+   "committed": [
+    0.1333,
+    0.0333,
+    0.2667
+   ],
+   "hits": 3000,
+   "total": 3000,
+   "distinct": [
+    [
+     0.1333,
+     0.0333,
+     0.2667,
+     3000
+    ]
+   ]
+  },
+  "idxres_directional_k16|T_syntax|two-level": {
+   "committed": [
+    0.1333,
+    0.0333,
+    0.2667
+   ],
+   "hits": 2992,
+   "total": 3000,
+   "distinct": [
+    [
+     0.1333,
+     0.0333,
+     0.2667,
+     2992
+    ],
+    [
+     0.1333,
+     0.0333,
+     0.3,
+     6
+    ],
+    [
+     0.1333,
+     0.0333,
+     0.2675,
+     2
+    ]
+   ]
+  },
+  "narrative_mean_k16|T_self_irrelevant|item": {
+   "committed": [
+    0.0625,
+    0.0,
+    0.1562
+   ],
+   "hits": 64,
+   "total": 64,
+   "distinct": [
+    [
+     0.0625,
+     0.0,
+     0.1562,
+     64
+    ]
+   ]
+  },
+  "narrative_mean_k16|T_self_irrelevant|two-level": {
+   "committed": [
+    0.0625,
+    0.0,
+    0.1875
+   ],
+   "hits": 64,
+   "total": 64,
+   "distinct": [
+    [
+     0.0625,
+     0.0,
+     0.1875,
+     64
+    ]
+   ]
+  },
+  "narrative_mean_k16|T_self_relevant|item": {
+   "committed": [
+    0.0333,
+    0.0,
+    0.1
+   ],
+   "hits": 10,
+   "total": 10,
+   "distinct": [
+    [
+     0.0333,
+     0.0,
+     0.1,
+     10
+    ]
+   ]
+  },
+  "narrative_mean_k16|T_self_relevant|two-level": {
+   "committed": [
+    0.0333,
+    0.0,
+    0.1333
+   ],
+   "hits": 10,
+   "total": 10,
+   "distinct": [
+    [
+     0.0333,
+     0.0,
+     0.1333,
+     10
+    ]
+   ]
+  },
+  "narrative_mean_k16|T_syntax|item": {
+   "committed": [
+    0.0667,
+    0.0,
+    0.1667
+   ],
+   "hits": 100,
+   "total": 100,
+   "distinct": [
+    [
+     0.0667,
+     0.0,
+     0.1667,
+     100
+    ]
+   ]
+  },
+  "narrative_mean_k16|T_syntax|two-level": {
+   "committed": [
+    0.0667,
+    0.0,
+    0.2
+   ],
+   "hits": 79,
+   "total": 100,
+   "distinct": [
+    [
+     0.0667,
+     0.0,
+     0.2,
+     79
+    ],
+    [
+     0.0667,
+     0.0,
+     0.1667,
+     21
+    ]
+   ]
+  },
+  "expert_mean_k16|T_self_irrelevant|item": {
+   "committed": [
+    0.0625,
+    0.0,
+    0.1562
+   ],
+   "hits": 64,
+   "total": 64,
+   "distinct": [
+    [
+     0.0625,
+     0.0,
+     0.1562,
+     64
+    ]
+   ]
+  },
+  "expert_mean_k16|T_self_irrelevant|two-level": {
+   "committed": [
+    0.0625,
+    0.0,
+    0.1875
+   ],
+   "hits": 64,
+   "total": 64,
+   "distinct": [
+    [
+     0.0625,
+     0.0,
+     0.1875,
+     64
+    ]
+   ]
+  },
+  "expert_mean_k16|T_self_relevant|item": {
+   "committed": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "hits": 1,
+   "total": 1,
+   "distinct": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     1
+    ]
+   ]
+  },
+  "expert_mean_k16|T_self_relevant|two-level": {
+   "committed": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "hits": 1,
+   "total": 1,
+   "distinct": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     1
+    ]
+   ]
+  },
+  "expert_mean_k16|T_syntax|item": {
+   "committed": [
+    0.1,
+    0.0,
+    0.2333
+   ],
+   "hits": 109,
+   "total": 120,
+   "distinct": [
+    [
+     0.1,
+     0.0,
+     0.2333,
+     109
+    ],
+    [
+     0.1,
+     0.0,
+     0.2,
+     9
+    ],
+    [
+     0.1,
+     0.0,
+     0.2008,
+     2
+    ]
+   ]
+  },
+  "expert_mean_k16|T_syntax|two-level": {
+   "committed": [
+    0.1,
+    0.0,
+    0.3333
+   ],
+   "hits": 116,
+   "total": 120,
+   "distinct": [
+    [
+     0.1,
+     0.0,
+     0.3333,
+     116
+    ],
+    [
+     0.1,
+     0.0,
+     0.3,
+     4
+    ]
+   ]
+  },
+  "differential|item": {
+   "committed": [
+    0.1562,
+    0.0,
+    0.3125
+   ],
+   "hits": 44,
+   "total": 64,
+   "distinct": [
+    [
+     0.1562,
+     0.0,
+     0.3125,
+     44
+    ],
+    [
+     0.1562,
+     -0.0312,
+     0.3438,
+     12
+    ],
+    [
+     0.1562,
+     0.0312,
+     0.2812,
+     6
+    ],
+    [
+     0.1562,
+     -0.0312,
+     0.3125,
+     1
+    ],
+    [
+     0.1562,
+     0.0,
+     0.3438,
+     1
+    ]
+   ]
+  },
+  "differential|two-level": {
+   "committed": [
+    0.1562,
+    -0.0625,
+    0.4688
+   ],
+   "hits": 33,
+   "total": 64,
+   "distinct": [
+    [
+     0.1562,
+     -0.0625,
+     0.4688,
+     33
+    ],
+    [
+     0.1562,
+     -0.0625,
+     0.5,
+     23
+    ],
+    [
+     0.1562,
+     0.0,
+     0.4688,
+     6
+    ],
+    [
+     0.1562,
+     0.0,
+     0.4695,
+     1
+    ],
+    [
+     0.1562,
+     0.0,
+     0.5,
+     1
+    ]
+   ]
+  },
+  "dirgap|item": {
+   "committed": [
+    0.0667,
+    -0.0667,
+    0.2333
+   ],
+   "hits": 2543,
+   "total": 3000,
+   "distinct": [
+    [
+     0.0667,
+     -0.0667,
+     0.2333,
+     2543
+    ],
+    [
+     0.0667,
+     -0.1,
+     0.2333,
+     208
+    ],
+    [
+     0.0667,
+     -0.0667,
+     0.2,
+     184
+    ],
+    [
+     0.0667,
+     -0.0667,
+     0.2008,
+     26
+    ],
+    [
+     0.0667,
+     -0.0675,
+     0.2333,
+     17
+    ]
+   ]
+  },
+  "dirgap|two-level": {
+   "committed": [
+    0.0667,
+    -0.1,
+    0.2333
+   ],
+   "hits": 3000,
+   "total": 3000,
+   "distinct": [
+    [
+     0.0667,
+     -0.1,
+     0.2333,
+     3000
+    ]
+   ]
+  }
+ }
+}

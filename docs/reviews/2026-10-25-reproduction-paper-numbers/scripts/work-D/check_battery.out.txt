@@ -1,0 +1,6 @@
+repair step 1: items 59 (A 30, B 29); re-asserted 42 -> 0.712; bank A 20/30, bank B 22/29; bank A whole conversation visible 1/30; unreadable 0; calls in json 383
+entry 1 r_reference 0.2711864406779661 = 16/59? True
+entry 1 gates {'i_S2_floor': True, 'ii_reference_far_end': False, 'ii_plain_model_live': True, 'iii_judge_reliability': True, 'iv_min_cells': True} failed: ['ii_reference_far_end']
+calls from JSONs: e1 1118 + earlier 437 + e2 1077 = 2632
+entry 2: n 87; own 48/87, other 57/87; own-other = -0.1034 (json -0.1034); cells of margin 9; 8/87 = 0.0920; 29 items x 3 models = 87
+entry 2 primary {'own_minus_other': -0.10344827586206896, 'lo': -0.1839080459770115, 'hi': -0.022988505747126436, 'reading': 'no verdict'} endorsement 1.0 labels moved 2 gates {'endorsement_turn0': True, 'judge_reliability_v12': True}

@@ -1,0 +1,591 @@
+{
+  "method": "reread-under-the-map-method-2026-10-24.md",
+  "n_boot": 10000,
+  "seed": 0,
+  "conditions": {
+    "idxres_mean_k16": {
+      "categories": {
+        "coreference_binding": {
+          "n": 8,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "instruction_following": {
+          "n": 8,
+          "wrong": 1,
+          "drop": 0.125,
+          "ci95": [
+            0.0,
+            0.375
+          ]
+        },
+        "multi_step_reasoning": {
+          "n": 8,
+          "wrong": 6,
+          "drop": 0.75,
+          "ci95": [
+            0.375,
+            1.0
+          ]
+        },
+        "needle_synthesis": {
+          "n": 8,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "own_commitment": {
+          "n": 10,
+          "wrong": 1,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.3
+          ]
+        },
+        "own_output_binding": {
+          "n": 10,
+          "wrong": 1,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.3
+          ]
+        },
+        "role_binding": {
+          "n": 10,
+          "wrong": 1,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.3
+          ]
+        },
+        "syntax_own_turn": {
+          "n": 10,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "syntax_turn_count": {
+          "n": 10,
+          "wrong": 2,
+          "drop": 0.2,
+          "ci95": [
+            0.0,
+            0.5
+          ]
+        },
+        "syntax_user_turn": {
+          "n": 10,
+          "wrong": 2,
+          "drop": 0.2,
+          "ci95": [
+            0.0,
+            0.5
+          ]
+        }
+      },
+      "groups": {
+        "G1_flexible_not_about_turns": {
+          "n": 24,
+          "wrong": 6,
+          "drop": 0.25,
+          "ci95": [
+            0.08333333333333333,
+            0.4166666666666667
+          ]
+        },
+        "G2_routine_not_about_turns": {
+          "n": 8,
+          "wrong": 1,
+          "drop": 0.125,
+          "ci95": [
+            0.0,
+            0.375
+          ]
+        },
+        "G3_flexible_about_turns": {
+          "n": 30,
+          "wrong": 3,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.23333333333333334
+          ]
+        },
+        "G4_routine_about_turns": {
+          "n": 30,
+          "wrong": 4,
+          "drop": 0.13333333333333333,
+          "ci95": [
+            0.03333333333333333,
+            0.26666666666666666
+          ]
+        }
+      },
+      "gap_G1_minus_G2": {
+        "value": 0.125,
+        "ci95": [
+          -0.16666666666666669,
+          0.375
+        ]
+      },
+      "gap_G3_minus_G4": {
+        "value": -0.033333333333333326,
+        "ci95": [
+          -0.2,
+          0.13333333333333333
+        ]
+      }
+    },
+    "idxres_directional_k16": {
+      "categories": {
+        "coreference_binding": {
+          "n": 8,
+          "wrong": 1,
+          "drop": 0.125,
+          "ci95": [
+            0.0,
+            0.375
+          ]
+        },
+        "instruction_following": {
+          "n": 8,
+          "wrong": 2,
+          "drop": 0.25,
+          "ci95": [
+            0.0,
+            0.625
+          ]
+        },
+        "multi_step_reasoning": {
+          "n": 8,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "needle_synthesis": {
+          "n": 8,
+          "wrong": 1,
+          "drop": 0.125,
+          "ci95": [
+            0.0,
+            0.375
+          ]
+        },
+        "own_commitment": {
+          "n": 10,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "own_output_binding": {
+          "n": 10,
+          "wrong": 1,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.3
+          ]
+        },
+        "role_binding": {
+          "n": 10,
+          "wrong": 1,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.3
+          ]
+        },
+        "syntax_own_turn": {
+          "n": 10,
+          "wrong": 1,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.3
+          ]
+        },
+        "syntax_turn_count": {
+          "n": 10,
+          "wrong": 1,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.3
+          ]
+        },
+        "syntax_user_turn": {
+          "n": 10,
+          "wrong": 2,
+          "drop": 0.2,
+          "ci95": [
+            0.0,
+            0.5
+          ]
+        }
+      },
+      "groups": {
+        "G1_flexible_not_about_turns": {
+          "n": 24,
+          "wrong": 2,
+          "drop": 0.08333333333333333,
+          "ci95": [
+            0.0,
+            0.20833333333333334
+          ]
+        },
+        "G2_routine_not_about_turns": {
+          "n": 8,
+          "wrong": 2,
+          "drop": 0.25,
+          "ci95": [
+            0.0,
+            0.5
+          ]
+        },
+        "G3_flexible_about_turns": {
+          "n": 30,
+          "wrong": 2,
+          "drop": 0.06666666666666667,
+          "ci95": [
+            0.0,
+            0.16666666666666666
+          ]
+        },
+        "G4_routine_about_turns": {
+          "n": 30,
+          "wrong": 4,
+          "drop": 0.13333333333333333,
+          "ci95": [
+            0.03333333333333333,
+            0.26666666666666666
+          ]
+        }
+      },
+      "gap_G1_minus_G2": {
+        "value": -0.16666666666666669,
+        "ci95": [
+          -0.5,
+          0.125
+        ]
+      },
+      "gap_G3_minus_G4": {
+        "value": -0.06666666666666667,
+        "ci95": [
+          -0.23333333333333334,
+          0.06666666666666668
+        ]
+      }
+    },
+    "narrative_mean_k16": {
+      "categories": {
+        "coreference_binding": {
+          "n": 8,
+          "wrong": 1,
+          "drop": 0.125,
+          "ci95": [
+            0.0,
+            0.375
+          ]
+        },
+        "instruction_following": {
+          "n": 8,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "multi_step_reasoning": {
+          "n": 8,
+          "wrong": 1,
+          "drop": 0.125,
+          "ci95": [
+            0.0,
+            0.375
+          ]
+        },
+        "needle_synthesis": {
+          "n": 8,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "own_commitment": {
+          "n": 10,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "own_output_binding": {
+          "n": 10,
+          "wrong": 1,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.3
+          ]
+        },
+        "role_binding": {
+          "n": 10,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "syntax_own_turn": {
+          "n": 10,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "syntax_turn_count": {
+          "n": 10,
+          "wrong": 1,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.3
+          ]
+        },
+        "syntax_user_turn": {
+          "n": 10,
+          "wrong": 1,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.3
+          ]
+        }
+      },
+      "groups": {
+        "G1_flexible_not_about_turns": {
+          "n": 24,
+          "wrong": 2,
+          "drop": 0.08333333333333333,
+          "ci95": [
+            0.0,
+            0.20833333333333334
+          ]
+        },
+        "G2_routine_not_about_turns": {
+          "n": 8,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "G3_flexible_about_turns": {
+          "n": 30,
+          "wrong": 1,
+          "drop": 0.03333333333333333,
+          "ci95": [
+            0.0,
+            0.1
+          ]
+        },
+        "G4_routine_about_turns": {
+          "n": 30,
+          "wrong": 2,
+          "drop": 0.06666666666666667,
+          "ci95": [
+            0.0,
+            0.16666666666666666
+          ]
+        }
+      },
+      "gap_G1_minus_G2": {
+        "value": 0.08333333333333333,
+        "ci95": [
+          0.0,
+          0.20833333333333334
+        ]
+      },
+      "gap_G3_minus_G4": {
+        "value": -0.03333333333333333,
+        "ci95": [
+          -0.13333333333333333,
+          0.06666666666666668
+        ]
+      }
+    },
+    "expert_mean_k16": {
+      "categories": {
+        "coreference_binding": {
+          "n": 8,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "instruction_following": {
+          "n": 8,
+          "wrong": 1,
+          "drop": 0.125,
+          "ci95": [
+            0.0,
+            0.375
+          ]
+        },
+        "multi_step_reasoning": {
+          "n": 8,
+          "wrong": 1,
+          "drop": 0.125,
+          "ci95": [
+            0.0,
+            0.375
+          ]
+        },
+        "needle_synthesis": {
+          "n": 8,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "own_commitment": {
+          "n": 10,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "own_output_binding": {
+          "n": 10,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "role_binding": {
+          "n": 10,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "syntax_own_turn": {
+          "n": 10,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "syntax_turn_count": {
+          "n": 10,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "syntax_user_turn": {
+          "n": 10,
+          "wrong": 3,
+          "drop": 0.3,
+          "ci95": [
+            0.0,
+            0.6
+          ]
+        }
+      },
+      "groups": {
+        "G1_flexible_not_about_turns": {
+          "n": 24,
+          "wrong": 1,
+          "drop": 0.041666666666666664,
+          "ci95": [
+            0.0,
+            0.125
+          ]
+        },
+        "G2_routine_not_about_turns": {
+          "n": 8,
+          "wrong": 1,
+          "drop": 0.125,
+          "ci95": [
+            0.0,
+            0.375
+          ]
+        },
+        "G3_flexible_about_turns": {
+          "n": 30,
+          "wrong": 0,
+          "drop": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "G4_routine_about_turns": {
+          "n": 30,
+          "wrong": 3,
+          "drop": 0.1,
+          "ci95": [
+            0.0,
+            0.2008333333333212
+          ]
+        }
+      },
+      "gap_G1_minus_G2": {
+        "value": -0.08333333333333334,
+        "ci95": [
+          -0.375,
+          0.08333333333333333
+        ]
+      },
+      "gap_G3_minus_G4": {
+        "value": -0.1,
+        "ci95": [
+          -0.2,
+          0.0
+        ]
+      }
+    }
+  }
+}

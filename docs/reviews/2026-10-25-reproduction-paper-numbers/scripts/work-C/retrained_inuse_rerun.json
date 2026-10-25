@@ -1,0 +1,236 @@
+{
+ "T/0": {
+  "retrained": {
+   "own_correct": 3000,
+   "other_correct": 3000,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "state": "passed",
+   "route_use": {
+    "slot": 1.0
+   },
+   "right_with_true_answer": {
+    "slot": 3000
+   }
+  },
+  "committed": {
+   "own_correct": 3000,
+   "other_correct": 3000,
+   "sharpness": 3.883709192276001,
+   "weight": 0.9987316727638245,
+   "state": "passed",
+   "route_use": {
+    "slot": 1.0
+   }
+  }
+ },
+ "C/0": {
+  "retrained": {
+   "own_correct": 1731,
+   "other_correct": 768,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "state": "failed",
+   "route_use": {
+    "entangled": 0.2848064702484113
+   },
+   "right_with_true_answer": {
+    "entangled": 1731
+   }
+  },
+  "committed": {
+   "own_correct": 1711,
+   "other_correct": 760,
+   "sharpness": 1.731031060218811,
+   "weight": 0.9139975309371948,
+   "state": "failed",
+   "route_use": {
+    "entangled": 0.2688486265341905
+   }
+  }
+ },
+ "M/0": {
+  "retrained": {
+   "own_correct": 2590,
+   "other_correct": 1701,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "state": "failed",
+   "route_use": {
+    "entangled_items": 0.09,
+    "separable": 1.0
+   },
+   "right_with_true_answer": {
+    "entangled_items": 1400,
+    "separable": 1190
+   }
+  },
+  "committed": {
+   "own_correct": 2592,
+   "other_correct": 1663,
+   "sharpness": 2.842078685760498,
+   "weight": 0.9899044632911682,
+   "state": "failed",
+   "route_use": {
+    "entangled_items": 0.07061340941512126,
+    "separable": 1.0
+   }
+  }
+ },
+ "T/1": {
+  "retrained": {
+   "own_correct": 3000,
+   "other_correct": 3000,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "state": "passed",
+   "route_use": {
+    "slot": 1.0
+   },
+   "right_with_true_answer": {
+    "slot": 3000
+   }
+  },
+  "committed": {
+   "own_correct": 3000,
+   "other_correct": 3000,
+   "sharpness": 3.883528709411621,
+   "weight": 0.9987314343452454,
+   "state": "passed",
+   "route_use": {
+    "slot": 1.0
+   }
+  }
+ },
+ "C/1": {
+  "retrained": {
+   "own_correct": 1671,
+   "other_correct": 932,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "state": "failed",
+   "route_use": {
+    "entangled": 0.27289048473967686
+   },
+   "right_with_true_answer": {
+    "entangled": 1671
+   }
+  },
+  "committed": {
+   "own_correct": 1703,
+   "other_correct": 751,
+   "sharpness": 0.6969833374023438,
+   "weight": 0.5733065009117126,
+   "state": "failed",
+   "route_use": {
+    "entangled": 0.23253082795067528
+   }
+  }
+ },
+ "M/1": {
+  "retrained": {
+   "own_correct": 2563,
+   "other_correct": 1676,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "state": "failed",
+   "route_use": {
+    "entangled_items": 0.1056081573197378,
+    "separable": 1.0
+   },
+   "right_with_true_answer": {
+    "entangled_items": 1373,
+    "separable": 1190
+   }
+  },
+  "committed": {
+   "own_correct": 2584,
+   "other_correct": 1699,
+   "sharpness": 2.691391944885254,
+   "weight": 0.9864025115966797,
+   "state": "failed",
+   "route_use": {
+    "entangled_items": 0.0896700143472023,
+    "separable": 1.0
+   }
+  }
+ },
+ "T/2": {
+  "retrained": {
+   "own_correct": 3000,
+   "other_correct": 3000,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "state": "passed",
+   "route_use": {
+    "slot": 1.0
+   },
+   "right_with_true_answer": {
+    "slot": 3000
+   }
+  },
+  "committed": {
+   "own_correct": 3000,
+   "other_correct": 3000,
+   "sharpness": 3.8824939727783203,
+   "weight": 0.9987287521362305,
+   "state": "passed",
+   "route_use": {
+    "slot": 1.0
+   }
+  }
+ },
+ "C/2": {
+  "retrained": {
+   "own_correct": 1691,
+   "other_correct": 750,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "state": "failed",
+   "route_use": {
+    "entangled": 0.244234180958013
+   },
+   "right_with_true_answer": {
+    "entangled": 1691
+   }
+  },
+  "committed": {
+   "own_correct": 1727,
+   "other_correct": 708,
+   "sharpness": 0.9281306862831116,
+   "weight": 0.6808432340621948,
+   "state": "failed",
+   "route_use": {
+    "entangled": 0.22119281991893458
+   }
+  }
+ },
+ "M/2": {
+  "retrained": {
+   "own_correct": 2622,
+   "other_correct": 1695,
+   "sharpness": 4.0,
+   "weight": 0.9989947080612183,
+   "state": "failed",
+   "route_use": {
+    "entangled_items": 0.09986033519553073,
+    "separable": 1.0
+   },
+   "right_with_true_answer": {
+    "entangled_items": 1432,
+    "separable": 1190
+   }
+  },
+  "committed": {
+   "own_correct": 2600,
+   "other_correct": 1655,
+   "sharpness": 2.417440414428711,
+   "weight": 0.9767123460769653,
+   "state": "failed",
+   "route_use": {
+    "entangled_items": 0.10851063829787234,
+    "separable": 1.0
+   }
+  }
+ }
+}
