@@ -1,0 +1,17 @@
+[ok] R1 table row 1: got R1, want R1 | None
+[ok] fifth: F no verdict: got fifth, want fifth | read failed its floor
+[ok] R2: no separation: got R2, want R2 | None
+[ok] separation exactly 0.5 clears: got R1, want R1 | None
+[ok] sixth: C no verdict, F reads: got sixth, want sixth | None
+[ok] seventh: C and F no verdict: got seventh, want seventh | read failed its floor
+[ok] eighth: T no verdict: got eighth, want eighth | read failed its floor
+[ok] R3: T fails gate: got R3, want R3 | arm T failed its gate on learning (own-directed condition, on seeds 0 and 1)
+[ok] R3: F fails at step 5a: got R3, want R3 | arm F failed its gate on learning at step 5a (named-other condition, on seed 1), after its re-run; nothing else launches (stop S4)
+[ok] fifth: F passed 5a, fails gate at 5b: got fifth, want fifth | failed its gate on learning
+[ok] seventh: F fails 5b and C no verdict: got seventh, want seventh | failed its gate on learning
+[ok] M dropped does not change term: got R1, want R1 | None
+[ok] M in band: R1: got R1, want R1 | None
+[ok] M misses band: R1 with note: got R1, want R1; M note present | None
+[ok] F reads on one seed only: fifth: got fifth, want fifth | read failed its floor
+F seed whose channel removal did not collapse: no verdict ['the channel removal did not collapse own-directed answers below the gate bar']
+ALL AS WRITTEN
