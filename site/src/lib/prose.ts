@@ -113,7 +113,7 @@ function prNumbers(list: string): number[] {
   return out;
 }
 
-function prPhrase(match: string, sh: string | undefined, draft: string | undefined, list: string): string {
+function prPhrase(match: string, sh: string | undefined, draft: string | undefined, list: string, bracketed = false): string {
   const cap = /^[A-Z]/.test(match);
   const nums = prNumbers(list);
   let out: string;
@@ -124,7 +124,9 @@ function prPhrase(match: string, sh: string | undefined, draft: string | undefin
   } else {
     const count = NUMBER_WORD[nums.length] ?? String(nums.length);
     const links = nums.map((n, i) => prLink(n, ORDINAL[i] ?? `change ${i + 1}`));
-    out = `${count} ${draft ? 'draft ' : ''}changes on GitHub (${joinAnd(links)})`;
+    // Written with the numbers in brackets ("pull requests (71 and 72)"), the sentence already
+    // counts them or needs no count, so none is added.
+    out = `${bracketed ? '' : `${count} `}${draft ? 'draft ' : ''}changes on GitHub (${joinAnd(links)})`;
   }
   return cap ? out.replace(/^a /, 'A ').replace(/^([a-z])/, (c) => c.toUpperCase()) : out;
 }
@@ -132,11 +134,12 @@ function prPhrase(match: string, sh: string | undefined, draft: string | undefin
 // One pattern, three kinds of match, tried left to right.
 const TOKEN = new RegExp(
   [
-    // 1-4: "[sentient-horizons ][draft ]pull request(s) N[, N and N | N to N]"
-    String.raw`((?:sentient-horizons )?)((?:draft )?)[Pp]ull requests? (\d+(?: to \d+|(?:(?:, | and |, and )\d+)*))`,
-    // 4: a repository path: at least one folder, ending in a file extension or a slash
+    // 1-4: "[sentient-horizons ][draft ]pull request(s) N[, N and N | N to N]" (group 3 is the
+    // separator: a space, or the mark left where the numbers were in brackets)
+    String.raw`((?:sentient-horizons )?)((?:draft )?)[Pp]ull requests?( |\u0000)(\d+(?: to \d+|(?:(?:, | and |, and )\d+)*))`,
+    // 5: a repository path: at least one folder, ending in a file extension or a slash
     String.raw`((?<![\w/.:-])(?:[\w.-]+\/)+(?:[\w.-]*\.(?:md|py|toml|json|jsonl|yaml|yml|csv|txt|pdf|png|ts)\b|(?=[\s,;)]|$)))`,
-    // 5: a bare file name
+    // 6: a bare file name
     String.raw`((?<![\w/.:-])[\w.-]+\.(?:md|py|toml|jsonl)\b)`,
   ].join('|'),
   'g',
@@ -145,18 +148,21 @@ const TOKEN = new RegExp(
 /** The record's text as public HTML: paths and pull request numbers turned into readable links. */
 export function prose(text: string | undefined | null): string {
   if (!text) return '';
+  // "open pull requests (71 and 72)": the numbers in brackets are the same pull requests. A mark
+  // takes the brackets' place so the pattern below links them, without adding a count (2026-11-14).
+  text = text.replace(/([Pp]ull requests?) \((\d+(?: to \d+|(?:(?:, | and |, and )\d+)*))\)/g, '$1\u0000$2');
   let out = '';
   let last = 0;
   for (const m of text.matchAll(TOKEN)) {
     const at = m.index ?? 0;
     out += esc(text.slice(last, at));
-    if (m[3] !== undefined) {
-      out += prPhrase(m[0], m[1] || undefined, m[2] || undefined, m[3]);
-    } else if (m[4] !== undefined) {
-      out += m[4].endsWith('/') || /\.[a-z0-9]+$/i.test(m[4]) ? fileLink(m[4]) : esc(m[4]);
+    if (m[4] !== undefined) {
+      out += prPhrase(m[0], m[1] || undefined, m[2] || undefined, m[4], m[3] === '\u0000');
     } else if (m[5] !== undefined) {
-      const found = index().byBase.get(m[5]);
-      out += found && found.length === 1 ? fileLink(found[0]) : esc(KNOWN[m[5]] ?? labelFor(m[5]));
+      out += m[5].endsWith('/') || /\.[a-z0-9]+$/i.test(m[5]) ? fileLink(m[5]) : esc(m[5]);
+    } else if (m[6] !== undefined) {
+      const found = index().byBase.get(m[6]);
+      out += found && found.length === 1 ? fileLink(found[0]) : esc(KNOWN[m[6]] ?? labelFor(m[6]));
     } else {
       out += esc(m[0]);
     }
@@ -168,5 +174,8 @@ export function prose(text: string | undefined | null): string {
   if (/pull requests?/i.test(text)) {
     out = out.replace(/\((\d{2,3})(?=[,)])/g, (_m, n: string) => `(${prLink(Number(n), 'on GitHub')}`);
   }
+  // A pull request named without a number ("five pull requests landed on my word") is a change
+  // to a visitor; the deploy's check refuses the words "pull request" on a public page (2026-11-14).
+  out = out.replace(/\b([Pp])ull request(s?)\b/g, (_m, p: string, s: string) => `${p === 'P' ? 'C' : 'c'}hange${s}`);
   return out;
 }
