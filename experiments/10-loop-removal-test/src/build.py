@@ -26,7 +26,8 @@ EXP = os.path.dirname(HERE)
 REPO = os.path.dirname(os.path.dirname(EXP))
 DATA = os.path.join(EXP, "data")
 TOKDIR_DEFAULT = os.path.join(REPO, ".hf-cache.nosync", "tml-d24-varloop-research-tokenizer")
-REPLY_OPENING = "<|message_model|><|content_text|>"  # section 6; step 4a confirms (section 9)
+REPLY_OPENING = "<|message_model|><|content_text|>"
+INSTRUCTION = "Answer with the single word or number only."  # specification, section 15  # section 6; step 4a confirms (section 9)
 
 # The split test's syllables (experiments/09-split-removal-test/src/batteries.py, SYLL_A and SYLL_B).
 SYLL_A = ["zib", "tov", "mek", "dap", "rul", "fen", "gox", "lir", "pash", "wud", "kel", "sorn"]
@@ -155,7 +156,8 @@ def near_numbers(rng, ans, spread, lo=0, hi=999, pool=None, place=None):
 
 
 class Builder:
-    def __init__(self, model, lists, half, seed):
+    def __init__(self, model, lists, half, seed, instruction="none"):
+        self.instruction = instruction  # specification, section 15: "none", "start" or "end"
         self.m, self.L, self.half = model, lists, half
         self.rng = random.Random(seed)
         self.stats = {"dropped": {}, "capital_wrong_source": {"same_region": 0, "neighbour_region": 0, "dropped": 0}}
@@ -183,6 +185,14 @@ class Builder:
 
     def drop(self, why, n=1):
         self.stats["dropped"][why] = self.stats["dropped"].get(why, 0) + n
+
+    def wrap(self, body):
+        """Specification, section 15: the answer-only instruction, at the start or the end of the user message."""
+        if self.instruction == "end":
+            return body + " " + INSTRUCTION
+        if self.instruction == "start":
+            return INSTRUCTION + " " + body
+        return body
 
     # ---------- rule kinds (section 4)
     def rule_op(self):
@@ -375,11 +385,12 @@ class Builder:
                 return None
         self.rng.shuffle(cands_p)
         self.rng.shuffle(cands_r)
-        P = {"text": context + " " + pq, "answer": r["answer"], "candidates": cands_p,
-             "without_rule": " ".join([p for p in parts if p != r["rule"]]) + " " + pq,
-             "baseline_variant": r["rule"] + " " + r["facts"] + " " + pq}
-        R = {"text": context + " " + rq, "answer": rt["answer"], "candidates": cands_r,
-             "baseline_variant": rt["fact"] + " " + rq}
+        w = self.wrap
+        P = {"text": w(context + " " + pq), "answer": r["answer"], "candidates": cands_p,
+             "without_rule": w(" ".join([p for p in parts if p != r["rule"]]) + " " + pq),
+             "baseline_variant": w(r["rule"] + " " + r["facts"] + " " + pq)}
+        R = {"text": w(context + " " + rq), "answer": rt["answer"], "candidates": cands_r,
+             "baseline_variant": w(rt["fact"] + " " + rq)}
         for x in (P, R):
             x["prompt_ids"] = self.m.ids(self.m.render(x["text"]))
         if len(P["prompt_ids"]) != len(R["prompt_ids"]):
@@ -485,7 +496,7 @@ def chained_item(b, hops, cid):
         rows += [f"{chain[j]} points to {chain[j + 1]}" for j in range(L)]
         rows.append(f"{chain[-1]} is {col}")
     b.rng.shuffle(rows)
-    text = "In this list: " + "; ".join(rows) + f". Start at {starts[0]} and follow the list to a colour. What colour do you reach?"
+    text = b.wrap("In this list: " + "; ".join(rows) + f". Start at {starts[0]} and follow the list to a colour. What colour do you reach?")
     cands = cols[:]
     b.rng.shuffle(cands)
     return {"id": cid, "hops": hops, "text": text, "answer": cols[0], "candidates": cands,
@@ -584,9 +595,10 @@ def main():
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--out", required=True)
     ap.add_argument("--tokdir", default=TOKDIR_DEFAULT)
+    ap.add_argument("--instruction", choices=["none", "start", "end"], default="none")
     a = ap.parse_args()
     m = Model(a.tokdir)
-    b = Builder(m, load_lists(), a.half, a.seed)
+    b = Builder(m, load_lists(), a.half, a.seed, instruction=a.instruction)
     scored = build_scored(b, PILOT_ALLOCATION)
     donors, report = build_donor_only(b, scored)
     chained, chained_donors, chained_report = build_chained(b)
@@ -601,7 +613,8 @@ def main():
     dump("chained.jsonl", chained)
     dump("chained_donor_only.jsonl", chained_donors)
     dump("neutral.jsonl", neutral)
-    json.dump({"half": a.half, "seed": a.seed, "reply_opening": REPLY_OPENING, "stats": b.stats, "donors": report, "chained_donors": chained_report,
+    extra = {"instruction": a.instruction, "instruction_text": INSTRUCTION} if a.instruction != "none" else {}
+    json.dump({"half": a.half, "seed": a.seed, "reply_opening": REPLY_OPENING, **extra, "stats": b.stats, "donors": report, "chained_donors": chained_report,
                "pools": {"capitals_one_token": len(b.capitals_ok), "capital_answers": len(b.capital_answers),
                          "opposite_questions": len(b.opp_questions), "objects": len(b.objects),
                          "words3": len(b.words3), "invented_words": len(b.inv_words), "colours": len(b.colours)}},
