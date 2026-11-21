@@ -63,6 +63,21 @@ def load():
         by_id = {j["id"]: j for j in judgements}
         for r in t("rulings.toml").get("ruling", []):
             by_id[r["judgement"]]["ruling"] = r
+    spot = DATA / "spot-check.toml"
+    if spot.exists():
+        by_id = {j["id"]: j for j in judgements}
+        for f in t("spot-check.toml").get("finding", []):
+            j = by_id[f["judgement"]]
+            j.setdefault("spot_check", f)
+            if f["finding"] == "overturn":
+                ru = {"rule": "John's spot-check finding (ruling 7)", "open_part": "", "reason": f["reason"], "date": f["date"]}
+                if j["kind"] == "testability":
+                    ru.update(could_fail=f["could_fail"], separates=f["separates"], separates_from=f.get("separates_from", []))
+                else:
+                    ru["verdict"] = f["verdict"]
+                j["ruling"] = ru
+            elif f["finding"] != "agree":
+                raise RecordError(f"spot-check finding for {f['judgement']} must be agree or overturn")
     return {
         "judgements": judgements,
         "sources": t("sources.toml")["source"],

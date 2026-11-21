@@ -317,6 +317,12 @@ with an estimate first.
    agreement shows the rules apply the same way twice, not that a judgement is right. The partial
    answer, to be settled once the pilot shows how many judgements there are, is John reading a
    random sample of agreed judgements as well as every disagreement, by a stated rule for drawing it.
+   *(ruled, 2026-11-20, John: "Yes, that sample"; wording the master session's.)* **The sample:**
+   every judgement both readers agreed on that sits on a Sentient Horizons row, plus half of the
+   other agreed judgements (rounded up), drawn at random, with the seed and the drawing method written
+   into the record and committed before the draw, so anyone can repeat it. The reason for half: if one
+   agreed judgement in ten were wrong, reading half gives about an 80% chance of seeing at least one.
+   Weakest step: his time. (Method and seed: `scripts/tracker_spot_check.py`, seed 20261120.)
 8. **Whether the weekly reading runs through the hibernation** from 2027-01-04.
 9. **The API workspace and key** for the weekly reading, with a cost estimate before any spend.
 

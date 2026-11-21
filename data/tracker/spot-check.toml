@@ -1,0 +1,22 @@
+# John's findings on the spot-check sample (ruling 7, "Yes, that sample", 2026-11-20).
+# One [[finding]] per page he reads. tracker_scores.py applies every "overturn" as his
+# ruling on that judgement, so the score moves; an "agree" changes nothing and is kept as
+# the record that he checked it.
+#
+# Fields:
+#   judgement  - the judgement id shown on the page
+#   finding    - "agree" or "overturn"
+#   reason     - his reason, in his words
+#   date       - year-month-day
+#   For an overturn, the answer he gives instead:
+#     outcome:     verdict = "for" | "against" | "mixed"
+#     commitment:  verdict = "before" | "not-before" | "unclear"
+#     testability: could_fail = true|false, separates = true|false, separates_from = [ids]
+#
+# Example (not a finding):
+# [[finding]]
+# judgement = "out-dellert-iit-posterior"
+# finding = "overturn"
+# verdict = "mixed"
+# reason = "..."
+# date = "2026-11-21"
