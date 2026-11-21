@@ -36,6 +36,9 @@ const repo = 'https://github.com/jfredson/minimum-viable-mind';
       <p class="tplain"><b>What does not count.</b> A study that explained its result afterwards, against a prediction the theory had not yet made, is listed and moves nothing. A failed prediction stays failed; a later reading of the theory that softens the loss becomes a new prediction, which needs its own test.</p>
     </section>
 
+    {/* That the two readers are AI models made by different companies, with no model named in the
+        page text, was ruled by John on 2026-11-21 ("Yes, keep it"); the exact versions stay in the
+        records. The wording is still draft for the voice checks. */}
     <section id="judges">
       <h2>Who judges</h2>
       <p class="tplain">Someone has to decide what a theory predicts and whether a study's result supports it. Every such decision is its own record, with the study, the passage and the reason, and every one is read twice, by two readers who do not see each other's answer. The two readers are AI models made by different companies; they share much of what they learned from, so their agreement shows that the rules give the same answer twice, not that the answer is right. That is why a person reads every disagreement and a random half of the agreements. Where the readers disagree, the score waits until the disagreement is settled under a written rule, and the settlement is recorded with its reason. Today the records hold <N v={tk.judgement_count} /> judgements: <N v={tk.judgement_status.agreed} /> agreed by both readers and <N v={tk.judgement_status.ruled} /> settled by a written rule.</p>
