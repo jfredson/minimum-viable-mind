@@ -44,3 +44,22 @@ a live experiment to rehearse and run, rented steps included, was offered and no
 - any spending, including any rented machine;
 - the registration itself;
 - any merge that deploys the site.
+
+---
+
+*Dated note, added 2026-11-21 after the design's sixth closure check
+(`docs/reviews/2026-11-21-loop-removal-test-design-v0.6-closure-check-claude-code.md`, finding RT-401).
+John's answers above are unchanged. Two things in this record need correcting.*
+
+- **The wording John saw.** The record says each question "was put in the words shown in section 10" of
+  version 0.4. That is true of the questions. The options John picked from, though, carried their own
+  descriptions in the session's question form. For choice 3, the option "Twins (Recommended)" read: "Keep
+  the twin design and settle the dose question with the free real-word-splitter check before any rental."
+  Section 10 of version 0.4 said instead that the dose question was "first estimated for free at step 3
+  and then measured on the model at step 4b".
+- **A premise that no longer holds.** Under the design's version 0.5 and later, the free check passes by
+  construction and settles nothing about the real dose. The dose question is first answered at step 4b,
+  on a rented machine. The substance of choice 3, routine twins, is kept. John was told of this in the
+  session on 2026-11-21. That telling is also recorded in the TimeAssembler worklog entry "Loop removal
+  test: the fifth check confirms the shared-context fix with the real tokeniser, but finds the free check
+  can no longer settle the dose question", and in section 11 of the design.
