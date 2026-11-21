@@ -44,7 +44,7 @@ const notScored = tk.listed.filter((t) => !t.scored);
                   {t.own && <span class="own">this site's own</span>}
                   <span class="sub">
                     {g.key === 'not_sharp' ? (
-                      <>needs: a prediction that could fail for <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more of its <N v={t.claims_count} t={word(t.claims_count)} /> core claims</>
+                      <>needs: a prediction that could fail, and that a rival theory predicts differently, for <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more of its <N v={t.claims_count} t={word(t.claims_count)} /> core claims</>
                     ) : t.rests_on.studies > 0 ? (
                       <>rests on <N v={t.rests_on.studies} /> {t.rests_on.studies === 1 ? 'study' : 'studies'} from <N v={t.rests_on.groups} /> {t.rests_on.groups === 1 ? 'group' : 'groups'}</>
                     ) : (

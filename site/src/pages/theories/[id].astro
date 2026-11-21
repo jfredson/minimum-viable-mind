@@ -53,7 +53,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
         <div class="score">
           <div class="lab">Sharp enough to test</div>
           <div class="num"><N v={t.testability} /> <small>/ <N v={tk.rules.scale_top} /></small></div>
-          <p><N v={t.claims_sharp} /> of <N v={t.claims_count} /> core claims come with a prediction that could fail and that a rival predicts differently. {t.past_bar ? 'Past the bar.' : <>Below the bar: it needs <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more.</>}</p>
+          <p><N v={t.claims_sharp} /> of <N v={t.claims_count} /> core claims come with a prediction that could fail and that a rival predicts differently. {t.past_bar ? 'Past the bar.' : <>Below the bar: it needs such a prediction for <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more.</>}</p>
           <Bar kind="test" v={t.testability} label="sharp" num={false} />
         </div>
         <div class="score">
@@ -75,7 +75,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
             <span class={`dot ${dotClass(c.level)}`} aria-label={c.level >= 1 ? 'stated by its proponents' : c.level > 0 ? 'inferred by the site' : 'none yet'}></span>
             <span>
               <R t={c.quote} q class="q" />
-              <span class="m">{c.level >= 1 ? 'a prediction stated by its proponents could fail and separates it from a rival' : c.level > 0 ? 'only the site has inferred a prediction that could fail; counted at half' : 'no prediction yet that could fail and that a rival predicts differently'}</span>
+              <span class="m">{c.level >= 1 ? 'a prediction stated by its proponents could fail and separates it from a rival' : c.level > 0 ? 'only the site has inferred a prediction that could fail and that a rival predicts differently; counted at half' : 'no prediction yet that could fail and that a rival predicts differently'}</span>
             </span>
             <span>{c.predictions.length ? <a href={`#c-${c.id}`}><N v={c.predictions.length} /> {c.predictions.length === 1 ? 'prediction' : 'predictions'}</a> : 'none'}</span>
           </li>

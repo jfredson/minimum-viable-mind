@@ -87,7 +87,7 @@ export const OUTCOME_LABEL: Record<string, string> = { 'for': 'for', 'against': 
 export const GROUPS = [
   { key: 'ranked', title: 'Ranked', note: 'past the bar, with a support score; highest support first' },
   { key: 'testable', title: 'Testable, too little tested to rank', note: 'no studies yet from two separate groups' },
-  { key: 'not_sharp', title: 'Not yet defined sharply enough to rank', note: 'half or fewer of its core claims come with a prediction that could fail' },
+  { key: 'not_sharp', title: 'Not yet defined sharply enough to rank', note: 'half or fewer of its core claims come with a prediction that could fail and that a rival theory predicts differently' },
 ] as const;
 
 // Where a claim's dot sits: filled when a proponent states a prediction that could fail and
