@@ -684,6 +684,26 @@ call.
 Version 0.1's fourth choice, keeping the pass-counting coordinates at their true values, is withdrawn
 (RT-348).
 
+## 11. John's rulings (2026-11-21)
+
+John ruled on the questions in section 10 on 2026-11-21. He picked the recommended option each time,
+from a question form in the session. Authorship is mixed: this design recommended, and John chose. The
+ruling is recorded in `docs/rulings/2026-11-21-loop-removal-test-choices-ruling.md`.
+
+- **Whether it goes ahead:** "Yes, paper work now". Design work continues at no cost before the pause
+  from 2027-01-04. Every rented step still comes to him with a price first.
+- **Choice 1:** five fixed options, scored by probability.
+- **Choice 2:** no written reasoning.
+- **Choice 3:** routine twins, with the dose question settled by the free real-tokeniser check at step 3.
+- **Choice 4:** Inkling 2 Mini added as a descriptive second model.
+- **Choice 5:** if both versions of the average differ from the swap by more than a factor of two, the
+  test stops.
+
+These rulings were made on version 0.4. RT-345, the finding that the swap's dose differed between the
+two task groups, is open, and so are the findings of the fourth check, RT-380 to RT-389. They are to be
+answered in a version 0.5, written against the model's real tokeniser where the findings turn on token
+counts.
+
 ## Sources read for this design (all on 2026-11-20)
 
 - Thinking Machines Lab,
