@@ -52,14 +52,20 @@ a live experiment to rehearse and run, rented steps included, was offered and no
 John's answers above are unchanged. Two things in this record need correcting.*
 
 - **The wording John saw.** The record says each question "was put in the words shown in section 10" of
-  version 0.4. That is true of the questions. The options John picked from, though, carried their own
-  descriptions in the session's question form. For choice 3, the option "Twins (Recommended)" read: "Keep
+  version 0.4. That is not exact. The questions in the session's question form were the author's
+  summaries of section 10, and the question for choice 3 added a sentence that section 10 did not have:
+  that the latest check found the twins still did not get an equal swap. The options John picked from also
+  carried their own descriptions. *(Corrected 2026-11-21 after the seventh closure check, RT-405. This note
+  first said "That is true of the questions", which was wrong.)* For choice 3, the option "Twins (Recommended)" read: "Keep
   the twin design and settle the dose question with the free real-word-splitter check before any rental."
   Section 10 of version 0.4 said instead that the dose question was "first estimated for free at step 3
   and then measured on the model at step 4b".
+  The source of these quotations is the session in which John ruled. Its transcript is the primary record
+  and is not in the repository.
 - **A premise that no longer holds.** Under the design's version 0.5 and later, the free check passes by
   construction and settles nothing about the real dose. The dose question is first answered at step 4b,
   on a rented machine. The substance of choice 3, routine twins, is kept. John was told of this in the
-  session on 2026-11-21. That telling is also recorded in the TimeAssembler worklog entry "Loop removal
-  test: the fifth check confirms the shared-context fix with the real tokeniser, but finds the free check
-  can no longer settle the dose question", and in section 11 of the design.
+  session on 2026-11-21. The TimeAssembler worklog entry "Loop removal test: the fifth check confirms the
+  shared-context fix with the real tokeniser, but finds the free check can no longer settle the dose
+  question" records the finding that contradicts the premise. Section 11 of the design records the
+  telling.
