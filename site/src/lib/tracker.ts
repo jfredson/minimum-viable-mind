@@ -68,6 +68,7 @@ export interface Tracker {
   last_judgement: string; last_judgement_long: string;
   open_questions: OpenQuestion[];
   waiting: { waiting_studies: number; by_theory: Record<string, number>; last_reading: string | null; last_reading_long: string | null } | null;
+  hand_check: { checked: number; random: number; own: number; read_again: number; theories: number; date: string | null } | null;
   refs: Record<string, { label: string; url: string | null }>;
   links: { people: Record<string, string>; theories: Record<string, string>; groups: Record<string, string>; person_pages: string[] };
   support_example: { theory: string; name: string; weighted_sum: number; total_weight: number; ratio: number; half_ratio: number; half_ratio_abs: number; support_exact: number; support: number } | null;

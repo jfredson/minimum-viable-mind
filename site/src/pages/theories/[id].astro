@@ -92,7 +92,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
         <tbody>
           {[...sharp, ...shared].map((p) => (
             <tr data-record={p.id} id={anchorFor(p.core_claim)}>
-              <td><a href={`/predictions/${p.id}/`}><R t={p.statement} /></a><span class="m">tied to main claim <N v={claimNo(p.core_claim)} />{p.core_claim ? ', so its results count double' : ''}{!p.separates && ' · sets it apart from no rival on the record'}{p.verify_open.length > 0 && ' · still being checked'}</span></td>
+              <td><a href={`/predictions/${p.id}/`}><R t={p.statement} /></a><span class="m">tied to main claim <N v={claimNo(p.core_claim)} />{p.core_claim ? ', so its results count double' : ''}{!p.separates && (p.could_fail ? ' · a rival theory\'s own published work predicts it too, so it scores nothing' : ' · the two readers found that no result named could prove it wrong, so it scores nothing')}{p.verify_open.length > 0 && ' · still being checked'}</span></td>
               <td class="hide-s">{p.stated_by === 'proponent' ? 'its proponents' : 'inferred here'}</td>
               <td><StateBadge s={p.state} /></td>
               <td class="hide-s"><N v={p.counted_count} /></td>

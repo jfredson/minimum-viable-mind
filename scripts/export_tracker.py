@@ -111,6 +111,30 @@ def waiting():
             "last_reading": w["last_reading"], "last_reading_long": long_date(w["last_reading"])}
 
 
+def hand_check(d, preds):
+    """What the person's hand check of the readers' agreements covered, from its own records
+    (data/tracker/spot-check-draw.toml and spot-check.toml), and how many of the judgements it
+    read were read again afterwards, so About says only what was done."""
+    import tomllib
+    fd, fs = ts.DATA / "spot-check-draw.toml", ts.DATA / "spot-check.toml"
+    if not (fd.exists() and fs.exists()):
+        return None
+    draw = tomllib.loads(fd.read_text())
+    found = tomllib.loads(fs.read_text()).get("finding", [])
+    by_id = {j["id"]: j for j in d["judgements"]}
+    again = 0
+    theories = set()
+    for f_ in found:
+        j = by_id[f_["judgement"]]
+        theories.add(preds[j["prediction"]]["theory"])
+        ru = j.get("ruling") or {}
+        if any(r.get("date", "") > f_["date"] for r in j.get("reading", [])) or \
+                (ru.get("date", "") > f_["date"] and "spot-check" not in str(ru.get("rule", ""))):
+            again += 1
+    return {"checked": len(found), "random": len(draw.get("random", [])), "own": len(draw.get("sentient_horizons", [])),
+            "read_again": again, "theories": len(theories), "date": min(f_["date"] for f_ in found) if found else None}
+
+
 def short_refs(sources, studies):
     """A short readable name for every source and study id ("Lamme 2018", "Mashour and
     colleagues 2020"), so record text that names one by its id reads as a citation, not a code.
@@ -502,6 +526,7 @@ def main(argv=None) -> int:
         "support_example": support_example(base, ranking),
         "links": links(),
         "refs": short_refs(sources, studies),
+        "hand_check": hand_check(d, preds),
         "waiting": waiting(),
     }
 

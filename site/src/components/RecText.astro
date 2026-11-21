@@ -15,7 +15,16 @@ const re = new RegExp(`\\(?\\b(${ids.map((i) => i.replace(/[-]/g, '\\-')).join('
 const parts: { text?: string; id?: string; paren?: boolean }[] = [];
 let last = 0;
 for (const m of Astro.props.t.matchAll(re)) {
-  if (m.index! > last) parts.push({ text: Astro.props.t.slice(last, m.index) });
+  const before = Astro.props.t.slice(last, m.index);
+  // "Lamme 2018 (lamme-2018)": the text already names the source just before its id in brackets,
+  // so the bracketed id is dropped rather than shown as "Lamme 2018 (Lamme 2018)".
+  const ref = tk.refs[m[1]];
+  if (ref && m[0].startsWith('(') && before.trimEnd().endsWith(ref.label)) {
+    parts.push({ text: before.trimEnd() });
+    last = m.index! + m[0].length;
+    continue;
+  }
+  if (m.index! > last) parts.push({ text: before });
   parts.push({ id: m[1], paren: m[0].startsWith('(') && m[0].endsWith(')') });
   last = m.index! + m[0].length;
 }

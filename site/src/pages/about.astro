@@ -12,6 +12,7 @@ import { tk, word } from '../lib/tracker';
 import { data, fmtDate } from '../lib/project';
 const r = tk.rules;
 const ex = tk.support_example;
+const hc = tk.hand_check;
 // A worked example of the half-point rule, from the first theory that has a half-point claim.
 const hxT = Object.values(tk.theories).find((t) => t.claims.some((c) => c.level === 0.5));
 const hx = hxT && {
@@ -65,7 +66,7 @@ const repo = 'https://github.com/jfredson/minimum-viable-mind';
 
     <section id="judges">
       <h2>Who judges</h2>
-      <p class="tplain">Someone has to decide what a theory predicts and whether a study's result supports it. Every such decision is its own record, with the study, the passage and the reason, and every one is read twice, by two readers who do not see each other's answer. The two readers are AI models made by different companies; they share much of what they learned from, so their agreement shows that the rules give the same answer twice, not that the answer is right. That is why a person checks them by hand. So far that check covers the first three theories scored: a random half of the agreements on them, drawn by a rule written down before the draw, and every agreement on this site's own account. The agreements on the theories scored since have not yet been checked by hand. Where the readers disagree, the score waits until the disagreement is settled under a written rule, and the settlement is recorded with its reason. Today the records hold <N v={tk.judgement_count} /> judgements: <N v={tk.judgement_status.agreed} /> agreed by both readers and <N v={tk.judgement_status.ruled} /> settled by a written rule.</p>
+      <p class="tplain">Someone has to decide what a theory predicts and whether a study's result supports it. Every such decision is its own record, with the study, the passage and the reason, and every one is read twice, by two readers who do not see each other's answer. The two readers are AI models made by different companies; they share much of what they learned from, so their agreement shows that the rules give the same answer twice, not that the answer is right. That is why a person checks them by hand.{hc ? <> So far a person has checked <N v={hc.checked} /> of the judgements on the first <N v={hc.theories} t={word(hc.theories)} /> theories scored: <N v={hc.random} /> drawn at random by a rule written down before the draw, and the <N v={hc.own} t={word(hc.own)} /> on this site's own account. <N v={hc.read_again} t={word(hc.read_again).replace(/^./, (c) => c.toUpperCase())} /> of them were read again later under an amended rule, and no agreement since has yet been checked by hand.</> : ' No hand check has been made yet.'} Where the readers disagree, the score waits until the disagreement is settled under a written rule, and the settlement is recorded with its reason. Today the records hold <N v={tk.judgement_count} /> judgements: <N v={tk.judgement_status.agreed} /> agreed by both readers and <N v={tk.judgement_status.ruled} /> settled by a written rule.</p>
     </section>
 
     <section id="own">
