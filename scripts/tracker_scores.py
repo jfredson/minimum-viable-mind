@@ -63,12 +63,11 @@ def load():
             r = dict(r)
             jid = r.pop("judgement")
             by_id[jid].setdefault("reading", []).append(r)
-    extra3 = DATA / "readings-gemini-stage3.toml"
-    if extra3.exists():
+    for extra3 in sorted(DATA.glob("readings-gemini-stage3*.toml")):
         # Stage 3 run (2026-11-21). A re-read pilot testability row (question C2) replaces the
         # pilot's Gemini reading of that row; the earlier one stays in readings-gemini.toml.
         by_id = {j["id"]: j for j in judgements}
-        for r in t("readings-gemini-stage3.toml").get("reading", []):
+        for r in t(extra3.name).get("reading", []):
             r = dict(r)
             jid = r.pop("judgement")
             j = by_id[jid]

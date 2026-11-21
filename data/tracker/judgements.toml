@@ -2792,3 +2792,474 @@ separates = false
 separates_from = []
 reason = "The paper names no observation that would show an AI system has, or lacks, feelings, so nothing could count against it. No opened rival proponents' source says present-day AI has them."
 unsure = false
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Anil Seth's living-body view: drafted 2026-11-21.
+
+[[judgement]]
+id = "com-vabba-seth-interoceptive-ownership"
+kind = "commitment"
+prediction = "seth-interoceptive-ownership"
+study = "vabba-2025"
+dates = { statement = "2012-01-10", study_first_appeared = "2024-08-29" }
+
+[[judgement.passages]]
+source = "seth-2012"
+text = "We believe considerable promise lies in integrating interoceptive predictive coding with existing proprioceptive and multisensory models of selfhood (Blanke and Metzinger, 2009; Tsakiris, 2010), potentially explaining the force of “interoceptive anchors” in grounding bodily experience."
+
+[[judgement.passages]]
+source = "vabba-2025"
+text = "This result mirrors the majority of research on the RHI and replicates the findings from the previous version of this task (Suzuki et al. 2013 ) in which congruency of tactile and cardiac feedback significantly modulated subjective ownership"
+
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "The study was run by the theory's own supporters (Suzuki and Critchley wrote the 2012 statement), so the own-lab rule applies. The only statement on record before 2013 says no more than that joining body signals to models of ownership looks promising; it does not predict that a hand flashing in time with the heartbeat feels more one's own. That exact effect was first written, and first found, by the same lab in suzuki-2013, and this paper says it repeats that result. With no registration and no collection dates, the prediction is not shown to be fixed before the lab could know the result, so it is unclear and not counted."
+unsure = true
+unsure_why = "A reader who takes the 2012 'interoceptive anchors' sentence as committing the theory to any effect of heartbeat timing on ownership would read 'before' up to suzuki-2013, but the own-lab rule still bars it because the same lab published the result in 2013. If it were counted, the result would be mixed: in the sham (placebo) sessions heartbeat-timed flashing moved where people felt their real hand more than out-of-time flashing did, but the ownership questionnaire showed no difference for heartbeat trials (means 4.815 against 4.741 out of 6)."
+
+# ------------------------------------------- hill-2024 x seth-feeling-from-prediction
+
+[[judgement]]
+id = "com-hill-seth-feeling-from-prediction"
+kind = "commitment"
+prediction = "seth-feeling-from-prediction"
+study = "hill-2024"
+dates = { statement = "2012-01-10", study_first_appeared = "2024-04-23" }
+
+[[judgement.passages]]
+source = "seth-2012"
+text = "Extending these principles, in our model emotional content is determined by the nature of the predictive signals Ppred, and not simply by the “sensing” of interoceptive signals per se"
+
+[[judgement.passages]]
+source = "seth-2012"
+text = "or by false physiological feedback (Gray et al., 2007)."
+
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "In 2012 the proponents said the emotion a person feels is set by the brain's predictions about the body, not just by what the body signals, and named false physiological feedback as a way to manipulate those predictions. This study, by a group outside the camp, gave false heart-rate feedback while the real heart rate was measured, and asked how afraid people felt. It first appeared in 2024, twelve years after the statement."
+unsure = false
+unsure_why = ""
+
+[[judgement]]
+id = "out-hill-seth-feeling-from-prediction"
+kind = "outcome"
+prediction = "seth-feeling-from-prediction"
+study = "hill-2024"
+
+[[judgement.passages]]
+source = "hill-2024"
+text = "However, fear was significantly greater during Threat in the fast HR feedback group compared to both the slow HR feedback (p <.001, d=1.78) and no HR feedback (p <.001, d=1.39) groups (Fig. 2B)."
+
+[[judgement.passages]]
+source = "hill-2024"
+text = "There was neither a significant main effect of group (F(2,56)= .03, p= .97, ηp2 = .001), nor an interaction between the two (F(2,56)= .56, p= .58, ηp2 = .019) (Fig. 2F)."
+
+[[judgement.passages]]
+source = "hill-2024"
+text = "Contrary to both our expectations and previous research (Ehlers et al., 2021), false interoceptive feedback designed to imply low physiological arousal (i.e., slow HR feedback) did not reduce the emotional response to a postural threat."
+
+[[judgement.passages]]
+source = "hill-2024"
+text = "However, participants in the slow HR feedback group (8.2 ± 1.5, range 5 – 10) reported greater belief in the information that they received compared to the fast HR feedback group (4.8 ± 2.4, range 1 – 8) (p <.001, d=1.70)."
+
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "Hearing a falsely fast heartbeat made people more afraid at a height, while their real heart rate did not differ between the groups, which is what the prediction says should happen. But hearing a falsely slow heartbeat did not make them less afraid than hearing nothing, so only one of the two directions moved emotion the way the expected body state pointed. On balance it leans for the prediction, because the one change that happened went the predicted way and the body held still."
+unsure = true
+unsure_why = "The fast-feedback group mostly did not believe the feedback (4.8 out of 10), so it is not clear the fear came from a changed expectation of the body rather than from an alarming sound. The slow condition may have failed because the threat was mild (fear only rose to 1.6 out of 10 with no feedback), which the authors offer; a reader who discounts the slow condition on that ground would read 'for'."
+
+# ------------------------------------------- harrison-2021 x seth-interoceptive-suppression
+
+[[judgement]]
+id = "com-harrison-seth-interoceptive-suppression"
+kind = "commitment"
+prediction = "seth-interoceptive-suppression"
+study = "harrison-2021"
+dates = { statement = "2012-01-10", study_first_appeared = "2021-03-26" }
+
+[[judgement.passages]]
+source = "seth-2012"
+text = "A second basic prediction is that the AIC, as well as other areas involved in interoceptive processing, should show responses consistent with interoceptive predictive coding. For example, by analogy with studies of repetition suppression, AIC should show reduced responses for well predicted interoceptive signals and enhanced responses when expectations are violated."
+
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents wrote in 2012, in so many words, that the anterior insula (a brain region that handles signals from inside the body) should respond less to well-predicted body signals and more when the prediction is broken. This study, by a group outside the camp, measured exactly that with breathing signals, and first appeared as a preprint in 2021, nine years later."
+unsure = false
+unsure_why = ""
+
+[[judgement]]
+id = "out-harrison-seth-interoceptive-suppression"
+kind = "outcome"
+prediction = "seth-interoceptive-suppression"
+study = "harrison-2021"
+
+[[judgement.passages]]
+source = "harrison-2021"
+text = "In this Breathing Learning Task (BLT), 80 trials were performed where on each trial two visual cues were paired with either an 80% or 20% chance of a subsequent inspiratory resistive load."
+
+[[judgement.passages]]
+source = "harrison-2021"
+text = "In contrast, aIns, ACC, MFG, and the periaqueductal gray (PAG) demonstrated significant activations with overall prediction error values (i.e., averaged across trials with positive and negative prediction errors; Figure 4 B)."
+
+[[judgement.passages]]
+source = "harrison-2021"
+text = "Dorsolateral prefrontal cortex (dlPFC), anterior insula (aIns), anterior cingulate cortex (ACC), and middle frontal gyrus (MFG) all demonstrated significant deactivations with overall prediction certainty (i.e., averaged across trials with positive and negative prediction certainty; Figure 4 A)."
+
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "People learned from cues how likely it was that breathing would become hard on each trial. When the breath arrived, anterior insula activity rose with the size of the prediction error, so the region responded more the further the breath broke the prediction and less the better it was predicted. That is the pattern the prediction names."
+unsure = true
+unsure_why = "The fall in insula activity with prediction certainty was measured when the cue appeared, before the breath, so the 'less for well predicted' half rests on the error result alone (activity scaling with error) rather than on a direct predicted-versus-unpredicted contrast of the breath itself. The study has no comparable outside-world signal as a control, which the test wording asks for only on the 'against' side."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Attention schema theory: drafted 2026-11-21.
+
+[[judgement]]
+id = "com-kumar-2026-ast-graded"
+kind = "commitment"
+prediction = "ast-graded"
+study = "kumar-2026"
+passages = [
+  { source = "graziano-webb-2015", text = "A continuous scale for awareness is compatible with the attention schema theory. Attention can be graded, with more or less attention focused on an item, and therefore awareness, the internal model of attention, should also be graded." },
+  { source = "graziano-webb-2015", text = "To address the issue, in some paradigms, subjective awareness is assessed using continuous measures, such as confidence ratings, the perceptual awareness scale (PAS), or post-decision wagering" },
+]
+dates = { statement = "2015-04-23 (graziano-webb-2015)", study_first_appeared = "2026-08-24 (online publication; received 2026-04-22; no preprint found)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents wrote in 2015 that awareness should come in degrees because attention does, and named the very rating scale this study used. The study appeared eleven years later, from a group outside the theory's camp, so the plain dating rule applies and is met."
+unsure = true
+unsure_why = "The 2015 sentence says awareness 'should also be graded' because attention is; it does not say that taking attention away makes ratings more in-between, which is the specific pattern this study measured. A reader who wants the exact pattern stated in advance would read 'unclear'."
+
+[[judgement]]
+id = "out-kumar-2026-ast-graded"
+kind = "outcome"
+prediction = "ast-graded"
+study = "kumar-2026"
+passages = [
+  { source = "kumar-2026", text = "Crucially, PAS function slopes were shallower under high load in both experiments, indicating that awareness becomes more graded when attentional resources are limited." },
+  { source = "kumar-2026", text = "The overall mean PAS rating for the low load condition (M = 2.43, SD = 0.33) was significantly higher than high load condition (M = 2.29, SD = 0.31), (t(24) = −4.78, P < .001, d = 0.96)." },
+  { source = "kumar-2026", text = "The overall mean PAS rating for the low load condition (M = 2.59, SD = 0.22) was not significantly different than high load condition (M = 2.56, SD = 0.28), (t(36) = −1.17, P = .25, d = 0.19)." },
+  { source = "kumar-2026", text = "Once again, there seems to be a clear and consistent effect of load on the intermediate visibility level of brief glimpse." },
+  { source = "kumar-2026", text = "It should be noted that the present findings should not be taken to imply that consciousness is never all-or-none and is not a decisive test for discrete versus continuous theories of conscious perception." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "With the scene itself held the same, taking attention away moved people's clarity ratings: the in-between rating 'brief glimpse' became more common in both experiments, and in the first experiment the average rating also fell. In-between ratings were common throughout, never only 'not seen' or 'fully seen'. That is the prediction's 'for' case in its plain form: how clearly people see something shifts with how much attention is on it, by degrees."
+unsure = true
+unsure_why = "Attention was varied in only two steps, not several, so 'changes in matching steps' is shown for one step. In the second experiment the average rating did not change with attention, only the spread of ratings did. And the authors themselves say smooth rating curves do not settle graded against all-or-none, so a reader could call this 'mixed'."
+
+[[judgement]]
+id = "com-wang-2022-ast-control"
+kind = "commitment"
+prediction = "ast-control"
+study = "wang-2022"
+passages = [
+  { source = "graziano-webb-2015", text = "If awareness is an internal model of attention and is used to help control attention, then without awareness, attention should still be possible but it should suffer deficits in control." },
+  { source = "graziano-webb-2015", text = "Just so, in the attention schema theory, if the brain is allocating attention to item X but unaware of X, it has made an error in its internal model of attention, failing to register that its attention has been perturbed by X. In that case, the top–down control of attention should be compromised." },
+  { source = "graziano-webb-2015", text = "Regardless of the informational domain, the general prediction is the same: without awareness, attention should still be possible but should suffer a deficit in control." },
+]
+dates = { statement = "2015-04-23 (graziano-webb-2015)", study_first_appeared = "2022-11-17 (online publication; received 2022-09-03; no preprint found)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents published in 2015 that deliberate, goal-driven control of attention should suffer when a person is unaware of what has drawn their attention. This study appeared seven years later, from a group outside the theory's camp, and asks whether a goal a person holds still shapes how unseen cues pull attention, so the dates are clearly in order."
+unsure = true
+unsure_why = "What the 2015 passages mean by control is correcting attention after something has drawn it: withdrawing it, or taking it into account. This study measures something earlier, whether a goal set in advance decides which unseen cues draw attention at all. Whether the theory was committed to that is a judgement; a reader who says it was not would read 'unclear'."
+
+[[judgement]]
+id = "out-wang-2022-ast-control"
+kind = "outcome"
+prediction = "ast-control"
+study = "wang-2022"
+passages = [
+  { source = "wang-2022", text = "At the same time, participants reported subjectively that they were unable to perceive or identify the cues." },
+  { source = "wang-2022", text = "This result shows that when there is meaning contingency between objects, even if there is no conscious processing, the object’s meaning can still modulate the spatial attention allocation according to the current attentional control setting, and the meaning-contingent attentional orientation can occur at the subliminal level and is not affected by consciousness." },
+  { source = "wang-2022", text = "showing no significant difference whether consciousness was involved or not." },
+  { source = "wang-2022", text = "Therefore, the cue effects obtained in the experiments are the result of involuntary attention." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "Cues people could not see still drew attention, and part of that pull followed what people were searching for, about as strongly as in the same group's earlier study with visible cues. That looks like goal-driven control working without awareness, which leans against the prediction. But the study measured only the automatic pull, which the authors call involuntary; it never asked people to hold, push away or move their attention with respect to the unseen cue, which is the control the prediction names. So the result does not tell the prediction's two cases apart."
+unsure = true
+unsure_why = "A reader who counts a goal held in advance as deliberate control would read 'against'. The comparison with visible cues is across two papers and two sets of people, and the earlier paper (Wang and colleagues 2021) was not opened."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), The sensorimotor theory: drafted 2026-11-21.
+
+[[judgement]]
+id = "com-hense-2026-sm-inattentional"
+kind = "commitment"
+prediction = "sm-inattentional"
+study = "hense-2026"
+passages = [
+  { source = "oregan-noe-2001", text = "Your behavior is regulated by the appropriate sensorimotor contingencies, but you remain visually unaware of the associated aspects of the scene." },
+  { source = "oregan-noe-2001", text = "First, the empirical data on change blindness (see sect. 5.10 above) and inattentional blindness (see Noë & O’Regan 2000) demonstrate that you do not have all the details of what is seen in consciousness at once." },
+  { source = "hense-2026", text = "All participants engaged in a foreground visual distractor task, while task-irrelevant line configurations appeared in the background." },
+  { source = "hense-2026", text = "an uninformed group received no information about the face stimulus, a low-level group was informed about additional bright lines appearing in the background, and a high-level group was informed that these lines constitute a face." },
+]
+dates = { statement = "2001-10 (oregan-noe-2001)", study_first_appeared = "2026-10-15 (hense-2026, publication; an SSRN submitted version of unknown date)", data_collected = "not stated; before 2026-04-12 (received date)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "In 2001 the theory's authors said that someone busy with one task can fail to be aware of parts of the scene in front of them, and they cited missed unexpected objects as support. The study, which appeared in 2026 and was run by people outside their camp, gives exactly that test: people counting moving rectangles at the centre of the screen, with lines flashing in the background they were never told about. The statement came 25 years before the study, and it commits the theory to the result the study measures, so it is read as 'before'."
+unsure = false
+
+[[judgement]]
+id = "com-maimon-2022-sm-substitution"
+kind = "commitment"
+prediction = "sm-substitution"
+study = "maimon-2022"
+passages = [
+  { source = "oregan-noe-2001", text = "The fact that stimulation is provided through the skin should be irrelevant, providing the stimulation obeys the required sensorimotor laws." },
+  { source = "oregan-noe-2001", text = "It was only when the observer was allowed to actively manipulate the camera that identification became possible and observers came to “see” objects as being externally localized (White et al. 1970)." },
+  { source = "oregan-noe-2001", text = "Thus, since normally input coming through the auditory nerve will change in certain ways when the head or body moves, when later, without moving, the organism is stimulated through the auditory nerve, the stimulation will be perceived as belonging to the auditory modality." },
+  { source = "maimon-2022", text = "The translation of the visual image to auditory soundscapes was carried out on a dedicated EyeMusic website or mobile app and played back through a computer (laptop or desktop) or a mobile device" },
+  { source = "maimon-2022", text = "GB met with an EyeMusic trainer twice a week at his home, for around nine months." },
+]
+dates = { statement = "2001-10 (oregan-noe-2001)", study_first_appeared = "2022-06-22 (maimon-2022, publication)", data_collected = "not stated; before 2021-09-01 (received date)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "The dates are clear: the prediction was published in 2001, two decades before the study. What is unclear is whether the 2001 statement commits the theory to this case. It says the channel does not matter only if the stimulation 'obeys the required sensorimotor laws', meaning the input changes as the user moves; the paper describes pictures turned into sound on a website or app and played back, and never says the user moved the camera himself while listening. The same 2001 publication also says input through the auditory nerve, without movement, is heard as sound, which points the other way for a camera-to-sound device used without movement."
+unsure = true
+unsure_why = "One interview remark ('Using only with the musical eye I would have trouble getting you in the frame') suggests he did aim a camera at times, and nine months is long practice. A reader who takes the training as active use could read 'before' and go on to an outcome, which this reader would put as mixed: he calls the experience seeing, but also sees colours when colour words are spoken, with no device, and the authors leave open whether it is perception or imagery."
+
+# ========================================================== outcome judgements
+
+[[judgement]]
+id = "out-hense-2026-sm-inattentional"
+kind = "outcome"
+prediction = "sm-inattentional"
+study = "hense-2026"
+passages = [
+  { source = "hense-2026", text = "recruited: 47 uninformed, 43 low-level informed, 37 high-level informed): misalignment between reported stimulus perception and assigned experimental group (nine from the uninformed, eight from the low-level, and four in the high-level group; total 21)" },
+  { source = "hense-2026", text = "This design enabled a repeated presentation of lighter lines with abrupt onsets in the noisy background that remained nonconscious to uninformed participants but conscious as well as perceptually and temporally distinct to informed participants." },
+  { source = "hense-2026", text = "Awareness ratings confirmed successful experimental manipulation, with more than 80% of recruited participants reporting the intended perceptual outcome" },
+  { source = "hense-2026", text = "All participants were instructed to maintain fixation on the fixation cross while counting each time a large black rectangle crossed an imaginary horizontal midline through the fixation cross." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "The prediction says a sizeable share of people busy with a demanding task will not notice a visible, unexpected object where they are looking. Of 47 people who were not told about the background lines, only 9 reported seeing them, so 38 (about 81%) missed them, across 100 appearances near the centre of the screen. People shown the same displays but told about the lines did see them, which shows the lines were visible. That is the result the prediction names."
+unsure = true
+unsure_why = "The lines were lighter grey among black lines and were tuned in pilot studies so that uninformed people would miss them, so a reader may doubt they were 'clearly visible' as the test wording asks; the 81% figure is worked out from the exclusion counts rather than stated by the authors. Either way it moves no score, because this prediction does not separate the theory from its rivals."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Orchestrated Objective Reduction: drafted 2026-11-21.
+
+[[judgement]]
+id = "com-babcock-orch-mt-coherence"
+kind = "commitment"
+prediction = "orch-mt-coherence"
+study = "babcock-2024"
+passages = [
+  { source = "hameroff-1998", text = "Experiments with SQUIDs (superconducting quantum interference devices) such as those suggested by Leggett (1984) will detect phases of quantum coherence in microtubules." },
+  { source = "hameroff-penrose-2014", text = "Phases of quantum coherence will be detected in microtubules." },
+  { source = "babcock-2024", text = "Received 2023 Dec 4; Accepted 2024 Mar 19; Revised 2024 Mar 16" },
+]
+dates = { statement = "1998-08-15 (hameroff-1998; restated without the instrument 2013-08-20, hameroff-penrose-2014)", study_first_appeared = "2023-02-03 (arXiv 2302.01469 v1, carrying the measurements; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents said in 1998 that quantum coherence would be detected in microtubules, and said it again in 2013 without naming an instrument. The study's measurements first appeared in a preprint in February 2023, ten years after the later statement, and it was not registered. Its authors are not the theory's proponents, so the preprint date is the one that counts."
+unsure = false
+
+[[judgement]]
+id = "com-xenonnt-orch-dp-collapse"
+kind = "commitment"
+prediction = "orch-dp-collapse"
+study = "xenonnt-2026"
+passages = [
+  { source = "hameroff-1998", text = "Isolated technological quantum superpositions will self-collapse according to E = h/T." },
+  { source = "hameroff-penrose-2014", text = "Diósi–Penrose (DP) scheme of ‘objective reduction’ (‘OR’) of the quantum state." },
+  { source = "hameroff-penrose-2014", text = "In our picture, the dominant effect is likely to be (2) separation at the level of atomic nuclei, e.g. 2.5 Fermi length for carbon nuclei (2.5 femtometers; 2.5 × 10−15 meters)." },
+  { source = "xenonnt-2026", text = "Data from the first XENONnT science run (SR0), collected from July 6, 2021, to November 10, 2021" },
+]
+dates = { statement = "1998-08-15 (hameroff-1998); the Diósi-Penrose scheme named, and the nucleus-sized scale chosen, 2013-08-20 (hameroff-penrose-2014)", data_first_appeared = "2022 (the same detector data, first published for other searches; the paper's reference 12)", study_first_appeared = "2025-06-05 (arXiv 2506.05507 v1; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents fixed the collapse rule in 1998 and, in 2013, named it as the Diósi-Penrose scheme and put the mass that matters at the scale of carbon nuclei. The detector data were collected in 2021 and first published in 2022, and this analysis appeared in 2025, all long after. The study was run by a physics collaboration with no tie to the proponents."
+unsure = true
+unsure_why = "The dates are clear; the commitment is the doubt. What the detector tests is the faint X-ray glow that the Markovian (white-noise) form of the Diósi-Penrose model predicts. The proponents' passages commit them to the collapse rule and its timing, not to that form or to any glow, and the 2014 review itself calls the scale of the mass 'a large uncertainty'. A reader who wants the exact test fixed in advance would read 'unclear', and then the study does not count. The prediction's test wording, already settled, does name this glow as a way the prediction fails."
+
+# ============================================================= outcome judgements
+
+[[judgement]]
+id = "out-babcock-orch-mt-coherence"
+kind = "outcome"
+prediction = "orch-mt-coherence"
+study = "babcock-2024"
+passages = [
+  { source = "babcock-2024", text = "Table 1 shows consistent results for both excitation wavelengths, with the first a decrease of the QY from Trp to TuD and then a statistically significant increase by up to almost 70% for MTs." },
+  { source = "babcock-2024", text = "It is therefore an unlikely scenario in the vastly more complex MT case, suggesting that collective radiative processes in these protein assemblies with mega-ensembles of Trp are the primary cause of the significant QY increases observed in MTs." },
+  { source = "babcock-2024", text = "These promising results point toward superradiant emission, but fluorescence QYs need to be complemented by lifetime measurements in order to measure the radiative rate of fluorescence." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "Assembled microtubules gave back up to about 70% more of the ultraviolet light they absorbed than loose tubulin did, as a shared quantum state of the light-absorbing units would make them do. But the test asks for a sign that only a shared quantum state explains, and the authors say themselves that the measurement cannot yet show that: the results 'point toward superradiant emission', and lifetime measurements are needed to settle it. They argue the other explanation, less energy lost as heat, is unlikely, without ruling it out. So the result fits the prediction but cannot tell it apart from an ordinary explanation."
+unsure = true
+unsure_why = "A reader who takes the authors' own conclusion (the measurements confirm their predictions of superradiance) would read 'for'. A second doubt points the other way: the coherence here is a brief shared state of light-absorbing units after ultraviolet light hits them, in a test tube, which may not be the kind of coherence the theory needs in living neurons. The prediction's wording does not say which kind, so that doubt was not used to move the verdict."
+
+[[judgement]]
+id = "out-xenonnt-orch-dp-collapse"
+kind = "outcome"
+prediction = "orch-dp-collapse"
+study = "xenonnt-2026"
+passages = [
+  { source = "xenonnt-2026", text = "New world-leading limits on the free parameters of the Markovian continuous spontaneous localization and Diósi-Penrose models are set, improving previous best constraints by two orders of magnitude and a factor of five, respectively." },
+  { source = "xenonnt-2026", text = "acts as a spatial cutoff parameter to avoid a divergence in the collapse rate for point-like particles" },
+  { source = "hameroff-penrose-2014", text = "In our picture, the dominant effect is likely to be (2) separation at the level of atomic nuclei, e.g. 2.5 Fermi length for carbon nuclei (2.5 femtometers; 2.5 × 10−15 meters)." },
+  { source = "hameroff-penrose-2014", text = "There is, however, a large uncertainty about how ‘smeared out’ these nuclei must be considered to be" },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "against"
+reason = "The detector found no X-ray glow, and the paper sets the Diósi-Penrose model's smearing length at more than about half a nanometre (4.9 × 10^-10 m). The proponents' own calculation puts the mass at the scale of carbon nuclei, 2.5 × 10^-15 m, some hundred thousand times smaller; at that scale the model's glow would be far stronger than what was seen. The test wording counts it against the prediction when the side effects that the rule's simplest form implies are absent at the level it requires, and that is what this result shows."
+unsure = true
+unsure_why = "Three doubts. The paper does not mention Orch OR or the nucleus-sized scale; linking its smearing length to the proponents' 2.5-femtometre figure is this reader's step, not the paper's. The glow comes from the Markovian form of the model, which the proponents never adopted, and the 2014 review calls the smearing scale 'a large uncertainty', so a larger scale, which the result allows, would escape. A reader who weighs these would read 'mixed'. The prediction's own note says a later reply that the simplest version is not the theory's does not undo a recorded failure."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Damasio's feeling-based theory: drafted 2026-11-21.
+
+[[judgement]]
+id = "com-mukherjee-2024-dam-insula"
+kind = "commitment"
+prediction = "dam-insula"
+study = "mukherjee-2024"
+passages = [
+  { source = "damasio-tranel-2013", text = "The activity patterns unequivocally present in the insular cortex during feeling states would constitute a second-order mapping of activity patterns first assembled subcortically." },
+  { source = "damasio-tranel-2013", text = "The subcortical level would ensure basic feeling states while the cortical level would largely relate feeling states to cognitive processes such as decision-making and imagination." },
+  { source = "mukherjee-2024", text = "Here, we examined whether bilateral lesions of the IC affect the acquisition and expression of taste and place avoidance in EtOH-induced CTA and CPA paradigms." },
+]
+dates = { statement = "2012-04-03 (damasio-tranel-2013, the online version)", study_first_appeared = "2024-06-04 (publication, online version)", data_collected = "not stated by the study; gathered before 2024-06-04" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents put the claim that feelings survive loss of the insula in print in 2012, twelve years before this study appeared. The study gives no date for its experiments, but twelve years is far more than the five-year gap the first reader treats as enough, so the statement was on record before anyone gathered this data. The study's authors are not of the theory's camp, so the own-lab rule does not apply."
+unsure = false
+
+[[judgement]]
+id = "com-yacawych-2026-dam-nonneural"
+kind = "commitment"
+prediction = "dam-nonneural"
+study = "yacawych-2026"
+passages = [
+  { source = "damasio-2023", text = "The unusual physiological features that enable feelings, and thus consciousness, depend on the presence of a nervous system but not on an isolated nervous system." },
+  { source = "damasio-2024", text = "interoceptive neurons in peripheral nerve ganglia as well as in nuclei of the central nervous system are at the mercy of molecules in the blood circulation" },
+  { source = "damasio-2024", text = "In conclusion, consciousness arises in organisms endowed with nervous systems but not from the nervous system alone." },
+]
+dates = { statement = "2022-07-27 (damasio-2023, first public listing); restated 2024-07-15 (damasio-2024)", study_first_appeared = "2025-01-24 (preprint on bioRxiv)", data_collected = "not stated by the study; gathered before 2025-01-24" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents stated in 2022, and again in July 2024, that feelings depend on body-sensing nerve cells exchanging signals directly with the blood and tissue around them, including at the brainstem places the blood-brain barrier leaves open. The study's first public appearance was its preprint in January 2025, six months after the later statement and two and a half years after the earlier one. The study's authors are not of the theory's camp."
+unsure = true
+unsure_why = "The gap to the nearer statement is six months, and the study gives no date for its experiments, so the data were almost certainly in hand before July 2024. The verdict rests on the 2022 statement instead, which is two and a half years earlier but worded more loosely ('not on an isolated nervous system'): a reader who holds that only the 2024 wording commits the theory to this particular test would read 'unclear'."
+
+# ============================================================= outcome judgements
+
+[[judgement]]
+id = "out-mukherjee-2024-dam-insula"
+kind = "outcome"
+prediction = "dam-insula"
+study = "mukherjee-2024"
+passages = [
+  { source = "mukherjee-2024", text = "In the present study, we found that ibotenic acid lesions of the insular cortex significantly attenuated EtOH-induced CTA and completely blocked acquisition of EtOH-induced CPA in EtOH-naïve rats." },
+  { source = "mukherjee-2024", text = "Post-hoc analyses demonstrated that ICX rats conditioned with EtOH had a significantly higher preference for saccharin post-conditioning compared to neurologically intact rats." },
+  { source = "mukherjee-2024", text = "the strength of the conditioned response can serve as a proxy for the perceived subjective interoceptive properties of a given stimulus" },
+  { source = "mukherjee-2024", text = "consistent with other studies demonstrating the loss of a neophobic-like response to a novel saccharin solution following lesions of IC" },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "Rats whose insulae were destroyed on both sides went on drinking the flavour that alcohol had made them sick after, and never came to avoid the place where it happened, while intact rats did both. If learning to avoid a taste and a place stands in for feeling bad in the body, then feelings did not survive the loss, which points against the prediction. But the measure is learning, not a report of how the animal feels, and the same lesion also removed the rats' ordinary wariness of a new flavour, so the result cannot separate a lost feeling from a lost ability to learn about a taste. The prediction itself is about what a person says and what observers see, which no rat study can supply."
+unsure = true
+unsure_why = "This is the shakiest reading in this batch. A reader who takes conditioned avoidance as a fair stand-in for feeling bad would read 'against'; a reader who holds that a prediction about human self-reported feelings cannot be touched by rat learning at all would say the study does not bear on it and should not have been taken. The lean, if it has to be stated, is against the prediction."
+
+[[judgement]]
+id = "out-yacawych-2026-dam-nonneural"
+kind = "outcome"
+prediction = "dam-nonneural"
+study = "yacawych-2026"
+passages = [
+  { source = "yacawych-2026", text = "while we detected no role for AP Glp1r neurons in physiological feeding, they mediated both the weight-lowering and aversive effects of GLP1RAs" },
+  { source = "yacawych-2026", text = "these AP Glp1r-KO mice exhibited blunted Lira-induced CTA formation" },
+  { source = "yacawych-2026", text = "while fenestrated capillaries provide AP neurons with direct access to circulating signals, the NTS resides behind the BBB, potentially limiting the access of circulating GLP1RAs to NTS Glp1r neurons" },
+  { source = "yacawych-2026", text = "Thus, the poor access of circulating GLP1RAs to the NTS may represent the main obstacle that prevents NTS Glp1r neurons from mediating weight loss responses to these compounds." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "The study worked on two neighbouring patches of the brainstem that both sense the body: one (the area postrema) sits in a gap in the blood-brain barrier and so is bathed in whatever circulates in the blood, the other (the nucleus of the solitary tract) sits behind the barrier. Taking the receptor away from the patch in the gap blunted the sickly, avoidance-producing state the drug normally causes, while putting the receptor back only behind the barrier did not produce that state. That is what the prediction's test asks for: cut the direct chemical exchange between body-sensing nerve cells and the blood around them, leave nerve-to-nerve signalling alone, and the feeling of the body's state changes."
+unsure = true
+unsure_why = "Three things make this loose. The circulating molecule is a medicine, not one of the body's own signals, so the study shows the exchange route matters for a drug rather than for ordinary bodily feeling. The feeling itself is read from mice refusing a flavour, a stand-in for nausea, not from anything said. And the two patches differ in more than the barrier, in how many receptor-carrying cells they hold and how much receptor each holds, which the authors say themselves. A stricter reader would call this mixed."

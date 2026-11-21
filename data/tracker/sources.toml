@@ -883,3 +883,263 @@ citation = "Europe PMC REST search, run 2026-11-21, sorted newest first (sort=P_
 url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
 published = "run 2026-11-21; 18 hits in all"
 opened = "2026-11-21, every hit's title and abstract read; the screen list is in notes.md"
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Anil Seth's living-body view: drafted 2026-11-21.
+
+[[source]]
+id = "searches-2026-11-21-seth"
+citation = "The eight per-prediction Europe PMC searches for Anil Seth's living-body view, written and committed before they ran (data/tracker/searches-2026-11-21.toml), run 2026-11-21 newest first; raw results in data/tracker/search-runs-2026-11-21/seth-*.json"
+opened = "2026-11-21: the method header, the eight queries and all eight result files"
+read = "every result in rank order up to 40 per query, on title and abstract (260 results in all); the screen is in screen.md"
+
+[[source]]
+id = "raoul-2025"
+citation = "Raoul L, Sarlegna FR, Goulon C, Grosbras MH. Do explicit self-reflection traits relate to implicit bodily self-consciousness? Insights from asynchronous stimulation in embodiment illusions. Cortex (2025)"
+url = "https://doi.org/10.1016/j.cortex.2025.09.001"
+doi = "10.1016/j.cortex.2025.09.001"
+open_copy = "https://hal.science/hal-05284068 (HAL, submitted version, deposited 2025-09-26 per the HAL API)"
+published = "2025-09-10"
+published_source = "Europe PMC record 40997355 (first publication 2025-09-10); OpenAlex gives the same date. No preprint found in Europe PMC (title search, 2026-11-21)."
+opened = "NOT OPENED. The ScienceDirect page returned a generic page with no article text, and the HAL document link returned a 'Making sure you're not a bot!' check (2026-11-21); neither was got past. Only the abstract, through Europe PMC, was read."
+found_through = "searches-2026-11-21-seth"
+
+[[source]]
+id = "vabba-2025"
+citation = "Vabba A, Suzuki K, Doric M, Möller TJ, Garfinkel S, Critchley H. The vagus nerve as a gateway to body ownership: taVNS reduces susceptibility to a virtual version of the cardiac and tactile rubber hand illusion. Psychophysiology 62(3):e70040, 2025"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11913772/"
+doi = "10.1111/psyp.70040"
+published = "2025-03-01"
+published_source = "Europe PMC record 40097357 (first publication 2025-03-01); the article's own history: 'Received 2024 Aug 7; Revised 2025 Feb 3; Accepted 2025 Feb 24'"
+earlier_version = "Authorea preprint, doi 10.22541/au.172492889.93460113/v1, dated 2024-08-29 in its Europe PMC record (PPR1199496). Not opened (verify list: v-seth-vabba-preprint-date)."
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "full text: methods, results and discussion read; searched for registration and collection dates (none given)"
+found_through = "searches-2026-11-21-seth"
+
+[[source]]
+id = "hill-2024"
+citation = "Hill MW, Johnson E, Ellmers TJ. The influence of false interoceptive feedback on emotional state and balance responses to height-induced postural threat. Biological Psychology 189:108803, 2024"
+url = "https://doi.org/10.1016/j.biopsycho.2024.108803"
+doi = "10.1016/j.biopsycho.2024.108803"
+open_copy = "https://spiral.imperial.ac.uk/handle/10044/1/112043 (Imperial College London's repository; the file carries the journal's layout and CC BY licence)"
+published = "2024-04-23"
+published_source = "the article's own history ('Received 12 September 2023; Received in revised form 1 March 2024; Accepted 18 April 2024 Available online 23 April 2024') and Europe PMC record 38663458. No preprint found in Europe PMC (title search, 2026-11-21)."
+opened = "2026-11-21, the Imperial College repository copy (PDF), read in full. The Coventry University repository copy answered with a robot check and was not pursued."
+read = "full text. Quotations normalise text-extraction faults (stray superscript '2' from partial eta-squared, and spaces inside numbers)."
+found_through = "searches-2026-11-21-seth"
+
+[[source]]
+id = "harrison-2021"
+citation = "Harrison OK, Köchli L, Marino S, Luechinger R, Hennel F, Brand K, Hess AJ, Frässle S, Iglesias S, Vinckier F, Petzschner FH, Harrison SJ, Stephan KE. Interoception of breathing and its relationship with anxiety. Neuron 109(24):4080 onward, 2021"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC8691949/"
+doi = "10.1016/j.neuron.2021.09.045"
+published = "2021-10-20"
+published_source = "Europe PMC record 34672986 (first publication 2021-10-20); the article's own history: 'Received 2021 May 13; Revised 2021 Sep 1; Accepted 2021 Sep 23'"
+earlier_version = "bioRxiv preprint 10.1101/2021.03.24.436881, dated 2021-03-26 in its Europe PMC record (PPR303322). Not opened (verify list: v-seth-harrison-preprint-date)."
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "full text: the task, the brain-imaging model (which events each regressor is tied to) and the results read; searched for registration and collection dates (none given)"
+found_through = "searches-2026-11-21-seth"
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Attention schema theory: drafted 2026-11-21.
+
+[[source]]
+id = "europepmc-ast-searches-2026-11-21"
+citation = "Europe PMC REST search, the seven attention schema theory queries fixed in data/tracker/searches-2026-11-21.toml (one per prediction, ast-graded to ast-domain), sorted newest first (sort = P_PDATE_D desc); results saved in data/tracker/search-runs-2026-11-21/ast-*.json"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+published = "run 2026-11-21, 09:48 to 09:51 Pacific time"
+opened = "2026-11-21, every saved result's title and abstract, up to the first 40 per query (204 in all: 40, 14, 4, 40, 40, 29, 37); the screen is in screen.md"
+note = "Hit counts: ast-graded 122, ast-covary 14, ast-claims 4, ast-control 77, ast-schema-control 231, ast-tpj 29, ast-domain 37."
+
+[[source]]
+id = "kumar-2026"
+citation = "Kumar S, Srinivasan N. Gradedness of gist perception with scenes depends on concurrent task load: awareness under high load is more graded due to noise suppression. Neuroscience of Consciousness, 2026 (niag054)"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13631927/fullTextXML"
+doi = "10.1093/nc/niag054"
+published = "2026-08-24"
+published_source = "Europe PMC (first publication 2026-08-24, electronic) and Crossref (published online 2026-08-24; the DOI record was created 2026-07-29). The article says 'Received 2026 Apr 22; Revised 2026 Jul 1; Accepted 2026 Jul 21'. No preprint found (Europe PMC preprint search, 2026-11-21)."
+opened = "2026-11-21, full text (Europe PMC XML, PMC13631927): every section; searched for 'preregist', 'registered' and 'AsPredicted' (none). Its data and code are on OSF (a view-only link); whether that OSF project holds a registration could not be checked (the OSF API asked for sign-in)."
+found_through = "europepmc-ast-searches-2026-11-21"
+
+[[source]]
+id = "wang-2022"
+citation = "Wang H, Yang J, Gao Y, Zhang M. Subliminal meaning-contingent attentional orienting: The role of attentional control setting based on displaywide features. Frontiers in Psychology 13:1035690, 2022"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9752581/fullTextXML"
+doi = "10.3389/fpsyg.2022.1035690"
+published = "2022-11-17"
+published_source = "Europe PMC (first publication 2022-11-17, electronic) and Crossref (published online 2022-11-17). The article says 'Received 2022 Sep 3; Accepted 2022 Oct 31'. No preprint found (a Europe PMC title search, 2026-11-21, returned only the journal record)."
+opened = "2026-11-21, full text (Europe PMC XML, PMC9752581, open access): every section; searched for 'preregist', 'registered' and 'AsPredicted' (none)."
+found_through = "europepmc-ast-searches-2026-11-21"
+
+[[source]]
+id = "bong-2025"
+citation = "Bong SH, Shin Y, Yoon D, Kim J, Park H, Jeong B. Conscious cardiac awareness and interoceptive attention differentially modulate heartbeat-evoked neural dynamics. NeuroImage, 2025 (121606)"
+url = "https://doi.org/10.1016/j.neuroimage.2025.121606"
+doi = "10.1016/j.neuroimage.2025.121606"
+published = "2025-11-22"
+published_source = "Europe PMC (first publication 2025-11-22, electronic); Crossref gives the licence as CC BY-NC 4.0 from 2025-11-20. No preprint found (Europe PMC preprint search, 2026-11-21)."
+opened = "NOT OPENED beyond the abstract in the Europe PMC record. The article is open access (CC BY-NC) on ScienceDirect, but ScienceDirect answered 'HTTP 403 Forbidden' to an automated fetch, and Elsevier's article service returned only the record's details, not the text, without a key; neither was worked around. No copy in PubMed Central."
+found_through = "europepmc-ast-searches-2026-11-21"
+
+[[source]]
+id = "lo-2018"
+citation = "Lo SY. Attention without awareness: Attentional modulation of perceptual grouping without awareness. Attention, Perception, & Psychophysics 80(3), 2018"
+url = "https://doi.org/10.3758/s13414-017-1474-7"
+doi = "10.3758/s13414-017-1474-7"
+published = "2017-12-26"
+published_source = "OpenAlex publication date 2017-12-26 (the online version); the Europe PMC record was created 2017-12-28 and gives the issue date 2018-04-01. No preprint found (Europe PMC preprint search, 2026-11-21)."
+opened = "NOT OPENED beyond the abstract in the Europe PMC record. OpenAlex lists a free copy at the publisher (link.springer.com PDF), but the address answered with a 'Client Challenge' robot-check page, which was not bypassed. No copy in PubMed Central."
+found_through = "europepmc-ast-searches-2026-11-21"
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), The sensorimotor theory: drafted 2026-11-21.
+
+[[source]]
+id = "epmc-sm-per-prediction-2026-11-21"
+citation = "Europe PMC REST searches run 2026-11-21 (09:51 to 09:53 Pacific), one per prediction of the sensorimotor theory, sorted newest first (sort = P_PDATE_D desc), queries as fixed in data/tracker/searches-2026-11-21.toml; raw results in data/tracker/search-runs-2026-11-21/sm-*.json"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+published = "2026-11-21"
+published_source = "the run date recorded in each results file"
+opened = "2026-11-21; hit counts: sm-colour-contingent 71, sm-inversion 84, sm-active-control 23, sm-substitution 140, sm-change-blindness 329, sm-inattentional 324, sm-no-ncc 7. The first 40 of each (all 23 and all 7 where fewer) were screened on title and abstract; every line is in screen.md."
+
+[[source]]
+id = "thomas-2026"
+citation = "Thomas C, Didierjean A. You process it, yet miss the change: a magic-based demonstration of a novel form of change blindness. Cognition, 2026 (article 106784)"
+url = "https://europepmc.org/article/MED/43025128"
+doi = "10.1016/j.cognition.2026.106784"
+published = "2026-11-13"
+published_source = "Europe PMC electronic publication date"
+opened = "2026-11-21, the Europe PMC record (abstract, authors, affiliation) and the public Open Science Framework project osf.io/rj98t (created 2026-09-09; one data spreadsheet, not opened). The article is not open access (Europe PMC: subscription required; OpenAlex: closed, no repository copy); the full text was not opened."
+read = "abstract only"
+
+[[source]]
+id = "hense-2026"
+citation = "Hense A, Peters A, Dellert T, Bruchmann M, Straube T. Distinct electrophysiological correlates of low- and high-level visual consciousness with minimized post-perceptual processing. iScience, 2026 (article 117853)"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13691566/fullTextXML"
+doi = "10.1016/j.isci.2026.117853"
+published = "2026-10-15"
+published_source = "the article's own history in the full text (received 2026-04-12, revised 2026-07-25, accepted 2026-09-24, published 2026-10-15) and Europe PMC's first publication date"
+opened = "2026-11-21, Europe PMC full-text XML (PMC13691566), CC BY 4.0"
+read = "in full where it bears on noticing: summary, the participants section with recruitment and exclusion counts, stimuli and presentation, procedure, awareness ratings, limitations, data availability; searched for 'regist' (none)"
+
+[[source]]
+id = "liu-2026"
+citation = "Liu A, Chen M, Zhao S, Zhao F, Feng W. A late-stage neural signature of visual awareness in the no-report inattentional blindness paradigm. Journal of Experimental Psychology: General, 2026"
+url = "https://europepmc.org/article/MED/42060400"
+doi = "10.1037/xge0001918"
+published = "2026-05-01"
+published_source = "Europe PMC first publication date (the record was created 2026-04-30)"
+opened = "2026-11-21, the Europe PMC record only (abstract, authors, affiliation). Not open access (Europe PMC: subscription required; OpenAlex: closed, no repository copy, no preprint found by title search)."
+read = "abstract only"
+
+[[source]]
+id = "maimon-2022"
+citation = "Maimon A, Yizhar O, Buchs G, Heimler B, Amedi A. A case study in phenomenology of visual experience with retinal prosthesis versus visual-to-auditory sensory substitution. Neuropsychologia 173:108305, 2022"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9297294/fullTextXML"
+doi = "10.1016/j.neuropsychologia.2022.108305"
+published = "2022-06-22"
+published_source = "Europe PMC electronic publication date; the full text gives received 2021-09-01, revised 2022-04-30, accepted 2022-06-13"
+opened = "2026-11-21, Europe PMC full-text XML (PMC9297294), CC BY-NC-ND 4.0"
+read = "in full: abstract, introduction, methods (case, training, task), results with the interview passages, discussion. The three supplementary videos were not opened."
+
+[[source]]
+id = "sekiyama-2012"
+citation = "Sekiyama K, Hashimoto K, Sugita Y. Visuo-somatosensory reorganization in perceptual adaptation to reversed vision. Acta Psychologica 141(2):231-242, 2012"
+url = "https://europepmc.org/article/MED/22742662"
+doi = "10.1016/j.actpsy.2012.05.011"
+published = "2012-06-26"
+published_source = "Europe PMC electronic publication date"
+opened = "2026-11-21, the Europe PMC record only (abstract). Not open access (Europe PMC: subscription required; OpenAlex: closed, no repository copy)."
+read = "abstract only"
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Orchestrated Objective Reduction: drafted 2026-11-21.
+
+[[source]]
+id = "epmc-orch-prediction-searches-2026-11-21"
+citation = "Europe PMC REST search, the eight per-prediction queries for Orchestrated Objective Reduction written down in data/tracker/searches-2026-11-21.toml before any was run, each run once on 2026-11-21 (09:57 Pacific time for the anaesthesia query), sorted newest first (sort = 'P_PDATE_D desc')"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+published = "run 2026-11-21; hits per query: orch-mt-coherence 133, orch-mt-entangle 76, orch-synaptic-cyto 1392, orch-mt-vibration 181, orch-dp-collapse 52, orch-mass-time 2, orch-coherence-time 21, orch-anaesthetic-mt 267"
+opened = "2026-11-21, the raw results in data/tracker/search-runs-2026-11-21/orch-*.json: the first 40 results of each query (all of them where there were fewer), 223 in all, screened by title and abstract (every line in screen.md)"
+
+[[source]]
+id = "babcock-2024"
+citation = "Babcock NS, Montes-Cabrera G, Oberhofer KE, Chergui M, Celardo GL, Kurian P. Ultraviolet Superradiance from Mega-Networks of Tryptophan in Biological Architectures. The Journal of Physical Chemistry B 128(17):4035-4046, 2024"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11075083/"
+doi = "10.1021/acs.jpcb.3c07936"
+published = "2023-02-03"
+published_source = "arXiv 2302.01469 v1, submitted 2023-02-03 (arXiv record, read 2026-11-21); its abstract already reports the quantum-yield measurements. The journal version's history: 'Received 2023 Dec 4; Accepted 2024 Mar 19; Revised 2024 Mar 16'; Europe PMC first publication date 2024-04-19."
+opened = "2026-11-21, full text of the journal version (Europe PMC XML, CC BY 4.0); the arXiv record and v1 abstract only"
+read = "abstract, introduction, the measurement methods and results (quantum yields, Table 1), and the discussion read; the simulation sections searched, not read line by line"
+found_through = "epmc-orch-prediction-searches-2026-11-21"
+
+[[source]]
+id = "xenonnt-2026"
+citation = "Aprile E, Aalbers J, Abe K, and colleagues (XENON Collaboration; with Curceanu C, Manti S, Piscicchia K). Challenging Spontaneous Quantum Collapse with the XENONnT Dark Matter Detector. Physical Review Letters 136(12):120201, 2026"
+url = "https://arxiv.org/abs/2506.05507"
+doi = "10.1103/2jm3-4976"
+published = "2025-06-05"
+published_source = "arXiv 2506.05507 v1, submitted 2025-06-05 (arXiv record, read 2026-11-21); the v1 abstract already reports the Diósi-Penrose limit. Journal version: Europe PMC first publication date 2026-03-01; Unpaywall gives 2026-03-23."
+opened = "2026-11-21, full text of arXiv v2 (2026-03-24, after journal acceptance) as the arXiv HTML page; the publisher's open-access PDF (link.aps.org) was downloaded and its text layer compared for four of the quoted sentences, which match (the others did not survive its text extraction)"
+read = "main text read (abstract, introduction, detector and data, results for both collapse models, summary); the supplemental material searched for the Diósi-Penrose emission rate; the reference list checked for the earlier searches it names"
+found_through = "epmc-orch-prediction-searches-2026-11-21"
+note = "The detector data (first science run, collected 2021-07-06 to 2021-11-10) were first published for other searches in 2022 (the paper's reference 12: XENON Collaboration, 'Search for New Physics in Electronic Recoil Data from XENONnT', Physical Review Letters 129:161805). This study is a new analysis of those data."
+
+[[source]]
+id = "jia-2026"
+citation = "Jia Y, Lei J, Jiang Y, Xue L, Chen T, Wang J, Wei H. The MAP6-NTS axis in hippocampal CA1 regulates synaptic plasticity and memory. Neuropharmacology 291:110921, 2026"
+url = "https://doi.org/10.1016/j.neuropharm.2026.110921"
+doi = "10.1016/j.neuropharm.2026.110921"
+published = "2026-03-11"
+published_source = "Europe PMC first publication date. No preprint found (Europe PMC preprint search, 2026-11-21)."
+opened = "the abstract only (Europe PMC record, 2026-11-21). Unpaywall lists no open copy and Europe PMC marks it not open access. The full text was not opened."
+found_through = "epmc-orch-prediction-searches-2026-11-21"
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Damasio's feeling-based theory: drafted 2026-11-21.
+
+[[source]]
+id = "bret-2026"
+citation = "Bret M, Laveneziana P, Niérat MC, Lavault S, Patout M, Zaien I, Teulier M, Bianquis C, Straus C, Morélot-Panzini C, Similowski T. Dyspnea during resting breathing and carbon dioxide rebreathing in adult patients with congenital central hypoventilation syndrome. Chest, 2026"
+url = "https://doi.org/10.1016/j.chest.2026.10.015"
+doi = "10.1016/j.chest.2026.10.015"
+published = "2026-10-20"
+published_source = "Europe PMC record, first publication date 2026-10-20 (print issue October 2026); PubMed id 42901374"
+opened = "not opened: the publisher (Elsevier, Chest) requires a subscription, and Europe PMC lists no free or open copy (isOpenAccess: N, no PubMed Central id). Only the published abstract was read, in Europe PMC, on 2026-11-21."
+read = "published abstract only"
+found_through = "europepmc-prediction-search-2026-11-21"
+
+[[source]]
+id = "mukherjee-2024"
+citation = "Mukherjee A, Gilles-Thomas EA, Kwok HY, Shorter CE, Sontate KV, McSain SL, Honeycutt SC, Loney GC. Bilateral insular cortical lesions reduce sensitivity to the adverse consequences of acute ethanol intoxication in Pavlovian conditioning procedures. Alcohol, Clinical & Experimental Research 48(8):1473-1482, 2024"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12648566/"
+doi = "10.1111/acer.15383"
+published = "2024-06-04"
+published_source = "Europe PMC record, first publication date 2024-06-04 (the online version; the print issue is August 2024); PubMed id 38838083"
+opened = "2026-11-21, full text of the author manuscript on PubMed Central (PMC12648566), fetched through the United States National Library of Medicine's article service and read in full"
+read = "full text of the author manuscript (abstract, introduction, methods, results, discussion); the figures themselves were not viewed"
+found_through = "europepmc-prediction-search-2026-11-21"
+note = "The copy read is the authors' accepted manuscript deposited by their funder, not the journal's typeset version; the wording of the two may differ slightly."
+
+[[source]]
+id = "yacawych-2026"
+citation = "Yacawych WT, Wang Y, Zhou G, Hassan S, Bodur C, Walters E, Santinga JG, Sass F, deVaux M, Kernodle S, Wu I, Brown JM, Belmont-Rausch D, Rupp AC, Tomlinson AJ, Lin Z, VanTongeren E, Secher A, Raun K, Pers TH, Seeley RJ, Myers MG. A single dorsal vagal complex circuit mediates the aversive and anorectic responses to GLP1R agonists. Journal of Clinical Investigation 136(21):e193743, 2026"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC13722397/"
+doi = "10.1172/JCI193743"
+published = "2025-01-24"
+published_source = "the preprint on bioRxiv (10.1101/2025.01.21.634167, PubMed Central PMC11785067), first public 2025-01-24, named as this paper's preprint in the journal article's own record; the journal version is dated 2026-09-15 (Europe PMC), received 2025-03-21 and accepted 2026-09-08"
+opened = "2026-11-21, full text of the journal version (Europe PMC XML, CC BY 4.0), read in full except the supplemental figures"
+read = "full text (abstract, introduction, results, discussion, methods, reference list); supplemental figures not opened"
+found_through = "europepmc-prediction-search-2026-11-21"
+
+[[source]]
+id = "carvalho-2019"
+citation = "Carvalho GB, Mulpuri Y, Damasio A, Spigelman I. A role for the P2Y1 receptor in nonsynaptic cross-depolarization in the rat dorsal root ganglia. Neuroscience 423:98-108, 2019"
+url = "https://doi.org/10.1016/j.neuroscience.2019.09.038"
+doi = "10.1016/j.neuroscience.2019.09.038"
+published = "2019-07-14"
+published_source = "the preprint on bioRxiv (10.1101/702563), posted 2019-07-14 (bioRxiv's own record, read 2026-11-21); the journal version's Europe PMC first publication date is 2019-11-02 (PubMed id 31689490)"
+opened = "not opened: the journal version needs an Elsevier subscription, and the bioRxiv copy of the full text answered with a robot block (Cloudflare error 1015) to a plain fetch on 2026-11-21. The published abstract (Europe PMC) and the preprint's abstract (bioRxiv's own record) were read."
+read = "abstract only, in two places: the journal abstract in Europe PMC and the preprint abstract in bioRxiv's record"
+found_through = "europepmc-prediction-search-2026-11-21"
+note = "Antonio Damasio is an author, so this is a study by the theory's own camp."

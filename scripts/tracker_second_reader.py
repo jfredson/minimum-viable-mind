@@ -77,11 +77,12 @@ def main(argv=None):
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--run", default=None, help="a name for this run; its ceiling counts only its calls")
     ap.add_argument("--ceiling", type=float, default=CEILING)
+    ap.add_argument("--max-out", type=int, default=MAX_OUT)
     ap.add_argument("--expect", type=int, default=0, help="stop before any call unless exactly this many packets are unanswered")
     a = ap.parse_args(argv)
     OUT.mkdir(exist_ok=True)
     packets = sorted(PACKETS.glob("*.json"))
-    todo = [p for p in packets if not (OUT / p.name).exists()]
+    todo = [p for p in packets if not (OUT / p.name).exists() and not p.name.endswith(".maxtokens.json")]
     if a.expect and len(todo) != a.expect:
         print(f"STOP: {len(todo)} packets unanswered, expected {a.expect}; no call made")
         return 3
@@ -92,9 +93,9 @@ def main(argv=None):
         text = prompt_for(packet)
         body = {
             "contents": [{"role": "user", "parts": [{"text": text}]}],
-            "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": MAX_OUT},
+            "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": a.max_out},
         }
-        worst = len(text) / 3 / 1e6 * PRICE_IN + MAX_OUT / 1e6 * PRICE_OUT
+        worst = len(text) / 3 / 1e6 * PRICE_IN + a.max_out / 1e6 * PRICE_OUT
         spent = spent_so_far(a.run)
         if spent + worst > a.ceiling:
             print(f"STOP before {p.stem}: spent ${spent:.4f}; the next call could cost up to ${worst:.4f}, past the ${a.ceiling:.2f} ceiling")

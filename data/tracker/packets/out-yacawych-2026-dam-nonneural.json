@@ -1,0 +1,77 @@
+{
+  "packet_id": "out-yacawych-2026-dam-nonneural",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Damasio's feeling-based theory",
+  "core_claim": {
+    "quote": "Finally, we outline a mechanism for the generation of feelings based on a two-way interaction between interoceptive components of the nervous system and a particular set of nonneural components of the organism's interior, namely, viscera and circulating chemical molecules involved in their operations.",
+    "source": {
+      "citation": "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023",
+      "url": "https://doi.org/10.1162/neco_a_01521",
+      "date": "2022-07-27"
+    }
+  },
+  "prediction": {
+    "statement": "Feelings, and so consciousness, come from the nervous system working together with the body's own tissues and chemistry, not from the nervous system alone.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2022-07-27",
+      "passage": "The unusual physiological features that enable feelings, and thus consciousness, depend on the presence of a nervous system but not on an isolated nervous system.",
+      "source": {
+        "citation": "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023",
+        "url": "https://doi.org/10.1162/neco_a_01521",
+        "date": "2022-07-27"
+      }
+    },
+    "test_for": "Blocking the direct chemical exchange between body-sensing nerves and the tissue or blood around them (for example at brainstem sites with no blood-brain barrier, such as the area postrema), while ordinary nerve-to-nerve signalling is kept, dulls or changes feelings of the body's state.",
+    "test_against": "Such blocking leaves feelings of the body's state unchanged, while ordinary nerve-to-nerve signalling alone carries them."
+  },
+  "study": {
+    "name": "Whether the sickly feeling and the weight loss that come with appetite drugs can be separated, by switching one receptor on and off in two neighbouring brainstem patches",
+    "source": {
+      "citation": "Yacawych WT, Wang Y, Zhou G, Hassan S, Bodur C, Walters E, Santinga JG, Sass F, deVaux M, Kernodle S, Wu I, Brown JM, Belmont-Rausch D, Rupp AC, Tomlinson AJ, Lin Z, VanTongeren E, Secher A, Raun K, Pers TH, Seeley RJ, Myers MG. A single dorsal vagal complex circuit mediates the aversive and anorectic responses to GLP1R agonists. Journal of Clinical Investigation 136(21):e193743, 2026",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13722397/",
+      "date": "2025-01-24"
+    },
+    "first_appeared": "2025-01-24 (preprint (bioRxiv 2025.01.21.634167), named as this paper's preprint in the journal article's record)",
+    "data_collected": {
+      "when": "not stated; before 2025-01-24",
+      "basis": "The paper gives no collection dates; the preprint of the same work appeared 2025-01-24."
+    }
+  },
+  "passages": [
+    {
+      "text": "while we detected no role for AP Glp1r neurons in physiological feeding, they mediated both the weight-lowering and aversive effects of GLP1RAs",
+      "source": {
+        "citation": "Yacawych WT, Wang Y, Zhou G, Hassan S, Bodur C, Walters E, Santinga JG, Sass F, deVaux M, Kernodle S, Wu I, Brown JM, Belmont-Rausch D, Rupp AC, Tomlinson AJ, Lin Z, VanTongeren E, Secher A, Raun K, Pers TH, Seeley RJ, Myers MG. A single dorsal vagal complex circuit mediates the aversive and anorectic responses to GLP1R agonists. Journal of Clinical Investigation 136(21):e193743, 2026",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13722397/",
+        "date": "2025-01-24"
+      }
+    },
+    {
+      "text": "these AP Glp1r-KO mice exhibited blunted Lira-induced CTA formation",
+      "source": {
+        "citation": "Yacawych WT, Wang Y, Zhou G, Hassan S, Bodur C, Walters E, Santinga JG, Sass F, deVaux M, Kernodle S, Wu I, Brown JM, Belmont-Rausch D, Rupp AC, Tomlinson AJ, Lin Z, VanTongeren E, Secher A, Raun K, Pers TH, Seeley RJ, Myers MG. A single dorsal vagal complex circuit mediates the aversive and anorectic responses to GLP1R agonists. Journal of Clinical Investigation 136(21):e193743, 2026",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13722397/",
+        "date": "2025-01-24"
+      }
+    },
+    {
+      "text": "while fenestrated capillaries provide AP neurons with direct access to circulating signals, the NTS resides behind the BBB, potentially limiting the access of circulating GLP1RAs to NTS Glp1r neurons",
+      "source": {
+        "citation": "Yacawych WT, Wang Y, Zhou G, Hassan S, Bodur C, Walters E, Santinga JG, Sass F, deVaux M, Kernodle S, Wu I, Brown JM, Belmont-Rausch D, Rupp AC, Tomlinson AJ, Lin Z, VanTongeren E, Secher A, Raun K, Pers TH, Seeley RJ, Myers MG. A single dorsal vagal complex circuit mediates the aversive and anorectic responses to GLP1R agonists. Journal of Clinical Investigation 136(21):e193743, 2026",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13722397/",
+        "date": "2025-01-24"
+      }
+    },
+    {
+      "text": "Thus, the poor access of circulating GLP1RAs to the NTS may represent the main obstacle that prevents NTS Glp1r neurons from mediating weight loss responses to these compounds.",
+      "source": {
+        "citation": "Yacawych WT, Wang Y, Zhou G, Hassan S, Bodur C, Walters E, Santinga JG, Sass F, deVaux M, Kernodle S, Wu I, Brown JM, Belmont-Rausch D, Rupp AC, Tomlinson AJ, Lin Z, VanTongeren E, Secher A, Raun K, Pers TH, Seeley RJ, Myers MG. A single dorsal vagal complex circuit mediates the aversive and anorectic responses to GLP1R agonists. Journal of Clinical Investigation 136(21):e193743, 2026",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13722397/",
+        "date": "2025-01-24"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

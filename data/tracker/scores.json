@@ -5,8 +5,8 @@
     "gemini"
   ],
   "judgement_status": {
-    "agreed": 104,
-    "ruled": 37,
+    "agreed": 117,
+    "ruled": 44,
     "one-reader": 0,
     "disagreed": 0,
     "open-for-john": 0,
@@ -246,7 +246,7 @@
     "seth": {
       "name": "Anil Seth's living-body view",
       "judgement_status": {
-        "agreed": 10,
+        "agreed": 15,
         "ruled": 3
       },
       "one_reader_only": false,
@@ -265,19 +265,23 @@
         "seth-c5",
         "seth-c6"
       ],
-      "support": null,
+      "support": 66.7,
       "support_rests_on": {
-        "counted_outcomes": 1,
+        "counted_outcomes": 3,
         "studies": [
+          "harrison-2021",
+          "hill-2024",
           "jicol-2023"
         ],
         "groups": [
-          "O'Neill group (last author; University of Bath)"
+          "Hill group (first and corresponding author; Coventry University), with Ellmers (Imperial College London)",
+          "O'Neill group (last author; University of Bath)",
+          "Stephan group (last author; University of Zurich and ETH Zurich, per the ethics approval and repositories)"
         ],
-        "total_weight": 4,
-        "weighted_sum": 0
+        "total_weight": 12,
+        "weighted_sum": 4
       },
-      "left_to_test": 87.5,
+      "left_to_test": 62.5,
       "left_to_test_counts": {
         "distinguishing_core_predictions": 5,
         "placeholders_for_claims_with_none": [
@@ -285,7 +289,7 @@
           "seth-c5",
           "seth-c6"
         ],
-        "untested": 7,
+        "untested": 5,
         "total": 8
       },
       "group": "not yet defined sharply enough to rank",
@@ -294,8 +298,8 @@
     "ast": {
       "name": "Attention schema theory",
       "judgement_status": {
-        "agreed": 9,
-        "ruled": 3
+        "agreed": 10,
+        "ruled": 6
       },
       "one_reader_only": false,
       "testability": 66.7,
@@ -336,7 +340,7 @@
     "sensorimotor": {
       "name": "The sensorimotor theory",
       "judgement_status": {
-        "agreed": 7,
+        "agreed": 10,
         "ruled": 1
       },
       "one_reader_only": false,
@@ -378,7 +382,7 @@
     "orch-or": {
       "name": "Orchestrated Objective Reduction",
       "judgement_status": {
-        "agreed": 9,
+        "agreed": 13,
         "ruled": 3
       },
       "one_reader_only": false,
@@ -393,29 +397,35 @@
       },
       "past_bar": true,
       "claims_lacking_for_bar": [],
-      "support": null,
+      "support": 25.0,
       "support_rests_on": {
-        "counted_outcomes": 0,
-        "studies": [],
-        "groups": [],
-        "total_weight": 0,
-        "weighted_sum": 0
+        "counted_outcomes": 2,
+        "studies": [
+          "babcock-2024",
+          "xenonnt-2026"
+        ],
+        "groups": [
+          "Kurian group (last and corresponding author, Quantum Biology Laboratory, Howard University, Washington)",
+          "XENON Collaboration (detector at the Gran Sasso underground laboratory, Italy)"
+        ],
+        "total_weight": 8,
+        "weighted_sum": -4
       },
-      "left_to_test": 100.0,
+      "left_to_test": 75.0,
       "left_to_test_counts": {
         "distinguishing_core_predictions": 8,
         "placeholders_for_claims_with_none": [],
-        "untested": 8,
+        "untested": 6,
         "total": 8
       },
-      "group": "testable, too little tested to rank",
-      "leans_against": false
+      "group": "ranked",
+      "leans_against": true
     },
     "damasio": {
       "name": "Damasio's feeling-based theory",
       "judgement_status": {
         "agreed": 5,
-        "ruled": 3
+        "ruled": 7
       },
       "one_reader_only": false,
       "testability": 50.0,
@@ -465,13 +475,17 @@
       {
         "theory": "gwt",
         "rank": 3
+      },
+      {
+        "theory": "orch-or",
+        "rank": 4
       }
     ],
     "shared_because_one_study_could_swap_them": {
-      "iit|gwt": "dellert-2025"
+      "iit|gwt": "dellert-2025",
+      "gwt|orch-or": "xenonnt-2026"
     },
     "testable_too_little_tested": [
-      "orch-or",
       "ast",
       "sensorimotor"
     ],
@@ -483,9 +497,9 @@
     ]
   },
   "headline": {
-    "tested": 13,
+    "tested": 17,
     "distinguishing_predictions": 53,
-    "share_tested": 24.5,
+    "share_tested": 32.1,
     "note": "Tested at all (ruled by John: 'A, tested at all'): the share of distinguishing predictions tied to core claims that at least one counted study has tested. It measures how widely, not how firmly; the support scores carry the strength. It can fall when predictions are added."
   },
   "predictions": {
@@ -914,18 +928,30 @@
     },
     "seth-interoceptive-suppression": {
       "theory": "seth",
-      "state": "untested",
+      "state": "supported",
       "state_lean": "",
-      "state_weighted_reading": "untested",
-      "counted_studies": [],
+      "state_weighted_reading": "supported",
+      "counted_studies": [
+        {
+          "study": "harrison-2021",
+          "value": 1,
+          "weight": 2
+        }
+      ],
       "questions": []
     },
     "seth-feeling-from-prediction": {
       "theory": "seth",
-      "state": "untested",
-      "state_lean": "",
-      "state_weighted_reading": "untested",
-      "counted_studies": [],
+      "state": "mixed",
+      "state_lean": "The evidence is evenly balanced.",
+      "state_weighted_reading": "mixed",
+      "counted_studies": [
+        {
+          "study": "hill-2024",
+          "value": 0,
+          "weight": 2
+        }
+      ],
       "questions": []
     },
     "ast-graded": {
@@ -1046,10 +1072,16 @@
     },
     "orch-mt-coherence": {
       "theory": "orch-or",
-      "state": "untested",
-      "state_lean": "",
-      "state_weighted_reading": "untested",
-      "counted_studies": [],
+      "state": "mixed",
+      "state_lean": "The evidence is evenly balanced.",
+      "state_weighted_reading": "mixed",
+      "counted_studies": [
+        {
+          "study": "babcock-2024",
+          "value": 0,
+          "weight": 2
+        }
+      ],
       "questions": []
     },
     "orch-mt-entangle": {
@@ -1078,10 +1110,16 @@
     },
     "orch-dp-collapse": {
       "theory": "orch-or",
-      "state": "untested",
+      "state": "contradicted",
       "state_lean": "",
-      "state_weighted_reading": "untested",
-      "counted_studies": [],
+      "state_weighted_reading": "contradicted",
+      "counted_studies": [
+        {
+          "study": "xenonnt-2026",
+          "value": -1,
+          "weight": 2
+        }
+      ],
       "questions": []
     },
     "orch-mass-time": {
@@ -1360,6 +1398,50 @@
       "weight": 2,
       "multiplier": 2,
       "status": "agreed"
+    },
+    {
+      "judgement": "out-hill-seth-feeling-from-prediction",
+      "theory": "seth",
+      "prediction": "seth-feeling-from-prediction",
+      "study": "hill-2024",
+      "group": "Hill group (first and corresponding author; Coventry University), with Ellmers (Imperial College London)",
+      "value": 0,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "agreed"
+    },
+    {
+      "judgement": "out-harrison-seth-interoceptive-suppression",
+      "theory": "seth",
+      "prediction": "seth-interoceptive-suppression",
+      "study": "harrison-2021",
+      "group": "Stephan group (last author; University of Zurich and ETH Zurich, per the ethics approval and repositories)",
+      "value": 1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "agreed"
+    },
+    {
+      "judgement": "out-babcock-orch-mt-coherence",
+      "theory": "orch-or",
+      "prediction": "orch-mt-coherence",
+      "study": "babcock-2024",
+      "group": "Kurian group (last and corresponding author, Quantum Biology Laboratory, Howard University, Washington)",
+      "value": 0,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "agreed"
+    },
+    {
+      "judgement": "out-xenonnt-orch-dp-collapse",
+      "theory": "orch-or",
+      "prediction": "orch-dp-collapse",
+      "study": "xenonnt-2026",
+      "group": "XENON Collaboration (detector at the Gran Sasso underground laboratory, Italy)",
+      "value": -1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "agreed"
     }
   ],
   "alternative_readings": {
@@ -1373,7 +1455,7 @@
         "seth": "not yet defined sharply enough to rank",
         "ast": "testable, too little tested to rank",
         "sensorimotor": "testable, too little tested to rank",
-        "orch-or": "testable, too little tested to rank",
+        "orch-or": "ranked",
         "damasio": "not yet defined sharply enough to rank"
       },
       "ranking": {
@@ -1389,13 +1471,17 @@
           {
             "theory": "gwt",
             "rank": 3
+          },
+          {
+            "theory": "orch-or",
+            "rank": 4
           }
         ],
         "shared_because_one_study_could_swap_them": {
-          "iit|gwt": "dellert-2025"
+          "iit|gwt": "dellert-2025",
+          "gwt|orch-or": "xenonnt-2026"
         },
         "testable_too_little_tested": [
-          "orch-or",
           "ast",
           "sensorimotor",
           "rpt"
@@ -1409,5 +1495,5 @@
       "why": "The first wording of ranking rule 2 did not say whether the prediction must separate the theory from a rival. John ruled on 2026-11-20 ('Yes, must separate') that it must; the main result follows the ruling. This is the superseded literal reading, kept for comparison."
     }
   },
-  "open_verify_entries": 34
+  "open_verify_entries": 51
 }

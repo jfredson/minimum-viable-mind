@@ -711,3 +711,64 @@ settles = "separation"
 separates = true
 separates_from = []
 reason = "The Sentient Horizons account no longer counts as the rival that sets it apart. No other rival's opened source predicts the same, so under the amended rule C it still separates, as the theory's own prediction. No score changes."
+
+
+# ------------------------------------------- per-prediction search studies: disagreements settled by ruled rules
+# 2026-11-21, after the second reading of the per-prediction search studies (run stage3b). Every
+# disagreement was covered by a rule John has already ruled; the readings stay as they are.
+
+[[ruling]]
+judgement = "out-kumar-2026-ast-graded"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split for (Claude) and mixed (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "out-mukherjee-2024-dam-insula"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split mixed (Claude) and against (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "out-yacawych-2026-dam-nonneural"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split for (Claude) and mixed (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-kumar-2026-ast-graded"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-mukherjee-2024-dam-insula"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-wang-2022-ast-control"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-yacawych-2026-dam-nonneural"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""

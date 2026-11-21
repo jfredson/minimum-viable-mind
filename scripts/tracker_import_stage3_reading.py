@@ -39,6 +39,10 @@ def q(s):
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--run", default="stage3", help="the run to import (stage3; stage3b for the per-prediction search studies)")
+    run = ap.parse_args().run
     judgements = {j["id"]: j for j in tomllib.load(open(DATA / "judgements.toml", "rb"))["judgement"]}
     preds = {p["id"]: p for p in tomllib.load(open(DATA / "predictions.toml", "rb"))["prediction"]}
     rulings = {}
@@ -54,7 +58,7 @@ def main():
     gem, problems = {}, []
     for f in sorted(RAW.glob("*.json")):
         raw = json.loads(f.read_text())
-        if raw.get("run") != "stage3":
+        if raw.get("run") != run or f.name.endswith(".maxtokens.json"):
             continue
         pid = raw["packet_id"]
         resend = pid.endswith(".c2")
@@ -70,7 +74,7 @@ def main():
              "date": raw["called_on"][:10], "order": "first" if sh else "second",
              "reason": ans.get("reason", ""), "unsure": bool(ans.get("unsure", False)),
              "unsure_why": ans.get("unsure_why", "") or "", "response_id": raw.get("response_id") or "",
-             "cost_usd": raw["cost_usd"], "run": "stage3"}
+             "cost_usd": raw["cost_usd"], "run": run}
         if j["kind"] == "testability":
             r["question"] = "C2"
             cf = ans.get("could_fail")
@@ -96,7 +100,7 @@ def main():
             else:
                 lines.append(f"{k} = {q(v)}")
         lines.append("")
-    (DATA / "readings-gemini-stage3.toml").write_text("\n".join(lines))
+    (DATA / f"readings-gemini-{run}.toml").write_text("\n".join(lines))
 
     def first_reading(j):
         c = next(r for r in j["reading"] if r["reader"] == "claude")
@@ -161,7 +165,7 @@ def main():
     out["models"] = sorted({r["model"] for r in gem.values()})
     out["calls"] = len(gem)
     out["cost_usd"] = round(sum(r["cost_usd"] for r in gem.values()), 4)
-    (DATA / "agreement-stage3.json").write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    (DATA / f"agreement-{run}.json").write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
     print(json.dumps({k: out[k] for k in ("by_kind", "stop_condition", "models", "calls", "cost_usd", "problems")}, indent=2))
     print(f"{len(out['disagreements'])} disagreements")
     return 0

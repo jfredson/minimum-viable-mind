@@ -368,3 +368,154 @@ records = ["gutbrod-2006", "naccache-2005"]
 statement = "Gutbrod et al. 2006 and Naccache et al. 2005 test no recorded prediction of the feeling-based theory."
 rests_on = "Their abstracts only (Europe PMC); the full texts are behind Elsevier subscriptions (Neuropsychologia)."
 to_clear = "John signs in to Elsevier (ScienceDirect) in the browser pane; a session checks the full texts for any test of a recorded prediction. Neither is expected to change a score."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Anil Seth's living-body view: drafted 2026-11-21.
+
+[[entry]]
+id = "v-seth-raoul-not-opened"
+status = "open"
+records = ["raoul-2025"]
+statement = "Raoul et al. 2025 takes the place for seth-low-interoception-more-illusion but has no judgement, because its full text was not opened."
+rests_on = "Its abstract only (Europe PMC). The publisher's page (ScienceDirect) returned no article text and the free repository copy (HAL, hal-05284068) returned a robot check, on 2026-11-21."
+to_clear = "John opens https://hal.science/hal-05284068 in a normal browser (free, no sign-in expected) or the ScienceDirect page (listed as open access), and saves the PDF where a session can read it; a session then reads it against seth-low-interoception-more-illusion: across people, does lower heartbeat-sensing accuracy go with a stronger rubber hand illusion under synchronous seen-and-felt stroking? The commitment would be 'before' on dates (statement 2012-01-10, study 2025-09-10), subject to the same unsure point as com-suzuki-seth-low-interoception-more-illusion."
+
+[[entry]]
+id = "v-seth-vabba-preprint-date"
+status = "open"
+records = ["vabba-2025"]
+statement = "Vabba et al. 2025 first appeared as an Authorea preprint on 2024-08-29."
+rests_on = "The date in the preprint's Europe PMC record (PPR1199496); the preprint itself was not opened. The paper's data statement says a preprint is also on OSF (osf.io/umrz4), whose date was not checked."
+to_clear = "Open the Authorea record and the OSF project and take the earliest date. It changes no verdict here (the commitment is unclear on the own-lab rule whatever the date) but it decides which ownership study the five-most-recent rule takes if John counts whole-body illusions (see screen.md: knobel 2024 published 2024-12-11 against this 2024-08-29)."
+
+[[entry]]
+id = "v-seth-harrison-preprint-date"
+status = "open"
+records = ["harrison-2021"]
+statement = "Harrison et al. 2021 first appeared as a bioRxiv preprint on 2021-03-26."
+rests_on = "The date in the preprint's Europe PMC record (PPR303322); the preprint itself was not opened. OpenAlex's bioRxiv link points to a later version (2021-09-01), so it does not confirm the first-posted date."
+to_clear = "Open https://doi.org/10.1101/2021.03.24.436881 and read the first-posted date. Any date after 2012-01-10 leaves the commitment 'before'."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Attention schema theory: drafted 2026-11-21.
+
+[[entry]]
+id = "v-bong-2025"
+status = "open"
+records = ["bong-2025"]
+statement = "Bong and colleagues 2025 (NeuroImage, attending to one's heartbeat versus noticing it) holds a place among attention schema theory's five studies but is unread beyond its abstract."
+rests_on = "Open access (CC BY-NC) on ScienceDirect, but ScienceDirect answered 'HTTP 403 Forbidden' to an automated fetch and Elsevier's article service gave only the record's details without a key; not worked around."
+to_clear = "John opens https://doi.org/10.1016/j.neuroimage.2025.121606 in the browser pane (no sign-in should be needed); a session reads it against ast-domain and writes the commitment and outcome judgements."
+
+[[entry]]
+id = "v-lo-2018"
+status = "open"
+records = ["lo-2018"]
+statement = "Lo 2018 (Attention, Perception, & Psychophysics, attention acting on an unseen background pattern) holds a place among attention schema theory's five studies but is unread beyond its abstract."
+rests_on = "OpenAlex lists a free copy at link.springer.com, but the address answered with a robot-check page ('Client Challenge'), not bypassed. Europe PMC marks the publisher's page 'Subscription required'."
+to_clear = "John opens https://doi.org/10.3758/s13414-017-1474-7 in a normal browser (free if OpenAlex is right; otherwise a library sign-in to Springer); a session reads it against ast-covary and writes the commitment and outcome judgements."
+
+[[entry]]
+id = "v-wang-2021-visible-cues"
+status = "open"
+records = ["out-wang-2022-ast-control"]
+statement = "The comparison of unseen cues with visible ones in wang-2022 rests on the same group's earlier study with visible cues (Wang and colleagues 2021), as wang-2022 reports it."
+rests_on = "wang-2022's own account of the earlier study; Wang and colleagues 2021 was not opened."
+to_clear = "Open Wang and colleagues 2021 and check that its visible-cue design matches and that its effects are as wang-2022 reports. It would not change the outcome reading on its own, which rests on what kind of control was measured."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), The sensorimotor theory: drafted 2026-11-21.
+
+[[entry]]
+id = "v-sm2-thomas-fulltext"
+status = "open"
+records = ["thomas-2026"]
+statement = "Thomas and Didierjean (2026) show people missing a large change (water vanishing from cups) across an interruption, as the abstract says; the study is recorded with no judgement."
+rests_on = "The Europe PMC abstract only. The article (Cognition, Elsevier) is behind a subscription; OpenAlex lists no open copy; the Open Science Framework project osf.io/rj98t holds only a data spreadsheet."
+to_clear = "John signs in to ScienceDirect (Elsevier) in the browser pane, or a library copy is found; a session then reads it against sm-change-blindness. Whatever it finds, it moves no score, because that prediction does not separate the theory from its rivals."
+
+[[entry]]
+id = "v-sm2-liu-fulltext"
+status = "open"
+records = ["liu-2026"]
+statement = "Liu and colleagues (2026) look for brain activity that marks seeing an object people were not asked to report; it is taken for the no-single-brain-state prediction (sm-no-ncc) and would also be judged against the missed-objects prediction (sm-inattentional)."
+rests_on = "The Europe PMC abstract only. The article (Journal of Experimental Psychology: General, American Psychological Association) is behind a subscription; no open copy or preprint was found (OpenAlex, Europe PMC)."
+to_clear = "John signs in to APA PsycNet in the browser pane, or a library copy is found; a session then makes the commitment and outcome readings for both predictions. This is the one chosen study that bears on the theory's only separating prediction, so it is the one that could matter for a score."
+
+[[entry]]
+id = "v-sm2-sekiyama-fulltext"
+status = "open"
+records = ["sekiyama-2012"]
+statement = "Sekiyama, Hashimoto and Sugita (2012) report perceptual adaptation over a month of wearing left-right reversing spectacles, as the abstract says; the study is recorded with no judgement."
+rests_on = "The Europe PMC abstract only. The article (Acta Psychologica 141(2), Elsevier) is behind a subscription; OpenAlex lists no open copy."
+to_clear = "John signs in to ScienceDirect (Elsevier) in the browser pane, or a library copy is found; a session then reads it against sm-inversion, checking whether the wearers reported how the scene looked, aspect by aspect, and not only how they acted."
+
+[[entry]]
+id = "v-sm2-hense-preprint-date"
+status = "open"
+records = ["hense-2026", "com-hense-2026-sm-inattentional"]
+statement = "Hense and colleagues (2026) first appeared publicly on 2026-10-15, the journal publication."
+rests_on = "OpenAlex lists a submitted version on SSRN (doi 10.2139/ssrn.6642388) whose date was not established. It cannot change the commitment reading (the prediction dates from 2001), only the study's recorded first appearance."
+to_clear = "Open the SSRN record and set first_appeared to its posting date if it is earlier."
+
+[[entry]]
+id = "v-sm2-maimon-active-use"
+status = "open"
+records = ["maimon-2022", "com-maimon-2022-sm-substitution"]
+statement = "In Maimon and colleagues (2022), the paper does not say the user moved the device's camera himself while listening; this is why commitment is read as unclear."
+rests_on = "The full text (Europe PMC XML) was read; the three supplementary videos, which show the training, were not opened. The paper points to Buchs and colleagues (2021) for a full description of the training programmes; that paper was not opened."
+to_clear = "Watch the supplementary videos and open Buchs and colleagues (2021): if the user aimed a live camera himself during training, the commitment reading should be reconsidered (a reader might then read 'before' and judge the outcome)."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Orchestrated Objective Reduction: drafted 2026-11-21.
+
+[[entry]]
+id = "v-orch-jia-2026"
+status = "open"
+records = ["jia-2026"]
+statement = "Jia and colleagues (2026) found that mice lacking the microtubule-stabilising protein MAP6 had impaired long-term potentiation in the hippocampus, restored by neurotensin."
+rests_on = "The abstract only (Europe PMC). The full text is not open access; Unpaywall lists no open copy and no preprint was found."
+to_clear = "John's sign-in to Neuropharmacology (Elsevier ScienceDirect), or an author copy; then read it against orch-synaptic-cyto (did the study measure the cytoskeleton on both sides of the synapse, and when did it first appear) and record its protections."
+
+[[entry]]
+id = "v-orch-copies-new-judgements"
+status = "open"
+records = ["com-babcock-orch-mt-coherence", "com-xenonnt-orch-dp-collapse", "out-xenonnt-orch-dp-collapse"]
+statement = "The 1998 and 2014 passages quoted in these judgements read as quoted, including the 2014 review's '2.5 Fermi length for carbon nuclei' sentence (section 5.2) and its 'large uncertainty about how smeared out these nuclei must be considered to be'."
+rests_on = "The same third-party copies as v-orch-1998-ocr (a JSTOR scan on a university course page) and v-orch-2014-copy (an upload of the publisher's PDF on coroflot.com), opened again 2026-11-21 and the quotations checked by script against their text layers."
+to_clear = "Check the passages against https://doi.org/10.1098/rsta.1998.0254 (Appendix B, predictions 9 and 18) and https://doi.org/10.1016/j.plrev.2013.08.002 (the abstract and section 5.2) in a normal browser, together with v-orch-1998-ocr and v-orch-2014-copy."
+
+[[entry]]
+id = "v-orch-xenonnt-aps"
+status = "open"
+records = ["xenonnt-2026", "out-xenonnt-orch-dp-collapse"]
+statement = "The journal version of the XENONnT paper reports the same Diósi-Penrose limit (a smearing length above 4.9 × 10^-10 m at 90% confidence) as the arXiv v2 text read."
+rests_on = "arXiv v2 (2026-03-24), read as HTML. The publisher's open-access PDF was downloaded, but only four quoted sentences could be matched in its text layer; the limit itself is set as mathematics and was not compared."
+to_clear = "Open https://doi.org/10.1103/2jm3-4976 (open access) and check the limit and the abstract sentence quoted."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Damasio's feeling-based theory: drafted 2026-11-21.
+
+[[entry]]
+id = "v-dam-bret-2026-fulltext"
+status = "open"
+records = ["bret-2026"]
+statement = "What the study of adults with congenital central hypoventilation syndrome found, and whether it bears on the prediction that there is no consciousness without feelings of the body's state (dam-feeling-required)."
+rests_on = "The published abstract only (Europe PMC, PubMed id 42901374). Chest is an Elsevier journal and the article needs a subscription; Europe PMC lists no free or open copy, and there is no copy in PubMed Central and no preprint."
+to_clear = "John signs in to Elsevier (ScienceDirect) in the browser pane, or asks the authors for a copy; a session then reads the full text and makes the commitment and outcome judgements. What matters in the full text: how the patients' sensing of carbon dioxide was measured and how completely it was abolished, whether any patient reported no bodily feelings at all, and whether the paper reports anything about their consciousness beyond breathing sensations."
+
+[[entry]]
+id = "v-dam-carvalho-2019-fulltext"
+status = "open"
+records = ["carvalho-2019"]
+statement = "What the study of signalling between neighbouring body-sensing nerve cell bodies outside synapses found, and whether it bears on the prediction about such signalling in the body-sensing nerves (dam-nss)."
+rests_on = "Two abstracts only: the journal abstract in Europe PMC (PubMed id 31689490) and the preprint abstract in bioRxiv's own record (10.1101/702563). The journal version (Neuroscience, Elsevier) needs a subscription, and a plain fetch of the bioRxiv full text was answered with a robot block (Cloudflare error 1015) on 2026-11-21."
+to_clear = "The bioRxiv copy is free: John opens https://www.biorxiv.org/content/10.1101/702563v1.full in his own browser, or in the browser pane where the robot check may let a person through, and no sign-in should be needed. A session then reads it. The dating is unlikely to change: the prediction (dam-nss) was first stated by the proponents in November 2025, six years after this paper, and Antonio Damasio is an author, so the own-lab rule puts the verdict at 'not before' either way."
+
+[[entry]]
+id = "v-dam-prediction-search-2026-11-21"
+status = "open"
+records = ["dam-feeling-required", "dam-subcortical", "dam-insula", "dam-nonneural", "dam-nss", "dam-no-nervous-system", "dam-ai"]
+statement = "That the four studies taken are the most recent qualifying ones for this theory, and that nothing qualifying was passed over."
+rests_on = "Seven searches of Europe PMC, one per prediction, run 2026-11-21 by the fixed method, and screening on titles and abstracts only, up to the first forty results of each. The results screened and the reason for each are in the drafting notes beside this file (screen.md). Three predictions (dam-subcortical, dam-no-nervous-system, dam-ai) yielded nothing qualifying, so four studies were taken rather than five."
+to_clear = "A second reader screens the same seven result lists against the same method and compares verdicts, in particular the borderline rows listed in screen.md. The two predictions whose test wording names no observation (dam-no-nervous-system, dam-ai) can yield nothing under this method by construction, which is worth John's eye rather than a re-run."
