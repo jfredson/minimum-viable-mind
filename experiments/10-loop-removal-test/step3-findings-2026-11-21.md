@@ -221,3 +221,8 @@ commit c02b763, and are kept as the record.*
 - the smaller specification and reporting points (RT-423 to RT-425, RT-427 to RT-429).
 
 **Still owed:** an independent check of these fixes. RT-345 stays open.
+
+**An ordering fault, recorded.** The code change that keeps the drawn place was used to generate the pilot
+committed in d4171f1, but it was committed only afterwards, in 54fa782. The pilot was then regenerated from
+54fa782, together with its overlap and step-3 results, and every file came out byte-identical to the
+committed one. So the committed pilot is exactly what the committed code produces.
