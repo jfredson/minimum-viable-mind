@@ -1,0 +1,54 @@
+{
+  "packet_id": "tst-iit-sustained",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES IT SEPARATE the theory from a rival: does at least one theory on the list of rivals predict something different (not merely stay silent)? If yes, name the rival or rivals, and say whether your view of the rival comes from the material given or from your own knowledge. Answer in JSON: {\"could_fail\": true|false, \"separates\": true|false, \"separates_from\": [ids], \"rival_view_from\": \"material\"|\"own knowledge\"|\"both\"|\"none\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Integrated information theory",
+  "core_claim": {
+    "quote": "The physical correspondent of an experience is not the substrate as such but the Φ-structure specified by the substrate in its current state.",
+    "source": {
+      "citation": "Albantakis L, Barbosa L, Findlay G, Grasso M, Haun AM, Marshall W, Mayner WGP, Zaeemzadeh A, Boly M, Juel BE, Sasai S, Fujii K, David I, Hendren J, Lang JP, Tononi G. Integrated information theory (IIT) 4.0: formulating the properties of phenomenal existence in physical terms. PLOS Computational Biology 19(10):e1011465, 2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581496/",
+      "date": "2023-10-17"
+    }
+  },
+  "prediction": {
+    "statement": "For as long as a stimulus is consciously experienced, a content-specific pattern of activity persists in posterior cortex.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-16",
+      "passage": "In sum, GNW predicts a phasic ignition of the workspace followed by a decay (until a new content is consciously experienced), while IIT predicts, independent of any phasic transient, a sustained content-specific activity pattern persisting for as long as the stimulus is consciously experienced.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    "test_for": "Content-specific activity and information in posterior cortex last as long as the stimulus, and track its duration.",
+    "test_against": "Posterior content-specific activity or information decays well before a still-visible stimulus ends."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [
+    {
+      "rival": "Global workspace theory",
+      "statement": "GWT predicted a phasic ignition followed by decay.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    }
+  ],
+  "other_statements_of_the_prediction": [],
+  "this_reading_is": "the second reading"
+}

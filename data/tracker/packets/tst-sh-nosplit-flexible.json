@@ -1,0 +1,44 @@
+{
+  "packet_id": "tst-sh-nosplit-flexible",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES IT SEPARATE the theory from a rival: does at least one theory on the list of rivals predict something different (not merely stay silent)? If yes, name the rival or rivals, and say whether your view of the rival comes from the material given or from your own knowledge. Answer in JSON: {\"could_fail\": true|false, \"separates\": true|false, \"separates_from\": [ids], \"rival_view_from\": \"material\"|\"own knowledge\"|\"both\"|\"none\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "The Sentient Horizons account",
+  "core_claim": {
+    "quote": "A system has a point of view, in the plain sense that things happen to someone, when it separates the changes it causes from the changes the world causes and uses that difference.",
+    "source": {
+      "citation": "Fredrickson JA. Working Positions. Sentient Horizons, latest revision shown on the page 2026-10-24",
+      "url": "https://sentient-horizons.com/positions/",
+      "date": "2026-10-24"
+    }
+  },
+  "prediction": {
+    "statement": "Someone in a state reported as having no split between self and world does not respond flexibly to something new.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2026-10-24",
+      "passage": "And if a point of view survived the loss of the split, so that someone in a state reported as having no split between self and world still responded flexibly to something new, the split would not be what gives a point of view",
+      "source": {
+        "citation": "Fredrickson JA. Working Positions. Sentient Horizons, latest revision shown on the page 2026-10-24",
+        "url": "https://sentient-horizons.com/positions/",
+        "date": "2026-10-24"
+      }
+    },
+    "test_for": "During reported states with no self-world boundary (under psychedelic drugs, or in meditation), flexible response to new events is lost or degraded.",
+    "test_against": "During such reported states, people still respond flexibly to new events."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "other_statements_of_the_prediction": [],
+  "this_reading_is": "the first reading of record"
+}

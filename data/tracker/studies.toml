@@ -1,0 +1,166 @@
+# Studies: who settles a prediction. Each carries its earliest public appearance
+# (registration, preprint or publication, whichever came first: kickoff section 12,
+# rule 2.3), its research group, and the four protections that set its weight
+# (section 4, ruled): weight = 1 + one for each protection, up to 5.
+#
+# "camps" lists the theories whose proponents ran the study. The outside-camp
+# protection is judged per theory: a study run inside GWT's camp is not outside
+# GWT's camp, but may be outside IIT's.
+#
+# How the pilot's sample was chosen (stated so it can be checked and redone):
+# (1) the Cogitate Consortium's adversarial test, named in the brief; (2) the five
+# most recent rows in ConTraSt's live export (downloaded 2026-11-20) marked as
+# designed to test a theory and naming both global workspace theory and integrated
+# information theory among the theories they were designed around; (3) for the
+# Sentient Horizons account, the studies its own Working Positions page cites for
+# its predictions. ConTraSt is a reading list only: no ConTraSt field is copied here,
+# and every record is built from the paper itself. Found through ConTraSt is said
+# on each record that was. Credit: the ConTraSt database (Yaron, Melloni, Pitts and
+# Mudrik, Nature Human Behaviour 2022), https://contrastdb.tau.ac.il, CC BY-SA 4.0.
+#
+# Layout: data/tracker/README.md.
+
+[[study]]
+id = "cogitate-2025"
+name = "The Cogitate Consortium's adversarial test of global workspace and integrated information theory"
+source = "cogitate-2025"
+first_appeared = { date = "2019-01-16", what = "registration (preregistration v1 on OSF)", source = "cogitate-prereg-v1" }
+first_appeared_note = "The registration was written and posted to OSF on 2019-01-16; OSF does not record when it became public. The preprint appeared 2023-06-26 (cogitate-preprint-2023) and the paper 2025-04-30. Either way, the predictions it tests were first written in its own registration unless an earlier proponents' publication states them, which is what the commitment judgements check."
+group = "Cogitate Consortium"
+camps = []
+found_through = "brief"
+opened = true
+protections.registered = { value = true, reason = "Predictions, pass or fail criteria and interpretations registered before data acquisition.", passage = "The original and the amended preregistration files were frozen prior to the commencement of data acquisition.", source = "cogitate-protocol-2023" }
+protections.outside_camp = { value = true, reason = "Data were collected and analysed by theory-neutral teams, kept apart from the theories' proponents, although the proponents helped design the study and are among its authors.", passage = "All research was conducted by theory-neutral teams to minimize confirmatory bias.", source = "cogitate-2025", judgement = "A judgement: the proponents co-designed the test and co-wrote the paper. Read as outside-camp because the protection is about who ran it, and they did not run it." }
+protections.rival_agreed = { value = true, reason = "Both theories' proponents agreed the predictions and what would count as pass or fail before the data came in.", passage = "We preregistered these predictions, including pass or fail criteria, expected outcomes and their interpretation ex-ante", source = "cogitate-2025" }
+protections.replicated = { value = false, reason = "The paper reports an in-house replication (an optimisation third of the data, then the remaining two-thirds), which is the same consortium, not another group. Two independent studies are said to align with one result (no offset representation in prefrontal cortex), but that is one result, not a replication of the study.", passage = "These results align with two independent studies using comparable methods42,43.", source = "cogitate-2025" }
+
+[[study]]
+id = "bellet-2022"
+name = "Decoding rapidly presented pictures from monkey prefrontal neurons without report"
+source = "bellet-2022"
+first_appeared = { date = "2022-02-24", what = "publication (no earlier preprint found)", source = "bellet-2022" }
+group = "Panagiotaropoulos group (last author)"
+camps = ["gwt"]
+camps_reason = "Stanislas Dehaene, an author of the global workspace statements used here (dehaene-2014, mashour-2020), is an author; the last author, Theofanis Panagiotaropoulos, is an author of the Cogitate protocol (cogitate-protocol-2023). The paper frames its result as support for a GWT prediction."
+found_through = "contrast"
+opened = true
+protections.registered = { value = false, reason = "No registration is mentioned in the paper (full text read)." , source = "bellet-2022" }
+protections.outside_camp = { value = false, reason = "Run inside global workspace theory's camp (see camps_reason). For integrated information theory it would be outside camp, but no IIT prediction counts for it." , source = "bellet-2022" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "bellet-2022" }
+protections.replicated = { value = false, reason = "No replication by another group found.", source = "bellet-2022" }
+same_group_note = "Whether this is a group separate from the Cogitate Consortium is a judgement: its last author co-wrote the Cogitate protocol. The pilot treats it as separate because the protocol's authorship is not the consortium's data teams. It does not change any ranking here, because global workspace theory has studies from two groups outside both."
+
+[[study]]
+id = "bandara-2025"
+name = "Computer modelling of an inattentional-blindness EEG dataset, testing sensory against frontal theories"
+source = "bandara-2025"
+first_appeared = { date = "2024-11-03", what = "preprint (bioRxiv)", source = "bandara-2025" }
+group = "Garrido group (last author)"
+camps = []
+found_through = "contrast"
+opened = true
+reanalysis_note = "A reanalysis of an EEG dataset first described by Shafto and Pitts in 2015, before mashour-2020 stated the prediction it tests. The rules date a study from its own earliest appearance, so it counts; that the data were public first is recorded here as a point for the readers and for John."
+protections.registered = { value = false, reason = "No registration mentioned in the paper (full text searched for 'preregist', none).", source = "bandara-2025" }
+protections.outside_camp = { value = true, reason = "No author is an author of the proponents' statements used here for either theory.", source = "bandara-2025" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "bandara-2025" }
+protections.replicated = { value = false, reason = "No replication found.", source = "bandara-2025" }
+
+[[study]]
+id = "dellert-2025"
+name = "Auditory awareness without report, measured with fMRI (inattentional deafness)"
+source = "dellert-2025"
+first_appeared = { date = "2025-05-21", what = "preprint (bioRxiv)", source = "dellert-2025" }
+group = "Straube group (last author; participants recruited at the University of Münster)"
+camps = []
+found_through = "contrast"
+opened = true
+expectation_note = "The authors say in advance what they expected: 'Based on previous studies in other sensory modalities, we expected awareness-related activity in auditory but not fronto-parietal brain areas.' An expectation is not one of the four protections, so it does not change the weight; it is recorded for the readers."
+protections.registered = { value = false, reason = "No registration mentioned in the preprint (text searched for 'preregist', none).", source = "dellert-2025" }
+protections.outside_camp = { value = true, reason = "No author is an author of the proponents' statements used here for either theory.", source = "dellert-2025" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "dellert-2025" }
+protections.replicated = { value = false, reason = "No replication found.", source = "dellert-2025" }
+
+[[study]]
+id = "coppola-2021"
+name = "Brain network dynamics across sedation and disorders of consciousness"
+source = "coppola-2021"
+first_appeared = { date = "2021-04-13", what = "preprint (bioRxiv)", source = "coppola-2021" }
+group = "Coppola and colleagues (last author not checked)"
+camps = []
+found_through = "contrast"
+opened = true
+bears_on = []
+not_counted_reason = "Listed by ConTraSt as designed around both theories, but the paper tests a measure (the variability of 'small world' network structure) that neither theory's proponents name, and mentions the theories only in passing ('These findings, therefore, speak to theories that posit a global workspace ... or the irreducibility of the whole to its parts'). It tests no recorded prediction of either theory, so it moves no score. This is the case rule 4 of section 12 foresaw: ConTraSt's field is a pointer, not the rule."
+protections.registered = { value = false, reason = "Not assessed (the study tests no recorded prediction).", source = "coppola-2021" }
+protections.outside_camp = { value = true, reason = "Not assessed in detail.", source = "coppola-2021" }
+protections.rival_agreed = { value = false, reason = "Not assessed.", source = "coppola-2021" }
+protections.replicated = { value = false, reason = "Not assessed.", source = "coppola-2021" }
+
+[[study]]
+id = "hatamimajoumerd-2022"
+name = "Decoding perceptual awareness across the brain with a no-report fMRI masking design"
+source = "hatamimajoumerd-2022"
+first_appeared = { date = "2022-08-17", what = "publication (an earlier preprint, if any, not found)", source = "hatamimajoumerd-2022" }
+group = "Cohen group (last author, per Europe PMC)"
+camps = []
+found_through = "contrast"
+opened = false
+not_counted_reason = "Not opened: the publisher answered with a robot check, which was not bypassed, and no open copy was found. No judgement is made on it. John could open it in the browser pane; it would be read against gwt-pfc-content and iit-posterior."
+protections.registered = { value = false, reason = "Not opened.", source = "hatamimajoumerd-2022" }
+protections.outside_camp = { value = false, reason = "Not opened.", source = "hatamimajoumerd-2022" }
+protections.rival_agreed = { value = false, reason = "Not opened.", source = "hatamimajoumerd-2022" }
+protections.replicated = { value = false, reason = "Not opened.", source = "hatamimajoumerd-2022" }
+
+# ------------------------------------------ studies the Working Positions page cites
+# Recorded from the page's own citations only; the papers themselves were not opened,
+# because each appeared decades before the predictions they bear on (2026-10-24), so
+# under rule 2.1 none can count whatever it found. Their dates are the page's.
+
+[[study]]
+id = "sommer-wurtz-2002"
+name = "Cutting a pathway that carries copies of eye-movement commands in monkeys (Sommer and Wurtz 2002, 2004; Cavanaugh and colleagues 2016)"
+source = "sh-positions"
+first_appeared = { date = "2002", what = "publication year as cited on the page", source = "sh-positions" }
+group = "Sommer and Wurtz"
+camps = []
+found_through = "sh-positions"
+opened = false
+bears_on = ["sh-split-novel"]
+not_counted_reason = "Appeared in 2002 to 2016, before the prediction was first stated (2026-10-24): explained afterwards, not counted. The page also says these show only the first two parts of the prediction, not the distinguishing third part."
+protections.registered = { value = false, reason = "Not opened.", source = "sh-positions" }
+protections.outside_camp = { value = true, reason = "Run long before the account existed.", source = "sh-positions" }
+protections.rival_agreed = { value = false, reason = "Not opened.", source = "sh-positions" }
+protections.replicated = { value = false, reason = "Not opened.", source = "sh-positions" }
+
+[[study]]
+id = "cole-sedgwick-1992"
+name = "A man who lost touch and body-position sense below the neck (Cole and Sedgwick 1992)"
+source = "sh-positions"
+first_appeared = { date = "1992", what = "publication year as cited on the page", source = "sh-positions" }
+group = "Cole and Sedgwick"
+camps = []
+found_through = "sh-positions"
+opened = false
+bears_on = ["sh-split-novel"]
+not_counted_reason = "Appeared in 1992, before the prediction: explained afterwards, not counted. The page uses it as the control any split result must differ from."
+protections.registered = { value = false, reason = "Not opened.", source = "sh-positions" }
+protections.outside_camp = { value = true, reason = "Run long before the account existed.", source = "sh-positions" }
+protections.rival_agreed = { value = false, reason = "Not opened.", source = "sh-positions" }
+protections.replicated = { value = false, reason = "Not opened.", source = "sh-positions" }
+
+[[study]]
+id = "scoville-milner-1957"
+name = "Henry Molaison's memory loss after surgery (Scoville and Milner 1957)"
+source = "sh-positions"
+first_appeared = { date = "1957", what = "publication year as cited on the page", source = "sh-positions" }
+group = "Scoville and Milner"
+camps = []
+found_through = "sh-positions"
+opened = false
+bears_on = ["sh-enriching"]
+not_counted_reason = "Appeared in 1957, before the prediction: explained afterwards, not counted."
+protections.registered = { value = false, reason = "Not opened.", source = "sh-positions" }
+protections.outside_camp = { value = true, reason = "Run long before the account existed.", source = "sh-positions" }
+protections.rival_agreed = { value = false, reason = "Not opened.", source = "sh-positions" }
+protections.replicated = { value = false, reason = "Not opened.", source = "sh-positions" }

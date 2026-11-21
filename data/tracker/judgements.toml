@@ -1,0 +1,784 @@
+# Judgements: every place a reader decides something, each its own record with the
+# study, the passage, the reason, the reader and the date (kickoff section 5).
+#
+# Three kinds:
+#   outcome     - did this counted study come out for, against, or mixed on this
+#                 prediction? (section 4: +1, -1, 0)
+#   commitment  - was the prediction on record, in a dated proponents' publication,
+#                 before the study first appeared? (section 12, rules 2.1 and 2.3;
+#                 rule 2.3 says this is "a judgement, made as its own record and read
+#                 by both readers")
+#   testability - could the prediction fail, and does it separate the theory from a
+#                 rival on the list? (section 4, the testability score)
+#
+# Readings. Each judgement holds one [[judgement.reading]] per reader. The second
+# reader (Google's Gemini, ruling 7) has not read anything yet: no call has been
+# made. Every reading below is the Claude reader's. On every Sentient Horizons row
+# Gemini's reading will be recorded as the first reading (ruling 7b); the Claude
+# reading there is marked order = "second", and the blind packet sent to Gemini
+# never contains it. Until two readings agree, the score script uses the one reading
+# it has and says so.
+#
+# Layout: data/tracker/README.md.
+
+# ============================================================= outcome judgements
+
+[[judgement]]
+id = "out-cogitate-gwt-pfc-content"
+kind = "outcome"
+prediction = "gwt-pfc-content"
+study = "cogitate-2025"
+passages = [
+  { source = "cogitate-2025", text = "On the basis of our preregistered predictions and pre-approved interpretations27 (Extended Data Table 1), the theories would pass the test if decoding is possible for both category (in at least one category pairing) and orientation (in at least one category), but would fail otherwise." },
+  { source = "cogitate-2025", text = "Hence, across modalities, face–object decoding occurred in both posterior and prefrontal ROIs, consistent with IIT and GNWT predictions." },
+  { source = "cogitate-2025", text = "We obtained divergent results for IIT and GNWT: decoding of face orientation (left, right or front views) was achieved in posterior but not in prefrontal ROIs, both with iEEG (Fig. 2f,h, approximately 95% with pseudotrial aggregation; Extended Data Fig. 3a) and the fMRI searchlight approach (Fig. 2g, approximately 45%). Decoding of face orientation was robust from MEG cortical time series in posterior ROIs (approximately 75% with pseudotrial aggregation), but was weaker, yet above chance (35%), in prefrontal ROIs (Fig. 2i), with a possibility of signal leakage from posterior regions (Extended Data Fig. 3b)." },
+  { source = "cogitate-2025", text = "although we found representation of category in PFC irrespective of the task, thereby demonstrating the sensitivity of our methods, no representation of identity was found, and representation of orientation was evident only in MEG (signal leakage notwithstanding); although these dimensions were clearly a part of the conscious experience of participants of the stimuli." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "mixed"
+reason = "The category of what was seen was decodable from prefrontal cortex regardless of task, as predicted. Orientation, which participants also saw, was not decodable there by two of three methods, and only weakly by the third with possible leakage; identity was not decodable there at all. The registered pass required both category and orientation. Part of the prediction holds and part fails."
+unsure = true
+unsure_why = "Whether the MEG orientation result (above chance, possible leakage) meets the registered orientation criterion decides between 'mixed' and 'for'. The consortium's own summary calls GNWT's broadcasting prediction 'partly supported', which this reading follows."
+
+[[judgement]]
+id = "out-cogitate-gwt-ignition"
+kind = "outcome"
+prediction = "gwt-ignition"
+study = "cogitate-2025"
+passages = [
+  { source = "cogitate-2025", text = "By contrast, GNWT predicts brief, content-specific ignition in PFC within 0.3–0.5 s after stimulus onset, as the workspace is updated12." },
+  { source = "cogitate-2025", text = "In PFC ROIs, 99 and 24 electrodes showed non-selective and category-selective onset responses, respectively (Fig. 3c). However, none of the 655 electrodes measured the temporal profile predicted by GNWT (that is, onset and offset)." },
+  { source = "cogitate-2025", text = "This result is unlikely to stem from sensitivity limitations, as offset responses were robustly found elsewhere (for example, visual areas); and in PFC, strong onset responses were found to the very same stimuli." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "for"
+reason = "Every stimulus in this experiment was consciously seen. Prefrontal cortex responded at the onset of each new percept (123 onset-responsive electrodes, some category-selective), which is the 'where every stimulus is seen' half of the test wording. The missing offset response belongs to a different prediction (gwt-offset), first written in this study's own registration and so not counted here."
+unsure = true
+unsure_why = "The experiment had no unconscious trials, so it cannot show the contrast at the heart of the prediction (a response for seen stimuli that unseen ones lack), and the paper does not report whether the onset responses were 'sudden and late' in the predicted window. Splitting onset from offset follows the dates rule, but the consortium scored onset and offset together and found the joint pattern absent; a reader who will not split them would read 'against'."
+
+[[judgement]]
+id = "out-cogitate-gwt-synchrony"
+kind = "outcome"
+prediction = "gwt-synchrony"
+study = "cogitate-2025"
+passages = [
+  { source = "cogitate-2025", text = "On the basis of our preregistration (see Extended Data Table 1), IIT would be challenged in the absence of sustained content-specific synchronization between face–object selective areas and V1/V2; whereas a challenge for GNWT would be a lack of phasic connectivity (0.3–0.5 s) between category-selective areas and PFC." },
+  { source = "cogitate-2025", text = "No content-selective PPC was found between face-selective and object-selective electrodes and PFC electrodes in the relevant time window, contradicting the prediction of GNWT (Extended Data Fig. 6a; BF01 = 2.62–5.32)." },
+  { source = "cogitate-2025", text = "The results of the preregistered PPC metric for prediction 3, critical for both IIT and the GNWT, supported neither theory." },
+  { source = "cogitate-2025", text = "The exploratory DFC results in iEEG were consistent with the predictions of GNWT while challenging the predictions of IIT, as connectivity with V1/V2 was not sustained." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "against"
+reason = "By the measure agreed in advance (pairwise phase consistency), there was no content-specific synchrony between category-selective areas and prefrontal cortex in the predicted window, which the paper calls contradicting the prediction. A second measure, chosen afterwards, was consistent with it; a measure chosen after the data does not undo the registered test."
+unsure = true
+unsure_why = "A reader who weighs the exploratory connectivity measure and the fMRI connectivity result (face area to inferior frontal gyrus) equally with the registered one would read 'mixed'."
+
+[[judgement]]
+id = "out-bellet-gwt-pfc-content"
+kind = "outcome"
+prediction = "gwt-pfc-content"
+study = "bellet-2022"
+passages = [
+  { source = "bellet-2022", text = "We report that the identity of each stimulus could be decoded from PFC population activity even in the RSVP condition." },
+  { source = "bellet-2022", text = "Due to the lack of subjective report under the present RSVP conditions, two interpretations of the data remain tenable: macaques could either be very fast in perceiving the stimuli or most of the stimuli could have remained unconscious." },
+  { source = "bellet-2022", text = "The main limitation of the present study is the absence of behavioral reports that could have provided insight as to whether any of the signals we have decoded are correlates of consciousness." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "mixed"
+reason = "Prefrontal neurons carried detailed information about pictures with no report required, which fits the prediction. But the prediction is about what is consciously seen, and the authors say they cannot tell whether the monkeys saw the pictures; if the pictures stayed unconscious, prefrontal coding of them is not what the theory predicts. The study neither confirms nor contradicts the prediction."
+unsure = true
+unsure_why = "The rules have three outcomes (for, against, mixed) and no 'does not bear on it'. 'Mixed' is used here for a result that cannot tell the two apart, which pulls the support score toward the middle. A reader could reasonably say 'for' (the authors' own reading: 'Our results also support a prediction of the GNW model')."
+
+[[judgement]]
+id = "out-bandara-gwt-topdown"
+kind = "outcome"
+prediction = "gwt-topdown"
+study = "bandara-2025"
+passages = [
+  { source = "bandara-2025", text = "While an initial data-driven search could not corroborate neither sensory nor frontal theories of consciousness, a more directed hypothesis-driven analysis revealed strong evidence that both theories could explain the data, with a very slight preference for frontal theories. Specifically, a model with backward connections switched off within the posterior cortex explained awareness better (53%) than a model without backward connections from the PFC to sensory regions." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "mixed"
+reason = "Switching off feedback from prefrontal cortex made the model only slightly worse (53% against 47%), and the authors say both kinds of theory could explain the data. The test wording asks for clearly worse; a near tie is neither."
+unsure = false
+
+[[judgement]]
+id = "out-dellert-gwt-ignition"
+kind = "outcome"
+prediction = "gwt-ignition"
+study = "dellert-2025"
+passages = [
+  { source = "dellert-2025", text = "Comparing brain responses to the critical sounds between aware and unaware participants while controlling for correlates of sensory and postperceptual processing revealed that auditory awareness was associated with significantly increased activity in secondary auditory but not in fronto-parietal areas." },
+  { source = "dellert-2025", text = "In contrast, awareness-related activation in fronto-parietal regions was considerably weaker and non-significant, suggesting that a strong, widespread fronto-parietal ignition associated with global information broadcasting is unlikely to be a correlate of auditory consciousness." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "against"
+reason = "Physically identical, task-irrelevant sounds, heard by one group and not the other, with no report: the awareness difference was in auditory cortex and not significant in fronto-parietal cortex. That is the test wording's 'against' case."
+unsure = true
+unsure_why = "fMRI is slow and the comparison is between groups of people, not between trials; a GWT proponent could say a brief ignition would be missed. The prediction as stated (mashour-2020: 'regardless of the stimulus modality or paradigm') does not exempt either."
+
+[[judgement]]
+id = "out-bandara-iit-posterior"
+kind = "outcome"
+prediction = "iit-posterior"
+study = "bandara-2025"
+passages = [
+  { source = "bandara-2025", text = "While an initial data-driven search could not corroborate neither sensory nor frontal theories of consciousness, a more directed hypothesis-driven analysis revealed strong evidence that both theories could explain the data, with a very slight preference for frontal theories. Specifically, a model with backward connections switched off within the posterior cortex explained awareness better (53%) than a model without backward connections from the PFC to sensory regions." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "mixed"
+reason = "Same near tie read from the other side: losing feedback within posterior cortex mattered about as much as losing feedback from prefrontal cortex. Neither the 'for' case (posterior enough, prefrontal adds nothing) nor the 'against' case is met."
+unsure = false
+
+[[judgement]]
+id = "out-dellert-iit-posterior"
+kind = "outcome"
+prediction = "iit-posterior"
+study = "dellert-2025"
+passages = [
+  { source = "dellert-2025", text = "Comparing brain responses to the critical sounds between aware and unaware participants while controlling for correlates of sensory and postperceptual processing revealed that auditory awareness was associated with significantly increased activity in secondary auditory but not in fronto-parietal areas." },
+  { source = "dellert-2025", text = "Significant awareness-related activity was observed in secondary auditory regions (belt areas) in the bilateral STG, STS and middle temporal gyrus, which accords with previous studies on auditory awareness" },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "for"
+reason = "Awareness-related activity was in temporal cortex (part of the posterior 'hot zone' the prediction names, 'temporo-parietal-occipital'), with none significant in prefrontal cortex. That is the test wording's 'for' case."
+unsure = true
+unsure_why = "The study did not test whether prefrontal cortex adds information (a decoding question); it found no significant prefrontal activation, which is weaker than showing prefrontal cortex adds nothing."
+
+# ========================================================== commitment judgements
+# Question for each: was this prediction on record, in a dated publication by the
+# theory's proponents, before the study first appeared? Verdicts: "before" (counts),
+# "not-before" (listed, 'explained afterwards, not counted' or 'first stated in the
+# study's own registration, not counted'), "unclear" (not counted, rule 2.3).
+
+[[judgement]]
+id = "com-cogitate-gwt-pfc-content"
+kind = "commitment"
+prediction = "gwt-pfc-content"
+study = "cogitate-2025"
+passages = [
+  { source = "dehaene-2014", text = "Global information sharing and routing would rely on a set of interconnected high-level cortical regions forming a ‘global workspace’ and involving primarily the dorsolateral prefrontal cortex, but also additional hubs in inferior parietal cortex, mid-temporal cortex, and precuneus" },
+  { source = "dehaene-2014", text = "In order to be globally shared, conscious information should be represented by a stable and reproducible brain-scale assembly for a minimal duration." },
+]
+dates = { statement = "2013-12-29", study = "2019-01-16" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "before"
+reason = "Five years before the registration, the proponents said conscious information is globally shared by a workspace 'involving primarily the dorsolateral prefrontal cortex' and must be 'represented by a stable and reproducible brain-scale assembly'. That commits the theory to conscious content being represented in prefrontal cortex."
+unsure = true
+unsure_why = "The 2014 passage does not say the content must be decodable when the stimulus is irrelevant to the task, and the same paper allows that task-irrelevant perception 'may correlate solely with a transient posterior negativity'. A reader may say the task-free part was first committed in the 2019 registration."
+
+[[judgement]]
+id = "com-cogitate-gwt-ignition"
+kind = "commitment"
+prediction = "gwt-ignition"
+study = "cogitate-2025"
+passages = [
+  { source = "dehaene-2014", text = "conscious access is often characterized by a late non-linear amplification of activation which invades a distributed set of parietal, prefrontal and cingulate areas" },
+  { source = "dehaene-2014", text = "In EEG, MEG, and intracranial recordings, conscious stimuli, compared to matched non-conscious ones, induce a late (~300 ms) and sudden increase in slow event-related potentials (inducing a P3 wave on the scalp), gamma power and long-range beta and gamma synchrony" },
+]
+dates = { statement = "2013-12-29", study = "2019-01-16" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "before"
+reason = "A late, sudden amplification invading prefrontal and parietal cortex on conscious trials is stated plainly in 2013, before the registration."
+unsure = false
+
+[[judgement]]
+id = "com-cogitate-gwt-synchrony"
+kind = "commitment"
+prediction = "gwt-synchrony"
+study = "cogitate-2025"
+passages = [
+  { source = "dehaene-2014", text = "In intracranial recordings, conscious stimuli, but not non-conscious ones, trigger a sustained activation and the formation of a metastable state of long-distance phase synchrony in the beta band" },
+]
+dates = { statement = "2013-12-29", study = "2019-01-16" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "before"
+reason = "Long-distance synchrony on conscious trials is stated in 2013. The 2013 sentence does not name prefrontal cortex and category areas as the two ends, but the same paper places the workspace 'primarily' in dorsolateral prefrontal cortex."
+unsure = true
+unsure_why = "The pairing of areas (prefrontal with category-selective) and the 0.3-0.5 s window were first written in the registration; a strict reader may say only 'long-distance synchrony' in general was on record."
+
+[[judgement]]
+id = "com-cogitate-gwt-offset"
+kind = "commitment"
+prediction = "gwt-offset"
+study = "cogitate-2025"
+passages = [
+  { source = "cogitate-prereg-v1", text = "A brief ignition is also expected at the offset of the stimuli, reflecting the conscious update at the moment of the disappearance of the stimulus." },
+  { source = "cogitate-protocol-2023", text = "According to predictive theories, any discrepancy between sensory inputs and their internal models causes the production of a transient prediction error signal" },
+  { source = "cogitate-protocol-2023", text = "As a consequence, a brief ignition is also expected at the offset of the stimuli (if this offset is consciously detected) when there is also a prediction error that requires updating the conscious internal model." },
+]
+dates = { statement = "2019-01-16", study = "2019-01-16" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "not-before"
+reason = "The earliest statement found is the study's own registration, and the protocol derives it from predictive-coding papers by other authors, not from an earlier workspace publication. Rule 2.1: 'a study that says it set out to test a theory tests nothing if the prediction was first written in the same paper.' Listed beside the prediction, not counted."
+unsure = true
+unsure_why = "Not counted because no earlier statement was found; one may exist in a workspace paper this session did not open (for example Dehaene and Changeux 2011, Neuron, or Dehaene's 2014 book). The consortium's own result on it was a failure."
+
+[[judgement]]
+id = "com-cogitate-gwt-silent"
+kind = "commitment"
+prediction = "gwt-silent"
+study = "cogitate-2025"
+passages = [
+  { source = "cogitate-prereg-v1", text = "GNW assumes that all experiences – regardless of their temporal extent – are accompanied by an initial ignition, followed by a decay of signal and maintenance of information in the form of an activity-silent state, with only occasional bursts of reactivation, similar to the concept of silent working memory (Stokes, 2015)." },
+]
+dates = { statement = "2019-01-16", study = "2019-01-16" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "not-before"
+reason = "First written in the study's own registration, citing a working-memory paper by another author (Stokes 2015). Not counted."
+unsure = false
+
+[[judgement]]
+id = "com-cogitate-iit-posterior"
+kind = "commitment"
+prediction = "iit-posterior"
+study = "cogitate-2025"
+passages = [
+  { source = "cogitate-prereg-v1", text = "A current auxiliary prediction of IIT, on the other hand, states that the physical substrate of consciousness resides primarily in a “posterior hot zone” in temporo-parietal-occipital cortex" },
+  { source = "boly-2017", text = "In this Perspective, we have reviewed evidence across lesion, stimulation, and recording studies that consistently point to regions in the “back” of the cortex, including temporal, parietal, and occipital areas, as a “posterior hot zone” that seems to play a direct role in specifying the contents of consciousness." },
+]
+dates = { statement = "2017-03-19 (boly-2017, which does not name the theory) or 2019-01-16 (the registration)", study = "2019-01-16" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "unclear"
+reason = "Boly and colleagues (Tononi and Koch among them) argued for a posterior hot zone in 2017, but as a reading of the evidence, not as a prediction of integrated information theory: the paper never names the theory. The first statement found that ties the hot zone to the theory is the study's own registration. Two 2016 papers by the same authors in Nature Reviews Neuroscience may do so but were not opened. Unclear, so not counted (rule 2.3)."
+unsure = true
+unsure_why = "Opening Tononi, Boly, Massimini and Koch 2016 ('Integrated information theory: from consciousness to its physical substrate') could settle it either way. John can sign in to Nature in the browser pane."
+
+[[judgement]]
+id = "com-cogitate-iit-sustained"
+kind = "commitment"
+prediction = "iit-sustained"
+study = "cogitate-2025"
+passages = [
+  { source = "cogitate-prereg-v1", text = "In this view, the temporal persistence of a conscious experience should be concomitant with the state of the physical neural substrate that specifies that experience, such that if an experience extends over a longer period, so should its physical substrate with its specific state and connectivity." },
+]
+dates = { statement = "2019-01-16", study = "2019-01-16" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "not-before"
+reason = "First written in the study's own registration, derived there from the theory's identity claim (citing Tononi et al. 2016, not opened). Not counted. The consortium found this prediction passed for category and failed for orientation."
+unsure = true
+unsure_why = "As for the hot zone: the 2016 paper, unopened, might state it."
+
+[[judgement]]
+id = "com-cogitate-iit-synchrony"
+kind = "commitment"
+prediction = "iit-synchrony"
+study = "cogitate-2025"
+passages = [
+  { source = "cogitate-prereg-v1", text = "The existence of relations (bindings) among active units could be approximated by enhanced interareal short-range synchrony. Here, each distinct conscious experience should lead to distinct patterns of synchronization between areas in posterior cortex i.e., category selective areas and early sensory areas." },
+]
+dates = { statement = "2019-01-16", study = "2019-01-16" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "not-before"
+reason = "First written in the study's own registration; the wording ('could be approximated') shows it was worked out there for this test. Not counted. This is the failure the consortium calls the most direct challenge to the theory."
+unsure = false
+
+[[judgement]]
+id = "com-bellet-gwt-pfc-content"
+kind = "commitment"
+prediction = "gwt-pfc-content"
+study = "bellet-2022"
+passages = [
+  { source = "mashour-2020", text = "In monkeys, however, recordings in the prefrontal cortex show that prefrontal neurons encode, in firing patterns, the specific current content of consciousness during binocular rivalry and related paradigms (Panagiotaropoulos et al., 2012). Importantly, those data were obtained in a no-report paradigm in which the monkey passively watches stimuli, and thus, the results are not confounded by working memory or effects related to reporting." },
+  { source = "dehaene-2014", text = "Global information sharing and routing would rely on a set of interconnected high-level cortical regions forming a ‘global workspace’ and involving primarily the dorsolateral prefrontal cortex" },
+]
+dates = { statement = "2013-12-29", study = "2022-02-24" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "before"
+reason = "By 2020 the proponents said prefrontal neurons encode the current content of consciousness without report; the study appeared in 2022."
+unsure = false
+
+[[judgement]]
+id = "com-bellet-iit-posterior"
+kind = "commitment"
+prediction = "iit-posterior"
+study = "bellet-2022"
+passages = [
+  { source = "cogitate-prereg-v1", text = "A current auxiliary prediction of IIT, on the other hand, states that the physical substrate of consciousness resides primarily in a “posterior hot zone” in temporo-parietal-occipital cortex" },
+]
+dates = { statement = "2019-01-16 written; public date unknown; certainly public 2023-02-10 (cogitate-protocol-2023)", study = "2022-02-24" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "unclear"
+reason = "The registration that ties the hot zone to the theory was written in 2019, but OSF does not show when it became public, and the protocol paper that certainly made it public appeared in 2023, after this study. Unclear, so not counted."
+unsure = true
+unsure_why = "Settled by finding when OSF component wz8mj was made public, or by opening Tononi et al. 2016."
+
+[[judgement]]
+id = "com-bandara-gwt-topdown"
+kind = "commitment"
+prediction = "gwt-topdown"
+study = "bandara-2025"
+passages = [
+  { source = "mashour-2020", text = "its main tenets (late ignition, metastable sustained activity, long-distance cortical projections, top-down mobilization) have begun to receive extensive support from neuroimaging and electrophysiological studies" },
+]
+dates = { statement = "2020-03-04", study = "2024-11-03" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "before"
+reason = "Top-down mobilization is named as a main tenet in 2020; the study first appeared in 2024. (It reanalyses data published in 2015; the rules date the study, not the data.)"
+unsure = true
+unsure_why = "Whether a reanalysis of data already public before the prediction should count is not addressed by the rules as written."
+
+[[judgement]]
+id = "com-bandara-iit-posterior"
+kind = "commitment"
+prediction = "iit-posterior"
+study = "bandara-2025"
+passages = [
+  { source = "cogitate-protocol-2023", text = "In contrast, an auxiliary prediction of IIT states that the NCC is primarily localized to the posterior hot zone." },
+]
+dates = { statement = "2023-02-10", study = "2024-11-03" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "before"
+reason = "Published in 2023 by a group including the theory's proponents (Tononi, Koch, Boly), before the study's 2024 preprint."
+unsure = true
+unsure_why = "The protocol calls it an 'auxiliary' prediction; whether an auxiliary prediction commits the theory is a reading. Here it is taken as committing, because the proponents signed it and agreed in advance what would count as its failure."
+
+[[judgement]]
+id = "com-dellert-gwt-ignition"
+kind = "commitment"
+prediction = "gwt-ignition"
+study = "dellert-2025"
+passages = [
+  { source = "mashour-2020", text = "This non-linear divergence occurs regardless of the stimulus modality or paradigm used to manipulate consciousness (e.g., reduced visibility, masking, inattention)." },
+  { source = "cogitate-protocol-2023", text = "GNW posits that every conscious experience is accompanied by activation of a fronto-parietal network in tandem with high-level sensory cortices." },
+]
+dates = { statement = "2013-12-29 (late ignition); 2020-03-04 (any modality or paradigm, including inattention)", study = "2025-05-21" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "before"
+reason = "Fronto-parietal ignition on conscious trials, whatever the sense and including inattention designs, is on record by 2020 and in the 2023 protocol; the study appeared in 2025."
+unsure = false
+
+[[judgement]]
+id = "com-dellert-iit-posterior"
+kind = "commitment"
+prediction = "iit-posterior"
+study = "dellert-2025"
+passages = [
+  { source = "cogitate-protocol-2023", text = "In contrast, an auxiliary prediction of IIT states that the NCC is primarily localized to the posterior hot zone." },
+]
+dates = { statement = "2023-02-10", study = "2025-05-21" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "before"
+reason = "As for the Bandara study: on record in 2023, before the 2025 preprint."
+unsure = true
+unsure_why = "Same 'auxiliary' question as com-bandara-iit-posterior. The registration's hot zone is described for vision ('temporo-parietal-occipital'); applying it to hearing is a reading."
+
+# ========================================================= testability judgements
+# Question for each prediction: (a) could it fail - is there a result, stated or
+# plainly implied in the source, that would count against it? (b) does it separate
+# the theory from at least one rival on the ruled list of ten - does a rival predict
+# something different? Name the rival.
+
+[[judgement]]
+id = "tst-gwt-pfc-content"
+kind = "testability"
+prediction = "gwt-pfc-content"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["iit"]
+reason = "A seen feature that is absent from prefrontal cortex would count against it, and the Cogitate registration says IIT predicts the opposite."
+unsure = false
+
+[[judgement]]
+id = "tst-gwt-ignition"
+kind = "testability"
+prediction = "gwt-ignition"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["iit", "rpt"]
+reason = "Awareness confined to sensory cortex with no fronto-parietal increase would count against it; IIT and recurrent processing theory both say sensory or posterior activity is enough."
+unsure = false
+
+[[judgement]]
+id = "tst-gwt-synchrony"
+kind = "testability"
+prediction = "gwt-synchrony"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["iit"]
+reason = "Absence of content-specific prefrontal synchrony would count against it; IIT predicts synchrony within posterior cortex instead."
+unsure = false
+
+[[judgement]]
+id = "tst-gwt-topdown"
+kind = "testability"
+prediction = "gwt-topdown"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["iit", "rpt"]
+reason = "If awareness needs no feedback from prefrontal cortex, the prediction fails; posterior and recurrent theories say feedback within sensory cortex suffices."
+unsure = true
+unsure_why = "'Top-down mobilization' is named as a tenet in mashour-2020 without a test; the test wording here is the site's, drawn from how the Bandara study framed it."
+
+[[judgement]]
+id = "tst-gwt-late"
+kind = "testability"
+prediction = "gwt-late"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "A reliable awareness difference before 200 ms, carrying the content, would count against it. But no rival on the list was found stating that consciousness starts earlier; integrated information theory 'makes no specific predictions as to the relevant time window'. Silence is not a contrary prediction."
+unsure = true
+unsure_why = "Recurrent processing theory is often read as predicting earlier awareness (local feedback in sensory cortex); this session found no proponents' statement of that in the sources it opened, so it is not counted as a separation."
+
+[[judgement]]
+id = "tst-gwt-wm-transform"
+kind = "testability"
+prediction = "gwt-wm-transform"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "Transforming held information with no active state decodable would count against it. No rival on the list was found predicting the opposite."
+unsure = false
+
+[[judgement]]
+id = "tst-gwt-offset"
+kind = "testability"
+prediction = "gwt-offset"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["iit"]
+reason = "No prefrontal response at offset would count against it (and did, in the Cogitate study); IIT predicts sustained activity, not updates."
+unsure = false
+
+[[judgement]]
+id = "tst-gwt-silent"
+kind = "testability"
+prediction = "gwt-silent"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["iit"]
+reason = "Sustained content-specific prefrontal activity through the percept would count against it; IIT predicts sustained activity in posterior cortex."
+unsure = true
+unsure_why = "IIT's sustained activity is posterior and this prediction is about prefrontal cortex, so the two are not strictly opposite; the registration sets them against each other, and this reading follows it."
+
+[[judgement]]
+id = "tst-iit-posterior"
+kind = "testability"
+prediction = "iit-posterior"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+reason = "Conscious content absent from posterior cortex while present in prefrontal cortex would count against it; GWT says prefrontal activation is a prerequisite."
+unsure = true
+unsure_why = "The proponents call it 'auxiliary'. Tying it to core claim iit-c5 (the main complex has definite borders) is the site's reading; if it is not tied to a core claim, it counts single, not double, and drops out of the 'left to test' count."
+
+[[judgement]]
+id = "tst-iit-sustained"
+kind = "testability"
+prediction = "iit-sustained"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+reason = "Posterior content decaying while the stimulus is still seen would count against it; GWT predicted decay."
+unsure = false
+
+[[judgement]]
+id = "tst-iit-synchrony"
+kind = "testability"
+prediction = "iit-synchrony"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+reason = "No sustained posterior synchrony by the agreed measure would count against it; GWT predicts prefrontal synchrony instead."
+unsure = false
+
+[[judgement]]
+id = "tst-iit-phi-states"
+kind = "testability"
+prediction = "iit-phi-states"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "High integrated information in dreamless sleep or anaesthesia would count against it. But global workspace theory also predicts disruption in those states (mashour-2020), so the prediction does not separate the two."
+unsure = true
+unsure_why = "Dreaming, which the prediction includes, might separate them if GWT predicted no workspace activity in dreams; no such statement was found."
+
+[[judgement]]
+id = "tst-iit-inactive"
+kind = "testability"
+prediction = "iit-inactive"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+reason = "Disabling already-quiet neurons with no change to experience would count against it. GWT ties conscious content to active firing, so it predicts quiet neurons carry nothing."
+unsure = true
+unsure_why = "The separation is the site's inference from two papers that do not discuss each other on this point."
+
+[[judgement]]
+id = "tst-iit-agnosia"
+kind = "testability"
+prediction = "iit-agnosia"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "Awareness of the loss after complete inactivation would count against it. No rival was found predicting awareness of the loss."
+unsure = false
+
+[[judgement]]
+id = "tst-iit-connections"
+kind = "testability"
+prediction = "iit-connections"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+reason = "A change in connection strength with activity unchanged and no change in experience would count against it. GWT ties experience to what activity broadcasts."
+unsure = true
+unsure_why = "Separation inferred by the site."
+
+[[judgement]]
+id = "tst-iit-feedforward"
+kind = "testability"
+prediction = "iit-feedforward"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+could_fail = false
+separates = true
+separates_from = ["gwt"]
+reason = "It differs from GWT, but nothing that could be observed would show a feed-forward machine has, or lacks, experience: the paper's own premise is that its behaviour would be the same. It cannot fail."
+unsure = false
+
+[[judgement]]
+id = "tst-sh-central"
+kind = "testability"
+prediction = "sh-central"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "second"
+could_fail = false
+separates = false
+separates_from = []
+reason = "The page names a losing condition ('if anything about experience turns out to predict or explain what the binding cannot') but no observation or study that would show it, so no result could be read as its failure. Integrated information theory also says experience is a structure with 'no additional ingredients', so it would not separate the two either."
+unsure = true
+unsure_why = "A reader could take the losing condition as enough to make it able to fail in principle."
+
+[[judgement]]
+id = "tst-sh-split-novel"
+kind = "testability"
+prediction = "sh-split-novel"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "second"
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+reason = "It names the result that would make it lose (response to new events carrying on as before). On separation: in global workspace theory, responding to something new depends on it entering the workspace, which cutting the copies of one's own commands leaves intact, so it predicts no loss on unrelated new events."
+unsure = true
+unsure_why = "GWT's proponents say nothing about copies of motor commands; reading a prediction into their silence is the site's inference, the kind the rules elsewhere refuse ('silence is not a contrary prediction', tst-gwt-late). By that stricter standard this would be separates = false."
+
+[[judgement]]
+id = "tst-sh-nosplit-flexible"
+kind = "testability"
+prediction = "sh-nosplit-flexible"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "second"
+could_fail = true
+separates = false
+separates_from = []
+reason = "It names the result that would make it lose (flexible response during a reported no-split state). No rival on the list was found stating that flexible responding survives the loss of the self-world boundary."
+unsure = true
+unsure_why = "Same inference question as tst-sh-split-novel. Read the same lenient way, it would separate from GWT; it is read strictly here and leniently there, which is itself an inconsistency the second reader should test."
+
+[[judgement]]
+id = "tst-sh-enriching"
+kind = "testability"
+prediction = "sh-enriching"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "second"
+could_fail = true
+separates = true
+separates_from = ["damasio"]
+reason = "Removing one of the four and finding experience gone would count against it. Damasio's theory puts feeling at the core of consciousness, so it predicts that removing mattering switches experience off."
+unsure = true
+unsure_why = "Damasio's theory is described here from a secondary quotation (on the verify list), and 'mattering' on the account and 'feeling' in Damasio may not be the same thing."
+
+[[judgement]]
+id = "tst-sh-no-bare-awareness"
+kind = "testability"
+prediction = "sh-no-bare-awareness"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "second"
+could_fail = true
+separates = false
+separates_from = []
+reason = "A well-attested experience with nothing on one axis would count against it. Integrated information theory also holds every experience is structured, so it does not separate the account from that rival."
+unsure = false

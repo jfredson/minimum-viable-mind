@@ -1,0 +1,54 @@
+{
+  "packet_id": "tst-iit-feedforward",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES IT SEPARATE the theory from a rival: does at least one theory on the list of rivals predict something different (not merely stay silent)? If yes, name the rival or rivals, and say whether your view of the rival comes from the material given or from your own knowledge. Answer in JSON: {\"could_fail\": true|false, \"separates\": true|false, \"separates_from\": [ids], \"rival_view_from\": \"material\"|\"own knowledge\"|\"both\"|\"none\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Integrated information theory",
+  "core_claim": {
+    "quote": "Each experience corresponds to a Φ-structure, not a set of functions, processes, or computations. Said otherwise, consciousness is about being, not doing",
+    "source": {
+      "citation": "Albantakis L, Barbosa L, Findlay G, Grasso M, Haun AM, Marshall W, Mayner WGP, Zaeemzadeh A, Boly M, Juel BE, Sasai S, Fujii K, David I, Hendren J, Lang JP, Tononi G. Integrated information theory (IIT) 4.0: formulating the properties of phenomenal existence in physical terms. PLOS Computational Biology 19(10):e1011465, 2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581496/",
+      "date": "2023-10-17"
+    }
+  },
+  "prediction": {
+    "statement": "A machine built from feed-forward hardware has no experience, however human its behaviour.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2023-10-17",
+      "passage": "Accordingly, artificial systems powered by super-intelligent computer programs, but implemented by feed-forward hardware or encompassing critical bottlenecks, would experience nothing (or nearly nothing) because they have the wrong kind of physical architecture, even though they may be behaviorally indistinguishable from human beings",
+      "source": {
+        "citation": "Albantakis L, Barbosa L, Findlay G, Grasso M, Haun AM, Marshall W, Mayner WGP, Zaeemzadeh A, Boly M, Juel BE, Sasai S, Fujii K, David I, Hendren J, Lang JP, Tononi G. Integrated information theory (IIT) 4.0: formulating the properties of phenomenal existence in physical terms. PLOS Computational Biology 19(10):e1011465, 2023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581496/",
+        "date": "2023-10-17"
+      }
+    },
+    "test_for": "None stated: the paper names no observation that would show such a machine has, or lacks, experience.",
+    "test_against": "None stated."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [
+    {
+      "rival": "Global workspace theory",
+      "statement": "GWT ties experience to a functional architecture of broadcasting, which a machine could implement.",
+      "source": {
+        "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+        "date": "2020-03-04"
+      }
+    }
+  ],
+  "other_statements_of_the_prediction": [],
+  "this_reading_is": "the second reading"
+}

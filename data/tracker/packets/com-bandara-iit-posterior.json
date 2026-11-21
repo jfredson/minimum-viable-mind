@@ -1,0 +1,53 @@
+{
+  "packet_id": "com-bandara-iit-posterior",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A study counts toward a prediction only if that prediction was on record, in a dated publication by the theory's own proponents, before the study first appeared. A study that says it set out to test a theory tests nothing if the prediction was first written in the same paper (or the study's own registration). When the dates or the commitment are unclear, the study is not counted. Read the passages and dates. Decide: BEFORE (the earlier passage commits the theory to this prediction, and it predates the study), NOT-BEFORE (it does not), or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Integrated information theory",
+  "core_claim": {
+    "quote": "Based on the postulates of IIT, a universal substrate ultimately “condenses” into a set of disjoint (non-overlapping) complexes, each constituted of a set of macro or micro units.",
+    "source": {
+      "citation": "Albantakis L, Barbosa L, Findlay G, Grasso M, Haun AM, Marshall W, Mayner WGP, Zaeemzadeh A, Boly M, Juel BE, Sasai S, Fujii K, David I, Hendren J, Lang JP, Tononi G. Integrated information theory (IIT) 4.0: formulating the properties of phenomenal existence in physical terms. PLOS Computational Biology 19(10):e1011465, 2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581496/",
+      "date": "2023-10-17"
+    }
+  },
+  "prediction": {
+    "statement": "The physical substrate of experience lies mainly in a posterior 'hot zone' (temporal, parietal and occipital cortex); prefrontal cortex is not needed, and conscious content is best decoded from the back of the brain.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-16",
+      "passage": "A current auxiliary prediction of IIT, on the other hand, states that the physical substrate of consciousness resides primarily in a “posterior hot zone” in temporo-parietal-occipital cortex due to the connectivity architecture of those areas (‘pyramid-of-grids’-like) that is more suited for high phi than the different connectivity of prefrontal regions.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    "test_for": "Awareness-related activity, or decodable conscious content, is found in posterior cortex, and adding prefrontal cortex adds no information.",
+    "test_against": "Conscious content or awareness-related activity is absent from posterior cortex while present in prefrontal cortex, or prefrontal cortex adds information beyond posterior cortex."
+  },
+  "study": {
+    "name": "Computer modelling of an inattentional-blindness EEG dataset, testing sensory against frontal theories",
+    "source": {
+      "citation": "Bandara KH, Rowe EG, Garrido MI. Computational modelling shows evidence in support of both sensory and frontal theories of consciousness. Neuroscience of Consciousness 2025(1):niaf033",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12456173/",
+      "date": "2024-11-03"
+    },
+    "first_appeared": "2024-11-03 (preprint (bioRxiv))"
+  },
+  "passages": [
+    {
+      "text": "In contrast, an auxiliary prediction of IIT states that the NCC is primarily localized to the posterior hot zone.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, Bendtz K, Ferrante O, ... Dehaene S, Koch C, Tononi G, Ward LM. An adversarial collaboration protocol for testing contrasting predictions of global neuronal workspace and integrated information theory. PLOS ONE 18(2):e0268577, 2023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9916582/",
+        "date": "2023-02-10"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2023-02-10",
+    "study": "2024-11-03"
+  },
+  "this_reading_is": "the second reading"
+}

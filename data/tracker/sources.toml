@@ -1,0 +1,182 @@
+# Every source a record in this folder leans on, with what was read and when.
+# A record names a source by its id. A fact whose source is not in this file, or
+# whose source says "not opened", is not yet a fact of the record (tracker pattern
+# rule 3.3). Layout: data/tracker/README.md.
+#
+# Stage 2 pilot, built 2026-11-20 by a working session on a Claude model.
+
+[[source]]
+id = "mashour-2020"
+citation = "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/"
+doi = "10.1016/j.neuron.2020.01.026"
+published = "2020-03-04"
+published_source = "the article's own citation metadata on PubMed Central ('Neuron. 2020 Mar 4;105(5):776-798')"
+opened = "2026-11-20, the author manuscript on PubMed Central, read in full"
+read = "full text (author manuscript), except Table 1, whose cells did not survive the text extraction"
+
+[[source]]
+id = "albantakis-2023"
+citation = "Albantakis L, Barbosa L, Findlay G, Grasso M, Haun AM, Marshall W, Mayner WGP, Zaeemzadeh A, Boly M, Juel BE, Sasai S, Fujii K, David I, Hendren J, Lang JP, Tononi G. Integrated information theory (IIT) 4.0: formulating the properties of phenomenal existence in physical terms. PLOS Computational Biology 19(10):e1011465, 2023"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581496/"
+doi = "10.1371/journal.pcbi.1011465"
+published = "2023-10-17"
+published_source = "the journal's publication date in the article metadata (Europe PMC full-text record PMC10581496)"
+earlier_version = "arXiv 2212.14787 v1, posted 2022-12-30 (arXiv's own record); opened 2026-11-20 and searched for the passages used here: v1 contains the inactive-versus-inactivated corollary (its p. 40 region, 'Consciousness and activity'); the Conclusions wording quoted in the records was checked only in the journal version"
+opened = "2026-11-20, full text"
+read = "full text of the journal version (Europe PMC XML)"
+
+[[source]]
+id = "sh-positions"
+citation = "Fredrickson JA. Working Positions. Sentient Horizons, latest revision shown on the page 2026-10-24"
+url = "https://sentient-horizons.com/positions/"
+published = "2026-10-24"
+published_source = "the 'Revised October 24th, 2026' labels and history entries on the page itself"
+opened = "2026-11-20, the live page, read in full"
+read = "every entry, including each 'What would change my mind' section and each history"
+
+[[source]]
+id = "sh-proposal-2026-11-20"
+citation = "Corpus-Positions Ledger: proposed changes, 2026-11-20 (the account stated whole, and the self-model that counts). Not ruled by John."
+url = "file: sentient-horizons worktree positions-working-self-model-2026-11-20, editorial/corpus-positions-ledger.PROPOSED-2026-11-20-the-account-in-one-sentence.md"
+published = "not published; a proposal waiting for John"
+opened = "2026-11-20, read in full"
+read = "full text; used only to say where its Choice C would change the account's core claims. No record depends on it."
+
+[[source]]
+id = "cogitate-2025"
+citation = "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/"
+doi = "10.1038/s41586-025-08888-1"
+published = "2025-04-30"
+published_source = "the article's electronic publication date in the Europe PMC full-text record (pub-type epub, 30 April 2025)"
+opened = "2026-11-20, full text (CC BY 4.0, open access)"
+read = "main text, methods, figure and extended-data captions. Extended Data Table 1 (the pass and fail criteria) is an image and was not read as text; the criteria quoted come from the main text, which restates them."
+
+[[source]]
+id = "cogitate-preprint-2023"
+citation = "Cogitate Consortium et al. An adversarial collaboration to critically evaluate theories of consciousness. bioRxiv 2023.06.23.546249"
+url = "https://doi.org/10.1101/2023.06.23.546249"
+published = "2023-06-26"
+published_source = "Europe PMC preprint record (first publication date 2023-06-26)"
+opened = "2026-11-20, the Europe PMC record only (date and authors); the preprint's text was not read"
+
+[[source]]
+id = "cogitate-prereg-v1"
+citation = "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj"
+url = "https://osf.io/wz8mj/"
+file_url = "https://osf.io/download/4g2h8/"
+published = "2019-01-16"
+published_source = "every page is headed 'January 16th, 2019'; the OSF component and its file were created 2019-01-16 (OSF API, date_created 2019-01-16T18:37). OSF does not show when the component was made public, so 2019-01-16 is the date it was written, and its public date is unknown."
+opened = "2026-11-20, the PDF (36 pages), read for the personnel list and the 'Research question and differential predictions' section (pp. 5-8)"
+note = "Lists Stanislas Dehaene, Christof Koch and Giulio Tononi on the science steering committee (p. 1), so it is a document by the two theories' proponents."
+
+[[source]]
+id = "cogitate-prereg-v4"
+citation = "Mudrik L, et al. Cogitate - preregistration v4 - December 2022. OSF 92tbg"
+url = "https://osf.io/92tbg/"
+file_url = "https://osf.io/download/gm3vd/"
+published = "2022-12-23"
+published_source = "OSF API, node 92tbg date_created 2022-12-23; the Nature paper cites it as its reference 27"
+opened = "2026-11-20, the PDF downloaded (83 pages); searched, not read in full"
+
+[[source]]
+id = "cogitate-protocol-2023"
+citation = "Melloni L, Mudrik L, Pitts M, Bendtz K, Ferrante O, ... Dehaene S, Koch C, Tononi G, Ward LM. An adversarial collaboration protocol for testing contrasting predictions of global neuronal workspace and integrated information theory. PLOS ONE 18(2):e0268577, 2023"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC9916582/"
+doi = "10.1371/journal.pone.0268577"
+published = "2023-02-10"
+published_source = "journal publication date in the article metadata; received 2021-11-16, accepted 2022-05-03"
+opened = "2026-11-20, full text"
+note = "Its 28 authors include Dehaene, Koch, Tononi, Boly and Panagiotaropoulos. It says the original and amended preregistrations were 'frozen prior to the commencement of data acquisition' (Status and timeline)."
+
+[[source]]
+id = "dehaene-2014"
+citation = "Dehaene S, Charles L, King J-R, Marti S. Toward a computational theory of conscious processing. Current Opinion in Neurobiology 25:76-84, 2014"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635963/"
+doi = "10.1016/j.conb.2013.12.005"
+published = "2013-12-29"
+published_source = "citation publication date in the PubMed Central record (2013 Dec 29, online)"
+opened = "2026-11-20, full text (author manuscript)"
+
+[[source]]
+id = "boly-2017"
+citation = "Boly M, Massimini M, Tsuchiya N, Postle BR, Koch C, Tononi G. Are the neural correlates of consciousness in the front or in the back of the cerebral cortex? Clinical and neuroimaging evidence. Journal of Neuroscience 37(40):9603-9613, 2017"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5628406/"
+doi = "10.1523/JNEUROSCI.3218-16.2017"
+published = "2017-03-19"
+published_source = "the bioRxiv preprint (10.1101/118273) is dated 2017-03-19 in Europe PMC; the journal version is dated 2017-10-04"
+opened = "2026-11-20, full text of the journal version"
+note = "Argues for a posterior 'hot zone' and that prefrontal cortex is not necessary, but does not name integrated information theory anywhere in the text (searched 2026-11-20)."
+
+[[source]]
+id = "bellet-2022"
+citation = "Bellet J, Gay M, Dwarakanath A, Jarraya B, van Kerkoerle T, Dehaene S, Panagiotaropoulos TI. Decoding rapidly presented visual stimuli from prefrontal ensembles without report nor post-perceptual processing. Neuroscience of Consciousness 2022(1):niac005"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC8868130/"
+doi = "10.1093/nc/niac005"
+published = "2022-02-24"
+published_source = "journal publication date in the article metadata; received 2021-01-19. No earlier preprint found in Europe PMC (searched 2026-11-20)."
+opened = "2026-11-20, full text"
+found_through = "contrast"
+
+[[source]]
+id = "bandara-2025"
+citation = "Bandara KH, Rowe EG, Garrido MI. Computational modelling shows evidence in support of both sensory and frontal theories of consciousness. Neuroscience of Consciousness 2025(1):niaf033"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12456173/"
+doi = "10.1093/nc/niaf033"
+published = "2024-11-03"
+published_source = "the bioRxiv preprint 10.1101/2024.11.02.621640 is dated 2024-11-03 in Europe PMC; the journal version is dated 2025-09-23"
+opened = "2026-11-20, full text of the journal version"
+found_through = "contrast"
+note = "ConTraSt lists the first author as Elise G. Rowe; the journal's author order is Bandara, Rowe, Garrido. The records use the journal's order."
+
+[[source]]
+id = "dellert-2025"
+citation = "Dellert T, Balster H, Schlossmacher I, Bruchmann M, Moeck R, Straube T. Neural correlates of consciousness in an auditory no-report fMRI study. bioRxiv 2025.05.16.654468; published in Current Biology, 2025 (10.1016/j.cub.2025.10.026)"
+url = "https://www.biorxiv.org/content/10.1101/2025.05.16.654468v1.full"
+doi = "10.1101/2025.05.16.654468"
+published = "2025-05-21"
+published_source = "Europe PMC preprint record (first publication 2025-05-21); journal version dated 2025-11-06"
+opened = "2026-11-20, the preprint's full text in the browser pane (introduction, abstract and discussion read; searched for any registration, none mentioned). The Current Biology version was not opened."
+found_through = "contrast"
+
+[[source]]
+id = "coppola-2021"
+citation = "Coppola P, Spindler LRB, Luppi AI, Adapa R, Naci L, Allanson J, et al. Network dynamics scale with levels of awareness. bioRxiv 2021.04.12.439452; published in NeuroImage 252:119128, 2022"
+url = "https://www.biorxiv.org/content/10.1101/2021.04.12.439452v1.full"
+doi = "10.1101/2021.04.12.439452"
+published = "2021-04-13"
+published_source = "Europe PMC preprint record"
+opened = "2026-11-20, the preprint's abstract and introduction in the browser pane, and a search of its text for the theories' names"
+found_through = "contrast"
+
+[[source]]
+id = "hatamimajoumerd-2022"
+citation = "Hatamimajoumerd E, Ratan Murty NA, Pitts M, Cohen MA. Decoding perceptual awareness across the brain with a no-report fMRI masking paradigm. Current Biology 32(19), 2022"
+url = "https://doi.org/10.1016/j.cub.2022.07.068"
+published = "2022-08-17"
+published_source = "Europe PMC record"
+opened = "NOT OPENED. The publisher's page answered with a 'performing security verification' robot check on 2026-11-20, which was not bypassed. No open copy found in Europe PMC."
+found_through = "contrast"
+
+[[source]]
+id = "contrast-export"
+citation = "ConTraSt database (Yaron, Melloni, Pitts and Mudrik), live CSV export of all experiments, 515 rows from 461 papers, CC BY-SA 4.0"
+url = "https://contrastdb.tau.ac.il"
+published = "export downloaded 2026-11-20"
+opened = "2026-11-20, used only as a reading list (rule 3, kickoff section 12): no ConTraSt field is copied into these records"
+
+[[source]]
+id = "gemini-pricing"
+citation = "Google. Gemini Developer API pricing"
+url = "https://ai.google.dev/gemini-api/docs/pricing"
+published = "read 2026-11-20 (the address now redirects to https://aistudio.google.com/docs/pricing)"
+opened = "2026-11-20, the full pricing table for every listed text model"
+
+[[source]]
+id = "theory-list-report"
+citation = "Which theories of consciousness get their own entry: the ruled test, applied. Read-only session report, 2026-11-20 (master session's notes, 2026-11-20-theory-list-test.md)"
+url = "file: side-session-notes/local_e59d6805-e071-497d-a511-9ca2d56f9f43/2026-11-20-theory-list-test.md"
+published = "2026-11-20"
+opened = "2026-11-20, read in full"
+note = "Used once, for what Damasio's theory says (its quotation of Seth and Bayne's Table 1). That quotation was not checked against Seth and Bayne by this session; it is on the verify list."

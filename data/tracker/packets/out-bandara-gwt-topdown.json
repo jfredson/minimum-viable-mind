@@ -1,0 +1,49 @@
+{
+  "packet_id": "out-bandara-gwt-topdown",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Global workspace theory",
+  "core_claim": {
+    "quote": "Broadcasting implies that the information in the workspace becomes available to many local processors, and it is the wide accessibility of this information that is hypothesized to constitute conscious experience.",
+    "source": {
+      "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+      "date": "2020-03-04"
+    }
+  },
+  "prediction": {
+    "statement": "Becoming aware of a stimulus involves top-down signals from the workspace, including prefrontal cortex, back to the sensory areas.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2020-03-04",
+      "passage": "its main tenets (late ignition, metastable sustained activity, long-distance cortical projections, top-down mobilization) have begun to receive extensive support",
+      "source": {
+        "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+        "date": "2020-03-04"
+      }
+    },
+    "test_for": "Models in which feedback from prefrontal cortex to sensory areas is switched off explain awareness clearly worse than models that keep it, when report is removed.",
+    "test_against": "Awareness is explained as well or better with prefrontal feedback switched off, while feedback within sensory cortex is needed."
+  },
+  "study": {
+    "name": "Computer modelling of an inattentional-blindness EEG dataset, testing sensory against frontal theories",
+    "source": {
+      "citation": "Bandara KH, Rowe EG, Garrido MI. Computational modelling shows evidence in support of both sensory and frontal theories of consciousness. Neuroscience of Consciousness 2025(1):niaf033",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12456173/",
+      "date": "2024-11-03"
+    },
+    "first_appeared": "2024-11-03 (preprint (bioRxiv))"
+  },
+  "passages": [
+    {
+      "text": "While an initial data-driven search could not corroborate neither sensory nor frontal theories of consciousness, a more directed hypothesis-driven analysis revealed strong evidence that both theories could explain the data, with a very slight preference for frontal theories. Specifically, a model with backward connections switched off within the posterior cortex explained awareness better (53%) than a model without backward connections from the PFC to sensory regions.",
+      "source": {
+        "citation": "Bandara KH, Rowe EG, Garrido MI. Computational modelling shows evidence in support of both sensory and frontal theories of consciousness. Neuroscience of Consciousness 2025(1):niaf033",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12456173/",
+        "date": "2024-11-03"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,61 @@
+{
+  "packet_id": "com-bellet-gwt-pfc-content",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A study counts toward a prediction only if that prediction was on record, in a dated publication by the theory's own proponents, before the study first appeared. A study that says it set out to test a theory tests nothing if the prediction was first written in the same paper (or the study's own registration). When the dates or the commitment are unclear, the study is not counted. Read the passages and dates. Decide: BEFORE (the earlier passage commits the theory to this prediction, and it predates the study), NOT-BEFORE (it does not), or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Global workspace theory",
+  "core_claim": {
+    "quote": "The prefrontal cortex is posited to play a key role in the GNW because of the greater density of neurons thought to be critical for global broadcasting of information, but it is not proposed as the exclusive territory for conscious access.",
+    "source": {
+      "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+      "date": "2020-03-04"
+    }
+  },
+  "prediction": {
+    "statement": "What is consciously seen is represented in prefrontal cortex, so that its content can be decoded there, whether or not the person has to report it or use it in a task.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2013-12-29",
+      "passage": "Global information sharing and routing would rely on a set of interconnected high-level cortical regions forming a ‘global workspace’ and involving primarily the dorsolateral prefrontal cortex, but also additional hubs in inferior parietal cortex, mid-temporal cortex, and precuneus",
+      "source": {
+        "citation": "Dehaene S, Charles L, King J-R, Marti S. Toward a computational theory of conscious processing. Current Opinion in Neurobiology 25:76-84, 2014",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635963/",
+        "date": "2013-12-29"
+      }
+    },
+    "test_for": "Features of a stimulus that the person consciously sees (its category, orientation, identity) can be decoded from prefrontal activity, including when the stimulus or the feature is irrelevant to the task and nothing is reported.",
+    "test_against": "A feature the person consciously sees can be decoded from sensory cortex but not from prefrontal cortex, in a design sensitive enough to find it in prefrontal cortex for other features."
+  },
+  "study": {
+    "name": "Decoding rapidly presented pictures from monkey prefrontal neurons without report",
+    "source": {
+      "citation": "Bellet J, Gay M, Dwarakanath A, Jarraya B, van Kerkoerle T, Dehaene S, Panagiotaropoulos TI. Decoding rapidly presented visual stimuli from prefrontal ensembles without report nor post-perceptual processing. Neuroscience of Consciousness 2022(1):niac005",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8868130/",
+      "date": "2022-02-24"
+    },
+    "first_appeared": "2022-02-24 (publication (no earlier preprint found))"
+  },
+  "passages": [
+    {
+      "text": "In monkeys, however, recordings in the prefrontal cortex show that prefrontal neurons encode, in firing patterns, the specific current content of consciousness during binocular rivalry and related paradigms (Panagiotaropoulos et al., 2012). Importantly, those data were obtained in a no-report paradigm in which the monkey passively watches stimuli, and thus, the results are not confounded by working memory or effects related to reporting.",
+      "source": {
+        "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+        "date": "2020-03-04"
+      }
+    },
+    {
+      "text": "Global information sharing and routing would rely on a set of interconnected high-level cortical regions forming a ‘global workspace’ and involving primarily the dorsolateral prefrontal cortex",
+      "source": {
+        "citation": "Dehaene S, Charles L, King J-R, Marti S. Toward a computational theory of conscious processing. Current Opinion in Neurobiology 25:76-84, 2014",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635963/",
+        "date": "2013-12-29"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2013-12-29",
+    "study": "2022-02-24"
+  },
+  "this_reading_is": "the second reading"
+}

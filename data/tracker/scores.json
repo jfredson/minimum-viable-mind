@@ -1,0 +1,277 @@
+{
+  "mode": "provisional",
+  "readers": [
+    "claude"
+  ],
+  "judgement_status": {
+    "agreed": 0,
+    "one-reader": 43,
+    "disagreed": 0,
+    "unread": 0
+  },
+  "theories": {
+    "gwt": {
+      "name": "Global workspace theory",
+      "testability": 60.0,
+      "testability_by_claim": {
+        "gwt-c1": 1.0,
+        "gwt-c2": 1.0,
+        "gwt-c3": 1.0,
+        "gwt-c4": 0.0,
+        "gwt-c5": 0.0
+      },
+      "past_bar": true,
+      "claims_lacking_for_bar": [],
+      "support": 44.1,
+      "support_rests_on": {
+        "counted_outcomes": 6,
+        "studies": [
+          "bandara-2025",
+          "bellet-2022",
+          "cogitate-2025",
+          "dellert-2025"
+        ],
+        "groups": [
+          "Cogitate Consortium",
+          "Garrido group (last author)",
+          "Panagiotaropoulos group (last author)",
+          "Straube group (last author; participants recruited at the University of Münster)"
+        ],
+        "total_weight": 34,
+        "weighted_sum": -4
+      },
+      "left_to_test": 50.0,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 6,
+        "placeholders_for_claims_with_none": [
+          "gwt-c4",
+          "gwt-c5"
+        ],
+        "untested": 4,
+        "total": 8
+      },
+      "group": "ranked",
+      "leans_against": true
+    },
+    "iit": {
+      "name": "Integrated information theory",
+      "testability": 60.0,
+      "testability_by_claim": {
+        "iit-c1": 0.0,
+        "iit-c2": 1.0,
+        "iit-c3": 1.0,
+        "iit-c4": 0.0,
+        "iit-c5": 1.0
+      },
+      "past_bar": true,
+      "claims_lacking_for_bar": [
+        "iit-c4"
+      ],
+      "support": 75.0,
+      "support_rests_on": {
+        "counted_outcomes": 2,
+        "studies": [
+          "bandara-2025",
+          "dellert-2025"
+        ],
+        "groups": [
+          "Garrido group (last author)",
+          "Straube group (last author; participants recruited at the University of Münster)"
+        ],
+        "total_weight": 8,
+        "weighted_sum": 4
+      },
+      "left_to_test": 85.7,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 5,
+        "placeholders_for_claims_with_none": [
+          "iit-c1",
+          "iit-c4"
+        ],
+        "untested": 6,
+        "total": 7
+      },
+      "group": "ranked",
+      "leans_against": false
+    },
+    "sh": {
+      "name": "The Sentient Horizons account",
+      "testability": 50.0,
+      "testability_by_claim": {
+        "sh-c1": 0.0,
+        "sh-c2": 1.0,
+        "sh-c3": 1.0,
+        "sh-c4": 0.0
+      },
+      "past_bar": true,
+      "claims_lacking_for_bar": [
+        "sh-c1"
+      ],
+      "support": null,
+      "support_rests_on": {
+        "counted_outcomes": 0,
+        "studies": [],
+        "groups": [],
+        "total_weight": 0,
+        "weighted_sum": 0
+      },
+      "left_to_test": 100.0,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 2,
+        "placeholders_for_claims_with_none": [
+          "sh-c1",
+          "sh-c4"
+        ],
+        "untested": 4,
+        "total": 4
+      },
+      "group": "testable, too little tested to rank",
+      "leans_against": false
+    }
+  },
+  "ranking": {
+    "ranked": [
+      {
+        "theory": "iit",
+        "rank": 1
+      },
+      {
+        "theory": "gwt",
+        "rank": 1
+      }
+    ],
+    "shared_because_one_study_could_swap_them": {
+      "iit|gwt": "dellert-2025"
+    },
+    "testable_too_little_tested": [
+      "sh"
+    ],
+    "not_yet_defined_sharply_enough": []
+  },
+  "headline_provisional": {
+    "tested": 5,
+    "distinguishing_predictions": 13,
+    "share_tested": 38.5,
+    "note": "Provisional: the headline is ruling 3, still open. Computed as the kickoff proposal suggests (section 3): the share of the theories' sharp predictions tested at all."
+  },
+  "counted_outcomes": [
+    {
+      "judgement": "out-cogitate-gwt-pfc-content",
+      "theory": "gwt",
+      "prediction": "gwt-pfc-content",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": 0,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-cogitate-gwt-ignition",
+      "theory": "gwt",
+      "prediction": "gwt-ignition",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": 1,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-cogitate-gwt-synchrony",
+      "theory": "gwt",
+      "prediction": "gwt-synchrony",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": -1,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-bellet-gwt-pfc-content",
+      "theory": "gwt",
+      "prediction": "gwt-pfc-content",
+      "study": "bellet-2022",
+      "group": "Panagiotaropoulos group (last author)",
+      "value": 0,
+      "weight": 1,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-bandara-gwt-topdown",
+      "theory": "gwt",
+      "prediction": "gwt-topdown",
+      "study": "bandara-2025",
+      "group": "Garrido group (last author)",
+      "value": 0,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-dellert-gwt-ignition",
+      "theory": "gwt",
+      "prediction": "gwt-ignition",
+      "study": "dellert-2025",
+      "group": "Straube group (last author; participants recruited at the University of Münster)",
+      "value": -1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-bandara-iit-posterior",
+      "theory": "iit",
+      "prediction": "iit-posterior",
+      "study": "bandara-2025",
+      "group": "Garrido group (last author)",
+      "value": 0,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-dellert-iit-posterior",
+      "theory": "iit",
+      "prediction": "iit-posterior",
+      "study": "dellert-2025",
+      "group": "Straube group (last author; participants recruited at the University of Münster)",
+      "value": 1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    }
+  ],
+  "alternative_readings": {
+    "bar_needs_a_prediction_that_also_separates": {
+      "groups": {
+        "gwt": "ranked",
+        "iit": "ranked",
+        "sh": "not yet defined sharply enough to rank"
+      },
+      "ranking": {
+        "ranked": [
+          {
+            "theory": "iit",
+            "rank": 1
+          },
+          {
+            "theory": "gwt",
+            "rank": 1
+          }
+        ],
+        "shared_because_one_study_could_swap_them": {
+          "iit|gwt": "dellert-2025"
+        },
+        "testable_too_little_tested": [],
+        "not_yet_defined_sharply_enough": [
+          "sh"
+        ]
+      },
+      "why": "Ranking rule 2 says a theory is ranked when more than half its core claims 'come with a prediction that could fail'. It does not say whether that prediction must also separate the theory from a rival, as the testability score requires. The main result reads it literally; this reading adds the separation test."
+    }
+  },
+  "open_verify_entries": 8
+}

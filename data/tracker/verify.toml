@@ -1,0 +1,68 @@
+# The verify list (tracker pattern rule 3.3, part 2): every plain statement in these
+# records that rests on a source this session did not open itself, or opened only in
+# part. Each is sourced or removed before anything is promoted. The score script
+# counts the open entries.
+
+[[entry]]
+id = "v-damasio-secondary"
+status = "open"
+records = ["sh-enriching", "tst-sh-enriching"]
+statement = "Damasio's theory puts 'affect and feeling at the core' of consciousness."
+rests_on = "Seth and Bayne 2022, Table 1, as quoted in the theory-list report (theory-list-report). This session did not open Seth and Bayne or a Damasio paper."
+to_clear = "Fix Damasio's core claims from his own publication (stage 3; John's choice of the 2023 paper or the 2010 book is still open) and quote it."
+
+[[entry]]
+id = "v-rpt-secondary"
+status = "open"
+records = ["tst-gwt-ignition", "tst-gwt-topdown"]
+statement = "Recurrent processing theory holds that recurrent activity within sensory cortex is enough for consciousness."
+rests_on = "Descriptions of the theory by other authors in two opened papers: dellert-2025 ('argues that localized re-entrant activity within sensory cortices is sufficient') and bandara-2025 ('feedback activity in recurrent loops within sensory cortices results in consciousness'). No proponents' publication opened."
+to_clear = "Quote Lamme's own publication when recurrent processing theory's core claims are fixed (stage 3)."
+
+[[entry]]
+id = "v-osf-public-date"
+status = "open"
+records = ["cogitate-2025", "com-bellet-iit-posterior", "iit-posterior"]
+statement = "The Cogitate registration v1 (OSF component wz8mj) was written on 2019-01-16; when it became public is unknown."
+rests_on = "OSF's API gives the creation date only."
+to_clear = "Find when the component was made public (OSF project history, or the Science 2021 piece by Melloni, Mudrik, Pitts and Koch, which may cite it as public). Settles whether Bellet 2022 counts for iit-posterior."
+
+[[entry]]
+id = "v-tononi-koch-2016"
+status = "open"
+records = ["iit-posterior", "iit-sustained", "com-cogitate-iit-posterior", "com-cogitate-iit-sustained"]
+statement = "Tononi, Boly, Massimini and Koch 2016 and Koch, Massimini, Boly and Tononi 2016 (Nature Reviews Neuroscience) may state the posterior hot zone, and sustained activity, as predictions of integrated information theory before 2019."
+rests_on = "Not opened (paywalled). Cited by the Cogitate registration and protocol as the basis of these predictions."
+to_clear = "John signs in to Nature in the browser pane; a session reads both and records whether they commit the theory. If they do, the Cogitate study counts for iit-posterior (and possibly iit-sustained), at weight 4."
+
+[[entry]]
+id = "v-hatamimajoumerd"
+status = "open"
+records = ["hatamimajoumerd-2022"]
+statement = "Hatamimajoumerd, Ratan Murty, Pitts and Cohen 2022 is in the pilot sample but unread."
+rests_on = "Publisher robot check; no open copy found."
+to_clear = "Open it (John's browser, or an author copy) and read it against gwt-pfc-content and iit-posterior."
+
+[[entry]]
+id = "v-sh-cited-studies"
+status = "open"
+records = ["sommer-wurtz-2002", "cole-sedgwick-1992", "scoville-milner-1957"]
+statement = "The studies the Working Positions page cites, with their years."
+rests_on = "The page's own citations; the papers were not opened. They move no score, because each predates the prediction."
+to_clear = "Open each and add its full citation and link, as the 'Link what you name' rule asks for anything public."
+
+[[entry]]
+id = "v-cogitate-ed-table-1"
+status = "open"
+records = ["out-cogitate-gwt-pfc-content", "out-cogitate-gwt-ignition", "out-cogitate-gwt-synchrony"]
+statement = "The Cogitate pass and fail criteria, as restated in the paper's main text."
+rests_on = "Extended Data Table 1 is an image and was not read; the criteria quoted come from the main text."
+to_clear = "Read Extended Data Table 1 and Extended Data Fig. 7 (the consortium's own scoring of each sub-prediction) and check the outcome readings against them."
+
+[[entry]]
+id = "v-dellert-journal"
+status = "open"
+records = ["dellert-2025", "out-dellert-gwt-ignition", "out-dellert-iit-posterior"]
+statement = "The Dellert et al. result as stated in the preprint."
+rests_on = "The bioRxiv preprint (2025-05-21); the Current Biology version (2025-11-06) was not opened and may differ."
+to_clear = "Open the journal version and check the quoted passages."

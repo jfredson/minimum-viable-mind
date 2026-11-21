@@ -1,0 +1,73 @@
+{
+  "packet_id": "out-cogitate-gwt-synchrony",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Global workspace theory",
+  "core_claim": {
+    "quote": "Broadcasting implies that the information in the workspace becomes available to many local processors, and it is the wide accessibility of this information that is hypothesized to constitute conscious experience.",
+    "source": {
+      "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+      "date": "2020-03-04"
+    }
+  },
+  "prediction": {
+    "statement": "Conscious perception is accompanied by long-distance synchrony, in the beta or gamma band, between prefrontal cortex and the sensory areas that hold the content.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2013-12-29",
+      "passage": "In intracranial recordings, conscious stimuli, but not non-conscious ones, trigger a sustained activation and the formation of a metastable state of long-distance phase synchrony in the beta band",
+      "source": {
+        "citation": "Dehaene S, Charles L, King J-R, Marti S. Toward a computational theory of conscious processing. Current Opinion in Neurobiology 25:76-84, 2014",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635963/",
+        "date": "2013-12-29"
+      }
+    },
+    "test_for": "Content-specific synchrony between prefrontal cortex and the category-selective sensory area for the seen content, in the beta or gamma band, after about 250 ms.",
+    "test_against": "No content-specific synchrony between prefrontal and category-selective areas in the predicted window, by the measure agreed in advance."
+  },
+  "study": {
+    "name": "The Cogitate Consortium's adversarial test of global workspace and integrated information theory",
+    "source": {
+      "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+      "date": "2025-04-30"
+    },
+    "first_appeared": "2019-01-16 (registration (preregistration v1 on OSF))"
+  },
+  "passages": [
+    {
+      "text": "On the basis of our preregistration (see Extended Data Table 1), IIT would be challenged in the absence of sustained content-specific synchronization between face–object selective areas and V1/V2; whereas a challenge for GNWT would be a lack of phasic connectivity (0.3–0.5 s) between category-selective areas and PFC.",
+      "source": {
+        "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+        "date": "2025-04-30"
+      }
+    },
+    {
+      "text": "No content-selective PPC was found between face-selective and object-selective electrodes and PFC electrodes in the relevant time window, contradicting the prediction of GNWT (Extended Data Fig. 6a; BF01 = 2.62–5.32).",
+      "source": {
+        "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+        "date": "2025-04-30"
+      }
+    },
+    {
+      "text": "The results of the preregistered PPC metric for prediction 3, critical for both IIT and the GNWT, supported neither theory.",
+      "source": {
+        "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+        "date": "2025-04-30"
+      }
+    },
+    {
+      "text": "The exploratory DFC results in iEEG were consistent with the predictions of GNWT while challenging the predictions of IIT, as connectivity with V1/V2 was not sustained.",
+      "source": {
+        "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+        "date": "2025-04-30"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

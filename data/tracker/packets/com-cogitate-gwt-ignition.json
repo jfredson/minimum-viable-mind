@@ -1,0 +1,61 @@
+{
+  "packet_id": "com-cogitate-gwt-ignition",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A study counts toward a prediction only if that prediction was on record, in a dated publication by the theory's own proponents, before the study first appeared. A study that says it set out to test a theory tests nothing if the prediction was first written in the same paper (or the study's own registration). When the dates or the commitment are unclear, the study is not counted. Read the passages and dates. Decide: BEFORE (the earlier passage commits the theory to this prediction, and it predates the study), NOT-BEFORE (it does not), or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Global workspace theory",
+  "core_claim": {
+    "quote": "Ignition is characterized by the sudden, coherent, and exclusive activation of a subset of workspace neurons coding for the current conscious content, with the remainder of the workspace neurons being inhibited.",
+    "source": {
+      "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+      "date": "2020-03-04"
+    }
+  },
+  "prediction": {
+    "statement": "When a stimulus becomes conscious, activity rises suddenly and late (about 250 to 300 ms after it appears) and spreads to prefrontal and parietal cortex; stimuli that stay unconscious do not do this. It holds whatever the sense, and whether or not the stimulus is reported.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2013-12-29",
+      "passage": "conscious access is often characterized by a late non-linear amplification of activation which invades a distributed set of parietal, prefrontal and cingulate areas",
+      "source": {
+        "citation": "Dehaene S, Charles L, King J-R, Marti S. Toward a computational theory of conscious processing. Current Opinion in Neurobiology 25:76-84, 2014",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635963/",
+        "date": "2013-12-29"
+      }
+    },
+    "test_for": "Comparing physically identical stimuli that are and are not consciously perceived, the perceived ones produce a late (after about 250 ms), sudden increase of activity in prefrontal and parietal cortex, also when no report is required; or, where every stimulus is seen, each new percept produces such a response in prefrontal cortex.",
+    "test_against": "In a design that removes the need to report, awareness-related differences are confined to sensory cortex, with no reliable prefrontal or parietal increase."
+  },
+  "study": {
+    "name": "The Cogitate Consortium's adversarial test of global workspace and integrated information theory",
+    "source": {
+      "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+      "date": "2025-04-30"
+    },
+    "first_appeared": "2019-01-16 (registration (preregistration v1 on OSF))"
+  },
+  "passages": [
+    {
+      "text": "conscious access is often characterized by a late non-linear amplification of activation which invades a distributed set of parietal, prefrontal and cingulate areas",
+      "source": {
+        "citation": "Dehaene S, Charles L, King J-R, Marti S. Toward a computational theory of conscious processing. Current Opinion in Neurobiology 25:76-84, 2014",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635963/",
+        "date": "2013-12-29"
+      }
+    },
+    {
+      "text": "In EEG, MEG, and intracranial recordings, conscious stimuli, compared to matched non-conscious ones, induce a late (~300 ms) and sudden increase in slow event-related potentials (inducing a P3 wave on the scalp), gamma power and long-range beta and gamma synchrony",
+      "source": {
+        "citation": "Dehaene S, Charles L, King J-R, Marti S. Toward a computational theory of conscious processing. Current Opinion in Neurobiology 25:76-84, 2014",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635963/",
+        "date": "2013-12-29"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2013-12-29",
+    "study": "2019-01-16"
+  },
+  "this_reading_is": "the second reading"
+}
