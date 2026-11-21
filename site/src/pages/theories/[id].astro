@@ -10,7 +10,7 @@ import N from '../../components/N.astro';
 import R from '../../components/R.astro';
 import StateBadge from '../../components/StateBadge.astro';
 import VerifyNote from '../../components/VerifyNote.astro';
-import { tk, pred, dotClass, word, type Theory } from '../../lib/tracker';
+import { tk, pred, dotClass, word, groupTitle, type Theory } from '../../lib/tracker';
 
 export function getStaticPaths() {
   return Object.values(tk.theories).map((t) => ({ params: { id: t.id } }));
@@ -20,15 +20,14 @@ const preds = t.predictions.map(pred);
 const sharp = preds.filter((p) => p.separates);
 const shared = preds.filter((p) => !p.separates);
 const claimNo = (cid: string) => t.claims.findIndex((c) => c.id === cid) + 1;
-// the first prediction row for each core claim carries the anchor the claim list links to
+// the first prediction row for each main claim carries the anchor the claim list links to
 const anchored = new Set<string>();
 const anchorFor = (cid: string) => (anchored.has(cid) ? undefined : (anchored.add(cid), `c-${cid}`));
-const groupLine =
-  t.group === 'ranked' ? 'ranked' : t.group.startsWith('testable') ? 'testable, too little tested to rank' : 'not yet defined sharply enough to rank';
+const groupLine = groupTitle(t.group).toLowerCase();
 const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans supported.' : t.support < tk.rules.even ? 'Leans against.' : 'Even.';
 ---
 
-<Base title={`${t.name} · Minimum Viable Mind`} description={`How ${t.name.charAt(0).toLowerCase() + t.name.slice(1)} is holding up against published studies: its core claims, its predictions and how the tests have gone.`} strict>
+<Base title={`${t.name} · Minimum Viable Mind`} description={`How ${t.name.charAt(0).toLowerCase() + t.name.slice(1)} is holding up against published studies: its main claims, its predictions and how the tests have gone.`} strict>
   <div class="page two">
     <div>
       <p class="crumbs"><a href="/theories/">Theories</a> / {t.name}</p>
@@ -40,7 +39,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
 
       <div class="scores" data-record={t.id}>
         <div class="score">
-          <div class="lab">Backed by the evidence</div>
+          <div class="lab">How well studies back it</div>
           {t.support === null ? <div class="num">none</div> : <div class="num"><N v={t.support} /> <small>/ <N v={tk.rules.scale_top} /></small></div>}
           <p>
             {t.support === null
@@ -50,16 +49,16 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
           <Bar kind="sup" v={t.support} label="backed" num={false} />
         </div>
         <div class="score">
-          <div class="lab">Sharp enough to test</div>
+          <div class="lab">How clearly it can be tested</div>
           <div class="num"><N v={t.testability} /> <small>/ <N v={tk.rules.scale_top} /></small></div>
-          <p><N v={t.claims_sharp} /> of <N v={t.claims_count} /> core claims come with a prediction that could fail and that a rival predicts differently. {t.past_bar ? 'Past the bar.' : <>Below the bar: it needs such a prediction for <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more.</>}</p>
-          <Bar kind="test" v={t.testability} label="sharp" num={false} />
+          <p><N v={t.claims_sharp} /> of <N v={t.claims_count} /> main claims {t.claims_sharp === 1 ? 'comes' : 'come'} with a prediction that could fail and that a rival theory's own published work predicts differently. {t.past_bar ? <>That is more than half, enough to be ranked once it has counted studies from <N v={tk.rules.groups_needed} t={word(tk.rules.groups_needed)} /> separate research groups.</> : <>That is half or fewer, so it is {groupTitle(t.group).toLowerCase()}: <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more need such a prediction.</>}</p>
+          <Bar kind="test" v={t.testability} label="clear" num={false} />
         </div>
         <div class="score">
-          <div class="lab">Left to test</div>
+          <div class="lab">How much is still untested</div>
           <div class="num"><N v={t.left_to_test} /> <small>/ <N v={tk.rules.scale_top} /></small></div>
-          <p><N v={t.left_counts.untested} /> of <N v={t.left_counts.total} /> places untouched by any counted study{t.left_counts.placeholders > 0 && <>, counting <N v={t.left_counts.placeholders} t={word(t.left_counts.placeholders)} /> for core claims with no prediction that could fail</>}.</p>
-          <Bar kind="left" v={t.left_to_test} label="left to test" num={false} />
+          <p>It could be tested in <N v={t.left_counts.total} /> places: each prediction that sets it apart from a rival{t.left_counts.placeholders > 0 && <>, plus one for each main claim that has no such prediction yet (<N v={t.left_counts.placeholders} t={word(t.left_counts.placeholders)} /> here)</>}. No counted study has touched <N v={t.left_counts.untested} /> of them.</p>
+          <Bar kind="left" v={t.left_to_test} label="untested" num={false} />
         </div>
       </div>
       {t.leans_against && <p class="meta">The evidence so far leans against it. It keeps its place in the ranking.</p>}
@@ -67,14 +66,15 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
         <p class="meta" id={i === 0 ? 'tie' : undefined}>Too close to separate from <a href={`/theories/${x.with}/`}>{x.with_name}</a>, its neighbour in the ranking: if one study, <R t={x.study_name} />, had gone the other way, the two would swap places or draw level, so neither is shown ahead. To check it by hand, turn that study's results round in both theories' predictions and work both support scores again by the formula on <a href="/about/#numbers">About</a>.</p>
       ))}
 
-      <div class="shead"><h2>Its core claims</h2><span>quoted from {t.claims_from?.url ? <a href={t.claims_from.url}><R t={t.claims_from.citation} /></a> : <R t={t.claims_from?.citation} />}, fixed on <N v={t.fixed_on} t={t.fixed_on_long} /> until the yearly review</span></div>
+      <div class="shead"><h2>Its main claims</h2><span>quoted from {t.claims_from?.url ? <a href={t.claims_from.url}><R t={t.claims_from.citation} /></a> : <R t={t.claims_from?.citation} />}, fixed on <N v={t.fixed_on} t={t.fixed_on_long} /> until the yearly review</span></div>
       <ul class="claims">
-        {t.claims.map((c) => (
-          <li data-record={c.id}>
+        {t.claims.map((c, i) => (
+          <li data-record={c.id} id={`claim-${c.id}`}>
             <span class={`dot ${dotClass(c.level)}`} aria-label={c.level >= 1 ? 'stated by its proponents' : c.level > 0 ? 'inferred here, not stated by its proponents' : 'none yet'}></span>
             <span>
+              <span class="m">Main claim <N v={i + 1} /></span>
               <R t={c.quote} q class="q" />
-              <span class="m">{c.level >= 1 ? 'a prediction stated by its proponents could fail and separates it from a rival' : c.level > 0 ? 'a prediction that could fail and that a rival predicts differently is inferred here, not stated by its proponents; counted at half' : 'no prediction yet that could fail and that a rival predicts differently'}</span>
+              <span class="m">{c.level >= 1 ? 'a prediction stated by its proponents could fail, and a rival theory\'s own published work predicts differently' : c.level > 0 ? 'a prediction that could fail and that a rival theory\'s own published work predicts differently is inferred here, not stated by its proponents; counted at half' : 'no prediction yet that could fail and that a rival theory\'s own published work predicts differently'}</span>
             </span>
             <span>{c.predictions.length ? <a href={`#c-${c.id}`}><N v={c.predictions.length} /> {c.predictions.length === 1 ? 'prediction' : 'predictions'}</a> : 'none'}</span>
           </li>
@@ -88,7 +88,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
         <tbody>
           {[...sharp, ...shared].map((p) => (
             <tr data-record={p.id} id={anchorFor(p.core_claim)}>
-              <td><a href={`/predictions/${p.id}/`}><R t={p.statement} /></a><span class="m">core claim <N v={claimNo(p.core_claim)} />{p.core_claim ? ' · counts double' : ''}{!p.separates && ' · sets it apart from no rival on the record'}{p.verify_open.length > 0 && ' · still being checked'}</span></td>
+              <td><a href={`/predictions/${p.id}/`}><R t={p.statement} /></a><span class="m">tied to main claim <N v={claimNo(p.core_claim)} />{p.core_claim ? ', so its results count double' : ''}{!p.separates && ' · sets it apart from no rival on the record'}{p.verify_open.length > 0 && ' · still being checked'}</span></td>
               <td class="hide-s">{p.stated_by === 'proponent' ? 'its proponents' : 'inferred here'}</td>
               <td><StateBadge s={p.state} /></td>
               <td class="hide-s"><N v={p.counted_count} /></td>
@@ -107,7 +107,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
         <ul>
           {t.move.map((m) => (
             m.kind === 'claim' ? (
-              <li>A prediction from its proponents that could fail, and that a rival's own publication predicts differently, for the core claim <R t={m.claim_plain} q /> sharpness <b><N v={m.from} /> → <N v={m.to} /></b>.</li>
+              <li>A prediction from its proponents that could fail, and that a rival theory's own published work predicts differently, for <a href={`#claim-${m.claim}`}>main claim <N v={t.claims.findIndex((c) => c.id === m.claim) + 1} /></a> in the list: how clearly it can be tested, <b><N v={m.from} /> → <N v={m.to} /></b>.</li>
             ) : m.kind === 'probe' ? (
               <li>A study registered in advance and run by an outside group (weight <N v={m.weight} />), on <a href={`/predictions/${m.prediction}/`}><R t={m.statement} /></a> support <b><N v={m.from} /> → <N v={m.for} /></b> if it came out for, <b><N v={m.from} /> → <N v={m.against} /></b> against.</li>
             ) : (
@@ -118,7 +118,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
         <p>Worked out by the same rules as the scores, for one study at a time.</p>
       </div>
       <div class="box">
-        <h3>Backed by the evidence, run by run</h3>
+        <h3>How well studies back it, run by run</h3>
         <p>First scored on <N v={tk.last_judgement} t={tk.last_judgement_long} />. Every later change will be drawn here, run by run, with a dated entry in the story so far.</p>
       </div>
       <div class="box">

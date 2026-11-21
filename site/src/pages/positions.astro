@@ -1,7 +1,7 @@
 ---
 // Our working positions, against the evidence (design proposal section 4, pictures 14 and 15;
 // kickoff section 3). The Sentient Horizons account is one theory in the records; each of its
-// core claims quotes a position on the public Working Positions page, and its predictions are
+// main claims quotes a position on the public Working Positions page, and its predictions are
 // taken from those positions' "What would change my mind" sections. This page shows each one
 // against the evidence. Draft copy.
 import Base from '../layouts/Base.astro';
@@ -9,7 +9,7 @@ import N from '../components/N.astro';
 import R from '../components/R.astro';
 import StateBadge from '../components/StateBadge.astro';
 import VerifyNote from '../components/VerifyNote.astro';
-import { tk, pred, word } from '../lib/tracker';
+import { tk, pred, word, groupTitle } from '../lib/tracker';
 
 const own = Object.values(tk.theories).find((t) => t.own);
 const verdict = (states: string[]) => {
@@ -28,7 +28,7 @@ const verdict = (states: string[]) => {
     <div class="notice"><b>The author's own account is scored here.</b> The account of consciousness argued on Sentient Horizons is scored as one theory among the others. The rules were written before any theory was scored, an outside reader makes the first judgement on every row of this account, and a result against it stands once recorded.</div>
     {!own ? <p class="tplain">The account is not scored yet.</p> : (
       <>
-        <p class="tplain">Each position below is quoted from the <a href={own.claims_from?.url ?? 'https://sentient-horizons.com/positions/'}>Working Positions</a> page, with the predictions its "What would change my mind" sections make. Today the account is <a href={`/theories/${own.id}/`}>{own.group}</a>: <N v={own.claims_sharp} t={word(own.claims_sharp)} /> of its <N v={own.claims_count} t={word(own.claims_count)} /> core claims {own.claims_sharp === 1 ? 'comes' : 'come'} with a prediction that could fail and that a rival's own publication predicts differently.</p>
+        <p class="tplain">Each position below is quoted from the <a href={own.claims_from?.url ?? 'https://sentient-horizons.com/positions/'}>Working Positions</a> page, with the predictions its "What would change my mind" sections make. Today the account is in the group <a href={`/theories/${own.id}/`}>{groupTitle(own.group).toLowerCase()}</a>: <N v={own.claims_sharp} t={word(own.claims_sharp)} /> of its <N v={own.claims_count} t={word(own.claims_count)} /> main claims {own.claims_sharp === 1 ? 'comes' : 'come'} with a prediction that could fail and that a rival theory's own published work predicts differently.</p>
         <VerifyNote ids={own.verify_open} />
         {own.claims.map((c) => {
           const ps = c.predictions.map(pred);
@@ -42,13 +42,13 @@ const verdict = (states: string[]) => {
                 {ps.map((p) => (
                   <div class="would" data-record={p.id}>
                     <b>What would count against it</b>
-                    <R t={p.test_against} /> <a href={`/predictions/${p.id}/`}>The prediction</a> <StateBadge s={p.state} />
+                    <R t={p.test_against} /> <a href={`/predictions/${p.id}/`}>The prediction</a> {p.state === 'scores nothing' ? '' : p.state === 'mixed' ? 'has' : 'is'} <StateBadge s={p.state} />{p.state === 'mixed' ? ' results' : ''}.
                   </div>
                 ))}
               </div>
               <div class="verdict">
                 <span class={`tbadge ${v.cls}`}>{v.label}</span>
-                <span class="m">{ps.length === 0 ? 'no prediction on record' : <><N v={ps.length} t={word(ps.length)} /> {ps.length === 1 ? 'prediction' : 'predictions'}, <N v={ps.filter((p) => p.separates).length} t={word(ps.filter((p) => p.separates).length)} /> setting it apart from a rival</>}</span>
+                <span class="m">{ps.length === 0 ? 'no prediction on record' : (() => { const k = ps.filter((p) => p.separates).length; return <><N v={ps.length} t={word(ps.length)} /> {ps.length === 1 ? 'prediction' : 'predictions'}, {k === 0 ? (ps.length === 1 ? 'which does not set it apart from a rival' : 'none of which sets it apart from a rival') : <><N v={k} t={word(k)} /> setting it apart from a rival</>}</>; })()}</span>
               </div>
             </div>
           );

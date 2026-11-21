@@ -57,7 +57,7 @@ export const derived = data.derived;
 // Human labels for every status code, so the site never shows a raw code.
 export const LABEL: Record<string, string> = {
   'delivered': 'Delivered', 'in-progress': 'In progress', 'not-started': 'Not started',
-  'folded': 'Folded into MVM-0', 'waiting': 'Waiting', 'descoped': 'Descoped', 'conditional': 'Conditional',
+  'folded': 'Folded into the build', 'waiting': 'Waiting', 'descoped': 'Set aside', 'conditional': 'If needed',
   'open': 'Open', 'answered': 'Answered', 'answered-in-part': 'Answered in part', 'parked': 'Parked',
   'on-the-table': 'On the table', 'authorised': 'Authorised', 'deferred': 'Deferred', 'rejected': 'Rejected', 'done': 'Done',
   'registered': 'Registered result', 'diagnostic': 'Diagnostic', 'ruled': 'Ruled for the record', 'process': 'Process',

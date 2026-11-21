@@ -3,6 +3,7 @@ import '../styles/global.css';
 import '../styles/tracker.css';
 import Nav from '../components/Nav.astro';
 import { project, derived, fmtDate } from '../lib/project';
+import { tk, word } from '../lib/tracker';
 
 interface Props {
   title?: string;
@@ -74,7 +75,7 @@ const iconVersion = '3';
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Minimum Viable Mind: how the theories of consciousness are holding up. Every theory of consciousness, held to the same rules, this site's own included." />
+    <meta property="og:image:alt" content={`Minimum Viable Mind: how the theories of consciousness are holding up. ${word(tk.listed_count).replace(/^./, (c) => c.toUpperCase())} theories of consciousness, held to the same rules.`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={socialImage} />
   </head>
@@ -89,7 +90,7 @@ const iconVersion = '3';
       <div class="container footer-grid">
         <div>
           <span class="footer-brand">Minimum Viable Mind</span>
-          <p class="footer-tag">Every theory of consciousness, held to the same rules, this site's own included.</p>
+          <p class="footer-tag"><span data-n={String(tk.listed_count)}>{word(tk.listed_count).replace(/^./, (c) => c.toUpperCase())}</span> theories of consciousness, held to the same rules.</p>
           <p class="footer-links">
             <a href="/about/">About</a>
             <a href="/about/#numbers">How the numbers are worked out</a>
@@ -101,7 +102,7 @@ const iconVersion = '3';
             <a href="https://x.com/SentHorizons" rel="noopener">Follow on X</a>
           </p>
           <p class="footer-meta">
-            © {currentYear} <a href="https://johnandrewfredrickson.com/" rel="author">John Andrew Fredrickson</a>. Last built {longDate(derived.exported_on)}{derived.commit ? ` (version ${derived.commit})` : ''} from the records. Free to reuse with credit (<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>); code under the MIT licence. Please credit as: <cite>Minimum Viable Mind</cite>, by John Andrew Fredrickson, a Sentient Horizons project, <a href="https://minimumviablemind.sentient-horizons.com/">minimumviablemind.sentient-horizons.com</a>.
+            © {currentYear} <a href="https://johnandrewfredrickson.com/" rel="author">John Andrew Fredrickson</a>. Built {longDate(derived.exported_on)} from the records. Free to reuse with credit (<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>); code under the MIT licence. Please credit as: <cite>Minimum Viable Mind</cite>, by John Andrew Fredrickson, a Sentient Horizons project, <a href="https://minimumviablemind.sentient-horizons.com/">minimumviablemind.sentient-horizons.com</a>.
           </p>
           <p class="footer-parent"><a href="https://sentient-horizons.com/projects/" rel="noopener">A Sentient Horizons project.</a></p>
         </div>
