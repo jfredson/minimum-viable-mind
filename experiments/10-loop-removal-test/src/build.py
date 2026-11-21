@@ -64,9 +64,9 @@ PILOT_ALLOCATION = {
     ("look", "sum"): 7, ("look", "prod"): 7, ("look", "cap"): 8, ("look", "opp"): 8,
 }
 
-STOP = {"the", "a", "an", "is", "of", "and", "what", "two", "word", "words", "given", "object", "country",
-        "numbers", "number", "colour", "usually", "most", "often", "capital", "city", "opposite", "give",
-        "sum", "product", "multiply", "to", "do", "that"}
+# Specification, section 14, item 3: the copying rule ignores only these function words.
+STOP = {"a", "an", "the", "is", "of", "and", "to", "do", "does", "that", "what", "how", "many", "for", "them",
+        "it", "in", "this", "each", "be"}
 
 
 class Generation(Extension):
@@ -139,12 +139,18 @@ def copies(cand, words):
 
 
 def near_numbers(rng, ans, spread, lo=0, hi=999, pool=None):
+    """Specification, section 14, item 2: the right answer's place among the five, in numeric order, is drawn
+    uniformly first; the wrong numbers are then drawn below and above it. Returns None if the place cannot be
+    filled, and the caller redraws the item."""
     digits = len(str(ans))
     opts = [x for x in (pool if pool is not None else range(max(lo, ans - spread), min(hi, ans + spread) + 1))
             if x != ans and len(str(x)) == digits and abs(x - ans) <= spread]
-    if len(opts) < 4:
+    place = rng.randrange(5)
+    below = [x for x in opts if x < ans]
+    above = [x for x in opts if x > ans]
+    if len(below) < place or len(above) < 4 - place:
         return None
-    return [str(x) for x in rng.sample(opts, 4)]
+    return [str(x) for x in rng.sample(below, place) + rng.sample(above, 4 - place)]
 
 
 class Builder:
@@ -277,7 +283,7 @@ class Builder:
         b = s - a
         wrong = near_numbers(self.rng, s, 5)
         if not wrong:
-            return self.rt_sum()
+            return None
         return {"fact": f"The two numbers are {a} and {b}.", "answer": str(s), "wrong": wrong, "content": ("sum", a, b)}
 
     def rt_prod(self):
@@ -373,7 +379,9 @@ class Builder:
 def build_scored(b, allocation):
     pairs, pid = [], 0
     for (rk, qk), n in allocation.items():
-        orders = [i % 2 == 1 for i in range(n)]
+        orders = [i % 2 == 1 for i in range(n - n % 2)]
+        if n % 2:
+            orders.append(b.rng.random() < 0.5)  # specification, section 14, item 4
         b.rng.shuffle(orders)
         made, tries = 0, 0
         while made < n and tries < 2000:
@@ -446,25 +454,68 @@ def build_donor_only(b, scored, budget_per_pair=200, cap_factor=3):
     return donors, report
 
 
-def build_chained(b, n=40):
-    """Section 10: chained lookups of two to six steps, five colour candidates."""
+def chained_item(b, hops, cid):
+    """Specification, section 14, item 1: five chains, each of "points to" rows ending in a colour row.
+    The target chain has `hops` steps; each distractor chain has two to six steps, drawn independently."""
+    lengths = [hops] + [b.rng.randint(2, 6) for _ in range(4)]
+    need = sum(L + 1 for L in lengths)
+    if need > len(b.inv_words):
+        return None
+    names = b.rng.sample(b.inv_words, need)
+    cols = b.rng.sample(b.colours, 5)
+    rows, starts, k = [], [], 0
+    for L, col in zip(lengths, cols):
+        chain = names[k:k + L + 1]
+        k += L + 1
+        starts.append(chain[0])
+        rows += [f"{chain[j]} points to {chain[j + 1]}" for j in range(L)]
+        rows.append(f"{chain[-1]} is {col}")
+    b.rng.shuffle(rows)
+    text = "In this list: " + "; ".join(rows) + f". Start at {starts[0]} and follow the list to a colour. What colour do you reach?"
+    cands = cols[:]
+    b.rng.shuffle(cands)
+    return {"id": cid, "hops": hops, "text": text, "answer": cols[0], "candidates": cands,
+            "content": repr((starts[0], tuple(sorted(rows)))), "prompt_ids": b.m.ids(b.m.render(text))}
+
+
+def chained_eligible(d, rec):
+    return (d["id"] != rec["id"] and d["hops"] == rec["hops"] and d["content"] != rec["content"]
+            and len(d["prompt_ids"]) >= len(rec["prompt_ids"]) + 1 and d["answer"] not in rec["candidates"])
+
+
+def build_chained(b, n=40, budget_per_item=200, cap_factor=3):
+    """Specification, section 10 as amended in section 14: scored chained items, then aimed donor-only chained
+    items on the rules of section 8."""
     items = []
     for i in range(n):
-        hops = 2 + i % 5
-        names = b.rng.sample(b.inv_words, hops + 4)
-        chain = names[:hops + 1]
-        rows = [f"{chain[j]} points to {chain[j + 1]}" for j in range(hops)]
-        cols = b.rng.sample(b.colours, 5)
-        rows.append(f"{chain[-1]} is {cols[0]}")
-        for extra, c in zip(names[hops + 1:], cols[1:]):
-            rows.append(f"{extra} is {c}")
-        b.rng.shuffle(rows)
-        text = "In this list: " + "; ".join(rows) + f". Start at {chain[0]} and follow the list to a colour. What colour do you reach?"
-        cands = cols[:]
-        b.rng.shuffle(cands)
-        items.append({"id": f"{b.half}-chain-{i:03d}", "hops": hops, "text": text, "answer": cols[0], "candidates": cands,
-                      "prompt_ids": b.m.ids(b.m.render(text))})
-    return items
+        it = None
+        while it is None:
+            it = chained_item(b, 2 + i % 5, f"{b.half}-chain-{i:03d}")
+        items.append(it)
+    donors, report = [], {}
+    for hops in sorted({x["hops"] for x in items}):
+        members = [x for x in items if x["hops"] == hops]
+        pool = list(members)
+        counts = {x["id"]: sum(chained_eligible(d, x) for d in pool) for x in members}
+        kept, draws, k = [], 0, 0
+        while draws < budget_per_item * len(members) and len(kept) < cap_factor * len(members) and any(c < 5 for c in counts.values()):
+            draws += 1
+            d = chained_item(b, hops, f"{b.half}-chain-donor-{hops}-{k:04d}")
+            if d is None or not any(counts[x["id"]] < 5 and chained_eligible(d, x) for x in members):
+                continue
+            d["donor_only"] = True
+            kept.append(d)
+            pool.append(d)
+            k += 1
+            for x in members:
+                if chained_eligible(d, x):
+                    counts[x["id"]] += 1
+        donors.extend(kept)
+        report[f"hops_{hops}"] = {"scored": len(members), "donor_only_kept": len(kept), "draws": draws,
+                                  "no_donor": [x["id"] for x in members if counts[x["id"]] == 0],
+                                  "fewer_than_five": sum(c < 5 for c in counts.values()),
+                                  "eligible_donors": counts}
+    return items, donors, report
 
 
 NEUTRAL_SENTENCES = [
@@ -524,7 +575,7 @@ def main():
     b = Builder(m, load_lists(), a.half, a.seed)
     scored = build_scored(b, PILOT_ALLOCATION)
     donors, report = build_donor_only(b, scored)
-    chained = build_chained(b)
+    chained, chained_donors, chained_report = build_chained(b)
     neutral, prefix = build_neutral(b, scored)
     os.makedirs(a.out, exist_ok=True)
     def dump(name, rows):
@@ -534,8 +585,9 @@ def main():
     dump("pairs.jsonl", scored)
     dump("donor_only.jsonl", donors)
     dump("chained.jsonl", chained)
+    dump("chained_donor_only.jsonl", chained_donors)
     dump("neutral.jsonl", neutral)
-    json.dump({"half": a.half, "seed": a.seed, "reply_opening": REPLY_OPENING, "stats": b.stats, "donors": report,
+    json.dump({"half": a.half, "seed": a.seed, "reply_opening": REPLY_OPENING, "stats": b.stats, "donors": report, "chained_donors": chained_report,
                "pools": {"capitals_one_token": len(b.capitals_ok), "capital_answers": len(b.capital_answers),
                          "opposite_questions": len(b.opp_questions), "objects": len(b.objects),
                          "words3": len(b.words3), "invented_words": len(b.inv_words), "colours": len(b.colours)}},

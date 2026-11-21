@@ -148,7 +148,8 @@ def main():
         key = f"{p['rule_kind']}+{p['routine_kind']}"
         for t in ("P", "R"):
             d = out9.setdefault(key, {}).setdefault(t, {"right": 0, "wrong": 0, "n_right": 0, "n_wrong": 0})
-            for don in elig[p["id"]][:5]:
+            ds = elig[p["id"]]
+            for don in random.Random(p["id"]).sample(ds, min(5, len(ds))):  # drawn as at step 4b (RT-427)
                 ctx = " " + don["context"].lower() + " "
                 for c in p[t]["candidates"]:
                     hit = re.search(r"\b" + re.escape(c.lower()) + r"\b", ctx) is not None
@@ -179,8 +180,25 @@ def main():
         "longest_item_prompt": max(len(p["P"]["prompt_ids"]) for p in pairs),
         "longest_neutral_prompt": max(len(x["prompt_ids"]) for x in neutral)}
 
+    # RT-416: the right number's place among the five, in numeric order, by kind
+    places = {}
+    for p in pairs:
+        for t, kind in (("P", p["rule_kind"]), ("R", p["routine_kind"])):
+            if p[t]["answer"].isdigit():
+                srt = sorted(int(c) for c in p[t]["candidates"])
+                places.setdefault(kind, [0] * 5)[srt.index(int(p[t]["answer"]))] += 1
+    R["11_right_number_place_counts"] = places
+
+    # RT-415, RT-426: chained items
+    def colours_reached(x):
+        return sum(1 for c in x["candidates"] if re.search(r" is " + re.escape(c) + r"\b", x["text"]))
+    rep_ch = rep.get("chained_donors", {})
     R["chained"] = {"items": len(chained), "hops": sorted({c["hops"] for c in chained}),
-                    "all_candidates_one_token": all(m.one_token(c) for x in chained for c in x["candidates"])}
+                    "all_candidates_one_token": all(m.one_token(c) for x in chained for c in x["candidates"]),
+                    "items_with_every_candidate_in_text": sum(all(c in x["text"] for c in x["candidates"]) for x in chained),
+                    "items_with_every_candidate_reached_by_a_chain": sum(colours_reached(x) == 5 for x in chained),
+                    "donors": {k: {kk: vv for kk, vv in v.items() if kk != "eligible_donors"} for k, v in rep_ch.items()},
+                    "prompt_length_range": [min(len(x["prompt_ids"]) for x in chained), max(len(x["prompt_ids"]) for x in chained)]}
     json.dump(R, open(os.path.join(a.pilot, "step3-results.json"), "w"), indent=1, ensure_ascii=False)
     print(json.dumps({k: R[k] for k in ("2_wording_table_all_equal", "3_twin_lengths_equal", "5_donors", "6_dose_ratio_R_over_P",
                                         "6_band_pass", "7_tail_share", "8_average_method_counts", "10_average_defined")}, indent=1))
