@@ -43,7 +43,12 @@ Two honest limits, stated now so the design answers them:
 theories?* The thing held at a glance: the ranking, one row per theory, with three bars each
 (section 4). The headline number, worked out from the leaves (tracker pattern rule 1.1): **the
 share of the theories' sharp predictions that have been tested at all**, across every theory on
-the site. It answers John's "how far along is the science" in one figure, and it should start low.
+the site. It answers John's "how far along is the science" in one figure, and it should start low. *(ruled, John: "A, tested at all"; recorded 2026-11-21.)* Exactly: the
+share of the distinguishing predictions tied to core claims that at least one counted study has
+tested, as `scripts/tracker_scores.py` computes it (8 of 12 at the end of stage 2). Weakest steps,
+stated to John when he ruled: it measures how widely the theories have been tested, not how firmly, so the card must say "tested
+at all", and the support bars carry the strength; and it can fall when the field adds predictions, and
+the page explains that the first time it happens.
 
 **The branches.** One per theory, a fixed set of four to nine changed only at the yearly review
 (rule 2.1). A first list for John, to be settled from sources (section 7), not from memory:
@@ -259,7 +264,12 @@ with an estimate first.
    after discussing why a rename might or might not be right. The tracker keeps the name Minimum
    Viable Mind. The rename stays open to be raised again, for example by the cold-reader test in
    section 11. **The address is still open.** See section 11.
-3. **The trunk's question and headline number** (section 3).
+3. **The headline number: ruled, "A, tested at all".** *(ruled, John; recorded 2026-11-21; wording the
+   master session's.)* The share of distinguishing predictions tied to core claims that at least one
+   counted study has tested (section 3). Weakest steps, stated to John: it measures how widely the theories have been tested, not how firmly, so the card must say "tested
+   at all", and the support bars carry the strength; and it can fall when the field adds predictions, and
+   the page explains that the first time it happens.
+   The trunk's question (section 3) was not part of this ruling.
 4. **The first set of theories: the test ruled 2026-11-20, "Yes, as you lean"; the list itself still
    to be ruled.** The session's recommendations, in its wording. (a) A theory gets a branch if it says
    what makes a system conscious (not only what goes with it), its proponents still publish it, it is

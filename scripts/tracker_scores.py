@@ -439,7 +439,7 @@ def headline(d, mode):
     tot = sum(v["left_to_test_counts"]["distinguishing_core_predictions"] for v in base.values())
     tested = len({c["prediction"] for c in counted})
     return {"tested": tested, "distinguishing_predictions": tot, "share_tested": round(100 * tested / tot, 1) if tot else None,
-            "note": "Provisional: the headline is ruling 3, still open. Computed as the kickoff proposal suggests (section 3): the share of the theories' sharp predictions tested at all."}
+            "note": "Tested at all (ruled by John: 'A, tested at all'): the share of distinguishing predictions tied to core claims that at least one counted study has tested. It measures how widely, not how firmly; the support scores carry the strength. It can fall when predictions are added."}
 
 
 def main(argv=None):
@@ -469,7 +469,7 @@ def main(argv=None):
         "unsettled": sorted(k for k, v in status.items() if v in ("one-reader", "disagreed", "open-for-john", "unread")),
         "theories": base,
         "ranking": ranking,
-        "headline_provisional": headline(d, a.mode),
+        "headline": headline(d, a.mode),
         "counted_outcomes": counted,
         "alternative_readings": {
             "bar_counts_any_prediction_that_could_fail": {
@@ -508,8 +508,8 @@ def main(argv=None):
     if ranking["not_yet_defined_sharply_enough"]:
         print("Not yet defined sharply enough to rank: " + ", ".join(base[t]["name"] for t in ranking["not_yet_defined_sharply_enough"]))
     print()
-    h = result["headline_provisional"]
-    print(f"Headline (provisional, ruling 3 open): {h['tested']} of {h['distinguishing_predictions']} distinguishing predictions tested ({h['share_tested']}%)")
+    h = result["headline"]
+    print(f"Headline, tested at all: {h['tested']} of {h['distinguishing_predictions']} distinguishing predictions tested by a counted study ({h['share_tested']}%)")
     print()
     print("Superseded reading of ranking rule 2 (any prediction that could fail, not ruled):")
     for t, g in result["alternative_readings"]["bar_counts_any_prediction_that_could_fail"]["groups"].items():
