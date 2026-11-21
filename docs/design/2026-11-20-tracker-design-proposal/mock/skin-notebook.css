@@ -1,0 +1,84 @@
+/* ---------------------------------------------------------------
+   Minimum Viable Mind · skin "Notebook", version 1.0.0 (2026-10-17)
+   A lab notebook: a cool off-white page with a faint grid behind the first
+   screen, ink, the parent's ink violet as the accent (this is the parent's
+   own programme), a slate for the meters, and the monospace leading the
+   labels. Proposed with pictures in sentient-horizons/design/proposals/
+   minimum-viable-mind-skin-2026-10-17.md and ruled by John on 2026-10-17
+   as proposed: light by default, a dark theme kept (the same notebook in
+   graphite), no display typeface. A skin supplies every token the skeleton
+   (sentient-horizons/design/shell.css) names, for both themes, plus the
+   backdrop (design standard, section 3a).
+   --------------------------------------------------------------- */
+:root {
+  --bg: #16171a;          /* graphite */
+  --bg-soft: #1b1c20;
+  --panel: #1f2025;
+  --text: #ecebe6;
+  --text-soft: #cfcdc5;
+  --muted: #8f9097;
+  --line: rgba(236, 235, 230, 0.10);
+  --line-strong: rgba(236, 235, 230, 0.20);
+  --accent: #b9aee6;      /* pale violet: links and the one action */
+  --accent-2: #c9a06a;    /* a second mark, sepia */
+  --accent-3: #8aa4bb;    /* data: the meters and bars */
+  --on-accent: #15121f;
+  --accent-hover: #cbc2ee;
+  --link: #b9aee6;
+  --link-hover: #cbc2ee;
+  --glow: rgba(185, 174, 230, 0.16);
+  --header-bg: rgba(22, 23, 26, 0.78);
+  --hover-bg: rgba(236, 235, 230, 0.06);
+  --active-bg: rgba(236, 235, 230, 0.09);
+  --chip-bg: rgba(236, 235, 230, 0.03);
+  --callout-bg: rgba(185, 174, 230, 0.10);
+  --ok: #7fc48a;
+  --no: #d98a7a;
+  --star: #ecebe6;
+  --radius: 4px;
+  --maxw: 1080px;
+  --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  --sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+/* Light, the default: the notebook's page. */
+:root[data-theme='light'] {
+  --bg: #f4f4f1;          /* cool off-white */
+  --bg-soft: #ebebe6;
+  --panel: #fbfbf9;
+  --text: #1b1b1a;        /* ink */
+  --text-soft: #3a3a37;
+  --muted: #6a6a66;
+  --line: rgba(27, 27, 26, 0.12);
+  --line-strong: rgba(27, 27, 26, 0.22);
+  --accent: #5b4a9e;      /* ink violet, the parent's second mark deepened */
+  --accent-2: #8a5a2b;    /* sepia */
+  --accent-3: #5f7f99;    /* slate */
+  --on-accent: #f7f5fc;
+  --accent-hover: #6c5bb3;
+  --link: #5b4a9e;
+  --link-hover: #6c5bb3;
+  --glow: rgba(91, 74, 158, 0.10);
+  --header-bg: rgba(244, 244, 241, 0.88);
+  --hover-bg: rgba(27, 27, 26, 0.05);
+  --active-bg: rgba(27, 27, 26, 0.08);
+  --chip-bg: transparent;
+  --callout-bg: rgba(91, 74, 158, 0.07);
+  --ok: #2f7c4a;
+  --no: #a5432f;
+  --star: #b9b9b3;
+  --radius: 3px;
+}
+
+/* ---- the backdrop: graph paper ----
+   No sky. Behind the first screen, a faint grid of 24-pixel squares that fades out within the
+   first screen, the way the family's backdrops do; on in both themes. */
+.space-bg {
+  position: absolute; top: 0; left: 0; right: 0; height: 760px; z-index: 0;
+  overflow: hidden; pointer-events: none; opacity: 0.55;
+  background-image: linear-gradient(to right, var(--line) 1px, transparent 1px), linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 50%, transparent 100%);
+}

@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Status from '../components/Status.astro';
 import { data, label } from '../lib/project';
+import { prose } from '../lib/prose';
 
 const order = ['on-the-table', 'authorised', 'deferred', 'rejected', 'done'];
 const groups = order
@@ -22,13 +23,13 @@ const stageName = (id: string) => data.stages.find((s) => s.id === id)?.name ?? 
       <article class="question" id={q.id}>
         <header class="q-head">
           <span class="mono q-id">{q.id}</span>
-          <h2 class="q-title">{q.title}</h2>
+          <h2 class="q-title"><Fragment set:html={prose(q.title)} /></h2>
           <Status value={q.status} />
         </header>
-        <p class="prose">{q.current_answer}</p>
+        <p class="prose"><Fragment set:html={prose(q.current_answer)} /></p>
         <div class="q-cols">
-          <p><span class="kicker-inline">Answered by</span> {q.answered_by}</p>
-          <p><span class="kicker-inline">Loses if</span> {q.loses_if}</p>
+          <p><span class="kicker-inline">Answered by</span> <Fragment set:html={prose(q.answered_by)} /></p>
+          <p><span class="kicker-inline">Loses if</span> <Fragment set:html={prose(q.loses_if)} /></p>
         </div>
       </article>
     ))}
@@ -43,9 +44,9 @@ const stageName = (id: string) => data.stages.find((s) => s.id === id)?.name ?? 
           {g.items.map((i) => (
             <li class="idea" id={i.id}>
               <div class="step-top"><span class="mono">{i.id} · Stage {i.stage}, {stageName(i.stage)}</span><Status value={i.status} /></div>
-              <h3 class="idea-title">{i.title}</h3>
-              <p class="idea-teach">{i.teaches}</p>
-              <p class="step-meta"><strong>Cost</strong> {i.cost} · <strong>Gate</strong> {i.gate}</p>
+              <h3 class="idea-title"><Fragment set:html={prose(i.title)} /></h3>
+              <p class="idea-teach"><Fragment set:html={prose(i.teaches)} /></p>
+              <p class="step-meta"><strong>Cost</strong> <Fragment set:html={prose(i.cost)} /> · <strong>Gate</strong> <Fragment set:html={prose(i.gate)} /></p>
             </li>
           ))}
         </ul>
