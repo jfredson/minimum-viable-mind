@@ -101,31 +101,31 @@
    "capital_not_one_token": 35,
    "capital_name_overlap": 3,
    "opposite_answer_not_one_token": 4,
-   "copying_rule_right_answer": 30,
-   "copying_or_cross_rule_left_too_few_wrong_answers": 32
+   "copying_or_cross_rule_left_too_few_wrong_answers": 145,
+   "copying_rule_right_answer": 103
   },
   "capital_wrong_source_all_attempts": {
-   "same_region": 633,
-   "neighbour_region": 877,
-   "dropped": 378
+   "same_region": 886,
+   "neighbour_region": 1285,
+   "dropped": 589
   },
   "capital_right_answers_by_region": {
-   "Eastern Europe": 2,
-   "East Asia": 2,
-   "Southern Europe": 3,
-   "South America": 4,
-   "Southeast Asia": 2,
    "Northern Europe": 4,
+   "Southern Europe": 4,
    "Middle East": 7,
-   "Western Europe": 4,
-   "North Africa": 2
+   "South America": 4,
+   "North Africa": 2,
+   "Southeast Asia": 1,
+   "Eastern Europe": 3,
+   "Western Europe": 3,
+   "East Asia": 2
   },
   "distinct_right_answers_per_routine_kind": {
    "cap": 30,
    "opp": 30,
-   "col": 11,
-   "sum": 15,
-   "prod": 12
+   "col": 9,
+   "sum": 12,
+   "prod": 13
   },
   "lookup_answer_colours": [
    "black",
@@ -135,132 +135,137 @@
    "grey",
    "orange",
    "pink",
-   "purple",
    "red",
    "white",
    "yellow"
   ],
   "order_counts": {
-   "rule_facts_last": 57,
-   "routine_fact_last": 63
+   "rule_facts_last": 59,
+   "routine_fact_last": 61
   }
  },
  "5_donors": {
-  "donor_only_added": 212,
+  "donor_only_added": 204,
   "per_group": {
    "op+cap": {
     "scored": 7,
-    "donor_only_kept": 11,
-    "draws": 873,
+    "donor_only_kept": 10,
+    "draws": 101,
     "stopped_by": "all_have_five",
     "no_donor": []
    },
    "op+opp": {
     "scored": 11,
-    "donor_only_kept": 11,
-    "draws": 39,
+    "donor_only_kept": 14,
+    "draws": 448,
     "stopped_by": "all_have_five",
     "no_donor": []
    },
    "op+col": {
     "scored": 12,
-    "donor_only_kept": 19,
-    "draws": 264,
-    "stopped_by": "all_have_five",
+    "donor_only_kept": 21,
+    "draws": 2400,
+    "stopped_by": "draw_budget",
     "no_donor": []
    },
    "unit+cap": {
     "scored": 7,
-    "donor_only_kept": 15,
-    "draws": 91,
+    "donor_only_kept": 12,
+    "draws": 121,
     "stopped_by": "all_have_five",
     "no_donor": []
    },
    "unit+opp": {
     "scored": 11,
-    "donor_only_kept": 11,
-    "draws": 1041,
+    "donor_only_kept": 14,
+    "draws": 1232,
     "stopped_by": "all_have_five",
     "no_donor": []
    },
    "unit+col": {
     "scored": 12,
-    "donor_only_kept": 30,
-    "draws": 202,
+    "donor_only_kept": 20,
+    "draws": 1001,
     "stopped_by": "all_have_five",
     "no_donor": []
    },
    "code+sum": {
     "scored": 8,
-    "donor_only_kept": 8,
-    "draws": 109,
+    "donor_only_kept": 11,
+    "draws": 115,
     "stopped_by": "all_have_five",
     "no_donor": []
    },
    "code+prod": {
     "scored": 8,
-    "donor_only_kept": 9,
-    "draws": 156,
+    "donor_only_kept": 11,
+    "draws": 161,
     "stopped_by": "all_have_five",
     "no_donor": []
    },
    "code+cap": {
     "scored": 8,
-    "donor_only_kept": 11,
-    "draws": 532,
+    "donor_only_kept": 12,
+    "draws": 861,
     "stopped_by": "all_have_five",
     "no_donor": []
    },
    "code+col": {
     "scored": 6,
-    "donor_only_kept": 15,
+    "donor_only_kept": 12,
     "draws": 1200,
     "stopped_by": "draw_budget",
-    "no_donor": []
+    "no_donor": [
+     {
+      "id": "A-0085",
+      "text": "In this code, each letter stands for another: p stands for c, y stands for n, x stands for u, z stands for l, h stands for a, n stands for m, i stands for t, c stands for j. The object is a tiger's stripes. The coded word is hyi. What word is the coded word?",
+      "length_rank_from_longest": 1
+     }
+    ]
    },
    "look+sum": {
     "scored": 7,
-    "donor_only_kept": 19,
-    "draws": 1244,
-    "stopped_by": "all_have_five",
+    "donor_only_kept": 21,
+    "draws": 236,
+    "stopped_by": "cap",
     "no_donor": []
    },
    "look+prod": {
     "scored": 7,
-    "donor_only_kept": 16,
-    "draws": 274,
+    "donor_only_kept": 12,
+    "draws": 32,
     "stopped_by": "all_have_five",
     "no_donor": []
    },
    "look+cap": {
     "scored": 8,
-    "donor_only_kept": 21,
-    "draws": 321,
-    "stopped_by": "all_have_five",
+    "donor_only_kept": 16,
+    "draws": 1600,
+    "stopped_by": "draw_budget",
     "no_donor": []
    },
    "look+opp": {
     "scored": 8,
-    "donor_only_kept": 16,
-    "draws": 407,
+    "donor_only_kept": 18,
+    "draws": 246,
     "stopped_by": "all_have_five",
     "no_donor": []
    }
   },
-  "scored_with_no_donor": 0,
-  "scored_with_fewer_than_five": 1,
-  "mean_eligible_donors": 9.52
+  "scored_with_no_donor": 1,
+  "scored_with_fewer_than_five": 4,
+  "mean_eligible_donors": 10.18
  },
  "6_dose_ratio_R_over_P": {
   "op": {
-   "0.0": 0.9942,
-   "0.3": 0.996,
-   "0.6": 0.9978
+   "0.0": 0.9938,
+   "0.3": 0.9958,
+   "0.6": 0.9977
   },
   "unit": {
-   "0.0": 0.9971,
-   "0.3": 0.998,
-   "0.6": 0.9989
+   "0.0": 0.9975,
+   "0.3": 0.9983,
+   "0.6": 0.999
   },
   "code": {
    "0.0": 1.0,
@@ -268,20 +273,20 @@
    "0.6": 1.0
   },
   "look": {
-   "0.0": 0.9993,
-   "0.3": 0.9995,
+   "0.0": 0.9992,
+   "0.3": 0.9994,
    "0.6": 0.9997
   }
  },
  "6_band_pass": true,
  "7_tail_share": {
   "op": {
-   "P": 0.278,
-   "R": 0.278
+   "P": 0.276,
+   "R": 0.276
   },
   "unit": {
-   "P": 0.337,
-   "R": 0.337
+   "P": 0.336,
+   "R": 0.336
   },
   "code": {
    "P": 0.165,
@@ -319,8 +324,8 @@
  "9_candidates_named_in_donor_context": {
   "op+cap": {
    "P": {
-    "right_rate": 0.086,
-    "wrong_rate": 0.043
+    "right_rate": 0.0,
+    "wrong_rate": 0.014
    },
    "R": {
     "right_rate": 0.0,
@@ -329,18 +334,18 @@
   },
   "op+opp": {
    "P": {
-    "right_rate": 0.073,
-    "wrong_rate": 0.055
+    "right_rate": 0.0,
+    "wrong_rate": 0.023
    },
    "R": {
-    "right_rate": 0.0,
-    "wrong_rate": 0.0
+    "right_rate": 0.018,
+    "wrong_rate": 0.014
    }
   },
   "op+col": {
    "P": {
-    "right_rate": 0.083,
-    "wrong_rate": 0.054
+    "right_rate": 0.0,
+    "wrong_rate": 0.009
    },
    "R": {
     "right_rate": 0.0,
@@ -350,7 +355,7 @@
   "unit+cap": {
    "P": {
     "right_rate": 0.029,
-    "wrong_rate": 0.193
+    "wrong_rate": 0.05
    },
    "R": {
     "right_rate": 0.0,
@@ -359,18 +364,18 @@
   },
   "unit+opp": {
    "P": {
-    "right_rate": 0.109,
-    "wrong_rate": 0.114
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
    },
    "R": {
-    "right_rate": 0.036,
-    "wrong_rate": 0.009
+    "right_rate": 0.018,
+    "wrong_rate": 0.005
    }
   },
   "unit+col": {
    "P": {
     "right_rate": 0.05,
-    "wrong_rate": 0.046
+    "wrong_rate": 0.1
    },
    "R": {
     "right_rate": 0.0,
@@ -383,7 +388,7 @@
     "wrong_rate": 0.0
    },
    "R": {
-    "right_rate": 0.075,
+    "right_rate": 0.0,
     "wrong_rate": 0.025
    }
   },
@@ -393,7 +398,7 @@
     "wrong_rate": 0.0
    },
    "R": {
-    "right_rate": 0.025,
+    "right_rate": 0.0,
     "wrong_rate": 0.0
    }
   },
@@ -419,28 +424,28 @@
   },
   "look+sum": {
    "P": {
-    "right_rate": 0.514,
-    "wrong_rate": 0.479
+    "right_rate": 0.424,
+    "wrong_rate": 0.492
    },
    "R": {
-    "right_rate": 0.029,
-    "wrong_rate": 0.043
+    "right_rate": 0.061,
+    "wrong_rate": 0.023
    }
   },
   "look+prod": {
    "P": {
-    "right_rate": 0.514,
-    "wrong_rate": 0.507
+    "right_rate": 0.629,
+    "wrong_rate": 0.529
    },
    "R": {
-    "right_rate": 0.029,
+    "right_rate": 0.0,
     "wrong_rate": 0.0
    }
   },
   "look+cap": {
    "P": {
-    "right_rate": 0.475,
-    "wrong_rate": 0.481
+    "right_rate": 0.487,
+    "wrong_rate": 0.538
    },
    "R": {
     "right_rate": 0.0,
@@ -450,11 +455,11 @@
   "look+opp": {
    "P": {
     "right_rate": 0.675,
-    "wrong_rate": 0.506
+    "wrong_rate": 0.438
    },
    "R": {
-    "right_rate": 0.0,
-    "wrong_rate": 0.006
+    "right_rate": 0.025,
+    "wrong_rate": 0.013
    }
   }
  },
@@ -467,9 +472,39 @@
   "neutral": 200,
   "neutral_build": 100,
   "neutral_measure": 100,
-  "text_positions_pooled_from_build_passages": 5326,
-  "longest_item_prompt": 98,
+  "text_positions_pooled_from_build_passages": 5279,
+  "longest_item_prompt": 97,
   "longest_neutral_prompt": 95
+ },
+ "11_right_number_place_counts": {
+  "op": [
+   7,
+   4,
+   6,
+   7,
+   6
+  ],
+  "unit": [
+   7,
+   3,
+   5,
+   5,
+   10
+  ],
+  "sum": [
+   2,
+   5,
+   2,
+   3,
+   3
+  ],
+  "prod": [
+   3,
+   6,
+   3,
+   3,
+   0
+  ]
  },
  "chained": {
   "items": 40,
@@ -480,6 +515,49 @@
    5,
    6
   ],
-  "all_candidates_one_token": true
+  "all_candidates_one_token": true,
+  "items_with_every_candidate_in_text": 40,
+  "items_with_every_candidate_reached_by_a_chain": 40,
+  "donors": {
+   "hops_2": {
+    "scored": 8,
+    "donor_only_kept": 11,
+    "draws": 53,
+    "no_donor": [],
+    "fewer_than_five": 0
+   },
+   "hops_3": {
+    "scored": 8,
+    "donor_only_kept": 13,
+    "draws": 31,
+    "no_donor": [],
+    "fewer_than_five": 0
+   },
+   "hops_4": {
+    "scored": 8,
+    "donor_only_kept": 12,
+    "draws": 53,
+    "no_donor": [],
+    "fewer_than_five": 0
+   },
+   "hops_5": {
+    "scored": 8,
+    "donor_only_kept": 12,
+    "draws": 124,
+    "no_donor": [],
+    "fewer_than_five": 0
+   },
+   "hops_6": {
+    "scored": 8,
+    "donor_only_kept": 14,
+    "draws": 54,
+    "no_donor": [],
+    "fewer_than_five": 0
+   }
+  },
+  "prompt_length_range": [
+   195,
+   284
+  ]
  }
 }

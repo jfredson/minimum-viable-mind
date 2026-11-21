@@ -148,3 +148,76 @@ next step, 4a, is the first on a rented machine:
 That step needs John's go, with a price and a ceiling, and the design records what he is to be told then:
 these free checks passed by construction, and they settle nothing about the real dose of the swap (design,
 RT-391).
+
+---
+
+## Addendum, 2026-11-21: the pilot regenerated after the independent check
+
+*Added after the independent check (`independent-check-2026-11-21.md`) found four generator faults that had
+to be fixed before step 4b. The fixes were written into the specification first (section 14, commit
+5fc2f0c) and then into the code. The pilot files above are replaced by a pilot generated from the fixed
+code, with the same half A and seed 1. Every figure in this addendum comes from the regenerated
+`batteries/pilot/step3-results.json`. The figures in the sections above describe the first pilot, from
+commit c02b763, and are kept as the record.*
+
+**The four fixes, and what the regenerated pilot shows.**
+- **Chained lookups** (RT-415, RT-426).
+  - **The fix.** Each item now has five chains of "points to" rows. Each chain ends in one of the five
+    candidate colours, and the distractor chains run two to six steps, drawn independently.
+  - **The text.** In all 40 items, every candidate appears in the text and is reached by a chain. Before,
+    one candidate was missing in 40 of 40.
+  - **Donors.** Donor-only chained items were added under the aimed rule. No chained item is without a
+    donor, and none has fewer than five.
+  - **Length.** The items now run 195 to 284 tokens, well beyond the scored pairs and the neutral passages
+    (RT-425).
+- **Where the right number sits** (RT-416). The right number's place in numeric order is now drawn first, and
+  it is kept while the numbers are redrawn. Counts of right answers at places 1 to 5, lowest to highest:
+
+  | Kind | Place counts |
+  |---|---|
+  | Operator (30) | 7, 4, 6, 7, 6 |
+  | Unit (30) | 7, 3, 5, 5, 10 |
+  | Sums (15) | 2, 5, 2, 3, 3 |
+  | Products (15) | 3, 6, 3, 3, 0 |
+
+  Before, the middle place held 40% to 53%. Every place can be filled for every kind: for half-A products,
+  14 to 18 of the 22 answers fit each place. So the products' 0 at the top place is chance, which happens
+  about 3.5% of the time with 15 items.
+
+  **One step taken during the fix, recorded.** The first version of this fix drew the place uniformly but
+  drew a new place whenever an item could not fill it. That still put 11 of 30 unit answers in the middle
+  place, because middle places are easier to fill for small answers. The code was changed to keep the drawn
+  place while redrawing the numbers, which is what section 14 says. Only that version's output is
+  committed.
+- **The copying rule** (RT-418). It now ignores only function words.
+  - **Drops.** More draws are dropped as a result: 103 for a right answer that copies a question word,
+    against 30 before, and 145 for too few wrong answers left, against 32. Every group still filled.
+  - **Pools.** No candidate now contains, or is contained in, a content word of the routine fact or final
+    question. That includes "give", "sum" and "capital".
+- **The order of an odd group's extra pair** (RT-422). It is now drawn from the seed. The counts are 59 with
+  the rule's facts last and 61 with the routine fact last.
+
+**Everything else, rerun on the regenerated pilot.**
+- **The overlap check** passes.
+- **The wording table** recounts equal.
+- **Twin lengths.** All 120 twins are equal.
+- **The stand-in dose ratio** is 0.994 to 1.000 in every rule kind, inside the band.
+- **Tail shares:** 0.28, 0.34, 0.17 and 0.17.
+- **The average-method counts** are equal.
+- **The average is defined** at every position under the assumed reply opening.
+- **Donors for the scored pairs.**
+  - 204 donor-only pairs were added.
+  - One scored pair has no eligible donor, and four have fewer than five. The mean is 10.2.
+  - The pair with no donor is listed in `build-report.json` with its content. Before the fix, every pair had
+    a donor. The change follows from the new draws, not from a change in the donor rule.
+- **Check 9 now draws donors at random,** as step 4b will (RT-427). In the lookup kind, a donor's table
+  still names the recipient's candidate colours about 40% to 70% of the time in the prompt-rule cell.
+
+**Still open from the independent check, before any test set:**
+- completing the overlap check (RT-417);
+- the opposites and objects lists (RT-419, RT-420), with the capitals, regions and doubtful colours checked
+  against a source;
+- a wider fallback for capitals (RT-421);
+- the smaller specification and reporting points (RT-423 to RT-425, RT-427 to RT-429).
+
+**Still owed:** an independent check of these fixes. RT-345 stays open.
