@@ -148,6 +148,9 @@ def validate(d):
         for a in p.get("also_stated", []) + ([p["first_public"]] if "first_public" in p else []):
             if a["source"] not in source_ids:
                 err(f"prediction {p['id']}: unknown source {a['source']}")
+        for s in p.get("shares_with", []):
+            if s["theory"] not in listed or s["source"] not in source_ids:
+                err(f"prediction {p['id']}: shares_with needs a listed rival and a known source")
         for s in p.get("separates_from", []):
             if s["theory"] not in listed:
                 err(f"prediction {p['id']}: rival {s['theory']} is not on the ruled list")
@@ -252,8 +255,9 @@ def settle(j, mode):
         readers = {r["reader"] for r in rs}
         if len(cf) > 1:
             return None, "disagreed"
-        if len(readers) < 2 and mode == "settled":
-            return None, "one-reader"
+        if len(readers) < 2:
+            # the rule set the separation, but "could it fail" rests on one reader
+            return (None if mode == "settled" else rs[0]), "one-reader"
         return rs[0], "ruled"
     if not rs:
         return None, "unread"

@@ -176,7 +176,20 @@ session's recommendations; the wording is the session's.
    rival only when a publication by the rival's own proponents, opened and cited, predicts something
    different. A reader's own knowledge does not count, and a rival's silence does not count. This
    governs both the bar and the testability score. (Raised by the stage 2
-   pilot, which found the first wording did not say; wording the master session's.) A support score speaks only for the
+   pilot, which found the first wording did not say; wording the master session's.)
+   *(ruled, 2026-11-21, John: "Yes, flip it"; wording the master session's; amends the ruling just
+   above.)* **A prediction separates a theory from a rival unless a rival's own opened source
+   predicts the same thing.** A rival's silence now means the prediction is the theory's own. A
+   reader's own knowledge still never counts, and every claim about a rival still rests on that
+   rival's own words. (Raised by the stage 3 scoring, where three theories whose rivals never
+   discuss their subject scored 0 or nearly 0 on testability.) Weakest steps, stated to John when
+   he ruled: it helps the Sentient Horizons account, whose predictions about the split now likely
+   separate, and the method page must say so plainly, with the date of this change; and a theory
+   can raise its testability by predicting things no rival discusses. *How the stage 3 session
+   applied it (its reading, not ruled):* a separation already resting on a rival's contrary passage
+   stands; a prediction stops separating only where a rival's own source predicts the same and no
+   rival's source predicts something different.
+   A support score speaks only for the
    claims that were testable; where fewer than half were, it describes a minority of the theory,
    and ranking the whole theory on it would mislead. This replaces the bare figure of 50 first
    proposed.

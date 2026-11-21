@@ -189,6 +189,9 @@ first_stated = { source = "albantakis-2023", date = "2023-10-17", passage = "A f
 test_for = "Measures of integrated information, or validated proxies for it, are high in waking and dreaming and low in dreamless sleep and anaesthesia."
 test_against = "Such measures are as high in dreamless sleep or anaesthesia as in waking."
 separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory also predicts that the workspace is disrupted in anaesthesia, sleep and disorders of consciousness.", source = "mashour-2020" },
+]
 note = "Global workspace theory also predicts that the workspace is disrupted in anaesthesia, sleep and disorders of consciousness (mashour-2020, section 'Global Neuronal Workspace and the Level of Consciousness'), so this prediction may not separate the two. Left for the testability reading."
 
 [[prediction]]
@@ -444,6 +447,9 @@ also_stated = [
 test_for = "A masked stimulus that people cannot detect above chance still evokes activity in high-level visual or prefrontal areas, or still changes behaviour (for example slows a response), while the late recurrent signals in visual cortex are absent."
 test_against = "A stimulus whose processing has been restricted to the first forward pass (recurrent signals in visual cortex shown to be absent) is nonetheless detected and reported as seen."
 separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory also holds that unseen stimuli can produce long-lasting activations without becoming conscious.", source = "mashour-2020" },
+]
 note = "Global workspace theory's proponents also hold that unseen (subliminal) stimuli can produce long-lasting activations without ignition (mashour-2020: 'Unseen, subliminal stimuli may also result in a long series of evoked brain activations'), so no rival found predicting the opposite."
 
 [[prediction]]
@@ -460,6 +466,9 @@ also_stated = [
 test_for = "Seeing fails when late feedback signals into early visual cortex are disrupted (by a well-timed pulse, a mask or anaesthesia), while early forward responses are unchanged."
 test_against = "Seeing survives when feedback into early visual cortex has been shown to be abolished, with forward signals intact."
 separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory also ties conscious access to recurrent processing, including in primary visual cortex.", source = "mashour-2020" },
+]
 note = "Global workspace theory's proponents also tie conscious access to recurrent processing (mashour-2020: 'a non-linear network ignition associated with recurrent processing'; 'In agreement with the GNW, the effects of recurrent processing are indeed most pronounced in layers II/III and V of the primary visual cortex'), so this prediction is shared."
 
 [[prediction]]
@@ -514,6 +523,9 @@ also_stated = [
 test_for = "Unattended, unreported stimuli that were not masked still evoke signs of recurrent processing in visual cortex (figure-ground signals, early awareness-related negativity, feedback between visual areas) much like reported ones; reported ones differ mainly in later, more widespread activity."
 test_against = "Unattended stimuli that go unreported, without masking, show no signs of recurrent processing in visual cortex; early visual signals differ between reported and unreported stimuli as much as later ones do."
 separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory expects the same local recurrent loops for unattended stimuli and calls them preconscious.", source = "mashour-2020" },
+]
 note = "Global workspace theory's proponents predict the same observable pattern and call it 'preconscious' (mashour-2020: 'The early recurrent loops occur in lower areas and may correspond to VAN'; stimuli may be 'merely potentially visible but unattended'). The theories differ on whether such stimuli are experienced, not on what the instruments show, so no rival passage predicting a different observation was found. Lamme 2010 adds a caveat for the attentional blink: 'this only works when the sensation of T2 is wiped out by a following stimulus' (p. 220), that is, the blinked target is masked, which by rpt-ff-unseen would make it unseen."
 
 [[prediction]]
@@ -529,6 +541,9 @@ also_stated = [
 test_for = "Manipulating attention changes report and the late brain responses, but leaves the neural sign of seeing (recurrent processing, the early awareness-related negativity) unchanged; and attention effects occur for stimuli that cannot be detected."
 test_against = "The neural sign of seeing appears only for attended stimuli and scales with attention."
 separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory also accepts attention without awareness and early processing preserved under inattention.", source = "mashour-2020" },
+]
 note = "Global workspace theory's proponents also accept attention without awareness ('Several studies have dissociated attention from awareness, for example, by demonstrating that attention can be summoned to a location by a subliminal cue') and say early processing is preserved under inattention (mashour-2020). Its difference from this theory is again over what to call the unattended state, so no rival passage predicting a different observation was found."
 
 [[prediction]]
@@ -633,6 +648,9 @@ also_stated = [
 test_for = "A seen hand (real, rubber or virtual) whose appearance changes in time with the person's heartbeat produces stronger ownership, by questionnaire or by drift in where they feel their real hand to be, than the same feedback out of time."
 test_against = "Heartbeat-timed and out-of-time feedback produce the same ownership, in a design that does produce the classic illusion with timed touch."
 separates_from = []
+shares_with = [
+  { theory = "damasio", how = "Damasio's theory also says interoceptive feelings underpin the sense of owning one's body.", source = "singer-damasio-2025" },
+]
 note = "The heartbeat-timing form is first written by the proponents in suzuki-2013, the study that tests it; the 2012 passage commits only to combining body signals with sight, touch and position. Damasio's own paper agrees that body signals underpin ownership ('Interoceptive feelings underpin the sense of direct ownership of the organism’s body', singer-damasio-2025), so Damasio's theory does not predict differently."
 
 [[prediction]]
@@ -713,6 +731,9 @@ also_stated = [
 test_for = "Across studies that measure both, attention and reported awareness agree for clear stimuli and come apart mainly near the detection threshold; cases of attention without reported awareness are common, reported awareness without attention is rare."
 test_against = "Attention and reported awareness come apart often with strong, clearly visible stimuli, or reported awareness of unattended items is as common as attention to items people are unaware of."
 separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory also says attention can work without awareness and that what attention selects enters consciousness.", source = "mashour-2020" },
+]
 note = "No opened rival source predicts the opposite. Global workspace theory's proponents also say attention can operate without awareness while 'the final result of attentional selection enters consciousness' (mashour-2020, section 'Global Neuronal Workspace, Attention, and the Content of Consciousness'), which is close to this. The 'not entirely ruled out' clause weakens the second half."
 
 [[prediction]]
@@ -747,6 +768,9 @@ also_stated = [
 test_for = "With a stimulus made unreportable (for example by masking) while it still measurably draws attention, people cannot deliberately sustain, suppress or redirect attention with respect to it, although they can when they are aware of it."
 test_against = "With the stimulus unreportable and still drawing attention, deliberate control of attention with respect to it is as good as when people are aware of it."
 separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory predicts the same direction: attention cannot be directed to features that failed to enter consciousness.", source = "mashour-2020" },
+]
 note = "No opened rival source predicts that control is normal without awareness. Global workspace theory's proponents predict the same direction: 'subjects presumably could not direct feature-based attention to features that failed to enter consciousness' (mashour-2020, section 'Global Neuronal Workspace, Attention, and the Content of Consciousness'), so on this test the two theories agree. Koch and Tsuchiya 2007, by an integrated information theory proponent and cited by mashour-2020 as a review of studies separating attention from awareness, might say otherwise, but it was not opened (verify list, v-ast-rivals)."
 
 [[prediction]]
@@ -885,6 +909,10 @@ also_stated = [
 test_for = "When the local signal of a change is masked, people often take many repetitions to find, or fail to find, large changes in natural scenes, including on occasions when eye tracking shows they were looking at the changing spot when it changed."
 test_against = "When the local signal is masked, people find large changes about as quickly and reliably as when it is not masked."
 separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory predicts the same missed reports.", source = "mashour-2020" },
+  { theory = "rpt", how = "Recurrent processing theory predicts the same missed reports, reading them as failures of report.", source = "lamme-2018" },
+]
 note = "Global workspace theory and recurrent processing theory predict the same missed reports (mashour-2020: early processing 'can be fully preserved on trials without conscious perception, particularly under inattention conditions'; lamme-2018: 'when people fail to attend to stimuli, they will report not having seen them, as is the case in conditions like change blindness'). Recurrent processing theory reads the misses differently ('failures of attention and report, not of conscious vision'), but it predicts the same reports, so this is a difference of interpretation, not of prediction. The 2001 statement is not the first: O'Regan's group published these experiments from 1997 (cited in the passage; not opened)."
 
 [[prediction]]
@@ -900,6 +928,10 @@ also_stated = [
 test_for = "In designs where people do a demanding task and an unexpected, clearly visible object appears where they are looking, a sizeable share of them (by the study's own measure) say afterwards that they did not notice it."
 test_against = "People doing a demanding task notice nearly every clearly visible unexpected object that appears where they are looking."
 separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory predicts the same missed reports.", source = "mashour-2020" },
+  { theory = "rpt", how = "Recurrent processing theory predicts the same missed reports.", source = "lamme-2018" },
+]
 note = "Same position as sm-change-blindness: global workspace theory (mashour-2020) and recurrent processing theory (lamme-2018) predict the same missed reports; they differ only in what the misses mean."
 
 [[prediction]]

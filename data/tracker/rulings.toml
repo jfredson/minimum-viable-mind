@@ -222,3 +222,269 @@ separates = true
 separates_from = ["rpt"]
 reason = "The readers split on whether it could fail; John: not counted. Separation stays as settled by rule C."
 open_part = ""
+
+
+# ------------------------------------------- rule C as amended (2026-11-21)
+# John, 2026-11-21, "Yes, flip it" (relayed by the master session): a prediction separates a
+# theory from a rival unless a rival's own opened source predicts the same thing. Silence means
+# the prediction is the theory's own; a reader's own knowledge still never counts.
+# How it was applied (the stage 3 session's reading, stated in the kickoff proposal): a
+# separation already resting on a rival's contrary passage stands; a prediction stops
+# separating only where a rival's own source predicts the same and none predicts differently.
+# Re-applied to every testability judgement on all ten entries. Rows that change are below,
+# each settled by this rule (rule "C2"); they replace any earlier rule-C entry for the same row.
+# Rows that do not change: every row already separating on a rival's contrary passage; the ten
+# rows where a rival's own source predicts the same (iit-phi-states, rpt-ff-unseen,
+# rpt-feedback-needed, rpt-unattended-local, rpt-attention-independent,
+# seth-interoceptive-ownership, ast-covary, ast-control, sm-change-blindness, sm-inattentional;
+# see `shares_with` on each prediction); and rows that cannot fail, whose separation scores
+# nothing either way.
+
+[[ruling]]
+judgement = "tst-gwt-wm-transform"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-iit-agnosia"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-iit-connections"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-hot-awareness-performance"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-seth-expectation-speeds-access"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-seth-presence-match"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-seth-low-interoception-more-illusion"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-seth-interoceptive-suppression"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-seth-feeling-from-prediction"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-ast-claims"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-ast-schema-control"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-ast-tpj"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-ast-domain"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-sm-colour-contingent"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-sm-inversion"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-sm-active-control"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-sm-substitution"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-mt-coherence"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-mt-entangle"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-synaptic-cyto"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-mt-vibration"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-dp-collapse"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-mass-time"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-coherence-time"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-anaesthetic-mt"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-dam-insula"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-dam-nonneural"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-dam-nss"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+# The two Sentient Horizons rows (ruling 7b: Gemini's reading is the first of record). The
+# readings are left exactly as they were; the rule's effect is recorded here, separately,
+# and the score script applies it over them. Both had been settled "does not separate" by
+# the original rule C (the rivals were silent); under the amended rule they separate.
+
+[[ruling]]
+judgement = "tst-sh-split-novel"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+sentient_horizons_row = true
+replaces_rule_c_entry = true
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers. Gemini's first reading of record (separates: no, the rivals being silent) is unchanged; this is the amended rule's effect, recorded apart from it."
+
+[[ruling]]
+judgement = "tst-sh-nosplit-flexible"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+sentient_horizons_row = true
+replaces_rule_c_entry = true
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers. Gemini's first reading of record (separates: no, the rivals being silent) is unchanged; this is the amended rule's effect, recorded apart from it."

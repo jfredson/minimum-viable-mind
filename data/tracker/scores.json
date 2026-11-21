@@ -5,8 +5,8 @@
     "gemini"
   ],
   "judgement_status": {
-    "agreed": 32,
-    "ruled": 17,
+    "agreed": 31,
+    "ruled": 18,
     "one-reader": 92,
     "disagreed": 0,
     "open-for-john": 0,
@@ -111,23 +111,21 @@
     "gwt": {
       "name": "Global workspace theory",
       "judgement_status": {
-        "ruled": 7,
-        "agreed": 17,
+        "ruled": 8,
+        "agreed": 16,
         "superseded": 1
       },
       "one_reader_only": false,
-      "testability": 80.0,
+      "testability": 100.0,
       "testability_by_claim": {
         "gwt-c1": 1.0,
         "gwt-c2": 1.0,
         "gwt-c3": 1.0,
         "gwt-c4": 1.0,
-        "gwt-c5": 0.0
+        "gwt-c5": 1.0
       },
       "past_bar": true,
-      "claims_lacking_for_bar": [
-        "gwt-c5"
-      ],
+      "claims_lacking_for_bar": [],
       "support": 36.4,
       "support_rests_on": {
         "counted_outcomes": 6,
@@ -144,10 +142,8 @@
       },
       "left_to_test": 37.5,
       "left_to_test_counts": {
-        "distinguishing_core_predictions": 7,
-        "placeholders_for_claims_with_none": [
-          "gwt-c5"
-        ],
+        "distinguishing_core_predictions": 8,
+        "placeholders_for_claims_with_none": [],
         "untested": 3,
         "total": 8
       },
@@ -190,15 +186,15 @@
         "total_weight": 32,
         "weighted_sum": 4
       },
-      "left_to_test": 50.0,
+      "left_to_test": 62.5,
       "left_to_test_counts": {
-        "distinguishing_core_predictions": 4,
+        "distinguishing_core_predictions": 6,
         "placeholders_for_claims_with_none": [
           "iit-c1",
           "iit-c4"
         ],
-        "untested": 3,
-        "total": 6
+        "untested": 5,
+        "total": 8
       },
       "group": "ranked",
       "leans_against": false
@@ -210,17 +206,16 @@
         "ruled": 4
       },
       "one_reader_only": false,
-      "testability": 25.0,
+      "testability": 50.0,
       "testability_by_claim": {
         "sh-c1": 0.0,
-        "sh-c2": 0.0,
+        "sh-c2": 1.0,
         "sh-c3": 1.0,
         "sh-c4": 0.0
       },
       "past_bar": false,
       "claims_lacking_for_bar": [
         "sh-c1",
-        "sh-c2",
         "sh-c4"
       ],
       "support": null,
@@ -233,14 +228,13 @@
       },
       "left_to_test": 100.0,
       "left_to_test_counts": {
-        "distinguishing_core_predictions": 1,
+        "distinguishing_core_predictions": 3,
         "placeholders_for_claims_with_none": [
           "sh-c1",
-          "sh-c2",
           "sh-c4"
         ],
-        "untested": 4,
-        "total": 4
+        "untested": 5,
+        "total": 5
       },
       "group": "not yet defined sharply enough to rank",
       "leans_against": false
@@ -251,22 +245,21 @@
         "one-reader": 18
       },
       "one_reader_only": true,
-      "testability": 60.0,
+      "testability": 80.0,
       "testability_by_claim": {
         "hot-c1": 1.0,
         "hot-c2": 0.0,
         "hot-c3": 1.0,
         "hot-c4": 1.0,
-        "hot-c5": 0.0
+        "hot-c5": 1.0
       },
       "past_bar": true,
       "claims_lacking_for_bar": [
-        "hot-c2",
-        "hot-c5"
+        "hot-c2"
       ],
-      "support": 62.5,
+      "support": 75.0,
       "support_rests_on": {
-        "counted_outcomes": 4,
+        "counted_outcomes": 6,
         "studies": [
           "dellert-2025",
           "hobot-2023",
@@ -279,17 +272,16 @@
           "Soto group (last author D. Soto, by the paper's author list)",
           "Straube group (last author; participants recruited at the University of Münster)"
         ],
-        "total_weight": 16,
-        "weighted_sum": 4
+        "total_weight": 24,
+        "weighted_sum": 12
       },
-      "left_to_test": 50.0,
+      "left_to_test": 33.3,
       "left_to_test_counts": {
-        "distinguishing_core_predictions": 4,
+        "distinguishing_core_predictions": 5,
         "placeholders_for_claims_with_none": [
-          "hot-c2",
-          "hot-c5"
+          "hot-c2"
         ],
-        "untested": 3,
+        "untested": 2,
         "total": 6
       },
       "group": "ranked",
@@ -348,48 +340,48 @@
         "one-reader": 13
       },
       "one_reader_only": true,
-      "testability": 0.0,
+      "testability": 50.0,
       "testability_by_claim": {
         "seth-c1": 0.0,
-        "seth-c2": 0.0,
-        "seth-c3": 0.0,
-        "seth-c4": 0.0,
+        "seth-c2": 1.0,
+        "seth-c3": 1.0,
+        "seth-c4": 1.0,
         "seth-c5": 0.0,
         "seth-c6": 0.0
       },
       "past_bar": false,
       "claims_lacking_for_bar": [
         "seth-c1",
-        "seth-c2",
-        "seth-c3",
-        "seth-c4",
         "seth-c5",
         "seth-c6"
       ],
-      "support": null,
+      "support": 33.3,
       "support_rests_on": {
-        "counted_outcomes": 0,
-        "studies": [],
-        "groups": [],
-        "total_weight": 0,
-        "weighted_sum": 0
+        "counted_outcomes": 2,
+        "studies": [
+          "jicol-2023",
+          "suzuki-2013"
+        ],
+        "groups": [
+          "O'Neill group (last author; University of Bath)",
+          "Seth group (last and corresponding author; Sackler Centre for Consciousness Science, University of Sussex)"
+        ],
+        "total_weight": 6,
+        "weighted_sum": -2
       },
-      "left_to_test": 100.0,
+      "left_to_test": 75.0,
       "left_to_test_counts": {
-        "distinguishing_core_predictions": 0,
+        "distinguishing_core_predictions": 5,
         "placeholders_for_claims_with_none": [
           "seth-c1",
-          "seth-c2",
-          "seth-c3",
-          "seth-c4",
           "seth-c5",
           "seth-c6"
         ],
         "untested": 6,
-        "total": 6
+        "total": 8
       },
       "group": "not yet defined sharply enough to rank",
-      "leans_against": false
+      "leans_against": true
     },
     "ast": {
       "name": "Attention schema theory",
@@ -397,45 +389,43 @@
         "one-reader": 12
       },
       "one_reader_only": true,
-      "testability": 16.7,
+      "testability": 66.7,
       "testability_by_claim": {
         "ast-c1": 1.0,
-        "ast-c2": 0.0,
-        "ast-c3": 0.0,
+        "ast-c2": 1.0,
+        "ast-c3": 1.0,
         "ast-c4": 0.0,
         "ast-c5": 0.0,
-        "ast-c6": 0.0
+        "ast-c6": 1.0
       },
-      "past_bar": false,
+      "past_bar": true,
       "claims_lacking_for_bar": [
-        "ast-c2",
-        "ast-c3",
         "ast-c4",
-        "ast-c5",
-        "ast-c6"
+        "ast-c5"
       ],
       "support": null,
       "support_rests_on": {
-        "counted_outcomes": 0,
-        "studies": [],
-        "groups": [],
-        "total_weight": 0,
-        "weighted_sum": 0
+        "counted_outcomes": 1,
+        "studies": [
+          "wilterson-2021-agent"
+        ],
+        "groups": [
+          "Graziano group (last author)"
+        ],
+        "total_weight": 2,
+        "weighted_sum": 2
       },
-      "left_to_test": 100.0,
+      "left_to_test": 85.7,
       "left_to_test_counts": {
-        "distinguishing_core_predictions": 1,
+        "distinguishing_core_predictions": 5,
         "placeholders_for_claims_with_none": [
-          "ast-c2",
-          "ast-c3",
           "ast-c4",
-          "ast-c5",
-          "ast-c6"
+          "ast-c5"
         ],
         "untested": 6,
-        "total": 6
+        "total": 7
       },
-      "group": "not yet defined sharply enough to rank",
+      "group": "testable, too little tested to rank",
       "leans_against": false
     },
     "sensorimotor": {
@@ -444,22 +434,19 @@
         "one-reader": 8
       },
       "one_reader_only": true,
-      "testability": 16.7,
+      "testability": 66.7,
       "testability_by_claim": {
-        "sm-c1": 0.0,
+        "sm-c1": 1.0,
         "sm-c2": 0.0,
-        "sm-c3": 0.0,
+        "sm-c3": 1.0,
         "sm-c4": 0.0,
-        "sm-c5": 0.0,
+        "sm-c5": 1.0,
         "sm-c6": 1.0
       },
-      "past_bar": false,
+      "past_bar": true,
       "claims_lacking_for_bar": [
-        "sm-c1",
         "sm-c2",
-        "sm-c3",
-        "sm-c4",
-        "sm-c5"
+        "sm-c4"
       ],
       "support": null,
       "support_rests_on": {
@@ -471,18 +458,15 @@
       },
       "left_to_test": 100.0,
       "left_to_test_counts": {
-        "distinguishing_core_predictions": 1,
+        "distinguishing_core_predictions": 5,
         "placeholders_for_claims_with_none": [
-          "sm-c1",
           "sm-c2",
-          "sm-c3",
-          "sm-c4",
-          "sm-c5"
+          "sm-c4"
         ],
-        "untested": 6,
-        "total": 6
+        "untested": 7,
+        "total": 7
       },
-      "group": "not yet defined sharply enough to rank",
+      "group": "testable, too little tested to rank",
       "leans_against": false
     },
     "orch-or": {
@@ -491,47 +475,39 @@
         "one-reader": 12
       },
       "one_reader_only": true,
-      "testability": 0.0,
+      "testability": 100.0,
       "testability_by_claim": {
-        "orch-c1": 0.0,
-        "orch-c2": 0.0,
-        "orch-c3": 0.0,
-        "orch-c4": 0.0,
-        "orch-c5": 0.0,
-        "orch-c6": 0.0
+        "orch-c1": 1.0,
+        "orch-c2": 1.0,
+        "orch-c3": 1.0,
+        "orch-c4": 1.0,
+        "orch-c5": 1.0,
+        "orch-c6": 1.0
       },
-      "past_bar": false,
-      "claims_lacking_for_bar": [
-        "orch-c1",
-        "orch-c2",
-        "orch-c3",
-        "orch-c4",
-        "orch-c5",
-        "orch-c6"
-      ],
-      "support": null,
+      "past_bar": true,
+      "claims_lacking_for_bar": [],
+      "support": 75.0,
       "support_rests_on": {
-        "counted_outcomes": 0,
-        "studies": [],
-        "groups": [],
-        "total_weight": 0,
-        "weighted_sum": 0
-      },
-      "left_to_test": 100.0,
-      "left_to_test_counts": {
-        "distinguishing_core_predictions": 0,
-        "placeholders_for_claims_with_none": [
-          "orch-c1",
-          "orch-c2",
-          "orch-c3",
-          "orch-c4",
-          "orch-c5",
-          "orch-c6"
+        "counted_outcomes": 2,
+        "studies": [
+          "khan-2024",
+          "li-2025"
         ],
-        "untested": 6,
-        "total": 6
+        "groups": [
+          "Martyn group (last and corresponding author, Massachusetts General Hospital, Boston)",
+          "Wiest group (last author, Neuroscience Department, Wellesley College)"
+        ],
+        "total_weight": 8,
+        "weighted_sum": 4
       },
-      "group": "not yet defined sharply enough to rank",
+      "left_to_test": 87.5,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 8,
+        "placeholders_for_claims_with_none": [],
+        "untested": 7,
+        "total": 8
+      },
+      "group": "ranked",
       "leans_against": false
     },
     "damasio": {
@@ -562,13 +538,13 @@
       },
       "left_to_test": 100.0,
       "left_to_test_counts": {
-        "distinguishing_core_predictions": 2,
+        "distinguishing_core_predictions": 5,
         "placeholders_for_claims_with_none": [
           "dam-c1",
           "dam-c3"
         ],
-        "untested": 4,
-        "total": 4
+        "untested": 7,
+        "total": 7
       },
       "group": "not yet defined sharply enough to rank",
       "leans_against": false
@@ -581,6 +557,10 @@
         "rank": 1
       },
       {
+        "theory": "orch-or",
+        "rank": 1
+      },
+      {
         "theory": "iit",
         "rank": 1
       },
@@ -590,24 +570,25 @@
       }
     ],
     "shared_because_one_study_could_swap_them": {
-      "hot|iit": "mei-soto-2025",
+      "hot|orch-or": "hobot-2023",
+      "orch-or|iit": "khan-2024",
       "iit|gwt": "dellert-2025"
     },
-    "testable_too_little_tested": [],
-    "not_yet_defined_sharply_enough": [
-      "damasio",
-      "rpt",
-      "sh",
+    "testable_too_little_tested": [
       "ast",
-      "sensorimotor",
+      "sensorimotor"
+    ],
+    "not_yet_defined_sharply_enough": [
+      "sh",
       "seth",
-      "orch-or"
+      "damasio",
+      "rpt"
     ]
   },
   "headline": {
-    "tested": 12,
-    "distinguishing_predictions": 23,
-    "share_tested": 52.2,
+    "tested": 17,
+    "distinguishing_predictions": 53,
+    "share_tested": 32.1,
     "note": "Tested at all (ruled by John: 'A, tested at all'): the share of distinguishing predictions tied to core claims that at least one counted study has tested. It measures how widely, not how firmly; the support scores carry the strength. It can fall when predictions are added."
   },
   "predictions": {
@@ -882,9 +863,20 @@
     },
     "hot-awareness-performance": {
       "theory": "hot",
-      "state": "untested",
-      "state_weighted_reading": "untested",
-      "counted_studies": [],
+      "state": "supported",
+      "state_weighted_reading": "supported",
+      "counted_studies": [
+        {
+          "study": "martin-2023",
+          "value": 1,
+          "weight": 2
+        },
+        {
+          "study": "hobot-2023",
+          "value": 1,
+          "weight": 2
+        }
+      ],
       "questions": []
     },
     "rpt-ff-unseen": {
@@ -947,14 +939,19 @@
       "state": "untested",
       "state_weighted_reading": "untested",
       "counted_studies": [],
-      "questions": []
+      "questions": [
+        "machines",
+        "features"
+      ]
     },
     "seth-ai-not-by-computation": {
       "theory": "seth",
       "state": "untested",
       "state_weighted_reading": "untested",
       "counted_studies": [],
-      "questions": []
+      "questions": [
+        "machines"
+      ]
     },
     "seth-expectation-speeds-access": {
       "theory": "seth",
@@ -965,9 +962,15 @@
     },
     "seth-presence-match": {
       "theory": "seth",
-      "state": "untested",
-      "state_weighted_reading": "untested",
-      "counted_studies": [],
+      "state": "mixed",
+      "state_weighted_reading": "mixed",
+      "counted_studies": [
+        {
+          "study": "jicol-2023",
+          "value": 0,
+          "weight": 2
+        }
+      ],
       "questions": []
     },
     "seth-interoceptive-ownership": {
@@ -979,9 +982,15 @@
     },
     "seth-low-interoception-more-illusion": {
       "theory": "seth",
-      "state": "untested",
-      "state_weighted_reading": "untested",
-      "counted_studies": [],
+      "state": "contradicted",
+      "state_weighted_reading": "contradicted",
+      "counted_studies": [
+        {
+          "study": "suzuki-2013",
+          "value": -1,
+          "weight": 1
+        }
+      ],
       "questions": []
     },
     "seth-interoceptive-suppression": {
@@ -1003,7 +1012,9 @@
       "state": "untested",
       "state_weighted_reading": "untested",
       "counted_studies": [],
-      "questions": []
+      "questions": [
+        "fading"
+      ]
     },
     "ast-covary": {
       "theory": "ast",
@@ -1017,7 +1028,9 @@
       "state": "untested",
       "state_weighted_reading": "untested",
       "counted_studies": [],
-      "questions": []
+      "questions": [
+        "machines"
+      ]
     },
     "ast-control": {
       "theory": "ast",
@@ -1028,9 +1041,15 @@
     },
     "ast-schema-control": {
       "theory": "ast",
-      "state": "untested",
-      "state_weighted_reading": "untested",
-      "counted_studies": [],
+      "state": "supported",
+      "state_weighted_reading": "supported",
+      "counted_studies": [
+        {
+          "study": "wilterson-2021-agent",
+          "value": 1,
+          "weight": 1
+        }
+      ],
       "questions": []
     },
     "ast-tpj": {
@@ -1147,9 +1166,20 @@
     },
     "orch-anaesthetic-mt": {
       "theory": "orch-or",
-      "state": "untested",
-      "state_weighted_reading": "untested",
-      "counted_studies": [],
+      "state": "mixed",
+      "state_weighted_reading": "supported",
+      "counted_studies": [
+        {
+          "study": "khan-2024",
+          "value": 1,
+          "weight": 2
+        },
+        {
+          "study": "li-2025",
+          "value": 0,
+          "weight": 2
+        }
+      ],
       "questions": []
     },
     "dam-feeling-required": {
@@ -1157,7 +1187,9 @@
       "state": "untested",
       "state_weighted_reading": "untested",
       "counted_studies": [],
-      "questions": []
+      "questions": [
+        "features"
+      ]
     },
     "dam-subcortical": {
       "theory": "damasio",
@@ -1199,12 +1231,15 @@
       "state": "untested",
       "state_weighted_reading": "untested",
       "counted_studies": [],
-      "questions": []
+      "questions": [
+        "machines"
+      ]
     }
   },
   "state_readings_differ": [
     "gwt-ignition",
-    "iit-posterior"
+    "iit-posterior",
+    "orch-anaesthetic-mt"
   ],
   "counted_outcomes": [
     {
@@ -1373,12 +1408,89 @@
       "status": "one-reader"
     },
     {
+      "judgement": "out-martin-hot-awareness-performance",
+      "theory": "hot",
+      "prediction": "hot-awareness-performance",
+      "study": "martin-2023",
+      "group": "Hsu group (last and corresponding author Tzu-Yu Hsu, Taipei Medical University)",
+      "value": 1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-hobot-hot-awareness-performance",
+      "theory": "hot",
+      "prediction": "hot-awareness-performance",
+      "study": "hobot-2023",
+      "group": "Sandberg group (last author Kristian Sandberg, Aarhus University); first author at the Jagiellonian University Consciousness Lab",
+      "value": 1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
       "judgement": "out-filimonov2022-rpt-van",
       "theory": "rpt",
       "prediction": "rpt-van",
       "study": "filimonov-2022",
       "group": "Koivisto group (last author; University of Turku)",
       "value": 1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-jicol-seth-presence-match",
+      "theory": "seth",
+      "prediction": "seth-presence-match",
+      "study": "jicol-2023",
+      "group": "O'Neill group (last author; University of Bath)",
+      "value": 0,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-suzuki-seth-low-interoception-more-illusion",
+      "theory": "seth",
+      "prediction": "seth-low-interoception-more-illusion",
+      "study": "suzuki-2013",
+      "group": "Seth group (last and corresponding author; Sackler Centre for Consciousness Science, University of Sussex)",
+      "value": -1,
+      "weight": 1,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-wilterson-agent-ast-schema-control",
+      "theory": "ast",
+      "prediction": "ast-schema-control",
+      "study": "wilterson-2021-agent",
+      "group": "Graziano group (last author)",
+      "value": 1,
+      "weight": 1,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-khan-orch-anaesthetic-mt",
+      "theory": "orch-or",
+      "prediction": "orch-anaesthetic-mt",
+      "study": "khan-2024",
+      "group": "Wiest group (last author, Neuroscience Department, Wellesley College)",
+      "value": 1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-li-orch-anaesthetic-mt",
+      "theory": "orch-or",
+      "prediction": "orch-anaesthetic-mt",
+      "study": "li-2025",
+      "group": "Martyn group (last and corresponding author, Massachusetts General Hospital, Boston)",
+      "value": 0,
       "weight": 2,
       "multiplier": 2,
       "status": "one-reader"
@@ -1395,13 +1507,17 @@
         "seth": "not yet defined sharply enough to rank",
         "ast": "testable, too little tested to rank",
         "sensorimotor": "testable, too little tested to rank",
-        "orch-or": "testable, too little tested to rank",
+        "orch-or": "ranked",
         "damasio": "not yet defined sharply enough to rank"
       },
       "ranking": {
         "ranked": [
           {
             "theory": "hot",
+            "rank": 1
+          },
+          {
+            "theory": "orch-or",
             "rank": 1
           },
           {
@@ -1414,19 +1530,19 @@
           }
         ],
         "shared_because_one_study_could_swap_them": {
-          "hot|iit": "mei-soto-2025",
+          "hot|orch-or": "hobot-2023",
+          "orch-or|iit": "khan-2024",
           "iit|gwt": "dellert-2025"
         },
         "testable_too_little_tested": [
-          "rpt",
           "ast",
           "sensorimotor",
-          "orch-or"
+          "rpt"
         ],
         "not_yet_defined_sharply_enough": [
-          "damasio",
           "sh",
-          "seth"
+          "seth",
+          "damasio"
         ]
       },
       "why": "The first wording of ranking rule 2 did not say whether the prediction must separate the theory from a rival. John ruled on 2026-11-20 ('Yes, must separate') that it must; the main result follows the ruling. This is the superseded literal reading, kept for comparison."

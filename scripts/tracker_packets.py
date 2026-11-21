@@ -84,6 +84,24 @@ COMMITMENT_RULE_D = (
     "\"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}."
 )
 
+# Testability packets built after John amended rule C (2026-11-21, "Yes, flip it") ask the new
+# question. The pilot's 21 testability packets keep the wording they were sent with.
+TESTABILITY_RULE_C2 = (
+    "You are one of two independent readers for a public record that scores theories of "
+    "consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a "
+    "result, stated or plainly implied in the wording, that would count against it, and that a "
+    "study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the "
+    "proponents of a rival theory on the list, as given in the material, predict the same "
+    "observable result? The rule: a prediction separates the theory from its rivals UNLESS a "
+    "rival's own published source predicts the same thing. A rival's silence means the prediction "
+    "is the theory's own, so it separates. Your own knowledge of a rival does not count either way; "
+    "judge only from the rival passages given. Where a rival's passage predicts something different, "
+    "the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, "
+    "\"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, "
+    "\"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, "
+    "\"unsure_why\": \"...\"}."
+)
+
 FORBIDDEN_KEYS = {"replaces", "reading", "verdict", "reason", "unsure", "unsure_why", "could_fail", "separates", "note", "judgement"}
 
 
@@ -127,7 +145,9 @@ def build(pending=False):
             "kind": j["kind"],
             # Ruling D's wording for every commitment packet built after it (stage 3, --pending),
             # and for the pilot's re-put rows; the pilot's first 14 keep the wording they were sent with.
-            "instructions": COMMITMENT_RULE_D if (j["kind"] == "commitment" and (j.get("replaces") or pending)) else INSTRUCTIONS[j["kind"]],
+            "instructions": (COMMITMENT_RULE_D if (j["kind"] == "commitment" and (j.get("replaces") or pending))
+                             else TESTABILITY_RULE_C2 if (j["kind"] == "testability" and pending)
+                             else INSTRUCTIONS[j["kind"]]),
             "theory": theory_names[p["theory"]],
             "core_claim": {"quote": c["quote"], "source": cite(c["source"])},
             "prediction": {
@@ -144,6 +164,11 @@ def build(pending=False):
                 {"rival": rivals[s["theory"]], "statement": s["how"], "source": cite(s["source"])}
                 for s in p.get("separates_from", [])
             ]
+            if pending:
+                packet["what_the_sources_say_rivals_predict_the_same"] = [
+                    {"rival": rivals[s["theory"]], "statement": s["how"], "source": cite(s["source"])}
+                    for s in p.get("shares_with", [])
+                ]
             packet["other_statements_of_the_prediction"] = [
                 {"passage": a["passage"], "source": cite(a["source"])} for a in p.get("also_stated", [])
             ]

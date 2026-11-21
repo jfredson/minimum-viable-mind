@@ -1,7 +1,7 @@
 {
   "packet_id": "tst-dam-ai",
   "kind": "testability",
-  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES IT SEPARATE the theory from a rival: does at least one theory on the list of rivals predict something different (not merely stay silent)? If yes, name the rival or rivals, and say whether your view of the rival comes from the material given or from your own knowledge. Answer in JSON: {\"could_fail\": true|false, \"separates\": true|false, \"separates_from\": [ids], \"rival_view_from\": \"material\"|\"own knowledge\"|\"both\"|\"none\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
   "theory": "Damasio's feeling-based theory",
   "core_claim": {
     "quote": "Finally, we outline a mechanism for the generation of feelings based on a two-way interaction between interoceptive components of the nervous system and a particular set of nonneural components of the organism's interior, namely, viscera and circulating chemical molecules involved in their operations.",
@@ -39,6 +39,7 @@
     "sh": "The Sentient Horizons account"
   },
   "what_the_sources_say_about_rivals": [],
+  "what_the_sources_say_rivals_predict_the_same": [],
   "other_statements_of_the_prediction": [],
   "this_reading_is": "the second reading"
 }
