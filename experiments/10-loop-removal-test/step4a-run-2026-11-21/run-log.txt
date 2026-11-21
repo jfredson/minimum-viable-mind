@@ -1,0 +1,42 @@
+[transformers] Unknown quantization type, got modelopt - supported types are: ['awq', 'bitsandbytes_4bit', 'bitsandbytes_8bit', 'gptq', 'aqlm', 'quanto', 'quark', 'fouroversix', 'fp_quant', 'eetq', 'higgs', 'hqq', 'compressed-tensors', 'fbgemm_fp8', 'torchao', 'bitnet', 'vptq', 'spqr', 'fp8', 'gguf', 'nvfp4', 'mxfp8', 'auto-round', 'mxfp4', 'metal', 'sinq', 'gemma']. Hence, we will skip the quantization. To remove the warning, you can delete the quantization_config attribute in config.json
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+{
+ "load": {
+  "class": "AutoModelForImageTextToText",
+  "dtype_keyword": "dtype",
+  "dtype": "bfloat16",
+  "seconds": 10.1,
+  "loop_num_passes": 3,
+  "n_loop_layers": 12,
+  "loop_layer_index_start": 6,
+  "gpu_memory_allocated_gb": 49.21,
+  "config_model_type": "inkling2_loop"
+ },
+ "floor": {
+  "max_abs_logprob_diff": 0.0,
+  "items": 280,
+  "tolerance": 0.01
+ },
+ "identity": {
+  "max_abs_logprob_diff": 0.0,
+  "tolerance": 0.01,
+  "pass": true,
+  "passes_recorded": [
+   2,
+   3
+  ]
+ },
+ "bypass": {
+  "max_abs_logprob_diff": 0.0,
+  "tolerance": 0.01,
+  "pass": true
+ },
+ "peak_gpu_memory_gb": 50.86
+}
+---pip---
+accelerate==1.16.0
+numpy==2.5.5
+safetensors==0.8.0
+tokenizers==0.23.3
+torch==2.9.1+cu128

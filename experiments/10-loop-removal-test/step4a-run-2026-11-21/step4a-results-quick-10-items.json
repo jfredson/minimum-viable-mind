@@ -1,0 +1,173 @@
+{
+ "started": "2026-11-21T22:38:18+0000",
+ "phases": [
+  "env",
+  "load",
+  "opening",
+  "floor",
+  "identity",
+  "bypass",
+  "baseline"
+ ],
+ "env": {
+  "python": "3.12.3",
+  "torch": "2.9.1+cu128",
+  "transformers": "5.24.0.dev0",
+  "cuda": "12.8",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "gpu_memory_gb": 95.0
+ },
+ "load": {
+  "class": "AutoModelForImageTextToText",
+  "dtype_keyword": "dtype",
+  "dtype": "bfloat16",
+  "seconds": 10.0,
+  "loop_num_passes": 3,
+  "n_loop_layers": 12,
+  "loop_layer_index_start": 6,
+  "gpu_memory_allocated_gb": 49.21,
+  "config_model_type": "inkling2_loop"
+ },
+ "opening": {
+  "assumed_opening_ids": [
+   200001,
+   200004
+  ],
+  "samples": [
+   {
+    "effort": "none",
+    "item": "A-0000",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u229b b means a plus"
+   },
+   {
+    "effort": "none",
+    "item": "A-0001",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u2295 b means a times"
+   },
+   {
+    "effort": "none",
+    "item": "A-0002",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u2297 b means a plus"
+   },
+   {
+    "effort": "default",
+    "item": "A-0000",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u229b b means a plus"
+   },
+   {
+    "effort": "default",
+    "item": "A-0001",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u2295 b means a times"
+   },
+   {
+    "effort": "default",
+    "item": "A-0002",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u2297 b means a plus"
+   }
+  ],
+  "pilot_prompt_ends_with_assumed_opening": true
+ },
+ "timing_seconds_per_sweep": 2.3,
+ "floor": {
+  "max_abs_logprob_diff": 0.0,
+  "items": 10,
+  "tolerance": 0.01
+ },
+ "identity": {
+  "max_abs_logprob_diff": 0.0,
+  "tolerance": 0.01,
+  "pass": true,
+  "passes_recorded": [
+   2,
+   3
+  ]
+ },
+ "bypass": {
+  "max_abs_logprob_diff": 0.0,
+  "tolerance": 0.01,
+  "pass": true
+ },
+ "baseline_accuracy_descriptive": {
+  "1": {
+   "op+cap:P": 0.4,
+   "op+cap:R": 1.0
+  },
+  "2": {
+   "op+cap:P": 0.2,
+   "op+cap:R": 0.6
+  },
+  "3": {
+   "op+cap:P": 0.4,
+   "op+cap:R": 1.0
+  }
+ },
+ "baseline_note": "Descriptive only, on pilot items: no outcome is read, and no threshold is set from these numbers.",
+ "finished": "2026-11-21T22:39:07+0000",
+ "peak_gpu_memory_gb": 50.86
+}

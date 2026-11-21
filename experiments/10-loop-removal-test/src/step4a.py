@@ -151,11 +151,16 @@ def main():
     cfg = AutoConfig.from_pretrained(MODEL_ID, revision=MODEL_REVISION)
     model = None
     for cls_name in ("AutoModelForImageTextToText", "AutoModelForCausalLM"):
+        # Found on the machine, 2026-11-21: the checkpoint's 4-bit storage is labelled "modelopt", which transformers
+        # at the pinned commit does not recognise; it skips the quantizer and unpacks the weights. With dtype "auto"
+        # they came out at 32-bit (about 90 GB, out of memory on 96 GB). So the weights are unpacked to 16-bit
+        # (bfloat16, about 53 GB). This is not the model's native 4-bit precision; the findings record it.
         for dtype_kw in ("dtype", "torch_dtype"):  # the keyword was renamed in recent transformers
             try:
                 cls = getattr(transformers, cls_name)
-                model = cls.from_pretrained(MODEL_ID, revision=MODEL_REVISION, device_map="cuda", **{dtype_kw: "auto"})
-                R["load"] = {"class": cls_name, "dtype_keyword": dtype_kw}
+                model = cls.from_pretrained(MODEL_ID, revision=MODEL_REVISION, device_map="cuda",
+                                            **{dtype_kw: torch.bfloat16})
+                R["load"] = {"class": cls_name, "dtype_keyword": dtype_kw, "dtype": "bfloat16"}
                 break
             except Exception as e:  # record and try the next form
                 R.setdefault("load_errors", []).append(f"{cls_name}/{dtype_kw}: {type(e).__name__}: {e}"[:2000])
@@ -194,7 +199,8 @@ def main():
             for p in sample:
                 msgs = [{"role": "user", "content": p["R"]["text"]}]
                 kw = {"reasoning_effort": effort} if effort else {}
-                ids = tok.apply_chat_template(msgs, add_generation_prompt=True, tokenize=True, **kw)
+                rendered = tok.apply_chat_template(msgs, add_generation_prompt=True, tokenize=False, **kw)
+                ids = tok.encode(rendered, add_special_tokens=False)  # transformers 5 returns an Encoding when tokenize=True
                 with torch.no_grad():
                     gen = model.generate(torch.tensor([ids], device=model.device), max_new_tokens=24, do_sample=False)
                 new = gen[0, len(ids):].tolist()
