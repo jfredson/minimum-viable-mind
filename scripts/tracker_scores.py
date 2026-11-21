@@ -379,7 +379,12 @@ def compute(d, mode, flip_study=None, bar_reading="sharp"):
             for p in tpreds:
                 if p["core_claim"] != c["id"] or not separates(p["id"]):
                     continue
-                best = max(best, 1.0 if p["stated_by"] == "proponent" else 0.5)
+                # Half score (John, 2026-11-21, "Add the half-score line"): a prediction only the
+                # site inferred, one whose supporters wrote in advance that a null result should
+                # not count against it (null_excused), or one read "only partly" able to fail.
+                half = (p["stated_by"] != "proponent" or "null_excused" in p
+                        or bool(tst.get(p["id"]) and tst[p["id"]].get("could_fail_partly")))
+                best = max(best, 0.5 if half else 1.0)
             per_claim[c["id"]] = best
         testability = 100 * sum(per_claim.values()) / len(tclaims)
 
@@ -467,12 +472,10 @@ def rank(d, mode, bar_reading="sharp"):
         if not survives:
             shared.add((a, b))
             reversals[f"{a}|{b}"] = breaker
-    ranks = {}
-    r = 0
-    for i, t in enumerate(ranked):
-        if i == 0 or (ranked[i - 1], t) not in shared:
-            r = i + 1
-        ranks[t] = r
+    # "Yes, pairs only" (John, 2026-11-21): ties are between neighbours only and the ranking shows
+    # no rank numbers. "rank" is the plain position in the order, never shared; the pairs too close
+    # to separate are listed under shared_because_one_study_could_swap_them.
+    ranks = {t: i + 1 for i, t in enumerate(ranked)}
     second = sorted([t for t, v in base.items() if v["group"] == "testable, too little tested to rank"], key=lambda t: -base[t]["testability"])
     third = sorted([t for t, v in base.items() if v["group"] == "not yet defined sharply enough to rank"], key=lambda t: -base[t]["testability"])
     return base, counted, status, {"ranked": [{"theory": t, "rank": ranks[t]} for t in ranked], "shared_because_one_study_could_swap_them": reversals, "testable_too_little_tested": second, "not_yet_defined_sharply_enough": third}
@@ -579,10 +582,10 @@ def main(argv=None):
     print()
     print("Ranking:")
     for r in ranking["ranked"]:
-        print(f"  {r['rank']}. {base[r['theory']]['name']}")
+        print(f"  {base[r['theory']]['name']}")
     for k, by in ranking["shared_because_one_study_could_swap_them"].items():
         a_, b_ = k.split("|")
-        print(f"  {a_} and {b_} share a rank: reversing {by} alone would swap or tie them")
+        print(f"  {a_} and {b_} are too close to separate: reversing {by} alone would swap or tie them")
     if ranking["testable_too_little_tested"]:
         print("Testable, too little tested to rank: " + ", ".join(base[t]["name"] for t in ranking["testable_too_little_tested"]))
     if ranking["not_yet_defined_sharply_enough"]:

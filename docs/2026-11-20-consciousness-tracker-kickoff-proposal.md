@@ -110,6 +110,19 @@ before any theory is scored, and shown with its count, so that a reader can see 
 - **The score.** A core claim scores 1 if a proponent states at least one prediction for it that
   could fail and that separates the theory from a rival; 0.5 if only the site has inferred one; 0 if
   none. Testability is the average across core claims, times 100.
+- *(ruled, 2026-11-21, John: "Add the half-score line (Recommended)"; wording the master session's.)*
+  **A hedged prediction scores half.** A prediction whose supporters wrote, before the study, that a
+  null result should not count against it scores 0.5 on testability, and the ranking bar treats it
+  as it treats a prediction only the site has inferred. Readers may answer "only partly" to "could it
+  fail", and a prediction so read is treated the same way. (Raised by the stage 3 scoring: higher-order
+  theories' two prefrontal predictions carry such a caveat, from their 2019 and 2020 statements.)
+- *(ruled, 2026-11-21, John: "Keep prior caveats (Recommended)"; wording the master session's.)* **A
+  caveat counts only if published before the study**, and the rule applies evenly to every theory.
+  *(ruled, 2026-11-21, John: "Latest statement counts (Recommended)".)* **The supporters' latest
+  statement before a study governs**, so a later, firmer statement cancels an earlier caveat. Applied:
+  global workspace theory's 2013 caveat (a task-irrelevant stimulus "may correlate solely with a
+  transient posterior negativity") was dropped by its proponents' 2019 registration and 2020 review
+  before the Dellert study, so Dellert stays "against".
 
 **Support: how well the science backs it.** Across the theory's tested predictions that separate
 it from a rival, each study's outcome counts +1 for, −1 against and 0 for mixed, multiplied by the
@@ -207,6 +220,10 @@ session's recommendations; the wording is the session's.
    on most theories may come out tied, so the first screen may look undecided for a while. That is
    the honest result, and it matches the headline, which says how little of the field has been
    tested.
+   *(ruled, 2026-11-21, John: "Yes, pairs only"; recorded here by the stage 3 scoring session as
+   relayed by the second master session.)* Ties are between neighbours only, and the ranking shows
+   no rank numbers: two neighbours that reversing one study could swap are said, in words, to be too
+   close to separate. A tie does not chain down the list.
 6. *(ruled)* **A theory the evidence goes against stays in the ranking**, in its place by score,
    with the note "the evidence so far leans against it". Removing it would hide what the site
    exists to show.

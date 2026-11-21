@@ -73,7 +73,9 @@ def main():
              "cost_usd": raw["cost_usd"], "run": "stage3"}
         if j["kind"] == "testability":
             r["question"] = "C2"
-            r["could_fail"] = bool(ans.get("could_fail"))
+            cf = ans.get("could_fail")
+            r["could_fail"] = cf is True or cf == "partly"
+            r["could_fail_partly"] = cf == "partly"  # "only partly" (John, 2026-11-21): scores half
             r["separates"] = bool(ans.get("separates"))
             r["separates_from"] = [str(x) for x in ans.get("separates_from", []) or []]
             r["rival_predicts_same"] = bool(ans.get("rival_predicts_same", False))

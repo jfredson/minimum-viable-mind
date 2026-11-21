@@ -375,6 +375,7 @@ theory = "hot"
 core_claim = "hot-c4"
 statement = "Consciously perceiving something, compared with the same stimulus not perceived, involves prefrontal cortex (with parietal and insular cortex) acting on the sensory representation, also when the person does not have to report the stimulus."
 stated_by = "proponent"
+null_excused = { by = "brown-lau-ledoux-2019", why = "The proponents' 2019 statement says a null result from a coarse method should not be generalised (and Fleming 2020 that null lesion results should not surprise); written before every study judged against this prediction. Scores 0.5 on testability (John, 2026-11-21, 'Add the half-score line')." }
 first_stated = { source = "ledoux-brown-2017", date = "2017-02-15", passage = "our conclusion is that introspectively accessed states, which we view as phenomenally conscious experiences, are best described in terms of HORs that depend on the GNC, cortical circuits involving regions of the lateral and medial prefrontal cortex, posterior parietal cortex, and insular cortex (Fig. 2).", location = "section 'First-Order vs. Higher-Order Theories of Consciousness', last paragraph (HORs: higher-order representations; GNC: general networks of cognition)" }
 also_stated = [
   { source = "ledoux-brown-2017", passage = "Consciousness involves complex interactions between circuits in the GNC and sensory cortex, as well as other areas (especially those involved in memory)." },
@@ -395,6 +396,7 @@ theory = "hot"
 core_claim = "hot-c4"
 statement = "Disrupting prefrontal (or prefrontal and parietal) cortex weakens conscious awareness of visual stimuli, as shown in how people rate their awareness and how well those ratings track their accuracy, while their ability to discriminate the stimuli can stay the same."
 stated_by = "proponent"
+null_excused = { by = "brown-lau-ledoux-2019", why = "The proponents' 2019 statement says a null result from a coarse method should not be generalised (and Fleming 2020 that null lesion results should not surprise); written before every study judged against this prediction. Scores 0.5 on testability (John, 2026-11-21, 'Add the half-score line')." }
 first_stated = { source = "ledoux-brown-2017", date = "2017-02-15", passage = "Although the imaging studies in healthy people and blindsight patients suggest correlates of consciousness, other studies show that disruption of activity in GNC areas, especially in the prefrontal or parietal cortex, impairs conscious awareness of visual stimuli (78–80).", location = "section 'Neural Correlates of Reportable Conscious Experiences', first paragraph" }
 also_stated = [
   { source = "brown-lau-ledoux-2019", passage = "In part this was due to an empirical observation: when neural activity in prefrontal cortex, which is known to be important for conscious perception [46], is manipulated with transcranial magnetic stimulation (TMS), explicit metacognition is also affected [47-49]." },

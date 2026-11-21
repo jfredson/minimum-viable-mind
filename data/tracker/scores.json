@@ -153,12 +153,12 @@
         "ruled": 4
       },
       "one_reader_only": false,
-      "testability": 80.0,
+      "testability": 70.0,
       "testability_by_claim": {
         "hot-c1": 1.0,
         "hot-c2": 0.0,
         "hot-c3": 1.0,
-        "hot-c4": 1.0,
+        "hot-c4": 0.5,
         "hot-c5": 1.0
       },
       "past_bar": true,
@@ -464,7 +464,7 @@
       },
       {
         "theory": "gwt",
-        "rank": 2
+        "rank": 3
       }
     ],
     "shared_because_one_study_could_swap_them": {
@@ -1318,7 +1318,7 @@
           },
           {
             "theory": "gwt",
-            "rank": 2
+            "rank": 3
           }
         ],
         "shared_because_one_study_could_swap_them": {
