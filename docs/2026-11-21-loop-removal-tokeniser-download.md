@@ -24,6 +24,27 @@ They are stored outside git, in the project's ignored model cache: `.hf-cache.no
 - **Its contents.** `tokenizer.json` describes a byte-pair tokeniser with 199,998 entries and 424,413 merges, plus 60 added special tokens. Among them are the role markers `<|message_user|>`, `<|message_model|>` and `<|message_system|>`, and a marker for written reasoning, `<|content_thinking|>`.
 - **The chat format has a setting for how much the model thinks.** `chat_template.jinja` takes a `reasoning_effort` between 0.0 and 0.99, with named levels from "none" (0.0) to "max" (0.99). The default is 0.9. It writes the setting into a system message reading "Thinking effort level: ...". This bears on choice 2 of the design (no written reasoning). The setting "none", which writes "Thinking effort level: 0", is the obvious candidate. Whether the model then writes no reasoning at all can only be seen by running it, at step 4a.
 
-## What is still needed before the step-3 checks can run
+## The libraries, installed (2026-11-21)
 
-Reading these files properly needs two Python libraries that are not installed on this Mac: `tokenizers`, to split text into the model's tokens, and `jinja2`, to render the chat format. Both are standard, widely used packages from the Python package index. Installing them is a download beyond the files John approved, so it goes to him first. Until then, no token count in the design's checks has been made with the real tokeniser.
+On John's go of the same day ("Yes, install them"), `tokenizers` 0.23.3 and `jinja2` 3.1.6 were installed from the Python package index into a project-only environment, `.venv/`, which git ignores, under Python 3.14.5. Nothing was installed system-wide.
+
+**A first check, run once, not a measurement of the design.** The tokeniser was loaded from `tokenizer.json` alone. The chat format was rendered in Jinja's sandboxed environment, with the `{% generation %}` tag used by Hugging Face templates treated as a plain block. The script that ran it is outside git.
+
+Token counts with the real tokeniser, for questions written in the style of the design's examples:
+
+| Question | Tokens |
+|---|---|
+| "What is the capital city of France?" | 8 |
+| "Name the capital of France." | 6 |
+| "France's capital is?" | 6 |
+| "What is 14 ◇ 17?" | 10 (the symbol ◇ is two pieces, and each number and space is its own token) |
+| "1 zibvam is 3 tovjots. How many tovjots are 4 zibvams?" | 24 (each invented word breaks into two to four pieces) |
+| "What colour is a ripe banana?" | 8 |
+
+These six questions are examples, not the design's items. Still, they agree in direction with the fourth check's finding that the invented-unit questions run far longer than capital or colour questions (RT-381), here 24 tokens against 6 to 8.
+
+The chat format, rendered for one user question with the reasoning setting "none", gives:
+
+    <|message_system|><|content_text|>Thinking effort level: 0<|end_message|><|message_user|><|content_text|>What colour is a ripe banana?<|end_message|>
+
+That is 21 tokens in all. **One thing this shows for step 4a.** The format has no switch that opens the model's reply. It ends after the user's message, so the opening of the model's turn (presumably `<|message_model|>` followed by a content marker) is left to the software that runs the model. Before the five candidates can be scored, step 4a must settle exactly which tokens open the reply, and whether the model begins with a reasoning block even at "none".
