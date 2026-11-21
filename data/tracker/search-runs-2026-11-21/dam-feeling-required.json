@@ -1,0 +1,736 @@
+{
+ "prediction": "dam-feeling-required",
+ "query": "(TITLE_ABS:interocepti* OR TITLE_ABS:\"homeostatic feeling*\" OR TITLE_ABS:\"bodily feeling*\") AND TITLE_ABS:conscious* AND (TITLE_ABS:lesion* OR TITLE_ABS:patient* OR TITLE_ABS:loss OR TITLE_ABS:deafferent*) AND SRC:MED",
+ "run_on": "2026-11-21 09:57 PST",
+ "hit_count": 66,
+ "results": [
+  {
+   "rank": 1,
+   "id": "43052692",
+   "source": "MED",
+   "pmid": "43052692",
+   "pmcid": null,
+   "doi": "10.1080/02699052.2026.2762482",
+   "first_publication_date": "2026-11-18",
+   "title": "Continuous multimodal neuromonitoring of zolpidem-induced paradoxical awakening in chronic incomplete locked-in syndrome: ventral pontine deafferentation, cross-modal complementarity, and cardio-cortical dissociation.",
+   "authors": "Machado C, Rodriguez-Rojas R, Sanchez JJ, Mualem R.",
+   "journal": "Brain injury",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveZolpidem paradoxically restores responsiveness in select disorders of consciousness (DOC) cases, yet real-time electrophysiological and autonomic dynamics across the pharmacodynamic trajectory remain uncharacterized in incomplete locked-in syndrome (LIS).MethodsA 52.18-min multimodal recording tracked baseline, enteral zolpidem administration (min 22.39), absorption, corticomotor peak, and plateau in a 42-year-old male with chronic LIS from pontine infarction. Analytics included continuous qEEG (0.5-70 Hz), microstates (Classes A-D), beta-band weighted Phase Lag Index (wPLI) connectomics, heart rate variability (HRV), and heartbeat‑evoked responses (HER).ResultsBaseline deafferentation showed severe theta slowing (48.36 ± 4.14%) and phase hypersynchrony. Following enteral administration, the following changes were observed: 1. viscero-cortical dissociation: Infusion triggered an immediate HRV VHF surge (>80%) while the cortex remained quiescent for 14.1 min. 2. Corticomotor consolidation: Between min 36.5-46.0, relative beta surged (+266.89%) while theta dropped (-30.74%). Microstates accelerated into frontocentral Classes C/D, and connectomics demonstrated long-range edge pruning with selective frontocentral recruitment (wPLI > 0.40). 3. Interoceptive gating: During peak beta emergence, cardio-cortical communication collapsed; evoked global variance profile dropped > 60% (1.03 to 0.22 µV) alongside frontocentral dipole suppression.ConclusionsParadoxical awakening is a coordinated multisystem process. Zolpidem disinhibits spared corticomotor networks while filtering ascending visceral baro-afferents, enabling an outward-facing behavioral state decoupled from internal interoception."
+  },
+  {
+   "rank": 2,
+   "id": "42664575",
+   "source": "MED",
+   "pmid": "42664575",
+   "pmcid": null,
+   "doi": "10.1016/j.explore.2026.103512",
+   "first_publication_date": "2026-08-23",
+   "title": "A testable theoretical framework linking cranial osteopathic still-point induction to altered consciousness via convergent autonomic, default-mode, and interoceptive mechanisms.",
+   "authors": "Nikam S, Narayan NS.",
+   "journal": "Explore (New York, N.Y.)",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Patients undergoing Still Point induction via compression of the fourth ventricle (CV4) in cranial osteopathy commonly report a distinctive quality of profound mental quiet, described as qualitatively different from ordinary relaxation. Cranial osteopathy, however, entered a prolonged crisis of scientific credibility once controlled work indicated that its founding construct, the Primary Respiratory Mechanism (PRM), could not be reliably palpated and that its proposed anatomical substrate, an inherent motility of the nervous system, palpable cranial bone motion, and a synchronised cranio-sacral rhythm, was not supported as originally formulated. In the absence of a defensible mechanism, the field has tended either toward vitalistic language or toward the untestable assertion that \"something\" therapeutic occurs. This paper does not defend the PRM. It proposes, instead, a modern and explicitly falsifiable theoretical framework: that CV4, treated as a standardisable manual procedure independent of the PRM construct, may transiently reconfigure a specific and measurable component of conscious experience, self-referential mental content, together with heightened interoceptive salience, through a convergent physiological cascade rather than through non-specific relaxation alone. We are explicit that \"consciousness\" here does not denote the global level or state of wakefulness, a brainstem-dependent arousal dimension, but a specific content dimension: the balance of self-referential versus present-moment, body-centred processing. The framework is assembled from convergent but indirect evidence drawn from autonomic, default-mode, interoceptive, and brain-state-clearance research; it therefore constitutes a chain of biological plausibility, not a demonstrated mechanism, and we say so throughout. Each proposed link is stated as a falsifiable prediction tested against a credible sham-touch comparator. We stress that the Default Mode Network (DMN) is used as a marker of one component of conscious content and is explicitly not treated as a proxy for consciousness itself. A dedicated section enumerates the non-specific alternatives, placebo and expectancy, generic effects of attentive touch, and demand characteristics, that any confirmatory study must exclude, and a further section concedes the framework's principal weakness: it lacks a firmly established grounding mechanism and, if not carefully specified and tested, risks relocating rather than resolving cranial osteopathy's long-standing problem of rational support. We set out what confirmation and what disconfirmation would each require the field to change in research, education, and integration into conventional care."
+  },
+  {
+   "rank": 3,
+   "id": "42901374",
+   "source": "MED",
+   "pmid": "42901374",
+   "pmcid": null,
+   "doi": "10.1016/j.chest.2026.10.015",
+   "first_publication_date": "2026-10-20",
+   "title": "Dyspnea during resting breathing and carbon dioxide rebreathing in adult patients with congenital central hypoventilation syndrome.",
+   "authors": "Bret M, Laveneziana P, Niérat MC, Lavault S, Patout M, Zaien I, Teulier M, Bianquis C, Straus C, Morélot-Panzini C, Similowski T.",
+   "journal": "Chest",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundCongenital central hypoventilation syndrome (CCHS) is an ultra-rare genetic disorder caused by PHOX2B mutations. Patients lack central CO2 chemosensitivity and require ventilatory support during sleep. Children with CCHS have been reported to lack CO2-induced air hunger, but respiratory sensations and dyspnea have not been characterized in adults.Research questionDo genetically characterized adult CCHS patients experience respiratory sensations and dyspnea during unassisted resting breathing and CO2 rebreathing, and along which dimensions?Study design and methodsThis was a prospective controlled observational study conducted on a convenience sample derived from a national cohort of an ultrarare disease. Thirteen adult CCHS patients carrying PHOX2B mutations underwent Multidimensional Dyspnea Profile (MDP) assessment during unassisted resting breathing and at the end of CO2 rebreathing. Healthy controls were studied under the same conditions.ResultsBefore the study, none of the patients had spontaneously reported dyspnea or bothersome respiratory sensations. When prompted with the MDP during resting breathing, 9/13 patients described breathing unpleasantness (non-zero MDP-A1) versus 0/18 controls (p InterpretationAdult CCHS patients can experience conscious unpleasant breathing awareness at rest and retain a perceptual response to CO2 despite abolished or nearly abolished central chemosensitivity. These findings suggest respiratory interoceptive pathways beyond canonical brainstem chemosensitive circuits and support active multidimensional assessment of dyspnea in adult CCHS patients."
+  },
+  {
+   "rank": 4,
+   "id": "41823406",
+   "source": "MED",
+   "pmid": "41823406",
+   "pmcid": null,
+   "doi": "10.1093/brain/awag101",
+   "first_publication_date": "2026-10-01",
+   "title": "Precision dynamics of predictive coding in functional neurological disorder.",
+   "authors": "Lyndon S.",
+   "journal": "Brain : a journal of neurology",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Functional neurological disorder (FND) presents disabling symptoms that fluctuate, migrate across systems and yet routinely show preserved structural integrity-features that can frustrate diagnosis and patient education. Crucially, these symptoms are genuine and reflect altered brain regulation across multiple systems rather than tissue damage or conscious control. This paper offers a clinically usable account of these puzzles by reframing FND as a disorder of precision control within predictive coding. The brain's confidence (precision) in its own predictions is modelled as a dynamic quantity that can surge with arousal, settle back towards baseline and slowly recalibrate over longer periods. Placing this mechanism in a four-level hierarchy (affective, interoceptive, proprioceptive, spinal) shows how arousal can temporarily make an unhelpful expectation dominate, suppress corrective feedback, and produce motor, sensory, cognitive or visceral symptoms-often in combination. The same dynamics explain rule-in positive signs such as distractibility, entrainment and give-way weakness, and clarify the lived experience of reduced agency without implying wilfulness or malingering. For clinicians, the framework provides an intuitive way to explain symptoms to patients ('a temporary gain miscalibration that overweights predictions and underweights sensory feedback'), and to justify why physiotherapy (amplifying proprioceptive feedback), psychotherapy (reducing arousal) and mindfulness or biofeedback (raising the effective threshold for arousal-driven 'gain spikes') can all help by recalibrating that weighting. The framework also yields concrete, falsifiable tests, linking bedside observation to measurable biomarkers and offering ways to refine it further. By centring dynamic precision, the account unifies diagnosis, communication and treatment planning, and provides a mechanistic foundation for precision-guided care in FND."
+  },
+  {
+   "rank": 5,
+   "id": "42361935",
+   "source": "MED",
+   "pmid": "42361935",
+   "pmcid": null,
+   "doi": "10.1016/j.neubiorev.2026.106833",
+   "first_publication_date": "2026-06-26",
+   "title": "Systematic review of tactile-based interventions combined with multisensory stimulation protocols in the rehabilitation of patients with disorders of consciousness.",
+   "authors": "Susinna C, Lo Buono V, Marafioti G, Anselmo A, Culicetto L, Quartarone A, McGlone F, Cazzato V.",
+   "journal": "Neuroscience and biobehavioral reviews",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Systematic Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Social touch interventions have the potential to modulate psychological and physiological stress in intensive care settings. In individuals with disorders of consciousness (DOC), tactile stimulation combined with other sensory modalities, (e.g., visual, auditory, olfactory, gustatory, and proprioceptive), has been proposed to enhance arousal, behavioural responsiveness, and recovery, while mitigating sensory deprivation. However, tactile stimulation encompasses heterogeneous forms of touch and the extent to which clinical benefits can be attributed to specific tactile qualities remains unclear. Here, we conducted a systematic review following PRISMA guidelines to examine the effects of tactile-based multisensory stimulation protocols on behavioural and physiological indicators of consciousness in adults with DOC. Overall, the reviewed studies suggest that tactile stimulation, particularly when embedded within multisensory and emotionally salient contexts, can elicit measurable changes in consciousness-related outcomes. However, substantial methodological heterogeneity, including variability in stimulation protocols, outcome measures, control conditions, and patient characteristics, limits the strength of causal inferences and clinical generalisability. Drawing on social touch and interoception research, we discuss how interpersonal touch may engage body-referential, autonomic, and affective processes that are plausibly preserved in DOC. Specifically, we outline a theory-driven framework in which social touch, including but not limited to stimulation engaging C-tactile (CT) afferent pathways, is proposed as a promising avenue for future mechanistically informed interventions. We emphasise that this framework is forward-looking and requires direct empirical testing. Future studies should adopt standardised, well-controlled designs to disentangle tactile-specific effects, clarify underlying mechanisms, and optimise the therapeutic use of touch in DOC rehabilitation."
+  },
+  {
+   "rank": 6,
+   "id": "42249914",
+   "source": "MED",
+   "pmid": "42249914",
+   "pmcid": "PMC13687247",
+   "doi": "10.1007/s00702-026-03194-0",
+   "first_publication_date": "2026-06-06",
+   "title": "Exploring the relationship between interoception and mental body representation in Parkinson's disease.",
+   "authors": "D'Iorio A, Alves C, Pisano F, Di Benedetto GL, Gaita M, Vitale C, Amboni M, Raimo S, Palermo L, Santangelo G.",
+   "journal": "Journal of neural transmission (Vienna, Austria : 1996)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Interoception refers to the process through which the nervous system detects, interprets, and integrates internal bodily signals, forming a dynamic representation of the body's internal state at both conscious and unconscious levels. It is commonly conceptualized along three dimensions: interoceptive accuracy, interoceptive awareness and interoceptive sensitivity. Mental body representation (MBR) is a multifaceted cognitive construct encompassing structural, spatial, lexical, and semantic components of the body. A widely accepted taxonomy distinguishes between two types of MBR: action-oriented representations and non-action-oriented representations. To date, only a few studies have examined interoception and MBR in Parkinson's disease (PD), often yielding inconsistent findings, and no study has directly investigated the relationship between these two domains in this clinical population. This study therefore aims to (1) further characterize interoceptive and MBR profiles in PD and (2) explore their potential association. Twenty-seven patients with PD and twenty-four healthy controls completed a neuropsychological battery assessing global cognitive functioning, interoceptive abilities, MBR, and depressive and apathetic symptoms. Mann-Whitney analyses revealed significantly poorer MBR performance in patients compared with healthy controls. Spearman correlations showed significant associations between action-oriented MBR and global cognitive functioning as measured by the Parkinson's Disease Cognitive Rating Scale (PD-CRS). Regression analyses further demonstrated that PD-CRS performance significantly predicted action-oriented MBR abilities. These findings indicate a characteristic difficulty among individuals with PD in mentally representing body features. Moreover, results suggest that both cortical and subcortical cognitive functions contribute to supporting action-oriented MBR."
+  },
+  {
+   "rank": 7,
+   "id": "42542835",
+   "source": "MED",
+   "pmid": "42542835",
+   "pmcid": "PMC13428455",
+   "doi": "10.7759/cureus.111944",
+   "first_publication_date": "2026-07-02",
+   "title": "Neuro-Emotional Technique and Memory Reconsolidation: A Narrative Review and Conceptual Framework for Somatic-Emotional Updating.",
+   "authors": "Day RR.",
+   "journal": "Cureus",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Neuro-emotional technique (NET) is a structured mind-body intervention used by certified practitioners to identify and address stress-related emotional patterns associated with physiological and behavioural responses. Published NET research has described changes in psychological symptoms, pain, quality of life, brain physiology, inflammatory markers, and blood chemistry, yet the mechanisms underlying these effects remain incompletely defined. This narrative review and conceptual synthesis propose that memory reconsolidation theory and predictive processing provide complementary frameworks for understanding how NET may influence stress-linked somatic-emotional patterns. Reconsolidation research suggests that previously consolidated emotional memories may become temporarily labile following reactivation if a sufficient prediction error occurs, permitting updating before restabilisation. Predictive processing models propose that emotional learning may be expressed as embodied predictions about threat, safety, self, action, and physiological demand, rather than solely as conscious narrative recall. Taken together, these frameworks suggest that the clinically relevant target of NET may be a body-brain prediction pattern rather than a discrete memory or a fixed physiological state. This article introduces somatic-emotional updating to describe the proposed modification of emotionally encoded physiological prediction patterns through concurrent emotional activation and contradictory embodied experience. Within this model, NET may create clinical conditions in which a stress-linked somatic-emotional pattern is reactivated while the patient simultaneously experiences a sense of present-time safety, interoceptive attention, practitioner support, and non-threatening somatosensory input. This combination is proposed to constitute embodied mismatch, the clinical expression of prediction error, which may provide conditions consistent with reconsolidation-relevant updating. The model does not propose that NET has been proven to induce memory reconsolidation. Rather, it identifies structural parallels between the NET clinical sequence and reconsolidation phases and proposes somatic-emotional updating as a theoretically coherent and falsifiable hypothesis for future research. Proposed research priorities include measuring durable changes in target emotional reactivity, autonomic regulation, biological stress markers, and adaptive function following NET, as well as comparing full NET with modified protocols that isolate key procedural elements."
+  },
+  {
+   "rank": 8,
+   "id": "42525758",
+   "source": "MED",
+   "pmid": "42525758",
+   "pmcid": "PMC13418533",
+   "doi": "10.1126/sciadv.aeb3326",
+   "first_publication_date": "2026-07-29",
+   "title": "Insular routing to orbitofrontal cortex enables breathing awareness.",
+   "authors": "Assi JY, Bickel S, Greenberg HE, Mehta AD, Similowski T, Herrero JL.",
+   "journal": "Science advances",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "How does the human brain detect and respond to disruptions in breathing? While animal studies have advanced our understanding of respiratory control, breathing distress in humans remains difficult to treat. It often arises not only from pulmonary lesions or brainstem dysfunction but also from how higher brain regions interpret breathing signals shaped by emotion and experience. We recorded intracranial cortical activity in neurosurgical patients during an interoceptive task involving transient breathing challenges. Conscious detection of these disruptions was predicted by early responses in the anterior insula, which routed signals to orbitofrontal and premotor cortices for appraisal and compensation. These cortical regions preferentially encoded inspiratory effort or airflow, revealing signal-specific processing that echoes functional segregation in brainstem centers. The present findings identify a dynamic insular-frontal circuit for sensing and adapting to respiratory challenges, offering insight into the neural basis of breathing awareness and its disruption in disease."
+  },
+  {
+   "rank": 9,
+   "id": "41851618",
+   "source": "MED",
+   "pmid": "41851618",
+   "pmcid": "PMC13097844",
+   "doi": "10.1186/s10194-026-02329-8",
+   "first_publication_date": "2026-03-18",
+   "title": "Prefrontal dysregulation of interoceptive and emotional processing in episodic migraine: a task-based fMRI study.",
+   "authors": "Li Y, Liu R, Lin C, Duan C, Xiong Z, Guo Z, Li X, Liu X, Cao J, Wang Y.",
+   "journal": "The journal of headache and pain",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundMigraine is a complex sensory processing disorder marked by dysfunctions in both exteroception and interoception. The high frequency of emotional comorbidities suggests significant abnormalities in emotional processing. Persistent interoceptive abnormalities, indicated by widespread homeostatic disturbances, may be a crucial link between migraine and its associated emotional disorders. However, the specific neural mechanism underlying this altered interoception and abnormal emotional function remains under-explored. This study used task-based functional magnetic resonance imaging (fMRI) to investigate the neural mechanisms of interoceptive dysfunction and aberrant emotional processing in migraine and to examine their potential interplay.MethodsWe recruited 29 patients with episodic migraine (EMs) and 31 healthy controls (HCs). Participants underwent fMRI while performing two interoceptive attention tasks (focusing on heartbeat and breathing) and two negative emotion recall tasks (involving pain and anxiety). Statistical analyses included group-level activation mapping, between-group comparisons, generalized psychophysiological interaction (gPPI) for task-modulated functional connectivity, and correlations with clinical characteristics.ResultsMigraine patients exhibited dysfunction within the prefrontal cortex (PFC) during both interoceptive and emotional tasks. During heartbeat attention, patients showed significant hypoactivation in the right superior frontal gyrus (SFG) and reduced functional connectivity between the SFG and frontal pole (FP) compared to controls. This SFG hypoactivation was correlated with greater headache intensity. Conversely, during anxiety recall, patients displayed hyperactivation in the left medial orbitofrontal cortex (mOFC) and enhanced functional connectivity from the mOFC to the SFG. Notably, the degree of mOFC hyperactivation was negatively correlated with depression and anxiety scores.ConclusionsOur results provide experimental fMRI evidence that migraine involves abnormal interoceptive and emotional processing, with a core dysfunction localized to circuits within the prefrontal cortex. This disrupted PFC activity suggests a fundamental dysregulation in the transformation of bodily signals into conscious awareness. Furthermore, the mOFC-SFG pathway may serve as a key neural substrate mediating the interplay between these interoceptive and emotional abnormalities.Clinical trial numberNot applicable."
+  },
+  {
+   "rank": 10,
+   "id": "41432193",
+   "source": "MED",
+   "pmid": "41432193",
+   "pmcid": null,
+   "doi": "10.22365/jpsych.2025.026",
+   "first_publication_date": "2025-12-20",
+   "title": "Timing and self distortions in psychosis: Is it an insula matter?",
+   "authors": "Giotakos O.",
+   "journal": "Psychiatrike = Psychiatriki",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The concept of timing is an interesting way to understand how the body and brain construct the concept of self, but also how self-distortions arise in the case of psychosis. Analysis of temporal representations in psychosis highlights a deficit that includes both the subjective experience of the flow of time, i.e., time perception, and the ability to process temporal information inherent to any perceptual event, i.e., perceptual timing. The representation of the self is stabilized within temporal windows, and thus the self is experienced as continuous in time. Disturbance in the sense of time, in the form of a loss of temporal continuity, has been described by phenomenologists as a central subjective experience of schizophrenia. The positive symptoms of schizophrenia are associated with overestimation of interval timing, i.e., an acceleration of the 'internal clock', while dopamine neurotransmission is likely to regulate the speed of the internal clock. Moreover, findings highlight the importance of interoceptive precision as an aspect of time perception, since accuracy in time perception is related to interoceptive accuracy and vagal activity. Insula contributes significantly to the total awareness of reality. Global emotional moments and meta-representations of the conscious self are created in the anterior insula. In psychosis, the interaction between the default-mode network and the frontoparietal executive network is disrupted by aberrant salience signals from the right anterior insula. Here, we describe the role of the insula as a key hub for the recognition of major aspects of the self, in parallel with the role of interoceptive predictive coding, which reflects the contribution of the insula to the temporality of the self. Based on the above, new insights focus on the development and implementation of rehabilitation strategies that specifically target the temporal deficits observed in psychosis. New therapeutic interventions are based on sensory education and enhancing the multisensory integration of these patients."
+  },
+  {
+   "rank": 11,
+   "id": "42935715",
+   "source": "MED",
+   "pmid": "42935715",
+   "pmcid": "PMC13696265",
+   "doi": "10.3389/fnins.2026.1642963",
+   "first_publication_date": "2026-10-12",
+   "title": "Synchrony in neural and visceral systems: a bioelectric basis of consciousness.",
+   "authors": "Jerath R, Malani V.",
+   "journal": "Frontiers in neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The Default Space Theory (DST) of consciousness claims that consciousness arises from bioelectric oscillations across brain and body which become time-locked to form an internal three-dimensionalized \"default space\" which continuously simulates external reality. Within this frame, we assert that fast rhythms created corticothalamically with the thalamic reticular nucleus (TRN) can become time-locked with regions throughout the brain via nascent oscillations as well as sensory organs and viscera. This proposed time-locking may render exteroceptive and interoceptive processed information one in the same as conscious experience. We review/integrate salient neuroscientific and physiological findings that validate DST. We reveal findings across the last decoding of the theory's detailed components from corticothalamic feedback loops to lateral/inhibition dynamics, from descending efferent projections to sensory organs. We utilize high cervical cord injury (HCCI) as syndromically supporting/denying DST's postulates regarding the necessity of bodily input to consciousness. Finally, we compare/contrast theories (Global Workspace, Integrated Information Theory, Predictive Processing) with DST to reveal overlaps/distinctions within theoretical scaffolds. At its heart, the DST is an all-encompassing biological apparatus through which typical oscillations create a \"functional unity\" of consciousness. Yet developments within the DST have brought about clarity that simultaneous connected long distances (i.e., gamma oscillations aligning cortex to sensory receptors) is a theory to be born out of experimentation, not reality. There is indirect support from visual studies for retinal rhythmic activity driving thalamocortical firing in a way consistent with modulation but direct phase-locking of periphery receptors with gamma activity in the cortex is aspirational, not reality. In addition, we corrected a prior disconnection regarding motor representations: focus of outputs occurs by surround inhibition (SI) eliminating superfluous irrelevant activations, not the cortical silent period-thus when SI fails there is motor \"overflow.\" We further clarify the importance of viscera in conscious experience with several examples: spontaneous breathing aligns electrical oscillations in limbo circuits, heart beats are shown to engage/disengage cortical activity and awareness, gastric slow waves correlate in-phase with what occurs in somatosensory and visual domains. All support DST positing that the neural and visceral systems operate as one oscillator network which, together, support consciousness. In an HCCI patient where somatic input below the neck is deceased, however, they experience retained consciousness, however. This DST predicts because oscillations of the head/brain and rhythms from the viscera allow continuity of internal space; yet its content/persona changes because the body map has been temporally truncated. This provides a distinction about how people can be consciously aware of their existence while feeling completely different at the same time-there is a core conscious sense vs. the schemas decorating it over timescales. The DST provides a bioelectric understanding of consciousness which connects brain-body-environment. Where we emphasize where theoretical estimations lie vs. what can be observed supports the DST. For example, if one excessively disrupts corticothalamic feedback loops or sensorimotor oscillations and fails to integrate things into consciousness, DST is supported. Conversely, these stimulus distortions will never come from any other theoretical premise. Prominent notions are shared with Global Workspace or Integrated Information-based systems regarding global integration, but no other theory has included the body's oscillatory components as part of consciousness; contrary to predictive processing, while prediction errors determine hypotheses, DST puts forward simultaneous synchronization as critical and afferent/efferent dynamics physicalized two-way brain-body communication. Testing factors inevitable in evolution include consistent electrophysiological studies with descending pathways, works decoding states of consciousness in paralysis. All citations updated for relevancy-new studies incorporated-non-self-citations limited to remove experimenter's bias-all to urge ongoing discourse between DST and contemporaneous science of consciousness research."
+  },
+  {
+   "rank": 12,
+   "id": "42433211",
+   "source": "MED",
+   "pmid": "42433211",
+   "pmcid": "PMC13350056",
+   "doi": "10.3389/fpsyt.2026.1737072",
+   "first_publication_date": "2026-06-26",
+   "title": "Case Report: Integrating CBT, hypnosis-based consciousness activation techniques, and yoga-based postural training: a three-pillar approach used for migrant populations.",
+   "authors": "Suchocka Capuano A.",
+   "journal": "Frontiers in psychiatry",
+   "pub_types": [
+    "Journal Article",
+    "Case Reports",
+    "case-report"
+   ],
+   "open_access": "Y",
+   "abstract": "Modern psychotherapy increasingly integrates multimodal and process-based approaches designed to respond to the complexity of contemporary clinical presentations. This paper introduces a three-pillar psychotherapeutic model combining (1) a revised cognitive behavioral foundation, (2) consciousness activation techniques derived from hypnosis, and (3) yoga-inspired postural and interoceptive training. This integrative framework was specifically adapted for migrant populations, who commonly present with emotional dysregulation, somatic complaints, dissociative symptoms, and limited access to long-term mental healthcare. These clinical challenges are often compounded by trauma exposure, linguistic barriers, precarious living conditions, and chronic stress. The model emphasizes present-moment emotional identification as a fundamental therapeutic process. Emotions are addressed not as targets for regulation or cognitive restructuring, but as perceptual signals enabling flexible behavioral adaptation. Intervention begins with the recognition of bodily emotional sensations, progresses through attentional detachment from non-current cognitions, and incorporates movement-based techniques to strengthen interoceptive awareness. In this framework, basic emotions-joy, sadness, anger, fear, surprise, and disgust-are conceptualized as biologically grounded and culturally universal, providing an accessible entry point for emotional work with culturally diverse patients. This paper proposes two intervention formats: (1) a transdiagnostic five-session psychotherapy focusing on emotional identification, interoceptive exposure, attentional training, and yoga-based postural work; and (2) a single-session \"One-Shot Concentration Group\" integrating mindful breathing with detached awareness and simple body-mind postures to enhance attentional flexibility. Both interventions were delivered with interpreter support when necessary and structured to minimize reliance on verbal processing, making them well suited for allophone patients. Preliminary clinical observations show immediate benefits such as increased attentional flexibility, reduced physiological tension, and enhanced mental calmness. Longer-term effects reported by patients and clinicians include improvements in sleep, concentration, memory, and decreases in anxiety, depressive symptoms, and dissociative episodes. These findings support the feasibility and acceptability of this three-pillar model in settings involving migrant patients facing multiple vulnerabilities. This work underscores the relevance of integrating cognitive, interoceptive, and movement-based psychotherapeutic elements, and highlights future directions for empirical evaluation, including the incorporation of objective physiological measures such as electrodermal activity to assess autonomic regulation and therapeutic impact."
+  },
+  {
+   "rank": 13,
+   "id": "42422542",
+   "source": "MED",
+   "pmid": "42422542",
+   "pmcid": "PMC13341732",
+   "doi": "10.3389/fresc.2026.1844949",
+   "first_publication_date": "2026-06-24",
+   "title": "Rethinking dyspnea in pulmonary rehabilitation: from respiratory load and interoceptive processing to biofeedback and neurofeedback.",
+   "authors": "Lagravinese G, Castellana G, Pasqualotto F, Carone M, Taurisano P.",
+   "journal": "Frontiers in rehabilitation sciences",
+   "pub_types": [
+    "brief-report",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Dyspnea in chronic obstructive pulmonary disease (COPD) is often treated as the perceptual consequence of altered airflow, lung volume, gas exchange, or work of breathing. Yet breathlessness is not a unitary symptom or a direct readout of pulmonary dysfunction. It comprises at least three partially dissociable sensations-air hunger, breathing effort, and chest tightness-with distinct physiological triggers and affective salience. Current models suggest that conscious breathlessness emerges from the interaction of respiratory motor drive, corollary discharge, sensory afferent feedback, central integration, and higher-order interoceptive inference. In COPD, this framework helps explain why dyspnea may diverge from spirometric impairment and why symptom burden can remain high despite appropriate treatment. This Perspective develops a hypothesis-generating conceptual model for pulmonary rehabilitation, rather than a systematic or scoping review. We argue that respiratory biofeedback may be relevant not only because it can modify breathing pattern, but also because it may help test whether changing perceived control, autonomic regulation, and affective responses to respiratory signals can influence rehabilitation-relevant outcomes. Our recent pilot trial in late-stage COPD is compatible with this interpretation, but it did not directly test cognitive-affective mechanisms of action. From this perspective, neurofeedback should not be considered an established treatment for dyspnea, but a plausible future translational research question for selected highly symptomatic patients. Extension of this framework beyond COPD to other chronic respiratory diseases requires condition-specific validation."
+  },
+  {
+   "rank": 14,
+   "id": "42246050",
+   "source": "MED",
+   "pmid": "42246050",
+   "pmcid": "PMC13229987",
+   "doi": "10.3389/fneur.2026.1802303",
+   "first_publication_date": "2026-05-20",
+   "title": "Detection of residual consciousness using EEG indicators related to rectal perception: protocol for a diagnostic accuracy study.",
+   "authors": "Zhao Y, Lian Y, Qi Y, Laureys S, Di H, Zhao W.",
+   "journal": "Frontiers in neurology",
+   "pub_types": [
+    "methods-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "IntroductionAccurate diagnosis of disorders of consciousness (DoC), including unresponsive wakefulness syndrome (UWS) and minimally conscious state (MCS), remains a long-standing and unresolved challenge in clinical practice. Current diagnostic frameworks rely predominantly on behavioral responsiveness, with the Coma Recovery Scale-Revised (CRS-R) serving as the clinical gold standard. However, behavior-based evaluation is intrinsically vulnerable to examiner subjectivity and cognitive-motor dissociation, contributing to misdiagnosis rates of up to 40%. From a theoretical perspective, consciousness comprises both external awareness and self-awareness, yet existing DoC assessments focus almost exclusively on external sensory processing, leaving self-awareness substantially underassessed. This imbalance highlights a critical gap that motivates for complementary assessment approaches targeting underexplored dimensions of consciousness.Methods and analysisThis study protocol aims to develop an EEG-based paradigm and evaluate its feasibility for assessing gut-related interoceptive processing in patients with DoC, using controlled, non-invasive rectal balloon distension. Standardized stimulation procedures, synchronized EEG acquisition, and predefined analytical pipelines will be implemented to characterize the temporal and spatial features interoceptive event-related potentials.ResultsElectrophysiological and statistical analyses will be conducted to assess the feasibility, signal characteristics, and response profiles of gut-related interoceptive EEG activity across diagnostic categories. Exploratory analyses will further examine associations between interoceptive EEG markers and clinical behavioral measures.DiscussionBy systematically investigating an under assessed dimension of consciousness, this study protocol aims to establish the feasibility and signal-level characteristics of gut-related interoceptive EEG responses in patients with disorders of consciousness. By providing methodological and exploratory evidence at the group level, the findings are intended to inform the design of future hypothesis-driven and validation studies, and to support the longer-term development of complementary assessment approaches that extend beyond behavior-based evaluation, with potential relevance for clinical research and public health-oriented diagnostic strategies.Clinical trial registration[ClinicalTrials.gov], identifier [NCT07208942]."
+  },
+  {
+   "rank": 15,
+   "id": "41464339",
+   "source": "MED",
+   "pmid": "41464339",
+   "pmcid": "PMC12732759",
+   "doi": "10.3390/healthcare13243270",
+   "first_publication_date": "2025-12-12",
+   "title": "Patient-Reported Outcome Measures for Evaluating Body Awareness: A Systematic Review Using the COSMIN Methodology.",
+   "authors": "Bravo C, Trinidad-Fernández M, Barranco-I-Reixachs D, Arias-Matiz S, Malagon-Santos P, Catalán-Matamoros D.",
+   "journal": "Healthcare (Basel, Switzerland)",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Objective: Body awareness is the conscious, subjective multimodal integration of body-related sensitivity from bodily signals-detecting states and subtle reactions to internal and environmental conditions-modifiable by attention, interpretation, appraisal, beliefs, memories, conditioning, attitudes, and affect. The aim of our study is to identify patient-reported outcome measures (PROMs) of BA and evaluate their psychometric properties and cross-cultural adaptation processes. Literature Survey: We searched PubMed, Scopus, and PsycINFO; the last search was conducted on 1 July 2025. Methodology: We included studies that psychometrically evaluated PROMs regarding BA in the general adult population and their translations into other languages, with no time-range restrictions. Study selection was performed independently by two reviewers in a blind manner. Evaluation followed COSMIN guidance for systematic reviews of PROMs: (1) risk of bias assessment, (2) application of quality criteria for measurement properties, and (3) GRADE rating of the certainty of evidence. Synthesis: We identified 12 BA questionnaires and more than 30 cross-cultural adaptations, from a total of 50 studies. In summary, the Revised Body Awareness Rating Questionnaire and the Multidimensional Assessment of Interoceptive Awareness (MAIA 1 and 2) showed good results for structural validity and internal consistency, which were the most frequently assessed psychometric properties. In contrast, construct validity was highly variable, and the findings on reliability were far from optimal. MAIA-2 was one of the most studied and showed stronger evidence and better pooled results (4 out of 5 properties) than other instruments. Conclusions: The psychometric quality of BA PROMs varies widely, reflecting challenges in operationalizing the construct of body awareness and related domains. While MAIA-2 currently presents the most acceptable-though still imperfect-evidence, further high-quality studies are needed to strengthen their measurement properties and clarify construct coverage."
+  },
+  {
+   "rank": 16,
+   "id": "41422313",
+   "source": "MED",
+   "pmid": "41422313",
+   "pmcid": "PMC12783825",
+   "doi": "10.1038/s41598-025-30683-1",
+   "first_publication_date": "2025-12-21",
+   "title": "Interoceptive profiles of eating and weight disorders.",
+   "authors": "Lutz APC, Arend AK, Voderholzer U, Vögele C, Blechert J.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Signals from the body’s interior undergo several interoceptive processing steps, from the periphery to the central nervous system, to conscious recognition and evaluation. Alterations in some of these steps have been reported for eating and weight disorders, but systematic comparisons between steps and disorders are necessary to develop targeted interventions. We recorded electrocardiogram and electroencephalogram from adult women with anorexia nervosa (AN; n = 38), bulimia nervosa (BN; n = 35), binge eating disorder (n = 22), obesity (OB; n = 20), and healthy control individuals (n = 46) during resting state and a heartbeat counting task. On the peripheral level, patients with AN, BN, and OB had reduced vagally-mediated heart-rate variability. On the central level, only patients with AN showed increased processing of heartbeats (heartbeat-evoked potentials). On the conscious level, there were no significant group differences in heartbeat-counting performance, beliefs, or insight, but a marked negative evaluation reported by patients with AN and BN. We conclude that fasting could serve to reduce negatively perceived (AN, BN) and increased (AN) bodily sensations. Overeating is not associated with marked alterations in cardiac interoception. The results do not support the notion of general interoceptive deficits, but rather disorder-specific interoceptive profiles."
+  },
+  {
+   "rank": 17,
+   "id": "41373279",
+   "source": "MED",
+   "pmid": "41373279",
+   "pmcid": "PMC12691739",
+   "doi": "10.3390/healthcare13233062",
+   "first_publication_date": "2025-11-26",
+   "title": "Safety and Effectiveness of an Exercise-Based Telerehabilitation Program in Myalgic Encephalomyelitis and Post COVID Syndrome: Protocol for a Randomized Controlled Clinical Trial.",
+   "authors": "Fricke-Comellas H, Infante-Cano M, Heredia-Rizo AM, Martín-Fernández A, Escudero-Pérez P, Fernández-Seguín LM.",
+   "journal": "Healthcare (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Background/Objectives: Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS) and Post-COVID Syndrome (PCS) are chronic conditions that share relevant pathophysiological mechanisms. Conventional rehabilitation programs have often been associated with patient dissatisfaction and frequent adverse events (AEs), highlighting the need for safer and more effective clinical approaches. This study aims to compare the effects of a telerehabilitation program based on conscious movement with those of conventional low-intensity exercise in individuals with ME/CFS or PCS. Methods: This is a prospective, single-blind, three-arm, parallel, superiority randomized clinical trial. A total of 147 participants (aged 18-70) with ME/CFS or PCS will be recruited and randomly assigned to one of three groups: (a) conscious movement; (b) low-intensity exercise; or c) usual care. All interventions will be delivered via telehealth over 12 weeks, with weekly 45-min sessions combining health education and individually tailored exercises. Participants will be encouraged to practice daily using the provided materials. Adherence rates and potential AEs will be recorded. The primary outcome is the total score on the 14-item Chalder Fatigue Scale at 12 weeks (post-intervention). Secondary outcomes include heart rate variability, functional performance, pain intensity and interference, mental health, interoceptive awareness, quality of life, sleep quality and fear of movement. Measurements will be collected at baseline, post-intervention, and at 3-month follow-up. Discussion: Recent evidence suggests that both autonomic and cognitive activity modulate immune function. Conscious movement, which integrates exercise with interoception and mindfulness-based strategies, may provide greater benefits than low-intensity exercise alone. Study limitations should be considered when interpreting the results. Trial registration: Registered at ClinicalTrials.gov on 15 May 2025 (NCT06978582). Protocol version 4 (29 September 2025). Ethics Committee code: 2025-0180."
+  },
+  {
+   "rank": 18,
+   "id": "40460524",
+   "source": "MED",
+   "pmid": "40460524",
+   "pmcid": null,
+   "doi": "10.1016/j.schres.2025.05.024",
+   "first_publication_date": "2025-06-02",
+   "title": "Pre-reflective and reflective abnormalities in cortical midline structures in schizophrenia.",
+   "authors": "Piani MC, Jandl M, Koenig T, Nordgaard J, Morishima Y.",
+   "journal": "Schizophrenia research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Background & hypothesisSelf-disorders (SDs), central features of schizophrenia spectrum disorders, primarily affect the pre-reflective sense of self, the fundamental experience of existing as a conscious subject. This disruption also impacts reflective self-consciousness. This study aims to further explore the neural correlates of self-disorders in individuals with schizophrenia spectrum disorders by using a cognitive task designed to target approximate pre-reflective and reflective self-experience during fMRI.Study design27 individuals with schizophrenia spectrum disorders (patients, PT) and 32 healthy controls (HC) completed the cognitive task during 7 T fMRI scanning. The task involved a trait-judgment paradigm, where participants read three-word sentences (pronoun, verb, trait adjective) referencing themselves (self) or a well-known other (other), then provided a yes/no response upon reflection. SDs were examined with the Examination of Anomalous Self-Experience (EASE).Study resultsFor the pre-reflective component, the activity in the rostral posterior cingulate cortex was negatively correlated with the severity of SDs. For the reflective component, HC exhibited bilateral activations in the frontopolar cortex, the anterior part of the anterior cingulate cortex, and the pre-supplementary motor area, while PT showed activations in the left caudate nucleus, the anterior part of the anterior cingulate cortex, the right frontopolar cortex, and the left language area.ConclusionsAt the pre-reflective level, abnormalities in the rostral posterior cingulate cortex are associated with SDs. For reflective self-experience, individuals with self-disorders appear to engage more in analytical thinking and deeper brain networks than HC, who rely more on interoceptive processes based on the frontopolar cortex."
+  },
+  {
+   "rank": 19,
+   "id": "39160454",
+   "source": "MED",
+   "pmid": "39160454",
+   "pmcid": null,
+   "doi": "10.1111/jsr.14320",
+   "first_publication_date": "2024-08-19",
+   "title": "States of consciousness and interoceptive hypersensibility: A study in patients with insomnia disorder.",
+   "authors": "Alfì G, Maruani J, Aquino G, Menicucci D, Palagini L, Gemignani A, Bazin B, Clerici E, Stern E, Geoffroy PA.",
+   "journal": "Journal of sleep research",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This exploratory study aimed to investigate the relationship between interoceptive sensibility and quality of consciousness in individuals with insomnia disorder, in order to understand how the modulation of internal states may contribute to modifying the experience of consciousness during sleep difficulties. A total of 37 patients with insomnia disorder (mean age = 46.05 ± 18.16) and 41 healthy good sleepers (mean age = 50.2 ± 12.99) underwent a psychometric sleep and interoceptive sensibility assessment, using Insomnia Severity Index (ISI), Pittsburgh Sleep Quality Index (PSQI), and Multidimensional Assessment of Interoceptive Awareness (MAIA). Moreover, patients with insomnia disorder also completed a quality of consciousness evaluation, using the Phenomenology of Consciousness Inventory (PCI). Patients with insomnia disorder exhibited heightened interoceptive sensibility, particularly in noticing body sensations (p < 0.0001) and emotional awareness (p = 0.032), along with diminished abilities in attention regulation (p = 0.040), not-worrying (p = 0.001), and trusting (p = 0.002). Furthermore, correlations between interoceptive sensibility and multiple aspects of the consciousness state during the insomnia night were identified. Specifically, higher emotional awareness was linked to a 2.49-fold increase in the likelihood of subjectively experiencing altered consciousness states during insomnia. The study sheds light on the relationship between interoceptive sensibility and the subjective state of consciousness during insomnia, emphasising the importance of exploring and considering interoception as part of the therapeutic process for insomnia disorder. Given the exploratory nature of the study and the increased risk of type-I error from numerous correlations, the results should be interpreted with caution. Further research is needed to validate and confirm their robustness."
+  },
+  {
+   "rank": 20,
+   "id": "40895030",
+   "source": "MED",
+   "pmid": "40895030",
+   "pmcid": "PMC12396024",
+   "doi": "10.1016/j.bas.2025.104385",
+   "first_publication_date": "2025-08-06",
+   "title": "Human self and Neurosurgery: Advances and insights from Geneva.",
+   "authors": "Al Awadhi A, Kiss-Bodolay D, Grannò S, Ronchi R, Bobbink-Blondiaux E, Tyrand R, Boëx C, Voruz P, Iannotti GR, Péron J, Herbelin B, Blanke O, Schaller K.",
+   "journal": "Brain & spine",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "IntroductionThe preservation of the human self-a fundamental yet underexplored aspect of neurosurgical practice-has gained increasing attention in recent years.Research questionHow can neural correlates of self-consciousness be identified, monitored, and protected during brain tumor surgery, and how might this reshape the concept of \"onco-functional balance\"?Material and methodsThis review synthesizes emerging evidence from neuroimaging, neuropsychology, and intraoperative neurophysiology to build a framework for integrating the concept of self into modern neurosurgical practice.ResultsWe describe the anatomical and functional basis of bodily and cognitive self-awareness, highlighting the roles of interoception, multisensory integration, and higher-order cortical networks such as the medial prefrontal cortex, insula and temporoparietal junction. We outline perioperative tools for clinical assessment, including validated scales for anosognosia and disownership, as well as the Self-Other Voice Discrimination (SOVD) paradigm and Heartbeat-Evoked Potentials (HEPs), which offer quantifiable markers of self-processing.Discussion and conclusionWe argue for a reconceptualization of \"eloquent\" cortex to include regions critical for the preservation of self. As neurosurgery advances toward precision-guided, patient-centered care, protecting the self must become an explicit goal alongside motor, sensory, and language preservation. Future directions include real-time intraoperative monitoring of HEPs, development of functional risk maps for self-related structures, and broader implementation of personalized, neurocognitive surgical planning.Ultimately, this work proposes a shift from an \"onco-functional\" to an \"onco-functional-identity\" paradigm-where the integrity of the patient's personality, agency, and awareness becomes a measurable, preservable endpoint of neurosurgical care."
+  },
+  {
+   "rank": 21,
+   "id": "39958752",
+   "source": "MED",
+   "pmid": "39958752",
+   "pmcid": "PMC11825457",
+   "doi": "10.3389/fnbeh.2025.1526684",
+   "first_publication_date": "2025-01-31",
+   "title": "The visuomotor synchronization immersive virtual reality of a depression avatar in a stigma context experience mobilizes the fronto-parietal cortex and anterior insula.",
+   "authors": "Dos Santos Kawata KH, Lem WG, Ono K, Oyama H.",
+   "journal": "Frontiers in behavioral neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "IntroductionThe gradual synchronization of the movement of one's real hand with a virtual one can effectively induce a sense of embodiment (SoE) with an avatar with depression. Although neuroimaging studies have explored the neural correlates of some SoE subcomponents of visuomotor synchronization, the neural correlates of individual differences in SoE and how humans acquire virtual body representations through SoE subcomponents remain to be investigated.MethodsHere, we used the right hand of a virtual patient with depression in immersive virtual reality (IVR) to induce SoE in participants and measured whole brain activity using functional magnetic resonance imaging (fMRI). Participants were instructed to listen to the audio recording of the IVR experience and visualize movements during the fMRI scan. fMRI data were acquired before and immediately after the visuomotor synchronization IVR experience (target condition) or an asynchronized video experience (control condition), followed by embodiment measures related to the two types of experiences.ResultsAll five subcomponents of SoE (sense of ownership, sense of agency, sense of localization, appearance, and response to stimuli) were significantly increased during the visuomotor synchronization IVR experience compared with the asynchronized video experience. A significant negative effect of the SoE score was identified in the frontoparietal and anterior insula only for the visuomotor synchronization IVR experience of guiding the virtual right hand of the avatar with depression, implicating interoceptive and multisensory integration.DiscussionWe demonstrated that all five subcomponents of the SoE were present, and that decreased activity in the frontoparietal and anterior insula were crucial brain regions for the virtual human body to be perceived as one's own body and promote conscious feelings of embodiment."
+  },
+  {
+   "rank": 22,
+   "id": "39677366",
+   "source": "MED",
+   "pmid": "39677366",
+   "pmcid": "PMC11645458",
+   "doi": "10.1093/pnasnexus/pgae531",
+   "first_publication_date": "2024-11-25",
+   "title": "Predicting attentional focus: Heartbeat-evoked responses and brain dynamics during interoceptive and exteroceptive processing.",
+   "authors": "Fló E, Belloli L, Cabana Á, Ruyant-Belabbas A, Jodaitis L, Valente M, Rohaut B, Naccache L, Rosanova M, Comanducci A, Andrillon T, Sitt J.",
+   "journal": "PNAS nexus",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Attention shapes our consciousness content and perception by increasing the probability of becoming aware and/or better encoding a selection of the incoming inner or outer sensory world. Engaging interoceptive and exteroceptive attention should elicit distinctive neural responses to visceral and external stimuli and could be useful in detecting covert command-following in unresponsive patients. We designed a task to engage healthy participants' attention toward their heartbeats or auditory stimuli and investigated whether brain dynamics and the heartbeat-evoked potential (HEP) distinguished covert interoceptive-exteroceptive attention. Exteroceptive attention yielded an overall flattening of the power spectral density (PSD), whereas during interoception, there was a decrease in complexity, an increase in frontal connectivity and theta oscillations, and a modulation of the HEP. Subject-level classifiers based on HEP features classified the attentional state of 17/20 participants. Kolmogorov complexity, permutation entropy, and weighted symbolic mutual information showed comparable accuracy in classifying covert attention and exhibited a synergic behavior with the HEP features. PSD features demonstrated exceptional performance (20/20). Command-following was assessed in five brain-injured patients with a modified version of the task. An unresponsive wakefulness syndrome/vegetative state patient and a locked-in syndrome patient demonstrated a willful modulation of the HEP and together with the explored brain markers suggest that patients were complying with task instructions. Our findings underscore the importance of attentional mechanisms in shaping interoceptive and exteroceptive sensory processing and expand the framework of heart-brain interactions employed for diagnostic purposes in patients with disorders of consciousness."
+  },
+  {
+   "rank": 23,
+   "id": "39665237",
+   "source": "MED",
+   "pmid": "39665237",
+   "pmcid": "PMC13064752",
+   "doi": "10.1017/s1092852924000506",
+   "first_publication_date": "2024-12-12",
+   "title": "A neuroethical approach to human life, identity, and liberty of schizophrenic patients.",
+   "authors": "Carrara A.",
+   "journal": "CNS spectrums",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "This article presents a comprehensive neuroethical framework that seeks to deepen our understanding of human consciousness and free will, particularly in the context of psychiatric and neurological disorders. By integrating insights from neuroscience with philosophical reflections on freedom and personal identity, the paper examines how various states of consciousness from interoception to self-awareness influence an individual's autonomy and decision-making capabilities. The discussion utilizes a multidimensional, bottom-up approach to explore how neurobiological processes underlie different levels of conscious experience and their corresponding types of freedom, such as \"intero-freedom\" related to internal bodily states and \"self-freedom\" associated with higher self-awareness. This stratification reveals the profound impact of neurological conditions on patients' freedom of choice and the ethical implications therein. The insights gained from this analysis aim to inform more tailored and effective treatments for psychiatric patients, emphasizing the restoration of autonomy and respect for their inherent dignity. This work underscores the essential unity of the human person through the lens of neuroethics, advocating for healthcare policies that recognize and enhance the personal freedom of those with mental health challenges."
+  },
+  {
+   "rank": 24,
+   "id": "38788262",
+   "source": "MED",
+   "pmid": "38788262",
+   "pmcid": null,
+   "doi": "10.1016/j.ijnurstu.2024.104809",
+   "first_publication_date": "2024-05-17",
+   "title": "Body listening in the link between symptoms and self-care management in cardiovascular disease: A cross-sectional correlational descriptive study.",
+   "authors": "Lee CS, Chu SH, Dunne J, Spintzyk E, Locatelli G, Babicheva V, Lam L, Julio K, Chen S, Jurgens CY.",
+   "journal": "International journal of nursing studies",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveThe aim of this study was to quantify relationships among symptoms, interoceptive sensibility (i.e. the conscious level of sensing, interpreting and integrating signals from the body), and self-care management behaviors (i.e. the response to symptoms when they occur) among adults with cardiovascular disease. We hypothesized that better interoceptive sensibility would increase the positive behavior-driving effects of symptoms on self-care management.MethodsAdult patients with cardiovascular disease who experienced recent symptoms were recruited to participate in this cross-sectional correlational descriptive study. Patient-Reported Outcomes Measurement Information System measures were used to capture dyspnea, pain interference, fatigue, sleep disturbances, nausea and vomiting, anxiety and depressive symptoms. Interoceptive sensibility was measured using the Multidimensional Assessment of Interoceptive Awareness Version 2. The Self-Care of Chronic Illness Inventory was used to measure self-care management. Network analysis was used to identify domains of interoceptive sensibility that were most central. Linear regression with interaction terms was used to test the moderating effect of interoceptive sensibility on the relationship between symptoms and self-care management.ResultsThe age of participants in the sample (n = 387) ranged from 18 to 88 years, a slight majority (53.5 %) were female, and a majority were Caucasian (66.4 %) or African American (32.0 %). Hypertension was the most common disorder (n = 238 (61.5 %)), followed by rhythm disorders (n = 124 (32.0 %)), coronary artery disease (n = 94 (24.3 %)), heart failure (n = 89 (23.0 %)), valve disease (n = 69 (17.8 %)), stroke (n = 62 (16.0 %)) and peripheral vascular disease (n = 49 (12.7 %)). Based on network analysis, body listening (i.e. active listening to the body for insights) was the most central interoceptive domain, and distracting (i.e. tendency to ignore or distract oneself from sensations of discomfort) was the least central. Noticing (i.e. greater awareness of body sensations), distracting, and body listening were significant in moderating relationships between dyspnea, sleep disturbances and anxiety and the outcome of self-care management behaviors (all p ConclusionAmong adults with cardiovascular disease, interventions designed to augment the identified interoceptive sensibility domains like body listening, and mitigate the tendency to ignore or distract oneself from discomfort may support adults with cardiovascular disease through the development of future interventions that optimize patient behaviors in response to symptoms when they occur."
+  },
+  {
+   "rank": 25,
+   "id": "39120213",
+   "source": "MED",
+   "pmid": "39120213",
+   "pmcid": "PMC11311745",
+   "doi": "10.3390/healthcare12151510",
+   "first_publication_date": "2024-07-30",
+   "title": "Cybernetic Principles in Psychophysiology: Their Significance and Conclusions for Palliative Care.",
+   "authors": "Brinkers M, Pfau G, Thielmann B, Böckelmann I.",
+   "journal": "Healthcare (Basel, Switzerland)",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Palliative care is dedicated to terminally ill patients with advanced disease, regardless of diagnosis, under the overarching premise of optimizing quality of life. This narrative review examines the extent to which principles of cybernetics and psychophysiology underlie this approach. Psychophysiology researches the physiological equivalents of psychological states and traits such as activation and individual reactivity, the interoception and the personal characteristics. Cybernetics specifies these principles, which are possible by understanding terms such as \"psychophysiology\" or \"cybernetics\" or \"self-organization/autopoiesis\". The meaning of these terms for palliative care can also be elucidated in relation to the terms \"biofeedback\", \"consciousness\", \"pain\", and \"anxiety\". The common themes of cybernetics and psychophysiology are environment, subjectivity, personality characteristics, the difference between time scale separation in cybernetic systems, and real-time procedures in environment and rhythm. These lead to special therapies based on psychophysiology, such as consciousness training. The concepts of quality of life, causality, the biopsychosocial model, therapy, and autonomy are examined as palliative care concepts. The equivalents can be described from the perspective of cybernetics. For some palliative care-related terms, cybernetic thinking is already present (quality of life, autonomy, symptom control), while for others, it is not (biopsychosocial). Cybernetic terms (complexity, stability, identity, rhythm) are still used to a lesser extent in palliative care. Terms like genetic basis are common in cybernetics and psychophysiology to explain the identity of the subject in transition. Identity, on the other hand, is the basis of the concept of dignity in palliative care. Psychophysiology investigates disturbances like pain and psychological illnesses, which are also present in palliative care. Psychophysiology, cybernetics, and palliative care have subjectivity and resources in common. Therapies based on cybernetic principles of psychophysiology can also be used for symptom control in palliative care in the oncology setting."
+  },
+  {
+   "rank": 26,
+   "id": "38114633",
+   "source": "MED",
+   "pmid": "38114633",
+   "pmcid": null,
+   "doi": "10.1038/s41380-023-02356-w",
+   "first_publication_date": "2023-12-19",
+   "title": "A three-dimensional model of neural activity and phenomenal-behavioral patterns.",
+   "authors": "Martino M, Magioncalda P.",
+   "journal": "Molecular psychiatry",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "How phenomenal experience and behavior are related to neural activity in physiology and psychopathology represents a fundamental question in neuroscience and psychiatry. The phenomenal-behavior patterns may be deconstructed into basic dimensions, i.e., psychomotricity, affectivity, and thought, which might have distinct neural correlates. This work provides a data overview on the relationship of these phenomenal-behavioral dimensions with brain activity across physiological and pathological conditions (including major depressive disorder, bipolar disorder, schizophrenia, attention-deficit/hyperactivity disorder, anxiety disorders, addictive disorders, Parkinson's disease, Tourette syndrome, Alzheimer's disease, and frontotemporal dementia). Accordingly, we propose a three-dimensional model of neural activity and phenomenal-behavioral patterns. In this model, neural activity is organized into distinct units in accordance with connectivity patterns and related input/output processing, manifesting in the different phenomenal-behavioral dimensions. (1) An external neural unit, which involves the sensorimotor circuit/brain's sensorimotor network and is connected with the external environment, processes external inputs/outputs, manifesting in the psychomotor dimension (processing of exteroception/somatomotor activity). External unit hyperactivity manifests in psychomotor excitation (hyperactivity/hyperkinesia/catatonia), while external unit hypoactivity manifests in psychomotor inhibition (retardation/hypokinesia/catatonia). (2) An internal neural unit, which involves the interoceptive-autonomic circuit/brain's salience network and is connected with the internal/body environment, processes internal inputs/outputs, manifesting in the affective dimension (processing of interoception/autonomic activity). Internal unit hyperactivity manifests in affective excitation (anxiety/dysphoria-euphoria/panic), while internal unit hypoactivity manifests in affective inhibition (anhedonia/apathy/depersonalization). (3) An associative neural unit, which involves the brain's associative areas/default-mode network and is connected with the external/internal units (but not with the environment), processes associative inputs/outputs, manifesting in the thought dimension (processing of ideas). Associative unit hyperactivity manifests in thought excitation (mind-wandering/repetitive thinking/psychosis), while associative unit hypoactivity manifests in thought inhibition (inattention/cognitive deficit/consciousness loss). Finally, these neural units interplay and dynamically combine into various neural states, resulting in the complex phenomenal experience and behavior across physiology and neuropsychiatric disorders."
+  },
+  {
+   "rank": 27,
+   "id": "39220208",
+   "source": "MED",
+   "pmid": "39220208",
+   "pmcid": "PMC11363186",
+   "doi": "10.3389/fnint.2024.1457936",
+   "first_publication_date": "2024-08-16",
+   "title": "Ultra-overt therapy: a novel medical approach centered on patient consciousness.",
+   "authors": "Shirbache K, Liaghat A, Saeifar S, Nezameslami A, Shirbacheh A, Nasri H, Namazi H.",
+   "journal": "Frontiers in integrative neuroscience",
+   "pub_types": [
+    "brief-report",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Within the realms of human and artificial intelligence, the concepts of consciousness and comprehension are fundamental distinctions. In the clinical sphere, patient awareness regarding medication and its physiological processes plays a crucial role in determining drug efficacy and outcomes. This article introduces a novel perspective on prescription practices termed \"Ultra-Overt Therapy\" (UOT). A review of current supporting evidence was conducted through a non-systematic search in PubMed and Google Scholar, focusing on concepts such as the \"mind-body relationship,\" \"placebo response,\" \"neuroscience,\" and \"complementary medicine.\" Our findings, rooted in the mechanisms of the \"placebo effect,\" the intricacies of \"intersubjective therapy,\" the potency of \"interoceptive awareness,\" and other domains of medical science, suggest that UOT holds theoretical promise. Future research endeavors focusing on these areas may elucidate the global impact of this method on medical treatment and patient care."
+  },
+  {
+   "rank": 28,
+   "id": "39006064",
+   "source": "MED",
+   "pmid": "39006064",
+   "pmcid": "PMC11244638",
+   "doi": "10.1093/asjof/ojae047",
+   "first_publication_date": "2024-07-02",
+   "title": "Effects of Breast Surgery on Interoceptive Awareness in Females.",
+   "authors": "Weis LE, Akhter HM, Hon HH, Johnson PJ, Figy SC.",
+   "journal": "Aesthetic surgery journal. Open forum",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundThe driving force for many seeking plastic surgery is comfort in one's body. Along with comfort come satisfaction, improved self-awareness, and potential change in interoceptive awareness-a term defined as the conscious perception of one's body. Although conscious perception of bodily signals is influenced by many factors, sense of self and body image play significant roles. Studies show diminished interoceptive awareness in those with negative body image, but no research has assessed the impact of change in body image on interoceptive awareness.ObjectivesThe purpose of this study is to investigate how interoceptive awareness changes following elective breast surgery.MethodsThe Multidimensional Assessment of Interoceptive Awareness Version 2 (MAIA-2) was administered to females undergoing breast surgery. A baseline survey was administered preoperatively, with follow-up surveys at 1 week, 1 month, and 3 months postoperatively.ResultsData were collected from 39 females and analyzed using paired t-tests to compare MAIA-2 overall and subscores over time. Significance was seen at 1 week for subcategories of \"not distracting\" and \"trust,\" at 1 month for \"trust,\" and 3 months for \"not worrying,\" \"emotional awareness,\" \"self-regulation,\" and \"trust.\" Overall survey averages were significantly increased at all postoperative intervals.ConclusionsFrom this study, it can be concluded that breast surgery positively impacts interoceptive awareness. These findings are clinically relevant as they offer providers' insight into the psychological effects of breast procedures. A comprehensive understanding of procedure outcomes enables providers to educate patients on both anticipated physical results and changes in sense of self.Level of evidence 2"
+  },
+  {
+   "rank": 29,
+   "id": "37109233",
+   "source": "MED",
+   "pmid": "37109233",
+   "pmcid": "PMC10146895",
+   "doi": "10.3390/jcm12082896",
+   "first_publication_date": "2023-04-16",
+   "title": "Decreased Interoceptive Awareness as a Risk Factor for Moderate to Severe Pain in Japanese Full-Time Workers: A Longitudinal Cohort Study.",
+   "authors": "Takaoka S, Wakaizumi K, Tanaka C, Tanaka S, Kawate M, Hoshino R, Matsudaira K, Fujisawa D, Morisaki H, Kosugi S.",
+   "journal": "Journal of clinical medicine",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Interoceptive awareness, the conscious perception of internal bodily states, is a key construct of mind-body interaction. Decreases in interoceptive awareness, as measured by the Multidimensional Assessment of Interoceptive Awareness (MAIA), are found in chronic pain patients. In this study, we explored whether a specific aspect of interoceptive awareness is a risk for the onset and chronicity of pain. A longitudinal cohort study was conducted in 2018 and 2020 among a sample of full-time workers in an industrial manufacturing company in Japan. Participants completed a questionnaire on pain intensity, MAIA, exercise habits, kinesiophobia, psychological distress and work stress. Principal component analyses using the MAIA identified two principal components: self-control and emotional stability. Low emotional stability was associated with the prevalence of moderate to severe pain in 2020 among people with mild or no pain in 2018 (p p p = 0.047). Overall, these findings indicate that low emotional stability may be a risk for the onset of moderate to severe pain; lack of exercise habits may sustain kinesiophobia and be a risk for the chronicity of pain."
+  },
+  {
+   "rank": 30,
+   "id": "37621971",
+   "source": "MED",
+   "pmid": "37621971",
+   "pmcid": "PMC10445144",
+   "doi": "10.3389/fpsyt.2023.1163421",
+   "first_publication_date": "2023-08-09",
+   "title": "Modeling intentionality in the human brain.",
+   "authors": "Giotakos O.",
+   "journal": "Frontiers in psychiatry",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "This paper is focusing on a rather neglected issue that concerns both aspects of philosophy and neurobiology in relation to the concept of intentionality. Intentionality is concerned with the 'directedness' or 'aboutness' of mental phenomena towards an object. Despite the fact that in philosophy both concepts of aboutness and directedness are conceptually identical with intentionality, a careful neuroscientific approach can demonstrate that these two phenomena represent two distinct conceptual and neurobiological aspects of intentionality with complementary functions. We described the interaction between a series of intentionality and pathogenetic psychobiological factors, the corresponding brain topography, and the resulting clinical manifestation and psychopathology. A permanent failure of intentionality dominates in psychosis, which includes an inappropriateness of the intentional object or connection, from the outset, or even from the prodromal phase of the disorder. Affective disorders may result from imprecise interoceptive prediction error signals, due to a confused identification of the intentional object. In suicidal patients there is an emotional intentionality failure, characterized by an absence of intentional object or a loss of conscious access to normal intentional objects. We may model an 'intentional system' as a higher order system, with a monitoring and regulatory role attributed to the brain and behavior. Also, we may consider mental disorders as the result of a radical disruption of intentionality, due to an inappropriateness or lack of the intentional object or due to an inappropriate connection in some points of the suggested brain pathways of intentionality."
+  },
+  {
+   "rank": 31,
+   "id": "36360614",
+   "source": "MED",
+   "pmid": "36360614",
+   "pmcid": "PMC9657136",
+   "doi": "10.3390/ijerph192113734",
+   "first_publication_date": "2022-10-22",
+   "title": "Effects of the Feldenkrais Method as a Physiotherapy Tool: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+   "authors": "Berland R, Marques-Sule E, Marín-Mateo JL, Moreno-Segura N, López-Ridaura A, Sentandreu-Mañó T.",
+   "journal": "International journal of environmental research and public health",
+   "pub_types": [
+    "Meta-Analysis",
+    "Systematic Review",
+    "review-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The Feldenkrais Method (FM) is based on the learning of alternative movement patterns, carried out in an active and conscious way, which may have therapeutic effects. The objective of this systematic review is to identify the populations and conditions for which the FM can be used in physiotherapy and to determine the intervention modalities. Research in PubMed, Cochrane and PEDro databases was performed. The PEDro scale was employed to assess the methodological quality. Meta-analyses (MA) were performed whenever populations and outcome measures were comparable in at least two studies. Sixteen studies were included. In elderly people, in three of the four selected trials, the FM group significantly improved gait, balance, mobility and quality of life. The MA showed significant differences between interventions in the Timed-Up-and-Go test [Cohen's d = -1.14, 95% CI (-1.78, -0.49), p = 0.0006]. FM significantly improved pain, functional balance, and perceived exertion in three trials performed on subjects with cervical, dorsal, or shoulder pain. FM demonstrated improvements in pain, disability, quality of life and interoceptive awareness in the three trials performed in subjects with chronic low back pain. In multiple sclerosis, an improvement in functional capacity was observed in the two selected studies. The MA showed no significant differences between groups in the Function (p = 0.97) and Control (p = 0.82) dimensions of the Multiple Sclerosis Self-Efficacy Scale. In Parkinson's disease, two studies showed significant effects on quality of life and functional tests. In conclusion, evidence shows that FM has therapeutic effects comparable to other physiotherapy techniques in patients with spine pain. In addition, improvements in mobility and balance were seen in the elderly and people with neurodegenerative diseases."
+  },
+  {
+   "rank": 32,
+   "id": "36099315",
+   "source": "MED",
+   "pmid": "36099315",
+   "pmcid": "PMC9506608",
+   "doi": "10.1371/journal.pcbi.1010490",
+   "first_publication_date": "2022-09-13",
+   "title": "In the Body's Eye: The computational anatomy of interoceptive inference.",
+   "authors": "Allen M, Levy A, Parr T, Friston KJ.",
+   "journal": "PLoS computational biology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "A growing body of evidence highlights the intricate linkage of exteroceptive perception to the rhythmic activity of the visceral body. In parallel, interoceptive inference theories of affective perception and self-consciousness are on the rise in cognitive science. However, thus far no formal theory has emerged to integrate these twin domains; instead, most extant work is conceptual in nature. Here, we introduce a formal model of cardiac active inference, which explains how ascending cardiac signals entrain exteroceptive sensory perception and uncertainty. Through simulated psychophysics, we reproduce the defensive startle reflex and commonly reported effects linking the cardiac cycle to affective behaviour. We further show that simulated 'interoceptive lesions' blunt affective expectations, induce psychosomatic hallucinations, and exacerbate biases in perceptual uncertainty. Through synthetic heart-rate variability analyses, we illustrate how the balance of arousal-priors and visceral prediction errors produces idiosyncratic patterns of physiological reactivity. Our model thus offers a roadmap for computationally phenotyping disordered brain-body interaction."
+  },
+  {
+   "rank": 33,
+   "id": "35751711",
+   "source": "MED",
+   "pmid": "35751711",
+   "pmcid": "PMC9385786",
+   "doi": "10.1007/s10072-022-06231-4",
+   "first_publication_date": "2022-06-25",
+   "title": "Alteration of interoceptive sensitivity: expanding the spectrum of behavioural disorders in amyotrophic lateral sclerosis.",
+   "authors": "Moretta P, Spisto M, Ausiello FP, Iodice R, De Lucia N, Santangelo G, Trojano L, Salvatore E, Dubbioso R.",
+   "journal": "Neurological sciences : official journal of the Italian Neurological Society and of the Italian Society of Clinical Neurophysiology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundAmyotrophic lateral sclerosis (ALS) is a neurodegenerative disorder with progressive loss of upper and lower motor neurons. Non-motor-symptoms, such as cognitive, emotional, autonomic, and somatosensory alterations, have been also described. Interoception represents the link between the body and brain, since it refers to the ability to consciously perceive the physical condition of the inner body, including one's heartbeat (i.e., interoceptive sensitivity, IS).ObjectivesTo evaluate IS in ALS patients by means of a well-established task: the heartbeat perception task. Moreover, we evaluated possible correlations between IS and neuropsychological, affective, and disease-related characteristics.MethodsFifty-five ALS patients (mean-age = 60.3 ± 12.5 years; mean disease-duration = 20.9 ± 18.8 months) and 41 caregivers (CG) underwent the heartbeat perception task and an extensive evaluation of motor, cognitive, body awareness, affective, and emotion domains.ResultsALS patients showed lower IS than CG (0.68 ± 0.24 vs 0.82 ± 0.16; p = 0.003). Significant correlations were found between IS and self-reported measures of alexithymia (subscale of Toronto Alexithymia scale-20 \"difficulties in describing feelings\"; rho =  - .391, p = .003) and interoceptive awareness (subscale of Multidimensional assessment of interoceptive awareness \"not worrying about pain\"; rho = .405, p = .002). No significant differences were found on questionnaires for depression and anxiety between patients with ALS and their caregivers (p > .05).ConclusionsALS patients show reduced interoceptive sensitivity that is associated with poorer ability to describe feelings and with lower focalization on pain, regardless of cognitive and motor impairment. Alteration of interoception may represent a specific behavioural sign within the spectrum of emotion processing deficits described in ALS patients."
+  },
+  {
+   "rank": 34,
+   "id": "34668170",
+   "source": "MED",
+   "pmid": "34668170",
+   "pmcid": "PMC8983507",
+   "doi": "10.3758/s13415-021-00958-x",
+   "first_publication_date": "2021-10-19",
+   "title": "Toward the unity of pathological and exertional fatigue: A predictive processing model.",
+   "authors": "Greenhouse-Tucknott A, Butterworth JB, Wrightson JG, Smeeton NJ, Critchley HD, Dekerle J, Harrison NA.",
+   "journal": "Cognitive, affective & behavioral neuroscience",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Fatigue is a common experience in both health and disease. Yet, pathological (i.e., prolonged or chronic) and transient (i.e., exertional) fatigue symptoms are traditionally considered distinct, compounding a separation between interested research fields within the study of fatigue. Within the clinical neurosciences, nascent frameworks position pathological fatigue as a product of inference derived through hierarchical predictive processing. The metacognitive theory of dyshomeostasis (Stephan et al., 2016) states that pathological fatigue emerges from the metacognitive mechanism in which the detection of persistent mismatches between prior interoceptive predictions and ascending sensory evidence (i.e., prediction error) signals low evidence for internal generative models, which undermine an agent's feeling of mastery over the body and is thus experienced phenomenologically as fatigue. Although acute, transient subjective symptoms of exertional fatigue have also been associated with increasing interoceptive prediction error, the dynamic computations that underlie its development have not been clearly defined. Here, drawing on the metacognitive theory of dyshomeostasis, we extend this account to offer an explicit description of the development of fatigue during extended periods of (physical) exertion. Accordingly, it is proposed that a loss of certainty or confidence in control predictions in response to persistent detection of prediction error features as a common foundation for the conscious experience of both pathological and nonpathological fatigue."
+  },
+  {
+   "rank": 35,
+   "id": "35077847",
+   "source": "MED",
+   "pmid": "35077847",
+   "pmcid": null,
+   "doi": "10.1016/j.biopsycho.2022.108276",
+   "first_publication_date": "2022-01-22",
+   "title": "Interoception visualization relieves acute pain.",
+   "authors": "Gong W, Gu L, Wang W, Chen L.",
+   "journal": "Biological psychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Interoception is the sensation of the physiological state inside one's body. Growing evidence suggests that visual feedback of interoception improves body self-consciousness (BSC) and reduces pain perception among patients with chronic pain. However, whether the integration of exteroception and interoception influences pain processing in healthy individuals remains largely unknown. To examine this question, we combined the rubber hand illusion (RHI) paradigm with visualized interoception -flashing of an LED light on the rubber hand synchronously or asynchronously with participants' real-time heartbeats. Under these conditions, we tested pain thresholds and corresponding event-related potentials. The interoceptive visual feedback inhibited the P2 component of pain, and the RHI inhibited pre-stimulus alpha-band brain activity. BSC had no significant effect on the processing of pain. These findings demonstrate that interoceptive signals with visual feedback inhibit pain processing, and that this psychophysiological process is largely independent of reported self-consciousness, in healthy individuals."
+  },
+  {
+   "rank": 36,
+   "id": "36091366",
+   "source": "MED",
+   "pmid": "36091366",
+   "pmcid": "PMC9459112",
+   "doi": "10.3389/fphys.2022.917956",
+   "first_publication_date": "2022-08-26",
+   "title": "Telerehabilitation proposal of mind-body technique for physical and psychological outcomes in patients with fibromyalgia.",
+   "authors": "Paolucci T, de Sire A, Ferrillo M, di Fabio D, Molluso A, Patruno A, Pesce M, Lai C, Ciacchella C, Saggino A, Agostini F, Tommasi M.",
+   "journal": "Frontiers in physiology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Fibromyalgia (FM) syndrome is characterized by the close correlation of chronic widespread pain and other non-pain related symptoms. Aim of this study was to investigate whether telerehabilitation that provides physical and psychological support services of the mind-body techniques can affect the clinical profile and pain relief of FM patients. The study included twenty-eight female FM patients, mean aged 56.61 ± 8.56 years. All patients underwent a rehabilitation treatment (8 sessions, 1/week, 1 h/each) through Zoom platform, with the following principles of rehabilitation treatment: Anchoring to a positive emotion; listen and perceive your \"own\" body; conscious breathing; improve interoceptive awareness; relax. All patients then underwent clinical assessment of the physical distress and fear of movement for the Numeric Rating Scale (NRS); the Fatigue Assessment Scale (FAS); the Fear Avoidance Belief Questionnaire (FABQ); with measures of physical and mental disability for the Fibromyalgia Impact Questionnaire (FIQ); the 12-Items Short Form Survey; the Resilience Scale for Adults and the Coping Strategies Questionnaire-Revised. The evaluations were performed at T0 (baseline), T1 (after 8 weeks of treatment), and T2 (after 1 month of follow-up). The main finding was that telerehabilitation reduced physical and mental distress, fear, and disability (p < 0.001). Resilience and coping ability were less affected by the rehabilitative treatment. Our attempt of mind-body technique telerehabilitation has shown good results in the improvement of painful symptoms and quality of life for the FM patients but showed fewer positive impacts for the resilience and coping abilities aspects."
+  },
+  {
+   "rank": 37,
+   "id": "33686522",
+   "source": "MED",
+   "pmid": "33686522",
+   "pmcid": "PMC8053654",
+   "doi": "10.1007/s00701-021-04778-3",
+   "first_publication_date": "2021-03-08",
+   "title": "The perspectives of mapping and monitoring of the sense of self in neurosurgical patients.",
+   "authors": "Schaller K, Iannotti GR, Orepic P, Betka S, Haemmerli J, Haemmerli J, Boex C, Alcoba-Banqueri S, Garin DFA, Herbelin B, Park HD, Michel CM, Blanke O.",
+   "journal": "Acta neurochirurgica",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Surgical treatment of tumors, epileptic foci or of vascular origin, requires a detailed individual pre-surgical workup and intra-operative surveillance of brain functions to minimize the risk of post-surgical neurological deficits and decline of quality of life. Most attention is attributed to language, motor functions, and perception. However, higher cognitive functions such as social cognition, personality, and the sense of self may be affected by brain surgery. To date, the precise localization and the network patterns of brain regions involved in such functions are not yet fully understood, making the assessment of risks of related post-surgical deficits difficult. It is in the interest of neurosurgeons to understand with which neural systems related to selfhood and personality they are interfering during surgery. Recent neuroscience research using virtual reality and clinical observations suggest that the insular cortex, medial prefrontal cortex, and temporo-parietal junction are important components of a neural system dedicated to self-consciousness based on multisensory bodily processing, including exteroceptive and interoceptive cues (bodily self-consciousness (BSC)). Here, we argue that combined extra- and intra-operative approaches using targeted cognitive testing, functional imaging and EEG, virtual reality, combined with multisensory stimulations, may contribute to the assessment of the BSC and related cognitive aspects. Although the usefulness of particular biomarkers, such as cardiac and respiratory signals linked to virtual reality, and of heartbeat evoked potentials as a surrogate marker for intactness of multisensory integration for intra-operative monitoring has to be proved, systemic and automatized testing of BSC in neurosurgical patients will improve future surgical outcome."
+  },
+  {
+   "rank": 38,
+   "id": "34566738",
+   "source": "MED",
+   "pmid": "34566738",
+   "pmcid": "PMC8457046",
+   "doi": "10.3389/fpsyg.2021.578827",
+   "first_publication_date": "2021-09-08",
+   "title": "Facilitating Adaptive Emotion Processing and Somatic Reappraisal <i>via</i> Sustained Mindful Interoceptive Attention.",
+   "authors": "Price CJ, Weng HY.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Emotions are by nature embodied, as the brain has evolved to quickly assess the emotional significance of stimuli and output signals to the body's viscera and periphery to aid adaptive responses. Emotions involve both implicit bodily and explicit narrative processes, and patients may experience transdiagnostic distress when bodily signals are not attended to and holistically integrated with explicit narratives about experience. Similarly, therapists may be trained in more implicit body-based approaches (i.e., massage/bodywork, physical and occupational therapy, and nursing/medicine) or more explicit narrative-based approaches (i.e., psychotherapy), and may lack training in skills that integrate both levels of emotion processing to aid healing and growth. To address these gaps, we propose a framework where the bridge between implicit bodily sensations and explicit narratives lies in cultivating mindful awareness of bodily sensations associated with emotions. This process brings subjective awareness to notice inner body experience (or interoceptive awareness) that is often outside of conscious awareness, so that it may be understood and re-integrated in more adaptive ways, which we call somatic reappraisal. Using clinical theory and example vignettes, we present mindful interoceptive awareness for adaptive emotion processing as a framework to cultivate and enhance somatic reappraisal. Mindful interoceptive awareness brings more focused and sustained attention to inner body experience; likewise, internal sensations associated with emotions become more granular, vivid, and can shift in ways that facilitate somatic reappraisal. Learning to sustain interoceptive awareness when engaged with mindfulness qualities of nonjudgment and compassion promotes an experience where new associations between emotions, meanings, and memories can be made that generate insights that are holistic and integrative. A clinical vignette is used in this paper to provide examples of this approach in psychotherapy. An example script for use in mindfulness groups is included, and resources are suggested for clinicians to gain more experience. Mindful interoceptive awareness for adaptive emotion processing is a clinical process that can be learned and applied by a range of clinicians to treat mental and physical health conditions that may benefit greater embodied awareness."
+  },
+  {
+   "rank": 39,
+   "id": "34335449",
+   "source": "MED",
+   "pmid": "34335449",
+   "pmcid": "PMC8319239",
+   "doi": "10.3389/fneur.2021.684791",
+   "first_publication_date": "2021-07-15",
+   "title": "Cerebral Hemodynamic Correlates of Transcutaneous Auricular Vagal Nerve Stimulation in Consciousness Restoration: An Open-Label Pilot Study.",
+   "authors": "Yu Y, Yang Y, Gan S, Guo S, Fang J, Wang S, Tang C, Bai L, He J, Rong P.",
+   "journal": "Frontiers in neurology",
+   "pub_types": [
+    "brief-report",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "This study aimed to preliminarily illustrate the cerebral hemodynamic correlates of transcutaneous auricular vagal nerve stimulation (taVNS) in consciousness restoration. Arterial spin labeling (ASL) was adopted with functional magnetic resonance imaging (fMRI) to measure cerebral blood flow (CBF) changes before and after taVNS in 10 qualified patients with disorders of consciousness (DOC). Before taVNS, five patients responded to auditory stimuli (RtAS), and five did not respond to auditory stimuli (nRtAS). The RtAS DOC patients obtained favorable prognoses after the 4-week taVNS treatment, whereas the nRtAS ones did not. Simultaneously, taVNS increased CBF of multiple brain regions in the RtAS DOC patients, but hardly in the nRtAS ones. In conclusion, the preserved auditory function might be the prior key factor of the taVNS responders in DOC patients, and taVNS might alleviate RtAS DOC by activating the salience network, the limbic system, and the interoceptive system."
+  },
+  {
+   "rank": 40,
+   "id": "32631425",
+   "source": "MED",
+   "pmid": "32631425",
+   "pmcid": "PMC7336457",
+   "doi": "10.1186/s13195-020-00645-y",
+   "first_publication_date": "2020-07-06",
+   "title": "The insula, a grey matter of tastes: a volumetric MRI study in dementia with Lewy bodies.",
+   "authors": "Philippi N, Noblet V, Hamdaoui M, Soulier D, Botzung A, Ehrhard E, Cretin B, Blanc F, AlphaLewyMA study group.",
+   "journal": "Alzheimer's research & therapy",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundDespite the growing number of discoveries during the past decades about its functions, the insula remains a mysterious 'island'. In addition to its involvement in basic functions such as gustation and interoception, the insular cortex is now considered a key region for integrated functions such as emotion/motivation processing, decision-making and self-consciousness. We hypothesized that this structure, standing at the crossroads of such functions, could ground personal tastes in general, beyond food preferences and aesthetic judgements. Given that dementia with Lewy bodies is characterized by a focal atrophy within the insular cortex from the early stages, this condition provides an opportunity to test such a hypothesis.MethodsWe developed a questionnaire to assess potential changes in personal tastes, submitted it to a cohort of 23 patients with early-stage dementia with Lewy bodies and compared their questionnaire results to those of 20 age-matched healthy controls. Furthermore, we performed a global and regional neuroimaging study to test for a potential correlation between the patients' scores for changes in personal tastes and their insular cortex volumes.ResultsOur results indicate that the patients presented significant changes in personal tastes compared to the controls, in both food and non-food domains. Moreover, imaging analyses confirmed the involvement of the insular cortex atrophy in the changes in personal tastes using global analysis, and in both food and non-food domains using regional analysis.ConclusionsThese results bring new insights into the role of the insula as a 'grey matter of tastes', this structure supporting personal preferences in general, beyond the food domain. The insular cortex could be involved through its role in motivational processes by the representation of subjective awareness of bodily states during the phenomenological experience of stimulus appraisal. However, we also argue that it could support the abstract representations of personal tastes as self-concepts, acutely exemplifying embodied cognition. Finally, the questionnaire on changes in tastes could constitute an interesting tool to help early diagnosis of dementia with Lewy bodies and to assess insular dysfunction more generally."
+  }
+ ]
+}

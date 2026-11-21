@@ -1,0 +1,667 @@
+{
+ "prediction": "seth-feeling-from-prediction",
+ "query": "(TITLE_ABS:\"false heart rate feedback\" OR TITLE_ABS:\"false cardiac feedback\" OR TITLE_ABS:\"false physiological feedback\" OR TITLE_ABS:\"false heartbeat feedback\" OR TITLE_ABS:\"false interoceptive feedback\") AND SRC:MED",
+ "run_on": "2026-11-21 09:48 PST",
+ "hit_count": 37,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42963537",
+   "source": "MED",
+   "pmid": "42963537",
+   "pmcid": "PMC13722775",
+   "doi": "10.1002/hbm.70640",
+   "first_publication_date": "2026-11-01",
+   "title": "Functional Network Organization Underlying Individual Differences in False Feedback Susceptibility: A Graph Theoretical Analysis.",
+   "authors": "Patchitt J, Karapanagiotidis T, Garfinkel SN, Miller M, Tsakiris M, Clark A, Critchley HD.",
+   "journal": "Human brain mapping",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Individual differences in susceptibility to somatosensory false physiological feedback reflect variations in interoceptive processing, yet the underlying neural network mechanisms remain unclear. We analyzed resting-state functional connectivity using graph theoretical approaches in 41 healthy adults who completed a somatosensory false feedback paradigm. Nine regions of interest were defined from previous activation analyses, and network topology metrics including local efficiency, clustering coefficient, centrality measures, and path length were calculated across multiple thresholds. Three distinct patterns of network organization predicted false feedback susceptibility. Individuals more susceptible to false feedback showed: (1) increased posterior insula eccentricity, indicating network peripheralization of this key interoceptive region; (2) consistent orbitofrontal cortex segregation across multiple metrics including increased path length and decreased centrality measures; and (3) cerebellar network reconfiguration with reduced local efficiency but increased betweenness centrality. Somatosensory false feedback susceptibility reflects specific alterations in functional network topology, particularly reduced integration of interoceptive regions (posterior insula) and emotional appraisal systems (orbitofrontal cortex). These findings support a network-based model where interoceptive processing depends on efficient integration between visceral sensation, emotional evaluation, and cognitive control systems. Understanding these network properties may inform interventions targeting interoceptive awareness and emotional regulation."
+  },
+  {
+   "rank": 2,
+   "id": "42294597",
+   "source": "MED",
+   "pmid": "42294597",
+   "pmcid": "PMC13268646",
+   "doi": "10.7554/elife.90013",
+   "first_publication_date": "2026-06-15",
+   "title": "Exposure to false cardiac feedback alters pain perception and anticipatory cardiac frequency.",
+   "authors": "Parrotta E, Bach P, Pezzulo G, Zaccaro A, Perrucci MG, Costantini M, Ferri F.",
+   "journal": "eLife",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The experience of pain, like other interoceptive processes, has recently been conceptualized in terms of predictive coding and free energy frameworks. In these views, the brain integrates sensory, proprioceptive, and interoceptive signals to generate probabilistic inferences about upcoming events, which shape both the state and the perception of our inner body. Here, we ask whether it is possible to induce pain expectations by providing false faster (vs. slower) acoustic cardiac feedback before administering electrical cutaneous shocks. We test whether these expectations will shape both the perception of pain and the body's physiological state toward prior predictions. Results confirmed that faster cardiac feedback elicited pain expectations that affected both perceptual pain judgments and the body's physiological response. Perceptual pain judgments were biased toward the expected level of pain, such that participants illusorily perceived identical noxious stimuli as more intense and unpleasant. Physiological changes mirrored the predicted level of pain, such that participants' actual cardiac response in anticipation of pain stimuli showed a deceleration in heart rate, in line with the well-known orienting cardiac response in anticipation of threatening stimuli (Experiment 1). In a control experiment, such perceptual and cardiac modulations were dramatically reduced when the feedback reproduced an exteroceptive, instead of interoceptive, cardiac feedback (Experiment 2). These findings show that cardiac perception can be understood as interoceptive inference that modulates both our perception and the physiological state of the body, thereby actively generating the interoceptive and autonomic consequences that have been predicted."
+  },
+  {
+   "rank": 3,
+   "id": "38663458",
+   "source": "MED",
+   "pmid": "38663458",
+   "pmcid": null,
+   "doi": "10.1016/j.biopsycho.2024.108803",
+   "first_publication_date": "2024-04-23",
+   "title": "The influence of false interoceptive feedback on emotional state and balance responses to height-induced postural threat.",
+   "authors": "Hill MW, Johnson E, Ellmers TJ.",
+   "journal": "Biological psychology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Postural threat elicits a robust emotional response (e.g., fear and anxiety about falling), with concomitant modifications in balance. Recent theoretical accounts propose that emotional responses to postural threats are manifested, in part, from the conscious monitoring and appraisal of bodily signals ('interoception'). Here, we empirically probe the role of interoception in shaping emotional responses to a postural threat by experimentally manipulating interoceptive cardiac feedback. Sixty young adults completed a single 60-s trial under the following conditions: Ground (no threat) without heart rate (HR) feedback, followed by Threat (standing on the edge of a raised surface), during which participants received either false heart rate feedback (either slow [n = 20] or fast [n = 20] HR feedback) or no feedback (n = 20). Participants provided with false fast HR feedback during postural threat felt more fearful, reported feeling less stable, and rated the task more difficult than participants who did not receive HR feedback, or those who received false slow HR feedback (Cohen's d effect size = 0.79 - 1.78). However, behavioural responses did not significantly differ across the three groups. When compared to the no HR feedback group, false slow HR feedback did not significantly affect emotional or behavioural responses to the postural threat. These observations provide the first experimental evidence for emerging theoretical accounts describing the role of interoception in the generation of emotional responses to postural threats."
+  },
+  {
+   "rank": 4,
+   "id": "39845548",
+   "source": "MED",
+   "pmid": "39845548",
+   "pmcid": "PMC11751239",
+   "doi": "10.3389/fpsyg.2024.1442138",
+   "first_publication_date": "2025-01-08",
+   "title": "Influence of alexithymia severity in the healthy population on the susceptibility to false interoceptive feedback.",
+   "authors": "Ikarashi H, Otsuru N, Takahashi S, Nagasaka K, Hara M, Onishi H.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Alexithymia is a psychological trait characterized by difficulty expressing emotions. Previous studies reported that individuals with higher alexithymia have a decreased sense of interoception, which is the sense of monitoring and controlling internal organs. Thus, we hypothesized that internal organ activity (cardiac activities in the present study) was easily affected by false feedback in individuals with severe alexithymia. Therefore, we investigated whether the effects of fake heart rate feedback on real cardiac activities differ depending on the severity of alexithymia as assessed by the 20-item Toronto Alexithymia Scale (TAS-20). Fake heart rate feedback was presented as if it were occurring in the individual's hand through a virtual reality system at various speeds. Changes in cardiac activities were evaluated by the root-mean-square-successive difference (RMSSD, high value indicates greater parasympathetic tone) of the heartbeat interval. Our findings revealed a negative correlation between externally oriented thinking, a subscale of the TAS-20 score, and the RMSSD change ratio elicited by fake heart rate feedback. These findings indicate that individuals with higher alexithymia might be particularly susceptible to external fake feedback."
+  },
+  {
+   "rank": 5,
+   "id": "35143921",
+   "source": "MED",
+   "pmid": "35143921",
+   "pmcid": null,
+   "doi": "10.1016/j.biopsycho.2022.108288",
+   "first_publication_date": "2022-02-08",
+   "title": "Actions of a shaken heart: Interoception interacts with action processing.",
+   "authors": "Bečev O, Kozáková E, Sakálošová L, Mareček R, Majchrowicz B, Roman R, Brázdil M.",
+   "journal": "Biological psychology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "In the present study, we investigated the modulatory influence of the unconscious, bodily arousal on motor-related embodied information. Specifically, we examined how the interoceptive prediction error interacts with the event-related potentials linked to action-effect processing. Participants were asked to perform a task with self-initiated or externally-triggered sounds while receiving synchronous or false auditory cardiac feedback. The results found that interaction of interoceptive manipulation and action-effect processing modulates the frontal subcomponent of the P3 response. During the synchronous cardiac feedback, the P3 response to self-initiated tones was enhanced. During the false cardiac feedback, the frontal cortical response was reversed. N1 and P2 components were affected by the interoceptive manipulation, but not by the interaction of interoception and action processing. These findings provide experimental support for the theoretical accounts of the interaction between interoception and action processing within a framework of predictive coding, manifested particularly in the higher stages of action processing."
+  },
+  {
+   "rank": 6,
+   "id": "31235576",
+   "source": "MED",
+   "pmid": "31235576",
+   "pmcid": "PMC6628799",
+   "doi": "10.1073/pnas.1821032116",
+   "first_publication_date": "2019-06-24",
+   "title": "An interoceptive illusion of effort induced by false heart-rate feedback.",
+   "authors": "Iodice P, Porciello G, Bufalari I, Barca L, Pezzulo G.",
+   "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Interoception, or the sense of the internal state of the body, is key to the adaptive regulation of our physiological needs. Recent theories contextualize interception within a predictive coding framework, according to which the brain both estimates and controls homeostatic and physiological variables, such as hunger, thirst, and effort levels, by orchestrating sensory, proprioceptive, and interoceptive signals from inside the body. This framework suggests that providing false interoceptive feedback may induce misperceptions of physiological variables, or \"interoceptive illusions.\" Here we ask whether it is possible to produce an illusory perception of effort by giving participants false acoustic feedback about their heart-rate frequency during an effortful cycling task. We found that participants reported higher levels of perceived effort when their heart-rate feedback was faster compared with when they cycled at the same level of intensity with a veridical feedback. However, participants did not report lower effort when their heart-rate feedback was slower, which is reassuring, given that failing to notice one's own effort is dangerous in ecologically valid conditions. Our results demonstrate that false cardiac feedback can produce interoceptive illusions. Furthermore, our results pave the way for novel experimental manipulations that use illusions to study interoceptive processing."
+  },
+  {
+   "rank": 7,
+   "id": "30923745",
+   "source": "MED",
+   "pmid": "30923745",
+   "pmcid": "PMC6435301",
+   "doi": "10.1145/3131214.3131222",
+   "first_publication_date": "2017-06-01",
+   "title": "EmotionCheck:: A Wearable Device to Regulate Anxiety through False Heart Rate Feedback.",
+   "authors": "Costa J, Adams AT, Jung MF, Guimbretière F, Choudhury T.",
+   "journal": "GetMobile (New York, N.Y.)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Previous studies indicate that the way we perceive our bodily signals, such as our heart rate, can influence how we feel. Inspired by these studies, we built EmotionCheck, which is a wearable device that can change users' perception of their heart rate through subtle vibrations on the wrist. The results of an experiment with 67 participants show that the EmotionCheck device can help users regulate their anxiety through false feedback of a slow heart rate."
+  },
+  {
+   "rank": 8,
+   "id": "26676918",
+   "source": "MED",
+   "pmid": "26676918",
+   "pmcid": null,
+   "doi": "10.3758/s13415-015-0398-8",
+   "first_publication_date": "2016-06-01",
+   "title": "The effects of self-focus on attentional biases in social anxiety:An ERP study.",
+   "authors": "Judah MR, Grant DM, Carlisle NB.",
+   "journal": "Cognitive, affective & behavioral neuroscience",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Cognitive theories of social anxiety disorder suggest that biased attention plays a key role in maintaining symptoms. These biases include self-focus and attention to socially threatening stimuli in the environment. The goal of this study was to utilize ERPs that are elicited by a change detection task to examine biases in selective attention (i.e., N2pc) and working memory maintenance (i.e., contralateral delay activity; CDA). Additionally, the effect of self-focus was examined using false heart rate feedback. In support of the manipulation, self-focus cues resulted in greater self-reported self-consciousness and task interference, enhanced anterior P2 amplitude and reduced SPN amplitude. Moreover, P2 amplitude for self-focus cues was correlated with reduced task performance for socially anxious subjects only. The difference in P2 amplitude between self-focus and standard cues was correlated with social anxiety independent of depression. As hypothesized, socially anxious participants (n = 20) showed early selection and maintenance of disgust faces relative to neutral faces as indicated by the N2pc and CDA components. Nonanxious controls (n = 22) did not show these biases. During self-focus cues, controls showed marginal evidence of biased selection for disgust faces, whereas socially anxious subjects showed no bias in this condition. Controls showed an ipsilateral delay activity after being cued to attend to one hemifield. Overall, this study supports early and persistent attentional bias for social threat in socially anxious individuals. Furthermore, self-focus may disrupt these biases. These findings and supplementary data are discussed in light of cognitive models of social anxiety disorder, recent empirical findings, and treatment."
+  },
+  {
+   "rank": 9,
+   "id": "26956658",
+   "source": "MED",
+   "pmid": "26956658",
+   "pmcid": null,
+   "doi": "10.1016/j.beth.2015.12.002",
+   "first_publication_date": "2015-12-29",
+   "title": "Electrocortical Evidence of Enhanced Performance Monitoring in Social Anxiety.",
+   "authors": "Judah MR, Grant DM, Frosio KE, White EJ, Taylor DL, Mills AC.",
+   "journal": "Behavior therapy",
+   "pub_types": [
+    "Comparative Study",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Self-focused attention is thought to be a key feature of social anxiety disorder. Yet few studies have used event-related potentials (ERPs) to examine whether socially anxious individuals display greater monitoring of their performance and attention to their errors. Similarly, only a few studies have used ERPs to examine how social anxiety is related to processing of performance feedback. Individuals with high (n=26) and low (n=28) levels of social anxiety completed a trial-and-error learning task. Self-focus was manipulated using false heart-rate feedback during a random subset of trials. Performance feedback was given using emotional and neutral faces in a positive context (correct=happy face; incorrect=neutral face) and negative context (correct=neutral face; incorrect=disgust face) in order to investigate biased interpretation and attention to feedback. Socially anxious subjects displayed enhanced amplitude of the ERN and CRN, suggesting greater response monitoring, and enhanced Pe amplitude, suggesting greater processing of errors relative to the low social anxiety group. No group differences were observed with respect to feedback processing. Before learning stimulus-response mappings in the negative context, the FRN was larger for self-focus compared to standard trials and marginally larger for socially anxious subjects compared to controls. These findings support cognitive models and suggest avenues for future research."
+  },
+  {
+   "rank": 10,
+   "id": "26167147",
+   "source": "MED",
+   "pmid": "26167147",
+   "pmcid": "PMC4481155",
+   "doi": "10.3389/fnhum.2015.00373",
+   "first_publication_date": "2015-06-26",
+   "title": "Do I really feel it? The contributions of subjective fluency and compatibility in low-level effects on aesthetic appreciation.",
+   "authors": "Forster M, Fabi W, Leder H.",
+   "journal": "Frontiers in human neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The causes for the liking of objects are multifaceted. According to the processing fluency account, the ease with which an object is processed leads to a subjective feeling of fluency. This subjective feeling is then interpreted as a positive reaction toward the object resulting higher liking. However, evidence regarding the processes underlying this relation is scarce. To show that the subjective feeling can indeed be responsible for liking, we experimentally manipulated processing ease by providing false physiological feedback (varying skin conductance indicated varying feelings of fluency) and by varying presentation times between 100 and 400 ms while participants viewed line drawings of objects and rated them for liking. A first experiment showed that both false physiological feedback and presentation duration influenced liking. Stimuli primed with a (fake) visualization of a physiological correlate of high ease of processing were liked more than stimuli primed with a low ease of processing. Liking ratings in a no-feedback condition fell between the high and low feedback conditions. To explore possible compatibility effects of coupling visual feedback to the fluency interpretation, in a second experiment we reversed the feedback interpretation-visualization of high skin conductance now indicated low ease of processing. The results show a similar pattern, though the effect was subtler. This indicates that when the coupling of feedback to fluency is less apparent or less compatible, the feeling is less strongly linked to liking. Our results support the claim that variations in the feeling of fluency affect the appreciation of objects in terms of liking. Together, the experiments suggest the contributions of processing ease as well as compatibility to the experience of liking."
+  },
+  {
+   "rank": 11,
+   "id": "23312431",
+   "source": "MED",
+   "pmid": "23312431",
+   "pmcid": null,
+   "doi": "10.1016/j.beth.2012.07.005",
+   "first_publication_date": "2012-08-02",
+   "title": "Effects of false feedback on affect, cognition, behavior, and postevent processing: the mediating role of self-focused attention.",
+   "authors": "Makkar SR, Grisham JR.",
+   "journal": "Behavior therapy",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Current social phobia models (e.g., Clark & Wells, 1995; Leary & Kowalski, 1995) postulate that socially anxious individuals negatively appraise their anxiety sensations (e.g., sweating, heart racing, blushing) as evidence of poor social performance, and thus fear these anxiety symptoms will be noticed and judged negatively by others. Consequently, they become self-focused and hypervigilant of these sensations and use them to judge how they appear to others. To test this model, high (N=41) and low (N=38) socially anxious participants were shown false physiological feedback regarding an increase or decrease in heart rate prior to and during an impromptu speech task. Relative to participants who observed a false heart rate decrease, those in the increase condition reported higher levels of negative affect, more negative performance appraisals, and more frequent negative ruminative thoughts, and these effects were mediated by an increase in self-focused attention. The unhelpful effects of the physiological feedback were not specific to high socially anxious participants. The results have implications for current cognitive models as well as the treatment of social phobia."
+  },
+  {
+   "rank": 12,
+   "id": "22309028",
+   "source": "MED",
+   "pmid": "22309028",
+   "pmcid": null,
+   "doi": "10.1037/a0027010",
+   "first_publication_date": "2012-02-06",
+   "title": "Culture and the body: East-West differences in visceral perception.",
+   "authors": "Ma-Kellams C, Blascovich J, McCall C.",
+   "journal": "Journal of personality and social psychology",
+   "pub_types": [
+    "Comparative Study",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This research investigated cross-cultural differences in the accuracy of individuals' perceptions of internal visceral states. We conducted 4 studies to test the hypothesis that Asians are less sensitive to internal physiological cues relative to European Americans. Studies 1 and 2 assessed cultural differences in visceral perception via tests of misattributions of arousal: Study 1 involved false heart rate feedback during an emotionally evocative slideshow and examined subsequent self-reported affective changes; Study 2 manipulated apparent physiological arousal and measured its effects on attraction via an immersive virtual environment. Study 3 directly assessed visceral perception using a heartbeat detection task. All 3 studies found Asians to be less viscerally perceptive than European Americans. Study 4 examined one possible cultural mechanism for the observed difference and found evidence for contextual dependency as a mediator of the culture-visceral perception link."
+  },
+  {
+   "rank": 13,
+   "id": "21432638",
+   "source": "MED",
+   "pmid": "21432638",
+   "pmcid": null,
+   "doi": "10.1080/02699931.2010.543016",
+   "first_publication_date": "2011-05-24",
+   "title": "The role of cognitive appraisal in media-induced presence and emotions.",
+   "authors": "Weibel D, Wissmath B, Mast FW.",
+   "journal": "Cognition & emotion",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "In the present study, we applied Valins' (1966) bogus bodily feedback paradigm to investigate the roles of cognitive appraisal (tele)presence, and emotion in the context of media usage. Participants (N=30) viewed short sequences of a TV show, whereby false heart rate feedback was provided. In line with Valins' paradigm, the manipulation we used in this study included two levels: high vs. low false heart rate feedback. We assessed presence, enjoyment, and the real heart rate. Participants reported stronger experiences of presence and enjoyed the clips more when they wrongly believed that they had been aroused. Since bogus feedback increases the sensation of presence, the results indicate that presence-like emotions-can be influenced by cognitive appraisals. It is likely that the false heart rate feedback was attributed to the stimulus, which in turn enhanced the sensation of presence."
+  },
+  {
+   "rank": 14,
+   "id": "18561016",
+   "source": "MED",
+   "pmid": "18561016",
+   "pmcid": null,
+   "doi": "10.1007/s10508-008-9370-9",
+   "first_publication_date": "2008-06-17",
+   "title": "The effects of false physiological feedback on tumescence and cognitive domains in sexually functional and dysfunctional men.",
+   "authors": "Stone JM, Clark R, Sbrocco T, Lewis EL.",
+   "journal": "Archives of sexual behavior",
+   "pub_types": [
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "A false feedback paradigm was used to produce a discrepancy between expected and \"actual\" tumescence among 57 sexually dysfunctional and 58 sexually functional men randomly assigned to one of four false tumescence feedback conditions: negative (NEG), neutral (NEU), positive (POS), or no (NO) feedback. Participants predicted an erection score before viewing an erotic film and then received false tumescence feedback based on this score. Tumescence and cognitive ratings were obtained before and after the feedback. It was predicted that discrepancies would differ between dysfunctional and functional participants such that functional participants would have the ability to overcome discrepancies, whereas dysfunctional participants would not. As expected, POS decreased tumescence for dysfunctional participants and NO did not influence tumescence for either group. Unexpectedly, NEU decreased tumescence for dysfunctional participants and NEG decreased tumescence for functional participants. Despite tumescence changes, cognitive ratings generally followed the feedback that was given. These results only partially support current models of sexual dysfunction and behavioral regulation. Anxiety, self-focused attention, cognitive interference, and unexpectedness of the feedback could not account for the partial support. However, most feedback that was outside of the realm of the status quo for both functional and dysfunctional participants did decrease tumescence, despite outcome expectancies. These results suggest that both functional and dysfunctional men may be at risk for erectile failure should feedback about their performance be discrepant from what they expect. Prevention and treatment should focus on preparing men for occasional erectile failure and on helping them overcome discrepant feedback."
+  },
+  {
+   "rank": 15,
+   "id": "19125336",
+   "source": "MED",
+   "pmid": "19125336",
+   "pmcid": "PMC2691549",
+   "doi": "10.1007/s12529-008-9001-9",
+   "first_publication_date": "2009-01-06",
+   "title": "False heart rate feedback and the perception of heart symptoms in patients with congenital heart disease and anxiety.",
+   "authors": "Karsdorp PA, Kindt M, Rietveld S, Everaerd W, Mulder BJ.",
+   "journal": "International journal of behavioral medicine",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundLittle is known about the mechanisms explaining an increased perception of heart symptoms in congenital heart disease (ConHD). In the present study, it was suggested that a combination of high trait anxiety and disease history increases the perception of heart symptoms.PurposeIt was tested whether false heart cues will result in an increased perception of heart symptoms in patients with ConHD and anxiety.MethodThirty-six patients with ConHD and 44 healthy controls performed two exercise tasks. During one of the exercise tasks, participants were exposed to a false heart cue consisting of false heart rate feedback (regular or irregular). Perceived heart symptoms were assessed and heart rate, arterial partial pressure of CO(2), and respirator rate were monitored continuously.ResultsIn line with the predictions, false heart rate feedback resulted in an increased perception of heart symptoms in high trait anxious patients with ConHD that could not be explained by acute heart dysfunction. However, unexpectedly, this effect was not observed immediately after the false heart rate feedback task but after a second exercise task without false feedback.ConclusionThe results suggest that not the sole presence of ConHD but ConHD in combination with high trait anxiety results in a vulnerability to overperceive heart symptoms."
+  },
+  {
+   "rank": 16,
+   "id": "18692167",
+   "source": "MED",
+   "pmid": "18692167",
+   "pmcid": null,
+   "doi": "10.1016/j.brat.2008.06.001",
+   "first_publication_date": "2008-06-27",
+   "title": "Responses to false physiological feedback in individuals with panic attacks and elevated anxiety sensitivity.",
+   "authors": "Story TJ, Craske MG.",
+   "journal": "Behaviour research and therapy",
+   "pub_types": [
+    "Comparative Study",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Participants with elevated anxiety sensitivity and a history of panic attacks were compared to a low anxiety comparison group with respect to physiological and subjective reactivity to false heart-rate feedback and reactivity to a priming procedure. Whereas accurate heart-rate feedback elicited minimal responses, participants across groups showed significant physiological and subjective responses to false feedback. High risk and low risk participants did not differ in heart-rate responses to false feedback, though panic attack frequency did predict physiological and subjective reactions to false feedback in the high risk group. Self-reported nonspecific anxiety was significantly higher in high risk female participants than in low risk female participants, while males did not different in general subjective anxiety. However, high risk participants reported more panic-specific symptoms during the false feedback task than low risk participants, regardless of the sex of the participant. Therefore, although the experimental paradigm appeared to trigger nonspecific anxiety in high risk female participants, panic attack symptoms in reaction to the task were specific to risk group, not sex, and consistent with hypotheses. Surprisingly, the priming procedure did not influence physiological or subjective responses to false feedback in either group. These results raise additional questions regarding the process and impact of interception in individuals with panic attacks, and suggest that false perception of internal changes may contribute to risk for panic disorder when exposed to believable cues."
+  },
+  {
+   "rank": 17,
+   "id": "17579718",
+   "source": "MED",
+   "pmid": "17579718",
+   "pmcid": "PMC1890305",
+   "doi": "10.1371/journal.pone.0000546",
+   "first_publication_date": "2007-06-20",
+   "title": "Modulation of emotional appraisal by false physiological feedback during fMRI.",
+   "authors": "Gray MA, Harrison NA, Wiens S, Critchley HD.",
+   "journal": "PloS one",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundJames and Lange proposed that emotions are the perception of physiological reactions. Two-level theories of emotion extend this model to suggest that cognitive interpretations of physiological changes shape self-reported emotions. Correspondingly false physiological feedback of evoked or tonic bodily responses can alter emotional attributions. Moreover, anxiety states are proposed to arise from detection of mismatch between actual and anticipated states of physiological arousal. However, the neural underpinnings of these phenomena previously have not been examined.Methodology/principal findingsWe undertook a functional brain imaging (fMRI) experiment to investigate how both primary and second-order levels of physiological (viscerosensory) representation impact on the processing of external emotional cues. 12 participants were scanned while judging face stimuli during both exercise and non-exercise conditions in the context of true and false auditory feedback of tonic heart rate. We observed that the perceived emotional intensity/salience of neutral faces was enhanced by false feedback of increased heart rate. Regional changes in neural activity corresponding to this behavioural interaction were observed within included right anterior insula, bilateral mid insula, and amygdala. In addition, right anterior insula activity was enhanced during by asynchronous relative to synchronous cardiac feedback even with no change in perceived or actual heart rate suggesting this region serves as a comparator to detect physiological mismatches. Finally, BOLD activity within right anterior insula and amygdala predicted the corresponding changes in perceived intensity ratings at both a group and an individual level.Conclusions/significanceOur findings identify the neural substrates supporting behavioural effects of false physiological feedback, and highlight mechanisms that underlie subjective anxiety states, including the importance of the right anterior insula in guiding second-order \"cognitive\" representations of bodily arousal state."
+  },
+  {
+   "rank": 18,
+   "id": "17477208",
+   "source": "MED",
+   "pmid": "17477208",
+   "pmcid": null,
+   "doi": "10.1007/bf03159712",
+   "first_publication_date": "2005-07-01",
+   "title": "Opportunity for information search and the effect of false heart rate feedback.",
+   "authors": "Barefoot JC, Straub RB.",
+   "journal": "Integrative physiological and behavioral science : the official journal of the Pavlovian Society",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The role of information search in the attribution of physiological states was investigated by manipulating the subject's opportunity for information search following the presentation of false information about his heart-rate reactions to photographs of female nudes. Consistent with the self-persuasion hypothesis proposed by Valins, the rated attractiveness of the slides was not affected by the false heart-rate feedback for those subjects who were prevented from visually searching the slides. Those subjects who had ample opportunity to view the slides rated those slides accompanied by false information of a heart-rate change as more attractive than those slides which were not paired with a change in heart rate."
+  },
+  {
+   "rank": 19,
+   "id": "11195911",
+   "source": "MED",
+   "pmid": "11195911",
+   "pmcid": null,
+   "doi": "10.1016/s0010-9452(08)70542-2",
+   "first_publication_date": "2000-12-01",
+   "title": "Emotional and physiological responses to false feedback.",
+   "authors": "Crucian GP, Hughes JD, Barrett AM, Williamson DJ, Bauer RM, Bowers D, Heilman KM.",
+   "journal": "Cortex; a journal devoted to the study of the nervous system and behavior",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The relationship between autonomic-visceral arousal and emotional experience is unclear. The attribution or cognitive-arousal theory of emotional experience posits that emotional experience is dependent on both visceral-autonomic nervous system feedback and the cognitive interpretation of the stimulus that induced this visceral activation. The finding that false cardiac feedback can alter emotional experience suggests that it may be the conscious perception that one is aroused, together with the cognitive interpretation of the stimulus that are important in developing emotional experience. Because the right hemisphere appears to play a special role in modulating arousal and interpreting emotional stimuli, it is possible that right hemisphere damage may interfere with developing the computations needed for emotional experience. To test this hypothesis we exposed men, both neurologically intact and those with right and left hemisphere lesions, to emotionally provocative pictures that were paired with false cardiac feedback, and examined the effects of this false feedback on their ratings of attractiveness of these pictures and their cardiac reactivity to this information. Subjects with left hemisphere damage, but not right hemisphere damage, showed significant changes in their emotional rating whereas control subjects showed marginal reactivity in their emotional ratings. Subjects with left hemisphere damage also showed significant changes in their cardiac reactivity. This finding is consistent with prior reports that indicate, when compared to right hemisphere damaged patients and normal controls, patients with left hemisphere lesions have an increased visceral-autonomic response to stimuli. These findings further provide support for the postulate that it is the cognitive interpretation of perceived physiological arousal together with the cognitive interpretation of the stimulus that is important in the development of emotional judgment and experience. These results do not support the approach-left hemisphere/avoidance-right hemisphere dichotomy, but instead suggest that left hemisphere damage increases reactivity to false feedback, and that the intact right hemisphere function integrates the cognitive interpretation of the emotional information and perceived arousal that lead to that emotional judgment. That these subjects showed no consistent relationship between their measures of cardiac reactivity and their ratings of attractiveness detracts from the James-Lange and attribution theories. These subjects also showed no consistent relationship between their knowledge of affective physiological reactivity and their ratings of attractiveness, or between their knowledge of physiological reactivity and actual measures of cardiac reactivity, suggesting that other neuropsychological factors are involved in making an emotional judgment."
+  },
+  {
+   "rank": 20,
+   "id": "10432800",
+   "source": "MED",
+   "pmid": "10432800",
+   "pmcid": null,
+   "doi": "10.1017/s0048577299980071",
+   "first_publication_date": "1999-07-01",
+   "title": "Effects of the presentation of false heart-rate feedback on the performance of two common heartbeat-detection tasks.",
+   "authors": "Phillips GC, Jones GE, Rieger EJ, Snell JB.",
+   "journal": "Psychophysiology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Research has indicated that performance on heartbeat counting tasks may be influenced by beliefs about heart rate. Sixty male subjects were administered the Schandry heartbeat counting task after viewing fast, slow, or no heart rate feedback. Subjects were also administered the Whitehead signal-detection type task. Results indicated that subjects who received fast or no heartbeat feedback performed better on the Schandry task than subjects who received slow feedback. Feedback presentation did not affect performance on the Whitehead task. These results suggest that the Schandry task is influenced by external variables (expectations, beliefs) beyond pure awareness of \"discrete\" visceral sensations and, thus, may not be as powerful a method for determining awareness of individual heartbeats as some other paradigms."
+  },
+  {
+   "rank": 21,
+   "id": "7673538",
+   "source": "MED",
+   "pmid": "7673538",
+   "pmcid": null,
+   "doi": "10.1037//0022-006x.63.4.604",
+   "first_publication_date": "1995-08-01",
+   "title": "Modification of dysfunctional patterns of sexual response through autonomic arousal and false physiological feedback.",
+   "authors": "Palace EM.",
+   "journal": "Journal of consulting and clinical psychology",
+   "pub_types": [
+    "Clinical Trial",
+    "Research Support, Non-U.S. Gov't",
+    "Randomized Controlled Trial",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Effects of autonomic arousal and positive-false vaginal blood volume (VBV) feedback were examined to identify how cognitive and physiological mechanisms mediate sexual arousal, and can be modified to reverse dysfunctional processes. Sixty-four matched sexually dysfunctional women were randomly assigned to 4 conditions: autonomic arousal-evoking or neutral-control preexposure film stimulus paired with an erotic stimulus, and positive-false VBV feedback or no feedback. Results revealed the following: (a) general autonomic arousal enhanced genital arousal; false feedback increased (b) expectations of sexual arousal, (c) actual vasocongestive response, and (d) the subsequent experience of sexual arousal; (e) heightened expectations with false feedback were followed by an increase in actual genital response within 30 s, and (f) the combined effects of autonomic arousal and false feedback enhanced expectations and subsequent genital arousal to levels comparable with those of sexually functional women (E.M. Palace & B.B. Gorzalka, 1990) within 3 min."
+  },
+  {
+   "rank": 22,
+   "id": "1784650",
+   "source": "MED",
+   "pmid": "1784650",
+   "pmcid": null,
+   "doi": "10.2466/pr0.1991.69.3.1024",
+   "first_publication_date": "1991-12-01",
+   "title": "False heart-rate feedback, social anxiety and self-attribution of embarrassment.",
+   "authors": "Shahidi S, Baluch B.",
+   "journal": "Psychological reports",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "120 subjects high or low on social anxiety were asked to speak in front of a camera. While watching a replay of their performance, false heart-rate feedback was presented. Highly anxious subjects (n = 36) reported significantly more embarrassment than subjects who scored low in anxiety. Further, subjects reported being embarrassed according to the direction of false heart-rate information. Results offer support for the self-attribution theory of emotions."
+  },
+  {
+   "rank": 23,
+   "id": "3341996",
+   "source": "MED",
+   "pmid": "3341996",
+   "pmcid": null,
+   "doi": "10.1016/0005-7967(88)90028-9",
+   "first_publication_date": "1988-01-01",
+   "title": "Anxiety induced by false heart rate feedback in patients with panic disorder.",
+   "authors": "Ehlers A, Margraf J, Roth WT, Taylor CB, Birbaumer N.",
+   "journal": "Behaviour research and therapy",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": ""
+  },
+  {
+   "rank": 24,
+   "id": "486338",
+   "source": "MED",
+   "pmid": "486338",
+   "pmcid": null,
+   "doi": "10.1111/j.2044-8341.1979.tb02488.x",
+   "first_publication_date": "1979-03-01",
+   "title": "A comparison of predictions from peripheral and central theories of emotion.",
+   "authors": "Linton JC, Hirt M.",
+   "journal": "The British journal of medical psychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Peripheral and central theories of emotion differ in the role they ascribe to cognitive and physiological variables in arousal. This study compared the responses of quadriplegics and normal controls to sexually arousing stimuli under various conditions of false heart-rate feedback. The results support a centralist position and the relatively greater importance of cognitive factors in emotional responsiveness."
+  },
+  {
+   "rank": 25,
+   "id": "887709",
+   "source": "MED",
+   "pmid": "887709",
+   "pmcid": null,
+   "doi": "10.1007/bf00309286",
+   "first_publication_date": "1977-06-01",
+   "title": "Effects of false heart rate feedback and task instructions on information search, attributions, and stimulus ratings.",
+   "authors": "Liebhart EH.",
+   "journal": "Psychological research",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": ""
+  },
+  {
+   "rank": 26,
+   "id": "993982",
+   "source": "MED",
+   "pmid": "993982",
+   "pmcid": null,
+   "doi": "10.1037//0022-3514.34.5.821",
+   "first_publication_date": "1976-11-01",
+   "title": "Operant autonomic conditioning and rod-and-frame test performance.",
+   "authors": "McCanne TR, Sandman CA.",
+   "journal": "Journal of personality and social psychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Forty subjects were administered the portable rod-and-frame test (RFT) before and after operant autonomic conditioning training or control experiences. Ten subjects were assigned to each of four groups: a heart rate conditioning group; a false heart rate feedback group; a galvanic skin-response conditioning group; and a control group. Half of the subjects in the three experimental groups were informed of the response-reinforcement contingencies, and half were not informed. Informed subjects in the conditioning groups exhibited significantly lower portable RFT scores after conditioning. The results suggest that awareness of and control over autonomic functioning may be an important determinant of RFT performance."
+  },
+  {
+   "rank": 27,
+   "id": "974449",
+   "source": "MED",
+   "pmid": "974449",
+   "pmcid": null,
+   "doi": "10.1111/j.2044-8295.1976.tb01522.x",
+   "first_publication_date": "1976-08-01",
+   "title": "A failure to explain the effects of false heart-rate feedback on affect by induced changes in physiological response.",
+   "authors": "Thornton EW, Hagan PJ.",
+   "journal": "British journal of psychology (London, England : 1953)",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "An experiment was performed to validate and extend the self-persuasion hypothesis of Valins by using slide stimuli reported to create strong unpleasant feelings. The hypothesis suggests that in situations where there is no immediate explanation of induced arousal in terms of a cue of false heart-rate feedback then reported affect is dependent on a cognitive interpretation. Evidence is presented in the present study which not only supports such an interpretation but finds no support for a previous study that reported changes in affect to be a consequence of induced changes in actual physiological responses. The implication of this discrepancy from the previous reported findings are related to the possible efficiency of techniques of systematic desensitization."
+  },
+  {
+   "rank": 28,
+   "id": "21287016",
+   "source": "MED",
+   "pmid": "21287016",
+   "pmcid": null,
+   "doi": "10.3758/bf03213157",
+   "first_publication_date": "1976-03-01",
+   "title": "Self-attribution of attitude as a function of belief feedback.",
+   "authors": "Hendrick C, Giesen M.",
+   "journal": "Memory & cognition",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Previous research has found that subjects listening to a communication can be persuaded more when they receive false physiological feedback concerning their emotional state than when such feedback is not presented. Such results, in conjunction with Bem's (1972) postulate that subjects infer their attitude from the external circumstances of their behavior, suggested that false feedback of belief or disbelief would affect persuasion. Subjects listened to a speech while observing their (false) reactions on a \"belief meter.\" Half of the subjects received strong positive belief feedback, and the other half received strong disbelief feedback. Demand characteristics were varied by telling half of the subjects in each group that the meter was highly reliable and valid and the other half that is was of questionable validity. Results showed that the meter feedback affected self-attributions of attitude. Subjects receiving disbelief feedback rated their attitude the same as a control group who merely completed the attitude scale. Subjects receiving belief feedback were persuaded more than a control group receiving only the communication. The implications of the data for the construct of attitude were discussed."
+  },
+  {
+   "rank": 29,
+   "id": "1195088",
+   "source": "MED",
+   "pmid": "1195088",
+   "pmcid": null,
+   "doi": "10.1111/j.1467-6494.1975.tb00702.x",
+   "first_publication_date": "1975-06-01",
+   "title": "False physiological feedback and persuasion: effect of fear arousal vs. fear reduction on attitude change.",
+   "authors": "Hendrick C, Giesen M, Borden R.",
+   "journal": "Journal of personality",
+   "pub_types": [
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Two experiments tested the hypothesis that increases in false physiological feedback of fear arousal will enhance persuasion and that reduction in the arousal feedback is unnecessary for increased persuasion to occur. Prior research has usually found a positive relation between level of arousal and persuasion, but support for the drive reduction hypothesis is tenuous. However, Harris and Jellison (1971) claimed support for such a hypothesis. They manipulated subjects' fear arousal cognitively via false physiological feedback while the subjects listened to a persuasive communication. The present experiments used a similar procedure in an attempt to test an \"arousal only\" against an \"arousal reduction\" hypothesis. Subjects listened to a persuasive speech while receiving false feedback via a meter concerning their fear arousal. In Experiment I half of the subjects received high arousal and half received moderate arousal information. Within each of these conditions half of the subjects had their arousal reduced, and the other half did not. In Experiment II subjects received either low arousal, high arousal, or high then low arousal feedback while listening. The results of the two studies generally provided support for the \"arousal only\" hypothesis. An interpretation in terms of Bem's attribution theory was tentatively suggested."
+  },
+  {
+   "rank": 30,
+   "id": "4429534",
+   "source": "MED",
+   "pmid": "4429534",
+   "pmcid": null,
+   "doi": "10.1016/0005-7967(74)90122-3",
+   "first_publication_date": "1974-09-01",
+   "title": "The effect of false heart rate feedback on self-reports of anxiety and on actual heart rate.",
+   "authors": "Decaria MD, Proctor S, Malloy TE.",
+   "journal": "Behaviour research and therapy",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": ""
+  },
+  {
+   "rank": 31,
+   "id": "4418693",
+   "source": "MED",
+   "pmid": "4418693",
+   "pmcid": null,
+   "doi": "10.2466/pr0.1974.35.1.267",
+   "first_publication_date": "1974-08-01",
+   "title": "Effects of false heart rate feedback and sex-guilt upon attitudes toward sexual stimuli.",
+   "authors": "Botto RW, Galbraith GG, Stern RM.",
+   "journal": "Psychological reports",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": ""
+  },
+  {
+   "rank": 32,
+   "id": "4825211",
+   "source": "MED",
+   "pmid": "4825211",
+   "pmcid": null,
+   "doi": "10.1037/h0036472",
+   "first_publication_date": "1974-04-01",
+   "title": "False physiological feedback and the maintenance of speech anxiety.",
+   "authors": "Borkovec TD, Wall RL, Stone NM.",
+   "journal": "Journal of abnormal psychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": ""
+  },
+  {
+   "rank": 33,
+   "id": "4735700",
+   "source": "MED",
+   "pmid": "4735700",
+   "pmcid": null,
+   "doi": "10.1016/s0005-7967(73)80003-8",
+   "first_publication_date": "1973-05-01",
+   "title": "Boundary conditions of false heart-rate feedback effects on avoidance behavior: a resolution of discrepant results.",
+   "authors": "Borkovec TD, Glasgow RE.",
+   "journal": "Behaviour research and therapy",
+   "pub_types": [
+    "Clinical Trial",
+    "Randomized Controlled Trial",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": ""
+  },
+  {
+   "rank": 34,
+   "id": "5019746",
+   "source": "MED",
+   "pmid": "5019746",
+   "pmcid": null,
+   "doi": "10.1111/j.1469-8986.1972.tb00739.x",
+   "first_publication_date": "1972-01-01",
+   "title": "Behavioral and physiological effects of false heart rate feedback: a replication and extension.",
+   "authors": "Stern RM, Botto RW, Herrick CD.",
+   "journal": "Psychophysiology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": ""
+  },
+  {
+   "rank": 35,
+   "id": "5100717",
+   "source": "MED",
+   "pmid": "5100717",
+   "pmcid": null,
+   "doi": "10.1037/h0030383",
+   "first_publication_date": "1971-02-01",
+   "title": "Opportunity for information search and the effect of false heart-rate feedback.",
+   "authors": "Barefoot JC, Straub RB.",
+   "journal": "Journal of personality and social psychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": ""
+  },
+  {
+   "rank": 36,
+   "id": "5483868",
+   "source": "MED",
+   "pmid": "5483868",
+   "pmcid": null,
+   "doi": "10.1111/j.1467-6494.1970.tb00033.x",
+   "first_publication_date": "1970-12-01",
+   "title": "Triadic consistency and false heart-rate feedback.",
+   "authors": "Reisman S, Insko CA, Valins S.",
+   "journal": "Journal of personality",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": ""
+  },
+  {
+   "rank": 37,
+   "id": "5969996",
+   "source": "MED",
+   "pmid": "5969996",
+   "pmcid": null,
+   "doi": "10.1037/h0023791",
+   "first_publication_date": "1966-10-01",
+   "title": "Cognitive effects of false heart-rate feedback.",
+   "authors": "Valins S.",
+   "journal": "Journal of personality and social psychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": ""
+  }
+ ]
+}

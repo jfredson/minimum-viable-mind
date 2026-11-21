@@ -1,0 +1,730 @@
+{
+ "prediction": "orch-dp-collapse",
+ "query": "(TITLE_ABS:\"Diosi-Penrose\" OR TITLE_ABS:\"Diósi-Penrose\" OR TITLE_ABS:\"gravity-related collapse\" OR TITLE_ABS:\"gravitationally induced collapse\" OR TITLE_ABS:\"collapse model*\") AND (TITLE_ABS:experiment* OR TITLE_ABS:test* OR TITLE_ABS:bound*)",
+ "run_on": "2026-11-21 09:56 PST",
+ "hit_count": 52,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42086863",
+   "source": "MED",
+   "pmid": "42086863",
+   "pmcid": "PMC13334021",
+   "doi": "10.1038/s41598-026-51406-0",
+   "first_publication_date": "2026-05-05",
+   "title": "Bell-inequality violation for continuous, non-projective measurements.",
+   "authors": "Singh S, Kumar S.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Many solid-state quantum platforms do not permit sharp, projective measurements but instead yield continuous voltage or field traces under weak, non-demolition readout. In such systems, standard Bell tests based on dichotomic projective measurements are not directly applicable, raising the question of how quantum nonlocality can be certified directly from continuous time-series data. Here we develop a general theoretical framework showing that Bell-CHSH inequality violations can be extracted from continuous, non-projective measurements without assuming any specific collapse model or phase distribution. We show that continuous measurement records statistically probe the internal phase structure of an entangled pair, enabling effective dichotomic observables to be constructed through phase-sensitive coarse-graining. The resulting Bell correlator is governed by two experimentally accessible resources: intrinsic single-qubit phase spread and nonlocal phase locking between subsystems. We benchmark the framework against conventional projective-measurement CHSH tests, finding quantitative agreement in the Bell-violating regime without parameter fitting. We formally derive the local realistic bound appropriate to this continuous setting and demonstrate that phase-locked quantum systems recover the nonlinear angular dependence characteristic of entanglement. Our results provide a practical and principled route to certifying Bell nonlocality in quantum platforms where measurement is inherently continuous and weak."
+  },
+  {
+   "rank": 2,
+   "id": "41964993",
+   "source": "MED",
+   "pmid": "41964993",
+   "pmcid": null,
+   "doi": "10.1103/2jm3-4976",
+   "first_publication_date": "2026-03-01",
+   "title": "Challenging Spontaneous Quantum Collapse with the XENONnT Dark Matter Detector.",
+   "authors": "Aprile E, Aalbers J, Abe K, Ahmed Maouloud S, Althueser L, Andrieu B, Angelino E, Antón Martin D, Armbruster SR, Arneodo F, Baudis L, Bazyk M, Bellagamba L, Biondi R, Bismark A, Boese K, Brown A, Bruno G, Budnik R, Cai C, Capelli C, Cardoso JMR, Cimental Chávez AP, Colijn AP, Conrad J, Cuenca-García JJ, D'Andrea V, Daniel Garcia LC, Decowski MP, Deisting A, Di Donato C, Di Gangi P, Diglio S, Eitel K, El Morabit S, Elykov A, Ferella AD, Ferrari C, Fischer H, Flehmke T, Flierman M, Fulgione W, Fuselli C, Gaemers P, Gaior R, Galloway M, Gao F, Ghosh S, Giacomobono R, Girard F, Glade-Beucke R, Grandi L, Grigat J, Guan H, Guida M, Gyorgy P, Hammann R, Higuera A, Hils C, Hoetzsch L, Hood NF, Iacovacci M, Itow Y, Jakob J, Joerg F, Kaminaga Y, Kara M, Kavrigin P, Kazama S, Kharbanda P, Kobayashi M, Koke D, Kopec A, Landsman H, Lang RF, Levinson L, Li I, Li S, Liang S, Liang Z, Lin YT, Lindemann S, Liu K, Liu M, Loizeau J, Lombardi F, Long J, Lopes JAM, Lucchetti GM, Luce T, Ma Y, Macolino C, Mahlstedt J, Mancuso A, Manenti L, Marignetti F, Marrodán Undagoitia T, Martens K, Masbou J, Mastroianni S, Melchiorre A, Merz J, Messina M, Michael A, Miuchi K, Molinario A, Moriyama S, Morå K, Mosbacher Y, Murra M, Müller J, Ni K, Oberlack U, Paetsch B, Pan Y, Pellegrini Q, Peres R, Peters C, Pienaar J, Pierre M, Plante G, Pollmann TR, Principe L, Qi J, Qin J, Ramírez García D, Rajado M, Ravindran A, Razeto A, Redard-Jacot L, Singh R, Sanchez L, Dos Santos JMF, Sarnoff I, Sartorelli G, Schreiner J, Schulte P, Schulze Eißing H, Schumann M, Scotto Lavina L, Selvi M, Semeria F, Shagin P, Shi S, Shi J, Silva M, Simgen H, Stevens A, Szyszka C, Takeda A, Takeuchi Y, Tan PL, Thers D, Trinchero G, Tunnell CD, Tönnies F, Valerius K, Vecchi S, Vetter S, Villazon Solar FI, Volta G, Weinheimer C, Weiss M, Wenz D, Wittweg C, Wu VHS, Xing Y, Xu D, Xu Z, Yamashita M, Yang L, Ye J, Yuan L, Zavattini G, Zhong M, Curceanu C, Manti S, Piscicchia K, XENON Collaboration.",
+   "journal": "Physical review letters",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "We report on the search for x-ray radiation as predicted from dynamical quantum collapse with low-energy electronic recoil data in the energy range of 1-140 keV from the first science run of the XENONnT dark matter detector. Spontaneous radiation is an unavoidable effect of dynamical collapse models, which were introduced as a possible solution to the long-standing measurement problem in quantum mechanics. The analysis utilizes a model that for the first time accounts for cancellation effects in the emitted spectrum, which arise in the x-ray range due to the opposing electron-proton charges in xenon atoms. New world-leading limits on the free parameters of the Markovian continuous spontaneous localization and Diósi-Penrose models are set, improving previous best constraints by two orders of magnitude and a factor of five, respectively. For the strength and correlation length of the continuous spontaneous localization model, values in the originally proposed parameter ranges are experimentally excluded for the first time."
+  },
+  {
+   "rank": 3,
+   "id": "40355473",
+   "source": "MED",
+   "pmid": "40355473",
+   "pmcid": "PMC12069642",
+   "doi": "10.1038/s41598-025-00821-w",
+   "first_publication_date": "2025-05-12",
+   "title": "Monitoring subsurface soil displacement in karst collapse by designing a MEMS-based spherical monitoring device.",
+   "authors": "Wu D, Liang T, Jiang F, Yang Y, Pei Q, Wu J.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "To address challenges in monitoring subsurface soil displacement in karst collapse areas, a MEMS-based spherical monitoring device was developed to accommodate complex subsurface monitoring environments. Six sets of fixed-distance tests were designed to verify the flexibility of the spherical monitoring devices in moving with the sub-surface soil. Furthermore, four indoor model tests were conducted to acquire displacement data, which were developed from MEMS sensors and MEMS sensors with spherical shell arranged at identical positions. PIV was employed to analyze the monitoring accuracy of the MEMS spherical monitoring device and MEMS sensor in karst collapse model tests, to further evaluate the practicality of the spherical monitoring devices for monitoring in karst collapse. The results of the fixed-distance tests indicate that the spherical monitoring device effectively mitigates the influence of soil pressure on the monitoring cables. Model test results show that, in comparison to MEMS sensor, the MEMS spherical monitoring device exhibits a reduced average relative error of 23.09% in stable zone displacement measurements and 18.87% in the subsidence zone. This suggests that the MEMS-based spherical monitoring device better captures variations in sub-surface soil displacement. This paper provides a new insight for karst collapse monitoring and the application of MEMS sensors in geotechnical engineering."
+  },
+  {
+   "rank": 4,
+   "id": "39517747",
+   "source": "MED",
+   "pmid": "39517747",
+   "pmcid": "PMC11548470",
+   "doi": "10.3390/s24216851",
+   "first_publication_date": "2024-10-25",
+   "title": "Model Test on Acoustic Emission Monitoring of Loess Slope Failure.",
+   "authors": "Yang X, Sun X, He S, Li Y.",
+   "journal": "Sensors (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The three stages of loess collapse are characterized by notable concealment and sudden onset due to the sudden nature of loess collapse and the prolonged duration of the peristaltic deformation stage. Traditional displacement monitoring methods struggle to detect early signals of instability and failure, leading to poor timeliness in disaster warnings. This project begins by examining non-force field information related to the loess collapse process. It focuses on acoustic emission monitoring and employs model tests to identify effective waveguide rods for monitoring loess collapse. Additionally, the project investigates the evolution anomalies of acoustic emission parameters before and after loess collapse failure, aiming to establish early warning criteria for loess collapse based on acoustic emission. This work provides a theoretical basis for monitoring and early warning of loess collapses. This study evaluates five parameters of the active waveguide system: sensor installation method, filling material, waveguide rod wall thickness, outer wrapping material, and outer wrapping wall thickness. The densities of the filler materials were tested using the optimal parameters derived from the tests to identify the best configurations for active acoustic emission (AE) waveguide systems suitable for monitoring loess collapse. Subsequently, a one-sided connected loess collapse model was employed for indoor tests, integrating real-time AE monitoring with the active waveguide method. This model facilitates the exploration of AE response characteristics during loess collapse and the analysis of destructive forms of loess collapse and time-sequence evolution of AE ringing counts throughout the deformation and destruction process. Results indicate that using filler materials with high elasticity modulus, high compactness, and low Poisson's ratio, along with thin outer wrapping and waveguide rod walls, leads to strong AE signals. As deformation damage of loess collapse intensifies, the number of AE ringing counts notably increases. A rapid rise in cumulative ringing counts can indicate a \"sudden increase\", or the b-value may stabilize, providing precursor information for loess collapse."
+  },
+  {
+   "rank": 5,
+   "id": "39054922",
+   "source": "MED",
+   "pmid": "39054922",
+   "pmcid": "PMC11305101",
+   "doi": "10.1039/d4cp02364a",
+   "first_publication_date": "2024-08-07",
+   "title": "Gravitationally-induced wave function collapse time for molecules.",
+   "authors": "Tomaz AA, Mattos RS, Barbatti M.",
+   "journal": "Physical chemistry chemical physics : PCCP",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The Diósi-Penrose model states that the wave function collapse ending a quantum superposition occurs due to the instability of coexisting gravitational potentials created by distinct geometric conformations of the system in different states. The Heisenberg time-energy principle can be invoked to estimate the collapse time for the energy associated with this instability, the gravitational self-energy. This paper develops atomistic models to calculate the Diósi-Penrose collapse time. It applies them to a range of systems, from small molecules to large biological structures and macroscopic systems. An experiment is suggested to test the Diósi-Penrose hypothesis, and we critically examine the model, highlighting challenges from an atomistic perspective, such as gravitational self-energy saturation and limited extensivity."
+  },
+  {
+   "rank": 6,
+   "id": "39085627",
+   "source": "MED",
+   "pmid": "39085627",
+   "pmcid": "PMC11291715",
+   "doi": "10.1038/s41598-024-68824-7",
+   "first_publication_date": "2024-07-31",
+   "title": "Model experimental study on the mechanism of collapse induced by leakage of underground pipeline.",
+   "authors": "Guo J, Zhang Y, Li Y, Zhang X, Zheng J, Shi H, Zhang Q, Chen Z, Ma Y.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The evolution and mechanism of ground collapse caused by underground water pipeline leakage have become increasingly significant as more urban areas experience collapses. Based on the principle of similarity, and considering the engineering context of road collapses in Anqing City, Anhui Province, this study designed a 3 m × 2 m × 2 m rupture-collapse model test device. Digital Image Correlation (DIC) technology was employed to investigate the erosion process and collapse mechanisms caused by underground pipeline leakage. The results indicate that groundwater seepage provides the driving force for collapses, combined with the migration space provided by defects, collectively triggering the collapses. When groundwater seepage is minimal, the cohesive forces between soil particles maintain soil stability. As groundwater seepage increases, the soil particle framework is eroded, leading to soil structure destabilization and collapse initiation. The depth of collapse significantly influences stress evolution: stress evolution intensity beneath and above the collapse pit is positively correlated with the distance from the collapse pit bottom, but negatively correlated with the distance from the defect. The research provides insights for the early warning and management of ground collapse."
+  },
+  {
+   "rank": 7,
+   "id": "37998181",
+   "source": "MED",
+   "pmid": "37998181",
+   "pmcid": "PMC10670041",
+   "doi": "10.3390/e25111489",
+   "first_publication_date": "2023-10-27",
+   "title": "Experimental Predictions for Norm-Conserving Spontaneous Collapse.",
+   "authors": "Snoke DW, Maienshein DN.",
+   "journal": "Entropy (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Previous work has shown that nonlocal collapse in quantum mechanics can be described by a deterministic, non-unitary operator added to the standard Schrödinger equation. In terms of key aspects, this term differs from prior work on spontaneous collapse. In this paper, we discuss the possible predictions of this model that can be tested by experiments. This class of collapse model does not intrinsically imply unique experimental predictions, but it allows for the possibility."
+  },
+  {
+   "rank": 8,
+   "id": "37190433",
+   "source": "MED",
+   "pmid": "37190433",
+   "pmcid": "PMC10138035",
+   "doi": "10.3390/e25040645",
+   "first_publication_date": "2023-04-12",
+   "title": "Collapse Models: A Theoretical, Experimental and Philosophical Review.",
+   "authors": "Bassi A, Dorato M, Ulbricht H.",
+   "journal": "Entropy (Basel, Switzerland)",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "In this paper, we review and connect the three essential conditions needed by the collapse model to achieve a complete and exact formulation, namely the theoretical, the experimental, and the ontological ones. These features correspond to the three parts of the paper. In any empirical science, the first two features are obviously connected but, as is well known, among the different formulations and interpretations of non-relativistic quantum mechanics, only collapse models, as the paper well illustrates with a richness of details, have experimental consequences. Finally, we show that a clarification of the ontological intimations of collapse models is needed for at least three reasons: (1) to respond to the indispensable task of answering the question 'what are collapse models (and in general any physical theory) about?'; (2) to achieve a deeper understanding of their different formulations; (3) to enlarge the panorama of possible readings of a theory, which historically has often played a fundamental heuristic role."
+  },
+  {
+   "rank": 9,
+   "id": "36832661",
+   "source": "MED",
+   "pmid": "36832661",
+   "pmcid": "PMC9955578",
+   "doi": "10.3390/e25020295",
+   "first_publication_date": "2023-02-04",
+   "title": "A Novel Approach to Parameter Determination of the Continuous Spontaneous Localization Collapse Model.",
+   "authors": "Piscicchia K, Porcelli A, Bassi A, Bazzi M, Bragadireanu M, Cargnelli M, Clozza A, De Paolis L, Del Grande R, Derakhshani M, Lajos D, Donadi S, Guaraldo C, Iliescu M, Laubenstein M, Manti S, Marton J, Miliucci M, Napolitano F, Scordo A, Sgaramella F, Sirghi DL, Sirghi F, Vazquez Doce O, Zmeskal J, Curceanu C.",
+   "journal": "Entropy (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Models of dynamical wave function collapse consistently describe the breakdown of the quantum superposition with the growing mass of the system by introducing non-linear and stochastic modifications to the standard Schrödinger dynamics. Among them, Continuous Spontaneous Localization (CSL) was extensively investigated both theoretically and experimentally. Measurable consequences of the collapse phenomenon depend on different combinations of the phenomenological parameters of the model-the strength λ and the correlation length rC-and have led, so far, to the exclusion of regions of the admissible (λ-rC) parameters space. We developed a novel approach to disentangle the λ and rC probability density functions, which discloses a more profound statistical insight."
+  },
+  {
+   "rank": 10,
+   "id": "36584389",
+   "source": "MED",
+   "pmid": "36584389",
+   "pmcid": null,
+   "doi": "10.1088/1361-6528/acaf33",
+   "first_publication_date": "2023-02-13",
+   "title": "Hoop compression driven instabilities in spontaneously formed multilayer graphene blisters over a polymeric substrate.",
+   "authors": "Pandey M, Ahuja R, Kumar R.",
+   "journal": "Nanotechnology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The blistering of elastic membranes is prone to elastic-solid as well as substrate-based mechanical instabilities. The solid-based instabilities have been well-explored in the mechanically indented blisters of elastic membranes over the rigid/solid substrates, but an integrated study illustrating the underlying mechanism for the onset of solid as well as substrate-based instabilities in the spontaneous blistering of a 2D material is still lacking in the literature. In this article, an extensive experimental as well as analytical analysis of the spontaneous blister-formation in the multilayer graphene (MLG) flakes over a polymeric substrate is reported, which elucidates the involved mechanism and the governing parameters behind the development of elastic-solid as well as viscoelastic-substrate based instabilities. Herein, a 'blister-collapse model' is proposed, which infers that the suppression of the hoop compression, resulting from the phase-transition of the confined matter, plays a crucial role in the development of the instabilities. The ratio of blister-height to flake-thickness is a direct consequence of the taper-angle of the MLG blister and the thickness-dependent elasticity of the upper-bounding MLG flake, which shows a significant impact on the growth-dynamics of the viscous fingering pattern (viscoelastic-substrate based instability) under the MLG blister."
+  },
+  {
+   "rank": 11,
+   "id": "35617922",
+   "source": "MED",
+   "pmid": "35617922",
+   "pmcid": null,
+   "doi": "10.1016/j.plrev.2022.05.004",
+   "first_publication_date": "2022-05-17",
+   "title": "At the crossroad of the search for spontaneous radiation and the Orch OR consciousness theory.",
+   "authors": "Derakhshani M, Diósi L, Laubenstein M, Piscicchia K, Curceanu C.",
+   "journal": "Physics of life reviews",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "In this paper we perform a critical analysis of the Orch OR consciousness theory at the crossroad with the newest experimental results coming from the search for spontaneous radiation predicted by the simplest version of gravity-related dynamical collapse models. We conclude that Orch OR theory, when based on the simplest version of gravity-related dynamical collapse, is highly implausible in all the cases analyzed. We discuss the implications of our findings, the limitations, and future plans toward the development of more realistic gravity-related collapse models."
+  },
+  {
+   "rank": 12,
+   "id": "36053678",
+   "source": "MED",
+   "pmid": "36053678",
+   "pmcid": null,
+   "doi": "10.1103/physrevlett.129.080401",
+   "first_publication_date": "2022-08-01",
+   "title": "Search for Spontaneous Radiation from Wave Function Collapse in the Majorana Demonstrator.",
+   "authors": "Arnquist IJ, Avignone FT, Barabash AS, Barton CJ, Bhimani KH, Blalock E, Bos B, Busch M, Buuck M, Caldwell TS, Chan YD, Christofferson CD, Chu PH, Clark ML, Cuesta C, Detwiler JA, Efremenko Y, Ejiri H, Elliott SR, Giovanetti GK, Green MP, Gruszko J, Guinn IS, Guiseppe VE, Haufe CR, Henning R, Hervas Aguilar D, Hoppe EW, Hostiuc A, Kim I, Kouzes RT, Lannen V TE, Li A, Lopez AM, López-Castaño JM, Martin EL, Martin RD, Massarczyk R, Meijer SJ, Oli TK, Othman G, Paudel LS, Pettus W, Poon AWP, Radford DC, Reine AL, Rielage K, Ruof NW, Tedeschi D, Varner RL, Vasilyev S, Wilkerson JF, Wiseman C, Xu W, Yu CH, Zhu BX, <span class=\"sc\">Majorana</span> Collaboration.",
+   "journal": "Physical review letters",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The Majorana Demonstrator neutrinoless double-beta decay experiment comprises a 44 kg (30 kg enriched in ^{76}Ge) array of p-type, point-contact germanium detectors. With its unprecedented energy resolution and ultralow backgrounds, Majorana also searches for rare event signatures from beyond standard model physics in the low energy region below 100 keV. In this Letter, we test the continuous spontaneous localization (CSL) model, one of the mathematically well-motivated wave function collapse models aimed at solving the long-standing unresolved quantum mechanical measurement problem. While the CSL predicts the existence of a detectable radiation signature in the x-ray domain, we find no evidence of such radiation in the 19-100 keV range in a 37.5 kg-y enriched germanium exposure collected between December 31, 2015, and November 27, 2019, with the Demonstrator. We explored both the non-mass-proportional (n-m-p) and the mass-proportional (m-p) versions of the CSL with two different assumptions: that only the quasifree electrons can emit the x-ray radiation and that the nucleus can coherently emit an amplified radiation. In all cases, we set the most stringent upper limit to date for the white CSL model on the collapse rate, λ, providing a factor of 40-100 improvement in sensitivity over comparable searches. Our limit is the most stringent for large parts of the allowed parameter space. If the result is interpreted in terms of the Diòsi-Penrose gravitational wave function collapse model, the lower bound with a 95% confidence level is almost an order of magnitude improvement over the previous best limit."
+  },
+  {
+   "rank": 13,
+   "id": "35956758",
+   "source": "MED",
+   "pmid": "35956758",
+   "pmcid": "PMC9370011",
+   "doi": "10.3390/molecules27154810",
+   "first_publication_date": "2022-07-27",
+   "title": "Interdiction in the Early Folding of the p53 DNA-Binding Domain Leads to Its Amyloid-Like Misfolding.",
+   "authors": "Bergasa-Caceres F, Rabitz HA.",
+   "journal": "Molecules (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "In this article, we investigate two issues: (a) the initial contact formation events along the folding pathway of the DNA-binding domain of the tumor suppressor protein p53 (core p53); and (b) the intermolecular events leading to its conversion into a prion-like form upon incubation with peptide P8(250-257). In the case of (a), the calculations employ the sequential collapse model (SCM) to identify the segments involved in the initial contact formation events that nucleate the folding pathway. The model predicts that there are several possible initial non-local contacts of comparative stability. The most stable of these possible initial contacts involve the protein segments 159AMAIY163 and 251ILTII255, and it is the only native-like contact. Thus, it is predicted to constitute \"Nature's shortcut\" to the native structure of the core domain of p53. In the case of issue (b), these findings are then combined with experimental evidence showing that the incubation of the core domain of p53 with peptide P8(250-257), which is equivalent to the native protein segment 250PILTIITL257, leads to an amyloid conformational transition. It is explained how the SCM predicts that P8(250-257) effectively interdicts in the formation of the most stable possible initial contact and, thereby, disrupts the subsequent normal folding. Interdiction by polymeric P8(250-257) seeds is also studied. It is then hypothesized that enhanced folding through one or several of the less stable contacts could play a role in P8(250-257)-promoted core p53 amyloid misfolding. These findings are compared to previous results obtained for the prion protein. Experiments are proposed to test the hypothesis presented regarding core p53 amyloid misfolding."
+  },
+  {
+   "rank": 14,
+   "id": "35879511",
+   "source": "MED",
+   "pmid": "35879511",
+   "pmcid": "PMC9310356",
+   "doi": "10.1038/s41598-022-16446-2",
+   "first_publication_date": "2022-07-25",
+   "title": "Spontaneous breathing promotes lung injury in an experimental model of alveolar collapse.",
+   "authors": "Bachmann MC, Cruces P, Díaz F, Oviedo V, Goich M, Fuenzalida J, Damiani LF, Basoalto R, Jalil Y, Carpio D, Hamidi Vadeghani N, Cornejo R, Rovegno M, Bugedo G, Bruhn A, Retamal J.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Vigorous spontaneous breathing has emerged as a promotor of lung damage in acute lung injury, an entity known as \"patient self-inflicted lung injury\". Mechanical ventilation may prevent this second injury by decreasing intrathoracic pressure swings and improving regional air distribution. Therefore, we aimed to determine the effects of spontaneous breathing during the early stage of acute respiratory failure on lung injury and determine whether early and late controlled mechanical ventilation may avoid or revert these harmful effects. A model of partial surfactant depletion and lung collapse was induced in eighteen intubated pigs of 32 ±4 kg. Then, animals were randomized to (1) SB-group: spontaneous breathing with very low levels of pressure support for the whole experiment (eight hours), (2) Early MV-group: controlled mechanical ventilation for eight hours, or (3) Late MV-group: first half of the experiment on spontaneous breathing (four hours) and the second half on controlled mechanical ventilation (four hours). Respiratory, hemodynamic, and electric impedance tomography data were collected. After the protocol, animals were euthanized, and lungs were extracted for histologic tissue analysis and cytokines quantification. SB-group presented larger esophageal pressure swings, progressive hypoxemia, lung injury, and more dorsal and inhomogeneous ventilation compared to the early MV-group. In the late MV-group switch to controlled mechanical ventilation improved the lung inhomogeneity and esophageal pressure swings but failed to prevent hypoxemia and lung injury. In a lung collapse model, spontaneous breathing is associated to large esophageal pressure swings and lung inhomogeneity, resulting in progressive hypoxemia and lung injury. Mechanical ventilation prevents these mechanisms of patient self-inflicted lung injury if applied early, before spontaneous breathing occurs, but not when applied late."
+  },
+  {
+   "rank": 15,
+   "id": "35409264",
+   "source": "MED",
+   "pmid": "35409264",
+   "pmcid": "PMC8998936",
+   "doi": "10.3390/ijms23073906",
+   "first_publication_date": "2022-03-31",
+   "title": "Protein Folding Interdiction Strategy for Therapeutic Drug Development in Viral Diseases: Ebola VP40 and Influenza A M1.",
+   "authors": "Bergasa-Caceres F, Rabitz HA.",
+   "journal": "International journal of molecular sciences",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "In a recent paper, we proposed the folding interdiction target region (FITR) strategy for therapeutic drug design in SARS-CoV-2. This paper expands the application of the FITR strategy by proposing therapeutic drug design approaches against Ebola virus disease and influenza A. We predict target regions for folding interdicting drugs on correspondingly relevant structural proteins of both pathogenic viruses: VP40 of Ebola, and matrix protein M1 of influenza A. Identification of the protein targets employs the sequential collapse model (SCM) for protein folding. It is explained that the model predicts natural peptide candidates in each case from which to start the search for therapeutic drugs. The paper also discusses how these predictions could be tested, as well as some challenges likely to be found when designing effective therapeutic drugs from the proposed peptide candidates. The FITR strategy opens a potential new avenue for the design of therapeutic drugs that promises to be effective against infectious diseases."
+  },
+  {
+   "rank": 16,
+   "id": "31905827",
+   "source": "MED",
+   "pmid": "31905827",
+   "pmcid": "PMC6982130",
+   "doi": "10.3390/ma13010140",
+   "first_publication_date": "2019-12-30",
+   "title": "Effect of Porosity on Dynamic Mechanical Properties and Impact Response Characteristics of High Aluminum Content PTFE/Al Energetic Materials.",
+   "authors": "Jiang C, Cai S, Mao L, Wang Z.",
+   "journal": "Materials (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "In order to obtain the effect of porosity on the dynamic mechanical properties and impact response characteristics of high aluminum content PTFE/Al energetic materials, PTFE/Al specimens with porosities of 1.2%, 10%, 20%, and 30% were prepared by adding additives. The dynamic compression properties and impact response characteristics of high aluminum content PTFE/Al energetic materials with porosity were studied by using a split Hopkinson pressure bar (SHPB) impact loading experimental system. Based on the one-dimensional viscoplastic hole collapse model, an impact temperature rise analysis model including melting effects was used, and corresponding calculation analysis was performed. The results show that with the increase of porosity, the yield strength and compressive strength of the material will decrease. Under dynamic loading, the reaction duration of PTFE/Al energetic materials with different porosities generally shows a tendency to become shorter as the porosity increases, while the ignition delay time is basically unchanged. In this experiment, the material response has the optimal porosity with the lowest critical strain rate, the optimal porosity for PTFE/Al energetic materials with different porosity and high aluminum content (50/50 mass ratio, size of specimens Φ8 × 5 mm) is 10%. The research results can provide an important reference for the engineering application of PTFE/Al energetic materials."
+  },
+  {
+   "rank": 17,
+   "id": "31491197",
+   "source": "MED",
+   "pmid": "31491197",
+   "pmcid": null,
+   "doi": "10.1103/physrevlett.123.080402",
+   "first_publication_date": "2019-08-01",
+   "title": "Neutron Star Heating Constraints on Wave-Function Collapse Models.",
+   "authors": "Tilloy A, Stace TM.",
+   "journal": "Physical review letters",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Spontaneous wave-function collapse models, like continuous spontaneous localization, are designed to suppress macroscopic superpositions while preserving microscopic quantum phenomena. An observable consequence of collapse models is spontaneous heating of massive objects. We calculate the collapse-induced heating rate of astrophysical objects, and the corresponding equilibrium temperature. We apply these results to neutron stars, the densest phase of baryonic matter in the Universe. Stronger collapse model parameters imply greater heating, allowing us to derive competitive bounds on model parameters using neutron star observational data, and to propose speculative bounds based on the capabilities of current and future astronomical surveys."
+  },
+  {
+   "rank": 18,
+   "id": "30901220",
+   "source": "MED",
+   "pmid": "30901220",
+   "pmcid": null,
+   "doi": "10.1021/acs.jpcb.8b11634",
+   "first_publication_date": "2019-04-03",
+   "title": "Nature's Shortcut to Protein Folding.",
+   "authors": "Bergasa-Caceres F, Haas E, Rabitz HA.",
+   "journal": "The journal of physical chemistry. B",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This Feature Article presents a view of the protein folding transition based on the hypothesis that Nature has built features within the sequences that enable a Shortcut to efficient folding. Nature's Shortcut is proposed to be the early establishment of a set of nonlocal weak contacts, constituting protein loops that significantly constrain regions of the collapsed disordered protein into a native-like low-resolution fluctuating topology of major sections of the backbone. Nature's establishment of this scaffold of nonlocal contacts is claimed to bypass what would otherwise be a nearly hopeless unaided search for the final three-dimensional structure in proteins longer than ∼100 amino acids. To support this main contention of the Feature Article, the loop hypothesis (LH) description of early folding events is experimentally tested with time-resolved Förster resonance energy transfer techniques for adenylate kinase, and the data are shown to be consistent with theoretical predictions from the sequential collapse model (SCM). The experimentally based LH and the theoretically founded SCM are argued to provide a unified picture of the role of nonlocal contacts as constituting Nature's Shortcut to protein folding. Importantly, the SCM is shown to reliably predict key nonlocal contacts utilizing only primary sequence information. This view on Nature's Shortcut is open to the protein community for further detailed assessment, including its practical consequences, by suitable application of advanced experimental and computational techniques."
+  },
+  {
+   "rank": 19,
+   "id": "30638968",
+   "source": "MED",
+   "pmid": "30638968",
+   "pmcid": "PMC8859868",
+   "doi": "10.1016/j.ultrasmedbio.2018.12.001",
+   "first_publication_date": "2019-01-11",
+   "title": "Control of Acoustic Cavitation for Efficient Sonoporation with Phase-Shift Nanoemulsions.",
+   "authors": "Burgess MT, Porter TM.",
+   "journal": "Ultrasound in medicine & biology",
+   "pub_types": [
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Acoustic cavitation can be used to temporarily disrupt cell membranes for intracellular delivery of large biomolecules. Termed sonoporation, the ability of this technique for efficient intracellular delivery (i.e., >50% of initial cell population showing uptake) while maintaining cell viability (i.e., >50% of initial cell population viable) has proven to be very difficult. Here, we report that phase-shift nanoemulsions (PSNEs) function as inertial cavitation nuclei for improvement of sonoporation efficiency. The interplay between ultrasound frequency, resultant microbubble dynamics and sonoporation efficiency was investigated experimentally. Acoustic emissions from individual microbubbles nucleated from PSNEs were captured using a broadband passive cavitation detector during and after acoustic droplet vaporization with short pulses of ultrasound at 1, 2.5 and 5 MHz. Time domain features of the passive cavitation detector signals were analyzed to estimate the maximum size (Rmax) of the microbubbles using the Rayleigh collapse model. These results were then applied to sonoporation experiments to test if uptake efficiency is dependent on maximum microbubble size before inertial collapse. Results indicated that at the acoustic droplet vaporization threshold, Rmax was approximately 61.7 ± 5.2, 24.9 ± 2.8, and 12.4 ± 2.1 μm at 1, 2.5 and 5 MHz, respectively. Sonoporation efficiency increased at higher frequencies, with efficiencies of 39.5 ± 13.7%, 46.6 ± 3.28% and 66.8 ± 5.5% at 1, 2.5 and 5 MHz, respectively. Excessive cellular damage was seen at lower frequencies because of the erosive effects of highly energetic inertial cavitation. These results highlight the importance of acoustic cavitation control in determining the outcome of sonoporation experiments. In addition, PSNEs may serve as tailorable inertial cavitation nuclei for other therapeutic ultrasound applications."
+  },
+  {
+   "rank": 20,
+   "id": "30057369",
+   "source": "MED",
+   "pmid": "30057369",
+   "pmcid": null,
+   "doi": "10.1088/1361-6633/aad6a5",
+   "first_publication_date": "2018-07-30",
+   "title": "The route to massive black hole formation via merger-driven direct collapse: a review.",
+   "authors": "Mayer L, Bonoli S.",
+   "journal": "Reports on progress in physics. Physical Society (Great Britain)",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The direct collapse model for the formation of massive black holes has gained increased support as it provides a natural explanation for the appearance of bright quasars already less than a billion years from the Big Bang. In this paper we review a recent scenario for direct collapse that relies on multi-scale gas inflows initiated by the major merger of massive gas-rich galaxies at z  >  6, where gas has already achieved solar composition. Hydrodynamical simulations undertaken to explore our scenario show that supermassive, gravitationally bound compact gaseous disks weighing a billion solar masses, only a few pc in size, form in the nuclei of merger remnants in less than 105 yr. These could later produce a supermassive protostar or supermassive star at their center via various mechanisms. Moreover, we present a new analytical model, based on angular momentum transport in mass-loaded gravitoturbulent disks. This naturally predicts that a nuclear disk accreting at rates exceeding [Formula: see text] yr-1, as seen in the simulations, is stable against fragmentation irrespective of its metallicity. This is at variance with conventional direct collapse scenarios, which require the suppression of gas cooling in metal-free protogalaxies for gas collapse to take place. Such high accretion rates reflect the high free-fall velocities in massive halos appearing only at z  <  10, and occur naturally as a result of the efficient angular momentum loss provided by the merger dynamics. We discuss the implications of our scenario on the observed population of high-z quasars and on its evolution to lower redshifts using a semi-analytical galaxy formation model. Finally, we consider the intriguing possibility that the secondary gas inflows in the unstable disks might drive gas to collapse into a supermassive black hole directly via the General Relativistic radial instability. Such dark collapse route could generate gravitational wave emission detectable via the future Laser Interferometer Space Antenna (LISA)."
+  },
+  {
+   "rank": 21,
+   "id": "30278287",
+   "source": "MED",
+   "pmid": "30278287",
+   "pmcid": null,
+   "doi": "10.1016/j.bbapap.2018.09.006",
+   "first_publication_date": "2018-09-29",
+   "title": "Predicting the location of the non-local contacts in α-synuclein.",
+   "authors": "Bergasa-Caceres F, Rabitz HA.",
+   "journal": "Biochimica et biophysica acta. Proteins and proteomics",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "In this paper, the Sequential Collapse Model (SCM) for protein folding pathways is applied to investigate the location of the non-local contacts in the intrinsically disordered state of α-synuclein, a protein implicated in the onset and spreading of several serious neurodegenerative diseases. The model relies on the entropic cost of forming protein loops due to self-crowding effects, and the protein sequence to determine contact location and stability. It is found that the model predicts the existence of several possible non-local contacts, and the location of the non-local contacts is consistent with existing experimental evidence. The bearing of these findings on the pathogenic mechanism and its regulation is discussed."
+  },
+  {
+   "rank": 22,
+   "id": "30206405",
+   "source": "MED",
+   "pmid": "30206405",
+   "pmcid": "PMC6134009",
+   "doi": "10.1038/s41598-018-31956-8",
+   "first_publication_date": "2018-09-11",
+   "title": "Accretionary prism collapse: a new hypothesis on the source of the 1771 giant tsunami in the Ryukyu Arc, SW Japan.",
+   "authors": "Okamura Y, Nishizawa A, Fujii Y, Yanagisawa H.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The giant 1771 Yaeyama tsunami occurred in the southwestern part of the Ryukyu Arc, a region on an obliquely subducting plate boundary, which shows no direct evidence of inter-plate coupling. Studies of tsunami boulders and deposits suggest that the recurrence interval of comparably giant tsunamis is roughly 500 to 1000 years. Tsunami source models, which include either slip on a shallow plate boundary or active faulting plus a landslide on the overriding plate, are controversial because of inconsistencies in the geophysical and geological data. We discovered a seafloor depression that is approximately 30 km wide and 80 km long extending in the ESE-WNW direction. This depression is accompanied by a seaward bulge on the accretionary prism along the Ryukyu Trench, which is based on detailed bathymetric data and interpreted to be the result of accretionary prism collapse and seaward displacement by rotational slide. A simple tsunami simulation shows that the slide is a plausible source of the 1771 tsunami. We propose a collapse model, in which the accretionary prism remained over-steepened as strike-slip faulting removed the prism toe. Our model indicates that some oblique subduction zones are capable of generating giant tsunamis regardless of weak or strong coupling."
+  },
+  {
+   "rank": 23,
+   "id": "26243034",
+   "source": "MED",
+   "pmid": "26243034",
+   "pmcid": "PMC4525142",
+   "doi": "10.1038/srep12518",
+   "first_publication_date": "2015-08-05",
+   "title": "Dissipative Continuous Spontaneous Localization (CSL) model.",
+   "authors": "Smirne A, Bassi A.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Collapse models explain the absence of quantum superpositions at the macroscopic scale, while giving practically the same predictions as quantum mechanics for microscopic systems. The Continuous Spontaneous Localization (CSL) model is the most refined and studied among collapse models. A well-known problem of this model, and of similar ones, is the steady and unlimited increase of the energy induced by the collapse noise. Here we present the dissipative version of the CSL model, which guarantees a finite energy during the entire system's evolution, thus making a crucial step toward a realistic energy-conserving collapse model. This is achieved by introducing a non-linear stochastic modification of the Schrödinger equation, which represents the action of a dissipative finite-temperature collapse noise. The possibility to introduce dissipation within collapse models in a consistent way will have relevant impact on the experimental investigations of the CSL model, and therefore also on the testability of the quantum superposition principle."
+  },
+  {
+   "rank": 24,
+   "id": "26182086",
+   "source": "MED",
+   "pmid": "26182086",
+   "pmcid": null,
+   "doi": "10.1103/physrevlett.115.010405",
+   "first_publication_date": "2015-07-02",
+   "title": "Nonthermal Quantum Channels as a Thermodynamical Resource.",
+   "authors": "Navascués M, García-Pintos LP.",
+   "journal": "Physical review letters",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Quantum thermodynamics can be understood as a resource theory, whereby thermal states are free and the only allowed operations are unitary transformations commuting with the total Hamiltonian of the system. Previous literature on the subject has just focused on transformations between different state resources, overlooking the fact that quantum operations which do not commute with the total energy also constitute a potentially valuable resource. In this Letter, given a number of nonthermal quantum channels, we study the problem of how to integrate them in a thermal engine so as to distill a maximum amount of work. We find that, in the limit of asymptotically many uses of each channel, the distillable work is an additive function of the considered channels, computable for both finite dimensional quantum operations and bosonic channels. We apply our results to bound the amount of distillable work due to the natural nonthermal processes postulated in the Ghirardi-Rimini-Weber (GRW) collapse model. We find that, although GRW theory predicts the possibility of extracting work from the vacuum at no cost, the power which a collapse engine could, in principle, generate is extremely low."
+  },
+  {
+   "rank": 25,
+   "id": "25227991",
+   "source": "MED",
+   "pmid": "25227991",
+   "pmcid": "PMC4165975",
+   "doi": "10.1038/srep06398",
+   "first_publication_date": "2014-09-17",
+   "title": "Cerium; crystal structure and position in the periodic table.",
+   "authors": "Johansson B, Luo W, Li S, Ahuja R.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The properties of the cerium metal have intrigued physicists and chemists for many decades. In particular a lot of attention has been directed towards its high pressure behavior, where an isostructural volume collapse (γ phase → α phase) has been observed. Two main models of the electronic aspect of this transformation have been proposed; one where the 4f electron undergoes a change from being localized into an itinerant metallic state, and one where the focus is on the interaction between the 4f electron and the conduction electrons, often referred to as the Kondo volume collapse model. However, over the years it has been repeatedly questioned whether the cerium collapse really is isostructural. Most recently, detailed experiments have been able to remove this worrisome uncertainty. Therefore the isostructural aspect of the α-γ transition has now to be seriously addressed in the theoretical modeling, something which has been very much neglected. A study of this fundamental characteristic of the cerium volume collapse is made in present paper and we show that the localized [rlhar2 ] delocalized 4f electron picture provides an adequate description of this unique behavior. This agreement makes it possible to suggest that an appropriate crossroad position for cerium in The Periodic Table."
+  },
+  {
+   "rank": 26,
+   "id": "23085151",
+   "source": "MED",
+   "pmid": "23085151",
+   "pmcid": null,
+   "doi": "10.1016/j.abb.2012.10.003",
+   "first_publication_date": "2012-10-19",
+   "title": "Polypeptide chain collapse and protein folding.",
+   "authors": "Udgaonkar JB.",
+   "journal": "Archives of biochemistry and biophysics",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Polypeptide chain collapse is an integral component of a protein folding reaction. In this review, experimental characterization of the interplay of polypeptide chain collapse, secondary structure formation, consolidation of the hydrophobic core and the development of tertiary interactions, is scrutinized. In particular, the polypeptide chain collapse reaction is examined in the context of the three phenomenological models of protein folding - the hydrophobic collapse model, the framework model and the nucleation condensation model - which describe different ways by which polypeptide chains are able to fold in biologically relevant time-scales."
+  },
+  {
+   "rank": 27,
+   "id": "22524589",
+   "source": "MED",
+   "pmid": "22524589",
+   "pmcid": null,
+   "doi": "10.1111/j.1399-6576.2012.02700.x",
+   "first_publication_date": "2012-04-23",
+   "title": "Haemodynamic stability and pulmonary shunt during spontaneous breathing and mechanical ventilation in porcine lung collapse.",
+   "authors": "Vimláti L, Larsson A, Hedenstierna G, Lichtwarck-Aschoff M.",
+   "journal": "Acta anaesthesiologica Scandinavica",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundWe investigated the haemodynamic stability of a novel porcine model of lung collapse induced by negative pressure application (NPA). A secondary aim was to study whether pulmonary shunt correlates with cardiac output (CO).MethodsIn 12 anaesthetized and relaxed supine piglets, lung collapse was induced by NPA (-50 kPa). Six animals resumed spontaneous breathing (SB) after 15 min; the other six animals were kept on mechanical ventilation (MV) at respiratory rate and tidal volume (V(T) ) that corresponded to SB. All animals were followed for 135 min with blood gas analysis and detailed haemodynamic monitoring.ResultsHaemodynamics and gas exchange were stable in both groups during the experiment with arterial oxygen tension (PaO(2) )/inspired fraction of oxygen (FiO(2) ) and pulmonary artery occlusion pressure being higher, venous admixture (Q(va) /Q(t) ) and pulmonary perfusion pressure being lower in the SB group. CO was similar in both groups, showing slight decrease over time in the SB group. During MV, Q(va) /Q(t)  increased with CO (slope: 4.3 %min/l; P ConclusionsThis porcine lung collapse model is reasonably stable in terms of haemodynamics for at least 2 h irrespective of the mode of ventilation. SB achieves higher PaO(2) /FiO(2)  and lower Q(va) /Q(t)  compared with MV. During SB, Q(va) /Q(t)  seems to be less, if at all, affected by CO compared with MV."
+  },
+  {
+   "rank": 28,
+   "id": "21488606",
+   "source": "MED",
+   "pmid": "21488606",
+   "pmcid": null,
+   "doi": "10.1021/es104020p",
+   "first_publication_date": "2011-04-13",
+   "title": "Effects of cake collapse caused by deposition of fractal aggregates on pressure drop during ceramic filtration.",
+   "authors": "Zhang W, Li CT, Wei XX, Gao HL, Wen QB, Fan XP, Shu X, Zeng GM, Wei W, Zhai YB, He YD, Li SH.",
+   "journal": "Environmental science & technology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "A cake collapse model was developed by taking the combined effects of fractal dimension, relaxation ratio, coordination number, and aggregate diameter into consideration. The cake porosity including intraaggregate and interaggregate porosities was modeled successively by three typical coordination numbers (n = 6, 8, and 12). Accordingly, an inversion method made it possible to deduce the coordination number using the measured cake porosities, and the reverse-calculated value with minimum error and the corresponding relaxation ratios were applied as the parameters for the model. As a result, the profiles of intraaggregate and interaggregate porosities and cake porosity were respectively predicted in contrast to the integrated variation of the relaxation ratio and the fractal dimension. Furthermore, a comparison between the model predictions of the cake pressure drop gradients with and without aggregate compression was conducted to validate the presence of cake collapse. The results show that the predictions based on the proposed collapse model are in agreement with the experiments, and the coordination number is one of the key factors that must be incorporated into the cake collapse models."
+  },
+  {
+   "rank": 29,
+   "id": "21410235",
+   "source": "MED",
+   "pmid": "21410235",
+   "pmcid": null,
+   "doi": "10.1021/bi200131j",
+   "first_publication_date": "2011-04-06",
+   "title": "Diverse pathways of oxidative folding of disulfide proteins: underlying causes and folding models.",
+   "authors": "Chang JY.",
+   "journal": "Biochemistry",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The pathway of oxidative folding of disulfide proteins exhibits a high degree of diversity, which is manifested mainly by distinct structural heterogeneity and diverse rearrangement pathways of folding intermediates. During the past two decades, the scope of this diversity has widened through studies of more than 30 disulfide-rich proteins by various laboratories. A more comprehensive landscape of the mechanism of protein oxidative folding has emerged. This review will cover three themes. (1) Elaboration of the scope of diversity of disulfide folding pathways, including the two opposite extreme models, represented by bovine pancreatic trypsin inhibitor (BPTI) and hirudin. (2) Demonstration of experimental evidence accounting for the underlying mechanism of the folding diversity. (3) Discussion of the convergence between the extreme models of oxidative folding and models of conventional conformational folding (framework model, hydrophobic collapse model)."
+  },
+  {
+   "rank": 30,
+   "id": "18676658",
+   "source": "MED",
+   "pmid": "18676658",
+   "pmcid": "PMC2576397",
+   "doi": "10.1529/biophysj.107.127654",
+   "first_publication_date": "2008-08-01",
+   "title": "Influence of liquid-layer thickness on pulmonary surfactant spreading and collapse.",
+   "authors": "Siebert TA, Rugonyi S.",
+   "journal": "Biophysical journal",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Pulmonary surfactant spreads on the thin ( approximately 0.1 microm) liquid layer that lines the alveoli, forming a film that reduces surface tension and allows normal respiration. Pulmonary surfactant deposited in vitro on liquid layers that are several orders of magnitude thicker, however, does not reach the low surface tensions ( approximately 0.001 N/m) achieved in the lungs during exhalation when the surfactant film compresses. This is due to collapse, a surface phase transition during which the surfactant film, rather than decreasing surface tension by increasing its surface density, becomes thicker at constant surface tension ( approximately 0.024 N/m). Formation of the collapse phase requires transport of surfactant to collapse sites, and this transport can be hindered in thinner liquid layers by viscous resistance to motion. Our objective is to determine the effect of the liquid-layer thickness on surfactant transport, which might affect surfactant collapse. To this end, we developed a mathematical model that accounts for the effect of the liquid-layer thickness on surfactant transport, and focused on surfactant spreading and collapse. Model simulations showed a marked decrease in collapse rates for thinner liquid layers, but this decrease was not enough to completely explain differences in surfactant film behavior between in vitro and in situ experiments."
+  },
+  {
+   "rank": 31,
+   "id": "18312272",
+   "source": "MED",
+   "pmid": "18312272",
+   "pmcid": null,
+   "doi": "10.1111/j.1365-2958.2008.06149.x",
+   "first_publication_date": "2008-02-26",
+   "title": "Patterns of chromosomal fragmentation due to uracil-DNA incorporation reveal a novel mechanism of replication-dependent double-stranded breaks.",
+   "authors": "Kouzminova EA, Kuzminov A.",
+   "journal": "Molecular microbiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "There is growing evidence that spontaneous chromosomal fragmentation, one of the main contributors to genetic instability, is intimately linked to DNA replication. In particular, we proposed before that uracil incorporation in DNA triggers chromosomal fragmentation due to replication fork collapse at uracil-excision intermediates. We tested predictions of this model at the chromosomal level in the dut mutants of Escherichia coli, by determining the relationship between DNA replication and patterns of fragmentation in defined chromosomal segments. Here we show that the uracil-DNA-triggered chromosomal fragmentation: (i) has a gradient that parallels the replication gradient, (ii) shows polarity within defined segments pointing towards replication origins and (iii) reorganizes to match induced replication gradients, confirming its dynamic pattern. Unexpectedly, these fragmentation patterns not only support the replication fork collapse model, but also reveal another mechanism of the replication-dependent chromosomal fragmentation triggered by uracil excision."
+  },
+  {
+   "rank": 32,
+   "id": "18216071",
+   "source": "MED",
+   "pmid": "18216071",
+   "pmcid": null,
+   "doi": "10.1093/bioinformatics/btn029",
+   "first_publication_date": "2008-01-23",
+   "title": "Observation of multiple folding pathways of beta-hairpin trpzip2 from independent continuous folding trajectories.",
+   "authors": "Chen C, Xiao Y.",
+   "journal": "Bioinformatics (Oxford, England)",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "MotivationAfter 10-year investigations, the folding mechanisms of beta-hairpins are still under debate. Experiments strongly support zip-out pathway, while most simulations prefer the hydrophobic collapse model (including middle-out and zip-in pathways). In this article, we show that all pathways can occur during the folding of beta-hairpins but with different probabilities. The zip-out pathway is the most probable one. This is in agreement with the experimental results. We came to our conclusions by 38 100-ns room-temperature all-atom molecular dynamics simulations of the beta-hairpin trpzip2. Our results may help to clarify the inconsistencies in the current pictures of beta-hairpin folding mechanisms."
+  },
+  {
+   "rank": 33,
+   "id": "17552694",
+   "source": "MED",
+   "pmid": "17552694",
+   "pmcid": null,
+   "doi": "10.1121/1.2722045",
+   "first_publication_date": "2007-06-01",
+   "title": "Effect of nuclei concentration on cavitation cluster dynamics.",
+   "authors": "Arora M, Ohl CD, Lohse D.",
+   "journal": "The Journal of the Acoustical Society of America",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Cavitation cluster dynamics after the passage of a single pressure wave is studied for different concentrations of artificial cavitation nuclei (30 to 3x10(5) nuclei/ml). With increasing concentration of cavitation nuclei the lifetime of the cavitation cluster is prolonged. Additionally, it is found that the spatial extent of the cluster decreases with higher nuclei concentration. The experimental data for concentrations less than 400 nuclei/ml are compared to simulations with a Rayleigh-Plesset-type equation, taking into account bubble-bubble interaction. For higher concentrations (more than 1000 nuclei/ml) the observed radial cluster dynamics is compared with calculations from an axisymmetric cavity-collapse model."
+  },
+  {
+   "rank": 34,
+   "id": "17331539",
+   "source": "MED",
+   "pmid": "17331539",
+   "pmcid": null,
+   "doi": "10.1016/j.jmb.2007.01.085",
+   "first_publication_date": "2007-02-07",
+   "title": "Microsecond hydrophobic collapse in the folding of Escherichia coli dihydrofolate reductase, an alpha/beta-type protein.",
+   "authors": "Arai M, Kondrashkina E, Kayatekin C, Matthews CR, Iwakura M, Bilsel O.",
+   "journal": "Journal of molecular biology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Using small-angle X-ray scattering combined with a continuous-flow mixing device, we monitored the microsecond compaction dynamics in the folding of Escherichia coli dihydrofolate reductase, an alpha/beta-type protein. A significant collapse of the radius of gyration from 30 A to 23.2 A occurs within 300 micros after the initiation of refolding by a urea dilution jump. The subsequent folding after the major chain collapse occurs on a considerably longer time-scale. The protein folding trajectories constructed by comparing the development of the compactness and the secondary structure suggest that the specific hydrophobic collapse model rather than the framework model better explains the experimental observations. The folding trajectory of this alpha/beta-type protein is located between those of alpha-helical and beta-sheet proteins, suggesting that native structure determines the folding landscape."
+  },
+  {
+   "rank": 35,
+   "id": "16965059",
+   "source": "MED",
+   "pmid": "16965059",
+   "pmcid": null,
+   "doi": "10.1063/1.2333508",
+   "first_publication_date": "2006-08-01",
+   "title": "A kinetic theory of tertiary contact formation coupled to the helix-coil transition in polypeptides.",
+   "authors": "Hausrath AC.",
+   "journal": "The Journal of chemical physics",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The framework model and the hydrophobic collapse model represent two canonical descriptions of the protein folding process. The first places primary reliance on the short-range interactions of secondary structure and the second assigns greater importance to the long-range interactions of tertiary structure. The availability of increasingly detailed information about the folding mechanisms of diverse proteins suggests that both are important and the folding mechanism of most proteins utilizes different combinations of such interactions. A prior report described the XHC model, an extended helix-coil theory, which treats the mutual stabilization of secondary and tertiary structure in simple alpha-helical proteins at equilibrium. In this study, a kinetic scheme describing tertiary contact formation has been developed which relaxes to the XHC equilibrium model. The relaxation is governed by the relative stabilities of the equilibrium states and an additional factor which represents an activation energy for formation of a tertiary contact. The model can be used to simulate time-dependent properties of the ensemble of conformations during the entire folding process, and the resulting predictions are applicable to a range of experimental methods. This XHC kinetic model enables investigation of the relative influence of secondary and tertiary interactions on folding mechanisms."
+  },
+  {
+   "rank": 36,
+   "id": "16241776",
+   "source": "MED",
+   "pmid": "16241776",
+   "pmcid": null,
+   "doi": "10.1103/physrevlett.95.160403",
+   "first_publication_date": "2005-10-12",
+   "title": "Testing gravity-driven collapse of the wave function via cosmogenic neutrinos.",
+   "authors": "Christian J.",
+   "journal": "Physical review letters",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "It is pointed out that the Diósi-Penrose ansatz for gravity-induced quantum state reduction can be tested by observing oscillations in the flavor ratios of neutrinos originating at cosmological distances. Since such a test would be almost free of environmental decoherence, testing the ansatz by means of a next generation neutrino detector such as IceCube would be much cleaner than by experiments proposed so far involving superpositions of macroscopic systems. The proposed microscopic test would also examine the universality of the superposition principle at unprecedented cosmological scales."
+  },
+  {
+   "rank": 37,
+   "id": "15924487",
+   "source": "MED",
+   "pmid": "15924487",
+   "pmcid": null,
+   "doi": "10.1021/la046931w",
+   "first_publication_date": "2005-06-01",
+   "title": "Stability of microfabricated high aspect ratio structures in poly(dimethylsiloxane).",
+   "authors": "Roca-Cusachs P, Rico F, Martínez E, Toset J, Farré R, Navajas D.",
+   "journal": "Langmuir : the ACS journal of surfaces and colloids",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The stability of structures microfabricated in soft elastomeric polymers is an important concern in most applications that use these structures. Although relevant for several applications, the collapse to the ground of high aspect ratio structures (ground collapse) is still poorly understood. The stability of soft microfabricated high aspect ratio structures versus ground collapse was experimentally assessed, and a new model of ground collapse involving adhesion was developed. Sets of posts with diameters from 0.36 to 2.29 microm were fabricated in poly(dimethylsiloxane) and tested in air or immersed in water and ethanol to change the work of adhesion. The critical aspect ratio (the highest length-to-width ratio for which a post is not at risk of collapsing) was determined as a function of the diameter. The critical aspect ratio in air ranged from 2 to 4 and increased with the diameter. Work of adhesion was found to be determinant for and inversely correlated to stability. These results highlight the role played by adhesion and offer the possibility of improving stability by reducing the work of adhesion. The ground collapse model developed accounted for the main features of structure stability. The results indicate that ground collapse can be a limiting factor in the design of soft polymer structures."
+  },
+  {
+   "rank": 38,
+   "id": "15698290",
+   "source": "MED",
+   "pmid": "15698290",
+   "pmcid": null,
+   "doi": "10.1103/physrevlett.94.036401",
+   "first_publication_date": "2005-01-24",
+   "title": "The alpha--> gamma transition in Ce: a theoretical view from optical spectroscopy.",
+   "authors": "Haule K, Oudovenko V, Savrasov SY, Kotliar G.",
+   "journal": "Physical review letters",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Using a novel approach to calculate optical properties of strongly correlated systems, we address the old question of the physical origin of the alpha--> gamma transition in Ce. We find that the Kondo collapse model, involving both the f and the spd electrons, describes the optical data better than a Mott transition picture involving the f electrons only. Our results compare well with existing experiments on thin films. We predict the full temperature dependence of the optical spectra and find the development of a hybridization pseudogap in the vicinity of the alpha--> gamma phase transition."
+  },
+  {
+   "rank": 39,
+   "id": "12956608",
+   "source": "MED",
+   "pmid": "12956608",
+   "pmcid": null,
+   "doi": "10.1080/07391102.2003.10506920",
+   "first_publication_date": "2003-10-01",
+   "title": "A first-order-like state transition for recombinant protein folding.",
+   "authors": "Chang CC, Cheng MS, Su YC, Kan LS.",
+   "journal": "Journal of biomolecular structure & dynamics",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Normally, proteins will aggregate and precipitate by direct folding processes. In this study, we report that quasi-static processes can restore both the structure and bio-function of two kinds of fish recombinant growth hormones (Plecoglossus altivelis and Epinephelus awoara). The conformational changes and the particle-size-distribution (PSD) of each refolding intermediate can be monitored by circular dichroism spectroscopy (CD) and dynamic light scattering (DLS), respectively. Conformation analysis of the CD spectra of the refolding intermediates indicated that the secondary structures were restored in the initial refolding intermediate. However, the tertiary interactions of the proteins were restored during the last two refolding stages, as elucidated by thermal stability tests. This is consistent with a sequential model. DLS analysis suggested that the average hydrodynamic radii of the refolding intermediates shrank to their native-like sizes after the first refolding stage. This is consistent with a collapse model. After comparison with the data on the direct folding process, it is concluded that the denaturant-containing protein folding reaction is a first-order-like state transition process."
+  },
+  {
+   "rank": 40,
+   "id": "10756101",
+   "source": "MED",
+   "pmid": "10756101",
+   "pmcid": null,
+   "doi": "10.1006/jmbi.2000.3660",
+   "first_publication_date": "2000-04-01",
+   "title": "Hierarchical unfolding of the alpha-lactalbumin molten globule: presence of a compact intermediate without a unique tertiary fold.",
+   "authors": "Chakraborty S, Peng Z.",
+   "journal": "Journal of molecular biology",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The difference between the framework model and the hydrophobic collapse model of protein folding largely rests on whether a secondary-structure framework can exist independently of native tertiary interactions. Here, we used circular dichroism and disulfide exchange experiments to examine the unfolding mechanism of alpha-LA(alpha), a two- disulfide variant of human alpha-lactalbumin (alpha-LA) that adopts a molten globule conformation under near physiological conditions. Our results show that as the concentration of denaturant increases, the alpha-LA molten globule first loses its ability to form a specific, native-like tertiary fold. Subsequently, at a higher denaturant concentration, the protein loses its secondary structure and adopts an extended conformation. A compact, non-native disulfide bond isomer, which does not form significantly under both native and strongly denaturing conditions, was found to be moderately populated in approximately 2 M guanidine hydrochloride (GuHCl). Qualitatively the same result was also obtained in urea. These results suggest that formation of secondary structure is a necessary, but not sufficient condition for formation of the native-like tertiary fold and support a hierarchical model of protein folding."
+  }
+ ]
+}

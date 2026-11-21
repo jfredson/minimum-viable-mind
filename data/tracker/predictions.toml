@@ -75,7 +75,7 @@ also_stated = [
 test_for = "Models in which feedback from prefrontal cortex to sensory areas is switched off explain awareness clearly worse than models that keep it, when report is removed."
 test_against = "Awareness is explained as well or better with prefrontal feedback switched off, while feedback within sensory cortex is needed."
 separates_from = [
-  { theory = "iit", how = "IIT places the substrate of experience mainly in posterior cortex, so feedback from prefrontal cortex is not needed for it (the site's inference from the registration's wording).", source = "cogitate-prereg-v1" },
+  { theory = "iit", how = "IIT places the substrate of experience mainly in posterior cortex, so feedback from prefrontal cortex is not needed for it (inferred here from the registration's wording, not stated by its proponents).", source = "cogitate-prereg-v1" },
 ]
 
 [[prediction]]
@@ -280,7 +280,7 @@ also_stated = [
 test_for = "After the cut, response to new, unrelated events in the world degrades, in a way that differs from cutting off feedback alone, while practised single actions carry on."
 test_against = "After the cut, response to new events in the world carries on as before."
 separates_from = []
-note = "No rival on the pilot's list says anything about cutting the copies of a system's own commands, so any separation is the site's inference; it is left to the testability readings. The first two parts are reported as seen in monkeys (Sommer and Wurtz 2002 and 2004; Cavanaugh and colleagues 2016, as cited on the page); the third, the distinguishing part, is untested."
+note = "No rival on the pilot's list says anything about cutting the copies of a system's own commands, so any separation would be inferred here, not stated by a rival's proponents; it is left to the testability readings. The first two parts are reported as seen in monkeys (Sommer and Wurtz 2002 and 2004; Cavanaugh and colleagues 2016, as cited on the page); the third, the distinguishing part, is untested."
 
 [[prediction]]
 id = "sh-nosplit-flexible"
