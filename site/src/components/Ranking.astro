@@ -1,0 +1,74 @@
+---
+// The ranking in its three ruled groups (kickoff section 4, ranking rules 1 to 6), one row per
+// scored theory, three bars per row. Built from whatever theories the records hold: a group
+// with no theory in it is left out, and theories on the ruled list that are not scored yet are
+// named in one line under the groups, so the count above the title stays honest.
+import Bar from './Bar.astro';
+import N from './N.astro';
+import { tk, theory, GROUPS, word } from '../lib/tracker';
+
+const rows = {
+  ranked: tk.groups.ranked.map((r) => theory(r.theory)),
+  testable: tk.groups.testable.map(theory),
+  not_sharp: tk.groups.not_sharp.map(theory),
+};
+// a tied pair is two neighbours in the ranked list that share a rank
+const ranked = rows.ranked;
+const tiedWithNext = (i: number) => i + 1 < ranked.length && ranked[i].rank === ranked[i + 1].rank;
+const tiedWithPrev = (i: number) => i > 0 && ranked[i].rank === ranked[i - 1].rank;
+const notScored = tk.listed.filter((t) => !t.scored);
+---
+<div class="rank">
+  <div class="rank-head" aria-hidden="true">
+    <span></span><span>Theory</span>
+    <span>How well the evidence backs it<br />(<N v={tk.rules.even} /> = even)</span>
+    <span>How sharply it is defined, so it can be tested</span>
+    <span>How much is left to test</span>
+  </div>
+
+  {GROUPS.map((g) => {
+    const list = rows[g.key];
+    if (!list.length) return null;
+    return (
+      <>
+        <div class="group">{g.title} <i>{g.note}</i></div>
+        {list.map((t, i) => {
+          const tied = g.key === 'ranked' && (tiedWithNext(i) || tiedWithPrev(i));
+          const last = g.key === 'ranked' && tiedWithPrev(i) && !tiedWithNext(i);
+          return (
+            <>
+              <div class={`row ${tied ? 'tied' : ''} ${last ? 'last' : ''}`} data-record={t.id}>
+                <span class="n">{t.rank !== null && <>{tied ? '=' : ''}<N v={t.rank} /></>}</span>
+                <span class="name">
+                  <a href={`/theories/${t.id}/`}>{t.name}</a>
+                  {t.own && <span class="own">this site's own</span>}
+                  <span class="sub">
+                    {g.key === 'not_sharp' ? (
+                      <>needs: a prediction that could fail for <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more of its <N v={t.claims_count} t={word(t.claims_count)} /> core claims</>
+                    ) : t.rests_on.studies > 0 ? (
+                      <>rests on <N v={t.rests_on.studies} /> {t.rests_on.studies === 1 ? 'study' : 'studies'} from <N v={t.rests_on.groups} /> {t.rests_on.groups === 1 ? 'group' : 'groups'}</>
+                    ) : (
+                      <>no counted study yet</>
+                    )}
+                    {t.leans_against && <span class="leans"> · the evidence so far leans against it</span>}
+                  </span>
+                </span>
+                <Bar kind="sup" v={t.support} label="backed" />
+                <Bar kind="test" v={t.testability} label="sharp" />
+                <Bar kind="left" v={t.left_to_test} label="left to test" />
+              </div>
+              {last && (
+                <div class="tienote">Shown as tied: one study going the other way would swap {ranked.filter((x) => x.rank === t.rank).length === 2 ? 'these two' : 'these'}. <a href={`/theories/${t.id}/#tie`}>Check it by hand</a>.</div>
+              )}
+            </>
+          );
+        })}
+      </>
+    );
+  })}
+
+  {notScored.length > 0 && (
+    <div class="group notyet">Still being scored <i><N v={notScored.length} t={word(notScored.length)} /> more on the list: {notScored.map((t, i) => <>{i > 0 && (i === notScored.length - 1 ? ' and ' : ', ')}{t.name}</>)}</i></div>
+  )}
+</div>
+<p class="rank-foot"><b>Read it this way.</b> The order is set by the first bar only. The second bar gets a theory into the ranking; the third says where the work is, and a long one is not a fault. The three are never added up. <a href="/about/#numbers">How the numbers are worked out</a>.</p>

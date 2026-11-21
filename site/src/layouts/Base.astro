@@ -1,18 +1,23 @@
 ---
 import '../styles/global.css';
+import '../styles/tracker.css';
 import Nav from '../components/Nav.astro';
 import { project, derived, fmtDate } from '../lib/project';
 
 interface Props {
   title?: string;
   description?: string;
+  // A tracker page (2026-11-21): every digit in its main column must come from the records
+  // through the N and R components, which scripts/check_site.py enforces.
+  strict?: boolean;
 }
 
 const {
   title = 'Minimum Viable Mind',
   // A short line for search results and link previews (2026-11-14); the record's own question is
   // a paragraph, too long for either.
-  description = 'The smallest possible mind: a research programme that runs its own experiments, each one saying in advance what result would count against it.',
+  description = 'How far has the science of consciousness got in testing its theories? Each theory of consciousness is scored on how well published studies back it, how sharply it can be tested, and how much of it is still untested, by rules fixed in advance.',
+  strict = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -80,24 +85,26 @@ const iconVersion = '2';
     {/* The Notebook skin's backdrop (ruled 2026-10-17): graph paper, drawn by the skin on this element; no sky. */}
     <div class="space-bg" aria-hidden="true"></div>
     <Nav />
-    <main class="container">
+    <main class="container" data-strict={strict ? "" : undefined}>
       <slot />
     </main>
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
           <span class="footer-brand">Minimum Viable Mind</span>
-          <p class="footer-tag">A build-and-measure project downstream of Sentient Horizons and The Calibration Problem.</p>
+          <p class="footer-tag">Every theory of consciousness, held to the same rules, this site's own included.</p>
           <p class="footer-links">
-            <a href="/">Where we are</a>
-            <a href="/eli5/">Explain it simply</a>
-            <a href="/ladder/">The ladder</a>
-            <a href="/questions/">Questions and ideas</a>
-            <a href="/learned/">What we have learned</a>
-            <a href="/story/">The story so far</a>
+            <a href="/about/">About</a>
+            <a href="/about/#numbers">How the numbers are worked out</a>
+            <a href="/about/#reading">This week's reading</a>
+            <a href="/about/#disagree">Disagree with something</a>
+            <a href="/tests/">Our own tests</a>
+            <a href="/story/">The project's story</a>
+            <a href="https://github.com/jfredson/minimum-viable-mind" rel="noopener">Source</a>
+            <a href="https://x.com/SentHorizons" rel="noopener">Follow on X</a>
           </p>
           <p class="footer-meta">
-            © {currentYear} <a href="https://johnandrewfredrickson.com/" rel="author">John Andrew Fredrickson</a>. Last built {longDate(derived.exported_on)}{derived.commit ? ` (version ${derived.commit})` : ''} from the project record as of {longDate(project.updated_on)}. Free to reuse with credit (<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>); code under the MIT licence. Please credit as: <cite>Minimum Viable Mind</cite>, by John Andrew Fredrickson, a Sentient Horizons project, <a href="https://minimumviablemind.sentient-horizons.com/">minimumviablemind.sentient-horizons.com</a>.
+            © {currentYear} <a href="https://johnandrewfredrickson.com/" rel="author">John Andrew Fredrickson</a>. Last built {longDate(derived.exported_on)}{derived.commit ? ` (version ${derived.commit})` : ''} from the records. Free to reuse with credit (<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>); code under the MIT licence. Please credit as: <cite>Minimum Viable Mind</cite>, by John Andrew Fredrickson, a Sentient Horizons project, <a href="https://minimumviablemind.sentient-horizons.com/">minimumviablemind.sentient-horizons.com</a>.
           </p>
           <p class="footer-parent"><a href="https://sentient-horizons.com/projects/" rel="noopener">A Sentient Horizons project.</a></p>
         </div>

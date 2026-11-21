@@ -1,5 +1,5 @@
 {
-  "computed_on": "2026-11-20",
+  "computed_on": "2026-11-21",
   "project": {
     "name": "Minimum Viable Mind",
     "short": "MVM",
@@ -61,5 +61,18 @@
   "dates": {
     "wrap_up_start": "2026-12-21",
     "hibernation_by": "2027-01-04"
+  },
+  "tracker": {
+    "what": "The share of the theories' distinguishing predictions, tied to their core claims, that at least one counted study has tested at all. It measures how widely the theories have been tested, not how firmly.",
+    "share_tested": 67,
+    "share_tested_exact": 66.7,
+    "tested": 8,
+    "distinguishing_predictions": 12,
+    "theories_scored": 3,
+    "theories_listed": 10,
+    "worked_out_on": "2026-11-20",
+    "last_reading": null,
+    "version": "2db2873",
+    "script": "scripts/tracker_scores.py --mode settled, through scripts/export_tracker.py"
   }
 }

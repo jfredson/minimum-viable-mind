@@ -4,12 +4,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "export": "python3 ../scripts/export_site.py",
-    "check": "python3 ../scripts/export_site.py --check",
-    "predev": "python3 ../scripts/export_site.py",
+    "export": "python3 ../scripts/export_site.py && python3 ../scripts/export_tracker.py",
+    "check": "python3 ../scripts/export_site.py --check && python3 ../scripts/export_tracker.py --check",
+    "predev": "npm run export",
     "dev": "astro dev",
-    "prebuild": "python3 ../scripts/export_site.py",
-    "build": "astro build",
+    "prebuild": "npm run export",
+    "build": "astro build && python3 ../scripts/check_site.py",
     "preview": "astro preview",
     "deploy": "npm run build && wrangler deploy"
   },

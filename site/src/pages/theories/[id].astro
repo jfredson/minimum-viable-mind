@@ -1,0 +1,132 @@
+---
+// A theory's page (design proposal section 4, pictures 8 to 10; tracker pattern rule 2.2): the
+// plain name and paragraph, the three scores with what each rests on, the tie note, its core
+// claims as dots, its predictions with their states, and on the right what would move it. One
+// page per scored theory in the records; the scoring work's later records add pages with no
+// change here.
+import Base from '../../layouts/Base.astro';
+import Bar from '../../components/Bar.astro';
+import N from '../../components/N.astro';
+import R from '../../components/R.astro';
+import StateBadge from '../../components/StateBadge.astro';
+import VerifyNote from '../../components/VerifyNote.astro';
+import { tk, pred, dotClass, word, type Theory } from '../../lib/tracker';
+
+export function getStaticPaths() {
+  return Object.values(tk.theories).map((t) => ({ params: { id: t.id } }));
+}
+const t = tk.theories[Astro.params.id as string] as Theory;
+const preds = t.predictions.map(pred);
+const sharp = preds.filter((p) => p.separates);
+const shared = preds.filter((p) => !p.separates);
+const claimNo = (cid: string) => t.claims.findIndex((c) => c.id === cid) + 1;
+// the first prediction row for each core claim carries the anchor the claim list links to
+const anchored = new Set<string>();
+const anchorFor = (cid: string) => (anchored.has(cid) ? undefined : (anchored.add(cid), `c-${cid}`));
+const groupLine =
+  t.group === 'ranked' ? 'ranked' : t.group.startsWith('testable') ? 'testable, too little tested to rank' : 'not yet defined sharply enough to rank';
+const tieRow = t.tied[0];
+const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans supported.' : t.support < tk.rules.even ? 'Leans against.' : 'Even.';
+---
+
+<Base title={`${t.name} · Minimum Viable Mind`} description={`How ${t.name.charAt(0).toLowerCase() + t.name.slice(1)} is holding up against published studies: its core claims, its predictions and how the tests have gone.`} strict>
+  <div class="page two">
+    <div>
+      <p class="crumbs"><a href="/theories/">Theories</a> / {t.name}</p>
+      <p class="eyebrow">A theory of consciousness{t.own && <> · this site's own</>} · {groupLine}{t.rank !== null && <> · {t.tied.length ? '=' : ''}<N v={t.rank} /> of <N v={t.ranked_count} /></>}</p>
+      <h1>{t.name}</h1>
+      <R as="p" class="tplain" t={t.plain} />
+      {t.proponents.length > 0 && <p class="meta">{t.own ? 'Its author:' : 'Among its proponents:'} {t.proponents.join(', ')}.</p>}
+      <VerifyNote ids={t.verify_open} />
+
+      <div class="scores" data-record={t.id}>
+        <div class="score">
+          <div class="lab">Backed by the evidence</div>
+          {t.support === null ? <div class="num">none</div> : <div class="num"><N v={t.support} /> <small>/ <N v={tk.rules.scale_top} /></small></div>}
+          <p>
+            {t.support === null
+              ? <>No support score yet: it needs counted studies from at least <N v={tk.rules.groups_needed} t={word(tk.rules.groups_needed)} /> separate research groups, and has {t.rests_on.groups === 0 ? 'none' : <><N v={t.rests_on.groups} t={word(t.rests_on.groups)} /></>}.</>
+              : <>{supWords}{' '}<N v={t.rests_on.studies} /> {t.rests_on.studies === 1 ? 'study' : 'studies'} from <N v={t.rests_on.groups} /> groups, <N v={t.rests_on.outcomes} /> counted results, total weight <N v={t.rests_on.total_weight} />. <N v={tk.rules.even} /> would mean even.</>}
+          </p>
+          <Bar kind="sup" v={t.support} label="backed" num={false} />
+        </div>
+        <div class="score">
+          <div class="lab">Sharp enough to test</div>
+          <div class="num"><N v={t.testability} /> <small>/ <N v={tk.rules.scale_top} /></small></div>
+          <p><N v={t.claims_sharp} /> of <N v={t.claims_count} /> core claims come with a prediction that could fail and that a rival predicts differently. {t.past_bar ? 'Past the bar.' : <>Below the bar: it needs <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more.</>}</p>
+          <Bar kind="test" v={t.testability} label="sharp" num={false} />
+        </div>
+        <div class="score">
+          <div class="lab">Left to test</div>
+          <div class="num"><N v={t.left_to_test} /> <small>/ <N v={tk.rules.scale_top} /></small></div>
+          <p><N v={t.left_counts.untested} /> of <N v={t.left_counts.total} /> places untouched by any counted study{t.left_counts.placeholders > 0 && <>, counting <N v={t.left_counts.placeholders} t={word(t.left_counts.placeholders)} /> for core claims with no prediction that could fail</>}.</p>
+          <Bar kind="left" v={t.left_to_test} label="left to test" num={false} />
+        </div>
+      </div>
+      {t.leans_against && <p class="meta">The evidence so far leans against it. It keeps its place in the ranking.</p>}
+      {tieRow && (
+        <p class="meta" id="tie">Shown as tied with <a href={`/theories/${tieRow.with}/`}>{tieRow.with_name}</a>: reversing the results of one study, <R t={tieRow.study_name} />, would swap or tie them. To check it by hand, flip that study's results in the predictions below and work both support scores again by the formula on <a href="/about/#numbers">About</a>.</p>
+      )}
+
+      <div class="shead"><h2>Its core claims</h2><span>quoted from {t.claims_from?.url ? <a href={t.claims_from.url}><R t={t.claims_from.citation} /></a> : <R t={t.claims_from?.citation} />}, fixed on <N v={t.fixed_on} t={t.fixed_on_long} /> until the yearly review</span></div>
+      <ul class="claims">
+        {t.claims.map((c) => (
+          <li data-record={c.id}>
+            <span class={`dot ${dotClass(c.level)}`} aria-label={c.level >= 1 ? 'stated by its proponents' : c.level > 0 ? 'inferred by the site' : 'none yet'}></span>
+            <span>
+              <R t={c.quote} q class="q" />
+              <span class="m">{c.level >= 1 ? 'a prediction stated by its proponents could fail and separates it from a rival' : c.level > 0 ? 'only the site has inferred a prediction that could fail; counted at half' : 'no prediction yet that could fail and that a rival predicts differently'}</span>
+            </span>
+            <span>{c.predictions.length ? <a href={`#c-${c.id}`}><N v={c.predictions.length} /> {c.predictions.length === 1 ? 'prediction' : 'predictions'}</a> : 'none'}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="key"><span><span class="dot full"></span> stated by its proponents</span><span><span class="dot half"></span> inferred by the site</span><span><span class="dot"></span> none yet</span></p>
+
+      <div class="shead"><h2>Its predictions</h2><span>the ones that set it apart from a rival; those that do not are listed after them and score nothing</span></div>
+      <table class="preds">
+        <thead><tr><th>Prediction</th><th class="hide-s">Who says so</th><th>State</th><th class="hide-s">Counted studies</th></tr></thead>
+        <tbody>
+          {[...sharp, ...shared].map((p) => (
+            <tr data-record={p.id} id={anchorFor(p.core_claim)}>
+              <td><a href={`/predictions/${p.id}/`}><R t={p.statement} /></a><span class="m">core claim <N v={claimNo(p.core_claim)} />{p.core_claim ? ' · counts double' : ''}{!p.separates && ' · sets it apart from no rival on the record'}{p.verify_open.length > 0 && ' · still being checked'}</span></td>
+              <td class="hide-s">{p.stated_by === 'proponent' ? 'its proponents' : 'inferred by the site'}</td>
+              <td><StateBadge s={p.state} /></td>
+              <td class="hide-s"><N v={p.counted_count} /></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {t.explained_afterwards.length > 0 && (
+        <p class="meta">Also listed, moving no score: {t.explained_afterwards.map((e, i) => <>{i > 0 && '; '}<a href={`/predictions/${e.prediction}/`}><R t={e.name} /></a></>)}, explained afterwards and not counted (the prediction was not on record before the study's data).</p>
+      )}
+    </div>
+
+    <aside class="side">
+      <div class="box tmove">
+        <h3>What would move this</h3>
+        <ul>
+          {t.move.map((m) => (
+            m.kind === 'claim' ? (
+              <li>A prediction from its proponents that could fail, and that a rival's own publication predicts differently, for the core claim <R t={m.claim_plain} q /> sharpness <b><N v={m.from} /> → <N v={m.to} /></b>.</li>
+            ) : m.kind === 'probe' ? (
+              <li>A study registered in advance and run by an outside group (weight <N v={m.weight} />), on <a href={`/predictions/${m.prediction}/`}><R t={m.statement} /></a> support <b><N v={m.from} /> → <N v={m.for} /></b> if it came out for, <b><N v={m.from} /> → <N v={m.against} /></b> against.</li>
+            ) : (
+              <li>Counted studies from <N v={m.groups_needed} t={word(m.groups_needed ?? 0)} /> separate research groups on <a href={`/predictions/${m.prediction}/`}><R t={m.statement} /></a> or its other predictions would give it a support score for the first time; it has studies from {m.groups === 0 ? 'none' : <N v={m.groups} t={word(m.groups ?? 0)} />} so far.</li>
+            )
+          ))}
+        </ul>
+        <p>Worked out by the same rules as the scores, for one study at a time.</p>
+      </div>
+      <div class="box">
+        <h3>Backed by the evidence, run by run</h3>
+        <p>First scored on <N v={tk.last_judgement} t={tk.last_judgement_long} />. Every later change will be drawn here, run by run, with a dated entry in the story so far.</p>
+      </div>
+      <div class="box">
+        <h3>Last readings</h3>
+        <p>No weekly reading has run yet. <a href="/about/#reading">About the weekly reading</a>.</p>
+      </div>
+      <p class="disagree"><a href={`https://github.com/jfredson/minimum-viable-mind/issues/new?title=${encodeURIComponent(`Disagree: ${t.name}`)}`} rel="noopener">Disagree with something on this page</a></p>
+    </aside>
+  </div>
+</Base>

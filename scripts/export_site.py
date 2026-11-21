@@ -359,7 +359,9 @@ def headline_is_current(fresh: dict) -> bool:
         old = json.loads(HEADLINE_OUT.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return False
-    strip = lambda h: {k: v for k, v in h.items() if k != "computed_on"}
+    # "tracker" is the block scripts/export_tracker.py adds from the tracker records
+    # (2026-11-21); this script does not write it, so it is left out of the comparison.
+    strip = lambda h: {k: v for k, v in h.items() if k not in ("computed_on", "tracker")}
     return strip(old) == strip(fresh)
 
 

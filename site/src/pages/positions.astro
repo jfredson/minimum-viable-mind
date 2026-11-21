@@ -1,0 +1,59 @@
+---
+// Our working positions, against the evidence (design proposal section 4, pictures 14 and 15;
+// kickoff section 3). The Sentient Horizons account is one theory in the records; each of its
+// core claims quotes a position on the public Working Positions page, and its predictions are
+// taken from those positions' "What would change my mind" sections. This page shows each one
+// against the evidence. Draft copy.
+import Base from '../layouts/Base.astro';
+import N from '../components/N.astro';
+import R from '../components/R.astro';
+import StateBadge from '../components/StateBadge.astro';
+import VerifyNote from '../components/VerifyNote.astro';
+import { tk, pred, word } from '../lib/tracker';
+
+const own = Object.values(tk.theories).find((t) => t.own);
+const verdict = (states: string[]) => {
+  const tested = states.filter((s) => s === 'supported' || s === 'contradicted' || s === 'mixed');
+  if (!tested.length) return { label: 'no evidence yet', cls: 'untested' };
+  if (tested.every((s) => s === 'supported')) return { label: 'evidence has gone its way', cls: 'ok' };
+  if (tested.every((s) => s === 'contradicted')) return { label: 'evidence has gone against it', cls: 'no' };
+  return { label: 'mixed', cls: 'mixed' };
+};
+---
+
+<Base title="Our working positions, against the evidence · Minimum Viable Mind" description="This site's own account of consciousness, position by position, against the published evidence, by the same rules as every other theory." strict>
+  <section class="page">
+    <p class="eyebrow">Beside the ranking · this site's own account</p>
+    <h1>Our working positions, against the evidence</h1>
+    <div class="notice"><b>This site ranks its author's own account.</b> The account of consciousness argued on Sentient Horizons is scored as one theory among the others. The rules were written before any theory was scored, an outside reader makes the first judgement on every row of this account, and a result against it stands once recorded.</div>
+    {!own ? <p class="tplain">The account is not scored yet.</p> : (
+      <>
+        <p class="tplain">Each position below is quoted from the <a href={own.claims_from?.url ?? 'https://sentient-horizons.com/positions/'}>Working Positions</a> page, with the predictions its "What would change my mind" sections make. Today the account is <a href={`/theories/${own.id}/`}>{own.group}</a>: <N v={own.claims_sharp} t={word(own.claims_sharp)} /> of its <N v={own.claims_count} t={word(own.claims_count)} /> core claims {own.claims_sharp === 1 ? 'comes' : 'come'} with a prediction that could fail and that a rival's own publication predicts differently.</p>
+        <VerifyNote ids={own.verify_open} />
+        {own.claims.map((c) => {
+          const ps = c.predictions.map(pred);
+          const v = verdict(ps.map((p) => p.state));
+          return (
+            <div class="pos" data-record={c.id}>
+              <div>
+                <R as="h3" t={c.plain} />
+                <R as="p" t={c.quote} q />
+                <p class="meta">From the position <R t={c.location} /></p>
+                {ps.map((p) => (
+                  <div class="would" data-record={p.id}>
+                    <b>What would count against it</b>
+                    <R t={p.test_against} /> <a href={`/predictions/${p.id}/`}>The prediction</a> <StateBadge s={p.state} />
+                  </div>
+                ))}
+              </div>
+              <div class="verdict">
+                <span class={`tbadge ${v.cls}`}>{v.label}</span>
+                <span class="m">{ps.length === 0 ? 'no prediction on record' : <><N v={ps.length} t={word(ps.length)} /> {ps.length === 1 ? 'prediction' : 'predictions'}, <N v={ps.filter((p) => p.separates).length} t={word(ps.filter((p) => p.separates).length)} /> setting it apart from a rival</>}</span>
+              </div>
+            </div>
+          );
+        })}
+      </>
+    )}
+  </section>
+</Base>

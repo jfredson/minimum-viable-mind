@@ -1,0 +1,40 @@
+# The open questions: beside the ranking, moving no score (tracker pattern rule 1.2).
+# The five come from the kickoff proposal, section 3 ("Beside the trunk, never moving it"),
+# in its order. Written 2026-11-21 for the stage 3 site; the wording of `title` and `plain`
+# is draft copy, not yet through the voice and plain-language checks.
+#
+# `bears_on` stays empty on purpose. Which predictions bear on which question is a judgement
+# about the records, so it belongs in the tracker records (a `questions` field on each
+# prediction in data/tracker/predictions.toml, read by scripts/export_tracker.py), where the
+# scoring work can read it twice like any other judgement. Until then every count on the
+# page is zero, and the page says why.
+
+[[question]]
+id = "features"
+title = "Which features does experience need?"
+plain = "Every theory names some things a system must have to experience anything at all, and treats others as extras."
+bears_on = []
+
+[[question]]
+id = "machines"
+title = "Could a machine have experience?"
+plain = "Some theories say the right organisation is enough, whatever it is made of; others say a living body, or a certain kind of physical hardware, is needed."
+bears_on = []
+
+[[question]]
+id = "animals"
+title = "Which animals have experience?"
+plain = "A theory that says what experience needs also says which animals have it, though few theories have been tested on that."
+bears_on = []
+
+[[question]]
+id = "fading"
+title = "Can experience fade to nothing, by degrees?"
+plain = "Some theories make experience a matter of more or less, so that it could thin out gradually; others make it all or nothing."
+bears_on = []
+
+[[question]]
+id = "groups"
+title = "Can a group share one present moment?"
+plain = "Whether two or more minds joined closely enough could have one experience between them, and what that would take."
+bears_on = []

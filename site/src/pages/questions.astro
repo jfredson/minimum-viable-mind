@@ -3,6 +3,19 @@ import Base from '../layouts/Base.astro';
 import Status from '../components/Status.astro';
 import { data, label } from '../lib/project';
 import { prose } from '../lib/prose';
+import N from '../components/N.astro';
+import R from '../components/R.astro';
+import { tk, pred } from '../lib/tracker';
+
+// Since 2026-11-21 this page opens with the tracker's open questions (beside the ranking, moving
+// no score; design proposal section 4, picture 13). The project's own questions and its ideas
+// follow unchanged, at the same anchors (#Q1, #I14 and the rest), because other pages link to
+// them, the Sentient Horizons Working Positions page among them.
+const tally = (ids: string[]) => {
+  const ps = ids.map(pred);
+  const tested = ps.filter((p) => p.state !== 'untested' && p.state !== 'scores nothing').length;
+  return { n: ps.length, tested };
+};
 
 const order = ['on-the-table', 'authorised', 'deferred', 'rejected', 'done'];
 const groups = order
@@ -11,10 +24,31 @@ const groups = order
 const stageName = (id: string) => data.stages.find((s) => s.id === id)?.name ?? '';
 ---
 
-<Base title="Questions and ideas · Minimum Viable Mind" description="The questions the project is trying to answer, what would answer each, what would count against it, and the ideas on the table to explore.">
-  <section class="hero">
-    <p class="eyebrow">Questions</p>
-    <h1>What we are trying to find out</h1>
+<Base title="Questions · Minimum Viable Mind" description="The open questions about consciousness that the theories' predictions bear on, and the questions this project's own tests are trying to answer.">
+  <section class="page" data-strict>
+    <p class="eyebrow">Beside the ranking · moves no score</p>
+    <h1>The open questions</h1>
+    <p class="tplain">The theories disagree on more than what experience is. These are the questions a reader most often brings to them. Each will list the predictions that bear on it, so you can see which tests would move it; it moves no score.</p>
+    <ul class="qlist">
+      {tk.open_questions.map((q) => {
+        const t = tally(q.bears_on);
+        return (
+          <li class="qitem" id={`q-${q.id}`}>
+            <div>
+              <h3>{q.title}</h3>
+              <p>{q.plain}</p>
+              <p class="ttally">{t.n === 0 ? 'No prediction on the record is linked to this question yet.' : <><N v={t.n} /> predictions bear on it · <N v={t.tested} /> tested</>}</p>
+              {t.n > 0 && <ul>{q.bears_on.map((id) => <li><a href={`/predictions/${id}/`}><R t={pred(id).statement} /></a></li>)}</ul>}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+
+  <section class="hero" id="project">
+    <p class="eyebrow">This project's own questions</p>
+    <h2>What our own tests are trying to find out</h2>
     <p class="lede">Ordered by leverage. Each question says what instrument or build answers it and what would count against it, because a claim that cannot lose explains nothing.</p>
   </section>
 

@@ -1,8 +1,9 @@
 /* ---------------------------------------------------------------
-   Minimum Viable Mind · skin "Notebook", version 1.0.0 (2026-10-17)
+   Minimum Viable Mind · skin "Notebook", version 1.1.0 (2026-11-21): re-inked, the accent changed from the parent's ink violet to mulberry, everything else as 1.0.0 (2026-10-17). Ruled by John 2026-11-20 ("Yes, re-inked"), docs/design/2026-11-20-tracker-design-proposal.md, section 5 and decision 1
    A lab notebook: a cool off-white page with a faint grid behind the first
-   screen, ink, the parent's ink violet as the accent (this is the parent's
-   own programme), a slate for the meters, and the monospace leading the
+   screen, ink, a mulberry accent of the site's own (until 2026-11-21 the
+   parent's ink violet; changed because the site now ranks the parent's own
+   account as one theory among others), a slate for the meters, and the monospace leading the
    labels. Proposed with pictures in sentient-horizons/design/proposals/
    minimum-viable-mind-skin-2026-10-17.md and ruled by John on 2026-10-17
    as proposed: light by default, a dark theme kept (the same notebook in
@@ -19,19 +20,19 @@
   --muted: #8f9097;
   --line: rgba(236, 235, 230, 0.10);
   --line-strong: rgba(236, 235, 230, 0.20);
-  --accent: #b9aee6;      /* pale violet: links and the one action */
+  --accent: #e9a6c8;      /* pale mulberry: links and the one action */
   --accent-2: #c9a06a;    /* a second mark, sepia */
   --accent-3: #8aa4bb;    /* data: the meters and bars */
-  --on-accent: #15121f;
-  --accent-hover: #cbc2ee;
-  --link: #b9aee6;
-  --link-hover: #cbc2ee;
-  --glow: rgba(185, 174, 230, 0.16);
+  --on-accent: #1f1218;
+  --accent-hover: #f1bdd8;
+  --link: #e9a6c8;
+  --link-hover: #f1bdd8;
+  --glow: rgba(233, 166, 200, 0.16);
   --header-bg: rgba(22, 23, 26, 0.78);
   --hover-bg: rgba(236, 235, 230, 0.06);
   --active-bg: rgba(236, 235, 230, 0.09);
   --chip-bg: rgba(236, 235, 230, 0.03);
-  --callout-bg: rgba(185, 174, 230, 0.10);
+  --callout-bg: rgba(233, 166, 200, 0.10);
   --ok: #7fc48a;
   --no: #d98a7a;
   --star: #ecebe6;
@@ -52,19 +53,19 @@
   --muted: #6a6a66;
   --line: rgba(27, 27, 26, 0.12);
   --line-strong: rgba(27, 27, 26, 0.22);
-  --accent: #5b4a9e;      /* ink violet, the parent's second mark deepened */
+  --accent: #8e2f63;      /* mulberry: the marking ink, a hue no other family site uses */
   --accent-2: #8a5a2b;    /* sepia */
   --accent-3: #5f7f99;    /* slate */
-  --on-accent: #f7f5fc;
-  --accent-hover: #6c5bb3;
-  --link: #5b4a9e;
-  --link-hover: #6c5bb3;
-  --glow: rgba(91, 74, 158, 0.10);
+  --on-accent: #fcf5f8;
+  --accent-hover: #a33b74;
+  --link: #8e2f63;
+  --link-hover: #a33b74;
+  --glow: rgba(142, 47, 99, 0.10);
   --header-bg: rgba(244, 244, 241, 0.88);
   --hover-bg: rgba(27, 27, 26, 0.05);
   --active-bg: rgba(27, 27, 26, 0.08);
   --chip-bg: transparent;
-  --callout-bg: rgba(91, 74, 158, 0.07);
+  --callout-bg: rgba(142, 47, 99, 0.07);
   --ok: #2f7c4a;
   --no: #a5432f;
   --star: #b9b9b3;

@@ -1,0 +1,16 @@
+---
+// Every theory on the ruled list (tracker pattern rule 2.4: the index of branches), the scored
+// ones in their groups with their three bars, the others named as still being scored.
+import Base from '../../layouts/Base.astro';
+import Ranking from '../../components/Ranking.astro';
+import N from '../../components/N.astro';
+import { tk, word } from '../../lib/tracker';
+---
+<Base title="The theories · Minimum Viable Mind" description="Every theory of consciousness on this site's list, with its three scores and its place in the ranking." strict>
+  <section class="page">
+    <p class="eyebrow">The theories</p>
+    <h1>The theories, and how each is holding up</h1>
+    <p class="tplain">The list holds <N v={tk.listed_count} t={word(tk.listed_count)} /> entries: the theories that say what makes a system conscious, are still published by their proponents, and are covered by at least two of the field's comparison reviews, plus this site's own account, included by stated exception. The list changes only at the yearly review. <N v={tk.scored_count} t={word(tk.scored_count).replace(/^./, (c) => c.toUpperCase())} /> {tk.scored_count === 1 ? 'is' : 'are'} scored so far.</p>
+    <Ranking />
+  </section>
+</Base>

@@ -1,0 +1,22 @@
+---
+// Tracker pattern rule 4.22: the latest news on the right of the first screen, up to three
+// posts, built from the same files as the News page. It shows from the first dated post on;
+// there are none yet, because no post may go out while any record carries an open verify
+// entry (rule 3.3, part 4).
+import { getCollection } from 'astro:content';
+import N from './N.astro';
+const posts = (await getCollection('news')).sort((a, b) => b.data.date.localeCompare(a.data.date));
+const latest = posts.filter((p) => p.data.kind !== 'start here').slice(0, 3);
+const start = posts.find((p) => p.data.kind === 'start here');
+---
+{latest.length > 0 && (
+  <div class="news">
+    <div class="lab"><span>Latest news</span><a href="/news/">All news</a></div>
+    <ol>
+      {latest.map((p) => (
+        <li><span class="d"><N v={p.data.date} t={p.data.date_long} /> · {p.data.kind}</span><a href={`/news/${p.id}/`}>{p.data.title}</a></li>
+      ))}
+    </ol>
+    {start && <p class="start">New here? <a href={`/news/${start.id}/`}>Start with the opening post</a>.</p>}
+  </div>
+)}
