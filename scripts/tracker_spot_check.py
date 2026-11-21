@@ -132,13 +132,18 @@ def pages(d, order):
         j = js[jid]
         p = preds[j["prediction"]]
         th = {"gwt": "Global workspace theory", "iit": "Integrated information theory", "sh": "The Sentient Horizons account"}[p["theory"]]
-        out += [f"## {n}. {th}: {p['statement'][:90].rstrip(',. ')}{'...' if len(p['statement']) > 90 else ''}", ""]
+        words = p["statement"].split()
+        head = " ".join(words[:14]).rstrip(",.;") + (" ..." if len(words) > 14 else "")
+        out += [f"## {n}. {th}: {head}", ""]
         out += [f"`{jid}` ({j['kind']} judgement)" + (" — a Sentient Horizons row, taken by the rule" if p["theory"] == "sh" else " — drawn at random"), ""]
         out += [f"**The prediction.** {p['statement']}", ""]
         out += [f"- Counts for it: {p['test_for']}", f"- Counts against it: {p['test_against']}", ""]
         if j["kind"] in ("outcome", "commitment"):
             s = studies[j["study"]]
             out += [f"**The study.** {s['name']} (first appeared {s['first_appeared']['date']}).", ""]
+            if j["kind"] == "commitment" and j.get("dates"):
+                dd = j["dates"]
+                out += ["**The dates.** " + "; ".join(f"{k.replace('_', ' ')}: {v}" for k, v in dd.items()) + ".", ""]
             pas = j.get("passages", [])
             if pas:
                 a = pas[0] if j["kind"] == "outcome" else pas[0]
@@ -151,13 +156,15 @@ def pages(d, order):
             ru = j.get("ruling")
             if ru and ru.get("source"):
                 rs = sources[ru["source"]]
-                out += [f"**The rival's own passage (rule C).** \"{short(ru['passage'])}\" ([{ru['source']}]({rs.get('url', '')}))", ""]
+                out += [f"**The rival theory's own published passage.** \"{short(ru['passage'])}\" ([{ru['source']}]({rs.get('url', '')}))", ""]
         out += [f"**The question.** {QUESTION[j['kind']]}", ""]
         for r in j["reading"]:
             who = "Claude" if r["reader"] == "claude" else "Gemini"
-            out += [f"- **{who}** ({r['model']}): {answer(j, r)}. {first_sentence(r['reason'])}"]
+            out += [f"- **{who}** ({r['model']}): {answer(j, r)}. {short(r["reason"], 45)}"]
         if j.get("ruling"):
-            out += [f"- *A ruling of yours confirmed this answer ({j['ruling']['rule']}).*"]
+            plain = {"C": "that a rival's view must come from its own proponents' published work",
+                     "D": "on when a prediction must have been fixed"}.get(j["ruling"]["rule"], j["ruling"]["rule"])
+            out += [f"- *A later ruling of yours ({plain}) gave the same answer.*"]
         out += ["", "**Your finding** (agree / overturn, and why): ________________________________", ""]
     return "\n".join(out)
 
