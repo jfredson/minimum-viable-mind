@@ -101,6 +101,10 @@ export const GROUPS = [
   { key: 'not_sharp', title: 'Not yet clear enough to test', note: `half or fewer of its ${BAR_TEST}` },
 ] as const;
 
+// The export's group names, shown by their ruled titles wherever a page names a theory's group.
+export const groupTitle = (g: string) =>
+  g === 'ranked' ? GROUPS[0].title : g.startsWith('testable') ? GROUPS[1].title : GROUPS[2].title;
+
 // Where a claim's dot sits: filled when a proponent states a prediction that could fail and
 // separates the theory from a rival, half when only the site has inferred one, empty otherwise.
 export const dotClass = (level: number) => (level >= 1 ? 'full' : level > 0 ? 'half' : '');

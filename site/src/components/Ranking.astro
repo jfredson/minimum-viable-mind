@@ -52,7 +52,7 @@ const notScored = tk.listed.filter((t) => !t.scored);
                   {t.own && <span class="own">this site's own</span>}
                   <span class="sub">
                     {g.key === 'not_sharp' ? (
-                      <>To be ranked, <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more of its <N v={t.claims_count} t={word(t.claims_count)} /> main claims need a prediction that could fail and that a rival theory predicts differently.</>
+                      <>To be ranked, <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more of its <N v={t.claims_count} t={word(t.claims_count)} /> main claims need a prediction that could fail and that a rival theory's own published work predicts differently.</>
                     ) : t.rests_on.studies > 0 ? (
                       <><N v={t.rests_on.studies} /> {t.rests_on.studies === 1 ? 'study' : 'studies'}, from <N v={t.rests_on.groups} /> research {t.rests_on.groups === 1 ? 'group' : 'groups'}</>
                     ) : (
