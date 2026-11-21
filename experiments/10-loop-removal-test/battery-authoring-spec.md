@@ -362,3 +362,56 @@ registered design unless John rules so afterwards.*
 
    If neither placement meets all three, the trial reports that, and the next choice goes to John, for
    example option (b), a fixed lead-in, or (c), scoring a reasoned answer.
+
+## 16. Redesigning the chained lookups: a calibration trial (2026-11-21)
+
+*Added 2026-11-21 on John's choice ("Redesign the lookups"), before any code for it was written. The scoring
+trial (`scoring-trial-findings-2026-11-21.md`) found that the answer-only instruction makes the paired
+questions work, but that the chained lookups stay at chance in every version, even at two steps. The bites
+check (design, section 5) cannot be met while that is so. This section sets out a trial of easier chained
+lookups. It is a trial on half A only. It changes nothing in the registered design unless John rules so
+afterwards.*
+
+1. **What is kept.** The task stays the one the design names: follow a chain of lookups in a shuffled list
+   to a colour, with five colour candidates, scored as the first token of the reply. These rules of section
+   14, item 1 are kept:
+   - every candidate colour appears in the text and is reached by some chain, so the answer cannot be found
+     without following the chain from the start name;
+   - no name is shared between chains, and all rows are shuffled.
+2. **What is varied: two things, each with two settings, so four versions.**
+   - **The names.** Either the invented names used so far (two syllables, such as "pashnix", several tokens
+     each), or common English nouns of one token each, from a new list (`data/chain_names.json`). The new list
+     shares no word with any other list, and is split into halves with seed 0 like every list. A model can
+     hold a one-token familiar word more easily than a run of invented syllables, so this is the likelier fix.
+   - **The other four chains.** Either the length drawn from two to six as now, or one step each ("X points to
+     Y; Y is red"). Short distractor chains make the list much shorter while keeping every candidate in the
+     text.
+3. **The instruction.** Every version carries the answer-only instruction at the start of the message, the
+   placement that leaves the tail after the shared context as it was (section 15, item 2). Which placement
+   the test uses is still John's to rule; this only fixes the trial.
+4. **The size.** 16 items per target length from two to six steps, so 80 items per version, 320 in all. That
+   doubles the scoring trial's count per length, which had only 8. The same half A and seed 1 are used,
+   with each version drawn from its own random stream (seed 1 plus the version's number), so the versions do
+   not share draws. No donors and no neutral passages are built, because the trial does no swap.
+5. **What the trial measures,** at 16-bit, on each version: accuracy at 1, 2 and 3 passes by target length,
+   and the one-pass loss (three passes minus one pass) on chains of four to six steps.
+6. **Which version is chosen,** stated now, before the run. A version qualifies if, on chains of four to six
+   steps:
+   - it is right on at least 50% at three passes; and
+   - three passes beat one pass by at least 0.15 in accuracy. This is the bites check's own size, used here
+     as a plain accuracy difference on pilot items. The real check is made later on the normalised scale on
+     half B, so choosing on half A does not decide it.
+
+   Among the versions that qualify, the one closest to the current task is chosen, in this order: invented
+   names with full-length distractors (the current task), invented names with one-step distractors, one-token
+   names with full-length distractors, then one-token names with one-step distractors. Each step down the
+   order moves further from the task the design names, so the least change that works is preferred.
+
+   If no version qualifies, the trial reports that and the next choice goes to John. The options then
+   include requiring only three steps or more for the bites check, which would change the design.
+7. **What is checked for free,** before anything is rented:
+   - every name and colour is one token where the version says so, and every candidate is one token;
+   - in every item, each of the five candidates ends a chain, each chain's length is as drawn, and no name
+     appears in two chains;
+   - the new name list shares no word with the other lists;
+   - the prompt lengths, by version and target length, are reported.
