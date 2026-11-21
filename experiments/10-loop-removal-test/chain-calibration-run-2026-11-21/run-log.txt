@@ -1,0 +1,12 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] Unknown quantization type, got modelopt - supported types are: ['awq', 'bitsandbytes_4bit', 'bitsandbytes_8bit', 'gptq', 'aqlm', 'quanto', 'quark', 'fouroversix', 'fp_quant', 'eetq', 'higgs', 'hqq', 'compressed-tensors', 'fbgemm_fp8', 'torchao', 'bitnet', 'vptq', 'spqr', 'fp8', 'gguf', 'nvfp4', 'mxfp8', 'auto-round', 'mxfp4', 'metal', 'sinq', 'gemma']. Hence, we will skip the quantization. To remove the warning, you can delete the quantization_config attribute in config.json
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+invented-full {"chains_4_to_6": {"1": 0.208, "2": 0.208, "3": 0.375}, "three_minus_one_on_4_to_6": 0.167, "qualifies": false} {"2": 0.125, "3": 0.188, "4": 0.438, "5": 0.312, "6": 0.375}
+invented-short {"chains_4_to_6": {"1": 0.188, "2": 0.229, "3": 0.188}, "three_minus_one_on_4_to_6": 0.0, "qualifies": false} {"2": 0.188, "3": 0.25, "4": 0.125, "5": 0.125, "6": 0.312}
+words-full {"chains_4_to_6": {"1": 0.229, "2": 0.208, "3": 0.208}, "three_minus_one_on_4_to_6": -0.021, "qualifies": false} {"2": 0.062, "3": 0.062, "4": 0.312, "5": 0.125, "6": 0.188}
+words-short {"chains_4_to_6": {"1": 0.125, "2": 0.167, "3": 0.167}, "three_minus_one_on_4_to_6": 0.042, "qualifies": false} {"2": 0.25, "3": 0.312, "4": 0.188, "5": 0.25, "6": 0.062}
+chosen None
+---pip---
+accelerate==1.16.0
+tokenizers==0.23.3
+torch==2.9.1+cu128

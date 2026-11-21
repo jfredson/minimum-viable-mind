@@ -1,0 +1,2721 @@
+{
+ "started": "2026-11-21T23:18:53+0000",
+ "transformers": "5.24.0.dev0",
+ "dtype": "bfloat16",
+ "versions": {
+  "invented-full": {
+   "accuracy_by_length": {
+    "1": {
+     "2": 0.25,
+     "3": 0.25,
+     "4": 0.188,
+     "5": 0.312,
+     "6": 0.125
+    },
+    "2": {
+     "2": 0.0,
+     "3": 0.312,
+     "4": 0.312,
+     "5": 0.188,
+     "6": 0.125
+    },
+    "3": {
+     "2": 0.125,
+     "3": 0.188,
+     "4": 0.438,
+     "5": 0.312,
+     "6": 0.375
+    }
+   },
+   "chains_4_to_6": {
+    "1": 0.208,
+    "2": 0.208,
+    "3": 0.375
+   },
+   "three_minus_one_on_4_to_6": 0.167,
+   "qualifies": false,
+   "per_item": {
+    "1": {
+     "A-cal-invented-full-2-00": {
+      "right": true,
+      "margin": 0.749186
+     },
+     "A-cal-invented-full-2-01": {
+      "right": true,
+      "margin": 0.140537
+     },
+     "A-cal-invented-full-2-02": {
+      "right": false,
+      "margin": -2.796125
+     },
+     "A-cal-invented-full-2-03": {
+      "right": false,
+      "margin": -1.407454
+     },
+     "A-cal-invented-full-2-04": {
+      "right": false,
+      "margin": -6.79084
+     },
+     "A-cal-invented-full-2-05": {
+      "right": false,
+      "margin": -1.559719
+     },
+     "A-cal-invented-full-2-06": {
+      "right": false,
+      "margin": -5.571674
+     },
+     "A-cal-invented-full-2-07": {
+      "right": false,
+      "margin": -0.274845
+     },
+     "A-cal-invented-full-2-08": {
+      "right": false,
+      "margin": -2.143833
+     },
+     "A-cal-invented-full-2-09": {
+      "right": false,
+      "margin": -1.675714
+     },
+     "A-cal-invented-full-2-10": {
+      "right": true,
+      "margin": 0.145214
+     },
+     "A-cal-invented-full-2-11": {
+      "right": false,
+      "margin": -3.04369
+     },
+     "A-cal-invented-full-2-12": {
+      "right": false,
+      "margin": -1.063765
+     },
+     "A-cal-invented-full-2-13": {
+      "right": false,
+      "margin": -0.295139
+     },
+     "A-cal-invented-full-2-14": {
+      "right": false,
+      "margin": -1.13921
+     },
+     "A-cal-invented-full-2-15": {
+      "right": true,
+      "margin": 0.0
+     },
+     "A-cal-invented-full-3-00": {
+      "right": false,
+      "margin": -1.489525
+     },
+     "A-cal-invented-full-3-01": {
+      "right": false,
+      "margin": -3.526402
+     },
+     "A-cal-invented-full-3-02": {
+      "right": false,
+      "margin": -2.109484
+     },
+     "A-cal-invented-full-3-03": {
+      "right": false,
+      "margin": -1.464556
+     },
+     "A-cal-invented-full-3-04": {
+      "right": true,
+      "margin": 0.207911
+     },
+     "A-cal-invented-full-3-05": {
+      "right": false,
+      "margin": -2.042366
+     },
+     "A-cal-invented-full-3-06": {
+      "right": false,
+      "margin": -3.937708
+     },
+     "A-cal-invented-full-3-07": {
+      "right": false,
+      "margin": -1.189056
+     },
+     "A-cal-invented-full-3-08": {
+      "right": true,
+      "margin": 0.779585
+     },
+     "A-cal-invented-full-3-09": {
+      "right": false,
+      "margin": -3.140337
+     },
+     "A-cal-invented-full-3-10": {
+      "right": false,
+      "margin": -3.547541
+     },
+     "A-cal-invented-full-3-11": {
+      "right": true,
+      "margin": 1.421152
+     },
+     "A-cal-invented-full-3-12": {
+      "right": false,
+      "margin": -5.099951
+     },
+     "A-cal-invented-full-3-13": {
+      "right": false,
+      "margin": -2.435423
+     },
+     "A-cal-invented-full-3-14": {
+      "right": false,
+      "margin": -0.954456
+     },
+     "A-cal-invented-full-3-15": {
+      "right": true,
+      "margin": 0.0
+     },
+     "A-cal-invented-full-4-00": {
+      "right": false,
+      "margin": -1.003309
+     },
+     "A-cal-invented-full-4-01": {
+      "right": false,
+      "margin": -0.597847
+     },
+     "A-cal-invented-full-4-02": {
+      "right": true,
+      "margin": 0.909735
+     },
+     "A-cal-invented-full-4-03": {
+      "right": false,
+      "margin": -0.347811
+     },
+     "A-cal-invented-full-4-04": {
+      "right": false,
+      "margin": -0.296213
+     },
+     "A-cal-invented-full-4-05": {
+      "right": false,
+      "margin": -1.155472
+     },
+     "A-cal-invented-full-4-06": {
+      "right": true,
+      "margin": 1.469013
+     },
+     "A-cal-invented-full-4-07": {
+      "right": false,
+      "margin": -3.458116
+     },
+     "A-cal-invented-full-4-08": {
+      "right": false,
+      "margin": -2.117426
+     },
+     "A-cal-invented-full-4-09": {
+      "right": true,
+      "margin": 1.081764
+     },
+     "A-cal-invented-full-4-10": {
+      "right": false,
+      "margin": -0.125391
+     },
+     "A-cal-invented-full-4-11": {
+      "right": false,
+      "margin": -3.955719
+     },
+     "A-cal-invented-full-4-12": {
+      "right": false,
+      "margin": -2.425215
+     },
+     "A-cal-invented-full-4-13": {
+      "right": false,
+      "margin": -0.874754
+     },
+     "A-cal-invented-full-4-14": {
+      "right": false,
+      "margin": -0.336933
+     },
+     "A-cal-invented-full-4-15": {
+      "right": false,
+      "margin": -0.985689
+     },
+     "A-cal-invented-full-5-00": {
+      "right": false,
+      "margin": -0.360853
+     },
+     "A-cal-invented-full-5-01": {
+      "right": true,
+      "margin": 0.084526
+     },
+     "A-cal-invented-full-5-02": {
+      "right": false,
+      "margin": -2.028234
+     },
+     "A-cal-invented-full-5-03": {
+      "right": true,
+      "margin": 0.745489
+     },
+     "A-cal-invented-full-5-04": {
+      "right": true,
+      "margin": 1.720083
+     },
+     "A-cal-invented-full-5-05": {
+      "right": false,
+      "margin": -1.718615
+     },
+     "A-cal-invented-full-5-06": {
+      "right": false,
+      "margin": -1.618906
+     },
+     "A-cal-invented-full-5-07": {
+      "right": true,
+      "margin": 0.995218
+     },
+     "A-cal-invented-full-5-08": {
+      "right": false,
+      "margin": -1.550689
+     },
+     "A-cal-invented-full-5-09": {
+      "right": false,
+      "margin": -0.417343
+     },
+     "A-cal-invented-full-5-10": {
+      "right": false,
+      "margin": -4.36965
+     },
+     "A-cal-invented-full-5-11": {
+      "right": false,
+      "margin": -0.140537
+     },
+     "A-cal-invented-full-5-12": {
+      "right": false,
+      "margin": -4.53056
+     },
+     "A-cal-invented-full-5-13": {
+      "right": true,
+      "margin": 0.271014
+     },
+     "A-cal-invented-full-5-14": {
+      "right": false,
+      "margin": -2.507305
+     },
+     "A-cal-invented-full-5-15": {
+      "right": false,
+      "margin": -5.088537
+     },
+     "A-cal-invented-full-6-00": {
+      "right": true,
+      "margin": 0.593441
+     },
+     "A-cal-invented-full-6-01": {
+      "right": false,
+      "margin": -0.218084
+     },
+     "A-cal-invented-full-6-02": {
+      "right": false,
+      "margin": -0.684965
+     },
+     "A-cal-invented-full-6-03": {
+      "right": false,
+      "margin": -1.351826
+     },
+     "A-cal-invented-full-6-04": {
+      "right": true,
+      "margin": 1.167147
+     },
+     "A-cal-invented-full-6-05": {
+      "right": false,
+      "margin": -1.692829
+     },
+     "A-cal-invented-full-6-06": {
+      "right": false,
+      "margin": -0.432451
+     },
+     "A-cal-invented-full-6-07": {
+      "right": false,
+      "margin": -1.470335
+     },
+     "A-cal-invented-full-6-08": {
+      "right": false,
+      "margin": -1.835314
+     },
+     "A-cal-invented-full-6-09": {
+      "right": false,
+      "margin": -4.70118
+     },
+     "A-cal-invented-full-6-10": {
+      "right": false,
+      "margin": -1.517992
+     },
+     "A-cal-invented-full-6-11": {
+      "right": false,
+      "margin": -1.747736
+     },
+     "A-cal-invented-full-6-12": {
+      "right": false,
+      "margin": -1.678762
+     },
+     "A-cal-invented-full-6-13": {
+      "right": false,
+      "margin": -1.204018
+     },
+     "A-cal-invented-full-6-14": {
+      "right": false,
+      "margin": -2.413588
+     },
+     "A-cal-invented-full-6-15": {
+      "right": false,
+      "margin": -2.853241
+     }
+    },
+    "3": {
+     "A-cal-invented-full-2-00": {
+      "right": false,
+      "margin": -0.290432
+     },
+     "A-cal-invented-full-2-01": {
+      "right": false,
+      "margin": -1.128172
+     },
+     "A-cal-invented-full-2-02": {
+      "right": false,
+      "margin": -2.13747
+     },
+     "A-cal-invented-full-2-03": {
+      "right": false,
+      "margin": -1.111551
+     },
+     "A-cal-invented-full-2-04": {
+      "right": false,
+      "margin": -5.416668
+     },
+     "A-cal-invented-full-2-05": {
+      "right": false,
+      "margin": -0.431761
+     },
+     "A-cal-invented-full-2-06": {
+      "right": false,
+      "margin": -2.280419
+     },
+     "A-cal-invented-full-2-07": {
+      "right": false,
+      "margin": -0.405466
+     },
+     "A-cal-invented-full-2-08": {
+      "right": false,
+      "margin": -2.992812
+     },
+     "A-cal-invented-full-2-09": {
+      "right": false,
+      "margin": -1.242368
+     },
+     "A-cal-invented-full-2-10": {
+      "right": true,
+      "margin": 0.049577
+     },
+     "A-cal-invented-full-2-11": {
+      "right": false,
+      "margin": -1.816027
+     },
+     "A-cal-invented-full-2-12": {
+      "right": false,
+      "margin": -2.445585
+     },
+     "A-cal-invented-full-2-13": {
+      "right": false,
+      "margin": -2.229833
+     },
+     "A-cal-invented-full-2-14": {
+      "right": false,
+      "margin": -1.301516
+     },
+     "A-cal-invented-full-2-15": {
+      "right": true,
+      "margin": 0.0
+     },
+     "A-cal-invented-full-3-00": {
+      "right": false,
+      "margin": -0.619685
+     },
+     "A-cal-invented-full-3-01": {
+      "right": false,
+      "margin": -4.737143
+     },
+     "A-cal-invented-full-3-02": {
+      "right": false,
+      "margin": -2.427013
+     },
+     "A-cal-invented-full-3-03": {
+      "right": true,
+      "margin": 1.43581
+     },
+     "A-cal-invented-full-3-04": {
+      "right": true,
+      "margin": 0.159794
+     },
+     "A-cal-invented-full-3-05": {
+      "right": false,
+      "margin": -1.098453
+     },
+     "A-cal-invented-full-3-06": {
+      "right": false,
+      "margin": -1.075949
+     },
+     "A-cal-invented-full-3-07": {
+      "right": false,
+      "margin": -2.364975
+     },
+     "A-cal-invented-full-3-08": {
+      "right": true,
+      "margin": 0.695614
+     },
+     "A-cal-invented-full-3-09": {
+      "right": false,
+      "margin": -0.293779
+     },
+     "A-cal-invented-full-3-10": {
+      "right": false,
+      "margin": -2.38514
+     },
+     "A-cal-invented-full-3-11": {
+      "right": false,
+      "margin": -0.192411
+     },
+     "A-cal-invented-full-3-12": {
+      "right": false,
+      "margin": -4.341948
+     },
+     "A-cal-invented-full-3-13": {
+      "right": false,
+      "margin": -1.729551
+     },
+     "A-cal-invented-full-3-14": {
+      "right": false,
+      "margin": -0.665317
+     },
+     "A-cal-invented-full-3-15": {
+      "right": false,
+      "margin": -1.655811
+     },
+     "A-cal-invented-full-4-00": {
+      "right": false,
+      "margin": -1.643739
+     },
+     "A-cal-invented-full-4-01": {
+      "right": true,
+      "margin": 0.2055
+     },
+     "A-cal-invented-full-4-02": {
+      "right": true,
+      "margin": 1.454809
+     },
+     "A-cal-invented-full-4-03": {
+      "right": true,
+      "margin": 2.318465
+     },
+     "A-cal-invented-full-4-04": {
+      "right": false,
+      "margin": -0.847556
+     },
+     "A-cal-invented-full-4-05": {
+      "right": true,
+      "margin": 0.710308
+     },
+     "A-cal-invented-full-4-06": {
+      "right": true,
+      "margin": 0.323708
+     },
+     "A-cal-invented-full-4-07": {
+      "right": false,
+      "margin": -0.713889
+     },
+     "A-cal-invented-full-4-08": {
+      "right": false,
+      "margin": -0.919361
+     },
+     "A-cal-invented-full-4-09": {
+      "right": false,
+      "margin": -0.376298
+     },
+     "A-cal-invented-full-4-10": {
+      "right": false,
+      "margin": -1.61453
+     },
+     "A-cal-invented-full-4-11": {
+      "right": false,
+      "margin": -1.498469
+     },
+     "A-cal-invented-full-4-12": {
+      "right": false,
+      "margin": -1.99518
+     },
+     "A-cal-invented-full-4-13": {
+      "right": true,
+      "margin": 0.07085
+     },
+     "A-cal-invented-full-4-14": {
+      "right": false,
+      "margin": -1.18463
+     },
+     "A-cal-invented-full-4-15": {
+      "right": true,
+      "margin": 0.187368
+     },
+     "A-cal-invented-full-5-00": {
+      "right": false,
+      "margin": -2.796731
+     },
+     "A-cal-invented-full-5-01": {
+      "right": true,
+      "margin": 0.861515
+     },
+     "A-cal-invented-full-5-02": {
+      "right": false,
+      "margin": -1.654284
+     },
+     "A-cal-invented-full-5-03": {
+      "right": true,
+      "margin": 0.430756
+     },
+     "A-cal-invented-full-5-04": {
+      "right": false,
+      "margin": -0.260231
+     },
+     "A-cal-invented-full-5-05": {
+      "right": false,
+      "margin": -0.694721
+     },
+     "A-cal-invented-full-5-06": {
+      "right": true,
+      "margin": 0.198872
+     },
+     "A-cal-invented-full-5-07": {
+      "right": false,
+      "margin": -2.083849
+     },
+     "A-cal-invented-full-5-08": {
+      "right": false,
+      "margin": -1.159406
+     },
+     "A-cal-invented-full-5-09": {
+      "right": false,
+      "margin": 0.0
+     },
+     "A-cal-invented-full-5-10": {
+      "right": false,
+      "margin": -0.177099
+     },
+     "A-cal-invented-full-5-11": {
+      "right": false,
+      "margin": -1.114769
+     },
+     "A-cal-invented-full-5-12": {
+      "right": false,
+      "margin": -4.141131
+     },
+     "A-cal-invented-full-5-13": {
+      "right": true,
+      "margin": 0.105757
+     },
+     "A-cal-invented-full-5-14": {
+      "right": true,
+      "margin": 1.205068
+     },
+     "A-cal-invented-full-5-15": {
+      "right": false,
+      "margin": -3.567564
+     },
+     "A-cal-invented-full-6-00": {
+      "right": true,
+      "margin": 0.25755
+     },
+     "A-cal-invented-full-6-01": {
+      "right": true,
+      "margin": 0.733763
+     },
+     "A-cal-invented-full-6-02": {
+      "right": true,
+      "margin": 0.191255
+     },
+     "A-cal-invented-full-6-03": {
+      "right": false,
+      "margin": -1.834912
+     },
+     "A-cal-invented-full-6-04": {
+      "right": false,
+      "margin": -0.461964
+     },
+     "A-cal-invented-full-6-05": {
+      "right": false,
+      "margin": -1.705444
+     },
+     "A-cal-invented-full-6-06": {
+      "right": true,
+      "margin": 0.861727
+     },
+     "A-cal-invented-full-6-07": {
+      "right": true,
+      "margin": 0.355485
+     },
+     "A-cal-invented-full-6-08": {
+      "right": false,
+      "margin": -1.670971
+     },
+     "A-cal-invented-full-6-09": {
+      "right": false,
+      "margin": -3.288816
+     },
+     "A-cal-invented-full-6-10": {
+      "right": false,
+      "margin": -1.035129
+     },
+     "A-cal-invented-full-6-11": {
+      "right": false,
+      "margin": -2.678628
+     },
+     "A-cal-invented-full-6-12": {
+      "right": false,
+      "margin": -1.442144
+     },
+     "A-cal-invented-full-6-13": {
+      "right": true,
+      "margin": 0.597726
+     },
+     "A-cal-invented-full-6-14": {
+      "right": false,
+      "margin": -2.189687
+     },
+     "A-cal-invented-full-6-15": {
+      "right": false,
+      "margin": -2.394514
+     }
+    }
+   }
+  },
+  "invented-short": {
+   "accuracy_by_length": {
+    "1": {
+     "2": 0.188,
+     "3": 0.312,
+     "4": 0.25,
+     "5": 0.125,
+     "6": 0.188
+    },
+    "2": {
+     "2": 0.25,
+     "3": 0.312,
+     "4": 0.188,
+     "5": 0.125,
+     "6": 0.375
+    },
+    "3": {
+     "2": 0.188,
+     "3": 0.25,
+     "4": 0.125,
+     "5": 0.125,
+     "6": 0.312
+    }
+   },
+   "chains_4_to_6": {
+    "1": 0.188,
+    "2": 0.229,
+    "3": 0.188
+   },
+   "three_minus_one_on_4_to_6": 0.0,
+   "qualifies": false,
+   "per_item": {
+    "1": {
+     "A-cal-invented-short-2-00": {
+      "right": false,
+      "margin": -0.894537
+     },
+     "A-cal-invented-short-2-01": {
+      "right": true,
+      "margin": 1.586428
+     },
+     "A-cal-invented-short-2-02": {
+      "right": false,
+      "margin": -0.50528
+     },
+     "A-cal-invented-short-2-03": {
+      "right": false,
+      "margin": -5.737633
+     },
+     "A-cal-invented-short-2-04": {
+      "right": false,
+      "margin": -1.677992
+     },
+     "A-cal-invented-short-2-05": {
+      "right": true,
+      "margin": 1.466354
+     },
+     "A-cal-invented-short-2-06": {
+      "right": true,
+      "margin": 0.64469
+     },
+     "A-cal-invented-short-2-07": {
+      "right": false,
+      "margin": -3.104386
+     },
+     "A-cal-invented-short-2-08": {
+      "right": false,
+      "margin": -1.861956
+     },
+     "A-cal-invented-short-2-09": {
+      "right": false,
+      "margin": -1.28941
+     },
+     "A-cal-invented-short-2-10": {
+      "right": false,
+      "margin": -0.25017
+     },
+     "A-cal-invented-short-2-11": {
+      "right": false,
+      "margin": -2.540626
+     },
+     "A-cal-invented-short-2-12": {
+      "right": false,
+      "margin": -3.526402
+     },
+     "A-cal-invented-short-2-13": {
+      "right": false,
+      "margin": -3.546825
+     },
+     "A-cal-invented-short-2-14": {
+      "right": false,
+      "margin": -1.490456
+     },
+     "A-cal-invented-short-2-15": {
+      "right": false,
+      "margin": -3.920458
+     },
+     "A-cal-invented-short-3-00": {
+      "right": false,
+      "margin": -2.147186
+     },
+     "A-cal-invented-short-3-01": {
+      "right": false,
+      "margin": -1.12215
+     },
+     "A-cal-invented-short-3-02": {
+      "right": false,
+      "margin": -4.223428
+     },
+     "A-cal-invented-short-3-03": {
+      "right": false,
+      "margin": -2.114872
+     },
+     "A-cal-invented-short-3-04": {
+      "right": false,
+      "margin": -5.258677
+     },
+     "A-cal-invented-short-3-05": {
+      "right": false,
+      "margin": -4.080217
+     },
+     "A-cal-invented-short-3-06": {
+      "right": false,
+      "margin": -2.56414
+     },
+     "A-cal-invented-short-3-07": {
+      "right": false,
+      "margin": -2.718266
+     },
+     "A-cal-invented-short-3-08": {
+      "right": true,
+      "margin": 0.75082
+     },
+     "A-cal-invented-short-3-09": {
+      "right": true,
+      "margin": 1.618593
+     },
+     "A-cal-invented-short-3-10": {
+      "right": false,
+      "margin": -2.599249
+     },
+     "A-cal-invented-short-3-11": {
+      "right": true,
+      "margin": 0.369904
+     },
+     "A-cal-invented-short-3-12": {
+      "right": false,
+      "margin": -3.051474
+     },
+     "A-cal-invented-short-3-13": {
+      "right": true,
+      "margin": 2.600683
+     },
+     "A-cal-invented-short-3-14": {
+      "right": false,
+      "margin": -0.452065
+     },
+     "A-cal-invented-short-3-15": {
+      "right": true,
+      "margin": 0.426704
+     },
+     "A-cal-invented-short-4-00": {
+      "right": true,
+      "margin": 1.276445
+     },
+     "A-cal-invented-short-4-01": {
+      "right": false,
+      "margin": -3.74069
+     },
+     "A-cal-invented-short-4-02": {
+      "right": false,
+      "margin": -2.445028
+     },
+     "A-cal-invented-short-4-03": {
+      "right": false,
+      "margin": -3.998131
+     },
+     "A-cal-invented-short-4-04": {
+      "right": true,
+      "margin": 0.256721
+     },
+     "A-cal-invented-short-4-05": {
+      "right": false,
+      "margin": -3.009672
+     },
+     "A-cal-invented-short-4-06": {
+      "right": false,
+      "margin": -1.683804
+     },
+     "A-cal-invented-short-4-07": {
+      "right": false,
+      "margin": -2.650555
+     },
+     "A-cal-invented-short-4-08": {
+      "right": true,
+      "margin": 0.599909
+     },
+     "A-cal-invented-short-4-09": {
+      "right": false,
+      "margin": -0.246376
+     },
+     "A-cal-invented-short-4-10": {
+      "right": false,
+      "margin": -5.426445
+     },
+     "A-cal-invented-short-4-11": {
+      "right": false,
+      "margin": -2.807402
+     },
+     "A-cal-invented-short-4-12": {
+      "right": false,
+      "margin": -2.090067
+     },
+     "A-cal-invented-short-4-13": {
+      "right": false,
+      "margin": -1.168995
+     },
+     "A-cal-invented-short-4-14": {
+      "right": false,
+      "margin": -4.928425
+     },
+     "A-cal-invented-short-4-15": {
+      "right": true,
+      "margin": 0.240627
+     },
+     "A-cal-invented-short-5-00": {
+      "right": true,
+      "margin": 1.685226
+     },
+     "A-cal-invented-short-5-01": {
+      "right": false,
+      "margin": -4.131775
+     },
+     "A-cal-invented-short-5-02": {
+      "right": false,
+      "margin": -0.935829
+     },
+     "A-cal-invented-short-5-03": {
+      "right": false,
+      "margin": -1.545803
+     },
+     "A-cal-invented-short-5-04": {
+      "right": false,
+      "margin": -4.316622
+     },
+     "A-cal-invented-short-5-05": {
+      "right": false,
+      "margin": -1.879078
+     },
+     "A-cal-invented-short-5-06": {
+      "right": false,
+      "margin": -3.936762
+     },
+     "A-cal-invented-short-5-07": {
+      "right": false,
+      "margin": -1.235741
+     },
+     "A-cal-invented-short-5-08": {
+      "right": false,
+      "margin": -3.154076
+     },
+     "A-cal-invented-short-5-09": {
+      "right": false,
+      "margin": -1.007349
+     },
+     "A-cal-invented-short-5-10": {
+      "right": false,
+      "margin": -0.05233
+     },
+     "A-cal-invented-short-5-11": {
+      "right": false,
+      "margin": -3.060007
+     },
+     "A-cal-invented-short-5-12": {
+      "right": false,
+      "margin": -3.496893
+     },
+     "A-cal-invented-short-5-13": {
+      "right": false,
+      "margin": -2.927711
+     },
+     "A-cal-invented-short-5-14": {
+      "right": false,
+      "margin": -2.076633
+     },
+     "A-cal-invented-short-5-15": {
+      "right": true,
+      "margin": 1.910683
+     },
+     "A-cal-invented-short-6-00": {
+      "right": true,
+      "margin": 1.542864
+     },
+     "A-cal-invented-short-6-01": {
+      "right": false,
+      "margin": -4.797867
+     },
+     "A-cal-invented-short-6-02": {
+      "right": false,
+      "margin": -2.616409
+     },
+     "A-cal-invented-short-6-03": {
+      "right": false,
+      "margin": -4.245304
+     },
+     "A-cal-invented-short-6-04": {
+      "right": true,
+      "margin": 1.355553
+     },
+     "A-cal-invented-short-6-05": {
+      "right": false,
+      "margin": -2.013523
+     },
+     "A-cal-invented-short-6-06": {
+      "right": false,
+      "margin": -1.472355
+     },
+     "A-cal-invented-short-6-07": {
+      "right": true,
+      "margin": 0.504541
+     },
+     "A-cal-invented-short-6-08": {
+      "right": false,
+      "margin": -0.552732
+     },
+     "A-cal-invented-short-6-09": {
+      "right": false,
+      "margin": -2.207685
+     },
+     "A-cal-invented-short-6-10": {
+      "right": false,
+      "margin": -0.176653
+     },
+     "A-cal-invented-short-6-11": {
+      "right": false,
+      "margin": -0.495592
+     },
+     "A-cal-invented-short-6-12": {
+      "right": false,
+      "margin": -4.918297
+     },
+     "A-cal-invented-short-6-13": {
+      "right": false,
+      "margin": -0.534538
+     },
+     "A-cal-invented-short-6-14": {
+      "right": false,
+      "margin": -3.000837
+     },
+     "A-cal-invented-short-6-15": {
+      "right": false,
+      "margin": -0.939285
+     }
+    },
+    "3": {
+     "A-cal-invented-short-2-00": {
+      "right": false,
+      "margin": -1.333557
+     },
+     "A-cal-invented-short-2-01": {
+      "right": false,
+      "margin": -0.258347
+     },
+     "A-cal-invented-short-2-02": {
+      "right": true,
+      "margin": 0.294426
+     },
+     "A-cal-invented-short-2-03": {
+      "right": false,
+      "margin": -6.912762
+     },
+     "A-cal-invented-short-2-04": {
+      "right": false,
+      "margin": -0.331787
+     },
+     "A-cal-invented-short-2-05": {
+      "right": true,
+      "margin": 1.571777
+     },
+     "A-cal-invented-short-2-06": {
+      "right": false,
+      "margin": -0.790953
+     },
+     "A-cal-invented-short-2-07": {
+      "right": false,
+      "margin": -3.926495
+     },
+     "A-cal-invented-short-2-08": {
+      "right": false,
+      "margin": -2.954941
+     },
+     "A-cal-invented-short-2-09": {
+      "right": false,
+      "margin": -0.559754
+     },
+     "A-cal-invented-short-2-10": {
+      "right": true,
+      "margin": 0.12392
+     },
+     "A-cal-invented-short-2-11": {
+      "right": false,
+      "margin": -4.313318
+     },
+     "A-cal-invented-short-2-12": {
+      "right": false,
+      "margin": -2.074223
+     },
+     "A-cal-invented-short-2-13": {
+      "right": false,
+      "margin": -2.483185
+     },
+     "A-cal-invented-short-2-14": {
+      "right": false,
+      "margin": -2.86043
+     },
+     "A-cal-invented-short-2-15": {
+      "right": false,
+      "margin": -2.49242
+     },
+     "A-cal-invented-short-3-00": {
+      "right": false,
+      "margin": -2.36236
+     },
+     "A-cal-invented-short-3-01": {
+      "right": false,
+      "margin": -0.853041
+     },
+     "A-cal-invented-short-3-02": {
+      "right": false,
+      "margin": -2.051244
+     },
+     "A-cal-invented-short-3-03": {
+      "right": false,
+      "margin": -1.928228
+     },
+     "A-cal-invented-short-3-04": {
+      "right": false,
+      "margin": -2.06071
+     },
+     "A-cal-invented-short-3-05": {
+      "right": false,
+      "margin": -1.916561
+     },
+     "A-cal-invented-short-3-06": {
+      "right": false,
+      "margin": -2.826139
+     },
+     "A-cal-invented-short-3-07": {
+      "right": false,
+      "margin": -2.254612
+     },
+     "A-cal-invented-short-3-08": {
+      "right": false,
+      "margin": -0.399822
+     },
+     "A-cal-invented-short-3-09": {
+      "right": true,
+      "margin": 2.055521
+     },
+     "A-cal-invented-short-3-10": {
+      "right": false,
+      "margin": -0.50848
+     },
+     "A-cal-invented-short-3-11": {
+      "right": true,
+      "margin": 0.510908
+     },
+     "A-cal-invented-short-3-12": {
+      "right": false,
+      "margin": -2.957655
+     },
+     "A-cal-invented-short-3-13": {
+      "right": true,
+      "margin": 0.73394
+     },
+     "A-cal-invented-short-3-14": {
+      "right": false,
+      "margin": -3.420935
+     },
+     "A-cal-invented-short-3-15": {
+      "right": true,
+      "margin": 2.023561
+     },
+     "A-cal-invented-short-4-00": {
+      "right": true,
+      "margin": 1.674957
+     },
+     "A-cal-invented-short-4-01": {
+      "right": false,
+      "margin": -3.130827
+     },
+     "A-cal-invented-short-4-02": {
+      "right": false,
+      "margin": -1.847709
+     },
+     "A-cal-invented-short-4-03": {
+      "right": false,
+      "margin": -4.754565
+     },
+     "A-cal-invented-short-4-04": {
+      "right": false,
+      "margin": -2.119156
+     },
+     "A-cal-invented-short-4-05": {
+      "right": false,
+      "margin": -0.371606
+     },
+     "A-cal-invented-short-4-06": {
+      "right": false,
+      "margin": -0.9044
+     },
+     "A-cal-invented-short-4-07": {
+      "right": false,
+      "margin": -2.689821
+     },
+     "A-cal-invented-short-4-08": {
+      "right": true,
+      "margin": 0.278507
+     },
+     "A-cal-invented-short-4-09": {
+      "right": false,
+      "margin": -0.805882
+     },
+     "A-cal-invented-short-4-10": {
+      "right": false,
+      "margin": -2.642653
+     },
+     "A-cal-invented-short-4-11": {
+      "right": false,
+      "margin": -2.590357
+     },
+     "A-cal-invented-short-4-12": {
+      "right": false,
+      "margin": -3.220385
+     },
+     "A-cal-invented-short-4-13": {
+      "right": false,
+      "margin": -0.257046
+     },
+     "A-cal-invented-short-4-14": {
+      "right": false,
+      "margin": -5.703654
+     },
+     "A-cal-invented-short-4-15": {
+      "right": false,
+      "margin": -0.425358
+     },
+     "A-cal-invented-short-5-00": {
+      "right": false,
+      "margin": -1.152089
+     },
+     "A-cal-invented-short-5-01": {
+      "right": false,
+      "margin": -3.333179
+     },
+     "A-cal-invented-short-5-02": {
+      "right": false,
+      "margin": -2.255352
+     },
+     "A-cal-invented-short-5-03": {
+      "right": false,
+      "margin": -2.679901
+     },
+     "A-cal-invented-short-5-04": {
+      "right": false,
+      "margin": -2.957655
+     },
+     "A-cal-invented-short-5-05": {
+      "right": false,
+      "margin": -0.447441
+     },
+     "A-cal-invented-short-5-06": {
+      "right": false,
+      "margin": -0.380456
+     },
+     "A-cal-invented-short-5-07": {
+      "right": false,
+      "margin": -0.412361
+     },
+     "A-cal-invented-short-5-08": {
+      "right": false,
+      "margin": -1.203192
+     },
+     "A-cal-invented-short-5-09": {
+      "right": false,
+      "margin": -2.968645
+     },
+     "A-cal-invented-short-5-10": {
+      "right": true,
+      "margin": 0.0
+     },
+     "A-cal-invented-short-5-11": {
+      "right": false,
+      "margin": -1.816027
+     },
+     "A-cal-invented-short-5-12": {
+      "right": false,
+      "margin": -2.491869
+     },
+     "A-cal-invented-short-5-13": {
+      "right": false,
+      "margin": -2.714058
+     },
+     "A-cal-invented-short-5-14": {
+      "right": false,
+      "margin": -1.527229
+     },
+     "A-cal-invented-short-5-15": {
+      "right": true,
+      "margin": 0.841488
+     },
+     "A-cal-invented-short-6-00": {
+      "right": true,
+      "margin": 2.066685
+     },
+     "A-cal-invented-short-6-01": {
+      "right": false,
+      "margin": -4.102162
+     },
+     "A-cal-invented-short-6-02": {
+      "right": false,
+      "margin": -2.65935
+     },
+     "A-cal-invented-short-6-03": {
+      "right": false,
+      "margin": -1.741815
+     },
+     "A-cal-invented-short-6-04": {
+      "right": true,
+      "margin": 1.614885
+     },
+     "A-cal-invented-short-6-05": {
+      "right": true,
+      "margin": 0.0
+     },
+     "A-cal-invented-short-6-06": {
+      "right": false,
+      "margin": -2.009012
+     },
+     "A-cal-invented-short-6-07": {
+      "right": false,
+      "margin": -0.796372
+     },
+     "A-cal-invented-short-6-08": {
+      "right": false,
+      "margin": -0.387737
+     },
+     "A-cal-invented-short-6-09": {
+      "right": false,
+      "margin": -1.979071
+     },
+     "A-cal-invented-short-6-10": {
+      "right": true,
+      "margin": 0.34621
+     },
+     "A-cal-invented-short-6-11": {
+      "right": false,
+      "margin": -0.923435
+     },
+     "A-cal-invented-short-6-12": {
+      "right": false,
+      "margin": -1.413988
+     },
+     "A-cal-invented-short-6-13": {
+      "right": false,
+      "margin": -1.447542
+     },
+     "A-cal-invented-short-6-14": {
+      "right": false,
+      "margin": -4.428959
+     },
+     "A-cal-invented-short-6-15": {
+      "right": true,
+      "margin": 0.336933
+     }
+    }
+   }
+  },
+  "words-full": {
+   "accuracy_by_length": {
+    "1": {
+     "2": 0.125,
+     "3": 0.062,
+     "4": 0.375,
+     "5": 0.062,
+     "6": 0.25
+    },
+    "2": {
+     "2": 0.062,
+     "3": 0.0,
+     "4": 0.188,
+     "5": 0.188,
+     "6": 0.25
+    },
+    "3": {
+     "2": 0.062,
+     "3": 0.062,
+     "4": 0.312,
+     "5": 0.125,
+     "6": 0.188
+    }
+   },
+   "chains_4_to_6": {
+    "1": 0.229,
+    "2": 0.208,
+    "3": 0.208
+   },
+   "three_minus_one_on_4_to_6": -0.021,
+   "qualifies": false,
+   "per_item": {
+    "1": {
+     "A-cal-words-full-2-00": {
+      "right": false,
+      "margin": -0.647793
+     },
+     "A-cal-words-full-2-01": {
+      "right": false,
+      "margin": -3.394098
+     },
+     "A-cal-words-full-2-02": {
+      "right": false,
+      "margin": -1.397896
+     },
+     "A-cal-words-full-2-03": {
+      "right": true,
+      "margin": 1.32431
+     },
+     "A-cal-words-full-2-04": {
+      "right": false,
+      "margin": -1.611042
+     },
+     "A-cal-words-full-2-05": {
+      "right": false,
+      "margin": -1.428841
+     },
+     "A-cal-words-full-2-06": {
+      "right": false,
+      "margin": -3.717154
+     },
+     "A-cal-words-full-2-07": {
+      "right": false,
+      "margin": -2.180328
+     },
+     "A-cal-words-full-2-08": {
+      "right": false,
+      "margin": -2.029896
+     },
+     "A-cal-words-full-2-09": {
+      "right": false,
+      "margin": -0.866211
+     },
+     "A-cal-words-full-2-10": {
+      "right": true,
+      "margin": 0.312998
+     },
+     "A-cal-words-full-2-11": {
+      "right": false,
+      "margin": -2.434273
+     },
+     "A-cal-words-full-2-12": {
+      "right": false,
+      "margin": -2.280783
+     },
+     "A-cal-words-full-2-13": {
+      "right": false,
+      "margin": -2.171116
+     },
+     "A-cal-words-full-2-14": {
+      "right": false,
+      "margin": -0.671989
+     },
+     "A-cal-words-full-2-15": {
+      "right": false,
+      "margin": -3.266447
+     },
+     "A-cal-words-full-3-00": {
+      "right": false,
+      "margin": -3.339277
+     },
+     "A-cal-words-full-3-01": {
+      "right": false,
+      "margin": -2.934271
+     },
+     "A-cal-words-full-3-02": {
+      "right": false,
+      "margin": -2.848864
+     },
+     "A-cal-words-full-3-03": {
+      "right": false,
+      "margin": -0.575962
+     },
+     "A-cal-words-full-3-04": {
+      "right": false,
+      "margin": -4.315572
+     },
+     "A-cal-words-full-3-05": {
+      "right": false,
+      "margin": -4.879021
+     },
+     "A-cal-words-full-3-06": {
+      "right": false,
+      "margin": -1.750937
+     },
+     "A-cal-words-full-3-07": {
+      "right": false,
+      "margin": -2.176311
+     },
+     "A-cal-words-full-3-08": {
+      "right": false,
+      "margin": -0.513458
+     },
+     "A-cal-words-full-3-09": {
+      "right": false,
+      "margin": -4.42014
+     },
+     "A-cal-words-full-3-10": {
+      "right": false,
+      "margin": -1.392601
+     },
+     "A-cal-words-full-3-11": {
+      "right": false,
+      "margin": -4.6096
+     },
+     "A-cal-words-full-3-12": {
+      "right": false,
+      "margin": -1.687098
+     },
+     "A-cal-words-full-3-13": {
+      "right": false,
+      "margin": -1.202892
+     },
+     "A-cal-words-full-3-14": {
+      "right": false,
+      "margin": -0.825682
+     },
+     "A-cal-words-full-3-15": {
+      "right": true,
+      "margin": 2.09005
+     },
+     "A-cal-words-full-4-00": {
+      "right": true,
+      "margin": 2.395317
+     },
+     "A-cal-words-full-4-01": {
+      "right": true,
+      "margin": 0.0
+     },
+     "A-cal-words-full-4-02": {
+      "right": true,
+      "margin": 1.42868
+     },
+     "A-cal-words-full-4-03": {
+      "right": false,
+      "margin": -0.679621
+     },
+     "A-cal-words-full-4-04": {
+      "right": true,
+      "margin": 0.412361
+     },
+     "A-cal-words-full-4-05": {
+      "right": true,
+      "margin": 2.933901
+     },
+     "A-cal-words-full-4-06": {
+      "right": false,
+      "margin": -2.064863
+     },
+     "A-cal-words-full-4-07": {
+      "right": true,
+      "margin": 0.400894
+     },
+     "A-cal-words-full-4-08": {
+      "right": false,
+      "margin": -5.030069
+     },
+     "A-cal-words-full-4-09": {
+      "right": false,
+      "margin": -2.323078
+     },
+     "A-cal-words-full-4-10": {
+      "right": false,
+      "margin": -3.201693
+     },
+     "A-cal-words-full-4-11": {
+      "right": false,
+      "margin": -0.31072
+     },
+     "A-cal-words-full-4-12": {
+      "right": false,
+      "margin": -2.324303
+     },
+     "A-cal-words-full-4-13": {
+      "right": false,
+      "margin": -3.943293
+     },
+     "A-cal-words-full-4-14": {
+      "right": false,
+      "margin": -0.325089
+     },
+     "A-cal-words-full-4-15": {
+      "right": false,
+      "margin": -1.43746
+     },
+     "A-cal-words-full-5-00": {
+      "right": false,
+      "margin": -1.396038
+     },
+     "A-cal-words-full-5-01": {
+      "right": false,
+      "margin": -3.130709
+     },
+     "A-cal-words-full-5-02": {
+      "right": false,
+      "margin": -0.683636
+     },
+     "A-cal-words-full-5-03": {
+      "right": false,
+      "margin": -4.322151
+     },
+     "A-cal-words-full-5-04": {
+      "right": false,
+      "margin": -3.795034
+     },
+     "A-cal-words-full-5-05": {
+      "right": true,
+      "margin": 1.657597
+     },
+     "A-cal-words-full-5-06": {
+      "right": false,
+      "margin": -2.860315
+     },
+     "A-cal-words-full-5-07": {
+      "right": false,
+      "margin": -1.849918
+     },
+     "A-cal-words-full-5-08": {
+      "right": false,
+      "margin": -0.387329
+     },
+     "A-cal-words-full-5-09": {
+      "right": false,
+      "margin": -0.268782
+     },
+     "A-cal-words-full-5-10": {
+      "right": false,
+      "margin": -3.144112
+     },
+     "A-cal-words-full-5-11": {
+      "right": false,
+      "margin": -0.512342
+     },
+     "A-cal-words-full-5-12": {
+      "right": false,
+      "margin": -1.251122
+     },
+     "A-cal-words-full-5-13": {
+      "right": false,
+      "margin": -1.21467
+     },
+     "A-cal-words-full-5-14": {
+      "right": false,
+      "margin": -1.297735
+     },
+     "A-cal-words-full-5-15": {
+      "right": false,
+      "margin": -0.299807
+     },
+     "A-cal-words-full-6-00": {
+      "right": false,
+      "margin": -1.772232
+     },
+     "A-cal-words-full-6-01": {
+      "right": false,
+      "margin": -1.856834
+     },
+     "A-cal-words-full-6-02": {
+      "right": false,
+      "margin": -2.294147
+     },
+     "A-cal-words-full-6-03": {
+      "right": false,
+      "margin": -3.727024
+     },
+     "A-cal-words-full-6-04": {
+      "right": false,
+      "margin": -2.790258
+     },
+     "A-cal-words-full-6-05": {
+      "right": false,
+      "margin": -0.458349
+     },
+     "A-cal-words-full-6-06": {
+      "right": true,
+      "margin": 1.618593
+     },
+     "A-cal-words-full-6-07": {
+      "right": false,
+      "margin": -0.632196
+     },
+     "A-cal-words-full-6-08": {
+      "right": true,
+      "margin": 0.583862
+     },
+     "A-cal-words-full-6-09": {
+      "right": true,
+      "margin": 2.548239
+     },
+     "A-cal-words-full-6-10": {
+      "right": false,
+      "margin": -1.89925
+     },
+     "A-cal-words-full-6-11": {
+      "right": false,
+      "margin": -2.383604
+     },
+     "A-cal-words-full-6-12": {
+      "right": true,
+      "margin": 0.177727
+     },
+     "A-cal-words-full-6-13": {
+      "right": false,
+      "margin": -0.856897
+     },
+     "A-cal-words-full-6-14": {
+      "right": false,
+      "margin": -0.562471
+     },
+     "A-cal-words-full-6-15": {
+      "right": false,
+      "margin": -3.047445
+     }
+    },
+    "3": {
+     "A-cal-words-full-2-00": {
+      "right": false,
+      "margin": -0.428616
+     },
+     "A-cal-words-full-2-01": {
+      "right": false,
+      "margin": -3.015783
+     },
+     "A-cal-words-full-2-02": {
+      "right": false,
+      "margin": -1.939149
+     },
+     "A-cal-words-full-2-03": {
+      "right": true,
+      "margin": 1.144426
+     },
+     "A-cal-words-full-2-04": {
+      "right": false,
+      "margin": -1.791197
+     },
+     "A-cal-words-full-2-05": {
+      "right": false,
+      "margin": -1.675638
+     },
+     "A-cal-words-full-2-06": {
+      "right": false,
+      "margin": -1.59499
+     },
+     "A-cal-words-full-2-07": {
+      "right": false,
+      "margin": -2.987827
+     },
+     "A-cal-words-full-2-08": {
+      "right": false,
+      "margin": -0.795135
+     },
+     "A-cal-words-full-2-09": {
+      "right": false,
+      "margin": -1.514164
+     },
+     "A-cal-words-full-2-10": {
+      "right": false,
+      "margin": -0.07085
+     },
+     "A-cal-words-full-2-11": {
+      "right": false,
+      "margin": -2.482841
+     },
+     "A-cal-words-full-2-12": {
+      "right": false,
+      "margin": -1.851094
+     },
+     "A-cal-words-full-2-13": {
+      "right": false,
+      "margin": -2.507305
+     },
+     "A-cal-words-full-2-14": {
+      "right": false,
+      "margin": -1.413385
+     },
+     "A-cal-words-full-2-15": {
+      "right": false,
+      "margin": -4.815156
+     },
+     "A-cal-words-full-3-00": {
+      "right": false,
+      "margin": -2.717485
+     },
+     "A-cal-words-full-3-01": {
+      "right": false,
+      "margin": -1.742729
+     },
+     "A-cal-words-full-3-02": {
+      "right": false,
+      "margin": -2.456415
+     },
+     "A-cal-words-full-3-03": {
+      "right": false,
+      "margin": -1.208931
+     },
+     "A-cal-words-full-3-04": {
+      "right": false,
+      "margin": -3.936762
+     },
+     "A-cal-words-full-3-05": {
+      "right": false,
+      "margin": -3.135548
+     },
+     "A-cal-words-full-3-06": {
+      "right": false,
+      "margin": -2.127207
+     },
+     "A-cal-words-full-3-07": {
+      "right": false,
+      "margin": -0.423948
+     },
+     "A-cal-words-full-3-08": {
+      "right": false,
+      "margin": -0.630701
+     },
+     "A-cal-words-full-3-09": {
+      "right": false,
+      "margin": -5.240803
+     },
+     "A-cal-words-full-3-10": {
+      "right": false,
+      "margin": -0.615612
+     },
+     "A-cal-words-full-3-11": {
+      "right": false,
+      "margin": -3.714458
+     },
+     "A-cal-words-full-3-12": {
+      "right": false,
+      "margin": -2.58479
+     },
+     "A-cal-words-full-3-13": {
+      "right": false,
+      "margin": -0.542837
+     },
+     "A-cal-words-full-3-14": {
+      "right": false,
+      "margin": -1.008148
+     },
+     "A-cal-words-full-3-15": {
+      "right": true,
+      "margin": 2.011721
+     },
+     "A-cal-words-full-4-00": {
+      "right": true,
+      "margin": 3.380366
+     },
+     "A-cal-words-full-4-01": {
+      "right": false,
+      "margin": -0.598862
+     },
+     "A-cal-words-full-4-02": {
+      "right": true,
+      "margin": 3.117611
+     },
+     "A-cal-words-full-4-03": {
+      "right": false,
+      "margin": -3.685591
+     },
+     "A-cal-words-full-4-04": {
+      "right": true,
+      "margin": 0.577738
+     },
+     "A-cal-words-full-4-05": {
+      "right": true,
+      "margin": 1.996599
+     },
+     "A-cal-words-full-4-06": {
+      "right": false,
+      "margin": -2.637384
+     },
+     "A-cal-words-full-4-07": {
+      "right": false,
+      "margin": -0.149937
+     },
+     "A-cal-words-full-4-08": {
+      "right": false,
+      "margin": -3.885954
+     },
+     "A-cal-words-full-4-09": {
+      "right": false,
+      "margin": -2.590382
+     },
+     "A-cal-words-full-4-10": {
+      "right": false,
+      "margin": -2.315452
+     },
+     "A-cal-words-full-4-11": {
+      "right": true,
+      "margin": 0.245832
+     },
+     "A-cal-words-full-4-12": {
+      "right": false,
+      "margin": -1.857821
+     },
+     "A-cal-words-full-4-13": {
+      "right": false,
+      "margin": -3.538889
+     },
+     "A-cal-words-full-4-14": {
+      "right": false,
+      "margin": -0.683636
+     },
+     "A-cal-words-full-4-15": {
+      "right": false,
+      "margin": -1.779329
+     },
+     "A-cal-words-full-5-00": {
+      "right": false,
+      "margin": -1.244179
+     },
+     "A-cal-words-full-5-01": {
+      "right": false,
+      "margin": -3.119339
+     },
+     "A-cal-words-full-5-02": {
+      "right": true,
+      "margin": 0.165892
+     },
+     "A-cal-words-full-5-03": {
+      "right": false,
+      "margin": -4.555248
+     },
+     "A-cal-words-full-5-04": {
+      "right": false,
+      "margin": -3.077559
+     },
+     "A-cal-words-full-5-05": {
+      "right": true,
+      "margin": 1.701872
+     },
+     "A-cal-words-full-5-06": {
+      "right": false,
+      "margin": -2.598974
+     },
+     "A-cal-words-full-5-07": {
+      "right": false,
+      "margin": -1.762391
+     },
+     "A-cal-words-full-5-08": {
+      "right": false,
+      "margin": -2.079027
+     },
+     "A-cal-words-full-5-09": {
+      "right": false,
+      "margin": -0.8526
+     },
+     "A-cal-words-full-5-10": {
+      "right": false,
+      "margin": -4.68446
+     },
+     "A-cal-words-full-5-11": {
+      "right": false,
+      "margin": -2.14562
+     },
+     "A-cal-words-full-5-12": {
+      "right": false,
+      "margin": -1.96571
+     },
+     "A-cal-words-full-5-13": {
+      "right": false,
+      "margin": -2.834923
+     },
+     "A-cal-words-full-5-14": {
+      "right": false,
+      "margin": -1.081373
+     },
+     "A-cal-words-full-5-15": {
+      "right": false,
+      "margin": -1.904369
+     },
+     "A-cal-words-full-6-00": {
+      "right": false,
+      "margin": -4.387608
+     },
+     "A-cal-words-full-6-01": {
+      "right": false,
+      "margin": -3.136841
+     },
+     "A-cal-words-full-6-02": {
+      "right": false,
+      "margin": -1.603617
+     },
+     "A-cal-words-full-6-03": {
+      "right": false,
+      "margin": -2.928852
+     },
+     "A-cal-words-full-6-04": {
+      "right": false,
+      "margin": -2.615948
+     },
+     "A-cal-words-full-6-05": {
+      "right": false,
+      "margin": -0.906027
+     },
+     "A-cal-words-full-6-06": {
+      "right": true,
+      "margin": 2.220072
+     },
+     "A-cal-words-full-6-07": {
+      "right": false,
+      "margin": -0.517879
+     },
+     "A-cal-words-full-6-08": {
+      "right": false,
+      "margin": -0.479748
+     },
+     "A-cal-words-full-6-09": {
+      "right": true,
+      "margin": 0.680467
+     },
+     "A-cal-words-full-6-10": {
+      "right": false,
+      "margin": -2.21257
+     },
+     "A-cal-words-full-6-11": {
+      "right": false,
+      "margin": -1.251766
+     },
+     "A-cal-words-full-6-12": {
+      "right": true,
+      "margin": 0.612333
+     },
+     "A-cal-words-full-6-13": {
+      "right": false,
+      "margin": -0.947338
+     },
+     "A-cal-words-full-6-14": {
+      "right": false,
+      "margin": -1.724191
+     },
+     "A-cal-words-full-6-15": {
+      "right": false,
+      "margin": -4.602492
+     }
+    }
+   }
+  },
+  "words-short": {
+   "accuracy_by_length": {
+    "1": {
+     "2": 0.062,
+     "3": 0.312,
+     "4": 0.125,
+     "5": 0.188,
+     "6": 0.062
+    },
+    "2": {
+     "2": 0.25,
+     "3": 0.125,
+     "4": 0.062,
+     "5": 0.25,
+     "6": 0.188
+    },
+    "3": {
+     "2": 0.25,
+     "3": 0.312,
+     "4": 0.188,
+     "5": 0.25,
+     "6": 0.062
+    }
+   },
+   "chains_4_to_6": {
+    "1": 0.125,
+    "2": 0.167,
+    "3": 0.167
+   },
+   "three_minus_one_on_4_to_6": 0.042,
+   "qualifies": false,
+   "per_item": {
+    "1": {
+     "A-cal-words-short-2-00": {
+      "right": false,
+      "margin": -2.718813
+     },
+     "A-cal-words-short-2-01": {
+      "right": false,
+      "margin": -7.265957
+     },
+     "A-cal-words-short-2-02": {
+      "right": false,
+      "margin": -0.53508
+     },
+     "A-cal-words-short-2-03": {
+      "right": false,
+      "margin": -3.138271
+     },
+     "A-cal-words-short-2-04": {
+      "right": false,
+      "margin": -0.097832
+     },
+     "A-cal-words-short-2-05": {
+      "right": false,
+      "margin": -4.102388
+     },
+     "A-cal-words-short-2-06": {
+      "right": false,
+      "margin": -1.195023
+     },
+     "A-cal-words-short-2-07": {
+      "right": false,
+      "margin": -1.252724
+     },
+     "A-cal-words-short-2-08": {
+      "right": true,
+      "margin": 2.962255
+     },
+     "A-cal-words-short-2-09": {
+      "right": false,
+      "margin": -0.361698
+     },
+     "A-cal-words-short-2-10": {
+      "right": false,
+      "margin": -2.170675
+     },
+     "A-cal-words-short-2-11": {
+      "right": false,
+      "margin": -0.632969
+     },
+     "A-cal-words-short-2-12": {
+      "right": false,
+      "margin": -0.378695
+     },
+     "A-cal-words-short-2-13": {
+      "right": false,
+      "margin": -1.657415
+     },
+     "A-cal-words-short-2-14": {
+      "right": false,
+      "margin": -0.277985
+     },
+     "A-cal-words-short-2-15": {
+      "right": false,
+      "margin": -2.127207
+     },
+     "A-cal-words-short-3-00": {
+      "right": false,
+      "margin": -3.643137
+     },
+     "A-cal-words-short-3-01": {
+      "right": true,
+      "margin": 0.932802
+     },
+     "A-cal-words-short-3-02": {
+      "right": false,
+      "margin": -0.414707
+     },
+     "A-cal-words-short-3-03": {
+      "right": true,
+      "margin": 1.52861
+     },
+     "A-cal-words-short-3-04": {
+      "right": false,
+      "margin": -1.228987
+     },
+     "A-cal-words-short-3-05": {
+      "right": false,
+      "margin": -1.496231
+     },
+     "A-cal-words-short-3-06": {
+      "right": false,
+      "margin": -0.807962
+     },
+     "A-cal-words-short-3-07": {
+      "right": true,
+      "margin": 2.082029
+     },
+     "A-cal-words-short-3-08": {
+      "right": false,
+      "margin": -2.460056
+     },
+     "A-cal-words-short-3-09": {
+      "right": true,
+      "margin": 0.0
+     },
+     "A-cal-words-short-3-10": {
+      "right": false,
+      "margin": -2.963436
+     },
+     "A-cal-words-short-3-11": {
+      "right": false,
+      "margin": -0.274845
+     },
+     "A-cal-words-short-3-12": {
+      "right": false,
+      "margin": -4.362558
+     },
+     "A-cal-words-short-3-13": {
+      "right": false,
+      "margin": -1.057745
+     },
+     "A-cal-words-short-3-14": {
+      "right": false,
+      "margin": -4.245304
+     },
+     "A-cal-words-short-3-15": {
+      "right": true,
+      "margin": 1.849066
+     },
+     "A-cal-words-short-4-00": {
+      "right": false,
+      "margin": -0.416981
+     },
+     "A-cal-words-short-4-01": {
+      "right": false,
+      "margin": -0.196938
+     },
+     "A-cal-words-short-4-02": {
+      "right": false,
+      "margin": -0.354811
+     },
+     "A-cal-words-short-4-03": {
+      "right": false,
+      "margin": -0.75082
+     },
+     "A-cal-words-short-4-04": {
+      "right": false,
+      "margin": -2.206623
+     },
+     "A-cal-words-short-4-05": {
+      "right": false,
+      "margin": -2.680592
+     },
+     "A-cal-words-short-4-06": {
+      "right": false,
+      "margin": -1.063765
+     },
+     "A-cal-words-short-4-07": {
+      "right": false,
+      "margin": -1.708855
+     },
+     "A-cal-words-short-4-08": {
+      "right": false,
+      "margin": -2.842659
+     },
+     "A-cal-words-short-4-09": {
+      "right": false,
+      "margin": -0.135153
+     },
+     "A-cal-words-short-4-10": {
+      "right": false,
+      "margin": -0.249311
+     },
+     "A-cal-words-short-4-11": {
+      "right": false,
+      "margin": -0.660608
+     },
+     "A-cal-words-short-4-12": {
+      "right": true,
+      "margin": 1.142271
+     },
+     "A-cal-words-short-4-13": {
+      "right": true,
+      "margin": 0.253593
+     },
+     "A-cal-words-short-4-14": {
+      "right": false,
+      "margin": -3.227349
+     },
+     "A-cal-words-short-4-15": {
+      "right": false,
+      "margin": -2.364838
+     },
+     "A-cal-words-short-5-00": {
+      "right": true,
+      "margin": 0.920748
+     },
+     "A-cal-words-short-5-01": {
+      "right": false,
+      "margin": -0.905466
+     },
+     "A-cal-words-short-5-02": {
+      "right": false,
+      "margin": -2.503285
+     },
+     "A-cal-words-short-5-03": {
+      "right": false,
+      "margin": -1.250704
+     },
+     "A-cal-words-short-5-04": {
+      "right": false,
+      "margin": -1.13703
+     },
+     "A-cal-words-short-5-05": {
+      "right": false,
+      "margin": -1.392601
+     },
+     "A-cal-words-short-5-06": {
+      "right": true,
+      "margin": 1.471142
+     },
+     "A-cal-words-short-5-07": {
+      "right": false,
+      "margin": -2.767254
+     },
+     "A-cal-words-short-5-08": {
+      "right": true,
+      "margin": 2.179867
+     },
+     "A-cal-words-short-5-09": {
+      "right": false,
+      "margin": -1.090794
+     },
+     "A-cal-words-short-5-10": {
+      "right": false,
+      "margin": -3.053343
+     },
+     "A-cal-words-short-5-11": {
+      "right": false,
+      "margin": -1.587626
+     },
+     "A-cal-words-short-5-12": {
+      "right": false,
+      "margin": -3.067261
+     },
+     "A-cal-words-short-5-13": {
+      "right": false,
+      "margin": -2.256546
+     },
+     "A-cal-words-short-5-14": {
+      "right": false,
+      "margin": -0.696035
+     },
+     "A-cal-words-short-5-15": {
+      "right": false,
+      "margin": -0.913906
+     },
+     "A-cal-words-short-6-00": {
+      "right": false,
+      "margin": -2.134663
+     },
+     "A-cal-words-short-6-01": {
+      "right": false,
+      "margin": -1.597897
+     },
+     "A-cal-words-short-6-02": {
+      "right": false,
+      "margin": -3.188496
+     },
+     "A-cal-words-short-6-03": {
+      "right": false,
+      "margin": -0.8526
+     },
+     "A-cal-words-short-6-04": {
+      "right": false,
+      "margin": -0.878637
+     },
+     "A-cal-words-short-6-05": {
+      "right": false,
+      "margin": -2.260332
+     },
+     "A-cal-words-short-6-06": {
+      "right": false,
+      "margin": -0.681049
+     },
+     "A-cal-words-short-6-07": {
+      "right": false,
+      "margin": -0.606087
+     },
+     "A-cal-words-short-6-08": {
+      "right": false,
+      "margin": -1.545803
+     },
+     "A-cal-words-short-6-09": {
+      "right": false,
+      "margin": -1.075462
+     },
+     "A-cal-words-short-6-10": {
+      "right": false,
+      "margin": -3.103485
+     },
+     "A-cal-words-short-6-11": {
+      "right": false,
+      "margin": -0.787971
+     },
+     "A-cal-words-short-6-12": {
+      "right": false,
+      "margin": -2.183762
+     },
+     "A-cal-words-short-6-13": {
+      "right": false,
+      "margin": -3.889099
+     },
+     "A-cal-words-short-6-14": {
+      "right": true,
+      "margin": 3.490084
+     },
+     "A-cal-words-short-6-15": {
+      "right": false,
+      "margin": -1.713888
+     }
+    },
+    "3": {
+     "A-cal-words-short-2-00": {
+      "right": false,
+      "margin": -0.703981
+     },
+     "A-cal-words-short-2-01": {
+      "right": false,
+      "margin": -6.307482
+     },
+     "A-cal-words-short-2-02": {
+      "right": false,
+      "margin": -0.850903
+     },
+     "A-cal-words-short-2-03": {
+      "right": false,
+      "margin": -3.17367
+     },
+     "A-cal-words-short-2-04": {
+      "right": true,
+      "margin": 0.047499
+     },
+     "A-cal-words-short-2-05": {
+      "right": false,
+      "margin": -2.704298
+     },
+     "A-cal-words-short-2-06": {
+      "right": false,
+      "margin": -1.579796
+     },
+     "A-cal-words-short-2-07": {
+      "right": false,
+      "margin": -2.245558
+     },
+     "A-cal-words-short-2-08": {
+      "right": true,
+      "margin": 3.10387
+     },
+     "A-cal-words-short-2-09": {
+      "right": false,
+      "margin": -3.324869
+     },
+     "A-cal-words-short-2-10": {
+      "right": false,
+      "margin": -2.351433
+     },
+     "A-cal-words-short-2-11": {
+      "right": true,
+      "margin": 1.185715
+     },
+     "A-cal-words-short-2-12": {
+      "right": true,
+      "margin": 0.174858
+     },
+     "A-cal-words-short-2-13": {
+      "right": false,
+      "margin": -1.878244
+     },
+     "A-cal-words-short-2-14": {
+      "right": false,
+      "margin": -1.217165
+     },
+     "A-cal-words-short-2-15": {
+      "right": false,
+      "margin": -1.765503
+     },
+     "A-cal-words-short-3-00": {
+      "right": false,
+      "margin": -3.737249
+     },
+     "A-cal-words-short-3-01": {
+      "right": true,
+      "margin": 0.600672
+     },
+     "A-cal-words-short-3-02": {
+      "right": true,
+      "margin": 0.857422
+     },
+     "A-cal-words-short-3-03": {
+      "right": true,
+      "margin": 0.068151
+     },
+     "A-cal-words-short-3-04": {
+      "right": false,
+      "margin": -1.051584
+     },
+     "A-cal-words-short-3-05": {
+      "right": false,
+      "margin": -1.666924
+     },
+     "A-cal-words-short-3-06": {
+      "right": false,
+      "margin": -0.680069
+     },
+     "A-cal-words-short-3-07": {
+      "right": true,
+      "margin": 1.76832
+     },
+     "A-cal-words-short-3-08": {
+      "right": false,
+      "margin": -3.027845
+     },
+     "A-cal-words-short-3-09": {
+      "right": false,
+      "margin": -1.868855
+     },
+     "A-cal-words-short-3-10": {
+      "right": false,
+      "margin": -3.045578
+     },
+     "A-cal-words-short-3-11": {
+      "right": false,
+      "margin": -1.742476
+     },
+     "A-cal-words-short-3-12": {
+      "right": false,
+      "margin": -4.346239
+     },
+     "A-cal-words-short-3-13": {
+      "right": false,
+      "margin": -2.461946
+     },
+     "A-cal-words-short-3-14": {
+      "right": false,
+      "margin": -4.031446
+     },
+     "A-cal-words-short-3-15": {
+      "right": true,
+      "margin": 3.34534
+     },
+     "A-cal-words-short-4-00": {
+      "right": true,
+      "margin": 0.379791
+     },
+     "A-cal-words-short-4-01": {
+      "right": false,
+      "margin": -0.382853
+     },
+     "A-cal-words-short-4-02": {
+      "right": false,
+      "margin": -0.942549
+     },
+     "A-cal-words-short-4-03": {
+      "right": false,
+      "margin": -0.098469
+     },
+     "A-cal-words-short-4-04": {
+      "right": false,
+      "margin": -1.559097
+     },
+     "A-cal-words-short-4-05": {
+      "right": false,
+      "margin": -1.958817
+     },
+     "A-cal-words-short-4-06": {
+      "right": false,
+      "margin": -2.917078
+     },
+     "A-cal-words-short-4-07": {
+      "right": false,
+      "margin": -2.787119
+     },
+     "A-cal-words-short-4-08": {
+      "right": false,
+      "margin": -1.325407
+     },
+     "A-cal-words-short-4-09": {
+      "right": false,
+      "margin": -1.745651
+     },
+     "A-cal-words-short-4-10": {
+      "right": true,
+      "margin": 0.10433
+     },
+     "A-cal-words-short-4-11": {
+      "right": false,
+      "margin": -0.227875
+     },
+     "A-cal-words-short-4-12": {
+      "right": true,
+      "margin": 0.971209
+     },
+     "A-cal-words-short-4-13": {
+      "right": false,
+      "margin": -0.9088
+     },
+     "A-cal-words-short-4-14": {
+      "right": false,
+      "margin": -1.232243
+     },
+     "A-cal-words-short-4-15": {
+      "right": false,
+      "margin": -2.847874
+     },
+     "A-cal-words-short-5-00": {
+      "right": true,
+      "margin": 0.899654
+     },
+     "A-cal-words-short-5-01": {
+      "right": false,
+      "margin": -0.691423
+     },
+     "A-cal-words-short-5-02": {
+      "right": false,
+      "margin": -2.113295
+     },
+     "A-cal-words-short-5-03": {
+      "right": false,
+      "margin": -0.141314
+     },
+     "A-cal-words-short-5-04": {
+      "right": false,
+      "margin": -1.13957
+     },
+     "A-cal-words-short-5-05": {
+      "right": false,
+      "margin": -1.515451
+     },
+     "A-cal-words-short-5-06": {
+      "right": true,
+      "margin": 0.856399
+     },
+     "A-cal-words-short-5-07": {
+      "right": false,
+      "margin": -3.542581
+     },
+     "A-cal-words-short-5-08": {
+      "right": true,
+      "margin": 1.336603
+     },
+     "A-cal-words-short-5-09": {
+      "right": true,
+      "margin": 0.591848
+     },
+     "A-cal-words-short-5-10": {
+      "right": false,
+      "margin": -2.735922
+     },
+     "A-cal-words-short-5-11": {
+      "right": false,
+      "margin": -0.82868
+     },
+     "A-cal-words-short-5-12": {
+      "right": false,
+      "margin": -3.310791
+     },
+     "A-cal-words-short-5-13": {
+      "right": false,
+      "margin": -2.49029
+     },
+     "A-cal-words-short-5-14": {
+      "right": false,
+      "margin": -1.728647
+     },
+     "A-cal-words-short-5-15": {
+      "right": false,
+      "margin": -0.565271
+     },
+     "A-cal-words-short-6-00": {
+      "right": false,
+      "margin": -0.150726
+     },
+     "A-cal-words-short-6-01": {
+      "right": false,
+      "margin": -2.054796
+     },
+     "A-cal-words-short-6-02": {
+      "right": false,
+      "margin": -0.44536
+     },
+     "A-cal-words-short-6-03": {
+      "right": false,
+      "margin": -2.146053
+     },
+     "A-cal-words-short-6-04": {
+      "right": false,
+      "margin": -0.601543
+     },
+     "A-cal-words-short-6-05": {
+      "right": false,
+      "margin": -2.584339
+     },
+     "A-cal-words-short-6-06": {
+      "right": false,
+      "margin": -1.471878
+     },
+     "A-cal-words-short-6-07": {
+      "right": false,
+      "margin": -0.866194
+     },
+     "A-cal-words-short-6-08": {
+      "right": false,
+      "margin": -3.22718
+     },
+     "A-cal-words-short-6-09": {
+      "right": false,
+      "margin": -1.336437
+     },
+     "A-cal-words-short-6-10": {
+      "right": false,
+      "margin": -0.983173
+     },
+     "A-cal-words-short-6-11": {
+      "right": false,
+      "margin": -1.324311
+     },
+     "A-cal-words-short-6-12": {
+      "right": false,
+      "margin": -0.878088
+     },
+     "A-cal-words-short-6-13": {
+      "right": false,
+      "margin": -2.921306
+     },
+     "A-cal-words-short-6-14": {
+      "right": true,
+      "margin": 1.753792
+     },
+     "A-cal-words-short-6-15": {
+      "right": false,
+      "margin": -1.050429
+     }
+    }
+   }
+  }
+ },
+ "chosen_by_section_16_item_6": null,
+ "finished": "2026-11-21T23:20:55+0000"
+}
