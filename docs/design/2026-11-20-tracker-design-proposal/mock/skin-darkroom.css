@@ -1,0 +1,36 @@
+/* MOCK-UP for the 2026-11-20 tracker design proposal, not ruled.
+   Direction C, "Dark room": the dark field of a screen in a perception test, one small cross to
+   fix the eye on, a pale phosphor yellow-green as the mark, the slate kept for data. Dark by
+   default; the light theme is the room with the lights up. */
+:root {
+  --bg: #0d0e10; --bg-soft: #121316; --panel: #15161a;
+  --text: #ecebe7; --text-soft: #cfcdc7; --muted: #8b8d92;
+  --line: rgba(236,235,231,0.10); --line-strong: rgba(236,235,231,0.20);
+  --accent: #c8d46a; --accent-2: #c9a06a; --accent-3: #8aa4bb;
+  --on-accent: #14160a; --accent-hover: #d6e087; --link: #c8d46a; --link-hover: #d6e087;
+  --glow: rgba(200,212,106,0.12); --header-bg: rgba(13,14,16,0.82);
+  --hover-bg: rgba(236,235,231,0.06); --active-bg: rgba(236,235,231,0.09);
+  --chip-bg: rgba(236,235,231,0.03); --callout-bg: rgba(200,212,106,0.08);
+  --ok: #7fc48a; --no: #d98a7a; --star: #ecebe7; --radius: 2px; --maxw: 1080px;
+  --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  --sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+:root[data-theme='light'] {
+  --bg: #efefec; --bg-soft: #e6e6e2; --panel: #f8f8f6;
+  --text: #181918; --text-soft: #363735; --muted: #676863;
+  --line: rgba(24,25,24,0.12); --line-strong: rgba(24,25,24,0.22);
+  --accent: #5f6b12; --accent-2: #8a5a2b; --accent-3: #4f6a80;
+  --on-accent: #f8f9ee; --accent-hover: #737f1c; --link: #5f6b12; --link-hover: #737f1c;
+  --glow: rgba(95,107,18,0.10); --header-bg: rgba(239,239,236,0.88);
+  --hover-bg: rgba(24,25,24,0.05); --active-bg: rgba(24,25,24,0.08);
+  --chip-bg: transparent; --callout-bg: rgba(95,107,18,0.07);
+  --ok: #2f7c4a; --no: #a5432f; --star: #b9b9b3;
+}
+/* the backdrop: a dark field with one fixation cross, fading out within the first screen */
+.space-bg { position: absolute; top: 0; left: 0; right: 0; height: 760px; z-index: 0; pointer-events: none; overflow: hidden;
+  background: radial-gradient(ellipse 50% 60% at 78% 18%, var(--glow), transparent 70%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); }
+.space-bg::before, .space-bg::after { content: ""; position: absolute; left: calc(50% - 585px); top: 168px; background: var(--muted); opacity: 0.55; }
+.space-bg::before { width: 22px; height: 2px; margin-left: -11px; }
+.space-bg::after { width: 2px; height: 22px; margin-left: -1px; top: 158px; }
