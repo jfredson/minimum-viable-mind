@@ -138,6 +138,11 @@ Three removals, taken together, could separate them.
   separate feedback from computing. If Removal B differs from Removal A, then something other
   than the message also differs between passes, and that has to be found before anything else is
   read.
+  *Corrected later on 2026-11-20, in the version 0.1 design
+  (`docs/loop-removal-test-design-2026-11-20.md`, section 3): Goodfire's appendix shows the message
+  also sets how much of the current pass's input is kept, so zeroing only the gate is not a clean
+  cut. The design replaces Removal B with skipping the mixing step entirely, used as a check that
+  must reproduce the one-pass run.*
 - **Removal C: swap the message, keep the passes.** The model runs three passes, but on passes two
   and three it receives the message that another input produced at the same position, in place of
   its own. It keeps the full amount of computing and receives a message of the right size and
