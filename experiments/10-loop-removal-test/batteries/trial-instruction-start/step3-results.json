@@ -1,0 +1,563 @@
+{
+ "1_single_token": {
+  "capitals_one_token": 85,
+  "capitals_total": 165,
+  "capitals_one_token_no_name_overlap": 80,
+  "opposite_answers_one_token": 151,
+  "opposite_words_total": 160,
+  "objects_typical_colour_one_token": 122,
+  "objects_total": 122,
+  "words3_one_token": 95,
+  "words3_total": 95,
+  "colours_one_token": 11,
+  "numbers_0_999_one_token": 1000,
+  "half_A_pools": {
+   "capitals_one_token": 47,
+   "capital_answers": 44,
+   "opposite_questions": 76,
+   "objects": 61,
+   "words3": 47,
+   "invented_words": 36,
+   "colours": 11
+  }
+ },
+ "2_wording_table": {
+  "op+cap": [
+   8,
+   8,
+   true
+  ],
+  "op+opp": [
+   8,
+   8,
+   true
+  ],
+  "op+col": [
+   8,
+   8,
+   true
+  ],
+  "unit+cap": [
+   9,
+   9,
+   true
+  ],
+  "unit+opp": [
+   7,
+   7,
+   true
+  ],
+  "unit+col": [
+   9,
+   9,
+   true
+  ],
+  "code+sum": [
+   9,
+   9,
+   true
+  ],
+  "code+prod": [
+   8,
+   8,
+   true
+  ],
+  "code+cap": [
+   8,
+   8,
+   true
+  ],
+  "code+col": [
+   8,
+   8,
+   true
+  ],
+  "look+sum": [
+   9,
+   9,
+   true
+  ],
+  "look+prod": [
+   9,
+   9,
+   true
+  ],
+  "look+cap": [
+   9,
+   9,
+   true
+  ],
+  "look+opp": [
+   9,
+   9,
+   true
+  ]
+ },
+ "2_wording_table_all_equal": true,
+ "3_twin_lengths_equal": 120,
+ "3_pairs": 120,
+ "4_generation": {
+  "dropped": {
+   "capital_not_one_token": 35,
+   "capital_name_overlap": 3,
+   "opposite_answer_not_one_token": 4,
+   "copying_or_cross_rule_left_too_few_wrong_answers": 145,
+   "copying_rule_right_answer": 103
+  },
+  "capital_wrong_source_all_attempts": {
+   "same_region": 886,
+   "neighbour_region": 1285,
+   "dropped": 589
+  },
+  "capital_right_answers_by_region": {
+   "Northern Europe": 4,
+   "Southern Europe": 4,
+   "Middle East": 7,
+   "South America": 4,
+   "North Africa": 2,
+   "Southeast Asia": 1,
+   "Eastern Europe": 3,
+   "Western Europe": 3,
+   "East Asia": 2
+  },
+  "distinct_right_answers_per_routine_kind": {
+   "cap": 30,
+   "opp": 30,
+   "col": 9,
+   "sum": 12,
+   "prod": 13
+  },
+  "lookup_answer_colours": [
+   "black",
+   "blue",
+   "brown",
+   "green",
+   "grey",
+   "orange",
+   "pink",
+   "red",
+   "white",
+   "yellow"
+  ],
+  "order_counts": {
+   "rule_facts_last": 59,
+   "routine_fact_last": 61
+  }
+ },
+ "5_donors": {
+  "donor_only_added": 204,
+  "per_group": {
+   "op+cap": {
+    "scored": 7,
+    "donor_only_kept": 10,
+    "draws": 101,
+    "stopped_by": "all_have_five",
+    "no_donor": []
+   },
+   "op+opp": {
+    "scored": 11,
+    "donor_only_kept": 14,
+    "draws": 448,
+    "stopped_by": "all_have_five",
+    "no_donor": []
+   },
+   "op+col": {
+    "scored": 12,
+    "donor_only_kept": 21,
+    "draws": 2400,
+    "stopped_by": "draw_budget",
+    "no_donor": []
+   },
+   "unit+cap": {
+    "scored": 7,
+    "donor_only_kept": 12,
+    "draws": 121,
+    "stopped_by": "all_have_five",
+    "no_donor": []
+   },
+   "unit+opp": {
+    "scored": 11,
+    "donor_only_kept": 14,
+    "draws": 1232,
+    "stopped_by": "all_have_five",
+    "no_donor": []
+   },
+   "unit+col": {
+    "scored": 12,
+    "donor_only_kept": 20,
+    "draws": 1001,
+    "stopped_by": "all_have_five",
+    "no_donor": []
+   },
+   "code+sum": {
+    "scored": 8,
+    "donor_only_kept": 11,
+    "draws": 115,
+    "stopped_by": "all_have_five",
+    "no_donor": []
+   },
+   "code+prod": {
+    "scored": 8,
+    "donor_only_kept": 11,
+    "draws": 161,
+    "stopped_by": "all_have_five",
+    "no_donor": []
+   },
+   "code+cap": {
+    "scored": 8,
+    "donor_only_kept": 12,
+    "draws": 861,
+    "stopped_by": "all_have_five",
+    "no_donor": []
+   },
+   "code+col": {
+    "scored": 6,
+    "donor_only_kept": 12,
+    "draws": 1200,
+    "stopped_by": "draw_budget",
+    "no_donor": [
+     {
+      "id": "A-0085",
+      "text": "Answer with the single word or number only. In this code, each letter stands for another: p stands for c, y stands for n, x stands for u, z stands for l, h stands for a, n stands for m, i stands for t, c stands for j. The object is a tiger's stripes. The coded word is hyi. What word is the coded word?",
+      "length_rank_from_longest": 1
+     }
+    ]
+   },
+   "look+sum": {
+    "scored": 7,
+    "donor_only_kept": 21,
+    "draws": 236,
+    "stopped_by": "cap",
+    "no_donor": []
+   },
+   "look+prod": {
+    "scored": 7,
+    "donor_only_kept": 12,
+    "draws": 32,
+    "stopped_by": "all_have_five",
+    "no_donor": []
+   },
+   "look+cap": {
+    "scored": 8,
+    "donor_only_kept": 16,
+    "draws": 1600,
+    "stopped_by": "draw_budget",
+    "no_donor": []
+   },
+   "look+opp": {
+    "scored": 8,
+    "donor_only_kept": 18,
+    "draws": 246,
+    "stopped_by": "all_have_five",
+    "no_donor": []
+   }
+  },
+  "scored_with_no_donor": 1,
+  "scored_with_fewer_than_five": 4,
+  "mean_eligible_donors": 10.18
+ },
+ "6_dose_ratio_R_over_P": {
+  "op": {
+   "0.0": 0.9938,
+   "0.3": 0.9958,
+   "0.6": 0.9977
+  },
+  "unit": {
+   "0.0": 0.9975,
+   "0.3": 0.9983,
+   "0.6": 0.999
+  },
+  "code": {
+   "0.0": 1.0,
+   "0.3": 1.0,
+   "0.6": 1.0
+  },
+  "look": {
+   "0.0": 0.9992,
+   "0.3": 0.9994,
+   "0.6": 0.9997
+  }
+ },
+ "6_band_pass": true,
+ "7_tail_share": {
+  "op": {
+   "P": 0.276,
+   "R": 0.276
+  },
+  "unit": {
+   "P": 0.336,
+   "R": 0.336
+  },
+  "code": {
+   "P": 0.165,
+   "R": 0.165
+  },
+  "look": {
+   "P": 0.171,
+   "R": 0.171
+  }
+ },
+ "7_absorbable_difference_per_position": {
+  "op": 0.36,
+  "unit": 0.3,
+  "code": 0.61,
+  "look": 0.58
+ },
+ "8_average_method_counts": {
+  "op": {
+   "max_abs_diff_invented_or_symbol_tokens": 0,
+   "max_abs_diff_final_question_tokens": 0
+  },
+  "unit": {
+   "max_abs_diff_invented_or_symbol_tokens": 0,
+   "max_abs_diff_final_question_tokens": 0
+  },
+  "code": {
+   "max_abs_diff_invented_or_symbol_tokens": 0,
+   "max_abs_diff_final_question_tokens": 0
+  },
+  "look": {
+   "max_abs_diff_invented_or_symbol_tokens": 0,
+   "max_abs_diff_final_question_tokens": 0
+  }
+ },
+ "9_candidates_named_in_donor_context": {
+  "op+cap": {
+   "P": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.014
+   },
+   "R": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   }
+  },
+  "op+opp": {
+   "P": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.023
+   },
+   "R": {
+    "right_rate": 0.018,
+    "wrong_rate": 0.014
+   }
+  },
+  "op+col": {
+   "P": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.009
+   },
+   "R": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   }
+  },
+  "unit+cap": {
+   "P": {
+    "right_rate": 0.029,
+    "wrong_rate": 0.05
+   },
+   "R": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   }
+  },
+  "unit+opp": {
+   "P": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   },
+   "R": {
+    "right_rate": 0.018,
+    "wrong_rate": 0.005
+   }
+  },
+  "unit+col": {
+   "P": {
+    "right_rate": 0.05,
+    "wrong_rate": 0.1
+   },
+   "R": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   }
+  },
+  "code+sum": {
+   "P": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   },
+   "R": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.025
+   }
+  },
+  "code+prod": {
+   "P": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   },
+   "R": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   }
+  },
+  "code+cap": {
+   "P": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   },
+   "R": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   }
+  },
+  "code+col": {
+   "P": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   },
+   "R": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   }
+  },
+  "look+sum": {
+   "P": {
+    "right_rate": 0.424,
+    "wrong_rate": 0.492
+   },
+   "R": {
+    "right_rate": 0.061,
+    "wrong_rate": 0.023
+   }
+  },
+  "look+prod": {
+   "P": {
+    "right_rate": 0.629,
+    "wrong_rate": 0.529
+   },
+   "R": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   }
+  },
+  "look+cap": {
+   "P": {
+    "right_rate": 0.487,
+    "wrong_rate": 0.538
+   },
+   "R": {
+    "right_rate": 0.0,
+    "wrong_rate": 0.0
+   }
+  },
+  "look+opp": {
+   "P": {
+    "right_rate": 0.675,
+    "wrong_rate": 0.438
+   },
+   "R": {
+    "right_rate": 0.025,
+    "wrong_rate": 0.013
+   }
+  }
+ },
+ "10_average_defined": {
+  "template_prefix_tokens": 12,
+  "template_suffix_tokens_incl_reply_opening": 3,
+  "items_with_template_slots_matching_neutral": 240,
+  "items": 240,
+  "neutral_with_template_slots": 200,
+  "neutral": 200,
+  "neutral_build": 100,
+  "neutral_measure": 100,
+  "text_positions_pooled_from_build_passages": 6151,
+  "longest_item_prompt": 106,
+  "longest_neutral_prompt": 102
+ },
+ "11_right_number_place_counts": {
+  "op": [
+   7,
+   4,
+   6,
+   7,
+   6
+  ],
+  "unit": [
+   7,
+   3,
+   5,
+   5,
+   10
+  ],
+  "sum": [
+   2,
+   5,
+   2,
+   3,
+   3
+  ],
+  "prod": [
+   3,
+   6,
+   3,
+   3,
+   0
+  ]
+ },
+ "chained": {
+  "items": 40,
+  "hops": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "all_candidates_one_token": true,
+  "items_with_every_candidate_in_text": 40,
+  "items_with_every_candidate_reached_by_a_chain": 40,
+  "donors": {
+   "hops_2": {
+    "scored": 8,
+    "donor_only_kept": 11,
+    "draws": 53,
+    "no_donor": [],
+    "fewer_than_five": 0
+   },
+   "hops_3": {
+    "scored": 8,
+    "donor_only_kept": 13,
+    "draws": 31,
+    "no_donor": [],
+    "fewer_than_five": 0
+   },
+   "hops_4": {
+    "scored": 8,
+    "donor_only_kept": 12,
+    "draws": 53,
+    "no_donor": [],
+    "fewer_than_five": 0
+   },
+   "hops_5": {
+    "scored": 8,
+    "donor_only_kept": 12,
+    "draws": 124,
+    "no_donor": [],
+    "fewer_than_five": 0
+   },
+   "hops_6": {
+    "scored": 8,
+    "donor_only_kept": 14,
+    "draws": 54,
+    "no_donor": [],
+    "fewer_than_five": 0
+   }
+  },
+  "prompt_length_range": [
+   204,
+   293
+  ]
+ }
+}
