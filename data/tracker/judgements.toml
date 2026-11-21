@@ -3263,3 +3263,38 @@ verdict = "for"
 reason = "The study worked on two neighbouring patches of the brainstem that both sense the body: one (the area postrema) sits in a gap in the blood-brain barrier and so is bathed in whatever circulates in the blood, the other (the nucleus of the solitary tract) sits behind the barrier. Taking the receptor away from the patch in the gap blunted the sickly, avoidance-producing state the drug normally causes, while putting the receptor back only behind the barrier did not produce that state. That is what the prediction's test asks for: cut the direct chemical exchange between body-sensing nerve cells and the blood around them, leave nerve-to-nerve signalling alone, and the feeling of the body's state changes."
 unsure = true
 unsure_why = "Three things make this loose. The circulating molecule is a medicine, not one of the body's own signals, so the study shows the exchange route matters for a drug rather than for ordinary bodily feeling. The feeling itself is read from mice refusing a flavour, a stand-in for nausea, not from anything said. And the two patches differ in more than the barrier, in how many receptor-carrying cells they hold and how much receptor each holds, which the authors say themselves. A stricter reader would call this mixed."
+
+
+# ----------------------------------------------- a follow-up question, 2026-11-21
+# John, 2026-11-21, "Re-ask both readers, cap $1 (Recommended)": is the model the XENONnT study
+# tests the one stated in the theory's own latest full statement? Question written down and
+# committed before either reader saw it (data/tracker/questions-2026-11-21-xenonnt.md). Answers
+# map to the dating verdicts: yes -> before (the "against" stays), no -> not-before (not counted),
+# unclear -> unclear (not counted). Replaces com-xenonnt-orch-dp-collapse (see rulings.toml).
+
+[[judgement]]
+id = "com2-xenonnt-orch-dp-collapse"
+kind = "commitment"
+prediction = "orch-dp-collapse"
+study = "xenonnt-2026"
+question = "Is the physical model this study tests the one stated in the theory's own latest full statement?"
+passages = [
+  { source = "hameroff-penrose-2014", text = "Diósi–Penrose (DP) scheme of ‘objective reduction’ (‘OR’) of the quantum state." },
+  { source = "hameroff-penrose-2014", text = "In our picture, the dominant effect is likely to be (2) separation at the level of atomic nuclei, e.g. 2.5 Fermi length for carbon nuclei (2.5 femtometers; 2.5 × 10−15 meters)." },
+  { source = "hameroff-penrose-2014", text = "There is, however, a large uncertainty about how ‘smeared out’ these nuclei must be considered to be" },
+  { source = "hameroff-penrose-2014", text = "For example, one ought to begin to see the effects of this OR scheme if a small object, such as a 10-µm cube of crystalline material could be held in a coherent superposition of two locations, differing by about the diameter of an atomic nucleus, for some seconds, or perhaps minutes to reach threshold" },
+  { source = "xenonnt-2026", text = "New world-leading limits on the free parameters of the Markovian continuous spontaneous localization and Diósi-Penrose models are set, improving previous best constraints by two orders of magnitude and a factor of five, respectively." },
+  { source = "xenonnt-2026", text = "acts as a spatial cutoff parameter to avoid a divergence in the collapse rate for point-like particles" },
+]
+dates = { statement = "2013-08-20 (hameroff-penrose-2014)", study_first_appeared = "2025-06-05" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+answer = "yes"
+reason = "The theory's 2014 statement says it adopts the Diósi–Penrose scheme of objective reduction, and the study sets limits on the free parameters of the Diósi–Penrose model, so both name the same model. The theory does not fix one value for how spread out the mass is. It names separation at the scale of atomic nuclei, for example about 2.5 femtometres for carbon, but says there is 'a large uncertainty' about how smeared out the nuclei should be taken to be. The study treats that spread as a free cutoff parameter, so it covers a range of values rather than a different model."
+unsure = true
+unsure_why = "The study passages do not say which range of the cutoff its limits exclude, so I cannot tell from them whether the nuclear-scale value the theory prefers is the one tested or ruled out. One point comes from my own background knowledge and not from the passages: Penrose has at times set his version apart from Diósi's version, which needs a cutoff parameter. If the record treats those as two versions of the model, the answer could be no. The passages do not show such a difference."
+blind_note = "A fresh agent given only the packet, with no file or web access and no earlier reading."

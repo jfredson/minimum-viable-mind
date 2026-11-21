@@ -5,13 +5,13 @@
     "gemini"
   ],
   "judgement_status": {
-    "agreed": 117,
-    "ruled": 44,
+    "agreed": 116,
+    "ruled": 45,
     "one-reader": 0,
     "disagreed": 0,
     "open-for-john": 0,
     "unread": 0,
-    "superseded": 1
+    "superseded": 2
   },
   "unsettled": [],
   "theories": {
@@ -382,8 +382,9 @@
     "orch-or": {
       "name": "Orchestrated Objective Reduction",
       "judgement_status": {
-        "agreed": 13,
-        "ruled": 3
+        "agreed": 12,
+        "ruled": 4,
+        "superseded": 1
       },
       "one_reader_only": false,
       "testability": 100.0,
@@ -397,29 +398,27 @@
       },
       "past_bar": true,
       "claims_lacking_for_bar": [],
-      "support": 25.0,
+      "support": null,
       "support_rests_on": {
-        "counted_outcomes": 2,
+        "counted_outcomes": 1,
         "studies": [
-          "babcock-2024",
-          "xenonnt-2026"
+          "babcock-2024"
         ],
         "groups": [
-          "Kurian group (last and corresponding author, Quantum Biology Laboratory, Howard University, Washington)",
-          "XENON Collaboration (detector at the Gran Sasso underground laboratory, Italy)"
+          "Kurian group (last and corresponding author, Quantum Biology Laboratory, Howard University, Washington)"
         ],
-        "total_weight": 8,
-        "weighted_sum": -4
+        "total_weight": 4,
+        "weighted_sum": 0
       },
-      "left_to_test": 75.0,
+      "left_to_test": 87.5,
       "left_to_test_counts": {
         "distinguishing_core_predictions": 8,
         "placeholders_for_claims_with_none": [],
-        "untested": 6,
+        "untested": 7,
         "total": 8
       },
-      "group": "ranked",
-      "leans_against": true
+      "group": "testable, too little tested to rank",
+      "leans_against": false
     },
     "damasio": {
       "name": "Damasio's feeling-based theory",
@@ -475,17 +474,13 @@
       {
         "theory": "gwt",
         "rank": 3
-      },
-      {
-        "theory": "orch-or",
-        "rank": 4
       }
     ],
     "shared_because_one_study_could_swap_them": {
-      "iit|gwt": "dellert-2025",
-      "gwt|orch-or": "xenonnt-2026"
+      "iit|gwt": "dellert-2025"
     },
     "testable_too_little_tested": [
+      "orch-or",
       "ast",
       "sensorimotor"
     ],
@@ -497,9 +492,9 @@
     ]
   },
   "headline": {
-    "tested": 17,
+    "tested": 16,
     "distinguishing_predictions": 53,
-    "share_tested": 32.1,
+    "share_tested": 30.2,
     "note": "Tested at all (ruled by John: 'A, tested at all'): the share of distinguishing predictions tied to core claims that at least one counted study has tested. It measures how widely, not how firmly; the support scores carry the strength. It can fall when predictions are added."
   },
   "predictions": {
@@ -1110,16 +1105,10 @@
     },
     "orch-dp-collapse": {
       "theory": "orch-or",
-      "state": "contradicted",
+      "state": "untested",
       "state_lean": "",
-      "state_weighted_reading": "contradicted",
-      "counted_studies": [
-        {
-          "study": "xenonnt-2026",
-          "value": -1,
-          "weight": 2
-        }
-      ],
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
       "questions": []
     },
     "orch-mass-time": {
@@ -1431,17 +1420,6 @@
       "weight": 2,
       "multiplier": 2,
       "status": "agreed"
-    },
-    {
-      "judgement": "out-xenonnt-orch-dp-collapse",
-      "theory": "orch-or",
-      "prediction": "orch-dp-collapse",
-      "study": "xenonnt-2026",
-      "group": "XENON Collaboration (detector at the Gran Sasso underground laboratory, Italy)",
-      "value": -1,
-      "weight": 2,
-      "multiplier": 2,
-      "status": "agreed"
     }
   ],
   "alternative_readings": {
@@ -1455,7 +1433,7 @@
         "seth": "not yet defined sharply enough to rank",
         "ast": "testable, too little tested to rank",
         "sensorimotor": "testable, too little tested to rank",
-        "orch-or": "ranked",
+        "orch-or": "testable, too little tested to rank",
         "damasio": "not yet defined sharply enough to rank"
       },
       "ranking": {
@@ -1471,17 +1449,13 @@
           {
             "theory": "gwt",
             "rank": 3
-          },
-          {
-            "theory": "orch-or",
-            "rank": 4
           }
         ],
         "shared_because_one_study_could_swap_them": {
-          "iit|gwt": "dellert-2025",
-          "gwt|orch-or": "xenonnt-2026"
+          "iit|gwt": "dellert-2025"
         },
         "testable_too_little_tested": [
+          "orch-or",
           "ast",
           "sensorimotor",
           "rpt"

@@ -772,3 +772,23 @@ settles = "commitment"
 verdict = "unclear"
 reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
 open_part = ""
+
+
+# ------------------------------------------- the XENONnT follow-up (2026-11-21)
+
+[[ruling]]
+judgement = "com-xenonnt-orch-dp-collapse"
+rule = "John, 2026-11-21, \"Re-ask both readers, cap $1 (Recommended)\""
+settles = "commitment"
+verdict = "superseded"
+superseded_by = "com2-xenonnt-orch-dp-collapse"
+reason = "Put again to both readers as one narrow question: is the model the study tests the one the theory's latest full statement states? The new judgement decides."
+open_part = ""
+
+[[ruling]]
+judgement = "com2-xenonnt-orch-dp-collapse"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20), as John's terms for this question say"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split: Claude yes (the same Diósi-Penrose model, the cutoff being the uncertainty the theory itself names; unsure), Gemini unclear (the passages do not show whether the version and parameter range tested are the theory's). John's terms: a split or an unclear answer means unclear, so the study is not counted for the prediction on gravity-driven collapse."
+open_part = ""
