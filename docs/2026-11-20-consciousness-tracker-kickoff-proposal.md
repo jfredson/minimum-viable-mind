@@ -185,10 +185,11 @@ session's recommendations; the wording is the session's.
    discuss their subject scored 0 or nearly 0 on testability.) Weakest steps, stated to John when
    he ruled: it helps the Sentient Horizons account, whose predictions about the split now likely
    separate, and the method page must say so plainly, with the date of this change; and a theory
-   can raise its testability by predicting things no rival discusses. *How the stage 3 session
-   applied it (its reading, not ruled):* a separation already resting on a rival's contrary passage
-   stands; a prediction stops separating only where a rival's own source predicts the same and no
-   rival's source predicts something different.
+   can raise its testability by predicting things no rival discusses. *(ruled, 2026-11-21, John:
+   "Yes, that reading"; wording the master session's.)* How it applies: a separation already
+   resting on a rival's contrary passage stands; a prediction stops separating only where a rival's
+   own opened source predicts the same and no rival's source predicts something different. Weakest
+   step, stated to John: one sourced agreement outweighs every other rival's silence.
    A support score speaks only for the
    claims that were testable; where fewer than half were, it describes a minority of the theory,
    and ranking the whole theory on it would mislead. This replaces the bare figure of 50 first

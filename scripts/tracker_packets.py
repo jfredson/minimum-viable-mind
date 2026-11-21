@@ -135,7 +135,11 @@ def build(pending=False):
     done = gemini_read() if pending else set()
     packets = []
     for j in judgements:
-        if j["id"] in done:
+        # Since rule C was amended (2026-11-21), every testability row is read again under the new
+        # question, the pilot's included; those packets are written as <id>.c2.json so the packets
+        # the pilot sent stay as they were.
+        resend = pending and j["kind"] == "testability" and j["id"] in done
+        if j["id"] in done and not resend:
             continue
         p = preds[j["prediction"]]
         c = claims[p["core_claim"]]
@@ -186,6 +190,9 @@ def build(pending=False):
             if j["kind"] == "commitment":
                 packet["dates"] = j.get("dates", {})
         packet["this_reading_is"] = "the first reading of record" if first_reading == "gemini" else "the second reading"
+        if resend:
+            packet["file_name"] = j["id"] + ".c2"
+            packet["question_version"] = "rule C as amended 2026-11-21; this row was read before under the earlier question"
         packets.append(packet)
     return packets
 
@@ -234,7 +241,7 @@ def main(argv=None):
         for old in OUT.glob("*.json"):
             old.unlink()
     for p in packets:
-        (OUT / f"{p['packet_id']}.json").write_text(json.dumps(p, indent=2, ensure_ascii=False) + "\n")
+        (OUT / f"{p.get('file_name', p['packet_id'])}.json").write_text(json.dumps(p, indent=2, ensure_ascii=False) + "\n")
 
     # estimate: about 4 characters per token for English prose
     chars = [len(json.dumps(p, ensure_ascii=False)) for p in packets]

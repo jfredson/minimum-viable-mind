@@ -1,0 +1,56 @@
+{
+  "packet_id": "tst-sh-split-novel",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "The Sentient Horizons account",
+  "core_claim": {
+    "quote": "A system has a point of view, in the plain sense that things happen to someone, when it separates the changes it causes from the changes the world causes and uses that difference.",
+    "source": {
+      "citation": "Fredrickson JA. Working Positions. Sentient Horizons, latest revision shown on the page 2026-10-24",
+      "url": "https://sentient-horizons.com/positions/",
+      "date": "2026-10-24"
+    }
+  },
+  "prediction": {
+    "statement": "Cutting the copies of a system's own commands off from its senses, while the commands still work, leaves practised single actions running, makes the system lose track of which changes it caused, and also degrades its response to new events in the world, including ones that have nothing to do with it; and this loss differs from what losing feedback alone does.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2026-10-24",
+      "passage": "Remove the split, meaning cut the copies of the system’s own commands off from its senses while leaving the commands themselves working, and the prediction is three things. Practised single actions carry on. The system loses track of which changes it caused. And, the part no one has yet tested, its response to new events in the world, including ones that have nothing to do with it, degrades too.",
+      "source": {
+        "citation": "Fredrickson JA. Working Positions. Sentient Horizons, latest revision shown on the page 2026-10-24",
+        "url": "https://sentient-horizons.com/positions/",
+        "date": "2026-10-24"
+      }
+    },
+    "test_for": "After the cut, response to new, unrelated events in the world degrades, in a way that differs from cutting off feedback alone, while practised single actions carry on.",
+    "test_against": "After the cut, response to new events in the world carries on as before."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "If the split can be removed in this precise way and response to new events in the world carries on as before, the split was not doing the work I think it does, and the bet loses.",
+      "source": {
+        "citation": "Fredrickson JA. Working Positions. Sentient Horizons, latest revision shown on the page 2026-10-24",
+        "url": "https://sentient-horizons.com/positions/",
+        "date": "2026-10-24"
+      }
+    }
+  ],
+  "this_reading_is": "the first reading of record",
+  "file_name": "tst-sh-split-novel.c2",
+  "question_version": "rule C as amended 2026-11-21; this row was read before under the earlier question"
+}
