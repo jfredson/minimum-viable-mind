@@ -75,7 +75,7 @@ also_stated = [
 test_for = "Models in which feedback from prefrontal cortex to sensory areas is switched off explain awareness clearly worse than models that keep it, when report is removed."
 test_against = "Awareness is explained as well or better with prefrontal feedback switched off, while feedback within sensory cortex is needed."
 separates_from = [
-  { theory = "iit", how = "IIT places the substrate of experience mainly in posterior cortex, so feedback from prefrontal cortex is not needed for it (the site's inference from the registration's wording).", source = "cogitate-prereg-v1" },
+  { theory = "iit", how = "IIT places the substrate of experience mainly in posterior cortex, so feedback from prefrontal cortex is not needed for it (inferred here from the registration's wording, not stated by its proponents).", source = "cogitate-prereg-v1" },
 ]
 
 [[prediction]]
@@ -189,6 +189,9 @@ first_stated = { source = "albantakis-2023", date = "2023-10-17", passage = "A f
 test_for = "Measures of integrated information, or validated proxies for it, are high in waking and dreaming and low in dreamless sleep and anaesthesia."
 test_against = "Such measures are as high in dreamless sleep or anaesthesia as in waking."
 separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory also predicts that the workspace is disrupted in anaesthesia, sleep and disorders of consciousness.", source = "mashour-2020" },
+]
 note = "Global workspace theory also predicts that the workspace is disrupted in anaesthesia, sleep and disorders of consciousness (mashour-2020, section 'Global Neuronal Workspace and the Level of Consciousness'), so this prediction may not separate the two. Left for the testability reading."
 
 [[prediction]]
@@ -235,6 +238,7 @@ note = "Separation inferred by the site."
 id = "iit-feedforward"
 theory = "iit"
 core_claim = "iit-c4"
+questions = ["machines"]
 statement = "A machine built from feed-forward hardware has no experience, however human its behaviour."
 stated_by = "proponent"
 first_stated = { source = "albantakis-2023", date = "2023-10-17", passage = "Accordingly, artificial systems powered by super-intelligent computer programs, but implemented by feed-forward hardware or encompassing critical bottlenecks, would experience nothing (or nearly nothing) because they have the wrong kind of physical architecture, even though they may be behaviorally indistinguishable from human beings", location = "section 'Conclusions'" }
@@ -266,6 +270,7 @@ note = "The page names a losing condition but no observation or study design tha
 id = "sh-split-novel"
 theory = "sh"
 core_claim = "sh-c2"
+questions = ["features"]
 statement = "Cutting the copies of a system's own commands off from its senses, while the commands still work, leaves practised single actions running, makes the system lose track of which changes it caused, and also degrades its response to new events in the world, including ones that have nothing to do with it; and this loss differs from what losing feedback alone does."
 stated_by = "proponent"
 first_stated = { source = "sh-positions", date = "2026-10-24", passage = "Remove the split, meaning cut the copies of the system’s own commands off from its senses while leaving the commands themselves working, and the prediction is three things. Practised single actions carry on. The system loses track of which changes it caused. And, the part no one has yet tested, its response to new events in the world, including ones that have nothing to do with it, degrades too.", location = "split position, What it rests on" }
@@ -275,7 +280,7 @@ also_stated = [
 test_for = "After the cut, response to new, unrelated events in the world degrades, in a way that differs from cutting off feedback alone, while practised single actions carry on."
 test_against = "After the cut, response to new events in the world carries on as before."
 separates_from = []
-note = "No rival on the pilot's list says anything about cutting the copies of a system's own commands, so any separation is the site's inference; it is left to the testability readings. The first two parts are reported as seen in monkeys (Sommer and Wurtz 2002 and 2004; Cavanaugh and colleagues 2016, as cited on the page); the third, the distinguishing part, is untested."
+note = "No rival on the pilot's list says anything about cutting the copies of a system's own commands, so any separation would be inferred here, not stated by a rival's proponents; it is left to the testability readings. The first two parts are reported as seen in monkeys (Sommer and Wurtz 2002 and 2004; Cavanaugh and colleagues 2016, as cited on the page); the third, the distinguishing part, is untested."
 
 [[prediction]]
 id = "sh-nosplit-flexible"
@@ -292,6 +297,7 @@ separates_from = []
 id = "sh-enriching"
 theory = "sh"
 core_claim = "sh-c3"
+questions = ["features"]
 statement = "Removing a boundary, mattering, self-awareness or kept memory makes experience poorer but does not switch it off."
 stated_by = "proponent"
 first_stated = { source = "sh-positions", date = "2026-10-24", passage = "If removing one of the four features I call enriching turned out to switch experience off, that feature would move from enriching to required.", location = "map position, What would change my mind" }
@@ -306,6 +312,7 @@ note = "Damasio's theory is on the ruled list of ten but is not in this pilot; i
 id = "sh-no-bare-awareness"
 theory = "sh"
 core_claim = "sh-c4"
+questions = ["features"]
 statement = "No experience is wholly without structure: removing senses, memory and self never leaves a bare awareness with nothing on one of the three axes."
 stated_by = "proponent"
 first_stated = { source = "sh-positions", date = "2026-10-24", passage = "If a subtraction ever reached experience with no structure at all, a bare awareness, the judgment above would be wrong.", location = "fades-or-not position, What would change my mind" }
@@ -316,3 +323,912 @@ test_for = "Every case examined of reported 'pure' or 'contentless' awareness st
 test_against = "A well-attested case of experience with nothing on one of the three axes."
 separates_from = []
 note = "Integrated information theory also holds that every experience is structured (albantakis-2023, Introduction: every experience is 'structured (composition)'), so this prediction is shared with at least one rival."
+
+# ======================================================================
+# Stage 3, Higher-order theories: drafted 2026-11-21 (first reading, one reader).
+# Predictions of higher-order theories (stage 3 draft, 2026-11-21). Each is tied to one
+# core claim (theory.toml) and dated by the earliest proponents' publication opened in
+# this task that states it. Every one is stated by proponents; none is site-inferred.
+# Core claim hot-c2 (the transitivity principle) has no prediction: see notes.md.
+# Whether a prediction could fail and separates is a judgement (judgements.toml); the
+# fields here record what the sources say.
+
+[[prediction]]
+id = "hot-first-order-insufficient"
+theory = "hot"
+core_claim = "hot-c1"
+statement = "Activity in sensory cortex that carries a stimulus, including activity fed back within sensory cortex, can occur while the person does not experience the stimulus; sensory activity alone does not make an experience."
+stated_by = "proponent"
+first_stated = { source = "ledoux-brown-2017", date = "2017-02-15", passage = "For example, when self-reports of the stimulus are compromised by using subliminal stimulation procedures, such as masking (63), areas of the visual cortex (including primary and secondary areas) are functionally active, but when participants are able to consciously report seeing a visual stimulus, additional cortical areas become active", location = "section 'Neural Correlates of Reportable Conscious Experiences', first paragraph" }
+also_stated = [
+  { source = "ledoux-brown-2017", passage = "In contrast, David Rosenthal and other higher-order theorists argue that a first-order state resulting from stimulus-processing alone is not enough to make possible the conscious experience of a stimulus" },
+  { source = "brown-lau-ledoux-2019", passage = "It is known that subliminal or unconscious stimulation also engages similar sensory circuits as consciously experienced stimuli [76]. Also, ongoing spontaneous activity in the very same neurons giving rise to normal perception is typical unconscious [77]. One possibility is that such activity has to reach a certain threshold [59], or that it has to achieve a right sort of dynamic profile [58, 77], such as involving feedback to V1. But patients with damage to V1 can still have visual experiences [18, 78]." },
+]
+test_for = "Stimulus-specific activity in sensory cortex, including feedback (recurrent) activity between sensory areas, is found on trials where the person reports no experience of the stimulus and cannot tell it apart from no stimulus."
+test_against = "Whenever feedback activity between sensory areas carrying a stimulus is present, the person experiences the stimulus, and whenever it is absent they do not, with no further area needed to predict experience."
+separates_from = [
+  { theory = "rpt", how = "Recurrent processing theory holds that feedback between visual areas is enough for experience, with nothing beyond visual cortex needed.", passage = "2. Recurrent processing between visual areas suffices for conscious visual experience to arise.", source = "lamme-2018" },
+]
+note = "The 2017 passage reports evidence and does not name feedback; the 2019 passage raises feedback to V1 as one possibility and answers it with V1 damage, not with a stated observation. The recurrent part of the test wording is therefore the firmest in Lamme's statement of the opposite, and the weakest in the proponents' own."
+
+[[prediction]]
+id = "hot-unconscious-global"
+theory = "hot"
+core_claim = "hot-c3"
+statement = "Information about a stimulus can be represented widely across the brain, prefrontal and parietal cortex included, and stay stable there, while the person does not experience the stimulus."
+stated_by = "proponent"
+first_stated = { source = "brown-lau-ledoux-2019", date = "2019-01-07", passage = "Therefore, a percept can reach a relatively stable global state and remain nonconscious, which accounts for potentially powerful forms of unconscious perception", location = "preprint p. 6, section 'Misconception 4', second paragraph" }
+also_stated = [
+  { source = "brown-lau-ledoux-2019", passage = "The contrary may also occur: some information may be globally broadcasted but the phenomenology of normal conscious perception may be missing." },
+]
+test_for = "The content of stimuli that people report not seeing, and cannot discriminate better than chance, is decodable or represented in prefrontal or parietal cortex as well as in sensory cortex."
+test_against = "In designs sensitive enough to find stimulus content in prefrontal and parietal cortex when it is seen, the content of unseen stimuli is found only in sensory cortex, or only as a brief signal that fades."
+separates_from = [
+  { theory = "gwt", how = "Global workspace theory holds that wide availability of information is what constitutes experience, and that unseen stimuli give only a decaying wave of activity in higher areas, not a sustained, widespread one.", passage = "Broadcasting implies that the information in the workspace becomes available to many local processors, and it is the wide accessibility of this information that is hypothesized to constitute conscious experience.", source = "mashour-2020" },
+  { theory = "gwt", how = "The same source on unseen stimuli.", passage = "The difference, however, is that subliminal stimuli do not evoke a sudden ignition but rather a slowing, decaying wave of activity.", source = "mashour-2020" },
+]
+note = "The prediction says what can happen, not what must. A study showing it once supports it; studies failing to show it count against it only weakly. This is part of its testability reading."
+
+[[prediction]]
+id = "hot-pfc-involved"
+theory = "hot"
+core_claim = "hot-c4"
+statement = "Consciously perceiving something, compared with the same stimulus not perceived, involves prefrontal cortex (with parietal and insular cortex) acting on the sensory representation, also when the person does not have to report the stimulus."
+stated_by = "proponent"
+null_excused = { by = "brown-lau-ledoux-2019", why = "The proponents' 2019 statement says a null result from a coarse method should not be generalised (and Fleming 2020 that null lesion results should not surprise); written before every study judged against this prediction. Scores 0.5 on testability (John, 2026-11-21, 'Add the half-score line')." }
+first_stated = { source = "ledoux-brown-2017", date = "2017-02-15", passage = "our conclusion is that introspectively accessed states, which we view as phenomenally conscious experiences, are best described in terms of HORs that depend on the GNC, cortical circuits involving regions of the lateral and medial prefrontal cortex, posterior parietal cortex, and insular cortex (Fig. 2).", location = "section 'First-Order vs. Higher-Order Theories of Consciousness', last paragraph (HORs: higher-order representations; GNC: general networks of cognition)" }
+also_stated = [
+  { source = "ledoux-brown-2017", passage = "Consciousness involves complex interactions between circuits in the GNC and sensory cortex, as well as other areas (especially those involved in memory)." },
+  { source = "brown-lau-ledoux-2019", passage = "But it is a mistake to generalize from these null findings, because studies using more sensitive methods showed clear involvement of higher-order mechanisms, even when the subjects were not required to report about the stimuli [71-73]." },
+  { source = "brown-lau-ledoux-2019", passage = "Despite these differences between theories, virtually no current proponents of HOT assume that one is ‘more conscious’ whenever there is more PFC activity." },
+]
+test_for = "With stimuli matched and no report required, prefrontal cortex carries information about, or interacts with sensory cortex over, the stimuli that are consciously perceived, more than for the same stimuli not perceived."
+test_against = "With stimuli matched and no report required, awareness-related differences are confined to sensory cortex, and prefrontal cortex shows no awareness-related information or interaction by a method shown to be sensitive enough to find prefrontal effects in the same data."
+separates_from = [
+  { theory = "rpt", how = "Recurrent processing theory says fronto-parietal activity adds the ability to report and manipulate what is seen, not the seeing itself.", passage = "Adding more widespread recurrent interactions—including fronto-parietal activation—may give you the ability to cognitively manipulate and report the conscious visual percept, but this is not explaining the unconscious/conscious transition itself [60].", source = "lamme-2018" },
+  { theory = "iit", how = "Integrated information theory's proponents place the neural correlates of consciousness mainly in a posterior hot zone, with prefrontal cortex the point of disagreement with global workspace theory.", passage = "In contrast, an auxiliary prediction of IIT states that the NCC is primarily localized to the posterior hot zone.", source = "cogitate-protocol-2023" },
+]
+note = "Shared with global workspace theory, which also predicts prefrontal involvement (mashour-2020), so it separates the family from recurrent processing and integrated information theory but not from the workspace. The 2019 passages narrow what counts against it: a null result from a plain activation contrast is not, in the proponents' own words, enough. The test wording follows that, which is why test_against asks for a method shown to be sensitive."
+
+[[prediction]]
+id = "hot-pfc-disrupt"
+theory = "hot"
+core_claim = "hot-c4"
+statement = "Disrupting prefrontal (or prefrontal and parietal) cortex weakens conscious awareness of visual stimuli, as shown in how people rate their awareness and how well those ratings track their accuracy, while their ability to discriminate the stimuli can stay the same."
+stated_by = "proponent"
+null_excused = { by = "brown-lau-ledoux-2019", why = "The proponents' 2019 statement says a null result from a coarse method should not be generalised (and Fleming 2020 that null lesion results should not surprise); written before every study judged against this prediction. Scores 0.5 on testability (John, 2026-11-21, 'Add the half-score line')." }
+first_stated = { source = "ledoux-brown-2017", date = "2017-02-15", passage = "Although the imaging studies in healthy people and blindsight patients suggest correlates of consciousness, other studies show that disruption of activity in GNC areas, especially in the prefrontal or parietal cortex, impairs conscious awareness of visual stimuli (78–80).", location = "section 'Neural Correlates of Reportable Conscious Experiences', first paragraph" }
+also_stated = [
+  { source = "brown-lau-ledoux-2019", passage = "In part this was due to an empirical observation: when neural activity in prefrontal cortex, which is known to be important for conscious perception [46], is manipulated with transcranial magnetic stimulation (TMS), explicit metacognition is also affected [47-49]." },
+  { source = "fleming-2020", passage = "Thus, it may be possible to silence or otherwise inactivate the neural substrates of an awareness state without affecting performance—a type of blindsight (Weiskrantz 1999; Del Cul et al. 2009)." },
+  { source = "fleming-2020", passage = "However, to the extent that this network is flexible in its functional contribution to higher cognition, showing both ‘multiple demand’ characteristics (Duncan 2010) and mixed selectivity (Mante et al. 2013), we should also not be surprised by null results, given that single lesions may belie redundancy in its contribution to awareness (Michel and Morales 2019)." },
+]
+test_for = "After prefrontal disruption (lesion, magnetic stimulation), awareness ratings fall, or their match to accuracy (metacognitive efficiency) worsens, compared with a control site, while discrimination performance is unchanged."
+test_against = "After prefrontal disruption, with discrimination performance held steady, awareness ratings and their match to accuracy are unchanged compared with a control site, with evidence for no effect rather than only a failure to find one."
+separates_from = [
+  { theory = "rpt", how = "Recurrent processing theory says fronto-parietal activity is not what makes the difference between seen and unseen, so disrupting it should affect report, not seeing (the site reads the passage as implying this for disruption).", passage = "Adding more widespread recurrent interactions—including fronto-parietal activation—may give you the ability to cognitively manipulate and report the conscious visual percept, but this is not explaining the unconscious/conscious transition itself [60].", source = "lamme-2018" },
+  { theory = "iit", how = "Integrated information theory's proponents place the correlates of consciousness mainly in posterior cortex (the site reads this as implying prefrontal disruption need not change experience).", passage = "In contrast, an auxiliary prediction of IIT states that the NCC is primarily localized to the posterior hot zone.", source = "cogitate-protocol-2023" },
+]
+note = "The 2017 passage is written as a report of evidence that the authors take as support, which commits them to the result going this way. The 2019 statement says metacognition is not the same thing as consciousness, so ratings and metacognitive efficiency are measures the proponents themselves use as tools, not definitions. Fleming 2020 says in advance that null results should not surprise, which weakens what counts against it."
+
+[[prediction]]
+id = "hot-awareness-performance"
+theory = "hot"
+core_claim = "hot-c5"
+statement = "How aware a person is of a stimulus can change while their first-order performance (how well they detect or discriminate it) stays the same."
+stated_by = "proponent"
+first_stated = { source = "brown-lau-ledoux-2019", date = "2019-01-07", passage = "According to HOT, on the other hand, a mere difference in the higher-order state determines whether a nonconscious perceptual process is consciously experienced or not, independent of the nature of the first-order process itself", location = "preprint p. 6, section 'Misconception 4', second paragraph" }
+also_stated = [
+  { source = "fleming-2020", passage = "Second, the model predicts that awareness reports (but not discrimination performance, which relies on lower-order inference on W) will depend on higher-order states." },
+]
+test_for = "With discrimination performance held equal across conditions (by matching stimuli or adjusting difficulty), awareness ratings, or how well they track accuracy, differ between conditions."
+test_against = "Whenever discrimination performance is held equal, awareness ratings and their match to accuracy are also equal across every manipulation tried."
+separates_from = []
+note = "No rival proponents' passage opened in this task predicts the opposite (that awareness cannot change while performance is matched). The higher-order statement itself says global workspace theory ties consciousness to better performance ('consciousness is associated with important functional advantages'), but that is the higher-order side describing its rival, which ruling C does not accept. LeDoux and Brown 2017 cite blindsight and relative blindsight as evidence of the same kind."
+
+# ======================================================================
+# Stage 3, Recurrent processing theory: drafted 2026-11-21 (first reading, one reader).
+# Predictions of recurrent processing theory, drafted 2026-11-21. Each is tied to
+# one core claim (theory.toml). first_stated is the earliest publication by the
+# theory's proponent that this session opened and that states it (opened: lamme-2006,
+# lamme-2010, lamme-2018, lamme-2020). Shape as data/tracker/predictions.toml.
+# Whether a prediction could fail and separates is judged in judgements.toml.
+
+[[prediction]]
+id = "rpt-ff-unseen"
+theory = "rpt"
+core_claim = "rpt-c1"
+statement = "A stimulus whose processing is cut off before recurrent processing can start (for example by a strong mask shown right after it) is not seen, even though its signals still reach high-level and prefrontal areas and can still affect behaviour."
+stated_by = "proponent"
+first_stated = { source = "lamme-2006", date = "2006-09-25", passage = "Many studies, in both humans and monkeys, indicate that no matter what area of the brain is reached by the feedforward sweep, this in itself is not producing (reportable) conscious experience.", location = "p. 497, section 'From neural activation to visual experience'" }
+also_stated = [
+  { source = "lamme-2006", passage = "A neural argument against the former would be that activation of cortical neurons per se, even activation of frontoparietal neurons, is insufficient for conscious experience, as is shown by various masking experiments" },
+  { source = "lamme-2010", passage = "Apparently, a feedforward convergence of information towards the prefrontal cortex in itself is not yielding any conscious sensation, even when this information activates processes such as control and inhibition." },
+  { source = "lamme-2018", passage = "In short, when visual processing is artificially restricted to the feedforward sweep, it appears that features are extracted and that potential motor responses are activated yet that people remain completely unconscious of these events or of the visual stimulus that has set them in motion." },
+]
+test_for = "A masked stimulus that people cannot detect above chance still evokes activity in high-level visual or prefrontal areas, or still changes behaviour (for example slows a response), while the late recurrent signals in visual cortex are absent."
+test_against = "A stimulus whose processing has been restricted to the first forward pass (recurrent signals in visual cortex shown to be absent) is nonetheless detected and reported as seen."
+separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory also holds that unseen stimuli can produce long-lasting activations without becoming conscious.", source = "mashour-2020" },
+]
+note = "Global workspace theory's proponents also hold that unseen (subliminal) stimuli can produce long-lasting activations without ignition (mashour-2020: 'Unseen, subliminal stimuli may also result in a long series of evoked brain activations'), so no rival found predicting the opposite."
+
+[[prediction]]
+id = "rpt-feedback-needed"
+theory = "rpt"
+core_claim = "rpt-c2"
+statement = "Disrupting the signals that higher visual areas send back to early visual cortex (with a magnetic pulse at the right moment, with masking, or with anaesthesia) takes away seeing, while the first forward signals are left largely intact."
+stated_by = "proponent"
+first_stated = { source = "lamme-2006", date = "2006-09-25", passage = "TMS over the occipital cortex at ~100 ms after stimulus onset disrupts visual awareness.", location = "p. 495, Table 1, row 'Transcranial magnetic stimulation (TMS)', whose conclusion column reads 'The NCC is feedback or reentrant processing.'", note = "The extracted text shows the '~' as a font code; the printed table reads '~100 ms'." }
+also_stated = [
+  { source = "lamme-2010", passage = "The FFS activation of the mask prevents RP for the target stimulus, which then becomes invisible" },
+  { source = "lamme-2018", passage = "They are abolished in anaesthesia, while feedforward processing is not [40,41]." },
+]
+test_for = "Seeing fails when late feedback signals into early visual cortex are disrupted (by a well-timed pulse, a mask or anaesthesia), while early forward responses are unchanged."
+test_against = "Seeing survives when feedback into early visual cortex has been shown to be abolished, with forward signals intact."
+separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory also ties conscious access to recurrent processing, including in primary visual cortex.", source = "mashour-2020" },
+]
+note = "Global workspace theory's proponents also tie conscious access to recurrent processing (mashour-2020: 'a non-linear network ignition associated with recurrent processing'; 'In agreement with the GNW, the effects of recurrent processing are indeed most pronounced in layers II/III and V of the primary visual cortex'), so this prediction is shared."
+
+[[prediction]]
+id = "rpt-van"
+theory = "rpt"
+core_claim = "rpt-c2"
+statement = "In scalp EEG, seeing a stimulus first shows up as a negative wave over the back of the head about 200 ms after it appears (the 'visual awareness negativity'), the typical timing of recurrent processing in visual cortex, before the late positive wave (the P300) that comes with access and report."
+stated_by = "proponent"
+first_stated = { source = "lamme-2018", date = "2018-07-30", passage = "Various manipulations of conscious perception consistently show to influence EEG activity in the 200 ms latency range—known as the visual awareness negativity (VAN)—which is the typical latency of recurrent visual processing [46].", location = "section 3, 'Where does the magic happen?', paragraph beginning 'Ample evidence emphasizes the importance of these recurrent interactions'" }
+also_stated = [
+  { source = "lamme-2018", passage = "In sum, recurrent interactions between visual neurons expressed as contextual modulation at the single neuron level or as 200 ms latency EEG signals (VAN) or PPI in humans, is crucial for the emergence of conscious experience." },
+  { source = "lamme-2018", passage = "Eventually, recurrent interactions spread through the whole brain, causing ‘global ignition’. At the neural level this is expressed in P300 responses, and the involvement of fronto-parietal areas. The result is access (A-) consciousness" },
+]
+test_for = "With the stimulus matched, seen and unseen visual stimuli differ in a negative wave over posterior (visual) scalp sites in roughly the 150 to 300 ms window, beginning before any late positive difference."
+test_against = "With the stimulus matched, no awareness-related difference appears before the late positive wave: the first reliable difference between seen and unseen stimuli comes after about 300 ms."
+separates_from = [
+  { theory = "gwt", how = "Global workspace theory's proponents place conscious appraisal in late events, the P300 above all, and say the first 200 ms can be the same whether or not a stimulus is consciously perceived.", source = "mashour-2020", passage = "The first 200 ms of brain activity, corresponding to early perceptual processing, can be fully preserved on trials without conscious perception, particularly under inattention conditions. Instead, conscious appraisal correlates with late events that typically lag stimulus onset by at least 200 ms, such as the P300 or “late-positive” component of scalp-event-related potentials." },
+]
+note = "The separation is weaker than it looks. The same review (mashour-2020) grants that the visual awareness negativity 'is also often observed when contrasting conscious to unconscious stimuli' and reads it as possibly a state of 'information accessibility' rather than seeing; its 'at least 200 ms' overlaps the negativity's 200 to 260 ms. Left to the testability reading, marked unsure. Lamme's 2018 paper also says that inattention manipulations, the attentional blink among them, 'typically leave early recurrent signals relatively intact', which pulls against this prediction for that paradigm (see com-eiserbeck-rpt-van)."
+
+[[prediction]]
+id = "rpt-no-report-sensory"
+theory = "rpt"
+core_claim = "rpt-c3"
+statement = "When a person sees something they do not have to report or act on, the activity that marks the seeing is recurrent processing in the sensory areas; activity in the front and top of the brain (fronto-parietal areas), and the late P300 wave, come with reporting and using the stimulus, not with seeing it."
+stated_by = "proponent"
+first_stated = { source = "lamme-2010", date = "2010-08-18", passage = "RP in Stage 3 is limited to visual areas, and hence cannot directly influence motor control and other functions necessary for direct report.", location = "p. 219, section 'Why not both?'" }
+also_stated = [
+  { source = "lamme-2010", passage = "There are however no reasons whatsoever to assume that taking away the modules that enable access and report (Stage 3) also takes away the visual phenomenality." },
+  { source = "lamme-2018", passage = "Adding more widespread recurrent interactions—including fronto-parietal activation—may give you the ability to cognitively manipulate and report the conscious visual percept, but this is not explaining the unconscious/conscious transition itself [60]." },
+  { source = "lamme-2018", passage = "The neural correlates of such global availability are the involvement of fronto-parietal activation, and the later onset (P300) recurrent interactions [15]." },
+]
+test_for = "In a design where the stimulus is irrelevant to the task and nothing about it is reported, seen and unseen stimuli differ in sensory cortex but not reliably in fronto-parietal cortex or in the late positive wave; those later differences appear when the stimulus has to be reported or used."
+test_against = "In such a design, seeing is reliably accompanied by fronto-parietal activation or a late positive wave, or awareness is explained only when feedback from prefrontal cortex is kept while feedback within sensory cortex can be removed."
+separates_from = [
+  { theory = "gwt", how = "Global workspace theory's proponents say the late, widespread divergence between conscious and unconscious trials occurs whatever the sense or the way consciousness is manipulated, inattention included.", source = "mashour-2020", passage = "This non-linear divergence occurs regardless of the stimulus modality or paradigm used to manipulate consciousness (e.g., reduced visibility, masking, inattention)." },
+]
+note = "Lamme's statements are about seeing. Whether they commit the theory to the same result in hearing is a reading; the commitment judgements on the two auditory studies say so. In inattentional blindness, Lamme holds that people who cannot report a stimulus may still have seen it (lamme-2010, p. 220: 'you don't remember having seen an object, but that does not imply you had no conscious visual sensation'), so an 'aware against unaware' contrast in that paradigm is not, for this theory, a clean seen-against-unseen contrast."
+
+[[prediction]]
+id = "rpt-unattended-local"
+theory = "rpt"
+core_claim = "rpt-c4"
+statement = "Stimuli that go unreported because attention was elsewhere (inattentional blindness, change blindness, the attentional blink) still evoke recurrent processing within visual cortex; what the reported ones add is recurrent processing that spreads further, possibly into fronto-parietal areas, and the later brain responses that go with it."
+stated_by = "proponent"
+first_stated = { source = "lamme-2006", date = "2006-09-25", passage = "Another study (Figure 3) showed the presence of RP signals, while human subjects were in a state of inattentional blindness (IB) towards the objects inducing these signals. During IB, RP remained localized to visual areas. Objects were only reported when the signals showed more widespread interactions, possibly involving the frontoparietal network [16].", location = "p. 498, section 'An impossible question?'" }
+also_stated = [
+  { source = "lamme-2010", passage = "Subsequently, many objects will evoke RP that is limited to a few visual areas (Stage 3) (Landman et al., 2003b), while only some evoke widespread RP (Stage 4), like in global workspace activation (Dehaene et al., 2006)." },
+  { source = "lamme-2018", passage = "For example, when people fail to attend to stimuli, they will report not having seen them, as is the case in conditions like change blindness, inattentional blindness or the attentional blink. These manipulations typically leave early recurrent signals relatively intact, while selectively disrupting later recurrent signals (e.g. P300 or N400 EEG responses [48] [49], but see [50])." },
+  { source = "lamme-2020", passage = "However, when the Kanizsa stimuli were made “invisible” due to an attentional blink manipulation, the inference and integration related neural signals remained." },
+]
+test_for = "Unattended, unreported stimuli that were not masked still evoke signs of recurrent processing in visual cortex (figure-ground signals, early awareness-related negativity, feedback between visual areas) much like reported ones; reported ones differ mainly in later, more widespread activity."
+test_against = "Unattended stimuli that go unreported, without masking, show no signs of recurrent processing in visual cortex; early visual signals differ between reported and unreported stimuli as much as later ones do."
+separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory expects the same local recurrent loops for unattended stimuli and calls them preconscious.", source = "mashour-2020" },
+]
+note = "Global workspace theory's proponents predict the same observable pattern and call it 'preconscious' (mashour-2020: 'The early recurrent loops occur in lower areas and may correspond to VAN'; stimuli may be 'merely potentially visible but unattended'). The theories differ on whether such stimuli are experienced, not on what the instruments show, so no rival passage predicting a different observation was found. Lamme 2010 adds a caveat for the attentional blink: 'this only works when the sensation of T2 is wiped out by a following stimulus' (p. 220), that is, the blinked target is masked, which by rpt-ff-unseen would make it unseen."
+
+[[prediction]]
+id = "rpt-attention-independent"
+theory = "rpt"
+core_claim = "rpt-c6"
+statement = "Attending to a stimulus does not decide whether it is seen: an unattended stimulus can still be seen (its neural sign of seeing stays), and attention can act on a stimulus that is not seen."
+stated_by = "proponent"
+first_stated = { source = "lamme-2006", date = "2006-09-25", passage = "Elsewhere [10,33], I have shown how, from the neural perspective, attention and consciousness can be orthogonally defined as entirely separate neural processes.", location = "p. 500, section 'What do we lose, what do we gain...'" }
+also_stated = [
+  { source = "lamme-2010", passage = "by laying the unconscious and conscious processing divide between Stages 1/2 and 3/4 respectively, attention and consciousness (in the sense of phenomenality) become orthogonal and hence independent properties" },
+]
+test_for = "Manipulating attention changes report and the late brain responses, but leaves the neural sign of seeing (recurrent processing, the early awareness-related negativity) unchanged; and attention effects occur for stimuli that cannot be detected."
+test_against = "The neural sign of seeing appears only for attended stimuli and scales with attention."
+separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory also accepts attention without awareness and early processing preserved under inattention.", source = "mashour-2020" },
+]
+note = "Global workspace theory's proponents also accept attention without awareness ('Several studies have dissociated attention from awareness, for example, by demonstrating that attention can be summoned to a location by a subliminal cue') and say early processing is preserved under inattention (mashour-2020). Its difference from this theory is again over what to call the unattended state, so no rival passage predicting a different observation was found."
+
+[[prediction]]
+id = "rpt-other-senses"
+theory = "rpt"
+core_claim = "rpt-c5"
+statement = "Hearing works like seeing: being aware of a sound goes with recurrent processing in auditory cortex, showing as an early awareness-related wave over auditory areas, and needs no fronto-parietal activation when nothing is reported."
+stated_by = "site"
+first_stated = { source = "lamme-2010", date = "2010-08-18", passage = "Whether this produces a conscious sensation or not is determined by whether the areas involved engage in recurrent interactions.", location = "p. 219, section 'Ontological issues'", note = "The site's inference from this general claim. No opened publication by the theory's proponent states a prediction for hearing; the passage is about which 'cognitive module' is active, not about senses." }
+test_for = "Heard and unheard sounds, physically the same, differ early in auditory cortex (an auditory awareness negativity, or auditory-cortex activity), and, when the sounds are not reported, not in fronto-parietal cortex."
+test_against = "Awareness of sounds that are not reported goes with reliable fronto-parietal activation, or with no early difference in auditory cortex."
+separates_from = [
+  { theory = "gwt", how = "Global workspace theory's proponents tie crossing the threshold of auditory as well as visual awareness to the late P300 and say the late divergence occurs whatever the sense.", source = "mashour-2020", passage = "For instance, the crossing of the threshold for auditory or visual conscious perception is associated with a sudden increase in the P300 component, and only this component vanishes almost entirely under inattention conditions or during sleep." },
+]
+note = "Site-inferred, so it counts half for testability and, under rule D, can never count for a study: no proponent fixed it. Recorded because three of the five screened studies are about hearing, and their authors read the theory this way (dellert-2025 describes it as holding that 'localized re-entrant activity within sensory cortices is sufficient')."
+
+# ======================================================================
+# Stage 3, Anil Seth's living-body view: drafted 2026-11-21 (first reading, one reader).
+# Predictions of Anil Seth's living-body view, drafted 2026-11-21. Same shape as
+# data/tracker/predictions.toml. Each is tied to one core claim (theory.toml).
+# Core claim seth-c6 (life without consciousness) has no prediction: the source
+# declines to say what separates conscious from non-conscious life ("This raises
+# the challenging question of what distinguishes conscious from non-conscious living
+# systems. I will not address this here", seth-2025, section 4.5).
+# ------------------------------------------------------------------ the life claim
+
+[[prediction]]
+id = "seth-living-only"
+theory = "seth"
+core_claim = "seth-c1"
+questions = ["machines", "features"]
+statement = "Consciousness is found only in living systems: a system that is not alive, however capable, is not conscious."
+stated_by = "proponent"
+first_stated = { source = "seth-2025", date = "2025-04-21", passage = "There are good reasons to think that consciousness may not be possible at all in conventional AI systems, and there are at least some good (non-vitalistic) reasons to suppose that consciousness may be a property of, and perhaps only of, living systems.", location = "section 7.0 'Conclusions', second paragraph" }
+first_public_note = "The PsyArXiv preprint (version 1) was created 2024-06-30; the passage was checked only in the file now attached to that version, dated December 2024 (sources.toml, seth-2025)."
+test_for = "An agreed test for consciousness, applied to living and non-living systems, finds it only in living ones."
+test_against = "An agreed test for consciousness finds it in a system that is not alive (for example a non-living machine)."
+separates_from = [
+  { theory = "iit", how = "Integrated information theory applies to any system with the right cause-and-effect structure, whatever it is made of, and its proponents see no reason why bodily, living features would be needed.", source = "findlay-2024", passage = "this formulation can be applied, in principle, whenever an adequate causal model of a system is available, irrespective of what it is made of—neurons or transistors—and irrespective of its functions." },
+  { theory = "ast", how = "Attention schema theory's proponent says a machine buildable with current technology could believe and act as if it is conscious in the same sense a human does.", source = "graziano-2017", passage = "Such a machine would “believe” it is conscious and act like it is conscious, in the same sense that the human machine believes and acts." },
+]
+note = "The source itself says no test exists yet: 'We also lack reliable tests for the presence of consciousness beyond consensus cases in humans and (perhaps) some other animals' (seth-2025, section 6.0). It names cerebral organoids as 'an interesting test case' (section 5.7) without saying which way they should come out."
+
+[[prediction]]
+id = "seth-ai-not-by-computation"
+theory = "seth"
+core_claim = "seth-c5"
+questions = ["machines"]
+statement = "Conventional AI will not become conscious by getting more capable or by running the right computations; consciousness will not arrive as a side effect of intelligence."
+stated_by = "proponent"
+first_stated = { source = "seth-2025", date = "2025-04-21", passage = "Consciousness will not just come along for the ride as AI gets smarter, despite the pull of our anthropocentric and anthropomorphic biases.", location = "section 7.0 'Conclusions', second paragraph" }
+test_for = "An agreed test for consciousness finds none in conventional AI systems, however capable they become."
+test_against = "An agreed test for consciousness finds it in a conventional (non-living, digital) AI system."
+separates_from = [
+  { theory = "ast", how = "Attention schema theory's proponent proposes the theory as a basis for building machines that are conscious in the sense humans are, with current technology.", source = "graziano-2017", passage = "Given current technology, it should be possible to build a machine that contains a rich internal model of what consciousness is, attributes that property of consciousness to itself and to the people it interacts with, and uses that attribution to make predictions about human behavior." },
+]
+note = "Integrated information theory's proponents agree that a conventional digital computer would not be conscious however well it simulates a brain (findlay-2024 abstract), so integrated information theory is not named as a rival here."
+
+# ------------------------------------------------- the workings: best guesses
+
+[[prediction]]
+id = "seth-expectation-speeds-access"
+theory = "seth"
+core_claim = "seth-c2"
+statement = "What a person expects shapes what they consciously perceive: an expected stimulus becomes conscious sooner than an unexpected one, and by the same reasoning an expected signal from inside the body is felt earlier than an unexpected one."
+stated_by = "proponent"
+first_stated = { source = "seth-2012", date = "2012-01-10", passage = "In the visual domain, expectations about upcoming sensory input reduce the latency of neuronal signatures differentiating seen and unseen stimuli (Melloni et al., 2011); in other words, expectations speed up conscious access. By analogy, an expected interoceptive signal may be perceived as occurring earlier than an unexpected interoceptive signal.", location = "section 'Summary', third paragraph" }
+test_for = "Stimuli the person was led to expect are reported, or show the brain's seen-versus-unseen difference, earlier than the same stimuli unexpected; or a heartbeat-timed signal that is expected is judged earlier than one that is not."
+test_against = "With expectation manipulated and the stimuli physically the same, expected stimuli become conscious no sooner (or later) than unexpected ones."
+separates_from = []
+note = "The visual half cites another group's result (Melloni et al. 2011) as already found; the interoceptive half is the proponents' own new prediction. No opened publication by a rival's proponents predicts that expectation does not speed conscious access."
+
+# ------------------------------------- the body in experience: presence and ownership
+
+[[prediction]]
+id = "seth-presence-match"
+theory = "seth"
+core_claim = "seth-c3"
+statement = "The sense of presence (that oneself and the world are real and here) is strongest when the body's actual signals match what the brain predicted them to be; making those predictions imprecise lowers presence, while simply raising the mismatch raises anxiety instead."
+stated_by = "proponent"
+first_stated = { source = "seth-2012", date = "2012-01-10", passage = "The core concept of the model is that a sense of presence arises when informative interoceptive prediction signals are successfully matched to inputs so that prediction errors are suppressed.", location = "section 'An Interoceptive Predictive-Coding Model of Conscious Presence', first paragraph" }
+also_stated = [
+  { source = "seth-2012", passage = "A basic prediction of the model is that artificially induced imprecision in interoceptive predictions should lead to diminished conscious presence and abnormal AIC activity; by contrast, simple elevation of interoceptive prediction error signals should lead instead to increased anxiety." },
+  { source = "seth-2012", passage = "(iii) to correlate subjective disturbances in presence with experimental manipulations of interoceptive predictions and prediction errors." },
+  { source = "seth-2012", passage = "Manipulations of top-down expectations could be achieved by modifying the context in which subjects are tested. For example, expectations about self-generated versus externally caused action can be manipulated by introducing a confederate as a potential actor in a two-player game (Wegner, 2004; Farrer et al., 2008) or by explicitly presenting emotionally salient stimuli to induce explicit expectations of interoceptive responses." },
+]
+test_for = "When people's expectations of how their body will respond are manipulated, presence is higher when what they then feel matches what they expected, and lower when it does not, in either direction."
+test_against = "Presence does not depend on the match between expected and felt bodily response, or a mismatch in one direction raises presence as reliably as a match does."
+separates_from = []
+note = "'Presence' is the paper's term; 'AIC' is the anterior insular cortex, the brain region the model names as the comparator."
+
+[[prediction]]
+id = "seth-interoceptive-ownership"
+theory = "seth"
+core_claim = "seth-c3"
+statement = "Signals from inside the body take part in the feeling that a body part is one's own: combined with what is seen, they change how strongly a seen hand feels like one's own (for example, a seen hand that pulses in time with one's own heartbeat feels more one's own than one pulsing out of time)."
+stated_by = "proponent"
+first_stated = { source = "seth-2012", date = "2012-01-10", passage = "We believe considerable promise lies in integrating interoceptive predictive coding with existing proprioceptive and multisensory models of selfhood (Blanke and Metzinger, 2009; Tsakiris, 2010), potentially explaining the force of “interoceptive anchors” in grounding bodily experience.", location = "section 'Summary', last paragraph" }
+also_stated = [
+  { source = "seth-friston-2016", passage = "Illusions of body ownership, like the rubber hand illusion and the so-called ‘full body’ illusion, while normally induced by false visuo-tactile congruence, can also be induced by ‘cardio-visual’ feedback in which a virtual body (or body part) flashes in time with a participant's heartbeat [68,69]." },
+]
+test_for = "A seen hand (real, rubber or virtual) whose appearance changes in time with the person's heartbeat produces stronger ownership, by questionnaire or by drift in where they feel their real hand to be, than the same feedback out of time."
+test_against = "Heartbeat-timed and out-of-time feedback produce the same ownership, in a design that does produce the classic illusion with timed touch."
+separates_from = []
+shares_with = [
+  { theory = "damasio", how = "Damasio's theory also says interoceptive feelings underpin the sense of owning one's body.", source = "singer-damasio-2025" },
+]
+note = "The heartbeat-timing form is first written by the proponents in suzuki-2013, the study that tests it; the 2012 passage commits only to combining body signals with sight, touch and position. Damasio's own paper agrees that body signals underpin ownership ('Interoceptive feelings underpin the sense of direct ownership of the organism’s body', singer-damasio-2025), so Damasio's theory does not predict differently."
+
+[[prediction]]
+id = "seth-low-interoception-more-illusion"
+theory = "seth"
+core_claim = "seth-c3"
+statement = "People who sense their own body's signals less well lean more on what they see and feel on the skin, so illusions of body ownership driven by sight and touch (the rubber hand illusion) are stronger in them."
+stated_by = "proponent"
+first_stated = { source = "seth-2012", date = "2012-01-10", passage = "People with lower interoceptive predictive ability may more readily assimilate exteroceptive (e.g., correlated visual and tactile) cues in localizing interoceptive and proprioceptive signals, while people with good interoceptive predictive ability may rely less on these exteroceptive cues.", location = "section 'An Interoceptive Predictive-Coding Model of Conscious Presence', paragraph beginning 'As just mentioned'" }
+test_for = "Across people, lower accuracy at sensing one's own heartbeat goes with a stronger rubber hand illusion (more ownership, more drift) under synchronous seen-and-felt stroking."
+test_against = "Across people, higher accuracy at sensing one's own heartbeat goes with a stronger rubber hand illusion under synchronous stroking."
+separates_from = []
+note = "Offered in 2012 as the model's reading of an earlier finding by another group (Tsakiris et al. 2011: illusion susceptibility 'anticorrelated with interoceptive sensitivity'), which the passage says the model fits ('Consistent with our model')."
+
+# ------------------------------------------------- feelings as interoceptive inference
+
+[[prediction]]
+id = "seth-interoceptive-suppression"
+theory = "seth"
+core_claim = "seth-c4"
+statement = "Brain regions that handle signals from inside the body, the anterior insula above all, respond less to body signals that were well predicted and more when the prediction is violated."
+stated_by = "proponent"
+first_stated = { source = "seth-2012", date = "2012-01-10", passage = "A second basic prediction is that the AIC, as well as other areas involved in interoceptive processing, should show responses consistent with interoceptive predictive coding. For example, by analogy with studies of repetition suppression, AIC should show reduced responses for well predicted interoceptive signals and enhanced responses when expectations are violated.", location = "section 'Summary', third paragraph" }
+test_for = "Anterior insula (or another body-signal region) responds less to a body signal, or to a signal locked to one, when it is predictable, and more when it breaks the prediction."
+test_against = "No reduction for predictable body signals and no increase for violated ones, in a design that finds such effects for comparable outside-world signals."
+separates_from = []
+
+[[prediction]]
+id = "seth-feeling-from-prediction"
+theory = "seth"
+core_claim = "seth-c4"
+statement = "The emotion a person feels is set by the brain's predictions about the body, not by the body's signals alone, so changing what a person expects their body to be doing (for example with false heart-rate feedback) changes the emotion they feel even when the body does not change."
+stated_by = "proponent"
+first_stated = { source = "seth-2012", date = "2012-01-10", passage = "Extending these principles, in our model emotional content is determined by the nature of the predictive signals Ppred, and not simply by the “sensing” of interoceptive signals per se", location = "section 'An Interoceptive Predictive-Coding Model of Conscious Presence', third paragraph (not counting the figure caption)" }
+also_stated = [
+  { source = "seth-2012", passage = "In the presence component, prediction errors could be manipulated by subliminal presentation of emotive stimuli prior to target stimuli (Tamietto and de Gelder, 2010) or by false physiological feedback (Gray et al., 2007)." },
+]
+test_for = "Manipulating expected bodily state (false feedback, cues) with the actual bodily state held fixed changes reported emotion in the direction of the expectation."
+test_against = "With the actual bodily state held fixed, manipulating expected bodily state leaves reported emotion unchanged."
+separates_from = []
+note = "Damasio's own paper says feeling neurons 'interface directly with body structures and generate an actual mixture of signals from the body proper and the neurons themselves' (singer-damasio-2025), which leans away from feelings as predictions. It states no prediction about manipulated expectations, so under ruling C it is not counted as predicting differently. A candidate for John."
+
+# ======================================================================
+# Stage 3, Attention schema theory: drafted 2026-11-21 (first reading, one reader).
+# Attention schema theory: predictions, stage 3 draft, 2026-11-21.
+# first_stated is the earliest proponents' publication this session opened that
+# states the prediction. Earlier statements may exist in Graziano and Kastner 2011
+# and Graziano's 2013 book, which were not opened (verify list, v-ast-earlier).
+# Core claims ast-c4 and ast-c5 have no prediction: no opened proponents'
+# publication states a test for either (notes.md).
+
+[[prediction]]
+id = "ast-graded"
+theory = "ast"
+core_claim = "ast-c1"
+questions = ["fading"]
+statement = "Because awareness is a model of attention, and attention comes in degrees, awareness also comes in degrees: more attention on an item goes with more awareness of it, not an all-or-nothing switch."
+stated_by = "proponent"
+first_stated = { source = "graziano-webb-2015", date = "2015-04-23", passage = "A continuous scale for awareness is compatible with the attention schema theory. Attention can be graded, with more or less attention focused on an item, and therefore awareness, the internal model of attention, should also be graded.", location = "section 'Awareness', last paragraph" }
+test_for = "When the amount of attention on a stimulus is varied in steps (stimulus held the same), people's ratings of how clearly they saw it change in matching steps, with intermediate ratings common and tracking the intermediate amounts of attention."
+test_against = "With attention varied in steps and the stimulus held the same, awareness ratings are all-or-nothing (only 'not seen' or 'fully seen'), or do not change with the amount of attention, by a rating scale able to show intermediate states."
+separates_from = [
+  { theory = "gwt", how = "Global workspace theory's proponents hold that 'conscious access triggers an all-or-none change in the state of distributed cortical networks', and describe the conscious state as a stream of 'all-or-none conscious episodes'.", source = "dehaene-2014" },
+]
+note = "The global workspace passage is about the state of brain networks; whether it commits that theory to all-or-none reports of awareness is a judgement, left to the testability readings. The same paper also says 'the brain's very ability to host a ceaseless stream of such all-or-none conscious episodes'."
+
+[[prediction]]
+id = "ast-covary"
+theory = "ast"
+core_claim = "ast-c1"
+statement = "Awareness usually goes where attention goes. The two come apart mainly with dim or masked stimuli near the threshold of detection; attention without awareness is expected, while awareness without attention should be rare and, if it happens, hard to report."
+stated_by = "proponent"
+first_stated = { source = "graziano-webb-2015", date = "2015-04-23", passage = "Awareness then, if it is a model of attention, would be expected at least occasionally to become dissociated from attention. These dissociations are generally reported in tasks that involve very dim or masked stimuli at the threshold of detection.", location = "section 'Evidence Supporting the Attention Schema Theory: 1 ...', fifth paragraph" }
+also_stated = [
+  { source = "graziano-webb-2015", passage = "In the attention schema theory, while attention without awareness is predicted, awareness without attention is more complex and seems less likely, but is not entirely ruled out." },
+  { source = "graziano-2022", passage = "Attention and consciousness, however, can dissociate in cases of weak stimuli at the threshold of detection." },
+]
+test_for = "Across studies that measure both, attention and reported awareness agree for clear stimuli and come apart mainly near the detection threshold; cases of attention without reported awareness are common, reported awareness without attention is rare."
+test_against = "Attention and reported awareness come apart often with strong, clearly visible stimuli, or reported awareness of unattended items is as common as attention to items people are unaware of."
+separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory also says attention can work without awareness and that what attention selects enters consciousness.", source = "mashour-2020" },
+]
+note = "No opened rival source predicts the opposite. Global workspace theory's proponents also say attention can operate without awareness while 'the final result of attentional selection enters consciousness' (mashour-2020, section 'Global Neuronal Workspace, Attention, and the Content of Consciousness'), which is close to this. The 'not entirely ruled out' clause weakens the second half."
+
+[[prediction]]
+id = "ast-claims"
+theory = "ast"
+core_claim = "ast-c2"
+questions = ["machines"]
+statement = "A system that has a simplified model of its own attention, whose contents reach its thinking and speech, will say it has a non-physical inner awareness of what it attends to; the claim takes that form because the model leaves out the mechanism."
+stated_by = "proponent"
+first_stated = { source = "graziano-webb-2015", date = "2015-04-23", passage = "This brain would conclude that it possesses a fundamentally mysterious property: a mental possession of something, a subjective awareness.", location = "Figure 1 caption, part (B)" }
+also_stated = [
+  { source = "graziano-2022", passage = "Thus, any cognitive or linguistic access to an attention schema would result in people claiming to have an essentially nonphysical essence inside of them that can shift its state fluidly, take vivid mental possession of items, and empower oneself to decide and to act." },
+  { source = "graziano-2022", passage = "Fifth, an attention schema gives technologists a potential lead on constructing artificial consciousness: machines that believe, think, and claim to be conscious according to the same principles that people do, and that receive the same computational and behavioral benefit from it." },
+]
+test_for = "An artificial agent given a simplified model of its own attention, and a way to describe what that model contains, describes itself as having something that takes hold of items without any physical means; a matched agent without the model does not."
+test_against = "Such an agent describes its attention in mechanical terms, or a matched agent with no model of attention makes the same claims of inner awareness for the same reasons."
+separates_from = []
+note = "Integrated information theory's proponents say behaviour, however human-like, is no guide to experience (albantakis-2023, Conclusions: systems 'may be behaviorally indistinguishable from human beings' yet 'experience nothing'). That is a claim about experience, not about what the system will say, so it is not a different prediction about this test. Recorded with separates_from empty."
+
+[[prediction]]
+id = "ast-control"
+theory = "ast"
+core_claim = "ast-c3"
+statement = "Without awareness of an item, attention can still be drawn to it, but the brain's deliberate control of that attention (sustaining it, suppressing it, shifting it away) is impaired."
+stated_by = "proponent"
+first_stated = { source = "graziano-webb-2015", date = "2015-04-23", passage = "If awareness is an internal model of attention and is used to help control attention, then without awareness, attention should still be possible but it should suffer deficits in control.", location = "section 'Introduction', thirteenth paragraph (not counting figure captions); restated in the abstract" }
+also_stated = [
+  { source = "graziano-webb-2015", passage = "Regardless of the informational domain, the general prediction is the same: without awareness, attention should still be possible but should suffer a deficit in control." },
+  { source = "wilterson-2021-tpj", passage = "If awareness of item X is compromised, and the endogenous control of attention with respect to item X is normal, then AST is falsified." },
+  { source = "graziano-2022", passage = "Consciousness should be necessary for the control of attention." },
+]
+test_for = "With a stimulus made unreportable (for example by masking) while it still measurably draws attention, people cannot deliberately sustain, suppress or redirect attention with respect to it, although they can when they are aware of it."
+test_against = "With the stimulus unreportable and still drawing attention, deliberate control of attention with respect to it is as good as when people are aware of it."
+separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory predicts the same direction: attention cannot be directed to features that failed to enter consciousness.", source = "mashour-2020" },
+]
+note = "No opened rival source predicts that control is normal without awareness. Global workspace theory's proponents predict the same direction: 'subjects presumably could not direct feature-based attention to features that failed to enter consciousness' (mashour-2020, section 'Global Neuronal Workspace, Attention, and the Content of Consciousness'), so on this test the two theories agree. Koch and Tsuchiya 2007, by an integrated information theory proponent and cited by mashour-2020 as a review of studies separating attention from awareness, might say otherwise, but it was not opened (verify list, v-ast-rivals)."
+
+[[prediction]]
+id = "ast-schema-control"
+theory = "ast"
+core_claim = "ast-c3"
+statement = "A controller of attention that has a simplified model of its own attention controls attention better than one without, even when the information about where attention is is available to it in other ways."
+stated_by = "proponent"
+first_stated = { source = "graziano-webb-2015", date = "2015-04-23", passage = "We propose that the top–down control of attention is improved when the brain has access to a simplified model of attention itself.", location = "abstract" }
+also_stated = [
+  { source = "graziano-webb-2015", passage = "The brain must control attention in a task-relevant fashion, and that control of attention, according to the principles of control engineering, can be improved if the brain constructs a model of attention." },
+  { source = "graziano-2022", passage = "If AST is correct, then without an attention schema, the endogenous control of attention should be impaired (left branch of Fig. 1B)." },
+]
+test_for = "Removing or disabling the model of attention, in a brain or an artificial agent, while leaving attention itself working and its location recoverable from the input, clearly worsens the control of attention and the learning of it."
+test_against = "Removing or disabling the model of attention leaves control of attention, and learning to control it, as good as before."
+separates_from = []
+note = "This is a claim about control engineering, not about awareness itself; no opened rival source speaks to it."
+
+[[prediction]]
+id = "ast-tpj"
+theory = "ast"
+core_claim = "ast-c3"
+statement = "The temporoparietal junction (where the temporal and parietal lobes meet), especially on the right, is a key part of the network that builds the model of attention, so its activity tracks awareness and the awareness-dependent control of attention."
+stated_by = "proponent"
+first_stated = { source = "graziano-2018", date = "2018-03-27", passage = "I stand by the argument that, thus far, increasing evidence points to the TPJ as an important network node related to awareness, both one’s own awareness and attributing the property of awareness to others, without undercutting arguments for other nodes.", location = "last paragraph" }
+also_stated = [
+  { source = "wilterson-2021-tpj", passage = "We previously suggested (1, 2) that the temporoparietal junction (TPJ), especially the right TPJ, may play a central role in constructing an attention schema and using it to aid in the control of attention." },
+  { source = "graziano-2022", passage = "Presumably the same network is involved in many complex functions, but one role may be to build an attention schema, consistent with AST." },
+]
+test_for = "With attention matched, the right temporoparietal junction responds differently when people are aware of a stimulus than when they are not, and is engaged when awareness is used to control attention."
+test_against = "With attention matched, awareness makes no difference to right temporoparietal junction activity, or damage there leaves both awareness and the control of attention intact."
+separates_from = []
+note = "An anatomical, supporting prediction. The papers the 2021 study cites as first suggesting it (its references 1 and 2: Graziano and Kastner 2011; Graziano's 2013 book) were not opened. The 2018 passage ties the junction to awareness but not, in words, to the control of attention."
+
+[[prediction]]
+id = "ast-domain"
+theory = "ast"
+core_claim = "ast-c6"
+statement = "Awareness reaches exactly as far as attention does: any kind of information the brain can attend to, outside (the senses) or inside (thoughts, emotions, memories), can be something a person is aware of."
+stated_by = "proponent"
+first_stated = { source = "graziano-webb-2015", date = "2015-04-23", passage = "If awareness is a model of attention, then this model should pertain to the same domains of information to which attention pertains.", location = "abstract" }
+also_stated = [
+  { source = "graziano-webb-2015", passage = "Therefore awareness, the internal representation of attention, should apply to the same range of information." },
+]
+test_for = "Every kind of content shown to be selected by attention can also be reported as something one is aware of."
+test_against = "A kind of content that attention demonstrably selects but that people can never report being aware of, or a kind of content people report awareness of that attention never selects."
+separates_from = []
+note = "No opened rival source predicts a mismatch between the reach of attention and the reach of awareness."
+
+# ======================================================================
+# Stage 3, The sensorimotor theory: drafted 2026-11-21 (first reading, one reader).
+# Predictions of the sensorimotor theory (draft, stage 3, 2026-11-21). Shape as
+# data/tracker/predictions.toml. Each is tied to one core claim in theory.toml.
+#
+# Every prediction here is stated in oregan-noe-2001, the earliest proponents'
+# publication this task opened. Some were stated earlier by O'Regan and colleagues
+# (change blindness in particular: O'Regan 1992; Rensink, O'Regan and Clark 1997),
+# but those papers were not opened, so first_stated is 2001 (see verify.toml,
+# v-sm-earlier-statements). An earlier date could only help a study count, never hurt.
+#
+# Note the authors' own caution about what their data section is for, quoted so the
+# readers can weigh it: "the empirical data to be presented is not intended as a test
+# of the theory in the everyday sense in which theories are tested in science. We are
+# providing a general framework for the study of vision, and it is not possible to
+# subject a general framework to direct verification." (section 5.1)
+
+[[prediction]]
+id = "sm-colour-contingent"
+theory = "sensorimotor"
+core_claim = "sm-c1"
+statement = "If a colour patch is made to look red whenever a person looks straight at it and green whenever they look away (controlled by an eye tracker), then after training the person will come to see the central red and the peripheral green as the same colour."
+stated_by = "proponent"
+first_stated = { source = "oregan-noe-2001", date = "2001-10", passage = "The rather counterintuitive prediction from this is that after training in this situation, the observer should come to have the impression that green patches in peripheral vision and red patches in central vision are the same color.", location = "section 5.8 'Eye-position contingent perception', first paragraph" }
+also_stated = [
+  { source = "oregan-noe-2001", passage = "The “armchair” experiment with colour we mentioned in section 5.8 of the target article is another counterintuitive prediction which we are currently testing, and which has met with some success (O’Regan et al. 2001)." },
+]
+test_for = "After training in which a patch's colour changes with where the eyes point, people's colour judgements shift so that the colour shown in central vision and the different colour shown in the periphery are reported as more alike (or matched as the same) than before training, compared with an untrained or non-contingent control."
+test_against = "After training long enough to produce adaptation on other measures, people's judgements of the central and peripheral colours are unchanged compared with a control that saw the same colours without the link to eye position."
+separates_from = []
+note = "No rival on the list was found, in the rival proponents' sources opened here, stating what this experiment should show. The authors' response says they were testing it themselves (O'Regan et al. 2001, not opened); such a study would be run inside the theory's camp."
+
+[[prediction]]
+id = "sm-inversion"
+theory = "sensorimotor"
+core_claim = "sm-c1"
+statement = "When goggles turn the visual world upside down or left to right, the experience of seeing comes right piece by piece, one activity at a time, as the wearer relearns how sight changes with movement: during adaptation one aspect of a scene can look right while another in the same place still looks reversed, and in the end (about two weeks of wearing) the world looks normal again."
+stated_by = "proponent"
+first_stated = { source = "oregan-noe-2001", date = "2001-10", passage = "An observer adapting to an inverted world will in the course of adaptation only be able to progressively probe subsets of the sensorimotor contingencies that characterize his or her new visual world; and so inconsistencies and contradictions may easily arise between “islands” of visuo-motor behavior.", location = "section 5.9 'Inversion of the visual world', fourth paragraph" }
+also_stated = [
+  { source = "oregan-noe-2001", passage = "Ultimately (after about two weeks of wearing the apparatus) they come to feel that their new visual world is “normal” again." },
+  { source = "oregan-noe-2001", passage = "Consider, for example, someone who is adapted to reversing goggles and someone who has just put them on. These two individuals will agree in their input-output relations but they will not agree in experience." },
+]
+test_for = "Wearers of inverting or reversing goggles report, during adaptation, that some aspects of a scene look the right way round while others in the same place still look reversed, with adaptation tied to the activities they practised; and with long enough wear they report that the world looks normal (not merely that they can act correctly in it)."
+test_against = "Wearers learn to act normally but report that what they see stays reversed throughout, however long they wear the goggles; or the whole scene's look flips at once, as one unit, rather than aspect by aspect."
+separates_from = []
+note = "The 2001 passage explains older experiments (Stratton 1897, Kohler 1951, Taylor 1962); it is recorded as a prediction for later studies. No rival on the list was found stating a different result in the sources opened."
+
+[[prediction]]
+id = "sm-active-control"
+theory = "sensorimotor"
+core_claim = "sm-c3"
+statement = "With a device that turns a camera image into a pattern of touch on the skin, people come to perceive objects as out in space in front of them only when they move the camera themselves; with a fixed camera they do not."
+stated_by = "proponent"
+first_stated = { source = "oregan-noe-2001", date = "2001-10", passage = "It was only when the observer was allowed to actively manipulate the camera that identification became possible and observers came to “see” objects as being externally localized (White et al. 1970). This important point constitutes an empirical verification of the mainstay of the present theory of visual experience, namely, that seeing constitutes the ability to actively modify sensory impressions in certain law-obeying ways.", location = "section 5.14 'Tactile visual sensory substitution', second paragraph" }
+test_for = "With matched stimulation and training time, users who control the camera's movement locate objects out in space (and identify them) clearly better than users who receive the same stimulation without controlling it."
+test_against = "Users who receive the same stimulation without controlling the camera (a fixed camera, or a replay of another user's camera movements) locate objects out in space as well as users who control it."
+separates_from = []
+
+[[prediction]]
+id = "sm-substitution"
+theory = "sensorimotor"
+core_claim = "sm-c5"
+statement = "Which sense an experience belongs to follows the pattern of how input changes with movement, not the nerve that carries it: with practice, users of a camera-to-touch device experience objects as out in space with sight-like features, and changing those patterns should change where a sensation is felt."
+stated_by = "proponent"
+first_stated = { source = "oregan-noe-2001", date = "2001-10", passage = "The fact that stimulation is provided through the skin should be irrelevant, providing the stimulation obeys the required sensorimotor laws.", location = "section 5.14 'Tactile visual sensory substitution', last paragraph" }
+also_stated = [
+  { source = "oregan-noe-2001", passage = "First, though initially observers locate stimulation on the body part which is stimulated, with practice, the observers locate objects in space, and not on the skin – although they are still able to feel the local tactile sensation (e.g., if it is painful or if it itches)." },
+  { source = "oregan-noe-2001", passage = "As Blackmore rightly says, according to our theory the locus of sensation will depend on the nature of the sensorimotor contingencies, and by changing these laws, it should be possible to change the locus of perception." },
+]
+test_for = "After practice with active control, users of a device that turns camera images into touch (or sound) report objects as located in space rather than on the skin, react to a sudden looming of the image as to an approaching object, and keep these reports when the device is moved to another patch of skin."
+test_against = "After extensive practice with active control, users still experience the stimulation only as touch on the skin (or sound), with an object's position known only by working it out."
+separates_from = []
+caveat = "In the same publication the authors say that stimulation through a sense's own nerve, without movement, is still felt in that sense because of laws learned earlier: 'Thus, since normally input coming through the auditory nerve will change in certain ways when the head or body moves, when later, without moving, the organism is stimulated through the auditory nerve, the stimulation will be perceived as belonging to the auditory modality. ... Similar arguments can be made for brief visual stimulations, phosphenes, and stimulation of visual cortex à la Penfield' (response, section R5). So the prediction concerns new patterns learned with practice; it does not say how much practice."
+
+[[prediction]]
+id = "sm-change-blindness"
+theory = "sensorimotor"
+core_claim = "sm-c2"
+statement = "Because the brain keeps no detailed picture of the scene, large changes made in full view go unnoticed when the brief flicker of motion that would normally draw attention to them is masked (by a blank flash, an eye movement, a blink, a film cut or scattered 'mud splashes'), even when the person is looking straight at the place that changes."
+stated_by = "proponent"
+first_stated = { source = "oregan-noe-2001", date = "2001-10", passage = "The idea that the world constitutes an outside memory, and that we only see what we are currently attending to, was the impetus for a number of surprising experiments performed recently on “change blindness”", location = "section 5.10 'Change blindness experiments', first paragraph" }
+also_stated = [
+  { source = "oregan-noe-2001", passage = "It was found that in many cases, observers could be looking directly at the change at the moment the change occurred, and still not see it." },
+  { source = "oregan-noe-2001", passage = "We therefore consider change blindness, even though it can be explained in other ways, as an instance of how the theory made interesting predictions." },
+]
+test_for = "When the local signal of a change is masked, people often take many repetitions to find, or fail to find, large changes in natural scenes, including on occasions when eye tracking shows they were looking at the changing spot when it changed."
+test_against = "When the local signal is masked, people find large changes about as quickly and reliably as when it is not masked."
+separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory predicts the same missed reports.", source = "mashour-2020" },
+  { theory = "rpt", how = "Recurrent processing theory predicts the same missed reports, reading them as failures of report.", source = "lamme-2018" },
+]
+note = "Global workspace theory and recurrent processing theory predict the same missed reports (mashour-2020: early processing 'can be fully preserved on trials without conscious perception, particularly under inattention conditions'; lamme-2018: 'when people fail to attend to stimuli, they will report not having seen them, as is the case in conditions like change blindness'). Recurrent processing theory reads the misses differently ('failures of attention and report, not of conscious vision'), but it predicts the same reports, so this is a difference of interpretation, not of prediction. The 2001 statement is not the first: O'Regan's group published these experiments from 1997 (cited in the passage; not opened)."
+
+[[prediction]]
+id = "sm-inattentional"
+theory = "sensorimotor"
+core_claim = "sm-c4"
+statement = "Something plainly visible, which a person may even be looking at or steering by, can go unseen when it is not being used in their thinking and planning: an unexpected object goes unnoticed by someone busy with another task."
+stated_by = "proponent"
+first_stated = { source = "oregan-noe-2001", date = "2001-10", passage = "Your behavior is regulated by the appropriate sensorimotor contingencies, but you remain visually unaware of the associated aspects of the scene.", location = "section 2.6, the driving example" }
+also_stated = [
+  { source = "oregan-noe-2001", passage = "First, the empirical data on change blindness (see sect. 5.10 above) and inattentional blindness (see Noë & O’Regan 2000) demonstrate that you do not have all the details of what is seen in consciousness at once." },
+]
+test_for = "In designs where people do a demanding task and an unexpected, clearly visible object appears where they are looking, a sizeable share of them (by the study's own measure) say afterwards that they did not notice it."
+test_against = "People doing a demanding task notice nearly every clearly visible unexpected object that appears where they are looking."
+separates_from = []
+shares_with = [
+  { theory = "gwt", how = "Global workspace theory predicts the same missed reports.", source = "mashour-2020" },
+  { theory = "rpt", how = "Recurrent processing theory predicts the same missed reports.", source = "lamme-2018" },
+]
+note = "Same position as sm-change-blindness: global workspace theory (mashour-2020) and recurrent processing theory (lamme-2018) predict the same missed reports; they differ only in what the misses mean."
+
+[[prediction]]
+id = "sm-no-ncc"
+theory = "sensorimotor"
+core_claim = "sm-c6"
+statement = "No particular pattern of brain activity at a given moment will be found that, by itself and in every situation, goes with a given visual experience: the activity that accompanies seeing something depends on what the person is doing and has learned, and seeing carries on through moments when input from the object stops (during an eye movement)."
+stated_by = "proponent"
+first_stated = { source = "oregan-noe-2001", date = "2001-10", passage = "Considerations such as these show further, that although neural activity is necessary for vision, there need be no one-to-one mapping between seeing and occurrent neural states and processes.", location = "section 8.4, the paragraph beginning 'Considerations such as these'" }
+also_stated = [
+  { source = "oregan-noe-2001", passage = "Specific neural states cannot be perfectly correlated with specific perceptual states." },
+  { source = "oregan-noe-2001", passage = "Finally, if we are correct in our analysis, there is need for reassessment, on the part of neuroscientists, of the notion of neural correlate of consciousness." },
+]
+test_for = "Searches for the brain activity that goes with a given visual experience find that it changes with the task, the report, or the person's movements and history, so that no moment-by-moment brain state matches the experience across situations."
+test_against = "A pattern of brain activity is found that occurs whenever, and only whenever, a given visual content is experienced, across tasks, reports and movements, so that the content can be read from that moment's activity alone."
+separates_from = [
+  { theory = "gwt", how = "Global workspace theory holds that a brain state, information made widely available across the brain, is what conscious experience is.", source = "mashour-2020", passage = "Broadcasting implies that the information in the workspace becomes available to many local processors, and it is the wide accessibility of this information that is hypothesized to constitute conscious experience." },
+  { theory = "iit", how = "Integrated information theory holds that each experience corresponds to the structure the brain specifies in its current state, which depends on causal interactions inside the system, not on its interaction with its environment.", source = "albantakis-2023", passage = "The physical correspondent of an experience is not the substrate as such but the Φ-structure specified by the substrate in its current state." },
+  { theory = "rpt", how = "Recurrent processing theory holds that a brain process, recurrent processing between visual areas, is enough for visual experience.", source = "lamme-2018", passage = "Recurrent processing between visual areas suffices for conscious visual experience to arise." },
+]
+note = "The iit entry also leans on albantakis-2023's intrinsicality passage: 'the Φ-structure of a complex depends on the causal interactions between system subsets, not on the system’s interaction with its environment (except for the role of the environment in triggering specific system states)'."
+
+# ======================================================================
+# Stage 3, Orchestrated Objective Reduction: drafted 2026-11-21 (first reading, one reader).
+# Predictions of Orchestrated Objective Reduction (Orch OR), stage 3 draft, 2026-11-21.
+# Shape as data/tracker/predictions.toml. Every prediction here is stated by the
+# proponents. Most come from the twenty "testable predictions" Hameroff published in
+# 1998 (hameroff-1998, Appendix B), which the 2014 review lists again with comments on
+# their status (hameroff-penrose-2014, section 5.7).
+#
+# Quotations from hameroff-1998 are from an OCR scan: words split across lines are
+# rejoined and the scan's '?' hyphen marks dropped (verify entry v-orch-1998-ocr).
+#
+# separates_from is empty on every record. For each prediction the rivals' own opened
+# publications were searched (notes.md, "Rival separation"); none predicts a different
+# result on these tests. Under ruling C, silence does not count.
+# ======================================================== orch-c1: quantum processes in microtubules
+
+[[prediction]]
+id = "orch-mt-coherence"
+theory = "orch-or"
+core_claim = "orch-c1"
+statement = "Quantum coherence (many parts of a system sharing one quantum state) will be detected in microtubules."
+stated_by = "proponent"
+first_stated = { source = "hameroff-1998", date = "1998-08-15", passage = "Experiments with SQUIDs (superconducting quantum interference devices) such as those suggested by Leggett (1984) will detect phases of quantum coherence in microtubules.", location = "Appendix B, prediction (9), under 'Quantum coherence occurs in microtubules.'" }
+also_stated = [
+  { source = "hameroff-penrose-2014", passage = "Phases of quantum coherence will be detected in microtubules.", location = "section 5.7, prediction 8" },
+]
+test_for = "A measurement on microtubules (isolated, in cells or in brain tissue) shows a signature that only a shared quantum state explains, which a classical account of the same measurement cannot."
+test_against = "Measurements sensitive enough to detect quantum coherence in microtubules at body temperature find none, or find that it is lost far faster than any biological process (for example in under a millionth of a second)."
+separates_from = []
+note = "The 2014 review reports as 'striking evidence' electrical resonances in single microtubules measured by Bandyopadhyay's group; those reports appeared before 2014 and are outside the study screen. The prediction names no deadline, so a failure to detect is never final (see tst-orch-mt-coherence)."
+
+[[prediction]]
+id = "orch-mt-entangle"
+theory = "orch-or"
+core_claim = "orch-c1"
+statement = "Quantum correlations of the kind that cannot be explained by any local, classical link (as in Aspect's experiment in physics) will be found between parts of separate microtubules: on one microtubule, between microtubules in one neuron, and between microtubules in neurons joined by gap junctions (direct electrical channels between neighbouring cells)."
+stated_by = "proponent"
+first_stated = { source = "hameroff-1998", date = "1998-08-15", passage = "Studies similar to the famous 'Aspect experiment' in physics (which verified non-local quantum correlations (Aspect et al. 1982)) will demonstrate quantum correlations between spatially separated microtubule subunit states on (a) the same microtubule; (b) different microtubules in the same neuron; and (c) microtubules in different neurons connected by gap junctions.", location = "Appendix B, prediction (8)" }
+also_stated = [
+  { source = "hameroff-penrose-2014", passage = "‘EPR-like’ non-local correlation between separated microtubules.", location = "section 5.7, prediction 7" },
+]
+test_for = "A test of the Bell or Aspect kind on microtubule subunit states shows correlations between separated microtubules beyond what any classical link allows."
+test_against = "Such a test, sensitive enough to find the correlations, finds only correlations a classical link explains."
+separates_from = []
+note = "The 2014 review: 'This is not at all clear, but such things are very hard to establish (or refute) experimentally.'"
+
+# ======================================================== orch-c2: microtubules steer neuron activity
+
+[[prediction]]
+id = "orch-synaptic-cyto"
+theory = "orch-or"
+core_claim = "orch-c2"
+statement = "How sensitive a synapse is, and how it changes with learning, goes along with the structure and activity of the cell's internal skeleton (the cytoskeleton, of which microtubules are part) on both sides of the synapse."
+stated_by = "proponent"
+first_stated = { source = "hameroff-1998", date = "1998-08-15", passage = "Synaptic sensitivity and plasticity correlate with cytoskeletal architecture/activities in both pre-synaptic and post-synaptic neuronal cytoplasm.", location = "Appendix B, prediction (1), under 'Neuronal microtubules are directly necessary for consciousness.'" }
+also_stated = [
+  { source = "hameroff-penrose-2014", passage = "Synaptic plasticity correlates with cytoskeletal architecture/activities.", location = "section 5.7, prediction 1" },
+]
+test_for = "Changes in synaptic strength or sensitivity are accompanied by measurable changes in the cytoskeleton on both sides of the synapse, and blocking those changes alters the synaptic change."
+test_against = "Synaptic strength and plasticity change with no accompanying change in the cytoskeleton, or are unaffected when cytoskeletal change is blocked."
+separates_from = []
+
+[[prediction]]
+id = "orch-mt-vibration"
+theory = "orch-or"
+core_claim = "orch-c2"
+statement = "Vibrations in microtubule networks change together with the cell's activity."
+stated_by = "proponent"
+first_stated = { source = "hameroff-1998", date = "1998-08-15", passage = "Dynamic vibrational states in microtubule networks correlate with cellular activity.", location = "Appendix B, prediction (5)" }
+also_stated = [
+  { source = "hameroff-penrose-2014", passage = "Dynamic microtubule vibrations correlate with cellular activity.", location = "section 5.7, prediction 5" },
+]
+test_for = "Measured vibrational states of microtubules in living neurons change in step with the neurons' electrical activity."
+test_against = "Microtubule vibrational states, measured in living neurons, do not change with the neurons' activity."
+separates_from = []
+
+# ======================================================== orch-c3: Diósi-Penrose collapse
+
+[[prediction]]
+id = "orch-dp-collapse"
+theory = "orch-or"
+core_claim = "orch-c3"
+statement = "An object held in a quantum superposition (in two places at once), kept free of outside disturbance, will collapse on its own after a time set by the gravitational energy of the difference between the two places (Penrose's rule: the heavier the displacement, the sooner the collapse)."
+stated_by = "proponent"
+first_stated = { source = "hameroff-1998", date = "1998-08-15", passage = "Isolated technological quantum superpositions will self-collapse according to E = h/T.", location = "Appendix B, prediction (18), under 'An isolated, unperturbed quantum system self-collapses according to E = h/T.'" }
+also_stated = [
+  { source = "hameroff-penrose-2014", passage = "For example, one ought to begin to see the effects of this OR scheme if a small object, such as a 10-µm cube of crystalline material could be held in a coherent superposition of two locations, differing by about the diameter of an atomic nucleus, for some seconds, or perhaps minutes to reach threshold", location = "section 4.5, third paragraph" },
+]
+test_for = "A well-isolated superposition of a massive object collapses spontaneously at about the time Penrose's rule gives."
+test_against = "A well-isolated superposition of an object massive enough holds for clearly longer than Penrose's rule allows; or the side effects the rule's simplest form implies (for example faint spontaneous radiation) are absent at the level it requires."
+separates_from = []
+note = "A test of physics, not of brains: it could sink claim orch-c3 but not confirm experience. Underground radiation measurements bearing on the simplest version of the collapse rule exist (the screen's item 31, Derakhshani and colleagues 2022, a review of them), but no study reporting new data on it was in the screen. The proponents' reply that the simplest version is not theirs would be a later reading, recorded but not undoing a failure (ruled rule 'A failure stands once recorded')."
+
+# ======================================================== orch-c4: moments of experience
+
+[[prediction]]
+id = "orch-mass-time"
+theory = "orch-or"
+core_claim = "orch-c4"
+statement = "The more brain tissue takes part in a conscious event, the shorter the time before it becomes conscious (because, by Penrose's rule, more mass in superposition collapses sooner)."
+stated_by = "proponent"
+first_stated = { source = "hameroff-1998", date = "1998-08-15", passage = "The amount of neural mass involved in a particular cognitive task or conscious event (as measurable by near-future advances in brain imaging techniques) is inversely proportional to the preconscious time (e.g. visual perception, reaction times).", location = "Appendix B, prediction (17)" }
+also_stated = [
+  { source = "hameroff-penrose-2014", passage = "Functional imaging and electrophysiology will show perception and response time shorter with more neural mass involved.", location = "section 5.7, prediction 17" },
+  { source = "hameroff-penrose-2014", passage = "EG ≈ ħ/τ would appear to require that there is twice as much brain involvement required for 80 Hz as for consciousness occurring at 40 Hz.", location = "section 5.2, sixth paragraph (the PDF sets EG with a subscript G)" },
+]
+test_for = "Across conscious events, the measured amount of brain tissue involved (by imaging or recording) is larger when the time to perception or response is shorter, in inverse proportion."
+test_against = "With the amount of tissue measured, time to perception does not fall as the tissue involved grows, or rises with it."
+separates_from = []
+note = "The proponents' own 2014 comment: 'As a ‘prediction’ of Orch OR, the status of this is not very clear; moreover it is very hard to provide any clear estimate of the neural mass that is involved in a ‘perception’.'"
+
+# ======================================================== orch-c5: isolation from the surroundings
+
+[[prediction]]
+id = "orch-coherence-time"
+theory = "orch-or"
+core_claim = "orch-c5"
+statement = "Quantum states in the brain's microtubules last, protected from disturbance, for about 10 to 500 thousandths of a second, the length of a moment of experience."
+stated_by = "proponent"
+first_stated = { source = "hameroff-1998", date = "1998-08-15", passage = "we can estimate that T for conscious OR events may be in a range from 10 to 500 ms.", location = "section 1 'Quantum computation and consciousness', journal page 1872, the paragraph after Penrose's E = h/T" }
+also_stated = [
+  { source = "hameroff-penrose-2014", passage = "If 0.1 percent of tubulins within a given set of neurons were coherent for 25 ms, then 20,000 such neurons would be required to elicit OR.", location = "section 5.2, third paragraph" },
+]
+test_for = "Quantum coherence in microtubules in living brain tissue at body temperature is measured to last on the order of 10 ms or more."
+test_against = "Quantum coherence in microtubules at body temperature is measured to be lost far sooner (for example in under a millionth of a second), with no shielding mechanism found."
+separates_from = []
+note = "The 1998 list also named a shielding mechanism (predictions 11 to 13: cycles of actin gel around microtubules). The 2014 review calls those 'perhaps a moot point, now' because coherence was reported without the gel. They are not recorded here as separate predictions; the withdrawal is noted for the readers."
+
+# ======================================================== orch-c6: anaesthesia
+
+[[prediction]]
+id = "orch-anaesthetic-mt"
+theory = "orch-or"
+core_claim = "orch-c6"
+statement = "General anaesthetics cause unconsciousness, at least in part, by acting on microtubules inside neurons; so changing the brain's microtubules with a drug changes how much anaesthetic, or how long, it takes to cause unconsciousness."
+stated_by = "proponent"
+first_stated = { source = "hameroff-penrose-2014", date = "2013-08-20", passage = "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness.", location = "section 7, list of developments incorporated into the theory, fifth bullet" }
+also_stated = [
+  { source = "hameroff-penrose-2014", passage = "Despite prevailing assumptions, actual evidence supports anesthetic action on microtubules.", location = "section 3.3, second paragraph" },
+  { source = "hameroff-penrose-2014", passage = "anesthetics also act through MTs [86].", location = "section 5.7, comment on prediction 2" },
+  { source = "hameroff-2022", passage = "Anesthetics also bind in non-polar regions in tubulin in microtubules, and genomic, proteomic and optogenetic research pointed to tubulin and microtubules as the target of anesthetic action" },
+]
+test_for = "In animals or people, a drug that acts on brain microtubules changes the anaesthetic dose, or the time under a fixed dose, needed to cause unconsciousness, compared with untreated controls."
+test_against = "Drugs shown to act on brain microtubules, at doses that reach the brain, leave the anaesthetic dose and time needed for unconsciousness unchanged."
+separates_from = []
+note = "The proponents' statement fixes microtubules as a site of anaesthetic action but not which way a microtubule drug should shift sensitivity. The test wording therefore counts a change in either direction, which makes it easier to pass than a test with a direction would be (notes.md). hameroff-1998 places anaesthetic action in 'hydrophobic pockets of neural proteins', not in microtubules specifically, so it is not the first statement. Hameroff's 2006 paper in Anesthesiology (cited by the 2014 review as [80]) may state it earlier; it was not opened. Every study here appeared after 2013, so an earlier date would change nothing."
+
+# ======================================================================
+# Stage 3, Damasio's feeling-based theory: drafted 2026-11-21 (first reading, one reader).
+# Damasio's feeling-based theory: predictions, drafted 2026-11-21. Each is tied to
+# one core claim (theory.toml, drafted from the abstract of damasio-2023). Every
+# prediction is stated by the theory's proponents in a publication opened by this
+# session; first_stated is the earliest such publication opened. Damasio and Carvalho
+# 2013 (Nature Reviews Neuroscience), Parvizi and Damasio 2001 ('Consciousness and the brainstem', PubMed 11164026), Damasio and
+# Damasio 2022 (Brain), Carvalho and Damasio 2021 (BioEssays) and Damasio and Damasio
+# 2024 (Journal of Cognitive Neuroscience) were not opened: no open copy is listed in
+# Europe PMC, and some may state these predictions earlier.
+#
+# Core claim dam-c1 (consciousness is mind contents marked as one's own) has no
+# prediction: no opened publication names an observation that would show contents
+# present but not marked as one's own, and none was inferred.
+# Layout: data/tracker/README.md.
+
+[[prediction]]
+id = "dam-feeling-required"
+theory = "damasio"
+core_claim = "dam-c2"
+questions = ["features"]
+statement = "Without feelings of the body's own state there is no consciousness, however good the rest of the mind's work (perception, thought, language) is."
+stated_by = "proponent"
+first_stated = { source = "damasio-2024", date = "2024-07-15", passage = "Homeostatic feelings are essential to the process of consciousness encountered in vertebrates, in which cognitive processes alone cannot explain consciousness.", location = "section 4, last sentence" }
+also_stated = [
+  { source = "singer-damasio-2025", passage = "Spontaneously conscious interoceptive, homoeostatic feelings are the basis for subjectivity. Consciousness proper results from the combination of subjectivity with the exteroceptive, cognitive and linguistic processes that constitute the modern mind." },
+  { source = "damasio-2023", passage = "We hypothesize that the automatic identification that associates minds and organisms is provided by a continuous flow of homeostatic feelings.", note = "The core claim itself, in the abstract (public 2022-07-27). It implies the prediction but does not state what removing the feelings would do, so it is not taken as the first statement." },
+]
+test_for = "In a person or animal whose feelings of the body's state are abolished (for example by damage to the brainstem nuclei that receive signals from the body's interior, with the cerebral cortex and the outward senses intact), consciousness is lost, or the sense that experiences belong to oneself is lost."
+test_against = "A well-documented case in which feelings of the body's state are absent, by validated measures (no felt hunger, thirst, pain or bodily well-being), while the person stays conscious and still owns their experiences."
+separates_from = [
+  { theory = "sh", how = "The Sentient Horizons account holds that mattering (states being better or worse for the system), the feature nearest to feeling, makes experience richer but is not known to switch it on; removing it would make experience poorer, not end it.", source = "sh-positions", passage = "My bet is that boundary, mattering, self-awareness and kept memory make experience richer, and that none of them is known to switch it on." },
+]
+note = "Rival statements by global workspace theory's and integrated information theory's proponents opened here (cogitate-prereg-v1) say nothing about feelings, which is silence, not a contrary prediction. Damasio's own contrast with those theories (singer-damasio-2025, section 6) is his description of them, which ruling C does not accept."
+
+[[prediction]]
+id = "dam-subcortical"
+theory = "damasio"
+core_claim = "dam-c4"
+statement = "Basic feelings, and with them consciousness at its root, are produced first in the brainstem and hypothalamus, not in the cerebral cortex, so they survive loss of the cortex while those structures are intact."
+stated_by = "proponent"
+first_stated = { source = "damasio-tranel-2013", date = "2012-04-03", passage = "In brief, in this article, we subscribe to the hypothesis that feelings, ranging from feelings of pain and pleasure to feelings of emotions, first emerge from the integrated operation of structures in the brain stem, hypothalamus and the deep layers of the nearby superior colliculi (hereafter we refer to this set of structures as the brain stem complex).", location = "Discussion" }
+also_stated = [
+  { source = "damasio-tranel-2013", passage = "The subcortical level would ensure basic feeling states while the cortical level would largely relate feeling states to cognitive processes such as decision-making and imagination." },
+  { source = "singer-damasio-2025", passage = "Instead, the brainstem-centred perspective we favour posits consciousness as part of a neurobiological process dedicated to homoeostatic regulation, rooted in interoception and in lower-order brainstem structures." },
+]
+test_for = "People or animals with the cerebral cortex absent or destroyed, but the brainstem nuclei that receive the body's signals (nucleus tractus solitarius, parabrachial nucleus, periaqueductal gray) and the hypothalamus intact, show signs of basic feeling beyond fixed reflexes: responses to hunger, thirst, pain and pleasure that are graded and flexible, such as learned preference or avoidance driven by the body's state."
+test_against = "Destroying the cerebral cortex while sparing those brainstem nuclei removes every sign of feeling beyond fixed reflexes; or damage confined to those nuclei, with the cortex intact, leaves feelings of hunger, thirst and pain reported as normal."
+separates_from = [
+  { theory = "gwt", how = "Global workspace theory's proponents hold that prefrontal (cortical) activity is a prerequisite for conscious experience.", source = "cogitate-prereg-v1", passage = "Thus, for GNW, activation of prefrontal1 areas is a prequisite for conscious experience, while IIT, in contrast, submits that activity in posterior areas is necessary for consciousness." },
+  { theory = "iit", how = "Integrated information theory's proponents hold that activity in posterior cortex is necessary for consciousness.", source = "cogitate-prereg-v1", passage = "Thus, for GNW, activation of prefrontal1 areas is a prequisite for conscious experience, while IIT, in contrast, submits that activity in posterior areas is necessary for consciousness." },
+]
+note = "The 2012 statement is about feelings; the theory's other statements (damasio-2023 abstract, singer-damasio-2025) say homeostatic feelings are 'spontaneously conscious', which is what makes this a prediction about consciousness. In the registration passage, the 1 after 'prefrontal' is a footnote marker and 'prequisite' is the source's spelling. Whether 'basic feeling without cortex' and 'conscious experience needs cortex' truly conflict depends on whether the rivals' 'conscious experience' covers basic bodily feeling; the registration does not say."
+
+[[prediction]]
+id = "dam-insula"
+theory = "damasio"
+core_claim = "dam-c4"
+statement = "Feelings, of the body and of emotions, survive complete destruction of the insula on both sides of the brain, because the insula re-maps feelings first assembled lower down."
+stated_by = "proponent"
+first_stated = { source = "damasio-tranel-2013", date = "2012-04-03", passage = "The activity patterns unequivocally present in the insular cortex during feeling states would constitute a second-order mapping of activity patterns first assembled subcortically.", location = "Discussion" }
+also_stated = [
+  { source = "singer-damasio-2025", passage = "This is a challenge for prevailing views that attribute consciousness to the activity of higher-order cortical regions, notably the insula, or to the general complexity of cortical interactions" },
+]
+test_for = "A person with complete loss of both insulae (brainstem intact) shows a normal range of feelings, by self-report and by observers' ratings."
+test_against = "Complete loss of both insulae abolishes or flattens feelings of the body and of emotions."
+separates_from = []
+note = "The view it opposes is A. D. Craig's, that the insula is 'the necessary and sufficient platform' for human feeling (as damasio-tranel-2013 describes it). Craig's theory is not on the ruled list of ten, so this prediction separates the theory from no listed rival. The 2012 paper states the prediction and tests it in the same paper (patient B.)."
+
+[[prediction]]
+id = "dam-nonneural"
+theory = "damasio"
+core_claim = "dam-c4"
+statement = "Feelings, and so consciousness, come from the nervous system working together with the body's own tissues and chemistry, not from the nervous system alone."
+stated_by = "proponent"
+first_stated = { source = "damasio-2023", date = "2022-07-27", passage = "The unusual physiological features that enable feelings, and thus consciousness, depend on the presence of a nervous system but not on an isolated nervous system.", location = "section 6, 'The Hard Obstacles in Consciousness Studies', first paragraph" }
+also_stated = [
+  { source = "damasio-2024", passage = "In conclusion, consciousness arises in organisms endowed with nervous systems but not from the nervous system alone." },
+  { source = "damasio-2024", passage = "Consciousness is the result of a co-mingling between a body's visceral interior and its nervous system." },
+  { source = "singer-damasio-2025", passage = "In each of these arrangements, the body proper and the nervous system merge, one literally sliding onto the other." },
+]
+test_for = "Blocking the direct chemical exchange between body-sensing nerves and the tissue or blood around them (for example at brainstem sites with no blood-brain barrier, such as the area postrema), while ordinary nerve-to-nerve signalling is kept, dulls or changes feelings of the body's state."
+test_against = "Such blocking leaves feelings of the body's state unchanged, while ordinary nerve-to-nerve signalling alone carries them."
+separates_from = []
+note = "No opened rival proponents' publication says feelings or consciousness come from the nervous system alone. The test wording is the site's: the papers name the mechanism but no experiment."
+
+[[prediction]]
+id = "dam-nss"
+theory = "damasio"
+core_claim = "dam-c4"
+statement = "In the nerves that sense the body's interior, signals also pass between fibres outside synapses (by electrical fields between neighbouring fibres, called ephaptic coupling, and by chemicals in the space around them), and this graded, continuous signalling helps build the brain's maps of the body."
+stated_by = "proponent"
+first_stated = { source = "singer-damasio-2025", date = "2025-11-13", passage = "It is, thus, plausible that ephaptic interactions could enable continuous, graded, NSS, supporting complex analogue neural activation patterns essential for real-time internal state sensing and the construction of self-maps in the brainstem.", location = "section 4(a)(ii), 'Ephaptic coupling'" }
+also_stated = [
+  { source = "singer-damasio-2025", passage = "Further research is needed to confirm the presence of ephaptic signalling in the interoceptive system and clarify its role in affective processes." },
+]
+test_for = "Ephaptic coupling, or signalling by chemicals in the space between fibres, is shown between body-sensing fibres of the vagus nerve in living animals, and blocking it changes the signals reaching the brainstem."
+test_against = "In a design sensitive enough to find it elsewhere, no such coupling or chemical signalling between vagal body-sensing fibres is found."
+separates_from = []
+note = "NSS is the paper's abbreviation for non-synaptic signalling. A prediction about physiology; no rival on the list says anything about it."
+
+[[prediction]]
+id = "dam-no-nervous-system"
+theory = "damasio"
+core_claim = "dam-c3"
+statement = "Living things without a nervous system, such as bacteria and plants, are not conscious, however intelligent their behaviour."
+stated_by = "proponent"
+first_stated = { source = "damasio-2023", date = "2022-07-27", passage = "Organisms without nervous systems, capable of taking intelligent actions to regulate their lives but not able to represent such actions or their consequences, appear to be nonconscious.", location = "section 6, first paragraph" }
+also_stated = [
+  { source = "damasio-2024", passage = "To a naive observer they appear not only smart but well informed, and, well, conscious. But they are not." },
+  { source = "damasio-2024", passage = "Organisms with nervous systems rely on overt consciousness which is based on homeostatic feelings and the experiences and consequent subjectivity they generate." },
+]
+test_for = "None stated: the paper names no observation that would show a bacterium or a plant has, or lacks, experience."
+test_against = "None stated."
+separates_from = []
+note = "The paper names Reber's view that all cells can be conscious as a contrary one; Reber's theory is not on the ruled list."
+
+[[prediction]]
+id = "dam-ai"
+theory = "damasio"
+core_claim = "dam-c4"
+questions = ["machines"]
+statement = "Present-day artificial intelligence, built on fast digital signalling, lacks the slow, graded body-sensing processes that ground feelings and consciousness."
+stated_by = "proponent"
+first_stated = { source = "singer-damasio-2025", date = "2025-11-13", passage = "Contemporary AI is not well suited to modelling the interoceptive mechanisms that anchor homoeostatic feelings and consciousness.", location = "section 7, last sentence" }
+test_for = "None stated: the paper names no observation that would show an AI system has, or lacks, feelings."
+test_against = "None stated."
+separates_from = []
+note = "Close in shape to integrated information theory's feed-forward prediction (iit-feedforward in the pilot), which also names no observation."

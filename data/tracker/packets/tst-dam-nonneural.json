@@ -1,0 +1,70 @@
+{
+  "packet_id": "tst-dam-nonneural",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Damasio's feeling-based theory",
+  "core_claim": {
+    "quote": "Finally, we outline a mechanism for the generation of feelings based on a two-way interaction between interoceptive components of the nervous system and a particular set of nonneural components of the organism's interior, namely, viscera and circulating chemical molecules involved in their operations.",
+    "source": {
+      "citation": "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023",
+      "url": "https://doi.org/10.1162/neco_a_01521",
+      "date": "2022-07-27"
+    }
+  },
+  "prediction": {
+    "statement": "Feelings, and so consciousness, come from the nervous system working together with the body's own tissues and chemistry, not from the nervous system alone.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2022-07-27",
+      "passage": "The unusual physiological features that enable feelings, and thus consciousness, depend on the presence of a nervous system but not on an isolated nervous system.",
+      "source": {
+        "citation": "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023",
+        "url": "https://doi.org/10.1162/neco_a_01521",
+        "date": "2022-07-27"
+      }
+    },
+    "test_for": "Blocking the direct chemical exchange between body-sensing nerves and the tissue or blood around them (for example at brainstem sites with no blood-brain barrier, such as the area postrema), while ordinary nerve-to-nerve signalling is kept, dulls or changes feelings of the body's state.",
+    "test_against": "Such blocking leaves feelings of the body's state unchanged, while ordinary nerve-to-nerve signalling alone carries them."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "In conclusion, consciousness arises in organisms endowed with nervous systems but not from the nervous system alone.",
+      "source": {
+        "citation": "Damasio A, Damasio H. Sensing, feeling and consciousness. Philosophical Transactions of the Royal Society B 379(1908):20230243, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444232/",
+        "date": "2024-07-15"
+      }
+    },
+    {
+      "passage": "Consciousness is the result of a co-mingling between a body's visceral interior and its nervous system.",
+      "source": {
+        "citation": "Damasio A, Damasio H. Sensing, feeling and consciousness. Philosophical Transactions of the Royal Society B 379(1908):20230243, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444232/",
+        "date": "2024-07-15"
+      }
+    },
+    {
+      "passage": "In each of these arrangements, the body proper and the nervous system merge, one literally sliding onto the other.",
+      "source": {
+        "citation": "Singer J, Damasio A. The physiology of interoception and its adaptive role in consciousness. Philosophical Transactions of the Royal Society B, 2025 (10.1098/rstb.2024.0305)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12612705/",
+        "date": "2025-11-13"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

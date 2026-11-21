@@ -1,0 +1,31 @@
+{
+  "packet_id": "out-mukherjee-2024-dam-insula",
+  "run": "stage3b",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "D-QBa7Zp7OnY4w-Xma3xBQ",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"verdict\": \"against\",\n  \"reason\": \"The prediction states that bodily and emotional feelings survive bilateral destruction of the insula, while flattening or abolition of feelings counts against it. In this study, bilateral insular lesions in rats significantly weakened alcohol-induced taste aversion, completely blocked alcohol-induced place aversion, and eliminated a neophobic-like response. Using the authors' framing of conditioned responses as a proxy for perceived subjective interoceptive properties, these lesions flattened or abolished the negative feelings studied.\",\n  \"unsure\": true,\n  \"unsure_why\": \"The study tests Pavlovian conditioning in rats rather than human self-report and observer ratings as specified in the test criteria, the passages do not confirm whether the insular lesions were complete, and impaired conditioning could reflect a deficit in associative learning rather than a loss of feelings themselves.\"\n}",
+  "usage": {
+    "promptTokenCount": 1795,
+    "candidatesTokenCount": 181,
+    "totalTokenCount": 2459,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1795
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 181
+      }
+    ],
+    "thoughtsTokenCount": 483,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.01023,
+  "seconds": 13.5,
+  "called_on": "2026-11-21 10:34:04 PST"
+}

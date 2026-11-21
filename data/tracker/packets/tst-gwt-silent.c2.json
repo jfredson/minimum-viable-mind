@@ -1,0 +1,57 @@
+{
+  "packet_id": "tst-gwt-silent",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Global workspace theory",
+  "core_claim": {
+    "quote": "Ignition is characterized by the sudden, coherent, and exclusive activation of a subset of workspace neurons coding for the current conscious content, with the remainder of the workspace neurons being inhibited.",
+    "source": {
+      "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+      "date": "2020-03-04"
+    }
+  },
+  "prediction": {
+    "statement": "Between the onset and offset ignitions, a lasting percept is held in an 'activity-silent' state, not by sustained activity.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-16",
+      "passage": "GNW assumes that all experiences – regardless of their temporal extent – are accompanied by an initial ignition, followed by a decay of signal and maintenance of information in the form of an activity-silent state, with only occasional bursts of reactivation",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    "test_for": "Prefrontal activity returns to baseline between onset and offset of a lasting conscious stimulus, with no sustained content-specific activity there.",
+    "test_against": "Sustained content-specific prefrontal activity for the whole duration of the percept."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [
+    {
+      "rival": "Integrated information theory",
+      "statement": "IIT predicts sustained content-specific activity (in posterior cortex) for the whole percept.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    }
+  ],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [],
+  "this_reading_is": "the second reading",
+  "file_name": "tst-gwt-silent.c2",
+  "question_version": "rule C as amended 2026-11-21; this row was read before under the earlier question"
+}

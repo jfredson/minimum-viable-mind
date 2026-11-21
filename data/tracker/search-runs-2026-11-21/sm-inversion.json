@@ -1,0 +1,732 @@
+{
+ "prediction": "sm-inversion",
+ "query": "(TITLE_ABS:\"inverting goggles\" OR TITLE_ABS:\"reversing goggles\" OR TITLE_ABS:\"inverting prisms\" OR TITLE_ABS:\"left-right reversing\" OR TITLE_ABS:\"up-down reversing\" OR TITLE_ABS:\"visual inversion\" OR TITLE_ABS:\"reversed vision\") AND SRC:MED",
+ "run_on": "2026-11-21 09:51 PST",
+ "hit_count": 84,
+ "results": [
+  {
+   "rank": 1,
+   "id": "41016216",
+   "source": "MED",
+   "pmid": "41016216",
+   "pmcid": null,
+   "doi": "10.1016/j.apergo.2025.104649",
+   "first_publication_date": "2025-09-27",
+   "title": "Proprioception and vision relationship in aimed movement with restricted and reversed vision.",
+   "authors": "Wang Y, Goonetilleke RS, Lin RF, Luximon A, Luximon Y.",
+   "journal": "Applied ergonomics",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Human movement relies on visual and proprioceptive inputs, and the movement can be hampered when either input provides limited or distorted information, as in robotic surgery, virtual reality, or spaceflight. This study examines how proprioception influences performance in aimed movement tasks under restricted and inverted visual conditions. An experiment with 24 participants showed slower movements and increased information processing demands with incompatible visual feedback. The difference was diminished when the proprioceptive variability was controlled through ANCOVA. The findings allude to the necessity of considering individual differences in proprioceptive ability when evaluating performance across different visual conditions. These results can help develop training protocols and design interfaces when visual and proprioception sensory feedback are incompatible. Also, continuous visual feedback of hand movement may not be necessary. Instead, a correctly sized visual window of the target is sufficient for aimed movement tasks. This result has practical implications, especially when optimizing VR renders."
+  },
+  {
+   "rank": 2,
+   "id": "39007414",
+   "source": "MED",
+   "pmid": "39007414",
+   "pmcid": null,
+   "doi": "10.1002/adbi.202400145",
+   "first_publication_date": "2024-07-15",
+   "title": "TET3 Contributes to Exercise-Induced Functional Axon Regeneration and Visual Restoration.",
+   "authors": "Fang S, Ji Y, Shen Y, Yang S, Zhang H, Xin W, Shi W, Chen W, Chen W.",
+   "journal": "Advanced biology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Axons have intrinsically poor regenerative capacity in the mature central nervous system (CNS), leading to permanent neurological impairments in individuals. There is growing evidence that exercise is a powerful physiological intervention that can obviously enhance cell rejuvenate capacity, but its molecular mechanisms that mediate the axonal regenerative benefits remain largely unclear. Using the eye as the CNS model, here it is first indicated that placing mice in an exercise stimulation environment induced DNA methylation patterns and transcriptomes of retinal ganglion cell, promoted axon regeneration after injury, and reversed vision loss in aged mice. These beneficial effects are dependent on the DNA demethylases TET3-mediated epigenetic effects, which increased the expression of genes associated with the regenerative growth programs, such as STAT3, Wnt5a, Klf6. Exercise training also shows with the improved mitochondrial and metabolic dysfunction in retinas and optic nerves via TET3. Collectively, these results suggested that the increased regenerative capacity induced by enhancing physical activity is mediated through epigenetic reprogramming in mouse model of optic nerve injury and in aged mouse. Understanding the molecular mechanism underlying exercise-dependent neuronal plasticity led to the identification of novel targets for ameliorating pathologies associated with etiologically diverse diseases."
+  },
+  {
+   "rank": 3,
+   "id": "39900579",
+   "source": "MED",
+   "pmid": "39900579",
+   "pmcid": "PMC11791165",
+   "doi": "10.1038/s41467-025-56360-5",
+   "first_publication_date": "2025-02-03",
+   "title": "Sensorimotor environment but not task rule reconfigures population dynamics in rhesus monkey posterior parietal cortex.",
+   "authors": "Guo H, Kuang S, Gail A.",
+   "journal": "Nature communications",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Primates excel at mapping sensory inputs flexibly onto motor outcomes. We asked if the neural dynamics to support context-sensitive sensorimotor mapping generalizes or differs between different behavioral contexts that demand such flexibility. We compared reaching under mirror-reversed vision, a case of adaptation to a modified sensorimotor environment (SE), with anti reaching, a case of applying an abstract task rule (TR). While neural dynamics in monkey posterior parietal cortex show shifted initial states and non-aligned low-dimensional neural subspaces in the SE task, remapping is achieved in overlapping subspaces in the TR task. A recurrent neural network model demonstrates how output constraints mimicking SE and TR tasks are sufficient to generate the two fundamentally different neural computational dynamics. We conclude that sensorimotor remapping to implement an abstract task rule happens within the existing repertoire of neural dynamics, while compensation of perturbed sensory feedback requires exploration of independent neural dynamics in parietal cortex."
+  },
+  {
+   "rank": 4,
+   "id": "37631167",
+   "source": "MED",
+   "pmid": "37631167",
+   "pmcid": "PMC10459730",
+   "doi": "10.3390/plants12162956",
+   "first_publication_date": "2023-08-16",
+   "title": "Simultaneous Quantification and Visualization of Photosynthetic Pigments in &lt;i&gt;Lycopersicon esculentum&lt;/i&gt; Mill. under Different Levels of Nitrogen Application with Visible-Near Infrared Hyperspectral Imaging Technology.",
+   "authors": "Zhao J, Chen N, Zhu T, Zhao X, Yuan M, Wang Z, Wang G, Li Z, Du H.",
+   "journal": "Plants (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Leaf photosynthetic pigments play a crucial role in evaluating nutritional elements and physiological states. In facility agriculture, it is vital to rapidly and accurately obtain the pigment content and distribution of leaves to ensure precise water and fertilizer management. In our research, we utilized chlorophyll a (Chla), chlorophyll b (Chlb), total chlorophylls (Chls) and total carotenoids (Cars) as indicators to study the variations in the leaf positions of Lycopersicon esculentum Mill. Under 10 nitrogen concentration applications, a total of 2610 leaves (435 samples) were collected using visible-near infrared hyperspectral imaging (VNIR-HSI). In this study, a \"coarse-fine\" screening strategy was proposed using competitive adaptive reweighted sampling (CARS) and the iteratively retained informative variable (IRIV) algorithm to extract the characteristic wavelengths. Finally, simultaneous and quantitative models were established using partial least squares regression (PLSR). The CARS-IRIV-PLSR was used to create models to achieve a better prediction effect. The coefficient determination (R2), root mean square error (RMSE) and ratio performance deviation (RPD) were predicted to be 0.8240, 1.43 and 2.38 for Chla; 0.8391, 0.53 and 2.49 for Chlb; 0.7899, 2.24 and 2.18 for Chls; and 0.7577, 0.27 and 2.03 for Cars, respectively. The combination of these models with the pseudo-color image allowed for a visual inversion of the content and distribution of the pigment. These findings have important implications for guiding pigment distribution, nutrient diagnosis and fertilization decisions in plant growth management."
+  },
+  {
+   "rank": 5,
+   "id": "37121267",
+   "source": "MED",
+   "pmid": "37121267",
+   "pmcid": null,
+   "doi": "10.1016/j.neuropsychologia.2023.108582",
+   "first_publication_date": "2023-04-28",
+   "title": "Seeing our hand or a tool during visually-guided actions: Different effects on the somatosensory and visual cortices.",
+   "authors": "Mathieu B, Abillama A, Moré S, Mercier C, Simoneau M, Danna J, Mouchnino L, Blouin J.",
+   "journal": "Neuropsychologia",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The processing of proprioceptive information in the context of a conflict between visual and somatosensory feedbacks deteriorates motor performance. Previous studies have shown that seeing one's hand increases the weighting assigned to arm somatosensory inputs. In this light, we hypothesized that the sensory conflict, when tracing the contour of a shape with mirror-reversed vision, will be greater for participants who trace with a stylus seen in their hand (Hand group, n = 17) than for participants who trace with the tip of rod without seen their hand (Tool group, n = 15). Based on this hypothesis, we predicted that the tracing performance with mirror vision will be more deteriorated for the Hand group than for the Tool group, and we predicted a greater gating of somatosensory information for the Hand group to reduce the sensory conflict. The participants of both groups followed the outline of a shape in two visual conditions. Direct vision: the participants saw the hand or portion of a light 40 cm rod directly. Mirror Vision: the hand or the rod was seen through a mirror. We measured tracing performance using a digitizing tablet and the cortical activity with electroencephalography. Behavioral analyses revealed that the tracing performance of both groups was similarly impaired by mirror vision. However, contrasting the spectral content of the cortical oscillatory activity between the Mirror and Direct conditions, we observed that tracing with mirror vision resulted in significantly larger alpha (8-12 Hz) and beta (15-25 Hz) powers in the somatosensory cortex for participants of the Hand group. The somatosensory alpha and beta powers did not significantly differ between Mirror and Direct vision conditions for the Tool group. For both groups, tracing with mirror vision altered the activity of the visual cortex: decreased alpha power for the Hand group, decreased alpha and beta power for the Tool group. Overall, these results suggest that seeing the hand enhanced the sensory conflict when tracing with mirror vision and that the increase of alpha and beta powers in the somatosensory cortex served to reduce the weight assigned to somatosensory information. The increased activity of the visual cortex observed for both groups in the mirror vision condition suggests greater visual processing with increased task difficulty. Finally, the fact that the participants of the Tool group did not show better tracing performance than those of the Hand group suggests that tracing deterioration resulted from a sensorimotor conflict (as opposed to a visuo-proprioceptive conflict)."
+  },
+  {
+   "rank": 6,
+   "id": "37663341",
+   "source": "MED",
+   "pmid": "37663341",
+   "pmcid": "PMC10470465",
+   "doi": "10.3389/fpsyg.2023.1180561",
+   "first_publication_date": "2023-08-17",
+   "title": "Perception of rigidity in three- and four-dimensional spaces.",
+   "authors": "He D, Nguyen DT, Ogmen H, Nishina S, Yazdanbakhsh A.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Our brain employs mechanisms to adapt to changing visual conditions. In addition to natural changes in our physiology and those in the environment, our brain is also capable of adapting to \"unnatural\" changes, such as inverted visual-inputs generated by inverting prisms. In this study, we examined the brain's capability to adapt to hyperspaces. We generated four spatial-dimensional stimuli in virtual reality and tested the ability to distinguish between rigid and non-rigid motion. We found that observers are able to differentiate rigid and non-rigid motion of hypercubes (4D) with a performance comparable to that obtained using cubes (3D). Moreover, observers' performance improved when they were provided with more immersive 3D experience but remained robust against increasing shape variations. At this juncture, we characterize our findings as \"3 1/2 D perception\" since, while we show the ability to extract and use 4D information, we do not have yet evidence of a complete phenomenal 4D experience."
+  },
+  {
+   "rank": 7,
+   "id": "36874454",
+   "source": "MED",
+   "pmid": "36874454",
+   "pmcid": "PMC9981961",
+   "doi": "10.3389/fsurg.2023.1095591",
+   "first_publication_date": "2023-02-17",
+   "title": "Case report: Robot-assisted laparoscopic partial nephrectomy for renal cell carcinoma in a patient with situs inversus totalis and abdominal cocoon.",
+   "authors": "Zou Y, Xie X, Zhong C, Liu L, Wang Q, Yan S, Zou X, Liu Q.",
+   "journal": "Frontiers in surgery",
+   "pub_types": [
+    "Journal Article",
+    "Case Reports",
+    "case-report"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundSitus inversus totalis (SIT) is a congenital condition wherein organs in abdominal or thoracic cavity are mirrored from their normal positions. Abdominal cocoon, is a rare disease of unknown aetiology that is characterised by total or partial small intestine encapsulation by a compact fibrocollagenous membrane. Aside from having two extremely rare conditions (SIT and Abdominal cocoon), our patient developed renal cell carcinoma (RCC), which makes this case even more uncommon.Case presentationWe report the case of a 64-year-old man who was admitted to our hospital with an extremely rare case of localized RCC in the left kidney complicated with SIT and abdominal cocoon. Computer tomography urography (CTU) and angiography (CTA) showed that the patient was confirmed as having SIT, for the space-occupying lesion in the left kidney, clear cell RCC (ccRCC) was considered, the lesion in the right kidney was probably cystic. We diagnosed our patient as having a cT1aN0M0 left RCC, and the RENAL score was 7x. With partial nephrectomy (PN) being the preferred treatment approach, robot-assisted laparoscopic partial nephrectomy (RALPN) was performed after obtaining informed consent. After insertion of the laparoscope, adhesions were observed between the entire colon and the anterior abdominal wall. Then, abdominal cocoon was diagnosed. The surgery was uneventful, and the tumour was resected successfully while preserving the tumour capsule. No intestinal injury or any other complication occurred in the intraoperative or postoperative, and the patient recovered well after the operation.ConclusionPN is an extremely challenging procedure in patients with SIT and abdominal cocoon. The da Vinci Xi surgical system and thorough preoperative assessment allowed the surgeon to overcome stereotyping, visual inversion, and successfully perform PN in a patient with SIT and abdominal cocoon without increasing the risk of complications and preserving as much renal function as possible. Considering the satisfactory outcomes, this report may hopefully provide a practical reference for the treatment of RCC in patients with other special conditions."
+  },
+  {
+   "rank": 8,
+   "id": "33220339",
+   "source": "MED",
+   "pmid": "33220339",
+   "pmcid": null,
+   "doi": "10.1016/j.neuroscience.2020.10.033",
+   "first_publication_date": "2020-11-18",
+   "title": "Reversal of Visual Feedback Modulates Somatosensory Plasticity.",
+   "authors": "Goldenkoff ER, McGregor HR, Mergos J, Gholizadeh P, Bridenstine J, Brown MJN, Vesia M.",
+   "journal": "Neuroscience",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Reversed visual feedback during unimanual training increases transfer of skills to the opposite untrained hand and modulates plasticity in motor areas of the brain. However, it is unclear if unimanual training with reversed visual feedback also affects somatosensory areas. Here we manipulated visual input during unimanual training using left-right optical reversing spectacles and tested whether unimanual training with reversed vision modulates somatosensory cortical excitability to facilitate motor performance. Thirty participants practiced a unimanual ball-rotation task using the right hand with either left-right reversed vision (incongruent visual and somatosensory feedback) or direct vision (congruent feedback) of the moving hand. We estimated cortical excitability in primary somatosensory cortex (S1) before and after unimanual training by measuring somatosensory evoked potentials (SEPs). This was done by electrically stimulating the median nerve in the wrist while participants rested, and recording potentials over both hemispheres using electroencephalography. Performance of the ball-rotation task improved for both the right (trained) and left (untrained) hand after training across both direct and reversed vision conditions. Participants with direct vision of the right hand during training showed SEPs amplitudes increased bilaterally. In contrast, participants in the reversed visual condition showed attenuated SEPs following training. The results suggest that cortical suppression of S1 activity supports skilled motor performance after unimanual training with reversed vision, presumably by sensory gating of afferent signals from the movement. This finding provides insight into the mechanisms by which visual input interacts with the sensorimotor system and induces neuroplastic changes in S1 to support skilled motor performance."
+  },
+  {
+   "rank": 9,
+   "id": "29651250",
+   "source": "MED",
+   "pmid": "29651250",
+   "pmcid": "PMC5885191",
+   "doi": "10.3389/fphys.2018.00301",
+   "first_publication_date": "2018-03-29",
+   "title": "Efficacy of Stochastic Vestibular Stimulation to Improve Locomotor Performance During Adaptation to Visuomotor and Somatosensory Distortion.",
+   "authors": "Temple DR, De Dios YE, Layne CS, Bloomberg JJ, Mulavara AP.",
+   "journal": "Frontiers in physiology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Astronauts exposed to microgravity face sensorimotor challenges affecting balance control when readapting to Earth's gravity upon return from spaceflight. Small amounts of electrical noise applied to the vestibular system have been shown to improve balance control during standing and walking under discordant sensory conditions in healthy subjects, likely by enhancing information transfer through the phenomenon of stochastic resonance. The purpose of this study was to test the hypothesis that imperceptible levels of stochastic vestibular stimulation (SVS) could improve short-term adaptation to a locomotor task in a novel sensory discordant environment. Healthy subjects (14 males, 10 females, age = 28.7 ± 5.3 years, height = 167.2 ± 9.6 cm, weight = 71.0 ± 12.8 kg) were tested for perceptual thresholds to sinusoidal currents applied across the mastoids. Subjects were then randomly and blindly assigned to an SVS group receiving a 0-30 Hz Gaussian white noise electrical stimulus at 50% of their perceptual threshold (stim) or a control group receiving zero stimulation during Functional Mobility Tests (FMTs), nine trials of which were done under conditions of visual discordance (wearing up/down vision reversing goggles). Time to complete the course (TCC) was used to test the effect of SVS between the two groups across the trials. Adaptation rates from the normalized TCCs were also compared utilizing exponent values of power fit trendline equations. A one-tailed independent-samples t-test indicated these adaptation rates were significantly faster in the stim group (n = 12) than the control (n = 12) group [t(16.18) = 2.00, p = 0.031]. When a secondary analysis was performed comparing \"responders\" (subjects who showed faster adaptation rates) of the stim (n = 7) group to the control group (n = 12), independent-samples t-tests revealed significantly faster trial times for the last five trials with goggles in the stim group \"responders\" than the controls. The data suggests that SVS may be capable of improving short-term adaptation to a locomotion task done under sensory discordance in a group of responsive subjects."
+  },
+  {
+   "rank": 10,
+   "id": "29593580",
+   "source": "MED",
+   "pmid": "29593580",
+   "pmcid": "PMC5858532",
+   "doi": "10.3389/fpsyt.2018.00069",
+   "first_publication_date": "2018-03-12",
+   "title": "Self-Reported Visual Perceptual Abnormalities Are Strongly Associated with Core Clinical Features in Psychotic Disorders.",
+   "authors": "Keane BP, Cruz LN, Paterno D, Silverstein SM.",
+   "journal": "Frontiers in psychiatry",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundPast studies using the Bonn Scale for the Assessment of Basic Symptoms (hereafter, Bonn Scale) have shown that self-reported perceptual/cognitive disturbances reveal which persons have or will soon develop schizophrenia. Here, we focused specifically on the clinical value of self-reported visual perceptual abnormalities (VPAs) since they are underexplored and have been associated with suicidal ideation, negative symptoms, and objective visual dysfunction.MethodUsing the 17 Bonn Scale vision items, we cross-sectionally investigated lifetime occurrence of VPAs in 21 first-episode psychosis and 22 chronic schizophrenia/schizoaffective disorder (SZ/SA) patients. Relationships were probed between VPAs and illness duration, symptom severity, current functioning, premorbid functioning, diagnosis, and age of onset.ResultsIncreased VPAs were associated with: earlier age of onset; more delusions, hallucinations, bizarre behavior, and depressive symptoms; and worse premorbid social functioning, especially in the childhood and early adolescent phases. SZ/SA participants endorsed more VPAs as compared to those with schizophreniform or psychotic disorder-NOS, especially in the perception of color, bodies, faces, object movement, and double/reversed vision. The range of self-reported VPAs was strikingly similar between first-episode and chronic patients and did not depend on the type or amount of antipsychotic medication. As a comparative benchmark, lifetime occurrence of visual hallucinations did not depend on diagnosis and was linked only to poor premorbid social functioning.ConclusionA brief 17-item interview derived from the Bonn Scale is strongly associated with core clinical features in schizophrenia. VPAs hold promise for clarifying diagnosis, predicting outcome, and guiding neurocognitive investigations."
+  },
+  {
+   "rank": 11,
+   "id": "28149394",
+   "source": "MED",
+   "pmid": "28149394",
+   "pmcid": "PMC5260518",
+   "doi": "10.1515/hukin-2015-0194",
+   "first_publication_date": "2016-09-10",
+   "title": "Reduced plantar sole sensitivity facilitates early adaptation to a visual rotation pointing task when standing upright.",
+   "authors": "Maxime B, Normand T, Léandre GL, Mathieu GR, Martin S.",
+   "journal": "Journal of human kinetics",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Humans are capable of pointing to a target with accuracy. However, when vision is distorted through a visual rotation or mirror-reversed vision, the performance is initially degraded and thereafter improves with practice. There are suggestions this gradual improvement results from a sensorimotor recalibration involving initial gating of the somatosensory information from the pointing hand. In the present experiment, we examined if this process interfered with balance control by asking participants to point to targets with a visual rotation from a standing posture. This duality in processing sensory information (i.e., gating sensory signals from the hand while processing those arising from the control of balance) could generate initial interference leading to a degraded pointing performance. We hypothesized that if this is the case, the attenuation of plantar sole somatosensory information through cooling could reduce the sensorimotor interference, and facilitate the early adaptation (i.e. improvement in the pointing task). Results supported this hypothesis. These observations suggest that processing sensory information for balance control interferes with the sensorimotor recalibration process imposed by a pointing task when vision is rotated."
+  },
+  {
+   "rank": 12,
+   "id": "26191651",
+   "source": "MED",
+   "pmid": "26191651",
+   "pmcid": null,
+   "doi": "10.1016/j.neuroimage.2015.07.033",
+   "first_publication_date": "2015-07-17",
+   "title": "Neural correlates for task-relevant facilitation of visual inputs during visually-guided hand movements.",
+   "authors": "Lebar N, Bernier PM, Guillaume A, Mouchnino L, Blouin J.",
+   "journal": "NeuroImage",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Vision is a powerful source of information for controlling movements, especially fine actions produced by the hand that require a great deal of accuracy. However, the neural processes that enable vision to enhance movement accuracy are not well understood. In the present study, we tested the hypothesis that the cortical sensitivity to visual inputs increases during a spatially-constrained hand movement compared to a situation where visual information is irrelevant to the task. Specifically, we compared the cortical visual-evoked potentials (VEPs) in response to flashes (right visual hemifield) recorded while participants followed the outline of an irregular polygon with a pen (i.e., tracing), with VEPs recorded when participants simply kept the pen still. This tracing task was chosen specifically because it requires many different visual processes (e.g., detection of line orientation, motion perception, visuomotor transformation) to be completed successfully. The tracing and resting tasks were performed with normal vision and also with mirror-reversed vision, thereby increasing task difficulty when tracing. We predicted that the sensitivity to visual inputs would be enhanced (i.e. greater VEPs) during tracing and that this increase in response sensitivity would be greater when tracing was performed with mirror-reversed vision. In addition, in order to investigate the existence of a link between the sensitivity to visual inputs and the accuracy with which participants traced the shape, we assigned participants to high performer (HP) or low performer (LP) groups according to their tracing performance in the condition with mirror-reversed visual feedback. Source analyses revealed that, for both groups, the sensitivity to visual inputs of the left occipital and MT/MST regions increased when participants traced the shape as compared to when they were resting. Also, for both groups of participants, the mirror-reversed vision did not affect the amplitude of the cortical response to visual inputs but increased the latencies of the responses in the occipital, temporal, and parietal regions. However, the HP group showed cortical responses that largely differed from those displayed by the LP group. Specifically, the HP group demonstrated movement-related increases of visual sensitivity in regions of the visual cortex that were not observed in the LP group. These increased responses to visual inputs were evidenced in the posterior inferior parietal, temporal-occipital, and inferior-temporal regions. Overall, our results are in line with the assertion that increasing the sensitivity to visual inputs serves to promote relevant visual information for the different processes involved during visually-guided hand movements. Our results also suggest that maintaining accurate hand tracing movements in the presence of discrepant visual and somatosensory feedback requires additional perceptual and spatial information processing that is tightly linked to visual inputs."
+  },
+  {
+   "rank": 13,
+   "id": "25218421",
+   "source": "MED",
+   "pmid": "25218421",
+   "pmcid": null,
+   "doi": "10.1016/j.visres.2014.08.021",
+   "first_publication_date": "2014-09-16",
+   "title": "When adaptive control fails: Slow recovery of reduced rapid online control during reaching under reversed vision.",
+   "authors": "Kuang S, Gail A.",
+   "journal": "Vision research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Previous studies have shown that short-term exposure to mirror-reversed visual feedback suppresses rapid online control (ROC) of arm movements in response to a sudden target displacement. Here we tested if the reduced ROC under reversed vision can be observed for natural reaches without target perturbations, i.e. without corrective movements that are driven by visual input perturbation. Second, we ask if such ROC reduction generalizes to movement phases without visual feedback of the hand. Subjects were instructed to perform simple reach movements towards a stationary target position either under normal or physically reversed vision of the hand during the late movement phase. We quantified time-resolved ROC via a coefficient of determination of the reach trajectories over the full course of the movement. As for other measures in previous studies, we found that our perturbation-independent ROC was reduced within a few trials after exposure to reversed visual feedback. The reduced ROC was restricted to late movement phases, and was not observed in early movement phases. We further asked if subjects would be able to re-gain ROC with prolonged exposure to the reversed visual input. ROC gradually and incompletely increased over the course of 400 exposure trials, affecting both early and late movement phases. Our results show that under reversed vision ROC is reduced even for perturbation-independent natural reaches aiming at stationary targets."
+  },
+  {
+   "rank": 14,
+   "id": "25104829",
+   "source": "MED",
+   "pmid": "25104829",
+   "pmcid": "PMC4125061",
+   "doi": "10.1167/14.9.4",
+   "first_publication_date": "2014-08-07",
+   "title": "Paradoxical visuomotor adaptation to reversed visual input is predicted by BDNF Val66Met polymorphism.",
+   "authors": "Barton B, Treister A, Humphrey M, Abedi G, Cramer SC, Brewer AA.",
+   "journal": "Journal of vision",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Brain-derived neurotrophic factor (BDNF) is the most abundant neurotrophin in the brain, influencing neural development, plasticity, and repair (Chen et al., 2004; Thoenen, 1995). The BDNF gene contains a single-nucleotide polymorphism (SNP) called Val(66)Met. The Met allele interferes with intracellular BDNF-trafficking, decreases activity-dependent BDNF secretion, and consequently is often associated with a shift from plasticity to stability in neural circuits (Egan et al., 2003). We investigated the behavioral consequences of the presence of the Met allele by comparing how 40 heterozygous subjects with the Val/Met genotype and 35 homozygous subjects with the Val/Val genotype performed on visuomotor tasks (reaching and navigation) under two conditions: normal vision and completely left-right reversed vision. As expected, subjects did not differ in their short-term ability to learn the tasks with normal vision (p = 0.58). Intuitively, it would be expected that homozygous Val/Val subjects with a propensity for greater BDNF-induced activity-dependent plasticity would learn new tasks more quickly than heterozygous Val/Met subjects with decreased BDNF secretion (Gilbert, Li, & Piech, 2009). However, we found the opposite here. When short-term mechanisms of visuomotor adaptation were engaged to compensate for the misalignment of visual and somatomotor information created by the left-right reversal of vision, heterozygous Val/Met subjects learned significantly more quickly than their homozygous Val/Val counterparts (p = 0.027). Our results demonstrate the paradoxical finding that the presence of the Met allele, which is thought to promote cortical stability, here improves immediate visuomotor adaptation to left-right-reversed visual input."
+  },
+  {
+   "rank": 15,
+   "id": "24258770",
+   "source": "MED",
+   "pmid": "24258770",
+   "pmcid": "PMC4039253",
+   "doi": "10.1007/s11357-013-9601-4",
+   "first_publication_date": "2013-11-22",
+   "title": "Balance control interferes with the tracing performance of a pattern with mirror-reversed vision in older persons.",
+   "authors": "Lemieux LG, Simoneau M, Tessier JF, Billot M, Blouin J, Teasdale N.",
+   "journal": "Age (Dordrecht, Netherlands)",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Randomized Controlled Trial",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "When tracing a template with mirror-reversed vision (or distorted vision), the sensory information arising from the movement does not match the expected sensory consequences. In such situations, participants have to learn a new visuomotor mapping in order to trace the template with an accuracy and speed approaching that observed when tracing with direct vision. There are several suggestions that such visuomotor learning requires lowering the gain of the proprioceptive inputs. Generally, subjects learn this task in a seated condition offering a stable postural platform. Adapting to the new visuomotor relationship in a standing condition could add complexity and even hinder sensorimotor adaptation because balance control and processing of additional information typically interfere with each other. To examine this possibility, older individuals and young adults (on average, 70 and 22 years of age, respectively) were assigned to groups that trained to trace a shape with mirror-reversed vision in a seated or a standing condition for two sessions. For a third session, the seated groups (young and elderly) transferred to the standing condition while the standing groups continued to perform the tracing task while standing. This procedure allowed comparing the tracing performance of all groups (with the same amount of practice) in a standing condition. The standing groups also did a fourth session in a seated condition. Results show that older participants initially exposed to the standing condition were much slower to trace the template than all other groups (including the older group that performed the tracing task while seated). This slowness did not result from a baseline general slowness but from a genuine interference between balance control and the visuomotor conflict resulting from tracing the pattern with mirror-reversed vision. Besides, the Standing-Old participants that transferred to a seated condition in the fourth session immediately improved their tracing by reducing the total displacement covered by the pen to trace the template. Interestingly, the results did not support a transfer-appropriate practice hypothesis which suggests that training in a standing condition (at the third session) should have benefited the performance of those individuals who initially learned to trace the mirror pattern in a standing condition. This has important clinical implications: training at adapting to new sensory contexts or environmental conditions in conditions that do not challenge balance control could be necessary if one desires to attenuate the detrimental consequences on the postural or motor performances brought up by the interference between maintaining balance and the sensory reweighing processes."
+  },
+  {
+   "rank": 16,
+   "id": "25358393",
+   "source": "MED",
+   "pmid": "25358393",
+   "pmcid": null,
+   "doi": "10.1159/000365485",
+   "first_publication_date": "2014-10-24",
+   "title": "Prism adaptation and perceptual skill learning deficits in early-stage Parkinson's disease.",
+   "authors": "Sato E, Onitsuka T, Ninomiya H, Nakamura I, Kanba S.",
+   "journal": "Neuropsychobiology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundSkill learning deficits in Parkinson's disease (PD) at an early stage are not well known, and findings in behavioral studies with mirror reading and prism adaptation tasks are mixed. Moreover, skill learning over several days in PD patients has not been studied.MethodsA total of 12 nondemented early-stage PD patients and 12 age-matched normal control subjects participated in this study. The Wechsler Memory Scale-Revised (WMS-R) was applied to all subjects to assess declarative memory. The mirror reading task of horizontally presented kana letters and the reversed vision task using a prism were performed throughout 3 consecutive days.ResultsFor the mirror reading skill, the early-stage PD patients showed significantly increased mirror reading time on days 2 and 3. For the prism adaptation, the PD patients performed significantly more slowly in reversed vision than the normal controls, specifically at blocks 1 and 2, over 3 days. The WMS-R subscores did not show a significant correlation with the reaction times in reversed vision or with the mirror reading times.ConclusionsUsing two tasks with different modalities, the present study revealed visuomotor adaptation deficits and acquisition/retention deficits, especially in the later phase of perceptual skill learning, in early-stage PD patients."
+  },
+  {
+   "rank": 17,
+   "id": "23700129",
+   "source": "MED",
+   "pmid": "23700129",
+   "pmcid": null,
+   "doi": "10.1007/s00221-013-3565-6",
+   "first_publication_date": "2013-05-23",
+   "title": "Adapting to inversion of the visual field: a new twist on an old problem.",
+   "authors": "Lillicrap TP, Moreno-Briseño P, Diaz R, Tweed DB, Troje NF, Fernandez-Ruiz J.",
+   "journal": "Experimental brain research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "While sensorimotor adaptation to prisms that displace the visual field takes minutes, adapting to an inversion of the visual field takes weeks. In spite of a long history of the study, the basis of this profound difference remains poorly understood. Here, we describe the computational issue that underpins this phenomenon and presents experiments designed to explore the mechanisms involved. We show that displacements can be mastered without altering the updated rule used to adjust the motor commands. In contrast, inversions flip the sign of crucial variables called sensitivity derivatives-variables that capture how changes in motor commands affect task error and therefore require an update of the feedback learning rule itself. Models of sensorimotor learning that assume internal estimates of these variables are known and fixed predicted that when the sign of a sensitivity derivative is flipped, adaptations should become increasingly counterproductive. In contrast, models that relearn these derivatives predict that performance should initially worsen, but then improve smoothly and remain stable once the estimate of the new sensitivity derivative has been corrected. Here, we evaluated these predictions by looking at human performance on a set of pointing tasks with vision perturbed by displacing and inverting prisms. Our experimental data corroborate the classic observation that subjects reduce their motor errors under inverted vision. Subjects' accuracy initially worsened and then improved. However, improvement was jagged rather than smooth and performance remained unstable even after 8 days of continually inverted vision, suggesting that subjects improve via an unknown mechanism, perhaps a combination of cognitive and implicit strategies. These results offer a new perspective on classic work with inverted vision."
+  },
+  {
+   "rank": 18,
+   "id": "22742662",
+   "source": "MED",
+   "pmid": "22742662",
+   "pmcid": null,
+   "doi": "10.1016/j.actpsy.2012.05.011",
+   "first_publication_date": "2012-06-26",
+   "title": "Visuo-somatosensory reorganization in perceptual adaptation to reversed vision.",
+   "authors": "Sekiyama K, Hashimoto K, Sugita Y.",
+   "journal": "Acta psychologica",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Humans can adapt to reversal of the visual field after long-term wear of reversing prism spectacles. Among various aspects of adaptation to reversed vision, adjustment of visually-guided behavior has been consistently found. On the other hand, there is relatively little quantitative evidence for 'perceptual adaptation', for example, restoration of perceptual harmony between the visual and tactile world. To elucidate perceptual adaptation to reversed vision, we conducted long-term experiments with continuous wear of reversing spectacles. Four human adult participants wore left-right reversing spectacles for 37 or 32days. Perceptual adaptation was examined by spatial left-right judgment tasks for visual, auditory, and somatosensory stimuli. In the visuo-motor (VM) and somato-visual (SV) tasks, correct responses disappeared completely at the beginning of prism wearing, but gradually restored, first in the VM task, and subsequently in the SV task. Moreover, the VM and SV tasks revealed aftereffects (incorrect responses) upon removal of the reversing prisms after the long adaptation period. In the auditory-motor (AM) task, responses were mostly correct irrespective of the reversed vision, but incorrect responses transiently appeared approximately when the adaptive change was first observed in the SV task. Moreover, starting from the period when these changes in the SV and AM tasks emerged, an adaptive sign of interhemispheric interaction was revealed by functional Magnetic Resonance Imaging. These results indicate that perceptual adaptation to reversed vision does occur, and that it proceeds to visuo-somatosensory reorganization, which seems to transiently accompany global cross-modal interactions."
+  },
+  {
+   "rank": 19,
+   "id": "21948084",
+   "source": "MED",
+   "pmid": "21948084",
+   "pmcid": null,
+   "doi": "10.1007/s10072-011-0781-3",
+   "first_publication_date": "2011-09-25",
+   "title": "Acute \"upside-down\" visual inversion in a patient with multiple sclerosis.",
+   "authors": "Deniz O, Keklikoglu HD, Vural G, Temel S, Dilbaz FA.",
+   "journal": "Neurological sciences : official journal of the Italian Neurological Society and of the Italian Society of Clinical Neurophysiology",
+   "pub_types": [
+    "Journal Article",
+    "Case Reports"
+   ],
+   "open_access": "N",
+   "abstract": "Visual and oculomotor signs and symptoms are common and well defined in patients with multiple sclerosis. On the other hand, the phenomenon of \"upside-down\" reversal of vision is very rare and thus not well known. The physiopathology of this phenomenon also has not been well understood. Herein, we present a female patient with multiple sclerosis, who developed acute \"upside-down\" visual inversion, and discuss possible mechanisms of this rare phenomenon."
+  },
+  {
+   "rank": 20,
+   "id": "22410442",
+   "source": "MED",
+   "pmid": "22410442",
+   "pmcid": null,
+   "doi": "10.1001/archneurol.2011.2972",
+   "first_publication_date": "2012-03-01",
+   "title": "Effect of EPI-743 on the clinical course of the mitochondrial disease Leber hereditary optic neuropathy.",
+   "authors": "Sadun AA, Chicani CF, Ross-Cisneros FN, Barboni P, Thoolen M, Shrader WD, Kubis K, Carelli V, Miller G.",
+   "journal": "Archives of neurology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveTo evaluate the safety and efficacy of a new therapeutic agent, EPI-743, in Leber hereditary optic neuropathy (LHON) using standard clinical, anatomic, and functional visual outcome measures.DesignOpen-label clinical trial.SettingUniversity medical center. Patients  Five patients with genetically confirmed LHON with acute loss of vision were consecutively enrolled and treated with the experimental therapeutic agent EPI-743 within 90 days of conversion. Intervention  During the course of the study, 5 consecutive patients received EPI-743, by mouth, 3 times daily (100-400 mg per dose).Main outcome measuresTreatment effect was assessed by serial measurements of anatomic and functional visual indices over 6 to 18 months, including Snellen visual acuity, retinal nerve fiber layer thickness measured by optical coherence tomography, Humphrey visual fields (mean decibels and area with 1-log unit depression), and color vision. Treatment effect in this clinical proof of principle study was assessed by comparison of the prospective open-label treatment group with historical controls.ResultsOf 5 subjects treated with EPI-743, 4 demonstrated arrest of disease progression and reversal of visual loss. Two patients exhibited a total recovery of visual acuity. No drug-related adverse events were recorded.ConclusionsIn a small open-label trial, EPI-743 arrested disease progression and reversed vision loss in all but 1 of the 5 consecutively treated patients with LHON. Given the known natural history of acute and rapid progression of LHON resulting in chronic and persistent bilateral blindness, these data suggest that the previously described irreversible priming to retinal ganglion cell loss may be reversed."
+  },
+  {
+   "rank": 21,
+   "id": "21764164",
+   "source": "MED",
+   "pmid": "21764164",
+   "pmcid": null,
+   "doi": "10.1016/j.humov.2011.02.007",
+   "first_publication_date": "2011-07-20",
+   "title": "Adaptation to mirror-reversed vision is based on directionally tuned modules.",
+   "authors": "Werner S.",
+   "journal": "Human movement science",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Sensorimotor adaptation to rotated visual feedback is thought to be achieved by directionally tuned modules. Here we scrutinize whether adaptation to reversed vision utilizes similar mechanisms. Specifically, we hypothesize that adaptive transfer to unpracticed target directions is determined by the superposition of neighboring modules. One group of subjects adapted to a left-right reversal of visual feedback, which requires a 180°, ±90°, or no change of response direction, depending on target position. Two groups of control subjects adapted to a 180° and to a 90° rotation of visual feedback. We found that adaptation to a left-right reversal is less efficient than adaptation to rotations requiring the same adaptive change, and attribute this decrement to an overlap of neighboring modules. We further found that transfer to unpracticed targets is well predicted by a simple Gaussian model. From this we conclude that adaptation to a left-right reversal emerges in a regional and interdependent fashion, and can be modeled as overlapping Gaussian tuned processes."
+  },
+  {
+   "rank": 22,
+   "id": "23366702",
+   "source": "MED",
+   "pmid": "23366702",
+   "pmcid": null,
+   "doi": "10.1109/embc.2012.6346741",
+   "first_publication_date": "2012-01-01",
+   "title": "Training complexity is not decisive factor for improving adaptation to visual sensory conflict.",
+   "authors": "Yang Y, Pu F, Li S, Li Y, Li D, Fan Y.",
+   "journal": "Annual International Conference of the IEEE Engineering in Medicine and Biology Society. IEEE Engineering in Medicine and Biology Society. Annual International Conference",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Ground-based preflight training utilizing unusual visual stimuli is useful for decreasing the susceptibility to space motion sickness (SMS). The effectiveness of the sensorimotor adaptation training is affected by the training tasks, but what kind of task is more effective remains unknown. Whether the complexity is the decisive factor to consider for designing the training and if other factors are more important need to be analyzed. The results from the analysis can help to optimize the preflight training tasks for astronauts. Twenty right-handed subjects were asked to draw the right path of 45° rotated maze before and after 30 min training. Subjects wore an up-down reversing prism spectacle in test and training sessions. Two training tasks were performed: drawing the right path of the horizontal maze (complex task but with different orientation feature) and drawing the L-shape lines (easy task with same orientation feature). The error rate and the executing time were measured during the test. Paired samples t test was used to compare the effects of the two training tasks. After each training, the error rate and the executing time were significantly decreased. However, the training effectiveness of the easy task was better as the test was finished more quickly and accurately. The complexity is not always the decisive factor for designing the adaptation training task, e.g. the orientation feature is more important in this study. In order to accelerate the adaptation and to counter SMS, the task for astronauts preflight adaptation training could be simple activities with the key features."
+  },
+  {
+   "rank": 23,
+   "id": "20674618",
+   "source": "MED",
+   "pmid": "20674618",
+   "pmcid": null,
+   "doi": "10.1016/j.neures.2010.07.2038",
+   "first_publication_date": "2010-07-30",
+   "title": "Effects of reversible pharmacological shutdown of cerebellar flocculus on the memory of long-term horizontal vestibulo-ocular reflex adaptation in monkeys.",
+   "authors": "Anzai M, Kitazawa H, Nagao S.",
+   "journal": "Neuroscience research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The adaptation of the horizontal vestibulo-ocular reflex (HVOR) provides an experimental model for motor learning. Two studies, using cats and mice, respectively, have recently suggested pharmacologically that the memory of adaptation is located multiply in the cerebellum and brainstem. Here, we examined the effects of acute cerebellar flocculus shutdown on the adaptation in four monkeys. Two hours of 0.11Hz-10° turntable oscillation while viewing a stationary checked-patterned screen through the left-right reversing prism decreased the HVOR gains by 0.16, and 3 days of prism wearing combined with 2h of daily turntable oscillation decreased the HVOR gains by 0.27. Injections of lidocaine into bilateral flocculi did not affect the nonadapted HVOR gains, but depressed the visual suppression of the HVOR. They recovered the HVOR gains decreased by 2h of training, but very little affected the HVOR gains decreased by previous 2 days of training. Injections of control Ringer's solution did not affect the gains adapted by 2h or 3 days of training. These results are consistent with the previous studies, and suggest that the memory trace of adaptation of the HVOR initially resides in the flocculus but later resides, presumably, in the vestibular nuclei in the monkey."
+  },
+  {
+   "rank": 24,
+   "id": "20304517",
+   "source": "MED",
+   "pmid": "20304517",
+   "pmcid": null,
+   "doi": "10.1016/j.humov.2010.02.004",
+   "first_publication_date": "2010-03-20",
+   "title": "Mechanisms for visuomotor adaptation to left-right reversed vision.",
+   "authors": "Werner S, Bock O.",
+   "journal": "Human movement science",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Behavioral studies suggest that the adaptation of planar arm movements to rotated visual feedback is achieved by the interplay of a gradual process which slowly rotates participants' responses by up to +/-90 degrees , and a discrete process which changes the responses by means of axis inversion. The processes for adaptation to left-right reversed visual feedback are far less well understood. To clarify this issue, 12 healthy participants performed pointing movements to targets presented in eight different directions, before and during exposure to left-right reversed visual feedback. We quantified the direction of each response 150ms after movement onset and analyzed the time-course of those directions throughout the adaptation phase, separately for different targets. For targets along the axis of inversion, we only found an increase of response variability, for targets perpendicular to that axis, we observed a discrete 180 degrees change of response direction, and for diagonal targets, we found a discrete 180 degrees change followed by a gradual \"backward\" shift of 90 degrees . The present findings confirm that sensorimotor adaptation is based on discrete and gradual processes, that both types of processes can occur concurrently, and suggests that those processes can contribute to adaptation in a target-specific fashion."
+  },
+  {
+   "rank": 25,
+   "id": "21180357",
+   "source": "MED",
+   "pmid": "21180357",
+   "pmcid": null,
+   "doi": "10.1068/p6615",
+   "first_publication_date": "2010-01-01",
+   "title": "Rapid learning by walking observers wearing a reversing or inverting prism.",
+   "authors": "Ito H, Sunaga S, Tomimatsu E, Ogata Y.",
+   "journal": "Perception",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "We measured the initial rapid learning of walking observers who wore an up-down inverting or left-right reversing prism. This prism-walking version of the 'mirror-drawing' experiment revealed that the learning curve as a function of the trial number was the same as that typically acquired from a traditional mirror-drawing experiment. We suggest that the initial short-term learning process involved in prism walking is similar to that in mirror drawing and is related to the high-level decision-making process involved in visuo-motor planning of actions with feedback from transformed vision."
+  },
+  {
+   "rank": 26,
+   "id": "19631236",
+   "source": "MED",
+   "pmid": "19631236",
+   "pmcid": null,
+   "doi": "10.1016/j.bbr.2009.07.015",
+   "first_publication_date": "2009-07-22",
+   "title": "Bimanual information processing and the impact of conflict during mirror drawing.",
+   "authors": "Serrien DJ.",
+   "journal": "Behavioural brain research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Successful motor behavior depends on optimal information processing and planning. In the present study, the neural response of the motor system to conflict of visuomotor discrepancy (mirror-reversed vision) and complexity (task difficulty and hand laterality) was evaluated during the performance of bimanual actions. EEG coherence, expressing interregional communication, showed that conflict of visuomotor incongruence resulted in activation changes in both hemispheres, whereas conflict of complexity evoked adjustments primarily in the left hemisphere. Furthermore, interhemispheric coherence was modified due to both forms of conflict. This demonstrates that conflict demands elicit distinct processes across the motor system. The data further illustrate that functional couplings are dynamically modulated during bimanual behaviour, suggesting that interactions between brain regions provide higher-order links for information processing and integration in view of complex motor skills."
+  },
+  {
+   "rank": 27,
+   "id": "19730838",
+   "source": "MED",
+   "pmid": "19730838",
+   "pmcid": "PMC3284250",
+   "doi": "10.1007/s00221-009-1998-8",
+   "first_publication_date": "2009-11-01",
+   "title": "The role of hand dominance and sensorimotor congruence   in voluntary movement.",
+   "authors": "Serrien DJ, Spapé MM.",
+   "journal": "Experimental brain research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The present study evaluated the neural changes due to effector use (unimanual left, unimanual right, and bimanual) and visuomotor conflict induced by mirror-reversed vision during drawing behavior. EEG phase synchronization, expressing interregional communication, showed that visuomotor incongruence perturbed information processing in both hemispheres. Furthermore, it was observed that the left hemisphere became temporally dominant when movements were executed with visuomotor conflict, independent of the performing hand(s). This observation emphasizes the superiority of the left hemisphere to control complex movements. In addition, the functional interactions between the hemispheres were also perturbed due to visuomotor discordance, indicating the crucial role of interhemispheric communication for movement control. These results highlight that functional connectivity patterns provide higher-order coding mechanisms of information processing. The data further underline the significance of the left hemisphere for intricate visuomotor skills."
+  },
+  {
+   "rank": 28,
+   "id": "19126799",
+   "source": "MED",
+   "pmid": "19126799",
+   "pmcid": null,
+   "doi": "10.1093/cercor/bhn233",
+   "first_publication_date": "2009-01-06",
+   "title": "Direct evidence for cortical suppression of somatosensory afferents during visuomotor adaptation.",
+   "authors": "Bernier PM, Burle B, Vidal F, Hasbroucq T, Blouin J.",
+   "journal": "Cerebral cortex (New York, N.Y. : 1991)",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Upon exposure to novel visuomotor relationships, the information carried by visual and proprioceptive signals becomes discrepant, often disrupting motor execution. It has been shown that degradation of the proprioceptive sense (arising either from disease or experimental manipulation) enhances performance when drawing with mirror-reversed vision. Given that the central nervous system can exert a dynamic control over the transmission of afferent signals, reducing proprioceptive inflow to cortical areas could be part of the normal adaptive mechanisms deployed in healthy humans upon exposure to novel visuomotor environments. Here we address this issue by probing the transmission of somatosensory afferents throughout the course of adaptation to a visuomotor conflict, by recording median nerve somatosensory evoked potentials. We show that early exposure to tracing with mirror-reversed vision is accompanied by substantial proprioceptive suppression occurring in the primary somatosensory cortex (S1). This proprioceptive gating is gradually alleviated as performance increases with adaptation, returning to baseline levels. Peripheral and spinal evoked potentials were not modulated throughout, suggesting that the gating acted to reduce cortico-cortico excitability directly within S1. These modulations provide neurophysiological evidence for flexibility in sensory integration during visuomotor adaptation, which may functionally serve to reduce the sensory conflict until the visuo-proprioceptive mapping is updated."
+  },
+  {
+   "rank": 29,
+   "id": "17942518",
+   "source": "MED",
+   "pmid": "17942518",
+   "pmcid": null,
+   "doi": "10.1177/1352458507082045",
+   "first_publication_date": "2007-10-17",
+   "title": "Acute 'upside-down' visual inversion due to multiple sclerosis.",
+   "authors": "Okuyucu EE, Okuyucu S, Karazincir S, Akoglu E, Duman T.",
+   "journal": "Multiple sclerosis (Houndmills, Basingstoke, England)",
+   "pub_types": [
+    "Journal Article",
+    "Case Reports"
+   ],
+   "open_access": "N",
+   "abstract": "In a 20-year-old male patient, a 180 degree inversion of visual image was found as a manifestation of multiple sclerosis. Upside down reversal of vision is not a well-known sign in multiple sclerosis. Exact mechanism is still unknown. Lesions involving cortical areas, mainly the parieto-occipital region, have occasionally been documented. To our knowledge this is the first report of upside-down reversal of vision in multiple sclerosis with cerebra lesion on MRI."
+  },
+  {
+   "rank": 30,
+   "id": "17609882",
+   "source": "MED",
+   "pmid": "17609882",
+   "pmcid": null,
+   "doi": "10.1007/s00221-007-1015-z",
+   "first_publication_date": "2007-07-04",
+   "title": "The effects of inverting prisms on the horizontal-vertical illusion: a systematic effect of downward gaze.",
+   "authors": "Richter HO, Wennberg P, Raudsepp J.",
+   "journal": "Experimental brain research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The purpose of this work is to compare the relative contributions from the extraocular and sensory systems on the magnitude of the horizontal-vertical illusion (HVI). The visual HVI refers to the general tendency to overestimate vertical extensions of small-scale lines on a picture plane relative to the horizontal by 4-16% depending on the method of measurement. The HVI line stimuli consisted of luminous vertical and horizontal lines forming \"L-profiles\" located in the frontoparallel plane at a 45 cm viewing distance, collinearly with a binocular gaze. The home position of gaze was aligned to the center of the screen with the ear-eye angle concordant with the environmental horizontal. Illusion strength was quantified when subjects fixated the HVI line stimuli in four quadrants of the visual field. The HVI was also viewed through prism lenses that inverted the retinal images by 180 degrees, thereby dissociating the sensory \"up-down\" direction from the oculomotor up-down frame of reference. The results revealed a systematically lower magnitude of the HVI in the bottom visual field regardless of whether subjects fixated the HVI with the distorting prisms or without. Taken together, these results suggest that the HVI is sensitive to small-angle gaze shifts. In agreement with several recent findings, these results are interpreted as implying that the brain imposes an enhanced analytic structure on the ascending sensory information during downward gaze."
+  },
+  {
+   "rank": 31,
+   "id": "17215478",
+   "source": "MED",
+   "pmid": "17215478",
+   "pmcid": null,
+   "doi": "10.1093/cercor/bhl137",
+   "first_publication_date": "2007-01-10",
+   "title": "Human parietal \"reach region\" primarily encodes intrinsic visual direction, not extrinsic movement direction, in a visual motor dissociation task.",
+   "authors": "Fernandez-Ruiz J, Goltz HC, DeSouza JF, Vilis T, Crawford JD.",
+   "journal": "Cerebral cortex (New York, N.Y. : 1991)",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Posterior parietal cortex (PPC) participates in the planning of visuospatial behaviors, including reach movements, in gaze-centered coordinates. It is not known if these representations encode the visual goal in retinal coordinates, or the movement direction relative to gaze. Here, by dissociating the intrinsic retinal stimulus from the extrinsic direction of movement, we show that PPC employs a visual code. Using delayed pointing and event-related functional magnetic resonance imaging, we identified a cluster of PPC regions whose activity was topographically (contralaterally) related to the direction of the planned movement. We then switched the normal visual-motor spatial relationship by adapting subjects to optical left/right reversing prisms. With prisms, movement-related PPC topography reversed, remaining tied to the retinal image. Thus, remarkably, the PPC region in each hemisphere now responded more for planned ipsilateral pointing movements. Other non-PPC regions showed the opposite world- or motor-fixed pattern. These findings suggest that PPC primarily encodes not motor commands but movement goals in visual coordinates."
+  },
+  {
+   "rank": 32,
+   "id": "17383707",
+   "source": "MED",
+   "pmid": "17383707",
+   "pmcid": null,
+   "doi": "10.1016/j.visres.2006.10.028",
+   "first_publication_date": "2007-03-26",
+   "title": "Mirror symmetrical transfer of perceptual learning by prism adaptation.",
+   "authors": "Tanaka Y, Miyauchi S, Misaki M, Tashiro T.",
+   "journal": "Vision research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Recent study of [Sugita, Y. (1996) Global plasticity in adult visual cortex following reversal of visual input. Nature, 380, 523-526.] demonstrated that prism adaptation to reversed retinal input generates the transfer of neuronal activities in monkey V1 to the opposite visual cortex. This raises the question if perceptual learning on one side of the visual field can transfer to the other side. We tested this in using the Gabor lateral masking paradigm. Before adaptation, long-range interaction was induced vertically on one side (i.e., the right) of the visual field with training (perceptual learning). Prism adaptation was achieved by wearing right-left reversing goggles. During adaptation period, perceptual learning transferred to a mirror symmetrical region across the vertical meridian. Results in the post adaptation period revealed that both learning and transfer persisted for over three months. These results provide direct evidence of transferred perceptual plasticity across the visual field, the underlying mechanism of which is supported by the mirror symmetrical connection between the right and left cortices."
+  },
+  {
+   "rank": 33,
+   "id": "16418852",
+   "source": "MED",
+   "pmid": "16418852",
+   "pmcid": null,
+   "doi": "10.1007/s00221-005-0301-x",
+   "first_publication_date": "2006-01-18",
+   "title": "The role of eye movements in visuo-manual adaptation.",
+   "authors": "Grigorova V, Bock O.",
+   "journal": "Experimental brain research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The present study evaluated the role of eye movements for manual adaptation to reversed vision. Subjects tracked a visual target using a mouse-driven cursor. In Experiment A, they were instructed to look at the target, look at the cursor, fixate straight ahead, or received no instructions regarding eye movements (Groups T, C, F, and N, respectively). Experiment B involved Groups T and C only. In accordance with literature, baseline manual tracking was more accurate when subjects were instructed to move their eyes rather than to fixate straight ahead. In contrast, no such benefit was observed for the adaptive improvement of tracking. We therefore concluded that transfer of information from the oculomotor to the hand motor system enhances the ongoing control of hand movements but not their adaptive modification; probably because the large computational demand of adaptation does not allow an additional processing of supplementary oculomotor signals. We further found adaptation to be worse in T than in any other group. In particular, adaptation was worse in T than in C although eye movements were the same: subjects in both groups moved their eyes in close relationship with the target rather than the cursor, Group C thus disobeying our instructions. The deficient performance of Group T is therefore not related to eye movements per se, but rather to our instructions. We conclude that an independently moving target strongly attracts eye movements independent of instruction (i.e. Groups T and C), but instructions may redirect spatially selective attention (i.e. Group T vs C), and thus influence adaptation."
+  },
+  {
+   "rank": 34,
+   "id": "16422446",
+   "source": "MED",
+   "pmid": "16422446",
+   "pmcid": null,
+   "doi": null,
+   "first_publication_date": "2006-01-01",
+   "title": "Stroboscopic vision as a treatment for motion sickness: strobe lighting vs. shutter glasses.",
+   "authors": "Reschke MF, Somers JT, Ford G.",
+   "journal": "Aviation, space, and environmental medicine",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Randomized Controlled Trial",
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "IntroductionCountermeasures (e.g., drugs, training, etc.) designed to combat the problem of space motion sickness (SMS) have had only limited successes. A possible solution for SMS and terrestrial motion sickness may rest in preventing retinal slip via stroboscopic vision.MethodsThere were 32 subjects who participated in a study to investigate the effect of stroboscopic illumination on motion sickness using either a strobe light or liquid crystal display (LCD) shutter glasses. There were 19 subjects who read text and made +/- 20 degrees head movements in the horizontal plane (yaw) at 0.2 Hz while wearing left-right reversing prisms and exposed to 4-Hz stroboscopic or normal room illumination (control condition). Motion sickness was scored using the Miller and Graybiel scale and subjective self-ratings. In a crossover design, testing was repeated using stroboscopic LCD shutter glasses with an additional 13 subjects and 6 subjects from the first condition.ResultsDuring the experiment with a strobe light, motion sickness scores were significantly lower than in the control condition (chi 0.32 strobe vs. chi 3.79 light = p ConclusionsStroboscopic illumination reduced the severity of motion sickness symptoms, and shutter glasses with a flash frequency of 4 Hz are as effective as a strobe light. Stroboscopic illumination appears to be an effective countermeasure where retinal slip is a significant factor in eliciting motion sickness due to either self- or surround-motion."
+  },
+  {
+   "rank": 35,
+   "id": "15811221",
+   "source": "MED",
+   "pmid": "15811221",
+   "pmcid": null,
+   "doi": "10.1162/1064546053278991",
+   "first_publication_date": "2005-12-01",
+   "title": "Evolutionary robotics: a new scientific tool for studying cognition.",
+   "authors": "Harvey I, Di Paolo E, Wood R, Quinn M, Tuci E.",
+   "journal": "Artificial life",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "We survey developments in artificial neural networks, in behavior-based robotics, and in evolutionary algorithms that set the stage for evolutionary robotics (ER) in the 1990s. We examine the motivations for using ER as a scientific tool for studying minimal models of cognition, with the advantage of being capable of generating integrated sensorimotor systems with minimal (or controllable) prejudices. These systems must act as a whole in close coupling with their environments, which is an essential aspect of real cognition that is often either bypassed or modeled poorly in other disciplines. We demonstrate with three example studies: homeostasis under visual inversion, the origins of learning, and the ontogenetic acquisition of entrainment."
+  },
+  {
+   "rank": 36,
+   "id": "15385588",
+   "source": "MED",
+   "pmid": "15385588",
+   "pmcid": null,
+   "doi": "10.1152/jn.00859.2004",
+   "first_publication_date": "2004-09-22",
+   "title": "Task-specific sensorimotor adaptation to reversing prisms.",
+   "authors": "Marotta JJ, Keith GP, Crawford JD.",
+   "journal": "Journal of neurophysiology",
+   "pub_types": [
+    "Comparative Study",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "We tested between three levels of visuospatial adaptation (global map, parallel feature modules, and parallel sensorimotor transformations) by training subjects to reach and grasp virtual objects viewed through a left-right reversing prism, with either visual location or orientation feedback. Even though spatial information about the global left-right reversal was present in every training session, subjects trained with location feedback reached to the correct location but with the wrong (reversed) grasp orientation. Subjects trained with orientation feedback showed the opposite pattern. These errors were task-specific and not feature-specific; subjects trained to correctly grasp visually reversed-oriented bars failed to show knowledge of the reversal when asked to point to the end locations of these bars. These results show that adaptation to visuospatial distortion--even global reversals--is implemented through learning rules that operate on parallel sensorimotor transformations (e.g., reach vs. grasp)."
+  },
+  {
+   "rank": 37,
+   "id": "15312693",
+   "source": "MED",
+   "pmid": "15312693",
+   "pmcid": null,
+   "doi": "10.1016/j.biopsycho.2004.03.016",
+   "first_publication_date": "2005-01-01",
+   "title": "Effects of rearranged vision on event-related lateralizations of the EEG during pointing.",
+   "authors": "Berndt I, Franz VH, Bülthoff HH, Gotz KG, Wascher E.",
+   "journal": "Biological psychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "We used event-related lateralizations of the EEG (ERLs) and reversed vision to study visuomotor processing with conflicting proprioceptive and visual information during pointing. Reversed vision decreased arm-related lateralization, probably reflecting the simultaneous activity of left and right arm specific neurons: neurons in the hemisphere contralateral to the observed action were probably activated by visual feedback, neurons in the hemisphere contralateral to the response side by the somatomotor feedback. Lateralization related to the target in parietal cortex increased, indicating that visual to motor transformation in parietal cortex required additional time and resources with reversed vision. A short period of adaptation to an additional lateral displacement of the visual field increased arm-contralateral activity in parietal cortex during the movement. This is in agreement with the, which showed that adaptation to a lateral displacement of the visual field is reflected in increased parietal involvement during pointing."
+  },
+  {
+   "rank": 38,
+   "id": "15477033",
+   "source": "MED",
+   "pmid": "15477033",
+   "pmcid": null,
+   "doi": "10.1016/j.jphysparis.2004.03.014",
+   "first_publication_date": "2004-01-01",
+   "title": "Adaptation to left-right reversed vision rapidly activates ipsilateral visual cortex in humans.",
+   "authors": "Miyauchi S, Egusa H, Amagase M, Sekiyama K, Imaruoka T, Tashiro T.",
+   "journal": "Journal of physiology, Paris",
+   "pub_types": [
+    "Comparative Study",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The brain mechanisms of adaptation to visual transposition are of increasing interest, not only for research on sensory-motor coordination, but also for neuropsychological rehabilitation. Sugita [Nature 380 (1996) 523] found that after adaptation to left-right reversed vision for one and a half months, monkey V1 neurons responded to stimuli presented not only in the contralateral visual field, but also in the ipsilateral visual field. To identify the underlying neuronal mechanisms of adaptation to visual transposition, we conducted fMRI and behavioral experiments for which four adult human subjects wore left-right reversing goggles for 35/39 days, and investigated: (1) whether ipsilateral V1 activation can be induced in human adult subjects; (2) if yes, when the ipsilateral activity starts, and what kind of behavioral/psychological changes occur accompanying the ipsilateral activity; (3) whether other visual cortices also show an ipsilateral activity change. The results of behavioral experiments showed that visuomotor coordinative function and internal representation of peripersonal space rapidly adapted to the left-right reversed vision within the first or second week. Accompanying these behavioral changes, we found that both primary (V1) and extrastriate (MT/MST) visual cortex in human adults responded to visual stimuli presented in the ipsilateral visual field. In addition, the ipsilateral activity started much sooner than the one and a half months, which had been expected from the monkey neurophysiological study. The results of the present study serve as physiological evidence of large-scale, cross-hemisphere, cerebral plasticity that exists even in adult human brain."
+  },
+  {
+   "rank": 39,
+   "id": "15037050",
+   "source": "MED",
+   "pmid": "15037050",
+   "pmcid": null,
+   "doi": "10.1016/j.neuropsychologia.2003.11.021",
+   "first_publication_date": "2004-01-01",
+   "title": "Haptic face recognition and prosopagnosia.",
+   "authors": "Kilgour AR, de Gelder B, Lederman SJ.",
+   "journal": "Neuropsychologia",
+   "pub_types": [
+    "Controlled Clinical Trial",
+    "Clinical Trial",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Cases of cross-modal influence have been observed since the beginning of psychological science. Yet some abilities like face recognition are traditionally only investigated in the visual domain. People with normal visual face-recognition capacities identify inverted faces more poorly than upright faces. An abnormal pattern of performance with inverted faces by prosopagnosic individuals is characteristically interpreted as evidence for a deficit in configural processing essential for normal face recognition. We investigated whether such problems are unique to vision by examining face processing by hand in a prosopagnosic individual. We used the haptic equivalent of the visual-inversion paradigm to investigate haptic face recognition. If face processing is specific to vision, our participant should not show difficulty processing faces haptically and should perform with the same ease as normal controls. Instead, we show that a prosopagnosic individual cannot haptically recognize faces. Moreover, he shows similar abnormal inversion effects by hand and eye. These results suggest that face-processing deficits can be found across different input modalities. Our findings also extend the notion of configural processing to haptic face and object recognition."
+  },
+  {
+   "rank": 40,
+   "id": "12696661",
+   "source": "MED",
+   "pmid": "12696661",
+   "pmcid": null,
+   "doi": "10.1068/p3342",
+   "first_publication_date": "2003-01-01",
+   "title": "Modification of depth and distance perception caused by long-term wearing of left-right reversing spectacles.",
+   "authors": "Ichikawa M, Kimura T, Egusa H, Nakatsuka M, Amano J, Ueda T, Tashiro T.",
+   "journal": "Perception",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "For 35 to 39 days, four observers wore continuously left-right reversing spectacles which pseudoscopically reverse the order of binocular disparity and direction of convergence. In three tests, we investigated how the visual system copes with the transformation of depth and distance information due to the reversing spectacles. In stereogram observation, after a few days of wearing the spectacles. the observers sometimes perceived a depth order which was opposite to the depth order that they had perceived in the pre-spectacle-wearing period. Monocular depth cues contributed more to depth perception in the spectacle-wearing period than they did in the pre-spectacle-wearing period. While the perceived distance significantly decreased during the spectacle-wearing period, we found no evidence of adaptive change in distance perception. The results indicate that the visual system adapts itself to the transformed situation by not only changing the processing of disparity but also by changing the relative efficiency of each cue in determining apparent depth."
+  }
+ ]
+}

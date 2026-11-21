@@ -1,0 +1,1957 @@
+# The second reader's stage 3 readings (Google's Gemini), imported from the raw answers in
+# second-reading/ (run = stage3) by scripts/tracker_import_stage3_reading.py. Do not edit by
+# hand. Run 2026-11-21 under John's go of that day ('Yes, cap $15', relayed by the master
+# session). Blind: no packet held any part of the first reader's readings.
+
+[[reading]]
+judgement = "com-bandara-hot-pfc-involved"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The study by Bandara et al. reanalyses an earlier EEG dataset originally published by Shafto and Pitts in 2015. Under the scoring rules, a prediction for a study reanalysing earlier published data must be fixed before those data first appeared. Because the proponents' earliest cited statement is from February 2017, the prediction was not fixed before the data appeared in 2015."
+unsure = false
+unsure_why = ""
+response_id = "nccBa7S0LbHdm9cP6I_rkAE"
+cost_usd = 0.0074
+run = "stage3"
+verdict = "not-before"
+
+[[reading]]
+judgement = "com-bandara-rpt-no-report-sensory"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Lamme's 2010 paper appeared well before the 2015 dataset reanalysed by Bandara et al., and it links unreportable visual sensation to recurrent processing within visual areas while tying reportability to prefrontal and motor areas. However, the 2010 passages do not mention the P300 wave and explicitly argue that inattentional blindness does not imply the absence of conscious visual sensation. Because Bandara et al. excluded Phase 1 aware participants and contrasted Phase 1 inattentional blindness against Phase 2 awareness after questioning, it is unclear whether the 2010 record commits the theory to the contrast the study actually tests."
+unsure = true
+unsure_why = "Because Lamme (2010) suggests conscious visual sensation may already occur during inattentional blindness and does not mention the P300, this mismatch with the study's test could alternatively be scored as 'not-before' rather than 'unclear'."
+response_id = "q8cBa4q4Ntmpm9cP5uu7sAQ"
+cost_usd = 0.034122
+run = "stage3"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-bandara-rpt-unattended-local"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In his September 2006 paper, Lamme explicitly stated that during inattentional blindness, recurrent processing occurs locally within visual areas, while reported stimuli involve more widespread interactions such as with the frontoparietal network. Because the Bandara et al. (2024) study reanalyses an inattentional-blindness EEG dataset from Shafto and Pitts (2015), the prediction had to be fixed before those data first appeared in August 2015. Lamme's 2006 statement commits Recurrent Processing Theory to this exact distinction nearly nine years before the reanalysed data appeared."
+unsure = false
+unsure_why = ""
+response_id = "98cBa7ySEZnZm9cP5_iuoQY"
+cost_usd = 0.014678
+run = "stage3"
+verdict = "before"
+
+[[reading]]
+judgement = "com-bridgeman-sm-substitution"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "O'Regan and Noë's 2001 paper appeared well before Bridgeman et al.'s 2008 study and stated generally that sensory modality and the locus of perception depend on sensorimotor contingencies and should change when those laws change. However, their concrete prediction concerned practice with sensory substitution devices such as skin stimulation, while they explained phosphenes by appealing to how input through that nerve normally changes with movement. Because the 2001 record does not state that one hour of pressing on the eye in darkness is sufficient to override normal visual contingencies or shift a phosphene's modality or locus, it is unclear whether the proponents committed the theory to the prediction as this study tests it."
+unsure = true
+unsure_why = "Passage 2 explicitly commits in 2001 to the general claim that changing sensorimotor laws should make it possible to change the locus of perception, which could support 'before' if the one-hour eye-pressing protocol is treated purely as an auxiliary test design question rather than part of the commitment."
+response_id = "BsgBa-n8GNvw0PEPpIjd-QQ"
+cost_usd = 0.035426
+run = "stage3"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-damasio-tranel-2013-dam-insula"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction that feelings survive complete bilateral destruction of the insula is first stated in the same 2013 Cerebral Cortex paper (published online 2012-04-03) that reports the results from Patient B. Because a paper that states a prediction and tests it in the same publication does not count as fixing the prediction before the results could be known, the commitment was not established in time."
+unsure = false
+unsure_why = ""
+response_id = "KsgBa7X1ENW2jdoPicSw8Qk"
+cost_usd = 0.005476
+run = "stage3"
+verdict = "not-before"
+
+[[reading]]
+judgement = "com-dellert-hot-pfc-involved"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In publications from 2017 and 2019, proponents of higher-order theories explicitly stated that conscious experiences—regardless of sensory content—depend on cortical circuits centered on the prefrontal cortex (along with parietal and insular regions). In 2019, they specifically committed the theory to the involvement of these prefrontal higher-order mechanisms even in no-report paradigms where subjects do not have to report the stimuli. Both statements appeared years before the unregistered fMRI study first became public as a preprint in May 2025."
+unsure = false
+unsure_why = ""
+response_id = "L8gBa7mXI9vw0PEPpIjd-QQ"
+cost_usd = 0.01009
+run = "stage3"
+verdict = "before"
+
+[[reading]]
+judgement = "com-dellert-rpt-no-report-sensory"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Lamme's 2010 and 2018 papers appeared well before the 2025 preprint, but both explicitly limit their claims to vision, with the 2010 paper stating outright that it is about seeing and referring specifically to visual areas and visual percepts. By contrast, the 2025 study by Dellert and colleagues tests auditory awareness without report in an inattentional deafness fMRI paradigm. As the study authors note, expecting awareness-related activity in auditory rather than fronto-parietal areas was an extrapolation from other sensory modalities, and stating and testing that auditory prediction in the same paper does not establish a prior commitment by the theory's proponents."
+unsure = true
+unsure_why = "The cited proponent passages explicitly restrict their scope to vision so no auditory commitment was fixed before the 2025 study ('not-before'), though one could alternatively classify this as 'unclear' if asking whether a visual sensory-cortex claim implicitly generalizes to audition."
+response_id = "OMgBa77_HoWGjdoPvtP66AM"
+cost_usd = 0.069788
+run = "stage3"
+verdict = "not-before"
+
+[[reading]]
+judgement = "com-dellert-rpt-other-senses"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Although Lamme's 2010 paper appeared well before the 2025 preprint, the quoted passage makes only a general claim linking conscious sensation to recurrent interactions in the areas involved. It says nothing about hearing or auditory cortex, no-report paradigms, or the absence of fronto-parietal activation. As the record itself notes, the specific auditory no-report prediction was inferred by the site rather than stated by the theory's proponents before the study."
+unsure = false
+unsure_why = ""
+response_id = "nsgBa6WDLsa9n88P5oS7oAI"
+cost_usd = 0.017556
+run = "stage3"
+verdict = "not-before"
+
+[[reading]]
+judgement = "com-eiserbeck-rpt-unattended-local"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The theory's proponent, Victor Lamme, explicitly committed Recurrent Processing Theory to this claim in 2006 for inattentional blindness and in July 2018 specifically for the attentional blink. In the 2018 paper, Lamme stated that manipulations like the attentional blink leave early recurrent signals relatively intact while selectively disrupting later widespread signals such as the P300. Both statements appeared years before the Eiserbeck et al. study first appeared as a preprint in January 2021."
+unsure = false
+unsure_why = ""
+response_id = "t8gBa-nmEdy4jdoPtP_KgAY"
+cost_usd = 0.009018
+run = "stage3"
+verdict = "before"
+
+[[reading]]
+judgement = "com-eiserbeck-rpt-van"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Lamme's 2018 paper appeared well before the 2021 preprint of the study and generally links conscious perception to the visual awareness negativity (VAN) around 200 ms. However, the study tests graded seeing during the attentional blink, and in the same 2018 paper Lamme states that when people report not seeing stimuli in the attentional blink, early recurrent signals are typically left relatively intact while later signals such as the P300 are selectively disrupted, adding 'but see [50]'. Because Lamme treats attentional blink reports as typically sparing early recurrent activity while hedging with a counterexample, the record does not clearly commit the theory to predicting a VAN difference between seen and unseen targets in an attentional blink paradigm."
+unsure = true
+unsure_why = "Because Lamme (2018) explicitly states that the attentional blink typically leaves early recurrent signals relatively intact and selectively disrupts the P300 when stimuli are reported unseen, this could alternatively be judged 'not-before' as failing to commit to—and largely opposing—the prediction as tested in this paradigm."
+response_id = "wcgBa_ePE562jdoP393_4As"
+cost_usd = 0.034994
+run = "stage3"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-filimonov2022-rpt-other-senses"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Although Lamme's 2010 paper predates the 2022 study, the single quoted sentence states only a general link between conscious sensation and recurrent interactions. The passage does not mention hearing, auditory cortex, early awareness-related brain waves, fronto-parietal activation, or reportability, and the prediction is explicitly marked as inferred by the site. Because the provided record does not clearly commit the theory's proponents to the specific prediction as tested by the study, the commitment is unclear."
+unsure = false
+unsure_why = ""
+response_id = "8cgBa-3BIa3Pm9cPibKMmQg"
+cost_usd = 0.02175
+run = "stage3"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-filimonov2022-rpt-van"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In his July 2018 paper, Lamme explicitly states that recurrent interactions expressed as 200 ms latency EEG signals—specifically the visual awareness negativity (VAN)—are crucial for the emergence of conscious visual experience. Because the VAN is by definition a posterior negative wave around 200 ms distinguishing seen from unseen stimuli, this commits recurrent processing theory to an awareness-related difference in that window rather than only after 300 ms. This commitment was published more than three years before the Filimonov et al. study first appeared in January 2022."
+unsure = false
+unsure_why = ""
+response_id = "E8kBa6HRIrKD0PEP3szn6Ag"
+cost_usd = 0.01336
+run = "stage3"
+verdict = "before"
+
+[[reading]]
+judgement = "com-filimonov2024-rpt-attention-independent"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Lamme's 2006 and 2010 papers clearly precede the 2024 study, and they state in general terms that attention and consciousness are orthogonal, independent neural processes. However, the provided passages do not mention auditory consciousness or commit the theory to specific ERP markers such as the auditory awareness negativity (AAN), especially given that the prediction itself is framed in terms of visual seeing. Because it is not clear from these passages alone that the proponents committed the theory to this auditory ERP test, the commitment is unclear."
+unsure = true
+unsure_why = "The general claim that neural processes of consciousness and attention are orthogonal precedes the study by over a decade, so it could count if cross-modal generalization from visual recurrent processing (VAN) to auditory awareness negativity (AAN) is taken as implicit."
+response_id = "JMkBa-PSE9HUm9cPr8LFyAo"
+cost_usd = 0.017068
+run = "stage3"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-filimonov2024-rpt-no-report-sensory"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Lamme's 2010 and 2018 papers clearly precede the 2024 study and its data collection. However, the quoted proponent passages frame the claim strictly in terms of conscious visual sensations, recurrent processing in visual areas, and P300 or fronto-parietal activity for global availability. The 2024 study instead tests auditory awareness of near-threshold syllables and measures the auditory awareness negativity (AAN) in EEG. From the passages provided, it is unclear whether the proponents committed beforehand to extending this visual prediction to audition and to AAN as the study tests it."
+unsure = true
+unsure_why = "The dates are clearly before the study and Lamme (2010, 2018) explicitly dissociates sensory recurrent processing from report-related P300/fronto-parietal activity, so the verdict would be 'before' if generalization from visual cortex to auditory ERPs (AAN) is taken for granted rather than required in the quoted text."
+response_id = "PskBa9q4LL_osNYPyqnpiAM"
+cost_usd = 0.036854
+run = "stage3"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-filimonov2024-rpt-other-senses"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Lamme's 2010 paper predates the 2024 study, but the single quoted sentence states only a general claim that conscious sensation depends on whether the areas involved engage in recurrent interactions. That passage says nothing about hearing or auditory cortex, early awareness-related EEG waves, fronto-parietal activation, or report versus no-report conditions, and the prediction itself is marked as inferred by the site. From the provided passage alone, it is not clear that the theory's proponents committed the theory to the specific prediction tested by this study."
+unsure = true
+unsure_why = "This case sits on the boundary between 'unclear' (commitment from the broad 2010 quote to specific auditory ERP and no-report fronto-parietal outcomes is unestablished) and 'not-before' (proponents never explicitly stated the prediction prior to the study)."
+response_id = "bMkBa8bwDPeC0PEPlqjv2QU"
+cost_usd = 0.047116
+run = "stage3"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-hobot-hot-awareness-performance"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Proponents of higher-order theories stated this commitment in a January 2019 preprint by Brown, Lau, and LeDoux and a March 2020 paper by Fleming, years before the unregistered study was submitted in November 2022 and published online in February 2023. Brown and colleagues wrote that higher-order states determine whether a perceptual process is consciously experienced independently of the first-order process itself. Fleming explicitly predicted that awareness reports, but not first-order discrimination performance, depend on higher-order states, fixing the predicted dissociation before the study could have been known."
+unsure = false
+unsure_why = ""
+response_id = "r8kBa63cC_3bm9cP-MXkmQI"
+cost_usd = 0.028252
+run = "stage3"
+verdict = "before"
+
+[[reading]]
+judgement = "com-hobot-hot-pfc-disrupt"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The 2017 and 2019 sources clearly predate the 2023 study, which was submitted in November 2022 with no earlier preprint or registration. However, the quoted passages merely note prior empirical observations that prefrontal disruption impairs conscious visual awareness and that prefrontal magnetic stimulation affects explicit metacognition. They do not commit the theory to a worsening of metacognitive efficiency or lower awareness ratings while stimulus discrimination performance remains unchanged."
+unsure = true
+unsure_why = "The dates field lists a 2020-03-11 statement that is missing from the provided passages and might contain the explicit dissociation from discrimination performance and directional metacognitive prediction."
+response_id = "78kBa7-oN4S32OMPtM3roQY"
+cost_usd = 0.02813
+run = "stage3"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-jicol-seth-presence-match"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In their January 2012 paper, Seth and colleagues stated that a sense of presence arises when informative interoceptive predictions match actual inputs so that prediction errors are suppressed. They also explicitly proposed testing for disturbances in presence by experimentally manipulating interoceptive predictions and prediction errors, including by using emotionally salient stimuli to induce explicit expectations of bodily responses. This commits the theory to the prediction as tested—that presence is higher when felt responses match expectations and lower when they do not—more than ten years before the 2023 study appeared."
+unsure = false
+unsure_why = ""
+response_id = "IsoBa-qaGJ_Dn88P-oT_yAI"
+cost_usd = 0.030998
+run = "stage3"
+verdict = "before"
+
+[[reading]]
+judgement = "com-khan-orch-anaesthetic-mt"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The 2013 review by Hameroff and Penrose appeared more than ten years before the 2024 study and states that general anaesthetics act on microtubules by binding in tubulin quantum channels to disperse quantum dipoles. However, the quoted passages never state that giving a second drug that acts on or stabilises microtubules will change the anaesthetic dose or time needed to cause unconsciousness. Because a polymer-stabilising drug such as epothilone B need not alter anaesthetic binding or dipole dispersion inside tubulin channels, whether the 2013 text commits the theory to the tested drug interaction is unclear."
+unsure = true
+unsure_why = "The 2013 text clearly predates the 2024 study and commits Orch OR to microtubules as the target of general anaesthetics, which could count as 'before' under a broader mechanistic standard or 'not-before' if an unstated pharmacological extrapolation is treated as no prior commitment rather than an unclear one."
+response_id = "ScoBa468HoKQ0PEPlOy5iAg"
+cost_usd = 0.05289
+run = "stage3"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-li-orch-anaesthetic-mt"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The 2013 passage predates the 2025 study by more than a decade, so the timing is clearly earlier. However, the quoted passage states only that anesthetics bind in tubulin quantum channels to disperse dipoles necessary for consciousness, without explicitly predicting that microtubule-modulating drugs will change anesthetic dose or time to unconsciousness. Because getting from that general mechanism to the specific drug-interaction test in mice requires unstated auxiliary assumptions, the commitment in the provided record is unclear."
+unsure = true
+unsure_why = "The quoted 2013 sentence states only the tubulin binding mechanism of anesthetics rather than the specific pharmacological interaction with microtubule-modulating drugs, making it borderline whether the prediction is implicitly entailed or insufficiently fixed in the provided text."
+response_id = "esoBa7OBOrmljdoPivvx2QU"
+cost_usd = 0.013262
+run = "stage3"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-martin-hot-awareness-performance"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The study was unregistered and first appeared publicly as a preprint on 2022-10-28. Higher-order theory proponents clearly committed to the dissociation between conscious awareness reports and first-order discrimination performance in publications from January 2019 (Brown et al.) and March 2020 (Fleming). Both statements explicitly fix the prediction well before the study's earliest public appearance."
+unsure = false
+unsure_why = ""
+response_id = "isoBa8v1F8GljdoPnamM-Qo"
+cost_usd = 0.009172
+run = "stage3"
+verdict = "before"
+
+[[reading]]
+judgement = "com-martin-hot-pfc-disrupt"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The quoted passages from 2017 and 2019 predate the 2022 study preprint, so the timing itself is prior to the study. However, the quoted passages only note generally that disrupting prefrontal or parietal cortex impairs conscious awareness and affects explicit metacognition, without stating the key condition tested—that discrimination performance remains unchanged while awareness ratings or metacognitive efficiency fall. Although the dates summary alludes to a 2020 source regarding unaffected performance, no passage from that source is provided to establish the full commitment."
+unsure = true
+unsure_why = "The dates summary references a 2020 source ('fleming-2020, performance unaffected') that is missing from the passages list and might otherwise supply the missing part of the commitment."
+response_id = "ksoBa66wEKiXn88P1PGt-AM"
+cost_usd = 0.014484
+run = "stage3"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-mei-hot-unconscious-global"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In their January 2019 preprint, Brown, Lau, and LeDoux explicitly stated that under higher-order theory, a percept can reach a relatively stable global state via global broadcasting while remaining nonconscious. For a reanalysis of earlier data, the prediction must be fixed before the data first appeared publicly, which occurred in January 2021 when the original dataset's preprint was posted. The proponents' commitment therefore predates both the 2021 dataset appearance and the 2024 reanalysis."
+unsure = true
+unsure_why = "The quoted 2019 passages refer to 'global broadcasting' and a 'relatively stable global state' without explicitly naming prefrontal and parietal cortex, and they state only that nonconscious global states can occur outside typical cases rather than predicting them in every sensitive unseen-stimulus design."
+response_id = "qcoBa5-vNIuY2OMP88fa8AE"
+cost_usd = 0.023982
+run = "stage3"
+verdict = "before"
+
+[[reading]]
+judgement = "com-suzuki-seth-interoceptive-ownership"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The 2012 paper predates the 2013 study's publication, but the cited passage only suggests that considerable promise lies in integrating interoceptive predictive coding with multisensory models of selfhood. Expressing hope about combining broad theoretical frameworks does not commit the theory to the specific prediction that heartbeat-timed visual feedback on a seen hand increases ownership compared to out-of-time feedback. Because the specific prediction was only introduced in the 2013 paper that tested it, the commitment was not fixed in advance."
+unsure = false
+unsure_why = ""
+response_id = "x8oBa9q_MMKrjdoPo83MsQw"
+cost_usd = 0.023064
+run = "stage3"
+verdict = "not-before"
+
+[[reading]]
+judgement = "com-suzuki-seth-low-interoception-more-illusion"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The proponents published the statement on 2012-01-10, well before the study was submitted on 2013-05-22 and first appeared publicly on 2013-08-28. In the 2012 passage, they specify a clear directional link in which people with lower interoceptive predictive ability assimilate correlated visual and tactile cues more readily when localizing proprioceptive and interoceptive signals, while those with better ability rely less on such cues. This matches the directional test linking lower heartbeat-sensing accuracy to a stronger rubber hand illusion under synchronous seen-and-felt stroking."
+unsure = true
+unsure_why = "The quoted sentence uses hedged phrasing ('may') and refers generally to interoceptive predictive ability and localizing signals rather than explicitly naming heartbeat accuracy or body ownership, and the overlapping authors did not state when the 2013 data were collected."
+response_id = "9MoBa9IPh5mb1w-HmKnJCQ"
+cost_usd = 0.050672
+run = "stage3"
+verdict = "before"
+
+[[reading]]
+judgement = "com-wilterson-agent-ast-schema-control"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In their April 2015 paper, Graziano and Webb explicitly proposed that top-down control of attention is improved when a system has access to a simplified model of attention, grounding this claim in general principles of control engineering. The simulation study testing attention control with and without a descriptive model of attention first appeared in 2021, having been submitted in February 2021 with no earlier preprint. Thus, the proponents fixed the core directional prediction nearly six years before the study's results existed. Although the 2015 passages refer to the brain rather than an artificial neural network, invoking control engineering commits the theory to the general functional advantage tested by the 2021 agent."
+unsure = true
+unsure_why = "The quoted 2015 passages refer specifically to the brain (and once say control 'can be improved') without explicitly stating the simulation's specific conditions regarding artificial agents, learning, or attention location being recoverable from the input in other ways."
+response_id = "L8sBa9i5JK3Pm9cP5fyawQ8"
+cost_usd = 0.029468
+run = "stage3"
+verdict = "before"
+
+[[reading]]
+judgement = "com-wilterson-tpj-ast-control"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In April 2015, Graziano and Webb explicitly committed Attention Schema Theory to the prediction that without awareness, attention remains possible but suffers deficits in control. This commits the theory to impaired deliberate steering or control of attention with masked cues compared with visible cues, even when attention is still drawn. The study by Wilterson and colleagues first appeared publicly in June 2021 after submission in December 2020, more than five years after the prediction was fixed in print."
+unsure = false
+unsure_why = ""
+response_id = "XcsBa9ncFaWkjdoPurPLKA"
+cost_usd = 0.039392
+run = "stage3"
+verdict = "before"
+
+[[reading]]
+judgement = "com-wilterson-tpj-ast-tpj"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The 2018 passage predates the 2021 fMRI study, but it states only generally that the temporoparietal junction is an important network node related to awareness. The quoted prior record does not commit to right-hemisphere specificity, to contrasting awareness while matching attention, or to activity tracking violations during awareness-dependent predictive control of attention. Because the prediction as tested was first stated in the 2021 paper itself, it does not count as fixed beforehand."
+unsure = true
+unsure_why = "Combining the 2015 claim about attention control with the 2018 TPJ claim comes close to the broad hypothesis, and unquoted parts of the 2018 paper might specify the right TPJ more concretely than the excerpt provided."
+response_id = "lcsBa7_XH9LZsNYP9-Dw4AI"
+cost_usd = 0.02343
+run = "stage3"
+verdict = "not-before"
+
+[[reading]]
+judgement = "out-bandara-rpt-unattended-local"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "On one hand, the study did not observe an increase in feedback connectivity between higher and lower sensory regions under reported awareness, and slightly preferred a model where reported awareness modulated prefrontal rather than sensory feedback, matching the prediction that reported stimuli mainly add frontal spread. On the other hand, the model comparison was nearly a tie (53% vs 47%), the authors concluded that modulatory changes in both sensory and frontal feedback are needed for reported consciousness, and the excerpts do not directly state whether unreported stimuli evoked baseline recurrent processing in visual cortex."
+unsure = true
+unsure_why = "Knowing whether baseline feedback connectivity between visual areas (such as FFA to V1) was actively present during the unreported inattentional blindness trials, rather than just whether it changed between conditions, would clarify if visual recurrent processing occurred without report."
+response_id = "scsBa5jrA_GC0PEP1IK0kAc"
+cost_usd = 0.0082
+run = "stage3"
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-dellert-hot-pfc-involved"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In this no-report auditory study, awareness-related brain differences were confined to secondary auditory cortex, with no significant awareness contrast in fronto-parietal areas. At the same time, the fMRI method was sensitive enough to detect significant stimulus-evoked effects in prefrontal regions within the aware group in the same data. Under the stated criteria, confining awareness differences to sensory cortex while demonstrating sensitivity to prefrontal effects counts against the prediction. However, the provided passages only report activation contrasts rather than directly testing multivariate information or functional interaction between prefrontal and sensory cortex."
+unsure = true
+unsure_why = "Knowing whether the study also tested prefrontal-sensory connectivity or multivariate decoding—or whether the null awareness contrast in frontal cortex simply lacked statistical power to separate aware from sub-threshold unaware activity—could shift the verdict to mixed."
+response_id = "ussBa-K-HoSyn88Prqi1gQM"
+cost_usd = 0.020062
+run = "stage3"
+verdict = "against"
+
+[[reading]]
+judgement = "out-eiserbeck-rpt-unattended-local"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction states that stimuli missed during the attentional blink should still evoke early awareness-related negativity in visual cortex much like reported ones, with reported stimuli differing mainly in later responses. Instead, the study found that only the earliest component (P1) was unchanged, whereas posterior activity already showed significant gradations by reported visibility starting at the N1/N170 and spanning N1 to N2 as the VAN component (relying on outside knowledge that VAN stands for Visual Awareness Negativity, an early awareness-related negativity). Because early visual signals already differed according to reported visibility, the passages weigh against the prediction. Still, important details required by the test criteria—such as masking, later brain responses, and whether completely unreported stimuli evoked any residual recurrent signal—are not given in these excerpts."
+unsure = true
+unsure_why = "Confirmation that the attentional blink targets were masked (since the test criteria require unmasked stimuli), or evidence from the full paper that completely unreported targets still evoked clear recurrent visual-cortex activity and that later components differed much more strongly than early ones, could change the verdict to mixed or undetermined."
+response_id = "0ssBa_yjM8a9n88P5oS7oAI"
+cost_usd = 0.027032
+run = "stage3"
+verdict = "against"
+
+[[reading]]
+judgement = "out-filimonov2022-rpt-van"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The study found that visual awareness negativity (VAN) emerged as an early correlate of visual awareness over posterior occipital sites around 220–270 ms and lasted until 300 ms. This negative wave falls squarely within the predicted 150 to 300 ms window and began before the late positivity (LP), which started around 250–300 ms and spread to parietal-central sites. Although the provided passages do not detail how stimuli were matched beyond the study summary's mention of faint stimuli, the reported timing and location of the waves directly satisfy the criteria for the prediction."
+unsure = false
+unsure_why = ""
+response_id = "8MsBa6rkHeGqjdoP0am-6As"
+cost_usd = 0.012692
+run = "stage3"
+verdict = "for"
+
+[[reading]]
+judgement = "out-hobot-hot-awareness-performance"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Compared with sham stimulation, continuous theta burst stimulation increased metacognitive efficiency (how well awareness judgements tracked perception) and lowered visual awareness ratings on incorrect responses. At the same time, no significant differences were observed in first-order identification task performance. Although intermittent stimulation did not produce an effect, demonstrating this dissociation under continuous stimulation satisfies the condition that awareness ratings and their match to accuracy can change while performance stays the same."
+unsure = false
+unsure_why = ""
+response_id = "AswBa8vOM_yln88PkNjV4As"
+cost_usd = 0.014132
+run = "stage3"
+verdict = "for"
+
+[[reading]]
+judgement = "out-hobot-hot-pfc-disrupt"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Relying on outside knowledge that continuous theta burst stimulation (cTBS) is conventionally used to disrupt cortical activity, this study found the opposite of the predicted impairment: metacognitive efficiency increased rather than worsened while discrimination performance did not significantly change. Although visual awareness ratings fell on incorrect responses, this reflects better metacognitive calibration rather than weakened stimulus awareness, and the effect on overall awareness ratings was inconclusive. Because prefrontal cTBS improved rather than impaired how well awareness ratings tracked accuracy, the findings go against the directional prediction."
+unsure = true
+unsure_why = "Direct evidence on whether cTBS physiologically disrupted or facilitated prefrontal activity here, inclusion of an active control brain site rather than only sham stimulation, and conclusive data on overall awareness ratings could change this verdict to mixed."
+response_id = "E8wBa6jvC5umjdoPzofgwQM"
+cost_usd = 0.041702
+run = "stage3"
+verdict = "against"
+
+[[reading]]
+judgement = "out-jicol-seth-presence-match"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The study supports part of the prediction by showing that smaller mismatches between predicted and felt emotion led to higher social and self presence for happiness and fear. However, it did not support the prediction for spatial presence or relaxation. Crucially, while the test for the prediction requires mismatches in either direction to lower presence, the authors report that their directional results were inconsistent with a uniform decrease across both overestimation and underestimation."
+unsure = true
+unsure_why = "The provided passages state that the directional results were inconsistent with a uniform decrease in presence, but they do not specify the exact directional pattern—such as whether a mismatch in one direction actually raised presence as reliably as a match, which would count directly against the prediction."
+response_id = "kswBa6THM_-B0PEP18nAoAI"
+cost_usd = 0.009194
+run = "stage3"
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-khan-orch-anaesthetic-mt"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction states that altering microtubules with a drug will change the dose or time required for a general anaesthetic to cause unconsciousness. In this study, rats treated with the microtubule-stabilising drug epothilone B took an average of 69 seconds longer to become unconscious under isoflurane, with seven of eight rats showing increased latencies. Because this delay could not be explained by anaesthetic tolerance, the result directly satisfies the criterion for counting in favour of the prediction."
+unsure = false
+unsure_why = ""
+response_id = "ncwBa5a0CcfMm9cPwayukAE"
+cost_usd = 0.007416
+run = "stage3"
+verdict = "for"
+
+[[reading]]
+judgement = "out-li-orch-anaesthetic-mt"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Compared with saline controls, the microtubule-modulating drugs epothilone D, vinblastine, and paclitaxel all significantly shifted the isoflurane response curves for LORR, even though induction latencies for epothilone D and paclitaxel did not differ from controls. Because the stated test for the prediction requires a change in either the anaesthetic dose or the time needed for unconsciousness without requiring a single direction, shifting the dose-response curves satisfies the criterion. Beyond the text provided, this reading relies on standard background knowledge that isoflurane is a general anaesthetic, that LORR (loss of righting reflex) is the standard mouse proxy for anaesthetic-induced unconsciousness across doses, and that at least epothilone D reaches brain microtubules."
+unsure = false
+unsure_why = ""
+response_id = "o8wBa47aOPi3jdoPsvy8oQ0"
+cost_usd = 0.025526
+run = "stage3"
+verdict = "for"
+
+[[reading]]
+judgement = "out-martin-hot-awareness-performance"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The criterion for supporting the prediction requires that when discrimination performance is equal across conditions, either awareness ratings or how well they track accuracy differ. Although overall visibility ratings did not change across tasks or brain stimulation sites, the study found that metacognitive efficiency differed between real and illusory contour tasks even when all measures of objective task performance were equivalent (and also dropped after prefrontal stimulation once an outlier was removed). Relying on the standard definition in this field that metacognitive efficiency measures how well subjective ratings track objective accuracy, this result directly satisfies the test for the prediction."
+unsure = false
+unsure_why = ""
+response_id = "xswBa9zeBM3N0PEP08fW2Ak"
+cost_usd = 0.012734
+run = "stage3"
+verdict = "for"
+
+[[reading]]
+judgement = "out-martin-hot-pfc-disrupt"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "For the replicated task, the authors report strong null findings where prefrontal stimulation affected neither visibility ratings nor visual metacognition, and overall visibility ratings did not change across stimulation sites (BF10 = 0.23), which counts against the prediction. By contrast, for illusory Kanizsa figures after removing an outlier, prefrontal stimulation reduced metacognitive efficiency compared with the S1 control site (p < 0.05, BF10 = 1.96), which counts for the prediction. Because the study finds null effects in one task and a prefrontal-specific drop in metacognitive efficiency in another, the result has parts for and parts against. Moreover, the provided passages do not report whether discrimination performance stayed steady, which both test criteria require."
+unsure = true
+unsure_why = "Seeing whether discrimination performance was held steady in each task, the exact evidence for no metacognitive effect in the replicated task, and the illusory-task results before outlier removal could shift the verdict toward for or against."
+response_id = "1MwBa6qJEtKVm9cPtKmZAQ"
+cost_usd = 0.0247
+run = "stage3"
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-mei-hot-unconscious-global"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction counts as supported if the content of unseen stimuli—which observers cannot discriminate better than chance—is represented in prefrontal or parietal cortex as well as sensory cortex. The study passages report that computer vision models strongly predicted brain responses to unconscious contents in both ventral visual cortex and fronto-parietal regions. Furthermore, these results held even when restricted to observers showing null perceptual sensitivity, directly fulfilling the criteria for the prediction."
+unsure = false
+unsure_why = ""
+response_id = "78wBa4XsJK7H0PEPxP32yAY"
+cost_usd = 0.004332
+run = "stage3"
+verdict = "for"
+
+[[reading]]
+judgement = "out-suzuki-seth-low-interoception-more-illusion"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Relying on standard rubber-hand-illusion abbreviations not defined in the excerpts (IS for interoceptive sensitivity, PDD for proprioceptive drift difference, and EBO for experience of body ownership), the study's primary test in the tactile condition found a significant positive correlation between IS and PDD (r = 0.509, p = 0.022). This directly matches the test-against criterion, as higher heartbeat accuracy went with greater illusion-related drift rather than less. When the authors repeated the IS measurement using an earlier study's task, there was no significant positive trend, and neither task showed the predicted negative correlation."
+unsure = true
+unsure_why = "Knowing whether the 'tactile' condition was pure sight-and-touch stroking or also included visual cardiac pulsing, seeing the unreported ownership (EBO) correlations, and seeing the full supplementary results for the second heartbeat task—where the positive trend disappeared—could change my answer to mixed."
+response_id = "9cwBa_qnKJjesNYPkNf24QE"
+cost_usd = 0.052552
+run = "stage3"
+verdict = "against"
+
+[[reading]]
+judgement = "out-wilterson-agent-ast-schema-control"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The study directly meets the criteria for supporting the prediction in an artificial agent. Even though complete information about the attention window's location remained implicitly available in the visual input, deactivating the attention schema on test trials greatly reduced performance. Furthermore, compared to the intact agent, agents without an intact explicit attention schema were severely impaired at learning to control their attention spotlight to track the ball. Although the authors note that a larger network might eventually learn without an explicit schema, the actual results tested here clearly show worsened control and learning when the model of attention is disabled or absent."
+unsure = false
+unsure_why = ""
+response_id = "Rs0Ba7XRFfCijdoPtoW70QE"
+cost_usd = 0.010768
+run = "stage3"
+verdict = "for"
+
+[[reading]]
+judgement = "out-wilterson-tpj-ast-control"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Taking Task 1 and Task 2 to correspond to the visible and masked cue conditions mentioned in the study description, participants successfully steered attention to the cued predicted location in Task 1 but showed no evidence of doing so in Task 2, with a significant difference between tasks. Meanwhile, a passage notes from prior experiments that the cue outside awareness could still draw exogenous attention to itself. Together, this matches the test for the prediction: participants could deliberately direct attention with a visible stimulus but could not do so when it was masked."
+unsure = true
+unsure_why = "The provided excerpts do not explicitly state that Task 1 is the visible condition, Task 2 is the masked condition, and the predicted location requires deliberate redirection rather than passive capture; furthermore, exogenous capture by the masked cue is cited from prior experiments rather than shown directly in these passages, so passages contradicting those points would change my answer."
+response_id = "ac0Ba5ioD5iB0PEPga2f0Qo"
+cost_usd = 0.016996
+run = "stage3"
+verdict = "for"
+
+[[reading]]
+judgement = "tst-ast-claims"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "A study could build an artificial agent with a simplified, mechanism-free model of its own attention linked to speech and observe what it reports. The prediction would fail if the agent did not claim to possess a non-physical inner awareness, or if a matched control agent lacking the model made the same claims. Because the provided material includes no passages from rival theories predicting this outcome, their silence means the prediction separates Attention schema theory from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "fM0Ba5GINs78sNYPv57JwAI"
+cost_usd = 0.009638
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-ast-control"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if a study showed that people can deliberately sustain, suppress, or redirect attention toward an unreportable stimulus that draws attention just as well as when they are aware of it. Published proponents of Global Workspace Theory (Mashour et al., 2020) predict the same observable direction, stating that attention cannot be directed to features that failed to enter consciousness. Because a rival's published source makes the same prediction, this prediction does not uniquely separate Attention Schema Theory overall, though it still separates the theory from the remaining eight rivals that are silent in the material."
+unsure = false
+unsure_why = ""
+response_id = "h80Ba7G_NaSyjdoP1tK44Q4"
+cost_usd = 0.065278
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = false
+separates_from = ["iit", "hot", "rpt", "seth", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = true
+which_rivals_same = ["gwt"]
+
+[[reading]]
+judgement = "tst-ast-covary"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "This prediction could fail if studies showed that attention and reported awareness often come apart with strong, clearly visible stimuli, or that reported awareness without attention is as common as attention without awareness. In the given material, a Global Workspace Theory publication by Mashour and colleagues predicts the same core relationship, stating that attention can work without awareness and that what attention selects enters consciousness. Under the scoring rule, because a rival's published source predicts the same result, this prediction does not separate Attention Schema Theory from all of its rivals. It still separates the theory from the other eight rivals on the list, which are silent in the material."
+unsure = false
+unsure_why = ""
+response_id = "4M0Ba_WSKZK-0PEP4PiD4Aw"
+cost_usd = 0.132932
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = false
+separates_from = ["iit", "hot", "rpt", "seth", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = true
+which_rivals_same = ["gwt"]
+
+[[reading]]
+judgement = "tst-ast-domain"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if studies demonstrate a domain of information that attention selects without people being able to report awareness of it, or a domain people report being aware of that attention does not select. Because the claim ties awareness and attention to the exact same range of information, an observed domain-level dissociation in either direction would count against it. No passages from rival proponents are given in the material as predicting this same result. By rule, the rivals' silence in the provided sources means the prediction separates Attention Schema Theory from all nine rival theories on the list."
+unsure = false
+unsure_why = ""
+response_id = "g84Ba9mJLJnM0PEP4_KnkAM"
+cost_usd = 0.01521
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-ast-graded"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if varying the amount of attention on a fixed stimulus produced strictly all-or-nothing awareness ratings or ratings that did not change with attention. None of the rival passages in the provided material predict this same graded tracking between attention and awareness. Global workspace theory predicts the opposite—all-or-none conscious episodes—and the remaining rivals have no passages showing the same prediction, so the prediction separates Attention schema theory from all rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "l84Ba_-lIci4jdoPvpCA-Ak"
+cost_usd = 0.01213
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-ast-schema-control"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction states that removing or lacking a simplified internal model of attention will impair the endogenous control of attention. A study in artificial agents or biological systems could observe whether attention control remains just as effective when that model is absent or disabled, which would count against the prediction. None of the provided material shows any rival theory predicting this same result. Under the scoring rule, the silence of all rivals in the given passages means the prediction separates Attention Schema Theory from every rival on the list."
+unsure = false
+unsure_why = ""
+response_id = "o84Ba7GqNZiB0PEPga2f0Qo"
+cost_usd = 0.015082
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-ast-tpj"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail because brain imaging or lesion studies can directly test whether right temporoparietal junction activity tracks awareness when attention is matched and whether damage there affects awareness and attention control. Observing no awareness-related activity difference in the right temporoparietal junction, or seeing both awareness and attention control remain intact after damage to it, would count against the theory. Because the material contains no published passages from any rival theory predicting this same result, the prediction separates attention schema theory from all nine rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "t84Ba_jjDN3Om9cPjOveoAk"
+cost_usd = 0.012524
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-dam-ai"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "That present-day digital AI lacks slow, body-sensing visceral processes is true by architectural definition, while the further claim that it lacks feelings and consciousness has no stated or implied empirical test. Because the source gives no observable outcome that would show an AI system has or lacks feelings, no study could observe a result that counts against the prediction. No published passages from rival theories are given in the material, so by the silence rule no rival predicts the same result and the claim separates from all nine rivals."
+unsure = false
+unsure_why = ""
+response_id = "xM4Ba8uBEdK-n88PsonsiAo"
+cost_usd = 0.01675
+run = "stage3"
+question = "C2"
+could_fail = false
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-dam-feeling-required"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if a clinical study documented a person with completely abolished bodily feelings who nonetheless remained conscious and retained ownership of their experiences. None of the rival passages provided predict this same loss of consciousness upon losing bodily feelings. Specifically, the Sentient Horizons account predicts that removing the nearest equivalent feature would merely impoverish experience rather than end it, while no published passages are provided for the remaining rivals."
+unsure = false
+unsure_why = ""
+response_id = "2s4Ba62tI67H0PEPxP32yAY"
+cost_usd = 0.008768
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-dam-insula"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could clearly fail if patients with complete bilateral destruction of the insula were observed to lose or experience a flattening of bodily and emotional feelings via self-report and observer ratings. None of the rival theories have published passages in the provided material predicting this same outcome. Under the scoring rules, the silence of all rivals means this prediction belongs solely to Damasio's theory and separates it from every rival on the list."
+unsure = false
+unsure_why = ""
+response_id = "4s4Ba9KLD67Cn88PgqLooA8"
+cost_usd = 0.007622
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-dam-no-nervous-system"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The claim cannot fail an empirical test because the authors give no independent observable marker of consciousness in non-neural organisms and explicitly rule out intelligent behaviour as counterevidence. Consequently, no study could observe a result that would count against the statement that plants and bacteria are nonconscious. Because no rival passages are provided in the material, the rivals are treated as silent under the scoring rule, so the claim is counted as separating from all nine rival theories on the list."
+unsure = false
+unsure_why = ""
+response_id = "6s4Ba9L0Nq3Pm9cPibKMmQg"
+cost_usd = 0.013286
+run = "stage3"
+question = "C2"
+could_fail = false
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-dam-nonneural"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail because a study could block direct chemical exchange between surrounding tissues or blood and body-sensing nerves while keeping ordinary nerve-to-nerve signaling intact. Observing that bodily feelings remain unchanged under those conditions would directly count against the theory. Because the provided material contains no passages from rival proponents predicting this same outcome, all rivals are silent here. By the scoring rule, that silence means the prediction separates Damasio's theory from every rival on the list."
+unsure = false
+unsure_why = ""
+response_id = "-c4Ba-ThKr6ojdoP0vW5kAE"
+cost_usd = 0.014496
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-dam-nss"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction specifies a concrete physiological mechanism—ephaptic coupling and non-synaptic chemical signalling in interoceptive nerves—and explicitly notes that failing to confirm its presence in sensitive experiments would count against it. Because no passages from any rival theories are provided in the material, all rivals are silent on this specific mechanism. Under the scoring rules, a rival's silence means the prediction separates this theory from all rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "DM8Ba5mqPPi3jdoPsvy8oQ0"
+cost_usd = 0.004726
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-dam-subcortical"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if decorticate subjects with intact brainstem and hypothalamic nuclei showed only fixed reflexes rather than graded, flexible responses to bodily states, or if focal damage to those subcortical nuclei left reported feelings normal. None of the provided rival passages predict this same survival of basic feelings without a cerebral cortex. In the material given, Global Workspace Theory and Integrated Information Theory explicitly require cortical activity for consciousness, while the remaining rival theories have no published sources cited as predicting the same result."
+unsure = false
+unsure_why = ""
+response_id = "Ec8Ba7DCJ7zk0PEP7paGoAc"
+cost_usd = 0.00914
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-gwt-ignition"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if a study using a no-report design observes that awareness-related activity is confined to sensory cortex with no late increase in prefrontal and parietal areas. In the provided material, Integrated Information Theory predicts something different by stating that prefrontal activation is not a prerequisite for consciousness. Because no rival source in the material predicts this same late prefrontal-parietal response, the prediction separates Global Workspace Theory from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "G88Ba7GaF562jdoP393_4As"
+cost_usd = 0.01416
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-gwt-late"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail because EEG, MEG, or intracranial recordings using matched stimuli and tasks could observe a reliable awareness-related difference carrying conscious content before 200 ms. Such an early divergence would directly count against the claim that conscious access is detached from early sensory processing and starts only later. The provided material includes no published passages from any rival theory predicting this result. Under the rule that a rival's silence counts as separation, the prediction separates Global Workspace Theory from all nine rival theories on the list."
+unsure = false
+unsure_why = ""
+response_id = "Kc8Ba5jhN93Mm9cPgIfK6A0"
+cost_usd = 0.01742
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-gwt-offset"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could clearly fail if neuroimaging observed prefrontal activation at the onset of a lasting conscious stimulus without any transient prefrontal response following its disappearance. According to the provided material, Integrated Information Theory predicts sustained posterior activity rather than phasic updates, directly contrasting with this prediction. Because no published passage from any other rival on the list is shown predicting a prefrontal offset ignition, their silence means the prediction separates Global Workspace Theory from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "P88Ba__xIK3Pm9cPibKMmQg"
+cost_usd = 0.006656
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-gwt-pfc-content"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if a sufficiently sensitive study decodes a consciously seen, task-irrelevant feature from sensory cortex but fails to decode it from the prefrontal cortex. In the provided material, Integrated Information Theory predicts a contrasting result in which conscious content is maximally decodable in posterior cortex with prefrontal cortex adding nothing. Because no passage shows a rival predicting the same prefrontal decoding and the remaining rivals have no passages given, the prediction separates Global Workspace Theory from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "SM8Ba_zaMsCB0PEPufqIiA8"
+cost_usd = 0.013624
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-gwt-silent"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could clearly fail if a brain-recording study observed sustained, content-specific prefrontal activity lasting throughout the entire duration of a conscious percept rather than returning to baseline. In the provided material, Integrated Information Theory predicts sustained content-specific activity for the whole percept rather than an activity-silent maintenance state. Because no rival source in the material predicts the same activity-silent pattern and the remaining rivals are silent on it, the prediction separates Global Workspace Theory from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "V88Ba-XmHISS2OMP8O3WyQY"
+cost_usd = 0.011858
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-gwt-synchrony"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could clearly fail if neural recordings during conscious perception show no content-specific beta or gamma synchrony between prefrontal cortex and category-selective sensory areas. In the provided material, no rival theory predicts this same result. Integrated information theory predicts synchrony within posterior cortex instead and states that prefrontal synchrony is not required, while no passages are provided for the remaining rivals, so the prediction separates Global Workspace Theory from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "Zc8Ba9SbKp_Cn88PlKrUwQo"
+cost_usd = 0.007034
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-gwt-topdown"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if empirical studies show that awareness of a stimulus occurs without top-down feedback from the prefrontal cortex to sensory areas, or if models omitting prefrontal feedback explain awareness just as well. In the provided material, no rival theory predicts this same requirement. Integrated information theory predicts the opposite by holding that prefrontal feedback is not needed, while the remaining rival theories are silent in the provided passages, meaning the prediction separates Global Workspace Theory from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "bM8Ba6jqFK3Ym9cPgZWmoA4"
+cost_usd = 0.007046
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-gwt-wm-transform"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if a study observes subjects successfully performing mental transformations, such as mental rotation, on held information while neural recordings show no decodable active firing or signatures of conscious access. None of the provided materials show a rival theory's proponents predicting this specific requirement for transforming activity-silent memories. Under the scoring rule, the silence of the rival sources means the prediction separates Global workspace theory from all rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "dc8Ba7vnI_-B0PEP18nAoAI"
+cost_usd = 0.00705
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-hot-awareness-performance"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Experiments can hold objective discrimination performance equal across conditions while measuring subjective awareness reports. Finding that awareness ratings remain identical whenever discrimination accuracy is matched across manipulations of higher-order states would count against this prediction. Because the material provides no published passages from any rival theory predicting this dissociation, the prediction separates Higher-order theories from all nine rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "gM8Ba83gNPO_n88Pr_zU2Aw"
+cost_usd = 0.012004
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-hot-first-order-insufficient"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if experiments consistently showed that whenever stimulus-specific feedback activity occurs between sensory areas, subjects experience the stimulus without requiring activity in additional brain regions. No rival passage in the provided material predicts this same dissociation between recurrent sensory activity and conscious experience. Recurrent processing theory explicitly predicts the opposite—that feedback within visual cortex is sufficient for experience—and the remaining rivals are silent in the provided sources, meaning the prediction separates Higher-order theories from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "j88Ba_OKPI7-n88P5vTfgQM"
+cost_usd = 0.01354
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-hot-pfc-disrupt"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail because an experiment could observe unchanged awareness ratings and metacognitive efficiency alongside intact discrimination after prefrontal disruption compared with a control site. None of the rival sources given in the material predict this dissociation. Recurrent processing theory says fronto-parietal disruption affects report rather than seeing without predicting selective loss of metacognitive ratings alongside preserved discrimination, and integrated information theory places consciousness mainly in posterior cortex. The remaining rivals are silent in the provided passages, so the prediction separates higher-order theories from all nine rivals."
+unsure = true
+unsure_why = "Fleming (2020) writes that we should not be surprised by null results from single lesions because of network redundancy, which partially hedges against falsification, and recurrent processing theory's claim that disruption affects report could overlap observationally with altered awareness ratings."
+response_id = "nM8Ba4-KN9HUm9cPr8LFyAo"
+cost_usd = 0.036328
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-hot-pfc-involved"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if a sufficiently sensitive no-report study with matched stimuli found awareness-related differences confined to sensory cortex, with no awareness-related information or interaction in prefrontal cortex. Among the given rival passages, recurrent processing theory and integrated information theory predict against prefrontal involvement in seeing itself without report. Although the integrated information theory passage briefly notes prefrontal cortex as a point of disagreement with global workspace theory, no passage in the material states that global workspace theory or any other rival predicts prefrontal cortex acting on sensory representations when no report is required. Because the remaining rivals are silent in the provided material, the prediction separates higher-order theories from all nine rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "zs8Ba_60Oaq4n88PnbuSCA"
+cost_usd = 0.027144
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-hot-unconscious-global"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail because sensitive brain-decoding studies could find that unseen stimuli are represented only in sensory cortex or produce only a brief, fading signal in prefrontal and parietal areas. No rival source in the given material predicts sustained, widespread higher-area representation without conscious experience. Global workspace theory explicitly predicts the opposite—only a decaying wave in higher areas for unseen stimuli—and all other rivals are silent in the material, so the prediction separates Higher-order theories from every rival on the list."
+unsure = false
+unsure_why = ""
+response_id = "8c8Ba_2OIKPDn88PxbDE0Q0"
+cost_usd = 0.019406
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-iit-agnosia"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if complete inactivation or loss of a content-carrying part of the main complex left a person aware that something was missing, which clinical or inactivation studies can observe through patient reports. None of the provided material contains a published source from any rival theory predicting this same outcome. Under the scoring rule, the silence of the rival sources means the prediction separates Integrated Information Theory from all nine rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "BNABa4aXLP-5jdoP15q30Q8"
+cost_usd = 0.013632
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-iit-connections"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if a study modifies connection strengths in the relevant cortical substrate while neural activity stays constant and participants report no change in experience. No rival source in the material predicts this same result. The cited Global Workspace Theory source predicts instead that nothing in experience changes when activity is unchanged, and the remaining rivals are silent, so the prediction separates Integrated Information Theory from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "FNABa46RA_qnjdoPkaXAkAM"
+cost_usd = 0.015236
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-iit-feedforward"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction cannot fail empirically because it explicitly holds that a feed-forward machine lacks experience even when it is behaviorally indistinguishable from a human being, leaving no observable result that a study could detect to falsify it. Among the rival passages provided, none predicts the same claim. Global workspace theory allows a machine implementing broadcasting to have experience, while no passages are given for the remaining rivals, so under the scoring rule this claim separates IIT from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "KtABa7DwEuGqjdoP0am-6As"
+cost_usd = 0.008602
+run = "stage3"
+question = "C2"
+could_fail = false
+separates = true
+separates_from = ["gwt", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-iit-inactive"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "A study could observe whether experimentally inactivating neurons that are already quiet alters reported conscious experience or leaves it unchanged, giving a clear way for the prediction to fail. Global workspace theory predicts a different requirement, tying conscious content to active, persistent neural firing rather than quiet constituents. None of the provided passages for any rival theory predicts that disabling already-quiet neurons changes experience, so the prediction separates IIT from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "TtABa7bxO5K-0PEP4PiD4Aw"
+cost_usd = 0.008566
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-iit-phi-states"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction would fail if empirical measures or validated proxies of integrated information turned out to be as high in dreamless sleep or anaesthesia as they are in waking and dreaming. The only rival source cited, for Global Workspace Theory, predicts that the global workspace is disrupted in anaesthesia and sleep, which concerns workspace disruption rather than integrated information (Φ) and makes no prediction about dreaming. Because no rival source in the material predicts this same pattern of integrated information across those states, the prediction separates IIT from all listed rivals."
+unsure = true
+unsure_why = "The quoted passage states the prediction in terms of exact Φ rather than a specific observable proxy, so testability in human studies depends on accepting empirical proxies as valid measures of Φ."
+response_id = "XNABa6OgJIbH0PEPl7ncwA4"
+cost_usd = 0.019854
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-iit-posterior"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if empirical studies show that prefrontal cortex is necessary for conscious experience or adds decodable conscious content beyond what is found in posterior cortex. In the provided material, Global Workspace Theory explicitly predicts a different outcome by requiring prefrontal activation, while no passages are given for the remaining rivals. Under the scoring rule, both contrary predictions and silence mean this prediction separates Integrated Information Theory from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "dtABa4CrNa2mjdoPgPff2QI"
+cost_usd = 0.007852
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-iit-sustained"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if brain recordings show that content-specific activity in posterior cortex decays well before a consciously experienced stimulus ends. In the provided material, Global Workspace Theory predicts a different outcome—phasic ignition followed by decay—rather than sustained posterior activity. None of the other listed rivals have published passages in the material predicting the same sustained pattern, so their silence means the prediction separates Integrated Information Theory from all rivals."
+unsure = false
+unsure_why = ""
+response_id = "ftABa_CBFPe20PEPp6SsiQs"
+cost_usd = 0.006944
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-iit-synchrony"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could clearly fail if a neuroimaging study observes no sustained, content-specific synchrony between category-selective areas and early visual areas during conscious experiences. In the provided material, Global Workspace Theory predicts long-range synchrony with prefrontal cortex instead, and no published sources for the other rival theories are shown predicting the same result. Because rival theories either predict something different or are silent in the given passages, this prediction separates Integrated Information Theory from all rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "h9ABa9-JMLW30PEP_azpgQY"
+cost_usd = 0.006746
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-orch-anaesthetic-mt"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could clearly fail in an observable experiment if brain-penetrating drugs that alter neuronal microtubules leave the dose and time required for anaesthetic-induced unconsciousness unchanged compared with controls. None of the provided material shows any rival theory's proponents publishing this same prediction. Under the scoring rule that a rival's silence counts as separation, this prediction separates Orchestrated Objective Reduction from all nine rival theories on the list."
+unsure = false
+unsure_why = ""
+response_id = "j9ABa6eXMbrYm9cP3-7DyQ0"
+cost_usd = 0.00887
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-orch-coherence-time"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction specifies a measurable duration of 10 to 500 milliseconds for quantum coherence in brain microtubules at body temperature. An experimental study observing rapid decoherence far below this range, such as under a millionth of a second, would clearly count against it. Because no passages from any rival theories are provided that make this same claim, the prediction separates Orchestrated Objective Reduction from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "mNABa9ODHKjdm9cPk57Q6QI"
+cost_usd = 0.006512
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-orch-dp-collapse"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction gives a specific mathematical rule (T = h/E) for when an isolated quantum superposition of a massive object must collapse on its own. An experiment could refute this by observing a well-isolated superposition holding together clearly longer than that rule allows, or by finding an absence of the required collapse side effects. No passages from any rival theories are provided that predict this result. Under the scoring rule, the rivals' silence means this prediction separates Orchestrated Objective Reduction from all nine rival theories on the list."
+unsure = false
+unsure_why = ""
+response_id = "n9ABa8eLLafZm9cPu4KayA0"
+cost_usd = 0.015076
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-orch-mass-time"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction specifies an observable inverse relationship between the amount of engaged brain tissue, measured via imaging or electrophysiology, and perception or reaction times. A study could falsify this claim by finding that preconscious or response times remain unchanged or lengthen when larger amounts of neural tissue take part in a task. Because no passages from rival theories are provided in the material, all rivals on the list are silent on this point, meaning the prediction separates Orch OR from all nine of them."
+unsure = false
+unsure_why = ""
+response_id = "r9ABa_mlGYuY2OMP88fa8AE"
+cost_usd = 0.006896
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-orch-mt-coherence"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if sensitive instruments such as SQUIDs examine microtubules at body temperature and find no quantum coherence, or find that coherence decays far too rapidly for biological relevance. Because the provided material includes no published sources from any rival theory predicting quantum coherence in microtubules, their silence means the prediction separates Orchestrated Objective Reduction from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "ttABa96-GMGljdoPnamM-Qo"
+cost_usd = 0.00684
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-orch-mt-entangle"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction specifies that Aspect-style physical tests on separated microtubule subunit states will find non-local quantum correlations within single microtubules, across microtubules in one neuron, and across neurons linked by gap junctions. It could fail if sensitive correlation measurements on these microtubule states find no correlations beyond what classical local links explain. No passages from any rival theory are given that predict this result. Because a rival's silence counts as separation under the rules, this prediction separates Orchestrated Objective Reduction from all nine rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "vtABa6CDJffsn88P0MSogA0"
+cost_usd = 0.014192
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-orch-mt-vibration"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if measurements in living cells show that microtubule vibrational states do not change alongside cellular or electrical activity. No published passages from any rival theories are present in the material, meaning all rivals are silent on this observable outcome. Under the scoring rules, that silence means no rival predicts the same result and the prediction separates Orchestrated Objective Reduction from all nine rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "zdABa-D9Kvi3jdoPsvy8oQ0"
+cost_usd = 0.011716
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-orch-synaptic-cyto"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if experiments observe synaptic sensitivity and plasticity changing without any accompanying changes in the pre-synaptic and post-synaptic cytoskeleton. No passages from rival theories are provided in the material, meaning all rivals are silent on this specific result. Under the scoring rules, a rival's silence means the prediction separates Orchestrated Objective Reduction from all nine rival theories on the list."
+unsure = false
+unsure_why = ""
+response_id = "19ABa_2mOtjcsNYPus-pqQg"
+cost_usd = 0.007624
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-rpt-attention-independent"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if experiments showed that early recurrent processing (the early awareness-related negativity) appears only for attended stimuli and scales with attention, or that attention never modulates undetected stimuli. Based on the material provided, a Global Workspace Theory paper by Mashour et al. (2020) predicts the same observable pattern of preserved early processing under inattention and attention effects without awareness, differing only in whether that early activity is labeled seeing. Because no passages are given for the remaining rivals on the list, the prediction separates Recurrent Processing Theory from all of them except Global Workspace Theory."
+unsure = true
+unsure_why = "The Global Workspace Theory entry in the material is a brief paraphrase ('early processing preserved under inattention') rather than a direct quote, leaving slight ambiguity as to whether Mashour et al. (2020) predict that early recurrent processing and the awareness-related negativity remain completely unchanged by attention."
+response_id = "4NABa7CNEZ7N2OMP2dHIqQk"
+cost_usd = 0.058906
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["iit", "hot", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = true
+which_rivals_same = ["gwt"]
+
+[[reading]]
+judgement = "tst-rpt-feedback-needed"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could clearly fail if an experiment showed that subjects continue to see normally when feedback signals to early visual cortex are abolished while early forward signals remain intact. According to the provided material, a publication by Global Workspace Theory proponents also links conscious access to recurrent processing in primary visual cortex, which implies the same loss of awareness when that feedback is disrupted. Because Global Workspace Theory predicts a matching outcome, the prediction does not cleanly separate Recurrent Processing Theory from all rivals, although every other rival on the list is silent in the provided material and is therefore separated."
+unsure = true
+unsure_why = "The material for Global Workspace Theory gives a brief summary about 'conscious access' and recurrent processing in V1 rather than a direct passage predicting intact feedforward signals alongside abolished seeing under TMS, masking, or anaesthesia."
+response_id = "ItEBa8H-M9vw0PEPpIjd-QQ"
+cost_usd = 0.02502
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = false
+separates_from = ["iit", "hot", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = true
+which_rivals_same = ["gwt"]
+
+[[reading]]
+judgement = "tst-rpt-ff-unseen"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if an experiment showed that a stimulus restricted to the first forward pass, with recurrent signals in visual cortex absent, was still consciously detected and reported, or failed to reach prefrontal areas and affect behavior. None of the rival passages provided predicts this same observable result. The single rival statement for Global Workspace Theory says only that unseen stimuli can produce long-lasting activations, without mentioning absent recurrent visual processing, feedforward signals reaching prefrontal cortex, or behavioral effects. Because all other rivals are silent in the material given, the prediction separates Recurrent Processing Theory from all nine rivals."
+unsure = false
+unsure_why = ""
+response_id = "QNEBa9Q3wdmb1w-qzNmoDA"
+cost_usd = 0.036292
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-rpt-no-report-sensory"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "This prediction could fail in a no-report study if conscious seeing of task-irrelevant stimuli still reliably required fronto-parietal activation, a late P300 wave, or prefrontal feedback. In the provided material, Global Workspace Theory predicts a contrasting result—that late, widespread divergence marks consciousness across manipulations—while no passages show any other rival predicting the same result. Because one rival predicts differently and the remaining rivals are silent in the material, the prediction separates Recurrent Processing Theory from all rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "adEBa-fbAZCnm9cPvtz16Q8"
+cost_usd = 0.010012
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-rpt-other-senses"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if a study using a no-report paradigm found that awareness of sounds requires fronto-parietal activation or shows no early difference in auditory cortex between heard and unheard sounds. No rival theory predicts this same observable outcome in the provided passages. Global workspace theory instead ties auditory awareness to a late P300 wave, and the other rival theories have no matching predictions in the text, so this prediction separates recurrent processing theory from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "jNEBa_CaMc64n88Ph-zKsAc"
+cost_usd = 0.013622
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-rpt-unattended-local"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "This prediction could fail if neural recordings showed that unmasked, unattended stimuli going unreported evoke no local recurrent processing in visual cortex, differing from reported stimuli in early visual signals as much as in later ones. However, a published source by proponents of Global Workspace Theory predicts the same observable pattern—local recurrent loops in visual cortex for unattended stimuli and widespread fronto-parietal activation for reported ones—while merely labeling the local activity preconscious. Because a rival's own source predicts the same observable result, this prediction fails to separate Recurrent Processing Theory from Global Workspace Theory. Since the material provides no passages from the remaining eight rival theories on this point, their silence means the prediction separates from those eight."
+unsure = false
+unsure_why = ""
+response_id = "m9EBa8jrMPCijdoPtoW70QE"
+cost_usd = 0.033288
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = false
+separates_from = ["iit", "hot", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = true
+which_rivals_same = ["gwt"]
+
+[[reading]]
+judgement = "tst-rpt-van"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail in a scalp EEG study with matched stimuli if seen and unseen trials showed no posterior negativity around 200 ms and instead diverged only after about 300 ms during the late positive wave. In the material provided, no rival theory predicts this same early awareness-related wave. Global workspace theory predicts a contrasting late signature centered on the P300 while allowing the first 200 ms to remain the same, and the remaining rivals have no passages predicting the effect, so the prediction separates recurrent processing theory from all nine rivals."
+unsure = false
+unsure_why = ""
+response_id = "vNEBa-3oNLrYm9cP3-7DyQ0"
+cost_usd = 0.01659
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-seth-ai-not-by-computation"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "A study cannot directly observe whether a conventional AI system is conscious without already assuming a theory of consciousness, and no agreed theory-neutral test exists. Moreover, the quoted passage treats apparent AI smartness as pulling on anthropomorphic biases rather than stating any observable result that would show consciousness is present. In the material given, no rival predicts the same claim: Attention Schema Theory proposes building conscious machines with current technology, and no passages are given for the remaining rivals."
+unsure = false
+unsure_why = ""
+response_id = "zNEBa6evA-bQm9cPiYHb2Q0"
+cost_usd = 0.022718
+run = "stage3"
+question = "C2"
+could_fail = false
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-seth-expectation-speeds-access"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if experiments manipulating expectation find that expected sensory or bodily signals are consciously perceived at the same time as, or later than, physically identical unexpected ones. Timing of conscious reports and the latency of neural markers differentiating seen from unseen stimuli are observable in standard laboratory tasks. Because the provided material includes no passages from rival proponents predicting this same result, the prediction separates Seth's view from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "7NEBa7joItWZjdoPuM6TmQc"
+cost_usd = 0.011742
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-seth-feeling-from-prediction"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "This prediction could fail in an experiment if altering expected bodily states through false physiological feedback left reported emotions unchanged while actual bodily states remained fixed. No published sources from any rival theories are provided in the material that predict this same result. Under the scoring rules, this silence means the prediction belongs solely to Seth's view and separates it from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "-NEBa6nGHO7Xm9cPjvKw0Q0"
+cost_usd = 0.00809
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-seth-interoceptive-ownership"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could clearly fail in an experiment if visual feedback on a hand timed to a person's heartbeat produced no greater ownership than out-of-time feedback, within a setup where timed touch works. Among the rivals, Damasio's feeling-based theory is cited as also holding that interoceptive feelings underpin the sense of owning one's body. None of the other eight rival theories on the list have passages predicting this effect, so the prediction separates Seth's view from them."
+unsure = true
+unsure_why = "The summary for Damasio's 2025 paper states broadly that interoceptive feelings underpin body ownership, without showing whether that source predicts the specific observable result that heartbeat-timed visual feedback changes ownership of a seen hand."
+response_id = "_tEBa-n0Mt-Zm9cP-dTEgAs"
+cost_usd = 0.025016
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "ast", "sensorimotor", "orch-or", "sh"]
+rival_predicts_same = true
+which_rivals_same = ["damasio"]
+
+[[reading]]
+judgement = "tst-seth-interoceptive-suppression"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "A brain-imaging study could test this prediction and find that the anterior insula shows neither reduced responses to predictable body signals nor heightened responses to unexpected ones, which would plainly count against it. Because the provided material includes no published passages from any rival theories making this same claim, none of the rivals predict the same observable result here. Under the rule that a rival's silence means the prediction separates, this prediction separates Seth's view from all nine rival theories on the list."
+unsure = false
+unsure_why = ""
+response_id = "GNIBa4PYKvfsn88P0MSogA0"
+cost_usd = 0.012758
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-seth-living-only"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction cannot fail in practice because it does not name any concrete, observable result that a study could actually measure, relying instead on the placeholder of an unspecified 'agreed test for consciousness' while ruling out any level of behavioral capability. In the material provided, no rival theory predicts that consciousness is restricted only to living systems. Published passages for Integrated Information Theory and Attention Schema Theory explicitly allow consciousness in non-living machines, and the remaining rivals are silent in the given sources, so the claim separates Seth's view from all nine rivals."
+unsure = true
+unsure_why = "While no agreed, theory-neutral test for machine consciousness exists today—making 'an agreed test finds it' unobservable rather than a concrete empirical outcome—it is unclear whether the scoring rubric accepts a hypothetical future consensus test as an observable result, and Seth's own phrasing ('may be... perhaps only of') is heavily hedged."
+response_id = "J9IBa_bLLK3Ym9cPgZWmoA4"
+cost_usd = 0.016086
+run = "stage3"
+question = "C2"
+could_fail = false
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-seth-low-interoception-more-illusion"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if empirical studies observe that higher interoceptive accuracy, such as better heartbeat sensing, correlates with a stronger rubber hand illusion, or if there is no relationship between the two. None of the rival theories have published passages in the provided material predicting this outcome. Under the scoring rule, a rival's silence means the prediction separates this theory from all rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "O9IBa-jYCZ2qsNYPk4a5sAg"
+cost_usd = 0.006478
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-seth-presence-match"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction specifies a concrete, observable relationship between manipulated interoceptive expectations, subjective sense of presence, and anxiety. It could clearly fail in an experimental study if inducing imprecise bodily expectations fails to lower reported presence, or if simple interoceptive mismatch decreases presence rather than elevating anxiety. Because the provided material contains no passages from rival theories making this same prediction, the prediction separates Seth's view from all nine rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "QtIBa9SBIf3bm9cP-MXkmQI"
+cost_usd = 0.00528
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-sh-central"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "first"
+reason = "The wording states a broad meta-theoretical bet about explanatory completeness rather than a concrete outcome that an empirical study could actually observe. Because neither 'the binding' nor what it can or cannot explain is tied to a specific measurable result, no observable falsifier is stated or plainly implied. As no rival passages are given in the material, the nine rivals are silent on this claim, which means under the scoring rule none predicts the same thing and it separates from all of them."
+unsure = false
+unsure_why = ""
+response_id = "R9IBa46MIfC10PEPyuyniQI"
+cost_usd = 0.025006
+run = "stage3"
+question = "C2"
+could_fail = false
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-sh-enriching"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "first"
+reason = "The prediction could fail if neurological or experimental cases showed that removing kept memory, self-awareness, mattering, or a boundary switches conscious experience off completely rather than leaving a poorer experience intact, along the lines tested in clinical cases like Henry Molaison's. No published source by proponents of any rival theory in the material predicts this same result. The sole rival passage provided attributes the opposite prediction about mattering to Damasio's theory, and all other rivals are silent in the given material, so the prediction separates the theory from all nine rivals."
+unsure = false
+unsure_why = ""
+response_id = "ZtIBa5C5Gt3Mm9cPgIfK6A0"
+cost_usd = 0.019532
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-sh-no-bare-awareness"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "first"
+reason = "The quoted passages merely restate the logical negation of the claim—that the judgment would be wrong if an experience had nothing on one of the three axes—without giving any observable measure for integration, availability, or depth. Moreover, people already report pure or contentless awareness, and because having a well-attested case requires availability for report, a study could not observe a well-attested experience with zero availability or verify zero structure without independent operational criteria. No passages from rival theories are provided in the material, so no rival source predicts the same result. Under the rule that a rival's silence counts as separation, this claim separates the Sentient Horizons account from all nine rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "gNIBa6KGNajXm9cP-sS10Qk"
+cost_usd = 0.04089
+run = "stage3"
+question = "C2"
+could_fail = false
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-sh-nosplit-flexible"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "first"
+reason = "The source explicitly states what would count against the prediction: observing someone who reports no split between self and world yet still responds flexibly to something new. A study can observe both subjective reports of losing the self-world boundary and behavioral flexibility toward novel events. No published passages from rival theories are provided in the material that predict this same result. Under the scoring rule, rival silence means the prediction separates the Sentient Horizons account from all nine rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "tdIBa87dEPinjdoPrtnlkQ8"
+cost_usd = 0.015822
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-sh-split-novel"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "first"
+reason = "The prediction could fail because an experiment could block internal command copies from reaching sensory processing while leaving motor execution intact, and then measure how the system responds to novel, unrelated events. If practised single actions continue and responses to new external events carry on unimpaired as before, that observable outcome directly counts against the claim. Because the material includes no published passages from any rival theories, every rival is silent on this specific test. Under the rules, that silence means no rival predicts the same result and the prediction separates this account from all nine rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "yNIBa-X9H_mv0PEPrZzUqAo"
+cost_usd = 0.014646
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio"]
+rival_predicts_same = false
+which_rivals_same = []
+replaces_earlier_gemini_reading = true
+
+[[reading]]
+judgement = "tst-sm-active-control"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if users of a tactile sensory-substitution device came to perceive and locate objects out in external space even when the camera was fixed or moved passively without their own control. A laboratory study comparing active camera control with passive or fixed-camera conditions could readily observe this result. Because no passages from any rival theories are provided in the material, none of the rivals are shown to predict the same outcome, meaning the prediction separates the sensorimotor theory from all listed rivals."
+unsure = false
+unsure_why = ""
+response_id = "2NIBa9_wI6a2jdoPqI_54AE"
+cost_usd = 0.0108
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-sm-change-blindness"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail because an eye-tracking study could observe that people find large changes just as quickly and reliably when the local transient is masked as when it is unmasked. According to the material given, publications by proponents of Global Workspace Theory and Recurrent Processing Theory predict the same missed reports. Because at least one rival's published source predicts the same observable result, the prediction does not uniquely separate the sensorimotor theory overall, though it still separates from the seven rivals that are silent here."
+unsure = true
+unsure_why = "The material for GWT and RPT provides summary statements with proponent citations rather than verbatim passages from those publications, and 'separates' could be read either as separating from all rivals (false here, following 'UNLESS a rival's own published source predicts the same thing') or separating from at least one silent rival (true)."
+response_id = "4tIBa5O6N63Pm9cP5fyawQ8"
+cost_usd = 0.047358
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = false
+separates_from = ["iit", "hot", "seth", "ast", "orch-or", "damasio", "sh"]
+rival_predicts_same = true
+which_rivals_same = ["gwt", "rpt"]
+
+[[reading]]
+judgement = "tst-sm-colour-contingent"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction specifies a concrete eye-tracking experiment in which trained observers should come to judge a central red patch and a peripheral green patch as the same colour. It could clearly fail if, after sufficient gaze-contingent training, observers' colour judgements show no shift toward matching the two colours compared with a non-contingent control. Because the provided material contains no published passages from any rival theory predicting this same outcome, the rivals' silence means the prediction separates the sensorimotor theory from all nine rival theories on the list."
+unsure = false
+unsure_why = ""
+response_id = "HdMBa7OaGp_Cn88PlKrUwQo"
+cost_usd = 0.00774
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-sm-inattentional"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "This prediction could fail if participants performing a demanding task noticed and reported nearly every unexpected, clearly visible object appearing where they were looking. In the material provided, published sources by proponents of Global Workspace Theory and Recurrent Processing Theory predict the same missed reports. Because the remaining seven rival theories are silent in the given material, the prediction separates the sensorimotor theory from those seven rivals under the rule. However, it does not separate the theory from Global Workspace Theory or Recurrent Processing Theory."
+unsure = false
+unsure_why = ""
+response_id = "JtMBa665MMHZm9cPzd3ZqAw"
+cost_usd = 0.055086
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["iit", "hot", "seth", "ast", "orch-or", "damasio", "sh"]
+rival_predicts_same = true
+which_rivals_same = ["gwt", "rpt"]
+
+[[reading]]
+judgement = "tst-sm-inversion"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could clearly fail if subjects wearing inverting or reversing goggles reported that the entire visual scene flipped all at once rather than piece by piece, or if they learned to act normally while consistently reporting that their visual experience remained reversed. Because no published passages from any rival theories are provided in the material, all rivals are silent on this specific phenomenon. Under the scoring rules, this silence means the prediction belongs solely to the sensorimotor theory and separates it from all nine rivals on the list."
+unsure = false
+unsure_why = ""
+response_id = "XtMBa_SBGZjesNYPkNf24QE"
+cost_usd = 0.005386
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-sm-no-ncc"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if neuroimaging or neural recording studies find a momentary pattern of brain activity that reliably matches and decodes a given visual experience across varied tasks, reports, and eye movements. None of the rival sources given in the material predict this same result. Instead, the passages for global workspace theory, integrated information theory, and recurrent processing theory tie conscious experience directly to current brain states or processes, while no passages are given for the remaining rivals. Because rival theories either claim the opposite or are silent in the provided material, this prediction separates the sensorimotor theory from all nine rivals."
+unsure = false
+unsure_why = ""
+response_id = "Y9MBa86ZHdimjdoP2p_IiQI"
+cost_usd = 0.017682
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []
+
+[[reading]]
+judgement = "tst-sm-substitution"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction could fail if, after extensive active practice with a camera-to-touch device, users still report feeling sensations only on their skin and must consciously calculate object positions rather than experiencing them out in space or reacting to looming stimuli. Such subjective reports and behavioral reactions are straightforwardly observable in an empirical study. Because the provided material includes no published passages from any rival theory predicting this outcome, all listed rivals are silent here and the prediction separates the sensorimotor theory from each of them."
+unsure = false
+unsure_why = ""
+response_id = "c9MBa5PkE_qZ2OMPxs3J6Qg"
+cost_usd = 0.013298
+run = "stage3"
+question = "C2"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "hot", "rpt", "seth", "ast", "orch-or", "damasio", "sh"]
+rival_predicts_same = false
+which_rivals_same = []

@@ -1,0 +1,45 @@
+{
+  "packet_id": "tst-seth-expectation-speeds-access",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Anil Seth's living-body view",
+  "core_claim": {
+    "quote": "The core claim from the perspective of consciousness is that conscious contents are given by the brain’s ‘best guesses’ – by the joint content of the top-down perceptual predictions",
+    "source": {
+      "citation": "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)",
+      "url": "https://doi.org/10.1017/S0140525X25000032",
+      "date": "2025-04-21"
+    }
+  },
+  "prediction": {
+    "statement": "What a person expects shapes what they consciously perceive: an expected stimulus becomes conscious sooner than an unexpected one, and by the same reasoning an expected signal from inside the body is felt earlier than an unexpected one.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2012-01-10",
+      "passage": "In the visual domain, expectations about upcoming sensory input reduce the latency of neuronal signatures differentiating seen and unseen stimuli (Melloni et al., 2011); in other words, expectations speed up conscious access. By analogy, an expected interoceptive signal may be perceived as occurring earlier than an unexpected interoceptive signal.",
+      "source": {
+        "citation": "Seth AK, Suzuki K, Critchley HD. An interoceptive predictive coding model of conscious presence. Frontiers in Psychology 2:395 (2011 volume)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254200/",
+        "date": "2012-01-10"
+      }
+    },
+    "test_for": "Stimuli the person was led to expect are reported, or show the brain's seen-versus-unseen difference, earlier than the same stimuli unexpected; or a heartbeat-timed signal that is expected is judged earlier than one that is not.",
+    "test_against": "With expectation manipulated and the stimuli physically the same, expected stimuli become conscious no sooner (or later) than unexpected ones."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [],
+  "this_reading_is": "the second reading"
+}

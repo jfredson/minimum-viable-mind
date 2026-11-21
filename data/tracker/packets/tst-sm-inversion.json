@@ -1,0 +1,62 @@
+{
+  "packet_id": "tst-sm-inversion",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "The sensorimotor theory",
+  "core_claim": {
+    "quote": "The experience of seeing occurs when the organism masters what we call the governing laws of sensorimotor contingency.",
+    "source": {
+      "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+      "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+      "date": "2001-10"
+    }
+  },
+  "prediction": {
+    "statement": "When goggles turn the visual world upside down or left to right, the experience of seeing comes right piece by piece, one activity at a time, as the wearer relearns how sight changes with movement: during adaptation one aspect of a scene can look right while another in the same place still looks reversed, and in the end (about two weeks of wearing) the world looks normal again.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2001-10",
+      "passage": "An observer adapting to an inverted world will in the course of adaptation only be able to progressively probe subsets of the sensorimotor contingencies that characterize his or her new visual world; and so inconsistencies and contradictions may easily arise between “islands” of visuo-motor behavior.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    "test_for": "Wearers of inverting or reversing goggles report, during adaptation, that some aspects of a scene look the right way round while others in the same place still look reversed, with adaptation tied to the activities they practised; and with long enough wear they report that the world looks normal (not merely that they can act correctly in it).",
+    "test_against": "Wearers learn to act normally but report that what they see stays reversed throughout, however long they wear the goggles; or the whole scene's look flips at once, as one unit, rather than aspect by aspect."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "Ultimately (after about two weeks of wearing the apparatus) they come to feel that their new visual world is “normal” again.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    {
+      "passage": "Consider, for example, someone who is adapted to reversing goggles and someone who has just put them on. These two individuals will agree in their input-output relations but they will not agree in experience.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

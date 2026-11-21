@@ -1,0 +1,64 @@
+{
+  "packet_id": "tst-seth-living-only",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Anil Seth's living-body view",
+  "core_claim": {
+    "quote": "I’ll instead make the case that consciousness depends on our nature as living organisms – a form of biological naturalism.",
+    "source": {
+      "citation": "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)",
+      "url": "https://doi.org/10.1017/S0140525X25000032",
+      "date": "2025-04-21"
+    }
+  },
+  "prediction": {
+    "statement": "Consciousness is found only in living systems: a system that is not alive, however capable, is not conscious.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2025-04-21",
+      "passage": "There are good reasons to think that consciousness may not be possible at all in conventional AI systems, and there are at least some good (non-vitalistic) reasons to suppose that consciousness may be a property of, and perhaps only of, living systems.",
+      "source": {
+        "citation": "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)",
+        "url": "https://doi.org/10.1017/S0140525X25000032",
+        "date": "2025-04-21"
+      }
+    },
+    "test_for": "An agreed test for consciousness, applied to living and non-living systems, finds it only in living ones.",
+    "test_against": "An agreed test for consciousness finds it in a system that is not alive (for example a non-living machine)."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [
+    {
+      "rival": "Integrated information theory",
+      "statement": "Integrated information theory applies to any system with the right cause-and-effect structure, whatever it is made of, and its proponents see no reason why bodily, living features would be needed.",
+      "source": {
+        "citation": "Findlay G, Marshall W, Albantakis L, David I, Mayner WGP, Koch C, Tononi G. Dissociating artificial intelligence from artificial consciousness. arXiv 2412.04571, 2024",
+        "url": "https://arxiv.org/abs/2412.04571",
+        "date": "2024-12-05"
+      }
+    },
+    {
+      "rival": "Attention schema theory",
+      "statement": "Attention schema theory's proponent says a machine buildable with current technology could believe and act as if it is conscious in the same sense a human does.",
+      "source": {
+        "citation": "Graziano MSA. The attention schema theory: a foundation for engineering artificial consciousness. Frontiers in Robotics and AI 4:60, 2017",
+        "url": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2017.00060/full",
+        "date": "2017-11-14"
+      }
+    }
+  ],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [],
+  "this_reading_is": "the second reading"
+}

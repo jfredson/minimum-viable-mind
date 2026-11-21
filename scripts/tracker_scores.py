@@ -38,6 +38,11 @@ DATA = ROOT / "data" / "tracker"
 
 OUTCOME_VALUES = {"for": 1, "against": -1, "mixed": 0}
 COMMITMENT_VALUES = {"before", "not-before", "unclear"}
+# The open questions a prediction can bear on (data/open-questions.toml, written by the site
+# session on its branch, 2026-11-21: features, machines, animals, fading, groups). Kept here so
+# the records validate without that file; a prediction's `questions` is filled only where the
+# link is clear.
+QUESTION_IDS = {"features", "machines", "animals", "fading", "groups"}
 DATE_RE = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?$")
 
 
@@ -58,11 +63,34 @@ def load():
             r = dict(r)
             jid = r.pop("judgement")
             by_id[jid].setdefault("reading", []).append(r)
+    for extra3 in sorted(DATA.glob("readings-gemini-stage3*.toml")):
+        # Stage 3 run (2026-11-21). A re-read pilot testability row (question C2) replaces the
+        # pilot's Gemini reading of that row; the earlier one stays in readings-gemini.toml.
+        by_id = {j["id"]: j for j in judgements}
+        for r in t(extra3.name).get("reading", []):
+            r = dict(r)
+            jid = r.pop("judgement")
+            j = by_id[jid]
+            if r.get("replaces_earlier_gemini_reading"):
+                j["superseded_readings"] = [x for x in j.get("reading", []) if x["reader"] == "gemini"]
+                j["reading"] = [x for x in j.get("reading", []) if x["reader"] != "gemini"]
+            j.setdefault("reading", []).append(r)
     rul = DATA / "rulings.toml"
     if rul.exists():
         by_id = {j["id"]: j for j in judgements}
         for r in t("rulings.toml").get("ruling", []):
-            by_id[r["judgement"]]["ruling"] = r
+            j = by_id[r["judgement"]]
+            if r.get("rule") == "C2":
+                # Rule C as amended (2026-11-21) applied to the first reader's reading, which was
+                # made under the earlier question; a second reader now answers the new question
+                # itself, so the rule no longer overrides both readers. It replaces any earlier
+                # rule C entry for the row.
+                if j.get("ruling", {}).get("rule") == "C":
+                    j["superseded_ruling"] = j.pop("ruling")
+                j["reading"] = [dict(x, separates=r["separates"], separates_from=r.get("separates_from", []), separates_set_by="rule C2")
+                                if x["reader"] == "claude" else x for x in j.get("reading", [])]
+                continue
+            j["ruling"] = r
     spot = DATA / "spot-check.toml"
     if spot.exists():
         by_id = {j["id"]: j for j in judgements}
@@ -143,11 +171,17 @@ def validate(d):
         for a in p.get("also_stated", []) + ([p["first_public"]] if "first_public" in p else []):
             if a["source"] not in source_ids:
                 err(f"prediction {p['id']}: unknown source {a['source']}")
+        for s in p.get("shares_with", []):
+            if s["theory"] not in listed or s["source"] not in source_ids:
+                err(f"prediction {p['id']}: shares_with needs a listed rival and a known source")
         for s in p.get("separates_from", []):
             if s["theory"] not in listed:
                 err(f"prediction {p['id']}: rival {s['theory']} is not on the ruled list")
             if s["source"] not in source_ids:
                 err(f"prediction {p['id']}: unknown source {s['source']}")
+        for q in p.get("questions", []):
+            if q not in QUESTION_IDS:
+                err(f"prediction {p['id']}: question {q} is not one of the open questions {sorted(QUESTION_IDS)}")
         for k in ("statement", "test_for", "test_against"):
             if not p.get(k):
                 err(f"prediction {p['id']}: missing {k}")
@@ -244,8 +278,9 @@ def settle(j, mode):
         readers = {r["reader"] for r in rs}
         if len(cf) > 1:
             return None, "disagreed"
-        if len(readers) < 2 and mode == "settled":
-            return None, "one-reader"
+        if len(readers) < 2:
+            # the rule set the separation, but "could it fail" rests on one reader
+            return (None if mode == "settled" else rs[0]), "one-reader"
         return rs[0], "ruled"
     if not rs:
         return None, "unread"
@@ -343,7 +378,12 @@ def compute(d, mode, flip_study=None, bar_reading="sharp"):
             for p in tpreds:
                 if p["core_claim"] != c["id"] or not separates(p["id"]):
                     continue
-                best = max(best, 1.0 if p["stated_by"] == "proponent" else 0.5)
+                # Half score (John, 2026-11-21, "Add the half-score line"): a prediction only the
+                # site inferred, one whose supporters wrote in advance that a null result should
+                # not count against it (null_excused), or one read "only partly" able to fail.
+                half = (p["stated_by"] != "proponent" or "null_excused" in p
+                        or bool(tst.get(p["id"]) and tst[p["id"]].get("could_fail_partly")))
+                best = max(best, 0.5 if half else 1.0)
             per_claim[c["id"]] = best
         testability = 100 * sum(per_claim.values()) / len(tclaims)
 
@@ -378,8 +418,16 @@ def compute(d, mode, flip_study=None, bar_reading="sharp"):
         else:
             group = "not yet defined sharply enough to rank"
 
+        # how the judgements on this theory's rows stand (stage 3: the seven new theories have
+        # one reader until the second reading; a reader can see which scores rest on one reading)
+        jstat = {}
+        for j in d["judgements"]:
+            if preds[j["prediction"]]["theory"] == tid:
+                jstat[status[j["id"]]] = jstat.get(status[j["id"]], 0) + 1
         out[tid] = {
             "name": th["name"],
+            "judgement_status": jstat,
+            "one_reader_only": bool(jstat) and set(jstat) <= {"one-reader", "superseded"},
             "testability": round(testability, 1),
             "testability_by_claim": per_claim,
             "past_bar": past_bar,
@@ -423,15 +471,54 @@ def rank(d, mode, bar_reading="sharp"):
         if not survives:
             shared.add((a, b))
             reversals[f"{a}|{b}"] = breaker
-    ranks = {}
-    r = 0
-    for i, t in enumerate(ranked):
-        if i == 0 or (ranked[i - 1], t) not in shared:
-            r = i + 1
-        ranks[t] = r
+    # "Yes, pairs only" (John, 2026-11-21): ties are between neighbours only and the ranking shows
+    # no rank numbers. "rank" is the plain position in the order, never shared; the pairs too close
+    # to separate are listed under shared_because_one_study_could_swap_them.
+    ranks = {t: i + 1 for i, t in enumerate(ranked)}
     second = sorted([t for t, v in base.items() if v["group"] == "testable, too little tested to rank"], key=lambda t: -base[t]["testability"])
     third = sorted([t for t, v in base.items() if v["group"] == "not yet defined sharply enough to rank"], key=lambda t: -base[t]["testability"])
     return base, counted, status, {"ranked": [{"theory": t, "rank": ranks[t]} for t in ranked], "shared_because_one_study_could_swap_them": reversals, "testable_too_little_tested": second, "not_yet_defined_sharply_enough": third}
+
+
+def prediction_states(d, counted):
+    """Each prediction's state, from its counted outcomes only.
+
+    Rule (ruled by John, 2026-11-21, "Mixed, with the lean in words"):
+    no counted outcome -> untested; every counted outcome 'for' -> supported; every one 'against'
+    -> contradicted; anything else (any 'mixed', or 'for' beside 'against') -> mixed.
+    Beside it, the weighted reading: the sign of the sum of outcome x study weight
+    (positive supported, negative contradicted, zero mixed). Where the two differ, the
+    output lists the prediction under 'state_readings_differ'; neither is chosen silently.
+    Outcomes that are not counted (dating test, unopened study, a prediction that does not
+    separate) never set a state; their studies are listed as 'not counted'.
+    """
+    out = {}
+    for p in d["predictions"]:
+        mine = [c for c in counted if c["prediction"] == p["id"]]
+        vals = {c["value"] for c in mine}
+        if not mine:
+            st = "untested"
+        elif vals == {1}:
+            st = "supported"
+        elif vals == {-1}:
+            st = "contradicted"
+        else:
+            st = "mixed"
+        ws = sum(c["value"] * c["weight"] for c in mine)
+        wst = "untested" if not mine else ("supported" if ws > 0 else "contradicted" if ws < 0 else "mixed")
+        # "Mixed, with the lean in words" (John, 2026-11-21): a mixed state carries a line saying
+        # which way the weight of the evidence leans.
+        lean = ""
+        if st == "mixed":
+            lean = ("The weight of the evidence leans for it." if ws > 0 else
+                    "The weight of the evidence leans against it." if ws < 0 else
+                    "The evidence is evenly balanced.")
+        out[p["id"]] = {
+            "theory": p["theory"], "state": st, "state_lean": lean, "state_weighted_reading": wst,
+            "counted_studies": [{"study": c["study"], "value": c["value"], "weight": c["weight"]} for c in mine],
+            "questions": p.get("questions", []),
+        }
+    return out
 
 
 def headline(d, mode):
@@ -470,6 +557,8 @@ def main(argv=None):
         "theories": base,
         "ranking": ranking,
         "headline": headline(d, a.mode),
+        "predictions": (pstates := prediction_states(d, counted)),
+        "state_readings_differ": sorted(k for k, v in pstates.items() if v["state"] != v["state_weighted_reading"]),
         "counted_outcomes": counted,
         "alternative_readings": {
             "bar_counts_any_prediction_that_could_fail": {
@@ -489,7 +578,7 @@ def main(argv=None):
     print()
     for tid, v in base.items():
         s = "too little tested to score" if v["support"] is None else f"{v['support']}"
-        print(f"{v['name']}")
+        print(f"{v['name']}" + ("   [one reader only: Claude; no second reading yet]" if v["one_reader_only"] else ""))
         print(f"  testability {v['testability']}   support {s}   left to test {v['left_to_test']}")
         sr = v["support_rests_on"]
         print(f"  support rests on {sr['counted_outcomes']} counted outcome(s) from {len(sr['studies'])} studies, {len(sr['groups'])} groups, total weight {sr['total_weight']}")
@@ -499,10 +588,10 @@ def main(argv=None):
     print()
     print("Ranking:")
     for r in ranking["ranked"]:
-        print(f"  {r['rank']}. {base[r['theory']]['name']}")
+        print(f"  {base[r['theory']]['name']}")
     for k, by in ranking["shared_because_one_study_could_swap_them"].items():
         a_, b_ = k.split("|")
-        print(f"  {a_} and {b_} share a rank: reversing {by} alone would swap or tie them")
+        print(f"  {a_} and {b_} are too close to separate: reversing {by} alone would swap or tie them")
     if ranking["testable_too_little_tested"]:
         print("Testable, too little tested to rank: " + ", ".join(base[t]["name"] for t in ranking["testable_too_little_tested"]))
     if ranking["not_yet_defined_sharply_enough"]:
@@ -514,6 +603,10 @@ def main(argv=None):
     print("Superseded reading of ranking rule 2 (any prediction that could fail, not ruled):")
     for t, g in result["alternative_readings"]["bar_counts_any_prediction_that_could_fail"]["groups"].items():
         print(f"  {base[t]['name']}: {g}")
+    from collections import Counter
+    print("Prediction states (counted outcomes only): " + ", ".join(f"{k} {v}" for k, v in sorted(Counter(v["state"] for v in result["predictions"].values()).items())))
+    if result["state_readings_differ"]:
+        print("  the weighted reading gives a different state for: " + ", ".join(result["state_readings_differ"]))
     print(f"\nOpen verify entries: {len(open_verify)} (promotion is blocked while any are open; rule 3.3)")
     return 0
 

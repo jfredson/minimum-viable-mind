@@ -1,0 +1,77 @@
+{
+  "packet_id": "out-jicol-seth-presence-match",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Anil Seth's living-body view",
+  "core_claim": {
+    "quote": "In the limit, one can think of each and every conscious experience as (phenomenologically) integrating multimodal bodily and environmental signals in the service of coordinating allostatic regulation and survival-relevant action",
+    "source": {
+      "citation": "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)",
+      "url": "https://doi.org/10.1017/S0140525X25000032",
+      "date": "2025-04-21"
+    }
+  },
+  "prediction": {
+    "statement": "The sense of presence (that oneself and the world are real and here) is strongest when the body's actual signals match what the brain predicted them to be; making those predictions imprecise lowers presence, while simply raising the mismatch raises anxiety instead.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2012-01-10",
+      "passage": "The core concept of the model is that a sense of presence arises when informative interoceptive prediction signals are successfully matched to inputs so that prediction errors are suppressed.",
+      "source": {
+        "citation": "Seth AK, Suzuki K, Critchley HD. An interoceptive predictive coding model of conscious presence. Frontiers in Psychology 2:395 (2011 volume)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254200/",
+        "date": "2012-01-10"
+      }
+    },
+    "test_for": "When people's expectations of how their body will respond are manipulated, presence is higher when what they then feel matches what they expected, and lower when it does not, in either direction.",
+    "test_against": "Presence does not depend on the match between expected and felt bodily response, or a mismatch in one direction raises presence as reliably as a match does."
+  },
+  "study": {
+    "name": "Whether matching expected and felt emotion builds the sense of presence in virtual reality",
+    "source": {
+      "citation": "Jicol C, Cheng HY, Petrini K, O'Neill E. A predictive model for understanding the role of emotion for the formation of presence in virtual reality. PLOS ONE 18(3):e0280390, 2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10019638/",
+      "date": "2023-03-16"
+    },
+    "first_appeared": "2023-03-16 (publication (no preprint found in Europe PMC))",
+    "data_collected": {
+      "when": "not stated; before 2022-06-27",
+      "basis": "The paper gives no collection dates; it was received by the journal on 2022-06-27, so the data were collected before then."
+    }
+  },
+  "passages": [
+    {
+      "text": "Hypothesis 1: We predict that smaller mismatches between predicted and felt emotion (IV) will lead to higher levels of social and self presence, but not spatial presence (DV).",
+      "source": {
+        "citation": "Jicol C, Cheng HY, Petrini K, O'Neill E. A predictive model for understanding the role of emotion for the formation of presence in virtual reality. PLOS ONE 18(3):e0280390, 2023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10019638/",
+        "date": "2023-03-16"
+      }
+    },
+    {
+      "text": "Our results showed that, as hypothesized in H1, the IPCM predicted the formation of social and self presence but not spatial presence. Moreover, H2 was supported because the IPCM predicted presence based on computed happiness and computed fear but not computed relaxation.",
+      "source": {
+        "citation": "Jicol C, Cheng HY, Petrini K, O'Neill E. A predictive model for understanding the role of emotion for the formation of presence in virtual reality. PLOS ONE 18(3):e0280390, 2023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10019638/",
+        "date": "2023-03-16"
+      }
+    },
+    {
+      "text": "We investigated whether overestimating and underestimating emotion equally lead to a decrease in presence, as suggested by Seth et al. in their model [3].",
+      "source": {
+        "citation": "Jicol C, Cheng HY, Petrini K, O'Neill E. A predictive model for understanding the role of emotion for the formation of presence in virtual reality. PLOS ONE 18(3):e0280390, 2023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10019638/",
+        "date": "2023-03-16"
+      }
+    },
+    {
+      "text": "This pattern of results is inconsistent with the IPCM which predicts a uniform decrease in presence independent of whether participants underestimate or overestimate emotion.",
+      "source": {
+        "citation": "Jicol C, Cheng HY, Petrini K, O'Neill E. A predictive model for understanding the role of emotion for the formation of presence in virtual reality. PLOS ONE 18(3):e0280390, 2023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10019638/",
+        "date": "2023-03-16"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

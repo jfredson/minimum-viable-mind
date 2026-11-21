@@ -1,0 +1,89 @@
+{
+  "packet_id": "tst-hot-pfc-involved",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Higher-order theories",
+  "core_claim": {
+    "quote": "the hypothesis is that the prefrontal cortex plausibly plays a key role in consciousness because it supports essential cognitive mechanisms that underlie higher-order representations.",
+    "source": {
+      "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+      "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+      "date": "2019-01-07"
+    }
+  },
+  "prediction": {
+    "statement": "Consciously perceiving something, compared with the same stimulus not perceived, involves prefrontal cortex (with parietal and insular cortex) acting on the sensory representation, also when the person does not have to report the stimulus.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2017-02-15",
+      "passage": "our conclusion is that introspectively accessed states, which we view as phenomenally conscious experiences, are best described in terms of HORs that depend on the GNC, cortical circuits involving regions of the lateral and medial prefrontal cortex, posterior parietal cortex, and insular cortex (Fig. 2).",
+      "source": {
+        "citation": "LeDoux JE, Brown R. A higher-order theory of emotional consciousness. Proceedings of the National Academy of Sciences 114(10):E2016-E2025, 2017",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5347624/",
+        "date": "2017-02-15"
+      }
+    },
+    "test_for": "With stimuli matched and no report required, prefrontal cortex carries information about, or interacts with sensory cortex over, the stimuli that are consciously perceived, more than for the same stimuli not perceived.",
+    "test_against": "With stimuli matched and no report required, awareness-related differences are confined to sensory cortex, and prefrontal cortex shows no awareness-related information or interaction by a method shown to be sensitive enough to find prefrontal effects in the same data."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [
+    {
+      "rival": "Recurrent processing theory",
+      "statement": "Recurrent processing theory says fronto-parietal activity adds the ability to report and manipulate what is seen, not the seeing itself.",
+      "source": {
+        "citation": "Lamme VAF. Challenges for theories of consciousness: seeing or knowing, the missing ingredient and how to deal with it. Philosophical Transactions of the Royal Society B 373:20170344, 2018",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6074090/",
+        "date": "2018-07-30"
+      }
+    },
+    {
+      "rival": "Integrated information theory",
+      "statement": "Integrated information theory's proponents place the neural correlates of consciousness mainly in a posterior hot zone, with prefrontal cortex the point of disagreement with global workspace theory.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, Bendtz K, Ferrante O, ... Dehaene S, Koch C, Tononi G, Ward LM. An adversarial collaboration protocol for testing contrasting predictions of global neuronal workspace and integrated information theory. PLOS ONE 18(2):e0268577, 2023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9916582/",
+        "date": "2023-02-10"
+      }
+    }
+  ],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "Consciousness involves complex interactions between circuits in the GNC and sensory cortex, as well as other areas (especially those involved in memory).",
+      "source": {
+        "citation": "LeDoux JE, Brown R. A higher-order theory of emotional consciousness. Proceedings of the National Academy of Sciences 114(10):E2016-E2025, 2017",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5347624/",
+        "date": "2017-02-15"
+      }
+    },
+    {
+      "passage": "But it is a mistake to generalize from these null findings, because studies using more sensitive methods showed clear involvement of higher-order mechanisms, even when the subjects were not required to report about the stimuli [71-73].",
+      "source": {
+        "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+        "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+        "date": "2019-01-07"
+      }
+    },
+    {
+      "passage": "Despite these differences between theories, virtually no current proponents of HOT assume that one is ‘more conscious’ whenever there is more PFC activity.",
+      "source": {
+        "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+        "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+        "date": "2019-01-07"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

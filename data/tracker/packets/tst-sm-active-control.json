@@ -1,0 +1,45 @@
+{
+  "packet_id": "tst-sm-active-control",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "The sensorimotor theory",
+  "core_claim": {
+    "quote": "The sets that are applicable now are characteristic of the visual attributes of the object you are looking at, and their being currently exercised constitutes the fact of your visually perceiving that object.",
+    "source": {
+      "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+      "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+      "date": "2001-10"
+    }
+  },
+  "prediction": {
+    "statement": "With a device that turns a camera image into a pattern of touch on the skin, people come to perceive objects as out in space in front of them only when they move the camera themselves; with a fixed camera they do not.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2001-10",
+      "passage": "It was only when the observer was allowed to actively manipulate the camera that identification became possible and observers came to “see” objects as being externally localized (White et al. 1970). This important point constitutes an empirical verification of the mainstay of the present theory of visual experience, namely, that seeing constitutes the ability to actively modify sensory impressions in certain law-obeying ways.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    "test_for": "With matched stimulation and training time, users who control the camera's movement locate objects out in space (and identify them) clearly better than users who receive the same stimulation without controlling it.",
+    "test_against": "Users who receive the same stimulation without controlling the camera (a fixed camera, or a replay of another user's camera movements) locate objects out in space as well as users who control it."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [],
+  "this_reading_is": "the second reading"
+}

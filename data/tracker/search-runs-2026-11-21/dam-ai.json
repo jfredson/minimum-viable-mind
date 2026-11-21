@@ -1,0 +1,514 @@
+{
+ "prediction": "dam-ai",
+ "query": "(TITLE_ABS:\"artificial intelligence\" OR TITLE_ABS:\"language model*\" OR TITLE_ABS:robot*) AND (TITLE_ABS:feeling* OR TITLE_ABS:interocepti* OR TITLE_ABS:homeosta*) AND TITLE_ABS:conscious* AND SRC:MED",
+ "run_on": "2026-11-21 09:59 PST",
+ "hit_count": 28,
+ "results": [
+  {
+   "rank": 1,
+   "id": "43027110",
+   "source": "MED",
+   "pmid": "43027110",
+   "pmcid": "PMC13761609",
+   "doi": "10.3390/ani16213376",
+   "first_publication_date": "2026-10-26",
+   "title": "Artificial Intelligence and Metazoan Nervous Systems: From Local Processing to Valenced States of the Organism and the Inference of Suffering.",
+   "authors": "Sinmez ÇÇ, Hoven RVD, Karan T, Onmaz AC, Özek Kİ.",
+   "journal": "Animals : an open access journal from MDPI",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Recognising animals as sentient does not establish whether an individual animal is suffering at a particular time. This structured critical narrative review examines how biological evidence can support that inference. Drawing on evolutionary and comparative neuroscience, animal-welfare research and studies of artificial systems, we examine proposed links among stimulus detection, wider neural modulation, valuation, recurrent integration and consequences for the whole organism. Artificial systems provide comparisons in which learning and adaptive processing can be implemented without independently establishing subjective experience. Their implementation neither establishes feeling nor shows that these functions are unnecessary in conscious animals. Amphioxus, zebrafish, birds, mammals and octopus illustrate distinct questions about neural organisation, internal-state regulation and valuation. Birch et al.'s dimensions guide comparison of possible forms of experience without ranking species on a single scale. Exploratory literature searches, a targeted PubMed audit and a supplementary Scopus coverage check informed source identification and verification. Evidence was appraised separately for each claim, considering alternative explanations, marker validity, dependence among measures, interventions and changes over time. The framework distinguishes capacity for experience, occurrence of a particular state and its welfare significance while assessing confidence in each inference. The proposed biological links organise this assessment; they are not a validated causal sequence or scale of consciousness. Both brief severe experiences and sustained adverse states warrant consideration. AI can extend observation, but its classifications require independent biological validation and evaluation under their intended conditions of use."
+  },
+  {
+   "rank": 2,
+   "id": "42658654",
+   "source": "MED",
+   "pmid": "42658654",
+   "pmcid": "PMC13521192",
+   "doi": "10.1002/advs.202524184",
+   "first_publication_date": "2026-08-27",
+   "title": "The Mind From Within: Visceral Roots of Human Cognition.",
+   "authors": "Monti A, Aglioti SM.",
+   "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Humans think and act not only with the brain but also with the heart, lungs, gut, and other viscera, such as the bladder, long regarded as primarily vegetative. A fresh wave of experiments is revealing the role of cardiac-cycle phase and baroreceptor firing in perception and social behavior; respiration-locked neural dynamics in attention and learning; and gastrointestinal rhythms and vagal afferents in affect and decision-making. These discoveries are made possible by emerging methods, including ingestible sensors that record gastrointestinal signals in situ during emotional and cognitive tasks, and virtual reality stimuli linked to cardiac and respiratory activity. Expanding on such evidence, this review advances a deep embodiment theory in which visceral states and their conscious perception (interoception) systematically shape memory, consciousness, volitional action, and social cognition. Deep embodiment has implications for economic decision-making, clinical interventions (e.g., organ transplantation), environmental exposures (e.g., air quality), and the design of artificial intelligence (AI) systems that incorporate visceral-like signals for state estimation and adaptive control. Finally, we contrast deep embodiment with brain-reductionist and \"shallow\" embodiment accounts, arguing that viscera allow a self-centered mode of thinking and influence cognition through specific pathways."
+  },
+  {
+   "rank": 3,
+   "id": "42750541",
+   "source": "MED",
+   "pmid": "42750541",
+   "pmcid": null,
+   "doi": "10.1017/s0140525x25103646",
+   "first_publication_date": "2026-09-17",
+   "title": "Life is inherently computational, and consciousness probably is too - A commentary on: Conscious artificial intelligence and biological naturalism.",
+   "authors": "Richards B, Agüera Y Arcas B.",
+   "journal": "The Behavioral and brain sciences",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "We agree with Seth that consciousness is grounded in processes related to life, namely prediction, homeostasis, and autopoiesis. However, we believe he is wrong to frame these processes as non-computational. In fact, prediction, homeostasis, and autopoiesis are inherently computational, as shown by von Neumann's Universal Constructor theory of general computation. Given this, we believe that AI consciousness is likely."
+  },
+  {
+   "rank": 4,
+   "id": "41500378",
+   "source": "MED",
+   "pmid": "41500378",
+   "pmcid": null,
+   "doi": "10.1016/j.biosystems.2026.105693",
+   "first_publication_date": "2026-01-05",
+   "title": "Decoding life: A detailed examination of program collection.",
+   "authors": "Cao J.",
+   "journal": "Bio Systems",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This article introduces the theory that \"life is a collection of programs\". According to this theory, life constitutes a complex system composed of genetic information, metabolic regulation, developmental differentiation, and neurocognitive programs. These components operate in an orderly manner through initiation, execution, feedback, and repair mechanisms. Philosophically, ancient Greek atomism, the Yin-Yang Five Elements theory, and Hegelian dialectics provide support for the structural and dynamic properties of this theory. Scientifically, cell theory, genetics, and synthetic biology have validated its material basis. Specifically, genetic programs regulate traits through DNA, metabolic programs maintain homeostasis through enzymes and signaling pathways, developmental programs rely on gene networks to shape biological structures, and neural programs achieve cognition through neuronal signals. While this theory breaks through the traditional perspectives on life, it also faces challenges such as the \"hard problem of consciousness\" and ethical controversies. Looking ahead, integrating single-cell omics and artificial intelligence modeling is essential to deepen research and construct a robust ethical framework. This theory provides an interdisciplinary paradigm for life sciences and promotes the advancement of medicine and biotechnology."
+  },
+  {
+   "rank": 5,
+   "id": "42876598",
+   "source": "MED",
+   "pmid": "42876598",
+   "pmcid": null,
+   "doi": "10.3389/fpsyg.2026.1950309",
+   "first_publication_date": "2026-09-30",
+   "title": "Can artificial systems become conscious?-Recursive embodied closure as an integrative framework.",
+   "authors": "Schilling A, Krauss P.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Recent advances in artificial intelligence, connectomics, and computational neuroscience increasingly raise the question of whether artificial systems-or even pure computer simulations-could become conscious. Contemporary theories emphasize embodiment, predictive processing, homeostatic regulation, and continuous interaction between cognition, body, and environment rather than isolated computation. We propose recursive embodied closure as an integrative framework linking embodied, predictive, functionalist, and dynamical approaches to consciousness. Rather than replacing existing theories, the framework identifies a shared organizational principle: the continuous recursive coupling of cognition, bodily regulation, action, and environmental feedback. We argue that consciousness may, in principle, emerge in artificial systems, including computational simulations, for three reasons. First, consciousness may depend on recursively closed loops linking cognition, body, and environment, and such loops could also be realized in robotic, neuromorphic, or virtual embodiments. Second, evidence from comparative neuroscience, convergent evolution, neurotechnology, and philosophy of mind suggests that the mechanisms relevant for consciousness are largely substrate-independent and may therefore be implemented in both biological and artificial systems. Third, although unknown physical mechanisms cannot be excluded, there is currently no empirical evidence for biological processes that are uniquely necessary for consciousness. Taken together, these considerations support the view that consciousness is best understood as an emergent property of recursively embodied, environmentally embedded cognitive systems rather than of biological matter itself. If so, biological brains, artificial neural networks, neuromorphic hardware, and even virtual agents may constitute plausible candidates for future artificial consciousness."
+  },
+  {
+   "rank": 6,
+   "id": "41516001",
+   "source": "MED",
+   "pmid": "41516001",
+   "pmcid": "PMC12785928",
+   "doi": "10.3390/ijms27010122",
+   "first_publication_date": "2025-12-22",
+   "title": "Designing Neural Dynamics: From Digital Twin Modeling to Regeneration.",
+   "authors": "Tataru CP, Dumitru AV, Dobrin N, Rădoi MP, Ciurea AV, Munteanu O, Munteanu LV.",
+   "journal": "International journal of molecular sciences",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Cognitive deterioration and the transition to neurodegenerative disease does not develop through simple, linear regression; it develops as rapid and global transitions from one state to another within the neural network. Developing understanding and control over these events is among the largest tasks facing contemporary neuroscience. This paper will discuss a conceptual reframing of cognitive decline as a transitional phase of the functional state of complex neural networks resulting from the intertwining of molecular degradation, vascular dysfunction and systemic disarray. The paper will integrate the latest findings that have demonstrated how the disruptive changes in glymphatic clearance mechanisms, aquaporin-4 polarity, venous output, and neuroimmune signaling increasingly correlate with the neurophysiologic homeostasis landscape, ultimately leading to the destabilization of the network attraction sites of memory, consciousness, and cognitive resilience. Furthermore, the destabilizing processes are exacerbated by epigenetic silencing; neurovascular decoupling; remodeling of the extracellular matrix; and metabolic collapse that result in accelerating the trajectory of neural circuits towards the pathological tipping point of various neurodegenerative diseases including Alzheimer's disease; Parkinson's disease; traumatic brain injury; and intracranial hypertension. New paradigms in systems neuroscience (connectomics; network neuroscience; and critical transition theory) provide an intellectual toolkit to describe and predict these state changes at the systems level. With artificial intelligence and machine learning combined with single cell multi-omics; radiogenomic profiling; and digital twin modeling, the predictive biomarkers and early warnings of impending collapse of the system are beginning to emerge. In terms of therapeutic intervention, the possibility of reprogramming the circuitry of the brain into stable attractor states using precision neurointervention (CRISPR-based neural circuit reprogramming; RNA guided modulation of transcription; lineage switching of glia to neurons; and adaptive neuromodulation) represents an opportunity to prevent further progression of neurodegenerative disease. The paper will address the ethical and regulatory implications of this revolutionary technology, e.g., algorithmic transparency; genomic and other structural safety; and equity of access to advanced neurointervention. We do not intend to present a list of the many vertices through which the mechanisms listed above instigate, exacerbate, or maintain the neurodegenerative disease state. Instead, we aim to present a unified model where the phenomena of molecular pathology; circuit behavior; and computational intelligence converge in describing cognitive decline as a translatable change of state, rather than an irreversible succumbing to degeneration. Thus, we provide a framework for precision neurointervention, regenerative brain medicine, and adaptive intervention, to modulate the trajectory of neurodegeneration."
+  },
+  {
+   "rank": 7,
+   "id": "40150717",
+   "source": "MED",
+   "pmid": "40150717",
+   "pmcid": "PMC11939283",
+   "doi": "10.3390/bioengineering12030253",
+   "first_publication_date": "2025-03-03",
+   "title": "A Novel Tactile Learning Assistive Tool for the Visually and Hearing Impaired with 3D-CNN and Bidirectional LSTM Leveraging Morse Code Technology.",
+   "authors": "Puthu Vedu SZ, Altulyan M, Singh PK.",
+   "journal": "Bioengineering (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Educating deafblind children is a highly specialized field that requires computer-assisted learning tools to address the challenges of auditory and visual impairments. The objective is to reduce their difficulties in communication with their peers and to empower them to learn independently in a classroom environment. Braille and assistive tools have become profoundly beneficial for deafblind children, serving as an essential means of communication and knowledge acquisition, enabling them to live independently. This study aims to develop an assistive tool that bridges the limitations of conventional tactile methodologies by incorporating the latest artificial intelligence techniques, enabling children to learn with greater ease. The research leverages Morse code technology to facilitate communication with deafblind children. The speaker's lip movements are converted into text using the deep learning techniques of a 3D convolutional neural network and a bidirectional long short-term memory neural network. Experimental evaluations of this text conversion model show a word error rate of 2% and an accuracy rate of 98%. The text is then converted into Morse code and communicated to the deafblind child through a wearable device. The significance of this assistive tool lies in its discreet design, resembling a smartwatch. Adolescents can wear the proposed wearable device confidently without feeling self-conscious or embarrassed."
+  },
+  {
+   "rank": 8,
+   "id": "40910115",
+   "source": "MED",
+   "pmid": "40910115",
+   "pmcid": "PMC12405250",
+   "doi": "10.3389/frai.2025.1610225",
+   "first_publication_date": "2025-08-20",
+   "title": "Probing for consciousness in machines.",
+   "authors": "Immertreu M, Schilling A, Maier A, Krauss P.",
+   "journal": "Frontiers in artificial intelligence",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "This study explores the potential for artificial agents to develop core consciousness, as proposed by Antonio Damasio's theory of consciousness. According to Damasio, the emergence of core consciousness relies on the integration of a self model, informed by representations of emotions and feelings, and a world model. We hypothesize that an artificial agent, trained via reinforcement learning (RL) in a virtual environment, can develop preliminary forms of these models as a byproduct of its primary task. The agent's main objective is to learn to play a video game and explore the environment. To evaluate the emergence of world and self models, we employ probes-feedforward classifiers that use the activations of the trained agent's neural networks to predict the spatial positions of the agent itself. Our results demonstrate that the agent can form rudimentary world and self models, suggesting a pathway toward developing machine consciousness. This research provides foundational insights into the capabilities of artificial agents in mirroring aspects of human consciousness, with implications for future advancements in artificial intelligence."
+  },
+  {
+   "rank": 9,
+   "id": "39220208",
+   "source": "MED",
+   "pmid": "39220208",
+   "pmcid": "PMC11363186",
+   "doi": "10.3389/fnint.2024.1457936",
+   "first_publication_date": "2024-08-16",
+   "title": "Ultra-overt therapy: a novel medical approach centered on patient consciousness.",
+   "authors": "Shirbache K, Liaghat A, Saeifar S, Nezameslami A, Shirbacheh A, Nasri H, Namazi H.",
+   "journal": "Frontiers in integrative neuroscience",
+   "pub_types": [
+    "brief-report",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Within the realms of human and artificial intelligence, the concepts of consciousness and comprehension are fundamental distinctions. In the clinical sphere, patient awareness regarding medication and its physiological processes plays a crucial role in determining drug efficacy and outcomes. This article introduces a novel perspective on prescription practices termed \"Ultra-Overt Therapy\" (UOT). A review of current supporting evidence was conducted through a non-systematic search in PubMed and Google Scholar, focusing on concepts such as the \"mind-body relationship,\" \"placebo response,\" \"neuroscience,\" and \"complementary medicine.\" Our findings, rooted in the mechanisms of the \"placebo effect,\" the intricacies of \"intersubjective therapy,\" the potency of \"interoceptive awareness,\" and other domains of medical science, suggest that UOT holds theoretical promise. Future research endeavors focusing on these areas may elucidate the global impact of this method on medical treatment and patient care."
+  },
+  {
+   "rank": 10,
+   "id": "38618488",
+   "source": "MED",
+   "pmid": "38618488",
+   "pmcid": "PMC11008499",
+   "doi": "10.1093/nc/niae013",
+   "first_publication_date": "2024-04-13",
+   "title": "Folk psychological attributions of consciousness to large language models.",
+   "authors": "Colombatto C, Fleming SM.",
+   "journal": "Neuroscience of consciousness",
+   "pub_types": [
+    "brief-report",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Technological advances raise new puzzles and challenges for cognitive science and the study of how humans think about and interact with artificial intelligence (AI). For example, the advent of large language models and their human-like linguistic abilities has raised substantial debate regarding whether or not AI could be conscious. Here, we consider the question of whether AI could have subjective experiences such as feelings and sensations ('phenomenal consciousness'). While experts from many fields have weighed in on this issue in academic and public discourse, it remains unknown whether and how the general population attributes phenomenal consciousness to AI. We surveyed a sample of US residents (n = 300) and found that a majority of participants were willing to attribute some possibility of phenomenal consciousness to large language models. These attributions were robust, as they predicted attributions of mental states typically associated with phenomenality-but also flexible, as they were sensitive to individual differences such as usage frequency. Overall, these results show how folk intuitions about AI consciousness can diverge from expert intuitions-with potential implications for the legal and ethical status of AI."
+  },
+  {
+   "rank": 11,
+   "id": "37524933",
+   "source": "MED",
+   "pmid": "37524933",
+   "pmcid": "PMC10390406",
+   "doi": "10.1186/s40708-023-00196-6",
+   "first_publication_date": "2023-07-31",
+   "title": "Machine learning for cognitive behavioral analysis: datasets, methods, paradigms, and research directions.",
+   "authors": "Bhatt P, Sethi A, Tasgaonkar V, Shroff J, Pendharkar I, Desai A, Sinha P, Deshpande A, Joshi G, Rahate A, Jain P, Walambe R, Kotecha K, Jain NK.",
+   "journal": "Brain informatics",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Human behaviour reflects cognitive abilities. Human cognition is fundamentally linked to the different experiences or characteristics of consciousness/emotions, such as joy, grief, anger, etc., which assists in effective communication with others. Detection and differentiation between thoughts, feelings, and behaviours are paramount in learning to control our emotions and respond more effectively in stressful circumstances. The ability to perceive, analyse, process, interpret, remember, and retrieve information while making judgments to respond correctly is referred to as Cognitive Behavior. After making a significant mark in emotion analysis, deception detection is one of the key areas to connect human behaviour, mainly in the forensic domain. Detection of lies, deception, malicious intent, abnormal behaviour, emotions, stress, etc., have significant roles in advanced stages of behavioral science. Artificial Intelligence and Machine learning (AI/ML) has helped a great deal in pattern recognition, data extraction and analysis, and interpretations. The goal of using AI and ML in behavioral sciences is to infer human behaviour, mainly for mental health or forensic investigations. The presented work provides an extensive review of the research on cognitive behaviour analysis. A parametric study is presented based on different physical characteristics, emotional behaviours, data collection sensing mechanisms, unimodal and multimodal datasets, modelling AI/ML methods, challenges, and future research directions."
+  },
+  {
+   "rank": 12,
+   "id": "37799520",
+   "source": "MED",
+   "pmid": "37799520",
+   "pmcid": "PMC10548207",
+   "doi": "10.3389/fpsyg.2023.1190326",
+   "first_publication_date": "2023-09-20",
+   "title": "Detection of emotion by text analysis using machine learning.",
+   "authors": "Machová K, Szabóova M, Paralič J, Mičko J.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Emotions are an integral part of human life. We know many different definitions of emotions. They are most often defined as a complex pattern of reactions, and they could be confused with feelings or moods. They are the way in which individuals cope with matters or situations that they find personally significant. Emotion can also be characterized as a conscious mental reaction (such as anger or fear) subjectively experienced as a strong feeling, usually directed at a specific object. Emotions can be communicated in different ways. Understanding the emotions conveyed in a text or speech of a human by a machine is one of the challenges in the field of human-machine interaction. The article proposes the artificial intelligence approach to automatically detect human emotions, enabling a machine (i.e., a chatbot) to accurately assess emotional state of a human and to adapt its communication accordingly. A complete automation of this process is still a problem. This gap can be filled with machine learning approaches based on automatic learning from experiences represented by the text data from conversations. We conducted experiments with a lexicon-based approach and classic methods of machine learning, appropriate for text processing, such as Naïve Bayes (NB), support vector machine (SVM) and with deep learning using neural networks (NN) to develop a model for detecting emotions in a text. We have compared these models' effectiveness. The NN detection model performed particularly well in a multi-classification task involving six emotions from the text data. It achieved an F1-score = 0.95 for sadness, among other high scores for other emotions. We also verified the best model in use through a web application and in a Chatbot communication with a human. We created a web application based on our detection model that can analyze a text input by web user and detect emotions expressed in a text of a post or a comment. The model for emotions detection was used also to improve the communication of the Chatbot with a human since the Chatbot has the information about emotional state of a human during communication. Our research demonstrates the potential of machine learning approaches to detect emotions from a text and improve human-machine interaction. However, it is important to note that full automation of an emotion detection is still an open research question, and further work is needed to improve the accuracy and robustness of this system. The paper also offers the description of new aspects of automated detection of emotions from philosophy-psychological point of view."
+  },
+  {
+   "rank": 13,
+   "id": "35150452",
+   "source": "MED",
+   "pmid": "35150452",
+   "pmcid": "PMC9286416",
+   "doi": "10.1111/psyp.14016",
+   "first_publication_date": "2022-02-12",
+   "title": "Breathing affects self-other voice discrimination in a bodily state associated with somatic passivity.",
+   "authors": "Orepic P, Park HD, Rognini G, Faivre N, Blanke O.",
+   "journal": "Psychophysiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "A growing number of studies have focused on identifying cognitive processes that are modulated by interoceptive signals, particularly in relation to the respiratory or cardiac cycle. Considering the fundamental role of interoception in bodily self-consciousness, we here investigated whether interoceptive signals also impact self-voice perception. We applied an interactive, robotic paradigm associated with somatic passivity (a bodily state characterized by illusory misattribution of self-generated touches to someone else) to investigate whether somatic passivity impacts self-voice perception as a function of concurrent interoceptive signals. Participants' breathing and heartbeat signals were recorded while they performed two self-voice tasks (self-other voice discrimination and loudness perception) and while simultaneously experiencing two robotic conditions (somatic passivity condition; control condition). Our data reveal that respiration, but not cardiac activity, affects self-voice perception: participants were better at discriminating self-voice from another person's voice during the inspiration phase of the respiration cycle. Moreover, breathing effects were prominent in participants experiencing somatic passivity and a different task with the same stimuli (i.e., judging the loudness and not identity of the voices) was unaffected by breathing. Combining interoception and voice perception with self-monitoring framework, these data extend findings on breathing-dependent changes in perception and cognition to self-related processing."
+  },
+  {
+   "rank": 14,
+   "id": "34672015",
+   "source": "MED",
+   "pmid": "34672015",
+   "pmcid": null,
+   "doi": "10.1111/bioe.12968",
+   "first_publication_date": "2021-10-20",
+   "title": "The importance of developing care-worker-centered robotic aides in long-term care.",
+   "authors": "Apostolova I, Lanoix M.",
+   "journal": "Bioethics",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Recent research points to the fact that new medical technological innovations are just as relevant in the context of long-term care or chronic care as they are in the context of acute care. In the spirit of the Nuffield Foundation recommendations, this paper explores the possibilities of using robotic aides in long-term care and identifies the tensions that must be considered and addressed if robotics is to be introduced successfully in nursing homes. Our examination is two-pronged. First, we delve into a fundamental issue surrounding AI, namely that of consciousness. We argue that automation will always have only a limited use in caregiving since caregiving as an activity requires the use of human-type, that is, organic, consciousness. We support the thesis that the emergence and formation of human-type consciousness require feelings such as empathy and the sense of touch, which, in turn, create the sense of kinship with fellow human beings. And second, we examine the benefits as well as risks of using robotic aides such as ZORA and PARO in long-term care facilities. More specifically, we look at ZORA's use in a group setting, and PARO's use in an individual setting. We emphasize that long-term care is one-on-one care, including but not limited to intimate care. Crucially, we argue that touch is at the heart of this type of care. We argue that some of the tensions with the use of robotic aides are generated precisely because of the lack of human touch."
+  },
+  {
+   "rank": 15,
+   "id": "34202965",
+   "source": "MED",
+   "pmid": "34202965",
+   "pmcid": "PMC8234656",
+   "doi": "10.3390/e23060783",
+   "first_publication_date": "2021-06-20",
+   "title": "The Radically Embodied Conscious Cybernetic Bayesian Brain: From Free Energy to Free Will and Back Again.",
+   "authors": "Safron A.",
+   "journal": "Entropy (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Drawing from both enactivist and cognitivist perspectives on mind, I propose that explaining teleological phenomena may require reappraising both \"Cartesian theaters\" and mental homunculi in terms of embodied self-models (ESMs), understood as body maps with agentic properties, functioning as predictive-memory systems and cybernetic controllers. Quasi-homuncular ESMs are suggested to constitute a major organizing principle for neural architectures due to their initial and ongoing significance for solutions to inference problems in cognitive (and affective) development. Embodied experiences provide foundational lessons in learning curriculums in which agents explore increasingly challenging problem spaces, so answering an unresolved question in Bayesian cognitive science: what are biologically plausible mechanisms for equipping learners with sufficiently powerful inductive biases to adequately constrain inference spaces? Drawing on models from neurophysiology, psychology, and developmental robotics, I describe how embodiment provides fundamental sources of empirical priors (as reliably learnable posterior expectations). If ESMs play this kind of foundational role in cognitive development, then bidirectional linkages will be found between all sensory modalities and frontal-parietal control hierarchies, so infusing all senses with somatic-motoric properties, thereby structuring all perception by relevant affordances, so solving frame problems for embodied agents. Drawing upon the Free Energy Principle and Active Inference framework, I describe a particular mechanism for intentional action selection via consciously imagined (and explicitly represented) goal realization, where contrasts between desired and present states influence ongoing policy selection via predictive coding mechanisms and backward-chained imaginings (as self-realizing predictions). This embodied developmental legacy suggests a mechanism by which imaginings can be intentionally shaped by (internalized) partially-expressed motor acts, so providing means of agentic control for attention, working memory, imagination, and behavior. I further describe the nature(s) of mental causation and self-control, and also provide an account of readiness potentials in Libet paradigms wherein conscious intentions shape causal streams leading to enaction. Finally, I provide neurophenomenological handlings of prototypical qualia including pleasure, pain, and desire in terms of self-annihilating free energy gradients via quasi-synesthetic interoceptive active inference. In brief, this manuscript is intended to illustrate how radically embodied minds may create foundations for intelligence (as capacity for learning and inference), consciousness (as somatically-grounded self-world modeling), and will (as deployment of predictive models for enacting valued goals)."
+  },
+  {
+   "rank": 16,
+   "id": "33458614",
+   "source": "MED",
+   "pmid": "33458614",
+   "pmcid": "PMC7797520",
+   "doi": "10.1016/j.isci.2020.101955",
+   "first_publication_date": "2020-12-16",
+   "title": "Thought consciousness and source monitoring depend on robotically controlled sensorimotor conflicts and illusory states.",
+   "authors": "Serino A, Pozeg P, Bernasconi F, Solcà M, Hara M, Progin P, Stripeikyte G, Dhanis H, Salomon R, Bleuler H, Rognini G, Blanke O.",
+   "journal": "iScience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Thought insertion (TI) is characterized by the experience that certain thoughts, occurring in one's mind, are not one's own, but the thoughts of somebody else and suggestive of a psychotic disorder. We report a robotics-based method able to investigate the behavioral and subjective mechanisms of TI in healthy participants. We used a robotic device to alter body perception by providing online sensorimotor stimulation, while participants performed cognitive tasks implying source monitoring of mental states attributed to either oneself or another person. Across several experiments, conflicting sensorimotor stimulation reduced the distinction between self- and other-generated thoughts and was, moreover, associated with the experimentally generated feeling of being in the presence of an alien agent and subjective aspects of TI. Introducing a new robotics-based approach that enables the experimental study of the brain mechanisms of TI, these results link TI to predictable self-other shifts in source monitoring and specific sensorimotor processes."
+  },
+  {
+   "rank": 17,
+   "id": "33148398",
+   "source": "MED",
+   "pmid": "33148398",
+   "pmcid": null,
+   "doi": "10.1016/j.jogoh.2020.101962",
+   "first_publication_date": "2020-10-23",
+   "title": "Artificial intelligence in medicine: A matter of joy or concern?",
+   "authors": "Kolanska K, Chabbert-Buffet N, Daraï E, Antoine JM.",
+   "journal": "Journal of gynecology obstetrics and human reproduction",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Artificial Intelligence (AI), a concept which dates back to the 1950s, is increasingly being developed by many medical specialties, especially those based on imaging or surgery. While the cognitive component of AI is far superior to that of human intelligence, it lacks consciousness, feelings, intuition and adaptation to unexpected situations. Furthermore, fundamental questions arise with regard to data security, the impact on healthcare professions, and the distribution of roles between physicians and AI especially concerning consent to medical care and liability in the event of a therapeutic accident."
+  },
+  {
+   "rank": 18,
+   "id": "29892405",
+   "source": "MED",
+   "pmid": "29892405",
+   "pmcid": "PMC5990842",
+   "doi": "10.1098/rsos.172170",
+   "first_publication_date": "2018-05-09",
+   "title": "Body ownership and agency altered by an electromyographically controlled robotic arm.",
+   "authors": "Sato Y, Kawase T, Takano K, Spence C, Kansaku K.",
+   "journal": "Royal Society open science",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Understanding how we consciously experience our bodies is a fundamental issue in cognitive neuroscience. Two fundamental components of this are the sense of body ownership (the experience of the body as one's own) and the sense of agency (the feeling of control over one's bodily actions). These constructs have been used to investigate the incorporation of prostheses. To date, however, no evidence has been provided showing whether representations of ownership and agency in amputees are altered when operating a robotic prosthesis. Here we investigated a robotic arm using myoelectric control, for which the user varied the joint position continuously, in a rubber hand illusion task. Fifteen able-bodied participants and three trans-radial amputees were instructed to contract their wrist flexors/extensors alternately, and to watch the robotic arm move. The sense of ownership in both groups was extended to the robotic arm when the wrists of the real and robotic arm were flexed/extended synchronously, with the effect being smaller when they moved in opposite directions. Both groups also experienced a sense of agency over the robotic arm. These results suggest that these experimental settings induced successful incorporation of the prosthesis, at least for the amputees who took part in the present study."
+  },
+  {
+   "rank": 19,
+   "id": "33500893",
+   "source": "MED",
+   "pmid": "33500893",
+   "pmcid": "PMC7805825",
+   "doi": "10.3389/frobt.2018.00006",
+   "first_publication_date": "2018-02-07",
+   "title": "SEAI: Social Emotional Artificial Intelligence Based on Damasio's Theory of Mind.",
+   "authors": "Cominelli L, Mazzei D, De Rossi DE.",
+   "journal": "Frontiers in robotics and AI",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "A socially intelligent robot must be capable to extract meaningful information in real time from the social environment and react accordingly with coherent human-like behavior. Moreover, it should be able to internalize this information, to reason on it at a higher level, build its own opinions independently, and then automatically bias the decision-making according to its unique experience. In the last decades, neuroscience research highlighted the link between the evolution of such complex behavior and the evolution of a certain level of consciousness, which cannot leave out of a body that feels emotions as discriminants and prompters. In order to develop cognitive systems for social robotics with greater human-likeliness, we used an \"understanding by building\" approach to model and implement a well-known theory of mind in the form of an artificial intelligence, and we tested it on a sophisticated robotic platform. The name of the presented system is SEAI (Social Emotional Artificial Intelligence), a cognitive system specifically conceived for social and emotional robots. It is designed as a bio-inspired, highly modular, hybrid system with emotion modeling and high-level reasoning capabilities. It follows the deliberative/reactive paradigm where a knowledge-based expert system is aimed at dealing with the high-level symbolic reasoning, while a more conventional reactive paradigm is deputed to the low-level processing and control. The SEAI system is also enriched by a model that simulates the Damasio's theory of consciousness and the theory of Somatic Markers. After a review of similar bio-inspired cognitive systems, we present the scientific foundations and their computational formalization at the basis of the SEAI framework. Then, a deeper technical description of the architecture is disclosed underlining the numerous parallelisms with the human cognitive system. Finally, the influence of artificial emotions and feelings, and their link with the robot's beliefs and decisions have been tested in a physical humanoid involved in Human-Robot Interaction (HRI)."
+  },
+  {
+   "rank": 20,
+   "id": "30618706",
+   "source": "MED",
+   "pmid": "30618706",
+   "pmcid": "PMC6297195",
+   "doi": "10.3389/fnbot.2018.00084",
+   "first_publication_date": "2018-12-11",
+   "title": "Feel-Good Robotics: Requirements on Touch for Embodiment in Assistive Robotics.",
+   "authors": "Beckerle P, Kõiva R, Kirchner EA, Bekrater-Bodmann R, Dosen S, Christ O, Abbink DA, Castellini C, Lenggenhager B.",
+   "journal": "Frontiers in neurorobotics",
+   "pub_types": [
+    "brief-report",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The feeling of embodiment, i.e., experiencing the body as belonging to oneself and being able to integrate objects into one's bodily self-representation, is a key aspect of human self-consciousness and has been shown to importantly shape human cognition. An extension of such feelings toward robots has been argued as being crucial for assistive technologies aiming at restoring, extending, or simulating sensorimotor functions. Empirical and theoretical work illustrates the importance of sensory feedback for the feeling of embodiment and also immersion; we focus on the the perceptual level of touch and the role of tactile feedback in various assistive robotic devices. We critically review how different facets of tactile perception in humans, i.e., affective, social, and self-touch, might influence embodiment. This is particularly important as current assistive robotic devices - such as prostheses, orthoses, exoskeletons, and devices for teleoperation-often limit touch low-density and spatially constrained haptic feedback, i.e., the mere touch sensation linked to an action. Here, we analyze, discuss, and propose how and to what degree tactile feedback might increase the embodiment of certain robotic devices, e.g., prostheses, and the feeling of immersion in human-robot interaction, e.g., in teleoperation. Based on recent findings from cognitive psychology on interactive processes between touch and embodiment, we discuss technical solutions for specific applications, which might be used to enhance embodiment, and facilitate the study of how embodiment might alter human-robot interactions. We postulate that high-density and large surface sensing and stimulation are required to foster embodiment of such assistive devices."
+  },
+  {
+   "rank": 21,
+   "id": "28360849",
+   "source": "MED",
+   "pmid": "28360849",
+   "pmcid": "PMC5352908",
+   "doi": "10.3389/fnhum.2017.00120",
+   "first_publication_date": "2017-03-16",
+   "title": "Embodied Medicine: Mens Sana in Corpore Virtuale Sano.",
+   "authors": "Riva G, Serino S, Di Lernia D, Pavone EF, Dakanalis A.",
+   "journal": "Frontiers in human neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Progress in medical science and technology drastically improved physicians' ability to interact with patient's physical body. Nevertheless, medicine still addresses the human body from a Hippocratic point of view, considering the organism and its processes just as a matter of mechanics and fluids. However, the interaction between the cognitive neuroscience of bodily self-consciousness (BSC), fundamentally rooted in the integration of multisensory bodily inputs, with virtual reality (VR), haptic technologies and robotics is giving a new meaning to the classic Juvenal's latin dictum \"Mens sana in corpore sano\" (a healthy mind in a healthy body). This vision provides the basis for a new research field, \"Embodied Medicine\": the use of advanced technologies for altering the experience of being in a body with the goal of improving health and well-being. Up to now, most of the research efforts in the field have been focused upon how external bodily information is processed and integrated. Despite the important results, we believe that existing bodily illusions still need to be improved to enhance their capability to effectively correct pathological dysfunctions. First, they do not follow the suggestions provided by the free-energy and predictive coding approaches. More, they lacked to consider a peculiar feature of the human body, the multisensory integration of internal inputs (interoceptive, proprioceptive and vestibular) that constitute our inner body dimension. So, a future challenge is the integration of simulation/stimulation technologies also able to measure and modulate this internal/inner experience of the body. Finally, we also proposed the concept of \"Sonoception\" as an extension of this approach. The core idea is to exploit recent technological advances in the acoustic field to use sound and vibrations to modify the internal/inner body experience."
+  },
+  {
+   "rank": 22,
+   "id": "25965942",
+   "source": "MED",
+   "pmid": "25965942",
+   "pmcid": null,
+   "doi": "10.1016/j.concog.2015.04.011",
+   "first_publication_date": "2015-05-16",
+   "title": "Feeling of control of an action after supra and subliminal haptic distortions.",
+   "authors": "Weibel S, Poncelet PE, Delevoye-Turrell Y, Capobianco A, Dufour A, Brochard R, Ott L, Giersch A.",
+   "journal": "Consciousness and cognition",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Here we question the mechanisms underlying the emergence of the feeling of control that can be modulated even when the feeling of being the author of one's own action is intact. With a haptic robot, participants made series of vertical pointing actions on a virtual surface, which was sometimes postponed by a small temporal delay (15 or 65 ms). Subjects then evaluated their subjective feeling of control. Results showed that after temporal distortions, the hand-trajectories were adapted effectively but that the feeling of control decreased significantly. This was observed even in the case of subliminal distortions for which subjects did not consciously detect the presence of a distortion. Our findings suggest that both supraliminal and subliminal temporal distortions that occur within a healthy perceptual-motor system impact the conscious experience of the feeling of control of self-initiated motor actions."
+  },
+  {
+   "rank": 23,
+   "id": "24924875",
+   "source": "MED",
+   "pmid": "24924875",
+   "pmcid": null,
+   "doi": "10.1016/j.jneumeth.2014.05.038",
+   "first_publication_date": "2014-06-09",
+   "title": "A novel manipulation method of human body ownership using an fMRI-compatible master-slave system.",
+   "authors": "Hara M, Salomon R, van der Zwaag W, Kober T, Rognini G, Nabae H, Yamamoto A, Blanke O, Higuchi T.",
+   "journal": "Journal of neuroscience methods",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Validation Study",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Bodily self-consciousness has become an important topic in cognitive neuroscience aiming to understand how the brain creates a unified sensation of the self in a body. Specifically, full body illusion (FBI) in which changes in bodily self-consciousness are experimentally introduced by using visual-tactile stimulation has led to improve understanding of these mechanisms. This paper introduces a novel approach to the classic FBI paradigm using a robotic master-slave system which allows us to examine interactions between action and the sense of body ownership in behavioral and MRI experiments. In the proposed approach, the use of the robotic master-slave system enables unique stimulation in which experimental participants can administer tactile cues on their own back using active self-touch. This active self-touch has never been employed in FBI experiments and it allows to test the role of sensorimotor integration and agency (the feeling of control over our actions) in FBI paradigms. The objective of this study is to propose a robotic-haptic platform allowing a new FBI paradigm including the active self-touch in MRI environments. This paper, first, describes the design concept and the performance of the prototype device in the fMRI environment (for 3T and 7T MRI scanners). In addition, the prototype device is applied to a classic FBI experiment, and we verify that the use of the prototype device succeeded in inducing the FBI. These results indicate that the proposed approach has a potential to drive advances in our understanding of human body ownership and agency by allowing novel manipulation and paradigms."
+  },
+  {
+   "rank": 24,
+   "id": "24878453",
+   "source": "MED",
+   "pmid": "24878453",
+   "pmcid": null,
+   "doi": "10.1016/j.surg.2014.02.007",
+   "first_publication_date": "2014-02-13",
+   "title": "A prospective comparison of patient body image after robotic thyroidectomy and conventional open thyroidectomy in patients with papillary thyroid carcinoma.",
+   "authors": "Lee S, Kim HY, Lee CR, Park S, Son H, Kang SW, Jeong JJ, Nam KH, Chung WY, Park CS.",
+   "journal": "Surgery",
+   "pub_types": [
+    "Comparative Study",
+    "Clinical Trial",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundBody image is associated with self-esteem and identity and has a close relationship with quality of life (QoL). We compared the impact of surgical scars on the patient's perception of body image between conventional open thyroidectomy (OT) and robotic thyroidectomy (RT) in female papillary thyroid carcinoma patients.MethodsFrom October 2009 to December 2010, we enrolled prospectively 116 papillary thyroid carcinoma patients who underwent total thyroidectomy at the Yonsei University Health System (Seoul, Korea). Of these 116 patients, 56 had OT and 60 RT. Their scars were assessed using the Vancouver Scar Scale (VSS), and psychometric properties were evaluated using the Body Image Scale (BIS) questionnaire postoperatively. Both groups were compared using cross-sectional and time-series methods.ResultsMean age was significantly younger in the RT group. Regarding scar quality, the OT group showed superiority in scar pigmentation and the total VSS score during the early postoperative period, but the VSS score improved over time and was similar between both groups at 9 months. The RT group had better scores regarding most of the BIS items, a trend that remained relatively constant over time. In patients with noticeable scars (VSS ≥ 2) at 9 months, the RT group had better BIS scores regarding almost all items, including \"self-conscious,\" \"physical attractiveness,\" \"feeling of less feminine,\" \"sexual attractiveness,\" \"dissatisfaction with body, scar and appearance when dressed,\" and \"avoidance of people due to appearance.\"ConclusionRT provides a better self-body image and improves QoL compared with conventional OT by avoiding a noticeable cervical scar."
+  },
+  {
+   "rank": 25,
+   "id": "23423672",
+   "source": "MED",
+   "pmid": "23423672",
+   "pmcid": null,
+   "doi": "10.1093/brain/aws364",
+   "first_publication_date": "2013-02-18",
+   "title": "Distinct illusory own-body perceptions caused by damage to posterior insula and extrastriate cortex.",
+   "authors": "Heydrich L, Blanke O.",
+   "journal": "Brain : a journal of neurology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Recent research in cognitive neuroscience using virtual reality, robotic technology and brain imaging has linked self-consciousness to the processing and integration of multisensory bodily signals. This work on bodily self-consciousness has implicated the temporo-parietal, premotor and extrastriate cortex and partly originated in work on neurological patients with different disorders of bodily self-consciousness. One class of such disorders is autoscopic phenomena, which are defined as illusory own-body perceptions, during which patients experience the visual illusory reduplication of their own body in extrapersonal space. Three main forms of autoscopic phenomena have been defined. During autoscopic hallucinations, a second own body is seen without any changes in bodily self-consciousness. During out-of-body experiences, the second own body is seen from an elevated perspective and location associated with disembodiment. During heautoscopy, subjects report strong self-identification with the second own body, often associated with the experience of existing at and perceiving the world from two places at the same time. Although it has been proposed that each autoscopic phenomenon is associated with different impairments of bodily self-consciousness, past research on neurological patients and the development of experimental paradigms for the study of bodily self-consciousness has focused on out-of-body experiences and the association with temporo-parietal cortex. Here, we performed quantitative lesion analysis in the-to date-largest group of patients with autoscopic hallucination and heautoscopy and compared the location of brain damage with those of control patients suffering from complex visual hallucinations. We found that heautoscopy was associated with lesions to the left posterior insula, and that autoscopic hallucinations were associated with damage to the right occipital cortex. Autoscopic hallucination and heautoscopy were further associated with distinct symptoms and deficits. The present data suggest that the autoscopic hallucination is a visuo-somatosensory deficit implicating extrastriate cortex and is, despite the visual hallucination of the own body, not associated with major deficits in bodily self-consciousness. Based on the symptoms and deficits in patients with heautoscopy and the implication of the left posterior insula, we suggest that abnormal bodily self-consciousness during heautoscopy is caused by a breakdown of self-other discrimination regarding affective somatosensory experience due to a disintegration of visuo-somatosensory signals with emotional (and/or interoceptive) bodily signals. These brain mechanisms are distinct from those described for out-of-body experiences. The present data extend previous models of autoscopic phenomena and provide clinical evidence for the importance of emotional and interoceptive signal processing in the posterior insula in relation to bodily self-consciousness."
+  },
+  {
+   "rank": 26,
+   "id": "21521620",
+   "source": "MED",
+   "pmid": "21521620",
+   "pmcid": null,
+   "doi": "10.1016/j.neuron.2011.03.009",
+   "first_publication_date": "2011-04-01",
+   "title": "Multisensory mechanisms in temporo-parietal cortex support self-location and first-person perspective.",
+   "authors": "Ionta S, Heydrich L, Lenggenhager B, Mouthon M, Fornari E, Chapuis D, Gassert R, Blanke O.",
+   "journal": "Neuron",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Self-consciousness has mostly been approached by philosophical enquiry and not by empirical neuroscientific study, leading to an overabundance of diverging theories and an absence of data-driven theories. Using robotic technology, we achieved specific bodily conflicts and induced predictable changes in a fundamental aspect of self-consciousness by altering where healthy subjects experienced themselves to be (self-location). Functional magnetic resonance imaging revealed that temporo-parietal junction (TPJ) activity reflected experimental changes in self-location that also depended on the first-person perspective due to visuo-tactile and visuo-vestibular conflicts. Moreover, in a large lesion analysis study of neurological patients with a well-defined state of abnormal self-location, brain damage was also localized at TPJ, providing causal evidence that TPJ encodes self-location. Our findings reveal that multisensory integration at the TPJ reflects one of the most fundamental subjective feelings of humans: the feeling of being an entity localized at a position in space and perceiving the world from this position and perspective."
+  },
+  {
+   "rank": 27,
+   "id": "18930641",
+   "source": "MED",
+   "pmid": "18930641",
+   "pmcid": null,
+   "doi": "10.1016/j.artmed.2008.08.008",
+   "first_publication_date": "2008-10-18",
+   "title": "First, scale up to the robotic Turing test, then worry about feeling.",
+   "authors": "Harnad S, Scherzer P.",
+   "journal": "Artificial intelligence in medicine",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Consciousness is feeling, and the problem of consciousness is the problem of explaining how and why some of the functions underlying some of our performance capacities are felt rather than just \"functed.\" But unless we are prepared to assign to feeling a telekinetic power (which all evidence contradicts), feeling cannot be assigned any causal power at all. We cannot explain how or why we feel. Hence the empirical target of cognitive science can only be to scale up to the robotic Turing test, which is to explain all of our performance capacity, but without explaining consciousness or incorporating it in any way in our functional explanation."
+  },
+  {
+   "rank": 28,
+   "id": "18592055",
+   "source": "MED",
+   "pmid": "18592055",
+   "pmcid": null,
+   "doi": null,
+   "first_publication_date": "2008-03-01",
+   "title": "[I, Robot: artificial intelligence, uniqueness and self-consciousness].",
+   "authors": "Agrest M.",
+   "journal": "Vertex (Buenos Aires, Argentina)",
+   "pub_types": [
+    "Journal Article",
+    "English Abstract"
+   ],
+   "open_access": "N",
+   "abstract": "The cinematographic version of the science fiction classical book by Isaac Asimov (I, Robot) is used as a starting point, from the Artificial Intelligence perspective, in order to analyze what it is to have a self. Uniqueness or the exchange impossibility and the continuity of being one self are put forward to understand the movie's characters as well as the possibilities of feeling self conscious."
+  }
+ ]
+}
