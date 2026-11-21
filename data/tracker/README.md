@@ -73,11 +73,16 @@ the Working Positions page).
 ## The three kinds of judgement
 
 - **outcome**: for, against or mixed (+1, −1, 0).
-- **commitment**: `before`, `not-before` or `unclear`: was the prediction fixed by the proponents in a
-  dated record (a publication or a registration) before the study's data were collected? Each counted
-  study records `data_collected`; where a paper does not date its data, the first reader's stated
-  convention is in the header of the commitment section of `judgements.toml`. Only `before` counts; `unclear` does not
-  (rule 2.3: "When the dates or the commitment are unclear, the study is not counted").
+- **commitment**: `before`, `not-before` or `unclear`, by ruling D (John, 2026-11-20, "Yes, that
+  test"): was the prediction fixed by the theory's proponents before they could have known the
+  study's result? That means before its registration, for a study registered before its data were
+  collected; before its earliest public appearance (preprint or publication), for any other study;
+  before the data first appeared, for a reanalysis. For a study run by the theory's own supporters
+  (John, 2026-11-21, "Yes, own-lab dating"), it means before their lab had the data, shown by a
+  registration or the paper's methods dates, and before any earlier paper in which the same lab
+  published that result. Stating and testing in the same paper does not count. Only `before` counts;
+  `unclear` does not (rule 3: "When the dates or the commitment are unclear, the study is not
+  counted"), and readers who split on commitment make it unclear (John, 2026-11-20).
 - **testability**: could the prediction fail, and does it separate the theory from a rival on the list?
 
 The kickoff proposal asks for two readers on every outcome; rule 2.3 asks for two on every
@@ -92,9 +97,8 @@ Claude reading on such a row is not marked `order = "second"`.
 
 ## How the numbers are computed (`scripts/tracker_scores.py`)
 
-- **Counted.** An outcome counts when its commitment judgement says `before` (the prediction was
-  fixed by the proponents in a dated record, publication or registration, before the study's data
-  were collected: ruled by John 2026-11-20, "Yes, count it"), the study was opened,
+- **Counted.** An outcome counts when its commitment judgement says `before` (by ruling D, above),
+  the study was opened,
   and the prediction's testability judgement says it could fail and separates the theory from a
   rival ("a prediction every theory shares is recorded but scores nothing").
 - **Testability.** Per core claim: 1 if a proponent-stated prediction tied to it could fail and
@@ -163,5 +167,4 @@ Two additions, made at the site session's request:
   ruled by John.
 
 The commitment judgements use ruling D ("Yes, that test"): a prediction counts if the proponents
-fixed it before they could have known the study's result. The commitment header in
-`judgements.toml` still describes the pilot's earlier wording for the pilot's rows.
+fixed it before they could have known the study's result.

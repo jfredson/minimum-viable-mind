@@ -203,6 +203,9 @@ session's recommendations; the wording is the session's.
    resting on a rival's contrary passage stands; a prediction stops separating only where a rival's
    own opened source predicts the same and no rival's source predicts something different. Weakest
    step, stated to John: one sourced agreement outweighs every other rival's silence.
+   *(ruled, 2026-11-21, John: "Keep 'more than half' (Recommended)"; wording the master session's.)*
+   Exactly half does not pass the bar. (Raised by the stage 3 scoring, where the Sentient Horizons
+   account, Seth's view and Damasio's theory each have exactly half their core claims passing.)
    A support score speaks only for the
    claims that were testable; where fewer than half were, it describes a minority of the theory,
    and ranking the whole theory on it would mislead. This replaces the bare figure of 50 first
