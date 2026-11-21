@@ -1,14 +1,24 @@
 # The loop removal test: a design on paper
 
-*Version 0.4, written 2026-11-20 on John's instruction ("Write 0.4 first"). It answers the closure check
+*Version 0.5, written 2026-11-21 on John's instruction ("Yes, write 0.5"). It answers the closure check of
+version 0.4 (`docs/reviews/2026-11-20-loop-removal-test-design-v0.4-closure-check-claude-code.md`), four serious
+findings (RT-380 to RT-383) and six worth noting (RT-384 to RT-389). It is the first version written with the
+research model's real tokeniser in hand (`docs/2026-11-21-loop-removal-tokeniser-download.md`). The main
+change is to how the twin pairs are built: **both twins now carry one shared context word for word, and
+they differ only in a final question of fixed wording** (section 5). John's rulings of 2026-11-21 on the
+section 10 choices (section 11) stand, and the change keeps to them: the routine questions are still twins
+of the rule questions. The fourth change log at the end says how each finding is answered. **RT-345, the
+finding that the swap's dose differed between the two task groups, stays open.** Its closure remains a
+measurement on the model at step 4b. The fixes are the author's and are owed a closure check, by a reviewer
+working in its own empty scratch folder.*
+
+*Version 0.4 (commit ddc5031) was written 2026-11-20 on John's instruction ("Write 0.4 first"). It answered the closure check
 of version 0.3 (`docs/reviews/2026-11-20-loop-removal-test-design-v0.3-closure-check-claude-code.md`).
 That check closed RT-335, the finding that the averaging method could not be computed, with its rerun on
 the real template owed at step 3. It judged version 0.3 fit to go to John for his section 10 rulings, with
 RT-345 carried open. It raised four serious findings, RT-370 to RT-373, and six worth noting, RT-374 to
 RT-379, and it asked for five clarifications of RT-345's closure rule. The third change log at the end
-says how each is answered. **RT-345, the finding that the swap's dose differed between the two task
-groups, stays open.** Its closure remains a measurement on the model at step 4b. The fixes are the
-author's and are owed a closure check.*
+says how each was answered.*
 
 *Version 0.3 (commit 8bd34cd) was written on John's instruction ("Yes, write 0.3"). It answered the closure check
 of version 0.2 (`docs/reviews/2026-11-20-loop-removal-test-design-v0.2-closure-check-claude-code.md`).
@@ -43,9 +53,11 @@ This test keeps the model's three passes and **replaces the message with one bui
 It then measures whether the loss falls more on problems the model must solve from a rule given in the
 prompt than on routine questions of the same length and layout, beyond matched comparison removals.
 
-**What the routine cell measures** (RT-365). Each routine question sits behind an invented rule that it
-does not use, so that the two cells have the same length and layout. So the routine cell measures **a
-practised answer given while an irrelevant rule sits in the prompt**. That is not the same as practised
+**What the routine cell measures** (RT-365). Each pair's two items share one context: an invented rule
+with its own facts, and a fact for the routine question, such as "The country is France." The prompt-rule
+item then asks a fixed question that needs the rule. The routine twin asks a fixed question that does
+not, such as "What is the capital of the country?" (section 5). So the routine cell measures **a practised
+answer about a thing named in the context, given while an irrelevant rule sits in the prompt**. That is not the same as practised
 output on its own, because ignoring a rule just read is itself a small act of control. Section 5 limits
 this: no rule is paired with a routine question of the same type, and a routine twin must be answered as
 well behind its rule as with no rule at all. The rest of the gap is stated in every report: a routine loss
@@ -123,20 +135,25 @@ message adds and the keep and gain settings the message controls.
 **The main removal, in two methods.** The run keeps three passes, the number the model was trained on
 last.
 
-- **(a) Swap, with donors drawn by pair** (RT-345, RT-358, RT-370). Every task is one of a twin pair: a
-  prompt-rule item and its routine twin, which carries the same rule as a preamble (section 5). Donors are
-  drawn **as whole pairs**. For a recipient pair, a donor pair is drawn whose rule is of the same rule
-  kind **and whose routine twin asks the same routine kind**. That way each routine twin's donor shares
-  its question template, just as each prompt-rule item's donor does. The prompt-rule item then gets the donor pair's prompt-rule item's block sums, and the routine twin
-  gets the donor pair's routine twin's block sums, at the same position and on the same pass. All sums are
-  taken from the donors' unaltered runs. Because the two preambles of a pair are word for word the same,
-  and the two donor preambles are too, donor and recipient diverge at the same place in both cells. Only
-  the question parts differ.
+- **(a) Swap, with donors drawn by pair** (RT-345, RT-358, RT-370, RT-380). Every task is one of a twin
+  pair: a prompt-rule item and its routine twin. The two share one context word for word and differ only
+  in a final question of fixed wording (section 5). Donors are drawn **as whole pairs**. For a recipient
+  pair, a donor pair is drawn whose rule is of the same rule kind and whose routine question is of the
+  same routine kind, so that its two final questions are the same fixed strings as the recipient's
+  (RT-389). The prompt-rule item then gets the donor pair's prompt-rule item's block sums, and the routine
+  twin gets the donor pair's routine twin's block sums, at the same position and on the same pass. All
+  sums are taken from the donors' unaltered runs. Within a pair the contexts are identical, and so are the
+  donor pair's. So donor and recipient diverge at the same place in both cells, and in the final question
+  every token matches the donor's in both cells.
   - **Its own answer.** Each donor's run uses its own prompt and its own right answer, so that its sums
     exist at the positions of the recipient's candidates (RT-336).
   - **Length.** A donor pair is eligible only if each of its twins is at least as long as the matching
-    recipient's prompt plus its longest candidate. Within a pair, the two question parts also have the
-    same token count by construction (section 5), so the swap changes the same span in both twins.
+    recipient's prompt plus its longest candidate. Within a pair, the two final questions have the same
+    token count by construction (section 5), so the swap changes the same span in both twins.
+  - **Size classes for the lookup kind** (RT-388). Lookup tables come in three sizes, of five, six and seven
+    entries. Donor pairs are drawn within the same size class. The generator makes at least six pairs in
+    every group of rule kind, routine kind and size class, so that the longest pairs are not the ones left
+    without donors. Pairs dropped for want of a donor are reported by size class.
   - **Five donor pairs.** Each pair gets five donor pairs, drawn at random with a seed fixed in the
     registration. Each item's score under the swap is the average over its five donors, so that the luck of
     the draw is inside the intervals (RT-352). If fewer than five are eligible, all eligible ones are used.
@@ -290,9 +307,16 @@ so every wrong answer is a real answer of the same type:
   each with a different colour, so that four wrong colours always exist (RT-377);
 - **the letter code:** other common three-letter words, built as described under `p_code` below.
 
-**No candidate may be found by copying** (RT-373). For every routine kind, no candidate may repeat a word
-of the question, or begin with one. The plural kind is dropped for this reason, because the right plural
-always begins with the noun asked about.
+**No candidate may be found by copying** (RT-373, RT-385). The plural kind is dropped, because the right
+plural always begins with the noun asked about. The rule that replaces it:
+- **What it compares.** It works on the content words of the item's routine fact and final question
+  ("France", "happy", "banana"). It works on whole words, not on digits or single letters, and it ignores
+  the rule's text, whose single letters and invented words would otherwise bar almost everything.
+- **What it bars.** No candidate may contain one of those words, or be contained in one. That bars
+  "unhappy" for "happy", and "Tunis" for "Tunisia", which the version 0.4 wording, which barred only
+  repeating or beginning with a word, let through.
+- **What it does not apply to.** Numbers are exempt, because their wrong answers are built to share
+  leading digits, and a digit-by-digit reading would drop about half the products.
 
 Candidates for test items are drawn only from half B's pools (RT-341). Step 3 reports, for every kind, how
 many items the equal-length rule drops and how the right answers are spread before and after, so that the
@@ -304,9 +328,9 @@ around a lost loop through the text. How to suppress written reasoning, and what
 for that, is settled in step 4a of the rehearsal.
 
 **The two cells that decide the outcome are built in matched pairs** (RT-345). Each prompt-rule item has a
-routine twin that carries **the same invented rule, word for word, as a preamble**, followed by a routine
-question that does not use the rule. So every pair has the same layout and the same preamble, and the two
-items differ in length by a few tokens at most. The swap therefore changes the same span in both. A loop
+routine twin that carries **the same context, word for word**, followed by a fixed routine question that
+does not use the rule. So every pair has the same layout and the same context, and the two items differ
+only in their final questions, which have the same token count (see "One shared context" below). The swap therefore changes the same span in both. A loop
 that only helps long contexts helps both cells alike. This replaces version 0.1's short routine items and
 the "long routine control" the review proposed.
 
@@ -335,6 +359,13 @@ The prompt-rule kinds are replaced by one-step rules:
   - **Shuffled rows.** The rows are listed in shuffled order, not in the order of the coded word.
   - **No coded string.** The coded string itself is never a candidate.
 
+  - **Extra letters chosen to fit** (RT-372, condition 1). The five extra rows are not drawn at random.
+    They are chosen so that four common three-letter words can be spelled from the table's plain letters,
+    which lets nearly every item be built and leaves no cue.
+  - **Three different letters in every candidate** (RT-372, condition 2). Every wrong answer, like the
+    right one, uses three different letters, so that a word such as "egg" cannot be ruled out without
+    decoding.
+
   An item for which four such wrong answers of equal token length cannot be found is dropped at
   generation. The overlap script also checks, for every letter-code item, that each wrong answer is
   spelled only with the table's plain letters.
@@ -347,13 +378,18 @@ rule lands at chance.
 - products of two numbers from 2 to 12, with the halves split at an answer of 40;
 - capitals, from a list of at least 150 countries;
 - opposites, from a list of at least 160 common adjectives (80 opposite pairs);
-- everyday colours (RT-373), from a list of at least 150 common objects with one typical colour ("What
-  colour is a ripe banana?"), where the colour word never appears in the question. This kind replaces
-  plurals.
+- everyday colours (RT-373, RT-384), from a list of at least 120 common objects with one typical colour
+  ("The object is a ripe banana. What colour is the object usually?"), where the colour word never
+  appears in the item. This kind replaces plurals. The list is written out in the battery specification
+  before any item exists. Each entry names the object's typical colour and every other colour the object
+  is commonly seen in (a green apple, a brown egg). Those other colours are never offered as wrong answers.
+  An object whose typical colour differs by country, such as a fire engine, is left out. The spread of
+  right answers across colours is reported.
 
 **No routine question is used twice.** Under the 25% cap below, a cell of 300 pairs allows 75 questions
-of each routine kind. Half B then holds about 75 sums, 60 products, 75 capitals, 80 opposites and 75
-everyday colours, so about 360 distinct routine questions before any filter. If the filters leave fewer
+of each routine kind. Half B then holds about 75 sums, 60 products, 75 capitals, 75 opposites and 60
+everyday colours (the object list being smaller, RT-384), so about 345 distinct routine questions before
+any filter. If the filters leave fewer
 pairs than the sample-size simulation needs, the design returns to John (RT-361). The closure check of
 version 0.3 found that the simulation needs about 120 to 200 pairs.
 
@@ -372,14 +408,65 @@ The generator first applies the 25% cap and the pool sizes. Within those limits,
 kinds as evenly as it can across the rule kinds (RT-374). The value the rule would give if wrongly
 applied to the routine question is never one of that question's candidates.
 
-**The two question parts of a pair have the same token count** (RT-370). The closure check of version 0.3
-found that, with the preambles matched, the swap still changed more of the routine twin. That was because
-routine questions ran a few tokens longer than rule questions, in every pair of the operator and
-letter-code kinds. So each routine kind and each rule kind is written in several phrasings of different
-lengths. For instance, "What is the capital city of X?", "Name the capital of X." and "X's capital
-is?". The generator picks, for each pair, the phrasings that give the two question parts the same token
-count under the model's tokeniser. A pair for which no phrasings match is dropped at generation, and the
-drops are counted by kind.
+**One shared context, and two fixed final questions** (RT-370, RT-380, RT-381, RT-382). Two earlier
+constructions failed. In version 0.3, routine questions ran longer than rule questions. In version 0.4,
+the questions were the same length, but a rule question carried several tokens unique to its item
+(operands, a symbol, invented unit names), while a routine question carried one. So its donor differed
+from it at more places, and the routine cell took less swap. The cause in both cases was item-specific
+content sitting in the final question, where the two twins differ. Version 0.5 moves all of it out:
+
+- **The shared context.** Every pair's two items carry the same context, word for word. It holds three
+  things:
+  - the invented rule;
+  - the rule's facts for this item ("Here a is 14 and b is 17.", "You have 4 zibvams.", "The coded word
+    is qxv.", "The word to look up is tovjot.");
+  - the routine fact ("The country is France.", "The word is happy.", "The object is a ripe banana.",
+    "The two numbers are 23 and 31.").
+- **Two fixed final questions.** The prompt-rule item ends with a fixed question that needs the rule, such
+  as "What does the rule give for them?". The routine twin ends with a fixed question that does not, such
+  as "What is the capital of the country?". **Neither question contains anything specific to the item.**
+- **One wording for each pairing.** For each pairing of a rule kind with a routine kind, exactly one
+  wording of each question is used for every pair, chosen once so that the two have the same token count
+  under the model's tokeniser. Nothing is picked item by item, so there is no phrasing difference that
+  varies between items (RT-382). The wordings are fixed in the battery specification.
+
+**Why this equalises the dose.** Within a pair, the two items are the same text up to the final question.
+Within a cell, every donor has the same final question as its recipient, because donor pairs share the rule
+kind and the routine kind (section 3). So in both cells the donor and recipient diverge at the same place,
+which is the first item-specific token of the shared context. And in both cells every token of the final
+question matches the donor's. On the stand-in measure the closure checks used, which counts the tokens
+that differ from the donor's, the two cells' doses are then equal by construction. The swap's real
+distances can still differ, because the block sums at the final question depend on which question it is.
+That remains RT-345, closed only by measurement at step 4b.
+
+**The wordings, checked with the real tokeniser** (2026-11-21, before this version was written). The
+counts are of the fixed questions alone, with a leading space, from `tokenizer.json` at revision 657b53ba:
+
+| Pairing | Prompt-rule question | Routine question | Tokens each |
+|---|---|---|---|
+| operator, capitals | "What does the rule give for them?" | "What is the capital of the country?" | 8 |
+| operator, opposites | "What does the rule give for them?" | "What is the opposite of the word?" | 8 |
+| operator, everyday colours | "What does the rule give for them?" | "What colour is the object most often?" | 8 |
+| unit, capitals | "How many of the second unit is that?" | "What is the capital city of the country?" | 9 |
+| unit, opposites | "How many of the second unit?" | "Give the opposite of the word." | 7 |
+| unit, everyday colours | "How many of the second unit is that?" | "Usually, what colour is the object?" | 9 |
+| letter code, sums | "What word is the coded word here?" | "What is the sum of the two numbers?" | 9 |
+| letter code, products | "What word is the coded word?" | "What do the two numbers multiply to?" | 8 |
+| letter code, capitals | "What word is the coded word?" | "What is the capital of the country?" | 8 |
+| letter code, everyday colours | "What word is the coded word?" | "What colour is the object most often?" | 8 |
+| lookup, sums | "Use the table. What colour is it?" | "What is the sum of the two numbers?" | 9 |
+| lookup, products | "What colour does the table give it?" | "What do the two numbers multiply to?" | 8 |
+| lookup, capitals | "What colour does the table give it?" | "What is the capital of the country?" | 8 |
+| lookup, opposites | "What colour does the table give it?" | "What is the opposite of the word?" | 8 |
+
+Every pairing the exclusions allow has a matching pair of wordings. The invented-unit facts now sit in the
+shared context, where both twins carry them, so their length no longer has to be matched by anything
+(RT-381). The table may be revised in the battery specification, as long as each pairing keeps one
+wording on each side with equal counts.
+
+**What the shared context costs.** The routine twin now has to find a fact named earlier in the context
+("the country") rather than read it in the question. That is a small step of reference, which section 1
+states.
 
 **Pilot and test are kept apart, and a script checks it** (RT-341). Every content pool, including the
 operands and rule shapes of each prompt-rule kind, is split into two disjoint halves: half A for pilot
@@ -387,7 +474,11 @@ items with seed 1, half B for test items with a seed written in the registration
 kinds, the two halves draw from operand ranges whose answers cannot coincide. A committed check script
 fails if any pilot prompt, table or operand pair appears in the test set, or if any answer value of one
 kind appears in both halves of that same kind. Answer values are compared within each kind, because a
-number can rightly be both a unit answer and a sum (RT-341). The script also fails if any test item's
+number can rightly be both a unit answer and a sum (RT-341). **Colours are exempt from the answer-value
+check** (RT-383). The lookup kind and the everyday-colours kind answer from a small closed set of colour
+names, too few to split into two halves. For those two kinds the check applies instead to what varies:
+the invented words and tables of the lookup kind, and the objects of the everyday-colours kind. No object
+or invented word may appear in both halves. The script also fails if any test item's
 candidate comes from a half-A pool. It runs before the test set is used.
 
 **Baseline checks** (at three passes, nothing removed):
@@ -413,13 +504,14 @@ removes a single item and leaves its twin behind, because the analysis resamples
   dropped are those whose difference between the routine twin's margin and the prompt-rule item's runs
   **in the direction of the imbalance**, largest first (RT-375). The rule is mechanical and has a fixed
   seed for ties. The margin distributions of the two cells, before and after, are reported.
-  - **The margin fallback, fixed now** (RT-375). Practised facts are likely to sit at higher margins than
-    one-step rules. If matching the means would remove more than a third of a rule kind's pairs, the
-    fallback is used instead: keep only pairs whose two margins both lie between 2.2 and the 90th
-    percentile of the prompt-rule items' margins in that kind, and then match as above. If that also
-    removes more than a third, the design returns to John.
+  - **No margin fallback** (RT-386). Version 0.4's fallback always removed more pairs than plain
+    matching, so it could never rescue a kind, and it is withdrawn. If matching the means would remove
+    more than a third of a rule kind's pairs, on the pilot or on the test pairs, the design returns to
+    John. The third is counted from the pairs that pass the confidence check.
 - **Swap size** (RT-345). Then, within each rule kind and **for each method**, whole pairs are dropped until
-  the two cells' mean swap sizes are within 10% of each other. The pairs dropped are those whose
+  the two cells' mean swap sizes are within 10% of each other. "Within 10%" means that the routine cell's
+  mean divided by the prompt-rule cell's lies between 0.90 and 1.10, the same form as the step-3
+  threshold (RT-389). The pairs dropped are those whose
   difference runs in the direction of the imbalance, largest first. For the average method, the changed
   span is the whole text span of the item, so its swap size is measured over every position that is not
   a template slot.
@@ -467,6 +559,17 @@ routine kinds left out in turn. If a rule kind is dropped, the simulation is re-
 remain. Half B can supply at
 most about 360 distinct pairs before filtering (above). **If the simulation asks for more pairs than
 survive the filters, the design returns to John.**
+
+**The simulation's conditions** (RT-340). The committed simulation uses the spread and the comparison loss
+measured at step 4b. It is run on the pairs that survive every filter, after the confidence, margin and
+swap-size steps and the pairs dropped for want of a donor. If a rule kind is dropped, it is run again with
+the kinds that remain.
+
+**The pilot's size** (RT-389). The pilot set has 120 pairs, 30 for each rule kind, generated from half A
+with seed 1, plus 40 chained-lookup items and the 200 neutral passages of half A. Every limit in this
+section that is applied to pilot pairs is applied to these: a fifth of a kind in the "answered as well
+behind its rule" check, a third in margin matching, and a tenth in swap-size matching. With 30 pairs a
+kind, a tenth is three pairs.
 
 **Neutral set** (RT-335, RT-376). The new neutral set has 400 passages of ordinary prose, 200 in each half.
 In the half in use, 100 build the average and 100 measure damage (section 3). They are rendered with
@@ -538,6 +641,12 @@ be met there and not in the run. The report says which applied.
     0.2's form the rule turned true effects into "no reading" about half the time.
   - **Why routine kinds are included.** A routine kind that held routine losses down by itself would
     otherwise go unseen.
+
+  - **A smaller leak that remains, reported beside any A** (RT-371). If one kind carries most of the effect
+    and the others a little, the reading with that kind left out can land in E, which does not rename. The
+    closure check of version 0.4 measured this at about a fifth of such A results at 120 pairs, falling to
+    2% at 300. It is a trade made on purpose in version 0.3. Any A at the smaller sizes is reported with
+    this sentence beside it.
 
   This rule is fixed here, before any data.
 
@@ -631,7 +740,15 @@ does not claim any.
      the routine cell's proxy swap size to the prompt-rule cell's must lie between 0.95 and 1.05 at weight
      0.3, and between 0.90 and 1.10 at weights 0 and 0.6. If it does not, the construction is revised and
      the estimate run again before anything is rented. Each revision and its reason is committed. If no
-     revision brings every kind inside, the design returns to John.
+     revision brings every kind inside, the design returns to John. Under the shared-context construction
+     the ratio should be exactly 1 on this measure, so anything else means the generator does not build
+     what section 5 describes.
+   - **A free estimate for the average method too** (RT-387). The average method's dose is spread over the
+     whole text span. Under the shared-context construction the two twins' text spans are the same except
+     for the final question, so the dose should differ only there. Step 3 reports, for each rule kind, the
+     share of each cell's text span that lies in the final question, and the share of tokens that are
+     pieces of invented words or symbols. Both should be equal between the cells to within one token per
+     item. If they are not, the construction is revised, as above.
 4. **The rehearsal, on a rented machine, pilot items only, on John's go with a ceiling.** It runs in two
    parts, priced separately.
    - **4a. Feasibility**, the first and smallest spend (RT-337). Load the model. Confirm that the block
@@ -731,6 +848,14 @@ the body governs (RT-379):*
   kind (version 0.3);*
 - *a factor-of-two difference between the methods now leads first to a named fallback (version 0.3);*
 - *neutral donors "of similar length" became donors at least as long, from the same half (version 0.3);*
+- *donors "from the same kind and cell" became donor pairs of the same rule kind (version 0.3), and then of
+  the same rule kind and routine kind (version 0.4);*
+- *a reading with one kind left out "that differs from the full reading" renaming the outcome became
+  renaming only on a different definite outcome (version 0.3), read on the R and P intervals alone and
+  covering routine kinds (version 0.4);*
+- *the bites check's "at least half of what one pass costs" now has the random comparison's loss
+  subtracted first (version 0.3);*
+- *plurals as a routine kind were dropped (version 0.4).*
 
 **Fatal findings:**
 - **RT-335 (fatal), the average method cannot be computed:** the average is now taken over positions, by
@@ -806,7 +931,7 @@ the body governs (RT-379):*
 
 ## Change log from version 0.2, by finding of the closure check
 
-*This change log records version 0.3 as it was written. Two rules in it were later replaced, and the body governs (RT-379): the "more than a third" limit on swap-size matching became "more than a tenth" (version 0.4); and plurals were dropped as a routine kind (version 0.4).*
+*This change log records version 0.3 as it was written. Several rules in it were later replaced, and the body governs (RT-379, RT-389): the "more than a third" limit on swap-size matching became "more than a tenth" (version 0.4); plurals were dropped as a routine kind (version 0.4); donor pairs "of the same rule kind" now also share the routine kind (version 0.4); the leave-one-kind-out rule of RT-363 now covers routine kinds and ignores the bites check (version 0.4); and the routine questions "behind" a rule now share the whole context with their twin (version 0.5).*
 
 **The fatal findings:**
 - **RT-335, the averaging method, closed with three conditions.** All three are now in the design:
@@ -926,3 +1051,63 @@ now takes the five clarifications the check asked for:
 - **RT-379, change logs out of step with the body:** section 3 now reports the pass-counting coordinates'
   variation by item and by position. Each earlier change log opens with a note listing its rules that
   were later replaced.
+
+## Change log from version 0.4, by finding of the fourth closure check
+
+*This change log records version 0.4's replacements as of version 0.5. Two rules in the third change log
+were later replaced, and the body governs: the equal-length phrasings chosen item by item became one fixed
+wording per pairing, with all item-specific content in a shared context; and the margin fallback was
+withdrawn.*
+
+**RT-345, the swap's dose differed between the cells, kept open.** Its five clarifications were closed by
+the fourth check. The construction behind it is changed (RT-380 below). On the stand-in measure, the dose
+is now equal by construction. Its closure is still the step-4b measurement on the model.
+
+**Serious findings:**
+- **RT-380, equal length did not give equal dose:** all item-specific content moves into a context that
+  both twins carry word for word, and each item ends with a fixed question containing nothing specific to
+  it. Donor and recipient then diverge at the same place in both cells, and the final questions match their
+  donors' in both (section 5).
+- **RT-381, the unit kind could not be length-matched:** the unit facts move into the shared context, so
+  only the fixed final questions need matching. The real tokeniser finds matching wordings for every
+  allowed pairing, including the unit kind with capitals, opposites and everyday colours (section 5's
+  table).
+- **RT-382, the two cells got different phrasings, chosen item by item:** one wording of each question is
+  fixed for each pairing of a rule kind and a routine kind. The prompt-rule and routine wordings of a
+  pairing still differ, as they must, but the difference no longer varies between items. The stale sentence
+  in section 3 about donors sharing "its question template" is replaced (section 3).
+- **RT-383, colours could not meet the overlap check:** colour answers are exempt from the answer-value
+  check, which applies instead to the lookup kind's invented words and tables and to the everyday-colours
+  kind's objects (section 5).
+
+**Worth-noting findings:**
+- **RT-384, the everyday-colours pool:** the list is cut to at least 120 objects and written out before any
+  item. Each entry lists the colours the object is commonly seen in, which are never offered as wrong
+  answers, and objects whose colour differs by country are left out. The pool arithmetic is recounted at
+  about 345 routine questions (section 5).
+- **RT-385, the copying rule's wording:** it works on whole content words of the routine fact and final
+  question, ignores the rule's text, bars any candidate that contains or is contained in such a word, and
+  exempts numbers (section 5).
+- **RT-386, the margin fallback never rescued a kind:** withdrawn. Matching the means beyond a third returns
+  the design to John, on pilot or test pairs, counted from the pairs that pass the confidence check
+  (section 5).
+- **RT-387, step 3 saw the swap only:** step 3 also reports, for the average method, each cell's share of the
+  text span in the final question and its share of invented-word or symbol tokens, to be equal within one
+  token per item (section 9).
+- **RT-388, donors of the same routine kind left the largest tables without donors:** lookup tables come in
+  three size classes, donors are drawn within a class, and every group of rule kind, routine kind and size
+  class is generated with at least six pairs (section 3).
+- **RT-389, text gaps:**
+  - the pilot's size is stated (120 pairs, 30 per rule kind);
+  - "within 10%" is defined as a ratio between 0.90 and 1.10;
+  - the two stale sentences are replaced;
+  - both earlier change logs now list the rules later replaced.
+
+**Conditions the fourth check set on findings it closed:**
+- **RT-340:** the simulation is run on the pairs that survive every filter, with the measured spread and
+  comparison loss, and again if a rule kind is dropped (section 5).
+- **RT-371:** the smaller leak that remains at small sizes is reported beside any outcome A (section 6).
+- **RT-372:** the letter code's extra letters are chosen to fit four wrong words, and every candidate has
+  three different letters (section 5).
+- **RT-373:** see RT-385.
+
