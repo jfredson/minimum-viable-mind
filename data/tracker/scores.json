@@ -5,7 +5,7 @@
   ],
   "judgement_status": {
     "agreed": 0,
-    "one-reader": 43,
+    "one-reader": 48,
     "disagreed": 0,
     "unread": 0
   },
@@ -21,10 +21,13 @@
         "gwt-c5": 0.0
       },
       "past_bar": true,
-      "claims_lacking_for_bar": [],
-      "support": 44.1,
+      "claims_lacking_for_bar": [
+        "gwt-c4",
+        "gwt-c5"
+      ],
+      "support": 46.0,
       "support_rests_on": {
-        "counted_outcomes": 6,
+        "counted_outcomes": 8,
         "studies": [
           "bandara-2025",
           "bellet-2022",
@@ -37,17 +40,17 @@
           "Panagiotaropoulos group (last author)",
           "Straube group (last author; participants recruited at the University of Münster)"
         ],
-        "total_weight": 34,
+        "total_weight": 50,
         "weighted_sum": -4
       },
-      "left_to_test": 50.0,
+      "left_to_test": 25.0,
       "left_to_test_counts": {
         "distinguishing_core_predictions": 6,
         "placeholders_for_claims_with_none": [
           "gwt-c4",
           "gwt-c5"
         ],
-        "untested": 4,
+        "untested": 2,
         "total": 8
       },
       "group": "ranked",
@@ -65,30 +68,31 @@
       },
       "past_bar": true,
       "claims_lacking_for_bar": [
+        "iit-c1",
         "iit-c4"
       ],
-      "support": 75.0,
+      "support": 57.1,
       "support_rests_on": {
-        "counted_outcomes": 2,
+        "counted_outcomes": 4,
         "studies": [
-          "bandara-2025",
+          "cogitate-2025",
           "dellert-2025"
         ],
         "groups": [
-          "Garrido group (last author)",
+          "Cogitate Consortium",
           "Straube group (last author; participants recruited at the University of Münster)"
         ],
-        "total_weight": 8,
+        "total_weight": 28,
         "weighted_sum": 4
       },
-      "left_to_test": 85.7,
+      "left_to_test": 57.1,
       "left_to_test_counts": {
         "distinguishing_core_predictions": 5,
         "placeholders_for_claims_with_none": [
           "iit-c1",
           "iit-c4"
         ],
-        "untested": 6,
+        "untested": 4,
         "total": 7
       },
       "group": "ranked",
@@ -103,9 +107,10 @@
         "sh-c3": 1.0,
         "sh-c4": 0.0
       },
-      "past_bar": true,
+      "past_bar": false,
       "claims_lacking_for_bar": [
-        "sh-c1"
+        "sh-c1",
+        "sh-c4"
       ],
       "support": null,
       "support_rests_on": {
@@ -125,7 +130,7 @@
         "untested": 4,
         "total": 4
       },
-      "group": "testable, too little tested to rank",
+      "group": "not yet defined sharply enough to rank",
       "leans_against": false
     }
   },
@@ -143,15 +148,15 @@
     "shared_because_one_study_could_swap_them": {
       "iit|gwt": "dellert-2025"
     },
-    "testable_too_little_tested": [
+    "testable_too_little_tested": [],
+    "not_yet_defined_sharply_enough": [
       "sh"
-    ],
-    "not_yet_defined_sharply_enough": []
+    ]
   },
   "headline_provisional": {
-    "tested": 5,
+    "tested": 9,
     "distinguishing_predictions": 13,
-    "share_tested": 38.5,
+    "share_tested": 69.2,
     "note": "Provisional: the headline is ruling 3, still open. Computed as the kickoff proposal suggests (section 3): the share of the theories' sharp predictions tested at all."
   },
   "counted_outcomes": [
@@ -222,17 +227,6 @@
       "status": "one-reader"
     },
     {
-      "judgement": "out-bandara-iit-posterior",
-      "theory": "iit",
-      "prediction": "iit-posterior",
-      "study": "bandara-2025",
-      "group": "Garrido group (last author)",
-      "value": 0,
-      "weight": 2,
-      "multiplier": 2,
-      "status": "one-reader"
-    },
-    {
       "judgement": "out-dellert-iit-posterior",
       "theory": "iit",
       "prediction": "iit-posterior",
@@ -242,14 +236,69 @@
       "weight": 2,
       "multiplier": 2,
       "status": "one-reader"
+    },
+    {
+      "judgement": "out-cogitate-gwt-offset",
+      "theory": "gwt",
+      "prediction": "gwt-offset",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": -1,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-cogitate-gwt-silent",
+      "theory": "gwt",
+      "prediction": "gwt-silent",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": 1,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-cogitate-iit-posterior",
+      "theory": "iit",
+      "prediction": "iit-posterior",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": 1,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-cogitate-iit-sustained",
+      "theory": "iit",
+      "prediction": "iit-sustained",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": 0,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-cogitate-iit-synchrony",
+      "theory": "iit",
+      "prediction": "iit-synchrony",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": -1,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "one-reader"
     }
   ],
   "alternative_readings": {
-    "bar_needs_a_prediction_that_also_separates": {
+    "bar_counts_any_prediction_that_could_fail": {
       "groups": {
         "gwt": "ranked",
         "iit": "ranked",
-        "sh": "not yet defined sharply enough to rank"
+        "sh": "testable, too little tested to rank"
       },
       "ranking": {
         "ranked": [
@@ -265,13 +314,13 @@
         "shared_because_one_study_could_swap_them": {
           "iit|gwt": "dellert-2025"
         },
-        "testable_too_little_tested": [],
-        "not_yet_defined_sharply_enough": [
+        "testable_too_little_tested": [
           "sh"
-        ]
+        ],
+        "not_yet_defined_sharply_enough": []
       },
-      "why": "Ranking rule 2 says a theory is ranked when more than half its core claims 'come with a prediction that could fail'. It does not say whether that prediction must also separate the theory from a rival, as the testability score requires. The main result reads it literally; this reading adds the separation test."
+      "why": "The first wording of ranking rule 2 did not say whether the prediction must separate the theory from a rival. John ruled on 2026-11-20 ('Yes, must separate') that it must; the main result follows the ruling. This is the superseded literal reading, kept for comparison."
     }
   },
-  "open_verify_entries": 8
+  "open_verify_entries": 9
 }

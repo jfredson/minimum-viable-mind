@@ -208,7 +208,7 @@ def settle(j, mode):
 
 # ------------------------------------------------------------------- scoring
 
-def compute(d, mode, flip_study=None, bar_reading="literal"):
+def compute(d, mode, flip_study=None, bar_reading="sharp"):
     preds = d["predictions_by_id"]
     studies = {s["id"]: s for s in d["studies"]}
     claims = d["theories"]["claim"]
@@ -291,7 +291,7 @@ def compute(d, mode, flip_study=None, bar_reading="literal"):
         # the bar
         failable = {c["id"]: any(p["core_claim"] == c["id"] and could_fail(p["id"]) for p in tpreds) for c in tclaims}
         sharp = {c["id"]: any(p["core_claim"] == c["id"] and separates(p["id"]) for p in tpreds) for c in tclaims}
-        use = failable if bar_reading == "literal" else sharp
+        use = sharp if bar_reading == "sharp" else failable
         past_bar = sum(use.values()) > len(tclaims) / 2
         lacking = [cid for cid, ok in use.items() if not ok]
 
@@ -338,7 +338,7 @@ def compute(d, mode, flip_study=None, bar_reading="literal"):
     return out, counted, status
 
 
-def rank(d, mode, bar_reading="literal"):
+def rank(d, mode, bar_reading="sharp"):
     base, counted, status = compute(d, mode, bar_reading=bar_reading)
     ranked = [t for t, v in base.items() if v["group"] == "ranked"]
     ranked.sort(key=lambda t: (-base[t]["support"], -base[t]["support_rests_on"]["total_weight"]))
@@ -402,7 +402,7 @@ def main(argv=None):
         return 0
 
     base, counted, status, ranking = rank(d, a.mode)
-    alt, _, _, alt_ranking = rank(d, a.mode, bar_reading="sharp")
+    alt, _, _, alt_ranking = rank(d, a.mode, bar_reading="literal")
     result = {
         "mode": a.mode,
         "readers": sorted({r["reader"] for j in d["judgements"] for r in j.get("reading", [])}),
@@ -412,10 +412,10 @@ def main(argv=None):
         "headline_provisional": headline(d, a.mode),
         "counted_outcomes": counted,
         "alternative_readings": {
-            "bar_needs_a_prediction_that_also_separates": {
+            "bar_counts_any_prediction_that_could_fail": {
                 "groups": {t: v["group"] for t, v in alt.items()},
                 "ranking": alt_ranking,
-                "why": "Ranking rule 2 says a theory is ranked when more than half its core claims 'come with a prediction that could fail'. It does not say whether that prediction must also separate the theory from a rival, as the testability score requires. The main result reads it literally; this reading adds the separation test.",
+                "why": "The first wording of ranking rule 2 did not say whether the prediction must separate the theory from a rival. John ruled on 2026-11-20 ('Yes, must separate') that it must; the main result follows the ruling. This is the superseded literal reading, kept for comparison.",
             },
         },
         "open_verify_entries": len(open_verify),
@@ -435,7 +435,7 @@ def main(argv=None):
         print(f"  support rests on {sr['counted_outcomes']} counted outcome(s) from {len(sr['studies'])} studies, {len(sr['groups'])} groups, total weight {sr['total_weight']}")
         print(f"  group: {v['group']}" + (" (the evidence so far leans against it)" if v["leans_against"] else ""))
         if v["claims_lacking_for_bar"]:
-            print(f"  core claims with no prediction that could fail: {', '.join(v['claims_lacking_for_bar'])}")
+            print(f"  core claims with no prediction that could fail and separates it from a rival: {', '.join(v['claims_lacking_for_bar'])}")
     print()
     print("Ranking:")
     for r in ranking["ranked"]:
@@ -451,8 +451,8 @@ def main(argv=None):
     h = result["headline_provisional"]
     print(f"Headline (provisional, ruling 3 open): {h['tested']} of {h['distinguishing_predictions']} distinguishing predictions tested ({h['share_tested']}%)")
     print()
-    print("Alternative reading of ranking rule 2 (the bar needs a prediction that also separates):")
-    for t, g in result["alternative_readings"]["bar_needs_a_prediction_that_also_separates"]["groups"].items():
+    print("Superseded reading of ranking rule 2 (any prediction that could fail, not ruled):")
+    for t, g in result["alternative_readings"]["bar_counts_any_prediction_that_could_fail"]["groups"].items():
         print(f"  {base[t]['name']}: {g}")
     print(f"\nOpen verify entries: {len(open_verify)} (promotion is blocked while any are open; rule 3.3)")
     return 0

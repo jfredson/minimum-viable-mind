@@ -41,12 +41,14 @@ INSTRUCTIONS = {
     ),
     "commitment": (
         "You are one of two independent readers for a public record that scores theories of "
-        "consciousness. A study counts toward a prediction only if that prediction was on record, in a "
-        "dated publication by the theory's own proponents, before the study first appeared. A study that "
-        "says it set out to test a theory tests nothing if the prediction was first written in the same "
-        "paper (or the study's own registration). When the dates or the commitment are unclear, the study "
-        "is not counted. Read the passages and dates. Decide: BEFORE (the earlier passage commits the "
-        "theory to this prediction, and it predates the study), NOT-BEFORE (it does not), or UNCLEAR. "
+        "consciousness. A study counts toward a prediction if that prediction was fixed, by the "
+        "theory's proponents, in a dated record made before the study's data were collected, whether a "
+        "publication or a registration. What decides is when the record was fixed, not when it became "
+        "public. A paper that states a prediction and tests it in the same paper does not count. When "
+        "the dates or the commitment are unclear, the study is not counted. Read the passages and the "
+        "dates. Decide: BEFORE (a record by the proponents commits the theory to this prediction and was "
+        "fixed before the study's data were collected), NOT-BEFORE (it was not), or UNCLEAR. If the study "
+        "does not say when its data were collected, say how you decided. "
         "Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four "
         "plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}."
     ),
@@ -121,6 +123,9 @@ def build():
                 "source": cite(s["source"]),
                 "first_appeared": s["first_appeared"]["date"] + " (" + s["first_appeared"]["what"] + ")",
             }
+            if "data_collected" in s:
+                dc = s["data_collected"]
+                packet["study"]["data_collected"] = {"when": dc["when"], "basis": dc["reason"]}
             packet["passages"] = [{"text": a["text"], "source": cite(a["source"])} for a in j.get("passages", [])]
             if j["kind"] == "commitment":
                 packet["dates"] = j.get("dates", {})
@@ -186,9 +191,12 @@ def main(argv=None):
     periods = {"through 2026-11-30": (2.0, 10.0), "from 2026-12-01": (4.0, 20.0)}
     print(f"{len(packets)} packets written to {OUT.relative_to(ROOT)} ({by_kind}); {sh} are Sentient Horizons rows, read first by the second reader")
     print(f"input about {in_tokens:,.0f} tokens in all (largest packet {max(chars)/4:,.0f}); output assumed {a.output_tokens:,} per call, thinking included")
+    oc = [c for p, c in zip(packets, chars) if p["kind"] != "testability"]
+    oc_in, oc_out = sum(oc) / 4, a.output_tokens * len(oc)
     for name, (pi, po) in periods.items():
         cost = in_tokens / 1e6 * pi + out_tokens / 1e6 * po
-        print(f"  Gemini 4 Carbon, standard, {name}: ${cost:.2f}  (batch: ${cost/2:.2f})")
+        cost2 = oc_in / 1e6 * pi + oc_out / 1e6 * po
+        print(f"  Gemini 4 Carbon, standard, {name}: all {len(packets)}: ${cost:.2f} (batch ${cost/2:.2f}); outcomes and commitments only ({len(oc)}): ${cost2:.2f} (batch ${cost2/2:.2f})")
     return 0
 
 

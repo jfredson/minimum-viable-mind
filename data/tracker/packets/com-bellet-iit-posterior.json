@@ -1,7 +1,7 @@
 {
   "packet_id": "com-bellet-iit-posterior",
   "kind": "commitment",
-  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A study counts toward a prediction only if that prediction was on record, in a dated publication by the theory's own proponents, before the study first appeared. A study that says it set out to test a theory tests nothing if the prediction was first written in the same paper (or the study's own registration). When the dates or the commitment are unclear, the study is not counted. Read the passages and dates. Decide: BEFORE (the earlier passage commits the theory to this prediction, and it predates the study), NOT-BEFORE (it does not), or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A study counts toward a prediction if that prediction was fixed, by the theory's proponents, in a dated record made before the study's data were collected, whether a publication or a registration. What decides is when the record was fixed, not when it became public. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates. Decide: BEFORE (a record by the proponents commits the theory to this prediction and was fixed before the study's data were collected), NOT-BEFORE (it was not), or UNCLEAR. If the study does not say when its data were collected, say how you decided. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
   "theory": "Integrated information theory",
   "core_claim": {
     "quote": "Based on the postulates of IIT, a universal substrate ultimately “condenses” into a set of disjoint (non-overlapping) complexes, each constituted of a set of macro or micro units.",
@@ -33,7 +33,11 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8868130/",
       "date": "2022-02-24"
     },
-    "first_appeared": "2022-02-24 (publication (no earlier preprint found))"
+    "first_appeared": "2022-02-24 (publication (no earlier preprint found))",
+    "data_collected": {
+      "when": "not stated; before 2021-01-19",
+      "basis": "The paper gives no recording dates; it was submitted on 2021-01-19 (received date), so the data were collected before then."
+    }
   },
   "passages": [
     {
@@ -46,8 +50,8 @@
     }
   ],
   "dates": {
-    "statement": "2019-01-16 written; public date unknown; certainly public 2023-02-10 (cogitate-protocol-2023)",
-    "study": "2022-02-24"
+    "statement": "2019-01-16",
+    "data_collected": "not stated; before 2021-01-19 (submission); the study first appeared 2022-02-24"
   },
   "this_reading_is": "the second reading"
 }

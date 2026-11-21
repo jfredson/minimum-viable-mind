@@ -159,7 +159,10 @@ session's recommendations; the wording is the session's.
    - **Not yet defined sharply enough to rank:** below the bar, each shown with what it would
      need, meaning which core claims lack a prediction that could fail.
 2. *(ruled)* **The bar is a criterion, not a bare number:** a theory is ranked only when more than
-   half its core claims come with a prediction that could fail. A support score speaks only for the
+   half its core claims come with a prediction that could fail. *(ruled, 2026-11-20, John: "Yes,
+   must separate".)* The bar counts a core claim only if it has a prediction that could fail and
+   that a rival predicts differently, the same test as the testability score. (Raised by the stage 2
+   pilot, which found the first wording did not say; wording the master session's.) A support score speaks only for the
    claims that were testable; where fewer than half were, it describes a minority of the theory,
    and ranking the whole theory on it would mislead. This replaces the bare figure of 50 first
    proposed.
@@ -421,12 +424,21 @@ shapes stage 2.
    **Ruled by John on 2026-11-20: "Yes to all four".** The four rules were the session's
    recommendations; the wording is the session's. What matters is when the prediction was made,
    not how the study was framed:
-   1. *(ruled)* **A study counts toward a prediction only if that prediction was on record, in a
-      dated publication by the theory's proponents, before the study first appeared.** The study's
-      own framing does not decide it: a study that explained its result afterwards still tests a
-      prediction the theory had already made, and a study that says it set out to test a theory
-      tests nothing if the prediction was first written in the same paper. A study that passes
-      counts at its ordinary weight under the protections rule of section 4.
+   1. *(ruled)* **A study counts toward a prediction if that prediction was fixed, by the theory's
+      proponents, in a dated record made before the study's data were collected, whether a
+      publication or a registration.** *(ruled, 2026-11-20, John: "Yes, count it"; wording the
+      master session's.)* What decides is when the record was fixed, not when it became public. The
+      ban on a paper that states a prediction and tests it in the same paper stays. So the Cogitate
+      registration's predictions count for the Cogitate study. Weakest step, stated to John: a
+      prediction becomes the theory's once its proponents sign it into a registration, even if it was
+      derived for that study (the offset ignition), and under "a failure stands" it counts. (Raised by
+      the stage 2 pilot, which found that the first wording, below, left most of the Cogitate study
+      out.) A study that counts counts at its ordinary weight under the protections rule of section 4.
+      *Replaced wording, kept for the record:* ~~A study counts toward a prediction only if that
+      prediction was on record, in a dated publication by the theory's proponents, before the study
+      first appeared. The study's own framing does not decide it: a study that explained its result
+      afterwards still tests a prediction the theory had already made, and a study that says it set
+      out to test a theory tests nothing if the prediction was first written in the same paper.~~
    2. *(ruled)* **A study that fails this is listed beside the prediction**, marked "explained
       afterwards, not counted", and moves no score.
    3. *(ruled)* **When the dates or the commitment are unclear, the study is not counted.** Not
@@ -436,7 +448,10 @@ shapes stage 2.
       theory to a result is a judgement, made as its own record and read by both readers.
       A prediction dates from the first publication by the theory's proponents that states it; a
       study dates from its earliest public appearance (its registration, its preprint or its
-      publication, whichever came first).
+      publication, whichever came first). *(Note from the stage 2 pilot, 2026-11-20, not a ruling: under the
+      ruled rule 1 above, what the prediction is compared with is when the study's data were
+      collected, so this sentence's dating of a study by its earliest public appearance no longer
+      decides whether it counts. The wording is left for the master session to bring into line.)*
    4. *(ruled)* **ConTraSt's "designed to test, mentioned, or interpreted afterwards" field is a
       pointer** for which studies to check first, not the rule.
 3. **The licence is share-alike.** ConTraSt's data is under CC BY-SA 4.0, so anything built from

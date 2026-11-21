@@ -1,7 +1,7 @@
 {
   "packet_id": "com-cogitate-gwt-synchrony",
   "kind": "commitment",
-  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A study counts toward a prediction only if that prediction was on record, in a dated publication by the theory's own proponents, before the study first appeared. A study that says it set out to test a theory tests nothing if the prediction was first written in the same paper (or the study's own registration). When the dates or the commitment are unclear, the study is not counted. Read the passages and dates. Decide: BEFORE (the earlier passage commits the theory to this prediction, and it predates the study), NOT-BEFORE (it does not), or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A study counts toward a prediction if that prediction was fixed, by the theory's proponents, in a dated record made before the study's data were collected, whether a publication or a registration. What decides is when the record was fixed, not when it became public. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates. Decide: BEFORE (a record by the proponents commits the theory to this prediction and was fixed before the study's data were collected), NOT-BEFORE (it was not), or UNCLEAR. If the study does not say when its data were collected, say how you decided. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
   "theory": "Global workspace theory",
   "core_claim": {
     "quote": "Broadcasting implies that the information in the workspace becomes available to many local processors, and it is the wide accessibility of this information that is hypothesized to constitute conscious experience.",
@@ -33,21 +33,33 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
       "date": "2025-04-30"
     },
-    "first_appeared": "2019-01-16 (registration (preregistration v1 on OSF))"
+    "first_appeared": "2019-01-16 (registration (preregistration v1 on OSF))",
+    "data_collected": {
+      "when": "after 2019-01-16",
+      "basis": "The registration was created on OSF on 2019-01-16, and the protocol says the original and amended registrations were frozen before data acquisition began."
+    }
   },
   "passages": [
     {
-      "text": "In intracranial recordings, conscious stimuli, but not non-conscious ones, trigger a sustained activation and the formation of a metastable state of long-distance phase synchrony in the beta band",
+      "text": "GNW postulates that global information sharing is mediated by a meta-stable state of long-range interareal interactions including prefrontal areas, and category specific areas, depending on the content of conscious perception. This pattern of information sharing can be approximated by measures of (gamma/beta) synchronization.",
       "source": {
-        "citation": "Dehaene S, Charles L, King J-R, Marti S. Toward a computational theory of conscious processing. Current Opinion in Neurobiology 25:76-84, 2014",
-        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635963/",
-        "date": "2013-12-29"
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    {
+      "text": "The original and the amended preregistration files were frozen prior to the commencement of data acquisition.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, Bendtz K, Ferrante O, ... Dehaene S, Koch C, Tononi G, Ward LM. An adversarial collaboration protocol for testing contrasting predictions of global neuronal workspace and integrated information theory. PLOS ONE 18(2):e0268577, 2023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9916582/",
+        "date": "2023-02-10"
       }
     }
   ],
   "dates": {
-    "statement": "2013-12-29",
-    "study": "2019-01-16"
+    "statement": "2019-01-16 (and long-distance synchrony in general, 2013-12-29)",
+    "data_collected": "after 2019-01-16"
   },
   "this_reading_is": "the second reading"
 }

@@ -25,7 +25,8 @@ id = "cogitate-2025"
 name = "The Cogitate Consortium's adversarial test of global workspace and integrated information theory"
 source = "cogitate-2025"
 first_appeared = { date = "2019-01-16", what = "registration (preregistration v1 on OSF)", source = "cogitate-prereg-v1" }
-first_appeared_note = "The registration was written and posted to OSF on 2019-01-16; OSF does not record when it became public. The preprint appeared 2023-06-26 (cogitate-preprint-2023) and the paper 2025-04-30. Either way, the predictions it tests were first written in its own registration unless an earlier proponents' publication states them, which is what the commitment judgements check."
+data_collected = { when = "after 2019-01-16", reason = "The registration was created on OSF on 2019-01-16, and the protocol says the original and amended registrations were frozen before data acquisition began.", passage = "The original and the amended preregistration files were frozen prior to the commencement of data acquisition.", source = "cogitate-protocol-2023" }
+first_appeared_note = "Under the after-the-fact rule as ruled on 2026-11-20 ('Yes, count it'), what decides is when a prediction was fixed against when the study's data were collected, not public dates. The registration (created on OSF 2019-01-16) fixed its predictions before data acquisition, so they count for this study. The preprint appeared 2023-06-26 (cogitate-preprint-2023) and the paper 2025-04-30."
 group = "Cogitate Consortium"
 camps = []
 found_through = "brief"
@@ -40,6 +41,7 @@ id = "bellet-2022"
 name = "Decoding rapidly presented pictures from monkey prefrontal neurons without report"
 source = "bellet-2022"
 first_appeared = { date = "2022-02-24", what = "publication (no earlier preprint found)", source = "bellet-2022" }
+data_collected = { when = "not stated; before 2021-01-19", reason = "The paper gives no recording dates; it was submitted on 2021-01-19 (received date), so the data were collected before then.", source = "bellet-2022" }
 group = "Panagiotaropoulos group (last author)"
 camps = ["gwt"]
 camps_reason = "Stanislas Dehaene, an author of the global workspace statements used here (dehaene-2014, mashour-2020), is an author; the last author, Theofanis Panagiotaropoulos, is an author of the Cogitate protocol (cogitate-protocol-2023). The paper frames its result as support for a GWT prediction."
@@ -56,11 +58,12 @@ id = "bandara-2025"
 name = "Computer modelling of an inattentional-blindness EEG dataset, testing sensory against frontal theories"
 source = "bandara-2025"
 first_appeared = { date = "2024-11-03", what = "preprint (bioRxiv)", source = "bandara-2025" }
+data_collected = { when = "before 2015", reason = "A reanalysis: all data came from Shafto and Pitts (2015), so they were collected before that paper appeared.", passage = "All data for this study were kindly provided to us from the work by Shafto and Pitts (2015).", source = "bandara-2025" }
 group = "Garrido group (last author)"
 camps = []
 found_through = "contrast"
 opened = true
-reanalysis_note = "A reanalysis of an EEG dataset first described by Shafto and Pitts in 2015, before mashour-2020 stated the prediction it tests. The rules date a study from its own earliest appearance, so it counts; that the data were public first is recorded here as a point for the readers and for John."
+reanalysis_note = "A reanalysis of an EEG dataset first described by Shafto and Pitts in 2015. Under the rule as ruled on 2026-11-20, a prediction counts only if it was fixed before the data were collected, so this study counts only for predictions on record before 2015."
 protections.registered = { value = false, reason = "No registration mentioned in the paper (full text searched for 'preregist', none).", source = "bandara-2025" }
 protections.outside_camp = { value = true, reason = "No author is an author of the proponents' statements used here for either theory.", source = "bandara-2025" }
 protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "bandara-2025" }
@@ -71,6 +74,7 @@ id = "dellert-2025"
 name = "Auditory awareness without report, measured with fMRI (inattentional deafness)"
 source = "dellert-2025"
 first_appeared = { date = "2025-05-21", what = "preprint (bioRxiv)", source = "dellert-2025" }
+data_collected = { when = "not stated; before 2025-05-21", reason = "The preprint gives no collection dates (methods searched 2026-11-20); the data were collected before the preprint appeared.", source = "dellert-2025" }
 group = "Straube group (last author; participants recruited at the University of Münster)"
 camps = []
 found_through = "contrast"

@@ -1,0 +1,77 @@
+{
+  "packet_id": "out-cogitate-iit-sustained",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Integrated information theory",
+  "core_claim": {
+    "quote": "The physical correspondent of an experience is not the substrate as such but the Φ-structure specified by the substrate in its current state.",
+    "source": {
+      "citation": "Albantakis L, Barbosa L, Findlay G, Grasso M, Haun AM, Marshall W, Mayner WGP, Zaeemzadeh A, Boly M, Juel BE, Sasai S, Fujii K, David I, Hendren J, Lang JP, Tononi G. Integrated information theory (IIT) 4.0: formulating the properties of phenomenal existence in physical terms. PLOS Computational Biology 19(10):e1011465, 2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581496/",
+      "date": "2023-10-17"
+    }
+  },
+  "prediction": {
+    "statement": "For as long as a stimulus is consciously experienced, a content-specific pattern of activity persists in posterior cortex.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-16",
+      "passage": "In sum, GNW predicts a phasic ignition of the workspace followed by a decay (until a new content is consciously experienced), while IIT predicts, independent of any phasic transient, a sustained content-specific activity pattern persisting for as long as the stimulus is consciously experienced.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    "test_for": "Content-specific activity and information in posterior cortex last as long as the stimulus, and track its duration.",
+    "test_against": "Posterior content-specific activity or information decays well before a still-visible stimulus ends."
+  },
+  "study": {
+    "name": "The Cogitate Consortium's adversarial test of global workspace and integrated information theory",
+    "source": {
+      "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+      "date": "2025-04-30"
+    },
+    "first_appeared": "2019-01-16 (registration (preregistration v1 on OSF))",
+    "data_collected": {
+      "when": "after 2019-01-16",
+      "basis": "The registration was created on OSF on 2019-01-16, and the protocol says the original and amended registrations were frozen before data acquisition began."
+    }
+  },
+  "passages": [
+    {
+      "text": "In posterior cortex ROIs, cross-temporal RSA revealed sustained face–object categorical representation, with larger correlation distances between categories (face–objects) than within category (face, object; compare Fig. 3d, left, with Fig. 1a).",
+      "source": {
+        "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+        "date": "2025-04-30"
+      }
+    },
+    {
+      "text": "Face orientation information appeared weakly in posterior ROIs at stimulus onset but was not sustained, decaying after 0.5 s, contrary to the predictions of IIT.",
+      "source": {
+        "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+        "date": "2025-04-30"
+      }
+    },
+    {
+      "text": "Finally, the predictions of neither theory were supported for category, identity or orientation by the MEG data (see section 6.5 for Supplementary Information).",
+      "source": {
+        "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+        "date": "2025-04-30"
+      }
+    },
+    {
+      "text": "More broadly, although IIT passed the predefined criteria for the duration prediction (number 2), there was no evidence for a sustained representation of orientation, despite being a property of the consciously perceived stimuli25.",
+      "source": {
+        "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+        "date": "2025-04-30"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

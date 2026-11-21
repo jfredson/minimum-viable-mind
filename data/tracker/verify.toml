@@ -21,11 +21,27 @@ to_clear = "Quote Lamme's own publication when recurrent processing theory's cor
 
 [[entry]]
 id = "v-osf-public-date"
-status = "open"
+status = "closed"
+closed_on = "2026-11-20"
+closed_why = "Moot after John's ruling 'Yes, count it' (2026-11-20): what decides is when a record was fixed, not when it became public. The registration's creation date (2019-01-16, OSF API) is what is used."
 records = ["cogitate-2025", "com-bellet-iit-posterior", "iit-posterior"]
 statement = "The Cogitate registration v1 (OSF component wz8mj) was written on 2019-01-16; when it became public is unknown."
-rests_on = "OSF's API gives the creation date only."
-to_clear = "Find when the component was made public (OSF project history, or the Science 2021 piece by Melloni, Mudrik, Pitts and Koch, which may cite it as public). Settles whether Bellet 2022 counts for iit-posterior."
+
+[[entry]]
+id = "v-collection-dates"
+status = "open"
+records = ["com-bellet-gwt-pfc-content", "com-bellet-iit-posterior", "com-dellert-gwt-ignition", "com-dellert-iit-posterior", "com-bandara-gwt-topdown"]
+statement = "When the Bellet (2022) and Dellert (2025) data were collected; and, for Bandara (2025), when Shafto and Pitts collected theirs."
+rests_on = "None of the papers dates its data collection. The commitment readings use a stated convention instead (a record five or more years older than the study is read as earlier than its data)."
+to_clear = "Ask the authors, or find a thesis, ethics record or earlier report that dates the recordings. Bellet's date decides whether it counts for iit-posterior."
+
+[[entry]]
+id = "v-dehaene-1998"
+status = "open"
+records = ["com-bandara-gwt-topdown"]
+statement = "The 1998 paper by Dehaene, Kerszberg and Changeux gave the workspace 'descending connections' that mobilize sensory processors."
+rests_on = "The proponents' own quotation of it in mashour-2020; the 1998 paper (PNAS, open on PubMed Central as PMC24407 according to the Cogitate paper's reference list) was not opened."
+to_clear = "Open the 1998 paper and quote it directly."
 
 [[entry]]
 id = "v-tononi-koch-2016"
@@ -33,7 +49,7 @@ status = "open"
 records = ["iit-posterior", "iit-sustained", "com-cogitate-iit-posterior", "com-cogitate-iit-sustained"]
 statement = "Tononi, Boly, Massimini and Koch 2016 and Koch, Massimini, Boly and Tononi 2016 (Nature Reviews Neuroscience) may state the posterior hot zone, and sustained activity, as predictions of integrated information theory before 2019."
 rests_on = "Not opened (paywalled). Cited by the Cogitate registration and protocol as the basis of these predictions."
-to_clear = "John signs in to Nature in the browser pane; a session reads both and records whether they commit the theory. If they do, the Cogitate study counts for iit-posterior (and possibly iit-sustained), at weight 4."
+to_clear = "John signs in to Nature in the browser pane; a session reads both. Since the ruling of 2026-11-20 the Cogitate study counts without them; they matter now only for earlier-dated studies, none of which in the pilot would change (Bandara's data predate 2016 too)."
 
 [[entry]]
 id = "v-hatamimajoumerd"

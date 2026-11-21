@@ -42,7 +42,7 @@ refuses them if any rule is broken, and one that computes every number from them
 7. **History.** None yet: everything was first written on 2026-11-20. From the next change on, a
    change to any record adds a `[[revision]]` table to it with the five fields the family uses
    (date, field, old value, new value, why).
-8. **Verify list.** `verify.toml`, one entry per statement, as rule 3.3 asks. Eight are open.
+8. **Verify list.** `verify.toml`, one entry per statement, as rule 3.3 asks. Nine are open, one closed.
 9. **Free notes.** `note` fields. Notes are never sent to the second reader, because some of them
    say what the first reader thought.
 10. **Validator.** `python3 scripts/tracker_scores.py --check`.
@@ -61,6 +61,8 @@ the Working Positions page).
   material for the readers, not a verdict; the verdict is in the testability judgement.
 - **`first_appeared`** on a study: its earliest public appearance, registration, preprint or
   publication, whichever came first (rule 2.3).
+- **`data_collected`** on a study: when its data were collected, as far as the paper says. Since
+  John's ruling of 2026-11-20 this, not `first_appeared`, is what a prediction's date is compared with.
 - **`camps`** on a study: the theories whose proponents ran it. The outside-camp protection is
   judged per theory, so one study can weigh differently for two theories.
 - **`protections`**: the four ruled protections (`registered`, `outside_camp`, `rival_agreed`,
@@ -69,8 +71,10 @@ the Working Positions page).
 ## The three kinds of judgement
 
 - **outcome**: for, against or mixed (+1, −1, 0).
-- **commitment**: `before`, `not-before` or `unclear`: was the prediction on record, in a dated
-  proponents' publication, before the study first appeared? Only `before` counts; `unclear` does not
+- **commitment**: `before`, `not-before` or `unclear`: was the prediction fixed by the proponents in a
+  dated record (a publication or a registration) before the study's data were collected? Each counted
+  study records `data_collected`; where a paper does not date its data, the first reader's stated
+  convention is in the header of the commitment section of `judgements.toml`. Only `before` counts; `unclear` does not
   (rule 2.3: "When the dates or the commitment are unclear, the study is not counted").
 - **testability**: could the prediction fail, and does it separate the theory from a rival on the list?
 
@@ -86,7 +90,9 @@ Claude reading on such a row is not marked `order = "second"`.
 
 ## How the numbers are computed (`scripts/tracker_scores.py`)
 
-- **Counted.** An outcome counts when its commitment judgement says `before`, the study was opened,
+- **Counted.** An outcome counts when its commitment judgement says `before` (the prediction was
+  fixed by the proponents in a dated record, publication or registration, before the study's data
+  were collected: ruled by John 2026-11-20, "Yes, count it"), the study was opened,
   and the prediction's testability judgement says it could fail and separates the theory from a
   rival ("a prediction every theory shares is recorded but scores nothing").
 - **Testability.** Per core claim: 1 if a proponent-stated prediction tied to it could fail and
@@ -101,8 +107,10 @@ Claude reading on such a row is not marked `order = "second"`.
   to the greater total weight; two theories share a rank if reversing any one study's outcomes would
   swap or tie them (the script tries each study in turn); theories the evidence goes against stay in,
   marked.
-- **The bar.** Read literally: more than half the core claims have a prediction that could fail.
-  The other reading (the prediction must also separate) is computed beside it.
+- **The bar.** As ruled by John on 2026-11-20 ("Yes, must separate"): a core claim counts toward
+  the bar only if it has a prediction that could fail and that a rival predicts differently, the same
+  test as the testability score. The superseded literal reading (any prediction that could fail) is
+  computed beside it for comparison.
 - **Readings.** Default `--mode provisional` uses a judgement read by one reader; `--mode settled`
   uses only judgements two readers agree on. A disagreement is never used in either mode.
 
