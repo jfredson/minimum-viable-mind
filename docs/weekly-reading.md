@@ -26,6 +26,14 @@ other study. Meanwhile the site shows how many studies are waiting.
 - *(ruled)* The **site shows how many new studies are waiting to be scored**.
 - *(ruled)* It **never changes a score on its own**.
 
+- *(ruled, 2026-11-21, John: "Join, nothing drops (Recommended)")* **A new qualifying study joins the
+  scored studies, and nothing drops out.** For each theory, the scored set is the five most recent
+  qualifying studies found by the first search (the baseline of 2026-11-21), plus every qualifying
+  study found by a weekly reading since. The five-most-recent rule and its one-per-prediction cap
+  applied to the first search only. Without this ruling, applying "the five most recent" every week
+  would swap older studies out of the score as newer ones arrived, so the scored set would turn over
+  by date alone. *Weakest step:* busy topics will gather more studies over time.
+
 ## What the reading may and may not do
 
 It **may**:
@@ -61,7 +69,10 @@ Anything outside those limits becomes a `flagged` item: what it would have done,
    them were chosen from its list. The seen list holds DOIs only (the papers' permanent identifiers),
    no ConTraSt field, so nothing under ConTraSt's share-alike licence is copied.
 3. **Screening.** Each new result is read, title and summary only, against the screening rule fixed
-   in `data/tracker/searches-2026-11-21.toml` (point 2 of its method). A result that qualifies
+   in `data/tracker/searches-2026-11-21.toml` (point 2 of its method). Point 3 of that method (the
+   five most recent, one per prediction) chose the first set only. In a weekly reading, every result
+   that qualifies becomes a waiting row, and once scored it joins the set (John, "Join, nothing
+   drops"). A result that qualifies
    becomes a waiting row. One that doesn't is listed in the reading record with the reason, as the
    baseline screens were.
 4. **The first reading.** For each waiting row, the session opens the paper if an open copy exists.
@@ -99,7 +110,8 @@ New positions on the Working Positions page are not part of this reading.
     on = "2026-12-05"
     study = "smith-2026"              the study record it became
 
-A working session turns waiting rows into study records and judgements, sends the blind packets to
+A waiting row that a working session confirms joins the scored studies; nothing already scored drops
+out (John, "Join, nothing drops"). A working session turns waiting rows into study records and judgements, sends the blind packets to
 Gemini in one batch under a cap, settles by the ruled rules, and adds a `[[resolved]]` entry. Only
 then can a score move.
 
@@ -143,13 +155,7 @@ are waiting to be scored (last weekly reading ...)."
    so the site's count updates. It touches only the files listed above, and the site's checks run on
    the push. If the push is refused, the same commit goes once to `claude/reading-<date>` and the
    report says so. Alternative: always a branch, merged by a working session; the count then lags.
-3. **New studies are added beside the five chosen, not instead of them.** Proposed. The ruled rule
-   takes "the five most recent qualifying studies per theory". Applied every week, it would swap older
-   studies out of the score as newer ones arrived, so the scored set would turn over by date alone.
-   Proposed: the five-most-recent rule chose the first set; a later qualifying study joins it. *Weakest
-   step:* busy topics will gather many studies over time, which the one-per-prediction cap was meant
-   to prevent; the cap could apply per reading instead.
-4. **The window.** The seven days ending on the reading's date, Pacific. What makes a result new is
+3. **The window.** The seven days ending on the reading's date, Pacific. What makes a result new is
    that no earlier run returned it, not its date. A paper indexed late is still caught, and the record
    says how old it is.
 

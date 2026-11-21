@@ -38,7 +38,10 @@ added.
 
 Open `data/tracker/readings/<date>.candidates.json`. For each new result, read its title and summary
 against the prediction it was found for (its `test_for` and `test_against` in
-`data/tracker/predictions.toml`) and apply the screening rule exactly. Reviews, theory papers, models
+`data/tracker/predictions.toml`) and apply the screening rule exactly. Apply point 2 of the method (what
+qualifies), not point 3 (the five most recent, one per prediction): point 3 chose the first set only,
+and every qualifying result now becomes a waiting row that joins the scored studies once scored,
+with nothing dropping out (John, 2026-11-21, "Join, nothing drops"). Reviews, theory papers, models
 with no new data, comments and protocols never qualify. For every result, write one line: qualifies,
 or does not qualify, with the reason.
 
