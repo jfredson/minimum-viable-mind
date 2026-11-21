@@ -342,6 +342,16 @@ with an estimate first.
    copy used, and any difference from the journal text that can be seen, is recorded; what cannot be
    found openly is listed for John to sign in to himself; if a paper cannot be opened at all, the
    next-latest statement that can be is used, with the reason recorded. Nothing is bought.
+
+   **Attention schema theory: ruled 2026-11-21, "Yes, keep 2015".** *(ruled, John; wording the master
+   session's.)* The brief asked for Graziano 2026 (*PNAS* 123(42) e2628598123) to be read before the
+   attention schema claims were fixed, to see whether its body keeps them unchanged and only adds to
+   them. Its body is behind a paywall and John has no PNAS access, so only the publisher's summary was
+   read. The core claims are fixed from Graziano and Webb 2015 now, and the theory is scored with the
+   others. The 2026 paper is on the verify list, to be read when it can be opened; if its body keeps
+   the attention schema claims unchanged and only adds to them, the source question returns to John.
+   Testable attention claims enter from the 2026 summary as dated predictions only where the summary
+   itself states them.
 5. ~~The three scores and their formulas~~ **Ruled 2026-11-20 ("Yes to all five"):** core claims
    fixed from one named source; study weights by counted protections; no support score before two
    separate groups; core-claim predictions count double; a failure stands. See section 4.
