@@ -25,7 +25,6 @@ const anchored = new Set<string>();
 const anchorFor = (cid: string) => (anchored.has(cid) ? undefined : (anchored.add(cid), `c-${cid}`));
 const groupLine =
   t.group === 'ranked' ? 'ranked' : t.group.startsWith('testable') ? 'testable, too little tested to rank' : 'not yet defined sharply enough to rank';
-const tieRow = t.tied[0];
 const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans supported.' : t.support < tk.rules.even ? 'Leans against.' : 'Even.';
 ---
 
@@ -33,7 +32,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
   <div class="page two">
     <div>
       <p class="crumbs"><a href="/theories/">Theories</a> / {t.name}</p>
-      <p class="eyebrow">A theory of consciousness{t.own && <> · this site's own</>} · {groupLine}{t.rank !== null && <> · {t.tied.length ? '=' : ''}<N v={t.rank} /> of <N v={t.ranked_count} /></>}</p>
+      <p class="eyebrow">A theory of consciousness{t.own && <> · this site's own</>} · {groupLine}{t.tied.length > 0 && <> · too close to separate from {t.tied.map((x, i) => <>{i > 0 && ' and '}{x.with_name.charAt(0).toLowerCase() + x.with_name.slice(1)}</>)}</>}</p>
       <h1>{t.name}</h1>
       <R as="p" class="tplain" t={t.plain} />
       {t.proponents.length > 0 && <p class="meta">{t.own ? 'Its author:' : 'Among its proponents:'} {t.proponents.join(', ')}.</p>}
@@ -64,9 +63,9 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
         </div>
       </div>
       {t.leans_against && <p class="meta">The evidence so far leans against it. It keeps its place in the ranking.</p>}
-      {tieRow && (
-        <p class="meta" id="tie">Shown as tied with <a href={`/theories/${tieRow.with}/`}>{tieRow.with_name}</a>: reversing the results of one study, <R t={tieRow.study_name} />, would swap or tie them. To check it by hand, flip that study's results in the predictions below and work both support scores again by the formula on <a href="/about/#numbers">About</a>.</p>
-      )}
+      {t.tied.map((x, i) => (
+        <p class="meta" id={i === 0 ? 'tie' : undefined}>Too close to separate from <a href={`/theories/${x.with}/`}>{x.with_name}</a>, its neighbour in the ranking: if one study, <R t={x.study_name} />, had gone the other way, the two would swap places or draw level, so neither is shown ahead. To check it by hand, turn that study's results round in both theories' predictions and work both support scores again by the formula on <a href="/about/#numbers">About</a>.</p>
+      ))}
 
       <div class="shead"><h2>Its core claims</h2><span>quoted from {t.claims_from?.url ? <a href={t.claims_from.url}><R t={t.claims_from.citation} /></a> : <R t={t.claims_from?.citation} />}, fixed on <N v={t.fixed_on} t={t.fixed_on_long} /> until the yearly review</span></div>
       <ul class="claims">

@@ -352,6 +352,11 @@ def main(argv=None) -> int:
         "testable": ranking["testable_too_little_tested"],
         "not_sharp": ranking["not_yet_defined_sharply_enough"],
         "not_scored": [t for t in listed["ids"] if t not in base],
+        # Ruled by John on 2026-11-21 ("Yes, pairs only"): the ranked group shows no rank numbers;
+        # two neighbours that reversing one study could swap are said, in words, to be too close
+        # to separate. The pairs are the scoring script's own output, never recomputed here.
+        "close_pairs": [{"a": k.split("|")[0], "b": k.split("|")[1], "study": by, "study_name": studies[by]["name"]}
+                        for k, by in ranking["shared_because_one_study_could_swap_them"].items()],
     }
     dates = [r.get("date") for j in d["judgements"] for r in j.get("reading", []) if r.get("date")]
     dates += [j["ruling"].get("date") for j in d["judgements"] if j.get("ruling") and j["ruling"].get("date")]

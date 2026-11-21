@@ -53,7 +53,10 @@ export interface OpenQuestion { id: string; title: string; plain: string; bears_
 export interface Tracker {
   rules: Record<string, number>; probe_weight: number;
   listed: { id: string; name: string; scored: boolean }[]; listed_count: number; scored_count: number;
-  groups: { ranked: { theory: string; rank: number }[]; testable: string[]; not_sharp: string[]; not_scored: string[] };
+  groups: {
+    ranked: { theory: string; rank: number }[]; testable: string[]; not_sharp: string[]; not_scored: string[];
+    close_pairs: { a: string; b: string; study: string; study_name: string }[];
+  };
   theories: Record<string, Theory>; predictions: Record<string, Prediction>;
   studies: Record<string, { id: string; name: string; group: string; opened: boolean; url: string | null; found_through_contrast: boolean }>;
   studies_count: number; contrast_count: number; judgement_count: number; judgement_status: Record<string, number>;
@@ -85,7 +88,7 @@ export const OUTCOME_LABEL: Record<string, string> = { 'for': 'for', 'against': 
 
 // The ranking's three ruled groups, in order (kickoff section 4, ranking rule 1).
 export const GROUPS = [
-  { key: 'ranked', title: 'Ranked', note: 'past the bar, with a support score; highest support first' },
+  { key: 'ranked', title: 'Ranked', note: 'past the bar, with a support score; listed from the most support to the least' },
   { key: 'testable', title: 'Testable, too little tested to rank', note: 'no studies yet from two separate groups' },
   { key: 'not_sharp', title: 'Not yet defined sharply enough to rank', note: 'half or fewer of its core claims come with a prediction that could fail and that a rival theory predicts differently' },
 ] as const;
