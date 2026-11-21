@@ -138,14 +138,15 @@ def copies(cand, words):
     return False
 
 
-def near_numbers(rng, ans, spread, lo=0, hi=999, pool=None):
+def near_numbers(rng, ans, spread, lo=0, hi=999, pool=None, place=None):
     """Specification, section 14, item 2: the right answer's place among the five, in numeric order, is drawn
     uniformly first; the wrong numbers are then drawn below and above it. Returns None if the place cannot be
     filled, and the caller redraws the item."""
     digits = len(str(ans))
     opts = [x for x in (pool if pool is not None else range(max(lo, ans - spread), min(hi, ans + spread) + 1))
             if x != ans and len(str(x)) == digits and abs(x - ans) <= spread]
-    place = rng.randrange(5)
+    if place is None:
+        place = rng.randrange(5)
     below = [x for x in opts if x < ans]
     above = [x for x in opts if x > ans]
     if len(below) < place or len(above) < 4 - place:
@@ -188,7 +189,8 @@ class Builder:
         lo, hi = (2, 15) if self.half == "A" else (25, 99)
         shapes = [("2 times a, plus b", lambda a, b: 2 * a + b), ("a plus 2 times b", lambda a, b: a + 2 * b),
                   ("3 times a, minus b", lambda a, b: 3 * a - b), ("a times 2, minus b, plus 1", lambda a, b: 2 * a - b + 1)]
-        for _ in range(200):
+        place = self.rng.randrange(5)  # specification, section 14, item 2: the place is kept while the item is redrawn
+        for _ in range(500):
             a, b = self.rng.randint(lo, hi), self.rng.randint(lo, hi)
             name, f = self.rng.choice(shapes)
             ans = f(a, b)
@@ -196,7 +198,7 @@ class Builder:
             # operator answer value is possible in both halves (specification, section 11)
             if (10 <= ans <= 45) if self.half == "A" else (100 <= ans <= 999):
                 sym = self.rng.choice(SYMBOLS)
-                wrong = near_numbers(self.rng, ans, 5)
+                wrong = near_numbers(self.rng, ans, 5, place=place)
                 if wrong:
                     return {"rule": f"In this puzzle, a {sym} b means {name}.", "facts": f"Here a is {a} and b is {b}.",
                             "answer": str(ans), "wrong": wrong, "content": ("op", sym, name, a, b)}
@@ -206,10 +208,14 @@ class Builder:
     def rule_unit(self):
         klo, khi, nlo, nhi = (2, 5, 2, 9) if self.half == "A" else (6, 9, 11, 99)
         u1, u2 = self.rng.sample(self.inv_words, 2)
-        k, n = self.rng.randint(klo, khi), self.rng.randint(nlo, nhi)
-        ans = k * n
-        wrong = near_numbers(self.rng, ans, 5)
-        if not wrong:
+        place = self.rng.randrange(5)  # kept while k and n are redrawn
+        for _ in range(500):
+            k, n = self.rng.randint(klo, khi), self.rng.randint(nlo, nhi)
+            ans = k * n
+            wrong = near_numbers(self.rng, ans, 5, place=place)
+            if wrong:
+                break
+        else:
             self.drop("unit_no_wrong_answers")
             return None
         return {"rule": f"In this puzzle, 1 {u1} is {k} {u2}s.", "facts": f"You have {n} {u1}s.",
@@ -278,22 +284,30 @@ class Builder:
 
     def rt_sum(self):
         lo, hi = (4, 49) if self.half == "A" else (50, 99)
-        s = self.rng.randint(lo, hi)
+        place = self.rng.randrange(5)  # kept while the sum is redrawn
+        for _ in range(500):
+            s = self.rng.randint(lo, hi)
+            wrong = near_numbers(self.rng, s, 5, place=place)
+            if wrong:
+                break
+        else:
+            return None
         a = self.rng.randint(2, s // 2)
         b = s - a
-        wrong = near_numbers(self.rng, s, 5)
-        if not wrong:
-            return None
         return {"fact": f"The two numbers are {a} and {b}.", "answer": str(s), "wrong": wrong, "content": ("sum", a, b)}
 
     def rt_prod(self):
         prods = [(a, b) for a in range(2, 13) for b in range(a, 13)
                  if ((a * b < 40) if self.half == "A" else (a * b >= 40))]
-        a, b = self.rng.choice(prods)
-        ans = a * b
         allp = sorted({x * y for x in range(2, 13) for y in range(2, 13)})
-        wrong = near_numbers(self.rng, ans, 12, pool=allp)
-        if not wrong:
+        place = self.rng.randrange(5)  # kept while the product is redrawn
+        for _ in range(500):
+            a, b = self.rng.choice(prods)
+            ans = a * b
+            wrong = near_numbers(self.rng, ans, 12, pool=allp, place=place)
+            if wrong:
+                break
+        else:
             return None
         return {"fact": f"The two numbers are {a} and {b}.", "answer": str(ans), "wrong": wrong, "content": ("prod", a, b)}
 
