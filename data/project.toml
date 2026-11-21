@@ -14,7 +14,7 @@
 [project]
 name = "Minimum Viable Mind"
 short = "MVM"
-updated_on = "2026-10-24"
+updated_on = "2026-11-20"
 question = "Since my ruling of 2026-10-24: which features on the revised theory's map of experience can be removed from a system that can be opened, and what kind of loss follows each removal? The loss can be none; only the system's talk about itself; everything at once; or the selective loss the theory predicts for the split between what a system does and what happens to it, where practised routines carry on while flexible response to something new collapses. The earlier questions (the floor, from the start; the two-sided question of 2026-10-07) stay on the record as what the project was built and registered against."
 one_line = "Take the consciousness account developed at Sentient Horizons and The Calibration Problem as a specification, build and measure against it, and let every claim carry a stated loss condition."
 where_we_are = "On 2026-10-23 I revised the theory this project is built on: it no longer declares a floor below which there is no experience. It maps features that seem to go with experience in the beings we know, and names the split between what a system does and what happens to it as its bet about a point of view. On 2026-10-24 I agreed a proposal for what that means here (docs/next-steps-2026-10-24.md). The project becomes the removal laboratory for that map. It removes one feature at a time in systems that can be opened, and reports what kind of loss follows. The name stays, and 'minimum' now means the smallest system on which one feature can be cleanly removed and read. The battery of tests and the observer side are paused, because the revised theory says behaviour cannot be the test of experience. Their first two entries were rehearsed by 2026-10-19, and both read 'no verdict'. Experiment C stays stopped. The duplicate model files from experiment 06 were removed, with their fingerprints recorded. Spend across every vendor so far is about $419 to $439 by the complete spending record of 2026-10-25, with a few earlier API calls untraced, and every new spend needs my go. Later the same day the split removal test was designed and rehearsed on the 2-billion-parameter bench model. It cannot be run there by removing anything from inside the model: the information that marks a word as the model's own cannot be removed without pushing the model out of its normal range. I ruled that recorded as a result about the method, not about the theory."
@@ -227,6 +227,30 @@ status = "parked"
 current_answer = "Paused on my ruling of 2026-10-24: the revised theory says behaviour cannot be the test of experience, so this side has no job in the project's new aim until it is reconsidered. The second side, the detector. Human mind-detection fires early and generously (the inflation error of the book's chapter 3), and the project has never measured it. This side has a ground truth only where a conversable system of known construction exists, and none does yet. Ruled 2026-10-07: the human study is deferred until the table, the battery and the construction line have produced systems worth showing; it does not run early against the frontier reference profile alone; I am not a subject."
 answered_by = "A small panel, blind to construction and never shown the battery's readings, rating presence on constructed systems and on frontier models matched on fluency; a pre-registered analysis with both error rates stated; a reliability check on the rating instrument before any reading is taken. Consent, compensation and ethics review are named as costs in advance."
 loses_if = "Observers detect presence in the constructed systems no better than in the frontier reference profile when the two are compared afterwards. That is reported as the premise failing (structure is not perceptible through interaction), not as a finding about the double standard."
+
+[[questions]]
+id = "Q10"
+title = "Does experience need binding in a shared workspace and no self-model? (hypothesis H1, added 2026-11-20)"
+status = "open"
+current_answer = "Not tested here. Added on John's request of 2026-11-20, wording the session's; the reasoning is in docs/2026-11-20-three-hypotheses-and-refocus-proposal.md. The bet: contents held together in one limited space that the rest of the system reads and writes, and updated as input arrives, are what experience needs; no self-model is required. The workspace names a job, not the brain's mechanism, as the positions hold that broadcast is one way of reaching deep integration. Outside evidence, not this project's: a 2026 study of a language model by its maker reports that removing a small, widely shared set of internal contents wrecked flexible work and left routine output running, the shape this predicts."
+answered_by = "A removal of the shared workspace's contents, and separately of every kind of self-model, in a system that can be opened, with the kinds of loss set down in advance."
+loses_if = "A system keeps flexible handling of new material with its shared workspace removed, or loses it when only a self-model is removed."
+
+[[questions]]
+id = "Q11"
+title = "Does a point of view need a working self-model, the split between what a system does and what happens to it? (hypothesis H2, added 2026-11-20)"
+status = "open"
+current_answer = "The split removal test (idea I14) was designed for this and closed on 2026-10-24 as a result about the method: on the bench model the speaker information could not be removed from inside without pushing the model out of its normal range. The route left is to take the cue out of the input. Restated on 2026-11-20 so that the self-model that counts is one the system's processing uses, not one it can report."
+answered_by = "The split removal test by the input route, if the template conditions are revised to cover it."
+loses_if = "The split is removed cleanly and the system's response to new events in the world carries on as before."
+
+[[questions]]
+id = "Q12"
+title = "Does self-awareness need a further model, of the system as the one things happen to? (hypothesis H3, added 2026-11-20)"
+status = "open"
+current_answer = "No test designed. The nearest human evidence is reports of experience with no sense of self, under meditation or psychedelic drugs; that people give such reports is established, and what they show is contested."
+answered_by = "A removal of the system's model of itself as an object, leaving the split in place, in a system where the two can be told apart."
+loses_if = "Removing it produces the split's pattern of loss, which would mean the two are one feature."
 
 # ---------------------------------------------------------------------------
 # Ideas on the table: lines of work that could be run, each with what it would

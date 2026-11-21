@@ -16,6 +16,25 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-11-20 — three hypotheses added as open questions; a change of the project's focus proposed for John's ruling
+
+*Written 2026-11-20 by a working session, at John's request. Nothing was run and nothing was spent.*
+
+John stated a view of experience on 2026-11-20 (a system that models itself alongside the world,
+updating both in real time, in an active workspace that holds the models with the incoming data),
+asked for it to be split into parts that can be tested separately, and said the project should be
+focused on proving it. Three hypotheses are added as open questions Q10 to Q12: experience needs
+binding in a shared workspace and no self-model (H1); a point of view needs a working self-model,
+the split (H2, the existing test I14); self-awareness needs a further model of the system as the
+one things happen to (H3). The change of focus, a rewording of the aim in `CLAUDE.md` from "not a
+system that is provably conscious" to removal tests that could show the account wrong, is a
+proposal only. Both are in `docs/2026-11-20-three-hypotheses-and-refocus-proposal.md`. The
+session also withdrew a claim it made in conversation, that today's models fall short of the view
+because their learning stops after training: against the published positions, real-time updating
+is binding within a run.
+
+---
+
 ## WHERE THINGS STAND 2026-10-24 (evening) — the split removal test cannot be run on the bench model by removing anything from inside it; John ruled that recorded; the template conditions do not cover taking the cue out of the input
 
 *Written 2026-10-24 (Saturday evening, Pacific) by the working session that

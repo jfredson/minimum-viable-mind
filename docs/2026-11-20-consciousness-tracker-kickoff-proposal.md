@@ -248,7 +248,43 @@ with an estimate first.
    Viable Mind. The rename stays open to be raised again, for example by the cold-reader test in
    section 11. **The address is still open.** See section 11.
 3. **The trunk's question and headline number** (section 3).
-4. **The first set of theories**, and whether illusionism and the biological views are branches.
+4. **The first set of theories: the test ruled 2026-11-20, "Yes, as you lean"; the list itself still
+   to be ruled.** The session's recommendations, in its wording. (a) A theory gets a branch if it says
+   what makes a system conscious (not only what goes with it), its proponents still publish it, it is
+   stated in a publication by its proponents that can be quoted, and it appears in at least two of
+   the comparison sources opened at stage 1 (Doerig, Schurger and Herzog 2021; the ConTraSt
+   database; Butlin, Long and colleagues 2023; Seth and Bayne 2022). The Sentient Horizons account
+   is in by stated exception, said on the first screen. (b) A read-only session applies the test from
+   opened sources and brings back the list, each entry sourced, for John to rule; the seven proposed
+   branches are expected to pass but are not assumed to. (c) Predictive processing alone says how the
+   brain works, not what makes a system conscious, so the branch is Anil Seth's living-body view by
+   name, with predictive processing as its workings, core claims from his own publication, and its
+   life claim scored as a core claim. (d) Orchestrated Objective Reduction is a branch if it passes.
+   (e) Illusionism and panpsychism are not branches; each gets a note saying why (neither says which
+   systems are conscious and which are not), the illusionism note naming attention schema theory as
+   its nearest branch. Weakest step, stated when it was ruled: the two-sources part takes what the
+   field's reviewers chose to cover, so it favours established theories over new ones; the yearly
+   review is where that is corrected.
+
+   **The list: ruled 2026-11-20, "Yes, ten".** A read-only research session applied the test from
+   opened sources (report: the master session's notes, `2026-11-20-theory-list-test.md`), with
+   Seth and Bayne's full text read after John signed in to Nature himself. Read strictly (a source
+   counts when it gives the theory a table row, a section of its own, or names it in its summary),
+   nine theories pass: global workspace theory; integrated information theory; higher-order
+   theories, as one entry; recurrent processing theory; Anil Seth's living-body view; attention
+   schema theory; the sensorimotor theory (O'Regan and Noë), not on the expected list;
+   Orchestrated Objective Reduction; and Damasio's feeling-based theory ("Self comes to mind").
+   With the Sentient Horizons account that is ten entries, one over the tracker pattern's limit of
+   four to nine (rule 2.1). John raised the limit to ten for this tracker, the session's and the
+   master's lean, so every theory that passes the ruled test stays in and a weak one shows as weak
+   in its scores. Weakest step, stated when it was ruled: the limit was raised to fit the list, a
+   precedent for the other trackers. Out: unlimited associative learning (its proponents call it a
+   marker of when consciousness evolved, not an account of what makes a system conscious, so it
+   fails part 1), the midbrain theory (one source only, read strictly), and the other rows of Seth
+   and Bayne's table. Still open, needed before those theories are scored at stage 3: which
+   publication supplies the core claims where there are two (attention schema theory, 2015 or the
+   wider 2026 version; Seth's view, his 2025 paper or *Being You*; Damasio, the 2023 paper or the
+   2010 book).
 5. ~~The three scores and their formulas~~ **Ruled 2026-11-20 ("Yes to all five"):** core claims
    fixed from one named source; study weights by counted protections; no support score before two
    separate groups; core-claim predictions count double; a failure stands. See section 4.
@@ -256,7 +292,19 @@ with an estimate first.
    than half the core claims testable; ordered by support; ties to the greater weight of evidence;
    a shared rank unless the order survives reversing any one study; theories the evidence goes
    against stay in. See section 4.
-7. **The two-reader rule** and which outside model is the second reader.
+7. **The second reader: ruled 2026-11-20, "Yes, as you lean".** The session's recommendations, in
+   its wording. (a) The second reader is Google's Gemini, its strongest version on offer at the time
+   of reading. (b) It reads blind: it gets the prediction, the study and the wording of what counts
+   for and against, never the first reader's answer, so the stage 2 stop condition (disagreement on
+   more than a third of judgements) measures something, and the outside reader's judgement on every
+   Sentient Horizons row is a true first reading. (c) The exact model version is recorded on every
+   judgement, and a change of version is logged. (d) Stage 2 stays without spend if Gemini's free
+   tier covers the model (the material is public papers, so nothing private goes to Google); if it
+   does not, an estimate with a ceiling comes to John before any call. Weakest step, stated when it
+   was ruled: the two models learned from much of the same writing and can share a mistake, so
+   agreement shows the rules apply the same way twice, not that a judgement is right. The partial
+   answer, to be settled once the pilot shows how many judgements there are, is John reading a
+   random sample of agreed judgements as well as every disagreement, by a stated rule for drawing it.
 8. **Whether the weekly reading runs through the hibernation** from 2027-01-04.
 9. **The API workspace and key** for the weekly reading, with a cost estimate before any spend.
 
@@ -331,3 +379,91 @@ stage 3, once the first screen exists.
 
 **The address.** Open. minimumviablemind.com, .org and .net are taken (John's Cloudflare lookup of
 2026-11-20); the site stays at its present subdomain of sentient-horizons.com until John decides.
+
+## 12. Stage 1 result, 2026-11-20: the evidence base exists, with gaps
+
+Read the same evening by a research session, from pages it opened (sources below). Stage 1's stop
+condition was that no usable evidence base exists. One does, so stage 1 passes; what it lacks
+shapes stage 2.
+
+**What exists.**
+- **The ConTraSt database** of experiments sorted by theory (Yaron, Melloni, Pitts and Mudrik,
+  *Nature Human Behaviour* 6, 593–604, 2022, https://doi.org/10.1038/s41562-021-01284-5; free
+  preprint https://www.biorxiv.org/content/10.1101/2021.06.10.447863v1; site
+  https://contrastdb.tau.ac.il). A 2021 snapshot (412 experiments, https://osf.io/avz8b/) and a live
+  CSV export (481 experiments from 432 papers) can both be downloaded. Each experiment is marked as
+  supporting or challenging each of four families (global workspace, integrated information,
+  higher-order, and first-order with predictive processing), and as designed to test a theory,
+  only mentioning one, or interpreted afterwards (175, 121 and 185 of the 481). The site states
+  the data licence as CC-BY-SA-4.0.
+- **Doerig, Schurger and Herzog, "Hard criteria for empirical theories of consciousness"**
+  (*Cognitive Neuroscience* 12, 41–62, 2021, https://infoscience.epfl.ch/record/278952, open
+  access): four criteria, and a table rating 13 theories against them, which the authors call their
+  interpretation. A ready starting point for the testability score.
+- **The Cogitate Consortium's adversarial test** (*Nature* 642, 133–142, 2025,
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136, CC BY 4.0): predictions registered in advance
+  with pass or fail criteria (https://osf.io/92tbg/). It is the best material for the stage 2 pilot.
+- **Butlin, Long and colleagues' indicators of consciousness in AI systems** (arXiv 2308.08708,
+  2023; published in *Trends in Cognitive Sciences*, 2025): fourteen indicator properties drawn from
+  five theories, a starting point for predictions about machines.
+- **Five more adversarial collaborations funded by the Templeton World Charity Foundation**, none
+  with published results found (first-order against higher-order; integrated information against
+  predictive processing; rival higher-order theories; global workspace against integrated
+  information in animals).
+- **No existing site or living review ranks the theories themselves** that the search found.
+
+**What it lacks, and what that means for stage 2.**
+1. **No record of advance registration, and no prediction records.** Each ConTraSt verdict is the
+   original authors' own reading. Under the scoring rules, most of its rows would carry weight 1.
+2. **Most studies interpret their results afterwards.** ConTraSt's own paper says so, and its
+   tallies lean heavily one way (for example, by the research session's count from the live export,
+   integrated information 82 for against 7 challenging, global workspace 166 against 46).
+   **Ruled by John on 2026-11-20: "Yes to all four".** The four rules were the session's
+   recommendations; the wording is the session's. What matters is when the prediction was made,
+   not how the study was framed:
+   1. *(ruled)* **A study counts toward a prediction only if that prediction was on record, in a
+      dated publication by the theory's proponents, before the study first appeared.** The study's
+      own framing does not decide it: a study that explained its result afterwards still tests a
+      prediction the theory had already made, and a study that says it set out to test a theory
+      tests nothing if the prediction was first written in the same paper. A study that passes
+      counts at its ordinary weight under the protections rule of section 4.
+   2. *(ruled)* **A study that fails this is listed beside the prediction**, marked "explained
+      afterwards, not counted", and moves no score.
+   3. *(ruled)* **When the dates or the commitment are unclear, the study is not counted.** Not
+      counting is the safe direction, because the failure this guards against is a theory gaining
+      support it did not earn. Known cost, stated when it was ruled: some genuine tests of
+      loosely stated older theories will be left out. Whether an earlier statement committed the
+      theory to a result is a judgement, made as its own record and read by both readers.
+      A prediction dates from the first publication by the theory's proponents that states it; a
+      study dates from its earliest public appearance (its registration, its preprint or its
+      publication, whichever came first).
+   4. *(ruled)* **ConTraSt's "designed to test, mentioned, or interpreted afterwards" field is a
+      pointer** for which studies to check first, not the rule.
+3. **The licence is share-alike.** ConTraSt's data is under CC BY-SA 4.0, so anything built from
+   its data must be shared under the same terms; Minimum Viable Mind's data, like the AGI
+   Zeitgeist's, is under CC BY 4.0 (`LICENSE-DATA`). The tracker needs only ConTraSt's list of
+   studies: its verdicts are the authors' own readings, which the rules already set aside (every
+   judgement is made independently by two readers, and whether a study counts turns on when the
+   prediction was made, which ConTraSt does not record). **Ruled by John on 2026-11-20: "Yes to all
+   three".** The rules were the session's recommendations; the wording is the session's.
+   1. *(ruled)* **ConTraSt is used as a list of studies to read.** Every record is built from the
+      paper itself (its citation, its dates, what it found, and the tracker's own judgement), so the
+      tracker's tables stay under CC BY 4.0.
+   2. *(ruled)* **ConTraSt is credited** on the method page and on every record found through it.
+   3. *(ruled)* **At stage 3, a separate file shows ConTraSt's own verdicts beside the tracker's**,
+      under ConTraSt's licence (CC BY-SA 4.0), credited, and moving no score, because the gap between
+      what authors said of their own studies and what an independent reading finds is worth showing.
+      (The session had suggested deciding this at stage 3; John said yes now.) Any of ConTraSt's own
+      fields the tracker copies go in that file and nowhere else.
+
+   Not legal advice, stated when it was ruled: whether taking a bare list of studies from a
+   database counts as using it under its licence is not certain (some countries protect databases
+   as such, and CC 4.0 licences are written to cover that). The tracker acts as if it does, which
+   for a reading list asks only for the credit given anyway.
+4. **Coverage.** Attention schema theory, Seth's living-body view and the Sentient Horizons account
+   have no category; studies since 2022 are barely added (none from 2026); Cogitate is not in it.
+   These are built by hand.
+5. **Some sources were read only in part.** The Nature articles needed a sign-in, and Seth and
+   Bayne's review was read only in its abstract. Before stage 2 relies on any of them, their full
+   text is opened (John's Nature subscription may cover the Nature pieces, through a sign-in he makes
+   himself).
