@@ -1,0 +1,69 @@
+{
+  "packet_id": "out-mei-hot-unconscious-global",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Higher-order theories",
+  "core_claim": {
+    "quote": "However, according to HOT, for subjective experience to occur, what is absolutely essential is higher-order awareness. Global broadcasting tends to go hand-in-hand with higher-order awareness in typical cases, but not always.",
+    "source": {
+      "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+      "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+      "date": "2019-01-07"
+    }
+  },
+  "prediction": {
+    "statement": "Information about a stimulus can be represented widely across the brain, prefrontal and parietal cortex included, and stay stable there, while the person does not experience the stimulus.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-07",
+      "passage": "Therefore, a percept can reach a relatively stable global state and remain nonconscious, which accounts for potentially powerful forms of unconscious perception",
+      "source": {
+        "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+        "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+        "date": "2019-01-07"
+      }
+    },
+    "test_for": "The content of stimuli that people report not seeing, and cannot discriminate better than chance, is decodable or represented in prefrontal or parietal cortex as well as in sensory cortex.",
+    "test_against": "In designs sensitive enough to find stimulus content in prefrontal and parietal cortex when it is seen, the content of unseen stimuli is found only in sensory cortex, or only as a brief signal that fades."
+  },
+  "study": {
+    "name": "Where the brain represents seen and unseen pictures: a reanalysis of a high-precision fMRI dataset with models from computer vision",
+    "source": {
+      "citation": "Mei N, Soto D. Brain representation in conscious and unconscious vision. Journal of Cognition, 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12047638/",
+      "date": "2024-06-01"
+    },
+    "first_appeared": "2024-06-01 (preprint (bioRxiv 10.1101/2024.05.27.596053), per Europe PMC)",
+    "data_collected": {
+      "when": "not stated; before 2021-01-14",
+      "basis": "A reanalysis: the data are those of Mei et al. (2022b), whose preprint first appeared 2021-01-14."
+    }
+  },
+  "passages": [
+    {
+      "text": "The results showed that computer vision model representations strongly predicted brain responses in ventral visual cortex and in fronto-parietal regions to both conscious and unconscious contents.",
+      "source": {
+        "citation": "Mei N, Soto D. Brain representation in conscious and unconscious vision. Journal of Cognition, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12047638/",
+        "date": "2024-06-01"
+      }
+    },
+    {
+      "text": "Remarkably, these observations results held even when the analysis was restricted to observers that showed null perceptual sensitivity.",
+      "source": {
+        "citation": "Mei N, Soto D. Brain representation in conscious and unconscious vision. Journal of Cognition, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12047638/",
+        "date": "2024-06-01"
+      }
+    },
+    {
+      "text": "The involvement of fronto-parietal cortex in the representation of unconscious content, along with the significant generalization between conscious and unconscious representations, suggests that the functional role of fronto-parietal cortex in conscious perception is unlikely related to the broadcasting of information, as proposed by the global neuronal workspace model (Dehaene et al., 1998).",
+      "source": {
+        "citation": "Mei N, Soto D. Brain representation in conscious and unconscious vision. Journal of Cognition, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12047638/",
+        "date": "2024-06-01"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

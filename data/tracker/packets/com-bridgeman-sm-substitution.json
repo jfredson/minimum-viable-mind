@@ -1,0 +1,81 @@
+{
+  "packet_id": "com-bridgeman-sm-substitution",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "The sensorimotor theory",
+  "core_claim": {
+    "quote": "The sensory modalities, according to the present proposal, are constituted by distinct patterns of sensorimotor contingency.",
+    "source": {
+      "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+      "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+      "date": "2001-10"
+    }
+  },
+  "prediction": {
+    "statement": "Which sense an experience belongs to follows the pattern of how input changes with movement, not the nerve that carries it: with practice, users of a camera-to-touch device experience objects as out in space with sight-like features, and changing those patterns should change where a sensation is felt.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2001-10",
+      "passage": "The fact that stimulation is provided through the skin should be irrelevant, providing the stimulation obeys the required sensorimotor laws.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    "test_for": "After practice with active control, users of a device that turns camera images into touch (or sound) report objects as located in space rather than on the skin, react to a sudden looming of the image as to an approaching object, and keep these reports when the device is moved to another patch of skin.",
+    "test_against": "After extensive practice with active control, users still experience the stimulation only as touch on the skin (or sound), with an object's position known only by working it out."
+  },
+  "study": {
+    "name": "Pressing on the eye for an hour: does the light seen (a 'pressure phosphene') come to move with the finger, as practice with a new sensorimotor pattern might predict?",
+    "source": {
+      "citation": "Bridgeman B, Gaunt J, Plumb E, Quan J, Chiu E, Woods C. A test of the sensorimotor account of vision and visual perception. Perception 37(6):811-814 (discussion 815), 2008",
+      "url": "https://europepmc.org/article/MED/18686701",
+      "date": "2008"
+    },
+    "first_appeared": "2008 (publication (Perception 37(6); no earlier preprint or registration found))",
+    "data_collected": {
+      "when": "not stated in the abstract; before 2008",
+      "basis": "Only the abstract was read; it gives no collection dates. The data were collected before the paper appeared."
+    }
+  },
+  "passages": [
+    {
+      "text": "The fact that stimulation is provided through the skin should be irrelevant, providing the stimulation obeys the required sensorimotor laws.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    {
+      "text": "As Blackmore rightly says, according to our theory the locus of sensation will depend on the nature of the sensorimotor contingencies, and by changing these laws, it should be possible to change the locus of perception.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    {
+      "text": "Thus, since normally input coming through the auditory nerve will change in certain ways when the head or body moves, when later, without moving, the organism is stimulated through the auditory nerve, the stimulation will be perceived as belonging to the auditory modality. This then provides an explanation of audition without head movements. Similar arguments can be made for brief visual stimulations, phosphenes, and stimulation of visual cortex à la Penfield, as well as for phantom limbs.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    {
+      "text": "A test of the sensorimotor theory giving it every advantage had six observers in darkness moving their fingers along the eye and observing phosphenes for 1 h and 2400 motion cycles; the phosphene always obeyed the doctrine of specific nerve energies, never adapting or changing modality as the sensorimotor theory predicts.",
+      "source": {
+        "citation": "Bridgeman B, Gaunt J, Plumb E, Quan J, Chiu E, Woods C. A test of the sensorimotor account of vision and visual perception. Perception 37(6):811-814 (discussion 815), 2008",
+        "url": "https://europepmc.org/article/MED/18686701",
+        "date": "2008"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2001-10 (oregan-noe-2001)",
+    "study_first_appeared": "2008 (bridgeman-2008, publication)"
+  },
+  "this_reading_is": "the second reading"
+}

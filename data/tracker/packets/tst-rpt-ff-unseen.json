@@ -1,0 +1,69 @@
+{
+  "packet_id": "tst-rpt-ff-unseen",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES IT SEPARATE the theory from a rival: does at least one theory on the list of rivals predict something different (not merely stay silent)? If yes, name the rival or rivals, and say whether your view of the rival comes from the material given or from your own knowledge. Answer in JSON: {\"could_fail\": true|false, \"separates\": true|false, \"separates_from\": [ids], \"rival_view_from\": \"material\"|\"own knowledge\"|\"both\"|\"none\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Recurrent processing theory",
+  "core_claim": {
+    "quote": "In other words, both Stage 1 and Stage 2 processing are unconscious, no matter what areas are reached.",
+    "source": {
+      "citation": "Lamme VAF. How neuroscience will change our view on consciousness. Cognitive Neuroscience 1(3):204-220, 2010 (discussion paper; commentaries and response follow on pp. 220-240)",
+      "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/108967/1/Timmermans%E2%80%A6%202010%20-%20PCNS%20-%20Experiencing%20more%20complexity%20than%20we.pdf",
+      "date": "2010-08-18"
+    }
+  },
+  "prediction": {
+    "statement": "A stimulus whose processing is cut off before recurrent processing can start (for example by a strong mask shown right after it) is not seen, even though its signals still reach high-level and prefrontal areas and can still affect behaviour.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2006-09-25",
+      "passage": "Many studies, in both humans and monkeys, indicate that no matter what area of the brain is reached by the feedforward sweep, this in itself is not producing (reportable) conscious experience.",
+      "source": {
+        "citation": "Lamme VAF. Towards a true neural stance on consciousness. Trends in Cognitive Sciences 10(11):494-501, 2006",
+        "url": "https://pages.ucsd.edu/~jpineda/COGS175/readings/Lamme.pdf",
+        "date": "2006-09-25"
+      }
+    },
+    "test_for": "A masked stimulus that people cannot detect above chance still evokes activity in high-level visual or prefrontal areas, or still changes behaviour (for example slows a response), while the late recurrent signals in visual cortex are absent.",
+    "test_against": "A stimulus whose processing has been restricted to the first forward pass (recurrent signals in visual cortex shown to be absent) is nonetheless detected and reported as seen."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "A neural argument against the former would be that activation of cortical neurons per se, even activation of frontoparietal neurons, is insufficient for conscious experience, as is shown by various masking experiments",
+      "source": {
+        "citation": "Lamme VAF. Towards a true neural stance on consciousness. Trends in Cognitive Sciences 10(11):494-501, 2006",
+        "url": "https://pages.ucsd.edu/~jpineda/COGS175/readings/Lamme.pdf",
+        "date": "2006-09-25"
+      }
+    },
+    {
+      "passage": "Apparently, a feedforward convergence of information towards the prefrontal cortex in itself is not yielding any conscious sensation, even when this information activates processes such as control and inhibition.",
+      "source": {
+        "citation": "Lamme VAF. How neuroscience will change our view on consciousness. Cognitive Neuroscience 1(3):204-220, 2010 (discussion paper; commentaries and response follow on pp. 220-240)",
+        "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/108967/1/Timmermans%E2%80%A6%202010%20-%20PCNS%20-%20Experiencing%20more%20complexity%20than%20we.pdf",
+        "date": "2010-08-18"
+      }
+    },
+    {
+      "passage": "In short, when visual processing is artificially restricted to the feedforward sweep, it appears that features are extracted and that potential motor responses are activated yet that people remain completely unconscious of these events or of the visual stimulus that has set them in motion.",
+      "source": {
+        "citation": "Lamme VAF. Challenges for theories of consciousness: seeing or knowing, the missing ingredient and how to deal with it. Philosophical Transactions of the Royal Society B 373:20170344, 2018",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6074090/",
+        "date": "2018-07-30"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,57 @@
+{
+  "packet_id": "com-dellert-rpt-other-senses",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Recurrent processing theory",
+  "core_claim": {
+    "quote": "Whether this produces a conscious sensation or not is determined by whether the areas involved engage in recurrent interactions.",
+    "source": {
+      "citation": "Lamme VAF. How neuroscience will change our view on consciousness. Cognitive Neuroscience 1(3):204-220, 2010 (discussion paper; commentaries and response follow on pp. 220-240)",
+      "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/108967/1/Timmermans%E2%80%A6%202010%20-%20PCNS%20-%20Experiencing%20more%20complexity%20than%20we.pdf",
+      "date": "2010-08-18"
+    }
+  },
+  "prediction": {
+    "statement": "Hearing works like seeing: being aware of a sound goes with recurrent processing in auditory cortex, showing as an early awareness-related wave over auditory areas, and needs no fronto-parietal activation when nothing is reported.",
+    "stated_by": "the site, inferred",
+    "first_stated": {
+      "date": "2010-08-18",
+      "passage": "Whether this produces a conscious sensation or not is determined by whether the areas involved engage in recurrent interactions.",
+      "source": {
+        "citation": "Lamme VAF. How neuroscience will change our view on consciousness. Cognitive Neuroscience 1(3):204-220, 2010 (discussion paper; commentaries and response follow on pp. 220-240)",
+        "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/108967/1/Timmermans%E2%80%A6%202010%20-%20PCNS%20-%20Experiencing%20more%20complexity%20than%20we.pdf",
+        "date": "2010-08-18"
+      }
+    },
+    "test_for": "Heard and unheard sounds, physically the same, differ early in auditory cortex (an auditory awareness negativity, or auditory-cortex activity), and, when the sounds are not reported, not in fronto-parietal cortex.",
+    "test_against": "Awareness of sounds that are not reported goes with reliable fronto-parietal activation, or with no early difference in auditory cortex."
+  },
+  "study": {
+    "name": "Auditory awareness without report, measured with fMRI (inattentional deafness)",
+    "source": {
+      "citation": "Dellert T, Balster H, Schlossmacher I, Bruchmann M, Moeck R, Straube T. Neural correlates of consciousness in an auditory no-report fMRI study. bioRxiv 2025.05.16.654468; published in Current Biology, 2025 (10.1016/j.cub.2025.10.026)",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.05.16.654468v1.full",
+      "date": "2025-05-21"
+    },
+    "first_appeared": "2025-05-21 (preprint (bioRxiv))",
+    "data_collected": {
+      "when": "not stated; before 2025-05-21",
+      "basis": "The preprint gives no collection dates (methods searched 2026-11-20); the data were collected before the preprint appeared."
+    }
+  },
+  "passages": [
+    {
+      "text": "Whether this produces a conscious sensation or not is determined by whether the areas involved engage in recurrent interactions.",
+      "source": {
+        "citation": "Lamme VAF. How neuroscience will change our view on consciousness. Cognitive Neuroscience 1(3):204-220, 2010 (discussion paper; commentaries and response follow on pp. 220-240)",
+        "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/108967/1/Timmermans%E2%80%A6%202010%20-%20PCNS%20-%20Experiencing%20more%20complexity%20than%20we.pdf",
+        "date": "2010-08-18"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "none: site-inferred, never stated by the proponent in an opened publication",
+    "study_first_appeared": "2025-05-21 (bioRxiv preprint)"
+  },
+  "this_reading_is": "the second reading"
+}

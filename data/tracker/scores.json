@@ -1,5 +1,5 @@
 {
-  "mode": "settled",
+  "mode": "provisional",
   "readers": [
     "claude",
     "gemini"
@@ -7,16 +7,115 @@
   "judgement_status": {
     "agreed": 32,
     "ruled": 17,
-    "one-reader": 0,
+    "one-reader": 92,
     "disagreed": 0,
     "open-for-john": 0,
     "unread": 0,
     "superseded": 1
   },
-  "unsettled": [],
+  "unsettled": [
+    "com-bandara-hot-pfc-involved",
+    "com-bandara-rpt-no-report-sensory",
+    "com-bandara-rpt-unattended-local",
+    "com-bridgeman-sm-substitution",
+    "com-damasio-tranel-2013-dam-insula",
+    "com-dellert-hot-pfc-involved",
+    "com-dellert-rpt-no-report-sensory",
+    "com-dellert-rpt-other-senses",
+    "com-eiserbeck-rpt-unattended-local",
+    "com-eiserbeck-rpt-van",
+    "com-filimonov2022-rpt-other-senses",
+    "com-filimonov2022-rpt-van",
+    "com-filimonov2024-rpt-attention-independent",
+    "com-filimonov2024-rpt-no-report-sensory",
+    "com-filimonov2024-rpt-other-senses",
+    "com-hobot-hot-awareness-performance",
+    "com-hobot-hot-pfc-disrupt",
+    "com-jicol-seth-presence-match",
+    "com-khan-orch-anaesthetic-mt",
+    "com-li-orch-anaesthetic-mt",
+    "com-martin-hot-awareness-performance",
+    "com-martin-hot-pfc-disrupt",
+    "com-mei-hot-unconscious-global",
+    "com-suzuki-seth-interoceptive-ownership",
+    "com-suzuki-seth-low-interoception-more-illusion",
+    "com-wilterson-agent-ast-schema-control",
+    "com-wilterson-tpj-ast-control",
+    "com-wilterson-tpj-ast-tpj",
+    "out-bandara-rpt-unattended-local",
+    "out-dellert-hot-pfc-involved",
+    "out-eiserbeck-rpt-unattended-local",
+    "out-filimonov2022-rpt-van",
+    "out-hobot-hot-awareness-performance",
+    "out-hobot-hot-pfc-disrupt",
+    "out-jicol-seth-presence-match",
+    "out-khan-orch-anaesthetic-mt",
+    "out-li-orch-anaesthetic-mt",
+    "out-martin-hot-awareness-performance",
+    "out-martin-hot-pfc-disrupt",
+    "out-mei-hot-unconscious-global",
+    "out-suzuki-seth-low-interoception-more-illusion",
+    "out-wilterson-agent-ast-schema-control",
+    "out-wilterson-tpj-ast-control",
+    "tst-ast-claims",
+    "tst-ast-control",
+    "tst-ast-covary",
+    "tst-ast-domain",
+    "tst-ast-graded",
+    "tst-ast-schema-control",
+    "tst-ast-tpj",
+    "tst-dam-ai",
+    "tst-dam-feeling-required",
+    "tst-dam-insula",
+    "tst-dam-no-nervous-system",
+    "tst-dam-nonneural",
+    "tst-dam-nss",
+    "tst-dam-subcortical",
+    "tst-hot-awareness-performance",
+    "tst-hot-first-order-insufficient",
+    "tst-hot-pfc-disrupt",
+    "tst-hot-pfc-involved",
+    "tst-hot-unconscious-global",
+    "tst-orch-anaesthetic-mt",
+    "tst-orch-coherence-time",
+    "tst-orch-dp-collapse",
+    "tst-orch-mass-time",
+    "tst-orch-mt-coherence",
+    "tst-orch-mt-entangle",
+    "tst-orch-mt-vibration",
+    "tst-orch-synaptic-cyto",
+    "tst-rpt-attention-independent",
+    "tst-rpt-feedback-needed",
+    "tst-rpt-ff-unseen",
+    "tst-rpt-no-report-sensory",
+    "tst-rpt-other-senses",
+    "tst-rpt-unattended-local",
+    "tst-rpt-van",
+    "tst-seth-ai-not-by-computation",
+    "tst-seth-expectation-speeds-access",
+    "tst-seth-feeling-from-prediction",
+    "tst-seth-interoceptive-ownership",
+    "tst-seth-interoceptive-suppression",
+    "tst-seth-living-only",
+    "tst-seth-low-interoception-more-illusion",
+    "tst-seth-presence-match",
+    "tst-sm-active-control",
+    "tst-sm-change-blindness",
+    "tst-sm-colour-contingent",
+    "tst-sm-inattentional",
+    "tst-sm-inversion",
+    "tst-sm-no-ncc",
+    "tst-sm-substitution"
+  ],
   "theories": {
     "gwt": {
       "name": "Global workspace theory",
+      "judgement_status": {
+        "ruled": 7,
+        "agreed": 17,
+        "superseded": 1
+      },
+      "one_reader_only": false,
       "testability": 80.0,
       "testability_by_claim": {
         "gwt-c1": 1.0,
@@ -57,6 +156,11 @@
     },
     "iit": {
       "name": "Integrated information theory",
+      "judgement_status": {
+        "agreed": 14,
+        "ruled": 6
+      },
+      "one_reader_only": false,
       "testability": 60.0,
       "testability_by_claim": {
         "iit-c1": 0.0,
@@ -101,6 +205,11 @@
     },
     "sh": {
       "name": "The Sentient Horizons account",
+      "judgement_status": {
+        "agreed": 1,
+        "ruled": 4
+      },
+      "one_reader_only": false,
       "testability": 25.0,
       "testability_by_claim": {
         "sh-c1": 0.0,
@@ -135,10 +244,342 @@
       },
       "group": "not yet defined sharply enough to rank",
       "leans_against": false
+    },
+    "hot": {
+      "name": "Higher-order theories",
+      "judgement_status": {
+        "one-reader": 18
+      },
+      "one_reader_only": true,
+      "testability": 60.0,
+      "testability_by_claim": {
+        "hot-c1": 1.0,
+        "hot-c2": 0.0,
+        "hot-c3": 1.0,
+        "hot-c4": 1.0,
+        "hot-c5": 0.0
+      },
+      "past_bar": true,
+      "claims_lacking_for_bar": [
+        "hot-c2",
+        "hot-c5"
+      ],
+      "support": 62.5,
+      "support_rests_on": {
+        "counted_outcomes": 4,
+        "studies": [
+          "dellert-2025",
+          "hobot-2023",
+          "martin-2023",
+          "mei-soto-2025"
+        ],
+        "groups": [
+          "Hsu group (last and corresponding author Tzu-Yu Hsu, Taipei Medical University)",
+          "Sandberg group (last author Kristian Sandberg, Aarhus University); first author at the Jagiellonian University Consciousness Lab",
+          "Soto group (last author D. Soto, by the paper's author list)",
+          "Straube group (last author; participants recruited at the University of Münster)"
+        ],
+        "total_weight": 16,
+        "weighted_sum": 4
+      },
+      "left_to_test": 50.0,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 4,
+        "placeholders_for_claims_with_none": [
+          "hot-c2",
+          "hot-c5"
+        ],
+        "untested": 3,
+        "total": 6
+      },
+      "group": "ranked",
+      "leans_against": false
+    },
+    "rpt": {
+      "name": "Recurrent processing theory",
+      "judgement_status": {
+        "one-reader": 21
+      },
+      "one_reader_only": true,
+      "testability": 41.7,
+      "testability_by_claim": {
+        "rpt-c1": 0.0,
+        "rpt-c2": 1.0,
+        "rpt-c3": 1.0,
+        "rpt-c4": 0.0,
+        "rpt-c5": 0.5,
+        "rpt-c6": 0.0
+      },
+      "past_bar": false,
+      "claims_lacking_for_bar": [
+        "rpt-c1",
+        "rpt-c4",
+        "rpt-c6"
+      ],
+      "support": null,
+      "support_rests_on": {
+        "counted_outcomes": 1,
+        "studies": [
+          "filimonov-2022"
+        ],
+        "groups": [
+          "Koivisto group (last author; University of Turku)"
+        ],
+        "total_weight": 4,
+        "weighted_sum": 4
+      },
+      "left_to_test": 83.3,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 3,
+        "placeholders_for_claims_with_none": [
+          "rpt-c1",
+          "rpt-c4",
+          "rpt-c6"
+        ],
+        "untested": 5,
+        "total": 6
+      },
+      "group": "not yet defined sharply enough to rank",
+      "leans_against": false
+    },
+    "seth": {
+      "name": "Anil Seth's living-body view",
+      "judgement_status": {
+        "one-reader": 13
+      },
+      "one_reader_only": true,
+      "testability": 0.0,
+      "testability_by_claim": {
+        "seth-c1": 0.0,
+        "seth-c2": 0.0,
+        "seth-c3": 0.0,
+        "seth-c4": 0.0,
+        "seth-c5": 0.0,
+        "seth-c6": 0.0
+      },
+      "past_bar": false,
+      "claims_lacking_for_bar": [
+        "seth-c1",
+        "seth-c2",
+        "seth-c3",
+        "seth-c4",
+        "seth-c5",
+        "seth-c6"
+      ],
+      "support": null,
+      "support_rests_on": {
+        "counted_outcomes": 0,
+        "studies": [],
+        "groups": [],
+        "total_weight": 0,
+        "weighted_sum": 0
+      },
+      "left_to_test": 100.0,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 0,
+        "placeholders_for_claims_with_none": [
+          "seth-c1",
+          "seth-c2",
+          "seth-c3",
+          "seth-c4",
+          "seth-c5",
+          "seth-c6"
+        ],
+        "untested": 6,
+        "total": 6
+      },
+      "group": "not yet defined sharply enough to rank",
+      "leans_against": false
+    },
+    "ast": {
+      "name": "Attention schema theory",
+      "judgement_status": {
+        "one-reader": 12
+      },
+      "one_reader_only": true,
+      "testability": 16.7,
+      "testability_by_claim": {
+        "ast-c1": 1.0,
+        "ast-c2": 0.0,
+        "ast-c3": 0.0,
+        "ast-c4": 0.0,
+        "ast-c5": 0.0,
+        "ast-c6": 0.0
+      },
+      "past_bar": false,
+      "claims_lacking_for_bar": [
+        "ast-c2",
+        "ast-c3",
+        "ast-c4",
+        "ast-c5",
+        "ast-c6"
+      ],
+      "support": null,
+      "support_rests_on": {
+        "counted_outcomes": 0,
+        "studies": [],
+        "groups": [],
+        "total_weight": 0,
+        "weighted_sum": 0
+      },
+      "left_to_test": 100.0,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 1,
+        "placeholders_for_claims_with_none": [
+          "ast-c2",
+          "ast-c3",
+          "ast-c4",
+          "ast-c5",
+          "ast-c6"
+        ],
+        "untested": 6,
+        "total": 6
+      },
+      "group": "not yet defined sharply enough to rank",
+      "leans_against": false
+    },
+    "sensorimotor": {
+      "name": "The sensorimotor theory",
+      "judgement_status": {
+        "one-reader": 8
+      },
+      "one_reader_only": true,
+      "testability": 16.7,
+      "testability_by_claim": {
+        "sm-c1": 0.0,
+        "sm-c2": 0.0,
+        "sm-c3": 0.0,
+        "sm-c4": 0.0,
+        "sm-c5": 0.0,
+        "sm-c6": 1.0
+      },
+      "past_bar": false,
+      "claims_lacking_for_bar": [
+        "sm-c1",
+        "sm-c2",
+        "sm-c3",
+        "sm-c4",
+        "sm-c5"
+      ],
+      "support": null,
+      "support_rests_on": {
+        "counted_outcomes": 0,
+        "studies": [],
+        "groups": [],
+        "total_weight": 0,
+        "weighted_sum": 0
+      },
+      "left_to_test": 100.0,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 1,
+        "placeholders_for_claims_with_none": [
+          "sm-c1",
+          "sm-c2",
+          "sm-c3",
+          "sm-c4",
+          "sm-c5"
+        ],
+        "untested": 6,
+        "total": 6
+      },
+      "group": "not yet defined sharply enough to rank",
+      "leans_against": false
+    },
+    "orch-or": {
+      "name": "Orchestrated Objective Reduction",
+      "judgement_status": {
+        "one-reader": 12
+      },
+      "one_reader_only": true,
+      "testability": 0.0,
+      "testability_by_claim": {
+        "orch-c1": 0.0,
+        "orch-c2": 0.0,
+        "orch-c3": 0.0,
+        "orch-c4": 0.0,
+        "orch-c5": 0.0,
+        "orch-c6": 0.0
+      },
+      "past_bar": false,
+      "claims_lacking_for_bar": [
+        "orch-c1",
+        "orch-c2",
+        "orch-c3",
+        "orch-c4",
+        "orch-c5",
+        "orch-c6"
+      ],
+      "support": null,
+      "support_rests_on": {
+        "counted_outcomes": 0,
+        "studies": [],
+        "groups": [],
+        "total_weight": 0,
+        "weighted_sum": 0
+      },
+      "left_to_test": 100.0,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 0,
+        "placeholders_for_claims_with_none": [
+          "orch-c1",
+          "orch-c2",
+          "orch-c3",
+          "orch-c4",
+          "orch-c5",
+          "orch-c6"
+        ],
+        "untested": 6,
+        "total": 6
+      },
+      "group": "not yet defined sharply enough to rank",
+      "leans_against": false
+    },
+    "damasio": {
+      "name": "Damasio's feeling-based theory",
+      "judgement_status": {
+        "one-reader": 8
+      },
+      "one_reader_only": true,
+      "testability": 50.0,
+      "testability_by_claim": {
+        "dam-c1": 0.0,
+        "dam-c2": 1.0,
+        "dam-c3": 0.0,
+        "dam-c4": 1.0
+      },
+      "past_bar": false,
+      "claims_lacking_for_bar": [
+        "dam-c1",
+        "dam-c3"
+      ],
+      "support": null,
+      "support_rests_on": {
+        "counted_outcomes": 0,
+        "studies": [],
+        "groups": [],
+        "total_weight": 0,
+        "weighted_sum": 0
+      },
+      "left_to_test": 100.0,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 2,
+        "placeholders_for_claims_with_none": [
+          "dam-c1",
+          "dam-c3"
+        ],
+        "untested": 4,
+        "total": 4
+      },
+      "group": "not yet defined sharply enough to rank",
+      "leans_against": false
     }
   },
   "ranking": {
     "ranked": [
+      {
+        "theory": "hot",
+        "rank": 1
+      },
       {
         "theory": "iit",
         "rank": 1
@@ -149,19 +590,622 @@
       }
     ],
     "shared_because_one_study_could_swap_them": {
+      "hot|iit": "mei-soto-2025",
       "iit|gwt": "dellert-2025"
     },
     "testable_too_little_tested": [],
     "not_yet_defined_sharply_enough": [
-      "sh"
+      "damasio",
+      "rpt",
+      "sh",
+      "ast",
+      "sensorimotor",
+      "seth",
+      "orch-or"
     ]
   },
   "headline": {
-    "tested": 8,
-    "distinguishing_predictions": 12,
-    "share_tested": 66.7,
+    "tested": 12,
+    "distinguishing_predictions": 23,
+    "share_tested": 52.2,
     "note": "Tested at all (ruled by John: 'A, tested at all'): the share of distinguishing predictions tied to core claims that at least one counted study has tested. It measures how widely, not how firmly; the support scores carry the strength. It can fall when predictions are added."
   },
+  "predictions": {
+    "gwt-pfc-content": {
+      "theory": "gwt",
+      "state": "mixed",
+      "state_weighted_reading": "mixed",
+      "counted_studies": [
+        {
+          "study": "cogitate-2025",
+          "value": 0,
+          "weight": 4
+        }
+      ],
+      "questions": []
+    },
+    "gwt-ignition": {
+      "theory": "gwt",
+      "state": "mixed",
+      "state_weighted_reading": "contradicted",
+      "counted_studies": [
+        {
+          "study": "cogitate-2025",
+          "value": 0,
+          "weight": 4
+        },
+        {
+          "study": "dellert-2025",
+          "value": -1,
+          "weight": 2
+        }
+      ],
+      "questions": []
+    },
+    "gwt-synchrony": {
+      "theory": "gwt",
+      "state": "contradicted",
+      "state_weighted_reading": "contradicted",
+      "counted_studies": [
+        {
+          "study": "cogitate-2025",
+          "value": -1,
+          "weight": 4
+        }
+      ],
+      "questions": []
+    },
+    "gwt-topdown": {
+      "theory": "gwt",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "gwt-late": {
+      "theory": "gwt",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "gwt-wm-transform": {
+      "theory": "gwt",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "gwt-offset": {
+      "theory": "gwt",
+      "state": "contradicted",
+      "state_weighted_reading": "contradicted",
+      "counted_studies": [
+        {
+          "study": "cogitate-2025",
+          "value": -1,
+          "weight": 4
+        }
+      ],
+      "questions": []
+    },
+    "gwt-silent": {
+      "theory": "gwt",
+      "state": "supported",
+      "state_weighted_reading": "supported",
+      "counted_studies": [
+        {
+          "study": "cogitate-2025",
+          "value": 1,
+          "weight": 4
+        }
+      ],
+      "questions": []
+    },
+    "iit-posterior": {
+      "theory": "iit",
+      "state": "mixed",
+      "state_weighted_reading": "supported",
+      "counted_studies": [
+        {
+          "study": "dellert-2025",
+          "value": 1,
+          "weight": 2
+        },
+        {
+          "study": "cogitate-2025",
+          "value": 1,
+          "weight": 4
+        },
+        {
+          "study": "bellet-2022",
+          "value": 0,
+          "weight": 2
+        }
+      ],
+      "questions": []
+    },
+    "iit-sustained": {
+      "theory": "iit",
+      "state": "mixed",
+      "state_weighted_reading": "mixed",
+      "counted_studies": [
+        {
+          "study": "cogitate-2025",
+          "value": 0,
+          "weight": 4
+        }
+      ],
+      "questions": []
+    },
+    "iit-synchrony": {
+      "theory": "iit",
+      "state": "contradicted",
+      "state_weighted_reading": "contradicted",
+      "counted_studies": [
+        {
+          "study": "cogitate-2025",
+          "value": -1,
+          "weight": 4
+        }
+      ],
+      "questions": []
+    },
+    "iit-phi-states": {
+      "theory": "iit",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "iit-inactive": {
+      "theory": "iit",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "iit-agnosia": {
+      "theory": "iit",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "iit-connections": {
+      "theory": "iit",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "iit-feedforward": {
+      "theory": "iit",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": [
+        "machines"
+      ]
+    },
+    "sh-central": {
+      "theory": "sh",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "sh-split-novel": {
+      "theory": "sh",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": [
+        "features"
+      ]
+    },
+    "sh-nosplit-flexible": {
+      "theory": "sh",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "sh-enriching": {
+      "theory": "sh",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": [
+        "features"
+      ]
+    },
+    "sh-no-bare-awareness": {
+      "theory": "sh",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": [
+        "features"
+      ]
+    },
+    "hot-first-order-insufficient": {
+      "theory": "hot",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "hot-unconscious-global": {
+      "theory": "hot",
+      "state": "supported",
+      "state_weighted_reading": "supported",
+      "counted_studies": [
+        {
+          "study": "mei-soto-2025",
+          "value": 1,
+          "weight": 2
+        }
+      ],
+      "questions": []
+    },
+    "hot-pfc-involved": {
+      "theory": "hot",
+      "state": "mixed",
+      "state_weighted_reading": "mixed",
+      "counted_studies": [
+        {
+          "study": "dellert-2025",
+          "value": 0,
+          "weight": 2
+        }
+      ],
+      "questions": []
+    },
+    "hot-pfc-disrupt": {
+      "theory": "hot",
+      "state": "mixed",
+      "state_weighted_reading": "mixed",
+      "counted_studies": [
+        {
+          "study": "martin-2023",
+          "value": 0,
+          "weight": 2
+        },
+        {
+          "study": "hobot-2023",
+          "value": 0,
+          "weight": 2
+        }
+      ],
+      "questions": []
+    },
+    "hot-awareness-performance": {
+      "theory": "hot",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "rpt-ff-unseen": {
+      "theory": "rpt",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "rpt-feedback-needed": {
+      "theory": "rpt",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "rpt-van": {
+      "theory": "rpt",
+      "state": "supported",
+      "state_weighted_reading": "supported",
+      "counted_studies": [
+        {
+          "study": "filimonov-2022",
+          "value": 1,
+          "weight": 2
+        }
+      ],
+      "questions": []
+    },
+    "rpt-no-report-sensory": {
+      "theory": "rpt",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "rpt-unattended-local": {
+      "theory": "rpt",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "rpt-attention-independent": {
+      "theory": "rpt",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "rpt-other-senses": {
+      "theory": "rpt",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "seth-living-only": {
+      "theory": "seth",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "seth-ai-not-by-computation": {
+      "theory": "seth",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "seth-expectation-speeds-access": {
+      "theory": "seth",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "seth-presence-match": {
+      "theory": "seth",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "seth-interoceptive-ownership": {
+      "theory": "seth",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "seth-low-interoception-more-illusion": {
+      "theory": "seth",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "seth-interoceptive-suppression": {
+      "theory": "seth",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "seth-feeling-from-prediction": {
+      "theory": "seth",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "ast-graded": {
+      "theory": "ast",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "ast-covary": {
+      "theory": "ast",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "ast-claims": {
+      "theory": "ast",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "ast-control": {
+      "theory": "ast",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "ast-schema-control": {
+      "theory": "ast",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "ast-tpj": {
+      "theory": "ast",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "ast-domain": {
+      "theory": "ast",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "sm-colour-contingent": {
+      "theory": "sensorimotor",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "sm-inversion": {
+      "theory": "sensorimotor",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "sm-active-control": {
+      "theory": "sensorimotor",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "sm-substitution": {
+      "theory": "sensorimotor",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "sm-change-blindness": {
+      "theory": "sensorimotor",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "sm-inattentional": {
+      "theory": "sensorimotor",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "sm-no-ncc": {
+      "theory": "sensorimotor",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "orch-mt-coherence": {
+      "theory": "orch-or",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "orch-mt-entangle": {
+      "theory": "orch-or",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "orch-synaptic-cyto": {
+      "theory": "orch-or",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "orch-mt-vibration": {
+      "theory": "orch-or",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "orch-dp-collapse": {
+      "theory": "orch-or",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "orch-mass-time": {
+      "theory": "orch-or",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "orch-coherence-time": {
+      "theory": "orch-or",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "orch-anaesthetic-mt": {
+      "theory": "orch-or",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "dam-feeling-required": {
+      "theory": "damasio",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "dam-subcortical": {
+      "theory": "damasio",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "dam-insula": {
+      "theory": "damasio",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "dam-nonneural": {
+      "theory": "damasio",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "dam-nss": {
+      "theory": "damasio",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "dam-no-nervous-system": {
+      "theory": "damasio",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    },
+    "dam-ai": {
+      "theory": "damasio",
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
+      "questions": []
+    }
+  },
+  "state_readings_differ": [
+    "gwt-ignition",
+    "iit-posterior"
+  ],
   "counted_outcomes": [
     {
       "judgement": "out-cogitate-gwt-pfc-content",
@@ -283,6 +1327,61 @@
       "weight": 2,
       "multiplier": 2,
       "status": "agreed"
+    },
+    {
+      "judgement": "out-mei-hot-unconscious-global",
+      "theory": "hot",
+      "prediction": "hot-unconscious-global",
+      "study": "mei-soto-2025",
+      "group": "Soto group (last author D. Soto, by the paper's author list)",
+      "value": 1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-dellert-hot-pfc-involved",
+      "theory": "hot",
+      "prediction": "hot-pfc-involved",
+      "study": "dellert-2025",
+      "group": "Straube group (last author; participants recruited at the University of Münster)",
+      "value": 0,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-martin-hot-pfc-disrupt",
+      "theory": "hot",
+      "prediction": "hot-pfc-disrupt",
+      "study": "martin-2023",
+      "group": "Hsu group (last and corresponding author Tzu-Yu Hsu, Taipei Medical University)",
+      "value": 0,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-hobot-hot-pfc-disrupt",
+      "theory": "hot",
+      "prediction": "hot-pfc-disrupt",
+      "study": "hobot-2023",
+      "group": "Sandberg group (last author Kristian Sandberg, Aarhus University); first author at the Jagiellonian University Consciousness Lab",
+      "value": 0,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
+    },
+    {
+      "judgement": "out-filimonov2022-rpt-van",
+      "theory": "rpt",
+      "prediction": "rpt-van",
+      "study": "filimonov-2022",
+      "group": "Koivisto group (last author; University of Turku)",
+      "value": 1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "one-reader"
     }
   ],
   "alternative_readings": {
@@ -290,10 +1389,21 @@
       "groups": {
         "gwt": "ranked",
         "iit": "ranked",
-        "sh": "not yet defined sharply enough to rank"
+        "sh": "not yet defined sharply enough to rank",
+        "hot": "ranked",
+        "rpt": "testable, too little tested to rank",
+        "seth": "not yet defined sharply enough to rank",
+        "ast": "testable, too little tested to rank",
+        "sensorimotor": "testable, too little tested to rank",
+        "orch-or": "testable, too little tested to rank",
+        "damasio": "not yet defined sharply enough to rank"
       },
       "ranking": {
         "ranked": [
+          {
+            "theory": "hot",
+            "rank": 1
+          },
           {
             "theory": "iit",
             "rank": 1
@@ -304,15 +1414,23 @@
           }
         ],
         "shared_because_one_study_could_swap_them": {
+          "hot|iit": "mei-soto-2025",
           "iit|gwt": "dellert-2025"
         },
-        "testable_too_little_tested": [],
+        "testable_too_little_tested": [
+          "rpt",
+          "ast",
+          "sensorimotor",
+          "orch-or"
+        ],
         "not_yet_defined_sharply_enough": [
-          "sh"
+          "damasio",
+          "sh",
+          "seth"
         ]
       },
       "why": "The first wording of ranking rule 2 did not say whether the prediction must separate the theory from a rival. John ruled on 2026-11-20 ('Yes, must separate') that it must; the main result follows the ruling. This is the superseded literal reading, kept for comparison."
     }
   },
-  "open_verify_entries": 5
+  "open_verify_entries": 34
 }

@@ -220,3 +220,666 @@ doi = "10.1523/JNEUROSCI.0145-15.2015"
 published = "2015-08-05"
 published_source = "citation publication date in the PubMed Central record"
 opened = "2026-11-20, the PubMed Central record (date and authors); the data the Bandara study reanalyses first appeared here"
+
+# ======================================================================
+# Stage 3, Higher-order theories: drafted 2026-11-21 (first reading, one reader).
+# Sources added for higher-order theories (stage 3 draft, 2026-11-21).
+# Reused from the pilot's sources.toml and not redefined here: mashour-2020 (global
+# workspace theory), lamme-2018 (recurrent processing theory), cogitate-protocol-2023
+# (integrated information theory's proponents among its authors), bandara-2025,
+# dellert-2025. Each of those was opened again in this task on 2026-11-21 (see notes.md).
+
+[[source]]
+id = "brown-lau-ledoux-2019"
+citation = "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)"
+url = "https://osf.io/preprints/psyarxiv/xpy8h"
+file_url = "https://osf.io/download/dqzt7/"
+doi = "10.1016/j.tics.2019.06.009"
+preprint_doi = "10.31234/osf.io/xpy8h"
+published = "2019-01-07"
+published_source = "OSF API record of the preprint (date_published 2019-01-07T23:40); the file is named 'BrownLauLedoux_Jan 3 2019.text.boxes.figs.pdf'. The journal version is dated 2019-07-30 online in Europe PMC (print 2019-09-01)."
+opened = "2026-11-21, the PsyArXiv preprint PDF (22 pages), read in full. The journal text was NOT opened: the publisher's free copy (cell.com, listed by OpenAlex as open access) and the PhilArchive copy both answered with a 'Just a moment...' robot check, which was not bypassed."
+read = "full text of the preprint, including the glossary and the four boxes; the journal's abstract only, from Europe PMC"
+differences_seen = "Title changed from 'The Misunderstood Higher-Order Approach to Consciousness' (preprint) to 'Understanding the Higher-Order Approach to Consciousness' (journal). The journal abstract is reworded and adds two sentences the preprint abstract lacks ('We show that, while higher-order states are cognitively assembled, the requirements are in fact considerably less than often presumed.' and 'We also clarify that most proponents of HOT do not stipulate consciousness as equivalent to metacognition or confidence.'). Whether the body text quoted in the records changed is unknown: see verify entry v-hot-journal-text."
+note = "The family statement John ruled for the core claims (2026-11-21). By three of the family's proponents: Richard Brown (philosopher, the HOROR version), Hakwan Lau, Joseph LeDoux."
+
+[[source]]
+id = "ledoux-brown-2017"
+citation = "LeDoux JE, Brown R. A higher-order theory of emotional consciousness. Proceedings of the National Academy of Sciences 114(10):E2016-E2025, 2017"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5347624/"
+doi = "10.1073/pnas.1619316114"
+published = "2017-02-15"
+published_source = "Europe PMC record (first publication date 2017-02-15)"
+opened = "2026-11-21, the PubMed Central page, read in full (main text; the SI appendix boxes it cites were not opened)"
+
+[[source]]
+id = "fleming-2020"
+citation = "Fleming SM. Awareness as inference in a higher-order state space. Neuroscience of Consciousness 2020(1):niz020"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7065713/"
+doi = "10.1093/nc/niz020"
+published = "2020-03-11"
+published_source = "Europe PMC full-text record PMC7065713 (pub-type date 2020-03-11)"
+opened = "2026-11-21, full text (Europe PMC XML)"
+note = "Fleming calls his model a higher-order state space and sets it beside 'global workspace and higher-order theories'. It is counted here as a member of the higher-order family because the brief names it as a proponents' publication; whether a family member who is not an author of the ruled family statement counts as a proponent is flagged in notes.md."
+
+[[source]]
+id = "lau-rosenthal-2011"
+citation = "Lau H, Rosenthal D. Empirical support for higher-order theories of conscious awareness. Trends in Cognitive Sciences 15(8):365-373, 2011"
+url = "https://doi.org/10.1016/j.tics.2011.05.009"
+published = "2011-07-06"
+published_source = "Europe PMC record (first publication date 2011-07-06)"
+opened = "NOT OPENED. No copy posted by the authors was found (searched 2026-11-21); a copy on a university course page was found and not used, because it is not the authors' own. Publisher copy is paywalled."
+note = "Matters because it is the only proponents' statement before 2015 found, and the Bandara study's data first appeared in 2015. See verify entry v-lau-rosenthal-2011."
+
+[[source]]
+id = "mei-soto-2025"
+citation = "Mei N, Soto D. Brain representation in conscious and unconscious vision. Journal of Cognition, 2025"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12047638/"
+doi = "10.5334/joc.443"
+preprint_doi = "10.1101/2024.05.27.596053"
+published = "2024-06-01"
+published_source = "Europe PMC preprint record of the bioRxiv version (first publication 2024-06-01); journal version 2025-04-28. An earlier preprint by the same group with a different title and analysis (Mei, Santana and Soto, 'Assessing the brain representation of conscious and unconscious visual contents using encoding based ...', bioRxiv 10.1101/2022.12.23.521727, 2022-12-23) is what the paper calls 'our previous preprint (Mei et al., 2022a)'."
+opened = "2026-11-21, full text of the journal version (Europe PMC XML)"
+found_through = "contrast"
+
+[[source]]
+id = "mei-santana-soto-2021"
+citation = "Mei N, Santana R, Soto D. Informative neural representations of unseen contents during higher-order processing in human brains and deep artificial networks. bioRxiv 10.1101/2021.01.12.426428; published in Nature Human Behaviour, 2022 (10.1038/s41562-021-01274-7)"
+url = "https://doi.org/10.1101/2021.01.12.426428"
+published = "2021-01-14"
+published_source = "Europe PMC preprint record (first publication 2021-01-14); journal version 2022-02-03"
+opened = "2026-11-21, the Europe PMC records only (dates, authors, titles); the paper itself was not read. It is where the data reanalysed by mei-soto-2025 first appeared."
+
+[[source]]
+id = "martin-2023"
+citation = "Martin A, Lane TJ, Hsu T-Y. DLPFC-PPC-cTBS effects on metacognitive awareness. Cortex, 2023 (volume and pages not checked). Read as the bioRxiv preprint: Prefrontal-parietal-cTBS effects on metacognitive awareness: real or illusory? (10.1101/2022.10.26.513949)"
+url = "https://www.biorxiv.org/content/10.1101/2022.10.26.513949v1"
+doi = "10.1016/j.cortex.2023.05.022"
+preprint_doi = "10.1101/2022.10.26.513949"
+published = "2022-10-28"
+published_source = "the preprint's own footer ('this version posted October 28, 2022'); journal version 2023-07-12 (Europe PMC)"
+opened = "2026-11-21, the preprint PDF, read in full. The Cortex version was not opened (no open copy; the PhilArchive copy answered with a robot check)."
+found_through = "contrast"
+note = "ConTraSt lists the authors alphabetically (Hsu, Lane, Martin); the journal's order, per Europe PMC and OpenAlex, is Martin, Lane, Hsu, with Hsu the corresponding and last author. See v-martin-journal for the unopened journal version."
+
+[[source]]
+id = "hobot-2023"
+citation = "Hobot J, Skóra Z, Wierzchoń M, Sandberg K. Continuous theta burst stimulation to the left anterior medial prefrontal cortex influences metacognitive efficiency. NeuroImage 272:119991, 2023"
+url = "https://ruj.uj.edu.pl/server/api/core/bitstreams/e32a4300-5d64-4500-a6e2-74a5816437ae/content"
+doi = "10.1016/j.neuroimage.2023.119991"
+published = "2023-02-27"
+published_source = "the article's own first page ('Received 30 November 2022; Received in revised form 4 February 2023; Accepted 25 February 2023; Available online 27 February 2023'). No preprint found in Europe PMC (searched 2026-11-21)."
+opened = "2026-11-21, the published PDF (CC BY) from the Jagiellonian University repository, read in full. ScienceDirect answered with a robot check, not bypassed."
+found_through = "contrast"
+
+[[source]]
+id = "contrast-export-2026-11-21"
+citation = "ConTraSt database (Yaron, Melloni, Pitts and Mudrik), live CSV export, 494 rows, CC BY-SA 4.0"
+url = "https://contrastdb.tau.ac.il"
+published = "export downloaded 2026-11-21"
+opened = "2026-11-21, used only as a reading list: no ConTraSt field is copied into these records"
+
+# ======================================================================
+# Stage 3, Recurrent processing theory: drafted 2026-11-21 (first reading, one reader).
+# Sources for the recurrent processing theory drafts (stage 3), with what this
+# drafting session opened and read, on 2026-11-21. Same shape as
+# data/tracker/sources.toml. Ids already defined in the pilot's sources.toml are
+# reused and NOT redefined here; what this session opened of each is listed in the
+# comment block at the end.
+
+[[source]]
+id = "lamme-2010"
+citation = "Lamme VAF. How neuroscience will change our view on consciousness. Cognitive Neuroscience 1(3):204-220, 2010 (discussion paper; commentaries and response follow on pp. 220-240)"
+url = "https://dipot.ulb.ac.be/dspace/bitstream/2013/108967/1/Timmermans%E2%80%A6%202010%20-%20PCNS%20-%20Experiencing%20more%20complexity%20than%20we.pdf"
+doi = "10.1080/17588921003731586"
+published = "2010-08-18"
+published_source = "Crossref record for the DOI (published-print and issued 2010-08-18; no separate online date given). The publisher's cover sheet in the copy read says 'Online publication date' in August 2010, but its digits did not survive text extraction."
+opened = "2026-11-21, read in full (pp. 204-220, the target article), from the copy named in copy_used"
+read = "the whole target article, pp. 204-220, including figure captions and Table 1"
+copy_used = "No copy by the author was found. The University of Amsterdam repository (UvA-DARE, https://www.dare.uva.nl/id/57f967b2-689a-4618-911a-081bf51a0d18) has a record with the abstract only and no file; Lamme's university profile page answered 404; the UvA Pure search refused the request (405). The copy read is the publisher's own PDF of the whole discussion issue (target article, commentaries and response, 37 pages), posted openly, with no sign-in, on the Université libre de Bruxelles repository (DI-fusion, handle 2013/108967) under a commentary's file name; its pages carry the stamp 'Downloaded By: [Windey, Bert] At: 11:39 4 September 2010'. Because it is the publisher's typeset PDF, no difference from the journal text is expected and none was seen. The publisher's notice on the cover sheet limits redistribution; only short quotations are kept here."
+note = "The core-claim source ruled by John on 2026-11-21. Text was extracted with pypdf; line-end hyphens in quotations were joined (for example 'sci-entific' read as 'scientific')."
+
+[[source]]
+id = "lamme-2006"
+citation = "Lamme VAF. Towards a true neural stance on consciousness. Trends in Cognitive Sciences 10(11):494-501, 2006"
+url = "https://pages.ucsd.edu/~jpineda/COGS175/readings/Lamme.pdf"
+doi = "10.1016/j.tics.2006.09.001"
+published = "2006-09-25"
+published_source = "the article's own first page ('Available online 25 September 2006'); Crossref gives the issue as November 2006"
+opened = "2026-11-21, read in full"
+copy_used = "The publisher's PDF (8 pages), posted openly on a University of California San Diego course page (COGS 175 readings). UvA-DARE has a record (https://www.dare.uva.nl/id/fcb7629f-6d56-4a07-bf82-e7e71ecbc52b) with no file. Not an author's copy; the publisher's typeset text, so no difference from the journal is expected."
+note = "Used for the earliest opened statement of several predictions. Not used for core claims."
+
+[[source]]
+id = "lamme-2020"
+citation = "Lamme VAF. Visual functions generating conscious seeing. Frontiers in Psychology 11:83, 2020"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7034432/fullTextXML"
+doi = "10.3389/fpsyg.2020.00083"
+published = "2020-02-14"
+published_source = "Europe PMC record PMC7034432 (first publication date 2020-02-14)"
+opened = "2026-11-21, full text (Europe PMC XML, CC BY)"
+note = "Used only for a later statement of one prediction."
+
+[[source]]
+id = "filimonov-2024"
+citation = "Filimonov D, Krabbe A, Revonsuo A, Koivisto M. The influence of feature-based attention and response requirements on ERP correlates of auditory awareness. Neuroscience of Consciousness 2024(1):niae031"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11265865/fullTextXML"
+doi = "10.1093/nc/niae031"
+published = "2024-07-23"
+published_source = "Europe PMC and Crossref (published online 2024-07-23); the article says 'Received 2023 Jul 28'. No preprint found in Europe PMC (title search, 2026-11-21)."
+opened = "2026-11-21, full text (Europe PMC XML, CC BY-NC); searched for any registration, none mentioned"
+found_through = "contrast"
+note = "ConTraSt lists the authors in a different order (Filimonov, Koivisto, Krabbe, Revonsuo); the records use the journal's order, from Crossref."
+
+[[source]]
+id = "eiserbeck-2022"
+citation = "Eiserbeck A, Enge A, Rabovsky M, Abdel Rahman R. Electrophysiological chronometry of graded consciousness during the attentional blink. Cerebral Cortex 32(6):1244-1259, 2022. Preprint: Graded visual consciousness during the attentional blink, bioRxiv 2021.01.15.426792"
+url = "https://www.biorxiv.org/content/10.1101/2021.01.15.426792v1.full.pdf"
+doi = "10.1093/cercor/bhab289"
+preprint_doi = "10.1101/2021.01.15.426792"
+published = "2021-01-17"
+published_source = "the preprint's own footer ('this version posted January 17, 2021'); the journal version was published online 2021-08-26 (Crossref)"
+opened = "2026-11-21, the bioRxiv preprint v1, read in full. The journal version was NOT opened: the publisher's PDF link answered 403 (a block page), which was not bypassed, and Europe PMC has no open copy."
+found_through = "contrast"
+note = "The preprint and the journal version carry different titles; results quoted here are the preprint's and may differ in the journal version (verify list)."
+
+[[source]]
+id = "filimonov-2022"
+citation = "Filimonov D, Railo H, Revonsuo A, Koivisto M. Modality-specific and modality-general electrophysiological correlates of visual and auditory awareness: evidence from a bimodal ERP experiment. Neuropsychologia 166:108154, 2022"
+url = "https://www.utupub.fi/handle/10024/165559"
+file_url = "https://www.utupub.fi/bitstreams/39bf45d9-2910-437f-a6d8-9b3b679395c0/download"
+doi = "10.1016/j.neuropsychologia.2022.108154"
+published = "2022-01-10"
+published_source = "the article's own first page ('Available online 10 January 2022'; 'Received 7 April 2021'); Europe PMC first publication date 2022-01-10. No preprint found in Europe PMC (title search, 2026-11-21)."
+opened = "2026-11-21, the publisher's PDF (CC BY) self-archived in the University of Turku repository, read in full; searched for any registration, none mentioned"
+found_through = "contrast"
+
+# ======================================================================
+# Stage 3, Anil Seth's living-body view: drafted 2026-11-21 (first reading, one reader).
+# Sources for Anil Seth's living-body view (theory id "seth"), stage 3 draft,
+# 2026-11-21. Same shape as data/tracker/sources.toml. Sources already defined
+# there and reused here, not redefined: singer-damasio-2025 (Damasio's own paper,
+# used under ruling C), albantakis-2023 (not used in the end).
+
+[[source]]
+id = "seth-2025"
+citation = "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)"
+url = "https://doi.org/10.1017/S0140525X25000032"
+open_copy = "https://osf.io/download/e5b3h/ (PsyArXiv preprint tz6an, version 2, posted 2025-04-22: the accepted manuscript, headed 'Behavioral and Brain Sciences (forthcoming). This Target Article has been accepted for publication and has not yet been copyedited and proofread.')"
+doi = "10.1017/S0140525X25000032"
+published = "2025-04-21"
+published_source = "the Cambridge Core page ('Published online by Cambridge University Press: 21 April 2025') and the Europe PMC record (PubMed 40257177, first publication 2025-04-21)"
+earlier_version = "PsyArXiv preprint tz6an version 1, created on OSF 2024-06-30 (OSF API). The file now attached to version 1 ('Seth_submitted_preprint_v2.pdf', its header 'submitted for review, 08/12/2024') was downloaded and searched for the quoted passages: five of the six core-claim passages are in it word for word; the 'each and every conscious experience' sentence (seth-c3) is not, so it entered between December 2024 and acceptance."
+opened = "2026-11-21. The journal version on Cambridge Core shows the abstract only ('Get access'); it was not opened past that and no sign-in was tried. The accepted manuscript (PsyArXiv version 2) was read in full, sections 1 to 7."
+read = "full text of the accepted manuscript. Every quotation in these records comes from it, not from the copyedited journal text (verify list: v-seth-journal-text)."
+
+[[source]]
+id = "seth-2012"
+citation = "Seth AK, Suzuki K, Critchley HD. An interoceptive predictive coding model of conscious presence. Frontiers in Psychology 2:395 (2011 volume)"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254200/"
+doi = "10.3389/fpsyg.2011.00395"
+published = "2012-01-10"
+published_source = "the publication date in the Europe PMC full-text record (PMC3254200: 2012-01-10). The article sits in the journal's 2011 volume, so the journal's own date may be earlier (verify list: v-seth-2012-date); an earlier date would not change any verdict here."
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "full text"
+note = "By the theory's proponent (Seth) with Keisuke Suzuki and Hugo Critchley. The earliest opened publication stating the interoceptive predictions recorded here; its 'Summary' section lists them as the model's 'basic' predictions."
+
+[[source]]
+id = "seth-friston-2016"
+citation = "Seth AK, Friston KJ. Active interoceptive inference and the emotional brain. Philosophical Transactions of the Royal Society B 371:20160007, 2016"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC5062097/"
+doi = "10.1098/rstb.2016.0007"
+published = "2016-11-19"
+published_source = "print publication date in the Europe PMC full-text record (accepted 2016-08-03)"
+opened = "2026-11-21, full text (Europe PMC XML); searched for presence, ownership and heartbeat"
+read = "searched, not read in full"
+
+[[source]]
+id = "findlay-2024"
+citation = "Findlay G, Marshall W, Albantakis L, David I, Mayner WGP, Koch C, Tononi G. Dissociating artificial intelligence from artificial consciousness. arXiv 2412.04571, 2024"
+url = "https://arxiv.org/abs/2412.04571"
+published = "2024-12-05"
+published_source = "arXiv submission history (v1, Thu 5 Dec 2024; v2, 3 Mar 2025)"
+opened = "2026-11-21, the abstract page and the HTML full text of v1; searched for substrate, silicon, neuromorphic and biological"
+note = "By integrated information theory's proponents (Tononi, Koch, Albantakis among the authors; Albantakis is first author of albantakis-2023). Seth 2025 cites it for what the theory says about AI. Used under ruling C."
+
+[[source]]
+id = "graziano-2017"
+citation = "Graziano MSA. The attention schema theory: a foundation for engineering artificial consciousness. Frontiers in Robotics and AI 4:60, 2017"
+url = "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2017.00060/full"
+doi = "10.3389/frobt.2017.00060"
+published = "2017-11-14"
+published_source = "the article page ('Front. Robot. AI, 14 November 2017')"
+opened = "2026-11-21, the article page; abstract and introduction read"
+note = "By attention schema theory's proponent (Michael Graziano). Seth 2025 cites it in its table of scenarios. Used under ruling C."
+
+[[source]]
+id = "jicol-2023"
+citation = "Jicol C, Cheng HY, Petrini K, O'Neill E. A predictive model for understanding the role of emotion for the formation of presence in virtual reality. PLOS ONE 18(3):e0280390, 2023"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10019638/"
+doi = "10.1371/journal.pone.0280390"
+published = "2023-03-16"
+published_source = "electronic publication date in the Europe PMC full-text record; received 2022-06-27, accepted 2022-12-28. No preprint found in Europe PMC (title search, 2026-11-21)."
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "full text; searched for any registration (none mentioned)"
+found_through = "europepmc-search-seth"
+
+[[source]]
+id = "suzuki-2013"
+citation = "Suzuki K, Garfinkel SN, Critchley HD, Seth AK. Multisensory integration across exteroceptive and interoceptive domains modulates self-experience in the rubber-hand illusion. Neuropsychologia 51(13):2909-2917, 2013"
+url = "https://figshare.com/articles/journal_contribution/Multisensory_integration_across_exteroceptive_and_interoceptive_domains_modulates_self-experience_in_the_rubber-hand_illusion/23406980"
+doi = "10.1016/j.neuropsychologia.2013.08.014"
+published = "2013-08-28"
+published_source = "the article's own history ('Received 22 May 2013 ... Available online 28 August 2013'); Europe PMC record 23993906. No preprint found in Europe PMC."
+opened = "2026-11-21, the University of Sussex's figshare copy (file SuzukiEtal_NSY2013.pdf), read in full except the supplement. The publisher's PDF link answered 403 and was not pursued."
+read = "full text. The repository labels the file 'submitted version', but it carries the journal's layout and page numbers. Quotations normalise two text-extraction faults (the 'fi' ligature, and '=' read as '¼')."
+found_through = "europepmc-search-seth"
+
+[[source]]
+id = "vanelk-2014"
+citation = "van Elk M, Lenggenhager B, Heydrich L, Blanke O. Suppression of the auditory N1-component for heartbeat-related sounds reflects interoceptive predictive coding. Biological Psychology 99:172-182, 2014"
+url = "https://doi.org/10.1016/j.biopsycho.2014.03.004"
+doi = "10.1016/j.biopsycho.2014.03.004"
+published = "2014-03-26"
+published_source = "Europe PMC record 24680787 (first publication 2014-03-26)"
+opened = "NOT OPENED. Subscription only (Europe PMC: 'Subscription required'). The open copy OpenAlex lists (EPFL Infoscience record 199619) holds a licence file and no text (repository API, 2026-11-21). Only the abstract, through Europe PMC, was read."
+found_through = "europepmc-search-seth"
+
+[[source]]
+id = "chintaluri-2023"
+citation = "Chintaluri C, Vogels TP. Metabolically regulated spiking could serve neuronal energy homeostasis and protect from reactive oxygen species. PNAS 120(48):e2306525120, 2023"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10691349/"
+doi = "10.1073/pnas.2306525120"
+published = "2023-11-21"
+published_source = "Europe PMC record 37988463 (first publication 2023-11-21); no preprint found in Europe PMC"
+opened = "2026-11-21, the Europe PMC abstract only"
+note = "Cited by seth-2025 as evidence that a neuron's firing cannot be separated from its metabolism."
+
+[[source]]
+id = "europepmc-search-seth"
+citation = "Europe PMC REST search, run 2026-11-21, sorted newest first (sort=P_PDATE_D desc), query: (TITLE_ABS:\"biological naturalism\" OR TITLE_ABS:\"beast machine\" OR TITLE_ABS:\"interoceptive inference\" OR TITLE_ABS:\"interoceptive predictive\") AND TITLE_ABS:conscious* AND SRC:MED"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE_ABS%3A%22biological+naturalism%22+OR+TITLE_ABS%3A%22beast+machine%22+OR+TITLE_ABS%3A%22interoceptive+inference%22+OR+TITLE_ABS%3A%22interoceptive+predictive%22%29+AND+TITLE_ABS%3Aconscious%2A+AND+SRC%3AMED&format=json&resultType=core&pageSize=100&sort=P_PDATE_D+desc"
+published = "run 2026-11-21"
+opened = "2026-11-21: 33 results, every title and abstract screened (the screen list is in notes.md)"
+
+# ======================================================================
+# Stage 3, Attention schema theory: drafted 2026-11-21 (first reading, one reader).
+# Sources for attention schema theory (ast), stage 3 draft, 2026-11-21.
+# New sources only. Records here also lean on three sources already defined in the
+# pilot's sources.toml, reused by id and not redefined: mashour-2020 (global workspace
+# theory), dehaene-2014 (global workspace theory) and albantakis-2023 (integrated
+# information theory). This session re-opened all three on 2026-11-21: mashour-2020
+# through the NCBI efetch copy of PMC8770991 (Europe PMC's full-text service answered
+# with a server error), dehaene-2014 through the NCBI efetch copy of PMC5635963, and
+# albantakis-2023 through Europe PMC's full text of PMC10581496. Each was searched for
+# what it says about attention, all-or-none conscious access and machines.
+
+[[source]]
+id = "graziano-webb-2015"
+citation = "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/"
+doi = "10.3389/fpsyg.2015.00500"
+published = "2015-04-23"
+published_source = "the article's electronic publication date in the Europe PMC full-text record (pub-type epub, 23 April 2015); received 2015-01-07, accepted 2015-04-08, as printed in the same record"
+opened = "2026-11-21, full text (Europe PMC XML, CC BY 4.0)"
+read = "full text: abstract, every section and the three figure captions"
+note = "The core-claim source, ruled by John 2026-11-21 ('Yes, keep 2015'). The paper's own text says the theory was first proposed earlier (Graziano and Kastner 2011; Graziano 2013; Graziano and Webb 2014); none of those was opened."
+
+[[source]]
+id = "graziano-2018"
+citation = "Graziano MSA. The temporoparietal junction and awareness. Neuroscience of Consciousness 2018(1):niy005"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6007131/"
+doi = "10.1093/nc/niy005"
+published = "2018-03-27"
+published_source = "publication date in the Europe PMC full-text record; received 2017-12-05, accepted 2018-02-28"
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "full text (a short reply to a critical commentary)"
+
+[[source]]
+id = "graziano-2022"
+citation = "Graziano MSA. A conceptual framework for consciousness. PNAS 119(18):e2116933119, 2022"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC9170028/"
+doi = "10.1073/pnas.2116933119"
+published = "2022-04-29"
+published_source = "electronic publication date in the Europe PMC full-text record (pub-type epub, 29 April 2022)"
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "full text"
+
+[[source]]
+id = "graziano-2024"
+citation = "Graziano MSA. Illusionism big and small: some options for explaining consciousness. eNeuro 11(10), 2024 (ENEURO.0210-24.2024)"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11521794/"
+doi = "10.1523/ENEURO.0210-24.2024"
+published = "2024-10-25"
+published_source = "electronic publication date in the Europe PMC full-text record (pub-type epub, 25 October 2024); Europe PMC's search record gives 2024-10-29"
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "searched for 'predict' and 'falsif', and the passages found were read in context. It states no testable prediction that is not already in the 2015 or 2022 papers, so no record quotes it."
+
+[[source]]
+id = "graziano-2026"
+citation = "Graziano MSA. Understanding consciousness (biological and artificial) as a society of self-schemas. PNAS 123(42):e2628598123, 2026"
+url = "https://www.pnas.org/doi/10.1073/pnas.2628598123"
+doi = "10.1073/pnas.2628598123"
+published = "2026-10-09"
+published_source = "Europe PMC record PMID 42853683 (first publication 2026-10-09, electronic); issue dated 2026-10-20 per the brief"
+opened = "2026-11-21, READ IN SUMMARY ONLY: the abstract, as given in the Europe PMC record (PMID 42853683). The publisher's page answered an automated fetch with 'HTTP 403 Forbidden' and was not retried. The paper is paywalled and John has no access; its body was not read."
+read = "abstract only"
+note = "The abstract states no dated, testable attention prediction beyond what the 2015 and 2022 papers already state, so no prediction enters from it. On the verify list (v-graziano-2026-body)."
+
+[[source]]
+id = "wilterson-2021-agent"
+citation = "Wilterson AI, Graziano MSA. The attention schema theory in a neural network agent: controlling visuospatial attention using a descriptive model of attention. PNAS 118(33):e2102421118, 2021"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC8379943/"
+doi = "10.1073/pnas.2102421118"
+published = "2021-08-12"
+published_source = "electronic publication date in the Europe PMC full-text record (pub-type epub, 12 August 2021); received for review 2021-02-05. No preprint found (Europe PMC preprint search, 2026-11-21)."
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "full text; searched for 'preregist', 'registered', 'OSF' and 'AsPredicted': none found"
+found_through = "europepmc-ast-search"
+
+[[source]]
+id = "wilterson-2021-tpj"
+citation = "Wilterson AI, Nastase SA, Bio BJ, Guterstam A, Graziano MSA. Attention, awareness, and the right temporoparietal junction. PNAS 118(25):e2026099118, 2021"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC8237657/"
+doi = "10.1073/pnas.2026099118"
+published = "2021-06-14"
+published_source = "electronic publication date in the Europe PMC full-text record (pub-type epub, 14 June 2021); received for review 2020-12-30. No preprint found (Europe PMC preprint search, 2026-11-21)."
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "full text; searched for 'preregist', 'registered', 'OSF' and 'AsPredicted': none found"
+found_through = "europepmc-ast-search"
+
+[[source]]
+id = "wilterson-2020"
+citation = "Wilterson AI, Kemper CM, Kim N, Webb TW, Reblando AMW, Graziano MSA. Attention control and the attention schema theory of consciousness. Progress in Neurobiology 195:101844, 2020"
+url = "https://doi.org/10.1016/j.pneurobio.2020.101844"
+doi = "10.1016/j.pneurobio.2020.101844"
+published = "2020-06-01"
+published_source = "Europe PMC record PMID 32497564 (first publication 2020-06-01, electronic)"
+opened = "NOT OPENED beyond the abstract in the Europe PMC record. Europe PMC lists an open-access link, but ScienceDirect returned a page with no article text to a plain fetch and 'HTTP 403 Forbidden' to a second fetch; neither was retried or worked around. No copy in PubMed Central and no preprint found."
+found_through = "europepmc-ast-search"
+
+[[source]]
+id = "webb-2016"
+citation = "Webb TW, Kean HH, Graziano MSA. Effects of awareness on the control of attention. Journal of Cognitive Neuroscience 28(6):842-851, 2016"
+url = "https://doi.org/10.1162/jocn_a_00931"
+doi = "10.1162/jocn_a_00931"
+published = "2016-02-02"
+published_source = "Europe PMC record PMID 26836517 (first publication 2016-02-02, electronic; print issue 2016-06)"
+opened = "NOT OPENED beyond the abstract in the Europe PMC record. Europe PMC marks it 'Subscription required'; the MIT Press page answered with a 'Just a moment...' robot check, which was not bypassed. No preprint found."
+found_through = "europepmc-ast-search"
+
+[[source]]
+id = "europepmc-ast-search"
+citation = "Europe PMC REST search, query (TITLE_ABS:\"attention schema\") AND SRC:MED, sorted by publication date, newest first (sort=P_PDATE_D desc), 20 hits"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=(TITLE_ABS:%22attention%20schema%22)%20AND%20SRC:MED&sort=P_PDATE_D%20desc&format=json&pageSize=100&resultType=core"
+published = "run 2026-11-21"
+opened = "2026-11-21, every one of the 20 records with its abstract; the screen is in notes.md"
+
+# ======================================================================
+# Stage 3, The sensorimotor theory: drafted 2026-11-21 (first reading, one reader).
+# Sources for the sensorimotor theory's draft records (stage 3, drafted 2026-11-21).
+# Same shape as data/tracker/sources.toml.
+#
+# Reused ids, NOT redefined here (they are already in data/tracker/sources.toml).
+# This drafting task opened each one itself on 2026-11-21 and read the passages quoted:
+#   mashour-2020     global workspace theory: the PubMed Central author manuscript
+#                    (PMC8770991), HTML, read for the central thesis and the inattention passage
+#   albantakis-2023  integrated information theory: Europe PMC full-text XML (PMC10581496),
+#                    searched and read in the 'Conclusions' and intrinsicality passages
+#   lamme-2018       recurrent processing theory: PubMed Central HTML (PMC6074090), read in full
+
+[[source]]
+id = "oregan-noe-2001"
+citation = "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001"
+url = "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf"
+doi = "10.1017/s0140525x01000115"
+published = "2001-10"
+published_source = "the journal issue (Behavioral and Brain Sciences 24:5, 2001) printed on every page of the copy; Europe PMC gives the issue date 2001-10-01"
+opened = "2026-11-21, the copy on J. Kevin O'Regan's own website (kevin-oregan.net, which the old address nivea.psycho.univ-paris5.fr now redirects to), linked from its home page; a 93-page PDF"
+read = "target article in full where quoted (abstract, sections 1.3, 2.4-3.2, 4.4, 5.1, 5.8-5.11, 5.14, 6.1-6.3, 6.9, 8.4, 9); the authors' response sections R5 and R8 searched and read where quoted. Commentaries by other authors were not used."
+copy_note = "The author's copy is the journal's own typeset pages (each page carries the 'BEHAVIORAL AND BRAIN SCIENCES (2001) 24:5' running head and page number, 939 to 1031), not a manuscript, so no difference from the journal text is expected. The only differences seen are from text extraction (broken hyphenation and stray spaces, e.g. 'give r ise'); quotations here are given with those repaired."
+note = "The core-claim source ruled by John 2026-11-21. Not O'Regan 2023 (Frontiers, PMC9886661), which widens the theory to all experience; that paper was not used for anything here."
+
+[[source]]
+id = "bridgeman-2008"
+citation = "Bridgeman B, Gaunt J, Plumb E, Quan J, Chiu E, Woods C. A test of the sensorimotor account of vision and visual perception. Perception 37(6):811-814 (discussion 815), 2008"
+url = "https://europepmc.org/article/MED/18686701"
+doi = "10.1068/p5719a"
+published = "2008"
+published_source = "Europe PMC record: journal issue 37(6), 2008; Europe PMC's first publication date is given as 2008-01-01, a placeholder for the year, not a real day. No electronic publication date is listed."
+opened = "2026-11-21, the Europe PMC record only (abstract, authors, affiliation). The article is not open access (OpenAlex: 'closed', no repository copy); the full text was not opened."
+read = "abstract only"
+
+[[source]]
+id = "haans-2008"
+citation = "Haans A, IJsselsteijn WA, de Kort YAW. The effect of similarities in skin texture and hand shape on perceived ownership of a fake limb. Body Image 5(4):389-394, 2008"
+url = "https://europepmc.org/article/MED/18650135"
+doi = "10.1016/j.bodyim.2008.04.003"
+published = "2008-07-22"
+published_source = "Europe PMC electronic publication date"
+opened = "2026-11-21, the Europe PMC record only (abstract)"
+read = "abstract only; screened, not taken"
+
+[[source]]
+id = "epmc-search-sm-2026-11-21"
+citation = "Europe PMC REST search run 2026-11-21, sorted newest first (sort = P_PDATE_D desc), query: (TITLE_ABS:\"sensorimotor theory\" OR TITLE_ABS:\"sensorimotor contingenc*\" OR TITLE_ABS:\"sensorimotor account\") AND TITLE_ABS:(conscious* OR awareness OR experience) AND SRC:MED"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+published = "2026-11-21"
+published_source = "the day the search was run"
+opened = "2026-11-21; 9 hits in all, every one screened (list in notes.md)"
+
+# ======================================================================
+# Stage 3, Orchestrated Objective Reduction: drafted 2026-11-21 (first reading, one reader).
+# Sources for Orchestrated Objective Reduction (Orch OR), stage 3 draft, 2026-11-21.
+# Shape as data/tracker/sources.toml. Existing ids reused where they fit:
+# albantakis-2023 and singer-damasio-2025 (searched here, see notes.md); they are not
+# redefined below.
+
+[[source]]
+id = "hameroff-penrose-2014"
+citation = "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014"
+url = "https://doi.org/10.1016/j.plrev.2013.08.002"
+doi = "10.1016/j.plrev.2013.08.002"
+published = "2013-08-20"
+published_source = "the article's own first page: 'Received 23 July 2013; accepted 5 August 2013; Available online 20 August 2013'; the print issue is March 2014 (Crossref). Europe PMC's first publication date is also 2013-08-20."
+opened = "2026-11-21, the journal's typeset PDF (40 pages, pp. 39-78), read in full as extracted text"
+read = "full text: abstract, sections 1-7 and the reference list; section 5.7 (the twenty predictions and their status) and section 7 (Conclusion) read closely"
+copy_used = "https://s3images.coroflot.com/user_files/individual_files/original_pdf_221275_jjst57lkzdpy6umbysp5mwhtr.pdf (a third-party upload of the publisher's PDF, found by web search). The publisher's open-access copy (CC BY-NC-ND 4.0 per Crossref and Unpaywall) refused automated access (HTTP 403) from both a plain fetch and the built-in browser; nothing was bypassed. The Open Philanthropy copy also answered 403."
+note = "The core-claim source, chosen by the master session under John's rule 'the proponents' most recent full statement of the same theory'. On the verify list until the quotations are checked against the publisher's page (v-orch-2014-copy)."
+
+[[source]]
+id = "hameroff-1998"
+citation = "Hameroff S. Quantum computation in brain microtubules? The Penrose-Hameroff 'Orch OR' model of consciousness. Philosophical Transactions of the Royal Society A 356(1743):1869-1896, 1998"
+url = "https://doi.org/10.1098/rsta.1998.0254"
+doi = "10.1098/rsta.1998.0254"
+published = "1998-08-15"
+published_source = "the issue date on the scanned cover page ('Vol. 356, No. 1743 ... (Aug. 15, 1998), pp. 1869-1896'); Unpaywall gives the same date"
+opened = "2026-11-21, a JSTOR scan (28 pages) posted on a Eindhoven University of Technology course page, https://www.alice.id.tue.nl/references/hameroff-1998.pdf; the Royal Society's own page answered 403 and was not bypassed"
+read = "full text as extracted from the scan; Appendix B ('Testable predictions of the Orch OR model') and the abstract read closely. The scan's text layer has OCR faults (broken hyphenation shown as '?'); quotations here rejoin split words and are on the verify list (v-orch-1998-ocr)."
+note = "By Hameroff alone, one of the two proponents. The 2014 review says its twenty predictions were 'published [15]' in 1998, but its reference [15] is Hameroff 2007 (Cognitive Science); the 1998 list is in this paper (the 2014 review's reference [14])."
+
+[[source]]
+id = "hameroff-2022"
+citation = "Hameroff S. Consciousness, Cognition and the Neuronal Cytoskeleton - A New Paradigm Needed in Neuroscience. Frontiers in Molecular Neuroscience 15:869935, 2022"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC9245524/"
+doi = "10.3389/fnmol.2022.869935"
+published = "2022-06-16"
+published_source = "epub date in the Europe PMC full-text record PMC9245524"
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "searched for anaesthesia, stabilising drugs, predictions and falsifiability; the anaesthesia passages read in full"
+note = "One proponent only, and widened into 'a new paradigm', so not the core-claim source (master session's ruling); used only as a later statement of a prediction."
+
+[[source]]
+id = "hameroff-2020"
+citation = "Hameroff S. 'Orch OR' is the most complete, and most easily falsifiable theory of consciousness. Cognitive Neuroscience 12(2):74-76, 2021 (online 2020-11-24)"
+url = "https://doi.org/10.1080/17588928.2020.1839037"
+doi = "10.1080/17588928.2020.1839037"
+published = "2020-11-24"
+published_source = "Europe PMC record (PMID 33232193), first publication date 2020-11-24"
+opened = "not opened: the publisher's PDF (listed by Unpaywall as free) answered 403 to an automated fetch, which was not bypassed; no other open copy was found"
+note = "Would be read for any sharper statement of the anaesthesia test (for example which way a microtubule-stabilising drug should shift anaesthetic sensitivity). On the verify list (v-orch-hameroff-2020)."
+
+[[source]]
+id = "tononi-koch-2015"
+citation = "Tononi G, Koch C. Consciousness: here, there and everywhere? Philosophical Transactions of the Royal Society B 370:20140167, 2015"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC4387509/"
+doi = "10.1098/rstb.2014.0167"
+published = "2015-05-19"
+published_source = "print publication date (pub-type ppub, 19 May 2015, volume 370, issue 1668) in the Europe PMC full-text record PMC4387509"
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "searched for 'quantum' and 'microtubul'; the one passage on quantum systems read in context"
+note = "By two proponents of integrated information theory. Used under ruling C as the nearest IIT passage on quantum-level consciousness; it does not predict a different result on any Orch OR prediction here (see the testability judgements)."
+
+[[source]]
+id = "baars-edelman-2012"
+citation = "Baars BJ, Edelman DB. Consciousness, biology and quantum hypotheses. Physics of Life Reviews 9(3):285-294, 2012"
+url = "https://europepmc.org/article/MED/22925839"
+doi = "10.1016/j.plrev.2012.07.001"
+published = "2012-07-10"
+published_source = "Europe PMC first publication date"
+opened = "2026-11-21, the abstract only (Europe PMC record). Unpaywall lists no open copy; the full text was not opened."
+note = "Bernard Baars first proposed global workspace theory, but he is not on the pilot's list of the theory's proponents (Dehaene, Changeux, Mashour, Roelfsema). Found in the study screen (item 74). Quoted in the testability judgements as the nearest rival passage; read as not predicting a different result on any recorded test."
+
+[[source]]
+id = "khan-2024"
+citation = "Khan S, Huang Y, Timucin D, Bailey S, Lee S, Lopes J, Gaunce E, Mosberger J, Zhan M, Abdelrahman B, Zeng X, Wiest MC. Microtubule-Stabilizer Epothilone B Delays Anesthetic-Induced Unconsciousness in Rats. eNeuro 11(8):ENEURO.0291-24.2024, 2024"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11363512/"
+doi = "10.1523/ENEURO.0291-24.2024"
+published = "2024-08-15"
+published_source = "the article's own history in the Europe PMC full text: 'Received 2024 Jul 1; Revised 2024 Aug 8; Accepted 2024 Aug 9; Prepublished 2024 Aug 15'. No preprint found (Europe PMC preprint search, 2026-11-21)."
+opened = "2026-11-21, full text (Europe PMC XML), including the published peer-review history"
+read = "full text"
+
+[[source]]
+id = "li-2025"
+citation = "Li N, You Z, Ren Y, Kim HH, Yang J, Li G, Doheny JT, Ding W, Xia S, Wang S, Zhou X, Wu X, Shen S, Dong Y, Xie Z, Chen L, Mao J, Martyn JAJ. Microtubule-modulating drugs alter sensitivity to isoflurane in mice. BMC Anesthesiology 25:109, 2025"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11869693/"
+doi = "10.1186/s12871-025-02956-9"
+published = "2025-02-28"
+published_source = "pub-date in the Europe PMC full-text record; the article history says 'Received 2024 Jan 17; Accepted 2025 Feb 9'. No preprint found (Europe PMC preprint search, 2026-11-21)."
+opened = "2026-11-21, full text (Europe PMC XML)"
+read = "full text"
+
+[[source]]
+id = "huang-2026"
+citation = "Huang Y, Qiu Z, Yu X, Lee S, Zeng X, Chang A, Wiest MC. Brain-penetrant microtubule-stabilizer epothilone B delays isoflurane-induced unconsciousness in mice. Neuropharmacology 287:110834, 2026"
+url = "https://doi.org/10.1016/j.neuropharm.2026.110834"
+doi = "10.1016/j.neuropharm.2026.110834"
+published = "2026-01-08"
+published_source = "Europe PMC first publication date"
+opened = "the abstract only (Europe PMC record, 2026-11-21). Europe PMC marks it not open access; no preprint found. The full text was not opened."
+
+[[source]]
+id = "accorsi-2017"
+citation = "Accorsi PA, Mondo E, Cocchi M. Did you know that your animals have consciousness? Journal of Integrative Neuroscience 16(s1):S3-S11, 2017"
+url = "https://doi.org/10.3233/JIN-170061"
+doi = "10.3233/JIN-170061"
+published = "2017"
+published_source = "Europe PMC record (publication year 2017)"
+opened = "the abstract only (Europe PMC record, 2026-11-21). Europe PMC marks it not open access."
+
+[[source]]
+id = "epmc-orch-search-2026-11-21"
+citation = "Europe PMC REST search, run 2026-11-21, sorted newest first (sort = 'P_PDATE_D desc'), query: (TITLE_ABS:\"orchestrated objective reduction\" OR TITLE_ABS:\"Orch OR\" OR TITLE_ABS:\"Orch-OR\" OR (TITLE_ABS:microtubule* AND TITLE_ABS:conscious* AND (TITLE_ABS:anesthe* OR TITLE_ABS:anaesthe*))) AND SRC:MED"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+published = "run 2026-11-21; 125 hits"
+opened = "2026-11-21, the first 80 results screened by title and abstract (list in notes.md)"
+
+# ======================================================================
+# Stage 3, Damasio's feeling-based theory: drafted 2026-11-21 (first reading, one reader).
+# Damasio's feeling-based theory: new sources for the stage 3 draft, 2026-11-21.
+# Reused from the pilot and NOT redefined here (each was opened again by this draft
+# session on 2026-11-21 and the passages quoted were checked in the copy opened):
+#   singer-damasio-2025  (Europe PMC full-text XML, PMC12612705, read in full)
+#   cogitate-prereg-v1   (the OSF PDF, https://osf.io/download/4g2h8/, pp. 5-6 read)
+#   sh-positions         (the live page, https://sentient-horizons.com/positions/, the
+#                         'map' position read)
+# Layout: data/tracker/README.md.
+
+[[source]]
+id = "damasio-2023"
+citation = "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023"
+url = "https://doi.org/10.1162/neco_a_01521"
+doi = "10.1162/neco_a_01521"
+published = "2022-07-27"
+published_source = "PubMed record 35896152: entered PubMed 2022-07-27 ('entrez' date), received 2022-01-04, accepted 2022-04-13; the print issue is dated 2023-02-17. Semantic Scholar gives 2022-07-19 as its publication date (early online version), not checked against the publisher."
+opened = "2026-11-21, full text: the publisher's free PDF at MIT Press (https://direct.mit.edu/neco/article-pdf/35/3/277/2071828/neco_a_01521.pdf), opened in the browser pane after John passed the publisher's robot check himself; its text was extracted page by page (10 pages) and read. Earlier the same day only the abstract had been read (Europe PMC), because the robot check stopped automated access and was not bypassed."
+read = "full text, all six sections and Table 1; the copy is the journal's own typeset PDF (pp. 277-286), so it is the journal text"
+note = "The ruled source for this theory's core claims (kickoff ruling 4). Its main job is to state the theory: a 'View' article whose sections are 'What Consciousness Is and How Feelings Contribute to It', 'Explaining Consciousness', 'Generating Homeostatic Feelings', 'The Physiology of Interoception Is the Enabler of Consciousness' and 'The Hard Obstacles in Consciousness Studies'."
+
+[[source]]
+id = "damasio-2024"
+citation = "Damasio A, Damasio H. Sensing, feeling and consciousness. Philosophical Transactions of the Royal Society B 379(1908):20230243, 2024"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444232/"
+doi = "10.1098/rstb.2023.0243"
+published = "2024-07-15"
+published_source = "Europe PMC record (first publication 2024-07-15); received 2023-12-01, accepted 2024-01-26 (the article's own history)"
+opened = "2026-11-21, full text (Europe PMC XML, CC BY 4.0), read in full"
+note = "By the theory's two proponents. A short statement of the theory (four numbered sections)."
+
+[[source]]
+id = "damasio-tranel-2013"
+citation = "Damasio A, Damasio H, Tranel D. Persistence of feelings and sentience after bilateral damage of the insula. Cerebral Cortex 23(4):833-846, 2013"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC3657385/"
+doi = "10.1093/cercor/bhs077"
+published = "2012-04-03"
+published_source = "Europe PMC record (first publication 2012-04-03, the online version); the print issue is 2013"
+opened = "2026-11-21, full text from the PubMed Central page (abstract, introduction and discussion read; results skimmed)"
+note = "By the theory's proponents. It both states predictions (feelings arise first in the brainstem) and reports a single-patient study (patient B.) that tests one of them in the same paper."
+
+[[source]]
+id = "immertreu-2025"
+citation = "Immertreu M, Schilling A, Maier A, Krauss P. Probing for consciousness in machines. Frontiers in Artificial Intelligence 8:1610225, 2025"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12405250/"
+doi = "10.3389/frai.2025.1610225"
+published = "2024-11-25"
+published_source = "arXiv 2411.16262 v1, posted 2024-11-25 (arXiv API record); the journal version is dated 2025-08-20 (Europe PMC)"
+opened = "2026-11-21, full text of the journal version (Europe PMC XML, CC BY 4.0); the arXiv preprint's record only"
+found_through = "europepmc-screen"
+
+[[source]]
+id = "vianna-2008"
+citation = "Vianna EP, Naqvi N, Bechara A, Tranel D. Does vivid emotional imagery depend on body signals? International Journal of Psychophysiology 72(1):46-50, 2009"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC2676142/"
+doi = "10.1016/j.ijpsycho.2008.01.013"
+published = "2008-09-13"
+published_source = "Europe PMC record (first publication 2008-09-13). No earlier preprint found."
+opened = "2026-11-21, the author manuscript on PubMed Central (abstract, methods and discussion read)"
+found_through = "europepmc-screen"
+
+[[source]]
+id = "gutbrod-2006"
+citation = "Gutbrod K, Krouzel C, Hofer H, Müri R, Perrig W, Ptak R. Decision-making in amnesia: do advantageous decisions require conscious knowledge of previous behavioural choices? Neuropsychologia 44(8):1315-1324, 2006"
+url = "https://doi.org/10.1016/j.neuropsychologia.2006.01.014"
+doi = "10.1016/j.neuropsychologia.2006.01.014"
+published = "2006-03-02"
+published_source = "Europe PMC record (first publication 2006-03-02)"
+opened = "ABSTRACT ONLY, 2026-11-21 (Europe PMC). The full text is at the publisher behind a subscription, and no open copy was listed; it was not opened."
+found_through = "europepmc-screen"
+
+[[source]]
+id = "naccache-2005"
+citation = "Naccache L, Dehaene S, Cohen L, Habert MO, Guichart-Gomez E, Galanaud D, Willer JC. Effortless control: executive attention and conscious feeling of mental effort are dissociable. Neuropsychologia 43(9):1318-1328, 2005"
+url = "https://doi.org/10.1016/j.neuropsychologia.2004.11.024"
+doi = "10.1016/j.neuropsychologia.2004.11.024"
+published = "2005-01-20"
+published_source = "Europe PMC record (first publication 2005-01-20)"
+opened = "ABSTRACT ONLY, 2026-11-21 (Europe PMC). The full text is at the publisher behind a subscription, and no open copy was listed; it was not opened."
+found_through = "europepmc-screen"
+
+[[source]]
+id = "maia-2004"
+citation = "Maia TV, McClelland JL. A reexamination of the evidence for the somatic marker hypothesis: what participants really know in the Iowa gambling task. PNAS 101(45):16075-16080, 2004"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC528759/"
+doi = "10.1073/pnas.0406666101"
+published = "2004-10-22"
+published_source = "Europe PMC record (first publication 2004-10-22)"
+opened = "2026-11-21, full text on PubMed Central (abstract and discussion read; searched for a registration, none)"
+found_through = "europepmc-screen"
+
+[[source]]
+id = "europepmc-screen"
+citation = "Europe PMC REST search, run 2026-11-21, sorted newest first (sort=P_PDATE_D desc, pageSize=60), query: (TITLE_ABS:\"Damasio\" OR TITLE_ABS:\"homeostatic feeling*\" OR TITLE_ABS:\"primordial feeling*\" OR TITLE_ABS:\"feelings are the source\") AND TITLE_ABS:conscious* AND SRC:MED"
+url = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+published = "run 2026-11-21; 18 hits in all"
+opened = "2026-11-21, every hit's title and abstract read; the screen list is in notes.md"

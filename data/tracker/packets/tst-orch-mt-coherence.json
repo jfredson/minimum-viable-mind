@@ -1,0 +1,53 @@
+{
+  "packet_id": "tst-orch-mt-coherence",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES IT SEPARATE the theory from a rival: does at least one theory on the list of rivals predict something different (not merely stay silent)? If yes, name the rival or rivals, and say whether your view of the rival comes from the material given or from your own knowledge. Answer in JSON: {\"could_fail\": true|false, \"separates\": true|false, \"separates_from\": [ids], \"rival_view_from\": \"material\"|\"own knowledge\"|\"both\"|\"none\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Orchestrated Objective Reduction",
+  "core_claim": {
+    "quote": "consciousness depends on biologically ‘orchestrated’ coherent quantum processes in collections of microtubules within brain neurons",
+    "source": {
+      "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+      "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+      "date": "2013-08-20"
+    }
+  },
+  "prediction": {
+    "statement": "Quantum coherence (many parts of a system sharing one quantum state) will be detected in microtubules.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "1998-08-15",
+      "passage": "Experiments with SQUIDs (superconducting quantum interference devices) such as those suggested by Leggett (1984) will detect phases of quantum coherence in microtubules.",
+      "source": {
+        "citation": "Hameroff S. Quantum computation in brain microtubules? The Penrose-Hameroff 'Orch OR' model of consciousness. Philosophical Transactions of the Royal Society A 356(1743):1869-1896, 1998",
+        "url": "https://doi.org/10.1098/rsta.1998.0254",
+        "date": "1998-08-15"
+      }
+    },
+    "test_for": "A measurement on microtubules (isolated, in cells or in brain tissue) shows a signature that only a shared quantum state explains, which a classical account of the same measurement cannot.",
+    "test_against": "Measurements sensitive enough to detect quantum coherence in microtubules at body temperature find none, or find that it is lost far faster than any biological process (for example in under a millionth of a second)."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "Phases of quantum coherence will be detected in microtubules.",
+      "source": {
+        "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+        "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+        "date": "2013-08-20"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,71 @@
+{
+  "packet_id": "tst-hot-first-order-insufficient",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES IT SEPARATE the theory from a rival: does at least one theory on the list of rivals predict something different (not merely stay silent)? If yes, name the rival or rivals, and say whether your view of the rival comes from the material given or from your own knowledge. Answer in JSON: {\"could_fail\": true|false, \"separates\": true|false, \"separates_from\": [ids], \"rival_view_from\": \"material\"|\"own knowledge\"|\"both\"|\"none\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Higher-order theories",
+  "core_claim": {
+    "quote": "a fundamental tenet of HOT is that first-order states occur unconsciously, and are not sufficient for phenomenally conscious experiences to occur",
+    "source": {
+      "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+      "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+      "date": "2019-01-07"
+    }
+  },
+  "prediction": {
+    "statement": "Activity in sensory cortex that carries a stimulus, including activity fed back within sensory cortex, can occur while the person does not experience the stimulus; sensory activity alone does not make an experience.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2017-02-15",
+      "passage": "For example, when self-reports of the stimulus are compromised by using subliminal stimulation procedures, such as masking (63), areas of the visual cortex (including primary and secondary areas) are functionally active, but when participants are able to consciously report seeing a visual stimulus, additional cortical areas become active",
+      "source": {
+        "citation": "LeDoux JE, Brown R. A higher-order theory of emotional consciousness. Proceedings of the National Academy of Sciences 114(10):E2016-E2025, 2017",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5347624/",
+        "date": "2017-02-15"
+      }
+    },
+    "test_for": "Stimulus-specific activity in sensory cortex, including feedback (recurrent) activity between sensory areas, is found on trials where the person reports no experience of the stimulus and cannot tell it apart from no stimulus.",
+    "test_against": "Whenever feedback activity between sensory areas carrying a stimulus is present, the person experiences the stimulus, and whenever it is absent they do not, with no further area needed to predict experience."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [
+    {
+      "rival": "Recurrent processing theory",
+      "statement": "Recurrent processing theory holds that feedback between visual areas is enough for experience, with nothing beyond visual cortex needed.",
+      "source": {
+        "citation": "Lamme VAF. Challenges for theories of consciousness: seeing or knowing, the missing ingredient and how to deal with it. Philosophical Transactions of the Royal Society B 373:20170344, 2018",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6074090/",
+        "date": "2018-07-30"
+      }
+    }
+  ],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "In contrast, David Rosenthal and other higher-order theorists argue that a first-order state resulting from stimulus-processing alone is not enough to make possible the conscious experience of a stimulus",
+      "source": {
+        "citation": "LeDoux JE, Brown R. A higher-order theory of emotional consciousness. Proceedings of the National Academy of Sciences 114(10):E2016-E2025, 2017",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5347624/",
+        "date": "2017-02-15"
+      }
+    },
+    {
+      "passage": "It is known that subliminal or unconscious stimulation also engages similar sensory circuits as consciously experienced stimuli [76]. Also, ongoing spontaneous activity in the very same neurons giving rise to normal perception is typical unconscious [77]. One possibility is that such activity has to reach a certain threshold [59], or that it has to achieve a right sort of dynamic profile [58, 77], such as involving feedback to V1. But patients with damage to V1 can still have visual experiences [18, 78].",
+      "source": {
+        "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+        "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+        "date": "2019-01-07"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

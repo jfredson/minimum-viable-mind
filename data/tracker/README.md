@@ -1,4 +1,4 @@
-# The tracker's records: layout (stage 2 pilot, 2026-11-20)
+# The tracker's records: layout (stage 2 pilot, 2026-11-20; stage 3 added 2026-11-21)
 
 This folder is the first draft of the data for the tracker of theories of consciousness
 that Minimum Viable Mind is becoming (`docs/2026-11-20-consciousness-tracker-kickoff-proposal.md`).
@@ -140,3 +140,28 @@ so each record can be checked; their copyright stays with their authors.
 Five studies were found through the ConTraSt database (Yaron, Melloni, Pitts and Mudrik, *Nature Human Behaviour* 6,
 593–604, 2022; https://contrastdb.tau.ac.il; CC BY-SA 4.0), used only as a reading list: no ConTraSt
 field is copied here, and each record is built from the paper itself.
+
+## Stage 3 (2026-11-21)
+
+The seven remaining theories were added on 2026-11-21: higher-order theories (`hot-`), recurrent
+processing theory (`rpt-`), Anil Seth's living-body view (`seth-`), attention schema theory
+(`ast-`), the sensorimotor theory (`sm-`), Orchestrated Objective Reduction (`orch-`) and Damasio's
+feeling-based theory (`dam-`). Their core-claim sources are the ones John ruled (kickoff proposal,
+ruling 4, with its clarifications of 2026-11-21). Each theory's drafting notes, with how its core
+claims and studies were chosen, are in `docs/2026-11-21-stage3-drafting-notes/`. Every judgement on
+them has one reading so far (Claude); the score script marks those theories "one reader only".
+
+Two additions, made at the site session's request:
+
+- **`questions`** on a prediction: the open questions it bears on (`features`, `machines`,
+  `animals`, `fading`, `groups`; the questions themselves are in the site's
+  `data/open-questions.toml`). Filled only where the link is clear.
+- **A prediction's state** is now computed (`predictions` in `scores.json`): untested if no
+  counted outcome; supported if every counted outcome is "for"; contradicted if every one is
+  "against"; otherwise mixed. Beside it, the weighted reading (the sign of outcome times study
+  weight) is computed, and `state_readings_differ` lists where the two disagree. Neither rule is
+  ruled by John.
+
+The commitment judgements use ruling D ("Yes, that test"): a prediction counts if the proponents
+fixed it before they could have known the study's result. The commitment header in
+`judgements.toml` still describes the pilot's earlier wording for the pilot's rows.

@@ -1,0 +1,69 @@
+{
+  "packet_id": "out-martin-hot-awareness-performance",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Higher-order theories",
+  "core_claim": {
+    "quote": "According to HOT, on the other hand, a mere difference in the higher-order state determines whether a nonconscious perceptual process is consciously experienced or not, independent of the nature of the first-order process itself, or even in the absence of a first order state in some views",
+    "source": {
+      "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+      "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+      "date": "2019-01-07"
+    }
+  },
+  "prediction": {
+    "statement": "How aware a person is of a stimulus can change while their first-order performance (how well they detect or discriminate it) stays the same.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-07",
+      "passage": "According to HOT, on the other hand, a mere difference in the higher-order state determines whether a nonconscious perceptual process is consciously experienced or not, independent of the nature of the first-order process itself",
+      "source": {
+        "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+        "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+        "date": "2019-01-07"
+      }
+    },
+    "test_for": "With discrimination performance held equal across conditions (by matching stimuli or adjusting difficulty), awareness ratings, or how well they track accuracy, differ between conditions.",
+    "test_against": "Whenever discrimination performance is held equal, awareness ratings and their match to accuracy are also equal across every manipulation tried."
+  },
+  "study": {
+    "name": "Magnetic stimulation of prefrontal and parietal cortex and its effect on visibility ratings and metacognition, with real and illusory shapes",
+    "source": {
+      "citation": "Martin A, Lane TJ, Hsu T-Y. DLPFC-PPC-cTBS effects on metacognitive awareness. Cortex, 2023 (volume and pages not checked). Read as the bioRxiv preprint: Prefrontal-parietal-cTBS effects on metacognitive awareness: real or illusory? (10.1101/2022.10.26.513949)",
+      "url": "https://www.biorxiv.org/content/10.1101/2022.10.26.513949v1",
+      "date": "2022-10-28"
+    },
+    "first_appeared": "2022-10-28 (preprint (bioRxiv), its own footer)",
+    "data_collected": {
+      "when": "not stated; before 2022-10-28, during the COVID-19 epidemic",
+      "basis": "The preprint gives no collection dates; it says two participants could not finish 'due to the COVID-19 epidemic'."
+    }
+  },
+  "passages": [
+    {
+      "text": "Even though all measures of objective task performance for the two tasks were equivalent, Kanizsa illusory contours showed a reduction in metacognitive efficiency.",
+      "source": {
+        "citation": "Martin A, Lane TJ, Hsu T-Y. DLPFC-PPC-cTBS effects on metacognitive awareness. Cortex, 2023 (volume and pages not checked). Read as the bioRxiv preprint: Prefrontal-parietal-cTBS effects on metacognitive awareness: real or illusory? (10.1101/2022.10.26.513949)",
+        "url": "https://www.biorxiv.org/content/10.1101/2022.10.26.513949v1",
+        "date": "2022-10-28"
+      }
+    },
+    {
+      "text": "After the removal of this outlier, it was observed that cTBS administered over the DLPFC significantly reduced metacognitive efficiencies when compared to the S1 (t(19) = 1.89, p < 0.05, Cohen’s d = 0.42, BF10 = 1.96).",
+      "source": {
+        "citation": "Martin A, Lane TJ, Hsu T-Y. DLPFC-PPC-cTBS effects on metacognitive awareness. Cortex, 2023 (volume and pages not checked). Read as the bioRxiv preprint: Prefrontal-parietal-cTBS effects on metacognitive awareness: real or illusory? (10.1101/2022.10.26.513949)",
+        "url": "https://www.biorxiv.org/content/10.1101/2022.10.26.513949v1",
+        "date": "2022-10-28"
+      }
+    },
+    {
+      "text": "The overall ratings of visibility did not change: neither due to the nature of the task being performed (F(1, 20) = 0.05, p = 0.83, BF10 = 0.31), nor due to the cTBS administration site (F(2, 40) = 0.77, p = 0.47, BF10 = 0.23).",
+      "source": {
+        "citation": "Martin A, Lane TJ, Hsu T-Y. DLPFC-PPC-cTBS effects on metacognitive awareness. Cortex, 2023 (volume and pages not checked). Read as the bioRxiv preprint: Prefrontal-parietal-cTBS effects on metacognitive awareness: real or illusory? (10.1101/2022.10.26.513949)",
+        "url": "https://www.biorxiv.org/content/10.1101/2022.10.26.513949v1",
+        "date": "2022-10-28"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

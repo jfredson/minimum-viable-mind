@@ -1,0 +1,69 @@
+{
+  "packet_id": "tst-orch-anaesthetic-mt",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES IT SEPARATE the theory from a rival: does at least one theory on the list of rivals predict something different (not merely stay silent)? If yes, name the rival or rivals, and say whether your view of the rival comes from the material given or from your own knowledge. Answer in JSON: {\"could_fail\": true|false, \"separates\": true|false, \"separates_from\": [ids], \"rival_view_from\": \"material\"|\"own knowledge\"|\"both\"|\"none\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Orchestrated Objective Reduction",
+  "core_claim": {
+    "quote": "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness.",
+    "source": {
+      "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+      "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+      "date": "2013-08-20"
+    }
+  },
+  "prediction": {
+    "statement": "General anaesthetics cause unconsciousness, at least in part, by acting on microtubules inside neurons; so changing the brain's microtubules with a drug changes how much anaesthetic, or how long, it takes to cause unconsciousness.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2013-08-20",
+      "passage": "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness.",
+      "source": {
+        "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+        "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+        "date": "2013-08-20"
+      }
+    },
+    "test_for": "In animals or people, a drug that acts on brain microtubules changes the anaesthetic dose, or the time under a fixed dose, needed to cause unconsciousness, compared with untreated controls.",
+    "test_against": "Drugs shown to act on brain microtubules, at doses that reach the brain, leave the anaesthetic dose and time needed for unconsciousness unchanged."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "Despite prevailing assumptions, actual evidence supports anesthetic action on microtubules.",
+      "source": {
+        "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+        "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+        "date": "2013-08-20"
+      }
+    },
+    {
+      "passage": "anesthetics also act through MTs [86].",
+      "source": {
+        "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+        "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+        "date": "2013-08-20"
+      }
+    },
+    {
+      "passage": "Anesthetics also bind in non-polar regions in tubulin in microtubules, and genomic, proteomic and optogenetic research pointed to tubulin and microtubules as the target of anesthetic action",
+      "source": {
+        "citation": "Hameroff S. Consciousness, Cognition and the Neuronal Cytoskeleton - A New Paradigm Needed in Neuroscience. Frontiers in Molecular Neuroscience 15:869935, 2022",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9245524/",
+        "date": "2022-06-16"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

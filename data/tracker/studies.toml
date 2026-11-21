@@ -168,3 +168,558 @@ protections.registered = { value = false, reason = "Not opened.", source = "sh-p
 protections.outside_camp = { value = true, reason = "Run long before the account existed.", source = "sh-positions" }
 protections.rival_agreed = { value = false, reason = "Not opened.", source = "sh-positions" }
 protections.replicated = { value = false, reason = "Not opened.", source = "sh-positions" }
+
+# ======================================================================
+# Stage 3, Higher-order theories: drafted 2026-11-21 (first reading, one reader).
+# Studies for higher-order theories (stage 3 draft, 2026-11-21).
+#
+# How they were chosen (repeatable): in ConTraSt's live CSV export downloaded
+# 2026-11-21 (contrast-export-2026-11-21, 494 rows), the rows whose
+# Is_the_experiment_theory_driven field is "driven" and whose Driven_by_theories field
+# contains "HOT"; distinct papers (by DOI); most recent year first, in the export's own
+# order within a year; take five. The full screened list is in notes.md.
+#
+# Two of the five are already records from the pilot and are NOT redefined here:
+#   bandara-2025 (Rowe, Bandara and Garrido's reanalysis), and dellert-2025 (whose
+#   Current Biology version, 10.1016/j.cub.2025.10.026, is the paper ConTraSt lists).
+# Their judgements for higher-order predictions are in judgements.toml; anything in
+# their pilot records that reads wrongly for this theory is in notes.md.
+#
+# ConTraSt is a reading list only: no ConTraSt field is copied; each record is built from
+# the paper. Credit: the ConTraSt database (Yaron, Melloni, Pitts and Mudrik, Nature
+# Human Behaviour 2022), https://contrastdb.tau.ac.il, CC BY-SA 4.0.
+
+[[study]]
+id = "mei-soto-2025"
+name = "Where the brain represents seen and unseen pictures: a reanalysis of a high-precision fMRI dataset with models from computer vision"
+source = "mei-soto-2025"
+first_appeared = { date = "2024-06-01", what = "preprint (bioRxiv 10.1101/2024.05.27.596053), per Europe PMC", source = "mei-soto-2025" }
+data_first_appeared = { date = "2021-01-14", what = "preprint of the original study (Mei, Santana and Soto, bioRxiv), per Europe PMC", source = "mei-santana-soto-2021" }
+data_collected = { when = "not stated; before 2021-01-14", reason = "A reanalysis: the data are those of Mei et al. (2022b), whose preprint first appeared 2021-01-14.", passage = "Here we re-analysed data from a high-precision fMRI study coupled with representational similarity analysis based on convolutional neural network models to provide a detailed information-based approach to neural representations of both unconscious and conscious perceptual content.", source = "mei-soto-2025" }
+group = "Soto group (last author D. Soto, by the paper's author list)"
+camps = []
+found_through = "contrast"
+opened = true
+reanalysis_note = "A reanalysis of data first described in a preprint of 2021-01-14. Under ruling D, a prediction counts for it only if the proponents fixed it before 2021-01-14. A related earlier preprint by the same authors (2022-12-23) used a different, exploratory analysis of the same data."
+protections.registered = { value = false, reason = "No registration mentioned (full text searched for 'regist'; the only hits are about aligning brain images).", source = "mei-soto-2025" }
+protections.outside_camp = { value = true, reason = "Neither author is an author of the higher-order statements used here (brown-lau-ledoux-2019, ledoux-brown-2017, fleming-2020).", source = "mei-soto-2025" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "mei-soto-2025" }
+protections.replicated = { value = false, reason = "No replication by another group found. The cross-participant analysis repeats the result within the same seven people's data, which is not a replication.", source = "mei-soto-2025" }
+
+[[study]]
+id = "martin-2023"
+name = "Magnetic stimulation of prefrontal and parietal cortex and its effect on visibility ratings and metacognition, with real and illusory shapes"
+source = "martin-2023"
+first_appeared = { date = "2022-10-28", what = "preprint (bioRxiv), its own footer", source = "martin-2023" }
+data_collected = { when = "not stated; before 2022-10-28, during the COVID-19 epidemic", reason = "The preprint gives no collection dates; it says two participants could not finish 'due to the COVID-19 epidemic'.", passage = "two of them could not finish the experiment due to the COVID-19 epidemic", source = "martin-2023" }
+group = "Hsu group (last and corresponding author Tzu-Yu Hsu, Taipei Medical University)"
+camps = []
+found_through = "contrast"
+opened = true
+replication_note = "The study is itself an attempt by another group to repeat Rounis and colleagues (2010), a magnetic-stimulation study the higher-order statement cites (brown-lau-ledoux-2019, its reference 47). That does not earn the 'replicated' protection, which asks whether this study was repeated."
+protections.registered = { value = false, reason = "No registration mentioned in the preprint (full text read).", source = "martin-2023" }
+protections.outside_camp = { value = true, reason = "No author is an author of the higher-order statements used here.", source = "martin-2023" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "martin-2023" }
+protections.replicated = { value = false, reason = "No replication of this study by another group found.", source = "martin-2023" }
+
+[[study]]
+id = "hobot-2023"
+name = "Magnetic stimulation of the left front-middle prefrontal cortex and its effect on awareness ratings and metacognition"
+source = "hobot-2023"
+first_appeared = { date = "2023-02-27", what = "publication (available online); no preprint found in Europe PMC", source = "hobot-2023" }
+data_collected = { when = "not stated; before 2022-11-30 (submission)", reason = "The paper gives no collection dates; it was received by the journal on 2022-11-30.", source = "hobot-2023" }
+group = "Sandberg group (last author Kristian Sandberg, Aarhus University); first author at the Jagiellonian University Consciousness Lab"
+camps = []
+found_through = "contrast"
+opened = true
+expectation_note = "The authors say their hypotheses were non-directional ('Considering the diversity in previous research outcomes, our hypotheses were non-directional.')."
+protections.registered = { value = false, reason = "No registration mentioned (full text read; the word appears only as 'registered activity').", source = "hobot-2023" }
+protections.outside_camp = { value = true, reason = "No author is an author of the higher-order statements used here.", source = "hobot-2023" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "hobot-2023" }
+protections.replicated = { value = false, reason = "No replication found. The authors themselves ask for follow-up 'in larger samples'.", source = "hobot-2023" }
+
+# ======================================================================
+# Stage 3, Recurrent processing theory: drafted 2026-11-21 (first reading, one reader).
+# Studies screened for recurrent processing theory, drafted 2026-11-21.
+# Chosen from the ConTraSt database as a reading list only (query, date and the
+# screen list in notes.md). No ConTraSt field is copied; each record is built from
+# the paper. Credit: ConTraSt (Yaron, Melloni, Pitts and Mudrik, Nature Human
+# Behaviour 2022), https://contrastdb.tau.ac.il, CC BY-SA 4.0.
+#
+# Two of the five are existing records, reused by id and NOT rewritten here:
+#   bandara-2025 (data/tracker/studies.toml)
+#   dellert-2025 (data/tracker/studies.toml)
+# What they need for this theory is in notes.md ("Reused records"): neither has an
+# author among recurrent processing theory's proponents, so their camps = [] and
+# outside_camp = true already hold for it.
+#
+# Shape as data/tracker/studies.toml.
+
+[[study]]
+id = "filimonov-2024"
+name = "How attention and having to respond change the brain waves that mark hearing a sound (EEG, near-threshold syllables)"
+source = "filimonov-2024"
+first_appeared = { date = "2024-07-23", what = "publication (no preprint found in Europe PMC)", source = "filimonov-2024" }
+data_collected = { when = "not stated; before 2023-07-28", reason = "The paper gives no recording dates; it was received by the journal on 2023-07-28, so the data were collected before then.", source = "filimonov-2024" }
+group = "Koivisto group (last author; University of Turku)"
+camps = []
+camps_reason = "No author is an author of a proponents' statement used in these records for recurrent processing theory (Lamme), or, as far as the pilot's records go, for any other listed theory."
+found_through = "contrast"
+opened = true
+protections.registered = { value = false, reason = "No registration is mentioned (full text searched for 'preregist' and 'registered'; the only hit is a cited paper's title). Its data are on OSF (project u2etp, created 2023-07-27, the day before submission); the OSF API lists no registrations for it (checked 2026-11-21).", source = "filimonov-2024" }
+protections.outside_camp = { value = true, reason = "Not run by the theory's proponent; no author of a Lamme statement among the authors.", source = "filimonov-2024" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "filimonov-2024" }
+protections.replicated = { value = false, reason = "No replication by another group found.", source = "filimonov-2024" }
+modality_note = "About hearing. Recurrent processing theory's opened statements are about seeing, so whether they commit the theory to this test is read as unclear (see the commitment judgements)."
+
+[[study]]
+id = "eiserbeck-2022"
+name = "Graded seeing during the attentional blink, measured with brain waves (EEG, face targets)"
+source = "eiserbeck-2022"
+first_appeared = { date = "2021-01-17", what = "preprint (bioRxiv, v1 posted 2021-01-17)", source = "eiserbeck-2022" }
+data_collected = { when = "not stated; before 2021-01-17", reason = "The preprint gives no recording dates; the data were collected before the preprint appeared.", source = "eiserbeck-2022" }
+group = "Abdel Rahman group (last author; Humboldt-Universität zu Berlin)"
+camps = []
+camps_reason = "No author is an author of a proponents' statement used in these records."
+found_through = "contrast"
+opened = true
+opened_note = "The bioRxiv preprint was read; the Cerebral Cortex version (online 2021-08-26) was not opened (publisher block page, not bypassed). On the verify list."
+protections.registered = { value = false, reason = "No registration mentioned in the preprint (text searched for 'preregist' and 'registered').", source = "eiserbeck-2022" }
+protections.outside_camp = { value = true, reason = "Not run by the theory's proponent.", source = "eiserbeck-2022" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "eiserbeck-2022" }
+protections.replicated = { value = false, reason = "No replication by another group found.", source = "eiserbeck-2022" }
+framing_note = "The study asks whether seeing during the attentional blink is graded or all-or-none, and never names recurrent processing theory; it bears on the theory only through the early posterior wave (the visual awareness negativity) it measures."
+
+[[study]]
+id = "filimonov-2022"
+name = "Brain waves marking seeing and hearing faint stimuli, compared in one experiment (EEG, visual, auditory and both)"
+source = "filimonov-2022"
+first_appeared = { date = "2022-01-10", what = "publication (online; no preprint found in Europe PMC)", source = "filimonov-2022" }
+data_collected = { when = "not stated; before 2021-04-07", reason = "The paper gives no recording dates; it was received by the journal on 2021-04-07, so the data were collected before then.", source = "filimonov-2022" }
+group = "Koivisto group (last author; University of Turku)"
+camps = []
+camps_reason = "No author is an author of a proponents' statement used in these records."
+found_through = "contrast"
+opened = true
+protections.registered = { value = false, reason = "No registration mentioned (full text searched for 'preregist' and 'registered').", source = "filimonov-2022" }
+protections.outside_camp = { value = true, reason = "Not run by the theory's proponent.", source = "filimonov-2022" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "filimonov-2022" }
+protections.replicated = { value = false, reason = "No replication by another group found. (Its visual awareness negativity agrees with earlier studies, which is consistency with a body of work, not a replication of this study.)", source = "filimonov-2022" }
+same_group_note = "Same last author and group as filimonov-2024, so the two count as one research group for the two-group rule."
+
+# ======================================================================
+# Stage 3, Anil Seth's living-body view: drafted 2026-11-21 (first reading, one reader).
+# Studies for Anil Seth's living-body view, drafted 2026-11-21. Same shape as
+# data/tracker/studies.toml.
+#
+# How they were chosen (repeatable; the full screen list is in notes.md):
+# Europe PMC REST search, run 2026-11-21, sorted newest first, query exactly
+#   (TITLE_ABS:"biological naturalism" OR TITLE_ABS:"beast machine" OR
+#    TITLE_ABS:"interoceptive inference" OR TITLE_ABS:"interoceptive predictive")
+#    AND TITLE_ABS:conscious* AND SRC:MED
+# 33 results, all screened in order. A result was taken if it reports new data (or
+# a reanalysis) and says in its title or abstract that it tests this view or a
+# prediction Seth stated. Three qualified (fewer than the five asked for), so the
+# screen stopped at the end of the list. Also recorded: the one study Seth 2025
+# cites as evidence for its claims (chintaluri-2023), not counted.
+
+[[study]]
+id = "jicol-2023"
+name = "Whether matching expected and felt emotion builds the sense of presence in virtual reality"
+source = "jicol-2023"
+first_appeared = { date = "2023-03-16", what = "publication (no preprint found in Europe PMC)", source = "jicol-2023" }
+data_collected = { when = "not stated; before 2022-06-27", reason = "The paper gives no collection dates; it was received by the journal on 2022-06-27, so the data were collected before then.", source = "jicol-2023" }
+group = "O'Neill group (last author; University of Bath)"
+camps = []
+found_through = "europepmc-search-seth"
+opened = true
+protections.registered = { value = false, reason = "No registration is mentioned (full text searched for 'preregist', 'registered' and 'OSF'); the sample size came from a power analysis, which is not a registration.", source = "jicol-2023" }
+protections.outside_camp = { value = true, reason = "No author is an author of a proponents' statement used here (Seth, Suzuki, Critchley, Friston).", source = "jicol-2023" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "jicol-2023" }
+protections.replicated = { value = false, reason = "No replication by another group found in the screen or mentioned in the paper.", source = "jicol-2023" }
+
+[[study]]
+id = "suzuki-2013"
+name = "The 'cardiac rubber hand illusion': a virtual hand pulsing in or out of time with one's own heartbeat"
+source = "suzuki-2013"
+first_appeared = { date = "2013-08-28", what = "publication online (no preprint found in Europe PMC)", source = "suzuki-2013" }
+data_collected = { when = "not stated; before 2013-05-22", reason = "The paper gives no collection dates; it was received by the journal on 2013-05-22.", source = "suzuki-2013" }
+group = "Seth group (last and corresponding author; Sackler Centre for Consciousness Science, University of Sussex)"
+camps = ["seth"]
+camps_reason = "Anil Seth (last author), Keisuke Suzuki (first author) and Hugo Critchley are the three authors of seth-2012, a proponents' statement used here."
+found_through = "europepmc-search-seth"
+opened = true
+protections.registered = { value = false, reason = "No registration is mentioned in the paper (full text read).", source = "suzuki-2013" }
+protections.outside_camp = { value = false, reason = "Run by the theory's own proponents (see camps_reason).", source = "suzuki-2013" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "suzuki-2013" }
+protections.replicated = { value = false, reason = "No replication by another group found in the screen. The paper cites a related full-body result (Aspell et al., in press) as complementary, which is a different experiment, not a replication.", passage = "also extend recent complementary observations of facilitation of proprioceptive drift when cardiac signals are incorporated within a virtual reality avatar in a generalized full-body illusion (Aspell et al., in press).", source = "suzuki-2013" }
+
+[[study]]
+id = "vanelk-2014"
+name = "Smaller auditory brain responses to sounds timed to one's own heartbeat (EEG)"
+source = "vanelk-2014"
+first_appeared = { date = "2014-03-26", what = "publication online, per Europe PMC (an earlier preprint, if any, not found)", source = "vanelk-2014" }
+group = "Blanke group (last author, per Europe PMC; EPFL)"
+camps = []
+found_through = "europepmc-search-seth"
+opened = false
+bears_on = []
+not_counted_reason = "Not opened: subscription only, and the open copy listed by OpenAlex holds no text. No judgement is made on it. The abstract (read through Europe PMC) reports a reduced auditory N1 response to heartbeat-related sounds and reads it as interoceptive predictive coding; opened, it would be read against seth-interoceptive-suppression (whether a smaller response in hearing areas to heartbeat-timed sounds is the predicted reduced response to well-predicted body signals) and seth-expectation-speeds-access. John could open it with a ScienceDirect sign-in."
+protections.registered = { value = false, reason = "Not opened.", source = "vanelk-2014" }
+protections.outside_camp = { value = false, reason = "Not opened. (From Europe PMC's author list, no author is a Seth proponent, so it would be outside the camp.)", source = "vanelk-2014" }
+protections.rival_agreed = { value = false, reason = "Not opened.", source = "vanelk-2014" }
+protections.replicated = { value = false, reason = "Not opened.", source = "vanelk-2014" }
+
+# ------------------------------------------- the study Seth 2025 cites as evidence
+
+[[study]]
+id = "chintaluri-2023"
+name = "Computer models suggesting that neurons fire partly to protect themselves metabolically"
+source = "chintaluri-2023"
+first_appeared = { date = "2023-11-21", what = "publication (no preprint found in Europe PMC)", source = "chintaluri-2023" }
+group = "Vogels group (last author)"
+camps = []
+found_through = "cited by seth-2025 (section 3.3, and again in section 4.1)"
+opened = true
+bears_on = []
+not_counted_reason = "Cited by Seth 2025 as evidence that a neuron's firing 'cannot be decoupled from its metabolic foundations', a premise of core claim seth-c5. Not counted, for three reasons: it is a modelling study ('we built a set of models'), not a new measurement; it tests no recorded prediction about consciousness; and it appeared (2023-11-21) before any proponents' statement of the living-body view opened here that it could bear on (seth-2025's preprint, 2024-06-30), so it fails the dating test whatever it found. Only its abstract was read."
+protections.registered = { value = false, reason = "Not assessed (tests no recorded prediction).", source = "chintaluri-2023" }
+protections.outside_camp = { value = true, reason = "No author is a Seth proponent (Europe PMC author list).", source = "chintaluri-2023" }
+protections.rival_agreed = { value = false, reason = "Not assessed.", source = "chintaluri-2023" }
+protections.replicated = { value = false, reason = "Not assessed.", source = "chintaluri-2023" }
+
+# ======================================================================
+# Stage 3, Attention schema theory: drafted 2026-11-21 (first reading, one reader).
+# Attention schema theory: studies, stage 3 draft, 2026-11-21.
+#
+# How the sample was chosen (repeatable): a Europe PMC REST search run on
+# 2026-11-21, query exactly (TITLE_ABS:"attention schema") AND SRC:MED, sorted by
+# publication date, newest first (europepmc-ast-search). 20 hits. Screened in order;
+# taken: the most recent that report new data (human or animal experiments, or
+# artificial-agent experiments that test a stated prediction) and say in the title
+# or abstract that they test attention schema theory or a prediction it states.
+# Only four qualified, fewer than the five asked for, so all four were taken. The
+# full screen list is in notes.md.
+#
+# All four were run by the theory's own proponents (Michael Graziano is last author
+# of each), so none earns the outside-camp protection for this theory.
+
+[[study]]
+id = "wilterson-2021-agent"
+name = "An artificial neural-network agent learning to control a spotlight of attention, with and without a model of its attention"
+source = "wilterson-2021-agent"
+first_appeared = { date = "2021-08-12", what = "publication (PNAS, online); no earlier preprint found", source = "wilterson-2021-agent" }
+data_collected = { when = "not stated; before 2021-02-05", reason = "A simulation study; the paper gives no dates for the runs. It was received for review on 2021-02-05, so the runs were done before then.", source = "wilterson-2021-agent" }
+group = "Graziano group (last author)"
+camps = ["ast"]
+camps_reason = "Michael Graziano, an author of the proponents' statements used here (graziano-webb-2015, graziano-2018, graziano-2022), is an author and the last author."
+found_through = "europepmc-ast-search"
+opened = true
+bears_on = ["ast-schema-control"]
+protections.registered = { value = false, reason = "No registration mentioned (full text searched for 'preregist', 'registered', 'OSF' and 'AsPredicted': none).", source = "wilterson-2021-agent" }
+protections.outside_camp = { value = false, reason = "Run by the theory's own proponents (see camps_reason).", source = "wilterson-2021-agent" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed in advance what would count against each side.", source = "wilterson-2021-agent" }
+protections.replicated = { value = false, reason = "No replication by another group found. The paper cites one earlier agent study suggesting a similar benefit (its reference 31), which was not opened and is not a replication of this one.", source = "wilterson-2021-agent" }
+
+[[study]]
+id = "wilterson-2021-tpj"
+name = "Brain scanning (fMRI) of people using a visible or a masked cue to steer attention, testing the right temporoparietal junction"
+source = "wilterson-2021-tpj"
+first_appeared = { date = "2021-06-14", what = "publication (PNAS, online); no earlier preprint found", source = "wilterson-2021-tpj" }
+data_collected = { when = "not stated; before 2020-12-30", reason = "The paper gives no scanning dates; it was received for review on 2020-12-30, so the data were collected before then.", source = "wilterson-2021-tpj" }
+group = "Graziano group (last author)"
+camps = ["ast"]
+camps_reason = "Michael Graziano, an author of the proponents' statements used here, is the last author."
+found_through = "europepmc-ast-search"
+opened = true
+bears_on = ["ast-control", "ast-tpj"]
+design_note = "Two experiments with different people: experiment 1 (18 people) saw a red cue they were aware of; experiment 2 (17 people) saw a black, masked cue they reported never seeing. In both, the cue predicted where a target would appear, and nobody was told. The behavioural paradigm is the lab's own, first published in wilterson-2020; that the masked cue still draws attention by itself was shown there, not measured again here."
+protections.registered = { value = false, reason = "No registration mentioned (full text searched for 'preregist', 'registered', 'OSF' and 'AsPredicted': none).", source = "wilterson-2021-tpj" }
+protections.outside_camp = { value = false, reason = "Run by the theory's own proponents (see camps_reason).", source = "wilterson-2021-tpj" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed in advance what would count against each side.", source = "wilterson-2021-tpj" }
+protections.replicated = { value = false, reason = "Its behavioural result repeats the same lab's earlier finding ('These results confirm our prior behavioral study (8)'), which is the same group, not another one. No replication by another group found.", source = "wilterson-2021-tpj" }
+
+[[study]]
+id = "wilterson-2020"
+name = "Six behavioural experiments on how awareness of a cue affects deliberate and automatic attention"
+source = "wilterson-2020"
+first_appeared = { date = "2020-06-01", what = "publication (Progress in Neurobiology, online), as dated in Europe PMC; no preprint found", source = "wilterson-2020" }
+group = "Graziano group (last author)"
+camps = ["ast"]
+camps_reason = "Taylor Webb and Michael Graziano, authors of the core-claim source (graziano-webb-2015), are authors; Graziano is last author."
+found_through = "europepmc-ast-search"
+opened = false
+bears_on = ["ast-control"]
+not_counted_reason = "Not opened: only the abstract was read (Europe PMC). ScienceDirect gave no article text to an automated fetch, which was not worked around. No judgement is made on it. John could open it in the browser pane (Europe PMC lists it as open access); it would be read against ast-control, and its two learning experiments possibly against ast-schema-control."
+protections.registered = { value = false, reason = "Not opened.", source = "wilterson-2020" }
+protections.outside_camp = { value = false, reason = "Run by the theory's own proponents (from the author list in the Europe PMC record).", source = "wilterson-2020" }
+protections.rival_agreed = { value = false, reason = "Not opened.", source = "wilterson-2020" }
+protections.replicated = { value = false, reason = "Not opened. Its paradigm was repeated by the same lab in wilterson-2021-tpj, which is not another group.", source = "wilterson-2020" }
+
+[[study]]
+id = "webb-2016"
+name = "Attention drawn by a masked stimulus, with and without awareness of it (metacontrast masking)"
+source = "webb-2016"
+first_appeared = { date = "2016-02-02", what = "publication (Journal of Cognitive Neuroscience, online), as dated in Europe PMC; no preprint found", source = "webb-2016" }
+group = "Graziano group (last author)"
+camps = ["ast"]
+camps_reason = "Taylor Webb and Michael Graziano, the authors of the core-claim source, are authors."
+found_through = "europepmc-ast-search"
+opened = false
+bears_on = ["ast-control"]
+not_counted_reason = "Not opened: only the abstract was read (Europe PMC, 'Subscription required'); the publisher's page answered with a robot check, which was not bypassed. No judgement is made on it. John would need to sign in at MIT Press (direct.mit.edu) or a library to open it; it would be read against ast-control."
+protections.registered = { value = false, reason = "Not opened.", source = "webb-2016" }
+protections.outside_camp = { value = false, reason = "Run by the theory's own proponents (author list in the Europe PMC record).", source = "webb-2016" }
+protections.rival_agreed = { value = false, reason = "Not opened.", source = "webb-2016" }
+protections.replicated = { value = false, reason = "Not opened.", source = "webb-2016" }
+
+# ======================================================================
+# Stage 3, The sensorimotor theory: drafted 2026-11-21 (first reading, one reader).
+# Studies for the sensorimotor theory (draft, stage 3, 2026-11-21). Shape as
+# data/tracker/studies.toml.
+#
+# How they were chosen (stated so it can be redone): the Europe PMC search in
+# sources.toml (epmc-search-sm-2026-11-21), sorted newest first, screened in order,
+# taking the most recent that report new data (or a reanalysis) and say in the title
+# or abstract that they test the sensorimotor theory of perceptual experience or a
+# prediction its proponents stated. The search returned 9 records in all; 1 qualified,
+# fewer than the five asked for, so the screen stopped there (full list in notes.md).
+
+[[study]]
+id = "bridgeman-2008"
+name = "Pressing on the eye for an hour: does the light seen (a 'pressure phosphene') come to move with the finger, as practice with a new sensorimotor pattern might predict?"
+source = "bridgeman-2008"
+first_appeared = { date = "2008", what = "publication (Perception 37(6); no earlier preprint or registration found)", source = "bridgeman-2008" }
+data_collected = { when = "not stated in the abstract; before 2008", reason = "Only the abstract was read; it gives no collection dates. The data were collected before the paper appeared.", source = "bridgeman-2008" }
+group = "Bridgeman group, University of California Santa Cruz (last listed author Catherine Woods; corresponding author Bruce Bridgeman, per the affiliation in the Europe PMC record)"
+camps = []
+found_through = "Europe PMC search (epmc-search-sm-2026-11-21), result 8 of 9"
+opened = false
+opened_note = "Abstract only. Not open access (OpenAlex lists it as closed, with no repository copy); the full text was not sought behind the paywall. The Europe PMC record lists 'discussion 815', a page after the article that may be a reply; not opened."
+bears_on = ["sm-substitution"]
+not_counted_reason = "Commitment read as unclear (com-bridgeman-sm-substitution): the proponents' 2001 statement says the sense an experience belongs to follows learned sensorimotor patterns, but sets no time scale, and their own response in the same publication says stimulation through the eye's own nerve, phosphenes included, is felt as sight because of patterns learned earlier. The prediction the study tests (that the phosphene should adapt or change sense within an hour) is the study authors' reading of the theory. Under rule 2.3, unclear commitment is not counted."
+result_note = "Abstract: 'A test of the sensorimotor theory giving it every advantage had six observers in darkness moving their fingers along the eye and observing phosphenes for 1 h and 2400 motion cycles; the phosphene always obeyed the doctrine of specific nerve energies, never adapting or changing modality as the sensorimotor theory predicts.'"
+protections.registered = { value = false, reason = "No registration is mentioned in the abstract; the full text was not read, and registration of a small psychophysics study in 2008 would be unusual.", source = "bridgeman-2008" }
+protections.outside_camp = { value = true, reason = "Neither J. Kevin O'Regan nor Alva Noë is an author.", source = "bridgeman-2008" }
+protections.rival_agreed = { value = false, reason = "No sign that the theory's proponents agreed in advance what would count against it.", source = "bridgeman-2008" }
+protections.replicated = { value = false, reason = "No replication by another group found (none searched for beyond the screen).", source = "bridgeman-2008" }
+
+[[study]]
+id = "haans-2008"
+name = "Rubber hand illusion: does a fake limb's skin texture and hand shape change how strongly people feel it is their own?"
+source = "haans-2008"
+first_appeared = { date = "2008-07-22", what = "publication (electronic, Body Image)", source = "haans-2008" }
+group = "de Kort group, Eindhoven University of Technology (last author)"
+camps = []
+found_through = "Europe PMC search (epmc-search-sm-2026-11-21), result 7 of 9"
+opened = false
+bears_on = []
+not_counted_reason = "Screened, not taken. It reports new data, but it set out to test a hypothesis of Armel and Ramachandran (2003), not the sensorimotor theory, and offers 'a skill-based sensorimotor account of perceived body ownership' only afterwards to explain a result. Its subject is feeling a limb as one's own, not seeing, so it falls outside the vision-only theory fixed here. It tests no recorded prediction."
+protections.registered = { value = false, reason = "Not assessed (abstract only; tests no recorded prediction).", source = "haans-2008" }
+protections.outside_camp = { value = true, reason = "Neither O'Regan nor Noë is an author.", source = "haans-2008" }
+protections.rival_agreed = { value = false, reason = "Not assessed.", source = "haans-2008" }
+protections.replicated = { value = false, reason = "Not assessed.", source = "haans-2008" }
+
+# ======================================================================
+# Stage 3, Orchestrated Objective Reduction: drafted 2026-11-21 (first reading, one reader).
+# Studies for Orchestrated Objective Reduction (Orch OR), stage 3 draft, 2026-11-21.
+# Shape as data/tracker/studies.toml.
+#
+# How they were chosen (repeatable): the Europe PMC search in source
+# epmc-orch-search-2026-11-21, sorted newest first, screened in the order returned.
+# Taken: the most recent that report new experimental data (not models, simulations,
+# reviews or theory papers) and say in the title or abstract that they bear on Orch OR
+# or on microtubules in consciousness or anaesthesia. Only four of the first 80 results
+# qualify, fewer than the five asked for, so the screen stopped at 80 as the method
+# says. The full screen list is in notes.md.
+
+[[study]]
+id = "khan-2024"
+name = "A microtubule-stabilising drug (epothilone B) delays isoflurane unconsciousness in rats"
+source = "khan-2024"
+first_appeared = { date = "2024-08-15", what = "publication ('Prepublished 2024 Aug 15'; no preprint found)", source = "khan-2024" }
+data_collected = { when = "not stated; before 2024-07-01", reason = "The paper gives no recording dates; it was received by the journal on 2024-07-01, so the data were collected before then.", source = "khan-2024" }
+group = "Wiest group (last author, Neuroscience Department, Wellesley College)"
+camps = []
+camps_reason = "No author is Hameroff or Penrose, the authors of the proponents' statements used here. The last author argues for the theory in his own later review (screen item 22, Wiest 2025), which is not a proponents' statement used in these records."
+found_through = "epmc-orch-search-2026-11-21 (screen item 24)"
+opened = true
+bears_on = ["orch-anaesthetic-mt"]
+protections.registered = { value = false, reason = "No registration is mentioned in the paper (full text read; no 'preregist' or 'registered' in it).", source = "khan-2024" }
+protections.outside_camp = { value = true, reason = "Not run by the theory's proponents (see camps_reason). A judgement: the authors frame the result as support for the theory ('This finding is predicted by models that posit consciousness as a property of a quantum physical state of neural MTs'), but the protection is about who ran the study, and Hameroff and Penrose did not.", source = "khan-2024" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed in advance what would count against each side.", source = "khan-2024" }
+protections.replicated = { value = false, reason = "The same group repeated the test in mice (huang-2026, last author Wiest), which is not another group. Another group (li-2025) gave a related drug, epothilone D, daily for two weeks and found the opposite direction (mice more sensitive to isoflurane), so it is not a replication.", source = "li-2025" }
+design_note = "Eight male rats, each tested before and after one injection of epothilone B; experimenters blind to drug condition. Unconsciousness is measured as loss of the righting reflex (the animal no longer turns itself upright), the usual stand-in for unconsciousness in rodents."
+
+[[study]]
+id = "li-2025"
+name = "Microtubule drugs and morphine, given for two weeks, shift isoflurane sensitivity in mice in different directions"
+source = "li-2025"
+first_appeared = { date = "2025-02-28", what = "publication (no preprint found)", source = "li-2025" }
+data_collected = { when = "not stated; before 2024-01-17", reason = "The paper gives no collection dates; it was received by the journal on 2024-01-17. The animal protocol number is from 2017 (2017N000233).", source = "li-2025" }
+group = "Martyn group (last and corresponding author, Massachusetts General Hospital, Boston)"
+camps = []
+found_through = "epmc-orch-search-2026-11-21 (screen item 17)"
+opened = true
+bears_on = ["orch-anaesthetic-mt"]
+protections.registered = { value = false, reason = "No registration mentioned; the paper says it follows the ARRIVE reporting guidelines, which is not a registration.", source = "li-2025" }
+protections.outside_camp = { value = true, reason = "No author is an author of the proponents' statements used here. The paper does not argue for the theory; it cites 'microtubule quantum channels theory' as one reason to ask the question.", source = "li-2025" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "li-2025" }
+protections.replicated = { value = false, reason = "No replication found.", source = "li-2025" }
+design_note = "Male mice given epothilone D or morphine (cohort 1), or paclitaxel or vinblastine (cohort 2), for over two weeks, against saline; isoflurane dose-response for loss of righting reflex, and induction and emergence times; experimenters and analyst blind to treatment."
+
+[[study]]
+id = "huang-2026"
+name = "Epothilone B delays isoflurane unconsciousness in mice"
+source = "huang-2026"
+first_appeared = { date = "2026-01-08", what = "publication (Europe PMC first publication date; no preprint found)", source = "huang-2026" }
+group = "Wiest group (last author)"
+camps = []
+found_through = "epmc-orch-search-2026-11-21 (screen item 5)"
+opened = false
+not_counted_reason = "Not opened: only the abstract could be read (Europe PMC marks it not open access, no preprint found). No judgement is made on it. John could open it through a sign-in; it would be read against orch-anaesthetic-mt. Its abstract reports longer times to loss of the righting reflex the day after one epothilone B injection (29 s, Cohen's d 0.8), with smaller effects on later days. Being by the same group as khan-2024, it would not count as that study's replication."
+protections.registered = { value = false, reason = "Not opened.", source = "huang-2026" }
+protections.outside_camp = { value = false, reason = "Not opened.", source = "huang-2026" }
+protections.rival_agreed = { value = false, reason = "Not opened.", source = "huang-2026" }
+protections.replicated = { value = false, reason = "Not opened.", source = "huang-2026" }
+
+[[study]]
+id = "accorsi-2017"
+name = "Platelet fatty acids and mood disorders in two dog breeds, framed by Orch OR"
+source = "accorsi-2017"
+first_appeared = { date = "2017", what = "publication year (Europe PMC)", source = "accorsi-2017" }
+group = "Cocchi and colleagues (last author per Europe PMC)"
+camps = []
+found_through = "epmc-orch-search-2026-11-21 (screen item 52)"
+opened = false
+bears_on = []
+not_counted_reason = "Taken because its abstract reports new data and says it was done 'According to \"theory Orch-OR\" of Hameroff and Penrose'. Its measures, as the abstract describes them, are three platelet fatty acids in two dog breeds and an assessment of possible mood disorders; that tests no recorded prediction of the theory, so it moves no score. Only the abstract was opened."
+protections.registered = { value = false, reason = "Not assessed (tests no recorded prediction; abstract only).", source = "accorsi-2017" }
+protections.outside_camp = { value = true, reason = "No author is Hameroff or Penrose.", source = "accorsi-2017" }
+protections.rival_agreed = { value = false, reason = "Not assessed.", source = "accorsi-2017" }
+protections.replicated = { value = false, reason = "Not assessed.", source = "accorsi-2017" }
+
+# ======================================================================
+# Stage 3, Damasio's feeling-based theory: drafted 2026-11-21 (first reading, one reader).
+# Damasio's feeling-based theory: studies, drafted 2026-11-21.
+#
+# How the sample was chosen (repeatable): the Europe PMC REST search named in
+# europepmc-screen, run 2026-11-21, newest first. Each hit was screened in order; a
+# hit was taken if its title or abstract (a) reports new data or a reanalysis and
+# (b) says it tests Damasio's theory, or a result or prediction he stated, or that
+# his framework predicts its result. The first five taken are below. The query
+# returned only 18 hits, so the 60-result limit was never reached. The full screen
+# list, with the reason for each skip, is in notes.md.
+#
+# None of the five tests a prediction recorded in predictions.toml, so each has
+# bears_on = [] and moves no score. Three of them test Damasio's somatic marker
+# hypothesis (a theory of how bodily signals guide decisions), not his theory of
+# consciousness. One more study, by the proponents themselves, is recorded at the
+# end because a recorded prediction rests on it; it was not found by the search.
+# Layout: data/tracker/README.md.
+
+[[study]]
+id = "immertreu-2025"
+name = "Probing a game-playing artificial agent for the self and world models Damasio's theory says core consciousness needs"
+source = "immertreu-2025"
+first_appeared = { date = "2024-11-25", what = "preprint (arXiv 2411.16262)", source = "immertreu-2025" }
+data_collected = { when = "not stated; before 2024-11-25", reason = "The paper gives no dates for its simulations; the preprint appeared 2024-11-25.", source = "immertreu-2025" }
+group = "Krauss group (last author)"
+camps = []
+found_through = "europepmc-screen"
+opened = true
+bears_on = []
+not_counted_reason = "Taken by the screen: its abstract says it explores whether an artificial agent can develop core consciousness 'as proposed by Antonio Damasio's theory'. It measures whether small classifiers can read the agent's own position from its network activity (they can, above chance). That tests the authors' own operational reading of 'self model', not any prediction recorded here: the agent has no body-sensing or feelings, and the paper itself says its results 'should not be interpreted as evidence for the instantiation of consciousness'. It does not bear on dam-ai either, which is about feelings and names no observation."
+protections.registered = { value = false, reason = "No registration mentioned (full text searched).", source = "immertreu-2025" }
+protections.outside_camp = { value = true, reason = "No author is an author of a Damasio statement used here.", source = "immertreu-2025" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "immertreu-2025" }
+protections.replicated = { value = false, reason = "Not assessed (the study tests no recorded prediction).", source = "immertreu-2025" }
+
+[[study]]
+id = "vianna-2008"
+name = "Whether vivid recall of an emotional memory goes with stronger body signals (skin conductance and stomach activity)"
+source = "vianna-2008"
+first_appeared = { date = "2008-09-13", what = "publication (Europe PMC first publication date; no preprint found)", source = "vianna-2008" }
+group = "Tranel group (last author)"
+camps = ["damasio"]
+camps_reason = "Daniel Tranel is an author of damasio-tranel-2013, a proponents' statement used in these records."
+found_through = "europepmc-screen"
+opened = true
+bears_on = []
+not_counted_reason = "Taken by the screen: its abstract says Damasio's 1999 framework 'predicts such a dissociation' between a 'body loop' and an 'as if body loop'. The study hypothesised that vivid imagery would go with stronger body signals, found the stomach signal falling as vividness rose, and then explained this with Damasio's 1999 'as if body loop' (the brain simulating body changes). That prediction is from Damasio's 1999 book, which was not opened, and it is not among the recorded predictions; it was also invoked after the result. Moves no score."
+protections.registered = { value = false, reason = "No registration mentioned (text searched).", source = "vianna-2008" }
+protections.outside_camp = { value = false, reason = "Run with a co-author of the proponents' 2013 statement (see camps_reason).", source = "vianna-2008" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "vianna-2008" }
+protections.replicated = { value = false, reason = "Not assessed.", source = "vianna-2008" }
+
+[[study]]
+id = "gutbrod-2006"
+name = "Decision-making in the Iowa gambling task by patients with dense amnesia"
+source = "gutbrod-2006"
+first_appeared = { date = "2006-03-02", what = "publication (Europe PMC first publication date)", source = "gutbrod-2006" }
+group = "Ptak group (last author, per Europe PMC)"
+camps = []
+found_through = "europepmc-screen"
+opened = false
+bears_on = []
+not_counted_reason = "Taken by the screen on its abstract, which says it tests whether advantageous decisions need explicit memory, against the 1997 finding by Bechara, H. Damasio, Tranel and A. Damasio that people decide well 'before knowing the advantageous strategy'. That finding belongs to the somatic marker hypothesis, a theory of decisions, not to the feeling-based theory of consciousness, and it is not a recorded prediction. Only the abstract was read: the full text is behind a subscription."
+protections.registered = { value = false, reason = "Not opened.", source = "gutbrod-2006" }
+protections.outside_camp = { value = true, reason = "No author is an author of a Damasio statement used here (author list from Europe PMC).", source = "gutbrod-2006" }
+protections.rival_agreed = { value = false, reason = "Not opened.", source = "gutbrod-2006" }
+protections.replicated = { value = false, reason = "Not opened.", source = "gutbrod-2006" }
+
+[[study]]
+id = "naccache-2005"
+name = "A patient with damage to the anterior cingulate who keeps executive control but feels no mental effort"
+source = "naccache-2005"
+first_appeared = { date = "2005-01-20", what = "publication (Europe PMC first publication date)", source = "naccache-2005" }
+group = "Willer (last author, per Europe PMC; first author L. Naccache, with Stanislas Dehaene)"
+camps = ["gwt"]
+camps_reason = "Stanislas Dehaene is an author of dehaene-2014 and mashour-2020, global workspace statements used in the pilot's records."
+found_through = "europepmc-screen"
+opened = false
+bears_on = []
+not_counted_reason = "Taken by the screen on its abstract, which says the patient's Iowa gambling task results replicate 'the findings reported by these authors' (Damasio, Bechara and colleagues) and calls for a refinement of the somatic marker account. Again a test of the decisions theory, not of a recorded prediction of the feeling-based theory of consciousness. Only the abstract was read: the full text is behind a subscription."
+protections.registered = { value = false, reason = "Not opened.", source = "naccache-2005" }
+protections.outside_camp = { value = true, reason = "No author is an author of a Damasio statement used here. (Inside global workspace theory's camp, which does not matter for this theory.)", source = "naccache-2005" }
+protections.rival_agreed = { value = false, reason = "Not opened.", source = "naccache-2005" }
+protections.replicated = { value = false, reason = "Not opened.", source = "naccache-2005" }
+
+[[study]]
+id = "maia-2004"
+name = "What players of the Iowa gambling task really know: a re-examination of the evidence for the somatic marker hypothesis"
+source = "maia-2004"
+first_appeared = { date = "2004-10-22", what = "publication (Europe PMC first publication date; no preprint found)", source = "maia-2004" }
+group = "McClelland group (last author)"
+camps = []
+found_through = "europepmc-screen"
+opened = true
+bears_on = []
+not_counted_reason = "Taken by the screen: its abstract re-examines Bechara, Damasio and colleagues' claim that 'nonconscious somatic markers can guide advantageous behavior', and finds players' conscious knowledge enough to explain their choices. That is the somatic marker hypothesis, not a recorded prediction of the feeling-based theory of consciousness. Moves no score."
+protections.registered = { value = false, reason = "No registration mentioned (full text searched).", source = "maia-2004" }
+protections.outside_camp = { value = true, reason = "No author is an author of a Damasio statement used here.", source = "maia-2004" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "maia-2004" }
+protections.replicated = { value = false, reason = "Not assessed.", source = "maia-2004" }
+
+# ------------------------------------------ a study by the proponents themselves
+# Not found by the search (its title and abstract name no search term other than
+# 'feeling', and its authors' names are not in the title or abstract). Recorded
+# because dam-insula's first statement and its test are in this same paper.
+
+[[study]]
+id = "damasio-tranel-2013"
+name = "Patient B.: feelings after complete destruction of the insula on both sides"
+source = "damasio-tranel-2013"
+first_appeared = { date = "2012-04-03", what = "publication, online version (Europe PMC)", source = "damasio-tranel-2013" }
+data_collected = { when = "over about two decades after 1975, before 2012-04-03", reason = "Patient B. fell ill in October 1975 and was studied 'over a period of 2 decades'; he had died by the time of writing.", passage = "This is patient B., whom we studied extensively over a period of 2 decades and is now deceased.", source = "damasio-tranel-2013" }
+group = "Damasio group (Antonio Damasio, Hanna Damasio, Daniel Tranel)"
+camps = ["damasio"]
+camps_reason = "Run and written by the theory's proponents."
+found_through = "proponents' statement (damasio-tranel-2013)"
+opened = true
+bears_on = ["dam-insula"]
+not_counted_reason = "The prediction that feelings survive loss of the insula is first stated in this same paper, which then tests it: stating and testing in the same paper does not count (ruling D). Listed as 'explained afterwards, not counted'."
+protections.registered = { value = false, reason = "No registration mentioned.", source = "damasio-tranel-2013" }
+protections.outside_camp = { value = false, reason = "Run by the theory's proponents.", source = "damasio-tranel-2013" }
+protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "damasio-tranel-2013" }
+protections.replicated = { value = false, reason = "No replication by another group was searched for; patients with complete bilateral insular loss are, in the paper's words, 'extremely rare'.", source = "damasio-tranel-2013" }

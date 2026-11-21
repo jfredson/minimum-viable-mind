@@ -1,0 +1,65 @@
+{
+  "packet_id": "com-wilterson-agent-ast-schema-control",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Attention schema theory",
+  "core_claim": {
+    "quote": "In the attention schema theory, awareness is part of the control machinery for attention.",
+    "source": {
+      "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+      "date": "2015-04-23"
+    }
+  },
+  "prediction": {
+    "statement": "A controller of attention that has a simplified model of its own attention controls attention better than one without, even when the information about where attention is is available to it in other ways.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2015-04-23",
+      "passage": "We propose that the top–down control of attention is improved when the brain has access to a simplified model of attention itself.",
+      "source": {
+        "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+        "date": "2015-04-23"
+      }
+    },
+    "test_for": "Removing or disabling the model of attention, in a brain or an artificial agent, while leaving attention itself working and its location recoverable from the input, clearly worsens the control of attention and the learning of it.",
+    "test_against": "Removing or disabling the model of attention leaves control of attention, and learning to control it, as good as before."
+  },
+  "study": {
+    "name": "An artificial neural-network agent learning to control a spotlight of attention, with and without a model of its attention",
+    "source": {
+      "citation": "Wilterson AI, Graziano MSA. The attention schema theory in a neural network agent: controlling visuospatial attention using a descriptive model of attention. PNAS 118(33):e2102421118, 2021",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8379943/",
+      "date": "2021-08-12"
+    },
+    "first_appeared": "2021-08-12 (publication (PNAS, online); no earlier preprint found)",
+    "data_collected": {
+      "when": "not stated; before 2021-02-05",
+      "basis": "A simulation study; the paper gives no dates for the runs. It was received for review on 2021-02-05, so the runs were done before then."
+    }
+  },
+  "passages": [
+    {
+      "text": "We propose that the top–down control of attention is improved when the brain has access to a simplified model of attention itself.",
+      "source": {
+        "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+        "date": "2015-04-23"
+      }
+    },
+    {
+      "text": "The brain must control attention in a task-relevant fashion, and that control of attention, according to the principles of control engineering, can be improved if the brain constructs a model of attention.",
+      "source": {
+        "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+        "date": "2015-04-23"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2015-04-23 (graziano-webb-2015)",
+    "study_first_appeared": "2021-08-12 (online publication; received for review 2021-02-05; no preprint found)"
+  },
+  "this_reading_is": "the second reading"
+}

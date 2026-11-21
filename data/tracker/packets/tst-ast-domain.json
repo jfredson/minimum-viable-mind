@@ -1,0 +1,53 @@
+{
+  "packet_id": "tst-ast-domain",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES IT SEPARATE the theory from a rival: does at least one theory on the list of rivals predict something different (not merely stay silent)? If yes, name the rival or rivals, and say whether your view of the rival comes from the material given or from your own knowledge. Answer in JSON: {\"could_fail\": true|false, \"separates\": true|false, \"separates_from\": [ids], \"rival_view_from\": \"material\"|\"own knowledge\"|\"both\"|\"none\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Attention schema theory",
+  "core_claim": {
+    "quote": "If the theory is correct, then the attention schema, the construct of awareness, is relevant to any type of information to which the brain can pay attention.",
+    "source": {
+      "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+      "date": "2015-04-23"
+    }
+  },
+  "prediction": {
+    "statement": "Awareness reaches exactly as far as attention does: any kind of information the brain can attend to, outside (the senses) or inside (thoughts, emotions, memories), can be something a person is aware of.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2015-04-23",
+      "passage": "If awareness is a model of attention, then this model should pertain to the same domains of information to which attention pertains.",
+      "source": {
+        "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+        "date": "2015-04-23"
+      }
+    },
+    "test_for": "Every kind of content shown to be selected by attention can also be reported as something one is aware of.",
+    "test_against": "A kind of content that attention demonstrably selects but that people can never report being aware of, or a kind of content people report awareness of that attention never selects."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "Therefore awareness, the internal representation of attention, should apply to the same range of information.",
+      "source": {
+        "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+        "date": "2015-04-23"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

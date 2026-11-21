@@ -1,0 +1,73 @@
+{
+  "packet_id": "com-dellert-hot-pfc-involved",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Higher-order theories",
+  "core_claim": {
+    "quote": "the hypothesis is that the prefrontal cortex plausibly plays a key role in consciousness because it supports essential cognitive mechanisms that underlie higher-order representations.",
+    "source": {
+      "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+      "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+      "date": "2019-01-07"
+    }
+  },
+  "prediction": {
+    "statement": "Consciously perceiving something, compared with the same stimulus not perceived, involves prefrontal cortex (with parietal and insular cortex) acting on the sensory representation, also when the person does not have to report the stimulus.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2017-02-15",
+      "passage": "our conclusion is that introspectively accessed states, which we view as phenomenally conscious experiences, are best described in terms of HORs that depend on the GNC, cortical circuits involving regions of the lateral and medial prefrontal cortex, posterior parietal cortex, and insular cortex (Fig. 2).",
+      "source": {
+        "citation": "LeDoux JE, Brown R. A higher-order theory of emotional consciousness. Proceedings of the National Academy of Sciences 114(10):E2016-E2025, 2017",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5347624/",
+        "date": "2017-02-15"
+      }
+    },
+    "test_for": "With stimuli matched and no report required, prefrontal cortex carries information about, or interacts with sensory cortex over, the stimuli that are consciously perceived, more than for the same stimuli not perceived.",
+    "test_against": "With stimuli matched and no report required, awareness-related differences are confined to sensory cortex, and prefrontal cortex shows no awareness-related information or interaction by a method shown to be sensitive enough to find prefrontal effects in the same data."
+  },
+  "study": {
+    "name": "Auditory awareness without report, measured with fMRI (inattentional deafness)",
+    "source": {
+      "citation": "Dellert T, Balster H, Schlossmacher I, Bruchmann M, Moeck R, Straube T. Neural correlates of consciousness in an auditory no-report fMRI study. bioRxiv 2025.05.16.654468; published in Current Biology, 2025 (10.1016/j.cub.2025.10.026)",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.05.16.654468v1.full",
+      "date": "2025-05-21"
+    },
+    "first_appeared": "2025-05-21 (preprint (bioRxiv))",
+    "data_collected": {
+      "when": "not stated; before 2025-05-21",
+      "basis": "The preprint gives no collection dates (methods searched 2026-11-20); the data were collected before the preprint appeared."
+    }
+  },
+  "passages": [
+    {
+      "text": "our conclusion is that introspectively accessed states, which we view as phenomenally conscious experiences, are best described in terms of HORs that depend on the GNC, cortical circuits involving regions of the lateral and medial prefrontal cortex, posterior parietal cortex, and insular cortex (Fig. 2).",
+      "source": {
+        "citation": "LeDoux JE, Brown R. A higher-order theory of emotional consciousness. Proceedings of the National Academy of Sciences 114(10):E2016-E2025, 2017",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5347624/",
+        "date": "2017-02-15"
+      }
+    },
+    {
+      "text": "We argue that conscious experiences, regardless of their content, arise from one system in the brain.",
+      "source": {
+        "citation": "LeDoux JE, Brown R. A higher-order theory of emotional consciousness. Proceedings of the National Academy of Sciences 114(10):E2016-E2025, 2017",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5347624/",
+        "date": "2017-02-15"
+      }
+    },
+    {
+      "text": "But it is a mistake to generalize from these null findings, because studies using more sensitive methods showed clear involvement of higher-order mechanisms, even when the subjects were not required to report about the stimuli [71-73].",
+      "source": {
+        "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+        "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+        "date": "2019-01-07"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2017-02-15 (ledoux-brown-2017); 2019-01-07 (brown-lau-ledoux-2019)",
+    "study_first_appeared": "2025-05-21 (preprint; not registered)"
+  },
+  "this_reading_is": "the second reading"
+}

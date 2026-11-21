@@ -1,0 +1,77 @@
+{
+  "packet_id": "out-wilterson-agent-ast-schema-control",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Attention schema theory",
+  "core_claim": {
+    "quote": "In the attention schema theory, awareness is part of the control machinery for attention.",
+    "source": {
+      "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+      "date": "2015-04-23"
+    }
+  },
+  "prediction": {
+    "statement": "A controller of attention that has a simplified model of its own attention controls attention better than one without, even when the information about where attention is is available to it in other ways.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2015-04-23",
+      "passage": "We propose that the top–down control of attention is improved when the brain has access to a simplified model of attention itself.",
+      "source": {
+        "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+        "date": "2015-04-23"
+      }
+    },
+    "test_for": "Removing or disabling the model of attention, in a brain or an artificial agent, while leaving attention itself working and its location recoverable from the input, clearly worsens the control of attention and the learning of it.",
+    "test_against": "Removing or disabling the model of attention leaves control of attention, and learning to control it, as good as before."
+  },
+  "study": {
+    "name": "An artificial neural-network agent learning to control a spotlight of attention, with and without a model of its attention",
+    "source": {
+      "citation": "Wilterson AI, Graziano MSA. The attention schema theory in a neural network agent: controlling visuospatial attention using a descriptive model of attention. PNAS 118(33):e2102421118, 2021",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8379943/",
+      "date": "2021-08-12"
+    },
+    "first_appeared": "2021-08-12 (publication (PNAS, online); no earlier preprint found)",
+    "data_collected": {
+      "when": "not stated; before 2021-02-05",
+      "basis": "A simulation study; the paper gives no dates for the runs. It was received for review on 2021-02-05, so the runs were done before then."
+    }
+  },
+  "passages": [
+    {
+      "text": "The results of experiment 2 confirm that when the agent is trained on the game with an attention schema available to it, it can learn the task. The results also show that the agent’s performance relies on the attention schema, since deactivating the attention schema on test trials results in a greatly reduced performance.",
+      "source": {
+        "citation": "Wilterson AI, Graziano MSA. The attention schema theory in a neural network agent: controlling visuospatial attention using a descriptive model of attention. PNAS 118(33):e2102421118, 2021",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8379943/",
+        "date": "2021-08-12"
+      }
+    },
+    {
+      "text": "However, in all conditions tested in experiment 3, the agent was severely impaired at learning the task—either tracking the ball with its attention spotlight or catching the ball at the end of each game—as compared to the intact agent.",
+      "source": {
+        "citation": "Wilterson AI, Graziano MSA. The attention schema theory in a neural network agent: controlling visuospatial attention using a descriptive model of attention. PNAS 118(33):e2102421118, 2021",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8379943/",
+        "date": "2021-08-12"
+      }
+    },
+    {
+      "text": "The reason is that complete information about the location of the attention window is present, though implicit, in the visual array.",
+      "source": {
+        "citation": "Wilterson AI, Graziano MSA. The attention schema theory in a neural network agent: controlling visuospatial attention using a descriptive model of attention. PNAS 118(33):e2102421118, 2021",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8379943/",
+        "date": "2021-08-12"
+      }
+    },
+    {
+      "text": "Moreover, a more powerful agent, with more neurons or layers, might have been able to learn to control its attention without being given an explicit attention schema.",
+      "source": {
+        "citation": "Wilterson AI, Graziano MSA. The attention schema theory in a neural network agent: controlling visuospatial attention using a descriptive model of attention. PNAS 118(33):e2102421118, 2021",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8379943/",
+        "date": "2021-08-12"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

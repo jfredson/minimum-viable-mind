@@ -1,0 +1,69 @@
+{
+  "packet_id": "out-khan-orch-anaesthetic-mt",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Orchestrated Objective Reduction",
+  "core_claim": {
+    "quote": "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness.",
+    "source": {
+      "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+      "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+      "date": "2013-08-20"
+    }
+  },
+  "prediction": {
+    "statement": "General anaesthetics cause unconsciousness, at least in part, by acting on microtubules inside neurons; so changing the brain's microtubules with a drug changes how much anaesthetic, or how long, it takes to cause unconsciousness.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2013-08-20",
+      "passage": "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness.",
+      "source": {
+        "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+        "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+        "date": "2013-08-20"
+      }
+    },
+    "test_for": "In animals or people, a drug that acts on brain microtubules changes the anaesthetic dose, or the time under a fixed dose, needed to cause unconsciousness, compared with untreated controls.",
+    "test_against": "Drugs shown to act on brain microtubules, at doses that reach the brain, leave the anaesthetic dose and time needed for unconsciousness unchanged."
+  },
+  "study": {
+    "name": "A microtubule-stabilising drug (epothilone B) delays isoflurane unconsciousness in rats",
+    "source": {
+      "citation": "Khan S, Huang Y, Timucin D, Bailey S, Lee S, Lopes J, Gaunce E, Mosberger J, Zhan M, Abdelrahman B, Zeng X, Wiest MC. Microtubule-Stabilizer Epothilone B Delays Anesthetic-Induced Unconsciousness in Rats. eNeuro 11(8):ENEURO.0291-24.2024, 2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11363512/",
+      "date": "2024-08-15"
+    },
+    "first_appeared": "2024-08-15 (publication ('Prepublished 2024 Aug 15'; no preprint found))",
+    "data_collected": {
+      "when": "not stated; before 2024-07-01",
+      "basis": "The paper gives no recording dates; it was received by the journal on 2024-07-01, so the data were collected before then."
+    }
+  },
+  "passages": [
+    {
+      "text": "EpoB-treated rats took an average of 69 s longer to become unconscious as measured by latency to LORR.",
+      "source": {
+        "citation": "Khan S, Huang Y, Timucin D, Bailey S, Lee S, Lopes J, Gaunce E, Mosberger J, Zhan M, Abdelrahman B, Zeng X, Wiest MC. Microtubule-Stabilizer Epothilone B Delays Anesthetic-Induced Unconsciousness in Rats. eNeuro 11(8):ENEURO.0291-24.2024, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11363512/",
+        "date": "2024-08-15"
+      }
+    },
+    {
+      "text": "The effect could not be accounted for by tolerance from repeated exposure to isoflurane.",
+      "source": {
+        "citation": "Khan S, Huang Y, Timucin D, Bailey S, Lee S, Lopes J, Gaunce E, Mosberger J, Zhan M, Abdelrahman B, Zeng X, Wiest MC. Microtubule-Stabilizer Epothilone B Delays Anesthetic-Induced Unconsciousness in Rats. eNeuro 11(8):ENEURO.0291-24.2024, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11363512/",
+        "date": "2024-08-15"
+      }
+    },
+    {
+      "text": "Seven of the eight rats exhibited increased average LORR latencies in the epoB condition.",
+      "source": {
+        "citation": "Khan S, Huang Y, Timucin D, Bailey S, Lee S, Lopes J, Gaunce E, Mosberger J, Zhan M, Abdelrahman B, Zeng X, Wiest MC. Microtubule-Stabilizer Epothilone B Delays Anesthetic-Induced Unconsciousness in Rats. eNeuro 11(8):ENEURO.0291-24.2024, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11363512/",
+        "date": "2024-08-15"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

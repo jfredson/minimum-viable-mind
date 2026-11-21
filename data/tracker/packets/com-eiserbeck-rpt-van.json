@@ -1,0 +1,65 @@
+{
+  "packet_id": "com-eiserbeck-rpt-van",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Recurrent processing theory",
+  "core_claim": {
+    "quote": "That recurrent processing is necessary for visual awareness is now fairly well established, and supported by numerous experiments",
+    "source": {
+      "citation": "Lamme VAF. How neuroscience will change our view on consciousness. Cognitive Neuroscience 1(3):204-220, 2010 (discussion paper; commentaries and response follow on pp. 220-240)",
+      "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/108967/1/Timmermans%E2%80%A6%202010%20-%20PCNS%20-%20Experiencing%20more%20complexity%20than%20we.pdf",
+      "date": "2010-08-18"
+    }
+  },
+  "prediction": {
+    "statement": "In scalp EEG, seeing a stimulus first shows up as a negative wave over the back of the head about 200 ms after it appears (the 'visual awareness negativity'), the typical timing of recurrent processing in visual cortex, before the late positive wave (the P300) that comes with access and report.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2018-07-30",
+      "passage": "Various manipulations of conscious perception consistently show to influence EEG activity in the 200 ms latency range—known as the visual awareness negativity (VAN)—which is the typical latency of recurrent visual processing [46].",
+      "source": {
+        "citation": "Lamme VAF. Challenges for theories of consciousness: seeing or knowing, the missing ingredient and how to deal with it. Philosophical Transactions of the Royal Society B 373:20170344, 2018",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6074090/",
+        "date": "2018-07-30"
+      }
+    },
+    "test_for": "With the stimulus matched, seen and unseen visual stimuli differ in a negative wave over posterior (visual) scalp sites in roughly the 150 to 300 ms window, beginning before any late positive difference.",
+    "test_against": "With the stimulus matched, no awareness-related difference appears before the late positive wave: the first reliable difference between seen and unseen stimuli comes after about 300 ms."
+  },
+  "study": {
+    "name": "Graded seeing during the attentional blink, measured with brain waves (EEG, face targets)",
+    "source": {
+      "citation": "Eiserbeck A, Enge A, Rabovsky M, Abdel Rahman R. Electrophysiological chronometry of graded consciousness during the attentional blink. Cerebral Cortex 32(6):1244-1259, 2022. Preprint: Graded visual consciousness during the attentional blink, bioRxiv 2021.01.15.426792",
+      "url": "https://www.biorxiv.org/content/10.1101/2021.01.15.426792v1.full.pdf",
+      "date": "2021-01-17"
+    },
+    "first_appeared": "2021-01-17 (preprint (bioRxiv, v1 posted 2021-01-17))",
+    "data_collected": {
+      "when": "not stated; before 2021-01-17",
+      "basis": "The preprint gives no recording dates; the data were collected before the preprint appeared."
+    }
+  },
+  "passages": [
+    {
+      "text": "Various manipulations of conscious perception consistently show to influence EEG activity in the 200 ms latency range—known as the visual awareness negativity (VAN)—which is the typical latency of recurrent visual processing [46].",
+      "source": {
+        "citation": "Lamme VAF. Challenges for theories of consciousness: seeing or knowing, the missing ingredient and how to deal with it. Philosophical Transactions of the Royal Society B 373:20170344, 2018",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6074090/",
+        "date": "2018-07-30"
+      }
+    },
+    {
+      "text": "For example, when people fail to attend to stimuli, they will report not having seen them, as is the case in conditions like change blindness, inattentional blindness or the attentional blink. These manipulations typically leave early recurrent signals relatively intact, while selectively disrupting later recurrent signals (e.g. P300 or N400 EEG responses [48] [49], but see [50]).",
+      "source": {
+        "citation": "Lamme VAF. Challenges for theories of consciousness: seeing or knowing, the missing ingredient and how to deal with it. Philosophical Transactions of the Royal Society B 373:20170344, 2018",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6074090/",
+        "date": "2018-07-30"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2018-07-30 (lamme-2018)",
+    "study_first_appeared": "2021-01-17 (bioRxiv preprint; not registered)"
+  },
+  "this_reading_is": "the second reading"
+}

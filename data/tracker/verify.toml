@@ -90,3 +90,281 @@ records = ["dellert-2025", "out-dellert-gwt-ignition", "out-dellert-iit-posterio
 statement = "The Dellert et al. result as stated in the preprint."
 rests_on = "The bioRxiv preprint (2025-05-21); the Current Biology version (2025-11-06) was not opened and may differ."
 to_clear = "Open the journal version and check the quoted passages."
+
+# ======================================================================
+# Stage 3, Higher-order theories: drafted 2026-11-21 (first reading, one reader).
+# Verify entries for higher-order theories (stage 3 draft, 2026-11-21).
+
+[[entry]]
+id = "v-hot-journal-text"
+status = "open"
+records = ["hot-c1", "hot-c2", "hot-c3", "hot-c4", "hot-c5", "hot-unconscious-global", "hot-awareness-performance", "brown-lau-ledoux-2019"]
+statement = "The five core claims and the 2019 passages are quoted from the authors' PsyArXiv preprint (2019-01-07), not from the Trends in Cognitive Sciences text that John ruled as the source."
+rests_on = "The preprint, opened in full. The journal text was not opened: cell.com (which OpenAlex lists as a free copy) and PhilArchive both answered with a robot check, not bypassed. Visible differences: the title changed, and the journal abstract is reworded with two added sentences."
+to_clear = "John signs in at cell.com (or opens the journal's free PDF in his own browser); a session checks each quoted passage against the journal text and records any change in wording, location or section name. If a quoted sentence is missing from the journal text, that claim is re-chosen from the journal by the same method."
+
+[[entry]]
+id = "v-lau-rosenthal-2011"
+status = "open"
+records = ["com-bandara-hot-pfc-involved", "hot-pfc-involved", "hot-pfc-disrupt", "hot-awareness-performance"]
+statement = "Lau and Rosenthal 2011 (Trends in Cognitive Sciences) may state the prefrontal predictions, and the dissociation of awareness from performance, earlier than any statement opened here."
+rests_on = "Not opened: paywalled, and no copy posted by the authors was found. Its title ('Empirical support for higher-order theories of conscious awareness') and its citation by the 2019 statement are all that is known."
+to_clear = "John signs in to the publisher; a session reads it. If it states hot-pfc-involved, com-bandara-hot-pfc-involved becomes 'before' (the Bandara data appeared in 2015), and the first_stated dates of the three predictions move to 2011."
+
+[[entry]]
+id = "v-martin-journal"
+status = "open"
+records = ["martin-2023", "out-martin-hot-pfc-disrupt", "out-martin-hot-awareness-performance"]
+statement = "The Martin, Lane and Hsu result as stated in the bioRxiv preprint (2022-10-28)."
+rests_on = "The preprint only. The Cortex version (2023-07-12) has a different title ('DLPFC-PPC-cTBS effects on metacognitive awareness') and may report different numbers; its PhilArchive copy answered with a robot check."
+to_clear = "Open the journal version and check the quoted results, especially the illusory-figure effect, which in the preprint rests on removing one outlier."
+
+[[entry]]
+id = "v-hot-dellert-journal"
+status = "open"
+records = ["out-dellert-hot-pfc-involved", "com-dellert-hot-pfc-involved"]
+statement = "The Dellert et al. result as stated in the bioRxiv preprint, read again in this task; ConTraSt lists the Current Biology version (10.1016/j.cub.2025.10.026)."
+rests_on = "The preprint (2025-05-21). The journal version (2025-11-06) is on cell.com, not tried after cell.com answered other requests with a robot check. Same gap as the pilot's open entry v-dellert-journal."
+to_clear = "Close together with v-dellert-journal: open the journal version and check the quoted passages."
+
+[[entry]]
+id = "v-mei-original-data"
+status = "open"
+records = ["mei-soto-2025", "com-mei-hot-unconscious-global"]
+statement = "The data Mei and Soto reanalyse first appeared in the Mei, Santana and Soto preprint of 2021-01-14."
+rests_on = "Europe PMC's records of that preprint and its journal version (dates and titles only), and Mei and Soto's own statement that they reanalysed 'data from a high-precision fMRI study' they cite as Mei et al. (2022b). The original paper was not opened, so it is not confirmed that the 2021 preprint already contained these data."
+to_clear = "Open the 2021 preprint (bioRxiv 10.1101/2021.01.12.426428) and confirm it reports the same seven-person dataset. The verdict changes only if the data first appeared before 2019-01-07, which the dates make unlikely."
+
+# ======================================================================
+# Stage 3, Recurrent processing theory: drafted 2026-11-21 (first reading, one reader).
+# Verify list for the recurrent processing theory drafts (2026-11-21): statements
+# resting on a source this session did not open, or opened only in part, or opened
+# through a copy that is not the author's or the journal's own page. Shape as
+# data/tracker/verify.toml.
+
+[[entry]]
+id = "v-rpt-lamme-2010-copy"
+status = "open"
+records = ["rpt-c1", "rpt-c2", "rpt-c3", "rpt-c4", "rpt-c5", "rpt-c6", "lamme-2010"]
+statement = "The six core claims, quoted from Lamme 2010 (Cognitive Neuroscience 1(3):204-220)."
+rests_on = "The publisher's PDF of the whole discussion issue, posted openly on the Université libre de Bruxelles repository (not an author's copy; no author's copy found on UvA-DARE, which has a record with no file). Being the publisher's typeset file, it should match the journal; it was not compared with the Taylor and Francis page, which needs a sign-in."
+to_clear = "John signs in to Taylor and Francis (tandfonline.com, doi 10.1080/17588921003731586) in the browser pane, or asks the University of Amsterdam library for the file, and a session checks the six quoted sentences and their page numbers against it."
+
+[[entry]]
+id = "v-rpt-lamme-2018-copy"
+status = "open"
+records = ["rpt-van", "rpt-no-report-sensory", "rpt-unattended-local", "rpt-ff-unseen", "rpt-feedback-needed", "com-filimonov2022-rpt-van", "com-eiserbeck-rpt-van", "com-eiserbeck-rpt-unattended-local"]
+statement = "The passages quoted from Lamme 2018 (lamme-2018)."
+rests_on = "A copy of the PubMed Central page saved in this session's scratchpad on 2026-11-21 at 07:51 by the session that started this draft. When this drafting session tried PubMed Central and the Royal Society's site directly, both answered with a robot check, which was not bypassed. The pilot opened the same page on 2026-11-20."
+to_clear = "Open https://pmc.ncbi.nlm.nih.gov/articles/PMC6074090/ in the browser pane and check the quoted passages."
+
+[[entry]]
+id = "v-rpt-eiserbeck-journal"
+status = "open"
+records = ["eiserbeck-2022", "out-eiserbeck-rpt-unattended-local"]
+statement = "The Eiserbeck et al. results as stated in the bioRxiv preprint (2021-01-17)."
+rests_on = "The preprint, read in full. The Cerebral Cortex version (online 2021-08-26, retitled) answered 403 from the publisher and has no open copy in Europe PMC; it may differ."
+to_clear = "John opens the Oxford Academic page (doi 10.1093/cercor/bhab289) in the browser pane, signed in if needed; a session checks the N1, N2 and P3 results quoted."
+
+[[entry]]
+id = "v-rpt-dellert-journal"
+status = "open"
+records = ["dellert-2025", "com-dellert-rpt-no-report-sensory"]
+statement = "The Dellert et al. passages quoted from the bioRxiv preprint."
+rests_on = "The preprint (2025-05-21). The Current Biology version (2025-11-06, listed by Europe PMC as CC BY) answered with a robot check at cell.com, not bypassed. Same gap as the pilot's open entry v-dellert-journal."
+to_clear = "Close together with v-dellert-journal."
+
+# ======================================================================
+# Stage 3, Anil Seth's living-body view: drafted 2026-11-21 (first reading, one reader).
+# Verify list entries for Anil Seth's living-body view, drafted 2026-11-21. Same
+# shape as data/tracker/verify.toml.
+
+[[entry]]
+id = "v-seth-journal-text"
+status = "open"
+records = ["seth-c1", "seth-c2", "seth-c3", "seth-c4", "seth-c5", "seth-c6", "seth-living-only", "seth-ai-not-by-computation"]
+statement = "The six core claims and two predictions are quoted word for word from Seth 2025."
+rests_on = "The accepted manuscript posted on PsyArXiv (tz6an, version 2, 2025-04-22), which says it 'has not yet been copyedited and proofread'. The journal version on Cambridge Core showed only its abstract without a sign-in; no sign-in was tried. The abstract sentence (seth-c1) matches the journal abstract on Cambridge Core except for a comma ('unlikely along current trajectories but becomes' against the manuscript's 'unlikely along current trajectories, but becomes', which is outside the quoted sentence)."
+to_clear = "Open the journal text on Cambridge Core (John's sign-in, or an institutional one) and check each quoted sentence and its section number against the copyedited version."
+
+[[entry]]
+id = "v-seth-vanelk"
+status = "open"
+records = ["vanelk-2014"]
+statement = "van Elk and colleagues 2014 found smaller auditory brain responses to sounds timed to the listener's heartbeat and read them as interoceptive predictive coding."
+rests_on = "The abstract in Europe PMC only. The paper is subscription-only; the open repository record OpenAlex lists (EPFL Infoscience 199619) holds no text."
+to_clear = "Open the paper on ScienceDirect (John's sign-in), then read it against seth-interoceptive-suppression and seth-expectation-speeds-access and make the commitment and outcome judgements."
+
+[[entry]]
+id = "v-seth-2012-date"
+status = "open"
+records = ["seth-2012"]
+statement = "Seth, Suzuki and Critchley's model paper is dated 2012-01-10."
+rests_on = "The Europe PMC full-text record. The article is in the journal's 2011 volume (2:395), so the journal's own publication date may be in 2011."
+to_clear = "Read the date on the Frontiers article page. An earlier date would not change any verdict here (both counted studies appeared in 2013 or later)."
+
+[[entry]]
+id = "v-seth-preprint-v1"
+status = "open"
+records = ["seth-living-only", "seth-ai-not-by-computation"]
+statement = "Seth's living-body view was first posted publicly on 2024-06-30."
+rests_on = "The OSF API's creation date for PsyArXiv tz6an version 1. The file now attached to that version is the December 2024 submission, so the June 2024 text was not seen."
+to_clear = "Only matters if a study appearing between 2024-06-30 and 2025-04-21 is later found to test one of these two predictions; then the June 2024 file would need to be found (OSF file history) and searched."
+
+# ======================================================================
+# Stage 3, Attention schema theory: drafted 2026-11-21 (first reading, one reader).
+# Attention schema theory: verify list entries, stage 3 draft, 2026-11-21.
+
+[[entry]]
+id = "v-graziano-2026-body"
+status = "open"
+records = ["graziano-2026"]
+statement = "Graziano 2026 (PNAS, 'Understanding consciousness (biological and artificial) as a society of self-schemas') is not read in full: only the publisher's summary (its abstract, as given in the Europe PMC record) was read."
+rests_on = "Paywalled; John has no access. The publisher's page answered an automated fetch with 'HTTP 403 Forbidden', not retried."
+to_clear = "Read the full paper when it can be opened. If its body keeps the attention schema claims unchanged and only adds to them (the other self-schemas), the question of which publication the core claims come from returns to John."
+
+[[entry]]
+id = "v-wilterson-2020"
+status = "open"
+records = ["wilterson-2020"]
+statement = "Wilterson and colleagues 2020 (Progress in Neurobiology, six behavioural experiments) is in the sample but unread beyond its abstract."
+rests_on = "ScienceDirect gave no article text to an automated fetch (one plain fetch, one 403); not worked around. Europe PMC lists it as open access."
+to_clear = "John opens it in the browser pane; a session reads it against ast-control, and its two learning experiments against ast-schema-control. It also holds the measurement that the masked cue still draws attention, which out-wilterson-tpj-ast-control leans on."
+
+[[entry]]
+id = "v-webb-2016"
+status = "open"
+records = ["webb-2016"]
+statement = "Webb, Kean and Graziano 2016 (Journal of Cognitive Neuroscience) is in the sample but unread beyond its abstract."
+rests_on = "Subscription required; the MIT Press page answered with a robot check, not bypassed."
+to_clear = "John signs in at MIT Press or a library; a session reads it against ast-control. Note for the dating test: it appeared 2016-02-02, nine months after the 2015 statement, from the same lab."
+
+[[entry]]
+id = "v-ast-earlier"
+status = "open"
+records = ["ast-tpj", "com-wilterson-tpj-ast-tpj", "ast-control", "ast-schema-control"]
+statement = "Earlier proponents' statements may exist: Graziano and Kastner 2011 and Graziano 2013, which the 2015 paper and the 2021 brain-scanning paper cite as where the theory, and the temporoparietal junction's role, were first proposed."
+rests_on = "Not opened (cited only)."
+to_clear = "Open both. If either states the junction's role in controlling attention, the commitment reading com-wilterson-tpj-ast-tpj may become 'before'; earlier dates for the other predictions change nothing in this sample."
+
+[[entry]]
+id = "v-ast-rivals"
+status = "open"
+records = ["tst-ast-control", "tst-ast-covary", "tst-ast-graded"]
+statement = "Rival proponents' publications that might predict something different from attention schema theory on attention and awareness were not opened: Koch and Tsuchiya 2007 (by Christof Koch, an integrated information theory proponent; cited by mashour-2020 as a review of studies separating attention from awareness); Brown, Lau and LeDoux 2019 and Lau and Rosenthal 2011 (Trends in Cognitive Sciences, higher-order theories); Rahnev, Lau and colleagues 2011 (Nature Neuroscience, attention and subjective bias); Lamme 2018 (recurrent processing theory), whose PubMed Central record this session could not get as open text."
+rests_on = "All paywalled to an automated reader (Europe PMC 'not open access'), except Lamme 2018, which the pilot opened on 2026-11-20 but this session did not."
+to_clear = "Open each and quote any passage predicting that control of attention is normal without awareness, or that awareness and attention come apart commonly, or that awareness is not graded with attention. Under ruling C only such a quoted passage can make ast-control or ast-covary separate."
+
+# ======================================================================
+# Stage 3, The sensorimotor theory: drafted 2026-11-21 (first reading, one reader).
+# Verify list entries for the sensorimotor theory's draft records (stage 3,
+# 2026-11-21). Shape as data/tracker/verify.toml.
+
+[[entry]]
+id = "v-sm-bridgeman-fulltext"
+status = "open"
+records = ["bridgeman-2008", "com-bridgeman-sm-substitution"]
+statement = "What Bridgeman and colleagues (2008) did and found, and how they derived their prediction from the sensorimotor theory, as stated in the abstract."
+rests_on = "The Europe PMC abstract only. The article (Perception 37(6):811-814, SAGE) is not open access, and no repository copy was found (OpenAlex). The page listed as 'discussion 815' was not found or opened; it may be a reply by the theory's proponents."
+to_clear = "John signs in to SAGE (Perception) in the browser pane, or a library copy is found; a session reads pages 811-815 and checks the commitment reading, the protections and the result against the full text."
+
+[[entry]]
+id = "v-sm-earlier-statements"
+status = "open"
+records = ["sm-change-blindness", "sm-inattentional", "sm-active-control", "sm-substitution", "sm-inversion"]
+statement = "These predictions are dated from oregan-noe-2001, the earliest proponents' publication opened; some were stated earlier by O'Regan and colleagues."
+rests_on = "The 2001 paper's own citations: O'Regan 1992 ('the world as an outside memory', Canadian Journal of Psychology), Rensink, O'Regan and Clark 1997, O'Regan, Rensink and Clark 1999, and Noë and O'Regan 2000. None was opened."
+to_clear = "Open the earlier papers (O'Regan's website lists some) and move first_stated earlier where one states the prediction. This matters only for studies that appeared between those dates and 2001-10, none of which is in the screen."
+
+[[entry]]
+id = "v-sm-haans-abstract"
+status = "open"
+records = ["haans-2008"]
+statement = "Haans, IJsselsteijn and de Kort (2008) test a hypothesis of Armel and Ramachandran and use the sensorimotor account only to explain a result afterwards."
+rests_on = "The Europe PMC abstract only; the full text (Elsevier) was not opened."
+to_clear = "Read the full text if the screen is reopened; it moves no score either way, since the study is outside the vision-only theory."
+
+# ======================================================================
+# Stage 3, Orchestrated Objective Reduction: drafted 2026-11-21 (first reading, one reader).
+# Verify list entries for Orchestrated Objective Reduction (Orch OR), stage 3 draft,
+# 2026-11-21. Shape as data/tracker/verify.toml.
+
+[[entry]]
+id = "v-orch-2014-copy"
+status = "open"
+records = ["orch-c1", "orch-c2", "orch-c3", "orch-c4", "orch-c5", "orch-c6", "orch-anaesthetic-mt", "com-khan-orch-anaesthetic-mt", "com-li-orch-anaesthetic-mt"]
+statement = "The core claims and the 2014 passages are quoted from Hameroff and Penrose 2014 as the publisher typeset it."
+rests_on = "A copy of the publisher's PDF on a third-party file host (coroflot.com), read in full. The publisher's own open-access page (CC BY-NC-ND 4.0) refused automated access (HTTP 403) and was not bypassed."
+to_clear = "Open https://doi.org/10.1016/j.plrev.2013.08.002 in a normal browser (open access, no sign-in should be needed) and check the six claim quotations and the 'Available online 20 August 2013' date."
+
+[[entry]]
+id = "v-orch-1998-ocr"
+status = "open"
+records = ["orch-mt-coherence", "orch-mt-entangle", "orch-synaptic-cyto", "orch-mt-vibration", "orch-dp-collapse", "orch-mass-time", "orch-coherence-time"]
+statement = "The first-stated passages from Hameroff 1998 read as quoted."
+rests_on = "A JSTOR scan of the 1998 paper posted on a university course page, read through its OCR text layer, which splits words with '?' marks; the quotations rejoin them. The Royal Society's page answered 403 and was not bypassed."
+to_clear = "Check Appendix B (predictions 1, 5, 8, 9, 17, 18) and the 'range from 10 to 500 ms' sentence (journal p. 1872) against the Royal Society's page, https://doi.org/10.1098/rsta.1998.0254."
+
+[[entry]]
+id = "v-orch-hameroff-2020"
+status = "open"
+records = ["orch-anaesthetic-mt"]
+statement = "No sharper proponents' statement of the anaesthesia test (for example which way a microtubule-stabilising drug should shift anaesthetic sensitivity) was dated before the studies."
+rests_on = "Hameroff 2020 ('Orch OR is the most complete, and most easily falsifiable theory of consciousness', Cognitive Neuroscience) and Hameroff 2006 (Anesthesiology) were not opened: the first answered 403, the second was not fetched."
+to_clear = "Open Hameroff 2020 (https://doi.org/10.1080/17588928.2020.1839037; Unpaywall lists it as free on the publisher's site) and Hameroff 2006 (https://doi.org/10.1097/00000542-200608000-00024). If either fixes a direction, the test wording of orch-anaesthetic-mt is revised by John's dated revision and li-2025 may read as against."
+
+[[entry]]
+id = "v-orch-huang-2026"
+status = "open"
+records = ["huang-2026"]
+statement = "Huang and colleagues (2026) found that epothilone B delayed isoflurane unconsciousness in mice."
+rests_on = "The abstract only (Europe PMC). The full text is not open access."
+to_clear = "John's sign-in to Neuropharmacology (Elsevier), or an author copy; then read it against orch-anaesthetic-mt and record its dates and protections."
+
+[[entry]]
+id = "v-orch-accorsi-2017"
+status = "open"
+records = ["accorsi-2017"]
+statement = "Accorsi and colleagues (2017) measured platelet fatty acids in two dog breeds and test no recorded Orch OR prediction."
+rests_on = "The abstract only (Europe PMC). The full text is not open access."
+to_clear = "Open the paper (Journal of Integrative Neuroscience, IOS Press; https://doi.org/10.3233/JIN-170061) to confirm it tests nothing recorded."
+
+[[entry]]
+id = "v-orch-baars-2012"
+status = "open"
+records = ["tst-orch-mt-coherence"]
+statement = "Baars and Edelman (2012) give no prediction contrary to any recorded Orch OR test."
+rests_on = "The abstract only (Europe PMC); the full text was not opened (no open copy listed by Unpaywall)."
+to_clear = "Open the full paper (https://doi.org/10.1016/j.plrev.2012.07.001) and check whether it predicts a different result on any recorded test; also decide whether Baars counts as a global workspace proponent under ruling C (he first proposed the theory but is not on the pilot's list)."
+
+# ======================================================================
+# Stage 3, Damasio's feeling-based theory: drafted 2026-11-21 (first reading, one reader).
+# Damasio's feeling-based theory: verify list entries, drafted 2026-11-21. Each is a
+# statement in these drafts resting on a source this session did not open, or opened
+# only in part. Shape as in data/tracker/verify.toml.
+
+[[entry]]
+id = "v-damasio-2023-fulltext"
+status = "closed"
+closed_on = "2026-11-21"
+closed_why = "The full text was read in the publisher's free PDF after John passed the robot check himself in the browser pane. All four quotations appear word for word, the body restates each, and no claim was added or swapped. Closed for the four core claims and for the two predictions re-dated to this paper (dam-nonneural, dam-no-nervous-system); it says nothing about the earlier Damasio papers in v-damasio-earlier-statements, which stay unread."
+records = ["damasio", "dam-c1", "dam-c2", "dam-c3", "dam-c4", "dam-feeling-required"]
+statement = "The four core claims of Damasio's feeling-based theory, quoted from Damasio and Damasio 2023 ('Feelings are the source of consciousness', Neural Computation)."
+rests_on = "The paper's published abstract only (Europe PMC, PMID 35896152). The full text is free at the publisher (MIT Press, bronze open access), but both https://direct.mit.edu/neco/article-pdf/35/3/277/2071828/neco_a_01521.pdf and the article page answered with a 'Performing security verification' robot check on 2026-11-21, to a plain fetch and in the browser pane, and it was not bypassed. No other open copy was found."
+to_clear = "John opens the paper himself in his own browser, or in the browser pane, where the robot check may let a person through; it is free, so no sign-in or subscription should be needed. A session then reads the full text, checks the four claims against the paper's own statement of its hypotheses, and adds or swaps claims only if the body states the theory's tenets more directly than the abstract (the choice method in theory.toml applied to the full text). Until then John may rule on whether abstract-only claims can be fixed."
+
+[[entry]]
+id = "v-damasio-earlier-statements"
+status = "open"
+records = ["dam-feeling-required", "dam-subcortical", "dam-nonneural", "dam-no-nervous-system"]
+statement = "The first-stated dates of these predictions (2012-04-03 and 2024-07-15) are the earliest among Damasio publications opened here."
+rests_on = "Earlier statements were not opened: Damasio and Carvalho 2013 (Nature Reviews Neuroscience 14:143-152), Parvizi and Damasio 2001 ('Consciousness and the brainstem', PubMed 11164026), Carvalho and Damasio 2021 (BioEssays), Damasio and Damasio 2022 (Brain 145:2231-2235) and Damasio and Damasio 2024 (Journal of Cognitive Neuroscience 36:1653-1659). Europe PMC lists no open copy for any of them; they are behind subscriptions. The 1999 and 2010 books were not opened."
+to_clear = "John signs in to Nature (Nature Reviews Neuroscience), Oxford Academic (Brain), Wiley (BioEssays), the publisher of Parvizi and Damasio 2001 and MIT Press (Journal of Cognitive Neuroscience) in the browser pane, or finds author copies; a session reads them for earlier statements. Earlier dates would matter only for a study appearing between the earlier date and the one recorded; none in this sample does."
+
+[[entry]]
+id = "v-damasio-screen-abstract-only"
+status = "open"
+records = ["gutbrod-2006", "naccache-2005"]
+statement = "Gutbrod et al. 2006 and Naccache et al. 2005 test no recorded prediction of the feeling-based theory."
+rests_on = "Their abstracts only (Europe PMC); the full texts are behind Elsevier subscriptions (Neuropsychologia)."
+to_clear = "John signs in to Elsevier (ScienceDirect) in the browser pane; a session checks the full texts for any test of a recorded prediction. Neither is expected to change a score."

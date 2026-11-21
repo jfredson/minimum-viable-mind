@@ -1,0 +1,69 @@
+{
+  "packet_id": "out-filimonov2022-rpt-van",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Recurrent processing theory",
+  "core_claim": {
+    "quote": "That recurrent processing is necessary for visual awareness is now fairly well established, and supported by numerous experiments",
+    "source": {
+      "citation": "Lamme VAF. How neuroscience will change our view on consciousness. Cognitive Neuroscience 1(3):204-220, 2010 (discussion paper; commentaries and response follow on pp. 220-240)",
+      "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/108967/1/Timmermans%E2%80%A6%202010%20-%20PCNS%20-%20Experiencing%20more%20complexity%20than%20we.pdf",
+      "date": "2010-08-18"
+    }
+  },
+  "prediction": {
+    "statement": "In scalp EEG, seeing a stimulus first shows up as a negative wave over the back of the head about 200 ms after it appears (the 'visual awareness negativity'), the typical timing of recurrent processing in visual cortex, before the late positive wave (the P300) that comes with access and report.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2018-07-30",
+      "passage": "Various manipulations of conscious perception consistently show to influence EEG activity in the 200 ms latency range—known as the visual awareness negativity (VAN)—which is the typical latency of recurrent visual processing [46].",
+      "source": {
+        "citation": "Lamme VAF. Challenges for theories of consciousness: seeing or knowing, the missing ingredient and how to deal with it. Philosophical Transactions of the Royal Society B 373:20170344, 2018",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6074090/",
+        "date": "2018-07-30"
+      }
+    },
+    "test_for": "With the stimulus matched, seen and unseen visual stimuli differ in a negative wave over posterior (visual) scalp sites in roughly the 150 to 300 ms window, beginning before any late positive difference.",
+    "test_against": "With the stimulus matched, no awareness-related difference appears before the late positive wave: the first reliable difference between seen and unseen stimuli comes after about 300 ms."
+  },
+  "study": {
+    "name": "Brain waves marking seeing and hearing faint stimuli, compared in one experiment (EEG, visual, auditory and both)",
+    "source": {
+      "citation": "Filimonov D, Railo H, Revonsuo A, Koivisto M. Modality-specific and modality-general electrophysiological correlates of visual and auditory awareness: evidence from a bimodal ERP experiment. Neuropsychologia 166:108154, 2022",
+      "url": "https://www.utupub.fi/handle/10024/165559",
+      "date": "2022-01-10"
+    },
+    "first_appeared": "2022-01-10 (publication (online; no preprint found in Europe PMC))",
+    "data_collected": {
+      "when": "not stated; before 2021-04-07",
+      "basis": "The paper gives no recording dates; it was received by the journal on 2021-04-07, so the data were collected before then."
+    }
+  },
+  "passages": [
+    {
+      "text": "As Figs. 3–5 show, VAN emerges in posterior areas in occipital electrode sites, around 220–270 ms and lasts until 300 ms, while AAN emerges earlier in temporal-parietal and central areas.",
+      "source": {
+        "citation": "Filimonov D, Railo H, Revonsuo A, Koivisto M. Modality-specific and modality-general electrophysiological correlates of visual and auditory awareness: evidence from a bimodal ERP experiment. Neuropsychologia 166:108154, 2022",
+        "url": "https://www.utupub.fi/handle/10024/165559",
+        "date": "2022-01-10"
+      }
+    },
+    {
+      "text": "The visual LP started in occipital electrodes around 250–300 ms and spread as a function of time to parietal-central electrodes being present at least until 600 ms.",
+      "source": {
+        "citation": "Filimonov D, Railo H, Revonsuo A, Koivisto M. Modality-specific and modality-general electrophysiological correlates of visual and auditory awareness: evidence from a bimodal ERP experiment. Neuropsychologia 166:108154, 2022",
+        "url": "https://www.utupub.fi/handle/10024/165559",
+        "date": "2022-01-10"
+      }
+    },
+    {
+      "text": "In summary, the results of present study indicate that VAN and AAN are modality-specific early correlates of visual and auditory awareness, while late LP is a late correlate and shares both modality-specific and modality-general features.",
+      "source": {
+        "citation": "Filimonov D, Railo H, Revonsuo A, Koivisto M. Modality-specific and modality-general electrophysiological correlates of visual and auditory awareness: evidence from a bimodal ERP experiment. Neuropsychologia 166:108154, 2022",
+        "url": "https://www.utupub.fi/handle/10024/165559",
+        "date": "2022-01-10"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}
