@@ -322,3 +322,43 @@ the amended code.*
 
 The other findings of the independent check concern the test set, the lists, the overlap check or the
 wording of this specification. They are carried to the roadmap, and are not settled here.
+
+## 15. A scoring trial: the answer-only instruction (2026-11-21)
+
+*Added 2026-11-21 on John's choice ("Answer-only instruction"), before any code for it was written. Step 4a
+(`step4a-findings-2026-11-21.md`) found that the model, when its answer is forced as the first token of its
+reply, is near chance on many kinds of task. The model always starts its own replies with written reasoning.
+This section sets out a trial of one remedy. It is a trial on the pilot only. It changes nothing in the
+registered design unless John rules so afterwards.*
+
+1. **The instruction.** One fixed sentence is added to every item: "Answer with the single word or number
+   only." (9 tokens, with a leading space, under the model's tokeniser). The two twins of a pair carry it
+   word for word, so their lengths stay equal, and every donor carries the same sentence in the same place.
+2. **Two placements**, each a separate trial set, because where an instruction sits can matter:
+   - **"end":** after the final question, as the last sentence of the user's message;
+   - **"start":** before the rule, as the first sentence of the user's message.
+
+   The "end" placement lengthens the tail after the shared context by 9 identical tokens in both cells. The
+   "start" placement leaves the tail as it was.
+3. **What does not change.** Everything else stays as in sections 1 to 14:
+   - the same half A, seed 1 and generator;
+   - the same forced reply opening, `<|message_model|><|content_text|>`;
+   - the same single-token candidates, scored at the first answer position.
+
+   The chained lookups carry the instruction in the same place. The neutral passages are unchanged.
+4. **What the trial measures,** on each trial set and on the original pilot for comparison, all at 16-bit as
+   in step 4a:
+   - **accuracy** at 1, 2 and 3 passes, by kind;
+   - **the share of items passing the confidence filter** at three passes: a margin of at least 2.2 between
+     the right candidate and the best wrong one;
+   - **the bites figure:** the one-pass loss on chains of four to six steps, against three passes.
+
+   These are descriptive pilot figures for John's choice of scoring method. No outcome is read from them, and
+   no threshold is set from them.
+5. **What would count as a working fix,** stated now, before the run:
+   - at three passes, routine twins reach at least 80% accuracy;
+   - at least half of all pilot items pass the confidence filter;
+   - chained lookups of four to six steps reach at least 50% at three passes.
+
+   If neither placement meets all three, the trial reports that, and the next choice goes to John, for
+   example option (b), a fixed lead-in, or (c), scoring a reasoned answer.
