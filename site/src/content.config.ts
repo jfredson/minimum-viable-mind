@@ -16,7 +16,8 @@ const news = defineCollection({
     sources: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
   }).transform((d) => {
     const [y, m, day] = d.date.split('-').map(Number);
-    return { ...d, date_long: `${day} ${MONTHS[m - 1]} ${y}` };
+    const ord = day % 100 >= 10 && day % 100 <= 20 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' } as Record<number, string>)[day % 10] ?? 'th';
+    return { ...d, date_long: `${MONTHS[m - 1]} ${day}${ord}, ${y}` };
   }),
 });
 export const collections = { news };

@@ -9,6 +9,7 @@ import R from '../components/R.astro';
 import { tk, word } from '../lib/tracker';
 import { data, fmtDate } from '../lib/project';
 const r = tk.rules;
+const ex = tk.support_example;
 const tied = tk.groups.close_pairs.length > 0;
 const story = data.timeline.filter((e) => e.date >= '2026-11-20').slice(0, 6);
 const repo = 'https://github.com/jfredson/minimum-viable-mind';
@@ -28,7 +29,9 @@ const repo = 'https://github.com/jfredson/minimum-viable-mind';
     <section id="numbers">
       <h2>How the numbers are worked out</h2>
       <p class="tplain"><b>What is scored.</b> Each theory is boiled down to between <N v={r.claims_fewest} t={word(r.claims_fewest)} /> and <N v={r.claims_most} t={word(r.claims_most)} /> core claims, quoted from one publication by the people who hold it, and fixed before any theory was scored. For each claim, the site records the predictions that could prove it wrong and that set it apart from a rival, and a prediction sets a theory apart only when the rival's own publication predicts something different. Then it records every published study that tested one of those predictions, and whether the result went for or against.</p>
-      <p class="tplain"><b>How well the evidence backs it</b> runs from <N v={0} /> to <N v={r.scale_top} />, and <N v={r.even} /> means the evidence is even. Each counted result scores one for, one against, or nothing for mixed, times the study's weight, and the total is divided by the summed weights, so a theory tested more often does not score higher for that alone. A study's weight starts at <N v={r.weight_start} /> and gains one for each protection against bias it has, up to <N v={r.weight_top} />: its predictions were registered before the data came in; it was run by people outside the theory's own camp; a rival camp agreed in advance what would count against each side; another group repeated it. A prediction tied to a core claim counts <N v={r.core_multiplier} t="double" />.</p>
+      <p class="tplain"><b>How well the evidence backs it</b> runs from <N v={0} /> to <N v={r.scale_top} />, and <N v={r.even} /> means the evidence is even. A study's weight starts at <N v={r.weight_start} /> and gains one for each protection against bias it has, up to <N v={r.weight_top} />: its predictions were registered before the data came in; it was run by people outside the theory's own camp; a rival camp agreed in advance what would count against each side; another group repeated it. A prediction tied to a core claim counts <N v={r.core_multiplier} t="double" />, so its study's weight is doubled for that result.</p>
+      <p class="tplain">Each counted result scores plus one if it came out for the prediction, minus one if against, and zero if mixed. Multiply each score by its weight and add them up; divide that total by the sum of the weights, which gives a number between minus one and plus one, so a theory tested more often does not score higher for that alone. The support score is <N v={r.even} /> plus <N v={r.even} /> times that number.</p>
+      {ex && <p class="tplain">For example, {ex.name.charAt(0).toLowerCase() + ex.name.slice(1)}: its counted results, each times its weight, add up to <N v={ex.weighted_sum} t={String(ex.weighted_sum).replace('-', '−')} />, and its weights add up to <N v={ex.total_weight} />. Dividing gives <N v={ex.ratio} t={String(ex.ratio).replace('-', '−')} />. Then <N v={r.even} /> plus <N v={r.even} /> times that is <N v={r.even} /> {ex.half_ratio < 0 ? 'minus' : 'plus'} <N v={ex.half_ratio_abs} />, which is <N v={ex.support_exact} />, shown as <N v={ex.support} />.</p>}
       <p class="tplain"><b>How sharply it is defined</b> is the share of its core claims that come with a prediction that could fail and that a rival predicts differently: a full point when the theory's proponents state it, half when only the site has inferred it. <b>How much is left to test</b> is the share of those predictions no counted study has touched; a core claim with no such prediction counts as one untested place, so a theory cannot look finished by having said little.</p>
       <p class="tplain"><b>The ranking.</b> A theory is ranked only when more than half its core claims can be tested this way, and only once it has a support score. The order is set by the first score alone, and the ranked theories are listed from the most support to the least, with no rank numbers. Where two scores are equal, the theory resting on more evidence, by total weight, comes first. Two neighbours in the list are said to be too close to separate when one study going the other way would swap them; the test is made for each pair of neighbours, and theories that are not neighbours are never shown as tied. The three scores are never added together, because adding them would reward a theory for being vague or for being little tested. A theory the evidence goes against keeps its place, marked.</p>
       <p class="tplain"><b>A prediction's state</b> is worked out from its counted studies: supported when every one came out for, contradicted when every one came out against, mixed otherwise, and untested when none counts yet. A prediction that sets the theory apart from no rival is shown and scores nothing.</p>
@@ -39,6 +42,16 @@ const repo = 'https://github.com/jfredson/minimum-viable-mind';
     {/* That the two readers are AI models made by different companies, with no model named in the
         page text, was ruled by John on 2026-11-21 ("Yes, keep it"); the exact versions stay in the
         records. The wording is still draft for the voice checks. */}
+    <section id="checking">
+      <h2>Still being checked</h2>
+      {tk.verify_open.length === 0
+        ? <p class="tplain">Every statement in the records has been checked against a source a reader can open.</p>
+        : <>
+            <p class="tplain">These statements in the records rest on a source not yet opened in full. Each will be checked against its source, or taken out; until then, any score that rests on one may change, and no news post goes out.</p>
+            <ul class="tplain">{tk.verify_open.map((v) => <li data-verify-open={v.id}><R t={v.statement} /></li>)}</ul>
+          </>}
+    </section>
+
     <section id="judges">
       <h2>Who judges</h2>
       <p class="tplain">Someone has to decide what a theory predicts and whether a study's result supports it. Every such decision is its own record, with the study, the passage and the reason, and every one is read twice, by two readers who do not see each other's answer. The two readers are AI models made by different companies; they share much of what they learned from, so their agreement shows that the rules give the same answer twice, not that the answer is right. That is why a person reads every disagreement and a random half of the agreements. Where the readers disagree, the score waits until the disagreement is settled under a written rule, and the settlement is recorded with its reason. Today the records hold <N v={tk.judgement_count} /> judgements: <N v={tk.judgement_status.agreed} /> agreed by both readers and <N v={tk.judgement_status.ruled} /> settled by a written rule.</p>
@@ -79,7 +92,7 @@ const repo = 'https://github.com/jfredson/minimum-viable-mind';
 
     <section id="disagree">
       <h2>How to disagree</h2>
-      <p class="tplain">Each of these opens a public issue on the site's source, where the answer and any change it makes are recorded with a date.</p>
+      <p class="tplain">Each of these opens a public issue on the site's source, where the answer and any change it makes are recorded with a date. Writing one needs a free GitHub account.</p>
       <ul class="tplain">
         <li><a href={`${repo}/issues/new?title=${encodeURIComponent('Missing prediction: ')}`}>Name a prediction the site is missing</a>, with what would count for it and against it.</li>
         <li><a href={`${repo}/issues/new?title=${encodeURIComponent('Question a judgement: ')}`}>Question a judgement</a>: a reading of a study, a date, a protection or a core claim.</li>

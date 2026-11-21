@@ -35,7 +35,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
       <p class="eyebrow">A theory of consciousness{t.own && <> · this site's own</>} · {groupLine}{t.tied.length > 0 && <> · too close to separate from {t.tied.map((x, i) => <>{i > 0 && ' and '}{x.with_name.charAt(0).toLowerCase() + x.with_name.slice(1)}</>)}</>}</p>
       <h1>{t.name}</h1>
       <R as="p" class="tplain" t={t.plain} />
-      {t.proponents.length > 0 && <p class="meta">{t.own ? 'Its author:' : 'Among its proponents:'} {t.proponents.join(', ')}.</p>}
+      {t.proponents.length > 0 && <p class="meta">{t.own ? 'Its author:' : 'Among its proponents:'} {t.proponents.map((n, i) => <>{i > 0 && ', '}{tk.links.people[n] ? <a href={tk.links.people[n]}>{n}</a> : n}</>)}.</p>}
       <VerifyNote ids={t.verify_open} />
 
       <div class="scores" data-record={t.id}>
@@ -111,7 +111,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
             ) : m.kind === 'probe' ? (
               <li>A study registered in advance and run by an outside group (weight <N v={m.weight} />), on <a href={`/predictions/${m.prediction}/`}><R t={m.statement} /></a> support <b><N v={m.from} /> → <N v={m.for} /></b> if it came out for, <b><N v={m.from} /> → <N v={m.against} /></b> against.</li>
             ) : (
-              <li>Counted studies from <N v={m.groups_needed} t={word(m.groups_needed ?? 0)} /> separate research groups on <a href={`/predictions/${m.prediction}/`}><R t={m.statement} /></a> or its other predictions would give it a support score for the first time; it has studies from {m.groups === 0 ? 'none' : <N v={m.groups} t={word(m.groups ?? 0)} />} so far.</li>
+              <li>Counted studies from <N v={m.groups_needed} t={word(m.groups_needed ?? 0)} /> separate research groups, on the prediction <a href={`/predictions/${m.prediction}/`}><R t={m.statement} q /></a> or on its other predictions, would give it a support score for the first time; it has studies from {m.groups === 0 ? 'none' : <N v={m.groups} t={word(m.groups ?? 0)} />} so far.</li>
             )
           ))}
         </ul>

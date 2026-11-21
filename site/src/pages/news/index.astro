@@ -13,7 +13,7 @@ const posts = (await getCollection('news')).sort((a, b) => b.data.date.localeCom
     <p class="eyebrow">News</p>
     <h1>News</h1>
     {posts.length === 0 ? (
-      <p class="tplain">No posts yet. The first will come when the scores are first published: news waits until every fact in the records has been checked against its source, and <N v={tk.verify_open_count} t={word(tk.verify_open_count)} /> {tk.verify_open_count === 1 ? 'is' : 'are'} still being checked.</p>
+      <p class="tplain">No posts yet. The first post will come once every statement in the records has been checked against its source; <N v={tk.verify_open_count} t={word(tk.verify_open_count)} /> still {tk.verify_open_count === 1 ? 'is' : 'are'} being checked.</p>
     ) : (
       <ol class="news-list">
         {posts.map((p) => <li><span class="d"><N v={p.data.date} t={p.data.date_long} /> · {p.data.kind}</span> <a href={`/news/${p.id}/`}>{p.data.title}</a><p>{p.data.summary}</p></li>)}

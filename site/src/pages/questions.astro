@@ -29,6 +29,7 @@ const stageName = (id: string) => data.stages.find((s) => s.id === id)?.name ?? 
     <p class="eyebrow">Beside the ranking · moves no score</p>
     <h1>The open questions</h1>
     <p class="tplain">The theories disagree on more than what experience is. These are the questions a reader most often brings to them. Each will list the predictions that bear on it, so you can see which tests would move it; it moves no score.</p>
+    {tk.open_questions.every((q) => q.bears_on.length === 0) && <p class="meta">The links from the predictions to these questions are still being added, so none is listed yet.</p>}
     <ul class="qlist">
       {tk.open_questions.map((q) => {
         const t = tally(q.bears_on);
@@ -37,7 +38,7 @@ const stageName = (id: string) => data.stages.find((s) => s.id === id)?.name ?? 
             <div>
               <h3>{q.title}</h3>
               <p>{q.plain}</p>
-              <p class="ttally">{t.n === 0 ? 'No prediction on the record is linked to this question yet.' : <><N v={t.n} /> predictions bear on it · <N v={t.tested} /> tested</>}</p>
+              {t.n > 0 && <p class="ttally"><N v={t.n} /> predictions bear on it · <N v={t.tested} /> tested</p>}
               {t.n > 0 && <ul>{q.bears_on.map((id) => <li><a href={`/predictions/${id}/`}><R t={pred(id).statement} /></a></li>)}</ul>}
             </div>
           </li>

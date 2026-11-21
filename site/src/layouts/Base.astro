@@ -26,10 +26,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const socialImage = new URL('/social-preview.png', Astro.site).href;
 const currentYear = new Date().getFullYear();
 // "7 October 2026" for the footer; the design standard writes dates out there.
-const longDate = (iso: string) => {
-  const [y, m, d] = iso.split('-').map(Number);
-  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-};
+const longDate = fmtDate;
 // Bump when the icon set changes, so browsers that keep their own copy of the icon (Safari above
 // all) fetch the new one (2026-10-23, family-wide on John's word). The same tag is in
 // public/site.webmanifest.

@@ -55,7 +55,7 @@
   "state": "On 2026-11-20 I ruled that the project becomes a tracker that scores the active theories of consciousness, my own account among them, by fixed rules from dated, sourced records, in stages (docs/2026-11-20-consciousness-tracker-kickoff-proposal.md).",
   "latest_entry": {
     "date": "2026-11-20",
-    "title": "Stage 2 of the theories tracker is complete: three theories scored end to end by two readers, every disagreement settled by my rulings"
+    "title": "Stage 2 of the theories tracker is complete: three theories scored end to end by two readers, every disagreement settled under a written rule recorded with its reason"
   },
   "status": "3 of 8 stages delivered; about $419 to $439 spent in total across every vendor by the spending record of 2026-10-25, a few earlier API calls untraced, and since then about $0.77 on RunPod and about $1.05 on Google, each new spend under its own go from me; log last updated 2026-11-20.",
   "dates": {
@@ -72,7 +72,7 @@
     "theories_listed": 10,
     "worked_out_on": "2026-11-20",
     "last_reading": null,
-    "version": "fb1f882",
+    "version": "a34b0c4",
     "script": "scripts/tracker_scores.py --mode settled, through scripts/export_tracker.py"
   }
 }

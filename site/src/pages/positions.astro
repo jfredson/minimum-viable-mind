@@ -38,7 +38,7 @@ const verdict = (states: string[]) => {
               <div>
                 <R as="h3" t={c.plain} />
                 <R as="p" t={c.quote} q />
-                <p class="meta">From the position <R t={c.location} /></p>
+                <p class="meta">From the <R t={c.location} /></p>
                 {ps.map((p) => (
                   <div class="would" data-record={p.id}>
                     <b>What would count against it</b>

@@ -75,7 +75,10 @@ const notScored = tk.listed.filter((t) => !t.scored);
   })}
 
   {notScored.length > 0 && (
-    <div class="group notyet">Still being scored <i><N v={notScored.length} t={word(notScored.length)} /> more on the list: {notScored.map((t, i) => <>{i > 0 && (i === notScored.length - 1 ? ' and ' : ', ')}{t.name}</>)}</i></div>
+    <div class="group notyet">Still being scored <i><N v={notScored.length} t={word(notScored.length)} /> more on the list: {notScored.map((t, i) => <>{i > 0 && (i === notScored.length - 1 ? ' and ' : ', ')}{tk.links.theories[t.id] ? <a href={tk.links.theories[t.id]}>{t.name}</a> : t.name}</>)}</i></div>
   )}
 </div>
+{tk.verify_open_count > 0 && (
+  <p class="rank-foot"><N v={tk.verify_open_count} t={word(tk.verify_open_count).replace(/^./, (c) => c.toUpperCase())} /> {tk.verify_open_count === 1 ? 'statement' : 'statements'} in the records {tk.verify_open_count === 1 ? 'is' : 'are'} still being checked against {tk.verify_open_count === 1 ? 'its source' : 'their sources'}. <a href="/about/#checking">Which ones</a>.</p>
+)}
 <p class="rank-foot"><b>Read it this way.</b> The order is set by the first bar only. The second bar gets a theory into the ranking; the third says where the work is, and a long one is not a fault. The three are never added up. <a href="/about/#numbers">How the numbers are worked out</a>.</p>

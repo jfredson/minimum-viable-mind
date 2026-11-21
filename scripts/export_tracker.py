@@ -67,13 +67,18 @@ MONTHS = ["January", "February", "March", "April", "May", "June", "July", "Augus
           "September", "October", "November", "December"]
 
 
+def ordinal(d: int) -> str:
+    return f"{d}{'th' if 10 <= d % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(d % 10, 'th')}"
+
+
 def long_date(iso: str | None) -> str | None:
+    """A date in the house style for public prose: "November 20th, 2026"."""
     if not iso:
         return None
     parts = iso.split("-")
     if len(parts) == 3:
         y, m, d = map(int, parts)
-        return f"{d} {MONTHS[m - 1]} {y}"
+        return f"{MONTHS[m - 1]} {ordinal(d)}, {y}"
     if len(parts) == 2:
         return f"{MONTHS[int(parts[1]) - 1]} {parts[0]}"
     return iso
@@ -86,6 +91,29 @@ def r0(x):
 def support_of(wsum: float, total: float) -> float:
     """The ruled support formula (kickoff section 4): weighted mean put on 0 to 100."""
     return 100 * (wsum / total + 1) / 2
+
+
+def links():
+    """The opened links for named people, unscored theories and groups (data/links.toml)."""
+    import tomllib
+    f = ROOT / "data" / "links.toml"
+    d = tomllib.loads(f.read_text()) if f.exists() else {}
+    return {k: d.get(k, {}) for k in ("people", "theories", "groups")}
+
+
+def support_example(base, ranking):
+    """One worked example of the support formula for About, from a ranked theory's own figures:
+    the last ranked theory (the lowest support), so the example shows a negative sum."""
+    ranked = [x["theory"] for x in ranking["ranked"]]
+    if not ranked:
+        return None
+    tid = ranked[-1]
+    v = base[tid]
+    sr = v["support_rests_on"]
+    ratio = sr["weighted_sum"] / sr["total_weight"]
+    return {"theory": tid, "name": v["name"], "weighted_sum": sr["weighted_sum"], "total_weight": sr["total_weight"],
+            "ratio": round(ratio, 2), "half_ratio": round(50 * ratio, 1), "half_ratio_abs": abs(round(50 * ratio, 1)), "support_exact": v["support"],
+            "support": r0(v["support"])}
 
 
 def git_commit():
@@ -395,6 +423,8 @@ def main(argv=None) -> int:
         "last_judgement": last_judgement,
         "last_judgement_long": long_date(last_judgement),
         "open_questions": open_questions(pred_out),
+        "support_example": support_example(base, ranking),
+        "links": links(),
     }
 
     if a.check:

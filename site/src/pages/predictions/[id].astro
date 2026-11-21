@@ -6,6 +6,7 @@
 import Base from '../../layouts/Base.astro';
 import N from '../../components/N.astro';
 import R from '../../components/R.astro';
+import RecText from '../../components/RecText.astro';
 import StateBadge from '../../components/StateBadge.astro';
 import VerifyNote from '../../components/VerifyNote.astro';
 import { tk, theory, OUTCOME_LABEL, type Prediction } from '../../lib/tracker';
@@ -18,10 +19,12 @@ const t = theory(p.theory);
 const claimNo = t.claims.findIndex((c) => c.id === p.core_claim) + 1;
 const claim = t.claims.find((c) => c.id === p.core_claim);
 const PROT = [
-  ['registered', 'registered'],
-  ['outside_camp', 'outside group'],
-  ['rival_agreed', 'rival agreed'],
-  ['replicated', 'replicated'],
+  // [field, said when the study has it, said when it does not]: absence is said in words, not
+  // only in fainter ink, so it reads in both themes and to a screen reader (reader check, 2026-11-21).
+  ['registered', 'registered', 'not registered'],
+  ['outside_camp', 'outside group', 'run inside the camp'],
+  ['rival_agreed', 'rival agreed', 'no rival agreement'],
+  ['replicated', 'replicated', 'not replicated'],
 ] as const;
 const ownRow = t.own;
 ---
@@ -69,24 +72,24 @@ const ownRow = t.own;
               <tr data-record={s.study}>
                 <td>
                   {s.url ? <a href={s.url}><R t={s.name} /></a> : <R t={s.name} />}
-                  <span class="m"><R t={s.group} /> · first public <N v={s.first_appeared} t={s.first_appeared_long} /></span>
+                  <span class="m">{tk.links.groups[s.group] ? <a href={tk.links.groups[s.group]}><R t={s.group} /></a> : <R t={s.group} />} · first on record <N v={s.first_appeared} t={s.first_appeared_long} /></span>
                   <span class="m">{s.why}{s.settled_by === 'ruled' && ' · settled by a written rule where the readers differed'}</span>
                   {s.readings.length > 0 && (
                     <details class="readings">
                       <summary>What the readers said</summary>
-                      {s.readings.map((r) => <p><b>{r.who}{ownRow && r.who === 'the outside reader' ? ' (read first)' : ''}:</b> {r.verdict}. <R t={r.reason} /></p>)}
+                      {s.readings.map((r) => <p><b>{r.who}{ownRow && r.who === 'the outside reader' ? ' (read first)' : ''}:</b> {r.verdict}. <RecText t={r.reason} /></p>)}
                     </details>
                   )}
                 </td>
                 <td>{s.outcome ? <span class={`tbadge ${s.outcome === 'for' ? 'ok' : s.outcome === 'against' ? 'no' : 'mixed'}`}>{OUTCOME_LABEL[s.outcome]}</span> : <span class="tbadge untested">waiting</span>}</td>
-                <td class="hide-s"><span class="prot">{PROT.map(([k, l], i) => <>{i > 0 && ' · '}<span class={s.protections[k] ? 'y' : ''}>{l}</span></>)}</span></td>
+                <td class="hide-s"><span class="prot">{PROT.map(([k, l, no], i) => <>{i > 0 && ' · '}<span class={s.protections[k] ? 'y' : ''}>{s.protections[k] ? l : no}</span></>)}</span></td>
                 <td>{s.counted ? <><N v={s.weight} /> <span class="m">× <N v={s.multiplier} />, core claim</span></> : <N v={0} />}</td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
-      <p class="meta">Protections in full ink are the ones the study has; each adds one to its weight, which starts at <N v={tk.rules.weight_start} /> and stops at <N v={tk.rules.weight_top} />.</p>
+      <p class="meta">Each protection a study has adds one to its weight, which starts at <N v={tk.rules.weight_start} /> and stops at <N v={tk.rules.weight_top} />.</p>
     </div>
 
     <aside class="side">

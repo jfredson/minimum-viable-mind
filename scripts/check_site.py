@@ -72,6 +72,9 @@ PHRASES = [
     r"\bTODO\b",
     r"\bFIXME\b",
     r"from memory",            # rule 2 above (2026-11-21)
+    r"john'?s (request|go|word|wish|instruction)",   # "Added on John's request" (found 2026-11-21 by the reader check)
+    r"wording the session'?s",  # the same note. Kept narrow: a wider "session" phrase would refuse about
+                                # 18 sentences on the older pages, whose wording pass waits on John.
 ]
 PATTERN = re.compile("|".join(PHRASES), re.IGNORECASE)
 

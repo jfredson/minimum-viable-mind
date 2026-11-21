@@ -67,6 +67,8 @@ export interface Tracker {
   };
   last_judgement: string; last_judgement_long: string;
   open_questions: OpenQuestion[];
+  links: { people: Record<string, string>; theories: Record<string, string>; groups: Record<string, string> };
+  support_example: { theory: string; name: string; weighted_sum: number; total_weight: number; ratio: number; half_ratio: number; half_ratio_abs: number; support_exact: number; support: number } | null;
 }
 
 export const tk = raw as unknown as Tracker;
