@@ -366,6 +366,13 @@ not yet; no). He chose this one. Each stage has a condition that stops it and br
    of the outcome judgements: the rules could not then be applied the same way twice as written, and
    they come back to John. Before it starts: the first list of theories (ruling 4) and the second
    reader (ruling 7).
+*(ruled, 2026-11-21, John: "Yes, hold main"; wording the master session's.)* **The main line is held
+until launch.** A merge to main deploys the site, which reads `data/project.toml` and the headline file,
+so nothing reaches main until John's launch go at the end of stage 3. The work is combined on one
+working branch that deploys nothing, `claude/tracker-stage3` (the stage 2 pilot, the kickoff and
+three-hypotheses work it was cut from, and the design proposal with John's six rulings). Weakest step,
+stated to John: the live site keeps its old framing until then.
+
 3. **The remaining theories and the site**, built and not announced. Before it starts: the
    headline (ruling 3) and the name and address (ruling 2).
 4. **The weekly reading**, once John has ruled on the API workspace with a cost estimate (ruling 9)
