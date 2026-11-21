@@ -1,0 +1,30 @@
+{
+  "packet_id": "com-cogitate-gwt-synchrony",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "dg8Ba56qPOvWm9cPjd-m8A0",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"verdict\": \"before\",\n  \"reason\": \"A general form of the beta-band long-distance synchrony claim was published by GNW proponents in December 2013, and the specific prediction of content-dependent beta/gamma synchronization between prefrontal and category-specific sensory areas was fixed in the adversarial collaboration's OSF preregistration on January 16, 2019. Although exact calendar dates for data collection are not given, the published protocol states that both the original and amended preregistration files were frozen prior to the start of data acquisition. Because the proponents' preregistered commitment was frozen before any study data were collected, the prediction clearly precedes the data.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1504,
+    "candidatesTokenCount": 171,
+    "totalTokenCount": 2412,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1504
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 171
+      }
+    ],
+    "thoughtsTokenCount": 737,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.012088,
+  "seconds": 12.2,
+  "called_on": "2026-11-20 19:26:59 PST"
+}

@@ -50,12 +50,20 @@ def load():
         with open(DATA / name, "rb") as f:
             return tomllib.load(f)
 
+    judgements = t("judgements.toml")["judgement"]
+    extra = DATA / "readings-gemini.toml"
+    if extra.exists():
+        by_id = {j["id"]: j for j in judgements}
+        for r in t("readings-gemini.toml").get("reading", []):
+            r = dict(r)
+            jid = r.pop("judgement")
+            by_id[jid].setdefault("reading", []).append(r)
     return {
+        "judgements": judgements,
         "sources": t("sources.toml")["source"],
         "theories": t("theories.toml"),
         "predictions": t("predictions.toml")["prediction"],
         "studies": t("studies.toml")["study"],
-        "judgements": t("judgements.toml")["judgement"],
         "verify": t("verify.toml").get("entry", []),
     }
 

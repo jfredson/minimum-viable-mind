@@ -2,8 +2,73 @@
 
 *Written 2026-11-20 by the stage 2 working session, for the master session to put to John. Revised
 the same evening after John ruled on the two rules the first version raised ("Yes, count it" and
-"Yes, must separate"). A copy is in the master's notes folder. Nothing was spent, nothing was
-published, deployed, merged or pushed, and the second reader (Google's Gemini) has not been called.*
+"Yes, must separate"). Revised again the same night after the second reading (John's go, "Yes, up to $10"): section 0
+is new and supersedes the one-reader figures wherever they differ. A copy is in the master's notes
+folder. Nothing was published, deployed, merged or pushed. The only spend is the second reading,
+about $1.01 to Google.*
+
+## 0. The second reading (Gemini 4 Carbon), and where it leaves the scores
+
+- **Run:** all 48 packets, one standard call each, blind, on 2026-11-20. The API returned the model
+  version `gemini-4-carbon` on every call. **Cost: about $1.01** ($1.0065) from the token counts Google
+  returned, against the $10 ceiling. It is recorded in `docs/spending-record.md`. Raw answers are in
+  `data/tracker/second-reading/`, and the readings are in `data/tracker/readings-gemini.toml`. Gemini's
+  reading is the first of record on the five Sentient Horizons rows and the second everywhere else.
+- **The stop condition is not met.** The two readers disagree on **2 of 13 outcome judgements
+  (15%)**, under the one-third line. Beside it, reported separately: commitments **3 of 14 (21%)**,
+  and testability **5 of 21 (24%)**. On testability they agree on "could it fail" 20 times out of 21
+  and on "does it separate" 16 times.
+- **10 disagreements wait for John.** None is settled here, and the scores below leave every one of
+  them out.
+
+**The disagreements, both readings:**
+
+| judgement | Claude | Gemini | Gemini's reason, in short |
+|---|---|---|---|
+| Cogitate, seen content in prefrontal cortex (outcome) | mixed | against | orientation and identity were seen but absent from prefrontal cortex by two of three methods; that is the test's "against" case |
+| Cogitate, rise of activity at onset (outcome) | for | mixed | onset responses were present, but the full onset-and-offset profile was not, and the timing and parietal parts are not reported |
+| Bellet, prefrontal content (commitment) | before | unclear | monkey data are often reanalysed years later, so eight years is not enough without a recording date; and the 2013 passage does not commit the theory to report-free decoding |
+| Bandara, top-down signals (commitment) | before | unclear | the data predate 2015, and the only opened record is 2020; the 1998 quotation was not opened and is not specific enough |
+| Dellert, fronto-parietal rise (commitment) | before | unclear | the any-sense wording dates from 2020, and five years is a plausible lag from scanning to preprint; no passage commits to report-free designs |
+| Workspace theory, late start (testability) | separates: no | separates: yes (recurrent processing, IIT) | from its own knowledge: those rivals put awareness at 100 to 200 ms |
+| IIT, agnosia after inactivation (testability) | separates: no | separates: yes (higher-order, workspace) | from its own knowledge: intact frontal systems would notice the loss |
+| SH, the split and new events (testability) | separates: yes (workspace) | separates: no | the rivals are silent on cutting copies of commands, and silence is not a contrary prediction |
+| SH, no split and flexible response (testability) | separates: no | separates: yes (workspace) | from its own knowledge: workspace theory ties flexible response to broadcast, not to a self-world split |
+| SH, no bare awareness (testability) | could fail: yes; separates: no | could fail: no; separates: yes (recurrent processing, IIT) | no observable measure for the axes, and attesting an experience needs availability; rivals allow experience with no availability |
+
+Three patterns stand out. First, Gemini is stricter on dates: all three commitment disagreements are
+Claude "before" against Gemini "unclear", on studies that do not date their data. That is a direct
+test of my five-year convention, and Gemini rejects it. Second, on separation, Gemini is the more
+willing to read a rival's view from its own knowledge, which the packet allowed it to do if it said so.
+Third, on the two split predictions, the readers crossed: each read one strictly and the other
+leniently. That is the inconsistency section 6 flagged.
+
+**Scores on agreed rows only** (`python3 scripts/tracker_scores.py --mode settled`; 38 judgements
+agreed, 10 unsettled):
+
+| theory | testability | support | left to test | group |
+|---|---|---|---|---|
+| Integrated information theory | 60 | **57** (4 outcomes, 2 studies, 2 groups, total weight 28) | 57 | **ranked, 1st** |
+| Global workspace theory | 60 | too little tested to score (3 outcomes, all from Cogitate, one group) | 62.5 | **testable, too little tested to rank** |
+| The Sentient Horizons account | **25** | too little tested to score | 100 | not yet defined sharply enough to rank |
+
+**What is unsettled, and what turns on it:**
+- **Global workspace theory's group** turns on the three commitment disagreements. If any one of the
+  Bellet, Bandara or Dellert rows is settled as "before", the theory has a second group and gets a
+  support score again. If John prefers Gemini's stricter reading of undated studies, it stays
+  unranked until a dated study is found.
+- **The Sentient Horizons account's testability** (25 here, 50 on my reading alone) turns on the split
+  disagreement. Passing the bar needs three of its four core claims, and on agreed rows it has one (the
+  enriching features). It would need both of the following:
+  - one of the two split rows settled as separating;
+  - the bare-awareness row settled as both able to fail and separating. On that row each reader gave a
+    different reason against counting it.
+- **The two outcome disagreements** move only Cogitate's workspace rows: prefrontal content (mixed or
+  against) and the onset rise (for or mixed). Either way they pull global workspace theory down.
+- The headline on agreed rows: 6 of 12 distinguishing predictions tested.
+
+The sections below are the one-reader report as it stood before the second reading. Its figures are
+Claude's alone.
 
 ## In short
 
@@ -301,10 +366,10 @@ Each has its reason written in its record (`unsure_why` in `data/tracker/judgeme
 
 ## 8. Next, for the master to put to John
 
-1. **The spend.** Up to $10 on Gemini 4 Carbon for the 48 readings, or the 27 outcome and commitment
-   readings alone, ideally before 2026-12-01, when the price doubles.
-2. **Optionally, the five-year convention** for studies that do not date their data (section 2). It is a
+1. ~~The spend.~~ Done under John's go: about $1.01 (section 0).
+2. **The 10 disagreements** in section 0, each to be settled by John; until then they move no score.
+3. **The five-year convention**, which Gemini rejected on all three rows where it applied for studies that do not date their data (section 2). It is a
    reader's convention now, and it decides whether either theory has a support score.
 
-The stage 2 stop condition is the readers disagreeing on more than a third of the judgements. It can only
-be checked once the second reading is in.
+The stage 2 stop condition is the readers disagreeing on more than a third of the outcome judgements.
+They disagreed on 2 of 13 (15%), so it is not met (section 0).

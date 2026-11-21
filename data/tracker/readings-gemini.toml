@@ -1,0 +1,691 @@
+# The second reader's readings (Google's Gemini), one per judgement, imported from the
+# raw answers in second-reading/ by scripts/tracker_import_second_reading.py. Do not edit
+# by hand. Run 2026-11-20 under John's go of that day ('Yes, up to $10', relayed by the
+# master session). Blind: each packet held no part of the first reader's readings.
+
+[[reading]]
+judgement = "out-cogitate-gwt-pfc-content"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "While stimulus category was decoded in prefrontal cortex irrespective of the task, demonstrating the sensitivity of the methods, consciously seen face orientation was decoded in posterior regions but not in prefrontal cortex in both iEEG and fMRI, and no representation of identity was found in prefrontal cortex. This directly matches the condition counting against the prediction, where a consciously seen feature is decodable in sensory cortex but not in prefrontal cortex despite sufficient sensitivity to detect other features there. Although MEG showed weak above-chance orientation decoding in prefrontal cortex, the authors note this may reflect signal leakage from posterior regions, and iEEG and fMRI failed to find it."
+unsure = false
+unsure_why = ""
+response_id = "TREBa9iTEYzPn88Pub3HmQQ"
+cost_usd = 0.0182
+verdict = "against"
+
+[[reading]]
+judgement = "out-cogitate-gwt-ignition"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The passages report strong non-selective and category-selective onset responses in prefrontal cortex, which runs against the 'test against' condition of finding no reliable prefrontal increase. At the same time, none of the 655 prefrontal electrodes showed the full onset-and-offset ignition profile predicted for workspace updating, even though offset responses appeared in visual areas, meaning every new percept or update did not trigger prefrontal ignition. In addition, the excerpts provided do not state whether the prefrontal onset responses occurred after 250 ms, whether they held without report, or what occurred in parietal cortex."
+unsure = true
+unsure_why = "Passages showing the exact latency and report-independence of the prefrontal onset responses, along with parietal cortex results, could shift the verdict toward 'for' (since the stated prediction focuses on stimulus appearance rather than offset) or toward 'against' (if the onset responses were early or required reporting)."
+response_id = "LhEBa4zEIdymm9cP-uHt0QU"
+cost_usd = 0.01998
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-cogitate-gwt-synchrony"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The criterion against the prediction specifies finding no content-specific synchrony between prefrontal and category-selective areas in the predicted window by the measure agreed in advance. Using the preregistered PPC metric in the relevant 0.3–0.5 s window, the study found no content-selective connectivity between face- or object-selective electrodes and prefrontal cortex electrodes, contradicting the theory's prediction. Although an exploratory DFC analysis in iEEG was consistent with the theory's predictions, it was exploratory rather than the measure agreed in advance."
+unsure = false
+unsure_why = ""
+response_id = "bxEBa8CgJfuHn88P4N7yyAw"
+cost_usd = 0.021266
+verdict = "against"
+
+[[reading]]
+judgement = "out-bellet-gwt-pfc-content"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The study decoded the identity of each visual stimulus from monkey prefrontal cortex without report, which matches the decoding requirement and rules out the test against the prediction. However, both the prediction and the test for it specifically concern stimuli that are consciously seen. The authors state that without behavioral reports, most of the rapidly presented stimuli could have remained unconscious and they cannot tell whether any of the decoded signals are correlates of consciousness. Because the study cannot distinguish decoding of consciously perceived stimuli from decoding of unconscious stimuli, the result is inconclusive."
+unsure = true
+unsure_why = "The phrase 'even in the RSVP condition' implies another presentation condition was tested; passages showing that stimuli in a slower condition were clearly consciously perceived and decoded without report, or behavioral evidence that macaques consciously perceive stimuli at this presentation rate, would change my verdict to 'for'."
+response_id = "wxABa_LaA7ab0PEPl6O-2AQ"
+cost_usd = 0.085364
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-bandara-gwt-topdown"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "To count for the prediction, models without prefrontal feedback had to explain awareness clearly worse than models keeping it. Instead, an initial data-driven search corroborated neither theory, and a hypothesis-driven comparison showed that both models could explain the data. Keeping prefrontal feedback held only a very slight preference (53%) over switching it off, meaning the result cannot clearly tell the two apart."
+unsure = false
+unsure_why = ""
+response_id = "thABa_CNHLyMn88P-tfi6Aw"
+cost_usd = 0.006162
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-dellert-gwt-ignition"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction states that conscious stimuli cause increased activity in prefrontal and parietal cortex across all senses, even when no report is required. In this auditory no-report fMRI study, comparing aware and unaware participants showed significantly increased activity only in secondary auditory cortex, while fronto-parietal activation was weak and non-significant. This directly matches the condition specified as counting against the prediction, where awareness-related differences without report are confined to sensory cortex."
+unsure = false
+unsure_why = ""
+response_id = "nhEBa5uNHdqijdoP9oD66A4"
+cost_usd = 0.006734
+verdict = "against"
+
+[[reading]]
+judgement = "out-bandara-iit-posterior"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The study's initial data-driven search failed to corroborate either posterior (sensory) or frontal theories, while its hypothesis-driven analysis found strong evidence that both theories could explain the awareness data. Although a model retaining prefrontal-to-sensory backward connections performed slightly better (53%) than one retaining posterior backward connections, the near-equal explanatory power of both models means the result cannot decisively separate the two accounts or show that prefrontal cortex is unneeded."
+unsure = false
+unsure_why = ""
+response_id = "vBABa5mRLqKC2OMPusHOyQI"
+cost_usd = 0.007238
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-dellert-iit-posterior"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The study found significant awareness-related activity in temporal cortex regions (middle temporal gyrus, STG, and STS), which are part of the predicted posterior hot zone. Conversely, awareness-related activity was not observed in fronto-parietal areas, supporting the prediction that prefrontal cortex is not needed. (Note: this reading relies on basic anatomical terminology not spelled out in the excerpt, namely that STG and STS are temporal regions and fronto-parietal encompasses prefrontal cortex.)"
+unsure = false
+unsure_why = ""
+response_id = "pBEBa8GxLfzM2OMPzvuw8A4"
+cost_usd = 0.011334
+verdict = "for"
+
+[[reading]]
+judgement = "out-cogitate-gwt-offset"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The study directly matches the condition counting against the prediction: prefrontal cortex showed strong transient responses at stimulus onset but none at stimulus offset, while offset responses were robustly detected elsewhere, such as in visual areas. Across 655 electrodes, none matched the predicted onset-and-offset profile at the expected timing. Even in an unrestricted exploratory analysis, only a single frontal electrode showed both onset and offset responses, and those occurred much earlier (0.15 s) than the predicted 0.3 to 0.5 s window."
+unsure = false
+unsure_why = ""
+response_id = "RREBa5qPOKbLn88PnouHcQ"
+cost_usd = 0.008504
+verdict = "against"
+
+[[reading]]
+judgement = "out-cogitate-gwt-silent"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction states that a lasting percept is not maintained by sustained content-specific activity in the prefrontal cortex after initial onset. Consistent with this, the study found that face–object decoding and categorical representation in prefrontal regions were brief and transient at stimulus onset (around 0.2–0.4 s) across all three stimulus durations rather than sustained. Although the passages also note an absence of categorical representation at stimulus offset and report decoding rather than raw baseline activity levels, the lack of sustained content-specific prefrontal activity directly supports the prediction over its alternative."
+unsure = false
+unsure_why = ""
+response_id = "YREBa9KqGKynjdoP-LmN4Qk"
+cost_usd = 0.013744
+verdict = "for"
+
+[[reading]]
+judgement = "out-cogitate-iit-posterior"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The criterion for supporting the prediction requires that conscious content be decodable from the posterior cortex and that adding the prefrontal cortex provides no extra information. The study found that both stimulus category (faces versus objects) and face orientation could be decoded from posterior regions, with orientation decoding absent in prefrontal regions. Furthermore, across the critical time-resolved methods (iEEG and MEG), adding prefrontal regions failed to improve—and sometimes reduced—decoding performance."
+unsure = false
+unsure_why = ""
+response_id = "iREBa5OtAcG10PEPrtP9oAY"
+cost_usd = 0.008612
+verdict = "for"
+
+[[reading]]
+judgement = "out-cogitate-iit-sustained"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The study found sustained categorical (face-object) representation in the posterior cortex, allowing IIT to pass the study's predefined criteria for the duration prediction. However, face orientation information in posterior regions was not sustained and decayed after 0.5 seconds, directly matching what counts against the prediction. Additionally, the MEG data failed to support the prediction for stimulus category, identity, or orientation."
+unsure = false
+unsure_why = ""
+response_id = "kREBa_ywMejOm9cPnKm9uQY"
+cost_usd = 0.007328
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-cogitate-iit-synchrony"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The criterion against the prediction is finding no sustained content-specific synchrony between category-selective areas and V1/V2 by the preregistered measure. The study passages explicitly report a null result and a lack of sustained synchronization within the posterior cortex. The authors conclude that these findings fail to align with the theory's predictions and directly challenge it based on their preregistration."
+unsure = false
+unsure_why = ""
+response_id = "mhEBa-D3DL7o2OMPmdzkQA"
+cost_usd = 0.005646
+verdict = "against"
+
+[[reading]]
+judgement = "com-cogitate-gwt-pfc-content"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The 2019-01-16 preregistration for this adversarial collaboration explicitly states that global neuronal workspace theory predicts the content of consciousness should be decodable from prefrontal areas, building on Dehaene et al.'s (2013-12-29) earlier claim that the workspace relies primarily on dorsolateral prefrontal cortex. Exact calendar dates of data collection are not given, so the timing was decided from the 2023 protocol paper (co-authored by proponent Stanislas Dehaene), which states that the original and amended preregistrations were frozen before data acquisition began. Because the preregistered commitment was fixed on 2019-01-16 prior to data acquisition, the prediction was established before the data were collected."
+unsure = true
+unsure_why = "The quoted 2019 preregistration excerpt states generally that conscious content should be decodable from prefrontal areas without explicitly stating the no-report or task-irrelevance clause, and its citation truncates the author list to 'et al.', so Dehaene's endorsement of the 2019 text is inferred from the 2023 adversarial collaboration protocol."
+response_id = "Lw8Ba62CG6WSm9cPkLu1iAk"
+cost_usd = 0.052194
+verdict = "before"
+
+[[reading]]
+judgement = "com-cogitate-gwt-ignition"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "Proponents of global workspace theory stated the prediction of late non-linear amplification across prefrontal and parietal cortex in a publication dated December 29, 2013, and committed to prefrontal-parietal activation for every conscious experience in a preregistration dated January 16, 2019. Although exact calendar dates for data collection are not stated, we know data acquisition occurred after January 16, 2019 because the consortium's 2023 protocol paper explicitly states that the original and amended preregistrations were frozen before data acquisition began. Thus, both the prior publication and the preregistration fixed the prediction before the study's data were collected."
+unsure = false
+unsure_why = ""
+response_id = "AQ8Ba96dPOSsm9cP8_TS6AU"
+cost_usd = 0.025696
+verdict = "before"
+
+[[reading]]
+judgement = "com-cogitate-gwt-synchrony"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "A general form of the beta-band long-distance synchrony claim was published by GNW proponents in December 2013, and the specific prediction of content-dependent beta/gamma synchronization between prefrontal and category-specific sensory areas was fixed in the adversarial collaboration's OSF preregistration on January 16, 2019. Although exact calendar dates for data collection are not given, the published protocol states that both the original and amended preregistration files were frozen prior to the start of data acquisition. Because the proponents' preregistered commitment was frozen before any study data were collected, the prediction clearly precedes the data."
+unsure = false
+unsure_why = ""
+response_id = "dg8Ba56qPOvWm9cPjd-m8A0"
+cost_usd = 0.012088
+verdict = "before"
+
+[[reading]]
+judgement = "com-cogitate-gwt-offset"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction of a brief ignition at stimulus offset was fixed in an OSF preregistration on January 16, 2019, as part of an adversarial collaboration involving global workspace theory's proponents. Although the material does not provide exact calendar dates for when the study's data were collected, I decided it was after the commitment because the published 2023 protocol explicitly states that the original and amended preregistrations were frozen prior to the start of data acquisition. Therefore, the record was fixed before data collection began."
+unsure = true
+unsure_why = "The quoted sentence from the 2019 preregistration specifies a brief ignition at stimulus offset but does not explicitly name the prefrontal cortex in that excerpt, and the truncated v1 author list ('et al.') does not directly display the theory proponent's name without relying on the 2023 protocol citation and metadata."
+response_id = "Hg8Ba56rA4rAn88Px7Wa8QI"
+cost_usd = 0.018098
+verdict = "before"
+
+[[reading]]
+judgement = "com-cogitate-gwt-silent"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "On January 16, 2019, an OSF preregistration involving the theory's proponents committed global workspace theory to the prediction that lasting experiences are maintained in an activity-silent state following an initial ignition. Although exact calendar dates for data collection are not stated, I decided the timing based on the published protocol's explicit statement that both the original and amended preregistration files were frozen prior to the start of data acquisition. Because the proponents' commitment was fixed in a dated registration before any data were collected, the record precedes the test."
+unsure = false
+unsure_why = ""
+response_id = "aw8Ba5K6Du-dm9cPm9mAwAI"
+cost_usd = 0.013036
+verdict = "before"
+
+[[reading]]
+judgement = "com-cogitate-iit-posterior"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction placing the physical substrate of consciousness primarily in a posterior temporo-parietal-occipital 'hot zone' rather than prefrontal regions was fixed in an OSF preregistration on January 16, 2019, within an adversarial collaboration involving IIT's proponents. Although exact calendar dates for data collection are not listed, I decided the prediction came first because the published protocol explicitly confirms that both the original and amended preregistration files were frozen prior to the start of data acquisition. Thus, a dated record committed the theory to this prediction before any study data were collected."
+unsure = false
+unsure_why = ""
+response_id = "gw8Ba_HHDtLbm9cPhMKqwAs"
+cost_usd = 0.012424
+verdict = "before"
+
+[[reading]]
+judgement = "com-cogitate-iit-sustained"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "IIT's proponents participated in the Cogitate adversarial collaboration and fixed the prediction of sustained content-specific activity lasting for the duration of conscious experience in an OSF preregistration dated 2019-01-16. Although exact calendar dates for data collection are not given, I decided the prediction preceded data collection because the 2023 protocol explicitly states that the original and amended preregistration files were frozen prior to the commencement of data acquisition. Thus, a dated record fixed the commitment before the 2025 study's data were collected."
+unsure = true
+unsure_why = "The quoted sentence from the 2019-01-16 preregistration commits IIT to sustained content-specific activity for as long as the stimulus is consciously experienced, but it does not explicitly mention 'posterior cortex' in that excerpt, and the 2019 citation truncates the author list with 'et al.' rather than explicitly showing IIT proponents as the 2023 protocol citation does."
+response_id = "jg8Ba_2zHN7Km9cPjOLlWA"
+cost_usd = 0.024474
+verdict = "before"
+
+[[reading]]
+judgement = "com-cogitate-iit-synchrony"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The theory's proponents fixed this prediction in an OSF preregistration dated January 16, 2019, committing IIT to distinct patterns of synchronization between category-selective and early sensory areas in posterior cortex for each conscious experience. Although the exact start date of data collection is not given, the published protocol explicitly confirms that both the original and amended preregistration files were frozen before data acquisition began. Because the registration was fixed prior to any data collection, the prediction clearly precedes the data."
+unsure = false
+unsure_why = ""
+response_id = "qQ8Ba-DsMr7o2OMPmdzkQA"
+cost_usd = 0.007218
+verdict = "before"
+
+[[reading]]
+judgement = "com-bellet-gwt-pfc-content"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The 2022 study does not state when its monkey neural recordings were collected, giving only a January 2021 submission date, which leaves open whether the dataset was recorded before or after December 2013. Because electrophysiological datasets in non-human primates are frequently reanalyzed years after collection, a seven-year gap before submission is not sufficient on its own to establish that data collection happened after 2013. In addition, the quoted 2013 passage states only that global information sharing involves the dorsolateral prefrontal cortex among several cortical hubs, without explicitly committing the theory to decodable prefrontal representations in the absence of report or task relevance."
+unsure = false
+unsure_why = ""
+response_id = "7Q4Ba-zeOpXM2OMPlqzxwQM"
+cost_usd = 0.009252
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-bellet-iit-posterior"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction was fixed in a preregistration record on January 16, 2019. However, the study does not state when its monkey electrophysiology data were collected, establishing only that collection occurred before the paper's submission on January 19, 2021. Because macaque recording datasets are frequently gathered years prior to manuscript submission, it is impossible to tell from the record whether the data were collected after January 16, 2019. Under the scoring rules, when the data collection dates are unclear, the study cannot be counted as after the prediction."
+unsure = false
+unsure_why = ""
+response_id = "9w4Ba5jJL_fZm9cPu_6soQs"
+cost_usd = 0.00957
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-bandara-gwt-topdown"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "Although the modelling study does not give an exact collection date, it states that all its data came from Shafto and Pitts (2015), establishing that the data were collected in or before 2015. The opened proponent paper provided here is Mashour et al. (2020), which appeared years after those data were gathered. While Mashour et al. (2020) quotes a 1998 paper by Dehaene and colleagues mentioning descending connections to processor neurons, the 1998 source itself was not opened and that brief excerpt does not explicitly specify prefrontal-to-sensory feedback in stimulus awareness. Without direct text from a pre-2015 record, it is unclear whether the proponents fixed this specific prediction before data collection."
+unsure = true
+unsure_why = "Depending on whether an unopened 1998 citation counts as an unverified lead or simply fails to provide a pre-2015 record in evidence, this could be scored either unclear or not-before (since the only opened source is from 2020); furthermore, Dehaene and colleagues likely discussed prefrontal-to-sensory feedback in pre-2015 papers not included in these passages."
+response_id = "zQ4Ba6CpEc6tjdoPic3P8AE"
+cost_usd = 0.019358
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-bandara-iit-posterior"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The provided record fixing the prediction to integrated information theory is an OSF preregistration dated January 16, 2019. Although the study does not give exact collection dates, it reanalyzes an existing dataset from Shafto and Pitts (2015), which guarantees the data were collected in or before 2015. Because the data were collected years before the 2019 prediction record was fixed, the prediction was not made before data collection."
+unsure = false
+unsure_why = ""
+response_id = "6Q4Ba8S8JeHMm9cPhafbsAE"
+cost_usd = 0.006498
+verdict = "not-before"
+
+[[reading]]
+judgement = "com-dellert-gwt-ignition"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The study does not state when its fMRI data were collected, leaving only the May 2025 preprint date as an upper bound. Because five years is a plausible lag from scanning to preprint, we decided we cannot safely assume the data were collected after the March 2020 paper that fixed the cross-modality and cross-paradigm claim, even if collection after December 2013 is very likely. Moreover, the 2013 passage says only that conscious access is often characterized by fronto-parietal amplification, and neither quoted passage explicitly states that this holds without report. Because both the timing relative to 2020 and the explicit commitment to no-report paradigms in the provided quotes are uncertain, the verdict is unclear."
+unsure = true
+unsure_why = "The full text of Mashour et al. (2020) outside the quoted passage may explicitly commit to no-report paradigms, and the fMRI data for a 2025 preprint may in fact have been collected after March 2020, which would support a 'before' verdict if verified."
+response_id = "sA8Ba--zCofJ0PEPwryT2Q8"
+cost_usd = 0.022312
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-dellert-iit-posterior"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The January 16, 2019 OSF preregistration commits IIT to the prediction that the physical substrate of consciousness resides primarily in a posterior temporo-parietal-occipital hot zone rather than prefrontal regions. The study preprint does not state when its fMRI data were collected, noting only that it first appeared on May 21, 2025. Because more than six years elapsed between the fixed January 2019 record and the May 2025 preprint, I decided based on standard neuroimaging study timelines that the data were collected after the prediction was recorded."
+unsure = true
+unsure_why = "Because the preprint reports no scanning dates, collection of the fMRI data before January 2019 (such as delayed publication or reanalysis of older data) cannot be strictly ruled out from the text alone, and the passage does not explicitly mention decoding."
+response_id = "yg8Ba9KiIZ3xsNYP5buR0Aw"
+cost_usd = 0.098858
+verdict = "before"
+
+[[reading]]
+judgement = "tst-gwt-pfc-content"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction can fail if a sufficiently sensitive no-report study decodes consciously seen, task-irrelevant stimulus features from sensory cortex while failing to decode them from prefrontal cortex. This separates Global Workspace Theory from Integrated Information Theory and Recurrent Processing Theory. Based on both the cited adversarial collaboration and broader knowledge of that project, IIT locates conscious visual content in posterior cortex and predicts that task-irrelevant features are not represented in prefrontal cortex. Similarly, from outside knowledge, Recurrent Processing Theory holds that local recurrence in visual cortex suffices for conscious seeing, so unreported and task-irrelevant visual content will not be decodable in prefrontal areas."
+unsure = false
+unsure_why = ""
+response_id = "4BEBa5OIFNqxn88PnYuSmQE"
+cost_usd = 0.014182
+could_fail = true
+separates = true
+separates_from = ["iit", "rpt"]
+rival_view_from = "both"
+
+[[reading]]
+judgement = "tst-gwt-ignition"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction could clearly fail in a no-report neuroimaging study if consciously perceived stimuli show neural differences restricted to sensory or posterior cortex without a late prefrontal-parietal surge. According to the provided material, Integrated Information Theory predicts that posterior cortical activity suffices for consciousness and that prefrontal activation is unnecessary when report demands are removed. From my own knowledge, Recurrent Processing Theory similarly predicts that earlier, localized recurrent activity within sensory cortices generates phenomenal awareness without requiring late prefrontal ignition."
+unsure = false
+unsure_why = ""
+response_id = "sREBa7CYB8G10PEPrtP9oAY"
+cost_usd = 0.005934
+could_fail = true
+separates = true
+separates_from = ["iit", "rpt"]
+rival_view_from = "both"
+
+[[reading]]
+judgement = "tst-gwt-synchrony"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction can fail because intracranial or neuroimaging studies can directly observe conscious perception occurring without beta or gamma synchrony between prefrontal and sensory areas. In the provided material, Integrated Information Theory explicitly denies that prefrontal synchrony is required for conscious perception, locating the relevant synchrony within posterior cortex instead. From my own knowledge, Recurrent Processing Theory likewise predicts that local recurrent activity within sensory areas suffices for conscious experience without prefrontal involvement."
+unsure = false
+unsure_why = ""
+response_id = "FhIBa9SJJYmmjdoPu_O1wQE"
+cost_usd = 0.006366
+could_fail = true
+separates = true
+separates_from = ["iit", "rpt"]
+rival_view_from = "both"
+
+[[reading]]
+judgement = "tst-gwt-topdown"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction could fail if neural recordings and connectivity models in no-report studies show that awareness is explained just as well when top-down feedback from prefrontal cortex to sensory areas is absent. It separates Global Workspace Theory from Integrated Information Theory, which the provided material notes places the substrate of experience mainly in posterior cortex without requiring prefrontal feedback. From my own knowledge, it also separates the theory from Recurrent Processing Theory, which holds that local recurrent signaling within sensory cortex is sufficient for awareness without prefrontal involvement."
+unsure = false
+unsure_why = ""
+response_id = "HBIBa_7XHsa9n88Pzsyg2AI"
+cost_usd = 0.011288
+could_fail = true
+separates = true
+separates_from = ["iit", "rpt"]
+rival_view_from = "both"
+
+[[reading]]
+judgement = "tst-gwt-late"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "Time-resolved recordings like EEG, MEG, or intracranial electrodes can observe whether reliable, content-carrying neural differences between seen and unseen stimuli appear before 200 ms under matched task conditions. Finding such early awareness-specific activity would directly falsify the prediction that conscious divergence starts only after roughly 200 ms. Based on my own knowledge, this separates Global Workspace Theory from Recurrent Processing Theory and Integrated Information Theory, which predict that conscious experience emerges earlier (around 100 to 200 ms) once local recurrent or integrated sensory activity forms in posterior cortex."
+unsure = false
+unsure_why = ""
+response_id = "thEBa7XcIabLn88PnouHcQ"
+cost_usd = 0.019564
+could_fail = true
+separates = true
+separates_from = ["rpt", "iit"]
+rival_view_from = "own knowledge"
+
+[[reading]]
+judgement = "tst-gwt-wm-transform"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "A study can test this prediction by having participants mentally transform an item held across a memory delay, such as by mental rotation, while tracking neural decoding and conscious access. Observing accurate transformation while neural activity remains silent and signatures of conscious access stay absent would directly count against the theory. However, this prediction pits Global Workspace Theory against synaptic models of working memory rather than the listed rival theories of consciousness. None of the rivals on the list positively predicts that activity-silent memories can be mentally transformed without active firing, as they largely stay silent on the neural mechanics of working memory manipulation."
+unsure = false
+unsure_why = ""
+response_id = "KBIBa_JGtNyb1w_e2NORBA"
+cost_usd = 0.02686
+could_fail = true
+separates = false
+separates_from = []
+rival_view_from = "none"
+
+[[reading]]
+judgement = "tst-gwt-offset"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction could fail because brain recordings can directly measure whether a transient response occurs in the prefrontal cortex shortly after a consciously perceived stimulus disappears. Finding prefrontal activity at stimulus onset—alongside offset responses in other brain areas—without a prefrontal ignition at offset would count clearly against the prediction. It also separates Global Workspace Theory from Integrated Information Theory, which, as stated in the provided material, predicts sustained posterior activity lasting for the duration of the percept rather than phasic updates."
+unsure = false
+unsure_why = ""
+response_id = "yxEBa6W1PJ3Cn88P_sTBkQU"
+cost_usd = 0.01817
+could_fail = true
+separates = true
+separates_from = ["iit"]
+rival_view_from = "material"
+
+[[reading]]
+judgement = "tst-gwt-silent"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction could fail if neural recordings showed sustained, content-specific activity throughout the entire duration of a lasting conscious percept rather than a decay to baseline between onset and offset. It separates Global Workspace Theory from Integrated Information Theory, which, as noted in the provided material, predicts sustained content-specific activity in posterior cortex for the whole percept rather than an activity-silent state. From my own knowledge, Recurrent Processing Theory similarly requires ongoing recurrent activity in sensory areas for as long as a percept remains conscious. Although the narrowed test description focuses on prefrontal cortex where IIT also expects no sustained coding, the core prediction that lasting percepts are held in an activity-silent state rather than by sustained activity directly contradicts both rivals."
+unsure = false
+unsure_why = ""
+response_id = "8BEBa4DYIfGsjdoPvZiE0Ak"
+cost_usd = 0.027352
+could_fail = true
+separates = true
+separates_from = ["iit", "rpt"]
+rival_view_from = "both"
+
+[[reading]]
+judgement = "tst-iit-posterior"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "Brain imaging and neural decoding studies can observe where awareness-related information resides, so the prediction would fail if prefrontal activity proved necessary for consciousness or added decodable conscious content beyond the posterior cortex. In the provided material, Global Workspace Theory directly contradicts this by holding that prefrontal activation is a prerequisite for conscious experience. From outside knowledge, Higher-Order Theories likewise require prefrontal cortex involvement to support the higher-order representations needed for awareness."
+unsure = false
+unsure_why = ""
+response_id = "KhMBa9-2KaDBn88PvuHwOQ"
+cost_usd = 0.010886
+could_fail = true
+separates = true
+separates_from = ["gwt", "hot"]
+rival_view_from = "both"
+
+[[reading]]
+judgement = "tst-iit-sustained"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction could fail if neural recordings show that content-specific activity in the posterior cortex decays while a participant still consciously experiences a stimulus. It separates Integrated Information Theory from Global Workspace Theory as described in the provided adversarial collaboration material. Whereas Integrated Information Theory predicts sustained activity for the entire duration of the experience, Global Workspace Theory predicts an initial phasic ignition followed by decay until a new content is experienced."
+unsure = false
+unsure_why = ""
+response_id = "NRMBa4-KHsepm9cPzdr-gAE"
+cost_usd = 0.014586
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+rival_view_from = "material"
+
+[[reading]]
+judgement = "tst-iit-synchrony"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction could fail if brain recordings find no sustained, content-specific synchrony between category-selective regions and early visual areas (V1/V2) throughout a conscious percept. It separates Integrated Information Theory from Global Workspace Theory. As indicated by the word 'instead' in the provided preregistration and confirmed by knowledge of that adversarial collaboration, GWT predicts synchrony with prefrontal cortex during workspace ignition rather than sustained synchrony with early visual cortex."
+unsure = false
+unsure_why = ""
+response_id = "RhMBa4qsJdCkjdoPxqDn2QY"
+cost_usd = 0.014138
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+rival_view_from = "both"
+
+[[reading]]
+judgement = "tst-iit-phi-states"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "Finding that empirical proxies for integrated information are just as high in dreamless sleep or general anaesthesia as in waking and dreaming would count against this prediction in an observable study. However, exact Φ cannot actually be measured or computed in a human brain, meaning studies must rely on indirect proxies whose validity can be disputed. Furthermore, the prediction does not separate the theory from its rivals, as accounts like Global Workspace Theory and Recurrent Processing Theory also expect neural integration and complexity to drop during anaesthesia and deep sleep, while other rivals merely stay silent on Φ."
+unsure = true
+unsure_why = "Exact Φ as defined in IIT 4.0 is computationally intractable to measure in biological brains, so it is debatable whether a study can actually observe a failure of Φ itself rather than just the failure of a proxy measure."
+response_id = "9xIBa7VXmKeN2g_mzL7YDg"
+cost_usd = 0.034482
+could_fail = true
+separates = false
+separates_from = []
+rival_view_from = "none"
+
+[[reading]]
+judgement = "tst-iit-inactive"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "A study could test this prediction by temporarily inactivating neurons that are already quiet during a task and checking whether the subject's reported experience changes. If disabling already-quiet neurons consistently leaves experience unchanged, that observable result would count against the prediction. This separates IIT from Global Workspace Theory, which, according to the provided material, requires active, persistent neural firing to carry conscious content and therefore predicts that quiet neurons do not contribute to current experience."
+unsure = false
+unsure_why = ""
+response_id = "4BIBa-e-EI7-n88PjYqjCQ"
+cost_usd = 0.01696
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+rival_view_from = "material"
+
+[[reading]]
+judgement = "tst-iit-agnosia"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "A lesion or temporary inactivation study could observe a person losing the relevant posterior region while still noticing and reporting that sensory content is missing, which would count directly against this prediction. From my own knowledge, this separates Integrated Information Theory from Higher-Order Theories and Global Workspace Theory. Because those rivals ground conscious access and metacognitive monitoring in prefrontal or frontoparietal networks, they predict that intact frontal systems will detect the absence of sensory input (or even continue generating higher-order experience) rather than leaving the person wholly unaware of the loss."
+unsure = false
+unsure_why = ""
+response_id = "SxIBa5yKIY_cm9cPiZyPgQE"
+cost_usd = 0.025354
+could_fail = true
+separates = true
+separates_from = ["hot", "gwt"]
+rival_view_from = "own knowledge"
+
+[[reading]]
+judgement = "tst-iit-connections"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction could fail if a study alters synaptic connection strength in posterior cortex while holding neural activity constant and finds no change in reported experience. However, independently changing and verifying synaptic weights in humans without altering activity is technically demanding, and if outgoing spike trains remain completely identical, it is unclear how downstream reporting systems could register any experiential shift. The prediction separates IIT from Global Workspace Theory as stated in the material, because GWT ties consciousness to active neural broadcasting and predicts no change when activity is held constant. From my own knowledge, Recurrent Processing Theory, Higher-Order Theories, and Attention Schema Theory similarly ground experience in active processing or active representations rather than latent connection weights, so they also predict unchanged experience."
+unsure = true
+unsure_why = "If holding activity constant means strictly identical spike trains rather than constant mean firing rate or BOLD amplitude, causal closure prevents downstream reporting areas from receiving any signal that experience changed, creating uncertainty about whether a study could practically observe the test conditions in humans."
+response_id = "dRIBa4qFFobJn88P7tq8sQY"
+cost_usd = 0.06029
+could_fail = true
+separates = true
+separates_from = ["gwt", "rpt", "hot", "ast"]
+rival_view_from = "both"
+
+[[reading]]
+judgement = "tst-iit-feedforward"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "The prediction cannot fail in an actual study because the machine can be behaviorally indistinguishable from a human, leaving no independent observation that could show it has experience. However, the claim separates IIT from functionalist rivals like Global Workspace Theory, Higher-Order Theories, and Attention Schema Theory. As the material notes for GWT and as is established for HOT and AST, these theories tie consciousness to functional or computational architectures, meaning a machine implementing the right functions would have experience even on feed-forward hardware."
+unsure = false
+unsure_why = ""
+response_id = "zRIBa9LyA-qOm9cPpbO7kAs"
+cost_usd = 0.016044
+could_fail = false
+separates = true
+separates_from = ["gwt", "hot", "ast"]
+rival_view_from = "both"
+
+[[reading]]
+judgement = "tst-sh-central"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "first"
+reason = "The statement expresses a broad explanatory commitment rather than a concrete outcome that an empirical study could observe. Moreover, the phrase \"this binding\" is not operationally defined in the wording provided, leaving no clear rule for deciding when an experimental finding falls outside what the binding can explain. Without a defined mechanism or an observable test result, the claim cannot separate this account from rival theories."
+unsure = true
+unsure_why = "The phrase \"this binding\" refers back to an unquoted \"map\" in the source text; if that fuller context defines the binding narrowly as a specific neural mechanism, rivals such as higher-order or global workspace theories might explicitly predict that other processes explain features of experience."
+response_id = "VxMBa5OpHKO4n88PkoTeEQ"
+cost_usd = 0.02179
+could_fail = false
+separates = false
+separates_from = []
+rival_view_from = "none"
+
+[[reading]]
+judgement = "tst-sh-split-novel"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "first"
+reason = "The prediction could fail because a study can selectively sever efference-copy pathways while leaving motor commands working, and observe whether responses to new, unrelated external events carry on as before. However, it does not separate this theory from the listed rivals, which stay silent on the specific behavioral effects of cutting command copies rather than predicting that responses to unrelated events must stay intact. Even rivals that treat sensory awareness as independent of motor signals distinguish inner experience from outward responsiveness, and could explain degraded responses through distraction from uncancelled self-caused sensory noise."
+unsure = false
+unsure_why = ""
+response_id = "6xMBa56XCs7Lm9cPjOPH6QU"
+cost_usd = 0.031576
+could_fail = true
+separates = false
+separates_from = []
+rival_view_from = "none"
+
+[[reading]]
+judgement = "tst-sh-nosplit-flexible"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "first"
+reason = "A study could test this prediction by measuring whether people in meditative or psychedelic states with a reported loss of self-world boundary can still adapt flexibly to novel events. Finding intact flexible responses during those states would directly count against the theory. From my own knowledge, Global Workspace Theory predicts the opposite in principle, because it ties flexible responses to novelty directly to conscious global broadcast rather than to maintaining a self-world split."
+unsure = true
+unsure_why = "Global Workspace Theory links conscious broadcast to flexible novelty responses in general, but its proponents have not explicitly stated a firm prediction for behavioral flexibility specifically during ego-dissolution or non-dual states, which makes it close to staying silent."
+response_id = "whMBa-6MLufZm9cP2YTjuAQ"
+cost_usd = 0.02698
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+rival_view_from = "own knowledge"
+
+[[reading]]
+judgement = "tst-sh-enriching"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "first"
+reason = "The prediction could fail if clinical lesion or intervention studies showed that selectively abolishing kept memory, self-awareness, affect ('mattering'), or self-world boundaries completely extinguishes consciousness rather than merely impoverishing it. The text anchors this kind of test in observable neurological cases such as Henry Molaison's memory loss. It separates the account from Damasio's feeling-based theory, which holds that homeostatic feelings and affective valence are foundational to consciousness and that removing them switches experience off. Both the provided material and independent knowledge of Damasio's work support this contrast, assuming 'mattering' maps directly onto homeostatic affect."
+unsure = false
+unsure_why = ""
+response_id = "dRMBa--4CdeljdoP1uqhqAI"
+cost_usd = 0.029564
+could_fail = true
+separates = true
+separates_from = ["damasio"]
+rival_view_from = "both"
+
+[[reading]]
+judgement = "tst-sh-no-bare-awareness"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "first"
+reason = "The wording gives no observable measures for integration, availability, or depth, so a study could not clearly verify that a reported pure awareness has strictly nothing on one of those axes. Moreover, observing a well-attested experience with zero availability creates a practical catch-22, since attesting that an experience happened normally relies on availability to memory or report. Even so, from my own knowledge, the claim separates this account from recurrent processing theory and integrated information theory. Both rivals explicitly predict that genuine experience can occur in local sensory circuits or isolated networks with no cognitive availability at all."
+unsure = true
+unsure_why = "The excerpt does not define integration, availability, and depth; if the full source provides concrete neural or phenomenological criteria for those axes, the prediction might become empirically testable, or its sense of 'availability' might differ from access consciousness in RPT and IIT."
+response_id = "nBMBa7u0LdmZ2OMPyP_C2Q4"
+cost_usd = 0.022986
+could_fail = false
+separates = true
+separates_from = ["rpt", "iit"]
+rival_view_from = "own knowledge"

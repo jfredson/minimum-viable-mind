@@ -1,0 +1,30 @@
+{
+  "packet_id": "com-cogitate-iit-sustained",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "jg8Ba_2zHN7Km9cPjOLlWA",
+  "finish_reason": "STOP",
+  "answer_text": "{\"verdict\": \"before\", \"reason\": \"IIT's proponents participated in the Cogitate adversarial collaboration and fixed the prediction of sustained content-specific activity lasting for the duration of conscious experience in an OSF preregistration dated 2019-01-16. Although exact calendar dates for data collection are not given, I decided the prediction preceded data collection because the 2023 protocol explicitly states that the original and amended preregistration files were frozen prior to the commencement of data acquisition. Thus, a dated record fixed the commitment before the 2025 study's data were collected.\", \"unsure\": true, \"unsure_why\": \"The quoted sentence from the 2019-01-16 preregistration commits IIT to sustained content-specific activity for as long as the stimulus is consciously experienced, but it does not explicitly mention 'posterior cortex' in that excerpt, and the 2019 citation truncates the author list with 'et al.' rather than explicitly showing IIT proponents as the 2023 protocol citation does.\"}",
+  "usage": {
+    "promptTokenCount": 1527,
+    "candidatesTokenCount": 231,
+    "totalTokenCount": 3669,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1527
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 231
+      }
+    ],
+    "thoughtsTokenCount": 1911,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.024474,
+  "seconds": 27.3,
+  "called_on": "2026-11-20 19:27:37 PST"
+}

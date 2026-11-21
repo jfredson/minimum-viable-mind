@@ -1,0 +1,30 @@
+{
+  "packet_id": "out-cogitate-gwt-pfc-content",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "TREBa9iTEYzPn88Pub3HmQQ",
+  "finish_reason": "STOP",
+  "answer_text": "{\"verdict\": \"against\", \"reason\": \"While stimulus category was decoded in prefrontal cortex irrespective of the task, demonstrating the sensitivity of the methods, consciously seen face orientation was decoded in posterior regions but not in prefrontal cortex in both iEEG and fMRI, and no representation of identity was found in prefrontal cortex. This directly matches the condition counting against the prediction, where a consciously seen feature is decodable in sensory cortex but not in prefrontal cortex despite sufficient sensitivity to detect other features there. Although MEG showed weak above-chance orientation decoding in prefrontal cortex, the authors note this may reflect signal leakage from posterior regions, and iEEG and fMRI failed to find it.\", \"unsure\": false, \"unsure_why\": \"\"}",
+  "usage": {
+    "promptTokenCount": 1870,
+    "candidatesTokenCount": 152,
+    "totalTokenCount": 3316,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1870
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 152
+      }
+    ],
+    "thoughtsTokenCount": 1294,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.0182,
+  "seconds": 20.1,
+  "called_on": "2026-11-20 19:34:57 PST"
+}

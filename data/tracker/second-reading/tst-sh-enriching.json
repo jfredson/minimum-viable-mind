@@ -1,0 +1,30 @@
+{
+  "packet_id": "tst-sh-enriching",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "dRMBa--4CdeljdoP1uqhqAI",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"could_fail\": true,\n  \"separates\": true,\n  \"separates_from\": [\n    \"damasio\"\n  ],\n  \"rival_view_from\": \"both\",\n  \"reason\": \"The prediction could fail if clinical lesion or intervention studies showed that selectively abolishing kept memory, self-awareness, affect ('mattering'), or self-world boundaries completely extinguishes consciousness rather than merely impoverishing it. The text anchors this kind of test in observable neurological cases such as Henry Molaison's memory loss. It separates the account from Damasio's feeling-based theory, which holds that homeostatic feelings and affective valence are foundational to consciousness and that removing them switches experience off. Both the provided material and independent knowledge of Damasio's work support this contrast, assuming 'mattering' maps directly onto homeostatic affect.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1127,
+    "candidatesTokenCount": 205,
+    "totalTokenCount": 3858,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1127
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 205
+      }
+    ],
+    "thoughtsTokenCount": 2526,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.029564,
+  "seconds": 39.4,
+  "called_on": "2026-11-20 19:44:28 PST"
+}

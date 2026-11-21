@@ -1,0 +1,30 @@
+{
+  "packet_id": "tst-iit-phi-states",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "9xIBa7VXmKeN2g_mzL7YDg",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"could_fail\": true,\n  \"separates\": false,\n  \"separates_from\": [],\n  \"rival_view_from\": \"none\",\n  \"reason\": \"Finding that empirical proxies for integrated information are just as high in dreamless sleep or general anaesthesia as in waking and dreaming would count against this prediction in an observable study. However, exact Φ cannot actually be measured or computed in a human brain, meaning studies must rely on indirect proxies whose validity can be disputed. Furthermore, the prediction does not separate the theory from its rivals, as accounts like Global Workspace Theory and Recurrent Processing Theory also expect neural integration and complexity to drop during anaesthesia and deep sleep, while other rivals merely stay silent on Φ.\",\n  \"unsure\": true,\n  \"unsure_why\": \"Exact Φ as defined in IIT 4.0 is computationally intractable to measure in biological brains, so it is debatable whether a study can actually observe a failure of Φ itself rather than just the failure of a proxy measure.\"\n}",
+  "usage": {
+    "promptTokenCount": 1081,
+    "candidatesTokenCount": 219,
+    "totalTokenCount": 4313,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1081
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 219
+      }
+    ],
+    "thoughtsTokenCount": 3013,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.034482,
+  "seconds": 51.6,
+  "called_on": "2026-11-20 19:42:34 PST"
+}

@@ -1,0 +1,30 @@
+{
+  "packet_id": "out-cogitate-iit-sustained",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "kREBa_ywMejOm9cPnKm9uQY",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"verdict\": \"mixed\",\n  \"reason\": \"The study found sustained categorical (face-object) representation in the posterior cortex, allowing IIT to pass the study's predefined criteria for the duration prediction. However, face orientation information in posterior regions was not sustained and decayed after 0.5 seconds, directly matching what counts against the prediction. Additionally, the MEG data failed to support the prediction for stimulus category, identity, or orientation.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1734,
+    "candidatesTokenCount": 117,
+    "totalTokenCount": 2120,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1734
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 117
+      }
+    ],
+    "thoughtsTokenCount": 269,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.007328,
+  "seconds": 8.4,
+  "called_on": "2026-11-20 19:35:54 PST"
+}
