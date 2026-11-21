@@ -6,32 +6,16 @@
   ],
   "judgement_status": {
     "agreed": 105,
-    "ruled": 18,
+    "ruled": 34,
     "one-reader": 0,
-    "disagreed": 18,
+    "disagreed": 2,
     "open-for-john": 0,
     "unread": 0,
     "superseded": 1
   },
   "unsettled": [
-    "com-dellert-rpt-no-report-sensory",
-    "com-filimonov2022-rpt-other-senses",
-    "com-filimonov2024-rpt-other-senses",
-    "com-hobot-hot-pfc-disrupt",
-    "com-khan-orch-anaesthetic-mt",
-    "com-li-orch-anaesthetic-mt",
-    "com-martin-hot-pfc-disrupt",
-    "out-dellert-hot-pfc-involved",
-    "out-hobot-hot-pfc-disrupt",
-    "out-li-orch-anaesthetic-mt",
-    "tst-dam-ai",
-    "tst-dam-no-nervous-system",
     "tst-iit-phi-states",
-    "tst-rpt-attention-independent",
-    "tst-rpt-ff-unseen",
-    "tst-seth-interoceptive-ownership",
-    "tst-sh-central",
-    "tst-sm-inattentional"
+    "tst-rpt-ff-unseen"
   ],
   "theories": {
     "gwt": {
@@ -129,9 +113,8 @@
     "sh": {
       "name": "The Sentient Horizons account",
       "judgement_status": {
-        "disagreed": 1,
-        "agreed": 2,
-        "ruled": 2
+        "ruled": 3,
+        "agreed": 2
       },
       "one_reader_only": false,
       "testability": 50.0,
@@ -171,7 +154,7 @@
       "name": "Higher-order theories",
       "judgement_status": {
         "agreed": 14,
-        "disagreed": 4
+        "ruled": 4
       },
       "one_reader_only": false,
       "testability": 80.0,
@@ -186,10 +169,11 @@
       "claims_lacking_for_bar": [
         "hot-c2"
       ],
-      "support": 100.0,
+      "support": 87.5,
       "support_rests_on": {
-        "counted_outcomes": 3,
+        "counted_outcomes": 4,
         "studies": [
+          "dellert-2025",
           "hobot-2023",
           "martin-2023",
           "mei-soto-2025"
@@ -197,18 +181,19 @@
         "groups": [
           "Hsu group (last and corresponding author Tzu-Yu Hsu, Taipei Medical University)",
           "Sandberg group (last author Kristian Sandberg, Aarhus University); first author at the Jagiellonian University Consciousness Lab",
-          "Soto group (last author D. Soto, by the paper's author list)"
+          "Soto group (last author D. Soto, by the paper's author list)",
+          "Straube group (last author; participants recruited at the University of Münster)"
         ],
-        "total_weight": 12,
+        "total_weight": 16,
         "weighted_sum": 12
       },
-      "left_to_test": 66.7,
+      "left_to_test": 50.0,
       "left_to_test_counts": {
         "distinguishing_core_predictions": 5,
         "placeholders_for_claims_with_none": [
           "hot-c2"
         ],
-        "untested": 4,
+        "untested": 3,
         "total": 6
       },
       "group": "ranked",
@@ -218,7 +203,8 @@
       "name": "Recurrent processing theory",
       "judgement_status": {
         "agreed": 16,
-        "disagreed": 5
+        "ruled": 4,
+        "disagreed": 1
       },
       "one_reader_only": false,
       "testability": 41.7,
@@ -266,8 +252,7 @@
       "name": "Anil Seth's living-body view",
       "judgement_status": {
         "agreed": 10,
-        "ruled": 2,
-        "disagreed": 1
+        "ruled": 3
       },
       "one_reader_only": false,
       "testability": 50.0,
@@ -357,7 +342,7 @@
       "name": "The sensorimotor theory",
       "judgement_status": {
         "agreed": 7,
-        "disagreed": 1
+        "ruled": 1
       },
       "one_reader_only": false,
       "testability": 66.7,
@@ -399,7 +384,7 @@
       "name": "Orchestrated Objective Reduction",
       "judgement_status": {
         "agreed": 9,
-        "disagreed": 3
+        "ruled": 3
       },
       "one_reader_only": false,
       "testability": 100.0,
@@ -435,7 +420,7 @@
       "name": "Damasio's feeling-based theory",
       "judgement_status": {
         "agreed": 6,
-        "disagreed": 2
+        "ruled": 2
       },
       "one_reader_only": false,
       "testability": 50.0,
@@ -503,9 +488,9 @@
     ]
   },
   "headline": {
-    "tested": 12,
+    "tested": 13,
     "distinguishing_predictions": 53,
-    "share_tested": 22.6,
+    "share_tested": 24.5,
     "note": "Tested at all (ruled by John: 'A, tested at all'): the share of distinguishing predictions tied to core claims that at least one counted study has tested. It measures how widely, not how firmly; the support scores carry the strength. It can fall when predictions are added."
   },
   "predictions": {
@@ -749,9 +734,15 @@
     },
     "hot-pfc-involved": {
       "theory": "hot",
-      "state": "untested",
-      "state_weighted_reading": "untested",
-      "counted_studies": [],
+      "state": "mixed",
+      "state_weighted_reading": "mixed",
+      "counted_studies": [
+        {
+          "study": "dellert-2025",
+          "value": 0,
+          "weight": 2
+        }
+      ],
       "questions": []
     },
     "hot-pfc-disrupt": {
@@ -1249,6 +1240,17 @@
       "weight": 2,
       "multiplier": 2,
       "status": "agreed"
+    },
+    {
+      "judgement": "out-dellert-hot-pfc-involved",
+      "theory": "hot",
+      "prediction": "hot-pfc-involved",
+      "study": "dellert-2025",
+      "group": "Straube group (last author; participants recruited at the University of Münster)",
+      "value": 0,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "ruled"
     },
     {
       "judgement": "out-martin-hot-awareness-performance",

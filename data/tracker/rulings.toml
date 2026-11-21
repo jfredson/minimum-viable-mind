@@ -540,3 +540,141 @@ settles = "commitment"
 verdict = "unclear"
 reason = "Run by Graziano's lab (a simulation). No dates for the runs and no registration (received 2021-02-05), so it is not shown that the 2015 statement preceded them."
 open_part = ""
+
+
+# ------------------------------------------- stage 3 disagreements settled by ruled rules
+# 2026-11-21, at the request of the second master session: of the 18 disagreements left after
+# the stage 3 second reading, those that a rule John has already ruled covers are settled here,
+# by that rule as written. The readings stay as they are. What no ruled rule covers is left
+# open for John (see the stage 3 report, section 000).
+
+[[ruling]]
+judgement = "out-dellert-hot-pfc-involved"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split mixed (Claude) and against (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "out-hobot-hot-pfc-disrupt"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split mixed (Claude) and against (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "out-li-orch-anaesthetic-mt"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split mixed (Claude) and for (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-dellert-rpt-no-report-sensory"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split unclear (Claude) and not-before (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-filimonov2022-rpt-other-senses"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split not-before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-filimonov2024-rpt-other-senses"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split not-before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-hobot-hot-pfc-disrupt"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-martin-hot-pfc-disrupt"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-khan-orch-anaesthetic-mt"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-li-orch-anaesthetic-mt"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "tst-rpt-attention-independent"
+rule = "C2 as read by John (2026-11-21, 'Yes, that reading')"
+settles = "separation"
+separates = false
+separates_from = []
+reason = "Both readers say a rival's own source predicts the same (Gemini: 'a rival predicts the same: true'), and neither names a rival's source predicting something different. Gemini then counted separation from the silent rivals, the per-rival reading John declined. His confirmed reading: 'a prediction stops separating only where a rival's own opened source predicts the same and no rival's source predicts something different.' So it does not separate. Both readers agree it could fail."
+
+[[ruling]]
+judgement = "tst-seth-interoceptive-ownership"
+rule = "C2 as read by John (2026-11-21, 'Yes, that reading')"
+settles = "separation"
+separates = false
+separates_from = []
+reason = "Both readers say a rival's own source predicts the same (Gemini: 'a rival predicts the same: true'), and neither names a rival's source predicting something different. Gemini then counted separation from the silent rivals, the per-rival reading John declined. His confirmed reading: 'a prediction stops separating only where a rival's own opened source predicts the same and no rival's source predicts something different.' So it does not separate. Both readers agree it could fail."
+
+[[ruling]]
+judgement = "tst-sm-inattentional"
+rule = "C2 as read by John (2026-11-21, 'Yes, that reading')"
+settles = "separation"
+separates = false
+separates_from = []
+reason = "Both readers say a rival's own source predicts the same (Gemini: 'a rival predicts the same: true'), and neither names a rival's source predicting something different. Gemini then counted separation from the silent rivals, the per-rival reading John declined. His confirmed reading: 'a prediction stops separating only where a rival's own opened source predicts the same and no rival's source predicts something different.' So it does not separate. Both readers agree it could fail."
+
+[[ruling]]
+judgement = "tst-dam-ai"
+rule = "ranking rule 2 and the testability score (John, 2026-11-20, 'Yes, must separate')"
+settles = "could_fail"
+could_fail = false
+separates = false
+separates_from = []
+reason = "Both readers agree the prediction cannot fail. The ruled test counts a prediction only if it could fail and separates, so it scores nothing whichever way separation goes; the split on separation between Gemini (separates) and Claude (does not) changes no number and is not decided here. Recorded as separates = false only so the row reads as settled."
+
+[[ruling]]
+judgement = "tst-dam-no-nervous-system"
+rule = "ranking rule 2 and the testability score (John, 2026-11-20, 'Yes, must separate')"
+settles = "could_fail"
+could_fail = false
+separates = false
+separates_from = []
+reason = "Both readers agree the prediction cannot fail. The ruled test counts a prediction only if it could fail and separates, so it scores nothing whichever way separation goes; the split on separation between Gemini (separates) and Claude (does not) changes no number and is not decided here. Recorded as separates = false only so the row reads as settled."
+
+[[ruling]]
+judgement = "tst-sh-central"
+rule = "ranking rule 2 and the testability score (John, 2026-11-20, 'Yes, must separate')"
+settles = "could_fail"
+could_fail = false
+separates = false
+separates_from = []
+reason = "Both readers agree the prediction cannot fail. The ruled test counts a prediction only if it could fail and separates, so it scores nothing whichever way separation goes; the split on separation between Gemini, the first reading of record on this Sentient Horizons row (separates), and Claude (does not) changes no number and is not decided here. Recorded as separates = false only so the row reads as settled."
