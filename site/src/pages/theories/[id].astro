@@ -11,7 +11,7 @@ import R from '../../components/R.astro';
 import StateBadge from '../../components/StateBadge.astro';
 import VerifyNote from '../../components/VerifyNote.astro';
 import WaitingLine from '../../components/WaitingLine.astro';
-import { tk, pred, dotClass, word, groupTitle, type Theory } from '../../lib/tracker';
+import { tk, pred, dotClass, word, groupTitle, HALF_REASON, type Theory } from '../../lib/tracker';
 
 export function getStaticPaths() {
   return Object.values(tk.theories).map((t) => ({ params: { id: t.id } }));
@@ -35,6 +35,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
       <p class="eyebrow">A theory of consciousness{t.own && <> · this site's own</>} · {groupLine}{t.tied.length > 0 && <> · too close to separate from {t.tied.map((x, i) => <>{i > 0 && ' and '}{x.with_name.charAt(0).toLowerCase() + x.with_name.slice(1)}</>)}</>}</p>
       <h1>{t.name}</h1>
       <R as="p" class="tplain" t={t.plain} />
+      {tk.links.theories[t.id] && <p class="meta">More about it: <a href={tk.links.theories[t.id]}>{tk.links.person_pages.includes(t.id) ? 'its proponent\'s encyclopaedia article' : 'its encyclopaedia article'}</a>.</p>}
       {t.proponents.length > 0 && <p class="meta">{t.own ? 'Its author:' : 'Among its proponents:'} {t.proponents.map((n, i) => <>{i > 0 && ', '}{tk.links.people[n] ? <a href={tk.links.people[n]}>{n}</a> : n}</>)}.</p>}
       <VerifyNote ids={t.verify_open} />
 
@@ -52,7 +53,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
         <div class="score">
           <div class="lab">How clearly it can be tested</div>
           <div class="num"><N v={t.testability} /> <small>/ <N v={tk.rules.scale_top} /></small></div>
-          <p><N v={t.claims_sharp} /> of <N v={t.claims_count} /> main claims {t.claims_sharp === 1 ? 'comes' : 'come'} with a prediction that could fail and that a rival theory's own published work predicts differently. {t.past_bar ? (t.group === 'ranked'
+          <p><N v={t.claims_sharp} /> of <N v={t.claims_count} /> main claims {t.claims_sharp === 1 ? 'comes' : 'come'} with a prediction that could fail and that no rival theory's own published work predicts too. {t.past_bar ? (t.group === 'ranked'
               ? <>That is more than half; with counted studies from <N v={tk.rules.groups_needed} t={word(tk.rules.groups_needed)} /> or more separate research groups, it is ranked.</>
               : <>That is more than half, but it does not yet have counted studies from <N v={tk.rules.groups_needed} t={word(tk.rules.groups_needed)} /> separate research groups, so it is {groupTitle(t.group).toLowerCase()}.</>) : <>That is half or fewer, so it is {groupTitle(t.group).toLowerCase()}: <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more need such a prediction.</>}</p>
           <Bar kind="test" v={t.testability} label="clear" num={false} />
@@ -73,17 +74,17 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
       <ul class="claims">
         {t.claims.map((c, i) => (
           <li data-record={c.id} id={`claim-${c.id}`}>
-            <span class={`dot ${dotClass(c.level)}`} aria-label={c.level >= 1 ? 'stated by its proponents' : c.level > 0 ? 'inferred here, not stated by its proponents' : 'none yet'}></span>
+            <span class={`dot ${dotClass(c.level)}`} aria-label={c.level >= 1 ? 'a full point' : c.level > 0 ? 'half a point' : 'none yet'}></span>
             <span>
               <span class="m">Main claim <N v={i + 1} /></span>
               <R t={c.quote} q class="q" />
-              <span class="m">{c.level >= 1 ? 'a prediction stated by its proponents could fail, and a rival theory\'s own published work predicts differently' : c.level > 0 ? 'a prediction that could fail and that a rival theory\'s own published work predicts differently is inferred here, not stated by its proponents; counted at half' : 'no prediction yet that could fail and that a rival theory\'s own published work predicts differently'}</span>
+              <span class="m">{c.level >= 1 ? 'a prediction stated by its proponents could fail, and no rival theory\'s own published work predicts it too' : c.level > 0 ? `half a point: its best prediction could fail and no rival theory's own published work predicts it too, but ${c.half_reasons.map((h) => HALF_REASON[h]).join('; and ')}` : 'no prediction yet that could fail and that no rival theory\'s own published work predicts too'}</span>
             </span>
             <span>{c.predictions.length ? <a href={`#c-${c.id}`}><N v={c.predictions.length} /> {c.predictions.length === 1 ? 'prediction' : 'predictions'}</a> : 'none'}</span>
           </li>
         ))}
       </ul>
-      <p class="key"><span><span class="dot full"></span> stated by its proponents</span><span><span class="dot half"></span> inferred here, not stated by its proponents</span><span><span class="dot"></span> none yet</span></p>
+      <p class="key"><span><span class="dot full"></span> a full point</span><span><span class="dot half"></span> half a point, for the reason given</span><span><span class="dot"></span> none yet</span></p>
 
       <div class="shead"><h2>Its predictions</h2><span>the ones that set it apart from a rival; those that do not are listed after them and score nothing</span></div>
       <table class="preds">
@@ -110,9 +111,11 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
         <ul>
           {t.move.map((m) => (
             m.kind === 'claim' ? (
-              <li>A prediction from its proponents that could fail, and that a rival theory's own published work predicts differently, for <a href={`#claim-${m.claim}`}>main claim <N v={t.claims.findIndex((c) => c.id === m.claim) + 1} /></a> in the list: how clearly it can be tested, <b><N v={m.from} /> → <N v={m.to} /></b>.</li>
+              <li>A prediction from its proponents that could fail, and that no rival theory's own published work predicts too, for <a href={`#claim-${m.claim}`}>main claim <N v={t.claims.findIndex((c) => c.id === m.claim) + 1} /></a> in the list: how clearly it can be tested, <b><N v={m.from} /> → <N v={m.to} /></b>.</li>
             ) : m.kind === 'probe' ? (
-              <li>A study registered in advance and run by an outside group (weight <N v={m.weight} />), on <a href={`/predictions/${m.prediction}/`}><R t={m.statement} /></a> support <b><N v={m.from} /> → <N v={m.for} /></b> if it came out for, <b><N v={m.from} /> → <N v={m.against} /></b> against.</li>
+              <li>A study registered in advance and run by an outside group (weight <N v={m.weight} />), on <a href={`/predictions/${m.prediction}/`}><R t={m.statement} /></a>{m.from === null || m.from === undefined
+                ? <> would give it a support score for the first time: <b><N v={m.for} /></b> if it came out for, <b><N v={m.against} /></b> against.</>
+                : <> support <b><N v={m.from} /> → <N v={m.for} /></b> if it came out for, <b><N v={m.from} /> → <N v={m.against} /></b> against.</>}</li>
             ) : (
               <li>Counted studies from <N v={m.groups_needed} t={word(m.groups_needed ?? 0)} /> separate research groups, on the prediction <a href={`/predictions/${m.prediction}/`}><R t={m.statement} q /></a> or on its other predictions, would give it a support score for the first time; it has studies from {m.groups === 0 ? 'none' : <N v={m.groups} t={word(m.groups ?? 0)} />} so far.</li>
             )
@@ -122,7 +125,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
       </div>
       <div class="box">
         <h3>How well studies back it, run by run</h3>
-        <p>First scored on <N v={tk.last_judgement} t={tk.last_judgement_long} />. Every later change will be drawn here, run by run, with a dated entry in the story so far.</p>
+        <p>First scored on <N v={t.first_scored} t={t.first_scored_long ?? ""} />. Every later change will be drawn here, run by run, with a dated entry in the story so far.</p>
       </div>
       <div class="box">
         <h3>Last readings</h3>

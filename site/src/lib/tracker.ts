@@ -22,14 +22,14 @@ export interface StudyRow {
   judgement: string;
 }
 export interface Prediction {
-  id: string; theory: string; theory_name: string; core_claim: string; statement: string; stated_by: 'proponent' | 'site';
+  id: string; theory: string; theory_name: string; core_claim: string; statement: string; stated_by: 'proponent' | 'site'; half_reason: string | null; null_excused_by: Source | null;
   first_stated: { source: Source | null; date: string | null; date_long: string | null; passage: string | null; location: string | null };
   test_for: string; test_against: string;
   separates_from: { theory: string; name: string; how: string; source: Source | null }[];
   could_fail: boolean; separates: boolean; testability_settled: string;
   state: State; studies: StudyRow[]; counted_count: number; verify_open: string[];
 }
-export interface Claim { id: string; plain: string; quote: string; location: string; level: number; predictions: string[]; sharp: number }
+export interface Claim { id: string; plain: string; quote: string; location: string; level: number; half_reasons: string[]; predictions: string[]; sharp: number }
 export interface Move {
   kind: 'claim' | 'probe' | 'probe-short'; claim?: string; claim_plain?: string; prediction?: string; statement?: string;
   from?: number | null; to?: number; for?: number; against?: number; weight?: number; passes_bar?: boolean;
@@ -37,7 +37,7 @@ export interface Move {
 }
 export interface Theory {
   id: string; name: string; plain: string; proponents: string[]; own: boolean;
-  claims_from: Source | null; fixed_on: string; fixed_on_long: string;
+  claims_from: Source | null; fixed_on: string; fixed_on_long: string; first_scored: string | null; first_scored_long: string | null;
   testability: number; support: number | null; left_to_test: number | null;
   past_bar: boolean; group: string; leans_against: boolean;
   claims_count: number; claims_sharp: number; claims_lacking: string[]; claims_needed_more: number;
@@ -68,7 +68,8 @@ export interface Tracker {
   last_judgement: string; last_judgement_long: string;
   open_questions: OpenQuestion[];
   waiting: { waiting_studies: number; by_theory: Record<string, number>; last_reading: string | null; last_reading_long: string | null } | null;
-  links: { people: Record<string, string>; theories: Record<string, string>; groups: Record<string, string> };
+  refs: Record<string, { label: string; url: string | null }>;
+  links: { people: Record<string, string>; theories: Record<string, string>; groups: Record<string, string>; person_pages: string[] };
   support_example: { theory: string; name: string; weighted_sum: number; total_weight: number; ratio: number; half_ratio: number; half_ratio_abs: number; support_exact: number; support: number } | null;
 }
 
@@ -95,7 +96,7 @@ export const OUTCOME_LABEL: Record<string, string> = { 'for': 'for', 'against': 
 // fail and that a rival's own published work predicts differently; and studies from two separate
 // groups), because a title alone would promise less than the rule asks. "{groups}" is replaced
 // by the ruled count of groups, from the records.
-export const BAR_TEST = "main claims come with a prediction that could fail and that a rival theory's own published work predicts differently";
+export const BAR_TEST = "main claims come with a prediction that could fail and that no rival theory's own published work predicts too";
 export const GROUPS = [
   { key: 'ranked', title: 'Ranked by the evidence', note: `more than half its ${BAR_TEST}, and it has counted studies from at least {groups} separate research groups; listed from the most support to the least` },
   { key: 'testable', title: 'Waiting for more studies', note: `more than half its ${BAR_TEST}, but it does not yet have counted studies from {groups} separate research groups` },
@@ -105,6 +106,14 @@ export const GROUPS = [
 // The export's group names, shown by their ruled titles wherever a page names a theory's group.
 export const groupTitle = (g: string) =>
   g === 'ranked' ? GROUPS[0].title : g.startsWith('testable') ? GROUPS[1].title : GROUPS[2].title;
+
+// Why a prediction scores half a point on how clearly its theory can be tested (John, 2026-11-21,
+// "Add the half-score line"), in the words About uses for the rule.
+export const HALF_REASON: Record<string, string> = {
+  inferred: 'it is inferred here, not stated by the theory\'s proponents',
+  null_excused: 'its supporters wrote in advance that a result showing nothing should not count against it',
+  partly: 'it could fail only in part',
+};
 
 // Where a claim's dot sits: filled when a proponent states a prediction that could fail and
 // separates the theory from a rival, half when only the site has inferred one, empty otherwise.

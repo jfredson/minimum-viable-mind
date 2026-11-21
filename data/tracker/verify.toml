@@ -123,7 +123,7 @@ to_clear = "Open the journal version and check the quoted results, especially th
 id = "v-hot-dellert-journal"
 status = "open"
 records = ["out-dellert-hot-pfc-involved", "com-dellert-hot-pfc-involved"]
-statement = "The Dellert et al. result as stated in the bioRxiv preprint, read again in this task; ConTraSt lists the Current Biology version (10.1016/j.cub.2025.10.026)."
+statement = "The Dellert et al. result as stated in the bioRxiv preprint; ConTraSt lists the Current Biology version (10.1016/j.cub.2025.10.026)."
 rests_on = "The preprint (2025-05-21). The journal version (2025-11-06) is on cell.com, not tried after cell.com answered other requests with a robot check. Same gap as the pilot's open entry v-dellert-journal."
 to_clear = "Close together with v-dellert-journal: open the journal version and check the quoted passages."
 

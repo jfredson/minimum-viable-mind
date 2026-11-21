@@ -33,7 +33,9 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import math
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -85,7 +87,9 @@ def long_date(iso: str | None) -> str | None:
 
 
 def r0(x):
-    return None if x is None else int(round(x))
+    """Round to a whole number, halves up (62.5 shows as 63), the same way as the bars'
+    screen-reader labels (Math.round). Python's round() would take halves to the even number."""
+    return None if x is None else int(math.floor(x + 0.5))
 
 
 def support_of(wsum: float, total: float) -> float:
@@ -100,10 +104,38 @@ def waiting():
     try:
         import tracker_weekly as tw
     except ImportError:
-        return None
+        # Refuse rather than let every page say that no reading has run.
+        raise SystemExit("export_tracker: scripts/tracker_weekly.py is missing, so the waiting count cannot be shown")
     w = tw.waiting_counts(ts.DATA)
     return {"waiting_studies": w["waiting_studies"], "by_theory": w["by_theory"],
             "last_reading": w["last_reading"], "last_reading_long": long_date(w["last_reading"])}
+
+
+def short_refs(sources, studies):
+    """A short readable name for every source and study id ("Lamme 2018", "Mashour and
+    colleagues 2020"), so record text that names one by its id reads as a citation, not a code.
+    Built from the citation's first author and the publication year; linked where there is an
+    address."""
+    out = {}
+    for sid, s in sources.items():
+        cit = s.get("citation", "")
+        head = cit.split(".")[0]
+        authors = [a.strip() for a in re.split(r",| and ", head) if a.strip()]
+        first = authors[0].split()[0] if authors else sid
+        year = (str(s.get("published") or "")[:4]) if re.match(r"\d{4}", str(s.get("published") or "")) else (re.findall(r"\b(19|20)\d\d\b", cit) and re.search(r"\b(?:19|20)\d\d\b", cit).group(0)) or ""
+        many = len(authors) > 2 or "et al" in head
+        two = len(authors) == 2
+        consortium = re.match(r"^([A-Z][\w-]* Consortium)", head)
+        name = f"the {consortium.group(1)}" if consortium else f"{first} and colleagues" if many else (f"{first} and {authors[1].split()[0]}" if two else first)
+        url = s.get("url", "")
+        m = re.search(r"ebi\.ac\.uk/europepmc/webservices/rest/(PMC\d+)/fullTextXML", url)
+        if m:
+            url = f"https://pmc.ncbi.nlm.nih.gov/articles/{m.group(1)}/"
+        out[sid] = {"label": f"{name} {year}".strip(), "url": url if url.startswith("http") else None}
+    for stid, st in studies.items():
+        if stid not in out and st.get("source") in out:
+            out[stid] = out[st["source"]]
+    return out
 
 
 def links():
@@ -111,7 +143,9 @@ def links():
     import tomllib
     f = ROOT / "data" / "links.toml"
     d = tomllib.loads(f.read_text()) if f.exists() else {}
-    return {k: d.get(k, {}) for k in ("people", "theories", "groups")}
+    out = {k: d.get(k, {}) for k in ("people", "theories", "groups")}
+    out["person_pages"] = d.get("person_pages", [])
+    return out
 
 
 def support_example(base, ranking):
@@ -188,6 +222,10 @@ def main(argv=None) -> int:
         if not s:
             return None
         url = s.get("url", "")
+        # A Europe PMC web-service address opens raw XML; a reader gets the article page instead.
+        m = re.search(r"ebi\.ac\.uk/europepmc/webservices/rest/(PMC\d+)/fullTextXML", url)
+        if m:
+            url = f"https://pmc.ncbi.nlm.nih.gov/articles/{m.group(1)}/"
         return {"id": sid, "citation": s["citation"], "url": url if url.startswith("http") else None,
                 "published": s.get("published"), "published_long": long_date(s.get("published"))}
 
@@ -238,6 +276,16 @@ def main(argv=None) -> int:
         r, st = tst.get(pid, (None, "unread"))
         could_fail = bool(r and r["could_fail"])
         separates = bool(r and r["could_fail"] and r["separates"])
+        # Why a separating prediction scores half on testability, by the scoring script's rule
+        # (John, 2026-11-21, "Add the half-score line"); None when it scores a full point.
+        half_reason = None
+        if separates:
+            if p["stated_by"] != "proponent":
+                half_reason = "inferred"
+            elif "null_excused" in p:
+                half_reason = "null_excused"
+            elif r.get("could_fail_partly"):
+                half_reason = "partly"
         rows = []
         for j in d["judgements"]:
             if j["kind"] != "outcome" or j["prediction"] != pid:
@@ -290,12 +338,14 @@ def main(argv=None) -> int:
         else:
             state = "mixed"
         fs = p["first_stated"]
-        record_ids = [pid] + [row["study"] for row in rows] + [row["judgement"] for row in rows] + \
+        record_ids = [pid, p["core_claim"]] + [row["study"] for row in rows] + [row["judgement"] for row in rows] + \
             [j["id"] for j in d["judgements"] if j.get("prediction") == pid]
         pred_out[pid] = {
             "id": pid, "theory": p["theory"], "theory_name": base[p["theory"]]["name"],
             "core_claim": p["core_claim"], "statement": p["statement"],
             "stated_by": p["stated_by"],
+            "half_reason": half_reason,
+            "null_excused_by": src(p["null_excused"]["by"]) if "null_excused" in p else None,
             "first_stated": {"source": src(fs["source"]), "date": fs.get("date"), "date_long": long_date(fs.get("date")),
                              "passage": fs.get("passage"), "location": fs.get("location")},
             "test_for": p["test_for"], "test_against": p["test_against"],
@@ -325,8 +375,12 @@ def main(argv=None) -> int:
             level = v["testability_by_claim"][c["id"]]
             mine = [p for p in tpreds if p["core_claim"] == c["id"]]
             sharp = [p for p in mine if p["separates"]]
+            mine_level = max([0.5 if q["half_reason"] else 1.0 for q in sharp], default=0.0)
+            if mine_level != level:
+                raise SystemExit(f"export_tracker: main claim {c['id']}'s level {level} in the scores is not what its predictions give ({mine_level})")
+            reasons = sorted({q["half_reason"] for q in sharp if q["half_reason"]}) if level == 0.5 else []
             cl.append({"id": c["id"], "plain": c["plain"], "quote": c["quote"], "location": c["location"],
-                       "level": level, "predictions": [p["id"] for p in mine], "sharp": len(sharp)})
+                       "level": level, "half_reasons": reasons, "predictions": [p["id"] for p in mine], "sharp": len(sharp)})
         sr = v["support_rests_on"]
         lc = v["left_to_test_counts"]
 
@@ -358,11 +412,15 @@ def main(argv=None) -> int:
                          "from": r0(v["support"]), "for": r0(up), "against": r0(down),
                          "weight": PROBE_WEIGHT, "starts_score": v["support"] is None})
 
+        first = [r_.get("date") for j in d["judgements"] if preds.get(j.get("prediction"), {}).get("theory") == tid
+                 for r_ in j.get("reading", []) if r_.get("date")]
+        first_scored = min(first) if first else None
         explained = [{"prediction": p["id"], "study": row["study"], "name": row["name"]}
                      for p in tpreds for row in p["studies"] if row["why"] == "explained afterwards, not counted"]
         th_out[tid] = {
             "id": tid, "name": v["name"], "plain": rec["plain"], "proponents": rec.get("proponents", []),
             "own": "by_exception" in rec,
+            "first_scored": first_scored, "first_scored_long": long_date(first_scored),
             "claims_from": src(rec["core_claims_from"]), "fixed_on": rec["fixed_on"], "fixed_on_long": long_date(rec["fixed_on"]),
             "testability": r0(v["testability"]), "support": r0(v["support"]), "left_to_test": r0(v["left_to_test"]),
             "exact": {"testability": v["testability"], "support": v["support"], "left_to_test": v["left_to_test"]},
@@ -443,6 +501,7 @@ def main(argv=None) -> int:
         "open_questions": open_questions(pred_out),
         "support_example": support_example(base, ranking),
         "links": links(),
+        "refs": short_refs(sources, studies),
         "waiting": waiting(),
     }
 

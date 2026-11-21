@@ -6,7 +6,11 @@
 import R from './R.astro';
 import { tk } from '../lib/tracker';
 interface Props { t: string }
-const ids = Object.keys(tk.predictions).sort((a, b) => b.length - a.length);
+// Prediction ids become a link to the prediction; source and study ids ("lamme-2018") become a
+// short citation ("Lamme 2018"), linked where the record has an address (reader check,
+// 2026-11-21). Only ids carrying a year are matched, so ordinary hyphenated words are left alone.
+const refIds = Object.keys(tk.refs).filter((r) => /\d{4}/.test(r));
+const ids = [...Object.keys(tk.predictions), ...refIds].sort((a, b) => b.length - a.length);
 const re = new RegExp(`\\(?\\b(${ids.map((i) => i.replace(/[-]/g, '\\-')).join('|')})\\b\\)?`, 'g');
 const parts: { text?: string; id?: string; paren?: boolean }[] = [];
 let last = 0;
@@ -17,6 +21,8 @@ for (const m of Astro.props.t.matchAll(re)) {
 }
 if (last < Astro.props.t.length) parts.push({ text: Astro.props.t.slice(last) });
 ---
-{parts.map((p) => p.id
+{parts.map((p) => p.id && tk.predictions[p.id]
   ? <>{p.paren && '('}the prediction <a href={`/predictions/${p.id}/`}><R t={tk.predictions[p.id].statement} q /></a>{p.paren && ')'}</>
+  : p.id
+  ? <>{p.paren && '('}{tk.refs[p.id].url ? <a href={tk.refs[p.id].url}><R t={tk.refs[p.id].label} /></a> : <R t={tk.refs[p.id].label} />}{p.paren && ')'}</>
   : <R t={p.text} />)}

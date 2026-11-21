@@ -16,6 +16,29 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-11-21 — all ten entries on the theories tracker are scored, with the weekly reading's waiting count; the site is built on its own branch and waits on an independent check
+
+*Written 2026-11-21 by the site's working session, at the master session's request, on branch
+`claude/full-scoring-2026-11-21` (not merged, not deployed). The site's report is in the side-session
+notes, `2026-11-21-stage3-site.md`.*
+
+- **Scored.** The stage 3 scoring (`claude/stage3-scoring-eadbbf` at `e769eab`) and the weekly reading
+  (`claude/weekly-reading-stage4` at `156f75b`) are merged into the site branch. On the settled
+  records: higher-order theories lead on support (87.5, shown as 88); integrated information theory
+  (56) and global workspace theory (36) are too close to separate (the Dellert study); Orchestrated
+  Objective Reduction, attention schema theory and the sensorimotor theory are waiting for counted
+  studies from a second group; Seth's view, the Sentient Horizons account, Damasio's theory and
+  recurrent processing theory are not yet clear enough to test. Headline 16 of 53 (30%), down from 8
+  of 12 because there are more predictions, not fewer tests. 51 verify entries are open.
+- **The rules as the pages now state them.** Separation as amended by John on 2026-11-21 ("Yes, flip
+  it"; "Yes, that reading"): a prediction sets a theory apart unless a rival's own published work
+  predicts the same thing. The half-score line as ruled ("Add the half-score line"): inferred here,
+  null result excused in advance, or able to fail only in part.
+- **Not yet done.** The hand check of the agreements covers only the first three theories; About now
+  says so. No weekly reading has run. `data/project.toml` gained a timeline row and current "where"
+  paragraphs, and `[spend]` now counts the stage 3 second readings (about $4.46 on Google since
+  2026-10-25).
+
 ## WHERE THINGS STAND 2026-11-20 (night) — stage 2 of the theories tracker is complete: three theories scored end to end, read by two readers, every disagreement settled by John
 
 *Written 2026-11-20 by the stage 2 working session, at the master session's request. On branch

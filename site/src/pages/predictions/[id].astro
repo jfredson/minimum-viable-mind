@@ -9,7 +9,8 @@ import R from '../../components/R.astro';
 import RecText from '../../components/RecText.astro';
 import StateBadge from '../../components/StateBadge.astro';
 import VerifyNote from '../../components/VerifyNote.astro';
-import { tk, theory, OUTCOME_LABEL, type Prediction } from '../../lib/tracker';
+import WaitingLine from '../../components/WaitingLine.astro';
+import { tk, theory, OUTCOME_LABEL, HALF_REASON, type Prediction } from '../../lib/tracker';
 
 export function getStaticPaths() {
   return Object.values(tk.predictions).map((p) => ({ params: { id: p.id } }));
@@ -48,7 +49,7 @@ const abbrs = ABBR.filter(([a]) => new RegExp(`\\b${a}\\b`).test(pageText)).map(
       <p class="eyebrow">A prediction of {t.name.charAt(0).toLowerCase() + t.name.slice(1)} · main claim <N v={claimNo} /></p>
       <R as="h1" class="pred-title" t={p.statement} />
       <VerifyNote ids={p.verify_open} />
-      {claim && <p class="tplain">It belongs to the main claim <R t={claim.quote} q />.</p>}
+      {claim && <p class="tplain" data-record={claim.id}>It belongs to the main claim <R t={claim.quote} q />.</p>}
 
       <div class="testbox">
         <div><h4>Counts for it</h4><R as="p" t={p.test_for} /></div>
@@ -59,15 +60,15 @@ const abbrs = ABBR.filter(([a]) => new RegExp(`\\b${a}\\b`).test(pageText)).map(
       <dl class="facts">
         <dt>Whose it is</dt>
         <dd>
-          {p.stated_by === 'proponent' ? 'Stated by the theory\'s own proponents, at full weight' : 'Inferred here, not stated by the theory\'s proponents, so at half weight until a proponent states it'}{p.first_stated.date && <>; first on record <N v={p.first_stated.date} t={p.first_stated.date_long ?? ''} /></>}, in {p.first_stated.source?.url ? <a href={p.first_stated.source.url}><R t={p.first_stated.source.citation} /></a> : <R t={p.first_stated.source?.citation} />}{p.first_stated.passage && <>: <R t={p.first_stated.passage} q /></>}
+          {p.stated_by === 'proponent' ? 'Stated by the theory\'s own proponents' : 'Inferred here, not stated by the theory\'s proponents'}{p.separates ? (p.half_reason ? `, so it scores half a point, because ${HALF_REASON[p.half_reason]}` : ', so it scores a full point') : ''}{p.first_stated.date && <>; first on record <N v={p.first_stated.date} t={p.first_stated.date_long ?? ''} /></>}, in {p.first_stated.source?.url ? <a href={p.first_stated.source.url}><R t={p.first_stated.source.citation} /></a> : <R t={p.first_stated.source?.citation} />}{p.first_stated.passage && <>: <R t={p.first_stated.passage} q /></>}
         </dd>
         <dt>Does it set the theory apart?</dt>
         <dd>
           {p.separates
-            ? <>Yes. {p.separates_from.map((s, i) => <>{i > 0 && ' '}<a href={s.theory in tk.theories ? `/theories/${s.theory}/` : '/theories/'}>{s.name}</a> predicts otherwise: <R t={s.how} />{s.source?.url && <> (<a href={s.source.url}>source</a>)</>}</>)}</>
+            ? <>Yes. {p.separates_from.length === 0 && 'No rival theory\'s own published work on the record predicts the same thing, and a rival that says nothing on the point does not count as predicting it.'}{p.separates_from.map((s, i) => <>{i > 0 && ' '}<a href={s.theory in tk.theories ? `/theories/${s.theory}/` : '/theories/'}>{s.name}</a> predicts otherwise: <RecText t={s.how} />{s.source?.url && <> (<a href={s.source.url}>source</a>)</>}</>)}</>
             : !p.could_fail
               ? 'No. The two readers found that no result named here could prove it wrong, so it scores nothing.'
-              : 'No. No rival\'s own publication on the record predicts something different, so it is recorded and scores nothing.'}
+              : 'No. A rival theory\'s own published work predicts the same thing, so it is recorded and scores nothing.'}
         </dd>
         <dt>Who settles it</dt>
         <dd>A published study with a measured result, never a press release or a talk.</dd>
@@ -84,7 +85,7 @@ const abbrs = ABBR.filter(([a]) => new RegExp(`\\b${a}\\b`).test(pageText)).map(
               <tr data-record={s.study}>
                 <td>
                   {s.url ? <a href={s.url}><R t={s.name} /></a> : <R t={s.name} />}
-                  <span class="m">{tk.links.groups[s.group] ? <a href={tk.links.groups[s.group]}><R t={s.group} /></a> : <R t={s.group} />} · first on record <N v={s.first_appeared} t={s.first_appeared_long} /></span>
+                  <span class="m">{tk.links.groups[s.group] ? <a href={tk.links.groups[s.group]}><R t={s.group} /></a> : <RecText t={s.group} />} · first on record <N v={s.first_appeared} t={s.first_appeared_long} /></span>
                   <span class="m">{s.why}{s.settled_by === 'ruled' && ' · the readers differed, and one of the written rules in the box beside settled it'}</span>
                   {s.readings.length > 0 && (
                     <details class="readings">
@@ -117,7 +118,7 @@ const abbrs = ABBR.filter(([a]) => new RegExp(`\\b${a}\\b`).test(pageText)).map(
       )}
       <div class="box">
         <h3>Last readings</h3>
-        <p>No weekly reading has run yet.</p>
+        <p><WaitingLine theory={p.theory} /></p>
       </div>
       <p class="disagree"><a href={`https://github.com/jfredson/minimum-viable-mind/issues/new?title=${encodeURIComponent(`Disagree: prediction ${p.id}`)}`} rel="noopener">Disagree with this prediction</a></p>
     </aside>
