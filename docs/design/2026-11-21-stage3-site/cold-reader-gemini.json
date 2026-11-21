@@ -1,0 +1,13 @@
+{
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "prompt": "You are a reader who has never seen this website and knows nothing about the people or project behind it. These two screenshots show the first screen of a website, the same page on a desktop computer and on a phone.\n\nLook only at the two images. Then answer, in plain words, as a first-time visitor would:\n1. What is this site about? Say it in two or three sentences.\n2. Do you read it as being about the theories of consciousness, or as an AI product, or as a build log (a record of someone building something)? Pick the closest, and say why, pointing at what on the screen made you think so.\n3. What, if anything, confused you or would make you leave?\n\nKeep your answer under 250 words. Reply with the answer only.",
+  "images": [
+    "01-home-light-desktop.png",
+    "03-home-light-phone.png"
+  ],
+  "answer": "1. This website tracks and scores ten scientific theories of consciousness to see how well they hold up to testing. It grades each theory on whether published studies back it, how clearly testable it is, and how much of it remains untested. The creators also include and score their own theory alongside established ones.\n\n2. It reads as being about the theories of consciousness. The main headline directly asks about \"the science of consciousness,\" the \"Theories\" tab is highlighted in the top menu, and the centerpiece of the page is a table scoring academic ideas like \"Integrated information theory\" and \"Global workspace theory\" based on published studies. Nothing on the screen suggests an AI product for sale or a log of someone building software.\n\n3. A few things confused me. First, the top two theories are both ranked \"=1\" despite having very different evidence scores (56 versus 36), which looks like a mistake until you read the fine print. Worse, a note says the scores were last worked out on \"20 November 2026\"—a date in the future, which makes me distrust the data. Finally, the site feels both unfinished and overly complicated: seven of the ten promised theories aren't even scored yet, and having to read instructions just to understand the three progress bars would make me leave.",
+  "input_tokens": 2362,
+  "output_tokens": 1865,
+  "cost_usd": 0.023374
+}
