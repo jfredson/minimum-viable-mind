@@ -284,3 +284,41 @@ RT-345, the finding that the swap's dose differs between the cells, which only s
   The other is, at the smaller sizes, the sentence about the small leak of RT-371 (design, section 6). This
   is to be written into the design's section 7 at its next version.
 - **RT-396, the region map:** section 3, `regions.json`.
+
+## 14. Amendments after the independent check (2026-11-21)
+
+*Added 2026-11-21, before the generator was changed. The independent check
+(`independent-check-2026-11-21.md`) reproduced the pilot exactly. It found four faults that must be fixed
+before step 4b, and they are fixed here first and then in the code. Where this section and an earlier one
+differ, this section governs. The pilot generated from commit c02b763 is replaced by one generated from
+the amended code.*
+
+1. **The chained lookups** (RT-415, RT-426). Section 10's chained items are rebuilt.
+   - **Each item has five chains.** The target chain runs from a start name, through "X points to Y"
+     rows, to a colour row, "Z is colour". The other four chains are built the same way, each ending in
+     one of the other four candidate colours.
+   - **Chain lengths.** The target chain has two to six steps, as before. Each distractor chain's length
+     is drawn independently from two to six.
+   - **No name is shared** between chains in an item, and all rows are shuffled.
+   - **What this fixes.** Every candidate colour then appears in the text, and every colour is reached by
+     some chain. So the answer cannot be found without following the chain from the start name.
+   - **Donors** (new; the specification was silent). A chained item's donor is another chained item of the
+     same number of steps. It must be at least one token longer than the recipient's prompt, and its right
+     answer must not be among the recipient's candidates. Donor-only chained items are added on the rules
+     of section 8: aimed, with a budget of 200 draws per scored chained item, up to three times the scored
+     count. They are reported the same way.
+2. **Where the right number sits** (RT-416). For every numeric kind (operator, unit, sums, products), the
+   right answer's place among the five candidates, in numeric order, is drawn uniformly from the five places
+   first. The four wrong numbers are then drawn below and above it to fit, within the kind's spread and with
+   the same number of digits. An item whose drawn place cannot be filled is redrawn. Step 3 reports the
+   count of right answers at each place, by kind.
+3. **The copying rule ignores only function words** (RT-418). Section 7's rule works on the content words
+   of the routine fact and the final question. The words it ignores are only these: a, an, the, is, of, and,
+   to, do, does, that, what, how, many, for, them, it, in, this, each, be. Every other word of three or more
+   letters is a content word, including "capital", "colour", "opposite", "sum", "give", "word", "country"
+   and "object".
+4. **The order of an odd group's extra pair** (RT-422). In a group with an odd number of pairs, the extra
+   pair's order is drawn from the seeded stream, not fixed. This is what section 6 already says.
+
+The other findings of the independent check concern the test set, the lists, the overlap check or the
+wording of this specification. They are carried to the roadmap, and are not settled here.
