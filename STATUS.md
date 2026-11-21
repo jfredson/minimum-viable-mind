@@ -16,6 +16,79 @@ of 2026-12-21 — while the weekend roadmap (`docs/weekend-roadmap-2026-09-24.md
 only a schedule laid over that dated line and gives way to it wherever the two
 disagree.
 
+## WHERE THINGS STAND 2026-11-20 (night) — stage 2 of the theories tracker is complete: three theories scored end to end, read by two readers, every disagreement settled by John
+
+*Written 2026-11-20 by the stage 2 working session, at the master session's request. On branch
+`claude/stage2-pilot-2026-11-20-7c94d9`, not merged. The full report is
+`docs/2026-11-20-stage2-pilot-report.md`; the records are in `data/tracker/` (layout in its README).*
+
+Minimum Viable Mind is becoming a tracker that scores the active theories of consciousness by fixed
+rules from dated, sourced records (`docs/2026-11-20-consciousness-tracker-kickoff-proposal.md`; John
+ruled "Go, in stages"). Stage 2, the pilot, is **complete by its own terms** (kickoff section 10):
+global workspace theory, integrated information theory and the Sentient Horizons account are scored
+end to end, and the two readers disagreed on 2 of 14 outcome judgements (14%), under the one-third
+line at which the stage would have stopped.
+
+**What was built.**
+- 14 core claims, each theory's quoted from one publication by its own proponents and fixed before
+  any scoring.
+- 21 predictions and 9 study records. Four studies count: the Cogitate Consortium's adversarial test,
+  and studies by Bellet and colleagues (2022), Bandara and colleagues (2025) and Dellert and colleagues
+  (2025).
+- 50 judgements, each read by a Claude model and, blind, by Google's Gemini 4 Carbon. There are three
+  kinds: did a study come out for, against or mixed; was the prediction fixed in time; and could the
+  prediction fail and separate the theory from a rival.
+- A script that computes every score from the records alone: `scripts/tracker_scores.py --mode settled`.
+
+**Final settled scores** (32 judgements agreed by both readers, 17 settled by John's rulings, 1
+replaced by a later reading):
+
+| theory | testability | support (0 to 100; 50 means even) | left to test | group |
+|---|---|---|---|---|
+| Integrated information theory | 60 | 56, from 5 outcomes in 3 studies by 3 groups | 50 | ranked, sharing first place |
+| Global workspace theory | 80 | 36, from 6 outcomes in 2 studies by 2 groups | 37.5 | ranked, sharing first place; the evidence so far leans against it |
+| The Sentient Horizons account | 25 | too little tested to score | 100 | not yet defined sharply enough to rank |
+
+The two ranked theories share first place because reversing one study (Dellert 2025) would swap
+them. The provisional headline, pending ruling 3: 8 of 12 distinguishing predictions have been
+tested. John's own account falls below the ranking bar. Only one of its four core claims (that a
+boundary, mattering, self-awareness and kept memory enrich experience without switching it on) has a
+prediction that could fail and that a rival's own published work contradicts (Damasio's).
+
+**How often the readers disagreed** (over all 50 readings): outcomes 2 of 14, the commitment
+judgements on dates 3 of 15, and testability 5 of 21. None was settled by a reader. Each was settled by a
+ruling of John's.
+
+**Rulings John made during the stage**, all on 2026-11-20, recorded in the kickoff proposal:
+- a registration's predictions count for the study that registered them ("Yes, count it");
+- a prediction counts if its proponents fixed it before they could have known the result
+  ("Yes, that test", which replaced the first wording);
+- the ranking bar needs a prediction that separates the theory from a rival ("Yes, must separate");
+- separation needs the rival's own published words ("Yes, sourced only");
+- a split between "mixed" and one side is recorded as "mixed", to be reviewed at stage 3;
+- the seven last open rows settled ("Yes, as you lean").
+
+**Spend.** About $1.05 ($1.0461) to Google for 50 Gemini calls, under John's go of up to $10. It is
+recorded in `docs/spending-record.md`; the true bill is on Google's console.
+
+**John's spot-check.** He read 20 judgements both readers had agreed on: every Sentient Horizons
+row, plus half the others, drawn at random with seed 20261120, the method committed before the draw.
+His finding: "Agree with all 20". It is recorded in `data/tracker/spot-check.toml`, and no score moved.
+
+**Five open verify entries block anything going public** (tracker pattern rule 3.3):
+1. the two 2016 papers by Tononi, Koch and colleagues in *Nature Reviews Neuroscience*, not opened;
+2. the 2022 no-report study by Hatamimajoumerd and colleagues, not opened because of a robot check;
+3. the studies the Working Positions page cites, not opened;
+4. the Cogitate paper's table of pass and fail criteria (Extended Data Table 1), an image, not read;
+5. the journal version of the Dellert study, not opened; the preprint was read.
+
+**Next.** Stage 3 (the remaining seven theories and the site, built and not announced) needs three
+things first: the headline (ruling 3), the name and address (ruling 2), and John's choice of the
+publication that supplies the core claims for attention schema theory, Seth's view and Damasio's
+theory.
+
+---
+
 ## WHERE THINGS STAND 2026-11-20 — three hypotheses added as open questions; a change of the project's focus proposed for John's ruling
 
 *Written 2026-11-20 by a working session, at John's request. Nothing was run and nothing was spent.*
