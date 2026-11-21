@@ -10,6 +10,7 @@ import N from '../../components/N.astro';
 import R from '../../components/R.astro';
 import StateBadge from '../../components/StateBadge.astro';
 import VerifyNote from '../../components/VerifyNote.astro';
+import WaitingLine from '../../components/WaitingLine.astro';
 import { tk, pred, dotClass, word, groupTitle, type Theory } from '../../lib/tracker';
 
 export function getStaticPaths() {
@@ -51,7 +52,9 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
         <div class="score">
           <div class="lab">How clearly it can be tested</div>
           <div class="num"><N v={t.testability} /> <small>/ <N v={tk.rules.scale_top} /></small></div>
-          <p><N v={t.claims_sharp} /> of <N v={t.claims_count} /> main claims {t.claims_sharp === 1 ? 'comes' : 'come'} with a prediction that could fail and that a rival theory's own published work predicts differently. {t.past_bar ? <>That is more than half, enough to be ranked once it has counted studies from <N v={tk.rules.groups_needed} t={word(tk.rules.groups_needed)} /> separate research groups.</> : <>That is half or fewer, so it is {groupTitle(t.group).toLowerCase()}: <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more need such a prediction.</>}</p>
+          <p><N v={t.claims_sharp} /> of <N v={t.claims_count} /> main claims {t.claims_sharp === 1 ? 'comes' : 'come'} with a prediction that could fail and that a rival theory's own published work predicts differently. {t.past_bar ? (t.group === 'ranked'
+              ? <>That is more than half; with counted studies from <N v={tk.rules.groups_needed} t={word(tk.rules.groups_needed)} /> or more separate research groups, it is ranked.</>
+              : <>That is more than half, but it does not yet have counted studies from <N v={tk.rules.groups_needed} t={word(tk.rules.groups_needed)} /> separate research groups, so it is {groupTitle(t.group).toLowerCase()}.</>) : <>That is half or fewer, so it is {groupTitle(t.group).toLowerCase()}: <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more need such a prediction.</>}</p>
           <Bar kind="test" v={t.testability} label="clear" num={false} />
         </div>
         <div class="score">
@@ -123,7 +126,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
       </div>
       <div class="box">
         <h3>Last readings</h3>
-        <p>No weekly reading has run yet. <a href="/about/#reading">About the weekly reading</a>.</p>
+        <p><WaitingLine theory={t.id} /> <a href="/about/#reading">About the weekly reading</a>.</p>
       </div>
       <p class="disagree"><a href={`https://github.com/jfredson/minimum-viable-mind/issues/new?title=${encodeURIComponent(`Disagree: ${t.name}`)}`} rel="noopener">Disagree with something on this page</a></p>
     </aside>

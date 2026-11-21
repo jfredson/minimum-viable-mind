@@ -93,6 +93,19 @@ def support_of(wsum: float, total: float) -> float:
     return 100 * (wsum / total + 1) / 2
 
 
+def waiting():
+    """The weekly reading's count of new studies waiting to be scored, from the weekly-reading
+    script's own `waiting_counts` (scripts/tracker_weekly.py), never worked out here. None when
+    that script is not in this checkout."""
+    try:
+        import tracker_weekly as tw
+    except ImportError:
+        return None
+    w = tw.waiting_counts(ts.DATA)
+    return {"waiting_studies": w["waiting_studies"], "by_theory": w["by_theory"],
+            "last_reading": w["last_reading"], "last_reading_long": long_date(w["last_reading"])}
+
+
 def links():
     """The opened links for named people, unscored theories and groups (data/links.toml)."""
     import tomllib
@@ -397,6 +410,11 @@ def main(argv=None) -> int:
         "worked_out_on": last_judgement, "worked_out_on_long": long_date(last_judgement),
         "last_reading": None,
     }
+    w_ = waiting()
+    if w_:
+        headline["last_reading"] = w_["last_reading"]
+        headline["last_reading_long"] = w_["last_reading_long"]
+        headline["waiting_studies"] = w_["waiting_studies"]
     assert all_dist == headline["distinguishing"]
 
     out = {
@@ -425,6 +443,7 @@ def main(argv=None) -> int:
         "open_questions": open_questions(pred_out),
         "support_example": support_example(base, ranking),
         "links": links(),
+        "waiting": waiting(),
     }
 
     if a.check:
@@ -441,7 +460,8 @@ def main(argv=None) -> int:
         "share_tested": headline["share_tested"], "share_tested_exact": headline["share_tested_exact"],
         "tested": headline["tested"], "distinguishing_predictions": headline["distinguishing"],
         "theories_scored": headline["theories_scored"], "theories_listed": headline["theories_listed"],
-        "worked_out_on": headline["worked_out_on"], "last_reading": None,
+        "worked_out_on": headline["worked_out_on"], "last_reading": headline["last_reading"],
+        "waiting_studies": headline.get("waiting_studies"),
         "version": git_commit(),
         "script": "scripts/tracker_scores.py --mode settled, through scripts/export_tracker.py",
     }

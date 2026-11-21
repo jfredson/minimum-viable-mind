@@ -63,10 +63,11 @@ export interface Tracker {
   verify_open: { id: string; statement: string; records: string[] }[]; verify_open_count: number;
   headline: {
     share_tested: number | null; tested: number; distinguishing: number; theories_scored: number; theories_listed: number;
-    worked_out_on: string; worked_out_on_long: string; last_reading: string | null;
+    worked_out_on: string; worked_out_on_long: string; last_reading: string | null; last_reading_long?: string | null; waiting_studies?: number;
   };
   last_judgement: string; last_judgement_long: string;
   open_questions: OpenQuestion[];
+  waiting: { waiting_studies: number; by_theory: Record<string, number>; last_reading: string | null; last_reading_long: string | null } | null;
   links: { people: Record<string, string>; theories: Record<string, string>; groups: Record<string, string> };
   support_example: { theory: string; name: string; weighted_sum: number; total_weight: number; ratio: number; half_ratio: number; half_ratio_abs: number; support_exact: number; support: number } | null;
 }

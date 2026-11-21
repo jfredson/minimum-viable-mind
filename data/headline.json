@@ -64,15 +64,16 @@
   },
   "tracker": {
     "what": "The share of the theories' distinguishing predictions, tied to their core claims, that at least one counted study has tested at all. It measures how widely the theories have been tested, not how firmly.",
-    "share_tested": 67,
-    "share_tested_exact": 66.7,
-    "tested": 8,
-    "distinguishing_predictions": 12,
-    "theories_scored": 3,
+    "share_tested": 30,
+    "share_tested_exact": 30.2,
+    "tested": 16,
+    "distinguishing_predictions": 53,
+    "theories_scored": 10,
     "theories_listed": 10,
-    "worked_out_on": "2026-11-20",
+    "worked_out_on": "2026-11-21",
     "last_reading": null,
-    "version": "3fa89cc",
+    "waiting_studies": null,
+    "version": "7ac7563",
     "script": "scripts/tracker_scores.py --mode settled, through scripts/export_tracker.py"
   }
 }

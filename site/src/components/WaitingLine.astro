@@ -1,0 +1,20 @@
+---
+// How many new studies the weekly reading has found waiting to be scored, from the weekly-reading
+// script's own count (scripts/tracker_weekly.py, waiting_counts, through export_tracker.py). Never
+// typed in: the count and the date go through N, which the site check traces to the data files.
+// With `theory`, the count for that theory alone.
+import N from './N.astro';
+import { tk, word } from '../lib/tracker';
+interface Props { theory?: string }
+const w = tk.waiting;
+const n = w ? (Astro.props.theory ? (w.by_theory[Astro.props.theory] ?? 0) : w.waiting_studies) : 0;
+const forWhat = Astro.props.theory ? ' for this theory' : '';
+const Cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+---
+{!w || !w.last_reading ? (
+  <span class="waiting">No weekly reading has run yet, so new studies have not yet been looked for.</span>
+) : (
+  <span class="waiting">
+    {n === 0 ? <>No new studies are waiting to be scored{forWhat}</> : <><N v={n} t={Cap(word(n))} /> new {n === 1 ? 'study is' : 'studies are'} waiting to be scored{forWhat}</>} (last weekly reading <N v={w.last_reading} t={w.last_reading_long ?? w.last_reading} />).
+  </span>
+)}

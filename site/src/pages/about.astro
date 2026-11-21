@@ -6,11 +6,13 @@
 import Base from '../layouts/Base.astro';
 import N from '../components/N.astro';
 import R from '../components/R.astro';
+import WaitingLine from '../components/WaitingLine.astro';
 import { tk, word } from '../lib/tracker';
 import { data, fmtDate } from '../lib/project';
 const r = tk.rules;
 const ex = tk.support_example;
 const tied = tk.groups.close_pairs.length > 0;
+const pairTheories = new Set(tk.groups.close_pairs.flatMap((p) => [p.a, p.b])).size;
 const story = data.timeline.filter((e) => e.date >= '2026-11-20').slice(0, 6);
 const repo = 'https://github.com/jfredson/minimum-viable-mind';
 ---
@@ -23,7 +25,7 @@ const repo = 'https://github.com/jfredson/minimum-viable-mind';
     <section id="why">
       <h2>Why this site exists</h2>
       <p class="tplain">There are many theories of what makes something conscious, and each says the evidence is on its side. The question here is a plainer one: how much of each theory has actually been tested, and how have the tests gone? The theories are ranked by the answer, and the working is shown, so that you can disagree with one judgement at a time.</p>
-      <p class="tplain">Little is settled yet, for three reasons the rules make visible. A test counts only if the theory's prediction was on record before the study's data were collected, which rules out much of the older work. A theory gets a support score only once studies from <N v={r.groups_needed} t={word(r.groups_needed)} /> separate research groups exist. And two neighbouring theories are shown as too close to separate when one study going the other way could swap them{tied ? ', which is where the ranked theories stand today' : ''}. <N v={tk.listed_count - tk.scored_count} t={word(tk.listed_count - tk.scored_count).replace(/^./, (c) => c.toUpperCase())} /> of the <N v={tk.listed_count} t={word(tk.listed_count)} /> theories on the list are still being scored.</p>
+      <p class="tplain">Little is settled yet, for three reasons the rules make visible. A test counts only if the theory's prediction was on record before the study's data were collected, which rules out much of the older work. A theory gets a support score only once studies from <N v={r.groups_needed} t={word(r.groups_needed)} /> separate research groups exist. And two neighbouring theories are shown as too close to separate when one study going the other way could swap them{tied ? <>, which is where <N v={pairTheories} t={word(pairTheories)} /> of the ranked theories stand today</> : ''}.{tk.listed_count > tk.scored_count && <> <N v={tk.listed_count - tk.scored_count} t={word(tk.listed_count - tk.scored_count).replace(/^./, (c) => c.toUpperCase())} /> of the <N v={tk.listed_count} t={word(tk.listed_count)} /> theories on the list are still being scored.</>}</p>
     </section>
 
     <section id="numbers">
@@ -69,7 +71,7 @@ const repo = 'https://github.com/jfredson/minimum-viable-mind';
 
     <section id="reading">
       <h2>This week's reading</h2>
-      <p class="tplain">Each week, every open prediction is to be read against newly published papers, and the result written down even when nothing moved. That reading has not started yet, and the first screen states that plainly rather than showing an old date.</p>
+      <p class="tplain">Once a week, the same fixed searches that found the studies in the records are run again, unchanged, and each new paper is read against the prediction it was searched for. A paper that really tests a prediction goes on a waiting list, with the date it was found. The weekly reading never changes a score itself: a waiting study counts only once it has its full record and both readers have read every judgement on it, by the same rules as every other study. It then joins the scored studies, and nothing already counted drops out. <WaitingLine /></p>
     </section>
 
     <section id="who">
