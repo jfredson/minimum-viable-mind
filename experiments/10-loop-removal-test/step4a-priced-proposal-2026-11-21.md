@@ -101,3 +101,29 @@ Face token is needed on the machine. The download is about 20 GB, to the machine
 
 The project pauses on 2027-01-04. Step 4a fits well before that, and nothing after it is started without
 another go.
+
+---
+
+## Addendum, 2026-11-21: after the hook code was written on the Mac
+
+*Added on John's instruction ("Yes, write it first"), after `src/step4a.py` and `step4a-runbook.md` were
+written. The model's code was read in the public transformers repository (commit 046bdb8, the commit that
+added it, dated 2026-11-21), and nothing was rented.*
+
+**What changed.** The source shows that the hooks touch only `message_input`, a module the model keeps in
+32-bit. So the 4-bit weights never need unpacking, which was the reason for recommending the 96 GB card. The
+32 GB RTX 5090 should be enough, and the time on the machine should be shorter, because the code now exists.
+
+| | Recommended now | Fallback |
+|---|---|---|
+| Card | RTX 5090 (32 GB), $1.39 an hour | RTX PRO 6000 Blackwell (96 GB), $2.69 an hour |
+| Estimated time | about 1.5 to 3 hours | the same |
+| Estimate | about $2.10 to $4.20 | about $4.00 to $8.10 |
+| Ceiling, enforced by deleting the machine after 5.5 hours | **$8** (5.5 × $1.39 = $7.65) | $15 (5.5 × $2.69 = $14.80) |
+
+If the 5090 runs out of memory, the run stops and the choice comes back to John. Prices are RunPod's
+secure-cloud prices (pricing page read 2026-11-21).
+
+**What John is asked, as revised:** step 4a on one RTX 5090, estimated at $2.10 to $4.20, with a ceiling of
+$8 enforced by deleting the machine after 5.5 hours. The plain telling above stands: none of this measures
+the swap's dose.
