@@ -1,7 +1,11 @@
 # Proposal: the design and first copy of the Minimum Viable Mind tracker
 
-*Written 2026-11-20 by a working session, for John to rule on. Nothing is built, deployed, merged or
-pushed. The pictures are in `2026-11-20-tracker-design-proposal/` beside this file. They are static
+*Written 2026-11-20 by a working session, for John to rule on. **Ruled by John the same day: all six
+decisions in section 7, as leaned, with one change to the line above the title** (section 7 has his
+words). Two facts changed after it was written: the six decisions are ruled, and the first list of
+theories now has ten entries (nine theories plus the Sentient Horizons account; John raised this
+tracker's limit to ten). The pictures were not redrawn and still show eight invented rows. Nothing is
+built, deployed, merged or pushed. The pictures are in `2026-11-20-tracker-design-proposal/` beside this file. They are static
 mock pages, rendered in a browser and captured at 1280 pixels wide (desktop) and 390 (phone), in
 both themes. The mock pages themselves and the script that writes them are in that folder's
 `mock/` subfolder, so they can be reopened and changed.*
@@ -64,6 +68,10 @@ In the lean, top to bottom on the left:
    stranger, since the name does not (kickoff section 11).
 2. **The question as the title:** "How far has the science of consciousness got in testing its
    theories?" (the trunk question from kickoff section 3, still ruling 3).
+
+   *Ruled 2026-11-20, after this was written:* the line above the title now reads "What is the least
+   a mind needs? Every theory of consciousness gives an answer. Here is how ten of them are holding
+   up." The number comes from the records at build time and is never typed in (section 7, decision 6).
 3. **The ranking**, in its three ruled groups, one row per theory, three bars per row:
    - **Ranked.** Past the bar, with a support score, highest support first. A rank shared under
      rule 5 shows as "=1" for both theories, a thin rule joins the two rows, and one line under
@@ -221,7 +229,8 @@ A table of eight rows does not read without its question above it, so the lean p
 first, which is the AGI Zeitgeist's allowed order turned around. It needs John's ruling as a
 departure from rule 1.3. The second weakness: on a 1280 by 800 screen only the first four rows of
 the ranking are above the fold, so a reader sees the "Ranked" group whole but has to scroll for the
-other two groups (picture 3; picture 5 has the whole page).
+other two groups (picture 3; picture 5 has the whole page). The pictures show eight rows; the first
+list now has ten, so the fold check has to be redone with ten rows once the page is built.
 
 **The same skin, number first** (pictures 20, 21) is the variant that follows rule 1.3 exactly: the
 headline huge on the left, the ranking squeezed into the right-hand card with no numbers. It
@@ -243,16 +252,19 @@ read either as a third sky site or as the parent, the second of which is the sam
 violet has. A dark, hushed look also leans toward mystery on a site whose rule is to calibrate
 between inflating and dismissing. And the cross is too small to carry a skin on its own.
 
-## 7. Decisions for John
+## 7. Decisions for John (all six ruled 2026-11-20)
 
-| # | The choice | Lean | Strongest alternative, and its cost |
-|---|---|---|---|
-| 1 | The skin | **B: Notebook re-inked**, the accent changed to mulberry, everything else kept | A: Notebook as ruled; no new skin ruling, and the site wears the colour of one of the theories it ranks |
-| 2 | What leads the first screen | **The ranking, under the title, the headline in a card on the right** (a departure from pattern rule 1.3) | Number first, as the siblings do; follows the rule exactly, and shrinks the ranking to a sidebar and leads with an unruled number |
-| 3 | How the three bars are drawn | **Support from a centre line at 50; testability a plain fill; left to test hatched; all in the data colour** | Three plain fills; simpler, and "even" then looks like half a success, while "left to test" looks like a score to be proud of |
-| 4 | Where the own account sits on the first screen | **In its group by the rules, tagged "this site's own", and named in the newcomer paragraph** | Pinned in a row of its own above the ranking; more visible, and a special place for the author's own account is exactly what the rules refuse it |
-| 5 | The top bar | **Theories · Questions · Our Positions · Our Tests · News · About · Family** | "Our Tests" in the footer, so the bar is five pages as rule 4.21 suggests; the project's own work then drops out of sight |
-| 6 | The line above the title | **The kickoff's draft as written** | The shorter form in section 8, if the cold-reader test (kickoff section 11) finds the draft too long |
+John ruled on all six the same day, through the master session. Each is marked *(ruled)* with his
+words; the wording of each row is this session's.
+
+| # | The choice | Lean | Strongest alternative, and its cost | Ruling |
+|---|---|---|---|---|
+| 1 | The skin | **B: Notebook re-inked**, the accent changed to mulberry, everything else kept | A: Notebook as ruled; no new skin ruling, and the site wears the colour of one of the theories it ranks | *(ruled)* "Yes, re-inked" |
+| 2 | What leads the first screen | **The ranking, under the title, the headline in a card on the right** (a departure from pattern rule 1.3) | Number first, as the siblings do; follows the rule exactly, and shrinks the ranking to a sidebar and leads with an unruled number | *(ruled)* "Yes, ranking first" |
+| 3 | How the three bars are drawn | **Support from a centre line at 50; testability a plain fill; left to test hatched; all in the data colour** | Three plain fills; simpler, and "even" then looks like half a success, while "left to test" looks like a score to be proud of | *(ruled)* "Yes, as drawn" |
+| 4 | Where the own account sits on the first screen | **In its group by the rules, tagged "this site's own", and named in the newcomer paragraph** | Pinned in a row of its own above the ranking; more visible, and a special place for the author's own account is exactly what the rules refuse it | *(ruled)* "Yes, in its group" |
+| 5 | The top bar | **Theories · Questions · Our Positions · Our Tests · News · About · Family** | "Our Tests" in the footer, so the bar is five pages as rule 4.21 suggests; the project's own work then drops out of sight | *(ruled)* "Yes, six pages". The weakest step, put to him when he ruled: "Our" brings back the first person after the front page moved to the site's voice. The wording of the labels is settled with the copy. |
+| 6 | The line above the title | **The kickoff's draft as written** | The shorter form in section 8, if the cold-reader test (kickoff section 11) finds the draft too long | *(ruled)* "Yes, with ten", accepting the master session's change: "What is the least a mind needs? Every theory of consciousness gives an answer. Here is how ten of them are holding up." "Each" after "every theory" promised a completeness the page does not have. The number comes from the records at build time, never typed in. It is still draft copy, under the voice checks and the cold-reader test. |
 
 Not for this proposal, and not decided by it: the headline (kickoff ruling 3), the theory list,
 the address, and the rename (kept, and reopened only on evidence). The pictures are drawn so that
@@ -268,7 +280,10 @@ named (workspace rule "Tools are not advertised").
 ### The first screen
 
 > **What is the least a mind needs?** Every theory of consciousness gives an answer. Here is how
-> each is holding up.
+> [ten] of them are holding up.
+>
+> *(The line as ruled 2026-11-20; "[ten]" is the count of entries on the ranking, taken from the
+> records at build time.)*
 >
 > # How far has the science of consciousness got in testing its theories?
 >
@@ -365,7 +380,8 @@ Checked: the mock pages at 1280 and 390 pixels in both themes; the top bar on on
 the accent contrast (mulberry 7.0 on the paper, 9.2 on graphite; the slate data colour 3.8 on the
 paper, which passes for bars and not for text, so it is never used for text). The seven sibling
 first screens were looked at in a browser on 2026-11-20. Not checked: a real phone browser; a
-screen reader; the ranking with nine theories or with long real names; how the first screen reads
+screen reader; the ranking with ten rows (the first list's size since John raised the limit to ten;
+the pictures show eight) or with long real names; how the first screen reads
 to a stranger (the cold-reader test belongs to stage 3).
 
 ## 11. The pictures
