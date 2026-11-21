@@ -1,0 +1,65 @@
+{
+  "packet_id": "com-vabba-seth-interoceptive-ownership",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Anil Seth's living-body view",
+  "core_claim": {
+    "quote": "In the limit, one can think of each and every conscious experience as (phenomenologically) integrating multimodal bodily and environmental signals in the service of coordinating allostatic regulation and survival-relevant action",
+    "source": {
+      "citation": "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)",
+      "url": "https://doi.org/10.1017/S0140525X25000032",
+      "date": "2025-04-21"
+    }
+  },
+  "prediction": {
+    "statement": "Signals from inside the body take part in the feeling that a body part is one's own: combined with what is seen, they change how strongly a seen hand feels like one's own (for example, a seen hand that pulses in time with one's own heartbeat feels more one's own than one pulsing out of time).",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2012-01-10",
+      "passage": "We believe considerable promise lies in integrating interoceptive predictive coding with existing proprioceptive and multisensory models of selfhood (Blanke and Metzinger, 2009; Tsakiris, 2010), potentially explaining the force of “interoceptive anchors” in grounding bodily experience.",
+      "source": {
+        "citation": "Seth AK, Suzuki K, Critchley HD. An interoceptive predictive coding model of conscious presence. Frontiers in Psychology 2:395 (2011 volume)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254200/",
+        "date": "2012-01-10"
+      }
+    },
+    "test_for": "A seen hand (real, rubber or virtual) whose appearance changes in time with the person's heartbeat produces stronger ownership, by questionnaire or by drift in where they feel their real hand to be, than the same feedback out of time.",
+    "test_against": "Heartbeat-timed and out-of-time feedback produce the same ownership, in a design that does produce the classic illusion with timed touch."
+  },
+  "study": {
+    "name": "Vagus nerve stimulation and a virtual 'cardiac rubber hand illusion' (a virtual hand flashing in or out of time with one's heartbeat)",
+    "source": {
+      "citation": "Vabba A, Suzuki K, Doric M, Möller TJ, Garfinkel S, Critchley H. The vagus nerve as a gateway to body ownership: taVNS reduces susceptibility to a virtual version of the cardiac and tactile rubber hand illusion. Psychophysiology 62(3):e70040, 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11913772/",
+      "date": "2025-03-01"
+    },
+    "first_appeared": "2024-08-29 (preprint (Authorea), per its Europe PMC record PPR1199496; not opened (verify list: v-seth-vabba-preprint-date))",
+    "data_collected": {
+      "when": "not stated; before 2024-08-07",
+      "basis": "The paper gives no collection dates (methods searched 2026-11-21); the journal received it on 2024-08-07."
+    }
+  },
+  "passages": [
+    {
+      "text": "We believe considerable promise lies in integrating interoceptive predictive coding with existing proprioceptive and multisensory models of selfhood (Blanke and Metzinger, 2009; Tsakiris, 2010), potentially explaining the force of “interoceptive anchors” in grounding bodily experience.",
+      "source": {
+        "citation": "Seth AK, Suzuki K, Critchley HD. An interoceptive predictive coding model of conscious presence. Frontiers in Psychology 2:395 (2011 volume)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254200/",
+        "date": "2012-01-10"
+      }
+    },
+    {
+      "text": "This result mirrors the majority of research on the RHI and replicates the findings from the previous version of this task (Suzuki et al. 2013 ) in which congruency of tactile and cardiac feedback significantly modulated subjective ownership",
+      "source": {
+        "citation": "Vabba A, Suzuki K, Doric M, Möller TJ, Garfinkel S, Critchley H. The vagus nerve as a gateway to body ownership: taVNS reduces susceptibility to a virtual version of the cardiac and tactile rubber hand illusion. Psychophysiology 62(3):e70040, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11913772/",
+        "date": "2025-03-01"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2012-01-10",
+    "study_first_appeared": "2024-08-29"
+  },
+  "this_reading_is": "the second reading"
+}

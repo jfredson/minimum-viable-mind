@@ -1,0 +1,31 @@
+{
+  "packet_id": "tst-ast-covary",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "4M0Ba_WSKZK-0PEP4PiD4Aw",
+  "finish_reason": "STOP",
+  "answer_text": "{\"could_fail\": true, \"rival_predicts_same\": true, \"which_rivals_same\": [\"gwt\"], \"separates\": false, \"separates_from\": [\"iit\", \"hot\", \"rpt\", \"seth\", \"sensorimotor\", \"orch-or\", \"damasio\", \"sh\"], \"reason\": \"This prediction could fail if studies showed that attention and reported awareness often come apart with strong, clearly visible stimuli, or that reported awareness without attention is as common as attention without awareness. In the given material, a Global Workspace Theory publication by Mashour and colleagues predicts the same core relationship, stating that attention can work without awareness and that what attention selects enters consciousness. Under the scoring rule, because a rival's published source predicts the same result, this prediction does not separate Attention Schema Theory from all of its rivals. It still separates the theory from the other eight rivals on the list, which are silent in the material.\", \"unsure\": false, \"unsure_why\": \"\"}",
+  "usage": {
+    "promptTokenCount": 1501,
+    "candidatesTokenCount": 214,
+    "totalTokenCount": 14494,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1501
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 214
+      }
+    ],
+    "thoughtsTokenCount": 12779,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.132932,
+  "seconds": 163.0,
+  "called_on": "2026-11-21 09:01:55 PST"
+}

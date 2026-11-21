@@ -1,0 +1,424 @@
+{
+ "prediction": "sm-active-control",
+ "query": "TITLE_ABS:\"sensory substitution\" AND (TITLE_ABS:active OR TITLE_ABS:passive OR TITLE_ABS:\"self-generated\" OR TITLE_ABS:movement* OR TITLE_ABS:sensorimotor) AND (TITLE_ABS:locali* OR TITLE_ABS:distal OR TITLE_ABS:externali* OR TITLE_ABS:space) AND SRC:MED",
+ "run_on": "2026-11-21 09:51 PST",
+ "hit_count": 23,
+ "results": [
+  {
+   "rank": 1,
+   "id": "43005310",
+   "source": "MED",
+   "pmid": "43005310",
+   "pmcid": "PMC13745482",
+   "doi": "10.3389/fpsyg.2026.1927485",
+   "first_publication_date": "2026-10-26",
+   "title": "Audio-motor and related audio-spatial interventions for spatial function in people with visual impairment: a systematic review.",
+   "authors": "Hu J, Yu Q, Zou M, Ma S, Zhu D.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "Systematic Review",
+    "systematic-review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundAuditory feedback linked to movement or active spatial exploration may support non-visual spatial learning, but the evidence spans conceptually distinct training, assistive-technology, and sensory-substitution approaches.ObjectiveTo systematically review audio-motor and related audio-spatial interventions for auditory localization, proprioception, spatial perception, spatial cognition, mobility, and navigation in people with visual impairment.MethodsWeb of Science, Scopus, and EBSCOhost were searched from database inception to December 2024. A targeted supplementary search through 15 July 2026 was used to identify recent contextual studies and emerging technologies, but was not treated as a complete de novo update of the principal systematic search. Peer-reviewed intervention studies involving participants with visual impairment were eligible; sighted participants were permitted only as comparator groups. Risk of bias was assessed with RoB 2 for studies reported as randomized and ROBINS-I for non-randomized studies. Because populations, intervention mechanisms, study designs, outcomes, measurement instruments, and reporting formats were heterogeneous, findings were synthesized narratively following the Synthesis Without Meta-analysis (SWiM) framework.ResultsTen studies involving 151 participants were included in the principal synthesis. Interventions comprised movement-contingent auditory devices, spatial-audio or game-based navigation training, audiovisual motor training, and camera-based auditory feedback. Findings suggested possible improvements in selected task-specific outcomes, particularly auditory localization, reaching or proprioceptive matching, and virtual or real-world navigation. Standardized effect sizes were presented when reported, but effects were inconsistent and several studies relied on small samples, within-group comparisons, or non-randomized designs.ConclusionsThe certainty of evidence was low or very low across outcome domains. Preliminary evidence suggests that selected audio-motor and related audio-spatial interventions may improve specific spatial tasks in some visually impaired populations, but heterogeneity, imprecision, and risk of bias preclude firm conclusions regarding clinical effectiveness, optimal dose, long-term benefit, or prevention of developmental delay."
+  },
+  {
+   "rank": 2,
+   "id": "40419471",
+   "source": "MED",
+   "pmid": "40419471",
+   "pmcid": "PMC12106601",
+   "doi": "10.1038/s41467-025-59342-9",
+   "first_publication_date": "2025-05-26",
+   "title": "Cortical circuits for cross-modal generalization.",
+   "authors": "Guyoton M, Matteucci G, Foucher CG, Getz MP, Gjorgjieva J, El-Boustani S.",
+   "journal": "Nature communications",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Adapting goal-directed behaviors to changing sensory conditions is a fundamental aspect of intelligence. The brain uses abstract representations of the environment to generalize learned associations across sensory modalities. The circuit organization that mediates such cross-modal generalizations remains, however, unknown. Here, we demonstrate that mice can bidirectionally generalize sensorimotor task rules between touch and vision by using abstract representations of peri-personal space within the cortex. Using large-scale mapping in the dorsal cortex at single-cell resolution, we discovered multimodal neurons with congruent spatial representations within multiple associative areas of the dorsal and ventral streams. Optogenetic sensory substitution and systematic silencing of these associative areas revealed that a single area in the dorsal stream is necessary and sufficient for cross-modal generalization. Our results identify and comprehensively describe a cortical circuit organization that underlies an essential cognitive function, providing a structural and functional basis for abstract reasoning in the mammalian brain."
+  },
+  {
+   "rank": 3,
+   "id": "35581510",
+   "source": "MED",
+   "pmid": "35581510",
+   "pmcid": null,
+   "doi": "10.1007/s10439-022-02978-1",
+   "first_publication_date": "2022-05-17",
+   "title": "Psychophysical Evaluation of Proprioceptive Feedback Through a Probe Sliding on the Forearm Skin of Healthy Humans.",
+   "authors": "Devecioğlu İ.",
+   "journal": "Annals of biomedical engineering",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "We have tested the forearm skin of humans as a target organ to deliver proprioceptive feedback via a tactile sensory substitution method. In the proposed method, a contactor probe was actuated by a linear servo motor and moved on the skin in proximo-distal axis depending on the angle of a virtual joint moving on a 180° arc. Twenty healthy subjects were tested to stop the joint at a given target under no-feedback, visual feedback, and tactile (dorsal and volar) feedback conditions. The absolute difference between the target and the response angle was recorded. Tests were repeated 4 times with ~ 1-week intervals. Two joint movement speeds were tested. The subjects performed best with visual feedback, and worst if no feedback was provided. Their performances with tactile feedback were not as good as in the visual feedback condition, but better than in the no-feedback condition. Subjects equally performed with volar and dorsal tactile feedback. The movement speed had no significant effects on tactile feedback. The performance improved with training only in tactile feedback conditions. The proprioceptive information from a motorized prosthesis can be provided through probes moving on the forearm skin, while the efficacy of the feedback may improve with extensive training."
+  },
+  {
+   "rank": 4,
+   "id": "33018856",
+   "source": "MED",
+   "pmid": "33018856",
+   "pmcid": null,
+   "doi": "10.1109/embc44109.2020.9175475",
+   "first_publication_date": "2020-07-01",
+   "title": "Audio-Visual Thumble (AVT): A low-vision rehabilitation device using multisensory feedbacks.",
+   "authors": "Ahmad H, Tonelli A, Crepaldi M, Martolini C, Capris E, Gori M.",
+   "journal": "Annual International Conference of the IEEE Engineering in Medicine and Biology Society. IEEE Engineering in Medicine and Biology Society. Annual International Conference",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Since the 70s sensory substitution devices have been used for blind individuals to compensate for the lack of vision and enable them to perceive environment through intact sensory modalities. In this study, we present a rehabilitation device called Audio Visual Thumble (AVT), which is a small ring-like device with LED and buzzer, that can be worn on pharynx. We focus on a unique group of low-vision individuals with a black spot or scotoma in their visual field due to a disease called Macular Degeneration. The visual localization abilities of these individuals are highly impaired due to developing scotoma. We recently showed that also their audio localization skills are impaired [9]. Rehabilitation techniques developed so far for Macular Degeneration focus on visual modality only. Since audition can also be used to improve their spatial skills, we developed the AVT device. It permits to associate the multisensory information (audio and visual feedbacks) coming from the device with the own movement (proprioceptive feedback). We propose that the AVT has the potential to help people with visual dysfunctions to improve in the identification of audio and visual targets outside or at the edge of the residual visual field. AVT could be used for a wide range of applications combined with classical rehabilitation techniques in Macular Degeneration patients.Clinical relevance- This device can be an effective addition for low-vision rehabilitation experts and can be used combined with classical rehabilitation methods."
+  },
+  {
+   "rank": 5,
+   "id": "32656190",
+   "source": "MED",
+   "pmid": "32656190",
+   "pmcid": "PMC7325877",
+   "doi": "10.3389/fbioe.2020.00555",
+   "first_publication_date": "2020-06-19",
+   "title": "Temporal Asynchrony but Not Total Energy Nor Duration Improves the Judgment of Numerosity in Electrotactile Stimulation.",
+   "authors": "Nataletti S, Leo F, Seminara L, Trompetto C, Valle M, Dosen S, Brayda L.",
+   "journal": "Frontiers in bioengineering and biotechnology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Stroke patients suffer from impairments of both motor and somatosensory functions. The functional recovery of upper extremities is one of the primary goals of rehabilitation programs. Additional somatosensory deficits limit sensorimotor function and significantly affect its recovery after the neuromotor injury. Sensory substitution systems, providing tactile feedback, might facilitate manipulation capability, and improve patient's dexterity during grasping movements. As a first step toward this aim, we evaluated the ability of healthy subjects in exploiting electrotactile feedback on the shoulder to determine the number of perceived stimuli in numerosity judgment tasks. During the experiment, we compared four different stimulation patterns (two simultaneous: short and long, intermittent and sequential) differing in total duration, total energy, or temporal synchrony. The experiment confirmed that the subject ability to enumerate electrotactile stimuli decreased with increasing the number of active electrodes. Furthermore, we found that, in electrotactile stimulation, the temporal coding schemes, and not total energy or duration modulated the accuracy in numerosity judgment. More precisely, the sequential condition resulted in significantly better numerosity discrimination than intermittent and simultaneous stimulation. These findings, together with the fact that the shoulder appeared to be a feasible stimulation site to communicate tactile information via electrotactile feedback, can serve as a guide to deliver tactile feedback to proximal areas in stroke survivors who lack sensory integrity in distal areas of their affected arm, but retain motor skills."
+  },
+  {
+   "rank": 6,
+   "id": "32092705",
+   "source": "MED",
+   "pmid": "32092705",
+   "pmcid": null,
+   "doi": "10.1163/22134808-20191436",
+   "first_publication_date": "2019-01-01",
+   "title": "Ears on the Hand: Reaching Three-Dimensional Targets With an Audio-Motor Device.",
+   "authors": "Hanneton S, Hoellinger T, Forma V, Roby-Brami A, Auvray M.",
+   "journal": "Multisensory research",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Understanding the processes underlying sensorimotor coupling with the environment is crucial for sensorimotor rehabilitation and sensory substitution. In doing so, devices which provide novel sensory feedback consequent to body movement may be optimized in order to enhance motor performance for particular tasks. The aim of the study reported here was to investigate audio-motor coupling when the auditory experience is linked to movements of the head or the hands. The participants had to localize and reach a virtual source with the dominant hand in response to sounds. An electromagnetic system recorded the position and orientation of the participants' head and hands. This system was connected to a 3D audio system that provided binaural auditory feedback on the position of the virtual listener located on the participants' body. The listener's position was computed either from the hands or from the head. For the hand condition, the virtual listener was placed on the dominant hand (the one used to reach the target) in Experiment 1 and on the non-dominant hand, which was constrained in order to have similar amplitude and degrees of freedom as that of the head, in Experiment 2. The results revealed that, in the two experiments, the participants were able to localize a source within the 3D auditory environment. Performance varied as a function of the effector's degrees of freedom and the spatial coincidence between sensor and effector. The results also allowed characterizing the kinematics of the hand and head and how they change with audio-motor coupling condition and practice."
+  },
+  {
+   "rank": 7,
+   "id": "30930756",
+   "source": "MED",
+   "pmid": "30930756",
+   "pmcid": "PMC6427928",
+   "doi": "10.3389/fnint.2019.00007",
+   "first_publication_date": "2019-03-14",
+   "title": "Mental Rotation of Digitally-Rendered Haptic Objects.",
+   "authors": "Tivadar RI, Rouillard T, Chappaz C, Knebel JF, Turoman N, Anaflous F, Roche J, Matusz PJ, Murray MM.",
+   "journal": "Frontiers in integrative neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Sensory substitution is an effective means to rehabilitate many visual functions after visual impairment or blindness. Tactile information, for example, is particularly useful for functions such as reading, mental rotation, shape recognition, or exploration of space. Extant haptic technologies typically rely on real physical objects or pneumatically driven renderings and thus provide a limited library of stimuli to users. New developments in digital haptic technologies now make it possible to actively simulate an unprecedented range of tactile sensations. We provide a proof-of-concept for a new type of technology (hereafter haptic tablet) that renders haptic feedback by modulating the friction of a flat screen through ultrasonic vibrations of varying shapes to create the sensation of texture when the screen is actively explored. We reasoned that participants should be able to create mental representations of letters presented in normal and mirror-reversed haptic form without the use of any visual information and to manipulate such representations in a mental rotation task. Healthy sighted, blindfolded volunteers were trained to discriminate between two letters (either L and P, or F and G; counterbalanced across participants) on a haptic tablet. They then tactually explored all four letters in normal or mirror-reversed form at different rotations (0°, 90°, 180°, and 270°) and indicated letter form (i.e., normal or mirror-reversed) by pressing one of two mouse buttons. We observed the typical effect of rotation angle on object discrimination performance (i.e., greater deviation from 0° resulted in worse performance) for trained letters, consistent with mental rotation of these haptically-rendered objects. We likewise observed generally slower and less accurate performance with mirror-reversed compared to prototypically oriented stimuli. Our findings extend existing research in multisensory object recognition by indicating that a new technology simulating active haptic feedback can support the generation and spatial manipulation of mental representations of objects. Thus, such haptic tablets can offer a new avenue to mitigate visual impairments and train skills dependent on mental object-based representations and their spatial manipulation."
+  },
+  {
+   "rank": 8,
+   "id": "28952949",
+   "source": "MED",
+   "pmid": "28952949",
+   "pmcid": null,
+   "doi": "10.1109/toh.2017.2755653",
+   "first_publication_date": "2017-09-22",
+   "title": "Performance Evaluation of Passive Haptic Feedback for Tactile HMI Design in CAVEs.",
+   "authors": "Lassagne A, Kemeny A, Posselt J, Merienne F.",
+   "journal": "IEEE transactions on haptics",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This article presents a comparison of different haptic systems, which are designed to simulate flat Human Machine Interfaces (HMIs) like touchscreens in virtual environments (VEs) such as CAVEs, and their respective performance. We compare a tangible passive transparent slate to a classic tablet and a sensory substitution system. These systems were tested during a controlled experiment. The performance and impressions from 20 subjects were collected to understand more about the modalities in the given context. The results show that the preferences of the subjects are strongly related to the use-cases and needs. In terms of performance, passive haptics proved to be significantly useful, acting as a space reference and a real-time continuous calibration system, allowing subjects to have lower execution durations and relative errors. Sensory substitution induced perception drifts during the experiment, causing significant performance disparities, demonstrating the low robustness of perception when spatial cues are insufficiently available. Our findings offer a better understanding on the nature of perception drifts and the need of strong multisensory spatial markers for such use-cases in CAVEs. The importance of a relevant haptic modality specifically designed to match a precise use-case is also emphasized."
+  },
+  {
+   "rank": 9,
+   "id": "28195187",
+   "source": "MED",
+   "pmid": "28195187",
+   "pmcid": "PMC5307328",
+   "doi": "10.1038/srep42197",
+   "first_publication_date": "2017-02-14",
+   "title": "Sensory augmentation: integration of an auditory compass signal into human perception of space.",
+   "authors": "Schumann F, O'Regan JK.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Bio-mimetic approaches to restoring sensory function show great promise in that they rapidly produce perceptual experience, but have the disadvantage of being invasive. In contrast, sensory substitution approaches are non-invasive, but may lead to cognitive rather than perceptual experience. Here we introduce a new non-invasive approach that leads to fast and truly perceptual experience like bio-mimetic techniques. Instead of building on existing circuits at the neural level as done in bio-mimetics, we piggy-back on sensorimotor contingencies at the stimulus level. We convey head orientation to geomagnetic North, a reliable spatial relation not normally sensed by humans, by mimicking sensorimotor contingencies of distal sounds via head-related transfer functions. We demonstrate rapid and long-lasting integration into the perception of self-rotation. Short training with amplified or reduced rotation gain in the magnetic signal can expand or compress the perceived extent of vestibular self-rotation, even with the magnetic signal absent in the test. We argue that it is the reliability of the magnetic signal that allows vestibular spatial recalibration, and the coding scheme mimicking sensorimotor contingencies of distal sounds that permits fast integration. Hence we propose that contingency-mimetic feedback has great potential for creating sensory augmentation devices that achieve fast and genuinely perceptual experiences."
+  },
+  {
+   "rank": 10,
+   "id": "27567755",
+   "source": "MED",
+   "pmid": "27567755",
+   "pmcid": "PMC5044782",
+   "doi": "10.3233/rnn-160647",
+   "first_publication_date": "2016-09-01",
+   "title": "Designing sensory-substitution devices: Principles, pitfalls and potential1.",
+   "authors": "Kristjánsson Á, Moldoveanu A, Jóhannesson ÓI, Balan O, Spagnol S, Valgeirsdóttir VV, Unnthorsson R.",
+   "journal": "Restorative neurology and neuroscience",
+   "pub_types": [
+    "research-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "An exciting possibility for compensating for loss of sensory function is to augment deficient senses by conveying missing information through an intact sense. Here we present an overview of techniques that have been developed for sensory substitution (SS) for the blind, through both touch and audition, with special emphasis on the importance of training for the use of such devices, while highlighting potential pitfalls in their design. One example of a pitfall is how conveying extra information about the environment risks sensory overload. Related to this, the limits of attentional capacity make it important to focus on key information and avoid redundancies. Also, differences in processing characteristics and bandwidth between sensory systems severely constrain the information that can be conveyed. Furthermore, perception is a continuous process and does not involve a snapshot of the environment. Design of sensory substitution devices therefore requires assessment of the nature of spatiotemporal continuity for the different senses. Basic psychophysical and neuroscientific research into representations of the environment and the most effective ways of conveying information should lead to better design of sensory substitution systems. Sensory substitution devices should emphasize usability, and should not interfere with other inter- or intramodal perceptual function. Devices should be task-focused since in many cases it may be impractical to convey too many aspects of the environment. Evidence for multisensory integration in the representation of the environment suggests that researchers should not limit themselves to a single modality in their design. Finally, we recommend active training on devices, especially since it allows for externalization, where proximal sensory stimulation is attributed to a distinct exterior object."
+  },
+  {
+   "rank": 11,
+   "id": "27494318",
+   "source": "MED",
+   "pmid": "27494318",
+   "pmcid": "PMC4975488",
+   "doi": "10.1371/journal.pone.0160872",
+   "first_publication_date": "2016-08-05",
+   "title": "Echoic Sensory Substitution Information in a Single Obstacle Circumvention Task.",
+   "authors": "Kolarik AJ, Scarfe AC, Moore BC, Pardhan S.",
+   "journal": "PloS one",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Accurate motor control is required when walking around obstacles in order to avoid collisions. When vision is unavailable, sensory substitution can be used to improve locomotion through the environment. Tactile sensory substitution devices (SSDs) are electronic travel aids, some of which indicate the distance of an obstacle using the rate of vibration of a transducer on the skin. We investigated how accurately such an SSD guided navigation in an obstacle circumvention task. Using an SSD, 12 blindfolded participants navigated around a single flat 0.6 x 2 m obstacle. A 3-dimensional Vicon motion capture system was used to quantify various kinematic indices of human movement. Navigation performance under full vision was used as a baseline for comparison. The obstacle position was varied from trial to trial relative to the participant, being placed at two distances 25 cm to the left, right or directly ahead. Under SSD guidance, participants navigated without collision in 93% of trials. No collisions occurred under visual guidance. Buffer space (clearance between the obstacle and shoulder) was larger by a factor of 2.1 with SSD guidance than with visual guidance, movement times were longer by a factor of 9.4, and numbers of velocity corrections were larger by a factor of 5 (all p<0.05). Participants passed the obstacle on the side affording the most space in the majority of trials for both SSD and visual guidance conditions. The results are consistent with the idea that SSD information can be used to generate a protective envelope during locomotion in order to avoid collisions when navigating around obstacles, and to pass on the side of the obstacle affording the most space in the majority of trials."
+  },
+  {
+   "rank": 12,
+   "id": "25581203",
+   "source": "MED",
+   "pmid": "25581203",
+   "pmcid": null,
+   "doi": "10.1111/nyas.12585",
+   "first_publication_date": "2015-01-07",
+   "title": "The bilateral central vestibular system: its pathways, functions, and disorders.",
+   "authors": "Dieterich M, Brandt T.",
+   "journal": "Annals of the New York Academy of Sciences",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The bilateral anatomical organization of the vestibular system provides three functional advantages: optimal differentiation of head motion and orientation, sensory substitution of a unilateral peripheral failure, and central compensation of a peripheral or central vestibular tone imbalance. The structure is based on bilaterally ascending and descending pathways and at least four crossings: three in the brain stem and one in the cortex. The resulting sensorimotor functions can be subdivided into three major groups: (1) reflexive control of gaze, head, and body in three spatial planes (yaw, pitch, roll) at the brain stem/cerebellar level; (2) perception of self-motion and control of voluntary movement and balance at the cortical/subcortical level; and (3) higher vestibular cognitive functions (e.g., spatial memory and navigation). The bilateral representation of the vestibular system in multiple multisensory cortical areas and the vestibular dominance of the nondominant hemisphere raise the question of how one global percept of motion and orientation in space is formed."
+  },
+  {
+   "rank": 13,
+   "id": "26136719",
+   "source": "MED",
+   "pmid": "26136719",
+   "pmcid": "PMC4469823",
+   "doi": "10.3389/fpsyg.2015.00842",
+   "first_publication_date": "2015-06-17",
+   "title": "Length and orientation constancy learning in 2-dimensions with auditory sensory substitution: the importance of self-initiated movement.",
+   "authors": "Stiles NR, Zheng Y, Shimojo S.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "A subset of sensory substitution (SS) devices translate images into sounds in real time using a portable computer, camera, and headphones. Perceptual constancy is the key to understanding both functional and phenomenological aspects of perception with SS. In particular, constancies enable object externalization, which is critical to the performance of daily tasks such as obstacle avoidance and locating dropped objects. In order to improve daily task performance by the blind, and determine if constancies can be learned with SS, we trained blind (N = 4) and sighted (N = 10) individuals on length and orientation constancy tasks for 8 days at about 1 h per day with an auditory SS device. We found that blind and sighted performance at the constancy tasks significantly improved, and attained constancy performance that was above chance. Furthermore, dynamic interactions with stimuli were critical to constancy learning with the SS device. In particular, improved task learning significantly correlated with the number of spontaneous left-right head-tilting movements while learning length constancy. The improvement from previous head-tilting trials even transferred to a no-head-tilt condition. Therefore, not only can SS learning be improved by encouraging head movement while learning, but head movement may also play an important role in learning constancies in the sighted. In addition, the learning of constancies by the blind and sighted with SS provides evidence that SS may be able to restore vision-like functionality to the blind in daily tasks."
+  },
+  {
+   "rank": 14,
+   "id": "24370580",
+   "source": "MED",
+   "pmid": "24370580",
+   "pmcid": null,
+   "doi": "10.1007/s00221-013-3809-5",
+   "first_publication_date": "2013-12-27",
+   "title": "Sensory substitution information informs locomotor adjustments when walking through apertures.",
+   "authors": "Kolarik AJ, Timmis MA, Cirstea S, Pardhan S.",
+   "journal": "Experimental brain research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The study assessed the ability of the central nervous system (CNS) to use echoic information from sensory substitution devices (SSDs) to rotate the shoulders and safely pass through apertures of different width. Ten visually normal participants performed this task with full vision, or blindfolded using an SSD to obtain information regarding the width of an aperture created by two parallel panels. Two SSDs were tested. Participants passed through apertures of +0, +18, +35 and +70 % of measured body width. Kinematic indices recorded movement time, shoulder rotation, average walking velocity across the trial, peak walking velocities before crossing, after crossing and throughout a whole trial. Analyses showed participants used SSD information to regulate shoulder rotation, with greater rotation associated with narrower apertures. Rotations made using an SSD were greater compared to vision, movement times were longer, average walking velocity lower and peak velocities before crossing, after crossing and throughout the whole trial were smaller, suggesting greater caution. Collisions sometimes occurred using an SSD but not using vision, indicating that substituted information did not always result in accurate shoulder rotation judgements. No differences were found between the two SSDs. The data suggest that spatial information, provided by sensory substitution, allows the relative position of aperture panels to be internally represented, enabling the CNS to modify shoulder rotation according to aperture width. Increased buffer space indicated by greater rotations (up to approximately 35 % for apertures of +18 % of body width) suggests that spatial representations are not as accurate as offered by full vision."
+  },
+  {
+   "rank": 15,
+   "id": "25693304",
+   "source": "MED",
+   "pmid": "25693304",
+   "pmcid": null,
+   "doi": "10.1163/22134808-00002456",
+   "first_publication_date": "2014-01-01",
+   "title": "The process of distal attribution illuminated through studies of sensory substitution.",
+   "authors": "Hartcher-O'Brien J, Auvray M.",
+   "journal": "Multisensory research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "When we interact with objects in our environment, as a general rule we are not aware of the proximal stimulation they provide, but we directly experience the external object. This process of assigning an external cause is known as distal attribution. It is extremely difficult to measure how distal attribution emerges because it arises so early in life and appears to be automatic. Sensory substitution systems give us the possibility to measure the process as it occurs online. With these devices, objects in our environment produce novel proximal stimulation patterns and individuals have to establish the link between the proximal stimulation and the distal object. This review disentangles the contributing factors that allow the nervous system to assign a distal cause, thereby creating the experience of an external world. In particular, it highlights the role of the assumption of a stable world, the role of movement, and finally that of calibration. From the existing sensory substitution literature it appears that distal attribution breaks down when one of these principles is violated and as such the review provides an important piece to the puzzle of distal attribution."
+  },
+  {
+   "rank": 16,
+   "id": "23046683",
+   "source": "MED",
+   "pmid": "23046683",
+   "pmcid": "PMC3554473",
+   "doi": "10.1186/1743-0003-9-79",
+   "first_publication_date": "2012-10-10",
+   "title": "Effect of task-related continuous auditory feedback during learning of tracking motion exercises.",
+   "authors": "Rosati G, Oscari F, Spagnol S, Avanzini F, Masiero S.",
+   "journal": "Journal of neuroengineering and rehabilitation",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundThis paper presents the results of a set of experiments in which we used continuous auditory feedback to augment motor training exercises. This feedback modality is mostly underexploited in current robotic rehabilitation systems, which usually implement only very basic auditory interfaces. Our hypothesis is that properly designed continuous auditory feedback could be used to represent temporal and spatial information that could in turn, improve performance and motor learning.MethodsWe implemented three different experiments on healthy subjects, who were asked to track a target on a screen by moving an input device (controller) with their hand. Different visual and auditory feedback modalities were envisaged. The first experiment investigated whether continuous task-related auditory feedback can help improve performance to a greater extent than error-related audio feedback, or visual feedback alone. In the second experiment we used sensory substitution to compare different types of auditory feedback with equivalent visual feedback, in order to find out whether mapping the same information on a different sensory channel (the visual channel) yielded comparable effects with those gained in the first experiment. The final experiment applied a continuously changing visuomotor transformation between the controller and the screen and mapped kinematic information, computed in either coordinate system (controller or video), to the audio channel, in order to investigate which information was more relevant to the user.ResultsTask-related audio feedback significantly improved performance with respect to visual feedback alone, whilst error-related feedback did not. Secondly, performance in audio tasks was significantly better with respect to the equivalent sensory-substituted visual tasks. Finally, with respect to visual feedback alone, video-task-related sound feedback decreased the tracking error during the learning of a novel visuomotor perturbation, whereas controller-task-related sound feedback did not. This result was particularly interesting, as the subjects relied more on auditory augmentation of the visualized target motion (which was altered with respect to arm motion by the visuomotor perturbation), rather than on sound feedback provided in the controller space, i.e., information directly related to the effective target motion of their arm.ConclusionsOur results indicate that auditory augmentation of visual feedback can be beneficial during the execution of upper limb movement exercises. In particular, we found that continuous task-related information provided through sound, in addition to visual feedback can improve not only performance but also the learning of a novel visuomotor perturbation. However, error-related information provided through sound did not improve performance and negatively affected learning in the presence of the visuomotor perturbation."
+  },
+  {
+   "rank": 17,
+   "id": "20402243",
+   "source": "MED",
+   "pmid": "20402243",
+   "pmcid": "PMC3780418",
+   "doi": "10.1068/p6366",
+   "first_publication_date": "2010-01-01",
+   "title": "Distal attribution and distance perception in sensory substitution.",
+   "authors": "Siegle JH, Warren WH.",
+   "journal": "Perception",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "In sensory substitution, the user may be directly aware of distal objects, as in everyday perception, or make explicit cognitive inferences based on an awareness of the proximal stimulation. Anecdotal evidence supports the experience of distal attribution, but so far there have been few rigorous experimental tests of the claim. In this study, blindfolded participants observed a target light using a device consisting of a finger-mounted photodiode that drives tactile vibra-tion on the back. With the blindfold off and the target removed, participants moved a reference object to match the perceived egocentric distance of the target. Participants who were instructed to attend to the distal target improved significantly during 2 h of practice, whereas those instructed to attend to proximal variables showed no improvement. Unsigned error increased with ratings of proximal attention, but decreased with ratings of target object solidity, consistent with distal attribution. Performance transferred to the non-dominant arm and to a rotated body orientation, demonstrating that learning did not depend on a joint-specific sensorimotor relationship between target distance and arm configuration. The results experimentally confirm that distal attribution can occur in sensory substitution, based on a perceptual strategy rather than an explicit cognitive strategy. Moreover, they suggest that the informational basis for distal attribution is not a joint-specific sensorimotor relation, but a more abstract spatial invariant."
+  },
+  {
+   "rank": 18,
+   "id": "17405378",
+   "source": "MED",
+   "pmid": "17405378",
+   "pmcid": null,
+   "doi": "10.1109/tbme.2006.889180",
+   "first_publication_date": "2007-04-01",
+   "title": "Guiding the surgical gesture using an electro-tactile stimulus array on the tongue: a feasibility study.",
+   "authors": "Robineau F, Boy F, Orliaguet JP, Demongeot J, Payan Y.",
+   "journal": "IEEE transactions on bio-medical engineering",
+   "pub_types": [
+    "Evaluation Study",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Under conventional \"open-\" surgery, the physician has to take care of the patient, interact with other clinicians and check several monitoring devices. Nowadays, the computer assisted surgery proposes to integrate 3-D cameras in the operating theatre in order to assist the surgeon in performing minimally invasive surgical punctures. The cameras localize the needle and the computer guides the surgeon towards an intracorporeal clinically defined target. A visualization system (screen) is employed to provide the surgeon with indirect visual spatial information about the intracorporeal positions of the needle. The present work proposes to use another sensory modality to guide the surgeon, thus keeping the visual modality fully dedicated to the surgical gesture. For this, the sensory substitution paradigm using the Bach-y-Rita's \"Tongue Display Unit\" (TDU) is exploited to provide to the surgeon information of the position tool. The TDU device is composed of a 6 x 6 matrix of electrodes transmitting electrotactile information on the tongue surface. The underlying idea consists in transmitting information about the deviation of the needle movement with regard to a preplanned \"optimal\" trajectory. We present an experiment assessing the guidance effectiveness of an intracorporeal puncture under TDU guidance with respect to the performance evidenced under a usual visual guidance system."
+  },
+  {
+   "rank": 19,
+   "id": "18283925",
+   "source": "MED",
+   "pmid": "18283925",
+   "pmcid": null,
+   "doi": "10.1068/p5800",
+   "first_publication_date": "2007-01-01",
+   "title": "The perception of space and form recognition in a simulated environment: the case of minimalist sensory-substitution devices.",
+   "authors": "Auvray M, Philipona D, O'Regan JK, Spence C.",
+   "journal": "Perception",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Whenever we explore a simulated environment, the sensorimotor interactions that underlie our perception of space may be modified. We investigated the conditions under which it is possible to acquire the mastery of new sensorimotor laws and thereby to infer new perceptual spaces. A computer interface, based on the principles of minimalist sensory-substitution devices, was designed to enable different possible links between a user's actions (manipulation of a mouse and/or keys of a keyboard) and the resulting pattern of sensory stimulation (visual or auditory) to be established. The interface generated an all-or-none stimulus whose activation varied as a function of the participant's exploration of a hidden form. In this study we addressed the following questions: What are the conditions necessary for participants to understand their actions as constituting a displacement in a simulated space? What are the conditions required for participants to conceive of sensations as originating from the encounter with an object situated in this space? Finally, what are the conditions required for participants to recognise forms within this space? The results of the two experiments reported here show that, under certain conditions, participants can interpret the new sensorimotor laws as movements in a new perceptual space and can recognise simple geometric forms, and that this occurs no matter whether the sensory stimulation is presented in the visual or auditory modality."
+  },
+  {
+   "rank": 20,
+   "id": "16385644",
+   "source": "MED",
+   "pmid": "16385644",
+   "pmcid": null,
+   "doi": "10.1142/s0219635205001002",
+   "first_publication_date": "2005-12-01",
+   "title": "There is something out there: distal attribution in sensory substitution, twenty years later.",
+   "authors": "Auvray M, Hanneton S, Lenay C, O'Regan K.",
+   "journal": "Journal of integrative neuroscience",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Sensory substitution constitutes an interesting domain of study to consider the philosopher's classical question of distal attribution: how we can distinguish between a sensation and the perception of an object that causes this sensation. We tested the hypothesis that distal attribution consists of three distinct components: an object, a perceptual space, and a coupling between subjects' movements and stimulation. We equipped sixty participants with a visual-to-auditory substitution device, without any information about it. The device converts the video stream produced by a head-mounted camera into a sound stream. We investigated several experimental conditions: the existence or not of a correlation between movements and resulting stimulation, the direct or indirect manipulation of an object, and the presence of a background environment. Participants were asked to describe their impressions by rating their experiences in terms of seven possible \"scenarios\". These scenarios were carefully chosen to distinguish the degree to which the participants attributed their sensations to a distal cause. Participants rated the scenarios both before and after they were given the possibility to interrupt the stimulation with an obstacle. We were interested in several questions. Did participants extract laws of co-variation between their movements and resulting stimulation? Did they deduce the existence of a perceptual space originating from this coupling? Did they individuate objects that caused the sensations? Whatever the experimental conditions, participants were able to establish that there was a link between their movements and the resulting auditory stimulation. Detection of the existence of a coupling was more frequent than the inferences of distal space and object."
+  },
+  {
+   "rank": 21,
+   "id": "16309117",
+   "source": "MED",
+   "pmid": "16309117",
+   "pmcid": null,
+   "doi": "10.1068/p3409",
+   "first_publication_date": "2005-01-01",
+   "title": "Human spatial navigation via a visuo-tactile sensory substitution system.",
+   "authors": "Segond H, Weiss D, Sampaio E.",
+   "journal": "Perception",
+   "pub_types": [
+    "Comparative Study",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Spatial navigation within a real 3-D maze was investigated to study space perception on the sole basis of tactile information transmitted by means of a 'tactile vision substitution system' (TVSS) allowing the conversion of optical images-collected by a micro camera-into 'tactile images' via a matrix in contact with the skin. The development of such a device is based on concepts of cerebral and functional plasticity, enabling subjective reproduction of visual images from tactile data processing. Blindfolded sighted subjects had to remotely control the movements of a robot on which the TVSS camera was mounted. Once familiarised with the cues in the maze, the subjects were given two exploration sessions. Performance was analysed according to an objective point of view (exploration time, discrimination capacity), as well as a subjective one (speech). The task was successfully carried out from the very first session. As the subjects took a different path during each navigation, a gradual improvement in performance (discrimination and exploration time) was noted, generating a phenomenon of learning. Moreover, subjective analysis revealed an evolution of the spatialisation process towards distal attribution. Finally, some emotional expressions seemed to reflect the genesis of 'qualia' (emotional qualities of stimulation)."
+  },
+  {
+   "rank": 22,
+   "id": "7535489",
+   "source": "MED",
+   "pmid": "7535489",
+   "pmcid": null,
+   "doi": "10.1016/0166-2236(95)93948-w",
+   "first_publication_date": "1995-01-01",
+   "title": "Compensatory plasticity and sensory substitution in the cerebral cortex.",
+   "authors": "Rauschecker JP.",
+   "journal": "Trends in neurosciences",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Cats deprived visually from birth show few overt impairments in their natural behavior. Therefore, they seem well suited as an animal model for the study of compensatory plasticity after early vision loss. It can be demonstrated that binocularly deprived cats show improved abilities of auditory localization, and at least equal tactile behavior compared to normal controls. Within the anterior ectosylvian cortex of binocularly deprived cats, where different sensory modalities come together, the anterior ectosylvian visual area is completely taken over by auditory and somatosensory inputs. Furthermore, the auditory spatial tuning of single units in this cortical region is sharpened significantly as a result of visual deprivation. Somatosensory compensation for early loss of vision can be demonstrated by a hypertrophy of the facial vibrissae, and a corresponding expansion of their central representation in the somatosensory cortex of binocularly deprived animals. The compensatory changes in the cortex can be explained by a reorganization of sensory representations under the guidance of sensorimotor feedback rather than by instruction through an extraneous 'supervisory' signal. These processes might form the neural basis of sensory substitution in blind humans."
+  },
+  {
+   "rank": 23,
+   "id": "1741108",
+   "source": "MED",
+   "pmid": "1741108",
+   "pmcid": null,
+   "doi": "10.1097/00006324-199201000-00002",
+   "first_publication_date": "1992-01-01",
+   "title": "Inherent problems of attempts to apply sonar and vibrotactile sensory aid technology to the perceptual needs of the blind.",
+   "authors": "Easton RD.",
+   "journal": "Optometry and vision science : official publication of the American Academy of Optometry",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "A program of research dealing with two types of sensory aids for the blind--sonar and vibrotactile--is described. Rather than immediately assessing the aids in the mobility context, which has customarily been the case, the aids' capabilities are considered in terms of the major functions of vision, that is, the exteroceptive perception of objects, surfaces, and events of the environment, and the proprioceptive perception of the self, especially the self in relation to the environment. Although sonar aids function very well for localizing objects and for providing acoustic flow specifying self-movement, they do not provide high acuity pattern and shape information due to the long wavelength of ultrasound relative to light. This limitation is considered specifically with respect to the visual accomplishment of recovery of three-dimensional structure/motion from dynamic two-dimensional images. Vibrotactile sensory aids using optical imaging can deliver detailed pattern information to the skin and thus permit assessment of the extent to which a nonvisual system can mediate the recovery of structure problem. However, in even moderately cluttered or complicated environments the skin proves unable to resolve the amount of stimulation it receives vibrotactually. The limitations of sonar and vibrotactile sensory aids are discussed with respect to future sensory substitution efforts as well as their implications for understanding differences and similarities among the senses."
+  }
+ ]
+}

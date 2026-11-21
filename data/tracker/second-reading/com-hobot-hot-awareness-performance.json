@@ -1,0 +1,31 @@
+{
+  "packet_id": "com-hobot-hot-awareness-performance",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "r8kBa63cC_3bm9cP-MXkmQI",
+  "finish_reason": "STOP",
+  "answer_text": "{\"verdict\": \"before\", \"reason\": \"Proponents of higher-order theories stated this commitment in a January 2019 preprint by Brown, Lau, and LeDoux and a March 2020 paper by Fleming, years before the unregistered study was submitted in November 2022 and published online in February 2023. Brown and colleagues wrote that higher-order states determine whether a perceptual process is consciously experienced independently of the first-order process itself. Fleming explicitly predicted that awareness reports, but not first-order discrimination performance, depend on higher-order states, fixing the predicted dissociation before the study could have been known.\", \"unsure\": false, \"unsure_why\": \"\"}",
+  "usage": {
+    "promptTokenCount": 1651,
+    "candidatesTokenCount": 153,
+    "totalTokenCount": 4146,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1651
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 153
+      }
+    ],
+    "thoughtsTokenCount": 2342,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.028252,
+  "seconds": 64.7,
+  "called_on": "2026-11-21 08:42:23 PST"
+}

@@ -222,3 +222,573 @@ separates = true
 separates_from = ["rpt"]
 reason = "The readers split on whether it could fail; John: not counted. Separation stays as settled by rule C."
 open_part = ""
+
+
+# ------------------------------------------- rule C as amended (2026-11-21)
+# John, 2026-11-21, "Yes, flip it" (relayed by the master session): a prediction separates a
+# theory from a rival unless a rival's own opened source predicts the same thing. Silence means
+# the prediction is the theory's own; a reader's own knowledge still never counts.
+# How it was applied (the stage 3 session's reading, stated in the kickoff proposal): a
+# separation already resting on a rival's contrary passage stands; a prediction stops
+# separating only where a rival's own source predicts the same and none predicts differently.
+# Re-applied to every testability judgement on all ten entries. Rows that change are below,
+# each settled by this rule (rule "C2"); they replace any earlier rule-C entry for the same row.
+# Rows that do not change: every row already separating on a rival's contrary passage; the ten
+# rows where a rival's own source predicts the same (iit-phi-states, rpt-ff-unseen,
+# rpt-feedback-needed, rpt-unattended-local, rpt-attention-independent,
+# seth-interoceptive-ownership, ast-covary, ast-control, sm-change-blindness, sm-inattentional;
+# see `shares_with` on each prediction); and rows that cannot fail, whose separation scores
+# nothing either way.
+
+[[ruling]]
+judgement = "tst-gwt-wm-transform"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-iit-agnosia"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-iit-connections"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-hot-awareness-performance"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-seth-expectation-speeds-access"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-seth-presence-match"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-seth-low-interoception-more-illusion"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-seth-interoceptive-suppression"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-seth-feeling-from-prediction"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-ast-claims"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-ast-schema-control"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-ast-tpj"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-ast-domain"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-sm-colour-contingent"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-sm-inversion"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-sm-active-control"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-sm-substitution"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-mt-coherence"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-mt-entangle"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-synaptic-cyto"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-mt-vibration"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-dp-collapse"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-mass-time"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-coherence-time"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-orch-anaesthetic-mt"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-dam-insula"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-dam-nonneural"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+[[ruling]]
+judgement = "tst-dam-nss"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers."
+
+# The two Sentient Horizons rows (ruling 7b: Gemini's reading is the first of record). The
+# readings are left exactly as they were; the rule's effect is recorded here, separately,
+# and the score script applies it over them. Both had been settled "does not separate" by
+# the original rule C (the rivals were silent); under the amended rule they separate.
+
+[[ruling]]
+judgement = "tst-sh-split-novel"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+sentient_horizons_row = true
+replaces_rule_c_entry = true
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers. Gemini's first reading of record (separates: no, the rivals being silent) is unchanged; this is the amended rule's effect, recorded apart from it."
+
+[[ruling]]
+judgement = "tst-sh-nosplit-flexible"
+rule = "C2"
+settles = "separation"
+separates = true
+separates_from = []
+sentient_horizons_row = true
+replaces_rule_c_entry = true
+reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers. Gemini's first reading of record (separates: no, the rivals being silent) is unchanged; this is the amended rule's effect, recorded apart from it."
+
+
+# ------------------------------------------- own-lab dating (2026-11-21)
+# John, 2026-11-21, "Yes, own-lab dating" (relayed by the master session): for a study run by
+# the theory's own supporters, "could have known the result" means when their lab had the
+# data. The prediction must be on record before data collection, shown by a registration or
+# the paper's methods dates, and before any earlier paper in which the same lab published that
+# result; if those dates are unclear the study is not counted (rule 3). Applied after the
+# stage 3 Gemini run, to every dating row whose study lists the theory in `camps`. Both
+# readers' readings stay as they were; the ruling is recorded beside them. Bellet 2022 (global
+# workspace theory's camp) was already settled "unclear" by John's ruling of 2026-11-20 and is
+# unchanged. Damasio and Tranel's patient study was already "not-before" by both readings.
+
+[[ruling]]
+judgement = "com-suzuki-seth-low-interoception-more-illusion"
+rule = "own-lab dating (John, 2026-11-21)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Run by the authors of the 2012 model (Seth's group). The paper gives no data-collection dates (received 2013-05-22) and no registration, so it is not shown that the prediction (2012-01-10) was on record before the lab had the data."
+open_part = ""
+
+[[ruling]]
+judgement = "com-suzuki-seth-interoceptive-ownership"
+rule = "own-lab dating (John, 2026-11-21)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Run by Seth's group. No data-collection dates or registration; and the specific prediction is first written in the study itself. Unclear on both counts."
+open_part = ""
+
+[[ruling]]
+judgement = "com-wilterson-tpj-ast-control"
+rule = "own-lab dating (John, 2026-11-21)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Run by Graziano's lab, the theory's proponents. No scanning dates or registration (received 2020-12-30), so it is not shown that the 2015 prediction preceded the data; the same lab had published the behavioural result already in 2020 (Wilterson and colleagues, Progress in Neurobiology), the earlier-published case the ruling names."
+open_part = ""
+
+[[ruling]]
+judgement = "com-wilterson-tpj-ast-tpj"
+rule = "own-lab dating (John, 2026-11-21)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Run by Graziano's lab. No scanning dates or registration, and the specific test is first written in the study itself."
+open_part = ""
+
+[[ruling]]
+judgement = "com-wilterson-agent-ast-schema-control"
+rule = "own-lab dating (John, 2026-11-21)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Run by Graziano's lab (a simulation). No dates for the runs and no registration (received 2021-02-05), so it is not shown that the 2015 statement preceded them."
+open_part = ""
+
+
+# ------------------------------------------- stage 3 disagreements settled by ruled rules
+# 2026-11-21, at the request of the second master session: of the 18 disagreements left after
+# the stage 3 second reading, those that a rule John has already ruled covers are settled here,
+# by that rule as written. The readings stay as they are. What no ruled rule covers is left
+# open for John (see the stage 3 report, section 000).
+
+[[ruling]]
+judgement = "out-dellert-hot-pfc-involved"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split mixed (Claude) and against (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "out-hobot-hot-pfc-disrupt"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split mixed (Claude) and against (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "out-li-orch-anaesthetic-mt"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split mixed (Claude) and for (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-dellert-rpt-no-report-sensory"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split unclear (Claude) and not-before (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-filimonov2022-rpt-other-senses"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split not-before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-filimonov2024-rpt-other-senses"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split not-before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-hobot-hot-pfc-disrupt"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-martin-hot-pfc-disrupt"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-khan-orch-anaesthetic-mt"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-li-orch-anaesthetic-mt"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "tst-rpt-attention-independent"
+rule = "C2 as read by John (2026-11-21, 'Yes, that reading')"
+settles = "separation"
+separates = false
+separates_from = []
+reason = "Both readers say a rival's own source predicts the same (Gemini: 'a rival predicts the same: true'), and neither names a rival's source predicting something different. Gemini then counted separation from the silent rivals, the per-rival reading John declined. His confirmed reading: 'a prediction stops separating only where a rival's own opened source predicts the same and no rival's source predicts something different.' So it does not separate. Both readers agree it could fail."
+
+[[ruling]]
+judgement = "tst-seth-interoceptive-ownership"
+rule = "C2 as read by John (2026-11-21, 'Yes, that reading')"
+settles = "separation"
+separates = false
+separates_from = []
+reason = "Both readers say a rival's own source predicts the same (Gemini: 'a rival predicts the same: true'), and neither names a rival's source predicting something different. Gemini then counted separation from the silent rivals, the per-rival reading John declined. His confirmed reading: 'a prediction stops separating only where a rival's own opened source predicts the same and no rival's source predicts something different.' So it does not separate. Both readers agree it could fail."
+
+[[ruling]]
+judgement = "tst-sm-inattentional"
+rule = "C2 as read by John (2026-11-21, 'Yes, that reading')"
+settles = "separation"
+separates = false
+separates_from = []
+reason = "Both readers say a rival's own source predicts the same (Gemini: 'a rival predicts the same: true'), and neither names a rival's source predicting something different. Gemini then counted separation from the silent rivals, the per-rival reading John declined. His confirmed reading: 'a prediction stops separating only where a rival's own opened source predicts the same and no rival's source predicts something different.' So it does not separate. Both readers agree it could fail."
+
+[[ruling]]
+judgement = "tst-dam-ai"
+rule = "ranking rule 2 and the testability score (John, 2026-11-20, 'Yes, must separate')"
+settles = "could_fail"
+could_fail = false
+separates = false
+separates_from = []
+reason = "Both readers agree the prediction cannot fail. The ruled test counts a prediction only if it could fail and separates, so it scores nothing whichever way separation goes; the split on separation between Gemini (separates) and Claude (does not) changes no number and is not decided here. Recorded as separates = false only so the row reads as settled."
+
+[[ruling]]
+judgement = "tst-dam-no-nervous-system"
+rule = "ranking rule 2 and the testability score (John, 2026-11-20, 'Yes, must separate')"
+settles = "could_fail"
+could_fail = false
+separates = false
+separates_from = []
+reason = "Both readers agree the prediction cannot fail. The ruled test counts a prediction only if it could fail and separates, so it scores nothing whichever way separation goes; the split on separation between Gemini (separates) and Claude (does not) changes no number and is not decided here. Recorded as separates = false only so the row reads as settled."
+
+[[ruling]]
+judgement = "tst-sh-central"
+rule = "ranking rule 2 and the testability score (John, 2026-11-20, 'Yes, must separate')"
+settles = "could_fail"
+could_fail = false
+separates = false
+separates_from = []
+reason = "Both readers agree the prediction cannot fail. The ruled test counts a prediction only if it could fail and separates, so it scores nothing whichever way separation goes; the split on separation between Gemini, the first reading of record on this Sentient Horizons row (separates), and Claude (does not) changes no number and is not decided here. Recorded as separates = false only so the row reads as settled."
+
+# ------------------------------------------- John's settlement of the last two stage 3 rows
+# John, 2026-11-21, choosing "Doesn't separate (Recommended)" on each (relayed by the second
+# master session). Both readers agree the prediction could fail.
+
+[[ruling]]
+judgement = "tst-iit-phi-states"
+rule = "John, 2026-11-21, \"Doesn't separate (Recommended)\""
+settles = "separation"
+separates = false
+separates_from = []
+reason = "Readers split (Claude: does not separate; Gemini: separates). John: does not separate. Global workspace theory's proponents (mashour-2020) also predict disruption in anaesthesia, sleep and disorders of consciousness, the same observable result. Integrated information theory's testability stays 60."
+
+[[ruling]]
+judgement = "tst-rpt-ff-unseen"
+rule = "John, 2026-11-21, \"Doesn't separate (Recommended)\""
+settles = "separation"
+separates = false
+separates_from = []
+reason = "Readers split (Claude: does not separate; Gemini: separates). John: does not separate. Global workspace theory's proponents (mashour-2020) also hold that unseen stimuli spread without becoming conscious. Recurrent processing theory's testability stays 42, below the bar."
+
+
+# ------------------------------------------- the site's own account as a rival (2026-11-21)
+# John, 2026-11-21, "No, it can't (Recommended)": the Sentient Horizons account never counts as the
+# rival that sets another theory apart. The one row it affected:
+
+[[ruling]]
+judgement = "tst-dam-feeling-required"
+rule = "John, 2026-11-21, \"No, it can't (Recommended)\""
+settles = "separation"
+separates = true
+separates_from = []
+reason = "The Sentient Horizons account no longer counts as the rival that sets it apart. No other rival's opened source predicts the same, so under the amended rule C it still separates, as the theory's own prediction. No score changes."
+
+
+# ------------------------------------------- per-prediction search studies: disagreements settled by ruled rules
+# 2026-11-21, after the second reading of the per-prediction search studies (run stage3b). Every
+# disagreement was covered by a rule John has already ruled; the readings stay as they are.
+
+[[ruling]]
+judgement = "out-kumar-2026-ast-graded"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split for (Claude) and mixed (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "out-mukherjee-2024-dam-insula"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split mixed (Claude) and against (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "out-yacawych-2026-dam-nonneural"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split for (Claude) and mixed (Gemini). Rule E (John, 2026-11-20, 'Yes, as you lean'): 'When the two readers of an outcome split between mixed and for or against, the outcome is recorded as mixed.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-kumar-2026-ast-graded"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-mukherjee-2024-dam-insula"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-wang-2022-ast-control"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+[[ruling]]
+judgement = "com-yacawych-2026-dam-nonneural"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split before (Claude) and unclear (Gemini) on whether the earlier passage commits the theory to this test. John, 2026-11-20, 'Yes, as you lean': 'when the two readers split on whether an earlier passage committed the theory to the test, the commitment is unclear, so the study is not counted for that prediction.'"
+open_part = ""
+
+
+# ------------------------------------------- the XENONnT follow-up (2026-11-21)
+
+[[ruling]]
+judgement = "com-xenonnt-orch-dp-collapse"
+rule = "John, 2026-11-21, \"Re-ask both readers, cap $1 (Recommended)\""
+settles = "commitment"
+verdict = "superseded"
+superseded_by = "com2-xenonnt-orch-dp-collapse"
+reason = "Put again to both readers as one narrow question: is the model the study tests the one the theory's latest full statement states? The new judgement decides."
+open_part = ""
+
+[[ruling]]
+judgement = "com2-xenonnt-orch-dp-collapse"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20), as John's terms for this question say"
+settles = "commitment"
+verdict = "unclear"
+reason = "Readers split: Claude yes (the same Diósi-Penrose model, the cutoff being the uncertainty the theory itself names; unsure), Gemini unclear (the passages do not show whether the version and parameter range tested are the theory's). John's terms: a split or an unclear answer means unclear, so the study is not counted for the prediction on gravity-driven collapse."
+open_part = ""

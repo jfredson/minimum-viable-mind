@@ -13,6 +13,7 @@ import Ranking from '../components/Ranking.astro';
 import HeadCard from '../components/HeadCard.astro';
 import LatestNews from '../components/LatestNews.astro';
 import N from '../components/N.astro';
+import WaitingLine from '../components/WaitingLine.astro';
 import { tk, word } from '../lib/tracker';
 ---
 
@@ -29,9 +30,7 @@ import { tk, word } from '../lib/tracker';
       <div class="aside-new">
         <p class="newcomer">Each theory is scored three ways, by rules written down before any theory was scored: how well published studies back it, how clearly it can be tested (whether it is stated so that a study could prove it wrong), and how much of it is still untested. One of the theories is this site's own, the account argued on <a href="https://sentient-horizons.com/positions/">Sentient Horizons</a>; it is scored by the same rules, and an outside reader makes the first judgement on every one of its rows.</p>
         <p class="strip">
-          {tk.headline.last_reading
-            ? <>Last checked <N v={tk.headline.last_reading} />. <a href="/about/#reading">See the week's reading</a>.</>
-            : <>No weekly reading yet: the predictions have not yet been read against new papers. The scores were last worked out on <N v={tk.headline.worked_out_on} t={tk.headline.worked_out_on_long} />. <a href="/about/#reading">About the weekly reading</a>.</>}
+          <WaitingLine /> The scores were last worked out on <N v={tk.headline.worked_out_on} t={tk.headline.worked_out_on_long} />. <a href="/about/#reading">About the weekly reading</a>.
         </p>
         <div class="ctas">
           <a class="btn" href="/about/#why">How the tests came out</a>

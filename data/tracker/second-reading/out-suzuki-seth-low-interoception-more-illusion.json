@@ -1,0 +1,31 @@
+{
+  "packet_id": "out-suzuki-seth-low-interoception-more-illusion",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "9cwBa_qnKJjesNYPkNf24QE",
+  "finish_reason": "STOP",
+  "answer_text": "{\"verdict\": \"against\", \"reason\": \"Relying on standard rubber-hand-illusion abbreviations not defined in the excerpts (IS for interoceptive sensitivity, PDD for proprioceptive drift difference, and EBO for experience of body ownership), the study's primary test in the tactile condition found a significant positive correlation between IS and PDD (r = 0.509, p = 0.022). This directly matches the test-against criterion, as higher heartbeat accuracy went with greater illusion-related drift rather than less. When the authors repeated the IS measurement using an earlier study's task, there was no significant positive trend, and neither task showed the predicted negative correlation.\", \"unsure\": true, \"unsure_why\": \"Knowing whether the 'tactile' condition was pure sight-and-touch stroking or also included visual cardiac pulsing, seeing the unreported ownership (EBO) correlations, and seeing the full supplementary results for the second heartbeat task—where the positive trend disappeared—could change my answer to mixed.\"}",
+  "usage": {
+    "promptTokenCount": 1976,
+    "candidatesTokenCount": 221,
+    "totalTokenCount": 6836,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1976
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 221
+      }
+    ],
+    "thoughtsTokenCount": 4639,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.052552,
+  "seconds": 80.5,
+  "called_on": "2026-11-21 08:56:38 PST"
+}

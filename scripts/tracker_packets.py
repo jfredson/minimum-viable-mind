@@ -16,6 +16,8 @@ cost estimate; calling the second reader is a separate step, behind John's go.
 Usage:
     python3 scripts/tracker_packets.py                 # write packets, print estimate
     python3 scripts/tracker_packets.py --check-blind   # fail if any packet leaks a reading
+    python3 scripts/tracker_packets.py --pending       # stage 3: only judgements the second
+                                                       # reader has not read; keeps earlier packets
 """
 from __future__ import annotations
 
@@ -82,6 +84,25 @@ COMMITMENT_RULE_D = (
     "\"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}."
 )
 
+# Testability packets built after John amended rule C (2026-11-21, "Yes, flip it") ask the new
+# question. The pilot's 21 testability packets keep the wording they were sent with.
+TESTABILITY_RULE_C2 = (
+    "You are one of two independent readers for a public record that scores theories of "
+    "consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a "
+    "result, stated or plainly implied in the wording, that would count against it, and that a "
+    "study could actually observe? If its supporters wrote that a null result should not count "
+    "against it, or it could fail only in part, answer could_fail \"partly\". (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the "
+    "proponents of a rival theory on the list, as given in the material, predict the same "
+    "observable result? The rule: a prediction separates the theory from its rivals UNLESS a "
+    "rival's own published source predicts the same thing. A rival's silence means the prediction "
+    "is the theory's own, so it separates. Your own knowledge of a rival does not count either way; "
+    "judge only from the rival passages given. Where a rival's passage predicts something different, "
+    "the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false|\"partly\", "
+    "\"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, "
+    "\"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, "
+    "\"unsure_why\": \"...\"}."
+)
+
 FORBIDDEN_KEYS = {"replaces", "reading", "verdict", "reason", "unsure", "unsure_why", "could_fail", "separates", "note", "judgement"}
 
 
@@ -90,7 +111,14 @@ def load(name):
         return tomllib.load(f)
 
 
-def build():
+def gemini_read():
+    p = DATA / "readings-gemini.toml"
+    if not p.exists():
+        return set()
+    return {r["judgement"] for r in load("readings-gemini.toml").get("reading", [])}
+
+
+def build(pending=False):
     th = load("theories.toml")
     preds = {p["id"]: p for p in load("predictions.toml")["prediction"]}
     studies = {s["id"]: s for s in load("studies.toml")["study"]}
@@ -105,15 +133,26 @@ def build():
         s = sources[sid]
         return {"citation": s["citation"], "url": s.get("url", ""), "date": s.get("published", "")}
 
+    done = gemini_read() if pending else set()
     packets = []
     for j in judgements:
+        # Since rule C was amended (2026-11-21), every testability row is read again under the new
+        # question, the pilot's included; those packets are written as <id>.c2.json so the packets
+        # the pilot sent stay as they were.
+        resend = pending and j["kind"] == "testability" and j["id"] in done
+        if j["id"] in done and not resend:
+            continue
         p = preds[j["prediction"]]
         c = claims[p["core_claim"]]
         first_reading = "gemini" if p["theory"] == "sh" else "claude"
         packet = {
             "packet_id": j["id"],
             "kind": j["kind"],
-            "instructions": COMMITMENT_RULE_D if (j["kind"] == "commitment" and j.get("replaces")) else INSTRUCTIONS[j["kind"]],
+            # Ruling D's wording for every commitment packet built after it (stage 3, --pending),
+            # and for the pilot's re-put rows; the pilot's first 14 keep the wording they were sent with.
+            "instructions": (COMMITMENT_RULE_D if (j["kind"] == "commitment" and (j.get("replaces") or pending))
+                             else TESTABILITY_RULE_C2 if (j["kind"] == "testability" and pending)
+                             else INSTRUCTIONS[j["kind"]]),
             "theory": theory_names[p["theory"]],
             "core_claim": {"quote": c["quote"], "source": cite(c["source"])},
             "prediction": {
@@ -130,6 +169,11 @@ def build():
                 {"rival": rivals[s["theory"]], "statement": s["how"], "source": cite(s["source"])}
                 for s in p.get("separates_from", [])
             ]
+            if pending:
+                packet["what_the_sources_say_rivals_predict_the_same"] = [
+                    {"rival": rivals[s["theory"]], "statement": s["how"], "source": cite(s["source"])}
+                    for s in p.get("shares_with", [])
+                ]
             packet["other_statements_of_the_prediction"] = [
                 {"passage": a["passage"], "source": cite(a["source"])} for a in p.get("also_stated", [])
             ]
@@ -147,6 +191,9 @@ def build():
             if j["kind"] == "commitment":
                 packet["dates"] = j.get("dates", {})
         packet["this_reading_is"] = "the first reading of record" if first_reading == "gemini" else "the second reading"
+        if resend:
+            packet["file_name"] = j["id"] + ".c2"
+            packet["question_version"] = "rule C as amended 2026-11-21; this row was read before under the earlier question"
         packets.append(packet)
     return packets
 
@@ -177,8 +224,10 @@ def main(argv=None):
     ap.add_argument("--check-blind", action="store_true")
     ap.add_argument("--output-tokens", type=int, default=3000,
                     help="assumed output tokens per call, thinking included (default 3000)")
+    ap.add_argument("--pending", action="store_true",
+                    help="only judgements the second reader has not read; earlier packets are kept")
     a = ap.parse_args(argv)
-    packets = build()
+    packets = build(pending=a.pending)
     jby = {j["id"]: j for j in load("judgements.toml")["judgement"]}
     bad = {p["packet_id"]: leaks(p, jby) for p in packets}
     bad = {k: v for k, v in bad.items() if v}
@@ -189,10 +238,11 @@ def main(argv=None):
         print(f"{len(packets)} packets, none leaks a reading")
         return 0
     OUT.mkdir(exist_ok=True)
-    for old in OUT.glob("*.json"):
-        old.unlink()
+    if not a.pending:
+        for old in OUT.glob("*.json"):
+            old.unlink()
     for p in packets:
-        (OUT / f"{p['packet_id']}.json").write_text(json.dumps(p, indent=2, ensure_ascii=False) + "\n")
+        (OUT / f"{p.get('file_name', p['packet_id'])}.json").write_text(json.dumps(p, indent=2, ensure_ascii=False) + "\n")
 
     # estimate: about 4 characters per token for English prose
     chars = [len(json.dumps(p, ensure_ascii=False)) for p in packets]

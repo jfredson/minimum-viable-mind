@@ -283,7 +283,18 @@ unsure = true
 unsure_why = "Early visual cortex was sparsely sampled by the intracranial electrodes (12 electrodes), which the paper names as a possible cause of the null result."
 
 # ========================================================== commitment judgements
-# Question for each, under the rule as ruled by John on 2026-11-20 ("Yes, count it";
+# THE RULE NOW (updated 2026-11-21): ruling D (John, 2026-11-20, "Yes, that test"), which
+# replaced the wording below the same day. A prediction counts for a study if the theory's
+# proponents fixed it before they could have known the study's result: before the study's
+# registration, for a study registered before its data were collected; before its earliest
+# public appearance, for any other study; before the data first appeared, for a reanalysis.
+# For a study run by the theory's own supporters, before their lab had the data, shown by a
+# registration or the paper's methods dates, and before any earlier paper in which the same
+# lab published that result (John, 2026-11-21, "Yes, own-lab dating"). Readers who split on
+# commitment make it unclear (John, 2026-11-20). The five-year convention below is dropped.
+# The pilot's first readings were made under the earlier wording, kept below for the record.
+#
+# Earlier wording: question for each, under the rule as ruled by John on 2026-11-20 ("Yes, count it";
 # kickoff section 12, rule 2.1): was this prediction fixed, by the theory's
 # proponents, in a dated record (a publication or a registration) made before the
 # study's data were collected? What decides is when the record was fixed, not when it
@@ -955,3 +966,2335 @@ verdict = "before"
 reason = "In 2019 the theory's proponents signed a registration saying every conscious experience is accompanied by prefrontal-parietal activation, and that the prediction holds regardless of the subject's task. In 2020 they said the late divergence occurs whatever the sense or paradigm, inattention included. Together these commit the theory to fronto-parietal activation for consciously heard sounds that are irrelevant to the task and not reported, and all of it predates the study's 2025 preprint."
 unsure = true
 unsure_why = "'Regardless of the subjects' task' is not quite 'with no report at all', although in the inattentional-deafness design the sounds are irrelevant to the task and not reported."
+
+# ======================================================================
+# Stage 3, Higher-order theories: drafted 2026-11-21 (first reading, one reader).
+# Judgements for higher-order theories (stage 3 draft, 2026-11-21), first reader only.
+# Shapes as in the pilot's judgements.toml. Commitment readings apply ruling D (John,
+# 2026-11-20, "Yes, that test"): a prediction counts for a study only if the theory's
+# proponents fixed it before the study's earliest public appearance (unregistered
+# study), or before the data first appeared (reanalysis). Stating and testing in the
+# same paper does not count. Separation needs a rival proponents' opened passage
+# (ruling C, "Yes, sourced only").
+# ============================================================= outcome judgements
+
+[[judgement]]
+id = "out-mei-hot-unconscious-global"
+kind = "outcome"
+prediction = "hot-unconscious-global"
+study = "mei-soto-2025"
+passages = [
+  { source = "mei-soto-2025", text = "The results showed that computer vision model representations strongly predicted brain responses in ventral visual cortex and in fronto-parietal regions to both conscious and unconscious contents." },
+  { source = "mei-soto-2025", text = "Remarkably, these observations results held even when the analysis was restricted to observers that showed null perceptual sensitivity." },
+  { source = "mei-soto-2025", text = "The involvement of fronto-parietal cortex in the representation of unconscious content, along with the significant generalization between conscious and unconscious representations, suggests that the functional role of fronto-parietal cortex in conscious perception is unlikely related to the broadcasting of information, as proposed by the global neuronal workspace model (Dehaene et al., 1998)." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "The content of pictures that people said they did not see was represented in fronto-parietal cortex as well as in visual cortex, and this held for the four people who could not discriminate the unseen pictures better than chance. That is the test wording's 'for' case: information spread widely, frontal and parietal cortex included, without being experienced."
+unsure = true
+unsure_why = "The prediction speaks of a 'relatively stable global state'; slow brain imaging (fMRI) shows the content is there but not whether it is stable or how long it lasts. The finding rests on seven people, four after the strictest cut. And the study tests whether unseen content reaches these areas, not whether it is 'broadcast' in the workspace sense."
+
+[[judgement]]
+id = "out-dellert-hot-pfc-involved"
+kind = "outcome"
+prediction = "hot-pfc-involved"
+study = "dellert-2025"
+passages = [
+  { source = "dellert-2025", text = "Comparing brain responses to the critical sounds between aware and unaware participants while controlling for correlates of sensory and postperceptual processing revealed that auditory awareness was associated with significantly increased activity in secondary auditory but not in fronto-parietal areas." },
+  { source = "dellert-2025", text = "Together, these results do not support a key role of the lateral PFC in conscious perception (Brown et al., 2019; Mashour et al., 2020; Panagiotaropoulos, 2024)." },
+  { source = "dellert-2025", text = "While the left middle and superior frontal gyrus and inferior frontal junction showed significant stimulus effects in the aware but not the unaware group, the awareness contrast did not reveal significant effects in these areas. This was because sub-threshold frontal activity occurred even in the absence of awareness, cancelling according effects out in the NCC contrast." },
+  { source = "brown-lau-ledoux-2019", text = "But it is a mistake to generalize from these null findings, because studies using more sensitive methods showed clear involvement of higher-order mechanisms, even when the subjects were not required to report about the stimuli [71-73]." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "With no report and the sounds irrelevant to the task, awareness went with more activity in auditory cortex and no significant awareness effect in frontal cortex, which leans against the prediction. But the study measured the overall level of activity, comparing two groups of people; it did not look for information about the sounds in prefrontal cortex. The test wording, following the proponents' own 2019 statement that a plain activation null is not enough, asks for a method shown to find prefrontal effects, so the 'against' case is not fully met."
+unsure = true
+unsure_why = "Frontal areas did respond to the sounds in the aware group, which shows the method could see frontal activity, and a reader may take that as the sensitivity the test asks for and read 'against'. Reading 'mixed' leans on wording the proponents wrote to protect the theory from null results, which is the kind of protection the tracker is meant to be wary of."
+
+[[judgement]]
+id = "out-martin-hot-pfc-disrupt"
+kind = "outcome"
+prediction = "hot-pfc-disrupt"
+study = "martin-2023"
+passages = [
+  { source = "martin-2023", text = "We found strong null findings for the replicated task, suggesting that cTBS affected neither visibility ratings nor visual metacognition. Nevertheless, we also observed that the implementation of illusory Kanizsa figures disrupted metacognitive ability, specifically when cTBS was applied to prefrontal but not parietal areas." },
+  { source = "martin-2023", text = "The overall ratings of visibility did not change: neither due to the nature of the task being performed (F(1, 20) = 0.05, p = 0.83, BF10 = 0.31), nor due to the cTBS administration site (F(2, 40) = 0.77, p = 0.47, BF10 = 0.23)." },
+  { source = "martin-2023", text = "After the removal of this outlier, it was observed that cTBS administered over the DLPFC significantly reduced metacognitive efficiencies when compared to the S1 (t(19) = 1.89, p < 0.05, Cohen’s d = 0.42, BF10 = 1.96)." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "With performance held steady, magnetic stimulation over prefrontal cortex did not change how visible people rated the shapes, and the statistics favoured no effect; for real shapes it did not change metacognition either. For illusory shapes it did lower metacognitive efficiency, but only after one outlier was removed and with weak evidence. Part of the test's 'against' case holds and a weak part of its 'for' case holds."
+unsure = true
+unsure_why = "A reader who takes visibility ratings as the measure of awareness, as the prediction's first half does, would read 'against': the clean result is a null. A reader who weights the illusory-shape effect would read 'mixed' or 'for'. Fleming 2020 said beforehand that nulls should not surprise, which the rule 'a failure stands' does not excuse."
+
+[[judgement]]
+id = "out-hobot-hot-pfc-disrupt"
+kind = "outcome"
+prediction = "hot-pfc-disrupt"
+study = "hobot-2023"
+passages = [
+  { source = "hobot-2023", text = "Compared with sham TBS, we observed an increase in participants’ ability to judge their perception adequately (metacognitive efficiency) following cTBS but not iTBS. The effect was accompanied by lower visual awareness ratings in incorrect responses. No significant differences in the identification task performance were observed." },
+  { source = "hobot-2023", text = "Summing up, our study indicates that the left aMPFC is involved in processes related to metacognitive efficiency, but its involvement in the overall level of reported visual awareness remains inconclusive." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "Disrupting a front-middle part of prefrontal cortex changed awareness judgements while identification performance did not change significantly, which fits the idea that prefrontal cortex shapes awareness. But the change went the other way from the prediction: metacognition got better, and awareness ratings fell only on wrong answers. The authors call the effect on overall awareness inconclusive."
+unsure = true
+unsure_why = "The test's 'for' case includes 'awareness ratings fall', and ratings did fall on incorrect trials, so a reader could read 'for'. The prediction says disruption 'impairs' awareness; an improvement in metacognition is a change but not an impairment, so a reader could also read it as not bearing on the prediction at all."
+
+[[judgement]]
+id = "out-martin-hot-awareness-performance"
+kind = "outcome"
+prediction = "hot-awareness-performance"
+study = "martin-2023"
+passages = [
+  { source = "martin-2023", text = "Even though all measures of objective task performance for the two tasks were equivalent, Kanizsa illusory contours showed a reduction in metacognitive efficiency." },
+  { source = "martin-2023", text = "After the removal of this outlier, it was observed that cTBS administered over the DLPFC significantly reduced metacognitive efficiencies when compared to the S1 (t(19) = 1.89, p < 0.05, Cohen’s d = 0.42, BF10 = 1.96)." },
+  { source = "martin-2023", text = "The overall ratings of visibility did not change: neither due to the nature of the task being performed (F(1, 20) = 0.05, p = 0.83, BF10 = 0.31), nor due to the cTBS administration site (F(2, 40) = 0.77, p = 0.47, BF10 = 0.23)." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "Performance was held equal by adjusting difficulty, and how well visibility ratings tracked accuracy still differed: lower for illusory shapes than real ones, and lower after prefrontal stimulation for illusory shapes. That is the test wording's 'for' case. The overall level of visibility ratings did not differ."
+unsure = true
+unsure_why = "Both differences rest on weak evidence (Bayes factors below 3, one after removing an outlier). Whether a change in how well ratings track accuracy is a change in awareness, rather than in judging it, is exactly what the higher-order statement says not to assume ('most proponents of HOT do not treat metacognition and consciousness as conceptually equivalent')."
+
+[[judgement]]
+id = "out-hobot-hot-awareness-performance"
+kind = "outcome"
+prediction = "hot-awareness-performance"
+study = "hobot-2023"
+passages = [
+  { source = "hobot-2023", text = "Compared with sham TBS, we observed an increase in participants’ ability to judge their perception adequately (metacognitive efficiency) following cTBS but not iTBS. The effect was accompanied by lower visual awareness ratings in incorrect responses. No significant differences in the identification task performance were observed." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "Identification performance did not differ, while awareness ratings on wrong answers fell and metacognitive efficiency rose. Awareness judgements changed with performance unchanged, which is the test wording's 'for' case."
+unsure = true
+unsure_why = "'No significant difference' in performance is not the same as performance shown to be equal; the staircase kept difficulty adjusted, which helps. As with the Martin study, a change in metacognition may be a change in judging awareness rather than in awareness itself."
+
+# ========================================================== commitment judgements
+
+[[judgement]]
+id = "com-mei-hot-unconscious-global"
+kind = "commitment"
+prediction = "hot-unconscious-global"
+study = "mei-soto-2025"
+passages = [
+  { source = "brown-lau-ledoux-2019", text = "Therefore, a percept can reach a relatively stable global state and remain nonconscious, which accounts for potentially powerful forms of unconscious perception" },
+  { source = "mei-soto-2025", text = "Here we re-analysed data from a high-precision fMRI study coupled with representational similarity analysis based on convolutional neural network models to provide a detailed information-based approach to neural representations of both unconscious and conscious perceptual content." },
+]
+dates = { statement = "2019-01-07 (brown-lau-ledoux-2019, preprint)", data_first_appeared = "2021-01-14 (mei-santana-soto-2021, preprint of the original study)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The study reanalyses data that first appeared in January 2021. The proponents had written in January 2019 that a percept can reach a stable, widespread state and still be unconscious, two years earlier."
+unsure = true
+unsure_why = "Whether 'a relatively stable global state' commits the theory to unseen content being decodable in fronto-parietal cortex by fMRI is a reading; the passage names no brain area."
+
+[[judgement]]
+id = "com-dellert-hot-pfc-involved"
+kind = "commitment"
+prediction = "hot-pfc-involved"
+study = "dellert-2025"
+passages = [
+  { source = "ledoux-brown-2017", text = "our conclusion is that introspectively accessed states, which we view as phenomenally conscious experiences, are best described in terms of HORs that depend on the GNC, cortical circuits involving regions of the lateral and medial prefrontal cortex, posterior parietal cortex, and insular cortex (Fig. 2)." },
+  { source = "ledoux-brown-2017", text = "We argue that conscious experiences, regardless of their content, arise from one system in the brain." },
+  { source = "brown-lau-ledoux-2019", text = "But it is a mistake to generalize from these null findings, because studies using more sensitive methods showed clear involvement of higher-order mechanisms, even when the subjects were not required to report about the stimuli [71-73]." },
+]
+dates = { statement = "2017-02-15 (ledoux-brown-2017); 2019-01-07 (brown-lau-ledoux-2019)", study_first_appeared = "2025-05-21 (preprint; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "In 2017 the proponents said experiences of any kind depend on networks including lateral and medial prefrontal cortex; in 2019 they said higher-order involvement shows up even when nothing is reported. Both are years before the study's 2025 preprint, which was not registered."
+unsure = false
+
+[[judgement]]
+id = "com-bandara-hot-pfc-involved"
+kind = "commitment"
+prediction = "hot-pfc-involved"
+study = "bandara-2025"
+passages = [
+  { source = "bandara-2025", text = "All data for this study were kindly provided to us from the work by Shafto and Pitts (2015)." },
+  { source = "ledoux-brown-2017", text = "our conclusion is that introspectively accessed states, which we view as phenomenally conscious experiences, are best described in terms of HORs that depend on the GNC, cortical circuits involving regions of the lateral and medial prefrontal cortex, posterior parietal cortex, and insular cortex (Fig. 2)." },
+]
+dates = { statement = "2017-02-15 (earliest proponents' statement opened)", data_first_appeared = "2015 (Shafto and Pitts, as cited by bandara-2025)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "not-before"
+reason = "The study reanalyses data published in 2015. The earliest higher-order statement opened in this task is from 2017, after the data were public, so the prediction was not fixed before the result could be known."
+unsure = true
+unsure_why = "Lau and Rosenthal 2011, a proponents' review that by its title argues for prefrontal involvement, was not opened (paywalled). If it states this prediction, the verdict would be 'before' (verify entry v-lau-rosenthal-2011)."
+
+[[judgement]]
+id = "com-martin-hot-pfc-disrupt"
+kind = "commitment"
+prediction = "hot-pfc-disrupt"
+study = "martin-2023"
+passages = [
+  { source = "ledoux-brown-2017", text = "Although the imaging studies in healthy people and blindsight patients suggest correlates of consciousness, other studies show that disruption of activity in GNC areas, especially in the prefrontal or parietal cortex, impairs conscious awareness of visual stimuli (78–80)." },
+  { source = "brown-lau-ledoux-2019", text = "In part this was due to an empirical observation: when neural activity in prefrontal cortex, which is known to be important for conscious perception [46], is manipulated with transcranial magnetic stimulation (TMS), explicit metacognition is also affected [47-49]." },
+]
+dates = { statement = "2017-02-15; 2019-01-07; 2020-03-11 (fleming-2020, performance unaffected)", study_first_appeared = "2022-10-28 (preprint; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents said in 2017 that disrupting prefrontal or parietal cortex impairs awareness of visual stimuli, and in 2019 that magnetic stimulation of prefrontal cortex affects metacognition. The study's preprint appeared in October 2022."
+unsure = false
+
+[[judgement]]
+id = "com-hobot-hot-pfc-disrupt"
+kind = "commitment"
+prediction = "hot-pfc-disrupt"
+study = "hobot-2023"
+passages = [
+  { source = "ledoux-brown-2017", text = "Although the imaging studies in healthy people and blindsight patients suggest correlates of consciousness, other studies show that disruption of activity in GNC areas, especially in the prefrontal or parietal cortex, impairs conscious awareness of visual stimuli (78–80)." },
+  { source = "brown-lau-ledoux-2019", text = "In part this was due to an empirical observation: when neural activity in prefrontal cortex, which is known to be important for conscious perception [46], is manipulated with transcranial magnetic stimulation (TMS), explicit metacognition is also affected [47-49]." },
+]
+dates = { statement = "2017-02-15; 2019-01-07; 2020-03-11", study_first_appeared = "2023-02-27 (publication; no preprint found; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "Stated by the proponents in 2017 and 2019, years before the study appeared in February 2023."
+unsure = true
+unsure_why = "The 2017 statement names prefrontal cortex in general; this study disrupted one front-middle patch (the left anterior medial prefrontal cortex). Whether the statement commits the theory to an effect from that patch is a reading; the 2019 statement (Box 4) stresses that prefrontal cortex has many sub-regions with different roles."
+
+[[judgement]]
+id = "com-martin-hot-awareness-performance"
+kind = "commitment"
+prediction = "hot-awareness-performance"
+study = "martin-2023"
+passages = [
+  { source = "brown-lau-ledoux-2019", text = "According to HOT, on the other hand, a mere difference in the higher-order state determines whether a nonconscious perceptual process is consciously experienced or not, independent of the nature of the first-order process itself" },
+  { source = "fleming-2020", text = "Second, the model predicts that awareness reports (but not discrimination performance, which relies on lower-order inference on W) will depend on higher-order states." },
+]
+dates = { statement = "2019-01-07; 2020-03-11", study_first_appeared = "2022-10-28 (preprint; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "Both statements, that awareness depends on the higher-order state and not on first-order performance, predate the 2022 preprint."
+unsure = false
+
+[[judgement]]
+id = "com-hobot-hot-awareness-performance"
+kind = "commitment"
+prediction = "hot-awareness-performance"
+study = "hobot-2023"
+passages = [
+  { source = "brown-lau-ledoux-2019", text = "According to HOT, on the other hand, a mere difference in the higher-order state determines whether a nonconscious perceptual process is consciously experienced or not, independent of the nature of the first-order process itself" },
+  { source = "fleming-2020", text = "Second, the model predicts that awareness reports (but not discrimination performance, which relies on lower-order inference on W) will depend on higher-order states." },
+]
+dates = { statement = "2019-01-07; 2020-03-11", study_first_appeared = "2023-02-27 (publication; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "Both statements predate the study's appearance in February 2023."
+unsure = false
+
+# ========================================================= testability judgements
+
+[[judgement]]
+id = "tst-hot-first-order-insufficient"
+kind = "testability"
+prediction = "hot-first-order-insufficient"
+passages = [
+  { source = "lamme-2018", text = "2. Recurrent processing between visual areas suffices for conscious visual experience to arise." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["rpt"]
+reason = "If feedback activity between sensory areas always came with experience, and nothing else were needed to predict it, the prediction would fail. Recurrent processing theory's proponent says exactly that such feedback is enough, so the two predict different things."
+unsure = true
+unsure_why = "The proponents' own passages are about sensory activity being unconscious in general; the 'feedback' part comes mostly from the rival's statement. Global workspace theory would also predict sensory activity without experience, so the prediction does not separate the family from it."
+
+[[judgement]]
+id = "tst-hot-unconscious-global"
+kind = "testability"
+prediction = "hot-unconscious-global"
+passages = [
+  { source = "mashour-2020", text = "Broadcasting implies that the information in the workspace becomes available to many local processors, and it is the wide accessibility of this information that is hypothesized to constitute conscious experience." },
+  { source = "mashour-2020", text = "The difference, however, is that subliminal stimuli do not evoke a sudden ignition but rather a slowing, decaying wave of activity." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+reason = "It would count against the prediction if sensitive designs kept finding the content of unseen stimuli only in sensory cortex or only fading away. Global workspace theory's proponents say wide availability is what experience is, and that unseen stimuli leave only a decaying wave, so they predict the opposite."
+unsure = true
+unsure_why = "The prediction says what can happen, so one positive case supports it while failures only weigh against it slowly; 'could fail' is true in principle but weak in practice."
+
+[[judgement]]
+id = "tst-hot-pfc-involved"
+kind = "testability"
+prediction = "hot-pfc-involved"
+passages = [
+  { source = "lamme-2018", text = "Adding more widespread recurrent interactions—including fronto-parietal activation—may give you the ability to cognitively manipulate and report the conscious visual percept, but this is not explaining the unconscious/conscious transition itself [60]." },
+  { source = "cogitate-protocol-2023", text = "In contrast, an auxiliary prediction of IIT states that the NCC is primarily localized to the posterior hot zone." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["rpt", "iit"]
+reason = "A sensitive no-report design finding awareness only in sensory cortex, with prefrontal cortex carrying nothing awareness-related, would count against it. Recurrent processing theory's proponent says frontal involvement adds report, not seeing; integrated information theory's proponents place the correlates in posterior cortex."
+unsure = true
+unsure_why = "The proponents wrote in 2019 that null results from coarse methods should not be generalised and that more prefrontal activity does not mean more consciousness. That narrows what can count against the prediction to designs that look for prefrontal information with sensitive methods. It does not make the prediction unfalsifiable, but it makes failure harder to show."
+
+[[judgement]]
+id = "tst-hot-pfc-disrupt"
+kind = "testability"
+prediction = "hot-pfc-disrupt"
+passages = [
+  { source = "lamme-2018", text = "Adding more widespread recurrent interactions—including fronto-parietal activation—may give you the ability to cognitively manipulate and report the conscious visual percept, but this is not explaining the unconscious/conscious transition itself [60]." },
+  { source = "cogitate-protocol-2023", text = "In contrast, an auxiliary prediction of IIT states that the NCC is primarily localized to the posterior hot zone." },
+  { source = "fleming-2020", text = "However, to the extent that this network is flexible in its functional contribution to higher cognition, showing both ‘multiple demand’ characteristics (Duncan 2010) and mixed selectivity (Mante et al. 2013), we should also not be surprised by null results, given that single lesions may belie redundancy in its contribution to awareness (Michel and Morales 2019)." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["rpt", "iit"]
+reason = "Well-controlled disruption of prefrontal cortex that leaves awareness ratings and their accuracy untouched, with evidence for no effect, would count against it. The two rivals' proponents place what makes seeing conscious outside prefrontal cortex, which implies disruption there should not change awareness itself."
+unsure = true
+unsure_why = "Neither rival passage is about disrupting prefrontal cortex; the separation reads a location claim as a disruption claim, which ruling C may not allow. And Fleming 2020 says in advance that null results should not surprise, which weakens 'could fail'."
+
+[[judgement]]
+id = "tst-hot-awareness-performance"
+kind = "testability"
+prediction = "hot-awareness-performance"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "If awareness ratings always moved with performance whenever performance was held equal, the prediction would fail. But no rival proponents' passage opened in this task predicts that awareness cannot change while performance is matched; the higher-order statement's own description of global workspace theory does not count under ruling C."
+unsure = true
+unsure_why = "Global workspace theory may well predict otherwise (consciousness bringing better performance), but its proponents' paper opened here (mashour-2020) does not say so in terms of matched performance. A broader search of rival sources could change this."
+
+# ======================================================================
+# Stage 3, Recurrent processing theory: drafted 2026-11-21 (first reading, one reader).
+# Judgements for recurrent processing theory, drafted 2026-11-21. Every reading is
+# the Claude reader's first reading; the second reader has not read anything.
+# Shape as data/tracker/judgements.toml. Commitment is judged under rule D (John,
+# 2026-11-20, "Yes, that test"): the proponent must have fixed the prediction before
+# the study's earliest public appearance (for an unregistered study) or before its
+# data first appeared (for a reanalysis); unclear dates or unclear commitment means
+# not counted.
+# ============================================================= outcome judgements
+
+[[judgement]]
+id = "out-filimonov2022-rpt-van"
+kind = "outcome"
+prediction = "rpt-van"
+study = "filimonov-2022"
+passages = [
+  { source = "filimonov-2022", text = "As Figs. 3–5 show, VAN emerges in posterior areas in occipital electrode sites, around 220–270 ms and lasts until 300 ms, while AAN emerges earlier in temporal-parietal and central areas." },
+  { source = "filimonov-2022", text = "The visual LP started in occipital electrodes around 250–300 ms and spread as a function of time to parietal-central electrodes being present at least until 600 ms." },
+  { source = "filimonov-2022", text = "In summary, the results of present study indicate that VAN and AAN are modality-specific early correlates of visual and auditory awareness, while late LP is a late correlate and shares both modality-specific and modality-general features." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "Faint flashes that people reported seeing, compared with the same flashes reported unseen, produced a negative wave over the back of the head from about 220 to 270 ms, before the late positive wave began. That is the test wording's 'for' case: an early posterior difference that comes before any late positive one."
+unsure = true
+unsure_why = "The early wave starts only a little before the late one (220 against 250 ms), and in a design where people report every trial; a reader who wants a clearer lead in time, or a design without report, might read 'mixed'."
+
+[[judgement]]
+id = "out-bandara-rpt-unattended-local"
+kind = "outcome"
+prediction = "rpt-unattended-local"
+study = "bandara-2025"
+passages = [
+  { source = "bandara-2025", text = "When two nested PEB models were compared to explain modulatory changes in awareness, with either FFA to V1 connections switched off (to assess sensory theories) or PFC to both FFA and V1 connections switched off (to assess frontal theories), there was a slight preference for the model with FFA to V1 connections switched off with a posterior probability of 53% compared to 47% for the model with PFC backward connections switched off." },
+  { source = "bandara-2025", text = "Various sensory theories predict feedback connectivity would increase under awareness within higher and lower-sensory regions—however, this was not observed." },
+  { source = "bandara-2025", text = "The results from this analysis revealed that both sensory and frontal feedback connections are necessary for consciousness, with a very slight preference for frontal theories, as the model which did not allow backward connections from the PFC to modulate, had a relatively lower posterior probability." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "The prediction says faces people did not notice still drive feedback within visual cortex, and that noticing adds wider spread, possibly to the front of the brain. Feedback within visual cortex did not grow with awareness, which fits it being there either way, and feedback from prefrontal cortex mattered slightly more for awareness, which fits the wider spread. But the study did not show the feedback was present in the unaware group, and the two models were nearly tied, so it cannot tell the prediction from its opposite."
+unsure = true
+unsure_why = "The authors read the same result as weak support for frontal theories and against 'sensory theories', a family they put this theory in. A reader who follows their framing would read 'against'; this reading follows Lamme's own statement of what inattentional blindness should show."
+
+[[judgement]]
+id = "out-eiserbeck-rpt-unattended-local"
+kind = "outcome"
+prediction = "rpt-unattended-local"
+study = "eiserbeck-2022"
+passages = [
+  { source = "eiserbeck-2022", text = "Only the earliest tested visual component, the P1, did not show a graded pattern." },
+  { source = "eiserbeck-2022", text = "Already in the N1/N170 component, significant gradations of activity depending on the reported visibility were found." },
+  { source = "eiserbeck-2022", text = "In line with these findings, our data indicate the presence of a broad, continuous pattern of posterior negativity extending over the period of the N1 and N2, which can, thus, be interpreted in terms of the VAN component." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "against"
+reason = "In the attentional blink, faces reported as less visible drew smaller early posterior waves (from about 150 ms) as well as smaller late ones. The prediction, as Lamme put it in 2018 for the attentional blink, is that inattention leaves early recurrent signals relatively intact and disrupts later ones; here the early signals were not left intact. That is the test wording's 'against' case."
+unsure = true
+unsure_why = "Lamme's 2010 paper says the blink works only when the target is wiped out by a following stimulus, which in this rapid stream it was; on that reading the unseen faces were masked, not merely unattended, and the result does not bear on the prediction ('mixed'). The two proponent statements point different ways for this paradigm."
+
+# ========================================================== commitment judgements
+# Question for each: did the theory's proponent fix this prediction, in a dated
+# publication, before the study's earliest public appearance (or, for a reanalysis,
+# before its data first appeared), and does that earlier passage commit the theory to
+# this test? Verdicts: before (counts), not-before (listed, not counted), unclear (not
+# counted, rule 2.3).
+
+[[judgement]]
+id = "com-filimonov2022-rpt-van"
+kind = "commitment"
+prediction = "rpt-van"
+study = "filimonov-2022"
+passages = [
+  { source = "lamme-2018", text = "Various manipulations of conscious perception consistently show to influence EEG activity in the 200 ms latency range—known as the visual awareness negativity (VAN)—which is the typical latency of recurrent visual processing [46]." },
+  { source = "lamme-2018", text = "In sum, recurrent interactions between visual neurons expressed as contextual modulation at the single neuron level or as 200 ms latency EEG signals (VAN) or PPI in humans, is crucial for the emergence of conscious experience." },
+]
+dates = { statement = "2018-07-30 (lamme-2018)", study_first_appeared = "2022-01-10 (publication; not registered, no preprint found)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "In 2018 the theory's proponent said that changes in what is consciously seen show up in EEG around 200 ms as the visual awareness negativity, and that this signal is crucial for conscious experience. The study, which compares seen and unseen faint flashes, first appeared in January 2022, three and a half years later."
+unsure = false
+
+[[judgement]]
+id = "com-eiserbeck-rpt-van"
+kind = "commitment"
+prediction = "rpt-van"
+study = "eiserbeck-2022"
+passages = [
+  { source = "lamme-2018", text = "Various manipulations of conscious perception consistently show to influence EEG activity in the 200 ms latency range—known as the visual awareness negativity (VAN)—which is the typical latency of recurrent visual processing [46]." },
+  { source = "lamme-2018", text = "For example, when people fail to attend to stimuli, they will report not having seen them, as is the case in conditions like change blindness, inattentional blindness or the attentional blink. These manipulations typically leave early recurrent signals relatively intact, while selectively disrupting later recurrent signals (e.g. P300 or N400 EEG responses [48] [49], but see [50])." },
+]
+dates = { statement = "2018-07-30 (lamme-2018)", study_first_appeared = "2021-01-17 (bioRxiv preprint; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "The dates are fine: 2018 is before the 2021 preprint. But the same 2018 paper says that in the attentional blink early recurrent signals are typically left intact, so for this paradigm the proponent did not commit to an early awareness-related wave; if anything he expected none. Which way the theory was committed for this test is unclear, so the study is not counted for this prediction."
+unsure = true
+unsure_why = "A reader could hold that the general statement about the awareness negativity covers every paradigm and read 'before'."
+
+[[judgement]]
+id = "com-eiserbeck-rpt-unattended-local"
+kind = "commitment"
+prediction = "rpt-unattended-local"
+study = "eiserbeck-2022"
+passages = [
+  { source = "lamme-2018", text = "For example, when people fail to attend to stimuli, they will report not having seen them, as is the case in conditions like change blindness, inattentional blindness or the attentional blink. These manipulations typically leave early recurrent signals relatively intact, while selectively disrupting later recurrent signals (e.g. P300 or N400 EEG responses [48] [49], but see [50])." },
+  { source = "lamme-2010", text = "But this only works when the sensation of T2 is wiped out by a following stimulus." },
+]
+dates = { statement = "2006-09-25 (lamme-2006, inattentional blindness); 2018-07-30 (lamme-2018, names the attentional blink)", study_first_appeared = "2021-01-17 (bioRxiv preprint; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "In 2018 the proponent named the attentional blink among the manipulations that typically leave early recurrent signals intact and disrupt later ones, which is this test, and the study's preprint came out in 2021."
+unsure = true
+unsure_why = "His 2010 paper says the blink works only when the target is wiped out by the next stimulus, which would make blinked targets masked rather than merely unattended, and so not covered by this prediction; and '(but see [50])' hedges the 2018 sentence. A reader who weighs those would read 'unclear'."
+
+[[judgement]]
+id = "com-bandara-rpt-unattended-local"
+kind = "commitment"
+prediction = "rpt-unattended-local"
+study = "bandara-2025"
+passages = [
+  { source = "lamme-2006", text = "Another study (Figure 3) showed the presence of RP signals, while human subjects were in a state of inattentional blindness (IB) towards the objects inducing these signals. During IB, RP remained localized to visual areas. Objects were only reported when the signals showed more widespread interactions, possibly involving the frontoparietal network [16]." },
+  { source = "bandara-2025", text = "All data for this study were kindly provided to us from the work by Shafto and Pitts (2015)." },
+]
+dates = { statement = "2006-09-25 (lamme-2006)", data_first_appeared = "2015-08-05 (shafto-pitts-2015; the study reanalyses those data)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The study reanalyses inattentional-blindness EEG data first published in August 2015. Nine years earlier the proponent had said that in inattentional blindness recurrent processing stays within visual areas and that reported objects show wider interactions, possibly with fronto-parietal areas, which is what this reanalysis's model comparison bears on."
+unsure = true
+unsure_why = "The 2006 passage describes one earlier experiment's result and the theory's reading of it, rather than a general prediction for effective-connectivity models; whether that commits the theory to this test is a judgement."
+
+[[judgement]]
+id = "com-bandara-rpt-no-report-sensory"
+kind = "commitment"
+prediction = "rpt-no-report-sensory"
+study = "bandara-2025"
+passages = [
+  { source = "lamme-2010", text = "RP in Stage 3 is limited to visual areas, and hence cannot directly influence motor control and other functions necessary for direct report." },
+  { source = "lamme-2010", text = "Likewise, in inattentional blindness, you don't remember having seen an object, but that does not imply you had no conscious visual sensation at the moment it passed by." },
+  { source = "bandara-2025", text = "As it was unclear when participants became aware of the face during phase 1, data from the aware participants were excluded from further analysis." },
+]
+dates = { statement = "2010-08-18 (lamme-2010)", data_first_appeared = "2015-08-05 (shafto-pitts-2015)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "The dates are fine (2010 before 2015). But the study's 'awareness' contrast puts people who could not report the face (inattentionally blind) against the same people once told about it, and the proponent says in 2010 that people in inattentional blindness may well have seen what they cannot report. So the earlier passages do not say which side of this contrast the theory counts as seeing, and the commitment to this test is unclear."
+unsure = true
+unsure_why = "A reader who takes the study's report-based grouping as seen against unseen would read 'before', since the face was task-irrelevant and not reported during the trials."
+
+[[judgement]]
+id = "com-dellert-rpt-no-report-sensory"
+kind = "commitment"
+prediction = "rpt-no-report-sensory"
+study = "dellert-2025"
+passages = [
+  { source = "lamme-2010", text = "This paper is about seeing." },
+  { source = "lamme-2018", text = "Adding more widespread recurrent interactions—including fronto-parietal activation—may give you the ability to cognitively manipulate and report the conscious visual percept, but this is not explaining the unconscious/conscious transition itself [60]." },
+  { source = "dellert-2025", text = "Based on previous studies in other sensory modalities, we expected awareness-related activity in auditory but not fronto-parietal brain areas." },
+]
+dates = { statement = "2010-08-18 (lamme-2010); 2018-07-30 (lamme-2018)", study_first_appeared = "2025-05-21 (bioRxiv preprint; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "The proponent's statements come long before the study, but every one opened is about seeing ('the conscious visual percept'); none says what the theory predicts for hearing. Applying them to sounds is the study authors' reading and this reader's, not a commitment the proponent made, so the commitment is unclear and the study is not counted for this prediction."
+unsure = true
+unsure_why = "The 2010 paper's general claim ('whether the areas involved engage in recurrent interactions') could be read as covering every sense, which would make this 'before'. This is the judgement most likely to change the theory's score."
+
+[[judgement]]
+id = "com-dellert-rpt-other-senses"
+kind = "commitment"
+prediction = "rpt-other-senses"
+study = "dellert-2025"
+passages = [
+  { source = "lamme-2010", text = "Whether this produces a conscious sensation or not is determined by whether the areas involved engage in recurrent interactions." },
+]
+dates = { statement = "none: site-inferred, never stated by the proponent in an opened publication", study_first_appeared = "2025-05-21 (bioRxiv preprint)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "not-before"
+reason = "This prediction is the site's inference; the theory's proponent never fixed it in an opened publication, so under rule D there is no proponent's date for the study to come after. Listed, not counted."
+unsure = false
+
+[[judgement]]
+id = "com-filimonov2024-rpt-no-report-sensory"
+kind = "commitment"
+prediction = "rpt-no-report-sensory"
+study = "filimonov-2024"
+passages = [
+  { source = "lamme-2018", text = "The neural correlates of such global availability are the involvement of fronto-parietal activation, and the later onset (P300) recurrent interactions [15]." },
+  { source = "filimonov-2024", text = "The results showed a prolonged auditory awareness negativity (AAN) for aware trials, which was influenced neither by attention nor by response requirement." },
+]
+dates = { statement = "2010-08-18 (lamme-2010); 2018-07-30 (lamme-2018)", study_first_appeared = "2024-07-23 (publication; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "As for the Dellert study: the dates are fine, but the proponent's statements are about seeing and this study is about hearing syllables, so whether the theory was committed to this result is unclear."
+unsure = true
+unsure_why = "Same doubt as com-dellert-rpt-no-report-sensory: a reader who takes the 2010 general claim to cover hearing would read 'before'."
+
+[[judgement]]
+id = "com-filimonov2024-rpt-attention-independent"
+kind = "commitment"
+prediction = "rpt-attention-independent"
+study = "filimonov-2024"
+passages = [
+  { source = "lamme-2006", text = "Elsewhere [10,33], I have shown how, from the neural perspective, attention and consciousness can be orthogonally defined as entirely separate neural processes." },
+  { source = "filimonov-2024", text = "The results showed a prolonged auditory awareness negativity (AAN) for aware trials, which was influenced neither by attention nor by response requirement." },
+]
+dates = { statement = "2006-09-25 (lamme-2006); 2010-08-18 (lamme-2010)", study_first_appeared = "2024-07-23 (publication)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "The separation of attention from consciousness was stated in 2006 and 2010, long before the study, but for seeing; the study manipulates attention to features of heard syllables. Whether the theory was committed for hearing is unclear."
+unsure = true
+unsure_why = "As above, the general reading of the 2010 claim would give 'before'."
+
+[[judgement]]
+id = "com-filimonov2024-rpt-other-senses"
+kind = "commitment"
+prediction = "rpt-other-senses"
+study = "filimonov-2024"
+passages = [
+  { source = "lamme-2010", text = "Whether this produces a conscious sensation or not is determined by whether the areas involved engage in recurrent interactions." },
+]
+dates = { statement = "none: site-inferred", study_first_appeared = "2024-07-23 (publication)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "not-before"
+reason = "Site-inferred; never fixed by the proponent, so it cannot pass rule D. Listed, not counted."
+unsure = false
+
+[[judgement]]
+id = "com-filimonov2022-rpt-other-senses"
+kind = "commitment"
+prediction = "rpt-other-senses"
+study = "filimonov-2022"
+passages = [
+  { source = "lamme-2010", text = "Whether this produces a conscious sensation or not is determined by whether the areas involved engage in recurrent interactions." },
+]
+dates = { statement = "none: site-inferred", study_first_appeared = "2022-01-10 (publication)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "not-before"
+reason = "The study's auditory condition bears on the site's inference for hearing, which the proponent never fixed, so it cannot pass rule D. Listed, not counted."
+unsure = false
+
+# ========================================================= testability judgements
+# Question for each prediction: (a) could it fail? (b) does a rival on the ruled list
+# predict something different, in its own proponents' opened publication (ruling C)?
+
+[[judgement]]
+id = "tst-rpt-ff-unseen"
+kind = "testability"
+prediction = "rpt-ff-unseen"
+passages = [
+  { source = "mashour-2020", text = "Unseen, subliminal stimuli may also result in a long series of evoked brain activations, sometimes lasting over one second and even extending for several seconds, i.e., in the temporal range of working memory." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "A stimulus restricted to the forward pass that people nonetheless report seeing would count against it. But global workspace theory's proponents also say unseen stimuli can drive long activations without becoming conscious, and no opened rival passage predicts that forward-only processing is seen."
+unsure = false
+
+[[judgement]]
+id = "tst-rpt-feedback-needed"
+kind = "testability"
+prediction = "rpt-feedback-needed"
+passages = [
+  { source = "mashour-2020", text = "The GNW proposes that, in the conscious state, a non-linear network ignition associated with recurrent processing amplifies and sustains a neural representation, allowing the corresponding information to be globally accessed by local processors." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "Seeing that survives the shown loss of feedback into early visual cortex would count against it. Global workspace theory's proponents also tie conscious access to recurrent processing, including in primary visual cortex, so the prediction is shared."
+unsure = false
+
+[[judgement]]
+id = "tst-rpt-van"
+kind = "testability"
+prediction = "rpt-van"
+passages = [
+  { source = "mashour-2020", text = "The first 200 ms of brain activity, corresponding to early perceptual processing, can be fully preserved on trials without conscious perception, particularly under inattention conditions." },
+  { source = "mashour-2020", text = "Instead, conscious appraisal correlates with late events that typically lag stimulus onset by at least 200 ms, such as the P300 or “late-positive” component of scalp-event-related potentials." },
+  { source = "mashour-2020", text = "The (unresolved) controversy surrounds the issue of whether one can ascertain that such stimuli are truly seen as opposed to being merely potentially visible but unattended: intermediate-latency sustained negativities may reflect a neural state of information accessibility, whereas the P3 would reflect genuine conscious access and processing (for discussion, see)." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+reason = "If the first difference between seen and unseen stimuli came only with the late positive wave, it would fail. Global workspace theory's proponents say the first 200 ms can be the same with and without conscious perception and tie conscious appraisal to late events such as the P300, which predicts a later start."
+unsure = true
+unsure_why = "The same review grants that the early negativity is 'often observed' and reads it as possible 'accessibility' rather than seeing, and its 'at least 200 ms' overlaps the negativity's timing, so the two theories may predict the same waveform and differ only in what they call it."
+
+[[judgement]]
+id = "tst-rpt-no-report-sensory"
+kind = "testability"
+prediction = "rpt-no-report-sensory"
+passages = [
+  { source = "mashour-2020", text = "This non-linear divergence occurs regardless of the stimulus modality or paradigm used to manipulate consciousness (e.g., reduced visibility, masking, inattention)." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+reason = "If seeing a task-irrelevant, unreported stimulus reliably came with fronto-parietal activation or a late positive wave, it would fail. Global workspace theory's proponents say the late, widespread divergence occurs whatever the paradigm, inattention included, which predicts exactly that."
+unsure = false
+
+[[judgement]]
+id = "tst-rpt-unattended-local"
+kind = "testability"
+prediction = "rpt-unattended-local"
+passages = [
+  { source = "mashour-2020", text = "The early recurrent loops occur in lower areas and may correspond to VAN." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "Unattended, unmasked, unreported stimuli with no sign of recurrent processing in visual cortex would count against it. Global workspace theory's proponents expect the same local recurrent loops for such stimuli and call them preconscious, so they predict the same observations and differ only in the label."
+unsure = true
+unsure_why = "Whether 'the same observations, a different verdict on experience' is shared or separating is exactly what ruling C settles by asking for a different prediction; read here as shared."
+
+[[judgement]]
+id = "tst-rpt-attention-independent"
+kind = "testability"
+prediction = "rpt-attention-independent"
+passages = [
+  { source = "mashour-2020", text = "Several studies have dissociated attention from awareness, for example, by demonstrating that attention can be summoned to a location by a subliminal cue so that the perception of stimuli at that location is improved (for reviews and discussions, see)." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "A neural sign of seeing that appeared only for attended stimuli would count against it. Global workspace theory's proponents also accept attention without awareness and early processing preserved under inattention, so no opened rival passage predicts a different observation."
+unsure = true
+unsure_why = "The prediction's test depends on agreeing what 'the neural sign of seeing' is; with the late wave as that sign, workspace theory would predict a difference, but its proponents treat the late wave as access, not seeing."
+
+[[judgement]]
+id = "tst-rpt-other-senses"
+kind = "testability"
+prediction = "rpt-other-senses"
+passages = [
+  { source = "mashour-2020", text = "For instance, the crossing of the threshold for auditory or visual conscious perception is associated with a sudden increase in the P300 component, and only this component vanishes almost entirely under inattention conditions or during sleep." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+reason = "Awareness of unreported sounds that came with reliable fronto-parietal activation, or with no early auditory-cortex difference, would count against it. Global workspace theory's proponents tie crossing the threshold of auditory awareness to the late P300 and say the late divergence happens whatever the sense."
+unsure = false
+
+# ======================================================================
+# Stage 3, Anil Seth's living-body view: drafted 2026-11-21 (first reading, one reader).
+# Judgements for Anil Seth's living-body view, drafted 2026-11-21. Same shape as
+# data/tracker/judgements.toml. Every reading is the Claude reader's first reading;
+# no second reader has seen any of them.
+#
+# Commitment is read under ruling D as the brief states it: a prediction counts for
+# a study only if the proponents fixed it before they could have known the result
+# (before the registration, for a registered study; before the study's earliest
+# public appearance, for any other; before the data first appeared, for a
+# reanalysis). Neither study here was registered or is a reanalysis, so each is
+# compared with its earliest public appearance. Collection dates are recorded on the
+# study for reference; neither paper states one.
+# ============================================================= outcome judgements
+
+[[judgement]]
+id = "out-jicol-seth-presence-match"
+kind = "outcome"
+prediction = "seth-presence-match"
+study = "jicol-2023"
+passages = [
+  { source = "jicol-2023", text = "Hypothesis 1: We predict that smaller mismatches between predicted and felt emotion (IV) will lead to higher levels of social and self presence, but not spatial presence (DV)." },
+  { source = "jicol-2023", text = "Our results showed that, as hypothesized in H1, the IPCM predicted the formation of social and self presence but not spatial presence. Moreover, H2 was supported because the IPCM predicted presence based on computed happiness and computed fear but not computed relaxation." },
+  { source = "jicol-2023", text = "We investigated whether overestimating and underestimating emotion equally lead to a decrease in presence, as suggested by Seth et al. in their model [3]." },
+  { source = "jicol-2023", text = "This pattern of results is inconsistent with the IPCM which predicts a uniform decrease in presence independent of whether participants underestimate or overestimate emotion." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "For fear and happiness, a smaller gap between the emotion people expected and the emotion they felt went with more presence of two kinds (social and self), as predicted. But the gap did not matter for relaxation or for spatial presence, and the direction of the gap mattered: feeling more fear than expected lowered presence while feeling more happiness than expected raised it. The authors say this asymmetry is inconsistent with the model, and the test wording asks for lower presence on a mismatch in either direction."
+unsure = true
+unsure_why = "The study measures expected and felt emotion by questionnaire; the prediction is about the brain's predictions of body signals, so the study's measure is a stand-in. A reader who takes the authors' summary ('the IPCM can explain the formation of presence in VR') as the result would read 'for'."
+
+[[judgement]]
+id = "out-suzuki-seth-low-interoception-more-illusion"
+kind = "outcome"
+prediction = "seth-low-interoception-more-illusion"
+study = "suzuki-2013"
+passages = [
+  { source = "suzuki-2013", text = "Lastly, we examined how the magnitude of our results reflected individual differences in IS, testing the prediction that heightened IS will attenuate EBO (Tsakiris et al., 2011) yet exaggerate interaction between exteroceptive and interoceptive manipulations." },
+  { source = "suzuki-2013", text = "There was a significant positive correlation between IS and PDD in the “tactile” condition (Spearman's rank correlation coefficient 0.509, p=0.022, pFDR = 0.044), and a non-significant correlation in the “cardiac still” condition (correlation=0.207, p=0.368)." },
+  { source = "suzuki-2013", text = "At first glance this result appears to conflict with data reported by Tsakiris et al. (2011) which show a significant negative correlation between IS and PDD in the classical RHI." },
+  { source = "suzuki-2013", text = "Indeed when we repeated our IS measures using this task, there was no significant positive trend between IS and PDD (see Supplementary information)." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "against"
+reason = "In the condition that reproduces the classic rubber hand illusion with synchronous touch, people who sensed their heartbeat more accurately showed more drift toward the seen hand, not less: the test wording's 'against' case. The authors themselves say the result appears to conflict with the earlier finding the 2012 passage relied on."
+unsure = true
+unsure_why = "With a second heartbeat-sensing method the positive relation disappeared (no significant trend), so a reader could read 'mixed'. The hand was a lifelike virtual copy of the participant's own, which the authors offer as a reason the direction might flip, and the sample was 21 people."
+
+# ========================================================== commitment judgements
+
+[[judgement]]
+id = "com-jicol-seth-presence-match"
+kind = "commitment"
+prediction = "seth-presence-match"
+study = "jicol-2023"
+passages = [
+  { source = "seth-2012", text = "The core concept of the model is that a sense of presence arises when informative interoceptive prediction signals are successfully matched to inputs so that prediction errors are suppressed." },
+  { source = "seth-2012", text = "(iii) to correlate subjective disturbances in presence with experimental manipulations of interoceptive predictions and prediction errors." },
+  { source = "seth-2012", text = "or by explicitly presenting emotionally salient stimuli to induce explicit expectations of interoceptive responses." },
+]
+dates = { statement = "2012-01-10", study_first_appeared = "2023-03-16" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents stated in 2012 that presence comes from a match between predicted and actual body signals, and proposed testing it by inducing explicit expectations of bodily responses with emotional stimuli, which is what this 2023 study did. Eleven years separate the statement from the study's first appearance."
+unsure = true
+unsure_why = "The 2012 model is about the brain's predictions of body signals; the study manipulates and measures people's stated expectations of emotion. Whether the 2012 passage commits the theory to this stand-in is the open question. The asymmetry the study found (direction of mismatch) is something the 2012 text does not address in so many words; the study's authors read the model as predicting symmetry."
+
+[[judgement]]
+id = "com-suzuki-seth-low-interoception-more-illusion"
+kind = "commitment"
+prediction = "seth-low-interoception-more-illusion"
+study = "suzuki-2013"
+passages = [
+  { source = "seth-2012", text = "People with lower interoceptive predictive ability may more readily assimilate exteroceptive (e.g., correlated visual and tactile) cues in localizing interoceptive and proprioceptive signals, while people with good interoceptive predictive ability may rely less on these exteroceptive cues." },
+]
+dates = { statement = "2012-01-10", study_first_appeared = "2013-08-28" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The 2012 passage, in the paper setting out the model, says people with weaker body-signal sensing lean more on sight and touch, which is this prediction, and it appeared 19 months before the study. The study's own introduction names the same prediction as one it tests."
+unsure = true
+unsure_why = "The passage is hedged ('may') and is offered as the model's reading of another group's existing result, not as a new prediction; a reader could say it does not commit the theory. The same authors ran the study, but under the rule only dates matter, not who ran it."
+
+[[judgement]]
+id = "com-suzuki-seth-interoceptive-ownership"
+kind = "commitment"
+prediction = "seth-interoceptive-ownership"
+study = "suzuki-2013"
+passages = [
+  { source = "seth-2012", text = "We believe considerable promise lies in integrating interoceptive predictive coding with existing proprioceptive and multisensory models of selfhood (Blanke and Metzinger, 2009; Tsakiris, 2010), potentially explaining the force of “interoceptive anchors” in grounding bodily experience." },
+  { source = "suzuki-2013", text = "Here, we address this question by implementing a novel “cardiac rubber hand illusion” capitalizing on augmented reality (AR) technology and integrating this with physiological (cardiac) monitoring." },
+]
+dates = { statement = "2012-01-10", study_first_appeared = "2013-08-28" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "The 2012 statement came first, but it only calls integrating body signals with models of body ownership promising. It does not say that a seen hand pulsing with one's heartbeat should feel more one's own; that specific prediction is first written in the study that tests it, which the rules do not count. Unclear, so not counted."
+unsure = true
+unsure_why = "A reader who takes 'interoceptive anchors in grounding bodily experience' as committing the theory to any effect of body signals on ownership would read 'before'; the study's result (synchronous heartbeat feedback raised ownership) would then be 'for'."
+
+# ========================================================= testability judgements
+
+[[judgement]]
+id = "tst-seth-living-only"
+kind = "testability"
+prediction = "seth-living-only"
+passages = [
+  { source = "seth-2025", text = "We also lack reliable tests for the presence of consciousness beyond consensus cases in humans and (perhaps) some other animals" },
+  { source = "findlay-2024", text = "this formulation can be applied, in principle, whenever an adequate causal model of a system is available, irrespective of what it is made of—neurons or transistors—and irrespective of its functions." },
+  { source = "graziano-2017", text = "Such a machine would “believe” it is conscious and act like it is conscious, in the same sense that the human machine believes and acts." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+could_fail = false
+separates = true
+separates_from = ["iit", "ast"]
+order = "first"
+reason = "Two rivals' own proponents predict otherwise: integrated information theory applies to any system whatever it is made of, and attention schema theory's proponent says a buildable machine would be conscious in the human sense. But the prediction cannot fail today, because no agreed test for consciousness in a non-living system exists, as the source itself says; no result could count against it."
+unsure = true
+unsure_why = "'Could fail' read as 'could fail with methods that exist now'. Read as 'could fail in principle', it could. The pilot did not face a prediction whose only test does not yet exist."
+
+[[judgement]]
+id = "tst-seth-ai-not-by-computation"
+kind = "testability"
+prediction = "seth-ai-not-by-computation"
+passages = [
+  { source = "seth-2025", text = "We also lack reliable tests for the presence of consciousness beyond consensus cases in humans and (perhaps) some other animals" },
+  { source = "graziano-2017", text = "Given current technology, it should be possible to build a machine that contains a rich internal model of what consciousness is, attributes that property of consciousness to itself and to the people it interacts with, and uses that attribution to make predictions about human behavior." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+could_fail = false
+separates = true
+separates_from = ["ast"]
+order = "first"
+reason = "Attention schema theory's proponent says machines built with current technology could be conscious in the human sense, which this prediction denies. It cannot fail for the same reason as the life prediction: no agreed test exists to find consciousness in an AI system."
+unsure = true
+unsure_why = "As for tst-seth-living-only. Also, Graziano's passage could be read as a machine that only believes it is conscious; the passage's 'in the same sense that the human machine believes and acts' is what makes it a claim about consciousness, on attention schema theory's own account of humans."
+
+[[judgement]]
+id = "tst-seth-expectation-speeds-access"
+kind = "testability"
+prediction = "seth-expectation-speeds-access"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+could_fail = true
+separates = false
+separates_from = []
+order = "first"
+reason = "Expected stimuli becoming conscious no sooner than unexpected ones would count against it. No opened publication by a rival's proponents predicts that expectation leaves the timing of conscious access unchanged, so under ruling C it does not separate."
+unsure = false
+
+[[judgement]]
+id = "tst-seth-presence-match"
+kind = "testability"
+prediction = "seth-presence-match"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+could_fail = true
+separates = false
+separates_from = []
+order = "first"
+reason = "Presence that does not track the match between expected and felt bodily response would count against it. No opened rival proponents' publication says anything about presence, so it does not separate."
+unsure = false
+
+[[judgement]]
+id = "tst-seth-interoceptive-ownership"
+kind = "testability"
+prediction = "seth-interoceptive-ownership"
+passages = [
+  { source = "singer-damasio-2025", text = "Interoceptive feelings underpin the sense of direct ownership of the organism’s body." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+could_fail = true
+separates = false
+separates_from = []
+order = "first"
+reason = "Heartbeat-timed feedback that changes ownership no more than out-of-time feedback would count against it. Damasio's own paper says the same thing (body feelings underpin ownership), and no other rival's opened publication predicts otherwise, so it does not separate."
+unsure = false
+
+[[judgement]]
+id = "tst-seth-low-interoception-more-illusion"
+kind = "testability"
+prediction = "seth-low-interoception-more-illusion"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+could_fail = true
+separates = false
+separates_from = []
+order = "first"
+reason = "Better heartbeat sensing going with a stronger illusion would count against it, and one study reads that way. No opened rival proponents' publication predicts the relation between heartbeat sensing and the rubber hand illusion, so it does not separate."
+unsure = false
+
+[[judgement]]
+id = "tst-seth-interoceptive-suppression"
+kind = "testability"
+prediction = "seth-interoceptive-suppression"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+could_fail = true
+separates = false
+separates_from = []
+order = "first"
+reason = "No reduced response to predictable body signals in the insula would count against it. No opened rival proponents' publication predicts how the insula responds to predicted body signals, so it does not separate."
+unsure = false
+
+[[judgement]]
+id = "tst-seth-feeling-from-prediction"
+kind = "testability"
+prediction = "seth-feeling-from-prediction"
+passages = [
+  { source = "singer-damasio-2025", text = "the neurons supporting homoeostatic feelings interface directly with body structures and generate an actual mixture of signals from the body proper and the neurons themselves." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+could_fail = true
+separates = false
+separates_from = []
+order = "first"
+reason = "Reported emotion that stays the same when only the expected bodily state is changed would count against it. Damasio's paper describes feelings as made directly from body signals, which leans the other way, but it states no prediction about changing expectations with the body held fixed; under ruling C that is silence, so it does not separate."
+unsure = true
+unsure_why = "A reader who takes Damasio's 'directly ... an actual mixture of signals' as predicting that expectations alone cannot change feeling would mark it as separating from damasio. That reading would give core claim seth-c4 a testability of 1."
+
+# ======================================================================
+# Stage 3, Attention schema theory: drafted 2026-11-21 (first reading, one reader).
+# Attention schema theory: judgements, stage 3 draft, 2026-11-21.
+# One reading each, by the first reader. Kinds as in the pilot (data/tracker/README.md).
+# The two unopened studies (wilterson-2020, webb-2016) get no judgement.
+# ============================================================= outcome judgements
+
+[[judgement]]
+id = "out-wilterson-tpj-ast-control"
+kind = "outcome"
+prediction = "ast-control"
+study = "wilterson-2021-tpj"
+passages = [
+  { source = "wilterson-2021-tpj", text = "Fig. 2B shows that attention was directed to the location predicted by the cue, since the mean ΔRT among subjects was significantly greater than 0 (mean ΔRT = 12.66 ms, SEM = 2.70, two-tailed t test, df = 17, t = 4.70, and P < 0.001)." },
+  { source = "wilterson-2021-tpj", text = "Thus, there was no evidence that attention was directed to the location predicted by the cue in task 2 (mean ΔRT = 0.86 ms, SEM = 2.81, two-tailed t test, df = 16, t = 0.31, and P = 0.762)." },
+  { source = "wilterson-2021-tpj", text = "The attention effect was significantly greater in task 1 than in task 2 (difference = 11.79 ms, SEM = 3.89, between-subjects, two-tailed t test, df = 33, t = 3.033, and P = 0.0047)." },
+  { source = "wilterson-2021-tpj", text = "Prior experiments showed that the cue, though outside awareness, could still draw exogenous attention to itself (8)." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "People who saw the cue learned, without knowing it, to shift attention to where the cue predicted the target; people for whom the cue was masked showed no such shift, and the difference between the groups was significant. That is the prediction's 'for' case: without awareness of the cue, the deliberate use of it to steer attention was lost."
+unsure = true
+unsure_why = "The 'attention can still be drawn to it' half of the test was not measured in this study; it rests on the same lab's earlier paper (wilterson-2020), which was not opened. The two conditions were also run on different people, and the masked cue may simply have been processed too weakly to learn from, which would explain the result without any role for awareness. A reader who insists both halves be shown in the same study would read 'mixed'."
+
+[[judgement]]
+id = "out-wilterson-agent-ast-schema-control"
+kind = "outcome"
+prediction = "ast-schema-control"
+study = "wilterson-2021-agent"
+passages = [
+  { source = "wilterson-2021-agent", text = "The results of experiment 2 confirm that when the agent is trained on the game with an attention schema available to it, it can learn the task. The results also show that the agent’s performance relies on the attention schema, since deactivating the attention schema on test trials results in a greatly reduced performance." },
+  { source = "wilterson-2021-agent", text = "However, in all conditions tested in experiment 3, the agent was severely impaired at learning the task—either tracking the ball with its attention spotlight or catching the ball at the end of each game—as compared to the intact agent." },
+  { source = "wilterson-2021-agent", text = "The reason is that complete information about the location of the attention window is present, though implicit, in the visual array." },
+  { source = "wilterson-2021-agent", text = "Moreover, a more powerful agent, with more neurons or layers, might have been able to learn to control its attention without being given an explicit attention schema." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "Disabling the agent's model of its attention, after training or from the start, greatly reduced how well it controlled attention and learned the task, although where its attention was could still be read from its visual input. That is the test wording's 'for' case."
+unsure = true
+unsure_why = "The agent is a small network trained for a fixed number of games, and the authors say a larger one might have managed without the model. The result shows the model helps this agent, not that it helps any controller, and it says nothing about awareness."
+
+# ========================================================== commitment judgements
+# Rule D (ruled 2026-11-20, 'Yes, that test'): for a study not registered before its
+# data, a prediction counts only if the proponents fixed it before the study's
+# earliest public appearance. Stating and testing in the same paper does not count.
+
+[[judgement]]
+id = "com-wilterson-tpj-ast-control"
+kind = "commitment"
+prediction = "ast-control"
+study = "wilterson-2021-tpj"
+passages = [
+  { source = "graziano-webb-2015", text = "If awareness is an internal model of attention and is used to help control attention, then without awareness, attention should still be possible but it should suffer deficits in control." },
+  { source = "graziano-webb-2015", text = "Regardless of the informational domain, the general prediction is the same: without awareness, attention should still be possible but should suffer a deficit in control." },
+]
+dates = { statement = "2015-04-23 (graziano-webb-2015)", study_first_appeared = "2021-06-14 (online publication; received for review 2020-12-30; no preprint found)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents published the prediction in 2015, six years before this study first appeared, and stated it as covering any domain of attention, which includes this spatial cueing task."
+unsure = false
+
+[[judgement]]
+id = "com-wilterson-tpj-ast-tpj"
+kind = "commitment"
+prediction = "ast-tpj"
+study = "wilterson-2021-tpj"
+passages = [
+  { source = "graziano-2018", text = "I stand by the argument that, thus far, increasing evidence points to the TPJ as an important network node related to awareness, both one’s own awareness and attributing the property of awareness to others, without undercutting arguments for other nodes." },
+  { source = "wilterson-2021-tpj", text = "A straightforward set of predictions emerges. In experiment 1, in which awareness of the cue allows the brain to predictively control attention, the right TPJ should become active in association with violations of the predictive model (thus more activity in nonpredicted trials than in predicted trials)." },
+]
+dates = { statement = "2018-03-27 (graziano-2018, general); the specific test first written in the study itself (2021-06-14)", study_first_appeared = "2021-06-14" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "The 2018 statement ties the temporoparietal junction to awareness in general. What the study tested, a right-junction response to broken predictions only when the cue is seen, is first written in the study's own paper. Whether the 2018 sentence committed the theory to this result is not clear, so under the rule it is not counted."
+unsure = true
+unsure_why = "The papers the study cites for the earlier suggestion (Graziano and Kastner 2011; Graziano 2013) were not opened and might state the control role of the junction in words, which could make this 'before'."
+
+[[judgement]]
+id = "com-wilterson-agent-ast-schema-control"
+kind = "commitment"
+prediction = "ast-schema-control"
+study = "wilterson-2021-agent"
+passages = [
+  { source = "graziano-webb-2015", text = "We propose that the top–down control of attention is improved when the brain has access to a simplified model of attention itself." },
+  { source = "graziano-webb-2015", text = "The brain must control attention in a task-relevant fashion, and that control of attention, according to the principles of control engineering, can be improved if the brain constructs a model of attention." },
+]
+dates = { statement = "2015-04-23 (graziano-webb-2015)", study_first_appeared = "2021-08-12 (online publication; received for review 2021-02-05; no preprint found)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents published in 2015 that control of attention is improved by a model of attention, resting it on a general principle of control engineering, more than six years before the agent study appeared."
+unsure = true
+unsure_why = "The 2015 statement is about the brain. Whether it commits the theory to the result in a small artificial agent, rather than only the agent study's authors applying it there, is a judgement; a reader who says it does not would read 'unclear'."
+
+# ========================================================= testability judgements
+
+[[judgement]]
+id = "tst-ast-graded"
+kind = "testability"
+prediction = "ast-graded"
+passages = [
+  { source = "graziano-webb-2015", text = "Attention can be graded, with more or less attention focused on an item, and therefore awareness, the internal model of attention, should also be graded." },
+  { source = "dehaene-2014", text = "conscious access triggers an all-or-none change in the state of distributed cortical networks" },
+  { source = "dehaene-2014", text = "the state of consciousness, that is the brain’s very ability to host a ceaseless stream of such all-or-none conscious episodes, rests upon the integrity of long-distance cortico-cortical exchanges" },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt"]
+reason = "Awareness that stays all-or-nothing while attention varies in steps would count against it. Global workspace theory's proponents describe conscious access as an all-or-none change and conscious episodes as all-or-none, which predicts the opposite of graded awareness."
+unsure = true
+unsure_why = "The global workspace passages describe the state of brain networks and conscious 'episodes', not people's ratings of how clearly they saw something; a reader who holds that they do not commit that theory to all-or-none reports would find no sourced rival, and so no separation."
+
+[[judgement]]
+id = "tst-ast-covary"
+kind = "testability"
+prediction = "ast-covary"
+passages = [
+  { source = "graziano-webb-2015", text = "In the attention schema theory, while attention without awareness is predicted, awareness without attention is more complex and seems less likely, but is not entirely ruled out." },
+  { source = "mashour-2020", text = "Irrespective of the precise interpretation of these experiments, the final result of attentional selection enters consciousness" },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "Frequent splits between attention and awareness with clear stimuli would count against it. But no opened rival source predicts something different: global workspace theory's proponents also say attention can work without awareness and that what attention selects enters consciousness."
+unsure = true
+unsure_why = "The 'not entirely ruled out' clause means awareness without attention cannot count against it, so only half the prediction can fail."
+
+[[judgement]]
+id = "tst-ast-claims"
+kind = "testability"
+prediction = "ast-claims"
+passages = [
+  { source = "graziano-2022", text = "Fifth, an attention schema gives technologists a potential lead on constructing artificial consciousness: machines that believe, think, and claim to be conscious according to the same principles that people do, and that receive the same computational and behavioral benefit from it." },
+  { source = "albantakis-2023", text = "Accordingly, artificial systems powered by super-intelligent computer programs, but implemented by feed-forward hardware or encompassing critical bottlenecks, would experience nothing (or nearly nothing) because they have the wrong kind of physical architecture, even though they may be behaviorally indistinguishable from human beings [20]." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "An agent with a model of its attention that described it in mechanical terms, or an agent with no such model making the same claims, would count against it. Integrated information theory's proponents disagree about whether such a machine would experience anything, but not about what it would say, so no opened rival source predicts a different observable result."
+unsure = true
+unsure_why = "No one has set out how to build the test (how the agent's reports would be read, and what counts as the 'same reasons'), so whether it could fail in practice is uncertain."
+
+[[judgement]]
+id = "tst-ast-control"
+kind = "testability"
+prediction = "ast-control"
+passages = [
+  { source = "wilterson-2021-tpj", text = "If awareness of item X is compromised, and the endogenous control of attention with respect to item X is normal, then AST is falsified." },
+  { source = "mashour-2020", text = "subjects presumably could not direct feature-based attention to features that failed to enter consciousness" },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "The proponents name the result that would falsify it: normal deliberate control of attention toward an item the person is not aware of. But the only rival source opened that speaks to this, from global workspace theory's proponents, predicts the same direction, and no opened rival source predicts normal control without awareness."
+unsure = true
+unsure_why = "Koch and Tsuchiya 2007, by an integrated information theory proponent (cited by global workspace theory's proponents as a review of studies separating attention from awareness), might predict otherwise, and higher-order theorists' papers on attention may too; none was opened (paywalled)."
+
+[[judgement]]
+id = "tst-ast-schema-control"
+kind = "testability"
+prediction = "ast-schema-control"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "Control of attention that is just as good without a model of attention would count against it. No opened rival source says anything about whether a model of attention helps control it."
+unsure = false
+
+[[judgement]]
+id = "tst-ast-tpj"
+kind = "testability"
+prediction = "ast-tpj"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "With attention matched, no difference in right temporoparietal junction activity between awareness and its absence would count against it. No opened rival source predicts that the junction is uninvolved in awareness."
+unsure = true
+unsure_why = "The 2018 statement says 'an important network node' among others, which leaves room to explain away a null result in this one region."
+
+[[judgement]]
+id = "tst-ast-domain"
+kind = "testability"
+prediction = "ast-domain"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "A kind of content that attention selects but that can never be reported as aware, or the reverse, would count against it. No opened rival source predicts such a mismatch."
+unsure = true
+unsure_why = "Showing that a kind of content can never reach awareness is close to proving a negative, so in practice it may be hard to make this fail."
+
+# ======================================================================
+# Stage 3, The sensorimotor theory: drafted 2026-11-21 (first reading, one reader).
+# Judgements for the sensorimotor theory (draft, stage 3, 2026-11-21). Shape as
+# data/tracker/judgements.toml. Every reading is the Claude reader's first reading;
+# the second reader has read nothing yet.
+#
+# Outcome judgements: none. The one study taken (bridgeman-2008) is read as unclear
+# on commitment, and outcomes are recorded only where commitment is read as "before".
+# ========================================================== commitment judgements
+# Rule D (ruled by John 2026-11-20, "Yes, that test"): a prediction counts for a study
+# only if the proponents fixed it before they could have known the result; for an
+# unregistered study, before its earliest public appearance. Whether the earlier
+# passage commits the theory to the exact test is part of this judgement.
+
+[[judgement]]
+id = "com-bridgeman-sm-substitution"
+kind = "commitment"
+prediction = "sm-substitution"
+study = "bridgeman-2008"
+passages = [
+  { source = "oregan-noe-2001", text = "The fact that stimulation is provided through the skin should be irrelevant, providing the stimulation obeys the required sensorimotor laws." },
+  { source = "oregan-noe-2001", text = "As Blackmore rightly says, according to our theory the locus of sensation will depend on the nature of the sensorimotor contingencies, and by changing these laws, it should be possible to change the locus of perception." },
+  { source = "oregan-noe-2001", text = "Thus, since normally input coming through the auditory nerve will change in certain ways when the head or body moves, when later, without moving, the organism is stimulated through the auditory nerve, the stimulation will be perceived as belonging to the auditory modality. This then provides an explanation of audition without head movements. Similar arguments can be made for brief visual stimulations, phosphenes, and stimulation of visual cortex à la Penfield, as well as for phantom limbs." },
+  { source = "bridgeman-2008", text = "A test of the sensorimotor theory giving it every advantage had six observers in darkness moving their fingers along the eye and observing phosphenes for 1 h and 2400 motion cycles; the phosphene always obeyed the doctrine of specific nerve energies, never adapting or changing modality as the sensorimotor theory predicts." },
+]
+dates = { statement = "2001-10 (oregan-noe-2001)", study_first_appeared = "2008 (bridgeman-2008, publication)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "The dates are clear: the proponents stated in 2001 that the sense an experience belongs to follows learned patterns of how input changes with movement, seven years before the study. What is unclear is whether that statement commits the theory to the study's test. The 2001 paper gives no time scale for relearning (its own goggle example takes about two weeks, against the study's one hour), and its response says phosphenes are felt as sight because of patterns learned over a lifetime, which suggests the theory expected the phosphene to stay visual in a short test."
+unsure = true
+unsure_why = "A reader could say the 2001 principle ('by changing these laws, it should be possible to change the locus of perception') does commit the theory, read 'before', and then score the study against it. Another could read 'not-before', since the specific prediction (adaptation within an hour) appears first in the study itself. Only the abstract was read; the full text may say how the authors derived the prediction from the 2001 paper."
+
+# ========================================================== testability judgements
+
+[[judgement]]
+id = "tst-sm-colour-contingent"
+kind = "testability"
+prediction = "sm-colour-contingent"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "If people trained with eye-linked colour swaps kept seeing the two colours as different, the prediction would fail. But no rival theory's own source opened here says what the experiment should show, and a rival's silence does not count as a different prediction."
+unsure = true
+unsure_why = "The 2001 statement gives no amount of training, so a null result after a short training could be put down to too little training; 'could fail' holds only for training long enough to show adaptation on other measures, which the test wording asks for."
+
+[[judgement]]
+id = "tst-sm-inversion"
+kind = "testability"
+prediction = "sm-inversion"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "If goggle wearers learned to act normally but reported that what they see stays reversed, the prediction would fail, because the theory ties the look of the world to mastering the new patterns. No rival's own source opened here predicts otherwise."
+unsure = false
+
+[[judgement]]
+id = "tst-sm-active-control"
+kind = "testability"
+prediction = "sm-active-control"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "If users given the same stimulation without moving the camera located objects in space as well as users who moved it, the prediction would fail. Integrated information theory's source says experience depends on the system's inner causal structure, 'not on the system's interaction with its environment', but it also allows the environment to trigger states, so it does not predict that active and passive users will perform alike."
+unsure = true
+unsure_why = "A reader could take integrated information theory's intrinsicality passage as a contrary prediction about any role for active movement. This reading takes it as silent on this experiment, because active control would change the brain's states and the passage does not say what follows."
+
+[[judgement]]
+id = "tst-sm-substitution"
+kind = "testability"
+prediction = "sm-substitution"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "If practised users with active control still felt only touch on the skin, the prediction would fail. No rival's own source opened here says that substitution experience must stay tied to the skin; the view that each nerve has its own kind of sensation (Müller's specific nerve energies) does say so, but it is not one of the ten theories on the list."
+unsure = true
+unsure_why = "The theory sets no amount of practice, so failure is only clear after long practice; and how a user's report of 'seeing' should be told apart from inference is left open, which makes two readers less likely to agree on a result."
+
+[[judgement]]
+id = "tst-sm-change-blindness"
+kind = "testability"
+prediction = "sm-change-blindness"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "If people found large masked changes about as easily as unmasked ones, the prediction would fail. But global workspace theory and recurrent processing theory, in their own sources, predict the same missed reports; recurrent processing theory differs only in reading them as failures of report, not of seeing. The same observation is predicted by all three, so it does not separate them."
+unsure = true
+unsure_why = "The theory and recurrent processing theory do disagree about whether the missed details were experienced. If a measure of that were agreed (one that does not rest on report), the prediction might separate; no such measure is stated in the sources opened."
+
+[[judgement]]
+id = "tst-sm-inattentional"
+kind = "testability"
+prediction = "sm-inattentional"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "If busy people noticed nearly every clearly visible unexpected object, the prediction would fail. Global workspace theory and recurrent processing theory predict the same missed reports in their own sources, so the prediction does not separate the theory from them."
+unsure = false
+
+[[judgement]]
+id = "tst-sm-no-ncc"
+kind = "testability"
+prediction = "sm-no-ncc"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit", "rpt"]
+reason = "Finding brain activity that goes with a given visual experience whenever and only whenever it occurs, across tasks and movements, would count against the claim. Global workspace theory, integrated information theory and recurrent processing theory each say in their own sources that a brain state or process is what experience is or corresponds to, so they predict such a match exists."
+unsure = true
+unsure_why = "In practice no study can show a match holds 'in every situation', and proponents could always point to a situation not yet tried, so whether this can really fail is doubtful. The test wording asks only for a match across tasks, reports and movements, which a reader may find too weak or too strong."
+
+# ======================================================================
+# Stage 3, Orchestrated Objective Reduction: drafted 2026-11-21 (first reading, one reader).
+# Judgements for Orchestrated Objective Reduction (Orch OR), stage 3 draft, 2026-11-21.
+# Shape as data/tracker/judgements.toml. Every reading is the first reader's (Claude);
+# the second reader has read nothing yet.
+#
+# Commitment is read by ruling D: a prediction counts for a study if the proponents
+# fixed it before they could have known the result; for these unregistered studies,
+# before the study's earliest public appearance. The dates table therefore records
+# study_first_appeared.
+# ============================================================= outcome judgements
+
+[[judgement]]
+id = "out-khan-orch-anaesthetic-mt"
+kind = "outcome"
+prediction = "orch-anaesthetic-mt"
+study = "khan-2024"
+passages = [
+  { source = "khan-2024", text = "EpoB-treated rats took an average of 69 s longer to become unconscious as measured by latency to LORR." },
+  { source = "khan-2024", text = "The effect could not be accounted for by tolerance from repeated exposure to isoflurane." },
+  { source = "khan-2024", text = "Seven of the eight rats exhibited increased average LORR latencies in the epoB condition." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "A drug that acts on microtubules and reaches the brain made rats take longer to lose their righting reflex under a fixed dose of isoflurane, in seven of eight animals, and the authors ruled out growing tolerance to the gas as the cause. That is the test wording's 'for' case: a microtubule drug changed the time an anaesthetic needs to cause unconsciousness."
+unsure = true
+unsure_why = "Three doubts. The test wording counts a change in either direction because the proponents fixed none, which makes 'for' easy to reach. Eight rats, one group, and the drug could act through something other than microtubule binding sites for the gas (the study does not show where isoflurane acts). And loss of the righting reflex is a stand-in for unconsciousness, not a measure of it."
+
+[[judgement]]
+id = "out-li-orch-anaesthetic-mt"
+kind = "outcome"
+prediction = "orch-anaesthetic-mt"
+study = "li-2025"
+passages = [
+  { source = "li-2025", text = "Compared with saline treatment, epothilone D and vinblastine induced a leftward (more sensitive) shift of LORR response curves" },
+  { source = "li-2025", text = "In contrast, morphine caused a rightward (more resistant) LORR response curve" },
+  { source = "li-2025", text = "while paclitaxel produced a marginal but significant rightward shift of LORR" },
+  { source = "li-2025", text = "The induction or emergence latencies of epothilone D or paclitaxel treatment did not differ from saline treatment between groups." },
+  { source = "li-2025", text = "This study highlights a possible role of MTDs in modulating anesthetic effects in disparate directions" },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "Microtubule drugs did shift the isoflurane dose needed for unconsciousness, which on the bare test wording is 'for'. But a drug that stabilises microtubules (epothilone D) and one that breaks them down (vinblastine) both made mice more sensitive, another stabiliser (paclitaxel) made them slightly less sensitive, and morphine, which is not mainly a microtubule drug, shifted it the most. After two weeks of chemotherapy drugs the shifts could come from many effects, so the result cannot tell a microtubule mechanism apart from others."
+unsure = true
+unsure_why = "A reader holding to the test wording alone ('changes the anaesthetic dose ... compared with untreated controls') would read 'for'. A reader who takes the stabiliser result as the opposite of khan-2024's would read it as weighing against, but the proponents never fixed a direction, so 'against' is not open under the wording."
+
+# ============================================================= commitment judgements
+
+[[judgement]]
+id = "com-khan-orch-anaesthetic-mt"
+kind = "commitment"
+prediction = "orch-anaesthetic-mt"
+study = "khan-2024"
+passages = [
+  { source = "hameroff-penrose-2014", text = "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness." },
+  { source = "hameroff-penrose-2014", text = "Despite prevailing assumptions, actual evidence supports anesthetic action on microtubules." },
+  { source = "khan-2024", text = "Received 2024 Jul 1; Revised 2024 Aug 8; Accepted 2024 Aug 9; Prepublished 2024 Aug 15" },
+]
+dates = { statement = "2013-08-20 (hameroff-penrose-2014, available online)", study_first_appeared = "2024-08-15 (publication; not registered, no preprint found)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents put anaesthetic action on microtubules into the theory in 2013, eleven years before the study first appeared. The study was not registered, so its first public appearance is the date that counts."
+unsure = true
+unsure_why = "The dates are clear; the commitment is the doubt. The 2013 passage commits the theory to anaesthetics acting on microtubules, not to the specific test (a microtubule-stabilising drug delaying unconsciousness) or to its direction. A reader who wants the exact test fixed in advance would read 'unclear', and then the study does not count."
+
+[[judgement]]
+id = "com-li-orch-anaesthetic-mt"
+kind = "commitment"
+prediction = "orch-anaesthetic-mt"
+study = "li-2025"
+passages = [
+  { source = "hameroff-penrose-2014", text = "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness." },
+  { source = "li-2025", text = "Received 2024 Jan 17; Accepted 2025 Feb 9" },
+]
+dates = { statement = "2013-08-20 (hameroff-penrose-2014, available online)", study_first_appeared = "2025-02-28 (publication; not registered, no preprint found)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "Fixed in 2013; the study first appeared in 2025 and was not registered."
+unsure = true
+unsure_why = "As for khan-2024: the 2013 passage commits to microtubules as a site of anaesthetic action, not to this test or a direction."
+
+# ============================================================= testability judgements
+# Rival separation (ruling C): the rivals' own opened publications searched for each
+# prediction are listed in notes.md. The two nearest passages are quoted where they bear.
+
+[[judgement]]
+id = "tst-orch-mt-coherence"
+kind = "testability"
+prediction = "orch-mt-coherence"
+passages = [
+  { source = "tononi-koch-2015", text = "Note that IIT is compatible with quantum mechanics. In principle, Φ and related quantities can be assessed also in quantum system, although it has been suggested that at the quantum level Φ values may be very small" },
+  { source = "baars-edelman-2012", text = "While in the future we may discover quantum effects that bear distinctively on conscious cognition 'as such,' we do not have such evidence today." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "Sensitive measurements that find no quantum coherence in microtubules, or find it lost almost at once, would count against it. No rival's own opened publication predicts that coherence will not be found. Integrated information theory's proponents say their theory is compatible with quantum mechanics; Baars, who first proposed global workspace theory, says only that the evidence is not there yet. Neither is a contrary prediction."
+unsure = true
+unsure_why = "The prediction has no deadline and no size, so a failure to detect can always be put down to instruments not yet sensitive enough. Whether that still counts as 'could fail' is a judgement."
+
+[[judgement]]
+id = "tst-orch-mt-entangle"
+kind = "testability"
+prediction = "orch-mt-entangle"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "A test of the Bell kind that finds only classical correlations between microtubules would count against it. No rival's opened publication says anything about correlations between microtubules."
+unsure = true
+unsure_why = "The proponents themselves say such correlations are 'very hard to establish (or refute) experimentally', which weakens 'could fail' in practice."
+
+[[judgement]]
+id = "tst-orch-synaptic-cyto"
+kind = "testability"
+prediction = "orch-synaptic-cyto"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "Synaptic change with no cytoskeletal change, or unaffected when the cytoskeleton is blocked, would count against it. No rival's opened publication predicts that; the prediction is about how neurons work, not about experience, and other theories have no reason to deny it."
+unsure = false
+
+[[judgement]]
+id = "tst-orch-mt-vibration"
+kind = "testability"
+prediction = "orch-mt-vibration"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "Microtubule vibrations that do not change with a neuron's activity would count against it. No rival's opened publication speaks to microtubule vibrations."
+unsure = false
+
+[[judgement]]
+id = "tst-orch-dp-collapse"
+kind = "testability"
+prediction = "orch-dp-collapse"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "A massive enough superposition that outlasts the time Penrose's rule gives would count against it, and the proponents say such experiments are near. It is a prediction about physics; no rival theory of consciousness on the list says anything about how quantum states collapse in its opened publications."
+unsure = false
+
+[[judgement]]
+id = "tst-orch-mass-time"
+kind = "testability"
+prediction = "orch-mass-time"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "Time to perception that does not fall as more brain tissue takes part would count against it. No rival's opened publication predicts the opposite relation."
+unsure = true
+unsure_why = "The proponents say 'it is very hard to provide any clear estimate of the neural mass that is involved in a ‘perception’', and give no rule for measuring it, so in practice almost any result could be fitted."
+
+[[judgement]]
+id = "tst-orch-coherence-time"
+kind = "testability"
+prediction = "orch-coherence-time"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "A measurement showing microtubule coherence lost in far less than a thousandth of a second at body temperature would count against it. The best-known contrary estimate (Tegmark 2000) is by a physicist who is not a proponent of any theory on the list, so it cannot separate."
+unsure = false
+
+[[judgement]]
+id = "tst-orch-anaesthetic-mt"
+kind = "testability"
+prediction = "orch-anaesthetic-mt"
+passages = [
+  { source = "tononi-koch-2015", text = "Note that IIT is compatible with quantum mechanics." },
+  { source = "khan-2024", text = "These theories do not at present predict specific molecular targets of anesthetics." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "Drugs that clearly act on brain microtubules but leave anaesthetic sensitivity unchanged would count against it. No rival's own opened publication says anaesthetics do not act through microtubules; the study authors' survey of the workspace and integrated information theories says they 'do not at present predict specific molecular targets', which is silence, not a different prediction."
+unsure = true
+unsure_why = "Rival proponents who explain anaesthesia by the breakdown of communication between brain areas (for example Mashour's 'cognitive unbinding', 2013, whose full text could not be fetched) might be read as predicting that a drug acting inside neurons should matter only through firing. No opened passage says so, so it is not counted."
+
+# ======================================================================
+# Stage 3, Damasio's feeling-based theory: drafted 2026-11-21 (first reading, one reader).
+# Damasio's feeling-based theory: judgements, drafted 2026-11-21. One Claude reading
+# each, order "first"; the second reader has not read them.
+#
+# No outcome judgements: no study in the sample tests a recorded prediction with a
+# commitment read as 'before'. One commitment judgement (the proponents' own patient
+# study). One testability judgement per prediction.
+# Layout: data/tracker/README.md.
+# ========================================================== commitment judgements
+# Rule D (John, 2026-11-20, "Yes, that test"): a prediction counts for a study only if
+# the proponents fixed it before they could have known the result; stating and
+# testing in the same paper does not count.
+
+[[judgement]]
+id = "com-damasio-tranel-2013-dam-insula"
+kind = "commitment"
+prediction = "dam-insula"
+study = "damasio-tranel-2013"
+passages = [
+  { source = "damasio-tranel-2013", text = "The activity patterns unequivocally present in the insular cortex during feeling states would constitute a second-order mapping of activity patterns first assembled subcortically." },
+  { source = "damasio-tranel-2013", text = "In this study, we investigate this proposal in a patient whose insular cortices were destroyed bilaterally as a result of Herpes simplex encephalitis. The fact that all aspects of feeling were intact indicates that the proposal is problematic." },
+]
+dates = { statement = "2012-04-03 (this same paper; no earlier opened Damasio publication states it)", study_first_appeared = "2012-04-03 (publication, online version)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "not-before"
+reason = "The prediction and the patient study that tests it are in the same paper. The proponents had studied patient B. for about twenty years before writing, so they knew the result when they stated the prediction. It is listed, not counted."
+unsure = true
+unsure_why = "An earlier Damasio publication not opened here (for example Parvizi and Damasio 2001, or Damasio and Carvalho 2013, both behind subscriptions) may already place feelings first in the brainstem, but would still postdate most of the patient's data, which were gathered from 1975 on; so the verdict would likely stand either way."
+
+# ========================================================= testability judgements
+# Ruling C (John, 2026-11-20, "Yes, sourced only"): a prediction separates the theory
+# from a rival only when a publication by the rival's own proponents, opened and
+# quoted, predicts something different. Rivals' passages are quoted in
+# predictions.toml under separates_from.
+
+[[judgement]]
+id = "tst-dam-feeling-required"
+kind = "testability"
+prediction = "dam-feeling-required"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["sh"]
+reason = "A well-documented person with no feelings of the body's state who is still conscious would count against it. The Sentient Horizons account says mattering, the nearest feature to feeling, is not known to switch experience on, so it expects such a person to be conscious with a poorer experience."
+unsure = true
+unsure_why = "Whether the case could ever be observed is doubtful: feelings of the body's state are judged mostly by report, and a person who reports nothing may not be conscious enough to report. And 'mattering' on the account and 'homeostatic feeling' in Damasio may not be the same thing (the pilot raised the same doubt from the other side, tst-sh-enriching). On a row naming 'sh', the outside reader's reading should come first (ruling 7b)."
+
+[[judgement]]
+id = "tst-dam-subcortical"
+kind = "testability"
+prediction = "dam-subcortical"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = true
+separates_from = ["gwt", "iit"]
+reason = "If removing the cortex while sparing the brainstem left no feeling beyond fixed reflexes, it would fail. The proponents of global workspace theory and of integrated information theory signed a registration saying prefrontal, or posterior, cortical activity is needed for conscious experience, so both expect no experience without cortex."
+unsure = true
+unsure_why = "The rivals' passage is about 'conscious experience' in general, and Damasio's 2012 passage about 'basic feeling states'. They conflict only if basic bodily feeling counts as conscious experience for the rivals too, which the registration does not say. Also, 'signs of feeling beyond fixed reflexes' in an animal or a child without cortex are themselves disputed."
+
+[[judgement]]
+id = "tst-dam-insula"
+kind = "testability"
+prediction = "dam-insula"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "A person with both insulae destroyed and feelings flattened would count against it. The view it opposes, that the insula alone produces feeling, is A. D. Craig's, which is not on the ruled list; no listed rival's opened source says feelings need the insula."
+unsure = false
+
+[[judgement]]
+id = "tst-dam-nonneural"
+kind = "testability"
+prediction = "dam-nonneural"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "If blocking the chemical exchange between body-sensing nerves and the body left feelings unchanged, it would fail, so in principle it can lose. No opened rival proponents' publication says the nervous system alone is enough."
+unsure = true
+unsure_why = "The test wording is the site's, because the papers name a mechanism but no experiment; and 'not from the nervous system alone' is loose enough that a proponent could treat almost any result as consistent. A stricter reader would say it could not fail."
+
+[[judgement]]
+id = "tst-dam-nss"
+kind = "testability"
+prediction = "dam-nss"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = true
+separates = false
+separates_from = []
+reason = "A sensitive search finding no coupling between vagal body-sensing fibres would count against it. It is a claim about nerve physiology, and no rival on the list says anything about it."
+unsure = true
+unsure_why = "The paper itself says only that such coupling is 'plausible' and needs confirming, so a negative result might be read as a failed hope rather than a failed prediction."
+
+[[judgement]]
+id = "tst-dam-no-nervous-system"
+kind = "testability"
+prediction = "dam-no-nervous-system"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = false
+separates = false
+separates_from = []
+reason = "The paper names no observation that would show a bacterium or a plant has, or lacks, experience, so nothing could count against it. No opened rival proponents' source says such organisms are conscious."
+unsure = false
+
+[[judgement]]
+id = "tst-dam-ai"
+kind = "testability"
+prediction = "dam-ai"
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+could_fail = false
+separates = false
+separates_from = []
+reason = "The paper names no observation that would show an AI system has, or lacks, feelings, so nothing could count against it. No opened rival proponents' source says present-day AI has them."
+unsure = false
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Anil Seth's living-body view: drafted 2026-11-21.
+
+[[judgement]]
+id = "com-vabba-seth-interoceptive-ownership"
+kind = "commitment"
+prediction = "seth-interoceptive-ownership"
+study = "vabba-2025"
+dates = { statement = "2012-01-10", study_first_appeared = "2024-08-29" }
+
+[[judgement.passages]]
+source = "seth-2012"
+text = "We believe considerable promise lies in integrating interoceptive predictive coding with existing proprioceptive and multisensory models of selfhood (Blanke and Metzinger, 2009; Tsakiris, 2010), potentially explaining the force of “interoceptive anchors” in grounding bodily experience."
+
+[[judgement.passages]]
+source = "vabba-2025"
+text = "This result mirrors the majority of research on the RHI and replicates the findings from the previous version of this task (Suzuki et al. 2013 ) in which congruency of tactile and cardiac feedback significantly modulated subjective ownership"
+
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "The study was run by the theory's own supporters (Suzuki and Critchley wrote the 2012 statement), so the own-lab rule applies. The only statement on record before 2013 says no more than that joining body signals to models of ownership looks promising; it does not predict that a hand flashing in time with the heartbeat feels more one's own. That exact effect was first written, and first found, by the same lab in suzuki-2013, and this paper says it repeats that result. With no registration and no collection dates, the prediction is not shown to be fixed before the lab could know the result, so it is unclear and not counted."
+unsure = true
+unsure_why = "A reader who takes the 2012 'interoceptive anchors' sentence as committing the theory to any effect of heartbeat timing on ownership would read 'before' up to suzuki-2013, but the own-lab rule still bars it because the same lab published the result in 2013. If it were counted, the result would be mixed: in the sham (placebo) sessions heartbeat-timed flashing moved where people felt their real hand more than out-of-time flashing did, but the ownership questionnaire showed no difference for heartbeat trials (means 4.815 against 4.741 out of 6)."
+
+# ------------------------------------------- hill-2024 x seth-feeling-from-prediction
+
+[[judgement]]
+id = "com-hill-seth-feeling-from-prediction"
+kind = "commitment"
+prediction = "seth-feeling-from-prediction"
+study = "hill-2024"
+dates = { statement = "2012-01-10", study_first_appeared = "2024-04-23" }
+
+[[judgement.passages]]
+source = "seth-2012"
+text = "Extending these principles, in our model emotional content is determined by the nature of the predictive signals Ppred, and not simply by the “sensing” of interoceptive signals per se"
+
+[[judgement.passages]]
+source = "seth-2012"
+text = "or by false physiological feedback (Gray et al., 2007)."
+
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "In 2012 the proponents said the emotion a person feels is set by the brain's predictions about the body, not just by what the body signals, and named false physiological feedback as a way to manipulate those predictions. This study, by a group outside the camp, gave false heart-rate feedback while the real heart rate was measured, and asked how afraid people felt. It first appeared in 2024, twelve years after the statement."
+unsure = false
+unsure_why = ""
+
+[[judgement]]
+id = "out-hill-seth-feeling-from-prediction"
+kind = "outcome"
+prediction = "seth-feeling-from-prediction"
+study = "hill-2024"
+
+[[judgement.passages]]
+source = "hill-2024"
+text = "However, fear was significantly greater during Threat in the fast HR feedback group compared to both the slow HR feedback (p <.001, d=1.78) and no HR feedback (p <.001, d=1.39) groups (Fig. 2B)."
+
+[[judgement.passages]]
+source = "hill-2024"
+text = "There was neither a significant main effect of group (F(2,56)= .03, p= .97, ηp2 = .001), nor an interaction between the two (F(2,56)= .56, p= .58, ηp2 = .019) (Fig. 2F)."
+
+[[judgement.passages]]
+source = "hill-2024"
+text = "Contrary to both our expectations and previous research (Ehlers et al., 2021), false interoceptive feedback designed to imply low physiological arousal (i.e., slow HR feedback) did not reduce the emotional response to a postural threat."
+
+[[judgement.passages]]
+source = "hill-2024"
+text = "However, participants in the slow HR feedback group (8.2 ± 1.5, range 5 – 10) reported greater belief in the information that they received compared to the fast HR feedback group (4.8 ± 2.4, range 1 – 8) (p <.001, d=1.70)."
+
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "Hearing a falsely fast heartbeat made people more afraid at a height, while their real heart rate did not differ between the groups, which is what the prediction says should happen. But hearing a falsely slow heartbeat did not make them less afraid than hearing nothing, so only one of the two directions moved emotion the way the expected body state pointed. On balance it leans for the prediction, because the one change that happened went the predicted way and the body held still."
+unsure = true
+unsure_why = "The fast-feedback group mostly did not believe the feedback (4.8 out of 10), so it is not clear the fear came from a changed expectation of the body rather than from an alarming sound. The slow condition may have failed because the threat was mild (fear only rose to 1.6 out of 10 with no feedback), which the authors offer; a reader who discounts the slow condition on that ground would read 'for'."
+
+# ------------------------------------------- harrison-2021 x seth-interoceptive-suppression
+
+[[judgement]]
+id = "com-harrison-seth-interoceptive-suppression"
+kind = "commitment"
+prediction = "seth-interoceptive-suppression"
+study = "harrison-2021"
+dates = { statement = "2012-01-10", study_first_appeared = "2021-03-26" }
+
+[[judgement.passages]]
+source = "seth-2012"
+text = "A second basic prediction is that the AIC, as well as other areas involved in interoceptive processing, should show responses consistent with interoceptive predictive coding. For example, by analogy with studies of repetition suppression, AIC should show reduced responses for well predicted interoceptive signals and enhanced responses when expectations are violated."
+
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents wrote in 2012, in so many words, that the anterior insula (a brain region that handles signals from inside the body) should respond less to well-predicted body signals and more when the prediction is broken. This study, by a group outside the camp, measured exactly that with breathing signals, and first appeared as a preprint in 2021, nine years later."
+unsure = false
+unsure_why = ""
+
+[[judgement]]
+id = "out-harrison-seth-interoceptive-suppression"
+kind = "outcome"
+prediction = "seth-interoceptive-suppression"
+study = "harrison-2021"
+
+[[judgement.passages]]
+source = "harrison-2021"
+text = "In this Breathing Learning Task (BLT), 80 trials were performed where on each trial two visual cues were paired with either an 80% or 20% chance of a subsequent inspiratory resistive load."
+
+[[judgement.passages]]
+source = "harrison-2021"
+text = "In contrast, aIns, ACC, MFG, and the periaqueductal gray (PAG) demonstrated significant activations with overall prediction error values (i.e., averaged across trials with positive and negative prediction errors; Figure 4 B)."
+
+[[judgement.passages]]
+source = "harrison-2021"
+text = "Dorsolateral prefrontal cortex (dlPFC), anterior insula (aIns), anterior cingulate cortex (ACC), and middle frontal gyrus (MFG) all demonstrated significant deactivations with overall prediction certainty (i.e., averaged across trials with positive and negative prediction certainty; Figure 4 A)."
+
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "People learned from cues how likely it was that breathing would become hard on each trial. When the breath arrived, anterior insula activity rose with the size of the prediction error, so the region responded more the further the breath broke the prediction and less the better it was predicted. That is the pattern the prediction names."
+unsure = true
+unsure_why = "The fall in insula activity with prediction certainty was measured when the cue appeared, before the breath, so the 'less for well predicted' half rests on the error result alone (activity scaling with error) rather than on a direct predicted-versus-unpredicted contrast of the breath itself. The study has no comparable outside-world signal as a control, which the test wording asks for only on the 'against' side."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Attention schema theory: drafted 2026-11-21.
+
+[[judgement]]
+id = "com-kumar-2026-ast-graded"
+kind = "commitment"
+prediction = "ast-graded"
+study = "kumar-2026"
+passages = [
+  { source = "graziano-webb-2015", text = "A continuous scale for awareness is compatible with the attention schema theory. Attention can be graded, with more or less attention focused on an item, and therefore awareness, the internal model of attention, should also be graded." },
+  { source = "graziano-webb-2015", text = "To address the issue, in some paradigms, subjective awareness is assessed using continuous measures, such as confidence ratings, the perceptual awareness scale (PAS), or post-decision wagering" },
+]
+dates = { statement = "2015-04-23 (graziano-webb-2015)", study_first_appeared = "2026-08-24 (online publication; received 2026-04-22; no preprint found)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents wrote in 2015 that awareness should come in degrees because attention does, and named the very rating scale this study used. The study appeared eleven years later, from a group outside the theory's camp, so the plain dating rule applies and is met."
+unsure = true
+unsure_why = "The 2015 sentence says awareness 'should also be graded' because attention is; it does not say that taking attention away makes ratings more in-between, which is the specific pattern this study measured. A reader who wants the exact pattern stated in advance would read 'unclear'."
+
+[[judgement]]
+id = "out-kumar-2026-ast-graded"
+kind = "outcome"
+prediction = "ast-graded"
+study = "kumar-2026"
+passages = [
+  { source = "kumar-2026", text = "Crucially, PAS function slopes were shallower under high load in both experiments, indicating that awareness becomes more graded when attentional resources are limited." },
+  { source = "kumar-2026", text = "The overall mean PAS rating for the low load condition (M = 2.43, SD = 0.33) was significantly higher than high load condition (M = 2.29, SD = 0.31), (t(24) = −4.78, P < .001, d = 0.96)." },
+  { source = "kumar-2026", text = "The overall mean PAS rating for the low load condition (M = 2.59, SD = 0.22) was not significantly different than high load condition (M = 2.56, SD = 0.28), (t(36) = −1.17, P = .25, d = 0.19)." },
+  { source = "kumar-2026", text = "Once again, there seems to be a clear and consistent effect of load on the intermediate visibility level of brief glimpse." },
+  { source = "kumar-2026", text = "It should be noted that the present findings should not be taken to imply that consciousness is never all-or-none and is not a decisive test for discrete versus continuous theories of conscious perception." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "With the scene itself held the same, taking attention away moved people's clarity ratings: the in-between rating 'brief glimpse' became more common in both experiments, and in the first experiment the average rating also fell. In-between ratings were common throughout, never only 'not seen' or 'fully seen'. That is the prediction's 'for' case in its plain form: how clearly people see something shifts with how much attention is on it, by degrees."
+unsure = true
+unsure_why = "Attention was varied in only two steps, not several, so 'changes in matching steps' is shown for one step. In the second experiment the average rating did not change with attention, only the spread of ratings did. And the authors themselves say smooth rating curves do not settle graded against all-or-none, so a reader could call this 'mixed'."
+
+[[judgement]]
+id = "com-wang-2022-ast-control"
+kind = "commitment"
+prediction = "ast-control"
+study = "wang-2022"
+passages = [
+  { source = "graziano-webb-2015", text = "If awareness is an internal model of attention and is used to help control attention, then without awareness, attention should still be possible but it should suffer deficits in control." },
+  { source = "graziano-webb-2015", text = "Just so, in the attention schema theory, if the brain is allocating attention to item X but unaware of X, it has made an error in its internal model of attention, failing to register that its attention has been perturbed by X. In that case, the top–down control of attention should be compromised." },
+  { source = "graziano-webb-2015", text = "Regardless of the informational domain, the general prediction is the same: without awareness, attention should still be possible but should suffer a deficit in control." },
+]
+dates = { statement = "2015-04-23 (graziano-webb-2015)", study_first_appeared = "2022-11-17 (online publication; received 2022-09-03; no preprint found)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents published in 2015 that deliberate, goal-driven control of attention should suffer when a person is unaware of what has drawn their attention. This study appeared seven years later, from a group outside the theory's camp, and asks whether a goal a person holds still shapes how unseen cues pull attention, so the dates are clearly in order."
+unsure = true
+unsure_why = "What the 2015 passages mean by control is correcting attention after something has drawn it: withdrawing it, or taking it into account. This study measures something earlier, whether a goal set in advance decides which unseen cues draw attention at all. Whether the theory was committed to that is a judgement; a reader who says it was not would read 'unclear'."
+
+[[judgement]]
+id = "out-wang-2022-ast-control"
+kind = "outcome"
+prediction = "ast-control"
+study = "wang-2022"
+passages = [
+  { source = "wang-2022", text = "At the same time, participants reported subjectively that they were unable to perceive or identify the cues." },
+  { source = "wang-2022", text = "This result shows that when there is meaning contingency between objects, even if there is no conscious processing, the object’s meaning can still modulate the spatial attention allocation according to the current attentional control setting, and the meaning-contingent attentional orientation can occur at the subliminal level and is not affected by consciousness." },
+  { source = "wang-2022", text = "showing no significant difference whether consciousness was involved or not." },
+  { source = "wang-2022", text = "Therefore, the cue effects obtained in the experiments are the result of involuntary attention." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "Cues people could not see still drew attention, and part of that pull followed what people were searching for, about as strongly as in the same group's earlier study with visible cues. That looks like goal-driven control working without awareness, which leans against the prediction. But the study measured only the automatic pull, which the authors call involuntary; it never asked people to hold, push away or move their attention with respect to the unseen cue, which is the control the prediction names. So the result does not tell the prediction's two cases apart."
+unsure = true
+unsure_why = "A reader who counts a goal held in advance as deliberate control would read 'against'. The comparison with visible cues is across two papers and two sets of people, and the earlier paper (Wang and colleagues 2021) was not opened."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), The sensorimotor theory: drafted 2026-11-21.
+
+[[judgement]]
+id = "com-hense-2026-sm-inattentional"
+kind = "commitment"
+prediction = "sm-inattentional"
+study = "hense-2026"
+passages = [
+  { source = "oregan-noe-2001", text = "Your behavior is regulated by the appropriate sensorimotor contingencies, but you remain visually unaware of the associated aspects of the scene." },
+  { source = "oregan-noe-2001", text = "First, the empirical data on change blindness (see sect. 5.10 above) and inattentional blindness (see Noë & O’Regan 2000) demonstrate that you do not have all the details of what is seen in consciousness at once." },
+  { source = "hense-2026", text = "All participants engaged in a foreground visual distractor task, while task-irrelevant line configurations appeared in the background." },
+  { source = "hense-2026", text = "an uninformed group received no information about the face stimulus, a low-level group was informed about additional bright lines appearing in the background, and a high-level group was informed that these lines constitute a face." },
+]
+dates = { statement = "2001-10 (oregan-noe-2001)", study_first_appeared = "2026-10-15 (hense-2026, publication; an SSRN submitted version of unknown date)", data_collected = "not stated; before 2026-04-12 (received date)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "In 2001 the theory's authors said that someone busy with one task can fail to be aware of parts of the scene in front of them, and they cited missed unexpected objects as support. The study, which appeared in 2026 and was run by people outside their camp, gives exactly that test: people counting moving rectangles at the centre of the screen, with lines flashing in the background they were never told about. The statement came 25 years before the study, and it commits the theory to the result the study measures, so it is read as 'before'."
+unsure = false
+
+[[judgement]]
+id = "com-maimon-2022-sm-substitution"
+kind = "commitment"
+prediction = "sm-substitution"
+study = "maimon-2022"
+passages = [
+  { source = "oregan-noe-2001", text = "The fact that stimulation is provided through the skin should be irrelevant, providing the stimulation obeys the required sensorimotor laws." },
+  { source = "oregan-noe-2001", text = "It was only when the observer was allowed to actively manipulate the camera that identification became possible and observers came to “see” objects as being externally localized (White et al. 1970)." },
+  { source = "oregan-noe-2001", text = "Thus, since normally input coming through the auditory nerve will change in certain ways when the head or body moves, when later, without moving, the organism is stimulated through the auditory nerve, the stimulation will be perceived as belonging to the auditory modality." },
+  { source = "maimon-2022", text = "The translation of the visual image to auditory soundscapes was carried out on a dedicated EyeMusic website or mobile app and played back through a computer (laptop or desktop) or a mobile device" },
+  { source = "maimon-2022", text = "GB met with an EyeMusic trainer twice a week at his home, for around nine months." },
+]
+dates = { statement = "2001-10 (oregan-noe-2001)", study_first_appeared = "2022-06-22 (maimon-2022, publication)", data_collected = "not stated; before 2021-09-01 (received date)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "unclear"
+reason = "The dates are clear: the prediction was published in 2001, two decades before the study. What is unclear is whether the 2001 statement commits the theory to this case. It says the channel does not matter only if the stimulation 'obeys the required sensorimotor laws', meaning the input changes as the user moves; the paper describes pictures turned into sound on a website or app and played back, and never says the user moved the camera himself while listening. The same 2001 publication also says input through the auditory nerve, without movement, is heard as sound, which points the other way for a camera-to-sound device used without movement."
+unsure = true
+unsure_why = "One interview remark ('Using only with the musical eye I would have trouble getting you in the frame') suggests he did aim a camera at times, and nine months is long practice. A reader who takes the training as active use could read 'before' and go on to an outcome, which this reader would put as mixed: he calls the experience seeing, but also sees colours when colour words are spoken, with no device, and the authors leave open whether it is perception or imagery."
+
+# ========================================================== outcome judgements
+
+[[judgement]]
+id = "out-hense-2026-sm-inattentional"
+kind = "outcome"
+prediction = "sm-inattentional"
+study = "hense-2026"
+passages = [
+  { source = "hense-2026", text = "recruited: 47 uninformed, 43 low-level informed, 37 high-level informed): misalignment between reported stimulus perception and assigned experimental group (nine from the uninformed, eight from the low-level, and four in the high-level group; total 21)" },
+  { source = "hense-2026", text = "This design enabled a repeated presentation of lighter lines with abrupt onsets in the noisy background that remained nonconscious to uninformed participants but conscious as well as perceptually and temporally distinct to informed participants." },
+  { source = "hense-2026", text = "Awareness ratings confirmed successful experimental manipulation, with more than 80% of recruited participants reporting the intended perceptual outcome" },
+  { source = "hense-2026", text = "All participants were instructed to maintain fixation on the fixation cross while counting each time a large black rectangle crossed an imaginary horizontal midline through the fixation cross." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "The prediction says a sizeable share of people busy with a demanding task will not notice a visible, unexpected object where they are looking. Of 47 people who were not told about the background lines, only 9 reported seeing them, so 38 (about 81%) missed them, across 100 appearances near the centre of the screen. People shown the same displays but told about the lines did see them, which shows the lines were visible. That is the result the prediction names."
+unsure = true
+unsure_why = "The lines were lighter grey among black lines and were tuned in pilot studies so that uninformed people would miss them, so a reader may doubt they were 'clearly visible' as the test wording asks; the 81% figure is worked out from the exclusion counts rather than stated by the authors. Either way it moves no score, because this prediction does not separate the theory from its rivals."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Orchestrated Objective Reduction: drafted 2026-11-21.
+
+[[judgement]]
+id = "com-babcock-orch-mt-coherence"
+kind = "commitment"
+prediction = "orch-mt-coherence"
+study = "babcock-2024"
+passages = [
+  { source = "hameroff-1998", text = "Experiments with SQUIDs (superconducting quantum interference devices) such as those suggested by Leggett (1984) will detect phases of quantum coherence in microtubules." },
+  { source = "hameroff-penrose-2014", text = "Phases of quantum coherence will be detected in microtubules." },
+  { source = "babcock-2024", text = "Received 2023 Dec 4; Accepted 2024 Mar 19; Revised 2024 Mar 16" },
+]
+dates = { statement = "1998-08-15 (hameroff-1998; restated without the instrument 2013-08-20, hameroff-penrose-2014)", study_first_appeared = "2023-02-03 (arXiv 2302.01469 v1, carrying the measurements; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents said in 1998 that quantum coherence would be detected in microtubules, and said it again in 2013 without naming an instrument. The study's measurements first appeared in a preprint in February 2023, ten years after the later statement, and it was not registered. Its authors are not the theory's proponents, so the preprint date is the one that counts."
+unsure = false
+
+[[judgement]]
+id = "com-xenonnt-orch-dp-collapse"
+kind = "commitment"
+prediction = "orch-dp-collapse"
+study = "xenonnt-2026"
+passages = [
+  { source = "hameroff-1998", text = "Isolated technological quantum superpositions will self-collapse according to E = h/T." },
+  { source = "hameroff-penrose-2014", text = "Diósi–Penrose (DP) scheme of ‘objective reduction’ (‘OR’) of the quantum state." },
+  { source = "hameroff-penrose-2014", text = "In our picture, the dominant effect is likely to be (2) separation at the level of atomic nuclei, e.g. 2.5 Fermi length for carbon nuclei (2.5 femtometers; 2.5 × 10−15 meters)." },
+  { source = "xenonnt-2026", text = "Data from the first XENONnT science run (SR0), collected from July 6, 2021, to November 10, 2021" },
+]
+dates = { statement = "1998-08-15 (hameroff-1998); the Diósi-Penrose scheme named, and the nucleus-sized scale chosen, 2013-08-20 (hameroff-penrose-2014)", data_first_appeared = "2022 (the same detector data, first published for other searches; the paper's reference 12)", study_first_appeared = "2025-06-05 (arXiv 2506.05507 v1; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents fixed the collapse rule in 1998 and, in 2013, named it as the Diósi-Penrose scheme and put the mass that matters at the scale of carbon nuclei. The detector data were collected in 2021 and first published in 2022, and this analysis appeared in 2025, all long after. The study was run by a physics collaboration with no tie to the proponents."
+unsure = true
+unsure_why = "The dates are clear; the commitment is the doubt. What the detector tests is the faint X-ray glow that the Markovian (white-noise) form of the Diósi-Penrose model predicts. The proponents' passages commit them to the collapse rule and its timing, not to that form or to any glow, and the 2014 review itself calls the scale of the mass 'a large uncertainty'. A reader who wants the exact test fixed in advance would read 'unclear', and then the study does not count. The prediction's test wording, already settled, does name this glow as a way the prediction fails."
+
+# ============================================================= outcome judgements
+
+[[judgement]]
+id = "out-babcock-orch-mt-coherence"
+kind = "outcome"
+prediction = "orch-mt-coherence"
+study = "babcock-2024"
+passages = [
+  { source = "babcock-2024", text = "Table 1 shows consistent results for both excitation wavelengths, with the first a decrease of the QY from Trp to TuD and then a statistically significant increase by up to almost 70% for MTs." },
+  { source = "babcock-2024", text = "It is therefore an unlikely scenario in the vastly more complex MT case, suggesting that collective radiative processes in these protein assemblies with mega-ensembles of Trp are the primary cause of the significant QY increases observed in MTs." },
+  { source = "babcock-2024", text = "These promising results point toward superradiant emission, but fluorescence QYs need to be complemented by lifetime measurements in order to measure the radiative rate of fluorescence." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "Assembled microtubules gave back up to about 70% more of the ultraviolet light they absorbed than loose tubulin did, as a shared quantum state of the light-absorbing units would make them do. But the test asks for a sign that only a shared quantum state explains, and the authors say themselves that the measurement cannot yet show that: the results 'point toward superradiant emission', and lifetime measurements are needed to settle it. They argue the other explanation, less energy lost as heat, is unlikely, without ruling it out. So the result fits the prediction but cannot tell it apart from an ordinary explanation."
+unsure = true
+unsure_why = "A reader who takes the authors' own conclusion (the measurements confirm their predictions of superradiance) would read 'for'. A second doubt points the other way: the coherence here is a brief shared state of light-absorbing units after ultraviolet light hits them, in a test tube, which may not be the kind of coherence the theory needs in living neurons. The prediction's wording does not say which kind, so that doubt was not used to move the verdict."
+
+[[judgement]]
+id = "out-xenonnt-orch-dp-collapse"
+kind = "outcome"
+prediction = "orch-dp-collapse"
+study = "xenonnt-2026"
+passages = [
+  { source = "xenonnt-2026", text = "New world-leading limits on the free parameters of the Markovian continuous spontaneous localization and Diósi-Penrose models are set, improving previous best constraints by two orders of magnitude and a factor of five, respectively." },
+  { source = "xenonnt-2026", text = "acts as a spatial cutoff parameter to avoid a divergence in the collapse rate for point-like particles" },
+  { source = "hameroff-penrose-2014", text = "In our picture, the dominant effect is likely to be (2) separation at the level of atomic nuclei, e.g. 2.5 Fermi length for carbon nuclei (2.5 femtometers; 2.5 × 10−15 meters)." },
+  { source = "hameroff-penrose-2014", text = "There is, however, a large uncertainty about how ‘smeared out’ these nuclei must be considered to be" },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "against"
+reason = "The detector found no X-ray glow, and the paper sets the Diósi-Penrose model's smearing length at more than about half a nanometre (4.9 × 10^-10 m). The proponents' own calculation puts the mass at the scale of carbon nuclei, 2.5 × 10^-15 m, some hundred thousand times smaller; at that scale the model's glow would be far stronger than what was seen. The test wording counts it against the prediction when the side effects that the rule's simplest form implies are absent at the level it requires, and that is what this result shows."
+unsure = true
+unsure_why = "Three doubts. The paper does not mention Orch OR or the nucleus-sized scale; linking its smearing length to the proponents' 2.5-femtometre figure is this reader's step, not the paper's. The glow comes from the Markovian form of the model, which the proponents never adopted, and the 2014 review calls the smearing scale 'a large uncertainty', so a larger scale, which the result allows, would escape. A reader who weighs these would read 'mixed'. The prediction's own note says a later reply that the simplest version is not the theory's does not undo a recorded failure."
+
+# ======================================================================
+# Per-prediction search (John, 2026-11-21, "Yes, cap $10"), Damasio's feeling-based theory: drafted 2026-11-21.
+
+[[judgement]]
+id = "com-mukherjee-2024-dam-insula"
+kind = "commitment"
+prediction = "dam-insula"
+study = "mukherjee-2024"
+passages = [
+  { source = "damasio-tranel-2013", text = "The activity patterns unequivocally present in the insular cortex during feeling states would constitute a second-order mapping of activity patterns first assembled subcortically." },
+  { source = "damasio-tranel-2013", text = "The subcortical level would ensure basic feeling states while the cortical level would largely relate feeling states to cognitive processes such as decision-making and imagination." },
+  { source = "mukherjee-2024", text = "Here, we examined whether bilateral lesions of the IC affect the acquisition and expression of taste and place avoidance in EtOH-induced CTA and CPA paradigms." },
+]
+dates = { statement = "2012-04-03 (damasio-tranel-2013, the online version)", study_first_appeared = "2024-06-04 (publication, online version)", data_collected = "not stated by the study; gathered before 2024-06-04" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents put the claim that feelings survive loss of the insula in print in 2012, twelve years before this study appeared. The study gives no date for its experiments, but twelve years is far more than the five-year gap the first reader treats as enough, so the statement was on record before anyone gathered this data. The study's authors are not of the theory's camp, so the own-lab rule does not apply."
+unsure = false
+
+[[judgement]]
+id = "com-yacawych-2026-dam-nonneural"
+kind = "commitment"
+prediction = "dam-nonneural"
+study = "yacawych-2026"
+passages = [
+  { source = "damasio-2023", text = "The unusual physiological features that enable feelings, and thus consciousness, depend on the presence of a nervous system but not on an isolated nervous system." },
+  { source = "damasio-2024", text = "interoceptive neurons in peripheral nerve ganglia as well as in nuclei of the central nervous system are at the mercy of molecules in the blood circulation" },
+  { source = "damasio-2024", text = "In conclusion, consciousness arises in organisms endowed with nervous systems but not from the nervous system alone." },
+]
+dates = { statement = "2022-07-27 (damasio-2023, first public listing); restated 2024-07-15 (damasio-2024)", study_first_appeared = "2025-01-24 (preprint on bioRxiv)", data_collected = "not stated by the study; gathered before 2025-01-24" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+reason = "The proponents stated in 2022, and again in July 2024, that feelings depend on body-sensing nerve cells exchanging signals directly with the blood and tissue around them, including at the brainstem places the blood-brain barrier leaves open. The study's first public appearance was its preprint in January 2025, six months after the later statement and two and a half years after the earlier one. The study's authors are not of the theory's camp."
+unsure = true
+unsure_why = "The gap to the nearer statement is six months, and the study gives no date for its experiments, so the data were almost certainly in hand before July 2024. The verdict rests on the 2022 statement instead, which is two and a half years earlier but worded more loosely ('not on an isolated nervous system'): a reader who holds that only the 2024 wording commits the theory to this particular test would read 'unclear'."
+
+# ============================================================= outcome judgements
+
+[[judgement]]
+id = "out-mukherjee-2024-dam-insula"
+kind = "outcome"
+prediction = "dam-insula"
+study = "mukherjee-2024"
+passages = [
+  { source = "mukherjee-2024", text = "In the present study, we found that ibotenic acid lesions of the insular cortex significantly attenuated EtOH-induced CTA and completely blocked acquisition of EtOH-induced CPA in EtOH-naïve rats." },
+  { source = "mukherjee-2024", text = "Post-hoc analyses demonstrated that ICX rats conditioned with EtOH had a significantly higher preference for saccharin post-conditioning compared to neurologically intact rats." },
+  { source = "mukherjee-2024", text = "the strength of the conditioned response can serve as a proxy for the perceived subjective interoceptive properties of a given stimulus" },
+  { source = "mukherjee-2024", text = "consistent with other studies demonstrating the loss of a neophobic-like response to a novel saccharin solution following lesions of IC" },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "mixed"
+reason = "Rats whose insulae were destroyed on both sides went on drinking the flavour that alcohol had made them sick after, and never came to avoid the place where it happened, while intact rats did both. If learning to avoid a taste and a place stands in for feeling bad in the body, then feelings did not survive the loss, which points against the prediction. But the measure is learning, not a report of how the animal feels, and the same lesion also removed the rats' ordinary wariness of a new flavour, so the result cannot separate a lost feeling from a lost ability to learn about a taste. The prediction itself is about what a person says and what observers see, which no rat study can supply."
+unsure = true
+unsure_why = "This is the shakiest reading in this batch. A reader who takes conditioned avoidance as a fair stand-in for feeling bad would read 'against'; a reader who holds that a prediction about human self-reported feelings cannot be touched by rat learning at all would say the study does not bear on it and should not have been taken. The lean, if it has to be stated, is against the prediction."
+
+[[judgement]]
+id = "out-yacawych-2026-dam-nonneural"
+kind = "outcome"
+prediction = "dam-nonneural"
+study = "yacawych-2026"
+passages = [
+  { source = "yacawych-2026", text = "while we detected no role for AP Glp1r neurons in physiological feeding, they mediated both the weight-lowering and aversive effects of GLP1RAs" },
+  { source = "yacawych-2026", text = "these AP Glp1r-KO mice exhibited blunted Lira-induced CTA formation" },
+  { source = "yacawych-2026", text = "while fenestrated capillaries provide AP neurons with direct access to circulating signals, the NTS resides behind the BBB, potentially limiting the access of circulating GLP1RAs to NTS Glp1r neurons" },
+  { source = "yacawych-2026", text = "Thus, the poor access of circulating GLP1RAs to the NTS may represent the main obstacle that prevents NTS Glp1r neurons from mediating weight loss responses to these compounds." },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "for"
+reason = "The study worked on two neighbouring patches of the brainstem that both sense the body: one (the area postrema) sits in a gap in the blood-brain barrier and so is bathed in whatever circulates in the blood, the other (the nucleus of the solitary tract) sits behind the barrier. Taking the receptor away from the patch in the gap blunted the sickly, avoidance-producing state the drug normally causes, while putting the receptor back only behind the barrier did not produce that state. That is what the prediction's test asks for: cut the direct chemical exchange between body-sensing nerve cells and the blood around them, leave nerve-to-nerve signalling alone, and the feeling of the body's state changes."
+unsure = true
+unsure_why = "Three things make this loose. The circulating molecule is a medicine, not one of the body's own signals, so the study shows the exchange route matters for a drug rather than for ordinary bodily feeling. The feeling itself is read from mice refusing a flavour, a stand-in for nausea, not from anything said. And the two patches differ in more than the barrier, in how many receptor-carrying cells they hold and how much receptor each holds, which the authors say themselves. A stricter reader would call this mixed."
+
+
+# ----------------------------------------------- a follow-up question, 2026-11-21
+# John, 2026-11-21, "Re-ask both readers, cap $1 (Recommended)": is the model the XENONnT study
+# tests the one stated in the theory's own latest full statement? Question written down and
+# committed before either reader saw it (data/tracker/questions-2026-11-21-xenonnt.md). Answers
+# map to the dating verdicts: yes -> before (the "against" stays), no -> not-before (not counted),
+# unclear -> unclear (not counted). Replaces com-xenonnt-orch-dp-collapse (see rulings.toml).
+
+[[judgement]]
+id = "com2-xenonnt-orch-dp-collapse"
+kind = "commitment"
+prediction = "orch-dp-collapse"
+study = "xenonnt-2026"
+question = "Is the physical model this study tests the one stated in the theory's own latest full statement?"
+passages = [
+  { source = "hameroff-penrose-2014", text = "Diósi–Penrose (DP) scheme of ‘objective reduction’ (‘OR’) of the quantum state." },
+  { source = "hameroff-penrose-2014", text = "In our picture, the dominant effect is likely to be (2) separation at the level of atomic nuclei, e.g. 2.5 Fermi length for carbon nuclei (2.5 femtometers; 2.5 × 10−15 meters)." },
+  { source = "hameroff-penrose-2014", text = "There is, however, a large uncertainty about how ‘smeared out’ these nuclei must be considered to be" },
+  { source = "hameroff-penrose-2014", text = "For example, one ought to begin to see the effects of this OR scheme if a small object, such as a 10-µm cube of crystalline material could be held in a coherent superposition of two locations, differing by about the diameter of an atomic nucleus, for some seconds, or perhaps minutes to reach threshold" },
+  { source = "xenonnt-2026", text = "New world-leading limits on the free parameters of the Markovian continuous spontaneous localization and Diósi-Penrose models are set, improving previous best constraints by two orders of magnitude and a factor of five, respectively." },
+  { source = "xenonnt-2026", text = "acts as a spatial cutoff parameter to avoid a divergence in the collapse rate for point-like particles" },
+]
+dates = { statement = "2013-08-20 (hameroff-penrose-2014)", study_first_appeared = "2025-06-05" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-21"
+order = "first"
+verdict = "before"
+answer = "yes"
+reason = "The theory's 2014 statement says it adopts the Diósi–Penrose scheme of objective reduction, and the study sets limits on the free parameters of the Diósi–Penrose model, so both name the same model. The theory does not fix one value for how spread out the mass is. It names separation at the scale of atomic nuclei, for example about 2.5 femtometres for carbon, but says there is 'a large uncertainty' about how smeared out the nuclei should be taken to be. The study treats that spread as a free cutoff parameter, so it covers a range of values rather than a different model."
+unsure = true
+unsure_why = "The study passages do not say which range of the cutoff its limits exclude, so I cannot tell from them whether the nuclear-scale value the theory prefers is the one tested or ruled out. One point comes from my own background knowledge and not from the passages: Penrose has at times set his version apart from Diósi's version, which needs a cutoff parameter. If the record treats those as two versions of the model, the answer could be no. The passages do not show such a difference."
+blind_note = "A fresh agent given only the packet, with no file or web access and no earlier reading."

@@ -1,0 +1,31 @@
+{
+  "packet_id": "tst-sm-change-blindness",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "4tIBa5O6N63Pm9cP5fyawQ8",
+  "finish_reason": "STOP",
+  "answer_text": "{\"could_fail\": true, \"rival_predicts_same\": true, \"which_rivals_same\": [\"gwt\", \"rpt\"], \"separates\": false, \"separates_from\": [\"iit\", \"hot\", \"seth\", \"ast\", \"orch-or\", \"damasio\", \"sh\"], \"reason\": \"The prediction could fail because an eye-tracking study could observe that people find large changes just as quickly and reliably when the local transient is masked as when it is unmasked. According to the material given, publications by proponents of Global Workspace Theory and Recurrent Processing Theory predict the same missed reports. Because at least one rival's published source predicts the same observable result, the prediction does not uniquely separate the sensorimotor theory overall, though it still separates from the seven rivals that are silent here.\", \"unsure\": true, \"unsure_why\": \"The material for GWT and RPT provides summary statements with proponent citations rather than verbatim passages from those publications, and 'separates' could be read either as separating from all rivals (false here, following 'UNLESS a rival's own published source predicts the same thing') or separating from at least one silent rival (true).\"}",
+  "usage": {
+    "promptTokenCount": 1789,
+    "candidatesTokenCount": 255,
+    "totalTokenCount": 6167,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1789
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 255
+      }
+    ],
+    "thoughtsTokenCount": 4123,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.047358,
+  "seconds": 58.4,
+  "called_on": "2026-11-21 09:21:33 PST"
+}

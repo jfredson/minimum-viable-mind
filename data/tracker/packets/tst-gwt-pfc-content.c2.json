@@ -1,0 +1,82 @@
+{
+  "packet_id": "tst-gwt-pfc-content",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Global workspace theory",
+  "core_claim": {
+    "quote": "The prefrontal cortex is posited to play a key role in the GNW because of the greater density of neurons thought to be critical for global broadcasting of information, but it is not proposed as the exclusive territory for conscious access.",
+    "source": {
+      "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+      "date": "2020-03-04"
+    }
+  },
+  "prediction": {
+    "statement": "What is consciously seen is represented in prefrontal cortex, so that its content can be decoded there, whether or not the person has to report it or use it in a task.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2013-12-29",
+      "passage": "Global information sharing and routing would rely on a set of interconnected high-level cortical regions forming a ‘global workspace’ and involving primarily the dorsolateral prefrontal cortex, but also additional hubs in inferior parietal cortex, mid-temporal cortex, and precuneus",
+      "source": {
+        "citation": "Dehaene S, Charles L, King J-R, Marti S. Toward a computational theory of conscious processing. Current Opinion in Neurobiology 25:76-84, 2014",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635963/",
+        "date": "2013-12-29"
+      }
+    },
+    "test_for": "Features of a stimulus that the person consciously sees (its category, orientation, identity) can be decoded from prefrontal activity, including when the stimulus or the feature is irrelevant to the task and nothing is reported.",
+    "test_against": "A feature the person consciously sees can be decoded from sensory cortex but not from prefrontal cortex, in a design sensitive enough to find it in prefrontal cortex for other features."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [
+    {
+      "rival": "Integrated information theory",
+      "statement": "IIT places conscious content mainly in posterior cortex and predicts it is maximally decodable there, with prefrontal cortex adding nothing.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    }
+  ],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "In order to be globally shared, conscious information should be represented by a stable and reproducible brain-scale assembly for a minimal duration.",
+      "source": {
+        "citation": "Dehaene S, Charles L, King J-R, Marti S. Toward a computational theory of conscious processing. Current Opinion in Neurobiology 25:76-84, 2014",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635963/",
+        "date": "2013-12-29"
+      }
+    },
+    {
+      "passage": "In short, GNW predicts that the content of consciousness should be decodable from prefrontal areas, whereas IIT predicts that they should be maximally decodable from posterior areas.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    {
+      "passage": "In monkeys, however, recordings in the prefrontal cortex show that prefrontal neurons encode, in firing patterns, the specific current content of consciousness during binocular rivalry and related paradigms (Panagiotaropoulos et al., 2012). Importantly, those data were obtained in a no-report paradigm",
+      "source": {
+        "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+        "date": "2020-03-04"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading",
+  "file_name": "tst-gwt-pfc-content.c2",
+  "question_version": "rule C as amended 2026-11-21; this row was read before under the earlier question"
+}

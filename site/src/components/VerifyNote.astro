@@ -2,7 +2,7 @@
 // Tracker pattern rule 3.3: a page that shows a record with an open verify entry says so.
 // The site check refuses a page that shows such a record (data-record) without this note
 // for the entry (data-verify-open).
-import R from './R.astro';
+import RecText from './RecText.astro';
 import { tk } from '../lib/tracker';
 interface Props { ids: string[] }
 const entries = tk.verify_open.filter((v) => Astro.props.ids.includes(v.id));
@@ -11,7 +11,7 @@ const entries = tk.verify_open.filter((v) => Astro.props.ids.includes(v.id));
   <div class="notice verify">
     <b>Still being checked.</b> {entries.length === 1 ? 'One statement behind this page rests on a source not yet opened in full, so it may change:' : 'Some statements behind this page rest on sources not yet opened in full, so they may change:'}
     <ul>
-      {entries.map((e) => <li data-verify-open={e.id}><R t={e.statement} /></li>)}
+      {entries.map((e) => <li data-verify-open={e.id}><RecText t={e.statement} /></li>)}
     </ul>
   </div>
 )}

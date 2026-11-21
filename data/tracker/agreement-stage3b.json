@@ -1,0 +1,143 @@
+{
+  "by_kind": {
+    "outcome": {
+      "read_by_both": 9,
+      "agree": 6,
+      "disagree": 3,
+      "disagreement_rate": 0.333
+    },
+    "commitment": {
+      "read_by_both": 11,
+      "agree": 7,
+      "disagree": 4,
+      "disagreement_rate": 0.364
+    },
+    "testability": {
+      "read_by_both": 0,
+      "agree": 0,
+      "disagree": 0,
+      "disagreement_rate": null,
+      "agree_on_could_fail": 0,
+      "agree_on_separates": 0,
+      "raw_agree_against_claudes_earlier_question": 0
+    }
+  },
+  "disagreements": [
+    {
+      "judgement": "out-kumar-2026-ast-graded",
+      "kind": "outcome",
+      "theory": "ast",
+      "prediction": "ast-graded",
+      "prediction_statement": "Because awareness is a model of attention, and attention comes in degrees, awareness also comes in degrees: more attention on an item goes with more awareness of it, not an all-or-nothing switch.",
+      "study": "kumar-2026",
+      "claude": "for",
+      "claude_reason": "With the scene itself held the same, taking attention away moved people's clarity ratings: the in-between rating 'brief glimpse' became more common in both experiments, and in the first experiment the average rating also fell. In-between ratings were common throughout, never only 'not seen' or 'fully seen'. That is the prediction's 'for' case in its plain form: how clearly people see something shifts with how much attention is on it, by degrees.",
+      "gemini": "mixed",
+      "gemini_reason": "Supporting the prediction, both experiments showed graded awareness with attentional load consistently affecting intermediate visibility ratings, and one experiment found significantly higher overall awareness ratings when more attention was free under low load. Against the prediction, the other experiment found no significant difference in overall mean awareness ratings between low and high load. Furthermore, the passages only describe two load conditions rather than multiple steps of attention, and the authors explicitly note that these results are not a decisive test between discrete and continuous accounts of awareness.",
+      "gemini_unsure": false,
+      "first_of_record": "claude",
+      "a_ruled_rule_would": "rule E would record it as mixed (not applied)"
+    },
+    {
+      "judgement": "out-mukherjee-2024-dam-insula",
+      "kind": "outcome",
+      "theory": "damasio",
+      "prediction": "dam-insula",
+      "prediction_statement": "Feelings, of the body and of emotions, survive complete destruction of the insula on both sides of the brain, because the insula re-maps feelings first assembled lower down.",
+      "study": "mukherjee-2024",
+      "claude": "mixed",
+      "claude_reason": "Rats whose insulae were destroyed on both sides went on drinking the flavour that alcohol had made them sick after, and never came to avoid the place where it happened, while intact rats did both. If learning to avoid a taste and a place stands in for feeling bad in the body, then feelings did not survive the loss, which points against the prediction. But the measure is learning, not a report of how the animal feels, and the same lesion also removed the rats' ordinary wariness of a new flavour, so the result cannot separate a lost feeling from a lost ability to learn about a taste. The prediction itself is about what a person says and what observers see, which no rat study can supply.",
+      "gemini": "against",
+      "gemini_reason": "The prediction states that bodily and emotional feelings survive bilateral destruction of the insula, while flattening or abolition of feelings counts against it. In this study, bilateral insular lesions in rats significantly weakened alcohol-induced taste aversion, completely blocked alcohol-induced place aversion, and eliminated a neophobic-like response. Using the authors' framing of conditioned responses as a proxy for perceived subjective interoceptive properties, these lesions flattened or abolished the negative feelings studied.",
+      "gemini_unsure": true,
+      "first_of_record": "claude",
+      "a_ruled_rule_would": "rule E would record it as mixed (not applied)"
+    },
+    {
+      "judgement": "out-yacawych-2026-dam-nonneural",
+      "kind": "outcome",
+      "theory": "damasio",
+      "prediction": "dam-nonneural",
+      "prediction_statement": "Feelings, and so consciousness, come from the nervous system working together with the body's own tissues and chemistry, not from the nervous system alone.",
+      "study": "yacawych-2026",
+      "claude": "for",
+      "claude_reason": "The study worked on two neighbouring patches of the brainstem that both sense the body: one (the area postrema) sits in a gap in the blood-brain barrier and so is bathed in whatever circulates in the blood, the other (the nucleus of the solitary tract) sits behind the barrier. Taking the receptor away from the patch in the gap blunted the sickly, avoidance-producing state the drug normally causes, while putting the receptor back only behind the barrier did not produce that state. That is what the prediction's test asks for: cut the direct chemical exchange between body-sensing nerve cells and the blood around them, leave nerve-to-nerve signalling alone, and the feeling of the body's state changes.",
+      "gemini": "mixed",
+      "gemini_reason": "Knocking out the receptor in the blood-exposed area postrema blunted the aversive response to a circulating appetite drug, which fits the test's idea that blocking direct blood-to-nerve chemical access dulls a sickly bodily state. However, the passages report no role for those neurons in normal physiological feeding (involving the body's own chemistry), and because the blood-brain barrier keeps the circulating drug from reaching neighbouring brainstem neurons, removing the area postrema receptor may just block an external drug's entry point rather than showing that nerve-to-nerve signalling alone cannot produce feelings. Because of this, the given passages cannot tell Damasio's prediction apart from a purely neural account once a signal enters the brain. Beyond the material given, this reading relies only on standard expansions of the passages' abbreviations (AP = area postrema, NTS = nucleus of the solitary tract, BBB = blood-brain barrier, GLP1RA/Lira = GLP-1 receptor agonist/liraglutide, KO = knockout, CTA = conditioned taste aversion in mice).",
+      "gemini_unsure": true,
+      "first_of_record": "claude",
+      "a_ruled_rule_would": "rule E would record it as mixed (not applied)"
+    },
+    {
+      "judgement": "com-kumar-2026-ast-graded",
+      "kind": "commitment",
+      "theory": "ast",
+      "prediction": "ast-graded",
+      "prediction_statement": "Because awareness is a model of attention, and attention comes in degrees, awareness also comes in degrees: more attention on an item goes with more awareness of it, not an all-or-nothing switch.",
+      "study": "kumar-2026",
+      "claude": "before",
+      "claude_reason": "The proponents wrote in 2015 that awareness should come in degrees because attention does, and named the very rating scale this study used. The study appeared eleven years later, from a group outside the theory's camp, so the plain dating rule applies and is met.",
+      "gemini": "unclear",
+      "gemini_reason": "Graziano and Webb's 2015 paper appeared well before Kumar and Srinivasan's 2026 study, and it argues that because attention on an item can be graded, awareness should also be graded. However, the 2015 passage frames continuous scales as compatible with the theory in general and implies only that less attention yields lower awareness along a scale, not how concurrent task load changes perceptual gradedness. Because the 2026 study tests whether scene-gist clarity ratings are specifically more in-between (more graded) under high task load than under low load, the earlier text does not clearly commit the theory to the prediction as the study tests it.",
+      "gemini_unsure": true,
+      "first_of_record": "claude",
+      "a_ruled_rule_would": "the dating rule on split readers would leave it uncounted (not applied)"
+    },
+    {
+      "judgement": "com-mukherjee-2024-dam-insula",
+      "kind": "commitment",
+      "theory": "damasio",
+      "prediction": "dam-insula",
+      "prediction_statement": "Feelings, of the body and of emotions, survive complete destruction of the insula on both sides of the brain, because the insula re-maps feelings first assembled lower down.",
+      "study": "mukherjee-2024",
+      "claude": "before",
+      "claude_reason": "The proponents put the claim that feelings survive loss of the insula in print in 2012, twelve years before this study appeared. The study gives no date for its experiments, but twelve years is far more than the five-year gap the first reader treats as enough, so the statement was on record before anyone gathered this data. The study's authors are not of the theory's camp, so the own-lab rule does not apply.",
+      "gemini": "unclear",
+      "gemini_reason": "Damasio and colleagues stated in 2012, well before the 2024 study, that basic feeling states are assembled subcortically and survive bilateral insular damage. However, the 2024 study tests conditioned taste and place avoidance in rats rather than direct markers of feeling states as specified in the prediction's test criteria. Moreover, because the 2012 paper assigns the insular cortex a role in relating feelings to cognitive processes like decision-making, it does not clearly commit the theory on whether associative avoidance learning should remain intact or be impaired after bilateral insular lesions.",
+      "gemini_unsure": false,
+      "first_of_record": "claude",
+      "a_ruled_rule_would": "the dating rule on split readers would leave it uncounted (not applied)"
+    },
+    {
+      "judgement": "com-wang-2022-ast-control",
+      "kind": "commitment",
+      "theory": "ast",
+      "prediction": "ast-control",
+      "prediction_statement": "Without awareness of an item, attention can still be drawn to it, but the brain's deliberate control of that attention (sustaining it, suppressing it, shifting it away) is impaired.",
+      "study": "wang-2022",
+      "claude": "before",
+      "claude_reason": "The proponents published in 2015 that deliberate, goal-driven control of attention should suffer when a person is unaware of what has drawn their attention. This study appeared seven years later, from a group outside the theory's camp, and asks whether a goal a person holds still shapes how unseen cues pull attention, so the dates are clearly in order.",
+      "gemini": "unclear",
+      "gemini_reason": "Graziano and Webb published their statement in April 2015, more than seven years before the 2022 study was submitted and published, so the timing is clearly prior. However, the 2015 passages commit only to the broad claim that when an unseen item perturbs attention, top-down control of attention is compromised. The 2022 study tests subliminal meaning-contingent orienting—whether masked cues pull attention in line with advance search settings—rather than testing whether people can deliberately sustain, suppress, or redirect attention to an unseen stimulus relative to a seen one. Because the 2015 passages do not settle whether contingent capture by matching subliminal cues counts as intact top-down control or involuntary capture, the theory's commitment as tested by this study is unclear.",
+      "gemini_unsure": true,
+      "first_of_record": "claude",
+      "a_ruled_rule_would": "the dating rule on split readers would leave it uncounted (not applied)"
+    },
+    {
+      "judgement": "com-yacawych-2026-dam-nonneural",
+      "kind": "commitment",
+      "theory": "damasio",
+      "prediction": "dam-nonneural",
+      "prediction_statement": "Feelings, and so consciousness, come from the nervous system working together with the body's own tissues and chemistry, not from the nervous system alone.",
+      "study": "yacawych-2026",
+      "claude": "before",
+      "claude_reason": "The proponents stated in 2022, and again in July 2024, that feelings depend on body-sensing nerve cells exchanging signals directly with the blood and tissue around them, including at the brainstem places the blood-brain barrier leaves open. The study's first public appearance was its preprint in January 2025, six months after the later statement and two and a half years after the earlier one. The study's authors are not of the theory's camp.",
+      "gemini": "unclear",
+      "gemini_reason": "Damasio and Damasio published their statements in July 2022 and July 2024, before the study first appeared as a bioRxiv preprint on January 24, 2025. However, the quoted passages only state the broad claim that feelings require interaction between interoceptive neurons in peripheral ganglia or central nuclei and viscera or circulating blood molecules, rather than an isolated nervous system. They do not clearly commit the theory to the prediction as this study tests it, namely switching GLP1 receptors on and off in two brainstem patches to test whether drug-induced sickly feelings and weight loss share a circuit or require direct brainstem blood exchange over nerve-to-nerve signalling.",
+      "gemini_unsure": false,
+      "first_of_record": "claude",
+      "a_ruled_rule_would": "the dating rule on split readers would leave it uncounted (not applied)"
+    }
+  ],
+  "problems": [],
+  "stop_condition": {
+    "rule": "the readers disagree on more than a third of the outcome judgements",
+    "outcome_rate": 0.333,
+    "stops": false
+  },
+  "models": [
+    "gemini-4-carbon"
+  ],
+  "calls": 20,
+  "cost_usd": 0.7353
+}

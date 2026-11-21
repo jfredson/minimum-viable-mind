@@ -1,0 +1,134 @@
+{
+ "prediction": "sm-no-ncc",
+ "query": "TITLE_ABS:\"neural correlate* of consciousness\" AND (TITLE_ABS:\"task-dependent\" OR TITLE_ABS:\"task relevance\" OR TITLE_ABS:\"no-report\" OR TITLE_ABS:confound* OR TITLE_ABS:\"across tasks\") AND SRC:MED",
+ "run_on": "2026-11-21 09:53 PST",
+ "hit_count": 7,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42060400",
+   "source": "MED",
+   "pmid": "42060400",
+   "pmcid": null,
+   "doi": "10.1037/xge0001918",
+   "first_publication_date": "2026-05-01",
+   "title": "A late-stage neural signature of visual awareness in the no-report inattentional blindness paradigm.",
+   "authors": "Liu A, Chen M, Zhao S, Zhao F, Feng W.",
+   "journal": "Journal of experimental psychology. General",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The search for the neural correlates of consciousness has long revolved around a theoretical debate between early posterior sensory processing and late anterior cognitive involvement. Although the late event-related potential (ERP)-P3b component-is increasingly interpreted as reflecting postperceptual, report-related processes rather than consciousness itself, it remains unclear whether other late-stage neural activity contributes to conscious perception. Recent findings derived from no-report paradigms suggest a late ERP candidate of it; however, its reliability and functional significance-especially regarding stimulus complexity-remain to be elucidated. To address these questions, we employed a no-report inattentional blindness paradigm across three ERP experiments. Experiments 1 and 2 used high-level, real-life object drawings (car and bell) to reliably evoke and characterize the potential late ERP component. Experiment 3 directly compared neural responses to these complex stimuli with those elicited by low-level geometric drawing (square) to examine the potential influence of stimulus complexity. Results consistently revealed a late bilateral occipital positivity following conscious perception of task-irrelevant, high-level objects, whereas this component was less reliable for simple geometric drawings. These findings put forward the late bilateral occipital positivity as a potential late-stage electrophysiological marker of the neural correlate of consciousness whose elicitation appears to be modulated by stimulus complexity, highlighting that the neural dynamics of consciousness may unfold as a multistage process, with early perceptual awareness being followed by later, content-specific processing. (PsycInfo Database Record (c) 2026 APA, all rights reserved)."
+  },
+  {
+   "rank": 2,
+   "id": "38165732",
+   "source": "MED",
+   "pmid": "38165732",
+   "pmcid": null,
+   "doi": "10.1162/jocn_a_02101",
+   "first_publication_date": "2024-03-01",
+   "title": "Conscious Experience of Stimulus Presence and Absence Is Actively Encoded by Neurons in the Crow Brain.",
+   "authors": "Wagener L, Nieder A.",
+   "journal": "Journal of cognitive neuroscience",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The emergence of consciousness from brain activity constitutes one of the great riddles in biology. It is commonly assumed that only the conscious perception of the presence of a stimulus elicits neuronal activation to signify a \"neural correlate of consciousness,\" whereas the subjective experience of the absence of a stimulus is associated with a neuronal resting state. Here, we demonstrate that the two subjective states \"stimulus present\" and \"stimulus absent\" are represented by two specialized neuron populations in crows, corvid birds. We recorded single-neuron activity from the nidopallium caudolaterale of crows trained to report the presence or absence of images presented near the visual threshold. Because of the task design, neuronal activity tracking the conscious \"present\" versus \"absent\" percept was dissociated from that involved in planning a motor response. Distinct neuron populations signaled the subjective percepts of \"present\" and \"absent\" by increases in activation. The response selectivity of these two neuron populations was similar in strength and time course. This suggests a balanced code for subjective \"presence\" versus \"absence\" experiences, which might be beneficial when both conscious states need to be maintained active in the service of goal-directed behavior."
+  },
+  {
+   "rank": 3,
+   "id": "33174836",
+   "source": "MED",
+   "pmid": "33174836",
+   "pmcid": "PMC7676863",
+   "doi": "10.7554/elife.58360",
+   "first_publication_date": "2020-11-11",
+   "title": "A new no-report paradigm reveals that face cells encode both consciously perceived and suppressed stimuli.",
+   "authors": "Hesse JK, Tsao DY.",
+   "journal": "eLife",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "A powerful paradigm to identify neural correlates of consciousness is binocular rivalry, wherein a constant visual stimulus evokes a varying conscious percept. It has recently been suggested that activity modulations observed during rivalry may represent the act of report rather than the conscious percept itself. Here, we performed single-unit recordings from face patches in macaque inferotemporal (IT) cortex using a no-report paradigm in which the animal's conscious percept was inferred from eye movements. We found that large proportions of IT neurons represented the conscious percept even without active report. Furthermore, on single trials we could decode both the conscious percept and the suppressed stimulus. Together, these findings indicate that (1) IT cortex possesses a true neural correlate of consciousness and (2) this correlate consists of a population code wherein single cells multiplex representation of the conscious percept and veridical physical stimulus, rather than a subset of cells perfectly reflecting consciousness."
+  },
+  {
+   "rank": 4,
+   "id": "30853537",
+   "source": "MED",
+   "pmid": "30853537",
+   "pmcid": null,
+   "doi": "10.1016/j.neuropsychologia.2019.03.002",
+   "first_publication_date": "2019-03-07",
+   "title": "Conscious perception in patients with prefrontal damage.",
+   "authors": "Colás I, Chica AB, Ródenas E, Busquier H, Olivares G, Triviño M.",
+   "journal": "Neuropsychologia",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "We are conscious and verbally report some of the information reaching our senses, although a big amount of information is processed unconsciously. There is no agreement about the neural correlates of consciousness, with low-level theories proposing that neural processing on primary sensory brain regions is the most important neural correlate of consciousness, while high-level theories propose that activity within the fronto-parietal network is the key component of conscious processing (Block, 2009). Contrary to the proposal of high-level theories, patients with prefrontal lobe damage do not present clinical symptoms associated to consciousness deficits. In the present study, we explored the conscious perception of near-threshold stimuli in a group of patients with right prefrontal damage and a group of matched healthy controls. Results demonstrated that perceptual contrast to perceive the near-threshold targets was related to damage to the right dorsolateral prefrontal cortex, and with reduced integrity of the ventral branch of the right superior longitudinal fascicule (SLF III). These results suggest a causal role of the prefrontal lobe in conscious processing."
+  },
+  {
+   "rank": 5,
+   "id": "30447435",
+   "source": "MED",
+   "pmid": "30447435",
+   "pmcid": null,
+   "doi": "10.1016/j.concog.2018.11.002",
+   "first_publication_date": "2018-11-15",
+   "title": "A methodological dilemma for investigating consciousness empirically.",
+   "authors": "Schlicht T.",
+   "journal": "Consciousness and cognition",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This paper exposes a methodological dilemma arising for the research program of finding the neural correlate of consciousness (NCC), the minimal set of brain processes sufficient for a particular percept. The main claim is that it is doubtful that the right kind of correlations will ever be obtained because the foregoing conceptual decisions regarding the relations between consciousness, attention, cognitive access, report, and other cognitive functions determine the interpretation of the correlation data that can be obtained. Relying on subjective reports likely leads to confounding the NCC with neural mechanisms for cognitive functions because reports presuppose cognitive access. No-report paradigms are in danger of confounding the NCC with neural mechanisms underlying unconscious processes. So there does not seem to be a way of making sure to have isolated the neural correlate of conscious experience."
+  },
+  {
+   "rank": 6,
+   "id": "17124173",
+   "source": "MED",
+   "pmid": "17124173",
+   "pmcid": "PMC1693736",
+   "doi": "10.1073/pnas.0607716103",
+   "first_publication_date": "2006-11-21",
+   "title": "Relative blindsight in normal observers and the neural correlate of visual consciousness.",
+   "authors": "Lau HC, Passingham RE.",
+   "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "By using a paradigm based on metacontrast masking, we created experimental conditions in which the subjective report of consciousness differs but the objectively measured ability to discriminate visual targets does not. This approach allowed us to study the neural correlate of consciousness while having performance levels carefully matched in healthy human subjects. A comparison of the neural activity associated with these conditions as measured by functional MRI showed that conscious perception is associated with spatially specific activity in the mid-dorsolateral prefrontal cortex (area 46). Further analysis confirms that this activation is not only free from any performance confound, but is also not driven by differences in the timing of the physical stimuli. Our results suggest that the prefrontal cortex is important for the essentially subjective aspects of conscious perception."
+  },
+  {
+   "rank": 7,
+   "id": "11790038",
+   "source": "MED",
+   "pmid": "11790038",
+   "pmcid": null,
+   "doi": "10.1006/ccog.2001.0520",
+   "first_publication_date": "2001-12-01",
+   "title": "On the correlation between synchronized oscillatory activities and consciousness.",
+   "authors": "Sewards TV, Sewards MA.",
+   "journal": "Consciousness and cognition",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Recent experiments have shown that the amplitudes of cortical gamma band oscillatory activities that occur during anesthesia are often greater than amplitudes of similar activities that occur without anesthesia. This result is apparently at odds with the hypothesis that synchronized oscillatory activities constitute the neural correlate of consciousness. We argue that while synchronization and oscillatory patterning are necessary conditions for consciousness, they are not sufficient. Based on the results of a binocular rivalry study of Fries et al. (1997), we propose that the degrees of oscillatory strength and synchronization of neuronal activities determine the degree of awareness those activities produce. On the other hand, the overal firing rates of neurons in cortical sensory areas are not correlated with the degree of awareness the activities of those neurons produce. The results of the experiment of Fries et al. (1997) appear to conflict with the results of another binocular rivalry experiment, in which monkeys were trained to pull a lever in order to report which stimulus object was being perceived (Leopold & Logothetis, 1996). In the latter experiment, it was demonstrated that the firing rates of neurons in striate cortex did not change during perceptual alterations, while 90% of neurons in inferior and superior temporal cortices changed their firing rate when the perceived image changed. This result led to the conclusion that activities in temporal cortex are correlated with visual awareness, but those in striate cortex are not. We argue that activities in temporal cortex contribute little, if anything, to perceptual awareness, and that their primary function is computational. Thus the correlation between the firing rates of neurons in these areas and the responses of the monkeys is due to the recognition of a particular stimulus object, which in turn is due to the computations made there."
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+  "packet_id": "com-wilterson-tpj-ast-control",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "XcsBa9ncFaWkjdoPurPLKA",
+  "finish_reason": "STOP",
+  "answer_text": "{\"verdict\": \"before\", \"reason\": \"In April 2015, Graziano and Webb explicitly committed Attention Schema Theory to the prediction that without awareness, attention remains possible but suffers deficits in control. This commits the theory to impaired deliberate steering or control of attention with masked cues compared with visible cues, even when attention is still drawn. The study by Wilterson and colleagues first appeared publicly in June 2021 after submission in December 2020, more than five years after the prediction was fixed in print.\", \"unsure\": false, \"unsure_why\": \"\"}",
+  "usage": {
+    "promptTokenCount": 1441,
+    "candidatesTokenCount": 127,
+    "totalTokenCount": 5092,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1441
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 127
+      }
+    ],
+    "thoughtsTokenCount": 3524,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.039392,
+  "seconds": 56.2,
+  "called_on": "2026-11-21 08:49:25 PST"
+}

@@ -1,0 +1,77 @@
+{
+  "packet_id": "out-hill-seth-feeling-from-prediction",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Anil Seth's living-body view",
+  "core_claim": {
+    "quote": "Experiences of emotion and mood, which seem central to selfhood, may depend on interoceptive inferences – probabilistic best-guesses about the causes of sensory inputs signalling the physiological condition of the body",
+    "source": {
+      "citation": "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)",
+      "url": "https://doi.org/10.1017/S0140525X25000032",
+      "date": "2025-04-21"
+    }
+  },
+  "prediction": {
+    "statement": "The emotion a person feels is set by the brain's predictions about the body, not by the body's signals alone, so changing what a person expects their body to be doing (for example with false heart-rate feedback) changes the emotion they feel even when the body does not change.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2012-01-10",
+      "passage": "Extending these principles, in our model emotional content is determined by the nature of the predictive signals Ppred, and not simply by the “sensing” of interoceptive signals per se",
+      "source": {
+        "citation": "Seth AK, Suzuki K, Critchley HD. An interoceptive predictive coding model of conscious presence. Frontiers in Psychology 2:395 (2011 volume)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254200/",
+        "date": "2012-01-10"
+      }
+    },
+    "test_for": "Manipulating expected bodily state (false feedback, cues) with the actual bodily state held fixed changes reported emotion in the direction of the expectation.",
+    "test_against": "With the actual bodily state held fixed, manipulating expected bodily state leaves reported emotion unchanged."
+  },
+  "study": {
+    "name": "False heart-rate feedback while standing at a height, and how afraid people felt",
+    "source": {
+      "citation": "Hill MW, Johnson E, Ellmers TJ. The influence of false interoceptive feedback on emotional state and balance responses to height-induced postural threat. Biological Psychology 189:108803, 2024",
+      "url": "https://doi.org/10.1016/j.biopsycho.2024.108803",
+      "date": "2024-04-23"
+    },
+    "first_appeared": "2024-04-23 (publication online ('Available online 23 April 2024'); no preprint found in Europe PMC)",
+    "data_collected": {
+      "when": "not stated; before 2023-09-12",
+      "basis": "The paper gives no collection dates; the journal received it on 2023-09-12."
+    }
+  },
+  "passages": [
+    {
+      "text": "However, fear was significantly greater during Threat in the fast HR feedback group compared to both the slow HR feedback (p <.001, d=1.78) and no HR feedback (p <.001, d=1.39) groups (Fig. 2B).",
+      "source": {
+        "citation": "Hill MW, Johnson E, Ellmers TJ. The influence of false interoceptive feedback on emotional state and balance responses to height-induced postural threat. Biological Psychology 189:108803, 2024",
+        "url": "https://doi.org/10.1016/j.biopsycho.2024.108803",
+        "date": "2024-04-23"
+      }
+    },
+    {
+      "text": "There was neither a significant main effect of group (F(2,56)= .03, p= .97, ηp2 = .001), nor an interaction between the two (F(2,56)= .56, p= .58, ηp2 = .019) (Fig. 2F).",
+      "source": {
+        "citation": "Hill MW, Johnson E, Ellmers TJ. The influence of false interoceptive feedback on emotional state and balance responses to height-induced postural threat. Biological Psychology 189:108803, 2024",
+        "url": "https://doi.org/10.1016/j.biopsycho.2024.108803",
+        "date": "2024-04-23"
+      }
+    },
+    {
+      "text": "Contrary to both our expectations and previous research (Ehlers et al., 2021), false interoceptive feedback designed to imply low physiological arousal (i.e., slow HR feedback) did not reduce the emotional response to a postural threat.",
+      "source": {
+        "citation": "Hill MW, Johnson E, Ellmers TJ. The influence of false interoceptive feedback on emotional state and balance responses to height-induced postural threat. Biological Psychology 189:108803, 2024",
+        "url": "https://doi.org/10.1016/j.biopsycho.2024.108803",
+        "date": "2024-04-23"
+      }
+    },
+    {
+      "text": "However, participants in the slow HR feedback group (8.2 ± 1.5, range 5 – 10) reported greater belief in the information that they received compared to the fast HR feedback group (4.8 ± 2.4, range 1 – 8) (p <.001, d=1.70).",
+      "source": {
+        "citation": "Hill MW, Johnson E, Ellmers TJ. The influence of false interoceptive feedback on emotional state and balance responses to height-induced postural threat. Biological Psychology 189:108803, 2024",
+        "url": "https://doi.org/10.1016/j.biopsycho.2024.108803",
+        "date": "2024-04-23"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

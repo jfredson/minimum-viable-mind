@@ -1,0 +1,55 @@
+{
+  "packet_id": "tst-seth-ai-not-by-computation",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Anil Seth's living-body view",
+  "core_claim": {
+    "quote": "In this scenario, consciousness is not a matter of computation, and conscious AI would need to be ‘living’ AI.",
+    "source": {
+      "citation": "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)",
+      "url": "https://doi.org/10.1017/S0140525X25000032",
+      "date": "2025-04-21"
+    }
+  },
+  "prediction": {
+    "statement": "Conventional AI will not become conscious by getting more capable or by running the right computations; consciousness will not arrive as a side effect of intelligence.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2025-04-21",
+      "passage": "Consciousness will not just come along for the ride as AI gets smarter, despite the pull of our anthropocentric and anthropomorphic biases.",
+      "source": {
+        "citation": "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)",
+        "url": "https://doi.org/10.1017/S0140525X25000032",
+        "date": "2025-04-21"
+      }
+    },
+    "test_for": "An agreed test for consciousness finds none in conventional AI systems, however capable they become.",
+    "test_against": "An agreed test for consciousness finds it in a conventional (non-living, digital) AI system."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [
+    {
+      "rival": "Attention schema theory",
+      "statement": "Attention schema theory's proponent proposes the theory as a basis for building machines that are conscious in the sense humans are, with current technology.",
+      "source": {
+        "citation": "Graziano MSA. The attention schema theory: a foundation for engineering artificial consciousness. Frontiers in Robotics and AI 4:60, 2017",
+        "url": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2017.00060/full",
+        "date": "2017-11-14"
+      }
+    }
+  ],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [],
+  "this_reading_is": "the second reading"
+}

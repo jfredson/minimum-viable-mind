@@ -1,4 +1,4 @@
-# The tracker's records: layout (stage 2 pilot, 2026-11-20)
+# The tracker's records: layout (stage 2 pilot, 2026-11-20; stage 3 added 2026-11-21)
 
 This folder is the first draft of the data for the tracker of theories of consciousness
 that Minimum Viable Mind is becoming (`docs/2026-11-20-consciousness-tracker-kickoff-proposal.md`).
@@ -73,11 +73,16 @@ the Working Positions page).
 ## The three kinds of judgement
 
 - **outcome**: for, against or mixed (+1, −1, 0).
-- **commitment**: `before`, `not-before` or `unclear`: was the prediction fixed by the proponents in a
-  dated record (a publication or a registration) before the study's data were collected? Each counted
-  study records `data_collected`; where a paper does not date its data, the first reader's stated
-  convention is in the header of the commitment section of `judgements.toml`. Only `before` counts; `unclear` does not
-  (rule 2.3: "When the dates or the commitment are unclear, the study is not counted").
+- **commitment**: `before`, `not-before` or `unclear`, by ruling D (John, 2026-11-20, "Yes, that
+  test"): was the prediction fixed by the theory's proponents before they could have known the
+  study's result? That means before its registration, for a study registered before its data were
+  collected; before its earliest public appearance (preprint or publication), for any other study;
+  before the data first appeared, for a reanalysis. For a study run by the theory's own supporters
+  (John, 2026-11-21, "Yes, own-lab dating"), it means before their lab had the data, shown by a
+  registration or the paper's methods dates, and before any earlier paper in which the same lab
+  published that result. Stating and testing in the same paper does not count. Only `before` counts;
+  `unclear` does not (rule 3: "When the dates or the commitment are unclear, the study is not
+  counted"), and readers who split on commitment make it unclear (John, 2026-11-20).
 - **testability**: could the prediction fail, and does it separate the theory from a rival on the list?
 
 The kickoff proposal asks for two readers on every outcome; rule 2.3 asks for two on every
@@ -92,9 +97,8 @@ Claude reading on such a row is not marked `order = "second"`.
 
 ## How the numbers are computed (`scripts/tracker_scores.py`)
 
-- **Counted.** An outcome counts when its commitment judgement says `before` (the prediction was
-  fixed by the proponents in a dated record, publication or registration, before the study's data
-  were collected: ruled by John 2026-11-20, "Yes, count it"), the study was opened,
+- **Counted.** An outcome counts when its commitment judgement says `before` (by ruling D, above),
+  the study was opened,
   and the prediction's testability judgement says it could fail and separates the theory from a
   rival ("a prediction every theory shares is recorded but scores nothing").
 - **Testability.** Per core claim: 1 if a proponent-stated prediction tied to it could fail and
@@ -140,3 +144,42 @@ so each record can be checked; their copyright stays with their authors.
 Five studies were found through the ConTraSt database (Yaron, Melloni, Pitts and Mudrik, *Nature Human Behaviour* 6,
 593–604, 2022; https://contrastdb.tau.ac.il; CC BY-SA 4.0), used only as a reading list: no ConTraSt
 field is copied here, and each record is built from the paper itself.
+
+## Stage 3 (2026-11-21)
+
+The seven remaining theories were added on 2026-11-21: higher-order theories (`hot-`), recurrent
+processing theory (`rpt-`), Anil Seth's living-body view (`seth-`), attention schema theory
+(`ast-`), the sensorimotor theory (`sm-`), Orchestrated Objective Reduction (`orch-`) and Damasio's
+feeling-based theory (`dam-`). Their core-claim sources are the ones John ruled (kickoff proposal,
+ruling 4, with its clarifications of 2026-11-21). Each theory's drafting notes, with how its core
+claims and studies were chosen, are in `docs/2026-11-21-stage3-drafting-notes/`. Every judgement on
+them has one reading so far (Claude); the score script marks those theories "one reader only".
+
+Two additions, made at the site session's request:
+
+- **`questions`** on a prediction: the open questions it bears on (`features`, `machines`,
+  `animals`, `fading`, `groups`; the questions themselves are in the site's
+  `data/open-questions.toml`). Filled only where the link is clear.
+- **A prediction's state** is now computed (`predictions` in `scores.json`): untested if no
+  counted outcome; supported if every counted outcome is "for"; contradicted if every one is
+  "against"; otherwise mixed. Beside it, the weighted reading (the sign of outcome times study
+  weight) is computed, and `state_readings_differ` lists where the two disagree. Neither rule is
+  ruled by John.
+
+The commitment judgements use ruling D ("Yes, that test"): a prediction counts if the proponents
+fixed it before they could have known the study's result.
+## The weekly reading (stage 4, built 2026-11-21)
+
+How new studies reach the tracker: `docs/weekly-reading.md` (the method) and
+`docs/weekly-reading-prompt.md` (the standalone instruction a cloud routine follows). Its files:
+
+| file | what it holds |
+|---|---|
+| `search-runs-<date>/` | the raw results of each run of the fixed searches; `search-runs-2026-11-21/` is the baseline |
+| `readings/<date>.json` | one record per weekly reading, never edited; `<date>.candidates.json` lists that run's new results |
+| `waiting.toml` | studies found and waiting to be scored, with a first reading; appended to, never edited; a `[[resolved]]` entry closes a row |
+| `contrast-seen.txt` | the DOIs on ConTraSt's list already seen (DOIs only, no ConTraSt field) |
+
+`scripts/tracker_weekly.py` reruns the searches (`search`), compares ConTraSt (`contrast`), validates
+(`check`) and counts what is waiting (`count`, and `waiting_counts()` for the site's export). Nothing
+in the weekly reading moves a score.

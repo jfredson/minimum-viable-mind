@@ -1,0 +1,74 @@
+{
+  "packet_id": "com-yacawych-2026-dam-nonneural",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Damasio's feeling-based theory",
+  "core_claim": {
+    "quote": "Finally, we outline a mechanism for the generation of feelings based on a two-way interaction between interoceptive components of the nervous system and a particular set of nonneural components of the organism's interior, namely, viscera and circulating chemical molecules involved in their operations.",
+    "source": {
+      "citation": "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023",
+      "url": "https://doi.org/10.1162/neco_a_01521",
+      "date": "2022-07-27"
+    }
+  },
+  "prediction": {
+    "statement": "Feelings, and so consciousness, come from the nervous system working together with the body's own tissues and chemistry, not from the nervous system alone.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2022-07-27",
+      "passage": "The unusual physiological features that enable feelings, and thus consciousness, depend on the presence of a nervous system but not on an isolated nervous system.",
+      "source": {
+        "citation": "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023",
+        "url": "https://doi.org/10.1162/neco_a_01521",
+        "date": "2022-07-27"
+      }
+    },
+    "test_for": "Blocking the direct chemical exchange between body-sensing nerves and the tissue or blood around them (for example at brainstem sites with no blood-brain barrier, such as the area postrema), while ordinary nerve-to-nerve signalling is kept, dulls or changes feelings of the body's state.",
+    "test_against": "Such blocking leaves feelings of the body's state unchanged, while ordinary nerve-to-nerve signalling alone carries them."
+  },
+  "study": {
+    "name": "Whether the sickly feeling and the weight loss that come with appetite drugs can be separated, by switching one receptor on and off in two neighbouring brainstem patches",
+    "source": {
+      "citation": "Yacawych WT, Wang Y, Zhou G, Hassan S, Bodur C, Walters E, Santinga JG, Sass F, deVaux M, Kernodle S, Wu I, Brown JM, Belmont-Rausch D, Rupp AC, Tomlinson AJ, Lin Z, VanTongeren E, Secher A, Raun K, Pers TH, Seeley RJ, Myers MG. A single dorsal vagal complex circuit mediates the aversive and anorectic responses to GLP1R agonists. Journal of Clinical Investigation 136(21):e193743, 2026",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13722397/",
+      "date": "2025-01-24"
+    },
+    "first_appeared": "2025-01-24 (preprint (bioRxiv 2025.01.21.634167), named as this paper's preprint in the journal article's record)",
+    "data_collected": {
+      "when": "not stated; before 2025-01-24",
+      "basis": "The paper gives no collection dates; the preprint of the same work appeared 2025-01-24."
+    }
+  },
+  "passages": [
+    {
+      "text": "The unusual physiological features that enable feelings, and thus consciousness, depend on the presence of a nervous system but not on an isolated nervous system.",
+      "source": {
+        "citation": "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023",
+        "url": "https://doi.org/10.1162/neco_a_01521",
+        "date": "2022-07-27"
+      }
+    },
+    {
+      "text": "interoceptive neurons in peripheral nerve ganglia as well as in nuclei of the central nervous system are at the mercy of molecules in the blood circulation",
+      "source": {
+        "citation": "Damasio A, Damasio H. Sensing, feeling and consciousness. Philosophical Transactions of the Royal Society B 379(1908):20230243, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444232/",
+        "date": "2024-07-15"
+      }
+    },
+    {
+      "text": "In conclusion, consciousness arises in organisms endowed with nervous systems but not from the nervous system alone.",
+      "source": {
+        "citation": "Damasio A, Damasio H. Sensing, feeling and consciousness. Philosophical Transactions of the Royal Society B 379(1908):20230243, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11444232/",
+        "date": "2024-07-15"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2022-07-27 (damasio-2023, first public listing); restated 2024-07-15 (damasio-2024)",
+    "study_first_appeared": "2025-01-24 (preprint on bioRxiv)",
+    "data_collected": "not stated by the study; gathered before 2025-01-24"
+  },
+  "this_reading_is": "the second reading"
+}

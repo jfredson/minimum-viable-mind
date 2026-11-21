@@ -1,0 +1,82 @@
+{
+  "packet_id": "com-hense-2026-sm-inattentional",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "The sensorimotor theory",
+  "core_claim": {
+    "quote": "For a creature (or a machine for that matter) to possess visual awareness, what is required is that, in addition to exercising the mastery of the relevant sensorimotor contingencies, it must make use of this exercise for the purposes of thought and planning.",
+    "source": {
+      "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+      "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+      "date": "2001-10"
+    }
+  },
+  "prediction": {
+    "statement": "Something plainly visible, which a person may even be looking at or steering by, can go unseen when it is not being used in their thinking and planning: an unexpected object goes unnoticed by someone busy with another task.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2001-10",
+      "passage": "Your behavior is regulated by the appropriate sensorimotor contingencies, but you remain visually unaware of the associated aspects of the scene.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    "test_for": "In designs where people do a demanding task and an unexpected, clearly visible object appears where they are looking, a sizeable share of them (by the study's own measure) say afterwards that they did not notice it.",
+    "test_against": "People doing a demanding task notice nearly every clearly visible unexpected object that appears where they are looking."
+  },
+  "study": {
+    "name": "Lines forming a face flash in the background while people do a counting task: who notices them, and what the brain does when they are seen",
+    "source": {
+      "citation": "Hense A, Peters A, Dellert T, Bruchmann M, Straube T. Distinct electrophysiological correlates of low- and high-level visual consciousness with minimized post-perceptual processing. iScience, 2026 (article 117853)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13691566/fullTextXML",
+      "date": "2026-10-15"
+    },
+    "first_appeared": "2026-10-15 (publication (iScience, open access); OpenAlex also lists a submitted version on SSRN (doi 10.2139/ssrn.6642388) whose date was not established)",
+    "data_collected": {
+      "when": "not stated; before 2026-04-12",
+      "basis": "The paper gives no collection dates; it was received by the journal on 2026-04-12, so the data were collected before then. Its ethics approval number is from 2019 (2019-049-f-S)."
+    }
+  },
+  "passages": [
+    {
+      "text": "Your behavior is regulated by the appropriate sensorimotor contingencies, but you remain visually unaware of the associated aspects of the scene.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    {
+      "text": "First, the empirical data on change blindness (see sect. 5.10 above) and inattentional blindness (see Noë & O’Regan 2000) demonstrate that you do not have all the details of what is seen in consciousness at once.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    {
+      "text": "All participants engaged in a foreground visual distractor task, while task-irrelevant line configurations appeared in the background.",
+      "source": {
+        "citation": "Hense A, Peters A, Dellert T, Bruchmann M, Straube T. Distinct electrophysiological correlates of low- and high-level visual consciousness with minimized post-perceptual processing. iScience, 2026 (article 117853)",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13691566/fullTextXML",
+        "date": "2026-10-15"
+      }
+    },
+    {
+      "text": "an uninformed group received no information about the face stimulus, a low-level group was informed about additional bright lines appearing in the background, and a high-level group was informed that these lines constitute a face.",
+      "source": {
+        "citation": "Hense A, Peters A, Dellert T, Bruchmann M, Straube T. Distinct electrophysiological correlates of low- and high-level visual consciousness with minimized post-perceptual processing. iScience, 2026 (article 117853)",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13691566/fullTextXML",
+        "date": "2026-10-15"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2001-10 (oregan-noe-2001)",
+    "study_first_appeared": "2026-10-15 (hense-2026, publication; an SSRN submitted version of unknown date)",
+    "data_collected": "not stated; before 2026-04-12 (received date)"
+  },
+  "this_reading_is": "the second reading"
+}

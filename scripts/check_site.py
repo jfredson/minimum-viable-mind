@@ -59,6 +59,7 @@ PHRASES = [
     r"for john\b",             # "flagged for John", "a note for John"
     r"(reported|sent|passed|left|put) to john\b",   # "reported to John" (not "traces it to John Ball")
     r"john'?s ruling",         # "(John's ruling of the same day)"
+    r"john ruled\b",           # "the text that John ruled as the source" (a verify entry, 2026-11-21)
     r"john to (rewrite|review|approve|check|read|decide)",
     r"flagged (it |the range |)for me",
     r"put to me\b",
@@ -265,12 +266,24 @@ def open_verify():
     return json.loads(f.read_text(encoding="utf-8")).get("verify_open", [])
 
 
+def claim_quotes():
+    """Each main claim's quotation and id. A page that quotes a claim shows that claim, whether
+    or not its markup says so (added 2026-11-21, after a check found 23 prediction pages quoting
+    a claim with an open verify entry and carrying no note for it)."""
+    f = DATA_FILES[0]
+    if not f.exists():
+        return {}
+    d = json.loads(f.read_text(encoding="utf-8"))
+    return {norm(c["quote"]): c["id"] for t in d.get("theories", {}).values() for c in t.get("claims", [])}
+
+
 def check(dist: Path) -> tuple[list[str], list[str]]:
     problems: list[str] = []
     reported: list[str] = []
     values, corpus, nums = data_corpus()
     verify = open_verify()
     allowed = allowed_sentences()
+    quotes = claim_quotes()
     for page in sorted(dist.rglob("*.html")):
         rel = str(page.relative_to(dist))
         raw = page.read_text(encoding="utf-8", errors="replace")
@@ -292,7 +305,9 @@ def check(dist: Path) -> tuple[list[str], list[str]]:
             problems.append(f"{rel}: a number typed into a tracker page, not taken from the records: …{loose[start:m.end() + 50]}…")
             break
         for v in p.data_n:
-            if v not in values:
+            if v in ("null", "None", "undefined", "NaN", ""):
+                problems.append(f"{rel}: shows an empty value ({v!r}) where a number should be")
+            elif v not in values:
                 problems.append(f"{rel}: shows the value {v!r}, which the data files do not carry")
         for chunks in p.rec:
             t = norm("".join(chunks))
@@ -306,9 +321,12 @@ def check(dist: Path) -> tuple[list[str], list[str]]:
                 if n not in nums and n not in values and not re.fullmatch(r"(19|20)\d\d", n):
                     reported.append(f"{rel}: the number {n} is not found in the data files (older page, reported)")
 
+        shown = set(p.records)
+        flat = norm(text)
+        shown |= {cid for q, cid in quotes.items() if q and q in flat}
         for e in verify:
-            if p.records & set(e["records"]) and e["id"] not in p.verify:
-                problems.append(f"{rel}: shows {sorted(p.records & set(e['records']))}, which the open verify entry {e['id']} touches, without saying so")
+            if shown & set(e["records"]) and e["id"] not in p.verify:
+                problems.append(f"{rel}: shows {sorted(shown & set(e['records']))}, which the open verify entry {e['id']} touches, without saying so")
     return problems, reported
 
 

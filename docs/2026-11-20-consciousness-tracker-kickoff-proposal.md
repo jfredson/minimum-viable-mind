@@ -110,6 +110,19 @@ before any theory is scored, and shown with its count, so that a reader can see 
 - **The score.** A core claim scores 1 if a proponent states at least one prediction for it that
   could fail and that separates the theory from a rival; 0.5 if only the site has inferred one; 0 if
   none. Testability is the average across core claims, times 100.
+- *(ruled, 2026-11-21, John: "Add the half-score line (Recommended)"; wording the master session's.)*
+  **A hedged prediction scores half.** A prediction whose supporters wrote, before the study, that a
+  null result should not count against it scores 0.5 on testability, and the ranking bar treats it
+  as it treats a prediction only the site has inferred. Readers may answer "only partly" to "could it
+  fail", and a prediction so read is treated the same way. (Raised by the stage 3 scoring: higher-order
+  theories' two prefrontal predictions carry such a caveat, from their 2019 and 2020 statements.)
+- *(ruled, 2026-11-21, John: "Keep prior caveats (Recommended)"; wording the master session's.)* **A
+  caveat counts only if published before the study**, and the rule applies evenly to every theory.
+  *(ruled, 2026-11-21, John: "Latest statement counts (Recommended)".)* **The supporters' latest
+  statement before a study governs**, so a later, firmer statement cancels an earlier caveat. Applied:
+  global workspace theory's 2013 caveat (a task-irrelevant stimulus "may correlate solely with a
+  transient posterior negativity") was dropped by its proponents' 2019 registration and 2020 review
+  before the Dellert study, so Dellert stays "against".
 
 **Support: how well the science backs it.** Across the theory's tested predictions that separate
 it from a rival, each study's outcome counts +1 for, −1 against and 0 for mixed, multiplied by the
@@ -144,6 +157,11 @@ study's weight.
   It is an average, not a total, so a theory tested more often does not score higher for that
   alone. More tests make the score steadier, and the page shows how much it rests on beside it.
 
+*(ruled, 2026-11-21, John: "Mixed, with the lean in words (Recommended)"; wording the master
+session's.)* **A prediction's state:** untested if no counted study; supported if every counted
+outcome is "for"; contradicted if every one is "against"; otherwise mixed, with a line saying which
+way the weight of the evidence leans (the sign of each outcome times its study's weight).
+
 **Left to test: the share of the theory's distinguishing predictions that no study has touched.**
 Only predictions tied to the fixed core claims count, and every core claim must have at least one,
 so a theory cannot look nearly finished by having said little. When new predictions are added the
@@ -176,7 +194,30 @@ session's recommendations; the wording is the session's.
    rival only when a publication by the rival's own proponents, opened and cited, predicts something
    different. A reader's own knowledge does not count, and a rival's silence does not count. This
    governs both the bar and the testability score. (Raised by the stage 2
-   pilot, which found the first wording did not say; wording the master session's.) A support score speaks only for the
+   pilot, which found the first wording did not say; wording the master session's.)
+   *(ruled, 2026-11-21, John: "Yes, flip it"; wording the master session's; amends the ruling just
+   above.)* **A prediction separates a theory from a rival unless a rival's own opened source
+   predicts the same thing.** A rival's silence now means the prediction is the theory's own. A
+   reader's own knowledge still never counts, and every claim about a rival still rests on that
+   rival's own words. (Raised by the stage 3 scoring, where three theories whose rivals never
+   discuss their subject scored 0 or nearly 0 on testability.) Weakest steps, stated to John when
+   he ruled: it helps the Sentient Horizons account, whose predictions about the split now likely
+   separate, and the method page must say so plainly, with the date of this change; and a theory
+   can raise its testability by predicting things no rival discusses. *(ruled, 2026-11-21, John:
+   "Yes, that reading"; wording the master session's.)* How it applies: a separation already
+   resting on a rival's contrary passage stands; a prediction stops separating only where a rival's
+   own opened source predicts the same and no rival's source predicts something different. Weakest
+   step, stated to John: one sourced agreement outweighs every other rival's silence.
+   *(ruled, 2026-11-21, John: "Keep 'more than half' (Recommended)"; wording the master session's.)*
+   Exactly half does not pass the bar. (Raised by the stage 3 scoring, where the Sentient Horizons
+   account, Seth's view and Damasio's theory each have exactly half their core claims passing.)
+   *(ruled, 2026-11-21, John: "No, it can't (Recommended)"; wording the master session's.)* **The
+   site's own Sentient Horizons account never counts as the rival that sets another theory apart.**
+   (Applied: Damasio's "no consciousness without feeling" still separates, through the other rivals'
+   silence; no score changes.)
+   *(ruled, 2026-11-21, John: "With today's methods (Recommended)".)* **"Could fail" means could fail
+   with today's methods.** A prediction no existing method can check does not count as able to fail.
+   A support score speaks only for the
    claims that were testable; where fewer than half were, it describes a minority of the theory,
    and ranking the whole theory on it would mislead. This replaces the bare figure of 50 first
    proposed.
@@ -193,6 +234,10 @@ session's recommendations; the wording is the session's.
    on most theories may come out tied, so the first screen may look undecided for a while. That is
    the honest result, and it matches the headline, which says how little of the field has been
    tested.
+   *(ruled, 2026-11-21, John: "Yes, pairs only"; recorded here by the stage 3 scoring session as
+   relayed by the second master session.)* Ties are between neighbours only, and the ranking shows
+   no rank numbers: two neighbours that reversing one study could swap are said, in words, to be too
+   close to separate. A tie does not chain down the list.
 6. *(ruled)* **A theory the evidence goes against stays in the ranking**, in its place by score,
    with the note "the evidence so far leans against it". Removing it would hide what the site
    exists to show.
@@ -322,6 +367,36 @@ with an estimate first.
 
    Weakest step, stated to John: "widened or updated" is a judgement, and the 2026 paper has been seen
    only in summary. The core claims themselves are not fixed yet; that is stage 3 work.
+
+   **Three clarifications of "latest same theory": ruled 2026-11-21, "Yes, as you lean".** *(ruled,
+   John; wording the master session's.)* Raised by the stage 3 scoring session, which found three
+   choices close:
+   1. *(ruled)* An entry for a family of theories takes a statement of the family. Higher-order
+      theories: Brown, Lau and LeDoux 2019, "Understanding the higher-order approach to
+      consciousness", *Trends in Cognitive Sciences*.
+   2. *(ruled)* Widening a theory's scope counts as a different theory. The sensorimotor theory:
+      O'Regan and Noë 2001, *Behavioral and Brain Sciences*, not O'Regan 2023 (which widens it from
+      vision to all experience), for consistency with attention schema theory.
+   3. *(ruled)* A full statement is a paper whose main job is to state the theory. Recurrent
+      processing theory: Lamme 2010, "How neuroscience will change our view on consciousness", the
+      target article in *Cognitive Neuroscience*, not Lamme 2018 or 2020.
+
+   Unchanged: Damasio and Damasio 2023 as ruled (the stage 3 session reports if Singer and Damasio
+   2025 turns out to be a full restatement); Orchestrated Objective Reduction: Hameroff and Penrose
+   2014, *Physics of Life Reviews*. Access: the authors' own open copies are looked for first; the
+   copy used, and any difference from the journal text that can be seen, is recorded; what cannot be
+   found openly is listed for John to sign in to himself; if a paper cannot be opened at all, the
+   next-latest statement that can be is used, with the reason recorded. Nothing is bought.
+
+   **Attention schema theory: ruled 2026-11-21, "Yes, keep 2015".** *(ruled, John; wording the master
+   session's.)* The brief asked for Graziano 2026 (*PNAS* 123(42) e2628598123) to be read before the
+   attention schema claims were fixed, to see whether its body keeps them unchanged and only adds to
+   them. Its body is behind a paywall and John has no PNAS access, so only the publisher's summary was
+   read. The core claims are fixed from Graziano and Webb 2015 now, and the theory is scored with the
+   others. The 2026 paper is on the verify list, to be read when it can be opened; if its body keeps
+   the attention schema claims unchanged and only adds to them, the source question returns to John.
+   Testable attention claims enter from the 2026 summary as dated predictions only where the summary
+   itself states them.
 5. ~~The three scores and their formulas~~ **Ruled 2026-11-20 ("Yes to all five"):** core claims
    fixed from one named source; study weights by counted protections; no support score before two
    separate groups; core-claim predictions count double; a failure stands. See section 4.
@@ -481,6 +556,14 @@ shapes stage 2.
       struck through for the record; what that ruling settled (a registration's predictions count for
       the study that registered them) stands. Whether an earlier passage commits the theory to the
       exact test is a separate judgement, read by both readers and settled by John.
+      *(ruled, 2026-11-21, John: "Yes, own-lab dating"; wording the master session's.)* **For a
+      study run by the theory's own supporters**, "could have known the result" means when their lab
+      had the data. The prediction must be on record before the data were collected, shown by a
+      registration or the paper's own methods dates, and before any earlier paper in which the same
+      lab published that result. If those dates are unclear, the study is not counted (rule 3). A
+      study that passes still misses the outside-camp protection. (Raised by the stage 3 scoring,
+      where every attention schema study came from the theory's own lab.) Weakest step, stated to
+      John: it falls hardest on small theories tested mostly by their own camp.
       ~~A study counts toward a prediction if that prediction was fixed, by the theory's
       proponents, in a dated record made before the study's data were collected, whether a
       publication or a registration.~~ *(ruled, 2026-11-20, John: "Yes, count it"; wording the
@@ -512,6 +595,17 @@ shapes stage 2.
       ruled rule 1 above, what the prediction is compared with is when the study's data were
       collected, so this sentence's dating of a study by its earliest public appearance no longer
       decides whether it counts. The wording is left for the master session to bring into line.)*
+   *(ruled, 2026-11-21, John: "Keep them out (Recommended)"; wording the master session's.)* **A
+   theory's statements are read for the scope they are written in.** Recurrent processing theory's
+   statements opened here are about seeing, so the theory is not read as covering hearing, and its two
+   hearing studies stay uncounted.
+   *(ruled, 2026-11-21, John: "Yes, cap $10 (Recommended)"; wording the master session's.)* **Studies
+   for the five theories ConTraSt does not cover are found by a fixed search per prediction, not by the
+   theory's name.** This applies to Seth's view, attention schema theory, the sensorimotor theory,
+   Orchestrated Objective Reduction and Damasio's theory: all 37 of their predictions. Each search is
+   written down and committed before it runs, the five-most-recent rule is kept, and the method page
+   says and dates the change. (Raised by the stage 3 scoring, where the name searches found almost no
+   tests of these theories' predictions.)
    4. *(ruled)* **ConTraSt's "designed to test, mentioned, or interpreted afterwards" field is a
       pointer** for which studies to check first, not the rule.
 3. **The licence is share-alike.** ConTraSt's data is under CC BY-SA 4.0, so anything built from

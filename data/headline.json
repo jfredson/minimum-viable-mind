@@ -13,7 +13,7 @@
     "record": "STATUS.md is the record of record; data/project.toml is its structured twin and the only input here",
     "rule": "every value is read from the data file as written; nothing is computed from anything else, and the one-sentence state is the record's own first sentence"
   },
-  "record_updated_on": "2026-11-20",
+  "record_updated_on": "2026-11-21",
   "ladder": {
     "delivered": 3,
     "total": 8,
@@ -37,8 +37,8 @@
     "spent": 230.94,
     "cap": 450,
     "line": "MVM-0a registered design envelope (Amendment A2): rented machines from 2026-08-07",
-    "as_of": "2026-10-25",
-    "words": "about $419 to $439 spent in total across every vendor by the spending record of 2026-10-25, a few earlier API calls untraced, and since then about $0.77 on RunPod and about $1.05 on Google, each new spend approved before it was made",
+    "as_of": "2026-11-21",
+    "words": "about $419 to $439 spent in total across every vendor by the spending record of 2026-10-25, a few earlier API calls untraced, and since then about $0.77 on RunPod and about $4.46 on Google, each new spend approved before it was made",
     "lines": [
       {
         "name": "Amendment A3 hard stop",
@@ -54,25 +54,26 @@
   },
   "state": "On 2026-11-20 the project became a tracker that scores the active theories of consciousness, my own account among them, by fixed rules from dated, sourced records, in stages (docs/2026-11-20-consciousness-tracker-kickoff-proposal.md).",
   "latest_entry": {
-    "date": "2026-11-20",
-    "title": "Stage 2 of the theories tracker is complete: three theories scored end to end by two readers, every disagreement settled under a written rule recorded with its reason"
+    "date": "2026-11-21",
+    "title": "All ten theories on the list are scored; the headline is now 16 of 53 predictions tested at all"
   },
-  "status": "3 of 8 stages delivered; about $419 to $439 spent in total across every vendor by the spending record of 2026-10-25, a few earlier API calls untraced, and since then about $0.77 on RunPod and about $1.05 on Google, each new spend approved before it was made; log last updated 2026-11-20.",
+  "status": "3 of 8 stages delivered; about $419 to $439 spent in total across every vendor by the spending record of 2026-10-25, a few earlier API calls untraced, and since then about $0.77 on RunPod and about $4.46 on Google, each new spend approved before it was made; log last updated 2026-11-21.",
   "dates": {
     "wrap_up_start": "2026-12-21",
     "hibernation_by": "2027-01-04"
   },
   "tracker": {
     "what": "The share of the theories' distinguishing predictions, tied to their core claims, that at least one counted study has tested at all. It measures how widely the theories have been tested, not how firmly.",
-    "share_tested": 67,
-    "share_tested_exact": 66.7,
-    "tested": 8,
-    "distinguishing_predictions": 12,
-    "theories_scored": 3,
+    "share_tested": 30,
+    "share_tested_exact": 30.2,
+    "tested": 16,
+    "distinguishing_predictions": 53,
+    "theories_scored": 10,
     "theories_listed": 10,
-    "worked_out_on": "2026-11-20",
+    "worked_out_on": "2026-11-21",
     "last_reading": null,
-    "version": "3fa89cc",
+    "waiting_studies": 0,
+    "version": "969d824",
     "script": "scripts/tracker_scores.py --mode settled, through scripts/export_tracker.py"
   }
 }

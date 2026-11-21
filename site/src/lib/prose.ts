@@ -177,5 +177,8 @@ export function prose(text: string | undefined | null): string {
   // A pull request named without a number ("five pull requests landed on my word") is a change
   // to a visitor; the deploy's check refuses the words "pull request" on a public page (2026-11-14).
   out = out.replace(/\b([Pp])ull request(s?)\b/g, (_m, p: string, s: string) => `${p === 'P' ? 'C' : 'c'}hange${s}`);
+  // "the About page" in the record links to the tracker's own About page, where the rules are
+  // explained (2026-11-21).
+  out = out.replace(/\bthe About page\b/g, '<a href="/about/#numbers">the About page</a>');
   return out;
 }

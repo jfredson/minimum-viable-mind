@@ -1,0 +1,73 @@
+{
+  "packet_id": "tst-hot-unconscious-global",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Higher-order theories",
+  "core_claim": {
+    "quote": "However, according to HOT, for subjective experience to occur, what is absolutely essential is higher-order awareness. Global broadcasting tends to go hand-in-hand with higher-order awareness in typical cases, but not always.",
+    "source": {
+      "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+      "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+      "date": "2019-01-07"
+    }
+  },
+  "prediction": {
+    "statement": "Information about a stimulus can be represented widely across the brain, prefrontal and parietal cortex included, and stay stable there, while the person does not experience the stimulus.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-07",
+      "passage": "Therefore, a percept can reach a relatively stable global state and remain nonconscious, which accounts for potentially powerful forms of unconscious perception",
+      "source": {
+        "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+        "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+        "date": "2019-01-07"
+      }
+    },
+    "test_for": "The content of stimuli that people report not seeing, and cannot discriminate better than chance, is decodable or represented in prefrontal or parietal cortex as well as in sensory cortex.",
+    "test_against": "In designs sensitive enough to find stimulus content in prefrontal and parietal cortex when it is seen, the content of unseen stimuli is found only in sensory cortex, or only as a brief signal that fades."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [
+    {
+      "rival": "Global workspace theory",
+      "statement": "Global workspace theory holds that wide availability of information is what constitutes experience, and that unseen stimuli give only a decaying wave of activity in higher areas, not a sustained, widespread one.",
+      "source": {
+        "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+        "date": "2020-03-04"
+      }
+    },
+    {
+      "rival": "Global workspace theory",
+      "statement": "The same source on unseen stimuli.",
+      "source": {
+        "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+        "date": "2020-03-04"
+      }
+    }
+  ],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "The contrary may also occur: some information may be globally broadcasted but the phenomenology of normal conscious perception may be missing.",
+      "source": {
+        "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+        "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+        "date": "2019-01-07"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,74 @@
+{
+  "packet_id": "com-mukherjee-2024-dam-insula",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Damasio's feeling-based theory",
+  "core_claim": {
+    "quote": "Finally, we outline a mechanism for the generation of feelings based on a two-way interaction between interoceptive components of the nervous system and a particular set of nonneural components of the organism's interior, namely, viscera and circulating chemical molecules involved in their operations.",
+    "source": {
+      "citation": "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023",
+      "url": "https://doi.org/10.1162/neco_a_01521",
+      "date": "2022-07-27"
+    }
+  },
+  "prediction": {
+    "statement": "Feelings, of the body and of emotions, survive complete destruction of the insula on both sides of the brain, because the insula re-maps feelings first assembled lower down.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2012-04-03",
+      "passage": "The activity patterns unequivocally present in the insular cortex during feeling states would constitute a second-order mapping of activity patterns first assembled subcortically.",
+      "source": {
+        "citation": "Damasio A, Damasio H, Tranel D. Persistence of feelings and sentience after bilateral damage of the insula. Cerebral Cortex 23(4):833-846, 2013",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3657385/",
+        "date": "2012-04-03"
+      }
+    },
+    "test_for": "A person with complete loss of both insulae (brainstem intact) shows a normal range of feelings, by self-report and by observers' ratings.",
+    "test_against": "Complete loss of both insulae abolishes or flattens feelings of the body and of emotions."
+  },
+  "study": {
+    "name": "Whether rats with both insulae destroyed still learn to avoid a taste and a place that alcohol made them feel bad in",
+    "source": {
+      "citation": "Mukherjee A, Gilles-Thomas EA, Kwok HY, Shorter CE, Sontate KV, McSain SL, Honeycutt SC, Loney GC. Bilateral insular cortical lesions reduce sensitivity to the adverse consequences of acute ethanol intoxication in Pavlovian conditioning procedures. Alcohol, Clinical & Experimental Research 48(8):1473-1482, 2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12648566/",
+      "date": "2024-06-04"
+    },
+    "first_appeared": "2024-06-04 (publication, online version (Europe PMC first publication date; no preprint found))",
+    "data_collected": {
+      "when": "not stated; before 2024-06-04",
+      "basis": "The paper gives no dates for its experiments, only that the work was approved by the University at Buffalo animal care committee."
+    }
+  },
+  "passages": [
+    {
+      "text": "The activity patterns unequivocally present in the insular cortex during feeling states would constitute a second-order mapping of activity patterns first assembled subcortically.",
+      "source": {
+        "citation": "Damasio A, Damasio H, Tranel D. Persistence of feelings and sentience after bilateral damage of the insula. Cerebral Cortex 23(4):833-846, 2013",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3657385/",
+        "date": "2012-04-03"
+      }
+    },
+    {
+      "text": "The subcortical level would ensure basic feeling states while the cortical level would largely relate feeling states to cognitive processes such as decision-making and imagination.",
+      "source": {
+        "citation": "Damasio A, Damasio H, Tranel D. Persistence of feelings and sentience after bilateral damage of the insula. Cerebral Cortex 23(4):833-846, 2013",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3657385/",
+        "date": "2012-04-03"
+      }
+    },
+    {
+      "text": "Here, we examined whether bilateral lesions of the IC affect the acquisition and expression of taste and place avoidance in EtOH-induced CTA and CPA paradigms.",
+      "source": {
+        "citation": "Mukherjee A, Gilles-Thomas EA, Kwok HY, Shorter CE, Sontate KV, McSain SL, Honeycutt SC, Loney GC. Bilateral insular cortical lesions reduce sensitivity to the adverse consequences of acute ethanol intoxication in Pavlovian conditioning procedures. Alcohol, Clinical & Experimental Research 48(8):1473-1482, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12648566/",
+        "date": "2024-06-04"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2012-04-03 (damasio-tranel-2013, the online version)",
+    "study_first_appeared": "2024-06-04 (publication, online version)",
+    "data_collected": "not stated by the study; gathered before 2024-06-04"
+  },
+  "this_reading_is": "the second reading"
+}
