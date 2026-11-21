@@ -235,6 +235,7 @@ note = "Separation inferred by the site."
 id = "iit-feedforward"
 theory = "iit"
 core_claim = "iit-c4"
+questions = ["machines"]
 statement = "A machine built from feed-forward hardware has no experience, however human its behaviour."
 stated_by = "proponent"
 first_stated = { source = "albantakis-2023", date = "2023-10-17", passage = "Accordingly, artificial systems powered by super-intelligent computer programs, but implemented by feed-forward hardware or encompassing critical bottlenecks, would experience nothing (or nearly nothing) because they have the wrong kind of physical architecture, even though they may be behaviorally indistinguishable from human beings", location = "section 'Conclusions'" }
@@ -266,6 +267,7 @@ note = "The page names a losing condition but no observation or study design tha
 id = "sh-split-novel"
 theory = "sh"
 core_claim = "sh-c2"
+questions = ["features"]
 statement = "Cutting the copies of a system's own commands off from its senses, while the commands still work, leaves practised single actions running, makes the system lose track of which changes it caused, and also degrades its response to new events in the world, including ones that have nothing to do with it; and this loss differs from what losing feedback alone does."
 stated_by = "proponent"
 first_stated = { source = "sh-positions", date = "2026-10-24", passage = "Remove the split, meaning cut the copies of the system’s own commands off from its senses while leaving the commands themselves working, and the prediction is three things. Practised single actions carry on. The system loses track of which changes it caused. And, the part no one has yet tested, its response to new events in the world, including ones that have nothing to do with it, degrades too.", location = "split position, What it rests on" }
@@ -292,6 +294,7 @@ separates_from = []
 id = "sh-enriching"
 theory = "sh"
 core_claim = "sh-c3"
+questions = ["features"]
 statement = "Removing a boundary, mattering, self-awareness or kept memory makes experience poorer but does not switch it off."
 stated_by = "proponent"
 first_stated = { source = "sh-positions", date = "2026-10-24", passage = "If removing one of the four features I call enriching turned out to switch experience off, that feature would move from enriching to required.", location = "map position, What would change my mind" }
@@ -306,6 +309,7 @@ note = "Damasio's theory is on the ruled list of ten but is not in this pilot; i
 id = "sh-no-bare-awareness"
 theory = "sh"
 core_claim = "sh-c4"
+questions = ["features"]
 statement = "No experience is wholly without structure: removing senses, memory and self never leaves a bare awareness with nothing on one of the three axes."
 stated_by = "proponent"
 first_stated = { source = "sh-positions", date = "2026-10-24", passage = "If a subtraction ever reached experience with no structure at all, a bare awareness, the judgment above would be wrong.", location = "fades-or-not position, What would change my mind" }

@@ -38,6 +38,11 @@ DATA = ROOT / "data" / "tracker"
 
 OUTCOME_VALUES = {"for": 1, "against": -1, "mixed": 0}
 COMMITMENT_VALUES = {"before", "not-before", "unclear"}
+# The open questions a prediction can bear on (data/open-questions.toml, written by the site
+# session on its branch, 2026-11-21: features, machines, animals, fading, groups). Kept here so
+# the records validate without that file; a prediction's `questions` is filled only where the
+# link is clear.
+QUESTION_IDS = {"features", "machines", "animals", "fading", "groups"}
 DATE_RE = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?$")
 
 
@@ -148,6 +153,9 @@ def validate(d):
                 err(f"prediction {p['id']}: rival {s['theory']} is not on the ruled list")
             if s["source"] not in source_ids:
                 err(f"prediction {p['id']}: unknown source {s['source']}")
+        for q in p.get("questions", []):
+            if q not in QUESTION_IDS:
+                err(f"prediction {p['id']}: question {q} is not one of the open questions {sorted(QUESTION_IDS)}")
         for k in ("statement", "test_for", "test_against"):
             if not p.get(k):
                 err(f"prediction {p['id']}: missing {k}")
@@ -442,6 +450,40 @@ def rank(d, mode, bar_reading="sharp"):
     return base, counted, status, {"ranked": [{"theory": t, "rank": ranks[t]} for t in ranked], "shared_because_one_study_could_swap_them": reversals, "testable_too_little_tested": second, "not_yet_defined_sharply_enough": third}
 
 
+def prediction_states(d, counted):
+    """Each prediction's state, from its counted outcomes only.
+
+    Rule (the session's, 2026-11-21, not separately ruled; it matches the stand-in the site used):
+    no counted outcome -> untested; every counted outcome 'for' -> supported; every one 'against'
+    -> contradicted; anything else (any 'mixed', or 'for' beside 'against') -> mixed.
+    Beside it, the weighted reading: the sign of the sum of outcome x study weight
+    (positive supported, negative contradicted, zero mixed). Where the two differ, the
+    output lists the prediction under 'state_readings_differ'; neither is chosen silently.
+    Outcomes that are not counted (dating test, unopened study, a prediction that does not
+    separate) never set a state; their studies are listed as 'not counted'.
+    """
+    out = {}
+    for p in d["predictions"]:
+        mine = [c for c in counted if c["prediction"] == p["id"]]
+        vals = {c["value"] for c in mine}
+        if not mine:
+            st = "untested"
+        elif vals == {1}:
+            st = "supported"
+        elif vals == {-1}:
+            st = "contradicted"
+        else:
+            st = "mixed"
+        ws = sum(c["value"] * c["weight"] for c in mine)
+        wst = "untested" if not mine else ("supported" if ws > 0 else "contradicted" if ws < 0 else "mixed")
+        out[p["id"]] = {
+            "theory": p["theory"], "state": st, "state_weighted_reading": wst,
+            "counted_studies": [{"study": c["study"], "value": c["value"], "weight": c["weight"]} for c in mine],
+            "questions": p.get("questions", []),
+        }
+    return out
+
+
 def headline(d, mode):
     base, counted, _ = compute(d, mode)
     tot = sum(v["left_to_test_counts"]["distinguishing_core_predictions"] for v in base.values())
@@ -478,6 +520,8 @@ def main(argv=None):
         "theories": base,
         "ranking": ranking,
         "headline": headline(d, a.mode),
+        "predictions": (pstates := prediction_states(d, counted)),
+        "state_readings_differ": sorted(k for k, v in pstates.items() if v["state"] != v["state_weighted_reading"]),
         "counted_outcomes": counted,
         "alternative_readings": {
             "bar_counts_any_prediction_that_could_fail": {
@@ -522,6 +566,10 @@ def main(argv=None):
     print("Superseded reading of ranking rule 2 (any prediction that could fail, not ruled):")
     for t, g in result["alternative_readings"]["bar_counts_any_prediction_that_could_fail"]["groups"].items():
         print(f"  {base[t]['name']}: {g}")
+    from collections import Counter
+    print("Prediction states (counted outcomes only): " + ", ".join(f"{k} {v}" for k, v in sorted(Counter(v["state"] for v in result["predictions"].values()).items())))
+    if result["state_readings_differ"]:
+        print("  the weighted reading gives a different state for: " + ", ".join(result["state_readings_differ"]))
     print(f"\nOpen verify entries: {len(open_verify)} (promotion is blocked while any are open; rule 3.3)")
     return 0
 
