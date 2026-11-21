@@ -1,0 +1,754 @@
+[
+ {
+  "object": "a ripe banana",
+  "typical": "yellow",
+  "also": [
+   "green",
+   "brown"
+  ]
+ },
+ {
+  "object": "a lump of coal",
+  "typical": "black",
+  "also": []
+ },
+ {
+  "object": "fresh snow",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "a lime",
+  "typical": "green",
+  "also": [
+   "yellow"
+  ]
+ },
+ {
+  "object": "a ripe tomato",
+  "typical": "red",
+  "also": [
+   "green",
+   "yellow",
+   "orange"
+  ]
+ },
+ {
+  "object": "a carrot",
+  "typical": "orange",
+  "also": [
+   "purple",
+   "white",
+   "yellow"
+  ]
+ },
+ {
+  "object": "a flamingo",
+  "typical": "pink",
+  "also": [
+   "white"
+  ]
+ },
+ {
+  "object": "a crow",
+  "typical": "black",
+  "also": []
+ },
+ {
+  "object": "a swan",
+  "typical": "white",
+  "also": [
+   "black"
+  ]
+ },
+ {
+  "object": "an aubergine",
+  "typical": "purple",
+  "also": [
+   "white"
+  ]
+ },
+ {
+  "object": "a pumpkin",
+  "typical": "orange",
+  "also": [
+   "white",
+   "green"
+  ]
+ },
+ {
+  "object": "a lemon",
+  "typical": "yellow",
+  "also": [
+   "green"
+  ]
+ },
+ {
+  "object": "a strawberry",
+  "typical": "red",
+  "also": [
+   "white"
+  ]
+ },
+ {
+  "object": "a blueberry",
+  "typical": "blue",
+  "also": [
+   "purple"
+  ]
+ },
+ {
+  "object": "a polar bear",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "a frog",
+  "typical": "green",
+  "also": [
+   "brown"
+  ]
+ },
+ {
+  "object": "an elephant",
+  "typical": "grey",
+  "also": []
+ },
+ {
+  "object": "a cucumber",
+  "typical": "green",
+  "also": []
+ },
+ {
+  "object": "a chocolate bar",
+  "typical": "brown",
+  "also": [
+   "white"
+  ]
+ },
+ {
+  "object": "milk",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "grass in spring",
+  "typical": "green",
+  "also": []
+ },
+ {
+  "object": "a clear daytime sky",
+  "typical": "blue",
+  "also": []
+ },
+ {
+  "object": "a stop sign",
+  "typical": "red",
+  "also": []
+ },
+ {
+  "object": "an egg yolk",
+  "typical": "yellow",
+  "also": [
+   "orange"
+  ]
+ },
+ {
+  "object": "a raven",
+  "typical": "black",
+  "also": []
+ },
+ {
+  "object": "a canary",
+  "typical": "yellow",
+  "also": []
+ },
+ {
+  "object": "a cherry",
+  "typical": "red",
+  "also": [
+   "black"
+  ]
+ },
+ {
+  "object": "a peacock feather",
+  "typical": "blue",
+  "also": [
+   "green"
+  ]
+ },
+ {
+  "object": "a pine tree",
+  "typical": "green",
+  "also": []
+ },
+ {
+  "object": "a cocoa bean",
+  "typical": "brown",
+  "also": []
+ },
+ {
+  "object": "a sheet of printer paper",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "a lobster after cooking",
+  "typical": "red",
+  "also": []
+ },
+ {
+  "object": "a gorilla",
+  "typical": "black",
+  "also": []
+ },
+ {
+  "object": "a mouse",
+  "typical": "grey",
+  "also": [
+   "white",
+   "brown"
+  ]
+ },
+ {
+  "object": "a pea",
+  "typical": "green",
+  "also": []
+ },
+ {
+  "object": "a walnut shell",
+  "typical": "brown",
+  "also": []
+ },
+ {
+  "object": "a cloud on a sunny day",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "a rhinoceros",
+  "typical": "grey",
+  "also": []
+ },
+ {
+  "object": "a sunflower petal",
+  "typical": "yellow",
+  "also": []
+ },
+ {
+  "object": "a coffee bean after roasting",
+  "typical": "brown",
+  "also": [
+   "black"
+  ]
+ },
+ {
+  "object": "a ladybird",
+  "typical": "red",
+  "also": [
+   "yellow",
+   "black"
+  ]
+ },
+ {
+  "object": "an emerald",
+  "typical": "green",
+  "also": []
+ },
+ {
+  "object": "a ruby",
+  "typical": "red",
+  "also": []
+ },
+ {
+  "object": "a sapphire",
+  "typical": "blue",
+  "also": []
+ },
+ {
+  "object": "a dolphin",
+  "typical": "grey",
+  "also": []
+ },
+ {
+  "object": "a lettuce leaf",
+  "typical": "green",
+  "also": []
+ },
+ {
+  "object": "a pear",
+  "typical": "green",
+  "also": [
+   "yellow",
+   "brown"
+  ]
+ },
+ {
+  "object": "a plum",
+  "typical": "purple",
+  "also": [
+   "red"
+  ]
+ },
+ {
+  "object": "a grape",
+  "typical": "green",
+  "also": [
+   "purple",
+   "red"
+  ]
+ },
+ {
+  "object": "a bat",
+  "typical": "black",
+  "also": [
+   "brown"
+  ]
+ },
+ {
+  "object": "a tiger's stripes",
+  "typical": "black",
+  "also": []
+ },
+ {
+  "object": "a zebra's stripes",
+  "typical": "black",
+  "also": [
+   "white"
+  ]
+ },
+ {
+  "object": "a goldfish",
+  "typical": "orange",
+  "also": []
+ },
+ {
+  "object": "a pig",
+  "typical": "pink",
+  "also": [
+   "black",
+   "brown"
+  ]
+ },
+ {
+  "object": "a salmon fillet",
+  "typical": "pink",
+  "also": [
+   "orange"
+  ]
+ },
+ {
+  "object": "a coconut shell",
+  "typical": "brown",
+  "also": []
+ },
+ {
+  "object": "a cotton ball",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "a broccoli floret",
+  "typical": "green",
+  "also": []
+ },
+ {
+  "object": "a kiwi fruit inside",
+  "typical": "green",
+  "also": [
+   "yellow"
+  ]
+ },
+ {
+  "object": "a lavender flower",
+  "typical": "purple",
+  "also": []
+ },
+ {
+  "object": "a violet flower",
+  "typical": "purple",
+  "also": [
+   "blue"
+  ]
+ },
+ {
+  "object": "a rose",
+  "typical": "red",
+  "also": [
+   "white",
+   "pink",
+   "yellow"
+  ]
+ },
+ {
+  "object": "a daffodil",
+  "typical": "yellow",
+  "also": [
+   "white"
+  ]
+ },
+ {
+  "object": "a cauliflower",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "a pumpkin seed",
+  "typical": "green",
+  "also": [
+   "white"
+  ]
+ },
+ {
+  "object": "an olive",
+  "typical": "green",
+  "also": [
+   "black"
+  ]
+ },
+ {
+  "object": "a blackberry",
+  "typical": "black",
+  "also": [
+   "purple"
+  ]
+ },
+ {
+  "object": "a raspberry",
+  "typical": "red",
+  "also": []
+ },
+ {
+  "object": "a peanut shell",
+  "typical": "brown",
+  "also": []
+ },
+ {
+  "object": "a squirrel",
+  "typical": "grey",
+  "also": [
+   "red",
+   "brown"
+  ]
+ },
+ {
+  "object": "a fox",
+  "typical": "orange",
+  "also": [
+   "red",
+   "brown"
+  ]
+ },
+ {
+  "object": "a koala",
+  "typical": "grey",
+  "also": []
+ },
+ {
+  "object": "a penguin's back",
+  "typical": "black",
+  "also": []
+ },
+ {
+  "object": "a seal",
+  "typical": "grey",
+  "also": []
+ },
+ {
+  "object": "a pearl",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "a gold coin",
+  "typical": "yellow",
+  "also": []
+ },
+ {
+  "object": "a lump of charcoal",
+  "typical": "black",
+  "also": []
+ },
+ {
+  "object": "a brick",
+  "typical": "red",
+  "also": [
+   "brown",
+   "orange"
+  ]
+ },
+ {
+  "object": "a lime leaf",
+  "typical": "green",
+  "also": []
+ },
+ {
+  "object": "a mint leaf",
+  "typical": "green",
+  "also": []
+ },
+ {
+  "object": "a basil leaf",
+  "typical": "green",
+  "also": []
+ },
+ {
+  "object": "a potato skin",
+  "typical": "brown",
+  "also": []
+ },
+ {
+  "object": "a pineapple",
+  "typical": "yellow",
+  "also": [
+   "brown",
+   "green"
+  ]
+ },
+ {
+  "object": "a mango inside",
+  "typical": "orange",
+  "also": [
+   "yellow"
+  ]
+ },
+ {
+  "object": "a papaya inside",
+  "typical": "orange",
+  "also": []
+ },
+ {
+  "object": "a watermelon inside",
+  "typical": "red",
+  "also": []
+ },
+ {
+  "object": "a watermelon rind",
+  "typical": "green",
+  "also": []
+ },
+ {
+  "object": "an avocado skin",
+  "typical": "green",
+  "also": [
+   "black"
+  ]
+ },
+ {
+  "object": "a bell pepper",
+  "typical": "green",
+  "also": [
+   "red",
+   "yellow",
+   "orange"
+  ]
+ },
+ {
+  "object": "a chilli pepper",
+  "typical": "red",
+  "also": [
+   "green"
+  ]
+ },
+ {
+  "object": "a ginger root",
+  "typical": "brown",
+  "also": []
+ },
+ {
+  "object": "a cinnamon stick",
+  "typical": "brown",
+  "also": []
+ },
+ {
+  "object": "a vanilla flower",
+  "typical": "white",
+  "also": [
+   "yellow"
+  ]
+ },
+ {
+  "object": "a jellyfish",
+  "typical": "white",
+  "also": [
+   "pink",
+   "blue"
+  ]
+ },
+ {
+  "object": "a crab after cooking",
+  "typical": "red",
+  "also": [
+   "orange"
+  ]
+ },
+ {
+  "object": "a shrimp after cooking",
+  "typical": "pink",
+  "also": [
+   "orange"
+  ]
+ },
+ {
+  "object": "a moth",
+  "typical": "brown",
+  "also": [
+   "grey",
+   "white"
+  ]
+ },
+ {
+  "object": "a bumblebee",
+  "typical": "yellow",
+  "also": [
+   "black"
+  ]
+ },
+ {
+  "object": "a wasp",
+  "typical": "yellow",
+  "also": [
+   "black"
+  ]
+ },
+ {
+  "object": "a toad",
+  "typical": "brown",
+  "also": [
+   "green"
+  ]
+ },
+ {
+  "object": "a lizard",
+  "typical": "green",
+  "also": [
+   "brown"
+  ]
+ },
+ {
+  "object": "a crocodile",
+  "typical": "green",
+  "also": [
+   "grey",
+   "brown"
+  ]
+ },
+ {
+  "object": "a hippo",
+  "typical": "grey",
+  "also": []
+ },
+ {
+  "object": "a camel",
+  "typical": "brown",
+  "also": []
+ },
+ {
+  "object": "a panda's ears",
+  "typical": "black",
+  "also": []
+ },
+ {
+  "object": "a robin's breast",
+  "typical": "red",
+  "also": [
+   "orange"
+  ]
+ },
+ {
+  "object": "a cardinal bird",
+  "typical": "red",
+  "also": []
+ },
+ {
+  "object": "a dove",
+  "typical": "white",
+  "also": [
+   "grey"
+  ]
+ },
+ {
+  "object": "a pigeon",
+  "typical": "grey",
+  "also": []
+ },
+ {
+  "object": "a seagull",
+  "typical": "white",
+  "also": [
+   "grey"
+  ]
+ },
+ {
+  "object": "a polar fox in winter",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "a snowman",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "a candle flame",
+  "typical": "yellow",
+  "also": [
+   "orange",
+   "blue"
+  ]
+ },
+ {
+  "object": "a ripe aubergine skin",
+  "typical": "purple",
+  "also": []
+ },
+ {
+  "object": "a beetroot",
+  "typical": "purple",
+  "also": [
+   "red"
+  ]
+ },
+ {
+  "object": "a turnip",
+  "typical": "white",
+  "also": [
+   "purple"
+  ]
+ },
+ {
+  "object": "a radish",
+  "typical": "red",
+  "also": [
+   "white",
+   "pink"
+  ]
+ },
+ {
+  "object": "a garlic bulb",
+  "typical": "white",
+  "also": [
+   "purple"
+  ]
+ },
+ {
+  "object": "a walnut inside",
+  "typical": "brown",
+  "also": []
+ },
+ {
+  "object": "an almond inside",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "a cashew",
+  "typical": "white",
+  "also": []
+ },
+ {
+  "object": "a hazelnut shell",
+  "typical": "brown",
+  "also": []
+ }
+]
