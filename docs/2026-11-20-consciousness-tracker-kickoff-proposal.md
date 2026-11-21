@@ -307,6 +307,21 @@ with an estimate first.
    publication supplies the core claims where there are two (attention schema theory, 2015 or the
    wider 2026 version; Seth's view, his 2025 paper or *Being You*; Damasio, the 2023 paper or the
    2010 book).
+
+   **Core-claim sources: ruled 2026-11-21, "Yes, latest same theory".** *(ruled; wording the master
+   session's.)* A theory's core claims come from its proponents' most recent full statement of the
+   same theory. A later work that widens or renames it into something new is a different theory and
+   does not replace it. Applied:
+   - Seth's view: Seth 2025, "Conscious artificial intelligence and biological naturalism",
+     *Behavioral and Brain Sciences*.
+   - Damasio: Damasio and Damasio 2023, "Feelings are the source of consciousness", *Neural
+     Computation*.
+   - Attention schema theory: Graziano and Webb 2015, *Frontiers in Psychology*. Graziano 2026
+     (*PNAS*) widens it into "a more general schema theory". Testable attention claims from 2026 can
+     enter as dated predictions.
+
+   Weakest step, stated to John: "widened or updated" is a judgement, and the 2026 paper has been seen
+   only in summary. The core claims themselves are not fixed yet; that is stage 3 work.
 5. ~~The three scores and their formulas~~ **Ruled 2026-11-20 ("Yes to all five"):** core claims
    fixed from one named source; study weights by counted protections; no support score before two
    separate groups; core-claim predictions count double; a failure stands. See section 4.
