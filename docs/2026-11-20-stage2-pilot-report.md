@@ -19,7 +19,7 @@ about $1.01 to Google.*
   and testability **5 of 21 (24%)**. On testability they agree on "could it fail" 20 times out of 21
   and on "does it separate" 16 times.
 - **10 disagreements arose.** None was settled by either reader. John's rulings C and D then settled
-  most of them by rule, and **7 rows still wait for him** (listed below).
+  most of them by rule, and John settled the last seven himself (below). **Nothing is open.**
 
 **The disagreements, both readings:**
 
@@ -77,41 +77,74 @@ leniently. That is the inconsistency section 6 flagged.
   first time, so it needed an outcome judgement. I read it (mixed), but no Gemini call was authorised,
   so it has one reading.
 
-**Scores on settled rows only** (`python3 scripts/tracker_scores.py --mode settled`): 30 judgements
-agreed by both readers, 12 settled by rules C and D, and 7 unsettled.
+**John settled the seven open rows the same night** (relayed by the master session):
+
+1. *(ruled, "Yes, as you lean")* **Cogitate, seen content in prefrontal cortex: mixed.** This applies a
+   new rule, recorded in the kickoff proposal (section 4): when an outcome is split between "mixed" and
+   one side, it is recorded as "mixed". Weakest step: the rule always pulls toward the middle, so it is
+   to be reviewed when stage 3 shows how often it fires. Here it fired on two of fourteen outcomes.
+2. *(ruled)* **Cogitate, rise of activity at onset: mixed**, by the same rule.
+3. *(ruled)* **Bellet, prefrontal content: not counted.** The readers split on whether the 2013 passage
+   committed the theory to the test, so the commitment is unclear (after-the-fact rule 3, as John
+   applied it; recorded in the proposal).
+4. *(ruled)* **Bandara, top-down signals: not counted**, on the same ground.
+5. *(ruled)* **Dellert, fronto-parietal rise: put again.** The new blind packet included the 2019 Cogitate
+   registration's passages: "every conscious experience should be accompanied by activation of a
+   prefrontal-parietal network", and that the predictions "should accordingly hold true regardless of
+   the subjects' task". Both readers now say **before**. My reading is not truly blind, because I made
+   the earlier one in the same session. Gemini's reading is blind.
+6. *(ruled)* **Bellet, hot zone: one Gemini reading.** It reads **mixed**, which agrees with mine.
+7. *(ruled)* **Sentient Horizons, no bare awareness: could it fail? Not counted.** Its could-fail is
+   recorded as no, so the prediction scores nothing.
+
+The two new Gemini calls cost about $0.04, which brings the pilot's Gemini total to **about $1.05**
+($1.0461) against the $10 ceiling. That is recorded in the spending record. Fixing the Bellet record
+turned up an error: its outside-camp protection had been recorded as false for both theories. It is
+false only for global workspace theory, whose camp ran the study, so it now weighs 2 for integrated
+information theory.
+
+**Final settled scores** (`python3 scripts/tracker_scores.py --mode settled`): 32 judgements agreed by
+both readers, 17 settled by John's rulings, and 1 superseded (the first Dellert commitment). **Nothing is
+open.**
 
 | theory | testability | support | left to test | group |
 |---|---|---|---|---|
-| Integrated information theory | 60 | **57** (4 outcomes, 2 studies, 2 groups, total weight 28) | 50 | **ranked, 1st** |
-| Global workspace theory | **80** | too little tested to score (3 outcomes, all from Cogitate, one group) | 62.5 | **testable, too little tested to rank** |
+| Integrated information theory | 60 | **56** (5 outcomes, 3 studies, 3 groups, total weight 32) | 50 | **ranked, shared 1st** |
+| Global workspace theory | 80 | **36** (6 outcomes, 2 studies, 2 groups, total weight 44) | 37.5 | **ranked, shared 1st; the evidence so far leans against it** |
 | The Sentient Horizons account | 25 | too little tested to score | 100 | not yet defined sharply enough to rank |
 
-The headline on settled rows is 6 of 12 distinguishing predictions tested. Global workspace theory's
-testability rose from 60 to 80, because its late-start prediction now separates it from recurrent
-processing theory.
+**The ranking.** The two theories share first place. Reversing the Dellert study's outcomes alone would
+swap them, so ranking rule 5 shows them tied.
 
-**Still waiting for John (7):**
-1. **Cogitate, seen content in prefrontal cortex (outcome).** Claude: mixed. Gemini: against.
-2. **Cogitate, rise of activity at onset (outcome).** Claude: for. Gemini: mixed.
-3. **Bellet, prefrontal content (commitment content).** The dates are settled. What is open is whether
-   the 2013 passage commits the theory to report-free, task-free decoding in prefrontal cortex.
-4. **Bandara, top-down signals (commitment content).** The dates are settled. What is open is whether
-   the 1998 passage, about gating processors in effortful tasks, commits the theory to prefrontal
-   feedback being needed for awareness.
-5. **Dellert, fronto-parietal rise (commitment content).** The dates are settled. What is open is
-   whether the passages commit the theory to this result in a design with no report. The 2019 Cogitate
-   registration's "every conscious experience should be accompanied by activation of a prefrontal-parietal
-   network" may answer it; it was not in the packet.
-6. **SH, no bare awareness (testability).** Separation is settled by rule C. What is open is whether it
-   could fail. Claude: yes. Gemini: no, because the axes have no observable measure.
-7. **Bellet, hot zone (outcome).** It has one reading only (Claude: mixed). It needs a second reading,
-   at about two cents, or John's own reading.
+**The headline**, provisional because ruling 3 is open: **8 of 12** distinguishing predictions tested (67%).
 
-**What turns on them.** Global workspace theory's support score turns on rows 3 to 5: settling any one
-of them as committed gives the theory a second group, and with it a support score. Row 7 would add a
-third study to integrated information theory. The Sentient Horizons account cannot pass the bar on
-these rows. It needs three of four core claims, and the split claim now has no separating prediction
-under rule C. However row 6 is settled, the account stays below the bar.
+**Disagreement**, over all 50 readings, including the superseded Dellert row:
+- outcomes: 2 of 14 (14%), under the one-third stop line;
+- commitments: 3 of 15;
+- testability: 5 of 21.
+
+**Is stage 2 complete by its own terms?** Section 10 asks for global workspace theory, integrated
+information theory and the Sentient Horizons account to be scored end to end under section 4's rules,
+with no API spend without a go. It stops if the readers disagree on more than a third of the outcome
+judgements. All three are scored end to end, every judgement has two readings or a ruling, the
+disagreement rate is 14%, and the spend ran under John's go. **By its own terms, yes.**
+
+**What a close-out still needs:**
+- **John's sample of agreed judgements.** Ruling 7 leaves this open: John reads a random sample of the
+  judgements both readers agreed on, by a rule for drawing it fixed in advance. It was to be settled
+  once the pilot showed how many judgements there are, which it now has (32 agreed by both readers).
+  The rule for drawing the sample still has to be set.
+- **The verify list: 5 open entries.** These block promotion, not the stage. They are:
+  - the two unopened 2016 papers;
+  - the unopened Hatamimajoumerd 2022 study;
+  - the studies the positions page cites;
+  - Cogitate's Extended Data Table 1;
+  - the journal version of the Dellert study.
+- **A STATUS.md entry and its `data/project.toml` twin**, if the master wants the stage logged in the
+  project's own record. I made none.
+- **The branch is unmerged.** Merging is the master's or John's call.
+- **What stage 3 needs first:** the headline (ruling 3); the name and address (ruling 2); and the core-claim
+  sources John still has to choose for three theories (attention schema, Seth, Damasio).
 
 The sections below are the one-reader report as it stood before the second reading. Its figures are
 Claude's alone.
@@ -413,7 +446,7 @@ Each has its reason written in its record (`unsure_why` in `data/tracker/judgeme
 ## 8. Next, for the master to put to John
 
 1. ~~The spend.~~ Done under John's go: about $1.01 (section 0).
-2. **The 7 rows still unsettled** (section 0), each to be settled by John; until then they move no score.
+2. ~~The 7 rows still unsettled~~: settled by John (section 0).
 3. ~~The five-year convention~~, dropped under ruling D for studies that do not date their data (section 2). It is a
    reader's convention now, and it decides whether either theory has a support score.
 

@@ -1,16 +1,16 @@
 {
   "by_kind": {
     "outcome": {
-      "read_by_both": 13,
-      "agree": 11,
+      "read_by_both": 14,
+      "agree": 12,
       "disagree": 2,
-      "disagreement_rate": 0.154
+      "disagreement_rate": 0.143
     },
     "commitment": {
-      "read_by_both": 14,
-      "agree": 11,
+      "read_by_both": 15,
+      "agree": 12,
       "disagree": 3,
-      "disagreement_rate": 0.214
+      "disagreement_rate": 0.2
     },
     "testability": {
       "read_by_both": 21,
@@ -136,11 +136,11 @@
   "problems": [],
   "stop_condition": {
     "rule": "stage 2 stops if the readers disagree on more than a third of the outcome judgements",
-    "outcome_rate": 0.154,
+    "outcome_rate": 0.143,
     "stops": false
   },
   "models": [
     "gemini-4-carbon"
   ],
-  "cost_usd": 1.0065
+  "cost_usd": 1.0461
 }

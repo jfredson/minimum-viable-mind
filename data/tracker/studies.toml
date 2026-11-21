@@ -48,7 +48,7 @@ camps_reason = "Stanislas Dehaene, an author of the global workspace statements 
 found_through = "contrast"
 opened = true
 protections.registered = { value = false, reason = "No registration is mentioned in the paper (full text read)." , source = "bellet-2022" }
-protections.outside_camp = { value = false, reason = "Run inside global workspace theory's camp (see camps_reason). For integrated information theory it would be outside camp, but no IIT prediction counts for it." , source = "bellet-2022" }
+protections.outside_camp = { value = true, reason = "Run inside global workspace theory's camp (see camps_reason), so it earns this protection for no workspace prediction (the score script excludes theories listed in camps). It is outside integrated information theory's camp, which matters since ruling D made it count for the hot zone. Corrected 2026-11-20: it was recorded as false for both theories." , source = "bellet-2022" }
 protections.rival_agreed = { value = false, reason = "No rival camp agreed criteria in advance.", source = "bellet-2022" }
 protections.replicated = { value = false, reason = "No replication by another group found.", source = "bellet-2022" }
 same_group_note = "Whether this is a group separate from the Cogitate Consortium is a judgement: its last author co-wrote the Cogitate protocol. The pilot treats it as separate because the protocol's authorship is not the consortium's data teams. It does not change any ranking here, because global workspace theory has studies from two groups outside both."

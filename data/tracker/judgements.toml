@@ -925,3 +925,33 @@ verdict = "mixed"
 reason = "Prefrontal neurons carried more picture information than posterior parietal neurons, which leans against 'mainly posterior'. But the study recorded no ventral posterior area, where the theory places most visual content, and it cannot say whether the pictures were seen, so it cannot show conscious content in prefrontal cortex. It neither supports nor contradicts the prediction."
 unsure = true
 unsure_why = "As for out-bellet-gwt-pfc-content, 'mixed' stands in for 'does not bear on it'. A reader who takes stronger prefrontal than parietal decoding at face value would read 'against'."
+
+# ===================================================== added after John's settlements
+# John (2026-11-20, "Yes, as you lean", item 3): the Dellert commitment question is put
+# again, with the 2019 Cogitate registration's passages in the packet. This record
+# replaces com-dellert-gwt-ignition for scoring (see rulings.toml). The Claude reading
+# below was made from this packet. It is not truly blind: the same reader made the
+# earlier reading in the same session and knew of it.
+
+[[judgement]]
+id = "com2-dellert-gwt-ignition"
+kind = "commitment"
+prediction = "gwt-ignition"
+study = "dellert-2025"
+replaces = "com-dellert-gwt-ignition"
+passages = [
+  { source = "cogitate-prereg-v1", text = "It accordingly predicts that every conscious experience should be accompanied by activation of a prefrontal-parietal network in tandem with high-level sensory cortices representing the global broadcasting of information across the network." },
+  { source = "cogitate-prereg-v1", text = "The predictions of both theories pertain to the true NCC, and should accordingly hold true regardless of the subjects’ task." },
+  { source = "dehaene-2014", text = "conscious access is often characterized by a late non-linear amplification of activation which invades a distributed set of parietal, prefrontal and cingulate areas" },
+  { source = "mashour-2020", text = "This non-linear divergence occurs regardless of the stimulus modality or paradigm used to manipulate consciousness (e.g., reduced visibility, masking, inattention)." },
+]
+dates = { statement = "2013-12-29; 2019-01-16 (the registration, signed by the theory's proponents); 2020-03-04", study_first_public = "2025-05-21 (preprint; not registered)" }
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "before"
+reason = "In 2019 the theory's proponents signed a registration saying every conscious experience is accompanied by prefrontal-parietal activation, and that the prediction holds regardless of the subject's task. In 2020 they said the late divergence occurs whatever the sense or paradigm, inattention included. Together these commit the theory to fronto-parietal activation for consciously heard sounds that are irrelevant to the task and not reported, and all of it predates the study's 2025 preprint."
+unsure = true
+unsure_why = "'Regardless of the subjects' task' is not quite 'with no report at all', although in the inattentional-deafness design the sounds are irrelevant to the task and not reported."

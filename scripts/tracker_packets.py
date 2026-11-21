@@ -65,7 +65,24 @@ INSTRUCTIONS = {
     ),
 }
 
-FORBIDDEN_KEYS = {"reading", "verdict", "reason", "unsure", "unsure_why", "could_fail", "separates", "note", "judgement"}
+# Commitment packets built after John's ruling D (2026-11-20, "Yes, that test") carry its
+# wording. The 14 commitment packets sent on 2026-11-20 before it keep the wording they
+# were sent with.
+COMMITMENT_RULE_D = (
+    "You are one of two independent readers for a public record that scores theories of "
+    "consciousness. A prediction counts for a study if the theory's proponents fixed it before they "
+    "could have known the study's result: before the study's registration, for a study registered "
+    "before its data were collected; before its earliest public appearance (preprint or "
+    "publication), for any other study; before the data first appeared, for a study reanalysing "
+    "earlier published data. A paper that states a prediction and tests it in the same paper does "
+    "not count. When the dates or the commitment are unclear, the study is not counted. Read the "
+    "passages and the dates, and decide whether the earlier record, by the theory's proponents, "
+    "commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, "
+    "NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", "
+    "\"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}."
+)
+
+FORBIDDEN_KEYS = {"replaces", "reading", "verdict", "reason", "unsure", "unsure_why", "could_fail", "separates", "note", "judgement"}
 
 
 def load(name):
@@ -96,7 +113,7 @@ def build():
         packet = {
             "packet_id": j["id"],
             "kind": j["kind"],
-            "instructions": INSTRUCTIONS[j["kind"]],
+            "instructions": COMMITMENT_RULE_D if (j["kind"] == "commitment" and j.get("replaces")) else INSTRUCTIONS[j["kind"]],
             "theory": theory_names[p["theory"]],
             "core_claim": {"quote": c["quote"], "source": cite(c["source"])},
             "prediction": {

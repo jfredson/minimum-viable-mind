@@ -129,6 +129,11 @@ study's weight.
   Until then the theory is shown as "too little tested to score", however many predictions one
   group has tested. This replaces the first proposal's minimum of three tested predictions, which
   one lab could meet alone.
+- *(ruled)* **A split between "mixed" and one side is recorded as "mixed".** *(ruled, 2026-11-20,
+  John: "Yes, as you lean"; wording the master session's.)* When the two readers of an outcome split
+  between "mixed" and "for" or "against", the outcome is recorded as "mixed". Weakest step, stated
+  when it was ruled: it always pulls toward the middle, so it is to be reviewed when stage 3 shows how
+  often it fires. (Raised by the stage 2 pilot, where it fired on two of fourteen outcomes.)
 - **The number.** Support is the weighted sum divided by the total weight, which runs from −1 to 1,
   put on a 0 to 100 scale: 50 means the evidence is even, above 50 it leans for, below 50 against.
   It is an average, not a total, so a theory tested more often does not score higher for that
@@ -455,7 +460,10 @@ shapes stage 2.
       out to test a theory tests nothing if the prediction was first written in the same paper.~~
    2. *(ruled)* **A study that fails this is listed beside the prediction**, marked "explained
       afterwards, not counted", and moves no score.
-   3. *(ruled)* **When the dates or the commitment are unclear, the study is not counted.** Not
+   3. *(ruled)* **When the dates or the commitment are unclear, the study is not counted.**
+      *(Applied by John, 2026-11-20, "Yes, as you lean": when the two readers split on whether an
+      earlier passage committed the theory to the test, the commitment is unclear, so the study is not
+      counted for that prediction. Wording the master session's.)* Not
       counting is the safe direction, because the failure this guards against is a theory gaining
       support it did not earn. Known cost, stated when it was ruled: some genuine tests of
       loosely stated older theories will be left out. Whether an earlier statement committed the

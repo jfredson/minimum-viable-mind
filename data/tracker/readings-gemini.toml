@@ -689,3 +689,29 @@ could_fail = false
 separates = true
 separates_from = ["rpt", "iit"]
 rival_view_from = "own knowledge"
+
+[[reading]]
+judgement = "out-bellet-iit-posterior"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "Decoding of image identity was stronger in ventrolateral prefrontal cortex than in posterior parietal cortex for both isolated and rapidly presented stimuli, which leans against the claim that content is best decoded from posterior cortex. However, posterior parietal cortex still showed significant decoding, and it is part of the dorsal spatial stream rather than the ventral posterior areas mainly involved in object recognition. Moreover, without subjective report in the rapid presentation condition, most stimuli could have remained unconscious, so the result cannot establish whether prefrontal cortex adds information about conscious content beyond the posterior hot zone."
+unsure = true
+unsure_why = "Evidence confirming that the isolated stimuli were consciously perceived and that prefrontal cortex still adds decodable information beyond ventral temporal-occipital cortex would change the verdict to against."
+response_id = "GR4Ba8_EF7bWm9cPtpTOwAE"
+cost_usd = 0.028328
+verdict = "mixed"
+
+[[reading]]
+judgement = "com2-dellert-gwt-ignition"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-20"
+order = "second"
+reason = "By 2019 and 2020, the theory's proponents had explicitly committed Global Workspace Theory to prefrontal-parietal activation for every conscious experience, regardless of sensory modality, inattention paradigm, or whether a task report is required. These commitments directly cover an auditory no-report inattentional deafness fMRI study testing for prefrontal and parietal involvement in awareness. Because the study was not preregistered and first appeared publicly as a preprint in May 2025, the theoretical commitment was clearly fixed years in advance."
+unsure = false
+unsure_why = ""
+response_id = "Dx4Ba9ncH9TdsNYPlMHl-AY"
+cost_usd = 0.011214
+verdict = "before"

@@ -211,12 +211,20 @@ def settle(j, mode):
     """
     rs = j.get("reading", [])
     ru = j.get("ruling")
+    if ru and ru.get("verdict") == "superseded":
+        return None, "superseded"
+    if ru and j["kind"] == "outcome":
+        if ru.get("open_part"):
+            return None, "open-for-john"
+        return {"verdict": ru["verdict"], "reader": "ruling"}, "ruled"
     if ru and j["kind"] == "commitment":
         if ru.get("open_part"):
             return None, "open-for-john"
         return {"verdict": ru["verdict"], "reader": "ruling"}, "ruled"
     if ru and j["kind"] == "testability" and rs:
         rs = [dict(r, separates=ru["separates"], separates_from=ru.get("separates_from", [])) for r in rs]
+        if "could_fail" in ru:
+            rs = [dict(r, could_fail=ru["could_fail"]) for r in rs]
         cf = {r["could_fail"] for r in rs}
         readers = {r["reader"] for r in rs}
         if len(cf) > 1:
@@ -258,7 +266,9 @@ def compute(d, mode, flip_study=None, bar_reading="sharp"):
     com = {}
     for j in d["judgements"]:
         if j["kind"] == "commitment":
-            r, _ = settle(j, mode)
+            r, st = settle(j, mode)
+            if st == "superseded":
+                continue
             com[(j["prediction"], j["study"])] = r["verdict"] if r else None
 
     def could_fail(pid):
@@ -440,7 +450,7 @@ def main(argv=None):
     result = {
         "mode": a.mode,
         "readers": sorted({r["reader"] for j in d["judgements"] for r in j.get("reading", [])}),
-        "judgement_status": {k: sum(1 for v in status.values() if v == k) for k in ("agreed", "ruled", "one-reader", "disagreed", "open-for-john", "unread")},
+        "judgement_status": {k: sum(1 for v in status.values() if v == k) for k in ("agreed", "ruled", "one-reader", "disagreed", "open-for-john", "unread", "superseded")},
         "unsettled": sorted(k for k, v in status.items() if v in ("one-reader", "disagreed", "open-for-john", "unread")),
         "theories": base,
         "ranking": ranking,
