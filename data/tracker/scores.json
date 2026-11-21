@@ -6,17 +6,14 @@
   ],
   "judgement_status": {
     "agreed": 105,
-    "ruled": 34,
+    "ruled": 36,
     "one-reader": 0,
-    "disagreed": 2,
+    "disagreed": 0,
     "open-for-john": 0,
     "unread": 0,
     "superseded": 1
   },
-  "unsettled": [
-    "tst-iit-phi-states",
-    "tst-rpt-ff-unseen"
-  ],
+  "unsettled": [],
   "theories": {
     "gwt": {
       "name": "Global workspace theory",
@@ -64,8 +61,7 @@
       "name": "Integrated information theory",
       "judgement_status": {
         "agreed": 15,
-        "ruled": 4,
-        "disagreed": 1
+        "ruled": 5
       },
       "one_reader_only": false,
       "testability": 60.0,
@@ -203,8 +199,7 @@
       "name": "Recurrent processing theory",
       "judgement_status": {
         "agreed": 16,
-        "ruled": 4,
-        "disagreed": 1
+        "ruled": 5
       },
       "one_reader_only": false,
       "testability": 41.7,

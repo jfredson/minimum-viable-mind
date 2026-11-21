@@ -678,3 +678,23 @@ could_fail = false
 separates = false
 separates_from = []
 reason = "Both readers agree the prediction cannot fail. The ruled test counts a prediction only if it could fail and separates, so it scores nothing whichever way separation goes; the split on separation between Gemini, the first reading of record on this Sentient Horizons row (separates), and Claude (does not) changes no number and is not decided here. Recorded as separates = false only so the row reads as settled."
+
+# ------------------------------------------- John's settlement of the last two stage 3 rows
+# John, 2026-11-21, choosing "Doesn't separate (Recommended)" on each (relayed by the second
+# master session). Both readers agree the prediction could fail.
+
+[[ruling]]
+judgement = "tst-iit-phi-states"
+rule = "John, 2026-11-21, \"Doesn't separate (Recommended)\""
+settles = "separation"
+separates = false
+separates_from = []
+reason = "Readers split (Claude: does not separate; Gemini: separates). John: does not separate. Global workspace theory's proponents (mashour-2020) also predict disruption in anaesthesia, sleep and disorders of consciousness, the same observable result. Integrated information theory's testability stays 60."
+
+[[ruling]]
+judgement = "tst-rpt-ff-unseen"
+rule = "John, 2026-11-21, \"Doesn't separate (Recommended)\""
+settles = "separation"
+separates = false
+separates_from = []
+reason = "Readers split (Claude: does not separate; Gemini: separates). John: does not separate. Global workspace theory's proponents (mashour-2020) also hold that unseen stimuli spread without becoming conscious. Recurrent processing theory's testability stays 42, below the bar."
