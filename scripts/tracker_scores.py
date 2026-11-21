@@ -378,8 +378,16 @@ def compute(d, mode, flip_study=None, bar_reading="sharp"):
         else:
             group = "not yet defined sharply enough to rank"
 
+        # how the judgements on this theory's rows stand (stage 3: the seven new theories have
+        # one reader until the second reading; a reader can see which scores rest on one reading)
+        jstat = {}
+        for j in d["judgements"]:
+            if preds[j["prediction"]]["theory"] == tid:
+                jstat[status[j["id"]]] = jstat.get(status[j["id"]], 0) + 1
         out[tid] = {
             "name": th["name"],
+            "judgement_status": jstat,
+            "one_reader_only": bool(jstat) and set(jstat) <= {"one-reader", "superseded"},
             "testability": round(testability, 1),
             "testability_by_claim": per_claim,
             "past_bar": past_bar,
@@ -489,7 +497,7 @@ def main(argv=None):
     print()
     for tid, v in base.items():
         s = "too little tested to score" if v["support"] is None else f"{v['support']}"
-        print(f"{v['name']}")
+        print(f"{v['name']}" + ("   [one reader only: Claude; no second reading yet]" if v["one_reader_only"] else ""))
         print(f"  testability {v['testability']}   support {s}   left to test {v['left_to_test']}")
         sr = v["support_rests_on"]
         print(f"  support rests on {sr['counted_outcomes']} counted outcome(s) from {len(sr['studies'])} studies, {len(sr['groups'])} groups, total weight {sr['total_weight']}")

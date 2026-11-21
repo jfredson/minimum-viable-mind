@@ -16,6 +16,8 @@ cost estimate; calling the second reader is a separate step, behind John's go.
 Usage:
     python3 scripts/tracker_packets.py                 # write packets, print estimate
     python3 scripts/tracker_packets.py --check-blind   # fail if any packet leaks a reading
+    python3 scripts/tracker_packets.py --pending       # stage 3: only judgements the second
+                                                       # reader has not read; keeps earlier packets
 """
 from __future__ import annotations
 
@@ -90,7 +92,14 @@ def load(name):
         return tomllib.load(f)
 
 
-def build():
+def gemini_read():
+    p = DATA / "readings-gemini.toml"
+    if not p.exists():
+        return set()
+    return {r["judgement"] for r in load("readings-gemini.toml").get("reading", [])}
+
+
+def build(pending=False):
     th = load("theories.toml")
     preds = {p["id"]: p for p in load("predictions.toml")["prediction"]}
     studies = {s["id"]: s for s in load("studies.toml")["study"]}
@@ -105,15 +114,20 @@ def build():
         s = sources[sid]
         return {"citation": s["citation"], "url": s.get("url", ""), "date": s.get("published", "")}
 
+    done = gemini_read() if pending else set()
     packets = []
     for j in judgements:
+        if j["id"] in done:
+            continue
         p = preds[j["prediction"]]
         c = claims[p["core_claim"]]
         first_reading = "gemini" if p["theory"] == "sh" else "claude"
         packet = {
             "packet_id": j["id"],
             "kind": j["kind"],
-            "instructions": COMMITMENT_RULE_D if (j["kind"] == "commitment" and j.get("replaces")) else INSTRUCTIONS[j["kind"]],
+            # Ruling D's wording for every commitment packet built after it (stage 3, --pending),
+            # and for the pilot's re-put rows; the pilot's first 14 keep the wording they were sent with.
+            "instructions": COMMITMENT_RULE_D if (j["kind"] == "commitment" and (j.get("replaces") or pending)) else INSTRUCTIONS[j["kind"]],
             "theory": theory_names[p["theory"]],
             "core_claim": {"quote": c["quote"], "source": cite(c["source"])},
             "prediction": {
@@ -177,8 +191,10 @@ def main(argv=None):
     ap.add_argument("--check-blind", action="store_true")
     ap.add_argument("--output-tokens", type=int, default=3000,
                     help="assumed output tokens per call, thinking included (default 3000)")
+    ap.add_argument("--pending", action="store_true",
+                    help="only judgements the second reader has not read; earlier packets are kept")
     a = ap.parse_args(argv)
-    packets = build()
+    packets = build(pending=a.pending)
     jby = {j["id"]: j for j in load("judgements.toml")["judgement"]}
     bad = {p["packet_id"]: leaks(p, jby) for p in packets}
     bad = {k: v for k, v in bad.items() if v}
@@ -189,8 +205,9 @@ def main(argv=None):
         print(f"{len(packets)} packets, none leaks a reading")
         return 0
     OUT.mkdir(exist_ok=True)
-    for old in OUT.glob("*.json"):
-        old.unlink()
+    if not a.pending:
+        for old in OUT.glob("*.json"):
+            old.unlink()
     for p in packets:
         (OUT / f"{p['packet_id']}.json").write_text(json.dumps(p, indent=2, ensure_ascii=False) + "\n")
 

@@ -322,6 +322,26 @@ with an estimate first.
 
    Weakest step, stated to John: "widened or updated" is a judgement, and the 2026 paper has been seen
    only in summary. The core claims themselves are not fixed yet; that is stage 3 work.
+
+   **Three clarifications of "latest same theory": ruled 2026-11-21, "Yes, as you lean".** *(ruled,
+   John; wording the master session's.)* Raised by the stage 3 scoring session, which found three
+   choices close:
+   1. *(ruled)* An entry for a family of theories takes a statement of the family. Higher-order
+      theories: Brown, Lau and LeDoux 2019, "Understanding the higher-order approach to
+      consciousness", *Trends in Cognitive Sciences*.
+   2. *(ruled)* Widening a theory's scope counts as a different theory. The sensorimotor theory:
+      O'Regan and Noë 2001, *Behavioral and Brain Sciences*, not O'Regan 2023 (which widens it from
+      vision to all experience), for consistency with attention schema theory.
+   3. *(ruled)* A full statement is a paper whose main job is to state the theory. Recurrent
+      processing theory: Lamme 2010, "How neuroscience will change our view on consciousness", the
+      target article in *Cognitive Neuroscience*, not Lamme 2018 or 2020.
+
+   Unchanged: Damasio and Damasio 2023 as ruled (the stage 3 session reports if Singer and Damasio
+   2025 turns out to be a full restatement); Orchestrated Objective Reduction: Hameroff and Penrose
+   2014, *Physics of Life Reviews*. Access: the authors' own open copies are looked for first; the
+   copy used, and any difference from the journal text that can be seen, is recorded; what cannot be
+   found openly is listed for John to sign in to himself; if a paper cannot be opened at all, the
+   next-latest statement that can be is used, with the reason recorded. Nothing is bought.
 5. ~~The three scores and their formulas~~ **Ruled 2026-11-20 ("Yes to all five"):** core claims
    fixed from one named source; study weights by counted protections; no support score before two
    separate groups; core-claim predictions count double; a failure stands. See section 4.
