@@ -8,15 +8,15 @@ import { tk } from '../lib/tracker';
 interface Props { t: string }
 const ids = Object.keys(tk.predictions).sort((a, b) => b.length - a.length);
 const re = new RegExp(`\\(?\\b(${ids.map((i) => i.replace(/[-]/g, '\\-')).join('|')})\\b\\)?`, 'g');
-const parts: { text?: string; id?: string }[] = [];
+const parts: { text?: string; id?: string; paren?: boolean }[] = [];
 let last = 0;
 for (const m of Astro.props.t.matchAll(re)) {
   if (m.index! > last) parts.push({ text: Astro.props.t.slice(last, m.index) });
-  parts.push({ id: m[1] });
+  parts.push({ id: m[1], paren: m[0].startsWith('(') && m[0].endsWith(')') });
   last = m.index! + m[0].length;
 }
 if (last < Astro.props.t.length) parts.push({ text: Astro.props.t.slice(last) });
 ---
 {parts.map((p) => p.id
-  ? <>(the prediction <a href={`/predictions/${p.id}/`}><R t={tk.predictions[p.id].statement} q /></a>)</>
+  ? <>{p.paren && '('}the prediction <a href={`/predictions/${p.id}/`}><R t={tk.predictions[p.id].statement} q /></a>{p.paren && ')'}</>
   : <R t={p.text} />)}

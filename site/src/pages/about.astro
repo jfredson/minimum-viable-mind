@@ -6,6 +6,7 @@
 import Base from '../layouts/Base.astro';
 import N from '../components/N.astro';
 import R from '../components/R.astro';
+import RecText from '../components/RecText.astro';
 import WaitingLine from '../components/WaitingLine.astro';
 import { tk, word } from '../lib/tracker';
 import { data, fmtDate } from '../lib/project';
@@ -50,7 +51,7 @@ const repo = 'https://github.com/jfredson/minimum-viable-mind';
         ? <p class="tplain">Every statement in the records has been checked against a source a reader can open.</p>
         : <>
             <p class="tplain">These statements in the records rest on a source not yet opened in full. Each will be checked against its source, or taken out; until then, any score that rests on one may change, and no news post goes out.</p>
-            <ul class="tplain">{tk.verify_open.map((v) => <li data-verify-open={v.id}><R t={v.statement} /></li>)}</ul>
+            <ul class="tplain">{tk.verify_open.map((v) => <li data-verify-open={v.id}><RecText t={v.statement} /></li>)}</ul>
           </>}
     </section>
 

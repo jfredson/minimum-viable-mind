@@ -59,6 +59,7 @@ PHRASES = [
     r"for john\b",             # "flagged for John", "a note for John"
     r"(reported|sent|passed|left|put) to john\b",   # "reported to John" (not "traces it to John Ball")
     r"john'?s ruling",         # "(John's ruling of the same day)"
+    r"john ruled\b",           # "the text that John ruled as the source" (a verify entry, 2026-11-21)
     r"john to (rewrite|review|approve|check|read|decide)",
     r"flagged (it |the range |)for me",
     r"put to me\b",

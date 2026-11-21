@@ -72,8 +72,8 @@
     "theories_listed": 10,
     "worked_out_on": "2026-11-21",
     "last_reading": null,
-    "waiting_studies": null,
-    "version": "7ac7563",
+    "waiting_studies": 0,
+    "version": "3b3a809",
     "script": "scripts/tracker_scores.py --mode settled, through scripts/export_tracker.py"
   }
 }

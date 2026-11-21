@@ -63,7 +63,7 @@ to_clear = "John signs in to Nature in the browser pane; a session reads both. S
 id = "v-hatamimajoumerd"
 status = "open"
 records = ["hatamimajoumerd-2022"]
-statement = "Hatamimajoumerd, Ratan Murty, Pitts and Cohen 2022 is in the pilot sample but unread."
+statement = "Hatamimajoumerd, Ratan Murty, Pitts and Cohen 2022 is among the studies chosen for the first scoring, but has not yet been read."
 rests_on = "Publisher robot check; no open copy found."
 to_clear = "Open it (John's browser, or an author copy) and read it against gwt-pfc-content and iit-posterior."
 
@@ -99,7 +99,7 @@ to_clear = "Open the journal version and check the quoted passages."
 id = "v-hot-journal-text"
 status = "open"
 records = ["hot-c1", "hot-c2", "hot-c3", "hot-c4", "hot-c5", "hot-unconscious-global", "hot-awareness-performance", "brown-lau-ledoux-2019"]
-statement = "The five core claims and the 2019 passages are quoted from the authors' PsyArXiv preprint (2019-01-07), not from the Trends in Cognitive Sciences text that John ruled as the source."
+statement = "The five core claims and the 2019 passages are quoted from the authors' PsyArXiv preprint (2019-01-07), not from the Trends in Cognitive Sciences text that was chosen as the source."
 rests_on = "The preprint, opened in full. The journal text was not opened: cell.com (which OpenAlex lists as a free copy) and PhilArchive both answered with a robot check, not bypassed. Visible differences: the title changed, and the journal abstract is reworded with two added sentences."
 to_clear = "John signs in at cell.com (or opens the journal's free PDF in his own browser); a session checks each quoted passage against the journal text and records any change in wording, location or section name. If a quoted sentence is missing from the journal text, that claim is re-chosen from the journal by the same method."
 
@@ -251,7 +251,7 @@ to_clear = "Open both. If either states the junction's role in controlling atten
 id = "v-ast-rivals"
 status = "open"
 records = ["tst-ast-control", "tst-ast-covary", "tst-ast-graded"]
-statement = "Rival proponents' publications that might predict something different from attention schema theory on attention and awareness were not opened: Koch and Tsuchiya 2007 (by Christof Koch, an integrated information theory proponent; cited by mashour-2020 as a review of studies separating attention from awareness); Brown, Lau and LeDoux 2019 and Lau and Rosenthal 2011 (Trends in Cognitive Sciences, higher-order theories); Rahnev, Lau and colleagues 2011 (Nature Neuroscience, attention and subjective bias); Lamme 2018 (recurrent processing theory), whose PubMed Central record this session could not get as open text."
+statement = "Rival proponents' publications that might predict something different from attention schema theory on attention and awareness were not opened: Koch and Tsuchiya 2007 (by Christof Koch, an integrated information theory proponent; cited by mashour-2020 as a review of studies separating attention from awareness); Brown, Lau and LeDoux 2019 and Lau and Rosenthal 2011 (Trends in Cognitive Sciences, higher-order theories); Rahnev, Lau and colleagues 2011 (Nature Neuroscience, attention and subjective bias); Lamme 2018 (recurrent processing theory), whose PubMed Central record was not available as open text."
 rests_on = "All paywalled to an automated reader (Europe PMC 'not open access'), except Lamme 2018, which the pilot opened on 2026-11-20 but this session did not."
 to_clear = "Open each and quote any passage predicting that control of attention is normal without awareness, or that awareness and attention come apart commonly, or that awareness is not graded with attention. Under ruling C only such a quoted passage can make ast-control or ast-covary separate."
 
