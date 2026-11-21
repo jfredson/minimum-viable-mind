@@ -4,7 +4,8 @@
 # kind 1: the model is what an experiment tested. kind 2: a vendor in the spending record.
 # Each `text` is the sentence word for word as a visitor reads it on the built page; a page
 # may name a tool only inside a sentence listed here for that page. Rewording one of these
-# sentences in the record means changing it here too, in the same change.
+# sentences in the record means changing it here too, in the same change. Four were reworded
+# on 2026-11-21 under John's ruling "Rule breaks now, jargon later" ("my go" became a spending cap).
 
 [[sentence]]
 kind = 1
@@ -46,7 +47,7 @@ kind = 2
 item = "10"
 field = "spend.account_note"
 pages = ["spend/index.html"]
-text = "Updated 2026-10-24: the balance read $65.62 after the split removal test's RunPod run (about $0.77, recorded with my go in the spending record )."
+text = "Updated 2026-10-24: the balance read $65.62 after the split removal test's RunPod run (about $0.77, approved beforehand and recorded in the spending record )."
 
 [[sentence]]
 kind = 2
@@ -74,21 +75,21 @@ kind = 2
 item = "15"
 field = "timeline[0].summary"
 pages = ["story/index.html"]
-text = "About $1.05 spent on Gemini under my go of up to $10."
+text = "About $1.05 spent on Gemini, under a spending cap of $10."
 
 [[sentence]]
 kind = 2
 item = "16"
 field = "timeline[1].summary (hard case C: second half reworded)"
 pages = ["story/index.html"]
-text = "About $0.77 spent on RunPod under my go of up to $2, after the Mac ran hot; from now on model runs are planned on rented machines."
+text = "About $0.77 spent on RunPod, under a spending cap of $2, after the Mac ran hot; from now on model runs are planned on rented machines."
 
 [[sentence]]
 kind = 1
 item = "17"
 field = "timeline[3].summary"
 pages = ["story/index.html"]
-text = "The battery rehearsal started on my 'Go up to $50' and stopped on Google's daily limit of 250 requests to Gemini 3.1 Pro, with 437 calls kept and about $2.88 to $7.13 spent; it resumes a day at a time."
+text = "The battery rehearsal started under a spending cap of $50 and stopped on Google's daily limit of 250 requests to Gemini 3.1 Pro, with 437 calls kept and about $2.88 to $7.13 spent; it resumes a day at a time."
 
 [[sentence]]
 kind = 2

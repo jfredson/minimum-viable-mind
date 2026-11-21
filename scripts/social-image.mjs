@@ -8,7 +8,7 @@
 // ink violet until the re-inking of 2026-11-21), and
 // the graph paper of 24-pixel squares fading out down the picture, as it does behind the first screen.
 // Since 2026-11-21 the words are the tracker's: the big lines are the home page's title, the smaller
-// one the footer line (both draft copy, not yet through the voice checks).
+// one the footer line, ruled by John on 2026-11-21.
 //
 // Run from the repository root after changing the skin or these words:
 //   node scripts/social-image.mjs
@@ -17,6 +17,7 @@
 // fonts are this machine's, so the picture is made here and committed, never at deploy.
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
+import { readFileSync } from 'node:fs';
 
 const sharp = createRequire(new URL('../site/', import.meta.url))('sharp');
 
@@ -34,10 +35,12 @@ const line = 'rgba(27, 27, 26, 0.12)';
 
 const NAME = 'Minimum Viable Mind';
 const BIG = ['How the theories of', 'consciousness are holding up'];
-const SMALL = [
-  "Every theory of consciousness, held to the same rules,",
-  "this site's own included",
-];
+// The small line's count comes from the records, as the line above the home page's title does
+// (John, 2026-11-21: "Ten theories of consciousness, held to the same rules"). Run the export
+// first so site/src/data/tracker.json exists.
+const WORDS = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'];
+const tracker = JSON.parse(readFileSync(new URL('../site/src/data/tracker.json', import.meta.url), 'utf8'));
+const SMALL = [`${WORDS[tracker.listed_count] ?? tracker.listed_count} theories of consciousness, held to the same rules`];
 const DOMAIN = 'minimumviablemind.sentient-horizons.com';
 
 // The graph paper: 24-pixel squares at 24 * 1.25 = 30 pixels on the card, so the grid reads at

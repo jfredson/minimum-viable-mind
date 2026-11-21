@@ -89,10 +89,16 @@ export const STATE_CLASS: Record<State, string> = {
 export const OUTCOME_LABEL: Record<string, string> = { 'for': 'for', 'against': 'against', 'mixed': 'mixed' };
 
 // The ranking's three ruled groups, in order (kickoff section 4, ranking rule 1).
+// Titles ruled by John on 2026-11-21 ("Take the new titles"). Each note carries the ruled test
+// in the same words (the bar: more than half the main claims, each with a prediction that could
+// fail and that a rival's own published work predicts differently; and studies from two separate
+// groups), because a title alone would promise less than the rule asks. "{groups}" is replaced
+// by the ruled count of groups, from the records.
+export const BAR_TEST = "main claims come with a prediction that could fail and that a rival theory's own published work predicts differently";
 export const GROUPS = [
-  { key: 'ranked', title: 'Ranked', note: 'past the bar, with a support score; listed from the most support to the least' },
-  { key: 'testable', title: 'Testable, too little tested to rank', note: 'no studies yet from two separate groups' },
-  { key: 'not_sharp', title: 'Not yet defined sharply enough to rank', note: 'half or fewer of its core claims come with a prediction that could fail and that a rival theory predicts differently' },
+  { key: 'ranked', title: 'Ranked by the evidence', note: `more than half its ${BAR_TEST}, and it has counted studies from at least {groups} separate research groups; listed from the most support to the least` },
+  { key: 'testable', title: 'Waiting for more studies', note: `more than half its ${BAR_TEST}, but it does not yet have counted studies from {groups} separate research groups` },
+  { key: 'not_sharp', title: 'Not yet clear enough to test', note: `half or fewer of its ${BAR_TEST}` },
 ] as const;
 
 // Where a claim's dot sits: filled when a proponent states a prediction that could fail and

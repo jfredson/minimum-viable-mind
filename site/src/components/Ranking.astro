@@ -27,17 +27,18 @@ const notScored = tk.listed.filter((t) => !t.scored);
 <div class="rank">
   <div class="rank-head" aria-hidden="true">
     <span></span><span>Theory</span>
-    <span>How well the evidence backs it<br />(<N v={tk.rules.even} /> = even)</span>
-    <span>How sharply it is defined, so it can be tested</span>
-    <span>How much is left to test</span>
+    <span>How well studies back it</span>
+    <span>How clearly it can be tested</span>
+    <span>How much is still untested</span>
   </div>
+  <p class="rank-key">How well studies back it: <N v={tk.rules.even} /> means the evidence is even; above leans for, below leans against.</p>
 
   {GROUPS.map((g) => {
     const list = rows[g.key];
     if (!list.length) return null;
     return (
       <>
-        <div class="group">{g.title} <i>{g.note}</i></div>
+        <div class="group">{g.title} <i>{g.note.split('{groups}').map((part, i) => <>{i > 0 && <N v={tk.rules.groups_needed} t={word(tk.rules.groups_needed)} />}{part}</>)}</i></div>
         {list.map((t, i) => {
           const tied = g.key === 'ranked' && (tiedWithNext(i) || tiedWithPrev(i));
           const pair = g.key === 'ranked' ? pairAfter(i) : undefined;
@@ -51,9 +52,9 @@ const notScored = tk.listed.filter((t) => !t.scored);
                   {t.own && <span class="own">this site's own</span>}
                   <span class="sub">
                     {g.key === 'not_sharp' ? (
-                      <>needs: a prediction that could fail, and that a rival theory predicts differently, for <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more of its <N v={t.claims_count} t={word(t.claims_count)} /> core claims</>
+                      <>To be ranked, <N v={t.claims_needed_more} t={word(t.claims_needed_more)} /> more of its <N v={t.claims_count} t={word(t.claims_count)} /> main claims need a prediction that could fail and that a rival theory predicts differently.</>
                     ) : t.rests_on.studies > 0 ? (
-                      <>rests on <N v={t.rests_on.studies} /> {t.rests_on.studies === 1 ? 'study' : 'studies'} from <N v={t.rests_on.groups} /> {t.rests_on.groups === 1 ? 'group' : 'groups'}</>
+                      <><N v={t.rests_on.studies} /> {t.rests_on.studies === 1 ? 'study' : 'studies'}, from <N v={t.rests_on.groups} /> research {t.rests_on.groups === 1 ? 'group' : 'groups'}</>
                     ) : (
                       <>no counted study yet</>
                     )}
@@ -61,8 +62,8 @@ const notScored = tk.listed.filter((t) => !t.scored);
                   </span>
                 </span>
                 <Bar kind="sup" v={t.support} label="backed" />
-                <Bar kind="test" v={t.testability} label="sharp" />
-                <Bar kind="left" v={t.left_to_test} label="left to test" />
+                <Bar kind="test" v={t.testability} label="clear" />
+                <Bar kind="left" v={t.left_to_test} label="untested" />
               </div>
               {pair && (
                 <div class="tienote">Too close to separate: one study going the other way would swap these two. <a href={`/theories/${pair.a}/#tie`}>See which study</a>.</div>
@@ -75,7 +76,7 @@ const notScored = tk.listed.filter((t) => !t.scored);
   })}
 
   {notScored.length > 0 && (
-    <div class="group notyet">Still being scored <i><N v={notScored.length} t={word(notScored.length)} /> more on the list: {notScored.map((t, i) => <>{i > 0 && (i === notScored.length - 1 ? ' and ' : ', ')}{tk.links.theories[t.id] ? <a href={tk.links.theories[t.id]}>{t.name}</a> : t.name}</>)}</i></div>
+    <div class="group notyet">Not scored yet <i><N v={notScored.length} t={word(notScored.length)} /> more on the list: {notScored.map((t, i) => <>{i > 0 && (i === notScored.length - 1 ? ' and ' : ', ')}{tk.links.theories[t.id] ? <a href={tk.links.theories[t.id]}>{t.name}</a> : t.name}</>)}</i></div>
   )}
 </div>
 {tk.verify_open_count > 0 && (

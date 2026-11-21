@@ -73,8 +73,14 @@ PHRASES = [
     r"\bFIXME\b",
     r"from memory",            # rule 2 above (2026-11-21)
     r"john'?s (request|go|word|wish|instruction)",   # "Added on John's request" (found 2026-11-21 by the reader check)
-    r"wording the session'?s",  # the same note. Kept narrow: a wider "session" phrase would refuse about
-                                # 18 sentences on the older pages, whose wording pass waits on John.
+    r"wording the session'?s",  # the same note
+    # Widened 2026-11-21, after the older pages' wording pass under John's ruling "Rule breaks now,
+    # jargon later": none of these appeared on any page once the pass was done.
+    r"\bsessions?\b",           # how the work was done
+    r"\bI ruled\b", r"\bmy rulings?\b", r"\bmy go\b", r"\bon my word\b",   # who ruled
+    r"\bmerged\b",             # how a change reached the repository
+    r"\b\d{1,2}:\d{2}\s*(pacific|pt|utc|am|pm)\b",   # clock times
+    r"\b(commit|version|frozen code) [0-9a-f]{7}\b",    # commit ids
 ]
 PATTERN = re.compile("|".join(PHRASES), re.IGNORECASE)
 
