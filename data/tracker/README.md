@@ -168,3 +168,18 @@ Two additions, made at the site session's request:
 
 The commitment judgements use ruling D ("Yes, that test"): a prediction counts if the proponents
 fixed it before they could have known the study's result.
+## The weekly reading (stage 4, built 2026-11-21)
+
+How new studies reach the tracker: `docs/weekly-reading.md` (the method) and
+`docs/weekly-reading-prompt.md` (the standalone instruction a cloud routine follows). Its files:
+
+| file | what it holds |
+|---|---|
+| `search-runs-<date>/` | the raw results of each run of the fixed searches; `search-runs-2026-11-21/` is the baseline |
+| `readings/<date>.json` | one record per weekly reading, never edited; `<date>.candidates.json` lists that run's new results |
+| `waiting.toml` | studies found and waiting to be scored, with a first reading; appended to, never edited; a `[[resolved]]` entry closes a row |
+| `contrast-seen.txt` | the DOIs on ConTraSt's list already seen (DOIs only, no ConTraSt field) |
+
+`scripts/tracker_weekly.py` reruns the searches (`search`), compares ConTraSt (`contrast`), validates
+(`check`) and counts what is waiting (`count`, and `waiting_counts()` for the site's export). Nothing
+in the weekly reading moves a score.
