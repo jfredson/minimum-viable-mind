@@ -1,0 +1,98 @@
+# The sentences on the site allowed to name a tool (scripts/check_site.py, rule 3).
+# Approved by John on 2026-11-21 ("Yes, approve it"), from
+# docs/design/2026-11-21-stage3-site/tool-names-sorted.md, relayed by the master session.
+# kind 1: the model is what an experiment tested. kind 2: a vendor in the spending record.
+# Each `text` is the sentence word for word as a visitor reads it on the built page; a page
+# may name a tool only inside a sentence listed here for that page. Rewording one of these
+# sentences in the record means changing it here too, in the same change.
+
+[[sentence]]
+kind = 1
+item = "2"
+field = "stages[3].delivered[2]"
+pages = ["ladder/index.html"]
+text = "Wager W1 (sycophancy reproduces) splits by family: fires for Gemini, loses for both Claude models."
+
+[[sentence]]
+kind = 1
+item = "5"
+field = "findings[F3].what"
+pages = ["learned/index.html"]
+text = "A conventional sycophancy metric would report Gemini's tool cell as 90% capitulation; the three-way instrument shows about 87% masked and 3% capitulated."
+
+[[sentence]]
+kind = 1
+item = "6 and 8"
+field = "findings[F3].so_what; questions[Q4].current_answer"
+pages = ["learned/index.html", "questions/index.html"]
+text = "Sycophancy as the field describes it is alive for Gemini and stale for Claude-family models."
+
+[[sentence]]
+kind = 1
+item = "7"
+field = "findings[F4].what"
+pages = ["learned/index.html"]
+text = "Sonnet held the registered pattern leak-clean at a small margin."
+
+[[sentence]]
+kind = 1
+item = "9"
+field = "questions[Q4].current_answer"
+pages = ["questions/index.html"]
+text = "The 'mind vs tool' framing wager lost overall; one leak-clean survivor (Sonnet) at a small margin."
+
+[[sentence]]
+kind = 2
+item = "10"
+field = "spend.account_note"
+pages = ["spend/index.html"]
+text = "Updated 2026-10-24: the balance read $65.62 after the split removal test's RunPod run (about $0.77, recorded with my go in the spending record )."
+
+[[sentence]]
+kind = 2
+item = "11"
+field = "spend.account_note"
+pages = ["spend/index.html"]
+text = "RunPod prepaid credits, auto-reload off, never loaded past the $80 account limit I set; topped up in increments I choose."
+
+[[sentence]]
+kind = 2
+item = "12"
+field = "spend.account_note (hard case B, kept as a vendor line)"
+pages = ["spend/index.html"]
+text = "Anthropic and Gemini API judge calls are billed separately and cost cents per run."
+
+[[sentence]]
+kind = 2
+item = "13"
+field = "site/src/pages/spend.astro"
+pages = ["spend/index.html"]
+text = "Source of truth: the compute ledger , reconciled against RunPod's own billing at each phase boundary."
+
+[[sentence]]
+kind = 2
+item = "15"
+field = "timeline[0].summary"
+pages = ["story/index.html"]
+text = "About $1.05 spent on Gemini under my go of up to $10."
+
+[[sentence]]
+kind = 2
+item = "16"
+field = "timeline[1].summary (hard case C: second half reworded)"
+pages = ["story/index.html"]
+text = "About $0.77 spent on RunPod under my go of up to $2, after the Mac ran hot; from now on model runs are planned on rented machines."
+
+[[sentence]]
+kind = 1
+item = "17"
+field = "timeline[3].summary"
+pages = ["story/index.html"]
+text = "The battery rehearsal started on my 'Go up to $50' and stopped on Google's daily limit of 250 requests to Gemini 3.1 Pro, with 437 calls kept and about $2.88 to $7.13 spent; it resumes a day at a time."
+
+[[sentence]]
+kind = 2
+item = "20"
+field = "timeline[44].summary"
+pages = ["story/index.html"]
+text = "RunPod ticket submitted."

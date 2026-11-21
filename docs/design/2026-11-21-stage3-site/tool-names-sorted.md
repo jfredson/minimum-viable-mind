@@ -1,6 +1,7 @@
 # Tool names on the site, sorted (2026-11-21)
 
-*Written for John's review. John ruled on 2026-11-21, "Yes, sort them so", relayed by the master
+*Approved by John on 2026-11-21 ("Yes, approve it"), covering all of it as leaned, the three hard cases
+included; the rewordings and the check's sentence list were then made the same day (see the end). Written for John's review. John ruled on 2026-11-21, "Yes, sort them so", relayed by the master
 session: every tool name on the site is sorted into one of three kinds, and nothing is changed until
 he has seen the list. **Nothing on the site has been changed.** The site check has not been changed
 either. The rule it would become is in the last section.*
@@ -134,3 +135,16 @@ Once John approves this list, the exemption becomes a list of sentences:
 
 Changing an allowed sentence's wording then needs the list changed with it, so a new tool name
 cannot slip in unseen. The check stays as it is until the list is approved.
+
+## Done, after approval (2026-11-21)
+
+- **The rewordings are made in `data/project.toml`:** the four of kind 3 (sentences 1, 4, 14 and
+  19), case A in both places (finding F22 and the story entry, now "three AI models from three
+  companies"), and case C's second half ("planned on rented machines"). Case B is kept as it was.
+- **`scripts/tool-names-allowed.toml`** holds the 13 approved sentences word for word, in 14 page
+  placements, because sentence 6 shows on two pages.
+- **`scripts/check_site.py`** now allows a tool's name only inside a listed sentence, on its listed
+  page, and refuses it everywhere else. The six-page exemption is gone.
+- **The check was tested** on a copy of the built site with three planted faults, and it refused
+  all three: an allowed sentence reworded, a new sentence naming a tool, and an allowed sentence
+  moved to a page it is not listed for.

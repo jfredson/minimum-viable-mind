@@ -22,12 +22,13 @@ the tracker (stage 3), as its brief asked.
    rule 3.3), and a public page never carries one.
 
 3. **A named tool** (the workspace rule "Tools are not advertised", 2026-10-18): an AI model, a
-   transcription model or the named software used to make the work. The project's older pages
-   (the ladder, what has been learned, the story, the spend, the plain explanation and the older
-   half of the questions page) record experiments that are about AI models and the vendors they
-   ran on, and they named them before this check existed. They are listed in OLDER_PAGES below
-   and reported, not refused, until they are reworded or the names are ruled to be the subject
-   of a test rather than a tool used to make the work; the tracker's own pages are refused.
+   transcription model or the named software used to make the work. A tool's name is allowed only
+   inside a sentence listed word for word in scripts/tool-names-allowed.toml, on the page it is
+   listed for: a sentence where the model is what an experiment tested (kind 1), or where the name
+   is a vendor in the spending record (kind 2). John approved that list on 2026-11-21 ("Yes,
+   approve it"), from docs/design/2026-11-21-stage3-site/tool-names-sorted.md; it replaced a
+   dated exemption of six whole pages. Any other sentence naming a tool, on any page, is refused,
+   and rewording an allowed sentence needs the list changed with it.
 
 4. **A number not computed from the records.** On a tracker page (any element marked
    data-strict, which the layout puts on the main column of every tracker page), every number or
@@ -79,8 +80,60 @@ PATTERN = re.compile("|".join(PHRASES), re.IGNORECASE)
 TOOLS = re.compile(
     r"\b(claude|anthropic|gemini|chatgpt|gpt-?\d[\w.]*|openai|whisper|copilot|opus \d|sonnet|haiku|fable|"
     r"llama|mistral|deepseek|runpod|cursor|midjourney)\b", re.IGNORECASE)
-OLDER_PAGES = {"eli5/index.html", "ladder/index.html", "learned/index.html", "story/index.html",
-               "spend/index.html", "questions/index.html"}
+ALLOWED_FILE = ROOT / "scripts" / "tool-names-allowed.toml"
+BLOCKS = {"p", "li", "h1", "h2", "h3", "h4", "h5", "td", "th", "dd", "dt", "summary", "figcaption", "blockquote"}
+SENTENCE_END = re.compile(r"(?<=[.;])\s+(?=[A-Z(])")
+
+
+class Blocks(HTMLParser):
+    """The page's visible text, one string per block element (paragraph, list item, cell)."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.out: list[str] = []
+        self.cur: list[str] = []
+        self.skip = 0
+
+    def flush(self):
+        t = norm(" ".join(self.cur))
+        if t:
+            self.out.append(t)
+        self.cur = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag in ("script", "style"):
+            self.skip += 1
+        if tag in BLOCKS:
+            self.flush()
+
+    def handle_endtag(self, tag):
+        if tag in ("script", "style"):
+            self.skip = max(0, self.skip - 1)
+        if tag in BLOCKS:
+            self.flush()
+
+    def handle_data(self, data):
+        if not self.skip:
+            self.cur.append(data)
+
+
+def sentences(raw: str) -> list[str]:
+    """Every visible sentence on a page, in the same split the allowed list was written in."""
+    b = Blocks()
+    b.feed(raw)
+    b.flush()
+    return [x.strip() for block in b.out for x in SENTENCE_END.split(block) if x.strip()]
+
+
+def allowed_sentences() -> set[tuple[str, str]]:
+    import tomllib
+    if not ALLOWED_FILE.exists():
+        return set()
+    rows = tomllib.loads(ALLOWED_FILE.read_text(encoding="utf-8")).get("sentence", [])
+    for r in rows:
+        if r.get("kind") not in (1, 2):
+            raise SystemExit(f"check_site: {ALLOWED_FILE.name}: a sentence of kind {r.get('kind')!r} cannot be allowed")
+    return {(page, norm(r["text"])) for r in rows for page in r["pages"]}
 
 TAGS = re.compile(r"<script\b.*?</script>|<style\b.*?</style>|<[^>]+>", re.IGNORECASE | re.DOTALL)
 DIGITS = re.compile(r"\d")
@@ -208,6 +261,7 @@ def check(dist: Path) -> tuple[list[str], list[str]]:
     reported: list[str] = []
     values, corpus, nums = data_corpus()
     verify = open_verify()
+    allowed = allowed_sentences()
     for page in sorted(dist.rglob("*.html")):
         rel = str(page.relative_to(dist))
         raw = page.read_text(encoding="utf-8", errors="replace")
@@ -217,10 +271,9 @@ def check(dist: Path) -> tuple[list[str], list[str]]:
             start = max(0, m.start() - 60)
             problems.append(f"{rel}: a note to John or an unsourced fact: …{text[start:m.end() + 60]}…")
 
-        for m in TOOLS.finditer(text):
-            start = max(0, m.start() - 50)
-            line = f"{rel}: names a tool: …{text[start:m.end() + 50]}…"
-            (reported if rel in OLDER_PAGES else problems).append(line)
+        for sent in sentences(raw):
+            if TOOLS.search(sent) and (rel, norm(sent)) not in allowed:
+                problems.append(f"{rel}: names a tool in a sentence not on {ALLOWED_FILE.name}: {sent[:160]!r}")
 
         p = Page()
         p.feed(raw)

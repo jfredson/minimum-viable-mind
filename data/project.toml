@@ -77,7 +77,7 @@ name = "Bench and baselines"
 status = "delivered"
 progress = 100
 one_line = "The measuring bench: task batteries, a scoring judge, activation extraction, baselines on unmodified models."
-delivered = ["T and S batteries with scorer and judge pipeline", "Activation extraction (padding bug fixed)", "Baselines on gemma-2-2b-it, then re-baselined on the registered substrate Tulu-3-8B-SFT (2026-07-13)", "RunPod cloud bench replaced the planned 48 GB Mac mini"]
+delivered = ["T and S batteries with scorer and judge pipeline", "Activation extraction (padding bug fixed)", "Baselines on gemma-2-2b-it, then re-baselined on the registered substrate Tulu-3-8B-SFT (2026-07-13)", "A rented cloud machine replaced the planned 48 GB Mac mini"]
 remaining = []
 adjudicates = "Nothing. This is the bench."
 
@@ -522,7 +522,7 @@ kind = "process"
 id = "F11"
 date = "2026-09-19"
 title = "Process: the outside-review protocol is in force"
-what = "Interpretations that change direction go through a context-isolated review before they enter STATUS.md (Gate B); registered text goes through review before the registration commit (Gate A); proposals carry an advisory review before they reach me (Gate C). Two tiers: a context-isolated Claude Code worktree session, then two other-lab models. A fatal finding closes only on a committed record checked by a second session."
+what = "Interpretations that change direction go through a context-isolated review before they enter STATUS.md (Gate B); registered text goes through review before the registration commit (Gate A); proposals carry an advisory review before they reach me (Gate C). Two tiers: first an AI reviewer that has not seen the working notes, then two AI models from other companies. A fatal finding closes only on a committed record checked by a second session."
 so_what = "The first application withdrew Amendment A4 the day it was ruled for. The second and third (2026-09-20) corrected a 'linear read is closed' claim to 'one read is closed' and kept 'not localised' out of the record. Rulings RT-33 to RT-93 in the red-team ledger."
 source = "docs/outside-review-protocol.md"
 stage = "6"
@@ -633,7 +633,7 @@ kind = "diagnostic"
 id = "F22"
 date = "2026-10-07"
 title = "Three outside models, asked cold, agree the project's reframe adds nothing and that neither of the author's two readings survives"
-what = "Gemini 3.1 Pro, GPT and Claude Opus 5.5, by API, one fresh conversation each, two rounds. Agreed: the reframe is the identity bet restated or an ungrounded stronger claim; experiment A should be relabelled as unable to discriminate; bookkeeping describes what was found once 'mural' and 'nobody home' are deleted, and the wrong-target reading describes what the tools could not have found, as a critique of instruments and not evidence of a hidden self; the book has not stated a damage pattern a centre predicts and routing does not; no second release of the degree experiment now. Disagreed on whether to stop the degree experiment outright (one of three) and on which redirect. Corrected the reviewing session on four points, recorded as accepted. The three replies are correlated, not independent, and said so."
+what = "Three AI models from three companies, by API, one fresh conversation each, two rounds. Agreed: the reframe is the identity bet restated or an ungrounded stronger claim; experiment A should be relabelled as unable to discriminate; bookkeeping describes what was found once 'mural' and 'nobody home' are deleted, and the wrong-target reading describes what the tools could not have found, as a critique of instruments and not evidence of a hidden self; the book has not stated a damage pattern a centre predicts and routing does not; no second release of the degree experiment now. Disagreed on whether to stop the degree experiment outright (one of three) and on which redirect. Corrected the reviewing session on four points, recorded as accepted. The three replies are correlated, not independent, and said so."
 so_what = "The conceptual work the models ask for costs nothing and comes before any new experiment: the differential prediction, and a definition of self-location at the level of the act's form rather than its content. Both move upstream to the book. The project's new question is built so that it does not need them."
 source = "docs/outside-perspective/2026-10-07-poll-synthesis.md"
 stage = "1"
@@ -1287,13 +1287,13 @@ status = "pending"
 date = "2026-11-20"
 kind = "result"
 title = "Stage 2 of the theories tracker is complete: three theories scored end to end by two readers, every disagreement settled by my rulings"
-summary = "Global workspace theory, integrated information theory and my own account were scored from 14 quoted core claims, 21 predictions, 9 study records and 50 judgements, each read by a Claude model and, blind, by Google's Gemini 4 Carbon. The readers disagreed on 2 of 14 outcome judgements, under the one-third line that would have stopped the stage. On the settled records: integrated information theory 56 on support and 60 on testability; global workspace theory 36 and 80, the evidence so far leaning against it; the two share first place, because one study could swap them. My account scores 25 on testability and is not yet defined sharply enough to rank. 8 of 12 distinguishing predictions have been tested. I read 20 agreed judgements drawn by a committed rule and agreed with all 20. About $1.05 spent on Gemini under my go of up to $10."
+summary = "Global workspace theory, integrated information theory and my own account were scored from 14 quoted core claims, 21 predictions, 9 study records and 50 judgements, each read by two AI models made by different companies, the second without seeing the first's answer. The readers disagreed on 2 of 14 outcome judgements, under the one-third line that would have stopped the stage. On the settled records: integrated information theory 56 on support and 60 on testability; global workspace theory 36 and 80, the evidence so far leaning against it; the two share first place, because one study could swap them. My account scores 25 on testability and is not yet defined sharply enough to rank. 8 of 12 distinguishing predictions have been tested. I read 20 agreed judgements drawn by a committed rule and agreed with all 20. About $1.05 spent on Gemini under my go of up to $10."
 
 [[timeline]]
 date = "2026-10-24"
 kind = "result"
 title = "The split removal test cannot run on the bench model by removing anything from inside it; recorded on my ruling"
-summary = "The July test was re-read under the map at no cost, and its comparison cannot be read. The split removal test was designed, reviewed and rehearsed on the 2-billion-parameter bench model. Both removal methods failed: the model rebuilt which words were its own within two layers, and the removal damaged ordinary text about 9 times as much as a random one. Two further fixes I asked for (removing at every layer or the earliest ones, and swapping own and user activity) either broke the model or changed nothing. I ruled it recorded as a result about the method, not the theory. A read-only check found that the test's template conditions do not cover taking the speaker cue out of the input. About $0.77 spent on RunPod under my go of up to $2, after the Mac ran hot; from now on model runs are planned on RunPod."
+summary = "The July test was re-read under the map at no cost, and its comparison cannot be read. The split removal test was designed, reviewed and rehearsed on the 2-billion-parameter bench model. Both removal methods failed: the model rebuilt which words were its own within two layers, and the removal damaged ordinary text about 9 times as much as a random one. Two further fixes I asked for (removing at every layer or the earliest ones, and swapping own and user activity) either broke the model or changed nothing. I ruled it recorded as a result about the method, not the theory. A read-only check found that the test's template conditions do not cover taking the speaker cue out of the input. About $0.77 spent on RunPod under my go of up to $2, after the Mac ran hot; from now on model runs are planned on rented machines."
 
 [[timeline]]
 date = "2026-10-24"
@@ -1353,7 +1353,7 @@ summary = "Pull request 123 merged at my word, carrying the poll, the router-con
 date = "2026-10-07"
 kind = "ruling"
 title = "The project is refounded on the two-sided question; three outside models polled; experiment A relabelled, C kept with a conditional second release, D promoted"
-summary = "A brief for outside models was checked against the record and revised, then put by API to Gemini 3.1 Pro, GPT and Claude Opus 5.5 in two rounds, every reply saved word for word. All three agreed the reframe adds nothing beyond the identity bet, that experiment 1's router control cannot tell bookkeeping from a centre, that neither of my two readings survives as written, and that no second release of the degree experiment should be funded now. A check of the registration text reached the same conclusion about the control. I then named what I perceive from, the axes rather than the floor, and ruled all eight decisions of the refounding proposal before the Gate C pass, at my own instruction: the two-sided question is the measurement target; A is relabelled; C keeps its second release conditional (struck by the first ruling, restored after the Gate C pass found the narrowing left no reachable outcome); D is promoted to the seed of a filtered battery; the kill dates stand and no new dates are set; the table and battery are next; the human study is deferred; the book changes go upstream. Seven commits on one unmerged branch; two checks running; $0 rented."
+summary = "A brief for outside models was checked against the record and revised, then put by API to three AI models from three companies in two rounds, every reply saved word for word. All three agreed the reframe adds nothing beyond the identity bet, that experiment 1's router control cannot tell bookkeeping from a centre, that neither of my two readings survives as written, and that no second release of the degree experiment should be funded now. A check of the registration text reached the same conclusion about the control. I then named what I perceive from, the axes rather than the floor, and ruled all eight decisions of the refounding proposal before the Gate C pass, at my own instruction: the two-sided question is the measurement target; A is relabelled; C keeps its second release conditional (struck by the first ruling, restored after the Gate C pass found the narrowing left no reachable outcome); D is promoted to the seed of a filtered battery; the kill dates stand and no new dates are set; the table and battery are next; the human study is deferred; the book changes go upstream. Seven commits on one unmerged branch; two checks running; $0 rented."
 
 [[timeline]]
 date = "2026-10-06"
@@ -1527,7 +1527,7 @@ summary = "Three grammar drafts map a real trade-off. Amendment A3 ratified by m
 date = "2026-09-14"
 kind = "process"
 title = "Gate 0 complete: registered null calibration ran at $0; kill condition K0 does not fire"
-summary = "Project resumed after the stall; Claude Code agent picked up from Gate 0."
+summary = "Project resumed after the stall; The work picked up again from Gate 0."
 
 [[timeline]]
 date = "2026-08-19"
