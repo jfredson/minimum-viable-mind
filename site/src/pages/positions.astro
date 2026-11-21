@@ -25,7 +25,7 @@ const verdict = (states: string[]) => {
   <section class="page">
     <p class="eyebrow">Beside the ranking · this site's own account</p>
     <h1>Our working positions, against the evidence</h1>
-    <div class="notice"><b>This site ranks its author's own account.</b> The account of consciousness argued on Sentient Horizons is scored as one theory among the others. The rules were written before any theory was scored, an outside reader makes the first judgement on every row of this account, and a result against it stands once recorded.</div>
+    <div class="notice"><b>The author's own account is scored here.</b> The account of consciousness argued on Sentient Horizons is scored as one theory among the others. The rules were written before any theory was scored, an outside reader makes the first judgement on every row of this account, and a result against it stands once recorded.</div>
     {!own ? <p class="tplain">The account is not scored yet.</p> : (
       <>
         <p class="tplain">Each position below is quoted from the <a href={own.claims_from?.url ?? 'https://sentient-horizons.com/positions/'}>Working Positions</a> page, with the predictions its "What would change my mind" sections make. Today the account is <a href={`/theories/${own.id}/`}>{own.group}</a>: <N v={own.claims_sharp} t={word(own.claims_sharp)} /> of its <N v={own.claims_count} t={word(own.claims_count)} /> core claims {own.claims_sharp === 1 ? 'comes' : 'come'} with a prediction that could fail and that a rival's own publication predicts differently.</p>

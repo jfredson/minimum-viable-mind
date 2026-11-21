@@ -71,16 +71,16 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
       <ul class="claims">
         {t.claims.map((c) => (
           <li data-record={c.id}>
-            <span class={`dot ${dotClass(c.level)}`} aria-label={c.level >= 1 ? 'stated by its proponents' : c.level > 0 ? 'inferred by the site' : 'none yet'}></span>
+            <span class={`dot ${dotClass(c.level)}`} aria-label={c.level >= 1 ? 'stated by its proponents' : c.level > 0 ? 'inferred here, not stated by its proponents' : 'none yet'}></span>
             <span>
               <R t={c.quote} q class="q" />
-              <span class="m">{c.level >= 1 ? 'a prediction stated by its proponents could fail and separates it from a rival' : c.level > 0 ? 'only the site has inferred a prediction that could fail and that a rival predicts differently; counted at half' : 'no prediction yet that could fail and that a rival predicts differently'}</span>
+              <span class="m">{c.level >= 1 ? 'a prediction stated by its proponents could fail and separates it from a rival' : c.level > 0 ? 'a prediction that could fail and that a rival predicts differently is inferred here, not stated by its proponents; counted at half' : 'no prediction yet that could fail and that a rival predicts differently'}</span>
             </span>
             <span>{c.predictions.length ? <a href={`#c-${c.id}`}><N v={c.predictions.length} /> {c.predictions.length === 1 ? 'prediction' : 'predictions'}</a> : 'none'}</span>
           </li>
         ))}
       </ul>
-      <p class="key"><span><span class="dot full"></span> stated by its proponents</span><span><span class="dot half"></span> inferred by the site</span><span><span class="dot"></span> none yet</span></p>
+      <p class="key"><span><span class="dot full"></span> stated by its proponents</span><span><span class="dot half"></span> inferred here, not stated by its proponents</span><span><span class="dot"></span> none yet</span></p>
 
       <div class="shead"><h2>Its predictions</h2><span>the ones that set it apart from a rival; those that do not are listed after them and score nothing</span></div>
       <table class="preds">
@@ -89,7 +89,7 @@ const supWords = t.support === null ? null : t.support > tk.rules.even ? 'Leans 
           {[...sharp, ...shared].map((p) => (
             <tr data-record={p.id} id={anchorFor(p.core_claim)}>
               <td><a href={`/predictions/${p.id}/`}><R t={p.statement} /></a><span class="m">core claim <N v={claimNo(p.core_claim)} />{p.core_claim ? ' · counts double' : ''}{!p.separates && ' · sets it apart from no rival on the record'}{p.verify_open.length > 0 && ' · still being checked'}</span></td>
-              <td class="hide-s">{p.stated_by === 'proponent' ? 'its proponents' : 'inferred by the site'}</td>
+              <td class="hide-s">{p.stated_by === 'proponent' ? 'its proponents' : 'inferred here'}</td>
               <td><StateBadge s={p.state} /></td>
               <td class="hide-s"><N v={p.counted_count} /></td>
             </tr>

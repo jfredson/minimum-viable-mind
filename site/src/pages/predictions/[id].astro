@@ -47,7 +47,7 @@ const ownRow = t.own;
       <dl class="facts">
         <dt>Whose it is</dt>
         <dd>
-          {p.stated_by === 'proponent' ? 'Stated by the theory\'s own proponents, at full weight' : 'Inferred by the site, at half weight until a proponent states it'}{p.first_stated.date && <>; first on record <N v={p.first_stated.date} t={p.first_stated.date_long ?? ''} /></>}, in {p.first_stated.source?.url ? <a href={p.first_stated.source.url}><R t={p.first_stated.source.citation} /></a> : <R t={p.first_stated.source?.citation} />}{p.first_stated.passage && <>: <R t={p.first_stated.passage} q /></>}
+          {p.stated_by === 'proponent' ? 'Stated by the theory\'s own proponents, at full weight' : 'Inferred here, not stated by the theory\'s proponents, so at half weight until a proponent states it'}{p.first_stated.date && <>; first on record <N v={p.first_stated.date} t={p.first_stated.date_long ?? ''} /></>}, in {p.first_stated.source?.url ? <a href={p.first_stated.source.url}><R t={p.first_stated.source.citation} /></a> : <R t={p.first_stated.source?.citation} />}{p.first_stated.passage && <>: <R t={p.first_stated.passage} q /></>}
         </dd>
         <dt>Does it set the theory apart?</dt>
         <dd>
