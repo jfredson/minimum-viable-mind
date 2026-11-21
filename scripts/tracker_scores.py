@@ -63,11 +63,35 @@ def load():
             r = dict(r)
             jid = r.pop("judgement")
             by_id[jid].setdefault("reading", []).append(r)
+    extra3 = DATA / "readings-gemini-stage3.toml"
+    if extra3.exists():
+        # Stage 3 run (2026-11-21). A re-read pilot testability row (question C2) replaces the
+        # pilot's Gemini reading of that row; the earlier one stays in readings-gemini.toml.
+        by_id = {j["id"]: j for j in judgements}
+        for r in t("readings-gemini-stage3.toml").get("reading", []):
+            r = dict(r)
+            jid = r.pop("judgement")
+            j = by_id[jid]
+            if r.get("replaces_earlier_gemini_reading"):
+                j["superseded_readings"] = [x for x in j.get("reading", []) if x["reader"] == "gemini"]
+                j["reading"] = [x for x in j.get("reading", []) if x["reader"] != "gemini"]
+            j.setdefault("reading", []).append(r)
     rul = DATA / "rulings.toml"
     if rul.exists():
         by_id = {j["id"]: j for j in judgements}
         for r in t("rulings.toml").get("ruling", []):
-            by_id[r["judgement"]]["ruling"] = r
+            j = by_id[r["judgement"]]
+            if r.get("rule") == "C2":
+                # Rule C as amended (2026-11-21) applied to the first reader's reading, which was
+                # made under the earlier question; a second reader now answers the new question
+                # itself, so the rule no longer overrides both readers. It replaces any earlier
+                # rule C entry for the row.
+                if j.get("ruling", {}).get("rule") == "C":
+                    j["superseded_ruling"] = j.pop("ruling")
+                j["reading"] = [dict(x, separates=r["separates"], separates_from=r.get("separates_from", []), separates_set_by="rule C2")
+                                if x["reader"] == "claude" else x for x in j.get("reading", [])]
+                continue
+            j["ruling"] = r
     spot = DATA / "spot-check.toml"
     if spot.exists():
         by_id = {j["id"]: j for j in judgements}

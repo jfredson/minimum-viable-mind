@@ -488,3 +488,55 @@ separates_from = []
 sentient_horizons_row = true
 replaces_rule_c_entry = true
 reason = "No rival's own opened source predicts the same thing; the readings found the rivals silent on it. Under rule C as amended ('Yes, flip it', 2026-11-21) silence makes the prediction the theory's own, so it separates. Could it fail is left to the readers. Gemini's first reading of record (separates: no, the rivals being silent) is unchanged; this is the amended rule's effect, recorded apart from it."
+
+
+# ------------------------------------------- own-lab dating (2026-11-21)
+# John, 2026-11-21, "Yes, own-lab dating" (relayed by the master session): for a study run by
+# the theory's own supporters, "could have known the result" means when their lab had the
+# data. The prediction must be on record before data collection, shown by a registration or
+# the paper's methods dates, and before any earlier paper in which the same lab published that
+# result; if those dates are unclear the study is not counted (rule 3). Applied after the
+# stage 3 Gemini run, to every dating row whose study lists the theory in `camps`. Both
+# readers' readings stay as they were; the ruling is recorded beside them. Bellet 2022 (global
+# workspace theory's camp) was already settled "unclear" by John's ruling of 2026-11-20 and is
+# unchanged. Damasio and Tranel's patient study was already "not-before" by both readings.
+
+[[ruling]]
+judgement = "com-suzuki-seth-low-interoception-more-illusion"
+rule = "own-lab dating (John, 2026-11-21)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Run by the authors of the 2012 model (Seth's group). The paper gives no data-collection dates (received 2013-05-22) and no registration, so it is not shown that the prediction (2012-01-10) was on record before the lab had the data."
+open_part = ""
+
+[[ruling]]
+judgement = "com-suzuki-seth-interoceptive-ownership"
+rule = "own-lab dating (John, 2026-11-21)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Run by Seth's group. No data-collection dates or registration; and the specific prediction is first written in the study itself. Unclear on both counts."
+open_part = ""
+
+[[ruling]]
+judgement = "com-wilterson-tpj-ast-control"
+rule = "own-lab dating (John, 2026-11-21)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Run by Graziano's lab, the theory's proponents. No scanning dates or registration (received 2020-12-30), so it is not shown that the 2015 prediction preceded the data; the same lab had published the behavioural result already in 2020 (Wilterson and colleagues, Progress in Neurobiology), the earlier-published case the ruling names."
+open_part = ""
+
+[[ruling]]
+judgement = "com-wilterson-tpj-ast-tpj"
+rule = "own-lab dating (John, 2026-11-21)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Run by Graziano's lab. No scanning dates or registration, and the specific test is first written in the study itself."
+open_part = ""
+
+[[ruling]]
+judgement = "com-wilterson-agent-ast-schema-control"
+rule = "own-lab dating (John, 2026-11-21)"
+settles = "commitment"
+verdict = "unclear"
+reason = "Run by Graziano's lab (a simulation). No dates for the runs and no registration (received 2021-02-05), so it is not shown that the 2015 statement preceded them."
+open_part = ""

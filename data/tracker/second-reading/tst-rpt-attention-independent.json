@@ -1,0 +1,31 @@
+{
+  "packet_id": "tst-rpt-attention-independent",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "4NABa7CNEZ7N2OMP2dHIqQk",
+  "finish_reason": "STOP",
+  "answer_text": "{\"could_fail\": true, \"rival_predicts_same\": true, \"which_rivals_same\": [\"gwt\"], \"separates\": true, \"separates_from\": [\"iit\", \"hot\", \"seth\", \"ast\", \"sensorimotor\", \"orch-or\", \"damasio\", \"sh\"], \"reason\": \"The prediction could fail if experiments showed that early recurrent processing (the early awareness-related negativity) appears only for attended stimuli and scales with attention, or that attention never modulates undetected stimuli. Based on the material provided, a Global Workspace Theory paper by Mashour et al. (2020) predicts the same observable pattern of preserved early processing under inattention and attention effects without awareness, differing only in whether that early activity is labeled seeing. Because no passages are given for the remaining rivals on the list, the prediction separates Recurrent Processing Theory from all of them except Global Workspace Theory.\", \"unsure\": true, \"unsure_why\": \"The Global Workspace Theory entry in the material is a brief paraphrase ('early processing preserved under inattention') rather than a direct quote, leaving slight ambiguity as to whether Mashour et al. (2020) predict that early recurrent processing and the awareness-related negativity remain completely unchanged by attention.\"}",
+  "usage": {
+    "promptTokenCount": 1518,
+    "candidatesTokenCount": 267,
+    "totalTokenCount": 7105,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1518
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 267
+      }
+    ],
+    "thoughtsTokenCount": 5320,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.058906,
+  "seconds": 66.5,
+  "called_on": "2026-11-21 09:13:06 PST"
+}

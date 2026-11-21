@@ -1,0 +1,31 @@
+{
+  "packet_id": "com-bandara-hot-pfc-involved",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "nccBa7S0LbHdm9cP6I_rkAE",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"verdict\": \"not-before\",\n  \"reason\": \"The study by Bandara et al. reanalyses an earlier EEG dataset originally published by Shafto and Pitts in 2015. Under the scoring rules, a prediction for a study reanalysing earlier published data must be fixed before those data first appeared. Because the proponents' earliest cited statement is from February 2017, the prediction was not fixed before the data appeared in 2015.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1550,
+    "candidatesTokenCount": 125,
+    "totalTokenCount": 1980,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1550
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 125
+      }
+    ],
+    "thoughtsTokenCount": 305,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.0074,
+  "seconds": 8.1,
+  "called_on": "2026-11-21 08:32:37 PST"
+}

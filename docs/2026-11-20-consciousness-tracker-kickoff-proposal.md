@@ -525,6 +525,14 @@ shapes stage 2.
       struck through for the record; what that ruling settled (a registration's predictions count for
       the study that registered them) stands. Whether an earlier passage commits the theory to the
       exact test is a separate judgement, read by both readers and settled by John.
+      *(ruled, 2026-11-21, John: "Yes, own-lab dating"; wording the master session's.)* **For a
+      study run by the theory's own supporters**, "could have known the result" means when their lab
+      had the data. The prediction must be on record before the data were collected, shown by a
+      registration or the paper's own methods dates, and before any earlier paper in which the same
+      lab published that result. If those dates are unclear, the study is not counted (rule 3). A
+      study that passes still misses the outside-camp protection. (Raised by the stage 3 scoring,
+      where every attention schema study came from the theory's own lab.) Weakest step, stated to
+      John: it falls hardest on small theories tested mostly by their own camp.
       ~~A study counts toward a prediction if that prediction was fixed, by the theory's
       proponents, in a dated record made before the study's data were collected, whether a
       publication or a registration.~~ *(ruled, 2026-11-20, John: "Yes, count it"; wording the

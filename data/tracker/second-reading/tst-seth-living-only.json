@@ -1,0 +1,31 @@
+{
+  "packet_id": "tst-seth-living-only",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "J9IBa_bLLK3Ym9cPgZWmoA4",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"could_fail\": false,\n  \"rival_predicts_same\": false,\n  \"which_rivals_same\": [],\n  \"separates\": true,\n  \"separates_from\": [\n    \"gwt\",\n    \"iit\",\n    \"hot\",\n    \"rpt\",\n    \"ast\",\n    \"sensorimotor\",\n    \"orch-or\",\n    \"damasio\",\n    \"sh\"\n  ],\n  \"reason\": \"The prediction cannot fail in practice because it does not name any concrete, observable result that a study could actually measure, relying instead on the placeholder of an unspecified 'agreed test for consciousness' while ruling out any level of behavioral capability. In the material provided, no rival theory predicts that consciousness is restricted only to living systems. Published passages for Integrated Information Theory and Attention Schema Theory explicitly allow consciousness in non-living machines, and the remaining rivals are silent in the given sources, so the claim separates Seth's view from all nine rivals.\",\n  \"unsure\": true,\n  \"unsure_why\": \"While no agreed, theory-neutral test for machine consciousness exists today—making 'an agreed test finds it' unobservable rather than a concrete empirical outcome—it is unclear whether the scoring rubric accepts a hypothetical future consensus test as an observable result, and Seth's own phrasing ('may be... perhaps only of') is heavily hedged.\"\n}",
+  "usage": {
+    "promptTokenCount": 1393,
+    "candidatesTokenCount": 305,
+    "totalTokenCount": 2723,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1393
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 305
+      }
+    ],
+    "thoughtsTokenCount": 1025,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.016086,
+  "seconds": 19.4,
+  "called_on": "2026-11-21 09:17:47 PST"
+}

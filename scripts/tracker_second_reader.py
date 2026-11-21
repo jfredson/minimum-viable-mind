@@ -2,7 +2,9 @@
 """Send the blind packets to the second reader (Gemini) and record its raw answers.
 
 Run under John's go of 2026-11-20 ("Yes, up to $10", relayed by the master session),
-for the 48 packets in data/tracker/packets/, one standard (not batch) call each.
+for the 48 packets in data/tracker/packets/, one standard (not batch) call each; and again for
+stage 3 under his go of 2026-11-21 ("Yes, cap $15"), for the 113 packets not yet answered
+(--run stage3 --ceiling 15 --expect 113). A run's ceiling counts only that run's calls.
 
 - Model: gemini-4-carbon. The exact model version the API returns is recorded.
 - Spend is tracked after every call from the usage the API reports, at the prices on
@@ -60,10 +62,12 @@ def cost_of(usage):
     return inp / 1e6 * PRICE_IN + out / 1e6 * PRICE_OUT, inp, out
 
 
-def spent_so_far():
+def spent_so_far(run=None):
     total = 0.0
     for f in OUT.glob("*.json"):
-        total += json.loads(f.read_text())["cost_usd"]
+        r = json.loads(f.read_text())
+        if run is None or r.get("run") == run:
+            total += r["cost_usd"]
     return total
 
 
@@ -71,10 +75,16 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--run", default=None, help="a name for this run; its ceiling counts only its calls")
+    ap.add_argument("--ceiling", type=float, default=CEILING)
+    ap.add_argument("--expect", type=int, default=0, help="stop before any call unless exactly this many packets are unanswered")
     a = ap.parse_args(argv)
     OUT.mkdir(exist_ok=True)
     packets = sorted(PACKETS.glob("*.json"))
     todo = [p for p in packets if not (OUT / p.name).exists()]
+    if a.expect and len(todo) != a.expect:
+        print(f"STOP: {len(todo)} packets unanswered, expected {a.expect}; no call made")
+        return 3
     k = None if a.dry_run else key()
     done = 0
     for p in todo:
@@ -85,9 +95,9 @@ def main(argv=None):
             "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": MAX_OUT},
         }
         worst = len(text) / 3 / 1e6 * PRICE_IN + MAX_OUT / 1e6 * PRICE_OUT
-        spent = spent_so_far()
-        if spent + worst > CEILING:
-            print(f"STOP before {p.stem}: spent ${spent:.4f}; the next call could cost up to ${worst:.4f}, past the ${CEILING:.2f} ceiling")
+        spent = spent_so_far(a.run)
+        if spent + worst > a.ceiling:
+            print(f"STOP before {p.stem}: spent ${spent:.4f}; the next call could cost up to ${worst:.4f}, past the ${a.ceiling:.2f} ceiling")
             return 2
         if a.dry_run:
             print(f"would send {p.stem}: {len(text)} characters, worst case ${worst:.4f}")
@@ -111,6 +121,7 @@ def main(argv=None):
         answer = "".join(part.get("text", "") for part in cand.get("content", {}).get("parts", []) if not part.get("thought"))
         record = {
             "packet_id": p.stem,
+            "run": a.run,
             "model_requested": MODEL,
             "model_version": resp.get("modelVersion"),
             "response_id": resp.get("responseId"),
@@ -126,7 +137,7 @@ def main(argv=None):
         print(f"{p.stem}: {record['model_version']} {record['finish_reason']} in {tin} out {tout} ${cost:.4f}; total ${spent + cost:.4f}", flush=True)
         if a.limit and done >= a.limit:
             break
-    print(f"done; total spent ${spent_so_far():.4f}")
+    print(f"done; this run spent ${spent_so_far(a.run):.4f}")
     return 0
 
 

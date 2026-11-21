@@ -1,118 +1,44 @@
 {
-  "mode": "provisional",
+  "mode": "settled",
   "readers": [
     "claude",
     "gemini"
   ],
   "judgement_status": {
-    "agreed": 31,
+    "agreed": 105,
     "ruled": 18,
-    "one-reader": 92,
-    "disagreed": 0,
+    "one-reader": 0,
+    "disagreed": 18,
     "open-for-john": 0,
     "unread": 0,
     "superseded": 1
   },
   "unsettled": [
-    "com-bandara-hot-pfc-involved",
-    "com-bandara-rpt-no-report-sensory",
-    "com-bandara-rpt-unattended-local",
-    "com-bridgeman-sm-substitution",
-    "com-damasio-tranel-2013-dam-insula",
-    "com-dellert-hot-pfc-involved",
     "com-dellert-rpt-no-report-sensory",
-    "com-dellert-rpt-other-senses",
-    "com-eiserbeck-rpt-unattended-local",
-    "com-eiserbeck-rpt-van",
     "com-filimonov2022-rpt-other-senses",
-    "com-filimonov2022-rpt-van",
-    "com-filimonov2024-rpt-attention-independent",
-    "com-filimonov2024-rpt-no-report-sensory",
     "com-filimonov2024-rpt-other-senses",
-    "com-hobot-hot-awareness-performance",
     "com-hobot-hot-pfc-disrupt",
-    "com-jicol-seth-presence-match",
     "com-khan-orch-anaesthetic-mt",
     "com-li-orch-anaesthetic-mt",
-    "com-martin-hot-awareness-performance",
     "com-martin-hot-pfc-disrupt",
-    "com-mei-hot-unconscious-global",
-    "com-suzuki-seth-interoceptive-ownership",
-    "com-suzuki-seth-low-interoception-more-illusion",
-    "com-wilterson-agent-ast-schema-control",
-    "com-wilterson-tpj-ast-control",
-    "com-wilterson-tpj-ast-tpj",
-    "out-bandara-rpt-unattended-local",
     "out-dellert-hot-pfc-involved",
-    "out-eiserbeck-rpt-unattended-local",
-    "out-filimonov2022-rpt-van",
-    "out-hobot-hot-awareness-performance",
     "out-hobot-hot-pfc-disrupt",
-    "out-jicol-seth-presence-match",
-    "out-khan-orch-anaesthetic-mt",
     "out-li-orch-anaesthetic-mt",
-    "out-martin-hot-awareness-performance",
-    "out-martin-hot-pfc-disrupt",
-    "out-mei-hot-unconscious-global",
-    "out-suzuki-seth-low-interoception-more-illusion",
-    "out-wilterson-agent-ast-schema-control",
-    "out-wilterson-tpj-ast-control",
-    "tst-ast-claims",
-    "tst-ast-control",
-    "tst-ast-covary",
-    "tst-ast-domain",
-    "tst-ast-graded",
-    "tst-ast-schema-control",
-    "tst-ast-tpj",
     "tst-dam-ai",
-    "tst-dam-feeling-required",
-    "tst-dam-insula",
     "tst-dam-no-nervous-system",
-    "tst-dam-nonneural",
-    "tst-dam-nss",
-    "tst-dam-subcortical",
-    "tst-hot-awareness-performance",
-    "tst-hot-first-order-insufficient",
-    "tst-hot-pfc-disrupt",
-    "tst-hot-pfc-involved",
-    "tst-hot-unconscious-global",
-    "tst-orch-anaesthetic-mt",
-    "tst-orch-coherence-time",
-    "tst-orch-dp-collapse",
-    "tst-orch-mass-time",
-    "tst-orch-mt-coherence",
-    "tst-orch-mt-entangle",
-    "tst-orch-mt-vibration",
-    "tst-orch-synaptic-cyto",
+    "tst-iit-phi-states",
     "tst-rpt-attention-independent",
-    "tst-rpt-feedback-needed",
     "tst-rpt-ff-unseen",
-    "tst-rpt-no-report-sensory",
-    "tst-rpt-other-senses",
-    "tst-rpt-unattended-local",
-    "tst-rpt-van",
-    "tst-seth-ai-not-by-computation",
-    "tst-seth-expectation-speeds-access",
-    "tst-seth-feeling-from-prediction",
     "tst-seth-interoceptive-ownership",
-    "tst-seth-interoceptive-suppression",
-    "tst-seth-living-only",
-    "tst-seth-low-interoception-more-illusion",
-    "tst-seth-presence-match",
-    "tst-sm-active-control",
-    "tst-sm-change-blindness",
-    "tst-sm-colour-contingent",
-    "tst-sm-inattentional",
-    "tst-sm-inversion",
-    "tst-sm-no-ncc",
-    "tst-sm-substitution"
+    "tst-sh-central",
+    "tst-sm-inattentional"
   ],
   "theories": {
     "gwt": {
       "name": "Global workspace theory",
       "judgement_status": {
-        "ruled": 8,
-        "agreed": 16,
+        "ruled": 7,
+        "agreed": 17,
         "superseded": 1
       },
       "one_reader_only": false,
@@ -153,8 +79,9 @@
     "iit": {
       "name": "Integrated information theory",
       "judgement_status": {
-        "agreed": 14,
-        "ruled": 6
+        "agreed": 15,
+        "ruled": 4,
+        "disagreed": 1
       },
       "one_reader_only": false,
       "testability": 60.0,
@@ -202,8 +129,9 @@
     "sh": {
       "name": "The Sentient Horizons account",
       "judgement_status": {
-        "agreed": 1,
-        "ruled": 4
+        "disagreed": 1,
+        "agreed": 2,
+        "ruled": 2
       },
       "one_reader_only": false,
       "testability": 50.0,
@@ -242,9 +170,10 @@
     "hot": {
       "name": "Higher-order theories",
       "judgement_status": {
-        "one-reader": 18
+        "agreed": 14,
+        "disagreed": 4
       },
-      "one_reader_only": true,
+      "one_reader_only": false,
       "testability": 80.0,
       "testability_by_claim": {
         "hot-c1": 1.0,
@@ -257,11 +186,10 @@
       "claims_lacking_for_bar": [
         "hot-c2"
       ],
-      "support": 75.0,
+      "support": 100.0,
       "support_rests_on": {
-        "counted_outcomes": 6,
+        "counted_outcomes": 3,
         "studies": [
-          "dellert-2025",
           "hobot-2023",
           "martin-2023",
           "mei-soto-2025"
@@ -269,19 +197,18 @@
         "groups": [
           "Hsu group (last and corresponding author Tzu-Yu Hsu, Taipei Medical University)",
           "Sandberg group (last author Kristian Sandberg, Aarhus University); first author at the Jagiellonian University Consciousness Lab",
-          "Soto group (last author D. Soto, by the paper's author list)",
-          "Straube group (last author; participants recruited at the University of Münster)"
+          "Soto group (last author D. Soto, by the paper's author list)"
         ],
-        "total_weight": 24,
+        "total_weight": 12,
         "weighted_sum": 12
       },
-      "left_to_test": 33.3,
+      "left_to_test": 66.7,
       "left_to_test_counts": {
         "distinguishing_core_predictions": 5,
         "placeholders_for_claims_with_none": [
           "hot-c2"
         ],
-        "untested": 2,
+        "untested": 4,
         "total": 6
       },
       "group": "ranked",
@@ -290,9 +217,10 @@
     "rpt": {
       "name": "Recurrent processing theory",
       "judgement_status": {
-        "one-reader": 21
+        "agreed": 16,
+        "disagreed": 5
       },
-      "one_reader_only": true,
+      "one_reader_only": false,
       "testability": 41.7,
       "testability_by_claim": {
         "rpt-c1": 0.0,
@@ -337,9 +265,11 @@
     "seth": {
       "name": "Anil Seth's living-body view",
       "judgement_status": {
-        "one-reader": 13
+        "agreed": 10,
+        "ruled": 2,
+        "disagreed": 1
       },
-      "one_reader_only": true,
+      "one_reader_only": false,
       "testability": 50.0,
       "testability_by_claim": {
         "seth-c1": 0.0,
@@ -355,21 +285,19 @@
         "seth-c5",
         "seth-c6"
       ],
-      "support": 33.3,
+      "support": null,
       "support_rests_on": {
-        "counted_outcomes": 2,
+        "counted_outcomes": 1,
         "studies": [
-          "jicol-2023",
-          "suzuki-2013"
+          "jicol-2023"
         ],
         "groups": [
-          "O'Neill group (last author; University of Bath)",
-          "Seth group (last and corresponding author; Sackler Centre for Consciousness Science, University of Sussex)"
+          "O'Neill group (last author; University of Bath)"
         ],
-        "total_weight": 6,
-        "weighted_sum": -2
+        "total_weight": 4,
+        "weighted_sum": 0
       },
-      "left_to_test": 75.0,
+      "left_to_test": 87.5,
       "left_to_test_counts": {
         "distinguishing_core_predictions": 5,
         "placeholders_for_claims_with_none": [
@@ -377,18 +305,19 @@
           "seth-c5",
           "seth-c6"
         ],
-        "untested": 6,
+        "untested": 7,
         "total": 8
       },
       "group": "not yet defined sharply enough to rank",
-      "leans_against": true
+      "leans_against": false
     },
     "ast": {
       "name": "Attention schema theory",
       "judgement_status": {
-        "one-reader": 12
+        "agreed": 9,
+        "ruled": 3
       },
-      "one_reader_only": true,
+      "one_reader_only": false,
       "testability": 66.7,
       "testability_by_claim": {
         "ast-c1": 1.0,
@@ -405,24 +334,20 @@
       ],
       "support": null,
       "support_rests_on": {
-        "counted_outcomes": 1,
-        "studies": [
-          "wilterson-2021-agent"
-        ],
-        "groups": [
-          "Graziano group (last author)"
-        ],
-        "total_weight": 2,
-        "weighted_sum": 2
+        "counted_outcomes": 0,
+        "studies": [],
+        "groups": [],
+        "total_weight": 0,
+        "weighted_sum": 0
       },
-      "left_to_test": 85.7,
+      "left_to_test": 100.0,
       "left_to_test_counts": {
         "distinguishing_core_predictions": 5,
         "placeholders_for_claims_with_none": [
           "ast-c4",
           "ast-c5"
         ],
-        "untested": 6,
+        "untested": 7,
         "total": 7
       },
       "group": "testable, too little tested to rank",
@@ -431,9 +356,10 @@
     "sensorimotor": {
       "name": "The sensorimotor theory",
       "judgement_status": {
-        "one-reader": 8
+        "agreed": 7,
+        "disagreed": 1
       },
-      "one_reader_only": true,
+      "one_reader_only": false,
       "testability": 66.7,
       "testability_by_claim": {
         "sm-c1": 1.0,
@@ -472,9 +398,10 @@
     "orch-or": {
       "name": "Orchestrated Objective Reduction",
       "judgement_status": {
-        "one-reader": 12
+        "agreed": 9,
+        "disagreed": 3
       },
-      "one_reader_only": true,
+      "one_reader_only": false,
       "testability": 100.0,
       "testability_by_claim": {
         "orch-c1": 1.0,
@@ -486,36 +413,31 @@
       },
       "past_bar": true,
       "claims_lacking_for_bar": [],
-      "support": 75.0,
+      "support": null,
       "support_rests_on": {
-        "counted_outcomes": 2,
-        "studies": [
-          "khan-2024",
-          "li-2025"
-        ],
-        "groups": [
-          "Martyn group (last and corresponding author, Massachusetts General Hospital, Boston)",
-          "Wiest group (last author, Neuroscience Department, Wellesley College)"
-        ],
-        "total_weight": 8,
-        "weighted_sum": 4
+        "counted_outcomes": 0,
+        "studies": [],
+        "groups": [],
+        "total_weight": 0,
+        "weighted_sum": 0
       },
-      "left_to_test": 87.5,
+      "left_to_test": 100.0,
       "left_to_test_counts": {
         "distinguishing_core_predictions": 8,
         "placeholders_for_claims_with_none": [],
-        "untested": 7,
+        "untested": 8,
         "total": 8
       },
-      "group": "ranked",
+      "group": "testable, too little tested to rank",
       "leans_against": false
     },
     "damasio": {
       "name": "Damasio's feeling-based theory",
       "judgement_status": {
-        "one-reader": 8
+        "agreed": 6,
+        "disagreed": 2
       },
-      "one_reader_only": true,
+      "one_reader_only": false,
       "testability": 50.0,
       "testability_by_claim": {
         "dam-c1": 0.0,
@@ -557,24 +479,19 @@
         "rank": 1
       },
       {
-        "theory": "orch-or",
-        "rank": 1
-      },
-      {
         "theory": "iit",
-        "rank": 1
+        "rank": 2
       },
       {
         "theory": "gwt",
-        "rank": 1
+        "rank": 2
       }
     ],
     "shared_because_one_study_could_swap_them": {
-      "hot|orch-or": "hobot-2023",
-      "orch-or|iit": "khan-2024",
       "iit|gwt": "dellert-2025"
     },
     "testable_too_little_tested": [
+      "orch-or",
       "ast",
       "sensorimotor"
     ],
@@ -586,9 +503,9 @@
     ]
   },
   "headline": {
-    "tested": 17,
+    "tested": 12,
     "distinguishing_predictions": 53,
-    "share_tested": 32.1,
+    "share_tested": 22.6,
     "note": "Tested at all (ruled by John: 'A, tested at all'): the share of distinguishing predictions tied to core claims that at least one counted study has tested. It measures how widely, not how firmly; the support scores carry the strength. It can fall when predictions are added."
   },
   "predictions": {
@@ -832,33 +749,16 @@
     },
     "hot-pfc-involved": {
       "theory": "hot",
-      "state": "mixed",
-      "state_weighted_reading": "mixed",
-      "counted_studies": [
-        {
-          "study": "dellert-2025",
-          "value": 0,
-          "weight": 2
-        }
-      ],
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
       "questions": []
     },
     "hot-pfc-disrupt": {
       "theory": "hot",
-      "state": "mixed",
-      "state_weighted_reading": "mixed",
-      "counted_studies": [
-        {
-          "study": "martin-2023",
-          "value": 0,
-          "weight": 2
-        },
-        {
-          "study": "hobot-2023",
-          "value": 0,
-          "weight": 2
-        }
-      ],
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
       "questions": []
     },
     "hot-awareness-performance": {
@@ -982,15 +882,9 @@
     },
     "seth-low-interoception-more-illusion": {
       "theory": "seth",
-      "state": "contradicted",
-      "state_weighted_reading": "contradicted",
-      "counted_studies": [
-        {
-          "study": "suzuki-2013",
-          "value": -1,
-          "weight": 1
-        }
-      ],
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
       "questions": []
     },
     "seth-interoceptive-suppression": {
@@ -1041,15 +935,9 @@
     },
     "ast-schema-control": {
       "theory": "ast",
-      "state": "supported",
-      "state_weighted_reading": "supported",
-      "counted_studies": [
-        {
-          "study": "wilterson-2021-agent",
-          "value": 1,
-          "weight": 1
-        }
-      ],
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
       "questions": []
     },
     "ast-tpj": {
@@ -1166,20 +1054,9 @@
     },
     "orch-anaesthetic-mt": {
       "theory": "orch-or",
-      "state": "mixed",
-      "state_weighted_reading": "supported",
-      "counted_studies": [
-        {
-          "study": "khan-2024",
-          "value": 1,
-          "weight": 2
-        },
-        {
-          "study": "li-2025",
-          "value": 0,
-          "weight": 2
-        }
-      ],
+      "state": "untested",
+      "state_weighted_reading": "untested",
+      "counted_studies": [],
       "questions": []
     },
     "dam-feeling-required": {
@@ -1238,8 +1115,7 @@
   },
   "state_readings_differ": [
     "gwt-ignition",
-    "iit-posterior",
-    "orch-anaesthetic-mt"
+    "iit-posterior"
   ],
   "counted_outcomes": [
     {
@@ -1372,40 +1248,7 @@
       "value": 1,
       "weight": 2,
       "multiplier": 2,
-      "status": "one-reader"
-    },
-    {
-      "judgement": "out-dellert-hot-pfc-involved",
-      "theory": "hot",
-      "prediction": "hot-pfc-involved",
-      "study": "dellert-2025",
-      "group": "Straube group (last author; participants recruited at the University of Münster)",
-      "value": 0,
-      "weight": 2,
-      "multiplier": 2,
-      "status": "one-reader"
-    },
-    {
-      "judgement": "out-martin-hot-pfc-disrupt",
-      "theory": "hot",
-      "prediction": "hot-pfc-disrupt",
-      "study": "martin-2023",
-      "group": "Hsu group (last and corresponding author Tzu-Yu Hsu, Taipei Medical University)",
-      "value": 0,
-      "weight": 2,
-      "multiplier": 2,
-      "status": "one-reader"
-    },
-    {
-      "judgement": "out-hobot-hot-pfc-disrupt",
-      "theory": "hot",
-      "prediction": "hot-pfc-disrupt",
-      "study": "hobot-2023",
-      "group": "Sandberg group (last author Kristian Sandberg, Aarhus University); first author at the Jagiellonian University Consciousness Lab",
-      "value": 0,
-      "weight": 2,
-      "multiplier": 2,
-      "status": "one-reader"
+      "status": "agreed"
     },
     {
       "judgement": "out-martin-hot-awareness-performance",
@@ -1416,7 +1259,7 @@
       "value": 1,
       "weight": 2,
       "multiplier": 2,
-      "status": "one-reader"
+      "status": "agreed"
     },
     {
       "judgement": "out-hobot-hot-awareness-performance",
@@ -1427,7 +1270,7 @@
       "value": 1,
       "weight": 2,
       "multiplier": 2,
-      "status": "one-reader"
+      "status": "agreed"
     },
     {
       "judgement": "out-filimonov2022-rpt-van",
@@ -1438,7 +1281,7 @@
       "value": 1,
       "weight": 2,
       "multiplier": 2,
-      "status": "one-reader"
+      "status": "agreed"
     },
     {
       "judgement": "out-jicol-seth-presence-match",
@@ -1449,51 +1292,7 @@
       "value": 0,
       "weight": 2,
       "multiplier": 2,
-      "status": "one-reader"
-    },
-    {
-      "judgement": "out-suzuki-seth-low-interoception-more-illusion",
-      "theory": "seth",
-      "prediction": "seth-low-interoception-more-illusion",
-      "study": "suzuki-2013",
-      "group": "Seth group (last and corresponding author; Sackler Centre for Consciousness Science, University of Sussex)",
-      "value": -1,
-      "weight": 1,
-      "multiplier": 2,
-      "status": "one-reader"
-    },
-    {
-      "judgement": "out-wilterson-agent-ast-schema-control",
-      "theory": "ast",
-      "prediction": "ast-schema-control",
-      "study": "wilterson-2021-agent",
-      "group": "Graziano group (last author)",
-      "value": 1,
-      "weight": 1,
-      "multiplier": 2,
-      "status": "one-reader"
-    },
-    {
-      "judgement": "out-khan-orch-anaesthetic-mt",
-      "theory": "orch-or",
-      "prediction": "orch-anaesthetic-mt",
-      "study": "khan-2024",
-      "group": "Wiest group (last author, Neuroscience Department, Wellesley College)",
-      "value": 1,
-      "weight": 2,
-      "multiplier": 2,
-      "status": "one-reader"
-    },
-    {
-      "judgement": "out-li-orch-anaesthetic-mt",
-      "theory": "orch-or",
-      "prediction": "orch-anaesthetic-mt",
-      "study": "li-2025",
-      "group": "Martyn group (last and corresponding author, Massachusetts General Hospital, Boston)",
-      "value": 0,
-      "weight": 2,
-      "multiplier": 2,
-      "status": "one-reader"
+      "status": "agreed"
     }
   ],
   "alternative_readings": {
@@ -1507,7 +1306,7 @@
         "seth": "not yet defined sharply enough to rank",
         "ast": "testable, too little tested to rank",
         "sensorimotor": "testable, too little tested to rank",
-        "orch-or": "ranked",
+        "orch-or": "testable, too little tested to rank",
         "damasio": "not yet defined sharply enough to rank"
       },
       "ranking": {
@@ -1517,24 +1316,19 @@
             "rank": 1
           },
           {
-            "theory": "orch-or",
-            "rank": 1
-          },
-          {
             "theory": "iit",
-            "rank": 1
+            "rank": 2
           },
           {
             "theory": "gwt",
-            "rank": 1
+            "rank": 2
           }
         ],
         "shared_because_one_study_could_swap_them": {
-          "hot|orch-or": "hobot-2023",
-          "orch-or|iit": "khan-2024",
           "iit|gwt": "dellert-2025"
         },
         "testable_too_little_tested": [
+          "orch-or",
           "ast",
           "sensorimotor",
           "rpt"

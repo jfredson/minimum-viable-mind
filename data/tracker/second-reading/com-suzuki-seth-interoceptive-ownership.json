@@ -1,0 +1,31 @@
+{
+  "packet_id": "com-suzuki-seth-interoceptive-ownership",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "x8oBa9q_MMKrjdoPo83MsQw",
+  "finish_reason": "STOP",
+  "answer_text": "{\"verdict\": \"not-before\", \"reason\": \"The 2012 paper predates the 2013 study's publication, but the cited passage only suggests that considerable promise lies in integrating interoceptive predictive coding with multisensory models of selfhood. Expressing hope about combining broad theoretical frameworks does not commit the theory to the specific prediction that heartbeat-timed visual feedback on a seen hand increases ownership compared to out-of-time feedback. Because the specific prediction was only introduced in the 2013 paper that tested it, the commitment was not fixed in advance.\", \"unsure\": false, \"unsure_why\": \"\"}",
+  "usage": {
+    "promptTokenCount": 1637,
+    "candidatesTokenCount": 139,
+    "totalTokenCount": 3616,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1637
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 139
+      }
+    ],
+    "thoughtsTokenCount": 1840,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.023064,
+  "seconds": 44.1,
+  "called_on": "2026-11-21 08:46:43 PST"
+}
