@@ -157,6 +157,11 @@ study's weight.
   It is an average, not a total, so a theory tested more often does not score higher for that
   alone. More tests make the score steadier, and the page shows how much it rests on beside it.
 
+*(ruled, 2026-11-21, John: "Mixed, with the lean in words (Recommended)"; wording the master
+session's.)* **A prediction's state:** untested if no counted study; supported if every counted
+outcome is "for"; contradicted if every one is "against"; otherwise mixed, with a line saying which
+way the weight of the evidence leans (the sign of each outcome times its study's weight).
+
 **Left to test: the share of the theory's distinguishing predictions that no study has touched.**
 Only predictions tied to the fixed core claims count, and every core claim must have at least one,
 so a theory cannot look nearly finished by having said little. When new predictions are added the
@@ -206,6 +211,12 @@ session's recommendations; the wording is the session's.
    *(ruled, 2026-11-21, John: "Keep 'more than half' (Recommended)"; wording the master session's.)*
    Exactly half does not pass the bar. (Raised by the stage 3 scoring, where the Sentient Horizons
    account, Seth's view and Damasio's theory each have exactly half their core claims passing.)
+   *(ruled, 2026-11-21, John: "No, it can't (Recommended)"; wording the master session's.)* **The
+   site's own Sentient Horizons account never counts as the rival that sets another theory apart.**
+   (Applied: Damasio's "no consciousness without feeling" still separates, through the other rivals'
+   silence; no score changes.)
+   *(ruled, 2026-11-21, John: "With today's methods (Recommended)".)* **"Could fail" means could fail
+   with today's methods.** A prediction no existing method can check does not count as able to fail.
    A support score speaks only for the
    claims that were testable; where fewer than half were, it describes a minority of the theory,
    and ranking the whole theory on it would mislead. This replaces the bare figure of 50 first
@@ -584,6 +595,17 @@ shapes stage 2.
       ruled rule 1 above, what the prediction is compared with is when the study's data were
       collected, so this sentence's dating of a study by its earliest public appearance no longer
       decides whether it counts. The wording is left for the master session to bring into line.)*
+   *(ruled, 2026-11-21, John: "Keep them out (Recommended)"; wording the master session's.)* **A
+   theory's statements are read for the scope they are written in.** Recurrent processing theory's
+   statements opened here are about seeing, so the theory is not read as covering hearing, and its two
+   hearing studies stay uncounted.
+   *(ruled, 2026-11-21, John: "Yes, cap $10 (Recommended)"; wording the master session's.)* **Studies
+   for the five theories ConTraSt does not cover are found by a fixed search per prediction, not by the
+   theory's name.** This applies to Seth's view, attention schema theory, the sensorimotor theory,
+   Orchestrated Objective Reduction and Damasio's theory: all 37 of their predictions. Each search is
+   written down and committed before it runs, the five-most-recent rule is kept, and the method page
+   says and dates the change. (Raised by the stage 3 scoring, where the name searches found almost no
+   tests of these theories' predictions.)
    4. *(ruled)* **ConTraSt's "designed to test, mentioned, or interpreted afterwards" field is a
       pointer** for which studies to check first, not the rule.
 3. **The licence is share-alike.** ConTraSt's data is under CC BY-SA 4.0, so anything built from

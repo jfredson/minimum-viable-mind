@@ -698,3 +698,16 @@ settles = "separation"
 separates = false
 separates_from = []
 reason = "Readers split (Claude: does not separate; Gemini: separates). John: does not separate. Global workspace theory's proponents (mashour-2020) also hold that unseen stimuli spread without becoming conscious. Recurrent processing theory's testability stays 42, below the bar."
+
+
+# ------------------------------------------- the site's own account as a rival (2026-11-21)
+# John, 2026-11-21, "No, it can't (Recommended)": the Sentient Horizons account never counts as the
+# rival that sets another theory apart. The one row it affected:
+
+[[ruling]]
+judgement = "tst-dam-feeling-required"
+rule = "John, 2026-11-21, \"No, it can't (Recommended)\""
+settles = "separation"
+separates = true
+separates_from = []
+reason = "The Sentient Horizons account no longer counts as the rival that sets it apart. No other rival's opened source predicts the same, so under the amended rule C it still separates, as the theory's own prediction. No score changes."

@@ -484,7 +484,7 @@ def rank(d, mode, bar_reading="sharp"):
 def prediction_states(d, counted):
     """Each prediction's state, from its counted outcomes only.
 
-    Rule (the session's, 2026-11-21, not separately ruled; it matches the stand-in the site used):
+    Rule (ruled by John, 2026-11-21, "Mixed, with the lean in words"):
     no counted outcome -> untested; every counted outcome 'for' -> supported; every one 'against'
     -> contradicted; anything else (any 'mixed', or 'for' beside 'against') -> mixed.
     Beside it, the weighted reading: the sign of the sum of outcome x study weight
@@ -507,8 +507,15 @@ def prediction_states(d, counted):
             st = "mixed"
         ws = sum(c["value"] * c["weight"] for c in mine)
         wst = "untested" if not mine else ("supported" if ws > 0 else "contradicted" if ws < 0 else "mixed")
+        # "Mixed, with the lean in words" (John, 2026-11-21): a mixed state carries a line saying
+        # which way the weight of the evidence leans.
+        lean = ""
+        if st == "mixed":
+            lean = ("The weight of the evidence leans for it." if ws > 0 else
+                    "The weight of the evidence leans against it." if ws < 0 else
+                    "The evidence is evenly balanced.")
         out[p["id"]] = {
-            "theory": p["theory"], "state": st, "state_weighted_reading": wst,
+            "theory": p["theory"], "state": st, "state_lean": lean, "state_weighted_reading": wst,
             "counted_studies": [{"study": c["study"], "value": c["value"], "weight": c["weight"]} for c in mine],
             "questions": p.get("questions", []),
         }

@@ -5,8 +5,8 @@
     "gemini"
   ],
   "judgement_status": {
-    "agreed": 105,
-    "ruled": 36,
+    "agreed": 104,
+    "ruled": 37,
     "one-reader": 0,
     "disagreed": 0,
     "open-for-john": 0,
@@ -414,8 +414,8 @@
     "damasio": {
       "name": "Damasio's feeling-based theory",
       "judgement_status": {
-        "agreed": 6,
-        "ruled": 2
+        "agreed": 5,
+        "ruled": 3
       },
       "one_reader_only": false,
       "testability": 50.0,
@@ -492,6 +492,7 @@
     "gwt-pfc-content": {
       "theory": "gwt",
       "state": "mixed",
+      "state_lean": "The evidence is evenly balanced.",
       "state_weighted_reading": "mixed",
       "counted_studies": [
         {
@@ -505,6 +506,7 @@
     "gwt-ignition": {
       "theory": "gwt",
       "state": "mixed",
+      "state_lean": "The weight of the evidence leans against it.",
       "state_weighted_reading": "contradicted",
       "counted_studies": [
         {
@@ -523,6 +525,7 @@
     "gwt-synchrony": {
       "theory": "gwt",
       "state": "contradicted",
+      "state_lean": "",
       "state_weighted_reading": "contradicted",
       "counted_studies": [
         {
@@ -536,6 +539,7 @@
     "gwt-topdown": {
       "theory": "gwt",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -543,6 +547,7 @@
     "gwt-late": {
       "theory": "gwt",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -550,6 +555,7 @@
     "gwt-wm-transform": {
       "theory": "gwt",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -557,6 +563,7 @@
     "gwt-offset": {
       "theory": "gwt",
       "state": "contradicted",
+      "state_lean": "",
       "state_weighted_reading": "contradicted",
       "counted_studies": [
         {
@@ -570,6 +577,7 @@
     "gwt-silent": {
       "theory": "gwt",
       "state": "supported",
+      "state_lean": "",
       "state_weighted_reading": "supported",
       "counted_studies": [
         {
@@ -583,6 +591,7 @@
     "iit-posterior": {
       "theory": "iit",
       "state": "mixed",
+      "state_lean": "The weight of the evidence leans for it.",
       "state_weighted_reading": "supported",
       "counted_studies": [
         {
@@ -606,6 +615,7 @@
     "iit-sustained": {
       "theory": "iit",
       "state": "mixed",
+      "state_lean": "The evidence is evenly balanced.",
       "state_weighted_reading": "mixed",
       "counted_studies": [
         {
@@ -619,6 +629,7 @@
     "iit-synchrony": {
       "theory": "iit",
       "state": "contradicted",
+      "state_lean": "",
       "state_weighted_reading": "contradicted",
       "counted_studies": [
         {
@@ -632,6 +643,7 @@
     "iit-phi-states": {
       "theory": "iit",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -639,6 +651,7 @@
     "iit-inactive": {
       "theory": "iit",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -646,6 +659,7 @@
     "iit-agnosia": {
       "theory": "iit",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -653,6 +667,7 @@
     "iit-connections": {
       "theory": "iit",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -660,6 +675,7 @@
     "iit-feedforward": {
       "theory": "iit",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": [
@@ -669,6 +685,7 @@
     "sh-central": {
       "theory": "sh",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -676,6 +693,7 @@
     "sh-split-novel": {
       "theory": "sh",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": [
@@ -685,6 +703,7 @@
     "sh-nosplit-flexible": {
       "theory": "sh",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -692,6 +711,7 @@
     "sh-enriching": {
       "theory": "sh",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": [
@@ -701,6 +721,7 @@
     "sh-no-bare-awareness": {
       "theory": "sh",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": [
@@ -710,6 +731,7 @@
     "hot-first-order-insufficient": {
       "theory": "hot",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -717,6 +739,7 @@
     "hot-unconscious-global": {
       "theory": "hot",
       "state": "supported",
+      "state_lean": "",
       "state_weighted_reading": "supported",
       "counted_studies": [
         {
@@ -730,6 +753,7 @@
     "hot-pfc-involved": {
       "theory": "hot",
       "state": "mixed",
+      "state_lean": "The evidence is evenly balanced.",
       "state_weighted_reading": "mixed",
       "counted_studies": [
         {
@@ -743,6 +767,7 @@
     "hot-pfc-disrupt": {
       "theory": "hot",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -750,6 +775,7 @@
     "hot-awareness-performance": {
       "theory": "hot",
       "state": "supported",
+      "state_lean": "",
       "state_weighted_reading": "supported",
       "counted_studies": [
         {
@@ -768,6 +794,7 @@
     "rpt-ff-unseen": {
       "theory": "rpt",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -775,6 +802,7 @@
     "rpt-feedback-needed": {
       "theory": "rpt",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -782,6 +810,7 @@
     "rpt-van": {
       "theory": "rpt",
       "state": "supported",
+      "state_lean": "",
       "state_weighted_reading": "supported",
       "counted_studies": [
         {
@@ -795,6 +824,7 @@
     "rpt-no-report-sensory": {
       "theory": "rpt",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -802,6 +832,7 @@
     "rpt-unattended-local": {
       "theory": "rpt",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -809,6 +840,7 @@
     "rpt-attention-independent": {
       "theory": "rpt",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -816,6 +848,7 @@
     "rpt-other-senses": {
       "theory": "rpt",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -823,6 +856,7 @@
     "seth-living-only": {
       "theory": "seth",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": [
@@ -833,6 +867,7 @@
     "seth-ai-not-by-computation": {
       "theory": "seth",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": [
@@ -842,6 +877,7 @@
     "seth-expectation-speeds-access": {
       "theory": "seth",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -849,6 +885,7 @@
     "seth-presence-match": {
       "theory": "seth",
       "state": "mixed",
+      "state_lean": "The evidence is evenly balanced.",
       "state_weighted_reading": "mixed",
       "counted_studies": [
         {
@@ -862,6 +899,7 @@
     "seth-interoceptive-ownership": {
       "theory": "seth",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -869,6 +907,7 @@
     "seth-low-interoception-more-illusion": {
       "theory": "seth",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -876,6 +915,7 @@
     "seth-interoceptive-suppression": {
       "theory": "seth",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -883,6 +923,7 @@
     "seth-feeling-from-prediction": {
       "theory": "seth",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -890,6 +931,7 @@
     "ast-graded": {
       "theory": "ast",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": [
@@ -899,6 +941,7 @@
     "ast-covary": {
       "theory": "ast",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -906,6 +949,7 @@
     "ast-claims": {
       "theory": "ast",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": [
@@ -915,6 +959,7 @@
     "ast-control": {
       "theory": "ast",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -922,6 +967,7 @@
     "ast-schema-control": {
       "theory": "ast",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -929,6 +975,7 @@
     "ast-tpj": {
       "theory": "ast",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -936,6 +983,7 @@
     "ast-domain": {
       "theory": "ast",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -943,6 +991,7 @@
     "sm-colour-contingent": {
       "theory": "sensorimotor",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -950,6 +999,7 @@
     "sm-inversion": {
       "theory": "sensorimotor",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -957,6 +1007,7 @@
     "sm-active-control": {
       "theory": "sensorimotor",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -964,6 +1015,7 @@
     "sm-substitution": {
       "theory": "sensorimotor",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -971,6 +1023,7 @@
     "sm-change-blindness": {
       "theory": "sensorimotor",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -978,6 +1031,7 @@
     "sm-inattentional": {
       "theory": "sensorimotor",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -985,6 +1039,7 @@
     "sm-no-ncc": {
       "theory": "sensorimotor",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -992,6 +1047,7 @@
     "orch-mt-coherence": {
       "theory": "orch-or",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -999,6 +1055,7 @@
     "orch-mt-entangle": {
       "theory": "orch-or",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1006,6 +1063,7 @@
     "orch-synaptic-cyto": {
       "theory": "orch-or",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1013,6 +1071,7 @@
     "orch-mt-vibration": {
       "theory": "orch-or",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1020,6 +1079,7 @@
     "orch-dp-collapse": {
       "theory": "orch-or",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1027,6 +1087,7 @@
     "orch-mass-time": {
       "theory": "orch-or",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1034,6 +1095,7 @@
     "orch-coherence-time": {
       "theory": "orch-or",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1041,6 +1103,7 @@
     "orch-anaesthetic-mt": {
       "theory": "orch-or",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1048,6 +1111,7 @@
     "dam-feeling-required": {
       "theory": "damasio",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": [
@@ -1057,6 +1121,7 @@
     "dam-subcortical": {
       "theory": "damasio",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1064,6 +1129,7 @@
     "dam-insula": {
       "theory": "damasio",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1071,6 +1137,7 @@
     "dam-nonneural": {
       "theory": "damasio",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1078,6 +1145,7 @@
     "dam-nss": {
       "theory": "damasio",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1085,6 +1153,7 @@
     "dam-no-nervous-system": {
       "theory": "damasio",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": []
@@ -1092,6 +1161,7 @@
     "dam-ai": {
       "theory": "damasio",
       "state": "untested",
+      "state_lean": "",
       "state_weighted_reading": "untested",
       "counted_studies": [],
       "questions": [
