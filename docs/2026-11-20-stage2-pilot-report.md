@@ -18,8 +18,8 @@ about $1.01 to Google.*
   (15%)**, under the one-third line. Beside it, reported separately: commitments **3 of 14 (21%)**,
   and testability **5 of 21 (24%)**. On testability they agree on "could it fail" 20 times out of 21
   and on "does it separate" 16 times.
-- **10 disagreements wait for John.** None is settled here, and the scores below leave every one of
-  them out.
+- **10 disagreements arose.** None was settled by either reader. John's rulings C and D then settled
+  most of them by rule, and **7 rows still wait for him** (listed below).
 
 **The disagreements, both readings:**
 
@@ -43,29 +43,75 @@ willing to read a rival's view from its own knowledge, which the packet allowed 
 Third, on the two split predictions, the readers crossed: each read one strictly and the other
 leniently. That is the inconsistency section 6 flagged.
 
-**Scores on agreed rows only** (`python3 scripts/tracker_scores.py --mode settled`; 38 judgements
-agreed, 10 unsettled):
+**Two more rulings, the same night (relayed by the master session), settled most of these:**
+- **Rule C, "Yes, sourced only".** A prediction separates a theory from a rival only when a publication
+  by the rival's own proponents, opened and cited, predicts something different. Applied to the five
+  separation disagreements:
+  - *late start (workspace theory):* separates from recurrent processing theory. Lamme 2018, its
+    proponent, puts seeing at recurrent processing "within 100 ms".
+  - *agnosia after inactivation (IIT):* does not separate. No rival proponents' source was found.
+  - *the split and new events (SH):* does not separate. The rivals are silent.
+  - *no split and flexible response (SH):* does not separate. No rival proponents' source was found.
+  - *no bare awareness (SH):* separates from recurrent processing theory (Lamme 2018: "Recurrent
+    processing between visual areas suffices for conscious visual experience to arise"). But the
+    readers still disagree on whether it could fail, so that row stays open.
+
+  I also audited the agreed rows under the same rule:
+  - *enriching features (SH):* now rests on Damasio's own 2025 paper, not a secondary quotation.
+    Still separates.
+  - *IIT's connection-strength prediction:* no workspace source predicts otherwise, so it no longer
+    separates, although both readers had said it did.
+  - *three more rows:* their rival's view now rests on that rival's own proponents' paper.
+
+  Every passage is in `data/tracker/rulings.toml`.
+- **Rule D, "Yes, that test".** It replaces "before the data were collected". A prediction counts if
+  the proponents fixed it before they could have known the result:
+  - before the registration, for a registered study;
+  - before its earliest public appearance, for any other study;
+  - before the data first appeared, for a reanalysis.
+
+  The five-year convention is dropped. On dates, Bellet and Dellert come out "before". Bandara's
+  top-down row also comes out "before". The 1998 workspace paper, now opened, gives the workspace
+  "descending modulatory projections" to processors, and it predates the 2015 data the study
+  reanalyses. Bandara's hot-zone row is not in time. Bellet's hot-zone row becomes countable for the
+  first time, so it needed an outcome judgement. I read it (mixed), but no Gemini call was authorised,
+  so it has one reading.
+
+**Scores on settled rows only** (`python3 scripts/tracker_scores.py --mode settled`): 30 judgements
+agreed by both readers, 12 settled by rules C and D, and 7 unsettled.
 
 | theory | testability | support | left to test | group |
 |---|---|---|---|---|
-| Integrated information theory | 60 | **57** (4 outcomes, 2 studies, 2 groups, total weight 28) | 57 | **ranked, 1st** |
-| Global workspace theory | 60 | too little tested to score (3 outcomes, all from Cogitate, one group) | 62.5 | **testable, too little tested to rank** |
-| The Sentient Horizons account | **25** | too little tested to score | 100 | not yet defined sharply enough to rank |
+| Integrated information theory | 60 | **57** (4 outcomes, 2 studies, 2 groups, total weight 28) | 50 | **ranked, 1st** |
+| Global workspace theory | **80** | too little tested to score (3 outcomes, all from Cogitate, one group) | 62.5 | **testable, too little tested to rank** |
+| The Sentient Horizons account | 25 | too little tested to score | 100 | not yet defined sharply enough to rank |
 
-**What is unsettled, and what turns on it:**
-- **Global workspace theory's group** turns on the three commitment disagreements. If any one of the
-  Bellet, Bandara or Dellert rows is settled as "before", the theory has a second group and gets a
-  support score again. If John prefers Gemini's stricter reading of undated studies, it stays
-  unranked until a dated study is found.
-- **The Sentient Horizons account's testability** (25 here, 50 on my reading alone) turns on the split
-  disagreement. Passing the bar needs three of its four core claims, and on agreed rows it has one (the
-  enriching features). It would need both of the following:
-  - one of the two split rows settled as separating;
-  - the bare-awareness row settled as both able to fail and separating. On that row each reader gave a
-    different reason against counting it.
-- **The two outcome disagreements** move only Cogitate's workspace rows: prefrontal content (mixed or
-  against) and the onset rise (for or mixed). Either way they pull global workspace theory down.
-- The headline on agreed rows: 6 of 12 distinguishing predictions tested.
+The headline on settled rows is 6 of 12 distinguishing predictions tested. Global workspace theory's
+testability rose from 60 to 80, because its late-start prediction now separates it from recurrent
+processing theory.
+
+**Still waiting for John (7):**
+1. **Cogitate, seen content in prefrontal cortex (outcome).** Claude: mixed. Gemini: against.
+2. **Cogitate, rise of activity at onset (outcome).** Claude: for. Gemini: mixed.
+3. **Bellet, prefrontal content (commitment content).** The dates are settled. What is open is whether
+   the 2013 passage commits the theory to report-free, task-free decoding in prefrontal cortex.
+4. **Bandara, top-down signals (commitment content).** The dates are settled. What is open is whether
+   the 1998 passage, about gating processors in effortful tasks, commits the theory to prefrontal
+   feedback being needed for awareness.
+5. **Dellert, fronto-parietal rise (commitment content).** The dates are settled. What is open is
+   whether the passages commit the theory to this result in a design with no report. The 2019 Cogitate
+   registration's "every conscious experience should be accompanied by activation of a prefrontal-parietal
+   network" may answer it; it was not in the packet.
+6. **SH, no bare awareness (testability).** Separation is settled by rule C. What is open is whether it
+   could fail. Claude: yes. Gemini: no, because the axes have no observable measure.
+7. **Bellet, hot zone (outcome).** It has one reading only (Claude: mixed). It needs a second reading,
+   at about two cents, or John's own reading.
+
+**What turns on them.** Global workspace theory's support score turns on rows 3 to 5: settling any one
+of them as committed gives the theory a second group, and with it a support score. Row 7 would add a
+third study to integrated information theory. The Sentient Horizons account cannot pass the bar on
+these rows. It needs three of four core claims, and the split claim now has no separating prediction
+under rule C. However row 6 is settled, the account stays below the bar.
 
 The sections below are the one-reader report as it stood before the second reading. Its figures are
 Claude's alone.
@@ -367,8 +413,8 @@ Each has its reason written in its record (`unsure_why` in `data/tracker/judgeme
 ## 8. Next, for the master to put to John
 
 1. ~~The spend.~~ Done under John's go: about $1.01 (section 0).
-2. **The 10 disagreements** in section 0, each to be settled by John; until then they move no score.
-3. **The five-year convention**, which Gemini rejected on all three rows where it applied for studies that do not date their data (section 2). It is a
+2. **The 7 rows still unsettled** (section 0), each to be settled by John; until then they move no score.
+3. ~~The five-year convention~~, dropped under ruling D for studies that do not date their data (section 2). It is a
    reader's convention now, and it decides whether either theory has a support score.
 
 The stage 2 stop condition is the readers disagreeing on more than a third of the outcome judgements.

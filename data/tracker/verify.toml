@@ -5,7 +5,9 @@
 
 [[entry]]
 id = "v-damasio-secondary"
-status = "open"
+status = "closed"
+closed_on = "2026-11-20"
+closed_why = "The separation now rests on Damasio's own paper (singer-damasio-2025), under ruling C. Damasio's core claims are still to be fixed at stage 3."
 records = ["sh-enriching", "tst-sh-enriching"]
 statement = "Damasio's theory puts 'affect and feeling at the core' of consciousness."
 rests_on = "Seth and Bayne 2022, Table 1, as quoted in the theory-list report (theory-list-report). This session did not open Seth and Bayne or a Damasio paper."
@@ -13,7 +15,9 @@ to_clear = "Fix Damasio's core claims from his own publication (stage 3; John's 
 
 [[entry]]
 id = "v-rpt-secondary"
-status = "open"
+status = "closed"
+closed_on = "2026-11-20"
+closed_why = "Recurrent processing theory's position now rests on its proponent's own paper (lamme-2018), under ruling C."
 records = ["tst-gwt-ignition", "tst-gwt-topdown"]
 statement = "Recurrent processing theory holds that recurrent activity within sensory cortex is enough for consciousness."
 rests_on = "Descriptions of the theory by other authors in two opened papers: dellert-2025 ('argues that localized re-entrant activity within sensory cortices is sufficient') and bandara-2025 ('feedback activity in recurrent loops within sensory cortices results in consciousness'). No proponents' publication opened."
@@ -29,7 +33,9 @@ statement = "The Cogitate registration v1 (OSF component wz8mj) was written on 2
 
 [[entry]]
 id = "v-collection-dates"
-status = "open"
+status = "closed"
+closed_on = "2026-11-20"
+closed_why = "Moot under ruling D ('Yes, that test', 2026-11-20): an unregistered study is compared by its earliest public appearance, and a reanalysis by when its data first appeared, not by when data were collected."
 records = ["com-bellet-gwt-pfc-content", "com-bellet-iit-posterior", "com-dellert-gwt-ignition", "com-dellert-iit-posterior", "com-bandara-gwt-topdown"]
 statement = "When the Bellet (2022) and Dellert (2025) data were collected; and, for Bandara (2025), when Shafto and Pitts collected theirs."
 rests_on = "None of the papers dates its data collection. The commitment readings use a stated convention instead (a record five or more years older than the study is read as earlier than its data)."
@@ -37,7 +43,9 @@ to_clear = "Ask the authors, or find a thesis, ethics record or earlier report t
 
 [[entry]]
 id = "v-dehaene-1998"
-status = "open"
+status = "closed"
+closed_on = "2026-11-20"
+closed_why = "Opened (dehaene-1998) and quoted directly in rulings.toml."
 records = ["com-bandara-gwt-topdown"]
 statement = "The 1998 paper by Dehaene, Kerszberg and Changeux gave the workspace 'descending connections' that mobilize sensory processors."
 rests_on = "The proponents' own quotation of it in mashour-2020; the 1998 paper (PNAS, open on PubMed Central as PMC24407 according to the Cogitate paper's reference list) was not opened."

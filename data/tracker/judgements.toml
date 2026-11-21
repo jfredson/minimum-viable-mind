@@ -900,3 +900,28 @@ separates = false
 separates_from = []
 reason = "A well-attested experience with nothing on one axis would count against it. Integrated information theory also holds every experience is structured, so it does not separate the account from that rival."
 unsure = false
+
+# ===================================================== added after ruling D
+# Rule D (John, 2026-11-20, "Yes, that test") made Bellet 2022 countable for the hot-zone
+# prediction, so this outcome needs readings. Claude's below; no Gemini call was
+# authorised for it, so it waits for a second reading.
+
+[[judgement]]
+id = "out-bellet-iit-posterior"
+kind = "outcome"
+prediction = "iit-posterior"
+study = "bellet-2022"
+passages = [
+  { source = "bellet-2022", text = "Interestingly, decoding in the ventrolateral PFC was stronger compared to posterior parietal cortex for both isolated and RSVP stimuli." },
+  { source = "bellet-2022", text = "Due to the lack of subjective report under the present RSVP conditions, two interpretations of the data remain tenable: macaques could either be very fast in perceiving the stimuli or most of the stimuli could have remained unconscious." },
+  { source = "bellet-2022", text = "We should stress that the PPC still enabled significant decoding of image identity although it is part of the dorsal stream traditionally described for processing location and spatial relationships as opposed to the ventral stream involved in object recognition" },
+]
+[[judgement.reading]]
+reader = "claude"
+model = "claude-opus-5-5"
+date = "2026-11-20"
+order = "first"
+verdict = "mixed"
+reason = "Prefrontal neurons carried more picture information than posterior parietal neurons, which leans against 'mainly posterior'. But the study recorded no ventral posterior area, where the theory places most visual content, and it cannot say whether the pictures were seen, so it cannot show conscious content in prefrontal cortex. It neither supports nor contradicts the prediction."
+unsure = true
+unsure_why = "As for out-bellet-gwt-pfc-content, 'mixed' stands in for 'does not bear on it'. A reader who takes stronger prefrontal than parietal decoding at face value would read 'against'."

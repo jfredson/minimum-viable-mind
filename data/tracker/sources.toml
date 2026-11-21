@@ -180,3 +180,43 @@ url = "file: side-session-notes/local_e59d6805-e071-497d-a511-9ca2d56f9f43/2026-
 published = "2026-11-20"
 opened = "2026-11-20, read in full"
 note = "Used once, for what Damasio's theory says (its quotation of Seth and Bayne's Table 1). That quotation was not checked against Seth and Bayne by this session; it is on the verify list."
+
+# ---- added 2026-11-20 for John's rulings C ("Yes, sourced only") and D ("Yes, that test")
+
+[[source]]
+id = "dehaene-1998"
+citation = "Dehaene S, Kerszberg M, Changeux J-P. A neuronal model of a global workspace in effortful cognitive tasks. PNAS 95(24):14529-14534, 1998"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC24407/"
+doi = "10.1073/pnas.95.24.14529"
+published = "1998-11-24"
+published_source = "citation publication date in the PubMed Central record"
+opened = "2026-11-20, full text"
+
+[[source]]
+id = "lamme-2018"
+citation = "Lamme VAF. Challenges for theories of consciousness: seeing or knowing, the missing ingredient and how to deal with it. Philosophical Transactions of the Royal Society B 373:20170344, 2018"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6074090/"
+doi = "10.1098/rstb.2017.0344"
+published = "2018-07-30"
+published_source = "citation publication date in the PubMed Central record"
+opened = "2026-11-20, full text"
+note = "By the proponent of recurrent processing theory (Victor Lamme). Used for what that theory predicts, under ruling C."
+
+[[source]]
+id = "singer-damasio-2025"
+citation = "Singer J, Damasio A. The physiology of interoception and its adaptive role in consciousness. Philosophical Transactions of the Royal Society B, 2025 (10.1098/rstb.2024.0305)"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12612705/"
+doi = "10.1098/rstb.2024.0305"
+published = "2025-11-13"
+published_source = "the theory-list report's citation (13 November 2025); Europe PMC record PMC12612705"
+opened = "2026-11-20, full text (Europe PMC XML)"
+note = "By the proponent of Damasio's feeling-based theory. Used under ruling C for what that theory predicts."
+
+[[source]]
+id = "shafto-pitts-2015"
+citation = "Shafto JP, Pitts MA. Neural signatures of conscious face perception in an inattentional blindness paradigm. Journal of Neuroscience 35(31), 2015"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC6605277/"
+doi = "10.1523/JNEUROSCI.0145-15.2015"
+published = "2015-08-05"
+published_source = "citation publication date in the PubMed Central record"
+opened = "2026-11-20, the PubMed Central record (date and authors); the data the Bandara study reanalyses first appeared here"

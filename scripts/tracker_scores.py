@@ -58,6 +58,11 @@ def load():
             r = dict(r)
             jid = r.pop("judgement")
             by_id[jid].setdefault("reading", []).append(r)
+    rul = DATA / "rulings.toml"
+    if rul.exists():
+        by_id = {j["id"]: j for j in judgements}
+        for r in t("rulings.toml").get("ruling", []):
+            by_id[r["judgement"]]["ruling"] = r
     return {
         "judgements": judgements,
         "sources": t("sources.toml")["source"],
@@ -196,8 +201,29 @@ def validate(d):
 # ------------------------------------------------------------------- settling
 
 def settle(j, mode):
-    """Return (reading_or_None, status). status: agreed | one-reader | disagreed | unread."""
+    """Return (reading_or_None, status).
+
+    status: agreed | one-reader | disagreed | unread | ruled | open-for-john.
+    A ruling (data/tracker/rulings.toml) is applied over the readings: a commitment
+    ruling with no open part sets the verdict; one with an open part leaves the row for
+    John; a testability ruling sets 'separates' for every reader, and the row settles if
+    the readers also agree on 'could fail'.
+    """
     rs = j.get("reading", [])
+    ru = j.get("ruling")
+    if ru and j["kind"] == "commitment":
+        if ru.get("open_part"):
+            return None, "open-for-john"
+        return {"verdict": ru["verdict"], "reader": "ruling"}, "ruled"
+    if ru and j["kind"] == "testability" and rs:
+        rs = [dict(r, separates=ru["separates"], separates_from=ru.get("separates_from", [])) for r in rs]
+        cf = {r["could_fail"] for r in rs}
+        readers = {r["reader"] for r in rs}
+        if len(cf) > 1:
+            return None, "disagreed"
+        if len(readers) < 2 and mode == "settled":
+            return None, "one-reader"
+        return rs[0], "ruled"
     if not rs:
         return None, "unread"
     if j["kind"] == "testability":
@@ -414,7 +440,8 @@ def main(argv=None):
     result = {
         "mode": a.mode,
         "readers": sorted({r["reader"] for j in d["judgements"] for r in j.get("reading", [])}),
-        "judgement_status": {k: sum(1 for v in status.values() if v == k) for k in ("agreed", "one-reader", "disagreed", "unread")},
+        "judgement_status": {k: sum(1 for v in status.values() if v == k) for k in ("agreed", "ruled", "one-reader", "disagreed", "open-for-john", "unread")},
+        "unsettled": sorted(k for k, v in status.items() if v in ("one-reader", "disagreed", "open-for-john", "unread")),
         "theories": base,
         "ranking": ranking,
         "headline_provisional": headline(d, a.mode),
@@ -433,7 +460,7 @@ def main(argv=None):
 
     print(f"Mode: {a.mode}. Readers so far: {', '.join(result['readers'])}. Judgements: {result['judgement_status']}")
     if result["judgement_status"]["one-reader"]:
-        print("  These are ONE reader's scores: no judgement has a second reading yet.")
+        print(f"  {result['judgement_status']['one-reader']} judgement(s) have one reading only" + (" and are left out." if a.mode == "settled" else " and are used as read."))
     print()
     for tid, v in base.items():
         s = "too little tested to score" if v["support"] is None else f"{v['support']}"

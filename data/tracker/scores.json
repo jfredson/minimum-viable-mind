@@ -5,25 +5,35 @@
     "gemini"
   ],
   "judgement_status": {
-    "agreed": 38,
-    "one-reader": 0,
-    "disagreed": 10,
+    "agreed": 30,
+    "ruled": 12,
+    "one-reader": 1,
+    "disagreed": 3,
+    "open-for-john": 3,
     "unread": 0
   },
+  "unsettled": [
+    "com-bandara-gwt-topdown",
+    "com-bellet-gwt-pfc-content",
+    "com-dellert-gwt-ignition",
+    "out-bellet-iit-posterior",
+    "out-cogitate-gwt-ignition",
+    "out-cogitate-gwt-pfc-content",
+    "tst-sh-no-bare-awareness"
+  ],
   "theories": {
     "gwt": {
       "name": "Global workspace theory",
-      "testability": 60.0,
+      "testability": 80.0,
       "testability_by_claim": {
         "gwt-c1": 1.0,
         "gwt-c2": 1.0,
         "gwt-c3": 1.0,
-        "gwt-c4": 0.0,
+        "gwt-c4": 1.0,
         "gwt-c5": 0.0
       },
       "past_bar": true,
       "claims_lacking_for_bar": [
-        "gwt-c4",
         "gwt-c5"
       ],
       "support": null,
@@ -40,9 +50,8 @@
       },
       "left_to_test": 62.5,
       "left_to_test_counts": {
-        "distinguishing_core_predictions": 6,
+        "distinguishing_core_predictions": 7,
         "placeholders_for_claims_with_none": [
-          "gwt-c4",
           "gwt-c5"
         ],
         "untested": 5,
@@ -80,15 +89,15 @@
         "total_weight": 28,
         "weighted_sum": 4
       },
-      "left_to_test": 57.1,
+      "left_to_test": 50.0,
       "left_to_test_counts": {
-        "distinguishing_core_predictions": 5,
+        "distinguishing_core_predictions": 4,
         "placeholders_for_claims_with_none": [
           "iit-c1",
           "iit-c4"
         ],
-        "untested": 4,
-        "total": 7
+        "untested": 3,
+        "total": 6
       },
       "group": "ranked",
       "leans_against": false
@@ -256,5 +265,5 @@
       "why": "The first wording of ranking rule 2 did not say whether the prediction must separate the theory from a rival. John ruled on 2026-11-20 ('Yes, must separate') that it must; the main result follows the ruling. This is the superseded literal reading, kept for comparison."
     }
   },
-  "open_verify_entries": 9
+  "open_verify_entries": 5
 }

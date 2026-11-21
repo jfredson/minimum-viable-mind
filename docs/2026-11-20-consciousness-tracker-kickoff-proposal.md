@@ -161,7 +161,11 @@ session's recommendations; the wording is the session's.
 2. *(ruled)* **The bar is a criterion, not a bare number:** a theory is ranked only when more than
    half its core claims come with a prediction that could fail. *(ruled, 2026-11-20, John: "Yes,
    must separate".)* The bar counts a core claim only if it has a prediction that could fail and
-   that a rival predicts differently, the same test as the testability score. (Raised by the stage 2
+   that a rival predicts differently, the same test as the testability score. *(ruled, 2026-11-20,
+   John: "Yes, sourced only"; wording the master session's.)* A prediction separates a theory from a
+   rival only when a publication by the rival's own proponents, opened and cited, predicts something
+   different. A reader's own knowledge does not count, and a rival's silence does not count. This
+   governs both the bar and the testability score. (Raised by the stage 2
    pilot, which found the first wording did not say; wording the master session's.) A support score speaks only for the
    claims that were testable; where fewer than half were, it describes a minority of the theory,
    and ranking the whole theory on it would mislead. This replaces the bare figure of 50 first
@@ -424,10 +428,20 @@ shapes stage 2.
    **Ruled by John on 2026-11-20: "Yes to all four".** The four rules were the session's
    recommendations; the wording is the session's. What matters is when the prediction was made,
    not how the study was framed:
-   1. *(ruled)* **A study counts toward a prediction if that prediction was fixed, by the theory's
+   1. *(ruled)* **A prediction counts for a study if the theory's proponents fixed it before they
+      could have known the study's result:** before the registration, for a study registered before
+      its data were collected; before its earliest public appearance (preprint or publication), for
+      any other study; before that data first appeared, for a study reanalysing earlier published
+      data. The ban on stating and testing in the same paper stays. *(ruled, 2026-11-20, John: "Yes,
+      that test"; wording the master session's.)* **This replaces the wording recorded just below for
+      his earlier ruling "Yes, count it"** ("before the study's data were collected"), which is kept
+      struck through for the record; what that ruling settled (a registration's predictions count for
+      the study that registered them) stands. Whether an earlier passage commits the theory to the
+      exact test is a separate judgement, read by both readers and settled by John.
+      ~~A study counts toward a prediction if that prediction was fixed, by the theory's
       proponents, in a dated record made before the study's data were collected, whether a
-      publication or a registration.** *(ruled, 2026-11-20, John: "Yes, count it"; wording the
-      master session's.)* What decides is when the record was fixed, not when it became public. The
+      publication or a registration.~~ *(ruled, 2026-11-20, John: "Yes, count it"; wording the
+      master session's; replaced the same day as above.)* What decides is when the record was fixed, not when it became public. The
       ban on a paper that states a prediction and tests it in the same paper stays. So the Cogitate
       registration's predictions count for the Cogitate study. Weakest step, stated to John: a
       prediction becomes the theory's once its proponents sign it into a registration, even if it was

@@ -20,6 +20,8 @@ refuses them if any rule is broken, and one that computes every number from them
 | `predictions.toml` | the leaves: one record per prediction, tied to one core claim |
 | `studies.toml` | the studies, with their earliest public appearance, research group, which theory's camp ran them, and the four protections that set their weight |
 | `judgements.toml` | every place a reader decides something, each its own record with its passages and one reading per reader |
+| `rulings.toml` | judgements settled, or partly settled, by a rule John ruled (C, separation must be sourced; D, the dating test), applied over the readings by the score script |
+| `readings-gemini.toml` | the second reader's readings, imported from `second-reading/` |
 | `verify.toml` | the verify list: statements resting on a source this session did not open, or opened only in part |
 | `scores.json` | written by `scripts/tracker_scores.py`; never edited by hand |
 | `packets/` | written by `scripts/tracker_packets.py`: the blind packets for the second reader |

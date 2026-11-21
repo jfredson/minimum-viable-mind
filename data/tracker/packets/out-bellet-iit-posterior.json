@@ -1,0 +1,69 @@
+{
+  "packet_id": "out-bellet-iit-posterior",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Integrated information theory",
+  "core_claim": {
+    "quote": "Based on the postulates of IIT, a universal substrate ultimately “condenses” into a set of disjoint (non-overlapping) complexes, each constituted of a set of macro or micro units.",
+    "source": {
+      "citation": "Albantakis L, Barbosa L, Findlay G, Grasso M, Haun AM, Marshall W, Mayner WGP, Zaeemzadeh A, Boly M, Juel BE, Sasai S, Fujii K, David I, Hendren J, Lang JP, Tononi G. Integrated information theory (IIT) 4.0: formulating the properties of phenomenal existence in physical terms. PLOS Computational Biology 19(10):e1011465, 2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581496/",
+      "date": "2023-10-17"
+    }
+  },
+  "prediction": {
+    "statement": "The physical substrate of experience lies mainly in a posterior 'hot zone' (temporal, parietal and occipital cortex); prefrontal cortex is not needed, and conscious content is best decoded from the back of the brain.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-16",
+      "passage": "A current auxiliary prediction of IIT, on the other hand, states that the physical substrate of consciousness resides primarily in a “posterior hot zone” in temporo-parietal-occipital cortex due to the connectivity architecture of those areas (‘pyramid-of-grids’-like) that is more suited for high phi than the different connectivity of prefrontal regions.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    "test_for": "Awareness-related activity, or decodable conscious content, is found in posterior cortex, and adding prefrontal cortex adds no information.",
+    "test_against": "Conscious content or awareness-related activity is absent from posterior cortex while present in prefrontal cortex, or prefrontal cortex adds information beyond posterior cortex."
+  },
+  "study": {
+    "name": "Decoding rapidly presented pictures from monkey prefrontal neurons without report",
+    "source": {
+      "citation": "Bellet J, Gay M, Dwarakanath A, Jarraya B, van Kerkoerle T, Dehaene S, Panagiotaropoulos TI. Decoding rapidly presented visual stimuli from prefrontal ensembles without report nor post-perceptual processing. Neuroscience of Consciousness 2022(1):niac005",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8868130/",
+      "date": "2022-02-24"
+    },
+    "first_appeared": "2022-02-24 (publication (no earlier preprint found))",
+    "data_collected": {
+      "when": "not stated; before 2021-01-19",
+      "basis": "The paper gives no recording dates; it was submitted on 2021-01-19 (received date), so the data were collected before then."
+    }
+  },
+  "passages": [
+    {
+      "text": "Interestingly, decoding in the ventrolateral PFC was stronger compared to posterior parietal cortex for both isolated and RSVP stimuli.",
+      "source": {
+        "citation": "Bellet J, Gay M, Dwarakanath A, Jarraya B, van Kerkoerle T, Dehaene S, Panagiotaropoulos TI. Decoding rapidly presented visual stimuli from prefrontal ensembles without report nor post-perceptual processing. Neuroscience of Consciousness 2022(1):niac005",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8868130/",
+        "date": "2022-02-24"
+      }
+    },
+    {
+      "text": "Due to the lack of subjective report under the present RSVP conditions, two interpretations of the data remain tenable: macaques could either be very fast in perceiving the stimuli or most of the stimuli could have remained unconscious.",
+      "source": {
+        "citation": "Bellet J, Gay M, Dwarakanath A, Jarraya B, van Kerkoerle T, Dehaene S, Panagiotaropoulos TI. Decoding rapidly presented visual stimuli from prefrontal ensembles without report nor post-perceptual processing. Neuroscience of Consciousness 2022(1):niac005",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8868130/",
+        "date": "2022-02-24"
+      }
+    },
+    {
+      "text": "We should stress that the PPC still enabled significant decoding of image identity although it is part of the dorsal stream traditionally described for processing location and spatial relationships as opposed to the ventral stream involved in object recognition",
+      "source": {
+        "citation": "Bellet J, Gay M, Dwarakanath A, Jarraya B, van Kerkoerle T, Dehaene S, Panagiotaropoulos TI. Decoding rapidly presented visual stimuli from prefrontal ensembles without report nor post-perceptual processing. Neuroscience of Consciousness 2022(1):niac005",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8868130/",
+        "date": "2022-02-24"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}
