@@ -1,0 +1,13 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] Unknown quantization type, got modelopt - supported types are: ['awq', 'bitsandbytes_4bit', 'bitsandbytes_8bit', 'gptq', 'aqlm', 'quanto', 'quark', 'fouroversix', 'fp_quant', 'eetq', 'higgs', 'hqq', 'compressed-tensors', 'fbgemm_fp8', 'torchao', 'bitnet', 'vptq', 'spqr', 'fp8', 'gguf', 'nvfp4', 'mxfp8', 'auto-round', 'mxfp4', 'metal', 'sinq', 'gemma']. Hence, we will skip the quantization. To remove the warning, you can delete the quantization_config attribute in config.json
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+none {"summary": {"1": {"prompt_rule": 0.267, "routine": 0.542, "chains_4_to_6": 0.292}, "2": {"prompt_rule": 0.217, "routine": 0.475, "chains_4_to_6": 0.125}, "3": {"prompt_rule": 0.342, "routine": 0.508, "chains_4_to_6": 0.167}}, "confidence_filter_share_at_3_passes": 0.236, "bites_one_pass_loss_on_chains_4_to_6": -0.125, "section15_all_met": false}
+end {"summary": {"1": {"prompt_rule": 0.525, "routine": 0.675, "chains_4_to_6": 0.375}, "2": {"prompt_rule": 0.617, "routine": 0.775, "chains_4_to_6": 0.167}, "3": {"prompt_rule": 0.717, "routine": 0.833, "chains_4_to_6": 0.083}}, "confidence_filter_share_at_3_passes": 0.557, "bites_one_pass_loss_on_chains_4_to_6": -0.292, "section15_all_met": false}
+start {"summary": {"1": {"prompt_rule": 0.533, "routine": 0.75, "chains_4_to_6": 0.292}, "2": {"prompt_rule": 0.5, "routine": 0.792, "chains_4_to_6": 0.042}, "3": {"prompt_rule": 0.658, "routine": 0.842, "chains_4_to_6": 0.25}}, "confidence_filter_share_at_3_passes": 0.543, "bites_one_pass_loss_on_chains_4_to_6": -0.042, "section15_all_met": false}
+---pip---
+accelerate==1.16.0
+numpy==2.5.5
+safetensors==0.8.0
+tokenizers==0.23.3
+torch==2.9.1+cu128
+NVIDIA RTX PRO 6000 Blackwell Server Edition
