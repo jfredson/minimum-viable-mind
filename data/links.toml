@@ -1,0 +1,26 @@
+# Links for the names the site shows at first mention ("Link what you name", workspace rule of
+# 2026-10-18): Wikipedia when there is an article, else the body's official page. Every address
+# here was opened on 2026-11-21 and went where its name says. A name with no page that could be
+# opened is left out on purpose and shown as plain text: Pieter Roelfsema, Melanie Boly and
+# Larissa Albantakis (no Wikipedia article; no profile page reachable), and recurrent processing
+# theory (no Wikipedia article for the theory or for Victor Lamme).
+
+[people]
+"Stanislas Dehaene" = "https://en.wikipedia.org/wiki/Stanislas_Dehaene"
+"Jean-Pierre Changeux" = "https://en.wikipedia.org/wiki/Jean-Pierre_Changeux"
+"George Mashour" = "https://en.wikipedia.org/wiki/George_Mashour"
+"Giulio Tononi" = "https://en.wikipedia.org/wiki/Giulio_Tononi"
+"Christof Koch" = "https://en.wikipedia.org/wiki/Christof_Koch"
+
+# The theories on the list not scored yet, linked where they are named on the first screen.
+[theories]
+hot = "https://en.wikipedia.org/wiki/Higher-order_theories_of_consciousness"
+seth = "https://en.wikipedia.org/wiki/Anil_Seth"
+ast = "https://en.wikipedia.org/wiki/Attention_schema_theory"
+sensorimotor = "https://en.wikipedia.org/wiki/J._Kevin_O'Regan"
+orch-or = "https://en.wikipedia.org/wiki/Orchestrated_objective_reduction"
+damasio = "https://en.wikipedia.org/wiki/Antonio_Damasio"
+
+# Research groups named on the prediction pages.
+[groups]
+"Cogitate Consortium" = "https://www.arc-cogitate.com/"

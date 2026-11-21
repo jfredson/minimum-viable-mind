@@ -86,9 +86,12 @@ export const tone = (s: string) => TONE[s] ?? 'dim';
 
 export const stageById = (id: string) => data.stages.find((s) => s.id === id);
 
+// Dates in the house style for public prose, "November 20th, 2026" (reader check, 2026-11-21;
+// until then "Nov 20, 2026").
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+export const ordinal = (d: number) => `${d}${d % 100 >= 10 && d % 100 <= 20 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' } as Record<number, string>)[d % 10] ?? 'th'}`;
 export function fmtDate(iso: string): string {
   const [y, m, d] = iso.split('-').map(Number);
-  const dt = new Date(Date.UTC(y, m - 1, d));
-  return dt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+  return `${MONTHS[m - 1]} ${ordinal(d)}, ${y}`;
 }
 export const usd = (n: number) => `$${n.toFixed(n % 1 === 0 ? 0 : 2)}`;

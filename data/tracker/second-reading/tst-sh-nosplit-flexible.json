@@ -1,0 +1,30 @@
+{
+  "packet_id": "tst-sh-nosplit-flexible",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "whMBa-6MLufZm9cP2YTjuAQ",
+  "finish_reason": "STOP",
+  "answer_text": "{\"could_fail\": true, \"separates\": true, \"separates_from\": [\"gwt\"], \"rival_view_from\": \"own knowledge\", \"reason\": \"A study could test this prediction by measuring whether people in meditative or psychedelic states with a reported loss of self-world boundary can still adapt flexibly to novel events. Finding intact flexible responses during those states would directly count against the theory. From my own knowledge, Global Workspace Theory predicts the opposite in principle, because it ties flexible responses to novelty directly to conscious global broadcast rather than to maintaining a self-world split.\", \"unsure\": true, \"unsure_why\": \"Global Workspace Theory links conscious broadcast to flexible novelty responses in general, but its proponents have not explicitly stated a firm prediction for behavioral flexibility specifically during ego-dissolution or non-dual states, which makes it close to staying silent.\"}",
+  "usage": {
+    "promptTokenCount": 910,
+    "candidatesTokenCount": 182,
+    "totalTokenCount": 3426,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 910
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 182
+      }
+    ],
+    "thoughtsTokenCount": 2334,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.02698,
+  "seconds": 40.4,
+  "called_on": "2026-11-20 19:45:47 PST"
+}

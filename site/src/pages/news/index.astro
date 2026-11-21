@@ -1,0 +1,24 @@
+---
+// News (tracker pattern rules 4.10 to 4.16): one post per event of note, newest first. None
+// yet: no post goes out while any tracker record carries an open verify entry (rule 3.3,
+// part 4), and every post is approved before it goes live.
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import N from '../../components/N.astro';
+import { tk, word } from '../../lib/tracker';
+const posts = (await getCollection('news')).sort((a, b) => b.data.date.localeCompare(a.data.date));
+---
+<Base title="News · Minimum Viable Mind" description="What has changed on the tracker of the theories of consciousness, and why." strict>
+  <section class="page">
+    <p class="eyebrow">News</p>
+    <h1>News</h1>
+    {posts.length === 0 ? (
+      <p class="tplain">No posts yet. The first post will come once every statement in the records has been checked against its source; <N v={tk.verify_open_count} t={word(tk.verify_open_count)} /> still {tk.verify_open_count === 1 ? 'is' : 'are'} being checked.</p>
+    ) : (
+      <ol class="news-list">
+        {posts.map((p) => <li><span class="d"><N v={p.data.date} t={p.data.date_long} /> · {p.data.kind}</span> <a href={`/news/${p.id}/`}>{p.data.title}</a><p>{p.data.summary}</p></li>)}
+      </ol>
+    )}
+    <p class="meta">Follow the news: <a href="https://x.com/SentHorizons">@SentHorizons on X</a>.</p>
+  </section>
+</Base>

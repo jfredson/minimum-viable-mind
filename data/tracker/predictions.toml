@@ -1,0 +1,318 @@
+# Predictions: the leaves. Each is tied to one core claim of its theory, says who
+# stated it first and when (the earliest proponents' publication this session
+# opened that states it), and gives the test wording for and against and the
+# rivals it separates the theory from.
+#
+# Whether a prediction "could fail" and whether it "separates" the theory from a
+# rival are judgements, not facts: they live in judgements.toml as testability
+# judgements, read by both readers. The fields here record what the sources say.
+# Layout: data/tracker/README.md.
+
+# ======================================================== global workspace theory
+
+[[prediction]]
+id = "gwt-pfc-content"
+theory = "gwt"
+core_claim = "gwt-c3"
+statement = "What is consciously seen is represented in prefrontal cortex, so that its content can be decoded there, whether or not the person has to report it or use it in a task."
+stated_by = "proponent"
+first_stated = { source = "dehaene-2014", date = "2013-12-29", passage = "Global information sharing and routing would rely on a set of interconnected high-level cortical regions forming a ‘global workspace’ and involving primarily the dorsolateral prefrontal cortex, but also additional hubs in inferior parietal cortex, mid-temporal cortex, and precuneus", location = "section 'Conscious processing as global information sharing', first paragraph" }
+also_stated = [
+  { source = "dehaene-2014", passage = "In order to be globally shared, conscious information should be represented by a stable and reproducible brain-scale assembly for a minimal duration." },
+  { source = "cogitate-prereg-v1", passage = "In short, GNW predicts that the content of consciousness should be decodable from prefrontal areas, whereas IIT predicts that they should be maximally decodable from posterior areas." },
+  { source = "mashour-2020", passage = "In monkeys, however, recordings in the prefrontal cortex show that prefrontal neurons encode, in firing patterns, the specific current content of consciousness during binocular rivalry and related paradigms (Panagiotaropoulos et al., 2012). Importantly, those data were obtained in a no-report paradigm" },
+]
+test_for = "Features of a stimulus that the person consciously sees (its category, orientation, identity) can be decoded from prefrontal activity, including when the stimulus or the feature is irrelevant to the task and nothing is reported."
+test_against = "A feature the person consciously sees can be decoded from sensory cortex but not from prefrontal cortex, in a design sensitive enough to find it in prefrontal cortex for other features."
+separates_from = [
+  { theory = "iit", how = "IIT places conscious content mainly in posterior cortex and predicts it is maximally decodable there, with prefrontal cortex adding nothing.", source = "cogitate-prereg-v1" },
+]
+
+[[prediction]]
+id = "gwt-ignition"
+theory = "gwt"
+core_claim = "gwt-c2"
+statement = "When a stimulus becomes conscious, activity rises suddenly and late (about 250 to 300 ms after it appears) and spreads to prefrontal and parietal cortex; stimuli that stay unconscious do not do this. It holds whatever the sense, and whether or not the stimulus is reported."
+stated_by = "proponent"
+first_stated = { source = "dehaene-2014", date = "2013-12-29", passage = "conscious access is often characterized by a late non-linear amplification of activation which invades a distributed set of parietal, prefrontal and cingulate areas", location = "section 'Conscious access as an accumulation of evidence leading to an all-or-none ignition', third paragraph" }
+also_stated = [
+  { source = "cogitate-prereg-v1", passage = "It accordingly predicts that every conscious experience should be accompanied by activation of a prefrontal-parietal network in tandem with high-level sensory cortices representing the global broadcasting of information across the network." },
+  { source = "mashour-2020", passage = "This non-linear divergence occurs regardless of the stimulus modality or paradigm used to manipulate consciousness (e.g., reduced visibility, masking, inattention)." },
+]
+test_for = "Comparing physically identical stimuli that are and are not consciously perceived, the perceived ones produce a late (after about 250 ms), sudden increase of activity in prefrontal and parietal cortex, also when no report is required; or, where every stimulus is seen, each new percept produces such a response in prefrontal cortex."
+test_against = "In a design that removes the need to report, awareness-related differences are confined to sensory cortex, with no reliable prefrontal or parietal increase."
+separates_from = [
+  { theory = "iit", how = "IIT holds that activity in posterior areas is what is necessary; prefrontal activation is not a prerequisite.", source = "cogitate-prereg-v1" },
+]
+note = "Dehaene 2014 itself notes that when a stimulus is irrelevant to the task, conscious perception 'may correlate solely with a transient posterior negativity', so the report-free part of this prediction is firmest in the proponents' 2019 registration (cogitate-prereg-v1) and in mashour-2020's 'regardless of ... paradigm'."
+
+[[prediction]]
+id = "gwt-synchrony"
+theory = "gwt"
+core_claim = "gwt-c1"
+statement = "Conscious perception is accompanied by long-distance synchrony, in the beta or gamma band, between prefrontal cortex and the sensory areas that hold the content."
+stated_by = "proponent"
+first_stated = { source = "dehaene-2014", date = "2013-12-29", passage = "In intracranial recordings, conscious stimuli, but not non-conscious ones, trigger a sustained activation and the formation of a metastable state of long-distance phase synchrony in the beta band", location = "section 'Conscious processing as global information sharing', last paragraph" }
+also_stated = [
+  { source = "cogitate-prereg-v1", passage = "GNW postulates that global information sharing is mediated by a meta-stable state of long-range interareal interactions including prefrontal areas, and category specific areas, depending on the content of conscious perception. This pattern of information sharing can be approximated by measures of (gamma/beta) synchronization." },
+]
+test_for = "Content-specific synchrony between prefrontal cortex and the category-selective sensory area for the seen content, in the beta or gamma band, after about 250 ms."
+test_against = "No content-specific synchrony between prefrontal and category-selective areas in the predicted window, by the measure agreed in advance."
+separates_from = [
+  { theory = "iit", how = "IIT predicts synchrony within posterior cortex, between category-selective and early visual areas; synchrony with prefrontal cortex 'is not a prerequisite'.", source = "cogitate-prereg-v1" },
+]
+
+[[prediction]]
+id = "gwt-topdown"
+theory = "gwt"
+core_claim = "gwt-c1"
+statement = "Becoming aware of a stimulus involves top-down signals from the workspace, including prefrontal cortex, back to the sensory areas."
+stated_by = "proponent"
+first_stated = { source = "mashour-2020", date = "2020-03-04", passage = "its main tenets (late ignition, metastable sustained activity, long-distance cortical projections, top-down mobilization) have begun to receive extensive support", location = "section 'Conclusions', first paragraph" }
+also_stated = [
+  { source = "mashour-2020", passage = "compatible with the idea that consciously perceived stimuli were broadcasted globally in a top-down manner." },
+]
+test_for = "Models in which feedback from prefrontal cortex to sensory areas is switched off explain awareness clearly worse than models that keep it, when report is removed."
+test_against = "Awareness is explained as well or better with prefrontal feedback switched off, while feedback within sensory cortex is needed."
+separates_from = [
+  { theory = "iit", how = "IIT places the substrate of experience mainly in posterior cortex, so feedback from prefrontal cortex is not needed for it (the site's inference from the registration's wording).", source = "cogitate-prereg-v1" },
+]
+
+[[prediction]]
+id = "gwt-late"
+theory = "gwt"
+core_claim = "gwt-c4"
+statement = "The first 200 ms or so of processing can be the same whether or not a stimulus becomes conscious; the difference starts later."
+stated_by = "proponent"
+first_stated = { source = "dehaene-2014", date = "2013-12-29", passage = "In EEG, MEG, and intracranial recordings, conscious stimuli, compared to matched non-conscious ones, induce a late (~300 ms) and sudden increase in slow event-related potentials", location = "section 'Conscious access as an accumulation of evidence ...', third paragraph" }
+also_stated = [
+  { source = "mashour-2020", passage = "The first 200 ms of brain activity, corresponding to early perceptual processing, can be fully preserved on trials without conscious perception, particularly under inattention conditions" },
+]
+test_for = "With stimulus and task matched, the earliest reliable difference between consciously perceived and unperceived stimuli appears after about 200 ms."
+test_against = "With stimulus and task matched, a reliable awareness-related difference appears before 200 ms and carries the conscious content."
+separates_from = []
+note = "No rival on the pilot's list was found predicting an earlier start. The Cogitate protocol says IIT 'makes no specific predictions as to the relevant time window' (cogitate-protocol-2023, 'Multivariate decoding'), which is silence, not a contrary prediction."
+
+[[prediction]]
+id = "gwt-wm-transform"
+theory = "gwt"
+core_claim = "gwt-c5"
+statement = "Information held without ongoing firing ('activity-silent' memory) can be stored but not mentally transformed; transforming it needs an active, conscious state."
+stated_by = "proponent"
+first_stated = { source = "mashour-2020", date = "2020-03-04", passage = "Crucially, this view predicts that activity-silent working memories, although capable of bridging over delays, differ in an important way: only active neural states can be mentally transformed, e.g., by mental rotation, whereas activity-silent states merely store previously computed states", location = "section 'Conscious Representations and Working Memory', last paragraph" }
+test_for = "Whenever held information must be transformed, a decodable active state with signatures of conscious access reappears."
+test_against = "Held information is transformed while no active state can be decoded and no signature of conscious access appears."
+separates_from = []
+note = "No rival on the pilot's list was found stating the opposite. Recorded; scores nothing unless a testability reading finds a rival it separates from."
+
+[[prediction]]
+id = "gwt-offset"
+theory = "gwt"
+core_claim = "gwt-c2"
+statement = "When a lasting conscious stimulus disappears, a second brief ignition occurs in prefrontal cortex, updating the workspace."
+stated_by = "proponent"
+first_stated = { source = "cogitate-prereg-v1", date = "2019-01-16", passage = "A brief ignition is also expected at the offset of the stimuli, reflecting the conscious update at the moment of the disappearance of the stimulus.", location = "p. 6, 'Temporal dynamics of neural activity supporting a conscious experience'" }
+test_for = "A transient prefrontal response about 0.3 to 0.5 s after the offset of a consciously seen stimulus, as well as at its onset."
+test_against = "Prefrontal responses at onset but none at offset, in a design that finds offset responses elsewhere."
+separates_from = [
+  { theory = "iit", how = "IIT predicts sustained content-specific activity in posterior cortex for as long as the percept lasts, not phasic updates.", source = "cogitate-prereg-v1" },
+]
+note = "No earlier proponents' publication stating it was found. The Cogitate protocol derives it from predictive-coding papers by other authors (its references 38 to 40: Friston 2005, Rao and Ballard 1999, Chao et al. 2018)."
+
+[[prediction]]
+id = "gwt-silent"
+theory = "gwt"
+core_claim = "gwt-c2"
+statement = "Between the onset and offset ignitions, a lasting percept is held in an 'activity-silent' state, not by sustained activity."
+stated_by = "proponent"
+first_stated = { source = "cogitate-prereg-v1", date = "2019-01-16", passage = "GNW assumes that all experiences – regardless of their temporal extent – are accompanied by an initial ignition, followed by a decay of signal and maintenance of information in the form of an activity-silent state, with only occasional bursts of reactivation", location = "p. 6" }
+test_for = "Prefrontal activity returns to baseline between onset and offset of a lasting conscious stimulus, with no sustained content-specific activity there."
+test_against = "Sustained content-specific prefrontal activity for the whole duration of the percept."
+separates_from = [
+  { theory = "iit", how = "IIT predicts sustained content-specific activity (in posterior cortex) for the whole percept.", source = "cogitate-prereg-v1" },
+]
+note = "Sits uneasily with gwt-c5 (mashour-2020: the attended, conscious item 'is maintained as the persistent firing of neurons'). Recorded as the proponents stated it in 2019."
+
+# =================================================== integrated information theory
+
+[[prediction]]
+id = "iit-posterior"
+theory = "iit"
+core_claim = "iit-c5"
+statement = "The physical substrate of experience lies mainly in a posterior 'hot zone' (temporal, parietal and occipital cortex); prefrontal cortex is not needed, and conscious content is best decoded from the back of the brain."
+stated_by = "proponent"
+first_stated = { source = "cogitate-prereg-v1", date = "2019-01-16", passage = "A current auxiliary prediction of IIT, on the other hand, states that the physical substrate of consciousness resides primarily in a “posterior hot zone” in temporo-parietal-occipital cortex due to the connectivity architecture of those areas (‘pyramid-of-grids’-like) that is more suited for high phi than the different connectivity of prefrontal regions.", location = "pp. 5-6, 'Neural Activations related to consciousness'" }
+first_public = { source = "cogitate-protocol-2023", date = "2023-02-10", passage = "In contrast, an auxiliary prediction of IIT states that the NCC is primarily localized to the posterior hot zone." }
+also_stated = [
+  { source = "cogitate-prereg-v1", passage = "Thus, for GNW, activation of prefrontal1 areas is a prequisite for conscious experience, while IIT, in contrast, submits that activity in posterior areas is necessary for consciousness.", note = "The 1 after prefrontal is the source's footnote marker; prequisite is the source's spelling." },
+]
+test_for = "Awareness-related activity, or decodable conscious content, is found in posterior cortex, and adding prefrontal cortex adds no information."
+test_against = "Conscious content or awareness-related activity is absent from posterior cortex while present in prefrontal cortex, or prefrontal cortex adds information beyond posterior cortex."
+separates_from = [
+  { theory = "gwt", how = "GWT holds that prefrontal activation is a prerequisite for conscious experience.", source = "cogitate-prereg-v1" },
+]
+note = "The registration calls it an 'auxiliary' prediction. Whether it is tied to a core claim (here iit-c5, the main complex and its borders) is part of its testability judgement. IIT 4.0 (albantakis-2023) says the main complex's location 'should correspond to its location as determined through clinical and experimental evidence' but does not itself say where. Boly et al. 2017 (boly-2017) argue for a posterior hot zone without naming the theory. Tononi et al. 2016 and Koch et al. 2016 (Nature Reviews Neuroscience), which may state it earlier, were not opened (paywalled)."
+
+[[prediction]]
+id = "iit-sustained"
+theory = "iit"
+core_claim = "iit-c3"
+statement = "For as long as a stimulus is consciously experienced, a content-specific pattern of activity persists in posterior cortex."
+stated_by = "proponent"
+first_stated = { source = "cogitate-prereg-v1", date = "2019-01-16", passage = "In sum, GNW predicts a phasic ignition of the workspace followed by a decay (until a new content is consciously experienced), while IIT predicts, independent of any phasic transient, a sustained content-specific activity pattern persisting for as long as the stimulus is consciously experienced.", location = "pp. 6-7" }
+test_for = "Content-specific activity and information in posterior cortex last as long as the stimulus, and track its duration."
+test_against = "Posterior content-specific activity or information decays well before a still-visible stimulus ends."
+separates_from = [
+  { theory = "gwt", how = "GWT predicted a phasic ignition followed by decay.", source = "cogitate-prereg-v1" },
+]
+
+[[prediction]]
+id = "iit-synchrony"
+theory = "iit"
+core_claim = "iit-c2"
+statement = "Each conscious experience goes with its own pattern of synchrony between category-selective areas and early visual areas, inside posterior cortex."
+stated_by = "proponent"
+first_stated = { source = "cogitate-prereg-v1", date = "2019-01-16", passage = "Here, each distinct conscious experience should lead to distinct patterns of synchronization between areas in posterior cortex i.e., category selective areas and early sensory areas.", location = "p. 7, 'Connectivity patterns'" }
+test_for = "Sustained, content-specific synchrony between category-selective areas and V1/V2 for the duration of the percept."
+test_against = "No sustained content-specific synchrony between category-selective areas and V1/V2, by the measure agreed in advance."
+separates_from = [
+  { theory = "gwt", how = "GWT predicts long-range synchrony with prefrontal cortex instead.", source = "cogitate-prereg-v1" },
+]
+
+[[prediction]]
+id = "iit-phi-states"
+theory = "iit"
+core_claim = "iit-c1"
+statement = "Integrated information is high in conscious states (waking, dreaming) and low in unconscious ones (dreamless sleep, anaesthesia)."
+stated_by = "proponent"
+first_stated = { source = "albantakis-2023", date = "2023-10-17", passage = "A fundamental prediction is that Φ should be high in conscious states, such as wakefulness and dreaming, and low in unconscious states, such as dreamless sleep and anesthesia.", location = "section 'Conclusions'" }
+test_for = "Measures of integrated information, or validated proxies for it, are high in waking and dreaming and low in dreamless sleep and anaesthesia."
+test_against = "Such measures are as high in dreamless sleep or anaesthesia as in waking."
+separates_from = []
+note = "Global workspace theory also predicts that the workspace is disrupted in anaesthesia, sleep and disorders of consciousness (mashour-2020, section 'Global Neuronal Workspace and the Level of Consciousness'), so this prediction may not separate the two. Left for the testability reading."
+
+[[prediction]]
+id = "iit-inactive"
+theory = "iit"
+core_claim = "iit-c3"
+statement = "Parts of the main complex can carry conscious content while mostly quiet, but not once they are disabled."
+stated_by = "proponent"
+first_stated = { source = "albantakis-2023", date = "2023-10-17", passage = "Another prediction that follows from first principles is that constituents of the main complex can support conscious contents even if they are mostly inactive, but not if they are inactivated", location = "section 'Conclusions'" }
+test_for = "Disabling quiet (but not silenced) neurons of the main complex changes experience, while their quietness alone does not."
+test_against = "Disabling neurons that were already quiet leaves experience unchanged."
+separates_from = [
+  { theory = "gwt", how = "In GWT, conscious content is carried by active, persistent firing ('working memory is conscious only when it is coded by global, highly distributed persistent neural firing').", source = "mashour-2020" },
+]
+note = "The separation is inferred by the site from the two theories' statements; neither paper sets the two against each other on this point."
+
+[[prediction]]
+id = "iit-agnosia"
+theory = "iit"
+core_claim = "iit-c5"
+statement = "Completely disabling the parts of the main complex that carry some kind of content leaves the person unaware that anything is missing."
+stated_by = "proponent"
+first_stated = { source = "albantakis-2023", date = "2023-10-17", passage = "Yet another prediction is that the complete inactivation of constituents of the main complex should lead to absolute agnosia (unawareness that anything is missing).", location = "section 'Conclusions'" }
+test_for = "Complete loss of the relevant posterior region is followed by unawareness of the loss."
+test_against = "Complete loss of the region is followed by awareness that something is missing."
+separates_from = []
+note = "No rival found stating the opposite."
+
+[[prediction]]
+id = "iit-connections"
+theory = "iit"
+core_claim = "iit-c2"
+statement = "Changing the strength of connections inside the substrate of experience changes experience even if activity does not change."
+stated_by = "proponent"
+first_stated = { source = "albantakis-2023", date = "2023-10-17", passage = "A related prediction is that changes in the strength of connections within the neural substrate of consciousness should be associated with changes in experience, even if neural activity does not change", location = "section 'Conclusions'" }
+test_for = "A manipulation that changes connection strength in posterior cortex with activity held constant changes reported experience."
+test_against = "Such a manipulation leaves experience unchanged."
+separates_from = [
+  { theory = "gwt", how = "In GWT, what is conscious is what is broadcast by activity; with activity unchanged, nothing should change.", source = "mashour-2020" },
+]
+note = "Separation inferred by the site."
+
+[[prediction]]
+id = "iit-feedforward"
+theory = "iit"
+core_claim = "iit-c4"
+statement = "A machine built from feed-forward hardware has no experience, however human its behaviour."
+stated_by = "proponent"
+first_stated = { source = "albantakis-2023", date = "2023-10-17", passage = "Accordingly, artificial systems powered by super-intelligent computer programs, but implemented by feed-forward hardware or encompassing critical bottlenecks, would experience nothing (or nearly nothing) because they have the wrong kind of physical architecture, even though they may be behaviorally indistinguishable from human beings", location = "section 'Conclusions'" }
+test_for = "None stated: the paper names no observation that would show such a machine has, or lacks, experience."
+test_against = "None stated."
+separates_from = [
+  { theory = "gwt", how = "GWT ties experience to a functional architecture of broadcasting, which a machine could implement.", source = "mashour-2020" },
+]
+
+# ===================================================== the Sentient Horizons account
+# Taken from the 'What would change my mind' sections of the Working Positions
+# page, as the kickoff proposal says (section 3). All are stated by the account's
+# proponent. The page's latest revision is 2026-10-24; the split test was first set
+# out on 2026-10-23 and made precise on 2026-10-24 (the page's history).
+
+[[prediction]]
+id = "sh-central"
+theory = "sh"
+core_claim = "sh-c1"
+statement = "Nothing about experience will turn out to be predicted or explained by anything other than the binding."
+stated_by = "proponent"
+first_stated = { source = "sh-positions", date = "2026-10-24", passage = "And the central bet behind the whole map, that experience is this binding seen from the inside rather than something the binding produces on the side, loses if anything about experience turns out to predict or explain what the binding cannot.", location = "map position, What would change my mind" }
+test_for = "None stated beyond the bet itself."
+test_against = "A finding that some feature of experience is predicted or explained by something the binding cannot account for."
+separates_from = []
+note = "The page names a losing condition but no observation or study design that would show it."
+
+[[prediction]]
+id = "sh-split-novel"
+theory = "sh"
+core_claim = "sh-c2"
+statement = "Cutting the copies of a system's own commands off from its senses, while the commands still work, leaves practised single actions running, makes the system lose track of which changes it caused, and also degrades its response to new events in the world, including ones that have nothing to do with it; and this loss differs from what losing feedback alone does."
+stated_by = "proponent"
+first_stated = { source = "sh-positions", date = "2026-10-24", passage = "Remove the split, meaning cut the copies of the system’s own commands off from its senses while leaving the commands themselves working, and the prediction is three things. Practised single actions carry on. The system loses track of which changes it caused. And, the part no one has yet tested, its response to new events in the world, including ones that have nothing to do with it, degrades too.", location = "split position, What it rests on" }
+also_stated = [
+  { source = "sh-positions", passage = "If the split can be removed in this precise way and response to new events in the world carries on as before, the split was not doing the work I think it does, and the bet loses." },
+]
+test_for = "After the cut, response to new, unrelated events in the world degrades, in a way that differs from cutting off feedback alone, while practised single actions carry on."
+test_against = "After the cut, response to new events in the world carries on as before."
+separates_from = []
+note = "No rival on the pilot's list says anything about cutting the copies of a system's own commands, so any separation is the site's inference; it is left to the testability readings. The first two parts are reported as seen in monkeys (Sommer and Wurtz 2002 and 2004; Cavanaugh and colleagues 2016, as cited on the page); the third, the distinguishing part, is untested."
+
+[[prediction]]
+id = "sh-nosplit-flexible"
+theory = "sh"
+core_claim = "sh-c2"
+statement = "Someone in a state reported as having no split between self and world does not respond flexibly to something new."
+stated_by = "proponent"
+first_stated = { source = "sh-positions", date = "2026-10-24", passage = "And if a point of view survived the loss of the split, so that someone in a state reported as having no split between self and world still responded flexibly to something new, the split would not be what gives a point of view", location = "fades-or-not position, What would change my mind" }
+test_for = "During reported states with no self-world boundary (under psychedelic drugs, or in meditation), flexible response to new events is lost or degraded."
+test_against = "During such reported states, people still respond flexibly to new events."
+separates_from = []
+
+[[prediction]]
+id = "sh-enriching"
+theory = "sh"
+core_claim = "sh-c3"
+statement = "Removing a boundary, mattering, self-awareness or kept memory makes experience poorer but does not switch it off."
+stated_by = "proponent"
+first_stated = { source = "sh-positions", date = "2026-10-24", passage = "If removing one of the four features I call enriching turned out to switch experience off, that feature would move from enriching to required.", location = "map position, What would change my mind" }
+test_for = "Cases where one of the four is removed (for example, kept memory, as in Henry Molaison's case, which the page cites) and experience goes on."
+test_against = "Removing one of the four switches experience off."
+separates_from = [
+  { theory = "damasio", how = "Damasio's theory puts 'affect and feeling at the core' of consciousness (Seth and Bayne's Table 1, as quoted in the theory-list report), so it predicts that removing mattering switches experience off.", source = "theory-list-report" },
+]
+note = "Damasio's theory is on the ruled list of ten but is not in this pilot; its core claims are not yet fixed. The separation rests on a secondary quotation, on the verify list."
+
+[[prediction]]
+id = "sh-no-bare-awareness"
+theory = "sh"
+core_claim = "sh-c4"
+statement = "No experience is wholly without structure: removing senses, memory and self never leaves a bare awareness with nothing on one of the three axes."
+stated_by = "proponent"
+first_stated = { source = "sh-positions", date = "2026-10-24", passage = "If a subtraction ever reached experience with no structure at all, a bare awareness, the judgment above would be wrong.", location = "fades-or-not position, What would change my mind" }
+also_stated = [
+  { source = "sh-positions", passage = "And the judgment that every experience has something on each of the three axes would be wrong if there were an experience with nothing at all on one of them." },
+]
+test_for = "Every case examined of reported 'pure' or 'contentless' awareness still shows some integration, availability and depth."
+test_against = "A well-attested case of experience with nothing on one of the three axes."
+separates_from = []
+note = "Integrated information theory also holds that every experience is structured (albantakis-2023, Introduction: every experience is 'structured (composition)'), so this prediction is shared with at least one rival."

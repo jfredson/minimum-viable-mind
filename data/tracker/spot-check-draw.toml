@@ -1,0 +1,8 @@
+# The spot-check draw, made by scripts/tracker_spot_check.py --draw on 2026-11-20,
+# seed 20261120, after the method and seed were committed. Do not edit.
+
+seed = 20261120
+eligible_other = 36
+drawn = 18
+sentient_horizons = ["tst-sh-central", "tst-sh-enriching"]
+random = ["tst-gwt-topdown", "tst-iit-posterior", "tst-gwt-offset", "out-cogitate-iit-posterior", "out-bellet-gwt-pfc-content", "out-dellert-iit-posterior", "com-cogitate-gwt-silent", "tst-iit-inactive", "com-cogitate-gwt-pfc-content", "tst-iit-synchrony", "tst-gwt-wm-transform", "tst-gwt-pfc-content", "com-dellert-iit-posterior", "com-cogitate-iit-posterior", "out-bellet-iit-posterior", "out-bandara-gwt-topdown", "com2-dellert-gwt-ignition", "com-cogitate-gwt-synchrony"]

@@ -1,0 +1,8 @@
+---
+// A number or date from the records. The raw value goes in data-n, which the site check
+// (scripts/check_site.py) looks up in the data files; `t` is how it is written on the page
+// (a word, a long date), and defaults to the value itself.
+interface Props { v: number | string | null | undefined; t?: string }
+const { v, t } = Astro.props;
+---
+<span class="nv" data-n={String(v)}>{t ?? String(v)}</span>

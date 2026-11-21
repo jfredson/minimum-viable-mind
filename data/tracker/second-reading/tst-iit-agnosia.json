@@ -1,0 +1,30 @@
+{
+  "packet_id": "tst-iit-agnosia",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "SxIBa5yKIY_cm9cPiZyPgQE",
+  "finish_reason": "STOP",
+  "answer_text": "{\"could_fail\": true, \"separates\": true, \"separates_from\": [\"hot\", \"gwt\"], \"rival_view_from\": \"own knowledge\", \"reason\": \"A lesion or temporary inactivation study could observe a person losing the relevant posterior region while still noticing and reporting that sensory content is missing, which would count directly against this prediction. From my own knowledge, this separates Integrated Information Theory from Higher-Order Theories and Global Workspace Theory. Because those rivals ground conscious access and metacognitive monitoring in prefrontal or frontoparietal networks, they predict that intact frontal systems will detect the absence of sensory input (or even continue generating higher-order experience) rather than leaving the person wholly unaware of the loss.\", \"unsure\": false, \"unsure_why\": \"\"}",
+  "usage": {
+    "promptTokenCount": 1067,
+    "candidatesTokenCount": 164,
+    "totalTokenCount": 3389,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1067
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 164
+      }
+    ],
+    "thoughtsTokenCount": 2158,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.025354,
+  "seconds": 41.8,
+  "called_on": "2026-11-20 19:39:33 PST"
+}

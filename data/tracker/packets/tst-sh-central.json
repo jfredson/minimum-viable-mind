@@ -1,0 +1,44 @@
+{
+  "packet_id": "tst-sh-central",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES IT SEPARATE the theory from a rival: does at least one theory on the list of rivals predict something different (not merely stay silent)? If yes, name the rival or rivals, and say whether your view of the rival comes from the material given or from your own knowledge. Answer in JSON: {\"could_fail\": true|false, \"separates\": true|false, \"separates_from\": [ids], \"rival_view_from\": \"material\"|\"own knowledge\"|\"both\"|\"none\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "The Sentient Horizons account",
+  "core_claim": {
+    "quote": "My central bet, behind the whole map, is that experience is this binding, seen from the inside, rather than something the binding produces on the side, the way friction produces heat.",
+    "source": {
+      "citation": "Fredrickson JA. Working Positions. Sentient Horizons, latest revision shown on the page 2026-10-24",
+      "url": "https://sentient-horizons.com/positions/",
+      "date": "2026-10-24"
+    }
+  },
+  "prediction": {
+    "statement": "Nothing about experience will turn out to be predicted or explained by anything other than the binding.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2026-10-24",
+      "passage": "And the central bet behind the whole map, that experience is this binding seen from the inside rather than something the binding produces on the side, loses if anything about experience turns out to predict or explain what the binding cannot.",
+      "source": {
+        "citation": "Fredrickson JA. Working Positions. Sentient Horizons, latest revision shown on the page 2026-10-24",
+        "url": "https://sentient-horizons.com/positions/",
+        "date": "2026-10-24"
+      }
+    },
+    "test_for": "None stated beyond the bet itself.",
+    "test_against": "A finding that some feature of experience is predicted or explained by something the binding cannot account for."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "other_statements_of_the_prediction": [],
+  "this_reading_is": "the first reading of record"
+}

@@ -1,0 +1,8 @@
+---
+// Text quoted from a record (a statement, a quotation, a citation, a reason). The site check
+// finds it word for word in the data files, so a page cannot slip typed-in facts in as if
+// they were the record's. `as` picks the element; `q` adds quotation marks.
+interface Props { t: string | null | undefined; as?: string; q?: boolean; class?: string }
+const { t, as: Tag = 'span', q = false, class: cls } = Astro.props;
+---
+{t && (q ? <Tag class={cls}>“<span data-rec>{t}</span>”</Tag> : <Tag class={cls} data-rec>{t}</Tag>)}

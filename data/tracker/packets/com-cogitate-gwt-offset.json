@@ -1,0 +1,65 @@
+{
+  "packet_id": "com-cogitate-gwt-offset",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A study counts toward a prediction if that prediction was fixed, by the theory's proponents, in a dated record made before the study's data were collected, whether a publication or a registration. What decides is when the record was fixed, not when it became public. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates. Decide: BEFORE (a record by the proponents commits the theory to this prediction and was fixed before the study's data were collected), NOT-BEFORE (it was not), or UNCLEAR. If the study does not say when its data were collected, say how you decided. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Global workspace theory",
+  "core_claim": {
+    "quote": "Ignition is characterized by the sudden, coherent, and exclusive activation of a subset of workspace neurons coding for the current conscious content, with the remainder of the workspace neurons being inhibited.",
+    "source": {
+      "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+      "date": "2020-03-04"
+    }
+  },
+  "prediction": {
+    "statement": "When a lasting conscious stimulus disappears, a second brief ignition occurs in prefrontal cortex, updating the workspace.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-16",
+      "passage": "A brief ignition is also expected at the offset of the stimuli, reflecting the conscious update at the moment of the disappearance of the stimulus.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    "test_for": "A transient prefrontal response about 0.3 to 0.5 s after the offset of a consciously seen stimulus, as well as at its onset.",
+    "test_against": "Prefrontal responses at onset but none at offset, in a design that finds offset responses elsewhere."
+  },
+  "study": {
+    "name": "The Cogitate Consortium's adversarial test of global workspace and integrated information theory",
+    "source": {
+      "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+      "date": "2025-04-30"
+    },
+    "first_appeared": "2019-01-16 (registration (preregistration v1 on OSF))",
+    "data_collected": {
+      "when": "after 2019-01-16",
+      "basis": "The registration was created on OSF on 2019-01-16, and the protocol says the original and amended registrations were frozen before data acquisition began."
+    }
+  },
+  "passages": [
+    {
+      "text": "A brief ignition is also expected at the offset of the stimuli, reflecting the conscious update at the moment of the disappearance of the stimulus.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    {
+      "text": "The original and the amended preregistration files were frozen prior to the commencement of data acquisition.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, Bendtz K, Ferrante O, ... Dehaene S, Koch C, Tononi G, Ward LM. An adversarial collaboration protocol for testing contrasting predictions of global neuronal workspace and integrated information theory. PLOS ONE 18(2):e0268577, 2023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9916582/",
+        "date": "2023-02-10"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2019-01-16",
+    "data_collected": "after 2019-01-16"
+  },
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,30 @@
+{
+  "packet_id": "tst-gwt-offset",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "yxEBa6W1PJ3Cn88P_sTBkQU",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"could_fail\": true,\n  \"separates\": true,\n  \"separates_from\": [\n    \"iit\"\n  ],\n  \"rival_view_from\": \"material\",\n  \"reason\": \"The prediction could fail because brain recordings can directly measure whether a transient response occurs in the prefrontal cortex shortly after a consciously perceived stimulus disappears. Finding prefrontal activity at stimulus onset—alongside offset responses in other brain areas—without a prefrontal ignition at offset would count clearly against the prediction. It also separates Global Workspace Theory from Integrated Information Theory, which, as stated in the provided material, predicts sustained posterior activity lasting for the duration of the percept rather than phasic updates.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1115,
+    "candidatesTokenCount": 169,
+    "totalTokenCount": 2709,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1115
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 169
+      }
+    ],
+    "thoughtsTokenCount": 1425,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.01817,
+  "seconds": 20.3,
+  "called_on": "2026-11-20 19:37:04 PST"
+}

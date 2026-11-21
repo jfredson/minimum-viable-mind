@@ -1,0 +1,69 @@
+{
+  "packet_id": "out-cogitate-gwt-silent",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Global workspace theory",
+  "core_claim": {
+    "quote": "Ignition is characterized by the sudden, coherent, and exclusive activation of a subset of workspace neurons coding for the current conscious content, with the remainder of the workspace neurons being inhibited.",
+    "source": {
+      "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+      "date": "2020-03-04"
+    }
+  },
+  "prediction": {
+    "statement": "Between the onset and offset ignitions, a lasting percept is held in an 'activity-silent' state, not by sustained activity.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-16",
+      "passage": "GNW assumes that all experiences – regardless of their temporal extent – are accompanied by an initial ignition, followed by a decay of signal and maintenance of information in the form of an activity-silent state, with only occasional bursts of reactivation",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    "test_for": "Prefrontal activity returns to baseline between onset and offset of a lasting conscious stimulus, with no sustained content-specific activity there.",
+    "test_against": "Sustained content-specific prefrontal activity for the whole duration of the percept."
+  },
+  "study": {
+    "name": "The Cogitate Consortium's adversarial test of global workspace and integrated information theory",
+    "source": {
+      "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+      "date": "2025-04-30"
+    },
+    "first_appeared": "2019-01-16 (registration (preregistration v1 on OSF))",
+    "data_collected": {
+      "when": "after 2019-01-16",
+      "basis": "The registration was created on OSF on 2019-01-16, and the protocol says the original and amended registrations were frozen before data acquisition began."
+    }
+  },
+  "passages": [
+    {
+      "text": "In the PFC ROIs, significant cross-task face–object decoding accuracy (approximately 70%) was also evident, but the temporal generalization of this decoding was restricted to approximately 0.2–0.4 s (Fig. 2b, bottom row).",
+      "source": {
+        "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+        "date": "2025-04-30"
+      }
+    },
+    {
+      "text": "Cross-temporal generalization of decoding in MEG was sustained in posterior ROIs and brief in PFC ROIs for all three stimulus durations (see section 5.1.1.2 in Supplementary Information).",
+      "source": {
+        "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+        "date": "2025-04-30"
+      }
+    },
+    {
+      "text": "In PFC ROIs, cross-temporal RSA revealed transient face–object categorical representation at stimulus onset, but not at stimulus offset.",
+      "source": {
+        "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+        "date": "2025-04-30"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,318 @@
+{
+  "mode": "settled",
+  "readers": [
+    "claude",
+    "gemini"
+  ],
+  "judgement_status": {
+    "agreed": 32,
+    "ruled": 17,
+    "one-reader": 0,
+    "disagreed": 0,
+    "open-for-john": 0,
+    "unread": 0,
+    "superseded": 1
+  },
+  "unsettled": [],
+  "theories": {
+    "gwt": {
+      "name": "Global workspace theory",
+      "testability": 80.0,
+      "testability_by_claim": {
+        "gwt-c1": 1.0,
+        "gwt-c2": 1.0,
+        "gwt-c3": 1.0,
+        "gwt-c4": 1.0,
+        "gwt-c5": 0.0
+      },
+      "past_bar": true,
+      "claims_lacking_for_bar": [
+        "gwt-c5"
+      ],
+      "support": 36.4,
+      "support_rests_on": {
+        "counted_outcomes": 6,
+        "studies": [
+          "cogitate-2025",
+          "dellert-2025"
+        ],
+        "groups": [
+          "Cogitate Consortium",
+          "Straube group (last author; participants recruited at the University of Münster)"
+        ],
+        "total_weight": 44,
+        "weighted_sum": -12
+      },
+      "left_to_test": 37.5,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 7,
+        "placeholders_for_claims_with_none": [
+          "gwt-c5"
+        ],
+        "untested": 3,
+        "total": 8
+      },
+      "group": "ranked",
+      "leans_against": true
+    },
+    "iit": {
+      "name": "Integrated information theory",
+      "testability": 60.0,
+      "testability_by_claim": {
+        "iit-c1": 0.0,
+        "iit-c2": 1.0,
+        "iit-c3": 1.0,
+        "iit-c4": 0.0,
+        "iit-c5": 1.0
+      },
+      "past_bar": true,
+      "claims_lacking_for_bar": [
+        "iit-c1",
+        "iit-c4"
+      ],
+      "support": 56.2,
+      "support_rests_on": {
+        "counted_outcomes": 5,
+        "studies": [
+          "bellet-2022",
+          "cogitate-2025",
+          "dellert-2025"
+        ],
+        "groups": [
+          "Cogitate Consortium",
+          "Panagiotaropoulos group (last author)",
+          "Straube group (last author; participants recruited at the University of Münster)"
+        ],
+        "total_weight": 32,
+        "weighted_sum": 4
+      },
+      "left_to_test": 50.0,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 4,
+        "placeholders_for_claims_with_none": [
+          "iit-c1",
+          "iit-c4"
+        ],
+        "untested": 3,
+        "total": 6
+      },
+      "group": "ranked",
+      "leans_against": false
+    },
+    "sh": {
+      "name": "The Sentient Horizons account",
+      "testability": 25.0,
+      "testability_by_claim": {
+        "sh-c1": 0.0,
+        "sh-c2": 0.0,
+        "sh-c3": 1.0,
+        "sh-c4": 0.0
+      },
+      "past_bar": false,
+      "claims_lacking_for_bar": [
+        "sh-c1",
+        "sh-c2",
+        "sh-c4"
+      ],
+      "support": null,
+      "support_rests_on": {
+        "counted_outcomes": 0,
+        "studies": [],
+        "groups": [],
+        "total_weight": 0,
+        "weighted_sum": 0
+      },
+      "left_to_test": 100.0,
+      "left_to_test_counts": {
+        "distinguishing_core_predictions": 1,
+        "placeholders_for_claims_with_none": [
+          "sh-c1",
+          "sh-c2",
+          "sh-c4"
+        ],
+        "untested": 4,
+        "total": 4
+      },
+      "group": "not yet defined sharply enough to rank",
+      "leans_against": false
+    }
+  },
+  "ranking": {
+    "ranked": [
+      {
+        "theory": "iit",
+        "rank": 1
+      },
+      {
+        "theory": "gwt",
+        "rank": 1
+      }
+    ],
+    "shared_because_one_study_could_swap_them": {
+      "iit|gwt": "dellert-2025"
+    },
+    "testable_too_little_tested": [],
+    "not_yet_defined_sharply_enough": [
+      "sh"
+    ]
+  },
+  "headline": {
+    "tested": 8,
+    "distinguishing_predictions": 12,
+    "share_tested": 66.7,
+    "note": "Tested at all (ruled by John: 'A, tested at all'): the share of distinguishing predictions tied to core claims that at least one counted study has tested. It measures how widely, not how firmly; the support scores carry the strength. It can fall when predictions are added."
+  },
+  "counted_outcomes": [
+    {
+      "judgement": "out-cogitate-gwt-pfc-content",
+      "theory": "gwt",
+      "prediction": "gwt-pfc-content",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": 0,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "ruled"
+    },
+    {
+      "judgement": "out-cogitate-gwt-ignition",
+      "theory": "gwt",
+      "prediction": "gwt-ignition",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": 0,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "ruled"
+    },
+    {
+      "judgement": "out-cogitate-gwt-synchrony",
+      "theory": "gwt",
+      "prediction": "gwt-synchrony",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": -1,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "agreed"
+    },
+    {
+      "judgement": "out-dellert-gwt-ignition",
+      "theory": "gwt",
+      "prediction": "gwt-ignition",
+      "study": "dellert-2025",
+      "group": "Straube group (last author; participants recruited at the University of Münster)",
+      "value": -1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "agreed"
+    },
+    {
+      "judgement": "out-dellert-iit-posterior",
+      "theory": "iit",
+      "prediction": "iit-posterior",
+      "study": "dellert-2025",
+      "group": "Straube group (last author; participants recruited at the University of Münster)",
+      "value": 1,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "agreed"
+    },
+    {
+      "judgement": "out-cogitate-gwt-offset",
+      "theory": "gwt",
+      "prediction": "gwt-offset",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": -1,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "agreed"
+    },
+    {
+      "judgement": "out-cogitate-gwt-silent",
+      "theory": "gwt",
+      "prediction": "gwt-silent",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": 1,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "agreed"
+    },
+    {
+      "judgement": "out-cogitate-iit-posterior",
+      "theory": "iit",
+      "prediction": "iit-posterior",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": 1,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "agreed"
+    },
+    {
+      "judgement": "out-cogitate-iit-sustained",
+      "theory": "iit",
+      "prediction": "iit-sustained",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": 0,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "agreed"
+    },
+    {
+      "judgement": "out-cogitate-iit-synchrony",
+      "theory": "iit",
+      "prediction": "iit-synchrony",
+      "study": "cogitate-2025",
+      "group": "Cogitate Consortium",
+      "value": -1,
+      "weight": 4,
+      "multiplier": 2,
+      "status": "agreed"
+    },
+    {
+      "judgement": "out-bellet-iit-posterior",
+      "theory": "iit",
+      "prediction": "iit-posterior",
+      "study": "bellet-2022",
+      "group": "Panagiotaropoulos group (last author)",
+      "value": 0,
+      "weight": 2,
+      "multiplier": 2,
+      "status": "agreed"
+    }
+  ],
+  "alternative_readings": {
+    "bar_counts_any_prediction_that_could_fail": {
+      "groups": {
+        "gwt": "ranked",
+        "iit": "ranked",
+        "sh": "not yet defined sharply enough to rank"
+      },
+      "ranking": {
+        "ranked": [
+          {
+            "theory": "iit",
+            "rank": 1
+          },
+          {
+            "theory": "gwt",
+            "rank": 1
+          }
+        ],
+        "shared_because_one_study_could_swap_them": {
+          "iit|gwt": "dellert-2025"
+        },
+        "testable_too_little_tested": [],
+        "not_yet_defined_sharply_enough": [
+          "sh"
+        ]
+      },
+      "why": "The first wording of ranking rule 2 did not say whether the prediction must separate the theory from a rival. John ruled on 2026-11-20 ('Yes, must separate') that it must; the main result follows the ruling. This is the superseded literal reading, kept for comparison."
+    }
+  },
+  "open_verify_entries": 5
+}

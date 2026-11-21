@@ -1,0 +1,224 @@
+# Judgements settled, or partly settled, by a rule John ruled (not by either reader).
+# tracker_scores.py applies these over the readings:
+#   - a commitment ruling with no open_part sets the verdict; with an open_part the row
+#     stays unsettled for John;
+#   - a testability ruling sets "separates" for every reader; the row is settled if the
+#     readers also agree on "could fail".
+# Rulings of 2026-11-20, relayed by the master session for the theories tracker:
+#   C, "Yes, sourced only": a prediction separates a theory from a rival only when a
+#      publication by the rival's own proponents, opened and cited, predicts something
+#      different. A reader's own knowledge and a rival's silence do not count.
+#   D, "Yes, that test": a prediction counts for a study if the theory's proponents fixed
+#      it before they could have known the study's result: before the registration, for a
+#      study registered before its data were collected; before its earliest public
+#      appearance, for any other study; before the data first appeared, for a study
+#      reanalysing earlier published data. Stating and testing in the same paper still
+#      does not count.
+
+# ------------------------------------------------------------- rule D (dating)
+
+# superseded on 2026-11-20 by a later entry for the same judgement
+# judgement = "com-bellet-gwt-pfc-content"
+# rule = "D"
+# settles = "dates"
+# verdict = "before"
+# reason = "Fixed 2013-12-29 (dehaene-2014); the study first appeared 2022-02-24 and was not registered."
+# open_part = "Whether the 2013 passage commits the theory to this test: content decodable in prefrontal cortex with no report and no task. Gemini doubted it ('without explicitly committing the theory to decodable prefrontal representations in the absence of report or task relevance'); Claude read it as committing, unsure. For John."
+# 
+[[ruling]]
+judgement = "com-bellet-iit-posterior"
+rule = "D"
+settles = "dates"
+verdict = "before"
+reason = "Fixed 2019-01-16 in the Cogitate registration, signed by the theory's proponents; the study first appeared 2022-02-24 and was not registered. Both readers' doubt was about when the recordings were made, which rule D makes irrelevant."
+open_part = ""
+note = "This makes the pair countable for the first time, so it needs an outcome judgement: out-bellet-iit-posterior, read so far by Claude only (no Gemini call was authorised for it)."
+
+# superseded on 2026-11-20 by a later entry for the same judgement
+# judgement = "com-bandara-gwt-topdown"
+# rule = "D"
+# settles = "dates"
+# verdict = "before"
+# reason = "The study reanalyses data that first appeared 2015-08-05 (shafto-pitts-2015). The 1998 paper, now opened, says the workspace gates processors through 'descending modulatory projections from workspace neurons to more peripheral processor neurons' (dehaene-1998), 1998-11-24, before 2015."
+# open_part = "Whether the 1998 passage, about gating which processors enter the workspace in effortful tasks, commits the theory to this test: that becoming aware of a stimulus needs top-down signals from prefrontal cortex to sensory areas. Gemini doubted it ('that brief excerpt does not explicitly specify prefrontal-to-sensory feedback in stimulus awareness'). For John."
+# 
+[[ruling]]
+judgement = "com-bandara-iit-posterior"
+rule = "D"
+settles = "dates"
+verdict = "not-before"
+reason = "The data first appeared 2015-08-05; the earliest proponents' record opened is 2019-01-16. Not in time. Both readers agreed."
+open_part = ""
+
+# superseded on 2026-11-20 by a later entry for the same judgement
+# judgement = "com-dellert-gwt-ignition"
+# rule = "D"
+# settles = "dates"
+# verdict = "before"
+# reason = "Fixed 2013-12-29 (late fronto-parietal ignition) and 2020-03-04 (any modality or paradigm); the study first appeared 2025-05-21 and was not registered."
+# open_part = "Whether the passages commit the theory to this test in a design with no report. Gemini: 'neither quoted passage explicitly states that this holds without report'. For John. (The 2019 Cogitate registration, signed by the theory's proponents, says 'every conscious experience should be accompanied by activation of a prefrontal-parietal network', which may answer it; it was not in this packet.)"
+# 
+[[ruling]]
+judgement = "com-dellert-iit-posterior"
+rule = "D"
+settles = "dates"
+verdict = "before"
+reason = "Fixed 2019-01-16; the study first appeared 2025-05-21. Both readers agreed."
+open_part = ""
+
+# ------------------------------------------------------------- rule C (separation)
+# The five rows where a reader said a rival disagrees and the other did not, and the
+# rows whose separation, agreed by both readers, rested on something other than a rival
+# proponents' publication (an audit under the same rule).
+
+[[ruling]]
+judgement = "tst-gwt-late"
+rule = "C"
+settles = "separation"
+separates = true
+separates_from = ["rpt"]
+source = "lamme-2018"
+passage = "Recurrent processing starts within 100 ms after stimulus presentation, at first between low-level visual areas, and then more widespread between visual cortex. Neural correlates such as V1 contextual modulation, PPI and VAN (see text) are shown. These recurrent interactions enable phenomenal (P-) consciousness of the visual stimulus: you SEE."
+reason = "Recurrent processing theory's proponent puts seeing at recurrent processing from within the first 100 ms, before the late ignition the workspace prediction requires. No IIT proponents' passage on timing was found, so IIT is not named."
+
+[[ruling]]
+judgement = "tst-iit-agnosia"
+rule = "C"
+settles = "separation"
+separates = false
+separates_from = []
+reason = "No opened publication by proponents of a rival (higher-order theories, global workspace theory) predicts awareness of the loss. Gemini's separation rested on its own knowledge."
+
+[[ruling]]
+judgement = "tst-sh-split-novel"
+rule = "C"
+settles = "separation"
+separates = false
+separates_from = []
+reason = "No opened rival proponents' publication says anything about cutting the copies of a system's own commands; the rivals are silent, and silence does not count."
+
+[[ruling]]
+judgement = "tst-sh-nosplit-flexible"
+rule = "C"
+settles = "separation"
+separates = false
+separates_from = []
+reason = "No opened rival proponents' publication predicts flexible response in states with no self-world boundary. Gemini's separation from global workspace theory rested on its own knowledge."
+
+# superseded on 2026-11-20 by a later entry for the same judgement
+# judgement = "tst-sh-no-bare-awareness"
+# rule = "C"
+# settles = "separation"
+# separates = true
+# separates_from = ["rpt"]
+# source = "lamme-2018"
+# passage = "Recurrent processing between visual areas suffices for conscious visual experience to arise."
+# reason = "Recurrent processing theory's proponent says experience arises without global availability (fronto-parietal recurrence adds only access and report), which predicts an experience with nothing on the account's availability axis. No IIT proponents' passage saying so was opened, so IIT is not named."
+# open_part_note = "Separation settled by rule C. Whether the prediction could fail is still disputed (Claude: yes; Gemini: no, the axes have no observable measure), so the row stays unsettled for John."
+# 
+[[ruling]]
+judgement = "tst-sh-enriching"
+rule = "C"
+settles = "separation"
+separates = true
+separates_from = ["damasio"]
+source = "singer-damasio-2025"
+passage = "Spontaneously conscious interoceptive, homoeostatic feelings are the basis for subjectivity. Consciousness proper results from the combination of subjectivity with the exteroceptive, cognitive and linguistic processes that constitute the modern mind."
+reason = "Audit: both readers agreed it separates from Damasio's theory, but on a secondary quotation. Damasio's own 2025 paper makes homeostatic feeling the basis of subjectivity, so removing mattering would remove the ground of consciousness, where the account predicts only a poorer experience."
+
+[[ruling]]
+judgement = "tst-gwt-ignition"
+rule = "C"
+settles = "separation"
+separates = true
+separates_from = ["iit", "rpt"]
+source = "lamme-2018"
+passage = "Adding more widespread recurrent interactions—including fronto-parietal activation—may give you the ability to cognitively manipulate and report the conscious visual percept, but this is not explaining the unconscious/conscious transition itself"
+reason = "Audit: the separation from IIT rests on the Cogitate registration, which the theory's proponents signed; the separation from recurrent processing theory now rests on its proponent's own paper, not on others' descriptions."
+
+[[ruling]]
+judgement = "tst-gwt-topdown"
+rule = "C"
+settles = "separation"
+separates = true
+separates_from = ["iit", "rpt"]
+source = "lamme-2018"
+passage = "The second type of theories, however, confine all the necessary ingredients for seeing to the visual processes (or visual pathways) themselves."
+reason = "Audit: as for tst-gwt-ignition; recurrent processing theory confines what seeing needs to the visual pathways, so prefrontal feedback is not needed."
+
+[[ruling]]
+judgement = "tst-iit-inactive"
+rule = "C"
+settles = "separation"
+separates = true
+separates_from = ["gwt"]
+source = "mashour-2020"
+passage = "Thus, we propose that working memory is conscious only when it is coded by global, highly distributed persistent neural firing"
+reason = "Audit: the workspace theory's proponents tie conscious content to active firing, so quiet neurons carry none; that is a different prediction from IIT's."
+
+[[ruling]]
+judgement = "tst-iit-connections"
+rule = "C"
+settles = "separation"
+separates = false
+separates_from = []
+reason = "Audit: both readers said it separates, but no opened workspace (or other rival) proponents' passage predicts that experience stays the same when connection strength changes and activity does not. An inference from what the theory emphasises does not count."
+
+# ------------------------------------------- John's settlements of the seven open rows
+# John, 2026-11-20, "Yes, as you lean" (relayed by the master session). Rule E is new:
+# when an outcome is split between "mixed" and one side, it is recorded as "mixed".
+# Weakest step, stated when ruled: it always pulls toward the middle, so it is to be
+# reviewed when stage 3 shows how often it fires.
+
+[[ruling]]
+judgement = "out-cogitate-gwt-pfc-content"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split mixed (Claude) and against (Gemini); by rule E, mixed."
+open_part = ""
+
+[[ruling]]
+judgement = "out-cogitate-gwt-ignition"
+rule = "E"
+settles = "outcome"
+verdict = "mixed"
+reason = "Readers split for (Claude) and mixed (Gemini); by rule E, mixed."
+open_part = ""
+
+[[ruling]]
+judgement = "com-bellet-gwt-pfc-content"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "The readers split on whether the 2013 passage commits the theory to the test, so the commitment is unclear and the study is not counted for this prediction."
+open_part = ""
+replaces_rule_d_entry = true
+
+[[ruling]]
+judgement = "com-bandara-gwt-topdown"
+rule = "after-the-fact rule 3 (applied by John, 2026-11-20)"
+settles = "commitment"
+verdict = "unclear"
+reason = "The readers split on whether the 1998 passage commits the theory to the test, so the commitment is unclear and the study is not counted for this prediction."
+open_part = ""
+replaces_rule_d_entry = true
+
+[[ruling]]
+judgement = "com-dellert-gwt-ignition"
+rule = "John, 2026-11-20, item 3"
+settles = "commitment"
+verdict = "superseded"
+superseded_by = "com2-dellert-gwt-ignition"
+reason = "Put again with the 2019 registration's passages; the new judgement decides."
+open_part = ""
+
+[[ruling]]
+judgement = "tst-sh-no-bare-awareness"
+rule = "John, 2026-11-20, item 5"
+settles = "could_fail"
+could_fail = false
+separates = true
+separates_from = ["rpt"]
+reason = "The readers split on whether it could fail; John: not counted. Separation stays as settled by rule C."
+open_part = ""

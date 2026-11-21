@@ -1,0 +1,30 @@
+{
+  "packet_id": "tst-iit-feedforward",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "zRIBa9LyA-qOm9cPpbO7kAs",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"could_fail\": false,\n  \"separates\": true,\n  \"separates_from\": [\n    \"gwt\",\n    \"hot\",\n    \"ast\"\n  ],\n  \"rival_view_from\": \"both\",\n  \"reason\": \"The prediction cannot fail in an actual study because the machine can be behaviorally indistinguishable from a human, leaving no independent observation that could show it has experience. However, the claim separates IIT from functionalist rivals like Global Workspace Theory, Higher-Order Theories, and Attention Schema Theory. As the material notes for GWT and as is established for HOT and AST, these theories tie consciousness to functional or computational architectures, meaning a machine implementing the right functions would have experience even on feed-forward hardware.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1227,
+    "candidatesTokenCount": 185,
+    "totalTokenCount": 2586,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1227
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 185
+      }
+    ],
+    "thoughtsTokenCount": 1174,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.016044,
+  "seconds": 19.1,
+  "called_on": "2026-11-20 19:41:20 PST"
+}

@@ -4,10 +4,11 @@
 // pattern of the sibling sites (quiet-galaxy/scripts/social-image.mjs, belt-equation's and
 // upgrade-tree's): the site's name in the accent's capitals, one line in the large sans, a smaller
 // line under it, the address in the monospace; no stock picture. Drawn in the "Notebook" skin's own
-// light-theme tokens (site/src/styles/skin.css): the cool off-white page, ink, the ink violet, and
+// light-theme tokens (site/src/styles/skin.css): the cool off-white page, ink, the mulberry accent (the
+// ink violet until the re-inking of 2026-11-21), and
 // the graph paper of 24-pixel squares fading out down the picture, as it does behind the first screen.
-// The big line is the plain-language page's title; the smaller one is how the Sentient Horizons
-// Projects page describes this project.
+// Since 2026-11-21 the words are the tracker's: the big lines are the home page's title, the smaller
+// one the footer line (both draft copy, not yet through the voice checks).
 //
 // Run from the repository root after changing the skin or these words:
 //   node scripts/social-image.mjs
@@ -28,14 +29,14 @@ const MONO = "Menlo, 'SF Mono', Consolas, monospace";
 const bg = '#f4f4f1';
 const ink = '#1b1b1a';
 const muted = '#6a6a66';
-const accent = '#5b4a9e';
+const accent = '#8e2f63';
 const line = 'rgba(27, 27, 26, 0.12)';
 
 const NAME = 'Minimum Viable Mind';
-const BIG = ['The smallest possible mind'];
+const BIG = ['How the theories of', 'consciousness are holding up'];
 const SMALL = [
-  'A research programme that runs its own experiments, each one',
-  'saying in advance what result would count against it',
+  "Every theory of consciousness, held to the same rules,",
+  "this site's own included",
 ];
 const DOMAIN = 'minimumviablemind.sentient-horizons.com';
 
@@ -58,8 +59,8 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
 <rect width="${W}" height="${H}" fill="${bg}"/>
 <g mask="url(#m)" opacity="0.8">${grid}</g>
 <text x="72" y="96" font-family="${SANS}" font-size="28" font-weight="600" letter-spacing="5" fill="${accent}">${NAME.toUpperCase()}</text>
-${BIG.map((t, i) => `<text x="72" y="${310 + i * 96}" font-family="${SANS}" font-size="84" font-weight="600" letter-spacing="-2" fill="${ink}">${t}</text>`).join('\n')}
-${SMALL.map((t, i) => `<text x="72" y="${398 + i * 42}" font-family="${SANS}" font-size="30" fill="${muted}">${t}</text>`).join('\n')}
+${BIG.map((t, i) => `<text x="72" y="${232 + i * 84}" font-family="${SANS}" font-size="72" font-weight="600" letter-spacing="-2" fill="${ink}">${t.replace(/'/g, '&#8217;')}</text>`).join('\n')}
+${SMALL.map((t, i) => `<text x="72" y="${408 + i * 42}" font-family="${SANS}" font-size="30" fill="${muted}">${t}</text>`).join('\n')}
 <text x="72" y="560" font-family="${MONO}" font-size="26" fill="${muted}">${DOMAIN}</text>
 </svg>
 `;

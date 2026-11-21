@@ -4,8 +4,16 @@
 // not-found page is left out. Added 2026-10-31, when a search for the family's sites by name found
 // four of them, this one among them, serving no sitemap.
 import type { APIRoute } from 'astro';
+import { tk } from '../lib/tracker';
 
-const PAGES = ['/', '/eli5/', '/ladder/', '/questions/', '/learned/', '/story/', '/spend/'];
+// Since 2026-11-21 the tracker's pages too: the theory and prediction pages are listed from the
+// records, so a theory the scoring adds appears here with no change.
+const PAGES = [
+  '/', '/theories/', '/questions/', '/positions/', '/tests/', '/news/', '/about/',
+  ...Object.keys(tk.theories).map((id) => `/theories/${id}/`),
+  ...Object.keys(tk.predictions).map((id) => `/predictions/${id}/`),
+  '/eli5/', '/ladder/', '/learned/', '/story/', '/spend/',
+];
 
 export const GET: APIRoute = ({ site }) => {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

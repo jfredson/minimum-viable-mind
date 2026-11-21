@@ -1,0 +1,30 @@
+{
+  "packet_id": "com-bandara-iit-posterior",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "6Q4Ba8S8JeHMm9cPhafbsAE",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"verdict\": \"not-before\",\n  \"reason\": \"The provided record fixing the prediction to integrated information theory is an OSF preregistration dated January 16, 2019. Although the study does not give exact collection dates, it reanalyzes an existing dataset from Shafto and Pitts (2015), which guarantees the data were collected in or before 2015. Because the data were collected years before the 2019 prediction record was fixed, the prediction was not made before data collection.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1519,
+    "candidatesTokenCount": 140,
+    "totalTokenCount": 1865,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1519
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 140
+      }
+    ],
+    "thoughtsTokenCount": 206,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.006498,
+  "seconds": 4.4,
+  "called_on": "2026-11-20 19:24:29 PST"
+}

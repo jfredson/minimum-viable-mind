@@ -1,0 +1,158 @@
+# The theories in the stage 2 pilot, and the core claims of each, fixed on
+# 2026-11-20 before any scoring (kickoff proposal, section 4: "Each theory's core
+# claims, between three and seven, are taken from one named publication by its own
+# proponents and quoted"). A core claim changes only at the yearly review.
+# Layout: data/tracker/README.md.
+
+[[theory]]
+id = "gwt"
+name = "Global workspace theory"
+plain = "Experience is information made widely available across the brain by a network of long-range neurons, prefrontal cortex among its key parts, which 'ignites' suddenly when something becomes conscious."
+core_claims_from = "mashour-2020"
+fixed_on = "2026-11-20"
+proponents = ["Stanislas Dehaene", "Jean-Pierre Changeux", "George Mashour", "Pieter Roelfsema"]
+camp_note = "A study counts as run inside this theory's camp when one of its authors is an author of a proponents' statement of the theory used in these records (mashour-2020, dehaene-2014, or the Cogitate registration as a GWT voice)."
+
+[[theory]]
+id = "iit"
+name = "Integrated information theory"
+plain = "Experience is identical to the structure of cause and effect that a physical system specifies on itself, as one irreducible whole; how much experience there is is measured by that whole's integrated information."
+core_claims_from = "albantakis-2023"
+fixed_on = "2026-11-20"
+proponents = ["Giulio Tononi", "Christof Koch", "Melanie Boly", "Larissa Albantakis"]
+camp_note = "As for gwt, with albantakis-2023, boly-2017 and the Cogitate registration as an IIT voice."
+
+[[theory]]
+id = "sh"
+name = "The Sentient Horizons account"
+plain = "Experience is a system binding the just-past into the moment now, seen from the inside; a point of view comes from the system telling what it does from what happens to it; other features make experience richer without switching it on."
+core_claims_from = "sh-positions"
+fixed_on = "2026-11-20"
+proponents = ["John Andrew Fredrickson"]
+by_exception = "In by stated exception (kickoff ruling 4a). It is the site owner's own account, so every judgement on its rows is read first by the outside reader (ruling 7b)."
+pending_proposal = "sh-proposal-2026-11-20 (not ruled). Its Choice C would change the core claims; see README section 'Where the unruled proposal would change the account'."
+
+# ---------------------------------------------------------------- core claims
+
+[[claim]]
+id = "gwt-c1"
+theory = "gwt"
+plain = "What makes information conscious is that it is broadcast: made available to many processors across the brain at once."
+quote = "Broadcasting implies that the information in the workspace becomes available to many local processors, and it is the wide accessibility of this information that is hypothesized to constitute conscious experience."
+source = "mashour-2020"
+location = "section 'Central Tenets and Neuroanatomical Basis of the GNW Theory', first paragraph"
+
+[[claim]]
+id = "gwt-c2"
+theory = "gwt"
+plain = "Entry into the workspace is sudden and all-or-none: an 'ignition' of the neurons coding the content, with the rest inhibited."
+quote = "Ignition is characterized by the sudden, coherent, and exclusive activation of a subset of workspace neurons coding for the current conscious content, with the remainder of the workspace neurons being inhibited."
+source = "mashour-2020"
+location = "section 'Central Tenets and Neuroanatomical Basis of the GNW Theory', third paragraph"
+
+[[claim]]
+id = "gwt-c3"
+theory = "gwt"
+plain = "Prefrontal cortex is a key part of the workspace, though not the only one."
+quote = "The prefrontal cortex is posited to play a key role in the GNW because of the greater density of neurons thought to be critical for global broadcasting of information, but it is not proposed as the exclusive territory for conscious access."
+source = "mashour-2020"
+location = "section 'Central Tenets and Neuroanatomical Basis of the GNW Theory', fourth paragraph"
+
+[[claim]]
+id = "gwt-c4"
+theory = "gwt"
+plain = "Becoming conscious of something happens at a late stage of processing, not during early sensory processing."
+quote = "These convergent findings indicate that conscious access is not attached to early sensory processing but instead relates to a late stage whose timing is often decoupled from the timing of the actual stimulus."
+source = "mashour-2020"
+location = "section 'Empirical Evidence in Support of the Ignition Concept', second paragraph"
+
+[[claim]]
+id = "gwt-c5"
+theory = "gwt"
+plain = "Something held in working memory is conscious only while it is carried by widespread, ongoing neural firing."
+quote = "Thus, we propose that working memory is conscious only when it is coded by global, highly distributed persistent neural firing, as occurs during both initial encoding, during the later refresh stage, and when the memory item influences other mental processing steps."
+source = "mashour-2020"
+location = "section 'Conscious Representations and Working Memory', last paragraph"
+
+[[claim]]
+id = "iit-c1"
+theory = "iit"
+plain = "The theory's postulates are both necessary and sufficient: a physical system that meets them has experience, and one that does not, has none."
+quote = "These are then formulated as essential properties of physical existence (postulates), the necessary and sufficient conditions that a substrate must satisfy to support an experience—to constitute a complex."
+source = "albantakis-2023"
+location = "section 'Conclusions', first paragraph"
+
+[[claim]]
+id = "iit-c2"
+theory = "iit"
+plain = "Every property of an experience is accounted for by a property of the cause-and-effect structure the system specifies, with nothing added."
+quote = "every property of an experience should ultimately be accounted for by a property of the cause–effect structure specified by a substrate that satisfies its postulates, with no additional ingredients."
+source = "albantakis-2023"
+location = "section 'Conclusions', fourth paragraph"
+
+[[claim]]
+id = "iit-c3"
+theory = "iit"
+plain = "What corresponds to an experience is the structure the system specifies in its current state, not the hardware as such; so units that are quiet but able to act still count, and units that are disabled do not."
+quote = "The physical correspondent of an experience is not the substrate as such but the Φ-structure specified by the substrate in its current state."
+source = "albantakis-2023"
+location = "section 'Conclusions', fifth paragraph"
+
+[[claim]]
+id = "iit-c4"
+theory = "iit"
+plain = "Experience is about what a system is, not what it does: two systems can behave identically and differ in experience."
+quote = "Each experience corresponds to a Φ-structure, not a set of functions, processes, or computations. Said otherwise, consciousness is about being, not doing"
+source = "albantakis-2023"
+location = "section 'Conclusions', sixth paragraph"
+
+[[claim]]
+id = "iit-c5"
+theory = "iit"
+plain = "A system divides into separate, non-overlapping wholes, each with definite borders; in the brain one main whole carries experience."
+quote = "Based on the postulates of IIT, a universal substrate ultimately “condenses” into a set of disjoint (non-overlapping) complexes, each constituted of a set of macro or micro units."
+source = "albantakis-2023"
+location = "section 'Conclusions', third paragraph"
+
+[[claim]]
+id = "sh-c1"
+theory = "sh"
+plain = "Experience is the binding of the just-past into the moment now, seen from the inside, not a by-product of it."
+quote = "My central bet, behind the whole map, is that experience is this binding, seen from the inside, rather than something the binding produces on the side, the way friction produces heat."
+source = "sh-positions"
+location = "position 'Experience comes with a set of features, and I describe them as a map, not a line', In plain words"
+
+[[claim]]
+id = "sh-c2"
+theory = "sh"
+plain = "A system has a point of view when it separates the changes it causes from the changes the world causes, and uses that difference (the split)."
+quote = "A system has a point of view, in the plain sense that things happen to someone, when it separates the changes it causes from the changes the world causes and uses that difference."
+source = "sh-positions"
+location = "position 'My best candidate for a point of view is the split between what a system does and what happens to it', summary"
+
+[[claim]]
+id = "sh-c3"
+theory = "sh"
+plain = "A boundary, mattering, self-awareness and kept memory make experience richer, and none of them switches it on."
+quote = "My bet is that boundary, mattering, self-awareness and kept memory make experience richer, and that none of them is known to switch it on."
+source = "sh-positions"
+location = "position 'Experience comes with a set of features ...', In plain words"
+
+[[claim]]
+id = "sh-c4"
+theory = "sh"
+plain = "Every experience has something on each of three axes (integration, availability and depth); none is at zero on any of them."
+quote = "I cannot imagine any experience with nothing at all on any one of the three axes."
+source = "sh-positions"
+location = "position 'Experience comes with a set of features ...', In plain words (the three axes are named in the sentence before: availability, integration and depth)"
+note = "The page itself calls this 'a judgment about what experience is like, not a measurement'."
+
+# ------------------------------------------------- the ruled list, for reference
+# The ten entries John ruled on 2026-11-20 ("Yes, ten"; kickoff section 9, ruling
+# 4). Only gwt, iit and sh are scored in the pilot. The others are listed so that a
+# prediction can name them as the rival it separates a theory from.
+
+[[listed_theory]]
+ids = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+names = ["Global workspace theory", "Integrated information theory", "Higher-order theories", "Recurrent processing theory", "Anil Seth's living-body view", "Attention schema theory", "The sensorimotor theory", "Orchestrated Objective Reduction", "Damasio's feeling-based theory", "The Sentient Horizons account"]
+source = "theory-list-report"

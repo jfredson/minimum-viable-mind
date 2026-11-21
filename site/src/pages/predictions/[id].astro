@@ -1,0 +1,107 @@
+---
+// A prediction's page (design proposal section 4, pictures 11 and 12; tracker pattern section
+// 3): the prediction as the title, what counts for it and against it, whose it is, whether it
+// separates the theory from a rival, who settles it, its state, then the studies read against
+// it with their protections, weight and the readers' verdicts.
+import Base from '../../layouts/Base.astro';
+import N from '../../components/N.astro';
+import R from '../../components/R.astro';
+import RecText from '../../components/RecText.astro';
+import StateBadge from '../../components/StateBadge.astro';
+import VerifyNote from '../../components/VerifyNote.astro';
+import { tk, theory, OUTCOME_LABEL, type Prediction } from '../../lib/tracker';
+
+export function getStaticPaths() {
+  return Object.values(tk.predictions).map((p) => ({ params: { id: p.id } }));
+}
+const p = tk.predictions[Astro.params.id as string] as Prediction;
+const t = theory(p.theory);
+const claimNo = t.claims.findIndex((c) => c.id === p.core_claim) + 1;
+const claim = t.claims.find((c) => c.id === p.core_claim);
+const PROT = [
+  // [field, said when the study has it, said when it does not]: absence is said in words, not
+  // only in fainter ink, so it reads in both themes and to a screen reader (reader check, 2026-11-21).
+  ['registered', 'registered', 'not registered'],
+  ['outside_camp', 'outside group', 'run inside the camp'],
+  ['rival_agreed', 'rival agreed', 'no rival agreement'],
+  ['replicated', 'replicated', 'not replicated'],
+] as const;
+const ownRow = t.own;
+---
+
+<Base title={`${p.statement.length > 70 ? p.statement.slice(0, 67).replace(/\s+\S*$/, '') + '…' : p.statement} · Minimum Viable Mind`} description={`A prediction of ${t.name.charAt(0).toLowerCase() + t.name.slice(1)}, what would count for and against it, and the studies read against it.`} strict>
+  <div class="page two" data-record={p.id}>
+    <div>
+      <p class="crumbs"><a href="/theories/">Theories</a> / <a href={`/theories/${t.id}/`}>{t.name}</a> / a prediction</p>
+      <p class="eyebrow">A prediction of {t.name.charAt(0).toLowerCase() + t.name.slice(1)} · core claim <N v={claimNo} /></p>
+      <R as="h1" class="pred-title" t={p.statement} />
+      <VerifyNote ids={p.verify_open} />
+      {claim && <p class="tplain">It belongs to the core claim <R t={claim.quote} q />.</p>}
+
+      <div class="testbox">
+        <div><h4>Counts for it</h4><R as="p" t={p.test_for} /></div>
+        <div><h4>Counts against it</h4><R as="p" t={p.test_against} /></div>
+      </div>
+      <p class="meta">Both were written before any study was read against it.</p>
+
+      <dl class="facts">
+        <dt>Whose it is</dt>
+        <dd>
+          {p.stated_by === 'proponent' ? 'Stated by the theory\'s own proponents, at full weight' : 'Inferred here, not stated by the theory\'s proponents, so at half weight until a proponent states it'}{p.first_stated.date && <>; first on record <N v={p.first_stated.date} t={p.first_stated.date_long ?? ''} /></>}, in {p.first_stated.source?.url ? <a href={p.first_stated.source.url}><R t={p.first_stated.source.citation} /></a> : <R t={p.first_stated.source?.citation} />}{p.first_stated.passage && <>: <R t={p.first_stated.passage} q /></>}
+        </dd>
+        <dt>Does it set the theory apart?</dt>
+        <dd>
+          {p.separates
+            ? <>Yes. {p.separates_from.map((s, i) => <>{i > 0 && ' '}<a href={s.theory in tk.theories ? `/theories/${s.theory}/` : '/theories/'}>{s.name}</a> predicts otherwise: <R t={s.how} />{s.source?.url && <> (<a href={s.source.url}>source</a>)</>}</>)}</>
+            : !p.could_fail
+              ? 'No. The two readers found that no result named here could prove it wrong, so it scores nothing.'
+              : 'No. No rival\'s own publication on the record predicts something different, so it is recorded and scores nothing.'}
+        </dd>
+        <dt>Who settles it</dt>
+        <dd>A published study with a measured result, never a press release or a talk.</dd>
+        <dt>Its state</dt>
+        <dd><StateBadge s={p.state} /> {p.state === 'untested' || p.state === 'scores nothing' ? '' : <>from <N v={p.counted_count} /> counted {p.counted_count === 1 ? 'study' : 'studies'}</>}{' '}· worked out <N v={tk.last_judgement} t={tk.last_judgement_long} /></dd>
+      </dl>
+
+      <div class="shead"><h2>The studies</h2><span>each read by two readers who did not see each other's answer</span></div>
+      {p.studies.length === 0 ? <p class="tplain">No study has been read against it yet.</p> : (
+        <table class="preds studies">
+          <thead><tr><th>Study</th><th>Outcome</th><th class="hide-s">Protections</th><th>Weight</th></tr></thead>
+          <tbody>
+            {p.studies.map((s) => (
+              <tr data-record={s.study}>
+                <td>
+                  {s.url ? <a href={s.url}><R t={s.name} /></a> : <R t={s.name} />}
+                  <span class="m">{tk.links.groups[s.group] ? <a href={tk.links.groups[s.group]}><R t={s.group} /></a> : <R t={s.group} />} · first on record <N v={s.first_appeared} t={s.first_appeared_long} /></span>
+                  <span class="m">{s.why}{s.settled_by === 'ruled' && ' · settled by a written rule where the readers differed'}</span>
+                  {s.readings.length > 0 && (
+                    <details class="readings">
+                      <summary>What the readers said</summary>
+                      {s.readings.map((r) => <p><b>{r.who}{ownRow && r.who === 'the outside reader' ? ' (read first)' : ''}:</b> {r.verdict}. <RecText t={r.reason} /></p>)}
+                    </details>
+                  )}
+                </td>
+                <td>{s.outcome ? <span class={`tbadge ${s.outcome === 'for' ? 'ok' : s.outcome === 'against' ? 'no' : 'mixed'}`}>{OUTCOME_LABEL[s.outcome]}</span> : <span class="tbadge untested">waiting</span>}</td>
+                <td class="hide-s"><span class="prot">{PROT.map(([k, l, no], i) => <>{i > 0 && ' · '}<span class={s.protections[k] ? 'y' : ''}>{s.protections[k] ? l : no}</span></>)}</span></td>
+                <td>{s.counted ? <><N v={s.weight} /> <span class="m">× <N v={s.multiplier} />, core claim</span></> : <N v={0} />}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+      <p class="meta">Each protection a study has adds one to its weight, which starts at <N v={tk.rules.weight_start} /> and stops at <N v={tk.rules.weight_top} />.</p>
+    </div>
+
+    <aside class="side">
+      <div class="box">
+        <h3>The two readers</h3>
+        <p>Every outcome is read twice, by two readers working apart. Where they agree, the reading stands; where one says mixed and the other says for or against, it is recorded as mixed; any other split waits, and the score does not move until it is settled by a written rule.{ownRow && ' On this site\'s own account, the outside reader reads first.'}</p>
+      </div>
+      <div class="box">
+        <h3>Last readings</h3>
+        <p>No weekly reading has run yet.</p>
+      </div>
+      <p class="disagree"><a href={`https://github.com/jfredson/minimum-viable-mind/issues/new?title=${encodeURIComponent(`Disagree: prediction ${p.id}`)}`} rel="noopener">Disagree with this prediction</a></p>
+    </aside>
+  </div>
+</Base>

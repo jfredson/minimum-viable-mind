@@ -1,0 +1,30 @@
+{
+  "packet_id": "tst-sh-central",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "VxMBa5OpHKO4n88PkoTeEQ",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"could_fail\": false,\n  \"separates\": false,\n  \"separates_from\": [],\n  \"rival_view_from\": \"none\",\n  \"reason\": \"The statement expresses a broad explanatory commitment rather than a concrete outcome that an empirical study could observe. Moreover, the phrase \\\"this binding\\\" is not operationally defined in the wording provided, leaving no clear rule for deciding when an experimental finding falls outside what the binding can explain. Without a defined mechanism or an observable test result, the claim cannot separate this account from rival theories.\",\n  \"unsure\": true,\n  \"unsure_why\": \"The phrase \\\"this binding\\\" refers back to an unquoted \\\"map\\\" in the source text; if that fuller context defines the binding narrowly as a specific neural mechanism, rivals such as higher-order or global workspace theories might explicitly predict that other processes explain features of experience.\"\n}",
+  "usage": {
+    "promptTokenCount": 890,
+    "candidatesTokenCount": 197,
+    "totalTokenCount": 2891,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 890
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 197
+      }
+    ],
+    "thoughtsTokenCount": 1804,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.02179,
+  "seconds": 29.7,
+  "called_on": "2026-11-20 19:43:49 PST"
+}
