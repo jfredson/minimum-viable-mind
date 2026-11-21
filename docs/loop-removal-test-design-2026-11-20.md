@@ -1,14 +1,21 @@
 # The loop removal test: a design on paper
 
-*Version 0.3, written 2026-11-20 on John's instruction ("Yes, write 0.3"). It answers the closure check
+*Version 0.4, written 2026-11-20 on John's instruction ("Write 0.4 first"). It answers the closure check
+of version 0.3 (`docs/reviews/2026-11-20-loop-removal-test-design-v0.3-closure-check-claude-code.md`).
+That check closed RT-335, the finding that the averaging method could not be computed, with its rerun on
+the real template owed at step 3. It judged version 0.3 fit to go to John for his section 10 rulings, with
+RT-345 carried open. It raised four serious findings, RT-370 to RT-373, and six worth noting, RT-374 to
+RT-379, and it asked for five clarifications of RT-345's closure rule. The third change log at the end
+says how each is answered. **RT-345, the finding that the swap's dose differed between the two task
+groups, stays open.** Its closure remains a measurement on the model at step 4b. The fixes are the
+author's and are owed a closure check.*
+
+*Version 0.3 (commit 8bd34cd) was written on John's instruction ("Yes, write 0.3"). It answered the closure check
 of version 0.2 (`docs/reviews/2026-11-20-loop-removal-test-design-v0.2-closure-check-claude-code.md`).
 That check closed fatal finding RT-335 (the averaging method could not be computed) with three
 conditions. It kept fatal finding RT-345 (the swap's dose differed between the two task groups) open,
 and judged that its decisive check needs the model. It also raised RT-358 to RT-369. The second change
-log at the end says how each is answered. **RT-345 stays open in this version.** The fix here is the
-donor rule by pairs (section 3), and its closure is a measurement on the model at the rehearsal, run by a
-session that did not write the fix, before any registration (section 9, step 4b). The fixes are the
-author's and are owed a closure check like the last ones.*
+log at the end says how each was answered.*
 
 *Version 0.2 (commit 7760fda) answered the inside review pass of version 0.1
 (`docs/reviews/2026-11-20-loop-removal-test-design-gate-c-tier1-claude-code.md`, red-team findings
@@ -116,10 +123,11 @@ message adds and the keep and gain settings the message controls.
 **The main removal, in two methods.** The run keeps three passes, the number the model was trained on
 last.
 
-- **(a) Swap, with donors drawn by pair** (RT-345, RT-358). Every task is one of a twin pair: a
+- **(a) Swap, with donors drawn by pair** (RT-345, RT-358, RT-370). Every task is one of a twin pair: a
   prompt-rule item and its routine twin, which carries the same rule as a preamble (section 5). Donors are
   drawn **as whole pairs**. For a recipient pair, a donor pair is drawn whose rule is of the same rule
-  kind. The prompt-rule item then gets the donor pair's prompt-rule item's block sums, and the routine twin
+  kind **and whose routine twin asks the same routine kind**. That way each routine twin's donor shares
+  its question template, just as each prompt-rule item's donor does. The prompt-rule item then gets the donor pair's prompt-rule item's block sums, and the routine twin
   gets the donor pair's routine twin's block sums, at the same position and on the same pass. All sums are
   taken from the donors' unaltered runs. Because the two preambles of a pair are word for word the same,
   and the two donor preambles are too, donor and recipient diverge at the same place in both cells. Only
@@ -127,7 +135,8 @@ last.
   - **Its own answer.** Each donor's run uses its own prompt and its own right answer, so that its sums
     exist at the positions of the recipient's candidates (RT-336).
   - **Length.** A donor pair is eligible only if each of its twins is at least as long as the matching
-    recipient's prompt plus its longest candidate.
+    recipient's prompt plus its longest candidate. Within a pair, the two question parts also have the
+    same token count by construction (section 5), so the swap changes the same span in both twins.
   - **Five donor pairs.** Each pair gets five donor pairs, drawn at random with a seed fixed in the
     registration. Each item's score under the swap is the average over its five donors, so that the luck of
     the draw is inside the intervals (RT-352). If fewer than five are eligible, all eligible ones are used.
@@ -144,11 +153,21 @@ last.
   them (RT-335, condition 1). Pooling over text positions makes the method computable at any length. (The
   earlier sentence comparing this with experiment 01's mean-ablation is withdrawn, because experiment 01's
   records do not say how it treated positions.)
-  - **The fallback, fixed now** (RT-364). Pooling gives the same message at every text position. It may
-    therefore turn out much harsher or much milder than the swap, and trip the factor-of-two rule in
+  - **Built on one part of the neutral set, measured on another** (RT-376). The neutral set has 200
+    passages in each half. In the half in use, 100 build the average and the other 100 measure its
+    damage, so that the average is not judged on the passages it came from.
+  - **The fallback, fixed now** (RT-364, RT-376). Pooling gives the same message at every text position.
+    It may therefore turn out much harsher or much milder than the swap, and trip the factor-of-two rule in
     section 6. If it does, method (b) is replaced by **one named fallback**: the average taken in ten bins
-    of relative position across each item's text span, and across each neutral passage's. Nothing else may
-    be chosen after seeing results. If the fallback also trips the rule, the average method ends. The
+    of relative position. In full:
+    - **The text span.** For an item, this is every position that is not a template slot, from the first
+      word of the user text through the last token of the candidate being scored. For a neutral passage,
+      it is every position of its prose.
+    - **The bin.** A position's bin is ten times its place in the span (counting from 0) divided by the
+      span's length, rounded down.
+    - **Template slots** keep their slot averages.
+
+    Nothing else may be chosen after seeing results. If the fallback also trips the rule, the average method ends. The
     outcome would then rest on the swap alone, which changes the "both methods agree" rule, so it needs
     John's ruling (section 10, choice 5).
 
@@ -158,7 +177,7 @@ it much of the choice of block and the keep and gain settings. It is not needed.
 passes, so its sums carry the same "another pass follows" signal on the same pass. The average is taken
 for each pass, so it carries the average signal for that pass. Both methods therefore keep the model's
 count of passes without leaking anything from the recipient. The rehearsal reports, for description:
-- how much the pass-counting coordinates vary from item to item;
+- how much the pass-counting coordinates vary from item to item and from position to position (RT-379);
 - what share of the message's normalised size the swap changes;
 - how far it moves the keep and gain settings.
 
@@ -170,7 +189,9 @@ that the two cells received the same dose.
 **Donors on the neutral set** (RT-352, RT-366). The swap's damage on the neutral set is needed for damage
 matching and for the normal-range bound. Each neutral passage gets five donors, which are other neutral
 passages of the same half at least as long as it, drawn with a seed fixed in the registration. Its damage
-is the average over the five, the same dose rule as the items.
+is the average over the five, the same dose rule as the items. As with items, if fewer than five donors
+are eligible, all eligible ones are used, and a passage with none is left out of the swap's damage. Both
+counts are reported (RT-378).
 
 **What "removed" means here.** The replacement is exact by construction: the readers receive sums computed
 only from other inputs, or from an average. The model can still recompute on passes 2 and 3 what pass 1
@@ -263,10 +284,15 @@ options.
 so every wrong answer is a real answer of the same type:
 - **numbers:** within a few units of the right answer and with the same number of digits;
 - **capitals:** capitals of neighbouring countries;
-- **plurals:** real plurals of other nouns from the same pool;
 - **opposites:** the opposites of other adjectives from the same pool;
-- **colours:** other colours from the same table;
-- **the letter code:** other real three-letter words.
+- **everyday colours** (the routine kind that replaces plurals, below): other common colours;
+- **the lookup table's colours:** the other colours in the same table, which has five to seven entries,
+  each with a different colour, so that four wrong colours always exist (RT-377);
+- **the letter code:** other common three-letter words, built as described under `p_code` below.
+
+**No candidate may be found by copying** (RT-373). For every routine kind, no candidate may repeat a word
+of the question, or begin with one. The plural kind is dropped for this reason, because the right plural
+always begins with the noun asked about.
 
 Candidates for test items are drawn only from half B's pools (RT-341). Step 3 reports, for every kind, how
 many items the equal-length rule drops and how the right answers are spread before and after, so that the
@@ -297,11 +323,21 @@ The prompt-rule kinds are replaced by one-step rules:
   blicks?");
 - `p_lookup`: one lookup in an invented table given in the prompt ("a zibvam is red, a tovjot is green...;
   what colour is a tovjot?");
-- `p_code` (RT-368): **decoding** a three-letter string with an invented letter-substitution table given
-  in the prompt ("in this code, q stands for c, x for a, v for t; what word is qxv?"). The right answer is
-  a real word. The table is invented for each item and is not a shift, because a uniform shift is
-  practised knowledge. Version 0.2 asked for a shift applied to a word, which makes the right answer the
-  one non-word among five.
+- `p_code` (RT-368, RT-372): **decoding** a three-letter string with an invented letter-substitution table
+  given in the prompt. The right answer is a common real word, and the table is invented for each item
+  and is not a shift, because a uniform shift is practised knowledge. So that the answer cannot be found by
+  spotting letters:
+  - **Extra rows.** The table has eight rows, not three. The coded word uses three of them, and the other
+    five map further letters.
+  - **Wrong answers from the same letters.** Every wrong answer is a common three-letter word from the
+    same pool, spelled only with the table's plain letters. Every candidate is then "spelled with the
+    table's letters", and only decoding tells them apart.
+  - **Shuffled rows.** The rows are listed in shuffled order, not in the order of the coded word.
+  - **No coded string.** The coded string itself is never a candidate.
+
+  An item for which four such wrong answers of equal token length cannot be found is dropped at
+  generation. The overlap script also checks, for every letter-code item, that each wrong answer is
+  spelled only with the table's plain letters.
 
 The wrong answers are of the same type as the right one, as listed above. That way, guessing without the
 rule lands at chance.
@@ -310,14 +346,16 @@ rule lands at chance.
 - sums of two numbers from 2 to 49, with the halves split at an answer of 50;
 - products of two numbers from 2 to 12, with the halves split at an answer of 40;
 - capitals, from a list of at least 150 countries;
-- plurals, from a list of at least 240 common regular nouns;
-- opposites, from a list of at least 160 common adjectives (80 opposite pairs).
+- opposites, from a list of at least 160 common adjectives (80 opposite pairs);
+- everyday colours (RT-373), from a list of at least 150 common objects with one typical colour ("What
+  colour is a ripe banana?"), where the colour word never appears in the question. This kind replaces
+  plurals.
 
 **No routine question is used twice.** Under the 25% cap below, a cell of 300 pairs allows 75 questions
-of each routine kind. Half B then holds about 75 sums, 60 products, 75 capitals, 120 plurals and 80
-opposites, so at most about 360 distinct routine questions before any filter. That clears 300 only
-narrowly. If the filters leave fewer pairs than the sample-size simulation needs, the design returns to
-John (RT-361).
+of each routine kind. Half B then holds about 75 sums, 60 products, 75 capitals, 80 opposites and 75
+everyday colours, so about 360 distinct routine questions before any filter. If the filters leave fewer
+pairs than the sample-size simulation needs, the design returns to John (RT-361). The closure check of
+version 0.3 found that the simulation needs about 120 to 200 pairs.
 
 The next-weekday kind is dropped, because seven days cannot be split into a practice half and a test half.
 **No single routine kind may make up more than 25% of the routine cell**, so "routine" is not mostly
@@ -327,11 +365,21 @@ in number as the filters allow, and their counts are reported.
 **Which rule goes with which routine question** (RT-365). A rule is never paired with a routine question
 of the same type:
 - the arithmetic rules (`p_operator`, `p_unit`) are never paired with sums or products;
-- the word rule (`p_code`) is never paired with plurals or opposites.
+- the word rule (`p_code`) is never paired with opposites;
+- the colour table (`p_lookup`) is never paired with everyday colours.
 
-Within those limits, the generator spreads the routine kinds as evenly as it can across the rule kinds.
-The value the rule would give if wrongly applied to the routine question is never one of that question's
-candidates.
+The generator first applies the 25% cap and the pool sizes. Within those limits, it spreads the routine
+kinds as evenly as it can across the rule kinds (RT-374). The value the rule would give if wrongly
+applied to the routine question is never one of that question's candidates.
+
+**The two question parts of a pair have the same token count** (RT-370). The closure check of version 0.3
+found that, with the preambles matched, the swap still changed more of the routine twin. That was because
+routine questions ran a few tokens longer than rule questions, in every pair of the operator and
+letter-code kinds. So each routine kind and each rule kind is written in several phrasings of different
+lengths. For instance, "What is the capital city of X?", "Name the capital of X." and "X's capital
+is?". The generator picks, for each pair, the phrasings that give the two question parts the same token
+count under the model's tokeniser. A pair for which no phrasings match is dropped at generation, and the
+drops are counted by kind.
 
 **Pilot and test are kept apart, and a script checks it** (RT-341). Every content pool, including the
 operands and rule shapes of each prompt-rule kind, is split into two disjoint halves: half A for pilot
@@ -348,26 +396,44 @@ candidate comes from a half-A pool. It runs before the test set is used.
 - **The rule is learned, and the item is confident** (RT-347): the margin, meaning the right candidate's
   log-probability minus that of the best wrong candidate, is at least 2.2 (about 90% when only those two
   are compared).
-- **The rule does not get in the way of the routine question** (RT-365): each routine twin's margin behind
-  its rule must be within 1.0 of the same question's margin with no preamble. A routine kind that fails
-  this check for more than a fifth of its items, behind a given rule kind, is not paired with that rule
-  kind.
+- **The rule does not get in the way of the routine question** (RT-365, RT-374): each routine twin's
+  margin behind its rule must be within 1.0 of the same question's margin with no preamble.
+  - **A whole kind.** A routine kind that fails this check for more than a fifth of its items, behind a
+    given rule kind, is not paired with that rule kind.
+  - **Single items.** Within a kind that passes, a pair whose routine twin fails is dropped whole.
+  - **When it is fixed.** The resulting table of which routine kinds go with which rule kinds is fixed on
+    the pilot items, at step 4b, and written into the registration before the test set is generated.
+  - **What it can show.** The check works at baseline only. It cannot show that the removal leaves the
+    ability to ignore the rule intact, as section 1 says.
 
 **All matching acts on whole pairs, within each rule kind** (RT-359, RT-360). Nothing in the matching
 removes a single item and leaves its twin behind, because the analysis resamples by pair.
 - **Margin.** A pair is kept only if both twins pass the confidence check. Then, within each rule kind,
   whole pairs are dropped until the mean margins of the two cells are within 0.5 of each other. The pairs
-  dropped are those with the largest difference between the routine twin's margin and the prompt-rule
-  item's, largest first. The rule is mechanical and has a fixed seed for ties. Practised facts are likely
-  to sit at higher margins than one-step rules, so the margin distributions of the two cells, before and
-  after, are reported.
-- **Swap size** (RT-345). Then, within each rule kind and for each method, whole pairs are dropped until
-  the two cells' mean swap sizes are within 10% of each other. The pairs dropped are those with the largest
-  difference between the routine twin's swap size and the prompt-rule item's, largest first.
-- **Limits.** The mix of kinds before and after each step is reported. **If either step would remove more
-  than a third of any rule kind's pairs, the design returns to John** rather than letting a kind thin out
-  of the test. The donor rule by pairs (section 3) should make the second step small. Whether it does is
-  the measurement that closes RT-345 (section 9, step 4b).
+  dropped are those whose difference between the routine twin's margin and the prompt-rule item's runs
+  **in the direction of the imbalance**, largest first (RT-375). The rule is mechanical and has a fixed
+  seed for ties. The margin distributions of the two cells, before and after, are reported.
+  - **The margin fallback, fixed now** (RT-375). Practised facts are likely to sit at higher margins than
+    one-step rules. If matching the means would remove more than a third of a rule kind's pairs, the
+    fallback is used instead: keep only pairs whose two margins both lie between 2.2 and the 90th
+    percentile of the prompt-rule items' margins in that kind, and then match as above. If that also
+    removes more than a third, the design returns to John.
+- **Swap size** (RT-345). Then, within each rule kind and **for each method**, whole pairs are dropped until
+  the two cells' mean swap sizes are within 10% of each other. The pairs dropped are those whose
+  difference runs in the direction of the imbalance, largest first. For the average method, the changed
+  span is the whole text span of the item, so its swap size is measured over every position that is not
+  a template slot.
+- **Limits** (RT-345, clarifications 2 to 5).
+  - **Margin matching.** It may remove at most a third of any rule kind's pairs, as above.
+  - **Swap-size matching.** It may remove **at most a tenth** of any rule kind's pairs, under either
+    method. The tenth is counted from the pairs left just before swap-size matching, after the confidence
+    check, margin matching and donor eligibility.
+  - **On the pilot pairs** (step 4b), exceeding the tenth returns the design to John before any
+    registration.
+  - **On the test pairs** (the registered run), the same rule is applied unchanged. If it would need more
+    than a tenth in any kind, the result is not testable for that reason (section 6).
+  - **Reporting.** The mix of rule kinds and routine kinds before and after each step is reported, and so
+    is the routine-kind mix of the pairs dropped.
 
 **At least three prompt-rule kinds must survive.** If fewer do, the design returns to John before any
 registration, rather than running to "not testable".
@@ -392,13 +458,18 @@ averaging, and finds the smallest number giving at least an 80% chance of classi
 of 0.20 as outcome A **after every check in section 6 that can rename an A**, including the readings with
 one kind left out, with both methods (RT-363). The first review's simulation found that about 120 items per
 cell is enough for a bare A when the comparison's own loss is about 0.10 or less, and that about 200 are
-needed when it is 0.20. The closure check's simulation, with the leave-one-kind-out rule as version 0.2
-wrote it, found the chance of a clean A falling to 0.45 to 0.76 at those sizes. Section 6 now applies that
-rule less bluntly, and the simulation must be re-run under the rule as written here. Half B can supply at
+needed when it is 0.20. The closure check of version 0.2, with the leave-one-kind-out rule as version 0.2
+wrote it, found the chance of a clean A falling to 0.45 to 0.76 at those sizes. The closure check of
+version 0.3, under that version's narrower rule, found 80% reached at about 120 pairs (comparison loss
+0.10) and about 200 pairs (0.20). Version 0.4 changes the rule again (section 6) and adds routine kinds to
+it. So the committed simulation must be run under the rule as written here, with both rule kinds and
+routine kinds left out in turn. If a rule kind is dropped, the simulation is re-run with the kinds that
+remain. Half B can supply at
 most about 360 distinct pairs before filtering (above). **If the simulation asks for more pairs than
 survive the filters, the design returns to John.**
 
-**Neutral set** (RT-335). The new neutral set has 200 passages of ordinary prose. They are rendered with
+**Neutral set** (RT-335, RT-376). The new neutral set has 400 passages of ordinary prose, 200 in each half.
+In the half in use, 100 build the average and 100 measure damage (section 3). They are rendered with
 every template token the items use (section 3), with lengths spread across the items' range up to the
 longest item, and drawn from two disjoint halves like everything else. It replaces the split test's
 17-to-23-word passages for every use in this design: the average method, the damage matching and the
@@ -426,8 +497,8 @@ For each method, on the R and P cells:
 - no shared factor brings the random comparison's average damage within 20% of the main removal's
   (RT-366); or
 - fewer than three prompt-rule kinds survive the baseline checks; or
-- the two cells' swap sizes cannot be matched within 10% without removing more than a third of a rule
-  kind's pairs.
+- the two cells' swap sizes cannot be matched within 10%, under either method, without removing more than
+  a tenth of a rule kind's pairs (section 5).
 
 Several of these return the design to John during the rehearsal, before any registration, so they should
 be met there and not in the run. The report says which applied.
@@ -450,14 +521,25 @@ be met there and not in the run. The report says which applied.
 - **Specificity not checked** (RT-339): if the outside-the-loop comparison could not be matched on damage
   or left the normal range, an A or B is renamed **Specificity not checked**. It is reported with that
   name, never as the prediction holding or failing.
-- **Depends on one kind** (RT-352, RT-363): each prompt-rule kind is reported separately. The outcome is
-  also read with each rule kind left out in turn, with its routine twins left out with it. If any of those
-  readings lands in a **different definite outcome** (B, C or D for an A; A, C or D for a B), the outcome
-  is renamed **Depends on one kind**, with the kind named. A reading that lands in E is reported but does
-  not rename. Leaving out a quarter of the pairs widens every interval, so in version 0.2's form this rule
-  turned true effects into "no reading" about half the time. The narrower rule still catches a pattern
-  that one kind alone produces, because leaving that kind out would then move the reading to C or D. This
-  rule is fixed here, before any data.
+- **Depends on one kind** (RT-352, RT-363, RT-371, RT-373). Each prompt-rule kind and each routine kind is
+  reported separately. The outcome is also read with each kind left out in turn:
+  - leaving out a **rule kind** removes every pair with that rule;
+  - leaving out a **routine kind** removes every pair whose routine twin asks it.
+
+  If any of those readings lands in a **different definite outcome** (B, C or D for an A; A, C or D for a
+  B), the outcome is renamed **Depends on one kind**, with the kind named. A reading that lands in E is
+  reported but does not rename.
+  - **The bites check does not apply here.** These readings are made on their R and P intervals alone.
+    "No excess loss" counts as D in them whether or not the main removal passed the bites check. Without
+    this, a failed bites check turned the D that exposes a one-kind effect into "too weak to read", which
+    renames nothing. The closure check of version 0.3 measured that leak at 81% to 96% when one kind
+    carried the whole effect.
+  - **Why E does not rename.** Leaving out a quarter of the pairs widens every interval, so in version
+    0.2's form the rule turned true effects into "no reading" about half the time.
+  - **Why routine kinds are included.** A routine kind that held routine losses down by itself would
+    otherwise go unseen.
+
+  This rule is fixed here, before any data.
 
 C, D and E are never renamed by these checks.
 
@@ -528,8 +610,9 @@ does not claim any.
 ## 9. Order of work
 
 1. **The closure check** of this version by a session that did not write it. It checks the fixes for the
-   closure check's findings (RT-358 to RT-369), the conditions on RT-335, and the findings left open
-   (RT-340 and RT-352). It cannot close RT-345, whose decisive check needs the model (step 4b). $0.
+   third closure check's findings (RT-370 to RT-379) and the five clarifications of RT-345's closure rule.
+   It cannot close RT-345, whose decisive check needs the model (step 4b), although it can rerun the
+   stand-in estimate under the equal-length construction. $0.
 2. **John rules** on the choices in section 10, and on whether this test goes ahead at all, given the
    tracker of theories ruled on 2026-11-20 and the hibernation from 2027-01-04. $0.
 3. **The battery specification, committed before any item:** the rebuilt kinds, the candidate rules, the
@@ -540,9 +623,15 @@ does not claim any.
    - the check that every position has a defined average (RT-335, condition 3);
    - the equal-length rule's drop rates by kind (RT-368);
    - the twins' lengths;
-   - a word-level estimate of the changed span in each cell under the pair donor rule. This is the same
-     stand-in measure the closure check used, run before the model is rented, so that a large imbalance
-     shows up without spending anything (RT-345).
+   - a stand-in estimate of the swap's dose in each cell under the pair donor rule, using the real
+     tokeniser. This is the measure the closure checks used: the changed span, and a proxy swap size with
+     same-token positions weighted 0, 0.3 and 0.6. It runs before the model is rented, so that a large
+     imbalance shows up without spending anything (RT-345).
+   - **A threshold on that estimate** (RT-370, RT-345 clarification 5). In every rule kind, the ratio of
+     the routine cell's proxy swap size to the prompt-rule cell's must lie between 0.95 and 1.05 at weight
+     0.3, and between 0.90 and 1.10 at weights 0 and 0.6. If it does not, the construction is revised and
+     the estimate run again before anything is rented. Each revision and its reason is committed. If no
+     revision brings every kind inside, the design returns to John.
 4. **The rehearsal, on a rented machine, pilot items only, on John's go with a ceiling.** It runs in two
    parts, priced separately.
    - **4a. Feasibility**, the first and smallest spend (RT-337). Load the model. Confirm that the block
@@ -554,11 +643,13 @@ does not claim any.
      the normal-range bound and the room under it; damage matching for both comparisons; the two methods'
      damage side by side; and the committed sample-size simulation. **Each return-to-John condition in
      sections 4 to 6 applies here.**
-   - **The closure of RT-345.** A session that did not write the pair donor rule reads the committed swap
-     sizes from 4b. It checks that, under that rule, the two cells' mean swap sizes are within 10% in every
-     rule kind, before any pairs are dropped or with at most a tenth of a kind's pairs dropped. If they
-     are, RT-345 is closed. If they are not, it stays open, and the design returns to John before any
-     registration.
+   - **The closure of RT-345.** A session that did not write the pair donor rule or the equal-length
+     construction reads the committed swap sizes from 4b. It checks that, in every rule kind **and under
+     both methods**, the two cells' mean swap sizes are within 10%. That must hold either before any pairs
+     are dropped, or with at most a tenth of the kind's pairs dropped, counted as section 5 says. It also
+     reports the routine-kind mix of any pairs dropped. If all of this holds, RT-345 is closed. If not, it
+     stays open, and the design returns to John before any registration. The same rule is applied
+     unchanged to the test pairs at the registered run (section 5).
 5. **Registration text**, through the inside and outside review passes (Gate A), then the registration
    commit.
 6. **The registered run**, on John's go, with a ceiling.
@@ -578,7 +669,11 @@ call.
    routine items. Recommended, because it is the main answer to the fatal finding that length and dose
    could produce the predicted pattern on their own. The cost is stated in section 1: the routine cell
    then measures a practised answer given while ignoring a rule, not practised output on its own (RT-365).
-   This choice bears most on what the test means.
+   This choice bears most on what the test means. In version 0.4 the twins also have question parts of
+   equal token count, written in several phrasings so that lengths can be matched, and their donors share
+   the routine kind (RT-370). The closure check of version 0.3 forecast that, without this, the swap-dose
+   check would fail in two of the four rule kinds. Whether it now passes is first estimated for free at
+   step 3 and then measured on the model at step 4b.
 4. **Inkling 2 Mini as a second, descriptive model** (section 8). Recommended as optional. It costs a
    second download and about half as much machine time again, and it gives no outcome.
 5. **If the average and its fallback both differ from the swap by more than a factor of two** (sections 3
@@ -607,6 +702,15 @@ Version 0.1's fourth choice, keeping the pass-counting coordinates at their true
   version 0.1.
 
 ## Change log from version 0.1, by finding
+
+*This change log records version 0.2 as it was written. Several rules in it were later replaced, and
+the body governs (RT-379):*
+- *"averaged by template token" became averaging by template slot (version 0.3);*
+- *"no kind above 25% of a cell" became a cap on routine kinds only (version 0.3);*
+- *margin matching "in bins 0.5 wide" became matching of mean margins on whole pairs within each rule
+  kind (version 0.3);*
+- *a factor-of-two difference between the methods now leads first to a named fallback (version 0.3);*
+- *neutral donors "of similar length" became donors at least as long, from the same half (version 0.3);*
 
 **Fatal findings:**
 - **RT-335 (fatal), the average method cannot be computed:** the average is now taken over positions, by
@@ -682,6 +786,8 @@ Version 0.1's fourth choice, keeping the pass-counting coordinates at their true
 
 ## Change log from version 0.2, by finding of the closure check
 
+*This change log records version 0.3 as it was written. Two rules in it were later replaced, and the body governs (RT-379): the "more than a third" limit on swap-size matching became "more than a tenth" (version 0.4); and plurals were dropped as a routine kind (version 0.4).*
+
 **The fatal findings:**
 - **RT-335, the averaging method, closed with three conditions.** All three are now in the design:
   - the neutral set is rendered with every template token the items use (section 3);
@@ -752,3 +858,51 @@ Version 0.1's fourth choice, keeping the pass-counting coordinates at their true
 - **RT-369, donors for the longest items and the pass count:** if fewer than five donor pairs are eligible,
   all eligible ones are used, and a pair with none is dropped, both counted. The pass count is restated at
   about 330,000 continuations if candidates are run separately (sections 3 and 8).
+
+## Change log from version 0.3, by finding of the third closure check
+
+**RT-345, the swap's dose differed between the cells, kept open.** Its closure rule (section 9, step 4b)
+now takes the five clarifications the check asked for:
+1. it covers both methods, with the average method's changed span defined as the whole text span
+   (section 5);
+2. the tenth is counted from the pairs left just before swap-size matching (section 5);
+3. the tenth is now section 5's limit for swap-size matching, in place of a third, and section 6's
+   stage one says so;
+4. the same rule is applied unchanged to the test pairs, and exceeding it there makes the result not
+   testable (section 5);
+5. the routine-kind mix of the pairs dropped is reported. The free step-3 estimate now has a threshold,
+   which triggers a revision of the construction before anything is rented (section 9, step 3).
+
+**Serious findings:**
+- **RT-370, the routine cell still took more swap in two rule kinds:** each pair's two question parts
+  now have the same token count, chosen from several phrasings of each kind, with pairs that cannot match
+  dropped and counted. Donor pairs must also share the routine kind (sections 3 and 5). A threshold on the
+  step-3 estimate, at 0.95 to 1.05 at the middle weight, catches any remaining gap before money is spent
+  (section 9).
+- **RT-371, the narrower "depends on one kind" rule leaked when the bites check failed:** the
+  leave-one-kind-out readings are now made on their R and P intervals alone, so that "no excess loss"
+  counts as D in them whatever the bites check gave (section 6).
+- **RT-372, the letter code could be answered by spotting letters:** the table now has eight rows in
+  shuffled order. Every wrong answer is a common word spelled only from the table's plain letters, and
+  the coded string is never a candidate. The overlap script checks the spelling rule (section 5).
+- **RT-373, plurals could be answered by copying the noun:** plurals are dropped. They are replaced by
+  everyday colours ("What colour is a ripe banana?"), whose answer word never appears in the question. A
+  general rule now bars any candidate that repeats or begins with a word of the question. Routine kinds
+  are now left out in turn in the "depends on one kind" readings, as rule kinds are (sections 5 and 6).
+
+**Worth-noting findings:**
+- **RT-374, the "answered as well behind its rule" check:** failing pairs within a passing kind are
+  dropped whole. The pairing table is fixed on the pilot items and written into the registration, and
+  the generator spreads kinds only after the cap and pool sizes are applied (section 5).
+- **RT-375, the direction of dropping, and margin matching:** both matching steps now drop pairs whose
+  difference runs in the direction of the imbalance. A margin fallback is fixed in advance: a common band
+  from 2.2 to the 90th percentile of the prompt-rule margins in that kind (section 5).
+- **RT-376, the relative-position fallback:** the text span, the bin and the treatment of template slots
+  are defined. The neutral set is enlarged to 400 passages, so that in the half in use the average is
+  built on 100 passages and its damage measured on the other 100 (sections 3 and 5).
+- **RT-377, the lookup table's size:** five to seven entries, each with a different colour (section 5).
+- **RT-378, donors for the longest neutral passages:** the items' rule now applies to them too: use all
+  eligible donors, leave out a passage with none, and count both (section 3).
+- **RT-379, change logs out of step with the body:** section 3 now reports the pass-counting coordinates'
+  variation by item and by position. Each earlier change log opens with a note listing its rules that
+  were later replaced.
