@@ -1212,10 +1212,8 @@ does not claim any.
    needs the model (step 4b). $0. *(The closure check of version 0.8 found it ready for the battery
    specification. The closure checks of versions 0.9, 0.10 and 0.11 did not; version 0.12 answers the
    last of them.)*
-2. **John's rulings.** Choices 1 to 5 were ruled on 2026-11-21 (section 11). **Choices 6, 7 and 8 are not yet
-   ruled** (RT-465). Step 3 cannot be written until choices 6 and 8 are, because they fix where the
-   instruction sits and which rule kinds are built. Choice 7 is needed before registration. Further rulings
-   are asked for where a return-to-John rule in sections 4 to 6 fires. $0.
+2. **John's rulings.** Choices 1 to 5 were ruled on 2026-11-21, and choices 6 to 8 later the same day
+   (section 11). Further rulings are asked for where a return-to-John rule in sections 4 to 6 fires. $0.
 3. **The battery specification, committed before any item:** the rebuilt kinds, the candidate rules, the
    twin construction, the enlarged and split pools, the neutral set, the overlap check script, and the
    pilot set generated with seed 1. The tokeniser is needed for the equal-length rule. It is a small
@@ -1405,6 +1403,15 @@ These rulings were made on version 0.4. RT-345, the finding that the swap's dose
 two task groups, is open, and so are the findings of the fourth check, RT-380 to RT-389. They are to be
 answered in a version 0.5, written against the model's real tokeniser where the findings turn on token
 counts.
+
+**Choices 6, 7 and 8** (ruled 2026-11-21, on version 0.12, after its closure check found the design ready
+for step 3). John picked the recommended option each time, from a question form in the session. Authorship is
+mixed. The ruling, with the wording he was shown, is recorded in
+`docs/rulings/2026-11-21-loop-removal-test-choices-6-to-8-ruling.md`.
+- **Choice 6:** "Start (Recommended)". The instruction goes before the rule.
+- **Choice 7:** "Accept 16-bit (Recommended)". Every outcome sentence names the precision.
+- **Choice 8:** "Drop, three equal (Recommended)". The letter-code kind is dropped, with 40 operator, 40 unit
+  and 40 lookup pairs in the pilot and the same shares in the test half.
 
 **A premise of choice 3 that no longer holds** (dated 2026-11-21, after the fifth check; RT-391; quotation
 corrected in version 0.7, RT-401). John ruled from a question form in the session.
