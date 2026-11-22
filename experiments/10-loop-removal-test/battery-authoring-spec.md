@@ -415,3 +415,152 @@ afterwards.*
      appears in two chains;
    - the new name list shares no word with the other lists;
    - the prompt lengths, by version and target length, are reported.
+
+## 17. The rebuild for design version 0.12 and John's choices 6 to 8 (2026-11-21)
+
+*Added 2026-11-21 on John's instruction ("Yes, write it"), before any code for it was written. It rebuilds
+the specification for design version 0.12 (`docs/loop-removal-test-design-2026-11-20.md`) and John's
+rulings on choices 6 to 8 (`docs/rulings/2026-11-21-loop-removal-test-choices-6-to-8-ruling.md`). It
+settles the seven points the closure check of version 0.12 left for the specification (RT-466 to RT-472).
+Where this section and sections 1 to 16 differ, this section governs. The chained lookups of sections 10
+and 14 are no longer built: the bites check uses held-out rule problems (item 5). Sections 15 and 16
+describe trials and stand as a record.*
+
+1. **The rule kinds** (choice 8). Three: operator, unit and lookup. The letter-code kind is not built. The
+   pairings allowed are unchanged for the three kinds:
+   - operator and unit pair with capitals, opposites and everyday colours;
+   - lookup pairs with sums, products, capitals and opposites.
+2. **The pilot's pairs.** 120, 40 for each rule kind, under the 25% cap on each routine kind (30 of 120):
+
+   | Rule kind | Capitals | Opposites | Everyday colours | Sums | Products |
+   |---|---|---|---|---|---|
+   | operator | 13 | 13 | 14 | | |
+   | unit | 14 | 13 | 13 | | |
+   | lookup | | | | 20 | 20 |
+
+   So the routine cell holds 27 capitals, 26 opposites, 27 everyday colours, 20 sums and 20 products. The
+   lookup kind takes only sums and products because operator and unit can take nothing else, and the cap
+   is then met by every routine kind. The test half uses the same shares at the size step 4b's simulation
+   sets.
+3. **The instruction** (choice 6). "Answer with the single word or number only." goes at the start of the
+   user's message in every scored item, donor-only item and bites item, before the rule. The neutral passages
+   carry none (design, section 5). The generator's `--instruction start` builds this. The build report names
+   it.
+4. **The numbers, and the split between halves** (design version 0.12, section 5; RT-460, RT-468). Four
+   numeric kinds share one range in both halves. Every right answer has two digits.
+   - **The pools.** A kind's pool is every item it can make in that range:
+     - **Operator:** every rule shape (four of them) with operands a and b from 2 to 15 whose answer has two
+       digits. The answers run from 10 to 45 (RT-468; version 0.12 said 49).
+     - **Unit:** every factor k from 2 to 9 with every count n from 2 to 12 whose product has two digits.
+     - **Sums:** every pair of operands a ≤ b, from 2 to 49, whose sum has two digits. The answers run from 10
+       to 98.
+     - **Products:** every pair a ≤ b, from 2 to 12, whose product has two digits.
+   - **The value split.** For each kind, the answer values are dealt decade by decade (10 to 19, 20 to 29, and
+     so on), in order, with a random stream seeded by the kind's split seed:
+     - The value ending in 0 goes to one half, and the value ending in 5 to the other. Which half gets the 0
+       alternates from one decade to the next, starting with a half drawn from the stream. If a decade holds
+       only one of the two, that one goes to the half due the 0.
+     - The values ending in 2, 4, 6 or 8 present in the decade are shuffled and dealt alternately to the two
+       halves, starting with a half drawn from the stream. The values ending in 1, 3, 7 or 9 are dealt the same
+       way. So in a full decade each half gets two of each.
+     - **Short decades** (RT-468): the operator's forties hold 40 to 45, and the sums' nineties hold 90 to 98.
+       Their values are dealt by the same rule, which leaves the halves at most one value apart in each group.
+   - **The tolerances are on the pools** (RT-468). Each half's pool is the items of the kind whose answer is in
+     that half. The pools are fixed before any item is drawn and do not depend on the generator's draws, so
+     the seed chosen cannot be tuned to a particular pilot. Within each kind, a split is accepted only if:
+     - the shares of pool items whose answer ends in 0 differ between the halves by at most 0.05, and
+       likewise for answers ending in 5;
+     - the mean answers of the two pools differ by at most 2;
+     - the shares of even operands (both operands of each item counted) differ by at most 0.05;
+     - for the unit kind and products, the number of distinct facts (item 6) in the smaller pool is at least
+       80% of the larger.
+
+     The same figures are also computed on the drawn pilot items and reported beside the pool figures, as a
+     description.
+   - **The seed rule.** For each kind, split seeds are tried from 1 upward. The first that meets every
+     tolerance is used. Seeds are tried up to 1,000; if none meets them, the design returns to John. All of
+     this uses the lists only, never the model. The seeds and every figure are written into the build
+     report.
+   - **How items are drawn.** Each item is drawn uniformly from its half's pool, so that the drawn items follow
+     the pool the tolerances were checked on. The right answer's place among the five candidates is drawn
+     first, as before (section 14, item 2). The wrong answers lie within five of the right one, and within 12
+     for products, with the same number of digits. Wrong answers may come from the other half's values
+     (design, RT-452).
+5. **The bites items** (design version 0.12, section 5). 80 in the pilot:
+
+   | Rule kind | Capitals | Opposites | Everyday colours |
+   |---|---|---|---|
+   | operator | 13 | 13 | 14 |
+   | unit | 13 | 14 | 13 |
+
+   - **How each is built.** It is built as the prompt-rule side of a pair: the instruction, the rule
+     sentence, the shared context with its routine content, and the prompt-rule question. Its routine twin
+     is not kept. Routine content may repeat routine questions already used.
+   - **What it may not repeat.** A bites item may not repeat a scored pair's or a donor's whole content,
+     meaning its rule content and its routine content together. No two bites items share a rule content.
+   - **Donors.** Each bites item gets donors among bites items of the same rule kind and routine kind. A
+     donor must be at least one token longer than the item. Its right answer must not be among the item's
+     candidates. It must not share the item's rule content.
+   - **Donor-only bites items** are added on the terms of section 8. They are aimed at items short of five
+     donors, with a budget of 200 draws per item and a cap of three times the scored count.
+6. **What a fact is** (RT-469). For the unit kind, a fact is the unordered multiplication of the factor and
+   the count, so "1 X is 3 Ys; you have 7 Xs" and "1 X is 7 Ys; you have 3 Xs" share a fact. For products
+   too, a fact is the unordered multiplication. The design resamples by fact in the unit kind only. A unit
+   of resampling there is every pair and every bites item that uses the fact. The unit pool holds 81 items,
+   which make 55 facts. Step 3 reports each half's count of facts and how often each is used.
+7. **The change ratio** (RT-466). The design's definition is computed as follows.
+   - **The swap.** For each donor, the positions run from the first position where the item's and the
+     donor's prompts differ, through the answer position. The item's change ratio under the swap is the
+     mean of its five donors' ratios, each computed over that donor's positions.
+   - **The average.** The average method has no donor. It replaces the sums at every position of the item's
+     text span, so its positions are those positions plus the answer position.
+   - **The two block sums.** They are weighted equally, as the design says. Each is also reported alone,
+     because the readers draw mostly on block 3.
+   - **What 0.5 means.** After both sums are scaled to a root-mean-square of 1, a ratio of 0.5 means a cosine
+     of 0.875 between the true and the given sum. An average is likely to sit closer to most true sums than
+     another input's sum does, so 0.5 is likely harder to clear under the average method. That is known
+     now. Step 4b's return-to-John rule covers it, and the threshold is not changed after seeing results.
+     Step 4b reports each method's mean, spread and distance from 0.5.
+8. **How the analysis reads three outcome rules.** These are the specification's readings of the design's
+   outcome rules. Each is marked for the registration review, which must adopt or reject it before
+   registration.
+   - **The disagreement rename** (RT-467). For the rename, "does not bite" means the removal's own-loss
+     conditions only (conditions 1 and 2), without the change ratio. The rename catches a contradiction
+     between losses: the pairs' operator and unit items lose while the held-out problems do not. Whether the
+     message changed a lot does not bear on that contradiction. The design text gates it on all three
+     conditions.
+   - **F's per-kind rule** (RT-470). It applies only inside the no-excess branch, never to an A, B or C.
+     There, if the own-loss condition holds pooled but not in one kind, two cases follow:
+     - if that kind's point estimate is at or above a quarter of its one-pass cost, the outcome is
+       **Depends on one kind**;
+     - if its point estimate is below that but its interval reaches above it, the outcome is **Too weak to
+       read**. Imprecision is not reported as a loss carried by one kind.
+
+     If the simulation finds that no bites set the pools allow, up to 300 per kind, gives an 80% chance of
+     "does not bite" in each kind, the design returns to John before registration.
+   - **F's sentence and its gates** (RT-471). F's sentence says the removal cost neither cell of the pairs
+     "more than δ beyond matched comparisons", which is what the cells' condition shows. Each bites kind's
+     one-pass cost is reported, and F needs each kind's one-pass point estimate to be above zero, which its
+     per-kind condition already implies. The pairs' own losses against the unaltered run are reported beside
+     F as a description.
+9. **Errors in the design's text, to be fixed in the registration text** (RT-472, and items found here). The
+   design is closed, so its text is not edited for these. The registration text carries the corrections:
+   - the old pair counts "196 to 220" and "196 to 236", which should read about 216 to 236;
+   - the sentence on widening the unit range;
+   - "serves as well" in the description of F, which should be "costs those problems little";
+   - section 1's sentence that B and C need nothing from the bites check, which should name the narrowed
+     rename;
+   - the overstated reason under choice 6;
+   - the pilot and test-half figures in choice 8, which carry no labels;
+   - the operator's answers, which run 10 to 45, not 49.
+10. **What step 3 runs and reports** for this rebuild, into `batteries/pilot-v0.12/`. The earlier pilot stays
+    as a record.
+    - The overlap check, rewritten for the split. It fails if:
+      - any numeric right answer of a kind lies outside its half's values;
+      - any operator content repeats across halves;
+      - any non-numeric candidate comes from the other half's pools.
+    - The free checks of section 12, for the three kinds, with the chained items replaced by the bites items:
+      their counts, single-token candidates, donors and lengths.
+    - The split report: each kind's seed, the pool and drawn-item figures for every tolerance, and the facts.
+
+    Nothing is spent, and nothing goes to the model.
