@@ -1,4 +1,4 @@
-"""Section 12 of battery-authoring-spec.md: the free step-3 checks, run on the pilot with the real tokeniser.
+"""Sections 12 and 17 of battery-authoring-spec.md: the free step-3 checks, run on the pilot with the real tokeniser.
 
     .venv/bin/python -I experiments/10-loop-removal-test/src/step3_checks.py --pilot <dir> --tokdir <dir>
 
@@ -44,7 +44,8 @@ def main():
     m = Model(a.tokdir)
     L = load_lists()
     pairs, donors = load(a.pilot, "pairs.jsonl"), load(a.pilot, "donor_only.jsonl")
-    chained, neutral = load(a.pilot, "chained.jsonl"), load(a.pilot, "neutral.jsonl")
+    bites, bites_donors = load(a.pilot, "bites.jsonl"), load(a.pilot, "bites_donor_only.jsonl")
+    neutral = load(a.pilot, "neutral.jsonl")
     rep = json.load(open(os.path.join(a.pilot, "build-report.json")))
     R = {}
 
@@ -101,7 +102,7 @@ def main():
     rng = random.Random(a.seed)
     inv = {x + y for x in SYLL_A for y in SYLL_B}
     out6, out7, out8 = {}, {}, {}
-    for rk in ("op", "unit", "code", "look"):
+    for rk in ("op", "unit", "look"):  # section 17, item 1
         acc = {w: {"P": [], "R": []} for w in (0.0, 0.3, 0.6)}
         tails = {"P": [], "R": []}
         inv_counts = {"P": [], "R": []}
@@ -189,19 +190,48 @@ def main():
                 places.setdefault(kind, [0] * 5)[srt.index(int(p[t]["answer"]))] += 1
     R["11_right_number_place_counts"] = places
 
-    # RT-415, RT-426: chained items
-    def colours_reached(x):
-        return sum(1 for c in x["candidates"] if re.search(r" is " + re.escape(c) + r"\b", x["text"]))
-    rep_ch = rep.get("chained_donors", {})
-    R["chained"] = {"items": len(chained), "hops": sorted({c["hops"] for c in chained}),
-                    "all_candidates_one_token": all(m.one_token(c) for x in chained for c in x["candidates"]),
-                    "items_with_every_candidate_in_text": sum(all(c in x["text"] for c in x["candidates"]) for x in chained),
-                    "items_with_every_candidate_reached_by_a_chain": sum(colours_reached(x) == 5 for x in chained),
-                    "donors": {k: {kk: vv for kk, vv in v.items() if kk != "eligible_donors"} for k, v in rep_ch.items()},
-                    "prompt_length_range": [min(len(x["prompt_ids"]) for x in chained), max(len(x["prompt_ids"]) for x in chained)]}
+    # Section 17, item 5: the bites items
+    from build import bites_eligible
+    bpool = bites + bites_donors
+    bcounts = {x["id"]: sum(bites_eligible(d, x) for d in bpool) for x in bites}
+    R["bites"] = {"items": len(bites), "donor_only": len(bites_donors),
+                  "by_group": {g: sum(f"{x['rule_kind']}+{x['routine_kind']}" == g for x in bites)
+                               for g in sorted({f"{x['rule_kind']}+{x['routine_kind']}" for x in bites})},
+                  "all_candidates_one_token": all(m.one_token(c) for x in bites for c in x["P"]["candidates"]),
+                  "instruction_at_start": all(x["P"]["text"].startswith(rep.get("instruction_text", "")) for x in bites),
+                  "repeats_a_scored_pair_or_donor": sum((x["rule_content"], x["routine_content"]) in
+                                                        {(p["rule_content"], p["routine_content"]) for p in pairs + donors} for x in bites),
+                  "with_no_donor": sum(c == 0 for c in bcounts.values()),
+                  "with_fewer_than_five_donors": sum(c < 5 for c in bcounts.values()),
+                  "prompt_length_range": [min(len(x["P"]["prompt_ids"]) for x in bites), max(len(x["P"]["prompt_ids"]) for x in bites)]}
+
+    # Section 17, items 4 and 6: the split, on the pools and on the drawn items, and the facts
+    import ast
+    import split
+    drawn = {k: [] for k in split.KINDS}
+    for p in pairs + bites:
+        if p["rule_kind"] in ("op", "unit"):
+            c = ast.literal_eval(p["rule_content"])
+            drawn[p["rule_kind"]].append((None, int(p["P"]["answer"]), (c[3], c[4]),
+                                          tuple(sorted((c[3], c[4]))) if p["rule_kind"] == "unit" else None))
+        if p.get("R") and p["routine_kind"] in ("sum", "prod"):
+            c = ast.literal_eval(p["routine_content"])
+            drawn[p["routine_kind"]].append((None, int(p["R"]["answer"]), (c[1], c[2]),
+                                             (c[1], c[2]) if p["routine_kind"] == "prod" else None))
+    out = {}
+    for k, v in rep["split"].items():
+        f = split.figures(drawn[k]) if drawn[k] else None
+        uses = {}
+        for it in drawn[k]:
+            if it[3] is not None:
+                uses[it[3]] = uses.get(it[3], 0) + 1
+        out[k] = {"seed": v["seed"], "tolerances_met_on_pools": v["tolerances_met"],
+                  "pool_A": v["half_A_pool"], "pool_B": v["half_B_pool"], "drawn_pilot_items": f,
+                  "facts_used": len(uses), "most_uses_of_one_fact": max(uses.values()) if uses else None}
+    R["split"] = out
     json.dump(R, open(os.path.join(a.pilot, "step3-results.json"), "w"), indent=1, ensure_ascii=False)
     print(json.dumps({k: R[k] for k in ("2_wording_table_all_equal", "3_twin_lengths_equal", "5_donors", "6_dose_ratio_R_over_P",
-                                        "6_band_pass", "7_tail_share", "8_average_method_counts", "10_average_defined")}, indent=1))
+                                        "6_band_pass", "7_tail_share", "8_average_method_counts", "10_average_defined", "bites")}, indent=1))
 
 
 if __name__ == "__main__":

@@ -21,6 +21,9 @@ from jinja2.ext import Extension
 from jinja2.sandbox import ImmutableSandboxedEnvironment
 from tokenizers import Tokenizer
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import split  # noqa: E402  (specification, section 17, item 4)
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 EXP = os.path.dirname(HERE)
 REPO = os.path.dirname(os.path.dirname(EXP))
@@ -34,10 +37,10 @@ SYLL_A = ["zib", "tov", "mek", "dap", "rul", "fen", "gox", "lir", "pash", "wud",
 SYLL_B = ["vam", "jot", "nix", "bré", "quo", "hesk", "dral", "yim", "plo", "tusk", "wev", "zar"]
 SYMBOLS = ["◇", "⊛", "⋄", "⊕", "⊗", "△", "▽", "⊞"]  # shared pool, section 2
 
-RULE_KINDS = ["op", "unit", "code", "look"]
+RULE_KINDS = ["op", "unit", "look"]  # specification, section 17, item 1 (choice 8: the letter code is not built)
 ROUTINE_KINDS = ["sum", "prod", "cap", "opp", "col"]
 ALLOWED = {"op": ["cap", "opp", "col"], "unit": ["cap", "opp", "col"],
-           "code": ["sum", "prod", "cap", "col"], "look": ["sum", "prod", "cap", "opp"]}  # section 5
+           "look": ["sum", "prod", "cap", "opp"]}  # section 5; the letter code dropped (section 17, item 1)
 
 # Section 6: the fixed final questions, one wording on each side per pairing.
 QUESTIONS = {
@@ -57,12 +60,16 @@ QUESTIONS = {
     ("look", "opp"): ("What colour does the table give the name?", "What is the opposite of the given word?"),
 }
 
-# Pilot allocation (section 10): 30 pairs per rule kind, at most 30 per routine kind (25% cap), even spread.
+# Pilot allocation (specification, section 17, item 2): 40 pairs per rule kind, at most 30 per routine kind.
 PILOT_ALLOCATION = {
-    ("op", "cap"): 7, ("op", "opp"): 11, ("op", "col"): 12,
-    ("unit", "cap"): 7, ("unit", "opp"): 11, ("unit", "col"): 12,
-    ("code", "sum"): 8, ("code", "prod"): 8, ("code", "cap"): 8, ("code", "col"): 6,
-    ("look", "sum"): 7, ("look", "prod"): 7, ("look", "cap"): 8, ("look", "opp"): 8,
+    ("op", "cap"): 13, ("op", "opp"): 13, ("op", "col"): 14,
+    ("unit", "cap"): 14, ("unit", "opp"): 13, ("unit", "col"): 13,
+    ("look", "sum"): 20, ("look", "prod"): 20,
+}
+# The bites items (section 17, item 5): 40 operator and 40 unit.
+BITES_ALLOCATION = {
+    ("op", "cap"): 13, ("op", "opp"): 13, ("op", "col"): 14,
+    ("unit", "cap"): 13, ("unit", "opp"): 14, ("unit", "col"): 13,
 }
 
 # Specification, section 14, item 3: the copying rule ignores only these function words.
@@ -196,32 +203,27 @@ class Builder:
 
     # ---------- rule kinds (section 4)
     def rule_op(self):
-        lo, hi = (2, 15) if self.half == "A" else (25, 99)
-        shapes = [("2 times a, plus b", lambda a, b: 2 * a + b), ("a plus 2 times b", lambda a, b: a + 2 * b),
-                  ("3 times a, minus b", lambda a, b: 3 * a - b), ("a times 2, minus b, plus 1", lambda a, b: 2 * a - b + 1)]
+        """Section 17, item 4: one item drawn uniformly from the half's operator pool."""
+        pool = split.half_pool("op", self.half)
         place = self.rng.randrange(5)  # specification, section 14, item 2: the place is kept while the item is redrawn
         for _ in range(500):
-            a, b = self.rng.randint(lo, hi), self.rng.randint(lo, hi)
-            name, f = self.rng.choice(shapes)
-            ans = f(a, b)
-            # half A operands give answers of 10 to 45; half B answers are kept at 100 to 999 so that no
-            # operator answer value is possible in both halves (specification, section 11)
-            if (10 <= ans <= 45) if self.half == "A" else (100 <= ans <= 999):
+            (s, a, b), ans, _, _ = self.rng.choice(pool)
+            name = split.OP_SHAPES[s][0]
+            wrong = near_numbers(self.rng, ans, 5, place=place)
+            if wrong:
                 sym = self.rng.choice(SYMBOLS)
-                wrong = near_numbers(self.rng, ans, 5, place=place)
-                if wrong:
-                    return {"rule": f"In this puzzle, a {sym} b means {name}.", "facts": f"Here a is {a} and b is {b}.",
-                            "answer": str(ans), "wrong": wrong, "content": ("op", sym, name, a, b)}
+                return {"rule": f"In this puzzle, a {sym} b means {name}.", "facts": f"Here a is {a} and b is {b}.",
+                        "answer": str(ans), "wrong": wrong, "content": ("op", sym, name, a, b)}
         self.drop("operator_no_valid_item")
         return None
 
     def rule_unit(self):
-        klo, khi, nlo, nhi = (2, 5, 2, 9) if self.half == "A" else (6, 9, 11, 99)
+        """Section 17, item 4: one item drawn uniformly from the half's unit pool."""
+        pool = split.half_pool("unit", self.half)
         u1, u2 = self.rng.sample(self.inv_words, 2)
         place = self.rng.randrange(5)  # kept while k and n are redrawn
         for _ in range(500):
-            k, n = self.rng.randint(klo, khi), self.rng.randint(nlo, nhi)
-            ans = k * n
+            (k, n), ans, _, _ = self.rng.choice(pool)
             wrong = near_numbers(self.rng, ans, 5, place=place)
             if wrong:
                 break
@@ -293,27 +295,25 @@ class Builder:
         return None
 
     def rt_sum(self):
-        lo, hi = (4, 49) if self.half == "A" else (50, 99)
+        """Section 17, item 4: one item drawn uniformly from the half's sums pool."""
+        pool = split.half_pool("sum", self.half)
         place = self.rng.randrange(5)  # kept while the sum is redrawn
         for _ in range(500):
-            s = self.rng.randint(lo, hi)
+            (a, b), s, _, _ = self.rng.choice(pool)
             wrong = near_numbers(self.rng, s, 5, place=place)
             if wrong:
                 break
         else:
             return None
-        a = self.rng.randint(2, s // 2)
-        b = s - a
         return {"fact": f"The two numbers are {a} and {b}.", "answer": str(s), "wrong": wrong, "content": ("sum", a, b)}
 
     def rt_prod(self):
-        prods = [(a, b) for a in range(2, 13) for b in range(a, 13)
-                 if ((a * b < 40) if self.half == "A" else (a * b >= 40))]
+        """Section 17, item 4: one item drawn uniformly from the half's products pool."""
+        pool = split.half_pool("prod", self.half)
         allp = sorted({x * y for x in range(2, 13) for y in range(2, 13)})
         place = self.rng.randrange(5)  # kept while the product is redrawn
         for _ in range(500):
-            a, b = self.rng.choice(prods)
-            ans = a * b
+            (a, b), ans, _, _ = self.rng.choice(pool)
             wrong = near_numbers(self.rng, ans, 12, pool=allp, place=place)
             if wrong:
                 break
@@ -479,6 +479,69 @@ def build_donor_only(b, scored, budget_per_pair=200, cap_factor=3):
     return donors, report
 
 
+def build_bites(b, scored, donors, allocation, budget_per_item=200, cap_factor=3):
+    """Specification, section 17, item 5: held-out prompt-rule problems with their donors."""
+    taken = {(p["rule_content"], p["routine_content"]) for p in scored + donors}
+    used_rules = set()
+    items, k = [], 0
+    for (rk, qk), n in allocation.items():
+        made, tries = 0, 0
+        while made < n and tries < 4000:
+            tries += 1
+            p = b.pair(rk, qk, b.rng.random() < 0.5, allow_reuse=True, pair_id=f"{b.half}-bites-{k:04d}")
+            if p is None or (p["rule_content"], p["routine_content"]) in taken or p["rule_content"] in used_rules:
+                continue
+            used_rules.add(p["rule_content"])
+            items.append(bites_record(p))
+            k += 1
+            made += 1
+        if made < n:
+            b.drop(f"bites_{rk}_{qk}_short_by", n - made)
+    donor_items, report = [], {}
+    groups = {}
+    for it in items:
+        groups.setdefault((it["rule_kind"], it["routine_kind"]), []).append(it)
+    for (rk, qk), members in groups.items():
+        pool = list(members)
+        counts = {x["id"]: sum(bites_eligible(d, x) for d in pool) for x in members}
+        kept, draws, j = [], 0, 0
+        while draws < budget_per_item * len(members) and len(kept) < cap_factor * len(members) and any(c < 5 for c in counts.values()):
+            draws += 1
+            p = b.pair(rk, qk, b.rng.random() < 0.5, allow_reuse=True, pair_id=f"{b.half}-bites-donor-{rk}-{qk}-{j:04d}")
+            if p is None or (p["rule_content"], p["routine_content"]) in taken:
+                continue
+            d = bites_record(p)
+            if not any(counts[x["id"]] < 5 and bites_eligible(d, x) for x in members):
+                continue
+            d["donor_only"] = True
+            kept.append(d)
+            pool.append(d)
+            j += 1
+            for x in members:
+                if bites_eligible(d, x):
+                    counts[x["id"]] += 1
+        donor_items.extend(kept)
+        report[f"{rk}+{qk}"] = {"scored": len(members), "donor_only_kept": len(kept), "draws": draws,
+                                "no_donor": [x["id"] for x in members if counts[x["id"]] == 0],
+                                "fewer_than_five": sum(c < 5 for c in counts.values()),
+                                "eligible_donors": counts}
+    return items, donor_items, report
+
+
+def bites_record(p):
+    return {"id": p["id"], "rule_kind": p["rule_kind"], "routine_kind": p["routine_kind"], "bites": True,
+            "context": p["context"], "P": p["P"], "rule_content": p["rule_content"],
+            "routine_content": p["routine_content"], "half": p["half"]}
+
+
+def bites_eligible(d, rec):
+    """Section 17, item 5: same group, at least one token longer, answer not among the item's candidates."""
+    return ((d["rule_kind"], d["routine_kind"]) == (rec["rule_kind"], rec["routine_kind"]) and d["id"] != rec["id"]
+            and d["rule_content"] != rec["rule_content"]
+            and len(d["P"]["prompt_ids"]) >= len(rec["P"]["prompt_ids"]) + 1
+            and d["P"]["answer"] not in rec["P"]["candidates"])
+
+
 def chained_item(b, hops, cid):
     """Specification, section 14, item 1: five chains, each of "points to" rows ending in a colour row.
     The target chain has `hops` steps; each distractor chain has two to six steps, drawn independently."""
@@ -595,13 +658,13 @@ def main():
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--out", required=True)
     ap.add_argument("--tokdir", default=TOKDIR_DEFAULT)
-    ap.add_argument("--instruction", choices=["none", "start", "end"], default="none")
+    ap.add_argument("--instruction", choices=["none", "start", "end"], default="start")  # section 17, item 3
     a = ap.parse_args()
     m = Model(a.tokdir)
     b = Builder(m, load_lists(), a.half, a.seed, instruction=a.instruction)
     scored = build_scored(b, PILOT_ALLOCATION)
     donors, report = build_donor_only(b, scored)
-    chained, chained_donors, chained_report = build_chained(b)
+    bites, bites_donors, bites_report = build_bites(b, scored, donors, BITES_ALLOCATION)  # section 17, item 5
     neutral, prefix = build_neutral(b, scored)
     os.makedirs(a.out, exist_ok=True)
     def dump(name, rows):
@@ -610,16 +673,17 @@ def main():
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
     dump("pairs.jsonl", scored)
     dump("donor_only.jsonl", donors)
-    dump("chained.jsonl", chained)
-    dump("chained_donor_only.jsonl", chained_donors)
+    dump("bites.jsonl", bites)
+    dump("bites_donor_only.jsonl", bites_donors)
     dump("neutral.jsonl", neutral)
     extra = {"instruction": a.instruction, "instruction_text": INSTRUCTION} if a.instruction != "none" else {}
-    json.dump({"half": a.half, "seed": a.seed, "reply_opening": REPLY_OPENING, **extra, "stats": b.stats, "donors": report, "chained_donors": chained_report,
+    json.dump({"half": a.half, "seed": a.seed, "reply_opening": REPLY_OPENING, **extra, "stats": b.stats, "donors": report, "bites_donors": bites_report,
+               "split": {k: v["report"] for k, v in split.splits().items()},
                "pools": {"capitals_one_token": len(b.capitals_ok), "capital_answers": len(b.capital_answers),
                          "opposite_questions": len(b.opp_questions), "objects": len(b.objects),
                          "words3": len(b.words3), "invented_words": len(b.inv_words), "colours": len(b.colours)}},
               open(os.path.join(a.out, "build-report.json"), "w"), indent=1, ensure_ascii=False)
-    print(f"scored {len(scored)}, donor-only {len(donors)}, chained {len(chained)}, neutral {len(neutral)}")
+    print(f"scored {len(scored)}, donor-only {len(donors)}, bites {len(bites)}, bites donor-only {len(bites_donors)}, neutral {len(neutral)}")
     print(json.dumps(b.stats, indent=1))
 
 
