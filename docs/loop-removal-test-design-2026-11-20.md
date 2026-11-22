@@ -1,17 +1,31 @@
 # The loop removal test: a design on paper
 
-*Version 0.10, written 2026-11-21 on John's instruction ("Yes, write 0.10"). It answers the closure check
+*Version 0.11, written 2026-11-21 on John's instruction ("Yes, write 0.11"). It answers the closure check
+of version 0.10 (`docs/reviews/2026-11-21-loop-removal-test-design-v0.10-closure-check-claude-code.md`), which
+found three serious problems. Version 0.11:
+- **adds a readable negative,** outcome F, "The replacement does not bite". It covers the case where the
+  extra passes help but a message built from other inputs serves as well. The prediction can then fail in
+  the plainest way, not only through general or routine loss (RT-449);
+- **revises choice 8** to drop the letter-code kind and share the pairs equally among the three remaining
+  kinds. As version 0.10 wrote it, it would have capped the test half at about 144 pairs (RT-450);
+- **replaces the bands of five** with a split that gives each half the same mix of last digits (RT-451).
+
+It also answers RT-452 to RT-456 and the small fixes under the earlier findings. The tenth change log at the
+end says how. **RT-345 stays open until step 4b.** The changes are owed a closure check.*
+
+*Version 0.10 (commit 600d0bb) was written 2026-11-21 on John's instruction ("Yes, write 0.10"). It answers the closure check
 of version 0.9 (`docs/reviews/2026-11-21-loop-removal-test-design-v0.9-closure-check-claude-code.md`), which
 judged the operator and unit bites problems the right call but found four serious problems. Version 0.10:
 - **takes away outcome D's reading** while the bites problems share kinds with the prompt-rule cell (RT-437);
 - **states the measured risk** that the operator kind, not only the letter code, fails the confidence filter,
   and adds choice 8, to drop the letter-code kind (RT-438);
-- **makes the two halves equally hard** by splitting answers into interleaved bands of five, in place of
-  the split by size (RT-439);
+- **meant to make the two halves equally hard** by splitting answers into interleaved bands of five, in
+  place of the split by size (RT-439). The bands in fact split the last digit, and version 0.11 replaces
+  them (RT-451);
 - **narrows the keep-apart rule** for bites problems, so that the pilot can be built (RT-440).
 
 It also corrects the trial figures (RT-441) and answers RT-442 to RT-448. The ninth change log at the end
-says how. **RT-345 stays open until step 4b.** The changes are owed a closure check.*
+says how.*
 
 *Version 0.9 (commit 4dbc4a3) was written 2026-11-21 on John's choice ("Invented-rule problems"). It answers three runs on a
 rented machine rather than a review. Step 4a found the hooks exact, but forced answers near chance. The
@@ -122,12 +136,17 @@ could come from a lost ability to ignore the rule, which is flexible control rat
   can show is whether the feedback within each word is part of how this model does H1's job.
 - **If the predicted pattern appears,** that is a fact about this loop in this model. It does not show
   that the model has experience, or that its workspace was found.
-- **If the message is replaced, the replacement is shown to bite, and the cells show the opposite pattern
-  or a general loss** (outcomes B and C), H1's prediction failed **for this placement in this model**
-  (section 7). Since version 0.10, a replacement that bites but costs neither cell (outcome D) gives no
-  reading, because the bites problems share two kinds with the prompt-rule cell (section 5, RT-437). That is a result
-  against the placement, not against H1 itself, because the model may do H1's job where the loop does not
-  reach.
+- **H1's prediction fails for this placement in this model** (section 7) in two kinds of case:
+  - the replacement is shown to bite, and the cells show the opposite pattern or a general loss (outcomes B
+    and C);
+  - the extra passes are shown to help on the held-out rule problems, the message is shown to have been
+    changed, and a message built from other inputs serves as well as the true one (outcome F, version 0.11,
+    RT-449).
+
+  A failure in either kind of case is a result against the placement, not against H1 itself, because the
+  model may do H1's job where the loop does not reach.
+- **A replacement that bites but costs neither cell** (outcome D) gives no reading, because the bites problems
+  share two kinds with the prompt-rule cell (section 5, RT-437).
 - **This test cannot separate feedback from computing** (RT-353). Section 3 shows that a pass without the
   message repeats the pass before, so in this model extra passes add nothing without a message. What the
   test compares is a message about this input against a message about other inputs.
@@ -300,7 +319,9 @@ counts are reported (RT-378).
 only from other inputs, or from an average. The model can still recompute on passes 2 and 3 what pass 1
 found, because every pass starts again from block 1's output. Whether the replacement takes away what the
 loop supplies is not assumed: it is checked on a task measured to need the extra passes (the "bites"
-check, section 5). If the replacement does not bite there, no null result is read (section 6).
+check, section 5). If the replacement does not bite there, that is read as outcome F, the prediction failing, only when the
+swap is shown to have changed the message and the excess is shown to be small. Otherwise it is too weak to
+read (section 6).
 
 **Other conditions, which do not decide the outcome.**
 
@@ -375,7 +396,9 @@ right one and four wrong ones built by a rule for that kind, committed before an
   margin is 0, so it fails the confidence filter. Ties are counted and reported at every step. The scores
   come out of the model at 16-bit, so exact ties happen: 8 in 640 scores in the lookup calibration trial.
   The same coarseness means the smallest non-zero margin seen was 0.047, larger than the 0.01 tolerance of
-  section 3. So the identity and bypass checks pass only when the runs match exactly, as they did at step
+  section 3. So the identity and bypass checks will usually fail on any real difference between the runs, although a
+  difference smaller than the tolerance is possible, because the tolerance applies to each candidate's
+  log-probability and not to a margin. They matched exactly at step
   4a.
 - **Chance is 0.20**, so results are reported on a **normalised scale**: normalised accuracy =
   (accuracy − 0.20) / 0.80. On it, 0 is chance and 1 is every item right. A removal that destroys an item
@@ -388,8 +411,8 @@ right one and four wrong ones built by a rule for that kind, committed before an
 sentence: "Answer with the single word or number only." Step 4a found that, without it, the model's forced
 first answer was near chance on most kinds: it always chooses to begin its reply with written reasoning,
 even at the reasoning setting "none". In the scoring trial on the pilot, the sentence lifted the routine
-twins from 51% to 83% or 84% at three passes, and the share of items passing the confidence filter from 24%
-to 54% or 56% (`experiments/10-loop-removal-test/scoring-trial-findings-2026-11-21.md`). It does not change
+twins from 51% to 83% or 84% at three passes, and the share of pair items passing the confidence filter from 28%
+to 63% or 65% (of 240 pair items; the trial's own report also counted 40 chained items, which all failed) (`experiments/10-loop-removal-test/scoring-trial-findings-2026-11-21.md`). It does not change
 choice 2: the answer is still the first token, with no written reasoning. Both twins of a pair carry it word
 for word, so their lengths stay equal. Where it sits, at the start or the end of the message, is choice 6
 (section 10).
@@ -494,8 +517,8 @@ The wrong answers are of the same type as the right one, as listed above. That w
 rule lands at chance.
 
 **The routine kinds, enlarged** (RT-340, RT-341, RT-361):
-- sums of two numbers from 2 to 49, with the halves split at an answer of 50;
-- products of two numbers from 2 to 12, with the halves split at an answer of 40;
+- sums of two numbers from 2 to 49, with the halves split by answer value as section 5 sets out below;
+- products of two numbers from 2 to 12, split the same way;
 - capitals, from a list of at least 150 countries;
 - opposites, from a list of at least 160 common adjectives (80 opposite pairs);
 - everyday colours (RT-373, RT-384), from a list of at least 120 common objects with one typical colour
@@ -508,11 +531,13 @@ rule lands at chance.
 
 **No routine question is used twice.** Under the 25% cap below, a cell of 300 pairs allows 75 questions
 of each routine kind. **A multiplication counts once** (RT-407): "5 × 8" and "8 × 5" are the same question,
-so only one order is used, and likewise for sums. Half B then holds about 75 sums, 35 products, 42
-capitals (only capitals of one token, RT-399), about 60 to 70 opposites (after the single-token rule, and
-with no prefix opposites or words that sit in two pairs) and 60 everyday colours (the object list being
-smaller, RT-384). Under the pairing exclusions and the cap, that allows at most about 270 to 300 pairs,
-depending on how the pools split. The seventh check measured 273 with products counted once. The sample-size
+so only one order is used, and likewise for sums. Half B then holds about 75 or more sums, about 23 to 27
+two-digit products (55 in all, split by answer value), 36 capitals usable as right answers (counted with
+the generator and the real tokeniser, RT-399, RT-450), about 75 opposite questions and 61 everyday colours.
+**How many pairs that allows depends on choice 8** (RT-450). With four rule kinds it is about 236. With the
+letter-code kind dropped and the pairs shared equally among the other three, it is about 196 to 220,
+depending on the products pool. With choice 8 as version 0.10 wrote it (operator 2 : unit 1 : lookup 1) it
+was about 144. The arithmetic is in the tenth change log. The sample-size
 simulation is expected to ask for about 120 to 200 pairs. If the filters leave fewer
 pairs than the sample-size simulation needs, the design returns to John (RT-361). The closure check of
 version 0.3 found that the simulation needs about 120 to 200 pairs.
@@ -520,7 +545,8 @@ version 0.3 found that the simulation needs about 120 to 200 pairs.
 The next-weekday kind is dropped, because seven days cannot be split into a practice half and a test half.
 **No single routine kind may make up more than 25% of the routine cell**, so "routine" is not mostly
 arithmetic. The cap applies to routine kinds only (RT-362). The prompt-rule kinds are kept as nearly equal
-in number as the filters allow, and their counts are reported.
+in number as the filters allow, whichever kinds John's ruling on choice 8 leaves, and their counts are
+reported.
 
 **Which rule goes with which routine question** (RT-365). A rule is never paired with a routine question
 of the same type:
@@ -591,7 +617,8 @@ pools.
 
 **What the rule leaves, and what it costs** (RT-399). The sixth check counted with the real tokeniser:
 - **Capitals.** Only about 90 of the world's capitals are one token at the answer position, and about 84
-  after the copying rule. So half B can hold about 42 capitals, not the 55 version 0.6 said. Version 0.6's
+  after the copying rule. So half B can hold about 42 capitals, not the 55 version 0.6 said. *(The generator
+  with the real tokeniser later found 36 usable in half B and 44 in half A, RT-450.)* Version 0.6's
   "82 of 105" came from a short list of famous countries, which is exactly the problem.
 - **Opposites.** About 12% of adjectives are lost.
 - **What is untouched.** Colours, three-letter words and numbers up to 999 all pass.
@@ -658,18 +685,32 @@ states.
 **Pilot and test are kept apart, and a script checks it** (RT-341). Every content pool, including the
 operands and rule shapes of each prompt-rule kind, is split into two disjoint halves: half A for pilot
 items with seed 1, half B for test items with a seed written in the registration. For the operator and unit
-kinds, and for sums and products, the two halves are split by **interleaved bands of five** (version 0.10,
-RT-439). Both halves draw from the same operand ranges, and an item belongs to half A if its right answer,
-divided by five and rounded down, is even, and to half B if it is odd. So half A holds answers 10 to 14,
-20 to 24 and so on, and half B holds 15 to 19, 25 to 29 and so on. The answers still cannot coincide, but
-the two halves are now equally hard, so the pilot can forecast the test half. Until version 0.9 the halves
-were split by size of number: test-half operator answers ran from 100 to 999 against 10 to 45 in the pilot.
-The pilot then could not say whether the bites check's one-pass condition would hold on the test half, and
-that condition decides whether any outcome is readable. The battery specification fixes the shared operand
-ranges, keeping every right answer at two digits, and step 3 reports each half's mean answer by kind. With
-bands of five, half B's answers run on average about 2.5 higher, a difference the report states. A committed check script
-fails if any pilot prompt, table or operand pair appears in the test set, or if any answer value of one
-kind appears in both halves of that same kind. Answer values are compared within each kind, because a
+kinds, and for sums and products, the two halves draw from **the same operand ranges** and are split **by
+the right answer's value, decade by decade, with each half given the same mix of last digits** (version 0.11,
+RT-439, RT-451). Within each decade (10 to 19, 20 to 29, and so on), a draw with a fixed seed gives five of
+the ten values to each half, so that each half gets one of the two values ending in 0 or 5, two of the
+other even endings and two of the other odd endings. A new draw is made for each decade and each kind. So
+both halves hold round numbers, and both hold answers ending in every kind of digit.
+- **Why not bands of five.** Version 0.10 gave half A every answer whose value divided by five was even.
+  That gave half A every answer ending in 0 to 4 and half B every answer ending in 5 to 9. Half A then held
+  every product ending in 0, the easiest case, and a right answer ending in 0 was the only round number
+  among its candidates. The pilot could not see answers ending in 5 to 9 at all.
+- **Why not by size.** Until version 0.9 the halves were split by size: test-half operator answers ran from
+  100 to 999 against 10 to 45 in the pilot, so the pilot could not forecast the bites check's one-pass
+  condition, which decides whether any outcome is readable.
+- **The ranges.** The battery specification fixes the shared operand ranges, keeping every right answer at
+  two digits. For the unit kind it uses a factor of 2 to 9 and a count of 2 to 12, close to the trial's
+  difficulty, and states the trade (RT-455, below).
+- **What step 3 reports.** Each half's mean answer, its mix of last digits and the parity of its operands, by
+  kind. The halves are not called equally hard until the pilot's report shows these match.
+
+A committed check script fails if any pilot prompt or table appears in the test set, or if any answer value
+of one kind appears in both halves of that same kind (RT-452). **For the operator kind, the split key is
+the shape and its operands together, which fixes the answer**, not the operand pair alone, because the
+same operands give different answers under different shapes. **Numeric wrong answers are exempt** from the
+half check, because a wrong answer within five of the right one usually lies in the other half's values;
+only right answers are split. The script, `src/check_overlap.py`, is rewritten for this split before step
+3, which lists it. Answer values are compared within each kind, because a
 number can rightly be both a unit answer and a sum (RT-341). **Colours are exempt from the answer-value
 check** (RT-383). The lookup kind and the everyday-colours kind answer from a small closed set of colour
 names, too few to split into two halves. For those two kinds the check applies instead to what varies:
@@ -751,14 +792,20 @@ registration, rather than running to "not testable".
 - **K, held-out rule problems.** Problems of the operator and unit rule kinds, built exactly as the
   prompt-rule side of a pair is built (the rule sentence, the shared context with its routine content, the
   final question, the instruction), but scored on their own. Their routine twin is not built and nothing
-  from them enters the outcome. They are drawn from the same half as the set they serve (the bands of five
-  above), from their own random stream.
+  from them enters the outcome. They are drawn from the same half as the set they serve (the split by answer
+  value above), from their own random stream.
 - **What is kept apart** (RT-440, narrowed in version 0.10). No bites item repeats a scored pair's or a
   donor's whole content, that is its rule, its facts and its routine content all together. Numbers and
   answers may repeat. Each item is scored in its own run with nothing carried between items, so a shared
   number leaks nothing. What must stay apart is the two halves, and the half split ensures that. Version 0.9
-  kept numbers apart too, which half A's unit kind could not supply: it has 32 combinations of factor and
-  count, and the pilot's scored pairs already use 19.
+  kept numbers apart too, which half A's unit kind could not supply under version 0.9's ranges: it had 32
+  combinations of factor and count, and the pilot's scored pairs already used 19.
+- **Repeated facts** (RT-455). With a factor of 2 to 9 and a count of 2 to 12, each half holds about 35 to
+  45 two-digit multiplications for the unit kind. Those serve 100 unit bites items and the test half's unit
+  pairs, so each fact is used several times. Items that share a fact are not independent. So, within the
+  unit kind, intervals are resampled **by fact**, not by item or pair, and the number of distinct facts per
+  kind is reported. Widening the range to repeat facts less would make the unit problems harder than the
+  trial measured, which is the trade the range above accepts.
 - **Donors** (RT-443). Each bites item gets five donors among bites items of the same rule kind and routine
   kind, with donor-only bites items added on the terms of section 3. The pair donor rule's conditions apply
   to the single item: the donor must be at least one token longer, and its right answer must not be among
@@ -777,7 +824,8 @@ registration, rather than running to "not testable".
 
   These are pilot figures, used to choose the task. Version 0.9 quoted plain averages of the routine-kind
   groups, which weight a 7-item group like a 12-item one; the figures above count items. The check itself is
-  made on half B, which version 0.10 makes as hard as half A (RT-439).
+  made on half B, which version 0.11 splits from half A so that the two match in their mix of answers
+  (RT-439, RT-451).
 - **Why not chained lookup.** Version 0.8 used the task Thinking Machines describe, following a chain of
   two to six lookups through invented tables. On the pilot it was at chance at every number of passes. A
   trial of four easier versions, down to eleven rows with familiar one-word names, found even two-step
@@ -785,25 +833,39 @@ registration, rather than running to "not testable".
   (`experiments/10-loop-removal-test/chain-calibration-findings-2026-11-21.md`). Answering at once, this
   model does not compose two lookups at all, so chained lookup cannot show whether a removal takes away what
   the passes supply.
-- **The size** (RT-442). 100 bites items of each of the two kinds in the test half, 200 in all, and 40 of
-  each in the pilot. The committed sample-size simulation of step 4b may raise this. It finds the smallest
-  number giving at least an 80% chance that **both parts** of the third condition below pass when the true
-  excess over the random comparison is **three quarters of the one-pass cost** measured at 4b. The closure
-  check of version 0.9 simulated this: the interval part passes almost always even at 80 items, while the
-  "at least half" part is a coin toss when the true excess is exactly half, whatever the size. At three
-  quarters, both parts passed in 95% to 100% of runs at 80 items and 99% to 100% at 200.
+- **How many.** 100 bites items of each of the two kinds in the test half, 200 in all, and 40 of each in
+  the pilot. The simulation set out below may raise this (RT-442, RT-453).
 - **The one-pass run must cost it.** Fewer passes must cost at least 0.15 on the normalised scale on the
-  bites items, compared with three passes. Otherwise the setup is wrong, and the result is not testable. The
+  bites items, compared with three passes, **with the interval's lower end at or above 0.15** (version 0.11,
+  RT-453; version 0.10 used the point estimate alone). Otherwise the setup is wrong, and the result is not testable. The
   0.15 is this design's own choice (RT-355). On the pilot, with the instruction, the two kinds together
   rose by about 0.3 in raw accuracy from one pass to three, about 0.4 on the normalised scale, so the
   threshold is expected to be met but is not assumed. **This condition gates every outcome** (RT-444): if it
   fails, the result is not testable (section 6, stage one).
 - **The main removal must bite, beyond generic damage** (RT-367). Under each method, the main removal's
   loss on the bites items **minus the random comparison's loss** on the same items
-  must be at least half of what the one-pass run costs it, with that excess's interval above zero. If not,
-  the removal is too weak to read a null, and outcome D cannot be read (section 6). Measuring against the
-  random comparison stops generic damage of the same size from passing the check. **This condition gates
-  only outcome D** (RT-444).
+  must be at least half of what the one-pass run costs it, with that excess's interval above zero. This
+  is **"the removal bites"**. Measuring against the random comparison stops generic damage of the same size
+  from passing the check.
+- **The removal does not bite** (version 0.11, RT-449). Under each method, the excess over the random
+  comparison on the bites items has an interval whose **upper end is below a quarter of the one-pass cost**,
+  **and the message was changed**: the mean, over the bites items and both passes, of the swap size divided
+  by the size of the true normalised block sums at the same positions is at least 0.5 under each method.
+  The 0.5 is this design's own choice, fixed now. It means the message given is at least half its own size
+  away from the true one. Without this condition, a swap between very similar inputs could change little and
+  read as "the content does not matter".
+- **Between the two** (the excess is neither large enough to bite nor small enough not to, or the message
+  was not changed enough), the removal is **too weak to read**.
+- **Which outcomes each condition gates** (RT-444, RT-453). The one-pass condition gates every outcome. "Bites"
+  and "does not bite" decide D, F and the disagreement rule (section 6).
+- **The size** (rewritten in version 0.11, RT-453). The committed simulation finds the smallest number of bites
+  items giving at least an 80% chance of each of these, fixed now:
+  - "bites", when the true excess is three quarters of the one-pass cost;
+  - "does not bite", when the true excess is zero;
+  - the one-pass condition, when the true one-pass cost is the one step 4b measures.
+
+  200 bites items are expected to be enough; the closure check of version 0.9's simulation found "bites" at
+  three quarters reached at 80 items.
 - **What this replacement costs** (version 0.9; rewritten in version 0.10, RT-437). The bites task is no longer a different kind of task from
   the cells. It is the same two kinds of problem as half of the prompt-rule cell, asked in the same form.
   So the bites check and the prompt-rule cell's loss are no longer independent. A removal that bites the
@@ -823,9 +885,10 @@ registration, rather than running to "not testable".
 
     The "depends on one kind" rule does not apply to D, so none of these is caught. So, from version 0.10,
     **D is reported under the name "No excess in the cells", with no reading**, while the bites items share
-    kinds with the prompt-rule cell (sections 6 and 7). The prediction can still fail, through B or C. What is
-    lost is the one result that would have said the removal took nothing selective from either kind of
-    question. That is a real loss to what the test can show, and it is stated as one.
+    kinds with the prompt-rule cell (sections 6 and 7). The prediction can still fail through B or C, and
+    since version 0.11 through F, which reads the plainest failure: the passes help, the message was changed,
+    and a message from other inputs serves as well. What D's loss of reading costs is the case where the
+    removal bites the held-out problems but the pairs show no excess, which cannot be read either way.
   - **Outcome A is not helped by it.** A and B are read from the cells as before. A large loss on the bites
     items does not count toward A.
 
@@ -837,8 +900,12 @@ registration, rather than running to "not testable".
   their routine twins 0.00 (0.10); unit items 0.27 (0.43) and their twins 0.00 (0.03); lookup items 0.00
   (0.00) and their twins 0.27 (0.37). If what the passes supply is what the removal takes away, the operator
   and unit pairs lean toward A and the lookup pairs toward B. A pooled result may then land in C, E or
-  "Depends on one kind" for a reason the trials already show. This does not favour A. The committed
-  sample-size simulation draws its effects by rule kind, not as one shared gap.
+  "Depends on one kind" for a reason the trials already show. This does not favour A.
+  - **Where the routine gain sits** (RT-445). Behind the lookup rule, the capitals twins were right on every
+    item from one pass and the opposites twins on 75% to 100%. The routine gain came from sums (from 14% to
+    29% at one pass to 100% at three) and products (from 57% to 100%). So the gain belongs to two routine
+    kinds, not to a rule kind.
+  - **The simulation** draws its effects by rule kind and by routine kind, not as one shared gap.
 - **A risk to the three-kind rule** (rewritten in version 0.10, RT-438). A pair stays only if both twins pass
   the confidence filter. In the scoring trial, at three passes, these prompt-rule items passed it (with the
   instruction at the start, then at the end, of 30 each):
@@ -854,10 +921,14 @@ registration, rather than running to "not testable".
   operator kind with one routine kind or none, and the design returns to John. Of the test half's 270 to
   300 pairs, about half would pass the filter, at the bottom of the 120 to 200 the sample-size simulation
   is expected to ask for. The surviving prompt-rule cell would be about half lookup, a third unit, a tenth
-  operator and almost no letter code.
-  - **What is done about it now:** choice 8 (section 10) asks John whether to drop the letter-code kind and
-    give its pairs to the operator kind, which roughly doubles the operator pairs that survive. Choice 6
-    shows the operator's cost of each placement.
+  operator and almost no letter code (with four kinds as now).
+  - **What is done about it now:** choice 8 (section 10, revised in version 0.11) asks John whether to drop
+    the letter-code kind and share its pairs equally among the other three. Choice 6 shows the operator's
+    cost of each placement.
+  - **Where the operator's survivors sit.** Whole operator pairs pass the filter at 71% with capitals, 13%
+    with opposites and 5% with everyday colours at the start placement (71%, 7% and 29% at the end). So the
+    operator kind survives mainly on its capitals pairing, and its colours pairing is often empty. Losing two
+    pairings leaves it with one routine kind, which returns the design to John.
   - **What is done if the rebuilt pilot confirms it:** the rule stands. If step 4b leaves fewer than three
     rule kinds, or any rule kind with one routine kind or none, the design returns to John before the
     pairing table is fixed. No threshold is loosened to keep a kind.
@@ -876,8 +947,9 @@ version 0.3, under that version's narrower rule, found 80% reached at about 120 
 it. So the committed simulation must be run under the rule as written here, with both rule kinds and
 routine kinds left out in turn. If a rule kind is dropped, the simulation is re-run with the kinds that
 remain. Half B can supply at
-most about 270 to 300 pairs before filtering (above). The expected 120 to 200 fits in every split the
-seventh check tried. **If the simulation asks for more pairs than
+most about 196 to 236 pairs before filtering, depending on choice 8 (above, RT-450), of which about 130 to
+150 are expected to pass the confidence filter under the revised choice 8. That is inside the expected 120
+to 200, but near its lower end. **If the simulation asks for more pairs than
 survive the filters, the design returns to John.**
 
 **The simulation's conditions** (RT-340). The committed simulation uses the spread and the comparison loss
@@ -885,7 +957,8 @@ measured at step 4b. It is run on the pairs that survive every filter, after the
 swap-size steps and the pairs dropped for want of a donor. If a rule kind is dropped, it is run again with
 the kinds that remain.
 
-**The pilot's size** (RT-389). The pilot set has 120 pairs, 30 for each rule kind, generated from half A
+**The pilot's size** (RT-389). The pilot set has 120 pairs, 30 for each rule kind (40 for each of three if
+John rules for choice 8), generated from half A
 with seed 1, plus 80 bites items (40 of the operator kind, 40 of the unit kind; version 0.9) and the 200
 neutral passages of half A. Every limit in this
 section that is applied to pilot pairs is applied to these: a fifth of a kind in the "answered as well
@@ -938,11 +1011,19 @@ be met there and not in the run. The report says which applied.
 2. **B. Selective loss on routine questions.** G is at most −δ and its interval lies below zero; R's
    interval lies above zero; and P's interval has its upper end below δ.
 3. **C. General loss.** R and P both have intervals above zero.
-4. **D. No excess loss.** R and P both have intervals whose upper ends are below δ, **and the main removal
-   passed the bites check** (section 5). If it did not, the outcome is **Too weak to read** (RT-354). While
-   the bites items share kinds with the prompt-rule cell, D is reported as **No excess in the cells**, with
-   no reading (RT-437; section 5, "What this replacement costs").
+4. **D or F, no excess in the cells.** R and P both have intervals whose upper ends are below δ. Then:
+   - if the removal **bites** (section 5), the outcome is **D**, reported as **No excess in the cells**, with
+     no reading while the bites items share kinds with the prompt-rule cell (RT-437);
+   - if the removal **does not bite** (section 5), the outcome is **F. The replacement does not bite**
+     (version 0.11, RT-449);
+   - otherwise it is **Too weak to read** (RT-354).
 5. **E. Unresolved.** Anything else.
+
+**The cells and the bites check disagree** (version 0.11). If the pattern is A, B or C but the removal **does
+not bite** on the held-out problems, the outcome is renamed **Cells and bites check disagree**, with no
+reading. The held-out problems are the same two kinds, in the same form, as half of the prompt-rule cell, so
+a loss in the cells with none on them points to something other than the message, such as chance or the
+filters. This rename is applied before the checks below.
 
 **Checks that apply only to A or B.**
 - **Not specific:** if the damage-outside-the-loop comparison's gap, computed like G against the random
@@ -977,7 +1058,8 @@ be met there and not in the run. The report says which applied.
 
   This rule is fixed here, before any data.
 
-C, D and E are never renamed by these checks.
+C, D, E and F are never renamed by these checks. In the readings with one kind left out, F counts as a
+definite outcome, like D.
 
 **Combining the two methods** (RT-350). The outcome holds if the swap and the average land in the same one.
 If they differ, the result is "methods disagree", reported with both and read as "could not decide". The
@@ -1000,19 +1082,20 @@ model and says the second model shares its pretraining (RT-357).
 | **B** | "...cost more on the routine questions than on the prompt-rule problems..." | **The prediction failed for this placement** in this model. |
 | **C** | "...cost both alike, beyond matched comparisons..." | **The prediction failed for this placement.** The feedback behaves like an essential part, which shows nothing selective. |
 | **D**, reported as "No excess in the cells" | "...cost the held-out operator and unit problems beyond matched comparisons, but cost neither the routine questions nor the prompt-rule problems of the pairs more than matched comparisons. The held-out problems share two kinds with the prompt-rule cell, so this gives no reading." | **No reading** (RT-437). Never reported as the prediction failing or holding, and never as "the model does not need this input". |
-| **E**, methods disagree, not testable, too weak to read, not specific, specificity not checked, depends on one kind | Reported under its name, with the reason. | **No reading.** Never reported as the prediction failing or holding. |
+| **F** | "...the extra passes helped the held-out operator and unit problems, but replacing the loop's message with one built from other inputs, which differed from the true message by at least half its size, cost them no more than matched random damage, and cost neither cell of the pairs more than matched comparisons." | **The prediction failed for this placement** in this model (RT-449): what the extra passes supply on these problems does not depend on this input's own message. It is not reported as "the model has no workspace". |
+| **E**, methods disagree, not testable, too weak to read, cells and bites check disagree, not specific, specificity not checked, depends on one kind | Reported under its name, with the reason. | **No reading.** Never reported as the prediction failing or holding. |
 
 **The precision is named in every outcome sentence** (RT-446, choice 7). The sentences above are written
 for the main model run at 16-bit, as "[model], at 16-bit". If John rules otherwise on choice 7, the words
 change to match.
 
 **How the fewer-passes runs are read beside the main result** (RT-353). They are descriptive. One sentence
-is allowed in advance. If the one-pass run shows a large loss and the main removal shows "No excess in the cells"
-(outcome D), the report may say: "on the paired questions, what the extra passes supply survived a message
-built from other inputs of the same kind", with the sentence of D's row beside it. Nothing about "computing" is allowed, because in this model passes without a message add nothing.
+is allowed in advance. It belongs to outcome F (RT-449): with F, the
+report may say "what the extra passes supply survived a message built from other inputs of the same kind".
+It is not used with D, where the removal has been shown to bite. Nothing about "computing" is allowed, because in this model passes without a message add nothing.
 
 **What would count against H1 itself.** Not this test alone. It would need independent evidence that the
-loop is this model's shared workspace, and then outcome B or C. No such evidence exists, and this design
+loop is this model's shared workspace, and then outcome B, C or F. No such evidence exists, and this design
 does not claim any.
 
 ## 8. The models, and what it would cost
@@ -1044,7 +1127,10 @@ does not claim any.
   about 85,000 forward runs for the main model (RT-448). Step 4a settled that all five candidates are single
   tokens scored from one run of the prompt, so the count is per item, not per candidate (RT-369). At step
   4a's speed, about 65 seconds per 280 items, that is roughly five to six hours of card time before damage
-  matching. The second model adds about half that again. **No price has been looked up.** The count is made again from the committed code
+  matching. Two caveats: the 65 seconds was timed on unaltered runs, and the swap's runs also record and
+  inject block sums, which were not timed; and the count assumes each donor's block sums are recorded once
+  and kept, without which the swap's runs double. The count rests on 300 pairs; under choice 8 as revised it
+  is nearer 200 pairs, which lowers it. The second model adds about half that again. **No price has been looked up.** The count is made again from the committed code
   before any estimate goes to John.
 - **Reused code:** the paired-resampling analysis from the split design. The battery generators are
   rewritten (section 5). New code covers the loop hooks, the candidate scoring, the per-item swap size and
@@ -1054,7 +1140,7 @@ does not claim any.
 
 1. **The closure check** of this version by a session that did not write it, working in its own empty
    scratch folder with the real tokeniser and the committed results of the three rented runs. It checks
-   version 0.10's answers to the ninth check (RT-437 to RT-448). It cannot close RT-345, whose decisive check
+   version 0.11's answers to the tenth check (RT-449 to RT-456, and the conditions on RT-437 to RT-448). It cannot close RT-345, whose decisive check
    needs the model (step 4b). $0. *(The closure check of version 0.8 found it ready for the battery
    specification. The closure check of version 0.9 did not, and version 0.10 answers it.)*
 2. **John's rulings** on section 10 were made on 2026-11-21 (section 11). Further rulings are asked for
@@ -1098,7 +1184,7 @@ does not claim any.
 4. **The rehearsal, on a rented machine, pilot items only, on John's go with a ceiling.** It runs in two
    parts, priced separately. *(Step 4a ran on 2026-11-21, with a scoring trial and a lookup calibration
    trial after it, for about $4.45 in all. Their findings are in `experiments/10-loop-removal-test/`, and
-   version 0.9 answers them. The battery specification and the pilot set are rebuilt for version 0.9 before
+   version 0.9 answers them. The battery specification and the pilot set are rebuilt for the version that is closed, before
    step 4b.)*
    - **4a. Feasibility**, the first and smallest spend (RT-337). Load the model. Confirm that the block
      sums can be read and replaced, and how much memory that takes. Confirm in the code the facts section 2
@@ -1157,7 +1243,7 @@ call.
    - **For the end:** it costs the operator kind less. At three passes, 12 of 30 operator prompt-rule items
      passed the confidence filter against 8 at the start, and all prompt-rule items were right on 72%
      against 66%. The bites gain was 0.37 against 0.32.
-   - **Otherwise alike:** routine twins 84% and 83% at three passes; confidence filter 54% and 56% of all items.
+   - **Otherwise alike:** routine twins 84% and 83% at three passes; confidence filter 63% and 65% of the 240 pair items.
      Every figure comes from 30-item cells.
 
    Recommended: the start, because the dose risk (RT-345) is the one the test was built around, and choice 8
@@ -1170,16 +1256,39 @@ call.
    format. Recommended: accept 16-bit, because the test compares conditions on the same model at the same
    precision, and the native path would need an inference engine where the hooks are far harder to build.
 
-8. **Drop the letter-code kind, and give its pairs to the operator kind** (version 0.10, RT-438). With the
-   instruction, the letter-code kind was at chance at every number of passes, and 1 of its 30 prompt-rule
-   items passed the confidence filter, so it is very unlikely to survive. Its pairs are then better spent on
-   the operator kind, which is at risk from the same filter. The pilot would have 60 operator pairs, 30 unit
-   and 30 lookup; the test half's allocation shifts the same way. Sums and products would then pair only with
-   the lookup kind. The 25% cap on each routine kind is then just met in the pilot: the 90 operator and unit
-   pairs fill capitals, opposites and everyday colours to 30 each, and the 30 lookup pairs take sums and
-   products. The minimum of three rule kinds stays, so all three remaining kinds must survive.
-   Recommended: drop it. The alternative is to keep it, expect it to fail at step 4b, and rely on the
-   other three surviving with the operator kind at its present size.
+8. **Drop the letter-code kind, and share its pairs equally among the other three** (version 0.10; revised
+   in version 0.11, RT-438, RT-450, RT-454). With the instruction, the letter-code kind was at chance at every
+   number of passes, and 1 of its 30 prompt-rule items passed the confidence filter. The closure check of
+   version 0.10 simulated the strike-count rule: with the letter code kept, the design returns to John in
+   essentially every run.
+   - **The allocation.** The pilot would have 40 operator, 40 unit and 40 lookup pairs, and the test half the
+     same shares. Version 0.10 gave the operator kind 60 and the others 30. That helps the operator in the
+     pilot, but in the test half the operator and unit pairs can pair only with capitals, opposites and
+     everyday colours, and half B has only 36 usable capitals. Under the 25% cap that limits the test half to
+     about 144 pairs, of which about 88 would pass the filter, below the 120 to 200 needed (RT-450).
+   - **What each share allows in the test half**, under the 25% cap and half B's pools, with the trial's
+     whole-pair pass rates at the start placement (worked in the tenth change log):
+
+     | Allocation | Pairs at most | Expected to pass the confidence filter |
+     |---|---|---|
+     | Letter code kept, four equal kinds | about 196 to 236 | about 108 to 126, almost none of them letter code |
+     | Letter code dropped, three equal kinds (recommended) | about 196 to 220 | about 133 to 149 |
+     | Version 0.10's operator 2 : unit 1 : lookup 1 | about 144 | about 88 |
+
+   - **What dropping it costs.** No spare kind: all three remaining kinds must survive. The prompt-rule cell
+     is then all arithmetic or table lookup. And sums and products, which may not sit behind an arithmetic
+     rule, pair only with the lookup rule (RT-454). Those are the routine twins that needed the extra passes
+     in the trial, so the routine cell's sensitivity to the passes sits wholly behind one rule kind. The
+     surviving routine cell would be roughly 40% to 50% arithmetic, against the cap's purpose that "routine" is
+     not mostly arithmetic. And leaving out the lookup rule removes every sum and product twin, so the
+     one-kind-left-out readings cannot separate a lookup-rule effect from a routine-arithmetic effect. None of
+     this favours A; it makes C likelier.
+   - **The operator's risk in the pilot remains.** At 40 pairs, spread over its three pairings, the operator
+     kind keeps mainly its capitals pairs (section 5). The closure check is asked to simulate the strike-count
+     rule at this allocation.
+
+   Recommended: drop the letter code, with three equal kinds. The alternative is to keep it, and expect a
+   return to John at step 4b.
 
 Version 0.1's fourth choice, keeping the pass-counting coordinates at their true values, is withdrawn
 (RT-348).
@@ -1723,4 +1832,56 @@ operator and unit bites problems the right call rather than stopping the test.*
   neutral passages carry no instruction, and section 5 says why.
 - **RT-448, stale text.** The noise-floor reason, the memory figure and the run count are brought up to date.
   The count now uses step 4a's finding that one run scores all five candidates: about 85,000 runs.
+
+## Change log from version 0.10, by finding of the tenth closure check
+
+*This change log records version 0.11. The tenth check found version 0.10 not ready for step 3, and every
+trial figure it recomputed right.*
+
+**RT-345, the swap's dose differed between the cells, kept open.** The closure is still the step-4b measurement.
+
+**Serious findings:**
+- **RT-449, the plainest failure had no reading.** New outcome F, "The replacement does not bite": the
+  one-pass condition holds, the excess over the random comparison on the bites items has an interval whose
+  upper end is below a quarter of the one-pass cost under each method, the swap changed the message by at
+  least half its size, and the cells show no excess. F is read as the prediction failing for this placement.
+  A pattern of A, B or C with a removal that does not bite is renamed "Cells and bites check disagree", with
+  no reading. Section 7's allowed sentence about the fewer-passes runs moves from D to F. Sections 1, 3, 5, 6
+  and 7 are changed to match, and section 1's drifting "That" is fixed.
+- **RT-450, choice 8 capped the test half.** Choice 8 now shares the pairs equally among the three remaining
+  kinds. The ceilings were worked with a maximum-flow fit of rule kinds to routine pools under the 25% cap,
+  using half B's pools (36 capitals, 75 opposite questions, 61 objects, sums ample, products 13 or 23), and
+  expected survivors from the scoring trial's whole-pair pass rates at the start placement (each pairing's
+  prompt-rule pass rate times its routine pass rate):
+  - four equal kinds: 196 pairs (products 13) or 236 (products 23), about 108 or 126 surviving;
+  - three equal kinds: 196 or 220, about 133 or 149;
+  - operator 2 : unit 1 : lookup 1: 144 either way, about 88;
+  - lookup given the letter code's share (1 : 1 : 2): 196 or 236, about 133 or 161, but almost no operator
+    pairs survive, so it is not offered.
+  These are estimates from 7- to 12-item cells, made by the author; the closure check is asked to recheck
+  them.
+- **RT-451, the bands split the last digit.** Replaced by a per-decade draw that gives each half one value
+  ending in 0 or 5, two other even endings and two other odd endings. Step 3 reports each half's last-digit
+  mix and operand parity, and the halves are not called equally hard until it does.
+
+**Worth-noting findings:**
+- **RT-452, the overlap rules.** The operator's split key is the shape with its operands. Numeric wrong
+  answers are exempt from the half check. `src/check_overlap.py` is to be rewritten for the new split. The
+  "about 2.5 higher" figure is dropped.
+- **RT-453, the excess condition's job.** It now decides between D, F and the disagreement rule. The
+  one-pass condition gets an interval: its lower end must be at or above 0.15. The simulation sizes the
+  bites set for "bites", "does not bite" and the one-pass condition together.
+- **RT-454, routine arithmetic behind the lookup rule.** Stated under choice 8.
+- **RT-455, repeated facts.** The unit kind uses a factor of 2 to 9 and a count of 2 to 12, and is resampled
+  by multiplication fact. The number of distinct facts per kind is reported.
+- **RT-456, stale text.** The sums and products splits, the pool counts, the pair ceiling, the "kept as
+  nearly equal" sentence and the pilot's size are made conditional on choice 8. The step-4 note names the
+  version that is closed.
+
+**Small fixes under earlier findings:**
+- the confidence share is given over the 240 pair items (28%, then 63% and 65%; RT-441);
+- the identity sentence says the checks "will usually fail on any real difference" (RT-446);
+- the time estimate carries its two caveats (RT-448);
+- the routine gain is placed on sums and products, and the simulation draws effects by routine kind too
+  (RT-445).
 
