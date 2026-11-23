@@ -39,10 +39,14 @@ def pool(kind):
                 if two_digit(a + b):
                     items.append(((a, b), a + b, (a, b), None))
     elif kind == "prod":
+        allp = {x * y for x in range(2, 13) for y in range(2, 13)}
         for a in range(2, 13):
             for b in range(a, 13):
-                if two_digit(a * b):
-                    items.append(((a, b), a * b, (a, b), (a, b)))
+                v = a * b
+                # section 18, item 1: an item that can fill no place is left out (only 99 = 9 x 11)
+                near = [x for x in allp if x != v and len(str(x)) == len(str(v)) and abs(x - v) <= 12]
+                if two_digit(v) and len(near) >= 4:
+                    items.append(((a, b), v, (a, b), (a, b)))
     return items
 
 

@@ -584,8 +584,15 @@ section governs where it differs from section 17.*
 
    So the drawn items follow the pool on which the tolerances were checked. The places are no longer quite
    uniform for edge answers, and step 3 reports the place counts by kind, for the pairs and the bites items.
-   Section 14, item 2's "place drawn first" is replaced by this. The split seeds are unchanged, because they
-   depend only on the pools.
+   Section 14, item 2's "place drawn first" is replaced by this.
+   - **An item that can fill no place is left out of the pool** (added 2026-11-23, after a simulation of the
+     fixed generator and before the pilot was committed). Otherwise it is never drawn, and the drawn items
+     again differ from the pool. Only one item is affected: the product 99 (9 × 11). The two-digit products
+     within 12 of it are only 88, 90 and 96, so four wrong answers cannot be found. A simulation of 20,000
+     draws per kind and half found every other edge answer drawn at its pool rate. For example, the operator
+     answer 10, which had been drawn at a fifth of its pool rate, came out at 1.01.
+   - **The seeds.** They depend only on the pools. Removing 99 changes the products pool, so the products seed
+     is chosen again by the same rule, and the other seeds are unchanged.
 2. **The operator's no-reuse rule keys on the problem, not the symbol** (RT-475). Two operator items with
    the same shape and operands are the same problem, whatever symbol names the rule. Among the scored pairs,
    and among the bites items, no operator problem repeats. A bites item may still repeat a scored pair's
