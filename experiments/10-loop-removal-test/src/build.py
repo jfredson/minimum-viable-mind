@@ -147,16 +147,19 @@ def copies(cand, words):
 
 
 def near_numbers(rng, ans, spread, lo=0, hi=999, pool=None, place=None):
-    """Specification, section 14, item 2: the right answer's place among the five, in numeric order, is drawn
-    uniformly first; the wrong numbers are then drawn below and above it. Returns None if the place cannot be
-    filled, and the caller redraws the item."""
+    """Specification, section 18, item 1: the item is drawn first; with place None, the right answer's place among
+    the five, in numeric order, is drawn uniformly among the places this answer can fill. Returns None if it can
+    fill none, and the caller redraws the item. (Section 14, item 2's place-first rule is replaced.)"""
     digits = len(str(ans))
     opts = [x for x in (pool if pool is not None else range(max(lo, ans - spread), min(hi, ans + spread) + 1))
             if x != ans and len(str(x)) == digits and abs(x - ans) <= spread]
-    if place is None:
-        place = rng.randrange(5)
     below = [x for x in opts if x < ans]
     above = [x for x in opts if x > ans]
+    if place is None:
+        feasible = [k for k in range(5) if len(below) >= k and len(above) >= 4 - k]
+        if not feasible:
+            return None
+        place = rng.choice(feasible)
     if len(below) < place or len(above) < 4 - place:
         return None
     return [str(x) for x in rng.sample(below, place) + rng.sample(above, 4 - place)]
@@ -167,6 +170,7 @@ class Builder:
         self.instruction = instruction  # specification, section 15: "none", "start" or "end"
         self.m, self.L, self.half = model, lists, half
         self.rng = random.Random(seed)
+        self.seed = seed
         self.stats = {"dropped": {}, "capital_wrong_source": {"same_region": 0, "neighbour_region": 0, "dropped": 0}}
         H = lambda x: halves(x)[half]
         self.syl1, self.syl2 = H(SYLL_A), H(SYLL_B)
@@ -205,11 +209,13 @@ class Builder:
     def rule_op(self):
         """Section 17, item 4: one item drawn uniformly from the half's operator pool."""
         pool = split.half_pool("op", self.half)
-        place = self.rng.randrange(5)  # specification, section 14, item 2: the place is kept while the item is redrawn
         for _ in range(500):
             (s, a, b), ans, _, _ = self.rng.choice(pool)
             name = split.OP_SHAPES[s][0]
-            wrong = near_numbers(self.rng, ans, 5, place=place)
+            wrong = near_numbers(self.rng, ans, 5)
+            if not wrong:
+                self.drop("operator_item_redrawn_no_place")
+                continue
             if wrong:
                 sym = self.rng.choice(SYMBOLS)
                 return {"rule": f"In this puzzle, a {sym} b means {name}.", "facts": f"Here a is {a} and b is {b}.",
@@ -221,10 +227,9 @@ class Builder:
         """Section 17, item 4: one item drawn uniformly from the half's unit pool."""
         pool = split.half_pool("unit", self.half)
         u1, u2 = self.rng.sample(self.inv_words, 2)
-        place = self.rng.randrange(5)  # kept while k and n are redrawn
         for _ in range(500):
             (k, n), ans, _, _ = self.rng.choice(pool)
-            wrong = near_numbers(self.rng, ans, 5, place=place)
+            wrong = near_numbers(self.rng, ans, 5)
             if wrong:
                 break
         else:
@@ -297,10 +302,9 @@ class Builder:
     def rt_sum(self):
         """Section 17, item 4: one item drawn uniformly from the half's sums pool."""
         pool = split.half_pool("sum", self.half)
-        place = self.rng.randrange(5)  # kept while the sum is redrawn
         for _ in range(500):
             (a, b), s, _, _ = self.rng.choice(pool)
-            wrong = near_numbers(self.rng, s, 5, place=place)
+            wrong = near_numbers(self.rng, s, 5)
             if wrong:
                 break
         else:
@@ -311,10 +315,9 @@ class Builder:
         """Section 17, item 4: one item drawn uniformly from the half's products pool."""
         pool = split.half_pool("prod", self.half)
         allp = sorted({x * y for x in range(2, 13) for y in range(2, 13)})
-        place = self.rng.randrange(5)  # kept while the product is redrawn
         for _ in range(500):
             (a, b), ans, _, _ = self.rng.choice(pool)
-            wrong = near_numbers(self.rng, ans, 12, pool=allp, place=place)
+            wrong = near_numbers(self.rng, ans, 12, pool=allp)
             if wrong:
                 break
         else:
@@ -401,6 +404,13 @@ class Builder:
                 "region": rt.get("region"), "half": self.half}
 
 
+def problem_key(rule_content):
+    """Section 18, item 2: an operator problem is its shape and operands, whatever its symbol."""
+    import ast
+    c = ast.literal_eval(rule_content)
+    return ("op",) + tuple(c[2:]) if c[0] == "op" else rule_content
+
+
 def build_scored(b, allocation):
     pairs, pid = [], 0
     for (rk, qk), n in allocation.items():
@@ -412,10 +422,10 @@ def build_scored(b, allocation):
         while made < n and tries < 2000:
             tries += 1
             p = b.pair(rk, qk, orders[made], pair_id=f"{b.half}-{pid:04d}")
-            if p is None or p["routine_content"] in b.used_routine or p["rule_content"] in b.used_rule:
+            if p is None or p["routine_content"] in b.used_routine or problem_key(p["rule_content"]) in b.used_rule:
                 continue
             b.used_routine.add(p["routine_content"])
-            b.used_rule.add(p["rule_content"])
+            b.used_rule.add(problem_key(p["rule_content"]))
             pairs.append(p)
             pid += 1
             made += 1
@@ -483,15 +493,16 @@ def build_bites(b, scored, donors, allocation, budget_per_item=200, cap_factor=3
     """Specification, section 17, item 5: held-out prompt-rule problems with their donors."""
     taken = {(p["rule_content"], p["routine_content"]) for p in scored + donors}
     used_rules = set()
+    main_rng, b.rng = b.rng, random.Random(b.seed + 1000)  # section 18, item 3: the bites items' own stream
     items, k = [], 0
     for (rk, qk), n in allocation.items():
         made, tries = 0, 0
         while made < n and tries < 4000:
             tries += 1
             p = b.pair(rk, qk, b.rng.random() < 0.5, allow_reuse=True, pair_id=f"{b.half}-bites-{k:04d}")
-            if p is None or (p["rule_content"], p["routine_content"]) in taken or p["rule_content"] in used_rules:
+            if p is None or (p["rule_content"], p["routine_content"]) in taken or problem_key(p["rule_content"]) in used_rules:
                 continue
-            used_rules.add(p["rule_content"])
+            used_rules.add(problem_key(p["rule_content"]))
             items.append(bites_record(p))
             k += 1
             made += 1
@@ -522,9 +533,12 @@ def build_bites(b, scored, donors, allocation, budget_per_item=200, cap_factor=3
                     counts[x["id"]] += 1
         donor_items.extend(kept)
         report[f"{rk}+{qk}"] = {"scored": len(members), "donor_only_kept": len(kept), "draws": draws,
+                                "stopped_by": "all_have_five" if all(c >= 5 for c in counts.values()) else
+                                              ("cap" if len(kept) >= cap_factor * len(members) else "draw_budget"),
                                 "no_donor": [x["id"] for x in members if counts[x["id"]] == 0],
                                 "fewer_than_five": sum(c < 5 for c in counts.values()),
                                 "eligible_donors": counts}
+    b.rng = main_rng
     return items, donor_items, report
 
 
@@ -537,7 +551,7 @@ def bites_record(p):
 def bites_eligible(d, rec):
     """Section 17, item 5: same group, at least one token longer, answer not among the item's candidates."""
     return ((d["rule_kind"], d["routine_kind"]) == (rec["rule_kind"], rec["routine_kind"]) and d["id"] != rec["id"]
-            and d["rule_content"] != rec["rule_content"]
+            and d["rule_content"] != rec["rule_content"] and d["routine_content"] != rec["routine_content"]  # section 18, item 5
             and len(d["P"]["prompt_ids"]) >= len(rec["P"]["prompt_ids"]) + 1
             and d["P"]["answer"] not in rec["P"]["candidates"])
 
@@ -631,22 +645,18 @@ NEUTRAL_SENTENCES = [
 
 
 def build_neutral(b, items, n=200):
-    """Section 10: neutral prose, lengths spread from the shortest to the longest item, in the chat template."""
+    """Section 10 and section 18, item 7: neutral prose, lengths spread from the shortest to the longest of every
+    item, each built up to at least its target, in the chat template."""
     sents = halves(NEUTRAL_SENTENCES)[b.half]
-    lens = [len(p["P"]["prompt_ids"]) for p in items]
+    lens = [len(p[t]["prompt_ids"]) for p in items for t in ("P", "R") if t in p]
     lo, hi = min(lens), max(lens)
     prefix = len(b.m.ids(b.m.render("")))
     out = []
     for i in range(n):
         target = lo + (hi - lo) * i // max(1, n - 1)
         text = ""
-        while True:
-            nxt = (text + " " + b.rng.choice(sents)).strip()
-            if len(b.m.ids(b.m.render(nxt))) > target and text:
-                break
-            text = nxt
-            if len(b.m.ids(b.m.render(text))) >= target:
-                break
+        while len(b.m.ids(b.m.render(text))) < target or not text:
+            text = (text + " " + b.rng.choice(sents)).strip()
         out.append({"id": f"{b.half}-neutral-{i:03d}", "text": text, "role": "build" if i % 2 == 0 else "measure",
                     "prompt_ids": b.m.ids(b.m.render(text))})
     return out, prefix
@@ -665,7 +675,7 @@ def main():
     scored = build_scored(b, PILOT_ALLOCATION)
     donors, report = build_donor_only(b, scored)
     bites, bites_donors, bites_report = build_bites(b, scored, donors, BITES_ALLOCATION)  # section 17, item 5
-    neutral, prefix = build_neutral(b, scored)
+    neutral, prefix = build_neutral(b, scored + donors + bites + bites_donors)
     os.makedirs(a.out, exist_ok=True)
     def dump(name, rows):
         with open(os.path.join(a.out, name), "w") as f:

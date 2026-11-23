@@ -229,9 +229,95 @@ def main():
                   "pool_A": v["half_A_pool"], "pool_B": v["half_B_pool"], "drawn_pilot_items": f,
                   "facts_used": len(uses), "most_uses_of_one_fact": max(uses.values()) if uses else None}
     R["split"] = out
+    # Section 18, item 8: conditions that fail the script
+    from build import RULE_KINDS, problem_key
+    import split as _split
+    shapes = dict(_split.OP_SHAPES)
+    caps_by_country = {c["country"]: c["capital"] for c in L["countries"]}
+    opp_of = {}
+    for q in L["opposites"]:
+        opp_of[q["a"]], opp_of[q["b"]] = q["b"], q["a"]
+    col_of = {o["object"]: o["typical"] for o in L["objects"]}
+
+    def right(content):
+        c = ast.literal_eval(content)
+        k = c[0]
+        if k == "op":
+            return str(shapes[c[2]](c[3], c[4]))
+        if k == "unit":
+            return str(c[3] * c[4])
+        if k == "look":
+            return c[2][c[3]]
+        if k == "sum":
+            return str(c[1] + c[2])
+        if k == "prod":
+            return str(c[1] * c[2])
+        if k == "cap":
+            return caps_by_country[c[1]]
+        if k == "opp":
+            return opp_of[c[1]]
+        if k == "col":
+            return col_of[c[1]]
+        raise ValueError(k)
+
+    instr = rep.get("instruction_text")
+    failures = []
+    every = [("pairs", x) for x in pairs] + [("donor_only", x) for x in donors] + [("bites", x) for x in bites] + \
+            [("bites_donor_only", x) for x in bites_donors]
+    if not instr:
+        failures.append("the build report names no instruction")
+    for f, x in every:
+        if x["rule_kind"] not in RULE_KINDS:
+            failures.append(f"{f} {x['id']}: rule kind {x['rule_kind']} not built")
+        for side in ("P", "R"):
+            if side not in x:
+                continue
+            if instr and not x[side]["text"].startswith(instr + " "):
+                failures.append(f"{f} {x['id']} {side}: does not start with the instruction")
+            if not all(m.one_token(c) for c in x[side]["candidates"]):
+                failures.append(f"{f} {x['id']} {side}: a candidate is not one token")
+            content = x["rule_content"] if side == "P" else x["routine_content"]
+            if right(content) != x[side]["answer"]:
+                failures.append(f"{f} {x['id']} {side}: stated answer {x[side]['answer']} differs from {right(content)}")
+            if x[side]["answer"] not in x[side]["candidates"]:
+                failures.append(f"{f} {x['id']} {side}: answer not among the candidates")
+        if "R" in x and len(x["P"]["prompt_ids"]) != len(x["R"]["prompt_ids"]):
+            failures.append(f"{f} {x['id']}: twins of unequal length")
+    if instr:
+        for x in neutral:
+            if instr in x["text"]:
+                failures.append(f"neutral {x['id']}: carries the instruction")
+    keys = [problem_key(x["rule_content"]) for x in bites]
+    if len(keys) != len(set(keys)):
+        failures.append("two bites items share a problem")
+    if R["bites"]["repeats_a_scored_pair_or_donor"]:
+        failures.append("a bites item repeats a scored pair's or donor's whole content")
+    skeys = [problem_key(x["rule_content"]) for x in pairs]
+    if len(skeys) != len(set(skeys)):
+        failures.append("two scored pairs share a rule problem")
+    # reports (section 18, item 8)
+    bplaces = {}
+    for x in bites:
+        if x["P"]["answer"].isdigit():
+            srt = sorted(int(c) for c in x["P"]["candidates"])
+            bplaces.setdefault(x["rule_kind"], [0] * 5)[srt.index(int(x["P"]["answer"]))] += 1
+    R["11b_right_number_place_counts_bites"] = bplaces
+    fact_uses = {}
+    for x in pairs + bites:
+        if x["rule_kind"] == "unit":
+            c = ast.literal_eval(x["rule_content"])
+            key = str(tuple(sorted((c[3], c[4]))))
+            fact_uses[key] = fact_uses.get(key, 0) + 1
+    R["unit_fact_uses"] = dict(sorted(fact_uses.items(), key=lambda kv: -kv[1]))
+    R["neutral_longest_vs_longest_item"] = [max(len(x["prompt_ids"]) for x in neutral),
+                                           max(len(x[s]["prompt_ids"]) for _, x in every for s in ("P", "R") if s in x)]
+    if R["neutral_longest_vs_longest_item"][0] < R["neutral_longest_vs_longest_item"][1]:
+        failures.append("the longest neutral passage is shorter than the longest item")
+    R["failures"] = failures
     json.dump(R, open(os.path.join(a.pilot, "step3-results.json"), "w"), indent=1, ensure_ascii=False)
     print(json.dumps({k: R[k] for k in ("2_wording_table_all_equal", "3_twin_lengths_equal", "5_donors", "6_dose_ratio_R_over_P",
-                                        "6_band_pass", "7_tail_share", "8_average_method_counts", "10_average_defined", "bites")}, indent=1))
+                                        "6_band_pass", "7_tail_share", "8_average_method_counts", "10_average_defined", "bites", "failures")}, indent=1))
+    sys.exit(1 if failures else 0)
 
 
 if __name__ == "__main__":
