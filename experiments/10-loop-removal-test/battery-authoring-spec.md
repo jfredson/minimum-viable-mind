@@ -564,3 +564,64 @@ describe trials and stand as a record.*
     - The split report: each kind's seed, the pool and drawn-item figures for every tolerance, and the facts.
 
     Nothing is spent, and nothing goes to the model.
+
+## 18. Fixes after the independent check of the rebuilt pilot (2026-11-23)
+
+*Added 2026-11-23 on John's instruction ("Yes, fix it"), before any code for it was written. It answers the
+independent check of the rebuilt pilot (`independent-check-pilot-v0.12-2026-11-21.md`). That check found the
+pilot rebuilt byte for byte, and one serious problem: the drawn items do not follow the pools (RT-473). This
+section governs where it differs from section 17.*
+
+1. **The item is drawn first, then its place** (RT-473). Section 17, item 4 asked for two things that
+   conflict at the edges of the range: items drawn uniformly from the half's pool, and the right answer's
+   place among the five drawn first (section 14, item 2). An answer of 10 can only be the lowest of five
+   two-digit numbers, so drawing the place first made edge answers about a fifth as common as the pool. The
+   halves then drifted apart, as drawn, past three tolerances. From now on:
+   - the item is drawn uniformly from the half's pool;
+   - its place is then drawn uniformly among the places it can fill, given the wrong answers available
+     within the kind's spread;
+   - an item that can fill no place is redrawn, and the generator counts how often that happens.
+
+   So the drawn items follow the pool on which the tolerances were checked. The places are no longer quite
+   uniform for edge answers, and step 3 reports the place counts by kind, for the pairs and the bites items.
+   Section 14, item 2's "place drawn first" is replaced by this. The split seeds are unchanged, because they
+   depend only on the pools.
+2. **The operator's no-reuse rule keys on the problem, not the symbol** (RT-475). Two operator items with
+   the same shape and operands are the same problem, whatever symbol names the rule. Among the scored pairs,
+   and among the bites items, no operator problem repeats. A bites item may still repeat a scored pair's
+   problem, as the design allows.
+3. **The bites items have their own random stream** (RT-476), seeded by the build seed plus 1,000, as the
+   design asks. Changing the pairs then does not change the bites items.
+4. **A bites item's discarded routine twin** (RT-477). The generator builds the bites item through the pair
+   builder, so its routine twin is built and then discarded. That twin can still cause a candidate item to be
+   rejected: when its length differs from the bites item's, or when a candidate clashes with the routine
+   question. This is a small filter with no effect on the answer, and it is kept, so that a bites item has
+   exactly the form of a pair's prompt-rule item.
+5. **A bites donor may not repeat its item's routine fact** (RT-478), as for the pairs (RT-412).
+6. **The lookup allocation, restated** (RT-481). The lookup kind takes only sums and products by choice:
+   that keeps capitals and opposites, which the operator and unit kinds need, below the cap with room to
+   spare, and it is stated here as a choice, not as something forced.
+7. **The neutral passages reach the longest item** (RT-483, carrying RT-425). Their lengths are spread from
+   the shortest to the longest of every item: the scored pairs, the donor-only pairs, the bites items and
+   their donors. Each passage is built up to at least its target length, so the longest passage is at least
+   as long as the longest item.
+8. **Step 3 fails on any broken condition** (RT-474, RT-479). The step-3 script exits with a failure if any of
+   these is broken:
+   - the instruction starts every scored, donor-only, bites and bites-donor text, and no neutral passage;
+   - only the three rule kinds are present;
+   - every right answer, recomputed from the item's own content, matches the stated answer;
+   - every candidate is one token;
+   - all twins are of equal length;
+   - no two bites items share a problem;
+   - no bites item repeats a scored pair's or donor's whole content.
+
+   It also reports:
+   - the right number's place counts for the bites items, as well as for the pairs;
+   - how often each fact is used;
+   - why the drawing of donor-only bites items stopped.
+9. **Settled before any test set, not now** (RT-480, RT-484). These two do not bear on the pilot:
+   - the rule for the test half's shares above about 160 pairs, where half B's capitals and products run short;
+   - the overlap check's comparison of objects, invented words, prompts and tables between pilot and test.
+
+   They stay on the roadmap with the earlier open list checks (RT-417 and the others). The thin margin of
+   the products seed (RT-482) is noted; the seeds do not change here.
