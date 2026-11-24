@@ -552,8 +552,8 @@ right one and four wrong ones built by a rule for that kind, committed before an
     to one pass costs these items".
   - **The anchor's own check.** If C's 95% interval on the pilot is wider than half of C on either side, the
     unit cannot be fixed well enough, and the design returns to John. On step 4b's data it was about ±14%.
-  - **The thresholds,** in units of C, are choice 9 (section 10). As written here, until John rules, they are
-    the recommended option: **δ = 0.5** (an excess below half of what one pass costs counts as no excess) and
+  - **The thresholds,** in units of C, are choice 9 (section 10), ruled by John on 2026-11-23 ("Shares of one
+    pass (Recommended)"): **δ = 0.5** (an excess below half of what one pass costs counts as no excess) and
     **a target gap of 1.0** (a gap as large as what one pass costs). These round the values the accuracy scale
     implied on step 4b's data, 0.57 and 1.15.
   - **The bites items need no conversion.** Their conditions are ratios of their own one-pass cost in margin:
@@ -1679,7 +1679,8 @@ are the author's:
 - the one-pass condition at a quarter of C;
 - the reporting of starting margins.
 
-The thresholds' values are John's to choose (choice 9).
+The thresholds' values are John's: he ruled choice 9 on 2026-11-23, "Shares of one pass (Recommended)", δ = 0.5
+and a target gap of 1.0 in units of C (`docs/rulings/2026-11-23-loop-removal-test-choice-9-ruling.md`).
 
 **What is the author's, not John's, in versions 0.13 and 0.14** (RT-494). John ruled three things after step
 4b: interference by accuracy, damage on the model's reply, and the operator simplified. The following were
