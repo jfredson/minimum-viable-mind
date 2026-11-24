@@ -1413,6 +1413,19 @@ mixed. The ruling, with the wording he was shown, is recorded in
 - **Choice 8:** "Drop, three equal (Recommended)". The letter-code kind is dropped, with 40 operator, 40 unit
   and 40 lookup pairs in the pilot and the same shares in the test half.
 
+**After step 4b** (ruled 2026-11-23). The step-4b findings
+(`experiments/10-loop-removal-test/step4b-findings-2026-11-23.md`) put three questions to John. He picked the
+recommended option each time, from a question form in the session. Authorship is mixed. The rulings, with the
+wording he was shown, are in `docs/rulings/2026-11-23-loop-removal-test-after-step4b-ruling.md`. They are to
+be written into a version 0.13:
+- **Interference:** "By accuracy (Recommended)". An item counts as interfered with only if it is wrong in the
+  full context and right without the other half. This replaces the limit of 1.0 in margin.
+- **Damage and perplexity:** "As the model's reply (Recommended)". They are measured on the prose placed as
+  the model's own reply. The prose stays in the user's turn for building the average.
+- **The operator kind:** "Simplify it (Recommended)". Single-step operator rules, three rule kinds kept, and
+  the kind checked on the pilot before any test set. The ruling file records a consequence the question did
+  not name: the bites check relies on the operator kind's gain from extra passes.
+
 **A premise of choice 3 that no longer holds** (dated 2026-11-21, after the fifth check; RT-391; quotation
 corrected in version 0.7, RT-401). John ruled from a question form in the session.
 - **What he picked.** The option he picked for choice 3 was labelled "Twins (Recommended)". It read: "Keep
