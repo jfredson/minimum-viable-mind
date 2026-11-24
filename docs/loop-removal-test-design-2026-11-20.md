@@ -1080,10 +1080,11 @@ registration, rather than running to "not testable".
   was added in version 0.11, RT-453, and version 0.10 used the point estimate alone). **Gate decisions use 100,000 resamples**, and where the
   decision lies within 0.005 of its threshold, the spread of the interval's end over 20 resampling seeds is
   reported beside it (version 0.14, RT-492). At step 4b the pooled lower end passed by 0.0003 on one seed,
-  and on 9 of 20 seeds. Otherwise the setup is wrong, and the result is not testable. The
-  0.15 is this design's own choice (RT-355). On the pilot, with the instruction, the two kinds together
-  rose by about 0.3 in raw accuracy from one pass to three, about 0.4 on the normalised scale, so the
-  threshold is expected to be met but is not assumed. **This condition gates every outcome** (RT-444): if it
+  and on 9 of 20 seeds. Otherwise the setup is wrong, and the result is not testable. *(Corrected 2026-11-23,
+  RT-516: the threshold is now a quarter of C in margin, as above. The 0.15 on the normalised accuracy scale,
+  this design's own choice from RT-355, is withdrawn.)* On step 4b's data, the bites items' one-pass cost in
+  margin was 1.81 nats for the operator kind and 5.93 for the unit kind, against a quarter of C of about 1.05,
+  so the condition is expected to be met but is not assumed. **This condition gates every outcome** (RT-444): if it
   fails, the result is not testable (section 6, stage one).
 - **The main removal must bite, beyond generic damage** (RT-367). Under each method, the main removal's
   loss on the bites items **minus the random comparison's loss** on the same items
@@ -1199,7 +1200,7 @@ registration, rather than running to "not testable".
 **Sample size** (RT-340). The analysis is paired: the same items are scored under every condition, and
 differences are resampled by the scheme of section 6 (by pair, and by fact within the unit kind; RT-462). The number of pairs is fixed in the rehearsal by a committed
 simulation. It uses the measured spread, the measured loss of the random comparison and the five-donor
-averaging, and finds the smallest number giving at least an 80% chance of classifying a true normalised gap
+averaging, and finds the smallest number giving at least an 80% chance of classifying a true gap
 equal to the target of choice 9 (in units of C; version 0.16, RT-511) as outcome A **after every check in
 section 6 that can rename an A**, including the readings with
 one kind left out, with both methods (RT-363). The first review's simulation found that about 120 items per
@@ -1217,8 +1218,10 @@ to 200, but near its lower end. **If the simulation asks for more pairs than
 survive the filters, the design returns to John.**
 
 **The simulation's conditions** (RT-340). The committed simulation uses the spread and the comparison loss
-measured at step 4b, in the margin units of section 5 (version 0.15). On step 4b's data, a true gap of 0.20
-spread evenly was read as A in 94 to 96% of runs at 80 pairs, and 98 to 100% from 140 pairs. The scenario
+measured at the step-4b rerun, in units of C (section 5). *(Corrected 2026-11-23, RT-516: version 0.15's units
+are withdrawn.)* On step 4b's data, under John's thresholds and with real per-pair losses resampled, a true gap
+of 1.0 C was read as A in 99% of runs at 80 pairs and 100% from 140 pairs. A was never read when the true gap
+was zero (the closure check of version 0.16). The scenario
 with the gap on the operator and unit pairs only could not be judged on that data, because no operator
 pairing survived there. It is run on the pairs that survive every filter, after the confidence, margin and
 swap-size steps and the pairs dropped for want of a donor. If a rule kind is dropped, it is run again with
