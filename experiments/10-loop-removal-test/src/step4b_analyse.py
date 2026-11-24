@@ -224,7 +224,7 @@ def main():
         one_pass[name] = {"items": len(sel), "cost": statistics.mean(vals), "per_item_sd": statistics.pstdev(vals),
                           **g, "lower_end_at_least_0.15": g["interval"][0] >= 0.15}
     out["bites_one_pass"] = one_pass
-    fired["the bites check's one-pass condition fails (every outcome not testable)"] = not one_pass.get("pooled", {}).get("lower_end_at_least_0.15", False)
+    out["bites_one_pass_note"] = "accuracy figures, a description; the gate reads the margin (specification, section 20, item 4)"
     # the branch choice's inputs (specification, section 19, item 7): spreads of the swap's own loss on bites items
     own = {}
     for kind in ("op", "unit"):
@@ -251,24 +251,93 @@ def main():
     out["change_ratio_bites"] = cr
     fired["the change ratio is below 0.5 under either method (outcome F out of reach)"] = any(v["below_0.5"] for v in cr.values())
 
-    # ---------- what the sample-size simulation needs: spreads, and the comparisons' losses (no main-removal gap)
-    sim = {}
-    for meth in ("swap", "avg"):
-        for cell in ("P", "R"):
-            keys = [r["id"] + ":" + cell for r in after_margin]
-            if not keys:
+    # ---------- scoring by margin (design version 0.16; specification, section 20)
+    M = lambda k, c: items[k][c]["margin"]
+    mean_m = lambda lst: statistics.mean(x["margin"] for x in lst)
+
+    def fact_key(content, rk, fallback):
+        c_ = ast.literal_eval(content)
+        return ("unit", tuple(sorted((c_[3], c_[4])))) if rk == "unit" else fallback
+
+    def by_kind_units(recs, f):
+        u = {}
+        for r_ in recs:
+            u.setdefault(r_["rk"], {}).setdefault(fact_key(r_["rule_content"], r_["rk"], r_["id"]), []).append(f(r_))
+        return {k: list(v.values()) for k, v in u.items()}
+
+    # C: prompt-rule items of the pairs that pass the baseline and confidence checks and have a donor (item 2)
+    c_recs = kept
+    c_of = lambda r_: M(r_["id"] + ":P", "unaltered") - M(r_["id"] + ":P", "passes_1")
+    C = statistics.mean(c_of(r_) for r_ in c_recs) if c_recs else None
+    if C:
+        lo, hi = boot(by_kind_units(c_recs, c_of), statistics.mean)
+        out["C"] = {"nats": C, "interval": [lo, hi], "pairs": len(c_recs)}
+        fired["C's interval reaches more than half of C from C (the unit cannot be fixed)"] = lo < C / 2 or hi > 1.5 * C
+    else:
+        out["C"] = None
+        fired["C's interval reaches more than half of C from C (the unit cannot be fixed)"] = True
+
+    # the cells: starting margins, the room, and each surviving pair's excesses for the simulation (items 3, 5, 6)
+    def main_m(k, meth):
+        return mean_m(items[k]["swap"]) if meth == "swap" else M(k, "avg")
+    def comp_m(k, meth):
+        return mean_m(items[k][f"loop_{meth}"])
+    sim_pairs, cells = [], {}
+    if C:
+        floors = {}
+        for rk in keep_kinds:
+            for cell in ("P", "R"):
+                ms = []
+                for r_ in [x for x in after_margin if x["rk"] == rk]:
+                    it = items[r_["id"] + ":" + cell]
+                    ms += [s_["margin"] for s_ in it.get("swap", [])] + [it["avg"]["margin"]]
+                    ms += [s_["margin"] for s_ in it["loop_swap"]] + [s_["margin"] for s_ in it["loop_avg"]]
+                if ms:
+                    ms.sort()
+                    floors[(rk, cell)] = ms[int(0.05 * (len(ms) - 1))]
+        for r_ in after_margin:
+            kp, kr = r_["id"] + ":P", r_["id"] + ":R"
+            if not items[kp].get("swap"):
                 continue
-            def main_loss(k):
-                it = items[k]
-                alt = statistics.mean(s["right"] for s in it["swap"]) if meth == "swap" else it["avg"]["right"]
-                return norm_loss(it["unaltered"]["right"], alt)
-            def comp_loss(k):
-                it = items[k]
-                return norm_loss(it["unaltered"]["right"], statistics.mean(s["right"] for s in it[f"loop_{meth}"]))
-            sim[f"{meth}_{cell}"] = {"items": len(keys), "main_loss_sd": statistics.pstdev([main_loss(k) for k in keys]),
-                                     "comparison_loss_mean": statistics.mean([comp_loss(k) for k in keys]),
-                                     "comparison_loss_sd": statistics.pstdev([comp_loss(k) for k in keys])}
-    out["simulation_inputs"] = sim
+            rec = {"rk": r_["rk"], "qk": r_["qk"], "fact": str(fact_key(r_["rule_content"], r_["rk"], r_["id"]))}
+            for meth in ("swap", "avg"):
+                rec[f"exP_{meth}"] = (comp_m(kp, meth) - main_m(kp, meth)) / C
+                rec[f"exR_{meth}"] = (comp_m(kr, meth) - main_m(kr, meth)) / C
+                rec[f"roomP_{meth}"] = max(0.0, main_m(kp, meth) - floors[(r_["rk"], "P")]) / C
+            sim_pairs.append(rec)
+        for meth in ("swap", "avg"):
+            room = statistics.mean(x[f"roomP_{meth}"] for x in sim_pairs) if sim_pairs else 0.0
+            cells[meth] = {"prompt_rule_mean_room_in_C": room}
+            fired[f"the prompt-rule cell's mean room under the {meth} is below the target gap of 1.0"] = room < 1.0
+        cells["starting_margins"] = {"prompt_rule": statistics.mean(r_["mP"] for r_ in after_margin) if after_margin else None,
+                                     "routine": statistics.mean(r_["mR"] for r_ in after_margin) if after_margin else None}
+        cells["floors_nats"] = {f"{k[0]}+{k[1]}": v for k, v in floors.items()}
+    out["cells_margin"] = cells
+    out["sim_pairs"] = sim_pairs
+
+    # the bites items in margin: the one-pass gate at C/4, and each item's losses for the branch choice (item 4)
+    sim_bites, bites_margin = [], {}
+    if C:
+        brecs = [{"rk": b["rule_kind"], "rule_content": b["rule_content"], "id": b["id"]} for b in bites
+                 if items[b["id"] + ":P"].get("swap")]
+        one = lambda r_: M(r_["id"] + ":P", "unaltered") - M(r_["id"] + ":P", "passes_1")
+        g = gate_interval(by_kind_units(brecs, one), statistics.mean, C / 4, "lower")
+        bites_margin["pooled"] = {"one_pass_nats": statistics.mean(one(r_) for r_ in brecs), **g,
+                                  "lower_end_at_least_C_over_4": g["interval"][0] >= C / 4}
+        for kind in ("op", "unit"):
+            sel = [r_ for r_ in brecs if r_["rk"] == kind]
+            if sel:
+                bites_margin[kind] = {"one_pass_nats": statistics.mean(one(r_) for r_ in sel), "items": len(sel)}
+        for r_ in brecs:
+            k_ = r_["id"] + ":P"
+            sim_bites.append({"rk": r_["rk"], "fact": str(fact_key(r_["rule_content"], r_["rk"], r_["id"])),
+                              "one_pass": one(r_), "own": M(k_, "unaltered") - main_m(k_, "swap"),
+                              "excess": comp_m(k_, "swap") - main_m(k_, "swap")})
+        fired["the bites check's one-pass condition fails in margin (every outcome not testable)"] = \
+            not bites_margin["pooled"]["lower_end_at_least_C_over_4"]
+    out["bites_margin"] = bites_margin
+    out["sim_bites"] = sim_bites
+
     out["ties_at_unaltered"] = sum(1 for it in items.values() if 0 < it["unaltered"]["right"] < 1)
 
     out["return_to_john"] = fired
