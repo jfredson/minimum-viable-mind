@@ -1,0 +1,42 @@
+[transformers] Unknown quantization type, got modelopt - supported types are: ['awq', 'bitsandbytes_4bit', 'bitsandbytes_8bit', 'gptq', 'aqlm', 'quanto', 'quark', 'fouroversix', 'fp_quant', 'eetq', 'higgs', 'hqq', 'compressed-tensors', 'fbgemm_fp8', 'torchao', 'bitnet', 'vptq', 'spqr', 'fp8', 'gguf', 'nvfp4', 'mxfp8', 'auto-round', 'mxfp4', 'metal', 'sinq', 'gemma']. Hence, we will skip the quantization. To remove the warning, you can delete the quantization_config attribute in config.json
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+checks {"noise_floor": 0.0, "tolerance": 0.01, "identity": 0.0, "identity_pass": true, "bypass": 0.0, "bypass_pass": true, "items": 20}
+recorded 1094 block_states [65, 1, 2304]
+one-nat check {"reply_nll_per_token": 2.3829273265341055, "user_turn_nll_per_token": 7.664708037998365, "plain_nll_per_token": 2.3648157345690346, "reply_minus_plain": 0.01811159196507095, "passes": true}
+neutral main {"swap": {"damage": 1.739462107118934, "passages": 99, "ppl_rise": 32.65700503830812}, "avg": {"damage": 3.2872343039512635, "passages": 100, "ppl_rise": 161.43674311658134}, "fallback": {"damage": 3.105112850666046, "passages": 100, "ppl_rise": 135.478414844154}, "avg_reply_built": {"damage": 0.6240539467334747, "passages": 100, "ppl_rise": 2.4506895831818962}}
+factor loop swap {"factor": 56234.13251903491, "target_damage": 1.739462107118934, "damage_20_draws": 0.8759416847517996, "bracketed": false, "within_20pct": false, "matched": false}
+factor loop avg {"factor": 93057.2040929699, "target_damage": 3.2872343039512635, "damage_20_draws": 0.8736301827430725, "bracketed": false, "within_20pct": false, "matched": false}
+factor outside swap {"factor": 0.6378043838892178, "target_damage": 1.739462107118934, "damage_20_draws": 1.7219555082947318, "bracketed": true, "within_20pct": true, "matched": true}
+factor outside avg {"factor": 2.0535250264571463, "target_damage": 3.2872343039512635, "damage_20_draws": 3.2812592005729675, "bracketed": true, "within_20pct": true, "matched": true}
+pairs 0 1936
+pairs 10 1981
+pairs 20 2027
+pairs 30 2073
+pairs 40 2119
+pairs 50 2164
+pairs 60 2209
+pairs 70 2254
+pairs 80 2302
+pairs 90 2359
+pairs 100 2416
+pairs 110 2473
+done 2704 s, peak 72.36 GB
+---quick---
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] Unknown quantization type, got modelopt - supported types are: ['awq', 'bitsandbytes_4bit', 'bitsandbytes_8bit', 'gptq', 'aqlm', 'quanto', 'quark', 'fouroversix', 'fp_quant', 'eetq', 'higgs', 'hqq', 'compressed-tensors', 'fbgemm_fp8', 'torchao', 'bitnet', 'vptq', 'spqr', 'fp8', 'gguf', 'nvfp4', 'mxfp8', 'auto-round', 'mxfp4', 'metal', 'sinq', 'gemma']. Hence, we will skip the quantization. To remove the warning, you can delete the quantization_config attribute in config.json
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+checks {"noise_floor": 0.0, "tolerance": 0.01, "identity": 0.0, "identity_pass": true, "bypass": 0.0, "bypass_pass": true, "items": 20}
+recorded 404 block_states [65, 1, 2304]
+one-nat check {"reply_nll_per_token": 2.682946740868557, "user_turn_nll_per_token": 8.799402609289405, "plain_nll_per_token": 2.6419566860043906, "reply_minus_plain": 0.0409900548641664, "passes": true}
+neutral main {"swap": {"damage": 1.5253907309638128, "passages": 9, "ppl_rise": 31.144562166455266}, "avg": {"damage": 2.9953630924224854, "passages": 10, "ppl_rise": 166.61124062735047}, "fallback": {"damage": 2.7141597986221315, "passages": 10, "ppl_rise": 121.94287993516218}, "avg_reply_built": {"damage": 0.6074200630187988, "passages": 10, "ppl_rise": 2.6015769035531218}}
+factor loop swap {"factor": 56234.13251903491, "target_damage": 1.5253907309638128, "damage_20_draws": 0.9173783991071913, "bracketed": false, "within_20pct": false, "matched": false}
+factor loop avg {"factor": 86596.43233600653, "target_damage": 2.9953630924224854, "damage_20_draws": 0.9136413395404815, "bracketed": false, "within_20pct": false, "matched": false}
+factor outside swap {"factor": 0.6042963902381329, "target_damage": 1.5253907309638128, "damage_20_draws": 1.3421965175204806, "bracketed": true, "within_20pct": true, "matched": true}
+factor outside avg {"factor": 1.5399265260594919, "target_damage": 2.9953630924224854, "damage_20_draws": 3.0712329149246216, "bracketed": true, "within_20pct": true, "matched": true}
+pairs 0 337
+done 392 s, peak 60.47 GB
+---pip---
+accelerate==1.16.0
+Jinja2==3.1.6
+tokenizers==0.23.3
+torch==2.9.1+cu128

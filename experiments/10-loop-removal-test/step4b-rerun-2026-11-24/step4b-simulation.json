@@ -1,0 +1,71 @@
+{
+ "method": "resampling the pilot's real losses (specification, section 20)",
+ "delta": 0.5,
+ "gap": 1.0,
+ "rule_kinds_in_pilot": [
+  "look",
+  "unit"
+ ],
+ "A_power": {
+  "even": {
+   "power_by_pairs": {
+    "80": 0.001,
+    "100": 0.001,
+    "120": 0.0,
+    "140": 0.0,
+    "160": 0.0,
+    "180": 0.0,
+    "200": 0.0,
+    "220": 0.0,
+    "240": 0.0,
+    "260": 0.0,
+    "280": 0.0,
+    "300": 0.0
+   },
+   "smallest_for_80pct": null,
+   "wrong_A_rate_at_that_size": null
+  },
+  "op_unit_only": {
+   "power_by_pairs": {
+    "80": 0.0,
+    "100": 0.0,
+    "120": 0.0,
+    "140": 0.0,
+    "160": 0.0,
+    "180": 0.0,
+    "200": 0.0,
+    "220": 0.0,
+    "240": 0.0,
+    "260": 0.0,
+    "280": 0.0,
+    "300": 0.0
+   },
+   "smallest_for_80pct": null,
+   "wrong_A_rate_at_that_size": null
+  }
+ },
+ "bites_branch": {
+  "inputs": {
+   "C": 4.641096428571428,
+   "one_pass_cost_nats": {
+    "op": 0.563475641025641,
+    "unit": 5.835637125
+   }
+  },
+  "both": {
+   "possible": true,
+   "one_pass": 1.0,
+   "bites_at_three_quarters": 1.0,
+   "does_not_bite_at_zero": 0.06,
+   "qualifies": false
+  },
+  "unit_only": {
+   "possible": true,
+   "one_pass": 1.0,
+   "bites_at_three_quarters": 1.0,
+   "does_not_bite_at_zero": 1.0,
+   "qualifies": true
+  },
+  "choice": "unit alone"
+ }
+}
