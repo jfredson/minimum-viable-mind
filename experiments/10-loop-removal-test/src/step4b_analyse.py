@@ -29,15 +29,34 @@ def load(d, name):
 
 
 def boot(units, stat, n=10000, seed=1):
-    """Paired resampling by unit (design, section 6): units is a list of lists of per-item values."""
+    """Paired resampling by unit (design, section 6): units is a list of lists of per-item values, or a dict of
+    such lists by rule kind, in which case each kind is resampled within itself (specification, section 19,
+    item 6)."""
+    strata = list(units.values()) if isinstance(units, dict) else [units]
     rng = random.Random(seed)
     vals = []
     for _ in range(n):
-        s = [rng.choice(units) for _ in units]
-        flat = [v for u in s for v in u]
+        flat = []
+        for st in strata:
+            for _ in st:
+                flat.extend(rng.choice(st))
         vals.append(stat(flat))
     vals.sort()
     return vals[int(0.025 * n)], vals[int(0.975 * n) - 1]
+
+
+GATE_N = 100000   # specification, section 19, item 6
+
+
+def gate_interval(units, stat, threshold, end):
+    """A gate decision's interval at 100,000 resamples, with the spread over 20 seeds when it lies within 0.005."""
+    lo, hi = boot(units, stat, n=GATE_N, seed=1)
+    v = lo if end == "lower" else hi
+    out = {"interval": [lo, hi]}
+    if abs(v - threshold) < 0.005:
+        ends = [boot(units, stat, n=GATE_N, seed=s)[0 if end == "lower" else 1] for s in range(1, 21)]
+        out["end_over_20_seeds"] = [min(ends), max(ends)]
+    return out
 
 
 def main():
@@ -68,34 +87,51 @@ def main():
     out["rule_is_needed"] = need
     keep_kinds = [rk for rk in rule_kinds if need[rk]["rule_needed"]]
 
+    # baseline checks (design version 0.14, section 5; specification, section 19, item 8)
+    right = lambda x: x["right"] == 1.0     # a tie is not right here
     rows = []
     for p in pairs:
         P, R = items[p["id"] + ":P"], items[p["id"] + ":R"]
         rows.append({"id": p["id"], "rk": p["rule_kind"], "qk": p["routine_kind"], "rule_content": p["rule_content"],
                      "donors": P["n_donors"],
                      "confident": P["unaltered"]["margin"] >= MARGIN_MIN and R["unaltered"]["margin"] >= MARGIN_MIN,
-                     "routine_ok": R["unaltered"]["margin"] >= R["baseline"]["margin"] - INTRUDE,
-                     "mirror_ok": P["unaltered"]["margin"] >= P["baseline"]["margin"] - INTRUDE,
+                     "R_base_right": right(R["baseline"]), "R_full_right": right(R["unaltered"]),
+                     "P_base_right": right(P["baseline"]), "P_full_right": right(P["unaltered"]),
+                     "R_below_bar": right(R["baseline"]) and right(R["unaltered"]) and R["baseline"]["margin"] >= MARGIN_MIN
+                                    and R["unaltered"]["margin"] < MARGIN_MIN,
+                     "P_below_bar": right(P["baseline"]) and right(P["unaltered"]) and P["baseline"]["margin"] >= MARGIN_MIN
+                                    and P["unaltered"]["margin"] < MARGIN_MIN,
                      "mP": P["unaltered"]["margin"], "mR": R["unaltered"]["margin"]})
     strikes, table = {}, {}
     for (rk, qk) in sorted({(r["rk"], r["qk"]) for r in rows}):
-        conf = [r for r in rows if (r["rk"], r["qk"]) == (rk, qk) and r["confident"]]
-        f_r = sum(not r["routine_ok"] for r in conf)
-        f_m = sum(not r["mirror_ok"] for r in conf)
-        struck = (not conf) or f_r > FIFTH * len(conf) or f_m > FIFTH * len(conf)
-        strikes[f"{rk}+{qk}"] = {"pairs": sum(1 for r in rows if (r["rk"], r["qk"]) == (rk, qk)), "confident": len(conf),
-                                 "routine_check_failures": f_r, "mirror_check_failures": f_m, "struck": struck}
-        table.setdefault(rk, []) if rk in keep_kinds else None
-        if rk in keep_kinds and not struck:
-            table[rk].append(qk)
+        g = [r for r in rows if (r["rk"], r["qk"]) == (rk, qk)]
+        conf = [r for r in g if r["confident"]]
+        baseR = [r for r in g if r["R_base_right"]]
+        baseP = [r for r in g if r["P_base_right"]]
+        intR = sum(not r["R_full_right"] for r in baseR)
+        intP = sum(not r["P_full_right"] for r in baseP)
+        too_few = len(conf) < 3
+        struck = too_few or not baseR or not baseP or intR > FIFTH * len(baseR) or intP > FIFTH * len(baseP)
+        strikes[f"{rk}+{qk}"] = {"pairs": len(g), "confident": len(conf), "fewer_than_three_confident": too_few,
+                                 "routine_right_without_rule": len(baseR), "routine_interfered": intR,
+                                 "rule_right_without_routine_fact": len(baseP), "rule_interfered": intP,
+                                 "routine_fell_below_bar_staying_right": sum(r["R_below_bar"] for r in g),
+                                 "rule_fell_below_bar_staying_right": sum(r["P_below_bar"] for r in g),
+                                 "median_margins": {"routine_full": statistics.median(r["mR"] for r in g),
+                                                    "rule_full": statistics.median(r["mP"] for r in g)},
+                                 "struck": struck}
+        if rk in keep_kinds:
+            table.setdefault(rk, [])
+            if not struck:
+                table[rk].append(qk)
     out["strike_counts"] = strikes
     out["pairing_table"] = table
     surviving_kinds = [rk for rk in keep_kinds if len(table.get(rk, [])) >= 2]
-    fired["fewer than three rule kinds, or a rule kind with one routine kind or none"] = \
+    fired["fewer than three rule kinds, or a rule kind with one routine kind or none (after both checks and the minimum of three)"] = \
         len(surviving_kinds) < 3 or any(len(table.get(rk, [])) <= 1 for rk in keep_kinds)
 
     kept = [r for r in rows if r["rk"] in keep_kinds and r["qk"] in table.get(r["rk"], []) and r["confident"]
-            and r["routine_ok"] and r["mirror_ok"] and r["donors"] > 0]
+            and r["R_full_right"] and r["P_full_right"] and r["donors"] > 0]  # interfered items are not right
     out["pairs_after_baseline_checks"] = {rk: sum(r["rk"] == rk for r in kept) for rk in keep_kinds}
     out["pairs_dropped_no_donor"] = [r["id"] for r in rows if r["donors"] == 0]
 
@@ -148,8 +184,15 @@ def main():
     rf = max(nm["swap"]["damage"], nm["fallback"]["damage"]) / min(nm["swap"]["damage"], nm["fallback"]["damage"])
     out["factor_of_two"] = {"swap_vs_average": r2, "average_trips": r2 > 2, "swap_vs_fallback": rf, "fallback_trips": rf > 2}
     fired["both the average and its fallback differ from the swap by more than a factor of two (choice 5: the test stops)"] = r2 > 2 and rf > 2
-    out["damage_matching"] = {k: {kk: vv for kk, vv in v.items() if kk != "ppl_rise_draws"} for k, v in S["factors"].items()}
-    fired["a comparison cannot be matched within 20% on damage"] = not all(v["within_20pct"] for v in S["factors"].values())
+    if "avg_reply_built" in nm:
+        ra = max(nm["avg"]["damage"], nm["avg_reply_built"]["damage"]) / min(nm["avg"]["damage"], nm["avg_reply_built"]["damage"])
+        out["factor_of_two"]["user_built_vs_reply_built_average"] = ra
+        fired["the two averages differ by more than a factor of two (design version 0.14)"] = ra > 2
+    if "one_nat_check" in S:
+        out["one_nat_check"] = S["one_nat_check"]
+        fired["the reply rendering's loss is more than 1 nat a token above plain text's"] = not S["one_nat_check"]["passes"]
+    out["damage_matching"] = {k: {kk: vv for kk, vv in v.items() if kk not in ("ppl_rise_draws",)} for k, v in S["factors"].items()}
+    fired["a comparison cannot be matched (bracketed, and within 20%)"] = not all(v.get("matched", v["within_20pct"]) for v in S["factors"].values())
     nr = {}
     for meth in ("swap", "avg"):
         b = S["normal_range"][meth]["bound"]
@@ -161,25 +204,36 @@ def main():
     fired["the main removal or a comparison fails the normal-range check"] = \
         not all(v["main_within"] and all(v["comparisons_within"].values()) for v in nr.values())
 
-    # ---------- the bites check's one-pass condition, pooled and per kind (resampled by fact in the unit kind)
+    # ---------- the bites check's one-pass condition, pooled and per kind (resampled within kind, by fact in unit)
     def units_for(bs, f):
         units = {}
         for b in bs:
             c_ = ast.literal_eval(b["rule_content"])
             key = ("unit", tuple(sorted((c_[3], c_[4])))) if b["rule_kind"] == "unit" else b["id"]
-            units.setdefault(key, []).append(f(b))
-        return list(units.values())
+            units.setdefault(b["rule_kind"], {}).setdefault(key, []).append(f(b))
+        return {k: list(v.values()) for k, v in units.items()}
+    bites = [b for b in bites if items[b["id"] + ":P"]["n_donors"] > 0]
+    f1 = lambda b: norm_loss(items[b["id"] + ":P"]["unaltered"]["right"], items[b["id"] + ":P"]["passes_1"]["right"])
     one_pass = {}
     for name, sel in (("pooled", bites), ("op", [b for b in bites if b["rule_kind"] == "op"]),
                       ("unit", [b for b in bites if b["rule_kind"] == "unit"])):
         if not sel:
             continue
-        f = lambda b: norm_loss(items[b["id"] + ":P"]["unaltered"]["right"], items[b["id"] + ":P"]["passes_1"]["right"])
-        vals = [f(b) for b in sel]
-        lo, hi = boot(units_for(sel, f), statistics.mean)
-        one_pass[name] = {"items": len(sel), "cost": statistics.mean(vals), "interval": [lo, hi], "lower_end_at_least_0.15": lo >= 0.15}
+        vals = [f1(b) for b in sel]
+        g = gate_interval(units_for(sel, f1), statistics.mean, 0.15, "lower")
+        one_pass[name] = {"items": len(sel), "cost": statistics.mean(vals), "per_item_sd": statistics.pstdev(vals),
+                          **g, "lower_end_at_least_0.15": g["interval"][0] >= 0.15}
     out["bites_one_pass"] = one_pass
     fired["the bites check's one-pass condition fails (every outcome not testable)"] = not one_pass.get("pooled", {}).get("lower_end_at_least_0.15", False)
+    # the branch choice's inputs (specification, section 19, item 7): spreads of the swap's own loss on bites items
+    own = {}
+    for kind in ("op", "unit"):
+        sel = [b for b in bites if b["rule_kind"] == kind and items[b["id"] + ":P"].get("swap")]
+        if sel:
+            vals = [norm_loss(items[b["id"] + ":P"]["unaltered"]["right"],
+                              statistics.mean(s["right"] for s in items[b["id"] + ":P"]["swap"])) for b in sel]
+            own[kind] = {"items": len(sel), "per_item_sd": statistics.pstdev(vals)}
+    out["bites_swap_own_loss_spread"] = own
 
     # ---------- the change ratio on the bites items, each method, against 0.5
     cr = {}

@@ -1,4 +1,4 @@
-"""Step 4b of the loop removal test, the collection: runs on a rented GPU machine. See step4b-runbook.md.
+"""Step 4b of the loop removal test, the collection (rerun under specification section 19): runs on a rented GPU machine. See step4b-runbook.md.
 
     python -I step4b_collect.py --pilot batteries/pilot-v0.12 --out out [--limit 10]
 
@@ -201,8 +201,8 @@ def main():
         json.dump(S, open(os.path.join(a.out, "collect-summary.json"), "w"), indent=1)
         sys.exit("identity or bypass check failed: the design returns to John")
 
-    # ---------- 3. unaltered runs, recorded
-    R = {}       # id -> {"rec": {2: (bs, ps), 3: ...}, "pre": h, "ids": [...]}
+    # ---------- 3. unaltered runs, recorded (items; neutral passages in both renderings)
+    R = {}       # key -> {"rec": {2: (bs, ps), 3: ...}, "pre": h, "ids": [...]}
     def record(key, ids):
         hk.run(model, ids, mode="record")
         R[key] = {"rec": dict(hk.rec), "pre": hk.rec_pre, "ids": ids}
@@ -212,55 +212,61 @@ def main():
     for b in bites + bdonors:
         record(b["id"] + ":P", b["P"]["prompt_ids"])
     for n in neutral:
-        record(n["id"], n["prompt_ids"])
+        record(n["id"], n["prompt_ids"])                     # user turn: builds the average
+        record(n["id"] + ":reply", n["reply_ids"])           # reply: damage and perplexity (section 19, item 3)
     S["recorded"] = len(R)
     k1 = next(iter(R.values()))["rec"][2][0].shape
     S["block_states_shape_per_item"] = list(k1)
+    OPEN = neutral[0]["prose_span"][0]
+    CLOSE = len(neutral[0]["reply_ids"]) - neutral[0]["prose_span"][1]
+    for n in neutral:
+        assert n["reply_ids"][:OPEN] == neutral[0]["reply_ids"][:OPEN] and len(n["reply_ids"]) - n["prose_span"][1] == CLOSE
+    S["reply_template"] = {"opening_slots": OPEN, "closing_slots": CLOSE}
     print("recorded", len(R), "block_states", list(k1), flush=True)
 
-    # ---------- 4. the averages from the build passages
+    # ---------- 4. the averages (section 19, item 5): user-built (used) and reply-built (measured only)
     build = [n for n in neutral if n["role"] == "build"]
     measure = [n for n in neutral if n["role"] == "measure"]
-    avg = {}
-    for ps in (2, 3):
-        texts_b, texts_p, pre_b, pre_p, suf_b, suf_p = [], [], [], [], [], []
-        bins_b = [[] for _ in range(10)]
-        bins_p = [[] for _ in range(10)]
-        for n in build:
-            bs, pp = R[n["id"]]["rec"][ps]
-            L = bs.shape[0]
-            pre_b.append(bs[:PREF].float()); pre_p.append(pp[:PREF].float())
-            suf_b.append(bs[L - SUF:].float()); suf_p.append(pp[L - SUF:].float())
-            span = list(range(PREF, L - SUF))
-            texts_b.append(bs[PREF:L - SUF].float()); texts_p.append(pp[PREF:L - SUF].float())
-            for j, pos in enumerate(span):
-                bins_b[10 * j // len(span)].append(bs[pos].float()); bins_p[10 * j // len(span)].append(pp[pos].float())
-        avg[ps] = {"pre": (torch.stack(pre_b).mean(0), torch.stack(pre_p).mean(0)),
-                   "suf": (torch.stack(suf_b).mean(0), torch.stack(suf_p).mean(0)),
-                   "text": (torch.cat(texts_b).mean(0), torch.cat(texts_p).mean(0)),
-                   "bins": [(torch.stack(bins_b[i]).mean(0), torch.stack(bins_p[i]).mean(0)) for i in range(10)]}
 
-    def avg_sums(L, ps, fallback=False):
-        A = avg[ps]
+    def build_avg(key_of, span_of):
+        A = {}
+        for ps in (2, 3):
+            texts_b, texts_p, pre_b, pre_p, suf_b, suf_p = [], [], [], [], [], []
+            bins_b = [[] for _ in range(10)]
+            bins_p = [[] for _ in range(10)]
+            for n in build:
+                bs, pp = R[key_of(n)]["rec"][ps]
+                s, e = span_of(n)
+                pre_b.append(bs[:s].float()); pre_p.append(pp[:s].float())
+                suf_b.append(bs[e:].float()); suf_p.append(pp[e:].float())
+                texts_b.append(bs[s:e].float()); texts_p.append(pp[s:e].float())
+                for j, pos in enumerate(range(s, e)):
+                    bins_b[10 * j // (e - s)].append(bs[pos].float()); bins_p[10 * j // (e - s)].append(pp[pos].float())
+            A[ps] = {"pre": (torch.stack(pre_b).mean(0), torch.stack(pre_p).mean(0)),
+                     "suf": (torch.stack(suf_b).mean(0), torch.stack(suf_p).mean(0)),
+                     "text": (torch.cat(texts_b).mean(0), torch.cat(texts_p).mean(0)),
+                     "bins": [(torch.stack(bins_b[i]).mean(0), torch.stack(bins_p[i]).mean(0)) for i in range(10)]}
+        return A
+    avg_user = build_avg(lambda n: n["id"], lambda n: (PREF, len(n["prompt_ids"]) - SUF))
+    avg_reply = build_avg(lambda n: n["id"] + ":reply", lambda n: tuple(n["prose_span"]))
+
+    def avg_sums(L, ps, span, slots, text, fallback=False):
+        """Template slots from `slots`, prose or text positions from `text` (pooled, or binned for the fallback)."""
+        s, e = span
         bsl, psl = [], []
         for pos in range(L):
-            if pos < PREF:
-                b, p_ = A["pre"][0][pos], A["pre"][1][pos]
-            elif pos >= L - SUF:
-                j = pos - (L - SUF)
-                b, p_ = A["suf"][0][j], A["suf"][1][j]
+            if pos < s:
+                b, p_ = slots[ps]["pre"][0][pos], slots[ps]["pre"][1][pos]
+            elif pos >= e:
+                b, p_ = slots[ps]["suf"][0][pos - e], slots[ps]["suf"][1][pos - e]
             elif fallback:
-                n_span = L - SUF - PREF
-                i = 10 * (pos - PREF) // n_span
-                b, p_ = A["bins"][i]
+                b, p_ = text[ps]["bins"][10 * (pos - s) // (e - s)]
             else:
-                b, p_ = A["text"]
+                b, p_ = text[ps]["text"]
             bsl.append(b); psl.append(p_)
         return torch.stack(bsl), torch.stack(psl)
 
     # ---------- per-item replacement plans
-    rng_master = random.Random(SEED)
-
     def swap_plan(key, donor_keys):
         """For each donor: the injected sums (truncated to L), the per-position distances on passes 2 and 3,
         the first divergence position, the change ratio and the swap size."""
@@ -283,23 +289,27 @@ def main():
                           "size": used.sum().item()})
         return plans
 
-    def avg_plan(key, fallback=False):
+    def avg_plan(key, span, slots, text, fallback=False):
         rec, ids = R[key]["rec"], R[key]["ids"]
         L = len(ids)
         inj, dd = {}, {}
         for ps in (2, 3):
-            gb, gp = avg_sums(L, ps, fallback)
+            gb, gp = avg_sums(L, ps, span, slots, text, fallback)
             inj[ps] = (gb, gp)
             dd[ps] = dist(rec[ps][0], rec[ps][1], gb, gp)
-        span = list(range(PREF, L - SUF))
-        ratio_pos = span + [L - 1]                     # specification, section 17, item 7
+        sp_ = list(range(span[0], span[1]))
+        ratio_pos = sp_ + [L - 1]                       # specification, section 17, item 7
         used = torch.stack([dd[2][ratio_pos], dd[3][ratio_pos]])
-        size = torch.stack([dd[2][span], dd[3][span]]).sum().item()  # design, section 5: the text span
+        size = torch.stack([dd[2][sp_], dd[3][sp_]]).sum().item()  # design, section 5: the text span
         noise_d = {ps: torch.zeros_like(dd[ps]) for ps in (2, 3)}
         for ps in (2, 3):
-            noise_d[ps][span] = dd[ps][span]           # the comparison acts where the size is counted
+            noise_d[ps][sp_] = dd[ps][sp_]              # the comparison acts where the size is counted
         return {"inject": inj, "dist": noise_d, "ratio": used.mean().item(),
                 "ratio_by_sum": used.mean(dim=(0, 1)).tolist(), "size": size}
+
+    def item_avg_plan(key, fallback=False):
+        L = len(R[key]["ids"])
+        return avg_plan(key, (PREF, L - SUF), avg_user, avg_user, fallback)
 
     def noise_loop(key, dmap, factor, draws, gen):
         """Design, section 4: at each position and sum, a random direction whose length is the position's
@@ -324,52 +334,67 @@ def main():
         g = g / g.norm(dim=-1, keepdim=True)
         return g * (tot * factor * h.norm(dim=-1)).unsqueeze(0).unsqueeze(-1)
 
-    # ---------- 5. neutral: unaltered predictions, the main removal's damage and perplexity
-    def neutral_stats(logits_full, ids):
-        """Damage needs the unaltered log-probabilities; returns (log-probs over the text span's predictions,
-        the NLL of the text tokens)."""
-        L = len(ids)
-        lp = torch.log_softmax(logits_full[:, PREF - 1:L - SUF - 1], -1)     # predictions of text tokens
-        tgt = torch.tensor(ids[PREF:L - SUF], device=lp.device)
+    # ---------- 5. neutral, in the reply rendering (section 19, item 3): predictions of the prose tokens
+    def prose_stats(logits_full, ids, span):
+        s, e = span
+        lp = torch.log_softmax(logits_full[:, s - 1:e - 1], -1)
+        tgt = torch.tensor(ids[s:e], device=lp.device)
         nll = -lp.gather(-1, tgt.view(1, -1, 1).expand(lp.shape[0], -1, 1)).squeeze(-1)   # [B, T]
         return lp, nll
 
+    # the 1-nat check (design version 0.14, section 4): reply rendering, user turn and plain text
+    nll_r = nll_u = nll_p = 0.0
+    tok_r = tok_u = tok_p = 0
     base_lp, base_nll = {}, {}
     for n in measure:
-        lp, nll = neutral_stats(hk.run(model, n["prompt_ids"], full=True), n["prompt_ids"])
+        span = tuple(n["prose_span"])
+        lp, nll = prose_stats(hk.run(model, n["reply_ids"], full=True), n["reply_ids"], span)
         base_lp[n["id"]], base_nll[n["id"]] = lp[0], nll[0]
+        nll_r += nll.sum().item(); tok_r += nll.shape[1]
+        _, nu = prose_stats(hk.run(model, n["prompt_ids"], full=True), n["prompt_ids"], (PREF, len(n["prompt_ids"]) - SUF))
+        nll_u += nu.sum().item(); tok_u += nu.shape[1]
+        _, npl = prose_stats(hk.run(model, n["plain_ids"], full=True), n["plain_ids"], (1, len(n["plain_ids"])))
+        nll_p += npl.sum().item(); tok_p += npl.shape[1]
+    S["one_nat_check"] = {"reply_nll_per_token": nll_r / tok_r, "user_turn_nll_per_token": nll_u / tok_u,
+                          "plain_nll_per_token": nll_p / tok_p,
+                          "reply_minus_plain": nll_r / tok_r - nll_p / tok_p,
+                          "passes": nll_r / tok_r - nll_p / tok_p <= 1.0}
+    print("one-nat check", json.dumps(S["one_nat_check"]), flush=True)
 
     def damage_and_nll(n, lp_alt, nll_alt):
         b = base_lp[n["id"]].exp()
         kl = (b * (base_lp[n["id"]] - lp_alt)).sum(-1).mean(-1)              # [B]
         return kl, nll_alt.sum(-1)                                            # per draw: mean KL, summed NLL
 
-    ntok = sum(len(n["prompt_ids"]) - PREF - SUF for n in measure)
-    base_ppl = math.exp(sum(base_nll[n["id"]].sum().item() for n in measure) / ntok)
+    ntok = tok_r
+    base_ppl = math.exp(nll_r / tok_r)
     nplan = {}
     main = {}
     for n in measure:
-        L = len(n["prompt_ids"])
-        cands = [m["id"] for m in neutral if m["id"] != n["id"] and len(m["prompt_ids"]) >= L]
+        rk = n["id"] + ":reply"
+        L = len(n["reply_ids"])
+        span = tuple(n["prose_span"])
+        cands = [m["id"] + ":reply" for m in neutral if m["id"] != n["id"] and len(m["reply_ids"]) >= L]
         dks = random.Random(f"{SEED}-{n['id']}").sample(cands, min(5, len(cands)))
-        sp = swap_plan(n["id"], dks) if dks else []
-        ap_, fp = avg_plan(n["id"]), avg_plan(n["id"], fallback=True)
-        nplan[n["id"]] = {"swap": sp, "avg": ap_, "fallback": fp}
-        for meth, plans in (("swap", sp), ("avg", [ap_]), ("fallback", [fp])):
+        sp = swap_plan(rk, dks) if dks else []
+        ap_ = avg_plan(rk, span, avg_reply, avg_user)                     # used: user-built prose average
+        fp = avg_plan(rk, span, avg_reply, avg_user, fallback=True)
+        rp = avg_plan(rk, span, avg_reply, avg_reply)                     # reply-built, measured only
+        nplan[n["id"]] = {"swap": sp, "avg": ap_, "fallback": fp, "avg_reply_built": rp}
+        for meth, plans in (("swap", sp), ("avg", [ap_]), ("fallback", [fp]), ("avg_reply_built", [rp])):
             if not plans:
                 continue
             data = {ps: (torch.stack([q["inject"][ps][0] for q in plans]), torch.stack([q["inject"][ps][1] for q in plans]))
                     for ps in (2, 3)}
-            lp, nll = neutral_stats(hk.run(model, n["prompt_ids"], batch=len(plans), mode="inject", data=data, full=True),
-                                    n["prompt_ids"])
+            lp, nll = prose_stats(hk.run(model, n["reply_ids"], batch=len(plans), mode="inject", data=data, full=True),
+                                  n["reply_ids"], span)
             kl, snll = damage_and_nll(n, lp, nll)
-            m_ = main.setdefault(meth, {"kl": [], "nll": 0.0, "passages": 0})
-            m_["kl"].append(kl.mean().item()); m_["nll"] += snll.mean().item(); m_["passages"] += 1
+            m_ = main.setdefault(meth, {"kl": [], "nll": 0.0, "tok": 0, "passages": 0})
+            m_["kl"].append(kl.mean().item()); m_["nll"] += snll.mean().item(); m_["tok"] += nll.shape[1]; m_["passages"] += 1
     S["neutral_main"] = {}
     for meth, m_ in main.items():
-        ntok_m = sum(len(n["prompt_ids"]) - PREF - SUF for n in measure if (meth != "swap" or nplan[n["id"]]["swap"]))
         S["neutral_main"][meth] = {"damage": sum(m_["kl"]) / len(m_["kl"]), "passages": m_["passages"],
-                                   "ppl_rise": math.exp(m_["nll"] / ntok_m) - base_ppl}
+                                   "ppl_rise": math.exp(m_["nll"] / m_["tok"]) - base_ppl}
     S["neutral_base_ppl"] = base_ppl
     S["neutral_swap_passages_without_donor"] = sum(1 for n in measure if not nplan[n["id"]]["swap"])
     print("neutral main", json.dumps(S["neutral_main"]), flush=True)
@@ -378,49 +403,55 @@ def main():
         return {ps: torch.stack([q["dist"][ps] for q in plans]).mean(0) for ps in (2, 3)}
 
     def comparison_on_neutral(kind, meth, factor, draws, seed):
-        """Mean damage over passages and draws, and the perplexity rise of each draw."""
+        """Mean damage over passages and draws, and the perplexity rise of each draw, on the reply rendering."""
         gen = torch.Generator(device="cuda").manual_seed(seed)
         kls, nll_draw, ntok_c = [], torch.zeros(draws, device="cuda"), 0
         for n in measure:
+            rk = n["id"] + ":reply"
             plans = nplan[n["id"]]["swap"] if meth == "swap" else [nplan[n["id"]]["avg"]]
             if not plans:
                 continue
             dmap = mean_dist(plans)
             if kind == "loop":
-                out = hk.run(model, n["prompt_ids"], batch=draws, mode="noise",
-                             data=noise_loop(n["id"], dmap, factor, draws, gen), full=True)
+                out = hk.run(model, n["reply_ids"], batch=draws, mode="noise",
+                             data=noise_loop(rk, dmap, factor, draws, gen), full=True)
             else:
-                out = hk.run(model, n["prompt_ids"], batch=draws, outside=noise_outside(n["id"], dmap, factor, draws, gen),
+                out = hk.run(model, n["reply_ids"], batch=draws, outside=noise_outside(rk, dmap, factor, draws, gen),
                              full=True)
-            lp, nll = neutral_stats(out, n["prompt_ids"])
+            lp, nll = prose_stats(out, n["reply_ids"], tuple(n["prose_span"]))
             kl, snll = damage_and_nll(n, lp, nll)
-            kls.append(kl.mean().item()); nll_draw += snll; ntok_c += len(n["prompt_ids"]) - PREF - SUF
+            kls.append(kl.mean().item()); nll_draw += snll; ntok_c += nll.shape[1]
         rises = [math.exp(x / ntok_c) - base_ppl for x in nll_draw.tolist()]
         return sum(kls) / len(kls), rises
 
-    # ---------- 6. damage matching: find each comparison's shared factor
+    # ---------- 6. damage matching (section 19, item 4): bracketing search over 0.001 to 100,000
     S["factors"] = {}
-    steps = 6 if a.limit else 14
+    steps = 8 if a.limit else 18
     for kind in ("loop", "outside"):
         for meth in ("swap", "avg"):
             target = S["neutral_main"][meth]["damage"]
-            lo, hi, best = 1e-3, 1e3, None
+            lo, hi, best, path = 1e-3, 1e5, None, []
             for i in range(steps):
                 mid = math.sqrt(lo * hi)
                 d, _ = comparison_on_neutral(kind, meth, mid, SEARCH_DRAWS, 1000 + i)
+                path.append([mid, d])
                 if best is None or abs(d - target) < abs(best[1] - target):
                     best = (mid, d)
                 if d < target:
                     lo = mid
                 else:
                     hi = mid
+            bracketed = any(d < target for _, d in path) and any(d >= target for _, d in path)
             d20, rises = comparison_on_neutral(kind, meth, best[0], N_DRAWS, 2000)
+            within = abs(d20 - target) <= MATCH * target
             S["factors"][f"{kind}_{meth}"] = {"factor": best[0], "target_damage": target, "damage_20_draws": d20,
-                                              "within_20pct": abs(d20 - target) <= MATCH * target,
+                                              "bracketed": bracketed, "within_20pct": within,
+                                              "matched": bracketed and within, "search_path": path,
                                               "ppl_rise_draws": rises}
-            print("factor", kind, meth, json.dumps({k: v for k, v in S["factors"][f"{kind}_{meth}"].items() if k != "ppl_rise_draws"}), flush=True)
+            print("factor", kind, meth, json.dumps({k: v for k, v in S["factors"][f"{kind}_{meth}"].items()
+                                                    if k not in ("ppl_rise_draws", "search_path")}), flush=True)
 
-    # ---------- 7. the normal-range bound (same size: in-loop noise at factor 1)
+    # ---------- 7. the normal-range bound (same size: in-loop noise at factor 1), on the reply rendering
     S["normal_range"] = {}
     for meth in ("swap", "avg"):
         _, rises = comparison_on_neutral("loop", meth, 1.0, N_DRAWS, 3000)
@@ -446,7 +477,7 @@ def main():
             rec[f"passes_{n}"] = score(hk.run(model, it["prompt_ids"]), cids, ai)[0]
             hk.passes(3)
         sp = swap_plan(key, donor_keys) if donor_keys else []
-        apl, fpl = avg_plan(key), avg_plan(key, fallback=True)
+        apl, fpl = item_avg_plan(key), item_avg_plan(key, fallback=True)
         if sp:
             data = {ps: (torch.stack([q["inject"][ps][0] for q in sp]), torch.stack([q["inject"][ps][1] for q in sp]))
                     for ps in (2, 3)}

@@ -121,13 +121,83 @@ def outcome_with_renames(rows):
     return "A"
 
 
+def sim_mean_ci(kinds, n_by_kind, mu_by_kind, sd_by_kind, rho, facts, rng):
+    """One simulated bites set: per-item losses, unit items clustered by fact with a shared part RHO; returns
+    (pooled mean, pooled lower, pooled upper) and per-kind (mean, lower, upper), with a stratified,
+    cluster-robust normal interval."""
+    per = {}
+    for k in kinds:
+        n, mu, sd = n_by_kind[k], mu_by_kind[k], sd_by_kind[k]
+        if k == "unit":
+            fe = [rng.gauss(0, math.sqrt(rho) * sd) for _ in range(facts)]
+            cl = [rng.randrange(facts) for _ in range(n)]
+            vals = [mu + fe[c] + rng.gauss(0, math.sqrt(1 - rho) * sd) for c in cl]
+        else:
+            cl = list(range(n))
+            vals = [mu + rng.gauss(0, sd) for _ in range(n)]
+        per[k] = (vals, cl)
+    res = {}
+    tot_n = sum(len(v) for v, _ in per.values())
+    var_pooled, mean_pooled = 0.0, 0.0
+    for k, (vals, cl) in per.items():
+        m, lo, hi = ci(vals, cl)
+        se = (hi - lo) / (2 * Z)
+        res[k] = (m, lo, hi)
+        w = len(vals) / tot_n
+        mean_pooled += w * m
+        var_pooled += (w * se) ** 2
+    sep = math.sqrt(var_pooled)
+    return (mean_pooled, mean_pooled - Z * sep, mean_pooled + Z * sep), res
+
+
+def branch_choice(An, sims, unit_facts, rho=0.3):
+    """Specification, section 19, item 7: both kinds at 100 + 100, or unit alone at 200; each must reach an 80%
+    chance of each of the three bites targets; both preferred, then unit alone, else John."""
+    bo, own = An["bites_one_pass"], An.get("bites_swap_own_loss_spread", {})
+    cost = {k: bo[k]["cost"] for k in ("op", "unit") if k in bo}
+    sd1 = {k: bo[k]["per_item_sd"] for k in cost}
+    sdo = {k: own.get(k, {}).get("per_item_sd", sd1[k]) for k in cost}
+    branches = {"both": {"op": 100, "unit": 100}, "unit_only": {"unit": 200}}
+    out = {"inputs": {"cost": cost, "one_pass_sd": sd1, "own_loss_sd": sdo, "rho": rho, "unit_facts": unit_facts}}
+    for name, nk in branches.items():
+        kinds = [k for k in nk if k in cost]
+        if len(kinds) < len(nk):
+            out[name] = {"possible": False}
+            continue
+        rng = random.Random(f"branch-{name}")
+        pooled_cost = sum(nk[k] * cost[k] for k in kinds) / sum(nk.values())
+        hit1 = hit2 = hit3 = 0
+        for _ in range(sims):
+            # 1. the one-pass condition at the pilot's costs
+            (m, lo, hi), _ = sim_mean_ci(kinds, nk, cost, sd1, rho, unit_facts, rng)
+            hit1 += lo >= 0.15
+            # 2. "bites" when the true excess is three quarters of the one-pass cost
+            (m, lo, hi), _ = sim_mean_ci(kinds, nk, {k: 0.75 * cost[k] for k in kinds}, sdo, rho, unit_facts, rng)
+            hit2 += m >= 0.5 * pooled_cost and lo > 0
+            # 3. "does not bite" when the true own loss is zero: each kind's upper end below a quarter of its cost
+            _, per = sim_mean_ci(kinds, nk, {k: 0.0 for k in kinds}, sdo, rho, unit_facts, rng)
+            hit3 += all(per[k][2] < 0.25 * cost[k] for k in kinds)
+        p = {"one_pass": hit1 / sims, "bites_at_three_quarters": hit2 / sims, "does_not_bite_at_zero": hit3 / sims}
+        out[name] = {"possible": True, **p, "qualifies": all(v >= 0.80 for v in p.values())}
+    if out["both"].get("qualifies"):
+        out["choice"] = "both kinds"
+    elif out["unit_only"].get("qualifies"):
+        out["choice"] = "unit alone"
+    else:
+        out["choice"] = "neither: the design returns to John"
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--analysis", required=True)
     ap.add_argument("--sims", type=int, default=1000)
+    ap.add_argument("--unit_facts", type=int, default=29, help="half B's unit facts (build report, split)")
     a = ap.parse_args()
     An = json.load(open(a.analysis))
     inp = An["simulation_inputs"]
+    if not inp:
+        print("no pairs survive the baseline checks: the A-power simulation is skipped")
     after = {k: v for k, v in An["strike_counts"].items()}
     table = An["pairing_table"]
     shares = {}
@@ -137,10 +207,10 @@ def main():
     fact_sizes = 30  # about the number of unit facts per half (specification, section 17, item 6)
     out = {"inputs_used": {"pairings": {f"{k[0]}+{k[1]}": v for k, v in shares.items()}, "fact_pool": fact_sizes},
            "A_power": {}, "bites": {}}
-    op_unit_share = sum(v for (rk, _), v in shares.items() if rk in ("op", "unit")) / sum(shares.values())
+    op_unit_share = (sum(v for (rk, _), v in shares.items() if rk in ("op", "unit")) / sum(shares.values())) if shares else 1.0
     scenarios = {"even": lambda rk: 0.20,
                  "by_kind": lambda rk: (0.20 / op_unit_share) if rk in ("op", "unit") else 0.0}
-    for rho in (0.0, 0.3, 0.6):
+    for rho in ((0.0, 0.3, 0.6) if inp else ()):
         for sc, gap_on in scenarios.items():
             res = {}
             for n in SIZES:
@@ -155,23 +225,9 @@ def main():
             out["A_power"][f"rho_{rho}_{sc}"] = {"power_by_pairs": res, "smallest_for_80pct": smallest}
             print(f"rho {rho} {sc}: smallest test half for 80% = {smallest}", flush=True)
 
-    # the bites check at 100 per kind
-    bo = An["bites_one_pass"]
-    rng = random.Random(7)
-    for kind in ("op", "unit"):
-        if kind not in bo:
-            continue
-        cost = bo[kind]["cost"]
-        lo, hi = bo[kind]["interval"]
-        sd_item = (hi - lo) / (2 * Z) * math.sqrt(bo[kind]["items"])  # per-item spread recovered from the pilot interval
-        n = 100
-        se = sd_item / math.sqrt(n)
-        p_onepass = sum(rng.gauss(cost, se) - Z * se >= 0.15 for _ in range(a.sims)) / a.sims
-        p_bites = sum((lambda e: e >= 0.5 * cost and e - Z * se > 0)(rng.gauss(0.75 * cost, se)) for _ in range(a.sims)) / a.sims
-        p_notbite = sum((rng.gauss(0.0, se) + Z * se) < 0.25 * cost for _ in range(a.sims)) / a.sims
-        out["bites"][kind] = {"one_pass_cost_pilot": cost, "per_item_sd": sd_item, "at_items": n,
-                              "p_one_pass_condition": p_onepass, "p_bites_at_three_quarters": p_bites,
-                              "p_does_not_bite_at_zero": p_notbite}
+    # the branch choice for the bites set (specification, section 19, item 7)
+    out["bites_branch"] = branch_choice(An, a.sims, a.unit_facts)
+    print(json.dumps(out["bites_branch"], indent=1))
     json.dump(out, open(a.analysis.replace("step4b-analysis.json", "step4b-simulation.json"), "w"), indent=1, default=str)
     print(json.dumps(out["bites"], indent=1))
 

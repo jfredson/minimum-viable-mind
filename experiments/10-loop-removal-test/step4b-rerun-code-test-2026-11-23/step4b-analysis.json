@@ -1,0 +1,418 @@
+{
+ "checks": {
+  "noise_floor": 0.0,
+  "tolerance": 0.01,
+  "identity": 0.0,
+  "identity_pass": true,
+  "bypass": 0.0,
+  "bypass_pass": true,
+  "items": 20
+ },
+ "rule_is_needed": {
+  "look": {
+   "accuracy_without_rule": 0.2125,
+   "rule_needed": true
+  },
+  "op": {
+   "accuracy_without_rule": 0.175,
+   "rule_needed": true
+  },
+  "unit": {
+   "accuracy_without_rule": 0.1375,
+   "rule_needed": true
+  }
+ },
+ "strike_counts": {
+  "look+prod": {
+   "pairs": 20,
+   "confident": 20,
+   "fewer_than_three_confident": false,
+   "routine_right_without_rule": 20,
+   "routine_interfered": 0,
+   "rule_right_without_routine_fact": 20,
+   "rule_interfered": 0,
+   "routine_fell_below_bar_staying_right": 0,
+   "rule_fell_below_bar_staying_right": 0,
+   "median_margins": {
+    "routine_full": 9.436,
+    "rule_full": 10.259605
+   },
+   "struck": false
+  },
+  "look+sum": {
+   "pairs": 20,
+   "confident": 20,
+   "fewer_than_three_confident": false,
+   "routine_right_without_rule": 20,
+   "routine_interfered": 0,
+   "rule_right_without_routine_fact": 20,
+   "rule_interfered": 0,
+   "routine_fell_below_bar_staying_right": 0,
+   "rule_fell_below_bar_staying_right": 0,
+   "median_margins": {
+    "routine_full": 9.53712,
+    "rule_full": 10.209610000000001
+   },
+   "struck": false
+  },
+  "op+cap": {
+   "pairs": 13,
+   "confident": 5,
+   "fewer_than_three_confident": false,
+   "routine_right_without_rule": 13,
+   "routine_interfered": 0,
+   "rule_right_without_routine_fact": 9,
+   "rule_interfered": 4,
+   "routine_fell_below_bar_staying_right": 0,
+   "rule_fell_below_bar_staying_right": 0,
+   "median_margins": {
+    "routine_full": 9.14785,
+    "rule_full": 0.16791
+   },
+   "struck": true
+  },
+  "op+col": {
+   "pairs": 14,
+   "confident": 2,
+   "fewer_than_three_confident": true,
+   "routine_right_without_rule": 13,
+   "routine_interfered": 6,
+   "rule_right_without_routine_fact": 12,
+   "rule_interfered": 2,
+   "routine_fell_below_bar_staying_right": 4,
+   "rule_fell_below_bar_staying_right": 2,
+   "median_margins": {
+    "routine_full": 0.398715,
+    "rule_full": 0.97084
+   },
+   "struck": true
+  },
+  "op+opp": {
+   "pairs": 13,
+   "confident": 2,
+   "fewer_than_three_confident": true,
+   "routine_right_without_rule": 9,
+   "routine_interfered": 2,
+   "rule_right_without_routine_fact": 9,
+   "rule_interfered": 4,
+   "routine_fell_below_bar_staying_right": 0,
+   "rule_fell_below_bar_staying_right": 2,
+   "median_margins": {
+    "routine_full": 7.22629,
+    "rule_full": 0.0
+   },
+   "struck": true
+  },
+  "unit+cap": {
+   "pairs": 14,
+   "confident": 14,
+   "fewer_than_three_confident": false,
+   "routine_right_without_rule": 14,
+   "routine_interfered": 0,
+   "rule_right_without_routine_fact": 14,
+   "rule_interfered": 0,
+   "routine_fell_below_bar_staying_right": 0,
+   "rule_fell_below_bar_staying_right": 0,
+   "median_margins": {
+    "routine_full": 10.174025,
+    "rule_full": 7.949809999999999
+   },
+   "struck": false
+  },
+  "unit+col": {
+   "pairs": 13,
+   "confident": 10,
+   "fewer_than_three_confident": false,
+   "routine_right_without_rule": 13,
+   "routine_interfered": 2,
+   "rule_right_without_routine_fact": 13,
+   "rule_interfered": 0,
+   "routine_fell_below_bar_staying_right": 0,
+   "rule_fell_below_bar_staying_right": 0,
+   "median_margins": {
+    "routine_full": 6.08212,
+    "rule_full": 6.67944
+   },
+   "struck": false
+  },
+  "unit+opp": {
+   "pairs": 13,
+   "confident": 9,
+   "fewer_than_three_confident": false,
+   "routine_right_without_rule": 12,
+   "routine_interfered": 0,
+   "rule_right_without_routine_fact": 13,
+   "rule_interfered": 1,
+   "routine_fell_below_bar_staying_right": 1,
+   "rule_fell_below_bar_staying_right": 3,
+   "median_margins": {
+    "routine_full": 7.29728,
+    "rule_full": 3.89882
+   },
+   "struck": false
+  }
+ },
+ "pairing_table": {
+  "look": [
+   "prod",
+   "sum"
+  ],
+  "op": [],
+  "unit": [
+   "cap",
+   "col",
+   "opp"
+  ]
+ },
+ "pairs_after_baseline_checks": {
+  "look": 40,
+  "op": 0,
+  "unit": 32
+ },
+ "pairs_dropped_no_donor": [
+  "A-0060"
+ ],
+ "margin_matching": {
+  "look": {
+   "before": 40,
+   "dropped": 5,
+   "limit_third": 13.333333333333334,
+   "over_limit": false
+  },
+  "op": {
+   "before": 0,
+   "dropped": 0,
+   "limit_third": 0.0,
+   "over_limit": false
+  },
+  "unit": {
+   "before": 32,
+   "dropped": 6,
+   "limit_third": 10.666666666666666,
+   "over_limit": false
+  }
+ },
+ "swap_size_matching": {
+  "swap": {
+   "look": {
+    "before": 35,
+    "ratio_before": 1.0039573874206025,
+    "ratio_after": 1.0039573874206025,
+    "dropped": 0,
+    "limit_tenth": 3.5,
+    "over_limit": false
+   },
+   "op": {
+    "before": 0,
+    "ratio_before": null,
+    "ratio_after": null,
+    "dropped": 0,
+    "limit_tenth": 0.0,
+    "over_limit": false
+   },
+   "unit": {
+    "before": 26,
+    "ratio_before": 1.0041244154290236,
+    "ratio_after": 1.0041244154290236,
+    "dropped": 0,
+    "limit_tenth": 2.6,
+    "over_limit": false
+   }
+  },
+  "avg": {
+   "look": {
+    "before": 35,
+    "ratio_before": 1.0002454049882379,
+    "ratio_after": 1.0002454049882379,
+    "dropped": 0,
+    "limit_tenth": 3.5,
+    "over_limit": false
+   },
+   "op": {
+    "before": 0,
+    "ratio_before": null,
+    "ratio_after": null,
+    "dropped": 0,
+    "limit_tenth": 0.0,
+    "over_limit": false
+   },
+   "unit": {
+    "before": 26,
+    "ratio_before": 0.9980815005790322,
+    "ratio_after": 0.9980815005790322,
+    "dropped": 0,
+    "limit_tenth": 2.6,
+    "over_limit": false
+   }
+  }
+ },
+ "neutral_damage": {
+  "swap": 1.1299897697236803,
+  "avg": 0.60973023802042,
+  "fallback": 0.6017429861426353
+ },
+ "factor_of_two": {
+  "swap_vs_average": 1.853261818525452,
+  "average_trips": false,
+  "swap_vs_fallback": 1.8778611396325124,
+  "fallback_trips": false
+ },
+ "damage_matching": {
+  "loop_swap": {
+   "factor": 986.5988956531019,
+   "target_damage": 1.1299897697236803,
+   "damage_20_draws": 0.9304880072372128,
+   "within_20pct": true
+  },
+  "loop_avg": {
+   "factor": 3.933023691560415,
+   "target_damage": 0.60973023802042,
+   "damage_20_draws": 0.6118322882056236,
+   "within_20pct": true
+  },
+  "outside_swap": {
+   "factor": 0.7041355154858088,
+   "target_damage": 1.1299897697236803,
+   "damage_20_draws": 1.1379980348577403,
+   "within_20pct": true
+  },
+  "outside_avg": {
+   "factor": 0.5693392091427253,
+   "target_damage": 0.60973023802042,
+   "damage_20_draws": 0.6100344207882881,
+   "within_20pct": true
+  }
+ },
+ "normal_range": {
+  "swap": {
+   "bound": -14.28146932231516,
+   "main_rise": 944.654218331345,
+   "main_within": false,
+   "room": -958.9356876536601,
+   "comparisons_rise": {
+    "loop_swap": -247.12147576835707,
+    "outside_swap": 1576.529596229644
+   },
+   "comparisons_within": {
+    "loop_swap": true,
+    "outside_swap": false
+   }
+  },
+  "avg": {
+   "bound": -23.63066835229688,
+   "main_rise": -409.1664369764851,
+   "main_within": true,
+   "room": 385.5357686241882,
+   "comparisons_rise": {
+    "loop_avg": -346.0213631560148,
+    "outside_avg": 678.2740786842267
+   },
+   "comparisons_within": {
+    "loop_avg": true,
+    "outside_avg": false
+   }
+  }
+ },
+ "bites_one_pass": {
+  "pooled": {
+   "items": 80,
+   "cost": 0.265625,
+   "per_item_sd": 0.5570482334367465,
+   "interval": [
+    0.1484375,
+    0.39166666666666666
+   ],
+   "end_over_20_seeds": [
+    0.1484375,
+    0.15
+   ],
+   "lower_end_at_least_0.15": false
+  },
+  "op": {
+   "items": 40,
+   "cost": 0.28125,
+   "per_item_sd": 0.6083725729353683,
+   "interval": [
+    0.09375,
+    0.46875
+   ],
+   "lower_end_at_least_0.15": false
+  },
+  "unit": {
+   "items": 40,
+   "cost": 0.25,
+   "per_item_sd": 0.5,
+   "interval": [
+    0.11363636363636363,
+    0.4166666666666667
+   ],
+   "lower_end_at_least_0.15": false
+  }
+ },
+ "bites_swap_own_loss_spread": {
+  "op": {
+   "items": 40,
+   "per_item_sd": 0.6618437197518762
+  },
+  "unit": {
+   "items": 40,
+   "per_item_sd": 0.49729738336331514
+  }
+ },
+ "change_ratio_bites": {
+  "swap": {
+   "mean": 0.7145623994991184,
+   "sd": 0.037808809715752435,
+   "min": 0.546162411570549,
+   "max": 0.761464285850525,
+   "distance_from_0.5": 0.21456239949911837,
+   "below_0.5": false
+  },
+  "avg": {
+   "mean": 0.665429811179638,
+   "sd": 0.004998800653145322,
+   "min": 0.6539849042892456,
+   "max": 0.6759318113327026,
+   "distance_from_0.5": 0.16542981117963795,
+   "below_0.5": false
+  }
+ },
+ "simulation_inputs": {
+  "swap_P": {
+   "items": 61,
+   "main_loss_sd": 0.45501032884431547,
+   "comparison_loss_mean": 0.9602117486338797,
+   "comparison_loss_sd": 0.2943469994683682
+  },
+  "swap_R": {
+   "items": 61,
+   "main_loss_sd": 0.46761139672416313,
+   "comparison_loss_mean": 0.6921106557377049,
+   "comparison_loss_sd": 0.45777227749416294
+  },
+  "avg_P": {
+   "items": 61,
+   "main_loss_sd": 0.4968998218435304,
+   "comparison_loss_mean": 0.42315573770491804,
+   "comparison_loss_sd": 0.5454371839610924
+  },
+  "avg_R": {
+   "items": 61,
+   "main_loss_sd": 0.5774181476887447,
+   "comparison_loss_mean": 0.4380122950819672,
+   "comparison_loss_sd": 0.496610301803162
+  }
+ },
+ "ties_at_unaltered": 5,
+ "return_to_john": {
+  "noise floor above 0.01, identity or bypass fails": false,
+  "fewer than three rule kinds, or a rule kind with one routine kind or none (after both checks and the minimum of three)": true,
+  "margin matching removes more than a third of a rule kind": false,
+  "swap-size matching needs more than a tenth of a rule kind (the dose question, RT-345)": false,
+  "both the average and its fallback differ from the swap by more than a factor of two (choice 5: the test stops)": false,
+  "a comparison cannot be matched (bracketed, and within 20%)": false,
+  "the main removal or a comparison fails the normal-range check": true,
+  "the bites check's one-pass condition fails (every outcome not testable)": true,
+  "the change ratio is below 0.5 under either method (outcome F out of reach)": false
+ }
+}
