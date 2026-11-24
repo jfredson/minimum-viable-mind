@@ -173,7 +173,12 @@ in the unit kind.
 | operator | 0.28 | 0.09 to 0.47 | no |
 | unit | 0.25 | 0.11 to 0.42 | no |
 
-The design gates every outcome on the pooled figure, so the condition passes, but only just. The cost is
+The design gates every outcome on the pooled figure, so the condition passes, but only just.
+
+*Correction, 2026-11-23, after the closure check of design version 0.13 (RT-492, the bites condition's
+seed).* "Passes, just" was too strong. The interval above came from one resampling seed. Rerun with seeds 1
+to 20, its lower end reaches 0.15 for only 9 of the 20. On the pilot the condition is a coin flip, not a
+pass, and the table's "yes" should be read that way. The cost is
 smaller than the scoring trial's figure of about 0.4. That trial used the old unit range, which was easier,
 and only 30 items a kind. At the test half's 100 items a kind, the interval would be narrower.
 
