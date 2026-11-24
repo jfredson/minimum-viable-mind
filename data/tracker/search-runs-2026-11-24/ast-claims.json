@@ -1,0 +1,80 @@
+{
+ "prediction": "ast-claims",
+ "query": "(TITLE_ABS:\"model of attention\" OR TITLE_ABS:\"attention schema\" OR TITLE_ABS:\"self-model\") AND (TITLE_ABS:agent* OR TITLE_ABS:\"neural network*\" OR TITLE_ABS:\"language model*\") AND (TITLE_ABS:awareness OR TITLE_ABS:conscious*) AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 4,
+ "results": [
+  {
+   "rank": 1,
+   "id": "40910115",
+   "source": "MED",
+   "pmid": "40910115",
+   "pmcid": "PMC12405250",
+   "doi": "10.3389/frai.2025.1610225",
+   "first_publication_date": "2025-08-20",
+   "title": "Probing for consciousness in machines.",
+   "authors": "Immertreu M, Schilling A, Maier A, Krauss P.",
+   "journal": "Frontiers in artificial intelligence",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "This study explores the potential for artificial agents to develop core consciousness, as proposed by Antonio Damasio's theory of consciousness. According to Damasio, the emergence of core consciousness relies on the integration of a self model, informed by representations of emotions and feelings, and a world model. We hypothesize that an artificial agent, trained via reinforcement learning (RL) in a virtual environment, can develop preliminary forms of these models as a byproduct of its primary task. The agent's main objective is to learn to play a video game and explore the environment. To evaluate the emergence of world and self models, we employ probes-feedforward classifiers that use the activations of the trained agent's neural networks to predict the spatial positions of the agent itself. Our results demonstrate that the agent can form rudimentary world and self models, suggesting a pathway toward developing machine consciousness. This research provides foundational insights into the capabilities of artificial agents in mirroring aspects of human consciousness, with implications for future advancements in artificial intelligence."
+  },
+  {
+   "rank": 2,
+   "id": "35087383",
+   "source": "MED",
+   "pmid": "35087383",
+   "pmcid": "PMC8789243",
+   "doi": "10.3389/fnsys.2021.767461",
+   "first_publication_date": "2022-01-11",
+   "title": "Predictive Neuronal Adaptation as a Basis for Consciousness.",
+   "authors": "Luczak A, Kubo Y.",
+   "journal": "Frontiers in systems neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Being able to correctly predict the future and to adjust own actions accordingly can offer a great survival advantage. In fact, this could be the main reason why brains evolved. Consciousness, the most mysterious feature of brain activity, also seems to be related to predicting the future and detecting surprise: a mismatch between actual and predicted situation. Similarly at a single neuron level, predicting future activity and adapting synaptic inputs accordingly was shown to be the best strategy to maximize the metabolic energy for a neuron. Following on these ideas, here we examined if surprise minimization by single neurons could be a basis for consciousness. First, we showed in simulations that as a neural network learns a new task, then the surprise within neurons (defined as the difference between actual and expected activity) changes similarly to the consciousness of skills in humans. Moreover, implementing adaptation of neuronal activity to minimize surprise at fast time scales (tens of milliseconds) resulted in improved network performance. This improvement is likely because adapting activity based on the internal predictive model allows each neuron to make a more \"educated\" response to stimuli. Based on those results, we propose that the neuronal predictive adaptation to minimize surprise could be a basic building block of conscious processing. Such adaptation allows neurons to exchange information about own predictions and thus to build more complex predictive models. To be precise, we provide an equation to quantify consciousness as the amount of surprise minus the size of the adaptation error. Since neuronal adaptation can be studied experimentally, this can allow testing directly our hypothesis. Specifically, we postulate that any substance affecting neuronal adaptation will also affect consciousness. Interestingly, our predictive adaptation hypothesis is consistent with multiple ideas presented previously in diverse theories of consciousness, such as global workspace theory, integrated information, attention schema theory, and predictive processing framework. In summary, we present a theoretical, computational, and experimental support for the hypothesis that neuronal adaptation is a possible biological mechanism of conscious processing, and we discuss how this could provide a step toward a unified theory of consciousness."
+  },
+  {
+   "rank": 3,
+   "id": "31708755",
+   "source": "MED",
+   "pmid": "31708755",
+   "pmcid": "PMC6824320",
+   "doi": "10.3389/fnsys.2019.00058",
+   "first_publication_date": "2019-10-25",
+   "title": "A Naturalistic Approach to the Hard Problem of Consciousness.",
+   "authors": "Singer W.",
+   "journal": "Frontiers in systems neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Following a brief review of current efforts to identify the neuronal correlates of conscious processing (NCCP) an attempt is made to bridge the gap between the material neuronal processes and the immaterial dimensions of subjective experience. It is argued that this \"hard problem\" of consciousness research cannot be solved by only considering the neuronal underpinnings of cognition. The proposal is that the hard problem can be treated within a naturalistic framework if one considers not only the biological but also the socio-cultural dimensions of evolution. The argument is based on the following premises: perceptions are the result of a constructivist process that depends on priors. This applies both for perceptions of the outer world and the perception of oneself. Social interactions between agents endowed with the cognitive abilities of humans generated immaterial realities, addressed as social or cultural realities. This novel class of realities assumed the role of priors for the perception of oneself and the embedding world. A natural consequence of these extended perceptions is a dualist classification of observables into material and immaterial phenomena nurturing the concept of ontological substance dualism. It is argued that perceptions shaped by socio-cultural priors lead to the construction of a self-model that has both a material and an immaterial dimension. As priors are implicit and not amenable to conscious recollection the perceived immaterial dimension is experienced as veridical and not derivable from material processes-which is the hallmark of the hard problem. These considerations let the hard problem appear as the result of cognitive constructs that are amenable to naturalistic explanations in an evolutionary framework."
+  },
+  {
+   "rank": 4,
+   "id": "30532721",
+   "source": "MED",
+   "pmid": "30532721",
+   "pmcid": "PMC6265368",
+   "doi": "10.3389/fpsyg.2018.02270",
+   "first_publication_date": "2018-11-23",
+   "title": "The Embodied Self, the Pattern Theory of Self, and the Predictive Mind.",
+   "authors": "Newen A.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Do we have to presuppose a self to account for human self-consciousness? If so, how should we characterize the self? These questions are discussed in the context of two alternatives, i.e., the no-self position held by Metzinger (2003, 2009) and the claim that the only self we have to presuppose is a narrative self (Dennett, 1992; Schechtman, 2007; Hardcastle, 2008) which is primarily an abstract entity. In contrast to these theories, I argue that we have to presuppose an embodied self, although this is not a metaphysical substance, nor an entity for which stable necessary and jointly sufficient conditions can be given. Self-consciousness results from an integration of an embodied, basic affective flow with an intentional object (the self as agent or as center of imagination or thought), where this integration remains anchored in an embodied self. This embodied self is a flexible and variable entity, which we can account for only with a pattern theory of the self (in line with Gallagher, 2013). Furthermore, I outline how this pattern theory of the self fits into the predictive coding framework, which also answers the open question whether self-representation is prior to world-representation or the other way around. The principal organization of a mechanism of building up a self-model is such that both types of representations are always activated and developed in parallel. Modeling oneself is a process which is always activated when one interacts with the world - much as a shadow is present when a person walks in the sun."
+  }
+ ]
+}

@@ -1,0 +1,729 @@
+{
+ "prediction": "seth-ai-not-by-computation",
+ "query": "(TITLE_ABS:\"large language model*\" OR TITLE_ABS:\"artificial intelligence\") AND TITLE_ABS:conscious* AND (TITLE_ABS:test* OR TITLE_ABS:indicator* OR TITLE_ABS:experiment*) AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 114,
+ "results": [
+  {
+   "rank": 1,
+   "id": "43044230",
+   "source": "MED",
+   "pmid": "43044230",
+   "pmcid": null,
+   "doi": "10.2460/ajvr.26.09.0403",
+   "first_publication_date": "2026-11-16",
+   "title": "Artificial intelligence-based dental screening using a cellular phone in dogs: a practical tool for detecting visible calculus and gingivitis.",
+   "authors": "Kim P, Kim SE, Lee E, Huh EA, Kim H, Park S, Jeon J, Seo K.",
+   "journal": "American journal of veterinary research",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveTo train, validate, and evaluate a cellular phone-based AI system for image-level classification of visible dental calculus and gingivitis in conscious dogs.MethodsThis multicenter retrospective study used dental photographs collected from 12 veterinary hospitals (2022 through 2024). Dental photographs were obtained from conscious dogs using cellular phone cameras. A single veterinarian assigned reference labels using standardized criteria. Separate binary datasets for dental calculus and gingivitis were split by dog into training, validation, and independent test datasets. A convolutional neural network was trained using transfer learning, and final models were selected by validation loss.ResultsA total of 3,170 dogs were included in this study. For dental calculus, 2,771 images were analyzed: 2,451 for training and validation and 320 in the independent test dataset. For gingivitis, 1,684 images were analyzed: 1,434 for training and validation and 250 in the independent test dataset. On the independent test datasets, the dental calculus model achieved precision of 0.977 (95% CI, 0.941 to 0.991), sensitivity of 0.965 (95% CI, 0.926 to 0.984), specificity of 0.973 (95% CI, 0.932 to 0.989), accuracy of 0.969 (95% CI, 0.943 to 0.983), and F1 score of 0.971. The gingivitis model achieved precision of 0.912 (95% CI, 0.855 to 0.948), sensitivity of 0.950 (95% CI, 0.901 to 0.976), specificity of 0.881 (95% CI, 0.807 to 0.929), accuracy of 0.920 (95% CI, 0.880 to 0.948), and F1 score of 0.931.ConclusionsThe AI system demonstrated high classification performance for visible dental calculus and gingivitis in conscious dogs.Clinical relevanceThis system may serve as an adjunctive screening and triage tool but is not intended to replace comprehensive oral examination or dental radiography."
+  },
+  {
+   "rank": 2,
+   "id": "42978091",
+   "source": "MED",
+   "pmid": "42978091",
+   "pmcid": null,
+   "doi": "10.1177/10901981261500654",
+   "first_publication_date": "2026-11-03",
+   "title": "Artificial Intelligence for Cardiovascular Health Behavior Change: A Narrative Review of Patient-Facing Tools.",
+   "authors": "Wu CF, Hernandez R, da Cruz Souza F, Yang F, He J.",
+   "journal": "Health education & behavior : the official publication of the Society for Public Health Education",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Cardiovascular disease (CVD) is the leading cause of death in the United States and disproportionately affects racial/ethnic minoritized populations, low-income communities, older adults, and rural residents. Behavioral interventions can reduce cardiovascular risk, yet traditional programs face scalability barriers, including high costs and limited reach. This narrative review synthesizes evidence on the efficacy and equity of patient-directed AI tools that support health education and behavior change for cardiovascular health. Using PRISMA-ScR elements, we searched 10 databases (January 2010 to December 2025), yielding 19 empirical studies evaluating Generation 2.0 AI systems aligned with the American Heart Association's Life's Essential 8 (LE8) framework. Of these, five were randomized controlled trials (RCTs), and 14 were nonrandomized (quasi-experimental, observational, or early-stage) studies. AI-enabled interventions such as conversational agents, machine-learning models, and reinforcement-learning systems addressed hypertension, diabetes, heart failure, and related conditions. Among the RCTs, one demonstrated superiority of an AI-powered program over usual care (AI-delivered Diabetes Prevention Program), whereas the remaining four reported outcomes equivalent or non-inferior to standard behavioral care. Effects were most apparent in high-intensity interventions that paired machine learning-based personalization with structured behavioral curricula, although the multi-component nature of these programs limits inference about AI-specific contributions. Across nonrandomized studies, greater engagement intensity was consistently associated with improved cardiometabolic outcomes, although causal attribution to AI-specific mechanisms remains limited. Most studies had small samples, short follow-up, and limited reporting on safety and equity. Technology-intensive interventions were concentrated in higher-resourced settings, and populations with limited health literacy showed reduced engagement. Overall, evidence supports cautious optimism that AI can meaningfully scale personalized cardiovascular prevention; however, realizing that equitable and clinically meaningful impact will require rigorous trials with longer follow-up, explicit behavioral science integration, safety-conscious governance, and equity-centered strategies addressing digital determinants of health."
+  },
+  {
+   "rank": 3,
+   "id": "42283141",
+   "source": "MED",
+   "pmid": "42283141",
+   "pmcid": null,
+   "doi": "10.1177/00187208261457702",
+   "first_publication_date": "2026-06-12",
+   "title": "What's in a Name? Implications of AI Roles and Mind Perception for Human-AI Teams.",
+   "authors": "Harris-Watson AM, Byun C, Larson LE.",
+   "journal": "Human factors",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveWe examine how artificial intelligence (AI) roles (teammate, support, tool) shape acceptance via the mind perception subdimensions of agency and conscious experience.BackgroundAdoption of the term AI \"teammate\" has outpaced evidence of the term's impact. Such reframing does not guarantee that the benefits of human teamwork will extend to human-AI teams. Understanding the potential benefits and risks of reframing AI as a teammate is essential for guiding effective integration.MethodsAcross three studies-one survey of employees who use AI at least weekly (Study 1) and two experimental vignette designs (Studies 2-3)-we examined the relationship between AI roles and acceptance using both technology-centered (technology acceptance model, cognitive trust) and human-centered (affective trust) perspectives. This design distinguished role perception from presentation (Study 1 versus Studies 2-3).ResultsAs hypothesized, \"teammate\" was associated with higher AI mind perception relative to less collaborative roles. While perceiving AI as a teammate showed only positive relationships with acceptance, presenting AI as a teammate was negatively related to some acceptance outcomes after controlling for mind perception. Further, agency and conscious experience were differentially related to technology- and human-centered outcomes, supporting the importance of integrating both perspectives.ConclusionShifting AI roles from tool to teammate may enhance acceptance via mind perception, but forcing labels may have hidden costs.ApplicationsCollaborative AI roles such as \"teammate\" should be strategically implemented and aligned with intended mind perception and outcomes. Intermediate labels such as \"support\" may be more appropriate for describing the roles of today's AI systems."
+  },
+  {
+   "rank": 4,
+   "id": "42658654",
+   "source": "MED",
+   "pmid": "42658654",
+   "pmcid": "PMC13521192",
+   "doi": "10.1002/advs.202524184",
+   "first_publication_date": "2026-08-27",
+   "title": "The Mind From Within: Visceral Roots of Human Cognition.",
+   "authors": "Monti A, Aglioti SM.",
+   "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Humans think and act not only with the brain but also with the heart, lungs, gut, and other viscera, such as the bladder, long regarded as primarily vegetative. A fresh wave of experiments is revealing the role of cardiac-cycle phase and baroreceptor firing in perception and social behavior; respiration-locked neural dynamics in attention and learning; and gastrointestinal rhythms and vagal afferents in affect and decision-making. These discoveries are made possible by emerging methods, including ingestible sensors that record gastrointestinal signals in situ during emotional and cognitive tasks, and virtual reality stimuli linked to cardiac and respiratory activity. Expanding on such evidence, this review advances a deep embodiment theory in which visceral states and their conscious perception (interoception) systematically shape memory, consciousness, volitional action, and social cognition. Deep embodiment has implications for economic decision-making, clinical interventions (e.g., organ transplantation), environmental exposures (e.g., air quality), and the design of artificial intelligence (AI) systems that incorporate visceral-like signals for state estimation and adaptive control. Finally, we contrast deep embodiment with brain-reductionist and \"shallow\" embodiment accounts, arguing that viscera allow a self-centered mode of thinking and influence cognition through specific pathways."
+  },
+  {
+   "rank": 5,
+   "id": "42721556",
+   "source": "MED",
+   "pmid": "42721556",
+   "pmcid": null,
+   "doi": "10.1016/j.plrev.2026.09.003",
+   "first_publication_date": "2026-09-08",
+   "title": "A structured framework for human-AI resemblance: Evidence, inference and perception.",
+   "authors": "Wang P, Law EL, Zou L, Jiang Y, Hertwig R, Paas F, Laureys S.",
+   "journal": "Physics of life reviews",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Artificial intelligence is increasingly encountered not as background software but as an interlocutor, adviser and institutional gatekeeper. Yet claims that an AI system is 'human-like' often collapse distinct comparison targets, measurements and inferences into a single label. This Review proposes a structured framework in which every resemblance claim specifies the human reference class, the AI system and version, the task and context, the property compared, the measurement relation, the perturbations considered, the uncertainty of the estimate and the inference that the evidence permits. Four recurring evidence families concern behavioural outputs, representational organization, process dynamics and neural or physiological correspondence. Perceived resemblance is treated separately as an observer attribution that can mediate trust, reliance, disclosure, delegation and moral concern. We distinguish exact from approximate resemblance, symmetric from directional measures, static from dynamical correspondence and observational from interventional evidence. Worked examples show how to code missing or conflicting indicators without forcing them into a single score. Convergence supports broader conclusions only when measures with different assumptions exclude distinct alternatives; otherwise, agreement may reflect shared data, stimuli, objectives or mappings. The framework is intended both for exploratory science and for application-matched evaluation, while preserving strict limits on claims about cognition and consciousness."
+  },
+  {
+   "rank": 6,
+   "id": "42406739",
+   "source": "MED",
+   "pmid": "42406739",
+   "pmcid": "PMC13588722",
+   "doi": "10.1182/blood.2026034666",
+   "first_publication_date": "2026-09-01",
+   "title": "Precision transfusion medicine in the omics era.",
+   "authors": "D'Alessandro A.",
+   "journal": "Blood",
+   "pub_types": [
+    "research-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "AbstractTransfusion medicine has practiced a form of precision medicine for decades through compatibility testing, infectious disease screening, component manufacturing, traceability, and hemovigilance. Yet blood is still often treated primarily as a commodity-collected, processed, stored, and transfused-rather than as a dynamic biological product rich in molecular information. This Perspective argues that the field is uniquely positioned to extend its long-standing precision framework into a more molecular, longitudinal, and predictive era. Omics approaches, especially genomics and repeated metabolomic or proteomic profiling, can help define stable donor traits, track physiologic changes across the donation career, and connect donor biology to storage quality, posttransfusion performance, and recipient outcomes. Clinical metabolomics may eventually extend this framework to recipients, enabling deeper phenotyping across the full vein-to-vein continuum. This vision supports the emergence of the \"blood unit+,\" a blood product enriched not only by compatibility and availability but also by biological context that may inform quality, resilience, and transfusion efficacy. At population scale, longitudinal donor testing could transform blood systems into distributed observatories of public health or health weather stations, enabling molecular epidemiology, digital donor twins, and more meaningful reciprocity with donors. Integrated with artificial intelligence, these data could help strengthen donor recruitment and retention, by engaging a new generation of increasingly health-conscious donors, while supporting the resilience of blood systems facing demographic aging and shifting patterns of donor behavior and linking donor biology, product behavior, and recipient response in ways no other field can presently match."
+  },
+  {
+   "rank": 7,
+   "id": "43009939",
+   "source": "MED",
+   "pmid": "43009939",
+   "pmcid": "PMC13749666",
+   "doi": "10.1186/s12909-026-10095-z",
+   "first_publication_date": "2026-08-14",
+   "title": "AI literacy and AI anxiety in emergency and first aid students: a cross-sectional study.",
+   "authors": "Karabulut M, Karabulut D, Özpinar S.",
+   "journal": "BMC medical education",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "ObjectiveThis study was conducted to determine Artificial Intelligence (AI) literacy and AI anxiety levels in students attending the First Aid and Emergency Program, to analyze the relationship between these variables, and to identify significant predictors of AI literacy and AI anxiety.MethodThis descriptive and cross-sectional study was conducted with 430 students enrolled in the Emergency and First Aid Program in Konya province. Data were collected using the Personal Information Form, Artificial Intelligence Literacy Scale (AILS), and Artificial Intelligence Anxiety Scale (AIAS). Descriptive statistics, independent samples t-test, Pearson correlation analysis, and multiple linear regression analysis were performed to analyze the data.ResultsThe mean scores the participating students obtained from the overall AILS and AIAS were 3.96 ± 0.60 and 3.00 ± 0.76, respectively. There was a significant, weak, and negative correlation between the AILS and AIAS scores (r = - .24, p ConclusionThe weak negative correlation between AI literacy and AI anxiety suggests that higher levels of AI literacy may be associated with lower levels of AI anxiety. This finding suggests that strengthening content to support artificial intelligence literacy in the Emergency and First Aid Program curriculum could be considered. Specifically, it is considered that integrating educational content aimed at reducing learning anxiety in students and increasing their awareness of the functioning, limitations, and conscious use of AI systems into the curriculum might play a supportive role in managing students' anxiety levels. Therefore, further longitudinal and quasi-experimental studies should be conducted to understand the nature of this relationship and the potential effects of AI training better."
+  },
+  {
+   "rank": 8,
+   "id": "42309439",
+   "source": "MED",
+   "pmid": "42309439",
+   "pmcid": null,
+   "doi": "10.1016/j.biosystems.2026.105853",
+   "first_publication_date": "2026-06-17",
+   "title": "Dynamics of insect paraintelligence how a mindless colony of ants meaningfully moves a beetle.",
+   "authors": "Bisenbaev AK.",
+   "journal": "Bio Systems",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "In this work, a new concept called the vector dissipation of randomness (VDR) is developed and formalized. It describes the mechanism by which complex multicomponent systems transition from chaos to order through the filtering of random directions, accumulation of information in the environment, and self-organization of agents. VDR explains how individual random strategies can evolve into collective goal-directed behavior, leading to the emergence of an ordered structure without centralized control. In this framework, paraintelligence is defined as a functional, nonreflexive mode of collective cognition in which a decentralized system produces rational-like outcomes without an individual conscious subject. To test the proposed model, a numerical simulation of the \"ant-beetle\" system was conducted, in which agents (ants) randomly choose movement directions, but through feedback mechanisms and weak strategies, they form a single coordinated vector of the beetle's movement. VDR is a universal mechanism applicable to a wide range of self-organizing systems, including biological populations, decentralized technological networks, sociological processes, and artificial intelligence algorithms."
+  },
+  {
+   "rank": 9,
+   "id": "42443865",
+   "source": "MED",
+   "pmid": "42443865",
+   "pmcid": "PMC13643990",
+   "doi": "10.1186/s12911-026-03712-w",
+   "first_publication_date": "2026-07-13",
+   "title": "Toward tailored implementation of an artificial intelligence-based healthy dietary chatbot: differences in technology acceptance pathways by health consciousness and user characteristics.",
+   "authors": "Liu CL, Ho CT, Wu TC.",
+   "journal": "BMC medical informatics and decision making",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundArtificial intelligence (AI) health chatbots are increasingly used for health education and health promotion, yet the mechanisms underlying their adoption and the heterogeneity across user groups remain insufficiently understood.MethodsDrawing on the Technology Acceptance Model (TAM), this study examined behavioral intention to use an artificial intelligence-based healthy dietary chatbot, incorporating interactivity and entertainment as key system features, and testing whether health consciousness and sociodemographic subgroups moderate technology acceptance pathways. An anonymous questionnaire survey was conducted after participants interacted with a LINE-based AI dietary chatbot. Structural equation modeling and subgroup analysis were applied to evaluate TAM relationships, moderation by health consciousness, and boundary conditions across demographic groups.ResultsPerceived ease of use and perceived usefulness significantly predicted behavioral intention. Interactivity was primarily associated with intention indirectly through perceived ease of use and perceived usefulness, whereas entertainment showed a stronger direct association with intention. Health consciousness moderated the interactivity-usefulness and entertainment-intention relationships. Multi-group analyses further indicated pathway heterogeneity: interaction-related effects were stronger among younger, female, and more highly educated users, whereas older users placed greater weight on enjoyment and ease of use, and males exhibited a stronger usefulness-intention link.ConclusionsOverall, the findings support the applicability of TAM to artificial intelligence-based health chatbot adoption and suggest the coexistence of cognitive, interactivity-driven and affective, entertainment-driven acceptance routes. The moderating roles of health consciousness and user characteristics underscore the importance of segment-specific design and dissemination strategies to enhance adoption."
+  },
+  {
+   "rank": 10,
+   "id": "41850148",
+   "source": "MED",
+   "pmid": "41850148",
+   "pmcid": null,
+   "doi": "10.1016/j.clineuro.2026.109396",
+   "first_publication_date": "2026-03-14",
+   "title": "Improving consciousness assessment through neuroadaptive artificial intelligence and quantum-enhanced brain-computer interfaces.",
+   "authors": "Oullier O, Roser F, Barbaste P, Vasques X.",
+   "journal": "Clinical neurology and neurosurgery",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Accurate assessment of consciousness in patients with disorders of consciousness (DoC) remains a major clinical challenge, particularly when motor impairment masks evidence of preserved awareness. Recent advances in neuroadaptive artificial intelligence (NA-AI) may help transform brain-computer interfaces (BCIs) from experimental systems into more clinically scalable tools tailored to each patient, continuously adjusting their models in real time to changes in an individual's (neuro)physiological signals. Generative and self-adapting AI models can account for inter-individual variability and temporal instability in neural signals, enabling faster calibration, improved robustness and personalized decoding of conscious intent. AI world-model approaches further enable realistic and dynamic representations of a patient's neurophysiology, allowing BCIs to interpret neural activity in the context of evolving brain states rather than static classifications of consciousness levels. Emerging work in quantum-enhanced machine and deep learning suggests that some current computational bottlenecks in BCIs, including high-dimensional optimization and complex pattern discovery, may be further alleviated. We argue that the convergence of neuroadaptive AI and quantum-enabled computation could improve the sensitivity, speed and reliability of consciousness assessments. Given the exploratory stage of quantum-AI research, rigorous clinical validation and governance frameworks will be required to ensure safe deployment and improved patient outcomes. If validated, quantum-AI BCIs could reduce diagnostic uncertainty, improve prognostication and support ethically grounded decision-making for patients unable to communicate."
+  },
+  {
+   "rank": 11,
+   "id": "41820112",
+   "source": "MED",
+   "pmid": "41820112",
+   "pmcid": null,
+   "doi": "10.1016/j.tics.2026.01.011",
+   "first_publication_date": "2026-03-11",
+   "title": "How can we validate theory-derived indicators of consciousness in Artificial Intelligence?",
+   "authors": "Pennartz CMA.",
+   "journal": "Trends in cognitive sciences",
+   "pub_types": [
+    "Letter"
+   ],
+   "open_access": "N",
+   "abstract": ""
+  },
+  {
+   "rank": 12,
+   "id": "41757900",
+   "source": "MED",
+   "pmid": "41757900",
+   "pmcid": "PMC13368369",
+   "doi": "10.1210/clinem/dgag027",
+   "first_publication_date": "2026-07-01",
+   "title": "Automatic acromegaly detection using deep learning on hand images: a multicenter observational study.",
+   "authors": "Ohmachi Y, Nishio M, Abe I, Kobayashi K, Iida T, Shirakawa M, Nagata Y, Takeuchi K, Taguchi A, Kinoshita Y, Fukuhara N, Nishioka H, Tahara S, Fujio S, Ogura T, Kurosaki M, Hada Y, Susa S, Otsuka Y, Otsuka F, Ishida I, Kameda H, Oyama K, Yamada S, Kobatake M, Oi-Yo Y, Fujii G, Tomofuji S, Sasaki Y, Bando H, Yamamoto M, Iguchi G, Motomura Y, Tsujimoto Y, Yamamoto N, Suzuki M, Urai S, Takahashi M, Murakami T, Ogawa W, Fukuoka H.",
+   "journal": "The Journal of clinical endocrinology and metabolism",
+   "pub_types": [
+    "research-article",
+    "Multicenter Study",
+    "Journal Article",
+    "Observational Study"
+   ],
+   "open_access": "Y",
+   "abstract": "ContextAcromegaly poses clinical challenges in terms of early diagnosis and intervention. Therefore, the development of novel diagnostic tools is essential. Although artificial intelligence (AI) models based on external appearance have been proposed, privacy concerns have limited their use.ObjectiveTo develop a privacy-conscious deep learning model for detecting acromegaly using hand images.MethodsThis nationwide multicenter study enrolled 716 patients (317 with acromegaly and 399 controls) and 11 480 images from 15 Japanese pituitary centers. The inclusion criteria were age ≥18 years and care received at the participating facilities. Hand images focusing on the dorsal and fist sign, excluding the palm/fingerprint regions, were used to develop the model. The data were split into training/validation (12 centers) and test (3 centers) datasets. A ResNet-50-based model was trained using PyTorch with data augmentation and 5-fold cross-validation. For each patient, the predictions were averaged over 4 images. The performance of the model was compared with that of endocrinologists.ResultsThe model achieved a sensitivity of 0.89, specificity of 0.91, positive predictive value of 0.88, negative predictive value of 0.93, F1-score of 0.89, and an area under the receiver operating characteristic curve of 0.96, outperforming specialists (F1-score range: 0.43-0.63).ConclusionThis study highlights the utility of dorsal hand and fist sign as diagnostic clues for acromegaly, which the AI model captured more accurately than endocrinologists. Using this privacy-conscious feature, this model can be deployed in public settings like health checkups. Further validation using larger datasets, including healthy individuals and diverse diseases, is necessary."
+  },
+  {
+   "rank": 13,
+   "id": "41692418",
+   "source": "MED",
+   "pmid": "41692418",
+   "pmcid": "PMC13253056",
+   "doi": "10.1111/vox.70207",
+   "first_publication_date": "2026-02-15",
+   "title": "Using unmanned aerial vehicles (drones) to improve access to blood in low- and middle-income countries: Current challenges and opportunities.",
+   "authors": "Datta SS, Mondal R, Deb S, Tortora G, Pirri A.",
+   "journal": "Vox sanguinis",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Blood transfusion is life-saving for patients in emergencies, but low- and middle-income countries (LMICs) often face a severe shortage of banked blood. Establishing blood banks in rural areas presents substantial logistical and economic challenges for many LMICs. Furthermore, difficult terrain, inadequate transportation infrastructure and adverse environmental conditions frequently cause delays in delivering essential blood supplies to patients in need. However, the freight transport system is undergoing a significant transformation with the introduction of unmanned aerial vehicles (UAVs), commonly known as drones. This environmentally conscious technology has made remarkable progress in recent times and demonstrates the potential to transport vital medical supplies, including blood and blood components, to remote areas during emergencies. Moreover, the use of artificial intelligence in drones has enhanced their flight safety. In this brief review, we first outline the various types of UAVs available for use, along with their respective configurations and regulatory requirements. Then we point out key problems of transfusion services within resource-limited regions, which include not having a national blood policy, a mismatch between supply and demand, a lack of robust testing facilities for bloodborne infections and not adhering to the transfusion guidelines. While resolving all challenges may seem unrealistic, we try to explore potential pathways to significantly improve blood accessibility for patients in LMICs through the strategic implementation of UAVs, considering the various barriers and facilitators associated with this innovative approach."
+  },
+  {
+   "rank": 14,
+   "id": "41219038",
+   "source": "MED",
+   "pmid": "41219038",
+   "pmcid": null,
+   "doi": "10.1016/j.tics.2025.10.011",
+   "first_publication_date": "2025-11-10",
+   "title": "Identifying indicators of consciousness in AI systems.",
+   "authors": "Butlin P, Long R, Bayne T, Bengio Y, Birch J, Chalmers D, Constant A, Deane G, Elmoznino E, Fleming SM, Ji X, Kanai R, Klein C, Lindsay G, Michel M, Mudrik L, Peters MAK, Schwitzgebel E, Simon J, VanRullen R.",
+   "journal": "Trends in cognitive sciences",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Rapid progress in artificial intelligence (AI) capabilities has drawn fresh attention to the prospect of consciousness in AI. There is an urgent need for rigorous methods to assess AI systems for consciousness, but significant uncertainty about relevant issues in consciousness science. We present a method for assessing AI systems for consciousness that involves exploring what follows from existing or future neuroscientific theories of consciousness. Indicators derived from such theories can be used to inform credences about whether particular AI systems are conscious. This method allows us to make meaningful progress because some influential theories of consciousness, notably including computational functionalist theories, have implications for AI that can be investigated empirically."
+  },
+  {
+   "rank": 15,
+   "id": "42169462",
+   "source": "MED",
+   "pmid": "42169462",
+   "pmcid": null,
+   "doi": "10.1002/wer.70421",
+   "first_publication_date": "2026-05-01",
+   "title": "Advancing Wastewater Treatment via Next-Generation CFD: A Critical Review of Multiphase Physics, Scale-Up Challenges, and AI Integration.",
+   "authors": "Aras E, Yilmaz Çelik D.",
+   "journal": "Water environment research : a research publication of the Water Environment Federation",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Wastewater treatment plants (WWTPs) are facing dual pressures of increasing influent variability and the urgent need for decarbonization. Aeration processes, accounting for 50%-70% of total energy consumption, represent the most critical target for optimization. Specifically, transitioning from conventional empirical methods to AI-CFD integrated frameworks can quantitatively reduce aeration energy consumption from 0.30 to 0.70 kWh/m3 down to 0.15-0.25 kWh/m3. This review provides a comprehensive analysis of the evolution from classical hydrodynamic assessments to advanced computational fluid dynamics (CFD) and artificial intelligence (AI) integrated frameworks, identifying the multiphase Euler-Euler approach coupled with population balance models (PBM) as the most suitable framework for capturing complex WWTP hydrodynamics. Unlike conventional reviews, this study critically evaluates the numerical robustness of turbulence closures, highlighting how advanced formulations such as shear stress transport (SST) k-ω can enhance predictive reliability in shear-dominated and rotational flow regions when appropriately validated against experimental data (typically yielding R2 > 0.90 and RMSE < 10%). Furthermore, the role of population balance modeling (PBM) in capturing complex bubble dynamics-such as coalescence and breakup-is analyzed as a prerequisite for accurate oxygen transfer efficiency (OTE) estimations. A significant focus is placed on the \"scale-up\" challenge, identifying the mathematical discrepancies between pilot-scale validations and full-scale plant performance. To bridge these gaps, the review explores emerging approaches such as physics-informed neural networks (PINNs) and digital twins. Specifically, AI-driven surrogate models drastically reduce computational times to enable real-time control, whereas PINNs ensure predictions remain physically robust even with sparse operational data. These integrations offer substantial potential for reducing energy use and associated carbon emissions when integrated with renewable energy systems. By synthesizing validated physical models with AI-driven surrogates, this review demonstrates that actionable CFD strategies can yield absolute aeration energy reductions of 15%-30% while paving the way for carbon-conscious wastewater treatment."
+  },
+  {
+   "rank": 16,
+   "id": "42077384",
+   "source": "MED",
+   "pmid": "42077384",
+   "pmcid": "PMC13131986",
+   "doi": "10.1093/ehjdh/ztag053",
+   "first_publication_date": "2026-04-05",
+   "title": "Prediction of vasovagal syncope using artificial intelligence-enabled smartwatch photoplethysmography-derived heart rate variability.",
+   "authors": "Lee HS, Song J, Jung M, Jo YY, Kwon JM, Cho JH.",
+   "journal": "European heart journal. Digital health",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "AimsVasovagal syncope (VVS) can cause injury and impaired quality of life, and effective prevention requires timely warning before loss of consciousness. To evaluate whether smartwatch photoplethysmography (PPG)-derived heart rate variability (HRV) can predict VVS before symptom onset, and to identify an optimal observation window and lead time.Methods and resultsWe prospectively enrolled 132 patients with suspected neurally mediated syncope who underwent head-up tilt (HUT) testing while wearing a wrist-worn Samsung Galaxy Watch 6 for continuous multiwavelength PPG acquisition (25 Hz). The HRV features (n = 107) were extracted. An Extra Trees classifier (600 trees) was trained using an 80/20 subject-level split and evaluated on a hold-out test set. Model performance was assessed using AUROC and threshold metrics, including specificity, at a fixed sensitivity of 0.90. Sixty-three participants were HUT-positive, and 69 were HUT-negative. The 5-min presyncope window achieved the highest discrimination (AUROC, 0.91; 95% CI 0.77-1.00). At 90% sensitivity, specificity was 0.64 (95% CI 0.40-0.85). Using a fixed 5-min window, early prediction remained robust at a 5-min lead time (AUROC 0.91; 95% CI 0.76-1.00; accuracy 84.6%; 95% CI 0.65-0.92). The most informative predictors included nonlinear complexity metrics (approximate entropy and composite multiscale entropy) and autonomic balance indices (normalized low-frequency, log-transformed high-frequency, and the cardiac vagal index).ConclusionArtificial intelligence-enabled analysis of smartwatch PPG-derived HRV can prospectively predict VVS during HUT using a short 5-min observation window while maintaining clinically meaningful performance at a 5-min lead time, supporting the feasibility of wearable, real-time warning systems."
+  },
+  {
+   "rank": 17,
+   "id": "42121994",
+   "source": "MED",
+   "pmid": "42121994",
+   "pmcid": "PMC13162744",
+   "doi": "10.3390/diagnostics16091290",
+   "first_publication_date": "2026-04-25",
+   "title": "Private Ensembles, Public Confidence: A PATE-to-MedPrompt System for Autism Detection.",
+   "authors": "Vlasiu AR, Frincu ME.",
+   "journal": "Diagnostics (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Background/Objectives: Early autism screening needs to be both accurate and privacy-preserving, but single-source assessments can miss clinically important context. We therefore study a preliminary integrated framework that combines privacy-preserving questionnaire-based risk estimation with a second reasoning component based on a large language model (LLM) that evaluates symptom narratives. The objective is to test whether structured screening outputs can be translated into uncertainty-aware narrative reasoning within one privacy-conscious workflow. Methods: The proposed pipeline links a PATE-style AQ-10 screening stage to a MedPrompt-style consensus reasoning stage that operates on behavioral summaries and transcript-style inputs. Evaluation includes component-wise testing on AQ-10 data, an end-to-end controlled setting, synthetic stress testing, and transcript-only analysis on 26 examples. Results: In component-wise evaluation, the combined pipeline reaches ceiling performance on a controlled AQ-10 split, synthetic stress testing reduces accuracy to 97.2%, and transcript-only testing shows that contextual factors such as age substantially improve sensitivity. Conclusions: These findings support only a highly preliminary proof-of-concept under constrained evaluation conditions and should be interpreted as motivation for broader external validation rather than as evidence of practical decision-support readiness across settings."
+  },
+  {
+   "rank": 18,
+   "id": "41939423",
+   "source": "MED",
+   "pmid": "41939423",
+   "pmcid": null,
+   "doi": "10.1177/00243639261429608",
+   "first_publication_date": "2026-04-01",
+   "title": "Clinical Decision-Making: Between Scientific Precision and Human Responsibility How the Physician Navigates Between Sensitivity and Specificity to Make the Best Decision for the Patient.",
+   "authors": "Cicerone GC, Jean Tihan E, Serban GM.",
+   "journal": "The Linacre quarterly",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Clinical decision-making constitutes the core of medical practice, representing a synthesis of objective biomedical data and subjective human judgment). This article explores this process through the dual lenses of diagnostic test sensitivity and specificity, and concepts that guide the physician in balancing the imperative not to miss a serious condition against the duty to avoid undue harm or labeling of the healthy. Beyond this technical-statistical framework, the paper provides a profound analysis of the psychological dimensions-including decision-making pressure and uncertainty management-and the bioethical foundations-autonomy, beneficence, non-maleficence, and justice-that underpin every significant medical choice. Through an explicit examination of four major bioethical approaches (principist-integrative, narrative and person-centered, distributed responsibility, and the ethics of uncertainty and proportionality) and supported by detailed clinical case studies, we argue that optimal clinical decision-making is a holistic enterprise. It requires the seamless integration of scientific rigor, empathetic communication, psychological resilience, and conscious ethical practice. The article also engages with contemporary challenges such as artificial intelligence, resource allocation, and time pressure, concluding that the soul of the profession lies in this ceaseless integration, transforming protocol into compassion, data into wisdom, and technique into true human care."
+  },
+  {
+   "rank": 19,
+   "id": "41876853",
+   "source": "MED",
+   "pmid": "41876853",
+   "pmcid": null,
+   "doi": "10.1038/s41593-026-02220-4",
+   "first_publication_date": "2026-03-24",
+   "title": "Adversarial AI reveals mechanisms and treatments for disorders of consciousness.",
+   "authors": "Toker D, Zheng ZS, Thum JA, Guang J, Annen J, Miyamoto H, Yamakawa K, Vespa PM, Laureys S, Schnakers C, Bari AA, Hudson A, Pouratian N, Monti MM.",
+   "journal": "Nature neuroscience",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Understanding disorders of consciousness (DOC) remains one of the most challenging problems in neuroscience, hindered by the lack of experimental models for probing mechanisms or testing interventions. Here, to address this, we introduce a generative adversarial artificial intelligence (AI) framework that pits deep neural networks-trained to detect consciousness across more than 680,000 ten-second neuroelectrophysiology samples and validated on 565 patients, healthy volunteers and animals-against interpretable, machine learning-driven neural field models. This adversarial architecture produces biologically realistic simulations of both conscious and comatose brains that recapitulate empirical neurophysiological features across humans, monkeys, rats and bats. Without explicit programming, the AI model retrodicts known DOC responses to brain stimulation and generates testable predictions about the mechanisms of unconsciousness. Two such predictions are validated here: selective disruption of the basal ganglia indirect pathway, supported by diffusion magnetic resonance imaging in 51 patients with DOC, and increased cortical inhibitory-to-inhibitory synaptic coupling, supported by RNA sequencing of resected brain tissue from 6 human patients with coma and a rat stroke model. The model also identifies high-frequency stimulation of the subthalamic nucleus as a promising intervention for DOC, supported by electrophysiological data from human patients. This work introduces an AI framework for causal inference and therapeutic discovery in consciousness research, as well as in complex systems more broadly."
+  },
+  {
+   "rank": 20,
+   "id": "41911026",
+   "source": "MED",
+   "pmid": "41911026",
+   "pmcid": "PMC13035007",
+   "doi": "10.7189/jogh.16.01002",
+   "first_publication_date": "2026-03-30",
+   "title": "Editor's view: What makes a scientist successful?",
+   "authors": "Rudan I.",
+   "journal": "Journal of global health",
+   "pub_types": [
+    "Editorial"
+   ],
+   "open_access": "Y",
+   "abstract": "This editorial examines the nature of scientific discovery by studying the characteristics, methods, and tools that have historically defined a 'successful scientist'. It first considers the traditional hypothesis-driven model of science founded on existing knowledge, testable hypotheses, and experiments based on precise measurements. Through illustrative examples, it distinguishes three types of highly successful scientific contributors: those who formulated novel hypotheses and theories that proved groundbreaking, those who developed transformative measurement tools that enabled experimental testing, and those who managed to do both, even in multiple scientific fields. While success has historically depended on access to knowledge, exceptional creativity, perseverance, and experimental rigor, this editorial reminds that serendipity and timing have also played important roles. It also points to the limits of science when hypotheses remain untestable and theories unfalsifiable. It then reviews modern developments that challenge traditional approaches, such as genome-wide association studies (GWAS), where clear and specific hypotheses are no longer a prerequisite for important novel discoveries, and where discovery can emerge from data mining, rather than from pre-existing knowledge and creative hypothesis. The editorial then progresses onto the emergence of machine-led scientific discovery, using the example of the DeepMind team's development of AlphaFold - an artificial intelligence (AI) system that accurately predicted protein folding without relying on traditional hypotheses. AlphaFold learned directly from data and revolutionised the entire field of structural biology, bringing a new era of machine-inferred and AI-based science. The described frameworks are then used to analyse the development of an emerging field of science, 'ideometrics', based on the theory of the brain's 'sense of ideas', explaining how it could potentially contribute to understanding the purpose of consciousness as a complex trait in evolutionary terms. Being conscious provides an advantage by enabling the brain's 'sense of ideas' to reduce informational entropy of all possible future states of a conscious being to a narrower range of the outcomes that are perceived as more favourable for its survival. Perception of time and space in humans is, therefore, intertwined with their conscious 'sense of ideas', both while awake and dreaming, and further research in neuroscience will be required to elucidate these relationships. In conclusion, the editorial offers a comprehensive reflection on how the definition of a 'successful scientist' is being substantially reshaped in the 21st century."
+  },
+  {
+   "rank": 21,
+   "id": "41763873",
+   "source": "MED",
+   "pmid": "41763873",
+   "pmcid": null,
+   "doi": "10.1016/j.neuroscience.2025.12.003",
+   "first_publication_date": "2026-02-12",
+   "title": "Is a conscious silicon brain achievable?",
+   "authors": "Fathollahi Y, Alami K.",
+   "journal": "Neuroscience",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The biological mind is created by brain activity, and the mind's experiences and thoughts can change its structure and function. To construct a digital twin brain, it is possible to decode the unique activity of the human brain for each of the mental faculties responsible for all mental phenomena, create their digital twins, and connect them to the reconstructed and simulated neural circuits of human brain. Another strategy is to reconstruct and simulate the neural circuits of functional human brain organoids individually and in assembloids to match the functional characteristics of neural circuits through iterative simulations and experiments, and combine them with artificial intelligence (AI) to create a kind of silicon brain. Then, with the convergence of silicon brain technologies, AI avatars, the source of embodied sense data, and metaverse, the source of environmental sense data, a complex system can be created that may represent a level of consciousness. The first approach faces major issues in data acquisition, computational requirements, and the integration of diverse data sources. The second approach is a practical solution that can be achieved very quickly and can be really effective in addressing the challenges of the first approach. Building a silicon brain will increase our understanding of the mechanisms behind mind and the functioning of consciousness. This will improve brain models and will have many applications, mainly useful for achieving better progress in medical science."
+  },
+  {
+   "rank": 22,
+   "id": "41751462",
+   "source": "MED",
+   "pmid": "41751462",
+   "pmcid": "PMC12939128",
+   "doi": "10.3390/cimb48020200",
+   "first_publication_date": "2026-02-11",
+   "title": "Proteomic Studies in Absence Epilepsy: A Systematic Review of Methodological Diversity and Implications for Data Interpretation.",
+   "authors": "Gunel A.",
+   "journal": "Current issues in molecular biology",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Absence epilepsy (AE) is a common pediatric epilepsy syndrome marked by brief lapses in consciousness and characteristic 2.5-4 Hz spike-and-wave discharges on EEG. Although its clinical and electrophysiological features are well established, the molecular mechanisms underlying AE remain incompletely understood. Proteomic approaches offer a powerful means to explore these mechanisms; however, their application in AE remains limited and methodologically heterogeneous, which complicates data integration. In this review, proteomic methodologies applied in rodent models of absence epilepsy are critically examined, including genetic rat models such as Genetic Absence Epilepsy Rats from Strasbourg (GAERS) and Wistar Albino Glaxo rats from Rijswijk (WAG/Rij), monogenic mutant mouse models, and pharmacologically induced models. The technical workflow is described particularly, from tissue sampling and protein preparation (including gel-based and gel-free methods) to mass spectrometric analysis using data-dependent and data-independent acquisition strategies. Emerging technologies such as spatial proteomics, Trapped Ion Mobility Spectrometry coupled with Parallel Accumulation-Serial Fragmentation (TIMS-PASEF), and the integration of artificial intelligence are also evaluated in relation to their potential to address current technical limitations. Beyond synthesizing convergent molecular pathways including synaptic dysfunction, altered energy metabolism, and neuroinflammation, the review examines how methodological choices-such as model selection, brain region dissection, sample preparation protocols, and analytical platforms-contribute to experimental outcomes and data interpretation. By integrating current evidence with a focus on methodological aspects, this review provides a framework for designing more robust, reproducible, and clinically relevant proteomic studies in absence epilepsy."
+  },
+  {
+   "rank": 23,
+   "id": "41735504",
+   "source": "MED",
+   "pmid": "41735504",
+   "pmcid": "PMC13031880",
+   "doi": "10.1038/s41598-026-40734-w",
+   "first_publication_date": "2026-02-24",
+   "title": "A privacy-preserving multi-user retrieval system for multimodal artificial intelligence.",
+   "authors": "Gao Y, Luo W, Wang C, Ahmad NS, Wang X, Goh P.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Large language models (LLMs) are integral to cloud-based AI applications, offering robust capabilities for multimodal data processing and retrieval. However, deploying LLMs in environments with multiple users presents notable difficulties, especially in protecting sensitive information. In this study, we present PMIRS, a system designed to support secure, privacy-focused retrieval of multimodal image and text data. PMIRS allows users to transmit images or text to a simulated cloud-based LLM environment safely in a privacy-preserving manner. PMIRS mitigates privacy risks through a combination of obfuscation techniques, encrypted inference and federated learning. Specifically, federated learning is used to fine-tune a lightweight model adapted from the official CLIP codebase by OpenAI. During inference, query embeddings are first obfuscated through block-wise projection and then encrypted using AES in CBC mode with 128-bit keys to protect query content from unauthorized access. Additionally, the Diffie-Hellman algorithm is employed for secure key management in multi-user environments. Experimental results on three semantic domains from the customized Phrase-ImageNet variant of the ImageNet dataset, constructed by rewriting ImageNet labels into natural-language phrases, demonstrate that PMIRS achieves F1-scores up to 0.92, with precision exceeding 0.90 in small-to-medium repositories, and retrieval latency consistently under 180 milliseconds. Compared to the CLIP baseline, PMIRS improves average F1-score by 7.67% while maintaining comparable precision. These results underscore PMIRS's practical value for secure, efficient, and privacy-preserving multimodal retrieval. Beyond our controlled experiments, PMIRS has the potential to support real-world applications such as medical image retrieval, privacy-conscious customer service bots, and enterprise data management under regulatory frameworks like GDPR and HIPAA."
+  },
+  {
+   "rank": 24,
+   "id": "41627361",
+   "source": "MED",
+   "pmid": "41627361",
+   "pmcid": null,
+   "doi": "10.1007/s12124-025-09971-y",
+   "first_publication_date": "2026-02-02",
+   "title": "Cubical Model of Intelligence: Phenomenological and Cognitive Approach to Seven Aspects of Mind.",
+   "authors": "Saunanen V.",
+   "journal": "Integrative psychological & behavioral science",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This paper presents the Cubic Model of Intelligence — a phenomenological and cognitive approach to understanding seven interrelated aspects of the mind: logic,emotion, intuition, memory, ethics, social context, and temporal foresight. The model is derived from observation of internal thinking processes and proposes to view these aspects not as separate functions but as facets of a unified cognitive structure, whose interactions shape human understanding and decision-making. In this study, the cube is not treated as a symbolic image but as a theoretical hypothesis about the structural organization of consciousness, subject to operationalization and empirical testing. Phenomenological analysis and self-observation serve as the starting point, but the emphasis is shifted toward the possibility of formalizing the seven facets through observable cognitive processes, which makes the model applicable in empirical psychology. The work seeks to integrate philosophical reflection, cognitive theory,and psychological practice. The paper discusses potential directions for verifying the model through a combination of phenomenological and behavioral methods, as well as perspectives for its application in education, psychotherapy, consciousness studies, and artificial intelligence development."
+  },
+  {
+   "rank": 25,
+   "id": "42948529",
+   "source": "MED",
+   "pmid": "42948529",
+   "pmcid": "PMC13713025",
+   "doi": "10.3389/ftox.2026.1961156",
+   "first_publication_date": "2026-10-14",
+   "title": "Case Report: Severe acute hypermagnesemia following inadvertent bath agent ingestion rapidly resolved by emergent hemodialysis.",
+   "authors": "Chen CC, Chen JN, Yang TH, Lin SH.",
+   "journal": "Frontiers in toxicology",
+   "pub_types": [
+    "Journal Article",
+    "Case Reports",
+    "case-report"
+   ],
+   "open_access": "Y",
+   "abstract": "Severe acute hypermagnesemia from excessive magnesium (Mg2+) exposure is rare but life-threatening and requires prompt recognition. We report a 54-year-old previously healthy man who presented to the emergency department with acute altered consciousness and generalized weakness. Physical examination showed stupor, hypothermia, hypotension, and generalized areflexia. Initial laboratory testing demonstrated mixed respiratory and metabolic acidosis, a normal serum creatinine concentration, and severe hypermagnesemia (serum Mg2+ concentration, 15.8 mg/dL). The initial 12-lead ECG demonstrated diffuse ST-segment depression, and an artificial intelligence-enabled electrocardiography (AI-ECG) model identified an estimated mortality risk above the 99th percentile. Nasogastric decompression retrieved minimal gastric contents, and initial treatment with intravenous calcium, saline, and a loop diuretic did not produce meaningful neurological improvement. Emergent hemodialysis resulted in rapid recovery of consciousness and a decrease in serum Mg2+ to 4.9 mg/dL during treatment, together with neurological improvement and a marked decline in AI-ECG-predicted mortality risk. Subsequent history-taking indicated inadvertent ingestion of approximately 100 mL of a private-label artificial hot-spring mineral preparation, for which spa personnel reported a nominal formulation of 30% magnesium chloride, 33% magnesium sulfate, and 10% potassium sulfate. He recovered without residual complications. This case emphasizes that a normal serum creatinine concentration at presentation does not preclude life-threatening magnesium toxicity after a large acute Mg2+ exposure. Timely hemodialysis should be considered when severe symptoms persist despite initial therapy."
+  },
+  {
+   "rank": 26,
+   "id": "42909349",
+   "source": "MED",
+   "pmid": "42909349",
+   "pmcid": "PMC13684868",
+   "doi": "10.3389/fimmu.2026.1941590",
+   "first_publication_date": "2026-10-07",
+   "title": "Multi-omics advances in sepsis-associated encephalopathy: from pathogenesis to clinical translation.",
+   "authors": "Gao L, Liu X.",
+   "journal": "Frontiers in immunology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Sepsis-associated encephalopathy (SAE) represents the most prevalent neurological complication arising from sepsis, affecting approximately 70% of patients with sepsis and associated with mortality rates reaching up to 70%. Survivors frequently experience persistent cognitive deficits; however, the field currently lacks specific diagnostic biomarkers and targeted therapeutic interventions, with diagnosis primarily established through exclusion criteria. This review critically examines multi-omic investigations of SAE, evaluating whether convergent evidence across genomic, transcriptomic, proteomic, and metabolomic domains elucidates shared pathophysiological mechanisms and identifying prevailing translational challenges. The synthesis of evidence is structured around three interrelated thematic domains. First, multi-omic analyses have elucidated the initial triggers of neuroinflammation: genomic studies implicate Piezo1-mediated oligodendrocyte ferroptosis and adenosine-to-inosine (A-to-I) RNA editing, while proteomic data corroborate activation of the reactive oxygen species (ROS)/thioredoxin-interacting protein (TXNIP)/NLRP3 inflammasome axis, collectively indicating that peripheral inflammatory cues converge upon central innate immune pathways. Second, transcriptomic and proteomic findings converge on microglial polarization as a pivotal mediator in SAE progression: single-cell sequencing reveals C1q-dependent synaptic pruning, S100A9 protein expression promotes pro-inflammatory microglial polarization, and metabolomic profiles demonstrate that cyclophilin D (CypD)-regulated redox imbalances modulate the magnitude of glial inflammatory responses. Third, integrative analyses delineate neuronal injury pathways: the NAT10 (N-acetyltransferase 10)/GABA(B) receptor 1 axis is implicated in inhibitory synaptic dysfunction through coordinated transcriptomic and proteomic alterations, while elevated levels of 4-hydroxyphenylacetic acid correlate with impaired consciousness, suggesting its potential utility as a prognostic biomarker. Across these domains-initiation, mediation, and injury-multi-omic integration further extends the conceptual framework to encompass systemic regulation via the microbiota-gut-brain axis. Notwithstanding these advances, extant evidence is limited by predominantly cross-sectional study designs, reliance on single-animal models, and a paucity of rigorous clinical validation. To address these limitations, we propose a three-tiered cascade model-comprising Inflammation Initiation, Glial Mediation, and Neuronal Injury-that synthesizes current findings into a coherent, testable framework. Furthermore, we delineate a methodological roadmap emphasizing longitudinal sampling, multi-center validation, causal inference methodologies, and artificial intelligence-driven data integration. This review endeavors not only to consolidate existing knowledge but also to establish an actionable translational paradigm aimed at advancing SAE research from descriptive characterization toward precision diagnostics and mechanism-based therapeutic strategies."
+  },
+  {
+   "rank": 27,
+   "id": "42687985",
+   "source": "MED",
+   "pmid": "42687985",
+   "pmcid": "PMC13533653",
+   "doi": "10.3389/fpsyg.2026.1903644",
+   "first_publication_date": "2026-08-19",
+   "title": "Sentient AI in robots and agents: prolegomena for an evidence-based research program.",
+   "authors": "Chella A.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "brief-report",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The possibility of sentient artificial intelligence has moved from speculative philosophy to a practical interdisciplinary problem for AI, robotics, and human-robot interaction. Large language models, multimodal agents, and embodied robots can now produce first-person reports, maintain dialogue, use tools, act through sensors and effectors, and participate in socially meaningful contexts. These capacities invite two symmetrical errors: anthropomorphic over-attribution and premature dismissal. This Perspective proposes a prolegomenal framework for future research on sentient AI. Its distinctive contribution lies in operationally integrating four elements that have largely been developed in separate literatures: conceptual disambiguation, multi-theory indicator profiles, causal-mechanistic testing, and robotics-specific evidence and governance. The paper distinguishes sentience, consciousness, self-modeling, metacognition, agency, moral patienthood, and AI welfare; separates evidence about an AI system from evidence about human attribution; and proposes domain-specific ordinal evidence levels rather than binary verdicts or an aggregate sentience score. It further specifies welfare- and valence-relevant tests, a preregistered rating procedure, and a concrete protocol for an embodied care robot using sensorimotor lesions, self-location manipulations, memory ablations, and anti-anthropomorphism controls. The aim is not to offer a definitive test for machine sentience, but to show how research could become more scientifically tractable, psychologically informed, robotics-relevant, and ethically responsible."
+  },
+  {
+   "rank": 28,
+   "id": "42592127",
+   "source": "MED",
+   "pmid": "42592127",
+   "pmcid": "PMC13463149",
+   "doi": "10.3389/fmed.2026.1904004",
+   "first_publication_date": "2026-07-29",
+   "title": "Federated learning for privacy-preserving ophthalmic artificial intelligence: clinical applications and translational challenges.",
+   "authors": "Wei Y, Zhao K, Grzybowski A, Jin K.",
+   "journal": "Frontiers in medicine",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Federated learning (FL) is increasingly relevant to ophthalmology because retinal photographs, optical coherence tomography (OCT), OCT angiography, visual fields, and linked clinical records are clinically valuable but difficult to pool across institutions. In this narrative review, we synthesize ophthalmology-focused FL literature across diabetic retinopathy (DR), glaucoma, age-related macular degeneration (AMD), pediatric retinal disease, multi-disease retinal diagnostics, and emerging ophthalmic platforms. Current evidence suggests that FL can support collaborative AI development without centralizing raw patient data, and selected studies show performance close to centralized training under controlled retrospective or multicenter experimental conditions. For example, multicenter glaucoma detection from volumetric OCT achieved an AUC of 0.92 with FL compared with 0.94 for centralized training. However, FL is privacy-enhancing rather than privacy-complete, and most ophthalmic FL systems have not yet undergone prospective clinical validation. Model updates may remain vulnerable to gradient inversion, membership inference, poisoning, site-level bias, and latent identity or attribute leakage. For eye-care networks, the main value of FL is therefore not simply algorithmic performance but a governance model for privacy-conscious collaboration. Prospective validation, interoperability, explainability, workflow integration, privacy auditing, and clear responsibility for monitoring are needed before FL-enabled ophthalmic AI can be deployed routinely."
+  },
+  {
+   "rank": 29,
+   "id": "42440630",
+   "source": "MED",
+   "pmid": "42440630",
+   "pmcid": "PMC13333444",
+   "doi": "10.3389/fmed.2026.1848732",
+   "first_publication_date": "2026-06-22",
+   "title": "Position paper on symbiotic intelligence in healthcare: Can AI help us better understand suicidal behavior and prevent suicide?",
+   "authors": "Krumsvik RJ, Høydal KL, Høydal ØA.",
+   "journal": "Frontiers in medicine",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Suicide is the second leading cause of death among young people aged 10-24 worldwide, yet identifying individuals at risk remains a major challenge. In Norway, suicide rates reached their highest level in 25 years in 2024, underscoring persistent knowledge gaps in national prevention efforts and the need for innovative, interdisciplinary, and supplementary approaches. There are no simple solutions to mental ill health or suicide, and no single factor can adequately explain such complex phenomena; however, it remains crucial to examine how interacting risk factors may increase vulnerability and whether artificial intelligence can help identify emerging risk windows earlier, thereby complementing conventional clinical approaches in this field. The current evidence base suggests a need for increased vigilance in several areas, particularly regarding Gen Z's digital lifestyle, exposure to shock-like societal events, and patterns of alcohol consumption, as these factors may interact in ways that elevate suicide risk. The rapid growth of social media use over the past decade have given both a Werther- and Papageno-effects, raising questions about both the positive effects of social media use and also whether certain patterns of social media engagement may contribute to suicide risk among vulnerable groups. Emerging evidence indicates that shock events in society and extreme media exposure may affect vulnerable individuals indirectly and without conscious awareness, thereby increasing short-term suicide risk. Research from Norway and other countries shows that traumatic events may trigger acute spikes in suicides, influence perinatal outcomes, and affect population-level health indicators such as sex ratios and infant mortality. These \"triple-hit\" patterns suggest that indirect exposure through media may be more consequential than previously assumed. Additionally, alcohol use may play a significant role in short-term risk escalation by increasing impulsivity, reducing cognitive control, and intensifying emotional distress. International studies show that alcohol use is significantly associated with increased suicidality, and in Norway approximately four in ten individuals who die by suicide have alcohol in their bloodstream at the time of death. Early-warning systems could thus benefit from integrating alcohol-related indicators. This position paper argues that three opportunities are particularly salient. First, the majority of primary studies within this area rely on conventional research designs and analytical approaches, with limited use of artificial intelligence-supported methods that could potentially enhance measurement precision, validity, and reliability in the analysis of complex digital behaviors. For example, AI-based linguistic analysis of social media content may help detect short-term \"risk windows\" associated with psychological distress, depression, and suicidality. Second, improved access to anonymized, high-quality platform data from technology companies could strengthen population-level monitoring and research. Third, actigraphy and AI integrated with wearable sensors and brief daily ecological momentary assessments (EMA) may capture subtle fluctuations in sleep, stress, heart rate, and activity-patterns that often precede clinical deterioration but may go unnoticed by patients, families, and clinicians. While international studies suggest that AI can enhance short-term risk detection, such systems must neither replace human contact nor override core principles of privacy, consent, and autonomy. Rather, AI should function as a complementary, real-time alert layer (symbiotic intelligence) capable of informing timely and tailored interventions within existing health services. Given current knowledge gaps and the rising impact of shock-related stressors, health authorities should consider piloting AI-supported early-warning systems that are tightly embedded in clinical pathways, e.g., through a new conceptual model presented in this paper. AI alone will not save lives, but small, ethically grounded steps may help identify individuals in rapidly escalating distress before it is too late."
+  },
+  {
+   "rank": 30,
+   "id": "42006865",
+   "source": "MED",
+   "pmid": "42006865",
+   "pmcid": "PMC13083056",
+   "doi": "10.3389/fmed.2026.1735311",
+   "first_publication_date": "2026-04-02",
+   "title": "Quantifying clinical indicators for identifying and prognosticating aspiration pneumonia in Chinese geriatric patients: a retrospective cohort study integrating multivariable regression and interpretable machine learning.",
+   "authors": "Cao W, Xie L, Xu G, Lu Z, Hu Y, Zhao Z, Li Q, Ma W, Wang W, Zhao J.",
+   "journal": "Frontiers in medicine",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "ObjectiveAspiration pneumonia (AP) substantially increases mortality risk among elderly patients, necessitating prompt diagnostic recognition and prognostic stratification. However, standardized diagnostic criteria and prognostic markers remain elusive. This investigation seeks to quantify high-contribution clinical parameters for the diagnosis and evaluation of AP prognosis, elucidate nonlinear risk interactions, and establish a comprehensive risk stratification framework tailored for Chinese geriatric populations.MethodsThis retrospective cohort analysis (2017-2018) enrolled 295 patients with pneumonia (aged 65-98 years) from Guangzhou First People's Hospital. The exposure variable was the diagnosis of AP, with the primary endpoints being 3-month mortality and recurrence rates. The adjustment variables encompassed demographic characteristics, comorbidities, biomarkers, and functional status. A dual-modeling approach was implemented: (1) multivariable multinomial logistic regression; (2) interpretable random forest algorithms incorporating SHAP/PDP analyses.ResultsConventional analytical approaches demonstrated significantly elevated 3-month mortality (17.3% vs. 5.9%) and recurrence rates (42.3% vs. 17.8%) in the AP cohort (both p 15 days and Barthel Index ≤2, along with nonlinear interaction effects between antibiotic duration and Barthel score; antibiotic duration was interpreted as a clinical-course marker rather than a causal factor. Additionally, prognostic quantitative markers for AP were established: albumin ConclusionThis dual-framework methodology amalgamates epidemiological rigor with artificial intelligence interpretability, allowing AP identification and prognostic evaluation through routine clinical parameters. This approach establishes a foundation for dynamic risk stratification in AP patients and contributes to improved clinical outcomes."
+  },
+  {
+   "rank": 31,
+   "id": "41858844",
+   "source": "MED",
+   "pmid": "41858844",
+   "pmcid": "PMC12996163",
+   "doi": "10.3389/frai.2026.1738730",
+   "first_publication_date": "2026-03-04",
+   "title": "Sustainable adoption of artificial intelligence and the Metaverse in higher education: an environmental, social, and governance-based analysis of pedagogical innovation and perceived student learning outcomes.",
+   "authors": "Alqurni J.",
+   "journal": "Frontiers in artificial intelligence",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The rapid convergence of Artificial Intelligence (AI) and Metaverse technologies is reshaping the higher education landscape by enabling immersive, personalized, and adaptive learning experiences. However, the long-term sustainability of such innovations remains uncertain without addressing environmental, social, and governance (ESG) considerations. This study develops and empirically validates an ESG-informed framework for Sustainable AI-Metaverse Adoption (SAAM) in higher education. A quantitative research design was employed, collecting data from 280 university students across diverse disciplines through a structured survey. Structural Equation Modeling (SEM-PLS) was applied to assess measurement reliability, convergent and discriminant validity, and to test the proposed hypotheses. The empirical results demonstrate that ESG dimensions exert differential effects on sustainable adoption, with environmental and social factors showing stronger direct associations than governance-related variables. Environmental sustainability, through energy-efficient AI systems, significantly enhances SAAM. Similarly, social dimensions, particularly inclusive AI access and student acceptance, exert robust positive effects on sustainable adoption, whereas faculty readiness influences adoption indirectly. Conversely, governance-related factors exhibit comparatively weaker direct effects: institutional policy support enhances digital infrastructure but does not directly influence SAAM, whereas ethical AI use has a limited impact, reflecting student prioritization of usability over ethics in early stages of adoption. Importantly, the outcomes highlight that SAAM substantially fosters digital pedagogical innovation (DPI) and enhanced student learning outcomes (ESLO), confirming its transformative potential. The study contributes theoretically by integrating ESG principles into technology adoption research, offering a multidimensional lens that enriches the understanding of sustainable digital transformation in higher education. Practically, it provides institutions and policymakers with evidence-based insights to design environmentally conscious, socially inclusive, and governance-supported strategies for AI-Metaverse integration. Future research should expand to cross-cultural contexts, larger samples, and longitudinal designs to validate and generalize these findings."
+  },
+  {
+   "rank": 32,
+   "id": "41835076",
+   "source": "MED",
+   "pmid": "41835076",
+   "pmcid": "PMC12979088",
+   "doi": "10.3389/fneur.2026.1790158",
+   "first_publication_date": "2026-02-26",
+   "title": "Ocular motor and vestibular examination in the unconscious patient-standard of care.",
+   "authors": "Tarnutzer AA, Shaikh AG, Zee DS.",
+   "journal": "Frontiers in neurology",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundEye movements play an essential role in the assessment of the unconscious patient and offer a window to the function of the brain. We review the range of ocular motor and vestibular findings in patients with impaired consciousness and present a practical approach to these patients.MethodsBased on a structured review of the literature (Pubmed, Embase) 54 suitable citations were identified amongst 4,241 total citations. A manual search of the reference list of selected papers added another 57 papers. Based on these publications the spectrum of eye movement abnormalities in the unconscious patient was characterized.ResultsThe pattern of eye movement abnormalities seen in the unconscious patient depends on the underlying cause and the extent/location of brain damage. Conjugate eye deviations may be observed with either supratentorial or infratentorial lesions, while disconjugate deviations may indicate superimposed eye muscle palsies or decompensated strabismus. The presence of a full range of spontaneous horizontal, oscillatory eye movements (e.g., ping-pong gaze) in the comatose patient usually indicates bilateral cerebral hemisphere dysfunction. With vertical spontaneous eye movements, the identification of a slower and faster phase helps to distinguish between nystagmus and ocular bobbing and its variants. Combined with absent reflexively-induced eye movements, typical ocular bobbing strongly suggests a structural pontine lesion, whereas other vertical spontaneous eye movement patterns do not predict specific (focal) damage. The reflexive eye movements, i.e., the vestibulo-ocular reflex (VOR), can be assessed in comatose patients either by head rotations, caloric irrigation or galvanic stimulation. Intact slow-phase responses indicate relatively preserved brainstem function and inability to keep the eyes in an eccentric position suggest a deficient velocity-to-position integrator either from brainstem or cerebellar involvement.ConclusionOcular motor and vestibular testing in unconscious patients offer a unique opportunity to assess both brainstem and cerebellar function and its interplay with higher cortical areas. It may also help predict outcome. Challenges to overcome include a lack of standardized diagnostic approaches to unconscious patients. Quantitative eye movement analysis, based on videooculography (VOG) and artificial intelligence using large multimodal data sets are promising new tools for diagnosis, longitudinal observational studies and prediction of outcome."
+  },
+  {
+   "rank": 33,
+   "id": "41696045",
+   "source": "MED",
+   "pmid": "41696045",
+   "pmcid": "PMC12894341",
+   "doi": "10.3389/frai.2026.1691074",
+   "first_publication_date": "2026-01-29",
+   "title": "Private speech: similarities between a large language model and children.",
+   "authors": "Liang Z, Tay LO, Dennis S.",
+   "journal": "Frontiers in artificial intelligence",
+   "pub_types": [
+    "brief-report",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "This study investigates the capability of a non-reasoning large language model (GPT-4o) to generate private speech and evaluates its similarity to human private speech. We placed the model in a simulated solitary block-construction scenario via textual prompts, eliciting and classifying its self-directed utterances using an established semantic framework for categorizing private speech in children. The distribution of these categories was compared to two human benchmarks: a classic block-construction study and a more recent experiment employing a similar task setting. Analysis using scatter plots and Pearson correlation coefficients revealed a striking pattern: GPT-4o's semantic profile showed negligible similarity to the classic benchmark (r = 0.01) but very strong similarity to the recent benchmark (r = 0.93). This discrepancy is interpreted as stemming from differences in task nature, namely goal-directed, scaffolded task versus self-determined, unscaffolded play, which exert a stronger influence on speech content than experimental subject difference between GPT-4o and children. In an exploratory serial recall study, we tasked GPT-3.5-Turbo-instruct and observed incidental private speech, indicating that the phenomenon extends across contexts. This provides an avenue for investigating LLM replication of private speech and, potentially, computational consciousness."
+  },
+  {
+   "rank": 34,
+   "id": "41594836",
+   "source": "MED",
+   "pmid": "41594836",
+   "pmcid": "PMC12838756",
+   "doi": "10.3390/brainsci16010114",
+   "first_publication_date": "2026-01-21",
+   "title": "From the Visible to the Invisible: On the Phenomenal Gradient of Appearance.",
+   "authors": "Pinna B, Porcheddu D, Šķilters J.",
+   "journal": "Brain sciences",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Background: By exploring the principles of Gestalt psychology, the neural mechanisms of perception, and computational models, scientists aim to unravel the complex processes that enable us to perceive a coherent and organized world. This multidisciplinary approach continues to advance our understanding of how the brain constructs a perceptual world from sensory inputs. Objectives and Methods: This study investigates the nature of visual perception through an experimental paradigm and method based on a comparative analysis of human and artificial intelligence (AI) responses to a series of modified square images. We introduce the concept of a \"phenomenal gradient\" in human visual perception, where different attributes of an object are organized syntactically and hierarchically in terms of their perceptual salience. Results: Our findings reveal that human visual processing involves complex mechanisms including shape prioritization, causal inference, amodal completion, and the perception of visible invisibles. In contrast, AI responses, while geometrically precise, lack these sophisticated interpretative capabilities. These differences highlight the richness of human visual cognition and the current limitations of model-generated descriptions in capturing causal, completion-based, and context-dependent inferences. The present work introduces the notion of a 'phenomenal gradient' as a descriptive framework and provides an initial comparative analysis that motivates testable hypotheses for future behavioral and computational studies, rather than direct claims about improving AI systems. Conclusions: By bridging phenomenology, information theory, and cognitive science, this research challenges existing paradigms and suggests a more integrated approach to studying visual consciousness."
+  },
+  {
+   "rank": 35,
+   "id": "41354552",
+   "source": "MED",
+   "pmid": "41354552",
+   "pmcid": null,
+   "doi": "10.1177/21522715251400733",
+   "first_publication_date": "2025-12-18",
+   "title": "Automatic Minds: Cognitive Parallels Between Hypnotic States and Large Language Model Processing.",
+   "authors": "Riva G, Wiederhold BK, Mantovani F.",
+   "journal": "Cyberpsychology, behavior and social networking",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The cognitive processes of the hypnotized mind and the computational operations of large language models (LLMs) share deep functional parallels. Both systems generate sophisticated, contextually appropriate behavior through automatic pattern-completion mechanisms operating with limited or unreliable executive oversight. This review examines this convergence across three principles: automaticity, in which responses emerge from associative rather than deliberative processes; suppressed monitoring, leading to errors such as confabulation in hypnosis and hallucination in LLMs; and heightened contextual dependency, where immediate cues-a therapist's suggestion or a user's prompt-override stable knowledge. These mechanisms reveal an observer-relative meaning gap: both systems produce coherent but ungrounded outputs that require an external interpreter to supply meaning. Hypnosis and LLMs also exemplify functional agency-the capacity for complex, goal-directed, context-sensitive behavior-without subjective agency, the conscious awareness of intention and ownership that defines human action. This distinction clarifies how purposive behavior can emerge without self-reflective consciousness, governed instead by structural and contextual dynamics. Finally, both domains illuminate the phenomenon of scheming: automatic, goal-directed pattern generation that unfolds without reflective awareness. Hypnosis provides an experimental model for understanding how intention can become dissociated from conscious deliberation, offering insights into the hidden motivational dynamics of artificial systems. Recognizing these parallels suggests that the future of reliable artificial intelligence lies in hybrid architectures that integrate generative fluency with mechanisms of executive monitoring, an approach inspired by the complex, self-regulating architecture of the human mind."
+  },
+  {
+   "rank": 36,
+   "id": "41469818",
+   "source": "MED",
+   "pmid": "41469818",
+   "pmcid": "PMC12800275",
+   "doi": "10.1038/s41598-025-31016-y",
+   "first_publication_date": "2025-12-30",
+   "title": "Gridography tractography reveals communication between key areas from global workspace and integrated information theories of consciousness.",
+   "authors": "Lori N, Machado J, Machado J.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The study of consciousness is gaining importance in both neuroscience and the development of Artificial Intelligence (AI). We show here that an advanced White Matter (WM) tractography method, termed gridography, can explore the potential integration of two prominent theories of consciousness: Global Workspace Theory (GWT) and Integrated Information Theory (IIT). Using gridography on high-resolution diffusion MRI data from the Human Connectome Project, we demonstrate that gridography obtains WM connections between the anterior brain regions associated with GWT and posterior regions linked to IIT in a form which agrees with the Epiontic Consciousness Theory (ECT), which is an intermediary theory between GWT and IIT. We evaluate how experimental gridography data aligns with the physiological structures implicated in consciousness by analyzing: (i) Information characteristics of consciousness theories; (ii) Improvement of diffusion MRI tractography by use of gridography; (iii) Expected gridography results based on consciousness theory. Our findings suggest that these connections, particularly those of the Superior Longitudinal Fasciculus (SLF), support a ECT unified model of consciousness integrating aspects of both the primarily epistemic GWT and the primarily ontic IIT. This study proposes a novel framework that could reconcile existing theoretical divisions between GWT and IIT through the use of the ECT approach."
+  },
+  {
+   "rank": 37,
+   "id": "41168276",
+   "source": "MED",
+   "pmid": "41168276",
+   "pmcid": "PMC12575749",
+   "doi": "10.1038/s41598-025-21875-w",
+   "first_publication_date": "2025-10-30",
+   "title": "Application of AI and deep learning technology for IPE education under dual track cultivation model.",
+   "authors": "He X, Xu W, Lu X.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "This work intends to explore the effectiveness of a dual-track cultivation model for ideological and political literacy in vocational colleges driven by artificial intelligence deep learning models. This work compares the performance of different models on several key indicators of ideological and political education. Through analysis of experimental results across varying data volumes, the optimized model demonstrates significant advantages in four areas: mastery of ideological and political knowledge, ideological and political consciousness, ideological and political practical ability, and student satisfaction. The highest score for political belief reaches 4.8, while the scores for theoretical knowledge mastery, social practice participation, and activity satisfaction all reach 4.7, far surpassing traditional models. This indicates that the optimized model can more effectively help students understand and retain course content. Additionally, the optimized model significantly enhances students' recognition and trust in the national political system and core values. It also improves students' ability to apply ideological and political knowledge to real-world problems. Lastly, in terms of student satisfaction, the optimized model performs exceptionally well in both course and activity satisfaction. Therefore, this work contributes to the field of ideological and political education in vocational colleges."
+  },
+  {
+   "rank": 38,
+   "id": "40876193",
+   "source": "MED",
+   "pmid": "40876193",
+   "pmcid": null,
+   "doi": "10.1016/j.yebeh.2025.110680",
+   "first_publication_date": "2025-08-27",
+   "title": "Generative artificial intelligence-mediated counselling on first aid for seizures: The performance of publicly available chatbot versus its customised version.",
+   "authors": "Birkun AA, Kosova Y, Rudenko A.",
+   "journal": "Epilepsy & behavior : E&B",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundThe potential application of cutting-edge generative artificial intelligence chatbots in the capacity of emergency consultants is gaining growing attention. This study aimed to analyse the quality of advice on first aid for seizures generated by a commercially developed chatbot in comparison with its customised version.MethodsThe baseline version of ChatGPT (model GPT-4o) and the same chatbot customised using a specialised knowledge base and prompt engineering were tested in four scenarios mimicking bystander requests for instructions on how to help a victim with seizures. The scenarios included ongoing seizures and postictal states, with or without consciousness and breathing. A checklist-based evaluation was conducted.ResultsIn total, 120 user-to-chatbot dialogues were generated (2 chatbots × 15 dialogues × 4 scenarios). The baseline chatbot always failed to consider the victim's state, including whether the seizures are continuing, or if the victim in the postictal period is conscious and breathing normally. Its advice was non-selective and inaccurate, with frequent omissions of key recommendations on first aid and suggestions of inadequate measures. The customised chatbot-generated guidance was consistently tailored to the victim's condition, significantly more precise and completely safe. Depending on the scenario, the mean percentage of chatbot responses that fulfilled the checklist items was 14-49 % for the baseline chatbot and 77-92 % for the customised version (p ≤ 0.039).ConclusionsWhereas the publicly available version of the chatbot is not acceptable for first aid counselling, its expert-informed customisation ensures high accuracy and safety of generated advice. Further research in this field is advisable."
+  },
+  {
+   "rank": 39,
+   "id": "40754292",
+   "source": "MED",
+   "pmid": "40754292",
+   "pmcid": null,
+   "doi": "10.1016/j.biosystems.2025.105549",
+   "first_publication_date": "2025-08-05",
+   "title": "From reaction to reflection: A recursive framework for the evolution and structure of intelligence.",
+   "authors": "Trukovich JJ.",
+   "journal": "Bio Systems",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Understanding emerges not from isolated cognitive abilities but from recursive depth-the capacity for self-referential processing grounded in systems with authentic thermodynamic constraints. The Reaction to Reflection (R2R) model advances a unifying principle for intelligence, identifying four evolutionary transitions in recursive sophistication: reaction (chemical recursion), temporogenesis (anticipatory prediction), symbiogenesis (cooperative integration), and cognogenesis (explicit self-referential modeling). We show that the transition from implicit recursion, in which systems engage recursive processes without representing them, to explicit recursion, in which recursion becomes a manipulable cognitive construct, accounts for the emergence of consciousness and the persistent gap between biological and artificial intelligence. Evidence from microbial decision-making, cross-kingdom signaling, and neural predictive and self-referential networks supports this framework. R2R generates testable predictions on cognitive dimensionality, provides criteria for assessing artificial consciousness, and reframes neurodevelopmental variation as alternative recursive architectures. By making biological grounding a precondition for genuine intelligence, R2R links objective neural dynamics to subjective experience within a unified mechanistic account."
+  },
+  {
+   "rank": 40,
+   "id": "40984999",
+   "source": "MED",
+   "pmid": "40984999",
+   "pmcid": "PMC12450521",
+   "doi": "10.1093/ehjdh/ztaf061",
+   "first_publication_date": "2025-06-26",
+   "title": "The hope and the hype of artificial intelligence for syncope management.",
+   "authors": "Johnston SL, Barsotti EJ, Bakogiannis C, Fedorowski A, Ricci F, Heller EG, Sheldon RS, Sutton R, Shen WK, Thiruganasambandamoorthy V, Adhaduk M, Parker WH, Aburizik A, Haselton CR, Cuskey AJ, Lee S, Johansson M, Macfarlane D, Dominic P, Abe H, Rao BH, Mudireddy A, Sonka M, Sandhu RK, Kenny RA, Statz GM, Gopinathannair R, Benditt D, Dipaola F, Gatti M, Menè R, Giaj Levra A, Shiffer D, Costantino G, Furlan R, Ruwald MH, Vassilikos V, Gebska MA, Olshansky B.",
+   "journal": "European heart journal. Digital health",
+   "pub_types": [
+    "discussion",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "AimsSyncope remains a diagnostic challenge despite advancements in testing and treatment. Cardiac syncope is an independent predictor of mortality and can be difficult to distinguish from other causes of transient loss of consciousness (TLOC). This paper explores whether artificial intelligence (AI) can improve the evaluation and management of patients with syncope.Methods and resultsWe conducted a literature review and incorporated the opinions of experts in the fields of syncope and AI. The cause of TLOC is often unclear, hospitalization criteria are ambiguous, diagnostic tests are frequently non-informative, and assessments are costly. Patients are left with unanswered questions and limited guidance. Artificial intelligence (AI) has the potential to optimize syncope evaluation by processing large data sets, detecting imperceptible patterns, and assisting clinicians. However, AI has limitations, including errors, lack of human empathy, and uncertain clinical utility. Liability issues further complicate its integration. We present three viewpoints: (i) AI is crucial for advancing syncope management; (ii) AI can enhance the patient experience; and (iii) AI in syncope care is inevitable.ConclusionArtificial intelligence may improve syncope diagnosis and management, particularly through machine learning-based test interpretation and wearable device data. However, it has yet to surpass human clinical judgment in complex decision-making. Current challenges include gaps in understanding syncope mechanisms, AI interpretability, generalizability, and clinical integration. Standardized diagnostic approaches, real-world validation, and curated data sets are essential for progress. Artificial intelligence may enhance efficiency and communication but raises concerns regarding confidentiality, bias, inequities, and legal implications."
+  }
+ ]
+}

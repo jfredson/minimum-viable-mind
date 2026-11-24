@@ -1,0 +1,739 @@
+{
+ "prediction": "orch-mt-coherence",
+ "query": "TITLE_ABS:microtubul* AND (TITLE_ABS:\"quantum coherence\" OR TITLE_ABS:coherent OR TITLE_ABS:superradian* OR TITLE_ABS:\"quantum effect*\") AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 133,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42537979",
+   "source": "MED",
+   "pmid": "42537979",
+   "pmcid": null,
+   "doi": "10.1016/j.biosystems.2026.105905",
+   "first_publication_date": "2026-07-31",
+   "title": "On the functional significance of quantum effects at subneuronal scales.",
+   "authors": "Roeloffs J, Tuszynski JA.",
+   "journal": "Bio Systems",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This paper develops a constraint based hypothesis from established physics and published experimental measurements. De Broglie's relation predicts that electronic quantum effects become part of the physical regime when functional structures approach nanometer dimensions. The semiconductor industry provides a test case, as reliable classical switching at few nanometer scales requires architectural intervention biological systems lack. Microtubule tryptophan networks operate at 1 to 2 nm spacing and exhibit energy migration with a 6.6 nm diffusion length that classical Förster theory cannot account for, alongside superradiant behavior across over 105 transition dipoles with robustness that increases with system size. Photosynthesis provides biological precedent for organizing quantum dynamics through molecular architecture and energy flow. These premises support the case that the brain operates with quantum effects at the microtubule scale. The functional question is whether these processes matter for higher order neural function. Six pharmacological and cross species constraints address this question. Anesthetics reduce microtubule energy migration by 12 to 15 percent, and anesthetic potency tracks collective tubulin oscillation changes across chemically diverse compounds with R2 = 0.999. Volatile anesthetics suppress organized responsiveness across eukaryotic organisms without nervous systems, while microtubule stabilizing drugs delay anesthetic induced unconsciousness with a large effect size. Open energy pumped architecture addresses physiological viability, and psychedelic phenethylamines that enhance microtubule polymerization provide an opposite pharmacological test. Together, these constraints support the hypothesis that microtubule tryptophan networks and collective tubulin dynamics participate in the maintenance of higher order neural function and conscious states."
+  },
+  {
+   "rank": 2,
+   "id": "42421320",
+   "source": "MED",
+   "pmid": "42421320",
+   "pmcid": null,
+   "doi": "10.1016/j.bpj.2026.07.004",
+   "first_publication_date": "2026-07-08",
+   "title": "Computational modeling of microtubule dynamic instability: From molecular mechanisms to emergent behavior.",
+   "authors": "Ma A, Tsui K, Stewman S.",
+   "journal": "Biophysical journal",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Microtubule dynamic instability-the stochastic switching between growth, shortening, and pausing-is essential for cytoskeletal organization and cellular function. Despite decades of experimental and theoretical work, its molecular mechanism remains unresolved. In this review, we organize existing models based on their underlying conceptual framework and physical assumptions. We first discuss GTP-cap-based models, including stochastic GTP-cap models, mechanical-cap models, and lattice-as-allosteric-effector models, highlighting how different microscopic assumptions and computational implementations lead to distinct explanations of dynamic-instability processes, especially catastrophe. We then present a tubulin energy landscape framework in which dynamic instability emerges from nonequilibrium transitions of tubulin subunits among three experimentally characterized conformations constrained by lattice geometry. This approach provides a unified explanation for the full spectrum of dynamic instability behaviors, including growth, shortening, catastrophe, rescue, pausing, and distinct kinetics at the plus and minus ends. By making assumptions explicit, this review aims to clarify the physical logic underlying dynamic instability and provide a coherent foundation for future experimental and theoretical work."
+  },
+  {
+   "rank": 3,
+   "id": "42409159",
+   "source": "MED",
+   "pmid": "42409159",
+   "pmcid": null,
+   "doi": "10.1016/j.biosystems.2026.105880",
+   "first_publication_date": "2026-07-06",
+   "title": "Coherent photonic biofields: Revisiting Fritz-Albert Popp's hypothesis.",
+   "authors": "Sá R.",
+   "journal": "Bio Systems",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Biophotonic emission has long been considered a weak byproduct of metabolic activity, but growing evidence suggests that it may exhibit non-classical properties indicative of underlying coherence. Building on the pioneering work of Fritz-Albert Popp, this study revisits the concept of coherence in ultra-weak photon emissions (UPEs) and proposes the term photonic biofield as a refined heuristic framework to (i) describe the spatiotemporal organization of biophotonic emissions in living systems; and (ii) elucidate the dual capacity of the biophoton as an information carrier and an energy transduction vector. Advances in the theory of open quantum systems (Fano-Feshbach formalism) and in tryptophan superradiance in microtubules provide a mechanistic basis for the resonant amplification of ultra-weak signals. Differential emission patterns between normal and tumor cells are characterized by spectral ratios (610-630/395-455 nm) correlated with tumor volume (R2 = 0.947), as well as by loss of complexity revealed through diffusion entropy analysis. These findings are consistent with Popp's diagnostic intuitions. Collectively, these converging lines of evidence support the view that coherent photonic biofields represent a physically plausible and experimentally accessible layer of biological organization, with potential implications for non-invasive diagnostics and future avenues in energy-based therapeutic research."
+  },
+  {
+   "rank": 4,
+   "id": "42450355",
+   "source": "MED",
+   "pmid": "42450355",
+   "pmcid": "PMC13361331",
+   "doi": "10.3390/ijms27136090",
+   "first_publication_date": "2026-07-07",
+   "title": "Neuronal Microtubules and Radiofrequency Waves: The Quantum Core of Human Consciousness, Memory, and Pathway to Memory Enhancement/Recovery.",
+   "authors": "Arendash GW.",
+   "journal": "International journal of molecular sciences",
+   "pub_types": [
+    "other",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "A unifying theory of both human consciousness and memory is presented that is based on neuronal microtubules (MTs) being central to both, and different populations of pyramidal cells in neocortex and hippocampus being responsible for consciousness or memory. First, two quantum theories of consciousness are presented-the Orchestrated Objective Reduction (Orch OR) theory of Penrose/Hameroff and the Environmental-Induced Decoherence Theory (EID) theory of Neven. A Hybrid (MT/EID) theory is proposed in the context of \"consciousness\"-dedicated pyramidal cells in Layer V of the cerebral cortex. This MT/EID theory involves the MT vibrations of the Orch OR Theory, along with the continual superposition qubit (SPQ) formation and SPQ entanglement of the EID Theory to collectively induce SPQ formation/entanglement in Layer V of the cerebral cortex. Orch OR's objective reduction (collapse of the waveform) is not included in this Hybrid theory because the system of SPQs themselves continuously collapses due to EID. For memory, it is proposed that Orch OR forms its basis with three specific modifications: (1) presenting \"endogenous\" radiofrequency (RF) vibrations generated by neuronal microtubules as forming a microtubule/RF wave \"vibrational fabric\" involving microtubular crystalline water cores, (2) refining Orch OR for memory by proposing SPQ formation for short-term memory and objective reduction of those qubits primarily in \"memory-dedicated\" pyramidal cells within cortical Layers II/III for long-term memory storage through \"Quantum Darwinism\" (SPQ/OR), and (3) integrating SPQ/OR with the ability of \"externally\" applied RF waves at 1 GHz to beneficially influence human memory through microtubule-enhancing mechanisms. It is proposed that a vibrational fabric consisting of MTs, RF waves, and generated photons provides the Photonic/RF-wave quantum coherence necessary for brain memory processing. Strong evidence for beneficial effects of exogenous RF wave treatment on memory is provided by a new bioengineered technology-Transcranial Radiofrequency Wave Treatment (TRFT; also known as TEMT). This evidence is presented in both pre-clinical and clinical studies involving normal and Alzheimer's Disease (AD) transgenic mice, and AD patients bearing memory loss. In support of MT involvement in memory, TRFT would appear to be an ideal non-pharmacologic technology to beneficially modulate the microtubule/RF wave vibrational fabric-an intraneuronal fabric that may be at the deep core of human memory, and thus the key to Alzheimer's Disease memory rescue."
+  },
+  {
+   "rank": 5,
+   "id": "42432227",
+   "source": "MED",
+   "pmid": "42432227",
+   "pmcid": "PMC13354624",
+   "doi": "10.1007/s00253-026-13954-3",
+   "first_publication_date": "2026-07-10",
+   "title": "Endophytic Aspergillus glaucus as a novel epothilone B producer: Antiproliferative activity and in silico analysis.",
+   "authors": "El-Sayed ASA, Refaat S, El-Sayed MA, Fikry E, Tawfeek N, El-Domiaty MM, El-Shafae AM.",
+   "journal": "Applied microbiology and biotechnology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Epothilones are among the most potent anticancer agents, particularly against drug-resistant tumors, owing to their high affinity for β-tubulin stabilization, inhibiting the microtubule disassembly, ultimately leading to cell cycle arrest. However, their limited natural availability has restricted broader clinical and industrial exploitation. Accordingly, this study aimed to screen novel fungal isolates with sustainable and high metabolic capacity for epothilone production. Aspergillus glaucus OR342865.1, an endophyte isolated from the palm tree Latania lontaroides, exhibited the highest epothilone productivity (240 µg/L) upon response surface methodology optimization. The chemical identity of the purified compound was resolved by different chromatographic and spectroscopic analyses, revealing a structural profile consistence with authentic epothilone B. The putative epothilone B displayed potent cytotoxic activity against HepG-2, MCF-7, and HCT-116 cell lines, with half-maximal inhibitory concentration (IC50) values of 0.028, 0.034, and 0.13 µM, with selectivity indices 12.5, 10.3, and 2.7, respectively, relative to Vero cells. The anti-invasive assay demonstrates a significant suppression (35.5-40.2%) of migratory capacity in MCF-7 and HepG-2 cells following treatment, indicating antimetastatic potential. Cell cycle analysis revealed that epothilone treatment induced G1 phase arrest in HepG-2 cells, with a 55.03% increase compared to the control. The total and early apoptotic populations increased to 32.2% and 22.03%, respectively, while late apoptosis exhibited a 57.6-fold elevation relative to untreated cells. The biological productivity of A. glaucus for epothilone B was stably maintained for up to 6 months when preserved as a slope culture at 4 °C. Molecular docking analysis demonstrated that epothilone B exhibits coherent multitarget interactions with key oncogenic kinases, including SRC, EGFR, JAK2, PIK3CA, mTOR, and HSP90, in addition to binding the β-tubulin taxane site, highlighting its capacity to modulate multiple cancer-related signaling pathways. To our knowledge, this is the first report demonstrating the high metabolic potential of A. glaucus for epothilone B production, positioning this fungus as a promising platform for sustainable industrial-scale biosynthesis of this clinically valuable anticancer agent. KEY POINTS: • Aspergillus glaucus, an endophyte of Latania lontaroides, is a potential epothilone B producer. • The purified epothilone has plausible antiproliferative, apoptotic, and antimetastatic activities. • The epothilone had coherent multitarget interactions with key oncogenic kinases and β-tubulin taxane site."
+  },
+  {
+   "rank": 6,
+   "id": "42055333",
+   "source": "MED",
+   "pmid": "42055333",
+   "pmcid": "PMC13224075",
+   "doi": "10.1016/j.jbc.2026.113086",
+   "first_publication_date": "2026-04-27",
+   "title": "A coherent structural picture of the interaction of Tau with tubulin provides a link to its aggregation.",
+   "authors": "Gigant B, Ammar Khodja L, Campanacci V, Lippens G.",
+   "journal": "The Journal of biological chemistry",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Tauopathies are a group of neurodegenerative diseases characterized by the presence of insoluble filaments of the Tau protein in the brain. In physiological conditions, Tau is involved in the regulation of microtubule dynamics. The study of its interaction with different tubulin assemblies, using various experimental approaches, leads to a seemingly disparate picture. Here, we propose to integrate this information into a model of how Tau participates in microtubule assembly and stabilization. Related to its intrinsically disordered nature, the binding of Tau to microtubules involves both specific interactions, along protofilaments, and nonspecific ones, with the C-terminal region of tubulin subunits. In addition, the recent determination of a Tau:tubulin structure provides a model for a functional dimer of Tau targeting a microtubule aperture between protofilaments. Therefore, Tau regulates microtubule dynamics by modulating both longitudinal and lateral contacts. Finally, we discuss a possible connection of this dimer of Tau with its oligomerization, whether physiological or pathological."
+  },
+  {
+   "rank": 7,
+   "id": "41713567",
+   "source": "MED",
+   "pmid": "41713567",
+   "pmcid": null,
+   "doi": "10.1016/j.biosystems.2026.105734",
+   "first_publication_date": "2026-02-17",
+   "title": "Feasibility analysis of the surface code model for the Orch-OR microtubule.",
+   "authors": "Choi BS.",
+   "journal": "Bio Systems",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Although the Orch-OR theory has been recognized as one of the quantum models of consciousness, it faces significant challenges due to the fragility of quantum coherence within the warm, wet, and noisy environment of the brain. In this work, we propose a potential resolution by invoking a quantum error-correction framework, specifically focusing on the surface code model. We hypothesize that the brain may inherently employ a quantum error-correction mechanism of this form. Accordingly, we first examine how the surface code protocol can be conceptually mapped onto the microtubule structure. We then analyze the attainable quantum coherence time under the surface code in comparison with the coherence time required by the Orch-OR framework. As a subsequent step, we derive feasibility conditions under which the surface code can sustain coherence times exceeding those necessary for the Orch-OR mechanism. Finally, we investigate whether the structural and dynamical properties of microtubules - such as the number of tubulin dimers and their associated error rates - can realistically satisfy these feasibility conditions. Our analysis demonstrates that the surface code model may enable quantum coherence times sufficiently long to support the requirements of the Orch-OR theory. On this basis, we argue that the Orch-OR framework retains partial validity in explaining the emergence of consciousness in the brain."
+  },
+  {
+   "rank": 8,
+   "id": "42041796",
+   "source": "MED",
+   "pmid": "42041796",
+   "pmcid": "PMC13114211",
+   "doi": "10.3390/brainsci16040386",
+   "first_publication_date": "2026-03-31",
+   "title": "Quantum-Inspired and Non-Classical Approaches to Consciousness: Models, Evidence and Constraints.",
+   "authors": "Arias-Carrión O, Ortega-Robles E, Manjarrez E.",
+   "journal": "Brain sciences",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Consciousness presents a structural puzzle: a unified, context-sensitive, globally integrated mode of experience emerging from distributed neural dynamics. While classical neuroscience has mapped synaptic, oscillatory, and network-level mechanisms with increasing precision, debate persists as to whether classical formalisms fully capture the integrative and contextual features of conscious processing. This review examines whether quantum principles offer explanatory leverage in two distinct senses: as formal mathematical frameworks for modeling contextual cognition, and as mechanistic hypotheses proposing biologically instantiated non-classical states. We surveyed empirical and theoretical developments spanning zero-quantum-coherence in MRI signals, entanglement-structured learning paradigms, quantum-inspired computational models, and proposed neural substrates, including microtubules, nuclear spins, and photonic architectures. Although certain findings have been interpreted as consistent with a non-classical structure, no study to date has demonstrated entanglement, long-lived coherence, or collapse dynamics in neural tissue under operational criteria comparable to those used in controlled quantum systems. Replication remains limited, biological entanglement witnesses are not yet established, and nonlinear classical dynamics can reproduce many putative quantum signatures. Accordingly, the decisive question is not whether the brain is quantum, but whether its dynamics exceed the explanatory reach of rigorously defined classical models. Progress hinges on replication, adversarial scrutiny, and operational criteria precise enough to discriminate genuine non-classical correlations from classical complexity. Whether quantum mechanisms ultimately prove necessary or refined classical models remain sufficient, this inquiry compels a deeper understanding of integration, contextuality, and the physical constraints shaping conscious experience."
+  },
+  {
+   "rank": 9,
+   "id": "41524425",
+   "source": "MED",
+   "pmid": "41524425",
+   "pmcid": null,
+   "doi": "10.1039/d5sm00871a",
+   "first_publication_date": "2026-03-04",
+   "title": "Geometry-dependent transmission of externally imposed shear stress in confined microtubule-kinesin active fluids.",
+   "authors": "Dickie JH, Weng T, Chen YC, Wang H, He Y, Saxena S, Pelcovits RA, Powers TR, Wu KT.",
+   "journal": "Soft matter",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Active fluids generate internal active stress and exhibit unique responses to external forces such as superfluid-like flow and self-yielding transitions. However, how confinement geometry influences these responses remains poorly understood. Here, we investigate microtubule-kinesin active fluids under external shear stresses in three geometries. In a thin slab-like container with a translating wall, we observed a kinematic transition from activity-dominated chaotic flow to lid-driven cavity flow when the applied shear stress exceeds ∼1.5 mPa, comparable to the intrinsic active stress magnitude. Simulations supported the conclusion that this transition arises from competition between internal active stress and imposed shear stress. In contrast, in a ratcheted toroidal confinement, the imposed shear remains localized near the driven boundary and does not propagate through the bulk. Nevertheless, this localized perturbation cooperatively couples with internal active stress to reverse the global circulation. This cooperative mechanism is further demonstrated in a connected-toroid geometry: driving one toroid reorganizes flow in a second, indirectly connected toroid, while no such influence occurs in a passive fluid. Together, these findings show that the response of active fluids to external forcing depends not only on the magnitude of applied stress but also on how confinement geometry mediates whether stresses interact through bulk competition or local-to-global cooperative reorganization, revealing a new approach to combining static geometrical design with dynamic external stimuli for real-time modulation of flow patterns. Such strategies may be applied to microfluidics, where micromechanical actuators dynamically tune active fluid behavior within fixed geometries, enabling transitions between chaotic and coherent flows for mixing, sorting, or transport."
+  },
+  {
+   "rank": 10,
+   "id": "41751706",
+   "source": "MED",
+   "pmid": "41751706",
+   "pmcid": "PMC12938935",
+   "doi": "10.3390/e28020204",
+   "first_publication_date": "2026-02-11",
+   "title": "Quantum Information Flow in Microtubule Tryptophan Networks.",
+   "authors": "Gassab L, Pusuluk O, Craddock TJA.",
+   "journal": "Entropy (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Networks of aromatic amino acid residues within microtubules, particularly those formed by tryptophan, may serve as pathways for optical information flow. Ultraviolet excitation dynamics in these networks are typically modeled with effective non-Hermitian Hamiltonians. By extending this approach to a Lindblad master equation that incorporates explicit site geometries and dipole orientations, we track how correlations are generated, routed, and dissipated, while capturing both energy dissipation and information propagation among coupled chromophores. We compare localized injections, fully delocalized preparations, and eigenmode-based initial states. To quantify the emerging quantum-informational structure, we evaluate the L1 norm of coherence, the correlated coherence, and the logarithmic negativity within and between selected chromophore sub-networks. The results reveal a strong dependence of both the direction and persistence of information flow on the type of initial preparation. Superradiant components drive the rapid export of correlations to the environment, whereas subradiant components retain them and slow their leakage. Embedding single tubulin units into larger dimers and spirals reshapes pairwise correlation maps and enables site-selective routing. Scaling to larger ordered lattices strengthens both export and retention channels, whereas static energetic and structural disorder suppresses long-range transport and reduces overall correlation transfer. These findings provide a Lindbladian picture of information flow in cytoskeletal chromophore networks and identify structural and dynamical conditions that transiently preserve nonclassical correlations in microtubules."
+  },
+  {
+   "rank": 11,
+   "id": "42920515",
+   "source": "MED",
+   "pmid": "42920515",
+   "pmcid": null,
+   "doi": "10.3389/fmolb.2026.1840116",
+   "first_publication_date": "2026-10-09",
+   "title": "Dimensional convergence at the nanoscale: a novel synthesis of experimental evidence justifying direct measurement of quantum coherence in microtubules.",
+   "authors": "Echternach J.",
+   "journal": "Frontiers in molecular biosciences",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "We synthesize convergent experimental evidence from five independent research groups (2016-2025) addressing the longstanding \"too warm, too wet\" objection to quantum biology. Three recent experiments (2024-2025) demonstrate: (i) Wang et al. measured enhanced dielectric response and proton conductivity in nanoconfined water at 295 K, establishing extreme in-plane Coulomb screening at 1-2 nm; (ii) Rodríguez-Rubio et al. synthesized porphyrin nanobelts demonstrating room-temperature ring currents in 80-120 π-electron networks; (iii) Babcock et al. measured optical signatures consistent with ultraviolet superradiance from tryptophan networks in microtubules, with assembled microtubules showing enhanced fluorescence quantum yields relative to free tryptophan and tubulin dimers. Together with (iv) Reiter et al., who measured quantum-coherent proton motion in nanoconfined water via Compton scattering at 300 K, and (v) Larson et al., who demonstrated that microtubule structural integrity is functionally essential for computational coordination in unicellular Euplotes, these studies support a mechanistic chain from nanoconfinement through an aromatic quantum substrate and cooperative optical behavior to functional dependence. We argue this convergence justifies direct experimental measurement of decoherence times in microtubules as a necessary first step before addressing any functional role. We outline falsifiable predictions including dielectric mapping and anesthetic perturbation assays, and discuss implications for frameworks such as Orchestrated Objective Reduction. A direct link to consciousness is unproven; nonetheless, the data are consistent with quantum-coherent aromatic networks in biological scaffolds and motivate targeted falsification experiments."
+  },
+  {
+   "rank": 12,
+   "id": "42643630",
+   "source": "MED",
+   "pmid": "42643630",
+   "pmcid": "PMC13503609",
+   "doi": "10.3389/fpsyt.2026.1855963",
+   "first_publication_date": "2026-08-11",
+   "title": "Transient entanglement in minimal open XXZ spin chains: a toy-model analogy for microtubule-inspired quantum biology.",
+   "authors": "Cheung N.",
+   "journal": "Frontiers in psychiatry",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Quantum approaches to consciousness remain controversial, partly because any putative quantum state in the brain is expected to decohere rapidly in a warm, hydrated, and noisy environment. The present manuscript does not attempt to solve that biological problem directly. Instead, it treats microtubule-related interpretation as a deliberately hypothetical analogy and asks a narrower Level-A question: under what generic open-system conditions can transient pairwise entanglement be enlarged in small noisy XXZ spin chains? In a minimal open XXZ spin-chain model evolved with the Lindblad master equation, stronger nearest-neighbor coupling consistently increased peak transient pairwise entanglement across several topologies and bath conditions. Among the tested environments, the memory-envelope condition gave the longest purity half-life, the collective condition increased late-time purity, and the combined bath is best described as a balanced compromise among selected diagnostics under the chosen parameters rather than as an optimized trade-off. The model is not a physical model of microtubules: it omits full 13-protofilament geometry, dynamic instability, microtubule-associated proteins, hydration structure, ionic screening, and realistic tubulin-scale calibration. On a strictly hypothetical Level-C reading, the two abstract model levers, stronger effective coupling and lower per-site dissipation, may be compared with broad classes of biological perturbation, such as glutamatergic plasticity and cytoskeletal stabilization, but not with named regimens or compounds as clinical routes to enhancement. No dosing schedule, clinical regimen, or cognitive-enhancement recommendation follows from the simulation. The proper experimental sequence is in vitro first, then animal work only if warranted, and human pilot work only after convergent preclinical support and safety review. Testable preclinical predictions include altered tryptophan-network fluorescence lifetimes, exciton migration signatures, superradiance-related optical behavior, and anesthetic sensitivity in controlled preparations. Negative in vitro optical or biophysical results would substantially weaken the biological relevance of the analogy. The manuscript should therefore be read as a reproducible toy-model study with a speculative microtubule analogy, not as evidence that pharmacological modulation can enhance cognition through quantum microtubule effects."
+  },
+  {
+   "rank": 13,
+   "id": "42137636",
+   "source": "MED",
+   "pmid": "42137636",
+   "pmcid": "PMC13167711",
+   "doi": "10.3389/fnhum.2026.1783138",
+   "first_publication_date": "2026-04-29",
+   "title": "Self-referential processing as the biological switch between classical and quantum functioning of the brain.",
+   "authors": "Roeloffs J, Tuszynski JA.",
+   "journal": "Frontiers in human neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Dual-process theory of the brain distinguishes fast, parallel, late-commitment cognition (System 1) from slow, sequential, early-commitment cognition (System 2), yet lacks a mechanistic explanation for how these modes operate or how the brain switches between them. Quantum cognition research demonstrates that human decision-making follows quantum probability models under low confidence and classical Markov models under high confidence, suggesting a hybrid architecture where decoherence drives transitions between processing modes. We propose that self-referential evaluative monitoring functions as the biological switch that regulates the transition between System 1 and System 2 by modulating microtubule-mediated quantum coherence through electromagnetic boundary conditions. The causal chain proceeds from locus coeruleus-norepinephrine regulation of default mode network (DMN) activity, through electromagnetic field patterns generated by self-evaluation, to calcium-mediated modulation of the microtubule electrostatic environment. Recent experimental evidence indicates that microtubules exhibit quantum exciton energy migration comparable to photosynthetic complexes, with cooperative robustness increasing with system size. Because quantum coherence enables parallel exploration while classical processing offers stability, evolution would have selected for mechanisms that balance these demands. Anesthetics bind promiscuously yet selectively abolish consciousness, which is consistent with disruption of energy-threshold-dependent coherent processes in microtubules. The framework proposed in this paper leads to testable predictions relating DMN activity, flow states, insight, and confidence to shifts along the quantum-classical processing spectrum."
+  },
+  {
+   "rank": 14,
+   "id": "41988526",
+   "source": "MED",
+   "pmid": "41988526",
+   "pmcid": "PMC13076246",
+   "doi": "10.3389/fphar.2026.1777613",
+   "first_publication_date": "2026-03-31",
+   "title": "Psychedelics and the quantum brain: a falsifiable hypothesis on Posner molecules and spin-dependent pharmacology.",
+   "authors": "Geraci J, Viirre E, Qorri B, Pani L.",
+   "journal": "Frontiers in pharmacology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Classical serotonergic psychedelics (e.g., LSD, psilocybin, DMT) alter perception and neuroplasticity primarily via 5-HT2A receptor activation and downstream Ca2+-dependent signaling cascades. Here we propose a speculative yet falsifiable pharmacological hypothesis that these drug-induced biochemical cascades might interface with quantum-mechanical processes in the brain. We focus on nuclear spin dynamics in phosphate-containing biomolecules-calcium phosphate nanoclusters known as \"Posner molecules\" (Ca9(PO4)6) - as a candidate substrate for quantum coherence and entanglement in neural tissue. We distinguish the metaphorical \"classical\" analogies in psychedelic neuroscience from a literal quantum-level mechanism involving nuclear spin coherence and entanglement. The central hypothesis is that intense 5-HT2A-driven neural activity and Ca2+ flux during psychedelic exposure foster conditions under which 31P nuclear spins in phosphate groups may become entangled and shielded from decoherence within Posner molecules and subsequently influence neuronal signaling when these clusters dissolve and release bursts of Ca2+ in different neuronal compartments. Building on Fisher's Posner model of quantum cognition, we reframe Posner molecules as a potential quantum-coherence nexus in psychedelic action, de-emphasizing earlier microtubule-centric models and explore how such quantum effects, if they exist, might influence pharmacological outcomes. We outline translational implications of this hypothesis, including potential insights into inter-individual variability in treatment response and novel experimental paradigms for psychiatry. To ensure falsifiability, we propose concrete experimental directions in the short term (isotopically modified psychedelics and xenon environments), medium term (advanced quantum sensors such as nitrogen-vacancy magnetometry and ultrafast spectroscopy), and long term (entangled ligand studies or quantum neuroimaging modalities). While speculative, this interdisciplinary framework generates specific, disprovable predictions. Confirming or refuting the role of quantum-mechanical phenomena in psychedelic neuropharmacology would profoundly impact our understanding of mind-brain relationships and encourage high-reward innovation in psychiatric treatment and brain-targeted drug design."
+  },
+  {
+   "rank": 15,
+   "id": "41266643",
+   "source": "MED",
+   "pmid": "41266643",
+   "pmcid": null,
+   "doi": "10.1038/s41592-025-02908-8",
+   "first_publication_date": "2025-11-20",
+   "title": "4Pi-SIMFLUX: 4Pi single-molecule localization microscopy with structured illumination.",
+   "authors": "Wang Q, Zheng B, Yu Z, Zhan Y, Dai Q, Wang X, Li S, Qiao Y, Chen L, Yu X, Lin Y, Zhang Y.",
+   "journal": "Nature methods",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Single-molecule localization microscopy (SMLM) has transformed biological imaging by enabling nanoscale visualization of intricate subcellular structures. However, conventional three-dimensional SMLM techniques typically exhibit lower axial resolution than lateral resolution, hindering isotropic investigations. Interferometric approaches, such as 4Pi-SMLM, enhance axial resolution by approximately fivefold through dual-objective coherent fluorescence detection, surpassing lateral resolution. Here we present 4Pi-SIMFLUX, which integrates structured illumination into 4Pi-SMLM to double its lateral resolution, achieving near-isotropic three-dimensional localization precision of 2-3 nm. We demonstrate that 4Pi-SIMFLUX breaks the 10-nm resolution barrier in biological samples, resolving microtubule ultrastructure and nuclear pore complexes with exceptional detail and clarity, while accounting for label size and localization density. Furthermore, it enables simultaneous multicolor imaging for interrogating multiple cellular components and high-fidelity, whole-cell visualization that captures comprehensive spatial organization. 4Pi-SIMFLUX effectively bridges the axial-lateral resolution gap, establishing a robust tool for molecular-scale imaging in complex cellular environments."
+  },
+  {
+   "rank": 16,
+   "id": "40999612",
+   "source": "MED",
+   "pmid": "40999612",
+   "pmcid": null,
+   "doi": "10.2174/0109298673442402250922113756",
+   "first_publication_date": "2026-01-01",
+   "title": "A Unified Model of Consciousness: Glycoprotein Patterns in Memory Processes and Quantum Entanglement.",
+   "authors": "Ur-Rahman A.",
+   "journal": "Current medicinal chemistry",
+   "pub_types": [
+    "Editorial"
+   ],
+   "open_access": "N",
+   "abstract": "The author had previously proposed that memory could be encoded as patterns of hydrogen-bonded \"frozen\" conformers of neuronal glycoproteins. These stabilised molecular patterns represent an ideal template for information storage in the human brain because of the large number of asymmetric centres present in sugar molecules with attached hydroxyl groups. Hydrogen bonding of hydroxyl groups present on sugar molecules with other hydroxyl or amino groups on nearby sugar or nucleic acid units, by intramolecular or intermolecular hydrogen bonding, can result in the formation of memory patterns comprising such \"frozen conformers\". This mechanism can be involved in learning, information storage, and its recall. Penrose and Hameroff's orchestrated objective reduction (Orch OR) theory proposes that quantum superpositions and entanglement within neuronal microtubules are orchestrated by cellular processes and periodically undergo objective reduction, yielding discrete moments of conscious awareness. Recent developments in quantum biology and protein photophysics have significantly narrowed the gap between these perspectives. Most notably, Babcock et al. (2024) demonstrated that ultraviolet super radiance can occur in tryptophan- containing protein networks, including tubulin assemblies, indicating that protein architectures can support collective excitonic states (and associated subradiant \"dark\" manifolds) under physiological conditions. These findings can potentially address decoherence objections and provide a tangible mechanism by which aromatic amino-acid networks could mediate coherent energy/information transfer in living cells. We present here a possible unified model combining these concepts: Microtubules are proposed to function as quantum information processors that may bind and route distributed information through excitonic or entanglement dynamics, while glycoprotein conformational patterns could serve as a molecular register for memory storage. The convergent evidence from spectroscopy, anesthetic pharmacology, and glycosylation biology are reviewed in this context. The combination of these concepts can offer a mechanistic bridge between quantum events and cognitive function."
+  },
+  {
+   "rank": 17,
+   "id": "41229347",
+   "source": "MED",
+   "pmid": "41229347",
+   "pmcid": null,
+   "doi": "10.1039/d5sm00607d",
+   "first_publication_date": "2025-12-03",
+   "title": "Modeling active nematics &lt;i&gt;via&lt;/i&gt; the nematic locking principle.",
+   "authors": "Mitchell KA, Sabbir MMH, Ricarte S, Klein B, Beller DA.",
+   "journal": "Soft matter",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Active nematic systems consist of rod-like internally driven subunits that interact with one another to form large-scale coherent flows. They are important examples of far-from-equilibrium fluids, which exhibit a wealth of nonlinear behavior. This includes active turbulence, in which topological defects in the nematic order braid around one another in a chaotic fashion. One of the most studied examples of active nematics consists of a dense two-dimensional layer of microtubules, crosslinked by kinesin molecular motors that inject extensile deformations into the fluid. Though numerous theoretical studies have modeled microtubule-based active nematics, no consensus has emerged on how to fully and quantitatively capture the features of the experimental system. To better understand the theoretical foundations for modeling this system, we propose a fundamental principle we call the nematic locking principle-individual microtubules cannot rotate without all neighboring microtubules also rotating. Physically, this is justified by the high density of the microtubules, their elongated nature, and their corresponding steric interactions. We assert that the nematic locking principle holds throughout the majority of the material, but breaks down in the neighborhood of topological defects and other regions of low density. We derive the most general nematic transport equation consistent with this principle and also derive the most general term that violates it, introducing fracturing into the material. We then examine the standard Beris-Edwards approach, commonly used to model this system, and show that it violates the nematic locking principle throughout the majority of the material due to fracturing. We then propose a modification to the Beris-Edwards model that enforces nematic locking nearly everywhere. This modification shuts off fracturing except in regions where the order parameter (a proxy for density) is reduced. In these regions fracturing is turned on. The resulting simulations in turn show strong nematic locking throughout the bulk of the material, with narrow bands of fracturing, consistent with experimental observation. One additional advantage of enforcing nematic locking is that nontrivial stationary state solutions, common in Beris-Edwards simulations but not seen in experiments, are eliminated."
+  },
+  {
+   "rank": 18,
+   "id": "41303511",
+   "source": "MED",
+   "pmid": "41303511",
+   "pmcid": "PMC12652574",
+   "doi": "10.3390/ijms262211030",
+   "first_publication_date": "2025-11-14",
+   "title": "TDP-43 Regulates Rab4 Levels to Support Synaptic Vesicle Recycling and Neuromuscular Connectivity in &lt;i&gt;Drosophila&lt;/i&gt; and Human ALS Models.",
+   "authors": "Gbadamosi M, Romano G, Simbula M, Canarutto G, Ottoboni L, Corti S, Feiguin F.",
+   "journal": "International journal of molecular sciences",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The pathological loss of nuclear TDP-43 is a hallmark of amyotrophic lateral sclerosis (ALS) and frontotemporal dementia (FTD), leading to extensive alterations in RNA metabolism and a broad number of neuronal transcripts. However, the key effectors linking TDP-43 dysfunction to synaptic defects remain unclear. In this study, using Drosophila and human iPSC-derived motoneurons, we identify Rab4 as a direct and conserved target of TDP-43, whose expression is necessary and sufficient to recover synaptic vesicle recycling, neuromuscular junction growth, and locomotor function in TDP-43-deficient motoneurons. Moreover, Rab4 activity promotes the presynaptic recruitment of futsch/MAP1B, a microtubule-associated protein also regulated by TDP-43, which autonomously supports synaptic growth and vesicle turnover. Together, these findings define a TDP-43/Rab4/futsch/MAP1B regulatory axis that couples endosomal dynamics to cytoskeletal assembly. Furthermore, this functionally coherent module provides a mechanistic basis for understanding how synaptic vulnerability is amplified in disease and offers a framework to identify key compensatory targets capable of sustaining neuronal function in the absence of TDP-43."
+  },
+  {
+   "rank": 19,
+   "id": "40522379",
+   "source": "MED",
+   "pmid": "40522379",
+   "pmcid": null,
+   "doi": "10.1007/s12124-025-09920-9",
+   "first_publication_date": "2025-06-16",
+   "title": "Consciousness, Microtubules, and the Axon Initial Segment.",
+   "authors": "Beshkar M.",
+   "journal": "Integrative psychological & behavioral science",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This paper presents an explanation for the neural basis of consciousness from the perspective of the QBIT theory. It is hypothesized that consciousness is substrate-dependent, and the substrate of consciousness is tubulin. Consciousness depends on the spontaneous emergence of coherence in a population of microtubules located at the axon initial segments of cortical neurons. When quantum coherence spontaneously emerges in a system consisting of many microtubules, the resultant entity is a kind of matter-field. Different configurations of this field correspond to different conscious experiences."
+  },
+  {
+   "rank": 20,
+   "id": "40062969",
+   "source": "MED",
+   "pmid": "40062969",
+   "pmcid": "PMC11893169",
+   "doi": "10.1083/jcb.202406054",
+   "first_publication_date": "2025-03-10",
+   "title": "Vimentin filament transport and organization revealed by single-particle tracking and 3D FIB-SEM.",
+   "authors": "Renganathan B, Moore AS, Yeo WH, Petruncio A, Ackerman D, Weigel AV, Team TC, Pasolli HA, Xu CS, Shtengel G, Hess HF, Serpinskaya AS, Zhang HF, Lippincott-Schwartz J, Gelfand VI.",
+   "journal": "The Journal of cell biology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Vimentin intermediate filaments (VIFs) form complex, tightly packed networks; due to this density, traditional imaging approaches cannot discern single-filament behavior. To address this, we developed and validated a sparse vimentin-SunTag labeling strategy, enabling single-particle tracking of individual VIFs and providing a sensitive, unbiased, and quantitative method for measuring global VIF motility. Using this approach, we define the steady-state VIF motility rate, showing a constant ∼8% of VIFs undergo directed microtubule-based motion irrespective of subcellular location or local filament density. Significantly, our single-particle tracking approach revealed uncorrelated motion of individual VIFs within bundles, an observation seemingly at odds with conventional models of tightly cross-linked bundles. To address this, we acquired high-resolution focused ion beam scanning electron microscopy volumes of vitreously frozen cells and reconstructed three-dimensional VIF bundles, finding that they form only loosely organized, semi-coherent structures from which single VIFs frequently emerge to locally engage neighboring microtubules. Overall, this work demonstrates single VIF dynamics and organization in the cellular milieu for the first time."
+  },
+  {
+   "rank": 21,
+   "id": "41281348",
+   "source": "MED",
+   "pmid": "41281348",
+   "pmcid": "PMC12630274",
+   "doi": "10.1140/epjp/s13360-025-07022-4",
+   "first_publication_date": "2025-11-19",
+   "title": "On the potential of microtubules for scalable quantum computation.",
+   "authors": "Mavromatos NE, Mershin A, Nanopoulos DV.",
+   "journal": "European physical journal plus",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "We examine the quantum coherence properties of tubulin heterodimers arranged into the protofilaments of cytoskeletal microtubules. In the physical model proposed by the authors, the microtubule interiors are treated as high-Q quantum electrodynamics (QED) cavities that can support decoherence-resistant entangled states under physiological conditions, with decoherence times of the order of O(10-6)  s. We identify strong electric dipole interactions between tubulin dimers and ordered water dipole quanta within the microtuble interior as the mechanism responsible for the extended coherence times. Classical nonlinear (pseudospin) σ -models describing solitonic excitations are reinterpreted as emergent quantum-coherent-or possibly pointer-states, arising from incomplete collapse of dipole-aligned quantum states. These solitons mediate dissipation-free energy transfer along microtubule filaments. We discuss logic-gate-like behaviour facilitated by microtubule-associated proteins, and outline how such structures may enable scalable, ambient-temperature quantum computation, with the fundamental unit of information storage realized as a quDit encoded in the tubulin dipole state. We further describe a process akin to \"decision-making\" that emerges following an external stimulus, whereby optimal, energy-loss-free signal and information transport pathways are selected across the microtubular network. Finally, we propose experimental approaches-including Rabi-splitting spectroscopy and entangled surface plasmon probes-to validate the use of biomatter as a substrate for scalable quantum computation."
+  },
+  {
+   "rank": 22,
+   "id": "41132902",
+   "source": "MED",
+   "pmid": "41132902",
+   "pmcid": "PMC12542615",
+   "doi": "10.1080/19420889.2025.2576334",
+   "first_publication_date": "2025-10-21",
+   "title": "Consciousness and spintronic coherence in microtubules.",
+   "authors": "Beshkar M.",
+   "journal": "Communicative & integrative biology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Microtubules are nanoscale spintronic oscillators with memristive properties. Spintronic and memristive effects, together with some unique conditions found in the axon initial segment (AIS), allow quantum coherence to emerge spontaneously in a population of microtubules located within the AIS. According to the QBIT theory, the spontaneous emergence of coherence in a population of microtubules is the necessary and sufficient condition for the generation of a micro-consciousness (a quale) by the brain. Simultaneous generation of multiple qualia by synchronized activity in different parts of the cerebral cortex gives rise to the appearance of a macro-consciousness: a seemingly unified subjective experience."
+  },
+  {
+   "rank": 23,
+   "id": "39815535",
+   "source": "MED",
+   "pmid": "39815535",
+   "pmcid": null,
+   "doi": "10.1364/ol.549510",
+   "first_publication_date": "2025-01-01",
+   "title": "Microtubular structured random lasers as microfluidic channels for multifunctional sensing.",
+   "authors": "Shi X, Liu Z, Zhao J, Gao N, Zhai T.",
+   "journal": "Optics letters",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Random lasers (RLs) with a simple structure and low-cost properties have been recognized as an ideal analytical platform and are still challenging for liquid detecting, remaining beset for low sensitivity, complicated operation, and large analyte consumption. Here, inspired by a microfluidic sensor, a microtubule structured random laser for multifunctional sensing is demonstrated. The random laser is achieved resorting to a curly PMMA film with gain and scatterers embedded in it. By coupling the high-order WGM with a weak random scattering mode, a coherent random laser with a low threshold of 0.62 MW cm-2 and a high Q factor of 4700 is obtained. The sensing process has been demonstrated based on two kinds of representative analytes of sucrose solution and TiO2 NP suspension, which respond to the variation of gain and scattering. The RL sensor features fast detection, easy operation, and low cost, which may provide a new approach for their further applications in analytical microfluidic chip and disposable/pocket analytical instruments."
+  },
+  {
+   "rank": 24,
+   "id": "38695186",
+   "source": "MED",
+   "pmid": "38695186",
+   "pmcid": null,
+   "doi": "10.1161/circheartfailure.123.011435",
+   "first_publication_date": "2024-05-02",
+   "title": "Retrofitting the Heart: Explaining the Enigmatic Septal Thickening in Hypertrophic Cardiomyopathy.",
+   "authors": "Federspiel JM, Reil JC, Xu A, Scholtz S, Batzner A, Maack C, Sequeira V.",
+   "journal": "Circulation. Heart failure",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Hypertrophic cardiomyopathy is the most common genetic cardiac disease and is characterized by left ventricular hypertrophy. Although this hypertrophy often associates with sarcomeric gene mutations, nongenetic factors also contribute to the disease, leading to diastolic dysfunction. Notably, this dysfunction manifests before hypertrophy and is linked to hypercontractility, as well as nonuniform contraction and relaxation (myofibril asynchrony) of the myocardium. Although the distribution of hypertrophy in hypertrophic cardiomyopathy can vary both between and within individuals, in most cases, it is primarily confined to the interventricular septum. The reasons for septal thickening remain largely unknown. In this article, we propose that alterations in muscle fiber geometry, present from birth, dictate the septal shape. When combined with hypercontractility and exacerbated by left ventricular outflow tract obstruction, these factors predispose the septum to an isometric type of contraction during systole, consequently constraining its mobility. This contraction, or more accurately, this focal increase in biomechanical stress, prompts the septum to adapt and undergo remodeling. Drawing a parallel, this is reminiscent of how earthquake-resistant buildings are retrofitted with vibration dampers to absorb the majority of the shock motion and load. Similarly, the heart adapts by synthesizing viscoelastic elements such as microtubules, titin, desmin, collagen, and intercalated disc components. This pronounced remodeling in the cytoskeletal structure leads to noticeable septal hypertrophy. This structural adaptation acts as a protective measure against damage by attenuating myofibril shortening while reducing cavity tension according to Laplace Law. By examining these events, we provide a coherent explanation for the septum's predisposition toward hypertrophy."
+  },
+  {
+   "rank": 25,
+   "id": "38641327",
+   "source": "MED",
+   "pmid": "38641327",
+   "pmcid": "PMC11075083",
+   "doi": "10.1021/acs.jpcb.3c07936",
+   "first_publication_date": "2024-04-19",
+   "title": "Ultraviolet Superradiance from Mega-Networks of Tryptophan in Biological Architectures.",
+   "authors": "Babcock NS, Montes-Cabrera G, Oberhofer KE, Chergui M, Celardo GL, Kurian P.",
+   "journal": "The journal of physical chemistry. B",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "Y",
+   "abstract": "Networks of tryptophan (Trp)─an aromatic amino acid with strong fluorescence response─are ubiquitous in biological systems, forming diverse architectures in transmembrane proteins, cytoskeletal filaments, subneuronal elements, photoreceptor complexes, virion capsids, and other cellular structures. We analyze the cooperative effects induced by ultraviolet (UV) excitation of several biologically relevant Trp mega-networks, thus giving insights into novel mechanisms for cellular signaling and control. Our theoretical analysis in the single-excitation manifold predicts the formation of strongly superradiant states due to collective interactions among organized arrangements of up to >105 Trp UV-excited transition dipoles in microtubule architectures, which leads to an enhancement of the fluorescence quantum yield (QY) that is confirmed by our experiments. We demonstrate the observed consequences of this superradiant behavior in the fluorescence QY for hierarchically organized tubulin structures, which increases in different geometric regimes at thermal equilibrium before saturation, highlighting the effect's persistence in the presence of disorder. Our work thus showcases the many orders of magnitude across which the brightest (hundreds of femtoseconds) and darkest (tens of seconds) states can coexist in these Trp lattices."
+  },
+  {
+   "rank": 26,
+   "id": "38553880",
+   "source": "MED",
+   "pmid": "38553880",
+   "pmcid": null,
+   "doi": "10.1210/endocr/bqae041",
+   "first_publication_date": "2024-04-01",
+   "title": "The Planar Cell Polarity Protein Fat1 in Sertoli Cell Function.",
+   "authors": "Bu T, Wang L, Wu X, Gao S, Li X, Yun D, Yang X, Li L, Cheng CY, Sun F.",
+   "journal": "Endocrinology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Fat (FAT atypical cadherin) and Dchs (Dachsous cadherin-related protein) in adjacent Sertoli:Sertoli, Sertoli:spermatid, and spermatid:spermatid interfaces create an important intercellular bridge whose adhesive function is in turn supported by Fjx1, a nonreceptor Ser/Thr protein kinase. This concept is derived from earlier studies of Drosophila, which has been confirmed in this and earlier reports as well. Herein, we use the approach of knockdown of Fat1 by RNAi using primary cultures of Sertoli cells that mimicked the blood-testis barrier (BTB) in vivo, and a series of coherent experiments including functional assays to monitor the Sertoli cell tight junction (TJ) permeability barrier and a functional in vitro TJ integrity assay to assess the role of Fat1 in the testis. It was shown that planar cell polarity (PCP) protein Fat1 affected Sertoli cell function through its modulation of actin and microtubule cytoskeletal function, altering their polymerization activity through the Fat1/Fjx1 complex. Furthermore, Fat1 is intimately associated with β-catenin and α-N-catenin, as well as with Prickle 1 of the Vangl1/Prickle 1 complex, another PCP core protein to support intercellular interactions to confer PCP. In summary, these findings support the notion that the Fat:Dchs and the Vangl2:Fzd PCP intercellular bridges are tightly associated with basal ES/TJ structural proteins to stabilize PCP function at the Sertoli:Sertoli, Sertoli:spermatid, and spermatid:spermatid interface to sustain spermatogenesis."
+  },
+  {
+   "rank": 27,
+   "id": "36752605",
+   "source": "MED",
+   "pmid": "36752605",
+   "pmcid": "PMC10014072",
+   "doi": "10.7554/elife.79402",
+   "first_publication_date": "2023-02-08",
+   "title": "Motor processivity and speed determine structure and dynamics of microtubule-motor assemblies.",
+   "authors": "Banks RA, Galstyan V, Lee HJ, Hirokawa S, Ierokomos A, Ross TD, Bryant Z, Thomson M, Phillips R.",
+   "journal": "eLife",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "Y",
+   "abstract": "Active matter systems can generate highly ordered structures, avoiding equilibrium through the consumption of energy by individual constituents. How the microscopic parameters that characterize the active agents are translated to the observed mesoscopic properties of the assembly has remained an open question. These active systems are prevalent in living matter; for example, in cells, the cytoskeleton is organized into structures such as the mitotic spindle through the coordinated activity of many motor proteins walking along microtubules. Here, we investigate how the microscopic motor-microtubule interactions affect the coherent structures formed in a reconstituted motor-microtubule system. This question is of deeper evolutionary significance as we suspect motor and microtubule type contribute to the shape and size of resulting structures. We explore key parameters experimentally and theoretically, using a variety of motors with different speeds, processivities, and directionalities. We demonstrate that aster size depends on the motor used to create the aster, and develop a model for the distribution of motors and microtubules in steady-state asters that depends on parameters related to motor speed and processivity. Further, we show that network contraction rates scale linearly with the single-motor speed in quasi-one-dimensional contraction experiments. In all, this theoretical and experimental work helps elucidate how microscopic motor properties are translated to the much larger scale of collective motor-microtubule assemblies."
+  },
+  {
+   "rank": 28,
+   "id": "35398343",
+   "source": "MED",
+   "pmid": "35398343",
+   "pmcid": "PMC9199098",
+   "doi": "10.1016/j.bpj.2022.04.011",
+   "first_publication_date": "2022-04-08",
+   "title": "Cell chirality regulates coherent angular motion on small circular substrates.",
+   "authors": "Wang BC, Xu GK.",
+   "journal": "Biophysical journal",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Collective cell migration occurs in a wide range of physiological and pathological processes, such as wound healing and tumor metastasis. Experiments showed that many types of cells confined in circular islands can perform coherent angular rotation, yet the underlying mechanisms remain unclear. Here we propose a biomechanical model, including the membrane, microtubules, and nucleus, to study the spatiotemporal evolutions of small cell clusters in confined space. We show that cells can spontaneously transfer from \"radial pattern\" to \"chiral pattern\" due to fluctuations. For a pair of cells with identical chiral orientation, the cluster rotates in the opposite direction of the chiral orientation, and the fluctuations can reverse the cluster's rotational direction. Interestingly, during the persistent rotation, each cell rotates around its own centroid while it is revolving around the island center and shows a constant side to the island center, as tidal locking in astronomy. Furthermore, for a few more cells, coherent angular rotation also appears, and the emergence of a central cell can accelerate the cluster rotation. These findings shed light on collective cell migration in life processes and help to understand the spatiotemporal dynamics of active matter."
+  },
+  {
+   "rank": 29,
+   "id": "35385739",
+   "source": "MED",
+   "pmid": "35385739",
+   "pmcid": "PMC8994134",
+   "doi": "10.1016/j.celrep.2022.110610",
+   "first_publication_date": "2022-04-01",
+   "title": "Augmin-dependent microtubule self-organization drives kinetochore fiber maturation in mammals.",
+   "authors": "Almeida AC, Soares-de-Oliveira J, Drpic D, Cheeseman LP, Damas J, Lewin HA, Larkin DM, Aguiar P, Pereira AJ, Maiato H.",
+   "journal": "Cell reports",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Chromosome segregation in mammals relies on the maturation of a thick bundle of kinetochore-attached microtubules known as k-fiber. How k-fibers mature from initial kinetochore microtubule attachments remains a fundamental question. By combining molecular perturbations and phenotypic analyses in Indian muntjac fibroblasts containing the lowest known diploid chromosome number in mammals (2N = 6) and distinctively large kinetochores, with fixed/live-cell super-resolution coherent-hybrid stimulated emission depletion (CH-STED) nanoscopy and laser microsurgery, we demonstrate a key role for augmin in kinetochore microtubule self-organization and maturation, regardless of pioneer centrosomal microtubules. In doing so, augmin promotes kinetochore and interpolar microtubule turnover and poleward flux. Tracking of microtubule growth events within individual k-fibers reveals a wide angular dispersion, consistent with augmin-mediated branched microtubule nucleation. Augmin depletion reduces the frequency of kinetochore microtubule growth events and hampers efficient repair after acute k-fiber injury by laser microsurgery. Together, these findings underscore the contribution of augmin-mediated microtubule amplification for k-fiber self-organization and maturation in mammals."
+  },
+  {
+   "rank": 30,
+   "id": "34360980",
+   "source": "MED",
+   "pmid": "34360980",
+   "pmcid": "PMC8348406",
+   "doi": "10.3390/ijms22158215",
+   "first_publication_date": "2021-07-30",
+   "title": "Generation of Electromagnetic Field by Microtubules.",
+   "authors": "Pokorný J, Pokorný J, Vrba J.",
+   "journal": "International journal of molecular sciences",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The general mechanism of controlling, information and organization in biological systems is based on the internal coherent electromagnetic field. The electromagnetic field is supposed to be generated by microtubules composed of identical tubulin heterodimers with periodic organization and containing electric dipoles. We used a classical dipole theory of generation of the electromagnetic field to analyze the space-time coherence. The structure of microtubules with the helical and axial periodicity enables the interaction of the field in time shifted by one or more periods of oscillation and generation of coherent signals. Inner cavity excitation should provide equal energy distribution in a microtubule. The supplied energy coherently excites oscillators with a high electrical quality, microtubule inner cavity, and electrons at molecular orbitals and in 'semiconduction' and 'conduction' bands. The suggested mechanism is supposed to be a general phenomenon for a large group of helical systems."
+  },
+  {
+   "rank": 31,
+   "id": "34340333",
+   "source": "MED",
+   "pmid": "34340333",
+   "pmcid": null,
+   "doi": "10.1063/5.0050795",
+   "first_publication_date": "2021-07-01",
+   "title": "Fractal generation in a two-dimensional active-nematic fluid.",
+   "authors": "Mitchell KA, Tan AJ, Arteaga J, Hirst LS.",
+   "journal": "Chaos (Woodbury, N.Y.)",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Active fluids, composed of individual self-propelled agents, can generate complex large-scale coherent flows. A particularly important laboratory realization of such an active fluid is a system composed of microtubules, aligned in a quasi-two-dimensional (2D) nematic phase and driven by adenosine-triphosphate-fueled kinesin motor proteins. This system exhibits robust chaotic advection and gives rise to a pronounced fractal structure in the nematic contours. We characterize such experimentally derived fractals using the power spectrum and discover that the power spectrum decays as k-β for large wavenumbers k. The parameter β is measured for several experimental realizations. Though β is effectively constant in time, it does vary with experimental parameters, indicating differences in the scale-free behavior of the microtubule-based active nematic. Though the fractal patterns generated in this active system are reminiscent of passively advected dye in 2D chaotic flows, the underlying mechanism for fractal generation is more subtle. We provide a simple, physically inspired mathematical model of fractal generation in this system that relies on the material being locally compressible, though the total area of the material is conserved globally. The model also requires that large-scale density variations are injected into the material periodically. The model reproduces the power-spectrum decay k-β seen in experiments. Linearizing the model of fractal generation about the equilibrium density, we derive an analytic relationship between β and a single dimensionless quantity r, which characterizes the compressibility."
+  },
+  {
+   "rank": 32,
+   "id": "32324945",
+   "source": "MED",
+   "pmid": "32324945",
+   "pmcid": null,
+   "doi": "10.1002/dneu.22751",
+   "first_publication_date": "2020-05-15",
+   "title": "Nucleating microtubules in neurons: Challenges and solutions.",
+   "authors": "Lüders J.",
+   "journal": "Developmental neurobiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The highly polarized morphology of neurons is crucial for their function and involves formation of two distinct types of cellular extensions, the axonal and dendritic compartments. An important effector required for the morphogenesis and maintenance and thus the identity of axons and dendrites is the microtubule cytoskeleton. Microtubules in axons and dendrites are arranged with distinct polarities, to allow motor-dependent, compartment-specific sorting of cargo. Despite the importance of the microtubule cytoskeleton in neurons, the molecular mechanisms that generate the intricate compartment-specific microtubule configurations remain largely obscure. Work in other cell types has identified microtubule nucleation, the de novo formation of microtubules, and its spatio-temporal regulation as essential for the proper organization of the microtubule cytoskeleton. Whereas regulation of microtubule nucleation usually involves microtubule organizing centers such as the centrosome, neurons seem to rely largely on decentralized nucleation mechanisms. In this review, I will discuss recent advances in deciphering nucleation mechanisms in neurons, how they contribute to the arrangement of microtubules with specific polarities, and how this affects neuron morphogenesis. While this work has shed some light on these important processes, we are far from a comprehensive understanding. Thus, to provide a coherent model, my discussion will include both well-established mechanisms and mechanisms with more limited supporting data. Finally, I will also highlight important outstanding questions for future investigation."
+  },
+  {
+   "rank": 33,
+   "id": "32844429",
+   "source": "MED",
+   "pmid": "32844429",
+   "pmcid": null,
+   "doi": "10.1111/jmi.12956",
+   "first_publication_date": "2020-09-02",
+   "title": "Second harmonic generation microscopy using pixel reassignment.",
+   "authors": "Wang W, Wu B, Zhang B, Zhang Z, Li X, Zheng S, Fan Z, Tan J.",
+   "journal": "Journal of microscopy",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Second harmonic generation (SHG) microscopy is expected to be a powerful tool for observing the cellular-level functionality and morphology information of thick tissue owe to its unique imaging properties. However, the maximum attainable resolution obtainable by SHG microscopy is limited by the use of long-wavelength, near-infrared excitation. In this paper, we report the use of pixel reassignment to improve the spatial resolution of SHG microscopy. The SHG signal is imaged onto a position-sensitive camera, instead of a point detector typically used in conventional SHG microscope. The data processing is performed through pixel reassignment and subsequent deblurring operation. We present the basic principle and a rigorous theoretical model for SHG microscopy using pixel reassignment (SHG-PR). And for the first time, the optimal reassignment factor for SHG-PR is derived based on the coherent characteristics and the dependence of wavelength in SHG microscopy. To evaluate the spatial resolution improvement, images of nano-beads separated by different distances and of a microtubule array have been simulated. We gain about a 1.5-fold spatial resolution enhancement compared to conventional SHG microscopy. When a further deblurring operation is implemented, this method allows for a total spatial resolution enhancement of about 1.87. Additionally, we demonstrate the validity of SHG-PR for raw data with noise. LAY DESCRIPTION: Second harmonic generation (SHG) microscopy has emerged as a powerful imaging technique in clinical diagnostics and biological research. SHG microscopy is label-free and provides intrinsic optical sectioning for three-dimensional (3D) imaging. However, a near-infrared excitation wavelength results a restriction in the maximum attainable spatial resolution of SHG microscopy. In this paper, we present a simple resolution-enhanced SHG imaging method, SHG microscopy using pixel reassignment (SHG-PR). We demonstrate a rigorous theoretical model for SHG-PR and derive the optimal reassignment factor. The simulation result shows the clear improvement of the image resolution and contrast in the SHG-PR after deblurring operation. The FWHM value of single microtubule shows that SHG-PR enables a spatial resolution enhancement by a factor of 1.5, compared to conventional SHG microscopy. After a proper deblurring operation, this method allows for a total spatial resolution enhancement of about 1.87. The improvements of spatial resolution and contrast are still valid for raw data with noise. It is expected that this method can contribute towards new insights in unstained tissue morphology, interaction of cells, and diseases diagnosis."
+  },
+  {
+   "rank": 34,
+   "id": "32961270",
+   "source": "MED",
+   "pmid": "32961270",
+   "pmcid": null,
+   "doi": "10.1016/j.nbd.2020.105079",
+   "first_publication_date": "2020-09-19",
+   "title": "Fibrillation and molecular characteristics are coherent with clinical and pathological features of 4-repeat tauopathy caused by MAPT variant G273R.",
+   "authors": "Sandberg A, Ling H, Gearing M, Dombroski B, Cantwell L, R'Bibo L, Levey A, Schellenberg GD, Hardy J, Wood N, Fernius J, Nyström S, Svensson S, Thor S, Hammarström P, Revesz T, Mok KY.",
+   "journal": "Neurobiology of disease",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Microtubule Associated Protein Tau (MAPT) forms proteopathic aggregates in several diseases. The G273R tau mutation, located in the first repeat region, was found by exome sequencing in a patient who presented with dementia and parkinsonism. We herein return to pathological examination which demonstrated tau immunoreactivity in neurons and glia consistent of mixed progressive supranuclear palsy (PSP) and corticobasal degeneration (CBD) features. To rationalize the pathological findings, we used molecular biophysics to characterize the mutation in more detail in vitro and in Drosophila. The G273R mutation increases the aggregation propensity of 4-repeat (4R) tau and alters the tau binding affinity towards microtubules (MTs) and F-actin. Tau aggregates in PSP and CBD are predominantly 4R tau. Our data suggest that the G273R mutation induces a shift in pool of 4R tau by lower F-actin affinity, alters the conformation of MT bound 4R tau, while increasing chaperoning of 3R tau by binding stronger to F-actin. The mutation augmented fibrillation of 4R tau initiation in vitro and in glial cells in Drosophila and showed preferential seeding of 4R tau in vitro suggestively causing a late onset 4R tauopathy reminiscent of PSP and CBD."
+  },
+  {
+   "rank": 35,
+   "id": "32579171",
+   "source": "MED",
+   "pmid": "32579171",
+   "pmcid": "PMC8159575",
+   "doi": "10.1042/ebc20190079",
+   "first_publication_date": "2020-09-01",
+   "title": "Structural view of the yeast Dam1 complex, a ring-shaped molecular coupler for the dynamic microtubule end.",
+   "authors": "Wu S, Grishchuk EL.",
+   "journal": "Essays in biochemistry",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Review",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "In a dividing eukaryotic cell, proper chromosome segregation requires the dynamic yet persistent attachment of kinetochores to spindle microtubules. In the budding yeast Saccharomyces cerevisiae, this function is especially crucial because each kinetochore is attached to a single microtubule; consequently, loss of attachment could lead to unrecoverable chromosome loss. The highly specialized heterodecameric Dam1 protein complex achieves this coupling by assembling into a microtubule-encircling ring that glides near the end of the dynamic microtubule to mediate chromosome motion. In recent years, we have learned a great deal about the structural properties of the Dam1 heterodecamer, its mechanism of self-assembly into rings, and its tethering to the kinetochore by the elongated Ndc80 complex. The most remarkable progress has resulted from defining the fine structures of helical bundles within Dam1 heterodecamer. In this review, we critically analyze structural observations collected by diverse approaches with the goal of obtaining a unified view of Dam1 ring architecture. A considerable consistency between different studies supports a coherent model of the circular core of the Dam1 ring. However, there are persistent uncertainties about the composition of ring protrusions and flexible extensions, as well as their roles in mediating ring core assembly and interactions with the Ndc80 complex and microtubule."
+  },
+  {
+   "rank": 36,
+   "id": "32665556",
+   "source": "MED",
+   "pmid": "32665556",
+   "pmcid": "PMC7360550",
+   "doi": "10.1038/s41467-020-17147-y",
+   "first_publication_date": "2020-07-14",
+   "title": "In vivo microscopy reveals macrophage polarization locally promotes coherent microtubule dynamics in migrating cancer cells.",
+   "authors": "Luthria G, Li R, Wang S, Prytyskach M, Kohler RH, Lauffenburger DA, Mitchison TJ, Weissleder R, Miller MA.",
+   "journal": "Nature communications",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "Y",
+   "abstract": "Microtubules (MTs) mediate mitosis, directional signaling, and are therapeutic targets in cancer. Yet in vivo analysis of cancer cell MT behavior within the tumor microenvironment remains challenging. Here we developed an imaging pipeline using plus-end tip tracking and intravital microscopy to quantify MT dynamics in live xenograft tumor models. Among analyzed features, cancer cells in vivo displayed higher coherent orientation of MT dynamics along their cell major axes compared with 2D in vitro cultures, and distinct from 3D collagen gel cultures. This in vivo MT phenotype was reproduced in vitro when cells were co-cultured with IL4-polarized MΦ. MΦ depletion, MT disruption, targeted kinase inhibition, and altered MΦ polarization via IL10R blockade all reduced MT coherence and/or tumor cell elongation. We show that MT coherence is a defining feature for in vivo tumor cell dynamics and migration, modulated by local signaling from pro-tumor macrophages."
+  },
+  {
+   "rank": 37,
+   "id": "32289972",
+   "source": "MED",
+   "pmid": "32289972",
+   "pmcid": null,
+   "doi": "10.1103/physreve.101.032607",
+   "first_publication_date": "2020-03-01",
+   "title": "Gliding filament system giving both global orientational order and clusters in collective motion.",
+   "authors": "Tanida S, Furuta K, Nishikawa K, Hiraiwa T, Kojima H, Oiwa K, Sano M.",
+   "journal": "Physical review. E",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Emergence and collapse of coherent motions of self-propelled particles are affected more by particle motions and interactions than by their material or biological details. In the reconstructed systems of biofilaments and molecular motors, several types of collective motion including a global-order pattern emerge due to the alignment interaction. Meanwhile, earlier studies show that the alignment interaction of a binary collision of biofilaments is too weak to form the global order. The multiple collision is revealed to be important to achieve global order, but it is still unclear what kind of multifilament collision is actually involved. In this study, we demonstrate that not only alignment but also crossing of two filaments is essential to produce an effective multiple-particle interaction and the global order. We design the reconstructed system of biofilaments and molecular motors to vary a probability of the crossing of biofilaments on a collision and thus control the effect of volume exclusion. In this system, biofilaments glide along their polar strands on the turf of molecular motors and can align themselves nematically when they collide with each other. Our experiments show the counterintuitive result, in which the global order is achieved only when the crossing is allowed. When the crossing is prohibited, the cluster pattern emerges instead. We also investigate the numerical model in which we can change the strength of the volume exclusion effect and find that the global orientational order and clusters emerge with weak and strong volume exclusion effects, respectively. With those results and simple theory, we conclude that not only alignment but also finite crossing probability are necessary for the effective multiple-particles interaction forming the global order. Additionally, we describe the chiral symmetry breaking of a microtubule motion which causes a rotation of global alignment."
+  },
+  {
+   "rank": 38,
+   "id": "32084125",
+   "source": "MED",
+   "pmid": "32084125",
+   "pmcid": "PMC7055923",
+   "doi": "10.1371/journal.pcbi.1007649",
+   "first_publication_date": "2020-02-21",
+   "title": "Cytoskeleton polarity is essential in determining orientational order in basal bodies of multi-ciliated cells.",
+   "authors": "Namba T, Ishihara S.",
+   "journal": "PLoS computational biology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "In multi-ciliated cells, directed and synchronous ciliary beating in the apical membrane occurs through appropriate configuration of basal bodies (BBs, roots of cilia). Although it has been experimentally shown that the position and orientation of BBs are coordinated by apical cytoskeletons (CSKs), such as microtubules (MTs), and planar cell polarity (PCP), the underlying mechanism for achieving the patterning of BBs is not yet understood. In this study, we propose that polarity in bundles of apical MTs play a crucial role in the patterning of BBs. First, the necessity of the polarity was discussed by theoretical consideration on the symmetry of the system. The existence of the polarity was investigated by measuring relative angles between the MTs and BBs using published experimental data. Next, a mathematical model for BB patterning was derived by combining the polarity and self-organizational ability of CSKs. In the model, BBs were treated as finite-size particles in the medium of CSKs and excluded volume effects between BBs and CSKs were taken into account. The model reproduces the various experimental observations, including normal and drug-treated phenotypes. Our model with polarity provides a coherent and testable mechanism for apical BB pattern formation. We have also discussed the implication of our study on cell chirality."
+  },
+  {
+   "rank": 39,
+   "id": "33285818",
+   "source": "MED",
+   "pmid": "33285818",
+   "pmcid": "PMC7516467",
+   "doi": "10.3390/e22010043",
+   "first_publication_date": "2019-12-27",
+   "title": "Non-Equilibrium Quantum Electrodynamics in Open Systems as a Realizable Representation of Quantum Field Theory of the Brain.",
+   "authors": "Nishiyama A, Tanaka S, Tuszynski JA.",
+   "journal": "Entropy (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "We derive time evolution equations, namely the Klein-Gordon equations for coherent fields and the Kadanoff-Baym equations in quantum electrodynamics (QED) for open systems (with a central region and two reservoirs) as a practical model of quantum field theory of the brain. Next, we introduce a kinetic entropy current and show the H-theorem in the Hartree-Fock approximation with the leading-order (LO) tunneling variable expansion in the 1st order approximation for the gradient expansion. Finally, we find the total conserved energy and the potential energy for time evolution equations in a spatially homogeneous system. We derive the Josephson current due to quantum tunneling between neighbouring regions by starting with the two-particle irreducible effective action technique. As an example of potential applications, we can analyze microtubules coupled to a water battery surrounded by a biochemical energy supply. Our approach can be also applied to the information transfer between two coherent regions via microtubules or that in networks (the central region and the N res reservoirs) with the presence of quantum tunneling."
+  },
+  {
+   "rank": 40,
+   "id": "31611385",
+   "source": "MED",
+   "pmid": "31611385",
+   "pmcid": "PMC6842637",
+   "doi": "10.1073/pnas.1912223116",
+   "first_publication_date": "2019-10-14",
+   "title": "Tunable corrugated patterns in an active nematic sheet.",
+   "authors": "Senoussi A, Kashida S, Voituriez R, Galas JC, Maitra A, Estevez-Torres A.",
+   "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Active matter locally converts chemical energy into mechanical work and, for this reason, it provides new mechanisms of pattern formation. In particular, active nematic fluids made of protein motors and filaments are far-from-equilibrium systems that may exhibit spontaneous motion, leading to actively driven spatiotemporally chaotic states in 2 and 3 dimensions and coherent flows in 3 dimensions (3D). Although these dynamic flows reveal a characteristic length scale resulting from the interplay between active forcing and passive restoring forces, the observation of static and large-scale spatial patterns in active nematic fluids has remained elusive. In this work, we demonstrate that a 3D solution of kinesin motors and microtubule filaments spontaneously forms a 2D free-standing nematic active sheet that actively buckles out of plane into a centimeter-sized periodic corrugated sheet that is stable for several days at low activity. Importantly, the nematic orientational field does not display topological defects in the corrugated state and the wavelength and stability of the corrugations are controlled by the motor concentration, in agreement with a hydrodynamic theory. At higher activities these patterns are transient and chaotic flows are observed at longer times. Our results underline the importance of both passive and active forces in shaping active matter and demonstrate that a spontaneously flowing active fluid can be sculpted into a static material through an active mechanism."
+  }
+ ]
+}

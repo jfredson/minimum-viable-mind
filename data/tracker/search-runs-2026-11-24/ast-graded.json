@@ -1,0 +1,735 @@
+{
+ "prediction": "ast-graded",
+ "query": "TITLE_ABS:awareness AND TITLE_ABS:attention AND (TITLE_ABS:graded OR TITLE_ABS:\"all-or-none\" OR TITLE_ABS:dichotomous OR TITLE_ABS:continuous) AND (TITLE_ABS:report* OR TITLE_ABS:rating*) AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 122,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42961794",
+   "source": "MED",
+   "pmid": "42961794",
+   "pmcid": null,
+   "doi": "10.1109/tvcg.2026.3747452",
+   "first_publication_date": "2026-10-30",
+   "title": "Robust Engagement Estimation in Mixed Reality Under Cognitive Attack.",
+   "authors": "Wu P, Huang K, Zhu M, Zhou Z, Jiang J, Ahmed N, Hassan MM, Hong S, Li B, Islam R, Lan T, Tan G, Imani M.",
+   "journal": "IEEE transactions on visualization and computer graphics",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Engagement is a critical operational state in immersive systems, where users must sustain attention to virtual content despite distraction, workload, and degraded system responsiveness. In MR, one important source of disruption is a cognitive attack: an adversarial or system-level perturbation to the interaction loop that interferes with attention, situational awareness, or stable task execution. In this paper, we study induced latency as a concrete MR-relevant cognitive attack and present a two-stage model for estimating engagement from multimodal time-series data, including eye tracking, head motion, scene dynamics, and system latency. The first stage uses contrastive learning to encode variable-length behavioral trajectories into compact embeddings that suppress nuisance variation while preserving engagement-relevant structure. A lightweight regression head then maps these embeddings to a continuous engagement score. We evaluate the framework in a controlled hostage-rescue MR study with step-wise latency perturbations and minute-level engagement self-reports. Across cross-validation and held-out-user evaluation, the proposed model performs favorably relative to traditional regressors on pooled features, indicating that temporally structured multimodal representations provide a measurable benefit for engagement estimation under attack. We further show how formal verification can be used to derive conservative safe operating intervals for controllable MR parameters, connecting engagement estimation to runtime reasoning in safety-aware MR systems."
+  },
+  {
+   "rank": 2,
+   "id": "42588337",
+   "source": "MED",
+   "pmid": "42588337",
+   "pmcid": "PMC13464716",
+   "doi": "10.3390/healthcare14152370",
+   "first_publication_date": "2026-08-03",
+   "title": "Radiation Safety Knowledge, Perceptions, and Self-Reported Practices Among Healthcare Workers in Radiology and Nuclear Medicine: A Cross-Sectional Survey.",
+   "authors": "Pepele EK, Deniz S.",
+   "journal": "Healthcare (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Background/Objectives: This study aimed to evaluate radiation safety knowledge, perceptions, and self-reported protective practices among healthcare workers (HCWs) working in radiology and nuclear medicine departments, with particular attention to occupational dose limits, radiation protection principles, dosimetry, and personal protective equipment use. Methods: A cross-sectional survey was conducted among 138 HCWs (25 specialist doctors, 101 technicians, 9 nurses and 3 radiophysicists) in radiology and nuclear medicine departments from May to June 2024. Data were collected using a structured 31-item survey assessing sociodemographic characteristics, perceived radiation exposure risk, knowledge of radiation protection principles and occupational dose limits, dosimeter use, personal protective equipment use, and awareness of institutional radiation safety procedures. The total knowledge score was calculated by summing correct responses to knowledge items (range: 0-10) and analyzed as a continuous outcome using multivariable linear regression with HC3 robust standard error. Because of the small and uneven distribution of some subgroups, item-level subgroup comparisons were interpreted descriptively and cautiously. Results: Although most HCWs reported receiving radiation safety information through formal education or institutional training, important knowledge and self-reported practice gaps remained. While 96.4% perceived themselves to be at high risk of radiation exposure, 61.6% reported not using any PPE in routine practice and 21.0% reported not using a dosimeter. Only 13.8% correctly identified the 5-year average permissible occupational dose, whereas 32.6% correctly identified the annual maximum dose limit. Knowledge of ionizing-radiation methods was higher among postgraduates than undergraduates (100% vs. 27.5%, p p p p p p = 0.003), whereas >3 years of work experience was associated with a lower score than ≤3 years (B = -1.53, 95% CI = -2.40 to -0.66, p = 0.001). When postgraduate education was evaluated instead of professional role because of collinearity, postgraduate education was associated with a higher total knowledge score. Because of the cross-sectional design, these associations should not be interpreted as causal. The internal consistency of the knowledge subscale was minimally acceptable (Cronbach's alpha = 0.694). Conclusions: Significant gaps and variations were observed in radiation safety knowledge and self-reported practices among HCWs. These patterns differed according to educational level, professional role, departmental affiliation, and experience; however, they should be interpreted in light of the cross-sectional design and the small and uneven distribution of some subgroups. These findings identify potential areas for future institutional quality-improvement efforts, including targeted education programs and review of radiation safety policies, whose effectiveness should be evaluated in future studies."
+  },
+  {
+   "rank": 3,
+   "id": "42480509",
+   "source": "MED",
+   "pmid": "42480509",
+   "pmcid": "PMC13387741",
+   "doi": "10.2196/82164",
+   "first_publication_date": "2026-07-21",
+   "title": "Diagnostic Discrimination of BOKE STARS, a Bimodal Continuous Performance Test, for Attention-Deficit/Hyperactivity Disorder Assessment in Chinese Children: Single-Center Case-Control Study.",
+   "authors": "Xu Y, Li X, Cao M, Li J, Gu S, Lv L, Zhang H, Zhao J, Li B, Li J, Li F.",
+   "journal": "JMIR formative research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundAttention-deficit/hyperactivity disorder (ADHD) affects 6.3% of Chinese children, but only 10% are diagnosed, as diagnosis is hindered by low awareness and lack of culturally adapted, objective tools. Existing continuous performance tests are unimodal and lack validity.ObjectiveThis study aimed to conduct an initial evaluation of the diagnostic discrimination of BOKE STARS (Sustained Task and Attention Response Screening), a culturally adapted bimodal continuous performance test, for distinguishing children with ADHD from typically developing children in a Chinese clinical setting.MethodsIn this prospective, single-center diagnostic accuracy study with a case-control design, 100 children aged 6 to 12 years (n=50 with ADHD and n=50 controls) were recruited at Xinhua Hospital between January and May 2024. Parents completed the Swanson, Nolan, and Pelham Rating Scale-fourth version (SNAP-IV), and children completed the BOKE STARS assessment on a tablet device under standardized conditions. Group comparisons were conducted using independent-sample 2-tailed t tests or Mann-Whitney U tests, as appropriate. Receiver operating characteristic (ROC) curve analysis was performed in the full case-control sample to assess diagnostic discrimination. Sensitivity and specificity were reported descriptively across ROC-derived cutoffs; these cutoffs were not interpreted as clinically validated diagnostic thresholds. Secondary exploratory analyses included comparisons among ADHD subtypes and correlations between BOKE STARS indices and parent-reported SNAP-IV symptom severity scores.ResultsCompared with controls, children with ADHD performed significantly worse on all major BOKE STARS indices, including errors of omission, errors of commission, reaction time, reaction time variability (RTV), discrimination prime, and total score. In the full case-control sample, the total score showed the strongest diagnostic discrimination (area under the ROC curve [AUC] 0.962, 95% CI 0.931-0.992), followed by RTV (AUC 0.919, 95% CI 0.867-0.971), errors of omission (AUC 0.884, 95% CI 0.818-0.950), and discrimination prime (AUC 0.819, 95% CI 0.737-0.900). Errors of commission (AUC 0.689, 95% CI 0.585-0.792) and reaction time (AUC 0.634, 95% CI 0.524-0.743) showed comparatively weaker discrimination. No significant differences were observed among ADHD subtypes. Several BOKE STARS indices were modestly correlated with SNAP-IV inattention and hyperactivity or impulsivity scores.ConclusionsBOKE STARS showed promising preliminary diagnostic discrimination for identifying Chinese children with ADHD in this case-control sample, with the total score and RTV showing the strongest discriminatory performance. However, because the case-control design artificially fixed the ratio of ADHD cases to controls, diagnostic performance estimates and exploratory cutoffs should be interpreted cautiously and should not be considered representative of real-world clinical diagnostic performance. BOKE STARS may serve as an adjunctive assessment tool to complement clinical interviews and caregiver-reported rating scales, but further external validation in larger and clinically heterogeneous populations is required before broader clinical implementation."
+  },
+  {
+   "rank": 4,
+   "id": "41882503",
+   "source": "MED",
+   "pmid": "41882503",
+   "pmcid": null,
+   "doi": "10.1080/17474124.2026.2650654",
+   "first_publication_date": "2026-03-26",
+   "title": "Gastric acid secretion therapy: long-term effects on gastric mucosa and polyp formation.",
+   "authors": "Suda H, Sakurai K, Haruma K.",
+   "journal": "Expert review of gastroenterology & hepatology",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "IntroductionProton pump inhibitors (PPIs) and potassium-competitive acid blockers (P-CABs) are widely used for the management of acid-related disorders. Characteristic gastric mucosal changes have gained clinical attention owing to their widespread and prolonged use.Areas coveredWe outline the pharmacological differences between PPIs and P-CABs and we summarize their endoscopic and histological features. Hypergastrinemia is highlighted as a central mediator, interacting with factors including Helicobacter pylori infection, atrophic gastritis, age, and sex. Evidence from randomized and observational studies, case series, and mechanistic investigations has been integrated to provide an overview of the long-term effects of these therapies.Expert opinionMost reported mucosal alterations, including fundic gland polyps, hyperplastic polyps, multiple white and flat elevated lesions, cracked or cobblestone-like mucosa, black spots, gastric mucosal redness, white spots, and web-like mucus, are considered benign. Although endoscopic surveillance is not currently supported by evidence, awareness of these findings may be useful in patients receiving therapy for several decades. Endoscopic features,-associated with hypergastrinemia and parietal- or enterochromaffin-like cell proliferation, may serve as tools to guide individualized prescribing and deprescribing strategies. Further research should include decade-long cohort studies, studies comparing PPIs and P-CABs, and trials evaluating on-demand and continuous regimens to optimize long-term safety."
+  },
+  {
+   "rank": 5,
+   "id": "42013368",
+   "source": "MED",
+   "pmid": "42013368",
+   "pmcid": "PMC13099019",
+   "doi": "10.2196/68293",
+   "first_publication_date": "2026-04-21",
+   "title": "Factors Influencing the Use of Mobile Apps and Wearables: Pre- and Post-Surgery Quality of Life Assessment Study.",
+   "authors": "Gosetto L, Cockcroft E, Berrocal A, Nouri A, Porter I, Tessitore E, Bijlenga P, Kassam AA, Evans J, M Valderas J, Wac K.",
+   "journal": "JMIR formative research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundQuality of life (QoL) is an important surgical outcome, commonly assessed through self-reports, and has the potential to be enhanced by objective information from personal technologies such as smartphone apps and wearables. Understanding patients' perspectives on this application of personal technologies is scarce.ObjectiveThis study aimed to identify operational aspects of smartphone- and wearable-based assessments, as well as human and operational factors that may influence the acceptability of already owned (mostly smartphone) or new (mostly wearable) technologies by patients for pre- and post-surgery QoL assessments.MethodsThrough purposive sampling, 41 patients from 3 health care centers in Switzerland, the United States, and the United Kingdom, who were undergoing or scheduled for surgery for degenerative cervical myelopathy (DCM), liver transplantation, or total hip replacement, were interviewed about their perceptions of QoL, current use of smartphones, health apps, and wearables for self-management and their views on using these technologies to assess QoL before and after surgery.ResultsAcross the 3 studies (n=41), most (n=36) patients reported improved QoL after surgery, mainly due to reduced pain and fatigue and regained autonomy, while a few patients with DCM reported no change (n=2) or worsening (n=1). Patients were generally comfortable using smartphones and tablets, but few (n=4) used them for health management. Wearables were perceived differently across groups: they were well accepted in transplant@US, moderately in hip@UK, and least in myelopathy@CH. Many patients with DCM found wearables \"useless,\" believing they added little to their self-awareness or recovery and could not replace human clinical judgment. Others expressed concerns about privacy, complexity, notifications, and battery life, while some acknowledged their motivational value when the data were clearly interpreted. Despite varying acceptance levels, most participants said they would consider using such devices if they contributed to research or improved care.ConclusionsGiven a mostly negative attitude of patients toward wearables, we discuss the use of smartphone-based automated logging of physical functioning (sleep and physical activity) instead. Such logging may be less accurate than a dedicated wearable, but it may be accurate enough to measure their pre- and post-surgery physical functioning changes. Additionally, a smartphone has the advantage of being already well integrated into the daily life of patients from the perspective of its functionality and the patients' routines, contrary to wearable devices, which would have been provided to the patients in the context of pre- and post-surgery clinical care and require additional attention for their continuous wear, charging, and data synchronization, among others."
+  },
+  {
+   "rank": 6,
+   "id": "42828214",
+   "source": "MED",
+   "pmid": "42828214",
+   "pmcid": "PMC13631927",
+   "doi": "10.1093/nc/niag054",
+   "first_publication_date": "2026-08-24",
+   "title": "Gradedness of gist perception with scenes depends on concurrent task load: awareness under high load is more graded due to noise suppression.",
+   "authors": "Kumar S, Srinivasan N.",
+   "journal": "Neuroscience of consciousness",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "There is growing evidence that the visual awareness of objects is graded. However, it is unclear whether scene perception is graded and whether attention modulates that gradedness. We addressed these questions in two experiments in which participants identified scenes as indoor or outdoor. Attention was manipulated using a concurrent perceptual load (low or high) task. Scene contrast (Experiment 1) and noise added to scenes (Experiment 2) were manipulated in the study. Participants made a four-point perceptual awareness scale (PAS) rating following the scene judgment. The data on the accuracy of the scene judgments and the mean PAS ratings as a function of contrast (Experiment 1) or noise (Experiment 2) were fitted with a four-parameter logistic function. We predicted lesser PAS rating function slopes in the high-load condition, indicating more graded awareness. Scene perception was better (lower threshold) under low load across experiments indicating more attentional resources benefit scene processing. Crucially, PAS function slopes were shallower under high load in both experiments, indicating that awareness becomes more graded when attentional resources are limited. In Experiment 2, accuracy at high noise levels (the lower asymptote) was higher in the high load condition suggesting that high load suppresses external noise during scene perception. The difference in the lower asymptote for accuracy between load conditions correlated negatively with the difference in PAS ratings slope linking noise suppression to the gradedness effect. Together, these findings support a graded account of visual awareness and demonstrate that attention modulates scene perception clarity by suppressing external noise."
+  },
+  {
+   "rank": 7,
+   "id": "39584525",
+   "source": "MED",
+   "pmid": "39584525",
+   "pmcid": "PMC12569107",
+   "doi": "10.1177/15248380241297332",
+   "first_publication_date": "2024-11-25",
+   "title": "Campus Sexual Assault: A Qualitative Review and Meta-Synthesis of Students' Experiences of Campus Prevention Initiatives.",
+   "authors": "McQueen K, Murphy-Oikonen J, Hamm J.",
+   "journal": "Trauma, violence & abuse",
+   "pub_types": [
+    "Systematic Review",
+    "review-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Sexual violence is a worldwide issue that impacts many individuals, often with serious and long-lasting effects. Students represent a high-risk group for sexual violence on campuses. As a result, various government initiatives have called for Universities and Colleges to develop policies and sexual violence prevention initiatives. However, much of the focus has been on the effect of the initiatives with less attention to students' experiences. Thus, the purpose of this qualitative systematic review with meta-synthesis was to critically appraise and synthesize the evidence (e.g., themes) regarding students' experiences with campus sexual assault prevention initiatives. The Preferred Reporting Items for Systematic Reviews and Meta-Analysis and Joanna Briggs Institute guidelines were followed. Six databases were systematically searched, which yielded 2,090 papers. This resulted in 21 published papers meeting the inclusion criteria of a primary, English language, qualitative or mixed-methods study exploring students' experiences of campus sexual assault initiatives. Two researchers independently extracted data and completed quality appraisals. The meta-synthesis identified four synthesized findings: (1) dichotomous perceptions of sexual violence initiatives, (2) the need for enhanced awareness, (3) modality matters, and (4) intended and unintended outcomes. Overall, these findings suggest that students valued the attention to the issue of sexual violence; however, they identified concerns that warrant attention. This has important implications for program and policy development as having programs that meet students' needs may result in enhanced student engagement which may, in turn, lead to increased efficacy. Moreover, initiatives that may result in harm to survivors require careful consideration."
+  },
+  {
+   "rank": 8,
+   "id": "41255219",
+   "source": "MED",
+   "pmid": "41255219",
+   "pmcid": "PMC12627965",
+   "doi": "10.1002/nop2.70367",
+   "first_publication_date": "2025-11-01",
+   "title": "Health History, Health Condition, Health Behaviours and Health-Seeking Behaviours of Middle-Aged Women Living in a Modern Rural Community: A Survey Research.",
+   "authors": "Arpanantikul M, Unsanit P, Lumdubwong A, Rujiwatthanakorn D, Sakunhongsophon S, Pornsinsiriruck S, Boonrin P, Choeychom S.",
+   "journal": "Nursing open",
+   "pub_types": [
+    "research-article",
+    "Journal Article",
+    "Observational Study"
+   ],
+   "open_access": "Y",
+   "abstract": "ObjectiveThis study aimed to determine the health history, health condition, health behaviours and health-seeking behaviours of middle-aged women living in a modern rural Thai community.DesignA cross-sectional survey study was employed.MethodsData were collected from 342 women aged 35-60 years using comprehensive questionnaires containing various dimensions related to health. Descriptive statistics were used to analyse data.ResultsIt showed that most women had a parental history of diabetes (62.83%), followed by high blood pressure (55.50%). For health conditions, it revealed that 56.73% had weight gain, 26.32% had high blood pressure and 21.05% had high cholesterol. Regarding health behaviours, 48.54% did not exercise, 62.87% liked sweet food and 44.44% liked oily food. For health-seeking behaviour during illness, 40.06% went to Subdistrict Health Promoting Hospitals. When having mental problems, 43.86% consulted trusted family members, and 39.77% solved problems by themselves.ConclusionsThis study provides important information about the situation of health problems found in middle-aged women, which are non-communicable diseases such as obesity, high blood pressure and diabetes, which require continuous care. Moreover, some poor health behaviours need to be changed to prevent and reduce complications that may occur in the future.ImplicationsUnderstanding middle-aged women's health problems and behaviours can help community health nurses pay attention to and plan nursing care and activities, including developing interventions for health promotion and disease prevention to reduce women's non-communicable disease problems in the future.ImpactThis study revealed that non-communicable diseases are prevalent in middle-aged women. Strategies to promote health should be continued in conjunction with raising awareness among women to care for their health regularly.Reporting methodThis study followed the reporting guidelines of Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) for cross-sectional studies.Patient and public contributionThe contribution of participants was shown in the data collection."
+  },
+  {
+   "rank": 9,
+   "id": "40009467",
+   "source": "MED",
+   "pmid": "40009467",
+   "pmcid": null,
+   "doi": "10.7547/23-217",
+   "first_publication_date": "2025-11-01",
+   "title": "Work-Related Musculoskeletal Disorders Among Podiatric Physicians in Singapore.",
+   "authors": "Tan ML, Heng M, Ker PTS, Lim JW.",
+   "journal": "Journal of the American Podiatric Medical Association",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundWork-related musculoskeletal disorders have become a leading occupational health problem in health-care professionals. This study aims to bring attention to a growing problem by reporting the prevalence, risk factors, and workplace interventions related to work-related musculoskeletal disorders in Singapore podiatric physicians.MethodsAll of the podiatric physicians in Singapore were eligible to participate. A self-administered survey that included questions from the Nordic Musculoskeletal Questionnaire was used to understand their work practice and musculoskeletal symptoms. Data on workplace interventions for prevention were also collected.ResultsA 50% response rate was achieved (n = 50); 72% of respondents attributed their musculoskeletal pain to work, of which 40% had pain affecting activities of daily living and almost half recorded consequent absenteeism. The neck, wrist/hand, and lower back were most frequently affected. For one-third, pain onset occurred early in professional practice. Ergonomic factors were the predominant cause. Women (odds ratio, 6.7; 95% confidence interval, 1.0-42.8) and those with self-reported poor posture during clinical work (odds ratio, 6.7; 95% confidence interval, 1.0-45.1) were possible risk factors. Trends of higher body mass index, long hours of continuous clinical work, and higher mental stress at work were also observed. Only 26% of respondents reported workplace interventions. Work organization and ergonomic interventions were thought to be most effective.ConclusionsWork-related musculoskeletal disorders are a significant health problem in podiatric physicians that cause disability and impact work through absenteeism. Occupational health practitioners should raise awareness of work-related risks and engage the profession to identify mitigating strategies."
+  },
+  {
+   "rank": 10,
+   "id": "41067772",
+   "source": "MED",
+   "pmid": "41067772",
+   "pmcid": "PMC12517005",
+   "doi": "10.1136/bmjopen-2025-102523",
+   "first_publication_date": "2025-10-09",
+   "title": "Qualitative study of stakeholder perspectives on dementia policy implementation in Macao: progress, challenges and future directions.",
+   "authors": "Zheng Y, Tang PK, Zhao Y, Song M, Hu H, Ung COL.",
+   "journal": "BMJ open",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "ObjectivesTo better inform dementia management, it is important to understand how individuals experience, interpret and respond to dementia policy in real life. This study aimed to explore key stakeholders' perspectives on the critical determinants of effective implementation of the first dementia policy in Macao, and the impact of policy implementation on dementia care.DesignSemi-structured individual interviews were conducted in person with key stakeholders identified in earlier phases of the research. The participants were encouraged to share their opinions on the significance and objectives of the dementia policy, the changes in dementia care related to the launch of the policy, and how to better implement the policy for continuous improvement.SettingInterviews were conducted face-to-face at the participants' office or at a location of their choice.ParticipantsIndividuals involved in the planning, establishing, leading, managing, operating, implementing, participating in, using and/or advocating for dementia policies and/or comprehensive dementia care models.ResultsAll participants perceived the Macao Dementia Policy as a landmark initiative that raised public awareness, fostered inter-professional collaboration and established a foundational service network. At the service level, they reported improvements in the accessibility of diagnostic pathways and greater attention to caregiver support. Nevertheless, implementation challenges remained, including fragmented service information, inadequate non-pharmacological treatment options and limited service capacity. Participants recommended that future actions should focus on optimising long-term policy planning and resource allocation, strengthening the direct support network for caregivers, and enhancing public education and research-informed innovation.ConclusionMacao's experience suggests that the successful implementation of a dementia policy requires not only the establishment of formal service structures but also a concerted focus on optimising resource allocation and strengthening caregiver support. To further enhance the policy's effectiveness, future efforts should prioritise designing and assessing targeted interventions."
+  },
+  {
+   "rank": 11,
+   "id": "39831694",
+   "source": "MED",
+   "pmid": "39831694",
+   "pmcid": null,
+   "doi": "10.1097/xcs.0000000000001290",
+   "first_publication_date": "2025-07-16",
+   "title": "Sabbaticals for Academic Surgeons: A Forgotten Enterprise in Faculty Development?",
+   "authors": "Carlson ER, Britt LD.",
+   "journal": "Journal of the American College of Surgeons",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Academic sabbaticals are exceptional opportunities for surgeons; however, their impact on effective faculty development in academic medical centers is underestimated, their completion by surgeons is infrequent, and reports of their outcomes and benefits to their institution are lacking in the international literature. Financial pressures in academic medical centers result in surgical faculty concentrating their efforts on reimbursable clinical care, often at the expense of their continuous professional development. It is the purpose of this article to review the structure, purpose, outcomes, financial challenges, and unintended consequences associated with academic sabbaticals while suggesting that these endeavors are largely forgotten enterprises in the faculty development arena. We therefore recommend that increased awareness of these opportunities be brought to the attention of surgical faculty."
+  },
+  {
+   "rank": 12,
+   "id": "40642143",
+   "source": "MED",
+   "pmid": "40642143",
+   "pmcid": "PMC12238868",
+   "doi": "10.30476/jamp.2024.104560.2068",
+   "first_publication_date": "2025-07-01",
+   "title": "Intelligent Assessment Systems in Medical Education: A Systematic Review.",
+   "authors": "Alizadeh M, Jafar Sameri M.",
+   "journal": "Journal of advances in medical education & professionalism",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "IntroductionUsing Intelligent Assessment Systems (IAS) in medical education has garnered attention as an advanced tool for enhancing educational processes and student evaluation. These systems leverage advanced algorithms to rapidly assess the students' performance and learning progress. This systematic review aimed to examine the role and impact of Intelligent Assessment Systems in improving educational processes, academic evaluation, and learning progress in medical students compared to traditional assessment methods.MethodsThis study was conducted using the PRISMA framework for reporting systematic review articles. Databases such as Embase, PubMed, ProQuest, Web of Science, and Scopus up to March 2024 were reviewed using relevant keywords. Eligible articles were selected and evaluated based on predefined inclusion and exclusion criteria.ResultsOut of 2741 articles identified, 10 studies were selected for final analysis. This systematic review analyzed 10 studies, demonstrating that interactive assessment systems (IAS) can enhance learning outcomes by up to 40% in certain settings. The findings emphasized the benefits of immediate feedback and reduced instructor workload. The significant role of IAS in enhancing student performance, providing immediate feedback and reducing the workload of instructors was indicated. These systems, through the use of machine learning algorithms and virtual reality simulators, enable more accurate and comprehensive assessment of students' clinical and cognitive skills.ConclusionIntelligent Assessment Systems (IAS) significantly improve educational processes and academic evaluation by providing immediate and precise feedback, enhancing student self-efficacy and self-awareness and reducing the training time and costs. The successful implementation of IAS requires careful system design, user training, and continuous technical support. Further studies are recommended to explore the advantages and challenges of these systems and to optimize their implementation in medical education. The long-term impacts of IAS and scalability across educational contexts require further studies. In conclusion, IAS offers transformative potential in medical education globally, provided that challenges are addressed."
+  },
+  {
+   "rank": 13,
+   "id": "40618136",
+   "source": "MED",
+   "pmid": "40618136",
+   "pmcid": "PMC12229017",
+   "doi": "10.1186/s13643-025-02831-1",
+   "first_publication_date": "2025-07-05",
+   "title": "How to quantify between-study heterogeneity in single-arm evidence synthesis?-It depends!",
+   "authors": "Iaquinto S, Bührer L, Feldmann M, Latal B, Held U.",
+   "journal": "Systematic reviews",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundRandom-effects meta-analysis models account for between-study heterogeneity by estimating and incorporating the heterogeneity variance parameter τ2 . Numerous estimators for τ2 have been proposed, but no widely accepted guidance exists on when to best use which heterogeneity variance estimator. Especially in the context of single-arm observational studies, studies with unique challenges, such as outcome measure variability, sparse data, and high methodological heterogeneity, systematic evaluations and comparisons of the various heterogeneity variance estimators are lacking. This study investigates the advantages of different heterogeneity variance estimators for typical single-arm meta-analysis scenarios through comprehensive simulations in a neutral comparison study setting and with an empirical application in pediatrics.MethodsWe compared seven heterogeneity variance estimators for random-effects meta-analysis. The estimators were selected on the basis of methodological diversity and availability and were evaluated both empirically and in a simulation study. We simulated typical meta-analysis scenarios for continuous and binary outcomes in a single-arm meta-analysis setting. Through a non-systematic literature review, we assessed which heterogeneity variance estimators are currently used in high-ranked journals, and evaluated their reporting quality.ResultsOur simulation study showed that all evaluated heterogeneity estimators were imprecise and often failed to estimate the true amount of heterogeneity. The estimation is particularly imprecise in situations where the meta-analysis contained few studies or when the binary outcomes included rare events. Moreover, we discovered that most heterogeneity variance estimators produce zero heterogeneity estimates under all simulated conditions, even though heterogeneity was present. The estimated overall effect was found to be relatively robust to different estimators in the empirical application and in our simulation study. However, the prediction intervals for the overall effect vary depending on the estimator chosen.ConclusionsAlthough different heterogeneity variance estimators produce substantially different heterogeneity variance estimates, too little attention is paid to selecting a suitable heterogeneity variance estimator in single-arm evidence synthesis. Based on our literature review, we conclude that the awareness of different heterogeneity variance estimators and their properties needs to be strengthened in practice. Given that it is rarely appropriate to rely on a single heterogeneity variance estimator, we suggest careful consideration and evaluation of a wider range of plausible estimators in a sensitivity analysis before drawing a final conclusion about the meta-analysis results."
+  },
+  {
+   "rank": 14,
+   "id": "40565502",
+   "source": "MED",
+   "pmid": "40565502",
+   "pmcid": "PMC12193646",
+   "doi": "10.3390/healthcare13121475",
+   "first_publication_date": "2025-06-19",
+   "title": "From Perception to Action: Air Pollution Awareness and Behavioral Adjustments in Pregnant Women in Serbia.",
+   "authors": "Susa A, Zekovic M, Davidovic D, Paunovic K, Kujundzic V, Mihajlovic S, Bogdanovic L.",
+   "journal": "Healthcare (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "In regions with sustained air pollution, the adoption of protective health behaviors is critical, particularly among pregnant women-a population marked by physiological vulnerability and heightened receptivity to preventive guidance. Understanding and supporting patient-driven behavioral change requires attention to individual perception and awareness, which are shaped by socio-economic and spatial factors, as well as access to credible information. Objectives: This study investigates how pregnant women in Serbia perceive air quality, identifies determinants that influence these perceptions, and evaluates the extent and nature of behavioral adaptations undertaken to mitigate exposure-related risks. Methods: A cross-sectional survey was conducted among 279 pregnant women using a structured, researcher-administered questionnaire. Collected data included demographic and psychosocial variables, air quality perceptions, self-reported health effects, and behavioral responses. Residential proximity to land-use attributes was assessed using GIS-based spatial analysis. Results: Most participants perceived air quality as poor (68.8%), primarily informed by unofficial sources such as mobile applications and social media. Living close to continuous urban fabric (OR = 0.180, 95% CI: 0.059-0.558, p = 0.003) and water (OR = 0.306, 95% CI: 0.127-0.738, p = 0.008) was associated with poorer perceptions, while proximity to forests (OR = 2.938, 95% CI: 1.323-6.525, p = 0.008) correlated with more favorable assessments. Despite prevalent concern, around half of respondents (50.2%) reported no behavioral modifications. Importantly, none had received guidance from healthcare professionals on the topic. Conclusions: These findings highlight critical gaps in environmental health literacy and provider engagement. Integrating tailored communication and behavioral support in existing prenatal counseling could advance health-related quality of life in this vulnerable population."
+  },
+  {
+   "rank": 15,
+   "id": "40487265",
+   "source": "MED",
+   "pmid": "40487265",
+   "pmcid": "PMC12142341",
+   "doi": "10.1016/j.lanwpc.2025.101576",
+   "first_publication_date": "2025-05-13",
+   "title": "Ongoing epidemic of scarlet fever in Shanghai and the emergence of M1&lt;sub&gt;UK&lt;/sub&gt; lineage group A &lt;i&gt;Streptococcus&lt;/i&gt;: a 14-year surveillance study across the COVID-19 pandemic period.",
+   "authors": "Cai J, Zhou X, Zhang C, Jiang Y, Lv P, Zhou Y, Chen M, Zeng M.",
+   "journal": "The Lancet regional health. Western Pacific",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundThe surge of group A Streptococcus (GAS) infections in regional countries warranted attention in the post-COVID-19 era. The resurgence of notifiable scarlet fever in China has been a public health issue since 2011. We conducted a consecutive 14-year surveillance study to analyse dynamic epidemiological profiles of scarlet fever from the perspective of epidemic trend and molecular evolution of GAS strains.MethodsFrom 2011 to 2024, epidemiological data on notifiable cases of scarlet fever and 3370 GAS isolates from children with scarlet fever were analysed. Incidence rates were calculated as the mean rate per 100,000 population with 95% CIs. Whole genome sequencing was performed on 332 emm12 and 248 emm1 isolates.FindingsFrom 2011 to 2024, a total of 25,539 cases of scarlet fever were reported in Shanghai. The mean incidence declined from 17.1/100,000 population (95%CI 9.7-24.3, pre-COVID-19 period) to 4.8/100,000 population (2.0-10.1, post-COVID-19 period). Children aged 4-9 years represented 85.6% of cases. Sixteen emm types were identified with predominance of emm12 (66.4%) and emm1 (29.8%). The annual proportions of emm12 and emm1 alternatively fluctuated with a cycle of six years. GAS isolates displayed >90% resistance rate to erythromycin, clindamycin, and tetracycline. The distribution of emm types, antimicrobial resistance rates and profiles, and differences in superantigen genes carried by the emm12 and emm1 isolates were similar in the pre- and post-COVID-19 periods. Phylogenetic analysis indicated 96.7% of emm12 isolates belonged to Clade II, harbouring ICE-emm12 and ΦHKU.vir. Among the emm1 isolates, the proportions of the ST1274 isolates increased from 10.5% (pre-COVID-19 period) to 73.7% (post-COVID-19 period). Four novel M1UK isolates were found in Shanghai, with distinctive characteristics of presence of speC and ssa.InterpretationPersistent and periodic predominance of emm12 and emm1 types was responsible for the annual epidemic of scarlet fever in Shanghai. A marked decline in the incidence of scarlet fever in the last 5 years in Shanghai may be associated with enhanced type-specific immunity among the susceptible population and enhanced infection control measures, awareness, and actions in child institutions in the post-COVID-19 era. The emergence of the M1UK isolates with some distinctive characteristics and ST1274 lineage warrants further attention and continuous surveillance in China.FundingShanghai municipal three-year action plan for strengthening the construction of the public health system 2023-2025 (GWVI-2.1.2); Research project of Shanghai Minhang District Health Commission (2024MW45)."
+  },
+  {
+   "rank": 16,
+   "id": "40394471",
+   "source": "MED",
+   "pmid": "40394471",
+   "pmcid": "PMC12090377",
+   "doi": "10.1186/s12889-025-22539-0",
+   "first_publication_date": "2025-05-20",
+   "title": "A nationwide comparative analysis of the prevalance and determinants of non-communicable diseases risk factors between Jordanian and displaced Syrian populations.",
+   "authors": "Abdo N, Almasaid S, Alhemedi AJ, Alghzawi AA, Ata AA, Albojuq I.",
+   "journal": "BMC public health",
+   "pub_types": [
+    "Comparative Study",
+    "research-article",
+    "Journal Article",
+    "Observational Study"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundFocusing on noncommunicable diseases in displaced Syrian populations and comparing it Jordanians can improve health outcomes, reduce suffering, and better integrate displaced individuals into broader public health strategies.MethodsA secondary analysis was conducted to STEPs 2019 Survey done in Jordan, the total sample size was 5713 participants, where a multistage stratified clustered sampling was used for both Jordanian and Syrian aged between 18 and 69 years. The Chi-square test was used to compare character variables while T-test was used for continuous variables. A multivariate stepwise logistic regression model was used to identify the risk factors for hypertension (HTN), diabetes (DM), and hyperlipidemia (HLD). Significance was set to 0.05 and was adjusted for multiple comparisons.ResultsJordanians exhibit high rates of smoking (35.4%), and high salt intake (30.2%), while Syrians have lower vegetable intake (8%), were more involved in vigorous work-related activity (18.7%), and using active transportation (75.2%). HTN (50.2%), DM (12.3%) and HLD (84.5%) prevalence was higher in Jordanians. However, the HTN prevalence in displaced Syrians (46.6%) in this analysis was much higher than most recent reported numbers in literature prior to the war and DM (7.2%) was lower. HTN, DM, HLD and metabolic syndrome exhibited strong associations with demographic and lifestyle factors, where older age groups were more predisposed (p ConclusionThe disease burden in Syrian refugees in Jordan is related to barriers to healthcare access and economic stability, lower awareness when to seek medical attention, and increasing stress levels, which all leads to disruption in the longitudinal care needed for NCD management. This necessitates tailored interventions to ensure accessibility and responsiveness to healthcare needs as the blame is not on displacement by itself given its effect cannot be proven."
+  },
+  {
+   "rank": 17,
+   "id": "41030529",
+   "source": "MED",
+   "pmid": "41030529",
+   "pmcid": "PMC12477386",
+   "doi": "10.1177/20543581251380541",
+   "first_publication_date": "2025-09-28",
+   "title": "Prevalence and Severity of Pruritus in Patients on Hemodialysis: A Cross-Sectional Study.",
+   "authors": "McMaster HG, Holden RM, Scott M, Iliescu E.",
+   "journal": "Canadian journal of kidney health and disease",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundChronic kidney disease-associated pruritus (CKD-aP) is a distressing symptom associated with dialysis that negatively affects quality of life. Chronic kidney disease-associated pruritus is under-recognized due to a lack of clinical attention and symptom screening.ObjectiveAssess the prevalence and severity of CKD-aP in a regional hemodialysis program.DesignCross-sectional study.Setting and patientsAll outpatients receiving in-center hemodialysis at the Kingston Health Sciences Centre.MeasurementsPatients were asked to complete the Worst Itching Intensity Numerical Scale (WI-NRS), with moderate-to-severe pruritus classified as a score greater than 4, and the Self-Assessed Disease Severity (SADS) scale. Demographic, laboratory, and prescription data were extracted from patient medical records and patients were asked to self-report over-the-counter pruritus medications.MethodsComparative differences in demographics and laboratory values at the time of determining the WI-NRS and SADS were analyzed using a Fisher's exact test with Bonferroni correction for categorical variables and the Mann-Whitney U test for continuous variables. Correlations between select variables and the WI-NRS score were assessed using linear regression analyses. Adjusted associations with moderate-to-severe CKD-aP were examined using odds ratios with corresponding 95% confidence intervals.ResultsA total of 307 patients completed the WI-NRS and 302 completed the SADS. Fifty-seven percent of patients reported some degree of CKD-aP, 31% of patients had moderate-to-severe CKD-aP, and 9% reported interference with quality of life (patients in SADS group C). Patients with moderate-to-severe CKD-aP and those significantly affected by CKD-aP (patients in SADS group C) were more likely to use over-the-counter treatments than patients with mild or no CKD-aP (P P P = .01). A higher body mass index (BMI) was associated with a greater WI-NRS score (R 2 = 0.030, P = .003). Of patients with moderate-to-severe CKD-aP, 24% reported significant debilitation (patients in SADS group C). Finally, adjusted associations were found between moderate-to-severe CKD-aP and the following variables: BMI (OR = 1.05, 95% CI = 1.01-1.09, P = .02); serum phosphate (OR = 2.12, 95% CI = 1.15-4.00, P = .02); being a current smoker (OR = 0.46, 95% CI = 0.20-0.95, P = .04); and a serum phosphate greater than or equal to 1.8 mmol/L (OR = 2.33, 95% CI = 1.29-4.26, P = .01).LimitationsThere were some missing data points in patient records and patients' reports of over-the-counter medications. We could not assess whether patients actually had CKD-aP, or pruritus due to other causes. Treatment adherence could not be measured as well as whether treatments were specifically prescribed for CKD-aP. Moreover, our electronic medical record system could not capture prescribed topicals or pruritus-related medical conditions. Finally, this study did not assess physician's awareness of CKD-aP.ConclusionsA substantial proportion of patients with moderate-to-severe CKD-aP reported a significant impact on quality of life. Elevated PTH, phosphate, and BMI were associated with CKD-aP. In addition, almost half of patients with moderate-to-severe CKD-aP did not use any treatments. There exist gaps and opportunities for care for patients with CKD-aP. Increased clinical attention to CKD-aP could identify those who may benefit from care interventions that improve quality of life."
+  },
+  {
+   "rank": 18,
+   "id": "39875957",
+   "source": "MED",
+   "pmid": "39875957",
+   "pmcid": "PMC11773872",
+   "doi": "10.1186/s12913-024-12139-w",
+   "first_publication_date": "2025-01-28",
+   "title": "Barriers to and facilitators of healthcare professionals in ADR reporting in a tertiary care hospital in India.",
+   "authors": "N IO, Kp S, R JR, Mg R.",
+   "journal": "BMC health services research",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "IntroductionSeveral adverse drug reactions (ADRs) go unreported within a healthcare setting despite the risks they cause. We therefore decided to conduct this study in order to recognize the obstacles that hinder the healthcare professionals (HCPs) in a tertiary care hospital in Kattankulathur, Tamil Nadu from reporting ADRs and what strategies ought to be implemented.MethodsWe carried out a cross-sectional study among the HCPs such as doctors, pharmacists and nurses within our institution. A pre-validated questionnaire was used to collect data on the socio-demographics, barriers and facilitators in reporting ADR. A 2 weeks timeline was given to the HCPs to fill the questionnaire forms. Out of the 107 forms distributed, we received 80 of them that were duly filled. Data was analyzed using IBM SPSS version 26.ResultsOut of the 80 HCPs, only 22 of them had reported any ADRs in their career. 52% of our HCPs reported the lack of understanding of ADR reporting mechanism as their main hindrance. Additionally, 25 (31%) of the HCPs stated that reporting ADRs is time consuming. 18 (22%) of them reported a fear of legal liability. 13 (16%) of them stated that the reporting from is complicated and 29 (36%) stated a lack of motivation as the reason for not reporting ADR. Majority of our HCPs 76 (95%) recommended the need for continuous medical education and training as the best strategy to improve ADR reporting.ConclusionBarriers such as time constraints, workload pressures and competing priorities often hinder HCPs from dedicating adequate attention to ADR reporting. The inclusion of topics related to ADR reporting in the curriculum (i.e. clinical pharmacology) and increased awareness from the ADR monitoring centre were seen to be significant facilitators to enhance ADR reporting among health care practitioners."
+  },
+  {
+   "rank": 19,
+   "id": "39532655",
+   "source": "MED",
+   "pmid": "39532655",
+   "pmcid": null,
+   "doi": "10.1016/j.cortex.2024.10.008",
+   "first_publication_date": "2024-11-05",
+   "title": "The effect of covert visual attention on pupil size during perceptual fading.",
+   "authors": "Vilotijević A, Mathôt S.",
+   "journal": "Cortex; a journal devoted to the study of the nervous system and behavior",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Pupil size is modulated by various cognitive factors such as attention, working memory, mental imagery, and subjective perception. Previous studies examining cognitive effects on pupil size mainly focused on inducing or enhancing a subjective experience of brightness or darkness (for example by asking participants to attend to/memorize a bright or dark stimulus), and then showing that this affects pupil size. Surprisingly, the inverse has never been done; that is, it is still unknown what happens when a subjective experience of brightness or darkness is eliminated or strongly reduced even though bright or dark stimuli are physically present. Here, we aim to answer this question by using perceptual fading, a phenomenon where a visual stimulus gradually fades from visual awareness despite its continuous presentation. The study contains two blocks: Fading and Non-Fading. In the Fading block, participants were presented with black and white patches with a fuzzy outline that were presented at the same location throughout the block, thus inducing strong perceptual fading. In contrast, in the Non-Fading block, the patches switched sides on each trial, thus preventing perceptual fading. Participants covertly attended to one of the two patches, indicated by a cue, and reported the offset of one of a set of circles that are displayed on top. We hypothesized that pupil size will be modulated by covert visual attention in the Non-Fading block, but that this effect will not (or to a lesser extent) arise in the Fading block. We found that covert visual attention to bright/dark does modulate pupil size even during perceptual fading (Fading block), but to a lesser extent than when the perceptual experience of brightness/darkness is preserved (Non-Fading block). This implies that pupil size is always modulated by covert attention, but that the effect decreases as subjective experience of brightness or darkness decreases. In broader terms, this suggests that cognitive modulations of pupil size reflect a mixture of high-level and lower-level visual processing."
+  },
+  {
+   "rank": 20,
+   "id": "39502836",
+   "source": "MED",
+   "pmid": "39502836",
+   "pmcid": "PMC11535751",
+   "doi": "10.1016/j.mmcr.2024.100676",
+   "first_publication_date": "2024-10-18",
+   "title": "First case of fungal peritonitis caused by <i>Neosartorya hiratsukae</i> in China.",
+   "authors": "Yuan K, Wang X, Ling Y, Long Y, Chen Z, Zhao Y.",
+   "journal": "Medical mycology case reports",
+   "pub_types": [
+    "Journal Article",
+    "Case Reports",
+    "case-report"
+   ],
+   "open_access": "Y",
+   "abstract": "Fungal peritonitis, an uncommon complication in continuous ambulatory peritoneal dialysis (CAPD), has recently garnered increased attention due to its incidence and potential mortality. To the best of our knowledge, this is the first confirmed case of Neosartorya hiratsukae (N. hiratsukae) causing CAPD-related peritonitis in a patient with chronic nephrotic syndrome in Guangzhou, China. After prompt removal of the peritoneal catheter and active antifungal therapy, no clinical manifestations of peritonitis were observed. Our report underscores the importance of enhancing clinical awareness regarding N. hiratsukae and ensuring timely diagnosis in cases of CAPD-related fungal peritonitis."
+  },
+  {
+   "rank": 21,
+   "id": "39500487",
+   "source": "MED",
+   "pmid": "39500487",
+   "pmcid": "PMC11576592",
+   "doi": "10.2196/59014",
+   "first_publication_date": "2024-11-05",
+   "title": "Influence of Distraction Factors on Performance in Laparoscopic Surgery in Immersive Virtual Reality: Study Protocol of a Cross-Over Trial in Medical Students and Residents-DisLapVR.",
+   "authors": "Hanke L, Schulte R, Boedecker C, Huettl F, Saalfeld P, Chheang V, Wessels M, von Castell C, Hecht H, Hansen C, Lang H, Huber T.",
+   "journal": "JMIR research protocols",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundWorking in an operating room (OR) is physically and mentally challenging: the operation itself demands the surgeon's full attention, while time and cost efficiency constraints, daily planning, and emergency care interfere with the procedure. Thus, multitasking becomes an integral surgical competence. This study aims to examine the effect of disruptions during surgery in a highly immersive virtual reality (IVR) operation environment combined with a virtual reality (VR) laparoscopy simulator.ObjectiveThis study aims to identify distractions in the OR and their importance in the clinical setting.MethodsAn IVR environment was created using a high-resolution, stereoscopic 360° video of the OR. Different distractions were identified, classified as auditory, visual, or audio-visual, and recorded accordingly. The surrounding was combined with a VR laparoscopic simulator. Participants-medical students and surgical residents-received proficiency-based training in basic laparoscopic skills and were blinded to the aim of the experiment. Following a cross-over design, each participant received a unique order of virtual distraction factors while performing tasks on the laparoscopic simulator. During the experiment, subjective passing of time, stress, heart rate, and visually induced motion sickness are recorded. After the experiment, validated questionnaires for usability, immersion, and stress were completed, as well as subjective evaluation of the distractions. The questionnaires used included the system usability scale, Self-Assessment Manikin score, National Aeronautics and Space Administration Task Load Index, and the immersion rating scale as described by Nichols. Performance in the laparoscopic tasks in relation to distractions will be evaluated by the Wilcoxon test and ANOVA for continuous variables. Subgroup analyses in regard to age, gender, and expertise (medical students vs surgical residents) are planned.ResultsThe described trial started in August 2022 and is ongoing. By July 2024, a total of 30 medical students and 9 surgeons have completed the study.ConclusionsWe present a study protocol aiming to identify the impact of different disruptions in OR during laparoscopic training in IVR. Hence, it may lead to an improved awareness of distractions and facilitate accommodations toward an improved work environment. Prior research leads to the hypothesis that the performance of a more experienced surgeon is less impacted by distractions than the performance of inexperienced surgeons and medical students. Furthermore, we investigate which type of distraction has the largest impact on performance. With this knowledge, specific multitasking training can be devised, which may be particularly useful in medical education, for which VR might play a leading role. Additionally, workplace surroundings in the OR can be optimized with this knowledge.Trial registrationGerman Registry for Clinical Trials DRKS00030033; https://drks.de/search/en/trial/DRKS00030033.International registered report identifier (irrid)DERR1-10.2196/59014."
+  },
+  {
+   "rank": 22,
+   "id": "39258991",
+   "source": "MED",
+   "pmid": "39258991",
+   "pmcid": null,
+   "doi": "10.1097/mnh.0000000000001026",
+   "first_publication_date": "2024-09-11",
+   "title": "Social and humanitarian issues in nephrology and hypertension.",
+   "authors": "Abdellatif DA.",
+   "journal": "Current opinion in nephrology and hypertension",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Purpose of reviewChronic kidney disease and hypertension, two widely prevalent conditions worldwide, present an urgent and pressing need for immediate action. The review describes how social conditions and humanitarian issues can influence hypertension and kidney disease.Recent findingsUndoubtedly, social determinants of health (SDoH) are key influencers in the development of many noncommunicable diseases, including hypertension and kidney disease. Healthcare professionals, including public health workers, play a crucial role in addressing these issues. Poverty, low education level, poor nutrition, housing, exposure to environmental hazards, and stress-related disorders are all factors that can be addressed, either directly or indirectly, through improved awareness and access to proper healthcare services. Besides personal factors, national, regional, or global factors cause serious apprehension. Disasters, whether natural or man-made, can lead to significant aftermaths on the healthy person and certainly on kidney disease and hypertensive patients. A Global Overview Report, 2023 turned out to be one of the most violent years since the end of the Cold War. In 2023, 59 state-based conflicts were recorded in 34 countries, the highest number registered since 1946. The wars in Ukraine and Gaza were the primary contributors with a significant impact on the kidney population, especially people living on dialysis and transplantation patients. They also yielded many refugees or displaced persons with ongoing suffering.SummaryIt is crucial to recognize that social and humanitarian conditions can quickly exacerbate the health of vulnerable populations, particularly those with noncommunicable diseases like hypertension and chronic kidney disease. These patients, who often require continuous follow-up, especially those on dialysis, are particularly vulnerable during difficult times. Their lives depend on uninterrupted access to dialysis or transplantation medications, making the need for special attention and care more pressing. Further research and advocacy are needed to address these issues and ensure the health and well being of these populations."
+  },
+  {
+   "rank": 23,
+   "id": "39386802",
+   "source": "MED",
+   "pmid": "39386802",
+   "pmcid": "PMC11462378",
+   "doi": "10.1016/j.heliyon.2024.e38240",
+   "first_publication_date": "2024-09-21",
+   "title": "An ISM-MICMAC-based study for identification and classification of preventable safety risk mitigation factors in mass housing projects following a BIM approach.",
+   "authors": "Maleki Toulabi AM, Pourrostam T, Aminnejad B.",
+   "journal": "Heliyon",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Construction operation is among the most high-risk sectors in terms of work-related accident, making it highly challenging to surveil the safety of such projects. In construction projects, failure to observe safety represents a leading cause of fatal accidents, not to mention the losses incurred by such accidents to national assets of the country. Accordingly, recent decades have witnessed the emergence of modern techniques for improving the occupational safety of construction projects. The main purpose of the present research is to identify and classify different preventable risk mitigation factors in mass housing projects following a building information modeling (BIM) approach. The research methodology included interviews with relevant experts and elites followed by analysis of the data on the 12 identified-as-significant variables for mitigating the preventable risk factors in mass house construction projects by means of the inferential - structural modeling (ISM) in MICMAC software. In order to explore the relationships among and succession of different criteria and further classify them at different levels, ISM was implemented, with the MICMAC software used to analyze the direct and indirect influences, develop influence/dependence maps, and judge about the role of each criterion. Findings of the present research showed that the mutual relations (H3), the reward system (H6), the reporting system (H7), and the supervisors' supervision (H8) are autonomous variables and hence impose the smallest contributions to the system. Accordingly, they can be eliminated from the model though their effects may not be completely ignored. On the other hand, the employees' empowering (H4), the safety management system (H5), the teamwork (H9), the self-efficiency (H10), and the knowledge and awareness (H11) were identified as the linkage variables that fill in the gap between the safety and occupational accident reduction in the mass house construction projects. Further, the continuous improvement (H2) and the safe behavior (H12) were identified as dependent variables, implying that they exhibit the weakest influence coupled with highest dependence on any change in the conditions of the system. Last but not the least, the management commitment (H1) was identified as the only dependent variable which deserves lots of attention. This information can be helpful to safety decision-makers, end users, research organizations, and academic institutes who work to reduce the preventable risk factors in mass house construction projects."
+  },
+  {
+   "rank": 24,
+   "id": "39350706",
+   "source": "MED",
+   "pmid": "39350706",
+   "pmcid": null,
+   "doi": "10.6224/jn.202410_71(5).04",
+   "first_publication_date": "2024-10-01",
+   "title": "[Utilizing ChatGPT in Systematic Reviews and Meta-Analyses].",
+   "authors": "Chen HM.",
+   "journal": "Hu li za zhi The journal of nursing",
+   "pub_types": [
+    "Journal Article",
+    "English Abstract"
+   ],
+   "open_access": "N",
+   "abstract": "The current uses, potential risks, and practical recommendations for using chat generative pre-trained transformers (ChatGPT) in systematic reviews (SRs) and meta-analyses (MAs) are reviewed in this article. The findings of prior research suggest that, for tasks such as literature screening and information extraction, ChatGPT can match or exceed the performance of human experts. However, for complex tasks such as risk of bias assessment, its performance remains significantly limited, underscoring the critical role of human expertise. The use of ChatGPT as an adjunct tool in SRs and MAs requires careful planning and the implementation of strict quality control and validation mechanisms to mitigate potential errors such as those arising from artificial intelligence (AI) 'hallucinations'. This paper also provides specific recommendations for optimizing human-AI collaboration in SRs and MAs. Assessing the specific context of each task and implementing the most appropriate strategies are critical when using ChatGPT in support of research goals. Furthermore, transparency regarding the use of ChatGPT in research reports is essential to maintaining research integrity. Close attention to ethical norms, including issues of privacy, bias, and fairness, is also imperative. Finally, from a human-centered perspective, this paper emphasizes the importance of researchers cultivating continuous self-iteration, prompt engineering skills, critical thinking, cross-disciplinary collaboration, and ethical awareness skills with the goals of: continuously optimizing human-AI collaboration models within reasonable and compliant norms, enhancing the complex-task performance of AI tools such as ChatGPT, and, ultimately, achieving greater efficiency through technological innovative while upholding scientific rigor."
+  },
+  {
+   "rank": 25,
+   "id": "38966193",
+   "source": "MED",
+   "pmid": "38966193",
+   "pmcid": "PMC11220475",
+   "doi": "10.5765/jkacap.240006",
+   "first_publication_date": "2024-07-01",
+   "title": "Study on Awareness of Suicide and Suicide Prevention Among Community Youth.",
+   "authors": "Kim J, Ko YH, Yoon HK, Chae B, Han R, Chae N, Lee J.",
+   "journal": "Journal of the Korean Academy of Child and Adolescent Psychiatry",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "ObjectivesSouth Korea has the highest suicide rate among Organisation for Economic Co-operation and Development countries; there is an increasing trend in suicide attempts among middle and high school students. Various factors contribute to the risk of suicide among adolescents, and the perception of suicide prevention has emerged as a significant factor. This study aimed to investigate the association between emotional and behavioral difficulties among middle and high school students and their perceptions of suicide prevention and to explore differences in suicide perception according to age.MethodsA survey was conducted among community middle and high school students, including 530 participants, between 2020 and 2021. Emotional and behavioral difficulties were assessed using the Strengths and Difficulties Questionnaire-Korean version, and participants were asked to complete a questionnaire on the importance and possibility of suicide prevention. A correlation test and analysis of variance were used to examine the relationships between the variables, and suicide awareness was compared according to age.ResultsThe participants who displayed higher strength or lower difficulty were more likely to respond positively to suicide prevention measures. They also exhibited high strength and low difficulty levels, thus agreeing with the importance of suicide prevention. Regarding age-related perceptions of suicide, adults aged 20-29 years reported the lowest probability of suicide prevention.ConclusionSuicide perceptions influence the incidence of suicide. Therefore, active societal engagement through suicide prevention campaigns and related education is essential to improve such perceptions. Continuous attention and support are required to address this issue."
+  },
+  {
+   "rank": 26,
+   "id": "38238501",
+   "source": "MED",
+   "pmid": "38238501",
+   "pmcid": null,
+   "doi": "10.3758/s13421-023-01513-4",
+   "first_publication_date": "2024-01-18",
+   "title": "Effects of task type on spontaneous alternations of attentional states.",
+   "authors": "Weber M, Cunningham E, Beck DM, Sadaghiani S, Wang RF.",
+   "journal": "Memory & cognition",
+   "pub_types": [
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Mind wandering is a common occurrence that can have serious consequences, but estimating when mind wandering occurs is a challenging research question. Previous research has shown that during meditation, people may spontaneously alternate between task-oriented and mind-wandering states without awareness (Zukosky & Wang, 2021, Cognition, 212, Article 104689). However, under what conditions such alternations occur is not clear. The present study examined the effects of task type on spontaneous alternations between task focus and mind wandering. In addition to a meditation task, participants performed either a scene-categorization-based CPT or a visual detection task while attentional orientation was assessed via self-monitoring and intermittent probes. The three tasks differ in the extent of their reliance on continuous monitoring (less required in the detection than meditation and CPT tasks) and attentional orientation (oriented internally in meditation task and externally in CPT and detection tasks). To overcome prior methodological challenges, we applied a technique designed to detect spontaneous alternations between focused and mind-wandering states without awareness, based on how the proportion of \"focused\" responses/ratings to intermittent probes changes during a focus-to-mind-wandering interval (i.e., the period from one self-report of mind wandering to the subsequent self-report). Our results showed that the proportion of \"focused\" responses to intermittent probes remained constant with increasing interprobe interval during meditation (consistent with previous work), but declined significantly in the CPT and detection tasks. These findings support the hypothesis that spontaneous alternations of attentional states without self-awareness occur during tasks emphasizing internally but not externally oriented attention."
+  },
+  {
+   "rank": 27,
+   "id": "37710399",
+   "source": "MED",
+   "pmid": "37710399",
+   "pmcid": null,
+   "doi": "10.1111/jan.15863",
+   "first_publication_date": "2023-09-14",
+   "title": "The relationship between sensory impairment and home care client's received care time-A cross-sectional study.",
+   "authors": "Pesonen T, Corneliusson L, Väisänen V, Siira H, Edgren J, Elo S, Sinervo T.",
+   "journal": "Journal of advanced nursing",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "AimThe aim of this study was to explore the relationship between sensory impairment and home care client's received care time.DesignA cross-sectional multi-source study.MethodsData from a self-reported staff survey on care time allocation were merged with registry data from the Resident Assessment Instrument registry (n = 1477). The data were collected during 1 week from 17 home care units in Finland in October 2021. The relationship between sensory impairment and clients received care time was examined using linear regression analyses.ResultsThe linear regression analyses showed that having vision impairment alone increased care time, while dual sensory impairment resulted in decreased received care time. Hearing impairment alone was not statistically significantly associated with care time.ConclusionThe holistic care need of home care clients with dual sensory impairment may not be adequate. To ensure equality and the individually tailored care of clients, further attention must be paid to clients with sensory impairments, especially those with dual sensory impairment. Furthermore, the competence of home care workers to encounter and communicate with clients with sensory impairment must be developed to support the holistic care.Implications for the patient careThe sensory impairments of home care clients must be identified in time and considered in care planning and encountering clients.ImpactAs there is a risk that clients with dual sensory impairment are not able to fully express themselves, it is imperative that further attention is paid to clients with sensory impairments, to better understand and support this vulnerable group. Increased awareness and continuous education are needed to better identify and support home care clients with sensory impairment.Reporting methodThe study adheres to the STROBE reporting guidelines.Patient or public contributionNo patient or public contribution."
+  },
+  {
+   "rank": 28,
+   "id": "38363926",
+   "source": "MED",
+   "pmid": "38363926",
+   "pmcid": "PMC10869059",
+   "doi": "10.1097/md.0000000000037077",
+   "first_publication_date": "2024-02-01",
+   "title": "Exploring patient delay in people with chronic kidney disease: A cross-sectional study.",
+   "authors": "Zheng J, Guo AH, Xue BW, Wu SY, Wang XX, Jing YJ, Zhai LJ, Liu R.",
+   "journal": "Medicine",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "To examine the factors that contribute to patient delays among individuals with chronic kidney disease (CKD) and offer insights to help develop specific risk management strategies. Conducted as a cross-sectional study between September 2021 and April 2022, this study used a convenient sampling technique to select 245 individuals diagnosed with CKD from a Grade 3 Class A hospital located in Shanxi Province. These individuals were chosen as the subjects of the study. The research participants underwent an investigation using several assessment tools, including socio-demographic information questionnaire, medical behavior, the social support rating scale, the simplified coping style questionnaire, and the General Self-efficacy Scale. The study revealed that 35.4% of individuals with CKD experienced patient delay (the interval between the initial onset and the time of seeking medical attention being longer than or equal to 3 months). Through a multifactorial logistic regression analysis, it was determined that various factors independently influenced patient delay in patients with CKD. These factors included the level of knowledge about CKD, educational level, frequency of attending physical examinations, severity of initial symptoms, social support, self-efficacy, positive coping, and negative coping. Numerous factors contribute to the Patient Delay. To effectively enhance awareness and coping abilities regarding CKD in high-risk groups, it is essential to implement focused and continuous interventions throughout the medical seeking process."
+  },
+  {
+   "rank": 29,
+   "id": "39497900",
+   "source": "MED",
+   "pmid": "39497900",
+   "pmcid": "PMC11532179",
+   "doi": "10.3389/fpsyt.2024.1431604",
+   "first_publication_date": "2024-10-21",
+   "title": "Medication adherence among Japanese patients with developmental disabilities: a survey study.",
+   "authors": "Ando M, Taki I, Yamazaki T, Hida N.",
+   "journal": "Frontiers in psychiatry",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "AimDevelopmental disabilities (DD) often persist into adulthood, necessitating early and continuous treatment. Although pharmacotherapy is a viable treatment option, managing medication can be challenging. Prior research has not explored medication use among patients with DD in Japan. Thus, this study aimed to identify the medication challenges faced by these patients.MethodsA questionnaire survey was administered to 200 outpatients to collect data on the number of prescribed medications, the timing of administration, the frequency of missed doses, and the use of medication notebooks. This was a prospective observational study without intervention and a random sampling.ResultsThe survey revealed that 57.0% of the participants were non-adherent to their medication regimen. Specifically, medication non-adherence rates were 44.7% among individuals with autism spectrum disorder (ASD), 86.9% for those with attention deficit hyperactivity disorder (ADHD), and 30.4% for patients with comorbid ASD and ADHD. Despite 48.3% of the participants taking measures to prevent forgetting their medication, 65.3% of them still failed to take their medication as prescribed. The possession rate of medication record books was 96.0%.ConclusionThe study indicates that the frequency of medication non-adherence among patients with DD in Japan mirrors that in other countries. Patients who reported taking preventative measures still experienced high rates of non-adherence, suggesting limited effectiveness of these strategies. It is essential to develop more effective measures to improve adherence, enhance disease awareness, and increase understanding of medication instructions. The high possession rate of medication record books suggests they could play a significant role in managing DD, and their use is expected to increase in the future."
+  },
+  {
+   "rank": 30,
+   "id": "38774565",
+   "source": "MED",
+   "pmid": "38774565",
+   "pmcid": "PMC11108048",
+   "doi": "10.3332/ecancer.2024.1698",
+   "first_publication_date": "2024-04-18",
+   "title": "Improving access to cancer clinical research in Brazil: recent advances and new opportunities. Expert opinions from the 4th CURA meeting, São Paulo, 2023.",
+   "authors": "Resende H, Arai RJ, Barrios CH, Schwyter F, Teich NLS, Gomes A, Dallari AB, Bonilha LAS, Souza CMA, Francisco FR, Munhoz RR, Werutsky G, Madi M, Fernandes P, Figueiredo JM, Fedozzi F, Arruda L, Aguiar VQ, Melo AC.",
+   "journal": "Ecancermedicalscience",
+   "pub_types": [
+    "other",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Clinical research is the cornerstone of improvements in cancer care. However, it has been conducted predominantly in high-income countries with few clinical trials available in Brazil and other low-and-middle-income countries (LMIC). Of note, less than one-third of registered clinical trials addressing some of the most commonly diagnosed cancers (breast, lung and cervical) recruited patients from LMIC in the last years. The Institute Project CURA promoted the fourth CURA meeting, discussing barriers to cancer clinical research and proposing potential solutions. A meeting was held in São Paulo, Brazil, in June 2023 with representatives from different sectors: Brazilian Health Regulatory Agency (Anvisa), National Commission of Ethics in Research (CONEP), non-governmental organisations, such as the Latin American Cooperative Oncology Group, the Brazilian Society of Clinical Oncology (SBOC), Contract Research Organisations, pharmaceutical companies and investigators. A total of 16 experts pointed out achievements as shortening the time of regulatory processes involving Anvisa and CONEP, development of staff training programs, maintenance of the National Program of Oncological Attention (PRONON), and the foundation of qualified centres in North and Northeast Brazilian regions. Participants also highlighted the need to be more competitive in the field, which requires optimising ongoing policies and implementing new strategies as decentralisation of clinical research centres, public awareness campaigns, community-centered approaches, collaborations and partnerships, expansion of physicians-directed policies, exploring the role of the steering committee. Active and consistent reporting of the initiatives might help to propagate ongoing advances, increasing Brazilian participation in clinical cancer research. Engagement of all players is crucial to maintain continuous progress with further improvements in critical points including regulatory timelines and increments in qualified human resources which aligned with new educational initiatives focused on physicians and the general population will expand access to cancer clinical trials in Brazil."
+  },
+  {
+   "rank": 31,
+   "id": "37327656",
+   "source": "MED",
+   "pmid": "37327656",
+   "pmcid": null,
+   "doi": "10.1016/j.jbtep.2023.101889",
+   "first_publication_date": "2023-06-12",
+   "title": "Exploring intrusions without awareness: A preliminary study of the characteristics and influences of meta-awareness failures.",
+   "authors": "Sun YJ, Takarangi MKT, Nixon RDV.",
+   "journal": "Journal of behavior therapy and experimental psychiatry",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Background and objectivesResearch shows that people can lack meta-awareness (i.e., being explicitly aware) of their trauma-related thoughts, which impacts our understanding of re-experiencing symptoms, a key symptom type in posttraumatic stress disorder (PTSD), assessed through self-report. This preliminarily study explored differences between (meta-)aware and unaware intrusion characteristics to understand why some intrusions are not immediately apparent to individuals.MethodsTrauma-exposed participants (N = 78) were recruited from online crowd-sourcing platforms to complete an online meta-awareness task. During a reading task, participants were intermittently probed to index the occurrence of unreported (i.e., unaware) trauma-related intrusions. Once participants indicated trauma-related intrusions were present, they then completed a questionnaire that indexed intrusion characteristics.ResultsAlthough unaware intrusions did occur in a subset of the sample, there were no fundamental differences between aware and unaware intrusions in terms of modality of experience (imagery vs. non-imagery), meaningfulness, accessibility, or other characteristics (e.g., vividness).LimitationsThere was potential for lower participant engagement and attention due to the online delivery of the meta-awareness task, which may have minimized meta-awareness failure. Future research could consider using a continuous measure to index levels of meta-awareness. In addition, recruiting clinical samples (e.g., individuals with PTSD) who typically experience multiple daily intrusions would allow generalizability of the current findings to be tested.ConclusionsOur findings from this preliminary study suggest that unaware and aware intrusions show more commonality than not in their characteristics, with further research required to improve our understanding of the mechanisms leading to meta-awareness or lack of in PTSD."
+  },
+  {
+   "rank": 32,
+   "id": "37213091",
+   "source": "MED",
+   "pmid": "37213091",
+   "pmcid": null,
+   "doi": "10.23736/s2724-6329.23.04805-2",
+   "first_publication_date": "2023-05-22",
+   "title": "Patient's perception of hygiene in the dental practice after COVID-19.",
+   "authors": "Ludovichetti FS, Zerman N, Stellini E, Zambon G, Mazzoleni S, Zuccon A.",
+   "journal": "Minerva dental and oral science",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundThe COVID-19 pandemic has significantly impacted various sectors, including healthcare. The dental profession has faced unprecedented challenges in providing care while minimizing the risk of transmission. The aim of the study is to assess how patient's perception of hygiene in the dental field has changed since COVID-19. In detail, it has been analyzed patient's attention to hygiene and how in his opinion the dental practice changed its procedures after COVID-19.MethodsA questionnaire consisting of 10 multiple-choice questions was submitted to 509 subjects, patients of several dental practices. These were related to: 1) change in their perception of hygiene after COVID-19; 2) how the office they usually go to has changed and what hygiene standards it has adopted; 3) vaccination against COVID-19. Descriptive analyses of all variables in the questionnaire were performed, and statistical analyses between variables were carried out by Chi-square test and Fisher's Exact Test.ResultsMost patients (75.8%) stated that they had changed their perception of hygiene after the onset of COVID-19. They reported that they had experienced changes in hygiene procedures at their usual dental practice (70.7%), including rinsing with chlorhexidine mouthwash, continuous air and water disinfection and use of personal protective equipment (PPE). Vaccination of practitioners was considered to be important by 73.5% of participants.ConclusionsIn the present study it was analyzed how emergence of the new Coronavirus has considerably changed the perception of patient hygiene within the dental practice. As a result of the awareness implemented to prevent virus transmission, patients are paying more attention to hygiene and preventive procedures to protect their health."
+  },
+  {
+   "rank": 33,
+   "id": "37255412",
+   "source": "MED",
+   "pmid": "37255412",
+   "pmcid": null,
+   "doi": "10.1099/jmm.0.001687",
+   "first_publication_date": "2023-05-01",
+   "title": "Expansion of hantavirus infection during the SARS-CoV-2 pandemic in Bosnia and Herzegovina, 2021.",
+   "authors": "Salimović-Bešić I, Hrvo S, Zahirović E, Đulić EJ, Baljić R, Dedeić-Ljubović A.",
+   "journal": "Journal of medical microbiology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Introduction. Bosnia and Herzegovina (B and H) has been recognized for decades as a country with a high risk of diseases caused by hantaviruses.Gap statement. The severe acute respiratory syndrome-associated coronavirus 2 (SARS-CoV-2) pandemic has diverted attention from many pathogens, including hantavirus.Aim. To provide a socio-demographic, temporal, geographical and clinical laboratory overview of the expansion of hantavirus infection cases during the SARS-CoV-2 pandemic in B and H in 2021.Methodology. The RecomLine HantaPlus IgG, IgM immuno-line assay (Mikrogen, Germany) was used to detect IgG and IgM antibodies to hantavirus serotypes in human sera from clinically suspected cases.Results. In 2021 (January-October), the number of confirmed cases of hantavirus infection and tested persons (92/140; 65,71 %) was higher than in the previous 2 years, 2020 (2/20; 10.00 %) and 2019 (10/61; 16.39 %). Most of the infected persons were men (84/92; 91.30 %). Hantavirus infections were recorded from January to October 2021, and the peak was reached in July (25/92; 27.17 %). Six out of 10 cantons in the Federation of Bosnia and Herzegovina (FB and H) were affected, namely Sarajevo Canton, Central Bosnia Canton, Neretva Canton, Zenica-Doboj Canton, Posavina Canton and Bosnian-Podrinje Canton Goražde, in descending order. Of the 38/92 (41.30 %) infected patients with characteristic clinical manifestations of haemorrhagic fever, including renal (mainly) or pulmonary syndrome, 32/92 (34.78 %) were hospitalized in the Clinical Center of the University of Sarajevo. Two cases were detected with dual infection, hantavirus (Puumala) with Leptospira in one and SARS-CoV-2 in another case. The largest number of infections was related to Puumala (PUUV) (83/92; 90.22 %), while the rest of the infections were caused by the hantavirus Dobrava serotype (DOBV).Conclusion. The reported infections were probably caused by exposure of individuals to at-risk areas inhabited by contaminated rodents as natural reservoirs of hantavirus. As a highly endemic area, B and H requires continuous monitoring and increased awareness of this problem."
+  },
+  {
+   "rank": 34,
+   "id": "37095495",
+   "source": "MED",
+   "pmid": "37095495",
+   "pmcid": "PMC10123973",
+   "doi": "10.1186/s12913-023-09334-6",
+   "first_publication_date": "2023-04-24",
+   "title": "How do healthcare providers use national audit data for improvement?",
+   "authors": "Antonacci G, Whitney J, Harris M, Reed JE.",
+   "journal": "BMC health services research",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundSubstantial resources are invested by Health Departments worldwide in introducing National Clinical Audits (NCAs). Yet, there is variable evidence on the NCAs' effectiveness and little is known on factors underlying the successful use of NCAs to improve local practice. This study will focus on a single NCA (the National Audit of Inpatient Falls -NAIF 2017) to explore: (i) participants' perspectives on the NCA reports, local feedback characteristics and actions undertaken following the feedback underpinning the effective use of the NCA feedback to improve local practice; (ii) reported changes in local practice following the NCA feedback in England and Wales.MethodsFront-line staff perspectives were gathered through interviews. An inductive qualitative approach was used. Eighteen participants were purposefully sampled from 7 of the 85 participating hospitals in England and Wales. Analysis was guided by constant comparative techniques.ResultsRegarding the NAIF annual report, interviewees valued performance benchmarking with other hospitals, the use of visual representations and the inclusion of case studies and recommendations. Participants stated that feedback should target front-line healthcare professionals, be straightforward and focused, and be delivered through an encouraging and honest discussion. Interviewees highlighted the value of using other relevant data sources alongside NAIF feedback and the importance of continuous data monitoring. Participants reported that engagement of front-line staff in the NAIF and following improvement activities was critical. Leadership, ownership, management support and communication at different organisational levels were perceived as enablers, while staffing level and turnover, and poor quality improvement (QI) skills, were perceived as barriers to improvement. Reported changes in practice included increased awareness and attention to patient safety issues and greater involvement of patients and staff in falls prevention activities.ConclusionsThere is scope to improve the use of NCAs by front-line staff. NCAs should not be seen as isolated interventions but should be fully embedded and integrated into the QI strategic and operational plans of NHS trusts. The use of NCAs could be optimised, but knowledge of them is poor and distributed unevenly across different disciplines. More research is needed to provide guidance on key elements to consider throughout the whole improvement process at different organisational levels."
+  },
+  {
+   "rank": 35,
+   "id": "36640586",
+   "source": "MED",
+   "pmid": "36640586",
+   "pmcid": null,
+   "doi": "10.1016/j.concog.2022.103463",
+   "first_publication_date": "2023-01-12",
+   "title": "Self-caught methodologies for measuring mind wandering with meta-awareness: A systematic review.",
+   "authors": "Chu MT, Marks E, Smith CL, Chadwick P.",
+   "journal": "Consciousness and cognition",
+   "pub_types": [
+    "Systematic Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Mind wandering, also known as task-unrelated thought, refers to the drift of attention from a focal task or train of thought. Because self-caught measures of mind wandering require participants to spontaneously indicate when they notice their attention drift, self-caught methodologies provide a way to measure mind wandering with meta-awareness. Given the proposed role of meta-awareness in mental health and psychological interventions, an overview of existing self-caught methodologies would help clinicians and researchers make informed decisions when choosing or adapting a mind wandering or meta-awareness measure. This systematic review included 39 studies after 790 studies were assessed for eligibility. All studies operationalised mind wandering as instances of attention drift from a primary task. Three types of primary task were identified: (1) tasks adapted from computerised continuous performance tests (CPT) of sustained attention, (2) tasks involving focusing on the breath or a stream of aural beats, akin to in-vivo mindfulness meditation, (3) tasks involving an everyday life activity such as reading. Although data on mind wandering without meta-awareness (e.g., measured with probe-caught measures) was also obtained in many studies, such data was not always used in conjunction with self-caught mind wandering data to determine level of mind wandering meta-awareness. Few studies reported both reliability and validity of the measures used. This review shows that considerable methodological heterogeneity exists in the literature. Methodological variants of self-caught mind wandering methodologies are documented and examined, and suggestions for future research and clinical work are suggested."
+  },
+  {
+   "rank": 36,
+   "id": "37483648",
+   "source": "MED",
+   "pmid": "37483648",
+   "pmcid": "PMC10358287",
+   "doi": "10.3389/pore.2023.1611115",
+   "first_publication_date": "2023-07-06",
+   "title": "Vitiligo-like lesions induced by cyclin-dependent kinase 4/6 inhibitor Palbociclib: a case report and literature review.",
+   "authors": "Gao S, Wei G, Hao Y.",
+   "journal": "Pathology oncology research : POR",
+   "pub_types": [
+    "Review",
+    "Journal Article",
+    "Case Reports",
+    "case-report"
+   ],
+   "open_access": "Y",
+   "abstract": "Endocrine therapy has played an essential role in hormone receptor-positive (HR+), human epidermal growth factor receptor 2-negative (HER2-) breast cancer. With the continuous development of endocrine targeting drugs, especially the emergence of selective cyclin-dependent kinase (CDK4/6) inhibitors, the overall survival time in patients with HR+HER2- advanced breast cancer has been greatly improved. Their adverse reactions also need more attention in response to the climbing number of CDK4/6 inhibitors. The common side effects of CDK4/6 inhibitors were hematological toxicity, diarrhea, and liver function damage. Skin toxicity related to CDK4/6 inhibitors was rare. We describe herein our preliminary observation of one HR+HER2- advanced metastatic breast cancer patient diagnosed with vitiligo-like lesions after 10 months of taking Palbociclib. Hoping to share our experience to increase the clinician awareness of this unusual adverse and contribute to the information in the literature."
+  },
+  {
+   "rank": 37,
+   "id": "36756087",
+   "source": "MED",
+   "pmid": "36756087",
+   "pmcid": "PMC9901440",
+   "doi": "10.2147/jmdh.s376623",
+   "first_publication_date": "2023-02-02",
+   "title": "Level of Patient Safety Culture Awareness Among Healthcare Workers.",
+   "authors": "Albaalharith T, A'aqoulah A.",
+   "journal": "Journal of multidisciplinary healthcare",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundPatient safety is a major concern at all levels of the healthcare system, with the primary objective of reducing patient hazards when providing care. The Kingdom of Saudi Arabia has made great progress in improving the health of its citizens over the last few decades, particularly in terms of patient safety. Currently, many health-care institutions throughout the world are interested in implementing a safety culture to lower the risk of harm and the number of accidents associated with routine treatment.PurposeThis study aims to assess the level of awareness concerning patient safety culture among health-care providers in hospitals in Riyadh, Saudi Arabia.MethodsThis is a descriptive cross-sectional quantitative study that used the Agency for Healthcare Research and Quality's patient safety culture questionnaire. The survey was conducted online and was completed by 204 health-care employees from three distinct hospital settings in Riyadh, Saudi Arabia: government, quasi-government, and private hospitals.ResultsThe results showed a low level of patient safety culture awareness among health-care workers in the 10 dimensions of patient safety. The mean score was 2.24 out of 5 and the standard deviation was 0.50. Participants assigned the highest mean scores to Organisational Learning and Continuous Improvement (Mean: 2.48, Standard deviation: 0.66), Communication About Error (Mean: 2.44, Standard deviation: 0.70), and Teamwork (Mean: 2.40, Standard deviation: 0.64). Interestingly, the scores for hospital supervisor and managerial positions are significant compared to other clinical positions (p-value = 0.047). Moreover, the patient safety rating and the number of reported events were significantly related to the overall level of awareness (p-value p-value = 0.042), respectively.ConclusionIn Riyadh hospitals, overall patient safety awareness is low, necessitating adequate attention and effective solutions such as encouraging reporting errors, implementing safety huddles and leadership walkarounds, and establishing a patient safety culture. Health-care executives and managers are encouraged to develop safety cultures that promote trust and justice, allowing employees to be candid about their mistakes and failings without retaliation. Moreover, this safety culture should be defined by the following qualities: a just culture, a learning culture, and a reporting culture."
+  },
+  {
+   "rank": 38,
+   "id": "36343103",
+   "source": "MED",
+   "pmid": "36343103",
+   "pmcid": "PMC9673231",
+   "doi": "10.1161/circulationaha.121.058911",
+   "first_publication_date": "2022-11-07",
+   "title": "Consumer-Led Screening for Atrial Fibrillation: Frontier Review of the AF-SCREEN International Collaboration.",
+   "authors": "Brandes A, Stavrakis S, Freedman B, Antoniou S, Boriani G, Camm AJ, Chow CK, Ding E, Engdahl J, Gibson MM, Golovchiner G, Glotzer T, Guo Y, Healey JS, Hills MT, Johnson L, Lip GYH, Lobban T, Macfarlane PW, Marcus GM, McManus DD, Neubeck L, Orchard J, Perez MV, Schnabel RB, Smyth B, Steinhubl S, Turakhia MP.",
+   "journal": "Circulation",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The technological evolution and widespread availability of wearables and handheld ECG devices capable of screening for atrial fibrillation (AF), and their promotion directly to consumers, has focused attention of health care professionals and patient organizations on consumer-led AF screening. In this Frontiers review, members of the AF-SCREEN International Collaboration provide a critical appraisal of this rapidly evolving field to increase awareness of the complexities and uncertainties surrounding consumer-led AF screening. Although there are numerous commercially available devices directly marketed to consumers for AF monitoring and identification of unrecognized AF, health care professional-led randomized controlled studies using multiple ECG recordings or continuous ECG monitoring to detect AF have failed to demonstrate a significant reduction in stroke. Although it remains uncertain if consumer-led AF screening reduces stroke, it could increase early diagnosis of AF and facilitate an integrated approach, including appropriate anticoagulation, rate or rhythm management, and risk factor modification to reduce complications. Companies marketing AF screening devices should report the accuracy and performance of their products in high- and low-risk populations and avoid claims about clinical outcomes unless improvement is demonstrated in randomized clinical trials. Generally, the diagnostic yield of AF screening increases with the number, duration, and temporal dispersion of screening sessions, but the prognostic importance may be less than for AF detected by single-time point screening, which is largely permanent, persistent, or high-burden paroxysmal AF. Consumer-initiated ECG recordings suggesting possible AF always require confirmation by a health care professional experienced in ECG reading, whereas suspicion of AF on the basis of photoplethysmography must be confirmed with an ECG. Consumer-led AF screening is unlikely to be cost-effective for stroke prevention in the predominantly young, early adopters of this technology. Studies in older people at higher stroke risk are required to demonstrate both effectiveness and cost-effectiveness. The direct interaction between companies and consumers creates new regulatory gaps in relation to data privacy and the registration of consumer apps and devices. Although several barriers for optimal use of consumer-led screening exist, results of large, ongoing trials, powered to detect clinical outcomes, are required before health care professionals should support widespread adoption of consumer-led AF screening."
+  },
+  {
+   "rank": 39,
+   "id": "34807708",
+   "source": "MED",
+   "pmid": "34807708",
+   "pmcid": null,
+   "doi": "10.1037/xge0001156",
+   "first_publication_date": "2021-11-22",
+   "title": "Two faces of perceptual awareness during the attentional blink: Gradual and discrete.",
+   "authors": "Karabay A, Wilhelm SA, de Jong J, Wang J, Martens S, Akyürek EG.",
+   "journal": "Journal of experimental psychology. General",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "In a series of experiments, the nature of perceptual awareness during the attentional blink was investigated. Previous work has considered the attentional blink as a discrete, all-or-none phenomenon, indicative of general access to conscious awareness. Using continuous report measures in combination with mixture modeling, the outcomes showed that perceptual awareness during the attentional blink can be a gradual phenomenon. Awareness was not exclusively discrete, but also exhibited a gradual characteristic whenever the spatial extent of attention induced by the first target spanned more than a single location. Under these circumstances, mental representations of blinked targets were impoverished, but did approach the actual identities of the targets. Conversely, when the focus of attention covered only a single location, there was no evidence for any partial knowledge of blinked targets. These two different faces of awareness during the attentional blink challenge current theories of both awareness and temporal attention, which cannot explain the existence of gradual awareness of targets during the attentional blink. To account for the current outcomes, an adaptive gating model is proposed that casts awareness on a continuum between gradual and discrete, rather than as being of either single kind. (PsycInfo Database Record (c) 2022 APA, all rights reserved)."
+  },
+  {
+   "rank": 40,
+   "id": "34378320",
+   "source": "MED",
+   "pmid": "34378320",
+   "pmcid": null,
+   "doi": "10.1111/1742-6723.13836",
+   "first_publication_date": "2021-08-10",
+   "title": "Effects of mobile mindfulness on emergency department work stress: A randomised controlled trial.",
+   "authors": "Xu HG, Eley R, Kynoch K, Tuckett A.",
+   "journal": "Emergency medicine Australasia : EMA",
+   "pub_types": [
+    "Randomized Controlled Trial",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveHigh-occupational stress among ED staff has a detrimental impact on both staff wellness and patient care. The objective of the study is to determine whether 4 weeks of smartphone app-guided mindfulness practice reduces stress levels of ED staff.MethodsThis two-arm randomised controlled trial was conducted in two Australian EDs in 2019-2020. Eligible participants were randomly assigned (1:1) to either an App group or a Wait to Treat group to practice daily 10 min app-guided mindfulness for 4 weeks. Online surveys were collected for both groups at three time periods: before (T1), immediately after (T2) and 3 months after cessation (T3). Then the Wait to Treat group received the same intervention, followed by surveys immediately after the intervention (T4) and 3 months later (T5). Primary outcome was measured using the Perceived Stress Scale. Secondary outcomes were measured using the Maslach Burnout Inventory (three subscales: emotional exhaustion, depersonalisation and personal accomplishment), Mindfulness Attention Awareness Scale and Warwick-Edinburgh Mental Well-being Scale. Both intention-to-treat and per-protocol analysis were performed. Repeated measurement data were analysed by the linear mixed model.ResultsOf 148 enrolled participants 98 completed all the surveys, but only half (48%) reported continuous use of the app. Based on the results of the intention-to-treat analysis, there was a statistically significant improvement of perceived stress levels (F = 15.70, P ConclusionResults of the present study demonstrate that brief mindfulness training via innovative digital technology had a small positive effect in improving emergency staff stress, burnout, mindfulness and wellbeing."
+  }
+ ]
+}

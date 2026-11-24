@@ -1,0 +1,44 @@
+{
+ "prediction": "orch-mass-time",
+ "query": "TITLE_ABS:conscious* AND (TITLE_ABS:latency OR TITLE_ABS:\"onset time\" OR TITLE_ABS:\"time to awareness\") AND (TITLE_ABS:\"cortical area\" OR TITLE_ABS:\"extent of activation\" OR TITLE_ABS:\"neural mass\" OR TITLE_ABS:\"number of neurons\") AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 2,
+ "results": [
+  {
+   "rank": 1,
+   "id": "21209190",
+   "source": "MED",
+   "pmid": "21209190",
+   "pmcid": "PMC3079255",
+   "doi": "10.1523/jneurosci.3620-10.2011",
+   "first_publication_date": "2011-01-01",
+   "title": "Role of prefrontal cortex in conscious visual perception.",
+   "authors": "Libedinsky C, Livingstone M.",
+   "journal": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Early visual areas are required for conscious visual perception, but recent evidence suggests that parts of the frontal lobe might also play a key role. However, it remains unclear whether frontal brain areas are involved in visual perception or merely use information from visual regions to drive behavior. One such frontal cortical area, the frontal-eye field (FEF), has been shown to have fast visual responses, thought to reflect mostly low-level visual processing, and delayed responses that correlate with perceptual reports. The latter observation is consistent with the idea that FEF uses visual information from (slower) visual regions to guide behavior. Here we ask whether fast visual responses in FEF also carry information related to the perceptual state of animals. We recorded single-cell activity in two monkeys trained to report the presence or absence of a visual target under conditions that evoke the illusory disappearance of the target (motion-induced blindness). We found that fast responses in FEF strongly correlated with the perceptual report of the animal. It is unlikely that short-latency perceptually correlated activity is inherited from early visual areas, since response latencies in FEF are shorter than those of visual areas with perceptually correlated activity. These results suggest that frontal brain areas are involved in generating the contents of visual perception."
+  },
+  {
+   "rank": 2,
+   "id": "8528890",
+   "source": "MED",
+   "pmid": "8528890",
+   "pmcid": null,
+   "doi": "10.1159/000097095",
+   "first_publication_date": "1994-01-01",
+   "title": "Blockade by interleukin-1-alpha of nitricoxidergic control of luteinizing hormone-releasing hormone release in vivo and in vitro.",
+   "authors": "Rettori V, Belova N, Kamat A, Lyson K, Gimeno M, McCann SM.",
+   "journal": "Neuroimmunomodulation",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Nitric oxide (NO) synthase (NOS), the enzyme that converts arginine into citrulline plus NO, the latter a highly active free radical, occurs in a large number of neurons in the brain, including certain neurons in the hypothalamus. Our previous experiments have shown that norepinephrine (NE)-induced prostaglandin E2 (PGE2) release from medial basal hypothalamic explants (MBH) is mediated by NO. Because release of luteinizing hormone (LH)-releasing hormone (LHRH) is also driven by NE and PGE2, we hypothesized that NO controls pulsatile release of LHRH in vivo, which in turn induces pulsatile LH release. Indeed, in vivo and in vitro experiments using an inhibitor of NOS (NG-monomethyl-L-arginine; NMMA) demonstrated that pulsatile LH release is mediated by NO; LHRH release in vitro is also mediated by this free radical. Cytokines that are released from cells of the immune system during infection also inhibit LHRH release. We compared the action of one such cytokine, interleukin-1 alpha (IL-1 alpha), on LHRH release with that of substances which inhibit or induce NO release. Microinjection of IL-1 alpha (0.06 pmol in 2 microliters) into the third cerebral ventricle (3V) of conscious, castrated male rats had an action similar to that of 3V microinjection of NMMA (1 mg in 5 microliters): it blocked pulsatile LH, but not follicle-stimulating hormone (FSH) release. The only difference between the responses to NMMA and IL-1 alpha was that the latency to onset was greater with IL-1 alpha.(ABSTRACT TRUNCATED AT 250 WORDS)"
+  }
+ ]
+}

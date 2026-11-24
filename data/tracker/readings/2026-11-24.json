@@ -1,0 +1,28 @@
+{
+ "reading": {
+  "date": "2026-11-24",
+  "window_start": "2026-11-18",
+  "window_end": "2026-11-24",
+  "commit_before": "f20bc67",
+  "by": "scheduled",
+  "searches": 37,
+  "new_results": 1,
+  "waiting_added": 0,
+  "flagged": 0
+ },
+ "items": [
+  {
+   "id": "dam-nonneural",
+   "verdict": "noted",
+   "found": "One new result, a study of blood-brain barrier leakiness in depression and childhood trauma (Cathomas and colleagues, 2026-11-22). It does not qualify: it neither blocks the exchange between body-sensing nerves and the blood around them nor measures feelings of the body's state, so its result could not count for or against the prediction.",
+   "new_results": [
+    "MED:43068780"
+   ]
+  },
+  {
+   "id": "contrast",
+   "verdict": "quiet",
+   "found": "No new paper marked designed to test one of the four theory families."
+  }
+ ]
+}

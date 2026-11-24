@@ -1,0 +1,722 @@
+{
+ "prediction": "orch-synaptic-cyto",
+ "query": "(TITLE_ABS:microtubul* OR TITLE_ABS:cytoskelet*) AND (TITLE_ABS:\"synaptic plasticity\" OR TITLE_ABS:\"long-term potentiation\" OR TITLE_ABS:LTP) AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 1392,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42831136",
+   "source": "MED",
+   "pmid": "42831136",
+   "pmcid": "PMC13634398",
+   "doi": "10.1016/j.yjsbx.2026.100162",
+   "first_publication_date": "2026-09-10",
+   "title": "Investigating the effects of missense mutations on the dual Ras/Rap activation mechanism of SYNGAP1 using molecular modelling.",
+   "authors": "Ali AE, Liljeblad A, Lehtonen JV, Komiyama NH, Postila PA.",
+   "journal": "Journal of structural biology: X",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "SynGAP (Synaptic GTPase-Activating Protein) is enriched in the postsynaptic density, where it accelerates GTP hydrolysis by Ras- and Rap-GTPases. In forebrain, SynGAP is essential for synaptic plasticity and cognitive development, and de novo mutations in SYNGAP1 gene cause SynGAP-related disorder (SRD), characterized by intellectual disability, autism, and epilepsy. Beyond the nervous system, SynGAP regulates cell growth, differentiation, and cytoskeletal dynamics, and loss of its GAP activity has been implicated in tumorigenesis and cancer metastasis. Although classified as a RasGAP based on homology, SynGAP efficiently promotes GTP hydrolysis of both Ras and Rap1b. Here, a combination of modelling approaches, including in silico mutagenesis, free-energy calculations, and atomistic molecular dynamics simulations, were used to define the structural basis of this dual specificity. Cancer-associated and SRD-associated missense variants were analyzed to assess their effects on SynGAP interactions with Ras and Rap and, by extension, on GAP-mediated GTP hydrolysis. Modelling suggests that SynGAP regulates Ras through a canonical RasGAP mechanism, whereas Rap1b is controlled through a Plexin-like mechanism involving opening of Rap-Switch II and engagement of a previously uncharacterized region termed the SynGAP activation-segment. The modelling supports the established role of the C2-domain residue Arg401, possibly stabilizing an open Rap-Switch II conformation, and suggests new testable hypotheses that some variants could differentially affect Ras and Rap. Enhanced GTP stabilization is proposed to explain the greater potency of SynGAP toward Rap1b. Overall, 33 missense variants, including eight ClinVar and 18 cancer-associated variants, were predicted to potentially impair SynGAP-GTPase complex formation.Author summaryWe study SynGAP, a protein essential for how brain cells communicate, learn, and develop. Changes in the SYNGAP1 gene are known to cause a neurodevelopmental disorder causing intellectual disability, autism, and epilepsy. SynGAP also helps regulate cell-growth pathways, and its dysfunction can contribute to cancer. In this work, we use computer-based approaches, including molecular dynamics simulations, to investigate how SynGAP interacts with the signaling GTPases Ras and Rap1b, which control key cellular processes. We show that SynGAP engages these proteins through two distinct interaction modes and model both at atom-level resolution. We also examine disease-associated missense variants and predict how they may disrupt these interactions. Our results help explain previously reported experimental findings and highlight regions of SynGAP that are critical for its function. By improving our understanding of how SynGAP regulates Ras and Rap1b, this work provides insight into SynGAP-related disorders and cancer as well as suggesting testable hypotheses for future experimental studies."
+  },
+  {
+   "rank": 2,
+   "id": "42572407",
+   "source": "MED",
+   "pmid": "42572407",
+   "pmcid": "PMC13459304",
+   "doi": "10.1080/07853890.2026.2705692",
+   "first_publication_date": "2026-08-09",
+   "title": "Occupationally relevant vibrations and the brain: frequency-dependent proteomics signatures in a rat model.",
+   "authors": "Chao D, Milosavljevic S, Thompson B, Julseth L, Chumala P, Tomilin M, Lang A, Howland JG, Katselis GS.",
+   "journal": "Annals of medicine",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "IntroductionOccupational exposure to whole-body vibration (WBV), particularly in agricultural environments, has been associated with adverse cognitive and physiological effects. This study examined the neurophysiological impact of WBV in a rat model at 4 Hz and 30 Hz, frequencies representative of off-road and on-road vehicle operation.MethodologyForty-four Sprague-Dawley rats were assigned to control (0 Hz), low-frequency (4 Hz), or high-frequency (30 Hz) vibration conditions. After three days of exposure, brain tissues were collected and analyzed using mass spectrometry-based proteomics to identify differentially expressed proteins.ResultsProteomic profiling revealed distinct, frequency-dependent alterations in brain protein expression. Compared with controls, 32 cognition-related proteins were differentially regulated at 4 Hz and 29 at 30 Hz, with 13 differing between the two vibration conditions. Principal component analysis showed clear separation among groups, indicating unique proteomic signatures for each exposure frequency. Functional enrichment and protein-protein interaction analyses demonstrated involvement of synaptic plasticity, cytoskeletal organization, calcium regulation, and neurotransmitter release. Exposure to 4 Hz was associated with the upregulation of proteins involved in calcium homeostasis and synaptic integrity, suggesting potential disruption of cognitive processes. In contrast, 30 Hz increased the expression of proteins related to axonal guidance and neuroprotection, indicating a less clearly adverse response that may reflect adaptive or potentially beneficial effects.DiscussionThese findings provide new insight into biological mechanisms underlying WBV-induced cognitive changes and underscore the importance of vibration frequency in shaping neurophysiological outcomes. They also establish a foundation for future studies integrating proteomics with behavioural assessments in animals and humans."
+  },
+  {
+   "rank": 3,
+   "id": "43046860",
+   "source": "MED",
+   "pmid": "43046860",
+   "pmcid": "PMC13784707",
+   "doi": "10.1021/acschemneuro.6c00313",
+   "first_publication_date": "2026-11-01",
+   "title": "Small Molecules Targeting TrkB/BDNF for Neurodegenerative Disease Therapeutic Discovery.",
+   "authors": "Venkatesan R, Paustian M, Simeon P, Trippier PC.",
+   "journal": "ACS chemical neuroscience",
+   "pub_types": [
+    "research-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Neurodegenerative diseases comprise a collection of disorders that systematically bring about the death of a variety of cell types within the brain, resulting in cognitive and/or motor impairments that gradually decrease the quality of life until eventual death. While each disease possesses its own unique phenotype, many neurodegenerative diseases share the same pathologic etiology. However, an understudied aspect of neurodegenerative diseases is depleted neurotrophic signaling. Under healthy conditions, neurotrophins promote cell survival through the activation of neurite formation, neurogenesis, cytoskeletal rearrangement, and long-term potentiation. Given the multitude of cellular benefits of neurotrophins, targeting their signaling pathways may facilitate neurodegenerative disease therapy development. In this Review, we examine various neurodegenerative diseases and how they may benefit from tropomyosin receptor kinase B/brain-derived neurotrophic factor (TrkB/BDNF)-targeted therapies. The molecular mechanisms of neurotrophin signaling that contribute to neuronal survival are discussed, and a comprehensive overview of experimentally validated small molecules that exhibit neuroprotective effects by modulating the TrkB/BDNF signaling pathway in neurodegenerative diseases is provided."
+  },
+  {
+   "rank": 4,
+   "id": "43033188",
+   "source": "MED",
+   "pmid": "43033188",
+   "pmcid": null,
+   "doi": "10.4103/nrr.nrronline-d-26-00863",
+   "first_publication_date": "2026-11-13",
+   "title": "MM102 promotes axonal regeneration and synaptic remodeling through membrane lipid remodeling to restore motor function after spinal cord injury.",
+   "authors": "Zheng X, Hu M, Zhu M, Zhang C, Fan Z.",
+   "journal": "Neural regeneration research",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "AbstractSpinal cord injury causes neurological deficits and dysfunction, but effective pharmacological strategies that promote neural regeneration and functional recovery are lacking. This study aimed to investigate the therapeutic potential of MM102, a small-molecule inhibitor of the MLL1-WDR5 interaction, for injured spinal cord repair. HT22 cells were treated with 10 nM MM102 for 6 days, followed by phenotypic evaluation and integrated transcriptomic and metabolomic analyses. MM102 significantly promoted neurite outgrowth and synaptogenesis and increased the expression of the neuronal markers Nestin, synaptophysin, microtubule-associated protein-2, and βIII-tubulin. In vivo, rats with spinal cord injury received MM102 treatment (50 μM, 10 μL/100 g) for 5 weeks, and MM102 repaired spinal cord histoarchitecture, promoted axonal and myelin regeneration and synaptic remodeling, and enhanced locomotor and electrophysiological recovery. Histological staining revealed enhanced axonal and myelin regeneration following MM102 treatment, whereas immunofluorescence analysis revealed significantly increased expression of Nestin, NeuN, c-Jun, NF-200, MBP, and βIII-tubulin. Transcriptomic analysis indicated that MM102 induced gene expression programs associated with neuronal development, axon guidance and synaptic plasticity, whereas metabolomic profiling revealed prominent changes in membrane lipid abundance and neuroactive metabolism. Integrated multiomics analysis further associated these transcriptional responses with membrane phospholipid remodeling and pathways involved in neurotransmitter signaling and synaptic vesicle cycling. Collectively, these findings suggest that MM102 facilitates injured spinal cord repair by modulating responses associated with neural repair and membrane lipid remodeling, also provide novel insights into the potential mechanisms through which small-molecule inhibitors can promote neurogenic potential and elucidate potential therapeutic targets for facilitating functional recovery following spinal cord injury."
+  },
+  {
+   "rank": 5,
+   "id": "43006739",
+   "source": "MED",
+   "pmid": "43006739",
+   "pmcid": null,
+   "doi": "10.1042/bcj20260720",
+   "first_publication_date": "2026-11-10",
+   "title": "Allosteric activation of CaMK4 by Calmodulin enables phosphorylation of WNK2 kinase.",
+   "authors": "Lei B, Williams C, Cawthorne W, Young SN, Schoffer K, Gonzalez Castro A, Spall S, Binos S, Vaibhav V, Gianni LF, Nguyen ATN, Means AR, Tanzer MC, Scott JW, Murphy JM, Horne CR.",
+   "journal": "The Biochemical journal",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The Ca2+-Calmodulin (CaM)-dependent protein kinase (CAMK) family member, CaMK4, has recently attracted interest owing to its implication in neurodevelopment, learning, memory and synaptic plasticity. However, knowledge of the molecular mechanisms underlying CaMK4 regulation is currently incomplete. Initially, we used crosslinking mass spectrometry and biophysical approaches to define the mode of interaction between CaMK4 and a known activator, the Ca2+ sensor protein, Calmodulin. These studies validated Calmodulin-mediated displacement of the autoinhibitory sequence C-terminal to the CaMK4 kinase domain via binding to the overlapping Calmodulin-binding sequence as the underlying mechanism of CaMK4 activation. Using proximity labelling mass spectrometry and biochemical methods, we identified further CaMK4 interactors, which localized CaMK4 to the microtubule cytoskeleton under basal conditions and validated nuclear translocation upon activation by Ca2+ influx into cells. WNK2 kinase was identified as a prominent CaMK4 interactor, which bound via its kinase domain to the CaMK4 kinase domain in structural mass spectrometry experiments, and enabled CaMK4 to phosphorylate Thr410 within the αG helix in the WNK2 kinase domain C-lobe. These data implicate CaMK4 in cytoplasmic signalling and raise the prospect that CaMK4 may facilitate crosstalk between Ca2+ and Cl- regulated pathways."
+  },
+  {
+   "rank": 6,
+   "id": "42992918",
+   "source": "MED",
+   "pmid": "42992918",
+   "pmcid": null,
+   "doi": "10.1021/acs.jproteome.6c00286",
+   "first_publication_date": "2026-11-01",
+   "title": "High-Resolution Spatial Proteomics Uncovers Molecular Diversity across Mouse Hippocampal Subregions.",
+   "authors": "Xu Z, Shi J, Kitata RB, Zhao R, Chu RK, Min S, Qian WJ, Ding SL, Shi T, Zhang T.",
+   "journal": "Journal of proteome research",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The hippocampus (HP) is a structurally and functionally heterogeneous brain region critical for learning, memory, and spatial navigation. Although transcriptomic studies have revealed subregion-specific gene expression patterns, the corresponding high-resolution spatial proteomic landscape remains largely unexplored. Here, we applied a single-voxel proteomics workflow at 50 μm resolution to profile the protein composition of HP subregions, including the dentate gyrus (DG) and Cornu Ammonis fields 1-3 (CA1-CA3). Across the four subregions, we identified over 2,200 protein groups and found both conserved and region-specific proteins. Differential expression and network analyses revealed molecular signatures associated with specific subregions, including synaptic plasticity in CA1, mitochondrial metabolism in CA2, cytoskeletal organization and protein homeostasis in CA3, and excitatory signaling in DG. Integration with transcriptomic data confirmed consistent region-enriched markers at both the gene and protein levels, including Homer1 and Itpka in CA1, Homer3 in CA3, and Calb1/2 in DG. Thus, our data set demonstrates subregion-specific molecular specialization at the proteome level and provides a high-resolution resource to link structural, functional, and metabolic diversity in the hippocampus. Further application of our high-resolution spatial proteomics will lay the foundation for studying HP development, circuit function, and disease-associated proteomic alterations."
+  },
+  {
+   "rank": 7,
+   "id": "42779151",
+   "source": "MED",
+   "pmid": "42779151",
+   "pmcid": null,
+   "doi": "10.1080/00207454.2026.2738702",
+   "first_publication_date": "2026-09-30",
+   "title": "Perampanel improves cognitive function in epilepsy by targeting AMPA receptor subunit GluR2-mediated endoplasmic reticulum stress and synaptic plasticity.",
+   "authors": "Wang X, Lei B, Zhou Y, Fan F, Huang L, Luo S, Zhang L, Zhou Y.",
+   "journal": "The International journal of neuroscience",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "AimsThis study aimed to explore the action mechanism of Perampanel (PER) in epilepsy treatment, particularly the associations with endoplasmic reticulum stress (ERS).MethodsEpilepsy mice model was induced by injecting kainic acid (KA) into hippocampus of mice, and KA-stimulated hippocampal neurons were used as in vitro cell model. Cognitive function of mice was evaluated by Novel Object Recognition and Morris Water maze tests. Hematoxylin-eosin and Nissl staining were conducted to observe neuron damage. Synaptic plasticity was evaluated by Golgi staining, immunofluorescence staining of microtubule-associated protein (MAP2) and synaptic function proteins expression. The 4-phenylbutyric acid (4-PBA) was used to inhibit ERS in cells.ResultsPER treatment markedly ameliorated epileptic seizure behaviors, improved the spatial learning and memory functions, and hippocampal neuron injury of KA-induced epilepsy mice model. Moreover, KA-induced epilepsy mice showed reduced GluR2 expression, decreased dendritic spine density and expression of synaptic function proteins (SYP and PSD95) as well as elevated ERS-related proteins (GRP78, ATF4, CHOP, IRE1α and ATF6), while PER treatment could reverse such changes. Meanwhile, PER treatment could alleviate KA-induced neurotoxicity and synaptic plasticity deficits in hippocampal neurons. In terms of mechanism, GluR2 silencing reversed the protective effects of PER in KA-stimulated hippocampal neurons, and further inhibiting ERS using 4-PBA could offset the effects of GluR2 silencing.ConclusionGluR2-mediated ERS may involve the improved effects of Perampanel in cognitive function of epilepsy patients by promoting synaptic plasticity."
+  },
+  {
+   "rank": 8,
+   "id": "42712177",
+   "source": "MED",
+   "pmid": "42712177",
+   "pmcid": null,
+   "doi": "10.1097/wnr.0000000000002306",
+   "first_publication_date": "2026-09-30",
+   "title": "Biophysical characterization of Arc protein-RNA interactions.",
+   "authors": "Al Othman A, Lupanova T, Bagrov D, Durymanov M.",
+   "journal": "Neuroreport",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectivesThe activity-regulated cytoskeleton-associated protein (Arc) is essential for synaptic plasticity and memory formation. Arc binds RNA and self-assembles into capsid-like structures reminiscent of retroviral Gag proteins, but the molecular basis of this interaction remains poorly defined. This study sought to characterize the biophysical interactions between Arc protein and its mRNA, focusing on the specificity of mRNA binding and its role in regulating Arc self-assembly.MethodsHere, we combined biophysical approaches to characterize Arc's RNA binding, assembly behavior, and particle morphology. Transmission electron microscopy was employed to visualize complexes of recombinant human Arc and synthetic Arc mRNA at different mRNA molar ratios. Dynamic light scattering (DLS) quantified RNA-dependent changes in the hydrodynamic size of Arc assemblies, while biolayer interferometry (BLI) determined the binding affinity of Arc for cognate and non-cognate mRNA transcripts.ResultsUsing recombinant human Arc and synthetic Arc mRNA, we found that RNA binding markedly enlarges Arc complexes. At an optimal mRNA molar ratio of ~1 : 45, Arc forms ~50-nm capsid-like particles, compared with ~30-nm assemblies formed by Arc alone, whereas higher RNA levels promote oversized aggregates. DLS confirmed RNA-dependent particle size growth, and BLI showed that Arc binds its cognate mRNA ~1.5-fold more tightly than a non-cognate transcript.ConclusionThe results identify RNA as a crucial cofactor for Arc capsid assembly under physiologically relevant conditions and reveal measurable specificity of Arc for its own mRNA. These findings elucidate how Arc packages its own mRNA, providing insight into Arc-mediated neuronal RNA transfer and advancing the development of Arc-based therapeutic delivery systems."
+  },
+  {
+   "rank": 9,
+   "id": "42674204",
+   "source": "MED",
+   "pmid": "42674204",
+   "pmcid": null,
+   "doi": "10.1016/j.neuroscience.2026.08.053",
+   "first_publication_date": "2026-08-31",
+   "title": "Cytoskeletal alterations underlying dendritic and synaptic plasticity in epilepsy.",
+   "authors": "Li S, Zhu Y, Gong C, Chen Y.",
+   "journal": "Neuroscience",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Aberrant dendritic changes in epilepsy, morphologically measured by the complexity and length of dendrite, as well as the density of dendritic spines, are dynamic and various considering disease course, developmental stages, and various neuronal type across different brain regions. Correspondingly, imbalanced excitatory and inhibitory synapses in epilepsy, quantitatively measured by the expression level and location of synaptic proteins, still vary considering etiology, disease course, and brain regions. And, various mechanisms involved in synaptic pruning add to the complexity of synaptic alterations in epilepsy. Still, sharing mechanisms underlying aberrant dendritic and synaptic plasticity in epilepsy exist, and cytoskeletal alterations can serve as a tool to decipher alterations of dendritic morphology and synaptic plasticity in epilepsy. Evidences supporting aberrant microtubule dynamics and post-translational modifications of tubulin in epilepsy emerge, combined with their involvement in dendritic morphology and synaptic plasticity. In conclusion, this review respectively summarizes the characteristics of dendritic pathology, synaptic alterations, microtubule dynamics, and tubulin's post-translational modifications in epilepsy, and discusses their interplay and correlation in epilepsy, providing insight into how cytoskeletal organization contributes to macroscopic changes in epilepsy."
+  },
+  {
+   "rank": 10,
+   "id": "42202912",
+   "source": "MED",
+   "pmid": "42202912",
+   "pmcid": null,
+   "doi": "10.1016/j.jep.2026.121917",
+   "first_publication_date": "2026-05-26",
+   "title": "Jiawei Sini San ameliorates cognitive deficits in CUMS depression rats by reshaping dendritic spines through regulating TRPC6-activated ROCK2-Cofilin signaling pathway.",
+   "authors": "Zhang T, Feng H, Li L, Wang S, Wu L, Yan C.",
+   "journal": "Journal of ethnopharmacology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Ethnopharmacological relevanceDepression has emerged as a significant public health concern in recent years. Evidence suggests that aberrant hippocampal synaptic plasticity plays a central role in the cognitive impairment associated with depression. Nevertheless, the precise underlying mechanisms remain poorly understood. Although Jiawei Sini San (JWSNS) has shown significant clinical efficacy in treating depression, its specific role in improving cognitive function requires further investigation.Aim of the studyTo elucidate the role and mechanism of JWSNS in enhancing cognitive function and remodeling hippocampal dendritic spines.Materials and methodsThe chronic unpredictable stress (CUMS) protocol was used to induce depression-like behavior in rats. A hippocampal TRPC6 knockdown model was then established using adeno-associated virus (AAV) targeting. Following treatment with JWSNS or fluoxetine (FLX), behavioral assays were performed to assess depressive behavior, anxiety, and cognitive impairment. Golgi staining was employed to analyze dendritic spine morphology in hippocampal tissues. Western blotting and immunofluorescence were applied to evaluate markers of the TRPC6-mediated ROCK2-Cofilin signaling pathway. Primary hippocampal cells were transfected with lentivirus to inhibit TRPC6 expression, and a stress model was generated by exposing cells to elevated corticosterone levels. Phalloidin fluorescent staining was used to assess cytoskeletal actin, and the effects of JWSNS drug-containing serum on these processes were further investigated.ResultsJWSNS significantly alleviated depressive- and anxiety-like behaviors and ameliorated cognitive deficits in CUMS-exposed rats. Morphologically, JWSNS promoted dendritic spine remodeling in the hippocampal dentate gyrus and CA1 regions. In vivo experiments demonstrated that JWSNS upregulated TRPC6 expression and activated the downstream ROCK2-Cofilin signaling pathway. Targeted knockdown of TRPC6 precipitated severe dendritic spine loss and inhibition of the ROCK2-cofilin pathway, which were effectively reversed by JWSNS intervention. In vitro, lentiviral knockdown of TRPC6 in primary hippocampal neurons led to a reduction in cytoskeletal F-actin, which was significantly restored by exposure to JWSNS-containing serum.ConclusionJWSNS effectively ameliorates depression-associated cognitive deficits by remodeling hippocampal dendritic spines via the TRPC6-ROCK2-Cofilin signaling pathway. These findings not only elucidate the neuroprotective mechanisms of JWSNS but also highlight its promising clinical translational value as an alternative or complementary therapeutic strategy for depression and its associated cognitive impairments."
+  },
+  {
+   "rank": 11,
+   "id": "43043659",
+   "source": "MED",
+   "pmid": "43043659",
+   "pmcid": null,
+   "doi": "10.1111/febs.70730",
+   "first_publication_date": "2026-09-21",
+   "title": "A non-canonical PDZ recognition mechanism underlies the synaptic CTNND2-MAGI2 complex assembly.",
+   "authors": "Zhang W, Shi Y, Wang J, Yang Y, Wang C, Lin L, Zhu J.",
+   "journal": "The FEBS journal",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The cadherin-catenin complex governs neuronal development and synaptic signaling by linking cell adhesion to cytoskeletal dynamics. CTNND2 (δ-catenin) is a neuron-enriched p120 catenin whose C-terminal PDZ domain-binding motif (PBM) plays essential roles in dendritic spine morphogenesis and synaptic plasticity; however, its direct postsynaptic binding partner(s) and the structural determinant of binding selectivity remain unclear. Here, we systematically screened major postsynaptic PDZ proteins and identified MAGI2 as a specific, high-affinity binder that recognizes the CTNND2 PBM exclusively via its PDZ5 domain. The crystal structure of the CTNND2 PBM-MAGI2 PDZ5 complex reveals a previously unrecognized electrostatic contact between D(-3) of the PBM and R1154 of PDZ5 that dictates specificity, explaining why other PDZ domains fail to bind CTNND2 PBM. This atypical PDZ-PBM interaction mode is conserved among p120 catenin family members ARVCF and PKP4, and extends to the classic catenin β-catenin. Our findings define a non-canonical PDZ recognition mechanism underlying the CTNND2-MAGI2 synaptic complex, with implications for CTNND2-related diseases."
+  },
+  {
+   "rank": 12,
+   "id": "42799673",
+   "source": "MED",
+   "pmid": "42799673",
+   "pmcid": null,
+   "doi": "10.1002/cm.70207",
+   "first_publication_date": "2026-09-26",
+   "title": "KIF1A-Mediated Axonal Transport of Netrin-1 in iPSC-Derived Human Forebrain Neurons.",
+   "authors": "Leung TY, Sidhu J, Hsieh A, Ma Y, Liu J, Silverman MA.",
+   "journal": "Cytoskeleton (Hoboken, N.J.)",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Netrin-1 is a secreted laminin-like protein that functions as a guidance cue for axon pathfinding in development. Netrin-1 also modulates synapse formation in developing neurons and long-term potentiation in mature neurons. Netrin-1 is expressed in human neurons; however, its intracellular distribution and trafficking have not been assessed. Moreover, there is a genetic association in Caenorhabditis elegans between UNC-6/netrin-1 and UNC-104/KIF1A, a kinesin-3 motor protein required for axonal transport. We characterized the endogenous expression of netrin-1 via immunocytochemistry and demonstrated it is localized to both the axon and dendrites of induced pluripotent stem cell (iPSC)-derived human forebrain neurons. Next, live-cell imaging of netrin-1-mRFP revealed rapid, bidirectional axonal transport, comparable to that of other cargos undergoing microtubule-based trafficking in vertebrate neurons. To identify the netrin-1 vesicle population, co-localization analyses demonstrated that netrin-1 puncta overlap with the dense-core vesicle marker Chromogranin A. Netrin-1-mRFP and Chromogranin A-eGFP also undergo co-transport within the axon. Finally, we demonstrated a role for the kinesin-3 motor protein, KIF1A, in Netrin-1 transport by demonstrating that KIF1A-associated neurological disease (KAND) patient variants significantly reduce netrin-1 axonal transport."
+  },
+  {
+   "rank": 13,
+   "id": "42726843",
+   "source": "MED",
+   "pmid": "42726843",
+   "pmcid": "PMC13564840",
+   "doi": "10.1126/sciadv.aeg0958",
+   "first_publication_date": "2026-09-11",
+   "title": "CaMKIIα holoenzymes self-organize into chain-like mesoscale clusters.",
+   "authors": "Suzuki T, Sumikama T, Matsushima K, Hasegawa K, Sumino A, Umeda K, Kodera N, Das T, Beta C, Murakoshi H, Shibata M.",
+   "journal": "Science advances",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Calcium- and calmodulin-dependent protein kinase II (CaMKII) is highly enriched in dendritic spines at concentrations comparable to those of cytoskeletal proteins and plays a central role in synaptic plasticity. During long-term potentiation, CaMKIIα further accumulates in spines. However, the mechanisms governing its higher-order organization remain poorly understood. Here, we use high-speed atomic force microscopy to visualize interholoenzyme interaction of CaMKIIα at mesoscopic scales (5 to 500 nanometers). Under freely diffusible conditions, CaMKIIα holoenzymes do not form stable clusters. In contrast, when spatially confined, they assemble into chain-like clusters mediated by kinase-domain interactions. These clusters expand upon activation, concomitant with the dissociation of the regulatory segment. Notably, the CaMKIIα Pro212→Leu (P212L) mutant associated with neurodevelopmental disorders forms extensive clusters even in the basal state. Together, our findings demonstrate that CaMKIIα-CaMKIIα interactions drive mesoscale cluster formation and that precise regulation of cluster size and activation-dependent growth might be critical for synaptic signaling."
+  },
+  {
+   "rank": 14,
+   "id": "42543904",
+   "source": "MED",
+   "pmid": "42543904",
+   "pmcid": "PMC13430299",
+   "doi": "10.1002/dev.70183",
+   "first_publication_date": "2026-09-01",
+   "title": "Executive Function and Epigenetic Markers in Youth Exposed to Family and Community Violence in Childhood.",
+   "authors": "Ramos RQ, Silva CMFPD, Evangelista AF, Serpeloni F, Lacerda NR, Avanci JQ, Assis SG.",
+   "journal": "Developmental psychobiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Although exposure to violence has been linked to executive functioning impairments, the biological mechanisms underlying this association remain unclear. This study examined CpG sites associated with executive functions in 78 young adults and their links to family (psychological and physical) and community violence during childhood. The scales used were Conflict Tactics (family violence); Things I Have Seen and Heard (community violence); Barkley Deficits in Executive Functioning. Mean differences (Mann-Whitney-U/Kruskal-Wallis) and Spearman correlations were assessed. An epigenome-wide association study identified differentially methylated CpGs, and linear regressions examined associations with violence exposures. Girls reported more family and psychological violence. Black participants experienced higher family violence. Executive dysfunction (ED) correlated with psychological family and community violence, and family violence forms were interrelated. Differentially methylated positions highlighted genes tied to key biological processes: MRGPRD (sensory neurons development); DPPA3 (germ-cell development); UNKL (cell differentiation); GPR6 (learning and memory); DUSP5 (cell proliferation and differentiation); and CAPN13 (signal transduction, cytoskeletal remodeling and cell differentiation). Candidate gene analysis found associations between executive dysfunction and methylation levels in these genes. Exploratory pathway analysis suggested enrichment of neurodevelopment and synaptic plasticity, intracellular trafficking and cytoskeletal remodeling, genome stability and cellular stress responses, and neuroimmune and inflammatory signaling. These findings suggest associations between ED, childhood violence exposure, and differential DNA methylation in cognition- and health-related genes, suggesting that epigenetic markers may be associated with pathways linking early adversity to later outcomes, although no causal inference can be drawn."
+  },
+  {
+   "rank": 15,
+   "id": "42523149",
+   "source": "MED",
+   "pmid": "42523149",
+   "pmcid": "PMC13691238",
+   "doi": "10.1177/13872877261470430",
+   "first_publication_date": "2026-07-29",
+   "title": "Novel blood lncRNA biomarkers associated with clinical severity and specific cognitive dimensions in Alzheimer's disease.",
+   "authors": "Mosquera-Heredia MI, Vidal OM, Barceló E, Morales LC, Silvera-Redondo C, Bolívar DA, Allegri R, Arcos-Burgos M, Garavito-Galofre P, Vélez JI.",
+   "journal": "Journal of Alzheimer's disease : JAD",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundDifferential expression of long non-coding RNAs (lncRNAs) in brain, serum, and blood show strong potential to distinguish Alzheimer's disease (AD) from healthy controls.ObjectiveTo explore whether lncRNA signatures delineate AD pathology and map to distinct, multidimensional cognitive domains, enhancing specificity in assessing AD severity and progression.MethodsWe profiled 29,603 lncRNAs transcripts in blood samples from 15 AD patients and 15 healthy controls, alongside comprehensive neuropsychological assessments. Generalized Linear Models and Predictive Power Score analyses, with statistical prioritization, identified lncRNAs associated to AD neuropsychological architecture.ResultsSeveral lncRNAs share strongly associated with cognitive performance and AD severity, mapping to genes involved in key AD-related molecular processes, including synaptic and neurotransmitter regulation (e.g., EPHB1, CHRNA4, TEAD1), protein homeostasis and Aβ pathology (e.g., FBXL2, FAM221A, APP), mitochondrial function and cellular stress (e.g., VDAC3, PPT2-EGFL8), neuroinflammation and immune regulation (e.g., TEAD1, EMX2OS, LY6E-DT), epigenetic and transcriptional control (e.g., PRDM2, DLEU1, FIRRE), neuronal excitability (e.g., KCNJ14), and neuroprotection and synaptic plasticity (e.g., SIL1). Novel associations included ferroptosis, DNA stability, microtubule dynamics, and dendritic orientation (e.g., BTB3, DICER1, GNG7, IBA57, NEAT1, POT1, SRD5A3).ConclusionsWe identify candidate lncRNA signatures that may serve as potential biomarkers and enhance our understanding of the molecular basis of the cognitive architecture in AD, opening new avenues for biomarker identification and targeted therapeutic strategies development. Validation in larger, diverse cohorts is essential to confirm their mechanistic contributions to AD."
+  },
+  {
+   "rank": 16,
+   "id": "43021116",
+   "source": "MED",
+   "pmid": "43021116",
+   "pmcid": "PMC13760930",
+   "doi": "10.1186/s12883-026-05261-1",
+   "first_publication_date": "2026-08-19",
+   "title": "Neuregulin 2 and tubulin protein levels in children with autism spectrum disorder.",
+   "authors": "Alayadhi L, Halepoto DM, Soliman ME, Halepota AT, Iqbal M.",
+   "journal": "BMC neurology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundMultiple lines of evidence suggest that neuregulin 2 (NRG2) and tubulin play important roles in the neuron cytoskeleton, neuronal development, synaptic plasticity, and downstream signaling pathways implicated in autism spectrum disorder (ASD). This study aimed to investigate plasma levels of NRG2 and tubulin in ASD and to examine their association with the ASD severity and social impairment.MethodPlasma levels of NRG2 and tubulin were measured using a sandwich enzyme immunoassay in 40 children with ASD and 40 age-matched healthy controls. Autism severity and social impairment were evaluated by the childhood autism rating scale (CARS) and Social Responsiveness Scale (SRS) respectively. Receiver operating characteristic (ROC) curve analysis was performed to determine the area under the curve (AUC), and Spearman's correlation coefficients (r) were calculated to examine the relationships between NRG2 and tubulin levels and CARS, SRS, and age using SPSS.ResultsSignificantly decreased plasma levels of NRG2 were observed in children with ASD (n = 40, 4.27 ± 0.26 ng/ml [mean ± SEM]) compared with healthy controls (n = 40, 5.44 ± 0.42 ng/ml, [mean ± SEM], p ConclusionOur findings highlight the potential involvement of NRG2 and tubulin in the pathophysiology of ASD, particularly in relation to neuronal development and synaptic function. Their association with social ability of children with ASD and diagnostic sensitivity suggests that they may serve as promising candidate biomarkers. Further large-scale studies are needed to confirm these findings and clarify their roles in ASD pathogenesis."
+  },
+  {
+   "rank": 17,
+   "id": "42653320",
+   "source": "MED",
+   "pmid": "42653320",
+   "pmcid": "PMC13513805",
+   "doi": "10.3390/ijms27167313",
+   "first_publication_date": "2026-08-16",
+   "title": "Epigenetic Control of Stress-Induced Depression: Emerging Roles of HDAC3 and HDAC6.",
+   "authors": "Mohan AS, Jayasankar N, Kashid VA, Patel RJ, Prajapati B.",
+   "journal": "International journal of molecular sciences",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Major depressive disorder (MDD) is a heterogeneous psychiatric disorder characterized by impaired mood, neuroplasticity, neuroinflammation, and dysregulated stress response systems. Chronic stress can induce epigenetic changes leading to depression. Evidence suggests that histone acetylation and deacetylation are epigenetic processes involved in changes in gene expression. Histone deacetylases (HDACs) modulate chromatin structure and transcription, and their dysregulation is associated with stress susceptibility, decreased brain-derived neurotrophic factor (BDNF) signaling, impaired synaptic plasticity, and inflammatory activation. HDAC isoforms HDAC3 and HDAC6 have emerged as epigenetic regulators in stress-induced depression. HDAC3 is a transcriptional regulator involved in neuroplasticity-related gene expression, inflammatory signaling, and glucocorticoid receptor-mediated stress responses. In contrast, HDAC6 is cytoplasmic and regulates non-histone substrates involved in microtubule dynamics, synaptic function, protein trafficking, and the regulation of the hypothalamic-pituitary-adrenal axis (HPA axis). Preclinical studies show that HDAC3 or HDAC6 inhibition can exert antidepressant-like effects by promoting neuroplasticity, reducing neuroinflammation, and restoring stress-related signaling. Dual targeting is an interesting therapeutic approach because both regulate complementary mechanisms. However, clinical translation is limited by poor blood-brain barrier penetration, systemic toxicity, insufficient isoform selectivity, and a lack of clinical evidence. This review summarizes the roles and mechanisms of HDAC3 and HDAC6, the rationale for dual targeting, translational limitations, and future therapeutic perspectives."
+  },
+  {
+   "rank": 18,
+   "id": "42603820",
+   "source": "MED",
+   "pmid": "42603820",
+   "pmcid": null,
+   "doi": "10.1038/s41380-026-03818-7",
+   "first_publication_date": "2026-08-15",
+   "title": "Neurabin I haploinsufficiency disrupts ion channel regulation and synaptic maturation in human cortical neurons in neurodevelopmental disorders.",
+   "authors": "Zehra B, Mohamed N, Tambi R, Faizan M, Satsangi D, Giddey AD, Bru-Mercier G, Farhat A, Al-Jezawi NK, Kumail M, Nassir N, Balan B, Kosaji N, Eldesouky M, Al Yazeedi T, BinEshaq S, Shiyas S, Vinod N, Alqassim SS, Ahmed A, Hashmi MA, Soares NC, Woodbury-Smith M, Du Plessis SS, Stavropoulos DJ, Scherer SW, Alsheikh-Ali A, Khalil R, Pessia M, D'Adamo MC, Berdiev BK, Uddin M.",
+   "journal": "Molecular psychiatry",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Heterozygous loss-of-function variants in Neurabin I (PPP1R9A), responsible for encoding a cytoskeletal scaffolding protein essential for synaptic plasticity, are recurrently associated with neurodevelopmental and neuropsychiatric disorders, yet their direct effects on human neuronal maturation remain unclear. Here, we establish the first comprehensive human mechanistic model of PPP1R9A haploinsufficiency using an isogenic CRISPR/Cas9-engineered iPSC system differentiated into cortical neurons to define dosage-dependent functional consequences. PPP1R9A+/- neurons exhibited pronounced hyperspinogenesis and increased neuritic complexity, indicative of aberrant structural maturation; however, whole-cell patch-clamp recordings revealed impaired intrinsic excitability, including reduced action potential firing, altered waveform properties, and defective axo-somatic coupling, uncovering a striking dissociation between neuronal morphology and function. Long-read single-cell transcriptomics and quantitative proteomics identified coordinated downregulation of ion channel and synaptic transmission pathways, including genes essential for sodium channel function and glutamatergic signaling, together with disruption of synaptic vesicle cycling, axon guidance, and neurodevelopmental programs. Pseudotime trajectory analysis further demonstrated delayed neuronal differentiation, with mutant neurons accumulating at intermediate developmental states rather than acquiring mature cortical identities. Importantly, molecular rescue experiments confirmed causality, as restoration of full-length PPP1R9A expression robustly normalized transcriptional and synaptic signaling programs, whereas allele-specific antisense oligonucleotide-mediated suppression of the mutant transcript achieved only partial rescue. Taken together, these findings establish PPP1R9A haploinsufficiency as a driver of impaired molecular, electrophysiological, and developmental maturation in human cortical neurons, providing a human-specific mechanistic framework linking reduced Neurabin I dosage to neurodevelopmental and psychiatric disease risk."
+  },
+  {
+   "rank": 19,
+   "id": "42210778",
+   "source": "MED",
+   "pmid": "42210778",
+   "pmcid": "PMC13335923",
+   "doi": "10.1002/advs.202600044",
+   "first_publication_date": "2026-05-29",
+   "title": "Fine-Tuned Regulation of mRNA Translation and Transport by STAU2 Condensate Facilitates Neuronal Development and Plasticity.",
+   "authors": "Huang S, Chu Y, Zhao R, Li S, Feng Y, Zheng H, Xie Y, Wang T, Wen W.",
+   "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The double-stranded RNA-binding protein STAU2 plays an essential role in neural development and synaptic plasticity, assembling target mRNAs into ribonucleoprotein (RNP) granules to control their trafficking, localization, and local translation, though the detailed molecular mechanism remains elusive. Here, we show that STAU2 phase separates to form dynamic condensates in dendrites of hippocampal neurons, recruiting specific mRNAs to assemble mobile RNP granules that are transported distally along microtubules. These RNA-loaded STAU2 condensates undergo a liquid-to-gel transition, which stabilizes the encapsulated transcripts while repressing their translation. During neuron development, disrupting STAU2 condensation impairs RNP formation and compromises anterograde mRNA delivery to distal dendrites. Conversely, STAU2 overexpression promotes excessive coacervation, resulting in oversized RNP granules with reduced mobility, ultimately hindering dendritic elongation and promoting excessive branching. We further demonstrate that synaptic activity bidirectionally remodels STAU2 condensates in parallel with changes in local translation of bound mRNAs. Notably, aberrant STAU2 condensates emerge as a potential pathological feature in aggregation-prone neurodegenerative disorders. Collectively, our findings establish that STAU2 condensate safeguards the development of postmitotic neurons by orchestrating the dendritic transport and activity-dependent translation of its target mRNAs."
+  },
+  {
+   "rank": 20,
+   "id": "43004397",
+   "source": "MED",
+   "pmid": "43004397",
+   "pmcid": "PMC13749932",
+   "doi": "10.1186/s12915-026-02678-5",
+   "first_publication_date": "2026-07-28",
+   "title": "Activity-dependent increase of Egr1 in the hippocampus improves contextual memory in mice.",
+   "authors": "Gallitano AL, Higa N, Wallace SG, Ho WH, Daitoku Y, Bito H, Ozols AB, Campbell JM, Okuno H.",
+   "journal": "BMC biology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundThe immediate early gene transcription factor Early growth response 1 (Egr1) is expressed in neurons in response to neuronal activity and plays an essential role in encoding memory of the events that triggered its expression. Mice lacking Egr1 have deficits in hippocampal long-term potentiation and long-term memory. These findings suggest that increasing levels of Egr1 may improve memory. However, typical methods to augment gene expression fail to replicate the activity-responsive timing and location of Egr1 expression, which may disrupt the unique pattern of activated neurons essential for forming the memory engram. To address this problem, we have created an adeno-associated virus (AAV) that expresses Egr1 under control of an activity-dependent promoter containing the enhanced synaptic activity response element (ESARE), which incorporates multiple copies of SARE isolated from the gene activity regulated cytoskeleton associated protein (Arc).ResultsInfusion of AAV-ESARE-Egr1 into the mouse dentate gyrus produces activity-inducible expression and increases EGR1 immunofluorescence in active hippocampal DG cells by 2.8- to 9.6-fold in response to neuronal stimulation. Mice expressing AAV-ESARE-Egr1 in the DG bilaterally demonstrate recall 24 hours following a one-minute exposure to a novel context, while control-virus injected animals fail to show recognition following this brief exposure. AAV-ESARE-Egr1 injected mice show enhanced memory in contextual fear conditioning, compared with controls.ConclusionsIncreasing activity-dependent Egr1 expression in hippocampal DG cells enhances contextual memory in mice, suggesting that developing molecules which can upregulate Egr1 in response to neuronal activity may have therapeutic use in disorders characterized by memory deficits."
+  },
+  {
+   "rank": 21,
+   "id": "42652054",
+   "source": "MED",
+   "pmid": "42652054",
+   "pmcid": "PMC13510110",
+   "doi": "10.3390/biomedicines14081670",
+   "first_publication_date": "2026-07-24",
+   "title": "Limited Detectability of Network Functional Alterations in a Tauopathy Model Using Mouse Primary Cortical Cultures.",
+   "authors": "López-León CF, Sala-Jarque J, Del Río JA, Soriano J.",
+   "journal": "Biomedicines",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Background: Tauopathies are neurodegenerative disorders characterized by the abnormal hyperphosphorylation and aggregation of the microtubule-associated protein tau, leading to disrupted neuronal connectivity and progressive brain dysfunction. Despite their clinical relevance, most in vitro models have focused primarily on molecular and cellular aspects, with limited emphasis on alterations in network dynamics and functional connectivity. Methods: We developed an in vitro tauopathy model based on mouse primary neuronal cultures, enabling the investigation of network-level alterations under controlled conditions. We compared three experimental groups: untreated control cultures, cultures exposed to extracellular wild-type tau, and cultures treated with pathological tau (pTau) isolated from the sarkosyl-insoluble fraction of P301S (+/-) transgenic mice. To increase susceptibility to tau-induced pathology, all conditions were additionally transduced with adeno-associated viral vectors encoding human P301L tau. To quantify for damage, spontaneous neuronal activity was monitored throughout network maturation-from day in vitro (DIV) 7 to 16-using fluorescence calcium imaging, and multiple metrics describing network dynamics and functional organization were compared at DIV 12. Results: We observed that exposure to pTau did not induce overt cytotoxicity or major disruptions in global network dynamics, although a mild increase in network bursting activity was observed. Longitudinal analysis of network maturation further revealed largely similar developmental trajectories across experimental groups, with only subtle and persistent differences in bursting-related activity in pTau-treated cultures. Conclusions: We propose that the early developmental stage of the cultures, together with the intrinsic bursting and ongoing synaptic plasticity of primary neuronal networks, masks subtle pathological effects. This may limit the sensitivity of two-dimensional in vitro systems to detect network-level dysfunction, suggesting that more mature or structurally complex models, such as brain organoids, may be required to reveal robust functional deficits."
+  },
+  {
+   "rank": 22,
+   "id": "42511986",
+   "source": "MED",
+   "pmid": "42511986",
+   "pmcid": "PMC13405848",
+   "doi": "10.3390/biomedicines14071512",
+   "first_publication_date": "2026-07-05",
+   "title": "Targeting CRMP2 for Chronic Pain: From Molecular Mechanisms to Therapeutic Strategies.",
+   "authors": "Wang JY, Liu DQ, Zhou YQ, Mei W.",
+   "journal": "Biomedicines",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Collapsin Response Mediator Protein 2 (CRMP2) has emerged as a central node in the pathogenesis of chronic pain, functioning as a multimodal 'molecular switch' that regulates microtubule dynamics, ion channel trafficking, and synaptic plasticity. The dysregulation of CRMP2, particularly through aberrant post-translational modifications (PTMs) such as phosphorylation and SUMOylation, is a critical driver of both peripheral and central sensitization. This review systematically examines the structure, regulation, and multifaceted roles of CRMP2 in pain signaling pathways. We then critically evaluate a spectrum of CRMP2-targeted therapeutic strategies, including small-molecule inhibitors, peptide-based agents, and gene silencing, highlighting their promising preclinical efficacy and safety profiles. Despite challenges in targeting specificity and central nervous system delivery, we posit that innovations in delivery systems, precision medicine, and AI-assisted drug design will catalyze the clinical translation of CRMP2-based, non-opioid analgesics, offering a paradigm shift in chronic pain management."
+  },
+  {
+   "rank": 23,
+   "id": "42450246",
+   "source": "MED",
+   "pmid": "42450246",
+   "pmcid": "PMC13361934",
+   "doi": "10.3390/ijms27135979",
+   "first_publication_date": "2026-07-03",
+   "title": "Subcortical Dendritic Scaffolding in Autism Spectrum Disorder: A Testable ANK2-SCN2A-SHANK Framework.",
+   "authors": "Cacciato-Salcedo S, Lao-Rodriguez AB, Petrinovic MM, Malmierca MS.",
+   "journal": "International journal of molecular sciences",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The autism spectrum disorder-associated SCN2A, ANK2, and SHANK-family genes encode molecularly distinct proteins that converge functionally on dendritic integration. Recent work established that ankyrin-B, encoded by ANK2, acts as an obligate dendritic scaffold for NaV1.2, encoded by SCN2A, in neocortical pyramidal neurons. Loss of this module mislocalizes dendritic NaV1.2, reduces dendritic Na+ influx, weakens backpropagating action potentials, and impairs synaptic maturation and long-term potentiation. SHANK proteins organize a complementary postsynaptic receptor scaffold within dendritic spines, coupling N-methyl-D-aspartate (NMDA), α-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid (AMPA), and metabotropic glutamate receptor (e.g., mGluR5) signaling to the actin cytoskeleton through layered PSD-95/GKAP/Homer interactions. Disruption of this scaffold can destabilize excitatory transmission, spine morphology, and plasticity. We propose that these dendritic shaft and spine-associated modules jointly regulate dendritic input-output gain and that their disruption may contribute to autism spectrum disorder by destabilizing, rather than uniformly shifting, excitatory integration across cortico-subcortical circuits relevant to sensory reactivity, behavioral flexibility, and social-valence processing. Here, we review the cortical evidence for this layered dendritic convergence and evaluate its potential relevance beyond the cortex. We assess the striatum, thalamus, and amygdala as subcortical sites where related dendritic scaffolding mechanisms may operate. The striatum provides the strongest current test case, with established roles for both NaV1.2 and SHANK3 in medium spiny neuron physiology and corticostriatal connectivity. Thalamic and amygdalar extensions are supported mainly by SHANK-related circuit and channelopathy data but lack direct evidence for ANK2-SCN2A involvement. The framework is experimentally testable: conditional Ank2 deletion in striatal, thalamic, and amygdalar cell types; dendritic Na+/Ca2+ imaging across Scn2a, Ank2, and Shank3 models; adult rescue experiments; and genetic-interaction designs would determine whether ankyrin-B supports dendritic excitability beyond the cortex and whether these genes converge on, rather than merely parallel, dendritic input-output gain. Validation in human subcortical tissue would then establish whether this dendritic scaffolding logic represents a shared point of convergence through which genetically distinct autism spectrum disorder-risk variants alter circuit function."
+  },
+  {
+   "rank": 24,
+   "id": "42417179",
+   "source": "MED",
+   "pmid": "42417179",
+   "pmcid": null,
+   "doi": "10.1515/hsz-2026-0120",
+   "first_publication_date": "2026-07-08",
+   "title": "Actin scaffolds as organizers of presynaptic function, assembly and plasticity across species.",
+   "authors": "Sigrist SJ, Petzoldt AG.",
+   "journal": "Biological chemistry",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The presynapse is a highly specialized neuronal compartment whose organizational core, the active zone, coordinates the precisely regulated neurotransmitter release. The function, assembly, maturation and remodeling of presynapses are fundamental to brain function, underlying circuit development, synaptic plasticity and memory formation. Central to these processes is a dynamic actin cytoskeletal scaffold that integrates structural organization with synaptic vesicle exo- and endocytosis, thereby coupling molecular architecture to synaptic release. We summarize decades of work across vertebrate and invertebrate model systems to delineate how local, activity-dependent reorganization of the actin cytoskeletal modulates presynaptic function, assembly, and plasticity. We depict the molecular mechanism by which actin networks coordinate, in a developmental stage-dependent manner, nearly every part of the synaptic vesicle cycle and include a focus on myosin family proteins, as actin-based motor protein. Furthermore, we review the bidirectional interplay between presynaptic active zone proteins and the local presynaptic actin network. Finally, we focus on the role of actin scaffolds in synaptogenesis and how local actin regulation is coupled to nanoscale active zone organization and large-scale presynaptic terminal structure at the uniquely accessible and mechanistically informative Drosophila neuromuscular junction."
+  },
+  {
+   "rank": 25,
+   "id": "42104730",
+   "source": "MED",
+   "pmid": "42104730",
+   "pmcid": null,
+   "doi": "10.1177/13872877261449379",
+   "first_publication_date": "2026-05-09",
+   "title": "A novel synaptic compartmentalization failure framework for neurodegeneration.",
+   "authors": "Panigrahi B.",
+   "journal": "Journal of Alzheimer's disease : JAD",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Synaptic plasticity relies on precise spatial and temporal compartmentalization of signaling within dendritic spines, presynaptic terminals, and axonal domains. This compartmentalization is usually reinforced through activity-dependent remodeling of spine geometry, cytoskeletal scaffolds, calcium handling, and local protein synthesis, allowing plasticity signals to remain localized and terminate appropriately. Here, a unifying framework is proposed in which neurodegenerative diseases emerge when the capacity to maintain and renew these compartments declines. Ageing and glial dysregulation may act as major biological drivers of this process by altering dendritic spine structure, calcium homeostasis, metabolic support, neurotransmitter clearance, and activity-dependent synaptic remodeling. In this state, plasticity induction remains largely preserved, but signaling becomes spatially diffuse and temporally prolonged, imposing chronic structural and energetic stress on synapses and axons. Proteins such as tau and alpha synuclein, which normally support cytoskeletal organization and dynamic phase separated assemblies, may become destabilized under these conditions leading to pathological aggregation. This framework provides an explanation for early synaptic dysfunction, selective neuronal vulnerability, long presymptomatic phases, network-level disease propagation, the protective effects of education and cognitive engagement, and the limited efficacy of proteinopathy centric therapeutic strategies. Neurodegeneration may be conceptualized as a failure of synaptic compartmentalization, with protein aggregation arising downstream of this primary vulnerability."
+  },
+  {
+   "rank": 26,
+   "id": "41945856",
+   "source": "MED",
+   "pmid": "41945856",
+   "pmcid": "PMC13334648",
+   "doi": "10.1002/advs.202520740",
+   "first_publication_date": "2026-04-07",
+   "title": "Nanoscale Spatial Organization of ARC High- and Low-Order Assemblies at Excitatory Synapses.",
+   "authors": "Damenti M, Coceano G, Silva MM, Alvelid J, Sgattoni C, Volpato A, Rems L, Masullo LA, Unterauer EM, Kowalewski R, Delemotte L, Sezgin E, Jungmann R, Testa I.",
+   "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The Activity-Regulated Cytoskeleton-Associated protein (ARC) plays a pivotal role in mediating synaptic plasticity in neuronal cells. In vitro studies suggest that ARC can form both high- and low-order oligomers. Despite their potentially important functions, direct nanoscale observation of ARC assemblies in cells has been lacking due to its tightly regulated spatiotemporal expression, the small size of the structures, the absence of suitable labelling strategies, and background signals from freely diffusing cytosolic proteins. Here, we combine super-resolution microscopy and time-resolved fluorescence anisotropy measurements with precisely designed ARC-tagging strategies to reveal the nanoscale spatial organization of ARC in neuronal environments, with a particular focus on excitatory synapses. We identify low-order assemblies of ARC at synapses, that colocalize with surface AMPA receptors (AMPARs), semi-circular organizations of ARC at the endocytic zone, consistent with a role in mediating AMPAR endocytosis, and particle-like assemblies sized 60-80 nm predominantly localized in dendritic spines. Finally, using a combination of experiments and simulations, we show that ARC can directly induce membrane bending and lipid bilayer tubulation in the absence of other protein partners."
+  },
+  {
+   "rank": 27,
+   "id": "42334898",
+   "source": "MED",
+   "pmid": "42334898",
+   "pmcid": null,
+   "doi": "10.1093/brain/awag216",
+   "first_publication_date": "2026-06-23",
+   "title": "Combining post-mortem and neuroimaging measures of brain amyloidosis to accelerate genomic discovery.",
+   "authors": "Wang TC, Archer DB, Ali M, Wu Y, Mormino E, Buckley RF, Lee AJ, Saykin AJ, De Jager PL, Schneider JA, Bennett DA, Barnes LL, Vardarajan B, Mayeux R, Kunkle BW, Bush WS, Dirk Keene C, Seshadri S, Sperling RA, Vemuri P, Ramanan VK, Ilyas Kamboh M, Harrison TM, Jagust WJ, Laws SM, Schellenberg GD, Huentelman M, Hamilton-Nelson K, Pericak-Vance MA, Goate AM, Haines JL, Montine TJ, Beecham G, Below JE, Cruchaga C, Hohman TJ, Dumitrescu L.",
+   "journal": "Brain : a journal of neurology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Histopathological assessment has served as the gold standard for diagnosing Alzheimer's disease (AD). Emerging technological advancements, including the development of amyloid positron emission tomography (PET), have enabled early detection of amyloid pathology, one of the neuropathological hallmarks of AD. Genome-wide association study (GWAS) across cohorts of aging and AD, leveraging different measurements of amyloid burden, may facilitate the identification of novel genetic variants that drive the earliest neuropathological changes in AD. This study presents the largest GWAS of brain amyloidosis to date, leveraging amyloid β (Aβ) measured by in vivo amyloid PET and postmortem histopathology from 13,555 individuals of European ancestry. Amyloid positivity was defined as moderate or frequent neuritic plaques according to the Consortium to Establish a Registry for Alzheimer's Disease (CERAD) staging scores for each postmortem cohort. A Gaussian mixture model (GMM) was applied to each amyloid PET cohort to identify the cohort and tracer-specific cut-offs that differentiate amyloid positive and negative populations. In silico and ex vivo analyses further characterized implicated loci, including interrogating the association between bulk and single-nucleus gene expression profiles and AD-related traits. Genetic covariance analysis assessed the extent amyloid PET and postmortem measures reflect the shared genetic architecture of brain amyloidosis. Our combined amyloidosis GWAS identified three established AD risk loci: BIN1 (rs6733839, OR = 1.20, 95% CI 1.14-1.26, P = 1.32 × 10-11), CR1 (rs4844610, OR = 1.24, 95% CI = 1.16-1.32, P = 4.21 × 10-10), APOE (rs429358, OR = 4.01, 95% CI = 3.66-4.38, P = 4.54 × 10-201), and a newly identified brain amyloidosis-associated variant on chromosome 17 (rs35635959, OR = 1.18, 95% CI = 1.12-1.25, P = 1.47 × 10-8). SuSiE fine-mapping identified a single credible set of 15 putative causal variants with rs35635959 as the lead variant. Subsequent eQTL and SuSiE-based colocalization analyses prioritized rs35635959 as a strong eQTL for TUBG2, encoding tubulin gamma 2, which is involved in microtubule organization and synaptic plasticity. Further cell-type-specific characterization of this gene in neurons from dorsolateral prefrontal cortex tissue indicated that decreased TUBG2 expression was associated with increased Aβ burden and AD case status (PFDR < 0.045). Furthermore, our study is the first to report a modest genetic covariance (covariance=0.17, P < 6.54 × 10-8) between the genetic architecture of amyloid burden captured by different modalities. While APOE showed a strong association with both amyloid endophenotypes, the observed genetic covariance was not substantially attenuated after excluding variants within the APOE region (covariance=0.16, P < 1.32 × 10-7). Our results highlight the benefits of leveraging compatible, harmonized AD endophenotypes to increase power to uncover new molecular insights into the etiology of AD neuropathology. Wang et al. present the largest GWAS of brain amyloidosis to date, analysing 13,555 individuals using amyloid PET and postmortem Aβ measures. They identify a novel amyloidosis-associated variant on chromosome 17, demonstrate genetic covariance between modalities, and highlight complex traits sharing genetic architecture with Aβ burden."
+  },
+  {
+   "rank": 28,
+   "id": "42321890",
+   "source": "MED",
+   "pmid": "42321890",
+   "pmcid": "PMC13531800",
+   "doi": "10.1186/s13578-026-01608-w",
+   "first_publication_date": "2026-06-19",
+   "title": "Aerobic exercise enhances α-tubulin lactylation and neurological recovery after ischemic stroke.",
+   "authors": "Zhang Y, Tang X, Li Z, Wu H, Wang Z, Zhu Y, Li J, Wu X, Ning B, Cui G, Hu J, Sun J.",
+   "journal": "Cell & bioscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundIschemic stroke causes severe neurological disability, with some patients still presenting with residual neurological dysfunction. Aerobic exercise shows potential for post-stroke recovery. However, the mechanism behind its beneficial effects on the brain remains to be further explored. This study aimed to explore aerobic exercise's role in the neurological recovery of ischemic stroke mice and to clarify the specific protective mechanisms involved.MethodsA mouse model of ischemic stroke was employed in this study. Mice were subjected to aerobic exercise intervention, with additional exogenous lactate administration and RNA-sequencing (RNA-seq) analysis conducted to explore the molecular mechanisms.ResultsResults demonstrated that aerobic exercise significantly elevated protein lactylation levels in ischemic stroke mice and facilitated neurological recovery. In addition, aerobic exercise attenuated neuroinflammation in the ischemic penumbra and promoted neural cell proliferation in the subventricular zone. Mechanistically, aerobic exercise-induced lactylation of α-tubulin may enhance the dynamic properties of microtubules, thereby facilitating neural repair. Exogenous lactate intervention was found to augment α-tubulin lactylation, promote hippocampal neurogenesis, and increase dendritic spine density as well as synaptic plasticity in both the ischemic penumbra and hippocampus. Consistent with these findings, exogenous lactate administration improved neurological function in ischemic stroke mice. RNA-seq analysis further revealed that elevated lactate levels exerted a promotive effect on neural repair.ConclusionAerobic exercise promotes post-ischemic stroke neurological recovery via elevating protein lactylation (α-tubulin lactylation), attenuating neuroinflammation, and enhancing neural repair. These findings highlight the potential of targeting lactate metabolism and protein lactylation as therapeutic strategies for facilitating neural repair and improving neurological outcomes following ischemic stroke."
+  },
+  {
+   "rank": 29,
+   "id": "42268489",
+   "source": "MED",
+   "pmid": "42268489",
+   "pmcid": "PMC13253701",
+   "doi": "10.1007/s11033-026-12120-2",
+   "first_publication_date": "2026-06-10",
+   "title": "Unravelıng non-canonıcal Wnt sıgnalıng ın neural development and dısorders: a revıew of Wnt/PCP and Wnt/ca&lt;sup&gt;²⁺&lt;/sup&gt; pathways.",
+   "authors": "Palabiyik AA, Palabiyik E.",
+   "journal": "Molecular biology reports",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Non-canonical Wnt signaling pathways, particularly the Planar Cell Polarity (Wnt/PCP) and Wnt/Ca²⁺ branches, play critical roles in regulating neural development and maintaining cellular homeostasis within the nervous system. This review provides a comprehensive evaluation of the molecular and cellular functions of these pathways, with a focus on their involvement in cytoskeletal dynamics, cellular polarity, and calcium signaling. Non-canonical Wnt signaling is essential for key neurodevelopmental processes, including neural tube closure, neuronal migration, axon guidance, and synaptic plasticity, while its dysregulation contributes to the pathogenesis of both neurodevelopmental and neurodegenerative disorders such as autism spectrum disorder, spina bifida, Alzheimer's disease, and Parkinson's disease. Particular emphasis is placed on the role of Dishevelled (DVL) as a shared intracellular signaling mediator across canonical and non-canonical Wnt pathways, as well as on the context-dependent activation of downstream effectors including Rho GTPases, protein kinase C (PKC), calcium/calmodulin-dependent kinase II (CaMKII), and nuclear factor of activated T-cells (NFAT). In addition, emerging experimental platforms, including CRISPR/Cas9 gene editing and human brain organoids, are highlighted for their utility in dissecting pathway-specific mechanisms and advancing translational applications. Overall, this review underscores the importance of non-canonical Wnt signaling as a dynamic and context-dependent regulatory network and discusses its potential as a target for precision-based therapeutic strategies in neurological disorders."
+  },
+  {
+   "rank": 30,
+   "id": "42208149",
+   "source": "MED",
+   "pmid": "42208149",
+   "pmcid": "PMC13235381",
+   "doi": "10.1016/j.ebiom.2026.106309",
+   "first_publication_date": "2026-05-28",
+   "title": "An Adnp frameshift variant disrupts Wnt signalling inducing chromatocytoskeletal defects and autism-related behaviour in male mice.",
+   "authors": "D'Incal CP, Cappuyns E, Paldi F, van der Lei MB, Annear DJ, Alastruey CM, Sokolova D, Elinck E, De Man K, Konings A, Huyghebaert J, Thys S, Pintelon I, Verschuuren M, Calus E, Van Dam D, De Deyn PP, Nguyen S, Yalcin B, Horii T, Hatada I, Mateiu L, Cavalli G, Pasciuto E, Berghe WV, Kooy RF.",
+   "journal": "EBioMedicine",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundHeterozygous de novo variants in the transcription factor Activity-Dependent Neuroprotective Protein (ADNP) cause a severe neurodevelopmental disorder, termed Helsmoortel-Van der Aa syndrome (HVDAS), characterised by autism, intellectual disability, and multisystem involvement. The ADNP gene is essential for embryonic development and interacts with components of several chromatin remodelling complexes. However, the precise pathophysiological mechanisms underlying the disorder remain incompletely understood.MethodsWe used CRISPR/Cas9 genome editing to create a 14-base pair deletion c.2463_2476del (p.Leu822Hisfs∗6) in the murine Adnp gene to establish a disease-relevant mouse model. Only male mice were used in this study to reduce variability associated with sex-specific differences. Molecular, transcriptomic (RNA-seq), chromatin accessibility (ATAC-seq), proteomic (mass spectrometry), and 3D genome architecture (Hi-C) analyses were performed in cortical brain tissue. Neuroanatomical and behavioural phenotyping, including Morris water maze, elevated plus maze, marble burying, social interaction testing, and the Live Mouse Tracker were conducted to assess cognitive and autism-related phenotypes.FindingsHeterozygous mice are viable and fertile. Introduction of the 14-base pair deletion reduced cellular Adnp levels in the brain (p = 0.0008) and decreased its chromatin association (p = 0.001), parallelled by a genome-wide increase in chromatin accessibility. Morphological analyses revealed mild neuroanatomical alterations in regions associated with cognition, memory, learning, and motor function (p InterpretationWe generated a disease-relevant heterozygous Adnp mouse model that recapitulates key molecular and behavioural features observed in patients with Helsmoortel-Van der Aa syndrome. Our findings demonstrate a role for Adnp in chromatin regulation and Wnt signalling, coupled to aberrant expression of cytoskeletal components and synaptic dysfunction. This mouse model provides a mechanistic framework linking chromatin dysregulation to autism-related behaviours and represents a valuable platform for future preclinical studies.FundingThis work was supported by the Marguerite-Marie Delacroix Foundation (FFP240064 to C.P.D.), the Research Fund of the University of Antwerp (Methusalem grant \"GENOMED\" to R.F.K.), ERA-NET NEURON (\"ADNPinMED\"), and the European E-RARE programme (\"IMPACT\"). Additional support was provided by a crowdfunding initiative from the German ADNP parent community to support C.P.D.; E.P. was supported by the FWO grant G0A1Z24N. C.A.M. received support from the Marguerite-Marie Delacroix fellowship. D.S. was supported by an EMBO fellowship (ALTF 1564-2025). F.P. was supported by a Human Frontier Science Program Long-Term Fellowship (LT000111/2021-L) and an EMBO Long-Term Fellowship (ATLF 716-2020). W.V.B. acknowledges support from the University of Antwerp (ID46420/48076/50799) and COST Action CA18127 (International Nucleosome Consortium 5INC). W.V.B., F.K., E.P., and C.P.D. acknowledge the IMPULS BOF 2024. Infrastructure support was provided by FWO (including IRI grant I000123N, GOH4216N)."
+  },
+  {
+   "rank": 31,
+   "id": "42002114",
+   "source": "MED",
+   "pmid": "42002114",
+   "pmcid": null,
+   "doi": "10.1016/j.nbd.2026.107404",
+   "first_publication_date": "2026-04-17",
+   "title": "NOTCH3 R545C mutation drives vascular-neuronal dysfunction and cognitive impairment in CADASIL pathogenesis.",
+   "authors": "Ping S, Hu B, Wu D, Wan C, Tang H, Xiong X, Long L, Xu M, Xiong H, Wu Q, Chen Y, You J, Qiu X.",
+   "journal": "Neurobiology of disease",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Cerebral autosomal dominant arteriopathy with subcortical infarcts and leukoencephalopathy (CADASIL) is the most common hereditary small vessel disease caused by mutations in the NOTCH3 gene. However, its pathogenic mechanisms remain incompletely understood. Given the high prevalence of the NOTCH3 p.Arg544Cys (R544C) mutation in East Asian populations, we developed a novel CRISPR/Cas9-mediated mouse model harboring the NOTCH3 p.R545C point mutation (orthologous to human R544C) to dissect the underlying CADASIL pathogenesis. Comprehensive phenotyping revealed age-dependent cognitive deficits, including impaired spatial learning and recognition memory, accompanied by impaired hippocampal synaptic plasticity, dendritic atrophy, and reduced spine density in hippocampal neurons. Vascular pathology exhibited blood-brain barrier disruption, granular osmiophilic material deposition, and cerebrovascular degeneration. Potential neuroinflammation and dendritic network impairment were found to co-occur with vascular dysfunction, thereby implying the existence of vascular-initiated neural damage in disease progression. RNA sequencing of hippocampal tissues identified dysregulated genes significantly enriched in neuroendocrine signaling, cytoskeletal organization, and inflammatory pathways, highlighting novel potential molecular mechanisms in CADASIL. Our NOTCH3 p.R545C model successfully recapitulates key clinical and pathological features of CADASIL that are frequently documented in East Asian populations, providing a platform for mechanistic studies and offering insights into potential therapeutic targets."
+  },
+  {
+   "rank": 32,
+   "id": "41825505",
+   "source": "MED",
+   "pmid": "41825505",
+   "pmcid": null,
+   "doi": "10.1016/j.neuropharm.2026.110921",
+   "first_publication_date": "2026-03-11",
+   "title": "The MAP6-NTS axis in hippocampal CA1 regulates synaptic plasticity and memory.",
+   "authors": "Jia Y, Lei J, Jiang Y, Xue L, Chen T, Wang J, Wei H.",
+   "journal": "Neuropharmacology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Microtubule-associated Protein 6 (MAP6) is critical for maintaining microtubule stability and synaptic plasticity, and its dysfunction is a key driver of cognitive impairment. However, the molecular mechanisms linking MAP6 deletion to cognitive deficits remain unclear. Here, we generated a novel Map6 knockout (KO, Map6-/-) mouse model using CRISPR/Cas9-mediated genome editing. Behavioral tests confirmed that Map6-/- mice exhibited prominent cognitive impairments, primarily in long-term memory and spatial learning. Hippocampal transcriptome profiling identified marked downregulation of neurotensin (Nts) in Map6-/- mice, which was validated at both mRNA and protein levels. Rescue experiments demonstrated that direct microinjection of neurotensin (NTS) peptide into the hippocampal CA1 subregion significantly improved cognitive deficits in Map6-/- mice. Electrophysiological recordings further confirmed that NTS restored impaired long-term potentiation (LTP)-a cellular substrate of learning and memory-in the hippocampal CA1 of Map6-/- mice. Additionally, chemogenetic activation of CA1 NTS-positive (CA1Nts) neurons reversed these synaptic and behavioral phenotypes. Collectively, we delineate a novel pathway wherein MAP6 deletion induces cognitive impairment by suppressing hippocampal NTS expression and secretion, and both exogenous NTS supplementation and NTS signaling activation reverse Map6 deletion-induced synaptic and behavioral deficits. These findings identify NTS as a critical downstream effector of MAP6 in cognitive regulation, offering a potential therapeutic target for cognitive impairment."
+  },
+  {
+   "rank": 33,
+   "id": "41713405",
+   "source": "MED",
+   "pmid": "41713405",
+   "pmcid": null,
+   "doi": "10.1111/bph.70354",
+   "first_publication_date": "2026-02-19",
+   "title": "Role of microtubule affinity-regulating kinases in epilepsy: A novel therapeutic strategy.",
+   "authors": "Xu M, Shi Y, Mu X, Su C, Wei P, Wang Q, Zhang Y, Ji S, Fu C, Tian J, Li C.",
+   "journal": "British journal of pharmacology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Background and purposeMicrotubule affinity-regulating kinases (MARKs), implicated in synaptic remodelling processes, have attracted attention as key regulatory targets in numerous neurological and psychiatric disorders. However, their role in epilepsy remains unclear. This study examined the involvement of MARK1 or MARK2 in regulating epilepsy-induced synaptic plasticity.Experimental approachThe roles of MARKs in normal or epilepsy rats were evaluated through hippocampus CA1 region-specific gene knockdown or overexpression of MARK1 or MARK2, as well as systemic administration of the novel small-molecule MARK inhibitor, PCC0105003. Cognitive functions and anxiety-like behaviours were assessed in epileptic rats. Synaptic plasticity-related signalling changes were detected via western blots, immunofluorescence, and quantitative real-time polymerase chain reaction (qRT-PCR).Key resultsEpileptiform discharges were observed in EEGs of rats overexpressing MARK1 or MARK2 in the absence of chemoconvulsant-induced epilepsy. MARK1 or MARK2 knockdown in hippocampus CA1 and systemic administration of PCC0105003 ameliorated seizure behaviours and the number of seizure-like events (SLEs) in EEG recordings, and attenuated the cognitive deficit and anxiogenic-like behaviours. In contrast, overexpression of MARK1 or MARK2 in the hippocampus CA1 led to exacerbated epileptic-like behaviours and reduced therapeutic effects of PCC0105003. Blocking the signalling of MARKs likely led to a reversal of synaptic transmission, which was mediated by the suppression of NMDA2B/GluR1/CAMKII signalling pathway in epileptic rats.Conclusion and implicationsMARK1/2-mediated excitatory synaptic transmission plays a key role in the development of epilepsy. Pharmacological inhibitors of MARKs, such as PCC0105003, may represent a novel therapeutic strategy for the management of epilepsy."
+  },
+  {
+   "rank": 34,
+   "id": "41687803",
+   "source": "MED",
+   "pmid": "41687803",
+   "pmcid": null,
+   "doi": "10.1016/j.expneurol.2026.115689",
+   "first_publication_date": "2026-02-11",
+   "title": "The serotonin receptor 7 as an emerging target to restore altered neuroplasticity in Angelman syndrome.",
+   "authors": "Penna E, Pizzella A, Abate N, Conte N, Cimmino F, Mollica MP, Di Giaimo R, Baudry M, Bi X, Crispino M.",
+   "journal": "Experimental neurology",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The serotonin receptor 7 (5-HT7R) has been indicated as a key modulator of neuronal structure and function, playing critical roles in synaptic plasticity, dendritic spine formation, and cytoskeletal remodeling. 5-HT7R activation promotes neurite outgrowth, enhances long-term potentiation (LTP), stimulates local protein synthesis at synapses, and regulates mitochondrial functions, and the mTOR pathway. These properties make the 5-HT7R a compelling candidate for therapeutic intervention in neurodevelopmental disorders characterized by synaptic dysfunctions. Angelman syndrome (AS) is a severe neurodevelopmental disorder caused by the loss of function of the maternal UBE3A gene, resulting in impairments of synaptic plasticity, dendritic spine density, protein synthesis, mitochondrial activity and mTOR signaling. Intriguingly, many of the processes altered in AS are the ones that are positively regulated by 5-HT7R activation. For instance, AS animal models exhibit reduced LTP and altered dendritic morphology and 5-HT7R stimulation enhances synaptic strength and spine formation in the brain of wild type rodents. Moreover, BDNF/TrkB function signaling is impaired and mitochondrial integrity is disrupted in AS and 5-HT7R agonists enhance the altered BDNF/TrkB signalling and restore mitochondrial dysfunctions in Rett syndrome (RTT) mice model. Interestingly, recent evidence demonstrates that pharmacological activation of 5-HT7Rs increases synaptic protein synthesis, restores LTP, enhances dendritic spine density, and improves cognitive function in an AS mouse model. These encouraging results open the way to future studies using neurons and brain organoids generated from iPSCs obtained from AS patients, which represent novel tools in preclinical research. Overall, 5-HT7R stimulation, by counteracting the molecular alterations associated with the loss of UBE3A, may represent a novel approach to restore neural function in the mature brain, leading to translational applications in AS patients, and possibly also in other synaptopathies. Clinical trial number: not applicable."
+  },
+  {
+   "rank": 35,
+   "id": "42204717",
+   "source": "MED",
+   "pmid": "42204717",
+   "pmcid": "PMC13217727",
+   "doi": "10.1186/s13041-026-01315-0",
+   "first_publication_date": "2026-05-28",
+   "title": "Environmental enrichment is associated with enhanced novel object recognition performance and an increased proportion of smooth endoplasmic reticulum-containing spines in the dentate gyrus of Septin3&lt;sup&gt;-/-&lt;/sup&gt; mice.",
+   "authors": "Ageta-Ishihara N, Fuse N, Suzuki A, Fukazawa Y, Kinoshita M.",
+   "journal": "Molecular brain",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Septin-3 is a neuron-enriched member of the septin family, a group of GTP-binding cytoskeletal proteins. We previously reported that Septin-3 supports late-phase long-term potentiation (L-LTP)-induced entry of smooth endoplasmic reticulum (sER) into dentate gyrus (DG) spines, and that Septin3-/- mice show reduced numbers of sER-containing DG spines and reduced performance in 24-h novel object recognition. Environmental enrichment (EE) enhances experience-dependent plasticity, raising the possibility that EE could modulate cognitive performance and spine sER phenotypes in Septin3-/- mice. Here, we tested whether 4-week EE exposure enhances novel object recognition performance in Septin3-/- mice and whether such behavioral changes are accompanied by changes in the proportion of sER-containing DG spines. Male Septin3-/- mice were housed in standard housing (SH) or EE for 4 weeks and then subjected to novel object recognition. Septin3-/- mice exposed to EE showed significantly better performance than SH-housed Septin3-/- mice in the 24-h test session. Using serial section transmission electron microscopy (ssTEM) and three-dimensional (3D) reconstructions of the DG in Septin3-/- mice immediately after the novel object recognition test following 4 weeks of SH or EE housing, we found that EE increased synapse density and elevated the proportion of spines containing sER, whereas spine volume and postsynaptic density (PSD) area were not detectably altered. Together, these results show that EE enhances 24-h novel object recognition performance and is associated with an increased proportion of sER-containing DG spines in Septin3-/- mice following the novel object recognition test."
+  },
+  {
+   "rank": 36,
+   "id": "42138082",
+   "source": "MED",
+   "pmid": "42138082",
+   "pmcid": "PMC13178648",
+   "doi": "10.1172/jci195537",
+   "first_publication_date": "2026-05-15",
+   "title": "Wdr26 insufficiency causes Skraban-Deardorff syndrome-like neurodevelopmental deficits in mice.",
+   "authors": "Xu X, Zhou Y, Xu S, Zhou H, Lin X, Luo Y, Xu Y, Miao Z, Ge W, Yang H, Xu X.",
+   "journal": "The Journal of clinical investigation",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Skraban-Deardorff syndrome, a rare neurodevelopmental disorder caused by WD repeat domain 26 (WDR26) haploinsufficiency, is characterized by intellectual disability, seizures, autistic-like behaviors, and craniofacial anomalies. Despite its genetic association with variants disrupting the C-terminal to LisH (CTLH) E3 ubiquitin ligase complex, the molecular mechanisms linking WDR26 dysfunction to neurodevelopmental deficits remain unclear. Here, we demonstrate that Wdr26 heterozygous-KO mice (Wdr26+/-) recapitulated core clinical features of the syndrome, including learning and memory impairments, social dysfunction, heightened seizure susceptibility, and motor deficits, alongside rare craniofacial and dental abnormalities. Mechanistically, Wdr26 haploinsufficiency stabilized RUNX1 translocation partner 1 (RUNX1T1), a transcriptional coactivator critical for neuronal differentiation, by impairing its ubiquitination and proteasomal degradation, consequently disrupting the level of microtubule-associated protein 2 (MAP2), a key regulator of dendritic architecture and synaptic plasticity. Early intervention in neonatal Wdr26+/- mice (P0.5) using AAV-shRNA-mediated Runx1t1 knockdown reversed MAP2 overexpression and behavioral deficits. Notably, the antipsychotic risperidone ameliorated cognitive and social impairments in Wdr26+/- mice by upregulating WDR26 levels, suggesting a potential therapeutic avenue. Our findings not only establish the animal model as a robust preclinical tool but also define the WDR26/RUNX1T1/MAP2 regulatory axis as pivotal to the syndrome's pathogenesis, while identifying actionable therapeutic targets."
+  },
+  {
+   "rank": 37,
+   "id": "42128064",
+   "source": "MED",
+   "pmid": "42128064",
+   "pmcid": null,
+   "doi": "10.1016/j.neuro.2026.103465",
+   "first_publication_date": "2026-05-12",
+   "title": "Disruption of hippocampal synaptic plasticity by chronic ethanol exposure: A narrative review of neurotoxic adverse outcome pathways.",
+   "authors": "Seyedi F, Hedayati-Moghadam M, Heidari M, Golkar A, Baghcheghi Y.",
+   "journal": "Neurotoxicology",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Chronic is a major neurotoxicant that disrupts hippocampal synaptic plasticity, leading to persistent cognitive deficits. This narrative review maps the adverse outcome pathways (AOPs) through which ethanol impairs synaptic function, primarily via interconnected cascades: TLR4/NF-κB-mediated neuroinflammation (triggering microglial activation and pro-inflammatory cytokines TNF-α, IL-1β), CYP2E1-driven oxidative stress (generating ROS/RNS, 4-HNE, causing protein carbonylation and mitochondrial dysfunction), and glutamate excitotoxicity (mediated by GluN2B-NMDAR subunit shifts, Ca²⁺ overload, and astrocytic EAAT2/GLT-1 downregulation). These pathways converge to suppress BDNF/TrkB signaling (via miR-206 and impaired proBDNF cleavage), leading to deficits in synaptic protein synthesis (e.g., Arc) and trafficking (e.g., GluA1 endocytosis via STEP, impaired forward trafficking). Critically, these insults potentiate neuronal apoptosis through intrinsic (ROS/mitochondrial permeabilization, caspase-9/-3) and extrinsic (TNF-α/TNF-R1, caspase-8) pathways, executing irreversible synaptic loss via caspase-3 cleavage of PSD-95, spectrin, and cytoskeletal collapse. The structural consequences-dendritic simplification, reduced mature spine density, and PSD-95 nano-domain disorganization-manifest functionally as attenuated LTP, potentiated mGluR-LTD, and impaired STDP. This synaptic decay directly underpins cognitive impairments in pattern separation, contextual memory, and cognitive flexibility. Neuroinflammation (TLR4/NF-κB) acts as a central amplifier, linking oxidative damage, excitotoxicity, and BDNF collapse to apoptotic synaptic deletion. Future research must address dose-dependency, subfield vulnerability, epigenetic regulation, and therapeutic strategies targeting TLR4, TrkB, mitochondrial antioxidants, and anti-apoptotic pathways."
+  },
+  {
+   "rank": 38,
+   "id": "42120067",
+   "source": "MED",
+   "pmid": "42120067",
+   "pmcid": null,
+   "doi": "10.1136/svn-2025-004835",
+   "first_publication_date": "2026-05-12",
+   "title": "CircMAP2 attenuates synaptic impairment in neurons subjected to cerebral ischaemia/reperfusion injury.",
+   "authors": "Li Y, Su X, Wu P, Weng Z, Liu X, Wu Y, Zhu H, Xu A, Lu D.",
+   "journal": "Stroke and vascular neurology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundAcute ischaemic stroke (AIS) is a major cause of disability and mortality worldwide, yet rapid diagnostic tools and effective neuroprotective strategies against ischaemia/reperfusion (I/R) injury postrecanalisation are critically lacking. This study investigates circular RNA derived from the gene of microtubule-associated protein 2 (CircMAP2) as a novel biomarker for AIS and its neuroprotective role in I/R injury.MethodsCircMAP2 was identified in I/R neurons and exosomes. Its expression was quantified via real-time quantitative reverse transcription PCR in plasma from the healthy control group (n=30) and patients with AIS (n=56), with infarct volumes measured by MRI. Functional studies employed small interfering RNA knockdown and adenoviral overexpression of CircMAP2 in vitro and in vivo, assessing neuronal survival, synaptic integrity by Golgi staining and immunofluorescence and detecting synaptic plasticity-related proteins by western blot analysis. Mechanistic insights were gained through RNA pull-down and transcriptional assays to evaluate interactions with U1 small nuclear ribonucleoprotein (U1 snRNP) and RNA polymerase II.ResultsCircMAP2 was significantly upregulated in the peri-infarct and ischaemic core of middle cerebral artery occlusion/reperfusion mice, as well as in AIS patient plasma. Regression analysis linked elevated CircMAP2 levels to larger infarct volumes (pConclusionsCircMAP2 functions dually as a potential AIS diagnostic biomarker and I/R therapeutic target, regulating MAP2 through U1 snRNP to preserve synapses and reorganise neural circuits, offering combined diagnostic and neuroprotective potential."
+  },
+  {
+   "rank": 39,
+   "id": "42102067",
+   "source": "MED",
+   "pmid": "42102067",
+   "pmcid": null,
+   "doi": "10.1021/acschemneuro.6c00110",
+   "first_publication_date": "2026-05-08",
+   "title": "A Proline-Rich-Domain-Binding Single Domain Antibody Selectively Inhibits RNA-Induced Phase Separation of Tau.",
+   "authors": "Thiou S, Martin L, Manousaki E, Nguyen M, Mortelecque J, Heidsieck L, Cantrelle FX, Blum D, Buée-Scherrer V, Buée L, Landrieu I, Dupré E, Danis C.",
+   "journal": "ACS chemical neuroscience",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Phase separation mediates the formation of biomolecular condensates, which organize cellular processes such as synaptic plasticity in neurons. The neuronal protein tau undergoes phase separation under specific conditions, regulating synaptic vesicle clustering and microtubule dynamics. In vitro, tau phase separation is induced by cofactors such as polyethylene glycol (PEG) or RNA, mainly via weak multivalent electrostatic interactions. However, the molecular mechanisms governing the formation of tau phase separation, including domain specific contribution, remain unclear. In this study, we used eight single-domain antibodies (VHHs), targeting six distinct short sequences of tau, to explore the mechanisms of tau phase separation in vitro. By combining several biophysical methods, we evaluated the effect of each anti-tau VHH on tau phase separation. With PEG as an inducer, VHHs A31 and Z70 targeting the tau microtubule binding domain enhanced tau phase separation by increasing the droplet size. With RNA as an inducer, the effect of the VHHs was mixed: VHH F8-2 targeting the C-terminal domain promoted condensation, while VHH B1-1, which binds the proline-rich domain (PRD), abolished droplet formation. Nuclear magnetic resonance and surface plasmon resonance spectroscopies confirmed 1 to 1 binding of VHH B1-1 to the PRD, and competition assays with a PRD peptide restored phase separation, demonstrating mechanistic specificity. Our findings provide domain-resolved insights into the regulation of tau phase separation and introduce VHHs as selective probes to modulate biomolecular condensates in physiological and pathological contexts."
+  },
+  {
+   "rank": 40,
+   "id": "42086746",
+   "source": "MED",
+   "pmid": "42086746",
+   "pmcid": "PMC13186709",
+   "doi": "10.1038/s41594-026-01794-8",
+   "first_publication_date": "2026-05-05",
+   "title": "Structural basis for recognition of diverse localizing mRNAs by Egl-BicD.",
+   "authors": "Singh K, Chilaeva S, McClintock MA, Carter AP, Bullock SL.",
+   "journal": "Nature structural & molecular biology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Localization of mRNAs is a widespread mechanism for dictating where proteins operate in cells and underpins many fundamental processes, from embryonic patterning to synaptic plasticity. This spatial control is mediated by the interaction of 'localization signals' in target mRNAs with RNA-binding proteins (RBPs). These signals frequently lack overt sequence or structural patterns, raising the question of how specificity is achieved. Here we investigate this issue using the Drosophila RBP Egalitarian (Egl), which couples mRNAs to microtubule-based transport through Bicaudal D (BicD) and the dynein motor. We present cryo-electron microscopy structures of Egl-BicD bound to six different RNAs. Egl uses multiple noncanonical double-stranded RNA-binding domains to cooperatively form a recognition pocket around localization signals. Despite substantial variation in length and sequence, each signal adopts a bent stem-loop conformation that, together with base-pair identities at two defined sites, drives Egl engagement. We further demonstrate that Egl dimers couple RNA binding to transport initiation through coincident detection of two RNA elements within the same transcript. Thus, localizing mRNAs are recognized through a combination of shape, positional sequence features and number of structured RNA elements. This work reveals a molecular strategy by which diverse mRNAs can be selectively engaged by a single RBP."
+  }
+ ]
+}

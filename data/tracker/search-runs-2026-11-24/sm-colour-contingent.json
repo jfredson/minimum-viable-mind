@@ -1,0 +1,731 @@
+{
+ "prediction": "sm-colour-contingent",
+ "query": "(TITLE_ABS:colour OR TITLE_ABS:color) AND (TITLE_ABS:\"gaze-contingent\" OR TITLE_ABS:saccad* OR TITLE_ABS:\"eye movement*\") AND (TITLE_ABS:contingen* OR TITLE_ABS:adapt*) AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 71,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42115564",
+   "source": "MED",
+   "pmid": "42115564",
+   "pmcid": "PMC13161341",
+   "doi": "10.3758/s13428-026-03034-9",
+   "first_publication_date": "2026-05-11",
+   "title": "Advantages and artifacts of high-speed OLED monitors for vision, eye-tracking, and EEG research.",
+   "authors": "Dimigen O, Stein A.",
+   "journal": "Behavior research methods",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The recent introduction of organic light-emitting diode (OLED) monitors with refresh rates of 240 Hz or more opens new possibilities for their use as precise stimulation devices in vision research, experimental psychology, and electrophysiology. These affordable high-speed monitors, targeted at video gamers, promise several advantages over cathode ray tube (CRT) and liquid crystal display (LCD) monitors. Unlike LCDs, OLEDs have self-emitting pixels that can show true black, resulting in superior contrast, a broad color spectrum, and wide viewing angles. More importantly, the latest OLEDs offer excellent timing properties with minimal input lag and rapid transition times. However, OLED technology also has potential drawbacks, such as auto-brightness limiting (ABL), where luminance changes with the number of illuminated pixels. This study characterized a 240 Hz OLED monitor (ASUS PG27AQDM) in terms of its timing, temporal independence, spatial uniformity, viewing angles, warm-up time, and ABL behavior, and compared it with CRTs and LCDs. Results confirm excellent temporal performance, with CRT-like transition times, wide viewing angles, and good spatial uniformity. We show that ABL can be prevented with appropriate settings. However, we also report a novel type of luminance artifact on OLEDs, where high-contrast stimuli, shown for long durations, can create image persistence via localized warming or cooling of the panel. Finally, we demonstrate the monitor's benefits in two time-critical paradigms: rapid invisible flicker tagging (RIFT) and saccade-contingent display changes. The latest consumer OLEDs provide precise and cost-effective stimulation devices for time-critical experiments, although some caution is warranted in experiments involving long exposures to high-contrast stimuli."
+  },
+  {
+   "rank": 2,
+   "id": "42045734",
+   "source": "MED",
+   "pmid": "42045734",
+   "pmcid": "PMC13121585",
+   "doi": "10.3758/s13414-026-03264-1",
+   "first_publication_date": "2026-04-27",
+   "title": "Visual working memory-related corrective saccade biases are amplified by task demands, without updating working memory content.",
+   "authors": "Polgári P, Schütz AC.",
+   "journal": "Attention, perception & psychophysics",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Visual working memory (VWM) and oculomotor control exert bi-directional influences on each other: eye movements during memory delays can influence VWM performance, and VWM content can bias the execution of eye movements. Oculomotor capture has been shown to extend to automatic, corrective saccades that can be biased towards distractors whose feature matches VWM content. We address the question of bi-directional influences between VWM and the oculomotor system, here with a focus on corrective saccade biases. Twenty participants had to memorize a color hue and later discriminate it from another hue from a different (Easy condition) or the same (Difficult condition) color category. Between encoding and test, they performed a gaze-contingent saccade task where, mid-saccade, the position of items shifted, introducing an artificial saccade error, and the color of a distractor neighboring the target changed to a color (mis)matching the memorized one. VWM performance was higher in the Easy compared to the Difficult experimental block, reflecting the successful manipulation of task demands. Corrective saccade biases towards the distractor occurred more frequently when it matched memory content compared to when it did not, replicating previous findings. Importantly, they also occurred more in the Difficult experimental block, which required more precise VWM representations than the Easy condition. VWM performance, however, was not affected by saccade corrections to memory (mis)matching distractors. Our results provided no evidence of saccade biases having a role in the updating of VWM content; however, they indicate an influence of task demands and VWM engagement on automatic oculomotor biases."
+  },
+  {
+   "rank": 3,
+   "id": "41984303",
+   "source": "MED",
+   "pmid": "41984303",
+   "pmcid": "PMC13083521",
+   "doi": "10.3758/s13423-026-02907-6",
+   "first_publication_date": "2026-04-15",
+   "title": "Top-down motivation both decreases and increases feature interference following a saccade.",
+   "authors": "Chiu TY, Golomb JD.",
+   "journal": "Psychonomic bulletin & review",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Spatial attention is rarely static, but instead highly dynamic in real-life. Recent studies have revealed that shifts of attention and eye movements incur consequences for ongoing feature perception, such as systematic feature-binding (swapping and mixing) errors. Here we investigated if these consequences are sensitive to top-down control, such that they could be flexibly mitigated when participants are motivated to improve their performance, or if feature interference reflects a more automatic byproduct of attentional remapping mechanisms following a saccade. In a preregistered experiment, 40 healthy adults reported the color of an item appearing at a pre-cued spatiotopic location. Following the cue, participants made a saccade, and then an array of colored items briefly appeared at the spatiotopic target location, retinotopic nontarget location, and two control nontarget locations. Crucially, across blocks we provided two different levels of performance-contingent reward (monetary incentives for precise spatiotopic target reports) to induce differences in top-down motivation. Compared to baseline lower-reward blocks, during higher performance-contingent reward (\"bonus\") blocks, participants showed improved general performance and reduced subtle retinotopic mixing errors immediately after the saccade. However, we found the opposite effect on retinotopic swapping errors, with higher reward/motivation associated with increased retinotopic swapping errors early after the saccade, indicating that retinotopic swapping errors may reflect a structural limitation of the attentional remapping process. Overall, these results uncover effects of motivation on distinct attentional mechanisms underlying spatial remapping across saccades, and provide novel insights into the role of top-down control in dynamic spatial attention and visual perception more generally."
+  },
+  {
+   "rank": 4,
+   "id": "41963708",
+   "source": "MED",
+   "pmid": "41963708",
+   "pmcid": "PMC13068768",
+   "doi": "10.3758/s13428-026-02983-5",
+   "first_publication_date": "2026-04-10",
+   "title": "Systematic classification differences across eye movement detection algorithms.",
+   "authors": "Nir J, Deouell LY.",
+   "journal": "Behavior research methods",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Eye movement (EM) detection is a critical step in most eye-tracking (ET) research, typically relying on detectors-specialized algorithms designed to segment raw ET data into discrete oculomotor events. However, variability in detection algorithms and the lack of standardized evaluation frameworks hinder transparency and reproducibility across studies. In this work, we introduce pEYES, an open-source toolkit designed to streamline EM detection and enable robust, quantitative comparisons between detectors. The toolkit provides implementations for several widely used threshold-based detectors, along with multiple standardized evaluation procedures for assessing detection performance. Using pEYES, we evaluated seven detection algorithms on two publicly available human-annotated datasets containing recordings of subjects freely viewing color images. Performance was assessed using metrics such as Cohen's kappa, relative timing offset and deviation, and a sensitivity index ( d' ) for fixation and saccade onsets and offsets. Engbert's adaptive velocity-threshold algorithm consistently matched or outperformed the other detectors, occasionally achieving human-level precision. In contrast, several other detectors exhibited substantial variability in performance between datasets. We also found systematic differences in detection scores between fixation and saccade boundaries, with fixation offsets and saccade onsets detected more reliably than their counterparts. These findings highlight the importance of task- and dataset-specific detector selection in EM analysis. The pEYES toolkit is freely available, and its codebase - along with the analyses presented in this report - is accessible at https://github.com/huji-hcnl/pEYES . We invite the research community to use, extend, and contribute to its ongoing development. Through open collaboration, we aim to advance the rigor and reproducibility of EM detection practices."
+  },
+  {
+   "rank": 5,
+   "id": "41812398",
+   "source": "MED",
+   "pmid": "41812398",
+   "pmcid": null,
+   "doi": "10.1016/j.actpsy.2026.106633",
+   "first_publication_date": "2026-03-10",
+   "title": "Stage-specific priming of pop-out effects in the target-feature memory encoding and retrieval.",
+   "authors": "Xia H, Allenmark F, Müller HJ, Shi Z.",
+   "journal": "Acta psychologica",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Priming of Pop-out (PoP), when a target-defining feature repeats, accelerates visual search. While previous studies highlight the influence of display density-sparse versus dense arrays-on PoP, how display density interacts with memory encoding and retrieval stages remains unresolved. The present study disentangled the contributions of encoding (trial n-1) from retrieval (trial n) and tracked their influence on early orienting (pre-selective) versus late identification (post-selective) processes. Participants searched for a uniquely colored target under blocked and interleaved density regimes, with eye movements and manual responses recorded. By crossing sparse and dense displays across consecutive trials, four transition types were probed to determine where density exerts its effect. Color repetition reduced reaction times and first saccadic latency, and boosted first-saccade accuracy, but only when the current (i.e., the retrieval) display remained sparse. In contrast, dense displays showed fast responses, with the absence of PoP, due to saliency-driven guidance. Pre-selective eye-movement metrics showed robust PoP in sparse retrieval arrays, whereas dense retrieval arrays defaulted to saliency-driven guidance. Post-selective decision times were comparable across conditions, indicating that PoP drives only the early attentional guidance. These results indicate that while encoding reliably forms target templates, it is the retrieval context that switches feature-biasing mechanisms on or off, highlighting a dynamic interplay between memory and bottom-up salience in adaptive search."
+  },
+  {
+   "rank": 6,
+   "id": "41790310",
+   "source": "MED",
+   "pmid": "41790310",
+   "pmcid": "PMC12966192",
+   "doi": "10.3758/s13414-026-03226-7",
+   "first_publication_date": "2026-03-06",
+   "title": "Color needs luminance for visual selection during scene search.",
+   "authors": "Cajar A, Laubrock J.",
+   "journal": "Attention, perception & psychophysics",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "When searching visual scenes, we use low-level visual information from objects' defining features such as color and luminance contrasts. What is the relative influence of color and luminance for saccade target selection? Basic perceptual research suggests that we are not very sensitive to peripheral color, yet color is thought to be an important basic feature guiding visual search. Previous gaze-contingent research shows that targets can be localized faster in color than in grayscale scenes, therefore the availability of color in the visual periphery indeed helps visual search. However, object boundaries are typically defined by both color and luminance contrasts. Here we study the isolated roles of color and luminance during object-in-scene search by presenting either color-only or luminance-only contrasts in peripheral vision, using a gaze-contingent moving-window display with three varying window sizes. We found that peripheral target selection and search performance were more efficient with luminance contrasts, whereas color was used only sparingly beyond the parafovea. We conclude that color contrasts in peripheral vision are only efficiently used in scene search when they are jointly occurring with luminance contrasts."
+  },
+  {
+   "rank": 7,
+   "id": "41375496",
+   "source": "MED",
+   "pmid": "41375496",
+   "pmcid": "PMC12691010",
+   "doi": "10.3390/ani15233438",
+   "first_publication_date": "2025-11-28",
+   "title": "Associations Between REM Sleep-like Posture Expression and Cognitive Flexibility in 2-Month-Old Japanese Black Calves.",
+   "authors": "Liu S, Fujita N, Sasaki T, Chiba T, Konno S, Roh S, Fukasawa M.",
+   "journal": "Animals : an open access journal from MDPI",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Sleep supports brain development and adaptability, yet its relationship with cognitive performance in farm animals remains unclear. This study examined the association between a behavioral indicator of rapid eye movement (REM) sleep, the REM sleep-like posture (RSLP), and cognitive ability in Japanese Black calves. Twenty two-month-old calves (11 males and 9 females; 88.0 ± 11.0 kg) were continuously video-recorded for 48 h to quantify daily RSLP time, frequency, and bout duration. Calves then performed associative and reversal learning tasks using color cues paired with rewarding (sweet) or aversive (acidic) fluids. Daily RSLP time, frequency, and bout duration were 220.9 ± 67.3 min/day, 34.9 ± 10.0 bouts/day, and 6.8 ± 2.1 min/bout. Fifteen calves (7 males and 8 females) reached the associative learning criterion, while five (1 female and 4 males) did not. No association was found with associative learning, whereas calves with longer daily RSLP time required fewer rounds to reach the reversal learning criterion (r = -0.56, p = 0.030), indicating greater cognitive flexibility. These findings suggest that longer REM-related sleep may support adaptability in calves. Monitoring RSLP could provide a non-invasive indicator of welfare and cognitive capacity, supporting precision management to improve comfort and productivity of calves."
+  },
+  {
+   "rank": 8,
+   "id": "41087485",
+   "source": "MED",
+   "pmid": "41087485",
+   "pmcid": "PMC12521531",
+   "doi": "10.1038/s41598-025-20193-5",
+   "first_publication_date": "2025-10-14",
+   "title": "Infants organize their learning process based on the same or different informants.",
+   "authors": "Ling R, Hiraki K.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "From the preverbal period, infants can distinguish different informants in social interactions and adjust their engagement accordingly. Yet little is known about whether these informant-based adaptations take shape during infants' initial knowledge acquisition, before their manifestation in behaviours. To address this question, we conducted two gaze-contingent experiments to examine how infants organize their learning process according to the identities of informants in social interactions. In each experiment, infants were randomly assigned to learn two kinds of knowledge (e.g., Experiment 1: shape of \"Chimo\" and shape of \"Wasa\"; Experiment 2: shape of \"Chimo\" and color of \"Heku\") either from different informants or from the same informant. Infants' attention to the informant and pupil dilation patterns provided evidence that they could not only distinguish between different informants but also recognize the change in the learning contents. Based on these cognitive sensitivities, the infants' gaze-selection results showed that their learning outcomes varied significantly depending on whether the same or different informants. These findings provide new insights into infants' adaptive engagement in social interaction by demonstrating how they dynamically organize their learning processes in identifying the informants."
+  },
+  {
+   "rank": 9,
+   "id": "40723683",
+   "source": "MED",
+   "pmid": "40723683",
+   "pmcid": "PMC12292175",
+   "doi": "10.3390/bs15070899",
+   "first_publication_date": "2025-07-02",
+   "title": "Transferable Modulation of Cognitive Control: The Cross-Task Role of Conflict Adaptation in Thematic Roles Assignment in Chinese.",
+   "authors": "Luo J, Cheng Q, Zhang M, Wu Y.",
+   "journal": "Behavioral sciences (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Conflict adaptation reflects the dynamic modulation of information processing by the cognitive control system following conflict detection. A central question in language processing research concerns whether control elicited by non-linguistic tasks generalizes across tasks to influence higher-order processes such as sentence comprehension. The present study employed color-word Stroop tasks of varying complexity and, in conjunction with eye-tracking technology, examined their cross-task regulatory effects of conflict adaptation on thematic role assignment in Chinese. Across two experiments, participants read sentences containing either congruent or conflicting thematic roles following Stroop trials with congruent or incongruent stimuli. The temporal dynamics of syntactic processing were captured via eye movement measures. Results indicated that both conflict tasks triggered cross-task conflict adaptation, as evidenced by accelerated syntactic processing and reduced regression behaviors when thematically incongruent sentences followed conflict trials. Notably, the more complex color-word Stroop task imposed greater demands on cognitive control resources and elicited earlier cognitive adaptation effects during comprehension. Theoretically, these findings extend conflict monitoring theory to the domain of language processing, demonstrating that cognitive control mechanisms contribute to real-time syntactic parsing. Methodologically, the use of eye-tracking to examine thematic role assignment provides fine-grained empirical evidence for the interaction between domain-general control and language-specific processing."
+  },
+  {
+   "rank": 10,
+   "id": "40465421",
+   "source": "MED",
+   "pmid": "40465421",
+   "pmcid": null,
+   "doi": "10.1152/jn.00148.2025",
+   "first_publication_date": "2025-06-04",
+   "title": "Ineffective cues for contextual saccade adaptation.",
+   "authors": "Martel M, Madelain L.",
+   "journal": "Journal of neurophysiology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Contextual saccadic adaptation is investigated through a variant of the double-step paradigm, where two directions of intrasaccadic steps are signaled by two cues. This enables the simultaneous induction of two distinct saccadic adaptations. Surprisingly, contextual adaptation is effective only with motor-related cues, whereas visual cues such as target color and shape do not elicit significant adaptation. We tested nine different contextual cues to signal intrasaccadic steps in a contextual double-step paradigm: visual stimulus duration, lateralization of a sound, various statistical regularities across trials, symbolic cues, starting location of the target, and the amplitude of the first step or the target color and shape. Robust systematic contextual learning was found under the amplitude and the starting location experiments, whereas no learning occurred with any other cues. This lack of contextual learning further confirms that the prediction of the intrasaccadic steps depends on the nature of the context. In two additional experiments replicating those using target color and shape, and symbolic cues, participants were periodically prompted to explicitly report the contextual cue they had just experienced. Again, no systematic contextual adaptation was observed despite participants achieving reporting the contextual cue accurately. This dissociation between perceptual reports and motor tasks involving the same visual information aligns with previous results on the constraints for contextual learning. The saccadic system, evolutionarily specialized for spatial targeting, exhibits selective learning that prioritizes localization cues, effectively ignoring nonmotor cues in its learning processes, even when such cues are explicitly perceived.NEW & NOTEWORTHY This study demonstrates that motor-related cues drive contextual saccadic adaptation, whereas purely perceptual cues fail to do so. We observed a dissociation between the ability to report nonmotor cues and their failure to induce contextual adaptation. The results underscore the importance of spatially relevant cues for guiding contextual saccadic adaptation. These findings deepen our understanding of the selective mechanisms underlying motor learning."
+  },
+  {
+   "rank": 11,
+   "id": "40415698",
+   "source": "MED",
+   "pmid": "40415698",
+   "pmcid": null,
+   "doi": "10.1002/aur.70060",
+   "first_publication_date": "2025-05-26",
+   "title": "Feedback-Driven Learning Through Eye Movements in Autism Spectrum Disorder.",
+   "authors": "Simpson I, Saldaña D, Vulchanova M, Scattoni ML, Micai M.",
+   "journal": "Autism research : official journal of the International Society for Autism Research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Individuals with Autism Spectrum Disorder (ASD) face challenges in cognitive flexibility and rule-shifting. This study investigated a computerized Wisconsin Card Sorting Task (WCST) paired with eye-tracking to understand the cognitive dynamics of set-shifting difficulties in autistic children and adolescents. The study included 21 Spanish-speaking autistic children and adolescents (mean age: 14.5 years) and 22 typically developing peers (mean age: 15.1), matched by gender, age, language, working memory, and intelligence. Participants sorted cards by number, color, or shape, receiving feedback after each trial. The sorting criterion changed after 10 correct responses without participants' prior knowledge. The task included 128 trials, followed by three strategy-related verbal questions. Behavioral and eye movement data showed that the autistic group performed worse, completing fewer sets and making more errors. Both groups had increased fixations and dwell time after feedback, but controls had a greater increase after incorrect responses. Autistic individuals may struggle with error monitoring and response inhibition, impacting their adaptability and less efficient learning of sorting rules. They engaged less in error analysis and correction than controls. Targeted interventions to enhance feedback processing and adaptive learning strategies could benefit autistic individuals. Future research should explore mechanisms behind eye-movement differences and the effectiveness of related interventions."
+  },
+  {
+   "rank": 12,
+   "id": "38839714",
+   "source": "MED",
+   "pmid": "38839714",
+   "pmcid": null,
+   "doi": "10.3758/s13414-024-02907-5",
+   "first_publication_date": "2024-06-05",
+   "title": "Peripheral vision contributes to implicit attentional learning: Findings from the \"mouse-eye\" paradigm.",
+   "authors": "Chen C, Lee VG.",
+   "journal": "Attention, perception & psychophysics",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The central visual field is essential for activities like reading and face recognition. However, the impact of peripheral vision loss on daily activities is profound. While the importance of central vision is well established, the contribution of peripheral vision to spatial attention is less clear. In this study, we introduced a \"mouse-eye\" method as an alternative to traditional gaze-contingent eye tracking. We found that even in tasks requiring central vision, peripheral vision contributes to implicit attentional learning. Participants searched for a T among Ls, with the T appearing more often in one visual quadrant. Earlier studies showed that participants' awareness of the T location probability was not essential for their ability to learn. When we limited the visible area around the mouse cursor, only participants aware of the target's location probability showed learning; those unaware did not. Adding placeholders in the periphery did not restore implicit attentional learning. A control experiment showed that when participants were allowed to see all items while searching and moving the mouse to reveal the target's color, both aware and unaware participants acquired location probability learning. Our results underscore the importance of peripheral vision in implicitly guided attention. Without peripheral vision, only explicit, but not implicit, attentional learning prevails."
+  },
+  {
+   "rank": 13,
+   "id": "38679809",
+   "source": "MED",
+   "pmid": "38679809",
+   "pmcid": null,
+   "doi": "10.1111/psyp.14571",
+   "first_publication_date": "2024-04-28",
+   "title": "Assessing the influence of dopamine and mindfulness on the formation of routines in visual search.",
+   "authors": "Garner KG, Leow LA, Uchida A, Nolan C, Jensen O, Garrido MI, Dux PE.",
+   "journal": "Psychophysiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Given experience in cluttered but stable visual environments, our eye-movements form stereotyped routines that sample task-relevant locations, while not mixing-up routines between similar task-settings. Both dopamine signaling and mindfulness have been posited as factors that influence the formation of such routines, yet quantification of their impact remains to be tested in healthy humans. Over two sessions, participants searched through grids of doors to find hidden targets, using a gaze-contingent display. Within each session, door scenes appeared in either one of two colors, with each color signaling a differing set of likely target locations. We derived measures for how well target locations were learned (target-accuracy), how routine were sets of eye-movements (stereotypy), and the extent of interference between the two scenes (setting-accuracy). Participants completed two sessions, where they were administered either levodopa (dopamine precursor) or placebo (vitamin C), under double-blind counterbalanced conditions. Dopamine and trait mindfulness (assessed by questionnaire) interacted to influence both target-accuracy and stereotypy. Increasing dopamine improved accuracy and reduced stereotypy for high mindfulness scorers, but induced the opposite pattern for low mindfulness scorers. Dopamine also disrupted setting-accuracy invariant to mindfulness. Our findings show that mindfulness modulates the impact of dopamine on the target-accuracy and stereotypy of eye-movement routines, whereas increasing dopamine promotes interference between task-settings, regardless of mindfulness. These findings provide a link between non-human and human models regarding the influence of dopamine on the formation of task-relevant eye-movement routines and provide novel insights into behavior-trait factors that modulate the use of experience when building adaptive repertoires."
+  },
+  {
+   "rank": 14,
+   "id": "38199168",
+   "source": "MED",
+   "pmid": "38199168",
+   "pmcid": null,
+   "doi": "10.1016/j.actpsy.2023.104121",
+   "first_publication_date": "2024-01-09",
+   "title": "Eye did this! Sense of agency in eye movements.",
+   "authors": "Gutzeit J, Weller L, Muth F, Kürten J, Huestegge L.",
+   "journal": "Acta psychologica",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This study investigates the sense of agency (SoA) for saccades with implicit and explicit agency measures. In two eye tracking experiments, participants moved their eyes towards on-screen stimuli that subsequently changed color. Participants then either reproduced the temporal interval between saccade and color-change (Experiment 1) or reported the time points of these events with an auditory Libet clock (Experiment 2) to measure temporal binding effects as implicit indices of SoA. Participants were either made to believe to exert control over the color change or not (agency manipulation). Explicit ratings indicated that the manipulation of causal beliefs and hence agency was successful. However, temporal binding was only evident for caused effects, and only when a sufficiently sensitive procedure was used (auditory Libet clock). This suggests a feebler connection between temporal binding and SoA than previously proposed. The results also provide evidence for a relatively fast acquisition of sense of agency for previously never experienced types of action-effect associations. This indicates that the underlying processes of action control may be rooted in more intricate and adaptable cognitive models than previously thought. Oculomotor SoA as addressed in the present study presumably represents an important cognitive foundation of gaze-based social interaction (social sense of agency) or gaze-based human-machine interaction scenarios. PUBLIC SIGNIFICANCE STATEMENT: In this study, sense of agency for eye movements in the non-social domain is investigated in detail, using both explicit and implicit measures. Therefore, it offers novel and specific insights into comprehending sense of agency concerning effects induced by eye movements, as well as broader insights into agency pertaining to entirely newly acquired types of action-effect associations. Oculomotor sense of agency presumably represents an important cognitive foundation of gaze-based social interaction (social agency) or gaze-based human-machine interaction scenarios. Due to peculiarities of the oculomotor domain such as the varying degree of volitional control, eye movements could provide new information regarding more general theories of sense of agency in future research."
+  },
+  {
+   "rank": 15,
+   "id": "36384816",
+   "source": "MED",
+   "pmid": "36384816",
+   "pmcid": "PMC9670469",
+   "doi": "10.1186/s12984-022-01104-5",
+   "first_publication_date": "2022-11-16",
+   "title": "Gaze-contingent display technology can help to reduce the ipsilesional attention bias in hemispatial neglect following stroke.",
+   "authors": "Kunkel Genannt Bode L, Schulte AS, Hauptmann B, Münte TF, Sprenger A, Machner B.",
+   "journal": "Journal of neuroengineering and rehabilitation",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundHemispatial neglect results from unilateral brain damage and represents a disabling unawareness for objects in the hemispace opposite the brain lesion (contralesional). The patients' attentional bias for ipsilesional hemispace represents a hallmark of neglect, which results from an imbalanced attentional priority map in the brain. The aim of this study was to investigate whether gaze-contingent display (GCD) technology, reducing the visual salience of objects in ipsilesional hemispace, is able to rebalance this map and increase awareness and exploration of objects in the neglected contralesional hemispace.MethodsUsing remote eye-tracking, we recorded gaze positions in 19 patients with left hemispatial neglect following right-hemisphere stroke and 22 healthy control subjects, while they were watching static naturalistic scenes. There were two task conditions, free viewing (FV) or goal-directed visual search (VS), and four modification conditions including the unmodified original picture, a purely static modification and two differently strong modifications with an additional gaze-contingent mask (GC-LOW, GC-HIGH), that continuously reduced color saturation and contrast of objects in the right hemispace.ResultsThe patients' median gaze position (Center of Fixation) in the original pictures was markedly deviated to the right in both tasks (FV: 6.8° ± 0.8; VS: 5.5° ± 0.7), reflecting the neglect-typical ipsilesional attention bias. GC modification significantly reduced this bias in FV (GC-HIGH: d = - 3.2 ± 0.4°; p ConclusionsGCD technology can be used to positively influence visual exploration patterns in patients with hemispatial neglect. Despite an alleviation of the neglect-related ipsilesional fixation bias, a concomitant functional benefit (improved detection of contralesional targets) was not achieved. Future studies may investigate individualized GCD-based modifications as augmented reality applications during the activities of daily living."
+  },
+  {
+   "rank": 16,
+   "id": "35363793",
+   "source": "MED",
+   "pmid": "35363793",
+   "pmcid": "PMC8975013",
+   "doi": "10.1371/journal.pone.0262886",
+   "first_publication_date": "2022-04-01",
+   "title": "Mid-range visual deficits after stroke: Prevalence and co-occurrence.",
+   "authors": "Lammers NA, Van den Berg NS, Lugtmeijer S, Smits AR, Pinto Y, de Haan EHF, visual brain group.",
+   "journal": "PloS one",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Visual deficits are common after stroke and are powerful predictors for the chronic functional outcome. However, while basic visual field and recognition deficits are relatively easy to assess with standardized methods, selective deficits in visual primitives, such as shape or motion, are harder to identify, as they often require a symmetrical bilateral posterior lesion in order to provoke full field deficits. Therefore, we do not know how often they occur. Nevertheless, they can have severe repercussions for daily-life functioning. We aimed to investigate the prevalence and co-occurrence of hemifield \"mid-range\" visual deficits (i.e. color, shape, location, orientation, correlated motion, contrast, texture and glossiness), using a novel experimental set-up with a gaze-contingent presentation of the stimuli. To this end, a prospective cohort of 220 ischemic (sub)cortical stroke patients and a healthy control group was assessed with this set-up. When comparing performance of patients with controls, the results showed that deficits in motion-perception were most prevalent (26%), followed by color (22%), texture (22%), location (21%), orientation (18%), contrast (14%), shape (14%) and glossiness (13%). 63% of the stroke patients showed one or more mid-range visual deficits. Overlap of deficits was small; they mostly occurred in isolation or co-occurred with only one or two other deficits. To conclude, it was found that deficits in \"mid-range\" visual functions were very prevalent. These deficits are likely to affect the chronic post-stroke condition. Since we found no strong patterns of co-occurrences, we suggest that an assessment of deficits at this level of visual processing requires screening the full range of visual functions."
+  },
+  {
+   "rank": 17,
+   "id": "34415269",
+   "source": "MED",
+   "pmid": "34415269",
+   "pmcid": null,
+   "doi": "10.1097/wno.0000000000001370",
+   "first_publication_date": "2021-09-01",
+   "title": "Telemedicine Evaluations in Neuro-Ophthalmology During the COVID-19 Pandemic: Patient and Physician Surveys.",
+   "authors": "Conway J, Krieger P, Hasanaj L, Sun L, Scharf JM, Odel JG, Dinkin MJ, Oliveira C, Mackay DD, Rasool N, Ko M, Rucker JC, Galetta SL, Balcer LJ.",
+   "journal": "Journal of neuro-ophthalmology : the official journal of the North American Neuro-Ophthalmology Society",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Multicenter Study",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundThe novel coronavirus 2019 (COVID-19) pandemic has transformed health care. With the need to limit COVID-19 exposures, telemedicine has become an increasingly important format for clinical care. Compared with other fields, neuro-ophthalmology faces unique challenges, given its dependence on physical examination signs that are difficult to elicit outside the office setting. As such, it is imperative to understand both patient and provider experiences to continue to adapt the technology and tailor its application. The purpose of this study is to analyze both neuro-ophthalmology physician and patient satisfaction with virtual health visits during the time of the COVID-19 pandemic.MethodsAcross three institutions (NYU Langone Health, Indiana University Health, and Columbia University Medical Center), telemedicine surveys were administered to 159 patients. Neuro-ophthalmologists completed 157 surveys; each of these were linked to a single patient visit. Patient surveys consisted of 5 questions regarding visit preparation, satisfaction, challenges, and comfort. The physician survey included 4 questions that focused on ability to gather specific clinical information by history and examination.ResultsAmong 159 patients, 104 (65.4%) reported that they were satisfied with the visit, and 149 (93.7%) indicated that they were comfortable asking questions. Sixty-eight (73.9%) patients found the instructions provided before the visit easy to understand. Potential areas for improvement noted by patients included more detailed preparation instructions and better technology (phone positioning, Internet connection, and software). More than 87% (137/157) of neuro-ophthalmologists surveyed reported having performed an examination that provided enough information for medical decision-making. Some areas of the neuro-ophthalmologic examination were reported to be easy to conduct (range of eye movements, visual acuity, Amsler grids, Ishihara color plates, and pupillary examination). Other components were more difficult (saccades, red desaturation, visual fields, convergence, oscillations, ocular alignment, and smooth pursuit); some were especially challenging (vestibulo-ocular reflex [VOR], VOR suppression, and optokinetic nystagmus). Clinicians noted that virtual health visits were limited by patient preparation, inability to perform certain parts of the examination (funduscopy and pupils), and technological issues.ConclusionsAmong virtual neuro-ophthalmology visits evaluated, most offer patients with appointments that satisfy their needs. Most physicians in this cohort obtained adequate clinical information for decision-making. Even better technology and instructions may help improve aspects of virtual health visits."
+  },
+  {
+   "rank": 18,
+   "id": "33862440",
+   "source": "MED",
+   "pmid": "33862440",
+   "pmcid": null,
+   "doi": "10.1016/j.cognition.2021.104732",
+   "first_publication_date": "2021-04-13",
+   "title": "The attentional template in high and low similarity search: Optimal tuning or tuning to relations?",
+   "authors": "Hamblin-Frohman Z, Becker SI.",
+   "journal": "Cognition",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The attentional template is often described as the mental representation that drives attentional selection and guidance, for instance, in visual search. Recent research suggests that this template is not a veridical representation of the sought-for target, but instead an altered representation that allows more efficient search. The current paper contrasts two such theories. Firstly, the Optimal Tuning account which posits that the attentional template shifts to an exaggerated target value to maximise the signal-to-noise ratio between similar targets and non-targets. Secondly, the Relational account which states that instead of tuning to feature values, attention is directed to the relative value created by the search context, e.g. all redder items or the reddest item. Both theories are empirically supported, but used different paradigms (perceptual decision tasks vs. visual search), and different attentional measures (probe response accuracy vs. gaze capture). The current design incorporates both paradigms and measures. The results reveal that while Optimal Tuning shifts are observed in probe trials they do not drive early attention or eye- movement behaviour in visual search. Instead, early attention follows the Relational Account, selecting all items with the relative target colour (e.g., redder). This suggests that the masked probe trials used in Optimal Tuning do not probe the attentional template that guides attention. In Experiment 3 we find that optimal tuning shifts correspond in magnitude to purely perceptual shifts created by contrast biases in the visual search arrays. This suggests that the shift in probe responses may in fact be a perceptual artefact rather than a strategic adaptation to optimise the signal-to-noise ratio. These results highlight the distinction between early attentional mechanisms and later, target identification mechanisms. SIGNIFICANCE STATEMENT: Classical theories of attention suggest that attention is guided by a feature-specific target template. In recent designs this has been challenged by an apparent non- veridical tuning of the template in situations where the target stimulus is similar to non-targets. The current studies compare two theories that propose different explanations for non-veridical tuning; the Relational and the Optimal Tuning account. We show that the Relational account describes the mechanism that guides early search behaviour, while the Optimal Tuning account describes perceptual decision-making. Optimal Tuning effects may be due to an artefact that has not been described in visual search before (simultaneous contrast)."
+  },
+  {
+   "rank": 19,
+   "id": "34144606",
+   "source": "MED",
+   "pmid": "34144606",
+   "pmcid": "PMC8237129",
+   "doi": "10.1167/jov.21.6.11",
+   "first_publication_date": "2021-06-01",
+   "title": "Age effects on saccadic suppression of luminance and color.",
+   "authors": "Braun DI, Schütz AC, Gegenfurtner KR.",
+   "journal": "Journal of vision",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Saccadic eye movements modulate visual perception: they initiate and terminate high acuity vision at a certain location in space, but before and during their execution visual contrast sensitivity is strongly attenuated for 100 to 200 ms. Transient perisaccadic perceptual distortions are assumed to be an important mechanism to maintain visual stability. Little is known about age effects on saccadic suppression, even though for healthy adults other major age-related changes are well documented, like a decrease of visual contrast sensitivity for intermediate and high spatial frequencies or an increase of saccade latencies. Here, we tested saccadic suppression of luminance and isoluminant chromatic flashes in 100 participants from eight to 78 years. To estimate the effect of saccadic suppression on contrast sensitivity, we used a two-alternative forced choice (2AFC) design and an adaptive staircase procedure to modulate the luminance or chromatic contrast of a flashed detection target during fixation and 15 ms after saccade onset. The target was a single horizontal luminance or chromatic line flashed 2° above or below the fixation or saccade target. Compared to fixation, average perisaccadic contrast sensitivity decreased significantly by 66% for luminance and by 36% for color. A significant correlation was found for the strength of saccadic suppression of luminance and color. However, a small age effect was found only for the strength of saccadic suppression of luminance, which increased from 64% to 70% from young to old age. We conclude that saccadic suppression for luminance and color is present in most participants independent of their age and that mechanisms of suppression stay relatively stable during healthy aging."
+  },
+  {
+   "rank": 20,
+   "id": "32915955",
+   "source": "MED",
+   "pmid": "32915955",
+   "pmcid": "PMC7488614",
+   "doi": "10.1167/jov.20.9.8",
+   "first_publication_date": "2020-09-01",
+   "title": "Transsaccadic perception is affected by saccade landing point deviations after saccadic adaptation.",
+   "authors": "Van der Stigchel S, Schut MJ, Fabius J, Van der Stoep N.",
+   "journal": "Journal of vision",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Whenever we move our eyes, some visual information obtained before a saccade is combined with the visual information obtained after a saccade. Interestingly, saccades rarely land exactly on the saccade target, which may pose a problem for transsaccadic perception as it could affect the quality of postsaccadic input. Recently, however, we showed that transsaccadic feature integration is actually unaffected by deviations of saccade landing points. Possibly, transsaccadic integration remains unaffected because the presaccadic shift of attention follows the intended saccade target and not the actual saccade landing point during regular saccades. Here, we investigated whether saccade landing point errors can in fact alter transsaccadic perception when the presaccadic shift of attention follows the saccade landing point deviation. Given that saccadic adaptation not only changes the saccade vector, but also the presaccadic shift of attention, we combined a feature report paradigm with saccadic adaptation. Observers reported the color of the saccade target, which occasionally changed slightly during a saccade to the target. This task was performed before and after saccadic adaptation. The results showed that, after adaptation, presaccadic color information became less precise and transsaccadic perception had a stronger reliance on the postsaccadic color estimate. Therefore, although previous studies have shown that transsaccadic perception is generally unaffected by saccade landing point deviations, our results reveal that this cannot be considered a general property of the visual system. When presaccadic shifts of attention follow altered saccade landing points, transsaccadic perception is affected, suggesting that transsaccadic feature perception might be dependent on visual spatial attention."
+  },
+  {
+   "rank": 21,
+   "id": "38755794",
+   "source": "MED",
+   "pmid": "38755794",
+   "pmcid": "PMC7424126",
+   "doi": "10.1167/jov.20.7.8",
+   "first_publication_date": "2020-07-01",
+   "title": "How spatial frequencies and color drive object search in real-world scenes: A new eye-movement corpus.",
+   "authors": "Cajar A, Engbert R, Laubrock J.",
+   "journal": "Journal of vision",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "When studying how people search for objects in scenes, the inhomogeneity of the visual field is often ignored. Due to physiological limitations, peripheral vision is blurred and mainly uses coarse-grained information (i.e., low spatial frequencies) for selecting saccade targets, whereas high-acuity central vision uses fine-grained information (i.e., high spatial frequencies) for analysis of details. Here we investigated how spatial frequencies and color affect object search in real-world scenes. Using gaze-contingent filters, we attenuated high or low frequencies in central or peripheral vision while viewers searched color or grayscale scenes. Results showed that peripheral filters and central high-pass filters hardly affected search accuracy, whereas accuracy dropped drastically with central low-pass filters. Peripheral filtering increased the time to localize the target by decreasing saccade amplitudes and increasing number and duration of fixations. The use of coarse-grained information in the periphery was limited to color scenes. Central filtering increased the time to verify target identity instead, especially with low-pass filters. We conclude that peripheral vision is critical for object localization and central vision is critical for object identification. Visual guidance during peripheral object localization is dominated by low-frequency color information, whereas high-frequency information, relatively independent of color, is most important for object identification in central vision."
+  },
+  {
+   "rank": 22,
+   "id": "32229500",
+   "source": "MED",
+   "pmid": "32229500",
+   "pmcid": "PMC7189490",
+   "doi": "10.1523/eneuro.0466-19.2020",
+   "first_publication_date": "2020-03-01",
+   "title": "Priming of Attentional Selection in Macaque Visual Cortex: Feature-Based Facilitation and Location-Based Inhibition of Return.",
+   "authors": "Westerberg JA, Maier A, Schall JD.",
+   "journal": "eNeuro",
+   "pub_types": [
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "Y",
+   "abstract": "Visual search performance varies with stimulus and response history. Priming of pop-out refers to increased accuracy and reduced response time with repeated presentation of particular singleton and distractor features (e.g., a red target among green distractor stimuli), which are abruptly impaired when singleton and distractor features swap (e.g., green target among red distractors). Meanwhile, inhibition of return refers to the slowing of response time when target location repeats. Neurophysiological correlates of both these phenomena have been reported in the frontal eye field (FEF), an area in the frontal lobe contributing to attentional selection and eye movement planning. To understand the mechanistic origin of these adaptive behaviors, we investigated visual cortical area V4, an area providing input to and receiving feedback from FEF, during feature-based priming of pop-out and location-based inhibition of return. Performing a color pop-out task, monkeys exhibited pronounced priming of pop-out and inhibition of return. Neural spiking from V4 revealed earlier target selection associated with priming of pop-out and delayed selection associated with inhibition of return. These results demonstrate substantial involvement of extrastriate visual cortex in behavioral priming and inhibition of return."
+  },
+  {
+   "rank": 23,
+   "id": "31940216",
+   "source": "MED",
+   "pmid": "31940216",
+   "pmcid": "PMC7052631",
+   "doi": "10.1152/jn.00363.2019",
+   "first_publication_date": "2020-01-15",
+   "title": "Encoding of eye movements explains reward-related activity in cerebellar simple spikes.",
+   "authors": "Lixenberg A, Yarkoni M, Botschko Y, Joshua M.",
+   "journal": "Journal of neurophysiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The cerebellum exhibits both motor and reward-related signals. However, it remains unclear whether reward is processed independently from the motor command or might reflect the motor consequences of the reward drive. To test how reward-related signals interact with sensorimotor processing in the cerebellum, we recorded Purkinje cell simple spike activity in the cerebellar floccular complex while monkeys were engaged in smooth pursuit eye movement tasks. The color of the target signaled the size of the reward the monkeys would receive at the end of the target motion. When the tracking task presented a single target, both pursuit and neural activity were only slightly modulated by the reward size. The reward modulations in single cells were rarely large enough to be detected. These modulations were only significant in the population analysis when we averaged across many neurons. In two-target tasks where the monkey learned to select based on the size of the reward outcome, both behavior and neural activity adapted rapidly. In both the single- and two-target tasks, the size of the reward-related modulation matched the size of the effect of reward on behavior. Thus, unlike cortical activity in eye movement structures, the reward-related signals could not be dissociated from the motor command. These results suggest that reward information is integrated with the eye movement command upstream of the Purkinje cells in the floccular complex. Thus reward-related modulations of the simple spikes are akin to modulations found in motor behavior and not to the central processing of the reward value.NEW & NOTEWORTHY Disentangling sensorimotor and reward signals is only possible if these signals do not completely overlap. We recorded activity in the floccular complex of the cerebellum while monkeys performed tasks designed to separate representations of reward from those of movement. Activity modulation by reward could be accounted for by the coding of eye movement parameters, suggesting that reward information is already integrated into motor commands upstream of the floccular complex."
+  },
+  {
+   "rank": 24,
+   "id": "30780046",
+   "source": "MED",
+   "pmid": "30780046",
+   "pmcid": null,
+   "doi": "10.1016/j.cognition.2019.02.004",
+   "first_publication_date": "2019-02-16",
+   "title": "Infants differentially update their internal models of a dynamic environment.",
+   "authors": "Kayhan E, Hunnius S, O'Reilly JX, Bekkering H.",
+   "journal": "Cognition",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Unexpected events provide us with opportunities for learning about what to expect from the world around us. Using a saccadic-planning paradigm, we investigated whether and how infants and adults represent the statistics of a changing environment (i.e. build an internal model of the environment). Participants observed differently colored bees that appeared at an unexpected location every few trials. The color cues indicated whether the subsequent bees would appear at this new location (i.e. update trials) or at the same location as previously (i.e. no-update trials). Infants learned the predictive value of the color cues and updated their internal models when necessary. Unlike infants, adults had a tendency to update their models each time they observed a change in the structure. We argue that infants are open to learning from current evidence due to being less influenced by their prior knowledge. This is an advantageous learning strategy to form accurate representations in dynamic environments, which is fundamental for successful adaptation."
+  },
+  {
+   "rank": 25,
+   "id": "30384128",
+   "source": "MED",
+   "pmid": "30384128",
+   "pmcid": null,
+   "doi": "10.1016/j.cognition.2018.10.016",
+   "first_publication_date": "2018-10-29",
+   "title": "Model of Multiple Identity Tracking (MOMIT) 2.0: Resolving the serial vs. parallel controversy in tracking.",
+   "authors": "Li J, Oksama L, Hyönä J.",
+   "journal": "Cognition",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The present study investigated whether during tracking of multiple moving objects with distinct identities only one identity is tracked at each moment (serial tracking) or whether multiple identities can be tracked simultaneously (parallel tracking). By adopting the gaze-contingent display change technique, we manipulated in real time the presence/absence of object identities during tracking. The data on performance accuracy revealed a serial tracking pattern for facial images and a parallel pattern for color discs: when tracking faces, the presence/absence of only the currently foveated identity impacted the performance, whereas when tracking colors, the presence of multiple identities across the visual field led to improved tracking performance. This pattern is consistent with the identifiability of the different types of objects in the visual field. The eye movements during MIT showed a bias towards visiting and dwelling on individual targets when facial identities were present and towards visiting the blank areas between targets when color identities were present. Nevertheless, the eye visits were predominately on individual targets regardless of the type of objects and the presence of object identities. The eye visits to targets were beneficial for target tracking, particularly in face tracking. We propose the Model of Multiple Identity Tracking (MOMIT) 2.0 which accounts for the results and reconcile the serial vs. parallel controversy. The model suggests that observers cooperatively use attention, eye movements, perception, and working memory for dynamic tracking. Tracking appears more serial when high-resolution information needs to be sampled and maintained for discriminating the targets, whereas it appears more parallel when low-resolution information is sufficient."
+  },
+  {
+   "rank": 26,
+   "id": "30088257",
+   "source": "MED",
+   "pmid": "30088257",
+   "pmcid": null,
+   "doi": "10.3758/s13414-018-1579-7",
+   "first_publication_date": "2018-11-01",
+   "title": "Lack of free choice reveals the cost of multiple-target search within and across feature dimensions.",
+   "authors": "Ort E, Fahrenfort JJ, Olivers CNL.",
+   "journal": "Attention, perception & psychophysics",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Having to look for multiple targets typically results in switch costs. However, using a gaze-contingent eyetracking paradigm with multiple color-defined targets, we have recently shown that the emergence of switch costs depends on whether observers can choose a target or a target is being imposed upon them. Here, using a similar paradigm, we tested whether these findings generalize to the situation in which targets are specified across different feature dimensions. We instructed participants to simultaneously search for, and then fixate, either of two possible targets presented among distractors. The targets were defined as either two colors, two shapes, or one color and one shape. In one condition, only one of the two targets was available in each display, so that the choice was imposed. In the other condition, both targets would be present in each display, which gave observers free choice over what to search for. Consistent with our earlier findings, switch costs emerged when targets were imposed, whereas no switch costs emerged when target selection was free, irrespective of the dimension in which the targets were defined. The results are consistent with the operation of different modes of control in multiple-target search, with switch costs emerging whenever reactive control is required and being reduced or absent when displays allow for proactive control."
+  },
+  {
+   "rank": 27,
+   "id": "29435825",
+   "source": "MED",
+   "pmid": "29435825",
+   "pmcid": null,
+   "doi": "10.3758/s13421-018-0797-5",
+   "first_publication_date": "2018-07-01",
+   "title": "Word segmentation by alternating colors facilitates eye guidance in Chinese reading.",
+   "authors": "Zhou W, Wang A, Shu H, Kliegl R, Yan M.",
+   "journal": "Memory & cognition",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "During sentence reading, low spatial frequency information afforded by spaces between words is the primary factor for eye guidance in spaced writing systems, whereas saccade generation for unspaced writing systems is less clear and under debate. In the present study, we investigated whether word-boundary information, provided by alternating colors (consistent or inconsistent with word-boundary information) influences saccade-target selection in Chinese. In Experiment 1, as compared to a baseline (i.e., uniform color) condition, word segmentation with alternating color shifted fixation location towards the center of words. In contrast, incorrect word segmentation shifted fixation location towards the beginning of words. In Experiment 2, we used a gaze-contingent paradigm to restrict the color manipulation only to the upcoming parafoveal words and replicated the results, including fixation location effects, as observed in Experiment 1. These results indicate that Chinese readers are capable of making use of parafoveal word-boundary knowledge for saccade generation, even if such information is unfamiliar to them. The present study provides novel support for the hypothesis that word segmentation is involved in the decision about where to fixate next during Chinese reading."
+  },
+  {
+   "rank": 28,
+   "id": "28134550",
+   "source": "MED",
+   "pmid": "28134550",
+   "pmcid": "PMC5300686",
+   "doi": "10.1037/xhp0000306",
+   "first_publication_date": "2017-02-01",
+   "title": "Competition in saccade target selection reveals attentional guidance by simultaneously active working memory representations.",
+   "authors": "Beck VM, Hollingworth A.",
+   "journal": "Journal of experimental psychology. Human perception and performance",
+   "pub_types": [
+    "research-article",
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "The content of visual working memory (VWM) guides attention, but whether this interaction is limited to a single VWM representation or functional for multiple VWM representations is under debate. To test this issue, we developed a gaze-contingent search paradigm to directly manipulate selection history and examine the competition between multiple cue-matching saccade target objects. Participants first saw a dual-color cue followed by two pairs of colored objects presented sequentially. For each pair, participants selectively fixated an object that matched one of the cued colors. Critically, for the second pair, the cued color from the first pair was presented either with a new distractor color or with the second cued color. In the latter case, if two cued colors in VWM interact with selection simultaneously, we expected the second cued color object to generate substantial competition for selection, even though the first cued color was used to guide attention in the immediately previous pair. Indeed, in the second pair, selection probability of the first cued color was substantially reduced in the presence of the second cued color. This competition between cue-matching objects provides strong evidence that both VWM representations interacted simultaneously with selection. (PsycINFO Database Record"
+  },
+  {
+   "rank": 29,
+   "id": "29326576",
+   "source": "MED",
+   "pmid": "29326576",
+   "pmcid": "PMC5741690",
+   "doi": "10.3389/fnhum.2017.00624",
+   "first_publication_date": "2017-12-18",
+   "title": "Dynamic Changes in Upper-Limb Corticospinal Excitability during a 'Pro-/Anti-saccade' Double-Choice Task.",
+   "authors": "Falciati L, Maioli C.",
+   "journal": "Frontiers in human neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Under natural behavioral conditions, visually guided eye movements are linked to direction-specific modulations of cortico-spinal system (CSS) excitability in upper-limb muscles, even in absence of a manual response. These excitability changes have been shown to be compatible with a covert motor program encoding a manual movement toward the same target of the eyes. The aim of this study is to investigate whether this implicit oculo-manual coupling is enforced following every saccade execution or it depends on the behavioral context. Twenty-two healthy young adults participated in the study. Single-pulse transcranial magnetic stimulation was applied to the motor cortex at nine different time epochs during a double-choice eye task, in which the decision to execute a prosaccade or an antisaccade was made on the color of a peripheral visual cue. By analyzing the amplitude of the motor evoked potentials (MEP) in three distal muscles of the resting upper-limb, a facilitation peak of CSS excitability was found in two of them at 120 ms before the eyes begin to move. Furthermore, a long-lasting, generalized reduced corticomotor excitability develops following the eye response. Finally, a quite large modulation of MEP amplitude, depending on the direction of the saccade, is observed only in the first dorsal interosseous muscle, in a narrow time window at about 150 ms before the eye movement, irrespective of the type of the ocular response (pro-/anti-saccade). This change in CSS excitability is not tied up to the timing of the occurrence of the visual cue but, instead, appears to be tightly time-related to the saccade onset. Observed excitability changes differ in many respects from those previously reported with different behavioral paradigms. A main finding of our study is that the implicit coupling between eye and hand motor systems is contingent upon the particular motor set determined by the cognitive aspects of the performed oculomotor task. In particular, the direction-specific modulation in CSS excitability described in this study appears to be related to perceptual and decision-making processes rather than representing an implicit upper-limb motor program, coupled to the saccade execution."
+  },
+  {
+   "rank": 30,
+   "id": "29157407",
+   "source": "MED",
+   "pmid": "29157407",
+   "pmcid": null,
+   "doi": "10.1016/bs.pbr.2017.07.003",
+   "first_publication_date": "2017-08-14",
+   "title": "Oculomotor measures reveal the temporal dynamics of preparing for search.",
+   "authors": "Olmos-Solis K, van Loon AM, Los SA, Olivers CNL.",
+   "journal": "Progress in brain research",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Theories of visual search assume that selection is driven by an active template representation of the target object. Earlier studies suggest that template activation occurs prior to search, but the temporal dynamics of such preactivation remain unclear. Two experiments employed microsaccades to track both general preparation (i.e., anticipation of the search task as such) and template-specific preparation (i.e., anticipation of target selection) of visual search. Participants memorized a target color (i.e., the template) for an upcoming search task. During the delay period, we presented an irrelevant rapid serial visual presentation (RSVP) of lateralized colored disks. Crucially, at different time points into the RSVP, the template color was inserted, allowing us to measure attentional biases toward the template match as a function of time. Results showed a general suppression of saccades: the closer in time to the search display, the less saccades were produced. This suppression was stronger when a template-matching color was present compared to when absent. However, when microsaccades occurred, they were biased toward the template-matching color and more so just prior to the search display. We conclude that observers adapt search template activation to the anticipated moment of search, and that microsaccades reflect general as well as target-specific preparation effects."
+  },
+  {
+   "rank": 31,
+   "id": "28805589",
+   "source": "MED",
+   "pmid": "28805589",
+   "pmcid": null,
+   "doi": "10.1016/bs.irn.2017.04.007",
+   "first_publication_date": "2017-05-31",
+   "title": "Visual Dysfunction in Parkinson's Disease.",
+   "authors": "Armstrong RA.",
+   "journal": "International review of neurobiology",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This chapter describes the visual problems likely to be encountered in Parkinson's disease (PD) and whether such signs are useful in differentiating the parkinsonian syndromes. Visual dysfunction in PD may involve visual acuity, contrast sensitivity, color discrimination, pupil reactivity, saccadic and pursuit eye movements, motion perception, visual fields, and visual processing speeds. In addition, disturbance of visuospatial orientation, facial recognition problems, rapid eye movement (REM) sleep behavior disorder, and chronic visual hallucinations may be present. Problems affecting pupil reactivity, stereopsis, pursuit eye movement, and visuomotor adaptation, when accompanied by REM sleep behavior disorder, could be early features of PD. Dementia associated with PD is associated with enhanced eye movement problems, visuospatial deficits, and visual hallucinations. Visual dysfunction may be a useful diagnostic feature in differentiating PD from other parkinsonian symptoms, visual hallucinations, visuospatial dysfunction, and variation in saccadic eye movement problems being particularly useful discriminating features."
+  },
+  {
+   "rank": 32,
+   "id": "27139583",
+   "source": "MED",
+   "pmid": "27139583",
+   "pmcid": "PMC5053361",
+   "doi": "10.1167/16.7.2",
+   "first_publication_date": "2016-05-01",
+   "title": "Adaptation to size affects saccades with long but not short latencies.",
+   "authors": "Zimmermann E, Morrone MC, Burr D.",
+   "journal": "Journal of vision",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Maintained exposure to a specific stimulus property-such as size, color, or motion-induces perceptual adaptation aftereffects, usually in the opposite direction to that of the adaptor. Here we studied how adaptation to size affects perceived position and visually guided action (saccadic eye movements) to that position. Subjects saccaded to the border of a diamond-shaped object after adaptation to a smaller diamond shape. For saccades in the normal latency range, amplitudes decreased, consistent with saccading to a larger object. Short-latency saccades, however, tended to be affected less by the adaptation, suggesting that they were only partly triggered by a signal representing the illusory target position. We also tested size perception after adaptation, followed by a mask stimulus at the probe location after various delays. Similar size adaptation magnitudes were found for all probe-mask delays. In agreement with earlier studies, these results suggest that the duration of the saccade latency period determines the reference frame that codes the probe location."
+  },
+  {
+   "rank": 33,
+   "id": "26974918",
+   "source": "MED",
+   "pmid": "26974918",
+   "pmcid": null,
+   "doi": "10.1364/josaa.33.00a143",
+   "first_publication_date": "2016-03-01",
+   "title": "Properties of lateral interaction in color and brightness induction.",
+   "authors": "Bachy R, Zaidi Q.",
+   "journal": "Journal of the Optical Society of America. A, Optics, image science, and vision",
+   "pub_types": [
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "In a visual scene, when objects are surrounded by other components, neural mechanisms increase the perceived color and brightness difference between an object and its surround, potentially enhancing an observer's ability to segment objects. Despite almost two centuries of empirical investigations, the nature of induction mechanisms remains elusive. To elucidate the nature of these mechanisms, we introduce a new method for measuring color and brightness induction that allows separate manipulation of lateral interactions and adaptation, and controls for eye-movement-related effects. We use the method to examine the function relating induction magnitude to contrast change in the surround, the symmetry of induction in complementary directions for the three cardinal color axes, and the effect of blur between the test and the surround. On average, brightness induction was more linear than chromatic induction. The induction magnitude was similar for surrounds of complementary colors on average and for many conditions, and when individual observers deviated from symmetry it could be on either side. Edge blur did not change the induction magnitude. For slower presentations, light/dark induction increased to further reduce asymmetry, suggesting that previously found light/dark induction asymmetry is not due to lateral interactions or prolonged adaptation. Lateral interactions underlying induction are thus mostly symmetric for color and brightness axes and involve spatially opponent filters of modest widths, rather than edge extraction."
+  },
+  {
+   "rank": 34,
+   "id": "26824640",
+   "source": "MED",
+   "pmid": "26824640",
+   "pmcid": null,
+   "doi": "10.1167/16.2.3",
+   "first_publication_date": "2016-01-01",
+   "title": "Eye guidance during real-world scene search: The role color plays in central and peripheral vision.",
+   "authors": "Nuthmann A, Malcolm GL.",
+   "journal": "Journal of vision",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The visual system utilizes environmental features to direct gaze efficiently when locating objects. While previous research has isolated various features' contributions to gaze guidance, these studies generally used sparse displays and did not investigate how features facilitated search as a function of their location on the visual field. The current study investigated how features across the visual field--particularly color--facilitate gaze guidance during real-world search. A gaze-contingent window followed participants' eye movements, restricting color information to specified regions. Scene images were presented in full color, with color in the periphery and gray in central vision or gray in the periphery and color in central vision, or in grayscale. Color conditions were crossed with a search cue manipulation, with the target cued either with a word label or an exact picture. Search times increased as color information in the scene decreased. A gaze-data based decomposition of search time revealed color-mediated effects on specific subprocesses of search. Color in peripheral vision facilitated target localization, whereas color in central vision facilitated target verification. Picture cues facilitated search, with the effects of cue specificity and scene color combining additively. When available, the visual system utilizes the environment's color information to facilitate different real-world visual search behaviors based on the location within the visual field."
+  },
+  {
+   "rank": 35,
+   "id": "26094831",
+   "source": "MED",
+   "pmid": "26094831",
+   "pmcid": null,
+   "doi": "10.1111/opo.12220",
+   "first_publication_date": "2015-07-01",
+   "title": "Oculo-visual changes and clinical considerations affecting older patients with dementia.",
+   "authors": "Armstrong R, Kergoat H.",
+   "journal": "Ophthalmic & physiological optics : the journal of the British College of Ophthalmic Opticians (Optometrists)",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "PurposeDementia is associated with various alterations of the eye and visual function. Over 60% of cases are attributable to Alzheimer's disease, a significant proportion of the remainder to vascular dementia or dementia with Lewy bodies, while frontotemporal dementia, and Parkinson's disease dementia are less common. This review describes the oculo-visual problems of these five dementias and the pathological changes which may explain these symptoms. It further discusses clinical considerations to help the clinician care for older patients affected by dementia.Recent findingsVisual problems in dementia include loss of visual acuity, defects in colour vision and visual masking tests, changes in pupillary response to mydriatics, defects in fixation and smooth and saccadic eye movements, changes in contrast sensitivity function and visual evoked potentials, and disturbance of complex visual functions such as in reading ability, visuospatial function, and the naming and identification of objects. Pathological changes have also been reported affecting the crystalline lens, retina, optic nerve, and visual cortex. Clinically, issues such as cataract surgery, correcting the refractive error, quality of life, falls, visual impairment and eye care for dementia have been addressed.SummaryMany visual changes occur across dementias, are controversial, often based on limited patient numbers, and no single feature can be regarded as diagnostic of any specific dementia. Nevertheless, visual hallucinations may be more characteristic of dementia with Lewy bodies and Parkinson's disease dementia than Alzheimer's disease or frontotemporal dementia. Differences in saccadic eye movement dysfunction may also help to distinguish Alzheimer's disease from frontotemporal dementia and Parkinson's disease dementia from dementia with Lewy bodies. Eye care professionals need to keep informed of the growing literature in vision/dementia, be attentive to signs and symptoms suggestive of cognitive impairment, and be able to adapt their practice and clinical interventions to best serve patients with dementia."
+  },
+  {
+   "rank": 36,
+   "id": "25995353",
+   "source": "MED",
+   "pmid": "25995353",
+   "pmcid": "PMC4509388",
+   "doi": "10.1152/jn.00666.2014",
+   "first_publication_date": "2015-05-20",
+   "title": "Context cue-dependent saccadic adaptation in rhesus macaques cannot be elicited using color.",
+   "authors": "Cecala AL, Smalianchuk I, Khanna SB, Smith MA, Gandhi NJ.",
+   "journal": "Journal of neurophysiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "When the head does not move, rapid movements of the eyes called saccades are used to redirect the line of sight. Saccades are defined by a series of metrical and kinematic (evolution of a movement as a function of time) relationships. For example, the amplitude of a saccade made from one visual target to another is roughly 90% of the distance between the initial fixation point (T0) and the peripheral target (T1). However, this stereotypical relationship between saccade amplitude and initial retinal error (T1-T0) may be altered, either increased or decreased, by surreptitiously displacing a visual target during an ongoing saccade. This form of motor learning (called saccadic adaptation) has been described in both humans and monkeys. Recent experiments in humans and monkeys have suggested that internal (proprioceptive) and external (target shape, color, and/or motion) cues may be used to produce context-dependent adaptation. We tested the hypothesis that an external contextual cue (target color) could be used to evoke differential gain (actual saccade/initial retinal error) states in rhesus monkeys. We did not observe differential gain states correlated with target color regardless of whether targets were displaced along the same vector as the primary saccade or perpendicular to it. Furthermore, this observation held true regardless of whether adaptation trials using various colors and intrasaccade target displacements were randomly intermixed or presented in short or long blocks of trials. These results are consistent with hypotheses that state that color cannot be used as a contextual cue and are interpreted in light of previous studies of saccadic adaptation in both humans and monkeys."
+  },
+  {
+   "rank": 37,
+   "id": "25829265",
+   "source": "MED",
+   "pmid": "25829265",
+   "pmcid": null,
+   "doi": "10.1016/j.bandc.2015.03.001",
+   "first_publication_date": "2015-03-29",
+   "title": "Finding the balance between capture and control: Oculomotor selection in early deaf adults.",
+   "authors": "Heimler B, van Zoest W, Baruffaldi F, Donk M, Rinaldi P, Caselli MC, Pavani F.",
+   "journal": "Brain and cognition",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Previous work investigating the consequence of bilateral deafness on attentional selection suggests that experience-dependent changes in this population may result in increased automatic processing of stimulus-driven visual information (e.g., saliency). However, adaptive behavior also requires observers to prioritize goal-driven information relevant to the task at hand. In order to investigate whether auditory deprivation alters the balance between these two components of attentional selection, we assessed the time-course of overt visual selection in deaf adults. Twenty early-deaf adults and twenty hearing controls performed an oculomotor additional singleton paradigm. Participants made a speeded eye-movement to a unique orientation target, embedded among homogenous non-targets and one additional unique orientation distractor that was more, equally or less salient than the target. Saliency was manipulated through color. For deaf participants proficiency in sign language was assessed. Overall, results showed that fast initiated saccades were saliency-driven, whereas later initiated saccades were goal-driven. However, deaf participants were overall slower than hearing controls at initiating saccades and also less captured by task-irrelevant salient distractors. The delayed oculomotor behavior of deaf adults was not explained by any of the linguistic measures acquired. Importantly, a multinomial model applied to the data revealed a comparable evolution over time of the underlying saliency- and goal-driven processes between the two groups, confirming the crucial role of saccadic latencies in determining the outcome of visual selection performance. The present findings indicate that prioritization of saliency-driven information is not an unavoidable phenomenon in deafness. Possible neural correlates of the documented behavioral effect are also discussed."
+  },
+  {
+   "rank": 38,
+   "id": "25384235",
+   "source": "MED",
+   "pmid": "25384235",
+   "pmcid": null,
+   "doi": "10.1037/xhp0000016",
+   "first_publication_date": "2014-11-10",
+   "title": "Functional fixedness: The functional significance of delayed disengagement based on attention set.",
+   "authors": "Wright TJ, Boot WR, Brockmole JR.",
+   "journal": "Journal of experimental psychology. Human perception and performance",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "During search, the disengagement of attention is automatically delayed when a fixated but task-irrelevant object shares features of the search target. We examined whether delayed disengagement based on top-down attention set is potentially functional, resulting in additional processing of the fixated item. To accomplish this, we adapted the oculomotor disengagement paradigm. Participants saccaded to a peripheral object of a particular color and responded to the identity of the letter within it. To initiate search participants made a saccade away from an always irrelevant object at the center of the screen that matched or mismatched the target's color and contained a letter that was congruent or incongruent with the target letter. We found that delayed disengagement based on attention set was associated with deeper processing of the center item: a congruency effect between the center letter and peripheral target letter was only observed when the center object's color matched participants' attention set. Results are consistent with the proposal that delayed disengagement based on attention set is functionally significant, automatically encouraging deeper levels of processing of target-like objects that fall within the focus of attention."
+  },
+  {
+   "rank": 39,
+   "id": "26599301",
+   "source": "MED",
+   "pmid": "26599301",
+   "pmcid": "PMC4927837",
+   "doi": "10.3233/jpd-150686",
+   "first_publication_date": "2015-01-01",
+   "title": "Oculo-Visual Dysfunction in Parkinson's Disease.",
+   "authors": "Armstrong RA.",
+   "journal": "Journal of Parkinson's disease",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "This review describes the oculo-visual problems likely to be encountered in Parkinson's disease (PD) with special reference to three questions: (1) are there visual symptoms characteristic of the prodromal phase of PD, (2) is PD dementia associated with specific visual changes, and (3) can visual symptoms help in the differential diagnosis of the parkinsonian syndromes, viz. PD, progressive supranuclear palsy (PSP), dementia with Lewy bodies (DLB), multiple system atrophy (MSA), and corticobasal degeneration (CBD)? Oculo-visual dysfunction in PD can involve visual acuity, dynamic contrast sensitivity, colour discrimination, pupil reactivity, eye movement, motion perception, and visual processing speeds. In addition, disturbance of visuo-spatial orientation, facial recognition problems, and chronic visual hallucinations may be present. Prodromal features of PD may include autonomic system dysfunction potentially affecting pupil reactivity, abnormal colour vision, abnormal stereopsis associated with postural instability, defects in smooth pursuit eye movements, and deficits in visuo-motor adaptation, especially when accompanied by idiopathic rapid eye movement (REM) sleep behaviour disorder. PD dementia is associated with the exacerbation of many oculo-visual problems but those involving eye movements, visuo-spatial function, and visual hallucinations are most characteristic. Useful diagnostic features in differentiating the parkinsonian symptoms are the presence of visual hallucinations, visuo-spatial problems, and variation in saccadic eye movement dysfunction."
+  },
+  {
+   "rank": 40,
+   "id": "26550008",
+   "source": "MED",
+   "pmid": "26550008",
+   "pmcid": "PMC4623777",
+   "doi": "10.3389/fnbeh.2015.00258",
+   "first_publication_date": "2015-09-30",
+   "title": "Can we resist another person's gaze?",
+   "authors": "Marino BF, Mirabella G, Actis-Grosso R, Bricolo E, Ricciardelli P.",
+   "journal": "Frontiers in behavioral neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Adaptive adjustments of strategies are needed to optimize behavior in a dynamic and uncertain world. A key function in implementing flexible behavior and exerting self-control is represented by the ability to stop the execution of an action when it is no longer appropriate for the environmental requests. Importantly, stimuli in our environment are not equally relevant and some are more valuable than others. One example is the gaze of other people, which is known to convey important social information about their direction of attention and their emotional and mental states. Indeed, gaze direction has a significant impact on the execution of voluntary saccades of an observer since it is capable of inducing in the observer an automatic gaze-following behavior: a phenomenon named social or joint attention. Nevertheless, people can exert volitional inhibitory control on saccadic eye movements during their planning. Little is known about the interaction between gaze direction signals and volitional inhibition of saccades. To fill this gap, we administered a countermanding task to 15 healthy participants in which they were asked to observe the eye region of a face with the eyes shut appearing at central fixation. In one condition, participants were required to suppress a saccade, that was previously instructed by a gaze shift toward one of two peripheral targets, when the eyes were suddenly shut down (social condition, SC). In a second condition, participants were asked to inhibit a saccade, that was previously instructed by a change in color of one of the two same targets, when a change of color of a central picture occurred (non-social condition, N-SC). We found that inhibitory control was more impaired in the SC, suggesting that actions initiated and stopped by social cues conveyed by the eyes are more difficult to withhold. This is probably due to the social value intrinsically linked to these cues and the many uses we make of them."
+  }
+ ]
+}
