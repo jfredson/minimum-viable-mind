@@ -1,0 +1,44 @@
+[transformers] Unknown quantization type, got modelopt - supported types are: ['awq', 'bitsandbytes_4bit', 'bitsandbytes_8bit', 'gptq', 'aqlm', 'quanto', 'quark', 'fouroversix', 'fp_quant', 'eetq', 'higgs', 'hqq', 'compressed-tensors', 'fbgemm_fp8', 'torchao', 'bitnet', 'vptq', 'spqr', 'fp8', 'gguf', 'nvfp4', 'mxfp8', 'auto-round', 'mxfp4', 'metal', 'sinq', 'gemma']. Hence, we will skip the quantization. To remove the warning, you can delete the quantization_config attribute in config.json
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+checks {"noise_floor": 0.0, "tolerance": 0.01, "identity": 0.0, "identity_pass": true, "bypass": 0.0, "bypass_pass": true, "items": 20}
+recorded 838 block_states [65, 1, 2304]
+neutral main {"swap": {"damage": 1.1299897697236803, "passages": 99, "ppl_rise": 944.654218331345}, "avg": {"damage": 0.60973023802042, "passages": 100, "ppl_rise": -409.1664369764851}, "fallback": {"damage": 0.6017429861426353, "passages": 100, "ppl_rise": -343.62653017313414}}
+factor loop swap {"factor": 986.5988956531019, "target_damage": 1.1299897697236803, "damage_20_draws": 0.9304880072372128, "within_20pct": true}
+factor loop avg {"factor": 3.933023691560415, "target_damage": 0.60973023802042, "damage_20_draws": 0.6118322882056236, "within_20pct": true}
+factor outside swap {"factor": 0.7041355154858088, "target_damage": 1.1299897697236803, "damage_20_draws": 1.1379980348577403, "within_20pct": true}
+factor outside avg {"factor": 0.5693392091427253, "target_damage": 0.60973023802042, "damage_20_draws": 0.6100344207882881, "within_20pct": true}
+pairs 0 1424
+pairs 10 1469
+pairs 20 1514
+pairs 30 1560
+pairs 40 1606
+pairs 50 1651
+pairs 60 1693
+pairs 70 1738
+pairs 80 1784
+pairs 90 1840
+pairs 100 1896
+pairs 110 1952
+done 2120 s, peak 70.78 GB
+---quick---
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] Unknown quantization type, got modelopt - supported types are: ['awq', 'bitsandbytes_4bit', 'bitsandbytes_8bit', 'gptq', 'aqlm', 'quanto', 'quark', 'fouroversix', 'fp_quant', 'eetq', 'higgs', 'hqq', 'compressed-tensors', 'fbgemm_fp8', 'torchao', 'bitnet', 'vptq', 'spqr', 'fp8', 'gguf', 'nvfp4', 'mxfp8', 'auto-round', 'mxfp4', 'metal', 'sinq', 'gemma']. Hence, we will skip the quantization. To remove the warning, you can delete the quantization_config attribute in config.json
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+checks {"noise_floor": 0.0, "tolerance": 0.01, "identity": 0.0, "identity_pass": true, "bypass": 0.0, "bypass_pass": true, "items": 20}
+recorded 368 block_states [65, 1, 2304]
+neutral main {"swap": {"damage": 0.945125275850296, "passages": 10, "ppl_rise": 415.0029865843708}, "avg": {"damage": 0.5793163985013962, "passages": 10, "ppl_rise": -638.3250124042611}, "fallback": {"damage": 0.5850220054388047, "passages": 10, "ppl_rise": -489.55697184660676}}
+factor loop swap {"factor": 273.8419634264361, "target_damage": 0.945125275850296, "damage_20_draws": 0.9317616581916809, "within_20pct": true}
+factor loop avg {"factor": 3.6517412725483775, "target_damage": 0.5793163985013962, "damage_20_draws": 0.6180375099182129, "within_20pct": true}
+factor outside swap {"factor": 0.6493816315762113, "target_damage": 0.945125275850296, "damage_20_draws": 1.0214946031570435, "within_20pct": true}
+factor outside avg {"factor": 0.5232991146814947, "target_damage": 0.5793163985013962, "damage_20_draws": 0.5558097124099731, "within_20pct": true}
+pairs 0 163
+done 218 s, peak 59.36 GB
+---diagnostic---
+text: Visitors can borrow bicycles at the information office. Buses run every twenty minutes during the day. The hill above the village gives a wide view of the valley. Most houses on the street have red fr
+mean NLL 8.722886268643366 median 8.951626777648926
+'Visit' 21.05 | top 'Think'
+---pip---
+accelerate==1.16.0
+Jinja2==3.1.6
+tokenizers==0.23.3
+torch==2.9.1+cu128

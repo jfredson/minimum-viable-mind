@@ -1,0 +1,297 @@
+{
+ "checks": {
+  "noise_floor": 0.0,
+  "tolerance": 0.01,
+  "identity": 0.0,
+  "identity_pass": true,
+  "bypass": 0.0,
+  "bypass_pass": true,
+  "items": 20
+ },
+ "rule_is_needed": {
+  "look": {
+   "accuracy_without_rule": 0.2125,
+   "rule_needed": true
+  },
+  "op": {
+   "accuracy_without_rule": 0.175,
+   "rule_needed": true
+  },
+  "unit": {
+   "accuracy_without_rule": 0.1375,
+   "rule_needed": true
+  }
+ },
+ "strike_counts": {
+  "look+prod": {
+   "pairs": 20,
+   "confident": 20,
+   "routine_check_failures": 14,
+   "mirror_check_failures": 4,
+   "struck": true
+  },
+  "look+sum": {
+   "pairs": 20,
+   "confident": 20,
+   "routine_check_failures": 10,
+   "mirror_check_failures": 11,
+   "struck": true
+  },
+  "op+cap": {
+   "pairs": 13,
+   "confident": 5,
+   "routine_check_failures": 5,
+   "mirror_check_failures": 1,
+   "struck": true
+  },
+  "op+col": {
+   "pairs": 14,
+   "confident": 2,
+   "routine_check_failures": 2,
+   "mirror_check_failures": 1,
+   "struck": true
+  },
+  "op+opp": {
+   "pairs": 13,
+   "confident": 2,
+   "routine_check_failures": 1,
+   "mirror_check_failures": 1,
+   "struck": true
+  },
+  "unit+cap": {
+   "pairs": 14,
+   "confident": 14,
+   "routine_check_failures": 12,
+   "mirror_check_failures": 1,
+   "struck": true
+  },
+  "unit+col": {
+   "pairs": 13,
+   "confident": 10,
+   "routine_check_failures": 3,
+   "mirror_check_failures": 8,
+   "struck": true
+  },
+  "unit+opp": {
+   "pairs": 13,
+   "confident": 9,
+   "routine_check_failures": 7,
+   "mirror_check_failures": 7,
+   "struck": true
+  }
+ },
+ "pairing_table": {
+  "look": [],
+  "op": [],
+  "unit": []
+ },
+ "pairs_after_baseline_checks": {
+  "look": 0,
+  "op": 0,
+  "unit": 0
+ },
+ "pairs_dropped_no_donor": [
+  "A-0060"
+ ],
+ "margin_matching": {
+  "look": {
+   "before": 0,
+   "dropped": 0,
+   "limit_third": 0.0,
+   "over_limit": false
+  },
+  "op": {
+   "before": 0,
+   "dropped": 0,
+   "limit_third": 0.0,
+   "over_limit": false
+  },
+  "unit": {
+   "before": 0,
+   "dropped": 0,
+   "limit_third": 0.0,
+   "over_limit": false
+  }
+ },
+ "swap_size_matching": {
+  "swap": {
+   "look": {
+    "before": 0,
+    "ratio_before": null,
+    "ratio_after": null,
+    "dropped": 0,
+    "limit_tenth": 0.0,
+    "over_limit": false
+   },
+   "op": {
+    "before": 0,
+    "ratio_before": null,
+    "ratio_after": null,
+    "dropped": 0,
+    "limit_tenth": 0.0,
+    "over_limit": false
+   },
+   "unit": {
+    "before": 0,
+    "ratio_before": null,
+    "ratio_after": null,
+    "dropped": 0,
+    "limit_tenth": 0.0,
+    "over_limit": false
+   }
+  },
+  "avg": {
+   "look": {
+    "before": 0,
+    "ratio_before": null,
+    "ratio_after": null,
+    "dropped": 0,
+    "limit_tenth": 0.0,
+    "over_limit": false
+   },
+   "op": {
+    "before": 0,
+    "ratio_before": null,
+    "ratio_after": null,
+    "dropped": 0,
+    "limit_tenth": 0.0,
+    "over_limit": false
+   },
+   "unit": {
+    "before": 0,
+    "ratio_before": null,
+    "ratio_after": null,
+    "dropped": 0,
+    "limit_tenth": 0.0,
+    "over_limit": false
+   }
+  }
+ },
+ "neutral_damage": {
+  "swap": 1.1299897697236803,
+  "avg": 0.60973023802042,
+  "fallback": 0.6017429861426353
+ },
+ "factor_of_two": {
+  "swap_vs_average": 1.853261818525452,
+  "average_trips": false,
+  "swap_vs_fallback": 1.8778611396325124,
+  "fallback_trips": false
+ },
+ "damage_matching": {
+  "loop_swap": {
+   "factor": 986.5988956531019,
+   "target_damage": 1.1299897697236803,
+   "damage_20_draws": 0.9304880072372128,
+   "within_20pct": true
+  },
+  "loop_avg": {
+   "factor": 3.933023691560415,
+   "target_damage": 0.60973023802042,
+   "damage_20_draws": 0.6118322882056236,
+   "within_20pct": true
+  },
+  "outside_swap": {
+   "factor": 0.7041355154858088,
+   "target_damage": 1.1299897697236803,
+   "damage_20_draws": 1.1379980348577403,
+   "within_20pct": true
+  },
+  "outside_avg": {
+   "factor": 0.5693392091427253,
+   "target_damage": 0.60973023802042,
+   "damage_20_draws": 0.6100344207882881,
+   "within_20pct": true
+  }
+ },
+ "normal_range": {
+  "swap": {
+   "bound": -14.28146932231516,
+   "main_rise": 944.654218331345,
+   "main_within": false,
+   "room": -958.9356876536601,
+   "comparisons_rise": {
+    "loop_swap": -247.12147576835707,
+    "outside_swap": 1576.529596229644
+   },
+   "comparisons_within": {
+    "loop_swap": true,
+    "outside_swap": false
+   }
+  },
+  "avg": {
+   "bound": -23.63066835229688,
+   "main_rise": -409.1664369764851,
+   "main_within": true,
+   "room": 385.5357686241882,
+   "comparisons_rise": {
+    "loop_avg": -346.0213631560148,
+    "outside_avg": 678.2740786842267
+   },
+   "comparisons_within": {
+    "loop_avg": true,
+    "outside_avg": false
+   }
+  }
+ },
+ "bites_one_pass": {
+  "pooled": {
+   "items": 80,
+   "cost": 0.265625,
+   "interval": [
+    0.15031645569620253,
+    0.3914835164835165
+   ],
+   "lower_end_at_least_0.15": true
+  },
+  "op": {
+   "items": 40,
+   "cost": 0.28125,
+   "interval": [
+    0.09375,
+    0.46875
+   ],
+   "lower_end_at_least_0.15": false
+  },
+  "unit": {
+   "items": 40,
+   "cost": 0.25,
+   "interval": [
+    0.1111111111111111,
+    0.4166666666666667
+   ],
+   "lower_end_at_least_0.15": false
+  }
+ },
+ "change_ratio_bites": {
+  "swap": {
+   "mean": 0.7145623994991184,
+   "sd": 0.037808809715752435,
+   "min": 0.546162411570549,
+   "max": 0.761464285850525,
+   "distance_from_0.5": 0.21456239949911837,
+   "below_0.5": false
+  },
+  "avg": {
+   "mean": 0.665429811179638,
+   "sd": 0.004998800653145322,
+   "min": 0.6539849042892456,
+   "max": 0.6759318113327026,
+   "distance_from_0.5": 0.16542981117963795,
+   "below_0.5": false
+  }
+ },
+ "simulation_inputs": {},
+ "ties_at_unaltered": 5,
+ "return_to_john": {
+  "noise floor above 0.01, identity or bypass fails": false,
+  "fewer than three rule kinds, or a rule kind with one routine kind or none": true,
+  "margin matching removes more than a third of a rule kind": false,
+  "swap-size matching needs more than a tenth of a rule kind (the dose question, RT-345)": false,
+  "both the average and its fallback differ from the swap by more than a factor of two (choice 5: the test stops)": false,
+  "a comparison cannot be matched within 20% on damage": false,
+  "the main removal or a comparison fails the normal-range check": true,
+  "the bites check's one-pass condition fails (every outcome not testable)": false,
+  "the change ratio is below 0.5 under either method (outcome F out of reach)": false
+ }
+}
