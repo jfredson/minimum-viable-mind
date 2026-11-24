@@ -1,6 +1,21 @@
 # The loop removal test: a design on paper
 
-*Version 0.12, written 2026-11-21 on John's instruction ("Yes, write 0.12"). It answers the closure check
+*Version 0.13, written 2026-11-23 on John's instruction ("Yes, write 0.13"). It writes in his three rulings
+after step 4b (`docs/rulings/2026-11-23-loop-removal-test-after-step4b-ruling.md`), which answer the step-4b
+findings (`experiments/10-loop-removal-test/step4b-findings-2026-11-23.md`):
+- **interference is judged by accuracy,** in place of a limit of 1.0 in margin. The new rule is counted over
+  the pairs whose answer is right without the other half of the context. Counted over confident pairs, as
+  the old rule was, it would be empty (section 5);
+- **damage and perplexity are measured on prose placed as the model's own reply,** where its predictions are
+  trained. A check that those predictions are good comes before any is used (sections 4 and 5);
+- **the operator kind is simplified to a single step,** with a rule fixed now for the case where it no
+  longer gains enough from the extra passes to serve in the bites set (section 5).
+
+Step 4b also answered the dose question (RT-345) on the model, before any filter: the two cells' swap sizes
+differ by under 1%. The formal closure still reads them after the filters, at the rerun. The eleventh change
+log, "from version 0.12", says what changed. The changes are owed a closure check.*
+
+*Version 0.12 (commit 4fb7e73) was written 2026-11-21 on John's instruction ("Yes, write 0.12"). It answers the closure check
 of version 0.11 (`docs/reviews/2026-11-21-loop-removal-test-design-v0.11-closure-check-claude-code.md`), which
 found outcome F the right kind of answer but not yet safe to read. Version 0.12:
 - **requires the swap's own loss to be small for F,** not only its loss beyond random damage (RT-457);
@@ -10,8 +25,7 @@ found outcome F the right kind of answer but not yet safe to read. Version 0.12:
   reached (RT-459);
 - **matches the halves item by item,** with fixed tolerances and a model-free seed rule (RT-460).
 
-It also answers RT-461 to RT-465 and the two owed definitions. The eleventh change log at the end says how.
-**RT-345 stays open until step 4b.** The changes are owed a closure check.*
+It also answers RT-461 to RT-465 and the two owed definitions. The eleventh change log at the end says how.*
 
 *Version 0.11 (commit b211fa7) was written 2026-11-21 on John's instruction ("Yes, write 0.11"). It answers the closure check
 of version 0.10 (`docs/reviews/2026-11-21-loop-removal-test-design-v0.10-closure-check-claude-code.md`), which
@@ -376,6 +390,23 @@ same length and layout (section 5), so the dose is matched twice over.
 
 **Damage** is how far the model's next-word predictions move on the neutral set, measured as the average
 divergence between its predictions before and after the removal, as in the split removal test.
+- **Where it is measured** (version 0.13, John's ruling after step 4b). Damage and perplexity are measured on
+  the neutral prose **placed as the model's own reply**. The user's message is one fixed short request, the
+  same for every passage and written in the specification, and the passage follows the reply opening. Step 4b
+  found that, in the chat format, the model predicts the user's own text almost at random: 8.7 nats per token,
+  against 2.3 for the same prose as plain text. So damage measured there tracked changes in noise. In the
+  model's reply, its predictions are the ones it was trained to make.
+- **The same prose still builds the average** in the user's turn, where the items' text sits (section 3). The
+  two renderings of a passage carry the same prose. Only its place in the chat format differs.
+- **The replacements on the reply rendering.** Under the swap, a passage gets the sums of other passages in
+  the same reply rendering, under the donor rule for neutral passages (section 3). Under the average, the
+  prose positions get the pooled text average built from the user-turn passages, the one the items get. The
+  template slots of the reply rendering get their own slot averages, built from the reply renderings of the
+  "build" passages. The comparisons and the normal-range bound use the same rendering.
+- **A check before it is used.** Before any damage is used, step 4b measures the unaltered model's mean loss
+  per token on the measure passages in the reply rendering, and on the same prose as plain text. If the reply
+  rendering's loss is more than 1 nat per token above the plain text's, the design returns to John before any
+  matching is done.
 
 **How the noise is added** (RT-339). The noise is added to the block sums before the readers normalise
 them. It touches every coordinate, as the main removal now does. The readers normalise what they read, so
@@ -500,7 +531,11 @@ the "long routine control" the review proposed.
 prompt-rule kinds failed even with free generation. With no written reasoning they would be harder still.
 The prompt-rule kinds are replaced by one-step rules:
 
-- `p_operator`: an invented operator applied once ("a ◇ b means 2a + b − 1"), kept from the split test;
+- `p_operator`: an invented operator applied once. **Since version 0.13 it is a single arithmetic step on the
+  two operands with a written constant**, for example "a ⊛ b means a plus b plus 3" (John's ruling after step
+  4b). The two-step shapes used up to version 0.12, such as "3 times a, minus b", are withdrawn. At step 4b
+  only 9 of 40 operator pairs were confident, and the operator's prompt-rule margins sat near 0. The battery
+  specification fixes the shapes, keeping every right answer at two digits;
 - `p_unit`: an invented unit conversion applied once ("1 blick is 3 florps; how many florps are 4
   blicks?");
 - `p_lookup`: one lookup in an invented table given in the prompt ("a zibvam is red, a tovjot is green...;
@@ -664,10 +699,9 @@ numbers at all are one token. Step 4a settles the tokens before the answer. If t
 assumed, the pools and the pilot are rebuilt and the single-token counts redone before any pilot item is
 scored.
 
-**The operator's answers have two digits** (RT-399; narrowed in version 0.12, RT-465). Numbers above 999
-are two tokens, and since version 0.11 both halves share one range, so the operator kind's operands run from
-2 to 15 in both halves and every right answer lies between 10 and 49. Its candidates lie within five of the
-right answer, with the same number of digits.
+**The operator's answers have two digits** (RT-399; narrowed in version 0.12, RT-465; version 0.13). Both
+halves share one range of operands, set by the specification for the single-step shapes, so that every right
+answer has two digits. Its candidates lie within five of the right answer, with the same number of digits.
 
 **The wordings, checked with the real tokeniser** (2026-11-21, before this version was written). The
 counts are of the fixed questions alone, with a leading space, from `tokenizer.json` at revision 657b53ba:
@@ -759,32 +793,43 @@ exempt from that rule as well, because they cannot be split (RT-396). It runs be
 - **The rule is learned, and the item is confident** (RT-347): the margin, meaning the right candidate's
   log-probability minus that of the best wrong candidate, is at least 2.2 (about 90% when only those two
   are compared).
-- **The rule does not get in the way of the routine question** (RT-365, RT-374, RT-393, RT-402): each
-  routine twin's margin, with the full shared context, must be **no more than 1.0 below** its margin when
-  it is given **only the routine fact and its final question**, with the rule and the rule's facts left
-  out. The check is one-sided: a margin that rises in the full context does not fail. ("The same
-  question with no preamble", as version 0.5 put it, cannot be answered under the shared context.)
-  - **A whole kind.** A routine kind that fails this check for more than a fifth of its items, behind a
-    given rule kind, is not paired with that rule kind. The fifth is counted from the pairs of that pairing
-    that pass the confidence check (RT-402).
-  - **Single items.** Within a kind that passes, a pair whose routine twin fails is dropped whole.
+- **The rule does not get in the way of the routine question** (RT-365, RT-374, RT-393, RT-402; judged by
+  accuracy since version 0.13). A routine twin is **interfered with** if it is answered right when given
+  **only the routine fact and its final question**, with the rule and the rule's facts left out, and wrong
+  with the full shared context. "Right" means the right candidate alone has the highest probability. A tie
+  counts as not right here, because the tie rule's shares are for scoring, not for this check. Version 0.12's
+  limit of 1.0 in margin struck every pairing at step 4b, because this model's margins run near 10: a routine
+  answer whose margin falls from 12 to 9 is still right every time. ("The same question with no preamble", as
+  version 0.5 put it, cannot be answered under the shared context.)
+  - **A whole kind.** A routine kind is not paired with a rule kind if more than a fifth of that pairing's
+    routine twins are interfered with. **The fifth is counted from the pairs whose routine twin is right
+    without the rule**, not from the confident pairs as before (RT-402). A confident item is always right,
+    so a count over confident pairs could never find an item that turned wrong, and the rule would be empty.
+  - **Single items.** An interfered item is wrong in the full context, so it already fails the confidence
+    check and its pair is dropped.
+  - **On the step-4b pilot** (descriptive, version 0.12's operator kind). Under this rule, every lookup and
+    unit pairing survives. The interfered shares are 0 for lookup with sums and with products, 0 for unit
+    with capitals and with opposites, and 0.15 for unit with colours. All three operator pairings are struck.
+    The routine side is worst for everyday colours behind the operator rule: 6 of 13 interfered.
   - **When it is fixed.** The resulting table of which routine kinds go with which rule kinds is fixed on
     the pilot items, at step 4b, and written into the registration before the test set is generated.
   - **What it can show.** The check works at baseline only. It cannot show that the removal leaves the
     ability to ignore the rule intact, as section 1 says.
-- **The routine fact does not get in the way of the rule** (RT-393, RT-402). This is the mirror check.
-  Each prompt-rule item's margin, with the full shared context, must be **no more than 1.0 below** its
-  margin when given only the rule, the rule's facts and its final question, with the routine fact left
-  out. Under the shared context the prompt-rule item also has to ignore an irrelevant sentence, so it gets
-  the same check. Its rules, written out:
-  - **A whole pairing.** If more than a fifth of a pairing's pairs fail this check, that rule kind is not
-    paired with that routine kind. The fifth is counted from the pairs that pass the confidence check
-    (RT-402).
-  - **Single pairs.** Within a pairing that passes, a pair whose prompt-rule item fails is dropped whole.
+- **The routine fact does not get in the way of the rule** (RT-393, RT-402; judged by accuracy since version
+  0.13). This is the mirror check. A prompt-rule item is **interfered with** if it is right when given only
+  the rule, the rule's facts and its final question, with the routine fact left out, and wrong with the full
+  shared context. Under the shared context the prompt-rule item also has to ignore an irrelevant sentence, so
+  it gets the same check. Its rules, written out:
+  - **A whole pairing.** If more than a fifth of a pairing's prompt-rule items are interfered with, that rule
+    kind is not paired with that routine kind. The fifth is counted from the pairs whose prompt-rule item is
+    right without the routine fact.
+  - **Single pairs.** An interfered item already fails the confidence check, so its pair is dropped.
   - **When it is fixed.** It feeds the same pairing table, fixed on the pilot and written into the
     registration.
 - **Strike counts reported first** (RT-402). Before the pairing table is fixed, step 4b reports, for each
-  pairing and each of the two checks, how many pilot pairs failed. A pilot pairing has only about 6 to 11
+  pairing and each of the two checks, how many pilot pairs were right without the other half and how many of
+  those were interfered with. Beside them it reports the margins with and without the other half, as a
+  description. A pilot pairing has only about 6 to 11
   pairs, so two failures can strike it. If the two checks together would leave fewer than three rule
   kinds, or would leave any rule kind with one routine kind or none, the design returns to John before the
   table is fixed (RT-402).
@@ -848,6 +893,17 @@ registration, rather than running to "not testable".
   Every bites item is kept and scored. Filtering on confidence at three passes would inflate the one-pass
   cost measured on them, because it selects items the full model gets right. The reading on the bites items
   that pass the confidence filter is reported beside it, as a description.
+- **If the simplified operator kind no longer gains enough from the passes** (version 0.13). John's ruling
+  simplifies the operator kind to a single step. A simpler rule may gain less from the extra passes, and the
+  bites check relies on that gain. The rule, fixed now:
+  - At the step-4b rerun, the operator bites items' one-pass cost is measured on the pilot, as for the unit
+    kind.
+  - If its point estimate is below 0.15 on the normalised scale, the bites set holds **unit items only**: 200
+    in the test half and 80 in the pilot. The per-kind conditions of "does not bite" then apply to the unit
+    kind alone. The operator kind stays in the cells as a prompt-rule kind either way.
+  - With unit items only, the bites set's effective size is bounded by half B's unit facts, about 29, because
+    the unit kind is resampled by fact. The simulation must still reach its 80% targets for the bites
+    conditions (section 5, "The size"). If it cannot, the design returns to John before registration.
 - **Why these two kinds.** In the scoring trial, with the instruction, counting items (RT-441):
   - the operator kind was right on 11 of 30 at one pass and 22 of 30 at three with the instruction at the
     start (37% and 73%), and 13 and 22 of 30 at the end (43% and 73%);
@@ -1025,9 +1081,10 @@ the source of the average and as the reference for damage. The instruction is pa
 what the swap or the average replaces.
 
 **Neutral set** (RT-335, RT-376). The new neutral set has 400 passages of ordinary prose, 200 in each half.
-In the half in use, 100 build the average and 100 measure damage (section 3). They are rendered with
-every template token the items use (section 3), with lengths spread across the items' range up to the
-longest item, and drawn from two disjoint halves like everything else. It replaces the split test's
+In the half in use, 100 build the average and 100 measure damage (section 3). For the average they are
+rendered in the user's turn with every template token the items use (section 3). For damage and perplexity
+they are rendered as the model's reply (section 4, version 0.13). Their lengths are spread across the items'
+range up to the longest item, and they are drawn from two disjoint halves like everything else. It replaces the split test's
 17-to-23-word passages for every use in this design: the average method, the damage matching and the
 normal-range bound. **At step 3, once the model's own chat template and tokeniser are in hand, the check
 that every position of every pilot item, candidates included, has a defined average is run again and
@@ -1208,12 +1265,13 @@ does not claim any.
 
 1. **The closure check** of this version by a session that did not write it, working in its own empty
    scratch folder with the real tokeniser and the committed results of the three rented runs. It checks
-   version 0.12's answers to the eleventh check (RT-457 to RT-465, and the conditions on earlier findings). It cannot close RT-345, whose decisive check
+   version 0.13's changes: the interference checks by accuracy, damage on the model's reply, the simplified
+   operator kind and its bites rule. It cannot close RT-345, whose decisive check
    needs the model (step 4b). $0. *(The closure check of version 0.8 found it ready for the battery
-   specification. The closure checks of versions 0.9, 0.10 and 0.11 did not; version 0.12 answers the
-   last of them.)*
-2. **John's rulings.** Choices 1 to 5 were ruled on 2026-11-21, and choices 6 to 8 later the same day
-   (section 11). Further rulings are asked for where a return-to-John rule in sections 4 to 6 fires. $0.
+   specification. The closure checks of versions 0.9, 0.10 and 0.11 did not. The closure check of version
+   0.12 did. Version 0.13 writes in John's rulings after step 4b.)*
+2. **John's rulings.** Choices 1 to 5 were ruled on 2026-11-21, choices 6 to 8 later the same day, and the
+   three questions after step 4b on 2026-11-23 (section 11). Further rulings are asked for where a return-to-John rule in sections 4 to 6 fires. $0.
 3. **The battery specification, committed before any item:** the rebuilt kinds, the candidate rules, the
    twin construction, the enlarged and split pools, the neutral set, the overlap check script, and the
    pilot set generated with seed 1. The tokeniser is needed for the equal-length rule. It is a small
@@ -1251,8 +1309,11 @@ does not claim any.
      pieces of invented words or symbols. Both should be equal between the cells to within one token per
      item. If they are not, the construction is revised, as above.
 4. **The rehearsal, on a rented machine, pilot items only, on John's go with a ceiling.** It runs in two
-   parts, priced separately. *(Step 4a ran on 2026-11-21, with a scoring trial and a lookup calibration
-   trial after it, for about $4.45 in all. Their findings are in `experiments/10-loop-removal-test/`, and
+   parts, priced separately. *(Step 4b ran on 2026-11-23 for about $1.93. It answered the dose question
+   before any filter, and found the two problems version 0.13 answers. After the specification and the pilot
+   are rebuilt for version 0.13, step 4b is run again in full on the rebuilt pilot, priced for John's go.
+   That rerun closes RT-345 formally, after the filters. Step 4a ran on 2026-11-21, with a scoring trial and a
+   lookup calibration trial after it, for about $4.45 in all. Their findings are in `experiments/10-loop-removal-test/`, and
    version 0.9 answers them. The battery specification and the pilot set are rebuilt for the version that is closed, before
    step 4b.)*
    - **4a. Feasibility**, the first and smallest spend (RT-337). Load the model. Confirm that the block
@@ -2038,4 +2099,34 @@ safe to read.*
 
 **The two definitions owed under RT-453:** "a quarter of the one-pass cost" is the point estimate on the same
 items; the size rule's target for "does not bite" includes all three of its conditions.
+
+## Change log from version 0.12, by John's rulings after step 4b
+
+*This change log records version 0.13. It answers step 4b's findings
+(`experiments/10-loop-removal-test/step4b-findings-2026-11-23.md`) through John's three rulings of
+2026-11-23 (`docs/rulings/2026-11-23-loop-removal-test-after-step4b-ruling.md`), not through a review.*
+
+**RT-345, the swap's dose, answered before the filters.** At step 4b, across all pilot pairs, the routine
+cell's swap size over the prompt-rule cell's was 1.004 to 1.007 under the swap and 0.999 to 1.000 under the
+average. The design's formal closure reads the sizes after the filters, so it waits for the rerun.
+
+**The interference checks, judged by accuracy** ("By accuracy", John). Both checks now ask whether an item
+right without the other half of the context turns wrong with it. The fifth is counted over the items right
+without the other half. Counted over confident pairs, as the old wording had it, the rule would be empty,
+because a confident item is always right. The step-4b pilot's figures under the new rule are given in
+section 5.
+
+**Damage and perplexity on the model's reply** ("As the model's reply", John). The neutral prose is
+rendered as the model's reply for damage, perplexity, damage matching and the normal-range bound. It stays in
+the user's turn for building the average. A check that the reply rendering's predictions are within 1 nat
+per token of plain text's comes first, with a return to John if it fails. Section 5 says how the
+replacements act on the reply rendering.
+
+**The operator kind, simplified to a single step** ("Simplify it", John). One arithmetic step on the two
+operands with a written constant. A rule is fixed now for the case the ruling's question did not name: if
+the simplified kind's one-pass cost on the pilot bites items is below 0.15, the bites set holds unit items
+only, with a return to John if the simulation then cannot reach its targets.
+
+**Order of work.** After the closure check, the specification and the pilot are rebuilt. Step 4b is then
+run again in full, priced for John's go.
 
