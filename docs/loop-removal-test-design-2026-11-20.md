@@ -1429,6 +1429,14 @@ does not claim any.
 
 ## 9. Order of work
 
+**Paused, 2026-11-24** (John's ruling, `docs/rulings/2026-11-24-loop-removal-test-pause-ruling.md`). The
+step-4b rerun found that the test cannot be read as designed on this model. A message from another input does
+about twice the harm of no message, so the random comparisons cannot be matched, the removals fall outside the
+normal range, and there is too little room for a selective loss. The swap-dose question (RT-345) is answered:
+the two kinds of question get equal swaps. What was found, and what a resumed test would need, is in
+`experiments/10-loop-removal-test/STATUS-paused-2026-11-24.md`. The steps below stand as written at the pause.
+
+
 1. **The closure check** of this version by a session that did not write it, working in its own empty
    scratch folder with the real tokeniser and the committed results of the three rented runs. It checks
    version 0.15's change of the outcome measure to the margin, and the scale and thresholds that carry it. It cannot close RT-345, whose decisive check
