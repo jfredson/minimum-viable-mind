@@ -82,3 +82,40 @@ and its own reviews.
 2. **Pause the test here.** The paper record stands. The dose result, equal swap sizes within 1%, is the
    main thing settled.
 3. **Explore scoring by margin.** This is a new design round, at no cost until a rental.
+
+## Addendum, 2026-11-23: the margin code, and what its test on step 4b's data shows
+
+*Added after John's rulings on margin scoring and choice 9, and after the closure check of design version
+0.16. The analysis and simulation now read the margin (specification section 20, commit after 4e0874c). They
+were tested on step 4b's data. The test is kept in `step4b-margin-code-test-2026-11-23/`.*
+
+**What works:**
+- **C**, what one pass costs the rule questions in margin, is 4.19 nats, with an interval of 3.67 to 4.69. It
+  passes its own check.
+- **The bites check's one-pass condition passes in margin.** The pooled cost is 3.87 nats, with an interval of
+  3.25 to 4.47, against C/4, about 1.05.
+- **The bites branch choice picks unit alone.** That branch meets all three targets in 100% of resampled sets.
+  Both kinds together fail on "does not bite": 27%.
+
+**What the test shows that matters most: the room.** The swap is very destructive. On step 4b's data it cost
+the rule questions about 10.8 nats of margin, about 2.6 times what one pass costs. After the swap, most items
+already sit near the lowest margin the model gives a scrambled item. So the rule-question cell has little room
+left to show an extra, selective loss:
+- under the swap, the cell's mean room is **0.80 C**;
+- under the average, it is **0.63 C**.
+
+Both are below the target gap of 1.0 C, so the room rule returns the design to John. With each item's planted
+gap capped at its room, outcome A is read in 0% of simulated test halves at any size. Without the cap, A is
+read as intended, which shows the code works and the cap is what binds.
+
+**Why it is not settled yet.** These are the old pilot's figures. The comparisons on it were matched on damage
+measured in the user's turn, at noise factors near 1,000, and the floor is taken from those comparisons. The
+rerun measures the floor and the room properly, on the simplified operator kind and with damage on the
+model's reply. The room might come out larger. But a swap that costs more than twice what one pass costs is
+a property of the swap itself, and is likely to stay.
+
+**The price is unchanged:** about $3, with a $10 ceiling. It buys the formal dose answer and a proper measure of
+the room. If the room is still below 1.0 C, the design returns to John, with three paths:
+- a smaller target gap;
+- a gentler removal;
+- pausing the test.
