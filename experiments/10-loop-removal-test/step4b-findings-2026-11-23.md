@@ -127,7 +127,7 @@ The diagnostic took one prose passage:
 - **The same passage as plain text, with no chat format,** gave 2.3 nats.
 
 So the model's predictions on user text in the chat format are close to noise. On the 100 measure passages
-the baseline perplexity was about 2,600. Random noise in the loop moved that perplexity by hundreds in
+the baseline perplexity was about 1,870 (corrected 2026-11-23 from "about 2,600", which was the quick try's figure; RT-497). Random noise in the loop moved that perplexity by hundreds in
 either direction. The average and the fallback both lowered it. The bound came out negative: −14 for the
 swap and −24 for the average.
 

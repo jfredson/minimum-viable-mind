@@ -1,6 +1,23 @@
 # The loop removal test: a design on paper
 
-*Version 0.13, written 2026-11-23 on John's instruction ("Yes, write 0.13"). It writes in his three rulings
+*Version 0.14, written 2026-11-23 on John's instruction ("Yes, write 0.14"). It answers the closure check of
+version 0.13 (`docs/reviews/2026-11-23-loop-removal-test-design-v0.13-closure-check-claude-code.md`), which
+found version 0.13 ready for the rebuild, with points for a short version 0.14. The main changes:
+- **a pairing needs at least three confident pilot pairs** to stay in the pairing table (RT-485);
+- **the reply rendering is defined exactly.** Everything before the prose is one fixed opening, so the swap
+  and the average both change only the prose. A second average, built in the reply, is measured beside the
+  first, with a return to John if the two differ by more than a factor of two (RT-486, RT-487);
+- **the bites set's kinds are chosen by the committed simulation,** not by a 0.15 cut. The rerun pilot carries
+  enough unit items to read either branch, and sections 6 and 7 name the kinds actually in the set (RT-488
+  to RT-490);
+- **the likeliest way the test ends unread is stated now.** That is the normal-range check and the in-loop
+  comparison, from step 4b's figures. It goes to John when the rerun is priced (RT-491).
+
+**The author's additions** are now listed as the author's in a closing note to section 11 (RT-494). The
+twelfth change log at the end says how each finding is answered. **The changes are owed a closure check.**
+The dose finding (RT-345) waits for the rerun.*
+
+*Version 0.13 (commit 795cba2) was written 2026-11-23 on John's instruction ("Yes, write 0.13"). It writes in his three rulings
 after step 4b (`docs/rulings/2026-11-23-loop-removal-test-after-step4b-ruling.md`), which answer the step-4b
 findings (`experiments/10-loop-removal-test/step4b-findings-2026-11-23.md`):
 - **interference is judged by accuracy,** in place of a limit of 1.0 in margin. The new rule is counted over
@@ -13,7 +30,7 @@ findings (`experiments/10-loop-removal-test/step4b-findings-2026-11-23.md`):
 
 Step 4b also answered the dose question (RT-345) on the model, before any filter: the two cells' swap sizes
 differ by under 1%. The formal closure still reads them after the filters, at the rerun. The eleventh change
-log, "from version 0.12", says what changed. The changes are owed a closure check.*
+log, "from version 0.12", says what changed.*
 
 *Version 0.12 (commit 4fb7e73) was written 2026-11-21 on John's instruction ("Yes, write 0.12"). It answers the closure check
 of version 0.11 (`docs/reviews/2026-11-21-loop-removal-test-design-v0.11-closure-check-claude-code.md`), which
@@ -398,15 +415,44 @@ divergence between its predictions before and after the removal, as in the split
   model's reply, its predictions are the ones it was trained to make.
 - **The same prose still builds the average** in the user's turn, where the items' text sits (section 3). The
   two renderings of a passage carry the same prose. Only its place in the chat format differs.
-- **The replacements on the reply rendering.** Under the swap, a passage gets the sums of other passages in
-  the same reply rendering, under the donor rule for neutral passages (section 3). Under the average, the
-  prose positions get the pooled text average built from the user-turn passages, the one the items get. The
-  template slots of the reply rendering get their own slot averages, built from the reply renderings of the
-  "build" passages. The comparisons and the normal-range bound use the same rendering.
-- **A check before it is used.** Before any damage is used, step 4b measures the unaltered model's mean loss
-  per token on the measure passages in the reply rendering, and on the same prose as plain text. If the reply
-  rendering's loss is more than 1 nat per token above the plain text's, the design returns to John before any
-  matching is done.
+- **The reply rendering, exactly** (version 0.14, RT-486; the author's reading). Everything before the first
+  prose token is **one fixed opening**: the template's opening, the fixed request, the end of the user's
+  message, and the model's reply opening. Every passage has the same opening, so its positions are template
+  slots, counted from the start. The prose follows, and the reply's end-of-message token closes it. That
+  token is rendered, and it is the only closing slot. So the swap and the average both change only the
+  prose, plus the slots. The slots get the reply rendering's own slot averages under the average method, and
+  the donor's own sums under the swap; those are identical, because the opening is shared. **Plain text**,
+  for the check below, is the prose's tokens alone, with no chat format.
+- **The replacements on the reply rendering.**
+  - Under the swap, a passage gets the sums of other passages in the same reply rendering, under the donor
+    rule for neutral passages (section 3).
+  - Under the average, the prose positions get the pooled text average built from the user-turn passages,
+    the one the items get. **This is the author's reading of John's ruling** (RT-487, RT-494). It means the
+    average's damage on the reply rendering includes a mismatch of role that the items never meet.
+  - **So a second average is measured beside it**: the pooled text average built from the reply renderings of
+    the "build" passages. If the two averages' damages on the measure passages differ by more than a factor of
+    two, the design returns to John before registration. Otherwise the first, built in the user's turn, is the
+    one used, because it is the one the items get.
+  - The comparisons and the normal-range bound use the same rendering.
+- **A check before it is used** (worded more modestly in version 0.14, RT-496). Before any damage is used,
+  step 4b measures the unaltered model's mean loss per token on the measure passages in three renderings:
+  the reply rendering, the user's turn, and plain text. If the reply rendering's loss is more than 1 nat per
+  token above the plain text's, the design returns to John before any matching is done. This only shows that
+  the model predicts the prose in the reply rendering. It does not show that damage measured there tracks
+  what a removal does to the items.
+
+**The likeliest way the test ends unread** (version 0.14, RT-491). At step 4b, in-loop noise of the swap's
+own size did little damage. Matching the swap's damage took a factor of 987, at the top of the search's
+range, and it still fell 18% short. The swap's damage is far beyond what random change of the same size does.
+That is the pattern on which the split removal test failed, where the ratio was 9.4, and here it is larger.
+Measured properly on the reply rendering, two things are likely:
+- the main removal fails the normal-range check, whose bound comes from same-size noise;
+- the in-loop comparison for the swap cannot be matched within 20%.
+
+Either one makes every outcome "not testable" at stage one. This is stated now so that John weighs it when
+the rerun is priced, and so that no different bound or comparison is chosen after seeing more results. The
+factor search runs from 0.001 to 100,000 (the author's choice). A best factor at either end of the range
+counts as unmatched unless its damage lies within 20%.
 
 **How the noise is added** (RT-339). The noise is added to the block sums before the readers normalise
 them. It touches every coordinate, as the main removal now does. The readers normalise what they read, so
@@ -764,7 +810,8 @@ other odd endings.
 - **Why not by size.** Until version 0.9 the halves were split by size: test-half operator answers ran from
   100 to 999 against 10 to 45 in the pilot, so the pilot could not forecast the bites check's one-pass
   condition, which decides whether any outcome is readable.
-- **The ranges.** Every right answer has two digits. The operator kind uses operands of 2 to 15 (above). The
+- **The ranges.** Every right answer has two digits. The operator kind's operands and constants are set in the
+  specification for the single-step shapes (version 0.13; RT-493, RT-497). The
   unit kind uses a factor of 2 to 9 and a count of 2 to 12. **That is harder than the trial measured**
   (RT-464): the trial's unit items used a factor of 2 to 5 and a count of 2 to 9, and 55 of the new range's
   81 facts lie outside that, with a mean answer of 40 against 22. So every unit figure this design quotes
@@ -829,10 +876,16 @@ exempt from that rule as well, because they cannot be split (RT-396). It runs be
 - **Strike counts reported first** (RT-402). Before the pairing table is fixed, step 4b reports, for each
   pairing and each of the two checks, how many pilot pairs were right without the other half and how many of
   those were interfered with. Beside them it reports the margins with and without the other half, as a
-  description. A pilot pairing has only about 6 to 11
-  pairs, so two failures can strike it. If the two checks together would leave fewer than three rule
-  kinds, or would leave any rule kind with one routine kind or none, the design returns to John before the
-  table is fixed (RT-402).
+  description. It also reports, for each pairing, the items that stayed right but fell below the confidence
+  bar when the other half was added (RT-495). The accuracy rule does not count them, and the reader should
+  see them. A pilot pairing has about 13 to 20 pairs at the pilot's allocation. If the two checks together
+  would leave fewer than three rule kinds, or would leave any rule kind with one routine kind or none, the
+  design returns to John before the table is fixed (RT-402).
+- **A pairing needs pairs to count** (version 0.14, RT-485; the number is the author's choice). A pairing
+  with **fewer than three pilot pairs that pass the confidence check** is struck, whatever the interference
+  checks find. So is a pairing whose counting base is empty. Without this rule, a pairing whose items are
+  almost all unconfident could pass both checks with no item to fail. It would then count as a surviving
+  routine kind with no pair to score, and the "one routine kind or none" return to John would be bypassed.
 
 **All matching acts on whole pairs, within each rule kind** (RT-359, RT-360). Nothing in the matching
 removes a single item and leaves its twin behind, because the analysis resamples by pair.
@@ -879,8 +932,8 @@ registration, rather than running to "not testable".
   number leaks nothing. What must stay apart is the two halves, and the half split ensures that. Version 0.9
   kept numbers apart too, which half A's unit kind could not supply under version 0.9's ranges: it had 32
   combinations of factor and count, and the pilot's scored pairs already used 19.
-- **Repeated facts** (RT-455). With a factor of 2 to 9 and a count of 2 to 12, each half holds about 35 to
-  45 two-digit multiplications for the unit kind. Those serve 100 unit bites items and the test half's unit
+- **Repeated facts** (RT-455). With a factor of 2 to 9 and a count of 2 to 12, each half holds about 26 to
+  29 distinct facts for the unit kind (the build report's count; RT-497). Those serve the unit bites items and the test half's unit
   pairs, so each fact is used several times. Items that share a fact are not independent. So, within the
   unit kind, intervals are resampled **by fact**, not by item or pair, by the scheme set out in section 6,
   and the number of distinct facts per kind is reported. Widening the range to repeat facts less would make the unit problems harder than the
@@ -896,11 +949,22 @@ registration, rather than running to "not testable".
 - **If the simplified operator kind no longer gains enough from the passes** (version 0.13). John's ruling
   simplifies the operator kind to a single step. A simpler rule may gain less from the extra passes, and the
   bites check relies on that gain. The rule, fixed now:
-  - At the step-4b rerun, the operator bites items' one-pass cost is measured on the pilot, as for the unit
-    kind.
-  - If its point estimate is below 0.15 on the normalised scale, the bites set holds **unit items only**: 200
-    in the test half and 80 in the pilot. The per-kind conditions of "does not bite" then apply to the unit
-    kind alone. The operator kind stays in the cells as a prompt-rule kind either way.
+  - At the step-4b rerun, the operator and unit bites items' one-pass costs are measured on the pilot. **The
+    rerun pilot carries 40 operator and 80 unit bites items** (version 0.14, RT-490), so that either branch
+    below can be read from one rental.
+  - **The committed simulation chooses the branch** (version 0.14, RT-489; the author's choice, replacing
+    version 0.13's cut at 0.15). Using each kind's measured one-pass cost and spread, it computes whether the
+    three bites targets of "The size" are reached at 100 items a kind with both kinds, and at 200 unit items
+    with the unit kind alone. Both kinds are used if they reach the targets. Otherwise the unit kind alone is
+    used, if it reaches them. If neither branch reaches them, the design returns to John before registration.
+    A cut at 0.15 would have been a near coin flip on 40 pilot items. Keeping a kind just above it would also
+    have made outcome F unreachable, because the kind's own-loss interval would then need an upper end below
+    about 0.04.
+  - **The unit-only branch is expected to need John.** With 200 items resting on about 29 facts, the closure
+    check's rough sketch reached the one-pass condition in about 47% of simulated sets, short of the 80%
+    target.
+  - Whichever branch is taken, the per-kind conditions of "does not bite" apply to the kinds in the bites
+    set. The operator kind stays in the cells as a prompt-rule kind either way.
   - With unit items only, the bites set's effective size is bounded by half B's unit facts, about 29, because
     the unit kind is resampled by fact. The simulation must still reach its 80% targets for the bites
     conditions (section 5, "The size"). If it cannot, the design returns to John before registration.
@@ -927,7 +991,10 @@ registration, rather than running to "not testable".
   the pilot. The simulation set out below may raise this (RT-442, RT-453).
 - **The one-pass run must cost it.** Fewer passes must cost at least 0.15 on the normalised scale on the
   bites items, compared with three passes, **with the interval's lower end at or above 0.15** (version 0.11,
-  RT-453; version 0.10 used the point estimate alone). Otherwise the setup is wrong, and the result is not testable. The
+  RT-453; version 0.10 used the point estimate alone). **Gate decisions use 100,000 resamples**, and where the
+  decision lies within 0.005 of its threshold, the spread of the interval's end over 20 resampling seeds is
+  reported beside it (version 0.14, RT-492). At step 4b the pooled lower end passed by 0.0003 on one seed,
+  and on 9 of 20 seeds. Otherwise the setup is wrong, and the result is not testable. The
   0.15 is this design's own choice (RT-355). On the pilot, with the instruction, the two kinds together
   rose by about 0.3 in raw accuracy from one pass to three, about 0.4 on the normalised scale, so the
   threshold is expected to be met but is not assumed. **This condition gates every outcome** (RT-444): if it
@@ -1072,13 +1139,15 @@ John rules for choice 8), generated from half A
 with seed 1, plus 80 bites items (40 of the operator kind, 40 of the unit kind; version 0.9) and the 200
 neutral passages of half A. Every limit in this
 section that is applied to pilot pairs is applied to these: a fifth of a kind in the "answered as well
-behind its rule" check, a third in margin matching, and a tenth in swap-size matching. Each is counted
-from the pairs left after the confidence filter (and, for the tenth, after margin matching), so with 40
-pairs a kind before them it is usually a few pairs (RT-465).
+behind its rule" check, a third in margin matching, and a tenth in swap-size matching. The fifth of the
+interference checks is counted from the pairs right without the other half of the context (version 0.13; the
+wording here was stale until version 0.14, RT-497). The third and the tenth are counted as their own
+paragraphs above say (RT-465).
 
 **The neutral passages carry no instruction** (RT-447). They are prose, not questions, and they serve as
 the source of the average and as the reference for damage. The instruction is part of the items, not of
-what the swap or the average replaces.
+what the swap or the average replaces. In the reply rendering, the fixed request before the prose is part of
+the fixed opening (section 4, version 0.14), not of the prose. It is not the items' instruction.
 
 **Neutral set** (RT-335, RT-376). The new neutral set has 400 passages of ordinary prose, 200 in each half.
 In the half in use, 100 build the average and 100 measure damage (section 3). For the average they are
@@ -1137,8 +1206,9 @@ be met there and not in the run. The report says which applied.
 5. **E. Unresolved.** Anything else.
 
 **The cells and the bites check disagree** (version 0.11; narrowed in version 0.12, RT-458). If the pattern
-is A or C, the removal **does not bite** on the held-out problems, and **the operator and unit pairs of the
-prompt-rule cell, read on their own, have an excess whose interval lies above zero**, the outcome is renamed
+is A or C, the removal **does not bite** on the held-out problems, and **the pairs of the prompt-rule cell
+whose rule kinds are in the bites set (operator and unit, or unit alone; version 0.14, RT-488), read on their
+own, have an excess whose interval lies above zero**, the outcome is renamed
 **Cells and bites check disagree**, with no reading. Those pairs are the same two kinds, in the same form, as
 the held-out problems, so a loss on them with none on the held-out problems points to something other than
 the message, such as chance or the filters. This rename is applied before the checks below.
@@ -1205,8 +1275,8 @@ model and says the second model shares its pretraining (RT-357).
 | **A** | "In [model], at 16-bit, replacing the loop's message with one built from other inputs cost more on problems solved from a rule in the prompt than on routine questions behind the same rule, beyond matched comparisons, with both methods agreeing." | **The prediction held for this placement** in this model. It does not show experience or a workspace. |
 | **B** | "...cost more on the routine questions than on the prompt-rule problems..." | **The prediction failed for this placement** in this model. |
 | **C** | "...cost both alike, beyond matched comparisons..." | **The prediction failed for this placement.** The feedback behaves like an essential part, which shows nothing selective. |
-| **D**, reported as "No excess in the cells" | "...cost the held-out operator and unit problems beyond matched comparisons, but cost neither the routine questions nor the prompt-rule problems of the pairs more than matched comparisons. The held-out problems share two kinds with the prompt-rule cell, so this gives no reading." | **No reading** (RT-437). Never reported as the prediction failing or holding, and never as "the model does not need this input". |
-| **F** | "...the extra passes helped the held-out operator and unit problems, but replacing the loop's message with one built from other inputs, which differed from the true message on average by at least half its size, cost them little, in each kind, and cost neither cell of the pairs more than matched comparisons." | **The prediction failed for this placement** in this model (RT-449): what the extra passes supply on these problems does not depend on this input's own message. It is not reported as "the model has no workspace". |
+| **D**, reported as "No excess in the cells" | "...cost the held-out [operator and unit / unit] problems beyond matched comparisons, but cost neither the routine questions nor the prompt-rule problems of the pairs more than matched comparisons. The held-out problems share [two kinds / one kind] with the prompt-rule cell, so this gives no reading." (The bracketed words name the kinds actually in the bites set; version 0.14, RT-488.) | **No reading** (RT-437). Never reported as the prediction failing or holding, and never as "the model does not need this input". |
+| **F** | "...the extra passes helped the held-out [operator and unit / unit] problems, but replacing the loop's message with one built from other inputs, which differed from the true message on average by at least half its size, cost them little[, in each kind], and cost neither cell of the pairs more than δ beyond matched comparisons." (The bracketed words name the kinds in the bites set; version 0.14, RT-488, and the specification's reading of RT-471.) | **The prediction failed for this placement** in this model (RT-449): what the extra passes supply on these problems does not depend on this input's own message. It is not reported as "the model has no workspace". |
 | **E**, methods disagree, not testable, too weak to read, cells and bites check disagree, not specific, specificity not checked, depends on one kind | Reported under its name, with the reason. | **No reading.** Never reported as the prediction failing or holding. |
 
 **The precision is named in every outcome sentence** (RT-446, choice 7). The sentences above are written
@@ -1486,6 +1556,20 @@ be written into a version 0.13:
 - **The operator kind:** "Simplify it (Recommended)". Single-step operator rules, three rule kinds kept, and
   the kind checked on the pilot before any test set. The ruling file records a consequence the question did
   not name: the bites check relies on the operator kind's gain from extra passes.
+
+**What is the author's, not John's, in versions 0.13 and 0.14** (RT-494). John ruled three things after step
+4b: interference by accuracy, damage on the model's reply, and the operator simplified. The following were
+added by the author in writing those rulings in. They are marked here so that no reader takes them for John's:
+- the tie rule for the accuracy check;
+- the counting base, items right without the other half;
+- the minimum of three confident pairs a pairing;
+- the fixed request and the fixed opening of the reply rendering;
+- the reading that the average built in the user's turn is applied on the reply rendering, and the second,
+  reply-built average beside it;
+- the 1-nat check and its return to John;
+- "with a written constant" for the operator's shapes;
+- version 0.13's cut at 0.15 for the bites set, replaced in version 0.14 by the simulation's choice;
+- the factor search's range.
 
 **A premise of choice 3 that no longer holds** (dated 2026-11-21, after the fifth check; RT-391; quotation
 corrected in version 0.7, RT-401). John ruled from a question form in the session.
@@ -2129,4 +2213,42 @@ only, with a return to John if the simulation then cannot reach its targets.
 
 **Order of work.** After the closure check, the specification and the pilot are rebuilt. Step 4b is then
 run again in full, priced for John's go.
+
+## Change log from version 0.13, by finding of the thirteenth closure check
+
+*This change log records version 0.14. The thirteenth check found version 0.13 ready for the specification and
+pilot to be rebuilt. It owed a short version 0.14 before the step-4b rerun is priced.*
+
+**Serious findings:**
+- **RT-485, empty pairings.** A pairing with fewer than three confident pilot pairs, or an empty counting
+  base, is struck (section 5).
+- **RT-486, the reply rendering.** Everything before the prose is one fixed opening of template slots, and
+  the closing end-of-message token is the only closing slot. "Plain text" is the prose alone (section 4).
+- **RT-487, the role mismatch.** The reading is marked as the author's. A reply-built average is measured
+  beside the user-built one, with a return to John if their damages differ by more than a factor of two
+  (section 4).
+- **RT-488, the unit-only branch.** The disagreement rename and the D and F sentences name the kinds actually
+  in the bites set (sections 6 and 7).
+- **RT-491, the likeliest way the test ends unread.** The normal-range and in-loop comparison risk is stated
+  in section 4, to go to John when the rerun is priced. The factor search's range and its rule for an edge
+  factor are fixed (section 4).
+
+**Worth-noting findings:**
+- **RT-489, the cut at 0.15.** Replaced: the committed simulation chooses between both kinds and unit alone,
+  with a return to John if neither reaches the targets (section 5).
+- **RT-490, the unit-only branch's power and pilot.** The rerun pilot carries 80 unit bites items, and the
+  branch is said to be expected to need John (section 5).
+- **RT-492, the seed.** Gate decisions use 100,000 resamples, and the seed spread is reported for close
+  decisions (section 5).
+- **RT-493, the single-step operator.** Its two-digit answers, crowded answers, the practised sum as a
+  candidate, and the stale two-step figures go to the specification. "With a written constant" is marked as
+  the author's (section 11).
+- **RT-494, the author's additions.** Listed in section 11.
+- **RT-495, items pushed below the bar.** Reported per pairing (section 5).
+- **RT-496, the 1-nat check.** It now reports three renderings and says what it does not show (section 4).
+- **RT-497, stale text.** The pilot's-size paragraph's counting base, the operator's range, the unit facts and
+  the neutral passages' wording are corrected. Version 0.13's change log says "Section 5 says how the
+  replacements act"; that is section 4, and the change log stands as written then. The step-4b findings'
+  "about 2,600" for the baseline perplexity should read 1,869 (`collect-summary.json`); it is corrected
+  there.
 
