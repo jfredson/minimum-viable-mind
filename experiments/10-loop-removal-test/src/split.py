@@ -8,8 +8,9 @@ checks the tolerances on each half's pool of items, trying split seeds from 1 up
 import json
 import random
 
-OP_SHAPES = [("2 times a, plus b", lambda a, b: 2 * a + b), ("a plus 2 times b", lambda a, b: a + 2 * b),
-             ("3 times a, minus b", lambda a, b: 3 * a - b), ("a times 2, minus b, plus 1", lambda a, b: 2 * a - b + 1)]
+# Specification, section 19, item 1: single-step shapes, each with one written constant (design version 0.14).
+OP_SHAPES = [("a plus b, plus 3", lambda a, b: a + b + 3), ("a plus b, plus 5", lambda a, b: a + b + 5),
+             ("a plus b, plus 7", lambda a, b: a + b + 7), ("a plus b, minus 2", lambda a, b: a + b - 2)]
 KINDS = ("op", "unit", "sum", "prod")
 MAX_SEED = 1000
 

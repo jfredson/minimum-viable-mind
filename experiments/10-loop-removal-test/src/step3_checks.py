@@ -313,6 +313,27 @@ def main():
                                            max(len(x[s]["prompt_ids"]) for _, x in every for s in ("P", "R") if s in x)]
     if R["neutral_longest_vs_longest_item"][0] < R["neutral_longest_vs_longest_item"][1]:
         failures.append("the longest neutral passage is shorter than the longest item")
+    # Section 19, item 11: the reply rendering, the operator's practised sum and donors
+    from build import REPLY_REQUEST, REPLY_CLOSING
+    op_open = m.ids(m.render(REPLY_REQUEST))
+    op_close = m.ids(REPLY_CLOSING)
+    bad = []
+    for x in neutral:
+        s, e = x["prose_span"]
+        if x["reply_ids"][:s] != op_open or x["reply_ids"][e:] != op_close or x["reply_ids"][s:e] != x["plain_ids"] \
+                or x["plain_ids"] != m.ids(x["text"]):
+            bad.append(x["id"])
+    if bad:
+        failures.append(f"reply rendering wrong for {len(bad)} neutral passages: {bad[:3]}")
+    R["reply_rendering"] = {"opening_tokens": len(op_open), "closing_tokens": len(op_close), "passages_checked": len(neutral),
+                            "string_tokenises_the_same": sum(x["reply_string_tokenises_the_same"] for x in neutral)}
+    psum = 0
+    opi = [x for x in pairs + bites if x["rule_kind"] == "op"]
+    for x in opi:
+        c = ast.literal_eval(x["rule_content"])
+        psum += str(c[3] + c[4]) in x["P"]["candidates"]
+    R["operator_practised_sum_among_candidates"] = {"items": len(opi), "with_sum": psum}
+    R["operator_donors"] = {k: {kk: vv for kk, vv in v.items() if kk != "eligible_donors"} for k, v in rep["donors"].items() if k.startswith("op+")}
     R["failures"] = failures
     json.dump(R, open(os.path.join(a.pilot, "step3-results.json"), "w"), indent=1, ensure_ascii=False)
     print(json.dumps({k: R[k] for k in ("2_wording_table_all_equal", "3_twin_lengths_equal", "5_donors", "6_dose_ratio_R_over_P",

@@ -67,10 +67,13 @@ PILOT_ALLOCATION = {
     ("look", "sum"): 20, ("look", "prod"): 20,
 }
 # The bites items (section 17, item 5): 40 operator and 40 unit.
-BITES_ALLOCATION = {
+BITES_ALLOCATION = {  # specification, section 19, item 2: 40 operator and 80 unit
     ("op", "cap"): 13, ("op", "opp"): 13, ("op", "col"): 14,
-    ("unit", "cap"): 13, ("unit", "opp"): 14, ("unit", "col"): 13,
+    ("unit", "cap"): 27, ("unit", "opp"): 27, ("unit", "col"): 26,
 }
+# Specification, section 19, item 3: the neutral prose as the model's reply.
+REPLY_REQUEST = "Write a few plain sentences about an ordinary day."
+REPLY_CLOSING = "<|end_message|><|content_model_end_sampling|>"
 
 # Specification, section 14, item 3: the copying rule ignores only these function words.
 STOP = {"a", "an", "the", "is", "of", "and", "to", "do", "does", "that", "what", "how", "many", "for", "them",
@@ -657,8 +660,14 @@ def build_neutral(b, items, n=200):
         text = ""
         while len(b.m.ids(b.m.render(text))) < target or not text:
             text = (text + " " + b.rng.choice(sents)).strip()
+        opening = b.m.ids(b.m.render(REPLY_REQUEST))
+        plain = b.m.ids(text)
+        closing = b.m.ids(REPLY_CLOSING)
+        reply = opening + plain + closing
         out.append({"id": f"{b.half}-neutral-{i:03d}", "text": text, "role": "build" if i % 2 == 0 else "measure",
-                    "prompt_ids": b.m.ids(b.m.render(text))})
+                    "prompt_ids": b.m.ids(b.m.render(text)),
+                    "reply_ids": reply, "prose_span": [len(opening), len(opening) + len(plain)], "plain_ids": plain,
+                    "reply_string_tokenises_the_same": b.m.ids(b.m.render(REPLY_REQUEST) + text + REPLY_CLOSING) == reply})
     return out, prefix
 
 
