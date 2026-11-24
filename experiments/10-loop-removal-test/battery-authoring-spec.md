@@ -632,3 +632,135 @@ section governs where it differs from section 17.*
 
    They stay on the roadmap with the earlier open list checks (RT-417 and the others). The thin margin of
    the products seed (RT-482) is noted; the seeds do not change here.
+
+## 19. The rebuild for design version 0.14 (2026-11-23)
+
+*Added 2026-11-23 on John's instruction ("Yes, rebuild"), before any code for it was written. It rebuilds the
+specification for design version 0.14 (`docs/loop-removal-test-design-2026-11-20.md`), which writes in John's
+rulings after step 4b. It also settles the points that the closure check of version 0.14
+(`docs/reviews/2026-11-23-loop-removal-test-design-v0.14-closure-check-claude-code.md`) left for the
+specification, RT-498 to RT-505. Where this section and sections 1 to 18 differ, this section governs. Every
+choice here that John did not make is the author's, and item 9 lists them.*
+
+1. **The operator kind, a single step** (John's ruling). There are four shapes, each with one written constant:
+   "a plus b, plus 3", "a plus b, plus 5", "a plus b, plus 7" and "a plus b, minus 2". The operands are 2 to
+   15, in both halves. The pool keeps only items whose answer has two digits, so the answers run from 10 to
+   37. The two-step shapes of sections 14 to 18 are withdrawn. Three consequences are expected (RT-493), and
+   step 3 reports each:
+   - **The practised sum appears among the candidates.** "a plus b" lies within five of the right answer, so
+     it is often a candidate. It is kept, because it keeps the "rule is needed" check honest.
+   - **The answers are crowded.** About 28 distinct values make it likelier that a donor's answer is among a
+     recipient's candidates, so there are fewer eligible donors. The donor counts are reported.
+   - **The split is chosen again.** It depends on the pool, so it changes with the shapes. It is chosen by
+     section 17's rule.
+2. **The bites items** (design version 0.14, RT-490):
+   - **operator:** 40, with 13 on capitals, 13 on opposites and 14 on colours;
+   - **unit:** 80, with 27 on capitals, 27 on opposites and 26 on colours.
+
+   The pairs stay at 40 for each of the three rule kinds.
+3. **The neutral prose as the model's reply** (design version 0.14, section 4; RT-486, RT-502). Each neutral
+   passage gets a second rendering beside its user-turn one:
+   - **The opening.** It is the template's opening with the reasoning setting "none" (the template's "Thinking
+     effort level: 0", the same setting the items use). Then come the fixed request "Write a few plain
+     sentences about an ordinary day." as the user's message, the end of the user's message, and the model's
+     reply opening. This is exactly what the items' prompt ends with.
+   - **The prose,** tokenised on its own.
+   - **The closing.** It is the two tokens the template puts after a model reply: `<|end_message|>` and
+     `<|content_model_end_sampling|>`. Both are rendered, and both are closing slots.
+
+   The generator stores, for each passage:
+   - `reply_ids`, the token ids of this rendering;
+   - `prose_span`, the first and last-plus-one positions of the prose;
+   - `plain_ids`, the prose's tokens alone, which is "plain text" for the 1-nat check.
+
+   **Which predictions count.** Damage and perplexity are taken over the predictions of the prose tokens: the
+   model's output at positions from one before the prose's first token to one before its last token.
+4. **Matching a comparison** (RT-498).
+   - **What counts as matched.** A comparison counts as matched only if the factor search finds a damage on
+     both sides of the target, at some factor below and at some factor above. The 20-draw damage at the
+     chosen factor must also lie within 20% of the target.
+   - **The search range** is a factor of 0.001 to 100,000.
+   - **A search that never crosses the target** counts as unmatched, whatever its closest value. At step 4b the
+     in-loop comparison for the swap reached a ceiling of about 0.93 to 0.95 against a target of 1.13. Under
+     this rule, it would have been unmatched.
+   - **What is reported.** The search's whole path is reported: every factor tried and its damage.
+5. **The two averages** (RT-487, RT-503).
+   - **The average that is used** is the user-built one: the pooled text average from the user-turn build
+     passages. It is used for the average method on the items and on the neutral reply rendering, for its
+     fallback, which is binned from the same user-turn passages, and for the comparisons scaled to the average.
+   - **The reply-built average** is measured for damage only, on the reply rendering. If the two averages'
+     damages differ by more than a factor of two, the design returns to John.
+   - **The two factor-of-two rules are separate.** One compares the swap with the average. The other compares
+     the two averages. Each is checked on its own, and they are not combined. So an average could be within
+     two of the swap, and the reply-built one within two of it, while the reply-built one is nearly four times
+     the swap. The report states all three damages.
+6. **Resampling** (RT-501).
+   - **Within each rule kind.** Resampling is done within each rule kind, with the unit kind resampled by
+     fact, and the code is changed to match.
+   - **Gate decisions** use 100,000 resamples. These are the bites check's one-pass condition, "bites", "does
+     not bite", and each kind's own-loss condition. Every other interval uses 10,000.
+   - **A close gate decision.** Where a gate decision lies within 0.005 of its threshold, the spread of the
+     interval's end over 20 resampling seeds is reported beside it.
+7. **The branch choice for the bites set** (RT-500), written in full so that the code can follow it:
+   - **What it uses from the pilot:**
+     - each kind's one-pass cost, as a point estimate;
+     - the per-item spread of the one-pass loss;
+     - the per-item spread of the swap's own loss on the bites items.
+   - **Shared facts.** The share of variance that items sharing a unit fact hold in common is fixed at 0.3, the
+     middle of the three values the simulation reports.
+   - **Two branches:**
+     - both kinds, at 100 operator and 100 unit items;
+     - the unit kind alone, at 200 items, drawn from half B's facts.
+   - **The targets.** Each branch must reach an 80% chance of all three bites targets of the design's section
+     5 ("The size").
+   - **The choice.** If both branches qualify, both kinds are used. If one qualifies, that one is used. If
+     neither qualifies, the design returns to John.
+   - **When the code is written.** The simulation code is changed to do exactly this, and committed before the
+     rerun's results are opened.
+8. **The baseline checks, as the analysis will apply them** (design version 0.14, section 5; RT-499):
+   - **Right and wrong.** An item is "right" when the right candidate alone has the highest probability; a tie
+     is not right.
+   - **Interference.** An item is interfered with when it is right without the other half of the context and
+     not right with it. The fifth is counted over the pairs whose item is right without the other half.
+   - **Too few pairs.** A pairing with fewer than three confident pilot pairs is struck.
+   - **The return-to-John rule** ("fewer than three rule kinds, or one routine kind or none") counts the
+     routine kinds left after both interference checks and the minimum of three, all together.
+   - **What is reported.** For each pairing, the report shows the items that stayed right but fell below the
+     confidence bar, beside the strike counts.
+9. **The author's choices in this section,** marked so that none is read as John's (RT-504):
+   - the four operator shapes and their constants;
+   - the 120 bites items and their split;
+   - the fixed request's wording;
+   - rendering both closing tokens;
+   - which predictions count;
+   - the bracketing rule;
+   - the range of 0.001 to 100,000;
+   - which average is used;
+   - the 100,000 resamples for gate decisions;
+   - the margin of 0.005;
+   - the branch choice's inputs, its share of 0.3 and its order of preference;
+   - treating a tie as not right in the baseline checks.
+
+   The design's section 11 note lists the earlier ones. The ones it missed, which the closure check of
+   version 0.14 named, are listed in the errata below for the registration text: the edge rule, the 100,000
+   resamples, the narrowed disagreement rename, the reply-built average's rule, the 80 unit bites items, the
+   pilot's allocation of three equal kinds, the reasoning setting, and the reading of "the kinds in the bites
+   set".
+10. **Errors in the design's text, for the registration text** (RT-505), carried as in section 17, item 9:
+    - two pilot-size lines that still say 40 unit bites items;
+    - the two-kind wording in sections 1, 5 and 6;
+    - section 9's "version 0.13";
+    - the "twelfth change log";
+    - the risk paragraph, which compares a ratio of noise sizes (987) with the split test's ratio of damages
+      (9.4), and names only the swap when the average's comparison is also at risk (RT-491).
+
+    Two facts go to John when the rerun is priced:
+    - the ceiling on in-loop noise damage;
+    - that the pilot's bites one-pass condition narrowly fails at 100,000 resamples, with lower ends of 0.148
+      to 0.149.
+11. **What step 3 runs and reports,** into `batteries/pilot-v0.14/`. The earlier pilots stay as records.
+    - **The checks:** the overlap check, and the free checks of sections 12 and 18. The latter now cover the
+      reply rendering: every passage has the same opening and closing, its prose tokens equal `plain_ids`,
+      and `prose_span` is right.
+    - **The report:** the new split seeds, the operator's donor counts, and how often the practised sum is a
+      candidate.
