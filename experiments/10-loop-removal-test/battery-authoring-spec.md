@@ -764,3 +764,74 @@ choice here that John did not make is the author's, and item 9 lists them.*
       and `prose_span` is right.
     - **The report:** the new split seeds, the operator's donor counts, and how often the practised sum is a
       candidate.
+
+## 20. Scoring by margin, as the analysis and simulation apply it (2026-11-23)
+
+*Added 2026-11-23 on John's instruction ("Yes, write it"), before the code. It applies design version 0.16
+(scoring by margin, with John's choice 9: δ = 0.5 and a target gap of 1.0 in units of C). It also settles the
+points the closure check of version 0.16 left for the code (RT-507, RT-510, RT-513 to RT-515). The pilot
+(`batteries/pilot-v0.14/`) and the collection do not change. Every choice here is the author's, except
+John's thresholds.*
+
+1. **An item's margin** under each condition is the `margin` the collection records: the right candidate's
+   log-probability minus the best wrong one's. An item's loss is its unaltered margin minus its margin under
+   the condition:
+   - the swap uses the mean over the item's donors;
+   - a comparison uses the mean over its 20 draws;
+   - the average, the fallback and fewer passes use one run each.
+
+   An **excess** is the main removal's loss minus the random comparison's loss, which is simply the
+   comparison's margin minus the main removal's margin.
+2. **C** (RT-515). C is computed over the prompt-rule items of the pairs that meet all of these:
+   - the pair's pairing survives the baseline checks, including the minimum of three confident pairs;
+   - both twins pass the confidence check;
+   - the pair has at least one donor.
+
+   It is computed **before** margin and swap-size matching. C is the mean of those items' unaltered margin
+   minus their one-pass margin. Its 95% interval comes from 10,000 resamples, done within each rule kind and
+   by fact in the unit kind. If either end of the interval lies more than half of C from C, the design
+   returns to John. C is written into the registration.
+3. **The cells' figures** are divided by C. δ is 0.5 and the target gap 1.0. The report gives these beside
+   each cell:
+   - the loss quantiles;
+   - the two cells' mean starting margins (RT-512);
+   - the share of right answers.
+4. **The bites items** (RT-507).
+   - **The one-pass condition.** The bites set's one-pass loss in margin must have a 95% interval whose
+     lower end is at least C/4. The interval comes from 100,000 resamples, within kind.
+   - **The ratios.** "Bites", "does not bite" and their per-kind forms use ratios of each kind's own
+     one-pass cost in margin. The ratios are half, three quarters and a quarter, and they are the author's
+     choices, carried over from the accuracy scale unchanged in number.
+5. **The room a removal has** (RT-513). A margin can only fall so far once an item is scrambled. For each
+   rule kind and cell, the **floor** is the 5th percentile of all margins the collection records under the
+   main removals and the in-loop comparisons. An item's **room** is its main-removal margin minus the floor,
+   floored at 0, divided by C.
+   - **Capping the planted gap.** The simulation caps the gap it plants on each item at that item's room.
+   - **When the room runs out.** If the prompt-rule cell's mean room is below the target gap of 1.0 under
+     either method, the test could not show the gap it is sized for, and the design returns to John.
+6. **The simulation resamples real losses** (RT-510). It no longer draws from normal curves.
+   - **Drawing.** It draws test halves by resampling the pilot's surviving pairs with replacement, with
+     whole unit facts as the units in the unit kind. Each pair keeps all four of its excesses together:
+     swap and average, prompt-rule and routine.
+   - **Centring.** It centres each excess on its pilot mean, so that the pilot's own effect, whatever it is,
+     is not counted as true.
+   - **Planting.** It then plants the gap on the prompt-rule excesses, capped by room. It plants 1.0 for
+     A's power, and 0 for the rate of wrong A's.
+   - **Classifying.** It classifies each method with δ = 0.5, applies the "depends on one kind" rename, and
+     counts A only when both methods give A.
+   - **The two scenarios:** the gap spread evenly, and the gap on the operator and unit kinds only.
+   - **The output.** It reports the smallest size from 80 to 300 pairs at which A's power reaches 80%, and the
+     rate of wrong A's at that size.
+
+   The normal-curve code, and its double division of the comparison's spread by √20, are withdrawn.
+7. **The bites branch choice by resampling** (design version 0.14, section 5; specification, section 19,
+   item 7). The simulation resamples the pilot's bites items, by fact in the unit kind, for two branches:
+   100 operator and 100 unit items, or 200 unit items. It estimates three chances:
+   - that the one-pass condition passes, using the real one-pass losses;
+   - that "bites" holds when the excess is centred and set to three quarters of each kind's one-pass cost;
+   - that "does not bite" holds in every kind when the removal's own loss is centred at 0.
+
+   A branch qualifies at 80% on all three. Both kinds are preferred, then unit alone, and otherwise the
+   design returns to John.
+8. **The rerun's analysis reads both scales.** The accuracy figures stay in the report as descriptions. Every
+   gate and threshold reads the margin.
