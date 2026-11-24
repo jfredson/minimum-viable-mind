@@ -1,6 +1,18 @@
 # The loop removal test: a design on paper
 
-*Version 0.14, written 2026-11-23 on John's instruction ("Yes, write 0.14"). It answers the closure check of
+*Version 0.15, written 2026-11-23 on John's ruling ("Yes, write 0.15";
+`docs/rulings/2026-11-23-loop-removal-test-margin-scoring-ruling.md`). **The outcome measure changes from
+right-or-wrong to the margin.** The margin is the log-probability of the right candidate minus that of the
+best wrong one. A free check on step 4b's data (`experiments/10-loop-removal-test/margin-power-check-2026-11-23.md`)
+found that, under right-or-wrong scoring, the test could not reach its power. Outcome A would be read in only
+11 to 64% of runs at the test half's sizes, and outcome F almost never. Under the margin, A reached 94 to
+100% from 80 pairs, and F became reachable. Version 0.15 restates the measure, its scale and every threshold
+that rests on it (section 5). It does not change the confidence check or the interference checks, which stay
+on accuracy as John ruled. How the thresholds are carried to margin units is the author's design, and it is
+marked as such. The thirteenth change log at the end says what changed. **The changes are owed a closure
+check.***
+
+*Version 0.14 (commit c9cfa08) was written 2026-11-23 on John's instruction ("Yes, write 0.14"). It answers the closure check of
 version 0.13 (`docs/reviews/2026-11-23-loop-removal-test-design-v0.13-closure-check-claude-code.md`), which
 found version 0.13 ready for the rebuild, with points for a short version 0.14. The main changes:
 - **a pairing needs at least three confident pilot pairs** to stay in the pairing table (RT-485);
@@ -14,8 +26,8 @@ found version 0.13 ready for the rebuild, with points for a short version 0.14. 
   comparison, from step 4b's figures. It goes to John when the rerun is priced (RT-491).
 
 **The author's additions** are now listed as the author's in a closing note to section 11 (RT-494). The
-twelfth change log at the end says how each finding is answered. **The changes are owed a closure check.**
-The dose finding (RT-345) waits for the rerun.*
+twelfth change log at the end says how each finding is answered. The dose finding (RT-345) waits for the
+rerun.*
 
 *Version 0.13 (commit 795cba2) was written 2026-11-23 on John's instruction ("Yes, write 0.13"). It writes in his three rulings
 after step 4b (`docs/rulings/2026-11-23-loop-removal-test-after-step4b-ruling.md`), which answer the step-4b
@@ -492,12 +504,47 @@ right one and four wrong ones built by a rule for that kind, committed before an
   difference smaller than the tolerance is possible, because the tolerance applies to each candidate's
   log-probability and not to a margin. They matched exactly at step
   4a.
-- **Chance is 0.20**, so results are reported on a **normalised scale**: normalised accuracy =
-  (accuracy − 0.20) / 0.80. On it, 0 is chance and 1 is every item right. A removal that destroys an item
-  completely costs at most 1 on this scale, whatever the cell. All thresholds in section 6 apply to this
-  scale. Raw accuracy is reported beside it.
-- **Why the thresholds still fit.** The δ of 0.10 and the target gap of 0.20 were set for generated answers
-  scored from zero. On the normalised scale they mean the same share of the room between chance and perfect.
+- **The outcome measure is the margin** (version 0.15, John's ruling). An item's **margin** is the
+  log-probability of the right candidate minus the highest log-probability among the four wrong ones, in
+  nats. It is the same among the five whether taken from the whole vocabulary or from the softmax over the
+  five, so choice 1 is unchanged. A tie for the top gives a margin of 0.
+  - **An item's loss under a condition** is its margin in the unaltered run minus its margin under the
+    condition.
+    - Under the swap, the condition's margin is the average of the item's margins over its five donors.
+    - Under a comparison, it is the average over the comparison's draws.
+    - Under fewer passes, it is the margin of the one- or two-pass run.
+  - **Why** (the margin check). Scored right or wrong, an item loses nothing or everything, so the per-item
+    spread of a removal's loss was 0.45 to 0.58 on step 4b's data. In the margin, converted as below, it was
+    0.13 to 0.17. At the test half's size, that is the difference between an outcome the test can read and
+    one it cannot.
+- **The scale: accuracy-equivalent margin units** (version 0.15; the author's design). A margin loss is in
+  nats, and the design's thresholds were set on the normalised accuracy scale. So margin losses are divided
+  by a constant **K**, which makes a loss of 0.20 the same share of what the extra passes supply on either
+  scale.
+  - **K for the cells.** On the pilot at the step-4b rerun, take the prompt-rule items that survive the
+    baseline checks. K is their mean one-pass loss in margin divided by their mean one-pass loss in normalised
+    accuracy, which is (accuracy − 0.20) / 0.80.
+  - **K_b for the bites items.** It is computed the same way, from the bites items in the branch that is
+    chosen, so that the bites check's 0.15 keeps its meaning.
+  - **When they are fixed.** Both constants are fixed on the pilot, written into the registration, and never
+    recomputed on the test half. On step 4b's data K was about 24 nats.
+  - **If the anchor fails.** If the pilot's one-pass loss in accuracy, for the cells or for the bites set, has
+    an interval that reaches 0, the constant cannot be anchored, and the design returns to John.
+  - **The thresholds.** With losses in these units, every threshold keeps its number:
+    - δ = 0.10;
+    - the target gap of 0.20;
+    - the bites check's one-pass condition of 0.15;
+    - the bites conditions' "half", "three quarters" and "a quarter" of the one-pass cost, which are ratios
+      and need no conversion.
+- **What the margin scale does not have.** It has no ceiling at 1. A removal that turns an item's margin of 10
+  into −10 costs it 20 nats, and in these units that is far more than "every item lost". It also has long
+  tails. On step 4b's data, the swap's loss on prompt-rule items ran from 0.15 to 0.69 in these units, from
+  the 5th to the 95th percentile. The analysis resamples, so the tails widen the intervals honestly. The
+  report gives the losses' quantiles beside every cell.
+- **Accuracy is still reported.** Normalised accuracy is reported beside every margin figure, as a
+  description, so that a reader can see what the losses mean as right and wrong answers.
+- **The confidence and interference checks are unchanged.** The confidence check still asks for a margin of at
+  least 2.2. The interference checks still ask whether an answer is right (John's ruling after step 4b).
 
 **The answer-only instruction** (version 0.9). Every scored item, donor and bites item carries one fixed
 sentence: "Answer with the single word or number only." Step 4a found that, without it, the model's forced
@@ -989,8 +1036,8 @@ registration, rather than running to "not testable".
   the passes supply.
 - **How many.** 100 bites items of each of the two kinds in the test half, 200 in all, and 40 of each in
   the pilot. The simulation set out below may raise this (RT-442, RT-453).
-- **The one-pass run must cost it.** Fewer passes must cost at least 0.15 on the normalised scale on the
-  bites items, compared with three passes, **with the interval's lower end at or above 0.15** (version 0.11,
+- **The one-pass run must cost it.** Fewer passes must cost at least 0.15, in the bites items' margin units
+  (section 5, K_b; version 0.15), on the bites items, compared with three passes, **with the interval's lower end at or above 0.15** (version 0.11,
   RT-453; version 0.10 used the point estimate alone). **Gate decisions use 100,000 resamples**, and where the
   decision lies within 0.005 of its threshold, the spread of the interval's end over 20 resampling seeds is
   reported beside it (version 0.14, RT-492). At step 4b the pooled lower end passed by 0.0003 on one seed,
@@ -1130,7 +1177,10 @@ to 200, but near its lower end. **If the simulation asks for more pairs than
 survive the filters, the design returns to John.**
 
 **The simulation's conditions** (RT-340). The committed simulation uses the spread and the comparison loss
-measured at step 4b. It is run on the pairs that survive every filter, after the confidence, margin and
+measured at step 4b, in the margin units of section 5 (version 0.15). On step 4b's data, a true gap of 0.20
+spread evenly was read as A in 94 to 96% of runs at 80 pairs, and 98 to 100% from 140 pairs. The scenario
+with the gap on the operator and unit pairs only could not be judged on that data, because no operator
+pairing survived there. It is run on the pairs that survive every filter, after the confidence, margin and
 swap-size steps and the pairs dropped for want of a donor. If a rule kind is dropped, it is run again with
 the kinds that remain.
 
@@ -1164,7 +1214,7 @@ committed** (RT-335, condition 3).
 These rules are the split design's (its section 5), with its template checks removed. That design's
 template checks asked whether its result came from the chat format's role headers. Nothing here turns on
 who is speaking, so they have no counterpart, although the chat template is still used to present the items
-(RT-352). **δ = 0.10**, on the normalised scale. Intervals are 95%, from paired resampling (10,000
+(RT-352). **δ = 0.10**, in the accuracy-equivalent margin units of section 5 (version 0.15). Intervals are 95%, from paired resampling (10,000
 resamples, seed fixed in the registration). **The resampling scheme** (RT-462): resampling is done within
 each rule kind. In the unit kind the unit of resampling is a multiplication fact, taking together every
 pair and every bites item that uses it. In the other kinds it is a pair, and each bites item alone. The
@@ -1335,11 +1385,11 @@ does not claim any.
 
 1. **The closure check** of this version by a session that did not write it, working in its own empty
    scratch folder with the real tokeniser and the committed results of the three rented runs. It checks
-   version 0.13's changes: the interference checks by accuracy, damage on the model's reply, the simplified
-   operator kind and its bites rule. It cannot close RT-345, whose decisive check
+   version 0.15's change of the outcome measure to the margin, and the scale and thresholds that carry it. It cannot close RT-345, whose decisive check
    needs the model (step 4b). $0. *(The closure check of version 0.8 found it ready for the battery
-   specification. The closure checks of versions 0.9, 0.10 and 0.11 did not. The closure check of version
-   0.12 did. Version 0.13 writes in John's rulings after step 4b.)*
+   specification. The closure checks of versions 0.9, 0.10 and 0.11 did not. The closure checks of
+   versions 0.12, 0.13 and 0.14 did. Version 0.15 changes the outcome measure to the margin, on John's
+   ruling.)*
 2. **John's rulings.** Choices 1 to 5 were ruled on 2026-11-21, choices 6 to 8 later the same day, and the
    three questions after step 4b on 2026-11-23 (section 11). Further rulings are asked for where a return-to-John rule in sections 4 to 6 fires. $0.
 3. **The battery specification, committed before any item:** the rebuilt kinds, the candidate rules, the
@@ -1382,7 +1432,9 @@ does not claim any.
    parts, priced separately. *(Step 4b ran on 2026-11-23 for about $1.93. It answered the dose question
    before any filter, and found the two problems version 0.13 answers. After the specification and the pilot
    are rebuilt for version 0.13, step 4b is run again in full on the rebuilt pilot, priced for John's go.
-   That rerun closes RT-345 formally, after the filters. Step 4a ran on 2026-11-21, with a scoring trial and a
+   That rerun closes RT-345 formally, after the filters. Under version 0.15 it also fixes K and K_b (section 5).
+   The pilot itself does not change. Only the analysis and the simulation read the margin in place of right
+   or wrong. Step 4a ran on 2026-11-21, with a scoring trial and a
    lookup calibration trial after it, for about $4.45 in all. Their findings are in `experiments/10-loop-removal-test/`, and
    version 0.9 answers them. The battery specification and the pilot set are rebuilt for the version that is closed, before
    step 4b.)*
@@ -1556,6 +1608,11 @@ be written into a version 0.13:
 - **The operator kind:** "Simplify it (Recommended)". Single-step operator rules, three rule kinds kept, and
   the kind checked on the pilot before any test set. The ruling file records a consequence the question did
   not name: the bites check relies on the operator kind's gain from extra passes.
+
+**Scoring by margin** (ruled 2026-11-23). After the free margin check, John was asked "Switch the test to
+margin scoring in a version 0.15?" and answered "Yes, write 0.15". The ruling is recorded in
+`docs/rulings/2026-11-23-loop-removal-test-margin-scoring-ruling.md`. The scale K, its anchor and its return
+to John are the author's design (section 5).
 
 **What is the author's, not John's, in versions 0.13 and 0.14** (RT-494). John ruled three things after step
 4b: interference by accuracy, damage on the model's reply, and the operator simplified. The following were
@@ -2251,4 +2308,22 @@ pilot to be rebuilt. It owed a short version 0.14 before the step-4b rerun is pr
   replacements act"; that is section 4, and the change log stands as written then. The step-4b findings'
   "about 2,600" for the baseline perplexity should read 1,869 (`collect-summary.json`); it is corrected
   there.
+
+## Change log from version 0.14, by John's ruling on scoring by margin
+
+*This change log records version 0.15. It answers John's ruling of 2026-11-23 ("Yes, write 0.15"), made after
+the free margin check (`experiments/10-loop-removal-test/margin-power-check-2026-11-23.md`). It does not
+answer a review.*
+
+- **The outcome measure** is the margin, in place of right or wrong (section 5).
+- **The scale** is accuracy-equivalent margin units. K and K_b are fixed on the pilot at the step-4b rerun,
+  with a return to John if the anchor's interval reaches 0. They are the author's design (section 5).
+- **The thresholds** keep their numbers in those units: δ, the gap, the one-pass condition, and the bites
+  conditions, which are ratios (sections 5 and 6).
+- **What the margin scale does not have.** It has no ceiling at 1 and it has long tails. Both are stated, and
+  the losses' quantiles are reported (section 5).
+- **Unchanged:** the confidence check, the interference checks by accuracy, the outcomes and their order, and
+  every other ruling.
+- **The order of work.** A closure check, then the analysis and simulation code for the margin, then the
+  step-4b rerun priced. The pilot does not change (section 9).
 
