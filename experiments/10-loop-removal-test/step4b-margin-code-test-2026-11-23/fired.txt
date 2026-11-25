@@ -1,0 +1,12 @@
+not fired  noise floor above 0.01, identity or bypass fails
+FIRED      fewer than three rule kinds, or a rule kind with one routine kind or none (after both checks and the minimum of three)
+not fired  margin matching removes more than a third of a rule kind
+not fired  swap-size matching needs more than a tenth of a rule kind (the dose question, RT-345)
+not fired  both the average and its fallback differ from the swap by more than a factor of two (choice 5: the test stops)
+not fired  a comparison cannot be matched (bracketed, and within 20%)
+FIRED      the main removal or a comparison fails the normal-range check
+not fired  the change ratio is below 0.5 under either method (outcome F out of reach)
+not fired  C's interval reaches more than half of C from C (the unit cannot be fixed)
+FIRED      the prompt-rule cell's mean room under the swap is below the target gap of 1.0
+FIRED      the prompt-rule cell's mean room under the avg is below the target gap of 1.0
+not fired  the bites check's one-pass condition fails in margin (every outcome not testable)

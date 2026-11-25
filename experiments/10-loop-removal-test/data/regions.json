@@ -1,0 +1,23 @@
+{
+ "nearest_neighbouring_region": {
+  "Western Europe": "Southern Europe",
+  "Northern Europe": "Western Europe",
+  "Southern Europe": "Western Europe",
+  "Eastern Europe": "Northern Europe",
+  "Middle East": "North Africa",
+  "North Africa": "Middle East",
+  "West Africa": "Central Africa",
+  "East Africa": "Central Africa",
+  "Central Africa": "East Africa",
+  "Southern Africa": "East Africa",
+  "South Asia": "Central Asia",
+  "Central Asia": "South Asia",
+  "East Asia": "Southeast Asia",
+  "Southeast Asia": "East Asia",
+  "Oceania": "Southeast Asia",
+  "North America": "Central America",
+  "Central America": "Caribbean",
+  "Caribbean": "Central America",
+  "South America": "Central America"
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "pairs_used": 72,
+ "conversion": {
+  "one_pass_cost_accuracy": 0.1736111111111111,
+  "one_pass_cost_margin_nats": 4.188568888888889,
+  "k": 24.1261568
+ },
+ "margin_swap_loss_P_quantiles": {
+  "0.05": 0.14910116144151064,
+  "0.25": 0.33869604959211735,
+  "0.5": 0.4397307904423468,
+  "0.75": 0.5757509625403744,
+  "0.95": 0.6949326467114729
+ },
+ "inputs": {
+  "acc": {
+   "swap_P": {
+    "items": 72,
+    "main_loss_sd": 0.44919337857767305,
+    "comparison_loss_mean": 0.9758391203703703,
+    "comparison_loss_sd": 0.2789678629213392
+   },
+   "swap_R": {
+    "items": 72,
+    "main_loss_sd": 0.47223356921733933,
+    "comparison_loss_mean": 0.6766493055555556,
+    "comparison_loss_sd": 0.46846518321158315
+   },
+   "avg_P": {
+    "items": 72,
+    "main_loss_sd": 0.4947155155824655,
+    "comparison_loss_mean": 0.4357638888888889,
+    "comparison_loss_sd": 0.5497663864481075
+   },
+   "avg_R": {
+    "items": 72,
+    "main_loss_sd": 0.5746894919456748,
+    "comparison_loss_mean": 0.4405381944444444,
+    "comparison_loss_sd": 0.5140221225441522
+   }
+  },
+  "mar": {
+   "swap_P": {
+    "items": 72,
+    "main_loss_sd": 0.16577438315681053,
+    "comparison_loss_mean": 0.43141382395807026,
+    "comparison_loss_sd": 0.12619250180196034
+   },
+   "swap_R": {
+    "items": 72,
+    "main_loss_sd": 0.1463555390003087,
+    "comparison_loss_mean": 0.3909312279760474,
+    "comparison_loss_sd": 0.11310738968432268
+   },
+   "avg_P": {
+    "items": 72,
+    "main_loss_sd": 0.14772468713044629,
+    "comparison_loss_mean": 0.3021003982030362,
+    "comparison_loss_sd": 0.11517439647182232
+   },
+   "avg_R": {
+    "items": 72,
+    "main_loss_sd": 0.12941976877883665,
+    "comparison_loss_mean": 0.2819356653374832,
+    "comparison_loss_sd": 0.16441594706329363
+   }
+  }
+ },
+ "A_power": {
+  "acc_rho_0.0_even": {
+   "80": 0.13833333333333334,
+   "140": 0.35833333333333334,
+   "200": 0.5166666666666667,
+   "260": 0.6383333333333333
+  },
+  "acc_rho_0.0_by_kind": {
+   "80": 0.08833333333333333,
+   "140": 0.19833333333333333,
+   "200": 0.215,
+   "260": 0.17666666666666667
+  },
+  "acc_rho_0.3_even": {
+   "80": 0.10833333333333334,
+   "140": 0.25166666666666665,
+   "200": 0.39166666666666666,
+   "260": 0.49166666666666664
+  },
+  "acc_rho_0.3_by_kind": {
+   "80": 0.07,
+   "140": 0.12,
+   "200": 0.11666666666666667,
+   "260": 0.11
+  },
+  "mar_rho_0.0_even": {
+   "80": 0.9583333333333334,
+   "140": 0.9983333333333333,
+   "200": 1.0,
+   "260": 1.0
+  },
+  "mar_rho_0.0_by_kind": {
+   "80": 0.0,
+   "140": 0.0,
+   "200": 0.0,
+   "260": 0.0
+  },
+  "mar_rho_0.3_even": {
+   "80": 0.9433333333333334,
+   "140": 0.9816666666666667,
+   "200": 0.9916666666666667,
+   "260": 1.0
+  },
+  "mar_rho_0.3_by_kind": {
+   "80": 0.0,
+   "140": 0.0,
+   "200": 0.0,
+   "260": 0.0
+  }
+ },
+ "bites": {
+  "acc": {
+   "inputs": {
+    "cost": {
+     "op": 0.28125,
+     "unit": 0.25
+    },
+    "one_pass_sd": {
+     "op": 0.6083725729353683,
+     "unit": 0.5
+    },
+    "own_loss_sd": {
+     "op": 0.6618437197518762,
+     "unit": 0.49729738336331514
+    },
+    "rho": 0.3,
+    "unit_facts": 29
+   },
+   "both": {
+    "possible": true,
+    "one_pass": 0.685,
+    "bites_at_three_quarters": 0.905,
+    "does_not_bite_at_zero": 0.043333333333333335,
+    "qualifies": false
+   },
+   "unit_only": {
+    "possible": true,
+    "one_pass": 0.41833333333333333,
+    "bites_at_three_quarters": 0.845,
+    "does_not_bite_at_zero": 0.20333333333333334,
+    "qualifies": false
+   },
+   "choice": "neither: the design returns to John"
+  },
+  "mar": {
+   "inputs": {
+    "cost": {
+     "op": 0.28125,
+     "unit": 0.24999999999999997
+    },
+    "one_pass_sd": {
+     "op": 0.42124518503977587,
+     "unit": 0.10348374003692828
+    },
+    "own_loss_sd": {
+     "op": 0.5225185125757037,
+     "unit": 0.14120379197485447
+    },
+    "rho": 0.3,
+    "unit_facts": 29
+   },
+   "both": {
+    "possible": true,
+    "one_pass": 1.0,
+    "bites_at_three_quarters": 0.9966666666666667,
+    "does_not_bite_at_zero": 0.24666666666666667,
+    "qualifies": false
+   },
+   "unit_only": {
+    "possible": true,
+    "one_pass": 1.0,
+    "bites_at_three_quarters": 1.0,
+    "does_not_bite_at_zero": 0.9466666666666667,
+    "qualifies": true
+   },
+   "choice": "unit alone"
+  }
+ }
+}

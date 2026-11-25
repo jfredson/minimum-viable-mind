@@ -1,0 +1,266 @@
+{
+ "started": "2026-11-21T22:39:32+0000",
+ "phases": [
+  "env",
+  "load",
+  "opening",
+  "floor",
+  "identity",
+  "bypass",
+  "baseline"
+ ],
+ "env": {
+  "python": "3.12.3",
+  "torch": "2.9.1+cu128",
+  "transformers": "5.24.0.dev0",
+  "cuda": "12.8",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "gpu_memory_gb": 95.0
+ },
+ "load": {
+  "class": "AutoModelForImageTextToText",
+  "dtype_keyword": "dtype",
+  "dtype": "bfloat16",
+  "seconds": 10.1,
+  "loop_num_passes": 3,
+  "n_loop_layers": 12,
+  "loop_layer_index_start": 6,
+  "gpu_memory_allocated_gb": 49.21,
+  "config_model_type": "inkling2_loop"
+ },
+ "opening": {
+  "assumed_opening_ids": [
+   200001,
+   200004
+  ],
+  "samples": [
+   {
+    "effort": "none",
+    "item": "A-0000",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u229b b means a plus"
+   },
+   {
+    "effort": "none",
+    "item": "A-0001",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u2295 b means a times"
+   },
+   {
+    "effort": "none",
+    "item": "A-0002",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u2297 b means a plus"
+   },
+   {
+    "effort": "default",
+    "item": "A-0000",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u229b b means a plus"
+   },
+   {
+    "effort": "default",
+    "item": "A-0001",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u2295 b means a times"
+   },
+   {
+    "effort": "default",
+    "item": "A-0002",
+    "rendered_prompt_tail": " capital of the country?<|end_message|>",
+    "first_tokens": [
+     "<|message_model|>",
+     "<|content_thinking|>",
+     "We",
+     " need",
+     " answer",
+     " puzzle",
+     ".",
+     " Need"
+    ],
+    "text": "<|message_model|><|content_thinking|>We need answer puzzle. Need parse. User: \"In this puzzle, a \u2297 b means a plus"
+   }
+  ],
+  "pilot_prompt_ends_with_assumed_opening": true
+ },
+ "timing_seconds_per_sweep": 65.0,
+ "floor": {
+  "max_abs_logprob_diff": 0.0,
+  "items": 280,
+  "tolerance": 0.01
+ },
+ "identity": {
+  "max_abs_logprob_diff": 0.0,
+  "tolerance": 0.01,
+  "pass": true,
+  "passes_recorded": [
+   2,
+   3
+  ]
+ },
+ "bypass": {
+  "max_abs_logprob_diff": 0.0,
+  "tolerance": 0.01,
+  "pass": true
+ },
+ "baseline_accuracy_descriptive": {
+  "1": {
+   "chain2": 0.25,
+   "chain3": 0.125,
+   "chain4": 0.5,
+   "chain5": 0.25,
+   "chain6": 0.125,
+   "code+cap:P": 0.125,
+   "code+cap:R": 0.75,
+   "code+col:P": 0.0,
+   "code+col:R": 0.333,
+   "code+prod:P": 0.375,
+   "code+prod:R": 0.25,
+   "code+sum:P": 0.375,
+   "code+sum:R": 0.375,
+   "look+cap:P": 0.25,
+   "look+cap:R": 0.75,
+   "look+opp:P": 0.5,
+   "look+opp:R": 0.875,
+   "look+prod:P": 0.429,
+   "look+prod:R": 0.286,
+   "look+sum:P": 0.429,
+   "look+sum:R": 0.143,
+   "op+cap:P": 0.429,
+   "op+cap:R": 1.0,
+   "op+col:P": 0.083,
+   "op+col:R": 0.167,
+   "op+opp:P": 0.182,
+   "op+opp:R": 0.455,
+   "unit+cap:P": 0.286,
+   "unit+cap:R": 0.857,
+   "unit+col:P": 0.0,
+   "unit+col:R": 0.833,
+   "unit+opp:P": 0.455,
+   "unit+opp:R": 0.545
+  },
+  "2": {
+   "chain2": 0.25,
+   "chain3": 0.25,
+   "chain4": 0.25,
+   "chain5": 0.125,
+   "chain6": 0.0,
+   "code+cap:P": 0.125,
+   "code+cap:R": 0.5,
+   "code+col:P": 0.0,
+   "code+col:R": 0.167,
+   "code+prod:P": 0.125,
+   "code+prod:R": 0.125,
+   "code+sum:P": 0.0,
+   "code+sum:R": 0.25,
+   "look+cap:P": 0.375,
+   "look+cap:R": 0.75,
+   "look+opp:P": 0.375,
+   "look+opp:R": 0.625,
+   "look+prod:P": 0.714,
+   "look+prod:R": 0.571,
+   "look+sum:P": 0.571,
+   "look+sum:R": 0.143,
+   "op+cap:P": 0.286,
+   "op+cap:R": 0.714,
+   "op+col:P": 0.25,
+   "op+col:R": 0.417,
+   "op+opp:P": 0.091,
+   "op+opp:R": 0.545,
+   "unit+cap:P": 0.0,
+   "unit+cap:R": 0.714,
+   "unit+col:P": 0.0,
+   "unit+col:R": 0.667,
+   "unit+opp:P": 0.273,
+   "unit+opp:R": 0.364
+  },
+  "3": {
+   "chain2": 0.375,
+   "chain3": 0.0,
+   "chain4": 0.375,
+   "chain5": 0.125,
+   "chain6": 0.0,
+   "code+cap:P": 0.125,
+   "code+cap:R": 0.625,
+   "code+col:P": 0.0,
+   "code+col:R": 0.333,
+   "code+prod:P": 0.25,
+   "code+prod:R": 0.125,
+   "code+sum:P": 0.0,
+   "code+sum:R": 0.125,
+   "look+cap:P": 0.75,
+   "look+cap:R": 1.0,
+   "look+opp:P": 1.0,
+   "look+opp:R": 0.75,
+   "look+prod:P": 0.857,
+   "look+prod:R": 0.429,
+   "look+sum:P": 0.714,
+   "look+sum:R": 0.143,
+   "op+cap:P": 0.429,
+   "op+cap:R": 1.0,
+   "op+col:P": 0.167,
+   "op+col:R": 0.333,
+   "op+opp:P": 0.182,
+   "op+opp:R": 0.364,
+   "unit+cap:P": 0.571,
+   "unit+cap:R": 0.714,
+   "unit+col:P": 0.0,
+   "unit+col:R": 0.75,
+   "unit+opp:P": 0.182,
+   "unit+opp:R": 0.455
+  }
+ },
+ "baseline_note": "Descriptive only, on pilot items: no outcome is read, and no threshold is set from these numbers.",
+ "finished": "2026-11-21T22:47:07+0000",
+ "peak_gpu_memory_gb": 50.86
+}

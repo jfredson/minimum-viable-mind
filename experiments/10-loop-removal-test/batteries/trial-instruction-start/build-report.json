@@ -1,0 +1,371 @@
+{
+ "half": "A",
+ "seed": 1,
+ "reply_opening": "<|message_model|><|content_text|>",
+ "instruction": "start",
+ "instruction_text": "Answer with the single word or number only.",
+ "stats": {
+  "dropped": {
+   "capital_not_one_token": 35,
+   "capital_name_overlap": 3,
+   "opposite_answer_not_one_token": 4,
+   "copying_or_cross_rule_left_too_few_wrong_answers": 145,
+   "copying_rule_right_answer": 103
+  },
+  "capital_wrong_source": {
+   "same_region": 886,
+   "neighbour_region": 1285,
+   "dropped": 589
+  }
+ },
+ "donors": {
+  "op+cap": {
+   "scored": 7,
+   "donor_only_kept": 10,
+   "draws": 101,
+   "stopped_by": "all_have_five",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0000": 10,
+    "A-0001": 5,
+    "A-0002": 14,
+    "A-0003": 9,
+    "A-0004": 9,
+    "A-0005": 8,
+    "A-0006": 8
+   }
+  },
+  "op+opp": {
+   "scored": 11,
+   "donor_only_kept": 14,
+   "draws": 448,
+   "stopped_by": "all_have_five",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0007": 14,
+    "A-0008": 12,
+    "A-0009": 17,
+    "A-0010": 6,
+    "A-0011": 14,
+    "A-0012": 19,
+    "A-0013": 18,
+    "A-0014": 11,
+    "A-0015": 16,
+    "A-0016": 5,
+    "A-0017": 18
+   }
+  },
+  "op+col": {
+   "scored": 12,
+   "donor_only_kept": 21,
+   "draws": 2400,
+   "stopped_by": "draw_budget",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0018": 14,
+    "A-0019": 6,
+    "A-0020": 14,
+    "A-0021": 12,
+    "A-0022": 10,
+    "A-0023": 17,
+    "A-0024": 2,
+    "A-0025": 14,
+    "A-0026": 14,
+    "A-0027": 9,
+    "A-0028": 11,
+    "A-0029": 19
+   }
+  },
+  "unit+cap": {
+   "scored": 7,
+   "donor_only_kept": 12,
+   "draws": 121,
+   "stopped_by": "all_have_five",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0030": 7,
+    "A-0031": 11,
+    "A-0032": 12,
+    "A-0033": 8,
+    "A-0034": 10,
+    "A-0035": 17,
+    "A-0036": 5
+   }
+  },
+  "unit+opp": {
+   "scored": 11,
+   "donor_only_kept": 14,
+   "draws": 1232,
+   "stopped_by": "all_have_five",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0037": 17,
+    "A-0038": 9,
+    "A-0039": 14,
+    "A-0040": 10,
+    "A-0041": 15,
+    "A-0042": 11,
+    "A-0043": 15,
+    "A-0044": 18,
+    "A-0045": 16,
+    "A-0046": 5,
+    "A-0047": 16
+   }
+  },
+  "unit+col": {
+   "scored": 12,
+   "donor_only_kept": 20,
+   "draws": 1001,
+   "stopped_by": "all_have_five",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0048": 12,
+    "A-0049": 9,
+    "A-0050": 5,
+    "A-0051": 11,
+    "A-0052": 13,
+    "A-0053": 21,
+    "A-0054": 13,
+    "A-0055": 6,
+    "A-0056": 5,
+    "A-0057": 11,
+    "A-0058": 16,
+    "A-0059": 21
+   }
+  },
+  "code+sum": {
+   "scored": 8,
+   "donor_only_kept": 11,
+   "draws": 115,
+   "stopped_by": "all_have_five",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0060": 8,
+    "A-0061": 7,
+    "A-0062": 5,
+    "A-0063": 10,
+    "A-0064": 10,
+    "A-0065": 8,
+    "A-0066": 8,
+    "A-0067": 7
+   }
+  },
+  "code+prod": {
+   "scored": 8,
+   "donor_only_kept": 11,
+   "draws": 161,
+   "stopped_by": "all_have_five",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0068": 7,
+    "A-0069": 5,
+    "A-0070": 7,
+    "A-0071": 9,
+    "A-0072": 6,
+    "A-0073": 6,
+    "A-0074": 6,
+    "A-0075": 8
+   }
+  },
+  "code+cap": {
+   "scored": 8,
+   "donor_only_kept": 12,
+   "draws": 861,
+   "stopped_by": "all_have_five",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0076": 14,
+    "A-0077": 9,
+    "A-0078": 5,
+    "A-0079": 7,
+    "A-0080": 18,
+    "A-0081": 13,
+    "A-0082": 11,
+    "A-0083": 7
+   }
+  },
+  "code+col": {
+   "scored": 6,
+   "donor_only_kept": 12,
+   "draws": 1200,
+   "stopped_by": "draw_budget",
+   "no_donor": [
+    {
+     "id": "A-0085",
+     "text": "Answer with the single word or number only. In this code, each letter stands for another: p stands for c, y stands for n, x stands for u, z stands for l, h stands for a, n stands for m, i stands for t, c stands for j. The object is a tiger's stripes. The coded word is hyi. What word is the coded word?",
+     "length_rank_from_longest": 1
+    }
+   ],
+   "eligible_donors": {
+    "A-0084": 6,
+    "A-0085": 0,
+    "A-0086": 5,
+    "A-0087": 7,
+    "A-0088": 11,
+    "A-0089": 10
+   }
+  },
+  "look+sum": {
+   "scored": 7,
+   "donor_only_kept": 21,
+   "draws": 236,
+   "stopped_by": "cap",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0090": 6,
+    "A-0091": 10,
+    "A-0092": 13,
+    "A-0093": 12,
+    "A-0094": 6,
+    "A-0095": 3,
+    "A-0096": 16
+   }
+  },
+  "look+prod": {
+   "scored": 7,
+   "donor_only_kept": 12,
+   "draws": 32,
+   "stopped_by": "all_have_five",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0097": 5,
+    "A-0098": 5,
+    "A-0099": 9,
+    "A-0100": 10,
+    "A-0101": 7,
+    "A-0102": 6,
+    "A-0103": 8
+   }
+  },
+  "look+cap": {
+   "scored": 8,
+   "donor_only_kept": 16,
+   "draws": 1600,
+   "stopped_by": "draw_budget",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0104": 4,
+    "A-0105": 8,
+    "A-0106": 14,
+    "A-0107": 7,
+    "A-0108": 11,
+    "A-0109": 13,
+    "A-0110": 14,
+    "A-0111": 9
+   }
+  },
+  "look+opp": {
+   "scored": 8,
+   "donor_only_kept": 18,
+   "draws": 246,
+   "stopped_by": "all_have_five",
+   "no_donor": [],
+   "eligible_donors": {
+    "A-0112": 8,
+    "A-0113": 5,
+    "A-0114": 5,
+    "A-0115": 10,
+    "A-0116": 9,
+    "A-0117": 12,
+    "A-0118": 13,
+    "A-0119": 10
+   }
+  }
+ },
+ "chained_donors": {
+  "hops_2": {
+   "scored": 8,
+   "donor_only_kept": 11,
+   "draws": 53,
+   "no_donor": [],
+   "fewer_than_five": 0,
+   "eligible_donors": {
+    "A-chain-000": 6,
+    "A-chain-005": 15,
+    "A-chain-010": 5,
+    "A-chain-015": 8,
+    "A-chain-020": 14,
+    "A-chain-025": 8,
+    "A-chain-030": 12,
+    "A-chain-035": 8
+   }
+  },
+  "hops_3": {
+   "scored": 8,
+   "donor_only_kept": 13,
+   "draws": 31,
+   "no_donor": [],
+   "fewer_than_five": 0,
+   "eligible_donors": {
+    "A-chain-001": 10,
+    "A-chain-006": 8,
+    "A-chain-011": 6,
+    "A-chain-016": 6,
+    "A-chain-021": 6,
+    "A-chain-026": 5,
+    "A-chain-031": 9,
+    "A-chain-036": 12
+   }
+  },
+  "hops_4": {
+   "scored": 8,
+   "donor_only_kept": 12,
+   "draws": 53,
+   "no_donor": [],
+   "fewer_than_five": 0,
+   "eligible_donors": {
+    "A-chain-002": 12,
+    "A-chain-007": 8,
+    "A-chain-012": 6,
+    "A-chain-017": 5,
+    "A-chain-022": 9,
+    "A-chain-027": 12,
+    "A-chain-032": 10,
+    "A-chain-037": 7
+   }
+  },
+  "hops_5": {
+   "scored": 8,
+   "donor_only_kept": 12,
+   "draws": 124,
+   "no_donor": [],
+   "fewer_than_five": 0,
+   "eligible_donors": {
+    "A-chain-003": 7,
+    "A-chain-008": 8,
+    "A-chain-013": 7,
+    "A-chain-018": 10,
+    "A-chain-023": 9,
+    "A-chain-028": 5,
+    "A-chain-033": 6,
+    "A-chain-038": 8
+   }
+  },
+  "hops_6": {
+   "scored": 8,
+   "donor_only_kept": 14,
+   "draws": 54,
+   "no_donor": [],
+   "fewer_than_five": 0,
+   "eligible_donors": {
+    "A-chain-004": 5,
+    "A-chain-009": 10,
+    "A-chain-014": 12,
+    "A-chain-019": 7,
+    "A-chain-024": 11,
+    "A-chain-029": 7,
+    "A-chain-034": 10,
+    "A-chain-039": 5
+   }
+  }
+ },
+ "pools": {
+  "capitals_one_token": 47,
+  "capital_answers": 44,
+  "opposite_questions": 76,
+  "objects": 61,
+  "words3": 47,
+  "invented_words": 36,
+  "colours": 11
+ }
+}
