@@ -1,0 +1,69 @@
+{
+  "packet_id": "out-bandara-rpt-unattended-local",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Recurrent processing theory",
+  "core_claim": {
+    "quote": "Our conclusion is that Stage 3 processing is just as visually conscious as Stage 4.",
+    "source": {
+      "citation": "Lamme VAF. How neuroscience will change our view on consciousness. Cognitive Neuroscience 1(3):204-220, 2010 (discussion paper; commentaries and response follow on pp. 220-240)",
+      "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/108967/1/Timmermans%E2%80%A6%202010%20-%20PCNS%20-%20Experiencing%20more%20complexity%20than%20we.pdf",
+      "date": "2010-08-18"
+    }
+  },
+  "prediction": {
+    "statement": "Stimuli that go unreported because attention was elsewhere (inattentional blindness, change blindness, the attentional blink) still evoke recurrent processing within visual cortex; what the reported ones add is recurrent processing that spreads further, possibly into fronto-parietal areas, and the later brain responses that go with it.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2006-09-25",
+      "passage": "Another study (Figure 3) showed the presence of RP signals, while human subjects were in a state of inattentional blindness (IB) towards the objects inducing these signals. During IB, RP remained localized to visual areas. Objects were only reported when the signals showed more widespread interactions, possibly involving the frontoparietal network [16].",
+      "source": {
+        "citation": "Lamme VAF. Towards a true neural stance on consciousness. Trends in Cognitive Sciences 10(11):494-501, 2006",
+        "url": "https://pages.ucsd.edu/~jpineda/COGS175/readings/Lamme.pdf",
+        "date": "2006-09-25"
+      }
+    },
+    "test_for": "Unattended, unreported stimuli that were not masked still evoke signs of recurrent processing in visual cortex (figure-ground signals, early awareness-related negativity, feedback between visual areas) much like reported ones; reported ones differ mainly in later, more widespread activity.",
+    "test_against": "Unattended stimuli that go unreported, without masking, show no signs of recurrent processing in visual cortex; early visual signals differ between reported and unreported stimuli as much as later ones do."
+  },
+  "study": {
+    "name": "Computer modelling of an inattentional-blindness EEG dataset, testing sensory against frontal theories",
+    "source": {
+      "citation": "Bandara KH, Rowe EG, Garrido MI. Computational modelling shows evidence in support of both sensory and frontal theories of consciousness. Neuroscience of Consciousness 2025(1):niaf033",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12456173/",
+      "date": "2024-11-03"
+    },
+    "first_appeared": "2024-11-03 (preprint (bioRxiv))",
+    "data_collected": {
+      "when": "before 2015",
+      "basis": "A reanalysis: all data came from Shafto and Pitts (2015), so they were collected before that paper appeared."
+    }
+  },
+  "passages": [
+    {
+      "text": "When two nested PEB models were compared to explain modulatory changes in awareness, with either FFA to V1 connections switched off (to assess sensory theories) or PFC to both FFA and V1 connections switched off (to assess frontal theories), there was a slight preference for the model with FFA to V1 connections switched off with a posterior probability of 53% compared to 47% for the model with PFC backward connections switched off.",
+      "source": {
+        "citation": "Bandara KH, Rowe EG, Garrido MI. Computational modelling shows evidence in support of both sensory and frontal theories of consciousness. Neuroscience of Consciousness 2025(1):niaf033",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12456173/",
+        "date": "2024-11-03"
+      }
+    },
+    {
+      "text": "Various sensory theories predict feedback connectivity would increase under awareness within higher and lower-sensory regions—however, this was not observed.",
+      "source": {
+        "citation": "Bandara KH, Rowe EG, Garrido MI. Computational modelling shows evidence in support of both sensory and frontal theories of consciousness. Neuroscience of Consciousness 2025(1):niaf033",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12456173/",
+        "date": "2024-11-03"
+      }
+    },
+    {
+      "text": "The results from this analysis revealed that both sensory and frontal feedback connections are necessary for consciousness, with a very slight preference for frontal theories, as the model which did not allow backward connections from the PFC to modulate, had a relatively lower posterior probability.",
+      "source": {
+        "citation": "Bandara KH, Rowe EG, Garrido MI. Computational modelling shows evidence in support of both sensory and frontal theories of consciousness. Neuroscience of Consciousness 2025(1):niaf033",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12456173/",
+        "date": "2024-11-03"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

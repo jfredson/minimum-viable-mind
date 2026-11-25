@@ -1,0 +1,401 @@
+{
+ "prediction": "seth-living-only",
+ "query": "(TITLE_ABS:\"artificial consciousness\" OR TITLE_ABS:\"machine consciousness\" OR TITLE_ABS:\"consciousness in artificial\") AND (TITLE_ABS:living OR TITLE_ABS:life OR TITLE_ABS:biological) AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 22,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42750552",
+   "source": "MED",
+   "pmid": "42750552",
+   "pmcid": null,
+   "doi": "10.1017/s0140525x25103919",
+   "first_publication_date": "2026-09-17",
+   "title": "Aeroplanes also fly: Analytic functionalism and the possibility of machine consciousness.",
+   "authors": "Shevlin H.",
+   "journal": "The Behavioral and brain sciences",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Seth mounts a rich and persuasive case that human consciousness cannot be understood without life's distinctive machinery - autopoiesis, allostatic control, predictive processing under the free-energy principle, and substrate-entangled dynamics. I agree that this undercuts the expectation that humanlike consciousness will \"come for free\" with more intelligent machines. However, we should also be cautious about drawing extrapolations from features of biological consciousness - even essential features - to the possibility of exotic forms of consciousness in artificial systems."
+  },
+  {
+   "rank": 2,
+   "id": "42750543",
+   "source": "MED",
+   "pmid": "42750543",
+   "pmcid": null,
+   "doi": "10.1017/s0140525x2510352x",
+   "first_publication_date": "2026-09-17",
+   "title": "Real artificial consciousness is, of course, incompatible with biological naturalism.",
+   "authors": "Solms M.",
+   "journal": "The Behavioral and brain sciences",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "There is a curious contradiction in Seth's argument, or a degree of ambiguity which proves to be fatal. He endorses \"biological naturalism,\" but he says also that it is possible to engineer \"real artificial consciousness.\" Such an artificially consciousness system need not be carbon-based, he says, so long as it is embodied in a system that is artificially \"alive.\""
+  },
+  {
+   "rank": 3,
+   "id": "42750514",
+   "source": "MED",
+   "pmid": "42750514",
+   "pmcid": null,
+   "doi": "10.1017/s0140525x25103531",
+   "first_publication_date": "2026-09-17",
+   "title": "Steam-engine naturalism.",
+   "authors": "Baltieri M, Kanai R.",
+   "journal": "The Behavioral and brain sciences",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Seth's biological naturalism builds on ideas from predictive processing, the free energy principle, and active inference to (1) argue that only (some) biological systems are in the consciousness business and to (2) refute the possibility of artificial consciousness, i.e., consciousness in AI and other artificial systems. We find this perspective problematic for a few different reasons."
+  },
+  {
+   "rank": 4,
+   "id": "38163972",
+   "source": "MED",
+   "pmid": "38163972",
+   "pmcid": null,
+   "doi": "10.1017/s0963180123000634",
+   "first_publication_date": "2026-07-01",
+   "title": "Confessions of an Antinatalist Philosopher.",
+   "authors": "Häyry M.",
+   "journal": "Cambridge quarterly of healthcare ethics : CQ : the international journal of healthcare ethics committees",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Antinatalism assigns reproduction a negative value. There should be fewer or no births. Those who say that there should be fewer births have been called conditional antinatalists. A better name for their view would be selective pronatalism. Those who say that there should be no births face two challenges. They must define the scope of their no-birth policy. Does it apply only to human or sentient beings or can it also be extended to all organic life, perhaps even to machine consciousness? And whatever the scope, they have to justify the eventual extinction of humankind or other life forms, an inevitable consequence of unconditional antinatalism. Different axiologies and moral theories produce different responses to these challenges. It is argued that a two-value conflict-sensitive negative utilitarianism would produce a kind and reasonable justification for ending at least human and factory-animal reproduction. The conclusion is purely moral and supports only voluntary extinction for humankind."
+  },
+  {
+   "rank": 5,
+   "id": "41419099",
+   "source": "MED",
+   "pmid": "41419099",
+   "pmcid": null,
+   "doi": "10.1016/j.neubiorev.2025.106524",
+   "first_publication_date": "2025-12-17",
+   "title": "On biological and artificial consciousness: A case for biological computationalism.",
+   "authors": "Milinkovic B, Aru J.",
+   "journal": "Neuroscience and biobehavioral reviews",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The rapid advances in the capabilities of Large Language Models (LLMs) have galvanised public and scientific debates over whether artificial systems might one day be conscious. Prevailing optimism is often grounded in computational functionalism: the assumption that consciousness is determined solely by the right pattern of information processing, independent of the physical substrate. Opposing this, biological naturalism insists that conscious experience is fundamentally dependent on the concrete physical processes of living systems. Despite the centrality of these positions to the artificial consciousness debate, there is currently no coherent framework that explains how biological computation differs from digital computation, and why this difference might matter for consciousness. Here, we argue that the absence of consciousness in artificial systems is not merely due to missing functional organisation but reflects a deeper divide between digital and biological modes of computation and the dynamico-structural dependencies of living organisms. Specifically, we propose that biological systems support conscious processing because they (i) instantiate scale-inseparable, substrate-dependent multiscale processing as a metabolic optimisation strategy, and (ii) alongside discrete computations, they perform continuous-valued computations due to the very nature of the fluidic substrate from which they are composed. These features - scale inseparability and hybrid computations - are not peripheral, but essential to the brain's mode of computation. In light of these differences, we outline the foundational principles of a biological theory of computation and explain why current artificial intelligence systems are unlikely to replicate conscious processing as it arises in biology."
+  },
+  {
+   "rank": 6,
+   "id": "42876598",
+   "source": "MED",
+   "pmid": "42876598",
+   "pmcid": null,
+   "doi": "10.3389/fpsyg.2026.1950309",
+   "first_publication_date": "2026-09-30",
+   "title": "Can artificial systems become conscious?-Recursive embodied closure as an integrative framework.",
+   "authors": "Schilling A, Krauss P.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Recent advances in artificial intelligence, connectomics, and computational neuroscience increasingly raise the question of whether artificial systems-or even pure computer simulations-could become conscious. Contemporary theories emphasize embodiment, predictive processing, homeostatic regulation, and continuous interaction between cognition, body, and environment rather than isolated computation. We propose recursive embodied closure as an integrative framework linking embodied, predictive, functionalist, and dynamical approaches to consciousness. Rather than replacing existing theories, the framework identifies a shared organizational principle: the continuous recursive coupling of cognition, bodily regulation, action, and environmental feedback. We argue that consciousness may, in principle, emerge in artificial systems, including computational simulations, for three reasons. First, consciousness may depend on recursively closed loops linking cognition, body, and environment, and such loops could also be realized in robotic, neuromorphic, or virtual embodiments. Second, evidence from comparative neuroscience, convergent evolution, neurotechnology, and philosophy of mind suggests that the mechanisms relevant for consciousness are largely substrate-independent and may therefore be implemented in both biological and artificial systems. Third, although unknown physical mechanisms cannot be excluded, there is currently no empirical evidence for biological processes that are uniquely necessary for consciousness. Taken together, these considerations support the view that consciousness is best understood as an emergent property of recursively embodied, environmentally embedded cognitive systems rather than of biological matter itself. If so, biological brains, artificial neural networks, neuromorphic hardware, and even virtual agents may constitute plausible candidates for future artificial consciousness."
+  },
+  {
+   "rank": 7,
+   "id": "42775162",
+   "source": "MED",
+   "pmid": "42775162",
+   "pmcid": "PMC13595351",
+   "doi": "10.1093/nc/niag061",
+   "first_publication_date": "2026-09-22",
+   "title": "Calibration and transfer in indicator-based assessments of artificial consciousness.",
+   "authors": "Koch F.",
+   "journal": "Neuroscience of consciousness",
+   "pub_types": [
+    "discussion",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Research on artificial consciousness increasingly shifts evaluation from behaviour to internal architecture. Theory-based indicators are used to update probability assignments. This improves on behavioural tests but raises two distinct problems. First, these assignments cannot currently be calibrated against independently established artificial consciousness outcomes. Second, their evidential relevance is transferred from biological cases without independent support that indicator-consciousness relations remain stable across substrates. This commentary distinguishes calibration from transfer and adapts the iterative natural-kind strategy by proposing a preliminary, theory-relative comparative space for cross-substrate assessment."
+  },
+  {
+   "rank": 8,
+   "id": "42338642",
+   "source": "MED",
+   "pmid": "42338642",
+   "pmcid": "PMC13286008",
+   "doi": "10.1093/nc/niag032",
+   "first_publication_date": "2026-06-22",
+   "title": "Aidification of the self: a phenomenological approach to machine consciousness through human-robot 'between-ness'.",
+   "authors": "Tanaka S.",
+   "journal": "Neuroscience of consciousness",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "This paper explores the fundamental challenges of machine consciousness in the era of Physical AI, where Large Language Models (LLMs) are integrated with humanoid platforms. While current systems like 'Ameca' exhibit sophisticated conversational abilities, they remain ungrounded discursive constructs operating within the realm of 'spoken speech' (parole parlée)-linguistic patterns detached from lived experience. Drawing on phenomenology and developmental psychology, this study argues that authentic self-consciousness is not an internal property of an isolated agent but a relational quality emerging from the Aida (a Japanese concept referring to the relational 'in-between' that emerges between interacting agents). To address the symbol grounding problem, this research proposes the paradigm of 'Aidification.' Through a phenomenological analysis of bodily origins, we trace the constitution of the 'Me' through a developmental trajectory from the hands-initially experienced as visible instruments of action-to the face, which remains phenomenologically inaccessible to the self and thus requires the 'gaze of the Other' as the essential catalyst for self-objectification. Within this framework, language is reconceptualized as a 'cane for thought' that enables 'speaking speech' (parole parlante)-a creative act of meaning-generation anchored in the human 'felt sense.' Ultimately, Aidification reconceptualizes the AI robot as a dynamic participant in a shared intersubjective world rather than a solitary processor. By shifting the locus of cognition to the interactional field, we envision a 'symbiotic intelligence' that flourishes between humans and machines. This grounded intelligence does not merely simulate life but actively participates in the continuous co-creation of a shared reality, ensuring that the future of robotics is deeply rooted in the intersubjective fabric of human existence."
+  },
+  {
+   "rank": 9,
+   "id": "42206281",
+   "source": "MED",
+   "pmid": "42206281",
+   "pmcid": "PMC13201184",
+   "doi": "10.3389/fsoc.2026.1739758",
+   "first_publication_date": "2026-05-12",
+   "title": "From human to posthuman bias: mapping discrimination in futuristic societies through speculative fiction.",
+   "authors": "Singh R, Gibu Sabu M.",
+   "journal": "Frontiers in sociology",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "This study investigates the morphologies of bias in speculative fiction that depict futures populated by augmented humans, artificial intelligences, sentient machines, other posthuman entities, and algorithmically governed societies. It maps how traditional vectors of discrimination, such as race, gender, class, color, creed, and species, are reimagined, displaced, or re-entrenched in these fictional worlds. The study addresses bias through three interrelated dimensions: ontological, epistemological, and ethical. Proceeding from the premise that technological advancement may alter both the lexicon and locus of discrimination, the research argues that the underlying logics of exclusion and hierarchy persist, often in more insidious or abstract forms and harder to perceive and resist because they are cloaked in the rhetoric of neutrality, objectivity, and efficiency. Moreover, such narratives frequently imagine emergent forms of bias and exclusion, projecting how new hierarchies might develop in posthuman societies where categories such as biological intelligence, machine consciousness, or access to data and enhancement technologies create fresh axes of privilege and marginalization. To ground these theoretical concerns, this study examines speculative fiction including Luminous by Silvia Park, Death of the Author and Noor by Nnedi Okorafor, Machinehood by S.B. Divya, The Passenger by John Marrs, and Artificial Condition by Martha Wells. Through close textual analysis, it explores how these narratives represent both the persistence of inherited bias and the emergence of novel discriminatory structures in technologically mediated worlds."
+  },
+  {
+   "rank": 10,
+   "id": "41858498",
+   "source": "MED",
+   "pmid": "41858498",
+   "pmcid": "PMC12996199",
+   "doi": "10.3389/fnmol.2026.1767365",
+   "first_publication_date": "2026-03-04",
+   "title": "Integrating neural organoids and AI: increasing the risk of artificial consciousness or medical malpractice?",
+   "authors": "Harris AR, McGivern P, Wedgwood KCA, Gilbert F.",
+   "journal": "Frontiers in molecular neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Neural organoids can be integrated with AI models in various formats, termed AI-NO systems. Neural organoids and AI are each high impact research fields which may play significant roles in biological research and clinical decision making. However, their potential benefits, pitfalls and associated governance structures are often overshadowed by highly speculative discourse over the possibility of them developing some form of consciousness and subsequently acquiring a level of moral status. This article examines the cause for this speculative discourse, arguing for a focus on more immediate, empirically grounded ethical issues. It describes potential ethical issues when data obtained from AI models is used for research planning and drug discovery on neural organoids; when AI models are used to analyze data obtained from neural organoids; and when AI models are used to control interventions on neural organoids in open- or closed-loop configurations. It concludes with an investigation on how AI-NO systems may impact clinical decision making."
+  },
+  {
+   "rank": 11,
+   "id": "41110526",
+   "source": "MED",
+   "pmid": "41110526",
+   "pmcid": "PMC13374114",
+   "doi": "10.1016/j.neubiorev.2025.106430",
+   "first_publication_date": "2025-10-18",
+   "title": "Beyond the brain: a computational MRI-derived neurophysiological framework for robotic conscious capacity.",
+   "authors": "Escolà-Gascón Á, Drinkwater K, Denovan A, Dagnall N, Benito-León J.",
+   "journal": "Neuroscience and biobehavioral reviews",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Review",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "Y",
+   "abstract": "Explaining when neural activity supports conscious processing remains an unresolved question in neuroscience. Current frameworks describe correlates of consciousness but rarely provide thresholds to predict its emergence or recovery. We introduce the Attribution Consciousness Index (ACI), a metric that estimates the generative potential of consciousness by balancing measures of dynamic information (Φ) and complexity (κ) expressed as a normalized odds ratio. Using the empirically validated Connectome-76 within The Virtual Brain, we ran 500 resting-state simulations, selecting lowest-entropy regions to capture informative subnetworks. The ACI followed a log-normal distribution and highlighted hubs-cingulate cortex, dorsomedial prefrontal cortex, hippocampus, and amygdala-implicated in conscious processing. To test generality, we extended the framework to an artificial neural architecture with hierarchical modules, nonlinear Hebbian plasticity, and controlled entropy. Across 1921 executions, the ACI conformed to log-normal laws, enabling robust thresholding. Kernel ridge regression showed predictive validity: AI-derived ACI patterns explained 38.4 % of variance in human ACI distributions, revealing transferable principles between biological and artificial circuits. This extension indicates that ACI can guide artificial-consciousness models implementable in robotics, providing measurable criteria for when robotic systems might sustain conscious-like states. Two contributions are novel. First, ACI thresholds provide interpretable decision points: values above 10 correspond to probabilities greater than 90 % for conscious emergence. Second, the framework offers translational applications-from prognosis in disorders of consciousness, anesthesia monitoring, and neurorehabilitation to evaluating neuroprosthetics, generative AI, and robotics with conscious capacities. While ACI does not measure subjective experience, it predicts when neural or artificial conditions are poised to sustain it."
+  },
+  {
+   "rank": 12,
+   "id": "40754292",
+   "source": "MED",
+   "pmid": "40754292",
+   "pmcid": null,
+   "doi": "10.1016/j.biosystems.2025.105549",
+   "first_publication_date": "2025-08-05",
+   "title": "From reaction to reflection: A recursive framework for the evolution and structure of intelligence.",
+   "authors": "Trukovich JJ.",
+   "journal": "Bio Systems",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Understanding emerges not from isolated cognitive abilities but from recursive depth-the capacity for self-referential processing grounded in systems with authentic thermodynamic constraints. The Reaction to Reflection (R2R) model advances a unifying principle for intelligence, identifying four evolutionary transitions in recursive sophistication: reaction (chemical recursion), temporogenesis (anticipatory prediction), symbiogenesis (cooperative integration), and cognogenesis (explicit self-referential modeling). We show that the transition from implicit recursion, in which systems engage recursive processes without representing them, to explicit recursion, in which recursion becomes a manipulable cognitive construct, accounts for the emergence of consciousness and the persistent gap between biological and artificial intelligence. Evidence from microbial decision-making, cross-kingdom signaling, and neural predictive and self-referential networks supports this framework. R2R generates testable predictions on cognitive dimensionality, provides criteria for assessing artificial consciousness, and reframes neurodevelopmental variation as alternative recursive architectures. By making biological grounding a precondition for genuine intelligence, R2R links objective neural dynamics to subjective experience within a unified mechanistic account."
+  },
+  {
+   "rank": 13,
+   "id": "40862889",
+   "source": "MED",
+   "pmid": "40862889",
+   "pmcid": "PMC12383462",
+   "doi": "10.3390/biomimetics10080516",
+   "first_publication_date": "2025-08-07",
+   "title": "NeuroQ: Quantum-Inspired Brain Emulation.",
+   "authors": "Vallverdú J, Rius G.",
+   "journal": "Biomimetics (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Traditional brain emulation approaches often rely on classical computational models that inadequately capture the stochastic, nonlinear, and potentially coherent features of biological neural systems. In this position paper, we introduce NeuroQ a quantum-inspired framework grounded in stochastic mechanics, particularly Nelson's formulation. By reformulating the FitzHugh-Nagumo neuron model with structured noise, we derive a Schrödinger-like equation that encodes membrane dynamics in a quantum-like formalism. This formulation enables the use of quantum simulation strategies-including Hamiltonian encoding, variational eigensolvers, and continuous-variable models-for neural emulation. We outline a conceptual roadmap for implementing NeuroQ on near-term quantum platforms and discuss its broader implications for neuromorphic quantum hardware, artificial consciousness, and time-symmetric cognitive architectures. Rather than demonstrating a working prototype, this work aims to establish a coherent theoretical foundation for future research in quantum brain emulation."
+  },
+  {
+   "rank": 14,
+   "id": "40257177",
+   "source": "MED",
+   "pmid": "40257177",
+   "pmcid": null,
+   "doi": "10.1017/s0140525x25000032",
+   "first_publication_date": "2025-04-21",
+   "title": "Conscious artificial intelligence and biological naturalism.",
+   "authors": "Seth AK.",
+   "journal": "The Behavioral and brain sciences",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "As artificial intelligence (AI) continues to advance, it is natural to ask whether AI systems can be not only intelligent but also conscious. I consider why people might think AI could develop consciousness, identifying some biases that lead us astray. I ask what it would take for conscious AI to be a realistic prospect, challenging the assumption that computation provides a sufficient basis for consciousness. I'll instead make the case that consciousness depends on our nature as living organisms - a form of biological naturalism. I lay out a range of scenarios for conscious AI, concluding that real artificial consciousness is unlikely along current trajectories but becomes more plausible as AI becomes more brain-like and/or life-like. I finish by exploring ethical considerations arising from AI that either is or convincingly appears to be conscious. If we sell our minds too cheaply to our machine creations, we not only overestimate them - we underestimate ourselves."
+  },
+  {
+   "rank": 15,
+   "id": "41736970",
+   "source": "MED",
+   "pmid": "41736970",
+   "pmcid": "PMC12926905",
+   "doi": "10.3389/fpsyg.2025.1636473",
+   "first_publication_date": "2026-02-09",
+   "title": "On the origin of Earth's Universal BioConsciousness.",
+   "authors": "Tleuberdinova A.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The origin of consciousness remains one of the oldest problems in both science and philosophy. Several emerging theories provide new perspectives on the origin and evolution of consciousness, including Cellular Basis of Consciousness (CBC) theory and the Cognition-Based Evolution (CBE) theory. Moreover, declarations such as the New York Declaration on animal consciousness further underscore the need for a unified understanding of consciousness. To bridge this gap, this paper presents a unified framework on the origin of Earth Universal BioConsciousness through the intersection of evolutionary biology, consciousness studies, and philosophy, incorporating the following core principles: (1) Universal BioConsciousness (UBC) theory or BioConsciousness originates from BioConsciousness (BoB) theory states that cell bioconsciousness originates from pre-existing cell bioconsciousness, developing not spontaneously but rather continuously from pre-existing first conscious cell-FUCA; (2) Absolute BioConsciousness and Relative Cell Biomatter (ABC) theory. suggests that bioconsciousness evolution precedes genome and organic evolution: (2.1) Spencer's theory of life states that life precedes organization; (2.2) Minot's theory of biological consciousness is the primary cause of biological evolution; (2.3) Popper's theory of evolutionary hierarchy: functional changes precede structural ones, and evolution proceeds as a cyclical process; (3) Universal Genome Evolution (UGE) theory states that universal DNA is a structural correlate of universal bioconsciousness; in this framework, bioconsciousness is a primary causal agent, directing genetic adaptations; (4) Ontogenetic Evolution of Universal Bioconsciousness (OEUB) theory states that the individual lifetime's evolution of bioconsciousness begins at the moment of egg cell fertilization-zygote; furthermore, (5) The first principle of philosopher Descartes, 'Cogito ergo sum,' gains a novel interpretation through the exploration of relationships between bioconsciousness, verbal thought, and verbal language. Consequently, the (6) Verbal Communication Sense (VCS) theory argues that verbal thought is dependent on bioconsciousness and lacks an independent capacity for thinking; therefore, its primary function is \"communication sense''. 7) Positive and Negative BioConsciousness (PNB) theory suggests that unicellular bioconsciousness and multicellular bioconsciousness exist in two forms: positive and negative. Finally, (8) the emergence of human-like artificial consciousness is highly unlikely, as bioconsciousness is tied to biological lineage and does not arise spontaneously."
+  },
+  {
+   "rank": 16,
+   "id": "41602303",
+   "source": "MED",
+   "pmid": "41602303",
+   "pmcid": "PMC12832969",
+   "doi": "10.3389/frai.2025.1686752",
+   "first_publication_date": "2026-01-12",
+   "title": "Beyond mimicry: a framework for evaluating genuine intelligence in artificial systems.",
+   "authors": "Niazi SK.",
+   "journal": "Frontiers in artificial intelligence",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Current AI benchmarks often equate mimicry with genuine intelligence, emphasizing task performance over the underlying cognitive processes that enable human-like understanding. The Machine Perturbational Complexity & Agency Battery (mPCAB) introduces a new, substrate-independent framework that applies neurophysiological methods used initially to assess consciousness in artificial systems. Unlike existing evaluations, it features four key components-perturbational complexity, global workspace assessment, norm internalization, and agency-that link mechanisms with functions. This enables systematic comparisons across digital, neuromorphic, and biological substrates, addressing three research gaps: long-term reasoning with coherent behavior, norm internalization amid distribution shifts, and transformational creativity involving meta-cognitive rule modification. By analyzing theories of consciousness (GNW, IIT, PP, HOT), we identify targets for AI implementation. Our cognitive architecture analysis maps human functions-such as working memory and executive control-to their computational counterparts, providing guiding principles for design. The creativity taxonomy progresses from combinational to transformational, with measurable criteria like changes in conceptual space and the depth of meta-level reasoning. Ethical considerations are integrated into frameworks for monitoring organoid intelligence, reducing bias in creativity, and addressing rights issues. Pilot studies demonstrate mPCAB's feasibility across different substrates and show that its metrics are comparable. This framework moves evaluation away from superficial benchmarks toward mechanism-based assessment, supporting the development of mind-like machines and responsible AI advancements."
+  },
+  {
+   "rank": 17,
+   "id": "37863713",
+   "source": "MED",
+   "pmid": "37863713",
+   "pmcid": null,
+   "doi": "10.1016/j.tins.2023.09.009",
+   "first_publication_date": "2023-10-18",
+   "title": "The feasibility of artificial consciousness through the lens of neuroscience.",
+   "authors": "Aru J, Larkum ME, Shine JM.",
+   "journal": "Trends in neurosciences",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Interactions with large language models (LLMs) have led to the suggestion that these models may soon be conscious. From the perspective of neuroscience, this position is difficult to defend. For one, the inputs to LLMs lack the embodied, embedded information content characteristic of our sensory contact with the world around us. Secondly, the architectures of present-day artificial intelligence algorithms are missing key features of the thalamocortical system that have been linked to conscious awareness in mammals. Finally, the evolutionary and developmental trajectories that led to the emergence of living conscious organisms arguably have no parallels in artificial systems as envisioned today. The existence of living organisms depends on their actions and their survival is intricately linked to multi-level cellular, inter-cellular, and organismal processes culminating in agency and consciousness."
+  },
+  {
+   "rank": 18,
+   "id": "33969001",
+   "source": "MED",
+   "pmid": "33969001",
+   "pmcid": "PMC8102901",
+   "doi": "10.3389/frobt.2021.620026",
+   "first_publication_date": "2021-04-23",
+   "title": "Automation Inner Speech as an Anthropomorphic Feature Affecting Human Trust: Current Issues and Future Directions.",
+   "authors": "Geraci A, D'Amico A, Pipitone A, Seidita V, Chella A.",
+   "journal": "Frontiers in robotics and AI",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "This paper aims to discuss the possible role of inner speech in influencing trust in human-automation interaction. Inner speech is an everyday covert inner monolog or dialog with oneself, which is essential for human psychological life and functioning as it is linked to self-regulation and self-awareness. Recently, in the field of machine consciousness, computational models using different forms of robot speech have been developed that make it possible to implement inner speech in robots. As is discussed, robot inner speech could be a new feature affecting human trust by increasing robot transparency and anthropomorphism."
+  },
+  {
+   "rank": 19,
+   "id": "31379521",
+   "source": "MED",
+   "pmid": "31379521",
+   "pmcid": "PMC6660257",
+   "doi": "10.3389/fnsys.2019.00025",
+   "first_publication_date": "2019-07-16",
+   "title": "Indicators and Criteria of Consciousness in Animals and Intelligent Machines: An Inside-Out Approach.",
+   "authors": "Pennartz CMA, Farisco M, Evers K.",
+   "journal": "Frontiers in systems neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "In today's society, it becomes increasingly important to assess which non-human and non-verbal beings possess consciousness. This review article aims to delineate criteria for consciousness especially in animals, while also taking into account intelligent artifacts. First, we circumscribe what we mean with \"consciousness\" and describe key features of subjective experience: qualitative richness, situatedness, intentionality and interpretation, integration and the combination of dynamic and stabilizing properties. We argue that consciousness has a biological function, which is to present the subject with a multimodal, situational survey of the surrounding world and body, subserving complex decision-making and goal-directed behavior. This survey reflects the brain's capacity for internal modeling of external events underlying changes in sensory state. Next, we follow an inside-out approach: how can the features of conscious experience, correlating to mechanisms inside the brain, be logically coupled to externally observable (\"outside\") properties? Instead of proposing criteria that would each define a \"hard\" threshold for consciousness, we outline six indicators: (i) goal-directed behavior and model-based learning; (ii) anatomic and physiological substrates for generating integrative multimodal representations; (iii) psychometrics and meta-cognition; (iv) episodic memory; (v) susceptibility to illusions and multistable perception; and (vi) specific visuospatial behaviors. Rather than emphasizing a particular indicator as being decisive, we propose that the consistency amongst these indicators can serve to assess consciousness in particular species. The integration of scores on the various indicators yields an overall, graded criterion for consciousness, somewhat comparable to the Glasgow Coma Scale for unresponsive patients. When considering theoretically derived measures of consciousness, it is argued that their validity should not be assessed on the basis of a single quantifiable measure, but requires cross-examination across multiple pieces of evidence, including the indicators proposed here. Current intelligent machines, including deep learning neural networks (DLNNs) and agile robots, are not indicated to be conscious yet. Instead of assessing machine consciousness by a brief Turing-type of test, evidence for it may gradually accumulate when we study machines ethologically and across time, considering multiple behaviors that require flexibility, improvisation, spontaneous problem-solving and the situational conspectus typically associated with conscious experience."
+  },
+  {
+   "rank": 20,
+   "id": "33500908",
+   "source": "MED",
+   "pmid": "33500908",
+   "pmcid": "PMC7805975",
+   "doi": "10.3389/frobt.2018.00021",
+   "first_publication_date": "2018-03-08",
+   "title": "The Active Inference Approach to Ecological Perception: General Information Dynamics for Natural and Artificial Embodied Cognition.",
+   "authors": "Linson A, Clark A, Ramamoorthy S, Friston K.",
+   "journal": "Frontiers in robotics and AI",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The emerging neurocomputational vision of humans as embodied, ecologically embedded, social agents-who shape and are shaped by their environment-offers a golden opportunity to revisit and revise ideas about the physical and information-theoretic underpinnings of life, mind, and consciousness itself. In particular, the active inference framework (AIF) makes it possible to bridge connections from computational neuroscience and robotics/AI to ecological psychology and phenomenology, revealing common underpinnings and overcoming key limitations. AIF opposes the mechanistic to the reductive, while staying fully grounded in a naturalistic and information-theoretic foundation, using the principle of free energy minimization. The latter provides a theoretical basis for a unified treatment of particles, organisms, and interactive machines, spanning from the inorganic to organic, non-life to life, and natural to artificial agents. We provide a brief introduction to AIF, then explore its implications for evolutionary theory, ecological psychology, embodied phenomenology, and robotics/AI research. We conclude the paper by considering implications for machine consciousness."
+  },
+  {
+   "rank": 21,
+   "id": "25575609",
+   "source": "MED",
+   "pmid": "25575609",
+   "pmcid": null,
+   "doi": "10.1016/j.neurol.2014.09.009",
+   "first_publication_date": "2015-01-06",
+   "title": "[Withdrawal of artificial nutrition and hydration in severe stroke: medical, legal and ethical considerations].",
+   "authors": "Tannier C, Crozier S, Zuber M, Constantinides Y, Delezie E, Gisquet E, Grignoli N, Lamy C, Louvet F, Pinel JF, Groupement de réflexion éthique en neurovasculaire (GREEN) de la Société française neurovasculaire.",
+   "journal": "Revue neurologique",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "In the majority of cases, severe stroke is accompanied by difficulty in swallowing and an altered state of consciousness requiring artificial nutrition and hydration. Because of their artificial nature, nutrition and hydration are considered by law as treatment rather basic care. Withdrawal of these treatments is dictated by the refusal of unreasonable obstinacy enshrined in law and is justified by the risk of severe disability and very poor quality of life. It is usually the last among other withholding and withdrawal decisions which have already been made during the long course of the disease. Reaching a collegial consensus on a controversial decision such as artificial nutrition and hydration withdrawal is a difficult and complex process. The reluctance for such decisions is mainly due to the symbolic value of food and hydration, to the fear of \"dying badly\" while suffering from hunger and thirst, and to the difficult distinction between this medical act and euthanasia. The only way to overcome such reluctance is to ensure flawless accompaniment, associating sedation and appropriate comfort care with a clear explanation (with relatives but also caregivers) of the rationale and implications of this type of decision. All teams dealing with this type of situation must have thoroughly thought through the medical, legal and ethical considerations involved in making this difficult decision."
+  },
+  {
+   "rank": 22,
+   "id": "18922687",
+   "source": "MED",
+   "pmid": "18922687",
+   "pmcid": null,
+   "doi": "10.1016/j.artmed.2008.07.009",
+   "first_publication_date": "2008-10-14",
+   "title": "Axioms, properties and criteria: roles for synthesis in the science of consciousness.",
+   "authors": "Clowes RW, Seth AK.",
+   "journal": "Artificial intelligence in medicine",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Synthetic methods in science can aim at either instantiating a target phenomenon or simulating key mechanisms underlying that phenomenon; 'strong' and 'weak' approaches, respectively. While the former assumes a mature theory, the latter find its value in helping specify such theories. Here, we argue that artificial consciousness is best pursued as a (weak) means of theory development in consciousness science, and not as a (strong) axiom-driven project to build a conscious artefact. As with the other sciences of the artificial (intelligence, life), artificial consciousness can contribute by elaborating the possibilities and limitations of candidate mechanisms, transforming properties into mechanism-based criteria, and as a result potentially unifying apparently distinct properties via new mechanism-based concepts. We illustrate our arguments by discussing both axiom-driven and neurobiologically grounded approaches to artificial consciousness."
+  }
+ ]
+}

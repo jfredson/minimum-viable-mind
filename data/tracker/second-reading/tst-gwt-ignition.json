@@ -1,0 +1,30 @@
+{
+  "packet_id": "tst-gwt-ignition",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "sREBa7CYB8G10PEPrtP9oAY",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"could_fail\": true,\n  \"separates\": true,\n  \"separates_from\": [\n    \"iit\",\n    \"rpt\"\n  ],\n  \"rival_view_from\": \"both\",\n  \"reason\": \"The prediction could clearly fail in a no-report neuroimaging study if consciously perceived stimuli show neural differences restricted to sensory or posterior cortex without a late prefrontal-parietal surge. According to the provided material, Integrated Information Theory predicts that posterior cortical activity suffices for consciousness and that prefrontal activation is unnecessary when report demands are removed. From my own knowledge, Recurrent Processing Theory similarly predicts that earlier, localized recurrent activity within sensory cortices generates phenomenal awareness without requiring late prefrontal ignition.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1507,
+    "candidatesTokenCount": 173,
+    "totalTokenCount": 1799,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1507
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 173
+      }
+    ],
+    "thoughtsTokenCount": 119,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.005934,
+  "seconds": 5.4,
+  "called_on": "2026-11-20 19:36:22 PST"
+}

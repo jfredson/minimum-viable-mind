@@ -1,0 +1,65 @@
+{
+  "packet_id": "com-li-orch-anaesthetic-mt",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Orchestrated Objective Reduction",
+  "core_claim": {
+    "quote": "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness.",
+    "source": {
+      "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+      "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+      "date": "2013-08-20"
+    }
+  },
+  "prediction": {
+    "statement": "General anaesthetics cause unconsciousness, at least in part, by acting on microtubules inside neurons; so changing the brain's microtubules with a drug changes how much anaesthetic, or how long, it takes to cause unconsciousness.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2013-08-20",
+      "passage": "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness.",
+      "source": {
+        "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+        "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+        "date": "2013-08-20"
+      }
+    },
+    "test_for": "In animals or people, a drug that acts on brain microtubules changes the anaesthetic dose, or the time under a fixed dose, needed to cause unconsciousness, compared with untreated controls.",
+    "test_against": "Drugs shown to act on brain microtubules, at doses that reach the brain, leave the anaesthetic dose and time needed for unconsciousness unchanged."
+  },
+  "study": {
+    "name": "Microtubule drugs and morphine, given for two weeks, shift isoflurane sensitivity in mice in different directions",
+    "source": {
+      "citation": "Li N, You Z, Ren Y, Kim HH, Yang J, Li G, Doheny JT, Ding W, Xia S, Wang S, Zhou X, Wu X, Shen S, Dong Y, Xie Z, Chen L, Mao J, Martyn JAJ. Microtubule-modulating drugs alter sensitivity to isoflurane in mice. BMC Anesthesiology 25:109, 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11869693/",
+      "date": "2025-02-28"
+    },
+    "first_appeared": "2025-02-28 (publication (no preprint found))",
+    "data_collected": {
+      "when": "not stated; before 2024-01-17",
+      "basis": "The paper gives no collection dates; it was received by the journal on 2024-01-17. The animal protocol number is from 2017 (2017N000233)."
+    }
+  },
+  "passages": [
+    {
+      "text": "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness.",
+      "source": {
+        "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+        "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+        "date": "2013-08-20"
+      }
+    },
+    {
+      "text": "Received 2024 Jan 17; Accepted 2025 Feb 9",
+      "source": {
+        "citation": "Li N, You Z, Ren Y, Kim HH, Yang J, Li G, Doheny JT, Ding W, Xia S, Wang S, Zhou X, Wu X, Shen S, Dong Y, Xie Z, Chen L, Mao J, Martyn JAJ. Microtubule-modulating drugs alter sensitivity to isoflurane in mice. BMC Anesthesiology 25:109, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11869693/",
+        "date": "2025-02-28"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2013-08-20 (hameroff-penrose-2014, available online)",
+    "study_first_appeared": "2025-02-28 (publication; not registered, no preprint found)"
+  },
+  "this_reading_is": "the second reading"
+}

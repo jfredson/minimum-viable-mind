@@ -1,0 +1,746 @@
+{
+ "prediction": "dam-nss",
+ "query": "(TITLE_ABS:ephaptic OR TITLE_ABS:\"non-synaptic\" OR TITLE_ABS:nonsynaptic) AND (TITLE_ABS:vagal OR TITLE_ABS:vagus OR TITLE_ABS:\"dorsal root ganglion\" OR TITLE_ABS:interocepti* OR TITLE_ABS:\"C-fiber*\" OR TITLE_ABS:\"C fibre*\" OR TITLE_ABS:unmyelinated) AND SRC:MED",
+ "run_on": "2026-11-21 09:58 PST",
+ "hit_count": 72,
+ "results": [
+  {
+   "rank": 1,
+   "id": "43052716",
+   "source": "MED",
+   "pmid": "43052716",
+   "pmcid": "PMC13783984",
+   "doi": "10.1186/s12859-026-06618-6",
+   "first_publication_date": "2026-08-25",
+   "title": "Ephaptic coupling between neurons: a systematic review of mathematical models.",
+   "authors": "Kondrakhin PY, Dubrovin SV, Chupov EA, Kolpakov FA, Sagalajev B.",
+   "journal": "BMC bioinformatics",
+   "pub_types": [
+    "research-article",
+    "Systematic Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundEphaptic coupling is a relatively underexplored mechanism of neuronal interaction mediated by perturbations of the extracellular electric potential without the formation of conventional chemical or electrical synapses. Although the first theoretical accounts of ephaptic interactions appeared as early as the 1940s, computational approaches to this phenomenon have been actively developed only since the late 1990s and early 2000s, based on classical models of neuronal activity and cable theory. Both simplified phenomenological and biophysically detailed models have been developed. The former capture only essential features of large-scale neuronal dynamics and offer high computational efficiency, whereas the latter incorporate more complex characteristics, such as the properties of myelinated and unmyelinated fibers, the spatial distribution of nodes of Ranvier, axonal diameter heterogeneity, and the dynamics of extracellular ion concentrations. Recent studies highlight a growing interest in ephaptic interactions, particularly in their potential roles in neuronal synchronization, sensory coding, the propagation of epileptic seizures, and the development of neurodegenerative as well as demyelinating disorders.Objective and methodsThis work presents the systematic review dedicated to mathematical models of ephaptic coupling. The review aims to consolidate the diverse computational approaches used to study ephaptic coupling and to outline the main mechanisms of this phenomenon explored in modeling studies. The reviewed models were classified by type, tested hypotheses, and availability of open-source implementations.ResultsWe surveyed nearly seventy mathematical models of ephaptic coupling. The review highlights how ephaptic interactions may contribute not only to normal brain function-such as synchronization and sensory processing-but also to pathological conditions, including epilepsy, demyelination, neuropathic pain, and neurodegeneration. By bringing together disparate studies, we aim to make the modeling of ephaptic coupling comprehensible to a broad scientific audience, including researchers with little prior experience in this area, stimulate further integration of computational and experimental approaches, and promote investigation of ephaptic mechanisms in both health and disease.ConclusionThis review serves both as a reference point for researchers developing new computational models and as a resource for those seeking to understand how ephaptic interactions may shape neuronal dynamics."
+  },
+  {
+   "rank": 2,
+   "id": "42846523",
+   "source": "MED",
+   "pmid": "42846523",
+   "pmcid": "PMC13642761",
+   "doi": "10.3389/fresc.2026.1915218",
+   "first_publication_date": "2026-09-23",
+   "title": "Accessory-vagal crosstalk at the jugular foramen: a hypothesis for reflex dry cough during posterior cervical extracorporeal shockwave therapy.",
+   "authors": "Jia X.",
+   "journal": "Frontiers in rehabilitation sciences",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundExtracorporeal shockwave therapy (ESWT) is a core modality for treating myofascial pain and degenerative cervical spine conditions in the nuchal and back regions. However, a subset of patients clinically experiences sudden, transient, and irritative dry coughs when receiving treatment near the seventh cervical vertebra (C7, the Dazhui acupoint region). Traditional perspectives vaguely attribute this to \"physical acoustic waves penetrating and vibrating the lung parenchyma,\" which has caused excessive panic regarding iatrogenic pneumothorax and limited the rational titration of treatment intensity.ObjectiveThis perspective aims to refute the traditional \"lung vibration theory\" through quantitative acoustic physics deductions and, for the first time, constructs a novel cross-system \"Accessory-Vagal Crosstalk at the Jugular Foramen\" hypothesis by integrating recent advancements in microanatomy.MechanismRecent anatomical studies confirm that the main trunk and dense branches of the accessory nerve (CN XI), which innervate the upper trapezius, are highly concentrated near C7. High-frequency and high-pressure mechanical shear forces released by ESWT strongly irritate the accessory nerve, detonating retrograde conduction of action potentials in the periphery. When this explosive electrical signal ascends to the narrow jugular foramen at the skull base, it breaches the myelin insulation barrier between nerve fibers and erroneously activates the closely aligned sensory fibers of the vagus nerve (CN X) and glossopharyngeal nerve (CN IX) through ephaptic transmission. This leaked electrical signal ascends into the nucleus tractus solitarius (NTS) in the medulla, which the central nervous system instinctively misinterprets as a high-level airway foreign body intrusion, thereby forcibly initiating a reflex dry cough.Clinical significanceThis reflex exhibits a distinct \"Instantaneous On-Off Effect\". In clinical practice, adjusting the applicator angle to a 15° to 30° tilt toward the vertebral body (to avoid the main accessory nerve plexus) and implementing a low-energy gradient \"stepwise titration\" can completely block this cross-system abnormal reflex while ensuring safety."
+  },
+  {
+   "rank": 3,
+   "id": "41594782",
+   "source": "MED",
+   "pmid": "41594782",
+   "pmcid": "PMC12838919",
+   "doi": "10.3390/brainsci16010061",
+   "first_publication_date": "2025-12-31",
+   "title": "Feeding, Emotion, and the Brain Stem: The Interesting Case of the Mesencephalic Trigeminal Nucleus.",
+   "authors": "Turnbull OH.",
+   "journal": "Brain sciences",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundOur growing understanding of the brain basis of mind has seen an interest in evolutionarily ancient structures, most notably the brainstem. This paper offers an interesting example of this underexplored territory, by considering the mesencephalic component of the trigeminal nucleus. This largely uncelebrated brainstem structure is central to control of the jaw, and for the foundational acts of eating, oral exploration, and biting.ObjectivesThis paper explores the interesting anatomy of the mesencephalic trigeminal: unique in the nervous system as a centrally located sensory ganglion, which combines sensory and motor function for the jaw. An unexplored aspect of its anatomy is that the mesencephalic component of the nucleus lies directly adjacent to the brain's core system for the experience of emotion, the peri-acqueductal gray (PAG).ResultsThe data suggest a role for the jaw, and more broadly the oral cavity, in relation to a range of feeling states, from pleasure to aggression. This is supported by behavioural and classic neuropsychological findings, such as the Klüver-Bucy syndrome. However, the proposal is not well-supported by findings of direct connections between the trigeminal nucleus and the PAG.ConclusionsWhile these contrasting findings present a conundrum, there may be a role for non-synaptic signalling, of the sort increasingly understood to be important for interoception and homeostasis."
+  },
+  {
+   "rank": 4,
+   "id": "41229287",
+   "source": "MED",
+   "pmid": "41229287",
+   "pmcid": "PMC12612705",
+   "doi": "10.1098/rstb.2024.0305",
+   "first_publication_date": "2025-11-13",
+   "title": "The physiology of interoception and its adaptive role in consciousness.",
+   "authors": "Singer J, Damasio A.",
+   "journal": "Philosophical transactions of the Royal Society of London. Series B, Biological sciences",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The interoceptive nervous system uses signalling mechanisms distinct from those of exteroceptive, voluntary motor, cognitive and linguistic processes. While interoception relies mainly on analogue-like processing, the other systems favour digital-like signalling. This physiological feature allows interoception to map the state of the organism's internal milieu in real time, in stark contrast to the rapid, precise and time-sensitive processing of exteroceptive, proprioceptive, cognitive and linguistic signals. This distinction arises from the unique features of the interoceptive process, namely the unmyelinated and lightly myelinated nature of afferent interoceptive neurons, which facilitates non-synaptic signalling throughout interoceptive pathways, notably in those of the vagus nerve and of neural structures devoid of a blood-brain barrier. We propose that by continuously representing the body's state, spontaneously conscious homoeostatic feelings constitute the foundational substrate of subjectivity and the grounding for consciousness. This idea builds on our prior work, which grounds consciousness in core biology rather than high-level cognition. Consciousness enables adaptive and protective responses that maintain homeostasis and secure life.This article is part of the theme issue 'Evolutionary functions of consciousness'."
+  },
+  {
+   "rank": 5,
+   "id": "39623218",
+   "source": "MED",
+   "pmid": "39623218",
+   "pmcid": "PMC11706780",
+   "doi": "10.1038/s41593-024-01813-1",
+   "first_publication_date": "2024-12-02",
+   "title": "Membrane mechanics dictate axonal pearls-on-a-string morphology and function.",
+   "authors": "Griswold JM, Bonilla-Quintana M, Pepper R, Lee CT, Raychaudhuri S, Ma S, Gan Q, Syed S, Zhu C, Bell M, Suga M, Yamaguchi Y, Chéreau R, Nägerl UV, Knott G, Rangamani P, Watanabe S.",
+   "journal": "Nature neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Axons are ultrathin membrane cables that are specialized for the conduction of action potentials. Although their diameter is variable along their length, how their morphology is determined is unclear. Here, we demonstrate that unmyelinated axons of the mouse central nervous system have nonsynaptic, nanoscopic varicosities ~200 nm in diameter repeatedly along their length interspersed with a thin cable ~60 nm in diameter like pearls-on-a-string. In silico modeling suggests that this axon nanopearling can be explained by membrane mechanical properties. Treatments disrupting membrane properties, such as hyper- or hypotonic solutions, cholesterol removal and nonmuscle myosin II inhibition, alter axon nanopearling, confirming the role of membrane mechanics in determining axon morphology. Furthermore, neuronal activity modulates plasma membrane cholesterol concentration, leading to changes in axon nanopearls and causing slowing of action potential conduction velocity. These data reveal that biophysical forces dictate axon morphology and function, and modulation of membrane mechanics likely underlies unmyelinated axonal plasticity."
+  },
+  {
+   "rank": 6,
+   "id": "35892199",
+   "source": "MED",
+   "pmid": "35892199",
+   "pmcid": "PMC9326288",
+   "doi": "10.1098/rsob.220174",
+   "first_publication_date": "2022-07-27",
+   "title": "Endocrine cybernetics: neuropeptides as molecular switches in behavioural decisions.",
+   "authors": "Nässel DR, Zandawala M.",
+   "journal": "Open biology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Plasticity in animal behaviour relies on the ability to integrate external and internal cues from the changing environment and hence modulate activity in synaptic circuits of the brain. This context-dependent neuromodulation is largely based on non-synaptic signalling with neuropeptides. Here, we describe select peptidergic systems in the Drosophila brain that act at different levels of a hierarchy to modulate behaviour and associated physiology. These systems modulate circuits in brain regions, such as the central complex and the mushroom bodies, which supervise specific behaviours. At the top level of the hierarchy there are small numbers of large peptidergic neurons that arborize widely in multiple areas of the brain to orchestrate or modulate global activity in a state and context-dependent manner. At the bottom level local peptidergic neurons provide executive neuromodulation of sensory gain and intrinsically in restricted parts of specific neuronal circuits. The orchestrating neurons receive interoceptive signals that mediate energy and sleep homeostasis, metabolic state and circadian timing, as well as external cues that affect food search, aggression or mating. Some of these cues can be triggers of conflicting behaviours such as mating versus aggression, or sleep versus feeding, and peptidergic neurons participate in circuits, enabling behaviour choices and switches."
+  },
+  {
+   "rank": 7,
+   "id": "35131465",
+   "source": "MED",
+   "pmid": "35131465",
+   "pmcid": null,
+   "doi": "10.1016/j.mcn.2022.103704",
+   "first_publication_date": "2022-02-04",
+   "title": "Intermitochondrial signaling regulates the uniform distribution of stationary mitochondria in axons.",
+   "authors": "Matsumoto N, Hori I, Kajita MK, Murase T, Nakamura W, Tsuji T, Miyake S, Inatani M, Konishi Y.",
+   "journal": "Molecular and cellular neurosciences",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "In the central nervous system (CNS), many neurons develop axonal arbors that are crucial for information processing. Previous studies have demonstrated that premature axons contain motile and stationary mitochondria, and their balance is important for axonal arborization. However, the mechanisms by which neurons determine the positions of stationary mitochondria as well as their turnover remain to be elucidated. We observed that the distribution of stationary mitochondrial spots along the unmyelinated and nonsynaptic axons is not random but rather relatively uniform both in primary cultured neurons and in tissues. Intriguingly, whereas the positions of each mitochondrial spot changed over time, the overall distribution remained uniform. In addition, local inactivation of mitochondria by KillerRed mediated chromophore-assisted light inactivation (CALI) inhibited the translocation of mitochondrial spots in adjacent axonal regions, suggesting that functional mitochondria enhance the motility of other mitochondria in the vicinity. Signals of ATP:ADP sensor, PercevalHR indicated that the ATP:ADP ratio was relatively high around mitochondria, and treating axons with phosphocreatine (PCr), which supplies ATP, reduced the immobile mitochondria induced by the local mitochondrial inactivation. In a mathematical model, we found that the ATP gradient generated by mitochondria, and ATP dependent regulation of mitochondrial motility could establish uniform mitochondrial distribution. These observations suggest that axons in the CNS possess the system that distributes mitochondria uniformly, and intermitochondrial signaling contribute to the regulation. In addition, our results suggest the possibility that ATP might be one of the molecules mediating the signaling."
+  },
+  {
+   "rank": 8,
+   "id": "33722070",
+   "source": "MED",
+   "pmid": "33722070",
+   "pmcid": null,
+   "doi": "10.1146/annurev-neuro-100120-122621",
+   "first_publication_date": "2021-03-15",
+   "title": "Ensheathment and Myelination of Axons: Evolution of Glial Functions.",
+   "authors": "Nave KA, Werner HB.",
+   "journal": "Annual review of neuroscience",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Myelination of axons provides the structural basis for rapid saltatory impulse propagation along vertebrate fiber tracts, a well-established neurophysiological concept. However, myelinating oligodendrocytes and Schwann cells serve additional functions in neuronal energy metabolism that are remarkably similar to those of axon-ensheathing glial cells in unmyelinated invertebrates. Here we discuss myelin evolution and physiological glial functions, beginning with the role of ensheathing glia in preventing ephaptic coupling, axoglial metabolic support, and eliminating oxidative radicals. In both vertebrates and invertebrates, axoglial interactions are bidirectional, serving to regulate cell fate, nerve conduction, and behavioral performance. One key step in the evolution of compact myelin in the vertebrate lineage was the emergence of the open reading frame for myelin basic protein within another gene. Several other proteins were neofunctionalized as myelin constituents and help maintain a healthy nervous system. Myelination in vertebrates became a major prerequisite of inhabiting new ecological niches."
+  },
+  {
+   "rank": 9,
+   "id": "32173398",
+   "source": "MED",
+   "pmid": "32173398",
+   "pmcid": null,
+   "doi": "10.1016/j.pneurobio.2020.101786",
+   "first_publication_date": "2020-03-12",
+   "title": "Primary afferent-driven presynaptic inhibition of C-fiber inputs to spinal lamina I neurons.",
+   "authors": "Fernandes EC, Pechincha C, Luz LL, Kokai E, Szucs P, Safronov BV.",
+   "journal": "Progress in neurobiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Presynaptic inhibition of primary afferent terminals is a powerful mechanism for controlling sensory information flow into the spinal cord. Lamina I is the major spinal nociceptive projecting area and monosynaptic input from C-fibers to this region represents a direct pathway for transmitting pain signals to supraspinal centers. Here we used an isolated spinal cord preparation to show that this pathway is under control of the afferent-driven GABAergic presynaptic inhibition. Presynaptic inhibition of C-fiber input to lamina I projection and local-circuit neurons is mediated by recruitment of Aβ-, Aδ- and C-afferents. C-fiber-driven inhibition of C-fibers functions as a feedforward mechanism, by which the homotypic afferents control sensory information flow into the spinal cord and regulate degree of the primary nociceptive afferent activation needed to excite the second order neurons. The presynaptic inhibition of C-fiber input to lamina I neurons may be mediated by both synaptic and non-synaptic mechanisms, and its occurrence and extent are quite heterogeneous. This heterogeneity is likely to be reflective of involvement of lamina I neurons in diverse circuitries processing specific modalities of sensory information in the superficial dorsal horn. Thus, our results implicate both low- and high-threshold afferents in the modulation of C-fiber input into the spinal cord."
+  },
+  {
+   "rank": 10,
+   "id": "32269519",
+   "source": "MED",
+   "pmid": "32269519",
+   "pmcid": "PMC7109287",
+   "doi": "10.3389/fninf.2020.00011",
+   "first_publication_date": "2020-03-25",
+   "title": "Finite Element Simulation of Ionic Electrodiffusion in Cellular Geometries.",
+   "authors": "Ellingsrud AJ, Solbrå A, Einevoll GT, Halnes G, Rognes ME.",
+   "journal": "Frontiers in neuroinformatics",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Mathematical models for excitable cells are commonly based on cable theory, which considers a homogenized domain and spatially constant ionic concentrations. Although such models provide valuable insight, the effect of altered ion concentrations or detailed cell morphology on the electrical potentials cannot be captured. In this paper, we discuss an alternative approach to detailed modeling of electrodiffusion in neural tissue. The mathematical model describes the distribution and evolution of ion concentrations in a geometrically-explicit representation of the intra- and extracellular domains. As a combination of the electroneutral Kirchhoff-Nernst-Planck (KNP) model and the Extracellular-Membrane-Intracellular (EMI) framework, we refer to this model as the KNP-EMI model. Here, we introduce and numerically evaluate a new, finite element-based numerical scheme for the KNP-EMI model, capable of efficiently and flexibly handling geometries of arbitrary dimension and arbitrary polynomial degree. Moreover, we compare the electrical potentials predicted by the KNP-EMI and EMI models. Finally, we study ephaptic coupling induced in an unmyelinated axon bundle and demonstrate how the KNP-EMI framework can give new insights in this setting."
+  },
+  {
+   "rank": 11,
+   "id": "31689490",
+   "source": "MED",
+   "pmid": "31689490",
+   "pmcid": null,
+   "doi": "10.1016/j.neuroscience.2019.09.038",
+   "first_publication_date": "2019-11-02",
+   "title": "A Role for The P2Y1 Receptor in Nonsynaptic Cross-depolarization in the Rat Dorsal Root Ganglia.",
+   "authors": "Carvalho GB, Mulpuri Y, Damasio A, Spigelman I.",
+   "journal": "Neuroscience",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Non-synaptic transmission is pervasive throughout the nervous system. It appears especially prevalent in peripheral ganglia, where non-synaptic interactions between neighboring cell bodies have been described in both physiological and pathological conditions, a phenomenon referred to as cross-depolarization (CD) and thought to play a role in sensory processing and chronic pain. CD has been proposed to be mediated by a chemical agent, but its identity has remained elusive. Here, we report that in the rat dorsal root ganglion (DRG), the P2Y1 purinergic receptor (P2RY1) plays an important role in regulating CD. The effect of P2RY1 is cell-type specific: pharmacological blockade of P2RY1 inhibited CD in A-type neurons while enhancing it in C-type neurons. In the nodose ganglion of the vagus, CD requires extracellular calcium in a large percentage of cells. In contrast, we show that in the DRG extracellular calcium appears to play no major role, pointing to a mechanistic difference between the two peripheral ganglia. Furthermore, we show that DRG glial cells also play a cell-type specific role in CD regulation. Fluorocitrate-induced glial inactivation had no effect on A-cells but enhanced CD in C-cells. These findings shed light on the mechanism of CD in the DRG and pave the way for further analysis of non-synaptic neuronal communication in sensory ganglia."
+  },
+  {
+   "rank": 12,
+   "id": "29472865",
+   "source": "MED",
+   "pmid": "29472865",
+   "pmcid": "PMC5809772",
+   "doi": "10.3389/fphys.2018.00011",
+   "first_publication_date": "2018-02-08",
+   "title": "Intracranial Pressure Is a Determinant of Sympathetic Activity.",
+   "authors": "Schmidt EA, Despas F, Pavy-Le Traon A, Czosnyka Z, Pickard JD, Rahmouni K, Pathak A, Senard JM.",
+   "journal": "Frontiers in physiology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Intracranial pressure (ICP) is the pressure within the cranium. ICP rise compresses brain vessels and reduces cerebral blood delivery. Massive ICP rise leads to cerebral ischemia, but it is also known to produce hypertension, bradycardia and respiratory irregularities due to a sympatho-adrenal mechanism termed Cushing response. One still unresolved question is whether the Cushing response is a non-synaptic acute brainstem ischemic mechanism or part of a larger physiological reflex for arterial blood pressure control and homeostasis regulation. We hypothesize that changes in ICP modulates sympathetic activity. Thus, modest ICP increase and decrease were achieved in mice and patients with respectively intra-ventricular and lumbar fluid infusion. Sympathetic activity was gauged directly by microneurography, recording renal sympathetic nerve activity in mice and muscle sympathetic nerve activity in patients, and gauged indirectly in both species by heart-rate variability analysis. In mice (n = 15), renal sympathetic activity increased from 29.9 ± 4.0 bursts.s-1 (baseline ICP 6.6 ± 0.7 mmHg) to 45.7 ± 6.4 bursts.s-1 (plateau ICP 38.6 ± 1.0 mmHg) and decreased to 34.8 ± 5.6 bursts.s-1 (post-infusion ICP 9.1 ± 0.8 mmHg). In patients (n = 10), muscle sympathetic activity increased from 51.2 ± 2.5 bursts.min-1 (baseline ICP 8.3 ± 1.0 mmHg) to 66.7 ± 2.9 bursts.min-1 (plateau ICP 25 ± 0.3 mmHg) and decreased to 58.8 ± 2.6 bursts.min-1 (post-infusion ICP 14.8 ± 0.9 mmHg). In patients 7 mmHg ICP rise significantly increases sympathetic activity by 17%. Heart-rate variability analysis demonstrated a significant vagal withdrawal during the ICP rise, in accordance with the microneurography findings. Mice and human results are alike. We demonstrate in animal and human that ICP is a reversible determinant of efferent sympathetic outflow, even at relatively low ICP levels. ICP is a biophysical stress related to the forces within the brain. But ICP has also to be considered as a physiological stressor, driving sympathetic activity. The results suggest a novel physiological ICP-mediated sympathetic modulation circuit and the existence of a possible intracranial (i.e., central) baroreflex. Modest ICP rise might participate to the pathophysiology of cardio-metabolic homeostasis imbalance with sympathetic over-activity, and to the pathogenesis of sympathetically-driven diseases."
+  },
+  {
+   "rank": 13,
+   "id": "29201256",
+   "source": "MED",
+   "pmid": "29201256",
+   "pmcid": "PMC5703691",
+   "doi": "10.1016/j.jdsr.2017.01.003",
+   "first_publication_date": "2017-03-15",
+   "title": "Neuropeptides and ATP signaling in the trigeminal ganglion.",
+   "authors": "Goto T, Iwai H, Kuramoto E, Yamanaka A.",
+   "journal": "The Japanese dental science review",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Peripheral nociceptive stimuli from orofacial structures are largely transmitted by the trigeminal nerve. According to the peripheral noxious stimuli, neurons in the trigeminal ganglion (TG) produce neuropeptides such as substance P, and calcitonin-gene-related peptide, etc. Beside the production of neuropeptides, there exists unique non-synaptic interaction system between maxillary and mandibular neurons in the TG. Neurons in the TG are surrounded by satellite glial cells (SGCs), which initially receive the signal from TG neurons. These activated SGCs secrete a transmitter to activate adjacent SGCs or TG neurons, thereby amplifying the signal, for example, from mandibular neurons to maxillary neurons in the TG. Similar to the dorsal root ganglion, in the TG, microglia/macrophage-like cells (MLCs) are activated by uptake of a transmitter from TG neurons or SGCs. This communication between neurons, SGCs, and MLCs results in responses such as ectopic pain, hyperesthesia, or allodynia. The focus of this review is the cooperative interaction of the maxillary and mandibular nerves in the TG by neuropeptides, and adenosine 3'-phosphate (ATP) signaling from neurons to SGCs and MLCs. Stimulated neurons either secrete ATP by means of vesicular nucleotide transporters, or secrete neuropeptides from the neuronal cell body to mediate signal transmission."
+  },
+  {
+   "rank": 14,
+   "id": "25871969",
+   "source": "MED",
+   "pmid": "25871969",
+   "pmcid": null,
+   "doi": "10.1097/mao.0000000000000760",
+   "first_publication_date": "2015-06-01",
+   "title": "Experimental studies on the recovery processes from severe facial palsy and the development of its sequelae.",
+   "authors": "Takeda T, Takeda S, Okada T, Kakigi A, Yamasoba T.",
+   "journal": "Otology & neurotology : official publication of the American Otological Society, American Neurotology Society [and] European Academy of Otology and Neurotology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveTo experimentally elucidate the pathogenesis of inappropriate co-contraction of facially innervated muscles after severe facial palsy.MethodsTwenty-two guinea pigs with severe facial palsy induced by the interruption of the petrosal artery were used to follow up behavioral facial movement, including the degree of facial palsy and abnormal hyperkinetic facial movement of synkinesis and mass contracture. At the end of the follow-up, the evoked facial compound muscle action potential (evoked FCMP) and antidromically evoked facial nerve response (AFNR) were examined in a few typical cases with complete recovery and with incomplete recovery accompanied by synkinesis. After the follow-up, all animals were sacrificed for morphological studies, which consisted of a light-microscopic study (by Luxol fast blue and hematoxylin and eosin staining or toluidine blue staining) and/or an electron-microscopic study.ResultsThe initial sign of recovery was mass contracture or spasm. This condition continued for 2 weeks or more. As voluntary facial movement recovered, the mass contracture became unnoticeable. It could not be distinguished when the so-called synkinesis developed. Synkinesis usually developed during the recovery process from severe to moderate palsy, and synkinesis persisted or progressed once it appeared. Histologically, unmyelinated fibers were intermingled with myelinated fibers in an early stage of recovery with mass contracture. In the late stage with the development of synkinesis, however, such an intermingling of unmyelinated and myelinated axons was not observed. In this stage, axons became well myelinated, but they were irregular in shape in cases with synkinesis. Especially, axons irregularly ran at the level of the G1 (at the region of the second genu) segment, and bifurcated axons were sporadically found. The axon count had a tendency to increase toward the periphery. AFNR was not detected, although evoked FCMP could be clearly detected in cases with synkinesis.ConclusionMisguidance of regenerated axons is an important cause of facial synkinesis in the ischemia-induced facial palsy model. Ephaptic transmission between unmyelinated and myelinated axons is also likely to be responsible for mass contracture manifested in the early stage of the recovery process."
+  },
+  {
+   "rank": 15,
+   "id": "25194917",
+   "source": "MED",
+   "pmid": "25194917",
+   "pmcid": "PMC4167264",
+   "doi": "10.1186/1471-2202-15-105",
+   "first_publication_date": "2014-09-07",
+   "title": "Hypocretin1/orexinA-immunoreactive axons form few synaptic contacts on rat ventral tegmental area neurons that project to the medial prefrontal cortex.",
+   "authors": "Del Cid-Pellitero E, Garzón M.",
+   "journal": "BMC neuroscience",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundHypocretins/orexins (Hcrt/Ox) are hypothalamic neuropeptides involved in sleep-wakefulness regulation. Deficiency in Hcrt/Ox neurotransmission results in the sleep disorder narcolepsy, which is characterized by an inability to maintain wakefulness. The Hcrt/Ox neurons are maximally active during wakefulness and project widely to the ventral tegmental area (VTA). A dopamine-containing nucleus projecting extensively to the cerebral cortex, the VTA enhances wakefulness. In the present study, we used retrograde tracing from the medial prefrontal cortex (mPFC) to examine whether Hcrt1/OxA neurons target VTA neurons that could sustain behavioral wakefulness through their projections to mPFC.ResultsThe retrograde tracer Fluorogold (FG) was injected into mPFC and, after an optimal survival period, sections through the VTA were processed for dual immunolabeling of anti-FG and either anti-Hcrt1/OxA or anti-TH antisera. Most VTA neurons projecting to the mPFC were located in the parabrachial nucleus of the ipsilateral VTA and were non-dopaminergic. Only axonal profiles showed Hcrt1/OxA-immunoreactivity in VTA. Hcrt1/OxA reactivity was observed in axonal boutons and many unmyelinated axons. The Hcrt1/OxA immunoreactivity was found filling axons but it was also observed in parts of the cytoplasm and dense-core vesicles. Hcrt1/OxA-labeled boutons frequently apposed FG-immunolabeled dendrites. However, Hcrt1/OxA-labeled boutons rarely established synapses, which, when they were established, were mainly asymmetric (excitatory-type), with either FG-labeled or unlabeled dendrites.ConclusionsOur results provide ultrastructural evidence that Hcrt1/OxA neurons may exert a direct synaptic influence on mesocortical neurons that would facilitate arousal and wakefulness. The paucity of synapses, however, suggest that the activity of VTA neurons with cortical projections might also be modulated by Hcrt1/OxA non-synaptic actions. In addition, Hcrt1/OxA could modulate the postsynaptic excitatory responses of VTA neurons with cortical projections to a co-released excitatory transmitter from Hcrt1/OxA axons. Our observation of Hcrt1/OxA targeting of mesocortical neurons supports Hcrt1/OxA wakefulness enhancement in the VTA and could help explain the characteristic hypersomnia present in narcoleptic patients."
+  },
+  {
+   "rank": 16,
+   "id": "21036204",
+   "source": "MED",
+   "pmid": "21036204",
+   "pmcid": null,
+   "doi": "10.1016/j.neuroscience.2010.10.058",
+   "first_publication_date": "2010-10-29",
+   "title": "Medial prefrontal cortex receives input from dorsal raphe nucleus neurons targeted by hypocretin1/orexinA-containing axons.",
+   "authors": "Del Cid-Pellitero E, Garzón M.",
+   "journal": "Neuroscience",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The medial prefrontal cortex (mPFC) is strongly involved in cognition and behavior. It receives input from brainstem nuclei implicated in behavioral wakefulness and electrographic cortical activation, such as the dorsal raphe nucleus (DRN). Moreover, the hypocretinergic/orexinergic (Hcrt/Ox) hypothalamic neurons innervate DRN, thus modulating its activity and presumably allowing transitions between sleep-wakefulness cycle states. Dysfunction in this system is associated with narcolepsy. In this study we aimed to determine the precise location of DRN neurons projecting to mPFC and the extent to which they contain serotonin (5-hydroxytryptamine); we have also assessed whether Hcrt1/OxA neurons innervate DRN neurons that could sustain behavioral wakefulness through their projections to mPFC. The retrograde tracer Fluorogold was injected into mPFC and DRN sections were processed for double immunolabeling of anti-Fluorogold and either anti-5-hydroxytryptamine or anti-Hcrt1/OxA antisera. Most DRN neurons projecting to mPFC were located in the ventral sector of the rostral and intermediate DRN, and around half of them were serotonergic. Hcrt1/OxA-immunoreactivity in DRN was observed in unmyelinated axons and axon boutons (varicosities or axon terminals). Hcrt1/OxA immunoreactivity was observed within the cytoplasm and in dense-cored vesicles of these axons. Hcrt1/OxA-labeled boutons established both asymmetric synapses (n=30) and appositional contacts (n=102) with Fluorogold-labeled dendrites belonging to DRN neurons projecting to mPFC. Our results show that Hcrt1/OxA neurons may exert a direct synaptic influence on DRN neurons that could facilitate wakefulness, although other non-synaptic actions through volume transmission are also suggested."
+  },
+  {
+   "rank": 17,
+   "id": "20937358",
+   "source": "MED",
+   "pmid": "20937358",
+   "pmcid": null,
+   "doi": "10.1016/j.neulet.2010.10.005",
+   "first_publication_date": "2010-10-16",
+   "title": "Purinergic activation of dorsal root ganglion neurones in vivo.",
+   "authors": "Dibaj P, Steffens H, Nadrigny F, Kirchhoff F, Schomburg ED.",
+   "journal": "Neuroscience letters",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Functional relevance of non-synaptic purinergic receptors on dorsal root ganglion cells was tested in vivo by the influence of ATP using 2P-LSM and Ca imaging. Within a few seconds after local application of ATP, neurones in dorsal root ganglion were activated indicated by an increase of their calcium signal. The signal reached its maximum within a few seconds and declined to control values after about 30 s. Purinergic action seems to include non-synaptic cell-to-cell communication within dorsal root ganglia."
+  },
+  {
+   "rank": 18,
+   "id": "20923934",
+   "source": "MED",
+   "pmid": "20923934",
+   "pmcid": "PMC5023281",
+   "doi": "10.1126/scisignal.2001128",
+   "first_publication_date": "2010-10-05",
+   "title": "Nonsynaptic communication through ATP release from volume-activated anion channels in axons.",
+   "authors": "Fields RD, Ni Y.",
+   "journal": "Science signaling",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The release of neuronal messengers outside synapses has broad biological implications, particularly with regard to communication between axons and glia. We identify a mechanism for nonsynaptic, nonvesicular release of adenosine triphosphate (ATP) from axons through volume-activated anion channels (VAACs) activated by microscopic axon swelling during action potential firing. We used a combination of single-photon imaging of ATP release, together with imaging for intrinsic optical signals, intracellular calcium ions (Ca(2+)), time-lapse video, and confocal microscopy, to investigate action potential-induced nonsynaptic release of this neurotransmitter. ATP release from cultured embryonic dorsal root ganglion axons persisted when bafilomycin or botulinum toxin was used to block vesicular release, whereas pharmacological inhibition of VAACs or prevention of action potential-induced axon swelling inhibited ATP release and disrupted activity-dependent signaling between axons and astrocytes. This nonvesicular, nonsynaptic communication could mediate various activity-dependent interactions between axons and nervous system cells in normal conditions, development, and disease."
+  },
+  {
+   "rank": 19,
+   "id": "18842957",
+   "source": "MED",
+   "pmid": "18842957",
+   "pmcid": "PMC2604858",
+   "doi": "10.1152/jn.90399.2008",
+   "first_publication_date": "2008-10-08",
+   "title": "Effects of odor stimulation on antidromic spikes in olfactory sensory neurons.",
+   "authors": "Scott JW, Sherrill L.",
+   "journal": "Journal of neurophysiology",
+   "pub_types": [
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Spikes were evoked in rat olfactory sensory neuron (OSN) populations by electrical stimulation of the olfactory bulb nerve layer in pentobarbital anesthetized rats. The latencies and recording positions for these compound spikes showed that they originated in olfactory epithelium. Dual simultaneous recordings indicated conduction velocities in the C-fiber range, around 0.5 m/s. These spikes are concluded to arise from antidromically activated olfactory sensory neurons. Electrical stimulation at 5 Hz was used to track changes in the size and latency of the antidromic compound population spike during the odor response. Strong odorant stimuli suppressed the spike size and prolonged its latency. The latency was prolonged throughout long odor stimuli, indicating continued activation of olfactory receptor neuron axons. The amounts of spike suppression and latency change were strongly correlated with the electroolfactogram (EOG) peak size evoked at the same site across odorants and across stimulus intensities. We conclude that the curve of antidromic spike suppression gives a reasonable representation of spiking activity in olfactory sensory neurons driven by odorants and that the correlation of peak spike suppression with the peak EOG shows the accuracy of the EOG as an estimate of intracellular potential in the population of olfactory sensory neurons. In addition, these results have important implications about traffic in olfactory nerve bundles. We did not observe multiple peaks corresponding to stimulated and unstimulated receptor neurons. This suggests synchronization of spikes in olfactory nerve, perhaps by ephaptic interactions. The long-lasting effect on spike latency shows that action potentials continue in the nerve throughout the duration of an odor stimulus in spite of many reports of depolarization block in olfactory receptor neuron cell bodies. Finally, strong odor stimulation caused almost complete block of antidromic spikes. This indicates that a very large proportion of olfactory axons was activated by single strong odor stimuli."
+  },
+  {
+   "rank": 20,
+   "id": "14528450",
+   "source": "MED",
+   "pmid": "14528450",
+   "pmcid": "PMC2800131",
+   "doi": "10.1002/cne.10872",
+   "first_publication_date": "2003-11-01",
+   "title": "Intercellular interactions in the mammalian olfactory nerve.",
+   "authors": "Blinder KJ, Pumplin DW, Paul DL, Keller A.",
+   "journal": "The Journal of comparative neurology",
+   "pub_types": [
+    "Comparative Study",
+    "Research Support, U.S. Gov't, P.H.S.",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The small, unmyelinated axons of olfactory sensory neurons project to the olfactory bulb in densely packed fascicles, an arrangement conducive to axo-axonal interactions. We recently demonstrated ephaptic interactions between these axons in the olfactory nerve layer, the layer of the olfactory bulb in which the axon fascicles interweave and rearrange extensively. In the present study, we hypothesized that the axons, which express connexins, may have another mode of communication: gap junctions. Previous transmission electron microscopy (TEM) studies have failed to demonstrate such junctions. However, the definitive method for detecting gap junctions, freeze fracture, has not been used to examine the interaxonal connections of the olfactory nerve layer. Here, we apply a combined approach of TEM and freeze fracture to determine if gap junctions are present between the olfactory axons. Gap junctions involving olfactory axons were not found. However, by freeze fracture, P faces of both the axons and ensheathing cells (glia that surround the axon fascicles) contained distinctive linear arrays of particles, aligned along the small columns of extracellular space. In axons, few intramembranous particles were present outside of these arrays. Multi-helix proteins, including ion channels and connexin hemichannels, have been shown to be visible as particles by freeze fracture. This suggests that the proteins important for signal transmission are confined to the linear arrays. Such an arrangement would facilitate ephaptic transmission, calcium waves, current oscillations, and paracrine communication and may be important for olfactory neural code processing."
+  },
+  {
+   "rank": 21,
+   "id": "12834879",
+   "source": "MED",
+   "pmid": "12834879",
+   "pmcid": null,
+   "doi": "10.1016/s0006-8993(03)02678-7",
+   "first_publication_date": "2003-07-01",
+   "title": "Endomorphin-2 axon terminals contact mu-opioid receptor-containing dendrites in trigeminal dorsal horn.",
+   "authors": "Aicher SA, Mitchell JL, Swanson KC, Zadina JE.",
+   "journal": "Brain research",
+   "pub_types": [
+    "Comparative Study",
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The endomorphins represent a novel group of endogenous opioid peptides that have high affinity for the mu-opioid receptor (MOR1). Endomorphin-2 is present in high density in the spinal and trigeminal dorsal horns and is localized to primary afferents. If endomorphin-2 were an endogenous ligand for the MOR1, we would expect to find the receptor at cellular sites in close association with the peptide. We used dual-labeling immunocytochemical methods combined with electron microscopy to determine if a cellular substrate exists for functional interactions between endomorphin-2 and MOR1. We confirmed the localization of endomorphin-2 to unmyelinated axons and axon terminals in the trigeminal dorsal horn. A small proportion of these endomorphin-2 axons contained MOR1, but many of the dendritic targets of endomorphin-2 terminals contained MOR1. Consistent with previous studies, endomorphin-2 was contained primarily in dense core vesicles and MOR1 was located primarily at non-synaptic sites. These morphological characteristics are consistent with the hypothesis that peptides are released extra-synaptically and their receptors may be located at sites distal to the synaptic junction. These anatomical data support the hypothesis that endomorphin-2 is a ligand for MORs in the trigeminal dorsal horn, particularly at postsynaptic sites."
+  },
+  {
+   "rank": 22,
+   "id": "11994125",
+   "source": "MED",
+   "pmid": "11994125",
+   "pmcid": null,
+   "doi": "10.1046/j.1460-9568.2002.01969.x",
+   "first_publication_date": "2002-04-01",
+   "title": "MOR-1-immunoreactive neurons in the dorsal horn of the rat spinal cord: evidence for nonsynaptic innervation by substance P-containing primary afferents and for selective activation by noxious thermal stimuli.",
+   "authors": "Spike RC, Puskár Z, Sakamoto H, Stewart W, Watt C, Todd AJ.",
+   "journal": "The European journal of neuroscience",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "A direct action of mu-opioid agonists on neurons in the spinal dorsal horn is thought to contribute to opiate-induced analgesia. In this study we have investigated neurons that express the mu-opioid receptor MOR-1 in rat spinal cord to provide further evidence about their role in nociceptive processing. MOR-1-immunoreactive cells were largely restricted to lamina II, where they comprised approximately 10% of the neuronal population. The cells received few contacts from nonpeptidergic unmyelinated afferents, but many from substance P-containing afferents. However, electron microscopy revealed that most of these contacts were not associated with synapses. None of the MOR-1 cells in lamina II expressed the neurokinin 1 receptor; however, the mu-selective opioid peptide endomorphin-2 was present in the majority (62-82%) of substance P axons that contacted them. Noxious thermal stimulation of the foot induced c-Fos expression in approximately 15% of MOR-1 cells in the medial third of the ipsilateral dorsal horn at mid-lumbar level. However, following pinching of the foot or intraplantar injection of formalin very few MOR-1 cells expressed c-Fos, and for intraplantar formalin injection this result was not altered significantly by pretreatment with systemic naloxone. Although these findings indicate that at least some of the neurons in lamina II with MOR-1 are activated by noxious thermal stimulation, the results do not support the hypothesis that the cells have a role in transmitting nociceptive information following acute mechanical or chemical noxious stimuli."
+  },
+  {
+   "rank": 23,
+   "id": "11588203",
+   "source": "MED",
+   "pmid": "11588203",
+   "pmcid": "PMC6763860",
+   "doi": "10.1523/jneurosci.21-20-j0004.2001",
+   "first_publication_date": "2001-10-01",
+   "title": "Ephaptic interactions in the mammalian olfactory system.",
+   "authors": "Bokil H, Laaris N, Blinder K, Ennis M, Keller A.",
+   "journal": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+   "pub_types": [
+    "other",
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Ephaptic coupling refers to interactions between neurons mediated by current flow through the extracellular space. Ephaptic interactions between axons are considered negligible, because of the relatively large extracellular space and the layers of myelin that separate most axons. By contrast, olfactory nerve axons are unmyelinated and arranged in tightly packed bundles, features that may enhance ephaptic coupling. We tested the hypothesis that ephaptic interactions occur in the mammalian olfactory nerve with the use of a computational approach. Numerical solutions of models of axon fascicles show that significant ephaptic interactions occur for a range of physiologically relevant parameters. An action potential in a single axon can evoke action potentials in all other axons in the fascicle. Ephaptic interactions can also lead to synchronized firing of independently stimulated axons. Our findings suggest that ephaptic interactions may be significant determinants of the olfactory code and that such interactions may occur in other, similarly organized axonal or dendritic bundles."
+  },
+  {
+   "rank": 24,
+   "id": "11298363",
+   "source": "MED",
+   "pmid": "11298363",
+   "pmcid": null,
+   "doi": "10.1002/cne.1147",
+   "first_publication_date": "2001-05-01",
+   "title": "Targeting of serotonin 1A receptors to dopaminergic neurons within the parabrachial subdivision of the ventral tegmental area in rat brain.",
+   "authors": "Doherty MD, Pickel VM.",
+   "journal": "The Journal of comparative neurology",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Serotonin (5-hydroxytryptamine [5-HT]) modulates dopamine-related cognitive functions and motor activity through activation of selective receptor subtypes including 5-HT1A. Potential targets for these 5-HT1A-mediated actions of 5-HT include mesocortical and mesolimbic dopaminergic neurons having partially segregated distribution in the parabrachial and paranigral subdivisions of the ventral tegmental area (VTA), respectively. We therefore examined the ultrastructural immunocytochemical localization of the 5-HT1A receptor in the parabrachial (VTApb) and paranigral (VTApn) subdivisions of rat VTA, to determine 1) the functional sites for receptor activation, and 2) the cellular associations between this receptor and dopaminergic neurons identified by their tyrosine hydroxylase (TH) content. In each region, 5-HT1A immunoreactivity was mainly observed in somatodendritic profiles, but it was also present in small unmyelinated axons and in a few axon terminals and glia, suggesting a role for 5-HT1A receptors in presynaptic and glial functions, as well as postsynaptic neuronal activation, in VTA. In somatodendritic profiles, 5-HT1A gold particles were mainly localized to tubulovesicles presumed to be smooth endoplasmic reticulum. In addition, however, in distal dendrites receiving multiple inputs the receptor was targeted to selective postsynaptic junctions, or more randomly distributed on nonsynaptic portions of the plasma membrane. Of the 5-HT1A-labeled dendrites, 64% in VTApb and 44% in VTApn contained TH. These findings suggest a reserve of cytoplasmic 5-HT1A receptors that are mobilized to functional postsynaptic sites on the plasma membrane by afferent input to distal dendrites in the VTA. They also indicate that 5-HT1A activation may affect a larger population of dopaminergic neurons in VTApb compared with VTApn, thus having a potentially greater impact on cognitive functions modulated by mesocortical dopaminergic neurons."
+  },
+  {
+   "rank": 25,
+   "id": "11898511",
+   "source": "MED",
+   "pmid": "11898511",
+   "pmcid": null,
+   "doi": "10.1007/s11910-001-0011-0",
+   "first_publication_date": "2001-03-01",
+   "title": "The anticonvulsant effect of electrical fields.",
+   "authors": "Weinstein S.",
+   "journal": "Current neurology and neuroscience reports",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The use of electrical fields to treat epilepsy is undergoing increased scrutiny as an alternative to medications and resective surgery. Much recent attention has been focused on ionic channels and seizure control; however, nonsynaptic mechanisms may be crucial for seizure onset, raising the possibility of using electrical field application to abort seizures. Furthermore, the inhibitory effects may outlast the immediate treatment and possibly be a prophylactic intervention. This paper reviews the use of brain stimulation for treatment of epilepsy, but also cites instances where the antithetical results occur. The greatest detail focuses on disrupting the onset or shortening the seizure. The paper does not extensively review deep brain or vagal nerve stimulation."
+  },
+  {
+   "rank": 26,
+   "id": "11084206",
+   "source": "MED",
+   "pmid": "11084206",
+   "pmcid": null,
+   "doi": "10.1016/s0165-0270(00)00308-3",
+   "first_publication_date": "2000-11-01",
+   "title": "The cost of an action potential.",
+   "authors": "Aiello GL, Bach-y-Rita P.",
+   "journal": "Journal of neuroscience methods",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Neuronal modules, or 'cell-assemblies', comprising millions of mutually interconnected cells have been postulated to form the basis of many functions of the brain, such as mood, sleep, hunger, vigilance, and more. Depending on the extent of the module, neurocommunication in cell-assemblies might exceed metabolic resources. A medium-size (10000 neurons) module would require at least 10 J per l of brain, based on a calculated cost of an isolated action potential (AP) of 10(11)-10(12) molecules of ATP per cm(2) of cell membrane, with an absolute minimum of 10(6) ATP at a node of Ranvier. The figure matches the cost of depolarizing the unmyelinated axon of the large monopolar cell in the blowfly retina. A circuit model of the cell membrane, based on abrupt changes of Na(+) and K(+) conductances, is used to emulate the AP and to assess the resulting ionic unbalance. The cost of an AP is equated to the metabolic energy necessary to fuel ATP-based pumps that restore intracellular K(+). The high metabolic demand of a cell-assembly suggests that less expensive means of neurocommunication may be involved, such as non-synaptic diffusion neurotransmission (NDN), which would comply with a proposed law of conservation of space and energy in the brain."
+  },
+  {
+   "rank": 27,
+   "id": "10660896",
+   "source": "MED",
+   "pmid": "10660896",
+   "pmcid": null,
+   "doi": "10.1002/(sici)1096-9861(20000207)417:2<181::aid-cne4>3.0.co;2-a",
+   "first_publication_date": "2000-02-01",
+   "title": "Somatodendritic localization of 5-HT1A and preterminal axonal localization of 5-HT1B serotonin receptors in adult rat brain.",
+   "authors": "Riad M, Garcia S, Watkins KC, Jodoin N, Doucet E, Langlois X, el Mestikawy S, Hamon M, Descarries L.",
+   "journal": "The Journal of comparative neurology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The 5-HT1A and 5-HT1B receptors of serotonin play important roles as auto- and heteroreceptors controlling the release of serotonin itself and of other neurotransmitters/modulators in the central nervous system (CNS). To determine the precise localization of these receptors, we examined their respective cellular and subcellular distributions in the nucleus raphe dorsalis and hippocampal formation (5-HT1A) and in the globus pallidus and substantia nigra (5-HT1B), using light and electron microscopic immunocytochemistry with specific antibodies. Both immunogold and immunoperoxidase preembedding labelings were achieved. In the nucleus raphe dorsalis, 5-HT1A immunoreactivity was found exclusively on neuronal cell bodies and dendrites, and mostly along extrasynaptic portions of their plasma membrane. After immunogold labeling, the density of membrane-associated 5-HT1A receptors could be estimated to be at least 30-40 times that in the cytoplasm. In the hippocampal formation, the somata as well as dendrites of pyramidal and granule cells displayed 5-HT1A immunoreactivity, which was also prominent on the dendritic spines of pyramidal cells. In both substantia nigra and globus pallidus, 5-HT1B receptors were preferentially associated with the membrane of fine, unmyelinated, preterminal axons, and were not found on axon terminals. A selective localization to the cytoplasm of endothelial cells of microvessels was also observed. Because the 5-HT1A receptors are somatodendritic, they are ideally situated to mediate serotonin effects on neuronal firing, both as auto- and as heteroreceptors. The localization of 5-HT1B receptors to the membrane of preterminal axons suggests that they control transmitter release from nonserotonin as well as serotonin neurons by mediating serotonin effects on axonal conduction. The fact that these two receptor subtypes predominate at extrasynaptic and nonsynaptic sites provides further evidence for diffuse serotonin transmission in the CNS."
+  },
+  {
+   "rank": 28,
+   "id": "10550500",
+   "source": "MED",
+   "pmid": "10550500",
+   "pmcid": null,
+   "doi": "10.1007/s002210050933",
+   "first_publication_date": "1999-11-01",
+   "title": "Presynaptic inhibition in the vertebrate spinal cord revisited.",
+   "authors": "Rudomin P, Schmidt RF.",
+   "journal": "Experimental brain research",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Research Support, Non-U.S. Gov't",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The present review examines the experimental evidence supporting the existence of central mechanisms able to modulate the synaptic effectiveness of sensory fibers ending in the spinal cord of vertebrates. The first section covers work on the mode of operation and the synaptic mechanisms of presynaptic inhibition, in particular of the presynaptic control involving axo-axonic synapses made by GABAergic interneurons with the terminal arborizations of the afferent fibers. This includes reviewing of the ionic mechanisms involved in the generation of primary afferent depolarization (PAD) by GABAergic synapses, the ultrastructural basis underlying the generation of PAD, the relationship between PAD and presynaptic inhibition, the conduction of action potentials in the terminal arborizations of the afferent fibers, and the modeling of the presynaptic inhibitory synapse. The second section of the review deals with the functional organization of presynaptic inhibition. This includes the segmental and descending presynaptic control of the synaptic effectiveness of group-I and group-II muscle afferents, the evidence dealing with the local character of PAD as well as the differential inhibition of PAD in selected collaterals of individual muscle-spindle afferents by cutaneous and descending inputs. This section also examines observations on the presynaptic modulation of large cutaneous afferents, including the modulation of the synaptic effectiveness of thin myelinated and unmyelinated cutaneous fibers and of visceral afferents, as well as the presynaptic control of the synaptic actions of interneurons and descending tract neurons. The third section deals with the changes in PAD occurring during sleep and fictive locomotion in higher vertebrates and with the changes of presynaptic inhibition in humans during the execution of a variety of voluntary movements. In the final section, we examine the non-synaptic presynaptic modulation of transmitter release, including the possibility that the intraspinal endings of primary afferents also release colocalized peptides in a similar way as in the periphery. The outcome of the studies presently reviewed is that intraspinal terminals of sensory fibers are not hard-wired conductors of the information generated in their peripheral sensory receptors, but dynamic systems that convey information that can be selectively addressed by central mechanisms to specific neuronal targets. This central control of information flow in peripheral afferents appears to play an important role in the generation of integrated movements and processing of sensory information, including nociceptive information."
+  },
+  {
+   "rank": 29,
+   "id": "10400892",
+   "source": "MED",
+   "pmid": "10400892",
+   "pmcid": null,
+   "doi": "10.1002/(sici)1098-2396(199908)33:2<141::aid-syn4>3.0.co;2-x",
+   "first_publication_date": "1999-08-01",
+   "title": "Presence of mu-opioid receptors in targets of efferent projections from the central nucleus of the amygdala to the nucleus of the solitary tract.",
+   "authors": "Pickel VM, Colago EE.",
+   "journal": "Synapse (New York, N.Y.)",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Opioids acting at mu-opioid receptors (MORs) within the nucleus of the solitary tract (NTS) potently modulate autonomic functions that are also known to be influenced by inputs from the central nucleus of the amygdala (CEA). In addition, many of the physiological effects of MOR agonists have been attributed to interactions with neurons that contain gamma-aminobutyric acid (GABA), one of the neurotransmitters present in CEA-derived terminals and their targets in the medial NTS. Together, these observations suggest that MORs are present at pre- or postsynaptic sites within the CEA to NTS circuitry. To test this hypothesis, we combined anterograde transport of biotinylated dextran amine (BDA) with immunogold-silver localization of an antipeptide antiserum against the MOR in the NTS of adult rats. In animals receiving bilateral CEA injections of BDA, anterogradely labeled axons were seen throughout the rostrocaudal NTS. Electron microscopy of the medial NTS at rostral and intermediate levels showed anterograde BDA-labeling in many small unmyelinated axons and axon terminals, none of which contained detectable MOR. The BDA-labeled axon terminals formed mainly symmetric, inhibitory-type synapses with somata and dendrites. Over half of the somatic and approximately 10% of the dendritic targets showed nonsynaptic plasmalemmal immunogold labeling for MOR. The BDA-labeled axon terminals were also frequently apposed by other small axons that contained MORs. These results suggest that within the medial NTS, MOR agonists modulate the postsynaptic inhibition produced by CEA afferents and also play a role in the presynaptic release of other neurotransmitters."
+  },
+  {
+   "rank": 30,
+   "id": "10188938",
+   "source": "MED",
+   "pmid": "10188938",
+   "pmcid": null,
+   "doi": "10.1016/s0306-4522(98)00440-0",
+   "first_publication_date": "1999-04-01",
+   "title": "N-methyl-D-aspartate receptor 1 in the caudate-putamen nucleus: ultrastructural localization and co-expression with sorcin, a 22,000 mol. wt calcium binding protein.",
+   "authors": "Gracy KN, Clarke CL, Meyers MB, Pickel VM.",
+   "journal": "Neuroscience",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Entry of calcium through N-methyl-D-aspartate-type glutamate receptors in the caudate-putamen nucleus is essential for normal motor activity, but can produce cytotoxicity with continued stimulation and subsequent release of intracellular calcium. To determine potential functional sites for N-methyl-D-aspartate receptor activation in this region, we examined the ultrastructural localization of the R1 subunit of the N-methyl-D-aspartate receptor (NMDAR1) in rat brain. In addition, we comparatively examined the localization of NMDAR1 and sorcin, a 22,000 mol. wt calcium binding protein present in certain striatal neurons and involved in calcium-induced calcium release. NMDAR1-like immunoreactivity was seen at synaptic and non-synaptic sites on neuronal plasma membranes. Of 1514 NMDAR1-labeled profiles, 62% were dendrites and dendritic spines and the remainder were mainly unmyelinated axons and axon terminals. Sorcin-like immunoreactivity was present in 39% of the profiles that contained NMDAR1 labeling, most (533/595) of which were dendrites and dendritic spines. Of 1807 sorcin-labeled profiles, 42% were identified, however, as small processes including spine necks and unmyelinated axons or axon terminals. These profiles also occasionally contained NMDAR1 or showed synaptic or appositional contacts with other NMDAR1-immunoreactive neurons. The results of this study suggest that in the caudate-putamen nucleus, activation of NMDA receptors permits calcium influx at plasmalemmal sites mainly on dendrites where sorcin may play a role in calcium-induced calcium release. The presence of sorcin in some, but not all NMDA-containing neurons in the caudate-putamen nucleus has potential implications for the known differential vulnerability of certain striatal neurons to excitotoxins."
+  },
+  {
+   "rank": 31,
+   "id": "10819088",
+   "source": "MED",
+   "pmid": "10819088",
+   "pmcid": null,
+   "doi": "10.1111/j.1600-0404.1999.tb07386.x",
+   "first_publication_date": "1999-01-01",
+   "title": "Mechanisms of pain in peripheral neuropathy.",
+   "authors": "Attal N, Bouhassira D.",
+   "journal": "Acta neurologica Scandinavica. Supplementum",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Over the last few years, the mechanisms of pain due to peripheral nerve injury have been the subject of extensive clinical and fundamental investigation. Several types of peripheral mechanisms have been described in animal models of peripheral nerve injury. Abnormal (ectopic) neuronal activity has been reported in primary afferents and in the dorsal root ganglion, and appears related to dysregulation of the synthesis and/or the functioning of sodium channels (notably the tetrodotoxin-resistant channel). Fiber interactions (ephaptic or cross-excitation), nociceptor sensitization and sympathetic sensory coupling may also be involved in some cases. Peripheral nerve lesions can also induce central changes; this has essentially been investigated at the spinal cord level in animals. Three major types of modifications could induce a pathologic activation of central nociceptive neurons: modification of the modulatory controls of the transmission of nociceptive messages; anatomic reorganization (neuroplasticity) of the central nociceptive neurons, and thus their pathologic activation; and central sensitization (hyperexcitability) of nociceptive neurons to produce modifications of their electrophysiologic properties. Central sensitization probably depends critically on intracellular changes induced by the activation of N-methyl-D-aspartate (NMDA) receptors by excitatory amino acids released by primary afferents. Due to the multiplicity of mechanisms, it is unlikely that neuropathic pain corresponds to a unique entity. Each of the painful symptoms may correspond to distinct mechanisms and thus respond to specific treatments."
+  },
+  {
+   "rank": 32,
+   "id": "10336064",
+   "source": "MED",
+   "pmid": "10336064",
+   "pmcid": null,
+   "doi": "10.1016/s0306-4522(98)00530-2",
+   "first_publication_date": "1999-01-01",
+   "title": "N-methyl-D-aspartate receptors are present in vagal afferents and their dendritic targets in the nucleus tractus solitarius.",
+   "authors": "Aicher SA, Sharma S, Pickel VM.",
+   "journal": "Neuroscience",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "N-Methyl-D-aspartate receptors are present in the nodose ganglion, which contains the cell bodies of vagal afferents, and in the nucleus tractus solitarius, where these afferent fibers terminate. This suggests that N-methyl-D-aspartate receptors are located presynaptically on visceral vagal afferents and/or their target neurons in the nucleus tractus solitarius. To test this hypothesis, we combined anterograde transport of biotinylated dextran amine, following injections into the left nodose ganglion, with electron microscopic immunogold labeling of antipeptide antiserum against the R1 subunit of the N-methyl-D-aspartate receptor in the nucleus tractus solitarius of rat brain. Within the medial nucleus tractus solitarius, the N-methyl-D-aspartate receptor R1 immunoreactivity was seen in dendrites (39% of 639 profiles), axons and axon terminals (41%), and a few neuronal perikarya and glia. Many vagal afferent axons and terminals (40% of 468 profiles) contained N-methyl-D-aspartate receptor R1 immunogold labeling. In addition, 42% of the dendrites contacted by vagal afferent terminals (n = 206) contained N-methyl-D-aspartate receptor R1 immunoreactivity. In axons and dendrites, the gold particles were occasionally seen within asymmetric postsynaptic junctions or at non-synaptic sites on the plasma membrane. More commonly, however, N-methyl-D-aspartate receptor R1 labeling was seen on membranes of vesicular cytoplasmic organelles, suggesting that there is abundant N-methyl-D-aspartate receptor protein available for activity-dependent mobilization to the plasmalemma. Since many vagal afferents are glutamatergic, our results implicate N-methyl-D-aspartate receptors in autoregulation of the presynaptic release and postsynaptic responses to glutamate at the level of the first central synapse in the nucleus tractus solitarius."
+  },
+  {
+   "rank": 33,
+   "id": "9845242",
+   "source": "MED",
+   "pmid": "9845242",
+   "pmcid": null,
+   "doi": "10.1002/(sici)1096-9861(19981214)402:2<181::aid-cne4>3.0.co;2-b",
+   "first_publication_date": "1998-12-01",
+   "title": "Cellular and subcellular distribution of substance P receptor immunoreactivity in the dorsal vagal complex of the rat and cat: a light and electron microscope study.",
+   "authors": "Baude A, Shigemoto R.",
+   "journal": "The Journal of comparative neurology",
+   "pub_types": [
+    "Comparative Study",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Immunoreactivity for the substance P receptor (NK1 receptor) has been investigated by light and electron microscopy in the dorsal vagal complexes of adult rats and cats. The general pattern of NK1 immunoreactivity was similar for both rat and cat. Numerous NK1-immunoreactive neurons were present in the area postrema, the nucleus of the solitary tract, and the dorsal motor nucleus of the vagus nerve. The density of labelled neurons differed between the subnuclei of the nucleus of the solitary tract. Overall, the efferent neurons of the dorsal motor nucleus of the vagus nerve highly expressed NK1 when compared to neurons in the nucleus of the solitary tract. The results are discussed with reference to the viscerotopic organisation of the dorsal vagal complex. Ultrastructural analysis demonstrated that NK1 immunoreactivity was present only at the membrane surface of somatic and dendritic profiles of neurons. No labelling was found in axon terminals, axons, or glial processes. NK1 immunoreactivity, as revealed by a preembedding immunogold technique in serial ultrathin sections, was preferentially located at nonsynaptic sites. A semiquantitative study suggested that the density of NK1 receptors is statistically higher at membrane sites free of any contact (synaptic or not) with axon terminals. The subcellular localisation of NK1 immunoreactivity was similar for neurons of both rat and cat. These results suggest that in the dorsal vagal complex, substance P might act on NK1 receptors through a process of volume transmission."
+  },
+  {
+   "rank": 34,
+   "id": "9622618",
+   "source": "MED",
+   "pmid": "9622618",
+   "pmcid": null,
+   "doi": "10.1016/s0006-8993(98)00266-2",
+   "first_publication_date": "1998-06-01",
+   "title": "alpha2A-adrenergic receptors in the rat nucleus locus coeruleus: subcellular localization in catecholaminergic dendrites, astrocytes, and presynaptic axon terminals.",
+   "authors": "Lee A, Rosin DL, Van Bockstaele EJ.",
+   "journal": "Brain research",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "To define the anatomic substrates subserving the inhibitory actions of alpha2-adrenergic receptors (alpha2-ARs) in the locus coeruleus (LC), we used dual-label immunoelectron microscopy with antibodies directed against the A-subtype of alpha2-AR (alpha2A-AR) and the catecholamine-synthesizing enzyme tyrosine hydroxylase (TH). Of the profiles containing peroxidase labeling for alpha2A-AR (alpha2A-AR-IR) in the LC (n=735), most were dendrites ( approximately 50%), glial processes ( approximately 30%), and axon terminals ( approximately 15%). alpha2A-AR-IR was also observed in unmyelinated axons and perikarya. Within dendrites, alpha2A-AR-IR was associated with nonsynaptic regions of the plasma membrane and subsurface cisternae. Approximately 60% of dendrites with alpha2A-AR-IR were dually labeled for TH. Fifty percent of the axon terminals contacting alpha2A-AR-immunoreactive dendrites formed asymmetric (excitatory) synaptic contacts. Axon terminals with alpha2A-AR-IR were not dually labeled for TH and generally formed asymmetric synapses with TH-immunoreactive dendrites that contained or lacked alpha2A-AR-IR. Astrocytic processes exhibiting alpha2A-AR-IR were closely apposed to TH-labeled dendrites. These results extend previous ultrastructural observations of alpha2A-ARs in the LC and suggest that the inhibitory actions of norepinephrine and epinephrine in this region may be mediated by postsynaptic alpha2A-ARs on catecholaminergic dendrites and presynaptic alpha2A-ARs on excitatory inputs to catecholaminergic dendrites. In addition, the localization of alpha2A-AR-IR in astrocytic processes apposed to TH-immunoreactive dendrites suggests a role for alpha2A-ARs in functional interactions between catecholaminergic dendrites and neighboring astrocytes."
+  },
+  {
+   "rank": 35,
+   "id": "9456175",
+   "source": "MED",
+   "pmid": "9456175",
+   "pmcid": null,
+   "doi": "10.1002/(sici)1096-9861(19980105)390:1<52::aid-cne5>3.0.co;2-p",
+   "first_publication_date": "1998-01-01",
+   "title": "Immunocytochemical localization of tyrosine hydroxylase in the human striatum: a postmortem ultrastructural study.",
+   "authors": "Kung L, Force M, Chute DJ, Roberts RC.",
+   "journal": "The Journal of comparative neurology",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "An electron microscopic evaluation of tyrosine hydroxylase (TH) immunocytochemistry was used to describe the synaptic organization of dopamine innervation of the striatum in postmortem human brain tissue. TH immunoreactivity was qualitatively and quantitatively similar in the caudate and putamen. TH immunoreactivity was present mainly in unmyelinated axons and occasionally in myelinated axons. Both TH-immunoreactive (TH-i) varicosities (0.75-1.5 microm) and intervaricose segments (0.2-0.3 microm) formed synapses with spines and dendrites. Most synapses formed by TH-i profiles were symmetric axospinous (57-62%) or symmetric axodendritic (33-35%). An occasional asymmetric axodendritic or asymmetric axospinous synapse was observed. Approximately 35-50% of all symmetric axospinous and axodendritic synapses were formed by TH-i boutons. Synapses formed by TH-i profiles were short in length (0.226 microm) and had nonperforated postsynaptic densities. TH-i profiles formed synapses with both the head (40%) and the neck (60%) of spines. Typically, the TH-i bouton was apposed to both a spine and a nonlabeled terminal which formed an asymmetric synapse with that spine. Direct, nonsynaptic appositions were often seen between TH-labeled and nonlabeled boutons forming asymmetric synapses. The general pattern ofTH immunoreactivity was similar to that of other species except for the presence of TH-i myelinated axons and the observation that the majority of TH-i synapses were formed with spines rather than with dendritic shafts."
+  },
+  {
+   "rank": 36,
+   "id": "9406957",
+   "source": "MED",
+   "pmid": "9406957",
+   "pmcid": null,
+   "doi": "10.1016/s0006-8993(97)00637-9",
+   "first_publication_date": "1997-10-01",
+   "title": "The N-methyl-D-aspartate (NMDA) receptor is postsynaptic to substance P-containing axon terminals in the rat superficial dorsal horn.",
+   "authors": "Aicher SA, Sharma S, Cheng PY, Pickel VM.",
+   "journal": "Brain research",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The N-methyl-D-aspartate (NMDA) receptor is thought to mediate the postsynaptic effects of excitatory amino acids released from primary afferent terminals in the superficial layers of the dorsal horn of the spinal cord where synergistic associations with substance P (SP) have been implicated in the production of hyperalgesia. We examined the electron microscopic dual immunocytochemical localization of SP and the R1 subunit of the NMDA receptor (NMDAR1) in this region to determine the cellular basis for interactions between SP and NMDA receptor ligands. Of 971 profiles immunolabeled for NMDAR1, 40% were dendrites and the remainder were primarily unmyelinated axons and astrocytic processes. In dendrites, NMDAR1-like immunoreactivity (NMDAR1-LI) was associated with synaptic and non-synaptic portions of the plasma membrane, as well as intracellular membranes including smooth endoplasmic reticulum. These NMDAR1-labeled dendrites received synaptic input from unlabeled terminals and from terminals containing SP and/or NMDAR1-LI and they occasionally (25/389) also contained SP. In contrast, of 540 SP-immunoreactive profiles, 60% were axon terminals and the majority (252/324) of these SP-labeled terminals were presynaptic to NMDAR1-containing dendrites. These results provide anatomical evidence that the synergistic nociceptive effects of SP and NMDA ligands are attributed mainly to dual modulation of the activity of single dendritic targets in the dorsal horn of the spinal cord. They also suggest that activation of NMDA receptors may also play a role in the modulation of SP neurons, presynaptic release of SP or other neurotransmitters, and in glial function in the dorsal horn."
+  },
+  {
+   "rank": 37,
+   "id": "9018705",
+   "source": "MED",
+   "pmid": "9018705",
+   "pmcid": null,
+   "doi": "10.1016/s1042-3680(18)30337-1",
+   "first_publication_date": "1997-01-01",
+   "title": "Percutaneous balloon compression of the trigeminal nerve.",
+   "authors": "Brown JA, Gouda JJ.",
+   "journal": "Neurosurgery clinics of North America",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Balloon compression is a simple and effective percutaneous approach for the treatment of classic trigeminal neuralgia or trigeminal neuralgia secondary to multiple sclerosis. The operation injures large myelinated fibers, removing the \"trigger\" to the presumed ephaptic transmission of pain. Because unmyelinated fibers, which mediate the corneal reflex, are preserved, compression may be of advantage in the treatment of first division pain, since the corneal reflex is mediated by the small unmyelinated fibers. In the author's series of 141 consecutive patients treated by balloon compression, overall recurrence rate was 26%, with 80% of patients experiencing mild numbness postoperatively."
+  },
+  {
+   "rank": 38,
+   "id": "8896842",
+   "source": "MED",
+   "pmid": "8896842",
+   "pmcid": null,
+   "doi": "10.1016/0006-8993(96)00797-4",
+   "first_publication_date": "1996-09-01",
+   "title": "Immunocytochemical localisation of NK3 receptors in the dorsal vagal complex of rat.",
+   "authors": "Carpentier C, Baude A.",
+   "journal": "Brain research",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Using immunohistochemistry, we demonstrate that neurons of the rat dorsal vagal complex (DVC) express NK3 receptors. The density of NK3-immunoreactive neurons depends of the different subnuclei of the nucleus tractus solitarii. The efferent vagal neurons of the dorsal nucleus of the vagus nerve highly express NK3. No NK3-immunoreactivity has been detected in the area postrema. Ultrastructural examination shows that NK3-immunoreactivity is principally present at non synaptic membrane of somatic and dendritic profiles. Therefore, neurokinin B and/or other ligands may act through a process of volume transmission on non synaptic NK3 receptors in the DVC."
+  },
+  {
+   "rank": 39,
+   "id": "7751438",
+   "source": "MED",
+   "pmid": "7751438",
+   "pmcid": null,
+   "doi": "10.1002/cne.903530307",
+   "first_publication_date": "1995-03-01",
+   "title": "Monosynaptic input from Leu5-enkephalin-immunoreactive terminals to vagal motor neurons in the nucleus ambiguus: comparison with the dorsal motor nucleus of the vagus.",
+   "authors": "Milner TA, Okada J, Pickel VM.",
+   "journal": "The Journal of comparative neurology",
+   "pub_types": [
+    "Research Support, U.S. Gov't, P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Vagal motor neurons in the rat dorsal motor nucleus of the vagus (DMN) are known to receive direct synaptic input from enkephalin-containing terminals. We examined 1) whether the vagal motor neurons within the nucleus ambiguus (NA) also received monosynaptic input from enkephalin-immunoreactive terminals and 2), if so, whether their ultrastructural relations differed from those in the DMN. In both regions, terminals containing Leu5-enkephalin-like immunoreactivity (LE-LI) were examined in relation to motor neurons identified by retrograde transport of wheat germ-agglutinated horseradish peroxidase (WGA-HRP) applied to the cut end of the cervical vagus nerve in single sections of the medulla oblongata of adult rats. By light microscopy, the most significant overlap between varicose processes with LE-LI and WGA-HRP-containing neurons was seen in the rostral compact portion of the NA and the DMN at the level of the obex. Thus, only these regions were examined by electron microscopy. The most distinguishing ultrastructural feature of WGA-HRP-labeled neurons in the NA compared to the DMN was their higher incidence of nonsynaptic appositions with other neurons. In both the NA and the DMN, terminals with LE-LI formed primarily symmetric synapses on smaller (presumably distal) dendrites; many of these dendrites, as well as most target perikarya, contained WGA-HRP. Additionally, in the compact portion of the NA compared to the DMN 1) multiple LE-labeled terminals more frequently contacted single perikarya or dendrites and 2) single terminals with LE-LI more commonly showed two contacts or active zones and contained more abundant LE-immunoreactive large (80-100 nm) dense-core vesicles (dcvs). In contrast to small (40-50 nm), clear vesicles, which were usually aggregated near active zones, the immunoreactive dcvs were usually located near glial processes distal to these zones. These results indicate that enkephalin immunoreactivity is intensely localized to dcvs within terminals that may have direct inhibitory (symmetric synapses) actions on vagal motor neurons in both the compact portion of the NA and the DMN. Moreover, because numbers of dcvs and active zones have been equated with synaptic strength, our findings suggest enhanced potencies of enkephalin-immunoreactive terminals in the compact portion of the NA. Our findings support a prominent role for enkephalin in the coordinated activity of esophageal motor neurons located in the compact portion of the NA."
+  },
+  {
+   "rank": 40,
+   "id": "7715786",
+   "source": "MED",
+   "pmid": "7715786",
+   "pmcid": null,
+   "doi": "10.1016/0306-4522(94)00430-d",
+   "first_publication_date": "1995-02-01",
+   "title": "Ultrastructure of calcitonin gene-related peptide-immunoreactive, unmyelinated afferents to the cat carotid body: a case of volume transmission.",
+   "authors": "Torrealba F, Correa R.",
+   "journal": "Neuroscience",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "To relate the ultrastructure of unmyelinated afferents to the cat carotid body with the known electrophysiological properties of cat chemosensory C-fibers, we took advantage of the fact that the calcitonin gene-related peptide is exclusively present in a population of sparsely branched afferents to the carotid body. They have a morphology identical to the afferents originating from carotid sinus nerve unmyelinated axons. Immunoreactive axons were stained using pre-embedding protocols and horseradish peroxidase-labeled secondary antibody. Labeling was present only in unmyelinated axons and boutons distributed in the interstitial and parenchymal tissue. The varicosities had an average diameter of 0.7 micron, and contained both small, clear vesicles and larger dense-core vesicles. No labeled axons were ever seen to contact glomus cells, but could be observed as close as 0.2 micron to a glomus cell, always with an interposed glial process. With a very sensitive protocol, that used tungstate-stabilized tetramethylbenzidine as the chromogen, amorphous deposits of reaction product were often detected in the extracellular space around a labeled bouton. We interpret these findings as indicating that the reciprocal chemical transmission between the oxygen-sensitive glomus cells and the unmyelinated afferents takes place through non-synaptic transmission, via the rather large extracellular space of the carotid body. In addition, the larger distances between glomus cells and unmyelinated afferents could explain the lowered sensitivity and sluggishness of chemosensory C-fibers, compared to the A-fibers."
+  }
+ ]
+}

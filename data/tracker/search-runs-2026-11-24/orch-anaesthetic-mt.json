@@ -1,0 +1,722 @@
+{
+ "prediction": "orch-anaesthetic-mt",
+ "query": "TITLE_ABS:microtubul* AND (TITLE_ABS:anesthe* OR TITLE_ABS:anaesthe* OR TITLE_ABS:isoflurane OR TITLE_ABS:propofol OR TITLE_ABS:sevoflurane) AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 267,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42537979",
+   "source": "MED",
+   "pmid": "42537979",
+   "pmcid": null,
+   "doi": "10.1016/j.biosystems.2026.105905",
+   "first_publication_date": "2026-07-31",
+   "title": "On the functional significance of quantum effects at subneuronal scales.",
+   "authors": "Roeloffs J, Tuszynski JA.",
+   "journal": "Bio Systems",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This paper develops a constraint based hypothesis from established physics and published experimental measurements. De Broglie's relation predicts that electronic quantum effects become part of the physical regime when functional structures approach nanometer dimensions. The semiconductor industry provides a test case, as reliable classical switching at few nanometer scales requires architectural intervention biological systems lack. Microtubule tryptophan networks operate at 1 to 2 nm spacing and exhibit energy migration with a 6.6 nm diffusion length that classical Förster theory cannot account for, alongside superradiant behavior across over 105 transition dipoles with robustness that increases with system size. Photosynthesis provides biological precedent for organizing quantum dynamics through molecular architecture and energy flow. These premises support the case that the brain operates with quantum effects at the microtubule scale. The functional question is whether these processes matter for higher order neural function. Six pharmacological and cross species constraints address this question. Anesthetics reduce microtubule energy migration by 12 to 15 percent, and anesthetic potency tracks collective tubulin oscillation changes across chemically diverse compounds with R2 = 0.999. Volatile anesthetics suppress organized responsiveness across eukaryotic organisms without nervous systems, while microtubule stabilizing drugs delay anesthetic induced unconsciousness with a large effect size. Open energy pumped architecture addresses physiological viability, and psychedelic phenethylamines that enhance microtubule polymerization provide an opposite pharmacological test. Together, these constraints support the hypothesis that microtubule tryptophan networks and collective tubulin dynamics participate in the maintenance of higher order neural function and conscious states."
+  },
+  {
+   "rank": 2,
+   "id": "42657234",
+   "source": "MED",
+   "pmid": "42657234",
+   "pmcid": "PMC13508475",
+   "doi": "10.1021/cbmi.5c00288",
+   "first_publication_date": "2026-03-19",
+   "title": "Synchronized Chromatin Reorganization as a Key Biomarker in Anesthetic Effects on Plants.",
+   "authors": "Chandra S, Mukherjee B, Salam A, Anjum F, Nandi CK, Behera L.",
+   "journal": "Chemical & biomedical imaging",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Anesthesia produces a reversible loss of responsiveness in animals by suppressing neuronal excitability and large-scale network integration, yet its effects on non-neuronal systems remain poorly defined. Plants lack neurons but possess excitable membranes, electrical signaling, and stress-responsive chromatin, making them an ideal model to study anesthetic action independent of neural circuitry. Using confocal and super-resolution microscopic imaging in Solanum lycopersicum and Solanum melongena roots and stems, we show that anesthesia disrupts multiple organelles like mitochondria, vesicle trafficking, microtubules, and chloroplast-nucleus association, mirroring many cellular effects described in neuronal tissues. These disruptions intensify under ATP inhibition (AI), indicating energetic vulnerability rather than neuron-specific mechanisms. In contrast, the nucleus remains structurally intact yet undergoes a striking, synchronized, non-local reorganization across cells. Euchromatin relocates to the nuclear periphery, while heterochromatin remains stable, revealing a targeted, ATP-independent chromatin reorganization unique to anesthesia. Our findings identify that nuclear-chromatin reorganization may conserve as a biomarker of the anesthetized state across neuronal and non-neuronal systems."
+  },
+  {
+   "rank": 3,
+   "id": "42958458",
+   "source": "MED",
+   "pmid": "42958458",
+   "pmcid": "PMC13718175",
+   "doi": "10.1186/s41065-026-00713-7",
+   "first_publication_date": "2026-07-31",
+   "title": "Esketamine induces ferroptosis and suppresses immune evasion in lung adenocarcinoma cells via the hsa_circ_0022392/miR-548b-3p/MAP7 axis.",
+   "authors": "Chai F, Zhang Y, Chen X, Geng X, Kang X, Wan H, Du X.",
+   "journal": "Hereditas",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundAlthough Esketamine, an N-methyl-D-aspartate (NMDA) receptor antagonist, is widely used for anesthesia and analgesia and has shown anticancer activity, its effects on lung adenocarcinoma remain unclear. Circular RNAs have been implicated in the development and progression of lung adenocarcinoma. Therefore, this study aims to elucidate whether esketamine can influence lung adenocarcinoma progression by interfering with the circular RNA hsa_circ_0022392.MethodsExpression levels of hsa_circ_0022392, miR-548b-3p, and microtubule-associated protein 7 (MAP7), as well as transfection efficiency, were assessed by quantitative real-time polymerase chain reaction (qRT-PCR) and Western blot analysis. Cell viability was assessed using the Cell Counting Kit-8 assay. 5-ethynyl-2'-deoxyuridine (EdU) assay was employed to examine cell proliferation. Transwell assays were employed for analyzing cell migration and invasion capabilities. Intracellular Fe²⁺ levels, malondialdehyde (MDA), glutathione (GSH), and reactive oxygen species (ROS) were measured using commercial kits. Lactate dehydrogenase (LDH) release assays were adopted to evaluate CD8⁺ T-cell cytotoxicity. Cytokine levels were measured via ELISA. Bioinformatics analysis combined with RNA immunoprecipitation and dual-luciferase reporter assays were employed to confirm the target relationship between miR-548b-3p and hsa_circ_0022392 or MAP7.ResultsEsketamine significantly inhibited proliferation, migration, and invasion (all P ConclusionIn summary, esketamine promotes ferroptosis in lung adenocarcinoma cells through regulating the hsa_circ_0022392/miR-548b-3p/MAP7 axis and inhibits immune evasion, providing novel molecular targets and therapeutic strategies for the diagnosis and treatment of lung adenocarcinoma."
+  },
+  {
+   "rank": 4,
+   "id": "42482521",
+   "source": "MED",
+   "pmid": "42482521",
+   "pmcid": null,
+   "doi": "10.1177/08977151261466879",
+   "first_publication_date": "2026-07-21",
+   "title": "Brain State Entropy as a Marker of Injury Severity and Sedation Effects Following Traumatic Brain Injury.",
+   "authors": "Mallas EJ, Moreira da Silva N, Zimmerman KA, Graham NSN, Li LM, David MCB, Busche MA, Taylor PN, Scott G, Sharp DJ.",
+   "journal": "Journal of neurotrauma",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Traumatic brain injury disrupts large-scale brain networks. Dynamic functional connectivity captures time-varying network interactions from functional MRI (fMRI) and provides insights into the brain's dynamic patterns of integration and segregation. Here, we investigate dynamic functional connectivity in subacute moderate-severe traumatic brain injury patients (10 days to 6 weeks post-injury) and explore the relationships with blood and imaging biomarkers of injury and propofol sedation. We hypothesized that traumatic brain injury patients would show less complex brain state dynamics that would be associated with greater injury severity measured by white matter integrity and blood biomarkers. Sixty-five subacute traumatic brain injury patients and 48 healthy controls underwent structural and resting-state fMRI. Patients were followed-up at 6 and 12 months post-injury. Plasma concentrations of neurofilament-light chain, microtubule-associated protein, glial fibrillary acidic protein, ubiquitin carboxyl-terminal hydrolase L1, and serum S100 calcium-binding protein B were measured. Fractional anisotropy (FA), a measure of white matter integrity, was derived from diffusion-weighted imaging for a set of white matter tracts. Dynamic functional connectivity analysis was performed using a sliding-window approach. Correlations between time courses of 19 regions of interest representing the default mode network, bilateral frontaloparietal networks, and the salience network were calculated, and k-means clustering was applied to these connectivity matrices. Temporal characteristics of the resulting brain states, including fraction time, dwell time, number of transitions, and entropy of state transitions, were calculated. Four distinct brain states were identified. Brief periods of anticorrelation between key large-scale networks that support cognitive control were a dominant feature. Traumatic brain injury resulted in reduced temporal flexibility, less anticorrelated activity, and fewer transitions. Reduced entropy of state transitions was significantly associated with elevated blood-based biomarkers and reduced white matter integrity. Propofol sedation markedly reduced entropy. Dominance analysis identified glial fibrillary acidic protein, an astroglial plasma marker, as the strongest predictor of entropy. Preserved entropy during the subacute period was a significant predictor of 12-month functional outcomes. Entropy normalization at 6 months was associated with changes in glial fibrillary acidic protein, ubiquitin carboxyl-terminal hydrolase L1, and microtubule-associated protein over the same time period. We show that dynamic functional connectivity is disrupted following moderate-to-severe traumatic brain injury and these effects are exacerbated by sedation. The observed reductions in brain state entropy indicate a loss of network segregation and a shift toward less complex and more predictable brain activity, with important implications for prognosis."
+  },
+  {
+   "rank": 5,
+   "id": "42063249",
+   "source": "MED",
+   "pmid": "42063249",
+   "pmcid": "PMC13133545",
+   "doi": "10.1002/dneu.70033",
+   "first_publication_date": "2026-07-01",
+   "title": "Early Isoflurane Exposure Is Associated With Delayed Adolescent Neurobehavioral Deficits, Accompanied by Dysregulation of FOXG1 and EB3.",
+   "authors": "Chen K, Xia M, Li C, Ren Z, Li X.",
+   "journal": "Developmental neurobiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Early-life exposure to general anesthetics has been linked to long-term neurodevelopmental risks, yet the underlying mechanisms remain unclear. Using a mouse model, we show that neonatal isoflurane exposure at Postnatal Day 7 leads to age-dependent behavioral alterations, changes in cortical neuronal abundance and layer-specific neuronal density, and dysregulation of cytoskeleton-associated proteins. Isoflurane-exposed mice displayed increased exploratory behavior during early adolescence but developed marked recognition memory deficits by late adolescence. Histological analyses revealed layer-specific disruption of neuronal distribution in the sensory cortex, characterized by reduced neuronal density in layers II-IV and age-dependent changes in inhibitory interneuron composition. Mechanistically, isoflurane reduced the expression of the microtubule plus-end tracking protein EB3 and the transcription factor FOXG1. FOXG1 co-localized with EB3 and β-tubulin in the cytoplasm, supporting a noncanonical, cytoskeleton-associated role. Together, these findings indicated that early isoflurane exposure is associated with altered neuronal density and dysregulation of the cytoskeleton-associated proteins FOXG1 and EB3, suggesting a potential link between anesthesia exposure and long-term neurodevelopmental alterations."
+  },
+  {
+   "rank": 6,
+   "id": "40826945",
+   "source": "MED",
+   "pmid": "40826945",
+   "pmcid": "PMC12413878",
+   "doi": "10.4103/mgr.medgasres-d-25-00111",
+   "first_publication_date": "2025-08-18",
+   "title": "Old theory, new evidence: inhalational anesthetics disrupt a collective quantum state of intraneuronal microtubules to cause unconsciousness.",
+   "authors": "Wiest MC.",
+   "journal": "Medical gas research",
+   "pub_types": [
+    "other",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": ""
+  },
+  {
+   "rank": 7,
+   "id": "41663006",
+   "source": "MED",
+   "pmid": "41663006",
+   "pmcid": null,
+   "doi": "10.1016/j.yexcr.2026.114938",
+   "first_publication_date": "2026-02-07",
+   "title": "Microtubule-stabilizer epothilone B counteracts anesthetic-induced slowed swimming in Tetrahymena pyriformis.",
+   "authors": "Yu X, Qiu Z, Nashrah F, Garg A, Chang A, Schieber A, Wu S, Magavi V, Wiest MC.",
+   "journal": "Experimental cell research",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Volatile anesthetics that reversibly render humans immobile and unconscious have analogous reversible effects on the motility of non-neural organisms including plants and single cells. The molecular mechanisms by which they do this remain unclear, but are difficult to study in mammals because of complex interactions among diverse tissues and cell types. Here we use freely available software to study cell swimming speeds in the single-celled ciliate species Tetrahymena pyriformis. We first extend previous findings with other volatile anesthetics, to show that isoflurane also reversibly slows swimming speed in Tetrahymena. We then show that prior exposure to the microtubule (MT) stabilizing drug epothilone B (10 nM) confers resistance to isoflurane's anesthetic effect on swimming speed. This result suggests that isoflurane slows swimming in part by interacting with MTs. This conclusion is consistent with our previous experiments supporting that binding to MTs contributes to isoflurane-induced unconsciousness in rats and mice. Our present results are thus consistent with the hypothesis that all ciliates are sensitive to volatile anesthetics, and support conserved molecular mechanisms of anesthetic action in single-celled organisms and mammals. Moreover, our preparation enables inexpensive high-throughput testing of the functional roles played by specific candidate molecular targets of volatile anesthetics in ciliates."
+  },
+  {
+   "rank": 8,
+   "id": "41519196",
+   "source": "MED",
+   "pmid": "41519196",
+   "pmcid": null,
+   "doi": "10.1016/j.neuropharm.2026.110834",
+   "first_publication_date": "2026-01-08",
+   "title": "Brain-penetrant microtubule-stabilizer epothilone B delays isoflurane-induced unconsciousness in mice.",
+   "authors": "Huang Y, Qiu Z, Yu X, Lee S, Zeng X, Chang A, Wiest MC.",
+   "journal": "Neuropharmacology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Inhalational anesthetics are currently believed to cause unconsciousness by acting on multiple molecular targets including neural ion channels, receptors, mitochondria, synaptic proteins, and cytoskeletal proteins. Inhalational anesthetics including isoflurane bind to cytoskeletal microtubules (MTs), potentially contributing to causing unconsciousness. This possibility is supported by our demonstration of isoflurane resistance in rats treated once with the brain-penetrant MT-stabilizing drug epothilone B (epoB), and by a recent study in mice using a similar drug given daily over two weeks, which found increased sensitivity to isoflurane. To further characterize the contribution of MTs as functionally relevant targets of volatile anesthetics in mice, we measured latencies to loss of righting reflex (LORR) under isoflurane in mice injected once subcutaneously with vehicle or epoB. We found significantly increased LORR latencies (i.e., anesthetic resistance) in 8 mg/kg epoB-treated mice on the day following injection, with reduced effects on subsequent days. The 29-s within-subject increase in LORR latencies is not large compared to the variability among different animals, but it represents a statistically large within-subject effect as represented by a Cohen's d of 0.8. The effect could not be accounted for by tolerance from repeated exposure to isoflurane. Our results support that binding of the inhalational anesthetic isoflurane to MTs contributes to LORR in mice, as it does in rats. Our findings support the Orchestrated Objective Reduction (Orch OR) model that posits consciousness as a property of a quantum physical state of neural MTs. We also discuss possible sex differences in anesthetic mechanisms suggested by our data."
+  },
+  {
+   "rank": 9,
+   "id": "41687741",
+   "source": "MED",
+   "pmid": "41687741",
+   "pmcid": null,
+   "doi": "10.1016/j.neuro.2026.103402",
+   "first_publication_date": "2026-02-11",
+   "title": "Single-cell transcriptomics reveals the mechanism of long-term neurodevelopmental toxicity following sevoflurane anesthesia.",
+   "authors": "Xu J, Wang Z, Wang H, Wen H, Wen Z, Chen L, Cheng Y, Yan J, Jiang H.",
+   "journal": "Neurotoxicology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Prolonged exposure to general anesthetics during early development has been associated with neurobehavioral deficits. Sevoflurane, a commonly used pediatric anesthetic, may disrupt cortical maturation, particularly in the prefrontal cortex (PFC) which plays a critical integrative and regulatory role in cognitive and motor functions. In this study, the long-term effects of neonatal sevoflurane exposure were examined using a mouse model, complemented by analysis of single-cell RNA sequencing data from human embryonic PFC (GSE196239). Behavioral assays showed that mice exposed to sevoflurane at postnatal day 7 exhibited persistent impairments in fine motor ability and spatial memory in adulthood. Transcriptomic analysis showed that sevoflurane induced widespread gene expression alterations without changing the major cell-type composition. Through enrichment analysis, dysregulation of pathways related to cell shape was identified. Consistent with these transcriptomic findings, reduced dendritic complexity was observed in sevoflurane-treated neurons by immunofluorescence. Notably, microtubule-associated protein 2 (MAP2), a key structural protein in dendrites, was significantly reduced at the protein level without a corresponding decrease in mRNA expression, suggesting the involvement of post-transcriptional regulation. Together, these findings suggest that prolonged neonatal sevoflurane exposure may impair neuronal maturation and dendritic architecture, and provide molecular insights into the long-term cognitive and motor alterations associated with neonatal sevoflurane exposure."
+  },
+  {
+   "rank": 10,
+   "id": "42920515",
+   "source": "MED",
+   "pmid": "42920515",
+   "pmcid": null,
+   "doi": "10.3389/fmolb.2026.1840116",
+   "first_publication_date": "2026-10-09",
+   "title": "Dimensional convergence at the nanoscale: a novel synthesis of experimental evidence justifying direct measurement of quantum coherence in microtubules.",
+   "authors": "Echternach J.",
+   "journal": "Frontiers in molecular biosciences",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "We synthesize convergent experimental evidence from five independent research groups (2016-2025) addressing the longstanding \"too warm, too wet\" objection to quantum biology. Three recent experiments (2024-2025) demonstrate: (i) Wang et al. measured enhanced dielectric response and proton conductivity in nanoconfined water at 295 K, establishing extreme in-plane Coulomb screening at 1-2 nm; (ii) Rodríguez-Rubio et al. synthesized porphyrin nanobelts demonstrating room-temperature ring currents in 80-120 π-electron networks; (iii) Babcock et al. measured optical signatures consistent with ultraviolet superradiance from tryptophan networks in microtubules, with assembled microtubules showing enhanced fluorescence quantum yields relative to free tryptophan and tubulin dimers. Together with (iv) Reiter et al., who measured quantum-coherent proton motion in nanoconfined water via Compton scattering at 300 K, and (v) Larson et al., who demonstrated that microtubule structural integrity is functionally essential for computational coordination in unicellular Euplotes, these studies support a mechanistic chain from nanoconfinement through an aromatic quantum substrate and cooperative optical behavior to functional dependence. We argue this convergence justifies direct experimental measurement of decoherence times in microtubules as a necessary first step before addressing any functional role. We outline falsifiable predictions including dielectric mapping and anesthetic perturbation assays, and discuss implications for frameworks such as Orchestrated Objective Reduction. A direct link to consciousness is unproven; nonetheless, the data are consistent with quantum-coherent aromatic networks in biological scaffolds and motivate targeted falsification experiments."
+  },
+  {
+   "rank": 11,
+   "id": "42770120",
+   "source": "MED",
+   "pmid": "42770120",
+   "pmcid": "PMC13592762",
+   "doi": "10.22038/ajp.2026.27360",
+   "first_publication_date": "2026-01-01",
+   "title": "Hesperidin attenuates cisplatin-induced cardiotoxicity in rats through regulating autophagy.",
+   "authors": "Heidari Kahkesh H, Amini N, Badavi M, Dianat M, Nejaddehbashi F, Hoseinynejad K.",
+   "journal": "Avicenna journal of phytomedicine",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "ObjectiveCisplatin is a well-known anticancer drug whose use has been limited due to a variety of side effects. Evidence has confirmed that cisplatin consumption is associated with cardiac toxicity. Unfortunately, no drug has yet been found to treat cardiac toxicity or reduce the side effects caused by cisplatin. However, hesperidin has been identified as an antioxidant agent which has protective effects on the heart tissue. This study explored the impact of hesperidin on cisplatin-induced cardiac toxicity through its antioxidant effect and adjustment of autophagy.Materials and methodsIt included male Wistar rats allocated into five groups: sham, cisplatin: animals treated with cisplatin (7.5 mg/kg intraperitoneally) on the 4th day; and four groups which received hesperidin (50, 100, and 200 mg/kg, gavage, 1 week) along with cisplatin on the 4th day. A mixture of ketamine and xylazine was used to anesthetize all animals on day 8 to obtain blood and tissue samples and to record ECG.ResultsThe findings indicated that cisplatin led to an increase in creatine kinase-MB, lactate dehydrogenase, and malondialdehyde levels, and a reduction in total antioxidant capacity in heart tissue. Moreover, it reduced the expression of microtubule-associated protein light chain (LC3-II) and beclin-1. ECG parameters included: Heart rate (HR) and QRS voltage complex which were reduced by cisplatin. However, hesperidin (100, and 200 mg/kg) reversed these changes.ConclusionHesperidin could protect cardiac tissue against cisplatin administration by exerting its antioxidant effect and regulating autophagy in a dose-dependent manner."
+  },
+  {
+   "rank": 12,
+   "id": "42769438",
+   "source": "MED",
+   "pmid": "42769438",
+   "pmcid": "PMC13591321",
+   "doi": "10.32604/or.2026.082954",
+   "first_publication_date": "2026-09-14",
+   "title": "Sevoflurane Inhibits Colon Cancer Progression by Inducing Cell Autophagy and Apoptosis through the ROS/Nrf2/P62 Pathway.",
+   "authors": "Liu X, Liu J, Meng Q, Shao Y.",
+   "journal": "Oncology research",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Objectives: There is debate over the effect of sevoflurane (SEV) on different cancers. This study aims to explore SEV's role in colon cancer (CC) progression. Methods: The CC cell lines were treated with SEV at concentrations of 1.7%, 3.4%, and 5.1%. Cell proliferation, apoptosis, migration, and invasion were assessed using Cell Counting Kit-8 (CCK-8), 5-ethynyl-2'-deoxyuridine (EdU) incorporation, colony formation assay, flow cytometry, Western blot, scratch assay, and Transwell assay. A xenograft tumor model was established to evaluate the effect of SEV in vivo. Expression levels of nuclear factor erythroid 2-related factor 2 (Nrf2), p62 (sequestosome-1), microtubule-associated protein 1 light chain 3 isoform II to I ratio (LC3-II/I), Beclin-1, Bcl-2-associated X protein (Bax), and B-cell lymphoma 2 (Bcl-2) were measured. N-acetyl-L-cysteine (NAC), a ROS scavenger, was applied to determine whether ROS-dependent Nrf2/p62 signaling participated in this process. Results: SEV inhibited CC cell proliferation, colony formation, migration, and invasion. At 5.1% SEV, cell proliferation was reduced by 54.0% (p p p p p in vitro and in vivo. Moreover, NAC reversed the SEV-induced effects in vitro. Conclusion: SEV inhibits CC progression by inducing autophagy and apoptosis via the ROS/Nrf2/p62 pathway."
+  },
+  {
+   "rank": 13,
+   "id": "42643630",
+   "source": "MED",
+   "pmid": "42643630",
+   "pmcid": "PMC13503609",
+   "doi": "10.3389/fpsyt.2026.1855963",
+   "first_publication_date": "2026-08-11",
+   "title": "Transient entanglement in minimal open XXZ spin chains: a toy-model analogy for microtubule-inspired quantum biology.",
+   "authors": "Cheung N.",
+   "journal": "Frontiers in psychiatry",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Quantum approaches to consciousness remain controversial, partly because any putative quantum state in the brain is expected to decohere rapidly in a warm, hydrated, and noisy environment. The present manuscript does not attempt to solve that biological problem directly. Instead, it treats microtubule-related interpretation as a deliberately hypothetical analogy and asks a narrower Level-A question: under what generic open-system conditions can transient pairwise entanglement be enlarged in small noisy XXZ spin chains? In a minimal open XXZ spin-chain model evolved with the Lindblad master equation, stronger nearest-neighbor coupling consistently increased peak transient pairwise entanglement across several topologies and bath conditions. Among the tested environments, the memory-envelope condition gave the longest purity half-life, the collective condition increased late-time purity, and the combined bath is best described as a balanced compromise among selected diagnostics under the chosen parameters rather than as an optimized trade-off. The model is not a physical model of microtubules: it omits full 13-protofilament geometry, dynamic instability, microtubule-associated proteins, hydration structure, ionic screening, and realistic tubulin-scale calibration. On a strictly hypothetical Level-C reading, the two abstract model levers, stronger effective coupling and lower per-site dissipation, may be compared with broad classes of biological perturbation, such as glutamatergic plasticity and cytoskeletal stabilization, but not with named regimens or compounds as clinical routes to enhancement. No dosing schedule, clinical regimen, or cognitive-enhancement recommendation follows from the simulation. The proper experimental sequence is in vitro first, then animal work only if warranted, and human pilot work only after convergent preclinical support and safety review. Testable preclinical predictions include altered tryptophan-network fluorescence lifetimes, exciton migration signatures, superradiance-related optical behavior, and anesthetic sensitivity in controlled preparations. Negative in vitro optical or biophysical results would substantially weaken the biological relevance of the analogy. The manuscript should therefore be read as a reproducible toy-model study with a speculative microtubule analogy, not as evidence that pharmacological modulation can enhance cognition through quantum microtubule effects."
+  },
+  {
+   "rank": 14,
+   "id": "42137636",
+   "source": "MED",
+   "pmid": "42137636",
+   "pmcid": "PMC13167711",
+   "doi": "10.3389/fnhum.2026.1783138",
+   "first_publication_date": "2026-04-29",
+   "title": "Self-referential processing as the biological switch between classical and quantum functioning of the brain.",
+   "authors": "Roeloffs J, Tuszynski JA.",
+   "journal": "Frontiers in human neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Dual-process theory of the brain distinguishes fast, parallel, late-commitment cognition (System 1) from slow, sequential, early-commitment cognition (System 2), yet lacks a mechanistic explanation for how these modes operate or how the brain switches between them. Quantum cognition research demonstrates that human decision-making follows quantum probability models under low confidence and classical Markov models under high confidence, suggesting a hybrid architecture where decoherence drives transitions between processing modes. We propose that self-referential evaluative monitoring functions as the biological switch that regulates the transition between System 1 and System 2 by modulating microtubule-mediated quantum coherence through electromagnetic boundary conditions. The causal chain proceeds from locus coeruleus-norepinephrine regulation of default mode network (DMN) activity, through electromagnetic field patterns generated by self-evaluation, to calcium-mediated modulation of the microtubule electrostatic environment. Recent experimental evidence indicates that microtubules exhibit quantum exciton energy migration comparable to photosynthetic complexes, with cooperative robustness increasing with system size. Because quantum coherence enables parallel exploration while classical processing offers stability, evolution would have selected for mechanisms that balance these demands. Anesthetics bind promiscuously yet selectively abolish consciousness, which is consistent with disruption of energy-threshold-dependent coherent processes in microtubules. The framework proposed in this paper leads to testable predictions relating DMN activity, flow states, insight, and confidence to shifts along the quantum-classical processing spectrum."
+  },
+  {
+   "rank": 15,
+   "id": "40999612",
+   "source": "MED",
+   "pmid": "40999612",
+   "pmcid": null,
+   "doi": "10.2174/0109298673442402250922113756",
+   "first_publication_date": "2026-01-01",
+   "title": "A Unified Model of Consciousness: Glycoprotein Patterns in Memory Processes and Quantum Entanglement.",
+   "authors": "Ur-Rahman A.",
+   "journal": "Current medicinal chemistry",
+   "pub_types": [
+    "Editorial"
+   ],
+   "open_access": "N",
+   "abstract": "The author had previously proposed that memory could be encoded as patterns of hydrogen-bonded \"frozen\" conformers of neuronal glycoproteins. These stabilised molecular patterns represent an ideal template for information storage in the human brain because of the large number of asymmetric centres present in sugar molecules with attached hydroxyl groups. Hydrogen bonding of hydroxyl groups present on sugar molecules with other hydroxyl or amino groups on nearby sugar or nucleic acid units, by intramolecular or intermolecular hydrogen bonding, can result in the formation of memory patterns comprising such \"frozen conformers\". This mechanism can be involved in learning, information storage, and its recall. Penrose and Hameroff's orchestrated objective reduction (Orch OR) theory proposes that quantum superpositions and entanglement within neuronal microtubules are orchestrated by cellular processes and periodically undergo objective reduction, yielding discrete moments of conscious awareness. Recent developments in quantum biology and protein photophysics have significantly narrowed the gap between these perspectives. Most notably, Babcock et al. (2024) demonstrated that ultraviolet super radiance can occur in tryptophan- containing protein networks, including tubulin assemblies, indicating that protein architectures can support collective excitonic states (and associated subradiant \"dark\" manifolds) under physiological conditions. These findings can potentially address decoherence objections and provide a tangible mechanism by which aromatic amino-acid networks could mediate coherent energy/information transfer in living cells. We present here a possible unified model combining these concepts: Microtubules are proposed to function as quantum information processors that may bind and route distributed information through excitonic or entanglement dynamics, while glycoprotein conformational patterns could serve as a molecular register for memory storage. The convergent evidence from spectroscopy, anesthetic pharmacology, and glycosylation biology are reviewed in this context. The combination of these concepts can offer a mechanistic bridge between quantum events and cognitive function."
+  },
+  {
+   "rank": 16,
+   "id": "41406175",
+   "source": "MED",
+   "pmid": "41406175",
+   "pmcid": null,
+   "doi": "10.1111/cbdd.70228",
+   "first_publication_date": "2025-12-01",
+   "title": "Sevoflurane Postconditioning Regulates Mitophagy Through the PINK1/Parkin Pathway to Alleviate Myocardial Microcirculatory Reperfusion Injury.",
+   "authors": "Xue Y, Jia L, Zhang J, Ni S.",
+   "journal": "Chemical biology & drug design",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "This study investigates whether sevoflurane postconditioning (SpostC) alleviates myocardial microcirculatory reperfusion injury by regulating mitophagy via the PTEN-induced kinase 1 (PINK1)/Parkin pathway. A mouse model of myocardial ischemia/reperfusion (I/R) injury was established. Microvascular perfusion was assessed by immunofluorescence. Protein expression of endothelial nitric oxide synthase (eNOS), phosphorylated eNOS (p-eNOS), endothelin-1 (ET-1), PINK1, Parkin, microtubule-associated protein 1A/1B-light chain 3 (LC3)II/LC3I, and P62 was analyzed by Western blotting (WB). Hematoxylin-eosin and 2,3,5-triphenyltetrazolium chloride (TTC) staining were used to evaluate vascular pathology and infarct size. In vitro, human cardiac microvascular endothelial cells (hCMECs) were subjected to oxygen-glucose deprivation/reoxygenation (OGD/R), with assessments of cell viability (cell counting kit-8), barrier function (FITC-dextran permeability and transendothelial electrical resistance), cytoskeletal integrity (immunofluorescence), and mitophagy markers (WB). SpostC enhanced microvascular perfusion, reduced infarct size, suppressed excessive mitophagy, and restored endothelial function. These protective effects were reversed by either the mitophagy inducer carbonyl cyanide m-chlorophenylhydrazone (CCCP) or PINK1 overexpression. SpostC exerts protective effects on myocardial microcirculatory reperfusion injury by inhibiting the PINK1/Parkin-mediated mitophagy pathway."
+  },
+  {
+   "rank": 17,
+   "id": "41387721",
+   "source": "MED",
+   "pmid": "41387721",
+   "pmcid": "PMC12700918",
+   "doi": "10.1038/s41467-025-66708-6",
+   "first_publication_date": "2025-12-12",
+   "title": "Mitochondria are absent from microglial processes performing surveillance, chemotaxis, and phagocytic engulfment.",
+   "authors": "Pietramale AN, Bame X, Doty ME, Schwarz KE, Hill RA.",
+   "journal": "Nature communications",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Microglia continually surveil the brain allowing for rapid detection of tissue damage or infection. Microglial metabolism is linked to tissue homeostasis, yet how mitochondria are subcellularly partitioned in microglia and dynamically reorganize during surveillance, injury responses, and phagocytic engulfment in the intact brain are not known. Here, we performed intravital imaging and ultrastructural analyses of microglia mitochondria in mice and human tissue, revealing that microglial processes diverge in their mitochondrial content, with some containing multiple mitochondria while others are completely void. Microtubules and hexokinase 2 mirror this uneven mitochondrial distribution indicating that these cytoskeletal and metabolic components are linked to mitochondrial organization in microglia. Microglial processes that engage in minute-to-minute surveillance typically do not have mitochondria. Moreover, unlike process surveillance, mitochondrial motility does not change with animal anesthesia. Likewise, the processes that acutely chemoattract to a lesion site or initially engage with a neuron undergoing programmed cell death do not contain mitochondria. Rather, microglia mitochondria have a delayed arrival into the responding cell processes. Thus, there is subcellular heterogeneity of mitochondrial partitioning. Moreover, microglial processes that surveil and acutely respond to damage do not contain mitochondria."
+  },
+  {
+   "rank": 18,
+   "id": "40576766",
+   "source": "MED",
+   "pmid": "40576766",
+   "pmcid": null,
+   "doi": "10.1007/s00210-025-04419-x",
+   "first_publication_date": "2025-06-27",
+   "title": "Hesperidin provides dose-dependent renal protection from cisplatin-induced injury, mediated by its regulation of Beclin-1 and LC3-II.",
+   "authors": "Kahkesh HH, Badavi M, Dianat M, Nejaddehbashi F, Amini N, Hoseinynejad K.",
+   "journal": "Naunyn-Schmiedeberg's archives of pharmacology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Cisplatin (cis-diamminedichloroplatinum (II), Cis) is identified as an anti-cancer agent applied in treating malignant diseases. Evidence indicates that the pathological mechanisms of the nephrotoxicity induced by Cis have been uncertain, and no effective medicine has been found for Cis nephrotoxicity. Hesperidin has been reported to have several beneficial effects such as antioxidant property. The present research explored how hesperidin affects Cis nephrotoxicity by regulating autophagy and antioxidant effect. The study involved 30 male Wistar rats (200-220 g) randomized to five groups (n = 6): Sham group received no treatment. Cis group was treated with a single dose of cisplatin (7.5 mg/kg) intraperitoneally on Day 4. The remaining groups received, by gavage, daily doses of hesperidin (50, 100, or 200 mg/kg) for seven days plus a single dose of intraperitoneal cisplatin (7.5 mg/kg) on Day 4. On Day 8, xylazine + ketamine was used to anesthetize the rats to obtain tissue and blood samples. Findings indicated that Cis elevated malondialdehyde, BUN and Cr levels, while simultaneously reducing total antioxidant capacity (TAC) and inhibiting microtubule-associated protein light chain 3 (LC3-II) and Beclin-1. Notably, hesperidin (100, 200 mg/kg) could increase mRNA LC3-II and Beclin-1 expression. Moreover, animals receiving hesperidin (100, 200 mg/kg) experienced increased TAC and decreased MDA levels. Hesperidin generally protects kidney tissue in Cis nephrotoxicity through regulating autophagy. Hesperidin demonstrated optimal efficacy at a dose of 200 mg/kg."
+  },
+  {
+   "rank": 19,
+   "id": "41057130",
+   "source": "MED",
+   "pmid": "41057130",
+   "pmcid": null,
+   "doi": "10.1016/j.neuroscience.2025.09.048",
+   "first_publication_date": "2025-10-05",
+   "title": "The study of beneficial effect and mechanism of propofol on TNF-α-induced p-Tau increase in HT22 hippocampal neurons.",
+   "authors": "Gao S, Wang Y, Xu Z, Zhu M, Meng Z, An G, Chen J.",
+   "journal": "Neuroscience",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundTau protein is a soluble microtubule-binding protein expressed in neurons. Abnormal post-translational modifications, such as hyperphosphorylation, are closely related to central nervous system inflammation and may lead to neuronal damage. Propofol has been shown to exert neuroprotective effects. In this study, we investigated the effects of propofol on TNF-α-induced p-Tau increase in hippocampal neurons and explored the underlying mechanisms.MethodsHT22 hippocampal neurons were pretreated with propofol, and then stimulated with TNF-α. Cell viability was measured by cell counting kit-8 (CCK-8). The expression and phosphorylation of Tau, AMPK, AKT and the expression of SIRT3 were detected by Western blot. Mitophagy was detected through the mitophagy detection kit and confocal imaging of LC3B localization.ResultsTNF-α enhanced Tau phosphorylation in a time- and dose-dependent manner, and significant effects were observed at 10 ng/mL for 2 h. Pretreatment with 25 μM propofol for 1 h effectively reduced TNF-α-induced Tau phosphorylation. TNF-α activated the phosphorylation of AMPK and AKT, which was attenuated by propofol pretreatment and by AMPK inhibitor (Compound C) or AKT inhibitor (MK2206). Meanwhile, TNF-α promoted mitophagy and upregulated the expression of SIRT3, which was inhibited by propofol and by SIRT3 inhibitor (3-TYP).ConclusionsPropofol may attenuate TNF-α-induced p-Tau expression in HT22 cells through modulation of the AMPK/AKT signaling pathway, and may inhibit TNF-α-enhanced mitophagy by affecting the AMPK/SIRT3 signaling pathway."
+  },
+  {
+   "rank": 20,
+   "id": "40639436",
+   "source": "MED",
+   "pmid": "40639436",
+   "pmcid": null,
+   "doi": "10.1016/j.expneurol.2025.115371",
+   "first_publication_date": "2025-07-08",
+   "title": "KIF23 inhibition protects against perioperative neurocognitive disorders by hindering ROS/caspase-3/GSDME-mediated pyroptosis.",
+   "authors": "Tang S, Yu X, Zhang L, Bu X, Wang W, Xia Z.",
+   "journal": "Experimental neurology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The activation of caspase-3 and gasdermin E (GSDME)-mediated pyroptosis is a key driver of perioperative neurocognitive disorders (PND). Kinesin family member 23 (KIF23), a constituent of the kinesin superfamily of microtubule-associated motor proteins, governs NLRP3 inflammasome-mediated pyroptosis and is essential for dendritic differentiation and development. This study sought to ascertain whether KIF23 influences PND by affecting caspase-3/GSDME-dependent pyroptosis. The PND mouse model was established through laparotomy under isoflurane (Iso) anesthesia following recombinant adeno-associated virus 9 (AAV9)-mediated knockdown of KIF23, with or without the intraperitoneal administration of the caspase-3 agonist Raptinal. HT22 cells were transfected with either pcDNA3.1-KIF23 or siKIF23, followed by exposure to Iso and lipopolysaccharide (LPS). Cognitive performance, TUNEL staining, and pyroptosis-related parameters were assessed. KIF23 protein was upregulated in the hippocampus of aged mice following anesthesia and surgery. AAV9-shKIF23 ameliorated postoperative memory decline, suppressed reactive oxygen species (ROS) production and diminished the levels of cleaved caspase-3, N-GSDME, IL-1β and IL-18, which were reversed by Raptinal. KIF23 silencing enhanced neuronal viability and antioxidant capacity, blocked the cleavage of caspase-3 and N-GSDME, and repressed the release of IL-1β, IL-18, and LDH. Conversely, KIF23 overexpression exerted opposing effects on pyroptosis in response to Iso + LPS, which was abrogated by the caspase-3 inhibitor Ac-DEVD-CHO. These findings suggest that KIF23 could serve as a promising therapeutic target for PND through its positive modulation of pyroptosis."
+  },
+  {
+   "rank": 21,
+   "id": "40902546",
+   "source": "MED",
+   "pmid": "40902546",
+   "pmcid": null,
+   "doi": "10.1016/j.bbrc.2025.152552",
+   "first_publication_date": "2025-09-02",
+   "title": "Sevoflurane preconditioning improves Cx43 localization and electrical conduction by stabilizing myocardial microtubule structure during ischemia-reperfusion.",
+   "authors": "Yang R, Wen C, Wang Z, Gao H, Wang L, Zhou J, Wang T.",
+   "journal": "Biochemical and biophysical research communications",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Reperfusion arrhythmia (RA) poses a significant risk to the prognosis of patients undergoing extracorporeal circulation cardiac surgery, and its occurrence closely linked to disturbances in myocardial electrical conduction. Our prior research indicated that ischemia-reperfusion (I/R) affects the localization of connexin 43 (Cx43) at the intercalated discs (IDs) by inducing depolymerization of microtubules, resulting in myocardial electrical conduction abnormalities in rats. Although sevoflurane preconditioning (SPC) has demonstrated considerable protective effects on ischemic myocardium, the underlying mechanisms remain inadequately understood. This prompted us to study the effect of SPC on the stability of microtubules in I/R myocardium to explore the protective mechanism of SPC based on microtubule cytoskeleton. Western blotting, immunofluorescence colocalization, and ex vivo cardiac electrophysiological mapping demonstrated that SPC attenuated myocardial I/R-induced microtubule depolymerization, recovered the distribution of Cx43 at the IDs, and improved myocardial electrical conduction and RA score in rats. Furthermore, the microtubule depolymerization agent nocodazole abolished the protective effect of SPC on microtubules and significantly inhibited the ameliorative effects of sevoflurane on Cx43 localization and electrical conduction. These findings substantiate that the ability of SPC to restore the localization of Cx43 and electrophysiological functions in I/R myocardium depends on microtubule stability. In conclusion, our study shows that SPC ensures the targeted transport of Cx43 to the IDs by stabilizing microtubule structure, thereby ameliorating myocardial electrical conduction and RA after I/R."
+  },
+  {
+   "rank": 22,
+   "id": "40711457",
+   "source": "MED",
+   "pmid": "40711457",
+   "pmcid": "PMC12316097",
+   "doi": "10.1093/function/zqaf021",
+   "first_publication_date": "2025-08-01",
+   "title": "Distinct Right Ventricular Performance in Response to Acute Colchicine Treatment in Healthy and Diseased States.",
+   "authors": "LeBar K, Tantisuwat L, Pang J, Chicco AJ, Chesler NC, Wang Z.",
+   "journal": "Function (Oxford, England)",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Right ventricular (RV) dysfunction is a major contributor to mortality in several cardiopulmonary diseases. However, the understanding of RV pathophysiology falls behind its left counterpart, limiting treatment options for conditions associated with discrete RV dysfunction and failure, such as pulmonary hypertension (PH). Accumulating evidence suggests that colchicine (COL) may have therapeutic benefits in multiple diseases, including PH. The mechanisms by which COL improves cardiovascular function are incompletely understood but may be associated with reductions in myocardial tissue viscoelasticity via microtubule depolymerization as demonstrated in prior ex vivo studies. The aim of this study is to investigate the impact of acute COL treatment on healthy and diseased RV organ function. Healthy and PH rats were anesthetized and catheterized for investigation of RV pressure-volume (PV) relationships before and after intramyocardial injections of COL. Marked RV failure was observed secondary to PH, characterized by elevated pulmonary vascular resistance (PVR), RV pressures, and end diastolic PV relation (EDPVR) with reduced RV compliance, preload and stroke volume. COL reversed pathological changes in parameters such as EDPVR, and improved RV preload, compliance, stroke volume and ejection fraction in PH rats. COL also reduced RV systolic pressure and heart rate in PH rats, which may be associated with broader effects of COL (improved PVR) in addition to myocardial viscoelastic reduction. In contrast, no significant effect on cardiopulmonary function was observed in healthy rats. These results highlight a potential contribution of RV viscoelasticity to ventricular dysfunction, implicating tissue viscoelasticity as a therapeutic target for RV failure patients."
+  },
+  {
+   "rank": 23,
+   "id": "40820533",
+   "source": "MED",
+   "pmid": "40820533",
+   "pmcid": null,
+   "doi": "10.3760/cma.j.cn121430-20240724-00627",
+   "first_publication_date": "2025-06-01",
+   "title": "[6-Shogaol alleviates cerebral injury after cardiac arrest-cardiopulmonary resuscitation in rats by inhibiting death-associated protein kinase 1-mediated autophagy].",
+   "authors": "Rao O, Li S, Zhu N, Zhou H, Hu J, Li Y, Tao J, Li Y, Liu Y.",
+   "journal": "Zhonghua wei zhong bing ji jiu yi xue",
+   "pub_types": [
+    "Journal Article",
+    "English Abstract"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveTo observe the neuroprotective effect of 6-shogaol (6-SH) in global cerebral ischemia/reperfusion injury (CIRI) following cardiac arrest (CA) and cardiopulmonary resuscitation (CPR) in rats.MethodsComputer-aided molecular docking was used to determine whether 6-SH could spontaneously bind to death-associated protein kinase 1 (DAPK1). SPF-grade male SD rats were randomly divided into a sham group (n = 5), a CPR group (n = 7), and a CPR+6-SH group (n = 7). The CPR group and CPR+6-SH group were further divided into 12-, 24-, and 48-hour subgroups based on observation time points. A rat model of global CIRI after CA-CPR was established by asphyxiation. In the sham group, only tracheal and vascular intubation was performed without asphyxia and CPR induction. The CPR group was intraperitoneally injected with 1 mL of normal saline immediately after successful modeling. The CPR+6-SH group received an intraperitoneal injection of 20 mg/kg 6-SH (1 mL) immediately after successful modeling, followed by administration every 12 hours until the endpoint. Neurological Deficit Score (NDS) was recorded at each time point after modeling. After completion of observation at each time point, rats were anesthetized and sacrificed, and brain tissue specimens were collected. Histopathological changes of neurons were observed under light microscopy after hematoxylin-eosin (HE) staining. Ultrastructural changes of hippocampal neurons and autophagy were observed by transmission electron microscopy (TEM). Real-time quantitative polymerase chain reaction (RT-qPCR) was used to detect mRNA expression levels of DAPK1, vacuolar protein sorting 34 (VPS34), Beclin1, and microtubule-associated protein 1 light chain 3 (LC3) in brain tissues. Western blotting was used to detect protein expression levels of DAPK1, phosphorylated DAPK1 at serine 308 (p-DAPK1 ser308), VPS34, Beclin1, and LC3. Immunofluorescence was used to observe Beclin1 and LC3 expression in brain tissues under a fluorescence microscope.ResultsMolecular docking results indicated that 6-SH could spontaneously bind to DAPK1. Compared with the sham group, the NDS scores of the CPR group rats were significantly increased at all modeling time points; under light microscopy, disordered cell arrangement, widened intercellular spaces, and edema were observed in brain tissues, with pyknotic and necrotic nuclei in some areas; under TEM, mitochondria were markedly swollen with intact membranes, dissolved matrix, reduced or disappeared cristae, vacuolization, and increased autophagosomes. Compared with the CPR group, the NDS scores of the CPR+6-SH group rats were significantly decreased at all modeling time points; under light microscopy, local neuronal edema and widened perinuclear space were observed; under TEM, mitochondria were mostly mildly swollen with intact membranes, fewer autophagosomes, and alleviated injury. RT-qPCR results showed that compared with the sham group, mRNA expression levels of DAPK1, VPS34, Beclin1, and LC3 in brain tissues were significantly upregulated in all CPR subgroups, with the most pronounced changes at 24 hours. Compared with the CPR group, the CPR+6-SH group showed significantly lower mRNA expression of the above indicators at each time point [24 hours post-modeling (relative expression): DAPK1 mRNA: 3.41±0.68 vs. 4.48±0.62; VPS34 mRNA: 3.63±0.49 vs. 4.66±1.18; Beclin1 mRNA: 3.08±0.49 vs. 4.04±0.22; LC3 mRNA: 2.60±0.36 vs. 3.67±0.62; all P Conclusion6-SH inhibited the expression of DAPK1, alleviated excessive autophagy after global CIRI following CA-CPR in rats, and exerted neuroprotective effects. The mechanism may be related to phosphorylation at the DAPK1 ser308 site."
+  },
+  {
+   "rank": 24,
+   "id": "40455293",
+   "source": "MED",
+   "pmid": "40455293",
+   "pmcid": "PMC12130085",
+   "doi": "10.1007/s00401-025-02897-0",
+   "first_publication_date": "2025-06-02",
+   "title": "Synaptotoxic effects of extracellular tau are mediated by its microtubule-binding region.",
+   "authors": "Ondrejcak T, Hu NW, Coode E, Campbell T, Corbett GT, Doykov I, Mills K, Walsh DM, Livesey FJ, Rowan MJ, Klyubin I.",
+   "journal": "Acta neuropathologica",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Immunotherapies targeting extracellular tau share the premise that interrupting cell-to-cell spread of tau pathology in Alzheimer's disease (AD) will slow dementia pathogenesis. Whether these interventions affect the actions of synaptotoxic, extracellular tau species that may contribute to cognitive impairment is relatively unknown. Here, we assayed synaptic plasticity disruption in anaesthetised live rats caused by intracerebral injection of synaptotoxic tau present either in (a) secretomes of induced pluripotent stem cell-derived neurons (iNs) from people with Trisomy 21, the most common genetic cause of AD, or (b) aqueous extracts of human AD brain. Extracellular tau in iN secretomes was found to include fragments that contain the extended microtubule-binding regions of tau, MTBR/R' and adjacent C-terminal sequences. Immunodepletion or co-injection with antibodies targeting epitopes within these fragments prevented the acute disruption of synaptic plasticity by these patient-derived synaptotoxic tau preparations. Moreover, a recombinant human tau fragment encompassing the core MTBR/R'-region present in tau fibrils, tau297-391, potently mimicked the deleterious action of patient-derived tau. MTBR/R'-directed antibodies also rapidly reversed a very persistent synaptotoxic effect of soluble brain tau. Our findings reveal a hitherto relatively unexplored potential benefit of targeting extracellular MTBR/R' tau on correcting synaptic dysfunction."
+  },
+  {
+   "rank": 25,
+   "id": "40287805",
+   "source": "MED",
+   "pmid": "40287805",
+   "pmcid": null,
+   "doi": "10.24976/discov.med.202537195.60",
+   "first_publication_date": "2025-04-01",
+   "title": "Investigating the Mechanisms of Esketamine in Treating Propofol-Induced Cognitive Impairment in Elderly Rats.",
+   "authors": "Zhang J, Xu G, Wang X, Qiao L.",
+   "journal": "Discovery medicine",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundCommon cognitive impairment in the elderly may be aggravated by the anesthetic propofol, whereas the mammalian target of rapamycin protein (mTOR)-brain-derived neurotrophic factor (BDNF) pathway and autophagy regulation play a key role in neuroprotection. In this study, we investigated whether esketamine can improve propofol-induced cognitive impairment in aged rats by affecting these mechanisms and revealed potential new therapeutic strategies.MethodsA propofol-induced age-related cognitive dysfunction model was used in the experiments. Behaviours were evaluated by the sugar-water preference test and the water maze, neuronal damage by Nissl staining, and neuronal apoptosis was detected by flow cytometry. Neuronal autophagy-related proteins phospho-mammalian target of rapamycin (p-mTOR), mTOR, BDNF, phospho-Unc-51 like autophagy activating kinase 1 (p-ULK1), Unc-51 like autophagy activating kinase 1 (ULK1), autophagy related 5 (ATG-5), and microtubule-associated protein 1 light chain 3-I/microtubule-associated protein 1 light chain 3-II (LC3-II/LC3-Ⅰ) were detected by western blotting (WB); immunohistochemistry was used to detect the deposition of β-amyloid (amyloid-beta, Aβ) in the hippocampal region and the positivity rate of caspase-3; postsynaptic density protein 95 (PSD95) and synapsin I (SYN1) levels were detected by WB.ResultsWater maze and sugar-water preference tests showed that the propofol group had longer escape latency, more platform crossings, lower platform quadrant time ratio, and reduced sugar-water preference, all improved by esketamine (p p p ConclusionBy inhibiting the mTOR-BDNF pathway with esketamine, the inhibition of neuronal autophagy ultimately improves the cognitive dysfunction induced by propofol."
+  },
+  {
+   "rank": 26,
+   "id": "40230274",
+   "source": "MED",
+   "pmid": "40230274",
+   "pmcid": "PMC11997638",
+   "doi": "10.1111/cbdd.70100",
+   "first_publication_date": "2025-04-01",
+   "title": "The Role of the Sirt1/Foxo3a Pathway in Mitigating Myocardial Ischemia-Reperfusion Injury by Dexmedetomidine.",
+   "authors": "Ding H, Liu D, He J, Zhou D, Wang C, Yang C, Xia Z.",
+   "journal": "Chemical biology & drug design",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Myocardial ischemia-reperfusion injury (MIRI) significantly affects the prognosis of cardiac surgery patients. The anesthetic dexmedetomidine (Dex) has shown protective effects against ischemia-reperfusion injury in cardiomyocytes; however, its exact mechanism remains unclear. In this study, hypoxia/reoxygenation (H/R) and ischemia/reperfusion (I/R) models were used to investigate the effects of Dex on H9c2 cells and MIRI in mice. The roles of the Sirtuin 1/Forkhead box O3a (Sirt1/FoxO3a) pathway in the protective effects of Dex were explored using the Sirt1 inhibitor EX527 and FoxO3a gene silencing. Results showed that H/R significantly reduced H9c2 cell viability, increased Lactate Dehydrogenase (LDH) leakage, and elevated reactive oxygen species (ROS) production. Dex pretreatment reversed these effects. Additionally, Dex significantly reduced the expression of Bcl-2-associated X protein/B-cell lymphoma 2 (Bax/Bcl-2), cleaved caspase-3, Beclin-1, and microtubule-associated protein 1A/1B-light chain 3B (LC3B), inhibiting apoptosis and autophagy while increasing the expression of p62, Sirt1, and FoxO3a. The protective effects of Dex against H/R injury were abolished by EX527 or FoxO3a silencing. In the mouse MIRI model, Dex pretreatment decreased serum LDH and Creatine Kinase-MB (CK-MB) levels, reduced myocardial infarct size and cardiac injury, and significantly improved left ventricular ejection fraction (LVEF) and left ventricular fractional shortening (LVFS). These protective effects were markedly reversed by EX527. These findings indicate that Dex alleviates MIRI by restoring Sirt1 expression and activating FoxO3a."
+  },
+  {
+   "rank": 27,
+   "id": "40202105",
+   "source": "MED",
+   "pmid": "40202105",
+   "pmcid": "PMC11979716",
+   "doi": "10.1111/cns.70376",
+   "first_publication_date": "2025-04-01",
+   "title": "Repeated Exposure to Sevoflurane in Neonatal Mice Induces Cognitive and Synaptic Impairments in a TTLL6-Mediated Tubulin Polyglutamylation Manner.",
+   "authors": "Yu Y, Zhao Y, Feng J, Lian N, Yu J, Yang Y, Yao J, Yu Y.",
+   "journal": "CNS neuroscience & therapeutics",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "AimsRepeated sevoflurane exposure during the neonatal stage may induce Tau phosphorylation, dendritic spine loss, and neurocognitive impairment in the developing brain. Tubulin tyrosine ligase like-6 (TTLL6), which aggregates in dendrites due to Tau missorting, regulates microtubule stability via α-tubulin polyglutamylation. Meanwhile, Spastin modulates dendritic spine formation by severing microtubules. We hypothesize that repeated sevoflurane treatment impairs dendritic spine remodeling in neonatal mice by enhancing TTLL6-mediated tubulin polyglutamylation and increasing Spastin expression, leading to cognitive dysfunction in their pre-adolescent stage.MethodsSix-day-old wild type (WT), TTLL6 brain conditional knockout (TTLL6CKO), TTLL6-flox (TTLL6CON) and Tau-knockout mice were treated with 3% sevoflurane for 2 h daily on postnatal days (P) 6, 8, and 10. Levels of Tau, phosphorylated Tau (pTau), TTLL6, polyglutamylated tubulin, ATP, Spastin, PSD95, Tau-TTLL6 interaction, Tau-TTLL6 missorting, dendritic spine remodeling, and behavioral alterations were compared across these groups.ResultsRepeated sevoflurane exposure during brain development in neonatal mice could reduce dendritic spine density, synapse number, PSD95, and ATP levels, while increasing pTau, polyglutamylated tubulin, Tau-TTLL6 missorting from axons to the somatodendritic compartment, and Spastin levels, leading to cognitive impairment later in their pre-adolescent stage (P30). However, these changes were ameliorated in the TTLL6CKO mice.ConclusionsRepeated neonatal sevoflurane exposure results in synaptic impairment through TTLL6-mediated tubulin polyglutamylation and increased Spastin expression, causing pre-adolescent cognitive dysfunction in mice. This process is initiated by Tau phosphorylation and missorting from axons to somatodendritic compartments."
+  },
+  {
+   "rank": 28,
+   "id": "39978568",
+   "source": "MED",
+   "pmid": "39978568",
+   "pmcid": null,
+   "doi": "10.1016/j.biosystems.2025.105414",
+   "first_publication_date": "2025-02-18",
+   "title": "Surface code model for Fibonacci helical pathways of the Orch OR microtubule.",
+   "authors": "An S, Choi BS.",
+   "journal": "Bio Systems",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The Objective Reduction (OR) theory suggested by Sir Roger Penrose presented a novel perspective on the measurement problem of quantum mechanics and consciousness. Subsequently, based on the assertion of anesthesiologist Dr. Hameroff, the theory proposed that the phenomenon of OR could also manifest in microtubules within neurons. This would, serve as the trigger for consciousness, thereby forming the basis of Orchestrated OR (Orch OR). The peculiarity of this theory lies in the claim that tubulin and its higher neuronal information structures are not simply additive, rather, they are formed in a topological manner. Specifically, higher information structure of tubulin, helical pathways are presumed to form an intersecting pattern in both left-handed and right-handed directions, following a repeating Fibonacci series (3, 5, 8, 13, …), and are interconnected with each other. There have been attempts to examine these unique characteristics. However, experimenting upon these quantum characteristics in the microtubule appears to be plagued by certain limitations. Therefore, this study proposed a surface code model to implement this biological model on a quantum computer, focusing on its quantum properties. To the best of our knowledge, this is the first study to attempt this. The study emphasizes that interpreting asymmetric Fibonacci helical pathways as logical qubits can stabilize surface code. In addition, we analyzed the conditions required for experimenting with this model based on the development of current quantum computer. Although the experimental feasibility of this study is dependents on future quantum computer development, it provides significant insights into Orch OR research by offering a novel perspective."
+  },
+  {
+   "rank": 29,
+   "id": "40021968",
+   "source": "MED",
+   "pmid": "40021968",
+   "pmcid": "PMC11869693",
+   "doi": "10.1186/s12871-025-02956-9",
+   "first_publication_date": "2025-02-28",
+   "title": "Microtubule-modulating drugs alter sensitivity to isoflurane in mice.",
+   "authors": "Li N, You Z, Ren Y, Kim HH, Yang J, Li G, Doheny JT, Ding W, Xia S, Wang S, Zhou X, Wu X, Shen S, Dong Y, Xie Z, Chen L, Mao J, Martyn JAJ.",
+   "journal": "BMC anesthesiology",
+   "pub_types": [
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundMicrotubules (MTs) have been postulated as one of the molecular targets underlying loss of consciousness induced by inhalational anesthetics. Microtubule-targeting chemotherapy drugs and opioids affect MT stability and function. However, the impact of prolonged administration of these drugs on anesthetic potency and anesthesia induction and emergence times remain unelucidated.MethodsEpothilone D, paclitaxel, vinblastine or opioid morphine were administered alone for a prolonged period (> 2 weeks) to male CD1 mice and their sensitivity to incremental concentrations of isoflurane were examined using loss of righting reflex (LORR) response as a measure of sensivity. The induction and emergence time after administration and termination of fixed concentration of isoflurance (1.2%) were also assessed.ResultsCompared with saline treatment, epothilone D and vinblastine induced a leftward (more sensitive) shift of LORR response curves (95% confidence intervals for EC50: epothilone D, 0.75[0.73, 0.77] vs. saline, 0.97[0.96, 0.98]; vinblastine, 0.74[0.73, 0.75] vs. saline, 0.98[0.97, 0.99]). In contrast, morphine caused a rightward (more resistant) LORR response curve (morphine, 1.16[1.15, 1.17] vs. saline, 0.97[0.96, 0.98]), while paclitaxel produced a marginal but significant rightward shift of LORR (paclitaxel, 1.05[1.03, 1.06] vs. saline, 0.98[0.97, 0.99]). At concentration of 1.2% isoflurane, morphine treatment prolonged (275 ± 50) and vinblastine treatment reduced (96.5 ± 26) the anesthetic induction latency (in second) relative to saline treatment (211 ± 39). The latency of emergence from anesthesia was shorter in morphine (58 ± 20) and vinblastine-treated (98 ± 43) mice compared to saline (176 ± 50) treatment. The induction or emergence latencies of epothilone D or paclitaxel treatment did not differ from saline treatment between groups.ConclusionsMicrotubule-modulating drugs can affect not only sensitivity but also induction and emergence times to inhalational anesthetic isoflurane in mice. This study highlights a possible role of MTDs in modulating anesthetic effects in disparate directions, which has implications for anesthetic concentrations that should be used for induction, maintenance and emergence of anesthesia. These findings in rodents may have relevance to the perioperative care of cancer patients who receive MT-targeting chemotherapy drugs or even opioids for pain for prolonged periods."
+  },
+  {
+   "rank": 30,
+   "id": "40017363",
+   "source": "MED",
+   "pmid": "40017363",
+   "pmcid": null,
+   "doi": "10.3760/cma.j.cn121430-20240313-00224",
+   "first_publication_date": "2025-02-01",
+   "title": "[Autophagy reduces bacterial translocation by regulating intestinal mucosal oxidative stress].",
+   "authors": "Lu X, Yin C, Su Y, Gao X, Wang F, Xu L.",
+   "journal": "Zhonghua wei zhong bing ji jiu yi xue",
+   "pub_types": [
+    "Journal Article",
+    "English Abstract"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveTo investigate the mechanism of autophagy in regulating bacterial translocation in intestinal infection caused by hypervirulent Klebsiella pneumonia (hvKp) and explore the method of reducing translocation infection of intestinal bacteria.MethodsFifty C57BL/6J mice were divided into gavage group (n = 40) and control group (CO group, n = 10). The gavage group was orally administered with 200 μL/d of hvKp (colony count of 109 CFU/mL) continuously for 5 days to establish a hvKp intestinal infection model. CO group was given an equal amount of normal saline. After the experiment, the mice were anesthetized with lsofluraneand euthanized with cervical dislocation under anesthesia. Peripheral venous blood of mice was collected to detect bacterial translocation by 16S rDNA sequencing, then divided into translocation group (BT+ group) and non-translocation group (BT- group). Hematoxylin-eosin (HE) staining was used to evaluate intestinal morphology. The ultrastructural changes of intestinal tissues were observed by electron microscope. The levels of intestinal oxidative stress indicators such as superoxide dismutase (SOD), malondialdehyde (MDA) and glutathione peroxidase (GPx) were measured. Translocation was detected by in situ hybridization. The expression of tight junction protein microtubule-associated protein 1 light chain 3-II (LC3-II) and autophagy protein Beclin-1 were measured by Western blotting. The mRNA expression of tight junction proteins ZO-1 and Claudin-2 were detected by reverse transcription-polymerase chain reaction (RT-PCR). The expression of autophagy protein and tight junction protein were observed by immunofluorescence.ResultsTwo out of 40 mice in the gavage group died after developing aspiration pneumonia. All mice in the CO group survived. The 16S rDNA sequencing results showed that no bacteria were detected in the peripheral blood of the CO group, but bacteria were detected in the peripheral blood of 18 mice in the gavage group, with a bacterial translocation rate of 47.4%. The BT- and BT+ groups showed intestinal mucosal tissue damage, with severe damage in the BT+ group. Compared with the CO group, the level of MDA in the BT- and BT+ groups were significantly increased, while the activities of SOD and GPx were significantly decreased. Compared with the BT- group, the MDA level in the BT+ group further increased, while the SOD and GPx activities further decreased [MDA (mmol/mg): 2.98±0.11 vs. 2.48±0.11, SOD (U/mg): 62.40±5.45 vs. 73.40±4.08, GPx (U/mg): 254.72±10.80 vs. 303.55±8.57, all P -ΔΔCT): 0.78±0.06 vs. 0.88±0.06, Claudin-2 mRNA (2-ΔΔCT): 0.40±0.04 vs. 0.70±0.06, both P ConclusionHvKp can activate intestinal mucosal autophagy and reduce the damage to intestinal mucosal barrier function by down-regulating oxidative stress level, reduce the occurrence of bacterial translocation."
+  },
+  {
+   "rank": 31,
+   "id": "41019231",
+   "source": "MED",
+   "pmid": "41019231",
+   "pmcid": "PMC12475526",
+   "doi": "10.1016/j.csbj.2025.09.016",
+   "first_publication_date": "2025-09-13",
+   "title": "Conscious active inference II: Quantum orchestrated objective reduction among intraneuronal microtubules naturally accounts for discrete perceptual cycles.",
+   "authors": "Wiest MC, Puniani AS.",
+   "journal": "Computational and structural biotechnology journal",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "In the first of two companion papers, we argued that classical neural mechanisms proposed to implement conscious active inference had failed to establish their biological plausibility in terms of realistic biophysical models. We further explained that conscious (temporally deep) active inference is mathematically equivalent to the path integral that underlies quantum dynamics. As such, we proposed that a quantum model provides a natural, biologically plausible mechanistic implementation of the processing required by active inference. In this second paper we review the evidence establishing discrete non-overlapping cycles of perceptual inference, and argue that classical process models have so far failed to motivate or describe these discrete cycles in terms of realistic neural mechanisms. We then point out that the Orchestrated Objective Reduction (Orch OR) theory of consciousness naturally solves this fundamental problem. Along the way, we review independent strong theoretical and experimental evidence from my (Wiest) lab and others' supporting the Orch OR quantum theory of consciousness as a collective quantum property of intraneuronal microtubules (MTs). This includes demonstration of room-temperature quantum effects in MTs, MT resonances controlling membrane spiking in living neurons, evidence that volatile anesthetics target MTs to cause unconsciousness, and direct biophysical evidence of a macroscopic entangled state in the living human brain. Intraneuronal MTs thus offer a biologically specific and experimentally supported substrate for implementing conscious active inference in brains."
+  },
+  {
+   "rank": 32,
+   "id": "40342554",
+   "source": "MED",
+   "pmid": "40342554",
+   "pmcid": "PMC12060853",
+   "doi": "10.1093/nc/niaf011",
+   "first_publication_date": "2025-05-06",
+   "title": "A quantum microtubule substrate of consciousness is experimentally supported and solves the binding and epiphenomenalism problems.",
+   "authors": "Wiest MC.",
+   "journal": "Neuroscience of consciousness",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Recent experimental evidence, briefly reviewed here, points to intraneuronal microtubules as a functional target of inhalational anesthetics. This finding is consistent with the general hypothesis that the biophysical substrate of consciousness is a collective quantum state of microtubules and is specifically predicted by the Orchestrated Objective Reduction theory of Penrose and Hameroff. I also review experimental evidence that functionally relevant quantum effects occur in microtubules at room temperature, and direct physical evidence of a macroscopic quantum entangled state in the living human brain that is correlated with the conscious state and working memory performance. Having established the physical and biological plausibility of quantum microtubule states related to consciousness, I turn to consider potential practical advantages of a quantum brain and enormous theoretical advantages of a quantum consciousness model. In particular, I explain how the quantum model makes panprotopsychism a viable solution to physicalism's hard problem by solving the phenomenal binding or combination problem. Postulating a quantum physical substrate of consciousness solves the binding problem in principle but appears to leave us with an epiphenomenalism problem, meaning that consciousness seems to have no causal power to confer a fitness advantage, so its evolution remains as an inexplicable mystery. I propose that, contrary to a certain (zombie) intuition, the quantum approach can also solve this problem in a nontrivial way. The Orchestrated Objective Reduction (Orch OR) theory of Penrose and Hameroff embodies these advantages of a quantum model and also accounts for nonalgorithmic human understanding and the psychological arrow of time."
+  },
+  {
+   "rank": 33,
+   "id": "39322401",
+   "source": "MED",
+   "pmid": "39322401",
+   "pmcid": null,
+   "doi": "10.1111/1440-1681.13924",
+   "first_publication_date": "2024-11-01",
+   "title": "Propofol attenuates prostate cancer progression by upregulating TRHDE-AS1 expression, and METTL14 could mediate its m6A modification.",
+   "authors": "Chen Z, Li Q, Li Z, Hu G.",
+   "journal": "Clinical and experimental pharmacology & physiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Propofol has become a microtubule-stabilizing drug for prostate cancer (PC) therapy, but propofol resistance impairs the therapeutic effect. This study aimed to explore the regulatory mechanism of propofol in the pathogenesis of PC through mechanisms involving N6-methyladenosine (m6A) modification. The changes in PC cell malignancy were evaluated by means of transwell, cell counting kit 8 (CCK-8), western blotting and tumour xenograft model assays. Long noncoding RNA TRHDE-AS1 and m6A methyltransferase METTL14 expression levels were determined via reverse transcription quantitative polymerase chain reaction (RT-qPCR). The m6A modification of TRHDE-AS1 which was mediated by METTL14 was confirmed by conducting methylated RNA immunoprecipitation (MeRIP) assay. We observed that propofol (200 μM) inhibited PC cell malignancy in vivo and in vitro, elucidating that it impaired cell proliferation, migration and tumour growth but induced apoptosis. TRHDE-AS1 expression was observed to be lower in PC cells and tissues, and propofol induced TRHDE-AS1 upregulation in PC cells. Propofol was capable of reversing the tumour-promoting effect of TRHDE-AS1 knockdown in PC cells. Additionally, METTL14 was upstream of TRHDE-AS1 to induce m6A modification of TRHDE-AS1 in PC cells. Collectively, our results show that propofol prevents PC progression by upregulating TRHDE-AS1 expression and METTL14 is involved in the m6A modification of TRHDE-AS1. These findings suggest that TRHDE-AS1 may be a potential therapeutic target for the improvement of propofol's therapeutic effect."
+  },
+  {
+   "rank": 34,
+   "id": "39344320",
+   "source": "MED",
+   "pmid": "39344320",
+   "pmcid": null,
+   "doi": "10.31083/j.fbl2909324",
+   "first_publication_date": "2024-09-01",
+   "title": "The Role of the SIRT1-mTOR Signaling Pathway in Regulating Autophagy in Sevoflurane-Induced Apoptosis of Fetal Rat Brain Neurons.",
+   "authors": "Li Y, Xiao C, Tan Y, Jing S.",
+   "journal": "Frontiers in bioscience (Landmark edition)",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundIsoflurane is a commonly used general anesthetic widely employed in clinical surgeries. Recent studies have indicated that isoflurane might induce negative impacts on the nervous system, notably by triggering neuronal apoptosis. This process is pivotal to the development and emergence of neurological disorders; its misregulation could result in functional deficits and the initiation of diseases within nervous system. However, the potential molecular mechanism of isoflurane on the neuronal apoptosis remains fully unexplored. This study aims to investigate the regulatory role of the sirtuin 1-mechanistic target of rapamycin (SIRT1-mTOR) signaling pathway in autophagy during isoflurane-induced apoptosis of fetal rat brain neuronal cells.MethodsTerminal deoxynucleotidyl transferase-mediated dUTP nick end labeling (TUNEL) assay, real-time quantitative polymerase chain reaction (qPCR), and Western blot were utilized to evaluate the apoptotic status of hippocampal tissue cells in fetal mice after sevoflurane exposure. Our further investigation was commenced with flow cytometry, immunofluorescence, qPCR, and Western blot to determine the impact of autophagy on sevoflurane-induced apoptosis in these neurons. On the other hand, we conducted an additional set of analyses, including flow cytometric analysis, qPCR, and Western blot, to further elucidate the neuroprotective potential of autophagy in neural cells of fetal mice subjected to sevoflurane-induced apoptosis.ResultsOur findings indicated that a 3% sevoflurane treatment led to a significant rise in apoptosis among fetal rat hippocampal tissue cells and neurons. Levels of apoptosis-associated proteins, cleaved-caspase-3 and Bcl-2 associated X protein (Bax), were found to be markedly higher, coinciding with an enhancement in autophagy as evidenced by increased microtubule-associated proteins 1A/1B-light chain 3 (LC3) and decreased p62 expression. Concurrently, there was a notable up-regulation of sirtuin 1 (SIRT1) and a down-regulation of mechanistic target of rapamycin (mTOR) expression. In conclusion, our research elucidated the pivotal function of cellular autophagy in an apoptosis induced by sevoflurane in fetal rat nerve cells. Through experimental manipulation, we observed that interference with SIRT1 resulted in a reduction of both cleaved-caspase-3 and Bax levels. This intervention also beget a diminished expression of the autophagy-associated factor LC3 and an up-regulation of p62. Furthermore, inhibition against mTOR reversed the effects induced by SIRT1 interference, suggesting a complex interplay amid these regulatory pathways.ConclusionsSIRT1 possesses a capacity to modulate apoptosis in the hippocampal neurons of fetal rats triggered by sevoflurane, with mTOR functioning as an inhibitory factor within this signaling pathway."
+  },
+  {
+   "rank": 35,
+   "id": "38849977",
+   "source": "MED",
+   "pmid": "38849977",
+   "pmcid": null,
+   "doi": "10.1111/jnc.16142",
+   "first_publication_date": "2024-06-07",
+   "title": "Inhalation of hydrogen gas mitigates sevoflurane-induced neuronal apoptosis in the neonatal cortex and is associated with changes in protein phosphorylation.",
+   "authors": "Iketani M, Hatomi M, Fujita Y, Watanabe N, Ito M, Kawaguchi H, Ohsawa I.",
+   "journal": "Journal of neurochemistry",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Inhalation of hydrogen (H2) gas is therapeutically effective for cerebrovascular diseases, neurodegenerative disorders, and neonatal brain disorders including pathologies induced by anesthetic gases. To understand the mechanisms underlying the protective effects of H2 on the brain, we investigated the molecular signals affected by H2 in sevoflurane-induced neuronal cell death. We confirmed that neural progenitor cells are susceptible to sevoflurane and undergo apoptosis in the retrosplenial cortex of neonatal mice. Co-administration of 1-8% H2 gas for 3 h to sevoflurane-exposed pups suppressed elevated caspase-3-mediated apoptotic cell death and concomitantly decreased c-Jun phosphorylation and activation of the c-Jun pathway, all of which are induced by oxidative stress. Anesthesia-induced increases in lipid peroxidation and oxidative DNA damage were alleviated by H2 inhalation. Phosphoproteome analysis revealed enriched clusters of differentially phosphorylated proteins in the sevoflurane-exposed neonatal brain that included proteins involved in neuronal development and synaptic signaling. H2 inhalation modified cellular transport pathways that depend on hyperphosphorylated proteins including microtubule-associated protein family. These modifications may be involved in the protective mechanisms of H2 against sevoflurane-induced neuronal cell death."
+  },
+  {
+   "rank": 36,
+   "id": "39147581",
+   "source": "MED",
+   "pmid": "39147581",
+   "pmcid": "PMC11363512",
+   "doi": "10.1523/eneuro.0291-24.2024",
+   "first_publication_date": "2024-08-29",
+   "title": "Microtubule-Stabilizer Epothilone B Delays Anesthetic-Induced Unconsciousness in Rats.",
+   "authors": "Khan S, Huang Y, Timuçin D, Bailey S, Lee S, Lopes J, Gaunce E, Mosberger J, Zhan M, Abdelrahman B, Zeng X, Wiest MC.",
+   "journal": "eNeuro",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Volatile anesthetics are currently believed to cause unconsciousness by acting on one or more molecular targets including neural ion channels, receptors, mitochondria, synaptic proteins, and cytoskeletal proteins. Anesthetic gases including isoflurane bind to cytoskeletal microtubules (MTs) and dampen their quantum optical effects, potentially contributing to causing unconsciousness. This possibility is supported by the finding that taxane chemotherapy consisting of MT-stabilizing drugs reduces the effectiveness of anesthesia during surgery in human cancer patients. In order to experimentally assess the contribution of MTs as functionally relevant targets of volatile anesthetics, we measured latencies to loss of righting reflex (LORR) under 4% isoflurane in male rats injected subcutaneously with vehicle or 0.75 mg/kg of the brain-penetrant MT-stabilizing drug epothilone B (epoB). EpoB-treated rats took an average of 69 s longer to become unconscious as measured by latency to LORR. This was a statistically significant difference corresponding to a standardized mean difference (Cohen's d) of 1.9, indicating a \"large\" normalized effect size. The effect could not be accounted for by tolerance from repeated exposure to isoflurane. Our results suggest that binding of the anesthetic gas isoflurane to MTs causes unconsciousness and loss of purposeful behavior in rats (and presumably humans and other animals). This finding is predicted by models that posit consciousness as a property of a quantum physical state of neural MTs."
+  },
+  {
+   "rank": 37,
+   "id": "39223886",
+   "source": "MED",
+   "pmid": "39223886",
+   "pmcid": null,
+   "doi": "10.3760/cma.j.cn121430-20240523-00453",
+   "first_publication_date": "2024-07-01",
+   "title": "[Anti-inflammatory mixture alleviates acute lung injury induced by sepsis in rats by modulating Beclin-1-mediated autophagy].",
+   "authors": "Lu W, Yan G, Shen Y, Li H, Wu S, Weng T, Zhang R, Huo Y.",
+   "journal": "Zhonghua wei zhong bing ji jiu yi xue",
+   "pub_types": [
+    "Journal Article",
+    "English Abstract"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveTo investigate the protective effects of an anti-inflammatory mixture on acute lung injury (ALI) induced by sepsis in rats, as well as its possible mechanisms.MethodsA total of 40 Sprague-Dawley (SD) rats were randomly divided into the sham group, septic ALI model group (model group), 3-methyladenine (3-MA) control group, and anti-inflammatory mixture pretreatment group, with 10 rats in each group. Cecal ligation and perforation (CLP) was performed to reproduce a septic ALI model. The rats in the sham group only underwent opening and closing the abdomen without perforation and ligation. Both groups were given saline gavage and intraperitoneal injection for 3 consecutive days before surgery. The 3-MA control group was given intraperitoneal injection of saline and autophagy inhibitor 3-MA 15 mg/kg for 3 consecutive days before modeling. The anti-inflammatory mixture pretreatment group was given 8.8 mL/kg of anti-inflammatory mixture by gavage [the composition of anti-inflammatory mixture: rhubarb 15 g (after the next), coptis chinensis 15 g, baical skullcap root 12 g, magnoliae cortex 12 g, dahurian patrinia herb 30 g] and saline intraperitoneal injection for 3 consecutive days before modeling. The rats in each group were anesthetized 24 hours after surgery and died due to abdominal aortic blood collection. Enzyme-linked immunosorbent assay (ELISA) was used to detect the levels of serum inflammatory cytokines interleukins (IL-1β and IL-6). Lung tissue was taken and then the bronchoalveolar lavage fluid (BALF) was collected, and the levels of IL-1β and IL-6 were detected by ELISA. Lung wet/dry weight (W/D) ratio was measured. After hematoxylin-eosin (HE) staining, the histopathological changes of the lungs were observed under light microscopy. Western blotting was used to detect the expression of autophagy markers microtubule-associated protein 1 light chain 3- II/I (LC3- II/I) and Beclin-1 protein in lung tissue. Autophagosomes in lung tissue were observed with transmission electron microscopy.ResultsCompared with the sham group, the rats in the model group exhibited severe destruction of lung tissue structure, with significant infiltration of inflammatory cells, the lung W/D ratio and the levels of IL-1β and IL-6 in serum and BALF were significantly increased, the expressions of LC3- II/I and Beclin-1 protein were down-regulated, the autophagosomes were more. The rats in the 3-MA control group exhibited more severe lung tissue injury as compared with the model group, the lung W/D ratio and the levels of inflammatory cytokines in serum and BALF were further increased, the expressions of LC3- II/I and Beclin-1 protein still showed a decrease tendency as compared with the sham group, and the autophagosomes were less than that in the model group. Compared with the model group, the anti-inflammatory mixture pretreatment group showed milder lung tissue injury with a minimal amount of inflammatory cell infiltration, the lung W/D ratio was significantly reduced (7.07±1.02 vs. 11.33±1.85, P ConclusionsThe anti-inflammatory mixture improves lung injury in rats with sepsis induced by CLP and reduce inflammation levels, potentially through upregulation of Beclin-1-mediated autophagy."
+  },
+  {
+   "rank": 38,
+   "id": "38957242",
+   "source": "MED",
+   "pmid": "38957242",
+   "pmcid": "PMC11218714",
+   "doi": "10.7759/cureus.61522",
+   "first_publication_date": "2024-06-02",
+   "title": "Dexmedetomidine Inhibits Hippocampal Neuronal Damage Caused by Persistent Isoflurane-Induced Hypotension in Rat Model of Chronic Cerebral Hypoperfusion.",
+   "authors": "Mino T, Nakao S, Kitaura A, Iwamoto T, Kimura S, Nakajima Y, Itoh T, Satou T.",
+   "journal": "Cureus",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Purpose The purpose of this study was to investigate the effect of dexmedetomidine (DEX) on hypotension-induced neuronal damage in a chronic cerebral hypoperfusion (CCH) model of rats, an established model of cerebral white matter lesions (WML) in humans, which is prevalent in the elderly and closely related to cognitive decline. Methods The CCH model rats were randomly assigned to one of four groups: normotension + no DEX (NN) group (n = 6), normotension + DEX (ND) group (n = 6), hypotension + no DEX (HN) group (n = 6), or hypotension + DEX (HD) group (n = 6). Under isoflurane anesthesia, mean arterial blood pressure was maintained at or above 80 mmHg (normotension) or below 60 mmHg (hypotension) for a duration of two hours. The DEX groups received 50 μg of DEX intraperitoneally. Two weeks later, the Y-maze test and, after preparing brain slices, immunohistochemical staining were performed using antibodies against neuronal nuclei (NeuN), microtubule-associated protein 2 (MAP2), glial fibrillary acidic protein (GFAP), and Ionized calcium-binding adapter molecule 1 (Iba1). Results Behavioral observations showed no significant differences among the groups. Significant reductions of both NeuN-positive cells and the MAP2-positive area were found in the hippocampal CA1 in the HN group compared with NN and ND groups, but not in the HD group. GFAP and Iba-1-positive areas were significantly increased in the HN group, but not in the HD group. Conclusion DEX significantly ameliorated hypotension-induced neuronal damage and both astroglial and microglial activation in the CA1 region of CCH rats."
+  },
+  {
+   "rank": 39,
+   "id": "38701566",
+   "source": "MED",
+   "pmid": "38701566",
+   "pmcid": null,
+   "doi": "10.1016/j.biopha.2024.116693",
+   "first_publication_date": "2024-05-02",
+   "title": "Sevoflurane postconditioning ameliorates cerebral hypoxia/reoxygenation injury in zebrafish involving the Akt/GSK-3β pathway activation and the microtubule-associated protein 2 promotion.",
+   "authors": "Zhang L, Yang M, Wang Z, Fan D, Shen F, Zou X, Zhang X, Hu S, Hu B, Hu X.",
+   "journal": "Biomedicine & pharmacotherapy = Biomedecine & pharmacotherapie",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Sevoflurane postconditioning has been shown to provide neuroprotection against cerebral hypoxia-ischemia injury, but the mechanisms remain elusive. Microtubule-associated protein 2 (MAP2) is implicated in early neuronal hypoxia-ischemia injury. This study aimed to investigate whether the neuroprotective effects of sevoflurane postconditioning are related to the Akt/GSK-3β pathway and its downstream target MAP2 in zebrafish hypoxia/reoxygenation (H/R) model. Sevoflurane postconditioning or GSK-3β inhibitor TDZD-8 were used to treat H/R zebrafish. The cerebral infarction, neuronal apoptosis, and mitochondrial changes were evaluated using TTC staining, TUNEL staining, and transmission electron microscopy, respectively. The distribution of MAP2 in the brain was determined by immunofluorescence imaging. The levels of Akt, p-Akt, GSK-3β, p-GSK-3β, and MAP2 proteins were evaluated by Western blotting. The neurobehavioral recovery of zebrafish was assessed based on optokinetic response behavior. Our results indicated that sevoflurane postconditioning and TDZD-8 significantly reduced the cerebral infarction area, suppressed cell apoptosis, and improved mitochondrial integrity in zebrafish subjected to H/R. Furthermore, sevoflurane postconditioning and TDZD-8 elevated the ratios of p-Akt/Akt and p-GSK-3β/GSK-3β. However, the neuroprotective effect of sevoflurane postconditioning was effectively abolished upon suppression of MAP2 expression. In conclusion, sevoflurane postconditioning ameliorated cerebral H/R injury and facilitated the restoration of neurobehavioral function through the activation of Akt/GSK-3β pathway and promotion of MAP2 expression."
+  },
+  {
+   "rank": 40,
+   "id": "36414713",
+   "source": "MED",
+   "pmid": "36414713",
+   "pmcid": "PMC11371642",
+   "doi": "10.1038/s41380-022-01864-5",
+   "first_publication_date": "2022-11-21",
+   "title": "Ketamine impairs growth cone and synaptogenesis in human GABAergic projection neurons via GSK-3β and HDAC6 signaling.",
+   "authors": "Li X, Saiyin H, Chen X, Yu Q, Ma L, Liang W.",
+   "journal": "Molecular psychiatry",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The growth cone guides the axon or dendrite of striatal GABAergic projection neurons that protrude into the midbrain and cortex and form complex neuronal circuits and synaptic networks in a developing brain, aberrant projections and synaptic connections in the striatum related to multiple brain disorders. Previously, we showed that ketamine, an anesthetic, reduced dendritic growth, dendritic branches, and spine density in human striatal GABAergic neurons. However, whether ketamine affects the growth cone, the synaptic connection of growing striatal GABAergic neurons has not been tested. Using human GABAergic projection neurons derived from human inducible pluripotent stem cells (hiPSCs) and embryonic stem cells (ES) in vitro, we tested ketamine effects on the growth cones and synapses in developing GABAergic neurons by assessing the morphometry and the glycogen synthase kinase-3 (GSK-3) and histone deacetylase 6 (HDAC6) pathway. Ketamine exposure impairs growth cone formation, synaptogenesis, dendritic development, and maturation via ketamine-mediated activation of GSK-3 pathways and inhibiting HDAC6, an essential stabilizing protein for dendritic morphogenesis and synapse maturation. Our findings identified a novel ketamine neurotoxic pathway that depends on GSK-3β and HDAC6 signaling, suggesting that microtubule acetylation is a potential target for reducing ketamine's toxic effect on GABAergic projection neuronal development."
+  }
+ ]
+}

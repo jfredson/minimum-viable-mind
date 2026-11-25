@@ -1,0 +1,58 @@
+---
+// Our own tests (design proposal section 4, pictures 16 and 17): what Minimum Viable Mind does
+// itself, moved to one side of the tracker. One paragraph, the project's three habits, its
+// stages as a table, and on the right where it stands and what it has spent. The older pages
+// (the ladder, what has been learned, the story, the spend, the plain explanation) live under
+// this page at their old addresses. Built from data/project.toml, the record's structured twin;
+// the copy above the table is draft.
+import Base from '../layouts/Base.astro';
+import Status from '../components/Status.astro';
+import Meter from '../components/Meter.astro';
+import { data, project, derived, fmtDate, usd } from '../lib/project';
+import { prose } from '../lib/prose';
+
+const delivered = data.stages.filter((s) => s.status === 'delivered').length;
+const cap = [...data.spend.lines].sort((a, b) => b.cap - a.cap)[0];
+---
+
+<Base title="Our own tests · Minimum Viable Mind" description="The experiments this project runs itself: registered removal tests on small systems, each saying in advance what result would count against it.">
+  <section class="page two">
+    <div>
+      <p class="eyebrow">Beside the ranking · this project's own experiments</p>
+      <h1>Our own tests</h1>
+      <p class="tplain">Besides scoring the theories, this project builds small systems and takes parts of them away, to see whether what a theory says should be lost is lost. Each test says in advance what result would count against the idea it tests. A result here counts toward a theory's score only by the same rules as anyone's study, at the weight its method earns.</p>
+      <div class="rules3">
+        <div><b>Registered first</b>Each test's design, and what would count against it, is written down and dated before it runs.</div>
+        <div><b>Measured or argued</b>Every result is recorded as one or the other, so a reader can tell a measurement from a reading of it.</div>
+        <div><b>Spending capped</b>Each line of spending has a ceiling set before the work starts.</div>
+      </div>
+
+      <div class="shead"><h2>The stages</h2><span><a href="/ladder/">the ladder in full</a></span></div>
+      <table class="tests">
+        <thead><tr><th>Stage</th><th>What it bears on</th><th>State</th></tr></thead>
+        <tbody>
+          {data.stages.map((s) => (
+            <tr>
+              <td><a href="/ladder/">{s.name}</a><span class="m"><Fragment set:html={prose(s.one_line)} /></span></td>
+              <td><Fragment set:html={prose(s.adjudicates)} /></td>
+              <td><Status value={s.status} /></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="meta">More: <a href="/learned/">what we have learned</a> · <a href="/questions/#project">the questions these tests ask, and the ideas on the table</a> · <a href="/story/">the story so far</a> · <a href="/spend/">the spending</a> · <a href="/eli5/">the project in plain words</a></p>
+    </div>
+    <aside class="side">
+      <div class="box">
+        <h3>Where it stands</h3>
+        <p>{delivered} of {data.stages.length} stages delivered; {derived.counts.findings} findings on record. Record updated {fmtDate(project.updated_on)}.</p>
+        <p>The project pauses from {fmtDate(project.hibernation_by)}.</p>
+        <Meter value={derived.stage_progress_mean} caption={`Mean progress across the stages: ${derived.stage_progress_mean}%`} small />
+      </div>
+      <div class="box">
+        <h3>Spending</h3>
+        <p>{usd(cap.spent)} of a {usd(cap.cap)} ceiling on the main line, as of {fmtDate(data.spend.as_of)}. <a href="/spend/">Every line</a>.</p>
+      </div>
+    </aside>
+  </section>
+</Base>

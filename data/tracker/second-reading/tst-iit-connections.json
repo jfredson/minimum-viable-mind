@@ -1,0 +1,30 @@
+{
+  "packet_id": "tst-iit-connections",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "dRIBa4qFFobJn88P7tq8sQY",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"could_fail\": true,\n  \"separates\": true,\n  \"separates_from\": [\n    \"gwt\",\n    \"rpt\",\n    \"hot\",\n    \"ast\"\n  ],\n  \"rival_view_from\": \"both\",\n  \"reason\": \"The prediction could fail if a study alters synaptic connection strength in posterior cortex while holding neural activity constant and finds no change in reported experience. However, independently changing and verifying synaptic weights in humans without altering activity is technically demanding, and if outgoing spike trains remain completely identical, it is unclear how downstream reporting systems could register any experiential shift. The prediction separates IIT from Global Workspace Theory as stated in the material, because GWT ties consciousness to active neural broadcasting and predicts no change when activity is held constant. From my own knowledge, Recurrent Processing Theory, Higher-Order Theories, and Attention Schema Theory similarly ground experience in active processing or active representations rather than latent connection weights, so they also predict unchanged experience.\",\n  \"unsure\": true,\n  \"unsure_why\": \"If holding activity constant means strictly identical spike trains rather than constant mean firing rate or BOLD amplitude, causal closure prevents downstream reporting areas from receiving any signal that experience changed, creating uncertainty about whether a study could practically observe the test conditions in humans.\"\n}",
+  "usage": {
+    "promptTokenCount": 1215,
+    "candidatesTokenCount": 278,
+    "totalTokenCount": 7001,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1215
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 278
+      }
+    ],
+    "thoughtsTokenCount": 5508,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.06029,
+  "seconds": 87.7,
+  "called_on": "2026-11-20 19:41:00 PST"
+}

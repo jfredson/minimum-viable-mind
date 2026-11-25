@@ -1,0 +1,23 @@
+---
+// One of the three bars, drawn as ruled on 2026-11-20 (design proposal, decision 3), all in
+// the data colour: support from a centre line at the even point, sharpness a plain fill from
+// zero, left to test hatched. A missing value draws a dashed empty track and says "none".
+import N from './N.astro';
+import { tk } from '../lib/tracker';
+interface Props { kind: 'sup' | 'test' | 'left'; v: number | null; label: string; num?: boolean }
+const { kind, v, label, num = true } = Astro.props;
+const top = tk.rules.scale_top, even = tk.rules.even;
+let style = '';
+if (v !== null) {
+  if (kind === 'sup') {
+    const lo = Math.min(v, even), hi = Math.max(v, even);
+    style = `left:${(lo / top) * 100}%;width:${((hi - lo) / top) * 100}%`;
+  } else {
+    style = `width:${(v / top) * 100}%`;
+  }
+}
+---
+<div class={`tbar ${kind} ${v === null ? 'empty' : ''}`} data-l={label} role="img" aria-label={v === null ? `${label}: none` : `${label}: ${v} of ${top}`}>
+  <div class="t">{v !== null && <div class="f" style={style}></div>}</div>
+  {num && (v === null ? <span class="v none">none</span> : <span class="v"><N v={v} /></span>)}
+</div>

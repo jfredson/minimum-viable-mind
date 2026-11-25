@@ -1,0 +1,191 @@
+# Per-prediction study searches for the five theories ConTraSt does not cover.
+# Ruled by John, 2026-11-21, "Yes, cap $10 (Recommended)": studies for Seth's view, attention
+# schema theory, the sensorimotor theory, Orchestrated Objective Reduction and Damasio's theory are
+# found by a fixed search per prediction, not by the theory's name, for all 37 predictions; each
+# search is written down and committed before it runs; the five-most-recent rule is kept.
+# This file was written and committed on 2026-11-21 BEFORE any of these searches was run.
+#
+# THE METHOD (fixed here, before any result is seen)
+# 1. Each query runs once on the Europe PMC REST search
+#    (https://www.ebi.ac.uk/europepmc/webservices/rest/search), sorted newest first
+#    (sort = "P_PDATE_D desc"), on the date it is run. The query string is used exactly as below.
+#    The run records the date, the hit count and every result screened.
+# 2. Screening, per query, in order, up to the first 40 results. A result QUALIFIES when its
+#    title or abstract shows that it (a) reports new data, or a reanalysis, from people, animals,
+#    tissue, a physical system or an artificial agent; and (b) measures what the prediction's own
+#    test wording (test_for / test_against) names, so that its result could count for or against it.
+#    Reviews, theory papers, models and simulations with no new data, comments, protocols and
+#    preprints of a paper already listed do not qualify. Whether a paper names the theory does not
+#    matter.
+# 3. Choosing, per theory: the five most recent qualifying studies across all its predictions'
+#    result lists (by earliest public appearance), taking AT MOST ONE study per prediction, so that
+#    no single busy topic fills all five places. (This cap is the method's own choice, made here
+#    before the run, not a ruling; it is reported to John.) A study qualifying for two predictions
+#    is taken once and judged for both. A study whose full text cannot be opened openly still takes
+#    its place, is recorded as not opened, and goes on the verify list, as in the pilot.
+# 4. Predictions that cannot fail with today's methods (John, 2026-11-21, "With today's methods")
+#    are searched like the rest, so the record shows it; a study can count for them only if it
+#    measures what their test wording names.
+# 5. Studies already in the records are not excluded; if one qualifies it is reused by its id.
+#
+# Each query is built from the prediction's own test wording. Every query ends in "AND SRC:MED"
+# (journal articles indexed in MEDLINE) unless it says otherwise.
+
+# ============================================================ Seth's living-body view
+
+[[search]]
+prediction = "seth-living-only"
+query = '(TITLE_ABS:"artificial consciousness" OR TITLE_ABS:"machine consciousness" OR TITLE_ABS:"consciousness in artificial") AND (TITLE_ABS:living OR TITLE_ABS:life OR TITLE_ABS:biological) AND SRC:MED'
+
+[[search]]
+prediction = "seth-ai-not-by-computation"
+query = '(TITLE_ABS:"large language model*" OR TITLE_ABS:"artificial intelligence") AND TITLE_ABS:conscious* AND (TITLE_ABS:test* OR TITLE_ABS:indicator* OR TITLE_ABS:experiment*) AND SRC:MED'
+
+[[search]]
+prediction = "seth-expectation-speeds-access"
+query = '(TITLE_ABS:expectation* OR TITLE_ABS:predictab* OR TITLE_ABS:"prior knowledge") AND (TITLE_ABS:"continuous flash suppression" OR TITLE_ABS:"access to awareness" OR TITLE_ABS:"conscious access" OR TITLE_ABS:"breakthrough") AND SRC:MED'
+
+[[search]]
+prediction = "seth-presence-match"
+query = '(TITLE_ABS:"sense of presence" OR TITLE_ABS:"feeling of presence" OR TITLE_ABS:depersonali*) AND TITLE_ABS:interocepti* AND SRC:MED'
+
+[[search]]
+prediction = "seth-interoceptive-ownership"
+query = '(TITLE_ABS:heartbeat OR TITLE_ABS:cardiac OR TITLE_ABS:"cardio-visual" OR TITLE_ABS:"cardiovisual") AND (TITLE_ABS:"body ownership" OR TITLE_ABS:"rubber hand" OR TITLE_ABS:"full-body illusion" OR TITLE_ABS:"full body illusion") AND SRC:MED'
+
+[[search]]
+prediction = "seth-low-interoception-more-illusion"
+query = '(TITLE_ABS:"interoceptive accuracy" OR TITLE_ABS:"interoceptive sensitivity" OR TITLE_ABS:"heartbeat detection" OR TITLE_ABS:"heartbeat counting" OR TITLE_ABS:"heartbeat perception") AND (TITLE_ABS:"rubber hand" OR TITLE_ABS:"ownership illusion") AND SRC:MED'
+
+[[search]]
+prediction = "seth-interoceptive-suppression"
+query = 'TITLE_ABS:insula* AND TITLE_ABS:interocepti* AND (TITLE_ABS:"prediction error" OR TITLE_ABS:predictab* OR TITLE_ABS:expect*) AND SRC:MED'
+
+[[search]]
+prediction = "seth-feeling-from-prediction"
+query = '(TITLE_ABS:"false heart rate feedback" OR TITLE_ABS:"false cardiac feedback" OR TITLE_ABS:"false physiological feedback" OR TITLE_ABS:"false heartbeat feedback" OR TITLE_ABS:"false interoceptive feedback") AND SRC:MED'
+
+# ============================================================ Attention schema theory
+
+[[search]]
+prediction = "ast-graded"
+query = 'TITLE_ABS:awareness AND TITLE_ABS:attention AND (TITLE_ABS:graded OR TITLE_ABS:"all-or-none" OR TITLE_ABS:dichotomous OR TITLE_ABS:continuous) AND (TITLE_ABS:report* OR TITLE_ABS:rating*) AND SRC:MED'
+
+[[search]]
+prediction = "ast-covary"
+query = '(TITLE_ABS:"attention without awareness" OR TITLE_ABS:"awareness without attention" OR TITLE_ABS:"attention in the absence of awareness") AND SRC:MED'
+
+[[search]]
+prediction = "ast-claims"
+query = '(TITLE_ABS:"model of attention" OR TITLE_ABS:"attention schema" OR TITLE_ABS:"self-model") AND (TITLE_ABS:agent* OR TITLE_ABS:"neural network*" OR TITLE_ABS:"language model*") AND (TITLE_ABS:awareness OR TITLE_ABS:conscious*) AND SRC:MED'
+
+[[search]]
+prediction = "ast-control"
+query = '(TITLE_ABS:"attentional control" OR TITLE_ABS:"control of attention" OR TITLE_ABS:"attentional capture") AND (TITLE_ABS:unaware OR TITLE_ABS:"without awareness" OR TITLE_ABS:subliminal OR TITLE_ABS:masked OR TITLE_ABS:"below awareness") AND SRC:MED'
+
+[[search]]
+prediction = "ast-schema-control"
+query = '(TITLE_ABS:"model of attention" OR TITLE_ABS:"attention schema" OR TITLE_ABS:"internal model of attention") AND TITLE_ABS:control AND SRC:MED'
+
+[[search]]
+prediction = "ast-tpj"
+query = '(TITLE_ABS:"temporoparietal junction" OR TITLE_ABS:"temporo-parietal junction" OR TITLE_ABS:TPJ) AND TITLE_ABS:awareness AND TITLE_ABS:attention AND SRC:MED'
+
+[[search]]
+prediction = "ast-domain"
+query = 'TITLE_ABS:awareness AND TITLE_ABS:attention AND (TITLE_ABS:interocepti* OR TITLE_ABS:emotion* OR TITLE_ABS:"mind wandering" OR TITLE_ABS:"working memory") AND TITLE_ABS:dissociat* AND SRC:MED'
+
+# ============================================================ The sensorimotor theory
+
+[[search]]
+prediction = "sm-colour-contingent"
+query = '(TITLE_ABS:colour OR TITLE_ABS:color) AND (TITLE_ABS:"gaze-contingent" OR TITLE_ABS:saccad* OR TITLE_ABS:"eye movement*") AND (TITLE_ABS:contingen* OR TITLE_ABS:adapt*) AND SRC:MED'
+
+[[search]]
+prediction = "sm-inversion"
+query = '(TITLE_ABS:"inverting goggles" OR TITLE_ABS:"reversing goggles" OR TITLE_ABS:"inverting prisms" OR TITLE_ABS:"left-right reversing" OR TITLE_ABS:"up-down reversing" OR TITLE_ABS:"visual inversion" OR TITLE_ABS:"reversed vision") AND SRC:MED'
+
+[[search]]
+prediction = "sm-active-control"
+query = 'TITLE_ABS:"sensory substitution" AND (TITLE_ABS:active OR TITLE_ABS:passive OR TITLE_ABS:"self-generated" OR TITLE_ABS:movement* OR TITLE_ABS:sensorimotor) AND (TITLE_ABS:locali* OR TITLE_ABS:distal OR TITLE_ABS:externali* OR TITLE_ABS:space) AND SRC:MED'
+
+[[search]]
+prediction = "sm-substitution"
+query = 'TITLE_ABS:"sensory substitution" AND (TITLE_ABS:qualia OR TITLE_ABS:phenomen* OR TITLE_ABS:experience OR TITLE_ABS:"visual-like" OR TITLE_ABS:"visual cortex" OR TITLE_ABS:modality) AND SRC:MED'
+
+[[search]]
+prediction = "sm-change-blindness"
+query = 'TITLE_ABS:"change blindness" AND SRC:MED'
+
+[[search]]
+prediction = "sm-inattentional"
+query = 'TITLE_ABS:"inattentional blindness" AND SRC:MED'
+
+[[search]]
+prediction = "sm-no-ncc"
+query = 'TITLE_ABS:"neural correlate* of consciousness" AND (TITLE_ABS:"task-dependent" OR TITLE_ABS:"task relevance" OR TITLE_ABS:"no-report" OR TITLE_ABS:confound* OR TITLE_ABS:"across tasks") AND SRC:MED'
+
+# ============================================================ Orchestrated Objective Reduction
+
+[[search]]
+prediction = "orch-mt-coherence"
+query = 'TITLE_ABS:microtubul* AND (TITLE_ABS:"quantum coherence" OR TITLE_ABS:coherent OR TITLE_ABS:superradian* OR TITLE_ABS:"quantum effect*") AND SRC:MED'
+
+[[search]]
+prediction = "orch-mt-entangle"
+query = 'TITLE_ABS:microtubul* AND (TITLE_ABS:entangle* OR TITLE_ABS:"Bell inequalit*" OR TITLE_ABS:"nonlocal") AND SRC:MED'
+
+[[search]]
+prediction = "orch-synaptic-cyto"
+query = '(TITLE_ABS:microtubul* OR TITLE_ABS:cytoskelet*) AND (TITLE_ABS:"synaptic plasticity" OR TITLE_ABS:"long-term potentiation" OR TITLE_ABS:LTP) AND SRC:MED'
+
+[[search]]
+prediction = "orch-mt-vibration"
+query = 'TITLE_ABS:microtubul* AND (TITLE_ABS:vibration* OR TITLE_ABS:resonan* OR TITLE_ABS:"mechanical oscillation*") AND TITLE_ABS:neuron* AND SRC:MED'
+
+[[search]]
+prediction = "orch-dp-collapse"
+query = '(TITLE_ABS:"Diosi-Penrose" OR TITLE_ABS:"Diósi-Penrose" OR TITLE_ABS:"gravity-related collapse" OR TITLE_ABS:"gravitationally induced collapse" OR TITLE_ABS:"collapse model*") AND (TITLE_ABS:experiment* OR TITLE_ABS:test* OR TITLE_ABS:bound*)'
+note = "Physics journals are often not in MEDLINE, so this query does not end in AND SRC:MED; it searches all of Europe PMC, preprints included (a preprint qualifies only if no journal version is listed)."
+
+[[search]]
+prediction = "orch-mass-time"
+query = 'TITLE_ABS:conscious* AND (TITLE_ABS:latency OR TITLE_ABS:"onset time" OR TITLE_ABS:"time to awareness") AND (TITLE_ABS:"cortical area" OR TITLE_ABS:"extent of activation" OR TITLE_ABS:"neural mass" OR TITLE_ABS:"number of neurons") AND SRC:MED'
+
+[[search]]
+prediction = "orch-coherence-time"
+query = 'TITLE_ABS:microtubul* AND (TITLE_ABS:decoherence OR TITLE_ABS:"coherence time" OR TITLE_ABS:"quantum state*") AND SRC:MED'
+
+[[search]]
+prediction = "orch-anaesthetic-mt"
+query = 'TITLE_ABS:microtubul* AND (TITLE_ABS:anesthe* OR TITLE_ABS:anaesthe* OR TITLE_ABS:isoflurane OR TITLE_ABS:propofol OR TITLE_ABS:sevoflurane) AND SRC:MED'
+
+# ============================================================ Damasio's feeling-based theory
+
+[[search]]
+prediction = "dam-feeling-required"
+query = '(TITLE_ABS:interocepti* OR TITLE_ABS:"homeostatic feeling*" OR TITLE_ABS:"bodily feeling*") AND TITLE_ABS:conscious* AND (TITLE_ABS:lesion* OR TITLE_ABS:patient* OR TITLE_ABS:loss OR TITLE_ABS:deafferent*) AND SRC:MED'
+
+[[search]]
+prediction = "dam-subcortical"
+query = '(TITLE_ABS:hydranenceph* OR TITLE_ABS:decorticat* OR TITLE_ABS:"without cortex" OR TITLE_ABS:"absence of cortex" OR TITLE_ABS:"cortical ablation") AND (TITLE_ABS:conscious* OR TITLE_ABS:affect* OR TITLE_ABS:feeling* OR TITLE_ABS:emotion*) AND SRC:MED'
+
+[[search]]
+prediction = "dam-insula"
+query = 'TITLE_ABS:insula* AND (TITLE_ABS:lesion* OR TITLE_ABS:damage OR TITLE_ABS:resection OR TITLE_ABS:insulectomy) AND (TITLE_ABS:interocepti* OR TITLE_ABS:feeling* OR TITLE_ABS:emotion*) AND SRC:MED'
+
+[[search]]
+prediction = "dam-nonneural"
+query = '(TITLE_ABS:"area postrema" OR TITLE_ABS:circumventricular OR TITLE_ABS:"blood-brain barrier") AND (TITLE_ABS:interocepti* OR TITLE_ABS:feeling* OR TITLE_ABS:nausea OR TITLE_ABS:emotion*) AND SRC:MED'
+
+[[search]]
+prediction = "dam-nss"
+query = '(TITLE_ABS:ephaptic OR TITLE_ABS:"non-synaptic" OR TITLE_ABS:nonsynaptic) AND (TITLE_ABS:vagal OR TITLE_ABS:vagus OR TITLE_ABS:"dorsal root ganglion" OR TITLE_ABS:interocepti* OR TITLE_ABS:"C-fiber*" OR TITLE_ABS:"C fibre*" OR TITLE_ABS:unmyelinated) AND SRC:MED'
+
+[[search]]
+prediction = "dam-no-nervous-system"
+query = '(TITLE_ABS:plant* OR TITLE_ABS:bacteri* OR TITLE_ABS:"single-celled" OR TITLE_ABS:aneural) AND TITLE_ABS:conscious* AND (TITLE_ABS:experiment* OR TITLE_ABS:anesthe* OR TITLE_ABS:anaesthe*) AND SRC:MED'
+
+[[search]]
+prediction = "dam-ai"
+query = '(TITLE_ABS:"artificial intelligence" OR TITLE_ABS:"language model*" OR TITLE_ABS:robot*) AND (TITLE_ABS:feeling* OR TITLE_ABS:interocepti* OR TITLE_ABS:homeosta*) AND TITLE_ABS:conscious* AND SRC:MED'

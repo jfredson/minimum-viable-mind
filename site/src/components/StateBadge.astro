@@ -1,0 +1,6 @@
+---
+import { STATE_CLASS, STATE_LABEL, type State } from '../lib/tracker';
+interface Props { s: State }
+const { s } = Astro.props;
+---
+<span class={`tbadge ${STATE_CLASS[s]}`}>{STATE_LABEL[s]}</span>

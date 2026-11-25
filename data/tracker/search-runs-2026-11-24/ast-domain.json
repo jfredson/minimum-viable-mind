@@ -1,0 +1,674 @@
+{
+ "prediction": "ast-domain",
+ "query": "TITLE_ABS:awareness AND TITLE_ABS:attention AND (TITLE_ABS:interocepti* OR TITLE_ABS:emotion* OR TITLE_ABS:\"mind wandering\" OR TITLE_ABS:\"working memory\") AND TITLE_ABS:dissociat* AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 37,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42790611",
+   "source": "MED",
+   "pmid": "42790611",
+   "pmcid": null,
+   "doi": "10.1016/j.neuroimage.2026.122240",
+   "first_publication_date": "2026-09-25",
+   "title": "Resting-state EEG dissociates heartbeat counting from heart-rate discrimination: Cortical signal entropy tracks counting accuracy, default-mode connectivity tracks exteroceptive discrimination.",
+   "authors": "Kang JC, Park HJ, Yoon H.",
+   "journal": "NeuroImage",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Bidirectional communication between the heart and the brain shapes emotion, self-regulation, and adaptive behaviour, yet how the brain's intrinsic organisation supports cardiac interoception remains unclear. Two assays dominate the literature - heartbeat counting (HBC) and heart-rate discrimination (HRD) - but whether they engage separable resting-brain networks at high spatial density is untested. We analysed 256-channel resting EEG from 47 healthy adults (5 min eyes-open, 5 min eyes-closed) with the Schandry HBC task (Schandry, 1981; Garfinkel et al., 2015) and the psychophysical HRD task (Legrand et al., 2022), which includes a tone-versus-tone exteroceptive control block. Source-space connectivity was evaluated with the network-based statistic (NBS), complemented by modified multi-scale sample entropy. HBC accuracy was unrelated to HRD sensitivity in either modality (d', slope), though it covaried with the HRD interoceptive threshold, which indexes bias rather than precision (ρ= +0.41, p = .004), a parameter that indexes bias rather than precision. Entropy yielded the most robust association: higher eyes-closed source-space sample entropy co-occurred with better HBC accuracy across a broad multi-network cortical mantle (50 of 100 parcels at q<0.05); no other behaviour produced an FDR-significant parcel. This entropy-accuracy association survived adjustment for alpha power and the aperiodic (1/f) exponent, and all headline associations were unchanged after controlling pulse-derived heart rate and heart-rate variability and after excluding reversed responders identified by influence diagnostics. NBS returned four family-wise-significant subnetworks. Three were anchored on default-mode parcels but tracked d' in the exteroceptive rather than the interoceptive block; the fourth, a disjoint theta-band dorsal-attention-somatosensory cluster, tracked HBC awareness. Because 128 NBS families were screened and the reported clusters re-test a pre-selected subset of them, the yield of significant clusters does not clearly exceed chance expectation; the connectivity results are therefore reported as hypothesis-generating. The findings support a behavioural and neural dissociation between HBC and HRD and caution against pooling them as interchangeable indices of interoceptive accuracy."
+  },
+  {
+   "rank": 2,
+   "id": "42552831",
+   "source": "MED",
+   "pmid": "42552831",
+   "pmcid": null,
+   "doi": "10.1080/15299732.2026.2714965",
+   "first_publication_date": "2026-08-05",
+   "title": "Examining the Mediating Role of Emotion Regulation Difficulties and Mindfulness in the Relationship Between Sexual Abuse and Dissociative Experiences.",
+   "authors": "Altun S, Çimen İD.",
+   "journal": "Journal of trauma & dissociation : the official journal of the International Society for the Study of Dissociation (ISSD)",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The link between traumatic events, such as sexual abuse, and dissociation is well-documented, but the mechanisms underlying these symptoms remain unclear. The aim of this study was to investigate the relationship between sexually abused individuals' dissociative experiences and emotion dysregulation and mindfulness; and to examine whether mindfulness and emotion dysregulation play a role in the relationship between sexual abuse and dissociative symptoms. The sample consisted of 52 female adolescents who were victims of sexual abuse and 52 female adolescents without a history of sexual abuse who attended the child psychiatry clinic. All participants were asked to fill out the Adolescent Dissociative Experiences Scale (ADES), the Mindful Attention Awareness Scale (MAAS) and the Difficulty in Emotion Regulation Scale Brief Form (DERS-16). Findings revealed that dissociative symptoms and emotion dysregulation were significantly higher, and mindfulness was lower in the abused group. Both mindfulness and emotion dysregulation were found to mediate the relationship between sexual abuse and dissociative symptoms. In a literature review conducted by the researchers, no study in a clinical setting was found in which the role of mindfulness and emotion regulation in the relationship between sexual abuse and dissociation in adolescents exposed to sexual abuse was examined together. We believe that our results are unique and furthermore it is believed that considering and developing mindfulness and emotion regulation in the treatment process of sexual abuse victims will be beneficial for patients."
+  },
+  {
+   "rank": 3,
+   "id": "42283104",
+   "source": "MED",
+   "pmid": "42283104",
+   "pmcid": "PMC13619060",
+   "doi": "10.1111/jsr.70393",
+   "first_publication_date": "2026-06-12",
+   "title": "Prisoners of the Body: The Link Between Interoception and Sleep Paralysis.",
+   "authors": "Forte G, Giaccari D, Favieri F, Casagrande M.",
+   "journal": "Journal of sleep research",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Sleep paralysis (SP) is a REM sleep parasomnia characterized by transient motor paralysis during sleep onset or awakening. It is a terrifying experience often accompanied by vivid hallucinations. Although it is classically linked to narcolepsy, isolated SP in healthy individuals offers a valuable model to investigate the interaction between REM sleep physiology and conscious awareness. In a sample of 210 adults from the Italian population, we examined the prevalence, phenomenology and cognitive-emotional landscape of SP. Importantly, this study provides preliminary evidence to integrate measures of interoception to investigate how body awareness might influence this experience. One out of four participants reported at least one episode of SP. The most common sensations echoed REM physiology, including the inability to move or speak, tingling and sealed eyelids. However, despite this paralysis, the mind conjured up vivid cognitive scenes and the felt presence of another being, as well as an overpowering fear of death. Contrary to earlier findings, SP was not tied to poorer sleep quality or chronic anxiety. Instead, it was associated with insomnia symptoms and hyper-attuned body awareness. Individuals experiencing SP showed greater interoceptive sensitivity, noticing subtle bodily cues and regulating attention and emotion through them. This convergence between sleep physiology and interoceptive awareness suggests that SP may emerge where the boundaries among body, sleep and consciousness become blurred, a dissociated state in which REM-related atonia coexists with preserved or re-emerging conscious awareness. These findings suggest potential avenues of interoception as a target for future investigations into parasomnias."
+  },
+  {
+   "rank": 4,
+   "id": "42798700",
+   "source": "MED",
+   "pmid": "42798700",
+   "pmcid": null,
+   "doi": "10.1177/00243639261487901",
+   "first_publication_date": "2026-09-24",
+   "title": "Watchfulness (&lt;i&gt;Nepsis&lt;/i&gt;) and Attentive Presence (&lt;i&gt;Prosoche&lt;/i&gt;): A Patristic Framework for Clinical and Spiritual Healing.",
+   "authors": "Froyd DR.",
+   "journal": "The Linacre quarterly",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Contemporary clinical practice increasingly recognizes the centrality of attention, presence, and affect regulation in healing trauma and restoring psychological integration. Early Christian ascetical writers-particularly Hesychios, Evagrius, and Cassian-developed a sophisticated spiritual anthropology centered on watchfulness (nepsis) and attentive presence (prosoche), practices aimed at cultivating interior clarity, discernment, and freedom of heart. This article retrieves these ascetical disciplines and explores their relevance for modern clinical work, drawing on patristic sources and contemporary trauma research. Integrating insights from van der Kolk, Siegel, Porges, and Schore, the article argues that watchfulness parallels key therapeutic capacities such as interoceptive awareness, affect regulation, and mindful attunement. Two clinical vignettes illustrate how this patristic framework can inform therapeutic presence and support patients in the healing of dissociation, shame, and emotional fragmentation. Watchfulness emerges as a unifying practice that bridges patristic spiritual psychology and contemporary clinical science."
+  },
+  {
+   "rank": 5,
+   "id": "41661078",
+   "source": "MED",
+   "pmid": "41661078",
+   "pmcid": null,
+   "doi": "10.1002/epi.70143",
+   "first_publication_date": "2026-02-09",
+   "title": "Subjective symptoms of functional/dissociative seizures and their diagnostic value: A systematic review.",
+   "authors": "Xue Q, Pastircakova Z, Rawlings GH, Reuber M.",
+   "journal": "Epilepsia",
+   "pub_types": [
+    "Systematic Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveAlthough subjective symptoms have received less attention than observable manifestations of functional/dissociative seizures (FDS), patient-reported experiences provide important insights for diagnosis and management. This systematic review summarizes and synthesizes studies describing the subjective symptomatology of FDS and narratively discusses their potential diagnostic value.MethodsMEDLINE, PsycINFO, and CINAHL were searched from January 1990 to May 2025 for studies reporting qualitative or quantitative data on FDS symptoms. The review was registered in International Prospective Register of Systematic Reviews (PROSPERO; CRD420251008332) and reported in accordance with Preferred Reporting Items for Systematic reviews and Meta-Analyses (PRISMA) 2020 guidelines. Study quality was assessed using Critical Appraisal Skills Programme (CASP) tools. Data were extracted on study design, sample characteristics, data acquisition method, and reported symptoms. Qualitative data were analyzed thematically following Enhancing Transparency in Reporting the Synthesis of Qualitative Research (ENTREQ) principles, whereas quantitative findings were synthesized narratively within the same thematic framework.ResultsForty-seven studies were included. Subjective symptoms of FDS were highly variable both within and between individuals. Across studies, six broad symptom domains were identified: sensory/pain, arousal, emotional, consciousness-related, cognitive, and motor symptoms. Sensory symptoms (particularly pain and headache), arousal-related symptoms (especially hyperarousal), and emotional symptoms (especially panic and anxiety) were most frequently reported across studies. Symptoms related to altered awareness and dissociation between awareness and responsiveness were described in a smaller number of studies but were more consistently reported as differentiating FDS from epileptic seizures. In contrast, the differential diagnostic value of other subjective symptoms was limited by lack of specificity and insufficient detail regarding context, mode of onset, spread, duration and quality.SignificanceSubjective symptoms in FDS are diverse, but common themes emerge. Detailed descriptions are required to extract differential diagnostic value from subjective FDS symptoms. Future studies should collect structured information about FDS symptoms and study them using systematic, multimodal, and cross-cultural approaches."
+  },
+  {
+   "rank": 6,
+   "id": "41860376",
+   "source": "MED",
+   "pmid": "41860376",
+   "pmcid": "PMC13003905",
+   "doi": "10.1002/cpp.70261",
+   "first_publication_date": "2026-03-01",
+   "title": "Emotion Regulation and Neurocognitive Profiles in Adolescents With Selective Mutism.",
+   "authors": "Yesilkaya C, Turan S.",
+   "journal": "Clinical psychology & psychotherapy",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "While selective mutism (SM) is often conceptualized as a childhood anxiety disorder, longitudinal evidence suggests persistent difficulties into adolescence, yet the underlying cognitive and emotional mechanisms remain poorly understood. We aimed to address this gap by examining whether specific neurocognitive impairments and emotion regulation difficulties characterize adolescents with SM. Eighty-nine adolescents (42 SM, 47 HC), aged 11-17 years, were assessed using the Strengths and Difficulties Questionnaire (SDQ), the Difficulties in Emotion Regulation Scale (DERS) and a neuropsychological battery evaluating attention, inhibition, processing speed, memory and social cognition. Adolescents with SM demonstrated greater emotional awareness difficulties (p = 0.010), with no differences in total DERS scores. SDQ scores indicated higher inattention/hyperactivity (p < 0.001), alongside significantly higher prosocial behaviour (p < 0.001). Neurocognitive findings revealed intact verbal learning but impaired immediate and delayed recall (p < 0.001), better delayed visual memory (p = 0.001). Children with SM made fewer total errors on Wisconsin Card Sorting Test (p = 0.021) and showed higher foil accuracy on CPT (p = 0.007), but demonstrated significantly poorer Stroop colour-word (p = 0.001) and interference scores (p = 0.001). Adolescents with SM showed a distinctive cognitive-emotional profile, suggesting that internal emotional processing and external social sensitivity are dissociated during adolescence. Longitudinal and neurobiological research is warranted to elucidate mechanisms and refine treatment strategies."
+  },
+  {
+   "rank": 7,
+   "id": "41773631",
+   "source": "MED",
+   "pmid": "41773631",
+   "pmcid": "PMC12956623",
+   "doi": "10.1177/07067437261425086",
+   "first_publication_date": "2026-03-03",
+   "title": "Cognitive Complaints in Schizophrenia: A Meta-Analysis of Studies Using the Subjective Scale to Investigate Cognition in Schizophrenia (SSTICS): Les plaintes cognitives dans la schizophrénie : Une méta-analyse des études utilisant la &lt;i&gt;Subjective Scale To Investigate Cognition in Schizophrenia&lt;/i&gt; (SSTICS).",
+   "authors": "White N, Potvin S, Do A, Stip E.",
+   "journal": "Canadian journal of psychiatry. Revue canadienne de psychiatrie",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Background: Subjective cognitive complaints, or neurocognitive insight, reflect to patients' awareness of cognitive functioning. In schizophrenia, these complaints show inconsistent links with objective cognition, psychiatric symptoms, and illness insight. The Subjective Scale to Investigate Cognition in Schizophrenia (SSTICS), a validated self-report tool developed in Canada and used internationally, enables a homogeneous synthesis. Objective: This meta-analysis examined whether subjective complaints measured with the SSTICS are associated with objective cognition, psychiatric symptoms, and illness insight, and reviewed its factorial structure. Method: We conducted a meta-analysis following PRISMA guidelines. Systematic searches of PubMed, Web of Science, and Google Scholar identified studies using the SSTICS in psychiatric populations. Eligible studies compared patients to healthy controls and/or examined correlations with cognition, symptoms, or illness insight or conducted factor analyses of the SSTICS domains. Results: Twenty-five studies (N = 3,205) met criteria. Schizophrenia patients reported more cognitive complaints than controls (d = 0.746). No significant correlation emerged with global objective cognition (r = 0.105). Complaints were unrelated to positive, negative, or general symptoms but showed a moderate association with depressive symptoms (r = 0.300) and a small one with illness insight (r = 0.155). Factor analyses consistently identified 3 domains: memory, attention, and daily living. Conclusions: SSTICS-based complaints are substantial in schizophrenia but largely dissociated from objective cognition, reflecting impaired neurocognitive insight. Instead, they are more strongly linked to depressive symptoms, suggesting complaints reflect emotional distress rather than actual deficits. Findings support refining SSTICS subscales and extending investigations to other psychiatric populations."
+  },
+  {
+   "rank": 8,
+   "id": "41485717",
+   "source": "MED",
+   "pmid": "41485717",
+   "pmcid": null,
+   "doi": "10.1016/j.neubiorev.2026.106546",
+   "first_publication_date": "2026-01-02",
+   "title": "Toward dimensional body consciousness impairments in post-traumatic stress disorder and its dissociative subtype: A predictive processing approach.",
+   "authors": "Laurin A, Bottemanne H, Bulteau S, El Haj M, Sauvaget A, Deschamps T.",
+   "journal": "Neuroscience and biobehavioral reviews",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Current models of post-traumatic stress disorder (PTSD) predominantly focus on emotional dysregulation, avoidance behaviors, and intrusive symptoms, with limited attention to disturbances in bodily self-consciousness. These frameworks do not fully account for how trauma may disrupt the integration of interoceptive and exteroceptive signals underlying the sense of embodied self. Building on recent advances in computational psychiatry, this review introduces a novel theoretical framework that differentiates between dissociative and non-dissociative forms of PTSD using the predictive processing paradigm. Body awareness, including the sense of body ownership (SBO) and the sense of agency (SoA), is framed within a Bayesian inference framework, where perception results from the interaction between prior beliefs and incoming sensory information. In non-dissociative PTSD, we suggest that hyperprecise trauma-related priors, coupled with increased interoceptive weighting due to amygdala and anterior insula hyperactivity, result in rigid self-representations and a diminished capacity for perceptual updating. Thus, we may consider PTSD as a state in which accuracy and reliability of cognitive processes are ranked as follows: [Prior > Interoception > Exteroception]. Conversely, in the dissociative PTSD subtype, emotional over-inhibition and anterior insula hypoactivity weaken priors and interoception, while exteroceptive inputs dominate. Therefore, we consider ranked cognitive processes in PTSD dissociative subtype as follows: [Exteroception > Interoception > Prior]. SoA impairements is specific to the dissociative subtype involving hyperactivity of the angular gyrus and glutamate hypofunction. On this basis, we propose an original dimensional model of body consciousness disruption across PTSD spectra. Therapeutic implications are explored, including top-down and bottom-up interventions."
+  },
+  {
+   "rank": 9,
+   "id": "42890209",
+   "source": "MED",
+   "pmid": "42890209",
+   "pmcid": null,
+   "doi": "10.3389/fncir.2026.1934104",
+   "first_publication_date": "2026-10-02",
+   "title": "Beyond heartbeats: re-thinking interoception in autism through virtual reality and computational modelling.",
+   "authors": "Savickaite S, Li R, Nagai Y.",
+   "journal": "Frontiers in neural circuits",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Interoception, the sensing and interpretation of internal bodily signals, is increasingly invoked to explain heterogeneity in autism, yet empirical findings remain inconsistent. A major reason is methodological: the field remains cardio-centric and relies heavily on heartbeat counting tasks and trait questionnaires, which are vulnerable to cognitive strategies, attention, expectancy effects, and confounds such as alexithymia and anxiety. Autism research further indicates that interoception is multidimensional (accuracy, sensibility, metacognitive awareness) and developmentally dynamic, with evidence for dissociations across components and compensation across the lifespan. We argue that progress requires reframing interoception as an inference problem: the brain estimates hidden physiological states from noisy sensory evidence under context-dependent precision weighting (predictive processing/active inference). Building on this framework, we propose a participatory, multimodal research program for autism that integrates (i) lived experience as hypothesis-shaping data, (ii) virtual reality (VR) as an experimental testbed to manipulate embodiment, sensory load, agency cues, and feedback, and (iii) computational physiological modelling to estimate latent cardiovascular-respiratory and autonomic-control parameters, which could subsequently constrain separately specified models of perceptual inference."
+  },
+  {
+   "rank": 10,
+   "id": "41575613",
+   "source": "MED",
+   "pmid": "41575613",
+   "pmcid": "PMC12876115",
+   "doi": "10.1007/s40519-025-01811-7",
+   "first_publication_date": "2026-01-23",
+   "title": "Unaware and unrestrained: binge-eating behavior in epileptic absence seizures.",
+   "authors": "Marini I, Muneghina MB, Bonavita A, Riccioni R, Pasquini M, Piccardi L.",
+   "journal": "Eating and weight disorders : EWD",
+   "pub_types": [
+    "Journal Article",
+    "Case Reports",
+    "case-report"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundBinge-eating disorder (BED) frequently co-occurs with dissociative symptoms and psychiatric comorbidities, yet potential neurological underpinnings remain underexplored.Case presentationWe report an 18-year-old female with BED presenting with frequent binge episodes accompanied by memory lapses and altered consciousness. Initially attributed to dissociation, comprehensive evaluation revealed previously undiagnosed absence epilepsy, confirmed by EEG and neuroimaging. Neuropsychological assessment demonstrated significant impairments in working memory, processing speed, and divided attention. Treatment with lamotrigine (200 mg/day) resulted in complete remission of binges occurring during absence seizures and substantial cognitive improvements across multiple domains.ConclusionsThis case highlights the critical importance of neurological evaluation in eating disorder patients presenting with altered consciousness or memory lapses. The temporal relationship between seizures and binge episodes, coupled with treatment response, suggests potential neurobiological mechanisms linking epileptic activity to disinhibited eating behaviors. Clinicians should maintain heightened awareness of possible epilepsy-eating disorder comorbidity and consider integrated treatment approaches addressing both neurological and psychiatric components."
+  },
+  {
+   "rank": 11,
+   "id": "41285234",
+   "source": "MED",
+   "pmid": "41285234",
+   "pmcid": null,
+   "doi": "10.1016/j.neuroimage.2025.121606",
+   "first_publication_date": "2025-11-22",
+   "title": "Conscious cardiac awareness and interoceptive attention differentially modulate heartbeat-evoked neural dynamics.",
+   "authors": "Bong SH, Shin Y, Yoon D, Kim J, Park H, Jeong B.",
+   "journal": "NeuroImage",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Heartbeat-evoked response (HER) is considered a neural correlate of interoceptive information processing. While HERs are modulated during interoception tasks, distinguishing the unique contributions of conscious cardiac awareness (the subjective recognition of a heartbeat) from interoceptive attention (the state of focusing on one's heartbeat) remains challenging. To dissociate these processes, we developed a novel task where participants (N = 29) reported the timing of perceived heartbeats using a clock hand, followed by objective feedback. We analyzed electroencephalography data using HERs, phase-based connectivity, and microstate analysis. Our results revealed distinct neural mechanisms underlying conscious cardiac awareness and interoceptive attention. Specifically, conscious cardiac awareness was associated with earlier HER modulation localized to the dorsomedial prefrontal cortex, increased beta synchronization between key nodes of the interoceptive network, and a higher prevalence of microstates involving temporal/opercular regions. Conversely, interoceptive attention modulated HERs at later latencies, localized to the somatosensory cortex and insula, and preferentially engaged microstates associated with the visual and frontoparietal network. These findings confirm the multifaceted nature of HERs. We argue that HER modulations reflect not only the optimization of precision via attention but also the emergence of cardiac awareness through the integration of bottom-up afferent inputs and top-down predictions."
+  },
+  {
+   "rank": 12,
+   "id": "40148498",
+   "source": "MED",
+   "pmid": "40148498",
+   "pmcid": "PMC11950376",
+   "doi": "10.1038/s41598-025-94223-7",
+   "first_publication_date": "2025-03-27",
+   "title": "EEG oscillations reveal neuroplastic changes in pain processing associated with long-term meditation.",
+   "authors": "Yordanova J, Nicolardi V, Malinowski P, Simione L, Aglioti SM, Raffone A, Kolev V.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The experience of pain is a combined product of bottom-up and top-down influences mediated by attentional and emotional factors. Meditation states and traits are characterized by enhanced attention/emotion regulation and expanded self-awareness that can be expected to modify pain processing. The main objective of the present study was to explore the effects of long-term meditation on neural mechanisms of pain processing. EEG pain-related oscillations (PROs) were analysed in highly experienced practitioners and novices during a non-meditative resting state with respect to (a) local frequency-specific and temporal synchronizing characteristics to reflect mainly bottom-up mechanisms, (b) spatial synchronizing patterns to reflect the neural communication of noxious information, (c) pre-stimulus oscillations to reflect top-down mechanisms during pain expectancy, and (d) the P3b component of the pain-related potential to compare the emotional/cognitive reappraisal of pain events by expert and novice meditators. Main results demonstrated that in experienced (long-term) meditators as compared to non-experienced (short-term) meditators (1) the temporal and spatial synchronizations of multispectral (from theta-alpha to gamma) PROs were substantially suppressed at primary and secondary somatosensory regions contra-lateral to pain stimulation within 200 ms after noxious stimulus; (2) pre-stimulus alpha activity was significantly increased at the same regions, which predicted the suppressed synchronization of PROs in long-term meditators; (3) the decrease of the P3b component was non-significant. These novel observations provide evidence that even when subjected to pain outside of meditation, experienced meditators exhibit a pro-active top-down inhibition of somatosensory areas resulting in suppressed processing and communication of sensory information at early stages of painful input. The emotional/cognitive appraisal of pain is reduced but remains preserved revealing a capacity of experienced meditators to dissociate pro-active and reactive top-down processes during pain control."
+  },
+  {
+   "rank": 13,
+   "id": "38303003",
+   "source": "MED",
+   "pmid": "38303003",
+   "pmcid": "PMC10835999",
+   "doi": "10.1186/s40359-023-01492-w",
+   "first_publication_date": "2024-02-01",
+   "title": "Metaphorical language and psychopathological symptoms: a case study of trauma victims' metaphor use.",
+   "authors": "Qiu AH, Tay D, Watson B.",
+   "journal": "BMC psychology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundWhile clinical diagnosis of mental health issues focuses on factual details represented by literal language (e.g., the onset and process of the triggering event and duration of symptom), the relationship between metaphorical language and psychopathological experiences remains an intriguing question. Focusing on psychological trauma triggered by the 2019-2020 Hong Kong social unrest, this study explored the correlations between trauma victims' quantitative metaphor usage patterns and their experience of specific Acute Stress Disorder (ASD) symptoms.MethodsForty-six individuals with trauma exposure within 28 days were recruited through convenience sampling. Each completed a 20- to 30-minute semi-structured interview and filled out the Chinese version of the Stanford Acute Stress Reaction Questionnaire (SASRQ; 1). Metaphors in the interviews were identified using the discourse dynamic approach (2), and clinically interesting categories related to trauma and emotion expression, as revealed by previous literature, were sorted out. Standardized frequencies of the categories were correlated with participants' SASRQ scores of five major ASD symptoms, and the correlational patterns were interpreted from a discourse analytic perspective.ResultsThe study reveals how metaphor usage patterns can reflect the speakers' differentiated experiences of psychopathological symptoms. Compared with individuals who experienced less trauma, those more disturbed by the re-experiencing symptom were more inclined to use emotion-related metaphors and to metaphorize about the self and the self-society relationship. Individuals who experienced more severe anxiety and hyperarousal showed a heightened awareness of self-related issues and diminished attention to others. Those who suffered from more severe impairment in functioning produced more metaphors in the negative valence. Dissociation and avoidance, which were less experientially salient and intense than the others, were not significantly correlated with metaphor usage patterns.ConclusionThis study establishes symptom-level metaphor usage patterns as a previously overlooked but interesting avenue in trauma evaluation, treatment, and research. While the study is confined to a single context, it nevertheless reveals the potential for metaphor research findings to be incorporated as useful materials in psychology education and therapist training."
+  },
+  {
+   "rank": 14,
+   "id": "37400332",
+   "source": "MED",
+   "pmid": "37400332",
+   "pmcid": null,
+   "doi": "10.1016/j.encep.2023.06.005",
+   "first_publication_date": "2023-07-01",
+   "title": "[Validated care programs for patients with functional neurological disorders].",
+   "authors": "Rauline G, Hingray C, Carle-Toulemonde G, Hubsch C, El Hage W, Conejero I, Samalin L, Garcin B, Gharib A.",
+   "journal": "L'Encephale",
+   "pub_types": [
+    "Review",
+    "Journal Article",
+    "English Abstract"
+   ],
+   "open_access": "N",
+   "abstract": "Functional neurological disorder (FND) is a common cause of persistent and disabling neurological symptoms. Diagnostic delay may lead to no treatment, inappropriate treatment or even iatrogenic symptoms. Yet, several treatments significantly reduce physical symptoms and improve functioning in FND patients even though not all patients respond to the currently available treatments. This review aims to describe the range of evidence-based rehabilitative and/or psychological therapeutic approaches available for FND patients. The most effective treatments are multidisciplinary and coordinated; using an outpatient or inpatient setting. Building a network of FND-trained healthcare professionals around the patient is an essential aspect of optimal patient management. Indeed, a supportive environment coupled with a collaborative therapeutic relationship improves understanding of FND and appears to help patients engage in appropriate treatments. Patients need to be invested in their own care and have to understand that recovery may depend on their commitment. The conventional treatment combines psychoeducation, physical rehabilitation and psychotherapy (cognitive and behavioral therapy, hypnosis, psychodynamic interpersonal therapy). Early referral of patients to physical therapy is recommended; however, the optimal parameters of treatment, duration and intensity are unknown and seem to vary with the severity and chronicity of symptoms. The goal is to minimize self-awareness by diverting attention or by stimulating automatically generated movements with non-specific and gradual exercises. The use of compensatory technical aids should be avoided as much as possible. Psychotherapeutic management should encourage self-evaluation of cognitive distortions, emotional reactions and maladaptive behaviors while empowering the patient in managing symptoms. Symptom management can use anchoring strategies to fight against dissociation. The aim is to connect to the immediate environment and to enrich one's sensoriality. The psychological interventions should then be adapted to the individual psychopathology, cognitive style and personality functioning of each patient. There is currently no known curative pharmacological treatment for FND. The pharmacological approach rather consists of progressively discontinuing medication that was introduced by default and that could lead to undesirable side effects. Finally, neurostimulation (transcranial magnetic stimulation, transcranial direct current stimulation) can be effective on motor FND."
+  },
+  {
+   "rank": 15,
+   "id": "35627228",
+   "source": "MED",
+   "pmid": "35627228",
+   "pmcid": "PMC9141026",
+   "doi": "10.3390/genes13050843",
+   "first_publication_date": "2022-05-08",
+   "title": "The Molecular Genetics of Dissociative Symptomatology: A Transdiagnostic Literature Review.",
+   "authors": "Rajkumar RP.",
+   "journal": "Genes",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Dissociative disorders are a common and frequently undiagnosed group of psychiatric disorders, characterized by disruptions in the normal integration of awareness, personality, emotion and behavior. The available evidence suggests that these disorders arise from an interaction between genetic vulnerability and stress, particularly traumatic stress, but the attention paid to the underlying genetic diatheses has been sparse. In this paper, the existing literature on the molecular genetics of dissociative disorders, as well as of clinically significant dissociative symptoms not reaching the threshold of a disorder, is reviewed comprehensively across clinical and non-clinical samples. Association studies suggest a link between dissociative symptoms and genes related to serotonergic, dopaminergic and peptidergic transmission, neural plasticity and cortisol receptor sensitivity, particularly following exposure to childhood trauma. Genome-wide association studies have identified loci of interest related to second messenger signaling and synaptic integration. Though these findings are inconsistent, they suggest biologically plausible mechanisms through which traumatic stress can lead to pathological dissociation. However, methodological concerns related to phenotype definition, study power, and correction for the confounding factors limit the value of these findings, and they require replication and extension in studies with better design."
+  },
+  {
+   "rank": 16,
+   "id": "34315095",
+   "source": "MED",
+   "pmid": "34315095",
+   "pmcid": null,
+   "doi": "10.1016/j.addbeh.2021.107043",
+   "first_publication_date": "2021-07-07",
+   "title": "Beyond internalizing and externalizing symptoms: The association between body disconnection and the symptoms of Internet gaming disorder.",
+   "authors": "Casale S, Musicò A, Schimmenti A.",
+   "journal": "Addictive behaviors",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "As the vast majority of online videogames imply the immersion into an alternative reality where a virtual body is also involved, the current cross-sectional study aims to investigate the contribution of low body awareness (i.e. low attention to sensory cues indicating bodily state) and body dissociation (i.e. low emotional connection with one's own body) in predicting Internet gaming disorder (IGD) symptoms, after controlling for internalizing (i.e., depression, anxiety, and stress) and externalizing symptoms (i.e., aggression). A total of 370 online-game players (73% men; mean age 29.63 ± 7.64 years) recruited in online player communities took part in the study and were given a survey that included gaming characteristics, the Depression, Anxiety and Stress Scale -21, the Aggression Questionnaire, the Body Disconnection Scale, and the Internet Gaming Disorder Scale- Short Form. A hierarchical regression analysis showed that low body awareness and high body dissociation predicted IGD scores after controlling for all the other factors. Moreover, we found an interaction effect between physical aggression and body dissociation in predicting IGD scores. On the one hand, these results provide support to previous studies that stressed the potential association between dissociative detachment (in terms of bodily disconnections) and problematic videogaming; on the other hand, the current study provides first evidence of the opportunity to focus on the integration of bodily experiences in clinical practice with people suffering from problematic gaming, as this factor might be incisively related to their aggressive and internalizing symptoms."
+  },
+  {
+   "rank": 17,
+   "id": "34782628",
+   "source": "MED",
+   "pmid": "34782628",
+   "pmcid": "PMC8592987",
+   "doi": "10.1038/s41598-021-01039-2",
+   "first_publication_date": "2021-11-15",
+   "title": "The effects of subliminal or supraliminal sadness induction on the sense of body ownership and the role of dissociative symptoms.",
+   "authors": "Schroter FA, Günther BA, Jansen P.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Previous research has shown that emotions can alter our sense of ownership. Whether this relationship is modulated by differences in emotion experience and awareness, however, remains unclear. We investigated this by comparing the susceptibility to the rubber hand illusion (RHI) between participants who were either exposed to a low-arousing emotion induction (sadness) or placed in a neutral control group. Several factors that might influence this relationship were considered: dissociative symptoms were included to observe if a sadness induction led to a higher RHI score in participants scoring high in dissociation, as a result of detached emotion experience. Whether the level of awareness of the emotion mattered was also tested, as subliminal processing was shown to require less focal attention. Therefore, our sample (N = 122) was divided into three experimental groups: Sad pictures were presented to two of the three groups differing in presentation mode (subliminal: n = 40, supraliminal: n = 41), neutral pictures were presented supraliminally to the control group (n = 41). Additionally, the effects of slow (3 cm/s) and fast (30 cm/s) stroking, applied either synchronously or asynchronously, were examined as the comforting effects of stroking might interfere with the emotion induction. Results showed that the supraliminal sadness induction was associated with a stronger subjective illusion, but not with a higher proprioceptive drift compared to the subliminal induction. In addition, a stronger subjective illusion after fast and synchronous stroking was found compared to slow and asynchronous stroking. A significant proprioceptive drift was detected independent of group and stroking style. Both slow and synchronous stroking were perceived as more comforting than their respective counterparts. Participants with higher dissociative symptoms were more susceptible to the subjective illusion, especially in the supraliminal group in the synchronous condition. We concluded that individual differences in emotion experience are likely to play a role in body ownership. However, we cannot clarify at this stage whether differences in proprioception and the subjective illusion depend on the type of emotion experienced (e.g. different levels of arousal) and on concomitant changes in multisensory integration processes."
+  },
+  {
+   "rank": 18,
+   "id": "31705421",
+   "source": "MED",
+   "pmid": "31705421",
+   "pmcid": "PMC6995984",
+   "doi": "10.1007/s10803-019-04279-4",
+   "first_publication_date": "2020-02-01",
+   "title": "Dissociation in How Core Autism Features Relate to Interoceptive Dimensions: Evidence from Cardiac Awareness in Children.",
+   "authors": "Palser ER, Fotopoulou A, Pellicano E, Kilner JM.",
+   "journal": "Journal of autism and developmental disorders",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Interoception in autism is receiving increasing research attention. Previously, differences were identified in autism on both objective and subjective measures of interoception, and an association with anxiety. Yet, it is currently unknown how interoception relates to core autism features. Here, in 49 autistic children, we consider how interoceptive accuracy (measured with heartbeat detection tasks) and sensibility (subjective judgements of awareness) relate to overall severity on the Autism Diagnostic Observation Schedule, and symptom domains of social-affective and repetitive, restricted behaviors. Socio-affective features were related to interoceptive sensibility, while repetitive restricted behaviors were related to interoceptive accuracy. This dissociation suggests disparate interoceptive mechanisms for the formation and/or maintenance of autistic features."
+  },
+  {
+   "rank": 19,
+   "id": "33101689",
+   "source": "MED",
+   "pmid": "33101689",
+   "pmcid": "PMC7579937",
+   "doi": "10.1186/s40479-020-00139-1",
+   "first_publication_date": "2020-10-22",
+   "title": "Altered interoception in patients with borderline personality disorder: a study using heartbeat-evoked potentials.",
+   "authors": "Flasbeck V, Popkirov S, Ebert A, Brüne M.",
+   "journal": "Borderline personality disorder and emotion dysregulation",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundPatients with borderline personality disorder (BPD) experience difficulties in emotional awareness (alexithymia), and often develop dissociative symptoms, which may reflect broader deficits in interoceptive awareness. Whether this is associated with alterations in cortical processing of interoception is currently unknown.MethodsWe utilized an electrophysiological marker of interoception, i.e. heartbeat-evoked potentials (HEP), and examined its relationship with electrocardiographic correlates of autonomic nervous system (ANS) functioning (heart rate variability), and with self-report measures of alexithymia, dissociation and borderline symptom severity in patients with BPD.ResultsIndividuals with BPD had higher HEP amplitudes over frontal electrodes compared to healthy controls. Sympathetic ANS activity was greater in BPD patients than in controls. Across groups, HEP amplitudes were associated with parasympathetic activity over central electrodes and correlated with alexithymia over frontal electrodes.ConclusionsThese findings support the idea that difficulties in emotional awareness in BPD are reflected in altered frontal electrophysiological markers of interception. Therefore, emotional awareness can be understood as failures of modulation between interoceptive and exteroceptive attention. Future research may aim to investigate whether altered interoception and its electrophysiological correlates are malleable by therapeutic intervention."
+  },
+  {
+   "rank": 20,
+   "id": "32754097",
+   "source": "MED",
+   "pmid": "32754097",
+   "pmcid": "PMC7367138",
+   "doi": "10.3389/fpsyg.2020.01630",
+   "first_publication_date": "2020-07-10",
+   "title": "Motivated Cue-Integration and Emotion Regulation: Awareness of the Association Between Interoceptive and Exteroceptive Embodied Cues and Personal Need Creates an Emotion Goal.",
+   "authors": "Shalev I.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "brief-report",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Research on emotion suggests that individuals regulate their emotions to attain hedonic or instrumental goals. However, little is known of emotion regulation under low emotional clarity. The theory of motivated cue integration (MCI) suggests that emotion regulation under low emotional clarity should be understood as dissociation between a high-level individual hierarchical system of goals and low level interoceptive and exteroceptive embodied cues. MCI conceptualizes low emotional clarity as the product of low access to signals of emotion that result in prediction error associated with mismatch between the current bodily state and the predicted state. This deficit in emotional processing could be understood as a problem of means substitution, suggesting that use of alternative multisensory data may facilitate situational evaluation. Based on this reasoning, a new perspective on emotion regulation under low emotional clarity is presented, according to which interchangeable attention to multisensory data associated with words, associations, and images may help in cue integration, enabling the creation of a link between concrete bodily cues, abstract mental representation, and a more accurate prediction. Based on the idea that emotional episodes are conceptualized as special types of goal-directed action episodes, this process will lead to the creation of broader integrative meaning, results in the development of emotion goal."
+  },
+  {
+   "rank": 21,
+   "id": "29873088",
+   "source": "MED",
+   "pmid": "29873088",
+   "pmcid": null,
+   "doi": "10.1111/bjc.12186",
+   "first_publication_date": "2018-06-05",
+   "title": "Dissociative absorption, mind-wandering, and attention-deficit symptoms: Associations with obsessive-compulsive symptoms.",
+   "authors": "Soffer-Dudek N.",
+   "journal": "The British journal of clinical psychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveDissociative absorption is a tendency to become absorbed in imagination or in an external stimulus (movie, book) to the point of obliviousness to one's surroundings and reduced self-awareness. It has been hypothesized to play a role in the maintenance of obsessive-compulsive (OC) symptoms. However, because absorption is a trait of reduced attentional control, a possible confound may be attention-deficit/hyperactivity (ADHD) symptoms, which have been reported to be comorbid with obsessive-compulsive disorder (OCD). This study aimed to validate dissociative absorption as unique from ADHD symptoms as well as from mind-wandering and to show that it has incremental predictive value over these constructs in predicting OC symptoms.DesignCross-sectional.MethodThree-hundred and three undergraduate students completed online questionnaires, which were analysed using exploratory and confirmatory factor analyses.ResultsAs hypothesized, dissociative absorption emerged as a unique construct, separate from ADHD, and mind-wandering (whereas the latter two were not completely separate from each other). Additionally, absorption was uniquely associated with OC symptoms, with a moderate-to-strong effect size, demonstrating incremental predictive value over the other constructs.ConclusionsAttentional deficits and mind-wandering cannot account for the association between absorption and OC symptoms. Future research should explore whether reports of comorbidity between ADHD and OC symptoms may be inflated due to misdiagnosis of absorption tendencies as ADHD.Practitioner pointsDissociative absorption is a personality tendency that may interact with obsessive-compulsive symptoms, and thus, it may deserve clinical attention when treating obsessive-compulsive disorder (OCD) Dissociative absorption might bring about an unnecessary diagnosis of attention-deficit hyperactivity disorder (ADHD) in individuals with obsessive-compulsive symptoms, and thus, it should be screened for. This study was based on a non-clinical sample; future studies should replicate the findings among samples with an OCD diagnosis. This study is based on self-report questionnaires; future studies should use clinician interviews."
+  },
+  {
+   "rank": 22,
+   "id": "29403397",
+   "source": "MED",
+   "pmid": "29403397",
+   "pmcid": "PMC5786525",
+   "doi": "10.3389/fpsyt.2017.00299",
+   "first_publication_date": "2018-01-22",
+   "title": "Deficits in Response Inhibition in Patients with Attention-Deficit/Hyperactivity Disorder: The Impaired Self-Protection System Hypothesis.",
+   "authors": "Coutinho TV, Reis SPS, da Silva AG, Miranda DM, Malloy-Diniz LF.",
+   "journal": "Frontiers in psychiatry",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Problems in inhibitory control are regarded in Psychology as a key problem associated with attention-deficit/hyperactivity disorder (ADHD). They, however, might not be primary deficits, but instead a consequence of inattention. At least two components have been identified and dissociated in studies in regards to inhibitory control: interference suppression, responsible for controlling interference by resisting irrelevant or misleading information, and response inhibition, referring to withholding a response or overriding an ongoing behavior. Poor error awareness and self-monitoring undermine an individual's ability to inhibit inadequate responses and change course of action. In non-social contexts, an individual depends on his own cognition to regulate his mistakes. In social contexts, however, there are many social cues that should help that individual to perceive his mistakes and inhibit inadequate responses. The processes involved in perceiving and interpreting those social cues are arguably part of a self-protection system (SPS). Individuals with ADHD not only present impulsive behaviors in social contexts, but also have difficulty perceiving their inadequate responses and overriding ongoing actions toward more appropriate ones. In this paper, we discuss that those difficulties are arguably a consequence of an impaired SPS, due to visual attention deficits and subsequent failure in perceiving and recognizing accurately negative emotions in facial expressions, especially anger. We discuss evidence that children with ADHD exhibit problems in a series of components involved in the activation of that system and advocate that the inability to identify the anger expressed by others, and thus, not experiencing the fear response that should follow, is, ultimately, what prevents them from inhibiting the ongoing inappropriate behavior, since a potential threat is not registered. Getting involved in high-risk situations, such as reckless driving, could also be a consequence of not registering a threat and thus, not experiencing fear."
+  },
+  {
+   "rank": 23,
+   "id": "28270759",
+   "source": "MED",
+   "pmid": "28270759",
+   "pmcid": "PMC5319305",
+   "doi": "10.3389/fnhum.2017.00076",
+   "first_publication_date": "2017-02-21",
+   "title": "Attentional Modulation of Change Detection ERP Components by Peripheral Retro-Cueing.",
+   "authors": "Pazo-Álvarez P, Roca-Fernández A, Gutiérrez-Domínguez FJ, Amenedo E.",
+   "journal": "Frontiers in human neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Change detection is essential for visual perception and performance in our environment. However, observers often miss changes that should be easily noticed. A failure in any of the processes involved in conscious detection (encoding the pre-change display, maintenance of that information within working memory, and comparison of the pre and post change displays) can lead to change blindness. Given that unnoticed visual changes in a scene can be easily detected once attention is drawn to them, it has been suggested that attention plays an important role on visual awareness. In the present study, we used behavioral and electrophysiological (ERPs) measures to study whether the manipulation of retrospective spatial attention affects performance and modulates brain activity related to the awareness of a change. To that end, exogenous peripheral cues were presented during the delay period (retro-cues) between the first and the second array using a one-shot change detection task. Awareness of a change was associated with a posterior negative amplitude shift around 228-292 ms (\"Visual Awareness Negativity\"), which was independent of retrospective spatial attention, as it was elicited to both validly and invalidly cued change trials. Change detection was also associated with a larger positive deflection around 420-580 ms (\"Late Positivity\"), but only when the peripheral retro-cues correctly predicted the change. Present results confirm that the early and late ERP components related to change detection can be functionally dissociated through manipulations of exogenous retro-cueing using a change blindness paradigm."
+  },
+  {
+   "rank": 24,
+   "id": "26481979",
+   "source": "MED",
+   "pmid": "26481979",
+   "pmcid": "PMC5645022",
+   "doi": "10.1016/j.pscychresns.2015.09.016",
+   "first_publication_date": "2015-09-21",
+   "title": "Intact error monitoring in combat Veterans with post-traumatic stress disorder.",
+   "authors": "Swick D, Honzel N, Turken U.",
+   "journal": "Psychiatry research",
+   "pub_types": [
+    "research-article",
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The error-related negativity (ERN) is a neuroelectric signature of performance monitoring during speeded response time tasks. Previous studies indicate that individuals with anxiety disorders show ERN enhancements that correlate with the degree of clinical symptomology. Less is known about the error monitoring system in post-traumatic stress disorder (PTSD). PTSD is characterized by impairments in the regulation of fear and other emotional responses, as well as deficits in maintaining cognitive control. Here, combat Veterans with PTSD were compared to control Veterans in two different versions of the flanker task (n=13 or 14 per group). Replicating and extending previous findings, PTSD patients showed an intact ERN in both experiments. In addition, task performance and error compensation behavior were intact. Finally, ERN amplitude showed no relationship with self-reported PTSD, depression, or post-concussive symptoms. These results suggest that error monitoring represents a relative strength in PTSD that can dissociate from cognitive control functions that are impaired, such as response inhibition and sustained attention. A healthy awareness of errors in external actions could be leveraged to improve interoceptive awareness of emotional state. The results could have positive implications for PTSD treatments that rely on self-monitoring abilities, such as neurofeedback and mindfulness training."
+  },
+  {
+   "rank": 25,
+   "id": "25912677",
+   "source": "MED",
+   "pmid": "25912677",
+   "pmcid": null,
+   "doi": "10.1016/j.jbtep.2015.04.001",
+   "first_publication_date": "2015-04-14",
+   "title": "Dissociation between the cognitive and interoceptive components of mindfulness in the treatment of chronic worry.",
+   "authors": "Delgado-Pastor LC, Ciria LF, Blanca B, Mata JL, Vera MN, Vila J.",
+   "journal": "Journal of behavior therapy and experimental psychiatry",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjetivesDespite the increasing interest in mindfulness, the basic components and action mechanisms of mindfulness remain controversial. The present study aims at testing the specific contribution of two components of mindfulness -attention to cognitive experience (metacognition) and awareness of interoceptive sensations (metainteroception)- in the treatment of chronic worry.MethodForty five female university students with high scores in the Penn State Worry Questionnaire were split into three groups: a mindfulness cognitive training group, a mindfulness interoceptive training group, and a non-intervention control group. Participants were assessed before and after the intervention using physiological indices of autonomic regulation (skin conductance, heart rate, heart rate variability, and respiratory sinus arrhythmia) and self-report indices of mindfulness and clinical symptoms (chronic worry, depression, positive and negative affect, and perceived stress).ResultsBoth mindfulness training groups showed significant improvement after the intervention in self-report indices of mindfulness and clinical symptoms. However, the interoceptive training group was superior in also showing significant improvement in the physiological indices of autonomic regulation.LimitationsThe relatively small sample size may have increased the probabilities of type I and II errors. Our Intervention program was relatively short. The participants were all female.ConclusionsThese results support the hypothesis that, in the context of treating chronic worry, the interoceptive and cognitive components can be somewhat dissociated and that, when both components are applied separately, compared to a non-intervention condition, the interoceptive component is more effective."
+  },
+  {
+   "rank": 26,
+   "id": "25954242",
+   "source": "MED",
+   "pmid": "25954242",
+   "pmcid": "PMC4407481",
+   "doi": "10.3389/fpsyg.2015.00500",
+   "first_publication_date": "2015-04-23",
+   "title": "The attention schema theory: a mechanistic account of subjective awareness.",
+   "authors": "Graziano MS, Webb TW.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "We recently proposed the attention schema theory, a novel way to explain the brain basis of subjective awareness in a mechanistic and scientifically testable manner. The theory begins with attention, the process by which signals compete for the brain's limited computing resources. This internal signal competition is partly under a bottom-up influence and partly under top-down control. We propose that the top-down control of attention is improved when the brain has access to a simplified model of attention itself. The brain therefore constructs a schematic model of the process of attention, the 'attention schema,' in much the same way that it constructs a schematic model of the body, the 'body schema.' The content of this internal model leads a brain to conclude that it has a subjective experience. One advantage of this theory is that it explains how awareness and attention can sometimes become dissociated; the brain's internal models are never perfect, and sometimes a model becomes dissociated from the object being modeled. A second advantage of this theory is that it explains how we can be aware of both internal and external events. The brain can apply attention to many types of information including external sensory information and internal information about emotions and cognitive states. If awareness is a model of attention, then this model should pertain to the same domains of information to which attention pertains. A third advantage of this theory is that it provides testable predictions. If awareness is the internal model of attention, used to help control attention, then without awareness, attention should still be possible but should suffer deficits in control. In this article, we review the existing literature on the relationship between attention and awareness, and suggest that at least some of the predictions of the theory are borne out by the evidence."
+  },
+  {
+   "rank": 27,
+   "id": "24223545",
+   "source": "MED",
+   "pmid": "24223545",
+   "pmcid": "PMC3819597",
+   "doi": "10.3389/fnhum.2013.00743",
+   "first_publication_date": "2013-11-07",
+   "title": "The balanced mind: the variability of task-unrelated thoughts predicts error monitoring.",
+   "authors": "Allen M, Smallwood J, Christensen J, Gramm D, Rasmussen B, Jensen CG, Roepstorff A, Lutz A.",
+   "journal": "Frontiers in human neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Self-generated thoughts unrelated to ongoing activities, also known as \"mind-wandering,\" make up a substantial portion of our daily lives. Reports of such task-unrelated thoughts (TUTs) predict both poor performance on demanding cognitive tasks and blood-oxygen-level-dependent (BOLD) activity in the default mode network (DMN). However, recent findings suggest that TUTs and the DMN can also facilitate metacognitive abilities and related behaviors. To further understand these relationships, we examined the influence of subjective intensity, ruminative quality, and variability of mind-wandering on response inhibition and monitoring, using the Error Awareness Task (EAT). We expected to replicate links between TUT and reduced inhibition, and explored whether variance in TUT would predict improved error monitoring, reflecting a capacity to balance between internal and external cognition. By analyzing BOLD responses to subjective probes and the EAT, we dissociated contributions of the DMN, executive, and salience networks to task performance. While both response inhibition and online TUT ratings modulated BOLD activity in the medial prefrontal cortex (mPFC) of the DMN, the former recruited a more dorsal area implying functional segregation. We further found that individual differences in mean TUTs strongly predicted EAT stop accuracy, while TUT variability specifically predicted levels of error awareness. Interestingly, we also observed co-activation of salience and default mode regions during error awareness, supporting a link between monitoring and TUTs. Altogether our results suggest that although TUT is detrimental to task performance, fluctuations in attention between self-generated and external task-related thought is a characteristic of individuals with greater metacognitive monitoring capacity. Achieving a balance between internally and externally oriented thought may thus aid individuals in optimizing their task performance."
+  },
+  {
+   "rank": 28,
+   "id": "22917568",
+   "source": "MED",
+   "pmid": "22917568",
+   "pmcid": null,
+   "doi": "10.1016/j.neuropsychologia.2012.08.004",
+   "first_publication_date": "2012-08-15",
+   "title": "Suppression of aversive memories associates with changes in early and late stages of neurocognitive processing.",
+   "authors": "Chen C, Liu C, Huang R, Cheng D, Wu H, Xu P, Mai X, Luo YJ.",
+   "journal": "Neuropsychologia",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Unwanted memories, such as emotionally negative, can be intentionally suppressed through voluntary control in humans. Memory suppression is thought to be mediated by the interplay of a chain of neurocognitive processes. However, empirical data in support of this notion is lacking. Using high-temporal resolution event-related potential (ERP) technique, we investigated the time course of ERPs associated with suppression of negative and neutral memories in a Think/No-Think paradigm in young, healthy participants. Results showed that participants had greater difficulty in suppressing emotionally negative memories than neutral ones. ERPs and source analyses demonstrated that memory suppression processing for negative and neutral memories were generally associated with changes during early components of a time window of 70-260 ms, such as P1 and N2, mainly at the right inferior frontal gyrus and occipital lobe; suppression of aversive memories was associated with two major late ERP components between 380 and 800 ms, with significantly smaller later negativity (LN) but larger late parietal positivity (LPP), primarily at the right medial and superior frontal gyri. These results suggest that differences in early components may reflect early stages of suppression processing including visual awareness, attention reallocation, and executive processing. Differences in late components between suppression of aversive and neutral memories may reflect a process of down-regulating conscious recollection of memory representations supported by prefrontal and parietal networks. A less effective control of this process, as evidenced by smaller LN and larger LPP, may explain the fact that emotionally negative memories were harder to be suppressed. Altogether, these findings suggest that suppression of aversive memories requires down-regulation of late conscious recollection, which can be dissociated from early visual and attention processing in memory suppression."
+  },
+  {
+   "rank": 29,
+   "id": "22514773",
+   "source": "MED",
+   "pmid": "22514773",
+   "pmcid": "PMC3324744",
+   "doi": "10.3344/kjp.2012.25.2.75",
+   "first_publication_date": "2012-04-04",
+   "title": "Use of hypnosis in the treatment of pain.",
+   "authors": "Lee JS, Pyun YD.",
+   "journal": "The Korean journal of pain",
+   "pub_types": [
+    "review-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Hypnosis is an altered state of consciousness that comprises of heightened absorption in focal attention, dissociation of peripheral awareness, and enhanced responsiveness to social cues. Hypnosis has a long tradition of effectiveness in controlling somatic symptoms, such as pain. Pain, the most common symptom in clinical practice, is a multi-dimensional experience, which includes sensory-discriminative, affective-emotional, cognitive and behavioral components. There is a growing recognition for hypnosis and related techniques in pain management. Psychological approaches to pain control, such as hypnosis, can be highly effective analgesics, but are underused in Korea. In this article, we would like to review the basic concepts of hypnosis, the mechanism, and the outcome data of the analgesic effects of hypnosis, and also, its limitations."
+  },
+  {
+   "rank": 30,
+   "id": "22586386",
+   "source": "MED",
+   "pmid": "22586386",
+   "pmcid": "PMC3345871",
+   "doi": "10.3389/fnhum.2012.00121",
+   "first_publication_date": "2012-05-07",
+   "title": "The role of consciousness in cognitive control and decision making.",
+   "authors": "van Gaal S, de Lange FP, Cohen MX.",
+   "journal": "Frontiers in human neuroscience",
+   "pub_types": [
+    "review-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Here we review studies on the complexity and strength of unconscious information processing. We focus on empirical evidence that relates awareness of information to cognitive control processes (e.g., response inhibition, conflict resolution, and task-switching), the life-time of information maintenance (e.g., working memory) and the possibility to integrate multiple pieces of information across space and time. Overall, the results that we review paint a picture of local and specific effects of unconscious information on various (high-level) brain regions, including areas in the prefrontal cortex. Although this neural activation does not elicit any conscious experience, it is functional and capable of influencing many perceptual, cognitive (control) and decision-related processes, sometimes even for relatively long periods of time. However, recent evidence also points out interesting dissociations between conscious and unconscious information processing when it comes to the duration, flexibility and the strategic use of that information for complex operations and decision-making. Based on the available evidence, we conclude that the role of task-relevance of subliminal information and meta-cognitive factors in unconscious cognition need more attention in future work."
+  },
+  {
+   "rank": 31,
+   "id": "21270446",
+   "source": "MED",
+   "pmid": "21270446",
+   "pmcid": null,
+   "doi": "10.1177/0956797610397665",
+   "first_publication_date": "2011-01-26",
+   "title": "Dissociating spatial attention and awareness in emotion-induced blindness.",
+   "authors": "Most SB, Wang L.",
+   "journal": "Psychological science",
+   "pub_types": [
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Emotional stimuli attract spatial attention, sometimes improving perception at their location. But they also can disrupt awareness of targets at their location, a phenomenon known as emotion-induced blindness. Such discrepant findings might reflect the impact of emotional stimuli on different perception mechanisms. We dissociated spatial attention and awareness by investigating the spatial distribution of emotion-induced blindness. Participants searched for a target within two simultaneous rapid streams of pictures, one of which could also contain a preceding emotional distractor. When targets were followed by additional stream items, emotion-induced blindness occurred only at the location of the distractor. However, when no items appeared after the target, so that it could persist in iconic memory and its temporal position was easily discernible, emotional disruption of target perception was more robust away from the distractor's location than at the distractor's location. The results suggest that although emotional distractors attract spatial attention, they inhibit identification of competing items potentially linked to the same spatiotemporal position."
+  },
+  {
+   "rank": 32,
+   "id": "17854280",
+   "source": "MED",
+   "pmid": "17854280",
+   "pmcid": null,
+   "doi": "10.1162/jocn.2007.19.10.1595",
+   "first_publication_date": "2007-10-01",
+   "title": "Neural biases to covert and overt signals of fear: dissociation by trait anxiety and depression.",
+   "authors": "Williams LM, Kemp AH, Felmingham K, Liddell BJ, Palmer DM, Bryant RA.",
+   "journal": "Journal of cognitive neuroscience",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Although biases toward signals of fear may be an evolutionary adaptation necessary for survival, heightened biases may be maladaptive and associated with anxiety or depression. In this study, event-related potentials (ERPs) were used to examine the time course of neural responses to facial fear stimuli (versus neutral) presented overtly (for 500 msec with conscious attention) and covertly (for 10 msec with immediate masking to preclude conscious awareness) in 257 nonclinical subjects. We also examined the impact of trait anxiety and depression, assessed using psychometric ratings, on the time course of ERPs. In the total subject group, controlled biases to overtly processed fear were reflected in an enhancement of ERPs associated with structural encoding (120-220 msec) and sustained evaluation persisting from 250 msec and beyond, following a temporo-occipital to frontal topography. By contrast, covert fear processing elicited automatic biases, reflected in an enhancement of ERPs prior to structural encoding (80-180 msec) and again in the period associated with automatic orienting and emotion encoding (230-330 msec), which followed the reverse frontal to temporo-occipital topography. Higher levels of trait anxiety (in the clinical range) were distinguished by a heightened bias to covert fear (speeding of early ERPs), compared to higher depression which was associated with an opposing bias to overt fear (slowing of later ERPs). Anxiety also heightened early responses to covert fear, and depression to overt fear, with subsequent deficits in emotion encoding in each case. These findings are consistent with neural biases to signals of fear which operate automatically and during controlled processing, feasibly supported by parallel networks. Heightened automatic biases in anxiety may contribute to a cycle of hypervigilance and anxious thoughts, whereas depression may represent a \"burnt out\" emotional state in which evaluation of fear stimuli is prolonged only when conscious attention is allocated."
+  },
+  {
+   "rank": 33,
+   "id": "16455142",
+   "source": "MED",
+   "pmid": "16455142",
+   "pmcid": null,
+   "doi": "10.1016/j.psychres.2005.03.007",
+   "first_publication_date": "2006-02-07",
+   "title": "Identity state-dependent attentional bias for facial threat in dissociative identity disorder.",
+   "authors": "Hermans EJ, Nijenhuis ER, van Honk J, Huntjens RJ, van der Hart O.",
+   "journal": "Psychiatry research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Biased attention for threatening stimuli has been associated with many forms of psychopathology. Attention to threatening faces presented below perceptual thresholds was assessed in patients diagnosed with dissociative identity disorder using a pictorial emotional Stroop task. Patients were tested in two different identity states, in one of which they claimed strong awareness of trauma. Attentional bias for social threat proved state-dependent in the patients and deviated from the patterns observed in controls."
+  },
+  {
+   "rank": 34,
+   "id": "15465571",
+   "source": "MED",
+   "pmid": "15465571",
+   "pmcid": null,
+   "doi": "10.1016/j.jad.2003.10.006",
+   "first_publication_date": "2004-10-01",
+   "title": "Adaptive and maladaptive self-focus in depression.",
+   "authors": "Watkins E, Teasdale JD.",
+   "journal": "Journal of affective disorders",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundStudies of rumination suggest that self-focused attention is maladaptive and perpetuates depression. Conversely, self-focused attention can be adaptive, facilitating self-knowledge and the development of the alternative functional interpretations of negative thoughts and feelings on which cognitive therapy of depression depends. Increasing evidence suggests there are distinct varieties of self-focus, each with distinct functional properties. This study tested the prediction that in depressed patients brief inductions of analytical versus experiential self-focus would differentially affect overgeneral autobiographical memory, a phenomenon associated with poor clinical course. It was predicted that, relative to analytical self-focus, experiential self-focus would reduce overgeneral memory.Methods28 depressed patients either thought analytically about, or focused on their momentary experience of, identical symptom-focused induction items from [Cogn. Emotion 7 (1993) 561] rumination task. Participants completed the Autobiographical Memory Test [J. Abnorm. Psychol. 95 (1986) 144] before and after self-focus manipulations.ResultsExperiential self-focus reduced overgeneral memory compared to analytical self-focus. Analytical and experiential self-focus did not differ in their effects on mood.LimitationsIn the absence of a reference condition, only conclusions concerning the relative effects of analytical and experiential self-focus can be made.ConclusionsResults (1) support the differentiation of self-focus into distinct modes of self-attention with distinct functional effects in depression; (2) provide further evidence for the modifiability of overgeneral memory; and (3) provide further evidence for the dissociation of overgeneral memory and depressed mood. Clinically, results support the usefulness of training recovered depressed patients in adaptive experiential forms of self-awareness, as in mindfulness-based cognitive therapy."
+  },
+  {
+   "rank": 35,
+   "id": "9105571",
+   "source": "MED",
+   "pmid": "9105571",
+   "pmcid": null,
+   "doi": "10.1016/s0166-4328(96)00161-1",
+   "first_publication_date": "1997-05-01",
+   "title": "Neurobiology of consciousness: an overview.",
+   "authors": "Delacour J.",
+   "journal": "Behavioural brain research",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The aim of this review is to connect the phenomenology of consciousness to its neurobiology. A survey of the recent literature revealed the following points. (1) Comprehensive descriptions of consciousness, of its subjective as well as of its objective aspects, are both possible and necessary for its scientific study. An intentionality-modeling structure (an unified and stable ego refers to objects or to itself in the framework of a stable, reproducible, predictable world) accounts for the main features. (2) The material basis of consciousness can be clarified without recourse to new properties of matter or to quantum physics. Current neurobiology appears to be able to handle the problem. In fact, the neurobiology of consciousness is already in progress, and has achieved substantial results. At the system level, its main sources of data are: the neurophysiology of sleep-wakefulness, brain imaging of mental representations, attention and working memory, the neuropsychology of frontal syndrome, and awareness-unawareness dissociations in global amnesia and different forms of agnosia. At an intermediate level of organization, the mechanisms of consciousness may be the formation of a certain kind of neural assembly. (3) Further research may focus on neuropsychology and neurophysiology of object perception and recognition as a natural model of intentionality, perception of time, body schema, interhemispheric communications, 'voluntary' acts and mental images. The synthetic and dynamic views provided by brain imaging may be decisive for discovering the neural correlates of the integrative aspects of consciousness. (4) The neurobiological approach may, beyond the finding of cellular and molecular mechanisms, improve the general concepts of consciousness, overcome their antinomies and, against epiphenomenalism, definitely establish the reality of consciousness."
+  },
+  {
+   "rank": 36,
+   "id": "8165269",
+   "source": "MED",
+   "pmid": "8165269",
+   "pmcid": null,
+   "doi": "10.1037/0033-2909.115.2.163",
+   "first_publication_date": "1994-03-01",
+   "title": "Implicit learning.",
+   "authors": "Seger CA.",
+   "journal": "Psychological bulletin",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Implicit learning is nonepisodic learning of complex information in an incidental manner, without awareness of what has been learned. Implicit learning experiments use 3 different stimulus structures (visual, sequence, and function) and 3 different dependent measures or response modalities (conceptual fluency, efficiency, and prediction and control). Implicit learning may require a certain minimal amount of attention and may depend on attentional and working memory mechanisms. The result of implicit learning is implicit knowledge in the form of abstract (but possibly instantiated) representations rather than verbatim or aggregate representations. Implicit learning shows biases and dissociations in learning different stimulus structures. The dependence of implicit learning on particular brain areas is discussed, some conclusions are drawn for modeling implicit learning, and the interaction of implicit and explicit learning is considered."
+  },
+  {
+   "rank": 37,
+   "id": "2006678",
+   "source": "MED",
+   "pmid": "2006678",
+   "pmcid": null,
+   "doi": "10.1037/h0079232",
+   "first_publication_date": "1991-01-01",
+   "title": "Integrating affect in treatment with adult survivors of physical and sexual abuse.",
+   "authors": "Cornell WF, Olio KA.",
+   "journal": "The American journal of orthopsychiatry",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "A theoretical and technical model for affectively-centered treatment of adults abused as children is presented, with particular attention to the function of denial and dissociation as central defense mechanisms. The concept is introduced of working at an \"affective edge,\" at which a client can maintain both cognitive understanding and emotional and bodily awareness without triggering denial and dissociation. Special considerations and precautions are discussed."
+  }
+ ]
+}

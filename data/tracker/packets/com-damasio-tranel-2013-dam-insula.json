@@ -1,0 +1,65 @@
+{
+  "packet_id": "com-damasio-tranel-2013-dam-insula",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Damasio's feeling-based theory",
+  "core_claim": {
+    "quote": "Finally, we outline a mechanism for the generation of feelings based on a two-way interaction between interoceptive components of the nervous system and a particular set of nonneural components of the organism's interior, namely, viscera and circulating chemical molecules involved in their operations.",
+    "source": {
+      "citation": "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023",
+      "url": "https://doi.org/10.1162/neco_a_01521",
+      "date": "2022-07-27"
+    }
+  },
+  "prediction": {
+    "statement": "Feelings, of the body and of emotions, survive complete destruction of the insula on both sides of the brain, because the insula re-maps feelings first assembled lower down.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2012-04-03",
+      "passage": "The activity patterns unequivocally present in the insular cortex during feeling states would constitute a second-order mapping of activity patterns first assembled subcortically.",
+      "source": {
+        "citation": "Damasio A, Damasio H, Tranel D. Persistence of feelings and sentience after bilateral damage of the insula. Cerebral Cortex 23(4):833-846, 2013",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3657385/",
+        "date": "2012-04-03"
+      }
+    },
+    "test_for": "A person with complete loss of both insulae (brainstem intact) shows a normal range of feelings, by self-report and by observers' ratings.",
+    "test_against": "Complete loss of both insulae abolishes or flattens feelings of the body and of emotions."
+  },
+  "study": {
+    "name": "Patient B.: feelings after complete destruction of the insula on both sides",
+    "source": {
+      "citation": "Damasio A, Damasio H, Tranel D. Persistence of feelings and sentience after bilateral damage of the insula. Cerebral Cortex 23(4):833-846, 2013",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3657385/",
+      "date": "2012-04-03"
+    },
+    "first_appeared": "2012-04-03 (publication, online version (Europe PMC))",
+    "data_collected": {
+      "when": "over about two decades after 1975, before 2012-04-03",
+      "basis": "Patient B. fell ill in October 1975 and was studied 'over a period of 2 decades'; he had died by the time of writing."
+    }
+  },
+  "passages": [
+    {
+      "text": "The activity patterns unequivocally present in the insular cortex during feeling states would constitute a second-order mapping of activity patterns first assembled subcortically.",
+      "source": {
+        "citation": "Damasio A, Damasio H, Tranel D. Persistence of feelings and sentience after bilateral damage of the insula. Cerebral Cortex 23(4):833-846, 2013",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3657385/",
+        "date": "2012-04-03"
+      }
+    },
+    {
+      "text": "In this study, we investigate this proposal in a patient whose insular cortices were destroyed bilaterally as a result of Herpes simplex encephalitis. The fact that all aspects of feeling were intact indicates that the proposal is problematic.",
+      "source": {
+        "citation": "Damasio A, Damasio H, Tranel D. Persistence of feelings and sentience after bilateral damage of the insula. Cerebral Cortex 23(4):833-846, 2013",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3657385/",
+        "date": "2012-04-03"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2012-04-03 (this same paper; no earlier opened Damasio publication states it)",
+    "study_first_appeared": "2012-04-03 (publication, online version)"
+  },
+  "this_reading_is": "the second reading"
+}

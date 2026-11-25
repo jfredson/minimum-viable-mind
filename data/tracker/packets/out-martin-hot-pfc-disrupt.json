@@ -1,0 +1,69 @@
+{
+  "packet_id": "out-martin-hot-pfc-disrupt",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Higher-order theories",
+  "core_claim": {
+    "quote": "the hypothesis is that the prefrontal cortex plausibly plays a key role in consciousness because it supports essential cognitive mechanisms that underlie higher-order representations.",
+    "source": {
+      "citation": "Brown R, Lau H, LeDoux JE. Understanding the higher-order approach to consciousness. Trends in Cognitive Sciences 23(9):754-768, 2019. Quoted from the authors' preprint: Brown R, Lau H, LeDoux JE. The misunderstood higher-order approach to consciousness. PsyArXiv, 2019 (doi 10.31234/osf.io/xpy8h)",
+      "url": "https://osf.io/preprints/psyarxiv/xpy8h",
+      "date": "2019-01-07"
+    }
+  },
+  "prediction": {
+    "statement": "Disrupting prefrontal (or prefrontal and parietal) cortex weakens conscious awareness of visual stimuli, as shown in how people rate their awareness and how well those ratings track their accuracy, while their ability to discriminate the stimuli can stay the same.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2017-02-15",
+      "passage": "Although the imaging studies in healthy people and blindsight patients suggest correlates of consciousness, other studies show that disruption of activity in GNC areas, especially in the prefrontal or parietal cortex, impairs conscious awareness of visual stimuli (78–80).",
+      "source": {
+        "citation": "LeDoux JE, Brown R. A higher-order theory of emotional consciousness. Proceedings of the National Academy of Sciences 114(10):E2016-E2025, 2017",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5347624/",
+        "date": "2017-02-15"
+      }
+    },
+    "test_for": "After prefrontal disruption (lesion, magnetic stimulation), awareness ratings fall, or their match to accuracy (metacognitive efficiency) worsens, compared with a control site, while discrimination performance is unchanged.",
+    "test_against": "After prefrontal disruption, with discrimination performance held steady, awareness ratings and their match to accuracy are unchanged compared with a control site, with evidence for no effect rather than only a failure to find one."
+  },
+  "study": {
+    "name": "Magnetic stimulation of prefrontal and parietal cortex and its effect on visibility ratings and metacognition, with real and illusory shapes",
+    "source": {
+      "citation": "Martin A, Lane TJ, Hsu T-Y. DLPFC-PPC-cTBS effects on metacognitive awareness. Cortex, 2023 (volume and pages not checked). Read as the bioRxiv preprint: Prefrontal-parietal-cTBS effects on metacognitive awareness: real or illusory? (10.1101/2022.10.26.513949)",
+      "url": "https://www.biorxiv.org/content/10.1101/2022.10.26.513949v1",
+      "date": "2022-10-28"
+    },
+    "first_appeared": "2022-10-28 (preprint (bioRxiv), its own footer)",
+    "data_collected": {
+      "when": "not stated; before 2022-10-28, during the COVID-19 epidemic",
+      "basis": "The preprint gives no collection dates; it says two participants could not finish 'due to the COVID-19 epidemic'."
+    }
+  },
+  "passages": [
+    {
+      "text": "We found strong null findings for the replicated task, suggesting that cTBS affected neither visibility ratings nor visual metacognition. Nevertheless, we also observed that the implementation of illusory Kanizsa figures disrupted metacognitive ability, specifically when cTBS was applied to prefrontal but not parietal areas.",
+      "source": {
+        "citation": "Martin A, Lane TJ, Hsu T-Y. DLPFC-PPC-cTBS effects on metacognitive awareness. Cortex, 2023 (volume and pages not checked). Read as the bioRxiv preprint: Prefrontal-parietal-cTBS effects on metacognitive awareness: real or illusory? (10.1101/2022.10.26.513949)",
+        "url": "https://www.biorxiv.org/content/10.1101/2022.10.26.513949v1",
+        "date": "2022-10-28"
+      }
+    },
+    {
+      "text": "The overall ratings of visibility did not change: neither due to the nature of the task being performed (F(1, 20) = 0.05, p = 0.83, BF10 = 0.31), nor due to the cTBS administration site (F(2, 40) = 0.77, p = 0.47, BF10 = 0.23).",
+      "source": {
+        "citation": "Martin A, Lane TJ, Hsu T-Y. DLPFC-PPC-cTBS effects on metacognitive awareness. Cortex, 2023 (volume and pages not checked). Read as the bioRxiv preprint: Prefrontal-parietal-cTBS effects on metacognitive awareness: real or illusory? (10.1101/2022.10.26.513949)",
+        "url": "https://www.biorxiv.org/content/10.1101/2022.10.26.513949v1",
+        "date": "2022-10-28"
+      }
+    },
+    {
+      "text": "After the removal of this outlier, it was observed that cTBS administered over the DLPFC significantly reduced metacognitive efficiencies when compared to the S1 (t(19) = 1.89, p < 0.05, Cohen’s d = 0.42, BF10 = 1.96).",
+      "source": {
+        "citation": "Martin A, Lane TJ, Hsu T-Y. DLPFC-PPC-cTBS effects on metacognitive awareness. Cortex, 2023 (volume and pages not checked). Read as the bioRxiv preprint: Prefrontal-parietal-cTBS effects on metacognitive awareness: real or illusory? (10.1101/2022.10.26.513949)",
+        "url": "https://www.biorxiv.org/content/10.1101/2022.10.26.513949v1",
+        "date": "2022-10-28"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

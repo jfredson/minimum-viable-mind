@@ -1,0 +1,61 @@
+{
+  "packet_id": "out-dellert-iit-posterior",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Integrated information theory",
+  "core_claim": {
+    "quote": "Based on the postulates of IIT, a universal substrate ultimately “condenses” into a set of disjoint (non-overlapping) complexes, each constituted of a set of macro or micro units.",
+    "source": {
+      "citation": "Albantakis L, Barbosa L, Findlay G, Grasso M, Haun AM, Marshall W, Mayner WGP, Zaeemzadeh A, Boly M, Juel BE, Sasai S, Fujii K, David I, Hendren J, Lang JP, Tononi G. Integrated information theory (IIT) 4.0: formulating the properties of phenomenal existence in physical terms. PLOS Computational Biology 19(10):e1011465, 2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581496/",
+      "date": "2023-10-17"
+    }
+  },
+  "prediction": {
+    "statement": "The physical substrate of experience lies mainly in a posterior 'hot zone' (temporal, parietal and occipital cortex); prefrontal cortex is not needed, and conscious content is best decoded from the back of the brain.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-16",
+      "passage": "A current auxiliary prediction of IIT, on the other hand, states that the physical substrate of consciousness resides primarily in a “posterior hot zone” in temporo-parietal-occipital cortex due to the connectivity architecture of those areas (‘pyramid-of-grids’-like) that is more suited for high phi than the different connectivity of prefrontal regions.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    "test_for": "Awareness-related activity, or decodable conscious content, is found in posterior cortex, and adding prefrontal cortex adds no information.",
+    "test_against": "Conscious content or awareness-related activity is absent from posterior cortex while present in prefrontal cortex, or prefrontal cortex adds information beyond posterior cortex."
+  },
+  "study": {
+    "name": "Auditory awareness without report, measured with fMRI (inattentional deafness)",
+    "source": {
+      "citation": "Dellert T, Balster H, Schlossmacher I, Bruchmann M, Moeck R, Straube T. Neural correlates of consciousness in an auditory no-report fMRI study. bioRxiv 2025.05.16.654468; published in Current Biology, 2025 (10.1016/j.cub.2025.10.026)",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.05.16.654468v1.full",
+      "date": "2025-05-21"
+    },
+    "first_appeared": "2025-05-21 (preprint (bioRxiv))",
+    "data_collected": {
+      "when": "not stated; before 2025-05-21",
+      "basis": "The preprint gives no collection dates (methods searched 2026-11-20); the data were collected before the preprint appeared."
+    }
+  },
+  "passages": [
+    {
+      "text": "Comparing brain responses to the critical sounds between aware and unaware participants while controlling for correlates of sensory and postperceptual processing revealed that auditory awareness was associated with significantly increased activity in secondary auditory but not in fronto-parietal areas.",
+      "source": {
+        "citation": "Dellert T, Balster H, Schlossmacher I, Bruchmann M, Moeck R, Straube T. Neural correlates of consciousness in an auditory no-report fMRI study. bioRxiv 2025.05.16.654468; published in Current Biology, 2025 (10.1016/j.cub.2025.10.026)",
+        "url": "https://www.biorxiv.org/content/10.1101/2025.05.16.654468v1.full",
+        "date": "2025-05-21"
+      }
+    },
+    {
+      "text": "Significant awareness-related activity was observed in secondary auditory regions (belt areas) in the bilateral STG, STS and middle temporal gyrus, which accords with previous studies on auditory awareness",
+      "source": {
+        "citation": "Dellert T, Balster H, Schlossmacher I, Bruchmann M, Moeck R, Straube T. Neural correlates of consciousness in an auditory no-report fMRI study. bioRxiv 2025.05.16.654468; published in Current Biology, 2025 (10.1016/j.cub.2025.10.026)",
+        "url": "https://www.biorxiv.org/content/10.1101/2025.05.16.654468v1.full",
+        "date": "2025-05-21"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,81 @@
+{
+  "packet_id": "tst-sm-change-blindness",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "The sensorimotor theory",
+  "core_claim": {
+    "quote": "Activity in internal representations does not generate the experience of seeing. The outside world serves as its own, external, representation.",
+    "source": {
+      "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+      "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+      "date": "2001-10"
+    }
+  },
+  "prediction": {
+    "statement": "Because the brain keeps no detailed picture of the scene, large changes made in full view go unnoticed when the brief flicker of motion that would normally draw attention to them is masked (by a blank flash, an eye movement, a blink, a film cut or scattered 'mud splashes'), even when the person is looking straight at the place that changes.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2001-10",
+      "passage": "The idea that the world constitutes an outside memory, and that we only see what we are currently attending to, was the impetus for a number of surprising experiments performed recently on “change blindness”",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    "test_for": "When the local signal of a change is masked, people often take many repetitions to find, or fail to find, large changes in natural scenes, including on occasions when eye tracking shows they were looking at the changing spot when it changed.",
+    "test_against": "When the local signal is masked, people find large changes about as quickly and reliably as when it is not masked."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "what_the_sources_say_rivals_predict_the_same": [
+    {
+      "rival": "Global workspace theory",
+      "statement": "Global workspace theory predicts the same missed reports.",
+      "source": {
+        "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+        "date": "2020-03-04"
+      }
+    },
+    {
+      "rival": "Recurrent processing theory",
+      "statement": "Recurrent processing theory predicts the same missed reports, reading them as failures of report.",
+      "source": {
+        "citation": "Lamme VAF. Challenges for theories of consciousness: seeing or knowing, the missing ingredient and how to deal with it. Philosophical Transactions of the Royal Society B 373:20170344, 2018",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6074090/",
+        "date": "2018-07-30"
+      }
+    }
+  ],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "It was found that in many cases, observers could be looking directly at the change at the moment the change occurred, and still not see it.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    },
+    {
+      "passage": "We therefore consider change blindness, even though it can be explained in other ways, as an instance of how the theory made interesting predictions.",
+      "source": {
+        "citation": "O'Regan JK, Noë A. A sensorimotor account of vision and visual consciousness. Behavioral and Brain Sciences 24(5):939-973 (target article), with open peer commentary and the authors' response, 973-1031, 2001",
+        "url": "https://kevin-oregan.net/OREGAN-NOE-BBS/ORegan%3BNoe.BBS.pdf",
+        "date": "2001-10"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,30 @@
+{
+  "packet_id": "tst-iit-sustained",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "NRMBa4-KHsepm9cPzdr-gAE",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"could_fail\": true,\n  \"separates\": true,\n  \"separates_from\": [\n    \"gwt\"\n  ],\n  \"rival_view_from\": \"material\",\n  \"reason\": \"The prediction could fail if neural recordings show that content-specific activity in the posterior cortex decays while a participant still consciously experiences a stimulus. It separates Integrated Information Theory from Global Workspace Theory as described in the provided adversarial collaboration material. Whereas Integrated Information Theory predicts sustained activity for the entire duration of the experience, Global Workspace Theory predicts an initial phasic ignition followed by decay until a new content is experienced.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1173,
+    "candidatesTokenCount": 155,
+    "totalTokenCount": 2397,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1173
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 155
+      }
+    ],
+    "thoughtsTokenCount": 1069,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.014586,
+  "seconds": 17.2,
+  "called_on": "2026-11-20 19:43:02 PST"
+}

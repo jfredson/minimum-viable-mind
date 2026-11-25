@@ -1,0 +1,85 @@
+{
+  "packet_id": "out-li-orch-anaesthetic-mt",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Orchestrated Objective Reduction",
+  "core_claim": {
+    "quote": "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness.",
+    "source": {
+      "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+      "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+      "date": "2013-08-20"
+    }
+  },
+  "prediction": {
+    "statement": "General anaesthetics cause unconsciousness, at least in part, by acting on microtubules inside neurons; so changing the brain's microtubules with a drug changes how much anaesthetic, or how long, it takes to cause unconsciousness.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2013-08-20",
+      "passage": "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness.",
+      "source": {
+        "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+        "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+        "date": "2013-08-20"
+      }
+    },
+    "test_for": "In animals or people, a drug that acts on brain microtubules changes the anaesthetic dose, or the time under a fixed dose, needed to cause unconsciousness, compared with untreated controls.",
+    "test_against": "Drugs shown to act on brain microtubules, at doses that reach the brain, leave the anaesthetic dose and time needed for unconsciousness unchanged."
+  },
+  "study": {
+    "name": "Microtubule drugs and morphine, given for two weeks, shift isoflurane sensitivity in mice in different directions",
+    "source": {
+      "citation": "Li N, You Z, Ren Y, Kim HH, Yang J, Li G, Doheny JT, Ding W, Xia S, Wang S, Zhou X, Wu X, Shen S, Dong Y, Xie Z, Chen L, Mao J, Martyn JAJ. Microtubule-modulating drugs alter sensitivity to isoflurane in mice. BMC Anesthesiology 25:109, 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11869693/",
+      "date": "2025-02-28"
+    },
+    "first_appeared": "2025-02-28 (publication (no preprint found))",
+    "data_collected": {
+      "when": "not stated; before 2024-01-17",
+      "basis": "The paper gives no collection dates; it was received by the journal on 2024-01-17. The animal protocol number is from 2017 (2017N000233)."
+    }
+  },
+  "passages": [
+    {
+      "text": "Compared with saline treatment, epothilone D and vinblastine induced a leftward (more sensitive) shift of LORR response curves",
+      "source": {
+        "citation": "Li N, You Z, Ren Y, Kim HH, Yang J, Li G, Doheny JT, Ding W, Xia S, Wang S, Zhou X, Wu X, Shen S, Dong Y, Xie Z, Chen L, Mao J, Martyn JAJ. Microtubule-modulating drugs alter sensitivity to isoflurane in mice. BMC Anesthesiology 25:109, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11869693/",
+        "date": "2025-02-28"
+      }
+    },
+    {
+      "text": "In contrast, morphine caused a rightward (more resistant) LORR response curve",
+      "source": {
+        "citation": "Li N, You Z, Ren Y, Kim HH, Yang J, Li G, Doheny JT, Ding W, Xia S, Wang S, Zhou X, Wu X, Shen S, Dong Y, Xie Z, Chen L, Mao J, Martyn JAJ. Microtubule-modulating drugs alter sensitivity to isoflurane in mice. BMC Anesthesiology 25:109, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11869693/",
+        "date": "2025-02-28"
+      }
+    },
+    {
+      "text": "while paclitaxel produced a marginal but significant rightward shift of LORR",
+      "source": {
+        "citation": "Li N, You Z, Ren Y, Kim HH, Yang J, Li G, Doheny JT, Ding W, Xia S, Wang S, Zhou X, Wu X, Shen S, Dong Y, Xie Z, Chen L, Mao J, Martyn JAJ. Microtubule-modulating drugs alter sensitivity to isoflurane in mice. BMC Anesthesiology 25:109, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11869693/",
+        "date": "2025-02-28"
+      }
+    },
+    {
+      "text": "The induction or emergence latencies of epothilone D or paclitaxel treatment did not differ from saline treatment between groups.",
+      "source": {
+        "citation": "Li N, You Z, Ren Y, Kim HH, Yang J, Li G, Doheny JT, Ding W, Xia S, Wang S, Zhou X, Wu X, Shen S, Dong Y, Xie Z, Chen L, Mao J, Martyn JAJ. Microtubule-modulating drugs alter sensitivity to isoflurane in mice. BMC Anesthesiology 25:109, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11869693/",
+        "date": "2025-02-28"
+      }
+    },
+    {
+      "text": "This study highlights a possible role of MTDs in modulating anesthetic effects in disparate directions",
+      "source": {
+        "citation": "Li N, You Z, Ren Y, Kim HH, Yang J, Li G, Doheny JT, Ding W, Xia S, Wang S, Zhou X, Wu X, Shen S, Dong Y, Xie Z, Chen L, Mao J, Martyn JAJ. Microtubule-modulating drugs alter sensitivity to isoflurane in mice. BMC Anesthesiology 25:109, 2025",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11869693/",
+        "date": "2025-02-28"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

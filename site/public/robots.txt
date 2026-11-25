@@ -1,0 +1,7 @@
+# The site is public and crawling is allowed. The sitemap is built at every build
+# (site/src/pages/sitemap.xml.ts, added 2026-10-31) and lists every page. Cloudflare puts its own
+# block of content signals in front of this file when it serves it; the lines below follow it.
+User-agent: *
+Allow: /
+
+Sitemap: https://minimumviablemind.sentient-horizons.com/sitemap.xml

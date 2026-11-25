@@ -1,0 +1,77 @@
+{
+  "packet_id": "out-suzuki-seth-low-interoception-more-illusion",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Anil Seth's living-body view",
+  "core_claim": {
+    "quote": "In the limit, one can think of each and every conscious experience as (phenomenologically) integrating multimodal bodily and environmental signals in the service of coordinating allostatic regulation and survival-relevant action",
+    "source": {
+      "citation": "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)",
+      "url": "https://doi.org/10.1017/S0140525X25000032",
+      "date": "2025-04-21"
+    }
+  },
+  "prediction": {
+    "statement": "People who sense their own body's signals less well lean more on what they see and feel on the skin, so illusions of body ownership driven by sight and touch (the rubber hand illusion) are stronger in them.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2012-01-10",
+      "passage": "People with lower interoceptive predictive ability may more readily assimilate exteroceptive (e.g., correlated visual and tactile) cues in localizing interoceptive and proprioceptive signals, while people with good interoceptive predictive ability may rely less on these exteroceptive cues.",
+      "source": {
+        "citation": "Seth AK, Suzuki K, Critchley HD. An interoceptive predictive coding model of conscious presence. Frontiers in Psychology 2:395 (2011 volume)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254200/",
+        "date": "2012-01-10"
+      }
+    },
+    "test_for": "Across people, lower accuracy at sensing one's own heartbeat goes with a stronger rubber hand illusion (more ownership, more drift) under synchronous seen-and-felt stroking.",
+    "test_against": "Across people, higher accuracy at sensing one's own heartbeat goes with a stronger rubber hand illusion under synchronous stroking."
+  },
+  "study": {
+    "name": "The 'cardiac rubber hand illusion': a virtual hand pulsing in or out of time with one's own heartbeat",
+    "source": {
+      "citation": "Suzuki K, Garfinkel SN, Critchley HD, Seth AK. Multisensory integration across exteroceptive and interoceptive domains modulates self-experience in the rubber-hand illusion. Neuropsychologia 51(13):2909-2917, 2013",
+      "url": "https://figshare.com/articles/journal_contribution/Multisensory_integration_across_exteroceptive_and_interoceptive_domains_modulates_self-experience_in_the_rubber-hand_illusion/23406980",
+      "date": "2013-08-28"
+    },
+    "first_appeared": "2013-08-28 (publication online (no preprint found in Europe PMC))",
+    "data_collected": {
+      "when": "not stated; before 2013-05-22",
+      "basis": "The paper gives no collection dates; it was received by the journal on 2013-05-22."
+    }
+  },
+  "passages": [
+    {
+      "text": "Lastly, we examined how the magnitude of our results reflected individual differences in IS, testing the prediction that heightened IS will attenuate EBO (Tsakiris et al., 2011) yet exaggerate interaction between exteroceptive and interoceptive manipulations.",
+      "source": {
+        "citation": "Suzuki K, Garfinkel SN, Critchley HD, Seth AK. Multisensory integration across exteroceptive and interoceptive domains modulates self-experience in the rubber-hand illusion. Neuropsychologia 51(13):2909-2917, 2013",
+        "url": "https://figshare.com/articles/journal_contribution/Multisensory_integration_across_exteroceptive_and_interoceptive_domains_modulates_self-experience_in_the_rubber-hand_illusion/23406980",
+        "date": "2013-08-28"
+      }
+    },
+    {
+      "text": "There was a significant positive correlation between IS and PDD in the “tactile” condition (Spearman's rank correlation coefficient 0.509, p=0.022, pFDR = 0.044), and a non-significant correlation in the “cardiac still” condition (correlation=0.207, p=0.368).",
+      "source": {
+        "citation": "Suzuki K, Garfinkel SN, Critchley HD, Seth AK. Multisensory integration across exteroceptive and interoceptive domains modulates self-experience in the rubber-hand illusion. Neuropsychologia 51(13):2909-2917, 2013",
+        "url": "https://figshare.com/articles/journal_contribution/Multisensory_integration_across_exteroceptive_and_interoceptive_domains_modulates_self-experience_in_the_rubber-hand_illusion/23406980",
+        "date": "2013-08-28"
+      }
+    },
+    {
+      "text": "At first glance this result appears to conflict with data reported by Tsakiris et al. (2011) which show a significant negative correlation between IS and PDD in the classical RHI.",
+      "source": {
+        "citation": "Suzuki K, Garfinkel SN, Critchley HD, Seth AK. Multisensory integration across exteroceptive and interoceptive domains modulates self-experience in the rubber-hand illusion. Neuropsychologia 51(13):2909-2917, 2013",
+        "url": "https://figshare.com/articles/journal_contribution/Multisensory_integration_across_exteroceptive_and_interoceptive_domains_modulates_self-experience_in_the_rubber-hand_illusion/23406980",
+        "date": "2013-08-28"
+      }
+    },
+    {
+      "text": "Indeed when we repeated our IS measures using this task, there was no significant positive trend between IS and PDD (see Supplementary information).",
+      "source": {
+        "citation": "Suzuki K, Garfinkel SN, Critchley HD, Seth AK. Multisensory integration across exteroceptive and interoceptive domains modulates self-experience in the rubber-hand illusion. Neuropsychologia 51(13):2909-2917, 2013",
+        "url": "https://figshare.com/articles/journal_contribution/Multisensory_integration_across_exteroceptive_and_interoceptive_domains_modulates_self-experience_in_the_rubber-hand_illusion/23406980",
+        "date": "2013-08-28"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

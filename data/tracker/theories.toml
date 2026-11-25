@@ -1,0 +1,630 @@
+# The theories in the stage 2 pilot, and the core claims of each, fixed on
+# 2026-11-20 before any scoring (kickoff proposal, section 4: "Each theory's core
+# claims, between three and seven, are taken from one named publication by its own
+# proponents and quoted"). A core claim changes only at the yearly review.
+# Layout: data/tracker/README.md.
+
+[[theory]]
+id = "gwt"
+name = "Global workspace theory"
+plain = "Experience is information made widely available across the brain by a network of long-range neurons, prefrontal cortex among its key parts, which 'ignites' suddenly when something becomes conscious."
+core_claims_from = "mashour-2020"
+fixed_on = "2026-11-20"
+proponents = ["Stanislas Dehaene", "Jean-Pierre Changeux", "George Mashour", "Pieter Roelfsema"]
+camp_note = "A study counts as run inside this theory's camp when one of its authors is an author of a proponents' statement of the theory used in these records (mashour-2020, dehaene-2014, or the Cogitate registration as a GWT voice)."
+
+[[theory]]
+id = "iit"
+name = "Integrated information theory"
+plain = "Experience is identical to the structure of cause and effect that a physical system specifies on itself, as one irreducible whole; how much experience there is is measured by that whole's integrated information."
+core_claims_from = "albantakis-2023"
+fixed_on = "2026-11-20"
+proponents = ["Giulio Tononi", "Christof Koch", "Melanie Boly", "Larissa Albantakis"]
+camp_note = "As for gwt, with albantakis-2023, boly-2017 and the Cogitate registration as an IIT voice."
+
+[[theory]]
+id = "sh"
+name = "The Sentient Horizons account"
+plain = "Experience is a system binding the just-past into the moment now, seen from the inside; a point of view comes from the system telling what it does from what happens to it; other features make experience richer without switching it on."
+core_claims_from = "sh-positions"
+fixed_on = "2026-11-20"
+proponents = ["John Andrew Fredrickson"]
+by_exception = "In by stated exception (kickoff ruling 4a). It is the site owner's own account, so every judgement on its rows is read first by the outside reader (ruling 7b)."
+pending_proposal = "sh-proposal-2026-11-20 (not ruled). Its Choice C would change the core claims; see README section 'Where the unruled proposal would change the account'."
+
+# ---------------------------------------------------------------- core claims
+
+[[claim]]
+id = "gwt-c1"
+theory = "gwt"
+plain = "What makes information conscious is that it is broadcast: made available to many processors across the brain at once."
+quote = "Broadcasting implies that the information in the workspace becomes available to many local processors, and it is the wide accessibility of this information that is hypothesized to constitute conscious experience."
+source = "mashour-2020"
+location = "section 'Central Tenets and Neuroanatomical Basis of the GNW Theory', first paragraph"
+
+[[claim]]
+id = "gwt-c2"
+theory = "gwt"
+plain = "Entry into the workspace is sudden and all-or-none: an 'ignition' of the neurons coding the content, with the rest inhibited."
+quote = "Ignition is characterized by the sudden, coherent, and exclusive activation of a subset of workspace neurons coding for the current conscious content, with the remainder of the workspace neurons being inhibited."
+source = "mashour-2020"
+location = "section 'Central Tenets and Neuroanatomical Basis of the GNW Theory', third paragraph"
+
+[[claim]]
+id = "gwt-c3"
+theory = "gwt"
+plain = "Prefrontal cortex is a key part of the workspace, though not the only one."
+quote = "The prefrontal cortex is posited to play a key role in the GNW because of the greater density of neurons thought to be critical for global broadcasting of information, but it is not proposed as the exclusive territory for conscious access."
+source = "mashour-2020"
+location = "section 'Central Tenets and Neuroanatomical Basis of the GNW Theory', fourth paragraph"
+
+[[claim]]
+id = "gwt-c4"
+theory = "gwt"
+plain = "Becoming conscious of something happens at a late stage of processing, not during early sensory processing."
+quote = "These convergent findings indicate that conscious access is not attached to early sensory processing but instead relates to a late stage whose timing is often decoupled from the timing of the actual stimulus."
+source = "mashour-2020"
+location = "section 'Empirical Evidence in Support of the Ignition Concept', second paragraph"
+
+[[claim]]
+id = "gwt-c5"
+theory = "gwt"
+plain = "Something held in working memory is conscious only while it is carried by widespread, ongoing neural firing."
+quote = "Thus, we propose that working memory is conscious only when it is coded by global, highly distributed persistent neural firing, as occurs during both initial encoding, during the later refresh stage, and when the memory item influences other mental processing steps."
+source = "mashour-2020"
+location = "section 'Conscious Representations and Working Memory', last paragraph"
+
+[[claim]]
+id = "iit-c1"
+theory = "iit"
+plain = "The theory's postulates are both necessary and sufficient: a physical system that meets them has experience, and one that does not, has none."
+quote = "These are then formulated as essential properties of physical existence (postulates), the necessary and sufficient conditions that a substrate must satisfy to support an experience—to constitute a complex."
+source = "albantakis-2023"
+location = "section 'Conclusions', first paragraph"
+
+[[claim]]
+id = "iit-c2"
+theory = "iit"
+plain = "Every property of an experience is accounted for by a property of the cause-and-effect structure the system specifies, with nothing added."
+quote = "every property of an experience should ultimately be accounted for by a property of the cause–effect structure specified by a substrate that satisfies its postulates, with no additional ingredients."
+source = "albantakis-2023"
+location = "section 'Conclusions', fourth paragraph"
+
+[[claim]]
+id = "iit-c3"
+theory = "iit"
+plain = "What corresponds to an experience is the structure the system specifies in its current state, not the hardware as such; so units that are quiet but able to act still count, and units that are disabled do not."
+quote = "The physical correspondent of an experience is not the substrate as such but the Φ-structure specified by the substrate in its current state."
+source = "albantakis-2023"
+location = "section 'Conclusions', fifth paragraph"
+
+[[claim]]
+id = "iit-c4"
+theory = "iit"
+plain = "Experience is about what a system is, not what it does: two systems can behave identically and differ in experience."
+quote = "Each experience corresponds to a Φ-structure, not a set of functions, processes, or computations. Said otherwise, consciousness is about being, not doing"
+source = "albantakis-2023"
+location = "section 'Conclusions', sixth paragraph"
+
+[[claim]]
+id = "iit-c5"
+theory = "iit"
+plain = "A system divides into separate, non-overlapping wholes, each with definite borders; in the brain one main whole carries experience."
+quote = "Based on the postulates of IIT, a universal substrate ultimately “condenses” into a set of disjoint (non-overlapping) complexes, each constituted of a set of macro or micro units."
+source = "albantakis-2023"
+location = "section 'Conclusions', third paragraph"
+
+[[claim]]
+id = "sh-c1"
+theory = "sh"
+plain = "Experience is the binding of the just-past into the moment now, seen from the inside, not a by-product of it."
+quote = "My central bet, behind the whole map, is that experience is this binding, seen from the inside, rather than something the binding produces on the side, the way friction produces heat."
+source = "sh-positions"
+location = "position 'Experience comes with a set of features, and I describe them as a map, not a line', In plain words"
+
+[[claim]]
+id = "sh-c2"
+theory = "sh"
+plain = "A system has a point of view when it separates the changes it causes from the changes the world causes, and uses that difference (the split)."
+quote = "A system has a point of view, in the plain sense that things happen to someone, when it separates the changes it causes from the changes the world causes and uses that difference."
+source = "sh-positions"
+location = "position 'My best candidate for a point of view is the split between what a system does and what happens to it', summary"
+
+[[claim]]
+id = "sh-c3"
+theory = "sh"
+plain = "A boundary, mattering, self-awareness and kept memory make experience richer, and none of them switches it on."
+quote = "My bet is that boundary, mattering, self-awareness and kept memory make experience richer, and that none of them is known to switch it on."
+source = "sh-positions"
+location = "position 'Experience comes with a set of features ...', In plain words"
+
+[[claim]]
+id = "sh-c4"
+theory = "sh"
+plain = "Every experience has something on each of three axes (integration, availability and depth); none is at zero on any of them."
+quote = "I cannot imagine any experience with nothing at all on any one of the three axes."
+source = "sh-positions"
+location = "position 'Experience comes with a set of features ...', In plain words (the three axes are named in the sentence before: availability, integration and depth)"
+note = "The page itself calls this 'a judgment about what experience is like, not a measurement'."
+
+# ======================================================================
+# Stage 3: Higher-order theories
+# Higher-order theories: one entry for the whole family (stage 3 draft, 2026-11-21).
+# Core claims quoted from the family statement John ruled on 2026-11-21 (Brown, Lau
+# and LeDoux 2019), read in the authors' own preprint because the journal text could
+# not be opened (verify entry v-hot-journal-text). How the claims were chosen: notes.md.
+
+[[theory]]
+id = "hot"
+name = "Higher-order theories"
+plain = "A sensory state is not conscious just by being there. It becomes a conscious experience when the brain also represents it, in a minimal way, as a state one is in; that second, 'higher-order' representation is built by circuits in prefrontal cortex, and it can come apart from how well the person performs a task and from how widely the information is shared."
+core_claims_from = "brown-lau-ledoux-2019"
+fixed_on = "2026-11-21"
+proponents = ["Richard Brown", "Hakwan Lau", "Joseph LeDoux", "Stephen Fleming"]
+camp_note = "A study counts as run inside this theory's camp when one of its authors is an author of a proponents' statement used in these records: brown-lau-ledoux-2019, ledoux-brown-2017 or fleming-2020 (and lau-rosenthal-2011, adding David Rosenthal, if it is opened later). Stephen Fleming is listed because his 2020 paper states a higher-order model; see notes.md."
+family_note = "One entry for a family of theories (ruled by John 2026-11-21). The family statement itself says the versions 'disagree on what may be the exact mechanisms for the inner awareness being postulated' (brown-lau-ledoux-2019, Misconception 1). The core claims below are the ones the statement gives for the family as a whole."
+
+# ---------------------------------------------------------------- core claims
+# Page numbers are the preprint's own printed page numbers.
+
+[[claim]]
+id = "hot-c1"
+theory = "hot"
+plain = "A first-order state (a plain representation of something in the world, such as activity in visual cortex standing for a red apple) can happen without any experience, and on its own is never enough for one."
+quote = "a fundamental tenet of HOT is that first-order states occur unconsciously, and are not sufficient for phenomenally conscious experiences to occur"
+source = "brown-lau-ledoux-2019"
+location = "preprint p. 3, section 'What Is HOT?', first paragraph"
+
+[[claim]]
+id = "hot-c2"
+theory = "hot"
+plain = "If a creature is in a state but is in no way aware of being in it, that state is not an experience for it (the 'transitivity principle')."
+quote = "if an organism is in a mental state, such as a perceptual state, but is in no way aware of itself as being in that state, then the organism is not in a phenomenally conscious state."
+source = "brown-lau-ledoux-2019"
+location = "preprint p. 4, section 'What Is HOT?', second paragraph"
+
+[[claim]]
+id = "hot-c3"
+theory = "hot"
+plain = "What experience needs is higher-order awareness, not wide sharing of information across the brain: the two usually go together, but either can happen without the other."
+quote = "However, according to HOT, for subjective experience to occur, what is absolutely essential is higher-order awareness. Global broadcasting tends to go hand-in-hand with higher-order awareness in typical cases, but not always."
+source = "brown-lau-ledoux-2019"
+location = "preprint p. 7, section 'Misconception 4: HOT is a variant of Global Workspace Theory', third paragraph"
+
+[[claim]]
+id = "hot-c4"
+theory = "hot"
+plain = "Prefrontal cortex plays a key part in consciousness, because it supports the mental machinery that builds higher-order representations."
+quote = "the hypothesis is that the prefrontal cortex plausibly plays a key role in consciousness because it supports essential cognitive mechanisms that underlie higher-order representations."
+source = "brown-lau-ledoux-2019"
+location = "preprint p. 9, section 'Misconception 7: HOT suggests that consciousness is in the Prefrontal Cortex', first paragraph"
+
+[[claim]]
+id = "hot-c5"
+theory = "hot"
+plain = "Whether a perceptual process is experienced is settled by the higher-order state, whatever the first-order process is like; in some versions there can be experience with no first-order state at all."
+quote = "According to HOT, on the other hand, a mere difference in the higher-order state determines whether a nonconscious perceptual process is consciously experienced or not, independent of the nature of the first-order process itself, or even in the absence of a first order state in some views"
+source = "brown-lau-ledoux-2019"
+location = "preprint p. 6, section 'Misconception 4: HOT is a variant of Global Workspace Theory', second paragraph"
+
+# ======================================================================
+# Stage 3: Recurrent processing theory
+# Recurrent processing theory: the theory and its core claims, drafted 2026-11-21
+# for stage 3. Core claims quoted word for word from one publication by the
+# theory's proponent, the source ruled by John on 2026-11-21 (lamme-2010). How the
+# claims were chosen: notes.md, "Core claims". Shape as data/tracker/theories.toml.
+
+[[theory]]
+id = "rpt"
+name = "Recurrent processing theory"
+plain = "Seeing happens when visual areas of the brain start sending signals back and forth to each other (recurrent processing), not on the first fast one-way pass of signals; the front of the brain adds the ability to report and use what is seen, not the seeing itself."
+core_claims_from = "lamme-2010"
+fixed_on = "2026-11-21"
+proponents = ["Victor Lamme"]
+camp_note = "A study counts as run inside this theory's camp when one of its authors is an author of a proponents' statement of the theory used in these records (lamme-2010, lamme-2006, lamme-2018, lamme-2020: all by Victor Lamme alone). None of the five studies screened has him as an author."
+
+[[claim]]
+id = "rpt-c1"
+theory = "rpt"
+plain = "Processing that only travels forward through the brain, on the first fast pass, is unconscious, however far it gets, even into the front of the brain."
+quote = "In other words, both Stage 1 and Stage 2 processing are unconscious, no matter what areas are reached."
+source = "lamme-2010"
+location = "p. 216, end of the section 'Four stages of neural processing' (Stages 1 and 2 are the fast forward pass, without and with attention)"
+
+[[claim]]
+id = "rpt-c2"
+theory = "rpt"
+plain = "Seeing needs recurrent processing: higher and lower visual areas exchanging signals back and forth."
+quote = "That recurrent processing is necessary for visual awareness is now fairly well established, and supported by numerous experiments"
+source = "lamme-2010"
+location = "p. 216, end of the section 'Four stages of neural processing'"
+
+[[claim]]
+id = "rpt-c3"
+theory = "rpt"
+plain = "What makes a visual sensation conscious is recurrent processing among visual areas; the front of the brain (prefrontal and motor areas) is what lets it be reported and used."
+quote = "At this point, it will be clear that there are several scientific arguments to conclude that the reason why we have conscious visual sensations in Stage 4 is the recurrent interactions between visual areas. These sensations can be reported and manipulated because Stage 4 also includes the prefrontal and motor areas."
+source = "lamme-2010"
+location = "p. 219, section 'Why not both?', first paragraph"
+
+[[claim]]
+id = "rpt-c4"
+theory = "rpt"
+plain = "Recurrent processing confined to visual areas, for things a person is not attending to and later cannot report, is seen just as consciously as what is attended and reported."
+quote = "Our conclusion is that Stage 3 processing is just as visually conscious as Stage 4."
+source = "lamme-2010"
+location = "pp. 219-220, section 'Vision is rich even when you don't know it', first sentence (Stage 3 is recurrent processing limited to visual areas, for an unattended stimulus)"
+
+[[claim]]
+id = "rpt-c5"
+theory = "rpt"
+plain = "Beyond vision: whichever brain areas do a job, the job comes with a conscious sensation if, and only if, those areas engage in recurrent processing."
+quote = "Whether this produces a conscious sensation or not is determined by whether the areas involved engage in recurrent interactions."
+source = "lamme-2010"
+location = "p. 219, section 'Ontological issues', second paragraph on that page ('Which cognitive function is executed depends on which area ... is activated' comes just before)"
+
+[[claim]]
+id = "rpt-c6"
+theory = "rpt"
+plain = "Attention and consciousness are separate: attending to something is neither needed nor enough for seeing it."
+quote = "by laying the unconscious and conscious processing divide between Stages 1/2 and 3/4 respectively, attention and consciousness (in the sense of phenomenality) become orthogonal and hence independent properties"
+source = "lamme-2010"
+location = "p. 218, section 'Ontological issues', first paragraph"
+
+# ======================================================================
+# Stage 3: Anil Seth's living-body view
+# Anil Seth's living-body view ("biological naturalism"), and its core claims,
+# drafted 2026-11-21 for stage 3. Core claims are quoted from one publication
+# (seth-2025, ruled by John: kickoff ruling 4, "Yes, latest same theory"), from the
+# accepted manuscript, because the journal text is behind a sign-in (verify list).
+# How the claims were chosen: notes.md, "Core claims".
+
+[[theory]]
+id = "seth"
+name = "Anil Seth's living-body view"
+plain = "Consciousness depends on being a living body that keeps itself alive. What we experience is the brain's best guess about the causes of its signals, from the world and from inside the body, and those guesses exist to keep the body going; so a machine would need to be in some sense alive to be conscious, and computing the right things is not enough."
+core_claims_from = "seth-2025"
+fixed_on = "2026-11-21"
+proponents = ["Anil K. Seth"]
+camp_note = "A study counts as run inside this theory's camp when one of its authors is an author of a proponents' statement used in these records: seth-2025 (Seth), seth-2012 (Seth, Keisuke Suzuki, Hugo Critchley) or seth-friston-2016 (Seth, Karl Friston)."
+ruling_note = "Per John's ruling, the life claim ('consciousness depends on our nature as living organisms') is scored as a core claim, with predictive processing (the brain's best guesses) as its workings."
+
+# ---------------------------------------------------------------- core claims
+
+[[claim]]
+id = "seth-c1"
+theory = "seth"
+plain = "Consciousness depends on our being living organisms."
+quote = "I’ll instead make the case that consciousness depends on our nature as living organisms – a form of biological naturalism."
+source = "seth-2025"
+location = "Abstract"
+note = "The ruled life claim."
+
+[[claim]]
+id = "seth-c2"
+theory = "seth"
+plain = "What we consciously experience is the brain's best guess about what is causing its sensory signals, made of its top-down predictions, not a read-out of the signals themselves."
+quote = "The core claim from the perspective of consciousness is that conscious contents are given by the brain’s ‘best guesses’ – by the joint content of the top-down perceptual predictions"
+source = "seth-2025"
+location = "section 4.1 'The story from predictive processing', third paragraph"
+note = "The workings (predictive processing), as the ruling asks."
+
+[[claim]]
+id = "seth-c3"
+theory = "seth"
+plain = "Every conscious experience brings together signals from the body and from the world in the service of keeping the body regulated and alive."
+quote = "In the limit, one can think of each and every conscious experience as (phenomenologically) integrating multimodal bodily and environmental signals in the service of coordinating allostatic regulation and survival-relevant action"
+source = "seth-2025"
+location = "section 4.5 'Summary', second paragraph"
+note = "'Allostatic regulation' means keeping the body's state steady by anticipating its needs (the paper's footnote 26). This sentence is not in the December 2024 submitted version (sources.toml, seth-2025)."
+
+[[claim]]
+id = "seth-c4"
+theory = "seth"
+plain = "Feelings of emotion and mood come from the brain's best guesses about the state of the body, made from the signals that report it (interoceptive inference)."
+quote = "Experiences of emotion and mood, which seem central to selfhood, may depend on interoceptive inferences – probabilistic best-guesses about the causes of sensory inputs signalling the physiological condition of the body"
+source = "seth-2025"
+location = "section 4.1 'The story from predictive processing', fourth paragraph"
+note = "Hedged in the source ('may depend'). Kept because it is the part of the workings the paper ties to the body, and the part the proponents' earlier predictions test."
+
+[[claim]]
+id = "seth-c5"
+theory = "seth"
+plain = "Consciousness is not a matter of computation, so a conscious machine would have to be a living one."
+quote = "In this scenario, consciousness is not a matter of computation, and conscious AI would need to be ‘living’ AI."
+source = "seth-2025"
+location = "section 5.5 'Substrate-dependent, strong', last sentence; the paragraph before says 'My case for biological naturalism is drawn towards this scenario.'"
+
+[[claim]]
+id = "seth-c6"
+theory = "seth"
+plain = "Being alive is not enough: there can be life without consciousness."
+quote = "And just as there can be wind without a storm, there can be life without consciousness."
+source = "seth-2025"
+location = "section 5.8 'Summary', first paragraph"
+note = "Separates the view from the claim that all life is conscious, which the paper rejects in section 4.5 ('Nothing presented here endorses biopsychism')."
+
+# ======================================================================
+# Stage 3: Attention schema theory
+# Attention schema theory: the theory record and its core claims, fixed on
+# 2026-11-21 before any scoring, quoted from one publication by its proponents
+# (graziano-webb-2015, ruled by John 2026-11-21: "Yes, keep 2015").
+# How the claims were chosen is in notes.md.
+
+[[theory]]
+id = "ast"
+name = "Attention schema theory"
+plain = "The brain keeps a simplified working model of its own attention, the way it keeps a model of the body, and uses it to steer attention. Because the model leaves out the machinery, a brain that reads it concludes that it has a non-physical inner awareness; that model, and the claims it produces, is what subjective awareness is."
+core_claims_from = "graziano-webb-2015"
+fixed_on = "2026-11-21"
+proponents = ["Michael Graziano", "Taylor Webb"]
+camp_note = "A study counts as run inside this theory's camp when one of its authors is an author of a proponents' statement of the theory used in these records (graziano-webb-2015, graziano-2018, graziano-2022, graziano-2024, graziano-2026). Every study taken in the sample has Michael Graziano as last author, so every one is inside the camp."
+
+[[claim]]
+id = "ast-c1"
+theory = "ast"
+plain = "The brain builds a simplified model of what its attention is doing, and when a person says they are aware of something, they are reporting what that model contains."
+quote = "The core claim of the theory is that the brain computes a simplified model of the process and current state of attention, and that the content of this model is the basis of subjective reports."
+source = "graziano-webb-2015"
+location = "section 'Conclusion', first paragraph"
+
+[[claim]]
+id = "ast-c2"
+theory = "ast"
+plain = "The model leaves out every mechanical detail of how attention works, so it depicts something that seems to act without any physical means; that is why we conclude we have a mysterious inner awareness."
+quote = "According to the theory, the A component of this larger representation would not include any of the physical, mechanistic details of the real process of attention, and so it would appear to depict a physically impossible entity, a process that can accomplish the same things as attention without the mechanistic basis for doing so."
+source = "graziano-webb-2015"
+location = "Figure 1 caption, part (B)"
+
+[[claim]]
+id = "ast-c3"
+theory = "ast"
+plain = "Awareness is part of the machinery that steers attention: it is the model the brain uses to control where attention goes."
+quote = "In the attention schema theory, awareness is part of the control machinery for attention."
+source = "graziano-webb-2015"
+location = "Figure 3 caption, part (E)"
+
+[[claim]]
+id = "ast-c4"
+theory = "ast"
+plain = "To be aware of a particular thing, the brain has to join the model of attention to the representation of that thing and to a model of the self, in one representation that spans many brain areas."
+quote = "In the attention schema theory, attaching the construct of awareness to a specific item – whether an apple, or a thought, or anything else – requires some method of integrating information across disparate brain areas into a single, larger, brain-spanning representation (the S+A+V of Figure 1B)."
+source = "graziano-webb-2015"
+location = "section 'Introduction', eleventh paragraph (not counting figure captions)"
+
+[[claim]]
+id = "ast-c5"
+theory = "ast"
+plain = "Joining up information across the brain is not enough on its own: awareness needs the brain to build the specific model of attention, just as seeing colour needs the brain to compute colour."
+quote = "In the attention schema theory, awareness does not arise just because the brain integrates information or settles into a network state, any more than the perceptual model of color arises just because information in the visual system becomes integrated or settles into a state."
+source = "graziano-webb-2015"
+location = "section 'Introduction', eleventh paragraph (not counting figure captions)"
+
+[[claim]]
+id = "ast-c6"
+theory = "ast"
+plain = "Awareness covers whatever attention can cover: every sense, and also thoughts, emotions and memories."
+quote = "If the theory is correct, then the attention schema, the construct of awareness, is relevant to any type of information to which the brain can pay attention."
+source = "graziano-webb-2015"
+location = "section 'External versus Internal Awareness', fourth paragraph"
+
+# ======================================================================
+# Stage 3: The sensorimotor theory
+# The sensorimotor theory (O'Regan and Noë), and its core claims, fixed on
+# 2026-11-21 from one named publication by its proponents (kickoff section 4).
+# Draft for stage 3; shape as data/tracker/theories.toml.
+#
+# How the claims were chosen (repeatable): read the 2001 target article's abstract
+# and every section that states the theory itself (sections 1.3, 2, 3, 6 and 8.4 to 9),
+# and take each sentence the authors put as a condition of seeing or of visual
+# awareness (what has to be true of a creature for it to see, or to be aware of what
+# it sees), as opposed to sentences that report data or answer objections. Six such
+# conditions are stated, one sentence each is quoted, in the order the paper gives them.
+
+[[theory]]
+id = "sensorimotor"
+name = "The sensorimotor theory"
+plain = "Seeing is not something the brain produces inside; it is something a creature does. A creature has visual experience when it explores the world using its practical, learned know-how of how what it senses changes as it moves; it is aware of what it sees when it also uses that know-how in its thinking and planning."
+core_claims_from = "oregan-noe-2001"
+fixed_on = "2026-11-21"
+scope = "Vision and visual consciousness only, as the 2001 paper states it. The authors' later widening to all experience (O'Regan 2023) counts as a different theory (ruled by John 2026-11-21) and is not used."
+proponents = ["J. Kevin O'Regan", "Alva Noë"]
+camp_note = "A study counts as run inside this theory's camp when one of its authors is J. Kevin O'Regan or Alva Noë, the authors of oregan-noe-2001, the only proponents' statement used in these records."
+
+[[claim]]
+id = "sm-c1"
+theory = "sensorimotor"
+plain = "A creature has the experience of seeing when it has mastered the regular ways in which what it senses changes as it moves (the 'laws of sensorimotor contingency')."
+quote = "The experience of seeing occurs when the organism masters what we call the governing laws of sensorimotor contingency."
+source = "oregan-noe-2001"
+location = "Abstract"
+
+[[claim]]
+id = "sm-c2"
+theory = "sensorimotor"
+plain = "The brain does not build a detailed inner picture whose activity makes us see; the world itself, always there to be looked at again, does the job of a picture."
+quote = "Activity in internal representations does not generate the experience of seeing. The outside world serves as its own, external, representation."
+source = "oregan-noe-2001"
+location = "Abstract"
+
+[[claim]]
+id = "sm-c3"
+theory = "sensorimotor"
+plain = "Having the know-how is not enough: seeing a thing is the know-how being used now, for that thing."
+quote = "The sets that are applicable now are characteristic of the visual attributes of the object you are looking at, and their being currently exercised constitutes the fact of your visually perceiving that object."
+source = "oregan-noe-2001"
+location = "section 3.2 'Mastery must be currently exercised', last sentence"
+
+[[claim]]
+id = "sm-c4"
+theory = "sensorimotor"
+plain = "To be aware of what it sees, a creature (or a machine) must also use that know-how in its thinking and planning; a feature can steer behaviour without being seen in this sense."
+quote = "For a creature (or a machine for that matter) to possess visual awareness, what is required is that, in addition to exercising the mastery of the relevant sensorimotor contingencies, it must make use of this exercise for the purposes of thought and planning."
+source = "oregan-noe-2001"
+location = "section 2.6 'Visual awareness: Integrating sensorimotor contingencies with reasoning and action-guidance', the paragraph beginning 'But if you should turn your attention'"
+
+[[claim]]
+id = "sm-c5"
+theory = "sensorimotor"
+plain = "What makes seeing feel different from touching or hearing is the different pattern of how input changes with movement in each sense, not which nerves or brain areas carry it."
+quote = "The sensory modalities, according to the present proposal, are constituted by distinct patterns of sensorimotor contingency."
+source = "oregan-noe-2001"
+location = "section 2.5 'Important upshot: A sensory modality is a mode of exploration mediated by distinctive sensorimotor contingencies'"
+
+[[claim]]
+id = "sm-c6"
+theory = "sensorimotor"
+plain = "Brain activity is needed for seeing, but the experience of seeing is not the same thing as any particular brain activity going on at that moment."
+quote = "Vision requires all manner of neural events, but crucially, in our view, the experience of seeing itself cannot be equated with the simultaneous occurrence of any particular neural activity."
+source = "oregan-noe-2001"
+location = "section 8.4 'A new way of thinking about the role of the brain in vision', the paragraph beginning 'Considerations such as these'"
+
+# ======================================================================
+# Stage 3: Orchestrated Objective Reduction
+# Orchestrated Objective Reduction (Orch OR): the theory and its core claims, fixed on
+# 2026-11-21 before any scoring (kickoff proposal, section 4). Shape as
+# data/tracker/theories.toml. How the claims were chosen: notes.md.
+
+[[theory]]
+id = "orch-or"
+name = "Orchestrated Objective Reduction"
+plain = "Experience is a series of separate moments, each one the end of a quantum process inside the tiny protein tubes (microtubules) within brain cells, when that process collapses by a physical rule tied to gravity that Penrose proposed; the brain organises these processes and shields them from disturbance, and anaesthetics switch experience off by acting on them."
+core_claims_from = "hameroff-penrose-2014"
+fixed_on = "2026-11-21"
+proponents = ["Stuart Hameroff", "Roger Penrose"]
+camp_note = "A study counts as run inside this theory's camp when one of its authors is an author of a proponents' statement used in these records (hameroff-penrose-2014, hameroff-1998, hameroff-2022, hameroff-2020): in practice Hameroff or Penrose. Researchers who argue for the theory without having written one of those statements (for example Michael Wiest, last author of khan-2024 and huang-2026) are not counted as the camp; see the outside_camp protection on those studies."
+
+# ---------------------------------------------------------------- core claims
+# c1 to c4 are the clauses of the abstract's one-sentence statement of the theory
+# ("We proposed in the mid 1990's that ..."), split where the sentence splits.
+# c5 and c6 are the two requirements the paper adds as part of the theory itself:
+# isolation from the surroundings (section 4.5) and the anaesthetic mechanism (listed
+# in section 7 among developments "we have now incorporated into the theory").
+
+[[claim]]
+id = "orch-c1"
+theory = "orch-or"
+plain = "Experience depends on quantum processes, organised by the cell, inside many microtubules (tiny protein tubes) within brain neurons."
+quote = "consciousness depends on biologically ‘orchestrated’ coherent quantum processes in collections of microtubules within brain neurons"
+source = "hameroff-penrose-2014"
+location = "Abstract, first sentence of the theory's statement ('We proposed in the mid 1990's that ...'), first clause"
+
+[[claim]]
+id = "orch-c2"
+theory = "orch-or"
+plain = "These quantum processes in microtubules track and steer the ordinary electrical and chemical activity of neurons at their membranes and synapses (the junctions between neurons)."
+quote = "these quantum processes correlate with, and regulate, neuronal synaptic and membrane activity"
+source = "hameroff-penrose-2014"
+location = "Abstract, same sentence, second clause"
+
+[[claim]]
+id = "orch-c3"
+theory = "orch-or"
+plain = "Each such process ends by 'objective reduction': the quantum state collapses on its own, by the Diósi-Penrose rule tied to gravity, not because something outside measures or disturbs it."
+quote = "the continuous Schrödinger evolution of each such process terminates in accordance with the specific Diósi–Penrose (DP) scheme of ‘objective reduction’ (‘OR’) of the quantum state"
+source = "hameroff-penrose-2014"
+location = "Abstract, same sentence, third clause (the PDF prints 'speciﬁc' with a ligature)"
+
+[[claim]]
+id = "orch-c4"
+theory = "orch-or"
+plain = "Each organised collapse is a moment of experience or of choice: experience comes in separate moments, not as a continuous flow."
+quote = "This orchestrated OR activity (‘Orch OR’) is taken to result in moments of conscious awareness and/or choice."
+source = "hameroff-penrose-2014"
+location = "Abstract, the sentence after the theory's statement"
+note = "The Conclusion (section 7) restates it: 'consciousness consists of a sequence of discrete events, each being a moment of ‘objective reduction’ (OR) of a quantum state'."
+
+[[claim]]
+id = "orch-c5"
+theory = "orch-or"
+plain = "For a collapse to make a moment of experience, the quantum state must be kept apart from the disturbance of its warm, wet surroundings long enough to collapse by itself."
+quote = "it is essential for Orch OR that some degrees of freedom in the system are kept isolated from environmental decoherence, so that OR can be made use of by the system in a controlled way."
+source = "hameroff-penrose-2014"
+location = "section 4.5 'OR and Orch OR', first paragraph, second sentence"
+
+[[claim]]
+id = "orch-c6"
+theory = "orch-or"
+plain = "General anaesthetics switch off experience by lodging in pockets inside the microtubule protein (tubulin) and disrupting the quantum states that experience needs."
+quote = "Anesthetics bind in these tubulin quantum channels, presumably to disperse quantum dipoles necessary for consciousness."
+source = "hameroff-penrose-2014"
+location = "section 7 'Conclusion', list of 'recent adaptations and developments that we have now incorporated into the theory', 'Cell and molecular biology', fifth bullet"
+note = "Section 3.3 states the same mechanism at length ('Anesthetics (lower right) appear to disperse dipoles necessary for consciousness, resulting in anesthesia')."
+
+# ======================================================================
+# Stage 3: Damasio's feeling-based theory
+# Damasio's feeling-based theory: the theory and its core claims, DRAFTED 2026-11-21.
+# The ruled source (kickoff ruling 4, John: "Yes, latest same theory") is Damasio and
+# Damasio 2023 (damasio-2023). Its full text could not be opened (publisher robot
+# check, not bypassed), so every claim below is quoted from the paper's published
+# abstract, which is part of that publication and was opened word for word through
+# Europe PMC. No other source is used for the claims. Whether abstract-only claims
+# may be fixed is a question for John (notes.md); until he answers they are a draft.
+# Layout: data/tracker/README.md.
+
+[[theory]]
+id = "damasio"
+name = "Damasio's feeling-based theory"
+plain = "Experience begins with feelings of the body's own state (hunger, pain, well-being, the steady sense of being alive), produced by a two-way exchange between the nerves that sense the body's interior and the body itself. Those feelings are what mark a mind's contents as belonging to someone, and that is what makes them conscious."
+core_claims_from = "damasio-2023"
+fixed_on = "2026-11-21"
+claims_checked = "The four claims were drafted from the abstract and checked on 2026-11-21 against the full text (the publisher's free PDF): each quotation appears word for word in the paper's abstract, and the body restates each (section 3, 'Explaining Consciousness': 'The essence of consciousness is the identification of a particular mind with a particular organism. This knowledge is provided by the continuous experience of homeostatic feelings generated by the ongoing process of life regulation'; and 'It is likely that homeostatic feelings were the inaugural phenomena of consciousness in evolution'; section 6: 'The unusual physiological features that enable feelings, and thus consciousness, depend on the presence of a nervous system but not on an isolated nervous system.'). No body passage states a tenet the four claims leave out, so none was added or swapped."
+proponents = ["Antonio Damasio", "Hanna Damasio"]
+camp_note = "A study counts as run inside this theory's camp when one of its authors is an author of a proponents' statement used in these records: damasio-2023, damasio-2024, damasio-tranel-2013 (which adds Daniel Tranel) or singer-damasio-2025 (which adds Jacques Singer)."
+
+# ---------------------------------------------------------------- core claims
+# Method (repeatable): every sentence of the abstract that states the authors' own
+# hypothesis or definition of consciousness ("Consciousness occurs when", "We
+# hypothesize", "We also hypothesize", "we outline a mechanism") is a candidate, one
+# claim per sentence. Kept: those that say what makes a system conscious or what
+# generates the feelings that do. Left out: the opening framing sentence, the
+# sentence restating the self ("Conscious minds are said to have a self"), the
+# sentence on what the feelings feel like, the sentence on 'overt' guidance (a
+# consequence of claim 3), the two sentences describing feelings as 'hybrid', and
+# the closing remark on the mind-body problem (a consequence, not a condition).
+
+[[claim]]
+id = "dam-c1"
+theory = "damasio"
+plain = "Something is conscious when the mind's contents (perceptions, thoughts) are automatically marked as belonging to one particular organism."
+quote = "Consciousness occurs when mind contents, such as perceptions and thoughts, are spontaneously identified as belonging to a specific organism/owner."
+source = "damasio-2023"
+location = "abstract, second sentence"
+note = "Quoted from the abstract; checked word for word in the full text, 2026-11-21."
+
+[[claim]]
+id = "dam-c2"
+theory = "damasio"
+plain = "What does that marking is a continuous flow of feelings of the body's own state (homeostatic feelings: the felt side of the body keeping itself in balance)."
+quote = "We hypothesize that the automatic identification that associates minds and organisms is provided by a continuous flow of homeostatic feelings."
+source = "damasio-2023"
+location = "abstract, fourth sentence"
+note = "Quoted from the abstract; checked word for word in the full text, 2026-11-21."
+
+[[claim]]
+id = "dam-c3"
+theory = "damasio"
+plain = "Feelings of the body's own state were the first form of consciousness to evolve, and they were kept because knowing how life regulation is going gave great advantages."
+quote = "We also hypothesize that homeostatic feelings were the inaugural phenomena of consciousness in biological evolution and venture that they were selected because the information they provided regarding the current state of life regulation conferred extraordinary advantages to the organisms so endowed."
+source = "damasio-2023"
+location = "abstract, sixth sentence"
+note = "Quoted from the abstract; checked word for word in the full text, 2026-11-21."
+
+[[claim]]
+id = "dam-c4"
+theory = "damasio"
+plain = "Feelings are produced by a two-way exchange between the nerves that sense the body's interior and parts of the body that are not nerve tissue: the organs and the chemicals circulating in them."
+quote = "Finally, we outline a mechanism for the generation of feelings based on a two-way interaction between interoceptive components of the nervous system and a particular set of nonneural components of the organism's interior, namely, viscera and circulating chemical molecules involved in their operations."
+source = "damasio-2023"
+location = "abstract, eighth sentence"
+note = "Quoted from the abstract; checked word for word in the full text, 2026-11-21."
+
+# ------------------------------------------------- the ruled list, for reference
+# The ten entries John ruled on 2026-11-20 ("Yes, ten"; kickoff section 9, ruling
+# 4). Only gwt, iit and sh are scored in the pilot. The others are listed so that a
+# prediction can name them as the rival it separates a theory from.
+
+[[listed_theory]]
+ids = ["gwt", "iit", "hot", "rpt", "seth", "ast", "sensorimotor", "orch-or", "damasio", "sh"]
+names = ["Global workspace theory", "Integrated information theory", "Higher-order theories", "Recurrent processing theory", "Anil Seth's living-body view", "Attention schema theory", "The sensorimotor theory", "Orchestrated Objective Reduction", "Damasio's feeling-based theory", "The Sentient Horizons account"]
+source = "theory-list-report"

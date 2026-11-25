@@ -1,0 +1,31 @@
+{
+  "packet_id": "tst-orch-mt-vibration",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "zdABa-D9Kvi3jdoPsvy8oQ0",
+  "finish_reason": "STOP",
+  "answer_text": "{\"could_fail\": true, \"rival_predicts_same\": false, \"which_rivals_same\": [], \"separates\": true, \"separates_from\": [\"gwt\", \"iit\", \"hot\", \"rpt\", \"seth\", \"ast\", \"sensorimotor\", \"damasio\", \"sh\"], \"reason\": \"The prediction could fail if measurements in living cells show that microtubule vibrational states do not change alongside cellular or electrical activity. No published passages from any rival theories are present in the material, meaning all rivals are silent on this observable outcome. Under the scoring rules, that silence means no rival predicts the same result and the prediction separates Orchestrated Objective Reduction from all nine rivals on the list.\", \"unsure\": false, \"unsure_why\": \"\"}",
+  "usage": {
+    "promptTokenCount": 1143,
+    "candidatesTokenCount": 166,
+    "totalTokenCount": 2086,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1143
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 166
+      }
+    ],
+    "thoughtsTokenCount": 777,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.011716,
+  "seconds": 10.3,
+  "called_on": "2026-11-21 09:11:51 PST"
+}

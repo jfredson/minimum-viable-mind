@@ -1,0 +1,77 @@
+{
+  "packet_id": "out-wang-2022-ast-control",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Attention schema theory",
+  "core_claim": {
+    "quote": "In the attention schema theory, awareness is part of the control machinery for attention.",
+    "source": {
+      "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+      "date": "2015-04-23"
+    }
+  },
+  "prediction": {
+    "statement": "Without awareness of an item, attention can still be drawn to it, but the brain's deliberate control of that attention (sustaining it, suppressing it, shifting it away) is impaired.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2015-04-23",
+      "passage": "If awareness is an internal model of attention and is used to help control attention, then without awareness, attention should still be possible but it should suffer deficits in control.",
+      "source": {
+        "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+        "date": "2015-04-23"
+      }
+    },
+    "test_for": "With a stimulus made unreportable (for example by masking) while it still measurably draws attention, people cannot deliberately sustain, suppress or redirect attention with respect to it, although they can when they are aware of it.",
+    "test_against": "With the stimulus unreportable and still drawing attention, deliberate control of attention with respect to it is as good as when people are aware of it."
+  },
+  "study": {
+    "name": "Do cues people cannot see still pull attention in line with what they are searching for? (masked Chinese colour-word cues, three experiments)",
+    "source": {
+      "citation": "Wang H, Yang J, Gao Y, Zhang M. Subliminal meaning-contingent attentional orienting: The role of attentional control setting based on displaywide features. Frontiers in Psychology 13:1035690, 2022",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9752581/fullTextXML",
+      "date": "2022-11-17"
+    },
+    "first_appeared": "2022-11-17 (publication (Frontiers in Psychology, online); no preprint found)",
+    "data_collected": {
+      "when": "not stated; before 2022-09-03",
+      "basis": "The paper gives no testing dates; it was received by the journal on 2022-09-03, so the data were collected before then."
+    }
+  },
+  "passages": [
+    {
+      "text": "At the same time, participants reported subjectively that they were unable to perceive or identify the cues.",
+      "source": {
+        "citation": "Wang H, Yang J, Gao Y, Zhang M. Subliminal meaning-contingent attentional orienting: The role of attentional control setting based on displaywide features. Frontiers in Psychology 13:1035690, 2022",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9752581/fullTextXML",
+        "date": "2022-11-17"
+      }
+    },
+    {
+      "text": "This result shows that when there is meaning contingency between objects, even if there is no conscious processing, the object’s meaning can still modulate the spatial attention allocation according to the current attentional control setting, and the meaning-contingent attentional orientation can occur at the subliminal level and is not affected by consciousness.",
+      "source": {
+        "citation": "Wang H, Yang J, Gao Y, Zhang M. Subliminal meaning-contingent attentional orienting: The role of attentional control setting based on displaywide features. Frontiers in Psychology 13:1035690, 2022",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9752581/fullTextXML",
+        "date": "2022-11-17"
+      }
+    },
+    {
+      "text": "showing no significant difference whether consciousness was involved or not.",
+      "source": {
+        "citation": "Wang H, Yang J, Gao Y, Zhang M. Subliminal meaning-contingent attentional orienting: The role of attentional control setting based on displaywide features. Frontiers in Psychology 13:1035690, 2022",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9752581/fullTextXML",
+        "date": "2022-11-17"
+      }
+    },
+    {
+      "text": "Therefore, the cue effects obtained in the experiments are the result of involuntary attention.",
+      "source": {
+        "citation": "Wang H, Yang J, Gao Y, Zhang M. Subliminal meaning-contingent attentional orienting: The role of attentional control setting based on displaywide features. Frontiers in Psychology 13:1035690, 2022",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9752581/fullTextXML",
+        "date": "2022-11-17"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

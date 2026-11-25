@@ -1,0 +1,54 @@
+{
+  "packet_id": "tst-dam-nss",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Damasio's feeling-based theory",
+  "core_claim": {
+    "quote": "Finally, we outline a mechanism for the generation of feelings based on a two-way interaction between interoceptive components of the nervous system and a particular set of nonneural components of the organism's interior, namely, viscera and circulating chemical molecules involved in their operations.",
+    "source": {
+      "citation": "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023",
+      "url": "https://doi.org/10.1162/neco_a_01521",
+      "date": "2022-07-27"
+    }
+  },
+  "prediction": {
+    "statement": "In the nerves that sense the body's interior, signals also pass between fibres outside synapses (by electrical fields between neighbouring fibres, called ephaptic coupling, and by chemicals in the space around them), and this graded, continuous signalling helps build the brain's maps of the body.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2025-11-13",
+      "passage": "It is, thus, plausible that ephaptic interactions could enable continuous, graded, NSS, supporting complex analogue neural activation patterns essential for real-time internal state sensing and the construction of self-maps in the brainstem.",
+      "source": {
+        "citation": "Singer J, Damasio A. The physiology of interoception and its adaptive role in consciousness. Philosophical Transactions of the Royal Society B, 2025 (10.1098/rstb.2024.0305)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12612705/",
+        "date": "2025-11-13"
+      }
+    },
+    "test_for": "Ephaptic coupling, or signalling by chemicals in the space between fibres, is shown between body-sensing fibres of the vagus nerve in living animals, and blocking it changes the signals reaching the brainstem.",
+    "test_against": "In a design sensitive enough to find it elsewhere, no such coupling or chemical signalling between vagal body-sensing fibres is found."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "Further research is needed to confirm the presence of ephaptic signalling in the interoceptive system and clarify its role in affective processes.",
+      "source": {
+        "citation": "Singer J, Damasio A. The physiology of interoception and its adaptive role in consciousness. Philosophical Transactions of the Royal Society B, 2025 (10.1098/rstb.2024.0305)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12612705/",
+        "date": "2025-11-13"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

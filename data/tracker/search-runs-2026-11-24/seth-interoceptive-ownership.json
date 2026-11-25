@@ -1,0 +1,575 @@
+{
+ "prediction": "seth-interoceptive-ownership",
+ "query": "(TITLE_ABS:heartbeat OR TITLE_ABS:cardiac OR TITLE_ABS:\"cardio-visual\" OR TITLE_ABS:\"cardiovisual\") AND (TITLE_ABS:\"body ownership\" OR TITLE_ABS:\"rubber hand\" OR TITLE_ABS:\"full-body illusion\" OR TITLE_ABS:\"full body illusion\") AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 31,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42125933",
+   "source": "MED",
+   "pmid": "42125933",
+   "pmcid": "PMC13494124",
+   "doi": "10.1177/03010066261447828",
+   "first_publication_date": "2026-05-13",
+   "title": "Interoception, alexithymia, and motor congruency: Psychological drivers of body ownership in virtual reality.",
+   "authors": "Savickaite S, Gupta M, Kannan D.",
+   "journal": "Perception",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Alexithymia, a personality trait marked by difficulty in identifying and describing emotions, is associated with differences in interoception - the ability to perceive and interpret internal bodily signals. Interoception plays a key role in forming a coherent sense of self and contributes to body ownership, the feeling that one's body belongs to oneself. This study explored how interoception and alexithymia influence body ownership in immersive virtual reality, particularly under conditions of motor cue congruency. Findings revealed a negative relationship between alexithymia and interoception, and a positive effect of motor synchrony on body ownership. Interoceptive accuracy (assessed via the heartbeat counting task) showed a trend-level positive association with body ownership when virtual and physical movements were aligned. Given the modest sample size (N = 26) and reliance on a single cardiac interoceptive measure, findings should be considered preliminary and warrant replication in larger, multi-method studies."
+  },
+  {
+   "rank": 2,
+   "id": "41675468",
+   "source": "MED",
+   "pmid": "41675468",
+   "pmcid": "PMC12886212",
+   "doi": "10.1007/s10055-025-01241-x",
+   "first_publication_date": "2025-12-27",
+   "title": "XR body illusion for managing pain in fibromyalgia: examining optimal duration.",
+   "authors": "Todd J, Woolford K, Cheng L, Lee MC, de Villiers E, Finn D, Aspell JE.",
+   "journal": "Virtual reality",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundFibromyalgia is a chronic condition characterised by widespread pain, as well as sleep disturbances, fatigue, and memory and concentration difficulties. Research suggests that an alteration in how the brain represents multisensory inputs from the body may cause or maintain chronic pain conditions, including fibromyalgia. Extended reality (XR) and virtual reality setups generating multisensory conflicts have been shown to alleviate pain, however, the optimal duration for such interventions remains unexplored. Here, we aimed to determine an optimal duration for the cardio-visual full body illusion (FBI) in fibromyalgia, considering both tolerability and changes in pain.MethodsParticipants wore headsets to view a video of their own body, filmed from behind, and their virtual body flashed in synchrony with their heartbeat. We used an established dose-finding protocol to determine the ideal duration (balancing benefit and tolerability). Seven cohorts of participants (N = 20) were exposed to different durations of the FBI, with adjustments to duration made according to predefined criteria. Measures included a numeric rating scale for pain intensity, pressure pain thresholds, and scales measuring fibromyalgia symptom severity and impact.ResultsWe found a quadratic relationship between session duration and changes in self-reported pain-intensity, with 8-16-min durations yielding the most significant improvements. Notably, in the 12-min cohorts pain relief was sustained at 24-h follow-up, and this is the recommended duration for future research.ConclusionsThese findings represent a key step towards developing an effective non-pharmacological intervention for fibromyalgia. Future dose-optimisation research should explore the optimum number of sessions and spacing between sessions."
+  },
+  {
+   "rank": 3,
+   "id": "40997355",
+   "source": "MED",
+   "pmid": "40997355",
+   "pmcid": null,
+   "doi": "10.1016/j.cortex.2025.09.001",
+   "first_publication_date": "2025-09-10",
+   "title": "Do explicit self-reflection traits relate to implicit bodily self-consciousness? Insights from asynchronous stimulation in embodiment illusions.",
+   "authors": "Raoul L, Sarlegna FR, Goulon C, Grosbras MH.",
+   "journal": "Cortex; a journal devoted to the study of the nervous system and behavior",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Does the way we explicitly reflect on our bodily, mental, and social self relate to our implicit bodily self-consciousness? To address this question, we investigated how self-reflection traits and sensory characteristics explain inter-individual variability in experiencing ownership, agency, or referral of touch over a rubber hand or virtual full-body in 70 young girls. The reduction of these embodiment feelings by an experimentally induced asynchrony between the participant's and the virtual body's stimulation (tactile or motor) can be seen as indicative of a robust bodily self-consciousness. In the visuo-motor full-body illusion, asynchrony reduced: agency more strongly in participants with a high tendency to reflect about social-self; ownership more in those with positive reflections towards the bodily self; agency and ownership more in participants with lower cardiac interoceptive accuracy. Overall, we highlight the importance of accounting for embodiment variability during asynchronous stimulation and provide novel insights into how explicit reflections about oneself relate to bodily self-consciousness' components in girls, underscoring the need for further investigation in other populations."
+  },
+  {
+   "rank": 4,
+   "id": "41084361",
+   "source": "MED",
+   "pmid": "41084361",
+   "pmcid": null,
+   "doi": "10.1111/psyp.70167",
+   "first_publication_date": "2025-10-01",
+   "title": "Cardiac Cycle Phase Modulates Pain Processing During Heartbeat-Enhanced Rubber Hand Illusion.",
+   "authors": "Gong W, Xu Q, Liang K, Gu L, Chen L.",
+   "journal": "Psychophysiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Pain-a complex, highly subjective experience-is shaped by interoceptive signals, especially the systolic and diastolic phases of cardiac rhythmicity. While body ownership illusions (BOI, the perceptual attribution of artificial limbs to one's own body) are modulated by interoceptive signals, their influence on pain processing remains controversial, with conflicting findings in the literature. Critically, it remains unclear whether cardiac-phase-specific pain modulation occurs independently of BOI. To resolve this, we examined: (1) the effects of cardiac cycles, (2) the influence of BOI, and (3) their potential interactions on pain processing. In the present study, we used a virtual reality rubber hand illusion (VR-RHI) paradigm to induce BOI. In the control condition (object, OBJ condition), participants viewed a VR scenario with an inanimate object (cardboard) instead of a rubber hand, which does not induce BOI. Pain stimulation was administered under four experimental conditions: RHI-systole, RHI-diastole, OBJ-systole, and OBJ-diastole. We assessed pain perception-thresholds, intensity and unpleasantness ratings, and somatosensory evoked potentials (SEPs)-while delivering painful electrical stimuli timed to systolic or diastolic phases under BOI and control VR conditions. Results demonstrated that compared to the systolic phase, the diastolic phase was associated with significantly lower pain intensity and unpleasantness ratings, along with reduced SEP amplitudes. However, neither BOI nor its interaction with cardiac cycle exerted significant effects on these measures. Our findings suggest that while cardiac cycle modulates pain perception, this effect operates independently of BOI."
+  },
+  {
+   "rank": 5,
+   "id": "40097357",
+   "source": "MED",
+   "pmid": "40097357",
+   "pmcid": "PMC11913772",
+   "doi": "10.1111/psyp.70040",
+   "first_publication_date": "2025-03-01",
+   "title": "The Vagus Nerve as a Gateway to Body Ownership: taVNS Reduces Susceptibility to a Virtual Version of the Cardiac and Tactile Rubber Hand Illusion.",
+   "authors": "Vabba A, Suzuki K, Doric M, Möller TJ, Garfinkel S, Critchley H.",
+   "journal": "Psychophysiology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Transcutaneous auricular vagus nerve stimulation (taVNS) has been shown to influence cognitive and emotional function and enhance interoceptive awareness. This study investigates if taVNS effects extend to the experience of body ownership, as measured via susceptibility to the rubber hand illusion (RHI) in a virtual reality setting. The experiment involved 27 participants who underwent real and sham stimulation in two separate sessions while experiencing synchronous or asynchronous visuo-cardiac and visuo-tactile feedback on a virtual arm in place of their own. Results indicated that active compared to sham taVNS decreased sensitivity to the illusion in both cardiac and tactile trials. Specifically, a greater proprioceptive drift difference (PDD) toward the rubber hand was observed for synchronous compared to asynchronous trials only during sham (t(26) = -4.58, pbonf bonf = 1.00) stimulation. A similar pattern was also observed for subjective ownership, where synchronous trials led to greater subjective ownership than asynchronous trials only during sham (t(26) = -3.52, pbonf = 0.010) but not during active (pbonf = 1.00) stimulation. These findings suggest that stimulation might enhance body ownership, making individuals more attuned to their real bodily signals and less susceptible to bodily illusions. Additionally, physiological measures such as heart rate (HR), heart rate variability (HRV), and skin sympathetic nervous activity (SKNA) were assessed to explore the autonomic effects of taVNS. We observed a decrease in HR during active stimulation (t(26) = 4.30, pbonf bonf bonf < 0.002). These findings contribute to the understanding of the vagus nerve's role in integrating visceral and somatosensory signals, with implications for clinical applications in conditions characterized by altered interoception and body ownership."
+  },
+  {
+   "rank": 6,
+   "id": "39661868",
+   "source": "MED",
+   "pmid": "39661868",
+   "pmcid": "PMC11654996",
+   "doi": "10.2196/52340",
+   "first_publication_date": "2024-12-11",
+   "title": "Evaluation of a New Mobile Virtual Reality Setup to Alter Pain Perception: Pilot Development and Usability Study in Healthy Participants.",
+   "authors": "Knobel SEJ, Oberson R, Räber J, Schütz N, Egloff N, Botros A, Gerber SM, Nef T, Heydrich L.",
+   "journal": "JMIR serious games",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundChronic pain presents a significant treatment challenge, often leading to frustration for both patients and therapists due to the limitations of traditional methods. Research has shown that synchronous visuo-tactile stimulation, as used in the rubber hand experiment, can induce a sense of ownership over a fake body part and reduces pain perception when ownership of the fake body part is reported. The effect of the rubber hand experiment can be extended to the full body, for example, during the full-body illusion, using both visuo-tactile and cardiovisual signals.ObjectiveThis study first aimed to evaluate the usability and accuracy of a novel, mobile virtual reality (VR) setup that displays participants' heartbeats as a flashing silhouette on a virtual avatar, a technique known as the cardiovisual full-body illusion. The second part of the study investigated the effects of synchronous cardiovisual stimulation on pain perception and ownership in 20 healthy participants as compared with asynchronous stimulation (control condition).MethodsThe setup comprised a head-mounted display (HMD) and a heart rate measurement device. A smartphone-based HMD (Samsung Galaxy S8+) was selected for its mobility, and heart rates were measured using smartwatches with photoplethysmography (PPG). The accuracy of 2 smartwatch positions was compared with a 5-point electrocardiogram (ECG) standard in terms of their accuracy (number and percent of missed beats). Each participant underwent two 5-minute sessions of synchronous cardiovisual stimulation and two 5-minute sessions of asynchronous cardiovisual stimulation (total of 4 sessions), followed by pain assessments. Usability, symptoms of cybersickness, and ownership of the virtual body were measured using established questionnaires (System Usability Scale, Simulator Sickness Questionnaire, Ownership Questionnaire). Pain perception was assessed using advanced algometric methods (Algopeg and Somedic algometer).ResultsResults demonstrated high usability scores (mean 4.42, SD 0.56; out of 5), indicating ease of use and acceptance, with minimal side effects (mean 1.18, SD 0.46; out of a possible 4 points on the Simulator Sickness Questionnaire). The PPG device showed high heart rate measurement precision, which improved with optimized filtering and peak detection algorithms. However, compared with previous work, no significant effects on body ownership and pain perception were observed between the synchronous and asynchronous conditions. These findings are discussed in the context of existing literature on VR interventions for chronic pain.ConclusionsIn conclusion, while the new VR setup showed high usability and minimal side effects, it did not significantly affect ownership or pain perception. This highlights the need for further research to refine VR-based interventions for chronic pain management, considering factors like visual realism and perspective."
+  },
+  {
+   "rank": 7,
+   "id": "38518888",
+   "source": "MED",
+   "pmid": "38518888",
+   "pmcid": null,
+   "doi": "10.1016/j.neuropsychologia.2024.108867",
+   "first_publication_date": "2024-03-20",
+   "title": "Delving into the relationship between regular physical exercise and cardiac interoception in two cross-sectional studies.",
+   "authors": "Yoris AE, Cira LF, Luque-Casado A, Salvotti C, Tajadura-Jiménez A, Avancini C, Zarza-Rebollo JA, Sanabria D, Perakakis P.",
+   "journal": "Neuropsychologia",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Cardiac interoception, the ability to sense and process cardiac afferent signals, has been shown to improve after a single session of acute physical exercise. However, it remains unclear whether repetitive engagement in physical exercise over time leads to long-term changes in cardiac interoceptive accuracy. It is also unknown whether those changes affect the neural activity associated with the processing of afferent cardiac signals, assessed by the heart-evoked potential (HEP). In this study, we aimed to investigate this hypothesis through two cross-sectional studies, categorizing participants as active or inactive based on physical fitness (Study I; N = 45) or self-reported physical activity levels (Study II; N = 60). Interoception was assessed at rest using the HEP (Studies I and II), the Heartbeat Counting task (Study II), and the Rubber Hand Illusion (RHI) (Study II). Study I showed strong evidence of better cardiovascular fitness in the active group than in the inactive group as well as robust between-group differences in electrocardiogram (ECG) recordings. Study 2 replicated the clear differences in ECG as a function of regular physical activity. Those results were expected due to clear differences in physical activity habits. In contrast, our analysis revealed no robust differences between groups across cardiac interoception tasks and the RHI, although the direct relevance of these measures to interoception remains under investigation. In sum, our results do not provide convincing evidence to support a strong version of the notion that regular physical exercise is associated with an enhanced in cardiac interoception."
+  },
+  {
+   "rank": 8,
+   "id": "38135190",
+   "source": "MED",
+   "pmid": "38135190",
+   "pmcid": null,
+   "doi": "10.1016/j.bbr.2023.114818",
+   "first_publication_date": "2023-12-20",
+   "title": "Are blind individuals immune to bodily illusions? Somatic rubber hand illusion in the blind revisited.",
+   "authors": "Radziun D, Korczyk M, Szwed M, Ehrsson HH.",
+   "journal": "Behavioural brain research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Multisensory awareness of one's own body relies on the integration of signals from various sensory modalities such as vision, touch, and proprioception. But how do blind individuals perceive their bodies without visual cues, and does the brain of a blind person integrate bodily senses differently from a sighted person? To address this question, we aimed to replicate the only two previous studies on this topic, which claimed that blind individuals do not experience the somatic rubber hand illusion, a bodily illusion triggered by the integration of correlated tactile and proprioceptive signals from the two hands. We used a larger sample size than the previous studies and added Bayesian analyses to examine statistical evidence in favor of the lack of an illusion effect. Moreover, we employed tests to investigate whether enhanced tactile acuity and cardiac interoceptive accuracy in blind individuals could also explain the weaker illusion. We tested 36 blind individuals and 36 age- and sex-matched sighted volunteers. The results show that blind individuals do not experience the somatic rubber hand illusion based on questionnaire ratings and behavioral measures that assessed changes in hand position sense toward the location of the rubber hand. This conclusion is supported by Bayesian evidence in favor of the null hypothesis. The findings confirm that blind individuals do not experience the somatic rubber hand illusion, indicating that lack of visual experience leads to permanent changes in multisensory bodily perception. In summary, our study suggests that changes in multisensory integration of tactile and proprioceptive signals may explain why blind individuals are \"immune\" to the nonvisual version of the rubber hand illusion."
+  },
+  {
+   "rank": 9,
+   "id": "38280444",
+   "source": "MED",
+   "pmid": "38280444",
+   "pmcid": null,
+   "doi": "10.1016/j.biopsycho.2024.108756",
+   "first_publication_date": "2024-01-25",
+   "title": "With hand on heart: A cardiac Rubber Hand Illusion.",
+   "authors": "Moffatt J, Finotti G, Tsakiris M.",
+   "journal": "Biological psychology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Body illusions such as the Rubber Hand Illusion (RHI) have highlighted how multisensory integration underpins the sense of one's own body. Much of this research has focused on senses arising from outside the body (e.g. vision and touch), but sensations from within the body may also play a role. In a pre-registered study, participants completed a cardiac variation of the RHI, where taps to the finger occurred in or out of time with the heartbeat. We replicated the RHI effect, showing that synchronous but not asynchronous taps to the real and rubber hand increased sensations of embodiment over the rubber hand and caused a shift in the perceived hand location. However, there were no significant influences of cardiac timing on embodiment, nor did it interact with visuo-tactile synchrony. An exploratory analysis found a three-way interaction between synchrony, cardiac timing and interoceptive accuracy as measured by a heartbeat counting task, such that greater interoceptive accuracy was associated with lower embodiment ratings in the systole condition compared to diastole, but only during synchronous stimulation. Although our novel methodology successfully replicated the RHI, our findings suggest that the cooccurence of vision and touch with cardiac signals may make little contribution to the sense of one's body."
+  },
+  {
+   "rank": 10,
+   "id": "39723393",
+   "source": "MED",
+   "pmid": "39723393",
+   "pmcid": "PMC11669270",
+   "doi": "10.3389/fpsyg.2024.1458726",
+   "first_publication_date": "2024-12-11",
+   "title": "Influence of interoception and body movement on the rubber hand illusion.",
+   "authors": "Kaneno Y, Pasqualotto A, Ashida H.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "brief-report",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Rubber hand illusion (RHI) refers to the illusory sense of body ownership of a fake hand, which is induced by synchronous visuotactile stimulation to the real and fake hands. A negative correlation was reported between the cardiac interoception and the strength of RHI, but the subsequent studies have been unsuccessful in replicating it. On the other hand, voluntary action is suggested to link interoception and the sense of body ownership in different situations. If so, moving RHI, induced by the active or the passive finger tapping while observing a fake hand, might reveal the relationship more clearly. The measurement of interoception has been another issue. We, therefore, examined the relationship between the moving RHI and two measures of interoception: interoceptive accuracy (IAcc) measured by the conventional heartbeat counting task and interoceptive sensibility (IS) measured using a questionnaire. For the classical visuotactile RHI, our results supported the lack of association between the interoception measures and RHI. For the moving RHI, a stronger sense of body ownership was induced for participants with higher IS regardless of active or passive movement, and a stronger sense of agency was caused by active than passive movement only for those with lower IAcc. These results reveal the dynamic links between the interoception and the bodily senses. The results also suggest that multiple dimensions of interoception affect the bodily senses differently."
+  },
+  {
+   "rank": 11,
+   "id": "37816882",
+   "source": "MED",
+   "pmid": "37816882",
+   "pmcid": "PMC10564882",
+   "doi": "10.1038/s41598-023-43990-2",
+   "first_publication_date": "2023-10-10",
+   "title": "Revisiting the relationship between illusory hand ownership induced by visuotactile synchrony and cardiac interoceptive accuracy.",
+   "authors": "Yamagata T, Ichikawa K, Mizutori S, Haruki Y, Ogawa K.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Multisensory integration plays an important role in the experience of the bodily self. Recently, the relationship between exteroception and interoception has been actively debated. The first evidence was a report that the susceptibility of the sense of ownership over a fake hand (i.e., illusory hand ownership: IHO) in the typical rubber hand illusion is negatively modulated by the accuracy of the heartbeat perception (i.e., cardiac interoceptive accuracy: CIA). If reliable, this would suggest an antagonism between the exteroceptive and interoceptive cues underlying the bodily self. However, some inconsistent data have been reported, raising questions about the robustness of the initial evidence. To investigate this robustness, we estimated the extent of the modulatory effect of CIA on IHO susceptibility by applying Bayesian hierarchical modeling to two independent datasets. Overall, our results did not support that IHO susceptibility is modulated by CIA. The present estimates with high uncertainty cannot exclude the hypothesis that the relationship between IHO susceptibility and CIA is so weak as to be negligible. Further studies with larger sample sizes are needed to reach a conclusion about the extent of the modulatory effect. These findings highlight the lack of robustness of key evidence supporting the \"antagonism hypothesis\"."
+  },
+  {
+   "rank": 12,
+   "id": "35948567",
+   "source": "MED",
+   "pmid": "35948567",
+   "pmcid": "PMC9365823",
+   "doi": "10.1038/s41598-022-16569-6",
+   "first_publication_date": "2022-08-10",
+   "title": "The relationship between interoception and agency and its modulation by heartbeats: an exploratory study.",
+   "authors": "Koreki A, Goeta D, Ricciardi L, Eilon T, Chen J, Critchley HD, Garfinkel SN, Edwards M, Yogarajah M.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Interoception, the sense of the internal physiological state of the body, theoretically underpins aspects of self-representation. Experimental studies link feelings of body ownership to interoceptive perception, yet few studies have tested for association between the sense of agency and interoceptive processing. Here, we combined an intentional binding paradigm with cardiac measures of interoceptive processing (behavioural performance on a heartbeat discrimination task, and effects of timing within the cardiac cycle) in twenty-six non-clinical participants as an exploratory study. We found performance accuracy on the heartbeat discrimination task correlated positively with the intentional binding effect, an index of sense of agency (β = 0.832, p = 0.005), even after controlling for effects of age, sex, educational level, heart rate, heart rate variability and time accuracy. The intentional binding effect was enhanced during cardiac systole (compared to diastole) in individuals with greater heartbeat discrimination accuracy (β = 0.640, p = 0.047). These findings support the proposal that interoception contributes to mechanisms underlying the emergence of sense of agency."
+  },
+  {
+   "rank": 13,
+   "id": "35620242",
+   "source": "MED",
+   "pmid": "35620242",
+   "pmcid": "PMC9126834",
+   "doi": "10.1016/j.dib.2022.108257",
+   "first_publication_date": "2022-05-11",
+   "title": "Interoception during aging: Functional neuroimaging data from a heartbeat detection task.",
+   "authors": "Dobrushina OR, Dobrynina LA, Arina GA, Pechenkova EV, Kremneva EI, Trubitsyna VV, Gubanova MV, Belopasova AV, Novikova ES, Tsypushtanova MM, Makarova AG, Vorobeva VP, Kazantseva DA, Aristova VV, Suslina AD, Perepelkina OS, Krotenkova MV.",
+   "journal": "Data in brief",
+   "pub_types": [
+    "data-paper",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Interoception is critically important for allostatic adaptation and emotional regulation, and aberrant interoceptive processing is increasingly recognized to be involved in the pathogenesis of neurological, psychiatric and cardiovascular diseases. Despite the fact that interoceptive abilities decline with age, the corresponding neural correlates and clinical consequences of these age-related changes have yet to be discovered. We present a dataset that contains task-based functional neuroimaging data from 50 adults aged 40-65 years and 12 adults aged 18-25 years who performed an fMRI-based heartbeat-detection task. Of the 62, 38 participants also took part in a rubber hand illusion experiment outside the scanner. While the dataset was mainly created to study age-related changes in interoception, it can also be used in body perception research in general. The provided group data may serve as a reference for clinical studies on interoception involving older adults."
+  },
+  {
+   "rank": 14,
+   "id": "34673435",
+   "source": "MED",
+   "pmid": "34673435",
+   "pmcid": null,
+   "doi": "10.1016/j.cortex.2021.08.009",
+   "first_publication_date": "2021-09-28",
+   "title": "Sensory integration in interoception: Interplay between top-down and bottom-up processing.",
+   "authors": "Dobrushina OR, Arina GA, Dobrynina LA, Novikova ES, Gubanova MV, Belopasova AV, Vorobeva VP, Suslina AD, Pechenkova EV, Perepelkina OS, Kremneva EI, Krotenkova MV.",
+   "journal": "Cortex; a journal devoted to the study of the nervous system and behavior",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Although the neural systems supporting interoception have been outlined in general, the exact processes underlying the integration of visceral signals still await research. Based on the predictive coding concept, we aimed to reveal the neural networks responsible for the bottom-up (stimulus-dependent) and top-down (model-dependent) processing of interoceptive information. In a study of 30 female participants, we utilized two classical body perception experiments-the rubber hand illusion and a heartbeat detection task (cardioception), with the latter being implemented in fMRI settings. We interpreted a stronger rubber hand illusion, as measured by higher proprioceptive drift, as a tendency to rely on actual sensory experience, i.e., bottom-up processing, while lower proprioceptive drift served as an indicator of the prevalence of top-down, model-based influences. To reveal the bottom-up and top-down processes in cardioception, we performed a seed-based connectivity analysis of the heartbeat detection task, using as seeds the areas with known roles in sensory integration and entering proprioceptive drift as a covariate. The results revealed a left thalamus-dependent network positively associated with proprioceptive drift (bottom-up processing) and a left amygdala-dependent network negatively associated with drift (top-down processing). Bottom-up processing was related to thalamic connectivity with the left frontal operculum and anterior insula, anterior cingulate cortex, hypothalamus, right planum polare and right inferior frontal gyrus. Top-down processing was related to amygdalar connectivity with the rostral prefrontal cortex and an area involving the left frontal opercular and anterior insular cortex, with the latter area being an intersection of the two networks. Thus, we revealed the neural mechanisms underlying the integration of interoceptive information through the interaction between the current sensory experience and internal models."
+  },
+  {
+   "rank": 15,
+   "id": "33942318",
+   "source": "MED",
+   "pmid": "33942318",
+   "pmcid": null,
+   "doi": "10.1111/psyp.13826",
+   "first_publication_date": "2021-05-04",
+   "title": "Different psychophysiological and clinical symptoms are linked to affective versus sensory vicarious pain experiences.",
+   "authors": "Botan V, Critchley HD, Ward J.",
+   "journal": "Psychophysiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "For some people, seeing pain in others triggers a pain-like experience in themselves: these experiences can either be described in sensory terms and localized to specific body parts (sensory-localized, or S/L) or in affective terms and nonlocalized or whole-body experiences (affective-general, or A/G). In two studies, it is shown that these are linked to different clinical and psychophysiological profiles relative to controls. Study 1 shows that the A/G profile is linked to symptoms of Blood-Injection-Injury Phobia whereas the S/L profile shows some tendency toward eating disorders. Study 2 shows that the A/G profile is linked to poor interoceptive accuracy (for heartbeat detection) whereas the S/L profile is linked to higher heart-rate variability (HRV) when observing pain, which is typically regarded as an index of good autonomic emotion regulation. Neither group showed significant differences in overall heart rate, systolic blood pressure (SBP), or skin conductance response (SCR) when observing pain, and no overall differences in state or trait anxiety. Overall, the research points to different underlying mechanisms linked to different manifestations of vicarious pain response. Affective-General pain responders have strong subjective bodily experiences (likely of central origin given the absence of major differences in autonomic responsiveness) coupled with a worse ability to read objective interoceptive signals. Sensory-localized pain responders have differences in their ability to construct a multi-sensory body schema (as evidenced by prior research on the Rubber Hand Illusion) coupled with enhanced cardiovagal (parasympathetic) reactivity often indicative of better stress adaptation."
+  },
+  {
+   "rank": 16,
+   "id": "34788333",
+   "source": "MED",
+   "pmid": "34788333",
+   "pmcid": "PMC8598028",
+   "doi": "10.1371/journal.pone.0259988",
+   "first_publication_date": "2021-11-17",
+   "title": "Do interoception and attending to the upper limbs affect body ownership and body representation in the grasp illusion?",
+   "authors": "Butler AA, Robertson LS, Wang AP, Gandevia SC, Héroux ME.",
+   "journal": "PloS one",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Passively grasping an unseen artificial finger induces ownership over this finger and an illusory coming together of one's index fingers: a grasp illusion. Here we determine how interoceptive ability and attending to the upper limbs influence this illusion. Participants passively grasped an unseen artificial finger with their left index finger and thumb for 3 min while their right index finger, located 12 cm below, was lightly clamped. Experiment 1 (n = 30) investigated whether the strength of the grasp illusion (perceived index finger spacing and perceived ownership) is related to a person's level of interoceptive accuracy (modified heartbeat counting task) and sensibility (Noticing subscale of the Multidimensional Assessment of Interoceptive Awareness). Experiment 2 (n = 30) investigated the effect of providing verbal or tactile cues to guide participants' attention to their upper limbs. On their own, neither interoceptive accuracy and sensibility or verbal and tactile cueing had an effect on the grasp illusion. However, verbal cueing increased the strength of the grasp illusion in individuals with lower interoceptive ability. Across the observed range of interoceptive accuracy and sensibility, verbal cueing decreased perceived index spacing by 5.6 cm [1.91 to 9.38] (mean [95%CI]), and perceived ownership by ∼3 points on a 7-point Likert scale (slope -0.93 [-1.72 to -0.15]). Thus, attending to the upper limbs via verbal cues increases the strength of the grasp illusion in a way that is inversely proportional to a person's level of interoceptive accuracy and sensibility."
+  },
+  {
+   "rank": 17,
+   "id": "33031978",
+   "source": "MED",
+   "pmid": "33031978",
+   "pmcid": null,
+   "doi": "10.1016/j.cortex.2020.08.026",
+   "first_publication_date": "2020-09-16",
+   "title": "Proprioception but not cardiac interoception is related to the rubber hand illusion.",
+   "authors": "Horváth Á, Ferentzi E, Bogdány T, Szolcsányi T, Witthöft M, Köteles F.",
+   "journal": "Cortex; a journal devoted to the study of the nervous system and behavior",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The rubber hand illusion (RHI) is a widely used tool in the study of multisensory integration. It develops as the interaction of temporally consistent visual and tactile input, which can overwrite proprioceptive information. Theoretically, the accuracy of proprioception may influence the proneness to the RHI but this has received little research attention to date. Concerning the role of cardioceptive information, the available empirical evidence is equivocal. The current study aimed to test the impact of proprioceptive and cardioceptive input on the RHI. 60 undergraduate students (32 females) completed sensory tasks assessing proprioceptive accuracy with respect to the angle of the elbow joint, a heartbeat tracking task assessing cardioceptive accuracy (the Schandry-task) and the RHI. We found that those with more consistent joint position judgements (i.e., less variable error) in the proprioceptive task were less prone to the illusion, particularly with respect to disembodiment ratings in the asynchronous condition. Systematic error, indicating a systematic distortion in position judgements influenced the illusion in the synchronous condition. Participants with more proprioceptive bias toward the direction of the rubber hand in the proprioceptive test reported a stronger felt embodiment. The results are in accordance with Bayesian causal inference models of multisensory integration. Cardioceptive accuracy, however, was not associated with the strength of the illusion. We concluded that individual differences in proprioceptive processing impact the RHI, while cardioceptive accuracy is unrelated to it. Theoretical and practical relevance of the findings are discussed."
+  },
+  {
+   "rank": 18,
+   "id": "32932793",
+   "source": "MED",
+   "pmid": "32932793",
+   "pmcid": "PMC7563244",
+   "doi": "10.3390/jcm9092931",
+   "first_publication_date": "2020-09-11",
+   "title": "Assessing the Relationship between Sense of Agency, the Bodily-Self and Stress: Four Virtual-Reality Experiments in Healthy Individuals.",
+   "authors": "Stern Y, Koren D, Moebus R, Panishev G, Salomon R.",
+   "journal": "Journal of clinical medicine",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The bodily-self, our experience of being a body, arises from the interaction of several processes. For example, embodied Sense of Agency (SoA), the feeling of controlling our body's actions, is a fundamental facet of the bodily-self. SoA is disturbed in psychosis, with stress promoting its inception. However, there is little knowledge regarding the relationship between SoA, stress, and other facets of the bodily-self. In four experiments manipulating embodied SoA using a virtual hand (VH), we examined (1) How is embodied SoA related to other facets of the bodily-self?; and (2) How is SoA impacted by stress? We found that increased alteration of the VH significantly decreased subjective ratings of SoA and body ownership (Exp. 1), supporting the close relation between SoA and body ownership. Interoceptive accuracy and SoA were positively correlated (Exp. 3), connecting awareness to one's actions and cardiac signals. Contrary to our expectations, SoA was not related to trait anxiety (Exp. 3), nor did induced stress impair SoA (Exp. 4). Finally, we found a negative correlation between self-reported prodromal symptoms and SoA. These results strongly support the connection between SoA and the bodily-self. Whereas, SoA was not impaired by stress, and weakly related to psychotic symptoms."
+  },
+  {
+   "rank": 19,
+   "id": "32162704",
+   "source": "MED",
+   "pmid": "32162704",
+   "pmcid": "PMC7507190",
+   "doi": "10.1111/psyp.13564",
+   "first_publication_date": "2020-03-12",
+   "title": "Mechanisms of the breathing contribution to bodily self-consciousness in healthy humans: Lessons from machine-assisted breathing?",
+   "authors": "Betka S, Canzoneri E, Adler D, Herbelin B, Bello-Ruiz J, Kannape OA, Similowski T, Blanke O.",
+   "journal": "Psychophysiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Previous studies investigated bodily self-consciousness (BSC) by experimentally exposing subjects to multisensory conflicts (i.e., visuo-tactile, audio-tactile, visuo-cardiac) in virtual reality (VR) that involve the participant's torso in a paradigm known as the full-body illusion (FBI). Using a modified FBI paradigm, we found that synchrony of visuo-respiratory stimulation (i.e., a flashing outline surrounding an avatar in VR; the flash intensity depending on breathing), is also able to modulate BSC by increasing self-location and breathing agency toward the virtual body. Our aim was to investigate such visuo-respiratory effects and determine whether respiratory motor commands contributes to BSC, using non-invasive mechanical ventilation (i.e., machine-delivered breathing). Seventeen healthy participants took part in a visuo-respiratory FBI paradigm and performed the FBI during two breathing conditions: (a) \"active breathing\" (i.e., participants actively initiate machine-delivered breaths) and (b) \"passive breathing\" (i.e., breaths' timing was determined by the machine). Respiration rate, tidal volume, and their variability were recorded. In line with previous results, participants experienced subjective changes in self-location, breathing agency, and self-identification toward the avatar's body, when presented with synchronous visuo-respiratory stimulation. Moreover, drift in self-location was reduced and tidal volume variability were increased by asynchronous visuo-respiratory stimulations. Such effects were not modulated by breathing control manipulations. Our results extend previous FBI findings showing that visuo-respiratory stimulation affects BSC, independently from breathing motor command initiation. Also, variability of respiratory parameters was influenced by visuo-respiratory feedback and might reduce breathing discomfort. Further exploration of such findings might inform the development of respiratory therapeutic tools using VR in patients."
+  },
+  {
+   "rank": 20,
+   "id": "31800367",
+   "source": "MED",
+   "pmid": "31800367",
+   "pmcid": "PMC6985859",
+   "doi": "10.1152/jn.00617.2019",
+   "first_publication_date": "2019-12-04",
+   "title": "The \"embreathment\" illusion highlights the role of breathing in corporeal awareness.",
+   "authors": "Monti A, Porciello G, Tieri G, Aglioti SM.",
+   "journal": "Journal of neurophysiology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Recent theories posit that physiological signals contribute to corporeal awareness, the basic feeling that one has a body (body ownership) that acts according to one's will (body agency) and occupies a specific position (body location). Combining physiological recordings with immersive virtual reality, we found that an ecological mapping of real respiratory patterns onto a virtual body illusorily changes corporeal awareness. This new way of inducing a respiratory bodily illusion, called \"embreathment,\" revealed that breathing is almost as important as visual appearance for inducing body ownership and more important than any other cue for body agency. These effects were moderated by individual levels of interoception, as assessed through a standard heartbeat-counting task and a new \"pneumoception\" task. By showing that respiratory, visual, and spatial signals exert a specific and weighted influence on the fundamental feeling that one is an embodied agent, we pave the way for a comprehensive hierarchical model of corporeal awareness.NEW & NOTEWORTHY Our body is the only object we sense from the inside; however, it is unclear how much inner physiology contributes to the global sensation of having a body and controlling it. We combine respiration recordings with immersive virtual reality and find that making a virtual body breathe like the real body gives an illusory sense of ownership and agency over the avatar, elucidating the role of a key physiological process like breathing in corporeal awareness."
+  },
+  {
+   "rank": 21,
+   "id": "30878983",
+   "source": "MED",
+   "pmid": "30878983",
+   "pmcid": "PMC6429868",
+   "doi": "10.1136/bmjopen-2018-024913",
+   "first_publication_date": "2019-03-15",
+   "title": "The effect of intranasal oxytocin on the perception of affective touch and multisensory integration in anorexia nervosa: protocol for a double-blind placebo-controlled crossover study.",
+   "authors": "Crucianelli L, Serpell L, Paloyelis Y, Ricciardi L, Robinson P, Jenkinson P, Fotopoulou A.",
+   "journal": "BMJ open",
+   "pub_types": [
+    "Clinical Trial Protocol",
+    "protocol",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "IntroductionAnorexia nervosa (AN) is an eating disorder characterised by restriction of energy intake, fears of gaining weight and related body image disturbances. The oxytocinergic system has been proposed as a pathophysiological candidate for AN. Oxytocin is a neuropeptide involved in bodily processes (eg, breast feeding) and in the onset of social behaviours (eg, bonding). Studies investigating the effect of intranasal oxytocin (IN-OT) in AN showed that it can improve attentional bias for high-calorie food and fat bodies stimuli, and related stress. However, less is known about the effect of IN-OT on bodily awareness and body image distortions, key features of the disorder linked to its development, prognosis and maintenance. Here, we aim to investigate the effect of IN-OT on the perception of affective, C-tactile-optimal touch, known to be impaired in AN and on multisensory integration processes underlying a body ownership illusion (ie, rubber hand illusion). For exploratory purposes, we will also investigate the effect of IN-OT on another interoceptive modality, namely cardiac awareness and its relationship with affective touch.Design, methods and analysisForty women with AN and forty matched healthy controls will be recruited and tested in two separate sessions; self-administering IN-OT (40 IU) or placebo, intranasally, in a pseudo-randomised manner. The data from this double-blind, placebo-controlled, cross-over study will be analysed using linear mixed models that allow the use of both fixed (treatment levels) and random (subjects) effects in the same analysis. To address our main hypotheses, separate analyses will be run for the affective touch task, where the primary outcome dependent variable will be the pleasantness of the touch, and for the rubber hand illusion, where we will investigate multisensory integration quantified as subjective embodiment towards the rubber hand. In the latter, we will manipulate the synchronicity of touch and the size of the hand.Ethics and disseminationEthics approval has been obtained by National Research Ethics Service NRES Committee London (Queen's Square Committee, ref number 14/LO/1593). The results will be disseminated through conference presentations and publication in peer-reviewed journals."
+  },
+  {
+   "rank": 22,
+   "id": "28532579",
+   "source": "MED",
+   "pmid": "28532579",
+   "pmcid": null,
+   "doi": "10.1016/j.cortex.2017.04.018",
+   "first_publication_date": "2017-05-01",
+   "title": "Interoceptive ingredients of body ownership: Affective touch and cardiac awareness in the rubber hand illusion.",
+   "authors": "Crucianelli L, Krahé C, Jenkinson PM, Fotopoulou AK.",
+   "journal": "Cortex; a journal devoted to the study of the nervous system and behavior",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The sense of body ownership represents a fundamental aspect of bodily self-consciousness. Using multisensory integration paradigms, recent studies have shown that both exteroceptive and interoceptive information contribute to our sense of body ownership. Interoception refers to the physiological sense of the condition of the body, including afferent signals that originate inside the body and outside the body. However, it remains unclear whether individual sensitivity to interoceptive modalities is unitary or differs between modalities. It is also unclear whether the effect of interoceptive information on body ownership is caused by exteroceptive 'visual capture' of these modalities, or by bottom-up processing of interoceptive information. This study aimed to test these questions in two separate samples. In the first experiment (N = 76), we examined the relationship between two different interoceptive modalities, namely cardiac awareness based on a heartbeat counting task, and affective touch perception based on stimulation of a specialized C tactile (CT) afferent system. This is an interoceptive modality of affective and social significance. In a second experiment (N = 63), we explored whether 'off-line' trait interoceptive sensitivity based on a heartbeat counting task would modulate the extent to which CT affective touch influences the multisensory process during the rubber hand illusion (RHI). We found that affective touch enhanced the subjective experience of body ownership during the RHI. Nevertheless, interoceptive sensitivity, as measured by a heartbeat counting task, did not modulate this effect, nor did it relate to the perception of ownership or of CT-optimal affective touch more generally. By contrast, this trait measure of interoceptive sensitivity appeared most relevant when the multisensory context of interoception was ambiguous, suggesting that the perception of interoceptive signals and their effects on body ownership may depend on individual abilities to regulate the balance of interoception and exteroception in given contexts."
+  },
+  {
+   "rank": 23,
+   "id": "29915337",
+   "source": "MED",
+   "pmid": "29915337",
+   "pmcid": "PMC6006256",
+   "doi": "10.1038/s41598-018-27698-2",
+   "first_publication_date": "2018-06-18",
+   "title": "Cardio-visual full body illusion alters bodily self-consciousness and tactile processing in somatosensory cortex.",
+   "authors": "Heydrich L, Aspell JE, Marillier G, Lavanchy T, Herbelin B, Blanke O.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Prominent theories highlight the importance of bodily perception for self-consciousness, but it is currently not known whether this is based on interoceptive or exteroceptive signals or on integrated signals from these anatomically distinct systems, nor where in the brain such integration might occur. To investigate this, we measured brain activity during the recently described 'cardio-visual full body illusion' which combines interoceptive and exteroceptive signals, by providing participants with visual exteroceptive information about their heartbeat in the form of a periodically illuminated silhouette outlining a video image of the participant's body and flashing in synchrony with their heartbeat. We found, as also reported previously, that synchronous cardio-visual signals increased self-identification with the virtual body. Here we further investigated whether experimental changes in self-consciousness during this illusion are accompanied by activity changes in somatosensory cortex by recording somatosensory evoked potentials (SEPs). We show that a late somatosensory evoked potential component (P45) reflects the illusory self-identification with a virtual body. These data demonstrate that interoceptive and exteroceptive signals can be combined to modulate activity in parietal somatosensory cortex."
+  },
+  {
+   "rank": 24,
+   "id": "28334126",
+   "source": "MED",
+   "pmid": "28334126",
+   "pmcid": null,
+   "doi": "10.1093/cercor/bhw296",
+   "first_publication_date": "2017-11-01",
+   "title": "Heartfelt Self: Cardio-Visual Integration Affects Self-Face Recognition and Interoceptive Cortical Processing.",
+   "authors": "Sel A, Azevedo RT, Tsakiris M.",
+   "journal": "Cerebral cortex (New York, N.Y. : 1991)",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The sense of body-ownership relies on the representation of both interoceptive and exteroceptive signals coming from one's body. However, it remains unknown how the integration of bodily signals coming from \"outside\" and \"inside\" the body is instantiated in the brain. Here, we used a modified version of the Enfacement Illusion to investigate whether the integration of visual and cardiac information can alter self-face recognition (Experiment 1) and neural responses to heartbeats (Experiment 2). We projected a pulsing shade, that was synchronous or asynchronous with the participant's heartbeat, onto a picture depicting the participant's face morphed with the face of an unfamiliar other. Results revealed that synchronous (vs. asynchronous) cardio-visual stimulation led to increased self-identification with the other's face (Experiment 1), while during stimulation, synchronicity modulated the amplitude of the Heartbeat Evoked Potential, an electrophysiological index of cortical interoceptive processing (Experiment 2). Importantly, the magnitude of the illusion-related effects was dependent on, and increased linearly, with the participants' Interoceptive Accuracy. These results provide the first direct neural evidence for the integration of interoceptive and exteroceptive signals in bodily self-awareness."
+  },
+  {
+   "rank": 25,
+   "id": "27880880",
+   "source": "MED",
+   "pmid": "27880880",
+   "pmcid": null,
+   "doi": "10.1016/j.cognition.2016.11.002",
+   "first_publication_date": "2016-11-20",
+   "title": "Heartfelt embodiment: Changes in body-ownership and self-identification produce distinct changes in interoceptive accuracy.",
+   "authors": "Filippetti ML, Tsakiris M.",
+   "journal": "Cognition",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Interoceptive and exteroceptive information are both essential for the construction and update of self-awareness. Whereas several studies have shown how interoceptive accuracy or cardiac feedback influences body-awareness, no studies have looked at the reverse effect, namely how exteroceptively-driven changes in body-ownership and self-identification can influence individuals' ability to detect internal bodily signals. We exposed participants to the Rubber Hand Illusion (Experiment 1) and to the Enfacement Illusion (Experiment 2), and tested how this change in the sense of body-ownership and self-identification affected their interoceptive accuracy (IAcc). The heartbeat-counting task was used to measure IAcc before the bodily illusions, and then the same task was interleaved with periods of visuo-tactile stimulation, during which synchronous and asynchronous multisensory stimulation was applied. We found that a change in body-ownership significantly improved performance of participants with lower interoceptive accuracy. In contrast, a change in self-identification significantly decreased performance of participants with higher interoceptive accuracy. These results suggest that changes in different domains of self-awareness can differentially impact individuals' ability to accurately detect signals arising from within the body, highlighting the distinct role that interoceptive signals play for different facets of bodily self-consciousness."
+  },
+  {
+   "rank": 26,
+   "id": "28955213",
+   "source": "MED",
+   "pmid": "28955213",
+   "pmcid": "PMC5601051",
+   "doi": "10.3389/fnhum.2017.00452",
+   "first_publication_date": "2017-09-12",
+   "title": "Improvement of Interoceptive Processes after an 8-Week Body Scan Intervention.",
+   "authors": "Fischer D, Messner M, Pollatos O.",
+   "journal": "Frontiers in human neuroscience",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Objective: Interoceptive processes are defined as ability to detect sensations arising within the body. There is a growing body of research investigating ways of improving interoceptive processes. One promising approach increasing the attention to bodily sensations is the body scan (BS), a method stemming from mindfulness-based stress reduction. Research so far revealed only heterogenous findings of meditational practice and mindfulness-based stress reduction on interoceptive processes. Even more importantly, there is no study considering the effect of an 8-week BS intervention on interoceptive processes and the distinguishable subdomains of interoception. Therefore, the main objective of this research is to examine the effects of a BS intervention on different interoceptive subdomains over 8 weeks of training in two different samples. Methods: In study 1, healthy participants executed a 20 min standardized audiotaped BS in the BS intervention group (n = 25) each day over 8 weeks. The control group (n = 24) listened to an audio book for the same amount of time. In study 2, the BS group (n = 18) was compared to an inactive control group (n = 18). In both studies, three measurement points were realized and interoceptive accuracy (IAc) - using a heartbeat perception task - as well as interoceptive sensibility (IS) - using confidence ratings for the heartbeat perception task and the subscale 'interoceptive awareness' of the Eating Disorder Inventory-2 (EDI-2) - were assessed. Results: In study 1, we found, as a descriptive trend, IAc and confidence ratings to be increased irrespective of the condition. However, post hoc analysis revealed a significant improvement of IAc between T1 and T3 in the BS intervention only. IS revealed to be unaffected by the interventions. In study 2, we observed a significant positive effect of the BS intervention on IAc and confidence ratings compared to the inactive controls. As in study 1, IS (EDI-2) was unaffected by the intervention. Discussion: The results highlight the fact that interoception can be improved by long-term interventions focusing on bodily signals. Further studies might focus on clinical samples showing deficits in interoceptive processes and could use other bodily systems for measurement (e.g., respiratory signals) as well methods manipulating body ownership."
+  },
+  {
+   "rank": 27,
+   "id": "27511016",
+   "source": "MED",
+   "pmid": "27511016",
+   "pmcid": "PMC6601861",
+   "doi": "10.1523/jneurosci.0311-16.2016",
+   "first_publication_date": "2016-08-01",
+   "title": "Transient Modulations of Neural Responses to Heartbeats Covary with Bodily Self-Consciousness.",
+   "authors": "Park HD, Bernasconi F, Bello-Ruiz J, Pfeiffer C, Salomon R, Blanke O.",
+   "journal": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "UnlabelledRecent research has investigated self-consciousness associated with the multisensory processing of bodily signals (e.g., somatosensory, visual, vestibular signals), a notion referred to as bodily self-consciousness, and these studies have shown that the manipulation of bodily inputs induces changes in bodily self-consciousness such as self-identification. Another line of research has highlighted the importance of signals from the inside of the body (e.g., visceral signals) and proposed that neural representations of internal bodily signals underlie self-consciousness, which to date has been based on philosophical inquiry, clinical case studies, and behavioral studies. Here, we investigated the relationship of bodily self-consciousness with the neural processing of internal bodily signals. By combining electrical neuroimaging, analysis of peripheral physiological signals, and virtual reality technology in humans, we show that transient modulations of neural responses to heartbeats in the posterior cingulate cortex covary with changes in bodily self-consciousness induced by the full-body illusion. Additional analyses excluded that measured basic cardiorespiratory parameters or interoceptive sensitivity traits could account for this finding. These neurophysiological data link experimentally the cortical mapping of the internal body to self-consciousness.Significance statementWhat are the brain mechanisms of self-consciousness? Prominent views propose that the neural processing associated with signals from the internal organs (such as the heart and the lung) plays a critical role in self-consciousness. Although this hypothesis dates back to influential views in philosophy and psychology (e.g., William James), definitive experimental evidence supporting this idea is lacking despite its recent impact in neuroscience. In the present study, we show that posterior cingulate activities responding to heartbeat signals covary with changes in participants' conscious self-identification with a body that were manipulated experimentally using virtual reality technology. Our finding provides important neural evidence about the long-standing proposal that self-consciousness is linked to the cortical processing of internal bodily signals."
+  },
+  {
+   "rank": 28,
+   "id": "25676677",
+   "source": "MED",
+   "pmid": "25676677",
+   "pmcid": null,
+   "doi": "10.1016/j.neuropsychologia.2015.02.010",
+   "first_publication_date": "2015-02-10",
+   "title": "Right insular damage decreases heartbeat awareness and alters cardio-visual effects on bodily self-consciousness.",
+   "authors": "Ronchi R, Bello-Ruiz J, Lukowska M, Herbelin B, Cabrilo I, Schaller K, Blanke O.",
+   "journal": "Neuropsychologia",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article",
+    "Case Reports"
+   ],
+   "open_access": "N",
+   "abstract": "Recent evidence suggests that multisensory integration of bodily signals involving exteroceptive and interoceptive information modulates bodily aspects of self-consciousness such as self-identification and self-location. In the so-called Full Body Illusion subjects watch a virtual body being stroked while they perceive tactile stimulation on their own body inducing illusory self-identification with the virtual body and a change in self-location towards the virtual body. In a related illusion, it has recently been shown that similar changes in self-identification and self-location can be observed when an interoceptive signal is used in association with visual stimulation of the virtual body (i.e., participants observe a virtual body illuminated in synchrony with their heartbeat). Although brain imaging and neuropsychological evidence suggest that the insular cortex is a core region for interoceptive processing (such as cardiac perception and awareness) as well as for self-consciousness, it is currently not known whether the insula mediates cardio-visual modulation of self-consciousness. Here we tested the involvement of insular cortex in heartbeat awareness and cardio-visual manipulation of bodily self-consciousness in a patient before and after resection of a selective right neoplastic insular lesion. Cardio-visual stimulation induced an abnormally enhanced state of bodily self-consciousness; in addition, cardio-visual manipulation was associated with an experienced loss of the spatial unity of the self (illusory bi-location and duplication of his body), not observed in healthy subjects. Heartbeat awareness was found to decrease after insular resection. Based on these data we propose that the insula mediates interoceptive awareness as well as cardio-visual effects on bodily self-consciousness and that insular processing of interoceptive signals is an important mechanism for the experienced unity of the self."
+  },
+  {
+   "rank": 29,
+   "id": "25498876",
+   "source": "MED",
+   "pmid": "25498876",
+   "pmcid": "PMC4303499",
+   "doi": "10.1016/j.jecp.2014.11.002",
+   "first_publication_date": "2014-12-10",
+   "title": "Interoceptive ability and body awareness in autism spectrum disorder.",
+   "authors": "Schauder KB, Mash LE, Bryant LK, Cascio CJ.",
+   "journal": "Journal of experimental child psychology",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Autism spectrum disorder (ASD) has been associated with various sensory atypicalities across multiple domains. Interoception, the ability to detect and attend to internal bodily sensations, has been found to moderate the experience of body ownership, a known difference in ASD that may affect social function. However, interoception has not been empirically examined in ASD. In the current study, 45 children (21 with ASD and 24 controls) ages 8 to 17 years completed a heartbeat perception paradigm as a measure of interoceptive ability. A subset of these children also completed the rubber hand illusion task, a multisensory paradigm probing the malleability of perceived body ownership. Although the heartbeat perception paradigm yielded comparable interoceptive awareness (IA) overall across both groups, children with ASD were superior at mentally tracking their heartbeats over longer intervals, suggesting increased sustained attention to internal cues in ASD. In addition, IA was negatively correlated with rubber hand illusion susceptibility in both groups, supporting a previously demonstrated inverse relationship between internal awareness and one's ability to incorporate external stimuli into one's perception of self. We propose a trade-off between attention to internal cues and attention to external cues, whereby attentional resources are disproportionately allocated to internal, rather than external, sensory cues in ASD."
+  },
+  {
+   "rank": 30,
+   "id": "23993906",
+   "source": "MED",
+   "pmid": "23993906",
+   "pmcid": null,
+   "doi": "10.1016/j.neuropsychologia.2013.08.014",
+   "first_publication_date": "2013-08-28",
+   "title": "Multisensory integration across exteroceptive and interoceptive domains modulates self-experience in the rubber-hand illusion.",
+   "authors": "Suzuki K, Garfinkel SN, Critchley HD, Seth AK.",
+   "journal": "Neuropsychologia",
+   "pub_types": [
+    "Video-Audio Media",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Identifying with a body is central to being a conscious self. The now classic \"rubber hand illusion\" demonstrates that the experience of body-ownership can be modulated by manipulating the timing of exteroceptive (visual and tactile) body-related feedback. Moreover, the strength of this modulation is related to individual differences in sensitivity to internal bodily signals (interoception). However the interaction of exteroceptive and interoceptive signals in determining the experience of body-ownership within an individual remains poorly understood. Here, we demonstrate that this depends on the online integration of exteroceptive and interoceptive signals by implementing an innovative \"cardiac rubber hand illusion\" that combined computer-generated augmented-reality with feedback of interoceptive (cardiac) information. We show that both subjective and objective measures of virtual-hand ownership are enhanced by cardio-visual feedback in-time with the actual heartbeat, as compared to asynchronous feedback. We further show that these measures correlate with individual differences in interoceptive sensitivity, and are also modulated by the integration of proprioceptive signals instantiated using real-time visual remapping of finger movements to the virtual hand. Our results demonstrate that interoceptive signals directly influence the experience of body ownership via multisensory integration, and they lend support to models of conscious selfhood based on interoceptive predictive coding."
+  },
+  {
+   "rank": 31,
+   "id": "21208964",
+   "source": "MED",
+   "pmid": "21208964",
+   "pmcid": "PMC3125630",
+   "doi": "10.1098/rspb.2010.2547",
+   "first_publication_date": "2011-01-05",
+   "title": "Just a heartbeat away from one's body: interoceptive sensitivity predicts malleability of body-representations.",
+   "authors": "Tsakiris M, Tajadura-Jiménez A, Costantini M.",
+   "journal": "Proceedings. Biological sciences",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Body-awareness relies on the representation of both interoceptive and exteroceptive percepts coming from one's body. However, the exact relationship and possible interaction of interoceptive and exteroceptive systems for body-awareness remain unknown. We sought to understand for the first time, to our knowledge, the interaction between interoceptive and exteroceptive awareness of the body. First, we measured interoceptive awareness with an established heartbeat monitoring task. We, then, used a multi-sensory-induced manipulation of body-ownership (e.g. Rubber Hand Illusion (RHI)) and we quantified the extent to which participants experienced ownership over a foreign body-part using behavioural, physiological and introspective measures. The results suggest that interoceptive sensitivity predicts the malleability of body representations, that is, people with low interoceptive sensitivity experienced a stronger illusion of ownership in the RHI. Importantly, this effect was not simply owing to a poor proprioceptive representation or differences in autonomic states of one's body prior to the multi-sensory stimulation, suggesting that interoceptive awareness modulates the online integration of multi-sensory body-percepts."
+  }
+ ]
+}

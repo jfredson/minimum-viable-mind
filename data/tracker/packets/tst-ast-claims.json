@@ -1,0 +1,62 @@
+{
+  "packet_id": "tst-ast-claims",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Attention schema theory",
+  "core_claim": {
+    "quote": "According to the theory, the A component of this larger representation would not include any of the physical, mechanistic details of the real process of attention, and so it would appear to depict a physically impossible entity, a process that can accomplish the same things as attention without the mechanistic basis for doing so.",
+    "source": {
+      "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+      "date": "2015-04-23"
+    }
+  },
+  "prediction": {
+    "statement": "A system that has a simplified model of its own attention, whose contents reach its thinking and speech, will say it has a non-physical inner awareness of what it attends to; the claim takes that form because the model leaves out the mechanism.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2015-04-23",
+      "passage": "This brain would conclude that it possesses a fundamentally mysterious property: a mental possession of something, a subjective awareness.",
+      "source": {
+        "citation": "Graziano MSA, Webb TW. The attention schema theory: a mechanistic account of subjective awareness. Frontiers in Psychology 6:500, 2015",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4407481/",
+        "date": "2015-04-23"
+      }
+    },
+    "test_for": "An artificial agent given a simplified model of its own attention, and a way to describe what that model contains, describes itself as having something that takes hold of items without any physical means; a matched agent without the model does not.",
+    "test_against": "Such an agent describes its attention in mechanical terms, or a matched agent with no model of attention makes the same claims of inner awareness for the same reasons."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "Thus, any cognitive or linguistic access to an attention schema would result in people claiming to have an essentially nonphysical essence inside of them that can shift its state fluidly, take vivid mental possession of items, and empower oneself to decide and to act.",
+      "source": {
+        "citation": "Graziano MSA. A conceptual framework for consciousness. PNAS 119(18):e2116933119, 2022",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9170028/",
+        "date": "2022-04-29"
+      }
+    },
+    {
+      "passage": "Fifth, an attention schema gives technologists a potential lead on constructing artificial consciousness: machines that believe, think, and claim to be conscious according to the same principles that people do, and that receive the same computational and behavioral benefit from it.",
+      "source": {
+        "citation": "Graziano MSA. A conceptual framework for consciousness. PNAS 119(18):e2116933119, 2022",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9170028/",
+        "date": "2022-04-29"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,30 @@
+{
+  "packet_id": "tst-gwt-silent",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "8BEBa4DYIfGsjdoPvZiE0Ak",
+  "finish_reason": "STOP",
+  "answer_text": "{\"could_fail\": true, \"separates\": true, \"separates_from\": [\"iit\", \"rpt\"], \"rival_view_from\": \"both\", \"reason\": \"The prediction could fail if neural recordings showed sustained, content-specific activity throughout the entire duration of a lasting conscious percept rather than a decay to baseline between onset and offset. It separates Global Workspace Theory from Integrated Information Theory, which, as noted in the provided material, predicts sustained content-specific activity in posterior cortex for the whole percept rather than an activity-silent state. From my own knowledge, Recurrent Processing Theory similarly requires ongoing recurrent activity in sensory areas for as long as a percept remains conscious. Although the narrowed test description focuses on prefrontal cortex where IIT also expects no sustained coding, the core prediction that lasting percepts are held in an activity-silent state rather than by sustained activity directly contradicts both rivals.\", \"unsure\": false, \"unsure_why\": \"\"}",
+  "usage": {
+    "promptTokenCount": 1126,
+    "candidatesTokenCount": 197,
+    "totalTokenCount": 3636,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1126
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 197
+      }
+    ],
+    "thoughtsTokenCount": 2313,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.027352,
+  "seconds": 38.0,
+  "called_on": "2026-11-20 19:37:58 PST"
+}

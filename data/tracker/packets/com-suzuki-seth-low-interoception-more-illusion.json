@@ -1,0 +1,57 @@
+{
+  "packet_id": "com-suzuki-seth-low-interoception-more-illusion",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Anil Seth's living-body view",
+  "core_claim": {
+    "quote": "In the limit, one can think of each and every conscious experience as (phenomenologically) integrating multimodal bodily and environmental signals in the service of coordinating allostatic regulation and survival-relevant action",
+    "source": {
+      "citation": "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)",
+      "url": "https://doi.org/10.1017/S0140525X25000032",
+      "date": "2025-04-21"
+    }
+  },
+  "prediction": {
+    "statement": "People who sense their own body's signals less well lean more on what they see and feel on the skin, so illusions of body ownership driven by sight and touch (the rubber hand illusion) are stronger in them.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2012-01-10",
+      "passage": "People with lower interoceptive predictive ability may more readily assimilate exteroceptive (e.g., correlated visual and tactile) cues in localizing interoceptive and proprioceptive signals, while people with good interoceptive predictive ability may rely less on these exteroceptive cues.",
+      "source": {
+        "citation": "Seth AK, Suzuki K, Critchley HD. An interoceptive predictive coding model of conscious presence. Frontiers in Psychology 2:395 (2011 volume)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254200/",
+        "date": "2012-01-10"
+      }
+    },
+    "test_for": "Across people, lower accuracy at sensing one's own heartbeat goes with a stronger rubber hand illusion (more ownership, more drift) under synchronous seen-and-felt stroking.",
+    "test_against": "Across people, higher accuracy at sensing one's own heartbeat goes with a stronger rubber hand illusion under synchronous stroking."
+  },
+  "study": {
+    "name": "The 'cardiac rubber hand illusion': a virtual hand pulsing in or out of time with one's own heartbeat",
+    "source": {
+      "citation": "Suzuki K, Garfinkel SN, Critchley HD, Seth AK. Multisensory integration across exteroceptive and interoceptive domains modulates self-experience in the rubber-hand illusion. Neuropsychologia 51(13):2909-2917, 2013",
+      "url": "https://figshare.com/articles/journal_contribution/Multisensory_integration_across_exteroceptive_and_interoceptive_domains_modulates_self-experience_in_the_rubber-hand_illusion/23406980",
+      "date": "2013-08-28"
+    },
+    "first_appeared": "2013-08-28 (publication online (no preprint found in Europe PMC))",
+    "data_collected": {
+      "when": "not stated; before 2013-05-22",
+      "basis": "The paper gives no collection dates; it was received by the journal on 2013-05-22."
+    }
+  },
+  "passages": [
+    {
+      "text": "People with lower interoceptive predictive ability may more readily assimilate exteroceptive (e.g., correlated visual and tactile) cues in localizing interoceptive and proprioceptive signals, while people with good interoceptive predictive ability may rely less on these exteroceptive cues.",
+      "source": {
+        "citation": "Seth AK, Suzuki K, Critchley HD. An interoceptive predictive coding model of conscious presence. Frontiers in Psychology 2:395 (2011 volume)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254200/",
+        "date": "2012-01-10"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2012-01-10",
+    "study_first_appeared": "2013-08-28"
+  },
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,65 @@
+{
+  "packet_id": "com-bandara-gwt-topdown",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A study counts toward a prediction if that prediction was fixed, by the theory's proponents, in a dated record made before the study's data were collected, whether a publication or a registration. What decides is when the record was fixed, not when it became public. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates. Decide: BEFORE (a record by the proponents commits the theory to this prediction and was fixed before the study's data were collected), NOT-BEFORE (it was not), or UNCLEAR. If the study does not say when its data were collected, say how you decided. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Global workspace theory",
+  "core_claim": {
+    "quote": "Broadcasting implies that the information in the workspace becomes available to many local processors, and it is the wide accessibility of this information that is hypothesized to constitute conscious experience.",
+    "source": {
+      "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+      "date": "2020-03-04"
+    }
+  },
+  "prediction": {
+    "statement": "Becoming aware of a stimulus involves top-down signals from the workspace, including prefrontal cortex, back to the sensory areas.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2020-03-04",
+      "passage": "its main tenets (late ignition, metastable sustained activity, long-distance cortical projections, top-down mobilization) have begun to receive extensive support",
+      "source": {
+        "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+        "date": "2020-03-04"
+      }
+    },
+    "test_for": "Models in which feedback from prefrontal cortex to sensory areas is switched off explain awareness clearly worse than models that keep it, when report is removed.",
+    "test_against": "Awareness is explained as well or better with prefrontal feedback switched off, while feedback within sensory cortex is needed."
+  },
+  "study": {
+    "name": "Computer modelling of an inattentional-blindness EEG dataset, testing sensory against frontal theories",
+    "source": {
+      "citation": "Bandara KH, Rowe EG, Garrido MI. Computational modelling shows evidence in support of both sensory and frontal theories of consciousness. Neuroscience of Consciousness 2025(1):niaf033",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12456173/",
+      "date": "2024-11-03"
+    },
+    "first_appeared": "2024-11-03 (preprint (bioRxiv))",
+    "data_collected": {
+      "when": "before 2015",
+      "basis": "A reanalysis: all data came from Shafto and Pitts (2015), so they were collected before that paper appeared."
+    }
+  },
+  "passages": [
+    {
+      "text": "By contrast, the GNW hypothesis, as initially proposed by Dehaene et al. (1998) and later simulated (Dehaene and Changeux, 2005; Dehaene et al., 2003), proposes a defined brain network as the neural instantiation. In addition to localized, specialized, and modular cortical areas that process specific perceptual, motor, memory, and evaluative information, a second computational space is composed of widely distributed excitatory neurons (called GNW neurons) with long-range axons, forming reciprocally connected tracts able to “selectively mobilize or suppress, through descending connections, the contribution of specific processor neurons.”",
+      "source": {
+        "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+        "date": "2020-03-04"
+      }
+    },
+    {
+      "text": "All data for this study were kindly provided to us from the work by Shafto and Pitts (2015).",
+      "source": {
+        "citation": "Bandara KH, Rowe EG, Garrido MI. Computational modelling shows evidence in support of both sensory and frontal theories of consciousness. Neuroscience of Consciousness 2025(1):niaf033",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12456173/",
+        "date": "2024-11-03"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "1998 (Dehaene, Kerszberg and Changeux, as quoted by the proponents in mashour-2020; the 1998 paper itself not opened)",
+    "data_collected": "before 2015 (Shafto and Pitts 2015)"
+  },
+  "this_reading_is": "the second reading"
+}

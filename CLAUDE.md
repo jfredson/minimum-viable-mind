@@ -41,6 +41,17 @@ site's own rules below the marked line. Never edit the skeleton here; update the
 standard changes. Light is the default theme. Every colour is a token; data (the meters, the bars)
 is coloured with `--accent-3`. No web fonts.
 
+## Public text is written for visitors
+
+Decided by John on 2026-11-14, after a review of the live sites found notes to him on public
+pages. Everything in `data/project.toml` that the site shows appear on public pages, so each is written for a visitor: what changed or was
+decided, and why. Never who was told, who ruled or what is waiting for whom ("flagged for John",
+"John's ruling", "put to me"), and never how the work was done (which computer, a session, a
+routine, a pull request or a commit). Pull request numbers and file paths in the record are turned into readable links by
+`site/src/lib/prose.ts`; a pull request named without a number becomes "a change". `scripts/check_site.py` reads the built site after
+every build and stops the deploy if a page carries one of those phrases, the check The Belt
+Equation, The Quiet Galaxy and The Upgrade Tree also run.
+
 ## Keeping the site current
 
 `site/` is the project's internal visualizer (built 2026-09-20; how it works in

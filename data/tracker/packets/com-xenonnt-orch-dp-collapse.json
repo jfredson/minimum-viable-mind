@@ -1,0 +1,82 @@
+{
+  "packet_id": "com-xenonnt-orch-dp-collapse",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A prediction counts for a study if the theory's proponents fixed it before they could have known the study's result: before the study's registration, for a study registered before its data were collected; before its earliest public appearance (preprint or publication), for any other study; before the data first appeared, for a study reanalysing earlier published data. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates, and decide whether the earlier record, by the theory's proponents, commits the theory to the prediction as the study tests it, in time. Decide: BEFORE, NOT-BEFORE, or UNCLEAR. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Orchestrated Objective Reduction",
+  "core_claim": {
+    "quote": "the continuous Schrödinger evolution of each such process terminates in accordance with the specific Diósi–Penrose (DP) scheme of ‘objective reduction’ (‘OR’) of the quantum state",
+    "source": {
+      "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+      "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+      "date": "2013-08-20"
+    }
+  },
+  "prediction": {
+    "statement": "An object held in a quantum superposition (in two places at once), kept free of outside disturbance, will collapse on its own after a time set by the gravitational energy of the difference between the two places (Penrose's rule: the heavier the displacement, the sooner the collapse).",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "1998-08-15",
+      "passage": "Isolated technological quantum superpositions will self-collapse according to E = h/T.",
+      "source": {
+        "citation": "Hameroff S. Quantum computation in brain microtubules? The Penrose-Hameroff 'Orch OR' model of consciousness. Philosophical Transactions of the Royal Society A 356(1743):1869-1896, 1998",
+        "url": "https://doi.org/10.1098/rsta.1998.0254",
+        "date": "1998-08-15"
+      }
+    },
+    "test_for": "A well-isolated superposition of a massive object collapses spontaneously at about the time Penrose's rule gives.",
+    "test_against": "A well-isolated superposition of an object massive enough holds for clearly longer than Penrose's rule allows; or the side effects the rule's simplest form implies (for example faint spontaneous radiation) are absent at the level it requires."
+  },
+  "study": {
+    "name": "A large underground xenon detector finds none of the faint X-rays that gravity-driven collapse of quantum states would make atoms give off",
+    "source": {
+      "citation": "Aprile E, Aalbers J, Abe K, and colleagues (XENON Collaboration; with Curceanu C, Manti S, Piscicchia K). Challenging Spontaneous Quantum Collapse with the XENONnT Dark Matter Detector. Physical Review Letters 136(12):120201, 2026",
+      "url": "https://arxiv.org/abs/2506.05507",
+      "date": "2025-06-05"
+    },
+    "first_appeared": "2025-06-05 (preprint (arXiv 2506.05507 v1, which already reports the Diósi-Penrose limit))",
+    "data_collected": {
+      "when": "2021-07-06 to 2021-11-10",
+      "basis": "The paper uses the detector's first science run, 'collected from July 6, 2021, to November 10, 2021'. A reanalysis: those data were first published, for other searches, in 2022 (the paper's reference 12)."
+    }
+  },
+  "passages": [
+    {
+      "text": "Isolated technological quantum superpositions will self-collapse according to E = h/T.",
+      "source": {
+        "citation": "Hameroff S. Quantum computation in brain microtubules? The Penrose-Hameroff 'Orch OR' model of consciousness. Philosophical Transactions of the Royal Society A 356(1743):1869-1896, 1998",
+        "url": "https://doi.org/10.1098/rsta.1998.0254",
+        "date": "1998-08-15"
+      }
+    },
+    {
+      "text": "Diósi–Penrose (DP) scheme of ‘objective reduction’ (‘OR’) of the quantum state.",
+      "source": {
+        "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+        "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+        "date": "2013-08-20"
+      }
+    },
+    {
+      "text": "In our picture, the dominant effect is likely to be (2) separation at the level of atomic nuclei, e.g. 2.5 Fermi length for carbon nuclei (2.5 femtometers; 2.5 × 10−15 meters).",
+      "source": {
+        "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+        "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+        "date": "2013-08-20"
+      }
+    },
+    {
+      "text": "Data from the first XENONnT science run (SR0), collected from July 6, 2021, to November 10, 2021",
+      "source": {
+        "citation": "Aprile E, Aalbers J, Abe K, and colleagues (XENON Collaboration; with Curceanu C, Manti S, Piscicchia K). Challenging Spontaneous Quantum Collapse with the XENONnT Dark Matter Detector. Physical Review Letters 136(12):120201, 2026",
+        "url": "https://arxiv.org/abs/2506.05507",
+        "date": "2025-06-05"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "1998-08-15 (hameroff-1998); the Diósi-Penrose scheme named, and the nucleus-sized scale chosen, 2013-08-20 (hameroff-penrose-2014)",
+    "data_first_appeared": "2022 (the same detector data, first published for other searches; the paper's reference 12)",
+    "study_first_appeared": "2025-06-05 (arXiv 2506.05507 v1; not registered)"
+  },
+  "this_reading_is": "the second reading"
+}

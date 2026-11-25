@@ -1,0 +1,31 @@
+{
+  "packet_id": "out-martin-hot-awareness-performance",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "xswBa9zeBM3N0PEP08fW2Ak",
+  "finish_reason": "STOP",
+  "answer_text": "{\"verdict\": \"for\", \"reason\": \"The criterion for supporting the prediction requires that when discrimination performance is equal across conditions, either awareness ratings or how well they track accuracy differ. Although overall visibility ratings did not change across tasks or brain stimulation sites, the study found that metacognitive efficiency differed between real and illusory contour tasks even when all measures of objective task performance were equivalent (and also dropped after prefrontal stimulation once an outlier was removed). Relying on the standard definition in this field that metacognitive efficiency measures how well subjective ratings track objective accuracy, this result directly satisfies the test for the prediction.\", \"unsure\": false, \"unsure_why\": \"\"}",
+  "usage": {
+    "promptTokenCount": 1922,
+    "candidatesTokenCount": 138,
+    "totalTokenCount": 2811,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1922
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 138
+      }
+    ],
+    "thoughtsTokenCount": 751,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.012734,
+  "seconds": 14.2,
+  "called_on": "2026-11-21 08:54:44 PST"
+}

@@ -1,29 +1,37 @@
 ---
 import '../styles/global.css';
+import '../styles/tracker.css';
 import Nav from '../components/Nav.astro';
 import { project, derived, fmtDate } from '../lib/project';
+import { tk, word } from '../lib/tracker';
 
 interface Props {
   title?: string;
   description?: string;
+  // A tracker page (2026-11-21): every digit in its main column must come from the records
+  // through the N and R components, which scripts/check_site.py enforces.
+  strict?: boolean;
 }
 
 const {
   title = 'Minimum Viable Mind',
-  description = project.question,
+  // A short line for search results and link previews (2026-11-14); the record's own question is
+  // a paragraph, too long for either.
+  description = 'How far has the science of consciousness got in testing its theories? Each theory of consciousness is scored on how well published studies back it, how sharply it can be tested, and how much of it is still untested, by rules fixed in advance.',
+  strict = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+// The social preview image (2026-11-14), made by scripts/social-image.mjs; an absolute address,
+// as link previews need.
+const socialImage = new URL('/social-preview.png', Astro.site).href;
 const currentYear = new Date().getFullYear();
 // "7 October 2026" for the footer; the design standard writes dates out there.
-const longDate = (iso: string) => {
-  const [y, m, d] = iso.split('-').map(Number);
-  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-};
+const longDate = fmtDate;
 // Bump when the icon set changes, so browsers that keep their own copy of the icon (Safari above
 // all) fetch the new one (2026-10-23, family-wide on John's word). The same tag is in
 // public/site.webmanifest.
-const iconVersion = '2';
+const iconVersion = '3';
 ---
 
 <!doctype html>
@@ -63,30 +71,38 @@ const iconVersion = '2';
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`Minimum Viable Mind: how the theories of consciousness are holding up. ${word(tk.listed_count).replace(/^./, (c) => c.toUpperCase())} theories of consciousness, held to the same rules.`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={socialImage} />
   </head>
   <body>
     {/* The Notebook skin's backdrop (ruled 2026-10-17): graph paper, drawn by the skin on this element; no sky. */}
     <div class="space-bg" aria-hidden="true"></div>
     <Nav />
-    <main class="container">
+    <main class="container" data-strict={strict ? "" : undefined}>
       <slot />
     </main>
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
           <span class="footer-brand">Minimum Viable Mind</span>
-          <p class="footer-tag">A build-and-measure project downstream of Sentient Horizons and The Calibration Problem.</p>
+          <p class="footer-tag"><span data-n={String(tk.listed_count)}>{word(tk.listed_count).replace(/^./, (c) => c.toUpperCase())}</span> theories of consciousness, held to the same rules.</p>
           <p class="footer-links">
-            <a href="/">Where we are</a>
-            <a href="/eli5/">Explain it simply</a>
-            <a href="/ladder/">The ladder</a>
-            <a href="/questions/">Questions and ideas</a>
-            <a href="/learned/">What we have learned</a>
-            <a href="/story/">The story so far</a>
+            <a href="/about/">About</a>
+            <a href="/about/#numbers">How the numbers are worked out</a>
+            <a href="/about/#reading">This week's reading</a>
+            <a href="/about/#disagree">Disagree with something</a>
+            <a href="/tests/">Our own tests</a>
+            <a href="/story/">The project's story</a>
+            <a href="https://github.com/jfredson/minimum-viable-mind" rel="noopener">Source</a>
+            <a href="https://x.com/SentHorizons" rel="noopener">Follow on X</a>
           </p>
           <p class="footer-meta">
-            © {currentYear} <a href="https://johnandrewfredrickson.com/" rel="author">John Andrew Fredrickson</a>. Last built {longDate(derived.exported_on)}{derived.commit ? ` (version ${derived.commit})` : ''} from the project record as of {longDate(project.updated_on)}. Free to reuse with credit (<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>); code under the MIT licence. Please credit as: <cite>Minimum Viable Mind</cite>, by John Andrew Fredrickson, a Sentient Horizons project, <a href="https://minimumviablemind.sentient-horizons.com/">minimumviablemind.sentient-horizons.com</a>.
+            © {currentYear} <a href="https://johnandrewfredrickson.com/" rel="author">John Andrew Fredrickson</a>. Built {longDate(derived.exported_on)} from the records. Free to reuse with credit (<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>); code under the MIT licence. Please credit as: <cite>Minimum Viable Mind</cite>, by John Andrew Fredrickson, a Sentient Horizons project, <a href="https://minimumviablemind.sentient-horizons.com/">minimumviablemind.sentient-horizons.com</a>.
           </p>
           <p class="footer-parent"><a href="https://sentient-horizons.com/projects/" rel="noopener">A Sentient Horizons project.</a></p>
         </div>

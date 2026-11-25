@@ -1,0 +1,55 @@
+{
+  "packet_id": "tst-rpt-other-senses",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Recurrent processing theory",
+  "core_claim": {
+    "quote": "Whether this produces a conscious sensation or not is determined by whether the areas involved engage in recurrent interactions.",
+    "source": {
+      "citation": "Lamme VAF. How neuroscience will change our view on consciousness. Cognitive Neuroscience 1(3):204-220, 2010 (discussion paper; commentaries and response follow on pp. 220-240)",
+      "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/108967/1/Timmermans%E2%80%A6%202010%20-%20PCNS%20-%20Experiencing%20more%20complexity%20than%20we.pdf",
+      "date": "2010-08-18"
+    }
+  },
+  "prediction": {
+    "statement": "Hearing works like seeing: being aware of a sound goes with recurrent processing in auditory cortex, showing as an early awareness-related wave over auditory areas, and needs no fronto-parietal activation when nothing is reported.",
+    "stated_by": "the site, inferred",
+    "first_stated": {
+      "date": "2010-08-18",
+      "passage": "Whether this produces a conscious sensation or not is determined by whether the areas involved engage in recurrent interactions.",
+      "source": {
+        "citation": "Lamme VAF. How neuroscience will change our view on consciousness. Cognitive Neuroscience 1(3):204-220, 2010 (discussion paper; commentaries and response follow on pp. 220-240)",
+        "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/108967/1/Timmermans%E2%80%A6%202010%20-%20PCNS%20-%20Experiencing%20more%20complexity%20than%20we.pdf",
+        "date": "2010-08-18"
+      }
+    },
+    "test_for": "Heard and unheard sounds, physically the same, differ early in auditory cortex (an auditory awareness negativity, or auditory-cortex activity), and, when the sounds are not reported, not in fronto-parietal cortex.",
+    "test_against": "Awareness of sounds that are not reported goes with reliable fronto-parietal activation, or with no early difference in auditory cortex."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [
+    {
+      "rival": "Global workspace theory",
+      "statement": "Global workspace theory's proponents tie crossing the threshold of auditory as well as visual awareness to the late P300 and say the late divergence occurs whatever the sense.",
+      "source": {
+        "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+        "date": "2020-03-04"
+      }
+    }
+  ],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [],
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,31 @@
+{
+  "packet_id": "tst-ast-control",
+  "run": "stage3",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "h80Ba7G_NaSyjdoP1tK44Q4",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"could_fail\": true,\n  \"rival_predicts_same\": true,\n  \"which_rivals_same\": [\n    \"gwt\"\n  ],\n  \"separates\": false,\n  \"separates_from\": [\n    \"iit\",\n    \"hot\",\n    \"rpt\",\n    \"seth\",\n    \"sensorimotor\",\n    \"orch-or\",\n    \"damasio\",\n    \"sh\"\n  ],\n  \"reason\": \"The prediction could fail if a study showed that people can deliberately sustain, suppress, or redirect attention toward an unreportable stimulus that draws attention just as well as when they are aware of it. Published proponents of Global Workspace Theory (Mashour et al., 2020) predict the same observable direction, stating that attention cannot be directed to features that failed to enter consciousness. Because a rival's published source makes the same prediction, this prediction does not uniquely separate Attention Schema Theory overall, though it still separates the theory from the remaining eight rivals that are silent in the material.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1619,
+    "candidatesTokenCount": 253,
+    "totalTokenCount": 7823,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1619
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 253
+      }
+    ],
+    "thoughtsTokenCount": 5951,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.065278,
+  "seconds": 88.7,
+  "called_on": "2026-11-21 08:59:12 PST"
+}

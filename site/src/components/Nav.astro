@@ -2,17 +2,22 @@
 // Site navigation, copied from the Belt Equation site (itself from Sentient
 // Horizons): collapses to a menu on small screens, light/dark toggle remembered.
 const path = Astro.url.pathname;
+// The six-page top bar, ruled by John on 2026-11-20 (design proposal, decision 5): the
+// theories, the open questions, the site's own working positions against the evidence, the
+// project's own tests, the news and About, then Family in the lighter tier (tracker pattern
+// rules 4.9 and 4.21). The project's older pages (the ladder, what has been learned, the
+// story, the spend, the plain explanation) live under Our Tests at their old addresses, so the
+// bar marks Our Tests while a reader is on one of them.
 const primary = [
-  { href: '/eli5/', label: 'Explain it simply' },
-  { href: '/ladder/', label: 'Ladder' },
+  { href: '/theories/', label: 'Theories', also: ['/predictions/'], home: true },
   { href: '/questions/', label: 'Questions' },
-  { href: '/learned/', label: 'Learned' },
-  { href: '/story/', label: 'Story' },
+  { href: '/positions/', label: 'Our Positions' },
+  { href: '/tests/', label: 'Our Tests', also: ['/ladder/', '/learned/', '/story/', '/spend/', '/eli5/'] },
+  { href: '/news/', label: 'News' },
+  { href: '/about/', label: 'About' },
 ];
-const secondary = [
-  { href: '/spend/', label: 'Spend' },
-];
-const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+const isActive = (l: { href: string; also?: string[]; home?: boolean }) =>
+  path.startsWith(l.href) || (l.also ?? []).some((a) => path.startsWith(a)) || (!!l.home && path === '/');
 ---
 
 <header class="site-header">
@@ -24,13 +29,9 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
     </button>
     <nav class="navlinks" id="site-nav">
       {primary.map((l) => (
-        <a href={l.href} class={isActive(l.href) ? 'active' : ''}>{l.label}</a>
+        <a href={l.href} class={isActive(l) ? 'active' : ''}>{l.label}</a>
       ))}
       <span class="nav-divider" aria-hidden="true"></span>
-      {secondary.map((l) => (
-        <a href={l.href} class={`nav-secondary ${isActive(l.href) ? 'active' : ''}`}>{l.label}</a>
-      ))}
-      <a href="https://github.com/jfredson/minimum-viable-mind" class="nav-secondary" rel="noopener">Repo</a>
       <a href="https://sentient-horizons.com/projects/" class="nav-secondary" rel="noopener">Family</a>
       <button type="button" class="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle theme">
         <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

@@ -1,0 +1,30 @@
+{
+  "packet_id": "com-cogitate-iit-synchrony",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "qQ8Ba-DsMr7o2OMPmdzkQA",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"verdict\": \"before\",\n  \"reason\": \"The theory's proponents fixed this prediction in an OSF preregistration dated January 16, 2019, committing IIT to distinct patterns of synchronization between category-selective and early sensory areas in posterior cortex for each conscious experience. Although the exact start date of data collection is not given, the published protocol explicitly confirms that both the original and amended preregistration files were frozen before data acquisition began. Because the registration was fixed prior to any data collection, the prediction clearly precedes the data.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1524,
+    "candidatesTokenCount": 141,
+    "totalTokenCount": 1941,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1524
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 141
+      }
+    ],
+    "thoughtsTokenCount": 276,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.007218,
+  "seconds": 6.4,
+  "called_on": "2026-11-20 19:27:44 PST"
+}

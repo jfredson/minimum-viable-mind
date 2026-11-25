@@ -1,0 +1,17 @@
+# Gemini's blind answer to the XENONnT follow-up question (run xenon-reask, 2026-11-21, John's
+# "Re-ask both readers, cap $1"). Mapped: yes -> before, no -> not-before, unclear -> unclear.
+
+[[reading]]
+judgement = "com2-xenonnt-orch-dp-collapse"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+verdict = "unclear"
+answer = "unclear"
+reason = "The theory adopts the Diósi–Penrose objective reduction scheme with nuclear-scale separation values such as 2.5 femtometers, while noting large uncertainty about how smeared out the nuclei are. The study tests free parameters of the Diósi–Penrose model, including a spatial cutoff parameter, in the context of spontaneous quantum collapse. However, the study's passages provide no numerical values for the parameters tested and lack sufficient detail to tell whether this spontaneous-collapse formulation is the exact version and parameter regime stated in the theory. Nothing beyond the provided passages was relied upon."
+unsure = false
+unsure_why = ""
+response_id = "1ukBa_3oEPutjdoP1Lrd0AI"
+cost_usd = 0.01852
+run = "xenon-reask"

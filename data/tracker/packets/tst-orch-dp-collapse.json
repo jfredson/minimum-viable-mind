@@ -1,0 +1,54 @@
+{
+  "packet_id": "tst-orch-dp-collapse",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES ANY RIVAL PREDICT THE SAME: does a publication by the proponents of a rival theory on the list, as given in the material, predict the same observable result? The rule: a prediction separates the theory from its rivals UNLESS a rival's own published source predicts the same thing. A rival's silence means the prediction is the theory's own, so it separates. Your own knowledge of a rival does not count either way; judge only from the rival passages given. Where a rival's passage predicts something different, the prediction separates from that rival. Answer in JSON: {\"could_fail\": true|false, \"rival_predicts_same\": true|false, \"which_rivals_same\": [ids], \"separates\": true|false, \"separates_from\": [ids], \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Orchestrated Objective Reduction",
+  "core_claim": {
+    "quote": "the continuous Schrödinger evolution of each such process terminates in accordance with the specific Diósi–Penrose (DP) scheme of ‘objective reduction’ (‘OR’) of the quantum state",
+    "source": {
+      "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+      "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+      "date": "2013-08-20"
+    }
+  },
+  "prediction": {
+    "statement": "An object held in a quantum superposition (in two places at once), kept free of outside disturbance, will collapse on its own after a time set by the gravitational energy of the difference between the two places (Penrose's rule: the heavier the displacement, the sooner the collapse).",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "1998-08-15",
+      "passage": "Isolated technological quantum superpositions will self-collapse according to E = h/T.",
+      "source": {
+        "citation": "Hameroff S. Quantum computation in brain microtubules? The Penrose-Hameroff 'Orch OR' model of consciousness. Philosophical Transactions of the Royal Society A 356(1743):1869-1896, 1998",
+        "url": "https://doi.org/10.1098/rsta.1998.0254",
+        "date": "1998-08-15"
+      }
+    },
+    "test_for": "A well-isolated superposition of a massive object collapses spontaneously at about the time Penrose's rule gives.",
+    "test_against": "A well-isolated superposition of an object massive enough holds for clearly longer than Penrose's rule allows; or the side effects the rule's simplest form implies (for example faint spontaneous radiation) are absent at the level it requires."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [],
+  "what_the_sources_say_rivals_predict_the_same": [],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "For example, one ought to begin to see the effects of this OR scheme if a small object, such as a 10-µm cube of crystalline material could be held in a coherent superposition of two locations, differing by about the diameter of an atomic nucleus, for some seconds, or perhaps minutes to reach threshold",
+      "source": {
+        "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014",
+        "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+        "date": "2013-08-20"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

@@ -1,0 +1,31 @@
+{
+  "packet_id": "out-hense-2026-sm-inattentional",
+  "run": "stage3b",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "1OMBa6yeII7H0PEP3Z_YgAk",
+  "finish_reason": "STOP",
+  "answer_text": "{\n  \"verdict\": \"for\",\n  \"reason\": \"Participants performed a counting task while fixating on a cross as lighter lines forming a face flashed repeatedly in the background. Although these lines were perceptually distinct and seen by the vast majority of informed participants, 38 out of 47 uninformed participants (about 81%) remained unaware of them. Because a large majority failed to notice an unexpected, otherwise clearly perceptible stimulus while busy with another task, the result matches what counts for the prediction.\",\n  \"unsure\": false,\n  \"unsure_why\": \"\"\n}",
+  "usage": {
+    "promptTokenCount": 1867,
+    "candidatesTokenCount": 129,
+    "totalTokenCount": 2319,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1867
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 129
+      }
+    ],
+    "thoughtsTokenCount": 323,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.008254,
+  "seconds": 10.3,
+  "called_on": "2026-11-21 10:33:02 PST"
+}

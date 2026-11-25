@@ -1,0 +1,745 @@
+{
+ "prediction": "dam-insula",
+ "query": "TITLE_ABS:insula* AND (TITLE_ABS:lesion* OR TITLE_ABS:damage OR TITLE_ABS:resection OR TITLE_ABS:insulectomy) AND (TITLE_ABS:interocepti* OR TITLE_ABS:feeling* OR TITLE_ABS:emotion*) AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 287,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42700908",
+   "source": "MED",
+   "pmid": "42700908",
+   "pmcid": null,
+   "doi": "10.1016/j.neubiorev.2026.106950",
+   "first_publication_date": "2026-09-06",
+   "title": "The role of autobiographical memory in empathy: A perspective from memory disorders.",
+   "authors": "Meconi F, Crucianelli L, Mevorach C, Apperly IA, Butler CR.",
+   "journal": "Neuroscience and biobehavioral reviews",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Empathy, the capacity to understand and share others' emotions, relies on two complementary components: cognitive empathy, involving perspective-taking and inferential understanding, and affective empathy, grounded in bodily resonance with others' states. Both depend on the ability to maintain a clear boundary between self and other because, when this is blurred, individuals might experience emotional contagion, a simpler form of emotional engagement with the other. Evidence suggests that autobiographical memory supports cognitive empathy by enabling individuals to simulate others' experiences through recollection, while interoceptive processes contribute to affective empathy by providing access to internal bodily representations that are appraised and interpreted based on first-hand previous experiences. We propose that memory and empathy are interconnected through a shared mechanism of self-other distinction, primarily mediated by the precuneus and its interactions with hippocampus, anterior insula and cingulate cortex. Damage to these networks may differentially impair empathic components, depending on whether memory-based self-referential processes or bodily self-representations are compromised. We suggest that the weakening of self-other distinction may represent a key mechanism linking memory loss to empathy impoverishment. Future studies should explicitly investigate this relationship by integrating assessments of memory, interoception, and self-other distinction-using approaches such as virtual reality, lesion mapping, and neuromodulation-to clarify how memory deficits affect empathy. Understanding these processes may reconcile inconsistent findings in the literature and advance models of social cognition across aging and disease."
+  },
+  {
+   "rank": 2,
+   "id": "42939345",
+   "source": "MED",
+   "pmid": "42939345",
+   "pmcid": "PMC13702505",
+   "doi": "10.3390/brainsci16101092",
+   "first_publication_date": "2026-10-10",
+   "title": "Post-Stroke Olfactory Dysfunction: Network Mechanisms, Clinical Consequences, and Rehabilitation.",
+   "authors": "Heinbockel T, Virdi G, Shannon L, Nandi S.",
+   "journal": "Brain sciences",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Stroke is the second leading cause of death after ischemic heart disease, accounting for 10% of all deaths worldwide. Stroke is also a major cause of long-term neurological disability, yet olfactory dysfunction remains an underrecognized consequence of cerebrovascular injury. Smell is rarely evaluated in stroke patients despite its central role in appetite, hedonia, hazard detection, memory, emotional processing, and quality of life. The olfactory system extends from the olfactory epithelium and olfactory bulb to primary olfactory cortex, limbic regions, orbitofrontal cortex, insula, thalamus, hippocampus, broader fronto-limbic networks and cerebellum. The broad anatomical organization of the olfactory system subjects it to frequent perturbation due to stroke or other lesions. Post-stroke olfactory deficits may result from direct injury to olfactory structures, disruption of higher-order olfactory networks, diaschisis, altered sniffing and sensorimotor control, or secondary degeneration. Clinically, these deficits are manifested as hyposmia, anosmia, impaired odor identification, discrimination and memory, altered odor pleasantness, reduced flavor perception, loss of appetite, or reduced odor-guided behavior. Current evidence indicates that olfactory dysfunction can persist into the chronic phase of stroke, although a single prevalence estimate cannot be established because populations, timing, testing methods, and reporting differ substantially across studies. This narrative review provides an overview of stroke-related olfactory dysfunction, emphasizing olfactory pathway anatomy, lesion-relevant mechanisms, clinical consequences, measurement limitations, rehabilitation approaches, and future research priorities. We argue that post-stroke olfactory dysfunction should be understood as a multidimensional network-based disorder rather than a simple binary loss of smell."
+  },
+  {
+   "rank": 3,
+   "id": "42767166",
+   "source": "MED",
+   "pmid": "42767166",
+   "pmcid": "PMC13595823",
+   "doi": "10.1016/j.cortex.2026.08.016",
+   "first_publication_date": "2026-09-01",
+   "title": "Multi-modal lesion mapping of expressive aprosodia.",
+   "authors": "Peters JY, Boes AD, Griffis JC, Bruss J, Tranel D, Kliemann D.",
+   "journal": "Cortex; a journal devoted to the study of the nervous system and behavior",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Affective prosody facilitates the communication of emotions by modulating paralinguistic features of speech (e.g., pitch and rhythm). Patients with brain injuries may exhibit impaired expression of affective prosody, referred to as expressive aprosodia, adversely impacting social interactions and quality of life. Despite many previous lesion studies, relatively few studies have investigated neural correlates of expressive aprosodia using a combination of lesion location, as well as associated structural and functional network mapping, within a large patient sample. There is especially a need to advance our understanding of the neurobiology associated with expressive aprosodia in the chronic phase (i.e., >3 months after lesion onset) given the practical importance of long-term outcomes in regard to social functioning and quality of life. The present study therefore aimed to characterize how expressive aprosodia relates to lesion location and disruption of associated structural and functional brain networks in a large sample of participants with chronic focal brain lesions (N = 673). Using a clinical expert evaluation of prosody and multi-modal lesion mapping, the results showed that expressive aprosodia was most strongly associated with i) lesions affecting right-lateralized fronto-insular-striatal regions, ii) prominent disconnection of right-lateralized cortico-subcortical pathways, and iii) damage to regions exhibiting functional connectivity with subcortical (basal ganglia, thalamus) and cortical ventral attention/salience networks. Overall, these findings are consistent with a previously proposed dorsal stream for expressive aprosodia and provide further insights into the neural architecture whose damage is associated with chronic expressive aprosodia."
+  },
+  {
+   "rank": 4,
+   "id": "42762287",
+   "source": "MED",
+   "pmid": "42762287",
+   "pmcid": null,
+   "doi": "10.1007/s12035-026-06217-9",
+   "first_publication_date": "2026-09-19",
+   "title": "Shedding Light on Interaction Between Neurological Symptoms and Psychiatric Episodes in Multiple Sclerosis: Novel Hypothesis and Therapeutic Avenues.",
+   "authors": "Nakagawa Y, Yamada S.",
+   "journal": "Molecular neurobiology",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Multiple sclerosis is a chronic neuroinflammatory disorder, with different central nervous system lesions being induced at distinct time points. Anxiety disorders and major depressive disorder are common comorbidities of multiple sclerosis. In such cases, a correlation between psychiatric episode severity and neurological symptom progression is evident; however, the detailed cause-effect relationship is unclear. Data suggest that dysregulated and/or myelin antigen-reactive lymphocytes penetrate the brain tissue, promoting inflammatory macrophages/microglia and astrocytes, which induce axonal damage, demyelination, remyelination failure, neuroinflammation, and atrophy of the thalamus, insula, cingulate cortex, hippocampus, amygdala, and dorsolateral prefrontal cortex, accompanied by impaired dorsolateral prefrontal cortex regulation of the related brain regions, at the early as well as late stage. The pathological alterations are likely involved in neurological symptoms, including pain, physical disability, fatigue, and neurocognitive deficits. The neurological signs can be linked with emotions, such as relapse-associated anticipatory anxiety along with depressed mood, while neurological symptom-related cognitive-perceptual bias presumably mediates cognitive distortion with catastrophizing about sensory, proprioceptive, interoceptive, and emotional signals. These psychiatric episodes may cooperatively result in uncontrollable sensory perception, proprioception, interoception, and neurocognition, which are likely implicated in the progression of pain, physical disability, fatigue, and neurocognitive deficits. Collectively, in multiple sclerosis comorbid with psychiatric disorders, autoimmune responses initiate neurological symptoms, which may be associated with psychiatric episodes, with these clinical signs potentially influencing each other. This view identifies novel agents possibly capable of improving the effectiveness of currently approved disease-modifying medications in combination therapy by attenuating imbalance between proinflammatory and anti-inflammatory/prorepair microglia."
+  },
+  {
+   "rank": 5,
+   "id": "42621758",
+   "source": "MED",
+   "pmid": "42621758",
+   "pmcid": null,
+   "doi": "10.1111/jnp.70073",
+   "first_publication_date": "2026-08-20",
+   "title": "Emotion recognition in multiple sclerosis: The influence of processing speed and cognitive reserve.",
+   "authors": "Palama AP, Mitsoudis N, Nikolakakis I, Artemiadis A, Ioannidis P, Bakirtzis C.",
+   "journal": "Journal of neuropsychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Social cognitive impairment significantly impacts the quality of life in multiple sclerosis (MS). This study investigated the structural, clinical and functional predictors of emotion recognition in 48 MS patients (26 Relapsing-Remitting, 22 Progressive) and 40 matched healthy controls (HCs). All participants were assessed for emotion recognition (Reading the Mind in the Eyes Test [RMET]). The MS cohort was additionally assessed for information processing speed (IPS) (Symbol Digit Modalities Test [SDMT]) and cognitive reserve (CR) (Cognitive Reserve Index questionnaire [CRIq]). Confounding clinical variables were quantified, including physical disability (Expanded Disability Status Scale [EDSS]), fatigue (Modified Fatigue Impact Scale [MFIS]) and affective symptoms (Depression Anxiety and Stress Scale [DASS-21]). Regional cortical volumes were extracted utilizing 3T MRI automated parcellation. Patients with Progressive MS exhibited profound emotion recognition deficits compared to HCs (p = 0.006). Multivariate regression identified IPS (β = 0.352) and CR (β = 0.289) as the only significant independent predictors of RMET accuracy. These functional variables statistically eclipsed the influence of focal anterior insular atrophy, perceived fatigue and mood symptoms. Emotion recognition impairment in MS is primarily driven by two independent, additive predictors: IPS and CR. Together, these functional determinants outweigh the influence of focal macroscopic cortical damage, fatigue and mood symptoms."
+  },
+  {
+   "rank": 6,
+   "id": "42525758",
+   "source": "MED",
+   "pmid": "42525758",
+   "pmcid": "PMC13418533",
+   "doi": "10.1126/sciadv.aeb3326",
+   "first_publication_date": "2026-07-29",
+   "title": "Insular routing to orbitofrontal cortex enables breathing awareness.",
+   "authors": "Assi JY, Bickel S, Greenberg HE, Mehta AD, Similowski T, Herrero JL.",
+   "journal": "Science advances",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "How does the human brain detect and respond to disruptions in breathing? While animal studies have advanced our understanding of respiratory control, breathing distress in humans remains difficult to treat. It often arises not only from pulmonary lesions or brainstem dysfunction but also from how higher brain regions interpret breathing signals shaped by emotion and experience. We recorded intracranial cortical activity in neurosurgical patients during an interoceptive task involving transient breathing challenges. Conscious detection of these disruptions was predicted by early responses in the anterior insula, which routed signals to orbitofrontal and premotor cortices for appraisal and compensation. These cortical regions preferentially encoded inspiratory effort or airflow, revealing signal-specific processing that echoes functional segregation in brainstem centers. The present findings identify a dynamic insular-frontal circuit for sensing and adapting to respiratory challenges, offering insight into the neural basis of breathing awareness and its disruption in disease."
+  },
+  {
+   "rank": 7,
+   "id": "42393674",
+   "source": "MED",
+   "pmid": "42393674",
+   "pmcid": "PMC13599187",
+   "doi": "10.1186/s12916-026-05044-y",
+   "first_publication_date": "2026-07-02",
+   "title": "A lesion-derived brain network of somatic symptoms for transdiagnostic individual application.",
+   "authors": "Yu Y, Xu W, Ji Y, Qi L, Wu Y, Guo Y, Hua Q, Wang L, Qian R, Bai T, Li Q, Geng F, Wan Y, Wang K, Ji GJ, Tian Y.",
+   "journal": "BMC medicine",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundSomatic symptoms is an umbrella term that describes distressing somatic complaints occurring across a wide spectrum of diseases. However, their underlying neural mechanisms remain poorly understood. Elucidating their mechanisms could therefore benefit patients with diverse conditions.MethodsUsing a recently validated lesion network mapping method and a large-scale healthy connectome database (n = 652, recruited in Anhui Province, China), we identified a somatic network from brain lesions causing somatic symptoms. The lesion-derived network was validated using independent multimodal neuroimaging signatures of somatic symptoms and interoceptive processing. It was further characterized by transcriptomic, neurochemical, and cognitive meta-analytic mapping. We further assessed the therapeutic potential of the somatic network by quantifying its spatial convergence with empirically validated neuromodulation targets. Finally, to determine whether the group-level network can predict personalized symptom severity across diagnoses, we built a normative model of gray matter volume using Gaussian process regression based on 1,342 healthy controls from Anhui. This model was then used to generate personalized atrophy maps in 399 local somatic patients with anxiety, depression, schizophrenia and bipolar disorder. We then assessed whether individual atrophy volume within the somatic network was associated with somatic symptom severity.ResultsWe found that 21 heterogeneous lesions associated somatic symptoms occurred in many different brain locations but were characterized by a common brain network, with the hub region of the right insula and putamen. The somatic network demonstrated strong spatial alignment with multimodal somatic imaging abnormalities from 66 independent studies and interoceptive processing circuits from 69 task-fMRI studies. 11 effective brain stimulation targets were colocalization with the somatic network. In individual transdiagnostic patients, greater atrophy volume within the somatic network was significantly correlated with somatic symptom severity (r = 0.182, p = 0.004), but not with anxiety or depression symptoms.ConclusionsThese convergent findings establish a unified somatic network framework, advancing both mechanistic understanding and precision medicine applications."
+  },
+  {
+   "rank": 8,
+   "id": "42087845",
+   "source": "MED",
+   "pmid": "42087845",
+   "pmcid": null,
+   "doi": "10.1111/ejn.70534",
+   "first_publication_date": "2026-05-01",
+   "title": "Interoception, Immunoception, and the Role of Insular Cortex in Cardiovascular Disease.",
+   "authors": "Nagai M, Umeda S, Ewbank H, Saleh Velez FG, Po S, Dasari T.",
+   "journal": "The European journal of neuroscience",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Whereas the brain-heart axis is an emerging field in neuropsychocardiology, a central autonomic network including the insular cortex (Ic) regulates the cardiovascular system via the intrinsic cardiac nervous system. Cardiac interoception, represented in Ic, has been studied in cardiovascular diseases and inflammation. Therefore, it is important to investigate how interoception is related to cardiovascular disease in terms of its prevention and treatment. To examine the role of the Ic in cardiovascular and immune regulation, we focus on converging evidence from human stroke cohorts, lesion-symptom mapping studies, and experimental models that implicate the Ic as a causal hub within the brain-heart-immune axis. In particular, Ic plays a pivotal role in processing interoception as well as immunoception, and based on this information, Ic regulates cardiovascular and immune systems via efferent autonomic networks. Furthermore, vagally mediated neuromodulation is likely to influence interoception and immunoception and plays a pivotal role in improving cardiovascular dysregulation."
+  },
+  {
+   "rank": 9,
+   "id": "41610599",
+   "source": "MED",
+   "pmid": "41610599",
+   "pmcid": null,
+   "doi": "10.1016/j.jpsychires.2026.01.026",
+   "first_publication_date": "2026-01-17",
+   "title": "Insular cortex-lateral habenula circuit mediates chronic itch-associated affective comorbidities.",
+   "authors": "Chen Z, Wang S, Wang Y.",
+   "journal": "Journal of psychiatric research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Pruritus triggers scratching-induced skin damage and anxiety/depression, forming a vicious cycle that exacerbates inflammatory skin diseases. The insular cortex (IC) integrates itch and emotional processing, while the lateral habenula (LHb) regulates depression.Using acute (3-day) and chronic (14-day) histamine-induced murine itch models combined with chemogenetic manipulation, we demonstrate that the insular cortex (IC) bidirectionally regulates acute itch and anxiety-like behaviors, whereas chronic itch engages the IC-lateral habenula (LHb) circuit to drive comorbid depression. These results establish the IC-LHb circuit as a critical mechanistic driver of chronic itch-associated affective comorbidities. They further highlight serotonergic modulation of this pathway as a promising therapeutic strategy for neuroinflammatory itch."
+  },
+  {
+   "rank": 10,
+   "id": "41549955",
+   "source": "MED",
+   "pmid": "41549955",
+   "pmcid": null,
+   "doi": "10.1093/trstmh/traf139",
+   "first_publication_date": "2026-04-01",
+   "title": "A multimodal neuroimaging approach evaluation of emotional response and anxiety symptoms in leprosy patients.",
+   "authors": "Gama TM, Ramos LR, Fernandes O, Arruda Sanchez T.",
+   "journal": "Transactions of the Royal Society of Tropical Medicine and Hygiene",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundLeprosy is described as a curable infectious disease but is considered a stigmatizing disease due to the damage it causes to the skin and nerves. The stigma associated with leprosy promotes social isolation and reinforces maladaptive behaviours. This study aims to investigate long-term emotional brain changes in the amygdala and cortex insular of treated leprosy patients using psychometric scales and a multimodal neuroimaging approach.MethodsFourteen treated leprosy patients and fourteen paired healthy controls were evaluated by magnetic resonance imaging (MRI) using two approaches, functional connectivity analyses and brain volume morphometry. During the functional MRI exam, the participants underwent an implicit emotional recognition task comprising aversive emotional stimuli.ResultsThe patient's group showed greater connectivity between the amygdala and supramarginal gyrus. Granger causality analysis revealed that the patient group connectivity was bidirectional while in the control group it was unidirectional with left amygdala activity being predicted by the left supramarginal gyrus. Also, there was a positive correlation between this connectivity and anxiety scores. Leprosy-treated patients also showed a smaller bilateral amygdala volume.ConclusionsThe changes in brain connectivity and brain morphometry in the present study may represent a cumulative neurobiological effect of their mental suffering in their stigmatizing leprosy-related condition."
+  },
+  {
+   "rank": 11,
+   "id": "41547471",
+   "source": "MED",
+   "pmid": "41547471",
+   "pmcid": null,
+   "doi": "10.1016/j.neubiorev.2026.106555",
+   "first_publication_date": "2026-01-15",
+   "title": "Interoception and allostatic load after stroke: A scoping review.",
+   "authors": "Jenkinson PM, Salvato G, Bassolino M, Beccherle M, Vianello G, Fotopoulou A, Bottini G, Moro V.",
+   "journal": "Neuroscience and biobehavioral reviews",
+   "pub_types": [
+    "Scoping Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Physiological regulation is critical for survival. Interoception (the ability to sense internal body state) is a key mechanism by which allostasis (the proactive adjustment of physiological systems) is achieved to maintain physiological stability. Because of the crucial role of the central nervous system in these functions, studying the effects of brain damage can enhance knowledge of these processes. This scoping review synthesises empirical evidence on how stroke affects interoceptive functions and allostatic load (the long-term \"cost\" to the body of maintaining the internal milieu), and whether these disruptions relate to stroke outcomes, recovery, and specific neural substrates. We reviewed 39 studies examining interoceptive abilities or allostatic load in stroke patients. Only one study assessed allostatic load directly, highlighting a major gap in the literature. Results indicate that stroke frequently impairs interoception across multiple domains, including cardiac and respiratory awareness, affective touch, temperature perception, hunger, and fatigue. These impairments are often linked to poorer functional outcomes, including reduced recovery, cognitive dysfunction, and altered body awareness. Insular and somatosensory lesions were most commonly associated with interoceptive deficits, though lesion mapping was inconsistently reported. Findings from a single study suggest that allostatic load may exacerbate post-stroke cognitive decline and health disparities, particularly in high-risk populations. We conclude that stroke disrupts internal bodily regulation in ways that likely affect recovery trajectories, yet systematic research into the interoceptive and allostatic consequences of stroke is nascent. Future research should prioritise mechanistic studies, standardised assessments, and targeted interventions to address interoception-related physiological dysregulation in stroke rehabilitation."
+  },
+  {
+   "rank": 12,
+   "id": "42780841",
+   "source": "MED",
+   "pmid": "42780841",
+   "pmcid": "PMC13598958",
+   "doi": "10.3389/fneur.2026.1938453",
+   "first_publication_date": "2026-09-09",
+   "title": "Attentional dysfunction in persistent postural-perceptual dizziness: a narrative review of mechanistic evidence.",
+   "authors": "Yang S, Liu XC, Chen J.",
+   "journal": "Frontiers in neurology",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Persistent postural-perceptual dizziness (PPPD) is a common chronic functional neuro-otological disorder characterized by persistent non-spinning dizziness, unsteadiness, and heightened sensitivity to upright posture, motion, and visually complex environments. Several conceptual models have been proposed to explain its persistence, including failure of readaptation after a destabilizing event, maladaptive multisensory integration with excessive visual or somatosensory weighting, and prediction-actual sensory mismatch with amplified prediction errors. This narrative review synthesizes neuroimaging, behavioral, psychophysical, and clinical evidence to examine attentional dysfunction as a candidate organizing mechanism that may link these partly overlapping pathways. Structural and functional alterations involving the dorsolateral prefrontal cortex (DLPFC), anterior cingulate cortex (ACC), posterior insula, precuneus, visual cortex, vestibular cortical regions, and large-scale attention, salience, sensorimotor, visual, and default-mode networks suggest distributed functional reorganization rather than a single lesional substrate. Behavioral studies indicate that postural control and self-motion perception may become excessively attention-dependent in subsets of patients, with dual-task effects, altered visual exploration, stiffened postural strategies, and abnormal sensory-perceptual scaling. Clinical studies further show balance vigilance, attentional bias, and heterogeneous symptom phenotypes, including visual intolerance, quiet standing or sitting intolerance, passive motion intolerance, and active motion intolerance. We propose a revised active-inference model in which attention contributes to dysregulated precision weighting across visual, vestibular, somatosensory, interoceptive, and postural prediction-error signals. This model is hypothesis-generating rather than definitive. It accommodates patients with or without a clear preceding vestibular disorder and patients whose symptoms occur without overt body motion. The framework highlights testable targets for future studies using event-related potentials, computational modeling, dual-task paradigms, and phenotype-stratified treatment trials."
+  },
+  {
+   "rank": 13,
+   "id": "42376131",
+   "source": "MED",
+   "pmid": "42376131",
+   "pmcid": "PMC13310993",
+   "doi": "10.3389/fnmol.2026.1816644",
+   "first_publication_date": "2026-06-15",
+   "title": "Stress-related neuroplasticity and developmental vulnerability in functional neurological disorder: from adverse experience to maladaptive overlearning.",
+   "authors": "Mavroudis I, Petridis F, Ciobica A, Ionescu C, Kamar AAM, Cojocariu RO, Kazis D, Gheban D, Morosan C, Gurzu B, Novac O, Novac B.",
+   "journal": "Frontiers in molecular neuroscience",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Functional Neurological Disorder (FND) is increasingly understood as a disorder of brain functioning rather than structural damage. While contemporary predictive coding models have provided important insights into the generation of functional symptoms, they offer limited explanations for vulnerability, developmental risk, and the striking association between FND and adverse life experiences. A substantial body of evidence indicates that early-life stress, trauma, and chronic adversity are overrepresented in individuals with FND and are associated with enduring neurobiological alterations in brain systems central to emotional processing, interoception, and motor control. In this paper, we propose that stress-related neuroplasticity constitutes a key developmental substrate that predisposes the brain to maladaptive learning processes, increasing the likelihood that salient bodily states become rigidly encoded and persist as functional symptoms. We review evidence linking trauma exposure to long-lasting changes in limbic, paralimbic, and sensorimotor circuits implicated in FND, including the amygdala, anterior cingulate cortex, insula, orbitofrontal cortex, and supplementary motor areas. We further examine autonomic and neuroendocrine abnormalities and gender-related biological factors that may amplify these effects. We argue that these convergent findings support a model in which FND emerges from excessive, stress-biased neuroplasticity that promotes overlearning of bodily predictions, rather than from a primary failure of belief updating. This framework provides a coherent account of vulnerability, symptom persistence, and heterogeneity in FND, and offers a biologically grounded bridge between developmental risk factors and contemporary computational models of functional symptoms."
+  },
+  {
+   "rank": 14,
+   "id": "42079832",
+   "source": "MED",
+   "pmid": "42079832",
+   "pmcid": "PMC13132771",
+   "doi": "10.3389/fneur.2026.1790718",
+   "first_publication_date": "2026-04-17",
+   "title": "Insular glioma and emotional states affect the whole brain network: a task-state electroencephalography study.",
+   "authors": "Zhang C, Yang Z, He Q, Zhao H, Wang X, Deng Z, Han R, Hou Z, Xie J.",
+   "journal": "Frontiers in neurology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "PurposeThis study investigated the effects of insular gliomas on brain functional network dynamics during auditory stimulus processing via task-state electroencephalography (EEG) combined with graph theory analysis.MethodsThirty-three insular glioma patients (PT) and seventeen healthy controls (HC) underwent auditory Oddball task-based EEG recording. Graph theory analysis was used to assess functional connectivity and core network indices (Cp, locE, gE, Lp, σ) across four frequency bands. Neuropsychological assessments (MoCA, MMSE, HAMA, HDRS) were performed to evaluate cognitive and emotional states.ResultsPT and HC had no significant demographic differences, but PT showed lower MoCA/MMSE scores and higher HAMA/HDRS scores (all p0.05 for left). Abnormal beta band functional connections between PT and HC were more extensive under novel (342) than standard stimuli (220); left and right insular glioma patients had 764 and 438 abnormal beta-band connections under novel stimuli, respectively. PT had significantly lower beta band Cp, locE and small-worldness coefficient under novel stimuli than HC, with such reductions only significant in right insular glioma patients. These beta band indices in PT were negatively correlated with HAMA/HDRS scores under novel stimuli, and this correlation was specific to right insular glioma patients (all p > 0.05 for left).ConclusionInsular gliomas impair beta band whole brain functional network integration and small-worldness under novel stimuli, with prominent hemispheric specificity: right insular glioma patients show significant topological indicator damage, while left insular glioma patients maintain stable networks via left dominant hemisphere interhemispheric compensatory plasticity. Beta band Cp, locE and small-worldness coefficient under novel stimuli are potential neurophysiological indicators for insular glioma assessment, especially for right insular lesions. These indices are closely associated with anxiety and depression in right insular glioma patients, highlighting the need to consider tumor laterality in clinical evaluation and implement comprehensive emotional interventions for such patients."
+  },
+  {
+   "rank": 15,
+   "id": "42051540",
+   "source": "MED",
+   "pmid": "42051540",
+   "pmcid": "PMC13110949",
+   "doi": "10.3389/fimmu.2026.1774310",
+   "first_publication_date": "2026-04-13",
+   "title": "Pathophysiological mechanisms of post-exertional malaise: an integrative analysis based on the metabolism-immune-neuro interaction model.",
+   "authors": "Jin H, An Y, Huang J, Luo T, Wu X.",
+   "journal": "Frontiers in immunology",
+   "pub_types": [
+    "Systematic Review",
+    "review-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Post-exertional malaise (PEM) is a common core symptom in various chronic debilitating conditions, such as Post COVID-19 Condition (PCC, also known as Long COVID) and Chronic Fatigue Syndrome (CFS). It is characterized by the delayed and persistent exacerbation of symptoms following even mild physical or cognitive activities. This review presents a systematic review of the pathophysiological mechanisms involved in PEM, proposing a dynamic framework of multi-system interactions that may lead to homeostatic imbalance. The etiology of PEM is multifactorial, potentially involving factors such as the persistent presence of pathogens, exposure to environmental toxins, and genetic predisposition. Collectively, these factors may establish a vulnerable baseline that heightens the body's physiological response to stressors, such as exercise, potentially triggering a pathological reaction. First, mitochondrial dysfunction and metabolic abnormalities may act as potential initiating factors in PEM, manifesting as impaired ATP synthesis, overproduction of reactive oxygen species (ROS), and the accumulation of metabolic byproducts. It is crucial to emphasize that exercise itself induces a 'toxic excitatory effect,' whereby healthy individuals enhance mitochondrial function and antioxidant defenses through physical activity. However, in individuals predisposed to PEM, due to underlying pathological conditions (e.g., sequelae of viral infections), this adaptive process is disrupted, preventing effective restoration of mitochondrial homeostasis and may initiate a potential vicious cycle of dysfunction. Second, ROS and mitochondrial DNA (mtDNA), as damage-associated molecular patterns (DAMPs), along with pathogen-associated molecular patterns (PAMPs), may activate the NLRP3 inflammasome and induce the release of pro-inflammatory cytokines such as IL-1β, IL-6, and TNF-α, potentially transforming localized metabolic stress into a systemic inflammatory response. Subsequently, peripheral inflammation may be transmitted to the central nervous system through disruption of the blood-brain barrier and vagal nerve pathways, activating glial cells and initiating neuroinflammation. This process may ultimately affect the brain's interoceptive network, particularly the insular cortex, resulting in altered perception and processing of signals related to fatigue and pain. Furthermore, mitochondrial dysfunction in neurons may contribute to central energy depletion, which may impair synaptic plasticity and induce cognitive deficits and brain fatigue. Ultimately, this review proposes that PEM may arise from a complex interplay among mitochondrial dysfunction, immune activation, and neuroinflammation, which together form a self-perpetuating loop of \"energy exhaustion - inflammation amplification,\" potentially contributing to the chronic and multi-system nature of PEM symptoms. The integrated \"metabolism-immune-neuro\" interaction model presented in this article may provide a potential comprehensive framework for understanding PEM and highlights the need for a multi-target, collaborative intervention approach that may help disrupt the pathological cycle."
+  },
+  {
+   "rank": 16,
+   "id": "41630843",
+   "source": "MED",
+   "pmid": "41630843",
+   "pmcid": "PMC12861131",
+   "doi": "10.7717/peerj.20679",
+   "first_publication_date": "2026-01-29",
+   "title": "Exploring new rehabilitation pathways for stroke based on the comorbidity of post-stroke hypoesthesia with anxiety and depression.",
+   "authors": "Chen Y, Zhao Y, Wu B, Cheng Y, Huang J, Wang C, Bai J, Zhang Y.",
+   "journal": "PeerJ",
+   "pub_types": [
+    "research-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundPost-stroke hypoesthesia is a common yet often overlooked sequela, involving diminished capacities in touch, temperature, and pain perception. Recent studies suggest that sensory deficits not only hinder functional recovery but also show a high rate of comorbidity with anxiety and depression.ObjectiveThis study aims to systematically integrate the neural mechanisms, perceptual processing features, and behavioral consequences of post-stroke hypoesthesia and emotional disorders, to explore their comorbid relationship and propose more targeted rehabilitation strategies based on these mechanisms.MethodsThis review conducts an interdisciplinary literature search, integrating research from neuroimaging, cognitive neuroscience, and rehabilitation medicine, including 73 relevant studies. The keywords used in the screening are \"Hypesthesia,\" \"Impaired Sensation,\" \"Anxiety,\" and \"Depression,\" covering studies on sensory impairments and mood disorders. By comparing the sensory-emotion interaction mechanisms in stroke and non-stroke populations, a bidirectional model is constructed.ResultsFindings indicate that post-stroke hypoesthesia results not only from structural damage in regions such as the thalamus, insula, and prefrontal cortex, but also from functional disruptions in perceptual processing. These impairments contribute to a closed-loop mechanism involving neural dysconnectivity and predictive coding dysfunction, which facilitates the emergence of anxiety and depression. In turn, these emotional disorders further suppress sensory recovery, significantly reducing patients' motivation and rehabilitation compliance.ConclusionPost-stroke hypoesthesia should be recognized as a critical etiological and maintaining factor in anxiety and depression. The coexistence of pathological and functional mechanisms underscores the need for rehabilitation strategies that transcend the boundaries of perception, emotion, and cognition. Developing a rehabilitation pathway centered on \"sensory-emotional co-regulation\" can facilitate early identification, subtype-specific intervention, and comprehensive support for emotional comorbidities following stroke."
+  },
+  {
+   "rank": 17,
+   "id": "41527564",
+   "source": "MED",
+   "pmid": "41527564",
+   "pmcid": "PMC12790782",
+   "doi": "10.7717/peerj.20539",
+   "first_publication_date": "2026-01-08",
+   "title": "Searching for the neural correlates of emotional intelligence: a systematic review.",
+   "authors": "Martín-Aguiar V, Fernández-Berrocal P, Megías-Robles A.",
+   "journal": "PeerJ",
+   "pub_types": [
+    "research-article",
+    "Systematic Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The concept of emotional intelligence (EI) has gained significant interest in the scientific community in recent years. Despite its demonstrated impact on social and personal functioning, the neural bases underlying EI remain poorly understood. This study aimed to conduct a comprehensive systematic review of the existing literature on the neural correlates of EI. The search was conducted in Web of Science, Scopus, PsycINFO, and PubMed databases. A total of 849 studies were initially identified (after duplicates were removed), of which 34 met the inclusion criteria and were selected for the final synthesis. These studies employed various brain mapping techniques, including lesion studies, grey and white matter structural magnetic resonance imaging (MRI), task-based functional magnetic resonance imaging (fMRI), resting-state fMRI, and electroencephalogram (EEG). The findings of this review suggest that EI is supported by a complex and widespread brain network primarily implicated in the integration of cognitive and emotional processes, with significant involvement of structures commonly linked to social cognition. The literature mainly emphasized the role of the insula, ventromedial prefrontal cortex, orbitofrontal cortex, cingulate cortex, and amygdala in conjunction with brain networks comprising these areas, such as the somatic marker circuitry and the social cognition network. Other brain regions, including the dorsolateral prefrontal cortex, cuneus, precuneus, fusiform gyrus, superior temporal gyrus, cerebellum, parahippocampal gyrus, inferior frontal gyrus, frontopolar gyrus, superior parietal lobule, and superior longitudinal fasciculus (SLF) were also frequently mentioned. However, further research is needed to clarify the roles of some of these regions in EI. Limitations and future lines of research are discussed."
+  },
+  {
+   "rank": 18,
+   "id": "41313951",
+   "source": "MED",
+   "pmid": "41313951",
+   "pmcid": "PMC12707295",
+   "doi": "10.1016/j.heares.2025.109483",
+   "first_publication_date": "2025-11-20",
+   "title": "A case of acquired amusia and misophonia following right temporal resection.",
+   "authors": "Dappen ER, Berger JI, Belfi AM, Bruss J, Griffiths TD, Billig AJ, Rhone AE, Nourski KV, Tranel D, Dlouhy BJ.",
+   "journal": "Hearing research",
+   "pub_types": [
+    "research-article",
+    "Journal Article",
+    "Case Reports",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundOur perception of the auditory world allows us to enjoy the richness of music and communicate effectively with others. These everyday processes are disrupted in conditions such as amusia, an inability to perceive music accurately, and misophonia, an intense emotional reaction to common sounds produced by others. We describe a case of acquired, concurrent amusia and misophonia in a 21-year-old right-handed woman following a right posterior insula, posterior temporal, supramarginal cortex, and sensory cortex resection for the treatment of drug-resistant epilepsy.MethodsThe patient participated in interviews between 4-8 months post-resection. She completed an extensive testing battery designed to characterize her acquired deficits and increased sensitivity to misophonic triggers.ResultsAssessments revealed significant deficits in several domains of music processing, including scale, key, contour, and interval. High levels of misophonia symptom severity and impairment indicated clinically elevated misophonia. The patient performed within the normal range for speech-in-babble perception and music reward despite self-reporting pertinent impairments. Performance on tonal beat perception, musical imagery, memory, and sophistication measures were average.ConclusionsThe results from the extensive testing battery highlight the contribution of the resected regions to normal music perception. Additionally, this case represents the first reported instance of acquired misophonia."
+  },
+  {
+   "rank": 19,
+   "id": "41072268",
+   "source": "MED",
+   "pmid": "41072268",
+   "pmcid": null,
+   "doi": "10.1016/j.pscychresns.2025.112075",
+   "first_publication_date": "2025-10-01",
+   "title": "Neural markers in excoriation disorder: Systematic review of neuroimaging evidence.",
+   "authors": "Hodgdon EA, Sivils CA, Smith JE, Witherington DC, Ciesielski KTR.",
+   "journal": "Psychiatry research. Neuroimaging",
+   "pub_types": [
+    "Systematic Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Excoriation disorder (ExD), or skin picking disorder, is a chronic body-focused repetitive behavior (BFRB) that leads to severe tissue damage, disfigurement, and psychological distress. Despite its prevalence, the neurobiological etiology of ExD remains poorly understood, hindering early diagnosis and intervention. This systematic review synthesizes findings from neuroimaging studies reporting on neural correlates of ExD. A comprehensive search of PubMed, PsycINFO, and Web of Science identified 18 studies meeting inclusion criteria. Across 784 ExD participants and 530 controls, consistent patterns emerged in brain regions related to sensorimotor inhibition, habit formation, and perceptual-affective interaction. Structural MRI showed smaller volumes in the orbitofrontal cortex, insula, and cerebellum, but increased size of nucleus accumbens, associated in previous studies with deficient inhibitory control. Task-related fMRI showed increased activation in frontal and parietal regions but diminished engagement of posterior cerebellar-prefrontal circuits during sensorimotor coordination, and amplified insula and amygdala responses to aversive stimuli. Resting-state fMRI linked ExD symptom severity with reduced supplementary motor and prefrontal connectivity. The findings consistently point to deviation in networks subserving sensorimotor-emotional integration, one of the earliest stages of brain-behavior development. A hypothesis of ExD as a developmental disorder is suggested, guiding future research to early markers of detection and prevention."
+  },
+  {
+   "rank": 20,
+   "id": "41187327",
+   "source": "MED",
+   "pmid": "41187327",
+   "pmcid": "PMC12627977",
+   "doi": "10.2196/78806",
+   "first_publication_date": "2025-11-04",
+   "title": "Neurofeedback Training for Managing Neuropathic Pain-Like Features in Chronic Musculoskeletal Pain: Protocol for an Open-Label Pilot Feasibility Clinical Trial.",
+   "authors": "Bialostocki LS, Adhia DB, Mudiyanselage DR, Smith ML, Cakmak YO, De Ridder D, Mani R, Mathew J.",
+   "journal": "JMIR research protocols",
+   "pub_types": [
+    "Clinical Trial Protocol",
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundNeuropathic pain (NP) is characterized as pain arising from lesions of the somatosensory nervous system. However, NP-like features have been found in several chronic secondary musculoskeletal (MSK) pain conditions in the absence of detectable lesion or damage to the somatosensory pathways. Emerging evidence has demonstrated associations between NP-like symptoms and altered neural activity within brain regions implicated in sensory perception and affective-emotional processing of pain with consistent findings of abnormal activity in the right insula (RIns) cortex and dorsal anterior cingulate cortex (dACC). Electroencephalography neurofeedback (EEG-NF) is a brain-computer interface biofeedback technique that allows individuals to self-regulate the real-time cortical brain activities of the regions of interest.ObjectiveThe primary objective of this study is to investigate the feasibility and safety of a novel EEG-NF intervention designed to simultaneously downtrain activity in the RIns and dACC in individuals with a chronic secondary MSK pain condition exhibiting NP-like features. In addition, this study will conduct secondary exploratory analyses to investigate EEG-derived neuronal changes and their associations with clinical and experimental pain outcomes following the EEG-NF training.MethodsWe will design a single-arm, open-label, pilot-feasibility trial. We will recruit adults aged 35-75 years with a score of ≥19 using the PainDETECT questionnaire and an average pain score of ≥4 on the 11-point Numeric Pain Rating Scale over the last 3 months, with a minimum pain duration of 3 months, to receive active EEG-NF training. Participants will receive auditory feedback as a reward for achieving a predetermined activity threshold of the RIns and dACC. Primary outcomes will evaluate feasibility, acceptability, and safety using both self-reported questionnaires and monitoring data. Collected data will be summarized descriptively, with mean (SD) reported where appropriate. Secondary outcomes will include EEG parameters, self-reported measures, heart rate variability, and quantitative sensory testing. An exploratory within-group pre-post statistical comparison will be conducted for all secondary outcome measures, and correlation analysis will be performed to explore relationships between EEG measures, self-reported outcomes, heart rate variability, and quantitative sensory testing measures.ResultsThis study has received approval from the Health and Disability Ethics Committee and is registered with the Australian New Zealand Clinical Trials Registry. Participant recruitment began in April 2025 and is ongoing. As of October 2025, data collection has been completed, with a total of 5 participants enrolled, all of whom have completed the study to date. We expect to complete the study in March 2026. This study will generate data on feasibility, safety, acceptability, and preliminary data to inform a fully powered effectiveness clinical trial.ConclusionsThe results and data generated will inform the design and sample size calculation for a fully powered randomized controlled trial aimed at evaluating the effectiveness of EEG-NF in targeting NP-like features in individuals with chronic MSK pain.Trial registrationAustralian New Zealand Clinical Trials Registry ACTRN12625000706471; https://www.anzctr.org.au/Trial/Registration/TrialReview.aspx?id=389568&isReview=true.International registered report identifier (irrid)DERR1-10.2196/78806."
+  },
+  {
+   "rank": 21,
+   "id": "40930338",
+   "source": "MED",
+   "pmid": "40930338",
+   "pmcid": null,
+   "doi": "10.1016/j.neubiorev.2025.106369",
+   "first_publication_date": "2025-09-08",
+   "title": "The role of the insula in the Takotsubo Cardiomyopathy: A scoping review.",
+   "authors": "Catalano L, Sagliano L, Salzillo A, Ivanova E, Pennacchio M, Mancano M, Papagno C, Trojano L.",
+   "journal": "Neuroscience and biobehavioral reviews",
+   "pub_types": [
+    "Scoping Review",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Takotsubo cardiomyopathy (TC) is a transient cardiomyopathy secondary to emotional and/or physical stress. While its precise aetiology remains unclear, some evidence suggests a possible role for the insular cortex (IC), which modulates cardiovascular responses to stress. The IC is a key viscerosensory and visceromotor hub with widespread connections, and is implicated in interoceptive processing, emotional regulation, and autonomic control. Considering the strong link between stress and TC, and the insula involvement in stress and autonomic regulation, this scoping review aimed at exploring the role of the IC in the onset and modulation of TC. To this end, we examined the evidence derived from both lesional and neuroimaging studies. The results showed that TC can be related to strokes involving the IC, and is associated with structural and functional IC alterations, particularly in the left hemisphere and in female patients. Neuroimaging studies revealed abnormal IC connectivity during stress induction and in resting-state in patients with TC. These findings support the hypothesis that IC dysfunction contributes to autonomic changes in TC, beyond the effects of stress alone."
+  },
+  {
+   "rank": 22,
+   "id": "41117366",
+   "source": "MED",
+   "pmid": "41117366",
+   "pmcid": "PMC13064687",
+   "doi": "10.1017/s1092852925100631",
+   "first_publication_date": "2025-10-21",
+   "title": "Rebuilding the atrophied brain: 6-month nasal esketamine therapy expands key frontal and hippocampal regions and reduces serum neurofilament levels in patients with major depressive disorder. A proof-of-concept study of the depTesk (DEPression treatment with ESKetamine) study.",
+   "authors": "Rodríguez Lorente A, Campos-Navarro MP, Gil Montoya Á, Marín Pérez C, Maso Navarro ML, Orgaz Morales T, López Ramirez N, García-Carmona JA.",
+   "journal": "CNS spectrums",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "ObjectivesThis proof-of-concept study aimed to assess the impact of intranasal esketamine (ESK-IN) in brain volume and neurofilament light chain (sNfL) over 6-months in patients with treatment resistant depression (TDR).MethodsSeven TRD patients received ESK-IN while continuing oral antidepressants. Clinical evaluations were conducted at baseline, 1, 3, and 6 months, with MRI scans and blood samples taken at baseline and 6 months. Brain volume was assessed using VolBrain2 and DSI studio.ResultsCompared to controls, TRD patients initially showed lower volumes (mm3) in key cortical regions such as the insula (p = 0.0156), the frontal lobe (p = 0.0228) the superior parietal lobe (p = 0.0402), both superior (p = 0.0216) and inferior (p = 0.0437) temporal lobes and subcortical regions such as the nucleus accumbens (p = 0.0056), putamen (p = 0.0083), thalamus (p = 0.0102) and the hippocampus (p = 0.0001). Brain volume increased in the frontal cortex (p = 0.0295), the anterior cingulate (p = 0.0496), and hippocampus (p = 0.0015), as well as in the volume and fiber tracts associated with emotional regulation, such as the frontoparahippocampal (p = 0.0156 and p = 0.0313, respectively), the frontoparietal (p = 0.0496 and p = 0.0156, respectively) and the frontal aslant tract after 6 months on treatment with ESK-IN. In parallel, sNfL levels decreased post-treatment, indicating potential neuroprotective effects.ConclusionsESK-IN may promote structural changes in regions associated with mood regulation and neuroplasticity, while also reducing neuronal damage in TRD patients."
+  },
+  {
+   "rank": 23,
+   "id": "41009323",
+   "source": "MED",
+   "pmid": "41009323",
+   "pmcid": "PMC12467585",
+   "doi": "10.3390/bs15091294",
+   "first_publication_date": "2025-09-22",
+   "title": "Emotion Regulation Modulates Affective Responses Without Altering Memory Traces: A Study of Negative Social Feedback from Acquaintances.",
+   "authors": "Liu P, Cheng X, Fan M, Huang Z, Zhang C.",
+   "journal": "Behavioral sciences (Basel, Switzerland)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Negative social feedback can cause social pain and may damage physical and mental health. In particular, negative social feedback from acquaintances deeply activates the social pain brain network between the dorsal anterior cingulate cortex (dACC), the anterior insula, and the amygdala, inducing stronger emotional responses and memories. This study used a social appraisal paradigm to investigate the potential benefits of emotional regulation in the face of negative social feedback from acquaintances, as measured by emotional responses and memories. The results showed that negative social feedback sent by acquaintances induced stronger emotional experiences and deeper negative memories than those sent by strangers. Cognitive reappraisal and distraction could reduce the negative emotions induced by negative social feedback sent by acquaintances; however, they did not affect the forgetting of memories of negative social feedback. Further analyses revealed that the emotion regulation strategy was more effective in alleviating negative emotions in the group with self-reported low-depressive symptoms compared to the group with self-reported high-depressive symptoms. Thus, the study suggests that the effectiveness of emotional regulation strategies varies across different relational contexts."
+  },
+  {
+   "rank": 24,
+   "id": "40373909",
+   "source": "MED",
+   "pmid": "40373909",
+   "pmcid": null,
+   "doi": "10.1016/j.ijbiomac.2025.144196",
+   "first_publication_date": "2025-05-13",
+   "title": "Activation of G protein-coupled estrogen receptor alleviates the abnormal changes of synaptic plasticity in the anterior insula of temporal lobe epilepsy rats through RhoA/Rock2 pathway.",
+   "authors": "Zhang L, Liu S, He L, Qiang Y, Wu H, Li Z, Li G, Li L, Wen Y, Yang Y, Yu B, He Z, Liu K, Niu J, Rong WF.",
+   "journal": "International journal of biological macromolecules",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Temporal lobe epilepsy (TLE) is the most common type of refractory epilepsy, characterized by highly synchronized abnormal neuronal discharge. The insula cortex (IC) serves as a key \"node\" in the TLE transmission network, and the anterior insula (AI) is a critical gatekeeper to executive control; however, the pathological changes of the IC/AI have been overlooked. GPER1 is a G protein coupled estrogen receptor anchored by PSD95 to the plasma membrane of dendritic spine (DS), participating in the regulation of DS plasticity. We found that Gper1 deletion rats exhibited increased susceptibility to epilepsy, but it remains unclear whether and how GPER1 regulates alterations in DS plasticity in the IC after TLE induction. Here, we observed that the interaction between GPER1 and PSD95 diminished at TLE induction 7 d, the dendrite complexity and DS density were altered in the AI. While, activating of GPER1 ameliorated the neuronal damage and loss in the AI of TLE rats, decreased dendrite complexity and increased DS density，enhanced the interaction between GPER1 and PSD95, then mitigated the inhibition of Rock2 and its downstream targets, cofilin and the imbalance of F/G-actin, which was induced by the over-activation of CAMKII and RhoA. Thus, improved the emotion and cognitive dysfunction of TLE rats. Our results offer compelling evidence for elucidating the mechanism of abnormal changes in insular synaptic plasticity following TLE and the selection of therapeutic targets."
+  },
+  {
+   "rank": 25,
+   "id": "40275827",
+   "source": "MED",
+   "pmid": "40275827",
+   "pmcid": null,
+   "doi": "10.1017/s1355617725000098",
+   "first_publication_date": "2025-04-25",
+   "title": "Interoception after frontal brain injury: A systematic review.",
+   "authors": "Bodart A, Invernizzi S, Lefebvre L, Rossignol M.",
+   "journal": "Journal of the International Neuropsychological Society : JINS",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveInteroception is crucial for emotional processing. It relies on the bidirectional connections between the insula, a crucial structure in interoception, and the frontal lobe, which is implicated in emotional experiences. Acquired frontal brain injury often leads to emotional disorders. Our goal was to explore the interoceptive profiles of patients with frontal lesions with or without insular involvement.MethodGiven the neuroanatomical links between interoception and emotions, we conducted a systematic Preferred Reporting Items for Systematic Reviews and Meta-analyses guided review of studies assessing at least one dimension of interoception in adults with acquired frontal injuries, with or without associated insular lesions.ResultsSeven articles were included. The review indicated that interoceptive accuracy declines after frontal injuries. The two studies that investigated interoceptive sensitivity found lower scores in patient groups. Finally, inconsistent results were found for interoceptive metacognition after frontal damage.ConclusionsThis review is the first to explore interoceptive disorders after acquired frontal brain injury. The findings reveal deficits in cardiac interoceptive accuracy and interoceptive sensitivity following frontal damage. Inconsistent results were observed for interoceptive metacognition. Further research is needed to confirm the presence of interoceptive deficits following a frontal lesion. Additionally, the relationship between interoceptive deficits and emotional disorders, often reported after frontal brain injury, should be investigated."
+  },
+  {
+   "rank": 26,
+   "id": "40585817",
+   "source": "MED",
+   "pmid": "40585817",
+   "pmcid": "PMC12204195",
+   "doi": "10.1093/braincomms/fcaf217",
+   "first_publication_date": "2025-06-04",
+   "title": "Unveiling covert disownership after stroke: a neuropsychological and neural approach.",
+   "authors": "Cataldo E, Tipura E, Corradi-Dell'Acqua C, Martin T, Albert F, Assal F, Vuilleumier P, Ronchi R.",
+   "journal": "Brain communications",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Self-awareness can be impaired in different forms, including bodily features, following brain lesions. Such as other complex symptoms, these disorders seem not being localized in one brain area but may occur following the impairment of different parts of a network. One of the most disrupting body awareness disorder for people's functioning is the feeling that one or more body parts do not belong to the person anymore, the so-called 'body part disownership'. This symptom can be undetected, with recent findings suggesting that subtle signs of body disownership are revealed using an assessment with a non-verbal response, instead of a verbal interview. In the present study, by exploiting a large clinical dataset and state-of-the art analyses of lesion-induced disconnectivity, we have investigated this newly detected entity, called covert disownership, in the early phase post-stroke. 105 hospitalized stroke patients and 55 healthy controls were recruited over 2 years. Patients underwent a neurological and cognitive evaluation, including various measures of body ownership. We also assessed upper limb functions, using routine occupational therapy measures such as hand dexterity, strength, sensitivity and proprioception. To unveil its neural correlates, we ran innovative and robust region- and network-based lesion analyses. Our results indicate that about 30% of our sample exhibited covert disownership, involving either hands, arms, legs or face portions contralateral to the lesion, which affected the right- or the left-hemisphere. Lesion analyses confirmed the key role of structures such as the right insula, and basal ganglia, for upper limb ownership. Network-based structural connectivity data highlighted disconnections between temporo-occipital and parietal bilateral networks associated with disownership for the upper limb, as well as bilateral disconnections between fronto-basal and occipital parcels. Damage affecting the left superior longitudinal fasciculus was also linked to the right hand disownership. Altogether, we shed new light on the neural interconnections that, when perturbed, lead to body awareness disorders. Large-scale bilateral disconnections at the level of temporo-parietal and fronto-occipital networks explain covert disownership, with specific pathways as a function of the body part involved. We demonstrate that in the early phase of a brain damage this disorder may be underestimated but still affect patients' self-perception. This underscores the importance of sensitive tools to overcome the limitations of standard clinical examination, as well as of modelling brain damage in terms of networks rather than focal lesions. A better understanding of post-stroke disownership disorders may improve rehabilitation programs and predict optimal clinical outcome."
+  },
+  {
+   "rank": 27,
+   "id": "40318503",
+   "source": "MED",
+   "pmid": "40318503",
+   "pmcid": "PMC12090312",
+   "doi": "10.1016/j.nicl.2025.103791",
+   "first_publication_date": "2025-04-27",
+   "title": "Reduced microstructural white matter integrity is associated with the severity of physical symptoms in functional neurological disorder.",
+   "authors": "Gninenko N, Müller E, Aybek S.",
+   "journal": "NeuroImage. Clinical",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundFunctional neurological disorder (FND) is linked to functional changes in brain networks without an underlying brain lesion. However, the dichotomy between functional and structural changes has been challenged by research suggesting that not only functional but also anatomical alterations in the gray and white matter may underlie a subset of symptoms. This study aimed to characterize white matter microstructural integrity and its association with patient-reported and clinician-rated physical symptoms' severity in a large sample of FND patients.MethodsDiffusion-weighted imaging data were collected from 85 FND patients with mixed symptoms and 75 healthy controls (HCs), together with illness duration, clinician-rated (S-FMDRS & CGI), and patient-reported (SF-36) symptom severity. Microstructural integrity was computed based on probabilistic tractography using the Desikan-Killiany parcellation.ResultsCompared to HCs, patients with FND presented widespread reduced microstructural integrity stemming from regions such as the right lateral orbitofrontal cortex, insula, putamen, and superior temporal regions. After adjusting for depression and anxiety, these differences were no longer significant. Within-group analysis revealed that reduced microstructural integrity, particularly in the left precuneus and left superior parietal cortex, was strongly correlated with both patient-reported and clinician-evaluated severity of physical symptoms in FND patients.ConclusionPatients with FND present widespread reduced microstructural integrity in the brain, predominantly originating from temporoparietal, paralimbic and associated regions involved in emotion regulation and body awareness. These changes seem to be partly explained by comorbid mood disorders and the severity of physical symptoms, suggesting a plasticity phenomenon rather than trait biomarkers, which warrants further investigation in longitudinal study designs."
+  },
+  {
+   "rank": 28,
+   "id": "39316247",
+   "source": "MED",
+   "pmid": "39316247",
+   "pmcid": null,
+   "doi": "10.1007/s10286-024-01066-9",
+   "first_publication_date": "2024-09-24",
+   "title": "The insular cortex, autonomic asymmetry and cardiovascular control: looking at the right side of stroke.",
+   "authors": "Fontes MAP, Dos Santos Machado LR, Viana ACR, Cruz MH, Nogueira ÍS, Oliveira MGL, Neves CB, Godoy ACV, Henderson LA, Macefield VG.",
+   "journal": "Clinical autonomic research : official journal of the Clinical Autonomic Research Society",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "PurposeEvidence from animal and human studies demonstrates that cortical regions play a key role in autonomic modulation with a differential role for some brain regions located in the left and right brain hemispheres. Known as autonomic asymmetry, this phenomenon has been demonstrated by clinical observations, by experimental models, and currently by combined neuroimaging and direct recordings of sympathetic nerve activity. Previous studies report peculiar autonomic-mediated cardiovascular alterations following unilateral damage to the left or right insula, a multifunctional key cortical region involved in emotional processing linked to autonomic cardiovascular control and featuring asymmetric characteristics.MethodsBased on clinical studies reporting specific damage to the insular cortex, this review aims to provide an overview of the prognostic significance of unilateral (left or right hemisphere) post-insular stroke cardiac alterations. In addition, we review experimental data aiming to unravel the central mechanisms involved in post-insular stroke cardiovascular complications.Results and conclusionCurrent clinical and experimental data suggest that stroke of the right insula  can present a worse cardiovascular prognosis."
+  },
+  {
+   "rank": 29,
+   "id": "39516519",
+   "source": "MED",
+   "pmid": "39516519",
+   "pmcid": "PMC11549225",
+   "doi": "10.1038/s41598-024-78351-0",
+   "first_publication_date": "2024-11-08",
+   "title": "Right hemisphere stroke is linked to reduced social connectedness in the UK Biobank cohort.",
+   "authors": "O'Connell K, Marsh AA, Seydell-Greenwald A.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Social connectedness is fundamental to health and life satisfaction. Empathic capacities that support social connections are commonly impaired following damage to the brain's right hemisphere, but how these acquired socio-emotional deficits correspond to real-world social outcomes remains unclear. Using anatomical brain imaging and behavioral data from a large sample of stroke survivors included in the UK Biobank (n = 209), we link damage to regions of the right hemisphere involved in emotion recognition to lower social relationship satisfaction and higher loneliness. The effect was driven by lesions to the right anterior insula and not explained by stroke extent and motor function; it was further corroborated by an exploratory analysis of social decline in a few participants for whom data were available from before and after a stroke to the right anterior insula (n = 3; comparison n = 13). These correlational findings provide new insight into the role of the right hemisphere in maintaining social connections and bear important implications for treatment and rehabilitation post-stroke."
+  },
+  {
+   "rank": 30,
+   "id": "39005040",
+   "source": "MED",
+   "pmid": "39005040",
+   "pmcid": "PMC11528364",
+   "doi": "10.1098/rstb.2023.0251",
+   "first_publication_date": "2024-07-15",
+   "title": "Sensing, feeling and regulating: investigating the association of focal brain damage with voluntary respiratory and motor control.",
+   "authors": "Bischoff H, Kovach C, Kumar S, Bruss J, Tranel D, Khalsa SS.",
+   "journal": "Philosophical transactions of the Royal Society of London. Series B, Biological sciences",
+   "pub_types": [
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Breathing is a complex, vital function that can be modulated to influence physical and mental well-being. However, the role of cortical and subcortical brain regions in voluntary control of human respiration is underexplored. Here we investigated the influence of damage to human frontal, temporal or limbic regions on the sensation and regulation of breathing patterns. Participants performed a respiratory regulation task across regular and irregular frequencies ranging from 6 to 60 breaths per minute (bpm), with a counterbalanced hand motor control task. Interoceptive and affective states induced by each condition were assessed via questionnaire, and autonomic signals were indexed via skin conductance. Participants with focal lesions to the bilateral frontal lobe, right insula/basal ganglia and left medial temporal lobe showed reduced performance relative to individually matched healthy comparisons during the breathing and motor tasks. They also reported significantly higher anxiety during the 60 bpm regular and irregular breathing trials, with anxiety correlating with difficulty in rapid breathing specifically within this group. This study demonstrates that damage to frontal, temporal or limbic regions is associated with abnormal voluntary respiratory and motor regulation and tachypnoea-related anxiety, highlighting the role of the forebrain in affective and motor responses during breathing. This article is part of the theme issue 'Sensing and feeling: an integrative approach to sensory processing and emotional experience'."
+  },
+  {
+   "rank": 31,
+   "id": "38838083",
+   "source": "MED",
+   "pmid": "38838083",
+   "pmcid": "PMC12648566",
+   "doi": "10.1111/acer.15383",
+   "first_publication_date": "2024-06-04",
+   "title": "Bilateral insular cortical lesions reduce sensitivity to the adverse consequences of acute ethanol intoxication in Pavlovian conditioning procedures.",
+   "authors": "Mukherjee A, Gilles-Thomas EA, Kwok HY, Shorter CE, Sontate KV, McSain SL, Honeycutt SC, Loney GC.",
+   "journal": "Alcohol, clinical & experimental research",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundSensitivity to the adverse post-ingestive effects of ethanol likely serves as a deterrent to initiate alcohol consumption early in drinking and later may contribute to efforts to remain abstinent. Administering ethanol to naïve rats prior to Pavlovian conditioning procedures elicits robust ethanol-conditioned taste and place avoidance (CTA; CPA) mediated by its subjective interoceptive properties. The insular cortex (IC) has been implicated as a region involved in mediating sensitivity to the interoceptive properties of ethanol. Here, we examined whether bilateral lesions of the IC affect the acquisition and expression of taste and place avoidance in ethanol-induced CTA and CPA paradigms.MethodsAdult male and female Wistar rats received bilateral excitotoxic lesions (ibotenic acid; 20 mg/mL; 0.3 μL) of the IC prior to conditioning procedures. Subsequently, rats were conditioned to associate a novel taste stimulus (0.1% saccharin) and context with the effects of ethanol (1.0 g/kg) in a combined CTA/CPP procedure. Conditioning occurred over 8 alternating CS+/CS- days, followed by tests for expression of taste and place preferences. Data from IC-lesioned rats were compared with neurologically intact rats.ResultsOur findings revealed that neurologically intact rats showed a significantly stronger ethanol-induced CTA than IC-lesioned rats. There were no significant differences in total fluid intake when rats consumed water (CS-). As with CTA effects, intact rats showed a strong CPA, marked by a greater reduction in time spent on the drug-paired context, while IC-lesioned rats failed to display CPA to ethanol.ConclusionThese results indicate that proper IC functioning is necessary for responding to the adverse interoceptive properties of ethanol regardless of which Pavlovian paradigm is used to assess interoceptive responsivity to ethanol. Blunted IC functioning from chronic ethanol use may reduce interoceptive signaling specifically of ethanol's adverse effects thus contributing to increased alcohol use."
+  },
+  {
+   "rank": 32,
+   "id": "38705507",
+   "source": "MED",
+   "pmid": "38705507",
+   "pmcid": null,
+   "doi": "10.1016/j.pnpbp.2024.111024",
+   "first_publication_date": "2024-05-04",
+   "title": "Structural neuroimaging of skin-picking disorder.",
+   "authors": "Schienle A, Wabnegger A.",
+   "journal": "Progress in neuro-psychopharmacology & biological psychiatry",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundSkin-picking disorder (SPD) is conceptualized as an obsessive-compulsive and related disorder (OCRD). Patients with SPD excessively manipulate their skin, which leads to skin lesions, psychological distress, and functional impairment. The neuroanatomical facets of this disorder are still poorly understood.MethodsA total of 220 participants (123 patients with a primary diagnosis of SPD and 97 healthy controls; mean age = 30 years, 80% female) were recruited for a voxel-based morphometry (VBM) study. VBM data were compared between patients and controls, and between three SPD subgroups, each characterized by a distinct age of symptom onset (before puberty, during puberty, adulthood).ResultsRelative to the healthy comparison group, patients with SPD had significantly less grey matter volume (GMV) in regions of interest (ROIs: insula, orbitofrontal cortex, pallidum, cerebellum, supramarginal gyrus) and in the frontal pole and occipital regions (whole-brain findings). Early onset of symptoms (before puberty) was associated with elevated levels of focused skin-picking, in addition to less GMV in specific ROIs (insula, orbitofrontal cortex) as well as in paracingulate/ superior temporal regions (whole-brain findings).ConclusionsSPD-related reductions in GMV were identified in brain regions involved in interoception, emotion regulation, and motor control. This partially aligns with findings for OCD. The detection of different age-of-onset groups based on clinical as well as morphometric data points to the heterogeneity of the disorder and warrants further investigation."
+  },
+  {
+   "rank": 33,
+   "id": "38552812",
+   "source": "MED",
+   "pmid": "38552812",
+   "pmcid": null,
+   "doi": "10.1016/j.neuroimage.2024.120591",
+   "first_publication_date": "2024-03-27",
+   "title": "Emotional processing impairments in patients with insula lesions following stroke.",
+   "authors": "Lotze M.",
+   "journal": "NeuroImage",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Functional imaging has helped to understand the role of the human insula as a major processing network for integrating input with the current state of the body. However, these studies remain at a correlative level. Studies that have examined insula damage show lesion-specific performance deficits. Case reports have provided anecdotal evidence for deficits following insula damage, but group lesion studies offer a number of advances in providing evidence for functional representation of the insula. We conducted a systematic literature search to review group studies of patients with insula damage after stroke and identified 23 studies that tested emotional processing performance in these patients. Eight of these studies assessed emotional processing of visual (most commonly IAPS), auditory (e.g., prosody), somatosensory (emotional touch) and autonomic function (heart rate variability). Fifteen other studies looked at social processing, including emotional face recognition, gaming tasks and tests of empathy. Overall, there was a bias towards testing only patients with right-hemispheric lesions, making it difficult to consider hemisphere specificity. Although many studies included an overlay of lesion maps to characterise their patients, most did not differentiate lesion statistics between insula subunits and/or applied voxel-based associations between lesion location and impairment. This is probably due to small group sizes, which limit statistical comparisons. We conclude that multicentre analyses of lesion studies with comparable patients and performance tests are needed to definitively test the specific function of parts of the insula in emotional processing and social interaction."
+  },
+  {
+   "rank": 34,
+   "id": "38770492",
+   "source": "MED",
+   "pmid": "38770492",
+   "pmcid": "PMC11103916",
+   "doi": "10.7759/cureus.58511",
+   "first_publication_date": "2024-04-18",
+   "title": "The Role of the Insula in Chronic Pain and Associated Structural Changes: An Integrative Review.",
+   "authors": "McBenedict B, Petrus D, Pires MP, Pogodina A, Arrey Agbor DB, Ahmed YA, Castro Ceron JI, Balaji A, Abrahão A, Lima Pessôa B.",
+   "journal": "Cureus",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Chronic pain affects a substantial portion of the global population, significantly impacting quality of life and well-being. This condition involves complex mechanisms, including dysfunction of the autonomic nervous system, which plays a crucial role in pain perception. The insula, a key brain region involved in pain processing, plays a critical role in pain perception and modulation. Lesions in the insula can result in pain asymbolia, where pain perception remains intact but emotional responses are inappropriate. The insula is anatomically and functionally divided into anterior and posterior regions, with the posterior insula processing nociceptive input based on intensity and location before relaying it to the anterior insula for emotional mediation. Understanding the insula's intricate role in pain processing is crucial, as it is involved in encoding prediction errors and mediating emotional dimensions of pain perception. The focus of this review was on synthesizing existing literature on the role of the insula in chronic pain and associated structural changes. The goal was to integrate findings from various sources to provide a comprehensive overview of the topic. The search strategy included a combination of Medical Subject Headings (MeSH) and relevant keywords related to insula and chronic pain. The following databases were surveyed: PubMed, Embase, Scopus, and Web of Science. We identified a total of 2515 articles, and after following the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guideline based on eligibility criteria, 46 articles were used to synthesize this review. Our study highlights the pivotal role of the insula in chronic pain processing and associated structural changes, integrating findings from diverse studies and neuroimaging investigations. Beyond mere pain sensation, the insula contributes to emotional awareness, attention, and salience detection within the pain network. Various chronic pain conditions reveal alterations in insular activity and connectivity, accompanied by changes in gray matter volume and neurochemical profiles. Interventions targeting the insula show promise in alleviating chronic pain symptoms. However, further research is needed to understand underlying mechanisms, which can aid in developing more effective therapeutic interventions for pain."
+  },
+  {
+   "rank": 35,
+   "id": "40800324",
+   "source": "MED",
+   "pmid": "40800324",
+   "pmcid": "PMC12247603",
+   "doi": "10.1162/imag_a_00142",
+   "first_publication_date": "2024-05-09",
+   "title": "Ventromedial frontoinsular connectivity is associated with long-term smoking behavior change in aging.",
+   "authors": "Thovinakere N, Ai M, de la Colina AN, Walker C, Baracchini G, Tremblay-Mercier J, Villeneuve S, Spreng N, Geddes MR.",
+   "journal": "Imaging neuroscience (Cambridge, Mass.)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "A central question in the field of cognitive aging and behavioral neuroscience is what enables some individuals to successfully change their behavior more than others? Smoking is a significant risk factor for cognitive decline, particularly in vulnerable populations, including those who are at an elevated risk for Alzheimer's disease (AD). Developing effective smoking reduction strategies is therefore a public health priority. The goal of the current study is to better understand the brain mechanisms underlying long-term smoking behavior change in cognitively normal, but at-risk, older adults. Neuroimaging and human lesion studies have implicated the insula and its functional network in subjective interoceptive awareness of cigarette craving and smoking-cue reactivity. We sought to characterize the extent to which anterior insular resting-state functional connectivity (RSFC) MRI predicted long-term smoking reduction (mean: 2.7 years, range 8 months-4 years) using a seed-to-voxel approach. Twenty-three (18 women; 26%APOE4carriers; 61.5 years, SD = 3.7) cognitively unimpaired older individuals who smoked cigarettes at their baseline visit and have a first-degree family history of AD (at least one parent or multiple siblings affected) were included from a prospective longitudinal cohort, Pre-symptomatic Evaluation of Experimental or Novel Treatments for Alzheimer Disease (PREVENT-AD) in the current study. We found that reduced long-term smoking behavior was associated with enhanced antagonistic RSFC between bilateral anterior insula (aINS) and ventromedial prefrontal cortex (vmPFC). In a second pre-registered replication study within a larger, independent sample of 118 cognitively normal older adults who smoked cigarettes at baseline from the UK Biobank (73 women; 27.9%APOE4carriers; 60.3 years, SD = 2.7), we found that baseline enhanced antagonistic RSFC between anterior insula and vmPFC predicted long-term smoking reduction (mean 5.2 years; ranging from 3 years to 7 years). To our knowledge, this is the largest study to examine the neural substrates of long-term smoking cessation in human aging. Our results suggest that antagonistic RSFC between aINS and vmPFC is a brain marker of future smoking reduction and disease prevention in older adults at risk for AD."
+  },
+  {
+   "rank": 36,
+   "id": "39018294",
+   "source": "MED",
+   "pmid": "39018294",
+   "pmcid": "PMC11253967",
+   "doi": "10.1371/journal.pone.0301940",
+   "first_publication_date": "2024-07-17",
+   "title": "Down-modulation of functional ventral striatum activation for emotional face stimuli in patients with insula damage.",
+   "authors": "K K, M D, B VS, A L, M L.",
+   "journal": "PloS one",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Insula damage results in substantial impairments in facial emotion recognition. In particular, left hemispheric damage appears to be associated with poorer recognition of aversively rated facial expressions. Functional imaging can provide information on differences in the processing of these stimuli in patients with insula lesions when compared to healthy matched controls (HCs). We therefore investigated 17 patients with insula lesions in the chronic stage following stroke and 13 HCs using a passive-viewing task with pictures of facial expressions testing the blood oxygenation dependent (BOLD) effect in predefined regions of interest (ROIs). We expected a decrease in functional activation in an area modulating emotional response (left ventral striatum) but not in the facial recognition areas in the left inferior fusiform gyrus. Quantification of BOLD-response in ROIs but also voxel-based statistics confirmed this hypothesis. The voxel-based analysis demonstrated that the decrease in BOLD in the left ventral striatum was driven by left hemispheric damaged patients (n = 10). In our patient group, insula activation was strongly associated with the intensity rating of facial expressions. In conclusion, the combination of performance testing and functional imaging in patients following circumscribed brain damage is a challenging method for understanding emotion processing in the human brain."
+  },
+  {
+   "rank": 37,
+   "id": "38428325",
+   "source": "MED",
+   "pmid": "38428325",
+   "pmcid": "PMC10944179",
+   "doi": "10.1016/j.nicl.2024.103586",
+   "first_publication_date": "2024-02-27",
+   "title": "Behavioral and neuroanatomical correlates of facial emotion processing in post-stroke depression.",
+   "authors": "Koob JL, Gorski M, Krick S, Mustin M, Fink GR, Grefkes C, Rehme AK.",
+   "journal": "NeuroImage. Clinical",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundEmotion processing deficits are known to accompany depressive symptoms and are often seen in stroke patients. Little is known about the influence of post-stroke depressive (PSD) symptoms and specific brain lesions on altered emotion processing abilities and how these phenomena develop over time. This potential relationship may impact post-stroke rehabilitation of neurological and psychosocial function. To address this scientific gap, we investigated the relationship between PSD symptoms and emotion processing abilities in a longitudinal study design from the first days post-stroke into the early chronic phase.MethodsTwenty-six ischemic stroke patients performed an emotion processing task on videos with emotional faces ('happy,' 'sad,' 'anger,' 'fear,' and 'neutral') at different intensity levels (20%, 40%, 60%, 80%, 100%). Recognition accuracies and response times were measured, as well as scores of depressive symptoms (Montgomery-Åsberg Depression Rating Scale). Twenty-eight healthy participants matched in age and sex were included as a control group. Whole-brain support-vector regression lesion-symptom mapping (SVR-LSM) analyses were performed to investigate whether specific lesion locations were associated with the recognition accuracy of specific emotion categories.ResultsStroke patients performed worse in overall recognition accuracy compared to controls, specifically in the recognition of happy, sad, and fearful faces. Notably, more depressed stroke patients showed an increased processing towards specific negative emotions, as they responded significantly faster to angry faces and recognized sad faces of low intensities significantly more accurately. These effects obtained for the first days after stroke partly persisted to follow-up assessment several months later. SVR-LSM analyses revealed that inferior and middle frontal regions (IFG/MFG) and insula and putamen were associated with emotion-recognition deficits in stroke. Specifically, recognizing happy facial expressions was influenced by lesions affecting the anterior insula, putamen, IFG, MFG, orbitofrontal cortex, and rolandic operculum. Lesions in the posterior insula, rolandic operculum, and MFG were also related to reduced recognition accuracy of fearful facial expressions, whereas recognition deficits of sad faces were associated with frontal pole, IFG, and MFG damage.ConclusionPSD symptoms facilitate processing negative emotional stimuli, specifically angry and sad facial expressions. The recognition accuracy of different emotional categories was linked to brain lesions in emotion-related processing circuits, including insula, basal ganglia, IFG, and MFG. In summary, our study provides support for psychosocial and neural factors underlying emotional processing after stroke, contributing to the pathophysiology of PSD."
+  },
+  {
+   "rank": 38,
+   "id": "38422831",
+   "source": "MED",
+   "pmid": "38422831",
+   "pmcid": "PMC10944183",
+   "doi": "10.1016/j.nicl.2024.103583",
+   "first_publication_date": "2024-02-28",
+   "title": "Transient resting-state salience-limbic co-activation patterns in functional neurological disorders.",
+   "authors": "Weber S, Bühler J, Loukas S, Bolton TAW, Vanini G, Bruckmaier R, Aybek S.",
+   "journal": "NeuroImage. Clinical",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundFunctional neurological disorders were historically regarded as the manifestation of a dynamic brain lesion which might be linked to trauma or stress, although this association has not yet been directly tested yet. Analysing large-scale brain network dynamics at rest in relation to stress biomarkers assessed by salivary cortisol and amylase could provide new insights into the pathophysiology of functional neurological symptoms.MethodsCase-control resting-state functional magnetic resonance imaging study of 79 patients with mixed functional neurological disorders (i.e., functional movement disorders, functional seizures, persistent perceptual-postural dizziness) and 74 age- and sex-matched healthy controls. Using a two-step hierarchical data-driven neuroimaging approach, static functional connectivity was first computed between 17 resting-state networks. Second, dynamic alterations in these networks were examined using co-activation pattern analysis. Using a partial least squares correlation analysis, the multivariate pattern of correlation between altered temporal characteristics and stress biomarkers as well as clinical scores were evaluated.ResultsCompared to healthy controls, patients presented with functional aberrancies of the salience-limbic network connectivity. Thus, the insula and amygdala were selected as seed-regions for the subsequent analyses. Insular co-(de)activation patterns related to the salience network, the somatomotor network and the default mode network were detected, which patients entered more frequently than controls. Moreover, an insular co-(de)activation pattern with subcortical regions together with a wide-spread co-(de)activation with diverse cortical networks was detected, which patients entered less frequently than controls. In patients, dynamic alterations conjointly correlated with amylase measures and duration of symptoms.ConclusionThe relationship between alterations in insular co-activation patterns, stress biomarkers and clinical data proposes inter-related mechanisms involved in stress regulation and functional (network) integration. In summary, altered functional brain network dynamics were identified in patients with functional neurological disorder supporting previously raised concepts of impaired attentional and interoceptive processing."
+  },
+  {
+   "rank": 39,
+   "id": "37619765",
+   "source": "MED",
+   "pmid": "37619765",
+   "pmcid": null,
+   "doi": "10.1016/j.pnpbp.2023.110845",
+   "first_publication_date": "2023-08-22",
+   "title": "Right posterior insular epidural stimulation in rats with neuropathic pain induces a frequency-dependent and opioid system-mediated reduction of pain and its comorbid anxiety and depression.",
+   "authors": "Mehsein Z, Kobaïter-Maarrawi S, Samaha H, El Shami M, Albeaini S, Maarrawi J.",
+   "journal": "Progress in neuro-psychopharmacology & biological psychiatry",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Neuropathic pain (NP) is a sensory, emotional, and persistent disturbing experience caused by a lesion or disease of the somatosensory system which can lead when chronic to comorbidities such as anxiety and depression. Available treatments (pharmacotherapy, neurostimulation) have partial and unpredictable response; therefore, it seems necessary to find a new therapeutical approach that could alleviate most related symptoms and improve patients 'emotional state'. Posterior Insula seems to be a potential target of neurostimulation for pain relief. However, its effects on pain-related anxiety and depression remain unknown. Using rats with spared nerve injury (SNI), this study aims to elucidate the correlation between NP and anxio-depressive disorders, evaluate potential analgesic, anxiolytic, and antidepressant effects of right posterior insula stimulation (IS) using low (LF-IS, 50 Hz) or high (HF-IS, 150 Hz) frequency and assess endogenous opioid involvement in these effects. Results showed positive correlation between NP, anxiety, and depression. LF-IS reversed anhedonia and despair-like behavior through pain alleviation, whereas HF-IS only reduced anhedonia, all effects involving endogenous opioids. These findings support the link between NP and anxio-depressive disorders. Moreover, IS appears to have analgesic, anxiolytic and antidepressant effects mediated by the endogenous opioid system, making it a promising target for neurostimulation."
+  },
+  {
+   "rank": 40,
+   "id": "37930733",
+   "source": "MED",
+   "pmid": "37930733",
+   "pmcid": null,
+   "doi": "10.1089/brain.2023.0017",
+   "first_publication_date": "2023-12-04",
+   "title": "A Functional Magnetic Resonance Imaging Study Using Dynamic Amplitude of Low-Frequency Fluctuation to Assess Brain Activity in Patients with Moyamoya Disease.",
+   "authors": "Wei Q, Wang XY, Zhang LJ, Yu CY, Shu HY, Liao XL, Xu SH, Su T, Kang M, Shao Y.",
+   "journal": "Brain connectivity",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Introduction: The purpose of this study was to monitor and record the dynamic brain activity of patients with moyamoya disease (MMD), as well as to study the relationship between brain abnormalities and presenting clinical features. Methods: A total of 16 patients with MMD (2 males and 14 females) were invited to participate in the study, as were healthy controls (HCs) with the same number and sex ratio. In this study, the dynamic amplitude of low-frequency fluctuation (dALFF) was utilized to assess changes in spontaneous brain activity. Moreover, we also used correlation analysis to study the relationship among the measured mean of dALFF, behavioral performances, and the retinal nerve fiber layer and the Hospital Anxiety and Depression Scale (HADS) score to explore the potential relationship between MMD and anxiety and depression. Results: Our study reveals that in MMD, dALFF levels decreased in the left lingual gyrus, right insula, and occipital lobe. Discussion: In this study, we found and discussed the potential relationship between the abnormal activities in multiple brain regions and related functional network disorders in patients with MMD, as well as the damage to brain regions that process emotion and vision, in the hopes of providing more ideas for the clinical diagnosis and treatment of MMD."
+  }
+ ]
+}

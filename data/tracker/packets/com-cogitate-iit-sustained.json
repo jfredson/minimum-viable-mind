@@ -1,0 +1,65 @@
+{
+  "packet_id": "com-cogitate-iit-sustained",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. A study counts toward a prediction if that prediction was fixed, by the theory's proponents, in a dated record made before the study's data were collected, whether a publication or a registration. What decides is when the record was fixed, not when it became public. A paper that states a prediction and tests it in the same paper does not count. When the dates or the commitment are unclear, the study is not counted. Read the passages and the dates. Decide: BEFORE (a record by the proponents commits the theory to this prediction and was fixed before the study's data were collected), NOT-BEFORE (it was not), or UNCLEAR. If the study does not say when its data were collected, say how you decided. Answer in JSON: {\"verdict\": \"before\"|\"not-before\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Integrated information theory",
+  "core_claim": {
+    "quote": "The physical correspondent of an experience is not the substrate as such but the Φ-structure specified by the substrate in its current state.",
+    "source": {
+      "citation": "Albantakis L, Barbosa L, Findlay G, Grasso M, Haun AM, Marshall W, Mayner WGP, Zaeemzadeh A, Boly M, Juel BE, Sasai S, Fujii K, David I, Hendren J, Lang JP, Tononi G. Integrated information theory (IIT) 4.0: formulating the properties of phenomenal existence in physical terms. PLOS Computational Biology 19(10):e1011465, 2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581496/",
+      "date": "2023-10-17"
+    }
+  },
+  "prediction": {
+    "statement": "For as long as a stimulus is consciously experienced, a content-specific pattern of activity persists in posterior cortex.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2019-01-16",
+      "passage": "In sum, GNW predicts a phasic ignition of the workspace followed by a decay (until a new content is consciously experienced), while IIT predicts, independent of any phasic transient, a sustained content-specific activity pattern persisting for as long as the stimulus is consciously experienced.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    "test_for": "Content-specific activity and information in posterior cortex last as long as the stimulus, and track its duration.",
+    "test_against": "Posterior content-specific activity or information decays well before a still-visible stimulus ends."
+  },
+  "study": {
+    "name": "The Cogitate Consortium's adversarial test of global workspace and integrated information theory",
+    "source": {
+      "citation": "Cogitate Consortium, Ferrante O, Gorska-Klimowska U, Henin S, et al. Adversarial testing of global neuronal workspace and integrated information theories of consciousness. Nature 642:133-142, 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12137136/",
+      "date": "2025-04-30"
+    },
+    "first_appeared": "2019-01-16 (registration (preregistration v1 on OSF))",
+    "data_collected": {
+      "when": "after 2019-01-16",
+      "basis": "The registration was created on OSF on 2019-01-16, and the protocol says the original and amended registrations were frozen before data acquisition began."
+    }
+  },
+  "passages": [
+    {
+      "text": "In sum, GNW predicts a phasic ignition of the workspace followed by a decay (until a new content is consciously experienced), while IIT predicts, independent of any phasic transient, a sustained content-specific activity pattern persisting for as long as the stimulus is consciously experienced.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    {
+      "text": "The original and the amended preregistration files were frozen prior to the commencement of data acquisition.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, Bendtz K, Ferrante O, ... Dehaene S, Koch C, Tononi G, Ward LM. An adversarial collaboration protocol for testing contrasting predictions of global neuronal workspace and integrated information theory. PLOS ONE 18(2):e0268577, 2023",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9916582/",
+        "date": "2023-02-10"
+      }
+    }
+  ],
+  "dates": {
+    "statement": "2019-01-16",
+    "data_collected": "after 2019-01-16"
+  },
+  "this_reading_is": "the second reading"
+}

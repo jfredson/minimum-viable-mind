@@ -1,0 +1,284 @@
+# The second reader's stage 3 readings (Google's Gemini), imported from the raw answers in
+# second-reading/ (run = stage3) by scripts/tracker_import_stage3_reading.py. Do not edit by
+# hand. Run 2026-11-21 under John's go of that day ('Yes, cap $15', relayed by the master
+# session). Blind: no packet held any part of the first reader's readings.
+
+[[reading]]
+judgement = "com-babcock-orch-mt-coherence"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The theory's proponents explicitly predicted that quantum coherence would be detected in microtubules in 1998 (specifying SQUIDs) and restated the general prediction without specifying an instrument in August 2013. The study testing for quantum coherence (ultraviolet superradiance) in microtubules was not registered and first appeared publicly as a preprint in February 2023. Because the general commitment was published nearly a decade before the study's earliest appearance, the prediction clearly precedes the test."
+unsure = false
+unsure_why = ""
+response_id = "Y-ABa-CPF9KVm9cP8ZGr2Qo"
+cost_usd = 0.00845
+run = "stage3b"
+verdict = "before"
+
+[[reading]]
+judgement = "com-harrison-seth-interoceptive-suppression"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In January 2012, Seth and colleagues explicitly predicted that the anterior insular cortex and other interoceptive areas would show reduced responses to well-predicted internal body signals and enhanced responses when expectations are violated. This directly commits the theory to the prediction tested in the breathing interoception fMRI study by Harrison and colleagues. Because the study's ethics approval dates to 2017 and its earliest preprint appeared in March 2021, the prediction was fixed well before the study's results could have been known."
+unsure = false
+unsure_why = ""
+response_id = "beABa5XfLLCB0PEP05_UqA8"
+cost_usd = 0.010774
+run = "stage3b"
+verdict = "before"
+
+[[reading]]
+judgement = "com-hense-2026-sm-inattentional"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In October 2001, O'Regan and Noë claimed that visual awareness requires using sensorimotor contingencies for thought and planning, meaning that visible aspects of a scene go unseen when not used in current thinking, and they explicitly linked this to inattentional blindness. This commits the sensorimotor theory to the prediction tested in Hense et al., where unexpected, task-irrelevant background stimuli appear while participants are busy with a foreground task. Although the exact date of Hense et al.'s SSRN version is not established, the study's 2019 ethics approval and 2026 publication place its data collection and public appearance many years after the 2001 commitment."
+unsure = false
+unsure_why = ""
+response_id = "euABa6jcLdjcsNYPus-pqQg"
+cost_usd = 0.0209
+run = "stage3b"
+verdict = "before"
+
+[[reading]]
+judgement = "com-hill-seth-feeling-from-prediction"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In January 2012, Seth and colleagues stated that emotional content is determined by interoceptive predictive signals rather than by the sensing of bodily signals alone. This commits the theory to the prediction that changing what a person expects their body to be doing will change felt emotion even when actual bodily signals remain fixed. Although the second excerpt mentioning false physiological feedback is cut off mid-sentence, the commitment was fixed more than a decade before the 2024 study was submitted in September 2023 and published in April 2024."
+unsure = true
+unsure_why = "The second quoted passage ('or by false physiological feedback (Gray et al., 2007).') is an incomplete sentence fragment, so the exact experimental prediction linking false feedback to directional changes in reported emotion has to be inferred primarily from the general mechanism in the first passage."
+response_id = "kuABa_f1H6PDn88P47vLgQU"
+cost_usd = 0.024336
+run = "stage3b"
+verdict = "before"
+
+[[reading]]
+judgement = "com-kumar-2026-ast-graded"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Graziano and Webb's 2015 paper appeared well before Kumar and Srinivasan's 2026 study, and it argues that because attention on an item can be graded, awareness should also be graded. However, the 2015 passage frames continuous scales as compatible with the theory in general and implies only that less attention yields lower awareness along a scale, not how concurrent task load changes perceptual gradedness. Because the 2026 study tests whether scene-gist clarity ratings are specifically more in-between (more graded) under high task load than under low load, the earlier text does not clearly commit the theory to the prediction as the study tests it."
+unsure = true
+unsure_why = "If the 2026 study mainly tests whether dividing attention shifts ratings from ceiling into intermediate values rather than causing an all-or-nothing drop to unseen, the 2015 statement that graded attention yields graded awareness could count as a broad prior commitment."
+response_id = "_uQBa4jSCcGljdoPnamM-Qo"
+cost_usd = 0.204784
+run = "stage3b"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-maimon-2022-sm-substitution"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "O'Regan and Noë's 2001 paper predates Maimon et al.'s 2022 study by two decades, but its sensory-substitution prediction explicitly requires that stimulation obey visual sensorimotor laws through active camera manipulation. In the 2001 passages, the authors frame substitution around skin stimulation under active camera control and state that stimulation through the auditory nerve without movement will be perceived as auditory. Because Maimon et al. describe translating images on a website or app and playing them back on a computer or mobile device without showing active camera control, the commitment of the 2001 record to the setup tested in this study is unclear."
+unsure = true
+unsure_why = "While this clearly does not qualify as before, it sits on the boundary between unclear (because the excerpts leave uncertain whether any active movement contingencies occurred during training) and not-before (because for passive playback without movement, the 2001 paper predicts auditory rather than sight-like experience and thus made no prior commitment to this test)."
+response_id = "mOEBa66DF52qsNYPk4a5sAg"
+cost_usd = 0.111702
+run = "stage3b"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-mukherjee-2024-dam-insula"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Damasio and colleagues stated in 2012, well before the 2024 study, that basic feeling states are assembled subcortically and survive bilateral insular damage. However, the 2024 study tests conditioned taste and place avoidance in rats rather than direct markers of feeling states as specified in the prediction's test criteria. Moreover, because the 2012 paper assigns the insular cortex a role in relating feelings to cognitive processes like decision-making, it does not clearly commit the theory on whether associative avoidance learning should remain intact or be impaired after bilateral insular lesions."
+unsure = false
+unsure_why = ""
+response_id = "JOIBa-jRMq3Pm9cPibKMmQg"
+cost_usd = 0.01086
+run = "stage3b"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-vabba-seth-interoceptive-ownership"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Although the 2012 paper appeared well before the 2024 study, the quoted passage only suggests that there is 'considerable promise' in integrating interoceptive predictive coding with multisensory models of selfhood, 'potentially explaining' interoceptive anchors in bodily experience. This general and hedged programmatic remark does not fix a specific prediction that visual feedback pulsed in time with the heartbeat will increase hand ownership compared to out-of-time feedback. While the 2025 study mentions replicating an earlier 2013 task, no passage from that or other intermediate works by the proponents is provided to establish a clear prior theoretical commitment."
+unsure = true
+unsure_why = "The 2012 quote is too vague and hedged to commit to the cardiac rubber hand prediction on its own, though later pre-2024 papers by Seth and colleagues (such as Suzuki et al. 2013, mentioned in passing) likely stated the phenomenon directly."
+response_id = "M-IBa86fAv7M0PEP7d7S6AU"
+cost_usd = 0.017416
+run = "stage3b"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-wang-2022-ast-control"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Graziano and Webb published their statement in April 2015, more than seven years before the 2022 study was submitted and published, so the timing is clearly prior. However, the 2015 passages commit only to the broad claim that when an unseen item perturbs attention, top-down control of attention is compromised. The 2022 study tests subliminal meaning-contingent orienting—whether masked cues pull attention in line with advance search settings—rather than testing whether people can deliberately sustain, suppress, or redirect attention to an unseen stimulus relative to a seen one. Because the 2015 passages do not settle whether contingent capture by matching subliminal cues counts as intact top-down control or involuntary capture, the theory's commitment as tested by this study is unclear."
+unsure = true
+unsure_why = "The material provides only the 2022 study's title and topic rather than its full experimental conditions, so it is not completely clear whether one of the three experiments directly measured deliberate suppression or redirection across aware and unaware conditions."
+response_id = "Q-IBa_mIO6jXm9cP-sS10Qk"
+cost_usd = 0.026946
+run = "stage3b"
+verdict = "unclear"
+
+[[reading]]
+judgement = "com-xenonnt-orch-dp-collapse"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Hameroff stated gravitational self-collapse (E = h/T) in 1998, and Hameroff and Penrose explicitly committed Orch OR to the Diósi–Penrose scheme at the femtometer nuclear scale in August 2013. Both commitments were published years before the XENONnT data were collected in 2021, first published in 2022, and reanalysed in 2025. Although the passages state superposition lifetimes rather than X-ray emission directly, committing to the Diósi–Penrose scheme and nuclear scale fixes the standard radiation prediction well before the data existed."
+unsure = true
+unsure_why = "The quoted passages commit to the Diósi–Penrose scheme, nuclear scale, and E = h/T collapse time, but do not explicitly state the spontaneous X-ray radiation side effect, which requires assuming the simplest Markovian dynamical formulation of Diósi–Penrose collapse."
+response_id = "Z-IBa7iaHIuam9cP7b25kQY"
+cost_usd = 0.043566
+run = "stage3b"
+verdict = "before"
+
+[[reading]]
+judgement = "com-yacawych-2026-dam-nonneural"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Damasio and Damasio published their statements in July 2022 and July 2024, before the study first appeared as a bioRxiv preprint on January 24, 2025. However, the quoted passages only state the broad claim that feelings require interaction between interoceptive neurons in peripheral ganglia or central nuclei and viscera or circulating blood molecules, rather than an isolated nervous system. They do not clearly commit the theory to the prediction as this study tests it, namely switching GLP1 receptors on and off in two brainstem patches to test whether drug-induced sickly feelings and weight loss share a circuit or require direct brainstem blood exchange over nerve-to-nerve signalling."
+unsure = false
+unsure_why = ""
+response_id = "7uUBa_LZAvC10PEPyuyniQI"
+cost_usd = 0.076872
+run = "stage3b"
+verdict = "unclear"
+
+[[reading]]
+judgement = "out-babcock-orch-mt-coherence"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The passages report up to an almost 70% increase in fluorescence quantum yield in assembled microtubules, which the authors interpret as pointing toward a shared quantum state (superradiance). However, counting for the prediction requires a signature that only a shared quantum state can explain, whereas the passages only call an alternative scenario unlikely and state that quantum yields need to be complemented by lifetime measurements. The given excerpts also omit temperature and coherence duration, making it impossible to tell whether any quantum coherence outlasts the millionth-of-a-second cutoff that would otherwise count against the prediction."
+unsure = true
+unsure_why = "Additional passages from the study showing whether fluorescence lifetime measurements were also performed, whether classical accounts were strictly ruled out, the measurement temperature, and whether coherence lasted more or less than a millionth of a second could change the verdict to 'for' or 'against'."
+response_id = "oOMBa5CZCrmojdoPjpK1yAw"
+cost_usd = 0.0247
+run = "stage3b"
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-harrison-seth-interoceptive-suppression"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "In a task where participants learned to predict resistance to their breathing, the anterior insula showed significant activation with overall prediction error and significant deactivation with overall prediction certainty. Because higher prediction error means a stronger response when expectations about the breathing load are violated and a weaker response when it is well predicted, and higher certainty further deactivated the region, both parts of the test for the prediction are met. This judgement relies only on the passages provided."
+unsure = false
+unsure_why = ""
+response_id = "xuMBa42REPba0PEPhJmUsAc"
+cost_usd = 0.012984
+run = "stage3b"
+verdict = "for"
+
+[[reading]]
+judgement = "out-hense-2026-sm-inattentional"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Participants performed a counting task while fixating on a cross as lighter lines forming a face flashed repeatedly in the background. Although these lines were perceptually distinct and seen by the vast majority of informed participants, 38 out of 47 uninformed participants (about 81%) remained unaware of them. Because a large majority failed to notice an unexpected, otherwise clearly perceptible stimulus while busy with another task, the result matches what counts for the prediction."
+unsure = false
+unsure_why = ""
+response_id = "1OMBa6yeII7H0PEP3Z_YgAk"
+cost_usd = 0.008254
+run = "stage3b"
+verdict = "for"
+
+[[reading]]
+judgement = "out-hill-seth-feeling-from-prediction"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "False fast heart-rate feedback significantly increased reported fear compared to no feedback, which supports the prediction that expected bodily state shapes emotion. However, false slow heart-rate feedback failed to reduce the emotional response to threat, even though participants strongly believed the slow feedback. Because manipulating expected bodily state changed emotion in one direction (fast feedback) but left it unchanged in the other (slow feedback), the results are partly for and partly against the prediction."
+unsure = true
+unsure_why = "The second passage reports no group differences for 'Fig. 2F' without naming the variable; knowing whether actual physiological state remained fixed across groups—or changed in the fast feedback group—could shift the verdict from mixed to against."
+response_id = "3uMBa5X7MNjam9cP2MadiQk"
+cost_usd = 0.013218
+run = "stage3b"
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-kumar-2026-ast-graded"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Supporting the prediction, both experiments showed graded awareness with attentional load consistently affecting intermediate visibility ratings, and one experiment found significantly higher overall awareness ratings when more attention was free under low load. Against the prediction, the other experiment found no significant difference in overall mean awareness ratings between low and high load. Furthermore, the passages only describe two load conditions rather than multiple steps of attention, and the authors explicitly note that these results are not a decisive test between discrete and continuous accounts of awareness."
+unsure = false
+unsure_why = ""
+response_id = "7uMBa-n9Ft3Mm9cPgIfK6A0"
+cost_usd = 0.020564
+run = "stage3b"
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-mukherjee-2024-dam-insula"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The prediction states that bodily and emotional feelings survive bilateral destruction of the insula, while flattening or abolition of feelings counts against it. In this study, bilateral insular lesions in rats significantly weakened alcohol-induced taste aversion, completely blocked alcohol-induced place aversion, and eliminated a neophobic-like response. Using the authors' framing of conditioned responses as a proxy for perceived subjective interoceptive properties, these lesions flattened or abolished the negative feelings studied."
+unsure = true
+unsure_why = "The study tests Pavlovian conditioning in rats rather than human self-report and observer ratings as specified in the test criteria, the passages do not confirm whether the insular lesions were complete, and impaired conditioning could reflect a deficit in associative learning rather than a loss of feelings themselves."
+response_id = "D-QBa7Zp7OnY4w-Xma3xBQ"
+cost_usd = 0.01023
+run = "stage3b"
+verdict = "against"
+
+[[reading]]
+judgement = "out-wang-2022-ast-control"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The passages show that unperceived cues still draw spatial attention in line with a current attentional control setting, with no significant difference whether consciousness is involved or not. While the intact effect of an attentional control setting without awareness could seem to count against a control deficit, the authors explicitly conclude that the cue effects are the result of involuntary attention. Because both test criteria assume unreportable stimuli can draw attention involuntarily and differ on whether people can deliberately sustain, suppress, or redirect attention to the cue, these passages cannot tell the two apart."
+unsure = true
+unsure_why = "Knowing from the full study whether participants were instructed or able to deliberately suppress, sustain, or shift attention away from the cue—and whether the conscious-versus-unconscious comparison measured that deliberate control rather than only involuntary capture—could change the verdict."
+response_id = "HOQBa6PZGqLdm9cP0vmXoQk"
+cost_usd = 0.018346
+run = "stage3b"
+verdict = "mixed"
+
+[[reading]]
+judgement = "out-xenonnt-orch-dp-collapse"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "The study searched for faint spontaneous X-rays implied by the simplest (Markovian) form of the Diósi–Penrose collapse model and found none, tightening limits on the model's spatial cutoff parameter by a factor of five. Under the stated criteria, the absence of such spontaneous radiation counts against the prediction. However, the provided excerpts omit the numerical value of the new bound, and the theory's proponents note large uncertainty about how smeared out atomic nuclei are."
+unsure = true
+unsure_why = "Seeing the exact numerical value of the study's spatial cutoff bound, and knowing whether it excludes the nuclear smearing scales that Orch OR can accommodate, would clarify whether the radiation is absent at the level the theory requires."
+response_id = "MuQBa7_YMv7M0PEP4Z_RkAQ"
+cost_usd = 0.02294
+run = "stage3b"
+verdict = "against"
+
+[[reading]]
+judgement = "out-yacawych-2026-dam-nonneural"
+reader = "gemini"
+model = "gemini-4-carbon"
+date = "2026-11-21"
+order = "second"
+reason = "Knocking out the receptor in the blood-exposed area postrema blunted the aversive response to a circulating appetite drug, which fits the test's idea that blocking direct blood-to-nerve chemical access dulls a sickly bodily state. However, the passages report no role for those neurons in normal physiological feeding (involving the body's own chemistry), and because the blood-brain barrier keeps the circulating drug from reaching neighbouring brainstem neurons, removing the area postrema receptor may just block an external drug's entry point rather than showing that nerve-to-nerve signalling alone cannot produce feelings. Because of this, the given passages cannot tell Damasio's prediction apart from a purely neural account once a signal enters the brain. Beyond the material given, this reading relies only on standard expansions of the passages' abbreviations (AP = area postrema, NTS = nucleus of the solitary tract, BBB = blood-brain barrier, GLP1RA/Lira = GLP-1 receptor agonist/liraglutide, KO = knockout, CTA = conditioned taste aversion in mice)."
+unsure = true
+unsure_why = "Evidence from the study or elsewhere showing whether ordinary nerve-to-nerve activation of this brainstem circuit still produces (against) or fails to produce (for) the aversive state when direct blood-to-nerve chemical exchange is blocked, and whether endogenous bodily feelings rather than just exogenous drug responses are dulled, would change the verdict."
+response_id = "reQBa83DBOiem9cP-rC_uQc"
+cost_usd = 0.04746
+run = "stage3b"
+verdict = "mixed"

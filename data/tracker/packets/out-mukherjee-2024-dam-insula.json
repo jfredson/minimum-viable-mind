@@ -1,0 +1,77 @@
+{
+  "packet_id": "out-mukherjee-2024-dam-insula",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Damasio's feeling-based theory",
+  "core_claim": {
+    "quote": "Finally, we outline a mechanism for the generation of feelings based on a two-way interaction between interoceptive components of the nervous system and a particular set of nonneural components of the organism's interior, namely, viscera and circulating chemical molecules involved in their operations.",
+    "source": {
+      "citation": "Damasio A, Damasio H. Feelings are the source of consciousness. Neural Computation 35(3):277-286, 2023",
+      "url": "https://doi.org/10.1162/neco_a_01521",
+      "date": "2022-07-27"
+    }
+  },
+  "prediction": {
+    "statement": "Feelings, of the body and of emotions, survive complete destruction of the insula on both sides of the brain, because the insula re-maps feelings first assembled lower down.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2012-04-03",
+      "passage": "The activity patterns unequivocally present in the insular cortex during feeling states would constitute a second-order mapping of activity patterns first assembled subcortically.",
+      "source": {
+        "citation": "Damasio A, Damasio H, Tranel D. Persistence of feelings and sentience after bilateral damage of the insula. Cerebral Cortex 23(4):833-846, 2013",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3657385/",
+        "date": "2012-04-03"
+      }
+    },
+    "test_for": "A person with complete loss of both insulae (brainstem intact) shows a normal range of feelings, by self-report and by observers' ratings.",
+    "test_against": "Complete loss of both insulae abolishes or flattens feelings of the body and of emotions."
+  },
+  "study": {
+    "name": "Whether rats with both insulae destroyed still learn to avoid a taste and a place that alcohol made them feel bad in",
+    "source": {
+      "citation": "Mukherjee A, Gilles-Thomas EA, Kwok HY, Shorter CE, Sontate KV, McSain SL, Honeycutt SC, Loney GC. Bilateral insular cortical lesions reduce sensitivity to the adverse consequences of acute ethanol intoxication in Pavlovian conditioning procedures. Alcohol, Clinical & Experimental Research 48(8):1473-1482, 2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12648566/",
+      "date": "2024-06-04"
+    },
+    "first_appeared": "2024-06-04 (publication, online version (Europe PMC first publication date; no preprint found))",
+    "data_collected": {
+      "when": "not stated; before 2024-06-04",
+      "basis": "The paper gives no dates for its experiments, only that the work was approved by the University at Buffalo animal care committee."
+    }
+  },
+  "passages": [
+    {
+      "text": "In the present study, we found that ibotenic acid lesions of the insular cortex significantly attenuated EtOH-induced CTA and completely blocked acquisition of EtOH-induced CPA in EtOH-naïve rats.",
+      "source": {
+        "citation": "Mukherjee A, Gilles-Thomas EA, Kwok HY, Shorter CE, Sontate KV, McSain SL, Honeycutt SC, Loney GC. Bilateral insular cortical lesions reduce sensitivity to the adverse consequences of acute ethanol intoxication in Pavlovian conditioning procedures. Alcohol, Clinical & Experimental Research 48(8):1473-1482, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12648566/",
+        "date": "2024-06-04"
+      }
+    },
+    {
+      "text": "Post-hoc analyses demonstrated that ICX rats conditioned with EtOH had a significantly higher preference for saccharin post-conditioning compared to neurologically intact rats.",
+      "source": {
+        "citation": "Mukherjee A, Gilles-Thomas EA, Kwok HY, Shorter CE, Sontate KV, McSain SL, Honeycutt SC, Loney GC. Bilateral insular cortical lesions reduce sensitivity to the adverse consequences of acute ethanol intoxication in Pavlovian conditioning procedures. Alcohol, Clinical & Experimental Research 48(8):1473-1482, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12648566/",
+        "date": "2024-06-04"
+      }
+    },
+    {
+      "text": "the strength of the conditioned response can serve as a proxy for the perceived subjective interoceptive properties of a given stimulus",
+      "source": {
+        "citation": "Mukherjee A, Gilles-Thomas EA, Kwok HY, Shorter CE, Sontate KV, McSain SL, Honeycutt SC, Loney GC. Bilateral insular cortical lesions reduce sensitivity to the adverse consequences of acute ethanol intoxication in Pavlovian conditioning procedures. Alcohol, Clinical & Experimental Research 48(8):1473-1482, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12648566/",
+        "date": "2024-06-04"
+      }
+    },
+    {
+      "text": "consistent with other studies demonstrating the loss of a neophobic-like response to a novel saccharin solution following lesions of IC",
+      "source": {
+        "citation": "Mukherjee A, Gilles-Thomas EA, Kwok HY, Shorter CE, Sontate KV, McSain SL, Honeycutt SC, Loney GC. Bilateral insular cortical lesions reduce sensitivity to the adverse consequences of acute ethanol intoxication in Pavlovian conditioning procedures. Alcohol, Clinical & Experimental Research 48(8):1473-1482, 2024",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12648566/",
+        "date": "2024-06-04"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

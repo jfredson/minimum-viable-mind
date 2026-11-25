@@ -1,0 +1,263 @@
+{
+ "prediction": "ast-covary",
+ "query": "(TITLE_ABS:\"attention without awareness\" OR TITLE_ABS:\"awareness without attention\" OR TITLE_ABS:\"attention in the absence of awareness\") AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 14,
+ "results": [
+  {
+   "rank": 1,
+   "id": "28826603",
+   "source": "MED",
+   "pmid": "28826603",
+   "pmcid": "PMC5777913",
+   "doi": "10.1016/j.cortex.2017.07.010",
+   "first_publication_date": "2017-07-22",
+   "title": "Neural processes underlying the orienting of attention without awareness.",
+   "authors": "Giattino CM, Alam ZM, Woldorff MG.",
+   "journal": "Cortex; a journal devoted to the study of the nervous system and behavior",
+   "pub_types": [
+    "research-article",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Despite long being of interest to both philosophers and scientists, the relationship between attention and perceptual awareness is not well understood, especially to what extent they are even dissociable. Previous studies have shown that stimuli of which we are unaware can orient spatial attention and affect behavior. Yet, relatively little is understood about the neural processes underlying such unconscious orienting of attention, and how they compare to conscious orienting. To directly compare the cascade of attentional processes with and without awareness of the orienting stimulus, we employed a spatial-cueing paradigm and used object-substitution masking to manipulate subjects' awareness of the cues. We recorded EEG during the task, from which we extracted hallmark event-related-potential (ERP) indices of attention. Behaviorally, there was a 61 ms validity effect (invalidly minus validly cued target RTs) on cue-aware trials. On cue-unaware trials, subjects also had a robust validity effect of 20 ms, despite being unaware of the cue. An N2pc to the cue, a hallmark ERP index of the lateralized orienting of attention, was observed for cue-aware but not cue-unaware trials, despite the latter showing a clear behavioral validity effect. Finally, the P1 sensory-ERP response to the targets was larger when validly versus invalidly cued, even when subjects were unaware of the preceding cue, demonstrating enhanced sensory processing of targets following subliminal cues. These results suggest that subliminal stimuli can orient attention and lead to subsequent enhancements to both stimulus sensory processing and behavior, but through different neural mechanisms (such as via a subcortical pathway) than stimuli we perceive."
+  },
+  {
+   "rank": 2,
+   "id": "29280049",
+   "source": "MED",
+   "pmid": "29280049",
+   "pmcid": null,
+   "doi": "10.3758/s13414-017-1474-7",
+   "first_publication_date": "2018-04-01",
+   "title": "Attention without awareness: Attentional modulation of perceptual grouping without awareness.",
+   "authors": "Lo SY.",
+   "journal": "Attention, perception & psychophysics",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Perceptual grouping is the process through which the perceptual system combines local stimuli into a more global perceptual unit. Previous studies have shown attention to be a modulatory factor for perceptual grouping. However, these studies mainly used explicit measurements, and, thus, whether attention can modulate perceptual grouping without awareness is still relatively unexplored. To clarify the relationship between attention and perceptual grouping, the present study aims to explore how attention interacts with perceptual grouping without awareness. The task was to judge the relative lengths of two centrally presented horizontal bars while a railway-shaped pattern defined by color similarity was presented in the background. Although the observers were unaware of the railway-shaped pattern, their line-length judgment was biased by that pattern, which induced a Ponzo illusion, indicating grouping without awareness. More importantly, an attentional modulatory effect without awareness was manifested as evident by the observer's performance being more often biased when the railway-shaped pattern was formed by an attended color than when it was formed by an unattended one. Also, the attentional modulation effect was shown to be dynamic, being more pronounced with a short presentation time than a longer one. The results of the present study not only clarify the relationship between attention and perceptual grouping but also further contribute to our understanding of attention and awareness by corroborating the dissociation between attention and awareness."
+  },
+  {
+   "rank": 3,
+   "id": "27153978",
+   "source": "MED",
+   "pmid": "27153978",
+   "pmcid": null,
+   "doi": "10.1016/j.neuroimage.2016.05.010",
+   "first_publication_date": "2016-05-03",
+   "title": "Reward-associated features capture attention in the absence of awareness: Evidence from object-substitution masking.",
+   "authors": "Harris JA, Donohue SE, Schoenfeld MA, Hopf JM, Heinze HJ, Woldorff MG.",
+   "journal": "NeuroImage",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Reward-associated visual features have been shown to capture visual attention, evidenced in faster and more accurate behavioral performance, as well as in neural responses reflecting lateralized shifts of visual attention to those features. Specifically, the contralateral N2pc event-related-potential (ERP) component that reflects attentional shifting exhibits increased amplitude in response to task-relevant targets containing a reward-associated feature. In the present study, we examined the automaticity of such reward-association effects using object-substitution masking (OSM) in conjunction with MEG measures of visual attentional shifts. In OSM, a visual-search array is presented, with the target item to be detected indicated by a surrounding mask (here, four surrounding squares). Delaying the offset of the target-surrounding four-dot mask relative to the offset of the rest of the target/distracter array disrupts the viewer's awareness of the target (masked condition), whereas simultaneous offsets do not (unmasked condition). Here we manipulated whether the color of the OSM target was or was not of a previously reward-associated color. By tracking reward-associated enhancements of behavior and the N2pc in response to masked targets containing a previously rewarded or unrewarded feature, the automaticity of attentional capture by reward could be probed. We found an enhanced N2pc response to targets containing a previously reward-associated color feature. Moreover, this enhancement of the N2pc by reward did not differ between masking conditions, nor did it differ as a function of the apparent visibility of the target within the masked condition. Overall, these results underscore the automaticity of attentional capture by reward-associated features, and demonstrate the ability of feature-based reward associations to shape attentional capture and allocation outside of perceptual awareness."
+  },
+  {
+   "rank": 4,
+   "id": "25922174",
+   "source": "MED",
+   "pmid": "25922174",
+   "pmcid": null,
+   "doi": "10.1016/j.concog.2015.02.015",
+   "first_publication_date": "2015-04-25",
+   "title": "Exogenous attention to unseen objects?",
+   "authors": "Norman LJ, Heywood CA, Kentridge RW.",
+   "journal": "Consciousness and cognition",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Attention and awareness are closely related phenomena, but recent evidence has shown that not all attended stimuli give rise to awareness. Controversy still remains over whether, and the extent to which, a dissociation between attention and awareness encompasses all forms of attention. For example, it has been suggested that attention without awareness is more readily demonstrated for voluntary, endogenous attention than its reflexive, exogenous counterpart. Here we examine whether exogenous attentional cueing can have selective behavioural effects on stimuli that nevertheless remain unseen. Using a task in which object-based attention has been shown in the absence of awareness, we remove all possible contingencies between cues and target stimuli to ensure that any cueing effects must be under purely exogenous control, and find evidence of exogenous object-based attention without awareness. In a second experiment we address whether this dissociation crucially depends on the method used to establish that the objects indeed remain unseen. Specifically, to confirm that objects are unseen we adopt appropriate signal detection task procedures, including those that retain parity with the primary attentional task (by requiring participants to discriminate the two types of trial that are used to measure an effect of attention). We show a significant object-based attention effect is apparent under conditions where the selected object indeed remains undetectable."
+  },
+  {
+   "rank": 5,
+   "id": "23572282",
+   "source": "MED",
+   "pmid": "23572282",
+   "pmcid": null,
+   "doi": "10.1177/0956797612461449",
+   "first_publication_date": "2013-04-09",
+   "title": "Object-based attention without awareness.",
+   "authors": "Norman LJ, Heywood CA, Kentridge RW.",
+   "journal": "Psychological science",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Attention and awareness are often considered to be related. Some forms of attention can, however, facilitate the processing of stimuli that remain unseen. It is unclear whether this dissociation extends beyond selection on the basis of primitive properties, such as spatial location, to situations in which there are more complex bases for attentional selection. The experiment described here shows that attentional selection at the level of objects can take place without giving rise to awareness of those objects. Pairs of objects were continually masked, which rendered them invisible to participants performing a cued-target-discrimination task. When the cue and target appeared within the same object, discrimination was faster than when they appeared in different objects at the same spatial separation. Participants reported no awareness of the objects and were unable to detect them in a signal-detection task. Object-based attention, therefore, is not sufficient for object awareness."
+  },
+  {
+   "rank": 6,
+   "id": "22795561",
+   "source": "MED",
+   "pmid": "22795561",
+   "pmcid": null,
+   "doi": "10.1016/j.tics.2012.06.013",
+   "first_publication_date": "2012-07-12",
+   "title": "The attentional requirements of consciousness.",
+   "authors": "Cohen MA, Cavanagh P, Chun MM, Nakayama K.",
+   "journal": "Trends in cognitive sciences",
+   "pub_types": [
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "It has been widely claimed that attention and awareness are doubly dissociable and that there is no causal relation between them. In support of this view are numerous claims of attention without awareness, and awareness without attention. Although there is evidence that attention can operate on or be drawn to unconscious stimuli, various recent findings demonstrate that there is no empirical support for awareness without attention. To properly test for awareness without attention, we propose that a stimulus be studied using a battery of tests based on diverse, mainstream paradigms from the current attention literature. When this type of analysis is performed, the evidence is fully consistent with a model in which attention is necessary, but not sufficient, for awareness."
+  },
+  {
+   "rank": 7,
+   "id": "21841149",
+   "source": "MED",
+   "pmid": "21841149",
+   "pmcid": null,
+   "doi": "10.1177/0956797611419168",
+   "first_publication_date": "2011-08-12",
+   "title": "Natural-scene perception requires attention.",
+   "authors": "Cohen MA, Alvarez GA, Nakayama K.",
+   "journal": "Psychological science",
+   "pub_types": [
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article",
+    "Research Support, N.I.H., Extramural"
+   ],
+   "open_access": "N",
+   "abstract": "Is visual attention required for visual consciousness? In the past decade, many researchers have claimed that awareness can arise in the absence of attention. This claim is largely based on the notion that natural scene (or \"gist\") perception occurs without attention. This article presents evidence against this idea. We show that when observers perform a variety of demanding, sustained-attention tasks, inattentional blindness occurs for natural scenes. In addition, scene perception is impaired under dual-task conditions, but only when the primary task is sufficiently demanding. This finding suggests that previous studies that have been interpreted as demonstrating scene perception without attention failed to fully engage attention and that natural-scene perception does indeed require attention. Thus, natural-scene perception is not a preattentive process and cannot be used to support the idea of awareness without attention."
+  },
+  {
+   "rank": 8,
+   "id": "18237752",
+   "source": "MED",
+   "pmid": "18237752",
+   "pmcid": null,
+   "doi": "10.1016/j.neuropsychologia.2007.11.036",
+   "first_publication_date": "2007-12-17",
+   "title": "Attended but unseen: visual attention is not sufficient for visual awareness.",
+   "authors": "Kentridge RW, Nijboer TC, Heywood CA.",
+   "journal": "Neuropsychologia",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Does any one psychological process give rise to visual awareness? One candidate is selective attention-when we attend to something it seems we always see it. But if attention can selectively enhance our response to an unseen stimulus then attention cannot be a sufficient precondition for awareness. Kentridge, Heywood & Weiskrantz [Kentridge, R. W., Heywood, C. A., & Weiskrantz, L. (1999). Attention without awareness in blindsight. Proceedings of the Royal Society of London, Series B, 266, 1805-1811; Kentridge, R. W., Heywood, C. A., & Weiskrantz, L. (2004). Spatial attention speeds discrimination without awareness in blindsight. Neuropsychologia, 42, 831-835.] demonstrated just such a dissociation in the blindsight subject GY. Here, we test whether the dissociation generalizes to the normal population. We presented observers with pairs of coloured discs, each masked by the subsequent presentation of a coloured annulus. The discs acted as primes, speeding discrimination of the colour of the annulus when they matched in colour and slowing it when they differed. We show that the location of attention modulated the size of this priming effect. However, the primes were rendered invisible by metacontrast-masking and remained unseen despite being attended. Visual attention could therefore facilitate processing of an invisible target and cannot, therefore, be a sufficient precondition for visual awareness."
+  },
+  {
+   "rank": 9,
+   "id": "18396301",
+   "source": "MED",
+   "pmid": "18396301",
+   "pmcid": null,
+   "doi": "10.1016/j.neuropsychologia.2008.02.020",
+   "first_publication_date": "2008-02-29",
+   "title": "Distinct and independent correlates of attention and awareness in a hemianopic patient.",
+   "authors": "Schurger A, Cowey A, Cohen JD, Treisman A, Tallon-Baudry C.",
+   "journal": "Neuropsychologia",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article",
+    "Case Reports"
+   ],
+   "open_access": "N",
+   "abstract": "Attention and awareness are intimately related concepts. Nevertheless, the two phenomena are empirically dissociable: visuo-spatial attention can act in the absence of visual awareness. We used magnetoencephalography (MEG) to record cortical neural activity from hemianopic patient GY while he performed a peripheral orientation-discrimination task in the context of an attention-cueing paradigm. The luminance contrast of target stimuli was set at GY's threshold for reports of awareness (a feeling \"that something happened\" in his blind visual field). GY's accuracy was significantly greater than chance and comparable, with or without awareness. GY was significantly faster to respond correctly on valid-cue versus invalid-cue trials, even in the absence of awareness, confirming the action of visuo-spatial attention in the absence of awareness. Time-frequency analysis of spectral power in the gamma frequency range (30-90Hz), averaged over left parieto-occipital sensors, revealed effects of cue-validity independent of reported awareness, and effects of awareness independent of cue-validity. GY's reports of awareness were not, however, independent of his pre-target attentional state (gamma-band response to the central cue), consistent with a one-way, but not a two-way, dissociation between attention and awareness. Our evidence suggests that the observed cue-validity effect is an awareness-independent involuntary re-orienting response, and that the neurodynamics underlying the exogenous capture of attention are similar with or without awareness. The finding of a significant awareness-independent effect in the area of 40Hz implies that a stimulus-induced modulation of power in the canonical gamma band is not a sufficient condition for sensory awareness."
+  },
+  {
+   "rank": 10,
+   "id": "15581119",
+   "source": "MED",
+   "pmid": "15581119",
+   "pmcid": null,
+   "doi": "10.3758/bf03196621",
+   "first_publication_date": "2004-08-01",
+   "title": "Perceptual grouping and attention: not all groupings are equal.",
+   "authors": "Kimchi R, Razpurker-Apfeld I.",
+   "journal": "Psychonomic bulletin & review",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "We examined grouping under inattention using Driver, Davis, Russell, Turatto, & Freeman's (2001) method. On each trial, two successive displays were briefly presented, each comprising a central target square surrounded by elements. The task was to judge whether the two targets were the same or different. The organization of the background elements stayed the same or changed, independently of the targets. In different conditions, background elements grouped into columns/rows by color similarity, a shape (a triangle/arrow, a square/cross, or a vertical/horizontal line) by color similarity, and a shape with no other elements in the background. We measured the influence of the background on the target same-different judgments. The results imply that background elements grouped into columns/rows by color similarity and into a shape when no segregation from other elements was involved and the shape was relatively \"good.\" In contrast, no background grouping was observed when resolving figure-ground relations for segregated units was required, as in grouping into a shape by color similarity. These results suggest that grouping is a multiplicity of processes that vary in their attentional demands. Regardless of attentional demands, the products of grouping are not available to awareness without attention."
+  },
+  {
+   "rank": 11,
+   "id": "12678623",
+   "source": "MED",
+   "pmid": "12678623",
+   "pmcid": null,
+   "doi": "10.1167/3.1.4",
+   "first_publication_date": "2003-01-01",
+   "title": "Orienting of attention without awareness is affected by measurement-induced attentional control settings.",
+   "authors": "Ivanoff J, Klein RM.",
+   "journal": "Journal of vision",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "McCormick (1997) concluded that peripheral cues presented below a threshold of awareness could nevertheless attract attention because they facilitated target processing near the cue shortly after its presentation. Yet, whereas an exogenous shift of attention typically exhibits a biphasic pattern (initial facilitation followed by inhibition of return [IOR]), at late cue-target onset asynchronies, IOR was not observed by McCormick. In our study, targets requiring a detection response were preceded by masked and nonmasked, uninformative cues presented under two conditions: one in which the cue was ignored (no report) and one in which the cue was detected and localized following the response to the target (cue report). When participants were required to make cue judgments at the end of each trial, we replicated McCormick's pattern, finding facilitation (but not IOR) following both masked and nonmasked cues. When there was no requirement to judge the presence or location of the cues, IOR was present with and without masks, whereas facilitation was observed only when the cues were not masked. That the assessment of cue awareness increases attentional facilitation and prevents (or delays) the onset of IOR is attributed to attentional control settings put in place to perform the cue-awareness assessments in the cue-report condition."
+  },
+  {
+   "rank": 12,
+   "id": "11677607",
+   "source": "MED",
+   "pmid": "11677607",
+   "pmcid": null,
+   "doi": "10.1038/35101601",
+   "first_publication_date": "2001-10-01",
+   "title": "Perceptual learning without perception.",
+   "authors": "Watanabe T, Náñez JE, Sasaki Y.",
+   "journal": "Nature",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Research Support, U.S. Gov't, Non-P.H.S.",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "The brain is able to adapt rapidly and continually to the surrounding environment, becoming increasingly sensitive to important and frequently encountered stimuli. It is often claimed that this adaptive learning is highly task-specific, that is, we become more sensitive to the critical signals in the tasks we attend to. Here, we show a new type of perceptual learning, which occurs without attention, without awareness and without any task relevance. Subjects were repeatedly presented with a background motion signal so weak that its direction was not visible; the invisible motion was an irrelevant background to the central task that engaged the subject's attention. Despite being below the threshold of visibility and being irrelevant to the central task, the repetitive exposure improved performance specifically for the direction of the exposed motion when tested in a subsequent suprathreshold test. These results suggest that a frequently presented feature sensitizes the visual system merely owing to its frequency, not its relevance or salience."
+  },
+  {
+   "rank": 13,
+   "id": "10518327",
+   "source": "MED",
+   "pmid": "10518327",
+   "pmcid": "PMC1690198",
+   "doi": "10.1098/rspb.1999.0850",
+   "first_publication_date": "1999-09-01",
+   "title": "Attention without awareness in blindsight.",
+   "authors": "Kentridge RW, Heywood CA, Weiskrantz L.",
+   "journal": "Proceedings. Biological sciences",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "research-article",
+    "Journal Article",
+    "Case Reports"
+   ],
+   "open_access": "N",
+   "abstract": "The act of attending has frequently been equated with visual awareness. We examined this relationship in 'blindsight'--a condition in which the latter is absent or diminished as a result of damage to the primary visual cortex. Spatially selective visual attention is demonstrated when information that stimuli are likely to appear at a specific location enhances the speed or accuracy of detection of stimuli subsequently presented at that location. In a blindsight subject, we showed that attention can confer an advantage in processing stimuli presented at an attended location, without those stimuli entering consciousness. Attention could be directed both by symbolic cues in the subject's spared field of vision or cues presented in his blind field. Cues in his blind field were even effective in directing his attention to a second location remote from that at which the cue was presented. These indirect cues were effective whether or not they themselves elicited non-visual awareness. We concluded that the spatial selection of information by an attentional mechanism and its entry into conscious experience cannot be one and the same process."
+  },
+  {
+   "rank": 14,
+   "id": "9157183",
+   "source": "MED",
+   "pmid": "9157183",
+   "pmcid": null,
+   "doi": "10.1037//0096-1523.23.1.168",
+   "first_publication_date": "1997-02-01",
+   "title": "Orienting attention without awareness.",
+   "authors": "McCormick PA.",
+   "journal": "Journal of experimental psychology. Human perception and performance",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Previous research has shown that visual attention can be directed to a spatial location in 2 qualitatively different ways. Attention can be allocated endogenously in response to centrally presented precues, or it can be captured exogenously by a visual stimulus with an abrupt onset. It has been suggested that exogenous orienting of attention is an automatic process, whereas endogenous orienting of attention represents a controlled and strategic process. M.I. Posner and C.R.R. Snyder (1975) suggested that an automatic process occurs without intention, does not interfere with other mental processes, and does not necessarily give rise to awareness, whereas a controlled process will likely interfere with other processes and necessarily requires intention and awareness. Three experiments investigated the role of awareness in orienting visual attention. Endogenous and exogenous components of orienting attention were placed in opposition to each other to assess the automaticity of exogenous orienting by examining the potential for brief stimulus events to capture attention in the absence of subjective awareness. Results show that an exogenous cue presented below a subjective threshold of awareness captured attention automatically and without awareness."
+  }
+ ]
+}

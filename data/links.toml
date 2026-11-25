@@ -1,0 +1,43 @@
+# Links for the names the site shows at first mention ("Link what you name", workspace rule of
+# 2026-10-18): Wikipedia when there is an article, else the body's official page. Every address
+# here was opened on 2026-11-21 and went where its name says. A name with no page that could be
+# opened is left out on purpose and shown as plain text: Pieter Roelfsema, Melanie Boly and
+# Larissa Albantakis (no Wikipedia article; no profile page reachable), and recurrent processing
+# theory (no Wikipedia article for the theory or for Victor Lamme).
+
+# The theories whose link is to a person's article, not the theory's own.
+person_pages = ["seth", "sensorimotor", "damasio"]
+
+[people]
+"Stanislas Dehaene" = "https://en.wikipedia.org/wiki/Stanislas_Dehaene"
+"Jean-Pierre Changeux" = "https://en.wikipedia.org/wiki/Jean-Pierre_Changeux"
+"George Mashour" = "https://en.wikipedia.org/wiki/George_Mashour"
+"Giulio Tononi" = "https://en.wikipedia.org/wiki/Giulio_Tononi"
+"Christof Koch" = "https://en.wikipedia.org/wiki/Christof_Koch"
+# Added 2026-11-21 for the seven theories scored that day; each opened that day. No article could be
+# opened for Richard Brown, Hakwan Lau, Stephen Fleming, Victor Lamme or Taylor Webb, so they stay
+# plain names.
+"Joseph LeDoux" = "https://en.wikipedia.org/wiki/Joseph_E._LeDoux"
+"Anil K. Seth" = "https://en.wikipedia.org/wiki/Anil_Seth"
+"Michael Graziano" = "https://en.wikipedia.org/wiki/Michael_Graziano"
+"J. Kevin O'Regan" = "https://en.wikipedia.org/wiki/J._Kevin_O%27Regan"
+"Alva Noë" = "https://en.wikipedia.org/wiki/Alva_No%C3%AB"
+"Stuart Hameroff" = "https://en.wikipedia.org/wiki/Stuart_Hameroff"
+"Roger Penrose" = "https://en.wikipedia.org/wiki/Roger_Penrose"
+"Antonio Damasio" = "https://en.wikipedia.org/wiki/Antonio_Damasio"
+"Hanna Damasio" = "https://en.wikipedia.org/wiki/Hanna_Damasio"
+
+# A Wikipedia article for each theory where one could be opened, linked from that theory's own
+# page (and from the first screen while a theory is not scored yet). Seth's, the sensorimotor and
+# Damasio's theories have no article of their own, so the link is to the person's.
+[theories]
+hot = "https://en.wikipedia.org/wiki/Higher-order_theories_of_consciousness"
+seth = "https://en.wikipedia.org/wiki/Anil_Seth"
+ast = "https://en.wikipedia.org/wiki/Attention_schema_theory"
+sensorimotor = "https://en.wikipedia.org/wiki/J._Kevin_O'Regan"
+orch-or = "https://en.wikipedia.org/wiki/Orchestrated_objective_reduction"
+damasio = "https://en.wikipedia.org/wiki/Antonio_Damasio"
+
+# Research groups named on the prediction pages.
+[groups]
+"Cogitate Consortium" = "https://www.arc-cogitate.com/"

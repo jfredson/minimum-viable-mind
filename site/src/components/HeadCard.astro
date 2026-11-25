@@ -1,0 +1,18 @@
+---
+// The headline card: the share of the theories' distinguishing predictions tested at all,
+// ruled by John on 2026-11-21 ("A, tested at all"; kickoff ruling 3). The card says "tested at
+// all" because the number measures how widely the theories have been tested, not how firmly;
+// the support bars carry the strength. Worked out by scripts/tracker_scores.py, never typed in.
+import N from './N.astro';
+import { tk, word } from '../lib/tracker';
+const h = tk.headline;
+---
+<div class="headcard">
+  <div class="lab"><span>Tested at all</span><span>so far</span></div>
+  {h.share_tested === null
+    ? <div class="big">none</div>
+    : <div class="big"><N v={h.share_tested} /><small>%</small></div>}
+  <p>of the predictions that set these theories apart from each other have been put to a test at all, by at least one study that counts.</p>
+  <div class="count"><N v={h.tested} /> of <N v={h.distinguishing} /> predictions · <N v={h.theories_scored} /> of <N v={h.theories_listed} /> theories scored so far</div>
+  <p class="fine">Tested is not settled: how the tests came out is the first bar in each row.</p>
+</div>

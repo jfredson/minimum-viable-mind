@@ -1,0 +1,30 @@
+{
+  "packet_id": "com-cogitate-iit-posterior",
+  "model_requested": "gemini-4-carbon",
+  "model_version": "gemini-4-carbon",
+  "response_id": "gw8Ba_HHDtLbm9cPhMKqwAs",
+  "finish_reason": "STOP",
+  "answer_text": "{\"verdict\": \"before\", \"reason\": \"The prediction placing the physical substrate of consciousness primarily in a posterior temporo-parietal-occipital 'hot zone' rather than prefrontal regions was fixed in an OSF preregistration on January 16, 2019, within an adversarial collaboration involving IIT's proponents. Although exact calendar dates for data collection are not listed, I decided the prediction came first because the published protocol explicitly confirms that both the original and amended preregistration files were frozen prior to the start of data acquisition. Thus, a dated record committed the theory to this prediction before any study data were collected.\", \"unsure\": false, \"unsure_why\": \"\"}",
+  "usage": {
+    "promptTokenCount": 1572,
+    "candidatesTokenCount": 148,
+    "totalTokenCount": 2500,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1572
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 148
+      }
+    ],
+    "thoughtsTokenCount": 780,
+    "serviceTier": "standard"
+  },
+  "cost_usd": 0.012424,
+  "seconds": 11.2,
+  "called_on": "2026-11-20 19:27:10 PST"
+}

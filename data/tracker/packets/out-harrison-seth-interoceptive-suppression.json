@@ -1,0 +1,69 @@
+{
+  "packet_id": "out-harrison-seth-interoceptive-suppression",
+  "kind": "outcome",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Read the prediction, the wording of what would count for and against it, and the passages from the study. Decide whether this study's result is FOR the prediction, AGAINST it, or MIXED (parts for and parts against, or a result that cannot tell the two apart). Judge only from the material given; if you rely on anything else, say what. Answer in JSON: {\"verdict\": \"for\"|\"against\"|\"mixed\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"what would change your answer, or empty\"}.",
+  "theory": "Anil Seth's living-body view",
+  "core_claim": {
+    "quote": "Experiences of emotion and mood, which seem central to selfhood, may depend on interoceptive inferences – probabilistic best-guesses about the causes of sensory inputs signalling the physiological condition of the body",
+    "source": {
+      "citation": "Seth AK. Conscious artificial intelligence and biological naturalism. Behavioral and Brain Sciences 49, e315 (published online 2025-04-21)",
+      "url": "https://doi.org/10.1017/S0140525X25000032",
+      "date": "2025-04-21"
+    }
+  },
+  "prediction": {
+    "statement": "Brain regions that handle signals from inside the body, the anterior insula above all, respond less to body signals that were well predicted and more when the prediction is violated.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2012-01-10",
+      "passage": "A second basic prediction is that the AIC, as well as other areas involved in interoceptive processing, should show responses consistent with interoceptive predictive coding. For example, by analogy with studies of repetition suppression, AIC should show reduced responses for well predicted interoceptive signals and enhanced responses when expectations are violated.",
+      "source": {
+        "citation": "Seth AK, Suzuki K, Critchley HD. An interoceptive predictive coding model of conscious presence. Frontiers in Psychology 2:395 (2011 volume)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254200/",
+        "date": "2012-01-10"
+      }
+    },
+    "test_for": "Anterior insula (or another body-signal region) responds less to a body signal, or to a signal locked to one, when it is predictable, and more when it breaks the prediction.",
+    "test_against": "No reduction for predictable body signals and no increase for violated ones, in a design that finds such effects for comparable outside-world signals."
+  },
+  "study": {
+    "name": "Brain imaging while people learned to predict when breathing would become hard (7-tesla fMRI)",
+    "source": {
+      "citation": "Harrison OK, Köchli L, Marino S, Luechinger R, Hennel F, Brand K, Hess AJ, Frässle S, Iglesias S, Vinckier F, Petzschner FH, Harrison SJ, Stephan KE. Interoception of breathing and its relationship with anxiety. Neuron 109(24):4080 onward, 2021",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8691949/",
+      "date": "2021-10-20"
+    },
+    "first_appeared": "2021-03-26 (preprint (bioRxiv 10.1101/2021.03.24.436881), per its Europe PMC record PPR303322; not opened (verify list: v-seth-harrison-preprint-date))",
+    "data_collected": {
+      "when": "not stated; before 2021-03-26",
+      "basis": "The paper gives no collection dates (methods searched 2026-11-21); the data were collected before the preprint appeared. The ethics approval number (BASEC-No. 2017-02330) suggests the study was approved in 2017 or later."
+    }
+  },
+  "passages": [
+    {
+      "text": "In this Breathing Learning Task (BLT), 80 trials were performed where on each trial two visual cues were paired with either an 80% or 20% chance of a subsequent inspiratory resistive load.",
+      "source": {
+        "citation": "Harrison OK, Köchli L, Marino S, Luechinger R, Hennel F, Brand K, Hess AJ, Frässle S, Iglesias S, Vinckier F, Petzschner FH, Harrison SJ, Stephan KE. Interoception of breathing and its relationship with anxiety. Neuron 109(24):4080 onward, 2021",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8691949/",
+        "date": "2021-10-20"
+      }
+    },
+    {
+      "text": "In contrast, aIns, ACC, MFG, and the periaqueductal gray (PAG) demonstrated significant activations with overall prediction error values (i.e., averaged across trials with positive and negative prediction errors; Figure 4 B).",
+      "source": {
+        "citation": "Harrison OK, Köchli L, Marino S, Luechinger R, Hennel F, Brand K, Hess AJ, Frässle S, Iglesias S, Vinckier F, Petzschner FH, Harrison SJ, Stephan KE. Interoception of breathing and its relationship with anxiety. Neuron 109(24):4080 onward, 2021",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8691949/",
+        "date": "2021-10-20"
+      }
+    },
+    {
+      "text": "Dorsolateral prefrontal cortex (dlPFC), anterior insula (aIns), anterior cingulate cortex (ACC), and middle frontal gyrus (MFG) all demonstrated significant deactivations with overall prediction certainty (i.e., averaged across trials with positive and negative prediction certainty; Figure 4 A).",
+      "source": {
+        "citation": "Harrison OK, Köchli L, Marino S, Luechinger R, Hennel F, Brand K, Hess AJ, Frässle S, Iglesias S, Vinckier F, Petzschner FH, Harrison SJ, Stephan KE. Interoception of breathing and its relationship with anxiety. Neuron 109(24):4080 onward, 2021",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8691949/",
+        "date": "2021-10-20"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}

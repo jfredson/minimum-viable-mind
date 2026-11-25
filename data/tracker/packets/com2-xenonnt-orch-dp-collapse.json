@@ -1,0 +1,25 @@
+{
+  "packet_id": "com2-xenonnt-orch-dp-collapse",
+  "kind": "commitment",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. Answer one narrow question from the passages given, and from nothing else: is the physical model this study tests the one stated in the theory's own latest full statement? Read the theory's passages for what model of quantum-state reduction it adopts and with what values; read the study's passages for what model it tests and with what values. Answer YES if the model tested is the one the theory states, NO if it is a different model or a different version of the model, or UNCLEAR if the passages do not let you tell. If you rely on anything beyond the passages, say what. Answer in JSON: {\"answer\": \"yes\"|\"no\"|\"unclear\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Orchestrated Objective Reduction",
+  "theory_latest_full_statement": {
+    "citation": "Hameroff S, Penrose R. Consciousness in the universe: a review of the 'Orch OR' theory. Physics of Life Reviews 11(1):39-78, 2014 (online 2013-08-20)",
+    "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+    "passages": [
+      "Diósi–Penrose (DP) scheme of ‘objective reduction’ (‘OR’) of the quantum state.",
+      "In our picture, the dominant effect is likely to be (2) separation at the level of atomic nuclei, e.g. 2.5 Fermi length for carbon nuclei (2.5 femtometers; 2.5 × 10−15 meters).",
+      "There is, however, a large uncertainty about how ‘smeared out’ these nuclei must be considered to be",
+      "For example, one ought to begin to see the effects of this OR scheme if a small object, such as a 10-µm cube of crystalline material could be held in a coherent superposition of two locations, differing by about the diameter of an atomic nucleus, for some seconds, or perhaps minutes to reach threshold"
+    ]
+  },
+  "study": {
+    "citation": "XENON Collaboration (Aprile E and colleagues). Challenging Spontaneous Quantum Collapse with the XENONnT Dark Matter Detector. Physical Review Letters 136(12):120201, 2026 (preprint arXiv 2506.05507, 2025-06-05)",
+    "url": "https://arxiv.org/abs/2506.05507",
+    "passages": [
+      "New world-leading limits on the free parameters of the Markovian continuous spontaneous localization and Diósi-Penrose models are set, improving previous best constraints by two orders of magnitude and a factor of five, respectively.",
+      "acts as a spatial cutoff parameter to avoid a divergence in the collapse rate for point-like particles"
+    ]
+  },
+  "this_reading_is": "a follow-up question, asked of both readers blind (John, 2026-11-21, 'Re-ask both readers, cap $1 (Recommended)')"
+}

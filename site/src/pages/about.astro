@@ -1,0 +1,115 @@
+---
+// About (tracker pattern rule 4.21): why the site exists, how the numbers are worked out, who
+// judges, the conflict of interest, the project's own tests, the story so far and how to
+// disagree. Copy from the design proposal, section 8, adapted to what the records hold on
+// 2026-11-21. Draft: not yet through the voice and plain-language checks.
+import Base from '../layouts/Base.astro';
+import N from '../components/N.astro';
+import R from '../components/R.astro';
+import RecText from '../components/RecText.astro';
+import WaitingLine from '../components/WaitingLine.astro';
+import { tk, word } from '../lib/tracker';
+import { data, fmtDate } from '../lib/project';
+const r = tk.rules;
+const ex = tk.support_example;
+const hc = tk.hand_check;
+// A worked example of the half-point rule, from the first theory that has a half-point claim.
+const hxT = Object.values(tk.theories).find((t) => t.claims.some((c) => c.level === 0.5));
+const hx = hxT && {
+  name: hxT.name, n: hxT.claims.length, testability: hxT.testability,
+  full: hxT.claims.filter((c) => c.level >= 1).length,
+  half: hxT.claims.filter((c) => c.level === 0.5).length,
+  none: hxT.claims.filter((c) => c.level === 0).length,
+};
+const tied = tk.groups.close_pairs.length > 0;
+const pairTheories = new Set(tk.groups.close_pairs.flatMap((p) => [p.a, p.b])).size;
+const story = data.timeline.filter((e) => e.date >= '2026-11-20').slice(0, 6);
+const repo = 'https://github.com/jfredson/minimum-viable-mind';
+---
+
+<Base title="About · Minimum Viable Mind" description="Why this site exists, how its numbers are worked out, who makes the judgements, and how to disagree." strict>
+  <article class="page about">
+    <p class="eyebrow">About</p>
+    <h1>About Minimum Viable Mind</h1>
+
+    <section id="why">
+      <h2>Why this site exists</h2>
+      <p class="tplain">There are many theories of what makes something conscious, and each says the evidence is on its side. The question here is a plainer one: how much of each theory has actually been tested, and how have the tests gone? The theories are ranked by the answer, and the working is shown, so that you can disagree with one judgement at a time.</p>
+      <p class="tplain">Little is settled yet, for three reasons the rules make visible. A test counts only if the theory's prediction was on record before the study's data were collected, which rules out much of the older work. A theory gets a support score only once studies from <N v={r.groups_needed} t={word(r.groups_needed)} /> separate research groups exist. And two neighbouring theories are shown as too close to separate when one study going the other way could swap them{tied ? <>, which is where <N v={pairTheories} t={word(pairTheories)} /> of the ranked theories stand today</> : ''}.{tk.listed_count > tk.scored_count && <> <N v={tk.listed_count - tk.scored_count} t={word(tk.listed_count - tk.scored_count).replace(/^./, (c) => c.toUpperCase())} /> of the <N v={tk.listed_count} t={word(tk.listed_count)} /> theories on the list are still being scored.</>}</p>
+    </section>
+
+    <section id="numbers">
+      <h2>How the numbers are worked out</h2>
+      <p class="tplain"><b>What is scored.</b> Each theory is boiled down to between <N v={r.claims_fewest} t={word(r.claims_fewest)} /> and <N v={r.claims_most} t={word(r.claims_most)} /> main claims, quoted from one publication by the people who hold it: their latest full statement of the theory (a later work that widens or renames the theory into something new counts as a different theory). Each theory's main claims were fixed before that theory was scored, and change only at the yearly review. For each claim, the record holds the predictions that could prove it wrong, and the published studies that tested them, with whether each result went for or against. A prediction sets a theory apart from its rivals unless a rival theory's own published work predicts the same thing. A rival that says nothing on the point does not take that away: silence is not agreement, so the prediction still sets the theory apart. Only what a rival's supporters have published counts, never a reader's own knowledge of the field.</p>
+      <p class="tplain"><b>How well studies back it</b> runs from <N v={0} /> to <N v={r.scale_top} />, and <N v={r.even} /> means the evidence is even. A study's weight starts at <N v={r.weight_start} /> and gains one for each protection against bias it has, up to <N v={r.weight_top} />: its predictions were registered before the data came in; it was run by people outside the theory's own camp; a rival camp agreed in advance what would count against each side; another group repeated it. A prediction tied to a main claim counts <N v={r.core_multiplier} t="double" />, so its study's weight is doubled for that result.</p>
+      <p class="tplain">Each counted result scores plus one if it came out for the prediction, minus one if against, and zero if mixed. Multiply each score by its weight and add them up; divide that total by the sum of the weights, which gives a number between minus one and plus one, so a theory tested more often does not score higher for that alone. The support score is <N v={r.even} /> plus <N v={r.even} /> times that number.</p>
+      {ex && <p class="tplain">For example, {ex.name.charAt(0).toLowerCase() + ex.name.slice(1)}: its counted results, each times its weight, add up to <N v={ex.weighted_sum} t={String(ex.weighted_sum).replace('-', '−')} />, and its weights add up to <N v={ex.total_weight} />. Dividing gives <N v={ex.ratio} t={String(ex.ratio).replace('-', '−')} />. Then <N v={r.even} /> plus <N v={r.even} /> times that is <N v={r.even} /> {ex.half_ratio < 0 ? 'minus' : 'plus'} <N v={ex.half_ratio_abs} />, which is <N v={ex.support_exact} />, shown as <N v={ex.support} />.</p>}
+      <p class="tplain"><b>How clearly it can be tested</b> is the share of its main claims that come with a prediction that could fail and that no rival theory's own published work predicts too. A claim scores a full point for such a prediction stated by the theory's own supporters. It scores half a point when its best prediction is weaker in one of three ways: it is inferred here, not stated by the supporters; its supporters wrote in advance that a result showing nothing should not count against it; or it could fail only in part.{hx && <> For example, {hx.name.charAt(0).toLowerCase() + hx.name.slice(1)}{' '}{hx.name.endsWith('ies') ? 'have' : 'has'} <N v={hx.n} t={word(hx.n)} /> main claims: <N v={hx.full} t={word(hx.full)} /> {hx.full === 1 ? 'scores' : 'score'} a full point, <N v={hx.half} t={word(hx.half)} /> {hx.half === 1 ? 'scores' : 'score'} half, and <N v={hx.none} t={word(hx.none)} /> {hx.none === 1 ? 'scores' : 'score'} nothing; the share is shown as <N v={hx.testability} /> out of <N v={r.scale_top} />.</>} <b>How much is still untested</b> is the share of those predictions no counted study has touched; a main claim with no such prediction counts as one untested place, so a theory cannot look finished by having said little.</p>
+      <p class="tplain"><b>The ranking.</b> A theory is ranked only when more than half its main claims can be tested this way, and only once it has a support score. The order is set by the first score alone, and the ranked theories are listed from the most support to the least, with no rank numbers. Where two scores are equal, the theory resting on more evidence, by total weight, comes first. Two neighbours in the list are said to be too close to separate when one study going the other way would swap them; the test is made for each pair of neighbours, and theories that are not neighbours are never shown as tied. The three scores are never added together, because adding them would reward a theory for being vague or for being little tested. A theory the evidence goes against keeps its place, marked.</p>
+      <p class="tplain"><b>A prediction's state</b> is worked out from its counted studies: supported when every one came out for, contradicted when every one came out against, mixed otherwise, and untested when none counts yet. A prediction that sets the theory apart from no rival is shown and scores nothing.</p>
+      <p class="tplain"><b>The headline</b> is the share of all the theories' predictions that set them apart, tied to their main claims, that at least one counted study has tested at all. It says how widely the theories have been tested, not how firmly; the support bars carry how the tests went. It can fall when the field adds predictions, which is the honest result: there is more to test.</p>
+      <p class="tplain"><b>What does not count.</b> A study that explained its result afterwards, against a prediction the theory had not yet made, is listed and moves nothing. A failed prediction stays failed; a later reading of the theory that softens the loss becomes a new prediction, which needs its own test.</p>
+    </section>
+
+    {/* That the two readers are AI models made by different companies, with no model named in the
+        page text, was ruled by John on 2026-11-21 ("Yes, keep it"); the exact versions stay in the
+        records. The wording is still draft for the voice checks. */}
+    <section id="checking">
+      <h2>Still being checked</h2>
+      {tk.verify_open.length === 0
+        ? <p class="tplain">Every statement in the records has been checked against a source a reader can open.</p>
+        : <>
+            <p class="tplain">These statements in the records rest on a source not yet opened in full. Each will be checked against its source, or taken out; until then, any score that rests on one may change, and no news post goes out.</p>
+            <ul class="tplain">{tk.verify_open.map((v) => <li data-verify-open={v.id}><RecText t={v.statement} /></li>)}</ul>
+          </>}
+    </section>
+
+    <section id="judges">
+      <h2>Who judges</h2>
+      <p class="tplain">Someone has to decide what a theory predicts and whether a study's result supports it. Every such decision is its own record, with the study, the passage and the reason, and every one is read twice, by two readers who do not see each other's answer. The two readers are AI models made by different companies; they share much of what they learned from, so their agreement shows that the rules give the same answer twice, not that the answer is right. That is why a person checks them by hand.{hc ? <> So far a person has checked <N v={hc.checked} /> of the judgements on the first <N v={hc.theories} t={word(hc.theories)} /> theories scored: <N v={hc.random} /> drawn at random by a rule written down before the draw, and the <N v={hc.own} t={word(hc.own)} /> on this site's own account. <N v={hc.read_again} t={word(hc.read_again).replace(/^./, (c) => c.toUpperCase())} /> of them were read again later under an amended rule, and no agreement since has yet been checked by hand.</> : ' No hand check has been made yet.'} Where the readers disagree, the score waits until the disagreement is settled under a written rule, and the settlement is recorded with its reason. Today the records hold <N v={tk.judgement_count} /> judgements: <N v={tk.judgement_status.agreed} /> agreed by both readers and <N v={tk.judgement_status.ruled} /> settled by a written rule.</p>
+    </section>
+
+    <section id="own">
+      <h2>This site's own account is on the list</h2>
+      <p class="tplain">The account of consciousness argued on <a href="https://sentient-horizons.com/positions/">Sentient Horizons</a> is scored as one theory among the others. That is a conflict of interest, handled in three ways: the rules were fixed before any theory was scored, an outside reader makes the first judgement on every row of that account, and a result against it stands once recorded. Where it loses, that is shown. <a href="/positions/">The working positions, against the evidence</a>.</p>
+    </section>
+
+    <section id="tests">
+      <h2>Our own tests</h2>
+      <p class="tplain">This project also runs small experiments of its own. They count toward a score only by the same rules as anyone's study, at the weight their method earns. <a href="/tests/">Our own tests</a>.</p>
+    </section>
+
+    <section id="reading">
+      <h2>This week's reading</h2>
+      <p class="tplain">Once a week, the same fixed searches that found the studies in the records are run again, unchanged, and each new paper is read against the prediction it was searched for. A paper that really tests a prediction goes on a waiting list, with the date it was found. The weekly reading never changes a score itself: a waiting study counts only once it has its full record and both readers have read every judgement on it, by the same rules as every other study. It then joins the scored studies, and nothing already counted drops out. <WaitingLine /></p>
+    </section>
+
+    <section id="who">
+      <h2>Who is asking</h2>
+      <p class="tplain"><a href="https://johnandrewfredrickson.com/">John Andrew Fredrickson</a>, who writes <a href="https://sentient-horizons.com/">Sentient Horizons</a>, where one of the accounts on this list is argued. He built this site to find out how his own account, and every other, holds up against the same evidence.</p>
+    </section>
+
+    <section id="credit">
+      <h2>Credit</h2>
+      <p class="tplain"><N v={tk.contrast_count} t={word(tk.contrast_count).replace(/^./, (c) => c.toUpperCase())} /> of the <N v={tk.studies_count} t={word(tk.studies_count)} /> studies in the records were found through <a href="https://contrastdb.tau.ac.il">ConTraSt</a>, an open database of experiments on consciousness sorted by the theories they were designed to test, built by Yaron, Melloni, Pitts and Mudrik and shared under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> licence. It is used as a reading list only: every record here is built from the study itself.</p>
+    </section>
+
+    <section id="story">
+      <h2>The story so far</h2>
+      <ul class="trecord">
+        {story.map((e) => <li><span class="d"><N v={e.date} t={fmtDate(e.date)} /></span><R t={e.title} /></li>)}
+      </ul>
+      <p class="meta">Every entry, back to the project's start: <a href="/story/">the project's story</a>.</p>
+    </section>
+
+    <section id="disagree">
+      <h2>How to disagree</h2>
+      <p class="tplain">Each of these opens a public issue on the site's source, where the answer and any change it makes are recorded with a date. Writing one needs a free GitHub account.</p>
+      <ul class="tplain">
+        <li><a href={`${repo}/issues/new?title=${encodeURIComponent('Missing prediction: ')}`}>Name a missing prediction</a>, with what would count for it and against it.</li>
+        <li><a href={`${repo}/issues/new?title=${encodeURIComponent('Question a judgement: ')}`}>Question a judgement</a>: a reading of a study, a date, a protection or a main claim.</li>
+        <li><a href={`${repo}/issues/new?title=${encodeURIComponent('Argue a score: ')}`}>Argue a score</a> or the rule behind it.</li>
+      </ul>
+    </section>
+  </article>
+</Base>

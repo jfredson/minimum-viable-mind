@@ -1,0 +1,729 @@
+{
+ "prediction": "seth-expectation-speeds-access",
+ "query": "(TITLE_ABS:expectation* OR TITLE_ABS:predictab* OR TITLE_ABS:\"prior knowledge\") AND (TITLE_ABS:\"continuous flash suppression\" OR TITLE_ABS:\"access to awareness\" OR TITLE_ABS:\"conscious access\" OR TITLE_ABS:\"breakthrough\") AND SRC:MED",
+ "run_on": "2026-11-24",
+ "hit_count": 348,
+ "results": [
+  {
+   "rank": 1,
+   "id": "42888378",
+   "source": "MED",
+   "pmid": "42888378",
+   "pmcid": "PMC13740121",
+   "doi": "10.1007/s40272-026-00780-3",
+   "first_publication_date": "2026-10-16",
+   "title": "Isavuconazole: Real-World Data and Clinical Considerations for Pediatric Patients.",
+   "authors": "Chiusaroli L, Seidel D, Ebrahimi-Fakhari D, Martin L, Ehlert K, Groll AH, Pana ZD.",
+   "journal": "Paediatric drugs",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Isavuconazole (ISAV) is a broad-spectrum triazole antifungal approved for the treatment of invasive aspergillosis and mucormycosis and has recently received approval for use in children ≥1 year of age. Pediatric approval was based on limited registration data, underscoring the importance of real-world evidence to better define efficacy and safety in children and adolescents. In this manuscript, we reviewed pediatric registration trials and real-world studies evaluating ISAV, with a focus on treatment and prophylaxis indications, pharmacokinetics, and safety. The literature review was conducted using PubMed, Embase, and Cochrane databases to identify relevant real-world and clinical studies published between January 1, 2005, and October 31, 2025. Studies reporting ISAV use in patients <18 years of age, including registration trials, observational cohorts, case series, and pharmacokinetic-pharmacodynamic studies, were included. Twenty-six real-world publications and two clinical registration trials met inclusion criteria. Among the real-world publications, ISAV was used for treatment in 23 studies and for prophylaxis in 5 studies, while 17 studies evaluated drug exposure or pharmacokinetics (several studies involved more than one mode of administration). Most patients had underlying hematologic or oncologic conditions. Across heterogeneous study populations and outcome definitions, complete or partial response was reported descriptively in approximately 72% of evaluable patients treated for invasive fungal disease, with breakthrough fungal infections reported in approximately 10% of patients receiving prophylaxis. Adverse events were generally mild and predominantly consisted of reversible hepatic laboratory abnormalities; serious drug-related toxicity, including one reported case of acute liver failure, was rare. Pharmacokinetic data demonstrated predictable exposure and achievement of target plasma concentrations in the majority of patients. Taken together, current evidence, although limited and derived largely from retrospective and salvage-treatment cohorts, suggests promising clinical activity and generally favorable tolerability of ISAV for invasive mold infections in pediatric populations. Real-world data support its use as a therapeutic option in selected patients, while underscoring the need for prospective studies to confirm efficacy, optimize dosing, and assess long-term safety."
+  },
+  {
+   "rank": 2,
+   "id": "42786360",
+   "source": "MED",
+   "pmid": "42786360",
+   "pmcid": "PMC13695681",
+   "doi": "10.1007/s40265-026-02386-y",
+   "first_publication_date": "2026-09-25",
+   "title": "Personalized Treatment of Hemophilia: Matching Therapies to Patient Needs in a Rapidly Evolving Landscape.",
+   "authors": "Szanto T, Lassila R.",
+   "journal": "Drugs",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The therapeutic landscape of hemophilia, a rare inherited bleeding disorder, has rapidly evolved, introducing several novel modalities: extended half-life (EHL) coagulation factor concentrates, non-factor therapies, hemostasis-rebalancing agents, and gene therapy. These advances have improved clinical outcomes by reducing bleeding and treatment burden. However, individualizing treatment in routine practice has become more complex. This narrative review aims to provide a practical summary of available treatment options for pharmacologists, policymakers, and other readers who are not hemophilia specialists. A practical decision framework integrates available data with the clinical indication (regular prophylaxis, management of breakthrough bleeding, and perioperative care), patient-specific modifiers (age, lifestyle, inhibitor status, venous access, joint phenotype, comorbidities, and thrombosis risk). Drug therapies are discussed according to clinical evidence, including pivotal phase 3 trials, long-term extension studies, real-world data, and late-stage development programs. Factor replacement remains critical for hemostatic control during acute bleeding, surgery, and other interventions where predictable and measurable exposure is needed, whereas non-factor and rebalancing therapies provide low-burden prophylactic alternatives with distinct safety profiles and monitoring challenges. Direct comparisons between treatment classes are limited, making treatment individualization essential. Gene therapy has demonstrated more durable outcomes in hemophilia B than in hemophilia A. This review supports shared decision-making and individualized treatment selection in modern hemophilia care. While clinical trial evidence is limited by the scarcity of head-to-head comparisons and incomplete integration of real-world determinants, registry data collection will be essential."
+  },
+  {
+   "rank": 3,
+   "id": "42702880",
+   "source": "MED",
+   "pmid": "42702880",
+   "pmcid": "PMC13547703",
+   "doi": "10.1002/advs.77509",
+   "first_publication_date": "2026-09-06",
+   "title": "Quantitative Visualization of Intracellular Nanometabolism Using Peak-Shifted Dual-State Emissive FRET Nanoprobes.",
+   "authors": "Taemaitree F, Sung J, Miki Y, Suzuki R, Koseki Y, Ishii K, Kim M, Tanita K, Sato K, Nakazawa T, Katsube S, Unabara D, Hamaguchi T, Kawakami K, Yonekura K, Hibara A, Wakamiya A, Uji-I H, Kasai H.",
+   "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Many nanoscale materials, ranging from environmental particulates to carrier-free nanomedicine platforms, enter the human body, yet their metabolic fates remain poorly understood. This process involves complex physical changes and molecular transformations within lysosomes; however, the particle-to-molecule transition-defined here as \"nanometabolism\"-has remained difficult to quantify due to intrinsic limitations of nanoscale bioimaging. To circumvent the fluorescence quenching of conventional fluorophores and the challenges of observing nanoscale dynamics, peak-shifted, dual-state emissive nanoprobes composed entirely of donor-acceptor bithiophene dyes are introduced here. This approach establishes a highly adaptable design strategy for constructing heterogeneous organic nanoparticles templated by these molecular metrics. These molecular probes generate bright, ratiometric spectral shifts that directly encode nanoparticle disassembly, enabling robust optical monitoring of intracellular nanometabolism with cell-type- and particle-size-resolution. Time-resolved imaging identifies protonation-induced lysosomal membrane destabilization as the primary driver of nanoparticle breakdown within 6-12 h. Supported by cryogenic correlative imaging and tissue-level tracking, this platform provides a promising optical framework for monitoring nanometabolism in living systems. It serves as a pivotal breakthrough in elucidating the mechanistic design rules required for the future development of carrier-free nanomedicines with predictable intracellular behavior."
+  },
+  {
+   "rank": 4,
+   "id": "42628806",
+   "source": "MED",
+   "pmid": "42628806",
+   "pmcid": null,
+   "doi": "10.1016/j.pharmthera.2026.109102",
+   "first_publication_date": "2026-08-21",
+   "title": "Thrombin generation and the pharmacodynamics of oral anticoagulants.",
+   "authors": "Shaw JR, Burger D, Vassart J, Hardy M, Castellucci LA, Carrier M, Kim PY, Douxfils J, Mullier F, Rocca B, Connors JM, Spronk H, Levy JH, Ten Cate H.",
+   "journal": "Pharmacology & therapeutics",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Anticoagulants are essential for preventing and treating thromboembolism across a wide range of clinical settings. Yet, they share a narrow therapeutic index that demands a precise understanding of their pharmacodynamic behavior. Thrombin generation provides an integrated measure of anticoagulant effects by capturing the timing, velocity, and total amount of thrombin formed over time. We reviewed the literature to establish a unified theoretical framework, grounded in mechanistic rationale and supported by experimentation, to better define the pharmacodynamics of anticoagulation therapy using thrombin generation as a common language to compare anticoagulant effects across drug classes. Unfractionated and low-molecular-weight heparins and vitamin K antagonists exert broad, multitargeted inhibition that profoundly suppresses peak thrombin and the endogenous thrombin potential. Direct factor Xa inhibitors primarily blunt propagation, direct thrombin inhibitors delay initiation while preserving overall thrombin output, and factor XIa inhibitors act mainly under low tissue factor conditions. Agents that engage multiple components of the coagulation cascade (prothrombinase formation, thrombin feedback activation, or zymogen depletion) produce deeper, cumulative suppression of thrombin generation and maintain efficacy under highly prothrombotic conditions, as seen with mechanical heart valves, antiphospholipid antibody syndrome, and catheter-associated thrombosis. In contrast, selective inhibitors achieve pharmacodynamic predictability but may lose responsiveness in the face of extreme coagulation activation. From a pharmacodynamic perspective, not all anticoagulants are the same. Divergent mechanisms map to unique, reproducible, and informative pharmacodynamic signatures that are characterized using thrombin generation. These signatures help explain why some patients experience breakthrough thrombosis or bleeding despite \"on-target\" drug levels. Embedding thrombin generation within clinical research allows anticoagulant effects to be interpreted through a mechanistic lens that bridges molecular pharmacology with patient-level variability. This synthesis provides a common language for comparing anticoagulants and lays the foundation for an individualized, pharmacologically informed approach to anticoagulation therapy."
+  },
+  {
+   "rank": 5,
+   "id": "42456415",
+   "source": "MED",
+   "pmid": "42456415",
+   "pmcid": null,
+   "doi": "10.1016/j.yebeh.2026.111192",
+   "first_publication_date": "2026-07-15",
+   "title": "Optimizing epilepsy management and pregnancy outcomes: the role of therapeutic drug monitoring.",
+   "authors": "Al-Faraj A, Obretenova S, Pang TD, Voinescu PE.",
+   "journal": "Epilepsy & behavior : E&B",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectiveTo provide an overview of pharmacokinetic changes of antiseizure medications (ASMs) during pregnancy and postpartum period and to emphasize the role of therapeutic drug monitoring (TDM) in clinical management.MethodThis is a structured literature review of electronic medical databases PubMed, Cochrane, Google Scholar, and the clinical trial database (clinicaltrials.gov) from inception to March 2026, examining ASMs pharmacokinetic changes during pregnancy and postpartum period in people with epilepsy and the role of TDM in clinical management.ResultsThere are significant pregnancy-induced alterations in ASM pharmacokinetics, particularly increased ASM clearance, which have reshaped clinical practices and dispelled the notion that seizure exacerbation during pregnancy is the result of ASM ineffectiveness. Instead, understanding these predictable physiological changes is essential to avoid significant pregnancy-induced decreases in ASM serum concentrations that can result in breakthrough seizures. Additionally, individual factors may contribute to significant variability in ASM clearance alterations, and more research is needed to clarify management of different ASMs during pregnancy. Presently, TDM at regular intervals during gestation is gaining prominence and has become an indispensable tool in epilepsy care during pregnancy. Growing evidence supports the critical role of TDM in maintaining seizure control during pregnancy while minimizing fetal ASM exposure.ConclusionsTDM is an essential tool in the management of epilepsy during pregnancy-postpartum to optimize ASM therapy for seizure control, particularly for several ASMs that have demonstrated significant pharmacokinetic changes. Further research is needed to establish optimal monitoring protocols and characterize the pharmacokinetic changes in newer ASMs during pregnancy."
+  },
+  {
+   "rank": 6,
+   "id": "42190589",
+   "source": "MED",
+   "pmid": "42190589",
+   "pmcid": null,
+   "doi": "10.1016/j.neunet.2026.109111",
+   "first_publication_date": "2026-05-15",
+   "title": "TextEconomizer: Enhancing lossy text compression with denoising transformers and entropy coding.",
+   "authors": "Sobhani ME, Rodela AT, Rahman CM, Farid DM, Shatabda S.",
+   "journal": "Neural networks : the official journal of the International Neural Network Society",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Lossy text compression reduces data size while preserving core meaning, making it well-suited for tasks like summarization, automated analysis, and digital archives where exact fidelity is less critical. Despite the dominance of transformer-based models in language modeling, the integration of context vectors and lossless entropy coding into Sequence-to-Sequence (Seq2Seq) text generation remains underexplored. A key challenge lies in identifying the most informative context vectors from the encoder output and incorporating entropy coding into the transformer framework to enhance storage efficiency while maintaining high-quality outputs, even in the presence of noisy text. Previous studies have primarily focused on near-lossless token generation, often overlooking space efficiency. In this paper, we introduce TextEconomizer, an encoder-decoder framework paired with a transformer neural network. This framework utilizes its latent representation to reduce variable-sized inputs by 50% to 80%, without prior knowledge of dataset dimensions. Our model achieves competitive compression ratios by incorporating entropy coding, while delivering near-perfect text quality, as assessed by Bilingual Evaluation Understudy (BLEU), Recall-Oriented Understudy for Gisting Evaluation (ROUGE), Metric for Evaluation of Translation with Explicit ORdering (METEOR), and semantic similarity scores. Notably, TextEconomizer operates with approximately 153 times fewer parameters than comparable models, achieving a compression ratio of 5.39 ×  without sacrificing semantic quality. Additionally, we evaluate our framework by implementing a Long Short-Term Memory (LSTM)-based autoencoder, commonly used in image compression, and by integrating advanced modules within the transformer architecture as alternatives to conventional techniques. Our autoencoder achieves a state-of-the-art compression ratio of 67 ×  with 196 times fewer parameters, while our modified transformer, LLaMAFormer, achieves a 263-fold reduction in parameters compared to ICAE while maintaining competitive text quality. The TextEconomizer framework significantly surpasses existing transformer-based models in balancing memory efficiency and high-fidelity outputs, marking a breakthrough in lossy compression with optimal space utilization."
+  },
+  {
+   "rank": 7,
+   "id": "42083728",
+   "source": "MED",
+   "pmid": "42083728",
+   "pmcid": "PMC13655991",
+   "doi": "10.1111/obr.70145",
+   "first_publication_date": "2026-05-05",
+   "title": "Low Weight Loss Response to Incretin Analogs: A Systematic Review.",
+   "authors": "Gaskin PS, Chami PS.",
+   "journal": "Obesity reviews : an official journal of the International Association for the Study of Obesity",
+   "pub_types": [
+    "Systematic Review",
+    "review-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The development of GLP-1 and GIP analogs has been a significant breakthrough in type 2 diabetes and obesity pharmacotherapy. However, individual responses to these medications can vary widely. This systematic review examines factors associated with low or no weight loss response to GLP-1 and GIP analogs. Key predictors of poor response include higher baseline body weight, BMI, HbA1c, and insulin resistance. Genetic factors, such as variants in the GLP1R gene, may also influence treatment outcomes. Metabolic health status, particularly glycemic control and insulin sensitivity, plays a crucial role in determining weight loss efficacy. Adherence to medication regimens is strongly associated with treatment success, with each additional month of treatment linked to greater weight loss. Lifestyle factors, including dietary habits and physical activity, can modulate responses to these medications. Emerging evidence suggests that gut microbiome composition may mediate weight loss outcomes. Demographic factors such as male sex and older age are associated with lower weight loss responses. Understanding these predictors is essential for optimizing treatment strategies, setting realistic expectations, and moving towards a precision medicine approach in obesity care. Further research is needed to validate these findings in diverse populations and develop practical tools for clinical decision-making."
+  },
+  {
+   "rank": 8,
+   "id": "42894459",
+   "source": "MED",
+   "pmid": "42894459",
+   "pmcid": null,
+   "doi": "10.1017/jme.2026.10293",
+   "first_publication_date": "2026-10-19",
+   "title": "The Impact of Semantics in Medicines Regulation.",
+   "authors": "Costa E, Kesselheim AS.",
+   "journal": "The Journal of law, medicine & ethics : a journal of the American Society of Law, Medicine & Ethics",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Words can have inherently multiple meanings; therefore, semantics can directly impact policies and behaviours. In regulatory practice, semantics refers to the specific, actionable meaning behind terminology, and attention to semantics can help ensure that legal frameworks are interpreted accurately. Refining semantics is not a purely theoretical exercise, but a subtle yet powerful element that has the potential to make the regulatory system more efficient in setting priorities and more reliable in meeting societal expectations and needs. When their intended purpose does not align with their true meaning, labels widely used in pharmaceutical regulation such as \"breakthrough,\" \"orphans,\" or \"unmet medical need\" risks undermining the clarity and precision essential to a sound regulatory framework. In addition, differences in definitions, scopes, eligibility criteria, and incentives can obstruct the efficient convergence of efforts in drug development and access. As pharmaceutical investments and clinical research increasingly transcend borders, the adoption of consistent terminology and regulatory definitions becomes crucial. This alignment can enhance cooperation among investors, governments, regulators, researchers, health care practitioners, and patients."
+  },
+  {
+   "rank": 9,
+   "id": "42802487",
+   "source": "MED",
+   "pmid": "42802487",
+   "pmcid": null,
+   "doi": "10.1002/chem.71733",
+   "first_publication_date": "2026-09-27",
+   "title": "Trends and Future Directions in Organic Chemistry for Drug Discovery.",
+   "authors": "Kozyra P, Masłyk M.",
+   "journal": "Chemistry (Weinheim an der Bergstrasse, Germany)",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Organic chemistry sits at a pivotal moment. Two decades after combinatorial chemistry promised to industrialize molecule making, the field has converged on a far more interesting reality: medicinal chemists now operate at the intersection of new catalytic paradigms, biological-scale automation, machine learning, and an expanding set of therapeutic modalities that look very little like the flat aromatic scaffolds of the 1990s. This Perspective surveys the dominant trends shaping contemporary organic synthesis in the context of drug discovery-late-stage C─H functionalization, photoredox and electrochemical catalysis, biocatalysis, continuous flow manufacturing, AI-guided retrosynthesis, DNA-encoded libraries (DELs), and proximity-based modalities such as PROTACs and molecular glues-and discusses how their convergence is redefining how molecules are designed, made, and validated. The future of the discipline lies not in any single breakthrough, but in the controlled integration of these threads into closed-loop, data-rich, and increasingly autonomous discovery pipelines. We also identify open challenges: predictability of complex sp3-rich scaffolds, scalability of new modalities, environmental footprint, and the need for chemistry education and infrastructure to keep pace with computational advances."
+  },
+  {
+   "rank": 10,
+   "id": "42790364",
+   "source": "MED",
+   "pmid": "42790364",
+   "pmcid": null,
+   "doi": "10.1016/j.watres.2026.127012",
+   "first_publication_date": "2026-09-23",
+   "title": "Sustainable deployment of drinking water treatment residual-derived adsorbents: From synthesis optimization to fixed-bed regeneration and life cycle assessment.",
+   "authors": "Seid Shazileh SAH, Kiehbadroudinezhad M, Zoroufchi Benis K.",
+   "journal": "Water research",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Potable water treatment residuals are a largely underutilized, mineral-rich waste stream with considerable potential for conversion into high-value functional materials. These residuals are predominantly composed of aluminium/iron (hydr)oxide and aluminosilicate mineral phases generated during coagulation, together with residual natural organic matter carried over from the source water. This study presents a deployment-oriented valorization pathway converting residual solids into regenerable, pelletized fixed-bed adsorbents, integrating materials optimization, continuous-flow performance, regeneration, and life-cycle assessment. Residual solids were ZnCl2-activated under a factorial design and pelletized into mechanically stable media. Activation is performed ex situ, as a dedicated post-collection processing step that converts the as-generated residual into a functional adsorbent, rather than occurring within the water treatment process itself. Fixed-bed experiments under application-oriented laboratory conditions showed predictable breakthrough behavior and sub-linear responses to hydraulic loading, bed height, and influent concentration, indicating that transport limitations, rather than intrinsic kinetics, dominate performance. Two dyes with contrasting charge characteristics served as probe contaminants. Regeneration was the key determinant of long-term viability: acetone:water preserved dynamic capacity via non-electrostatic pore disruption, while electrochemical regeneration achieved high capacity retention through electrically driven transport and desorption despite a persistent irreversible fraction. Life-cycle assessment showed regeneration rapidly lowers environmental burdens per liter treated by extending service life, while end-of-life management strongly shapes impact distribution, with brick incorporation offering the most balanced profile. This work advances residual-solid valorization beyond proof-of-concept adsorption, linking process design, regeneration, and environmental consequence into a transferable framework for waste-derived adsorbents."
+  },
+  {
+   "rank": 11,
+   "id": "42767273",
+   "source": "MED",
+   "pmid": "42767273",
+   "pmcid": null,
+   "doi": "10.1111/ejh.70332",
+   "first_publication_date": "2026-09-21",
+   "title": "Posaconazole Prophylaxis for the Prevention of Invasive Fungal Infections in Patients With Hematologic Malignancies: A Systematic Review and Meta-Analysis.",
+   "authors": "Phongkhun K, Thu MS, Hirankarn N, Thammahong A.",
+   "journal": "European journal of haematology",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundInvasive fungal infections (IFIs) pose a life-threatening risk to patients with hematologic malignancies undergoing intensive chemotherapy. Although posaconazole is widely used as a standard prophylactic agent, a comprehensive quantification of its efficacy, particularly regarding formulation-specific benefits and attributable mortality, is needed to guide modern clinical practice.MethodsWe aimed to evaluate the clinical efficacy and safety of posaconazole prophylaxis in patients with hematologic malignancies. The review was conducted according to the Methodological Expectations of Cochrane Intervention Reviews (MECIR) standards and reported in accordance with PRISMA 2020. PubMed, SCOPUS, and Embase were searched from inception to July 25, 2026. We included randomized controlled trials, controlled clinical trials, and prospective or retrospective cohort studies enrolling adults (aged ≥ 16 years) with hematologic malignancies or undergoing hematopoietic stem cell transplantation that compared posaconazole prophylaxis with an active comparator or no prophylaxis and reported breakthrough IFI rates. The primary outcome was the incidence of proven or probable IFI (ppIFI). Secondary outcomes were any IFI (proven/probable/possible), breakthrough IFI (btIFI), IFI-attributable mortality, and all-cause mortality.ResultsA total of 83 studies (36 in the meta-analysis; 47 in the narrative synthesis) were included. Posaconazole was associated with a 52% reduction in the incidence of ppIFI (RR 0.48; 95% CI: 0.38-0.61) with low heterogeneity (I2 = 8.3%). The benefit was consistent across comparator types (active prophylaxis or no prophylaxis) and was not significantly modified by the mould-active spectrum of the comparator agent (p = 0.058); a nominally significant difference by underlying hematologic malignancy (p = 0.049) was driven by sparse, largely single-study strata and should be interpreted cautiously. The delayed-release (DR) tablet formulation was associated with a further 63% reduction in ppIFI risk compared with the oral suspension (RR 0.37; 95% CI: 0.17-0.82). Posaconazole prophylaxis was also associated with a 53% reduction in IFI-related mortality (RR 0.47; 95% CI: 0.31-0.70). All-cause mortality showed a nonsignificant trend toward reduction (RR 0.89; 95% CI: 0.70-1.13). Narrative synthesis highlighted that therapeutic drug monitoring is essential, with troughs ConclusionsPosaconazole prophylaxis is associated with an approximately halved incidence of ppIFI and a 53% reduction in IFI-related mortality, with greater protection from the DR tablet than from the oral suspension. These findings support posaconazole, particularly the DR tablet formulation, as the preferred agent for primary IFI prophylaxis in high-risk hematological patients, although the limited volume of high-quality randomized evidence warrants cautious interpretation.Systematic review registrationPROSPERO CRD42024584703."
+  },
+  {
+   "rank": 12,
+   "id": "41940742",
+   "source": "MED",
+   "pmid": "41940742",
+   "pmcid": null,
+   "doi": "10.1097/sap.0000000000004739",
+   "first_publication_date": "2026-04-07",
+   "title": "Double Opposing Z-plasties to Repair a Cleft Palate: A Personal Account.",
+   "authors": "Furlow LT.",
+   "journal": "Annals of plastic surgery",
+   "pub_types": [
+    "Historical Article",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Dr. Leonard T. Furlow Jr.'s description of the double-opposing Z-plasty remains one of the most impactful contributions to cleft palate surgery, redefining expectations for velopharyngeal competence and functional outcomes. In this reflective manuscript originally published by Advances in Plastic and Reconstructive Surgery in 1998, Dr. Furlow offers a rare, personal account of how the operation emerged-not from a single breakthrough, but from years of surgical observation, mentorship, and an evolving understanding of palatal anatomy and Z-plasty biomechanics. His narrative traces the transition from traditional techniques to a design that reorients and overlaps the palatal musculature while avoiding growth-impairing incisions, ultimately offering a more reliable path to normal speech. Presented here as part of the memorial issue, the reprint highlights both the technical insight and the thoughtful surgical philosophy that characterized Dr. Furlow's career. His reflections underscore how innovation in plastic surgery often stems from curiosity, persistence, and the willingness to rethink established approaches. The double-opposing Z-plasty continues to exemplify his enduring legacy and its widespread influence on modern cleft care. Benjamin L. Savitz, BS."
+  },
+  {
+   "rank": 13,
+   "id": "42902655",
+   "source": "MED",
+   "pmid": "42902655",
+   "pmcid": null,
+   "doi": "10.59556/japi.74.1676",
+   "first_publication_date": "2026-08-01",
+   "title": "Redefining Acid Suppression in Acid Peptic Disorders: The Emerging Role of Prazans.",
+   "authors": "Goenka M, Ghoshal UC, Yadav D, Muthuswamy H, Panigrahi MK, Kak M, Vg M, Pratap N, Lawate P, Ranjan P, Puri R, Bs R, B R, Pal S, Sethi SK, Singla V, Kanuru VPC.",
+   "journal": "The Journal of the Association of Physicians of India",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "AbstractAcid peptic disorders (APDs) affect approximately 38% of the population in India and commonly present with overlapping phenotypes, including gastroesophageal reflux disease (GERD), dyspepsia, and peptic ulcer disease (PUD), necessitating uniform and sustained acid suppression. Proton pump inhibitors (PPIs) have several clinical limitations, including a delayed onset of action of 3-5 days, incomplete 24-hour acid control with nocturnal acid breakthrough, high nonresponse rates of approximately 40% in GERD and 37% in nonerosive reflux disease (NERD), and variability related to cytochrome P450 2C19 (CYP2C19) metabolism, meal dependency, and drug interactions. Collectively, these limitations contribute to inconsistent real-world efficacy.Potassium-competitive acid blockersMechanistic and pharmacodynamic superiority: Potassium-competitive acid blockers (P-CABs) directly and reversibly inhibit the H+/K+-ATPase without requiring acid activation, thereby enabling a rapid onset of action from the first dose. Inhibition of both active and inactive proton pumps provides continuous and sustained acid suppression. P-CABs offer true 24-hour intragastric pH control, including nocturnal control, with a higher parietal-cell concentration of approximately 100,000-fold compared with approximately 1,000-fold for PPIs. Their meal-independent administration, low CYP-related variability, and minimal potential for drug interactions allow a more predictable response across patient populations.TegoprazanRapid onset, nocturnal control, and comorbidity advantages-Tegoprazan may be considered in the following clinical settings: symptomatic GERD and on-demand treatment of GERD/NERD, because its rapid onset of action within approximately 30 minutes may facilitate early symptom relief and flexible dosing; nocturnal acid breakthrough, because it provides nocturnal pH control, with an intragastric pH of ≥4 maintained for approximately 66% of the night; patients at cardiovascular risk receiving antiplatelet therapy, dual antiplatelet therapy, or atorvastatin, because its lower interaction potential involving CYP2C19 and CYP3A4 may reduce the risk of gastrointestinal bleeding and treatment failure related to dyslipidemia; and patients with renal or metabolic comorbidities, because it has shown favorable renal safety signals and a lower decline in serum creatinine levels.VonoprazanPotency, high acid burden, and eradication efficacy-Vonoprazan may be preferred in the following situations: refractory GERD after PPI failure, because its potent and sustained acid suppression may overcome an inadequate response to PPIs; severe GERD and other high-acid-burden states, because it provides consistent and prolonged intragastric pH elevation; Helicobacter pylori eradication, because it may serve as a preferred treatment backbone, with reported eradication rates of approximately 92.6% through sustained maintenance of an intragastric pH >6; nonsteroidal anti-inflammatory drug-associated ulcers, because it may reduce ulcer recurrence and the risk of gastrointestinal bleeding; complex or recurrent PUD, because its stronger acid suppression may support faster and more durable healing; and hepatic disease, because it has demonstrated favorable outcomes, with fewer liver-related complications than PPIs.Fexuprazan—stability and extraesophageal reflux phenotypesFexuprazan may be considered for extraesophageal reflux, including laryngopharyngeal reflux and atypical GERD, because it has been associated with improvements in reflux symptom indices and airway-related symptoms.ConclusionTegoprazan may be preferred when rapid symptom relief, nocturnal acid control, and a favorable drug-interaction profile are required. Vonoprazan may be preferred when maximal acid suppression and enhanced H. pylori eradication efficacy are needed. Fexuprazan may be considered for laryngopharyngeal reflux and other atypical or extraesophageal GERD phenotypes."
+  },
+  {
+   "rank": 14,
+   "id": "42617115",
+   "source": "MED",
+   "pmid": "42617115",
+   "pmcid": null,
+   "doi": "10.1056/nejmra2507867",
+   "first_publication_date": "2026-08-01",
+   "title": "Myeloproliferative Neoplasms.",
+   "authors": "Plo I, Vainchenker W.",
+   "journal": "The New England journal of medicine",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Classic myeloproliferative neoplasms, including essential thrombocythemia, polycythemia vera, and primary myelofibrosis, are chronic, clonal hematopoietic stem-cell disorders. These disorders are driven by gain-of-function mutations in the genes Janus kinase 2 (JAK2), calreticulin (CALR), or the thrombopoietin receptor (MPL) that activate cytokine signaling. These mutations arise decades before clinical disease develops and confer a clonal advantage that is further shaped by comutations in epigenetic, splicing, or signaling genes. Inflammation enhances clonal dominance, favoring the development of myelofibrosis and thrombotic complications. Disease evolution may culminate in secondary acute myeloid leukemia, which has a poor prognosis. Current therapies primarily aim to control symptoms, thrombosis, and splenomegaly, but they have limited disease-modifying effects, except for pegylated interferon alfa and JAK2 inhibitors in some patients. Emerging therapies that selectively target mutant CALR and JAK2 V617F using immunotherapy and selective inhibitors could be a breakthrough in the treatment of persons with myeloproliferative neoplasms, with the expectation of achieving durable disease modification and potentially clonal eradication."
+  },
+  {
+   "rank": 15,
+   "id": "42470089",
+   "source": "MED",
+   "pmid": "42470089",
+   "pmcid": null,
+   "doi": "10.1080/17474124.2026.2706854",
+   "first_publication_date": "2026-07-21",
+   "title": "Recent developments in the therapeutic management of acid-related gastrointestinal diseases.",
+   "authors": "Lanas-Gimeno A, Lanas A.",
+   "journal": "Expert review of gastroenterology & hepatology",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "IntroductionAcid-related gastrointestinal diseases, particularly gastroesophageal reflux disease (GERD) and peptic ulcer disease (PUD), remain major global health burdens despite decades of proton pump inhibitor (PPI)-based therapy. Persistent symptoms, nocturnal acid breakthrough, refractory disease, antibiotic resistance in Helicobacter pylori infection, and interindividual pharmacogenomic variability continue to limit current management strategies.Areas coveredThis review summarizes therapeutic advances in acid-related diseases, focusing on articles published between 2020 and 2025 and on potassium-competitive acid blockers (P-CABs), mucosal protective agents, adjunctive pharmacotherapies, endoscopic anti-reflux interventions, and precision medicine studies. Literature from randomized controlled trials, meta-analyses, international guidelines, and observational studies was reviewed to evaluate the efficacy, safety, and clinical positioning of emerging therapies in GERD, PUD, and H. pylori eradication. The search was conducted in PubMed.Expert opinionP-CABs, particularly vonoprazan, represent the most important advance in acid suppression in recent decades, offering faster, more potent, and more predictable acid inhibition than PPIs. Precision approaches integrating GERD phenotyping, pharmacogenomics, and antibiotic susceptibility testing are shifting management toward individualized care. However, long-term safety data, cost-effectiveness analyses, and robust comparative trials remain limited. Future progress will likely depend on combining phenotype-directed pharmacologic, endoscopic, and microbiome-informed strategies supported by artificial intelligence-driven diagnostics and treatment selection."
+  },
+  {
+   "rank": 16,
+   "id": "42360175",
+   "source": "MED",
+   "pmid": "42360175",
+   "pmcid": "PMC13435733",
+   "doi": "10.1128/aac.00451-26",
+   "first_publication_date": "2026-06-26",
+   "title": "Isavuconazole as primary antifungal prophylaxis in pediatric hematological patients: a clinical and pharmacokinetic analysis.",
+   "authors": "Baccelli F, Campoli C, Colli M, Gatti M, Gottardi F, Pagano G, Venturelli F, Leardini D, Muratore E, Bossù G, Pea F, Viale P, Giannella M, Belotti T, Prete A, Masetti R.",
+   "journal": "Antimicrobial agents and chemotherapy",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Invasive fungal diseases (IFDs) are a major threat in pediatric patients with hematologic malignancies (HMs) and hematopoietic stem cell transplantation (HSCT) recipients. Optimal antifungal prophylaxis (AFP) remains a clinical challenge. Isavuconazole (ISA), a broad-spectrum triazole, may offer a safer, more predictable option for AFP in this setting, but pediatric data are scarce. We retrospectively analyzed pediatric patients (≤18 years) with HM or HSCT who received isavuconazole as primary AFP from January 2021 to April 2025 at a single center. Isavuconazole dosing, therapeutic drug monitoring (TDM), safety, and breakthrough IFD incidence were systematically evaluated in a standardized stewardship framework. Isavuconazole was administered as primary antifungal prophylaxis in 21 patients (median age 9.6 years), 17 (77.3 %) after HSCT. Doses were weight-adjusted (100 or 200 mg/day) with loading over 48 h. No severe adverse events attributable to isavuconazole were reported. No breakthrough IFDs occurred during prophylaxis. Concomitant use of CYP3A4-interacting agents (e.g., ruxolitinib) was not associated with increased toxicity or isavuconazole level alterations. TDM was performed in all patients (188 total measurements); median Cmin was 3.4 mg/L. The target range (1-5 mg/L) was achieved in 95.2% of first TDMs. Dosage adjustments were needed in only 5.9% of cases, indicating consistent pharmacokinetics. In this retrospective cohort of high-risk pediatric hematology patients, isavuconazole used as primary antifungal prophylaxis showed favorable safety, consistent drug exposure, and no breakthrough IFDs. These findings support further prospective evaluation of isavuconazole in pediatric prophylactic strategies."
+  },
+  {
+   "rank": 17,
+   "id": "42322916",
+   "source": "MED",
+   "pmid": "42322916",
+   "pmcid": null,
+   "doi": "10.1016/j.thromres.2026.109753",
+   "first_publication_date": "2026-06-17",
+   "title": "A short history of anticoagulant therapy.",
+   "authors": "Chan NC, Imiela AM, Carlin S, Hirsh J.",
+   "journal": "Thrombosis research",
+   "pub_types": [
+    "Historical Article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Anticoagulant therapy has undergone a remarkable evolution over the past century, transforming the prevention and treatment of thromboembolic disease. The accidental discovery of vitamin K antagonists (VKAs) in the 1940s, following investigations of fatal bleeding in cattle fed spoiled sweet clover, led to the identification of dicoumarol and the development of warfarin. Despite limitations in study design, studies from the 1960s onward established the foundations of modern anticoagulation. Subsequent advances refined the dosing and monitoring of heparin and VKAs, while the introduction of weight-based subcutaneous dosing of low molecular weight heparins (LMWH) represented a breakthrough by enabling more predictable, safer, and more convenient parenteral anticoagulation, particularly in the outpatient setting. More recently, direct oral anticoagulants (DOACs) have revolutionized clinical practice as they can be used in fixed doses without routine laboratory monitoring, thereby simplifying oral anticoagulation and are now preferred over VKAs for many indications. Unlike existing anticoagulants which suppress thrombin generation or inhibit factor Xa or thrombin, novel anticoagulants in development selectively target coagulation proteins within the contact activation pathway (such as Factor XI). These novel anticoagulants offer the potential to uncouple bleeding risk from antithrombotic efficacy and may also be effective for conditions in which clotting is driven by the contact activation pathway such as mechanical heart valves, for which DOACs are inadequate. However, their role and clinical indications remain to be defined in ongoing phase III trials."
+  },
+  {
+   "rank": 18,
+   "id": "42373752",
+   "source": "MED",
+   "pmid": "42373752",
+   "pmcid": null,
+   "doi": "10.1038/s41598-026-58948-3",
+   "first_publication_date": "2026-06-29",
+   "title": "Interactive recommendation algorithm based on intelligent assistance for project application.",
+   "authors": "Shao C, Zou Q, Qiu Z, Luo L, Chen L, Chen P, Guan F, Zheng H.",
+   "journal": "Scientific reports",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "To address the critical issues in project application management, such as inaccurate and inadequate understanding of guidelines, non-standardized preparation of application materials, and time-consuming formal reviews, this paper proposes a Knowledge Graph-Enhanced Interactive Recommendation Intelligent Assistant Model for Project Applications. Different from existing LLM-based assistants that suffer from severe domain knowledge hallucinations and lack long-term decision optimization capabilities, and knowledge graph/RL-based systems that lack natural language interaction capabilities, this model innovatively integrates the natural language interaction advantages of Large Language Models (LLMs) with the precise decision-making strengths of knowledge graph-enhanced reinforcement learning (RL), and is the first to achieve the three-in-one integration of three core technologies: (1) A domain-specific knowledge graph (PAG-KG) for project applications, which constructs a multi-entity and multi-relation structured knowledge base to provide reliable domain prior knowledge and fundamentally mitigate the knowledge hallucination problem of LLMs; (2) An LLM decision brain equipped with plan-first execution and Actor-Critic reflection mechanisms, which supports natural language interaction and orchestrates a suite of intelligent assistant tools covering core functions including in-depth guideline comprehension and formal review of application materials to efficiently complete various tasks; (3) A knowledge graph-enhanced Dueling DQN (KG-DQN) tailored for long-term multi-turn interaction scenarios, which dynamically optimizes interactive decision-making strategies. To comprehensively validate the performance of the proposed model, a dedicated dataset for science and technology project applications was constructed, and multi-dimensional experimental validations were conducted. The results demonstrate that the proposed model significantly outperforms baseline models in key metrics such as guideline understanding accuracy, material preparation completeness, and the precision and recall rates of formal reviews, exhibits excellent adaptability in complex multi-turn interactions and strong generalization capabilities, can substantially reduce application time and manual intervention, and effectively enhances the efficiency and intelligence level of project application management. Notably, this three-in-one technical integration enables full-process intelligent assistance for project applications, a breakthrough achievement that has not been realized in previous studies."
+  },
+  {
+   "rank": 19,
+   "id": "41954861",
+   "source": "MED",
+   "pmid": "41954861",
+   "pmcid": "PMC13222249",
+   "doi": "10.1007/s12325-026-03583-7",
+   "first_publication_date": "2026-04-09",
+   "title": "Non-factor Therapies in Hemophilia: Mechanisms, Clinical Evidence, Patient Management, and Future Perspectives.",
+   "authors": "Nakajima Y, Nogami K.",
+   "journal": "Advances in therapy",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Hemophilia is an inherited bleeding disorder caused by deficiencies in coagulation factor VIII (FVIII) or factor IX (FIX), leading to impaired thrombin generation and recurrent bleeding episodes. For decades, prophylactic factor replacement therapy has been the mainstay of hemophilia management; however, its limitations-including treatment burden, inhibitor development, and incomplete bleeding control-have required the development of alternative therapeutic strategies. Non-factor therapies represent a major paradigm shift in hemophilia care by restoring hemostatic balance through mechanisms independent of FVIII or FIX replacement. These approaches include bispecific antibodies that mimic FVIII cofactor activity and rebalancing strategies that enhance thrombin generation by inhibiting anticoagulant pathways such as tissue factor pathway inhibitor or antithrombin. Clinical studies have demonstrated that non-factor therapies provide stable and predictable prophylactic efficacy, significantly reduce bleeding rates, and improve quality of life in people with hemophilia A or B, irrespective of inhibitor status. Despite these advances, important challenges remain. Non-factor therapies modify physiological coagulation pathways and may be associated with thrombotic events due to imbalance between procoagulant and anticoagulant mechanisms, particularly for rebalancing agents. In addition, the lack of standardized laboratory assays for assessing global coagulation potential, uncertainties regarding combination therapy during breakthrough bleeding or surgery, and concerns about long-term safety and cost burden could limit optimal implementation. This review summarizes the mechanisms of action, clinical evidence, and safety considerations of currently available and emerging non-factor therapies for hemophilia. We also discuss unmet clinical needs, patient management considerations, and future perspectives aimed at optimizing the safe and sustainable use of non-factor therapies into routine hemophilia care."
+  },
+  {
+   "rank": 20,
+   "id": "42175904",
+   "source": "MED",
+   "pmid": "42175904",
+   "pmcid": null,
+   "doi": "10.1093/ndt/gfag113",
+   "first_publication_date": "2026-05-23",
+   "title": "Infection risk mitigation with complement inhibitors in kidney disease.",
+   "authors": "Berghmans M, Seghers F, Mirioglu S, Kronbichler A, Morelle J.",
+   "journal": "Nephrology, dialysis, transplantation : official publication of the European Dialysis and Transplant Association - European Renal Association",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Complement inhibitors are increasingly used in kidney diseases, ranging from complement-mediated thrombotic microangiopathies to glomerulonephritis. Because complement is central to host defence against encapsulated bacteria, therapeutic blockade creates a predictable infectious vulnerability requiring structured prevention strategies. This narrative review integrates complement biology with evidence from pivotal kidney trials, pharmacovigilance analyses, and national public health recommendations to propose a pragmatic framework for mitigating infection-risk in patients treated with complement inhibitors. Key complement functions (C3b-mediated opsonisation, C3a/C5a-driven inflammation, and membrane attack complex formation) underlie target-specific patterns of infectious risk. Terminal C5 inhibition (eculizumab, ravulizumab) confers a reproducible exposure-adjusted risk of invasive meningococcal disease, including rare but documented infection-related mortality, with breakthrough infections reported despite vaccination. In contrast, inhibition at the level of C3/C3b or the alternative pathway amplification loop has not, to date, demonstrated a consistent encapsulated-pathogen signal in phase 3 kidney trials, although follow-up remains limited and rare events cannot be excluded. Effective prevention relies on target-adapted vaccination against encapsulated bacteria, consideration of antimicrobial prophylaxis when therapy must begin before vaccine protection is established-and in selected higher-risk settings during sustained complement blockade-and structured patient education with rapid-access pathways for febrile illness. Chronic kidney disease, dialysis exposure, transplantation, and concomitant immunosuppression may further amplify infectious risk and attenuate vaccine responsiveness. Infection risk under complement inhibition is target-dependent and not eliminated by vaccination alone, particularly with terminal C5 blockade. Mechanism-informed, kidney-specific prevention strategies are essential as complement therapies expand into routine clinical practice."
+  },
+  {
+   "rank": 21,
+   "id": "42174456",
+   "source": "MED",
+   "pmid": "42174456",
+   "pmcid": "PMC13374193",
+   "doi": "10.1186/s12882-026-05046-1",
+   "first_publication_date": "2026-05-22",
+   "title": "Clinician perspectives on the feasibility of a pain management protocol in kidney transplant.",
+   "authors": "Iroz CB, Johnson JK, Rohan VS.",
+   "journal": "BMC nephrology",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundOpioids are often prescribed to treat pain after kidney transplant (KT) but pose significant risks to patients as well as the risk of diversion of unused opioids into the community. While there is growing interest, only 18% of KT programs in the United States have a pain management protocol. We described the current pain management practices in KT at a large academic medical center and assessed the feasibility of implementing a pain management protocol.MethodsWe conducted semi-structured individual interviews and focus groups with clinicians from a large-volume KT program. The interviews and focus groups were audio-recorded, transcribed verbatim, and coded inductively. We used the constant comparative approach to identify and refine emerging themes.ResultsTwenty-three clinicians participated including 7 advanced practice providers, 7 nurses, 5 transplant fellows, 3 attending surgeons, and 1 pharmacist. We identified six overarching themes: (1) clinicians report prescribing opioids to most KT recipients (KTRs) as outlined in the standardized postoperative order set; (2) there is provider variation in opioid and non-opioid prescribing beyond the initial order set; (3) pain management requires a balance of setting realistic expectations about postoperative pain and controlling pain sufficiently for KTRs to complete activities of daily living; (4) clinicians believe that it is feasible to implement a protocol as long as it is flexible to individualize pain management based on patient-reported level and type of pain; (5) an acceptable protocol for KTRs includes preoperative blocks, scheduled acetaminophen, additional non-opioid strategies (e.g., ice, lidocaine patches, muscle relaxants, and gabapentin) and reserves oxycodone for breakthrough pain; (6) barriers to implementing a pain management protocol include concerns about inadequate pain control, delays in treatment, limited resources for preoperative blocks, and challenges changing clinician behaviors.ConclusionsAlthough there is variation in current pain management practices, clinicians were enthusiastic about the implementation of a standardized pain management protocol. Clinicians agreed that opioids should be used sparingly but are needed for some KTRs and emphasized the need for individualized pain management. Effective implementation will require coordination with anesthesiologists for preoperative blocks and coordination with nursing and prescribers to ensure timely follow up for breakthrough pain."
+  },
+  {
+   "rank": 22,
+   "id": "41310961",
+   "source": "MED",
+   "pmid": "41310961",
+   "pmcid": "PMC12961247",
+   "doi": "10.1111/nph.70748",
+   "first_publication_date": "2025-11-27",
+   "title": "Hybridity of mainly asexually propagating duckweeds in genus Lemna - dead end or breakthrough?",
+   "authors": "Lee Y, Braglia L, Stepanenko A, Fuchs J, Schubert V, Gianì S, Romano LE, Aronne G, Forti C, Schubert I, Morello L.",
+   "journal": "The New phytologist",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "The cosmopolitan, mainly vegetatively propagating, organ-reduced monocotyledonous aquatic duckweeds are the smallest and fastest growing angiosperms, distributed world-wide and flower rarely in nature. Recently, we reported intra- and interspecific hybrids and ploidy variants in the genus Lemna. Thus, contrary to the expectation, sexual propagation may occasionally occur within and between Lemna species. Our main goal was to uncover whether the ecologically successful hybrids are evolutionary dead ends or initiate further speciation and novel sexual recombination. We investigated flower development, pollen viability, seed set, and seed germination in hybrids and their parental species and characterized genome size and genetic markers in the progenies. Intraspecific crosses yielded fertile progeny, but all diploid and triploid interspecific hybrids were male sterile. Only an established allotetraploid hybrid reproduced sexually, while colchicine-induced allotetraploids from allodiploids did not regain sexual competence so far. We concluded that only established allotetraploid hybrids represent an evolutionary breakthrough in duckweeds. Our results regarding sexual traits within the duckweed genus Lemna and the sexual competence of diverse hybrids pave the way for further investigation in this understudied field, provide fundamental data regarding the evolutionary potential of duckweed hybrids and are important for future breeding efforts on this emerging crop."
+  },
+  {
+   "rank": 23,
+   "id": "41998958",
+   "source": "MED",
+   "pmid": "41998958",
+   "pmcid": null,
+   "doi": "10.1103/7bs5-8ql3",
+   "first_publication_date": "2026-03-01",
+   "title": "Predicting scientific breakthroughs through capacity-based dynamics in citation networks.",
+   "authors": "Liu J, Tamang K, Wang D, Song C.",
+   "journal": "Physical review. E",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Scientific impact emerges from citation networks shaped by nonlinear and out-of-equilibrium dynamics. By analyzing over 30 million scientific papers and 1 billion references across disciplines, we uncover a two-phase correlation structure: a long-term assortative regime, where highly cited works reinforce each other, and a short-term antiassortative regime, where transformative papers tend to draw upon under-recognized ideas. To reconcile this paradox, we introduce a single state variable-capacity-which quantifies the residual \"originality budget\" of prior knowledge. We demonstrate that capacity governs a universal double-exponential relationship with long-term impact, consistent across biology, chemistry, and physics. Building on this empirical regularity, we formulate a stochastic dynamical model coupling novelty erosion with capacity-driven attachment. The model accurately reproduces the observed dual-phase correlations and predicts a critical capacity that maximizes future impact. Furthermore, we show that capacity serves as a robust early indicator of scientific breakthroughs, effectively distinguishing Nobel-Prize-winning papers from the rest. Our results provide a unified theoretical framework for correlated impact dynamics, advancing our understanding of knowledge diffusion and breakthrough emergence in complex evolving networks."
+  },
+  {
+   "rank": 24,
+   "id": "41938838",
+   "source": "MED",
+   "pmid": "41938838",
+   "pmcid": "PMC13043475",
+   "doi": "10.1016/j.eclinm.2026.103796",
+   "first_publication_date": "2026-03-04",
+   "title": "Trajectory of weight regain after cessation of GLP-1 receptor agonists: a systematic review and nonlinear meta-regression.",
+   "authors": "Budini B, Luo S, Tam M, Stead I, Lee A, Akrami A, Vidal-Puig A, Park A.",
+   "journal": "EClinicalMedicine",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "BackgroundGlucagon-like peptide 1 receptor agonists (GLP-1RAs) have emerged as breakthrough agents for weight loss. However, discontinuation is common, and clinical trials have demonstrated significant weight regain following cessation. In this systematic review, we aimed to characterise the trajectory of weight regain after GLP-1RA cessation.MethodsThis systematic review and meta-regression analysis followed Cochrane and PRISMA guidelines. We searched MEDLINE, Embase, Cochrane Library, Scopus and Web of Science from inception to August 28, 2025 for randomised controlled trials (RCTs), non-randomised interventional studies and observational studies reporting weight outcomes after cessation of GLP-1RAs in adults with overweight or obesity. Weight regain was the primary outcome and was modelled using nonlinear regression. Secondary, exploratory outcomes included HbA1c and systolic blood pressure. The study protocol is registered with PROSPERO (CRD420250631751).FindingsA total of 48 relevant studies were included. Weight consistently rebounded after cessation of GLP-1RAs. Six RCTs with 3236 participants were included in the nonlinear meta-regression, which utilised a mixed-effect exponential recovery model with random effects applied to the rate constant. At 1 year post-cessation, 60% of the weight lost during treatment was regained. Beyond 52 weeks, weight trajectories were extrapolated, with weight regain estimated to plateau at 75.3% (95% CI 68.9-81.6) of the weight lost on treatment. The rate constant was 0.0302 per week (95% CI 0.0202-0.0401), corresponding to a half-life of 23.0 weeks (95% CI 17.3-34.3). Most studies were assessed to have a moderate risk of bias.InterpretationGLP-1RA cessation is associated with a predictable and decelerating pattern of weight regain, which appears to plateau below pre-treatment levels, suggesting that partial weight-loss benefit may persist long-term but is substantially attenuated.FundingNone."
+  },
+  {
+   "rank": 25,
+   "id": "41886751",
+   "source": "MED",
+   "pmid": "41886751",
+   "pmcid": "PMC13021100",
+   "doi": "10.2196/88195",
+   "first_publication_date": "2026-03-26",
+   "title": "Deep Research Agents: Major Breakthrough or Incremental Progress for Medical AI?",
+   "authors": "Wong MYH, Ong AY, Merle DA, Keane PA.",
+   "journal": "Journal of medical Internet research",
+   "pub_types": [
+    "research-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "UnlabelledDeep research agents are autonomous large language model-based systems capable of iterative web search, retrieval, and synthesis. They are increasingly positioned as the next major leap in medical artificial intelligence. In this viewpoint, we argue that while these agents mark progress in information access and workflow automation, they represent an incremental evolution rather than a paradigm shift. We review current applications of deep research agents in biomedical scenarios, including literature review generation, clinical evidence synthesis, guideline comparison, and patient education. Across these early use cases, the tools demonstrate the ability to rapidly gather and structure up-to-date information, often producing outputs that appear comprehensive and well-referenced. However, these strengths coexist with unresolved and clinically significant limitations. Citation fidelity remains inconsistent across models, with subtle misinterpretations or unreliable references still common. Their retrieval processes and evidence-ranking mechanisms remain opaque, raising concerns about reproducibility and hidden biases. Moreover, overreliance on artificial intelligence-generated syntheses risks eroding clinicians' critical appraisal skills and may introduce automation bias at a time when medicine increasingly requires deeper scrutiny of information sources. Safety constraints are also less predictable within multistep research pipelines, increasing the risk of harmful or inappropriate outputs. Finally, current evidence is largely limited to proof-of-concept evaluations, with little evidence from real-life clinical deployment. We contend that deep research agents should be embraced as assistive research tools rather than pseudoexperts. Their value lies in accelerating information gathering, not replacing rigorous human judgment. Realizing their potential will require transparent retrieval architectures, robust benchmarking, and explicit educational integration to preserve clinicians' evaluative reasoning. Used judiciously, these systems could enrich medical research and practice; used uncritically, they risk amplifying errors at scale. We contend that deep research agents should be embraced as assistive research tools rather than pseudoexperts. Their value lies in accelerating information gathering, not replacing rigorous human judgment. Realizing their potential will require transparent retrieval architectures, robust benchmarking, and explicit educational integration to preserve clinicians' evaluative reasoning. Used judiciously, these systems could enrich medical research and practice; used uncritically, they risk amplifying errors at scale."
+  },
+  {
+   "rank": 26,
+   "id": "41443357",
+   "source": "MED",
+   "pmid": "41443357",
+   "pmcid": null,
+   "doi": "10.1016/j.biotechadv.2025.108788",
+   "first_publication_date": "2025-12-22",
+   "title": "From traditional to AI-driven: The evolution of intelligent enzyme engineering for biocatalysis.",
+   "authors": "Lv F, Zhang J, You S, Qi W.",
+   "journal": "Biotechnology advances",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Enzyme engineering involves enhancing enzyme function and application through multidimensional technological systems. Its development encompasses elucidating sequence-structure-function relationships, exploring fitness landscapes, and multiscale regulation. Conventional enzyme engineering strategies include directed evolution (DE), rational/semi-rational design, residue co-evolution, and de novo design. DE mimics natural selection but is limited by high-throughput screening efficiency. Rational/semi-rational design integrates computational simulation with experimental validation to regulate enzyme performance. Residue co-evolution combines sequence co-evolution analysis and kinetic simulations, and de novo design is dedicated to achieving precise protein folding through physical modeling. In recent years, the breakthrough progress in machine learning (ML), especially deep learning (DL), has significantly enhanced the efficiency of all the above-mentioned methods; by accurately predicting mutational effects and efficiently exploring discontinuous sequence space, it provides powerful tools to improve or supplement the above strategies, thereby aiding in escaping local fitness optima traps. This review summarizes common strategies in enzyme engineering, including directed evolution, rational/semi-rational design, residue co-evolution, and de novo design, and further introduces the latest applications of ML and DL models in each of these fields. Although challenges persist, such as force field accuracy limitations, mutation sampling constraints, experimental throughput limitations, and epistatic effects, more comprehensive multimodal foundation models in the future are expected to integrate cross-scale parameters for intelligent design, and the establishment of standardized enzymology databases will enhance prediction reliability. Overall, AI-empowered enzyme engineering will drive a profound transformation toward a predictable and highly efficient pathway for enzyme design, providing more precise and powerful solutions for biocatalysis."
+  },
+  {
+   "rank": 27,
+   "id": "41916711",
+   "source": "MED",
+   "pmid": "41916711",
+   "pmcid": "PMC13047865",
+   "doi": "10.7518/hxkq.2026.2025440",
+   "first_publication_date": "2026-02-01",
+   "title": "[Assistance and breakthrough of digitalization and intelligent digitalization in implant restoration of edentulous jaws].",
+   "authors": "Sa Y, Cai Y, Sun Y, Zhao M, Xia S.",
+   "journal": "Hua xi kou qiang yi xue za zhi = Huaxi kouqiang yixue zazhi = West China journal of stomatology",
+   "pub_types": [
+    "research-article",
+    "Journal Article",
+    "English Abstract"
+   ],
+   "open_access": "N",
+   "abstract": "Digital and intelligent digital technologies can help optimize the clinical workflow of edentulous jaw implant restoration, significantly improving precision, predictability, and efficiency throughout all stages of treatment. In the preoperative phase, by acquiring the patient's digital information model and integrating data with the assistance of an artificial intelligence-driven planning system, personalized design of implant positions and prosthesis morphologies can be achieved, thereby realizing accurate functional and aesthetic matching. During the surgical procedure, the adoption of static implant guides, dynamic navigation systems, or implant robotic systems can effectively enhance surgical precision and minimize patient trauma to the greatest extent. In the immediate and final restoration phases, digital impression technology based on intraoral and extraoral scanning systems enables accurate acquisition of information regarding implants, as well as hard and soft tissues related to edentulous jaw implantation. Among these technologies, the application of AI-assisted algorithms and modified intraoral scan bodies can further improve patient comfort and chairside work efficiency. When encountering metal restoration artifact interference, the use of artifact correction algorithms or methods to increase identifiable marker points can both enhance the fitting precision of virtual data, reduce the impact of metal artifacts on data matching, and provide more reliable data support for digital preoperative planning. For complex edentulous cases, such as pterygoid implant placement, implant robotic systems based on digital three-dimensional modeling enable high-precision implantation with intraoperative dynamic calibration, thereby improving prosthetic predictability. Although challenges remain in data interoperability and standardization of clinical protocols, the integration of unified data standards, comprehensive intelligent platforms, and standardized workflows may facilitate the standardized and intelligent application of digital technologies in edentulous implant rehabilitation. It is foreseeable that in the future, digital and intelligent digital technologies will continue to drive the development of the edentulous jaw implant restoration field, providing patients with more high-quality, efficient, and safe implant restoration solutions."
+  },
+  {
+   "rank": 28,
+   "id": "41379283",
+   "source": "MED",
+   "pmid": "41379283",
+   "pmcid": "PMC12804524",
+   "doi": "10.1007/s40122-025-00801-y",
+   "first_publication_date": "2025-12-11",
+   "title": "Prevalence and Patterns of Off-Label Transmucosal Immediate-Release Fentanyl Use in French General Practice: A Mixed-Methods Study Based on a Voluntary Online Survey.",
+   "authors": "Guastella V, Gueganno E, Bertin C, Balayssac D, Pereira B, Authier N.",
+   "journal": "Pain and therapy",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "IntroductionPrescriptions of transmucosal immediate-release fentanyl (TIRF) have increased in recent years, driven by their rapid onset and ease of administration compared to other opioids like morphine and oxycodone, especially for breakthrough pain. A 2022 study reported high rates of off-label TIRF use, particularly among general practitioners (GPs). This study aimed to assess the prevalence and patterns of off-label TIRF use by GPs, and perceived efficacy for predictable pain associated with medical procedures. Secondary objectives included evaluating its use in other specific contexts such as swallowing or alertness disorders, acute pain, and overall tolerability.MethodsA mixed-methods study was designed to combine qualitative interviews exploring clinical contexts with a quantitative cross-sectional survey assessing the prevalence of off-label use of TIRF among French GPs. Data were collected through a national online survey.ResultsA total of 682 completed questionnaires were analyzed. The study focused exclusively on off-label prescribing of TIRFs. Off-label use was reported by 46% of GPs across a variety of clinical indications. Specifically, 244 GPs (36%; 95% CI 32-40) reported prescribing TIRFs for procedural pain. Other off-label indications were also reported, including use for alertness disorders (24%; 95% CI 21-27), swallowing disorders (32%; 95% CI 28-35), and acute rheumatological pain (12%; 95% CI 9-14). These findings highlight a substantial level of off-label prescribing, with varying perceptions of efficacy and tolerability across different clinical contexts.ConclusionsThis study confirms widespread off-label TIRF use in well-defined clinical situations. While many GPs report positive outcomes, important concerns remain, including limited training, difficulty with dose titration, and the risk of use disorder. Targeted education and clearer prescribing guidelines could help ensure a safer and more appropriate use of TIRF in GPs practice."
+  },
+  {
+   "rank": 29,
+   "id": "42870899",
+   "source": "MED",
+   "pmid": "42870899",
+   "pmcid": null,
+   "doi": "10.3389/fpsyg.2026.1882691",
+   "first_publication_date": "2026-09-29",
+   "title": "Navigating the systemic labyrinth: the dual-track breakthrough of student-athletes under China's \"Integration of Sports and Education\".",
+   "authors": "Chen Y, Li L.",
+   "journal": "Frontiers in psychology",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "IntroductionAlthough dual career (DC) development has received growing international attention, the psychosocial experiences of high-level student-athletes (HLSAs) within China's evolving Integration of Sports and Education (ISE) context remain underexplored.MethodsThis study adopted an interpretivist qualitative design and used Reflexive Thematic Analysis to examine retrospective developmental accounts from 19 Chinese HLSAs admitted to university through the high-level sports team pathway.ResultsAthletic achievement expanded access to higher education but did not automatically secure stable competence, legitimacy, or belonging across academic and athletic settings. Effort often remained within HLSAs' control even when its returns became uncertain because of injury, bodily limits, competitive conditions, and fluctuating performance, requiring athletes to recalibrate causal expectations and perceptions of what could still be changed. Institutional support, recognition, and opportunities also varied with athletic standing, making the quality of integration psychologically consequential beyond the formal coexistence of sport and education.DiscussionThese findings conceptualize DC as a process of conditional inclusion. Chinese HLSAs navigate a systemically structured but psychologically experienced labyrinth, in which breakthrough occurs when athletic achievement is transformed from an entry credential and performance identity into a broader basis for competence, belonging, self-redefinition, and future possibility. Effective ISE therefore requires developmental conditions that allow sporting achievement to open educational opportunities without defining the limits of student-athletes' subsequent academic, personal, and career development."
+  },
+  {
+   "rank": 30,
+   "id": "41481453",
+   "source": "MED",
+   "pmid": "41481453",
+   "pmcid": "PMC12773788",
+   "doi": "10.1073/pnas.2520867123",
+   "first_publication_date": "2026-01-02",
+   "title": "Modeling and inferring metacommunity dynamics with Maximum Caliber.",
+   "authors": "Jackson Z, Leibold MA, Holt RD, Xue B.",
+   "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+   "pub_types": [
+    "research-article",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "A major challenge for community ecology is using spatiotemporal data to infer parameters of dynamical models without conducting laborious experiments. We present a framework from statistical physics-Maximum Caliber-to characterize the temporal dynamics of complex ecological systems in spatially extended landscapes and infer parameters from empirical data. As an extension of Maximum Entropy modeling, Maximum Caliber aims at modeling the probability of possible trajectories of a stochastic system, rather than focusing on system states. We demonstrate the ability of the Maximum Caliber framework to capture ecological processes ranging from near to far from equilibrium, using an array of species interaction motifs including random interactions, apparent competition, intraguild predation, and nontransitive competition, along with dispersal among multiple patches. For spatiotemporal data of species occupancy in a metacommunity, the parameters of a Maximum Caliber model can be estimated through a simple logistic regression to reveal migration rates between patches, interactions between species, and local environmental suitabilities. We test the accuracy of the method over a range of system sizes and time periods and find that these parameters can be estimated without bias. We introduce \"entropy production\" as a measure of irreversibility in system dynamics, and use \"pseudo-R2\" to characterize predictability of future states. We show that our model can predict the dynamics of metacommunities that are far from equilibrium. The capacity to estimate basic parameters of dynamical metacommunity models from spatiotemporal data represents an important breakthrough for the study of metacommunities with application to practical problems in conservation and restoration ecology."
+  },
+  {
+   "rank": 31,
+   "id": "41047692",
+   "source": "MED",
+   "pmid": "41047692",
+   "pmcid": null,
+   "doi": "10.2174/0113892037374986250711152300",
+   "first_publication_date": "2026-01-01",
+   "title": "From CASP13 to the Nobel Prize: DeepMind's AlphaFold Journey in Revolutionizing Protein Structure Prediction and Beyond.",
+   "authors": "Abbass J.",
+   "journal": "Current protein & peptide science",
+   "pub_types": [
+    "Historical Article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Four years ago, at the 14th Critical Assessment of Structure Prediction (CASP14), John Moult made a historic announcement that the long-standing challenge of Protein Structure Prediction- a problem that had confounded scientists for over five decades-had been \"solved\" for single protein chains. Supporting this groundbreaking statement was a plot depicting the median Global Distance Test (GDT) across 87 out of 92 domains, where AlphaFold2, developed by DeepMind, achieved an unprecedented score of 92.4. The bar chart not only underscored AlphaFold2' s remarkable performance-standing out prominently among other methods-but also revealed a level of accuracy that exceeded all prior expectations. In the years since this breakthrough, DeepMind's team has made significant strides. The AlphaFold Database now hosts approximately 214 million structures for various model organisms, covering nearly the entire genome. Research continues to explore multiple facets of protein science, including the prediction of multi-chain protein complex structures and the impact of missense mutations on protein function. The open availability of this extensive database and the suite of AlphaFold2 algorithms has catalysed remarkable advancements in protein biology and bioinformatics. This review will begin by revisiting DeepMind's early efforts in CASP13, detailing the architecture and the remarkable progress that led to their breakthrough of AlphaFold2 in CASP14 (2020). It will then delve into two main areas: (1) AlphaFold's contributions to the scientific community across various fields over the past four years, and (2) the latest improvements, enhancements, and achievements by DeepMind, including AlphaFold3 and the Nobel Prize in Chemistry."
+  },
+  {
+   "rank": 32,
+   "id": "41262422",
+   "source": "MED",
+   "pmid": "41262422",
+   "pmcid": "PMC12624797",
+   "doi": "10.1016/j.lanepe.2025.101460",
+   "first_publication_date": "2025-09-15",
+   "title": "Recommended methodologies for clinical investigations of high-risk medical devices-Conclusions from the European Union CORE-MD Project.",
+   "authors": "Fraser AG, Buccheri S, Byrne RA, Kjaersgaard-Andersen P, James S, Jüni P, Bally L, Bulbulia R, Koletzko BV, Landray MJ, Louati C, Lübbeke A, Marang-van de Mheen PJ, McCulloch P, Patro-Golab B, Rademakers FE, Schnell-Inderst P, Siontis GCM, Torre M, Wild C, Zeisl Y, Melvin T, Nelissen RGHH, CORE–MD Consortium.",
+   "journal": "The Lancet regional health. Europe",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Before a high-risk medical device is approved for implantation into patients, there should be evidence not only of its performance and safety with a favourable benefit-risk ratio, but also of its clinical efficacy. Regulatory guidance on study methodologies is lacking, however, so the European Commission funded the CORE-MD project (Coordinating Research and Evidence for Medical Devices) to advise regulators on appropriate designs for clinical trials of high-risk devices. The CORE-MD consortium recommends that evaluation should be planned in four stages. Randomised controlled trials should be performed more often, against active comparators reflecting the best available treatment, or using sham interventions with ethical safeguards. Large trials can be managed efficiently using an electronic database or registry. Non-randomised clinical studies can apply objective performance criteria or other validated patient-relevant outcome measures, with adjustments to minimise bias. Full transparency of results from clinical investigations is essential. Proportionate regulation of breakthrough or orphan devices for independently-defined serious unmet needs may involve approval with less evidence, but on condition of subsequent confirmatory studies. These CORE-MD consensus proposals have been submitted to European Union medical device regulators, to be considered as a basis for more transparent and predictable requirements for clinical evidence.FundingThe CORE-MD project was funded as a Coordination and Support action from the European UnionHorizon 2020 research and innovation programme, under grant agreement 965246."
+  },
+  {
+   "rank": 33,
+   "id": "40852775",
+   "source": "MED",
+   "pmid": "40852775",
+   "pmcid": null,
+   "doi": "10.1002/ejp.70103",
+   "first_publication_date": "2025-10-01",
+   "title": "Personalised Breakthrough Pain Goals and Responses in Advanced Cancer Patients.",
+   "authors": "Mercadante S, Casuccio A, Noce G, Adile C.",
+   "journal": "European journal of pain (London, England)",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "BackgroundThe aim of this study was to evaluate patients' global impression (PGI), patient pain goal (PPG), achievement of a patient pain goal response (PPGR) among individuals with advanced cancer admitted to an acute palliative care unit (APCU), after a BTP medication.MethodsLongitudinal design was employed to assess 230 patients. Changes in BTP, PGI, PPG and PPGR were measured.ResultsBTP intensity (mean, SD) before administration of a BTP medication (T0), 15 min after (T15) and 30 min after (T30) was 6.5 (1.63), 4.3 (1.5) and 2.3 (1.5), respectively. The mean PPG was 1.61 (SD 1.6). Almost all patients reported an improvement in PGI. There were no differences between the different opioids used as BTP medication, and PGGR and PGI (p = 0.728 and p = 0.442, respectively). In the multivariate analysis, higher pain intensity at T0 and lower pain intensity at T30 were independently related to PGI (p ConclusionPPG enables clinicians to individualise patient care and facilitates the assessment of pain response within the same patient over time, ensuring that the evaluation is both clinically relevant and meaningful. Together, the PPG, PGI and PPGR serve as important patient-centred metrics which support pain assessment and inform clinical decision-making in alignment with patients' expectations.Significance statementPatient expectations, expressed as pain goals, are hard to be achieved. Nevertheless, global impression after a breakthrough medication is good, regardless the opioid used."
+  },
+  {
+   "rank": 34,
+   "id": "39304568",
+   "source": "MED",
+   "pmid": "39304568",
+   "pmcid": null,
+   "doi": "10.1007/s11030-024-10980-z",
+   "first_publication_date": "2024-09-20",
+   "title": "Investigation of small molecules disrupting dengue virus assembly by inhibiting capsid protein and blocking RNA encapsulation.",
+   "authors": "Panday H, Jha AK, Dwivedi VD.",
+   "journal": "Molecular diversity",
+   "pub_types": [
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Dengue fever is a significant global public health concern, causing substantial morbidity and mortality worldwide. The disease can manifest in various forms, from mild fever to potentially life-threatening complications. Developing effective treatments remains a critical challenge to healthcare systems. Despite extensive research, no antiviral drugs have been approved for either the prevention or treatment of dengue. Targeting the virus during its early phase of attachment is essential to inhibit viral replication. The capsid protein plays a crucial role in the virus's structural integrity, assembly, and viral genome release. In the present study, we employed a computational approach focused on the capsid protein to identify possible potent inhibitors against the dengue virus from a library of FDA-approved drugs. We employed high-throughput virtual screening on FDA-approved drugs to identify drug molecules that could potentially combat the disease and save both cost and time. The screening process identified four drug molecules (Nordihydroguaiaretic acid, Ifenprodil tartrate, Lathyrol, and Safinamide Mesylate) based on their highest binding affinity and MM/GBSA scores. Among these, Nordihydroguaiaretic acid showed higher binding affinity than the reference molecule with - 11.66 kcal/mol. In contrast, Ifenprodil tartrate and Lathyrol showed similar results to the reference molecule, with binding energies of - 9.42 kcal/mol and - 9.29 kcal/mol, respectively. Following the screening, molecular dynamic simulations were performed to explore the molecular stability and conformational possibilities. The drug molecules were further supported by post-molecular simulation analysis. Furthermore, binding energies were also computed using the MM/GBSA approach, and the free energy landscape was used to calculate the different transition states, revealing that the drugs exhibited significant transition states. Specifically, Nordihydroguaiaretic acid and Ifenprodil tartrate displayed higher flexibility, while Lathyrol and Safinamide Mesylate showed more predictable and consistent protein folding. This significant breakthrough offers new hope against dengue, highlighting the power of computational drug discovery in identifying potent inhibitors and paving the way for novel treatment approaches."
+  },
+  {
+   "rank": 35,
+   "id": "41096797",
+   "source": "MED",
+   "pmid": "41096797",
+   "pmcid": "PMC12524931",
+   "doi": "10.3390/ijms26199529",
+   "first_publication_date": "2025-09-29",
+   "title": "Anti-Amyloid Therapies for Alzheimer's Disease: Progress, Pitfalls, and the Path Ahead.",
+   "authors": "Papaliagkas V.",
+   "journal": "International journal of molecular sciences",
+   "pub_types": [
+    "other",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Anti-amyloid monoclonal antibodies have finally achieved their translational breakthrough after many years of unmet expectations. The FDA granted traditional approval to lecanemab in July 2023, and the European Medicines Agency approved it in late 2024 with specific genetic restrictions; meanwhile, donanemab received FDA approval in July 2024 and EMA marketing authorization just one month ago. These agents consistently clear cerebral amyloid and slow clinical decline modestly in early-stage, biomarker-confirmed Alzheimer's disease (AD). On the other hand, they also create significant safety risks, including amyloid-related imaging abnormalities (ARIA) and substantial operational requirements for health systems that are already under pressure. Therefore, precise risk management based on APOE genotyping and the presence of cerebral amyloid angiopathy and cerebral microbleeds should be performed before therapy is initiated. The near-term agenda should prioritize the following areas of study: (1) biomarker-driven front-end triage (including emerging plasma assays); (2) ARIA-aware care pathways and shared decision making; (3) outcome-based coverage and rational pricing; (4) clinical trials that layer anti-amyloid therapy into combinatorial strategies targeting tau protein, neuroinflammation, and synaptic resilience."
+  },
+  {
+   "rank": 36,
+   "id": "41095961",
+   "source": "MED",
+   "pmid": "41095961",
+   "pmcid": "PMC12524434",
+   "doi": "10.3390/jcm14196877",
+   "first_publication_date": "2025-09-28",
+   "title": "The Timeline of the Association Between Diabetes and Cardiovascular Diseases: A Narrative Review.",
+   "authors": "Luca SA, Bungau RM, Lazar S, Herascu A, Gaita L, Avram VF, Timar B.",
+   "journal": "Journal of clinical medicine",
+   "pub_types": [
+    "review-article",
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "Y",
+   "abstract": "Diabetes and cardiovascular diseases (CVDs) are two strongly associated conditions that mutually influence each other. This review aims to follow the historical timeline of their association by highlighting the changing paradigm in CV risk management and treatment strategies in type 2 diabetes (T2D). While the discovery of insulin was a breakthrough in reducing life-threatening complications like diabetic ketoacidosis, patients with diabetes still faced a poor prognosis in terms of macrovascular outcomes, especially CVDs. Initial efforts in improving outcomes by tightly controlling glycemia proved insufficient, highlighting the complex relationship between the two diseases. After decades of focusing solely on glucose-lowering strategies, rosiglitazone, a promising new drug was developed, ultimately raising the flag about the potential higher risk of CV complications like myocardial infarction associated with its use. This turning point shifted the focus towards CV safety of novel glucose-lowering drugs, mandating for the development of cardiovascular outcome trials. Several drug classes, like sodium-glucose co-transporter-2 inhibitors (SGLT2i) and glucagon-like peptide-1 receptor agonists (GLP-1 RAs), exceeded expectations by not only providing safety but also benefits in patients with T2D and CVDs and becoming the new standard of care in T2D management. The historical evidence linking T2D and CVDs has shaped regulatory requirements for cardiovascular outcome trials, guideline recommendations, and current therapeutic strategies. These insights highlight the importance of early interventions and a multidisciplinary approach to optimize patient outcomes."
+  },
+  {
+   "rank": 37,
+   "id": "40696829",
+   "source": "MED",
+   "pmid": "40696829",
+   "pmcid": null,
+   "doi": "10.1002/ptr.70041",
+   "first_publication_date": "2025-07-22",
+   "title": "Natural Products in Regulating Mitophagy for the Intervention of Atherosclerosis and Its Risk Factors: Mechanisms and Therapeutic Potential.",
+   "authors": "Li YH, Ma H, Wang YR, Zhang SX, Zhao YM, Liu Z.",
+   "journal": "Phytotherapy research : PTR",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Atherosclerosis (AS) is a chronic systemic disease that poses a significant and escalating global challenge. The pathological process of AS involves multiple aspects. In addition to lipid-lowering therapy, therapeutic strategies such as anti-inflammatory and immunotherapy have been proposed, and attention has been paid to the intervention of its risk factors. However, the available drugs are still limited. Therefore, there is an urgent need to discover new pharmacological targets and drugs. Mitophagy is closely associated with AS and its risk factors, and it represents an important breakthrough in the intervention of AS and its risk factors. Natural products (NPs), with multiple pharmacological activities and lower toxicity, have caught attention as the new force in the treatment of AS and its risk factors. This review discusses the mechanisms and therapeutic potential of NPs in regulating mitophagy to alleviate AS and intervene in its risk factors. It also introduces the application prospects of the NPs, with the expectation of contributing to the treatment of AS and the development of innovative drugs."
+  },
+  {
+   "rank": 38,
+   "id": "40441485",
+   "source": "MED",
+   "pmid": "40441485",
+   "pmcid": null,
+   "doi": "10.1016/j.accpm.2025.101555",
+   "first_publication_date": "2025-05-27",
+   "title": "Remimazolam for anesthesia in cardiac and noncardiac surgery. A narrative literature review and synthesis.",
+   "authors": "D'Andria Ursoleo J, Bottussi A, Erdoes G, Huang J, Monaco F.",
+   "journal": "Anaesthesia, critical care & pain medicine",
+   "pub_types": [
+    "Review",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Despite decades of advancements in anesthetic techniques, a novel hypnotic agent combining rapid onset and offset, hemodynamic stability, and predictable effects has remained elusive. The recent approval of remimazolam, a short-acting benzodiazepine, represents a potential breakthrough in fulfilling these criteria. Since its first approval, growing evidence highlights its benefits, including superior hemodynamic stability, rapid emergence from anesthesia, and minimal respiratory depression compared to widely used agents such as propofol. These attributes have been demonstrated across various surgical contexts and patient populations. However, existing studies have limitations that challenge the generalizability of such findings. This review evaluates the literature on remimazolam in both the cardiac and noncardiac perioperative surgical contexts. A systematic search of PubMed/MEDLINE, EMBASE, and Google Scholar databases identified studies published from 2020 to 2024, with an emphasis on randomized controlled trials and observational studies. By analyzing the limitations inherent in the retrieved studies, we aimed to provide practicing anesthesiologists with an overview of remimazolam's potential benefits and inherent challenges, while identifying current knowledge gaps that warrant future research."
+  },
+  {
+   "rank": 39,
+   "id": "40135752",
+   "source": "MED",
+   "pmid": "40135752",
+   "pmcid": null,
+   "doi": "10.1111/clr.14439",
+   "first_publication_date": "2025-03-26",
+   "title": "Force Feedback Implant Robot With Osseodensification Drilling for Transcrestal Sinus Floor Elevation: A Retrospective Case Series Study.",
+   "authors": "Bai Y, Chen Y, Yang M, Huang Y, Xu P, Chen T.",
+   "journal": "Clinical oral implants research",
+   "pub_types": [
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "ObjectivesThis study evaluated the effectiveness of force-feedback-based autonomous dental implant robotic systems combined with osseodensification (OD) for transcrestal sinus floor elevation (TSFE), to understand patterns of force-feedback curves, visualize the TSFE process through mechanical vision, and offer new perspectives on surgical strategies.Materials and methodsThe included patients required simultaneous implant placement and TSFE. Preoperative planning was performed, and during surgery, using an OD drill, the robotic arm was guided to create a microfracture on the sinus floor, elevate the sinus membrane, and place the implant, all under the surgeon's supervision. Postoperative cone-beam computed tomography evaluated sinus lift and implant accuracy. The visual analog scale was used to measure patient-reported outcomes. Mechanical curves were plotted using extracted force-feedback values. Data are reported as mean ± standard deviation and Pearson's correlation for linear relationships (p ResultsOverall, 17 patients (18 implants) were included, with a 94.4% implant retention rate at 6 months postoperatively. The Fz force-feedback curve showed a critical peak followed by a sharp drop at the sinus-floor breakthrough point and a gradual rise followed by a steep decrease as the bone graft entered the sinus cavity. Cortical bone density at the sinus floor positively correlated with force feedback (p ConclusionsForce-feedback-based implant robotics combined with OD is an innovative and reliable approach for TSFE. Integrating mechanical vision with force-feedback curves allows for precise identification of microfracture points and safe sinus membrane elevation, overcoming the limitations of traditional blind techniques and enhancing procedural safety and predictability.Trial registrationChinese Clinical Trial Registry: ChiCTR2300072248."
+  },
+  {
+   "rank": 40,
+   "id": "40578946",
+   "source": "MED",
+   "pmid": "40578946",
+   "pmcid": null,
+   "doi": "10.21873/anticanres.17678",
+   "first_publication_date": "2025-07-01",
+   "title": "Assessment of Breakthrough Cancer Pain Among Female Patients With Cancer: Knowledge, Management and Characterization in the IOPS-MS Study.",
+   "authors": "Crispo A, Luongo A, Nocerino D, Cascella M, Crisci M, Bifulco F, Schiavo D, Marchesini M, Coluccia S, Prete M, Amore A, Celentano E, Bimonte S, Cuomo A.",
+   "journal": "Anticancer research",
+   "pub_types": [
+    "Multicenter Study",
+    "Journal Article"
+   ],
+   "open_access": "N",
+   "abstract": "Background/aimChronic secondary pain from cancer may flare into unexpected acute phases, called breakthrough cancer pain (BTcP). This phenomenon has a moderate-to-severe intensity and short latency between onset and peak of intensity, so clinical and therapeutic implications may be necessary. The Italian Oncologic Pain Multisetting-Multicentric Survey (IOPS-MS) aimed to characterize BTcP in a large number of patients from different settings and assess possible factors influencing its development. Previously, we observed differences according to sex in site, onset and level of BTcP. In this analysis, we assessed differences in non-predictable BTcP between female patients with female-specific cancer (FSC) (including breast and gynecological cancer) and those with non-FSC.Patients and methodsA univariate analysis compared patients with FSC (overall and separately for breast and gynecological cancer) and non-FSC. A multivariate analysis stratified by BTcP phenotype was performed to estimate the main determinants of the risk groups in patients with FSC (overall and separately for breast and gynecological cancer) and non-FSC. Odds ratios and 95% confidence intervals were reported.ResultsThe FSC group was younger, more often treated in clinics or day hospitals, and had an increased risk of locoregional/metastatic disease than the non-FSC group. Patients with breast cancer were at higher risk of locoregional/metastatic disease, less frequently treated by a palliative specialist and had later BTcP onset compared to the non-FSC group. Significant differences concerning age, care setting and BTcP onset were also found in the group of patients with FSC (overall and separately for breast and gynecological cancer) according to tumor extension.ConclusionNon-predictable BTcP in patients with FSC presents unique characteristics, particularly regarding pain onset, care settings, and metastasis. Differences between breast and gynecological cancer emphasize the need for tailored pain-management approaches."
+  }
+ ]
+}

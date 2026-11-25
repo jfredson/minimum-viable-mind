@@ -1,0 +1,17 @@
+---
+// One News post (tracker pattern rules 4.12 and 4.19). No posts exist yet.
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+export async function getStaticPaths() {
+  return (await getCollection('news')).map((p) => ({ params: { slug: p.id }, props: { p } }));
+}
+const { p } = Astro.props;
+const { Content } = await render(p);
+---
+<Base title={`${p.data.title} · Minimum Viable Mind`} description={p.data.summary}>
+  <article class="page">
+    <p class="eyebrow">News · {p.data.date_long} · {p.data.kind}</p>
+    <h1>{p.data.title}</h1>
+    <div class="prose"><Content /></div>
+  </article>
+</Base>

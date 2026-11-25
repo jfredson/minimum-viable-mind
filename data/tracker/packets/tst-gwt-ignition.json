@@ -1,0 +1,71 @@
+{
+  "packet_id": "tst-gwt-ignition",
+  "kind": "testability",
+  "instructions": "You are one of two independent readers for a public record that scores theories of consciousness. For the prediction below, answer two questions. (a) COULD IT FAIL: is there a result, stated or plainly implied in the wording, that would count against it, and that a study could actually observe? (b) DOES IT SEPARATE the theory from a rival: does at least one theory on the list of rivals predict something different (not merely stay silent)? If yes, name the rival or rivals, and say whether your view of the rival comes from the material given or from your own knowledge. Answer in JSON: {\"could_fail\": true|false, \"separates\": true|false, \"separates_from\": [ids], \"rival_view_from\": \"material\"|\"own knowledge\"|\"both\"|\"none\", \"reason\": \"two to four plain sentences\", \"unsure\": true|false, \"unsure_why\": \"...\"}.",
+  "theory": "Global workspace theory",
+  "core_claim": {
+    "quote": "Ignition is characterized by the sudden, coherent, and exclusive activation of a subset of workspace neurons coding for the current conscious content, with the remainder of the workspace neurons being inhibited.",
+    "source": {
+      "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+      "date": "2020-03-04"
+    }
+  },
+  "prediction": {
+    "statement": "When a stimulus becomes conscious, activity rises suddenly and late (about 250 to 300 ms after it appears) and spreads to prefrontal and parietal cortex; stimuli that stay unconscious do not do this. It holds whatever the sense, and whether or not the stimulus is reported.",
+    "stated_by": "the theory's proponents",
+    "first_stated": {
+      "date": "2013-12-29",
+      "passage": "conscious access is often characterized by a late non-linear amplification of activation which invades a distributed set of parietal, prefrontal and cingulate areas",
+      "source": {
+        "citation": "Dehaene S, Charles L, King J-R, Marti S. Toward a computational theory of conscious processing. Current Opinion in Neurobiology 25:76-84, 2014",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635963/",
+        "date": "2013-12-29"
+      }
+    },
+    "test_for": "Comparing physically identical stimuli that are and are not consciously perceived, the perceived ones produce a late (after about 250 ms), sudden increase of activity in prefrontal and parietal cortex, also when no report is required; or, where every stimulus is seen, each new percept produces such a response in prefrontal cortex.",
+    "test_against": "In a design that removes the need to report, awareness-related differences are confined to sensory cortex, with no reliable prefrontal or parietal increase."
+  },
+  "rivals_on_the_list": {
+    "gwt": "Global workspace theory",
+    "iit": "Integrated information theory",
+    "hot": "Higher-order theories",
+    "rpt": "Recurrent processing theory",
+    "seth": "Anil Seth's living-body view",
+    "ast": "Attention schema theory",
+    "sensorimotor": "The sensorimotor theory",
+    "orch-or": "Orchestrated Objective Reduction",
+    "damasio": "Damasio's feeling-based theory",
+    "sh": "The Sentient Horizons account"
+  },
+  "what_the_sources_say_about_rivals": [
+    {
+      "rival": "Integrated information theory",
+      "statement": "IIT holds that activity in posterior areas is what is necessary; prefrontal activation is not a prerequisite.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    }
+  ],
+  "other_statements_of_the_prediction": [
+    {
+      "passage": "It accordingly predicts that every conscious experience should be accompanied by activation of a prefrontal-parietal network in tandem with high-level sensory cortices representing the global broadcasting of information across the network.",
+      "source": {
+        "citation": "Melloni L, Mudrik L, Pitts M, et al. Preregistration file v1, January 2019: Accelerating research on consciousness: an adversarial collaboration to test contradictory predictions of global neuronal workspace and integrated information theory. OSF project mbcfy, component wz8mj",
+        "url": "https://osf.io/wz8mj/",
+        "date": "2019-01-16"
+      }
+    },
+    {
+      "passage": "This non-linear divergence occurs regardless of the stimulus modality or paradigm used to manipulate consciousness (e.g., reduced visibility, masking, inattention).",
+      "source": {
+        "citation": "Mashour GA, Roelfsema P, Changeux J-P, Dehaene S. Conscious processing and the global neuronal workspace hypothesis. Neuron 105(5):776-798, 2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8770991/",
+        "date": "2020-03-04"
+      }
+    }
+  ],
+  "this_reading_is": "the second reading"
+}
