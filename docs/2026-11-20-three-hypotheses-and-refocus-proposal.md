@@ -6,6 +6,10 @@ asked for them to be added ("Add the split hypotheses to Minimum Viable Mind"). 
 the session's. The change of focus in section 4 is a proposal and is not entered: it needs John's
 ruling, because it changes the sentence in `CLAUDE.md` that says what the project is for.*
 
+*Ruled 2026-11-26: John adopted the change of focus, with one change to the order. The shared
+workspace (H1) comes first, then the split by the input route (H2), then self-awareness (H3).
+See `docs/rulings/2026-11-26-open-questions-ruling.md`.*
+
 ## 1. Where this came from
 
 On 2026-11-20 John stated an intuition he is "leaning more and more into": that consciousness
