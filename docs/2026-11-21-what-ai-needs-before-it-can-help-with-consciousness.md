@@ -2,6 +2,10 @@
 
 *A proposal, drafted 2026-11-21 at John's request, from a conversation that began with this week's AI-assisted proofs of the Riemann Hypothesis and of finite-time blow-up for the Navier-Stokes equations. Nothing here is ruled. Section 8 lists what is for John to decide. Every outside source was opened on 2026-11-21 and is listed in section 9.*
 
+*Ruled 2026-11-26: adopted in part. A session drafts precise statements of the Sentient Horizons
+account's four core claims for John to check, in the `sentient-horizons` repository. The register
+stays an idea for later, and nothing goes public for now. See `docs/rulings/2026-11-26-open-questions-ruling.md`.*
+
 ## 1. The argument in one paragraph
 
 AI made its first great leaps in mathematics because mathematics has a perfect checker. A proof-checking program such as Lean tells a system within minutes whether an attempt is right, so the system can try a vast number of ideas and keep only the ones that pass. Every field AI has sped up since has had some version of that checker, even a slow and noisy one: a laboratory test, a blind competition, a database of known answers. The study of consciousness has none. Experiments there are slow, but that is not the main problem. The rival theories do not agree on what observation would count as an answer, so a result one theory calls a hit, another calls a measurement of the wrong thing. This proposal therefore does not ask how to point AI at consciousness. It asks what checker has to be built first, piece by piece, so that AI has something to work against. It names six pieces, says what AI can and cannot do for each, and gives a measure for each that would show whether it is being built.

@@ -4,7 +4,7 @@
 
 ## What this project is
 
-An engineering effort to construct and measure correlates of the consciousness account developed at Sentient Horizons. Read the leading theories of consciousness as specifications, implement components one at a time, register a behavioral metric before each scaffold runs, keep what moves the metric and kill what doesn't. The referee is mundane: does the work get deeper? The aim is not a system that is provably conscious.
+An engineering effort to construct and measure correlates of the consciousness account developed at Sentient Horizons. Read the leading theories of consciousness as specifications, implement components one at a time, register a behavioral metric before each scaffold runs, keep what moves the metric and kill what doesn't. The referee is mundane: does the work get deeper? The aim, since John's ruling of 2026-11-26 (`docs/rulings/2026-11-26-open-questions-ruling.md`), is to put one account of experience (the Sentient Horizons view that experience is binding in a shared workspace, seen from the inside, with a point of view added by a working self-model) to removal tests that could show it wrong, one feature at a time: first the shared workspace, then the split by taking the speaker cue out of the input, then self-awareness. Proof in the mathematical sense is not on offer for any account of experience; what is on offer is risky predictions that keep coming true while rival accounts fail them. The aim is not a system declared conscious.
 
 ## Philosophy is referenced, not vendored
 
